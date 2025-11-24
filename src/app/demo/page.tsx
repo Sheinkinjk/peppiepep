@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
   Table,
   TableBody,
@@ -131,19 +132,77 @@ export default function DemoPage() {
     { id: "3", name: "Dormant Ambassador Re-engagement", message: "We miss you! Come back and we'll add a $5 bonus to your next referral.", schedule: "After 60 days inactive", nextRun: "Automated", status: "paused", recipients: "Inactive ambassadors" },
   ]);
 
+  // Editable business settings
+  const [rewardAmount, setRewardAmount] = useState(15);
+  const [offerText, setOfferText] = useState("20% off your first visit");
+  const [customers, setCustomers] = useState(demoCustomers);
+  const [isLaunching, setIsLaunching] = useState(false);
+  const [launchProgress, setLaunchProgress] = useState(0);
+  const [showTestCampaignModal, setShowTestCampaignModal] = useState(false);
+  const [hasLaunched, setHasLaunched] = useState(false);
+
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://peppiepep.vercel.app';
+
+  // Launch test campaign function
+  const launchTestCampaign = () => {
+    setIsLaunching(true);
+    setLaunchProgress(0);
+    setShowTestCampaignModal(true);
+
+    // Simulate sending campaign
+    const interval = setInterval(() => {
+      setLaunchProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            populateDemoData();
+            setIsLaunching(false);
+            setShowTestCampaignModal(false);
+            setHasLaunched(true);
+            setShowSuccessAnimation(true);
+            setTimeout(() => setShowSuccessAnimation(false), 3000);
+          }, 500);
+          return 100;
+        }
+        return prev + 20;
+      });
+    }, 300);
+  };
+
+  // Populate demo with realistic data
+  const populateDemoData = () => {
+    // Update customers with activity
+    const updatedCustomers = customers.map((c, idx) => {
+      if (idx === 0) return { ...c, credits: 45, status: 'active', referrals_made: 3, total_value_generated: 360, last_referral: new Date().toISOString().split('T')[0] as string | null };
+      if (idx === 1) return { ...c, credits: 30, status: 'active', referrals_made: 2, total_value_generated: 240, last_referral: new Date().toISOString().split('T')[0] as string | null };
+      if (idx === 2) return { ...c, credits: 15, status: 'active', referrals_made: 1, total_value_generated: 120, last_referral: new Date().toISOString().split('T')[0] as string | null };
+      return c;
+    });
+    setCustomers(updatedCustomers as typeof demoCustomers);
+
+    // Add referrals
+    const newReferrals = [
+      { id: "1", ambassador_id: "1", referred_name: "Lucy Wilson", referred_email: "lucy@example.com", referred_phone: "+61 400 111 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
+      { id: "2", ambassador_id: "1", referred_name: "Michael Brown", referred_email: "michael@example.com", referred_phone: "+61 400 222 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
+      { id: "3", ambassador_id: "2", referred_name: "Rachel Green", referred_email: "rachel@example.com", referred_phone: "+61 400 333 000", status: "pending", created_at: new Date().toISOString(), value: 120 },
+      { id: "4", ambassador_id: "1", referred_name: "Tom Harris", referred_email: "tom@example.com", referred_phone: "+61 400 444 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
+      { id: "5", ambassador_id: "2", referred_name: "Jenny Clark", referred_email: "jenny@example.com", referred_phone: "+61 400 555 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
+      { id: "6", ambassador_id: "3", referred_name: "David Lee", referred_email: "david@example.com", referred_phone: "+61 400 666 000", status: "pending", created_at: new Date().toISOString(), value: 120 },
+    ];
+    setSimulatedReferrals(newReferrals);
+  };
 
   const pendingReferrals = simulatedReferrals.filter((r) => r.status === "pending").length;
   const completedReferrals = simulatedReferrals.filter((r) => r.status === "completed").length;
-  const totalRewards = demoCustomers.reduce((sum, c) => sum + c.credits, 0);
+  const totalRewards = customers.reduce((sum, c) => sum + c.credits, 0);
   const totalRevenue = simulatedReferrals
     .filter(r => r.status === "completed")
     .reduce((sum, r) => sum + r.value, 0);
 
-  const conversionRate = ((completedReferrals / simulatedReferrals.length) * 100).toFixed(0);
-  const avgReferralValue = totalRevenue / completedReferrals || 0;
-  const activeAmbassadors = demoCustomers.filter(c => c.referrals_made > 0).length;
-  const roi = ((totalRevenue / demoBusiness.subscription_price) * 100 - 100).toFixed(0);
+  const conversionRate = simulatedReferrals.length > 0 ? ((completedReferrals / simulatedReferrals.length) * 100).toFixed(0) : "0";
+  const avgReferralValue = completedReferrals > 0 ? totalRevenue / completedReferrals : 0;
+  const activeAmbassadors = customers.filter(c => c.referrals_made > 0).length;
+  const roi = totalRevenue > 0 ? ((totalRevenue / demoBusiness.subscription_price) * 100 - 100).toFixed(0) : "0";
 
   // Analytics calculations
   const last30DaysReferrals = simulatedReferrals.filter(r => {
@@ -244,7 +303,7 @@ export default function DemoPage() {
                     Sending to: {activeAmbassadors} active ambassadors
                   </p>
                   <p className="text-xs text-purple-700">
-                    {demoCustomers.filter(c => c.referrals_made > 0).map(c => c.name).join(", ")}
+                    {customers.filter(c => c.referrals_made > 0).map(c => c.name).join(", ") || "Will populate after campaign launch"}
                   </p>
                 </div>
               </div>
@@ -423,6 +482,40 @@ export default function DemoPage() {
         </div>
       )}
 
+      {/* Test Campaign Launch Modal */}
+      {showTestCampaignModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+          <Card className="w-full max-w-lg p-8">
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center mx-auto mb-4">
+                <Send className="h-8 w-8 text-white animate-pulse" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">Launching Test Campaign</h2>
+              <p className="text-slate-600 mb-6">
+                Sending SMS invites to {customers.length} ambassadors...
+              </p>
+
+              <div className="w-full bg-slate-200 rounded-full h-4 mb-4 overflow-hidden">
+                <div
+                  className="bg-gradient-to-r from-green-600 to-emerald-500 h-4 rounded-full transition-all duration-300 ease-out"
+                  style={{ width: `${launchProgress}%` }}
+                />
+              </div>
+
+              <p className="text-sm font-semibold text-slate-700">{launchProgress}% Complete</p>
+
+              <div className="mt-6 text-xs text-slate-500 space-y-1">
+                {launchProgress >= 20 && <p>✓ SMS messages queued</p>}
+                {launchProgress >= 40 && <p>✓ Ambassador links generated</p>}
+                {launchProgress >= 60 && <p>✓ Campaigns sent to {customers.length} ambassadors</p>}
+                {launchProgress >= 80 && <p>✓ Tracking links activated</p>}
+                {launchProgress === 100 && <p className="text-green-600 font-semibold">✓ Campaign launched successfully!</p>}
+              </div>
+            </div>
+          </Card>
+        </div>
+      )}
+
       <div className="mx-auto max-w-7xl p-4 sm:p-8">
         {/* Header */}
         <div className="mb-8">
@@ -573,13 +666,17 @@ export default function DemoPage() {
                     </div>
 
                     <div className="flex items-center gap-3 pt-2">
-                      <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                      <Button
+                        onClick={launchTestCampaign}
+                        disabled={hasLaunched}
+                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
                         <Zap className="mr-2 h-4 w-4" />
-                        Start Setup Guide
+                        {hasLaunched ? "Campaign Launched!" : "Launch Test Campaign (Demo)"}
                       </Button>
                       <Link href="/login">
                         <Button variant="outline" className="border-orange-300">
-                          View Documentation
+                          View Setup Guide
                         </Button>
                       </Link>
                     </div>
@@ -744,7 +841,7 @@ export default function DemoPage() {
               </div>
 
               <div className="space-y-3">
-                {demoCustomers.map((customer) => (
+                {customers.map((customer) => (
                   <div key={customer.id} className="border border-slate-200 rounded-lg overflow-hidden hover:border-purple-300 transition-colors">
                     <div
                       className="p-4 cursor-pointer bg-white hover:bg-slate-50"
@@ -1048,9 +1145,12 @@ export default function DemoPage() {
                   <div>
                     <Label className="text-base font-semibold">New Customer Offer</Label>
                     <p className="text-sm text-slate-500 mb-2">What referred customers will see when they use a referral link</p>
-                    <div className="rounded-lg border-2 border-slate-300 bg-slate-50 px-4 py-3 text-slate-700">
-                      {demoBusiness.offer_text}
-                    </div>
+                    <Input
+                      value={offerText}
+                      onChange={(e) => setOfferText(e.target.value)}
+                      className="text-base font-medium"
+                      placeholder="20% off your first visit"
+                    />
                     <p className="text-xs text-slate-500 mt-2">
                       💡 Tip: Clear, valuable offers convert better (e.g., "20% off" vs "Get a discount")
                     </p>
@@ -1059,12 +1159,22 @@ export default function DemoPage() {
                   <div>
                     <Label className="text-base font-semibold">Ambassador Reward Amount</Label>
                     <p className="text-sm text-slate-500 mb-2">How much credit ambassadors earn per successful referral</p>
-                    <div className="rounded-lg border-2 border-green-300 bg-green-50 px-4 py-3">
-                      <p className="text-2xl font-bold text-green-700">${demoBusiness.reward_amount} AUD</p>
-                      <p className="text-sm text-green-600 mt-1">per completed referral</p>
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2 flex-1">
+                        <span className="text-2xl font-bold text-slate-700">$</span>
+                        <Input
+                          type="number"
+                          value={rewardAmount}
+                          onChange={(e) => setRewardAmount(Number(e.target.value))}
+                          className="text-2xl font-bold text-center"
+                          min="5"
+                          max="100"
+                        />
+                        <span className="text-lg text-slate-600">AUD per referral</span>
+                      </div>
                     </div>
                     <p className="text-xs text-slate-500 mt-2">
-                      💡 Tip: Set rewards at 10-15% of average transaction value for optimal ROI
+                      💡 Tip: Set rewards at 10-15% of average transaction value for optimal ROI (Avg transaction: ${demoBusiness.avg_transaction})
                     </p>
                   </div>
 
