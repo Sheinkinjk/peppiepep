@@ -60,6 +60,7 @@ export default function GuestDashboard() {
 
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     // Load guest business
     const guestMode = localStorage.getItem("pepform_guest_mode");
@@ -87,6 +88,7 @@ export default function GuestDashboard() {
       setReferrals(JSON.parse(storedReferrals));
     }
   }, [router]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const handleUpdateSettings = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -176,7 +178,7 @@ export default function GuestDashboard() {
             <div>
               <p className="text-sm font-semibold text-amber-900">Guest Mode - MVP Testing</p>
               <p className="text-xs text-amber-700 mt-1">
-                You're using a test account. Data is stored locally in your browser.
+                You are using a test account. Data is stored locally in your browser.
               </p>
             </div>
           </div>

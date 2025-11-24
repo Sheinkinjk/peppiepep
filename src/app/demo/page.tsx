@@ -6,9 +6,9 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight, X, TrendingUp, Users, DollarSign, Zap, Copy, CheckCircle2,
-  MessageSquare, BarChart3, Clock, Star, ChevronDown, ChevronUp, Send,
+  BarChart3, Clock, ChevronDown, ChevronUp, Send,
   Settings as SettingsIcon, Bell, CreditCard, Building2, Mail, Phone,
-  Calendar, Target, Activity, PieChart, QrCode, Download, Plus
+  Calendar, Target, Activity, PieChart, QrCode, Plus
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -21,12 +21,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import QRCodeGenerator from "@/components/QRCodeGenerator";
 
-// Enhanced demo data
+// Enhanced demo data - PRE-LAUNCH STATE (showing realistic starting point)
 const demoBusiness = {
   name: "Glow Beauty Studio",
   location: "Melbourne, VIC",
@@ -40,8 +39,10 @@ const demoBusiness = {
   monthly_customers: 85,
   subscription_plan: "Growth",
   subscription_price: 79,
+  isLive: false, // Not yet launched
 };
 
+// Sample customers to show what the interface looks like (but with 0 activity)
 const demoCustomers = [
   {
     id: "1",
@@ -49,15 +50,15 @@ const demoCustomers = [
     phone: "+61 400 123 456",
     email: "sarah@example.com",
     referral_code: "SMI789XYZ",
-    credits: 45,
-    status: "active",
-    referrals_made: 3,
-    total_value_generated: 360,
-    joined: "2024-09-15",
-    last_referral: "2024-11-15",
-    avg_referral_value: 120,
-    notes: "Top performer, very engaged with the program",
-    tags: ["VIP", "Monthly Regular"],
+    credits: 0,
+    status: "inactive",
+    referrals_made: 0,
+    total_value_generated: 0,
+    joined: "2024-11-20",
+    last_referral: null,
+    avg_referral_value: 0,
+    notes: "Imported from customer list, ready to start referring",
+    tags: ["New"],
   },
   {
     id: "2",
@@ -65,15 +66,15 @@ const demoCustomers = [
     phone: "+61 400 456 789",
     email: "james@example.com",
     referral_code: "JCH456ABC",
-    credits: 30,
-    status: "active",
-    referrals_made: 2,
-    total_value_generated: 240,
-    joined: "2024-10-02",
-    last_referral: "2024-11-14",
-    avg_referral_value: 120,
-    notes: "Referred family members",
-    tags: ["Family Plan"],
+    credits: 0,
+    status: "inactive",
+    referrals_made: 0,
+    total_value_generated: 0,
+    joined: "2024-11-20",
+    last_referral: null,
+    avg_referral_value: 0,
+    notes: "Imported from customer list, ready to start referring",
+    tags: ["New"],
   },
   {
     id: "3",
@@ -81,112 +82,39 @@ const demoCustomers = [
     phone: "+61 400 789 012",
     email: "emma@example.com",
     referral_code: "ERO123DEF",
-    credits: 60,
-    status: "active",
-    referrals_made: 4,
-    total_value_generated: 480,
-    joined: "2024-08-20",
-    last_referral: "2024-11-12",
-    avg_referral_value: 120,
-    notes: "Active on social media, great ambassador",
-    tags: ["VIP", "Social Influencer"],
-  },
-  {
-    id: "4",
-    name: "Oliver Thompson",
-    phone: "+61 400 234 567",
-    email: "oliver@example.com",
-    referral_code: "OTH567GHI",
-    credits: 15,
-    status: "active",
-    referrals_made: 1,
-    total_value_generated: 120,
-    joined: "2024-11-01",
-    last_referral: "2024-11-16",
-    avg_referral_value: 120,
-    notes: "New customer, first referral",
-    tags: ["New"],
-  },
-  {
-    id: "5",
-    name: "Sophie Anderson",
-    phone: "+61 400 567 890",
-    email: "sophie@example.com",
-    referral_code: "SAN890JKL",
     credits: 0,
     status: "inactive",
     referrals_made: 0,
     total_value_generated: 0,
-    joined: "2024-11-18",
+    joined: "2024-11-20",
     last_referral: null,
     avg_referral_value: 0,
-    notes: "Recently joined, hasn't made referrals yet",
+    notes: "Imported from customer list, ready to start referring",
     tags: ["New"],
-  },
-  {
-    id: "6",
-    name: "Marcus Johnson",
-    phone: "+61 400 111 222",
-    email: "marcus@example.com",
-    referral_code: "MJO111AAA",
-    credits: 75,
-    status: "active",
-    referrals_made: 5,
-    total_value_generated: 600,
-    joined: "2024-07-10",
-    last_referral: "2024-11-05",
-    avg_referral_value: 120,
-    notes: "Workplace referrals, excellent advocate",
-    tags: ["VIP", "Corporate"],
-  },
-  {
-    id: "7",
-    name: "Isabella Martinez",
-    phone: "+61 400 333 444",
-    email: "isabella@example.com",
-    referral_code: "IMA333BBB",
-    credits: 30,
-    status: "active",
-    referrals_made: 2,
-    total_value_generated: 240,
-    joined: "2024-09-28",
-    last_referral: "2024-10-28",
-    avg_referral_value: 120,
-    notes: "Referred gym friends",
-    tags: ["Fitness Community"],
-  },
-  {
-    id: "8",
-    name: "Liam O'Brien",
-    phone: "+61 400 555 666",
-    email: "liam@example.com",
-    referral_code: "LOB555CCC",
-    credits: 45,
-    status: "active",
-    referrals_made: 3,
-    total_value_generated: 360,
-    joined: "2024-08-05",
-    last_referral: "2024-11-07",
-    avg_referral_value: 120,
-    notes: "Regular customer with consistent referrals",
-    tags: ["Monthly Regular"],
   },
 ];
 
-const demoReferrals = [
-  { id: "1", ambassador_id: "1", referred_name: "Lucy Wilson", referred_email: "lucy@example.com", referred_phone: "+61 400 111 000", status: "completed", created_at: "2024-11-15T10:30:00Z", value: 120 },
-  { id: "2", ambassador_id: "1", referred_name: "Michael Brown", referred_email: "michael@example.com", referred_phone: "+61 400 222 000", status: "completed", created_at: "2024-11-10T14:20:00Z", value: 120 },
-  { id: "3", ambassador_id: "2", referred_name: "Rachel Green", referred_email: "rachel@example.com", referred_phone: "+61 400 333 000", status: "pending", created_at: "2024-11-18T09:15:00Z", value: 120 },
-  { id: "4", ambassador_id: "3", referred_name: "Tom Harris", referred_email: "tom@example.com", referred_phone: "+61 400 444 000", status: "completed", created_at: "2024-11-12T16:45:00Z", value: 120 },
-  { id: "5", ambassador_id: "1", referred_name: "Jenny Clark", referred_email: "jenny@example.com", referred_phone: "+61 400 555 000", status: "completed", created_at: "2024-11-08T11:30:00Z", value: 120 },
-  { id: "6", ambassador_id: "2", referred_name: "David Lee", referred_email: "david@example.com", referred_phone: "+61 400 666 000", status: "completed", created_at: "2024-11-14T13:20:00Z", value: 120 },
-  { id: "7", ambassador_id: "3", referred_name: "Anna White", referred_email: "anna@example.com", referred_phone: "+61 400 777 000", status: "pending", created_at: "2024-11-19T08:10:00Z", value: 120 },
-  { id: "8", ambassador_id: "4", referred_name: "Chris Martin", referred_email: "chris@example.com", referred_phone: "+61 400 888 000", status: "completed", created_at: "2024-11-16T15:50:00Z", value: 120 },
-  { id: "9", ambassador_id: "6", referred_name: "Nina Patel", referred_email: "nina@example.com", referred_phone: "+61 400 999 000", status: "completed", created_at: "2024-11-05T12:00:00Z", value: 145 },
-  { id: "10", ambassador_id: "6", referred_name: "Alex Turner", referred_email: "alex@example.com", referred_phone: "+61 400 101 000", status: "completed", created_at: "2024-11-03T10:30:00Z", value: 135 },
-  { id: "11", ambassador_id: "3", referred_name: "Kate Morrison", referred_email: "kate@example.com", referred_phone: "+61 400 102 000", status: "completed", created_at: "2024-10-28T14:15:00Z", value: 120 },
-  { id: "12", ambassador_id: "8", referred_name: "Ryan Foster", referred_email: "ryan@example.com", referred_phone: "+61 400 103 000", status: "completed", created_at: "2024-11-07T09:45:00Z", value: 120 },
-];
+// Empty referrals array - no activity yet (pre-launch)
+const demoReferrals: Array<{
+  id: string;
+  ambassador_id: string;
+  referred_name: string;
+  referred_email: string;
+  referred_phone: string;
+  status: string;
+  created_at: string;
+  value: number;
+}> = [];
+
+type ScheduledCampaign = {
+  id: string;
+  name: string;
+  message: string;
+  schedule: string;
+  nextRun: string;
+  status: "active" | "paused";
+  recipients: string;
+};
 
 export default function DemoPage() {
   const [copiedCode, setCopiedCode] = useState("");
@@ -197,7 +125,7 @@ export default function DemoPage() {
   const [showCampaignModal, setShowCampaignModal] = useState(false);
   const [campaignMessage, setCampaignMessage] = useState("Hi! I love using Glow Beauty Studio and wanted to share 20% off your first visit. Use my link to book: ");
   const [showScheduler, setShowScheduler] = useState(false);
-  const [scheduledCampaigns, setScheduledCampaigns] = useState([
+  const [scheduledCampaigns, setScheduledCampaigns] = useState<ScheduledCampaign[]>([
     { id: "1", name: "Monthly Ambassador Reminder", message: "Keep sharing! You've earned ${{credits}} so far.", schedule: "Every 1st of month", nextRun: "Dec 1, 2024", status: "active", recipients: "All active ambassadors" },
     { id: "2", name: "New Customer Welcome", message: "Thanks for joining! Start referring friends and earn $15 per referral.", schedule: "When customer joins", nextRun: "Automated", status: "active", recipients: "New customers" },
     { id: "3", name: "Dormant Ambassador Re-engagement", message: "We miss you! Come back and we'll add a $5 bonus to your next referral.", schedule: "After 60 days inactive", nextRun: "Automated", status: "paused", recipients: "Inactive ambassadors" },
@@ -456,9 +384,9 @@ export default function DemoPage() {
                         variant="outline"
                         onClick={() => {
                           const updated = scheduledCampaigns.map(c =>
-                            c.id === campaign.id ? { ...c, status: c.status === 'active' ? 'paused' : 'active' } : c
+                            c.id === campaign.id ? { ...c, status: (c.status === 'active' ? 'paused' : 'active') as 'active' | 'paused' } : c
                           );
-                          setScheduledCampaigns(updated as any);
+                          setScheduledCampaigns(updated);
                         }}
                       >
                         {campaign.status === 'active' ? 'Pause' : 'Activate'}
@@ -559,6 +487,107 @@ export default function DemoPage() {
               Business Settings
             </TabsTrigger>
           </TabsList>
+
+          {/* Pre-Launch Checklist Banner */}
+          {!demoBusiness.isLive && (
+            <Card className="mb-6 border-2 border-orange-300 bg-gradient-to-r from-orange-50 to-amber-50">
+              <div className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="h-12 w-12 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-orange-900 mb-2">
+                      🚀 Pre-Launch Checklist
+                    </h3>
+                    <p className="text-sm text-orange-800 mb-4">
+                      Complete these integrations before going live. Once done, your dashboard will populate with real data.
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-3 mb-4">
+                      <div className="bg-white rounded-lg p-3 border border-orange-200">
+                        <div className="flex items-start gap-2">
+                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-slate-900 text-sm">Twilio SMS Integration</p>
+                            <p className="text-xs text-slate-600 mt-1">Required for automated referral tracking & reward notifications</p>
+                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Add Twilio credentials to .env</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white rounded-lg p-3 border border-orange-200">
+                        <div className="flex items-start gap-2">
+                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-slate-900 text-sm">Supabase Database Schema</p>
+                            <p className="text-xs text-slate-600 mt-1">Tables for customers, referrals, campaigns need to be created</p>
+                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Run supabase/schema.sql migrations</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white rounded-lg p-3 border border-orange-200">
+                        <div className="flex items-start gap-2">
+                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-slate-900 text-sm">Authentication & RLS Policies</p>
+                            <p className="text-xs text-slate-600 mt-1">Row-level security policies for multi-tenant data isolation</p>
+                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Configure Supabase RLS in dashboard</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white rounded-lg p-3 border border-orange-200">
+                        <div className="flex items-start gap-2">
+                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-slate-900 text-sm">Campaign Scheduler (Cron)</p>
+                            <p className="text-xs text-slate-600 mt-1">Background jobs for automated campaign execution</p>
+                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Deploy cron worker to Vercel/Railway</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white rounded-lg p-3 border border-orange-200">
+                        <div className="flex items-start gap-2">
+                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-slate-900 text-sm">Customer CSV Import</p>
+                            <p className="text-xs text-slate-600 mt-1">Upload your existing customer list to start inviting ambassadors</p>
+                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Use CSV upload in Clients tab</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white rounded-lg p-3 border border-orange-200">
+                        <div className="flex items-start gap-2">
+                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-slate-900 text-sm">Payment Gateway (Optional)</p>
+                            <p className="text-xs text-slate-600 mt-1">Stripe integration for subscription billing</p>
+                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Connect Stripe in Business Settings</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 pt-2">
+                      <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                        <Zap className="mr-2 h-4 w-4" />
+                        Start Setup Guide
+                      </Button>
+                      <Link href="/login">
+                        <Button variant="outline" className="border-orange-300">
+                          View Documentation
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          )}
 
           <TabsContent value="analytics" className="space-y-6">
             {/* Key Metrics */}
@@ -870,6 +899,27 @@ export default function DemoPage() {
 
           <TabsContent value="referrals">
             <Card className="p-6">
+              <div className="mb-4 rounded-xl bg-purple-50 border border-purple-200 p-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5" />
+                  <div className="space-y-2">
+                    <div>
+                      <p className="font-semibold text-purple-900">Live Supabase logging</p>
+                      <p className="text-sm text-purple-800">
+                        Submit the demo referral form and the entry is saved to Supabase through our secured API—exactly how the real product tracks referrals.
+                      </p>
+                    </div>
+                    <Link
+                      href="/r/demo-referral"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-purple-700 hover:text-purple-900"
+                    >
+                      Open the demo referral page
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
               <div className="mb-6 rounded-xl bg-green-50 border border-green-200 p-4">
                 <div className="flex items-start gap-3">
                   <Zap className="h-5 w-5 text-green-600 mt-0.5" />

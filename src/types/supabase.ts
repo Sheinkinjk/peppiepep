@@ -114,6 +114,35 @@ export interface Database {
           updated_at?: string | null;
         };
       };
+      demo_referrals: {
+        Row: {
+          id: string;
+          name: string | null;
+          phone: string | null;
+          email: string | null;
+          source: string | null;
+          context: string | null;
+          created_at?: string | null;
+        };
+        Insert: {
+          id?: string;
+          name?: string | null;
+          phone?: string | null;
+          email?: string | null;
+          source?: string | null;
+          context?: string | null;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          name?: string | null;
+          phone?: string | null;
+          email?: string | null;
+          source?: string | null;
+          context?: string | null;
+          created_at?: string | null;
+        };
+      };
     };
   };
 }

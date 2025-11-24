@@ -131,3 +131,16 @@ create policy if not exists "Owners can update referrals"
   ));
 
 -- Service role bypasses RLS automatically.
+
+-- Demo referral captures (service role writes only)
+create table if not exists public.demo_referrals (
+  id uuid primary key default gen_random_uuid(),
+  name text,
+  phone text,
+  email text,
+  source text,
+  context text,
+  created_at timestamptz default now()
+);
+
+alter table public.demo_referrals enable row level security;

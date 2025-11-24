@@ -10,11 +10,45 @@ import Link from "next/link";
 
 export default function DemoReferralPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "" });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/demo-referrals", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: "demo-referral-page",
+          context: {
+            path: "/r/demo-referral",
+            referrer:
+              typeof document !== "undefined" ? document.referrer || null : null,
+          },
+        }),
+      });
+
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(payload.error || "Failed to submit referral");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -29,9 +63,12 @@ export default function DemoReferralPage() {
               <CheckCircle2 className="h-8 w-8 text-green-600" />
             </div>
 
-            <h1 className="mb-2 text-3xl font-bold text-slate-900">You're all set, {formData.name}!</h1>
-            <p className="mb-6 text-lg leading-relaxed text-slate-700">
-              We've sent a confirmation SMS to <span className="font-semibold">{formData.phone}</span>.
+            <h1 className="mb-2 text-3xl font-bold text-slate-900">You are all set, {formData.name}!</h1>
+            <p className="mb-3 text-lg leading-relaxed text-slate-700">
+              We have sent a confirmation SMS to <span className="font-semibold">{formData.phone}</span>.
+            </p>
+            <p className="mb-6 text-sm text-slate-500">
+              (Saved to Supabase so you can see how real referrals get tracked.)
             </p>
 
             <div className="w-full rounded-lg bg-purple-50 p-4 mb-6">
@@ -39,7 +76,7 @@ export default function DemoReferralPage() {
               <ul className="text-sm text-purple-800 space-y-2 text-left">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-0.5">•</span>
-                  <span>You'll receive a booking link via SMS within 5 minutes</span>
+                  <span>You will receive a booking link via SMS within 5 minutes</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-0.5">•</span>
@@ -84,7 +121,7 @@ export default function DemoReferralPage() {
             </div>
           </div>
 
-          <h1 className="mb-2 text-3xl font-bold text-slate-900">You've been hooked up!</h1>
+          <h1 className="mb-2 text-3xl font-bold text-slate-900">You have been hooked up!</h1>
           <p className="mb-6 text-lg leading-relaxed text-slate-700">
             <span className="font-semibold text-slate-900">Sarah Mitchell</span> wants you to get{" "}
             <span className="font-semibold text-purple-700">20% off your first visit</span> at{" "}
@@ -106,7 +143,7 @@ export default function DemoReferralPage() {
                 required
                 placeholder="Your full name"
                 value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
             </div>
             <div>
@@ -118,12 +155,29 @@ export default function DemoReferralPage() {
                 required
                 placeholder="+61 400 123 456"
                 value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              />
+            </div>
+            <div>
+              <Label htmlFor="email">Email (optional)</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
             </div>
 
-            <Button type="submit" size="lg" className="w-full">
-              Claim My 20% Off
+            {error && (
+              <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-800">
+                {error}
+              </div>
+            )}
+
+            <Button type="submit" size="lg" className="w-full" disabled={loading}>
+              {loading ? "Saving..." : "Claim My 20% Off"}
             </Button>
           </form>
 
@@ -144,7 +198,7 @@ export default function DemoReferralPage() {
           </div>
 
           <p className="mt-6 text-center text-xs text-slate-400">
-            Powered by <Link href="/" className="font-semibold text-purple-600 hover:text-purple-700">Pepform</Link>
+            Powered by <Link href="/" className="font-semibold text-purple-600 hover:text-purple-700">Pepform</Link>. We log demo submissions to Supabase to mirror real tracking.
           </p>
         </div>
       </Card>

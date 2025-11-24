@@ -37,7 +37,7 @@ async function getBusiness() {
     .single();
 
   if (!data) {
-    // ts: align types once generated from Supabase; casting for now to satisfy build.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const supabaseAny = supabase as any;
     const { data: newBiz } = await supabaseAny
       .from("businesses")
@@ -65,6 +65,7 @@ export default async function Dashboard() {
   async function updateSettings(formData: FormData) {
     "use server";
     const supabase = createServerComponentClient();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const supabaseAny = supabase as any;
     await supabaseAny
       .from("businesses")
@@ -90,7 +91,6 @@ export default async function Dashboard() {
     const parsed = Papa.parse<Record<string, string>>(text, { header: true });
 
     const supabase = createServiceClient(); // service role to bypass RLS for bulk insert
-    const supabaseAny = supabase as any;
 
     const customersToInsert = (parsed.data || [])
       .map((row) => ({
@@ -106,7 +106,8 @@ export default async function Dashboard() {
       return;
     }
 
-    await supabaseAny.from("customers").insert(customersToInsert);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await (supabase as any).from("customers").insert(customersToInsert);
     revalidatePath("/dashboard");
   }
 
@@ -117,12 +118,12 @@ export default async function Dashboard() {
     if (!referralId || !ambassadorId) return;
 
     const supabase = createServiceClient();
-    const supabaseAny = supabase as any;
 
     const amount =
       business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
 
-    await supabaseAny
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await (supabase as any)
       .from("referrals")
       .update({ status: "completed", rewarded_at: new Date().toISOString() })
       .eq("id", referralId);
@@ -131,7 +132,8 @@ export default async function Dashboard() {
     let ambassadorReferralCode: string | null | undefined;
 
     if (amount > 0) {
-      const { data: ambassador } = await supabaseAny
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: ambassador } = await (supabase as any)
         .from("customers")
         .select("credits, phone, referral_code")
         .eq("id", ambassadorId)
@@ -141,12 +143,14 @@ export default async function Dashboard() {
       ambassadorPhone = ambassador?.phone;
       ambassadorReferralCode = ambassador?.referral_code;
 
-      await supabaseAny
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      await (supabase as any)
         .from("customers")
         .update({ credits: currentCredits + amount })
         .eq("id", ambassadorId);
     } else {
-      const { data: ambassador } = await supabaseAny
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: ambassador } = await (supabase as any)
         .from("customers")
         .select("phone, referral_code")
         .eq("id", ambassadorId)
@@ -176,25 +180,27 @@ export default async function Dashboard() {
   }
 
   const supabase = createServerComponentClient();
-  const { data: customers = [] } = await supabase
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { data: customers = [] } = await (supabase as any)
     .from("customers")
     .select("id,status,credits,name,phone,email,referral_code")
     .eq("business_id", business.id);
 
-  const { data: referrals = [] } = await supabase
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { data: referrals = [] } = await (supabase as any)
     .from("referrals")
     .select(
       "id,status,ambassador_id,referred_name,referred_email,referred_phone,created_at",
     )
     .eq("business_id", business.id);
 
-  const safeReferrals = (referrals ?? []) as any[];
-  const safeCustomers = (customers ?? []) as any[];
+  const safeReferrals = referrals ?? [];
+  const safeCustomers = customers ?? [];
 
   const pendingReferrals =
-    safeReferrals.filter((r) => r.status === "pending").length || 0;
+    safeReferrals.filter((r: any) => r.status === "pending").length || 0;
   const totalRewards =
-    safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
+    safeCustomers.reduce((sum: number, c: any) => sum + (c.credits ?? 0), 0) || 0;
 
   return (
     <div className="mx-auto max-w-5xl p-8">
@@ -307,7 +313,7 @@ export default async function Dashboard() {
                       </TableCell>
                     </TableRow>
                   )}
-                  {safeCustomers.map((customer) => {
+                  {safeCustomers.map((customer: any) => {
                     const referralLink = customer.referral_code
                       ? `${siteUrl}/r/${customer.referral_code}`
                       : null;
@@ -356,9 +362,9 @@ export default async function Dashboard() {
                       </TableCell>
                     </TableRow>
                   )}
-                  {safeReferrals.map((referral) => {
+                  {safeReferrals.map((referral: any) => {
                     const ambassador = safeCustomers.find(
-                      (c) => c.id === referral.ambassador_id,
+                      (c: any) => c.id === referral.ambassador_id,
                     );
                     const isPending = referral.status === "pending";
                     return (

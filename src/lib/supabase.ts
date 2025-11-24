@@ -4,7 +4,8 @@ import { Database } from "@/types/supabase";
 
 // For server components and server actions (uses anon key + cookies)
 export const createServerComponentClient = () => {
-  const cookieStore = cookies() as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const cookieStore = cookies() as any; // Allows cookie mutation in RSC
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -31,7 +32,8 @@ export const createServerComponentClient = () => {
 
 // For server actions / route handlers (bypasses RLS when needed).
 export const createServiceClient = () => {
-  const cookieStore = cookies() as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const cookieStore = cookies() as any; // Allows cookie mutation in server actions
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,

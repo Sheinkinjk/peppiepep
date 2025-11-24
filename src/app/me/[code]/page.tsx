@@ -33,26 +33,30 @@ export default async function AmbassadorPortal({ params }: AmbassadorPortalProps
     );
   }
 
-  const customerAny = customer as any;
+  type CustomerWithRelations = Database["public"]["Tables"]["customers"]["Row"] & {
+    business: Database["public"]["Tables"]["businesses"]["Row"] | null;
+    referrals: Database["public"]["Tables"]["referrals"]["Row"][] | null;
+  };
+
+  const customerWithRelations = customer as CustomerWithRelations;
 
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-  const fullReferralLink = `${siteUrl}/r/${customerAny.referral_code}`;
+  const fullReferralLink = `${siteUrl}/r/${customerWithRelations.referral_code ?? ""}`;
 
-  const referrals =
-    (customerAny.referrals as Database["public"]["Tables"]["referrals"]["Row"][]) || [];
+  const referrals = customerWithRelations.referrals || [];
 
   const pending = referrals.filter((r) => r.status === "pending").length || 0;
   const completed =
     referrals.filter((r) => r.status === "completed").length || 0;
-  const earned = customerAny.credits || 0;
+  const earned = customerWithRelations.credits || 0;
 
-  const offerText = customerAny.business?.offer_text || "an offer";
-  const businessName = customerAny.business?.name || "our business";
+  const offerText = customerWithRelations.business?.offer_text || "an offer";
+  const businessName = customerWithRelations.business?.name || "our business";
 
   const shareText = encodeURIComponent(
-    `Hey! ${customerAny.name || "A friend"} hooked you up – get ${offerText} at ${businessName} 👇`,
+    `Hey! ${customerWithRelations.name || "A friend"} hooked you up – get ${offerText} at ${businessName} 👇`,
   );
   const whatsappUrl = `https://wa.me/?text=${shareText}%20${encodeURIComponent(fullReferralLink)}`;
   const smsUrl = `sms:?body=${shareText}%20${encodeURIComponent(fullReferralLink)}`;
@@ -61,7 +65,7 @@ export default async function AmbassadorPortal({ params }: AmbassadorPortalProps
 
   return (
     <AmbassadorPortalClient
-      customerName={customerAny.name}
+      customerName={customerWithRelations.name || "Ambassador"}
       fullReferralLink={fullReferralLink}
       pending={pending}
       completed={completed}

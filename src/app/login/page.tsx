@@ -59,8 +59,10 @@ export default function LoginPage() {
         if (signInError) throw signInError;
         router.push("/dashboard");
       }
-    } catch (err: any) {
-      setError(err.message || "Authentication failed");
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : "Authentication failed";
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -101,8 +103,8 @@ export default function LoginPage() {
       }
 
       // Real users: create in Supabase
-      const supabaseAny = supabase as any;
-      const { error: insertError } = await supabaseAny
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: insertError } = await (supabase as any)
         .from("businesses")
         .insert([{
           owner_id: user!.id,
@@ -115,8 +117,10 @@ export default function LoginPage() {
       if (insertError) throw insertError;
 
       router.push("/dashboard");
-    } catch (err: any) {
-      setError(err.message || "Failed to create business profile");
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : "Failed to create business profile";
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -284,7 +288,7 @@ export default function LoginPage() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700">
-                    <strong>Convert anytime</strong> — Upgrade to a real account when you're ready
+                    <strong>Convert anytime</strong> — Upgrade to a real account when you are ready
                   </p>
                 </div>
               </div>
