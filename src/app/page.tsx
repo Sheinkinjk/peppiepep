@@ -390,6 +390,65 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="space-y-6 rounded-3xl bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 shadow-2xl text-white">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-purple-500/20 px-3 py-1 text-xs font-semibold text-purple-200 ring-1 ring-purple-400/30 mb-4">
+              Market Opportunity
+            </div>
+            <h2 className="text-3xl font-bold mb-4">
+              Why referral automation matters now
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-xl bg-white/10 backdrop-blur p-6 border border-white/20">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-10 w-10 rounded-full bg-purple-500/30 flex items-center justify-center">
+                  <TrendingUp className="h-5 w-5 text-purple-300" />
+                </div>
+                <p className="text-4xl font-bold text-white">$6B</p>
+              </div>
+              <p className="text-sm text-purple-200 leading-relaxed">
+                Global referral marketing market size, growing at 24% annually as businesses shift from paid ads to word-of-mouth
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-white/10 backdrop-blur p-6 border border-white/20">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-10 w-10 rounded-full bg-pink-500/30 flex items-center justify-center">
+                  <Users className="h-5 w-5 text-pink-300" />
+                </div>
+                <p className="text-4xl font-bold text-white">2.8M</p>
+              </div>
+              <p className="text-sm text-purple-200 leading-relaxed">
+                Service businesses in Australia alone—salons, studios, clinics, wellness—losing 40%+ of referral revenue to poor tracking
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-white/10 backdrop-blur p-6 border border-white/20">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-10 w-10 rounded-full bg-green-500/30 flex items-center justify-center">
+                  <Sparkles className="h-5 w-5 text-green-300" />
+                </div>
+                <p className="text-4xl font-bold text-white">83%</p>
+              </div>
+              <p className="text-sm text-purple-200 leading-relaxed">
+                Of consumers trust recommendations from friends and family over any other form of advertising—yet most businesses have no system to capture this
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur p-6 border border-purple-400/30">
+            <h3 className="text-xl font-bold mb-3 text-white">The Problem We're Solving</h3>
+            <p className="text-purple-100 leading-relaxed mb-4">
+              Service businesses know referrals are their best growth channel—higher conversion, lower cost, better retention. But tracking who referred who, calculating rewards, and keeping ambassadors engaged requires manual work that nobody has time for.
+            </p>
+            <p className="text-purple-100 leading-relaxed">
+              Pepform automates the entire referral lifecycle in one platform: link generation, tracking, rewards, and SMS notifications. We turn referrals from a manual headache into a compounding growth engine.
+            </p>
+          </div>
+        </section>
+
         <section className="rounded-3xl bg-white/80 p-8 shadow-xl ring-1 ring-slate-100 backdrop-blur">
           <div className="mx-auto max-w-3xl space-y-6">
             <div className="text-center">
