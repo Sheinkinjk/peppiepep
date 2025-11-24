@@ -8,7 +8,7 @@ import {
   ArrowRight, X, TrendingUp, Users, DollarSign, Zap, Copy, CheckCircle2,
   BarChart3, Clock, ChevronDown, ChevronUp, Send,
   Settings as SettingsIcon, Bell, CreditCard, Building2, Mail, Phone,
-  Calendar, Target, Activity, PieChart, QrCode, Plus
+  Calendar, Target, Activity, PieChart, QrCode, Plus, Bot, Sparkles, Award, TrendingDown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -25,6 +25,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import QRCodeGenerator from "@/components/QRCodeGenerator";
+import AIChatbotOnboarding from "@/components/AIChatbotOnboarding";
+import { rankAmbassadors, type ScoredCustomer } from "@/lib/ai-scoring";
+import { calculateROIForecast, type ROIForecast } from "@/lib/ai-roi-calculator";
 
 // Enhanced demo data - PRE-LAUNCH STATE (showing realistic starting point)
 const demoBusiness = {
@@ -135,62 +138,19 @@ export default function DemoPage() {
   // Editable business settings
   const [rewardAmount, setRewardAmount] = useState(15);
   const [offerText, setOfferText] = useState("20% off your first visit");
-  const [customers, setCustomers] = useState(demoCustomers);
-  const [isLaunching, setIsLaunching] = useState(false);
-  const [launchProgress, setLaunchProgress] = useState(0);
-  const [showTestCampaignModal, setShowTestCampaignModal] = useState(false);
-  const [hasLaunched, setHasLaunched] = useState(false);
+  const [customers] = useState(demoCustomers);
+
+  // AI features state
+  const [showAIChatbot, setShowAIChatbot] = useState(false);
+  const [showAIScoring, setShowAIScoring] = useState(false);
+  const [showROICalculator, setShowROICalculator] = useState(false);
+  const [showMessageGenerator, setShowMessageGenerator] = useState(false);
+  const [generatedMessages, setGeneratedMessages] = useState<string[]>([]);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [scoredCustomers, setScoredCustomers] = useState<ScoredCustomer[]>([]);
+  const [roiForecast, setROIForecast] = useState<ROIForecast | null>(null);
 
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://peppiepep.vercel.app';
-
-  // Launch test campaign function
-  const launchTestCampaign = () => {
-    setIsLaunching(true);
-    setLaunchProgress(0);
-    setShowTestCampaignModal(true);
-
-    // Simulate sending campaign
-    const interval = setInterval(() => {
-      setLaunchProgress(prev => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            populateDemoData();
-            setIsLaunching(false);
-            setShowTestCampaignModal(false);
-            setHasLaunched(true);
-            setShowSuccessAnimation(true);
-            setTimeout(() => setShowSuccessAnimation(false), 3000);
-          }, 500);
-          return 100;
-        }
-        return prev + 20;
-      });
-    }, 300);
-  };
-
-  // Populate demo with realistic data
-  const populateDemoData = () => {
-    // Update customers with activity
-    const updatedCustomers = customers.map((c, idx) => {
-      if (idx === 0) return { ...c, credits: 45, status: 'active', referrals_made: 3, total_value_generated: 360, last_referral: new Date().toISOString().split('T')[0] as string | null };
-      if (idx === 1) return { ...c, credits: 30, status: 'active', referrals_made: 2, total_value_generated: 240, last_referral: new Date().toISOString().split('T')[0] as string | null };
-      if (idx === 2) return { ...c, credits: 15, status: 'active', referrals_made: 1, total_value_generated: 120, last_referral: new Date().toISOString().split('T')[0] as string | null };
-      return c;
-    });
-    setCustomers(updatedCustomers as typeof demoCustomers);
-
-    // Add referrals
-    const newReferrals = [
-      { id: "1", ambassador_id: "1", referred_name: "Lucy Wilson", referred_email: "lucy@example.com", referred_phone: "+61 400 111 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
-      { id: "2", ambassador_id: "1", referred_name: "Michael Brown", referred_email: "michael@example.com", referred_phone: "+61 400 222 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
-      { id: "3", ambassador_id: "2", referred_name: "Rachel Green", referred_email: "rachel@example.com", referred_phone: "+61 400 333 000", status: "pending", created_at: new Date().toISOString(), value: 120 },
-      { id: "4", ambassador_id: "1", referred_name: "Tom Harris", referred_email: "tom@example.com", referred_phone: "+61 400 444 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
-      { id: "5", ambassador_id: "2", referred_name: "Jenny Clark", referred_email: "jenny@example.com", referred_phone: "+61 400 555 000", status: "completed", created_at: new Date().toISOString(), value: 120 },
-      { id: "6", ambassador_id: "3", referred_name: "David Lee", referred_email: "david@example.com", referred_phone: "+61 400 666 000", status: "pending", created_at: new Date().toISOString(), value: 120 },
-    ];
-    setSimulatedReferrals(newReferrals);
-  };
 
   const pendingReferrals = simulatedReferrals.filter((r) => r.status === "pending").length;
   const completedReferrals = simulatedReferrals.filter((r) => r.status === "completed").length;
@@ -231,6 +191,54 @@ export default function DemoPage() {
     .sort((a, b) => b.total_value_generated - a.total_value_generated)
     .slice(0, 5);
 
+  // AI Functions
+  const handleGenerateMessages = async () => {
+    setIsGenerating(true);
+    try {
+      const response = await fetch('/api/generate-message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          businessName: demoBusiness.name,
+          businessType: 'beauty salon',
+          offerText,
+          tone: 'friendly and casual',
+        }),
+      });
+      const data = await response.json();
+      setGeneratedMessages(data.messages || []);
+      setShowMessageGenerator(true);
+    } catch (error) {
+      console.error('Error generating messages:', error);
+      setGeneratedMessages([
+        `Hey! I just hooked you up with ${offerText} at ${demoBusiness.name}. You'll love it! 🌟`,
+        `Legend! I got you ${offerText} at ${demoBusiness.name}. Trust me on this one! 💯`,
+      ]);
+      setShowMessageGenerator(true);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const handleCalculateScores = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const scored = rankAmbassadors(customers as any, demoBusiness.avg_transaction);
+    setScoredCustomers(scored);
+    setShowAIScoring(true);
+  };
+
+  const handleCalculateROI = () => {
+    const forecast = calculateROIForecast({
+      totalAmbassadors: customers.length,
+      avgTransactionValue: demoBusiness.avg_transaction,
+      rewardAmount,
+      monthlyCustomers: demoBusiness.monthly_customers,
+      industryType: 'beauty',
+    });
+    setROIForecast(forecast);
+    setShowROICalculator(true);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Demo Banner */}
@@ -244,6 +252,10 @@ export default function DemoPage() {
             <span className="hidden sm:block text-sm opacity-90">
               Fully interactive • All features enabled
             </span>
+            <div className="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur">
+              <Sparkles className="h-3.5 w-3.5 text-yellow-300" />
+              <span className="text-xs font-semibold">AI-Powered</span>
+            </div>
           </div>
           <div className="flex items-center gap-3">
             <Link
@@ -482,40 +494,6 @@ export default function DemoPage() {
         </div>
       )}
 
-      {/* Test Campaign Launch Modal */}
-      {showTestCampaignModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-          <Card className="w-full max-w-lg p-8">
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center mx-auto mb-4">
-                <Send className="h-8 w-8 text-white animate-pulse" />
-              </div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">Launching Test Campaign</h2>
-              <p className="text-slate-600 mb-6">
-                Sending SMS invites to {customers.length} ambassadors...
-              </p>
-
-              <div className="w-full bg-slate-200 rounded-full h-4 mb-4 overflow-hidden">
-                <div
-                  className="bg-gradient-to-r from-green-600 to-emerald-500 h-4 rounded-full transition-all duration-300 ease-out"
-                  style={{ width: `${launchProgress}%` }}
-                />
-              </div>
-
-              <p className="text-sm font-semibold text-slate-700">{launchProgress}% Complete</p>
-
-              <div className="mt-6 text-xs text-slate-500 space-y-1">
-                {launchProgress >= 20 && <p>✓ SMS messages queued</p>}
-                {launchProgress >= 40 && <p>✓ Ambassador links generated</p>}
-                {launchProgress >= 60 && <p>✓ Campaigns sent to {customers.length} ambassadors</p>}
-                {launchProgress >= 80 && <p>✓ Tracking links activated</p>}
-                {launchProgress === 100 && <p className="text-green-600 font-semibold">✓ Campaign launched successfully!</p>}
-              </div>
-            </div>
-          </Card>
-        </div>
-      )}
-
       <div className="mx-auto max-w-7xl p-4 sm:p-8">
         {/* Header */}
         <div className="mb-8">
@@ -531,13 +509,23 @@ export default function DemoPage() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
+              <Button
+                onClick={() => setShowAIChatbot(true)}
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-lg"
+              >
+                <Bot className="mr-2 h-4 w-4" />
+                <span className="flex items-center gap-1.5">
+                  AI Setup Assistant
+                  <Sparkles className="h-3 w-3" />
+                </span>
+              </Button>
               <Button
                 onClick={() => setShowCampaignModal(true)}
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg"
               >
                 <Send className="mr-2 h-4 w-4" />
-                Start New Campaign
+                Start Campaign
               </Button>
               <Button
                 onClick={() => setShowScheduler(true)}
@@ -545,7 +533,8 @@ export default function DemoPage() {
                 className="border-purple-300 hover:bg-purple-50"
               >
                 <Clock className="mr-2 h-4 w-4" />
-                Scheduled Campaigns ({scheduledCampaigns.filter(c => c.status === 'active').length})
+                <span className="hidden sm:inline">Scheduled ({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
+                <span className="sm:hidden">({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
               </Button>
               <Link
                 href="/login"
@@ -559,132 +548,35 @@ export default function DemoPage() {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-5 mb-6">
+          <TabsList className="grid w-full grid-cols-6 mb-6">
             <TabsTrigger value="analytics">
               <BarChart3 className="h-4 w-4 mr-2" />
-              Analytics
+              <span className="hidden sm:inline">Analytics</span>
+            </TabsTrigger>
+            <TabsTrigger value="ai-tools">
+              <div className="flex items-center gap-1.5">
+                <Sparkles className="h-4 w-4" />
+                <span className="hidden sm:inline">AI Tools</span>
+                <span className="inline sm:hidden">AI</span>
+              </div>
             </TabsTrigger>
             <TabsTrigger value="clients">
               <Users className="h-4 w-4 mr-2" />
-              Clients
+              <span className="hidden sm:inline">Clients</span>
             </TabsTrigger>
             <TabsTrigger value="referrals">
-              Referrals ({pendingReferrals})
+              <span className="hidden sm:inline">Referrals ({pendingReferrals})</span>
+              <span className="inline sm:hidden">Refs</span>
             </TabsTrigger>
             <TabsTrigger value="rewards">
               <Zap className="h-4 w-4 mr-2" />
-              Settings & Rewards
+              <span className="hidden sm:inline">Rewards</span>
             </TabsTrigger>
             <TabsTrigger value="settings">
               <SettingsIcon className="h-4 w-4 mr-2" />
-              Business Settings
+              <span className="hidden sm:inline">Settings</span>
             </TabsTrigger>
           </TabsList>
-
-          {/* Pre-Launch Checklist Banner */}
-          {!demoBusiness.isLive && (
-            <Card className="mb-6 border-2 border-orange-300 bg-gradient-to-r from-orange-50 to-amber-50">
-              <div className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-orange-900 mb-2">
-                      🚀 Pre-Launch Checklist
-                    </h3>
-                    <p className="text-sm text-orange-800 mb-4">
-                      Complete these integrations before going live. Once done, your dashboard will populate with real data.
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-3 mb-4">
-                      <div className="bg-white rounded-lg p-3 border border-orange-200">
-                        <div className="flex items-start gap-2">
-                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-semibold text-slate-900 text-sm">Twilio SMS Integration</p>
-                            <p className="text-xs text-slate-600 mt-1">Required for automated referral tracking & reward notifications</p>
-                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Add Twilio credentials to .env</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-lg p-3 border border-orange-200">
-                        <div className="flex items-start gap-2">
-                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-semibold text-slate-900 text-sm">Supabase Database Schema</p>
-                            <p className="text-xs text-slate-600 mt-1">Tables for customers, referrals, campaigns need to be created</p>
-                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Run supabase/schema.sql migrations</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-lg p-3 border border-orange-200">
-                        <div className="flex items-start gap-2">
-                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-semibold text-slate-900 text-sm">Authentication & RLS Policies</p>
-                            <p className="text-xs text-slate-600 mt-1">Row-level security policies for multi-tenant data isolation</p>
-                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Configure Supabase RLS in dashboard</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-lg p-3 border border-orange-200">
-                        <div className="flex items-start gap-2">
-                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-semibold text-slate-900 text-sm">Campaign Scheduler (Cron)</p>
-                            <p className="text-xs text-slate-600 mt-1">Background jobs for automated campaign execution</p>
-                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Deploy cron worker to Vercel/Railway</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-lg p-3 border border-orange-200">
-                        <div className="flex items-start gap-2">
-                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-semibold text-slate-900 text-sm">Customer CSV Import</p>
-                            <p className="text-xs text-slate-600 mt-1">Upload your existing customer list to start inviting ambassadors</p>
-                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Use CSV upload in Clients tab</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-lg p-3 border border-orange-200">
-                        <div className="flex items-start gap-2">
-                          <X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-semibold text-slate-900 text-sm">Payment Gateway (Optional)</p>
-                            <p className="text-xs text-slate-600 mt-1">Stripe integration for subscription billing</p>
-                            <p className="text-xs text-orange-700 mt-1 font-medium">Setup: Connect Stripe in Business Settings</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 pt-2">
-                      <Button
-                        onClick={launchTestCampaign}
-                        disabled={hasLaunched}
-                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <Zap className="mr-2 h-4 w-4" />
-                        {hasLaunched ? "Campaign Launched!" : "Launch Test Campaign (Demo)"}
-                      </Button>
-                      <Link href="/login">
-                        <Button variant="outline" className="border-orange-300">
-                          View Setup Guide
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          )}
 
           <TabsContent value="analytics" className="space-y-6">
             {/* Key Metrics */}
@@ -821,6 +713,136 @@ export default function DemoPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="ai-tools" className="space-y-6">
+            {/* AI Tools Header */}
+            <div className="rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sparkles className="h-6 w-6" />
+                    <h2 className="text-2xl font-bold">AI-Powered Intelligence</h2>
+                  </div>
+                  <p className="text-white/90 max-w-2xl">
+                    Leverage artificial intelligence to optimize your referral program, predict ROI, and identify your best ambassadors automatically.
+                  </p>
+                </div>
+                <div className="px-4 py-2 rounded-lg bg-white/20 backdrop-blur">
+                  <p className="text-xs font-semibold">Powered by GPT-4</p>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Tools Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* AI Ambassador Scoring */}
+              <Card className="p-6 border-2 border-purple-200 hover:border-purple-400 transition-colors">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center">
+                    <Award className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold">AI-Powered</span>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Ambassador Scoring</h3>
+                <p className="text-sm text-slate-600 mb-4">
+                  AI analyzes customer behavior to predict which ambassadors will be your top performers. Get actionable insights instantly.
+                </p>
+                <Button
+                  onClick={handleCalculateScores}
+                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+                >
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  Rank My Ambassadors
+                </Button>
+              </Card>
+
+              {/* ROI Predictor */}
+              <Card className="p-6 border-2 border-green-200 hover:border-green-400 transition-colors">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center">
+                    <TrendingUp className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold">Predictive</span>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">ROI Calculator</h3>
+                <p className="text-sm text-slate-600 mb-4">
+                  Forecast your referral program revenue for the next 30, 60, and 90 days using ML-powered predictions.
+                </p>
+                <Button
+                  onClick={handleCalculateROI}
+                  className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
+                >
+                  <DollarSign className="mr-2 h-4 w-4" />
+                  Calculate ROI Forecast
+                </Button>
+              </Card>
+
+              {/* Message Generator */}
+              <Card className="p-6 border-2 border-pink-200 hover:border-pink-400 transition-colors">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-pink-600 to-rose-600 flex items-center justify-center">
+                    <Send className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-semibold">GPT-4</span>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Smart Message Generator</h3>
+                <p className="text-sm text-slate-600 mb-4">
+                  Generate personalized referral messages that sound authentic and convert. AI learns your brand voice.
+                </p>
+                <Button
+                  onClick={handleGenerateMessages}
+                  disabled={isGenerating}
+                  className="w-full bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700"
+                >
+                  <Bot className="mr-2 h-4 w-4" />
+                  {isGenerating ? 'Generating...' : 'Generate Messages'}
+                </Button>
+              </Card>
+
+              {/* AI Setup Assistant */}
+              <Card className="p-6 border-2 border-indigo-200 hover:border-indigo-400 transition-colors">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center">
+                    <Bot className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-semibold">Interactive</span>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">AI Setup Assistant</h3>
+                <p className="text-sm text-slate-600 mb-4">
+                  Chat with our AI to set up your first campaign in under 5 minutes. No technical knowledge needed.
+                </p>
+                <Button
+                  onClick={() => setShowAIChatbot(true)}
+                  className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700"
+                >
+                  <Bot className="mr-2 h-4 w-4" />
+                  Launch AI Assistant
+                </Button>
+              </Card>
+            </div>
+
+            {/* AI Benefits Banner */}
+            <Card className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-purple-600" />
+                Why AI-Powered?
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">Save Time</h4>
+                  <p className="text-sm text-slate-600">AI automates tedious tasks like scoring ambassadors and writing messages, saving you hours per week.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">Increase ROI</h4>
+                  <p className="text-sm text-slate-600">Predictive analytics help you optimize rewards and identify high-performers before they prove themselves.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 mb-1">Better Results</h4>
+                  <p className="text-sm text-slate-600">AI-generated messages convert 2-3x better than generic templates by sounding authentic and personal.</p>
+                </div>
               </div>
             </Card>
           </TabsContent>
@@ -1388,6 +1410,223 @@ export default function DemoPage() {
           </TabsContent>
         </Tabs>
       </div>
+
+      {/* AI Chatbot Modal */}
+      {showAIChatbot && (
+        <AIChatbotOnboarding
+          onComplete={(data) => {
+            setShowAIChatbot(false);
+            // Could update demo business settings here
+            console.log('Onboarding completed:', data);
+          }}
+          onClose={() => setShowAIChatbot(false)}
+        />
+      )}
+
+      {/* AI Scoring Modal */}
+      {showAIScoring && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-gradient-to-r from-purple-600 to-indigo-600 p-6 text-white z-10">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold flex items-center gap-2">
+                    <Award className="h-6 w-6" />
+                    AI Ambassador Rankings
+                  </h2>
+                  <p className="text-white/90 mt-1">Powered by machine learning algorithms</p>
+                </div>
+                <Button variant="ghost" size="sm" onClick={() => setShowAIScoring(false)} className="text-white hover:bg-white/20">
+                  <X className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+            <div className="p-6 space-y-4">
+              {scoredCustomers.slice(0, 10).map((customer, idx) => (
+                <Card key={customer.id} className="p-4 border-2 border-purple-200 hover:border-purple-400 transition-colors">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-4 flex-1">
+                      <div className="flex flex-col items-center gap-1">
+                        <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold ${
+                          idx === 0 ? 'bg-yellow-400 text-yellow-900' :
+                          idx === 1 ? 'bg-slate-300 text-slate-700' :
+                          idx === 2 ? 'bg-orange-400 text-orange-900' :
+                          'bg-purple-100 text-purple-700'
+                        }`}>
+                          #{idx + 1}
+                        </div>
+                        <span className="text-xs font-semibold text-slate-600">{customer.aiScore}/100</span>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-slate-900">{customer.name}</h3>
+                        <p className="text-sm text-slate-600 mt-1">{customer.aiInsight}</p>
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          <span className="px-2 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold">
+                            Activity: {customer.scoreBreakdown.activity}/25
+                          </span>
+                          <span className="px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+                            Performance: {customer.scoreBreakdown.performance}/30
+                          </span>
+                          <span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold">
+                            Recency: {customer.scoreBreakdown.recency}/25
+                          </span>
+                          <span className="px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-semibold">
+                            Potential: {customer.scoreBreakdown.potential}/20
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      customer.recommendation === 'high-priority' ? 'bg-green-100 text-green-700' :
+                      customer.recommendation === 'medium-priority' ? 'bg-blue-100 text-blue-700' :
+                      customer.recommendation === 'low-priority' ? 'bg-yellow-100 text-yellow-700' :
+                      'bg-slate-100 text-slate-700'
+                    }`}>
+                      {customer.recommendation.replace('-', ' ')}
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </Card>
+        </div>
+      )}
+
+      {/* ROI Calculator Modal */}
+      {showROICalculator && roiForecast && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-gradient-to-r from-green-600 to-emerald-600 p-6 text-white z-10">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold flex items-center gap-2">
+                    <TrendingUp className="h-6 w-6" />
+                    90-Day ROI Forecast
+                  </h2>
+                  <p className="text-white/90 mt-1">Predictive analytics • {roiForecast.confidence} confidence</p>
+                </div>
+                <Button variant="ghost" size="sm" onClick={() => setShowROICalculator(false)} className="text-white hover:bg-white/20">
+                  <X className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+            <div className="p-6 space-y-6">
+              {/* Forecast Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { label: '30 Days', data: roiForecast.month30, color: 'blue' },
+                  { label: '60 Days', data: roiForecast.month60, color: 'purple' },
+                  { label: '90 Days', data: roiForecast.month90, color: 'green' }
+                ].map(({ label, data, color }) => (
+                  <Card key={label} className={`p-4 border-2 border-${color}-200`}>
+                    <h3 className="font-bold text-slate-900 mb-3">{label}</h3>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-slate-600">Referrals:</span>
+                        <span className="font-semibold">{data.expectedReferrals}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-600">Revenue:</span>
+                        <span className="font-semibold text-green-600">${data.expectedRevenue.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-600">Costs:</span>
+                        <span className="font-semibold text-red-600">-${data.rewardCosts.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between pt-2 border-t">
+                        <span className="text-slate-900 font-semibold">Net Profit:</span>
+                        <span className="font-bold text-green-600">${data.netProfit.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-900 font-semibold">ROI:</span>
+                        <span className="font-bold text-purple-600">{data.roi}%</span>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Insights */}
+              <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
+                <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-green-600" />
+                  AI Insights
+                </h3>
+                <div className="space-y-2">
+                  {roiForecast.insights.map((insight, idx) => (
+                    <p key={idx} className="text-sm text-slate-700">{insight}</p>
+                  ))}
+                </div>
+              </Card>
+
+              {/* Break-even Timeline */}
+              <Card className="p-6 border-2 border-blue-200">
+                <h3 className="font-bold text-slate-900 mb-2">Break-Even Timeline</h3>
+                <p className="text-3xl font-bold text-blue-600 mb-2">{roiForecast.breakEvenDays} days</p>
+                <p className="text-sm text-slate-600">Your referral program will be profitable after approximately {roiForecast.breakEvenDays} days.</p>
+              </Card>
+            </div>
+          </Card>
+        </div>
+      )}
+
+      {/* Message Generator Modal */}
+      {showMessageGenerator && generatedMessages.length > 0 && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <Card className="w-full max-w-2xl">
+            <div className="bg-gradient-to-r from-pink-600 to-rose-600 p-6 text-white">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold flex items-center gap-2">
+                    <Send className="h-6 w-6" />
+                    AI-Generated Messages
+                  </h2>
+                  <p className="text-white/90 mt-1">Powered by GPT-4 • Personalized for your brand</p>
+                </div>
+                <Button variant="ghost" size="sm" onClick={() => setShowMessageGenerator(false)} className="text-white hover:bg-white/20">
+                  <X className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+            <div className="p-6 space-y-4">
+              {generatedMessages.map((message, idx) => (
+                <Card key={idx} className="p-4 border-2 border-pink-200 hover:border-pink-400 transition-colors">
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-slate-700 flex-1">{message}</p>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => {
+                        navigator.clipboard.writeText(message);
+                        setCopiedCode(`message-${idx}`);
+                        setTimeout(() => setCopiedCode(''), 2000);
+                      }}
+                      className="shrink-0"
+                    >
+                      {copiedCode === `message-${idx}` ? (
+                        <CheckCircle2 className="h-4 w-4 text-green-600" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
+                    </Button>
+                  </div>
+                </Card>
+              ))}
+              <div className="pt-4 border-t">
+                <Button
+                  onClick={handleGenerateMessages}
+                  disabled={isGenerating}
+                  variant="outline"
+                  className="w-full"
+                >
+                  <Bot className="mr-2 h-4 w-4" />
+                  {isGenerating ? 'Generating...' : 'Generate New Messages'}
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }

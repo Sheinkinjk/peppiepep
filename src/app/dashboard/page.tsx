@@ -20,6 +20,7 @@ import {
   createServerComponentClient,
   createServiceClient,
 } from "@/lib/supabase";
+import { Database } from "@/types/supabase";
 import twilio from "twilio";
 
 async function getBusiness() {
@@ -38,8 +39,7 @@ async function getBusiness() {
 
   if (!data) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const supabaseAny = supabase as any;
-    const { data: newBiz } = await supabaseAny
+    const { data: newBiz } = await (supabase as any)
       .from("businesses")
       .insert([
         {
@@ -66,8 +66,7 @@ export default async function Dashboard() {
     "use server";
     const supabase = createServerComponentClient();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const supabaseAny = supabase as any;
-    await supabaseAny
+    await (supabase as any)
       .from("businesses")
       .update({
         offer_text: (formData.get("offer_text") as string) ?? null,
@@ -132,16 +131,18 @@ export default async function Dashboard() {
     let ambassadorReferralCode: string | null | undefined;
 
     if (amount > 0) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { data: ambassador } = await (supabase as any)
+      const { data: ambassador } = await supabase
         .from("customers")
         .select("credits, phone, referral_code")
         .eq("id", ambassadorId)
         .single();
 
-      const currentCredits = ambassador?.credits ?? 0;
-      ambassadorPhone = ambassador?.phone;
-      ambassadorReferralCode = ambassador?.referral_code;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const currentCredits = (ambassador as any)?.credits ?? 0;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ambassadorPhone = (ambassador as any)?.phone;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ambassadorReferralCode = (ambassador as any)?.referral_code;
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await (supabase as any)
@@ -149,14 +150,15 @@ export default async function Dashboard() {
         .update({ credits: currentCredits + amount })
         .eq("id", ambassadorId);
     } else {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { data: ambassador } = await (supabase as any)
+      const { data: ambassador } = await supabase
         .from("customers")
         .select("phone, referral_code")
         .eq("id", ambassadorId)
         .single();
-      ambassadorPhone = ambassador?.phone;
-      ambassadorReferralCode = ambassador?.referral_code;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ambassadorPhone = (ambassador as any)?.phone;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ambassadorReferralCode = (ambassador as any)?.referral_code;
     }
 
     const sid = process.env.TWILIO_ACCOUNT_SID;
@@ -180,27 +182,27 @@ export default async function Dashboard() {
   }
 
   const supabase = createServerComponentClient();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data: customers = [] } = await (supabase as any)
+  const { data: customers = [] } = await supabase
     .from("customers")
     .select("id,status,credits,name,phone,email,referral_code")
     .eq("business_id", business.id);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data: referrals = [] } = await (supabase as any)
+  const { data: referrals = [] } = await supabase
     .from("referrals")
     .select(
       "id,status,ambassador_id,referred_name,referred_email,referred_phone,created_at",
     )
     .eq("business_id", business.id);
 
-  const safeReferrals = referrals ?? [];
-  const safeCustomers = customers ?? [];
+  const safeReferrals =
+    (referrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
+  const safeCustomers =
+    (customers ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
 
   const pendingReferrals =
-    safeReferrals.filter((r: any) => r.status === "pending").length || 0;
+    safeReferrals.filter((r) => r.status === "pending").length || 0;
   const totalRewards =
-    safeCustomers.reduce((sum: number, c: any) => sum + (c.credits ?? 0), 0) || 0;
+    safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
 
   return (
     <div className="mx-auto max-w-5xl p-8">
@@ -313,7 +315,7 @@ export default async function Dashboard() {
                       </TableCell>
                     </TableRow>
                   )}
-                  {safeCustomers.map((customer: any) => {
+                  {safeCustomers.map((customer) => {
                     const referralLink = customer.referral_code
                       ? `${siteUrl}/r/${customer.referral_code}`
                       : null;
@@ -362,9 +364,9 @@ export default async function Dashboard() {
                       </TableCell>
                     </TableRow>
                   )}
-                  {safeReferrals.map((referral: any) => {
+                  {safeReferrals.map((referral) => {
                     const ambassador = safeCustomers.find(
-                      (c: any) => c.id === referral.ambassador_id,
+                      (c) => c.id === referral.ambassador_id,
                     );
                     const isPending = referral.status === "pending";
                     return (
