@@ -19,7 +19,22 @@ export default async function ReferralPage({ params }: ReferralPageProps) {
     .eq("referral_code", params.code)
     .single();
 
-  if (!customer) return <div>Invalid link</div>;
+  if (!customer) {
+    return (
+      <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-pink-50 via-white to-white p-4">
+        <Card className="relative w-full max-w-md overflow-hidden rounded-2xl border border-red-200 bg-white/90 p-8 shadow-2xl backdrop-blur">
+          <div className="absolute -right-12 -top-6 h-32 w-32 rounded-full bg-gradient-to-br from-red-500/20 to-orange-400/20 blur-3xl" />
+          <h1 className="mb-2 text-3xl font-bold text-slate-900">Invalid Referral Link</h1>
+          <p className="mb-6 text-lg leading-relaxed text-slate-700">
+            This referral link is no longer valid or has expired. Please contact the person who sent you this link.
+          </p>
+          <Button asChild className="w-full">
+            <a href="/">Visit Pepform</a>
+          </Button>
+        </Card>
+      </div>
+    );
+  }
 
   const customerAny = customer as any;
   const business = customerAny.business;

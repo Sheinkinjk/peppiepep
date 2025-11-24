@@ -2,13 +2,13 @@
 
 /* eslint-disable react/no-unescaped-entities */
 // Updated: Comprehensive demo with analytics, campaigns, and settings
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight, X, TrendingUp, Users, DollarSign, Zap, Copy, CheckCircle2,
   MessageSquare, BarChart3, Clock, Star, ChevronDown, ChevronUp, Send,
   Settings as SettingsIcon, Bell, CreditCard, Building2, Mail, Phone,
-  Calendar, Target, Activity, PieChart, TrendingDown
+  Calendar, Target, Activity, PieChart
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
