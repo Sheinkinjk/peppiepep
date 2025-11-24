@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
-import { Building2, Sparkles, ArrowRight } from "lucide-react";
+import { Building2, Sparkles, ArrowRight, Zap, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 type ViewState = "auth" | "onboarding" | "guest-onboarding";
 
@@ -95,7 +96,7 @@ export default function LoginPage() {
         localStorage.setItem("pepform_guest_business", JSON.stringify(guestBusiness));
         localStorage.setItem("pepform_guest_mode", "true");
 
-        router.push("/dashboard");
+        router.push("/dashboard-guest");
         return;
       }
 
@@ -145,13 +146,13 @@ export default function LoginPage() {
             </div>
 
             {view === "guest-onboarding" && (
-              <div className="mb-6 rounded-lg bg-amber-50 border border-amber-200 p-4">
+              <div className="mb-6 rounded-lg bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-4">
                 <div className="flex items-start gap-2">
                   <Sparkles className="h-5 w-5 text-amber-600 mt-0.5" />
                   <div>
-                    <p className="text-sm font-semibold text-amber-900">Guest Mode (MVP Testing)</p>
+                    <p className="text-sm font-semibold text-amber-900">MVP Testing Mode</p>
                     <p className="text-xs text-amber-700 mt-1">
-                      Your data will be stored locally in your browser. Create a real account later to save your progress to the cloud.
+                      Your data will be stored locally. Perfect for testing the platform before committing to a full account.
                     </p>
                   </div>
                 </div>
@@ -235,112 +236,184 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4">
-      <div className="w-full max-w-md space-y-4">
-        <Card className="relative overflow-hidden border border-white/60 bg-white/80 p-8 shadow-2xl shadow-purple-100 backdrop-blur">
-          <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl" />
-          <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-gradient-to-tr from-purple-500/20 to-sky-500/20 blur-3xl" />
+    <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12">
+      <div className="w-full max-w-5xl">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-slate-900 mb-3">
+            Join the referral revolution
+          </h1>
+          <p className="text-lg text-slate-600">
+            180+ businesses growing on autopilot with Pepform
+          </p>
+        </div>
 
-          <div className="relative">
-            <div className="mb-6 flex items-center gap-2">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
-              <div>
-                <p className="text-sm font-semibold text-slate-900">Pepform</p>
-                <p className="text-xs text-slate-500">Referrals that compound</p>
+        <div className="grid lg:grid-cols-2 gap-6">
+          {/* Guest Mode - HUGE & Prominent */}
+          <Card className="relative overflow-hidden border-2 border-purple-300 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-8 shadow-2xl">
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br from-purple-400/30 to-pink-400/30 blur-3xl" />
+            <div className="absolute -left-8 bottom-0 h-32 w-32 rounded-full bg-gradient-to-tr from-purple-400/30 to-pink-400/30 blur-3xl" />
+
+            <div className="relative">
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 mb-4">
+                  <Zap className="h-4 w-4 text-white" />
+                  <span className="text-sm font-bold text-white">RECOMMENDED FOR MVP TESTING</span>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Try it free—no signup needed
+                </h2>
+                <p className="text-slate-700 mb-6">
+                  Test Pepform instantly with full access. Perfect for investors, testers, and curious businesses.
+                </p>
               </div>
-            </div>
 
-            <h1 className="mb-2 text-3xl font-bold text-slate-900">
-              {isSignUp ? "Create your account" : "Welcome back"}
-            </h1>
-            <p className="mb-6 text-sm text-slate-600">
-              {isSignUp
-                ? "Start tracking referrals and growing your business"
-                : "Access your Pepform dashboard"}
-            </p>
-
-            <div className="space-y-3">
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1"
-                  placeholder="you@yourbusiness.com"
-                  onKeyDown={(e) => e.key === "Enter" && handleAuth()}
-                />
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
+                  <p className="text-sm text-slate-700">
+                    <strong>Full platform access</strong> — Upload CSVs, track referrals, test all features
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
+                  <p className="text-sm text-slate-700">
+                    <strong>No credit card required</strong> — Start testing in under 60 seconds
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
+                  <p className="text-sm text-slate-700">
+                    <strong>Convert anytime</strong> — Upgrade to a real account when you're ready
+                  </p>
+                </div>
               </div>
-              <div>
-                <Label htmlFor="password">Password</Label>
-                <Input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1"
-                  placeholder="••••••••"
-                  onKeyDown={(e) => e.key === "Enter" && handleAuth()}
-                />
-              </div>
-            </div>
 
-            {error && (
-              <div className="mt-4 rounded-lg bg-red-50 border border-red-200 p-3">
-                <p className="text-sm text-red-800">{error}</p>
-              </div>
-            )}
-
-            <Button
-              onClick={handleAuth}
-              disabled={loading || !email || !password}
-              className="mt-6 w-full"
-            >
-              {loading ? "Please wait..." : (isSignUp ? "Create Account" : "Sign In")}
-            </Button>
-
-            <Button
-              variant="link"
-              className="w-full text-slate-700"
-              onClick={() => {
-                setIsSignUp(!isSignUp);
-                setError("");
-              }}
-            >
-              {isSignUp
-                ? "Already have an account? Sign in"
-                : "Don't have an account? Sign up"}
-            </Button>
-          </div>
-        </Card>
-
-        <Card className="border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-6">
-          <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-100">
-              <Sparkles className="h-5 w-5 text-purple-600" />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-semibold text-slate-900 mb-1">
-                Testing the MVP?
-              </h3>
-              <p className="text-sm text-slate-700 mb-3">
-                Try Pepform without creating an account. Your test data will be stored locally.
-              </p>
               <Button
-                variant="outline"
                 onClick={handleGuestMode}
-                className="w-full border-purple-300 bg-white hover:bg-purple-50"
+                size="lg"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-xl text-lg py-6"
               >
-                Continue as Guest
+                <Sparkles className="mr-2 h-5 w-5" />
+                Start Testing Now (Guest Mode)
               </Button>
-            </div>
-          </div>
-        </Card>
 
-        <p className="text-center text-xs text-slate-500">
-          By signing up, you agree to our Terms of Service and Privacy Policy
-        </p>
+              <div className="mt-4 text-center">
+                <Link
+                  href="/demo"
+                  className="text-sm text-purple-600 hover:text-purple-700 underline"
+                >
+                  Or view the live demo first →
+                </Link>
+              </div>
+            </div>
+          </Card>
+
+          {/* Regular Auth */}
+          <Card className="relative overflow-hidden border border-slate-200 bg-white/80 p-8 shadow-xl backdrop-blur">
+            <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-slate-200/30 to-slate-300/30 blur-3xl" />
+
+            <div className="relative">
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">Pepform</p>
+                    <p className="text-xs text-slate-500">Cloud account</p>
+                  </div>
+                </div>
+
+                <h2 className="text-2xl font-bold text-slate-900 mb-2">
+                  {isSignUp ? "Create your account" : "Welcome back"}
+                </h2>
+                <p className="text-sm text-slate-600 mb-6">
+                  {isSignUp
+                    ? "Full cloud access with SMS automation"
+                    : "Access your Pepform dashboard"}
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="mt-1"
+                    placeholder="you@yourbusiness.com"
+                    onKeyDown={(e) => e.key === "Enter" && handleAuth()}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    id="password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="mt-1"
+                    placeholder="••••••••"
+                    onKeyDown={(e) => e.key === "Enter" && handleAuth()}
+                  />
+                </div>
+              </div>
+
+              {error && (
+                <div className="mt-4 rounded-lg bg-red-50 border border-red-200 p-3">
+                  <p className="text-sm text-red-800">{error}</p>
+                </div>
+              )}
+
+              <Button
+                onClick={handleAuth}
+                disabled={loading || !email || !password}
+                className="mt-6 w-full"
+              >
+                {loading ? "Please wait..." : (isSignUp ? "Create Account" : "Sign In")}
+              </Button>
+
+              <Button
+                variant="link"
+                className="w-full text-slate-700 mt-2"
+                onClick={() => {
+                  setIsSignUp(!isSignUp);
+                  setError("");
+                }}
+              >
+                {isSignUp
+                  ? "Already have an account? Sign in"
+                  : "Don't have an account? Sign up"}
+              </Button>
+
+              {isSignUp && (
+                <div className="mt-6 rounded-lg bg-slate-50 border border-slate-200 p-4">
+                  <p className="text-xs font-semibold text-slate-700 mb-2">Cloud account includes:</p>
+                  <ul className="space-y-1 text-xs text-slate-600">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-3 w-3 text-green-600" />
+                      Automatic SMS notifications
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-3 w-3 text-green-600" />
+                      Multi-device access
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-3 w-3 text-green-600" />
+                      Unlimited data storage
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </Card>
+        </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-xs text-slate-500">
+            By signing up, you agree to our <Link href="/terms" className="underline">Terms of Service</Link> and <Link href="/privacy" className="underline">Privacy Policy</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

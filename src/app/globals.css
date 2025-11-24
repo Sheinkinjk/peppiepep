@@ -114,3 +114,32 @@ body {
   background: linear-gradient(120deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5));
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
+
+/* Demo page animations */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
