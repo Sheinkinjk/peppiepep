@@ -101,7 +101,8 @@ export default function LoginPage() {
       }
 
       // Real users: create in Supabase
-      const { error: insertError } = await supabase
+      const supabaseAny = supabase as any;
+      const { error: insertError } = await supabaseAny
         .from("businesses")
         .insert([{
           owner_id: user!.id,
