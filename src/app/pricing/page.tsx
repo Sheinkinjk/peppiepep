@@ -1,14 +1,34 @@
+"use client";
+
 /* eslint-disable react/no-unescaped-entities */
-import {
-  ArrowRight,
-  Check,
-  Zap,
-  Users,
-  Crown,
-} from "lucide-react";
+import { useMemo, useState } from "react";
+import { ArrowRight, Check, Zap, Users, Crown } from "lucide-react";
 import Link from "next/link";
 
 export default function Pricing() {
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">(
+    "monthly",
+  );
+
+  const pricing = useMemo(
+    () => ({
+      base: {
+        monthly: 199,
+        annual: Math.round(199 * 0.8), // 20% discount
+      },
+      scale: {
+        monthly: 400,
+        annual: Math.round(400 * 0.8),
+      },
+    }),
+    [],
+  );
+
+  const basePrice = pricing.base[billingCycle];
+  const scalePrice = pricing.scale[billingCycle];
+  const annualLabel =
+    billingCycle === "annual" ? " (billed annually, save 20%)" : "";
+
   return (
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
@@ -45,27 +65,43 @@ export default function Pricing() {
         </div>
 
         <div className="rounded-xl bg-white/80 p-2 shadow-sm ring-1 ring-slate-100 backdrop-blur inline-flex items-center justify-center mx-auto">
-          <div className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white">
+          <button
+            type="button"
+            onClick={() => setBillingCycle("monthly")}
+            className={`rounded-lg px-4 py-2 text-sm font-semibold ${
+              billingCycle === "monthly"
+                ? "bg-slate-900 text-white"
+                : "text-slate-600"
+            }`}
+          >
             Monthly
-          </div>
-          <div className="px-4 py-2 text-sm font-semibold text-slate-600">
-            Annual <span className="ml-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold text-green-700">Save 20%</span>
-          </div>
+          </button>
+          <button
+            type="button"
+            onClick={() => setBillingCycle("annual")}
+            className={`px-4 py-2 text-sm font-semibold ${
+              billingCycle === "annual"
+                ? "bg-green-100 text-green-800 rounded-lg"
+                : "text-slate-600"
+            }`}
+          >
+            Annual <span className="ml-1 rounded-full bg-green-200 px-2 py-0.5 text-xs font-bold text-green-800">Save 20%</span>
+          </button>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
-          {/* Starter Plan */}
+          {/* Base Plan */}
           <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <div className="mb-6">
               <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
                 <Zap className="h-3 w-3" />
-                Starter
+                Base
               </div>
               <div className="mb-2 flex items-baseline gap-2">
-                <span className="text-5xl font-bold text-slate-900">$29</span>
-                <span className="text-slate-500">/month</span>
+                <span className="text-5xl font-bold text-slate-900">${basePrice}</span>
+                <span className="text-slate-500">/month{annualLabel}</span>
               </div>
-              <p className="text-sm text-slate-600">Perfect for getting started</p>
+              <p className="text-sm text-slate-600">Launch-ready program for small teams</p>
             </div>
 
             <Link
@@ -78,11 +114,11 @@ export default function Pricing() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Up to <strong>50 ambassadors</strong></span>
+                <span className="text-slate-700">Up to <strong>50 referrers</strong> enrolled</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Unlimited referral links</span>
+                <span className="text-slate-700"><strong>5,000 SMS/WhatsApp messages</strong> included</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -98,20 +134,16 @@ export default function Pricing() {
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Basic analytics</span>
+                <span className="text-slate-700">Basic analytics & live referrals</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-700">Email support</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-slate-300 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">SMS notifications (add-on)</span>
-              </div>
             </div>
           </div>
 
-          {/* Growth Plan - Most Popular */}
+          {/* Scale Plan - Most Popular */}
           <div className="relative rounded-3xl border-2 border-purple-500 bg-white p-8 shadow-xl">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-1 text-xs font-bold text-white shadow-lg">
               MOST POPULAR
@@ -120,13 +152,13 @@ export default function Pricing() {
             <div className="mb-6">
               <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
                 <Users className="h-3 w-3" />
-                Growth
+                Scale
               </div>
               <div className="mb-2 flex items-baseline gap-2">
-                <span className="text-5xl font-bold text-slate-900">$79</span>
-                <span className="text-slate-500">/month</span>
+                <span className="text-5xl font-bold text-slate-900">${scalePrice}</span>
+                <span className="text-slate-500">/month{annualLabel}</span>
               </div>
-              <p className="text-sm text-slate-600">For established businesses</p>
+              <p className="text-sm text-slate-600">For teams running steady campaigns</p>
             </div>
 
             <Link
@@ -139,23 +171,23 @@ export default function Pricing() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Up to <strong>200 ambassadors</strong></span>
+                <span className="text-slate-700">Up to <strong>125 referrers</strong></span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700"><strong>Everything in Starter</strong>, plus:</span>
+                <span className="text-slate-700"><strong>Everything in Base</strong>, plus:</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700"><strong>500 SMS credits/month</strong> included</span>
+                <span className="text-slate-700"><strong>12,500 messages/month</strong> included</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Auto-reward SMS notifications</span>
+                <span className="text-slate-700">Auto-reward SMS/email notifications</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Advanced analytics & reports</span>
+                <span className="text-slate-700">Advanced analytics & cohort reports</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -163,68 +195,64 @@ export default function Pricing() {
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Custom branding colors</span>
+                <span className="text-slate-700">Custom branding, domains, UTM tracking</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Priority email support</span>
+                <span className="text-slate-700">Priority email + chat support</span>
               </div>
             </div>
           </div>
 
-          {/* Pro Plan */}
+          {/* Enterprise Plan */}
           <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white shadow-sm">
             <div className="mb-6">
               <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                 <Crown className="h-3 w-3" />
-                Pro
+                Enterprise
               </div>
               <div className="mb-2 flex items-baseline gap-2">
-                <span className="text-5xl font-bold">$199</span>
+                <span className="text-5xl font-bold">Custom</span>
                 <span className="text-slate-300">/month</span>
               </div>
-              <p className="text-sm text-slate-300">Maximum growth & flexibility</p>
+              <p className="text-sm text-slate-300">Built for large-scale campaigns</p>
             </div>
 
             <Link
               href="/login"
               className="mb-6 inline-flex w-full items-center justify-center rounded-full border-2 border-white bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
             >
-              Start free trial
+              Talk to sales
             </Link>
 
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white"><strong>Unlimited ambassadors</strong></span>
+                <span className="text-white"><strong>Unlimited referrers & messages</strong> with pooled pricing</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white"><strong>Everything in Growth</strong>, plus:</span>
+                <span className="text-white"><strong>Everything in Scale</strong>, plus:</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white"><strong>2,000 SMS credits/month</strong> included</span>
+                <span className="text-white">Dedicated CSM and campaign strategy</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">White-label ambassador portals</span>
+                <span className="text-white">SSO/SAML, audit logs, custom roles</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">Custom domain support</span>
+                <span className="text-white">White-label portals & multi-brand support</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">API access</span>
+                <span className="text-white">Advanced API limits & webhooks</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">Dedicated account manager</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">Phone & chat support</span>
+                <span className="text-white">Custom SLAs + 24/7 support</span>
               </div>
             </div>
           </div>

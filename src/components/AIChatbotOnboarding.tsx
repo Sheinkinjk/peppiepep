@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Bot, Send, Sparkles, X } from 'lucide-react';
 
 interface Message {
@@ -100,7 +99,7 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
       const nextStep = steps[step + 1];
       const questionWithData = nextStep.question.replace(
         /{(\w+)}/g,
-        (_, key) => (updatedData as any)[key] || ''
+        (_, key) => String((updatedData as Record<string, string | number | undefined>)[key] || '')
       );
       addAIMessage(questionWithData);
       setStep(step + 1);

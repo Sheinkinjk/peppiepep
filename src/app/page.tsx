@@ -9,6 +9,7 @@ import {
   Star,
   TrendingUp,
   Users,
+  Calendar,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -38,6 +39,15 @@ export default function Home() {
             <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="#features">
               Product
             </Link>
+            <a
+              href="https://calendly.com/pepform/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-purple-600 bg-white px-4 py-2 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:bg-purple-50"
+            >
+              <Calendar className="h-4 w-4" />
+              Schedule a Call
+            </a>
             <Link
               href="/login"
               className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
@@ -45,12 +55,23 @@ export default function Home() {
               Go to app <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <Link
-            href="/login"
-            className="sm:hidden inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
-          >
-            Go to app <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="flex items-center gap-2 sm:hidden">
+            <a
+              href="https://calendly.com/pepform/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-full border-2 border-purple-600 bg-white px-3 py-2 text-xs font-semibold text-purple-700"
+            >
+              <Calendar className="h-3.5 w-3.5" />
+              Call
+            </a>
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200"
+            >
+              Go to app <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </header>
 
         <div className="flex flex-col-reverse gap-10 lg:flex-row lg:items-center">
@@ -71,6 +92,15 @@ export default function Home() {
               >
                 Get started free
               </Link>
+              <a
+                href="https://calendly.com/pepform/demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600 bg-white px-6 py-3 text-sm font-semibold text-purple-700 shadow-lg shadow-purple-100 transition hover:-translate-y-0.5 hover:bg-purple-50 hover:shadow-purple-200"
+              >
+                <Calendar className="h-4 w-4" />
+                Schedule a Call
+              </a>
               <Link
                 href="/demo"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-300 bg-purple-50 px-6 py-3 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:border-purple-400"

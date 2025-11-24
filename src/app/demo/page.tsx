@@ -8,7 +8,7 @@ import {
   ArrowRight, X, TrendingUp, Users, DollarSign, Zap, Copy, CheckCircle2,
   BarChart3, Clock, ChevronDown, ChevronUp, Send,
   Settings as SettingsIcon, Bell, CreditCard, Building2, Mail, Phone,
-  Calendar, Target, Activity, PieChart, QrCode, Plus, Bot, Sparkles, Award, TrendingDown
+  Calendar, Target, Activity, PieChart, QrCode, Plus, Bot, Sparkles, Award
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
