@@ -240,9 +240,13 @@ export default function DemoPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Demo Banner */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 text-white px-4 py-3 shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 relative overflow-hidden">
+      {/* Premium background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.05),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(236,72,153,0.05),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-slate-200/50 [mask-image:linear-gradient(0deg,transparent,black)] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23e2e8f0\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+
+      {/* Premium Demo Banner */}
+      <div className="sticky top-0 z-50 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 text-white px-4 py-3 shadow-xl backdrop-blur-lg border-b border-white/10">
         <div className="mx-auto max-w-7xl flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
@@ -494,61 +498,68 @@ export default function DemoPage() {
         </div>
       )}
 
-      <div className="mx-auto max-w-7xl p-4 sm:p-8">
-        {/* Header */}
+      <div className="relative mx-auto max-w-7xl p-4 sm:p-8">
+        {/* Premium Header Card */}
         <div className="mb-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
+          <Card className="relative overflow-hidden border-0 bg-white/80 backdrop-blur-xl shadow-2xl shadow-purple-100/50 ring-1 ring-slate-200/50">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-transparent to-pink-50/50 pointer-events-none" />
+            <div className="relative p-6 sm:p-8">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                 <div>
-                  <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">
-                    {demoBusiness.name}
-                  </h1>
-                  <p className="text-sm text-slate-600">{demoBusiness.location} • {demoBusiness.subscription_plan} Plan</p>
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 shadow-2xl shadow-purple-500/40 ring-4 ring-white/50 flex items-center justify-center">
+                      <div className="h-6 w-6 rounded-full bg-white/30 backdrop-blur" />
+                    </div>
+                    <div>
+                      <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-slate-900 via-purple-900 to-pink-900 bg-clip-text text-transparent">
+                        {demoBusiness.name}
+                      </h1>
+                      <p className="text-sm text-slate-600 font-medium mt-1">{demoBusiness.location} • {demoBusiness.subscription_plan} Plan</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <Button
+                    onClick={() => setShowAIChatbot(true)}
+                    className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+                  >
+                    <Bot className="mr-2 h-4 w-4" />
+                    <span className="flex items-center gap-1.5">
+                      AI Setup Assistant
+                      <Sparkles className="h-3 w-3" />
+                    </span>
+                  </Button>
+                  <Button
+                    onClick={() => setShowCampaignModal(true)}
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+                  >
+                    <Send className="mr-2 h-4 w-4" />
+                    Start Campaign
+                  </Button>
+                  <Button
+                    onClick={() => setShowScheduler(true)}
+                    variant="outline"
+                    className="border-2 border-purple-200 hover:border-purple-300 hover:bg-purple-50/50 backdrop-blur transition-all duration-200"
+                  >
+                    <Clock className="mr-2 h-4 w-4" />
+                    <span className="hidden sm:inline">Scheduled ({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
+                    <span className="sm:hidden">({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
+                  </Button>
+                  <Link
+                    href="/login"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-purple-600 bg-white px-6 py-3 text-base font-semibold text-purple-600 hover:bg-purple-50 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    Get Started
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Button
-                onClick={() => setShowAIChatbot(true)}
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-lg"
-              >
-                <Bot className="mr-2 h-4 w-4" />
-                <span className="flex items-center gap-1.5">
-                  AI Setup Assistant
-                  <Sparkles className="h-3 w-3" />
-                </span>
-              </Button>
-              <Button
-                onClick={() => setShowCampaignModal(true)}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg"
-              >
-                <Send className="mr-2 h-4 w-4" />
-                Start Campaign
-              </Button>
-              <Button
-                onClick={() => setShowScheduler(true)}
-                variant="outline"
-                className="border-purple-300 hover:bg-purple-50"
-              >
-                <Clock className="mr-2 h-4 w-4" />
-                <span className="hidden sm:inline">Scheduled ({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
-                <span className="sm:hidden">({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
-              </Button>
-              <Link
-                href="/login"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-purple-600 bg-white px-6 py-3 text-base font-semibold text-purple-600 hover:bg-purple-50 transition-colors"
-              >
-                Get Started
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </div>
-          </div>
+          </Card>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-6 mb-6">
+          <TabsList className="grid w-full grid-cols-6 mb-8 p-1.5 bg-white/80 backdrop-blur-xl shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-xl">
             <TabsTrigger value="analytics">
               <BarChart3 className="h-4 w-4 mr-2" />
               <span className="hidden sm:inline">Analytics</span>
@@ -579,62 +590,74 @@ export default function DemoPage() {
           </TabsList>
 
           <TabsContent value="analytics" className="space-y-6">
-            {/* Key Metrics */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Card className="p-6 bg-gradient-to-br from-purple-50 to-white border-purple-200">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-                    <DollarSign className="h-5 w-5 text-purple-600" />
+            {/* Premium Key Metrics */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="relative overflow-hidden p-6 bg-gradient-to-br from-purple-50 via-white to-purple-50/30 border-0 shadow-lg hover:shadow-xl transition-all duration-300 ring-1 ring-purple-200/50 group hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-2xl" />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <DollarSign className="h-6 w-6 text-white" />
+                    </div>
+                    <span className="text-xs font-bold text-purple-600 bg-purple-100 px-3 py-1.5 rounded-full ring-2 ring-purple-200/50">
+                      +18%
+                    </span>
                   </div>
-                  <span className="text-xs font-semibold text-purple-600 bg-purple-100 px-2 py-1 rounded-full">
-                    +18%
-                  </span>
+                  <p className="text-4xl font-bold text-slate-900 mb-1">${totalRevenue.toLocaleString()}</p>
+                  <p className="text-sm font-semibold text-slate-600">Total Revenue</p>
+                  <p className="text-xs text-slate-500 mt-2">{completedReferrals} completed referrals</p>
                 </div>
-                <p className="text-3xl font-bold text-slate-900">${totalRevenue.toLocaleString()}</p>
-                <p className="text-sm text-slate-600 mt-1">Total Revenue</p>
-                <p className="text-xs text-slate-500 mt-2">{completedReferrals} completed referrals</p>
               </Card>
 
-              <Card className="p-6 bg-gradient-to-br from-green-50 to-white border-green-200">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <TrendingUp className="h-5 w-5 text-green-600" />
+              <Card className="relative overflow-hidden p-6 bg-gradient-to-br from-green-50 via-white to-green-50/30 border-0 shadow-lg hover:shadow-xl transition-all duration-300 ring-1 ring-green-200/50 group hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/10 to-transparent rounded-full blur-2xl" />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <TrendingUp className="h-6 w-6 text-white" />
+                    </div>
+                    <span className="text-xs font-bold text-green-600 bg-green-100 px-3 py-1.5 rounded-full ring-2 ring-green-200/50">
+                      {roi}% ROI
+                    </span>
                   </div>
-                  <span className="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full">
-                    {roi}% ROI
-                  </span>
+                  <p className="text-4xl font-bold text-slate-900 mb-1">{activeAmbassadors}</p>
+                  <p className="text-sm font-semibold text-slate-600">Active Ambassadors</p>
+                  <p className="text-xs text-slate-500 mt-2">of {demoCustomers.length} total customers</p>
                 </div>
-                <p className="text-3xl font-bold text-slate-900">{activeAmbassadors}</p>
-                <p className="text-sm text-slate-600 mt-1">Active Ambassadors</p>
-                <p className="text-xs text-slate-500 mt-2">of {demoCustomers.length} total customers</p>
               </Card>
 
-              <Card className="p-6 bg-gradient-to-br from-blue-50 to-white border-blue-200">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Target className="h-5 w-5 text-blue-600" />
+              <Card className="relative overflow-hidden p-6 bg-gradient-to-br from-blue-50 via-white to-blue-50/30 border-0 shadow-lg hover:shadow-xl transition-all duration-300 ring-1 ring-blue-200/50 group hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-2xl" />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="h-6 w-6 text-white" />
+                    </div>
+                    <span className="text-xs font-bold text-blue-600 bg-blue-100 px-3 py-1.5 rounded-full ring-2 ring-blue-200/50">
+                      Above avg
+                    </span>
                   </div>
-                  <span className="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
-                    Above avg
-                  </span>
+                  <p className="text-4xl font-bold text-slate-900 mb-1">{conversionRate}%</p>
+                  <p className="text-sm font-semibold text-slate-600">Conversion Rate</p>
+                  <p className="text-xs text-slate-500 mt-2">Industry: 65%</p>
                 </div>
-                <p className="text-3xl font-bold text-slate-900">{conversionRate}%</p>
-                <p className="text-sm text-slate-600 mt-1">Conversion Rate</p>
-                <p className="text-xs text-slate-500 mt-2">Industry: 65%</p>
               </Card>
 
-              <Card className="p-6 bg-gradient-to-br from-orange-50 to-white border-orange-200">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="h-10 w-10 rounded-full bg-orange-100 flex items-center justify-center">
-                    <Activity className="h-5 w-5 text-orange-600" />
+              <Card className="relative overflow-hidden p-6 bg-gradient-to-br from-orange-50 via-white to-orange-50/30 border-0 shadow-lg hover:shadow-xl transition-all duration-300 ring-1 ring-orange-200/50 group hover:scale-[1.02]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-transparent rounded-full blur-2xl" />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <Activity className="h-6 w-6 text-white" />
+                    </div>
+                    <span className="text-xs font-bold text-orange-600 bg-orange-100 px-3 py-1.5 rounded-full ring-2 ring-orange-200/50">
+                      This month
+                    </span>
                   </div>
-                  <span className="text-xs font-semibold text-orange-600 bg-orange-100 px-2 py-1 rounded-full">
-                    This month
-                  </span>
+                  <p className="text-4xl font-bold text-slate-900 mb-1">{last30DaysReferrals}</p>
+                  <p className="text-sm font-semibold text-slate-600">New Referrals</p>
+                  <p className="text-xs text-slate-500 mt-2">Last 30 days</p>
                 </div>
-                <p className="text-3xl font-bold text-slate-900">{last30DaysReferrals}</p>
-                <p className="text-sm text-slate-600 mt-1">New Referrals</p>
-                <p className="text-xs text-slate-500 mt-2">Last 30 days</p>
               </Card>
             </div>
 
