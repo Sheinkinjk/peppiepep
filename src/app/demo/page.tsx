@@ -1,6 +1,7 @@
 'use client';
 
 /* eslint-disable react/no-unescaped-entities */
+// Updated: Comprehensive demo with analytics, campaigns, and settings
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
