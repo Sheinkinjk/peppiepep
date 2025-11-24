@@ -8,7 +8,7 @@ import {
   ArrowRight, X, TrendingUp, Users, DollarSign, Zap, Copy, CheckCircle2,
   MessageSquare, BarChart3, Clock, Star, ChevronDown, ChevronUp, Send,
   Settings as SettingsIcon, Bell, CreditCard, Building2, Mail, Phone,
-  Calendar, Target, Activity, PieChart
+  Calendar, Target, Activity, PieChart, QrCode, Download, Plus
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -24,6 +24,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import QRCodeGenerator from "@/components/QRCodeGenerator";
 
 // Enhanced demo data
 const demoBusiness = {
@@ -195,6 +196,12 @@ export default function DemoPage() {
   const [expandedCustomer, setExpandedCustomer] = useState<string | null>(null);
   const [showCampaignModal, setShowCampaignModal] = useState(false);
   const [campaignMessage, setCampaignMessage] = useState("Hi! I love using Glow Beauty Studio and wanted to share 20% off your first visit. Use my link to book: ");
+  const [showScheduler, setShowScheduler] = useState(false);
+  const [scheduledCampaigns, setScheduledCampaigns] = useState([
+    { id: "1", name: "Monthly Ambassador Reminder", message: "Keep sharing! You've earned ${{credits}} so far.", schedule: "Every 1st of month", nextRun: "Dec 1, 2024", status: "active", recipients: "All active ambassadors" },
+    { id: "2", name: "New Customer Welcome", message: "Thanks for joining! Start referring friends and earn $15 per referral.", schedule: "When customer joins", nextRun: "Automated", status: "active", recipients: "New customers" },
+    { id: "3", name: "Dormant Ambassador Re-engagement", message: "We miss you! Come back and we'll add a $5 bonus to your next referral.", schedule: "After 60 days inactive", nextRun: "Automated", status: "paused", recipients: "Inactive ambassadors" },
+  ]);
 
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://peppiepep.vercel.app';
 
@@ -373,6 +380,121 @@ export default function DemoPage() {
         </div>
       )}
 
+      {/* Scheduled Campaigns Modal */}
+      {showScheduler && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <Card className="w-full max-w-4xl p-6 max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-600 to-purple-500 flex items-center justify-center">
+                  <Clock className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-slate-900">Scheduled Campaigns</h2>
+                  <p className="text-sm text-slate-600">Automated SMS campaigns that run on autopilot</p>
+                </div>
+              </div>
+              <Button variant="ghost" size="sm" onClick={() => setShowScheduler(false)}>
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+
+            <div className="mb-6 rounded-lg bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 p-4">
+              <div className="flex items-start gap-3">
+                <Zap className="h-5 w-5 text-purple-600 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-purple-900 mb-1">Automated Marketing on Autopilot</p>
+                  <p className="text-sm text-purple-800">
+                    Set up campaigns once and they'll automatically engage ambassadors, welcome new customers, and re-activate dormant users. Save hours every month while keeping engagement high.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-4 flex items-center justify-between">
+              <div>
+                <p className="text-sm text-slate-600">
+                  <span className="font-semibold text-green-600">{scheduledCampaigns.filter(c => c.status === 'active').length} active</span> • {scheduledCampaigns.filter(c => c.status === 'paused').length} paused
+                </p>
+              </div>
+              <Button size="sm" variant="outline" className="border-purple-300">
+                <Plus className="mr-2 h-3 w-3" />
+                Create New Schedule
+              </Button>
+            </div>
+
+            <div className="space-y-3">
+              {scheduledCampaigns.map((campaign) => (
+                <div key={campaign.id} className={`border rounded-lg p-4 ${campaign.status === 'active' ? 'border-green-300 bg-green-50/30' : 'border-slate-200 bg-slate-50'}`}>
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h4 className="font-semibold text-slate-900">{campaign.name}</h4>
+                        <span className={`px-2 py-0.5 text-xs font-medium rounded-full ${campaign.status === 'active' ? 'bg-green-100 text-green-700' : 'bg-slate-200 text-slate-600'}`}>
+                          {campaign.status}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-600 mb-2">{campaign.message}</p>
+                      <div className="flex flex-wrap gap-4 text-xs text-slate-500">
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          <span>{campaign.schedule}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          <span>Next: {campaign.nextRun}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Users className="h-3 w-3" />
+                          <span>{campaign.recipients}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 ml-4">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => {
+                          const updated = scheduledCampaigns.map(c =>
+                            c.id === campaign.id ? { ...c, status: c.status === 'active' ? 'paused' : 'active' } : c
+                          );
+                          setScheduledCampaigns(updated as any);
+                        }}
+                      >
+                        {campaign.status === 'active' ? 'Pause' : 'Activate'}
+                      </Button>
+                      <Button size="sm" variant="ghost">
+                        <SettingsIcon className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-lg bg-blue-50 border border-blue-200 p-4">
+              <h4 className="text-sm font-semibold text-blue-900 mb-2">💡 Scheduler Benefits:</h4>
+              <ul className="text-sm text-blue-800 space-y-1">
+                <li>• <strong>Save 5+ hours/month</strong> on manual outreach</li>
+                <li>• <strong>Increase engagement by 40%</strong> with timely, automated reminders</li>
+                <li>• <strong>Never miss an opportunity</strong> to re-engage dormant ambassadors</li>
+                <li>• <strong>Personalized messages</strong> with dynamic variables like credits earned</li>
+              </ul>
+            </div>
+
+            <div className="flex gap-3 pt-4">
+              <Button variant="outline" className="flex-1" onClick={() => setShowScheduler(false)}>
+                Close
+              </Button>
+              <Button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600">
+                <Plus className="mr-2 h-4 w-4" />
+                Create New Schedule
+              </Button>
+            </div>
+          </Card>
+        </div>
+      )}
+
       <div className="mx-auto max-w-7xl p-4 sm:p-8">
         {/* Header */}
         <div className="mb-8">
@@ -395,6 +517,14 @@ export default function DemoPage() {
               >
                 <Send className="mr-2 h-4 w-4" />
                 Start New Campaign
+              </Button>
+              <Button
+                onClick={() => setShowScheduler(true)}
+                variant="outline"
+                className="border-purple-300 hover:bg-purple-50"
+              >
+                <Clock className="mr-2 h-4 w-4" />
+                Scheduled Campaigns ({scheduledCampaigns.filter(c => c.status === 'active').length})
               </Button>
               <Link
                 href="/login"
@@ -698,6 +828,17 @@ export default function DemoPage() {
                               )}
                             </Button>
                           </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                            <QrCode className="h-4 w-4" />
+                            QR Code for In-Store Sharing
+                          </h4>
+                          <QRCodeGenerator
+                            url={`${siteUrl}/r/${customer.referral_code}`}
+                            fileName={`${customer.name.replace(/\s+/g, '-').toLowerCase()}-referral-qr`}
+                          />
                         </div>
 
                         {customer.notes && (
