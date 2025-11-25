@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 import { Building2, Sparkles, ArrowRight, Zap, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { Database } from "@/types/supabase";
 
 type ViewState = "auth" | "onboarding" | "guest-onboarding";
 
@@ -24,9 +25,42 @@ export default function LoginPage() {
   const [businessName, setBusinessName] = useState("");
   const [offerText, setOfferText] = useState("");
   const [rewardAmount, setRewardAmount] = useState("15");
+  const [draftLoaded, setDraftLoaded] = useState(false);
 
   const router = useRouter();
   const supabase = createBrowserSupabaseClient();
+  type BusinessInsert = Database["public"]["Tables"]["businesses"]["Insert"];
+
+  // Load and persist onboarding drafts so entered data is not lost
+  useEffect(() => {
+    if (draftLoaded) return;
+    const rawDraft = localStorage.getItem("pepform_onboarding_draft");
+    if (rawDraft) {
+      try {
+        const draft = JSON.parse(rawDraft) as {
+          businessName?: string;
+          offerText?: string;
+          rewardAmount?: string;
+        };
+        setBusinessName(draft.businessName ?? "");
+        setOfferText(draft.offerText ?? "");
+        setRewardAmount(draft.rewardAmount ?? "15");
+      } catch {
+        // ignore corrupted draft
+      }
+    }
+    setDraftLoaded(true);
+  }, [draftLoaded]);
+
+  useEffect(() => {
+    if (!draftLoaded) return;
+    const draft = {
+      businessName,
+      offerText,
+      rewardAmount,
+    };
+    localStorage.setItem("pepform_onboarding_draft", JSON.stringify(draft));
+  }, [businessName, offerText, rewardAmount, draftLoaded]);
 
   const handleAuth = async () => {
     setLoading(true);
@@ -102,20 +136,28 @@ export default function LoginPage() {
         return;
       }
 
+      const cleanBusinessName =
+        businessName.trim() || `${email.split("@")[0]}'s Business`;
+      const cleanOfferText = offerText.trim() || "20% off your first visit";
+      const cleanRewardAmount = Number(rewardAmount) || 15;
+
       // Real users: create in Supabase
+      const insertPayload: BusinessInsert = {
+        owner_id: user!.id,
+        name: cleanBusinessName,
+        offer_text: cleanOfferText,
+        reward_type: "credit",
+        reward_amount: cleanRewardAmount,
+      };
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const { error: insertError } = await (supabase as any)
         .from("businesses")
-        .insert([{
-          owner_id: user!.id,
-          name: businessName || `${email.split("@")[0]}'s Business`,
-          offer_text: offerText || "20% off your first visit",
-          reward_type: "credit",
-          reward_amount: Number(rewardAmount) || 15,
-        }]);
+        .insert([insertPayload]);
 
       if (insertError) throw insertError;
 
+      localStorage.removeItem("pepform_onboarding_draft");
       router.push("/dashboard");
     } catch (err: unknown) {
       const message =

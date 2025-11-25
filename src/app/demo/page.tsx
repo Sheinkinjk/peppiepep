@@ -205,38 +205,84 @@ export default function DemoPage() {
           tone: 'friendly and casual',
         }),
       });
+
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
+
       const data = await response.json();
-      setGeneratedMessages(data.messages || []);
+
+      if (!data.messages || data.messages.length === 0) {
+        throw new Error('No messages generated');
+      }
+
+      setGeneratedMessages(data.messages);
       setShowMessageGenerator(true);
     } catch (error) {
       console.error('Error generating messages:', error);
+      // Fallback to template messages with user notification
       setGeneratedMessages([
         `Hey! I just hooked you up with ${offerText} at ${demoBusiness.name}. You'll love it! 🌟`,
         `Legend! I got you ${offerText} at ${demoBusiness.name}. Trust me on this one! 💯`,
+        `You've gotta try ${demoBusiness.name}! I'm sending you ${offerText}. Use my link! ✨`,
+        `Friend! ${demoBusiness.name} is amazing. Enjoy ${offerText} on me! 😊`,
+        `${demoBusiness.name} is the best! Grabbed you ${offerText}. Don't miss out! 🎁`,
       ]);
       setShowMessageGenerator(true);
+      // Note: In production, you might want to show a toast notification here
+      // that AI generation failed and fallback templates are being used
     } finally {
       setIsGenerating(false);
     }
   };
 
   const handleCalculateScores = () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const scored = rankAmbassadors(customers as any, demoBusiness.avg_transaction);
-    setScoredCustomers(scored);
-    setShowAIScoring(true);
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const scored = rankAmbassadors(customers as any, demoBusiness.avg_transaction);
+
+      if (!scored || scored.length === 0) {
+        throw new Error('No customer data available for scoring');
+      }
+
+      setScoredCustomers(scored);
+      setShowAIScoring(true);
+    } catch (error) {
+      console.error('Error calculating AI scores:', error);
+      // In production, show error toast notification
+      alert('Unable to calculate AI scores. Please try again.');
+    }
   };
 
   const handleCalculateROI = () => {
-    const forecast = calculateROIForecast({
-      totalAmbassadors: customers.length,
-      avgTransactionValue: demoBusiness.avg_transaction,
-      rewardAmount,
-      monthlyCustomers: demoBusiness.monthly_customers,
-      industryType: 'beauty',
-    });
-    setROIForecast(forecast);
-    setShowROICalculator(true);
+    try {
+      if (customers.length === 0) {
+        throw new Error('No customer data available');
+      }
+
+      if (!rewardAmount || rewardAmount <= 0) {
+        throw new Error('Invalid reward amount');
+      }
+
+      const forecast = calculateROIForecast({
+        totalAmbassadors: customers.length,
+        avgTransactionValue: demoBusiness.avg_transaction,
+        rewardAmount,
+        monthlyCustomers: demoBusiness.monthly_customers,
+        industryType: 'beauty',
+      });
+
+      if (!forecast) {
+        throw new Error('Failed to calculate ROI forecast');
+      }
+
+      setROIForecast(forecast);
+      setShowROICalculator(true);
+    } catch (error) {
+      console.error('Error calculating ROI:', error);
+      // In production, show error toast notification
+      alert('Unable to calculate ROI forecast. Please check your inputs and try again.');
+    }
   };
 
   return (
@@ -246,32 +292,38 @@ export default function DemoPage() {
       <div className="absolute inset-0 bg-grid-slate-200/50 [mask-image:linear-gradient(0deg,transparent,black)] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23e2e8f0\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
 
       {/* Premium Demo Banner */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 text-white px-4 py-3 shadow-xl backdrop-blur-lg border-b border-white/10">
-        <div className="mx-auto max-w-7xl flex items-center justify-between">
+      <div className="sticky top-0 z-50 bg-gradient-to-r from-purple-700 via-purple-600 to-pink-600 text-white px-4 py-3 shadow-xl backdrop-blur-lg border-b border-white/10">
+        <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-white animate-pulse" />
+              <div className="h-2 w-2 rounded-full bg-green-300 animate-pulse" />
               <p className="font-bold">LIVE DEMO</p>
             </div>
             <span className="hidden sm:block text-sm opacity-90">
-              Fully interactive • All features enabled
+              Fully interactive • AI-powered • No setup required
             </span>
             <div className="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur">
               <Sparkles className="h-3.5 w-3.5 text-yellow-300" />
-              <span className="text-xs font-semibold">AI-Powered</span>
+              <span className="text-xs font-semibold">AI Assistant</span>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <Link
+              href="/dashboard-guest"
+              className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-sm font-semibold hover:bg-white/25 transition"
+            >
+              Try guest mode
+            </Link>
             <Link
               href="/login"
-              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur px-4 py-1.5 text-sm font-medium hover:bg-white/30 transition"
+              className="inline-flex items-center gap-2 rounded-full bg-white text-purple-700 px-4 py-1.5 text-sm font-semibold hover:bg-purple-50 transition"
             >
               Start free trial
               <ArrowRight className="h-3 w-3" />
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur px-4 py-1.5 text-sm font-medium hover:bg-white/30 transition"
+              className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-3 py-1.5 text-sm font-medium hover:bg-white/25 transition"
             >
               <X className="h-4 w-4" />
               <span className="hidden sm:inline">Exit</span>
@@ -537,6 +589,14 @@ export default function DemoPage() {
                     Start Campaign
                   </Button>
                   <Button
+                    onClick={() => setActiveTab("referrals")}
+                    variant="outline"
+                    className="border-2 border-purple-200 hover:border-purple-300 hover:bg-purple-50/50 backdrop-blur transition-all duration-200"
+                  >
+                    <QrCode className="mr-2 h-4 w-4" />
+                    Referral Links
+                  </Button>
+                  <Button
                     onClick={() => setShowScheduler(true)}
                     variant="outline"
                     className="border-2 border-purple-200 hover:border-purple-300 hover:bg-purple-50/50 backdrop-blur transition-all duration-200"
@@ -559,7 +619,7 @@ export default function DemoPage() {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-6 mb-8 p-1.5 bg-white/80 backdrop-blur-xl shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-xl">
+          <TabsList className="grid w-full grid-cols-6 mb-8 p-1.5 bg-white/90 backdrop-blur-xl shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-xl">
             <TabsTrigger value="analytics">
               <BarChart3 className="h-4 w-4 mr-2" />
               <span className="hidden sm:inline">Analytics</span>

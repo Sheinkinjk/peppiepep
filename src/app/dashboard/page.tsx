@@ -16,6 +16,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Toaster } from "@/components/ui/toaster";
+import { CSVUploadForm } from "@/components/CSVUploadForm";
+import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import {
   createServerComponentClient,
   createServiceClient,
@@ -81,104 +84,170 @@ export default async function Dashboard() {
 
   async function uploadCSV(formData: FormData) {
     "use server";
-    const file = formData.get("file");
-    if (!(file instanceof File)) {
-      throw new Error("CSV file missing");
+    try {
+      const file = formData.get("file");
+
+      if (!(file instanceof File)) {
+        return { error: "Please select a CSV file to upload." };
+      }
+
+      // Validate file type
+      if (!file.name.toLowerCase().endsWith('.csv')) {
+        return { error: "Invalid file type. Please upload a CSV file." };
+      }
+
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        return { error: "File too large. Maximum size is 5MB." };
+      }
+
+      const text = await file.text();
+      const parsed = Papa.parse<Record<string, string>>(text, { header: true });
+
+      if (parsed.errors && parsed.errors.length > 0) {
+        console.error("CSV parsing errors:", parsed.errors);
+        return { error: "CSV parsing failed. Please check your file format." };
+      }
+
+      const supabase = createServiceClient(); // service role to bypass RLS for bulk insert
+
+      const customersToInsert = (parsed.data || [])
+        .map((row) => ({
+          business_id: business.id,
+          name: row.name || row.Name || row.full_name || null,
+          phone: row.phone || row.Phone || row.mobile || null,
+          email: row.email || row.Email || null,
+          referral_code: nanoid(12),
+        }))
+        .filter((row) => row.name || row.phone || row.email);
+
+      if (customersToInsert.length === 0) {
+        return { error: "No valid customer data found in CSV. Please ensure your file has 'name', 'phone', or 'email' columns." };
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: insertError } = await (supabase as any).from("customers").insert(customersToInsert);
+
+      if (insertError) {
+        console.error("CSV upload error:", insertError);
+        return { error: "Failed to import customers. Please try again." };
+      }
+
+      revalidatePath("/dashboard");
+      return { success: `Successfully imported ${customersToInsert.length} customers!` };
+    } catch (error) {
+      console.error("CSV upload error:", error);
+      return { error: "An unexpected error occurred while uploading CSV. Please try again." };
     }
-
-    const text = await file.text();
-    const parsed = Papa.parse<Record<string, string>>(text, { header: true });
-
-    const supabase = createServiceClient(); // service role to bypass RLS for bulk insert
-
-    const customersToInsert = (parsed.data || [])
-      .map((row) => ({
-        business_id: business.id,
-        name: row.name || row.Name || row.full_name || null,
-        phone: row.phone || row.Phone || row.mobile || null,
-        email: row.email || row.Email || null,
-        referral_code: nanoid(12),
-      }))
-      .filter((row) => row.name || row.phone || row.email);
-
-    if (customersToInsert.length === 0) {
-      return;
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    await (supabase as any).from("customers").insert(customersToInsert);
-    revalidatePath("/dashboard");
   }
 
   async function markReferralCompleted(formData: FormData) {
     "use server";
-    const referralId = formData.get("referral_id") as string | null;
-    const ambassadorId = formData.get("ambassador_id") as string | null;
-    if (!referralId || !ambassadorId) return;
+    try {
+      const referralId = formData.get("referral_id") as string | null;
+      const ambassadorId = formData.get("ambassador_id") as string | null;
 
-    const supabase = createServiceClient();
+      if (!referralId || !ambassadorId) {
+        return { error: "Missing referral or ambassador information." };
+      }
 
-    const amount =
-      business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
+      const supabase = createServiceClient();
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    await (supabase as any)
-      .from("referrals")
-      .update({ status: "completed", rewarded_at: new Date().toISOString() })
-      .eq("id", referralId);
+      const amount =
+        business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
 
-    let ambassadorPhone: string | null | undefined;
-    let ambassadorReferralCode: string | null | undefined;
-
-    if (amount > 0) {
-      const { data: ambassador } = await supabase
-        .from("customers")
-        .select("credits, phone, referral_code")
-        .eq("id", ambassadorId)
-        .single();
-
+      // Update referral status
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const currentCredits = (ambassador as any)?.credits ?? 0;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ambassadorPhone = (ambassador as any)?.phone;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ambassadorReferralCode = (ambassador as any)?.referral_code;
+      const { error: updateError } = await (supabase as any)
+        .from("referrals")
+        .update({ status: "completed", rewarded_at: new Date().toISOString() })
+        .eq("id", referralId);
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      await (supabase as any)
-        .from("customers")
-        .update({ credits: currentCredits + amount })
-        .eq("id", ambassadorId);
-    } else {
-      const { data: ambassador } = await supabase
-        .from("customers")
-        .select("phone, referral_code")
-        .eq("id", ambassadorId)
-        .single();
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ambassadorPhone = (ambassador as any)?.phone;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ambassadorReferralCode = (ambassador as any)?.referral_code;
+      if (updateError) {
+        console.error("Failed to update referral:", updateError);
+        return { error: "Failed to mark referral as completed." };
+      }
+
+      let ambassadorPhone: string | null | undefined;
+      let ambassadorReferralCode: string | null | undefined;
+
+      if (amount > 0) {
+        const { data: ambassador, error: ambassadorError } = await supabase
+          .from("customers")
+          .select("credits, phone, referral_code")
+          .eq("id", ambassadorId)
+          .single();
+
+        if (ambassadorError) {
+          console.error("Failed to fetch ambassador:", ambassadorError);
+          return { error: "Failed to fetch ambassador details." };
+        }
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const currentCredits = (ambassador as any)?.credits ?? 0;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ambassadorPhone = (ambassador as any)?.phone;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ambassadorReferralCode = (ambassador as any)?.referral_code;
+
+        // Update credits
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const { error: creditError } = await (supabase as any)
+          .from("customers")
+          .update({ credits: currentCredits + amount })
+          .eq("id", ambassadorId);
+
+        if (creditError) {
+          console.error("Failed to update credits:", creditError);
+          return { error: "Failed to update ambassador credits." };
+        }
+      } else {
+        const { data: ambassador, error: ambassadorError } = await supabase
+          .from("customers")
+          .select("phone, referral_code")
+          .eq("id", ambassadorId)
+          .single();
+
+        if (ambassadorError) {
+          console.error("Failed to fetch ambassador:", ambassadorError);
+        }
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ambassadorPhone = (ambassador as any)?.phone;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ambassadorReferralCode = (ambassador as any)?.referral_code;
+      }
+
+      // Send SMS notification
+      const sid = process.env.TWILIO_ACCOUNT_SID;
+      const token = process.env.TWILIO_AUTH_TOKEN;
+      const from = process.env.TWILIO_PHONE_NUMBER;
+
+      if (sid && token && from && ambassadorPhone) {
+        try {
+          const client = twilio(sid, token);
+          const referralLink = ambassadorReferralCode
+            ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
+            : "";
+
+          await client.messages.create({
+            body: `Amazing! Your friend just booked – you've earned $${amount} credit at ${business.name}! Your link: ${referralLink}`,
+            from,
+            to: ambassadorPhone,
+          });
+        } catch (smsError) {
+          console.error("Failed to send SMS notification:", smsError);
+          // Don't return error - referral was completed successfully
+          // SMS notification is a bonus feature
+        }
+      }
+
+      revalidatePath("/dashboard");
+      return { success: `Referral completed! ${amount > 0 ? `$${amount} credited to ambassador.` : ''}` };
+    } catch (error) {
+      console.error("Mark referral completed error:", error);
+      return { error: "An unexpected error occurred. Please try again." };
     }
-
-    const sid = process.env.TWILIO_ACCOUNT_SID;
-    const token = process.env.TWILIO_AUTH_TOKEN;
-    const from = process.env.TWILIO_PHONE_NUMBER;
-
-    if (sid && token && from && ambassadorPhone) {
-      const client = twilio(sid, token);
-      const referralLink = ambassadorReferralCode
-        ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
-        : "";
-
-      await client.messages.create({
-        body: `Amazing! Your friend just booked – you've earned £${amount} credit at ${business.name}! Your link: ${referralLink}`,
-        from,
-        to: ambassadorPhone,
-      });
-    }
-
-    revalidatePath("/dashboard");
   }
 
   const supabase = createServerComponentClient();
@@ -260,7 +329,7 @@ export default async function Dashboard() {
               )}
 
               <div>
-                <Label htmlFor="reward_amount">Reward amount (£/$)</Label>
+                <Label htmlFor="reward_amount">Reward amount (AUD $)</Label>
                 <Input
                   id="reward_amount"
                   name="reward_amount"
@@ -278,21 +347,7 @@ export default async function Dashboard() {
 
         <TabsContent value="clients">
           <Card className="p-6">
-            <form action={uploadCSV} className="space-y-4">
-              <div>
-                <Label htmlFor="file">
-                  Upload CSV (columns: name, phone, email optional)
-                </Label>
-                <Input
-                  id="file"
-                  type="file"
-                  name="file"
-                  accept=".csv"
-                  required
-                />
-              </div>
-              <Button type="submit">Upload &amp; Generate Links</Button>
-            </form>
+            <CSVUploadForm uploadAction={uploadCSV} />
 
             <div className="mt-8 space-y-4">
               <h3 className="text-lg font-semibold">All customers</h3>
@@ -396,26 +451,17 @@ export default async function Dashboard() {
                             : "—"}
                         </TableCell>
                         <TableCell className="text-right">
-                          <form action={markReferralCompleted}>
-                            <input
-                              type="hidden"
-                              name="referral_id"
-                              value={referral.id}
+                          {isPending ? (
+                            <ReferralCompletionForm
+                              referralId={referral.id}
+                              ambassadorId={referral.ambassador_id ?? ""}
+                              completionAction={markReferralCompleted}
                             />
-                            <input
-                              type="hidden"
-                              name="ambassador_id"
-                              value={referral.ambassador_id ?? ""}
-                            />
-                            <Button
-                              type="submit"
-                              size="sm"
-                              variant={isPending ? "default" : "outline"}
-                              disabled={!isPending}
-                            >
-                              {isPending ? "Mark completed" : "Completed"}
+                          ) : (
+                            <Button size="sm" variant="outline" disabled>
+                              Completed
                             </Button>
-                          </form>
+                          )}
                         </TableCell>
                       </TableRow>
                     );
@@ -426,6 +472,7 @@ export default async function Dashboard() {
           </Card>
         </TabsContent>
       </Tabs>
+      <Toaster />
     </div>
   );
 }

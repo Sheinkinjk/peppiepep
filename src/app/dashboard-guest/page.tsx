@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -17,7 +17,16 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { nanoid } from "nanoid";
 import Papa from "papaparse";
-import { Sparkles, Upload, ArrowRight } from "lucide-react";
+import {
+  Sparkles,
+  Upload,
+  ArrowRight,
+  Users,
+  Zap,
+  CheckCircle2,
+  Plus,
+  Copy,
+} from "lucide-react";
 import Link from "next/link";
 
 interface GuestBusiness {
@@ -57,6 +66,10 @@ export default function GuestDashboard() {
   const [referrals, setReferrals] = useState<GuestReferral[]>([]);
   const [offerText, setOfferText] = useState("");
   const [rewardAmount, setRewardAmount] = useState("");
+  const [quickName, setQuickName] = useState("");
+  const [quickPhone, setQuickPhone] = useState("");
+  const [quickEmail, setQuickEmail] = useState("");
+  const [copiedCode, setCopiedCode] = useState("");
 
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
 
@@ -157,6 +170,33 @@ export default function GuestDashboard() {
     localStorage.setItem("pepform_guest_customers", JSON.stringify(updatedCustomers));
   };
 
+  const handleAddCustomer = () => {
+    if (!quickName && !quickPhone && !quickEmail) return;
+
+    const newCustomer: GuestCustomer = {
+      id: nanoid(12),
+      name: quickName || "New Guest",
+      phone: quickPhone || "+61 400 000 000",
+      email: quickEmail || undefined,
+      referral_code: nanoid(12),
+      credits: 0,
+      status: "active",
+    };
+
+    const allCustomers = [newCustomer, ...customers];
+    setCustomers(allCustomers);
+    localStorage.setItem("pepform_guest_customers", JSON.stringify(allCustomers));
+    setQuickName("");
+    setQuickPhone("");
+    setQuickEmail("");
+  };
+
+  const copyToClipboard = (text: string, code: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedCode(code);
+    setTimeout(() => setCopiedCode(""), 1500);
+  };
+
   const handleConvertToRealAccount = () => {
     localStorage.removeItem("pepform_guest_mode");
     router.push("/login");
@@ -168,225 +208,419 @@ export default function GuestDashboard() {
 
   const pendingReferrals = referrals.filter((r) => r.status === "pending").length;
   const totalRewards = customers.reduce((sum, c) => sum + c.credits, 0);
+  const totalReferrals = referrals.length;
+  const activeAmbassadors = customers.length;
 
   return (
-    <div className="mx-auto max-w-5xl p-8">
-      <div className="mb-6 rounded-lg bg-amber-50 border border-amber-200 p-4">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex items-start gap-2">
-            <Sparkles className="h-5 w-5 text-amber-600 mt-0.5" />
-            <div>
-              <p className="text-sm font-semibold text-amber-900">Guest Mode - MVP Testing</p>
-              <p className="text-xs text-amber-700 mt-1">
-                You are using a test account. Data is stored locally in your browser.
-              </p>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white">
+      <div className="mx-auto max-w-6xl px-4 py-10 lg:px-8">
+        <div className="mb-6 flex flex-col gap-4 rounded-2xl border border-amber-200/80 bg-gradient-to-r from-amber-50 to-orange-50 p-5 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-200">
+                <Sparkles className="h-5 w-5 text-amber-700" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-amber-900">Guest Mode — MVP Testing</p>
+                <p className="text-xs text-amber-800">
+                  This is a fully interactive offline demo. Data is stored locally so you can showcase the flow without setup.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleConvertToRealAccount}
+                className="border-amber-300 bg-white hover:bg-amber-50"
+              >
+                Convert to cloud account
+              </Button>
+              <Link href="/demo">
+                <Button size="sm" variant="secondary" className="bg-white text-amber-900 hover:bg-amber-100">
+                  View full demo
+                </Button>
+              </Link>
             </div>
           </div>
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={handleConvertToRealAccount}
-            className="shrink-0 border-amber-300 bg-white hover:bg-amber-50"
-          >
-            Create Real Account
-          </Button>
         </div>
-      </div>
 
-      <h1 className="mb-2 text-4xl font-bold">
-        Pepform Dashboard — {business.name}
-      </h1>
-      <p className="mb-8 text-sm text-muted-foreground">
-        Pending referrals: {pendingReferrals} • Total credits issued: ${totalRewards}
-      </p>
+        <div className="mb-8 flex flex-col gap-2">
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">
+            Pepform Dashboard — {business.name}
+          </h1>
+          <p className="text-sm text-slate-600">
+            Pending referrals: {pendingReferrals} • Total credits issued: ${totalRewards}
+          </p>
+        </div>
 
-      <Tabs defaultValue="settings" className="w-full">
-        <TabsList>
-          <TabsTrigger value="settings">Settings & Rewards</TabsTrigger>
-          <TabsTrigger value="clients">Clients & Ambassadors</TabsTrigger>
-          <TabsTrigger value="referrals">
-            Referrals ({pendingReferrals} pending)
-          </TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="settings">
-          <Card className="p-6">
-            <form onSubmit={handleUpdateSettings} className="space-y-4">
-              <div>
-                <Label htmlFor="offer_text">New client offer text</Label>
-                <Input
-                  id="offer_text"
-                  value={offerText}
-                  onChange={(e) => setOfferText(e.target.value)}
-                />
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Card className="p-4 border-purple-200 bg-gradient-to-br from-purple-50 to-white">
+            <div className="flex items-center justify-between">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100">
+                <Users className="h-5 w-5 text-purple-700" />
               </div>
-
-              <div>
-                <Label htmlFor="reward_amount">Reward amount ($ AUD)</Label>
-                <Input
-                  id="reward_amount"
-                  type="number"
-                  value={rewardAmount}
-                  onChange={(e) => setRewardAmount(e.target.value)}
-                />
-              </div>
-
-              <Button type="submit" className="mt-2">
-                Save Settings
-              </Button>
-            </form>
-
-            <div className="mt-8 p-4 rounded-lg bg-purple-50 border border-purple-200">
-              <h3 className="font-semibold text-purple-900 mb-2">Quick Demo Links</h3>
-              <div className="space-y-2 text-sm">
-                <div>
-                  <Link
-                    href="/r/demo-referral"
-                    target="_blank"
-                    className="text-purple-700 hover:text-purple-900 underline flex items-center gap-1"
-                  >
-                    View demo referral page
-                    <ArrowRight className="h-3 w-3" />
-                  </Link>
-                  <p className="text-xs text-purple-600">See what customers see when they use a referral link</p>
-                </div>
-                <div>
-                  <Link
-                    href="/demo"
-                    target="_blank"
-                    className="text-purple-700 hover:text-purple-900 underline flex items-center gap-1"
-                  >
-                    View investor demo dashboard
-                    <ArrowRight className="h-3 w-3" />
-                  </Link>
-                  <p className="text-xs text-purple-600">See a fully populated dashboard with sample data</p>
-                </div>
-              </div>
+              <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-2 py-1 rounded-full">
+                Live
+              </span>
             </div>
+            <p className="mt-4 text-3xl font-bold text-slate-900">{activeAmbassadors}</p>
+            <p className="text-sm text-slate-600">Referrers in program</p>
           </Card>
-        </TabsContent>
 
-        <TabsContent value="clients">
-          <Card className="p-6">
-            <div className="space-y-4 mb-8">
-              <Label htmlFor="file">
-                <div className="flex items-center gap-2">
-                  <Upload className="h-4 w-4" />
-                  Upload CSV (columns: name, phone, email optional)
-                </div>
-              </Label>
-              <Input
-                id="file"
-                type="file"
-                accept=".csv"
-                onChange={handleUploadCSV}
-              />
-              <p className="text-xs text-slate-500">
-                Upload a CSV with customer data to generate referral links automatically
-              </p>
+          <Card className="p-4 border-green-200 bg-gradient-to-br from-green-50 to-white">
+            <div className="flex items-center justify-between">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
+                <Zap className="h-5 w-5 text-green-700" />
+              </div>
+              <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-1 rounded-full">
+                Rewards
+              </span>
             </div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">All customers</h3>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Phone</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Referral link</TableHead>
-                    <TableHead className="text-right">Credits</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {customers.length === 0 && (
-                    <TableRow>
-                      <TableCell colSpan={5} className="text-center text-sm">
-                        No customers yet. Upload a CSV to get started.
-                      </TableCell>
-                    </TableRow>
-                  )}
-                  {customers.map((customer) => (
-                    <TableRow key={customer.id}>
-                      <TableCell>{customer.name}</TableCell>
-                      <TableCell>{customer.phone}</TableCell>
-                      <TableCell>{customer.email || "—"}</TableCell>
-                      <TableCell className="max-w-[220px] truncate text-xs">
-                        {siteUrl}/r/{customer.referral_code}
-                      </TableCell>
-                      <TableCell className="text-right font-semibold">
-                        ${customer.credits}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
+            <p className="mt-4 text-3xl font-bold text-slate-900">${totalRewards}</p>
+            <p className="text-sm text-slate-600">Credits issued</p>
           </Card>
-        </TabsContent>
 
-        <TabsContent value="referrals">
-          <Card className="p-6">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Referrals</h3>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Referred</TableHead>
-                    <TableHead>Ambassador</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Created</TableHead>
-                    <TableHead className="text-right">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {referrals.length === 0 && (
+          <Card className="p-4 border-amber-200 bg-gradient-to-br from-amber-50 to-white">
+            <div className="flex items-center justify-between">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-100">
+                <CheckCircle2 className="h-5 w-5 text-amber-700" />
+              </div>
+              <span className="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-1 rounded-full">
+                Activity
+              </span>
+            </div>
+            <p className="mt-4 text-3xl font-bold text-slate-900">{totalReferrals}</p>
+            <p className="text-sm text-slate-600">Referrals logged</p>
+          </Card>
+
+          <Card className="p-4 border-blue-200 bg-gradient-to-br from-blue-50 to-white">
+            <div className="flex items-center justify-between">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
+                <Upload className="h-5 w-5 text-blue-700" />
+              </div>
+              <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
+                Demo
+              </span>
+            </div>
+            <p className="mt-4 text-3xl font-bold text-slate-900">Instant</p>
+            <p className="text-sm text-slate-600">No backend required</p>
+          </Card>
+        </div>
+
+        <Tabs defaultValue="clients" className="w-full">
+          <TabsList>
+            <TabsTrigger value="clients">Clients & Ambassadors</TabsTrigger>
+            <TabsTrigger value="referrals">
+              Referrals ({pendingReferrals} pending)
+            </TabsTrigger>
+            <TabsTrigger value="settings">Settings & Rewards</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="clients">
+            <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr]">
+              <Card className="p-6">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-semibold text-slate-900">Import your list</h3>
+                    <p className="text-sm text-slate-600">
+                      Upload a CSV or add one manually to generate referral links instantly.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Button variant="outline" className="gap-2" asChild>
+                      <label htmlFor="file" className="flex cursor-pointer items-center gap-2">
+                        <Upload className="h-4 w-4" />
+                        Upload CSV
+                      </label>
+                    </Button>
+                    <Button variant="secondary" className="gap-2" onClick={handleAddCustomer} disabled={!quickName && !quickPhone && !quickEmail}>
+                      <Plus className="h-4 w-4" />
+                      Add contact
+                    </Button>
+                  </div>
+                </div>
+
+                <input
+                  id="file"
+                  type="file"
+                  accept=".csv"
+                  onChange={handleUploadCSV}
+                  className="hidden"
+                />
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  <div>
+                    <Label htmlFor="quickName">Name</Label>
+                    <Input
+                      id="quickName"
+                      value={quickName}
+                      onChange={(e) => setQuickName(e.target.value)}
+                      placeholder="Alex Ambassador"
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="quickPhone">Phone</Label>
+                    <Input
+                      id="quickPhone"
+                      value={quickPhone}
+                      onChange={(e) => setQuickPhone(e.target.value)}
+                      placeholder="+61 400 123 456"
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="quickEmail">Email</Label>
+                    <Input
+                      id="quickEmail"
+                      value={quickEmail}
+                      onChange={(e) => setQuickEmail(e.target.value)}
+                      placeholder="you@example.com"
+                      className="mt-1"
+                    />
+                  </div>
+                </div>
+
+                <p className="mt-3 text-xs text-slate-500">
+                  CSV columns supported: name, phone, email (optional). Imported data persists locally for this demo.
+                </p>
+
+                <div className="mt-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold">All customers</h3>
+                    <span className="text-xs text-slate-500">{customers.length} total</span>
+                  </div>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Phone</TableHead>
+                        <TableHead>Email</TableHead>
+                        <TableHead>Referral link</TableHead>
+                        <TableHead className="text-right">Credits</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {customers.length === 0 && (
+                        <TableRow>
+                          <TableCell colSpan={5} className="text-center text-sm">
+                            No customers yet. Upload a CSV or add one above.
+                          </TableCell>
+                        </TableRow>
+                      )}
+                      {customers.map((customer) => {
+                        const link = `${siteUrl}/r/${customer.referral_code}`;
+                        return (
+                          <TableRow key={customer.id}>
+                            <TableCell className="font-semibold">{customer.name}</TableCell>
+                            <TableCell>{customer.phone}</TableCell>
+                            <TableCell>{customer.email || "—"}</TableCell>
+                            <TableCell className="max-w-[220px] truncate text-xs">
+                              <div className="flex items-center gap-2">
+                                <span className="truncate">{link}</span>
+                                <Button
+                                  size="sm"
+                                  variant="ghost"
+                                  className="h-8 w-8 p-0"
+                                  onClick={() => copyToClipboard(link, customer.referral_code)}
+                                >
+                                  {copiedCode === customer.referral_code ? (
+                                    <CheckCircle2 className="h-4 w-4 text-green-600" />
+                                  ) : (
+                                    <Copy className="h-4 w-4 text-slate-500" />
+                                  )}
+                                </Button>
+                              </div>
+                            </TableCell>
+                            <TableCell className="text-right font-semibold">
+                              ${customer.credits}
+                            </TableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                </div>
+              </Card>
+
+              <Card className="p-6 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-0 shadow-xl">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <Zap className="h-5 w-5 text-amber-300" />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wide text-amber-200">Investor-ready demo</p>
+                    <h3 className="text-xl font-bold">Showcase the full flow</h3>
+                  </div>
+                </div>
+                <ul className="space-y-3 text-sm text-white/90">
+                  <li className="flex gap-2">
+                    <span className="text-emerald-200">•</span>
+                    Add contacts or import CSV to generate referral links instantly.
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-200">•</span>
+                    Open the demo referral page to log a referral (saved locally).
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-200">•</span>
+                    Mark referrals complete to show rewards and balances updating live.
+                  </li>
+                </ul>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <Link href="/r/demo-referral" target="_blank">
+                    <Button size="sm" variant="secondary" className="bg-white text-slate-900 hover:bg-slate-100">
+                      Open demo referral page
+                    </Button>
+                  </Link>
+                  <Link href="/demo" target="_blank">
+                    <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+                      View full dashboard
+                    </Button>
+                  </Link>
+                </div>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="referrals">
+            <Card className="p-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg font-semibold">Referrals</h3>
+                    <p className="text-xs text-slate-500">
+                      Track statuses and reward ambassadors in demo mode
+                    </p>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-700">
+                      {pendingReferrals} pending
+                    </span>
+                    <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+                      {totalReferrals - pendingReferrals} completed
+                    </span>
+                  </div>
+                </div>
+                <Table>
+                  <TableHeader>
                     <TableRow>
-                      <TableCell colSpan={5} className="text-center text-sm">
-                        No referrals yet. Try the demo referral page to see how it works.
-                      </TableCell>
+                      <TableHead>Referred</TableHead>
+                      <TableHead>Ambassador</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead>Created</TableHead>
+                      <TableHead className="text-right">Action</TableHead>
                     </TableRow>
-                  )}
-                  {referrals.map((referral) => {
-                    const ambassador = customers.find((c) => c.id === referral.ambassador_id);
-                    const isPending = referral.status === "pending";
-                    return (
-                      <TableRow key={referral.id}>
-                        <TableCell>
-                          <div className="font-medium">{referral.referred_name}</div>
-                          <div className="text-xs text-muted-foreground">
-                            {referral.referred_email || referral.referred_phone}
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <div className="font-medium">{ambassador?.name || "Unknown"}</div>
-                          <div className="text-xs text-muted-foreground">
-                            {ambassador?.phone || "—"}
-                          </div>
-                        </TableCell>
-                        <TableCell className="capitalize">{referral.status}</TableCell>
-                        <TableCell className="text-sm text-muted-foreground">
-                          {new Date(referral.created_at).toLocaleDateString()}
-                        </TableCell>
-                        <TableCell className="text-right">
-                          <Button
-                            size="sm"
-                            variant={isPending ? "default" : "outline"}
-                            disabled={!isPending}
-                            onClick={() => handleMarkCompleted(referral.id, referral.ambassador_id)}
-                          >
-                            {isPending ? "Mark completed" : "Completed"}
-                          </Button>
+                  </TableHeader>
+                  <TableBody>
+                    {referrals.length === 0 && (
+                      <TableRow>
+                        <TableCell colSpan={5} className="text-center text-sm">
+                          No referrals yet. Try the demo referral page to see how it works.
                         </TableCell>
                       </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
+                    )}
+                    {referrals.map((referral) => {
+                      const ambassador = customers.find((c) => c.id === referral.ambassador_id);
+                      const isPending = referral.status === "pending";
+                      return (
+                        <TableRow key={referral.id} className={isPending ? "bg-orange-50/50" : ""}>
+                          <TableCell>
+                            <div className="font-medium">{referral.referred_name}</div>
+                            <div className="text-xs text-muted-foreground">
+                              {referral.referred_email || referral.referred_phone}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="font-medium">{ambassador?.name || "Unknown"}</div>
+                            <div className="text-xs text-muted-foreground">
+                              {ambassador?.phone || "—"}
+                            </div>
+                          </TableCell>
+                          <TableCell className="capitalize">{referral.status}</TableCell>
+                          <TableCell className="text-sm text-muted-foreground">
+                            {new Date(referral.created_at).toLocaleDateString()}
+                          </TableCell>
+                          <TableCell className="text-right">
+                            <Button
+                              size="sm"
+                              variant={isPending ? "default" : "outline"}
+                              disabled={!isPending}
+                              onClick={() => handleMarkCompleted(referral.id, referral.ambassador_id)}
+                            >
+                              {isPending ? "Mark completed" : "Completed"}
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </div>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="settings">
+            <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
+              <Card className="p-6">
+                <form onSubmit={handleUpdateSettings} className="space-y-4">
+                  <div>
+                    <Label htmlFor="offer_text">New client offer text</Label>
+                    <Input
+                      id="offer_text"
+                      value={offerText}
+                      onChange={(e) => setOfferText(e.target.value)}
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="reward_amount">Reward amount ($ AUD)</Label>
+                    <Input
+                      id="reward_amount"
+                      type="number"
+                      value={rewardAmount}
+                      onChange={(e) => setRewardAmount(e.target.value)}
+                    />
+                  </div>
+
+                  <Button type="submit" className="mt-2">
+                    Save settings
+                  </Button>
+                </form>
+              </Card>
+
+              <Card className="p-6 bg-gradient-to-br from-purple-50 to-white border-purple-200">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">Quick Demo Links</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <Link
+                      href="/r/demo-referral"
+                      target="_blank"
+                      className="text-purple-700 hover:text-purple-900 underline flex items-center gap-1"
+                    >
+                      View demo referral page
+                      <ArrowRight className="h-3 w-3" />
+                    </Link>
+                    <p className="text-xs text-purple-600">Customer view for referral capture</p>
+                  </div>
+                  <div>
+                    <Link
+                      href="/demo"
+                      target="_blank"
+                      className="text-purple-700 hover:text-purple-900 underline flex items-center gap-1"
+                    >
+                      View investor demo dashboard
+                      <ArrowRight className="h-3 w-3" />
+                    </Link>
+                    <p className="text-xs text-purple-600">Populated dashboard with sample data</p>
+                  </div>
+                </div>
+              </Card>
             </div>
-          </Card>
-        </TabsContent>
-      </Tabs>
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
   );
 }

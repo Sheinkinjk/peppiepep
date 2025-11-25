@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server";
 
 import { createServiceClient } from "@/lib/supabase";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
+  // Apply rate limiting: 30 requests per minute
+  const rateLimitCheck = checkRateLimit(request, 'demoReferrals');
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    return rateLimitCheck.response;
+  }
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
     !process.env.SUPABASE_SERVICE_ROLE_KEY

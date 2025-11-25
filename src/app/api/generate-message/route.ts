@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 // Initialize OpenAI (will use env var OPENAI_API_KEY)
 const openai = process.env.OPENAI_API_KEY
@@ -7,6 +8,11 @@ const openai = process.env.OPENAI_API_KEY
   : null;
 
 export async function POST(request: Request) {
+  // Apply rate limiting: 10 requests per minute
+  const rateLimitCheck = checkRateLimit(request, 'generateMessage');
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    return rateLimitCheck.response;
+  }
   if (!openai) {
     // Return mock responses if OpenAI is not configured
     return NextResponse.json({

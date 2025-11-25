@@ -6,7 +6,6 @@ import {
   ShieldCheck,
   Sparkles,
   Upload,
-  Star,
   TrendingUp,
   Users,
   Calendar,
@@ -30,17 +29,14 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden items-center gap-3 text-sm font-semibold text-slate-700 sm:flex">
-            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/how-it-works">
-              How it works
-            </Link>
-            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/pricing">
-              Pricing
+            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/demo">
+              See Demo
             </Link>
             <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="#features">
-              Product
+              Features
             </Link>
             <a
-              href="https://calendly.com/pepform/demo"
+              href="https://calendly.com/jarredkrowitz/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border-2 border-purple-600 bg-white px-4 py-2 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:bg-purple-50"
@@ -57,7 +53,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2 sm:hidden">
             <a
-              href="https://calendly.com/pepform/demo"
+              href="https://calendly.com/jarredkrowitz/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 rounded-full border-2 border-purple-600 bg-white px-3 py-2 text-xs font-semibold text-purple-700"
@@ -77,13 +73,13 @@ export default function Home() {
         <div className="flex flex-col-reverse gap-10 lg:flex-row lg:items-center">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
-              The referral system that runs itself
+              Referral + campaign engine
             </div>
             <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Turn happy customers into your most powerful growth engine
+              Turn happy customers into your micro‑influencer network
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
-              Stop losing referrals to forgotten conversations. Pepform automatically invites your best clients to become ambassadors, tracks every referral, and rewards them instantly—so you can focus on delivering great service while your business grows.
+              Launch referral programs that plug into every campaign you run. Pepform activates your best clients, tracks and rewards them in real time, and keeps them promoting you across SMS, email, and social as “micro influencers.”
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -93,7 +89,7 @@ export default function Home() {
                 Get started free
               </Link>
               <a
-                href="https://calendly.com/pepform/demo"
+                href="https://calendly.com/jarredkrowitz/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600 bg-white px-6 py-3 text-sm font-semibold text-purple-700 shadow-lg shadow-purple-100 transition hover:-translate-y-0.5 hover:bg-purple-50 hover:shadow-purple-200"
@@ -103,35 +99,31 @@ export default function Home() {
               </a>
               <Link
                 href="/demo"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-300 bg-purple-50 px-6 py-3 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:border-purple-400"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-300 bg-purple-50 px-6 py-3 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:border-purple-400"
               >
                 Try demo dashboard →
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-              <div className="rounded-full bg-white px-3 py-2 shadow ring-1 ring-slate-100">
-                ✓ 5 minutes to launch
-              </div>
-              <div className="rounded-full bg-white px-3 py-2 shadow ring-1 ring-slate-100">
-                ✓ Zero manual tracking
-              </div>
-              <div className="rounded-full bg-white px-3 py-2 shadow ring-1 ring-slate-100">
-                ✓ Instant ambassador rewards
-              </div>
-            </div>
           </div>
 
           <div className="relative w-full max-w-lg self-center lg:ml-auto">
-            <div className="glass relative rounded-3xl p-6 shadow-xl ring-1 ring-white/60">
-              <div className="mb-4 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg" />
-                <div>
-                  <p className="text-sm text-slate-500">Pepform</p>
-                  <p className="text-lg font-semibold text-slate-900">Client referral pulse</p>
+            <div className="glass relative overflow-hidden rounded-3xl p-6 shadow-2xl ring-1 ring-white/60 bg-gradient-to-br from-white/90 via-white to-purple-50">
+              <div className="absolute -left-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 blur-3xl" />
+              <div className="absolute -right-14 bottom-0 h-32 w-32 rounded-full bg-gradient-to-tr from-slate-900/10 to-purple-500/20 blur-3xl" />
+              <div className="relative space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg shadow-purple-300/50" />
+                    <div>
+                      <p className="text-xs font-semibold text-purple-700 uppercase tracking-wide">Pepform</p>
+                      <p className="text-lg font-semibold text-slate-900">Client referral pulse</p>
+                    </div>
+                  </div>
+                  <div className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
+                    Live pulse
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-4">
-                <div className="rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm">
+                <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
                   <div className="flex items-center justify-between text-sm text-slate-500">
                     <span>Pending referrals</span>
                     <span className="font-semibold text-purple-700">12</span>
@@ -140,28 +132,34 @@ export default function Home() {
                     <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500" />
                   </div>
                 </div>
-                <div className="flex gap-3">
-                  <div className="flex-1 rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
                     <p className="text-sm text-slate-500">Ambassadors</p>
                     <p className="text-2xl font-bold text-slate-900">38</p>
                     <p className="text-xs text-slate-500">+6 this week</p>
                   </div>
-                  <div className="flex-1 rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm">
+                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
                     <p className="text-sm text-slate-500">Earned credits</p>
                     <p className="text-2xl font-bold text-slate-900">$482</p>
                     <p className="text-xs text-slate-500">Auto-applied</p>
                   </div>
                 </div>
-                <div className="rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm">
-                  <p className="text-sm text-slate-500">Top ambassador</p>
-                  <p className="text-base font-semibold text-slate-900">
-                    Alex • 9 completed • $90 earned
-                  </p>
-                  <p className="text-xs text-slate-500">“Clients love the offer.”</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
+                    <p className="text-sm text-slate-500">Top micro‑influencer</p>
+                    <p className="text-base font-semibold text-slate-900">
+                      Alex • 9 completed • $90 earned
+                    </p>
+                    <p className="text-xs text-slate-500">“Clients love the offer.”</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
+                    <p className="text-sm text-slate-500">Conversion lift</p>
+                    <p className="text-base font-semibold text-slate-900">+34% vs email-only</p>
+                    <p className="text-xs text-slate-500">Referral links in every campaign</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="absolute -left-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 blur-3xl" />
           </div>
         </div>
 
@@ -172,17 +170,17 @@ export default function Home() {
           {[
             {
               title: "Import & activate",
-              desc: "Upload your customer list once. Every client instantly gets their own beautiful referral link—no manual work required.",
+              desc: "Upload your customer list once. Every client instantly gets a trackable link that plugs into your campaigns—no manual work required.",
               icon: <Upload className="h-5 w-5 text-purple-600" />,
             },
             {
               title: "Sit back & watch",
-              desc: "See exactly who's referring, who's been referred, and what rewards are earned—all in real-time, zero spreadsheets.",
+              desc: "See exactly who's referring, who's been referred, and which campaigns drive results—real-time, no spreadsheets.",
               icon: <ShieldCheck className="h-5 w-5 text-purple-600" />,
             },
             {
               title: "Rewards run themselves",
-              desc: "The moment a referral books, credits hit their account and ambassadors get an instant SMS notification. Completely automatic.",
+              desc: "The moment a referral books, credits hit their account and ambassadors get instant SMS/email nudges—keeping micro-influencers engaged.",
               icon: <Gift className="h-5 w-5 text-purple-600" />,
             },
           ].map((item) => (
@@ -208,26 +206,26 @@ export default function Home() {
               Built for service businesses
             </div>
             <h2 className="text-3xl font-bold text-slate-900">
-              The complete system that turns referrals into revenue
+              The campaign-connected referral system
             </h2>
             <ul className="space-y-3 text-sm leading-relaxed text-slate-700">
               <li className="flex items-start gap-2">
                 <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-xs font-semibold text-purple-700">
                   1
                 </span>
-                <strong>Never lose a referral opportunity.</strong> Every customer gets their own trackable link they can share anywhere.
+                <strong>Every customer becomes a micro‑influencer.</strong> Each client gets a trackable link tied into your live campaigns, so referrals never slip through.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-xs font-semibold text-purple-700">
                   2
                 </span>
-                <strong>Ambassadors share effortlessly.</strong> One-tap sharing to SMS, WhatsApp, Instagram, and Facebook—no tech skills needed.
+                <strong>Sharing is baked into every channel.</strong> One-tap SMS, WhatsApp, Instagram, and email—connected to the marketing campaigns you launch.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-xs font-semibold text-purple-700">
                   3
                 </span>
-                <strong>Rewards happen instantly.</strong> When referrals convert, credits apply automatically and ambassadors get notified by SMS—keeping them motivated to share more.
+                <strong>Rewards fire automatically.</strong> When referrals convert, credits apply instantly and ambassadors get notified—keeping them motivated to promote you again.
               </li>
             </ul>
             <div className="flex flex-wrap gap-3 text-sm text-slate-600">
@@ -287,79 +285,45 @@ export default function Home() {
         <section className="space-y-6">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200 mb-4">
-              Trusted by service businesses
+              Pre-Launch Platform
             </div>
-            <div className="flex items-center justify-center gap-8 text-sm text-slate-600 mb-8">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-slate-900">2,400+</p>
-                <p className="text-sm">Referrals tracked</p>
-              </div>
-              <div className="h-8 w-px bg-slate-200" />
-              <div className="text-center">
-                <p className="text-3xl font-bold text-slate-900">180+</p>
-                <p className="text-sm">Active businesses</p>
-              </div>
-              <div className="h-8 w-px bg-slate-200" />
-              <div className="text-center">
-                <p className="text-3xl font-bold text-slate-900">$94k+</p>
-                <p className="text-sm">Revenue attributed</p>
-              </div>
-            </div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Built for service businesses
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto mb-8">
+              We're currently in private beta testing with select service businesses. Join our early adopters and get lifetime priority support plus discounted pricing.
+            </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                ))}
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
+                <Upload className="h-6 w-6 text-purple-600" />
               </div>
-              <p className="mb-4 text-slate-700 leading-relaxed">
-                "We went from tracking referrals in a messy spreadsheet to having a proper system in 10 minutes. In 3 months, referrals went from 15% to 42% of new bookings."
+              <h3 className="font-semibold text-slate-900 mb-2">Quick Setup</h3>
+              <p className="text-slate-700 leading-relaxed">
+                CSV import means you can have your entire customer base set up with referral links in under 5 minutes. No manual data entry required.
               </p>
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400" />
-                <div>
-                  <p className="font-semibold text-slate-900">Sarah Mitchell</p>
-                  <p className="text-sm text-slate-500">Owner, Glow Beauty Studio</p>
-                </div>
-              </div>
             </div>
 
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                ))}
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+                <MessageSquare className="h-6 w-6 text-blue-600" />
               </div>
-              <p className="mb-4 text-slate-700 leading-relaxed">
-                "The SMS notifications keep our clients engaged. They actually share their links now because it's so easy. Our best month: 28 referrals, $3.2k revenue."
+              <h3 className="font-semibold text-slate-900 mb-2">Automated SMS</h3>
+              <p className="text-slate-700 leading-relaxed">
+                Ambassadors get instant SMS notifications when they earn credits. Keeps them engaged and motivated to share more.
               </p>
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400" />
-                <div>
-                  <p className="font-semibold text-slate-900">James Chen</p>
-                  <p className="text-sm text-slate-500">Director, Elite Fitness Co.</p>
-                </div>
-              </div>
             </div>
 
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                ))}
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                <Sparkles className="h-6 w-6 text-green-600" />
               </div>
-              <p className="mb-4 text-slate-700 leading-relaxed">
-                "Saves me 5 hours a week I used to spend tracking who referred who. The automatic rewards are brilliant—clients love getting their credits instantly."
+              <h3 className="font-semibold text-slate-900 mb-2">AI-Powered</h3>
+              <p className="text-slate-700 leading-relaxed">
+                Smart message generation, ambassador scoring, and ROI forecasting built in. Let AI handle the heavy lifting.
               </p>
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-400" />
-                <div>
-                  <p className="font-semibold text-slate-900">Emma Rodriguez</p>
-                  <p className="text-sm text-slate-500">Founder, Verde Wellness</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -602,17 +566,18 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <Link className="hover:text-slate-900" href="/about">
-                About
+              <Link className="hover:text-slate-900" href="/demo">
+                Demo
               </Link>
               <span className="text-slate-300">•</span>
-              <Link className="hover:text-slate-900" href="/security">
-                Security
-              </Link>
-              <span className="text-slate-300">•</span>
-              <Link className="hover:text-slate-900" href="/pricing">
-                Pricing
-              </Link>
+              <a
+                href="https://calendly.com/jarredkrowitz/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900"
+              >
+                Book a Call
+              </a>
               <span className="text-slate-300">•</span>
               <Link className="hover:text-slate-900" href="/login">
                 Sign in
