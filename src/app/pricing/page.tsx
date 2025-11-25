@@ -52,7 +52,10 @@ export default function Pricing() {
           </Link>
         </header>
 
-        <div className="mx-auto max-w-3xl space-y-4 text-center">
+        <div className="mx-auto max-w-3xl space-y-6 text-center">
+          <div className="rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 px-4 py-3 text-sm font-semibold shadow-sm">
+            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarredkrowitz@gmail.com" className="underline text-amber-800">jarredkrowitz@gmail.com</a> with any questions.
+          </div>
           <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
             Simple, transparent pricing
           </div>

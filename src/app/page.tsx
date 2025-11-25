@@ -29,11 +29,14 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden items-center gap-3 text-sm font-semibold text-slate-700 sm:flex">
-            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/demo">
-              See Demo
+            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/how-it-works">
+              How it works
             </Link>
-            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="#features">
-              Features
+            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/pricing">
+              Pricing
+            </Link>
+            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/demo">
+              Demo
             </Link>
             <a
               href="https://calendly.com/jarredkrowitz/30min"
@@ -61,6 +64,12 @@ export default function Home() {
               <Calendar className="h-3.5 w-3.5" />
               Call
             </a>
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-purple-700 shadow-md shadow-purple-200"
+            >
+              How it works
+            </Link>
             <Link
               href="/login"
               className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200"
@@ -97,13 +106,13 @@ export default function Home() {
                 <Calendar className="h-4 w-4" />
                 Schedule a Call
               </a>
-              <Link
-                href="/demo"
+            <Link
+              href="/demo"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-300 bg-purple-50 px-6 py-3 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:border-purple-400"
-              >
-                Try demo dashboard →
-              </Link>
-            </div>
+            >
+              Try demo dashboard →
+            </Link>
+          </div>
           </div>
 
           <div className="relative w-full max-w-lg self-center lg:ml-auto">
@@ -566,8 +575,16 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <Link className="hover:text-slate-900" href="/demo">
-                Demo
+              <Link className="hover:text-slate-900" href="/contact">
+                Contact Us
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900" href="/terms">
+                Terms of Service
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900" href="/privacy">
+                Privacy Policy
               </Link>
               <span className="text-slate-300">•</span>
               <a
@@ -576,7 +593,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="hover:text-slate-900"
               >
-                Book a Call
+                Schedule a Call
               </a>
               <span className="text-slate-300">•</span>
               <Link className="hover:text-slate-900" href="/login">

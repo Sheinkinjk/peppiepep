@@ -26,12 +26,40 @@ export default function HowItWorks() {
               </p>
             </div>
           </Link>
-          <Link
-            href="/login"
-            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
-          >
-            Get started <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="hidden items-center gap-3 text-sm font-semibold text-slate-700 sm:flex">
+            <Link className="rounded-full px-3 py-1.5 text-purple-700 ring-1 ring-purple-200 bg-purple-50" href="/how-it-works">
+              How it works
+            </Link>
+            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/pricing">
+              Pricing
+            </Link>
+            <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/demo">
+              Demo
+            </Link>
+            <a
+              href="https://calendly.com/jarredkrowitz/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-purple-600 bg-white px-4 py-2 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:bg-purple-50"
+            >
+              <ArrowRight className="h-4 w-4 rotate-180" />
+              Schedule a Call
+            </a>
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
+            >
+              Go to app <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="flex items-center gap-2 sm:hidden">
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200"
+            >
+              Go to app <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </header>
 
         <div className="max-w-3xl space-y-4">
@@ -39,10 +67,10 @@ export default function HowItWorks() {
             Step-by-step guide
           </div>
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            How Pepform Works
+            How Pepform turns customers into micro‑influencers
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
-            From upload to reward in minutes. Here's exactly how Pepform transforms your customers into an automated referral engine.
+            From upload to reward in minutes. See how we plug referrals into your marketing campaigns so every happy customer promotes you across SMS, email, and social.
           </p>
         </div>
 
@@ -53,10 +81,10 @@ export default function HowItWorks() {
                 <span className="text-xl font-bold text-purple-700">1</span>
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Import your customers
+                Import your customers (activate your micro‑influencers)
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Upload a simple CSV file with your customer list (name, phone, email). That's it. No complex formatting, no data cleanup—just a standard spreadsheet.
+                Upload a simple CSV (name, phone, email). Pepform instantly turns every customer into a trackable, campaign-connected micro‑influencer.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -69,8 +97,8 @@ export default function HowItWorks() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-slate-900">Unique links generated</p>
-                    <p className="text-sm text-slate-600">Every customer automatically gets their own trackable referral link</p>
+                    <p className="font-semibold text-slate-900">Campaign-ready links</p>
+                    <p className="text-sm text-slate-600">Every customer gets a link you can drop into SMS, email, or ads</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -154,10 +182,10 @@ export default function HowItWorks() {
                 <span className="text-xl font-bold text-purple-700">2</span>
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Customers become ambassadors
+                Customers become ambassadors (micro‑influencers)
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Send customers their unique link via text, email, or give it to them in person. They can access their personal ambassador portal and share with friends instantly.
+                Send customers their unique link via text, email, or embed it inside your campaigns. Their personal portal makes sharing to friends effortless.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -194,7 +222,7 @@ export default function HowItWorks() {
                 Track referrals in real-time
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Every time someone uses a referral link, it shows up in your dashboard instantly. See who referred who, what stage they're at, and manage everything from one place.
+                Every click and referral shows up instantly. See who referred who, which campaign drove it, and reward them automatically—all from one dashboard.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">

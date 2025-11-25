@@ -26,6 +26,7 @@ import {
   CheckCircle2,
   Plus,
   Copy,
+  Download,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -326,6 +327,16 @@ export default function GuestDashboard() {
                     <p className="text-sm text-slate-600">
                       Upload a CSV or add one manually to generate referral links instantly.
                     </p>
+                    <div className="flex flex-wrap gap-3 text-xs">
+                      <a
+                        href="/customer-template.csv"
+                        download
+                        className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-700 hover:bg-slate-50"
+                      >
+                        <Download className="h-3.5 w-3.5" />
+                        Download CSV template
+                      </a>
+                    </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <Button variant="outline" className="gap-2" asChild>
@@ -466,6 +477,10 @@ export default function GuestDashboard() {
                   <li className="flex gap-2">
                     <span className="text-emerald-200">•</span>
                     Mark referrals complete to show rewards and balances updating live.
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-200">•</span>
+                    Launch a sample campaign preview to demo messaging.
                   </li>
                 </ul>
                 <div className="mt-4 flex flex-wrap gap-3">
