@@ -307,21 +307,21 @@ export default async function Dashboard() {
     safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
 
   return (
-    <div className="mx-auto max-w-5xl p-8">
-      <h1 className="mb-2 text-4xl font-bold">
+    <div className="mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+      <h1 className="mb-2 text-2xl sm:text-3xl lg:text-4xl font-bold">
         Pepform Dashboard — {business.name}
       </h1>
-      <p className="mb-8 text-sm text-muted-foreground">
+      <p className="mb-6 sm:mb-8 text-xs sm:text-sm text-muted-foreground">
         Pending referrals: {pendingReferrals} • Total credits issued:{" "}
         {totalRewards}
       </p>
 
       <Tabs defaultValue="settings" className="w-full">
-        <TabsList>
-          <TabsTrigger value="settings">Settings &amp; Rewards</TabsTrigger>
-          <TabsTrigger value="clients">Clients &amp; Ambassadors</TabsTrigger>
-          <TabsTrigger value="referrals">
-            Referrals ({pendingReferrals} pending)
+        <TabsList className="w-full grid grid-cols-3 h-auto">
+          <TabsTrigger value="settings" className="text-xs sm:text-sm px-2 py-2">Settings</TabsTrigger>
+          <TabsTrigger value="clients" className="text-xs sm:text-sm px-2 py-2">Clients</TabsTrigger>
+          <TabsTrigger value="referrals" className="text-xs sm:text-sm px-2 py-2">
+            Referrals ({pendingReferrals})
           </TabsTrigger>
         </TabsList>
 
@@ -383,7 +383,8 @@ export default async function Dashboard() {
             <CSVUploadForm uploadAction={uploadCSV} />
 
             <div className="mt-8 space-y-4">
-              <h3 className="text-lg font-semibold">All customers</h3>
+              <h3 className="text-base sm:text-lg font-semibold">All customers</h3>
+              <div className="overflow-x-auto -mx-6 px-6">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -426,6 +427,7 @@ export default async function Dashboard() {
                   })}
                 </TableBody>
               </Table>
+              </div>
             </div>
           </Card>
         </TabsContent>
@@ -433,7 +435,8 @@ export default async function Dashboard() {
         <TabsContent value="referrals">
           <Card className="p-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Referrals</h3>
+              <h3 className="text-base sm:text-lg font-semibold">Referrals</h3>
+              <div className="overflow-x-auto -mx-6 px-6">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -501,6 +504,7 @@ export default async function Dashboard() {
                   })}
                 </TableBody>
               </Table>
+              </div>
             </div>
           </Card>
         </TabsContent>
