@@ -32,11 +32,6 @@ export function StickyHeader() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <PepformLogo className="h-10 w-auto text-slate-900 transition-transform duration-200 group-hover:scale-105" />
-              <div className="hidden sm:block border-l border-slate-300 pl-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-purple-600">
-                  Referrals OS
-                </p>
-              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -72,7 +67,7 @@ export function StickyHeader() {
                 href="/login"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-5 py-2 text-sm font-bold text-white shadow-lg shadow-slate-900/30 ring-1 ring-slate-700/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-900/40"
               >
-                Go to app <ArrowRight className="h-4 w-4" />
+                Sign in <ArrowRight className="h-4 w-4" />
               </Link>
             </nav>
 
@@ -131,7 +126,7 @@ export function StickyHeader() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-slate-800 to-slate-900 px-4 py-3 text-sm font-bold text-white shadow-lg transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Go to app <ArrowRight className="h-4 w-4" />
+                Sign in <ArrowRight className="h-4 w-4" />
               </Link>
             </nav>
           </div>
