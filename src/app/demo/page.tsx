@@ -573,48 +573,76 @@ export default function DemoPage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-3">
-                  <Button
+                {/* Premium Action Buttons */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <button
                     onClick={() => setShowAIChatbot(true)}
-                    className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+                    className="group relative bg-white rounded-xl border-2 border-slate-200 p-4 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-100/50 transition-all duration-300 text-left"
                   >
-                    <Bot className="mr-2 h-4 w-4" />
-                    <span className="flex items-center gap-1.5">
-                      AI Setup Assistant
-                      <Sparkles className="h-3 w-3" />
-                    </span>
-                  </Button>
-                  <Button
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-200 group-hover:scale-110 transition-transform duration-300">
+                        <Bot className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-slate-900 mb-0.5 flex items-center gap-1">
+                          AI Assistant
+                          <Sparkles className="h-3.5 w-3.5 text-purple-600" />
+                        </p>
+                        <p className="text-xs text-slate-600">Setup wizard</p>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
                     onClick={() => setShowCampaignModal(true)}
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+                    className="group relative bg-white rounded-xl border-2 border-slate-200 p-4 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-300 text-left"
                   >
-                    <Send className="mr-2 h-4 w-4" />
-                    Start Campaign
-                  </Button>
-                  <Button
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform duration-300">
+                        <Send className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-slate-900 mb-0.5">
+                          Start Campaign
+                        </p>
+                        <p className="text-xs text-slate-600">SMS & Email</p>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
                     onClick={() => setActiveTab("referrals")}
-                    variant="outline"
-                    className="border-2 border-purple-200 hover:border-purple-300 hover:bg-purple-50/50 backdrop-blur transition-all duration-200"
+                    className="group relative bg-white rounded-xl border-2 border-slate-200 p-4 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-300 text-left"
                   >
-                    <QrCode className="mr-2 h-4 w-4" />
-                    Referral Links
-                  </Button>
-                  <Button
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-200 group-hover:scale-110 transition-transform duration-300">
+                        <QrCode className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-slate-900 mb-0.5">
+                          Referral Links
+                        </p>
+                        <p className="text-xs text-slate-600">QR codes</p>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
                     onClick={() => setShowScheduler(true)}
-                    variant="outline"
-                    className="border-2 border-purple-200 hover:border-purple-300 hover:bg-purple-50/50 backdrop-blur transition-all duration-200"
+                    className="group relative bg-white rounded-xl border-2 border-slate-200 p-4 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100/50 transition-all duration-300 text-left"
                   >
-                    <Clock className="mr-2 h-4 w-4" />
-                    <span className="hidden sm:inline">Scheduled ({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
-                    <span className="sm:hidden">({scheduledCampaigns.filter(c => c.status === 'active').length})</span>
-                  </Button>
-                  <Link
-                    href="/login"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-purple-600 bg-white px-6 py-3 text-base font-semibold text-purple-600 hover:bg-purple-50 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-                  >
-                    Get Started
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-200 group-hover:scale-110 transition-transform duration-300">
+                        <Clock className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-slate-900 mb-0.5">
+                          Scheduled
+                        </p>
+                        <p className="text-xs text-slate-600">{scheduledCampaigns.filter(c => c.status === 'active').length} active</p>
+                      </div>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1713,6 +1741,39 @@ export default function DemoPage() {
           </Card>
         </div>
       )}
+
+      {/* Premium Footer */}
+      <footer className="mt-16 border-t border-slate-200 pt-8 pb-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md" />
+            <div>
+              <p className="text-sm font-semibold text-slate-900">Pepform</p>
+              <p className="text-xs text-slate-500">Referrals that compound</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 justify-center">
+            <Link className="hover:text-slate-900 transition-colors" href="/how-it-works">
+              How it works
+            </Link>
+            <span className="text-slate-300">•</span>
+            <Link className="hover:text-slate-900 transition-colors" href="/pricing">
+              Pricing
+            </Link>
+            <span className="text-slate-300">•</span>
+            <Link className="hover:text-slate-900 transition-colors" href="/contact">
+              Contact
+            </Link>
+            <span className="text-slate-300">•</span>
+            <Link className="hover:text-slate-900 transition-colors" href="/login">
+              Sign in
+            </Link>
+          </div>
+        </div>
+        <p className="text-xs text-slate-400 text-center mt-4">
+          © 2024 Pepform. Interactive demo for testing. All data is simulated.
+        </p>
+      </footer>
     </div>
   );
 }
