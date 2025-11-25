@@ -307,27 +307,37 @@ export default async function Dashboard() {
     safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
 
   return (
-    <div className="mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
-      <h1 className="mb-2 text-2xl sm:text-3xl lg:text-4xl font-bold">
-        Pepform Dashboard — {business.name}
-      </h1>
-      <p className="mb-6 sm:mb-8 text-xs sm:text-sm text-muted-foreground">
-        Pending referrals: {pendingReferrals} • Total credits issued:{" "}
-        {totalRewards}
-      </p>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      <div className="mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+        <div className="mb-8 sm:mb-12">
+          <h1 className="mb-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent">
+            {business.name}
+          </h1>
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-2 ring-1 ring-purple-200/50 shadow-sm">
+              <span className="text-xs font-semibold text-slate-600">Pending</span>
+              <span className="text-lg font-extrabold text-purple-700">{pendingReferrals}</span>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-2 ring-1 ring-green-200/50 shadow-sm">
+              <span className="text-xs font-semibold text-slate-600">Credits Issued</span>
+              <span className="text-lg font-extrabold text-green-700">${totalRewards}</span>
+            </div>
+          </div>
+        </div>
 
-      <Tabs defaultValue="settings" className="w-full">
-        <TabsList className="w-full grid grid-cols-3 h-auto">
-          <TabsTrigger value="settings" className="text-xs sm:text-sm px-2 py-2">Settings</TabsTrigger>
-          <TabsTrigger value="clients" className="text-xs sm:text-sm px-2 py-2">Clients</TabsTrigger>
-          <TabsTrigger value="referrals" className="text-xs sm:text-sm px-2 py-2">
-            Referrals ({pendingReferrals})
-          </TabsTrigger>
-        </TabsList>
+        <Tabs defaultValue="settings" className="w-full">
+          <TabsList className="w-full grid grid-cols-3 h-auto bg-white/80 backdrop-blur-sm shadow-lg shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl p-1.5">
+            <TabsTrigger value="settings" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Settings</TabsTrigger>
+            <TabsTrigger value="clients" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Clients</TabsTrigger>
+            <TabsTrigger value="referrals" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">
+              Referrals ({pendingReferrals})
+            </TabsTrigger>
+          </TabsList>
 
         <TabsContent value="settings">
-          <Card className="p-6">
-            <form action={updateSettings} className="space-y-4">
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Settings & Rewards</h2>
+            <form action={updateSettings} className="space-y-6">
               <div>
                 <Label htmlFor="offer_text">New client offer text</Label>
                 <Input
@@ -371,7 +381,7 @@ export default async function Dashboard() {
                 />
               </div>
 
-              <Button type="submit" className="mt-2">
+              <Button type="submit" className="mt-4 bg-gradient-to-b from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-400/50 transition-all duration-200">
                 Save Settings
               </Button>
             </form>
@@ -379,11 +389,12 @@ export default async function Dashboard() {
         </TabsContent>
 
         <TabsContent value="clients">
-          <Card className="p-6">
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Import Customers</h2>
             <CSVUploadForm uploadAction={uploadCSV} />
 
-            <div className="mt-8 space-y-4">
-              <h3 className="text-base sm:text-lg font-semibold">All customers</h3>
+            <div className="mt-10 space-y-5">
+              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">All customers</h3>
               <div className="overflow-x-auto -mx-6 px-6">
               <Table>
                 <TableHeader>
@@ -433,9 +444,9 @@ export default async function Dashboard() {
         </TabsContent>
 
         <TabsContent value="referrals">
-          <Card className="p-6">
-            <div className="space-y-4">
-              <h3 className="text-base sm:text-lg font-semibold">Referrals</h3>
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+            <div className="space-y-5">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Referrals</h2>
               <div className="overflow-x-auto -mx-6 px-6">
               <Table>
                 <TableHeader>
@@ -510,6 +521,7 @@ export default async function Dashboard() {
         </TabsContent>
       </Tabs>
       <Toaster />
+      </div>
     </div>
   );
 }

@@ -52,29 +52,32 @@ export default function Pricing() {
           </Link>
         </header>
 
-        <div className="mx-auto max-w-3xl space-y-6 text-center">
-          <div className="rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 px-4 py-3 text-sm font-semibold shadow-sm">
-            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarredkrowitz@gmail.com" className="underline text-amber-800">jarredkrowitz@gmail.com</a> with any questions.
+        <div className="mx-auto max-w-3xl space-y-8 text-center">
+          <div className="rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 text-amber-900 border border-amber-300/50 px-6 py-4 text-sm font-bold shadow-lg shadow-amber-200/50 ring-1 ring-amber-200/50">
+            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarredkrowitz@gmail.com" className="underline text-amber-800 hover:text-amber-900 transition-colors">jarredkrowitz@gmail.com</a> with any questions.
           </div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
+          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-1.5 text-xs font-bold text-purple-700 shadow-md shadow-purple-200/50 ring-1 ring-purple-200">
             Simple, transparent pricing
           </div>
-          <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Start free, scale as you grow
+          <h1 className="text-balance text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            Start free, scale as you{" "}
+            <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+              grow
+            </span>
           </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-600 mx-auto">
+          <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-600 mx-auto font-medium">
             No hidden fees. No setup costs. Cancel anytime. Get started in minutes and only pay when you're ready to scale.
           </p>
         </div>
 
-        <div className="rounded-xl bg-white/80 p-2 shadow-sm ring-1 ring-slate-100 backdrop-blur inline-flex items-center justify-center mx-auto">
+        <div className="rounded-2xl bg-white/80 p-2 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 backdrop-blur-sm inline-flex items-center justify-center mx-auto gap-1">
           <button
             type="button"
             onClick={() => setBillingCycle("monthly")}
-            className={`rounded-lg px-4 py-2 text-sm font-semibold ${
+            className={`rounded-xl px-6 py-3 text-sm font-bold transition-all duration-200 ${
               billingCycle === "monthly"
-                ? "bg-slate-900 text-white"
-                : "text-slate-600"
+                ? "bg-gradient-to-b from-slate-800 to-slate-900 text-white shadow-lg shadow-slate-900/30"
+                : "text-slate-600 hover:bg-slate-50"
             }`}
           >
             Monthly
@@ -82,34 +85,34 @@ export default function Pricing() {
           <button
             type="button"
             onClick={() => setBillingCycle("annual")}
-            className={`px-4 py-2 text-sm font-semibold ${
+            className={`px-6 py-3 text-sm font-bold transition-all duration-200 ${
               billingCycle === "annual"
-                ? "bg-green-100 text-green-800 rounded-lg"
-                : "text-slate-600"
+                ? "bg-gradient-to-b from-green-500 to-green-600 text-white rounded-xl shadow-lg shadow-green-300/50"
+                : "text-slate-600 hover:bg-slate-50 rounded-xl"
             }`}
           >
-            Annual <span className="ml-1 rounded-full bg-green-200 px-2 py-0.5 text-xs font-bold text-green-800">Save 20%</span>
+            Annual <span className="ml-1.5 rounded-full bg-white/30 px-2.5 py-0.5 text-xs font-extrabold">Save 20%</span>
           </button>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {/* Base Plan */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50 p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 hover:shadow-2xl hover:shadow-slate-300/50 transition-all duration-300">
             <div className="mb-6">
-              <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-                <Zap className="h-3 w-3" />
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-purple-50 px-3.5 py-1.5 text-xs font-bold text-purple-700 ring-1 ring-purple-200/50 shadow-sm">
+                <Zap className="h-3.5 w-3.5" />
                 Base
               </div>
-              <div className="mb-2 flex items-baseline gap-2">
-                <span className="text-5xl font-bold text-slate-900">${basePrice}</span>
-                <span className="text-slate-500">/month{annualLabel}</span>
+              <div className="mb-3 flex items-baseline gap-2">
+                <span className="text-5xl font-extrabold text-slate-900 tracking-tight">${basePrice}</span>
+                <span className="text-slate-500 font-semibold">/month{annualLabel}</span>
               </div>
-              <p className="text-sm text-slate-600">Launch-ready program for small teams</p>
+              <p className="text-sm text-slate-600 font-medium">Launch-ready program for small teams</p>
             </div>
 
             <Link
               href="/login"
-              className="mb-6 inline-flex w-full items-center justify-center rounded-full border-2 border-slate-900 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+              className="mb-8 inline-flex w-full items-center justify-center rounded-full border-2 border-slate-900/80 bg-white px-6 py-3.5 text-sm font-bold text-slate-900 shadow-lg shadow-slate-200/50 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-xl hover:shadow-slate-300/50"
             >
               Start free trial
             </Link>
@@ -147,26 +150,26 @@ export default function Pricing() {
           </div>
 
           {/* Scale Plan - Most Popular */}
-          <div className="relative rounded-3xl border-2 border-purple-500 bg-white p-8 shadow-xl">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-1 text-xs font-bold text-white shadow-lg">
+          <div className="relative rounded-3xl border-2 border-purple-500 bg-gradient-to-b from-white via-purple-50/30 to-white p-8 shadow-2xl shadow-purple-300/50 ring-1 ring-purple-200 transform hover:scale-105 transition-all duration-300">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 px-5 py-1.5 text-xs font-extrabold text-white shadow-xl shadow-purple-400/50 ring-2 ring-white">
               MOST POPULAR
             </div>
 
-            <div className="mb-6">
-              <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
-                <Users className="h-3 w-3" />
+            <div className="mb-6 mt-2">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-purple-50 px-3.5 py-1.5 text-xs font-bold text-purple-700 ring-1 ring-purple-200/50 shadow-sm">
+                <Users className="h-3.5 w-3.5" />
                 Scale
               </div>
-              <div className="mb-2 flex items-baseline gap-2">
-                <span className="text-5xl font-bold text-slate-900">${scalePrice}</span>
-                <span className="text-slate-500">/month{annualLabel}</span>
+              <div className="mb-3 flex items-baseline gap-2">
+                <span className="text-5xl font-extrabold text-slate-900 tracking-tight">${scalePrice}</span>
+                <span className="text-slate-500 font-semibold">/month{annualLabel}</span>
               </div>
-              <p className="text-sm text-slate-600">For teams running steady campaigns</p>
+              <p className="text-sm text-slate-600 font-medium">For teams running steady campaigns</p>
             </div>
 
             <Link
               href="/login"
-              className="mb-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
+              className="mb-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-purple-400/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-purple-500/60"
             >
               Start free trial <ArrowRight className="h-4 w-4" />
             </Link>
