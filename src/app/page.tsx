@@ -79,319 +79,100 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="flex flex-col-reverse gap-10 lg:flex-row lg:items-center">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
-              Referral + campaign engine
-            </div>
-            <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Turn happy customers into your micro‑influencer network
-            </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
-              Launch referral programs that plug into every campaign you run. Pepform activates your best clients, tracks and rewards them in real time, and keeps them promoting you across SMS, email, and social as “micro influencers.”
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/login"
-                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
-              >
-                Get started free
-              </Link>
-              <a
-                href="https://calendly.com/jarredkrowitz/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600 bg-white px-6 py-3 text-sm font-semibold text-purple-700 shadow-lg shadow-purple-100 transition hover:-translate-y-0.5 hover:bg-purple-50 hover:shadow-purple-200"
-              >
-                <Calendar className="h-4 w-4" />
-                Schedule a Call
-              </a>
+        {/* Hero Section */}
+        <div className="mx-auto max-w-4xl text-center space-y-8 py-12">
+          <h1 className="text-balance text-5xl font-bold leading-tight text-slate-900 sm:text-6xl lg:text-7xl">
+            Turn happy customers into your growth network
+          </h1>
+          <p className="mx-auto max-w-2xl text-xl leading-relaxed text-slate-600">
+            Launch a referral program that plugs into your sales and marketing strategies
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-purple-300 bg-purple-50 px-6 py-3 text-sm font-semibold text-purple-700 transition hover:-translate-y-0.5 hover:border-purple-400"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600 bg-white px-8 py-4 text-base font-semibold text-purple-700 shadow-lg shadow-purple-100 transition hover:-translate-y-0.5 hover:bg-purple-50 hover:shadow-purple-200"
             >
-              Try demo dashboard →
+              Try demo dashboard
             </Link>
-          </div>
-          </div>
-
-          <div className="relative w-full max-w-lg self-center lg:ml-auto">
-            <div className="glass relative overflow-hidden rounded-3xl p-6 shadow-2xl ring-1 ring-white/60 bg-gradient-to-br from-white/90 via-white to-purple-50">
-              <div className="absolute -left-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 blur-3xl" />
-              <div className="absolute -right-14 bottom-0 h-32 w-32 rounded-full bg-gradient-to-tr from-slate-900/10 to-purple-500/20 blur-3xl" />
-              <div className="relative space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg shadow-purple-300/50" />
-                    <div>
-                      <p className="text-xs font-semibold text-purple-700 uppercase tracking-wide">Pepform</p>
-                      <p className="text-lg font-semibold text-slate-900">Client referral pulse</p>
-                    </div>
-                  </div>
-                  <div className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
-                    Live pulse
-                  </div>
-                </div>
-                <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                  <div className="flex items-center justify-between text-sm text-slate-500">
-                    <span>Pending referrals</span>
-                    <span className="font-semibold text-purple-700">12</span>
-                  </div>
-                  <div className="mt-3 h-2 rounded-full bg-slate-100">
-                    <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                    <p className="text-sm text-slate-500">Ambassadors</p>
-                    <p className="text-2xl font-bold text-slate-900">38</p>
-                    <p className="text-xs text-slate-500">+6 this week</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                    <p className="text-sm text-slate-500">Earned credits</p>
-                    <p className="text-2xl font-bold text-slate-900">$482</p>
-                    <p className="text-xs text-slate-500">Auto-applied</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                    <p className="text-sm text-slate-500">Top micro‑influencer</p>
-                    <p className="text-base font-semibold text-slate-900">
-                      Alex • 9 completed • $90 earned
-                    </p>
-                    <p className="text-xs text-slate-500">“Clients love the offer.”</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                    <p className="text-sm text-slate-500">Conversion lift</p>
-                    <p className="text-base font-semibold text-slate-900">+34% vs email-only</p>
-                    <p className="text-xs text-slate-500">Referral links in every campaign</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Link
+              href="/login"
+              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
+            >
+              Get started
+            </Link>
           </div>
         </div>
 
-        <section
-          id="how"
-          className="grid gap-6 rounded-3xl bg-white/80 p-6 shadow-xl ring-1 ring-slate-100 backdrop-blur lg:grid-cols-3"
-        >
-          {[
-            {
-              title: "Import & activate",
-              desc: "Upload your customer list once. Every client instantly gets a trackable link that plugs into your campaigns—no manual work required.",
-              icon: <Upload className="h-5 w-5 text-purple-600" />,
-            },
-            {
-              title: "Sit back & watch",
-              desc: "See exactly who's referring, who's been referred, and which campaigns drive results—real-time, no spreadsheets.",
-              icon: <ShieldCheck className="h-5 w-5 text-purple-600" />,
-            },
-            {
-              title: "Rewards run themselves",
-              desc: "The moment a referral books, credits hit their account and ambassadors get instant SMS/email nudges—keeping micro-influencers engaged.",
-              icon: <Gift className="h-5 w-5 text-purple-600" />,
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-slate-100 bg-gradient-to-b from-white to-slate-50 p-4 shadow-sm"
-            >
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-purple-50">
-                {item.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-            </div>
-          ))}
-        </section>
-
-        <section
-          id="features"
-          className="grid gap-6 rounded-3xl bg-white/80 p-6 shadow-xl ring-1 ring-slate-100 backdrop-blur lg:grid-cols-[1.5fr_1fr]"
-        >
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 ring-1 ring-purple-100">
-              Built for service businesses
-            </div>
-            <h2 className="text-3xl font-bold text-slate-900">
-              The campaign-connected referral system
+        {/* How It Works Section */}
+        <section className="space-y-8">
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              How it works
             </h2>
-            <ul className="space-y-3 text-sm leading-relaxed text-slate-700">
-              <li className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-xs font-semibold text-purple-700">
-                  1
-                </span>
-                <strong>Every customer becomes a micro‑influencer.</strong> Each client gets a trackable link tied into your live campaigns, so referrals never slip through.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-xs font-semibold text-purple-700">
-                  2
-                </span>
-                <strong>Sharing is baked into every channel.</strong> One-tap SMS, WhatsApp, Instagram, and email—connected to the marketing campaigns you launch.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-xs font-semibold text-purple-700">
-                  3
-                </span>
-                <strong>Rewards fire automatically.</strong> When referrals convert, credits apply instantly and ambassadors get notified—keeping them motivated to promote you again.
-              </li>
-            </ul>
-            <div className="flex flex-wrap gap-3 text-sm text-slate-600">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 ring-1 ring-slate-100">
-                <MessageSquare className="h-4 w-4 text-purple-600" />
-                Ambassador SMS out of the box
-              </div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 ring-1 ring-slate-100">
-                <Sparkles className="h-4 w-4 text-purple-600" />
-                Credits, upgrades, or perks
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-slate-100 bg-gradient-to-b from-white to-slate-50 p-5 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-wide text-purple-700">
-              Outcomes
-            </p>
-            <div className="mt-4 space-y-4 text-sm text-slate-700">
-              <div className="flex items-center justify-between rounded-xl bg-white p-4 ring-1 ring-slate-100">
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Activation rate
-                  </p>
-                  <p className="text-lg font-semibold text-slate-900">72%</p>
-                </div>
-                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                  +18% uplift
-                </span>
-              </div>
-              <div className="flex items-center justify-between rounded-xl bg-white p-4 ring-1 ring-slate-100">
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Time saved weekly
-                  </p>
-                  <p className="text-lg font-semibold text-slate-900">5h</p>
-                </div>
-                <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-                  No spreadsheets
-                </span>
-              </div>
-              <div className="flex items-center justify-between rounded-xl bg-white p-4 ring-1 ring-slate-100">
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">
-                    Revenue attributed
-                  </p>
-                  <p className="text-lg font-semibold text-slate-900">$12.4k</p>
-                </div>
-                <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">
-                  YTD
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200 mb-4">
-              Pre-Launch Platform
-            </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Built for service businesses
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto mb-8">
-              We're currently in private beta testing with select service businesses. Join our early adopters and get lifetime priority support plus discounted pricing.
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Four simple steps to turn your customers into your growth network
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
-                <Upload className="h-6 w-6 text-purple-600" />
+          <div className="grid gap-6 lg:grid-cols-4">
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-purple-100 text-xl font-bold text-purple-700">
+                1
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Quick Setup</h3>
-              <p className="text-slate-700 leading-relaxed">
-                CSV import means you can have your entire customer base set up with referral links in under 5 minutes. No manual data entry required.
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Import & activate</h3>
+              <p className="text-slate-600 leading-relaxed mb-3">
+                Upload your customer list. Your customers now become your ambassadors.
               </p>
+              <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
+                <Upload className="h-3.5 w-3.5" />
+                Quick Setup
+              </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-                <MessageSquare className="h-6 w-6 text-blue-600" />
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-xl font-bold text-blue-700">
+                2
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Automated SMS</h3>
-              <p className="text-slate-700 leading-relaxed">
-                Ambassadors get instant SMS notifications when they earn credits. Keeps them engaged and motivated to share more.
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Create campaign</h3>
+              <p className="text-slate-600 leading-relaxed mb-3">
+                Create messaging, upload your client base, and send out campaigns through email or SMS.
               </p>
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                <MessageSquare className="h-3.5 w-3.5" />
+                Automated SMS & Email
+              </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                <Sparkles className="h-6 w-6 text-green-600" />
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-xl font-bold text-green-700">
+                3
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">AI-Powered</h3>
-              <p className="text-slate-700 leading-relaxed">
-                Smart message generation, ambassador scoring, and ROI forecasting built in. Let AI handle the heavy lifting.
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Track referrals</h3>
+              <p className="text-slate-600 leading-relaxed mb-3">
+                See exactly who's referring, who's been referred, and which campaigns drive results in real-time.
               </p>
+              <div className="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                Sit back & watch
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-orange-100 text-xl font-bold text-orange-700">
+                4
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Rewards fly</h3>
+              <p className="text-slate-600 leading-relaxed mb-3">
+                Credits are applied instantly, ambassadors get notified, and the flywheel kicks into action.
+              </p>
+              <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700">
+                <Gift className="h-3.5 w-3.5" />
+                Automatic rewards
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-2xl">
-          <div className="mx-auto max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-              Market Opportunity
-            </div>
-            <h2 className="text-3xl font-bold">Why now?</h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <TrendingUp className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold mb-1">Customer acquisition costs are exploding</p>
-                    <p className="text-sm text-slate-300">
-                      Meta ads up 61% YoY. Google ads up 44%. Referrals cost 5x less and convert 3x better.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Users className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold mb-1">Service businesses lack proper tools</p>
-                    <p className="text-sm text-slate-300">
-                      82% of service businesses lose referrals to poor tracking. Spreadsheets can't scale.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Gift className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold mb-1">Referrals drive 65% of new customers</p>
-                    <p className="text-sm text-slate-300">
-                      For service businesses, word-of-mouth is the #1 growth channel—but only 8% systematize it.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Sparkles className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold mb-1">Automation is now expected</p>
-                    <p className="text-sm text-slate-300">
-                      Customers expect instant rewards. Manual processes feel outdated and cause referral drop-off.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-xl bg-white/5 p-4 border border-white/10">
-              <p className="text-sm text-slate-300">
-                <strong className="text-white">Market size:</strong> $4.2B TAM in service business referral software. Growing 23% annually as businesses shift from paid ads to owned channels.
-              </p>
-            </div>
-          </div>
-        </section>
 
         <section className="space-y-6 rounded-3xl bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 shadow-2xl text-white">
           <div className="text-center mb-6">
@@ -448,65 +229,6 @@ export default function Home() {
             </p>
             <p className="text-purple-100 leading-relaxed">
               Pepform automates the entire referral lifecycle in one platform: link generation, tracking, rewards, and SMS notifications. We turn referrals from a manual headache into a compounding growth engine.
-            </p>
-          </div>
-        </section>
-
-        <section className="rounded-3xl bg-white/80 p-8 shadow-xl ring-1 ring-slate-100 backdrop-blur">
-          <div className="mx-auto max-w-3xl space-y-6">
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 ring-1 ring-purple-100 mb-4">
-                ROI Calculator
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-2">
-                See your potential referral revenue
-              </h2>
-              <p className="text-slate-600">
-                Based on average service business performance with Pepform
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 p-6 text-center">
-                <p className="text-sm font-semibold text-slate-700 mb-2">Your customers</p>
-                <p className="text-5xl font-bold text-slate-900 mb-1">100</p>
-                <p className="text-xs text-slate-500">Average client base</p>
-              </div>
-              <div className="rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 p-6 text-center">
-                <p className="text-sm font-semibold text-slate-700 mb-2">Active ambassadors</p>
-                <p className="text-5xl font-bold text-slate-900 mb-1">35</p>
-                <p className="text-xs text-slate-500">35% engage (industry avg)</p>
-              </div>
-              <div className="rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 p-6 text-center">
-                <p className="text-sm font-semibold text-slate-700 mb-2">Referrals per year</p>
-                <p className="text-5xl font-bold text-slate-900 mb-1">122</p>
-                <p className="text-xs text-slate-500">3.5 referrals per ambassador</p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-center text-white">
-              <p className="text-sm font-semibold uppercase tracking-wide mb-2 text-purple-100">
-                Estimated annual revenue from referrals
-              </p>
-              <p className="text-6xl font-bold mb-2">$18,300</p>
-              <p className="text-sm text-purple-100">
-                At $150 average transaction value × 122 referrals
-              </p>
-              <div className="mt-6 flex items-center justify-center gap-4 text-sm">
-                <div>
-                  <p className="font-semibold">Cost of Pepform</p>
-                  <p className="text-purple-100">$948/year</p>
-                </div>
-                <div className="text-2xl text-purple-200">→</div>
-                <div>
-                  <p className="font-semibold">ROI</p>
-                  <p className="text-2xl font-bold">1,831%</p>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-center text-xs text-slate-500">
-              *Based on actual customer data. Individual results vary by industry, location, and offer strength.
             </p>
           </div>
         </section>
