@@ -95,71 +95,242 @@ export default function Home() {
           </div>
         </div>
 
-        {/* How It Works Section */}
-        <section className="space-y-8 sm:space-y-12">
-          <div className="text-center space-y-4 px-4">
-            <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
-              How it works
+        {/* How It Works Section - Expanded */}
+        <section className="space-y-12 sm:space-y-16">
+          <div className="text-center space-y-5 px-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-sm font-bold text-purple-700 ring-1 ring-purple-200 shadow-md">
+              <Sparkles className="h-4 w-4" />
+              The Complete System
+            </div>
+            <h2 className="text-4xl font-extrabold text-slate-900 sm:text-5xl lg:text-6xl tracking-tight">
+              How Pepform transforms your{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                customer relationships
+              </span>
             </h2>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-medium">
-              Four simple steps to turn your customers into your growth network
+            <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">
+              From setup to scale, here's exactly how Pepform turns your happy customers into a predictable, compounding referral engine
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="group rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50 p-7 shadow-lg shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-200/40 hover:ring-purple-100">
-              <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-xl font-extrabold text-white shadow-lg shadow-purple-300/50">
+          <div className="grid gap-8 sm:gap-10 md:grid-cols-2">
+            {/* Step 1 - Import & Activate */}
+            <div className="group rounded-3xl border-2 border-slate-200/80 bg-gradient-to-br from-white via-purple-50/20 to-white p-8 sm:p-10 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-200/50 hover:border-purple-200 hover:ring-purple-100">
+              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-purple-500 to-purple-600 text-2xl font-extrabold text-white shadow-xl shadow-purple-300/50 ring-4 ring-purple-100">
                 1
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Import & activate</h3>
-              <p className="text-slate-600 leading-relaxed mb-4 text-sm">
-                Upload your customer list. Your customers now become your ambassadors.
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Import & activate your customer base
+              </h3>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+                Start by uploading your existing customer list via CSV or Excel. In seconds, every customer gets their own unique referral link and becomes an active ambassador.
               </p>
-              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-50 to-purple-100/50 px-3.5 py-1.5 text-xs font-bold text-purple-700 ring-1 ring-purple-200/50">
-                <Upload className="h-3.5 w-3.5" />
-                Quick Setup
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">One-click upload</p>
+                    <p className="text-sm text-slate-600">CSV or Excel files with name, phone, and email columns</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Automatic link generation</p>
+                    <p className="text-sm text-slate-600">Every customer gets a unique, trackable referral URL</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Ambassador portals created instantly</p>
+                    <p className="text-sm text-slate-600">Each customer can track their referrals and rewards in real-time</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-50 to-purple-100/50 px-4 py-2 text-sm font-extrabold text-purple-700 ring-1 ring-purple-200/50 shadow-md">
+                <Upload className="h-4 w-4" />
+                Setup in under 2 minutes
               </div>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50 p-7 shadow-lg shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-200/40 hover:ring-blue-100">
-              <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-xl font-extrabold text-white shadow-lg shadow-blue-300/50">
+            {/* Step 2 - Launch Campaign */}
+            <div className="group rounded-3xl border-2 border-slate-200/80 bg-gradient-to-br from-white via-blue-50/20 to-white p-8 sm:p-10 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-200/50 hover:border-blue-200 hover:ring-blue-100">
+              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-500 to-blue-600 text-2xl font-extrabold text-white shadow-xl shadow-blue-300/50 ring-4 ring-blue-100">
                 2
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Create campaign</h3>
-              <p className="text-slate-600 leading-relaxed mb-4 text-sm">
-                Create messaging, upload your client base, and send out campaigns through email or SMS.
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Launch campaigns that convert
+              </h3>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+                Send personalized referral invitations via SMS or email. Your customers receive their unique link with your custom offer, ready to share with friends and family.
               </p>
-              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 px-3.5 py-1.5 text-xs font-bold text-blue-700 ring-1 ring-blue-200/50">
-                <MessageSquare className="h-3.5 w-3.5" />
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Customizable templates</p>
+                    <p className="text-sm text-slate-600">Edit messaging to match your brand voice and offer</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Multi-channel distribution</p>
+                    <p className="text-sm text-slate-600">Send via SMS, email, or both for maximum reach</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Scheduled sending</p>
+                    <p className="text-sm text-slate-600">Queue campaigns to send at optimal times</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 px-4 py-2 text-sm font-extrabold text-blue-700 ring-1 ring-blue-200/50 shadow-md">
+                <MessageSquare className="h-4 w-4" />
                 Automated SMS & Email
               </div>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50 p-7 shadow-lg shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-green-200/40 hover:ring-green-100">
-              <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-xl font-extrabold text-white shadow-lg shadow-green-300/50">
+            {/* Step 3 - Track Everything */}
+            <div className="group rounded-3xl border-2 border-slate-200/80 bg-gradient-to-br from-white via-green-50/20 to-white p-8 sm:p-10 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-200/50 hover:border-green-200 hover:ring-green-100">
+              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-green-500 to-green-600 text-2xl font-extrabold text-white shadow-xl shadow-green-300/50 ring-4 ring-green-100">
                 3
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Track referrals</h3>
-              <p className="text-slate-600 leading-relaxed mb-4 text-sm">
-                See exactly who's referring, who's been referred, and which campaigns drive results in real-time.
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Track every referral in real-time
+              </h3>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+                Watch your referral network grow with live tracking. See exactly who's referring, who's converting, and which ambassadors are your MVPs—all from one dashboard.
               </p>
-              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-50 to-green-100/50 px-3.5 py-1.5 text-xs font-bold text-green-700 ring-1 ring-green-200/50">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                Sit back & watch
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Live referral dashboard</p>
+                    <p className="text-sm text-slate-600">Real-time visibility into every click, conversion, and credit</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Ambassador leaderboards</p>
+                    <p className="text-sm text-slate-600">Identify your top performers and reward them accordingly</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Campaign analytics</p>
+                    <p className="text-sm text-slate-600">See which messages, offers, and timing drive the most referrals</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-50 to-green-100/50 px-4 py-2 text-sm font-extrabold text-green-700 ring-1 ring-green-200/50 shadow-md">
+                <TrendingUp className="h-4 w-4" />
+                Complete visibility
               </div>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50 p-7 shadow-lg shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-200/40 hover:ring-orange-100">
-              <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-xl font-extrabold text-white shadow-lg shadow-orange-300/50">
+            {/* Step 4 - Automatic Rewards */}
+            <div className="group rounded-3xl border-2 border-slate-200/80 bg-gradient-to-br from-white via-orange-50/20 to-white p-8 sm:p-10 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-200/50 hover:border-orange-200 hover:ring-orange-100">
+              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 text-2xl font-extrabold text-white shadow-xl shadow-orange-300/50 ring-4 ring-orange-100">
                 4
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Rewards fly</h3>
-              <p className="text-slate-600 leading-relaxed mb-4 text-sm">
-                Credits are applied instantly, ambassadors get notified, and the flywheel kicks into action.
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Rewards distribute automatically
+              </h3>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+                When a referral converts, credits are instantly applied to the ambassador's account. They get notified immediately, encouraging them to share more. The referral flywheel accelerates—no manual work required.
               </p>
-              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-50 to-orange-100/50 px-3.5 py-1.5 text-xs font-bold text-orange-700 ring-1 ring-orange-200/50">
-                <Gift className="h-3.5 w-3.5" />
-                Automatic rewards
+
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-orange-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Instant credit allocation</p>
+                    <p className="text-sm text-slate-600">Credits hit ambassador accounts the moment you mark a referral complete</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-orange-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Automated notifications</p>
+                    <p className="text-sm text-slate-600">Ambassadors receive SMS confirmation with updated balance</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center">
+                    <ShieldCheck className="h-4 w-4 text-orange-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">Self-serve redemption</p>
+                    <p className="text-sm text-slate-600">Ambassadors track and redeem rewards through their portal</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-50 to-orange-100/50 px-4 py-2 text-sm font-extrabold text-orange-700 ring-1 ring-orange-200/50 shadow-md">
+                <Gift className="h-4 w-4" />
+                Zero manual work
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom CTA in How It Works */}
+          <div className="max-w-4xl mx-auto text-center space-y-6 pt-8">
+            <div className="rounded-3xl bg-gradient-to-br from-slate-50 to-purple-50/50 p-8 sm:p-12 border border-slate-200 shadow-xl">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                The result? A referral engine that compounds
+              </h3>
+              <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto font-medium leading-relaxed">
+                Your best customers become your best marketers. Every referral creates a new potential ambassador. Growth becomes predictable, trackable, and automatic.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/demo"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600/80 bg-gradient-to-b from-white to-purple-50/50 px-8 py-4 text-base font-bold text-purple-700 shadow-xl shadow-purple-200/60 ring-1 ring-purple-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                >
+                  See it in action
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="/login"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-8 py-4 text-base font-bold text-white shadow-xl shadow-slate-900/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                >
+                  Start for free
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
               </div>
             </div>
           </div>
