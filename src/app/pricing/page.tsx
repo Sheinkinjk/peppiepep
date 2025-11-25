@@ -4,6 +4,7 @@
 import { useMemo, useState } from "react";
 import { ArrowRight, Check, Zap, Users, Crown } from "lucide-react";
 import Link from "next/link";
+import { StickyHeader } from "@/components/StickyHeader";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">(
@@ -33,24 +34,9 @@ export default function Pricing() {
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
 
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-16 md:px-10 lg:px-16">
-        <header className="flex items-center justify-between rounded-full border border-white/80 bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
-            <div className="">
-              <p className="text-sm font-semibold text-slate-900">Pepform</p>
-              <p className="text-[11px] font-medium uppercase tracking-wide text-purple-700">
-                Referrals OS
-              </p>
-            </div>
-          </Link>
-          <Link
-            href="/login"
-            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
-          >
-            Get started <ArrowRight className="h-4 w-4" />
-          </Link>
-        </header>
+      <StickyHeader />
+
+      <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
 
         <div className="mx-auto max-w-3xl space-y-8 text-center">
           <div className="rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 text-amber-900 border border-amber-300/50 px-6 py-4 text-sm font-bold shadow-lg shadow-amber-200/50 ring-1 ring-amber-200/50">

@@ -8,61 +8,18 @@ import {
   Upload,
   TrendingUp,
   Users,
-  Calendar,
 } from "lucide-react";
 import Link from "next/link";
+import { StickyHeader } from "@/components/StickyHeader";
 
 export default function Home() {
   return (
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
 
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-16 md:px-10 lg:px-16">
-        <header className="flex items-center justify-between rounded-full border border-white/60 bg-white/70 px-5 py-3.5 shadow-lg shadow-purple-100/50 backdrop-blur-xl ring-1 ring-black/5">
-          <div className="flex items-center gap-2.5">
-            <div className="h-9 w-9 rounded-full bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 shadow-xl shadow-purple-400/30" />
-            <div className="">
-              <p className="text-sm font-bold text-slate-900 tracking-tight">Pepform</p>
-              <p className="text-[10.5px] font-semibold uppercase tracking-wider text-purple-600">
-                Referrals OS
-              </p>
-            </div>
-          </div>
-          <div className="hidden items-center gap-3 text-sm font-semibold text-slate-700 sm:flex">
-            <Link className="rounded-full px-3.5 py-2 hover:text-slate-900 hover:bg-slate-50/80 transition-all duration-200" href="/how-it-works">
-              How it works
-            </Link>
-            <Link className="rounded-full px-3.5 py-2 hover:text-slate-900 hover:bg-slate-50/80 transition-all duration-200" href="/pricing">
-              Pricing
-            </Link>
-            <Link className="rounded-full px-3.5 py-2 hover:text-slate-900 hover:bg-slate-50/80 transition-all duration-200" href="/demo">
-              Demo
-            </Link>
-            <a
-              href="https://calendly.com/jarredkrowitz/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-purple-600/80 bg-gradient-to-b from-white to-purple-50/30 px-4 py-2 text-sm font-semibold text-purple-700 shadow-md shadow-purple-200/50 transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-600 hover:shadow-lg hover:shadow-purple-300/60"
-            >
-              <Calendar className="h-4 w-4" />
-              Schedule a Call
-            </a>
-            <Link
-              href="/login"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/30 ring-1 ring-slate-700/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-900/40"
-            >
-              Go to app <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="flex items-center gap-2 sm:hidden">
-            <Link
-              href="/login"
-              className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-slate-900/30 ring-1 ring-slate-700/50"
-            >
-              Sign in
-            </Link>
-          </div>
-        </header>
+      <StickyHeader />
+
+      <main className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-8 md:px-10 lg:px-16">
 
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl text-center space-y-8 py-12 sm:py-16 sm:space-y-10">

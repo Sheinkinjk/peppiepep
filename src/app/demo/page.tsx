@@ -10,6 +10,7 @@ import {
   Settings as SettingsIcon, Bell, CreditCard, Building2, Mail, Phone,
   Calendar, Target, Activity, PieChart, QrCode, Plus, Bot, Sparkles, Award
 } from "lucide-react";
+import { StickyHeader } from "@/components/StickyHeader";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -291,8 +292,10 @@ export default function DemoPage() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.05),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(236,72,153,0.05),transparent_50%)] pointer-events-none" />
       <div className="absolute inset-0 bg-grid-slate-200/50 [mask-image:linear-gradient(0deg,transparent,black)] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23e2e8f0\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
 
+      <StickyHeader />
+
       {/* Premium Demo Banner */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-purple-700 via-purple-600 to-pink-600 text-white px-4 py-3 shadow-xl backdrop-blur-lg border-b border-white/10">
+      <div className="sticky top-[88px] z-40 bg-gradient-to-r from-purple-700 via-purple-600 to-pink-600 text-white px-4 py-3 shadow-xl backdrop-blur-lg border-b border-white/10">
         <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">

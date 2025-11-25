@@ -1,29 +1,15 @@
 import { ArrowRight, Mail, Calendar } from "lucide-react";
 import Link from "next/link";
+import { StickyHeader } from "@/components/StickyHeader";
 
 export default function Contact() {
   return (
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
 
-      <main className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-16 md:px-10">
-        <header className="flex items-center justify-between rounded-full border border-white/80 bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Pepform</p>
-              <p className="text-[11px] font-medium uppercase tracking-wide text-purple-700">
-                Referrals OS
-              </p>
-            </div>
-          </Link>
-          <Link
-            href="/login"
-            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300"
-          >
-            Sign in <ArrowRight className="h-4 w-4" />
-          </Link>
-        </header>
+      <StickyHeader />
+
+      <main className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10">
 
         <div className="max-w-2xl mx-auto space-y-4 text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
