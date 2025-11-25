@@ -1,4 +1,5 @@
 import Papa from "papaparse";
+import * as XLSX from "xlsx";
 import { nanoid } from "nanoid";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
@@ -88,12 +89,16 @@ export default async function Dashboard() {
       const file = formData.get("file");
 
       if (!(file instanceof File)) {
-        return { error: "Please select a CSV file to upload." };
+        return { error: "Please select a file to upload." };
       }
 
+      const fileName = file.name.toLowerCase();
+      const isCSV = fileName.endsWith('.csv');
+      const isExcel = fileName.endsWith('.xlsx') || fileName.endsWith('.xls');
+
       // Validate file type
-      if (!file.name.toLowerCase().endsWith('.csv')) {
-        return { error: "Invalid file type. Please upload a CSV file." };
+      if (!isCSV && !isExcel) {
+        return { error: "Invalid file type. Please upload a CSV or Excel file (.csv, .xlsx, .xls)." };
       }
 
       // Validate file size (max 5MB)
@@ -101,43 +106,71 @@ export default async function Dashboard() {
         return { error: "File too large. Maximum size is 5MB." };
       }
 
-      const text = await file.text();
-      const parsed = Papa.parse<Record<string, string>>(text, { header: true });
+      let parsedData: Array<Record<string, string>> = [];
 
-      if (parsed.errors && parsed.errors.length > 0) {
-        console.error("CSV parsing errors:", parsed.errors);
-        return { error: "CSV parsing failed. Please check your file format." };
+      if (isCSV) {
+        // Parse CSV
+        const text = await file.text();
+        const parsed = Papa.parse<Record<string, string>>(text, { header: true });
+
+        if (parsed.errors && parsed.errors.length > 0) {
+          console.error("CSV parsing errors:", parsed.errors);
+          return { error: "CSV parsing failed. Please check your file format." };
+        }
+
+        parsedData = parsed.data || [];
+      } else {
+        // Parse Excel
+        const arrayBuffer = await file.arrayBuffer();
+        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+
+        // Get first sheet
+        const firstSheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[firstSheetName];
+
+        // Convert to JSON with header row
+        parsedData = XLSX.utils.sheet_to_json<Record<string, string>>(worksheet, {
+          header: 1,
+          defval: ''
+        }).slice(1).map((row: any) => {
+          const headers = XLSX.utils.sheet_to_json<string[]>(worksheet, { header: 1 })[0] || [];
+          const obj: Record<string, string> = {};
+          headers.forEach((header: string, index: number) => {
+            obj[header] = row[index] || '';
+          });
+          return obj;
+        });
       }
 
       const supabase = createServiceClient(); // service role to bypass RLS for bulk insert
 
-      const customersToInsert = (parsed.data || [])
+      const customersToInsert = parsedData
         .map((row) => ({
           business_id: business.id,
-          name: row.name || row.Name || row.full_name || null,
-          phone: row.phone || row.Phone || row.mobile || null,
+          name: row.name || row.Name || row.full_name || row['Full Name'] || null,
+          phone: row.phone || row.Phone || row.mobile || row.Mobile || null,
           email: row.email || row.Email || null,
           referral_code: nanoid(12),
         }))
         .filter((row) => row.name || row.phone || row.email);
 
       if (customersToInsert.length === 0) {
-        return { error: "No valid customer data found in CSV. Please ensure your file has 'name', 'phone', or 'email' columns." };
+        return { error: "No valid customer data found. Please ensure your file has 'name', 'phone', or 'email' columns." };
       }
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const { error: insertError } = await (supabase as any).from("customers").insert(customersToInsert);
 
       if (insertError) {
-        console.error("CSV upload error:", insertError);
+        console.error("Upload error:", insertError);
         return { error: "Failed to import customers. Please try again." };
       }
 
       revalidatePath("/dashboard");
       return { success: `Successfully imported ${customersToInsert.length} customers!` };
     } catch (error) {
-      console.error("CSV upload error:", error);
-      return { error: "An unexpected error occurred while uploading CSV. Please try again." };
+      console.error("Upload error:", error);
+      return { error: "An unexpected error occurred while uploading. Please try again." };
     }
   }
 

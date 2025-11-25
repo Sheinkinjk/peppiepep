@@ -17,6 +17,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { nanoid } from "nanoid";
 import Papa from "papaparse";
+import * as XLSX from "xlsx";
 import {
   Sparkles,
   Upload,
@@ -119,31 +120,72 @@ export default function GuestDashboard() {
     alert("Settings saved!");
   };
 
-  const handleUploadCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleUploadCSV = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    Papa.parse<Record<string, string>>(file, {
-      header: true,
-      complete: (results) => {
-        const newCustomers: GuestCustomer[] = results.data
-          .filter((row) => row.name || row.Name || row.phone || row.Phone)
-          .map((row) => ({
-            id: nanoid(12),
-            name: row.name || row.Name || row.full_name || "Unknown",
-            phone: row.phone || row.Phone || row.mobile || "+61 400 000 000",
-            email: row.email || row.Email,
-            referral_code: nanoid(12),
-            credits: 0,
-            status: "active",
-          }));
+    const fileName = file.name.toLowerCase();
+    const isCSV = fileName.endsWith('.csv');
+    const isExcel = fileName.endsWith('.xlsx') || fileName.endsWith('.xls');
 
-        const allCustomers = [...customers, ...newCustomers];
-        setCustomers(allCustomers);
-        localStorage.setItem("pepform_guest_customers", JSON.stringify(allCustomers));
-        alert(`Added ${newCustomers.length} customers!`);
-      },
-    });
+    if (!isCSV && !isExcel) {
+      alert('Please upload a CSV or Excel file (.csv, .xlsx, .xls)');
+      e.target.value = "";
+      return;
+    }
+
+    try {
+      let parsedData: Array<Record<string, string>> = [];
+
+      if (isCSV) {
+        // Parse CSV
+        Papa.parse<Record<string, string>>(file, {
+          header: true,
+          complete: (results) => {
+            parsedData = results.data;
+            processCustomerData(parsedData, e);
+          },
+        });
+      } else {
+        // Parse Excel
+        const arrayBuffer = await file.arrayBuffer();
+        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+
+        // Get first sheet
+        const firstSheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[firstSheetName];
+
+        // Convert to JSON
+        parsedData = XLSX.utils.sheet_to_json<Record<string, string>>(worksheet);
+        processCustomerData(parsedData, e);
+      }
+    } catch (error) {
+      console.error('File parsing error:', error);
+      alert('Failed to parse file. Please check your file format.');
+      e.target.value = "";
+    }
+  };
+
+  const processCustomerData = (
+    parsedData: Array<Record<string, string>>,
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const newCustomers: GuestCustomer[] = parsedData
+      .filter((row) => row.name || row.Name || row.phone || row.Phone)
+      .map((row) => ({
+        id: nanoid(12),
+        name: row.name || row.Name || row.full_name || row['Full Name'] || "Unknown",
+        phone: row.phone || row.Phone || row.mobile || row.Mobile || "+61 400 000 000",
+        email: row.email || row.Email,
+        referral_code: nanoid(12),
+        credits: 0,
+        status: "active",
+      }));
+
+    const allCustomers = [...customers, ...newCustomers];
+    setCustomers(allCustomers);
+    localStorage.setItem("pepform_guest_customers", JSON.stringify(allCustomers));
+    alert(`Added ${newCustomers.length} customers!`);
 
     // Reset file input
     e.target.value = "";
@@ -325,7 +367,7 @@ export default function GuestDashboard() {
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold text-slate-900">Import your list</h3>
                     <p className="text-sm text-slate-600">
-                      Upload a CSV or add one manually to generate referral links instantly.
+                      Upload a CSV or Excel file, or add customers manually to generate referral links instantly.
                     </p>
                     <div className="flex flex-wrap gap-3 text-xs">
                       <a
@@ -342,7 +384,7 @@ export default function GuestDashboard() {
                     <Button variant="outline" className="gap-2" asChild>
                       <label htmlFor="file" className="flex cursor-pointer items-center gap-2">
                         <Upload className="h-4 w-4" />
-                        Upload CSV
+                        Upload CSV/Excel
                       </label>
                     </Button>
                     <Button variant="secondary" className="gap-2" onClick={handleAddCustomer} disabled={!quickName && !quickPhone && !quickEmail}>
@@ -355,7 +397,7 @@ export default function GuestDashboard() {
                 <input
                   id="file"
                   type="file"
-                  accept=".csv"
+                  accept=".csv,.xlsx,.xls"
                   onChange={handleUploadCSV}
                   className="hidden"
                 />

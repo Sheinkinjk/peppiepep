@@ -52,16 +52,19 @@ export function CSVUploadForm({ uploadAction }: CSVUploadFormProps) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <Label htmlFor="file">
-          Upload CSV (columns: name, phone, email optional)
+          Upload CSV or Excel (columns: name, phone, email optional)
         </Label>
         <Input
           id="file"
           type="file"
           name="file"
-          accept=".csv"
+          accept=".csv,.xlsx,.xls"
           required
           disabled={isUploading}
         />
+        <p className="text-xs text-slate-500 mt-1">
+          Supported formats: CSV (.csv), Excel (.xlsx, .xls)
+        </p>
       </div>
       <Button type="submit" disabled={isUploading}>
         {isUploading ? 'Uploading...' : 'Upload & Generate Links'}
