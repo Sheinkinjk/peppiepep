@@ -220,10 +220,6 @@ export default function Home() {
 
             {/* Section Header */}
             <div className="text-center space-y-6 px-4">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-xl px-5 py-2 text-sm font-bold text-purple-300 shadow-xl shadow-purple-500/20 ring-1 ring-white/20">
-                <Sparkles className="h-4 w-4" />
-                The Growth Hacking Playbook
-              </div>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
                 <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
                   Why Start a Referral Program?

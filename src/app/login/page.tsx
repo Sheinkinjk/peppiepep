@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,7 +13,7 @@ import { Database } from "@/types/supabase";
 
 type ViewState = "auth" | "onboarding" | "guest-onboarding";
 
-export default function LoginPage() {
+function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
@@ -28,8 +28,23 @@ export default function LoginPage() {
   const [draftLoaded, setDraftLoaded] = useState(false);
 
   const router = useRouter();
+  const searchParams = useSearchParams();
   const supabase = createBrowserSupabaseClient();
   type BusinessInsert = Database["public"]["Tables"]["businesses"]["Insert"];
+
+  // Check for URL error parameters
+  useEffect(() => {
+    const urlError = searchParams.get('error');
+    const needsOnboarding = searchParams.get('needs_onboarding');
+
+    if (urlError) {
+      setError(decodeURIComponent(urlError));
+    }
+
+    if (needsOnboarding === 'true') {
+      setView('onboarding');
+    }
+  }, [searchParams]);
 
   // Load and persist onboarding drafts so entered data is not lost
   useEffect(() => {
@@ -505,5 +520,20 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white">
+        <div className="text-center">
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-purple-600 border-r-transparent"></div>
+          <p className="mt-4 text-slate-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <LoginContent />
+    </Suspense>
   );
 }
