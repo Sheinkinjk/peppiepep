@@ -50,9 +50,15 @@ export function StickyHeader() {
               </Link>
               <Link
                 className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
-                href="/demo"
+                href="/about"
               >
-                Demo
+                About
+              </Link>
+              <Link
+                className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
+                href="/dashboard-guest"
+              >
+                Demo Dashboard
               </Link>
               <a
                 href="https://calendly.com/jarredkrowitz/30min"
@@ -106,10 +112,17 @@ export function StickyHeader() {
               </Link>
               <Link
                 className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
-                href="/demo"
+                href="/about"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Demo
+                About
+              </Link>
+              <Link
+                className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
+                href="/dashboard-guest"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Demo Dashboard
               </Link>
               <a
                 href="https://calendly.com/jarredkrowitz/30min"

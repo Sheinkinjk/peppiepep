@@ -327,31 +327,50 @@ export default function HowItWorks() {
               href="/login"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300 whitespace-nowrap"
             >
-              Start for free <ArrowRight className="h-4 w-4" />
+              Register Now <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </section>
 
-        <footer className="flex flex-col items-start justify-between gap-4 border-t border-slate-200/70 pt-6 text-sm text-slate-600 md:flex-row md:items-center">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md" />
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Pepform</p>
-              <p className="text-xs text-slate-500">Referrals that compound</p>
+        <footer className="flex flex-col items-start justify-between gap-6 border-t border-slate-200/70 pt-6 text-sm text-slate-600">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4">
+            <div className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md" />
+              <div>
+                <p className="text-sm font-semibold text-slate-900">Pepform</p>
+                <p className="text-xs text-slate-500">Referrals that compound</p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link className="hover:text-slate-900" href="/">
-              Home
-            </Link>
-            <span className="text-slate-300">•</span>
-            <Link className="hover:text-slate-900" href="/login">
-              Sign in
-            </Link>
-            <span className="text-slate-300">•</span>
-            <Link className="hover:text-slate-900" href="/r/demo-referral">
-              Demo link
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link className="hover:text-slate-900" href="/contact">
+                Contact Us
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900" href="/terms">
+                Terms of Service
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900" href="/privacy">
+                Privacy Policy
+              </Link>
+              <span className="text-slate-300">•</span>
+              <a
+                href="https://calendly.com/jarredkrowitz/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900"
+              >
+                Schedule a Call
+              </a>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900" href="/about">
+                About
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900" href="/security">
+                Security
+              </Link>
+            </div>
           </div>
         </footer>
       </main>
