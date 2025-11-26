@@ -20,6 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Toaster } from "@/components/ui/toaster";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
+import { CampaignBuilder } from "@/components/CampaignBuilder";
 import {
   createServerComponentClient,
   createServiceClient,
@@ -129,14 +130,16 @@ export default async function Dashboard() {
         const worksheet = workbook.Sheets[firstSheetName];
 
         // Convert to JSON with header row
-        parsedData = XLSX.utils.sheet_to_json<Record<string, string>>(worksheet, {
+        const rows = XLSX.utils.sheet_to_json<(string | number)[]>(worksheet, {
           header: 1,
-          defval: ''
-        }).slice(1).map((row: any) => {
-          const headers = XLSX.utils.sheet_to_json<string[]>(worksheet, { header: 1 })[0] || [];
+          defval: ""
+        });
+        const headers = (rows[0] as string[] | undefined) || [];
+        parsedData = rows.slice(1).map((rowArr) => {
           const obj: Record<string, string> = {};
-          headers.forEach((header: string, index: number) => {
-            obj[header] = row[index] || '';
+          headers.forEach((header, index) => {
+            const value = (rowArr && rowArr[index] !== undefined) ? String(rowArr[index]) : "";
+            obj[header] = value;
           });
           return obj;
         });
@@ -283,6 +286,146 @@ export default async function Dashboard() {
     }
   }
 
+  async function sendCampaign(formData: FormData) {
+    "use server";
+    try {
+      const campaignName = formData.get("campaignName") as string;
+      const campaignMessage = formData.get("campaignMessage") as string;
+      const campaignChannel = formData.get("campaignChannel") as "sms" | "email";
+      const scheduleType = formData.get("scheduleType") as "now" | "later";
+      const scheduleDate = formData.get("scheduleDate") as string;
+      const selectedCustomersJson = formData.get("selectedCustomers") as string;
+
+      if (!campaignName || !campaignMessage || !selectedCustomersJson) {
+        return { error: "Missing required campaign information." };
+      }
+
+      const selectedCustomerIds = JSON.parse(selectedCustomersJson) as string[];
+
+      if (selectedCustomerIds.length === 0) {
+        return { error: "Please select at least one customer." };
+      }
+
+      // Only support "send now" for initial implementation
+      if (scheduleType === "later") {
+        return { error: "Scheduled campaigns are not yet supported. Please select 'Send Now'." };
+      }
+
+      const supabase = createServiceClient();
+
+      // Fetch selected customers
+      const { data: customersData, error: fetchError } = await supabase
+        .from("customers")
+        .select("id, name, phone, email, referral_code")
+        .in("id", selectedCustomerIds)
+        .eq("business_id", business.id);
+
+      if (fetchError || !customersData) {
+        console.error("Failed to fetch customers:", fetchError);
+        return { error: "Failed to fetch customer data." };
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const selectedCustomers = customersData as any[];
+
+      // Store campaign record
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: campaign, error: campaignError } = await (supabase as any)
+        .from("campaigns")
+        .insert([
+          {
+            business_id: business.id,
+            name: campaignName,
+            message: campaignMessage,
+            channel: campaignChannel,
+            status: "sending",
+            total_recipients: selectedCustomers.length,
+            sent_count: 0,
+          },
+        ])
+        .select()
+        .single();
+
+      if (campaignError) {
+        console.error("Failed to create campaign:", campaignError);
+        // Continue anyway - campaign tracking is optional
+      }
+
+      let successCount = 0;
+      let failureCount = 0;
+
+      if (campaignChannel === "sms") {
+        // Send SMS via Twilio
+        const sid = process.env.TWILIO_ACCOUNT_SID;
+        const token = process.env.TWILIO_AUTH_TOKEN;
+        const from = process.env.TWILIO_PHONE_NUMBER;
+
+        if (!sid || !token || !from) {
+          return { error: "SMS service not configured. Please contact support." };
+        }
+
+        const client = twilio(sid, token);
+
+        for (const customer of selectedCustomers) {
+          if (!customer.phone) {
+            failureCount++;
+            continue;
+          }
+
+          try {
+            // Personalize message
+            const personalizedMessage = campaignMessage
+              .replace(/\{\{name\}\}/g, customer.name || "there")
+              .replace(
+                /\{\{referral_link\}\}/g,
+                customer.referral_code ? `${baseSiteUrl}/r/${customer.referral_code}` : ""
+              );
+
+            await client.messages.create({
+              body: personalizedMessage,
+              from,
+              to: customer.phone,
+            });
+
+            successCount++;
+          } catch (smsError) {
+            console.error(`Failed to send SMS to ${customer.phone}:`, smsError);
+            failureCount++;
+          }
+        }
+      } else {
+        // Email sending - placeholder for future implementation
+        return { error: "Email campaigns are not yet supported. Please use SMS." };
+      }
+
+      // Update campaign status
+      if (campaign) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        await (supabase as any)
+          .from("campaigns")
+          .update({
+            status: failureCount === 0 ? "completed" : "partial",
+            sent_count: successCount,
+            failed_count: failureCount,
+          })
+          .eq("id", campaign.id);
+      }
+
+      revalidatePath("/dashboard");
+
+      if (failureCount === 0) {
+        return { success: `Campaign sent successfully to ${successCount} customers!` };
+      } else {
+        return {
+          success: `Campaign completed with ${successCount} successful and ${failureCount} failed messages.`,
+        };
+      }
+    } catch (error) {
+      console.error("Campaign send error:", error);
+      return { error: "Failed to send campaign. Please try again." };
+    }
+  }
+
   const supabase = createServerComponentClient();
   const { data: customers = [] } = await supabase
     .from("customers")
@@ -325,14 +468,24 @@ export default async function Dashboard() {
           </div>
         </div>
 
-        <Tabs defaultValue="settings" className="w-full">
-          <TabsList className="w-full grid grid-cols-3 h-auto bg-white/80 backdrop-blur-sm shadow-lg shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl p-1.5">
+        <Tabs defaultValue="campaigns" className="w-full">
+          <TabsList className="w-full grid grid-cols-4 h-auto bg-white/80 backdrop-blur-sm shadow-lg shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl p-1.5">
+            <TabsTrigger value="campaigns" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Campaigns</TabsTrigger>
             <TabsTrigger value="settings" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Settings</TabsTrigger>
             <TabsTrigger value="clients" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Clients</TabsTrigger>
             <TabsTrigger value="referrals" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">
               Referrals ({pendingReferrals})
             </TabsTrigger>
           </TabsList>
+
+        <TabsContent value="campaigns">
+          <CampaignBuilder
+            customers={safeCustomers}
+            businessName={business.name || "Your Business"}
+            siteUrl={siteUrl}
+            sendCampaignAction={sendCampaign}
+          />
+        </TabsContent>
 
         <TabsContent value="settings">
           <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
