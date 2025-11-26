@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Calendar } from "lucide-react";
+import { Mail, Calendar } from "lucide-react";
 import Link from "next/link";
 import { StickyHeader } from "@/components/StickyHeader";
 
@@ -19,7 +19,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="max-w-xl mx-auto text-lg leading-relaxed text-slate-600">
-            Have questions? Want to learn more about Pepform? We're here to help.
+            Have questions? Want to learn more about Pepform? We are here to help.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function Contact() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
             <p className="text-slate-600 mb-4">
-              Send us an email and we'll get back to you within 24 hours.
+              Send us an email and we will get back to you within 24 hours.
             </p>
             <div className="font-semibold text-purple-700 group-hover:underline">
               jarredkrowitz@gmail.com →
@@ -66,10 +66,10 @@ export default function Contact() {
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold text-slate-900 mb-2">
-                What's the best way to get started?
+                What is the best way to get started?
               </h3>
               <p className="text-sm text-slate-600">
-                Sign up for a free account and upload your first customer list. You can have a working referral program in under 5 minutes. If you need help, schedule a call and we'll walk you through it.
+                Sign up for a free account and upload your first customer list. You can have a working referral program in under 5 minutes. If you need help, schedule a call and we will walk you through it.
               </p>
             </div>
             <div>
@@ -77,7 +77,7 @@ export default function Contact() {
                 Do you offer custom integrations?
               </h3>
               <p className="text-sm text-slate-600">
-                We're currently in private beta and gathering feedback on which integrations would be most valuable. Email us with your specific needs and we'll let you know what's possible.
+                We are currently in private beta and gathering feedback on which integrations would be most valuable. Email us with your specific needs and we will let you know what is possible.
               </p>
             </div>
             <div>
@@ -85,7 +85,7 @@ export default function Contact() {
                 Can I get help setting up my first campaign?
               </h3>
               <p className="text-sm text-slate-600">
-                Absolutely! We offer white-glove onboarding for all new users. Schedule a call and we'll help you upload your customers, set up rewards, and launch your first referral campaign.
+                Absolutely! We offer white-glove onboarding for all new users. Schedule a call and we will help you upload your customers, set up rewards, and launch your first referral campaign.
               </p>
             </div>
           </div>

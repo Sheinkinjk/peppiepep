@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { StickyHeader } from "@/components/StickyHeader";
+import Link from "next/link";
 
 export default function Privacy() {
   return (
