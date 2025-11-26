@@ -329,26 +329,34 @@ export default async function Dashboard() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const selectedCustomers = customersData as any[];
 
-      // Store campaign record
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { data: campaign, error: campaignError } = await (supabase as any)
-        .from("campaigns")
-        .insert([
-          {
-            business_id: business.id,
-            name: campaignName,
-            message: campaignMessage,
-            channel: campaignChannel,
-            status: "sending",
-            total_recipients: selectedCustomers.length,
-            sent_count: 0,
-          },
-        ])
-        .select()
-        .single();
+      // Store campaign record (optional - won't block if table doesn't exist)
+      let campaign = null;
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const { data: campaignData, error: campaignError } = await (supabase as any)
+          .from("campaigns")
+          .insert([
+            {
+              business_id: business.id,
+              name: campaignName,
+              message: campaignMessage,
+              channel: campaignChannel,
+              status: "sending",
+              total_recipients: selectedCustomers.length,
+              sent_count: 0,
+            },
+          ])
+          .select()
+          .single();
 
-      if (campaignError) {
-        console.error("Failed to create campaign:", campaignError);
+        if (campaignError) {
+          console.error("Failed to create campaign record:", campaignError);
+          // Continue anyway - campaign tracking is optional
+        } else {
+          campaign = campaignData;
+        }
+      } catch (campaignTrackingError) {
+        console.error("Campaign tracking not available:", campaignTrackingError);
         // Continue anyway - campaign tracking is optional
       }
 
@@ -489,17 +497,22 @@ export default async function Dashboard() {
         }
       }
 
-      // Update campaign status
+      // Update campaign status (optional - won't block if table doesn't exist)
       if (campaign) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        await (supabase as any)
-          .from("campaigns")
-          .update({
-            status: failureCount === 0 ? "completed" : "partial",
-            sent_count: successCount,
-            failed_count: failureCount,
-          })
-          .eq("id", campaign.id);
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          await (supabase as any)
+            .from("campaigns")
+            .update({
+              status: failureCount === 0 ? "completed" : "partial",
+              sent_count: successCount,
+              failed_count: failureCount,
+            })
+            .eq("id", campaign.id);
+        } catch (updateError) {
+          console.error("Failed to update campaign status:", updateError);
+          // Continue anyway - campaign tracking is optional
+        }
       }
 
       revalidatePath("/dashboard");
