@@ -23,8 +23,7 @@ export default function LoginPage() {
 
   // Onboarding state
   const [businessName, setBusinessName] = useState("");
-  const [offerText, setOfferText] = useState("");
-  const [rewardAmount, setRewardAmount] = useState("15");
+  const [phone, setPhone] = useState("");
   const [draftLoaded, setDraftLoaded] = useState(false);
 
   const router = useRouter();
@@ -39,12 +38,10 @@ export default function LoginPage() {
       try {
         const draft = JSON.parse(rawDraft) as {
           businessName?: string;
-          offerText?: string;
-          rewardAmount?: string;
+          phone?: string;
         };
         setBusinessName(draft.businessName ?? "");
-        setOfferText(draft.offerText ?? "");
-        setRewardAmount(draft.rewardAmount ?? "15");
+        setPhone(draft.phone ?? "");
       } catch {
         // ignore corrupted draft
       }
@@ -56,11 +53,10 @@ export default function LoginPage() {
     if (!draftLoaded) return;
     const draft = {
       businessName,
-      offerText,
-      rewardAmount,
+      phone,
     };
     localStorage.setItem("pepform_onboarding_draft", JSON.stringify(draft));
-  }, [businessName, offerText, rewardAmount, draftLoaded]);
+  }, [businessName, phone, draftLoaded]);
 
   const handleAuth = async () => {
     setLoading(true);
@@ -122,9 +118,9 @@ export default function LoginPage() {
         const guestBusiness = {
           id: `guest-${Date.now()}`,
           name: businessName || "My Test Business",
-          offer_text: offerText || "20% off your first visit",
+          offer_text: null,
           reward_type: "credit",
-          reward_amount: Number(rewardAmount) || 15,
+          reward_amount: 0,
           is_guest: true,
           created_at: new Date().toISOString()
         };
@@ -138,16 +134,14 @@ export default function LoginPage() {
 
       const cleanBusinessName =
         businessName.trim() || `${email.split("@")[0]}'s Business`;
-      const cleanOfferText = offerText.trim() || "20% off your first visit";
-      const cleanRewardAmount = Number(rewardAmount) || 15;
 
       // Real users: create in Supabase
       const insertPayload: BusinessInsert = {
         owner_id: user!.id,
         name: cleanBusinessName,
-        offer_text: cleanOfferText,
+        offer_text: null,
         reward_type: "credit",
-        reward_amount: cleanRewardAmount,
+        reward_amount: 0,
       };
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -220,33 +214,16 @@ export default function LoginPage() {
               </div>
 
               <div>
-                <Label htmlFor="offerText">New customer offer *</Label>
+                <Label htmlFor="phone">Your phone (optional)</Label>
                 <Input
-                  id="offerText"
-                  value={offerText}
-                  onChange={(e) => setOfferText(e.target.value)}
-                  placeholder="e.g., 20% off your first visit"
+                  id="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="+61 400 123 456"
                   className="mt-1"
-                  required
                 />
                 <p className="text-xs text-slate-500 mt-1">
-                  This is what referred customers will see
-                </p>
-              </div>
-
-              <div>
-                <Label htmlFor="rewardAmount">Ambassador reward amount ($ AUD) *</Label>
-                <Input
-                  id="rewardAmount"
-                  type="number"
-                  value={rewardAmount}
-                  onChange={(e) => setRewardAmount(e.target.value)}
-                  placeholder="15"
-                  className="mt-1"
-                  required
-                />
-                <p className="text-xs text-slate-500 mt-1">
-                  How much credit ambassadors earn per successful referral
+                  We’ll use this for account setup and support. You can configure offers and rewards inside the dashboard.
                 </p>
               </div>
 
@@ -268,7 +245,7 @@ export default function LoginPage() {
                 )}
                 <Button
                   onClick={handleOnboarding}
-                  disabled={loading || !businessName || !offerText}
+                  disabled={loading || !businessName}
                   className="w-full"
                 >
                   {loading ? "Creating..." : "Launch Dashboard"}

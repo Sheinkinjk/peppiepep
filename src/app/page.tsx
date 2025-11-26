@@ -36,7 +36,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 px-4">
             <Link
-              href="/demo"
+              href="/dashboard-guest"
               className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600/80 bg-gradient-to-b from-white to-purple-50/50 px-8 py-4 text-base font-bold text-purple-700 shadow-xl shadow-purple-200/60 ring-1 ring-purple-100 transition-all duration-300 hover:-translate-y-1 hover:border-purple-600 hover:shadow-2xl hover:shadow-purple-300/70"
             >
               Try demo dashboard
@@ -193,7 +193,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
-                    href="/demo"
+                    href="/dashboard-guest"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     See it in action
