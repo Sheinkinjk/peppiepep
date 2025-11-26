@@ -1,14 +1,9 @@
 import { Mail, Calendar } from "lucide-react";
-import Link from "next/link";
-import { StickyHeader } from "@/components/StickyHeader";
 
 export default function Contact() {
   return (
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
-
-      <StickyHeader />
-
       <main className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10">
 
         <div className="max-w-2xl mx-auto space-y-4 text-center">
@@ -91,28 +86,6 @@ export default function Contact() {
           </div>
         </section>
 
-        <footer className="flex flex-col items-start justify-between gap-4 border-t border-slate-200/70 pt-6 text-sm text-slate-600 md:flex-row md:items-center">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md" />
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Pepform</p>
-              <p className="text-xs text-slate-500">Referrals that compound</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link className="hover:text-slate-900" href="/">
-              Home
-            </Link>
-            <span className="text-slate-300">•</span>
-            <Link className="hover:text-slate-900" href="/terms">
-              Terms
-            </Link>
-            <span className="text-slate-300">•</span>
-            <Link className="hover:text-slate-900" href="/privacy">
-              Privacy
-            </Link>
-          </div>
-        </footer>
       </main>
     </div>
   );

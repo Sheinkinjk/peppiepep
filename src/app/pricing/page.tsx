@@ -2,9 +2,8 @@
 
 /* eslint-disable react/no-unescaped-entities */
 import { useMemo, useState } from "react";
-import { ArrowRight, Check, Zap, Users, Crown } from "lucide-react";
+import { ArrowRight, Check, Zap, Users, Crown, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { StickyHeader } from "@/components/StickyHeader";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">(
@@ -14,12 +13,12 @@ export default function Pricing() {
   const pricing = useMemo(
     () => ({
       base: {
-        monthly: 199,
-        annual: Math.round(199 * 0.8), // 20% discount
+        monthly: 299,
+        annual: Math.round(299 * 0.8), // 20% discount
       },
       scale: {
-        monthly: 400,
-        annual: Math.round(400 * 0.8),
+        monthly: 399,
+        annual: Math.round(399 * 0.8),
       },
     }),
     [],
@@ -27,290 +26,324 @@ export default function Pricing() {
 
   const basePrice = pricing.base[billingCycle];
   const scalePrice = pricing.scale[billingCycle];
-  const annualLabel =
-    billingCycle === "annual" ? " (billed annually, save 20%)" : "";
+  const baseSavings = billingCycle === "annual" ? Math.round((pricing.base.monthly * 12 - pricing.base.annual * 12)) : 0;
+  const scaleSavings = billingCycle === "annual" ? Math.round((pricing.scale.monthly * 12 - pricing.scale.annual * 12)) : 0;
 
   return (
-    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
+    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900">
+      {/* Premium gradient overlays */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(168,85,247,0.15),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(236,72,153,0.15),transparent_45%),radial-gradient(circle_at_40%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
 
-      <StickyHeader />
+      {/* Animated gradient orbs */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
+      <main className="relative mx-auto flex max-w-7xl flex-col gap-16 px-6 pb-24 pt-16 md:px-10 lg:px-16">
 
-        <div className="mx-auto max-w-3xl space-y-8 text-center">
-          <div className="rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 text-amber-900 border border-amber-300/50 px-6 py-4 text-sm font-bold shadow-lg shadow-amber-200/50 ring-1 ring-amber-200/50">
-            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarredkrowitz@gmail.com" className="underline text-amber-800 hover:text-amber-900 transition-colors">jarredkrowitz@gmail.com</a> with any questions.
+        <div className="mx-auto max-w-4xl space-y-10 text-center">
+          <div className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-6 py-3 text-sm font-bold text-purple-300 shadow-2xl shadow-purple-500/20 ring-1 ring-purple-400/30 backdrop-blur-xl">
+            <Sparkles className="h-4 w-4" />
+            Enterprise-Grade Referral Platform
           </div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-1.5 text-xs font-bold text-purple-700 shadow-md shadow-purple-200/50 ring-1 ring-purple-200">
-            Simple, transparent pricing
-          </div>
-          <h1 className="text-balance text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Start free, scale as you{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              grow
+
+          <h1 className="text-balance text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+            <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
+              Growth Network
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              Platform Pricing
             </span>
           </h1>
-          <p className="max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-600 mx-auto font-medium">
-            No hidden fees. No setup costs. Cancel anytime. Get started in minutes and only pay when you're ready to scale.
+
+          <p className="max-w-3xl text-xl sm:text-2xl leading-relaxed text-purple-100 mx-auto font-medium">
+            Pepform are your partner in optimising the next phase of your marketing and sales strategy
           </p>
+
+          <div className="rounded-3xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-200 border border-amber-400/30 px-8 py-5 text-base font-bold shadow-2xl shadow-amber-500/10 ring-1 ring-amber-300/20 backdrop-blur-xl">
+            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarredkrowitz@gmail.com" className="underline text-amber-100 hover:text-white transition-colors">jarredkrowitz@gmail.com</a> with any questions.
+          </div>
         </div>
 
-        <div className="rounded-2xl bg-white/80 p-2 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 backdrop-blur-sm inline-flex items-center justify-center mx-auto gap-1">
-          <button
-            type="button"
-            onClick={() => setBillingCycle("monthly")}
-            className={`rounded-xl px-6 py-3 text-sm font-bold transition-all duration-200 ${
-              billingCycle === "monthly"
-                ? "bg-gradient-to-b from-slate-800 to-slate-900 text-white shadow-lg shadow-slate-900/30"
-                : "text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            type="button"
-            onClick={() => setBillingCycle("annual")}
-            className={`px-6 py-3 text-sm font-bold transition-all duration-200 ${
-              billingCycle === "annual"
-                ? "bg-gradient-to-b from-green-500 to-green-600 text-white rounded-xl shadow-lg shadow-green-300/50"
-                : "text-slate-600 hover:bg-slate-50 rounded-xl"
-            }`}
-          >
-            Annual <span className="ml-1.5 rounded-full bg-white/30 px-2.5 py-0.5 text-xs font-extrabold">Save 20%</span>
-          </button>
+        {/* Premium billing toggle */}
+        <div className="relative mx-auto">
+          <div className="rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/80 p-1.5 shadow-2xl shadow-purple-500/20 ring-1 ring-purple-500/30 backdrop-blur-xl inline-flex items-center justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => setBillingCycle("monthly")}
+              className={`relative rounded-xl px-8 py-4 text-base font-bold transition-all duration-300 ${
+                billingCycle === "monthly"
+                  ? "bg-gradient-to-b from-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/50 scale-105"
+                  : "text-purple-300 hover:text-white hover:bg-slate-800/50"
+              }`}
+            >
+              Monthly billing
+            </button>
+            <button
+              type="button"
+              onClick={() => setBillingCycle("annual")}
+              className={`relative rounded-xl px-8 py-4 text-base font-bold transition-all duration-300 ${
+                billingCycle === "annual"
+                  ? "bg-gradient-to-b from-green-500 to-green-600 text-white shadow-2xl shadow-green-500/50 scale-105"
+                  : "text-purple-300 hover:text-white hover:bg-slate-800/50"
+              }`}
+            >
+              Annual billing
+              <span className="ml-2 rounded-full bg-white/30 px-3 py-1 text-xs font-extrabold backdrop-blur-sm">
+                Save 20%
+              </span>
+            </button>
+          </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-8 lg:grid-cols-3">
           {/* Base Plan */}
-          <div className="rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/50 p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-100 hover:shadow-2xl hover:shadow-slate-300/50 transition-all duration-300">
-            <div className="mb-6">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-purple-50 px-3.5 py-1.5 text-xs font-bold text-purple-700 ring-1 ring-purple-200/50 shadow-sm">
-                <Zap className="h-3.5 w-3.5" />
+          <div className="group relative rounded-3xl border border-purple-500/30 bg-gradient-to-b from-slate-800/90 to-slate-900/90 p-10 shadow-2xl shadow-purple-900/30 ring-1 ring-purple-400/20 hover:shadow-purple-500/40 hover:ring-purple-400/40 transition-all duration-500 backdrop-blur-xl hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="relative mb-8">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500/20 to-purple-600/20 px-4 py-2 text-sm font-bold text-purple-300 ring-1 ring-purple-400/30 shadow-lg backdrop-blur-sm">
+                <Zap className="h-4 w-4" />
                 Base
               </div>
-              <div className="mb-3 flex items-baseline gap-2">
-                <span className="text-5xl font-extrabold text-slate-900 tracking-tight">${basePrice}</span>
-                <span className="text-slate-500 font-semibold">/month{annualLabel}</span>
+              <div className="mb-4 flex items-baseline gap-3">
+                <span className="text-6xl font-black text-white tracking-tight">${basePrice}</span>
+                <div className="flex flex-col">
+                  <span className="text-purple-300 font-bold">/month</span>
+                  {billingCycle === "annual" && (
+                    <span className="text-xs text-green-400 font-semibold">Save ${baseSavings}/year</span>
+                  )}
+                </div>
               </div>
-              <p className="text-sm text-slate-600 font-medium">Launch-ready program for small teams</p>
+              <p className="text-base text-purple-200 font-medium">Launch-ready program for small teams</p>
             </div>
 
             <Link
               href="/login"
-              className="mb-8 inline-flex w-full items-center justify-center rounded-full border-2 border-slate-900/80 bg-white px-6 py-3.5 text-sm font-bold text-slate-900 shadow-lg shadow-slate-200/50 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-xl hover:shadow-slate-300/50"
+              className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-purple-400/50 bg-gradient-to-b from-slate-700 to-slate-800 px-8 py-4 text-base font-bold text-white shadow-xl shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400 hover:shadow-2xl hover:shadow-purple-400/40 backdrop-blur-sm"
             >
               Start free trial
             </Link>
 
-            <div className="space-y-3 text-sm">
+            <div className="space-y-4 text-base">
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Up to <strong>50 referrers</strong> enrolled</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Up to <strong className="text-white">50 referrers</strong> enrolled</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700"><strong>5,000 SMS/WhatsApp messages</strong> included</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100"><strong className="text-white">5,000 SMS/WhatsApp messages</strong> included</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Real-time tracking dashboard</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Real-time tracking dashboard</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Ambassador portals</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Ambassador portals</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">CSV import/export</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">CSV import/export</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Basic analytics & live referrals</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Basic analytics & live referrals</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Email support</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Email support</span>
               </div>
             </div>
           </div>
 
           {/* Scale Plan - Most Popular */}
-          <div className="relative rounded-3xl border-2 border-purple-500 bg-gradient-to-b from-white via-purple-50/30 to-white p-8 shadow-2xl shadow-purple-300/50 ring-1 ring-purple-200 transform hover:scale-105 transition-all duration-300">
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 px-5 py-1.5 text-xs font-extrabold text-white shadow-xl shadow-purple-400/50 ring-2 ring-white">
-              MOST POPULAR
+          <div className="group relative rounded-3xl border-2 border-purple-400 bg-gradient-to-b from-purple-600/20 via-pink-600/10 to-slate-900/90 p-10 shadow-2xl shadow-purple-500/50 ring-2 ring-purple-400/50 transform hover:scale-110 transition-all duration-500 backdrop-blur-xl z-10">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-8 py-2.5 text-sm font-black text-white shadow-2xl shadow-purple-500/50 ring-2 ring-white/20 backdrop-blur-sm animate-pulse">
+              ⭐ MOST POPULAR
             </div>
 
-            <div className="mb-6 mt-2">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-purple-50 px-3.5 py-1.5 text-xs font-bold text-purple-700 ring-1 ring-purple-200/50 shadow-sm">
-                <Users className="h-3.5 w-3.5" />
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 via-pink-500/10 to-transparent rounded-3xl" />
+
+            <div className="relative mb-8 mt-4">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-400/30 to-pink-400/30 px-4 py-2 text-sm font-bold text-purple-200 ring-1 ring-purple-300/50 shadow-lg backdrop-blur-sm">
+                <Users className="h-4 w-4" />
                 Scale
               </div>
-              <div className="mb-3 flex items-baseline gap-2">
-                <span className="text-5xl font-extrabold text-slate-900 tracking-tight">${scalePrice}</span>
-                <span className="text-slate-500 font-semibold">/month{annualLabel}</span>
+              <div className="mb-4 flex items-baseline gap-3">
+                <span className="text-6xl font-black text-white tracking-tight drop-shadow-2xl">${scalePrice}</span>
+                <div className="flex flex-col">
+                  <span className="text-purple-200 font-bold">/month</span>
+                  {billingCycle === "annual" && (
+                    <span className="text-xs text-green-400 font-semibold">Save ${scaleSavings}/year</span>
+                  )}
+                </div>
               </div>
-              <p className="text-sm text-slate-600 font-medium">For teams running steady campaigns</p>
+              <p className="text-base text-purple-100 font-medium">For teams running steady campaigns</p>
             </div>
 
             <Link
               href="/login"
-              className="mb-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-purple-400/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-purple-500/60"
+              className="relative mb-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-pink-500/70 overflow-hidden group/button"
             >
-              Start free trial <ArrowRight className="h-4 w-4" />
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 opacity-0 group-hover/button:opacity-100 transition-opacity duration-300" />
+              <span className="relative">Start free trial</span>
+              <ArrowRight className="relative h-5 w-5" />
             </Link>
 
-            <div className="space-y-3 text-sm">
+            <div className="relative space-y-4 text-base">
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Up to <strong>125 referrers</strong></span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Up to <strong className="text-white">125 referrers</strong></span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700"><strong>Everything in Base</strong>, plus:</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100"><strong className="text-white">Everything in Base</strong>, plus:</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700"><strong>12,500 messages/month</strong> included</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100"><strong className="text-white">12,500 messages/month</strong> included</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Auto-reward SMS/email notifications</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Auto-reward SMS/email notifications</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Advanced analytics & cohort reports</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Advanced analytics & cohort reports</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Ambassador leaderboard</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Ambassador leaderboard</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Custom branding, domains, UTM tracking</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Custom branding, domains, UTM tracking</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Priority email + chat support</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-purple-100">Priority email + chat support</span>
               </div>
             </div>
           </div>
 
           {/* Enterprise Plan */}
-          <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white shadow-sm">
-            <div className="mb-6">
-              <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                <Crown className="h-3 w-3" />
+          <div className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 p-10 shadow-2xl shadow-slate-900/50 ring-1 ring-slate-700/30 hover:ring-slate-600/50 transition-all duration-500 backdrop-blur-xl hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-700/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="relative mb-8">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-slate-700/50 to-slate-600/50 px-4 py-2 text-sm font-bold text-slate-300 backdrop-blur-sm ring-1 ring-slate-600/50 shadow-lg">
+                <Crown className="h-4 w-4 text-yellow-500" />
                 Enterprise
               </div>
-              <div className="mb-2 flex items-baseline gap-2">
-                <span className="text-5xl font-bold">Custom</span>
-                <span className="text-slate-300">/month</span>
+              <div className="mb-4 flex items-baseline gap-3">
+                <span className="text-6xl font-black text-white tracking-tight">Custom</span>
+                <span className="text-slate-400 font-bold">/month</span>
               </div>
-              <p className="text-sm text-slate-300">Built for large-scale campaigns</p>
+              <p className="text-base text-slate-300 font-medium">Built for large-scale campaigns</p>
             </div>
 
             <Link
               href="/login"
-              className="mb-6 inline-flex w-full items-center justify-center rounded-full border-2 border-white bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+              className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-white/80 bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-slate-50 hover:shadow-2xl hover:border-white"
             >
               Talk to sales
             </Link>
 
-            <div className="space-y-3 text-sm">
+            <div className="relative space-y-4 text-base">
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white"><strong>Unlimited referrers & messages</strong> with pooled pricing</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200"><strong className="text-white">Unlimited referrers & messages</strong> with pooled pricing</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white"><strong>Everything in Scale</strong>, plus:</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200"><strong className="text-white">Everything in Scale</strong>, plus:</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">Dedicated CSM and campaign strategy</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200">Dedicated CSM and campaign strategy</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">SSO/SAML, audit logs, custom roles</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200">SSO/SAML, audit logs, custom roles</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">White-label portals & multi-brand support</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200">White-label portals & multi-brand support</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">Advanced API limits & webhooks</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200">Advanced API limits & webhooks</span>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-white">Custom SLAs + 24/7 support</span>
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-200">Custom SLAs + 24/7 support</span>
               </div>
             </div>
           </div>
         </div>
 
-        <section className="rounded-3xl bg-white/80 p-8 shadow-xl ring-1 ring-slate-100 backdrop-blur">
-          <div className="mx-auto max-w-3xl space-y-6">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-2">
+        <section className="rounded-3xl bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-12 shadow-2xl ring-1 ring-purple-500/20 backdrop-blur-xl">
+          <div className="mx-auto max-w-3xl space-y-8">
+            <div className="text-center mb-10">
+              <h2 className="text-4xl font-black text-white mb-3">
                 Compare plans
               </h2>
-              <p className="text-slate-600">Find the perfect fit for your business</p>
+              <p className="text-purple-200 text-lg">Find the perfect fit for your business</p>
             </div>
 
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b border-slate-200">
-                    <th className="pb-4 text-sm font-semibold text-slate-900">Features</th>
-                    <th className="pb-4 text-center text-sm font-semibold text-slate-900">Starter</th>
-                    <th className="pb-4 text-center text-sm font-semibold text-slate-900">Growth</th>
-                    <th className="pb-4 text-center text-sm font-semibold text-slate-900">Pro</th>
+                  <tr className="border-b border-purple-500/30">
+                    <th className="pb-4 text-base font-bold text-purple-200">Features</th>
+                    <th className="pb-4 text-center text-base font-bold text-purple-200">Base</th>
+                    <th className="pb-4 text-center text-base font-bold text-purple-200">Scale</th>
+                    <th className="pb-4 text-center text-base font-bold text-purple-200">Enterprise</th>
                   </tr>
                 </thead>
-                <tbody className="text-sm">
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 text-slate-700">Ambassadors</td>
-                    <td className="py-3 text-center text-slate-600">50</td>
-                    <td className="py-3 text-center text-slate-600">200</td>
-                    <td className="py-3 text-center font-semibold text-slate-900">Unlimited</td>
+                <tbody className="text-base">
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Ambassadors</td>
+                    <td className="py-4 text-center text-purple-200">50</td>
+                    <td className="py-4 text-center text-purple-200">125</td>
+                    <td className="py-4 text-center font-bold text-white">Unlimited</td>
                   </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 text-slate-700">SMS credits/month</td>
-                    <td className="py-3 text-center text-slate-400">—</td>
-                    <td className="py-3 text-center text-slate-600">500</td>
-                    <td className="py-3 text-center font-semibold text-slate-900">2,000</td>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">SMS credits/month</td>
+                    <td className="py-4 text-center text-purple-200">5,000</td>
+                    <td className="py-4 text-center text-purple-200">12,500</td>
+                    <td className="py-4 text-center font-bold text-white">Unlimited</td>
                   </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 text-slate-700">Analytics & reporting</td>
-                    <td className="py-3 text-center text-slate-600">Basic</td>
-                    <td className="py-3 text-center text-slate-600">Advanced</td>
-                    <td className="py-3 text-center font-semibold text-slate-900">Advanced</td>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Analytics & reporting</td>
+                    <td className="py-4 text-center text-purple-200">Basic</td>
+                    <td className="py-4 text-center text-purple-200">Advanced</td>
+                    <td className="py-4 text-center font-bold text-white">Advanced</td>
                   </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 text-slate-700">Custom branding</td>
-                    <td className="py-3 text-center"><span className="text-slate-400">✗</span></td>
-                    <td className="py-3 text-center"><Check className="h-4 w-4 text-green-600 mx-auto" /></td>
-                    <td className="py-3 text-center"><Check className="h-4 w-4 text-green-600 mx-auto" /></td>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Custom branding</td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                   </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 text-slate-700">White-label portals</td>
-                    <td className="py-3 text-center"><span className="text-slate-400">✗</span></td>
-                    <td className="py-3 text-center"><span className="text-slate-400">✗</span></td>
-                    <td className="py-3 text-center"><Check className="h-4 w-4 text-green-600 mx-auto" /></td>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">White-label portals</td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                   </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 text-slate-700">API access</td>
-                    <td className="py-3 text-center"><span className="text-slate-400">✗</span></td>
-                    <td className="py-3 text-center"><span className="text-slate-400">✗</span></td>
-                    <td className="py-3 text-center"><Check className="h-4 w-4 text-green-600 mx-auto" /></td>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">API access</td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                   </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 text-slate-700">Support</td>
-                    <td className="py-3 text-center text-slate-600">Email</td>
-                    <td className="py-3 text-center text-slate-600">Priority email</td>
-                    <td className="py-3 text-center font-semibold text-slate-900">Phone + chat</td>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Support</td>
+                    <td className="py-4 text-center text-purple-200">Email</td>
+                    <td className="py-4 text-center text-purple-200">Priority email</td>
+                    <td className="py-4 text-center font-bold text-white">Phone + chat</td>
                   </tr>
                 </tbody>
               </table>
@@ -318,68 +351,58 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section className="rounded-3xl bg-purple-50 p-8 ring-1 ring-purple-100">
+        <section className="rounded-3xl bg-gradient-to-b from-purple-600/20 to-purple-800/20 p-12 ring-1 ring-purple-400/30 backdrop-blur-xl">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+            <h2 className="text-3xl font-black text-white mb-8 text-center">
               Frequently asked questions
             </h2>
             <div className="space-y-4">
-              <details className="group rounded-xl bg-white p-4 shadow-sm">
-                <summary className="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              <details className="group rounded-2xl bg-slate-800/50 p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between">
                   What's included in the free trial?
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition" />
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-3 text-sm text-slate-600">
+                <p className="mt-4 text-base text-purple-200 leading-relaxed">
                   All plans include a 14-day free trial with full access to all features. No credit card required to start.
                 </p>
               </details>
 
-              <details className="group rounded-xl bg-white p-4 shadow-sm">
-                <summary className="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              <details className="group rounded-2xl bg-slate-800/50 p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between">
                   How does SMS pricing work?
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition" />
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-3 text-sm text-slate-600">
-                  Growth and Pro plans include SMS credits each month. Additional credits are $0.05/SMS. Starter plan users can purchase SMS credits as needed.
+                <p className="mt-4 text-base text-purple-200 leading-relaxed">
+                  Scale and Enterprise plans include SMS credits each month. Additional credits are $0.05/SMS. Base plan users can purchase SMS credits as needed.
                 </p>
               </details>
 
-              <details className="group rounded-xl bg-white p-4 shadow-sm">
-                <summary className="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              <details className="group rounded-2xl bg-slate-800/50 p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between">
                   Can I change plans later?
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition" />
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-3 text-sm text-slate-600">
+                <p className="mt-4 text-base text-purple-200 leading-relaxed">
                   Yes! Upgrade or downgrade anytime. Changes take effect immediately, and we'll pro-rate your billing accordingly.
                 </p>
               </details>
 
-              <details className="group rounded-xl bg-white p-4 shadow-sm">
-                <summary className="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              <details className="group rounded-2xl bg-slate-800/50 p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between">
                   What payment methods do you accept?
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition" />
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-3 text-sm text-slate-600">
+                <p className="mt-4 text-base text-purple-200 leading-relaxed">
                   We accept all major credit cards (Visa, Mastercard, Amex) and direct debit for annual plans.
                 </p>
               </details>
 
-              <details className="group rounded-xl bg-white p-4 shadow-sm">
-                <summary className="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
-                  Is there a setup fee?
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition" />
-                </summary>
-                <p className="mt-3 text-sm text-slate-600">
-                  No setup fees, ever. Just choose your plan and start inviting ambassadors immediately.
-                </p>
-              </details>
-
-              <details className="group rounded-xl bg-white p-4 shadow-sm">
-                <summary className="cursor-pointer font-semibold text-slate-900 flex items-center justify-between">
+              <details className="group rounded-2xl bg-slate-800/50 p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between">
                   What happens if I exceed my ambassador limit?
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition" />
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-3 text-sm text-slate-600">
+                <p className="mt-4 text-base text-purple-200 leading-relaxed">
                   We'll notify you when you're approaching your limit. You can upgrade anytime to add more ambassadors with no downtime.
                 </p>
               </details>
@@ -387,26 +410,26 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 p-[1px] shadow-2xl">
-          <div className="flex flex-col gap-6 rounded-3xl bg-white/90 p-8 text-slate-900 backdrop-blur md:flex-row md:items-center md:justify-between">
+        <section className="rounded-3xl bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 p-[2px] shadow-2xl">
+          <div className="flex flex-col gap-8 rounded-3xl bg-slate-900/95 p-12 backdrop-blur-xl md:flex-row md:items-center md:justify-between">
             <div>
-              <h3 className="text-3xl font-bold mb-2">
+              <h3 className="text-4xl font-black text-white mb-3">
                 Still not sure which plan is right?
               </h3>
-              <p className="text-lg text-slate-600">
+              <p className="text-xl text-purple-200">
                 Start with a free trial or talk to our team to find the perfect fit for your business.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="/login"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-400/70 whitespace-nowrap"
               >
-                Start free trial <ArrowRight className="h-4 w-4" />
+                Start free trial <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center justify-center rounded-full border-2 border-slate-900 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 whitespace-nowrap"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 whitespace-nowrap"
               >
                 See how it works
               </Link>
@@ -414,28 +437,6 @@ export default function Pricing() {
           </div>
         </section>
 
-        <footer className="flex flex-col items-start justify-between gap-4 border-t border-slate-200/70 pt-6 text-sm text-slate-600 md:flex-row md:items-center">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md" />
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Pepform</p>
-              <p className="text-xs text-slate-500">Referrals that compound</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link className="hover:text-slate-900" href="/">
-              Home
-            </Link>
-            <span className="text-slate-300">•</span>
-            <Link className="hover:text-slate-900" href="/how-it-works">
-              How it works
-            </Link>
-            <span className="text-slate-300">•</span>
-            <Link className="hover:text-slate-900" href="/login">
-              Sign in
-            </Link>
-          </div>
-        </footer>
       </main>
     </div>
   );

@@ -32,6 +32,22 @@ export default function Footer() {
             How it works
           </Link>
           <span className="text-slate-300">•</span>
+          <Link className="hover:text-slate-900" href="/contact">
+            Contact
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link className="hover:text-slate-900" href="/terms">
+            Terms
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link className="hover:text-slate-900" href="/privacy">
+            Privacy
+          </Link>
+          <span className="text-slate-300">•</span>
+          <Link className="hover:text-slate-900" href="/demo">
+            Demo
+          </Link>
+          <span className="text-slate-300">•</span>
           <Link className="hover:text-slate-900" href="/login">
             Sign in
           </Link>

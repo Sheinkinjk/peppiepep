@@ -9,14 +9,11 @@ import {
   BarChart3,
 } from "lucide-react";
 import Link from "next/link";
-import { StickyHeader } from "@/components/StickyHeader";
 
 export default function HowItWorks() {
   return (
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
-
-      <StickyHeader />
 
       <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
 
@@ -332,47 +329,6 @@ export default function HowItWorks() {
           </div>
         </section>
 
-        <footer className="flex flex-col items-start justify-between gap-6 border-t border-slate-200/70 pt-6 text-sm text-slate-600">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md" />
-              <div>
-                <p className="text-sm font-semibold text-slate-900">Pepform</p>
-                <p className="text-xs text-slate-500">Referrals that compound</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link className="hover:text-slate-900" href="/contact">
-                Contact Us
-              </Link>
-              <span className="text-slate-300">•</span>
-              <Link className="hover:text-slate-900" href="/terms">
-                Terms of Service
-              </Link>
-              <span className="text-slate-300">•</span>
-              <Link className="hover:text-slate-900" href="/privacy">
-                Privacy Policy
-              </Link>
-              <span className="text-slate-300">•</span>
-              <a
-                href="https://calendly.com/jarredkrowitz/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-slate-900"
-              >
-                Schedule a Call
-              </a>
-              <span className="text-slate-300">•</span>
-              <Link className="hover:text-slate-900" href="/about">
-                About
-              </Link>
-              <span className="text-slate-300">•</span>
-              <Link className="hover:text-slate-900" href="/security">
-                Security
-              </Link>
-            </div>
-          </div>
-        </footer>
       </main>
     </div>
   );
