@@ -28,8 +28,12 @@ import {
   Plus,
   Copy,
   Download,
+  TrendingUp,
+  Gift,
+  MessageSquare,
 } from "lucide-react";
 import Link from "next/link";
+import { StickyHeader } from "@/components/StickyHeader";
 
 interface GuestBusiness {
   id: string;
@@ -256,35 +260,89 @@ export default function GuestDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white">
-      <div className="mx-auto max-w-6xl px-4 py-10 lg:px-8">
-        <div className="mb-6 flex flex-col gap-4 rounded-2xl border border-amber-200/80 bg-gradient-to-r from-amber-50 to-orange-50 p-5 shadow-sm">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-start gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-200">
-                <Sparkles className="h-5 w-5 text-amber-700" />
+      <StickyHeader />
+
+      <div className="mx-auto max-w-6xl px-4 py-8 lg:px-8">
+        {/* Premium Demo Banner - Moved to top */}
+        <div className="mb-8 rounded-2xl bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 shadow-2xl border border-purple-500/20">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center shadow-lg">
+              <Zap className="h-7 w-7 text-amber-300" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-black uppercase tracking-wider text-amber-200 bg-amber-500/20 px-3 py-1 rounded-full">
+                  Investor-Ready Demo
+                </span>
+                <span className="text-xs font-semibold text-purple-200">No backend required</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
+                Showcase the complete micro-influencer flow
+              </h2>
+              <p className="text-base text-purple-100">
+                Fully interactive demo. All data stored locally—perfect for pitches and testing.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4 mb-6">
+            <div className="flex items-start gap-3 text-sm">
+              <div className="flex-shrink-0 h-6 w-6 rounded-full bg-purple-500/30 flex items-center justify-center mt-0.5">
+                <Upload className="h-3.5 w-3.5 text-purple-200" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-amber-900">Guest Mode — MVP Testing</p>
-                <p className="text-xs text-amber-800">
-                  This is a fully interactive offline demo. Data is stored locally so you can showcase the flow without setup.
-                </p>
+                <p className="font-bold text-white">Import & Activate</p>
+                <p className="text-purple-200 text-xs">Upload CSV or add contacts to generate referral links</p>
               </div>
             </div>
-            <div className="flex gap-2">
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={handleConvertToRealAccount}
-                className="border-amber-300 bg-white hover:bg-amber-50"
-              >
-                Convert to cloud account
-              </Button>
-              <Link href="/demo">
-                <Button size="sm" variant="secondary" className="bg-white text-amber-900 hover:bg-amber-100">
-                  View full demo
-                </Button>
-              </Link>
+            <div className="flex items-start gap-3 text-sm">
+              <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-500/30 flex items-center justify-center mt-0.5">
+                <MessageSquare className="h-3.5 w-3.5 text-blue-200" />
+              </div>
+              <div>
+                <p className="font-bold text-white">Test Referral Flow</p>
+                <p className="text-blue-200 text-xs">Open demo page, log referrals, see live updates</p>
+              </div>
             </div>
+            <div className="flex items-start gap-3 text-sm">
+              <div className="flex-shrink-0 h-6 w-6 rounded-full bg-emerald-500/30 flex items-center justify-center mt-0.5">
+                <TrendingUp className="h-3.5 w-3.5 text-emerald-200" />
+              </div>
+              <div>
+                <p className="font-bold text-white">Track Performance</p>
+                <p className="text-emerald-200 text-xs">Watch metrics update as referrals convert</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 text-sm">
+              <div className="flex-shrink-0 h-6 w-6 rounded-full bg-amber-500/30 flex items-center justify-center mt-0.5">
+                <Gift className="h-3.5 w-3.5 text-amber-200" />
+              </div>
+              <div>
+                <p className="font-bold text-white">Automate Rewards</p>
+                <p className="text-amber-200 text-xs">Mark complete to see credits flow automatically</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link href="/r/demo-referral" target="_blank">
+              <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold shadow-xl">
+                <ArrowRight className="mr-2 h-4 w-4" />
+                Open demo referral page
+              </Button>
+            </Link>
+            <Link href="/demo" target="_blank">
+              <Button variant="outline" className="border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur font-bold">
+                View full dashboard
+              </Button>
+            </Link>
+            <Button
+              variant="outline"
+              onClick={handleConvertToRealAccount}
+              className="border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur font-bold"
+            >
+              Convert to cloud account
+            </Button>
           </div>
         </div>
 
@@ -352,46 +410,105 @@ export default function GuestDashboard() {
         </div>
 
         <Tabs defaultValue="clients" className="w-full">
-          <TabsList>
-            <TabsTrigger value="clients">Clients & Ambassadors</TabsTrigger>
-            <TabsTrigger value="referrals">
-              Referrals ({pendingReferrals} pending)
+          <TabsList className="grid w-full grid-cols-3 mb-8 p-1.5 bg-white/90 backdrop-blur-xl shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl h-auto">
+            <TabsTrigger
+              value="clients"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-purple-300/50 transition-all duration-200"
+            >
+              <Users className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Clients & Ambassadors</span>
+              <span className="sm:hidden">Clients</span>
             </TabsTrigger>
-            <TabsTrigger value="settings">Settings & Rewards</TabsTrigger>
+            <TabsTrigger
+              value="referrals"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-emerald-600 data-[state=active]:to-emerald-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-emerald-300/50 transition-all duration-200"
+            >
+              <TrendingUp className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Referrals ({pendingReferrals})</span>
+              <span className="sm:hidden">Refs ({pendingReferrals})</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="settings"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-amber-600 data-[state=active]:to-amber-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-amber-300/50 transition-all duration-200"
+            >
+              <Zap className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Settings & Rewards</span>
+              <span className="sm:hidden">Settings</span>
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="clients">
-            <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr]">
-              <Card className="p-6">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-slate-900">Import your list</h3>
-                    <p className="text-sm text-slate-600">
-                      Upload a CSV or Excel file, or add customers manually to generate referral links instantly.
+            <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+              {/* Premium Import Section */}
+              <Card className="p-8 border-2 border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-200">
+                    <Upload className="h-7 w-7 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-black text-slate-900 mb-2">Import your list</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Upload CSV/Excel or add contacts manually. Every customer becomes a micro-influencer instantly.
                     </p>
-                    <div className="flex flex-wrap gap-3 text-xs">
-                      <a
-                        href="/customer-template.csv"
-                        download
-                        className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-700 hover:bg-slate-50"
-                      >
-                        <Download className="h-3.5 w-3.5" />
-                        Download CSV template
-                      </a>
-                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button variant="outline" className="gap-2" asChild>
-                      <label htmlFor="file" className="flex cursor-pointer items-center gap-2">
-                        <Upload className="h-4 w-4" />
-                        Upload CSV/Excel
-                      </label>
-                    </Button>
-                    <Button variant="secondary" className="gap-2" onClick={handleAddCustomer} disabled={!quickName && !quickPhone && !quickEmail}>
-                      <Plus className="h-4 w-4" />
-                      Add contact
-                    </Button>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-3 mb-4">
+                  <div>
+                    <Label htmlFor="quickName" className="text-xs font-bold text-slate-700 uppercase tracking-wide">Name</Label>
+                    <Input
+                      id="quickName"
+                      value={quickName}
+                      onChange={(e) => setQuickName(e.target.value)}
+                      placeholder="Alex Ambassador"
+                      className="mt-1.5 border-2 focus:border-purple-500"
+                    />
                   </div>
+                  <div>
+                    <Label htmlFor="quickPhone" className="text-xs font-bold text-slate-700 uppercase tracking-wide">Phone</Label>
+                    <Input
+                      id="quickPhone"
+                      value={quickPhone}
+                      onChange={(e) => setQuickPhone(e.target.value)}
+                      placeholder="+61 400 123 456"
+                      className="mt-1.5 border-2 focus:border-purple-500"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="quickEmail" className="text-xs font-bold text-slate-700 uppercase tracking-wide">Email</Label>
+                    <Input
+                      id="quickEmail"
+                      value={quickEmail}
+                      onChange={(e) => setQuickEmail(e.target.value)}
+                      placeholder="you@example.com"
+                      className="mt-1.5 border-2 focus:border-purple-500"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3 mb-4">
+                  <Button
+                    onClick={handleAddCustomer}
+                    disabled={!quickName && !quickPhone && !quickEmail}
+                    className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 font-bold shadow-lg hover:shadow-xl transition-all"
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add contact
+                  </Button>
+                  <Button variant="outline" className="gap-2 border-2 font-bold hover:border-purple-300" asChild>
+                    <label htmlFor="file" className="flex cursor-pointer items-center gap-2">
+                      <Upload className="h-4 w-4" />
+                      Upload CSV/Excel
+                    </label>
+                  </Button>
+                  <a
+                    href="/customer-template.csv"
+                    download
+                    className="inline-flex items-center gap-2 rounded-lg border-2 border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all"
+                  >
+                    <Download className="h-4 w-4" />
+                    <span className="hidden sm:inline">Template</span>
+                  </a>
                 </div>
 
                 <input
@@ -402,80 +519,56 @@ export default function GuestDashboard() {
                   className="hidden"
                 />
 
-                <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                  <div>
-                    <Label htmlFor="quickName">Name</Label>
-                    <Input
-                      id="quickName"
-                      value={quickName}
-                      onChange={(e) => setQuickName(e.target.value)}
-                      placeholder="Alex Ambassador"
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="quickPhone">Phone</Label>
-                    <Input
-                      id="quickPhone"
-                      value={quickPhone}
-                      onChange={(e) => setQuickPhone(e.target.value)}
-                      placeholder="+61 400 123 456"
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="quickEmail">Email</Label>
-                    <Input
-                      id="quickEmail"
-                      value={quickEmail}
-                      onChange={(e) => setQuickEmail(e.target.value)}
-                      placeholder="you@example.com"
-                      className="mt-1"
-                    />
-                  </div>
+                <div className="rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 p-4 border-2 border-purple-100">
+                  <p className="text-xs font-semibold text-purple-900">
+                    💡 Tip: CSV columns: name, phone, email. Data persists locally in this demo.
+                  </p>
                 </div>
 
-                <p className="mt-3 text-xs text-slate-500">
-                  CSV columns supported: name, phone, email (optional). Imported data persists locally for this demo.
-                </p>
-
                 <div className="mt-8 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">All customers</h3>
-                    <span className="text-xs text-slate-500">{customers.length} total</span>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-black text-slate-900">All customers</h3>
+                    <span className="text-sm font-bold text-purple-700 bg-purple-100 px-3 py-1.5 rounded-full">{customers.length} contacts</span>
                   </div>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Phone</TableHead>
-                        <TableHead>Email</TableHead>
-                        <TableHead>Referral link</TableHead>
-                        <TableHead className="text-right">Credits</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {customers.length === 0 && (
-                        <TableRow>
-                          <TableCell colSpan={5} className="text-center text-sm">
-                            No customers yet. Upload a CSV or add one above.
-                          </TableCell>
+                  <div className="rounded-xl border-2 border-slate-200 overflow-hidden">
+                    <Table>
+                      <TableHeader>
+                        <TableRow className="bg-slate-50">
+                          <TableHead className="font-black">#</TableHead>
+                          <TableHead className="font-black">Name</TableHead>
+                          <TableHead className="font-black">Phone</TableHead>
+                          <TableHead className="font-black">Email</TableHead>
+                          <TableHead className="font-black">Referral link</TableHead>
+                          <TableHead className="text-right font-black">Credits</TableHead>
                         </TableRow>
-                      )}
-                      {customers.map((customer) => {
+                      </TableHeader>
+                      <TableBody>
+                        {customers.length === 0 && (
+                          <TableRow>
+                            <TableCell colSpan={6} className="text-center text-sm py-8">
+                              <div className="flex flex-col items-center gap-2">
+                                <Users className="h-12 w-12 text-slate-300" />
+                                <p className="font-semibold text-slate-900">No customers yet</p>
+                                <p className="text-xs text-slate-500">Upload a CSV or add contacts above to get started</p>
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        )}
+                        {customers.map((customer, index) => {
                         const link = `${siteUrl}/r/${customer.referral_code}`;
                         return (
-                          <TableRow key={customer.id}>
+                          <TableRow key={customer.id} className="hover:bg-purple-50/50">
+                            <TableCell className="font-black text-purple-700">#{index + 1}</TableCell>
                             <TableCell className="font-semibold">{customer.name}</TableCell>
-                            <TableCell>{customer.phone}</TableCell>
-                            <TableCell>{customer.email || "—"}</TableCell>
+                            <TableCell className="text-slate-600">{customer.phone}</TableCell>
+                            <TableCell className="text-slate-600">{customer.email || "—"}</TableCell>
                             <TableCell className="max-w-[220px] truncate text-xs">
                               <div className="flex items-center gap-2">
-                                <span className="truncate">{link}</span>
+                                <span className="truncate text-slate-600">{link}</span>
                                 <Button
                                   size="sm"
                                   variant="ghost"
-                                  className="h-8 w-8 p-0"
+                                  className="h-8 w-8 p-0 hover:bg-purple-100"
                                   onClick={() => copyToClipboard(link, customer.referral_code)}
                                 >
                                   {copiedCode === customer.referral_code ? (
@@ -486,56 +579,15 @@ export default function GuestDashboard() {
                                 </Button>
                               </div>
                             </TableCell>
-                            <TableCell className="text-right font-semibold">
+                            <TableCell className="text-right font-black text-emerald-700">
                               ${customer.credits}
                             </TableCell>
                           </TableRow>
                         );
                       })}
-                    </TableBody>
-                  </Table>
-                </div>
-              </Card>
-
-              <Card className="p-6 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-0 shadow-xl">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Zap className="h-5 w-5 text-amber-300" />
+                      </TableBody>
+                    </Table>
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-amber-200">Investor-ready demo</p>
-                    <h3 className="text-xl font-bold">Showcase the full flow</h3>
-                  </div>
-                </div>
-                <ul className="space-y-3 text-sm text-white/90">
-                  <li className="flex gap-2">
-                    <span className="text-emerald-200">•</span>
-                    Add contacts or import CSV to generate referral links instantly.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-200">•</span>
-                    Open the demo referral page to log a referral (saved locally).
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-200">•</span>
-                    Mark referrals complete to show rewards and balances updating live.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-emerald-200">•</span>
-                    Launch a sample campaign preview to demo messaging.
-                  </li>
-                </ul>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <Link href="/r/demo-referral" target="_blank">
-                    <Button size="sm" variant="secondary" className="bg-white text-slate-900 hover:bg-slate-100">
-                      Open demo referral page
-                    </Button>
-                  </Link>
-                  <Link href="/demo" target="_blank">
-                    <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                      View full dashboard
-                    </Button>
-                  </Link>
                 </div>
               </Card>
             </div>
@@ -677,6 +729,39 @@ export default function GuestDashboard() {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* Premium Footer */}
+        <footer className="mt-16 border-t border-slate-200 pt-8 pb-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+            <div className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md" />
+              <div>
+                <p className="text-sm font-semibold text-slate-900">Pepform</p>
+                <p className="text-xs text-slate-500">Referrals that compound</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 justify-center">
+              <Link className="hover:text-slate-900 transition-colors" href="/how-it-works">
+                How it works
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900 transition-colors" href="/pricing">
+                Pricing
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900 transition-colors" href="/demo">
+                Full Demo
+              </Link>
+              <span className="text-slate-300">•</span>
+              <Link className="hover:text-slate-900 transition-colors" href="/login">
+                Sign in
+              </Link>
+            </div>
+          </div>
+          <p className="text-xs text-slate-400 text-center mt-4">
+            © 2024 Pepform. Guest mode dashboard. Data stored locally for testing.
+          </p>
+        </footer>
       </div>
     </div>
   );
