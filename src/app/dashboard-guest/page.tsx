@@ -28,6 +28,7 @@ import QRCodeGenerator from "@/components/QRCodeGenerator";
 import AIChatbotOnboarding from "@/components/AIChatbotOnboarding";
 import { rankAmbassadors, type ScoredCustomer } from "@/lib/ai-scoring";
 import { calculateROIForecast, type ROIForecast } from "@/lib/ai-roi-calculator";
+import * as XLSX from 'xlsx';
 
 // Types
 type GuestBusiness = {
@@ -143,34 +144,85 @@ export default function DashboardGuest() {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    const fileName = file.name.toLowerCase();
+    const isExcel = fileName.endsWith('.xlsx') || fileName.endsWith('.xls');
+    const isCSV = fileName.endsWith('.csv');
+
+    if (!isExcel && !isCSV) {
+      alert('Please upload a CSV or Excel file (.csv, .xlsx, .xls)');
+      return;
+    }
+
     const reader = new FileReader();
+
     reader.onload = (event) => {
-      const text = event.target?.result as string;
-      const lines = text.split("\n").filter(line => line.trim());
-      const headers = lines[0].toLowerCase().split(",");
+      try {
+        let rows: string[][] = [];
 
-      const nameIdx = headers.findIndex(h => h.includes("name"));
-      const phoneIdx = headers.findIndex(h => h.includes("phone"));
-      const emailIdx = headers.findIndex(h => h.includes("email"));
+        if (isExcel) {
+          // Parse Excel file
+          const data = new Uint8Array(event.target?.result as ArrayBuffer);
+          const workbook = XLSX.read(data, { type: 'array' });
+          const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+          const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 }) as string[][];
+          rows = jsonData;
+        } else {
+          // Parse CSV file
+          const text = event.target?.result as string;
+          const lines = text.split("\n").filter(line => line.trim());
+          rows = lines.map(line => line.split(",").map(col => col.trim()));
+        }
 
-      const newCustomers: GuestCustomer[] = lines.slice(1).map(line => {
-        const cols = line.split(",");
-        return {
-          id: Date.now().toString() + Math.random(),
-          name: cols[nameIdx]?.trim() || "Unknown",
-          phone: cols[phoneIdx]?.trim() || "",
-          email: cols[emailIdx]?.trim() || "",
-          referral_code: Math.random().toString(36).substring(2, 11).toUpperCase(),
-          credits: 0,
-          created_at: new Date().toISOString(),
-        };
-      });
+        if (rows.length === 0) {
+          alert('File is empty');
+          return;
+        }
 
-      const updatedCustomers = [...customers, ...newCustomers];
-      setCustomers(updatedCustomers);
-      saveData(business, updatedCustomers, referrals);
+        // Find column indexes
+        const headers = rows[0].map(h => String(h).toLowerCase());
+        const nameIdx = headers.findIndex(h => h.includes("name"));
+        const phoneIdx = headers.findIndex(h => h.includes("phone"));
+        const emailIdx = headers.findIndex(h => h.includes("email"));
+
+        if (nameIdx === -1) {
+          alert('Could not find "name" column in file. Please ensure your file has a column containing "name".');
+          return;
+        }
+
+        // Process rows
+        const newCustomers: GuestCustomer[] = rows.slice(1)
+          .filter(row => row.length > 0 && row[nameIdx])
+          .map(row => ({
+            id: Date.now().toString() + Math.random(),
+            name: String(row[nameIdx] || "Unknown").trim(),
+            phone: phoneIdx !== -1 ? String(row[phoneIdx] || "").trim() : "",
+            email: emailIdx !== -1 ? String(row[emailIdx] || "").trim() : "",
+            referral_code: Math.random().toString(36).substring(2, 11).toUpperCase(),
+            credits: 0,
+            created_at: new Date().toISOString(),
+          }));
+
+        if (newCustomers.length === 0) {
+          alert('No valid customer data found in file');
+          return;
+        }
+
+        const updatedCustomers = [...customers, ...newCustomers];
+        setCustomers(updatedCustomers);
+        saveData(business, updatedCustomers, referrals);
+
+        alert(`Successfully imported ${newCustomers.length} customers!`);
+      } catch (error) {
+        console.error('Error parsing file:', error);
+        alert('Error reading file. Please ensure it is a valid CSV or Excel file.');
+      }
     };
-    reader.readAsText(file);
+
+    if (isExcel) {
+      reader.readAsArrayBuffer(file);
+    } else {
+      reader.readAsText(file);
+    }
   };
 
   const handleQuickAdd = () => {
@@ -834,7 +886,7 @@ export default function DashboardGuest() {
                     Import Your Customer List
                   </h3>
                   <p className="text-slate-600">
-                    Upload a CSV file with customer data to instantly activate them as micro-influencers
+                    Upload a CSV or Excel file with customer data to instantly activate them as micro-influencers
                   </p>
                 </div>
               </div>
@@ -843,13 +895,13 @@ export default function DashboardGuest() {
                 <div className="flex items-center gap-4">
                   <Input
                     type="file"
-                    accept=".csv"
+                    accept=".csv,.xlsx,.xls"
                     onChange={handleFileUpload}
                     className="flex-1"
                   />
                   <Button variant="outline" className="font-bold">
                     <Upload className="mr-2 h-4 w-4" />
-                    Upload CSV
+                    Upload File
                   </Button>
                 </div>
 
@@ -858,7 +910,7 @@ export default function DashboardGuest() {
                     💡 Pro Tip
                   </p>
                   <p className="text-sm text-purple-700">
-                    Your CSV should include: <span className="font-mono bg-white px-2 py-0.5 rounded">name</span>, <span className="font-mono bg-white px-2 py-0.5 rounded">phone</span>, and <span className="font-mono bg-white px-2 py-0.5 rounded">email</span> columns
+                    Your file should include: <span className="font-mono bg-white px-2 py-0.5 rounded">name</span>, <span className="font-mono bg-white px-2 py-0.5 rounded">phone</span>, and <span className="font-mono bg-white px-2 py-0.5 rounded">email</span> columns. Supports CSV and Excel (.xlsx, .xls) formats.
                   </p>
                 </div>
               </div>
