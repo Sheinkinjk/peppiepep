@@ -358,15 +358,6 @@ export default function LoginPage() {
                 <Sparkles className="mr-2 h-5 w-5" />
                 Start Testing Now (Guest Mode)
               </Button>
-
-              <div className="mt-4 text-center">
-                <Link
-                  href="/demo"
-                  className="text-sm text-purple-600 hover:text-purple-700 underline"
-                >
-                  Or view the live demo first →
-                </Link>
-              </div>
             </div>
           </Card>
 
