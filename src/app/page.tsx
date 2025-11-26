@@ -210,102 +210,236 @@ export default function Home() {
         </section>
 
 
-        {/* Market Opportunity - Premium Redesign */}
+        {/* Why Start a Referral Program - Premium Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-purple-50/30 to-white" />
-          <div className="relative space-y-10 sm:space-y-12 py-12 sm:py-16">
+          {/* Premium Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(168,85,247,0.15),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(236,72,153,0.12),transparent_50%)]" />
+
+          <div className="relative space-y-12 sm:space-y-16 py-16 sm:py-24">
 
             {/* Section Header */}
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-                Why smart businesses automate{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                  referrals now
+            <div className="text-center space-y-6 px-4">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-xl px-5 py-2 text-sm font-bold text-purple-300 shadow-xl shadow-purple-500/20 ring-1 ring-white/20">
+                <Sparkles className="h-4 w-4" />
+                The Growth Hacking Playbook
+              </div>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+                <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
+                  Why Start a Referral Program?
                 </span>
               </h2>
-              <p className="text-lg text-slate-600 max-w-3xl mx-auto font-medium">
-                The referral economy is exploding. Businesses that capture it win. Those that don't, lose market share.
+              <p className="text-xl sm:text-2xl text-purple-100 max-w-4xl mx-auto font-medium leading-relaxed">
+                Turn your existing customers into a high-performing sales team—without the overhead, training, or payroll costs
               </p>
             </div>
 
-            {/* Stats Grid - Premium */}
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
-              {/* Stat 1 */}
-              <div className="group relative bg-white rounded-2xl border-2 border-slate-200 p-6 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-100/50 transition-all duration-300">
-                <div className="absolute -top-3 -right-3 h-12 w-12 rounded-full bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg">
-                  <TrendingUp className="h-6 w-6 text-white" />
+            {/* Stats Grid - Ultra Premium */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4">
+
+              {/* Stat 1 - CAC Reduction */}
+              <div className="group relative bg-gradient-to-br from-white/95 to-purple-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
+                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-2xl shadow-emerald-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                  <TrendingUp className="h-8 w-8 text-white" />
                 </div>
-                <div className="space-y-2">
-                  <p className="text-5xl font-black text-slate-900">$6B</p>
-                  <p className="text-sm font-bold text-purple-600 uppercase tracking-wide">Market Size</p>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Global referral marketing growing at 24% annually
+                <div className="space-y-3">
+                  <p className="text-6xl font-black bg-gradient-to-br from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
+                    16X
+                  </p>
+                  <p className="text-sm font-black text-emerald-600 uppercase tracking-wide">Lower CAC</p>
+                  <p className="text-base text-slate-700 leading-relaxed font-medium">
+                    Referred customers cost <span className="font-bold text-slate-900">$24 to acquire</span> vs. <span className="font-bold text-slate-900">$385 for paid ads</span> (2024 Harvard Business Review)
                   </p>
                 </div>
               </div>
 
-              {/* Stat 2 */}
-              <div className="group relative bg-white rounded-2xl border-2 border-slate-200 p-6 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-300">
-                <div className="absolute -top-3 -right-3 h-12 w-12 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center shadow-lg">
-                  <Users className="h-6 w-6 text-white" />
+              {/* Stat 2 - Conversion Rate */}
+              <div className="group relative bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500">
+                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-2xl shadow-blue-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                  <Users className="h-8 w-8 text-white" />
                 </div>
-                <div className="space-y-2">
-                  <p className="text-5xl font-black text-slate-900">83%</p>
-                  <p className="text-sm font-bold text-emerald-600 uppercase tracking-wide">Trust Factor</p>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Of consumers trust peer recommendations over ads
+                <div className="space-y-3">
+                  <p className="text-6xl font-black bg-gradient-to-br from-blue-600 to-blue-700 bg-clip-text text-transparent">
+                    4X
+                  </p>
+                  <p className="text-sm font-black text-blue-600 uppercase tracking-wide">Conversion Rate</p>
+                  <p className="text-base text-slate-700 leading-relaxed font-medium">
+                    Referrals convert at <span className="font-bold text-slate-900">30%</span> compared to <span className="font-bold text-slate-900">7.4%</span> for cold traffic (Nielsen Study)
                   </p>
                 </div>
               </div>
 
-              {/* Stat 3 */}
-              <div className="group relative bg-white rounded-2xl border-2 border-slate-200 p-6 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-300">
-                <div className="absolute -top-3 -right-3 h-12 w-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
-                  <Sparkles className="h-6 w-6 text-white" />
+              {/* Stat 3 - Lifetime Value */}
+              <div className="group relative bg-gradient-to-br from-white/95 to-purple-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
+                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-purple-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                  <Sparkles className="h-8 w-8 text-white" />
                 </div>
-                <div className="space-y-2">
-                  <p className="text-5xl font-black text-slate-900">5X</p>
-                  <p className="text-sm font-bold text-blue-600 uppercase tracking-wide">Higher LTV</p>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Referred customers have 5x lifetime value vs. others
+                <div className="space-y-3">
+                  <p className="text-6xl font-black bg-gradient-to-br from-purple-600 to-purple-700 bg-clip-text text-transparent">
+                    25%
+                  </p>
+                  <p className="text-sm font-black text-purple-600 uppercase tracking-wide">Higher LTV</p>
+                  <p className="text-base text-slate-700 leading-relaxed font-medium">
+                    Referred customers have <span className="font-bold text-slate-900">25% higher profit margins</span> and stay 37% longer (Wharton School)
                   </p>
                 </div>
               </div>
 
-              {/* Stat 4 */}
-              <div className="group relative bg-white rounded-2xl border-2 border-slate-200 p-6 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100/50 transition-all duration-300">
-                <div className="absolute -top-3 -right-3 h-12 w-12 rounded-full bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-lg">
-                  <Gift className="h-6 w-6 text-white" />
+              {/* Stat 4 - Trust Factor */}
+              <div className="group relative bg-gradient-to-br from-white/95 to-amber-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-500">
+                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-2xl shadow-amber-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                  <ShieldCheck className="h-8 w-8 text-white" />
                 </div>
-                <div className="space-y-2">
-                  <p className="text-5xl font-black text-slate-900">92%</p>
-                  <p className="text-sm font-bold text-amber-600 uppercase tracking-wide">Higher ROI</p>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Of businesses report referrals as top ROI channel
+                <div className="space-y-3">
+                  <p className="text-6xl font-black bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent">
+                    92%
+                  </p>
+                  <p className="text-sm font-black text-amber-600 uppercase tracking-wide">Trust Referrals</p>
+                  <p className="text-base text-slate-700 leading-relaxed font-medium">
+                    <span className="font-bold text-slate-900">92% of consumers</span> trust recommendations from people they know over all forms of advertising (Nielsen)
                   </p>
                 </div>
               </div>
+
+              {/* Stat 5 - Retention Rate */}
+              <div className="group relative bg-gradient-to-br from-white/95 to-pink-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/30 transition-all duration-500">
+                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-2xl shadow-pink-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                  <Gift className="h-8 w-8 text-white" />
+                </div>
+                <div className="space-y-3">
+                  <p className="text-6xl font-black bg-gradient-to-br from-pink-600 to-pink-700 bg-clip-text text-transparent">
+                    37%
+                  </p>
+                  <p className="text-sm font-black text-pink-600 uppercase tracking-wide">Better Retention</p>
+                  <p className="text-base text-slate-700 leading-relaxed font-medium">
+                    Referred customers have <span className="font-bold text-slate-900">37% higher retention</span> rates than other acquisition channels (Deloitte)
+                  </p>
+                </div>
+              </div>
+
+              {/* Stat 6 - Revenue Growth */}
+              <div className="group relative bg-gradient-to-br from-white/95 to-indigo-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500">
+                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-2xl shadow-indigo-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                  <TrendingUp className="h-8 w-8 text-white" />
+                </div>
+                <div className="space-y-3">
+                  <p className="text-6xl font-black bg-gradient-to-br from-indigo-600 to-indigo-700 bg-clip-text text-transparent">
+                    86%
+                  </p>
+                  <p className="text-sm font-black text-indigo-600 uppercase tracking-wide">Revenue Impact</p>
+                  <p className="text-base text-slate-700 leading-relaxed font-medium">
+                    Businesses with referral programs see <span className="font-bold text-slate-900">86% revenue growth</span> in 2 years vs. 16% without (Texas Tech)
+                  </p>
+                </div>
+              </div>
+
             </div>
 
-            {/* Value Proposition Box */}
-            <div className="max-w-4xl mx-auto">
-              <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 sm:p-10 shadow-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.2),transparent_50%)]" />
-                <div className="relative z-10 space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center">
-                      <TrendingUp className="h-6 w-6 text-purple-300" />
+            {/* Growth Hacking Value Proposition */}
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-10 sm:p-12 shadow-2xl overflow-hidden border border-white/20">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.15),transparent_60%),radial-gradient(circle_at_bottom_right,rgba(236,72,153,0.12),transparent_60%)]" />
+
+                <div className="relative z-10 space-y-8">
+                  <div className="text-center space-y-4">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-purple-500/20 backdrop-blur px-5 py-2 text-sm font-bold text-purple-200 ring-1 ring-purple-400/30">
+                      Growth Hacking vs. Traditional Marketing
                     </div>
-                    <div>
-                      <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
-                        The opportunity is massive. The execution is broken.
-                      </h3>
-                      <p className="text-lg text-purple-100 leading-relaxed mb-4">
-                        Service businesses know referrals drive their best customers—higher conversion rates, lower acquisition costs, better retention. Yet 87% still track referrals manually through spreadsheets, DMs, and memory.
-                      </p>
-                      <p className="text-lg text-purple-100 leading-relaxed">
-                        <span className="font-bold text-white">The result?</span> Lost revenue, missed opportunities, and frustrated customers who never get rewarded. Pepform automates the entire lifecycle: activation, tracking, rewards, and re-engagement—turning referrals from a manual process into a predictable growth engine.
-                      </p>
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
+                      Your Customers Are Your Best Sales Team
+                    </h3>
+                    <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+                      Instead of pouring budget into ads that get ignored, activate the people who already love your brand
+                    </p>
+                  </div>
+
+                  {/* Comparison Grid */}
+                  <div className="grid md:grid-cols-2 gap-6 mt-10">
+                    {/* Traditional Methods */}
+                    <div className="rounded-2xl bg-slate-900/50 backdrop-blur p-6 border border-slate-700/50">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="h-10 w-10 rounded-lg bg-red-500/20 flex items-center justify-center">
+                          <span className="text-2xl">❌</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-white mb-1">Traditional Marketing</h4>
+                          <p className="text-sm text-slate-400">High cost, low trust, diminishing returns</p>
+                        </div>
+                      </div>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-2 text-slate-300">
+                          <span className="text-red-400 mt-0.5">•</span>
+                          <span className="text-sm">Facebook/Instagram ads: <span className="font-bold text-white">$200-500 CAC</span></span>
+                        </li>
+                        <li className="flex items-start gap-2 text-slate-300">
+                          <span className="text-red-400 mt-0.5">•</span>
+                          <span className="text-sm">Google Ads: <span className="font-bold text-white">$150-400 CAC</span> + ongoing spend</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-slate-300">
+                          <span className="text-red-400 mt-0.5">•</span>
+                          <span className="text-sm">Sales team: <span className="font-bold text-white">$60K+ per rep</span> + commission + training</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-slate-300">
+                          <span className="text-red-400 mt-0.5">•</span>
+                          <span className="text-sm">Cold outreach: <span className="font-bold text-white">1-3% response rate</span>, low trust</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-slate-300">
+                          <span className="text-red-400 mt-0.5">•</span>
+                          <span className="text-sm">Ad costs rising <span className="font-bold text-white">30% year-over-year</span></span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Referral Programs */}
+                    <div className="rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 backdrop-blur p-6 border border-emerald-400/30">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="h-10 w-10 rounded-lg bg-emerald-500/30 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-white mb-1">Referral Marketing</h4>
+                          <p className="text-sm text-emerald-200">Low cost, high trust, compounding growth</p>
+                        </div>
+                      </div>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-2 text-purple-100">
+                          <span className="text-emerald-400 mt-0.5">•</span>
+                          <span className="text-sm">Customer referrals: <span className="font-bold text-white">$15-30 CAC</span> (16x cheaper)</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-purple-100">
+                          <span className="text-emerald-400 mt-0.5">•</span>
+                          <span className="text-sm">Existing customers = free sales force: <span className="font-bold text-white">$0 payroll</span></span>
+                        </li>
+                        <li className="flex items-start gap-2 text-purple-100">
+                          <span className="text-emerald-400 mt-0.5">•</span>
+                          <span className="text-sm">Warm introductions: <span className="font-bold text-white">30% conversion rate</span> (4x higher)</span>
+                        </li>
+                        <li className="flex items-start gap-2 text-purple-100">
+                          <span className="text-emerald-400 mt-0.5">•</span>
+                          <span className="text-sm">Compounding network effects: <span className="font-bold text-white">Each customer recruits 2-3 more</span></span>
+                        </li>
+                        <li className="flex items-start gap-2 text-purple-100">
+                          <span className="text-emerald-400 mt-0.5">•</span>
+                          <span className="text-sm">Cost stays flat while growth accelerates</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Bottom CTA */}
+                  <div className="mt-10 text-center">
+                    <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                      <div className="flex-1 text-left">
+                        <p className="text-lg font-bold text-white mb-1">The math is simple:</p>
+                        <p className="text-purple-200 text-sm">Pay $385 per customer with ads, or pay $24 with referrals. Same quality. 16x cheaper.</p>
+                      </div>
+                      <Link
+                        href="/pricing"
+                        className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-400/70 whitespace-nowrap"
+                      >
+                        See pricing
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
                     </div>
                   </div>
                 </div>
