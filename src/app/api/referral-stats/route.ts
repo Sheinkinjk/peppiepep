@@ -29,11 +29,15 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    // Type assertion to access customer properties
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const customerId = (customer as any).id as string;
+
     // Fetch referrals for this ambassador
     const { data: referrals, error: referralsError } = await supabase
       .from("referrals")
       .select("*")
-      .eq("ambassador_id", customer.id)
+      .eq("ambassador_id", customerId)
       .order("created_at", { ascending: false })
       .limit(20);
 
