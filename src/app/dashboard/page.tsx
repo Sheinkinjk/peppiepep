@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Table,
   TableBody,
@@ -21,10 +22,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
+import { AITools } from "@/components/AITools";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
   Gift, Sparkles, Crown, CheckCircle2, BarChart3, Settings as SettingsIcon,
-  Award, PieChart, Activity, Bot, Rocket
+  Award, PieChart, Activity, Bot, Rocket, Copy
 } from "lucide-react";
 import {
   createServerComponentClient,
@@ -33,6 +35,8 @@ import {
 import { Database } from "@/types/supabase";
 import twilio from "twilio";
 import { Resend } from "resend";
+import { rankAmbassadors, type ScoredCustomer } from "@/lib/ai-scoring";
+import { calculateROIForecast, type ROIForecast } from "@/lib/ai-roi-calculator";
 
 async function getBusiness() {
   const supabase = await createServerComponentClient();
@@ -680,10 +684,18 @@ export default async function Dashboard() {
         </div>
 
         <Tabs defaultValue="clients" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 p-1.5 bg-white/90 backdrop-blur-xl shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl h-auto">
+          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 p-1.5 bg-white/90 backdrop-blur-xl shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl h-auto">
+            <TabsTrigger
+              value="ai-tools"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600 data-[state=active]:via-purple-600 data-[state=active]:to-pink-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-purple-400/50 transition-all duration-200"
+            >
+              <Sparkles className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">AI Tools</span>
+              <span className="sm:hidden">AI</span>
+            </TabsTrigger>
             <TabsTrigger
               value="campaigns"
-              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600 data-[state=active]:via-purple-600 data-[state=active]:to-pink-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-purple-400/50 transition-all duration-200"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-purple-400/50 transition-all duration-200"
             >
               <Rocket className="h-4 w-4 mr-2" />
               <span className="hidden sm:inline">Campaigns</span>
@@ -721,6 +733,20 @@ export default async function Dashboard() {
               <span className="sm:hidden">Settings</span>
             </TabsTrigger>
           </TabsList>
+
+        <TabsContent value="ai-tools">
+          <AITools
+            customers={safeCustomers.map(c => ({
+              ...c,
+              phone: c.phone || null,
+              email: c.email || null,
+            }))}
+            referrals={safeReferrals}
+            businessName={business.name || "Your Business"}
+            offerText={business.offer_text}
+            rewardAmount={business.reward_amount || 0}
+          />
+        </TabsContent>
 
         <TabsContent value="campaigns">
           <CampaignBuilder
