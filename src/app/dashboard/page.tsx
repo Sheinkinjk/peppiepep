@@ -832,7 +832,7 @@ export default async function Dashboard() {
                       id="website_url"
                       name="website_url"
                       type="url"
-                      defaultValue={business.website_url ?? ""}
+                      defaultValue={(business as any).website_url ?? ""}
                       placeholder="https://yourbusiness.com"
                       className="h-12"
                     />
@@ -847,7 +847,7 @@ export default async function Dashboard() {
                       id="custom_landing_url"
                       name="custom_landing_url"
                       type="url"
-                      defaultValue={business.custom_landing_url ?? ""}
+                      defaultValue={(business as any).custom_landing_url ?? ""}
                       placeholder="https://yourbusiness.com/special-offer (leave blank to use default)"
                       className="h-12"
                     />
