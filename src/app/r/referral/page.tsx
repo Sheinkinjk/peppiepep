@@ -1,52 +1,88 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
-import { createServiceClient } from "@/lib/supabase";
-import { Database } from "@/types/supabase";
+import { Button } from "@/components/ui/button";
+import {
+  Trophy,
+  TrendingUp,
+  Share2,
+  Mail,
+  MessageSquare,
+  Copy,
+  Check,
+  Sparkles,
+  Gift,
+  Users,
+  Target,
+  Award,
+  ChevronRight
+} from "lucide-react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
-type ReferralRecord =
-  Database["public"]["Tables"]["referrals"]["Row"];
+interface Business {
+  id: string;
+  name: string | null;
+  reward_amount: number | null;
+  offer_text: string | null;
+}
 
-type CustomerRecord =
-  Database["public"]["Tables"]["customers"]["Row"] & {
-    business: Database["public"]["Tables"]["businesses"]["Row"] | null;
-  };
+interface Customer {
+  id: string;
+  name: string | null;
+  referral_code: string | null;
+  business: Business | null;
+}
 
-export const dynamic = "force-dynamic";
+interface Referral {
+  id: string;
+  referred_name: string | null;
+  referred_email: string | null;
+  referred_phone: string | null;
+  status: string | null;
+  created_at: string | null;
+  rewarded_at: string | null;
+}
 
-export default async function ReferralStatsPage({
-  searchParams,
-}: {
-  searchParams: { code?: string };
-}) {
-  const code = (searchParams.code || "").trim();
-  const supabase = await createServiceClient();
+export default function ReferralStatsPage() {
+  const [customer, setCustomer] = useState<Customer | null>(null);
+  const [referrals, setReferrals] = useState<Referral[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [copiedLink, setCopiedLink] = useState(false);
+  const [code, setCode] = useState<string>("");
 
-  let customer: CustomerRecord | null = null;
-  let referrals: ReferralRecord[] = [];
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const codeParam = params.get("code") || "";
+    setCode(codeParam);
 
-  if (code) {
-    const { data } = await supabase
-      .from("customers")
-      .select("*, business:business_id(*)")
-      .eq("referral_code", code)
-      .single();
-    customer = data ? (data as CustomerRecord) : null;
+    if (codeParam) {
+      fetchData(codeParam);
+    } else {
+      setLoading(false);
+    }
+  }, []);
 
-    if (customer) {
-      const { data: referralRows } = await supabase
-        .from("referrals")
-        .select("*")
-        .eq("ambassador_id", customer.id)
-        .order("created_at", { ascending: false })
-        .limit(20);
-      referrals = referralRows || [];
+  async function fetchData(referralCode: string) {
+    try {
+      const response = await fetch(`/api/referral-stats?code=${referralCode}`);
+      if (response.ok) {
+        const data = await response.json();
+        setCustomer(data.customer);
+        setReferrals(data.referrals || []);
+      }
+    } catch (error) {
+      console.error("Failed to fetch referral data:", error);
+    } finally {
+      setLoading(false);
     }
   }
 
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://peppiepep.vercel.app";
-  const rewardAmount =
-    customer?.business?.reward_amount ?? 200;
+    typeof window !== "undefined"
+      ? window.location.origin
+      : "https://peppiepep.vercel.app";
+  const rewardAmount = customer?.business?.reward_amount ?? 200;
   const offerText =
     customer?.business?.offer_text ??
     "VIP credit for every new customer you send";
@@ -56,178 +92,403 @@ export default async function ReferralStatsPage({
   const total = referrals.length;
   const earned = referrals.filter((r) => r.status === "earned").length;
   const pending = referrals.filter((r) => r.status !== "earned").length;
+  const totalEarnings = earned * rewardAmount;
+
+  const copyToClipboard = async () => {
+    if (personalLink) {
+      try {
+        await navigator.clipboard.writeText(personalLink);
+        setCopiedLink(true);
+        setTimeout(() => setCopiedLink(false), 2000);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+    }
+  };
+
+  const shareViaEmail = () => {
+    if (personalLink) {
+      const subject = encodeURIComponent(`Get ${offerText} at ${customer?.business?.name || "our business"}!`);
+      const body = encodeURIComponent(`Hey! I wanted to share this exclusive offer with you.\n\nGet ${offerText} when you use my referral link:\n${personalLink}\n\nBoth of us get rewarded when you sign up!`);
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    }
+  };
+
+  const shareViaSMS = () => {
+    if (personalLink) {
+      const message = encodeURIComponent(`Get ${offerText}! Use my referral link: ${personalLink}`);
+      window.location.href = `sms:?&body=${message}`;
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-900 to-black flex items-center justify-center">
+        <div className="text-white text-xl">Loading your ambassador portal...</div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-black text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-14 lg:px-10">
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-100">
-            Pepform loyalty portal
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-950 to-black text-white overflow-hidden relative">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 h-96 w-96 rounded-full bg-gradient-to-br from-purple-600/20 to-pink-600/20 blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 left-10 h-96 w-96 rounded-full bg-gradient-to-tr from-orange-600/20 to-amber-600/20 blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      </div>
+
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 py-14 lg:px-10">
+        {/* Premium Header Section */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/30 px-4 py-2 text-sm font-bold uppercase tracking-wide text-amber-300 shadow-lg">
+              <Trophy className="h-4 w-4" />
+              VIP Ambassador Portal
+            </div>
           </div>
-          <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
-            Thank you for your loyalty to Pepform
-          </h1>
-          <p className="text-base text-slate-200/90 sm:text-lg">
-            We are excited to be launching a loyalty program where you and your network
-            receive great rewards: <span className="font-semibold text-white">${rewardAmount} each time you bring us business, and your friend also receives ${rewardAmount}.</span>
-          </p>
+          <div>
+            <h1 className="text-5xl font-black leading-tight sm:text-6xl lg:text-7xl bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+              Your Referral Empire
+            </h1>
+            <p className="mt-4 text-xl text-slate-300/90 sm:text-2xl max-w-3xl">
+              Turn your network into cash. Earn <span className="font-black text-transparent bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text">${rewardAmount}</span> for every friend you bring, and they get <span className="font-black text-transparent bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text">${rewardAmount}</span> too.
+            </p>
+          </div>
         </div>
 
         {!code && (
-          <Card className="border border-white/10 bg-white/5 p-6 text-white shadow-xl">
-            <h2 className="text-xl font-semibold mb-2">See your live stats</h2>
-            <p className="text-sm text-slate-200/80 mb-3">
-              Add your referral code to the URL to view your personalized link and activity.
-            </p>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm">
-              <p className="mb-1 font-semibold text-white">How to view:</p>
-              <p className="text-slate-200/80">
-                Go to <code className="text-amber-200">/r/referral?code=YOURCODE</code> using the code we issued you.
-              </p>
-              <p className="mt-3 text-xs text-slate-300/80">
-                Example: <code className="text-emerald-200">https://peppiepep.vercel.app/r/referral?code=ABC123</code>
-              </p>
+          <Card className="border border-purple-400/30 bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl p-8 text-white shadow-2xl">
+            <div className="flex items-start gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 shadow-lg">
+                <Target className="h-7 w-7 text-white" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-black mb-2">Access Your Ambassador Portal</h2>
+                <p className="text-slate-200/90 mb-4">
+                  Add your unique referral code to the URL to view your personalized link, earnings, and activity.
+                </p>
+                <div className="rounded-2xl border border-purple-300/30 bg-purple-900/30 p-5 text-sm backdrop-blur">
+                  <p className="mb-2 font-bold text-purple-200 flex items-center gap-2">
+                    <ChevronRight className="h-4 w-4" />
+                    How to access:
+                  </p>
+                  <p className="text-slate-200/80 mb-3">
+                    Go to <code className="text-amber-300 font-mono bg-black/20 px-2 py-1 rounded">/r/referral?code=YOURCODE</code> using the code we sent you.
+                  </p>
+                  <p className="text-xs text-slate-300/70 mt-4 border-t border-white/10 pt-3">
+                    Example: <code className="text-emerald-300 font-mono">https://peppiepep.vercel.app/r/referral?code=ABC123</code>
+                  </p>
+                </div>
+              </div>
             </div>
           </Card>
         )}
 
         {code && !customer && (
-          <Card className="border border-red-200/40 bg-red-500/10 p-6 text-white shadow-xl">
-            <h2 className="text-xl font-semibold mb-2">Code not found</h2>
-            <p className="text-sm text-red-100/90">
-              We could not find an ambassador for this code. Double-check the code or contact support.
-            </p>
+          <Card className="border border-red-300/40 bg-gradient-to-br from-red-500/20 to-orange-500/20 backdrop-blur-xl p-8 text-white shadow-2xl">
+            <div className="flex items-start gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-600 shadow-lg">
+                <Award className="h-7 w-7 text-white" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-black mb-2">Code Not Found</h2>
+                <p className="text-red-100/90 mb-4">
+                  We couldn't find an ambassador account for code: <code className="font-mono bg-black/20 px-2 py-1 rounded">{code}</code>
+                </p>
+                <p className="text-sm text-red-200/80">
+                  Double-check the code or contact support to get your unique referral code.
+                </p>
+              </div>
+            </div>
           </Card>
         )}
 
         {customer && (
-          <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-            <div className="space-y-4">
-              <Card className="border border-white/10 bg-white/5 p-6 text-white shadow-xl">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-300">
-                      Your referral link
-                    </p>
-                    <p className="text-sm text-slate-100/90">
-                      Share this with your network to earn ${rewardAmount} each time.
-                    </p>
+          <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+            <div className="space-y-6">
+              {/* Earnings Stats Card */}
+              <Card className="border border-amber-400/30 bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-pink-500/10 backdrop-blur-xl p-8 text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-gradient-to-br from-amber-500/30 to-orange-500/30 blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-600 to-orange-600 shadow-lg">
+                      <Trophy className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-amber-300 font-bold">Total Earnings</p>
+                      <p className="text-3xl font-black text-white">${totalEarnings.toLocaleString()}</p>
+                    </div>
                   </div>
-                </div>
-                {personalLink ? (
-                  <div className="mt-4 rounded-xl border border-emerald-300/40 bg-emerald-500/10 p-4 text-sm">
-                    <p className="font-semibold text-white mb-2 break-all">{personalLink}</p>
-                    <p className="text-xs text-emerald-100/80">
-                      Friends see: {offerText}
-                    </p>
-                  </div>
-                ) : (
-                  <p className="mt-4 text-sm text-slate-200/80">
-                    No referral code found for this ambassador.
-                  </p>
-                )}
-              </Card>
 
-              <Card className="border border-white/10 bg-white/5 p-6 text-white shadow-xl">
-                <div className="flex flex-wrap items-center gap-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-300">
-                      Total referrals
-                    </p>
-                    <p className="text-2xl font-bold">{total}</p>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4 text-center">
+                      <div className="text-3xl font-black text-emerald-400">{total}</div>
+                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-wide">Total Referrals</div>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4 text-center">
+                      <div className="text-3xl font-black text-green-400">{earned}</div>
+                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-wide">Earned</div>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4 text-center">
+                      <div className="text-3xl font-black text-amber-400">{pending}</div>
+                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-wide">Pending</div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-300">
-                      Earned
+
+                  <div className="mt-4 rounded-xl border border-emerald-300/40 bg-emerald-900/20 p-3 text-sm">
+                    <p className="font-bold text-emerald-300 flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4" />
+                      ${rewardAmount} per successful referral
                     </p>
-                    <p className="text-2xl font-bold text-emerald-300">{earned}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-300">
-                      Pending
-                    </p>
-                    <p className="text-2xl font-bold text-amber-200">{pending}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-slate-300">
-                      Reward per deal
-                    </p>
-                    <p className="text-2xl font-bold text-white">${rewardAmount}</p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="border border-white/10 bg-white/5 p-6 text-white shadow-xl">
-                <h3 className="text-lg font-semibold mb-3">Recent activity</h3>
-                {referrals.length === 0 ? (
-                  <p className="text-sm text-slate-200/80">No referrals yet. Share your link to get started.</p>
-                ) : (
-                  <div className="space-y-3">
-                    {referrals.map((referral) => (
-                      <div
-                        key={referral.id}
-                        className="rounded-lg border border-white/10 bg-white/5 p-4"
-                      >
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <div>
-                            <p className="font-semibold text-white">
-                              {referral.referred_name || "New contact"}
-                            </p>
-                            <p className="text-xs text-slate-300">
-                              {referral.referred_email || referral.referred_phone || "Awaiting contact info"}
-                            </p>
-                          </div>
-                          <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-100">
-                            {referral.status || "pending"}
-                          </span>
-                        </div>
-                        <p className="mt-2 text-xs text-slate-300/80">
-                          Created: {referral.created_at ? new Date(referral.created_at).toLocaleString() : "N/A"}
-                          {referral.rewarded_at
-                            ? ` • Rewarded: ${new Date(referral.rewarded_at).toLocaleString()}`
-                            : ""}
+              {/* Share Your Link Card */}
+              <Card className="border border-purple-400/30 bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl p-8 text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute -left-20 -bottom-20 h-48 w-48 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 blur-3xl" />
+                <div className="relative space-y-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 shadow-lg">
+                      <Share2 className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-purple-300 font-bold">Your Referral Link</p>
+                      <p className="text-sm text-slate-200">Share and start earning ${rewardAmount} per friend</p>
+                    </div>
+                  </div>
+
+                  {personalLink ? (
+                    <>
+                      <div className="rounded-2xl border border-emerald-300/40 bg-emerald-950/40 p-5">
+                        <p className="font-mono text-sm text-emerald-200 mb-3 break-all leading-relaxed">{personalLink}</p>
+                        <p className="text-xs text-emerald-300/80">
+                          <Sparkles className="h-3 w-3 inline mr-1" />
+                          Friends see: {offerText}
                         </p>
                       </div>
-                    ))}
+
+                      <div className="grid grid-cols-3 gap-3">
+                        <Button
+                          onClick={copyToClipboard}
+                          className="bg-white hover:bg-slate-100 text-slate-900 font-bold shadow-lg h-12"
+                        >
+                          {copiedLink ? (
+                            <>
+                              <Check className="h-4 w-4 mr-2" />
+                              Copied!
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="h-4 w-4 mr-2" />
+                              Copy
+                            </>
+                          )}
+                        </Button>
+                        <Button
+                          onClick={shareViaEmail}
+                          variant="outline"
+                          className="border-purple-400/50 bg-purple-900/30 hover:bg-purple-900/50 text-white font-bold h-12"
+                        >
+                          <Mail className="h-4 w-4 mr-2" />
+                          Email
+                        </Button>
+                        <Button
+                          onClick={shareViaSMS}
+                          variant="outline"
+                          className="border-pink-400/50 bg-pink-900/30 hover:bg-pink-900/50 text-white font-bold h-12"
+                        >
+                          <MessageSquare className="h-4 w-4 mr-2" />
+                          SMS
+                        </Button>
+                      </div>
+                    </>
+                  ) : (
+                    <p className="text-sm text-slate-200/80 p-4 rounded-xl bg-white/5">
+                      No referral code found for this ambassador.
+                    </p>
+                  )}
+                </div>
+              </Card>
+
+              {/* Recent Activity */}
+              <Card className="border border-slate-400/20 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl p-8 text-white shadow-2xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-600 to-slate-700 shadow-lg">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-black">Recent Activity</h3>
+                </div>
+
+                {referrals.length === 0 ? (
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+                    <Gift className="h-12 w-12 mx-auto text-slate-400 mb-3" />
+                    <p className="text-slate-300 font-semibold mb-2">No referrals yet</p>
+                    <p className="text-sm text-slate-400">Share your link above to start earning ${rewardAmount} per friend!</p>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {referrals.map((referral) => {
+                      const isEarned = referral.status === "earned";
+                      return (
+                        <div
+                          key={referral.id}
+                          className={`rounded-2xl border p-5 transition-all ${
+                            isEarned
+                              ? "border-emerald-400/40 bg-emerald-950/40"
+                              : "border-amber-400/40 bg-amber-950/30"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between gap-3 mb-3">
+                            <div className="flex-1">
+                              <p className="font-bold text-white text-lg">
+                                {referral.referred_name || "New Contact"}
+                              </p>
+                              <p className="text-sm text-slate-300">
+                                {referral.referred_email || referral.referred_phone || "Awaiting contact info"}
+                              </p>
+                            </div>
+                            <span
+                              className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-wide shadow-lg ${
+                                isEarned
+                                  ? "bg-emerald-600 text-white"
+                                  : "bg-amber-600 text-white"
+                              }`}
+                            >
+                              {isEarned ? "✓ Earned" : referral.status || "Pending"}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 text-xs text-slate-400">
+                            <span>
+                              Created: {referral.created_at ? new Date(referral.created_at).toLocaleDateString() : "N/A"}
+                            </span>
+                            {referral.rewarded_at && (
+                              <>
+                                <span>•</span>
+                                <span className="text-emerald-400 font-semibold">
+                                  Rewarded: {new Date(referral.rewarded_at).toLocaleDateString()}
+                                </span>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </Card>
             </div>
 
-            <div className="space-y-4">
-              <Card className="border border-white/10 bg-gradient-to-br from-purple-600/30 via-pink-500/20 to-orange-400/20 p-6 text-white shadow-2xl">
-                <p className="text-xs uppercase tracking-wide text-white/80">Your perks</p>
-                <h3 className="mt-2 text-2xl font-bold">Bring business, earn $200</h3>
-                <ul className="mt-3 space-y-2 text-sm text-white/90">
-                  <li className="flex gap-2">
-                    <span className="text-amber-200">•</span>
-                    $200 for you, $200 for your friend on every new deal.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-amber-200">•</span>
-                    Your link is personalized and tracked automatically.
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-amber-200">•</span>
-                    Rewards unlock when the deal is verified and paid.
-                  </li>
-                </ul>
+            <div className="space-y-6">
+              {/* How It Works */}
+              <Card className="border border-pink-400/30 bg-gradient-to-br from-pink-600/20 via-purple-500/20 to-orange-400/20 backdrop-blur-xl p-8 text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br from-pink-500/40 to-orange-500/40 blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Sparkles className="h-5 w-5 text-amber-300" />
+                    <p className="text-xs uppercase tracking-wide text-amber-200 font-bold">How It Works</p>
+                  </div>
+                  <h3 className="text-2xl font-black mb-5">Turn Friends Into Cash</h3>
+                  <div className="space-y-4">
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white font-black text-sm shadow-lg">
+                        1
+                      </div>
+                      <div>
+                        <p className="font-bold text-white mb-1">Share Your Link</p>
+                        <p className="text-sm text-slate-200/80">Copy and share via email, SMS, or social media</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white font-black text-sm shadow-lg">
+                        2
+                      </div>
+                      <div>
+                        <p className="font-bold text-white mb-1">Friend Signs Up</p>
+                        <p className="text-sm text-slate-200/80">They get ${rewardAmount} credit automatically applied</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white font-black text-sm shadow-lg">
+                        3
+                      </div>
+                      <div>
+                        <p className="font-bold text-white mb-1">You Both Win</p>
+                        <p className="text-sm text-slate-200/80">Earn ${rewardAmount} when they complete their purchase</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 rounded-2xl border border-emerald-300/40 bg-emerald-950/40 p-4">
+                    <p className="font-black text-emerald-300 flex items-center gap-2">
+                      <Trophy className="h-5 w-5" />
+                      Unlimited Earning Potential
+                    </p>
+                    <p className="text-sm text-emerald-100/80 mt-1">
+                      No cap on referrals. Share with 10 friends, earn ${rewardAmount * 10}. Share with 100, earn ${rewardAmount * 100}!
+                    </p>
+                  </div>
+                </div>
               </Card>
 
-              <Card className="border border-white/10 bg-white/5 p-6 text-white shadow-xl">
-                <p className="text-xs uppercase tracking-wide text-emerald-200">
-                  Need help?
+              {/* Benefits Card */}
+              <Card className="border border-amber-400/30 bg-gradient-to-br from-amber-600/10 to-orange-600/10 backdrop-blur-xl p-8 text-white shadow-2xl">
+                <div className="flex items-center gap-2 mb-4">
+                  <Award className="h-5 w-5 text-amber-300" />
+                  <p className="text-xs uppercase tracking-wide text-amber-200 font-bold">Your VIP Perks</p>
+                </div>
+                <h3 className="text-2xl font-black mb-5">Ambassador Benefits</h3>
+                <div className="space-y-3">
+                  <div className="flex gap-3 items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                      <Check className="h-4 w-4 text-white" />
+                    </div>
+                    <p className="text-sm text-slate-200">
+                      <span className="font-bold text-white">Real-time tracking</span> - Watch your earnings grow live
+                    </p>
+                  </div>
+                  <div className="flex gap-3 items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                      <Check className="h-4 w-4 text-white" />
+                    </div>
+                    <p className="text-sm text-slate-200">
+                      <span className="font-bold text-white">Personalized link</span> - Your unique code tracks every referral
+                    </p>
+                  </div>
+                  <div className="flex gap-3 items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                      <Check className="h-4 w-4 text-white" />
+                    </div>
+                    <p className="text-sm text-slate-200">
+                      <span className="font-bold text-white">Instant notifications</span> - Get alerted when friends sign up
+                    </p>
+                  </div>
+                  <div className="flex gap-3 items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                      <Check className="h-4 w-4 text-white" />
+                    </div>
+                    <p className="text-sm text-slate-200">
+                      <span className="font-bold text-white">Full transparency</span> - Every payout logged and verified
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Support Card */}
+              <Card className="border border-emerald-400/30 bg-gradient-to-br from-emerald-600/10 to-teal-600/10 backdrop-blur-xl p-8 text-white shadow-2xl">
+                <div className="flex items-center gap-2 mb-4">
+                  <Users className="h-5 w-5 text-emerald-300" />
+                  <p className="text-xs uppercase tracking-wide text-emerald-200 font-bold">Need Help?</p>
+                </div>
+                <h4 className="text-xl font-black mb-3">Full Support & Transparency</h4>
+                <p className="text-sm text-slate-200/90 mb-5">
+                  Every referral and payout is logged securely. Questions about your earnings or referrals? We're here to help.
                 </p>
-                <h4 className="mt-2 text-lg font-semibold">Support & transparency</h4>
-                <p className="mt-2 text-sm text-slate-100/80">
-                  Every referral and payout is logged in Supabase. If anything looks off,
-                  contact us and we will review your activity log.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-100"
-                >
-                  Contact support
+                <Link href="/contact">
+                  <Button className="w-full bg-white hover:bg-slate-100 text-slate-900 font-bold shadow-lg h-12">
+                    Contact Support
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </Link>
               </Card>
             </div>

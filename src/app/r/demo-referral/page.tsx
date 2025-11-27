@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CheckCircle2, Copy } from "lucide-react";
+import { CheckCircle2, Copy, Sparkles, Trophy, TrendingUp, Gift, Award, Users, Check, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function DemoReferralPage() {
@@ -215,55 +215,78 @@ export default function DemoReferralPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-black text-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-[1.5fr_1fr] lg:px-10">
-        <div className="space-y-5">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-100">
-            Pepform loyalty preview
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-950 to-black text-white overflow-hidden relative">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-20 h-96 w-96 rounded-full bg-gradient-to-br from-purple-600/20 to-pink-600/20 blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 left-20 h-96 w-96 rounded-full bg-gradient-to-tr from-orange-600/20 to-amber-600/20 blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      </div>
+
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 lg:grid-cols-[1.5fr_1fr] lg:px-10">
+        <div className="space-y-6">
+          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/30 px-4 py-2 text-sm font-bold uppercase tracking-wide text-amber-300 shadow-lg">
+            <Sparkles className="h-4 w-4" />
+            Exclusive Loyalty Program
           </div>
-          <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl">
-            Thank you for your loyalty to Pepform
-          </h1>
-          <p className="text-sm text-slate-200/90">
-            We are excited to launch a loyalty program: you earn $200 every time you bring us business, and your friend also receives $200.
-          </p>
+          <div>
+            <h1 className="text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+              Join Our VIP Ambassador Program
+            </h1>
+            <p className="mt-4 text-xl text-slate-300/90 sm:text-2xl">
+              Earn <span className="font-black text-transparent bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text">$200</span> for every friend you bring. They get <span className="font-black text-transparent bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text">$200</span> too. Win-win.
+            </p>
+          </div>
 
-          <Card className="relative overflow-hidden border border-white/10 bg-white/5 p-8 shadow-2xl">
-            <div className="absolute -right-28 -top-20 h-52 w-52 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-400/20 blur-3xl" />
-            <div className="absolute -left-28 bottom-0 h-48 w-48 rounded-full bg-gradient-to-tr from-purple-500/20 to-sky-500/20 blur-3xl" />
+          <Card className="relative overflow-hidden border border-purple-400/30 bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl p-8 shadow-2xl">
+            <div className="absolute -right-28 -top-20 h-52 w-52 rounded-full bg-gradient-to-br from-pink-500/30 to-orange-400/30 blur-3xl" />
+            <div className="absolute -left-28 bottom-0 h-48 w-48 rounded-full bg-gradient-to-tr from-purple-500/30 to-sky-500/30 blur-3xl" />
 
-            <div className="relative space-y-5">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-500" />
+            <div className="relative space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 shadow-lg flex items-center justify-center">
+                    <Gift className="h-7 w-7 text-white" />
+                  </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">Pepform Loyalty</p>
-                    <p className="text-xs text-slate-200/80">Invite your network, earn instantly</p>
+                    <p className="text-lg font-black text-white">Become an Ambassador</p>
+                    <p className="text-sm text-slate-200/80">Start earning rewards instantly</p>
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm">
-                  <p className="text-slate-100/90">
-                    Every new Pepform customer you bring unlocks <span className="font-semibold text-white">$200 for you</span> and <span className="font-semibold text-white">$200 for your friend</span>. No codes to remember—just share your link.
+                <div className="rounded-2xl border border-amber-300/40 bg-gradient-to-br from-amber-950/40 to-orange-950/40 p-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <Trophy className="h-5 w-5 text-amber-300 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-100 font-semibold">
+                      Double Rewards System
+                    </p>
+                  </div>
+                  <p className="text-sm text-slate-200/90 leading-relaxed">
+                    Every new customer you bring unlocks <span className="font-black text-transparent bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text">$200 for you</span> and <span className="font-black text-transparent bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text">$200 for your friend</span>. No codes to remember, just share your personalized link.
                   </p>
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="name" className="text-white">Your name</Label>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-white font-bold flex items-center gap-2">
+                    <Users className="h-4 w-4 text-purple-300" />
+                    Your Name
+                  </Label>
                   <Input
                     id="name"
                     name="name"
                     required
-                    placeholder="Your full name"
+                    placeholder="Enter your full name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="mt-1 bg-white/10 text-white placeholder:text-slate-400"
+                    className="h-12 bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="phone" className="text-white">Your phone (for booking)</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-white font-bold flex items-center gap-2">
+                    <Gift className="h-4 w-4 text-emerald-300" />
+                    Your Phone (For Booking)
+                  </Label>
                   <Input
                     id="phone"
                     name="phone"
@@ -272,11 +295,14 @@ export default function DemoReferralPage() {
                     placeholder="+61 400 123 456"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="mt-1 bg-white/10 text-white placeholder:text-slate-400"
+                    className="h-12 bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="email" className="text-white">Email (optional)</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-white font-bold flex items-center gap-2">
+                    <Award className="h-4 w-4 text-amber-300" />
+                    Email (Optional)
+                  </Label>
                   <Input
                     id="email"
                     name="email"
@@ -284,91 +310,165 @@ export default function DemoReferralPage() {
                     placeholder="you@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="mt-1 bg-white/10 text-white placeholder:text-slate-400"
+                    className="h-12 bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-amber-400 focus:ring-amber-400"
                   />
                 </div>
 
                 {error && (
-                  <div className="rounded-lg border border-red-200/60 bg-red-500/10 p-3 text-sm text-red-100">
+                  <div className="rounded-xl border border-red-300/60 bg-red-500/20 p-4 text-sm text-red-100 font-semibold">
                     {error}
                   </div>
                 )}
 
-                <Button type="submit" size="lg" className="w-full bg-white text-slate-900 hover:bg-slate-100" disabled={loading}>
-                  {loading ? "Saving..." : "Text me my referral link"}
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full h-14 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-black text-lg shadow-xl hover:shadow-2xl transition-all"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    "Activating Your Account..."
+                  ) : (
+                    <>
+                      <Sparkles className="mr-2 h-5 w-5" />
+                      Get My Referral Link
+                    </>
+                  )}
                 </Button>
               </form>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-slate-200/90">
-                <p className="font-semibold text-white mb-2">Why this feels premium</p>
-                <div className="grid gap-2 sm:grid-cols-2">
+              <div className="rounded-2xl border border-emerald-300/40 bg-emerald-950/30 p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <Check className="h-5 w-5 text-emerald-300" />
+                  <p className="font-bold text-emerald-200">What Happens Next</p>
+                </div>
+                <div className="space-y-2 text-sm text-slate-200/90">
                   <div className="flex items-start gap-2">
-                    <span className="text-emerald-200">•</span>
-                    <span>Instant SMS booking link—no codes needed.</span>
+                    <ChevronRight className="h-4 w-4 text-emerald-300 flex-shrink-0 mt-0.5" />
+                    <span>Instant SMS with your personalized referral link</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-emerald-200">•</span>
-                    <span>Live tracking so you see credit instantly.</span>
+                    <ChevronRight className="h-4 w-4 text-emerald-300 flex-shrink-0 mt-0.5" />
+                    <span>Live dashboard to track every click and conversion</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-emerald-200">•</span>
-                    <span>Securely logged to Supabase for auditability.</span>
+                    <ChevronRight className="h-4 w-4 text-emerald-300 flex-shrink-0 mt-0.5" />
+                    <span>Automatic $200 credit when friends sign up</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-emerald-200">•</span>
-                    <span>Automated SMS ready for Twilio in production.</span>
+                    <ChevronRight className="h-4 w-4 text-emerald-300 flex-shrink-0 mt-0.5" />
+                    <span>Full transparency - every payout logged securely</span>
                   </div>
                 </div>
               </div>
 
-              <p className="text-center text-xs text-slate-300/80">
-                Powered by <Link href="/" className="font-semibold text-amber-200 hover:text-amber-100">Pepform</Link>. Demo submissions are logged to Supabase to mirror the real product and would be tied to your uploaded contact list.
+              <p className="text-center text-xs text-slate-300/70">
+                Powered by <Link href="/" className="font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text hover:from-purple-300 hover:to-pink-300">Pepform</Link>. Demo submissions are logged securely to demonstrate the real product experience.
               </p>
             </div>
           </Card>
         </div>
 
-        <div className="space-y-4">
-          <Card className="border border-white/10 bg-gradient-to-br from-purple-600/30 via-pink-500/20 to-orange-400/20 p-6 text-white shadow-2xl">
-            <p className="text-xs uppercase tracking-wide text-white/80">What you unlock</p>
-            <h3 className="mt-2 text-2xl font-bold">Effortless loyalty payout</h3>
-            <ul className="mt-3 space-y-2 text-sm text-white/90">
-              <li className="flex gap-2">
-                <span className="text-amber-200">•</span>
-                SMS delivery of your link to share instantly.
-              </li>
-              <li className="flex gap-2">
-                <span className="text-amber-200">•</span>
-                Real-time logging of who clicked and converted.
-              </li>
-              <li className="flex gap-2">
-                <span className="text-amber-200">•</span>
-                Credits applied automatically once verified.
-              </li>
-              <li className="flex gap-2">
-                <span className="text-amber-200">•</span>
-                Dedicated support if you need to update referrals.
-              </li>
-            </ul>
+        <div className="space-y-6">
+          {/* Benefits Card */}
+          <Card className="border border-amber-400/30 bg-gradient-to-br from-amber-600/10 via-orange-600/10 to-pink-600/10 backdrop-blur-xl p-8 text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br from-amber-500/40 to-orange-500/40 blur-3xl" />
+            <div className="relative">
+              <div className="flex items-center gap-2 mb-4">
+                <Trophy className="h-5 w-5 text-amber-300" />
+                <p className="text-xs uppercase tracking-wide text-amber-200 font-bold">Ambassador Perks</p>
+              </div>
+              <h3 className="text-2xl font-black mb-5">Unlimited Earning Potential</h3>
+              <div className="space-y-3">
+                <div className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">$200 Per Referral</p>
+                    <p className="text-sm text-slate-200/80">No caps, no limits on earnings</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">Real-Time Tracking</p>
+                    <p className="text-sm text-slate-200/80">Watch earnings grow instantly</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">Instant Notifications</p>
+                    <p className="text-sm text-slate-200/80">SMS alerts for every signup</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">Friends Get $200 Too</p>
+                    <p className="text-sm text-slate-200/80">Double rewards make sharing easy</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-emerald-300/40 bg-emerald-950/40 p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="h-5 w-5 text-emerald-300" />
+                  <p className="font-black text-emerald-300">Example Earnings</p>
+                </div>
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div>
+                    <div className="text-2xl font-black text-white">$2K</div>
+                    <div className="text-xs text-slate-300">10 Friends</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black text-emerald-400">$10K</div>
+                    <div className="text-xs text-slate-300">50 Friends</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black text-amber-400">$20K</div>
+                    <div className="text-xs text-slate-300">100 Friends</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Card>
 
-          <Card className="border border-white/10 bg-white/5 p-6 text-white shadow-xl">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-emerald-200">
-              Trusted experience
+          {/* Why Ambassadors Love It */}
+          <Card className="border border-purple-400/30 bg-gradient-to-br from-purple-600/10 to-pink-600/10 backdrop-blur-xl p-8 text-white shadow-2xl">
+            <div className="flex items-center gap-2 mb-4">
+              <Users className="h-5 w-5 text-purple-300" />
+              <p className="text-xs uppercase tracking-wide text-purple-200 font-bold">Trusted By Ambassadors</p>
             </div>
-            <h4 className="mt-2 text-lg font-semibold">Why ambassadors love Pepform</h4>
-            <div className="mt-3 grid gap-3 text-sm text-slate-100/90">
-              <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                <p className="font-semibold text-white">Instant visibility</p>
-                <p className="text-xs text-slate-200/80 mt-1">See clicks, leads, and rewards as they happen</p>
+            <h4 className="text-xl font-black mb-4">Why They Love Pepform</h4>
+            <div className="space-y-3">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="font-bold text-white mb-1 flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-purple-300" />
+                  Instant Visibility
+                </p>
+                <p className="text-sm text-slate-200/80">See every click, lead, and reward in real-time</p>
               </div>
-              <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                <p className="font-semibold text-white">No manual codes</p>
-                <p className="text-xs text-slate-200/80 mt-1">Personalized links for every ambassador</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="font-bold text-white mb-1 flex items-center gap-2">
+                  <Gift className="h-4 w-4 text-emerald-300" />
+                  Zero Hassle
+                </p>
+                <p className="text-sm text-slate-200/80">No codes to remember, just share your link</p>
               </div>
-              <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                <p className="font-semibold text-white">Privacy-first tracking</p>
-                <p className="text-xs text-slate-200/80 mt-1">Supabase-backed logging for transparency</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="font-bold text-white mb-1 flex items-center gap-2">
+                  <Award className="h-4 w-4 text-amber-300" />
+                  Full Transparency
+                </p>
+                <p className="text-sm text-slate-200/80">Every payout logged and verified in Supabase</p>
               </div>
             </div>
           </Card>
