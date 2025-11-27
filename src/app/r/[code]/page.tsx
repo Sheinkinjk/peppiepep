@@ -12,7 +12,7 @@ interface ReferralPageProps {
 }
 
 export default async function ReferralPage({ params }: ReferralPageProps) {
-  const supabase = createServiceClient();
+  const supabase = await createServiceClient();
 
   const { data: customer } = await supabase
     .from("customers")
@@ -47,7 +47,7 @@ export default async function ReferralPage({ params }: ReferralPageProps) {
 
   async function submitReferral(formData: FormData) {
     "use server";
-    const supabase = createServiceClient();
+    const supabase = await createServiceClient();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (supabase as any).from("referrals").insert([
       {

@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const supabase = createServiceClient();
+  const supabase = await createServiceClient();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const supabaseAny = supabase as any;
 

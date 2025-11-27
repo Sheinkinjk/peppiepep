@@ -30,7 +30,7 @@ import twilio from "twilio";
 import { Resend } from "resend";
 
 async function getBusiness() {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -70,7 +70,7 @@ export default async function Dashboard() {
 
   async function updateSettings(formData: FormData) {
     "use server";
-    const supabase = createServerComponentClient();
+    const supabase = await createServerComponentClient();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (supabase as any)
       .from("businesses")
@@ -146,7 +146,7 @@ export default async function Dashboard() {
         });
       }
 
-      const supabase = createServiceClient(); // service role to bypass RLS for bulk insert
+      const supabase = await createServiceClient(); // service role to bypass RLS for bulk insert
 
       const customersToInsert = parsedData
         .map((row) => ({
@@ -188,7 +188,7 @@ export default async function Dashboard() {
         return { error: "Missing referral or ambassador information." };
       }
 
-      const supabase = createServiceClient();
+      const supabase = await createServiceClient();
 
       const amount =
         business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
@@ -312,7 +312,7 @@ export default async function Dashboard() {
         return { error: "Scheduled campaigns are not yet supported. Please select 'Send Now'." };
       }
 
-      const supabase = createServiceClient();
+      const supabase = await createServiceClient();
 
       // Fetch selected customers
       const { data: customersData, error: fetchError } = await supabase
@@ -530,7 +530,7 @@ export default async function Dashboard() {
     }
   }
 
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
   const { data: customers = [] } = await supabase
     .from("customers")
     .select("id,status,credits,name,phone,email,referral_code")

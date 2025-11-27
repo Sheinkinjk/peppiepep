@@ -7,7 +7,7 @@ interface AmbassadorPortalProps {
 }
 
 export default async function AmbassadorPortal({ params }: AmbassadorPortalProps) {
-  const supabase = createServiceClient();
+  const supabase = await createServiceClient();
 
   const { data: customer } = await supabase
     .from("customers")
