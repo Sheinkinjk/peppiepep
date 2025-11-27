@@ -23,7 +23,8 @@ import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
-  Gift, Sparkles, Crown, CheckCircle2
+  Gift, Sparkles, Crown, CheckCircle2, BarChart3, Settings as SettingsIcon,
+  Award, PieChart, Activity, Bot, Rocket
 } from "lucide-react";
 import {
   createServerComponentClient,
@@ -678,13 +679,46 @@ export default async function Dashboard() {
           </Card>
         </div>
 
-        <Tabs defaultValue="campaigns" className="w-full">
-          <TabsList className="w-full grid grid-cols-4 h-auto bg-white/80 backdrop-blur-sm shadow-lg shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl p-1.5">
-            <TabsTrigger value="campaigns" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Campaigns</TabsTrigger>
-            <TabsTrigger value="settings" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Settings</TabsTrigger>
-            <TabsTrigger value="clients" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">Clients</TabsTrigger>
-            <TabsTrigger value="referrals" className="text-xs sm:text-sm px-3 py-2.5 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-purple-300/50 transition-all duration-200">
-              Referrals ({pendingReferrals})
+        <Tabs defaultValue="clients" className="space-y-6">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 p-1.5 bg-white/90 backdrop-blur-xl shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-2xl h-auto">
+            <TabsTrigger
+              value="campaigns"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-600 data-[state=active]:via-purple-600 data-[state=active]:to-pink-600 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-purple-400/50 transition-all duration-200"
+            >
+              <Rocket className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Campaigns</span>
+              <span className="sm:hidden">Camp</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="clients"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-purple-600 data-[state=active]:to-purple-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-purple-300/50 transition-all duration-200"
+            >
+              <Users className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Clients & Ambassadors</span>
+              <span className="sm:hidden">Clients</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="referrals"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-emerald-600 data-[state=active]:to-emerald-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-emerald-300/50 transition-all duration-200"
+            >
+              <TrendingUp className="h-4 w-4 mr-2" />
+              Referrals
+            </TabsTrigger>
+            <TabsTrigger
+              value="performance"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-blue-600 data-[state=active]:to-blue-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-blue-300/50 transition-all duration-200"
+            >
+              <BarChart3 className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Performance</span>
+              <span className="sm:hidden">Stats</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="settings"
+              className="text-sm px-4 py-3 font-bold rounded-xl data-[state=active]:bg-gradient-to-b data-[state=active]:from-amber-600 data-[state=active]:to-amber-700 data-[state=active]:text-white data-[state=active]:shadow-xl data-[state=active]:shadow-amber-300/50 transition-all duration-200"
+            >
+              <SettingsIcon className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Settings & Rewards</span>
+              <span className="sm:hidden">Settings</span>
             </TabsTrigger>
           </TabsList>
 
@@ -878,6 +912,84 @@ export default async function Dashboard() {
                   })}
                 </TableBody>
               </Table>
+              </div>
+            </div>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="performance" className="space-y-6">
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Performance Analytics</h2>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-purple-600 flex items-center justify-center">
+                    <Users className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Total Ambassadors</h3>
+                </div>
+                <p className="text-3xl font-black text-purple-700">{safeCustomers.length}</p>
+                <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Total Referrals</h3>
+                </div>
+                <p className="text-3xl font-black text-emerald-700">{safeReferrals.length}</p>
+                <p className="text-sm text-slate-600 mt-1">{completedReferrals} completed</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-blue-600 flex items-center justify-center">
+                    <Zap className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Conversion Rate</h3>
+                </div>
+                <p className="text-3xl font-black text-blue-700">
+                  {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
+                </p>
+                <p className="text-sm text-slate-600 mt-1">Referral to completion</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
+                    <DollarSign className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Credits Issued</h3>
+                </div>
+                <p className="text-3xl font-black text-amber-700">${totalRewards}</p>
+                <p className="text-sm text-slate-600 mt-1">Total rewards paid</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 border border-pink-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-pink-600 flex items-center justify-center">
+                    <Gift className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Pending Rewards</h3>
+                </div>
+                <p className="text-3xl font-black text-pink-700">{pendingReferrals}</p>
+                <p className="text-sm text-slate-600 mt-1">Awaiting completion</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
+                    <Award className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Avg per Ambassador</h3>
+                </div>
+                <p className="text-3xl font-black text-indigo-700">
+                  {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
+                </p>
+                <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
               </div>
             </div>
           </Card>
