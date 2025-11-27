@@ -48,11 +48,17 @@ async function getBusiness() {
 
   if (!user) redirect("/login");
 
-  const { data } = await supabase
+  // Select only core columns to avoid errors if optional columns don't exist
+  const { data, error } = await supabase
     .from("businesses")
-    .select("*")
+    .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
     .eq("owner_id", user.id)
     .single();
+
+  // Log error for debugging but don't crash
+  if (error) {
+    console.error("Error fetching business:", error);
+  }
 
   if (!data) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -64,7 +70,7 @@ async function getBusiness() {
           name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
         },
       ])
-      .select()
+      .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
       .single();
     return newBiz;
   }
