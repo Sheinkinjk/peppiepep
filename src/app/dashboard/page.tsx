@@ -48,10 +48,10 @@ async function getBusiness() {
 
   if (!user) redirect("/login");
 
-  // Select only core columns to avoid errors if optional columns don't exist
+  // Select all columns including optional ones (they'll be null if they don't exist)
   const { data, error } = await supabase
     .from("businesses")
-    .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
+    .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, website_url, custom_landing_url")
     .eq("owner_id", user.id)
     .single();
 
@@ -70,7 +70,7 @@ async function getBusiness() {
           name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
         },
       ])
-      .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
+      .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, website_url, custom_landing_url")
       .single();
     return newBiz;
   }
