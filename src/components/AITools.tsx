@@ -101,7 +101,11 @@ export function AITools({ customers, referrals, businessName, offerText, rewardA
       if (!response.ok) throw new Error("Failed to generate message");
 
       const data = await response.json();
-      setAiGeneratedMessage(data.message || "Hi! Share our amazing offer with your friends and earn rewards!");
+      // API returns array of messages, pick the first one
+      const message = data.messages && data.messages.length > 0
+        ? data.messages[0]
+        : data.message || "Hi! Share our amazing offer with your friends and earn rewards!";
+      setAiGeneratedMessage(message);
     } catch (error) {
       console.error("Error generating message:", error);
       setAiGeneratedMessage(`Hi! I wanted to share ${offerText || "an amazing offer"} with you. Use my referral link to claim it and I'll earn rewards! Thanks for supporting my favorite business!`);

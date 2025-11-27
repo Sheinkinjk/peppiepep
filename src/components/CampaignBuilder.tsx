@@ -297,24 +297,36 @@ export function CampaignBuilder({
                     No customers have {campaignChannel === "sms" ? "phone numbers" : "email addresses"} on file.
                   </p>
                 )}
-                {eligibleCustomers.map((customer) => (
-                  <div
-                    key={customer.id}
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer"
-                    onClick={() => toggleCustomerSelection(customer.id)}
-                  >
-                    <Checkbox
-                      checked={selectedCustomers.includes(customer.id)}
-                      onCheckedChange={() => toggleCustomerSelection(customer.id)}
-                    />
-                    <div className="flex-1">
-                      <p className="font-semibold text-sm">{customer.name}</p>
-                      <p className="text-xs text-slate-500">
-                        {campaignChannel === "sms" ? customer.phone : customer.email}
-                      </p>
+                {eligibleCustomers.map((customer) => {
+                  const isSelected = selectedCustomers.includes(customer.id);
+                  return (
+                    <div
+                      key={customer.id}
+                      className={`flex items-center gap-3 p-3 rounded-lg transition-all cursor-pointer border-2 ${
+                        isSelected
+                          ? "bg-purple-50 border-purple-300 shadow-sm"
+                          : "bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                      }`}
+                      onClick={() => toggleCustomerSelection(customer.id)}
+                    >
+                      <Checkbox
+                        checked={isSelected}
+                        onCheckedChange={() => {
+                          // Don't call toggleCustomerSelection here since onClick on parent div handles it
+                        }}
+                      />
+                      <div className="flex-1">
+                        <p className="font-semibold text-sm">{customer.name}</p>
+                        <p className="text-xs text-slate-500">
+                          {campaignChannel === "sms" ? customer.phone : customer.email}
+                        </p>
+                      </div>
+                      {isSelected && (
+                        <div className="text-purple-600 font-bold text-xs">✓ Selected</div>
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

@@ -44,10 +44,6 @@ export default function Footer() {
             Privacy
           </Link>
           <span className="text-slate-300">•</span>
-          <Link className="hover:text-slate-900" href="/demo">
-            Demo
-          </Link>
-          <span className="text-slate-300">•</span>
           <Link className="hover:text-slate-900" href="/login">
             Sign in
           </Link>
