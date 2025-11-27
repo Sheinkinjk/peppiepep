@@ -22,6 +22,10 @@ import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
 import {
+  Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
+  Gift, Sparkles, Crown, CheckCircle2
+} from "lucide-react";
+import {
   createServerComponentClient,
   createServiceClient,
 } from "@/lib/supabase";
@@ -550,26 +554,128 @@ export default async function Dashboard() {
 
   const pendingReferrals =
     safeReferrals.filter((r) => r.status === "pending").length || 0;
+  const completedReferrals =
+    safeReferrals.filter((r) => r.status === "completed").length || 0;
   const totalRewards =
     safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      <div className="mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+      <div className="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
+
+        {/* Premium Hero Banner */}
         <div className="mb-8 sm:mb-12">
-          <h1 className="mb-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent">
-            {business.name}
-          </h1>
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-2 ring-1 ring-purple-200/50 shadow-sm">
-              <span className="text-xs font-semibold text-slate-600">Pending</span>
-              <span className="text-lg font-extrabold text-purple-700">{pendingReferrals}</span>
-            </div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-2 ring-1 ring-green-200/50 shadow-sm">
-              <span className="text-xs font-semibold text-slate-600">Credits Issued</span>
-              <span className="text-lg font-extrabold text-green-700">${totalRewards}</span>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 p-8 sm:p-10 shadow-2xl">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_50%)]" />
+            <div className="absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute bottom-0 left-0 -mb-4 -ml-4 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
+
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-3">
+                <Crown className="h-6 w-6 text-yellow-300" />
+                <span className="text-xs font-bold text-purple-100 bg-purple-900/30 px-3 py-1 rounded-full backdrop-blur">
+                  LIVE DASHBOARD
+                </span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3">
+                {business.name}
+              </h1>
+              <p className="text-base sm:text-lg text-purple-100 mb-6 max-w-2xl">
+                Real-time micro-influencer program. Send live SMS/Email campaigns and track actual performance.
+              </p>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="flex items-start gap-3 text-sm">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-purple-900/30 backdrop-blur flex items-center justify-center">
+                    <Upload className="h-4 w-4 text-purple-100" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">Import & Activate</p>
+                    <p className="text-purple-100 text-xs">Upload real customer data</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-sm">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-blue-900/30 backdrop-blur flex items-center justify-center">
+                    <MessageSquare className="h-4 w-4 text-blue-100" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">Live Campaigns</p>
+                    <p className="text-blue-100 text-xs">Send real SMS/Email via Twilio/Resend</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-sm">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-emerald-900/30 backdrop-blur flex items-center justify-center">
+                    <TrendingUp className="h-4 w-4 text-emerald-100" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">Track Real-Time</p>
+                    <p className="text-emerald-100 text-xs">Live referral tracking</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-sm">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-amber-900/30 backdrop-blur flex items-center justify-center">
+                    <Gift className="h-4 w-4 text-amber-100" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">Auto Rewards</p>
+                    <p className="text-amber-100 text-xs">Real credits to customers</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Quick Stats Cards */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-purple-200/50 hover:border-purple-300 hover:shadow-xl transition-all duration-200">
+            <div className="flex items-center justify-between mb-4">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded-full">AMBASSADORS</span>
+            </div>
+            <p className="text-4xl font-black text-slate-900">{safeCustomers.length}</p>
+            <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
+          </Card>
+
+          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-blue-200/50 hover:border-blue-300 hover:shadow-xl transition-all duration-200">
+            <div className="flex items-center justify-between mb-4">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
+                <TrendingUp className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">REFERRALS</span>
+            </div>
+            <p className="text-4xl font-black text-slate-900">{safeReferrals.length}</p>
+            <p className="text-sm text-slate-600 mt-1">{pendingReferrals} pending, {completedReferrals} completed</p>
+          </Card>
+
+          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-emerald-200/50 hover:border-emerald-300 hover:shadow-xl transition-all duration-200">
+            <div className="flex items-center justify-between mb-4">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center shadow-lg">
+                <DollarSign className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">REWARDS</span>
+            </div>
+            <p className="text-4xl font-black text-slate-900">${totalRewards}</p>
+            <p className="text-sm text-slate-600 mt-1">Total credits issued</p>
+          </Card>
+
+          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-amber-200/50 hover:border-amber-300 hover:shadow-xl transition-all duration-200">
+            <div className="flex items-center justify-between mb-4">
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-lg">
+                <Zap className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-full">CONVERSION</span>
+            </div>
+            <p className="text-4xl font-black text-slate-900">
+              {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
+            </p>
+            <p className="text-sm text-slate-600 mt-1">Referral completion rate</p>
+          </Card>
         </div>
 
         <Tabs defaultValue="campaigns" className="w-full">
