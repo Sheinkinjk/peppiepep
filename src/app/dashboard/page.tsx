@@ -37,6 +37,7 @@ import twilio from "twilio";
 import { Resend } from "resend";
 import { rankAmbassadors, type ScoredCustomer } from "@/lib/ai-scoring";
 import { calculateROIForecast, type ROIForecast } from "@/lib/ai-roi-calculator";
+import { normalizePhoneNumber } from "@/lib/phone-utils";
 
 async function getBusiness() {
   const supabase = await createServerComponentClient();
@@ -386,6 +387,16 @@ export default async function Dashboard() {
 
         for (const customer of selectedCustomers) {
           if (!customer.phone) {
+            console.error(`Customer ${customer.name} has no phone number`);
+            failureCount++;
+            continue;
+          }
+
+          // Normalize phone number to E.164 format (Australian numbers default)
+          const normalizedPhone = normalizePhoneNumber(customer.phone, 'AU');
+
+          if (!normalizedPhone) {
+            console.error(`Invalid phone format for ${customer.name}: ${customer.phone}`);
             failureCount++;
             continue;
           }
@@ -402,12 +413,13 @@ export default async function Dashboard() {
             await client.messages.create({
               body: personalizedMessage,
               from,
-              to: customer.phone,
+              to: normalizedPhone,
             });
 
+            console.log(`SMS sent successfully to ${customer.name} (${normalizedPhone})`);
             successCount++;
           } catch (smsError) {
-            console.error(`Failed to send SMS to ${customer.phone}:`, smsError);
+            console.error(`Failed to send SMS to ${customer.name} (${normalizedPhone}):`, smsError);
             failureCount++;
           }
         }
