@@ -82,18 +82,30 @@ export default async function Dashboard() {
   async function updateSettings(formData: FormData) {
     "use server";
     const supabase = await createServerComponentClient();
+
+    // Build update object dynamically to only include fields that exist
+    const updateData: any = {
+      offer_text: (formData.get("offer_text") as string) ?? null,
+      reward_type: (formData.get("reward_type") as string) ?? null,
+      reward_amount: Number(formData.get("reward_amount") || 0),
+      upgrade_name: ((formData.get("upgrade_name") as string) || "").trim() || null,
+    };
+
+    // Only add new fields if they're provided (columns might not exist yet)
+    const websiteUrl = ((formData.get("website_url") as string) || "").trim();
+    const customLandingUrl = ((formData.get("custom_landing_url") as string) || "").trim();
+
+    if (websiteUrl) {
+      updateData.website_url = websiteUrl;
+    }
+    if (customLandingUrl) {
+      updateData.custom_landing_url = customLandingUrl;
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (supabase as any)
       .from("businesses")
-      .update({
-        website_url: ((formData.get("website_url") as string) || "").trim() || null,
-        custom_landing_url: ((formData.get("custom_landing_url") as string) || "").trim() || null,
-        offer_text: (formData.get("offer_text") as string) ?? null,
-        reward_type: (formData.get("reward_type") as string) ?? null,
-        reward_amount: Number(formData.get("reward_amount") || 0),
-        upgrade_name:
-          ((formData.get("upgrade_name") as string) || "").trim() || null,
-      })
+      .update(updateData)
       .eq("id", business.id);
     revalidatePath("/dashboard");
   }
