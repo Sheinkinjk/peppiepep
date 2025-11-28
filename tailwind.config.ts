@@ -1,6 +1,19 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
+const tiffanyPalette = {
+  50: "#E0F7FA",
+  100: "#B2EBF2",
+  200: "#80DEEA",
+  300: "#4DD0E1",
+  400: "#26C6DA",
+  500: "#00BCD4",
+  600: "#00A5C0",
+  700: "#00838F",
+  800: "#006064",
+  900: "#004D40",
+};
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -16,6 +29,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        brand: {
+          light: "#4DD0E1",
+          dark: "#00838F",
+          grey: "#616161",
+          lightGrey: "#BDBDBD",
+        },
+        purple: tiffanyPalette,
+        pink: tiffanyPalette,
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

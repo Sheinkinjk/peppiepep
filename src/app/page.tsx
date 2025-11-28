@@ -12,35 +12,35 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
+    <div className="aurora tiffany-hero relative min-h-screen overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(0,131,143,0.12),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(77,208,225,0.18),transparent_35%)]" />
 
       <main className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-8 md:px-10 lg:px-16">
 
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
           <div className="space-y-6">
-            <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
               Turn happy customers into your{" "}
-              <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#4DD0E1] via-[#1CB9CA] to-[#00838F] bg-clip-text text-transparent">
                 growth network
               </span>
             </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:text-2xl px-4 font-medium">
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl lg:text-2xl px-4 font-medium">
               Launch a referral program that plugs into your sales and marketing strategies
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 px-4">
             <Link
               href="/dashboard-guest"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600/80 bg-gradient-to-b from-white to-purple-50/50 px-8 py-4 text-base font-bold text-purple-700 shadow-xl shadow-purple-200/60 ring-1 ring-purple-100 transition-all duration-300 hover:-translate-y-1 hover:border-purple-600 hover:shadow-2xl hover:shadow-purple-300/70"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-gradient-to-b from-white/90 to-white/70 px-8 py-4 text-base font-bold text-[#006064] shadow-xl shadow-[#00343B]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               Try demo dashboard
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               href="/login"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-8 py-4 text-base font-bold text-white shadow-xl shadow-slate-900/30 ring-1 ring-slate-700/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/50"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#00A5C0] to-[#00838F] px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#012A31]/40 ring-1 ring-[#00A5C0]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#013840]/60"
             >
               Get started
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -52,13 +52,13 @@ export default function Home() {
         <section className="space-y-12 sm:space-y-16 relative">
           {/* Section Header */}
           <div className="text-center space-y-4 px-4">
-            <h2 className="text-3xl font-black text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
+            <h2 className="text-3xl font-black text-[#032731] sm:text-4xl lg:text-5xl tracking-tight">
               How Pepform creates{" "}
-              <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#4DD0E1] via-[#1CB9CA] to-[#00838F] bg-clip-text text-transparent">
                 Micro Influencers
               </span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+            <p className="text-base sm:text-lg text-[#35535A] max-w-2xl mx-auto font-medium">
               How Pepform turns your happy customers into a predictable, compounding referral engine
             </p>
           </div>
@@ -178,8 +178,8 @@ export default function Home() {
 
           {/* Results CTA */}
           <div className="max-w-4xl mx-auto text-center">
-            <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-10 sm:p-12 shadow-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.15),transparent_50%)]" />
+            <div className="relative rounded-2xl bg-gradient-to-br from-[#03181B] via-[#004652] to-[#03181B] p-10 sm:p-12 shadow-2xl overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(77,208,225,0.15),transparent_50%)]" />
               <div className="relative z-10">
                 <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
                   Growth becomes predictable, trackable, automatic
@@ -212,8 +212,8 @@ export default function Home() {
         {/* Why Start a Referral Program - Premium Section */}
         <section className="relative overflow-hidden">
           {/* Premium Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(168,85,247,0.15),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(236,72,153,0.12),transparent_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#021013] via-[#01343C] to-[#031C20]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,131,143,0.22),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(77,208,225,0.18),transparent_50%)]" />
 
           <div className="relative space-y-12 sm:space-y-16 py-16 sm:py-24">
 
