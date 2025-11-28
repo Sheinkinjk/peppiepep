@@ -1,6 +1,5 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import Link from "next/link";
 import { Gift, Sparkles, TrendingUp, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";

@@ -773,7 +773,7 @@ export default async function Dashboard() {
           </Card>
         </div>
 
-        <Tabs defaultValue="clients" className="space-y-6">
+        <Tabs defaultValue="clients" className="space-y-6" id="dashboard-tabs">
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
             <TabsTrigger
               value="campaigns"

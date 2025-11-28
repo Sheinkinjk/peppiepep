@@ -35,6 +35,10 @@ export function DashboardShortcutCards() {
   const handleClick = useCallback((target: string) => {
     const tab = document.querySelector(`[data-tab-target="${target}"]`) as HTMLElement | null;
     tab?.click();
+    const tabSection = document.getElementById("dashboard-tabs");
+    if (tabSection) {
+      tabSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }, []);
 
   return (
