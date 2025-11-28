@@ -313,7 +313,7 @@ export default async function Dashboard() {
       const email = (formData.get("quick_email") as string | null)?.trim() || "";
 
       if (!name && !phone && !email) {
-        return { error: "Add at least a name, phone, or email." };
+        return;
       }
 
       const supabase = await createServiceClient();
@@ -332,14 +332,12 @@ export default async function Dashboard() {
 
       if (error) {
         console.error("Quick add error:", error);
-        return { error: "Failed to add customer. Please try again." };
+        return;
       }
 
       revalidatePath("/dashboard");
-      return { success: "Customer added successfully!" };
     } catch (error) {
       console.error("Quick add error:", error);
-      return { error: "Unexpected error while adding customer." };
     }
   }
 
@@ -637,17 +635,18 @@ export default async function Dashboard() {
   let totalCampaignsSent = 0;
   let totalMessagesSent = 0;
   try {
-    const { data: campaignsData } = await supabase
+    const { data: campaignsRaw } = await supabase
       .from("campaigns")
       .select("id,sent_count")
       .eq("business_id", business.id);
-    if (campaignsData) {
-      totalCampaignsSent = campaignsData.length;
-      totalMessagesSent = campaignsData.reduce(
-        (sum, campaign) => sum + (campaign.sent_count ?? 0),
-        0,
-      );
-    }
+
+    const campaignsData =
+      (campaignsRaw as { id: string; sent_count: number | null }[] | null) ?? [];
+    totalCampaignsSent = campaignsData.length;
+    totalMessagesSent = campaignsData.reduce(
+      (sum, campaign) => sum + (campaign.sent_count ?? 0),
+      0,
+    );
   } catch (campaignFetchError) {
     console.warn("Campaign data unavailable:", campaignFetchError);
   }
