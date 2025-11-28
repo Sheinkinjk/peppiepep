@@ -20,11 +20,9 @@ export default function Home() {
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
           <div className="space-y-6">
-            <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
               Turn happy customers into your{" "}
-              <span className="bg-gradient-to-r from-[#4DD0E1] via-[#1CB9CA] to-[#00838F] bg-clip-text text-transparent">
-                growth network
-              </span>
+              <span className="text-[#00838F]">growth network</span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl lg:text-2xl px-4 font-medium">
               Launch a referral program that plugs into your sales and marketing strategies
@@ -33,14 +31,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 px-4">
             <Link
               href="/dashboard-guest"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-gradient-to-b from-white/90 to-white/70 px-8 py-4 text-base font-bold text-[#006064] shadow-xl shadow-[#00343B]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#B2EBF2] bg-white px-8 py-4 text-base font-bold text-[#00505B] shadow-lg shadow-[#CFEFF5] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               Try demo dashboard
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               href="/login"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#00A5C0] to-[#00838F] px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#012A31]/40 ring-1 ring-[#00A5C0]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#013840]/60"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#00838F] px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#A0DBE4]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               Get started
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -52,11 +50,9 @@ export default function Home() {
         <section className="space-y-12 sm:space-y-16 relative">
           {/* Section Header */}
           <div className="text-center space-y-4 px-4">
-            <h2 className="text-3xl font-black text-[#032731] sm:text-4xl lg:text-5xl tracking-tight">
+            <h2 className="text-3xl font-black sm:text-4xl lg:text-5xl tracking-tight">
               How Pepform creates{" "}
-              <span className="bg-gradient-to-r from-[#4DD0E1] via-[#1CB9CA] to-[#00838F] bg-clip-text text-transparent">
-                Micro Influencers
-              </span>
+              <span className="text-[#00838F]">Micro Influencers</span>
             </h2>
             <p className="text-base sm:text-lg text-[#35535A] max-w-2xl mx-auto font-medium">
               How Pepform turns your happy customers into a predictable, compounding referral engine
