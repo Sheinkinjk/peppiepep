@@ -24,6 +24,7 @@ import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
 import { AITools } from "@/components/AITools";
 import { CustomersTable } from "@/components/CustomersTable";
+import { DashboardShortcutCards } from "@/components/DashboardShortcutCards";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
   Gift, Sparkles, Crown, CheckCircle2, BarChart3, Settings as SettingsIcon,
@@ -662,49 +663,7 @@ export default async function Dashboard() {
         </div>
 
         {/* Primary Action Buttons */}
-        <div className="grid gap-4 sm:grid-cols-2 mb-8">
-          <a
-            href="#campaigns-tab"
-            onClick={(e) => {
-              e.preventDefault();
-              const campaignsTab = document.querySelector('[value="campaigns"]') as HTMLElement;
-              if (campaignsTab) campaignsTab.click();
-            }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 p-8 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_50%)]" />
-            <div className="relative flex items-center justify-between">
-              <div>
-                <h2 className="text-2xl font-black text-white mb-2">Start New Campaign</h2>
-                <p className="text-purple-100">Send SMS/Email to ambassadors and boost referrals</p>
-              </div>
-              <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:bg-white/30 transition-all">
-                <Rocket className="h-8 w-8 text-white" />
-              </div>
-            </div>
-          </a>
-
-          <a
-            href="#clients-tab"
-            onClick={(e) => {
-              e.preventDefault();
-              const clientsTab = document.querySelector('[value="clients"]') as HTMLElement;
-              if (clientsTab) clientsTab.click();
-            }}
-            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-500 p-8 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_50%)]" />
-            <div className="relative flex items-center justify-between">
-              <div>
-                <h2 className="text-2xl font-black text-white mb-2">Clients & Ambassadors</h2>
-                <p className="text-emerald-100">Manage customers and view referral links</p>
-              </div>
-              <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center group-hover:bg-white/30 transition-all">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-            </div>
-          </a>
-        </div>
+        <DashboardShortcutCards />
 
         {/* Quick Stats Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
