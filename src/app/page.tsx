@@ -60,7 +60,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-medium">
-              Here's exactly how Pepform turns your happy customers into a predictable, compounding referral engine
+              How Pepform turns your happy customers into a predictable, compounding referral engine
             </p>
           </div>
 
@@ -338,9 +338,6 @@ export default function Home() {
 
                 <div className="relative z-10 space-y-8">
                   <div className="text-center space-y-4">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-purple-500/20 backdrop-blur px-5 py-2 text-sm font-bold text-purple-200 ring-1 ring-purple-400/30">
-                      Growth Hacking vs. Traditional Marketing
-                    </div>
                     <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
                       Your Customers Are Your Best Sales Team
                     </h3>
@@ -424,16 +421,19 @@ export default function Home() {
 
                   {/* Bottom CTA */}
                   <div className="mt-10 text-center">
-                    <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                      <div className="flex-1 text-left">
-                        <p className="text-lg font-bold text-white mb-1">The math is simple:</p>
-                        <p className="text-purple-200 text-sm">Pay $385 per customer with ads, or pay $24 with referrals. Same quality. 16x cheaper.</p>
-                      </div>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <Link
-                        href="/pricing"
-                        className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-400/70 whitespace-nowrap"
+                        href="/dashboard-guest"
+                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-white/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-white/50"
                       >
-                        See pricing
+                        View Demo Dashboard
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                      <Link
+                        href="/r/demo-referral"
+                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20"
+                      >
+                        View Demo Referral
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </div>
@@ -463,13 +463,7 @@ export default function Home() {
                 href="/login"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-slate-900/30 ring-1 ring-slate-700/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-slate-900/40"
               >
-                Sign in <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/r/demo-referral"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-900 shadow-lg shadow-slate-200/50 transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-xl"
-              >
-                View demo link
+                Register Now <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
