@@ -48,10 +48,10 @@ async function getBusiness() {
 
   if (!user) redirect("/login");
 
-  // Select all columns including optional ones (they'll be null if they don't exist)
+  // Select only core columns that definitely exist
   const { data, error } = await supabase
     .from("businesses")
-    .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, website_url, custom_landing_url")
+    .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
     .eq("owner_id", user.id)
     .single();
 
@@ -70,7 +70,7 @@ async function getBusiness() {
           name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
         },
       ])
-      .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, website_url, custom_landing_url")
+      .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
       .single();
     return newBiz;
   }
@@ -89,24 +89,13 @@ export default async function Dashboard() {
     "use server";
     const supabase = await createServerComponentClient();
 
-    // Build update object dynamically to only include fields that exist
+    // Only update core fields that exist in database
     const updateData: any = {
       offer_text: (formData.get("offer_text") as string) ?? null,
       reward_type: (formData.get("reward_type") as string) ?? null,
       reward_amount: Number(formData.get("reward_amount") || 0),
       upgrade_name: ((formData.get("upgrade_name") as string) || "").trim() || null,
     };
-
-    // Only add new fields if they're provided (columns might not exist yet)
-    const websiteUrl = ((formData.get("website_url") as string) || "").trim();
-    const customLandingUrl = ((formData.get("custom_landing_url") as string) || "").trim();
-
-    if (websiteUrl) {
-      updateData.website_url = websiteUrl;
-    }
-    if (customLandingUrl) {
-      updateData.custom_landing_url = customLandingUrl;
-    }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (supabase as any)
@@ -843,34 +832,6 @@ export default async function Dashboard() {
 
               <form action={updateSettings} className="space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="sm:col-span-2">
-                    <Label htmlFor="website_url" className="text-base font-semibold">Business Website URL</Label>
-                    <p className="text-sm text-slate-600 mb-2">Your main website or booking page</p>
-                    <Input
-                      id="website_url"
-                      name="website_url"
-                      type="url"
-                      defaultValue={(business as any).website_url ?? ""}
-                      placeholder="https://yourbusiness.com"
-                      className="h-12"
-                    />
-                  </div>
-
-                  <div className="sm:col-span-2">
-                    <Label htmlFor="custom_landing_url" className="text-base font-semibold">Custom Referral Landing Page URL (Optional)</Label>
-                    <p className="text-sm text-slate-600 mb-2">
-                      Override the default landing page. Ambassadors&apos; referral links will redirect here instead of the built-in page.
-                    </p>
-                    <Input
-                      id="custom_landing_url"
-                      name="custom_landing_url"
-                      type="url"
-                      defaultValue={(business as any).custom_landing_url ?? ""}
-                      placeholder="https://yourbusiness.com/special-offer (leave blank to use default)"
-                      className="h-12"
-                    />
-                  </div>
-
                   <div className="sm:col-span-2">
                     <Label htmlFor="offer_text" className="text-base font-semibold">New Client Offer Text</Label>
                     <p className="text-sm text-slate-600 mb-2">This is the offer that will be shown to referred customers</p>
