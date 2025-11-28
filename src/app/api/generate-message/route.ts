@@ -24,6 +24,7 @@ export async function POST(request: Request) {
         "{business} is the best! I got you {offer} so you can see for yourself. Don't miss out! 🎁",
       ],
       model: "mock-fallback",
+      notice: "Please try again later.",
     });
   }
 
@@ -118,6 +119,7 @@ Return ONLY a JSON array of 5 strings, no other text.`,
       ],
       model: "fallback-template",
       error: "API unavailable, using templates",
+      notice: "Please try again later.",
     });
   }
 }

@@ -1,4 +1,5 @@
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Gift, Sparkles, TrendingUp, Users } from "lucide-react";
 
@@ -23,20 +24,7 @@ export default async function ReferralPage({ params }: ReferralPageProps) {
     .single();
 
   if (!customer) {
-    return (
-      <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-pink-50 via-white to-white p-4">
-        <Card className="relative w-full max-w-md overflow-hidden rounded-2xl border border-red-200 bg-white/90 p-8 shadow-2xl backdrop-blur">
-          <div className="absolute -right-12 -top-6 h-32 w-32 rounded-full bg-gradient-to-br from-red-500/20 to-orange-400/20 blur-3xl" />
-          <h1 className="mb-2 text-3xl font-bold text-slate-900">Invalid Referral Link</h1>
-          <p className="mb-6 text-lg leading-relaxed text-slate-700">
-            This referral link is no longer valid or has expired. Please contact the person who sent you this link.
-          </p>
-          <Button asChild className="w-full">
-            <Link href="/">Visit Pepform</Link>
-          </Button>
-        </Card>
-      </div>
-    );
+    redirect(`/r/demo-referral?code=${encodeURIComponent(params.code)}`);
   }
 
   type CustomerWithBusiness = Database["public"]["Tables"]["customers"]["Row"] & {
