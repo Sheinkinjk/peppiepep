@@ -27,8 +27,8 @@ import { CustomersTable } from "@/components/CustomersTable";
 import { DashboardShortcutCards } from "@/components/DashboardShortcutCards";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
-  Gift, Sparkles, Crown, CheckCircle2, BarChart3, Settings as SettingsIcon,
-  Award, PieChart, Activity, Bot, Rocket, Copy
+  Gift, Crown, BarChart3, Settings as SettingsIcon,
+  Award, Rocket, CreditCard, Plus, Send,
 } from "lucide-react";
 import {
   createServerComponentClient,
@@ -37,8 +37,6 @@ import {
 import { Database } from "@/types/supabase";
 import twilio from "twilio";
 import { Resend } from "resend";
-import { rankAmbassadors, type ScoredCustomer } from "@/lib/ai-scoring";
-import { calculateROIForecast, type ROIForecast } from "@/lib/ai-roi-calculator";
 import { normalizePhoneNumber } from "@/lib/phone-utils";
 
 async function getBusiness() {
@@ -90,8 +88,7 @@ export default async function Dashboard() {
     "use server";
     const supabase = await createServerComponentClient();
 
-    // Only update core fields that exist in database
-    const updateData: any = {
+    const updateData: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
       offer_text: (formData.get("offer_text") as string) ?? null,
       reward_type: (formData.get("reward_type") as string) ?? null,
       reward_amount: Number(formData.get("reward_amount") || 0),
@@ -308,6 +305,44 @@ export default async function Dashboard() {
     }
   }
 
+  async function quickAddCustomer(formData: FormData) {
+    "use server";
+    try {
+      const name = (formData.get("quick_name") as string | null)?.trim() || "";
+      const phone = (formData.get("quick_phone") as string | null)?.trim() || "";
+      const email = (formData.get("quick_email") as string | null)?.trim() || "";
+
+      if (!name && !phone && !email) {
+        return { error: "Add at least a name, phone, or email." };
+      }
+
+      const supabase = await createServiceClient();
+      const referral_code = nanoid(12);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error } = await (supabase as any).from("customers").insert([
+        {
+          business_id: business.id,
+          name: name || null,
+          phone: phone || null,
+          email: email || null,
+          referral_code,
+        },
+      ]);
+
+      if (error) {
+        console.error("Quick add error:", error);
+        return { error: "Failed to add customer. Please try again." };
+      }
+
+      revalidatePath("/dashboard");
+      return { success: "Customer added successfully!" };
+    } catch (error) {
+      console.error("Quick add error:", error);
+      return { error: "Unexpected error while adding customer." };
+    }
+  }
+
   async function sendCampaign(formData: FormData) {
     "use server";
     try {
@@ -315,7 +350,7 @@ export default async function Dashboard() {
       const campaignMessage = formData.get("campaignMessage") as string;
       const campaignChannel = formData.get("campaignChannel") as "sms" | "email";
       const scheduleType = formData.get("scheduleType") as "now" | "later";
-      const scheduleDate = formData.get("scheduleDate") as string;
+      const scheduleDate = (formData.get("scheduleDate") as string | null) ?? "";
       const selectedCustomersJson = formData.get("selectedCustomers") as string;
 
       if (!campaignName || !campaignMessage || !selectedCustomersJson) {
@@ -330,7 +365,9 @@ export default async function Dashboard() {
 
       // Only support "send now" for initial implementation
       if (scheduleType === "later") {
-        return { error: "Scheduled campaigns are not yet supported. Please select 'Send Now'." };
+        return {
+          error: `Scheduled campaigns are not yet supported (requested: ${scheduleDate || "unspecified"}). Please select 'Send Now'.`,
+        };
       }
 
       const supabase = await createServiceClient();
@@ -347,8 +384,8 @@ export default async function Dashboard() {
         return { error: "Failed to fetch customer data." };
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const selectedCustomers = customersData as any[];
+      const selectedCustomers =
+        (customersData ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
 
       // Store campaign record (optional - won't block if table doesn't exist)
       let campaign = null;
@@ -383,98 +420,102 @@ export default async function Dashboard() {
 
       let successCount = 0;
       let failureCount = 0;
+      let simulationNotice: string | null = null;
 
       if (campaignChannel === "sms") {
-        // Send SMS via Twilio
+        // Send SMS via Twilio (or simulate if not configured)
         const sid = process.env.TWILIO_ACCOUNT_SID;
         const token = process.env.TWILIO_AUTH_TOKEN;
         const from = process.env.TWILIO_PHONE_NUMBER;
 
         if (!sid || !token || !from) {
-          return { error: "SMS service not configured. Please contact support." };
-        }
+          console.warn("Twilio credentials missing. Simulating SMS send.");
+          successCount = selectedCustomers.filter((c) => !!c.phone).length;
+          simulationNotice = "SMS sending simulated. Add TWILIO credentials to send live messages.";
+        } else {
+          const client = twilio(sid, token);
 
-        const client = twilio(sid, token);
-
-        for (const customer of selectedCustomers) {
-          if (!customer.phone) {
-            console.error(`Customer ${customer.name} has no phone number`);
-            failureCount++;
-            continue;
-          }
-
-          // Normalize phone number to E.164 format (Australian numbers default)
-          const normalizedPhone = normalizePhoneNumber(customer.phone, 'AU');
-
-          if (!normalizedPhone) {
-            console.error(`Invalid phone format for ${customer.name}: ${customer.phone}`);
-            failureCount++;
-            continue;
-          }
-
-          try {
-            // Build unique referral link for this specific customer (they become the ambassador)
-            const referralLink = customer.referral_code ? `${baseSiteUrl}/r/${customer.referral_code}` : "";
-
-            // Personalize message with name and referral link placeholders
-            let personalizedMessage = campaignMessage
-              .replace(/\{\{name\}\}/g, customer.name || "there")
-              .replace(/\{\{referral_link\}\}/g, referralLink);
-
-            // CRITICAL: Always append unique referral link at bottom if not already included
-            if (!campaignMessage.includes("{{referral_link}}") && referralLink) {
-              personalizedMessage += `\n\nYour unique referral link: ${referralLink}`;
+          for (const customer of selectedCustomers) {
+            if (!customer.phone) {
+              console.error(`Customer ${customer.name} has no phone number`);
+              failureCount++;
+              continue;
             }
 
-            await client.messages.create({
-              body: personalizedMessage,
-              from,
-              to: normalizedPhone,
-            });
+            // Normalize phone number to E.164 format (Australian numbers default)
+            const normalizedPhone = normalizePhoneNumber(customer.phone, "AU");
 
-            console.log(`SMS sent successfully to ${customer.name} (${normalizedPhone})`);
-            successCount++;
-          } catch (smsError) {
-            console.error(`Failed to send SMS to ${customer.name} (${normalizedPhone}):`, smsError);
-            failureCount++;
+            if (!normalizedPhone) {
+              console.error(`Invalid phone format for ${customer.name}: ${customer.phone}`);
+              failureCount++;
+              continue;
+            }
+
+            try {
+              // Build unique referral link for this specific customer (they become the ambassador)
+              const referralLink = customer.referral_code ? `${baseSiteUrl}/r/${customer.referral_code}` : "";
+
+              // Personalize message with name and referral link placeholders
+              let personalizedMessage = campaignMessage
+                .replace(/\{\{name\}\}/g, customer.name || "there")
+                .replace(/\{\{referral_link\}\}/g, referralLink);
+
+              // Always append unique referral link if template omitted it
+              if (!campaignMessage.includes("{{referral_link}}") && referralLink) {
+                personalizedMessage += `\n\nYour unique referral link: ${referralLink}`;
+              }
+
+              await client.messages.create({
+                body: personalizedMessage,
+                from,
+                to: normalizedPhone,
+              });
+
+              console.log(`SMS sent successfully to ${customer.name} (${normalizedPhone})`);
+              successCount++;
+            } catch (smsError) {
+              console.error(`Failed to send SMS to ${customer.name} (${normalizedPhone}):`, smsError);
+              failureCount++;
+            }
           }
         }
       } else if (campaignChannel === "email") {
-        // Send Email via Resend
+        // Send Email via Resend (or simulate)
         const apiKey = process.env.RESEND_API_KEY;
-
-        if (!apiKey) {
-          return { error: "Email service not configured. Please contact support." };
-        }
-
-        const resend = new Resend(apiKey);
         const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@peppiepep.com";
         const businessEmail = business.name ? `${business.name} <${fromEmail}>` : fromEmail;
 
-        for (const customer of selectedCustomers) {
-          if (!customer.email) {
-            failureCount++;
-            continue;
-          }
+        if (!apiKey) {
+          console.warn("Resend API key missing. Simulating email send.");
+          successCount = selectedCustomers.filter((c) => !!c.email).length;
+          simulationNotice = "Email sending simulated. Add RESEND credentials to send live messages.";
+        } else {
+          const resend = new Resend(apiKey);
 
-          try {
-            // Personalize message
-            const personalizedMessage = campaignMessage
-              .replace(/\{\{name\}\}/g, customer.name || "there")
-              .replace(
-                /\{\{referral_link\}\}/g,
-                customer.referral_code ? `${baseSiteUrl}/r/${customer.referral_code}` : ""
-              );
+          for (const customer of selectedCustomers) {
+            if (!customer.email) {
+              failureCount++;
+              continue;
+            }
 
-            // Convert message to HTML (basic formatting)
-            const htmlMessage = personalizedMessage
-              .split('\n')
-              .map(line => line.trim())
-              .filter(line => line.length > 0)
-              .map(line => `<p style="margin: 0 0 12px 0; line-height: 1.6;">${line}</p>`)
-              .join('');
+            try {
+              // Personalize message
+              const personalizedMessage = campaignMessage
+                .replace(/\{\{name\}\}/g, customer.name || "there")
+                .replace(
+                  /\{\{referral_link\}\}/g,
+                  customer.referral_code ? `${baseSiteUrl}/r/${customer.referral_code}` : "",
+                );
 
-            const emailHtml = `
+              // Convert message to HTML (basic formatting)
+              const htmlMessage = personalizedMessage
+                .split("\n")
+                .map((line) => line.trim())
+                .filter((line) => line.length > 0)
+                .map((line) => `<p style="margin: 0 0 12px 0; line-height: 1.6;">${line}</p>`)
+                .join("");
+
+              const emailHtml = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -518,18 +559,19 @@ export default async function Dashboard() {
 </body>
 </html>`;
 
-            await resend.emails.send({
-              from: businessEmail,
-              to: customer.email,
-              subject: campaignName || `Message from ${business.name}`,
-              html: emailHtml,
-              text: personalizedMessage,
-            });
+              await resend.emails.send({
+                from: businessEmail,
+                to: customer.email,
+                subject: campaignName || `Message from ${business.name}`,
+                html: emailHtml,
+                text: personalizedMessage,
+              });
 
-            successCount++;
-          } catch (emailError) {
-            console.error(`Failed to send email to ${customer.email}:`, emailError);
-            failureCount++;
+              successCount++;
+            } catch (emailError) {
+              console.error(`Failed to send email to ${customer.email}:`, emailError);
+              failureCount++;
+            }
           }
         }
       }
@@ -554,13 +596,14 @@ export default async function Dashboard() {
 
       revalidatePath("/dashboard");
 
-      if (failureCount === 0) {
-        return { success: `Campaign sent successfully to ${successCount} customers!` };
-      } else {
-        return {
-          success: `Campaign completed with ${successCount} successful and ${failureCount} failed messages.`,
-        };
-      }
+      const baseMessage =
+        failureCount === 0
+          ? `Campaign sent successfully to ${successCount} customers!`
+          : `Campaign completed with ${successCount} successful and ${failureCount} failed messages.`;
+
+      return {
+        success: simulationNotice ? `${baseMessage} ${simulationNotice}` : baseMessage,
+      };
     } catch (error) {
       console.error("Campaign send error:", error);
       return { error: "Failed to send campaign. Please try again." };
@@ -591,6 +634,23 @@ export default async function Dashboard() {
     safeReferrals.filter((r) => r.status === "completed").length || 0;
   const totalRewards =
     safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
+  let totalCampaignsSent = 0;
+  let totalMessagesSent = 0;
+  try {
+    const { data: campaignsData } = await supabase
+      .from("campaigns")
+      .select("id,sent_count")
+      .eq("business_id", business.id);
+    if (campaignsData) {
+      totalCampaignsSent = campaignsData.length;
+      totalMessagesSent = campaignsData.reduce(
+        (sum, campaign) => sum + (campaign.sent_count ?? 0),
+        0,
+      );
+    }
+  } catch (campaignFetchError) {
+    console.warn("Campaign data unavailable:", campaignFetchError);
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
@@ -718,6 +778,7 @@ export default async function Dashboard() {
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
             <TabsTrigger
               value="campaigns"
+              data-tab-target="campaigns"
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-600 data-[state=active]:via-pink-600 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
             >
               <Rocket className="h-5 w-5 mr-2" />
@@ -726,6 +787,7 @@ export default async function Dashboard() {
             </TabsTrigger>
             <TabsTrigger
               value="clients"
+              data-tab-target="clients"
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-emerald-600 data-[state=active]:via-teal-600 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-emerald-500/50 transition-all duration-300 hover:scale-105"
             >
               <Users className="h-5 w-5 mr-2" />
@@ -734,6 +796,7 @@ export default async function Dashboard() {
             </TabsTrigger>
             <TabsTrigger
               value="performance"
+              data-tab-target="performance"
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:via-indigo-600 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
             >
               <BarChart3 className="h-5 w-5 mr-2" />
@@ -742,6 +805,7 @@ export default async function Dashboard() {
             </TabsTrigger>
             <TabsTrigger
               value="settings"
+              data-tab-target="settings"
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-amber-600 data-[state=active]:via-orange-600 data-[state=active]:to-red-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-amber-500/50 transition-all duration-300 hover:scale-105"
             >
               <SettingsIcon className="h-5 w-5 mr-2" />
@@ -756,7 +820,6 @@ export default async function Dashboard() {
             <CampaignBuilder
               customers={safeCustomers}
               businessName={business.name || "Your Business"}
-              siteUrl={siteUrl}
               sendCampaignAction={sendCampaign}
             />
 
@@ -775,188 +838,197 @@ export default async function Dashboard() {
           </div>
         </TabsContent>
 
-        <TabsContent value="settings">
-          <div className="space-y-6">
-            {/* Business Settings Card */}
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                  <SettingsIcon className="h-6 w-6 text-white" />
+        <TabsContent value="settings" className="space-y-6">
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-lg">
+                <Gift className="h-7 w-7 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Settings & Rewards</h3>
+                <p className="text-sm text-slate-600">Update the public offer and how ambassadors get paid.</p>
+              </div>
+            </div>
+
+            <form action={updateSettings} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="offer_text" className="text-base font-bold text-slate-900">
+                  Customer Offer
+                </Label>
+                <Textarea
+                  id="offer_text"
+                  name="offer_text"
+                  defaultValue={business.offer_text ?? ""}
+                  placeholder="e.g., Give $200, Get $200 + a VIP upgrade"
+                  className="min-h-[90px] text-base"
+                />
+                <p className="text-sm text-slate-500">
+                  This copy appears on referral landing pages, SMS, and email invites.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div>
+                  <Label htmlFor="reward_type" className="text-base font-bold text-slate-900">
+                    Reward Type
+                  </Label>
+                  <select
+                    id="reward_type"
+                    name="reward_type"
+                    defaultValue={business.reward_type ?? "credit"}
+                    className="w-full rounded-2xl border-2 border-slate-200 p-3 text-sm font-semibold"
+                  >
+                    <option value="credit">Credit</option>
+                    <option value="upgrade">Upgrade</option>
+                    <option value="discount">Discount</option>
+                    <option value="points">Points</option>
+                  </select>
                 </div>
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Business Settings</h2>
-                  <p className="text-sm text-slate-600">Configure your business information and preferences</p>
+                  <Label htmlFor="reward_amount" className="text-base font-bold text-slate-900">
+                    Reward Amount ($)
+                  </Label>
+                  <Input
+                    id="reward_amount"
+                    name="reward_amount"
+                    type="number"
+                    min="0"
+                    step="1"
+                    defaultValue={business.reward_amount ?? 15}
+                    className="text-base"
+                  />
+                  <p className="text-xs text-slate-500 mt-1">Per successful referral</p>
+                </div>
+                <div>
+                  <Label htmlFor="upgrade_name" className="text-base font-bold text-slate-900">
+                    Upgrade Name
+                  </Label>
+                  <Input
+                    id="upgrade_name"
+                    name="upgrade_name"
+                    defaultValue={business.upgrade_name ?? ""}
+                    placeholder="e.g., Complimentary brow tint"
+                    className="text-base"
+                  />
+                  <p className="text-xs text-slate-500 mt-1">Only used if reward type = Upgrade</p>
                 </div>
               </div>
 
-              <form action={updateSettings} className="space-y-6">
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="sm:col-span-2">
-                    <Label htmlFor="offer_text" className="text-base font-semibold">New Client Offer Text</Label>
-                    <p className="text-sm text-slate-600 mb-2">This is the offer that will be shown to referred customers</p>
-                    <Input
-                      id="offer_text"
-                      name="offer_text"
-                      defaultValue={business.offer_text ?? ""}
-                      placeholder="e.g., $15 credit on your first visit"
-                      className="h-12"
-                    />
-                  </div>
-                </div>
+              <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200">
+                <p className="text-sm font-semibold text-amber-900 mb-1">Live summary</p>
+                <p className="text-sm text-amber-800">
+                  Ambassadors promote <span className="font-bold">{business.offer_text || "your hero offer"}</span> and earn{" "}
+                  <span className="font-bold">
+                    {business.reward_type === "credit"
+                      ? `$${business.reward_amount ?? 15} credit`
+                      : business.reward_type === "upgrade"
+                      ? business.upgrade_name || "a free upgrade"
+                      : business.reward_type === "discount"
+                      ? `${business.reward_amount ?? 15}% discount`
+                      : `${business.reward_amount ?? 100} points`}
+                  </span>{" "}
+                  per completed referral.
+                </p>
+              </div>
 
-                <div className="flex justify-end pt-4 border-t">
-                  <Button type="submit" className="bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold shadow-lg shadow-blue-300/50 hover:shadow-xl hover:shadow-blue-400/50 transition-all duration-200">
-                    <SettingsIcon className="mr-2 h-4 w-4" />
-                    Save Business Settings
-                  </Button>
+              <div className="flex justify-end border-t border-slate-200 pt-4">
+                <Button
+                  type="submit"
+                  className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 font-bold shadow-lg"
+                >
+                  <Gift className="mr-2 h-4 w-4" />
+                  Save Settings
+                </Button>
+              </div>
+            </form>
+          </Card>
+
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+            <h4 className="text-lg font-bold text-slate-900 mb-4">Reward fulfillment options</h4>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="p-4 rounded-xl border-2 border-purple-200 bg-purple-50">
+                <div className="flex items-center gap-3">
+                  <CreditCard className="h-5 w-5 text-purple-600" />
+                  <p className="font-semibold text-slate-900">Store credit</p>
                 </div>
-              </form>
+                <p className="text-sm text-slate-600 mt-2">Auto-applied to Pepform or POS accounts.</p>
+              </div>
+              <div className="p-4 rounded-xl border-2 border-emerald-200 bg-emerald-50">
+                <div className="flex items-center gap-3">
+                  <DollarSign className="h-5 w-5 text-emerald-600" />
+                  <p className="font-semibold text-slate-900">Cash / bank</p>
+                </div>
+                <p className="text-sm text-slate-600 mt-2">Export CSV to process manual payouts.</p>
+              </div>
+              <div className="p-4 rounded-xl border-2 border-slate-200 bg-white">
+                <div className="flex items-center gap-3">
+                  <Gift className="h-5 w-5 text-amber-600" />
+                  <p className="font-semibold text-slate-900">Gift cards</p>
+                </div>
+                <p className="text-sm text-slate-600 mt-2">Issue digital or physical rewards.</p>
+              </div>
+            </div>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="clients" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+              <div className="flex items-start gap-3 mb-6">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center">
+                  <Upload className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-900">Import Customers</h2>
+                  <p className="text-sm text-slate-600">Bulk upload spreadsheets to instantly generate referral links.</p>
+                </div>
+              </div>
+              <CSVUploadForm uploadAction={uploadCSV} />
+              <div className="mt-6 rounded-xl bg-purple-50 p-4 border border-purple-200">
+                <p className="text-sm font-semibold text-purple-900 mb-2">
+                  💡 Pro tip
+                </p>
+                <p className="text-sm text-purple-700">
+                  Include <span className="font-mono bg-white px-2 py-0.5 rounded">name</span>,{" "}
+                  <span className="font-mono bg-white px-2 py-0.5 rounded">phone</span>, and{" "}
+                  <span className="font-mono bg-white px-2 py-0.5 rounded">email</span> columns.
+                  We&apos;ll create unique referral links for each contact.
+                </p>
+              </div>
             </Card>
 
-            {/* Rewards Configuration Card */}
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                  <Gift className="h-6 w-6 text-white" />
+            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+              <form action={quickAddCustomer} className="space-y-4">
+                <Label className="text-base font-bold text-slate-900">Quick Add Customer</Label>
+                <div className="grid sm:grid-cols-3 gap-3">
+                  <Input name="quick_name" placeholder="Full name" />
+                  <Input name="quick_phone" placeholder="Phone number" />
+                  <Input name="quick_email" placeholder="Email (optional)" />
                 </div>
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Rewards Configuration</h2>
-                  <p className="text-sm text-slate-600">Set up rewards for successful referrals</p>
-                </div>
-              </div>
-
-              <form action={updateSettings} className="space-y-6">
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <Label htmlFor="reward_type" className="text-base font-semibold">Reward Type</Label>
-                    <p className="text-sm text-slate-600 mb-2">Choose how you want to reward ambassadors</p>
-                    <select
-                      id="reward_type"
-                      name="reward_type"
-                      defaultValue={business.reward_type ?? "credit"}
-                      className="mt-1 w-full h-12 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    >
-                      <option value="credit">💰 Credit/Cash Reward</option>
-                      <option value="upgrade">⭐ Free Upgrade/Service</option>
-                      <option value="discount">🎫 Discount Percentage</option>
-                      <option value="points">🏆 Points System</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="reward_amount" className="text-base font-semibold">
-                      {business.reward_type === "credit" ? "Reward Amount ($)" :
-                       business.reward_type === "discount" ? "Discount (%)" :
-                       business.reward_type === "points" ? "Points Value" : "Reward Value"}
-                    </Label>
-                    <p className="text-sm text-slate-600 mb-2">Amount given for each successful referral</p>
-                    <Input
-                      id="reward_amount"
-                      name="reward_amount"
-                      type="number"
-                      defaultValue={business.reward_amount ?? 15}
-                      placeholder="15"
-                      className="h-12"
-                    />
-                  </div>
-
-                  {business.reward_type === "upgrade" && (
-                    <div className="sm:col-span-2">
-                      <Label htmlFor="upgrade_name" className="text-base font-semibold">Upgrade/Service Name</Label>
-                      <p className="text-sm text-slate-600 mb-2">Describe the upgrade or free service</p>
-                      <Input
-                        id="upgrade_name"
-                        name="upgrade_name"
-                        defaultValue={business.upgrade_name ?? ""}
-                        placeholder="e.g., Free premium treatment upgrade"
-                        className="h-12"
-                      />
-                    </div>
-                  )}
-                </div>
-
-                {/* Reward Preview */}
-                <div className="rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200/50 p-6">
-                  <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-purple-600" />
-                    Reward Preview
-                  </h3>
-                  <p className="text-slate-700">
-                    When a friend completes a booking, the ambassador will receive:{" "}
-                    <span className="font-bold text-purple-700">
-                      {business.reward_type === "credit" ? `$${business.reward_amount ?? 15} credit` :
-                       business.reward_type === "upgrade" ? (business.upgrade_name || "a free upgrade") :
-                       business.reward_type === "discount" ? `${business.reward_amount ?? 15}% discount` :
-                       `${business.reward_amount ?? 100} points`}
-                    </span>
-                  </p>
-                </div>
-
-                <div className="flex justify-end pt-4 border-t">
-                  <Button type="submit" className="bg-gradient-to-b from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-400/50 transition-all duration-200">
-                    <Gift className="mr-2 h-4 w-4" />
-                    Save Rewards Configuration
-                  </Button>
-                </div>
+                <Button type="submit" className="font-bold w-full sm:w-auto">
+                  <Plus className="mr-2 h-4 w-4" />
+                  Add Customer
+                </Button>
+                <p className="text-xs text-slate-500">
+                  We&apos;ll refresh the dashboard instantly with their referral link.
+                </p>
               </form>
-            </Card>
-
-            {/* Integration Settings - Expandable Section */}
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
-                  <Sparkles className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Advanced Settings</h2>
-                  <p className="text-sm text-slate-600">Additional configuration options</p>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="rounded-lg border border-slate-200 p-4 hover:border-emerald-300 transition-colors">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold text-slate-900">SMS Notifications</h3>
-                      <p className="text-sm text-slate-600">Send SMS updates to ambassadors when referrals complete</p>
-                    </div>
-                    <div className="text-emerald-600 font-semibold">Active</div>
-                  </div>
-                </div>
-
-                <div className="rounded-lg border border-slate-200 p-4 hover:border-purple-300 transition-colors">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold text-slate-900">Email Campaigns</h3>
-                      <p className="text-sm text-slate-600">Configure email sending via Resend</p>
-                    </div>
-                    <div className="text-slate-400 font-semibold">Setup Required</div>
-                  </div>
-                </div>
-
-                <div className="rounded-lg border border-slate-200 p-4 hover:border-blue-300 transition-colors">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold text-slate-900">Booking System Integration</h3>
-                      <p className="text-sm text-slate-600">Connect your booking platform for automatic reward tracking</p>
-                    </div>
-                    <div className="text-slate-400 font-semibold">Coming Soon</div>
-                  </div>
-                </div>
+              <div className="mt-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 p-5">
+                <p className="text-sm font-semibold text-emerald-800">
+                  Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
+                </p>
+                <p className="text-xs text-emerald-700 mt-2">
+                  Every manual addition instantly receives their shareable link.
+                </p>
               </div>
             </Card>
           </div>
-        </TabsContent>
 
-        <TabsContent value="clients">
-          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Import Customers</h2>
-            <CSVUploadForm uploadAction={uploadCSV} />
-
-            <div className="mt-10 space-y-5">
-              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">All customers</h3>
-              <CustomersTable customers={safeCustomers} siteUrl={siteUrl} />
-            </div>
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+            <h3 className="text-xl font-black text-slate-900 mb-4">
+              All Customers ({safeCustomers.length})
+            </h3>
+            <CustomersTable customers={safeCustomers} siteUrl={siteUrl} />
           </Card>
         </TabsContent>
 
@@ -1118,6 +1190,26 @@ export default async function Dashboard() {
                   {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
                 </p>
                 <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-rose-600 flex items-center justify-center">
+                    <MessageSquare className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Campaigns Sent</h3>
+                </div>
+                <p className="text-3xl font-black text-rose-700">{totalCampaignsSent}</p>
+                <p className="text-sm text-slate-600 mt-1">Live SMS & email blasts</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                    <Send className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Messages Delivered</h3>
+                </div>
+                <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
+                <p className="text-sm text-slate-600 mt-1">Across all channels</p>
               </div>
             </div>
           </Card>

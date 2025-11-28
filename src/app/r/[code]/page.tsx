@@ -107,7 +107,7 @@ export default async function ReferralPage({ params }: ReferralPageProps) {
             </div>
 
             <h1 className="mb-3 text-4xl font-black text-slate-900">
-              You've Been Hooked Up!
+              You&rsquo;ve Been Hooked Up!
             </h1>
 
             <p className="mb-8 text-xl leading-relaxed text-slate-700">
@@ -190,7 +190,7 @@ export default async function ReferralPage({ params }: ReferralPageProps) {
             </form>
 
             <p className="mt-6 text-center text-sm text-slate-500">
-              ✨ You'll receive a confirmation SMS shortly with booking details
+              ✨ You&rsquo;ll receive a confirmation SMS shortly with booking details
             </p>
           </div>
         </Card>

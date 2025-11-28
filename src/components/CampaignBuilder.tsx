@@ -22,14 +22,12 @@ type Customer = Database["public"]["Tables"]["customers"]["Row"];
 type CampaignBuilderProps = {
   customers: Customer[];
   businessName: string;
-  siteUrl: string;
   sendCampaignAction: (formData: FormData) => Promise<{ success?: string; error?: string }>;
 };
 
 export function CampaignBuilder({
   customers,
   businessName,
-  siteUrl,
   sendCampaignAction
 }: CampaignBuilderProps) {
   const [showCampaignModal, setShowCampaignModal] = useState(false);

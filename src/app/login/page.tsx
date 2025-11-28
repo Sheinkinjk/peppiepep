@@ -276,7 +276,7 @@ function LoginContent() {
                   className="mt-1"
                 />
                 <p className="text-xs text-slate-500 mt-1">
-                  We'll use this for account setup and support. You can configure offers and rewards inside the dashboard.
+                  We&rsquo;ll use this for account setup and support. You can configure offers and rewards inside the dashboard.
                 </p>
               </div>
 

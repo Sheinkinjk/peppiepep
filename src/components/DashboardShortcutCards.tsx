@@ -33,7 +33,7 @@ const cards: ShortcutCard[] = [
 
 export function DashboardShortcutCards() {
   const handleClick = useCallback((target: string) => {
-    const tab = document.querySelector(`[value="${target}"]`) as HTMLElement | null;
+    const tab = document.querySelector(`[data-tab-target="${target}"]`) as HTMLElement | null;
     tab?.click();
   }, []);
 

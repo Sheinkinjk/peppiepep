@@ -1,13 +1,13 @@
 "use client";
 
-/* eslint-disable react/no-unescaped-entities, react-hooks/set-state-in-effect */
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
 import {
   X, TrendingUp, Users, DollarSign, Zap, Copy, CheckCircle2,
   BarChart3, CreditCard,
   Calendar, Target, Upload, MessageSquare, Gift, Rocket, Settings as SettingsIcon,
   Plus, ChevronRight, Crown, AlertCircle, CheckCircle, Phone, Mail,
-  Sparkles, Award, Bot, Activity, PieChart, QrCode, Send
+  Sparkles, Award, Bot, Activity, PieChart
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import QRCodeGenerator from "@/components/QRCodeGenerator";
 import AIChatbotOnboarding from "@/components/AIChatbotOnboarding";
 import { rankAmbassadors, type ScoredCustomer } from "@/lib/ai-scoring";
 import { calculateROIForecast, type ROIForecast } from "@/lib/ai-roi-calculator";

@@ -193,7 +193,7 @@ export default function ReferralStatsPage() {
               <div className="flex-1">
                 <h2 className="text-2xl font-black mb-2">Code Not Found</h2>
                 <p className="text-red-100/90 mb-4">
-                  We couldn't find an ambassador account for code: <code className="font-mono bg-black/20 px-2 py-1 rounded">{code}</code>
+                  We couldn&rsquo;t find an ambassador account for code: <code className="font-mono bg-black/20 px-2 py-1 rounded">{code}</code>
                 </p>
                 <p className="text-sm text-red-200/80">
                   Double-check the code or contact support to get your unique referral code.
@@ -482,7 +482,7 @@ export default function ReferralStatsPage() {
                 </div>
                 <h4 className="text-xl font-black mb-3">Full Support & Transparency</h4>
                 <p className="text-sm text-slate-200/90 mb-5">
-                  Every referral and payout is logged securely. Questions about your earnings or referrals? We're here to help.
+                  Every referral and payout is logged securely. Questions about your earnings or referrals? We&rsquo;re here to help.
                 </p>
                 <Link href="/contact">
                   <Button className="w-full bg-white hover:bg-slate-100 text-slate-900 font-bold shadow-lg h-12">
