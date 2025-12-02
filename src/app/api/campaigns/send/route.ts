@@ -34,7 +34,13 @@ async function fetchBusiness(
     .order("created_at", { ascending: false })
     .limit(1);
 
-  if (!error && data && data.length > 0) {
+  if (error) {
+    console.error("Business SELECT error:", error);
+    const errorDetails = `${error.message} (code: ${error.code})`;
+    throw new Error(`Failed to query business profile. ${errorDetails}`);
+  }
+
+  if (data && data.length > 0) {
     const baseBusiness = data[0] as BusinessRow;
 
     // Try to load optional fields in a separate non-critical query
@@ -74,7 +80,10 @@ async function fetchBusiness(
 
   if (insertError || !inserted) {
     console.error("Business insert error:", insertError);
-    throw new Error("Unable to load or create business profile.");
+    const errorDetails = insertError
+      ? `${insertError.message} (code: ${insertError.code})`
+      : "No data returned";
+    throw new Error(`Unable to load or create business profile. ${errorDetails}`);
   }
 
   // Try to load optional fields for newly created business
