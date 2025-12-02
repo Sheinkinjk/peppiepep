@@ -25,9 +25,8 @@ async function fetchBusiness(
   const coreColumns =
     "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, client_reward_text, new_user_reward_text, reward_terms";
 
-  const service = await createServiceClient();
-
-  const { data, error } = await service
+  // First try with regular client (respects RLS)
+  const { data, error } = await supabase
     .from("businesses")
     .select(coreColumns)
     .eq("owner_id", ownerId)
@@ -45,7 +44,7 @@ async function fetchBusiness(
 
     // Try to load optional fields in a separate non-critical query
     try {
-      const { data: extras } = await service
+      const { data: extras } = await supabase
         .from("businesses")
         .select("logo_url, brand_highlight_color, brand_tone")
         .eq("id", baseBusiness.id)
@@ -66,13 +65,14 @@ async function fetchBusiness(
     return baseBusiness as BusinessRow;
   }
 
+  // No business found - create one using regular client (RLS allows insert for own user)
   const insertPayload: Database["public"]["Tables"]["businesses"]["Insert"] = {
     owner_id: ownerId,
     name: fallbackName,
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const businessQuery = service.from("businesses") as any;
+  const businessQuery = supabase.from("businesses") as any;
   const { data: inserted, error: insertError } = await businessQuery
     .insert([insertPayload])
     .select(coreColumns)
@@ -88,7 +88,7 @@ async function fetchBusiness(
 
   // Try to load optional fields for newly created business
   try {
-    const { data: extras } = await service
+    const { data: extras } = await supabase
       .from("businesses")
       .select("logo_url, brand_highlight_color, brand_tone")
       .eq("id", inserted.id)
