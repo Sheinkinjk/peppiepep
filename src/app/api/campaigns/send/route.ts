@@ -26,6 +26,7 @@ async function fetchBusiness(
     "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, client_reward_text, new_user_reward_text, reward_terms";
 
   // First try with regular client (respects RLS)
+  console.log("[fetchBusiness] Querying for owner_id:", ownerId);
   const { data, error } = await supabase
     .from("businesses")
     .select(coreColumns)
@@ -34,10 +35,12 @@ async function fetchBusiness(
     .limit(1);
 
   if (error) {
-    console.error("Business SELECT error:", error);
+    console.error("[fetchBusiness] SELECT error:", error);
     const errorDetails = `${error.message} (code: ${error.code})`;
     throw new Error(`Failed to query business profile. ${errorDetails}`);
   }
+
+  console.log("[fetchBusiness] SELECT result - data length:", data?.length || 0);
 
   if (data && data.length > 0) {
     const baseBusiness = data[0] as BusinessRow;
@@ -66,6 +69,7 @@ async function fetchBusiness(
   }
 
   // No business found - create one using regular client (RLS allows insert for own user)
+  console.log("[fetchBusiness] No business found, creating new one with name:", fallbackName);
   const insertPayload: Database["public"]["Tables"]["businesses"]["Insert"] = {
     owner_id: ownerId,
     name: fallbackName,
@@ -79,12 +83,15 @@ async function fetchBusiness(
     .single();
 
   if (insertError || !inserted) {
-    console.error("Business insert error:", insertError);
+    console.error("[fetchBusiness] INSERT error:", insertError);
+    console.error("[fetchBusiness] INSERT payload was:", insertPayload);
     const errorDetails = insertError
       ? `${insertError.message} (code: ${insertError.code})`
       : "No data returned";
     throw new Error(`Unable to load or create business profile. ${errorDetails}`);
   }
+
+  console.log("[fetchBusiness] Successfully created business:", inserted.id);
 
   // Try to load optional fields for newly created business
   try {
