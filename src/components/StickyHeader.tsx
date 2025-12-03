@@ -1,13 +1,17 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { ArrowRight, Calendar, Menu, X } from 'lucide-react';
-import { PepformLogo } from './PepformLogo';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ArrowRight, Calendar, Menu, X } from "lucide-react";
+import { PepformLogo } from "./PepformLogo";
+import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 export function StickyHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +21,37 @@ export function StickyHeader() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+    const checkAuth = async () => {
+      try {
+        const supabase = createBrowserSupabaseClient();
+        const { data } = await supabase.auth.getSession();
+        if (!isMounted) return;
+        setIsAuthenticated(!!data.session);
+      } catch (error) {
+        console.error("Failed to check auth session:", error);
+        if (isMounted) setIsAuthenticated(false);
+      }
+    };
+    void checkAuth();
+    // Optionally, you could subscribe to auth changes here if you want live updates.
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      const supabase = createBrowserSupabaseClient();
+      await supabase.auth.signOut();
+      setIsAuthenticated(false);
+      router.push("/");
+    } catch (error) {
+      console.error("Failed to log out:", error);
+    }
+  };
 
   return (
     <>
@@ -69,12 +104,30 @@ export function StickyHeader() {
                 <Calendar className="h-4 w-4" />
                 Schedule Call
               </a>
-              <Link
-                href="/login"
-                className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-              >
-                Sign in <ArrowRight className="h-4 w-4" />
-              </Link>
+              {isAuthenticated ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+                  >
+                    View Dashboard <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={handleLogout}
+                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-4 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF]"
+                  >
+                    Log out
+                  </button>
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+                >
+                  Sign in <ArrowRight className="h-4 w-4" />
+                </Link>
+              )}
             </nav>
 
             {/* Mobile Menu Button */}
@@ -134,13 +187,35 @@ export function StickyHeader() {
                 <Calendar className="h-4 w-4" />
                 Schedule Call
               </a>
-              <Link
-                href="/login"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sign in <ArrowRight className="h-4 w-4" />
-              </Link>
+              {isAuthenticated ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    View Dashboard <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      void handleLogout();
+                    }}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#00838F] px-4 py-3 text-sm font-bold text-[#00838F] transition-all duration-200"
+                  >
+                    Log out
+                  </button>
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Sign in <ArrowRight className="h-4 w-4" />
+                </Link>
+              )}
             </nav>
           </div>
         )}

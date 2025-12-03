@@ -9,7 +9,7 @@ const openai = process.env.OPENAI_API_KEY
 
 export async function POST(request: Request) {
   // Apply rate limiting: 10 requests per minute
-  const rateLimitCheck = checkRateLimit(request, 'generateMessage');
+  const rateLimitCheck = await checkRateLimit(request, "generateMessage");
   if (!rateLimitCheck.success && rateLimitCheck.response) {
     return rateLimitCheck.response;
   }

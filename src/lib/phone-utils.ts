@@ -17,6 +17,11 @@ export function normalizePhoneNumber(phone: string | null, defaultCountry: 'AU' 
   // Remove all non-numeric characters except +
   let cleaned = phone.replace(/[^\d+]/g, '');
 
+  // Convert international dialing prefix (00) to +
+  if (cleaned.startsWith('00')) {
+    cleaned = `+${cleaned.substring(2)}`;
+  }
+
   // If already has country code, return as-is
   if (cleaned.startsWith('+')) {
     // Validate length (AU: +61 + 9 digits = 12, US: +1 + 10 digits = 12)
@@ -33,6 +38,16 @@ export function normalizePhoneNumber(phone: string | null, defaultCountry: 'AU' 
 
   // Add country code based on default
   if (defaultCountry === 'AU') {
+    // Handle numbers that already include the country code without +
+    if (cleaned.startsWith('61')) {
+      const rest = cleaned.substring(2);
+      if (rest.length === 9) {
+        return `+61${rest}`;
+      }
+      if (rest.length === 10 && rest.startsWith('0')) {
+        return `+61${rest.substring(1)}`;
+      }
+    }
     // Australian mobile: 9 digits starting with 4
     // Australian landline: 9 digits starting with 2, 3, 7, 8
     if (cleaned.length === 9) {
@@ -109,6 +124,8 @@ export function detectCountryFromPhone(phone: string | null): 'AU' | 'US' | 'UNK
 
   // Try to detect from format
   const cleaned = phone.replace(/[^\d]/g, '');
+  if (cleaned.startsWith('61')) return 'AU';
+  if (cleaned.startsWith('1') && cleaned.length >= 10) return 'US';
   if (cleaned.startsWith('04') || (cleaned.startsWith('4') && cleaned.length === 9)) {
     return 'AU';
   }

@@ -2,7 +2,7 @@
 
 /* eslint-disable react/no-unescaped-entities */
 import { useMemo, useState } from "react";
-import { ArrowRight, Check, Zap, Users, Crown, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Zap, Users, Crown } from "lucide-react";
 import Link from "next/link";
 
 export default function Pricing() {
@@ -41,11 +41,6 @@ export default function Pricing() {
       <main className="relative mx-auto flex max-w-7xl flex-col gap-16 px-6 pb-24 pt-16 md:px-10 lg:px-16">
 
         <div className="mx-auto max-w-4xl space-y-10 text-center">
-          <div className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-6 py-3 text-sm font-bold text-purple-300 shadow-2xl shadow-purple-500/20 ring-1 ring-purple-400/30 backdrop-blur-xl">
-            <Sparkles className="h-4 w-4" />
-            Enterprise-Grade Referral Platform
-          </div>
-
           <h1 className="text-balance text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
             <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
               Growth Network
@@ -67,32 +62,36 @@ export default function Pricing() {
 
         {/* Premium billing toggle */}
         <div className="relative mx-auto">
-          <div className="rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/80 p-1.5 shadow-2xl shadow-purple-500/20 ring-1 ring-purple-500/30 backdrop-blur-xl inline-flex items-center justify-center gap-2">
-            <button
-              type="button"
-              onClick={() => setBillingCycle("monthly")}
-              className={`relative rounded-xl px-8 py-4 text-base font-bold transition-all duration-300 ${
-                billingCycle === "monthly"
-                  ? "bg-gradient-to-b from-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/50 scale-105"
-                  : "text-purple-300 hover:text-white hover:bg-slate-800/50"
-              }`}
-            >
-              Monthly billing
-            </button>
-            <button
-              type="button"
-              onClick={() => setBillingCycle("annual")}
-              className={`relative rounded-xl px-8 py-4 text-base font-bold transition-all duration-300 ${
-                billingCycle === "annual"
-                  ? "bg-gradient-to-b from-green-500 to-green-600 text-white shadow-2xl shadow-green-500/50 scale-105"
-                  : "text-purple-300 hover:text-white hover:bg-slate-800/50"
-              }`}
-            >
-              Annual billing
-              <span className="ml-2 rounded-full bg-white/30 px-3 py-1 text-xs font-extrabold backdrop-blur-sm">
+          <div className="rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/80 p-1.5 shadow-2xl shadow-purple-500/20 ring-1 ring-purple-500/30 backdrop-blur-xl inline-flex items-end justify-center gap-3">
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setBillingCycle("monthly")}
+                className={`relative rounded-xl px-8 py-3 text-base font-bold transition-all duration-300 w-48 ${
+                  billingCycle === "monthly"
+                    ? "bg-gradient-to-b from-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/50 scale-105"
+                    : "text-purple-300 hover:text-white hover:bg-slate-800/50"
+                }`}
+              >
+                Monthly billing
+              </button>
+            </div>
+            <div className="relative">
+              <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[11px] font-black uppercase tracking-[0.25em] text-green-300 drop-shadow-lg">
                 Save 20%
               </span>
-            </button>
+              <button
+                type="button"
+                onClick={() => setBillingCycle("annual")}
+                className={`relative rounded-xl px-8 py-3 text-base font-bold transition-all duration-300 w-48 ${
+                  billingCycle === "annual"
+                    ? "bg-gradient-to-b from-green-500 to-green-600 text-white shadow-2xl shadow-green-500/50 scale-105"
+                    : "text-purple-300 hover:text-white hover:bg-slate-800/50"
+                }`}
+              >
+                Annual billing
+              </button>
+            </div>
           </div>
         </div>
 
@@ -122,8 +121,11 @@ export default function Pricing() {
               href="/login"
               className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-purple-400/50 bg-gradient-to-b from-slate-700 to-slate-800 px-8 py-4 text-base font-bold text-white shadow-xl shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400 hover:shadow-2xl hover:shadow-purple-400/40 backdrop-blur-sm"
             >
-              Start free trial
+              Register Now
             </Link>
+            <p className="text-center text-xs font-semibold text-purple-200">
+              30-day money-back guarantee
+            </p>
 
             <div className="space-y-4 text-base">
               <div className="flex items-start gap-3">
@@ -187,9 +189,12 @@ export default function Pricing() {
               className="relative mb-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-pink-500/70 overflow-hidden group/button"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 opacity-0 group-hover/button:opacity-100 transition-opacity duration-300" />
-              <span className="relative">Start free trial</span>
+              <span className="relative">Register Now</span>
               <ArrowRight className="relative h-5 w-5" />
             </Link>
+            <p className="relative text-center text-xs font-semibold text-purple-100">
+              30-day money-back guarantee
+            </p>
 
             <div className="relative space-y-4 text-base">
               <div className="flex items-start gap-3">
@@ -359,11 +364,11 @@ export default function Pricing() {
             <div className="space-y-4">
               <details className="group rounded-2xl bg-slate-800/50 p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
                 <summary className="cursor-pointer font-bold text-white flex items-center justify-between">
-                  What's included in the free trial?
+                  How does the 30-day money-back guarantee work?
                   <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
                 <p className="mt-4 text-base text-purple-200 leading-relaxed">
-                  All plans include a 14-day free trial with full access to all features. No credit card required to start.
+                  Try Pepform with complete confidence. If you’re not delighted within 30 days, simply contact us and we’ll refund your subscription—no questions asked.
                 </p>
               </details>
 
@@ -417,7 +422,7 @@ export default function Pricing() {
                 Still not sure which plan is right?
               </h3>
               <p className="text-xl text-purple-200">
-                Start with a free trial or talk to our team to find the perfect fit for your business.
+                Register now with a 30-day money-back guarantee or talk to our team to find the perfect fit for your business.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -425,7 +430,7 @@ export default function Pricing() {
                 href="/login"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-400/70 whitespace-nowrap"
               >
-                Start free trial <ArrowRight className="h-5 w-5" />
+                Register Now <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/how-it-works"

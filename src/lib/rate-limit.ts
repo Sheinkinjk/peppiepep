@@ -1,6 +1,10 @@
+import { createHash } from "crypto";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
+
 /**
- * Simple in-memory rate limiter using LRU cache
- * Prevents API abuse and cost overruns
+ * Rate limiting utilities shared across API routes.
+ * Uses Upstash Redis when configured and falls back to per-instance memory cache locally.
  */
 
 interface RateLimitEntry {
@@ -8,215 +12,235 @@ interface RateLimitEntry {
   resetTime: number;
 }
 
+interface RateLimiterOptions {
+  name: string;
+  limit: number;
+  windowMs: number;
+  maxSize?: number;
+}
+
+interface RateLimitResult {
+  success: boolean;
+  limit: number;
+  remaining: number;
+  reset: number;
+}
+
+const redisClient =
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+    ? new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+      })
+    : null;
+
 class RateLimiter {
   private cache: Map<string, RateLimitEntry>;
   private maxSize: number;
+  private remoteLimiter?: Ratelimit;
+  public readonly name: string;
+  public readonly limit: number;
+  public readonly windowMs: number;
 
-  constructor(maxSize: number = 1000) {
+  constructor(options: RateLimiterOptions) {
+    this.name = options.name;
+    this.limit = options.limit;
+    this.windowMs = options.windowMs;
+    this.maxSize = options.maxSize ?? 1000;
     this.cache = new Map();
-    this.maxSize = maxSize;
+
+    if (redisClient) {
+      this.remoteLimiter = new Ratelimit({
+        redis: redisClient,
+        limiter: Ratelimit.slidingWindow(
+          this.limit,
+          `${Math.max(1, Math.floor(this.windowMs / 1000))} s`,
+        ),
+        analytics: true,
+        prefix: `pepform:rate:${this.name}`,
+      });
+    }
   }
 
-  /**
-   * Check if a request should be rate limited
-   * @param identifier - Unique identifier (IP address, user ID, etc.)
-   * @param limit - Maximum number of requests allowed
-   * @param windowMs - Time window in milliseconds
-   * @returns Object with success status and retry information
-   */
-  check(
-    identifier: string,
-    limit: number,
-    windowMs: number
-  ): {
-    success: boolean;
-    limit: number;
-    remaining: number;
-    reset: number;
-  } {
+  async check(identifier: string): Promise<RateLimitResult> {
+    if (this.remoteLimiter) {
+      const result = await this.remoteLimiter.limit(identifier);
+      return {
+        success: result.success,
+        limit: this.limit,
+        remaining: result.remaining,
+        reset: result.reset,
+      };
+    }
+
+    return this.checkInMemory(identifier);
+  }
+
+  private checkInMemory(identifier: string): RateLimitResult {
     const now = Date.now();
     const entry = this.cache.get(identifier);
 
-    // Clean up old entries if cache is too large
     if (this.cache.size > this.maxSize) {
       this.cleanup(now);
     }
 
-    // No entry or window expired - allow request
     if (!entry || now > entry.resetTime) {
       this.cache.set(identifier, {
         count: 1,
-        resetTime: now + windowMs,
+        resetTime: now + this.windowMs,
       });
 
       return {
         success: true,
-        limit,
-        remaining: limit - 1,
-        reset: now + windowMs,
+        limit: this.limit,
+        remaining: this.limit - 1,
+        reset: now + this.windowMs,
       };
     }
 
-    // Entry exists and window still active
-    if (entry.count < limit) {
-      // Allow request
+    if (entry.count < this.limit) {
       entry.count++;
       this.cache.set(identifier, entry);
 
       return {
         success: true,
-        limit,
-        remaining: limit - entry.count,
+        limit: this.limit,
+        remaining: this.limit - entry.count,
         reset: entry.resetTime,
       };
     }
 
-    // Rate limit exceeded
     return {
       success: false,
-      limit,
+      limit: this.limit,
       remaining: 0,
       reset: entry.resetTime,
     };
   }
 
-  /**
-   * Clean up expired entries
-   */
   private cleanup(now: number) {
-    const entriesToDelete: string[] = [];
-
     for (const [key, entry] of this.cache.entries()) {
       if (now > entry.resetTime) {
-        entriesToDelete.push(key);
+        this.cache.delete(key);
       }
     }
-
-    entriesToDelete.forEach((key) => this.cache.delete(key));
-  }
-
-  /**
-   * Reset rate limit for a specific identifier
-   */
-  reset(identifier: string) {
-    this.cache.delete(identifier);
-  }
-
-  /**
-   * Get current stats
-   */
-  getStats() {
-    return {
-      size: this.cache.size,
-      maxSize: this.maxSize,
-    };
   }
 }
 
-// Create singleton instances for different API endpoints
-const rateLimiters = {
-  // AI message generation - expensive OpenAI calls
-  generateMessage: new RateLimiter(500),
-
-  // Demo referrals - public endpoint
-  demoReferrals: new RateLimiter(1000),
-
-  // QR code generation - CPU intensive
-  generateQR: new RateLimiter(500),
-
-  // General API rate limiter
-  general: new RateLimiter(1000),
-};
-
 /**
- * Get client identifier from request (IP address)
+ * Get a stable identifier for the client based on request metadata.
  */
 export function getClientIdentifier(request: Request): string {
-  // Try to get real IP from headers (Vercel, Cloudflare, etc.)
-  const forwarded = request.headers.get('x-forwarded-for');
-  const realIp = request.headers.get('x-real-ip');
+  const headerCandidates = [
+    "cf-connecting-ip",
+    "x-client-ip",
+    "x-forwarded-for",
+    "x-real-ip",
+    "x-cluster-client-ip",
+    "forwarded",
+    "true-client-ip",
+    "fastly-client-ip",
+  ];
 
-  if (forwarded) {
-    return forwarded.split(',')[0].trim();
+  for (const headerName of headerCandidates) {
+    const headerValue = request.headers.get(headerName);
+    if (!headerValue) continue;
+
+    if (headerName === "forwarded") {
+      const match = headerValue.match(/for="?([^;"]+)/i);
+      if (match?.[1]) {
+        return match[1].split(",")[0].trim();
+      }
+    } else {
+      return headerValue.split(",")[0].trim();
+    }
   }
 
-  if (realIp) {
-    return realIp;
+  const remoteAddr = request.headers.get("remote-addr");
+  if (remoteAddr) {
+    return remoteAddr;
   }
 
-  // Fallback to a generic identifier
-  return 'unknown';
+  // Final fallback: hash a subset of headers so individual clients don't all share "unknown".
+  const fingerprintSource = [
+    request.headers.get("user-agent") ?? "unknown-agent",
+    request.headers.get("accept-language") ?? "unknown-language",
+    request.headers.get("referer") ?? "unknown-referer",
+  ].join("|");
+
+  return createHash("sha256").update(fingerprintSource).digest("hex");
 }
 
-/**
- * Rate limit presets for different API endpoints
- */
-export const rateLimitPresets = {
-  // AI message generation: 10 requests per minute (expensive)
-  generateMessage: {
-    limiter: rateLimiters.generateMessage,
+const rateLimiters = {
+  generateMessage: new RateLimiter({
+    name: "generateMessage",
     limit: 10,
-    windowMs: 60 * 1000, // 1 minute
-  },
-
-  // Demo referrals: 30 requests per minute (public facing)
-  demoReferrals: {
-    limiter: rateLimiters.demoReferrals,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  demoReferrals: new RateLimiter({
+    name: "demoReferrals",
     limit: 30,
-    windowMs: 60 * 1000, // 1 minute
-  },
-
-  // QR code generation: 20 requests per minute
-  generateQR: {
-    limiter: rateLimiters.generateQR,
+    windowMs: 60 * 1000,
+    maxSize: 1000,
+  }),
+  generateQR: new RateLimiter({
+    name: "generateQR",
     limit: 20,
-    windowMs: 60 * 1000, // 1 minute
-  },
-
-  // General API: 60 requests per minute
-  general: {
-    limiter: rateLimiters.general,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  referralStats: new RateLimiter({
+    name: "referralStats",
+    limit: 15,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  ambassadorCode: new RateLimiter({
+    name: "ambassadorCode",
+    limit: 10,
+    windowMs: 60 * 1000,
+    maxSize: 2000,
+  }),
+  general: new RateLimiter({
+    name: "general",
     limit: 60,
-    windowMs: 60 * 1000, // 1 minute
-  },
+    windowMs: 60 * 1000,
+    maxSize: 1000,
+  }),
 };
 
-/**
- * Helper function to apply rate limiting to an API route
- * @param request - Next.js request object
- * @param preset - Rate limit preset to use
- * @returns Rate limit check result or null if successful
- */
-export function checkRateLimit(
-  request: Request,
-  preset: keyof typeof rateLimitPresets
-): { success: boolean; response?: Response } {
-  const { limiter, limit, windowMs } = rateLimitPresets[preset];
-  const identifier = getClientIdentifier(request);
+export const rateLimitPresets = rateLimiters;
 
-  const result = limiter.check(identifier, limit, windowMs);
+export async function checkRateLimit(
+  request: Request,
+  preset: keyof typeof rateLimitPresets,
+): Promise<{ success: boolean; response?: Response }> {
+  const limiter = rateLimitPresets[preset];
+  const identifier = getClientIdentifier(request);
+  const result = await limiter.check(identifier);
 
   if (!result.success) {
-    const retryAfter = Math.ceil((result.reset - Date.now()) / 1000);
+    const retryAfter = Math.max(1, Math.ceil((result.reset - Date.now()) / 1000));
 
     return {
       success: false,
       response: new Response(
         JSON.stringify({
-          error: 'Too many requests',
+          error: "Too many requests",
           message: `Rate limit exceeded. Please try again in ${retryAfter} seconds.`,
           retryAfter,
         }),
         {
           status: 429,
           headers: {
-            'Content-Type': 'application/json',
-            'X-RateLimit-Limit': limit.toString(),
-            'X-RateLimit-Remaining': '0',
-            'X-RateLimit-Reset': result.reset.toString(),
-            'Retry-After': retryAfter.toString(),
+            "Content-Type": "application/json",
+            "X-RateLimit-Limit": limiter.limit.toString(),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": result.reset.toString(),
+            "Retry-After": retryAfter.toString(),
           },
-        }
+        },
       ),
     };
   }
@@ -224,15 +248,47 @@ export function checkRateLimit(
   return { success: true };
 }
 
-/**
- * Higher-order function to wrap API routes with rate limiting
- */
+export async function checkRateLimitForIdentifier(
+  identifier: string,
+  preset: keyof typeof rateLimitPresets,
+): Promise<{ success: boolean; response?: Response }> {
+  const limiter = rateLimitPresets[preset];
+  const result = await limiter.check(identifier);
+
+  if (!result.success) {
+    const retryAfter = Math.max(1, Math.ceil((result.reset - Date.now()) / 1000));
+
+    return {
+      success: false,
+      response: new Response(
+        JSON.stringify({
+          error: "Too many requests",
+          message: `Rate limit exceeded. Please try again in ${retryAfter} seconds.`,
+          retryAfter,
+        }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "X-RateLimit-Limit": limiter.limit.toString(),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": result.reset.toString(),
+            "Retry-After": retryAfter.toString(),
+          },
+        },
+      ),
+    };
+  }
+
+  return { success: true };
+}
+
 export function withRateLimit<T extends (request: Request) => Promise<Response>>(
   handler: T,
-  preset: keyof typeof rateLimitPresets
+  preset: keyof typeof rateLimitPresets,
 ): (request: Request) => Promise<Response> {
   return async (request: Request) => {
-    const rateLimitCheck = checkRateLimit(request, preset);
+    const rateLimitCheck = await checkRateLimit(request, preset);
 
     if (!rateLimitCheck.success && rateLimitCheck.response) {
       return rateLimitCheck.response;

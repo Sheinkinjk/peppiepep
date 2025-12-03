@@ -117,7 +117,8 @@ body {
 }
 
 .tiffany-hero {
-  background: linear-gradient(180deg, #F4FEFF 0%, #E6FBFE 35%, #C0F3F7 60%, #8BE6EF 80%, #4DD0E1 100%);
+  background: linear-gradient(180deg, #eefcfe 0%, #cbeff3 25%, #8bd6df 50%, #2fa3b0 75%, #01545f 100%);
+  background-attachment: fixed;
 }
 
 .glass {

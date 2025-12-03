@@ -8,10 +8,16 @@ export interface Database {
           id: string;
           owner_id: string;
           name: string | null;
+          logo_url: string | null;
           offer_text: string | null;
-          reward_type: string | null;
+          reward_type: "credit" | "upgrade" | "discount" | "points" | null;
           reward_amount: number | null;
           upgrade_name: string | null;
+          client_reward_text: string | null;
+          new_user_reward_text: string | null;
+          reward_terms: string | null;
+          brand_highlight_color: string | null;
+          brand_tone: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -19,10 +25,16 @@ export interface Database {
           id?: string;
           owner_id: string;
           name?: string | null;
+          logo_url?: string | null;
           offer_text?: string | null;
-          reward_type?: string | null;
+          reward_type?: "credit" | "upgrade" | "discount" | "points" | null;
           reward_amount?: number | null;
           upgrade_name?: string | null;
+          client_reward_text?: string | null;
+          new_user_reward_text?: string | null;
+          reward_terms?: string | null;
+          brand_highlight_color?: string | null;
+          brand_tone?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -30,10 +42,16 @@ export interface Database {
           id?: string;
           owner_id?: string;
           name?: string | null;
+          logo_url?: string | null;
           offer_text?: string | null;
-          reward_type?: string | null;
+          reward_type?: "credit" | "upgrade" | "discount" | "points" | null;
           reward_amount?: number | null;
           upgrade_name?: string | null;
+          client_reward_text?: string | null;
+          new_user_reward_text?: string | null;
+          reward_terms?: string | null;
+          brand_highlight_color?: string | null;
+          brand_tone?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -81,11 +99,18 @@ export interface Database {
           id: string;
           business_id: string;
           ambassador_id: string | null;
+          campaign_id: string | null;
+          consent_given: boolean | null;
+          locale: string | null;
           referred_name: string | null;
           referred_email: string | null;
           referred_phone: string | null;
           status: string | null;
           rewarded_at: string | null;
+          transaction_value: number | null;
+          transaction_date: string | null;
+          service_type: string | null;
+          created_by: string | null;
           created_at: string | null;
           updated_at?: string | null;
         };
@@ -93,11 +118,18 @@ export interface Database {
           id?: string;
           business_id: string;
           ambassador_id?: string | null;
+          campaign_id?: string | null;
+          consent_given?: boolean | null;
+          locale?: string | null;
           referred_name?: string | null;
           referred_email?: string | null;
           referred_phone?: string | null;
           status?: string | null;
           rewarded_at?: string | null;
+          transaction_value?: number | null;
+          transaction_date?: string | null;
+          service_type?: string | null;
+          created_by?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -105,13 +137,165 @@ export interface Database {
           id?: string;
           business_id?: string;
           ambassador_id?: string | null;
+          campaign_id?: string | null;
+          consent_given?: boolean | null;
+          locale?: string | null;
           referred_name?: string | null;
           referred_email?: string | null;
           referred_phone?: string | null;
           status?: string | null;
           rewarded_at?: string | null;
+          transaction_value?: number | null;
+          transaction_date?: string | null;
+          service_type?: string | null;
+          created_by?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
+        };
+      };
+      campaigns: {
+        Row: {
+          id: string;
+          business_id: string;
+          name: string | null;
+          message: string | null;
+          channel: "sms" | "email" | null;
+          status: string | null;
+          total_recipients: number | null;
+          sent_count: number | null;
+          failed_count: number | null;
+          snapshot_offer_text: string | null;
+          snapshot_new_user_reward_text: string | null;
+          snapshot_client_reward_text: string | null;
+          snapshot_reward_type: "credit" | "upgrade" | "discount" | "points" | null;
+          snapshot_reward_amount: number | null;
+          snapshot_upgrade_name: string | null;
+          snapshot_reward_terms: string | null;
+          snapshot_logo_url: string | null;
+          snapshot_story_blocks: Record<string, unknown>[] | null;
+          snapshot_include_qr: boolean | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Insert: {
+          id?: string;
+          business_id: string;
+          name?: string | null;
+          message?: string | null;
+          channel?: "sms" | "email" | null;
+          status?: string | null;
+          total_recipients?: number | null;
+          sent_count?: number | null;
+          failed_count?: number | null;
+          snapshot_offer_text?: string | null;
+          snapshot_new_user_reward_text?: string | null;
+          snapshot_client_reward_text?: string | null;
+          snapshot_reward_type?: "credit" | "upgrade" | "discount" | "points" | null;
+          snapshot_reward_amount?: number | null;
+          snapshot_upgrade_name?: string | null;
+          snapshot_reward_terms?: string | null;
+          snapshot_logo_url?: string | null;
+          snapshot_story_blocks?: Record<string, unknown>[] | null;
+          snapshot_include_qr?: boolean | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          business_id?: string;
+          name?: string | null;
+          message?: string | null;
+          channel?: "sms" | "email" | null;
+          status?: string | null;
+          total_recipients?: number | null;
+          sent_count?: number | null;
+          failed_count?: number | null;
+          snapshot_offer_text?: string | null;
+          snapshot_new_user_reward_text?: string | null;
+          snapshot_client_reward_text?: string | null;
+          snapshot_reward_type?: "credit" | "upgrade" | "discount" | "points" | null;
+          snapshot_reward_amount?: number | null;
+          snapshot_upgrade_name?: string | null;
+          snapshot_reward_terms?: string | null;
+          snapshot_logo_url?: string | null;
+          snapshot_story_blocks?: Record<string, unknown>[] | null;
+          snapshot_include_qr?: boolean | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+      };
+      referral_events: {
+        Row: {
+          id: string;
+          business_id: string;
+          ambassador_id: string | null;
+          referral_id: string | null;
+          event_type:
+            | "link_visit"
+            | "signup_submitted"
+            | "conversion_pending"
+            | "conversion_completed"
+            | "manual_conversion_recorded"
+            | "payout_released"
+            | "payout_adjusted"
+            | "campaign_message_queued"
+            | "campaign_message_sent"
+            | "campaign_message_delivered"
+            | "campaign_message_failed"
+            | "campaign_delivery_batch_started"
+            | "campaign_delivery_batch_finished";
+          source: string | null;
+          device: string | null;
+          metadata: Record<string, unknown> | null;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          business_id: string;
+          ambassador_id?: string | null;
+          referral_id?: string | null;
+          event_type:
+            | "link_visit"
+            | "signup_submitted"
+            | "conversion_pending"
+            | "conversion_completed"
+            | "manual_conversion_recorded"
+            | "payout_released"
+            | "payout_adjusted"
+            | "campaign_message_queued"
+            | "campaign_message_sent"
+            | "campaign_message_delivered"
+            | "campaign_message_failed"
+            | "campaign_delivery_batch_started"
+            | "campaign_delivery_batch_finished";
+          source?: string | null;
+          device?: string | null;
+          metadata?: Record<string, unknown> | null;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          business_id?: string;
+          ambassador_id?: string | null;
+          referral_id?: string | null;
+          event_type?:
+            | "link_visit"
+            | "signup_submitted"
+            | "conversion_pending"
+            | "conversion_completed"
+            | "manual_conversion_recorded"
+            | "payout_released"
+            | "payout_adjusted"
+            | "campaign_message_queued"
+            | "campaign_message_sent"
+            | "campaign_message_delivered"
+            | "campaign_message_failed"
+            | "campaign_delivery_batch_started"
+            | "campaign_delivery_batch_finished";
+          source?: string | null;
+          device?: string | null;
+          metadata?: Record<string, unknown> | null;
+          created_at?: string | null;
         };
       };
       demo_referrals: {

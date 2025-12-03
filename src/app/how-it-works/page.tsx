@@ -18,9 +18,6 @@ export default function HowItWorks() {
       <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
 
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
-            Step-by-step guide
-          </div>
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
             How Pepform turns customers into micro‑influencers
           </h1>

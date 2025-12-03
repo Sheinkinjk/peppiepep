@@ -10,7 +10,7 @@ import { verifyUrlsAreReachable } from "@/lib/link-preflight";
 import { logReferralEvent } from "@/lib/referral-events";
 import { dispatchCampaignMessagesInline } from "@/lib/campaign-inline-dispatch";
 import { ensureAbsoluteUrl } from "@/lib/urls";
-import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
+import { createServerComponentClient } from "@/lib/supabase";
 
 export const runtime = "nodejs";
 

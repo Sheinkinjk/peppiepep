@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -14,11 +14,78 @@ export default function DemoReferralPage() {
   const [error, setError] = useState("");
   const [personalizedLink, setPersonalizedLink] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
+  const [formErrors, setFormErrors] = useState<{ name?: string; phone?: string; email?: string }>({});
+  type DemoAmbassador = {
+    id: string;
+    name: string;
+    referral_code: string;
+    email?: string | null;
+  };
+  const [demoAmbassadors, setDemoAmbassadors] = useState<DemoAmbassador[]>([]);
+  const [selectedAmbassadorId, setSelectedAmbassadorId] = useState<string | null>(null);
+  const [progressMessage, setProgressMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const fallbackAmbassadors: DemoAmbassador[] = [
+      { id: "fallback-1", name: "Ava Smith", referral_code: "AVA-GLOW", email: "ava@example.com" },
+      { id: "fallback-2", name: "Roman Lobanov", referral_code: "ROMAN-PEP", email: "roman@example.com" },
+      { id: "fallback-3", name: "Arthur Kaganovitch", referral_code: "ARTHUR-ELITE", email: "arthur@example.com" },
+    ];
+    async function loadSampleAmbassadors() {
+      try {
+        const response = await fetch("/api/demo-dashboard?persona=frontdesk");
+        if (!response.ok) throw new Error("Failed to load demo ambassadors");
+        const payload = await response.json();
+        if (cancelled) return;
+        const samples: DemoAmbassador[] = (payload.customers || [])
+          .filter((row: Record<string, unknown>) => row?.referral_code)
+          .slice(0, 6)
+          .map((row: Record<string, unknown>) => ({
+            id: String(row.id ?? row.referral_code),
+            name: String(row.name ?? "Ambassador"),
+            referral_code: String(row.referral_code),
+            email: row.email ? String(row.email) : null,
+          }));
+        const finalList = samples.length > 0 ? samples : fallbackAmbassadors;
+        setDemoAmbassadors(finalList);
+        setSelectedAmbassadorId(finalList[0]?.id ?? null);
+      } catch (err) {
+        console.warn("Falling back to default ambassadors:", err);
+        if (!cancelled) {
+          setDemoAmbassadors(fallbackAmbassadors);
+          setSelectedAmbassadorId(fallbackAmbassadors[0].id);
+        }
+      }
+    }
+    loadSampleAmbassadors();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const selectedAmbassador = demoAmbassadors.find((amb) => amb.id === selectedAmbassadorId) ?? null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    const nextErrors: typeof formErrors = {};
+    if (!formData.name.trim()) {
+      nextErrors.name = "Please enter your full name.";
+    }
+    const cleanedPhone = formData.phone.replace(/[^\d+]/g, "");
+    if (cleanedPhone.length < 8) {
+      nextErrors.phone = "Enter a valid phone number (at least 8 digits).";
+    }
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      nextErrors.email = "Please enter a valid email address.";
+    }
+    setFormErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      return;
+    }
     setLoading(true);
+    setProgressMessage("Locking in your ambassador perks…");
 
     try {
       const response = await fetch("/api/demo-referrals", {
@@ -47,7 +114,10 @@ export default function DemoReferralPage() {
       const tokenSource =
         formData.email || formData.phone || formData.name || "pepform";
       const token = tokenSource.replace(/[^a-zA-Z0-9]/g, "").slice(0, 10).toUpperCase() || "PEP200";
-      setPersonalizedLink(`${baseOrigin}/r/${token}`);
+      const link = selectedAmbassador?.referral_code
+        ? `${baseOrigin}/r/${selectedAmbassador.referral_code}`
+        : `${baseOrigin}/r/${token}`;
+      setPersonalizedLink(link);
       setSubmitted(true);
     } catch (err: unknown) {
       const message =
@@ -55,6 +125,7 @@ export default function DemoReferralPage() {
       setError(message);
     } finally {
       setLoading(false);
+      setProgressMessage(null);
     }
   };
 
@@ -72,6 +143,11 @@ export default function DemoReferralPage() {
             <p className="max-w-2xl text-sm text-slate-200/80">
               We have sent a confirmation SMS to <span className="font-semibold text-white">{formData.phone}</span>. Your loyalty perks are active and your network will see your referral link immediately.
             </p>
+            {selectedAmbassador && (
+              <p className="text-xs uppercase tracking-wide text-emerald-200">
+                Ambassador concierge: {selectedAmbassador.name}
+              </p>
+            )}
           </div>
 
           <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
@@ -266,6 +342,34 @@ export default function DemoReferralPage() {
                 </div>
               </div>
 
+              {demoAmbassadors.length > 0 && (
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-3">
+                  <p className="text-sm font-semibold text-white">Choose the ambassador you’re impersonating</p>
+                  <p className="text-xs text-slate-200/80">
+                    This helps the demo mirror a real customer upload. In production, ambassadors are matched automatically from your CSV.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {demoAmbassadors.map((amb) => (
+                      <button
+                        key={amb.id}
+                        type="button"
+                        onClick={() => setSelectedAmbassadorId(amb.id)}
+                        className={`rounded-2xl border px-3 py-2 text-left transition ${
+                          selectedAmbassadorId === amb.id
+                            ? "border-emerald-400 bg-emerald-500/10 text-white"
+                            : "border-white/20 bg-white/5 text-slate-200 hover:border-white/40"
+                        }`}
+                      >
+                        <p className="text-sm font-semibold">{amb.name}</p>
+                        <p className="text-[11px] text-slate-300/80">
+                          {amb.email || amb.referral_code}
+                        </p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-white font-bold flex items-center gap-2">
@@ -281,6 +385,9 @@ export default function DemoReferralPage() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="h-12 bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-purple-400 focus:ring-purple-400"
                   />
+                  {formErrors.name && (
+                    <p className="text-xs text-red-200">{formErrors.name}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-white font-bold flex items-center gap-2">
@@ -297,6 +404,9 @@ export default function DemoReferralPage() {
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="h-12 bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400"
                   />
+                  {formErrors.phone && (
+                    <p className="text-xs text-red-200">{formErrors.phone}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-white font-bold flex items-center gap-2">
@@ -312,6 +422,9 @@ export default function DemoReferralPage() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="h-12 bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-amber-400 focus:ring-amber-400"
                   />
+                  {formErrors.email && (
+                    <p className="text-xs text-red-200">{formErrors.email}</p>
+                  )}
                 </div>
 
                 {error && (
@@ -327,7 +440,9 @@ export default function DemoReferralPage() {
                   disabled={loading}
                 >
                   {loading ? (
-                    "Activating Your Account..."
+                    <>
+                      <span className="animate-pulse">Activating your account…</span>
+                    </>
                   ) : (
                     <>
                       <Sparkles className="mr-2 h-5 w-5" />
@@ -335,6 +450,9 @@ export default function DemoReferralPage() {
                     </>
                   )}
                 </Button>
+                {progressMessage && (
+                  <p className="text-center text-xs text-slate-200/80">{progressMessage}</p>
+                )}
               </form>
 
               <div className="rounded-2xl border border-emerald-300/40 bg-emerald-950/30 p-5">

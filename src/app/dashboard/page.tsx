@@ -1,18 +1,15 @@
-import Papa from "papaparse";
-import * as XLSX from "xlsx";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const runtime = "nodejs";
+
 import { nanoid } from "nanoid";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import twilio from "twilio";
 
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Table,
-  TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
@@ -20,26 +17,75 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Toaster } from "@/components/ui/toaster";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
-import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
+import { QuickAddCustomerForm } from "@/components/QuickAddCustomerForm";
 import { AITools } from "@/components/AITools";
 import { CustomersTable } from "@/components/CustomersTable";
 import { DashboardShortcutCards } from "@/components/DashboardShortcutCards";
+import { WebsiteIntegrationCard } from "@/components/WebsiteIntegrationCard";
+import { ManualReferralForm } from "@/components/ManualReferralForm";
+import { CampaignsTable } from "@/components/CampaignsTable";
+import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
+import { ReferralsTable } from "@/components/ReferralsTable";
+import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingChecklist";
+import { ShareReferralCard } from "@/components/ShareReferralCard";
+import { ReferralJourneyReport, type ReferralJourneyEvent } from "@/components/ReferralJourneyReport";
+import { logReferralEvent } from "@/lib/referral-events";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
-  Gift, Crown, BarChart3, Settings as SettingsIcon,
-  Award, Rocket, CreditCard, Plus, Send,
+  Gift, Crown, BarChart3,
+  Award, Rocket, CreditCard, Send,
+  ClipboardList,
 } from "lucide-react";
-import {
-  createServerComponentClient,
-  createServiceClient,
-} from "@/lib/supabase";
+import { createServerComponentClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
-import twilio from "twilio";
-import { Resend } from "resend";
-import { normalizePhoneNumber } from "@/lib/phone-utils";
+import { calculateNextCredits, parseCreditDelta } from "@/lib/credits";
+import { ensureAbsoluteUrl } from "@/lib/urls";
 
-async function getBusiness() {
+const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
+const INITIAL_REFERRAL_TABLE_LIMIT = 25;
+type BusinessRow = Database["public"]["Tables"]["businesses"]["Row"];
+type BusinessCoreFields = Omit<BusinessRow, "logo_url" | "brand_highlight_color" | "brand_tone"> & {
+  logo_url?: string | null;
+  brand_highlight_color?: string | null;
+  brand_tone?: string | null;
+};
+type CampaignSummary = Pick<
+  Database["public"]["Tables"]["campaigns"]["Row"],
+  | "id"
+  | "name"
+  | "channel"
+  | "status"
+  | "total_recipients"
+  | "sent_count"
+  | "failed_count"
+  | "created_at"
+>;
+type CampaignEventStats = Record<
+  string,
+  {
+    clicks: number;
+    signups: number;
+    conversions: number;
+  }
+>;
+
+type ReferralEventRow = {
+  id: string;
+  event_type: string;
+  source: string | null;
+  device: string | null;
+  created_at: string | null;
+  metadata: Record<string, unknown> | null;
+  referral_id: string | null;
+  ambassador: {
+    id: string | null;
+    name: string | null;
+    referral_code: string | null;
+  } | null;
+};
+
+async function getBusiness(): Promise<BusinessCoreFields> {
   const supabase = await createServerComponentClient();
   const {
     data: { user },
@@ -47,19 +93,36 @@ async function getBusiness() {
 
   if (!user) redirect("/login");
 
-  // Select only core columns that definitely exist
-  const { data, error } = await supabase
-    .from("businesses")
-    .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
-    .eq("owner_id", user.id)
-    .single();
+  const selectColumns =
+    "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at";
 
-  // Log error for debugging but don't crash
-  if (error) {
+  const buildOwnerQuery = () =>
+    supabase
+      .from("businesses")
+      .select(selectColumns)
+      .eq("owner_id", user.id)
+      .order("created_at", { ascending: false });
+
+  // Attempt to load a single row; fall back gracefully if the owner somehow has duplicates.
+  const { data, error } = await buildOwnerQuery().single<BusinessCoreFields>();
+  let baseBusiness: BusinessCoreFields | null = null;
+  if (data) {
+    baseBusiness = data;
+  } else if (error?.code === "PGRST116") {
+    const { data: fallbackRows, error: fallbackError } = await buildOwnerQuery().limit(1);
+    if (!fallbackError && fallbackRows && fallbackRows.length > 0) {
+      console.warn(
+        "Multiple business records detected for owner. Using the most recently created business.",
+      );
+      baseBusiness = fallbackRows[0] as BusinessCoreFields;
+    } else if (fallbackError) {
+      console.error("Error fetching business:", fallbackError);
+    }
+  } else if (error) {
     console.error("Error fetching business:", error);
   }
 
-  if (!data) {
+  if (!baseBusiness) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { data: newBiz } = await (supabase as any)
       .from("businesses")
@@ -69,131 +132,166 @@ async function getBusiness() {
           name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
         },
       ])
-      .select("id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at")
+      .select(
+        "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at",
+      )
       .single();
     return newBiz;
   }
 
-  return data;
+  // Attach optional fields like logo_url in a second, non-critical query so we
+  // never mis-detect business existence if the column is missing.
+  let businessWithExtras: BusinessCoreFields = baseBusiness as BusinessCoreFields;
+
+  try {
+    const { data: extras, error: extrasError } = await supabase
+      .from("businesses")
+      .select("logo_url, brand_highlight_color, brand_tone")
+      .eq("id", baseBusiness.id)
+      .single<Pick<BusinessRow, "logo_url" | "brand_highlight_color" | "brand_tone">>();
+
+    if (!extrasError && extras) {
+      businessWithExtras = {
+        ...businessWithExtras,
+        logo_url: extras.logo_url ?? null,
+        brand_highlight_color: extras.brand_highlight_color ?? null,
+        brand_tone: extras.brand_tone ?? null,
+      };
+    } else if (extrasError) {
+      if (extrasError.code === "42703") {
+        const { data: legacyLogo, error: legacyError } = await supabase
+          .from("businesses")
+          .select("logo_url")
+          .eq("id", baseBusiness.id)
+          .single<Pick<BusinessRow, "logo_url">>();
+
+        if (!legacyError && legacyLogo) {
+          businessWithExtras = {
+            ...businessWithExtras,
+            logo_url: legacyLogo.logo_url ?? null,
+          };
+        } else if (legacyError && legacyError.code !== "42703") {
+          console.warn("Optional business fields not available:", legacyError);
+        }
+      } else {
+        console.warn("Optional business fields not available:", extrasError);
+      }
+    }
+  } catch (extrasUnexpectedError) {
+    console.warn("Failed to load optional business fields:", extrasUnexpectedError);
+  }
+
+  return businessWithExtras;
 }
 
 export default async function Dashboard() {
   const business = await getBusiness();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const defaultSiteUrl = ensureAbsoluteUrl("http://localhost:3000") ?? "http://localhost:3000";
+  const configuredSiteUrl = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+  const siteUrl = configuredSiteUrl ?? defaultSiteUrl;
   const baseSiteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "");
-
+    ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
+    ensureAbsoluteUrl(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ??
+    siteUrl;
   async function updateSettings(formData: FormData) {
     "use server";
     const supabase = await createServerComponentClient();
 
-    const updateData: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
-      offer_text: (formData.get("offer_text") as string) ?? null,
-      reward_type: (formData.get("reward_type") as string) ?? null,
-      reward_amount: Number(formData.get("reward_amount") || 0),
-      upgrade_name: ((formData.get("upgrade_name") as string) || "").trim() || null,
+    const normalizeHexColorInput = (value: string | null | undefined) => {
+      if (!value) return null;
+      const trimmed = value.trim();
+      if (!trimmed) return null;
+      const prefixed = trimmed.startsWith("#") ? trimmed : `#${trimmed}`;
+      if (!/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(prefixed)) {
+        return null;
+      }
+      if (prefixed.length === 4) {
+        return `#${prefixed[1]}${prefixed[1]}${prefixed[2]}${prefixed[2]}${prefixed[3]}${prefixed[3]}`.toLowerCase();
+      }
+      return prefixed.toLowerCase();
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    await (supabase as any)
-      .from("businesses")
-      .update(updateData)
-      .eq("id", business.id);
-    revalidatePath("/dashboard");
-  }
+    const rewardTypeValue = formData.get("reward_type");
+    const allowedRewardTypes = new Set(["credit", "upgrade", "discount", "points"]);
+    const normalizedRewardType =
+      typeof rewardTypeValue === "string" && allowedRewardTypes.has(rewardTypeValue)
+        ? (rewardTypeValue as Database["public"]["Tables"]["businesses"]["Update"]["reward_type"])
+        : null;
 
-  async function uploadCSV(formData: FormData) {
-    "use server";
-    try {
-      const file = formData.get("file");
+    const logoUrlRaw = (formData.get("logo_url") as string | null) ?? "";
+    const logoUrl = logoUrlRaw.trim() || null;
+    const highlightRaw = (formData.get("brand_highlight_color") as string | null) ?? "";
+    const normalizedHighlight = normalizeHexColorInput(highlightRaw);
+    const toneRaw = ((formData.get("brand_tone") as string | null) ?? "").trim().toLowerCase();
+    const allowedTones = new Set(["modern", "luxury", "playful", "earthy", "minimal"]);
+    const normalizedTone =
+      toneRaw && allowedTones.has(toneRaw)
+        ? toneRaw
+        : null;
 
-      if (!(file instanceof File)) {
-        return { error: "Please select a file to upload." };
-      }
+    const updateData: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
+      offer_text: (formData.get("offer_text") as string) ?? null,
+      reward_type: normalizedRewardType,
+      reward_amount: Number(formData.get("reward_amount") || 0),
+      upgrade_name: ((formData.get("upgrade_name") as string) || "").trim() || null,
+      client_reward_text:
+        ((formData.get("client_reward_text") as string) || "").trim() || null,
+      new_user_reward_text:
+        ((formData.get("new_user_reward_text") as string) || "").trim() || null,
+      reward_terms:
+        ((formData.get("reward_terms") as string) || "").trim() || null,
+      logo_url: logoUrl,
+      brand_highlight_color: normalizedHighlight,
+      brand_tone: normalizedTone,
+    };
 
-      const fileName = file.name.toLowerCase();
-      const isCSV = fileName.endsWith('.csv');
-      const isExcel = fileName.endsWith('.xlsx') || fileName.endsWith('.xls');
+    const optionalColumns: Array<keyof Database["public"]["Tables"]["businesses"]["Update"]> = [
+      "logo_url",
+      "brand_highlight_color",
+      "brand_tone",
+    ];
+    const attemptPayload: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
+      ...updateData,
+    };
+    let lastError: { code?: string; message?: string } | null = null;
 
-      // Validate file type
-      if (!isCSV && !isExcel) {
-        return { error: "Invalid file type. Please upload a CSV or Excel file (.csv, .xlsx, .xls)." };
-      }
-
-      // Validate file size (max 5MB)
-      if (file.size > 5 * 1024 * 1024) {
-        return { error: "File too large. Maximum size is 5MB." };
-      }
-
-      let parsedData: Array<Record<string, string>> = [];
-
-      if (isCSV) {
-        // Parse CSV
-        const text = await file.text();
-        const parsed = Papa.parse<Record<string, string>>(text, { header: true });
-
-        if (parsed.errors && parsed.errors.length > 0) {
-          console.error("CSV parsing errors:", parsed.errors);
-          return { error: "CSV parsing failed. Please check your file format." };
-        }
-
-        parsedData = parsed.data || [];
-      } else {
-        // Parse Excel
-        const arrayBuffer = await file.arrayBuffer();
-        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-
-        // Get first sheet
-        const firstSheetName = workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[firstSheetName];
-
-        // Convert to JSON with header row
-        const rows = XLSX.utils.sheet_to_json<(string | number)[]>(worksheet, {
-          header: 1,
-          defval: ""
-        });
-        const headers = (rows[0] as string[] | undefined) || [];
-        parsedData = rows.slice(1).map((rowArr) => {
-          const obj: Record<string, string> = {};
-          headers.forEach((header, index) => {
-            const value = (rowArr && rowArr[index] !== undefined) ? String(rowArr[index]) : "";
-            obj[header] = value;
-          });
-          return obj;
-        });
-      }
-
-      const supabase = await createServiceClient(); // service role to bypass RLS for bulk insert
-
-      const customersToInsert = parsedData
-        .map((row) => ({
-          business_id: business.id,
-          name: row.name || row.Name || row.full_name || row['Full Name'] || null,
-          phone: row.phone || row.Phone || row.mobile || row.Mobile || null,
-          email: row.email || row.Email || null,
-          referral_code: nanoid(12),
-        }))
-        .filter((row) => row.name || row.phone || row.email);
-
-      if (customersToInsert.length === 0) {
-        return { error: "No valid customer data found. Please ensure your file has 'name', 'phone', or 'email' columns." };
-      }
-
+    for (let attempt = 0; attempt <= optionalColumns.length; attempt++) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: insertError } = await (supabase as any).from("customers").insert(customersToInsert);
+      const { error } = await (supabase as any)
+        .from("businesses")
+        .update(attemptPayload)
+        .eq("id", business.id);
 
-      if (insertError) {
-        console.error("Upload error:", insertError);
-        return { error: "Failed to import customers. Please try again." };
+      if (!error) {
+        lastError = null;
+        break;
       }
 
-      revalidatePath("/dashboard");
-      return { success: `Successfully imported ${customersToInsert.length} customers!` };
-    } catch (error) {
-      console.error("Upload error:", error);
-      return { error: "An unexpected error occurred while uploading. Please try again." };
+      lastError = error;
+      if (error.code === "42703") {
+        const missingColumn =
+          optionalColumns.find((column) =>
+            error.message?.toLowerCase().includes(column.toLowerCase()),
+          ) ?? null;
+        if (missingColumn) {
+          delete (attemptPayload as Record<string, unknown>)[missingColumn];
+          continue;
+        }
+      }
+
+      break;
     }
+
+    if (lastError && lastError.code === "42703") {
+      console.warn(
+        "Business settings saved without optional branding columns due to missing schema:",
+        lastError,
+      );
+    } else if (lastError) {
+      console.error("Failed to update business settings:", lastError);
+    }
+
+    revalidatePath("/dashboard");
   }
 
   async function markReferralCompleted(formData: FormData) {
@@ -201,26 +299,68 @@ export default async function Dashboard() {
     try {
       const referralId = formData.get("referral_id") as string | null;
       const ambassadorId = formData.get("ambassador_id") as string | null;
+      const transactionValueRaw =
+        (formData.get("transaction_value") as string | null) ?? "";
+      const serviceType =
+        (formData.get("service_type") as string | null)?.trim() || null;
+      const transactionDateRaw =
+        (formData.get("transaction_date") as string | null) ?? "";
 
       if (!referralId || !ambassadorId) {
         return { error: "Missing referral or ambassador information." };
       }
 
-      const supabase = await createServiceClient();
+      const supabase = await createServerComponentClient();
+
+       if (!transactionDateRaw) {
+        return {
+          error: "Please provide the transaction date for this referral.",
+        };
+      }
 
       const amount =
         business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
 
-      // Update referral status
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: updateError } = await (supabase as any)
-        .from("referrals")
-        .update({ status: "completed", rewarded_at: new Date().toISOString() })
-        .eq("id", referralId);
+      const transactionValue = transactionValueRaw
+        ? Number(transactionValueRaw)
+        : null;
+      if (transactionValueRaw && Number.isNaN(transactionValue)) {
+        return {
+          error:
+            "Please enter a valid transaction amount (e.g. 150 or 200.50).",
+        };
+      }
 
-      if (updateError) {
-        console.error("Failed to update referral:", updateError);
-        return { error: "Failed to mark referral as completed." };
+      const transactionDate = new Date(transactionDateRaw).toISOString();
+
+      const {
+        data: { user: currentUser },
+      } = await supabase.auth.getUser();
+
+      const referralUpdatePayload: Database["public"]["Tables"]["referrals"]["Update"] =
+        {
+          status: "completed",
+          rewarded_at: new Date().toISOString(),
+          transaction_value: transactionValue,
+          transaction_date: transactionDate,
+          service_type: serviceType,
+          created_by: currentUser?.id ?? null,
+        };
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: updatedReferral, error: referralError } = await (supabase as any)
+        .from("referrals")
+        .update(referralUpdatePayload)
+        .eq("id", referralId)
+        .eq("business_id", business.id)
+        .eq("ambassador_id", ambassadorId)
+        .eq("status", "pending")
+        .select("id, ambassador_id, campaign_id")
+        .single();
+
+      if (referralError || !updatedReferral) {
+        console.error("Failed to update referral:", referralError);
+        return { error: "Referral has already been processed or was not found." };
       }
 
       let ambassadorPhone: string | null | undefined;
@@ -246,16 +386,35 @@ export default async function Dashboard() {
         ambassadorReferralCode = (ambassador as any)?.referral_code;
 
         // Update credits
+        const creditsUpdatePayload: Database["public"]["Tables"]["customers"]["Update"] = {
+          credits: currentCredits + amount,
+        };
+
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { error: creditError } = await (supabase as any)
           .from("customers")
-          .update({ credits: currentCredits + amount })
-          .eq("id", ambassadorId);
+          .update(creditsUpdatePayload)
+          .eq("id", ambassadorId)
+          .eq("business_id", business.id);
 
         if (creditError) {
           console.error("Failed to update credits:", creditError);
           return { error: "Failed to update ambassador credits." };
         }
+
+        await logReferralEvent({
+          supabase,
+          businessId: business.id,
+          ambassadorId,
+          referralId: updatedReferral.id,
+          eventType: "payout_released",
+          source: "dashboard",
+          metadata: {
+            amount,
+            service_type: serviceType,
+            transaction_value: transactionValue,
+          },
+        });
       } else {
         const { data: ambassador, error: ambassadorError } = await supabase
           .from("customers")
@@ -297,6 +456,22 @@ export default async function Dashboard() {
         }
       }
 
+      await logReferralEvent({
+        supabase,
+        businessId: business.id,
+        ambassadorId,
+        referralId: updatedReferral.id,
+        eventType: "conversion_completed",
+        source: (updatedReferral as { campaign_id?: string | null })?.campaign_id ?? "dashboard",
+        device: "backoffice",
+        metadata: {
+          campaign_id: (updatedReferral as { campaign_id?: string | null })?.campaign_id ?? null,
+          amount,
+          service_type: serviceType,
+          transaction_value: transactionValue,
+        },
+      });
+
       revalidatePath("/dashboard");
       return { success: `Referral completed! ${amount > 0 ? `$${amount} credited to ambassador.` : ''}` };
     } catch (error) {
@@ -313,10 +488,10 @@ export default async function Dashboard() {
       const email = (formData.get("quick_email") as string | null)?.trim() || "";
 
       if (!name && !phone && !email) {
-        return;
+        return { error: "Enter at least a name, phone, or email before adding a customer." };
       }
 
-      const supabase = await createServiceClient();
+      const supabase = await createServerComponentClient();
       const referral_code = nanoid(12);
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -327,284 +502,311 @@ export default async function Dashboard() {
           phone: phone || null,
           email: email || null,
           referral_code,
+          status: "pending",
         },
       ]);
 
       if (error) {
         console.error("Quick add error:", error);
-        return;
+        return { error: "Unable to add customer. Please try again." };
       }
 
       revalidatePath("/dashboard");
+      const displayLabel = name || phone || email || "Customer";
+      return { success: `${displayLabel} added and ready to refer.` };
     } catch (error) {
       console.error("Quick add error:", error);
+      return { error: "An unexpected error occurred. Please try again." };
     }
   }
 
-  async function sendCampaign(formData: FormData) {
+  async function adjustCustomerCredits(formData: FormData) {
     "use server";
     try {
-      const campaignName = formData.get("campaignName") as string;
-      const campaignMessage = formData.get("campaignMessage") as string;
-      const campaignChannel = formData.get("campaignChannel") as "sms" | "email";
-      const scheduleType = formData.get("scheduleType") as "now" | "later";
-      const scheduleDate = (formData.get("scheduleDate") as string | null) ?? "";
-      const selectedCustomersJson = formData.get("selectedCustomers") as string;
+      const customerId = (formData.get("customer_id") as string | null) ?? "";
+      const deltaInput = (formData.get("credit_amount") as string | null) ?? "";
 
-      if (!campaignName || !campaignMessage || !selectedCustomersJson) {
-        return { error: "Missing required campaign information." };
+      if (!customerId || !deltaInput) {
+        return { error: "Missing customer or credit amount." };
       }
 
-      const selectedCustomerIds = JSON.parse(selectedCustomersJson) as string[];
-
-      if (selectedCustomerIds.length === 0) {
-        return { error: "Please select at least one customer." };
+      const delta = parseCreditDelta(deltaInput);
+      if (delta === null) {
+        return { error: "Please enter a valid dollar amount (e.g. 25 or -10)." };
       }
 
-      // Only support "send now" for initial implementation
-      if (scheduleType === "later") {
+      const supabase = await createServerComponentClient();
+      const { data: customerRecord, error: fetchError } = await supabase
+        .from("customers")
+        .select("credits")
+        .eq("id", customerId)
+        .single();
+
+      if (fetchError || !customerRecord) {
+        console.error("Failed to load customer credits:", fetchError);
+        return { error: "Unable to locate that customer." };
+      }
+
+      const typedCustomerRecord = customerRecord as Pick<
+        Database["public"]["Tables"]["customers"]["Row"],
+        "credits"
+      >;
+      const currentCredits = typedCustomerRecord.credits ?? 0;
+      const nextCredits = calculateNextCredits(currentCredits, delta);
+
+      const adjustCreditsPayload: Database["public"]["Tables"]["customers"]["Update"] = {
+        credits: nextCredits,
+      };
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: updateError } = await (supabase as any)
+        .from("customers")
+        .update(adjustCreditsPayload)
+        .eq("id", customerId);
+
+      if (updateError) {
+        console.error("Failed to update customer credits:", updateError);
+        return { error: "Unable to update credits. Please try again." };
+      }
+
+      revalidatePath("/dashboard");
+      return { success: "Credits updated" };
+    } catch (error) {
+      console.error("Adjust credits error:", error);
+      return { error: "Unexpected error while updating credits." };
+    }
+  }
+
+  async function uploadLogo(formData: FormData) {
+    "use server";
+    try {
+      const file = formData.get("file");
+
+      if (!(file instanceof File) || file.size === 0) {
+        return { error: "Please choose a logo file to upload." };
+      }
+
+      if (file.size > 1 * 1024 * 1024) {
+        return { error: "Logo too large. Please upload an image under 1MB." };
+      }
+
+      const supabase = await createServerComponentClient();
+      const ext = file.name.split(".").pop() || "png";
+      const path = `business-${business.id}-${nanoid()}.${ext}`;
+
+      const { data: uploadResult, error: uploadError } = await supabase.storage
+        .from("logos")
+        .upload(path, file, {
+          cacheControl: "3600",
+          upsert: true,
+        });
+
+      if (uploadError || !uploadResult) {
+        console.error("Logo upload error:", uploadError);
         return {
-          error: `Scheduled campaigns are not yet supported (requested: ${scheduleDate || "unspecified"}). Please select 'Send Now'.`,
+          error:
+            "Unable to upload logo. Please check your storage configuration or try again.",
         };
       }
 
-      const supabase = await createServiceClient();
+      const {
+        data: { publicUrl },
+      } = supabase.storage.from("logos").getPublicUrl(path);
 
-      // Fetch selected customers
-      const { data: customersData, error: fetchError } = await supabase
-        .from("customers")
-        .select("id, name, phone, email, referral_code")
-        .in("id", selectedCustomerIds)
-        .eq("business_id", business.id);
+      // Persist on business so future campaigns and pages pick it up.
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: updateError } = await (supabase as any)
+        .from("businesses")
+        .update({ logo_url: publicUrl })
+        .eq("id", business.id);
 
-      if (fetchError || !customersData) {
-        console.error("Failed to fetch customers:", fetchError);
-        return { error: "Failed to fetch customer data." };
+      if (updateError) {
+        console.error("Failed to store logo URL on business:", updateError);
+        return {
+          error:
+            "Logo uploaded but could not be saved to your profile. Please try again.",
+        };
       }
 
-      const selectedCustomers =
-        (customersData ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
+      revalidatePath("/dashboard");
+      return { success: "Logo uploaded", url: publicUrl as string };
+    } catch (error) {
+      console.error("Unexpected logo upload error:", error);
+      return { error: "Unexpected error while uploading logo." };
+    }
+  }
 
-      // Store campaign record (optional - won't block if table doesn't exist)
-      let campaign = null;
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const { data: campaignData, error: campaignError } = await (supabase as any)
-          .from("campaigns")
-          .insert([
-            {
-              business_id: business.id,
-              name: campaignName,
-              message: campaignMessage,
-              channel: campaignChannel,
-              status: "sending",
-              total_recipients: selectedCustomers.length,
-              sent_count: 0,
-            },
-          ])
-          .select()
+  async function addManualReferral(formData: FormData) {
+    "use server";
+    try {
+      const ambassadorIdRaw =
+        (formData.get("ambassador_id") as string | null) ?? "";
+      const referralCodeRaw =
+        (formData.get("referral_code") as string | null) ?? "";
+      const referredName =
+        (formData.get("referred_name") as string | null)?.trim() || null;
+      const referredEmail =
+        (formData.get("referred_email") as string | null)?.trim() || null;
+      const referredPhone =
+        (formData.get("referred_phone") as string | null)?.trim() || null;
+      const transactionValueRaw =
+        (formData.get("transaction_value") as string | null) ?? "";
+      const transactionDateRaw =
+        (formData.get("transaction_date") as string | null) ?? "";
+      const serviceType =
+        (formData.get("service_type") as string | null)?.trim() || null;
+
+      if (!ambassadorIdRaw && !referralCodeRaw.trim()) {
+        return {
+          error:
+            "Please select an ambassador or provide a referral code so we can attribute this transaction.",
+        };
+      }
+
+      if (!referredName && !referredEmail && !referredPhone) {
+        return {
+          error:
+            "Please provide at least a name, email, or phone for the referred customer.",
+        };
+      }
+
+      const supabase = await createServerComponentClient();
+
+      let ambassadorId = ambassadorIdRaw;
+
+      // If a referral code is provided, prefer that for attribution.
+      const referralCode = referralCodeRaw.trim();
+      if (referralCode) {
+        const { data: ambassadorFromCode, error: codeError } = await supabase
+          .from("customers")
+          .select("id")
+          .eq("referral_code", referralCode)
+          .eq("business_id", business.id)
           .single();
 
-        if (campaignError) {
-          console.error("Failed to create campaign record:", campaignError);
-          // Continue anyway - campaign tracking is optional
-        } else {
-          campaign = campaignData;
+        if (codeError || !ambassadorFromCode) {
+          return {
+            error:
+              "No ambassador found for that referral code. Please double-check the code or select an ambassador.",
+          };
         }
-      } catch (campaignTrackingError) {
-        console.error("Campaign tracking not available:", campaignTrackingError);
-        // Continue anyway - campaign tracking is optional
+
+        ambassadorId = (ambassadorFromCode as { id: string }).id;
       }
 
-      let successCount = 0;
-      let failureCount = 0;
-      let simulationNotice: string | null = null;
-
-      if (campaignChannel === "sms") {
-        // Send SMS via Twilio (or simulate if not configured)
-        const sid = process.env.TWILIO_ACCOUNT_SID;
-        const token = process.env.TWILIO_AUTH_TOKEN;
-        const from = process.env.TWILIO_PHONE_NUMBER;
-
-        if (!sid || !token || !from) {
-          console.warn("Twilio credentials missing. Simulating SMS send.");
-          successCount = selectedCustomers.filter((c) => !!c.phone).length;
-          simulationNotice = "SMS sending simulated. Add TWILIO credentials to send live messages.";
-        } else {
-          const client = twilio(sid, token);
-
-          for (const customer of selectedCustomers) {
-            if (!customer.phone) {
-              console.error(`Customer ${customer.name} has no phone number`);
-              failureCount++;
-              continue;
-            }
-
-            // Normalize phone number to E.164 format (Australian numbers default)
-            const normalizedPhone = normalizePhoneNumber(customer.phone, "AU");
-
-            if (!normalizedPhone) {
-              console.error(`Invalid phone format for ${customer.name}: ${customer.phone}`);
-              failureCount++;
-              continue;
-            }
-
-            try {
-              // Build unique referral link for this specific customer (they become the ambassador)
-              const referralLink = customer.referral_code ? `${baseSiteUrl}/r/${customer.referral_code}` : "";
-
-              // Personalize message with name and referral link placeholders
-              let personalizedMessage = campaignMessage
-                .replace(/\{\{name\}\}/g, customer.name || "there")
-                .replace(/\{\{referral_link\}\}/g, referralLink);
-
-              // Always append unique referral link if template omitted it
-              if (!campaignMessage.includes("{{referral_link}}") && referralLink) {
-                personalizedMessage += `\n\nYour unique referral link: ${referralLink}`;
-              }
-
-              await client.messages.create({
-                body: personalizedMessage,
-                from,
-                to: normalizedPhone,
-              });
-
-              console.log(`SMS sent successfully to ${customer.name} (${normalizedPhone})`);
-              successCount++;
-            } catch (smsError) {
-              console.error(`Failed to send SMS to ${customer.name} (${normalizedPhone}):`, smsError);
-              failureCount++;
-            }
-          }
-        }
-      } else if (campaignChannel === "email") {
-        // Send Email via Resend (or simulate)
-        const apiKey = process.env.RESEND_API_KEY;
-        const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@peppiepep.com";
-        const businessEmail = business.name ? `${business.name} <${fromEmail}>` : fromEmail;
-
-        if (!apiKey) {
-          console.warn("Resend API key missing. Simulating email send.");
-          successCount = selectedCustomers.filter((c) => !!c.email).length;
-          simulationNotice = "Email sending simulated. Add RESEND credentials to send live messages.";
-        } else {
-          const resend = new Resend(apiKey);
-
-          for (const customer of selectedCustomers) {
-            if (!customer.email) {
-              failureCount++;
-              continue;
-            }
-
-            try {
-              // Personalize message
-              const personalizedMessage = campaignMessage
-                .replace(/\{\{name\}\}/g, customer.name || "there")
-                .replace(
-                  /\{\{referral_link\}\}/g,
-                  customer.referral_code ? `${baseSiteUrl}/r/${customer.referral_code}` : "",
-                );
-
-              // Convert message to HTML (basic formatting)
-              const htmlMessage = personalizedMessage
-                .split("\n")
-                .map((line) => line.trim())
-                .filter((line) => line.length > 0)
-                .map((line) => `<p style="margin: 0 0 12px 0; line-height: 1.6;">${line}</p>`)
-                .join("");
-
-              const emailHtml = `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f8fafc;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; padding: 40px 20px;">
-    <tr>
-      <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
-          <!-- Header -->
-          <tr>
-            <td style="background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%); padding: 30px 40px; text-align: center;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: bold;">${business.name || "Your Business"}</h1>
-            </td>
-          </tr>
-
-          <!-- Content -->
-          <tr>
-            <td style="padding: 40px;">
-              ${htmlMessage}
-            </td>
-          </tr>
-
-          <!-- Footer -->
-          <tr>
-            <td style="background-color: #f8fafc; padding: 30px 40px; text-align: center; border-top: 1px solid #e2e8f0;">
-              <p style="margin: 0 0 8px 0; color: #64748b; font-size: 14px;">
-                ${business.name || "Your Business"}
-              </p>
-              <p style="margin: 0; color: #94a3b8; font-size: 12px;">
-                You received this email because you're a valued customer.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>`;
-
-              await resend.emails.send({
-                from: businessEmail,
-                to: customer.email,
-                subject: campaignName || `Message from ${business.name}`,
-                html: emailHtml,
-                text: personalizedMessage,
-              });
-
-              successCount++;
-            } catch (emailError) {
-              console.error(`Failed to send email to ${customer.email}:`, emailError);
-              failureCount++;
-            }
-          }
-        }
+      const transactionValue = transactionValueRaw
+        ? Number(transactionValueRaw)
+        : null;
+      if (transactionValueRaw && Number.isNaN(transactionValue)) {
+        return {
+          error:
+            "Please enter a valid transaction amount (e.g. 150 or 200.50).",
+        };
       }
 
-      // Update campaign status (optional - won't block if table doesn't exist)
-      if (campaign) {
-        try {
+      if (!transactionDateRaw) {
+        return {
+          error: "Please provide the transaction date.",
+        };
+      }
+
+      const transactionDate = new Date(transactionDateRaw).toISOString();
+
+      const {
+        data: {
+          user: currentUser,
+        },
+      } = await supabase.auth.getUser();
+
+      const referralPayload: Database["public"]["Tables"]["referrals"]["Insert"] =
+        {
+          business_id: business.id,
+          ambassador_id: ambassadorId,
+          referred_name: referredName,
+          referred_email: referredEmail,
+          referred_phone: referredPhone,
+          status: "completed",
+          rewarded_at: new Date().toISOString(),
+          transaction_value: transactionValue,
+          transaction_date: transactionDate,
+          service_type: serviceType,
+          created_by: currentUser?.id ?? null,
+        };
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: insertError } = await (supabase as any)
+        .from("referrals")
+        .insert([referralPayload]);
+
+      if (insertError) {
+        console.error("Failed to insert manual referral:", insertError);
+        return { error: "Failed to add referral. Please try again." };
+      }
+
+      await logReferralEvent({
+        supabase,
+        businessId: business.id,
+        ambassadorId,
+        eventType: "manual_conversion_recorded",
+        metadata: {
+          transaction_value: transactionValue,
+          transaction_date: transactionDate,
+          service_type: serviceType,
+          created_by: currentUser?.id ?? null,
+        },
+      });
+
+      // Apply credits if the reward type uses credit
+      const amount =
+        business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
+
+      if (amount > 0) {
+        const { data: ambassador, error: ambassadorError } = await supabase
+          .from("customers")
+          .select("credits")
+          .eq("id", ambassadorId)
+          .single();
+
+        if (!ambassadorError && ambassador) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          await (supabase as any)
-            .from("campaigns")
-            .update({
-              status: failureCount === 0 ? "completed" : "partial",
-              sent_count: successCount,
-              failed_count: failureCount,
-            })
-            .eq("id", campaign.id);
-        } catch (updateError) {
-          console.error("Failed to update campaign status:", updateError);
-          // Continue anyway - campaign tracking is optional
+          const currentCredits = (ambassador as any)?.credits ?? 0;
+          const updatedCredits = Number(currentCredits) + amount;
+
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const { error: creditError } = await (supabase as any)
+            .from("customers")
+            .update({ credits: updatedCredits })
+            .eq("id", ambassadorId);
+
+          if (creditError) {
+            console.error(
+              "Failed to update ambassador credits for manual referral:",
+              creditError,
+            );
+          }
+
+          await logReferralEvent({
+            supabase,
+            businessId: business.id,
+            ambassadorId,
+            eventType: "payout_released",
+            metadata: {
+              amount,
+              transaction_value: transactionValue,
+              transaction_date: transactionDate,
+              service_type: serviceType,
+            },
+          });
         }
       }
 
       revalidatePath("/dashboard");
-
-      const baseMessage =
-        failureCount === 0
-          ? `Campaign sent successfully to ${successCount} customers!`
-          : `Campaign completed with ${successCount} successful and ${failureCount} failed messages.`;
-
       return {
-        success: simulationNotice ? `${baseMessage} ${simulationNotice}` : baseMessage,
+        success: "Manual referral recorded and ambassador credits updated.",
       };
     } catch (error) {
-      console.error("Campaign send error:", error);
-      return { error: "Failed to send campaign. Please try again." };
+      console.error("Manual referral add error:", error);
+      return { error: "Unexpected error while adding referral." };
     }
   }
 
@@ -617,7 +819,7 @@ export default async function Dashboard() {
   const { data: referrals = [] } = await supabase
     .from("referrals")
     .select(
-      "id,status,ambassador_id,referred_name,referred_email,referred_phone,created_at",
+      "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
     )
     .eq("business_id", business.id);
 
@@ -630,18 +832,44 @@ export default async function Dashboard() {
     safeReferrals.filter((r) => r.status === "pending").length || 0;
   const completedReferrals =
     safeReferrals.filter((r) => r.status === "completed").length || 0;
+  const manualReferralsList = safeReferrals.filter((r) => r.created_by);
+  const manualReferralCount = manualReferralsList.length;
+  const manualReferralValue =
+    manualReferralsList.reduce(
+      (sum, r) => sum + (r.transaction_value ?? 0),
+      0,
+    ) || 0;
+  const trackedReferralCount = safeReferrals.length - manualReferralCount;
   const totalRewards =
     safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
+  const totalReferralRevenue =
+    safeReferrals.reduce(
+      (sum, r) => sum + (r.transaction_value ?? 0),
+      0,
+    ) || 0;
+  const completedWithValue = safeReferrals.filter(
+    (r) => r.status === "completed" && r.transaction_value !== null,
+  );
+  const averageTransactionValue =
+    completedWithValue.length > 0
+      ? completedWithValue.reduce(
+          (sum, r) => sum + (r.transaction_value ?? 0),
+          0,
+        ) / completedWithValue.length
+      : 0;
   let totalCampaignsSent = 0;
   let totalMessagesSent = 0;
+  let campaignsData: CampaignSummary[] = [];
   try {
     const { data: campaignsRaw } = await supabase
       .from("campaigns")
-      .select("id,sent_count")
-      .eq("business_id", business.id);
+      .select(
+        "id,name,channel,status,total_recipients,sent_count,failed_count,created_at",
+      )
+      .eq("business_id", business.id)
+      .order("created_at", { ascending: false });
 
-    const campaignsData =
-      (campaignsRaw as { id: string; sent_count: number | null }[] | null) ?? [];
+    campaignsData = (campaignsRaw ?? []) as CampaignSummary[];
     totalCampaignsSent = campaignsData.length;
     totalMessagesSent = campaignsData.reduce(
       (sum, campaign) => sum + (campaign.sent_count ?? 0),
@@ -651,70 +879,177 @@ export default async function Dashboard() {
     console.warn("Campaign data unavailable:", campaignFetchError);
   }
 
+  const totalEstimatedCampaignSpend = campaignsData.reduce(
+    (sum, campaign) => {
+      const sentCount = campaign.sent_count ?? 0;
+      const channel = campaign.channel as "sms" | "email" | null;
+      const costPerMessage = channel === "sms" ? 0.02 : 0.01;
+      return sum + sentCount * costPerMessage;
+    },
+    0,
+  );
+
+  const roiMultiple =
+    totalEstimatedCampaignSpend > 0
+      ? totalReferralRevenue / totalEstimatedCampaignSpend
+      : null;
+
+  const referralConversionRate =
+    safeReferrals.length > 0
+      ? Math.round((completedReferrals / safeReferrals.length) * 100)
+      : 0;
+
+  const hasCustomers = safeCustomers.length > 0;
+  const hasCampaigns = campaignsData.length > 0;
+  const hasReferrals = safeReferrals.length > 0;
+  const hasProgramSettings =
+    !!business.offer_text &&
+    !!business.new_user_reward_text &&
+    !!business.client_reward_text &&
+    (business.reward_type === "credit"
+      ? (business.reward_amount ?? 0) > 0
+      : business.reward_type !== null);
+
+  const { data: referralEventsData } = await supabase
+    .from("referral_events")
+    .select(
+      `
+        id,
+        event_type,
+        source,
+        device,
+        created_at,
+        metadata,
+        referral_id,
+        ambassador:ambassador_id (
+          id,
+          name,
+          referral_code
+        )
+      `,
+    )
+    .eq("business_id", business.id)
+    .order("created_at", { ascending: false })
+    .limit(100);
+
+  const typedReferralEvents = (referralEventsData ?? []) as ReferralEventRow[];
+  const referralJourneyEvents: ReferralJourneyEvent[] = typedReferralEvents.map(
+    (event) => ({
+      id: event.id,
+      event_type: event.event_type as ReferralJourneyEvent["event_type"],
+      source: event.source,
+      device: event.device,
+      created_at: event.created_at,
+      metadata: (event.metadata ?? null) as Record<string, unknown> | null,
+      referral_id: event.referral_id,
+      ambassador: event.ambassador
+        ? {
+            id: event.ambassador.id,
+            name: event.ambassador.name,
+            referral_code: event.ambassador.referral_code,
+          }
+        : null,
+    }),
+  );
+  const campaignEventStats = referralJourneyEvents.reduce<CampaignEventStats>((acc, event) => {
+    if (!event.source) return acc;
+    if (!acc[event.source]) {
+      acc[event.source] = { clicks: 0, signups: 0, conversions: 0 };
+    }
+    if (event.event_type === "link_visit") {
+      acc[event.source].clicks += 1;
+    } else if (event.event_type === "signup_submitted") {
+      acc[event.source].signups += 1;
+    } else if (event.event_type === "conversion_completed") {
+      acc[event.source].conversions += 1;
+    }
+    return acc;
+  }, {});
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
       <div className="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
 
         {/* Premium Hero Banner */}
-        <div className="mb-8 sm:mb-12">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 p-8 sm:p-10 shadow-2xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_50%)]" />
-            <div className="absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
-            <div className="absolute bottom-0 left-0 -mb-4 -ml-4 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
+        <div className="mb-10">
+          <div className="relative overflow-hidden rounded-[32px] border border-[#20d7e3]/40 bg-gradient-to-br from-[#0abab5] via-[#11c6d4] to-[#0abab5] text-white p-8 sm:p-10 shadow-[0_35px_120px_rgba(10,171,181,0.35)]">
+            <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),transparent_60%),radial-gradient(circle_at_bottom,_rgba(255,255,255,0.15),transparent_70%)]" />
+            <div className="absolute -right-12 top-1/3 h-56 w-56 rounded-full bg-white/30 blur-3xl" />
+            <div className="absolute -left-20 bottom-0 h-40 w-40 rounded-full bg-[#7ff6ff]/40 blur-3xl" />
 
-            <div className="relative z-10">
-              <div className="flex items-center gap-2 mb-3">
-                <Crown className="h-6 w-6 text-yellow-300" />
-                <span className="text-xs font-bold text-purple-100 bg-purple-900/30 px-3 py-1 rounded-full backdrop-blur">
-                  LIVE DASHBOARD
-                </span>
+            <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(0,1.2fr),minmax(0,0.8fr)]">
+              <div>
+                <div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-white/60 mb-4">
+                  <Crown className="h-5 w-5 text-[#1de9b6]" />
+                  <span>Premium control room</span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
+                  {business.name || "Referral Control Center"}
+                </h1>
+                <p className="text-base sm:text-lg text-white/80 max-w-2xl">
+                  Welcome to your growth network.
+                </p>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-white/15 bg-white/5 p-4">
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-white/60">
+                      Ambassadors
+                    </p>
+                    <p className="text-3xl font-black text-white">{safeCustomers.length}</p>
+                    <p className="text-xs text-white/60">Active profiles</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/15 bg-white/5 p-4">
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-white/60">
+                      Campaigns sent
+                    </p>
+                    <p className="text-3xl font-black text-white">{totalCampaignsSent}</p>
+                    <p className="text-xs text-white/60">{totalMessagesSent} messages delivered</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/15 bg-white/5 p-4">
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-white/60">
+                      Credits issued
+                    </p>
+                    <p className="text-3xl font-black text-white">${totalRewards}</p>
+                    <p className="text-xs text-white/60">{pendingReferrals} pending payouts</p>
+                  </div>
+                </div>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3">
-                {business.name}
-              </h1>
-              <p className="text-base sm:text-lg text-purple-100 mb-6 max-w-2xl">
-                Real-time micro-influencer program. Send live SMS/Email campaigns and track actual performance.
-              </p>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="flex items-start gap-3 text-sm">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-purple-900/30 backdrop-blur flex items-center justify-center">
-                    <Upload className="h-4 w-4 text-purple-100" />
+              <div className="rounded-[28px] border border-white/20 bg-white/8 p-6 shadow-[0_25px_45px_rgba(1,46,55,0.35)] backdrop-blur space-y-6">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.3em] text-white/60 mb-2">
+                    Luxe momentum
+                  </p>
+                  <h2 className="text-2xl font-black text-white">
+                    {completedReferrals} referrals completed · {referralConversionRate}% conversion
+                  </h2>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-white/15 bg-black/20 p-4">
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-white/50">
+                      Tracked revenue
+                    </p>
+                    <p className="text-3xl font-black text-white">
+                      ${Math.round(totalReferralRevenue)}
+                    </p>
+                    <p className="text-xs text-white/60">Across all referral journeys</p>
                   </div>
-                  <div>
-                    <p className="font-bold text-white">Import & Activate</p>
-                    <p className="text-purple-100 text-xs">Upload real customer data</p>
+                  <div className="rounded-2xl border border-white/15 bg-black/20 p-4">
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-white/50">
+                      Rewards pending
+                    </p>
+                    <p className="text-3xl font-black text-white">{pendingReferrals}</p>
+                    <p className="text-xs text-white/60">Awaiting ambassador payout</p>
                   </div>
                 </div>
-
-                <div className="flex items-start gap-3 text-sm">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-blue-900/30 backdrop-blur flex items-center justify-center">
-                    <MessageSquare className="h-4 w-4 text-blue-100" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white">Live Campaigns</p>
-                    <p className="text-blue-100 text-xs">Send real SMS/Email via Twilio/Resend</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 text-sm">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-emerald-900/30 backdrop-blur flex items-center justify-center">
-                    <TrendingUp className="h-4 w-4 text-emerald-100" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white">Track Real-Time</p>
-                    <p className="text-emerald-100 text-xs">Live referral tracking</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 text-sm">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-amber-900/30 backdrop-blur flex items-center justify-center">
-                    <Gift className="h-4 w-4 text-amber-100" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white">Auto Rewards</p>
-                    <p className="text-amber-100 text-xs">Real credits to customers</p>
-                  </div>
+                <div className="rounded-2xl border border-white/15 bg-black/30 p-4">
+                  <p className="text-[11px] uppercase tracking-[0.3em] text-white/50">
+                    Next action
+                  </p>
+                  <p className="text-lg font-semibold text-white mt-2">
+                    {pendingReferrals > 0
+                      ? `${pendingReferrals} rewards ready to approve`
+                      : "All ambassadors rewarded"}
+                  </p>
                 </div>
               </div>
             </div>
@@ -724,54 +1059,12 @@ export default async function Dashboard() {
         {/* Primary Action Buttons */}
         <DashboardShortcutCards />
 
-        {/* Quick Stats Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-purple-200/50 hover:border-purple-300 hover:shadow-xl transition-all duration-200">
-            <div className="flex items-center justify-between mb-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg">
-                <Users className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded-full">AMBASSADORS</span>
-            </div>
-            <p className="text-4xl font-black text-slate-900">{safeCustomers.length}</p>
-            <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
-          </Card>
-
-          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-blue-200/50 hover:border-blue-300 hover:shadow-xl transition-all duration-200">
-            <div className="flex items-center justify-between mb-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
-                <TrendingUp className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">REFERRALS</span>
-            </div>
-            <p className="text-4xl font-black text-slate-900">{safeReferrals.length}</p>
-            <p className="text-sm text-slate-600 mt-1">{pendingReferrals} pending, {completedReferrals} completed</p>
-          </Card>
-
-          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-emerald-200/50 hover:border-emerald-300 hover:shadow-xl transition-all duration-200">
-            <div className="flex items-center justify-between mb-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center shadow-lg">
-                <DollarSign className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">REWARDS</span>
-            </div>
-            <p className="text-4xl font-black text-slate-900">${totalRewards}</p>
-            <p className="text-sm text-slate-600 mt-1">Total credits issued</p>
-          </Card>
-
-          <Card className="p-6 bg-white/80 backdrop-blur border-2 border-amber-200/50 hover:border-amber-300 hover:shadow-xl transition-all duration-200">
-            <div className="flex items-center justify-between mb-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-lg">
-                <Zap className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-full">CONVERSION</span>
-            </div>
-            <p className="text-4xl font-black text-slate-900">
-              {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
-            </p>
-            <p className="text-sm text-slate-600 mt-1">Referral completion rate</p>
-          </Card>
-        </div>
+        <DashboardOnboardingChecklist
+          hasCustomers={hasCustomers}
+          hasProgramSettings={hasProgramSettings}
+          hasCampaigns={hasCampaigns}
+          hasReferrals={hasReferrals}
+        />
 
         <Tabs defaultValue="clients" className="space-y-6" id="dashboard-tabs">
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
@@ -781,7 +1074,7 @@ export default async function Dashboard() {
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-600 data-[state=active]:via-pink-600 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
             >
               <Rocket className="h-5 w-5 mr-2" />
-              <span className="hidden sm:inline">Campaigns & AI</span>
+              <span className="hidden sm:inline">View Campaigns</span>
               <span className="sm:hidden">Campaigns</span>
             </TabsTrigger>
             <TabsTrigger
@@ -803,174 +1096,136 @@ export default async function Dashboard() {
               <span className="sm:hidden">Stats</span>
             </TabsTrigger>
             <TabsTrigger
-              value="settings"
-              data-tab-target="settings"
-              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-amber-600 data-[state=active]:via-orange-600 data-[state=active]:to-red-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-amber-500/50 transition-all duration-300 hover:scale-105"
+              value="ai"
+              data-tab-target="ai"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-fuchsia-600 data-[state=active]:via-purple-600 data-[state=active]:to-indigo-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"
             >
-              <SettingsIcon className="h-5 w-5 mr-2" />
-              <span className="hidden sm:inline">Settings</span>
-              <span className="sm:hidden">Settings</span>
+              <Zap className="h-5 w-5 mr-2" />
+              <span className="hidden sm:inline">AI Assistance</span>
+              <span className="sm:hidden">AI</span>
             </TabsTrigger>
           </TabsList>
 
-        <TabsContent value="campaigns">
+        <TabsContent value="campaigns" id="tab-section-campaigns">
           <div className="space-y-6">
             {/* Campaign Builder Card */}
             <CampaignBuilder
               customers={safeCustomers}
               businessName={business.name || "Your Business"}
-              sendCampaignAction={sendCampaign}
+              siteUrl={siteUrl}
+              offerText={business.offer_text}
+              newUserRewardText={business.new_user_reward_text}
+              clientRewardText={business.client_reward_text}
+              rewardType={business.reward_type}
+              rewardAmount={business.reward_amount}
+              upgradeName={business.upgrade_name}
+              rewardTerms={business.reward_terms}
+              uploadLogoAction={uploadLogo}
             />
 
-            {/* AI Tools Card */}
-            <AITools
-              customers={safeCustomers.map(c => ({
-                ...c,
-                phone: c.phone || null,
-                email: c.email || null,
+            {/* Campaign history */}
+            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+              <h3 className="text-xl font-black text-slate-900 mb-4">
+                View Campaigns
+              </h3>
+              <div className="overflow-x-auto -mx-6 px-6">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Name</TableHead>
+                      <TableHead>Channel</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead className="text-right">Recipients</TableHead>
+                      <TableHead className="text-right">Clicks</TableHead>
+                      <TableHead className="text-right">Conversions</TableHead>
+                      <TableHead className="text-right">Reward Spend</TableHead>
+                      <TableHead className="text-right">ROI</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <CampaignsTable
+                    campaigns={
+                      campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]
+                    }
+                    referrals={safeReferrals}
+                    eventStats={campaignEventStats}
+                  />
+                </Table>
+              </div>
+            </Card>
+
+            <ShareReferralCard
+              customers={safeCustomers.map((customer) => ({
+                id: customer.id,
+                name: customer.name,
+                referral_code: customer.referral_code,
               }))}
-              referrals={safeReferrals}
-              businessName={business.name || "Your Business"}
+              siteUrl={siteUrl}
+              clientRewardText={business.client_reward_text}
+              newUserRewardText={business.new_user_reward_text}
+              rewardAmount={business.reward_amount}
               offerText={business.offer_text}
-              rewardAmount={business.reward_amount || 0}
+              businessName={business.name}
+            />
+
+            <WebsiteIntegrationCard
+              siteUrl={siteUrl}
+              businessName={business.name || "your business"}
+              offerText={business.offer_text}
+              clientRewardText={business.client_reward_text}
+              newUserRewardText={business.new_user_reward_text}
             />
           </div>
         </TabsContent>
 
-        <TabsContent value="settings" className="space-y-6">
-          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-lg">
-                <Gift className="h-7 w-7 text-white" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-black text-slate-900">Settings & Rewards</h3>
-                <p className="text-sm text-slate-600">Update the public offer and how ambassadors get paid.</p>
-              </div>
-            </div>
-
-            <form action={updateSettings} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="offer_text" className="text-base font-bold text-slate-900">
-                  Customer Offer
-                </Label>
-                <Textarea
-                  id="offer_text"
-                  name="offer_text"
-                  defaultValue={business.offer_text ?? ""}
-                  placeholder="e.g., Give $200, Get $200 + a VIP upgrade"
-                  className="min-h-[90px] text-base"
-                />
-                <p className="text-sm text-slate-500">
-                  This copy appears on referral landing pages, SMS, and email invites.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div>
-                  <Label htmlFor="reward_type" className="text-base font-bold text-slate-900">
-                    Reward Type
-                  </Label>
-                  <select
-                    id="reward_type"
-                    name="reward_type"
-                    defaultValue={business.reward_type ?? "credit"}
-                    className="w-full rounded-2xl border-2 border-slate-200 p-3 text-sm font-semibold"
-                  >
-                    <option value="credit">Credit</option>
-                    <option value="upgrade">Upgrade</option>
-                    <option value="discount">Discount</option>
-                    <option value="points">Points</option>
-                  </select>
+        <TabsContent value="ai" id="tab-section-ai" className="space-y-6">
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80 bg-white/95">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-fuchsia-600 to-purple-600 flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <Label htmlFor="reward_amount" className="text-base font-bold text-slate-900">
-                    Reward Amount ($)
-                  </Label>
-                  <Input
-                    id="reward_amount"
-                    name="reward_amount"
-                    type="number"
-                    min="0"
-                    step="1"
-                    defaultValue={business.reward_amount ?? 15}
-                    className="text-base"
-                  />
-                  <p className="text-xs text-slate-500 mt-1">Per successful referral</p>
-                </div>
-                <div>
-                  <Label htmlFor="upgrade_name" className="text-base font-bold text-slate-900">
-                    Upgrade Name
-                  </Label>
-                  <Input
-                    id="upgrade_name"
-                    name="upgrade_name"
-                    defaultValue={business.upgrade_name ?? ""}
-                    placeholder="e.g., Complimentary brow tint"
-                    className="text-base"
-                  />
-                  <p className="text-xs text-slate-500 mt-1">Only used if reward type = Upgrade</p>
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+                    AI Assistance
+                  </h2>
+                  <p className="text-sm text-slate-600">
+                    Use AI to generate messages, score ambassadors, and forecast ROI.
+                  </p>
                 </div>
               </div>
-
-              <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200">
-                <p className="text-sm font-semibold text-amber-900 mb-1">Live summary</p>
-                <p className="text-sm text-amber-800">
-                  Ambassadors promote <span className="font-bold">{business.offer_text || "your hero offer"}</span> and earn{" "}
-                  <span className="font-bold">
-                    {business.reward_type === "credit"
-                      ? `$${business.reward_amount ?? 15} credit`
-                      : business.reward_type === "upgrade"
-                      ? business.upgrade_name || "a free upgrade"
-                      : business.reward_type === "discount"
-                      ? `${business.reward_amount ?? 15}% discount`
-                      : `${business.reward_amount ?? 100} points`}
-                  </span>{" "}
-                  per completed referral.
-                </p>
-              </div>
-
-              <div className="flex justify-end border-t border-slate-200 pt-4">
-                <Button
-                  type="submit"
-                  className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 font-bold shadow-lg"
-                >
-                  <Gift className="mr-2 h-4 w-4" />
-                  Save Settings
-                </Button>
-              </div>
-            </form>
-          </Card>
-
-          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
-            <h4 className="text-lg font-bold text-slate-900 mb-4">Reward fulfillment options</h4>
-            <div className="grid gap-4 md:grid-cols-3">
-              <div className="p-4 rounded-xl border-2 border-purple-200 bg-purple-50">
-                <div className="flex items-center gap-3">
-                  <CreditCard className="h-5 w-5 text-purple-600" />
-                  <p className="font-semibold text-slate-900">Store credit</p>
-                </div>
-                <p className="text-sm text-slate-600 mt-2">Auto-applied to Pepform or POS accounts.</p>
-              </div>
-              <div className="p-4 rounded-xl border-2 border-emerald-200 bg-emerald-50">
-                <div className="flex items-center gap-3">
-                  <DollarSign className="h-5 w-5 text-emerald-600" />
-                  <p className="font-semibold text-slate-900">Cash / bank</p>
-                </div>
-                <p className="text-sm text-slate-600 mt-2">Export CSV to process manual payouts.</p>
-              </div>
-              <div className="p-4 rounded-xl border-2 border-slate-200 bg-white">
-                <div className="flex items-center gap-3">
-                  <Gift className="h-5 w-5 text-amber-600" />
-                  <p className="font-semibold text-slate-900">Gift cards</p>
-                </div>
-                <p className="text-sm text-slate-600 mt-2">Issue digital or physical rewards.</p>
-              </div>
+              <AITools
+                customers={safeCustomers.map((c) => ({
+                  ...c,
+                  phone: c.phone || null,
+                  email: c.email || null,
+                }))}
+                referrals={safeReferrals}
+                businessName={business.name || "Your Business"}
+                offerText={business.offer_text}
+                rewardAmount={business.reward_amount || 0}
+              />
             </div>
           </Card>
         </TabsContent>
 
-        <TabsContent value="clients" className="space-y-6">
+
+        <TabsContent value="clients" id="tab-section-clients" className="space-y-6">
+          <div className="flex justify-end">
+            <ProgramSettingsDialog
+              businessName={business.name || "Your Business"}
+              offerText={business.offer_text}
+              newUserRewardText={business.new_user_reward_text}
+              clientRewardText={business.client_reward_text}
+              rewardType={business.reward_type}
+              rewardAmount={business.reward_amount}
+              upgradeName={business.upgrade_name}
+              rewardTerms={business.reward_terms}
+              logoUrl={business.logo_url ?? null}
+              brandHighlightColor={business.brand_highlight_color ?? null}
+              brandTone={business.brand_tone ?? null}
+              updateSettingsAction={updateSettings}
+            />
+          </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
               <div className="flex items-start gap-3 mb-6">
@@ -982,7 +1237,7 @@ export default async function Dashboard() {
                   <p className="text-sm text-slate-600">Bulk upload spreadsheets to instantly generate referral links.</p>
                 </div>
               </div>
-              <CSVUploadForm uploadAction={uploadCSV} />
+              <CSVUploadForm />
               <div className="mt-6 rounded-xl bg-purple-50 p-4 border border-purple-200">
                 <p className="text-sm font-semibold text-purple-900 mb-2">
                   💡 Pro tip
@@ -997,21 +1252,7 @@ export default async function Dashboard() {
             </Card>
 
             <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
-              <form action={quickAddCustomer} className="space-y-4">
-                <Label className="text-base font-bold text-slate-900">Quick Add Customer</Label>
-                <div className="grid sm:grid-cols-3 gap-3">
-                  <Input name="quick_name" placeholder="Full name" />
-                  <Input name="quick_phone" placeholder="Phone number" />
-                  <Input name="quick_email" placeholder="Email (optional)" />
-                </div>
-                <Button type="submit" className="font-bold w-full sm:w-auto">
-                  <Plus className="mr-2 h-4 w-4" />
-                  Add Customer
-                </Button>
-                <p className="text-xs text-slate-500">
-                  We&apos;ll refresh the dashboard instantly with their referral link.
-                </p>
-              </form>
+              <QuickAddCustomerForm quickAddAction={quickAddCustomer} />
               <div className="mt-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 p-5">
                 <p className="text-sm font-semibold text-emerald-800">
                   Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
@@ -1027,11 +1268,17 @@ export default async function Dashboard() {
             <h3 className="text-xl font-black text-slate-900 mb-4">
               All Customers ({safeCustomers.length})
             </h3>
-            <CustomersTable customers={safeCustomers} siteUrl={siteUrl} />
+            <CustomersTable
+              initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+              initialTotal={safeCustomers.length}
+              siteUrl={siteUrl}
+              adjustCreditsAction={adjustCustomerCredits}
+            />
           </Card>
+
         </TabsContent>
 
-        <TabsContent value="performance" className="space-y-6">
+        <TabsContent value="performance" id="tab-section-performance" className="space-y-6">
           {/* Referrals Table */}
           <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
             <div className="space-y-5">
@@ -1041,80 +1288,69 @@ export default async function Dashboard() {
                 </div>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Referrals & Performance</h2>
-                  <p className="text-sm text-slate-600">Track all referrals and performance metrics</p>
+                  <p className="text-sm text-slate-600">
+                    Track all referrals and performance metrics, including manual transactions that happen outside the referral link.
+                  </p>
                 </div>
               </div>
-              <div className="overflow-x-auto -mx-6 px-6">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Referred</TableHead>
-                    <TableHead>Ambassador</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Created</TableHead>
-                    <TableHead className="text-right">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {safeReferrals.length === 0 && (
-                    <TableRow>
-                      <TableCell colSpan={5} className="text-center text-sm">
-                        No referrals yet.
-                      </TableCell>
-                    </TableRow>
-                  )}
-                  {safeReferrals.map((referral) => {
-                    const ambassador = safeCustomers.find(
-                      (c) => c.id === referral.ambassador_id,
-                    );
-                    const isPending = referral.status === "pending";
-                    return (
-                      <TableRow key={referral.id}>
-                        <TableCell>
-                          <div className="font-medium">
-                            {referral.referred_name ?? "Unknown"}
-                          </div>
-                          <div className="text-xs text-muted-foreground">
-                            {referral.referred_email ?? referral.referred_phone}
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <div className="font-medium">
-                            {ambassador?.name ?? "Unknown"}
-                          </div>
-                          <div className="text-xs text-muted-foreground">
-                            {ambassador?.email ?? ambassador?.phone ?? "—"}
-                          </div>
-                        </TableCell>
-                        <TableCell className="capitalize">
-                          {referral.status ?? "—"}
-                        </TableCell>
-                        <TableCell className="text-sm text-muted-foreground">
-                          {referral.created_at
-                            ? new Date(referral.created_at).toLocaleDateString()
-                            : "—"}
-                        </TableCell>
-                        <TableCell className="text-right">
-                          {isPending ? (
-                            <ReferralCompletionForm
-                              referralId={referral.id}
-                              ambassadorId={referral.ambassador_id ?? ""}
-                              completionAction={markReferralCompleted}
-                            />
-                          ) : (
-                            <Button size="sm" variant="outline" disabled>
-                              Completed
-                            </Button>
-                          )}
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
+              <ReferralsTable
+                initialReferrals={safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT)}
+                initialTotal={safeReferrals.length}
+                completionAction={markReferralCompleted}
+              />
+
+              <div className="mt-6 rounded-2xl bg-slate-50 p-4 border border-slate-200">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                    <DollarSign className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900">
+                      Add Manual Referral Conversion
+                    </h3>
+                    <p className="text-xs text-slate-600">
+                      Use this when a referred customer books offline or via another channel. You can attribute by ambassador or by referral code.
+                    </p>
+                    <div className="mt-3 grid gap-3 sm:grid-cols-3 text-xs text-slate-600">
+                      <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                        <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                          Manual total
+                        </p>
+                        <p className="text-base font-black text-slate-900">
+                          {manualReferralCount}
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                        <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                          Manual value
+                        </p>
+                        <p className="text-base font-black text-emerald-600">
+                          ${manualReferralValue.toFixed(0)}
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                        <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                          Link tracked
+                        </p>
+                        <p className="text-base font-black text-indigo-600">
+                          {trackedReferralCount}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ManualReferralForm
+                  ambassadors={safeCustomers.map((c) => ({
+                    id: c.id,
+                    name: c.name,
+                  }))}
+                  addManualReferralAction={addManualReferral}
+                />
               </div>
             </div>
           </Card>
+
+          <ReferralJourneyReport events={referralJourneyEvents} />
 
           {/* Performance Analytics */}
           <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
@@ -1159,12 +1395,34 @@ export default async function Dashboard() {
               <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
-                    <DollarSign className="h-5 w-5 text-white" />
+                    <CreditCard className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="font-bold text-slate-900">Credits Issued</h3>
+                  <h3 className="font-bold text-slate-900">Referral Revenue</h3>
                 </div>
-                <p className="text-3xl font-black text-amber-700">${totalRewards}</p>
-                <p className="text-sm text-slate-600 mt-1">Total rewards paid</p>
+                <p className="text-3xl font-black text-amber-700">
+                  ${Math.round(totalReferralRevenue)}
+                </p>
+                <p className="text-sm text-slate-600 mt-1">
+                  Avg ticket: $
+                  {averageTransactionValue > 0
+                    ? Math.round(averageTransactionValue)
+                    : 0}{" "}
+                  • Credits issued: ${totalRewards}
+                </p>
+              </div>
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                    <ClipboardList className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Manual Transactions</h3>
+                </div>
+                <p className="text-3xl font-black text-slate-900">
+                  {manualReferralCount}
+                </p>
+                <p className="text-sm text-slate-600 mt-1">
+                  ${manualReferralValue.toFixed(0)} recorded offline
+                </p>
               </div>
 
               <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 border border-pink-200">
@@ -1209,6 +1467,22 @@ export default async function Dashboard() {
                 </div>
                 <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
                 <p className="text-sm text-slate-600 mt-1">Across all channels</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                    <DollarSign className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="font-bold text-slate-900">Program ROI</h3>
+                </div>
+                <p className="text-3xl font-black text-emerald-700">
+                  {roiMultiple && roiMultiple > 0
+                    ? `${roiMultiple.toFixed(1)}×`
+                    : "—"}
+                </p>
+                <p className="text-sm text-slate-600 mt-1">
+                  Revenue ÷ estimated send cost
+                </p>
               </div>
             </div>
           </Card>

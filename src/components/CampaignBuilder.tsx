@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { CampaignEmailPreview } from "@/components/CampaignEmailPreview";
 import {
   Dialog,
   DialogContent,
@@ -16,37 +17,105 @@ import {
 } from "@/components/ui/dialog";
 import { Phone, Mail, Calendar, Send, AlertCircle, CheckCircle } from "lucide-react";
 import { Database } from "@/types/supabase";
+import { campaignSchedulerEnabled } from "@/lib/feature-flags";
 
 type Customer = Database["public"]["Tables"]["customers"]["Row"];
 
 type CampaignBuilderProps = {
   customers: Customer[];
   businessName: string;
-  sendCampaignAction: (formData: FormData) => Promise<{ success?: string; error?: string }>;
+  siteUrl: string;
+  offerText: string | null;
+  newUserRewardText: string | null;
+  clientRewardText: string | null;
+  rewardType: Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
+  rewardAmount: number | null;
+  upgradeName: string | null;
+  rewardTerms: string | null;
+  logoUrl?: string | null;
+  uploadLogoAction?: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
 };
 
 export function CampaignBuilder({
   customers,
   businessName,
-  sendCampaignAction
+  siteUrl,
+  offerText,
+  newUserRewardText,
+  clientRewardText,
+  rewardType,
+  rewardAmount,
+  upgradeName,
+  rewardTerms,
+  logoUrl,
+  uploadLogoAction,
 }: CampaignBuilderProps) {
   const [showCampaignModal, setShowCampaignModal] = useState(false);
   const [campaignName, setCampaignName] = useState("");
   const [campaignMessage, setCampaignMessage] = useState("");
   const [selectedCustomers, setSelectedCustomers] = useState<string[]>([]);
-  const [campaignChannel, setCampaignChannel] = useState<"sms" | "email">("sms");
+  const [campaignChannel, setCampaignChannel] = useState<"sms" | "email">("email");
   const [scheduleType, setScheduleType] = useState<"now" | "later">("now");
   const [scheduleDate, setScheduleDate] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
+  const [settingsOfferText, setSettingsOfferText] = useState(offerText ?? "");
+  const [settingsNewUserRewardText, setSettingsNewUserRewardText] = useState(
+    newUserRewardText ?? "",
+  );
+  const [settingsClientRewardText, setSettingsClientRewardText] = useState(
+    clientRewardText ?? "",
+  );
+  const [settingsRewardType, setSettingsRewardType] =
+    useState<Database["public"]["Tables"]["businesses"]["Row"]["reward_type"]>(
+      rewardType ?? "credit",
+    );
+  const [settingsRewardAmount, setSettingsRewardAmount] = useState<number>(
+    rewardAmount ?? 15,
+  );
+  const [settingsUpgradeName, setSettingsUpgradeName] = useState(
+    upgradeName ?? "",
+  );
+  const [settingsRewardTerms, setSettingsRewardTerms] = useState(
+    rewardTerms ?? "",
+  );
+  const [settingsLogoUrl, setSettingsLogoUrl] = useState(logoUrl ?? "");
+  const [isUploadingLogo, setIsUploadingLogo] = useState(false);
+  const [includeQrModule, setIncludeQrModule] = useState(true);
+
+  const schedulingEnabled = campaignSchedulerEnabled;
+  const effectiveScheduleType = schedulingEnabled ? scheduleType : "now";
+  const effectiveScheduleDate = schedulingEnabled ? scheduleDate : "";
+  const scheduleDateMissing =
+    schedulingEnabled && scheduleType === "later" && !scheduleDate;
+
+  const isSettingsComplete =
+    !!settingsOfferText &&
+    !!settingsNewUserRewardText &&
+    !!settingsClientRewardText &&
+    settingsRewardType !== null &&
+    (settingsRewardType !== "credit" || settingsRewardAmount > 0);
+
   const eligibleCustomers = customers.filter(c =>
     campaignChannel === "sms" ? c.phone : c.email
   );
 
+  const smsEligibleCount = customers.filter((c) => !!c.phone).length;
+  const emailEligibleCount = customers.filter((c) => !!c.email).length;
+  const omnichannelReadyCount = customers.filter((c) => c.phone && c.email).length;
+
   const selectedCount = selectedCustomers.length;
   const costPerMessage = campaignChannel === "sms" ? 0.02 : 0.01;
   const estimatedCost = selectedCount * costPerMessage;
+  const previewCustomer = selectedCustomers.length
+    ? customers.find((c) => c.id === selectedCustomers[0])
+    : null;
+  const previewReferralCode = previewCustomer?.referral_code ?? "VIPCODE1234";
+  const previewReferralUrl =
+    previewCustomer?.referral_code
+      ? `${siteUrl}/r/${previewCustomer.referral_code}`
+      : `${siteUrl}/r/demo-referral`;
 
   useEffect(() => {
     if (statusMessage) {
@@ -54,6 +123,29 @@ export function CampaignBuilder({
       return () => clearTimeout(timer);
     }
   }, [statusMessage]);
+
+  // Expose a global helper so other client components (like dashboard shortcuts)
+  // can trigger the "Start New Campaign" modal without lifting state through
+  // server components.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const win = window as any;
+    const openFn = () => setShowCampaignModal(true);
+    const eventHandler = () => openFn();
+    win.__pepOpenCampaignModal = openFn;
+    window.addEventListener("pep-open-campaign", eventHandler);
+    if (win.__pepPendingCampaignModal) {
+      delete win.__pepPendingCampaignModal;
+      openFn();
+    }
+    return () => {
+      if (win.__pepOpenCampaignModal === openFn) {
+        delete win.__pepOpenCampaignModal;
+      }
+      window.removeEventListener("pep-open-campaign", eventHandler);
+    };
+  }, []);
 
   const toggleCustomerSelection = (customerId: string) => {
     setSelectedCustomers(prev =>
@@ -72,42 +164,128 @@ export function CampaignBuilder({
   };
 
   const handleSendCampaign = async () => {
-    if (!campaignName || !campaignMessage || selectedCustomers.length === 0) {
-      setStatusMessage({ type: "error", text: "Please fill in all required fields and select at least one customer." });
+    if (!campaignName || selectedCustomers.length === 0) {
+      setStatusMessage({
+        type: "error",
+        text: "Please give your campaign a name and select at least one customer.",
+      });
+      return;
+    }
+
+    if (campaignChannel === "sms" && !campaignMessage) {
+      setStatusMessage({
+        type: "error",
+        text: "Please write an SMS message or switch to email.",
+      });
+      return;
+    }
+
+    if (scheduleDateMissing) {
+      setStatusMessage({
+        type: "error",
+        text: "Please pick a future date and time to schedule this campaign.",
+      });
+      return;
+    }
+
+    if (!isSettingsComplete) {
+      setStatusMessage({
+        type: "error",
+        text: "Please complete Settings & Rewards (offer, rewards, and reward amount) before sending this campaign.",
+      });
       return;
     }
 
     setIsSending(true);
     setStatusMessage(null);
 
-    const formData = new FormData();
-    formData.append("campaignName", campaignName);
-    formData.append("campaignMessage", campaignMessage);
-    formData.append("campaignChannel", campaignChannel);
-    formData.append("scheduleType", scheduleType);
-    formData.append("scheduleDate", scheduleDate);
-    formData.append("selectedCustomers", JSON.stringify(selectedCustomers));
-
     try {
-      const result = await sendCampaignAction(formData);
+      const response = await fetch("/api/campaigns/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          campaignName,
+          campaignMessage,
+          campaignChannel,
+          scheduleType: effectiveScheduleType,
+          scheduleDate: effectiveScheduleDate,
+          selectedCustomers,
+          includeQrModule,
+        }),
+      });
 
-      if (result.success) {
-        setStatusMessage({ type: "success", text: result.success });
-        setShowCampaignModal(false);
-        // Reset form
-        setCampaignName("");
-        setCampaignMessage("");
-        setSelectedCustomers([]);
-        setScheduleType("now");
-        setScheduleDate("");
-      } else if (result.error) {
-        setStatusMessage({ type: "error", text: result.error });
+      const result = await response.json();
+
+      if (!response.ok || result.error) {
+        setStatusMessage({
+          type: "error",
+          text:
+            result?.error ||
+            "Unable to queue your campaign. Please verify your settings and try again.",
+        });
+        return;
       }
+
+      setStatusMessage({ type: "success", text: result.success });
+      setShowCampaignModal(false);
+      // Reset form
+      setCampaignName("");
+      setCampaignMessage("");
+      setSelectedCustomers([]);
+      setScheduleType("now");
+      setScheduleDate("");
     } catch (error) {
       console.error("Campaign send error:", error);
-      setStatusMessage({ type: "error", text: "Failed to send campaign. Please try again." });
+      setStatusMessage({
+        type: "error",
+        text:
+          error instanceof Error
+            ? `Failed to send campaign: ${error.message}`
+            : "Failed to send campaign. Please try again.",
+      });
     } finally {
       setIsSending(false);
+    }
+  };
+
+  const handleLogoFileChange = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    if (!uploadLogoAction) {
+      return;
+    }
+
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    setIsUploadingLogo(true);
+    try {
+      const result = await uploadLogoAction(formData);
+      if (result.error) {
+        setStatusMessage({
+          type: "error",
+          text: result.error,
+        });
+      } else if (result.url) {
+        setSettingsLogoUrl(result.url);
+        setStatusMessage({
+          type: "success",
+          text: "Logo updated for future campaigns.",
+        });
+      }
+    } catch (error) {
+      console.error("Logo upload error:", error);
+      setStatusMessage({
+        type: "error",
+        text: "Failed to upload logo. Please try again.",
+      });
+    } finally {
+      setIsUploadingLogo(false);
     }
   };
 
@@ -135,24 +313,70 @@ export function CampaignBuilder({
         </Card>
       )}
 
-      {/* Start Campaign Button */}
+      {/* Campaign Overview */}
       <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80 mb-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-2">
-              Launch Campaign
-            </h2>
-            <p className="text-slate-600">
-              Send SMS or email messages to your ambassadors to boost referrals
-            </p>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                Campaign control
+              </p>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+                Launch omnichannel campaigns
+              </h2>
+              <p className="text-sm text-slate-600">
+                Segment ambassadors, personalize rewards, and send premium SMS/email sequences from the unified composer.
+              </p>
+            </div>
+            <span
+              className={`px-4 py-1 rounded-full text-xs font-semibold ${
+                isSettingsComplete
+                  ? "bg-emerald-100 text-emerald-700"
+                  : "bg-amber-100 text-amber-700"
+              }`}
+            >
+              {isSettingsComplete ? "Ready to send" : "Complete settings"}
+            </span>
           </div>
-          <Button
-            onClick={() => setShowCampaignModal(true)}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 font-bold shadow-lg"
-          >
-            <Send className="mr-2 h-4 w-4" />
-            Start New Campaign
-          </Button>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                SMS ready
+              </p>
+              <p className="text-2xl font-black text-slate-900">{smsEligibleCount}</p>
+              <p className="text-xs text-slate-500">Ambassadors with phone numbers</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                Email ready
+              </p>
+              <p className="text-2xl font-black text-slate-900">{emailEligibleCount}</p>
+              <p className="text-xs text-slate-500">Ambassadors with verified email</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                Omnichannel ready
+              </p>
+              <p className="text-2xl font-black text-slate-900">{omnichannelReadyCount}</p>
+              <p className="text-xs text-slate-500">Have both SMS + email</p>
+            </div>
+          </div>
+
+          <p className="text-xs text-slate-500">
+            Use the <span className="font-semibold text-slate-700">Start Campaign</span> action near the top of the dashboard whenever you&apos;re ready to open this composer.
+          </p>
+
+          <div className="flex flex-wrap gap-3 text-xs text-slate-500">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 bg-white">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              SMS: ${smsEligibleCount ? (smsEligibleCount * 0.02).toFixed(2) : "0.00"} full send
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 bg-white">
+              <span className="h-2 w-2 rounded-full bg-indigo-500" />
+              Email: ${emailEligibleCount ? (emailEligibleCount * 0.01).toFixed(2) : "0.00"} full send
+            </div>
+          </div>
         </div>
       </Card>
 
@@ -167,69 +391,329 @@ export function CampaignBuilder({
           </DialogHeader>
 
           <div className="space-y-6 py-4">
-            {/* Campaign Name */}
-            <div>
-              <Label htmlFor="campaignName">Campaign Name</Label>
-              <Input
-                id="campaignName"
-                value={campaignName}
-                onChange={(e) => setCampaignName(e.target.value)}
-                placeholder="e.g., Holiday Referral Push"
-              />
-            </div>
-
-            {/* Channel Selection */}
-            <div>
-              <Label>Campaign Channel</Label>
-              <div className="flex gap-4 mt-2">
-                <Button
-                  type="button"
-                  variant={campaignChannel === "sms" ? "default" : "outline"}
-                  onClick={() => {
-                    setCampaignChannel("sms");
-                    setSelectedCustomers([]);
-                  }}
-                  className="flex-1"
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  SMS
-                </Button>
-                <Button
-                  type="button"
-                  variant={campaignChannel === "email" ? "default" : "outline"}
-                  onClick={() => {
-                    setCampaignChannel("email");
-                    setSelectedCustomers([]);
-                  }}
-                  className="flex-1"
-                >
-                  <Mail className="mr-2 h-4 w-4" />
-                  Email
-                </Button>
+            {/* Campaign Name & Channel */}
+            <div className="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)] items-start">
+              <div className="space-y-2">
+                <Label htmlFor="campaignName">Campaign Name</Label>
+                <Input
+                  id="campaignName"
+                  value={campaignName}
+                  onChange={(e) => setCampaignName(e.target.value)}
+                  placeholder="e.g., VIP Ambassador Invitation"
+                />
+                <p className="text-[11px] text-slate-500">
+                  This appears as the internal name and in your campaign history.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <Label>Channel (email first)</Label>
+                <div className="flex gap-2 mt-1">
+                  <Button
+                    type="button"
+                    variant={campaignChannel === "email" ? "default" : "outline"}
+                    onClick={() => {
+                      setCampaignChannel("email");
+                      setSelectedCustomers([]);
+                    }}
+                    className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700"
+                  >
+                    <Mail className="mr-2 h-4 w-4" />
+                    Email (recommended)
+                  </Button>
+                  <Button
+                    type="button"
+                    variant={campaignChannel === "sms" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => {
+                      setCampaignChannel("sms");
+                      setSelectedCustomers([]);
+                    }}
+                    className="h-9 px-3"
+                  >
+                    <Phone className="mr-1 h-4 w-4" />
+                    SMS
+                  </Button>
+                </div>
+                <p className="text-[11px] text-slate-500">
+                  Email sends a full luxury campaign; SMS is best for short reminders.
+                </p>
               </div>
             </div>
 
-            {/* Message */}
-            <div>
-              <Label htmlFor="campaignMessage">
-                Message {campaignChannel === "sms" && "(160 characters recommended)"}
-              </Label>
-              <Textarea
-                id="campaignMessage"
-                value={campaignMessage}
-                onChange={(e) => setCampaignMessage(e.target.value)}
-                placeholder={`Hi {{name}}! Share your referral link and earn rewards at ${businessName}. Your link: {{referral_link}}`}
-                rows={4}
-                className="font-mono text-sm"
-              />
-              <p className="text-xs text-slate-500 mt-1">
-                Use {"{{name}}"} and {"{{referral_link}}"} as placeholders for personalization
-              </p>
-              {campaignChannel === "sms" && (
+            {/* SMS Message (only when SMS selected) */}
+            {campaignChannel === "sms" && (
+              <div>
+                <Label htmlFor="campaignMessage">
+                  SMS message (160 characters recommended)
+                </Label>
+                <Textarea
+                  id="campaignMessage"
+                  value={campaignMessage}
+                  onChange={(e) => setCampaignMessage(e.target.value)}
+                  placeholder={`Hi {{name}}! Share your referral link and earn rewards at ${businessName}. Your link: {{referral_link}}`}
+                  rows={4}
+                  className="font-mono text-sm"
+                />
+                <p className="text-xs text-slate-500 mt-1">
+                  Use {"{{name}}"} and {"{{referral_link}}"} as placeholders for personalization.
+                </p>
                 <p className="text-xs text-slate-600 mt-1">
                   Character count: {campaignMessage.length}
                 </p>
-              )}
+              </div>
+            )}
+
+            {/* Program Settings for this campaign */}
+            <div className="space-y-4 border-t border-slate-200 pt-4">
+              <div>
+                <p className="text-sm font-semibold text-slate-900">
+                  Program settings &amp; rewards
+                </p>
+                <p className="text-xs text-slate-500">
+                  These details control what friends and ambassadors see on referral pages and in this campaign.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="space-y-2">
+                  <Label htmlFor="offer_text">Public headline / offer</Label>
+                  <Textarea
+                    id="offer_text"
+                    value={settingsOfferText}
+                    onChange={(e) => setSettingsOfferText(e.target.value)}
+                    placeholder="e.g., Turn your loyalty into $200 each time a friend joins"
+                    className="min-h-[72px]"
+                  />
+                </div>
+
+                <div className="grid gap-4 lg:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="new_user_reward_text">New user reward</Label>
+                    <Textarea
+                      id="new_user_reward_text"
+                      value={settingsNewUserRewardText}
+                      onChange={(e) =>
+                        setSettingsNewUserRewardText(e.target.value)
+                      }
+                      placeholder="e.g., $200 welcome credit or free VIP upgrade"
+                      className="min-h-[90px]"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="client_reward_text">
+                      Client / ambassador reward
+                    </Label>
+                    <Textarea
+                      id="client_reward_text"
+                      value={settingsClientRewardText}
+                      onChange={(e) =>
+                        setSettingsClientRewardText(e.target.value)
+                      }
+                      placeholder="e.g., $200 salon credit released once the booking is completed"
+                      className="min-h-[90px]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="space-y-2">
+                    <Label htmlFor="reward_type">Reward type</Label>
+                    <select
+                      id="reward_type"
+                      value={settingsRewardType ?? "credit"}
+                      onChange={(e) =>
+                        setSettingsRewardType(
+                          e.target.value as Database["public"]["Tables"]["businesses"]["Row"]["reward_type"],
+                        )
+                      }
+                      className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                    >
+                      <option value="credit">Credit</option>
+                      <option value="upgrade">Upgrade</option>
+                      <option value="discount">Discount</option>
+                      <option value="points">Points</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="reward_amount">Reward amount</Label>
+                    <div className="relative">
+                      <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500">
+                        $
+                      </span>
+                      <Input
+                        id="reward_amount"
+                        type="number"
+                        min="0"
+                        step="1"
+                        className="pl-6"
+                        value={settingsRewardAmount}
+                        onChange={(e) =>
+                          setSettingsRewardAmount(
+                            Number(e.target.value || "0") || 0,
+                          )
+                        }
+                      />
+                    </div>
+                    <div className="flex flex-wrap gap-2 text-xs text-slate-500">
+                      {[25, 50, 100, 250].map((preset) => (
+                        <Button
+                          key={preset}
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          className="h-7 border-slate-200 text-slate-600"
+                          onClick={() => setSettingsRewardAmount(preset)}
+                        >
+                          ${preset}
+                        </Button>
+                      ))}
+                    </div>
+                    <p className="text-[11px] text-slate-500">
+                      For credit/discount/points, enter the numeric amount.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="upgrade_name">Upgrade name</Label>
+                    <Input
+                      id="upgrade_name"
+                      value={settingsUpgradeName}
+                      onChange={(e) => setSettingsUpgradeName(e.target.value)}
+                      placeholder="e.g., Complimentary brow tint"
+                    />
+                    <p className="text-[11px] text-slate-500">
+                      Used when reward type is set to &quot;Upgrade&quot;.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="logo_url">Brand logo</Label>
+                  <div className="grid gap-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1.6fr)] items-center">
+                    <div className="space-y-2">
+                      <Input
+                        id="logo_url"
+                        type="url"
+                        value={settingsLogoUrl}
+                        onChange={(e) => setSettingsLogoUrl(e.target.value)}
+                        placeholder="https://yourdomain.com/logo.png"
+                      />
+                      <p className="text-[11px] text-slate-500">
+                        This logo appears in your premium emails and referral pages.
+                      </p>
+                    </div>
+                    {uploadLogoAction && (
+                      <div className="space-y-1">
+                        <Label className="text-xs text-slate-600">
+                          Or upload a new logo
+                        </Label>
+                        <Input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleLogoFileChange}
+                          disabled={isUploadingLogo}
+                          className="text-xs"
+                        />
+                        <p className="text-[11px] text-slate-500">
+                          JPG or PNG, up to 1&nbsp;MB.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="reward_terms">Reward terms &amp; conditions</Label>
+                  <Textarea
+                    id="reward_terms"
+                    value={settingsRewardTerms}
+                    onChange={(e) => setSettingsRewardTerms(e.target.value)}
+                    placeholder="e.g., Reward paid once referred client completes first booking within 60 days."
+                    className="min-h-[80px]"
+                  />
+                </div>
+
+                {!isSettingsComplete && (
+                  <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2">
+                    Please complete the headline, both reward descriptions, and
+                    a valid reward amount before sending this campaign.
+                  </p>
+                )}
+                <div className="rounded-2xl border border-slate-200 bg-white/90 shadow-inner p-4 space-y-3">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-slate-500 font-semibold">
+                      Settings preview
+                    </p>
+                    <p className="text-[11px] text-slate-500">
+                      Live snapshot of what ambassadors and friends will see in emails/referral pages.
+                    </p>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                        Headline / offer
+                      </p>
+                      <p className="text-sm font-semibold text-slate-900">
+                        {settingsOfferText || "Not set"}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                        Friend reward
+                      </p>
+                      <p className="text-sm font-semibold text-slate-900">
+                        {settingsNewUserRewardText || "Not set"}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                        Ambassador reward
+                      </p>
+                      <p className="text-sm font-semibold text-slate-900">
+                        {settingsClientRewardText || "Not set"}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                        Reward structure
+                      </p>
+                      <p className="text-sm font-semibold text-slate-900">
+                        {settingsRewardType || "Not set"}{" "}
+                        {settingsRewardType === "credit" && settingsRewardAmount
+                          ? `($${settingsRewardAmount})`
+                          : ""}
+                      </p>
+                    </div>
+                  </div>
+                  {settingsRewardTerms && (
+                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600">
+                      <p className="text-[11px] uppercase tracking-wide text-slate-500 mb-1">
+                        Terms
+                      </p>
+                      {settingsRewardTerms}
+                    </div>
+                  )}
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">
+                      Referral link module
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Toggle the QR card + CTA inside your campaign email.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Checkbox
+                      id="include_qr_module"
+                      checked={includeQrModule}
+                      onCheckedChange={(checked) => setIncludeQrModule(checked === true)}
+                    />
+                    <Label htmlFor="include_qr_module" className="text-sm text-slate-700">
+                      Include QR download card
+                    </Label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Schedule */}
@@ -238,7 +722,7 @@ export function CampaignBuilder({
               <div className="flex gap-4 mt-2">
                 <Button
                   type="button"
-                  variant={scheduleType === "now" ? "default" : "outline"}
+                  variant={effectiveScheduleType === "now" ? "default" : "outline"}
                   onClick={() => setScheduleType("now")}
                   className="flex-1"
                 >
@@ -246,15 +730,25 @@ export function CampaignBuilder({
                 </Button>
                 <Button
                   type="button"
-                  variant={scheduleType === "later" ? "default" : "outline"}
-                  onClick={() => setScheduleType("later")}
+                  variant={
+                    schedulingEnabled && scheduleType === "later" ? "default" : "outline"
+                  }
+                  onClick={() => schedulingEnabled && setScheduleType("later")}
                   className="flex-1"
+                  disabled={!schedulingEnabled}
                 >
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule Later
+                  <div className="flex flex-col items-start">
+                    <span>Schedule Later</span>
+                    {!schedulingEnabled && (
+                      <span className="text-[10px] uppercase tracking-wide text-slate-500">
+                        Coming soon
+                      </span>
+                    )}
+                  </div>
                 </Button>
               </div>
-              {scheduleType === "later" && (
+              {effectiveScheduleType === "later" && schedulingEnabled && (
                 <Input
                   type="datetime-local"
                   value={scheduleDate}
@@ -262,6 +756,16 @@ export function CampaignBuilder({
                   className="mt-3"
                   min={new Date().toISOString().slice(0, 16)}
                 />
+              )}
+              {scheduleDateMissing && (
+                <p className="mt-2 text-xs text-amber-600">
+                  Pick a future date and time to finish scheduling this campaign.
+                </p>
+              )}
+              {!schedulingEnabled && (
+                <p className="mt-2 text-xs text-slate-500">
+                  Scheduled sending is coming soon. Campaigns send immediately until the dispatcher launches.
+                </p>
               )}
             </div>
 
@@ -328,6 +832,41 @@ export function CampaignBuilder({
               </div>
             </div>
 
+            {campaignChannel === "email" && (
+              <div className="rounded-2xl border border-slate-200 bg-white/95 shadow-inner px-4 py-5">
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">
+                      Email preview
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Updated live so you can confirm the luxury layout before sending.
+                    </p>
+                  </div>
+                </div>
+                <CampaignEmailPreview
+                  businessName={businessName}
+                  siteUrl={siteUrl}
+                  logoUrl={settingsLogoUrl}
+                  campaignName={campaignName || "Your private ambassador invitation"}
+                  newUserReward={settingsNewUserRewardText || "Reward for friends"}
+                  clientReward={
+                    settingsClientRewardText ||
+                    (settingsRewardType === "credit"
+                      ? `$${settingsRewardAmount} credit`
+                      : "Ambassador reward")
+                  }
+                  rewardTerms={settingsRewardTerms}
+                  rewardAmount={settingsRewardAmount}
+                  rewardType={settingsRewardType}
+                  referralCode={previewReferralCode}
+                  referralUrl={previewReferralUrl}
+                  offerText={settingsOfferText}
+                  includeQr={includeQrModule}
+                />
+              </div>
+            )}
+
             {/* Cost Estimate */}
             <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
               <div className="flex items-center justify-between">
@@ -357,15 +896,21 @@ export function CampaignBuilder({
               <Button
                 type="button"
                 onClick={handleSendCampaign}
-                disabled={isSending || selectedCustomers.length === 0 || !campaignName || !campaignMessage}
-                className="flex-1 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 font-bold"
+                disabled={
+                  isSending ||
+                  selectedCustomers.length === 0 ||
+                  !campaignName ||
+                  (campaignChannel === "sms" && !campaignMessage) ||
+                  scheduleDateMissing
+                }
+                className="flex-1 bg-emerald-600 hover:bg-emerald-700 font-bold"
               >
                 {isSending ? (
                   <>Sending...</>
                 ) : (
                   <>
                     <Send className="mr-2 h-4 w-4" />
-                    {scheduleType === "now" ? "Send Campaign" : "Schedule Campaign"}
+                    {effectiveScheduleType === "now" ? "Send Campaign" : "Schedule Campaign"}
                   </>
                 )}
               </Button>

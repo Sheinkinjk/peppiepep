@@ -1,57 +1,82 @@
 'use client';
 
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
-import { Upload } from "lucide-react";
+import { Upload, Download } from "lucide-react";
 
-interface CSVUploadFormProps {
-  uploadAction: (formData: FormData) => Promise<{ error?: string; success?: string }>;
-}
-
-export function CSVUploadForm({ uploadAction }: CSVUploadFormProps) {
+export function CSVUploadForm() {
+  const router = useRouter();
   const [isUploading, setIsUploading] = useState(false);
   const [fileName, setFileName] = useState("");
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsUploading(true);
 
-    const formData = new FormData(e.currentTarget);
+    const file = fileInputRef.current?.files?.[0];
+    if (!file) {
+      toast({
+        variant: "destructive",
+        title: "Upload failed",
+        description: "Please choose a CSV or Excel file before uploading.",
+      });
+      setStatus({
+        type: "error",
+        message: "Select a CSV or Excel file before uploading.",
+      });
+      setIsUploading(false);
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
 
     try {
-      const result = await uploadAction(formData);
+      const response = await fetch("/api/customers/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
 
-      if (result.error) {
-        toast({
-          variant: 'destructive',
-          title: 'Upload Failed',
-          description: result.error,
-        });
-      } else if (result.success) {
-        toast({
-          title: 'Success!',
-          description: result.success,
-        });
-        // Reset form
-        e.currentTarget.reset();
-        setFileName("");
-      } else if (result.error) {
+      if (!response.ok || result?.error) {
         toast({
           variant: "destructive",
-          title: "Upload Failed",
-          description: result.error,
+          title: "Upload failed",
+          description: result?.error || "Unable to import customers. Please try again.",
         });
+        setStatus({
+          type: "error",
+          message: result?.error || "Unable to import customers. Please try again.",
+        });
+        return;
       }
-    } catch (error) {
-      console.error('Upload error:', error);
+
       toast({
-        variant: 'destructive',
-        title: 'Upload Failed',
-        description: 'An unexpected error occurred. Please try again.',
+        title: "Upload complete",
+        description: result.success,
+      });
+      setStatus({ type: "success", message: result.success });
+      e.currentTarget.reset();
+      setFileName("");
+      router.refresh();
+    } catch (error) {
+      console.error("Upload error:", error);
+      const message =
+        error instanceof Error ? error.message : "An unexpected error occurred. Please try again.";
+      toast({
+        variant: "destructive",
+        title: "Upload failed",
+        description: message,
+      });
+      setStatus({
+        type: "error",
+        message,
       });
     } finally {
       setIsUploading(false);
@@ -72,6 +97,20 @@ export function CSVUploadForm({ uploadAction }: CSVUploadFormProps) {
         <p className="text-sm text-slate-600">
           Include columns for name, phone, and email (optional). We automatically create referral links for each row.
         </p>
+        <Button
+          type="button"
+          variant="ghost"
+          className="w-full sm:w-auto gap-2 text-slate-700"
+          asChild
+        >
+          <a href="/customer-upload-template.csv" download>
+            <Download className="h-4 w-4" />
+            Download template CSV
+          </a>
+        </Button>
+        <p className="text-xs text-slate-500">
+          Tip: keep any extra spreadsheet columns—you can leave unwanted cells blank and we&apos;ll ignore them.
+        </p>
       </div>
 
       <input
@@ -80,7 +119,6 @@ export function CSVUploadForm({ uploadAction }: CSVUploadFormProps) {
         type="file"
         name="file"
         accept=".csv,.xlsx,.xls"
-        required
         disabled={isUploading}
         onChange={handleFileChange}
         className="hidden"
@@ -109,6 +147,17 @@ export function CSVUploadForm({ uploadAction }: CSVUploadFormProps) {
       <p className="text-xs text-slate-500">
         Supported formats: CSV (.csv), Excel (.xlsx, .xls)
       </p>
+      {status && (
+        <div
+          className={`rounded-2xl border px-3 py-2 text-xs ${
+            status.type === "success"
+              ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+              : "border-red-200 bg-red-50 text-red-700"
+          }`}
+        >
+          {status.message}
+        </div>
+      )}
     </form>
   );
 }

@@ -5,7 +5,7 @@ import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
   // Apply rate limiting: 30 requests per minute
-  const rateLimitCheck = checkRateLimit(request, 'demoReferrals');
+  const rateLimitCheck = await checkRateLimit(request, "demoReferrals");
   if (!rateLimitCheck.success && rateLimitCheck.response) {
     return rateLimitCheck.response;
   }

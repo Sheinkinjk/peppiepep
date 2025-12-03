@@ -10,6 +10,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+const primaryButtonClasses =
+  "inline-flex items-center justify-center gap-2 rounded-full bg-[#006d7c] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#004753]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-[#005a68]";
+const secondaryButtonClasses =
+  "inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#006d7c] px-6 py-3 text-sm font-semibold text-[#006d7c] transition-all duration-300 hover:-translate-y-1 hover:bg-[#006d7c] hover:text-white";
+
 export default function Home() {
   return (
     <div className="aurora tiffany-hero relative min-h-screen overflow-hidden">
@@ -20,27 +25,27 @@ export default function Home() {
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
           <div className="space-y-6">
-            <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-[#024b56] sm:text-5xl lg:text-6xl xl:text-7xl">
               Turn happy customers into your{" "}
-              <span className="bg-gradient-to-r from-[#4DD0E1] via-[#1CB9CA] to-[#00838F] bg-clip-text text-transparent">
+              <span className="text-[#3ecad4] drop-shadow-[0_0_16px_rgba(62,202,212,0.35)]">
                 growth network
               </span>
             </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl lg:text-2xl px-4 font-medium">
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[#0e5f69] sm:text-xl lg:text-2xl px-4 font-medium">
               Launch a referral program that plugs into your sales and marketing strategies
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 px-4">
             <Link
               href="/dashboard-guest"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-gradient-to-b from-white/90 to-white/70 px-8 py-4 text-base font-bold text-[#006064] shadow-xl shadow-[#00343B]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              className={`group ${secondaryButtonClasses} w-full sm:w-auto text-base font-bold`}
             >
               Try demo dashboard
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               href="/login"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#00A5C0] to-[#00838F] px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#012A31]/40 ring-1 ring-[#00A5C0]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#013840]/60"
+              className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
             >
               Get started
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -52,15 +57,9 @@ export default function Home() {
         <section className="space-y-12 sm:space-y-16 relative">
           {/* Section Header */}
           <div className="text-center space-y-4 px-4">
-            <h2 className="text-3xl font-black text-[#032731] sm:text-4xl lg:text-5xl tracking-tight">
-              How Pepform creates{" "}
-              <span className="bg-gradient-to-r from-[#4DD0E1] via-[#1CB9CA] to-[#00838F] bg-clip-text text-transparent">
-                Micro Influencers
-              </span>
+            <h2 className="text-3xl font-black text-[#024b56] sm:text-4xl lg:text-5xl tracking-tight">
+              How Pepform turns your happy customers into a referral engine
             </h2>
-            <p className="text-base sm:text-lg text-[#35535A] max-w-2xl mx-auto font-medium">
-              How Pepform turns your happy customers into a predictable, compounding referral engine
-            </p>
           </div>
 
           {/* Premium Step Cards */}
@@ -190,17 +189,17 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     href="/dashboard-guest"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-xl transition-all duration-300 hover:scale-105"
+                    className={`group ${secondaryButtonClasses} w-full sm:w-auto text-base font-bold`}
                   >
                     See it in action
-                    <ArrowRight className="h-5 w-5" />
+                    <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                   <Link
                     href="/login"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:bg-white/20"
+                    className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
                   >
                     Start for free
-                    <ArrowRight className="h-5 w-5" />
+                    <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -219,10 +218,8 @@ export default function Home() {
 
             {/* Section Header */}
             <div className="text-center space-y-6 px-4">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-                <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
-                  Why Start a Referral Program?
-                </span>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-lg">
+                Why Start a Referral Program?
               </h2>
               <p className="text-xl sm:text-2xl text-purple-100 max-w-4xl mx-auto font-medium leading-relaxed">
                 Turn your existing customers into a high-performing sales team—without the overhead, training, or payroll costs
@@ -238,7 +235,7 @@ export default function Home() {
                   <TrendingUp className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <p className="text-6xl font-black bg-gradient-to-br from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
+                  <p className="text-6xl font-black text-[#024b56]">
                     16X
                   </p>
                   <p className="text-sm font-black text-emerald-600 uppercase tracking-wide">Lower CAC</p>
@@ -254,7 +251,7 @@ export default function Home() {
                   <Users className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <p className="text-6xl font-black bg-gradient-to-br from-blue-600 to-blue-700 bg-clip-text text-transparent">
+                  <p className="text-6xl font-black text-[#024b56]">
                     4X
                   </p>
                   <p className="text-sm font-black text-blue-600 uppercase tracking-wide">Conversion Rate</p>
@@ -270,7 +267,7 @@ export default function Home() {
                   <Sparkles className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <p className="text-6xl font-black bg-gradient-to-br from-purple-600 to-purple-700 bg-clip-text text-transparent">
+                  <p className="text-6xl font-black text-[#024b56]">
                     25%
                   </p>
                   <p className="text-sm font-black text-purple-600 uppercase tracking-wide">Higher LTV</p>
@@ -286,7 +283,7 @@ export default function Home() {
                   <ShieldCheck className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <p className="text-6xl font-black bg-gradient-to-br from-amber-600 to-amber-700 bg-clip-text text-transparent">
+                  <p className="text-6xl font-black text-[#024b56]">
                     92%
                   </p>
                   <p className="text-sm font-black text-amber-600 uppercase tracking-wide">Trust Referrals</p>
@@ -302,7 +299,7 @@ export default function Home() {
                   <Gift className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <p className="text-6xl font-black bg-gradient-to-br from-pink-600 to-pink-700 bg-clip-text text-transparent">
+                  <p className="text-6xl font-black text-[#024b56]">
                     37%
                   </p>
                   <p className="text-sm font-black text-pink-600 uppercase tracking-wide">Better Retention</p>
@@ -318,7 +315,7 @@ export default function Home() {
                   <TrendingUp className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <p className="text-6xl font-black bg-gradient-to-br from-indigo-600 to-indigo-700 bg-clip-text text-transparent">
+                  <p className="text-6xl font-black text-[#024b56]">
                     86%
                   </p>
                   <p className="text-sm font-black text-indigo-600 uppercase tracking-wide">Revenue Impact</p>
@@ -341,7 +338,9 @@ export default function Home() {
                       Your Customers Are Your Best Sales Team
                     </h3>
                     <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
-                      Instead of pouring budget into ads that get ignored, activate the people who already love your brand
+                      Instead of pouring budget into ads that get ignored, activate the people who already love your brand—this is{" "}
+                      <span className="text-[#5ce1e6] font-black tracking-tight drop-shadow-[0_0_18px_rgba(92,225,230,0.35)]">growth hacking</span>{" "}
+                      powered by trust and proof from real customers.
                     </p>
                   </div>
 
@@ -423,14 +422,14 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <Link
                         href="/dashboard-guest"
-                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-white/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-white/50"
+                        className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
                       >
                         View Demo Dashboard
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                       <Link
                         href="/r/demo-referral"
-                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20"
+                        className={`group ${secondaryButtonClasses} w-full sm:w-auto text-base font-bold`}
                       >
                         View Demo Referral
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -444,50 +443,52 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 p-[2px] shadow-2xl shadow-purple-500/30">
-          <div className="flex flex-col gap-6 rounded-3xl bg-gradient-to-b from-white to-slate-50 p-8 sm:p-10 text-slate-900 md:flex-row md:items-center md:justify-between">
-            <div className="flex-1">
-              <p className="text-xs font-bold uppercase tracking-wider text-purple-600 mb-2">
+        <section className="rounded-[32px] border border-cyan-200/70 bg-white shadow-[0_20px_60px_rgba(1,70,82,0.15)] px-8 py-10 sm:px-12 sm:py-12">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-3 max-w-2xl">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-700">
                 Ready to grow?
               </p>
-              <h3 className="mt-1 text-2xl sm:text-3xl font-extrabold mb-3 tracking-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900">
                 Launch your referral program in under 5 minutes
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
-                Import your customers, set your reward, and go. Pepform handles everything else—tracking, notifications, and rewarding your ambassadors automatically.
+              <p className="text-base text-slate-600 leading-relaxed font-medium">
+                Import your customers, set your reward, and go. Pepform handles everything else—tracking,
+                notifications, and rewarding your ambassadors automatically.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:shrink-0">
-              <Link
-                href="/login"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-slate-900/30 ring-1 ring-slate-700/50 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-slate-900/40"
-              >
-                Register Now <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+            <Link
+              href="/login"
+              className={`group ${primaryButtonClasses} self-start text-base font-bold`}
+            >
+              Register Now <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
         </section>
 
-        <section className="rounded-xl bg-slate-50 p-6 border border-slate-100">
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-green-600" />
-              <span className="font-medium text-slate-700">GDPR Compliant</span>
+        <section className="rounded-[26px] border border-white/60 bg-white/80 p-6 shadow-lg shadow-cyan-500/10 backdrop-blur">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-600 font-semibold">
+            <div className="inline-flex items-center gap-2 text-emerald-700">
+              <ShieldCheck className="h-4 w-4" />
+              GDPR Compliant
             </div>
-            <div className="h-4 w-px bg-slate-300" />
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-blue-600" />
-              <span className="font-medium text-slate-700">256-bit SSL</span>
+            <div className="h-4 w-px bg-slate-200" />
+            <div className="inline-flex items-center gap-2 text-sky-700">
+              <ShieldCheck className="h-4 w-4" />
+              256-bit SSL
             </div>
-            <div className="h-4 w-px bg-slate-300" />
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-purple-600" />
-              <span className="font-medium text-slate-700">99.9% Uptime</span>
+            <div className="h-4 w-px bg-slate-200" />
+            <div className="inline-flex items-center gap-2 text-purple-700">
+              <ShieldCheck className="h-4 w-4" />
+              99.9% Uptime
             </div>
-            <div className="h-4 w-px bg-slate-300" />
-            <Link href="/security" className="flex items-center gap-2 hover:text-slate-900 transition">
-              <ShieldCheck className="h-4 w-4 text-slate-400" />
-              <span className="font-medium">View security →</span>
+            <div className="h-4 w-px bg-slate-200" />
+            <Link
+              href="/security"
+              className="inline-flex items-center gap-2 text-slate-700 transition hover:text-slate-900"
+            >
+              <ShieldCheck className="h-4 w-4 text-slate-500" />
+              View security →
             </Link>
           </div>
         </section>
