@@ -284,13 +284,20 @@ export async function POST(request: Request) {
       }
 
       campaignError = error;
-      if (error?.code === "42703") {
+      if (error) {
+        const normalizedMessage = error.message?.toLowerCase() ?? "";
         const missingColumn = optionalSnapshotColumns.find((column) =>
-          error.message?.toLowerCase().includes(column.toLowerCase()),
+          normalizedMessage.includes(column.toLowerCase()),
         );
-        if (missingColumn) {
+
+        if (
+          missingColumn &&
+          (error.code === "42703" ||
+            error.code === "PGRST204" ||
+            normalizedMessage.includes("could not find"))
+        ) {
           console.warn(
-            `[campaigns.send] Optional column ${missingColumn} missing, retrying insert without it.`,
+            `[campaigns.send] Optional column ${missingColumn} missing (code: ${error.code}), retrying insert without it.`,
           );
           delete insertPayload[missingColumn];
           continue;
