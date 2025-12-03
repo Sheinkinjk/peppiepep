@@ -258,6 +258,8 @@ export async function POST(request: Request) {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const campaignsInsert = supabase.from("campaigns") as any;
+    type CampaignRecord = Record<string, unknown> & { id: string; name: string | null };
+
     const insertPayload: Record<string, unknown> = {
       business_id: business.id,
       name: campaignName,
@@ -270,13 +272,13 @@ export async function POST(request: Request) {
       scheduled_at: scheduledAtIso,
     };
     const optionalSnapshotColumns = ["snapshot_story_blocks", "snapshot_include_qr"];
-    let campaignData: Record<string, unknown> | null = null;
+    let campaignData: CampaignRecord | null = null;
     let campaignError: { code?: string; message?: string } | null = null;
 
     for (let attempt = 0; attempt <= optionalSnapshotColumns.length; attempt++) {
       const { data, error } = await campaignsInsert.insert([insertPayload]).select().single();
       if (!error && data) {
-        campaignData = data;
+        campaignData = data as CampaignRecord;
         campaignError = null;
         break;
       }
