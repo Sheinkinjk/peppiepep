@@ -258,22 +258,45 @@ export async function POST(request: Request) {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const campaignsInsert = supabase.from("campaigns") as any;
-    const { data: campaignData, error: campaignError } = await campaignsInsert
-      .insert([
-        {
-          business_id: business.id,
-          name: campaignName,
-          message: campaignMessage,
-          channel: campaignChannel,
-          status: "queued",
-          total_recipients: selectedCustomersWithCodes.length,
-          sent_count: 0,
-          ...snapshotWithQr,
-          scheduled_at: scheduledAtIso,
-        },
-      ])
-      .select()
-      .single();
+    const insertPayload: Record<string, unknown> = {
+      business_id: business.id,
+      name: campaignName,
+      message: campaignMessage,
+      channel: campaignChannel,
+      status: "queued",
+      total_recipients: selectedCustomersWithCodes.length,
+      sent_count: 0,
+      ...snapshotWithQr,
+      scheduled_at: scheduledAtIso,
+    };
+    const optionalSnapshotColumns = ["snapshot_story_blocks", "snapshot_include_qr"];
+    let campaignData: Record<string, unknown> | null = null;
+    let campaignError: { code?: string; message?: string } | null = null;
+
+    for (let attempt = 0; attempt <= optionalSnapshotColumns.length; attempt++) {
+      const { data, error } = await campaignsInsert.insert([insertPayload]).select().single();
+      if (!error && data) {
+        campaignData = data;
+        campaignError = null;
+        break;
+      }
+
+      campaignError = error;
+      if (error?.code === "42703") {
+        const missingColumn = optionalSnapshotColumns.find((column) =>
+          error.message?.toLowerCase().includes(column.toLowerCase()),
+        );
+        if (missingColumn) {
+          console.warn(
+            `[campaigns.send] Optional column ${missingColumn} missing, retrying insert without it.`,
+          );
+          delete insertPayload[missingColumn];
+          continue;
+        }
+      }
+
+      break;
+    }
 
     if (campaignError || !campaignData) {
       console.error("Failed to create campaign record:", campaignError);
