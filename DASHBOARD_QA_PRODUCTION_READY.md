@@ -1643,7 +1643,7 @@ if (wantsScheduledSend && !schedulingEnabled) {
 ---
 
 #### Logo Upload Requires Storage Bucket
-**Status:** Optional feature
+**Status:** ✅ **SETUP AVAILABLE** (2-minute setup)
 **Code:** [src/app/dashboard/page.tsx:700-705](src/app/dashboard/page.tsx#L700-L705)
 
 ```typescript
@@ -1656,9 +1656,16 @@ if (uploadError) {
 }
 ```
 
+**Setup Guide:** See [SUPABASE_STORAGE_SETUP.md](SUPABASE_STORAGE_SETUP.md) for complete instructions.
+
+**Quick Setup:**
+1. Go to [Supabase Dashboard](https://supabase.com/dashboard) → Storage
+2. Click "New Bucket" → Name: `logos` → Check "Public bucket" → Create
+3. Or run SQL: `supabase/migrations/20250305140000_create_logos_storage_bucket.sql`
+
 **Impact:** If bucket doesn't exist, logo upload fails (but dashboard works fine).
 
-**Workaround:** Use logo URL instead of upload.
+**Workaround:** Use logo URL input instead of upload button.
 
 ---
 
