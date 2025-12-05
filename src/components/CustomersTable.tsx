@@ -20,6 +20,7 @@ import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter 
 import { toast } from "@/hooks/use-toast";
 import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
 import { EmptyState } from "@/components/EmptyState";
+import { Skeleton } from "@/components/Skeleton";
 
 type Customer = {
   id: string;
@@ -385,7 +386,47 @@ export function CustomersTable({
           <div>Status</div>
           <div>Actions</div>
         </div>
-        {customers.length === 0 && !isLoading ? (
+        {isLoading && customers.length === 0 ? (
+          <div className="space-y-0">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="grid gap-4 border-b border-slate-100 px-4 py-3 text-xs"
+                style={{ gridTemplateColumns: ROW_TEMPLATE }}
+              >
+                <div className="flex items-center">
+                  <Skeleton className="h-4 w-4 rounded" />
+                </div>
+                <div className="flex items-center gap-2">
+                  <Skeleton className="h-8 w-8 rounded-full" />
+                  <Skeleton className="h-4 w-24" />
+                </div>
+                <div className="space-y-1">
+                  <Skeleton className="h-3 w-32" />
+                  <Skeleton className="h-3 w-28" />
+                </div>
+                <div className="space-y-1">
+                  <Skeleton className="h-3 w-full max-w-[200px]" />
+                  <Skeleton className="h-3 w-20" />
+                </div>
+                <div className="space-y-1">
+                  <Skeleton className="h-3 w-24" />
+                  <Skeleton className="h-3 w-16" />
+                </div>
+                <div className="flex items-center justify-end">
+                  <Skeleton className="h-4 w-8" />
+                </div>
+                <div className="flex items-center">
+                  <Skeleton className="h-5 w-16 rounded-full" />
+                </div>
+                <div className="flex items-center gap-2">
+                  <Skeleton className="h-7 w-16" />
+                  <Skeleton className="h-7 w-16" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : customers.length === 0 ? (
           <div className="p-8">
             {debouncedSearch || statusFilter !== "all" ? (
               <EmptyState

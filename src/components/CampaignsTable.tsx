@@ -5,6 +5,7 @@ import { TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Rocket, Send } from "lucide-react";
 import type { Database } from "@/types/supabase";
 import { EmptyState } from "@/components/EmptyState";
+import { Skeleton } from "@/components/Skeleton";
 
 type CampaignRow = Database["public"]["Tables"]["campaigns"]["Row"];
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
@@ -22,10 +23,46 @@ type CampaignsTableProps = {
   campaigns: CampaignRow[];
   referrals: ReferralRow[];
   eventStats: CampaignEventStats;
+  isLoading?: boolean;
 };
 
-export function CampaignsTable({ campaigns, referrals, eventStats }: CampaignsTableProps) {
+export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = false }: CampaignsTableProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  if (isLoading && campaigns.length === 0) {
+    return (
+      <TableBody>
+        {Array.from({ length: 3 }).map((_, i) => (
+          <TableRow key={i}>
+            <TableCell>
+              <Skeleton className="h-4 w-32" />
+            </TableCell>
+            <TableCell>
+              <Skeleton className="h-4 w-16" />
+            </TableCell>
+            <TableCell>
+              <Skeleton className="h-5 w-20 rounded-full" />
+            </TableCell>
+            <TableCell className="text-right">
+              <Skeleton className="h-4 w-12 ml-auto" />
+            </TableCell>
+            <TableCell className="text-right">
+              <Skeleton className="h-4 w-12 ml-auto" />
+            </TableCell>
+            <TableCell className="text-right">
+              <Skeleton className="h-4 w-12 ml-auto" />
+            </TableCell>
+            <TableCell className="text-right">
+              <Skeleton className="h-4 w-16 ml-auto" />
+            </TableCell>
+            <TableCell className="text-right">
+              <Skeleton className="h-4 w-12 ml-auto" />
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    );
+  }
 
   if (campaigns.length === 0) {
     return (
