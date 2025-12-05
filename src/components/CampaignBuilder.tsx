@@ -455,14 +455,20 @@ export function CampaignBuilder({
             </div>
 
             {/* Campaign Template Selector */}
-            <div className="flex justify-end">
-              <CampaignTemplateSelector
-                onSelectTemplate={handleTemplateSelect}
-                businessName={businessName}
-                clientReward={settingsClientRewardText || clientRewardText || "$15"}
-                newUserReward={settingsNewUserRewardText || newUserRewardText || "$10 off"}
-                offer={settingsOfferText || offerText || "makes a purchase"}
-              />
+            <div className="rounded-2xl border-2 border-dashed border-purple-200 bg-purple-50/50 p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">Start with a proven template</p>
+                  <p className="text-xs text-slate-600">Save time with professionally-written campaign copy</p>
+                </div>
+                <CampaignTemplateSelector
+                  onSelectTemplate={handleTemplateSelect}
+                  businessName={businessName}
+                  clientReward={settingsClientRewardText || clientRewardText || "$15"}
+                  newUserReward={settingsNewUserRewardText || newUserRewardText || "$10 off"}
+                  offer={settingsOfferText || offerText || "makes a purchase"}
+                />
+              </div>
             </div>
 
             {/* SMS Message (only when SMS selected) */}
