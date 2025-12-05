@@ -5,11 +5,12 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Download, Loader2 } from "lucide-react";
+import { Download, Loader2, TrendingUp, UserPlus, Filter } from "lucide-react";
 
 import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import type { Database } from "@/types/supabase";
 import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
+import { EmptyState } from "@/components/EmptyState";
 
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
 
@@ -351,10 +352,58 @@ export function ReferralsTable({
         </div>
 
         {referrals.length === 0 && !isLoading ? (
-          <div className="p-6 text-center text-sm text-slate-500">
-            {debouncedSearch || statusFilter !== "all" || sourceFilter !== "all"
-              ? "No referrals match your filters."
-              : "No referrals yet."}
+          <div className="p-8">
+            {debouncedSearch || statusFilter !== "all" || sourceFilter !== "all" ? (
+              <EmptyState
+                icon={Filter}
+                title="No referrals match your filters"
+                description="Try adjusting your search terms or filters. You can also clear all filters to see all referrals."
+                illustration="filter"
+                primaryAction={{
+                  label: "Clear Filters",
+                  onClick: () => {
+                    setSearchTerm("");
+                    setStatusFilter("all");
+                    setSourceFilter("all");
+                  },
+                  icon: Filter,
+                }}
+              />
+            ) : (
+              <EmptyState
+                icon={TrendingUp}
+                title="No referrals yet"
+                description="Referrals will appear here when your ambassadors share their links or when you manually record offline conversions. Get started by sending your first campaign or adding a manual referral."
+                primaryAction={{
+                  label: "Send Campaign",
+                  onClick: () => {
+                    const campaignsTab = document.querySelector('[data-tab-target="campaigns"]') as HTMLElement;
+                    campaignsTab?.click();
+                    setTimeout(() => {
+                      if (typeof window !== "undefined") {
+                        const win = window as any;
+                        if (typeof win.__pepOpenCampaignModal === "function") {
+                          win.__pepOpenCampaignModal();
+                        }
+                      }
+                    }, 100);
+                  },
+                  icon: TrendingUp,
+                }}
+                secondaryAction={{
+                  label: "Add Manual Referral",
+                  onClick: () => {
+                    const performanceTab = document.querySelector('[data-tab-target="performance"]') as HTMLElement;
+                    performanceTab?.click();
+                    setTimeout(() => {
+                      const manualForm = document.querySelector('[data-manual-referral-form]');
+                      manualForm?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                  },
+                  icon: UserPlus,
+                }}
+              />
+            )}
           </div>
         ) : (
           <div ref={parentRef} className="max-h-[520px] overflow-auto">

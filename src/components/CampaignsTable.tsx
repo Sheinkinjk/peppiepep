@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { TableBody, TableRow, TableCell } from "@/components/ui/table";
+import { Rocket, Send } from "lucide-react";
 import type { Database } from "@/types/supabase";
+import { EmptyState } from "@/components/EmptyState";
 
 type CampaignRow = Database["public"]["Tables"]["campaigns"]["Row"];
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
@@ -29,12 +31,28 @@ export function CampaignsTable({ campaigns, referrals, eventStats }: CampaignsTa
     return (
       <TableBody>
         <TableRow>
-          <TableCell
-            colSpan={6}
-            className="text-center text-sm text-slate-500 py-6"
-          >
-            No campaigns sent yet. Start your first SMS or email campaign
-            above.
+          <TableCell colSpan={8} className="p-0">
+            <EmptyState
+              icon={Rocket}
+              title="No campaigns sent yet"
+              description="Launch your first SMS or email campaign to activate your ambassador network and start driving referrals. Your first campaign is just a few clicks away!"
+              primaryAction={{
+                label: "Create Campaign",
+                onClick: () => {
+                  const campaignsTab = document.querySelector('[data-tab-target="campaigns"]') as HTMLElement;
+                  campaignsTab?.click();
+                  setTimeout(() => {
+                    if (typeof window !== "undefined") {
+                      const win = window as any;
+                      if (typeof win.__pepOpenCampaignModal === "function") {
+                        win.__pepOpenCampaignModal();
+                      }
+                    }
+                  }, 100);
+                },
+                icon: Send,
+              }}
+            />
           </TableCell>
         </TableRow>
       </TableBody>

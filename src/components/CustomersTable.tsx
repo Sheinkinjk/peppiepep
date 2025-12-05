@@ -16,9 +16,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Copy, Check, Coins, Download, Loader2 } from "lucide-react";
+import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
+import { EmptyState } from "@/components/EmptyState";
 
 type Customer = {
   id: string;
@@ -26,6 +27,7 @@ type Customer = {
   phone: string | null;
   email: string | null;
   referral_code: string | null;
+  discount_code: string | null;
   credits: number | null;
   status: string | null;
 };
@@ -46,13 +48,14 @@ type CustomersApiResponse = {
 
 const DEFAULT_CUSTOMER_PAGE_SIZE = 50;
 const ROW_TEMPLATE =
-  "36px minmax(160px,1.1fr) minmax(140px,1fr) minmax(220px,1.5fr) minmax(90px,0.6fr) minmax(160px,0.9fr) minmax(240px,1.1fr)";
+  "36px minmax(160px,1.1fr) minmax(140px,1fr) minmax(220px,1.5fr) minmax(180px,1fr) minmax(90px,0.6fr) minmax(160px,0.9fr) minmax(240px,1.1fr)";
 
 const csvColumns: CsvColumn<Customer>[] = [
   { header: "Name", accessor: (row) => row.name ?? "" },
   { header: "Email", accessor: (row) => row.email ?? "" },
   { header: "Phone", accessor: (row) => row.phone ?? "" },
   { header: "Referral Code", accessor: (row) => row.referral_code ?? "" },
+  { header: "Discount Code", accessor: (row) => row.discount_code ?? "" },
   { header: "Credits", accessor: (row) => row.credits ?? 0 },
   { header: "Status", accessor: (row) => row.status ?? "pending" },
 ];
@@ -377,15 +380,59 @@ export function CustomersTable({
           <div>Name</div>
           <div>Contact</div>
           <div>Referral link</div>
+          <div>Discount code</div>
           <div className="text-right">Credits</div>
           <div>Status</div>
           <div>Actions</div>
         </div>
         {customers.length === 0 && !isLoading ? (
-          <div className="p-6 text-center text-sm text-slate-500">
-            {debouncedSearch || statusFilter !== "all"
-              ? "No ambassadors match your filters."
-              : "No ambassadors yet. Upload a CSV to get started!"}
+          <div className="p-8">
+            {debouncedSearch || statusFilter !== "all" ? (
+              <EmptyState
+                icon={Filter}
+                title="No ambassadors match your filters"
+                description="Try adjusting your search terms or filters to find what you're looking for. You can also clear all filters to see all ambassadors."
+                illustration="filter"
+                primaryAction={{
+                  label: "Clear Filters",
+                  onClick: () => {
+                    setSearchTerm("");
+                    setStatusFilter("all");
+                  },
+                  icon: Filter,
+                }}
+              />
+            ) : (
+              <EmptyState
+                icon={Users}
+                title="No ambassadors yet"
+                description="Start building your referral network by importing your customer list via CSV or adding ambassadors one at a time."
+                primaryAction={{
+                  label: "Upload CSV",
+                  onClick: () => {
+                    const clientsTab = document.querySelector('[data-tab-target="clients"]') as HTMLElement;
+                    clientsTab?.click();
+                    setTimeout(() => {
+                      const csvSection = document.querySelector('[data-csv-upload]');
+                      csvSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                  },
+                  icon: Upload,
+                }}
+                secondaryAction={{
+                  label: "Add Manually",
+                  onClick: () => {
+                    const clientsTab = document.querySelector('[data-tab-target="clients"]') as HTMLElement;
+                    clientsTab?.click();
+                    setTimeout(() => {
+                      const quickAddSection = document.querySelector('[data-quick-add]');
+                      quickAddSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                  },
+                  icon: UserPlus,
+                }}
+              />
+            )}
           </div>
         ) : (
           <div
@@ -410,6 +457,9 @@ export function CustomersTable({
                   : null;
                 const isLinkCopied = copiedKey === `${customer?.id}-link`;
                 const isEmbedCopied = copiedKey === `${customer?.id}-embed`;
+                const discountCode = customer.discount_code ?? "";
+                const discountKey = `${customer.id}-discount`;
+                const isDiscountCopied = copiedKey === discountKey;
                 const rawStatus = (customer?.status || "pending").toLowerCase();
                 const isVerified =
                   rawStatus === "verified" || rawStatus === "active";
@@ -513,6 +563,35 @@ export function CustomersTable({
                           </Button>
                         )}
                       </div>
+                    </div>
+                    <div className="space-y-2">
+                      {discountCode ? (
+                        <p className="font-mono text-xs text-emerald-700">
+                          {discountCode}
+                        </p>
+                      ) : (
+                        <span className="text-xs text-slate-400">Auto-generated for new contacts</span>
+                      )}
+                      {discountCode && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => copyToClipboard(discountCode, discountKey)}
+                          className="text-xs"
+                        >
+                          {isDiscountCopied ? (
+                            <>
+                              <Check className="mr-1 h-3 w-3" />
+                              Code copied
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="mr-1 h-3 w-3" />
+                              Copy code
+                            </>
+                          )}
+                        </Button>
+                      )}
                     </div>
                     <div className="text-right font-semibold">
                       <span
