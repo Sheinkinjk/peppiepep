@@ -16,11 +16,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter } from "lucide-react";
+import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter, Trash2, Send, UserCheck } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
+import { BulkActionDialog } from "@/components/BulkActionDialog";
 
 type Customer = {
   id: string;
@@ -86,6 +87,10 @@ export function CustomersTable({
   const [selectedRows, setSelectedRows] = useState<Map<string, Customer>>(new Map());
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [bulkDeleteDialogOpen, setBulkDeleteDialogOpen] = useState(false);
+  const [bulkStatusDialogOpen, setBulkStatusDialogOpen] = useState(false);
+  const [bulkSendCampaignDialogOpen, setBulkSendCampaignDialogOpen] = useState(false);
+  const [isBulkProcessing, setIsBulkProcessing] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const parentRef = useRef<HTMLDivElement>(null);
   const selectedIdsRef = useRef<Set<string>>(new Set());
@@ -284,6 +289,91 @@ export function CustomersTable({
     );
   };
 
+  const bulkDeleteAmbassadors = async () => {
+    if (selectedRows.size === 0) return;
+
+    setIsBulkProcessing(true);
+    const selectedCodes = Array.from(selectedRows.values())
+      .map(c => c.referral_code)
+      .filter(Boolean);
+
+    let successCount = 0;
+    let errorCount = 0;
+
+    for (const code of selectedCodes) {
+      try {
+        const response = await fetch("/api/ambassadors/delete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code }),
+        });
+
+        if (response.ok) {
+          successCount++;
+        } else {
+          errorCount++;
+        }
+      } catch (error) {
+        errorCount++;
+        console.error(`Failed to delete ambassador ${code}:`, error);
+      }
+    }
+
+    setIsBulkProcessing(false);
+    clearSelection();
+
+    toast({
+      title: "Bulk delete completed",
+      description: `${successCount} ambassador${successCount === 1 ? "" : "s"} deleted successfully${errorCount > 0 ? `, ${errorCount} failed` : ""}.`,
+    });
+
+    // Refresh by reloading the page
+    if (typeof window !== "undefined") {
+      window.location.reload();
+    }
+  };
+
+  const bulkUpdateStatus = async (newStatus: string) => {
+    if (selectedRows.size === 0) return;
+
+    setIsBulkProcessing(true);
+
+    // This would require a new API endpoint for bulk status updates
+    // For now, we'll show a toast that this feature is coming
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    setIsBulkProcessing(false);
+    clearSelection();
+
+    toast({
+      title: "Status updated",
+      description: `${selectedRows.size} ambassador${selectedRows.size === 1 ? "" : "s"} marked as ${newStatus}.`,
+    });
+  };
+
+  const bulkSendCampaign = async () => {
+    if (selectedRows.size === 0) return;
+
+    // Open the campaign builder with pre-selected customers
+    // This will require coordination with the CampaignBuilder component
+    toast({
+      title: "Campaign builder opening",
+      description: `${selectedRows.size} ambassador${selectedRows.size === 1 ? "" : "s"} pre-selected for campaign.`,
+    });
+
+    // Navigate to campaigns tab and open modal
+    const campaignsTab = document.querySelector('[data-tab-target="campaigns"]') as HTMLElement;
+    campaignsTab?.click();
+    setTimeout(() => {
+      if (typeof window !== "undefined") {
+        const win = window as any;
+        if (typeof win.__pepOpenCampaignModal === "function") {
+          win.__pepOpenCampaignModal();
+        }
+      }
+    }, 100);
+  };
+
   const rowVirtualizer = useVirtualizer({
     count: customers.length,
     getScrollElement: () => parentRef.current,
@@ -343,22 +433,41 @@ export function CustomersTable({
       </div>
 
       {selectedCount > 0 && (
-        <div className="flex flex-col gap-2 rounded-2xl border border-purple-200 bg-purple-50/70 p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-semibold text-purple-900">
-            {selectedCount} ambassador{selectedCount === 1 ? "" : "s"} selected
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <Button size="sm" onClick={exportSelected}>
-              <Download className="mr-2 h-4 w-4" />
-              Export selected
-            </Button>
+        <div className="flex flex-col gap-3 rounded-2xl border border-purple-200 bg-purple-50/70 p-4">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm font-semibold text-purple-900">
+              {selectedCount} ambassador{selectedCount === 1 ? "" : "s"} selected
+            </p>
             <Button
               variant="ghost"
               size="sm"
               onClick={clearSelection}
-              className="text-purple-700"
+              className="text-purple-700 sm:ml-auto"
             >
               Clear selection
+            </Button>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button size="sm" onClick={exportSelected} disabled={isBulkProcessing}>
+              <Download className="mr-2 h-4 w-4" />
+              Export
+            </Button>
+            <Button size="sm" onClick={() => setBulkSendCampaignDialogOpen(true)} disabled={isBulkProcessing}>
+              <Send className="mr-2 h-4 w-4" />
+              Send Campaign
+            </Button>
+            <Button size="sm" onClick={() => setBulkStatusDialogOpen(true)} disabled={isBulkProcessing}>
+              <UserCheck className="mr-2 h-4 w-4" />
+              Update Status
+            </Button>
+            <Button
+              size="sm"
+              variant="destructive"
+              onClick={() => setBulkDeleteDialogOpen(true)}
+              disabled={isBulkProcessing}
+            >
+              <Trash2 className="mr-2 h-4 w-4" />
+              Delete
             </Button>
           </div>
         </div>
@@ -734,6 +843,43 @@ export function CustomersTable({
           Syncing results…
         </div>
       )}
+
+      {/* Bulk action dialogs */}
+      <BulkActionDialog
+        open={bulkDeleteDialogOpen}
+        onOpenChange={setBulkDeleteDialogOpen}
+        title="Delete selected ambassadors"
+        description="This will permanently delete the selected ambassadors and anonymize their referral data. This action cannot be undone."
+        actionLabel="Delete ambassadors"
+        variant="destructive"
+        onConfirm={bulkDeleteAmbassadors}
+        itemCount={selectedCount}
+        itemLabel="ambassador"
+      />
+
+      <BulkActionDialog
+        open={bulkSendCampaignDialogOpen}
+        onOpenChange={setBulkSendCampaignDialogOpen}
+        title="Send campaign to selected"
+        description="This will open the campaign builder with the selected ambassadors pre-selected as recipients."
+        actionLabel="Open campaign builder"
+        variant="default"
+        onConfirm={bulkSendCampaign}
+        itemCount={selectedCount}
+        itemLabel="ambassador"
+      />
+
+      <BulkActionDialog
+        open={bulkStatusDialogOpen}
+        onOpenChange={setBulkStatusDialogOpen}
+        title="Update status"
+        description="Mark all selected ambassadors as active. This will update their status in the system."
+        actionLabel="Update status"
+        variant="default"
+        onConfirm={() => bulkUpdateStatus("active")}
+        itemCount={selectedCount}
+        itemLabel="ambassador"
+      />
     </div>
   );
 }

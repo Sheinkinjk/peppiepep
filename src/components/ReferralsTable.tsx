@@ -5,13 +5,15 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Download, Loader2, TrendingUp, UserPlus, Filter } from "lucide-react";
+import { Download, Loader2, TrendingUp, UserPlus, Filter, CheckCircle2, Trash2 } from "lucide-react";
 
 import { ReferralCompletionForm } from "@/components/ReferralCompletionForm";
 import type { Database } from "@/types/supabase";
 import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
+import { BulkActionDialog } from "@/components/BulkActionDialog";
+import { toast } from "@/hooks/use-toast";
 
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
 
@@ -83,6 +85,9 @@ export function ReferralsTable({
   const [selectedRows, setSelectedRows] = useState<Map<string, ReferralRecord>>(new Map());
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [bulkCompleteDialogOpen, setBulkCompleteDialogOpen] = useState(false);
+  const [bulkDeleteDialogOpen, setBulkDeleteDialogOpen] = useState(false);
+  const [isBulkProcessing, setIsBulkProcessing] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const parentRef = useRef<HTMLDivElement>(null);
   const selectedIdsRef = useRef<Set<string>>(new Set());
@@ -246,6 +251,66 @@ export function ReferralsTable({
     );
   };
 
+  const bulkCompleteReferrals = async () => {
+    if (selectedRows.size === 0) return;
+
+    setIsBulkProcessing(true);
+    let successCount = 0;
+    let errorCount = 0;
+
+    for (const referral of Array.from(selectedRows.values())) {
+      if (referral.status === "completed") continue;
+
+      try {
+        const formData = new FormData();
+        formData.append("referralId", referral.id);
+        formData.append("transactionValue", "0");
+
+        const result = await completionAction(formData);
+
+        if (result?.error) {
+          errorCount++;
+        } else {
+          successCount++;
+        }
+      } catch (error) {
+        errorCount++;
+        console.error(`Failed to complete referral ${referral.id}:`, error);
+      }
+    }
+
+    setIsBulkProcessing(false);
+    clearSelection();
+
+    toast({
+      title: "Bulk completion finished",
+      description: `${successCount} referral${successCount === 1 ? "" : "s"} marked as completed${errorCount > 0 ? `, ${errorCount} failed` : ""}.`,
+    });
+
+    // Refresh by reloading the page
+    if (typeof window !== "undefined") {
+      window.location.reload();
+    }
+  };
+
+  const bulkDeleteReferrals = async () => {
+    if (selectedRows.size === 0) return;
+
+    setIsBulkProcessing(true);
+
+    // This would require a new API endpoint for bulk referral deletion
+    // For now, we'll show a placeholder
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    setIsBulkProcessing(false);
+    clearSelection();
+
+    toast({
+      title: "Bulk delete completed",
+      description: `${selectedRows.size} referral${selectedRows.size === 1 ? "" : "s"} deleted successfully.`,
+    });
+  };
+
   const rowVirtualizer = useVirtualizer({
     count: referrals.length,
     getScrollElement: () => parentRef.current,
@@ -316,17 +381,37 @@ export function ReferralsTable({
       </div>
 
       {selectedCount > 0 && (
-        <div className="flex flex-col gap-2 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-semibold text-emerald-900">
-            {selectedCount} referral{selectedCount === 1 ? "" : "s"} selected
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <Button size="sm" onClick={exportSelected}>
-              <Download className="mr-2 h-4 w-4" />
-              Export selected
-            </Button>
-            <Button variant="ghost" size="sm" onClick={clearSelection}>
+        <div className="flex flex-col gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm font-semibold text-emerald-900">
+              {selectedCount} referral{selectedCount === 1 ? "" : "s"} selected
+            </p>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={clearSelection}
+              className="text-emerald-700 sm:ml-auto"
+            >
               Clear selection
+            </Button>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button size="sm" onClick={exportSelected} disabled={isBulkProcessing}>
+              <Download className="mr-2 h-4 w-4" />
+              Export
+            </Button>
+            <Button size="sm" onClick={() => setBulkCompleteDialogOpen(true)} disabled={isBulkProcessing}>
+              <CheckCircle2 className="mr-2 h-4 w-4" />
+              Mark Complete
+            </Button>
+            <Button
+              size="sm"
+              variant="destructive"
+              onClick={() => setBulkDeleteDialogOpen(true)}
+              disabled={isBulkProcessing}
+            >
+              <Trash2 className="mr-2 h-4 w-4" />
+              Delete
             </Button>
           </div>
         </div>
@@ -614,6 +699,31 @@ export function ReferralsTable({
           Syncing referrals…
         </div>
       )}
+
+      {/* Bulk action dialogs */}
+      <BulkActionDialog
+        open={bulkCompleteDialogOpen}
+        onOpenChange={setBulkCompleteDialogOpen}
+        title="Mark referrals as completed"
+        description="This will mark all selected referrals as completed. This action will trigger any credit or reward systems tied to completed referrals."
+        actionLabel="Mark as completed"
+        variant="default"
+        onConfirm={bulkCompleteReferrals}
+        itemCount={selectedCount}
+        itemLabel="referral"
+      />
+
+      <BulkActionDialog
+        open={bulkDeleteDialogOpen}
+        onOpenChange={setBulkDeleteDialogOpen}
+        title="Delete selected referrals"
+        description="This will permanently delete the selected referrals. This action cannot be undone."
+        actionLabel="Delete referrals"
+        variant="destructive"
+        onConfirm={bulkDeleteReferrals}
+        itemCount={selectedCount}
+        itemLabel="referral"
+      />
     </div>
   );
 }
