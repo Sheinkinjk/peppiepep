@@ -18,6 +18,8 @@ import {
 import { Phone, Mail, Calendar, Send, AlertCircle, CheckCircle } from "lucide-react";
 import { Database } from "@/types/supabase";
 import { campaignSchedulerEnabled } from "@/lib/feature-flags";
+import { CampaignTemplateSelector } from "@/components/CampaignTemplateSelector";
+import { type CampaignTemplate } from "@/lib/campaign-templates";
 
 type Customer = Database["public"]["Tables"]["customers"]["Row"];
 
@@ -33,6 +35,8 @@ type CampaignBuilderProps = {
   upgradeName: string | null;
   rewardTerms: string | null;
   logoUrl?: string | null;
+  brandHighlightColor?: string | null;
+  brandTone?: string | null;
   uploadLogoAction?: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
 };
 
@@ -48,6 +52,8 @@ export function CampaignBuilder({
   upgradeName,
   rewardTerms,
   logoUrl,
+  brandHighlightColor,
+  brandTone,
   uploadLogoAction,
 }: CampaignBuilderProps) {
   const [showCampaignModal, setShowCampaignModal] = useState(false);
@@ -84,6 +90,14 @@ export function CampaignBuilder({
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
   const [includeQrModule, setIncludeQrModule] = useState(true);
 
+  const handleTemplateSelect = (template: CampaignTemplate) => {
+    setCampaignMessage(template.message);
+    setCampaignName(template.name);
+    if (template.channel !== "both") {
+      setCampaignChannel(template.channel);
+    }
+  };
+
   const schedulingEnabled = campaignSchedulerEnabled;
   const effectiveScheduleType = schedulingEnabled ? scheduleType : "now";
   const effectiveScheduleDate = schedulingEnabled ? scheduleDate : "";
@@ -115,7 +129,7 @@ export function CampaignBuilder({
   const previewReferralUrl =
     previewCustomer?.referral_code
       ? `${siteUrl}/r/${previewCustomer.referral_code}`
-      : `${siteUrl}/r/demo-referral`;
+      : `${siteUrl}/referral?project=spa`;
 
   useEffect(() => {
     if (statusMessage) {
@@ -438,6 +452,17 @@ export function CampaignBuilder({
                   Email sends a full luxury campaign; SMS is best for short reminders.
                 </p>
               </div>
+            </div>
+
+            {/* Campaign Template Selector */}
+            <div className="flex justify-end">
+              <CampaignTemplateSelector
+                onSelectTemplate={handleTemplateSelect}
+                businessName={businessName}
+                clientReward={settingsClientRewardText || clientRewardText || "$15"}
+                newUserReward={settingsNewUserRewardText || newUserRewardText || "$10 off"}
+                offer={settingsOfferText || offerText || "makes a purchase"}
+              />
             </div>
 
             {/* SMS Message (only when SMS selected) */}
@@ -848,6 +873,8 @@ export function CampaignBuilder({
                   businessName={businessName}
                   siteUrl={siteUrl}
                   logoUrl={settingsLogoUrl}
+                  brandHighlightColor={brandHighlightColor ?? undefined}
+                  brandTone={brandTone ?? undefined}
                   campaignName={campaignName || "Your private ambassador invitation"}
                   newUserReward={settingsNewUserRewardText || "Reward for friends"}
                   clientReward={
