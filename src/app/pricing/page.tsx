@@ -13,12 +13,12 @@ export default function Pricing() {
   const pricing = useMemo(
     () => ({
       base: {
-        monthly: 299,
-        annual: Math.round(299 * 0.8), // 20% discount
+        monthly: 499,
+        annual: Math.round(499 * 0.8), // 20% discount
       },
       scale: {
-        monthly: 399,
-        annual: Math.round(399 * 0.8),
+        monthly: 599,
+        annual: Math.round(599 * 0.8),
       },
     }),
     [],
@@ -77,7 +77,7 @@ export default function Pricing() {
               </button>
             </div>
             <div className="relative">
-              <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[11px] font-black uppercase tracking-[0.25em] text-green-300 drop-shadow-lg">
+              <span className="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full border border-emerald-300/60 bg-emerald-500/20 px-4 py-1 text-[11px] font-black uppercase tracking-[0.25em] text-emerald-200 shadow-lg shadow-emerald-500/30 backdrop-blur">
                 Save 20%
               </span>
               <button

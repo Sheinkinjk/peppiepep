@@ -1,6 +1,10 @@
 {
+  "version": 2,
   "framework": "nextjs",
   "alias": [
     "peppiepep.vercel.app"
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }

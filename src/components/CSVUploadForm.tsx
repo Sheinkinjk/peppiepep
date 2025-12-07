@@ -17,6 +17,7 @@ export function CSVUploadForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const formElement = e.currentTarget;
     setIsUploading(true);
 
     const file = fileInputRef.current?.files?.[0];
@@ -62,7 +63,7 @@ export function CSVUploadForm() {
         description: result.success,
       });
       setStatus({ type: "success", message: result.success });
-      e.currentTarget.reset();
+      formElement.reset();
       setFileName("");
       router.refresh();
     } catch (error) {
@@ -145,7 +146,7 @@ export function CSVUploadForm() {
         </Button>
       </div>
       <p className="text-xs text-slate-500">
-        Supported formats: CSV (.csv), Excel (.xlsx, .xls)
+        Supported formats: CSV (.csv), Excel (.xlsx, .xls). Every new contact automatically receives a referral link and a reusable discount code you can sync to Shopify or your checkout form.
       </p>
       {status && (
         <div

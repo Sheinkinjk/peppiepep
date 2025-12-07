@@ -26,6 +26,7 @@ create table if not exists public.businesses (
   reward_terms text,
   brand_highlight_color text,
   brand_tone text,
+  discount_capture_secret text default md5(gen_random_uuid()::text || clock_timestamp()::text),
   logo_url text,
   created_at timestamptz default now(),
   updated_at timestamptz default now()
@@ -51,6 +52,7 @@ create table if not exists public.customers (
   phone text,
   email text,
   referral_code text unique,
+  discount_code text unique,
   status text default 'pending',
   credits numeric(12,2) default 0,
   created_at timestamptz default now(),
@@ -114,6 +116,25 @@ create index if not exists referral_events_ambassador_id_idx on public.referral_
 create index if not exists referral_events_event_type_idx on public.referral_events (event_type);
 
 alter table public.referral_events enable row level security;
+
+create table if not exists public.discount_redemptions (
+  id uuid primary key default gen_random_uuid(),
+  business_id uuid not null references public.businesses (id) on delete cascade,
+  customer_id uuid references public.customers (id) on delete set null,
+  discount_code text not null,
+  order_reference text,
+  capture_source text,
+  notes text,
+  metadata jsonb,
+  amount numeric(12,2),
+  captured_at timestamptz default now()
+);
+
+create index if not exists discount_redemptions_business_id_idx
+  on public.discount_redemptions (business_id);
+
+create index if not exists discount_redemptions_code_idx
+  on public.discount_redemptions (discount_code);
 
 create table if not exists public.campaign_messages (
   id uuid primary key default gen_random_uuid(),

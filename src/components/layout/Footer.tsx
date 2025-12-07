@@ -15,41 +15,41 @@ export default function Footer() {
           <Link className="hover:text-[#0E2B31]" href="/">
             Home
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/about">
             About
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/security">
             Security
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/pricing">
             Pricing
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/how-it-works">
             How it works
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/contact">
             Contact
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/terms">
             Terms
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/privacy">
             Privacy
           </Link>
-          <span className="text-[#90A4AE]">•</span>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31]" href="/login">
             Sign in
           </Link>
         </div>
       </div>
-      <p className="text-xs text-[#90A4AE]">
+      <p className="text-xs text-[#4A5B5E]">
         © 2024 Pepform. All rights reserved. Built for service businesses in Australia.
       </p>
     </footer>

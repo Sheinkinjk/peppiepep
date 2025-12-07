@@ -20,10 +20,12 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
   const [email, setEmail] = useState("");
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [lastReferralCode, setLastReferralCode] = useState<string | null>(null);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus(null);
+    setLastReferralCode(null);
     if (!name.trim() && !phone.trim() && !email.trim()) {
       toast({
         variant: "destructive",
@@ -59,6 +61,12 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
           type: "success",
           message: (result && result.success) || "Customer added and referral link issued instantly.",
         });
+        if (result && "success" in result && result.success) {
+          const referralCodeMatch = result.success.match(/[A-Z0-9]{6,}/i);
+          setLastReferralCode(referralCodeMatch ? referralCodeMatch[0].toUpperCase() : null);
+        } else {
+          setLastReferralCode(null);
+        }
         setName("");
         setPhone("");
         setEmail("");
@@ -126,6 +134,21 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
           }`}
         >
           {status.message}
+          {status.type === "success" && lastReferralCode && (
+            <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px] font-semibold">
+              <span className="rounded-full bg-white/70 px-2 py-0.5 text-emerald-700 border border-emerald-200">
+                Code: {lastReferralCode}
+              </span>
+              <a
+                href={`/r/${lastReferralCode}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-700 underline hover:text-emerald-800"
+              >
+                View referral link
+              </a>
+            </div>
+          )}
         </div>
       )}
     </form>

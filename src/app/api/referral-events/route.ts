@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 
 import { createServerComponentClient } from "@/lib/supabase";
+import { createApiLogger } from "@/lib/api-logger";
 
 export async function GET() {
+  const logger = createApiLogger("api:referral-events");
   try {
     const supabase = await createServerComponentClient();
     const {
@@ -10,6 +12,7 @@ export async function GET() {
     } = await supabase.auth.getUser();
 
     if (!user) {
+      logger.warn("Referral events unauthorized");
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -22,6 +25,7 @@ export async function GET() {
     const businessId = (business as { id: string } | null)?.id;
 
     if (!businessId) {
+      logger.warn("Referral events missing business", { userId: user.id });
       return NextResponse.json({ events: [] });
     }
 
@@ -36,13 +40,14 @@ export async function GET() {
       .limit(100);
 
     if (error) {
-      console.error("Failed to fetch referral events:", error);
+      logger.error("Failed to fetch referral events", { error });
       return NextResponse.json({ error: "Unable to fetch events" }, { status: 500 });
     }
 
+    logger.info("Referral events fetched", { count: data?.length ?? 0 });
     return NextResponse.json({ events: data ?? [] });
   } catch (error) {
-    console.error("Referral events API error:", error);
+    logger.error("Referral events API error", { error });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+
 import { createServiceClient } from "@/lib/supabase";
 import { checkRateLimit, checkRateLimitForIdentifier } from "@/lib/rate-limit";
 import { verifyAmbassadorToken } from "@/lib/ambassador-auth";
+import { createApiLogger } from "@/lib/api-logger";
+import { validateWithSchema } from "@/lib/api-validation";
 
 type ReferralStatsCustomer = {
   id: string;
@@ -28,26 +32,41 @@ type ReferralStatsEntry = {
   rewarded_at: string | null;
 };
 
+const referralStatsQuerySchema = z.object({
+  code: z.string().trim().min(1, "Referral code is required"),
+  token: z.string().trim().optional().nullable(),
+  markVerified: z.string().optional(),
+});
+
 export async function GET(request: NextRequest) {
+  const logger = createApiLogger("api:referral-stats");
   try {
     const rateLimitCheck = await checkRateLimit(request, "referralStats");
     if (!rateLimitCheck.success && rateLimitCheck.response) {
+      logger.warn("Referral stats rate limited (global)");
       return rateLimitCheck.response;
     }
 
     const searchParams = request.nextUrl.searchParams;
-    const code = searchParams.get("code");
-    const token = searchParams.get("token");
+    const validation = validateWithSchema(
+      referralStatsQuerySchema,
+      {
+        code: searchParams.get("code"),
+        token: searchParams.get("token"),
+        markVerified: searchParams.get("markVerified"),
+      },
+      logger,
+      { errorMessage: "Referral code is required" },
+    );
 
-    if (!code) {
-      return NextResponse.json(
-        { error: "Referral code is required" },
-        { status: 400 }
-      );
+    if (!validation.success) {
+      return validation.response;
     }
 
-    const tokenCheck = verifyAmbassadorToken(token, code);
+    const { code, token, markVerified } = validation.data;
+    const tokenCheck = verifyAmbassadorToken(token ?? null, code);
     if (!tokenCheck.valid) {
+      logger.warn("Referral stats invalid token", { code });
       return NextResponse.json(
         { error: "Invalid or expired token" },
         { status: 401 },
@@ -59,6 +78,7 @@ export async function GET(request: NextRequest) {
       "ambassadorCode",
     );
     if (!codeRateLimit.success && codeRateLimit.response) {
+      logger.warn("Referral stats rate limited for code", { code });
       return codeRateLimit.response;
     }
 
@@ -98,7 +118,6 @@ export async function GET(request: NextRequest) {
 
     // Optionally mark ambassador as verified when requested (e.g., when they
     // click "Become an Ambassador" from an email invite).
-    const markVerified = searchParams.get("markVerified");
     if (markVerified === "1") {
       try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -107,7 +126,7 @@ export async function GET(request: NextRequest) {
           .update({ status: "verified" })
           .eq("id", customerId);
       } catch (verifyError) {
-        console.warn("Failed to mark ambassador as verified:", verifyError);
+        logger.warn("Failed to mark ambassador as verified", { error: verifyError });
         // Non-blocking: stats still return even if this update fails.
       }
     }
@@ -123,7 +142,7 @@ export async function GET(request: NextRequest) {
       .limit(20);
 
     if (referralsError) {
-      console.error("Error fetching referrals:", referralsError);
+      logger.error("Error fetching referrals", { error: referralsError });
       return NextResponse.json(
         { error: "Failed to fetch referrals" },
         { status: 500 }
@@ -159,12 +178,16 @@ export async function GET(request: NextRequest) {
       rewarded_at: referral.rewarded_at,
     }));
 
+    logger.info("Referral stats returned", {
+      code,
+      referrals: safeReferrals.length,
+    });
     return NextResponse.json({
       customer: safeCustomer,
       referrals: safeReferrals,
     });
   } catch (error) {
-    console.error("Error in referral-stats API:", error);
+    logger.error("Error in referral-stats API", { error });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

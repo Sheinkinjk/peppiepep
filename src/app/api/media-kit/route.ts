@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import JSZip from "jszip";
 import QRCode from "qrcode";
+import { z } from "zod";
+
+import { createApiLogger } from "@/lib/api-logger";
+import { parseJsonBody } from "@/lib/api-validation";
 
 type MediaKitPayload = {
   referralLink?: string;
@@ -65,11 +69,29 @@ ${referralLink}`;
 }
 
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:media-kit");
   try {
-    const payload = (await request.json()) as MediaKitPayload | null;
-    const referralLink = payload?.referralLink;
+    const payloadSchema = z.object({
+      referralLink: z.string().url("Missing referral link.").optional(),
+      ambassadorName: z.string().optional().nullable(),
+      businessName: z.string().optional().nullable(),
+      friendReward: z.string().optional().nullable(),
+      ambassadorReward: z.string().optional().nullable(),
+      offerText: z.string().optional().nullable(),
+    });
+    const parsedPayload = await parseJsonBody(request, payloadSchema, logger, {
+      errorMessage: "Invalid media kit payload.",
+    });
+
+    if (!parsedPayload.success) {
+      return parsedPayload.response;
+    }
+
+    const payload = parsedPayload.data;
+    const referralLink = payload.referralLink;
 
     if (!referralLink) {
+      logger.warn("Media kit missing referral link");
       return NextResponse.json(
         { error: "Missing referral link." },
         { status: 400 },
@@ -78,11 +100,11 @@ export async function POST(request: Request) {
 
     const zip = new JSZip();
     const metadata = {
-      ambassador: payload?.ambassadorName || "Ambassador",
-      business: payload?.businessName || "Your Brand",
-      friendReward: payload?.friendReward || "VIP reward",
-      ambassadorReward: payload?.ambassadorReward || "ambassador thank-you",
-      offerText: payload?.offerText || null,
+      ambassador: payload.ambassadorName || "Ambassador",
+      business: payload.businessName || "Your Brand",
+      friendReward: payload.friendReward || "VIP reward",
+      ambassadorReward: payload.ambassadorReward || "ambassador thank-you",
+      offerText: payload.offerText || null,
     };
 
     zip.file(
@@ -144,6 +166,7 @@ export async function POST(request: Request) {
       Date.now() / 1000
     }.zip`;
 
+    logger.info("Media kit built", { business: metadata.business });
     return new NextResponse(blob, {
       status: 200,
       headers: {
@@ -153,7 +176,7 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
-    console.error("Media kit generation failed:", error);
+    logger.error("Media kit generation failed", { error });
     return NextResponse.json(
       { error: "Failed to build media kit." },
       { status: 500 },

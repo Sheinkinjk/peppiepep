@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Loader2 } from "lucide-react";
 
 import { buildCampaignEmail } from "@/lib/campaign-email";
+import { buildDefaultEmailBody } from "@/lib/campaign-copy";
 import type { Database } from "@/types/supabase";
 
 type RewardType = Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
@@ -12,6 +13,8 @@ type CampaignEmailPreviewProps = {
   businessName: string;
   siteUrl: string;
   logoUrl?: string | null;
+  brandHighlightColor?: string | null;
+  brandTone?: string | null;
   campaignName: string;
   newUserReward: string;
   clientReward: string;
@@ -24,13 +27,12 @@ type CampaignEmailPreviewProps = {
   includeQr?: boolean;
 };
 
-const DEFAULT_PREVIEW_TEXT =
-  "We’re opening a private ambassador lane for a handful of insiders. Every introduction you make is memorialized in your portal so offline referrals still count. Concierge teams know your name the moment a booking lands.";
-
 export function CampaignEmailPreview({
   businessName,
   siteUrl,
   logoUrl,
+  brandHighlightColor,
+  brandTone,
   campaignName,
   newUserReward,
   clientReward,
@@ -62,14 +64,12 @@ export function CampaignEmailPreview({
   )}`;
 
   const previewBody = useMemo(() => {
-    const segments = [
-      offerText
-        ? offerText
-        : `We’re inviting you into ${businessName} to help us host your VIP circle with concierge treatment.`,
-      `Every verified referral unlocks ${clientReward} for you while your friends enjoy ${newUserReward}.`,
-      DEFAULT_PREVIEW_TEXT,
-    ];
-    return segments.filter(Boolean).join("\n\n");
+    return buildDefaultEmailBody({
+      businessName,
+      offerText,
+      clientRewardText: clientReward,
+      newUserRewardText: newUserReward,
+    });
   }, [offerText, businessName, clientReward, newUserReward]);
 
   useEffect(() => {
@@ -88,6 +88,8 @@ export function CampaignEmailPreview({
           ambassadorPortalUrl,
           brand: {
             logoUrl,
+            highlightColor: brandHighlightColor ?? undefined,
+            tone: brandTone ?? undefined,
           },
           includeQrCode: includeQr,
           snapshot: {
@@ -137,6 +139,8 @@ export function CampaignEmailPreview({
     rewardAmount,
     rewardTerms,
     logoUrl,
+    brandHighlightColor,
+    brandTone,
   ]);
 
   return (

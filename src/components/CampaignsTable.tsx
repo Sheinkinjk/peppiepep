@@ -10,6 +10,10 @@ import { Skeleton } from "@/components/Skeleton";
 type CampaignRow = Database["public"]["Tables"]["campaigns"]["Row"];
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
 
+type CampaignWindow = Window & {
+  __pepOpenCampaignModal?: () => void;
+};
+
 type CampaignEventStats = Record<
   string,
   {
@@ -80,7 +84,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
                   campaignsTab?.click();
                   setTimeout(() => {
                     if (typeof window !== "undefined") {
-                      const win = window as any;
+                      const win = window as CampaignWindow;
                       if (typeof win.__pepOpenCampaignModal === "function") {
                         win.__pepOpenCampaignModal();
                       }

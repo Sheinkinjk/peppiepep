@@ -18,6 +18,7 @@ export interface Database {
           reward_terms: string | null;
           brand_highlight_color: string | null;
           brand_tone: string | null;
+          discount_capture_secret: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -35,6 +36,7 @@ export interface Database {
           reward_terms?: string | null;
           brand_highlight_color?: string | null;
           brand_tone?: string | null;
+          discount_capture_secret?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -52,9 +54,11 @@ export interface Database {
           reward_terms?: string | null;
           brand_highlight_color?: string | null;
           brand_tone?: string | null;
+          discount_capture_secret?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
+        Relationships: never[];
       };
       customers: {
         Row: {
@@ -64,6 +68,7 @@ export interface Database {
           phone: string | null;
           email: string | null;
           referral_code: string | null;
+           discount_code: string | null;
           status: string | null;
           credits: number | null;
           created_at?: string | null;
@@ -76,6 +81,7 @@ export interface Database {
           phone?: string | null;
           email?: string | null;
           referral_code?: string | null;
+          discount_code?: string | null;
           status?: string | null;
           credits?: number | null;
           created_at?: string | null;
@@ -88,11 +94,13 @@ export interface Database {
           phone?: string | null;
           email?: string | null;
           referral_code?: string | null;
+          discount_code?: string | null;
           status?: string | null;
           credits?: number | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
+        Relationships: never[];
       };
       referrals: {
         Row: {
@@ -152,6 +160,7 @@ export interface Database {
           created_at?: string | null;
           updated_at?: string | null;
         };
+        Relationships: never[];
       };
       campaigns: {
         Row: {
@@ -223,6 +232,46 @@ export interface Database {
           created_at?: string | null;
           updated_at?: string | null;
         };
+        Relationships: never[];
+      };
+      discount_redemptions: {
+        Row: {
+          id: string;
+          business_id: string;
+          customer_id: string | null;
+          discount_code: string;
+          order_reference: string | null;
+          capture_source: string | null;
+          notes: string | null;
+          metadata: Record<string, unknown> | null;
+          amount: number | null;
+          captured_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          business_id: string;
+          customer_id?: string | null;
+          discount_code: string;
+          order_reference?: string | null;
+          capture_source?: string | null;
+          notes?: string | null;
+          metadata?: Record<string, unknown> | null;
+          amount?: number | null;
+          captured_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          business_id?: string;
+          customer_id?: string | null;
+          discount_code?: string;
+          order_reference?: string | null;
+          capture_source?: string | null;
+          notes?: string | null;
+          metadata?: Record<string, unknown> | null;
+          amount?: number | null;
+          captured_at?: string | null;
+        };
+        Relationships: never[];
       };
       referral_events: {
         Row: {
@@ -297,6 +346,7 @@ export interface Database {
           metadata?: Record<string, unknown> | null;
           created_at?: string | null;
         };
+        Relationships: never[];
       };
       demo_referrals: {
         Row: {
@@ -326,7 +376,21 @@ export interface Database {
           context?: string | null;
           created_at?: string | null;
         };
+        Relationships: never[];
       };
     };
+    Views: Record<string, never>;
+    Functions: {
+      increment_campaign_counts: {
+        Args: {
+          target: string;
+          sent_delta: number;
+          failed_delta: number;
+        };
+        Returns: null;
+      };
+    };
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
 }

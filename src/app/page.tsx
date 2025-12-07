@@ -1,19 +1,125 @@
-import {
-  ArrowRight,
-  Gift,
-  MessageSquare,
-  ShieldCheck,
-  Sparkles,
-  Upload,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { ArrowRight, Gift, ShieldCheck, Sparkles, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
 
 const primaryButtonClasses =
   "inline-flex items-center justify-center gap-2 rounded-full bg-[#006d7c] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#004753]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-[#005a68]";
 const secondaryButtonClasses =
   "inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#006d7c] px-6 py-3 text-sm font-semibold text-[#006d7c] transition-all duration-300 hover:-translate-y-1 hover:bg-[#006d7c] hover:text-white";
+
+const referralPillars = [
+  {
+    number: "01",
+    title: "Introductions that skip cold outreach",
+    copy:
+      "Brand evangelists text concierge-quality links that do the heavy lifting. Most prospects arrive already primed with context, social proof, and urgency.",
+    highlight: "Close deals in 1–3 touches",
+    highlightColor: "text-emerald-600",
+    chipBg: "bg-indigo-50 text-indigo-600",
+  },
+  {
+    number: "02",
+    title: "VIP incentives that feel on-brand",
+    copy:
+      "Pepform issues wallet cards, QR lounges, and luxury-grade perks automatically so the experience feels bespoke—never like a generic promo code blast.",
+    highlight: "Bespoke perks auto-issued",
+    highlightColor: "text-blue-600",
+    chipBg: "bg-emerald-50 text-emerald-600",
+  },
+  {
+    number: "03",
+    title: "CRM imports become referral fuel",
+    copy:
+      "Upload spreadsheets or sync a CRM export and Pepform immediately assigns links, discount words, and share kits for every contact without manual ops.",
+    highlight: "Millions of contacts supported",
+    highlightColor: "text-slate-500",
+    chipBg: "bg-sky-50 text-sky-600",
+  },
+  {
+    number: "04",
+    title: "Automated concierge follow-ups",
+    copy:
+      "SMS + email journeys keep ambassadors nudged at the perfect cadence with AI-drafted talking points, brand gradients, and instant proofs of reward.",
+    highlight: "15+ touchpoints handled",
+    highlightColor: "text-indigo-600",
+    chipBg: "bg-rose-50 text-rose-600",
+  },
+  {
+    number: "05",
+    title: "Payouts & compliance in one ledger",
+    copy:
+      "Every referral event syncs to a live ledger so finance teams see status, clawbacks, and pending credits. Approvals take minutes, not days.",
+    highlight: "Finance-ready audit trails",
+    highlightColor: "text-emerald-600",
+    chipBg: "bg-amber-50 text-amber-600",
+  },
+  {
+    number: "06",
+    title: "Intelligence on what to scale next",
+    copy:
+      "Track who referred who, which assets drove highest AOV, and when advocates go quiet—so you know exactly where to double down for your next drop.",
+    highlight: "Signals, not guesswork",
+    highlightColor: "text-slate-500",
+    chipBg: "bg-purple-50 text-purple-600",
+  },
+];
+
+const referralNumbers = [
+  {
+    value: "70%",
+    title: "Lower Acquisition Costs",
+    copy:
+      "Referral-driven customers require significantly less marketing spend because trust is already established.",
+    gradient: "from-white/95 to-purple-50/95",
+    accentIcon: TrendingUp,
+    accentBg: "from-emerald-500 to-emerald-600",
+  },
+  {
+    value: "3×",
+    title: "Higher Conversion Rates",
+    copy:
+      "Referred leads come pre-qualified, making them three times more likely to convert than cold traffic.",
+    gradient: "from-white/95 to-blue-50/95",
+    accentIcon: Users,
+    accentBg: "from-blue-500 to-blue-600",
+  },
+  {
+    value: "2×",
+    title: "Better Long-Term Retention",
+    copy:
+      "Customers acquired through referrals stay longer and become more profitable over time.",
+    gradient: "from-white/95 to-pink-50/95",
+    accentIcon: Gift,
+    accentBg: "from-pink-500 to-pink-600",
+  },
+  {
+    value: "82%",
+    title: "Customers Willing to Refer",
+    copy:
+      "Most customers are happy to recommend a brand they like — they just need an easy way to do it.",
+    gradient: "from-white/95 to-amber-50/95",
+    accentIcon: ShieldCheck,
+    accentBg: "from-amber-500 to-amber-600",
+  },
+  {
+    value: "35%",
+    title: "Faster Revenue Growth",
+    copy:
+      "Businesses that use referral programs grow significantly faster than those relying only on paid ads.",
+    gradient: "from-white/95 to-purple-50/95",
+    accentIcon: Sparkles,
+    accentBg: "from-purple-500 to-purple-600",
+  },
+  {
+    value: "5 Minutes",
+    title: "To Launch With Pepform",
+    copy:
+      "No coding. No complexity. Turn on your referral program and let your customers become your growth engine.",
+    gradient: "from-white/95 to-indigo-50/95",
+    accentIcon: TrendingUp,
+    accentBg: "from-indigo-500 to-indigo-600",
+  },
+];
+
 
 export default function Home() {
   return (
@@ -25,29 +131,22 @@ export default function Home() {
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
           <div className="space-y-6">
-            <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight text-[#024b56] sm:text-5xl lg:text-6xl xl:text-7xl">
-              Turn happy customers into your{" "}
-              <span className="text-[#3ecad4] drop-shadow-[0_0_16px_rgba(62,202,212,0.35)]">
-                growth network
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
+              <span className="block text-balance text-[#00343a]">We help launch successful</span>
+              <span className="block text-[#0a727f] drop-shadow-[0_6px_20px_rgba(9,81,93,0.25)]">
+                referral programs
               </span>
             </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[#0e5f69] sm:text-xl lg:text-2xl px-4 font-medium">
-              Launch a referral program that plugs into your sales and marketing strategies
+            <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-semibold">
+              Activate a growth network that plugs into your sales and marketing to generate new business.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 px-4">
-            <Link
-              href="/dashboard-guest"
-              className={`group ${secondaryButtonClasses} w-full sm:w-auto text-base font-bold`}
-            >
-              Try demo dashboard
-              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+          <div className="flex flex-col items-center justify-center gap-4 pt-6 px-4">
             <Link
               href="/login"
               className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
             >
-              Get started
+              Start Getting Referrals
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -55,151 +154,69 @@ export default function Home() {
 
         {/* How It Works Section - Premium Redesign */}
         <section className="space-y-12 sm:space-y-16 relative">
-          {/* Section Header */}
-          <div className="text-center space-y-4 px-4">
-            <h2 className="text-3xl font-black text-[#024b56] sm:text-4xl lg:text-5xl tracking-tight">
-              How Pepform turns your happy customers into a referral engine
-            </h2>
-          </div>
-
-          {/* Premium Step Cards */}
-          <div className="relative max-w-5xl mx-auto">
-            <div className="space-y-6">
-              {/* Step 1 */}
-              <div className="group relative bg-white rounded-2xl border border-slate-200 p-8 hover:border-purple-300 hover:shadow-2xl hover:shadow-purple-100/50 transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-200">
-                      <Upload className="h-7 w-7 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                        Import & Activate
-                      </h3>
-                      <span className="text-xs font-black text-purple-600 bg-purple-50 px-3 py-1 rounded-full">STEP 1</span>
-                    </div>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      Upload your customer list via CSV or Excel. Every customer instantly gets their own unique referral link and becomes an active micro-influencer for your brand.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-50 px-3 py-1.5 rounded-lg">One-click upload</span>
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-50 px-3 py-1.5 rounded-lg">Auto-generate links</span>
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-50 px-3 py-1.5 rounded-lg">2-minute setup</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 2 */}
-              <div className="group relative bg-white rounded-2xl border border-slate-200 p-8 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-100/50 transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-200">
-                      <MessageSquare className="h-7 w-7 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                        Launch Campaigns
-                      </h3>
-                      <span className="text-xs font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full">STEP 2</span>
-                    </div>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      Send personalized referral invitations via SMS or email. Customers receive their unique link with your custom offer, ready to share with their network.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg">Custom templates</span>
-                      <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg">SMS & Email</span>
-                      <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg">Scheduled sending</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div className="group relative bg-white rounded-2xl border border-slate-200 p-8 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-100/50 transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-200">
-                      <TrendingUp className="h-7 w-7 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                        Track Real-Time
-                      </h3>
-                      <span className="text-xs font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">STEP 3</span>
-                    </div>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      Watch your referral network expand with live tracking. Identify top performers, see conversion rates, and understand which micro-influencers drive the most value.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg">Live dashboard</span>
-                      <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg">Leaderboards</span>
-                      <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg">Analytics</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 4 */}
-              <div className="group relative bg-white rounded-2xl border border-slate-200 p-8 hover:border-amber-300 hover:shadow-2xl hover:shadow-amber-100/50 transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-200">
-                      <Gift className="h-7 w-7 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                        Automate Rewards
-                      </h3>
-                      <span className="text-xs font-black text-amber-600 bg-amber-50 px-3 py-1 rounded-full">STEP 4</span>
-                    </div>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      Credits automatically flow to influencers when referrals convert. Instant notifications encourage more sharing. The flywheel accelerates with zero manual work.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg">Instant credits</span>
-                      <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg">Auto notifications</span>
-                      <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg">Self-serve</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Results CTA */}
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="relative rounded-2xl bg-gradient-to-br from-[#03181B] via-[#004652] to-[#03181B] p-10 sm:p-12 shadow-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(77,208,225,0.15),transparent_50%)]" />
-              <div className="relative z-10">
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
-                  Growth becomes predictable, trackable, automatic
-                </h3>
-                <p className="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
-                  Your best customers become your best marketers. Every referral creates a new micro-influencer.
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/80 px-6 py-10 shadow-xl sm:px-10 sm:py-12">
+            <div className="pointer-events-none absolute inset-x-16 -top-24 h-64 bg-gradient-to-br from-indigo-500/15 via-sky-500/10 to-emerald-400/10 blur-3xl" />
+            <div className="relative z-10 space-y-10">
+              <div className="text-left sm:text-center">
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                  Why a referral program is your best resource for growth hacking
+                </h2>
+                <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-0 sm:mx-auto">
+                  Your next best customers are already in your existing customers’ network. Pepform
+                  helps you turn that network into a structured, trackable growth engine that feels
+                  natural for them and powerful for you.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link
-                    href="/dashboard-guest"
-                    className={`group ${secondaryButtonClasses} w-full sm:w-auto text-base font-bold`}
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {referralPillars.map((pillar) => (
+                  <div
+                    key={pillar.number}
+                    className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg"
                   >
-                    See it in action
-                    <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
+                    <div>
+                      <div
+                        className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold mb-3 ${pillar.chipBg}`}
+                      >
+                        {pillar.number}
+                      </div>
+                      <h3 className="text-sm font-semibold text-slate-900">
+                        {pillar.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-slate-600">
+                        {pillar.copy}
+                      </p>
+                    </div>
+                    <p className={`mt-3 text-xs font-medium uppercase tracking-wide ${pillar.highlightColor}`}>
+                      {pillar.highlight}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-sm font-medium text-slate-900">
+                    Ready to make referrals your highest-ROI channel?
+                  </p>
+                  <p className="mt-1 text-xs text-slate-500">
+                    Plug Pepform into your existing sales and marketing stack and start activating the
+                    customers you already have.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3">
                   <Link
                     href="/login"
-                    className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
+                    className="inline-flex min-w-[220px] items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 focus:ring-offset-white"
                   >
-                    Start for free
-                    <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    Launch my referral program
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href="/how-it-works"
+                    className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-slate-50"
+                  >
+                    View how Pepform works
                   </Link>
                 </div>
               </div>
@@ -219,112 +236,36 @@ export default function Home() {
             {/* Section Header */}
             <div className="text-center space-y-6 px-4">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-lg">
-                Why Start a Referral Program?
+                Referral Programs By The Numbers
               </h2>
               <p className="text-xl sm:text-2xl text-purple-100 max-w-4xl mx-auto font-medium leading-relaxed">
                 Turn your existing customers into a high-performing sales team—without the overhead, training, or payroll costs
               </p>
             </div>
 
-            {/* Stats Grid - Ultra Premium */}
+            {/* Stats Grid */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4">
-
-              {/* Stat 1 - CAC Reduction */}
-              <div className="group relative bg-gradient-to-br from-white/95 to-purple-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
-                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-2xl shadow-emerald-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                  <TrendingUp className="h-8 w-8 text-white" />
+              {referralNumbers.map((stat) => (
+                <div
+                  key={stat.title}
+                  className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br ${stat.gradient} backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
+                >
+                  <div
+                    className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
+                  >
+                    <stat.accentIcon className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="relative space-y-3">
+                    <p className="text-6xl font-black text-[#024b56]">{stat.value}</p>
+                    <p className="text-sm font-black uppercase tracking-wide text-[#024b56]">
+                      {stat.title}
+                    </p>
+                    <p className="text-base text-slate-700 leading-relaxed font-medium">
+                      {stat.copy}
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-3">
-                  <p className="text-6xl font-black text-[#024b56]">
-                    16X
-                  </p>
-                  <p className="text-sm font-black text-emerald-600 uppercase tracking-wide">Lower CAC</p>
-                  <p className="text-base text-slate-700 leading-relaxed font-medium">
-                    Referred customers cost <span className="font-bold text-slate-900">$24 to acquire</span> vs. <span className="font-bold text-slate-900">$385 for paid ads</span> (2024 Harvard Business Review)
-                  </p>
-                </div>
-              </div>
-
-              {/* Stat 2 - Conversion Rate */}
-              <div className="group relative bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500">
-                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-2xl shadow-blue-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-6xl font-black text-[#024b56]">
-                    4X
-                  </p>
-                  <p className="text-sm font-black text-blue-600 uppercase tracking-wide">Conversion Rate</p>
-                  <p className="text-base text-slate-700 leading-relaxed font-medium">
-                    Referrals convert at <span className="font-bold text-slate-900">30%</span> compared to <span className="font-bold text-slate-900">7.4%</span> for cold traffic (Nielsen Study)
-                  </p>
-                </div>
-              </div>
-
-              {/* Stat 3 - Lifetime Value */}
-              <div className="group relative bg-gradient-to-br from-white/95 to-purple-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
-                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-purple-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                  <Sparkles className="h-8 w-8 text-white" />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-6xl font-black text-[#024b56]">
-                    25%
-                  </p>
-                  <p className="text-sm font-black text-purple-600 uppercase tracking-wide">Higher LTV</p>
-                  <p className="text-base text-slate-700 leading-relaxed font-medium">
-                    Referred customers have <span className="font-bold text-slate-900">25% higher profit margins</span> and stay 37% longer (Wharton School)
-                  </p>
-                </div>
-              </div>
-
-              {/* Stat 4 - Trust Factor */}
-              <div className="group relative bg-gradient-to-br from-white/95 to-amber-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 transition-all duration-500">
-                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-2xl shadow-amber-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                  <ShieldCheck className="h-8 w-8 text-white" />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-6xl font-black text-[#024b56]">
-                    92%
-                  </p>
-                  <p className="text-sm font-black text-amber-600 uppercase tracking-wide">Trust Referrals</p>
-                  <p className="text-base text-slate-700 leading-relaxed font-medium">
-                    <span className="font-bold text-slate-900">92% of consumers</span> trust recommendations from people they know over all forms of advertising (Nielsen)
-                  </p>
-                </div>
-              </div>
-
-              {/* Stat 5 - Retention Rate */}
-              <div className="group relative bg-gradient-to-br from-white/95 to-pink-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/30 transition-all duration-500">
-                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-2xl shadow-pink-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                  <Gift className="h-8 w-8 text-white" />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-6xl font-black text-[#024b56]">
-                    37%
-                  </p>
-                  <p className="text-sm font-black text-pink-600 uppercase tracking-wide">Better Retention</p>
-                  <p className="text-base text-slate-700 leading-relaxed font-medium">
-                    Referred customers have <span className="font-bold text-slate-900">37% higher retention</span> rates than other acquisition channels (Deloitte)
-                  </p>
-                </div>
-              </div>
-
-              {/* Stat 6 - Revenue Growth */}
-              <div className="group relative bg-gradient-to-br from-white/95 to-indigo-50/95 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500">
-                <div className="absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-2xl shadow-indigo-500/40 rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                  <TrendingUp className="h-8 w-8 text-white" />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-6xl font-black text-[#024b56]">
-                    86%
-                  </p>
-                  <p className="text-sm font-black text-indigo-600 uppercase tracking-wide">Revenue Impact</p>
-                  <p className="text-base text-slate-700 leading-relaxed font-medium">
-                    Businesses with referral programs see <span className="font-bold text-slate-900">86% revenue growth</span> in 2 years vs. 16% without (Texas Tech)
-                  </p>
-                </div>
-              </div>
-
+              ))}
             </div>
 
             {/* Growth Hacking Value Proposition */}
@@ -421,17 +362,17 @@ export default function Home() {
                   <div className="mt-10 text-center">
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <Link
-                        href="/dashboard-guest"
+                        href="/login"
                         className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
                       >
-                        View Demo Dashboard
+                        Launch my dashboard
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                       <Link
-                        href="/r/demo-referral"
+                        href="/referral"
                         className={`group ${secondaryButtonClasses} w-full sm:w-auto text-base font-bold`}
                       >
-                        View Demo Referral
+                        Preview referral landing
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </div>

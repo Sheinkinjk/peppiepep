@@ -11,6 +11,7 @@ type WebsiteIntegrationCardProps = {
   offerText?: string | null;
   clientRewardText?: string | null;
   newUserRewardText?: string | null;
+  discountCaptureSecret?: string | null;
 };
 
 const SNIPPET_STYLE =
@@ -22,6 +23,7 @@ export function WebsiteIntegrationCard({
   offerText,
   clientRewardText,
   newUserRewardText,
+  discountCaptureSecret,
 }: WebsiteIntegrationCardProps) {
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
@@ -39,6 +41,42 @@ export function WebsiteIntegrationCard({
     console.log("Referral stats", data);
     // Use this to show live stats on your site
   });`;
+  const discountCaptureSnippet = `fetch("${siteUrl}/api/discount-codes/redeem", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-pepf-discount-secret": "${discountCaptureSecret ?? "<ADD_SECRET>"}"
+  },
+  body: JSON.stringify({
+    discountCode: document.querySelector("[name='discount_code']").value,
+    orderReference: "ORDER-12345",
+    amount: "199.00",
+    metadata: {
+      email: document.querySelector("[name='email']").value
+    }
+  })
+});`;
+
+  const shopifySnippet = `{% if checkout.discount_code %}
+<script>
+fetch("${siteUrl}/api/discount-codes/redeem", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-pepf-discount-secret": "${discountCaptureSecret ?? "<ADD_SECRET>"}"
+  },
+  body: JSON.stringify({
+    discountCode: "{{ checkout.discount_code.code }}",
+    orderReference: "{{ order.name }}",
+    amount: {{ order.total_price | json }},
+    metadata: {
+      email: "{{ checkout.email }}",
+      platform: "shopify"
+    }
+  })
+});
+</script>
+{% endif %}`;
 
   const handleCopy = async (text: string, key: string) => {
     try {
@@ -95,6 +133,17 @@ export function WebsiteIntegrationCard({
           </p>
         </div>
       </div>
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm text-slate-600 space-y-2">
+        <p className="font-semibold text-slate-800">How to use these snippets:</p>
+        <ol className="list-decimal space-y-1 pl-5">
+          <li>Paste the iframe into a hero block or landing page—each ambassador link keeps their code in sync.</li>
+          <li>Add the CTA button anywhere you mention referrals (navigation, blog, footer). Swap <code className="font-mono text-xs">{"{{REFERRAL_CODE}}"}</code> per ambassador.</li>
+          <li>Optional: use the stats API in gated portals to show progress without logging into PeppiePep.</li>
+        </ol>
+        <p>
+          Shopify teams can paste the iframe into a custom Liquid section, while Webflow/Squarespace users can drop it inside an embed block—no development required.
+        </p>
+      </div>
 
       <div className="space-y-6">
         {renderSnippet(
@@ -112,6 +161,61 @@ export function WebsiteIntegrationCard({
           apiSnippet,
           "api",
         )}
+      </div>
+      <div className="space-y-4 border-t border-slate-200 pt-4">
+        <p className="text-sm font-semibold text-slate-800">
+          Discount codes + checkout tracking
+        </p>
+        {discountCaptureSecret ? (
+          <>
+            <div className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs uppercase font-semibold tracking-wide text-slate-500">
+                  API secret
+                </p>
+                <p className="font-mono text-sm text-slate-900 break-all">
+                  {discountCaptureSecret}
+                </p>
+              </div>
+              <Button
+                type="button"
+                variant={copiedKey === "discount-secret" ? "default" : "outline"}
+                onClick={() =>
+                  handleCopy(discountCaptureSecret, "discount-secret")
+                }
+              >
+                {copiedKey === "discount-secret" ? (
+                  <>
+                    <Check className="mr-2 h-4 w-4" /> Secret copied
+                  </>
+                ) : (
+                  <>
+                    <Copy className="mr-2 h-4 w-4" /> Copy secret
+                  </>
+                )}
+              </Button>
+            </div>
+            {renderSnippet(
+              "Capture codes from any HTML form",
+              discountCaptureSnippet,
+              "discount-api",
+            )}
+            {renderSnippet(
+              "Shopify confirmation snippet",
+              shopifySnippet,
+              "discount-shopify",
+            )}
+          </>
+        ) : (
+          <p className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-xl p-3">
+            Generate your discount capture secret in Program Settings or contact support to enable API tracking.
+          </p>
+        )}
+        <ul className="text-xs text-slate-600 space-y-1">
+          <li>1. Add a <code className="font-mono">discount_code</code> field to your checkout or signup form.</li>
+          <li>2. Send that value to <code className="font-mono">/api/discount-codes/redeem</code> with the secret above.</li>
+          <li>3. We map it back to the correct ambassador so your dashboard shows redemptions instantly.</li>
+        </ul>
       </div>
 
       <p className="text-xs text-slate-500 border-t border-slate-200 pt-4">

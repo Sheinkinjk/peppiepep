@@ -1,33 +1,44 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { createServiceClient } from "@/lib/supabase";
 import type { Database } from "@/types/supabase";
 import { verifyAmbassadorToken } from "@/lib/ambassador-auth";
 import { checkRateLimitForIdentifier } from "@/lib/rate-limit";
+import { createApiLogger } from "@/lib/api-logger";
+import { parseJsonBody, validateWithSchema } from "@/lib/api-validation";
 
-async function handleExport(code: string | null, token: string | null) {
-  if (!code) {
-    return NextResponse.json({ error: "referral code is required" }, { status: 400 });
-  }
+const ambassadorAccessSchema = z.object({
+  code: z.string().trim().min(1, "referral code is required"),
+  token: z.string().trim().optional().nullable(),
+});
 
-  const tokenCheck = verifyAmbassadorToken(token, code);
+async function handleExport(
+  input: { code: string; token?: string | null },
+  logger = createApiLogger("api:ambassadors:export"),
+) {
+  const { code, token } = input;
+  const tokenCheck = verifyAmbassadorToken(token ?? null, code);
   if (!tokenCheck.valid) {
+    logger.warn("Ambassador export rejected due to invalid token", { code });
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   const rateLimit = await checkRateLimitForIdentifier(code, "ambassadorCode");
   if (!rateLimit.success && rateLimit.response) {
+    logger.warn("Ambassador export rate limited", { code });
     return rateLimit.response;
   }
 
   const supabase = await createServiceClient();
   const { data: ambassador, error } = await supabase
     .from("customers")
-    .select("id, name, email, phone, referral_code, credits, business:business_id (name)")
+    .select("id, name, email, phone, referral_code, discount_code, credits, business:business_id (name)")
     .eq("referral_code", code)
     .single();
 
   if (error || !ambassador) {
+    logger.warn("Ambassador export not found", { code, error });
     return NextResponse.json({ error: "Ambassador not found" }, { status: 404 });
   }
 
@@ -40,30 +51,50 @@ async function handleExport(code: string | null, token: string | null) {
     .order("created_at", { ascending: false });
 
   if (referralsError) {
+    logger.error("Ambassador export referrals fetch failed", { error: referralsError });
     return NextResponse.json({ error: "Failed to load referrals" }, { status: 500 });
   }
 
+  logger.info("Ambassador export delivered", { code, referralCount: referrals?.length ?? 0 });
   return NextResponse.json({ ambassador, referrals: referrals ?? [] });
 }
 
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:ambassadors:export");
+  logger.info("Received ambassador export POST");
   try {
-    const body = await request.json().catch(() => ({}));
-    const code = typeof body.code === "string" ? body.code : null;
-    const token = typeof body.token === "string" ? body.token : null;
-    return handleExport(code, token);
+    const parsed = await parseJsonBody(request, ambassadorAccessSchema, logger, {
+      errorMessage: "Invalid ambassador export payload.",
+    });
+    if (!parsed.success) {
+      return parsed.response;
+    }
+    return handleExport(parsed.data, logger);
   } catch (error) {
-    console.error("Ambassador export error", error);
+    logger.error("Ambassador export POST error", { error });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
 
 export async function GET(request: Request) {
+  const logger = createApiLogger("api:ambassadors:export");
+  logger.info("Received ambassador export GET");
   try {
     const { searchParams } = new URL(request.url);
-    return handleExport(searchParams.get("code"), searchParams.get("token"));
+    const validation = validateWithSchema(
+      ambassadorAccessSchema,
+      { code: searchParams.get("code"), token: searchParams.get("token") },
+      logger,
+      { errorMessage: "referral code is required" },
+    );
+
+    if (!validation.success) {
+      return validation.response;
+    }
+
+    return handleExport(validation.data, logger);
   } catch (error) {
-    console.error("Ambassador export error", error);
+    logger.error("Ambassador export GET error", { error });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

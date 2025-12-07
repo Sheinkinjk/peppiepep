@@ -41,6 +41,10 @@ type ReferralsTableProps = {
   ) => Promise<{ error?: string; success?: string }>;
 };
 
+type PepWindow = Window & {
+  __pepOpenCampaignModal?: () => void;
+};
+
 const DEFAULT_REFERRAL_PAGE_SIZE = 25;
 const ROW_TEMPLATE =
   "36px minmax(200px,1.2fr) minmax(200px,1.2fr) minmax(120px,0.7fr) minmax(140px,0.9fr) minmax(180px,1fr) minmax(150px,0.8fr)";
@@ -502,7 +506,7 @@ export function ReferralsTable({
                     campaignsTab?.click();
                     setTimeout(() => {
                       if (typeof window !== "undefined") {
-                        const win = window as any;
+                        const win = window as PepWindow;
                         if (typeof win.__pepOpenCampaignModal === "function") {
                           win.__pepOpenCampaignModal();
                         }

@@ -451,6 +451,38 @@ function renderStoryBlocks(
     .join("");
 }
 
+function renderButton(options: {
+  url: string;
+  label: string;
+  background: string;
+  textColor: string;
+  shadow?: string | null;
+  borderColor?: string | null;
+  fullWidth?: boolean;
+  fontFamily: string;
+}) {
+  const href = options.url?.trim() ? escapeHtml(options.url) : "#";
+  const safeLabel = escapeHtml(options.label);
+  const widthStyle = options.fullWidth ? "width:100%;" : "width:auto;";
+  const borderColor = options.borderColor ?? options.background;
+  const shadowStyle = options.shadow ? `box-shadow:${options.shadow};` : "";
+  return `
+<table role="presentation" cellpadding="0" cellspacing="0" style="${widthStyle} margin:0; border-collapse:separate;">
+  <tr>
+    <td align="center" style="border-radius:999px; background:${options.background}; padding:0; border:1px solid ${borderColor}; ${shadowStyle}">
+      <a
+        href="${href}"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="display:inline-block; padding:14px 34px; font-size:14px; line-height:1.2; font-weight:800; letter-spacing:0.02em; font-family:${options.fontFamily}; color:${options.textColor}; text-decoration:none;"
+      >
+        ${safeLabel}
+      </a>
+    </td>
+  </tr>
+</table>`;
+}
+
 function resolveToneStyle(rawTone?: string | null): ToneStyle {
   if (!rawTone) return toneStyles.modern;
   const normalized = rawTone.trim().toLowerCase();
@@ -671,12 +703,19 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
                 Hi there, we&apos;d love to invite you into our private ambassador program at ${businessName}
                 and turn your network into premium rewards.
               </p>
-              <a
-                href="${landingUrl}"
-                style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; border-radius: 999px; background: ${heroButtonGradient}; color: ${tone.primaryButtonText}; font-weight: 800; font-size: 14px; padding: 14px 34px; box-shadow: ${heroButtonShadow}; letter-spacing: 0.02em;"
-              >
-                Become an Ambassador Now
-              </a>
+              ${renderButton({
+                url: landingUrl,
+                label: "Become an Ambassador Now",
+                background: `linear-gradient(135deg, ${accentLight}, ${brandHighlight}, ${accentDark})`,
+                textColor: tone.primaryButtonText,
+                shadow: heroButtonShadow,
+                borderColor: hexToRgba(brandHighlight, 0.6),
+                fontFamily: tone.headingFont,
+              })}
+              <p style="margin: 10px 0 0 0; font-size: 11px; color: ${tone.mutedText}; font-family: ${tone.bodyFont};">
+                If the button doesn&apos;t open, copy and paste this link into your browser:<br />
+                <a href="${landingUrl}" target="_blank" rel="noopener noreferrer" style="color: ${viewInBrowserColor}; text-decoration: underline;">${landingUrl}</a>
+              </p>
             </td>
           </tr>
           <tr>
@@ -695,12 +734,15 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
                     <p style="margin: 10px 0 16px 0; font-size: 11px; color: ${tone.mutedText};">
                       Tap and hold to copy, or forward this card to personal chats.
                     </p>
-                    <a
-                      href="${landingUrl}"
-                      style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; border-radius: 999px; background: ${heroButtonGradient}; color: ${tone.primaryButtonText}; font-weight: 700; font-size: 13px; padding: 11px 22px; box-shadow: ${heroButtonShadow}; letter-spacing: 0.02em;"
-                    >
-                      Open Referral Landing
-                    </a>
+                    ${renderButton({
+                      url: landingUrl,
+                      label: "Open Referral Landing",
+                      background: heroButtonGradient,
+                      textColor: tone.primaryButtonText,
+                      shadow: heroButtonShadow,
+                      borderColor: hexToRgba(brandHighlight, 0.4),
+                      fontFamily: tone.bodyFont,
+                    })}
                   </div>
                   ${
                     qrCodeDataUrl
@@ -720,24 +762,29 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
           </tr>
           <tr>
             <td style="padding: 0 40px 24px 40px;">
-              <a
-                href="${ambassadorPortalUrl}"
-                style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 360px; text-decoration: none; border-radius: 999px; background: ${portalButtonGradient}; color: ${tone.portalButtonText}; font-weight: 700; font-size: 14px; padding: 12px 18px; box-shadow: ${portalButtonShadow}; letter-spacing: 0.01em;"
-              >
-                Open Ambassador Portal
-              </a>
+              ${renderButton({
+                url: ambassadorPortalUrl,
+                label: "Open Ambassador Portal",
+                background: portalButtonGradient,
+                textColor: tone.portalButtonText,
+                shadow: portalButtonShadow,
+                borderColor: hexToRgba(brandHighlight, 0.4),
+                fontFamily: tone.bodyFont,
+                fullWidth: true,
+              })}
               <p style="margin: 10px 0 12px 0; color: ${tone.mutedText}; font-size: 11px;">
                 Log every offline booking, check status, and trigger payouts from your dashboard.
               </p>
-              <a
-                href="${landingUrl}"
-                style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 360px; text-decoration: none; border-radius: 999px; background: ${tone.secondaryButtonBackground}; color: ${tone.secondaryButtonText}; font-weight: 600; font-size: 13px; padding: 11px 18px; box-shadow: 0 14px 32px ${hexToRgba(
-                  accentDark,
-                  0.28,
-                )}; letter-spacing: 0.01em;"
-              >
-                View Referral Program
-              </a>
+              ${renderButton({
+                url: landingUrl,
+                label: "View Referral Program",
+                background: tone.secondaryButtonBackground,
+                textColor: tone.secondaryButtonText,
+                shadow: `0 14px 32px ${hexToRgba(accentDark, 0.28)}`,
+                borderColor: tone.secondaryButtonBackground,
+                fontFamily: tone.bodyFont,
+                fullWidth: true,
+              })}
             </td>
           </tr>
           <tr>

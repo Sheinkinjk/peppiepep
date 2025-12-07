@@ -65,8 +65,9 @@ export function StickyHeader() {
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16 text-[#00505B]">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group" aria-label="Pepform home">
               <PepformLogo className="h-10 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
+              <span className="sr-only">Pepform home</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -91,9 +92,15 @@ export function StickyHeader() {
               </Link>
               <Link
                 className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
-                href="/dashboard-guest"
+                href="/case-studies"
               >
-                Demo Dashboard
+                Case Studies
+              </Link>
+              <Link
+                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                href="/contact"
+              >
+                Contact
               </Link>
               <a
                 href="https://calendly.com/jarredkrowitz/30min"
@@ -172,10 +179,17 @@ export function StickyHeader() {
               </Link>
               <Link
                 className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
-                href="/dashboard-guest"
+                href="/case-studies"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Demo Dashboard
+                Case Studies
+              </Link>
+              <Link
+                className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
               </Link>
               <a
                 href="https://calendly.com/jarredkrowitz/30min"

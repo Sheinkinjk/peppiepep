@@ -1,4 +1,4 @@
-import { Skeleton, SkeletonStatsCard } from "@/components/Skeleton";
+import { Skeleton } from "@/components/Skeleton";
 import { Crown } from "lucide-react";
 
 export default function DashboardLoading() {

@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 import { nanoid } from "nanoid";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { headers } from "next/headers";
 import twilio from "twilio";
 
 import { Card } from "@/components/ui/card";
@@ -23,6 +24,7 @@ import { AITools } from "@/components/AITools";
 import { CustomersTable } from "@/components/CustomersTable";
 import { FloatingCampaignTrigger } from "@/components/FloatingCampaignTrigger";
 import { StartCampaignCTA } from "@/components/StartCampaignCTA";
+import { DashboardExplainerDialog } from "@/components/DashboardExplainerDialog";
 import { ManualReferralForm } from "@/components/ManualReferralForm";
 import { CampaignsTable } from "@/components/CampaignsTable";
 import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
@@ -31,13 +33,17 @@ import { ReferralsTable } from "@/components/ReferralsTable";
 import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingChecklist";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
+import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
+import { DashboardSurface } from "@/components/dashboard/DashboardSurface";
+import { DashboardStat } from "@/components/dashboard/DashboardStat";
 import { ReferralJourneyReport, type ReferralJourneyEvent } from "@/components/ReferralJourneyReport";
 import { logReferralEvent } from "@/lib/referral-events";
+import { completeReferralAttribution } from "@/lib/referral-revenue";
 import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
   Gift, Crown, BarChart3,
-  Award, Rocket, CreditCard, Send, Link2,
+  Award, Rocket, CreditCard, Send, Link2, Share2,
   ClipboardList,
   AlertTriangle,
 } from "lucide-react";
@@ -93,15 +99,13 @@ type ReferralEventRow = {
   } | null;
 };
 
-async function getBusiness(): Promise<{ business: BusinessCoreFields; ownerEmail: string | null }> {
+async function getBusiness(): Promise<BusinessCoreFields> {
   const supabase = await createServerComponentClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/login");
-  const ownerEmail = user.email ?? null;
-
   const selectColumns =
     "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret";
 
@@ -145,7 +149,7 @@ async function getBusiness(): Promise<{ business: BusinessCoreFields; ownerEmail
         "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret",
       )
       .single();
-    return { business: newBiz, ownerEmail };
+    return newBiz;
   }
 
   // Attach optional fields like logo_url in a second, non-critical query so we
@@ -193,11 +197,11 @@ async function getBusiness(): Promise<{ business: BusinessCoreFields; ownerEmail
     console.warn("Failed to load optional business fields:", extrasUnexpectedError);
   }
 
-  return { business: businessWithExtras, ownerEmail };
+  return businessWithExtras;
 }
 
 export default async function Dashboard() {
-  const { business, ownerEmail } = await getBusiness();
+  const business = await getBusiness();
   const defaultSiteUrl = ensureAbsoluteUrl("http://localhost:3000") ?? "http://localhost:3000";
   const configuredSiteUrl = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL);
   const siteUrl = configuredSiteUrl ?? defaultSiteUrl;
@@ -333,9 +337,7 @@ export default async function Dashboard() {
       const amount =
         business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
 
-      const transactionValue = transactionValueRaw
-        ? Number(transactionValueRaw)
-        : null;
+      const transactionValue = transactionValueRaw ? Number(transactionValueRaw) : null;
       if (transactionValueRaw && Number.isNaN(transactionValue)) {
         return {
           error:
@@ -823,25 +825,22 @@ export default async function Dashboard() {
         },
       } = await supabase.auth.getUser();
 
-      const referralPayload: Database["public"]["Tables"]["referrals"]["Insert"] =
-        {
-          business_id: business.id,
-          ambassador_id: ambassadorId,
-          referred_name: referredName,
-          referred_email: referredEmail,
-          referred_phone: referredPhone,
-          status: "completed",
-          rewarded_at: new Date().toISOString(),
-          transaction_value: transactionValue,
-          transaction_date: transactionDate,
-          service_type: serviceType,
-          created_by: currentUser?.id ?? null,
-        };
+      const referralPayload: Database["public"]["Tables"]["referrals"]["Insert"] = {
+        business_id: business.id,
+        ambassador_id: ambassadorId,
+        referred_name: referredName,
+        referred_email: referredEmail,
+        referred_phone: referredPhone,
+        status: "pending",
+        created_by: currentUser?.id ?? null,
+      };
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: insertError } = await (supabase as any)
+      const { data: insertedReferral, error: insertError } = await (supabase as any)
         .from("referrals")
-        .insert([referralPayload]);
+        .insert([referralPayload])
+        .select("id")
+        .single();
 
       if (insertError) {
         console.error("Failed to insert manual referral:", insertError);
@@ -861,49 +860,17 @@ export default async function Dashboard() {
         },
       });
 
-      // Apply credits if the reward type uses credit
-      const amount =
-        business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
-
-      if (amount > 0) {
-        const { data: ambassador, error: ambassadorError } = await supabase
-          .from("customers")
-          .select("credits")
-          .eq("id", ambassadorId)
-          .single();
-
-        if (!ambassadorError && ambassador) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const currentCredits = (ambassador as any)?.credits ?? 0;
-          const updatedCredits = Number(currentCredits) + amount;
-
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const { error: creditError } = await (supabase as any)
-            .from("customers")
-            .update({ credits: updatedCredits })
-            .eq("id", ambassadorId);
-
-          if (creditError) {
-            console.error(
-              "Failed to update ambassador credits for manual referral:",
-              creditError,
-            );
-          }
-
-          await logReferralEvent({
-            supabase,
-            businessId: business.id,
-            ambassadorId,
-            eventType: "payout_released",
-            metadata: {
-              amount,
-              transaction_value: transactionValue,
-              transaction_date: transactionDate,
-              service_type: serviceType,
-            },
-          });
-        }
-      }
+      await completeReferralAttribution({
+        supabase,
+        referralId: (insertedReferral as { id: string }).id,
+        businessId: business.id,
+        ambassadorId,
+        transactionValue,
+        transactionDate,
+        serviceType,
+        rewardType: business.reward_type,
+        rewardAmount: business.reward_amount ?? null,
+      });
 
       revalidatePath("/dashboard");
       return {
@@ -1067,93 +1034,67 @@ export default async function Dashboard() {
   }, {});
 
   const initialTab = hasProgramSettings && hasCustomers ? "clients" : "integration";
+  const headerList = await headers();
+  const userAgent = headerList.get("user-agent") ?? "";
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
       <div className="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
 
         {/* Referral Hero */}
-        <div className="mb-8 space-y-4">
-          <div className="relative overflow-hidden rounded-[28px] border border-[#20d7e3]/30 bg-gradient-to-br from-[#0abab5] via-[#11c6d4] to-[#0abab5] p-5 text-white shadow-[0_20px_60px_rgba(10,171,181,0.2)]">
-            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),transparent_60%),radial-gradient(circle_at_bottom,_rgba(255,255,255,0.15),transparent_70%)]" />
-            <div className="absolute -right-12 top-1/3 h-40 w-40 rounded-full bg-white/25 blur-3xl" />
-            <div className="absolute -left-20 bottom-0 h-28 w-28 rounded-full bg-[#7ff6ff]/35 blur-3xl" />
-            <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/70">
-                  <Crown className="h-4 w-4 text-[#1de9b6]" />
-                  <span>Welcome to your referral dashboard.</span>
-                </div>
-                <div>
-                  <h1 className="text-xl sm:text-2xl font-black text-white">
-                    {business.name || "Your business"}
-                  </h1>
-                  {ownerEmail && (
-                    <p className="text-xs text-white/80 mt-1 break-all">
-                      {ownerEmail}
-                    </p>
-                  )}
-                  <p className="text-sm text-white/80 mt-2 max-w-2xl">
-                    Monitor ambassadors, referrals, and payouts, then launch campaigns in a single tap.
-                  </p>
-                </div>
+        <div className="mb-8 grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] items-stretch">
+          <DashboardSurface variant="hero" className="relative overflow-hidden p-4">
+            <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),transparent_65%),radial-gradient(circle_at_bottom,_rgba(255,255,255,0.15),transparent_80%)]" />
+            <div className="relative z-10 space-y-3">
+              <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.35em] text-white/75">
+                <Crown className="h-4 w-4 text-[#1de9b6]" />
+                <span>Welcome</span>
               </div>
-              <div className="grid w-full gap-3 sm:w-auto sm:grid-cols-3">
-                <div className="rounded-2xl border border-white/20 bg-white/5 p-3">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/60">
-                    Ambassadors
-                  </p>
-                  <p className="text-xl font-black text-white">{safeCustomers.length}</p>
-                </div>
-                <div className="rounded-2xl border border-white/20 bg-white/5 p-3">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/60">
-                    Campaigns sent
-                  </p>
-                  <p className="text-xl font-black text-white">{totalCampaignsSent}</p>
-                </div>
-                <div className="rounded-2xl border border-white/20 bg-white/5 p-3">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/60">
-                    Credits issued
-                  </p>
-                  <p className="text-xl font-black text-white">${totalRewards}</p>
-                </div>
+              <div>
+                <h1 className="text-xl font-black">Welcome to your growth hacking dashboard</h1>
+                <p className="text-xs text-white/80 mt-2">
+                  Track ambassadors, referrals, and payouts from one control strip.
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-3 text-left">
+                <DashboardStat label="Ambassadors" value={safeCustomers.length} />
+                <DashboardStat label="Campaigns sent" value={totalCampaignsSent} />
+                <DashboardStat label="Credits issued" value={`$${totalRewards}`} />
               </div>
             </div>
-          </div>
-          <StartCampaignCTA />
-        </div>
+          </DashboardSurface>
 
-        <div className="mb-8 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
-          <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
-          <div className="space-y-1">
-            <p className="text-sm font-semibold">
-              Mobile features are coming soon - please use your computer in the meantime.
-            </p>
-            <p className="text-xs text-amber-900/80">
-              We’re finishing the mobile toolkit now; dashboards work best on desktop today so you don’t miss any controls.
-            </p>
-          </div>
+          <DashboardSurface variant="card" className="space-y-2 p-4 h-full flex flex-col">
+            <div className="flex justify-end">
+              <DashboardExplainerDialog />
+            </div>
+            <StartCampaignCTA variant="compact" className="flex-1 rounded-2xl border border-slate-100 shadow-inner" />
+          </DashboardSurface>
         </div>
-
-        <DashboardOnboardingChecklist
-          hasCustomers={hasCustomers}
-          hasProgramSettings={hasProgramSettings}
-          hasCampaigns={hasCampaigns}
-          hasReferrals={hasReferrals}
-        />
 
         <Tabs defaultValue={initialTab} className="space-y-6" id="dashboard-tabs">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
             <TabsTrigger
               value="integration"
               data-tab-target="integration"
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-cyan-600 data-[state=active]:via-teal-600 data-[state=active]:to-emerald-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
             >
               <Link2 className="h-5 w-5 mr-2" />
-              <span>Integration</span>
+              <span>Setup integration</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="crm"
+              data-tab-target="crm"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-sky-600 data-[state=active]:via-cyan-600 data-[state=active]:to-blue-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-sky-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <Share2 className="h-5 w-5 mr-2" />
+              <span className="hidden sm:inline">CRM Integration</span>
+              <span className="sm:hidden">CRM</span>
             </TabsTrigger>
             <TabsTrigger
               value="campaigns"
+              id="tab-trigger-campaigns"
               data-tab-target="campaigns"
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-600 data-[state=active]:via-pink-600 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
             >
@@ -1204,7 +1145,16 @@ export default async function Dashboard() {
           />
         </TabsContent>
 
-        <TabsContent value="campaigns" id="tab-section-campaigns">
+        <TabsContent value="crm" id="tab-section-crm" className="space-y-6">
+          <CRMIntegrationTab
+            customers={safeCustomers}
+            siteUrl={siteUrl}
+            businessName={business.name || "Your Business"}
+            discountCaptureSecret={business.discount_capture_secret ?? null}
+          />
+        </TabsContent>
+
+        <TabsContent value="campaigns" id="tab-section-campaigns" forceMount>
           <Tabs defaultValue="builder" className="space-y-6">
             <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-sm">
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
@@ -1646,6 +1596,28 @@ export default async function Dashboard() {
           </Tabs>
         </TabsContent>
       </Tabs>
+
+      {isMobile && (
+        <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
+          <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
+          <div className="space-y-1">
+            <p className="text-sm font-semibold">
+              Mobile features are coming soon - please use your computer in the meantime.
+            </p>
+            <p className="text-xs text-amber-900/80">
+              We’re finishing the mobile toolkit now; dashboards work best on desktop today so you don’t miss any controls.
+            </p>
+          </div>
+        </div>
+      )}
+
+      <DashboardOnboardingChecklist
+        hasCustomers={hasCustomers}
+        hasProgramSettings={hasProgramSettings}
+        hasCampaigns={hasCampaigns}
+        hasReferrals={hasReferrals}
+      />
+
       <FloatingCampaignTrigger />
       <Toaster />
       </div>

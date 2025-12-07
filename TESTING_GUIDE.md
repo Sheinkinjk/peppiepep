@@ -275,6 +275,28 @@ This is the most important feature - test thoroughly!
 
 ---
 
+### **Test 8: CRM Integration Export & Tracking** (15 min)
+
+#### Steps:
+1. Log into https://peppiepep.vercel.app/dashboard with an account that has at least 3 ambassadors (import `test-customers.csv` if needed).
+2. Navigate to the **CRM Integration** tab (new 6th tab) and confirm the hero shows the correct ambassador counts.
+3. Click **Export referral codes (CSV)** and verify a file named `pepf-crm-export-YYYY-MM-DD.csv` downloads.
+4. Open the CSV and confirm it includes the columns: `name,email,phone,status,referral_code,referral_link,discount_code,credits`.
+5. Inspect at least one row to make sure `referral_link` contains `utm_source=crm&utm_medium=email` so CRM sends are tracked correctly.
+6. Click **Copy capture endpoint** and paste the snippet into a terminal. Replace `YOUR_SECRET` with the value from Program Settings → Website capture, along with a real `referral_code`/`discount_code` from the CSV.
+7. Run the curl command; expect a `200 OK` response.
+8. Return to the dashboard, open **Performance → Journey tracker**, and confirm the conversion logs against the ambassador used in the payload (may take up to 30 seconds).
+9. Optional: upload the CSV to a staging Klaviyo/Mailchimp list and map custom fields (`pepform_code`, `pepform_link`) to confirm merge tags match what appears in Pepform.
+
+#### Expected Results:
+- CSV exports successfully with accurate data for every ambassador.
+- Referral links retain Pepform tracking parameters when opened.
+- Discount capture endpoint accepts the payload and records an event in the dashboard.
+- Journey tracker / Referrals tab reflect the conversion without any manual adjustments.
+- The CRM playbooks remain accurate for Klaviyo, Mailchimp, and custom SMS tooling.
+
+---
+
 ## 🚨 COMMON ISSUES & FIXES
 
 ### Issue 1: "Failed to save demo referral"
@@ -320,6 +342,8 @@ After completing all tests, verify:
 - [ ] All 4 tabs work (Clients, Referrals, Performance, Settings)
 - [ ] Start Campaign modal (all 5 steps work)
 - [ ] Campaign credit calculation is accurate
+- [ ] CRM Integration tab exports CSV + renders data
+- [ ] Discount capture endpoint logs events in dashboard
 - [ ] Login/signup flow works
 - [ ] Onboarding captures business name and email
 - [ ] Demo referral page submits successfully

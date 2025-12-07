@@ -26,7 +26,7 @@ export default function Contact() {
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 mb-4">
               <Mail className="h-6 w-6 text-purple-600" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">Email Us</h2>
             <p className="text-slate-600 mb-4">
               Send us an email and we will get back to you within 24 hours.
             </p>
@@ -44,7 +44,7 @@ export default function Contact() {
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 mb-4">
               <Calendar className="h-6 w-6 text-blue-600" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">Schedule a Call</h3>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">Schedule a Call</h2>
             <p className="text-slate-600 mb-4">
               Book a 30-minute call to discuss your referral program needs.
             </p>

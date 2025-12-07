@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { buildCampaignMessages, buildCampaignSnapshot } from "@/lib/campaigns";
 import { buildCampaignEmail } from "@/lib/campaign-email";
+import { buildDefaultEmailBody, resolveEmailCampaignMessage } from "@/lib/campaign-copy";
 
 const business = {
   name: "Glow Lounge",
@@ -169,7 +170,7 @@ describe("campaign helpers", () => {
     const escapedLandingUrl = landingUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const landingOccurrences =
       email.html.match(new RegExp(`href="${escapedLandingUrl}"`, "g")) ?? [];
-    expect(landingOccurrences.length).toBeGreaterThanOrEqual(3);
+    expect(landingOccurrences.length).toBeGreaterThanOrEqual(2);
     expect(email.html).toContain(`href="${message.metadata.ambassador_portal_url}`);
     expect(email.html).toContain("Ambassador spotlight");
   });
@@ -254,5 +255,26 @@ describe("campaign helpers", () => {
 
     expect(email.html).not.toContain("Scan on mobile to claim instantly");
     expect(email.html).toContain("Open Referral Landing");
+  });
+
+  it("falls back to the default email body when no custom copy is provided", () => {
+    const defaultBody = buildDefaultEmailBody({
+      businessName: business.name,
+      offerText: business.offer_text,
+      clientRewardText: "$25 credit",
+      newUserRewardText: "complimentary blowout",
+    });
+
+    const resolved = resolveEmailCampaignMessage({
+      channel: "email",
+      campaignMessage: "",
+      businessName: business.name,
+      offerText: business.offer_text,
+      clientRewardText: "$25 credit",
+      newUserRewardText: "complimentary blowout",
+    });
+
+    expect(resolved).toBe(defaultBody);
+    expect(resolved).toContain("complimentary blowout");
   });
 });

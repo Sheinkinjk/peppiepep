@@ -65,12 +65,11 @@ export function ManualReferralForm({
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="ambassador_id">Ambassador</Label>
+          <Label htmlFor="ambassador_id">Ambassador (optional when using referral code)</Label>
           <select
             id="ambassador_id"
             name="ambassador_id"
             className="w-full rounded-2xl border border-slate-200 p-2.5 text-sm"
-            required
           >
             <option value="">Select ambassador</option>
             {ambassadors.map((amb) => (

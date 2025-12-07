@@ -32,11 +32,11 @@ export const referralProjectConfigs: Record<string, ReferralProjectConfig> = {
     slug: "spa",
     name: "Glow Society",
     heroTagline: "Pepform Spa Capsule",
-    heroTitle: "Concierge-only referral lounge",
+    heroTitle: "Tiffany-blue referral lounge",
     heroSubtitle:
-      "Invite select guests into your private spa society. Track referrals, unlock VIP suites, and look like their personal plug.",
-    gradient: "from-[#040717] via-[#0f172a] to-[#050b1a]",
-    accentGradient: "from-rose-500 via-fuchsia-500 to-amber-400",
+      "Invite select guests into a serene, Tiffany-inspired space. They receive couture welcomes while you keep every referral organized in one place.",
+    gradient: "from-[#e3fbff] via-[#f7fffe] to-white",
+    accentGradient: "from-[#9df4ed] via-[#6ae3dd] to-[#32c9d1]",
     badge: "Spa private beta",
     stats: [
       {
@@ -83,7 +83,7 @@ export const referralProjectConfigs: Record<string, ReferralProjectConfig> = {
     ],
     autoRedirectMs: 7000,
     ctaLabel: "Unlock your private portal",
-    defaultReferralPath: "/r/demo-referral",
+    defaultReferralPath: "/referral?project=spa",
   },
 };
 

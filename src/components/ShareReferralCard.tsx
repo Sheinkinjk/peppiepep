@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   Copy,
   Check,
@@ -28,7 +29,7 @@ const placeholderLink = "Add an ambassador to generate referral links";
 
 type CustomerRow = Pick<
   Database["public"]["Tables"]["customers"]["Row"],
-  "id" | "name" | "referral_code"
+  "id" | "name" | "referral_code" | "discount_code"
 >;
 
 type ShareReferralCardProps = {
@@ -59,6 +60,7 @@ export function ShareReferralCard({
   const [copied, setCopied] = useState(false);
   const [copiedSnippet, setCopiedSnippet] = useState<string | null>(null);
   const [copiedTemplate, setCopiedTemplate] = useState<string | null>(null);
+  const [copiedDiscount, setCopiedDiscount] = useState(false);
   const [scheduleChannel, setScheduleChannel] = useState<"email" | "sms" | "native">("email");
   const [scheduleDate, setScheduleDate] = useState("");
   const [scheduledShares, setScheduledShares] = useState<
@@ -71,19 +73,45 @@ export function ShareReferralCard({
   const [scheduleStatus, setScheduleStatus] = useState<string | null>(null);
   const canNativeShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
 
+  const normalizedSiteUrl = useMemo(() => {
+    const trimmed = siteUrl?.replace(/\/$/, "");
+    if (trimmed) return trimmed;
+    if (typeof window !== "undefined") {
+      return window.location.origin.replace(/\/$/, "");
+    }
+    return "https://peppiepep.vercel.app";
+  }, [siteUrl]);
+
   const selectedCustomer = useMemo(() => {
     if (!selectedId) return firstWithCode ?? null;
     return shareableCustomers.find((c) => c.id === selectedId) ?? firstWithCode ?? null;
   }, [shareableCustomers, firstWithCode, selectedId]);
 
+  useEffect(() => {
+    if (!shareableCustomers.length) {
+      if (selectedId !== null) {
+        setSelectedId(null);
+      }
+      return;
+    }
+    const stillExists = selectedId
+      ? shareableCustomers.some((customer) => customer.id === selectedId)
+      : false;
+    if (!stillExists) {
+      setSelectedId(shareableCustomers[0]?.id ?? null);
+    }
+  }, [shareableCustomers, selectedId]);
+
   const referralLink = selectedCustomer?.referral_code
-    ? `${siteUrl}/r/${selectedCustomer.referral_code}`
+    ? `${normalizedSiteUrl}/r/${selectedCustomer.referral_code}`
     : null;
+  const discountCode = selectedCustomer?.discount_code ?? null;
 
   const friendReward = newUserRewardText || offerText || "a VIP welcome reward";
   const ambassadorReward =
     clientRewardText || (rewardAmount ? `$${rewardAmount} credit` : "loyalty rewards");
   const businessDisplayName = businessName || "your business";
+  const hasDiscountCode = Boolean(discountCode);
 
   useEffect(() => {
     const timersSnapshot = timersRef.current;
@@ -92,15 +120,41 @@ export function ShareReferralCard({
     };
   }, []);
 
-  const emailTemplate = referralLink
-    ? `Subject: VIP Invite to ${businessDisplayName}\n\nHi there,\n\nI thought you’d love ${businessDisplayName}. Use my private link to claim ${friendReward} and I’ll earn ${ambassadorReward} too:\n${referralLink}\n\nSee you there!`
+  useEffect(() => {
+    if (!copiedDiscount) return;
+    const timeout = window.setTimeout(() => setCopiedDiscount(false), 2000);
+    return () => window.clearTimeout(timeout);
+  }, [copiedDiscount]);
+
+  const discountCodeLine = hasDiscountCode
+    ? `Use discount code ${discountCode} at checkout to tag me for ${ambassadorReward}.`
     : "";
-  const smsTemplate = referralLink
-    ? `I have a ${friendReward} for you. Use my link: ${referralLink}`
-    : "";
-  const socialTemplate = referralLink
-    ? `${offerText || "Luxury rewards unlocked"} ✨\nJoin ${businessDisplayName} via my private link:\n${referralLink}`
-    : "";
+  const emailTemplate =
+    referralLink || hasDiscountCode
+      ? `Subject: VIP Invite to ${businessDisplayName}\n\nHi there,\n\nI thought you’d love ${businessDisplayName}. Use my private link to claim ${friendReward} and I’ll earn ${ambassadorReward} too.${
+          referralLink ? `\n${referralLink}` : ""
+        }\n${
+          discountCodeLine
+            ? `\nNo time to click? ${discountCodeLine}`
+            : ""
+        }\n\nSee you there!`
+      : "";
+  const smsTemplate =
+    referralLink || hasDiscountCode
+      ? `I have a ${friendReward} for you. ${
+          referralLink ? `Use my link: ${referralLink}` : ""
+        }${
+          discountCodeLine ? ` ${discountCodeLine}` : ""
+        }`
+      : "";
+  const socialTemplate =
+    referralLink || hasDiscountCode
+      ? `${offerText || "Luxury rewards unlocked"} ✨\nJoin ${
+          businessDisplayName
+        } via my private link.${referralLink ? `\n${referralLink}` : ""}${
+          discountCodeLine ? `\n${discountCodeLine}` : ""
+        }`
+      : "";
 
   const handleCopy = async () => {
     if (!referralLink) return;
@@ -118,7 +172,9 @@ export function ShareReferralCard({
     try {
       await navigator.share({
         title: "Invite a friend",
-        text: `We both earn rewards when you join. Use my link: ${referralLink}`,
+        text: `We both earn rewards when you join. Use my link: ${referralLink}${
+          discountCodeLine ? ` or code ${discountCode}` : ""
+        }`,
         url: referralLink,
       });
     } catch (error) {
@@ -127,18 +183,22 @@ export function ShareReferralCard({
   };
 
   const shareViaEmail = () => {
-    if (!referralLink) return;
+    if (!referralLink && !hasDiscountCode) return;
     const subject = encodeURIComponent("Earn rewards with me");
     const body = encodeURIComponent(
-      `I just sent you my referral link. Use it to claim ${friendReward} and I'll earn ${ambassadorReward} too.\n\n${referralLink}`,
+      `I just sent you my referral link. Use it to claim ${friendReward} and I'll earn ${ambassadorReward} too.${
+        referralLink ? `\n\n${referralLink}` : ""
+      }${discountCodeLine ? `\n\n${discountCodeLine}` : ""}`,
     );
     window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
 
   const shareViaSMS = () => {
-    if (!referralLink) return;
+    if (!referralLink && !hasDiscountCode) return;
     const message = encodeURIComponent(
-      `Let's both get rewarded. Use my link to claim ${friendReward}: ${referralLink}`,
+      `Let's both get rewarded. ${
+        referralLink ? `Use my link to claim ${friendReward}: ${referralLink}` : ""
+      }${discountCodeLine ? ` ${discountCodeLine}` : ""}`,
     );
     window.location.href = `sms:?&body=${message}`;
   };
@@ -219,6 +279,16 @@ export function ShareReferralCard({
     timersRef.current[id] = timer;
   };
 
+  const handleCopyDiscount = async () => {
+    if (!discountCode) return;
+    try {
+      await navigator.clipboard.writeText(discountCode);
+      setCopiedDiscount(true);
+    } catch (error) {
+      console.error("Failed to copy discount code", error);
+    }
+  };
+
   const handleCopySnippet = async (value: string, key: string) => {
     if (!value) return;
     try {
@@ -249,7 +319,7 @@ export function ShareReferralCard({
     setScheduledShares((prev) => prev.filter((entry) => entry.id !== id));
   };
 
-  const downloadMediaKit = async () => {
+const downloadMediaKit = async () => {
     if (!referralLink) {
       setMediaKitStatus("Add an ambassador to generate the media kit.");
       return;
@@ -316,334 +386,264 @@ export function ShareReferralCard({
           </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div>
-            <Label htmlFor="share-ambassador" className="text-xs font-semibold text-slate-500">
-              Choose ambassador
-            </Label>
-            <select
-              id="share-ambassador"
-              value={selectedCustomer?.id ?? ""}
-              onChange={(event) => setSelectedId(event.target.value || null)}
-              className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-800"
-            >
-              {shareableCustomers.map((customer) => (
-                <option key={customer.id} value={customer.id ?? customer.referral_code ?? ""}>
-                  {customer.name || customer.referral_code}
-                </option>
-              ))}
-              {!hasSharableCustomer && <option value="">No ambassadors yet</option>}
-            </select>
-          </div>
-          <div>
-            <Label className="text-xs font-semibold text-slate-500">
-              Rewards preview
-            </Label>
-            <div className="mt-1 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-600">
-              <p className="font-semibold text-slate-900">Friend: {friendReward}</p>
-              <p className="font-semibold text-slate-900">Ambassador: {ambassadorReward}</p>
-            </div>
-          </div>
-        </div>
+        <Tabs defaultValue="share" className="space-y-5">
+          <TabsList className="grid grid-cols-3 rounded-2xl bg-slate-100/80 p-1 text-sm font-semibold text-slate-500">
+            <TabsTrigger value="share" className="rounded-2xl data-[state=active]:bg-white data-[state=active]:text-slate-900">
+              Share
+            </TabsTrigger>
+            <TabsTrigger value="snippets" className="rounded-2xl data-[state=active]:bg-white data-[state=active]:text-slate-900">
+              Snippets
+            </TabsTrigger>
+            <TabsTrigger value="assets" className="rounded-2xl data-[state=active]:bg-white data-[state=active]:text-slate-900">
+              QR &amp; assets
+            </TabsTrigger>
+          </TabsList>
 
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-slate-700">Share this unique link</p>
-          <div className="flex flex-col gap-2 sm:flex-row">
-            <Input
-              readOnly
-              value={referralLink ?? placeholderLink}
-              className="text-sm font-mono"
-              disabled={!hasSharableCustomer}
-            />
-            <Button
-              type="button"
-              onClick={handleCopy}
-              disabled={!hasSharableCustomer}
-              className="sm:w-40 font-semibold"
-            >
-              {copied ? (
-                <>
-                  <Check className="mr-2 h-4 w-4" /> Copied
-                </>
-              ) : (
-                <>
-                  <Copy className="mr-2 h-4 w-4" /> Copy link
-                </>
+          <TabsContent value="share" className="space-y-6">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div>
+                <Label htmlFor="share-ambassador" className="text-xs font-semibold text-slate-500">
+                  Choose ambassador
+                </Label>
+                <select
+                  id="share-ambassador"
+                  value={selectedCustomer?.id ?? ""}
+                  onChange={(event) => setSelectedId(event.target.value || null)}
+                  className="mt-1 w-full rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-800"
+                >
+                  {shareableCustomers.map((customer) => (
+                    <option key={customer.id} value={customer.id ?? customer.referral_code ?? ""}>
+                      {customer.name || customer.referral_code}
+                    </option>
+                  ))}
+                  {!hasSharableCustomer && <option value="">No ambassadors yet</option>}
+                </select>
+              </div>
+              <div>
+                <Label className="text-xs font-semibold text-slate-500">Rewards preview</Label>
+                <div className="mt-1 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-600">
+                  <p className="font-semibold text-slate-900">Friend: {friendReward}</p>
+                  <p className="font-semibold text-slate-900">Ambassador: {ambassadorReward}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-sm font-semibold text-slate-700">Share this unique link</p>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Input readOnly value={referralLink ?? placeholderLink} className="text-sm font-mono" disabled={!hasSharableCustomer} />
+                <Button type="button" onClick={handleCopy} disabled={!hasSharableCustomer} className="sm:w-40 font-semibold">
+                  {copied ? (
+                    <>
+                      <Check className="mr-2 h-4 w-4" /> Copied
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="mr-2 h-4 w-4" /> Copy link
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <div>
+                <p className="text-sm font-semibold text-slate-700">Reusable discount code</p>
+                <p className="text-xs text-slate-500">
+                  Give this code when someone checks out manually or can&apos;t tap the link. It&apos;s the same code merchants capture through their checkout form.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Input
+                  readOnly
+                  value={discountCode ?? "Add an ambassador to generate their discount code automatically."}
+                  className="text-sm font-mono tracking-wide"
+                  disabled={!hasDiscountCode}
+                />
+                <Button type="button" onClick={handleCopyDiscount} disabled={!hasDiscountCode} className="sm:w-40 font-semibold">
+                  {copiedDiscount ? (
+                    <>
+                      <Check className="mr-2 h-4 w-4" /> Copied
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="mr-2 h-4 w-4" /> Copy code
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Button type="button" variant="secondary" onClick={shareViaEmail} disabled={!hasSharableCustomer} className="font-semibold">
+                <Mail className="mr-2 h-4 w-4" /> Email friend
+              </Button>
+              <Button type="button" variant="outline" onClick={shareViaSMS} disabled={!hasSharableCustomer} className="font-semibold">
+                <MessageSquare className="mr-2 h-4 w-4" /> Text message
+              </Button>
+              {canNativeShare && (
+                <Button type="button" variant="ghost" onClick={handleShare} disabled={!hasSharableCustomer} className="font-semibold text-slate-700">
+                  <Share2 className="mr-2 h-4 w-4" /> Share sheet
+                </Button>
               )}
-            </Button>
-          </div>
-        </div>
+            </div>
 
-        <div className="flex flex-wrap gap-3">
-          <Button
-            type="button"
-            variant="secondary"
-            onClick={shareViaEmail}
-            disabled={!hasSharableCustomer}
-            className="font-semibold"
-          >
-            <Mail className="mr-2 h-4 w-4" /> Email friend
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            onClick={shareViaSMS}
-            disabled={!hasSharableCustomer}
-            className="font-semibold"
-          >
-            <MessageSquare className="mr-2 h-4 w-4" /> Text message
-          </Button>
-          {canNativeShare && (
-            <Button
-              type="button"
-              variant="ghost"
-              onClick={handleShare}
-              disabled={!hasSharableCustomer}
-              className="font-semibold text-slate-700"
-            >
-              <Share2 className="mr-2 h-4 w-4" /> Share sheet
-            </Button>
-          )}
-        </div>
-
-        <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white/80 p-4">
-          <div className="flex items-center gap-2">
-            <FileText className="h-4 w-4 text-slate-600" />
-            <div>
-              <p className="font-semibold text-slate-900">Ready-to-send copy</p>
-              <p className="text-xs text-slate-500">Use these templates in SMS, email, or social posts.</p>
-            </div>
-          </div>
-          <div className="grid gap-3 md:grid-cols-3">
-            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
-              <div className="flex items-center justify-between text-sm font-semibold text-slate-700 mb-2">
-                Email
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="h-8 px-2 text-xs"
-                  disabled={!emailTemplate}
-                  onClick={() => handleCopyTemplate(emailTemplate, "email")}
-                >
-                  {copiedTemplate === "email" ? (
-                    <>
-                      <Check className="mr-1 h-3 w-3" /> Copied
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="mr-1 h-3 w-3" /> Copy
-                    </>
-                  )}
-                </Button>
+            <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white/80 p-4">
+              <div className="flex items-center gap-2">
+                <FileText className="h-4 w-4 text-slate-600" />
+                <div>
+                  <p className="font-semibold text-slate-900">Ready-to-send copy</p>
+                  <p className="text-xs text-slate-500">Use these templates in SMS, email, or social posts.</p>
+                </div>
               </div>
-              <pre className="text-[11px] whitespace-pre-wrap text-slate-700">{emailTemplate || "Add an ambassador to generate this template."}</pre>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
-              <div className="flex items-center justify-between text-sm font-semibold text-slate-700 mb-2">
-                SMS
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="h-8 px-2 text-xs"
-                  disabled={!smsTemplate}
-                  onClick={() => handleCopyTemplate(smsTemplate, "sms")}
-                >
-                  {copiedTemplate === "sms" ? (
-                    <>
-                      <Check className="mr-1 h-3 w-3" /> Copied
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="mr-1 h-3 w-3" /> Copy
-                    </>
-                  )}
-                </Button>
-              </div>
-              <p className="text-[12px] text-slate-700">{smsTemplate || "Templates appear once a referral link is available."}</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
-              <div className="flex items-center justify-between text-sm font-semibold text-slate-700 mb-2">
-                Social caption
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="h-8 px-2 text-xs"
-                  disabled={!socialTemplate}
-                  onClick={() => handleCopyTemplate(socialTemplate, "social")}
-                >
-                  {copiedTemplate === "social" ? (
-                    <>
-                      <Check className="mr-1 h-3 w-3" /> Copied
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="mr-1 h-3 w-3" /> Copy
-                    </>
-                  )}
-                </Button>
-              </div>
-              <p className="text-[12px] text-slate-700 whitespace-pre-wrap">
-                {socialTemplate || "Social captions populate once you select an ambassador."}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 space-y-3">
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-slate-600" />
-            <div>
-              <p className="font-semibold text-slate-900">Schedule a share</p>
-              <p className="text-xs text-slate-500">Queue SMS, email, or native share reminders for later.</p>
-            </div>
-          </div>
-          <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto]">
-            <select
-              className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-800"
-              value={scheduleChannel}
-              onChange={(event) => setScheduleChannel(event.target.value as "email" | "sms" | "native")}
-              disabled={!hasSharableCustomer}
-            >
-              <option value="email">Email share</option>
-              <option value="sms">SMS share</option>
-              <option value="native" disabled={!canNativeShare}>
-                Native share sheet
-              </option>
-            </select>
-            <Input
-              type="datetime-local"
-              value={scheduleDate}
-              onChange={(event) => setScheduleDate(event.target.value)}
-              min={new Date().toISOString().slice(0, 16)}
-              disabled={!hasSharableCustomer}
-            />
-            <Button
-              type="button"
-              onClick={scheduleShare}
-              disabled={!hasSharableCustomer}
-              className="font-semibold"
-            >
-              <Clock className="mr-2 h-4 w-4" />
-              Schedule send
-            </Button>
-          </div>
-          {scheduleStatus && (
-            <p className="text-xs text-slate-600">{scheduleStatus}</p>
-          )}
-          {scheduledShares.length > 0 && (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-2">
-              {scheduledShares.map((entry) => (
-                <div
-                  key={entry.id}
-                  className="flex items-center justify-between text-xs text-slate-600"
-                >
-                  <div>
-                    <p className="font-semibold text-slate-800 capitalize">
-                      {entry.channel} • {new Date(entry.scheduledFor).toLocaleString()}
-                    </p>
-                    <p className="text-[11px] uppercase tracking-wide">
-                      {entry.status === "sent" ? "Sent" : "Scheduled"}
-                    </p>
+              <div className="grid gap-3 md:grid-cols-3">
+                {[
+                  { label: "Email", value: emailTemplate, key: "email" },
+                  { label: "SMS", value: smsTemplate, key: "sms" },
+                  { label: "Social caption", value: socialTemplate, key: "social" },
+                ].map((template) => (
+                  <div key={template.key} className="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                    <div className="flex items-center justify-between text-sm font-semibold text-slate-700 mb-2">
+                      {template.label}
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="h-8 px-2 text-xs"
+                        disabled={!template.value}
+                        onClick={() => template.value && handleCopyTemplate(template.value, template.key)}
+                      >
+                        {copiedTemplate === template.key ? (
+                          <>
+                            <Check className="mr-1 h-3 w-3" /> Copied
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="mr-1 h-3 w-3" /> Copy
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                    <pre className="text-[11px] whitespace-pre-wrap text-slate-700">
+                      {template.value || "Add an ambassador to generate this template."}
+                    </pre>
                   </div>
-                  {entry.status === "scheduled" && (
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 space-y-3">
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-slate-600" />
+                <div>
+                  <p className="font-semibold text-slate-900">Schedule a share</p>
+                  <p className="text-xs text-slate-500">Queue SMS, email, or native share reminders for later.</p>
+                </div>
+              </div>
+              <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto]">
+                <select
+                  className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-800"
+                  value={scheduleChannel}
+                  onChange={(event) => setScheduleChannel(event.target.value as "email" | "sms" | "native")}
+                  disabled={!hasSharableCustomer}
+                >
+                  <option value="email">Email share</option>
+                  <option value="sms">SMS share</option>
+                  <option value="native" disabled={!canNativeShare}>
+                    Native share sheet
+                  </option>
+                </select>
+                <Input
+                  type="datetime-local"
+                  value={scheduleDate}
+                  onChange={(event) => setScheduleDate(event.target.value)}
+                  min={new Date().toISOString().slice(0, 16)}
+                  disabled={!hasSharableCustomer}
+                />
+                <Button type="button" onClick={scheduleShare} disabled={!hasSharableCustomer} className="font-semibold">
+                  <Clock className="mr-2 h-4 w-4" />
+                  Schedule send
+                </Button>
+              </div>
+              {scheduleStatus && <p className="text-xs text-slate-600">{scheduleStatus}</p>}
+              {scheduledShares.length > 0 && (
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-2">
+                  {scheduledShares.map((entry) => (
+                    <div key={entry.id} className="flex items-center justify-between text-xs text-slate-600">
+                      <div>
+                        <p className="font-semibold text-slate-800 capitalize">
+                          {entry.channel} • {new Date(entry.scheduledFor).toLocaleString()}
+                        </p>
+                        <p className="text-[11px] uppercase tracking-wide">
+                          {entry.status === "sent" ? "Sent" : "Scheduled"}
+                        </p>
+                      </div>
+                      {entry.status === "scheduled" && (
+                        <Button size="sm" variant="ghost" className="text-xs" onClick={() => cancelScheduledShare(entry.id)}>
+                          Cancel
+                        </Button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="snippets" className="space-y-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
+              <div className="flex items-center gap-2">
+                <Code className="h-4 w-4 text-slate-600" />
+                <div>
+                  <p className="font-semibold text-slate-900">Embeddable referral widgets</p>
+                  <p className="text-xs text-slate-500">
+                    Drop these snippets on your website, blog, or Linktree. They pull from the exact same referral link.
+                  </p>
+                </div>
+              </div>
+
+              {[{ label: "CTA button", icon: <Share2 className="h-4 w-4 text-indigo-500" />, key: "button", snippet: buttonSnippet },
+                { label: "Banner block", icon: <ImageIcon className="h-4 w-4 text-pink-500" />, key: "banner", snippet: bannerSnippet },
+              ].map((item) => (
+                <div key={item.key} className="rounded-xl bg-white p-3 border border-slate-200">
+                  <div className="flex items-center justify-between gap-3 mb-2">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                      {item.icon}
+                      {item.label}
+                    </div>
                     <Button
+                      type="button"
                       size="sm"
-                      variant="ghost"
-                      className="text-xs"
-                      onClick={() => cancelScheduledShare(entry.id)}
+                      variant="outline"
+                      disabled={!hasSharableCustomer}
+                      onClick={() => handleCopySnippet(item.snippet, item.key)}
                     >
-                      Cancel
+                      {copiedSnippet === item.key ? (
+                        <>
+                          <Check className="mr-2 h-3 w-3" /> Copied
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="mr-2 h-3 w-3" /> Copy HTML
+                        </>
+                      )}
                     </Button>
-                  )}
+                  </div>
+                  <pre className="text-[11px] bg-slate-900 text-slate-100 rounded-lg p-3 overflow-x-auto">
+                    {item.snippet || "<!-- Add an ambassador to generate this snippet -->"}
+                  </pre>
                 </div>
               ))}
             </div>
-          )}
-        </div>
+          </TabsContent>
 
-        <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 space-y-4">
-          <div className="flex items-center gap-2">
-            <Code className="h-4 w-4 text-slate-600" />
-            <div>
-              <p className="font-semibold text-slate-900">Embeddable referral widgets</p>
-              <p className="text-xs text-slate-500">
-                Drop these snippets on your website, blog, or Linktree. They pull from the exact same referral link.
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <div className="rounded-xl bg-white p-3 border border-slate-200">
-              <div className="flex items-center justify-between gap-3 mb-2">
-                <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <Share2 className="h-4 w-4 text-indigo-500" />
-                  CTA button
-                </div>
-                <Button
-                  type="button"
-                  size="sm"
-                  variant="outline"
-                  disabled={!hasSharableCustomer}
-                  onClick={() => handleCopySnippet(buttonSnippet, "button")}
-                >
-                  {copiedSnippet === "button" ? (
-                    <>
-                      <Check className="mr-2 h-3 w-3" /> Copied
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="mr-2 h-3 w-3" /> Copy HTML
-                    </>
-                  )}
-                </Button>
-              </div>
-              <pre className="text-[11px] bg-slate-900 text-slate-100 rounded-lg p-3 overflow-x-auto">
-                {buttonSnippet || "<!-- Add an ambassador to generate this snippet -->"}
-              </pre>
-            </div>
-
-            <div className="rounded-xl bg-white p-3 border border-slate-200">
-              <div className="flex items-center justify-between gap-3 mb-2">
-                <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <ImageIcon className="h-4 w-4 text-pink-500" />
-                  Banner block
-                </div>
-                <Button
-                  type="button"
-                  size="sm"
-                  variant="outline"
-                  disabled={!hasSharableCustomer}
-                  onClick={() => handleCopySnippet(bannerSnippet, "banner")}
-                >
-                  {copiedSnippet === "banner" ? (
-                    <>
-                      <Check className="mr-2 h-3 w-3" /> Copied
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="mr-2 h-3 w-3" /> Copy HTML
-                    </>
-                  )}
-                </Button>
-              </div>
-              <pre className="text-[11px] bg-slate-900 text-slate-100 rounded-lg p-3 overflow-x-auto">
-                {bannerSnippet || "<!-- Add an ambassador to generate this snippet -->"}
-              </pre>
-            </div>
-
-            <div className="rounded-xl border border-[#a6e8f2] bg-[#e0f7fb] p-3 space-y-3 shadow-inner">
+          <TabsContent value="assets" className="space-y-4">
+            <div className="rounded-2xl border border-[#a6e8f2] bg-[#e0f7fb] p-3 space-y-3 shadow-inner">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
                   <Share2 className="h-4 w-4 text-emerald-500" />
                   QR code
                 </div>
-                <Button
-                  type="button"
-                  size="sm"
-                  variant="outline"
-                  disabled={!hasSharableCustomer}
-                  onClick={() => handleCopySnippet(qrSnippet, "qr")}
-                >
+                <Button type="button" size="sm" variant="outline" disabled={!hasSharableCustomer} onClick={() => handleCopySnippet(qrSnippet, "qr")}>
                   {copiedSnippet === "qr" ? (
                     <>
                       <Check className="mr-2 h-3 w-3" /> Copied
@@ -656,20 +656,12 @@ export function ShareReferralCard({
                 </Button>
               </div>
               {qrImageSrc ? (
-                <Image
-                  src={qrImageSrc}
-                  alt="Referral QR preview"
-                  width={144}
-                  height={144}
-                  className="h-36 w-36 rounded-lg border border-slate-100 shadow"
-                />
+                <Image src={qrImageSrc} alt="Referral QR preview" width={144} height={144} className="h-36 w-36 rounded-lg border border-slate-100 shadow" />
               ) : (
-                <p className="text-xs text-slate-500">
-                  Add an ambassador to preview and download the QR code.
-                </p>
+                <p className="text-xs text-slate-500">Add an ambassador to preview and download the QR code.</p>
               )}
               <div className="flex flex-wrap gap-2">
-                <QRCodeGenerator url={referralLink || siteUrl} fileName="referral-qr" />
+                <QRCodeGenerator url={referralLink || normalizedSiteUrl} fileName="referral-qr" />
                 {hostedQrUrl && (
                   <a
                     href={hostedQrUrl}
@@ -682,38 +674,27 @@ export function ShareReferralCard({
                 )}
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white p-4 space-y-3">
-          <div className="flex items-center gap-2">
-            <ImageIcon className="h-4 w-4 text-amber-300" />
-            <div>
-              <p className="font-semibold">Media kit download</p>
-              <p className="text-xs text-slate-200">
-                Bundle the QR, HTML widgets, and copy into a single shareable zip.
-              </p>
+            <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white p-4 space-y-3">
+              <div className="flex items-center gap-2">
+                <ImageIcon className="h-4 w-4 text-amber-300" />
+                <div>
+                  <p className="font-semibold">Media kit download</p>
+                  <p className="text-xs text-slate-200">Bundle the QR, HTML widgets, and copy into a single shareable zip.</p>
+                </div>
+              </div>
+              <Button type="button" className="bg-white text-slate-900 font-bold" onClick={downloadMediaKit} disabled={!hasSharableCustomer || mediaKitLoading}>
+                <Download className="mr-2 h-4 w-4" />
+                {mediaKitLoading ? "Packaging..." : "Download media kit"}
+              </Button>
+              {mediaKitStatus && (
+                <p className={`text-xs ${mediaKitStatusTone === "error" ? "text-rose-200" : "text-emerald-200"}`}>
+                  {mediaKitStatus}
+                </p>
+              )}
             </div>
-          </div>
-          <Button
-            type="button"
-            className="bg-white text-slate-900 font-bold"
-            onClick={downloadMediaKit}
-            disabled={!hasSharableCustomer || mediaKitLoading}
-          >
-            <Download className="mr-2 h-4 w-4" />
-            {mediaKitLoading ? "Packaging..." : "Download media kit"}
-          </Button>
-          {mediaKitStatus && (
-            <p
-              className={`text-xs ${
-                mediaKitStatusTone === "error" ? "text-rose-200" : "text-emerald-200"
-              }`}
-            >
-              {mediaKitStatus}
-            </p>
-          )}
-        </div>
+          </TabsContent>
+        </Tabs>
 
         {!hasSharableCustomer && (
           <div className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-600">

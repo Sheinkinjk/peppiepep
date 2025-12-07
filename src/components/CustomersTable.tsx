@@ -48,6 +48,10 @@ type CustomersApiResponse = {
   pageSize: number;
 };
 
+type PepWindow = Window & {
+  __pepOpenCampaignModal?: () => void;
+};
+
 const DEFAULT_CUSTOMER_PAGE_SIZE = 50;
 const ROW_TEMPLATE =
   "36px minmax(160px,1.1fr) minmax(140px,1fr) minmax(220px,1.5fr) minmax(180px,1fr) minmax(90px,0.6fr) minmax(160px,0.9fr) minmax(240px,1.1fr)";
@@ -366,7 +370,7 @@ export function CustomersTable({
     campaignsTab?.click();
     setTimeout(() => {
       if (typeof window !== "undefined") {
-        const win = window as any;
+        const win = window as PepWindow;
         if (typeof win.__pepOpenCampaignModal === "function") {
           win.__pepOpenCampaignModal();
         }

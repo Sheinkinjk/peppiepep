@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { createServerComponentClient } from "@/lib/supabase";
 import type { Database } from "@/types/supabase";
+import { createApiLogger } from "@/lib/api-logger";
+import { validateWithSchema } from "@/lib/api-validation";
 
 const DEFAULT_PAGE_SIZE = 50;
 const MAX_PAGE_SIZE = 200;
@@ -11,6 +14,7 @@ function sanitizeSearchTerm(term: string) {
 }
 
 export async function GET(request: Request) {
+  const logger = createApiLogger("api:customers:list");
   try {
     const supabase = await createServerComponentClient();
     const {
@@ -19,6 +23,7 @@ export async function GET(request: Request) {
     } = await supabase.auth.getUser();
 
     if (authError || !user) {
+      logger.warn("Customers listing unauthorized", { authError });
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -29,6 +34,7 @@ export async function GET(request: Request) {
       .single<Pick<Database["public"]["Tables"]["businesses"]["Row"], "id">>();
 
     if (businessError || !business) {
+      logger.warn("Customers listing missing business", { userId: user.id });
       return NextResponse.json(
         { error: "Business not found for this account." },
         { status: 404 },
@@ -36,10 +42,32 @@ export async function GET(request: Request) {
     }
 
     const url = new URL(request.url);
-    const search = (url.searchParams.get("q") ?? "").trim();
-    const status = (url.searchParams.get("status") ?? "all").toLowerCase();
-    const pageParam = Number(url.searchParams.get("page") ?? "1");
-    const sizeParam = Number(url.searchParams.get("pageSize") ?? DEFAULT_PAGE_SIZE);
+    const paramsSchema = z.object({
+      q: z.string().optional(),
+      status: z.string().optional(),
+      page: z.string().optional(),
+      pageSize: z.string().optional(),
+    });
+    const queryValidation = validateWithSchema(
+      paramsSchema,
+      {
+        q: url.searchParams.get("q"),
+        status: url.searchParams.get("status"),
+        page: url.searchParams.get("page"),
+        pageSize: url.searchParams.get("pageSize"),
+      },
+      logger,
+    );
+
+    if (!queryValidation.success) {
+      return queryValidation.response;
+    }
+
+    const { q, status: rawStatus, page: rawPage, pageSize: rawSize } = queryValidation.data;
+    const search = (q ?? "").trim();
+    const status = (rawStatus ?? "all").toLowerCase();
+    const pageParam = Number(rawPage ?? "1");
+    const sizeParam = Number(rawSize ?? DEFAULT_PAGE_SIZE);
     const page = Number.isNaN(pageParam) || pageParam < 1 ? 1 : pageParam;
     const pageSize = Number.isNaN(sizeParam)
       ? DEFAULT_PAGE_SIZE
@@ -50,7 +78,7 @@ export async function GET(request: Request) {
     let query = supabase
       .from("customers")
       .select(
-        "id, name, phone, email, referral_code, credits, status, created_at",
+        "id, name, phone, email, referral_code, discount_code, credits, status, created_at",
         { count: "exact" },
       )
       .eq("business_id", business.id)
@@ -65,6 +93,7 @@ export async function GET(request: Request) {
           `email.ilike.${likeValue}`,
           `phone.ilike.${likeValue}`,
           `referral_code.ilike.${likeValue}`,
+          `discount_code.ilike.${likeValue}`,
         ].join(","),
       );
     }
@@ -80,12 +109,19 @@ export async function GET(request: Request) {
     const { data, error, count } = await query;
 
     if (error) {
-      console.error("Customers API query failed:", error);
+      logger.error("Customers API query failed", { error });
       return NextResponse.json(
         { error: "Failed to load customers." },
         { status: 500 },
       );
     }
+
+    logger.info("Customers list returned", {
+      businessId: business.id,
+      count: data?.length ?? 0,
+      page,
+      pageSize,
+    });
 
     return NextResponse.json({
       data: data ?? [],
@@ -94,7 +130,7 @@ export async function GET(request: Request) {
       pageSize,
     });
   } catch (error) {
-    console.error("Customers API error:", error);
+    logger.error("Customers API error", { error });
     return NextResponse.json(
       { error: "Unexpected error loading customers." },
       { status: 500 },

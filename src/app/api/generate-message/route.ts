@@ -1,20 +1,35 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { z } from "zod";
+
 import { checkRateLimit } from "@/lib/rate-limit";
+import { createApiLogger } from "@/lib/api-logger";
+import { parseJsonBody } from "@/lib/api-validation";
 
 // Initialize OpenAI (will use env var OPENAI_API_KEY)
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
+const messageRequestSchema = z.object({
+  businessName: z.string().optional(),
+  businessType: z.string().optional(),
+  offerText: z.string().optional(),
+  tone: z.string().optional(),
+});
+
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:generate-message");
+  logger.info("Received generate-message request");
   // Apply rate limiting: 10 requests per minute
   const rateLimitCheck = await checkRateLimit(request, "generateMessage");
   if (!rateLimitCheck.success && rateLimitCheck.response) {
+    logger.warn("generate-message rate limited");
     return rateLimitCheck.response;
   }
   if (!openai) {
     // Return mock responses if OpenAI is not configured
+    logger.warn("OpenAI missing, returning mock messages");
     return NextResponse.json({
       messages: [
         "Hey! I just hooked you up with an amazing deal at {business}. Get {offer} when you book. Trust me, you'll love it! 🌟",
@@ -28,17 +43,12 @@ export async function POST(request: Request) {
     });
   }
 
-  let body: {
-    businessName?: string;
-    businessType?: string;
-    offerText?: string;
-    tone?: string;
-  };
+  const parsedBody = await parseJsonBody(request, messageRequestSchema, logger, {
+    errorMessage: "Invalid JSON payload",
+  });
 
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON payload" }, { status: 400 });
+  if (!parsedBody.success) {
+    return parsedBody.response;
   }
 
   const {
@@ -46,9 +56,14 @@ export async function POST(request: Request) {
     businessType = "beauty salon",
     offerText = "20% off your first visit",
     tone = "friendly and casual",
-  } = body;
+  } = parsedBody.data;
 
   try {
+    logger.info("Calling OpenAI for referral messages", {
+      businessName,
+      businessType,
+      tone,
+    });
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
@@ -101,12 +116,13 @@ Return ONLY a JSON array of 5 strings, no other text.`,
         .slice(0, 5);
     }
 
+    logger.info("Referral messages generated", { model: completion.model });
     return NextResponse.json({
       messages,
       model: completion.model,
     });
   } catch (error) {
-    console.error("OpenAI API error:", error);
+    logger.error("OpenAI API error", { error });
 
     // Fallback to template messages if API fails
     return NextResponse.json({

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { StickyHeader } from "@/components/StickyHeader";
 import Footer from "@/components/layout/Footer";
+import { SupportChatbot } from "@/components/SupportChatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,15 +50,16 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col">
           <StickyHeader />
-          <main className="flex-1">
+          <div className="flex-1" role="presentation">
             {children}
-          </main>
+          </div>
           <div className="bg-white/90">
             <div className="mx-auto max-w-6xl px-6 pb-10 md:px-10 lg:px-16">
               <Footer />
             </div>
           </div>
         </div>
+        <SupportChatbot />
       </body>
     </html>
   );

@@ -1,191 +1,279 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Sparkles, ArrowRight, Clock3, Shield, Gift, Stars } from "lucide-react";
-
+import { Button } from "@/components/ui/button";
+import { ReferralShareCard } from "@/components/ReferralShareCard";
+import { DiscountCodeCard } from "@/components/DiscountCodeCard";
 import type { ReferralProjectConfig } from "./project-config";
+
+type AmbassadorPreview = {
+  name: string | null;
+  referral_code: string | null;
+  discount_code: string | null;
+  business_name: string | null;
+  offer_text: string | null;
+  client_reward_text: string | null;
+  new_user_reward_text: string | null;
+  reward_terms: string | null;
+  logo_url?: string | null;
+  brand_highlight_color?: string | null;
+};
 
 type ReferralProjectLandingProps = {
   config: ReferralProjectConfig;
   referralHref: string;
+  ambassador: AmbassadorPreview | null;
+  ownerDashboardHref?: string;
 };
 
-export function ProjectLandingClient({ config, referralHref }: ReferralProjectLandingProps) {
+function normalizeHref(href: string) {
+  if (/^https?:\/\//i.test(href)) return href;
+  if (typeof window !== "undefined") {
+    try {
+      return new URL(href, window.location.origin).toString();
+    } catch {
+      return href;
+    }
+  }
+  return `https://peppiepep.vercel.app${href.startsWith("/") ? href : `/${href}`}`;
+}
+
+function normalizeHexColor(value?: string | null, fallback = "#0abab5") {
+  if (!value) return fallback;
+  const hex = value.trim().replace(/^#/, "");
+  if (!/^[0-9a-f]{3}$/i.test(hex) && !/^[0-9a-f]{6}$/i.test(hex)) return fallback;
+  if (hex.length === 3) {
+    return `#${hex
+      .split("")
+      .map((char) => char + char)
+      .join("")
+      .toLowerCase()}`;
+  }
+  return `#${hex.toLowerCase()}`;
+}
+
+function shiftColor(hex: string, amount: number) {
+  const normalized = normalizeHexColor(hex);
+  const int = parseInt(normalized.slice(1), 16);
+  const adjustChannel = (channel: number) => {
+    const shifted = channel + Math.round((amount / 100) * 255);
+    return Math.min(255, Math.max(0, shifted));
+  };
+  const r = adjustChannel((int >> 16) & 255);
+  const g = adjustChannel((int >> 8) & 255);
+  const b = adjustChannel(int & 255);
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
+
+export function ProjectLandingClient({
+  config,
+  referralHref,
+  ambassador,
+  ownerDashboardHref,
+}: ReferralProjectLandingProps) {
   const router = useRouter();
-  const autoRedirectSeconds = config.autoRedirectMs
-    ? Math.ceil(config.autoRedirectMs / 1000)
-    : null;
-  const [secondsLeft, setSecondsLeft] = useState(autoRedirectSeconds);
+  const hasAmbassador = Boolean(ambassador?.referral_code);
+  const dashboardHref = ownerDashboardHref ?? "/dashboard";
+  const [linkRevealed, setLinkRevealed] = useState(false);
+  const resolvedReferralUrl = useMemo(
+    () =>
+      hasAmbassador
+        ? normalizeHref(referralHref)
+        : "Add ambassadors to generate a personalized link.",
+    [hasAmbassador, referralHref],
+  );
 
   useEffect(() => {
-    if (!config.autoRedirectMs) return;
-    const redirectTimer = window.setTimeout(() => {
-      router.replace(referralHref);
-    }, config.autoRedirectMs);
-    return () => window.clearTimeout(redirectTimer);
-  }, [config.autoRedirectMs, referralHref, router]);
+    if (!hasAmbassador || !config.autoRedirectMs) return;
+    const timer = window.setTimeout(() => router.replace(referralHref), config.autoRedirectMs);
+    return () => window.clearTimeout(timer);
+  }, [config.autoRedirectMs, referralHref, router, hasAmbassador]);
 
-  useEffect(() => {
-    if (!config.autoRedirectMs) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setSecondsLeft(Math.ceil(config.autoRedirectMs / 1000));
-    const countdown = window.setInterval(() => {
-      setSecondsLeft((prev) => {
-        if (prev === null || prev <= 0) return prev;
-        return prev - 1;
-      });
-    }, 1000);
-    return () => window.clearInterval(countdown);
-  }, [config.autoRedirectMs]);
+  const friendReward = ambassador?.new_user_reward_text || ambassador?.offer_text || "a VIP reward";
+  const ambassadorReward = ambassador?.client_reward_text || "Concierge credit released after their visit";
+  const businessName = ambassador?.business_name || config.name;
+  const discountCode = ambassador?.discount_code ?? null;
+  const highlightColor = normalizeHexColor(
+    ambassador?.brand_highlight_color ??
+      config.accentGradient.replace("from-[", "").split("]")[0]?.split(" ")[0] ??
+      "#0abab5",
+  );
+  const darkerAccent = shiftColor(highlightColor, -30);
+  const heroGradient = `linear-gradient(135deg, ${highlightColor}, ${darkerAccent})`;
+  const shareMessage = hasAmbassador
+    ? `I can get you ${friendReward} at ${businessName}. Tap ${resolvedReferralUrl}${
+        discountCode ? ` and mention ${discountCode}` : ""
+      } so their concierge locks it in for you.`
+    : `We're launching private referrals at ${businessName}. Add ambassadors inside the dashboard to generate shareable links.`;
+  const fallbackDiscountInstructions = `No code yet—mention your ambassador when booking so the concierge tags the reward.`;
 
   return (
-    <div className={`min-h-screen bg-gradient-to-b ${config.gradient} text-white`}>
-      <div className="relative isolate overflow-hidden px-4 py-12 sm:px-8">
-        <div className="absolute inset-0 opacity-50 blur-3xl">
-          <div className="absolute left-10 top-10 h-48 w-48 rounded-full bg-white/10" />
-          <div className="absolute right-0 bottom-20 h-64 w-64 rounded-full bg-fuchsia-500/10" />
-        </div>
-        <div className="relative mx-auto max-w-6xl space-y-12">
-          <section className="grid gap-10 lg:grid-cols-[1.2fr,0.8fr]">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white/80">
-                <Sparkles className="h-4 w-4 text-amber-200" />
-                <span>{config.heroTagline}</span>
-              </div>
-              <div>
-                {config.badge && (
-                  <p className="text-sm font-semibold uppercase tracking-wider text-white/70">
-                    {config.badge}
-                  </p>
-                )}
-                <h1 className="mt-2 text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
-                  {config.heroTitle}
+    <main
+      className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100"
+      aria-label={`${businessName} referral invitation`}
+    >
+      <div className="mx-auto max-w-6xl px-4 py-10 space-y-8 sm:px-6 lg:px-8">
+        <section
+          className="relative overflow-hidden rounded-[38px] border border-white/30 p-8 text-white shadow-[0_30px_90px_rgba(2,18,30,0.35)]"
+          style={{ background: heroGradient }}
+        >
+          <div className="absolute -left-16 top-0 h-48 w-48 rounded-full bg-white/15 blur-3xl" />
+          <div className="absolute -right-20 bottom-0 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
+          <div className="relative space-y-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
+                  {config.heroTagline}
+                </p>
+                <h1 className="text-3xl font-black tracking-tight sm:text-4xl">
+                  {businessName} referral concierge
                 </h1>
-                <p className="mt-4 max-w-2xl text-base text-slate-200">
-                  {config.heroSubtitle}
-                </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-3">
-                {config.stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-2xl border border-white/15 bg-white/5 p-4 shadow-lg shadow-black/20"
-                  >
-                    <p className="text-sm uppercase tracking-[0.25em] text-white/70">
-                      {stat.label}
-                    </p>
-                    <p className="mt-2 text-2xl font-black text-white">{stat.value}</p>
-                    <p className="text-xs text-white/70">{stat.subtext}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-col gap-3 rounded-2xl border border-white/15 bg-black/20 p-5 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-white">Continuing your journey</p>
-                  <p className="text-xs text-white/70">
-                    Concierge will escort you to your ambassador portal.
-                    {secondsLeft !== null && secondsLeft >= 0
-                      ? ` Redirecting in ${secondsLeft}s.`
-                      : null}
-                  </p>
-                </div>
-                <Link
-                  href={referralHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-5 py-2 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/40"
-                >
-                  {config.ctaLabel}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="rounded-[32px] border border-white/20 bg-white/10 p-6 shadow-2xl shadow-black/40 backdrop-blur">
-              <div className="space-y-5">
-                <div className="rounded-2xl border border-white/20 bg-black/30 p-4">
-                  <p className="text-xs uppercase tracking-[0.35em] text-white/60">Perks</p>
-                  <ul className="mt-3 space-y-2 text-sm text-white/80">
-                    {config.perks.map((perk) => (
-                      <li key={perk} className="flex items-start gap-2">
-                        <Gift className="mt-0.5 h-4 w-4 text-emerald-300" />
-                        <span>{perk}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-2xl border border-white/20 bg-black/20 p-4">
-                  <p className="text-xs uppercase tracking-[0.35em] text-white/60">Testimonial</p>
-                  <p className="mt-3 text-sm text-white/80">“{config.testimonial.quote}”</p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-white/60">
-                    {config.testimonial.author}
-                  </p>
-                  <p className="text-[11px] text-white/60">{config.testimonial.role}</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="grid gap-6 lg:grid-cols-3">
-            {config.miniHighlights.map((highlight) => (
-              <div
-                key={highlight.title}
-                className="rounded-3xl border border-white/15 bg-white/5 p-5 shadow-xl shadow-black/20"
-              >
-                <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/60">
-                  <Shield className="h-4 w-4 text-sky-200" />
-                  <span>{highlight.title}</span>
-                </div>
-                <p className="text-sm text-white/80">{highlight.copy}</p>
-              </div>
-            ))}
-          </section>
-
-          <section className="rounded-[36px] border border-white/15 bg-white/5 p-6 shadow-2xl shadow-black/30">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                  Automatic concierge route
-                </p>
-                <h2 className="mt-2 text-2xl font-bold text-white">
-                  {config.name} is ready for your network
-                </h2>
-                <p className="text-sm text-white/70">
-                  This branded moment softens the landing, then hands guests to your secure portal
-                  with their referral code already stamped on every click.
-                </p>
+                <p className="text-sm text-white/85">{ambassador?.offer_text || config.heroSubtitle}</p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 rounded-full border border-white/20 px-4 py-1 text-sm text-white/80">
-                  <Clock3 className="h-4 w-4 text-amber-200" />
-                  Redirecting shortly
-                </div>
-                <div className="flex items-center gap-2 rounded-full border border-white/20 px-4 py-1 text-sm text-white/80">
-                  <Stars className="h-4 w-4 text-emerald-200" />
-                  Referral code locked in
-                </div>
+                <Link
+                  href={hasAmbassador ? referralHref : dashboardHref}
+                  target={hasAmbassador ? "_blank" : undefined}
+                  rel={hasAmbassador ? "noopener noreferrer" : undefined}
+                >
+                  <Button className="rounded-full bg-white/90 text-slate-900 hover:bg-white">
+                    {hasAmbassador ? "Open personal portal" : "Go to dashboard"}
+                  </Button>
+                </Link>
+                {!hasAmbassador && (
+                <Link href={`${dashboardHref}#tab-section-clients`}>
+                  <Button
+                    variant="outline"
+                    className="rounded-full border-white/60 bg-white/90 text-slate-900 hover:bg-white hover:text-slate-900"
+                  >
+                    Review integration guide
+                  </Button>
+                </Link>
+                )}
               </div>
             </div>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/15 bg-black/30 p-4">
-                <p className="text-xs uppercase tracking-[0.35em] text-white/60">
-                  Ambassador portal
-                </p>
-                <p className="mt-2 text-base text-white/80">
-                  Live earnings, manual logging, instant redemption.
-                </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-3xl border border-white/30 bg-white/10 p-5">
+                <p className="text-xs uppercase tracking-[0.3em] text-white/70">You receive</p>
+                <p className="mt-3 text-4xl font-black">{friendReward}</p>
+                <p className="text-xs text-white/75">Automatically locked in once you submit and book.</p>
               </div>
-              <div className="rounded-2xl border border-white/15 bg-black/30 p-4">
-                <p className="text-xs uppercase tracking-[0.35em] text-white/60">
-                  Landing glow-up
+              <div className="rounded-3xl border border-white/30 bg-white/10 p-5">
+                <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                  {ambassador?.name || "Your host"} receives
                 </p>
-                <p className="mt-2 text-base text-white/80">
-                  Each project gets bespoke copy, stats, and CTAs tuned for that market.
+                <p className="mt-3 text-4xl font-black">{ambassadorReward}</p>
+                <p className="text-xs text-white/75">Released the moment your visit is complete.</p>
+              </div>
+              <div className="rounded-3xl border border-white/30 bg-white/10 p-5">
+                <p className="text-xs uppercase tracking-[0.3em] text-white/70">Why it matters</p>
+                <p className="mt-3 text-lg font-semibold">
+                  Concierges confirm within {config.stats[2]?.value ?? "<2h"}
                 </p>
+                <p className="text-xs text-white/75">{config.stats[2]?.subtext ?? "to protect VIP experiences"}</p>
               </div>
             </div>
-          </section>
-        </div>
+            {hasAmbassador && (
+              <div className="flex flex-wrap items-center gap-4 rounded-3xl border border-white/20 bg-white/5 p-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/30 bg-white/10 text-xl font-black">
+                  {(ambassador?.name || businessName).slice(0, 2)}
+                </div>
+                <div className="text-sm">
+                  <p className="font-semibold">{ambassador?.name || "Your ambassador"}</p>
+                  <p className="text-white/70">
+                    Referral code:&nbsp;
+                    <span className="font-mono text-white">{ambassador?.referral_code}</span>
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-2">
+          {hasAmbassador ? (
+            <div className="rounded-[30px] border border-slate-200 bg-white/95 p-6 shadow-lg space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Your referral link</p>
+                  <p className="text-sm text-slate-600">Press the button to reveal and copy your share-ready link.</p>
+                </div>
+                <Button
+                  type="button"
+                  className="rounded-full bg-slate-900 text-white hover:bg-slate-800"
+                  onClick={() => setLinkRevealed(true)}
+                >
+                  Get my referral link
+                </Button>
+              </div>
+              {linkRevealed ? (
+                <ReferralShareCard
+                  referralUrl={resolvedReferralUrl}
+                  shareMessage={shareMessage}
+                  accentColor={highlightColor}
+                />
+              ) : (
+                <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-5 text-sm text-slate-500">
+                  Your personalized link and share message will appear here once you tap <strong>Get my referral link</strong>.
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="rounded-[30px] border border-dashed border-amber-200 bg-amber-50/50 p-6 shadow-inner">
+              <p className="text-sm font-semibold text-amber-800">
+                Add ambassadors to generate copy-ready referral links automatically.
+              </p>
+              <p className="mt-2 text-sm text-amber-900">
+                Once customers are imported, each profile gets referral links, discount codes, and a live dashboard. Copy
+                buttons will appear here instantly.
+              </p>
+              <Link href={`${dashboardHref}#tab-section-clients`} className="mt-4 inline-block">
+                <Button className="rounded-full bg-slate-900 text-white hover:bg-slate-800">
+                  Go to Clients & Imports
+                </Button>
+              </Link>
+            </div>
+          )}
+
+          <div className="rounded-[30px] border border-slate-200 bg-white/95 p-6 shadow-lg">
+            <DiscountCodeCard
+              discountCode={discountCode}
+              businessName={businessName}
+              fallbackInstructions={fallbackDiscountInstructions}
+              accentColor={highlightColor}
+            />
+          </div>
+        </section>
+
+        <section className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-xl space-y-6">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Loyalty program</p>
+            <h2 className="text-2xl font-black text-slate-900">{businessName} ambassador advantages</h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Every introduction is concierge-tracked. You get credited the instant your friend completes their visit.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {config.perks.map((perk) => (
+              <div key={perk} className="rounded-2xl border border-slate-100 bg-slate-50/80 p-4 text-sm text-slate-600">
+                <span className="mr-2 text-lg text-teal-500">•</span>
+                {perk}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-3">
+          {config.miniHighlights.map((highlight) => (
+            <div key={highlight.title} className="rounded-[26px] border border-slate-200 bg-white/95 p-5 shadow-md">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">{highlight.title}</p>
+              <p className="mt-2 text-sm text-slate-600">{highlight.copy}</p>
+            </div>
+          ))}
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

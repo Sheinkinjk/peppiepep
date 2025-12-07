@@ -23,8 +23,8 @@ export default function Header() {
         <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/about">
           About
         </Link>
-        <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/demo">
-          Demo
+        <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/contact">
+          Contact
         </Link>
         <Link
           href="/login"

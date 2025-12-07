@@ -191,23 +191,25 @@ Make sure these are ALL set in Vercel:
 
 Add new columns to your Supabase database:
 
-1. Go to **https://supabase.com/dashboard**
-2. Select **Peppiepep** project
-3. Click **SQL Editor** in left sidebar
-4. Paste this SQL:
+1. Ensure the deployment script has Supabase credentials (`SUPABASE_DB_URL` or `SUPABASE_PROJECT_ID`) so `npm run deploy:prod` can run `supabase db push` automatically.
+2. If credentials aren't set yet, export them locally before running the deploy command:
+   ```bash
+   export SUPABASE_DB_URL="postgresql://..."
+   # or
+   export SUPABASE_PROJECT_ID="your-project-id"
+   ```
+3. Run `npm run deploy:prod` – it will execute `supabase db push` before Vercel.
+4. **Only if automation fails** (e.g., missing env vars), run the following SQL manually in Supabase:
+   ```sql
+   -- Add new business settings columns
+   ALTER TABLE businesses
+   ADD COLUMN IF NOT EXISTS website_url TEXT,
+   ADD COLUMN IF NOT EXISTS custom_landing_url TEXT;
 
-```sql
--- Add new business settings columns
-ALTER TABLE businesses
-ADD COLUMN IF NOT EXISTS website_url TEXT,
-ADD COLUMN IF NOT EXISTS custom_landing_url TEXT;
-
--- Add index for better performance
-CREATE INDEX IF NOT EXISTS idx_businesses_website_url ON businesses(website_url);
-```
-
-5. Click **Run**
-6. You should see: `Success. No rows returned`
+   -- Add index for better performance
+   CREATE INDEX IF NOT EXISTS idx_businesses_website_url ON businesses(website_url);
+   ```
+5. Verify the migration succeeded either via the CLI output or Supabase dashboard logs.
 
 ---
 

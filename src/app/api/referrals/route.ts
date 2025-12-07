@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { createServerComponentClient } from "@/lib/supabase";
 import type { Database } from "@/types/supabase";
+import { createApiLogger } from "@/lib/api-logger";
+import { validateWithSchema } from "@/lib/api-validation";
 
 const DEFAULT_PAGE_SIZE = 25;
 const MAX_PAGE_SIZE = 150;
@@ -15,6 +18,7 @@ function sanitizeSearchTerm(term: string) {
 }
 
 export async function GET(request: Request) {
+  const logger = createApiLogger("api:referrals:list");
   try {
     const supabase = await createServerComponentClient();
     const {
@@ -23,6 +27,7 @@ export async function GET(request: Request) {
     } = await supabase.auth.getUser();
 
     if (authError || !user) {
+      logger.warn("Referrals unauthorized", { authError });
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -33,6 +38,7 @@ export async function GET(request: Request) {
       .single<BusinessIdRow>();
 
     if (businessError || !business) {
+      logger.warn("Referrals missing business", { userId: user.id });
       return NextResponse.json(
         { error: "Business not found for this account." },
         { status: 404 },
@@ -40,11 +46,37 @@ export async function GET(request: Request) {
     }
 
     const url = new URL(request.url);
-    const search = (url.searchParams.get("q") ?? "").trim();
-    const status = (url.searchParams.get("status") ?? "all").toLowerCase();
-    const source = (url.searchParams.get("source") ?? "all").toLowerCase();
-    const pageParam = Number(url.searchParams.get("page") ?? "1");
-    const sizeParam = Number(url.searchParams.get("pageSize") ?? DEFAULT_PAGE_SIZE);
+    const querySchema = z.object({
+      q: z.string().optional(),
+      status: z.string().optional(),
+      source: z.string().optional(),
+      page: z.string().optional(),
+      pageSize: z.string().optional(),
+    });
+    const validation = validateWithSchema(
+      querySchema,
+      {
+        q: url.searchParams.get("q"),
+        status: url.searchParams.get("status"),
+        source: url.searchParams.get("source"),
+        page: url.searchParams.get("page"),
+        pageSize: url.searchParams.get("pageSize"),
+      },
+      logger,
+    );
+
+    if (!validation.success) {
+      return validation.response;
+    }
+
+    const { q, status: rawStatus, source: rawSource, page: rawPage, pageSize: rawSize } =
+      validation.data;
+
+    const search = (q ?? "").trim();
+    const status = (rawStatus ?? "all").toLowerCase();
+    const source = (rawSource ?? "all").toLowerCase();
+    const pageParam = Number(rawPage ?? "1");
+    const sizeParam = Number(rawSize ?? DEFAULT_PAGE_SIZE);
     const page = Number.isNaN(pageParam) || pageParam < 1 ? 1 : pageParam;
     const pageSize = Number.isNaN(sizeParam)
       ? DEFAULT_PAGE_SIZE
@@ -70,7 +102,7 @@ export async function GET(request: Request) {
         .limit(AMBASSADOR_SEARCH_LIMIT);
 
       if (ambassadorError) {
-        console.error("Failed to search ambassadors for referrals:", ambassadorError);
+        logger.error("Failed to search ambassadors for referrals", { error: ambassadorError });
       } else {
         const typedRows = (ambassadorRows ?? []) as CustomerIdRow[];
         ambassadorMatches = typedRows.map((row) => row.id);
@@ -133,12 +165,19 @@ export async function GET(request: Request) {
     const { data, error, count } = await query;
 
     if (error) {
-      console.error("Referrals API query failed:", error);
+      logger.error("Referrals API query failed", { error });
       return NextResponse.json(
         { error: "Failed to load referrals." },
         { status: 500 },
       );
     }
+
+    logger.info("Referrals list returned", {
+      businessId: business.id,
+      count: data?.length ?? 0,
+      page,
+      pageSize,
+    });
 
     return NextResponse.json({
       data: data ?? [],
@@ -147,7 +186,7 @@ export async function GET(request: Request) {
       pageSize,
     });
   } catch (error) {
-    console.error("Referrals API error:", error);
+    logger.error("Referrals API error", { error });
     return NextResponse.json(
       { error: "Unexpected error loading referrals." },
       { status: 500 },
