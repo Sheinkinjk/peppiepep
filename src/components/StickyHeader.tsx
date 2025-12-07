@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Calendar, Menu, X } from "lucide-react";
+import { ArrowRight, Calendar, Home, Menu, X } from "lucide-react";
 import { PepformLogo } from "./PepformLogo";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
@@ -72,6 +72,13 @@ export function StickyHeader() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-3">
+              <Link
+                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 inline-flex items-center gap-1.5"
+                href="/"
+              >
+                <Home className="h-4 w-4" />
+                Home
+              </Link>
               <Link
                 className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/how-it-works"
@@ -156,6 +163,14 @@ export function StickyHeader() {
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-[#D6EFF4] mt-3 bg-white text-[#00505B]">
             <nav className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-2">
+              <Link
+                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200 inline-flex items-center gap-1.5"
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Home className="h-4 w-4" />
+                Home
+              </Link>
               <Link
                 className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/how-it-works"
