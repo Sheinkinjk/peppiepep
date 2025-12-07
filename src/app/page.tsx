@@ -1,4 +1,4 @@
-import { ArrowRight, Gift, ShieldCheck, Sparkles, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Gift, Sparkles, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -94,7 +94,7 @@ const referralNumbers = [
     copy:
       "Most customers are happy to recommend a brand they like — they just need an easy way to do it.",
     gradient: "from-white/95 to-amber-50/95",
-    accentIcon: ShieldCheck,
+    accentIcon: Users,
     accentBg: "from-amber-500 to-amber-600",
   },
   {
@@ -140,10 +140,12 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center gap-4 pt-6 px-4">
             <Link
-              href="/login"
-              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold")}
+              href="https://calendly.com/jarredkrowitz/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold shadow-none")}
             >
-              Start Getting Referrals
+              Schedule Demo
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
@@ -203,17 +205,13 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <Link
-                    href="/login"
+                    href="https://calendly.com/jarredkrowitz/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={cn(buttonVariants({ variant: "default", size: "default" }), "min-w-[220px]")}
                   >
-                    Launch my referral program
+                    Speak With Us
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href="/how-it-works"
-                    className={cn(buttonVariants({ variant: "outline", size: "default" }), "min-w-[220px]")}
-                  >
-                    View how Pepform works
                   </Link>
                 </div>
               </div>
@@ -385,15 +383,11 @@ export default function Home() {
         <section className="rounded-[32px] border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 shadow-xl shadow-purple-200/50 px-8 py-10 sm:px-12 sm:py-12">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-200 text-purple-700 text-xs font-semibold uppercase tracking-wide">
-                <Sparkles className="h-3 w-3" />
-                Free Tool
-              </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900">
                 Calculate your referral program ROI in 4 steps
               </h3>
               <p className="text-base text-slate-600 leading-relaxed font-medium">
-                Get AI-powered 90-day revenue forecasts and discover the perfect reward structure for your business.
+                Get AI-powered revenue and growth forecasts and discover the perfect reward structure for your business.
                 No signup required.
               </p>
             </div>
@@ -406,55 +400,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="rounded-[32px] border border-cyan-200/70 bg-white shadow-[0_20px_60px_rgba(1,70,82,0.15)] px-8 py-10 sm:px-12 sm:py-12">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="space-y-3 max-w-2xl">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-700">
-                Ready to grow?
-              </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900">
-                Launch your referral program in under 5 minutes
-              </h3>
-              <p className="text-base text-slate-600 leading-relaxed font-medium">
-                Import your customers, set your reward, and go. Pepform handles everything else—tracking,
-                notifications, and rewarding your ambassadors automatically.
-              </p>
-            </div>
-            <Link
-              href="/login"
-              className={cn(buttonVariants({ variant: "cta" }), "group self-start text-base font-bold")}
-            >
-              Register Now <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </section>
-
-        <section className="rounded-[26px] border border-white/60 bg-white/80 p-6 shadow-lg shadow-cyan-500/10 backdrop-blur">
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-600 font-semibold">
-            <div className="inline-flex items-center gap-2 text-emerald-700">
-              <ShieldCheck className="h-4 w-4" />
-              GDPR Compliant
-            </div>
-            <div className="h-4 w-px bg-slate-200" />
-            <div className="inline-flex items-center gap-2 text-sky-700">
-              <ShieldCheck className="h-4 w-4" />
-              256-bit SSL
-            </div>
-            <div className="h-4 w-px bg-slate-200" />
-            <div className="inline-flex items-center gap-2 text-purple-700">
-              <ShieldCheck className="h-4 w-4" />
-              99.9% Uptime
-            </div>
-            <div className="h-4 w-px bg-slate-200" />
-            <Link
-              href="/security"
-              className="inline-flex items-center gap-2 text-slate-700 transition hover:text-slate-900"
-            >
-              <ShieldCheck className="h-4 w-4 text-slate-500" />
-              View security →
-            </Link>
-          </div>
-        </section>
 
       </main>
     </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Home } from "lucide-react";
 
 export default function Header() {
   return (
@@ -14,6 +14,10 @@ export default function Header() {
         </div>
       </Link>
       <div className="hidden items-center gap-3 text-sm font-semibold text-slate-700 sm:flex">
+        <Link className="rounded-full px-3 py-1.5 hover:text-slate-900 inline-flex items-center gap-1.5" href="/">
+          <Home className="h-4 w-4" />
+          Home
+        </Link>
         <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/how-it-works">
           How it works
         </Link>
