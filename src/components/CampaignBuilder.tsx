@@ -15,7 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Phone, Mail, Calendar, Send, AlertCircle, CheckCircle } from "lucide-react";
+import { Phone, Mail, Calendar, Send, AlertCircle, CheckCircle, Share2 } from "lucide-react";
 import { Database } from "@/types/supabase";
 import { campaignSchedulerEnabled } from "@/lib/feature-flags";
 import { CampaignTemplateSelector } from "@/components/CampaignTemplateSelector";
@@ -175,6 +175,21 @@ export function CampaignBuilder({
 
   const deselectAllCustomers = () => {
     setSelectedCustomers([]);
+  };
+
+  const navigateToCrmIntegration = () => {
+    setShowCampaignModal(false);
+    setTimeout(() => {
+      if (typeof document === "undefined") return;
+      const crmTrigger = document.querySelector(
+        "[data-tab-target='crm']",
+      ) as HTMLElement | null;
+      if (crmTrigger) {
+        crmTrigger.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+      }
+      const crmSection = document.getElementById("tab-section-crm");
+      crmSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 200);
   };
 
   const handleSendCampaign = async () => {
@@ -405,6 +420,28 @@ export function CampaignBuilder({
           </DialogHeader>
 
           <div className="space-y-6 py-4">
+            <div className="rounded-2xl border border-dashed border-indigo-200 bg-indigo-50/60 px-4 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold text-indigo-900">
+                  Prefer to send from Klaviyo, Mailchimp, or your own CRM?
+                </p>
+                <p className="text-xs text-indigo-800">
+                  Export referral codes + merge tags from the CRM Integration tab so Pepform keeps tracking every conversion.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  className="bg-indigo-600 text-white hover:bg-indigo-700"
+                  onClick={navigateToCrmIntegration}
+                >
+                  <Share2 className="mr-2 h-4 w-4" />
+                  Integrate CRM
+                </Button>
+              </div>
+            </div>
+
             {/* Campaign Name & Channel */}
             <div className="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)] items-start">
               <div className="space-y-2">
@@ -456,18 +493,20 @@ export function CampaignBuilder({
 
             {/* Campaign Template Selector */}
             <div className="rounded-2xl border-2 border-dashed border-purple-200 bg-purple-50/50 p-4">
-              <div className="flex items-center justify-between">
-                <div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div className="flex-1">
                   <p className="text-sm font-semibold text-slate-900">Start with a proven template</p>
                   <p className="text-xs text-slate-600">Save time with professionally-written campaign copy</p>
                 </div>
-                <CampaignTemplateSelector
-                  onSelectTemplate={handleTemplateSelect}
-                  businessName={businessName}
-                  clientReward={settingsClientRewardText || clientRewardText || "$15"}
-                  newUserReward={settingsNewUserRewardText || newUserRewardText || "$10 off"}
-                  offer={settingsOfferText || offerText || "makes a purchase"}
-                />
+                <div className="sm:shrink-0">
+                  <CampaignTemplateSelector
+                    onSelectTemplate={handleTemplateSelect}
+                    businessName={businessName}
+                    clientReward={settingsClientRewardText || clientRewardText || "$15"}
+                    newUserReward={settingsNewUserRewardText || newUserRewardText || "$10 off"}
+                    offer={settingsOfferText || offerText || "makes a purchase"}
+                  />
+                </div>
               </div>
             </div>
 

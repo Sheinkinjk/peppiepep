@@ -52,8 +52,6 @@ export function CampaignTemplateSelector({
   const [selectedCategory, setSelectedCategory] = useState<CampaignTemplate["category"]>("launch");
   const [previewTemplate, setPreviewTemplate] = useState<CampaignTemplate | null>(null);
 
-  const filteredTemplates = campaignTemplates.filter((t) => t.category === selectedCategory);
-
   const handleSelectTemplate = (template: CampaignTemplate) => {
     onSelectTemplate(template);
     setOpen(false);
@@ -82,7 +80,7 @@ export function CampaignTemplateSelector({
           Use Template
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+      <DialogContent className="max-w-4xl max-h-[90vh] w-[95vw] sm:w-full overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-purple-600" />
@@ -183,7 +181,7 @@ export function CampaignTemplateSelector({
         {/* Preview Dialog */}
         {previewTemplate && (
           <Dialog open={!!previewTemplate} onOpenChange={() => setPreviewTemplate(null)}>
-            <DialogContent className="max-w-2xl">
+            <DialogContent className="max-w-2xl w-[95vw] sm:w-full max-h-[85vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle>{previewTemplate.name}</DialogTitle>
                 <DialogDescription>{previewTemplate.description}</DialogDescription>

@@ -1,17 +1,17 @@
 'use client';
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
-import { Building2, Sparkles, ArrowRight, Zap, CheckCircle2 } from "lucide-react";
+import { Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Database } from "@/types/supabase";
 
-type ViewState = "auth" | "onboarding" | "guest-onboarding";
+type ViewState = "auth" | "onboarding";
 
 function LoginContent() {
   const [email, setEmail] = useState("");
@@ -117,10 +117,6 @@ function LoginContent() {
     }
   };
 
-  const handleGuestMode = () => {
-    setView("guest-onboarding");
-  };
-
   const handleGoogleSignIn = async () => {
     setLoading(true);
     setError("");
@@ -149,27 +145,8 @@ function LoginContent() {
     try {
       const { data: { user } } = await supabase.auth.getUser();
 
-      if (!user && view === "onboarding") {
+      if (!user) {
         throw new Error("No authenticated user found");
-      }
-
-      // Guest mode: store in localStorage
-      if (view === "guest-onboarding") {
-        const guestBusiness = {
-          id: `guest-${Date.now()}`,
-          name: businessName || "My Test Business",
-          offer_text: null,
-          reward_type: "credit",
-          reward_amount: 0,
-          is_guest: true,
-          created_at: new Date().toISOString()
-        };
-
-        localStorage.setItem("pepform_guest_business", JSON.stringify(guestBusiness));
-        localStorage.setItem("pepform_guest_mode", "true");
-
-        router.push("/dashboard-guest");
-        return;
       }
 
       const cleanBusinessName =
@@ -177,7 +154,7 @@ function LoginContent() {
 
       // Real users: create in Supabase
       const insertPayload: BusinessInsert = {
-        owner_id: user!.id,
+        owner_id: user.id,
         name: cleanBusinessName,
         offer_text: null,
         reward_type: "credit",
@@ -202,9 +179,12 @@ function LoginContent() {
     }
   };
 
-  if (view === "onboarding" || view === "guest-onboarding") {
+  if (view === "onboarding") {
     return (
-      <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12">
+      <main
+        className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
+        aria-label="Pepform onboarding form"
+      >
         <Card className="relative w-full max-w-2xl overflow-hidden border border-white/60 bg-white/80 p-8 shadow-2xl shadow-purple-100 backdrop-blur">
           <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl" />
           <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-gradient-to-tr from-purple-500/20 to-sky-500/20 blur-3xl" />
@@ -219,26 +199,10 @@ function LoginContent() {
                   Set up your business
                 </h1>
                 <p className="text-sm text-slate-600">
-                  {view === "guest-onboarding"
-                    ? "Create a test profile (no account needed)"
-                    : "Complete your profile to start tracking referrals"}
+                  Complete your profile to start tracking referrals.
                 </p>
               </div>
             </div>
-
-            {view === "guest-onboarding" && (
-              <div className="mb-6 rounded-lg bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-4">
-                <div className="flex items-start gap-2">
-                  <Sparkles className="h-5 w-5 text-amber-600 mt-0.5" />
-                  <div>
-                    <p className="text-sm font-semibold text-amber-900">MVP Testing Mode</p>
-                    <p className="text-xs text-amber-700 mt-1">
-                      Your data will be stored locally. Perfect for testing the platform before committing to a full account.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
 
             <div className="space-y-4">
               <div>
@@ -287,15 +251,6 @@ function LoginContent() {
               )}
 
               <div className="flex gap-3 pt-4">
-                {view === "guest-onboarding" && (
-                  <Button
-                    variant="outline"
-                    onClick={() => setView("auth")}
-                    className="w-full"
-                  >
-                    Back
-                  </Button>
-                )}
                 <Button
                   onClick={handleOnboarding}
                   disabled={loading || !businessName || !businessEmail}
@@ -308,12 +263,15 @@ function LoginContent() {
             </div>
           </div>
         </Card>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12">
+    <main
+      className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
+      aria-label="Pepform account access"
+    >
       <div className="w-full max-w-5xl">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-slate-900 mb-3">
@@ -325,54 +283,58 @@ function LoginContent() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6">
-          {/* Guest Mode - HUGE & Prominent */}
-          <Card className="relative overflow-hidden border-2 border-purple-300 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-8 shadow-2xl">
-            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br from-purple-400/30 to-pink-400/30 blur-3xl" />
-            <div className="absolute -left-8 bottom-0 h-32 w-32 rounded-full bg-gradient-to-tr from-purple-400/30 to-pink-400/30 blur-3xl" />
+          {/* Concierge Onboarding */}
+          <Card className="relative overflow-hidden border border-purple-200 bg-white/90 p-6 shadow-md">
+            <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-purple-200/40 to-pink-200/40 blur-3xl" />
+            <div className="absolute -left-6 bottom-0 h-20 w-20 rounded-full bg-gradient-to-tr from-purple-200/40 to-pink-200/40 blur-3xl" />
 
-            <div className="relative">
-              <div className="mb-6">
-                <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 mb-4">
-                  <Zap className="h-4 w-4 text-white" />
-                  <span className="text-sm font-bold text-white">RECOMMENDED FOR MVP TESTING</span>
+            <div className="relative space-y-5">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 px-3 py-1.5 mb-3 bg-white/80 text-purple-800 text-xs font-semibold tracking-wide">
+                  WHITE-GLOVE ONBOARDING
                 </div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-3">
-                  Try it free—no signup needed
+                <h2 className="text-2xl font-bold text-slate-900 mb-2">
+                  Launch live with our concierge team
                 </h2>
-                <p className="text-slate-700 mb-6">
-                  Test Pepform instantly with full access. Perfect for investors, testers, and curious businesses.
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  Every customer gets hands-on setup assistance. No sandbox. No fake data. We configure your rewards, upload ambassadors, and QA the flow before you invite anyone.
                 </p>
               </div>
 
-              <div className="space-y-3 mb-8">
+              <div className="space-y-2.5">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
-                  <p className="text-sm text-slate-700">
-                    <strong>Full platform access</strong> — Upload CSVs, track referrals, test all features
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    <strong>Kickoff session</strong> — Map your rewards, tone, and payout workflows with our team.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
-                  <p className="text-sm text-slate-700">
-                    <strong>No credit card required</strong> — Start testing in under 60 seconds
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    <strong>Full implementation</strong> — We import contacts, configure branding, and verify referral tracking.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
-                  <p className="text-sm text-slate-700">
-                    <strong>Convert anytime</strong> — Upgrade to a real account when you are ready
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    <strong>Launch checklist</strong> — Final QA across referral links, discount capture, and payouts before ambassadors log in.
                   </p>
                 </div>
               </div>
 
               <Button
-                onClick={handleGuestMode}
-                size="lg"
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-xl text-lg py-6"
+                asChild
+                variant="outline"
+                className="w-full border-purple-200 text-purple-800 font-semibold bg-white hover:bg-purple-50"
               >
-                <Sparkles className="mr-2 h-5 w-5" />
-                Start Testing Now (Guest Mode)
+                <Link href="https://calendly.com/jarredkrowitz/30min" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  Book onboarding call
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
+              <p className="text-center text-xs text-slate-500">
+                Prefer email? <a className="font-semibold text-purple-700" href="mailto:jarredkrowitz@gmail.com">jarredkrowitz@gmail.com</a>
+              </p>
             </div>
           </Card>
 
@@ -519,20 +481,13 @@ function LoginContent() {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={
-      <div className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white">
-        <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-purple-600 border-r-transparent"></div>
-          <p className="mt-4 text-slate-600">Loading...</p>
-        </div>
-      </div>
-    }>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
       <LoginContent />
     </Suspense>
   );
