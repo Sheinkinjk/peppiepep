@@ -5,6 +5,7 @@
     "peppiepep.vercel.app"
   ],
   "github": {
-    "silent": true
+    "enabled": true,
+    "autoAlias": true
   }
 }
