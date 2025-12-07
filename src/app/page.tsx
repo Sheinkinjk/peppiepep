@@ -389,7 +389,7 @@ export default function Home() {
             </div>
             <Link
               href="/roi-calculator"
-              className={cn(buttonVariants({ variant: "cta" }), "group self-start text-base font-bold")}
+              className={cn(buttonVariants({ variant: "cta" }), "group self-start md:self-center text-base font-bold pointer-events-auto cursor-pointer")}
             >
               Calculate ROI <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>

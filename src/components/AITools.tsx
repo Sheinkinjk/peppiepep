@@ -4,13 +4,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
-  Sparkles, MessageSquare, Award, PieChart, Activity, Copy
+  Sparkles, MessageSquare, Award, Activity, Copy
 } from "lucide-react";
 import { rankAmbassadors, type ScoredCustomer } from "@/lib/ai-scoring";
-import { calculateROIForecast, type ROIForecast } from "@/lib/ai-roi-calculator";
+import { DashboardROICalculator } from "@/components/DashboardROICalculator";
 
 type Customer = {
   id: string;
@@ -47,20 +45,9 @@ type AIToolsProps = {
 
 export function AITools({ customers, referrals, businessName, offerText, rewardAmount }: AIToolsProps) {
   const [scoredCustomers, setScoredCustomers] = useState<ScoredCustomer[]>([]);
-  const [roiForecast, setRoiForecast] = useState<ROIForecast | null>(null);
   const [aiMessageInput, setAiMessageInput] = useState("");
   const [aiGeneratedMessage, setAiGeneratedMessage] = useState("");
   const [isGeneratingMessage, setIsGeneratingMessage] = useState(false);
-  const [avgOrderValue, setAvgOrderValue] = useState(150);
-  const [monthlyCustomers, setMonthlyCustomers] = useState(40);
-  const [ambassadorCount, setAmbassadorCount] = useState(Math.max(customers.length || 10, 5));
-  const [rewardPerReferral, setRewardPerReferral] = useState(rewardAmount || 15);
-  const [signOnBonus, setSignOnBonus] = useState(100);
-  const [rewardInsights, setRewardInsights] = useState<{
-    referralReward: number;
-    signOnBonus: number;
-    paybackWeeks: number;
-  } | null>(null);
 
   const handleCalculateScores = () => {
     const customerData = customers
@@ -83,34 +70,6 @@ export function AITools({ customers, referrals, businessName, offerText, rewardA
       }));
     const scored = rankAmbassadors(customerData);
     setScoredCustomers(scored);
-  };
-
-  const handleCalculateROI = () => {
-    const forecast = calculateROIForecast({
-      totalAmbassadors: ambassadorCount || Math.max(customers.length, 1),
-      avgTransactionValue: avgOrderValue,
-      rewardAmount: rewardPerReferral || rewardAmount || 15,
-      monthlyCustomers,
-      industryType: "beauty",
-    });
-    setRoiForecast(forecast);
-
-    const recommendedReferralReward = Math.max(10, Math.round(avgOrderValue * 0.18));
-    const recommendedBonus = Math.max(25, Math.round(signOnBonus || recommendedReferralReward * 1.5));
-    const paybackWeeks = Math.max(
-      1,
-      Math.round(
-        ((rewardPerReferral + recommendedBonus) /
-          Math.max(forecast.month30.expectedRevenue || 1, 1)) *
-          4,
-      ),
-    );
-
-    setRewardInsights({
-      referralReward: recommendedReferralReward,
-      signOnBonus: recommendedBonus,
-      paybackWeeks,
-    });
   };
 
   const handleGenerateMessage = async () => {
@@ -261,108 +220,7 @@ export function AITools({ customers, referrals, businessName, offerText, rewardA
         </Card>
 
         {/* AI ROI Calculator */}
-        <Card className="p-6 border-2 border-pink-200 hover:border-pink-400 transition-colors">
-          <div className="flex items-start justify-between mb-4">
-            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-pink-600 to-rose-600 flex items-center justify-center">
-              <PieChart className="h-6 w-6 text-white" />
-            </div>
-            <span className="px-2.5 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-semibold">Predictive AI</span>
-          </div>
-          <h3 className="text-lg font-bold text-slate-900 mb-2">ROI Calculator</h3>
-          <p className="text-sm text-slate-600 mb-4">
-            Get AI-powered 30/60/90-day revenue forecasts based on your current ambassador base and referral trends.
-          </p>
-          <div className="grid gap-3 sm:grid-cols-2 mb-4">
-            <div>
-              <Label className="text-xs font-semibold text-slate-500">Avg Order Value ($)</Label>
-              <Input
-                type="number"
-                value={avgOrderValue}
-                onChange={(e) => setAvgOrderValue(Number(e.target.value) || 0)}
-                className="mt-1"
-                min={0}
-              />
-            </div>
-            <div>
-              <Label className="text-xs font-semibold text-slate-500">Monthly Customers</Label>
-              <Input
-                type="number"
-                value={monthlyCustomers}
-                onChange={(e) => setMonthlyCustomers(Number(e.target.value) || 0)}
-                className="mt-1"
-                min={0}
-              />
-            </div>
-            <div>
-              <Label className="text-xs font-semibold text-slate-500">Active Ambassadors</Label>
-              <Input
-                type="number"
-                value={ambassadorCount}
-                onChange={(e) => setAmbassadorCount(Number(e.target.value) || 0)}
-                className="mt-1"
-                min={1}
-              />
-            </div>
-            <div>
-              <Label className="text-xs font-semibold text-slate-500">Reward per Referral ($)</Label>
-              <Input
-                type="number"
-                value={rewardPerReferral}
-                onChange={(e) => setRewardPerReferral(Number(e.target.value) || 0)}
-                className="mt-1"
-                min={0}
-              />
-            </div>
-            <div>
-              <Label className="text-xs font-semibold text-slate-500">Sign-on Bonus ($)</Label>
-              <Input
-                type="number"
-                value={signOnBonus}
-                onChange={(e) => setSignOnBonus(Number(e.target.value) || 0)}
-                className="mt-1"
-                min={0}
-              />
-            </div>
-            <div className="flex items-end">
-              <Button
-                onClick={handleCalculateROI}
-                className="w-full bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700"
-              >
-                <Sparkles className="mr-2 h-4 w-4" />
-                Calculate ROI Forecast
-              </Button>
-            </div>
-          </div>
-          {roiForecast && (
-            <div className="mt-4 space-y-3">
-              <div className="p-4 rounded-lg bg-gradient-to-br from-pink-50 to-rose-50 border-2 border-pink-200">
-                <p className="text-xs font-semibold text-pink-700 uppercase mb-2">30-Day Forecast</p>
-                <p className="text-2xl font-black text-pink-900">${roiForecast.month30.expectedRevenue.toFixed(0)}</p>
-                <p className="text-xs text-pink-700 mt-1">+{roiForecast.month30.expectedReferrals} referrals • {roiForecast.month30.roi.toFixed(0)}% ROI</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 rounded-lg bg-pink-50 border border-pink-200">
-                  <p className="text-xs font-semibold text-slate-500 uppercase">60-Day</p>
-                  <p className="text-lg font-black text-slate-900">${roiForecast.month60.expectedRevenue.toFixed(0)}</p>
-                  <p className="text-xs text-slate-600">{roiForecast.month60.roi.toFixed(0)}% ROI</p>
-                </div>
-                <div className="p-3 rounded-lg bg-pink-50 border border-pink-200">
-                  <p className="text-xs font-semibold text-slate-500 uppercase">90-Day</p>
-                  <p className="text-lg font-black text-slate-900">${roiForecast.month90.expectedRevenue.toFixed(0)}</p>
-                  <p className="text-xs text-slate-600">{roiForecast.month90.roi.toFixed(0)}% ROI</p>
-                </div>
-              </div>
-            </div>
-          )}
-          {rewardInsights && (
-            <div className="mt-4 p-4 rounded-xl bg-white border-2 border-rose-200 space-y-2 text-sm text-slate-700">
-              <p className="font-semibold text-rose-700">Suggested Reward Structure</p>
-              <p>• Pay ambassadors <span className="font-bold">${rewardInsights.referralReward}</span> per referral to stay competitive.</p>
-              <p>• Offer a <span className="font-bold">${rewardInsights.signOnBonus}</span> sign-on bonus to launch a loyalty cohort.</p>
-              <p>• Expected payback period: <span className="font-bold">{rewardInsights.paybackWeeks} weeks</span> based on forecasted revenue.</p>
-            </div>
-          )}
-        </Card>
+        <DashboardROICalculator initialAmbassadors={customers.length || 10} />
       </div>
 
       {/* AI Tools Info Banner */}

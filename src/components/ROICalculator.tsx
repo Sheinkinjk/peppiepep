@@ -38,6 +38,7 @@ export function ROICalculator() {
   const [avgTransactionValue, setAvgTransactionValue] = useState<number>(150);
   const [currentAmbassadors, setCurrentAmbassadors] = useState<number>(10);
   const [rewardAmount, setRewardAmount] = useState<number>(25);
+  const [signOnBonus, setSignOnBonus] = useState<number>(45);
 
   // Calculate forecasts
   const forecast = useMemo(() => {
@@ -205,9 +206,9 @@ export function ROICalculator() {
 
             <div>
               <Label htmlFor="current-ambassadors" className="text-base font-bold text-slate-900 mb-2 block">
-                How many brand ambassadors do you want to start with?
+                Estimated number of additional transactions generated through the referral program
               </Label>
-              <p className="text-sm text-slate-600 mb-3">This could be your loyal customers, employees, or influencers.</p>
+              <p className="text-sm text-slate-600 mb-3">How many new customer transactions do you expect from referrals?</p>
               <Input
                 id="current-ambassadors"
                 type="number"
@@ -314,63 +315,117 @@ export function ROICalculator() {
           </div>
         </Card>
 
-        {/* Custom Reward Input */}
+        {/* Custom Reward Inputs */}
         <Card className="p-6 border-2 border-slate-200">
-          <Label htmlFor="reward-amount" className="text-base font-bold text-slate-900 mb-3 block">
-            Or set your own reward amount
-          </Label>
-          <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg font-bold text-slate-400">$</span>
-            <Input
-              id="reward-amount"
-              type="number"
-              value={rewardAmount}
-              onChange={(e) => setRewardAmount(Math.max(1, Number(e.target.value) || 0))}
-              min={1}
-              className="text-lg font-semibold h-14 pl-8"
-              placeholder="e.g., 25"
-            />
-          </div>
-          <div className="mt-3 flex gap-2">
-            <button
-              onClick={() => setRewardAmount(Math.round(avgTransactionValue * 0.10))}
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-purple-100 hover:text-purple-700 transition-colors"
-            >
-              10% (Conservative)
-            </button>
-            <button
-              onClick={() => setRewardAmount(recommendedReward)}
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-            >
-              15% (Recommended)
-            </button>
-            <button
-              onClick={() => setRewardAmount(Math.round(avgTransactionValue * 0.20))}
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-purple-100 hover:text-purple-700 transition-colors"
-            >
-              20% (Aggressive)
-            </button>
-          </div>
+          <h4 className="text-base font-bold text-slate-900 mb-4">Customize Your Reward Structure</h4>
 
-          {rewardAmount < avgTransactionValue * 0.10 && (
-            <div className="mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-sm font-semibold text-amber-900">Low reward may reduce effectiveness</p>
-                <p className="text-sm text-amber-700">Consider increasing to at least 10% of transaction value for better results.</p>
+          <div className="space-y-6">
+            {/* Per Referral Reward */}
+            <div>
+              <Label htmlFor="reward-amount" className="text-base font-semibold text-slate-900 mb-3 block">
+                Per Referral Reward
+              </Label>
+              <p className="text-sm text-slate-600 mb-3">Amount given for each successful referral</p>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg font-bold text-slate-400">$</span>
+                <Input
+                  id="reward-amount"
+                  type="number"
+                  value={rewardAmount}
+                  onChange={(e) => setRewardAmount(Math.max(1, Number(e.target.value) || 0))}
+                  min={1}
+                  className="text-lg font-semibold h-14 pl-8"
+                  placeholder="e.g., 25"
+                />
+              </div>
+              <div className="mt-3 flex gap-2 flex-wrap">
+                <button
+                  onClick={() => setRewardAmount(Math.round(avgTransactionValue * 0.10))}
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-purple-100 hover:text-purple-700 transition-colors"
+                >
+                  10% (Conservative)
+                </button>
+                <button
+                  onClick={() => setRewardAmount(recommendedReward)}
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+                >
+                  15% (Recommended)
+                </button>
+                <button
+                  onClick={() => setRewardAmount(Math.round(avgTransactionValue * 0.20))}
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-purple-100 hover:text-purple-700 transition-colors"
+                >
+                  20% (Aggressive)
+                </button>
+              </div>
+
+              {rewardAmount < avgTransactionValue * 0.10 && (
+                <div className="mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
+                  <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-amber-900">Low reward may reduce effectiveness</p>
+                    <p className="text-sm text-amber-700">Consider increasing to at least 10% of transaction value for better results.</p>
+                  </div>
+                </div>
+              )}
+
+              {rewardAmount > avgTransactionValue * 0.30 && (
+                <div className="mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
+                  <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-amber-900">High reward may impact profit margins</p>
+                    <p className="text-sm text-amber-700">This is above industry standard. Make sure your margins support it.</p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Sign-On Bonus */}
+            <div className="pt-6 border-t border-slate-200">
+              <Label htmlFor="sign-on-bonus" className="text-base font-semibold text-slate-900 mb-3 block">
+                Sign-On Bonus (Optional)
+              </Label>
+              <p className="text-sm text-slate-600 mb-3">One-time bonus for new customers who sign up</p>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg font-bold text-slate-400">$</span>
+                <Input
+                  id="sign-on-bonus"
+                  type="number"
+                  value={signOnBonus}
+                  onChange={(e) => setSignOnBonus(Math.max(0, Number(e.target.value) || 0))}
+                  min={0}
+                  className="text-lg font-semibold h-14 pl-8"
+                  placeholder="e.g., 45"
+                />
+              </div>
+              <div className="mt-3 flex gap-2 flex-wrap">
+                <button
+                  onClick={() => setSignOnBonus(0)}
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-indigo-100 hover:text-indigo-700 transition-colors"
+                >
+                  No Bonus
+                </button>
+                <button
+                  onClick={() => setSignOnBonus(Math.round(avgTransactionValue * 0.20))}
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-indigo-100 hover:text-indigo-700 transition-colors"
+                >
+                  20% (Moderate)
+                </button>
+                <button
+                  onClick={() => setSignOnBonus(recommendedSignOnBonus)}
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+                >
+                  30% (Recommended)
+                </button>
+                <button
+                  onClick={() => setSignOnBonus(Math.round(avgTransactionValue * 0.50))}
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-indigo-100 hover:text-indigo-700 transition-colors"
+                >
+                  50% (Aggressive)
+                </button>
               </div>
             </div>
-          )}
-
-          {rewardAmount > avgTransactionValue * 0.30 && (
-            <div className="mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-sm font-semibold text-amber-900">High reward may impact profit margins</p>
-                <p className="text-sm text-amber-700">This is above industry standard. Make sure your margins support it.</p>
-              </div>
-            </div>
-          )}
+          </div>
         </Card>
       </div>
 
