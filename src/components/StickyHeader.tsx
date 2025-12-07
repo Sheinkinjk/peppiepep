@@ -71,40 +71,39 @@ export function StickyHeader() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-3">
+            <nav className="hidden lg:flex items-center gap-2">
               <Link
-                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 inline-flex items-center gap-1.5"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/"
               >
-                <Home className="h-4 w-4" />
                 Home
               </Link>
               <Link
-                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/how-it-works"
               >
                 How it works
               </Link>
               <Link
-                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/pricing"
               >
                 Pricing
               </Link>
               <Link
-                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/about"
               >
                 About
               </Link>
               <Link
-                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/case-studies"
               >
                 Case Studies
               </Link>
               <Link
-                className="rounded-full px-4 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/contact"
               >
                 Contact
@@ -113,7 +112,7 @@ export function StickyHeader() {
                 href="https://calendly.com/jarredkrowitz/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-4 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF]"
               >
                 <Calendar className="h-4 w-4" />
                 Schedule Call
@@ -129,7 +128,7 @@ export function StickyHeader() {
                   <button
                     type="button"
                     onClick={handleLogout}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-4 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF]"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF]"
                   >
                     Log out
                   </button>
@@ -164,11 +163,10 @@ export function StickyHeader() {
           <div className="lg:hidden border-t border-[#D6EFF4] mt-3 bg-white text-[#00505B]">
             <nav className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-2">
               <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200 inline-flex items-center gap-1.5"
+                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200 "
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Home className="h-4 w-4" />
                 Home
               </Link>
               <Link

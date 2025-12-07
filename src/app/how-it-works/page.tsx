@@ -321,7 +321,7 @@ export default function HowItWorks() {
               href="/login"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300 whitespace-nowrap"
             >
-              Register Now <ArrowRight className="h-4 w-4" />
+              Start Getting Referrals <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </section>

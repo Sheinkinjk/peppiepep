@@ -77,15 +77,15 @@ export default function Pricing() {
               </button>
             </div>
             <div className="relative">
-              <span className="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full border border-emerald-300/60 bg-emerald-500/20 px-4 py-1 text-[11px] font-black uppercase tracking-[0.25em] text-emerald-200 shadow-lg shadow-emerald-500/30 backdrop-blur">
-                Save 20%
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 px-5 py-2 text-sm font-black uppercase tracking-wide text-white shadow-2xl shadow-emerald-500/60 animate-pulse ring-2 ring-white/30 backdrop-blur">
+                💰 Save 20% Annually
               </span>
               <button
                 type="button"
                 onClick={() => setBillingCycle("annual")}
                 className={`relative rounded-xl px-8 py-3 text-base font-bold transition-all duration-300 w-48 ${
                   billingCycle === "annual"
-                    ? "bg-gradient-to-b from-green-500 to-green-600 text-white shadow-2xl shadow-green-500/50 scale-105"
+                    ? "bg-gradient-to-b from-emerald-500 to-green-600 text-white shadow-2xl shadow-emerald-500/60 scale-105 ring-2 ring-emerald-400/50"
                     : "text-purple-300 hover:text-white hover:bg-slate-800/50"
                 }`}
               >

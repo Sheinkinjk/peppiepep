@@ -140,13 +140,11 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center gap-4 pt-6 px-4">
             <Link
-              href="https://calendly.com/jarredkrowitz/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold shadow-none")}
+              href="/login"
+              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-lg font-bold px-8 py-4 shadow-xl shadow-teal-300/50 hover:shadow-2xl hover:shadow-teal-400/60 hover:scale-105 transition-all duration-300")}
             >
-              Schedule Demo
-              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              Start Getting Referrals
+              <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
@@ -205,12 +203,10 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <Link
-                    href="https://calendly.com/jarredkrowitz/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/login"
                     className={cn(buttonVariants({ variant: "default", size: "default" }), "min-w-[220px]")}
                   >
-                    Speak With Us
+                    Start Getting Referrals
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
