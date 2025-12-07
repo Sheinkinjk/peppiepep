@@ -381,6 +381,31 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ROI Calculator CTA */}
+        <section className="rounded-[32px] border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 shadow-xl shadow-purple-200/50 px-8 py-10 sm:px-12 sm:py-12">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-3 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-200 text-purple-700 text-xs font-semibold uppercase tracking-wide">
+                <Sparkles className="h-3 w-3" />
+                Free Tool
+              </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900">
+                Calculate your referral program ROI in 4 steps
+              </h3>
+              <p className="text-base text-slate-600 leading-relaxed font-medium">
+                Get AI-powered 90-day revenue forecasts and discover the perfect reward structure for your business.
+                No signup required.
+              </p>
+            </div>
+            <Link
+              href="/roi-calculator"
+              className={cn(buttonVariants({ variant: "cta" }), "group self-start text-base font-bold")}
+            >
+              Calculate ROI <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </section>
+
         <section className="rounded-[32px] border border-cyan-200/70 bg-white shadow-[0_20px_60px_rgba(1,70,82,0.15)] px-8 py-10 sm:px-12 sm:py-12">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="space-y-3 max-w-2xl">

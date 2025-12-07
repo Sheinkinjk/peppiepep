@@ -17,14 +17,14 @@ export default function Header() {
         <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/how-it-works">
           How it works
         </Link>
+        <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/roi-calculator">
+          ROI Calculator
+        </Link>
         <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/pricing">
           Pricing
         </Link>
         <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/about">
           About
-        </Link>
-        <Link className="rounded-full px-3 py-1.5 hover:text-slate-900" href="/contact">
-          Contact
         </Link>
         <Link
           href="/login"
