@@ -26,7 +26,7 @@ export function FloatingCampaignTrigger() {
       aria-label="Start a new campaign"
       className={cn(
         buttonVariants({ variant: "cta" }),
-        "fixed bottom-5 left-4 sm:bottom-8 sm:left-8 z-40 shadow-xl shadow-teal-200/70",
+        "fixed bottom-24 left-4 sm:bottom-8 sm:left-8 z-40 shadow-xl shadow-teal-200/70",
       )}
     >
       <Rocket className="h-4 w-4" />

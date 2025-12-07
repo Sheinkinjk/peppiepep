@@ -118,7 +118,7 @@ export function SupportChatbot() {
         onClick={() => setIsOpen((prev) => !prev)}
         className={cn(
           buttonVariants({ variant: "cta" }),
-          "fixed bottom-5 right-4 z-40 text-white shadow-2xl shadow-teal-200/70",
+          "fixed bottom-5 right-4 sm:bottom-8 sm:right-8 z-40 text-white shadow-2xl shadow-teal-200/70",
           isOpen && "translate-y-1 opacity-90",
         )}
         aria-expanded={isOpen}
@@ -133,7 +133,7 @@ export function SupportChatbot() {
       {isOpen && (
         <div
           id="pepform-chatbot-panel"
-          className="fixed bottom-24 right-4 z-50 w-[92vw] max-w-md rounded-3xl border border-white/50 bg-white/95 p-4 shadow-2xl shadow-[#003c41]/20 backdrop-blur-xl sm:bottom-28"
+          className="fixed bottom-24 right-4 z-50 w-[92vw] max-w-md rounded-3xl border border-white/50 bg-white/95 p-4 shadow-2xl shadow-[#003c41]/20 backdrop-blur-xl sm:bottom-32 sm:right-8"
           role="dialog"
           aria-label="Pepform chatbot dialog"
         >

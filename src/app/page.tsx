@@ -1,10 +1,7 @@
 import { ArrowRight, Gift, ShieldCheck, Sparkles, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
-
-const primaryButtonClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full bg-[#006d7c] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#004753]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-[#005a68]";
-const secondaryButtonClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#006d7c] px-6 py-3 text-sm font-semibold text-[#006d7c] transition-all duration-300 hover:-translate-y-1 hover:bg-[#006d7c] hover:text-white";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const referralPillars = [
   {
@@ -144,7 +141,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center gap-4 pt-6 px-4">
             <Link
               href="/login"
-              className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
+              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold")}
             >
               Start Getting Referrals
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -207,14 +204,14 @@ export default function Home() {
                 <div className="flex flex-wrap gap-3">
                   <Link
                     href="/login"
-                    className="inline-flex min-w-[220px] items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 focus:ring-offset-white"
+                    className={cn(buttonVariants({ variant: "default", size: "default" }), "min-w-[220px]")}
                   >
                     Launch my referral program
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href="/how-it-works"
-                    className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-slate-50"
+                    className={cn(buttonVariants({ variant: "outline", size: "default" }), "min-w-[220px]")}
                   >
                     View how Pepform works
                   </Link>
@@ -363,14 +360,14 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <Link
                         href="/login"
-                        className={`group ${primaryButtonClasses} w-full sm:w-auto text-base font-bold`}
+                        className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold")}
                       >
                         Launch my dashboard
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                       <Link
                         href="/referral"
-                        className={`group ${secondaryButtonClasses} w-full sm:w-auto text-base font-bold`}
+                        className={cn(buttonVariants({ variant: "outline" }), "group w-full sm:w-auto text-base font-bold")}
                       >
                         Preview referral landing
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -400,7 +397,7 @@ export default function Home() {
             </div>
             <Link
               href="/login"
-              className={`group ${primaryButtonClasses} self-start text-base font-bold`}
+              className={cn(buttonVariants({ variant: "cta" }), "group self-start text-base font-bold")}
             >
               Register Now <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
