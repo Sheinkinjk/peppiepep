@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent } from "@/lib/referral-events";
+import { createApiLogger } from "@/lib/api-logger";
+import { parseJsonBody } from "@/lib/api-validation";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 type ResendEvent = {
   type: string;
@@ -13,9 +17,31 @@ type ResendEvent = {
   };
 };
 
+const resendEventSchema = z.object({
+  type: z.string(),
+  data: z
+    .object({
+      email_id: z.string().optional(),
+      to: z.string().optional(),
+      subject: z.string().optional(),
+      reason: z.string().optional(),
+    })
+    .optional(),
+});
+
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:webhooks:resend");
+
+  // Rate limiting
+  const rateLimitCheck = await checkRateLimit(request, "webhook");
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    logger.warn("Rate limit exceeded for Resend webhook");
+    return rateLimitCheck.response;
+  }
+
   const secret = process.env.RESEND_WEBHOOK_TOKEN;
   if (!secret) {
+    logger.error("RESEND_WEBHOOK_TOKEN missing");
     return NextResponse.json(
       { error: "RESEND_WEBHOOK_TOKEN is not configured" },
       { status: 500 },
@@ -24,19 +50,22 @@ export async function POST(request: Request) {
 
   const header = request.headers.get("authorization");
   if (header !== `Bearer ${secret}`) {
+    logger.warn("Resend webhook unauthorized");
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  let payload: ResendEvent;
-  try {
-    payload = (await request.json()) as ResendEvent;
-  } catch (error) {
-    console.error("Failed to parse Resend webhook payload:", error);
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  const parsedPayload = await parseJsonBody(request, resendEventSchema, logger, {
+    errorMessage: "Invalid JSON",
+  });
+
+  if (!parsedPayload.success) {
+    return parsedPayload.response;
   }
 
+  const payload = parsedPayload.data as ResendEvent;
   const providerMessageId = payload.data?.email_id;
   if (!providerMessageId) {
+    logger.warn("Resend webhook missing email_id");
     return NextResponse.json({ error: "Missing email_id" }, { status: 400 });
   }
 
@@ -49,6 +78,7 @@ export async function POST(request: Request) {
     .single();
 
   if (error || !message) {
+    logger.warn("Resend webhook message not found", { providerMessageId, error });
     return NextResponse.json({ ok: true });
   }
 
@@ -76,6 +106,7 @@ export async function POST(request: Request) {
         channel: "email",
       },
     });
+    logger.info("Resend delivery logged", { messageId: message.id });
   } else if (
     eventType === "email.bounced" ||
     eventType === "email.complained"
@@ -103,6 +134,9 @@ export async function POST(request: Request) {
         channel: "email",
       },
     });
+    logger.info("Resend failure logged", { messageId: message.id, reason });
+  } else {
+    logger.info("Resend event ignored", { eventType });
   }
 
   return NextResponse.json({ ok: true });

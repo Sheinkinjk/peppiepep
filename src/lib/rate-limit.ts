@@ -208,6 +208,42 @@ const rateLimiters = {
     windowMs: 60 * 1000,
     maxSize: 1000,
   }),
+  supportChat: new RateLimiter({
+    name: "supportChat",
+    limit: 15,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  campaignSend: new RateLimiter({
+    name: "campaignSend",
+    limit: 5,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  customerUpload: new RateLimiter({
+    name: "customerUpload",
+    limit: 10,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  ambassadorDelete: new RateLimiter({
+    name: "ambassadorDelete",
+    limit: 20,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  discountRedeem: new RateLimiter({
+    name: "discountRedeem",
+    limit: 30,
+    windowMs: 60 * 1000,
+    maxSize: 1000,
+  }),
+  webhook: new RateLimiter({
+    name: "webhook",
+    limit: 100,
+    windowMs: 60 * 1000,
+    maxSize: 2000,
+  }),
 };
 
 export const rateLimitPresets = rateLimiters;

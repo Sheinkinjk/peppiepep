@@ -2,10 +2,22 @@ import { NextResponse } from "next/server";
 
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent } from "@/lib/referral-events";
+import { createApiLogger } from "@/lib/api-logger";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:webhooks:twilio");
+
+  // Rate limiting
+  const rateLimitCheck = await checkRateLimit(request, "webhook");
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    logger.warn("Rate limit exceeded for Twilio webhook");
+    return rateLimitCheck.response;
+  }
+
   const webhookSecret = process.env.TWILIO_WEBHOOK_TOKEN;
   if (!webhookSecret) {
+    logger.error("TWILIO_WEBHOOK_TOKEN missing");
     return NextResponse.json(
       { error: "TWILIO_WEBHOOK_TOKEN is not configured" },
       { status: 500 },
@@ -14,6 +26,7 @@ export async function POST(request: Request) {
 
   const header = request.headers.get("authorization");
   if (header !== `Bearer ${webhookSecret}`) {
+    logger.warn("Twilio webhook unauthorized");
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -24,6 +37,7 @@ export async function POST(request: Request) {
     params.get("MessageStatus") || params.get("SmsStatus") || "";
 
   if (!messageSid) {
+    logger.warn("Twilio webhook missing MessageSid");
     return NextResponse.json({ error: "Missing MessageSid" }, { status: 400 });
   }
 
@@ -36,6 +50,7 @@ export async function POST(request: Request) {
     .single();
 
   if (error || !message) {
+    logger.warn("Twilio webhook message not found", { messageSid, error });
     return NextResponse.json({ ok: true });
   }
 
@@ -63,6 +78,7 @@ export async function POST(request: Request) {
         provider_message_id: messageSid,
       },
     });
+    logger.info("Twilio delivery logged", { messageId: message.id });
   } else if (
     normalizedStatus === "failed" ||
     normalizedStatus === "undelivered"
@@ -92,6 +108,9 @@ export async function POST(request: Request) {
         channel: "sms",
       },
     });
+    logger.info("Twilio failure logged", { messageId: message.id, errorMessage });
+  } else {
+    logger.info("Twilio webhook ignored status", { normalizedStatus });
   }
 
   return NextResponse.json({ ok: true });

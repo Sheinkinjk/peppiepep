@@ -3,12 +3,21 @@ import { revalidatePath } from "next/cache";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import Papa from "papaparse";
 import * as XLSX from "xlsx";
+import { z } from "zod";
 
 import type { Database } from "@/types/supabase";
 import { buildCustomersFromRows } from "@/lib/customer-import";
+import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import { createServerComponentClient } from "@/lib/supabase";
+import { createApiLogger } from "@/lib/api-logger";
+import { validateWithSchema } from "@/lib/api-validation";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
+
+const uploadFormSchema = z.object({
+  file: z.instanceof(File, { message: "Please select a CSV or Excel file to upload." }),
+});
 
 async function resolveBusinessId(
   supabase: SupabaseClient<Database>,
@@ -47,6 +56,16 @@ async function resolveBusinessId(
 }
 
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:customers:upload");
+  logger.info("Received customer upload request");
+
+  // Rate limiting
+  const rateLimitCheck = await checkRateLimit(request, "customerUpload");
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    logger.warn("Rate limit exceeded for customer upload");
+    return rateLimitCheck.response;
+  }
+
   try {
     const supabase = await createServerComponentClient();
     const {
@@ -54,6 +73,7 @@ export async function POST(request: Request) {
     } = await supabase.auth.getUser();
 
     if (!user) {
+      logger.warn("Customer upload unauthorized");
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -64,16 +84,16 @@ export async function POST(request: Request) {
     );
 
     const formData = await request.formData();
-    const file = formData.get("file");
+    const validation = validateWithSchema(uploadFormSchema, { file: formData.get("file") }, logger, {
+      errorMessage: "Please select a CSV or Excel file to upload.",
+    });
 
-    if (!(file instanceof File)) {
-      return NextResponse.json(
-        { error: "Please select a CSV or Excel file to upload." },
-        { status: 400 },
-      );
+    if (!validation.success) {
+      return validation.response;
     }
 
-    const fileName = file.name.toLowerCase();
+    const { file: uploadedFile } = validation.data;
+    const fileName = uploadedFile.name.toLowerCase();
     const isCSV = fileName.endsWith(".csv");
     const isExcel = fileName.endsWith(".xlsx") || fileName.endsWith(".xls");
 
@@ -84,17 +104,23 @@ export async function POST(request: Request) {
       );
     }
 
-    if (file.size > 5 * 1024 * 1024) {
+    if (uploadedFile.size > 5 * 1024 * 1024) {
       return NextResponse.json(
         { error: "File too large. Maximum size is 5MB." },
         { status: 400 },
       );
     }
 
+    logger.info("Validated upload file", {
+      userId: user.id,
+      fileName: uploadedFile.name,
+      size: uploadedFile.size,
+    });
+
     let parsedRows: Array<Record<string, string>> = [];
 
     if (isCSV) {
-      const text = await file.text();
+      const text = await uploadedFile.text();
       const parsed = Papa.parse<Record<string, string>>(text, {
         header: true,
         skipEmptyLines: "greedy",
@@ -119,7 +145,7 @@ export async function POST(request: Request) {
       parsedRows =
         parsed.data?.filter((row) => row && Object.values(row).some(Boolean)) ?? [];
     } else {
-      const arrayBuffer = await file.arrayBuffer();
+      const arrayBuffer = await uploadedFile.arrayBuffer();
       const workbook = XLSX.read(arrayBuffer, { type: "array" });
       const firstSheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[firstSheetName];
@@ -140,6 +166,14 @@ export async function POST(request: Request) {
 
     const customersToInsert = buildCustomersFromRows(parsedRows, { businessId });
 
+    for (const customer of customersToInsert) {
+      customer.discount_code = await generateUniqueDiscountCode({
+        supabase,
+        businessId,
+        seedName: customer.name ?? customer.email ?? customer.phone ?? null,
+      });
+    }
+
     if (customersToInsert.length === 0) {
       return NextResponse.json(
         {
@@ -156,7 +190,7 @@ export async function POST(request: Request) {
     );
 
     if (insertError) {
-      console.error("Upload error:", insertError);
+      logger.error("Failed to import customers", { error: insertError, businessId });
       return NextResponse.json(
         { error: "Failed to import customers. Please try again." },
         { status: 500 },
@@ -165,13 +199,19 @@ export async function POST(request: Request) {
 
     revalidatePath("/dashboard");
 
+    logger.info("Customers imported", {
+      businessId,
+      count: customersToInsert.length,
+      userId: user.id,
+    });
+
     return NextResponse.json({
       success: `Imported ${customersToInsert.length} customer${
         customersToInsert.length === 1 ? "" : "s"
       }. Referral links are live.`,
     });
   } catch (error) {
-    console.error("Upload API error:", error);
+    logger.error("Upload API error", { error });
     return NextResponse.json(
       { error: "An unexpected error occurred while uploading customers." },
       { status: 500 },

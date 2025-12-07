@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { nanoid } from "nanoid";
+import { z } from "zod";
 
 import type { Database } from "@/types/supabase";
 import { campaignSchedulerEnabled } from "@/lib/feature-flags";
@@ -11,22 +12,43 @@ import { logReferralEvent } from "@/lib/referral-events";
 import { dispatchCampaignMessagesInline } from "@/lib/campaign-inline-dispatch";
 import { ensureAbsoluteUrl } from "@/lib/urls";
 import { createServerComponentClient } from "@/lib/supabase";
+import { resolveEmailCampaignMessage } from "@/lib/campaign-copy";
+import { createApiLogger } from "@/lib/api-logger";
+import type { ApiLogger } from "@/lib/api-logger";
+import { parseJsonBody } from "@/lib/api-validation";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 type BusinessRow = Database["public"]["Tables"]["businesses"]["Row"];
 
+const campaignPayloadSchema = z.object({
+  campaignName: z.string().trim().min(1, "Campaign name is required."),
+  campaignMessage: z
+    .string()
+    .optional()
+    .transform((val) => (val ?? "").trim()),
+  campaignChannel: z.enum(["sms", "email"]),
+  scheduleType: z.enum(["now", "later"]).default("now"),
+  scheduleDate: z.union([z.string().trim().min(1), z.null()]).optional(),
+  selectedCustomers: z
+    .array(z.string().trim().min(1))
+    .min(1, "Select at least one customer."),
+  includeQrModule: z.boolean().optional().default(true),
+});
+
 async function fetchBusiness(
   supabase: SupabaseClient<Database>,
   ownerId: string,
   fallbackName: string,
+  logger?: ApiLogger,
 ): Promise<BusinessRow> {
   // Core columns that are guaranteed to exist
   const coreColumns =
     "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, client_reward_text, new_user_reward_text, reward_terms";
 
   // First try with regular client (respects RLS)
-  console.log("[fetchBusiness] Querying for owner_id:", ownerId);
+  logger?.info("[fetchBusiness] Querying owner business", { ownerId });
   const { data, error } = await supabase
     .from("businesses")
     .select(coreColumns)
@@ -35,12 +57,12 @@ async function fetchBusiness(
     .limit(1);
 
   if (error) {
-    console.error("[fetchBusiness] SELECT error:", error);
+    logger?.error("[fetchBusiness] SELECT error", { error });
     const errorDetails = `${error.message} (code: ${error.code})`;
     throw new Error(`Failed to query business profile. ${errorDetails}`);
   }
 
-  console.log("[fetchBusiness] SELECT result - data length:", data?.length || 0);
+  logger?.info("[fetchBusiness] Loaded business rows", { count: data?.length || 0 });
 
   if (data && data.length > 0) {
     const baseBusiness = data[0] as BusinessRow;
@@ -62,14 +84,14 @@ async function fetchBusiness(
         } as BusinessRow;
       }
     } catch (extrasError) {
-      console.warn("Optional business fields not available:", extrasError);
+      logger?.warn("Optional business fields not available", { error: extrasError });
     }
 
     return baseBusiness as BusinessRow;
   }
 
   // No business found - create one using regular client (RLS allows insert for own user)
-  console.log("[fetchBusiness] No business found, creating new one with name:", fallbackName);
+  logger?.info("[fetchBusiness] No business found, creating new profile", { fallbackName });
   const insertPayload: Database["public"]["Tables"]["businesses"]["Insert"] = {
     owner_id: ownerId,
     name: fallbackName,
@@ -83,15 +105,17 @@ async function fetchBusiness(
     .single();
 
   if (insertError || !inserted) {
-    console.error("[fetchBusiness] INSERT error:", insertError);
-    console.error("[fetchBusiness] INSERT payload was:", insertPayload);
+    logger?.error("[fetchBusiness] INSERT error", {
+      error: insertError,
+      payload: insertPayload,
+    });
     const errorDetails = insertError
       ? `${insertError.message} (code: ${insertError.code})`
       : "No data returned";
     throw new Error(`Unable to load or create business profile. ${errorDetails}`);
   }
 
-  console.log("[fetchBusiness] Successfully created business:", inserted.id);
+  logger?.info("[fetchBusiness] Created business", { businessId: inserted.id });
 
   // Try to load optional fields for newly created business
   try {
@@ -110,13 +134,25 @@ async function fetchBusiness(
       } as BusinessRow;
     }
   } catch (extrasError) {
-    console.warn("Optional fields not available for new business:", extrasError);
+    logger?.warn("Optional fields not available for new business", {
+      error: extrasError,
+    });
   }
 
   return inserted as BusinessRow;
 }
 
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:campaigns:send");
+  logger.info("Received campaign send request");
+
+  // Rate limiting
+  const rateLimitCheck = await checkRateLimit(request, "campaignSend");
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    logger.warn("Rate limit exceeded for campaign send");
+    return rateLimitCheck.response;
+  }
+
   try {
     const supabase = await createServerComponentClient();
     const {
@@ -124,25 +160,41 @@ export async function POST(request: Request) {
     } = await supabase.auth.getUser();
 
     if (!user) {
+      logger.warn("Unauthorized campaign send attempt");
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const payload = await request.json();
-    const campaignName = (payload?.campaignName as string) ?? "";
-    const campaignMessage = (payload?.campaignMessage as string) ?? "";
-    const campaignChannel = payload?.campaignChannel as "sms" | "email";
-    const scheduleType = (payload?.scheduleType as "now" | "later") ?? "now";
-    const scheduleDate = (payload?.scheduleDate as string | null) ?? "";
-    const selectedCustomers = (payload?.selectedCustomers as string[]) ?? [];
-    const includeQrModule =
-      payload?.includeQrModule === undefined ? true : Boolean(payload.includeQrModule);
+    logger.info("User authenticated", { userId: user.id });
 
-    if (!campaignName || selectedCustomers.length === 0) {
-      return NextResponse.json(
-        { error: "Please provide a campaign name and select at least one customer." },
-        { status: 400 },
-      );
+    const parsedPayload = await parseJsonBody(request, campaignPayloadSchema, logger, {
+      errorMessage: "Invalid campaign payload.",
+    });
+
+    if (!parsedPayload.success) {
+      return parsedPayload.response;
     }
+
+    const {
+      campaignName,
+      campaignMessage: rawCampaignMessage,
+      campaignChannel,
+      scheduleType,
+      scheduleDate,
+      selectedCustomers,
+      includeQrModule: includeQrModuleFlag,
+    } = parsedPayload.data;
+
+    const campaignMessage = rawCampaignMessage ?? "";
+    const includeQrModule = includeQrModuleFlag ?? true;
+    const wantsScheduledSend = scheduleType === "later";
+    const scheduleDateInput = typeof scheduleDate === "string" ? scheduleDate : "";
+
+    logger.info("Validated campaign payload", {
+      userId: user.id,
+      campaignChannel,
+      scheduleType,
+      recipients: selectedCustomers.length,
+    });
 
     if (campaignChannel === "sms" && !campaignMessage) {
       return NextResponse.json(
@@ -152,7 +204,6 @@ export async function POST(request: Request) {
     }
 
     const schedulingEnabled = campaignSchedulerEnabled;
-    const wantsScheduledSend = scheduleType === "later";
     if (wantsScheduledSend && !schedulingEnabled) {
       return NextResponse.json(
         { error: "Scheduled sending is coming soon. Please choose Send Now instead." },
@@ -162,13 +213,13 @@ export async function POST(request: Request) {
 
     let scheduledAt = new Date();
     if (wantsScheduledSend) {
-      if (!scheduleDate) {
+      if (!scheduleDateInput) {
         return NextResponse.json(
           { error: "Select a date/time for your scheduled campaign." },
           { status: 400 },
         );
       }
-      const parsed = new Date(scheduleDate);
+      const parsed = new Date(scheduleDateInput);
       if (Number.isNaN(parsed.getTime())) {
         return NextResponse.json({ error: "Invalid schedule date." }, { status: 400 });
       }
@@ -209,7 +260,7 @@ export async function POST(request: Request) {
     }
 
     const fallbackName = `${user.email?.split("@")[0] ?? "Your"}'s salon`;
-    const business = await fetchBusiness(supabase, user.id, fallbackName);
+    const business = await fetchBusiness(supabase, user.id, fallbackName, logger);
 
     const defaultSiteUrl = ensureAbsoluteUrl("http://localhost:3000") ?? "http://localhost:3000";
     const configuredSiteUrl = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL);
@@ -228,7 +279,7 @@ export async function POST(request: Request) {
       .eq("business_id", business.id);
 
     if (fetchError || !customersDataRaw) {
-      console.error("Failed to fetch customers:", fetchError);
+      logger.error("Failed to fetch customers", { error: fetchError, businessId: business.id });
       return NextResponse.json(
         { error: "Failed to fetch customer data. Please try again." },
         { status: 500 },
@@ -255,6 +306,14 @@ export async function POST(request: Request) {
       ...snapshotFields,
       snapshot_include_qr: includeQrModule,
     };
+    const resolvedCampaignMessage = resolveEmailCampaignMessage({
+      channel: campaignChannel,
+      campaignMessage,
+      businessName: business.name || fallbackName,
+      offerText: snapshotFields.snapshot_offer_text ?? business.offer_text ?? null,
+      clientRewardText: snapshotFields.snapshot_client_reward_text,
+      newUserRewardText: snapshotFields.snapshot_new_user_reward_text,
+    });
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const campaignsInsert = supabase.from("campaigns") as any;
@@ -296,9 +355,10 @@ export async function POST(request: Request) {
             error.code === "PGRST204" ||
             normalizedMessage.includes("could not find"))
         ) {
-          console.warn(
-            `[campaigns.send] Optional column ${missingColumn} missing (code: ${error.code}), retrying insert without it.`,
-          );
+          logger.warn("Optional snapshot column missing, retrying insert", {
+            missingColumn,
+            errorCode: error.code,
+          });
           delete insertPayload[missingColumn];
           continue;
         }
@@ -308,7 +368,7 @@ export async function POST(request: Request) {
     }
 
     if (campaignError || !campaignData) {
-      console.error("Failed to create campaign record:", campaignError);
+      logger.error("Failed to create campaign record", { error: campaignError });
       return NextResponse.json(
         {
           error:
@@ -324,7 +384,7 @@ export async function POST(request: Request) {
       businessId: business.id,
       baseSiteUrl,
       campaignName,
-      campaignMessage,
+      campaignMessage: resolvedCampaignMessage,
       campaignChannel,
       customers: selectedCustomersWithCodes as Array<
         Pick<Database["public"]["Tables"]["customers"]["Row"], "id" | "name" | "phone" | "email" | "referral_code">
@@ -385,7 +445,7 @@ export async function POST(request: Request) {
       .select("id, customer_id");
 
     if (insertError) {
-      console.error("Failed to queue campaign messages:", insertError);
+      logger.error("Failed to queue campaign messages", { error: insertError });
       await supabase
         .from("campaigns")
         .delete()
@@ -476,13 +536,22 @@ export async function POST(request: Request) {
 
     revalidatePath("/dashboard");
 
+    logger.info("Campaign queued", {
+      campaignId,
+      businessId: business.id,
+      queuedCount,
+      channel: campaignChannel,
+      scheduledAt: scheduledAtIso,
+      dispatchState: shouldDispatchInline ? "inline" : "queued",
+    });
+
     return NextResponse.json({
       success: `${sendStatusLabel} ${queuedCount} ${
         campaignChannel === "sms" ? "SMS" : "email"
       } message${queuedCount === 1 ? "" : "s"}.${dispatchNote}${scheduleNote}${skippedNote}`,
     });
   } catch (error) {
-    console.error("Campaign send API error:", error);
+    logger.error("Campaign send API error", { error });
     return NextResponse.json(
       {
         error:

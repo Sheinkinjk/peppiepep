@@ -1,10 +1,14 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
 import { cookies } from "next/headers";
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 
 import { createServiceClient } from "@/lib/supabase";
 import type { Database } from "@/types/supabase";
+import { createApiLogger } from "@/lib/api-logger";
+import { parseJsonBody } from "@/lib/api-validation";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 async function handleDeletion(code: string | null, ownerId: string | null) {
   if (!code) {
@@ -71,21 +75,39 @@ async function handleDeletion(code: string | null, ownerId: string | null) {
 }
 
 export async function POST(request: Request) {
+  const logger = createApiLogger("api:ambassadors:delete");
+  logger.info("Received ambassador delete request");
+
+  // Rate limiting
+  const rateLimitCheck = await checkRateLimit(request, "ambassadorDelete");
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    logger.warn("Rate limit exceeded for ambassador delete");
+    return rateLimitCheck.response;
+  }
+
   try {
     const routeClient = createRouteHandlerClient<Database>({ cookies });
     const {
       data: { user },
     } = await routeClient.auth.getUser();
+    const schema = z.object({ code: z.string().trim().min(1, "referral code is required") });
 
     if (!user) {
+      logger.warn("Ambassador delete unauthorized");
       return NextResponse.json({ error: "Authentication required" }, { status: 401 });
     }
 
-    const body = await request.json().catch(() => ({}));
-    const code = typeof body.code === "string" ? body.code : null;
-    return handleDeletion(code, user.id);
+    const parsed = await parseJsonBody(request, schema, logger, {
+      errorMessage: "referral code is required",
+    });
+    if (!parsed.success) {
+      return parsed.response;
+    }
+
+    logger.info("Deleting ambassador", { ownerId: user.id });
+    return handleDeletion(parsed.data.code, user.id);
   } catch (error) {
-    console.error("Ambassador delete error", error);
+    logger.error("Ambassador delete error", { error });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
