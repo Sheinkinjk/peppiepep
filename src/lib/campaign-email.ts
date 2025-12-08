@@ -695,96 +695,93 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
             </td>
           </tr>
           <tr>
-            <td style="padding: 28px 40px 8px 40px;">
-              <h1 style="margin: 0 0 14px 0; color: ${tone.heroText}; font-size: 26px; font-weight: 800; font-family: ${tone.headingFont};">
-                ${campaignName || "Your private ambassador invitation"}
+            <td style="padding: 32px 40px 24px 40px;">
+              <h1 style="margin: 0 0 12px 0; color: ${tone.heroText}; font-size: 32px; font-weight: 900; font-family: ${tone.headingFont}; line-height: 1.2;">
+                ${campaignName || "You're Invited to Join Our Ambassador Program"}
               </h1>
-              <p style="margin: 0 0 18px 0; color: ${tone.bodyText}; font-size: 15px; font-family: ${tone.bodyFont};">
-                Hi there, we&apos;d love to invite you into our private ambassador program at ${businessName}
-                and turn your network into premium rewards.
-              </p>
-              ${renderButton({
-                url: landingUrl,
-                label: "Become an Ambassador Now",
-                background: `linear-gradient(135deg, ${accentLight}, ${brandHighlight}, ${accentDark})`,
-                textColor: tone.primaryButtonText,
-                shadow: heroButtonShadow,
-                borderColor: hexToRgba(brandHighlight, 0.6),
-                fontFamily: tone.headingFont,
-              })}
-              <p style="margin: 10px 0 0 0; font-size: 11px; color: ${tone.mutedText}; font-family: ${tone.bodyFont};">
-                If the button doesn&apos;t open, copy and paste this link into your browser:<br />
-                <a href="${landingUrl}" target="_blank" rel="noopener noreferrer" style="color: ${viewInBrowserColor}; text-decoration: underline;">${landingUrl}</a>
+              <p style="margin: 0 0 24px 0; color: ${tone.bodyText}; font-size: 17px; font-family: ${tone.bodyFont}; line-height: 1.6;">
+                Earn ${clientReward} for every friend you refer. Your friends get ${newUserReward}. It's a win-win!
               </p>
             </td>
           </tr>
           <tr>
-            <td style="padding: 12px 40px 24px 40px;">
+            <td style="padding: 0 40px 32px 40px;">
               ${campaignParagraphs}
-              ${storyBlocksHtml}
-              <div style="margin-top: 24px; border-radius: 22px; border: 1px solid ${accentBorderColor}; background: ${tone.surfaceBackground}; padding: 22px;">
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-                  <div style="flex: 1 1 260px;">
-                    <p style="margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em; color: ${tone.labelColor}; font-weight: 700;">
-                      Share this private link
-                    </p>
-                    <div style="border-radius: 16px; border: ${referralLinkBorder}; background: ${referralLinkBackground}; color: #ffffff; font-weight: 600; font-size: 13px; padding: 14px 16px; font-family: 'SFMono-Regular', 'Consolas', 'Monaco', monospace; word-break: break-all;">
-                      ${escapeHtml(referralLink)}
-                    </div>
-                    <p style="margin: 10px 0 16px 0; font-size: 11px; color: ${tone.mutedText};">
-                      Tap and hold to copy, or forward this card to personal chats.
-                    </p>
-                    ${renderButton({
-                      url: landingUrl,
-                      label: "Open Referral Landing",
-                      background: heroButtonGradient,
-                      textColor: tone.primaryButtonText,
-                      shadow: heroButtonShadow,
-                      borderColor: hexToRgba(brandHighlight, 0.4),
-                      fontFamily: tone.bodyFont,
-                    })}
-                  </div>
-                  ${
-                    qrCodeDataUrl
-                      ? `<div style="flex: 0 0 auto; text-align: center;">
-                          <div style="border-radius: 18px; border: 1px solid ${tone.borderColor}; padding: 12px; background: ${tone.cardBackground}; box-shadow: 0 12px 26px ${hexToRgba(accentDark, 0.15)};">
-                            <img src="${qrCodeDataUrl}" alt="Referral QR code" style="width: 136px; height: 136px; display: block;" />
-                          </div>
-                          <p style="margin: 8px 0 0 0; font-size: 11px; color: ${tone.mutedText};">
-                            Scan on mobile to claim instantly
-                          </p>
-                        </div>`
-                      : ""
-                  }
+
+              <!-- Main CTA Card -->
+              <div style="margin: 0 0 24px 0; border-radius: 24px; border: 2px solid ${accentBorderColor}; background: linear-gradient(135deg, ${accentSoft} 0%, ${tone.cardBackground} 100%); padding: 32px; text-align: center; box-shadow: ${highlightCardShadow};">
+                <p style="margin: 0 0 6px 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.2em; color: ${tone.highlightLabelColor}; font-weight: 800;">
+                  Your Unique Referral Link
+                </p>
+                <h2 style="margin: 0 0 20px 0; color: ${tone.heroText}; font-size: 22px; font-weight: 800; font-family: ${tone.headingFont};">
+                  Share & Earn Rewards
+                </h2>
+
+                <!-- Referral Link Display -->
+                <div style="margin: 0 0 20px 0; border-radius: 16px; background: ${tone.cardBackground}; border: 2px solid ${hexToRgba(brandHighlight, 0.3)}; padding: 18px 20px; text-align: center;">
+                  <a href="${landingUrl}" target="_blank" rel="noopener noreferrer" style="color: ${brandHighlight}; font-weight: 700; font-size: 15px; text-decoration: none; word-break: break-all; font-family: 'SFMono-Regular', 'Consolas', 'Monaco', monospace; display: block;">
+                    ${escapeHtml(referralLink)}
+                  </a>
                 </div>
+
+                <!-- Share Button -->
+                ${renderButton({
+                  url: landingUrl,
+                  label: "📧 Share Your Link Now",
+                  background: heroButtonGradient,
+                  textColor: tone.primaryButtonText,
+                  shadow: heroButtonShadow,
+                  borderColor: hexToRgba(brandHighlight, 0.6),
+                  fontFamily: tone.headingFont,
+                  fullWidth: true,
+                })}
+
+                <p style="margin: 16px 0 0 0; font-size: 13px; color: ${tone.mutedText}; line-height: 1.5;">
+                  Copy the link above or tap the button to share via email, text, or social media
+                </p>
               </div>
+
+              ${
+                qrCodeDataUrl
+                  ? `<!-- QR Code Section -->
+              <div style="margin: 0 0 24px 0; border-radius: 20px; border: 1px solid ${tone.borderColor}; background: ${tone.surfaceBackground}; padding: 24px; text-align: center;">
+                <p style="margin: 0 0 16px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em; color: ${tone.labelColor}; font-weight: 700;">
+                  Or Share With QR Code
+                </p>
+                <div style="display: inline-block; border-radius: 18px; border: 2px solid ${hexToRgba(brandHighlight, 0.2)}; padding: 16px; background: ${tone.cardBackground}; box-shadow: 0 8px 20px ${hexToRgba(accentDark, 0.12)};">
+                  <img src="${qrCodeDataUrl}" alt="Referral QR code" style="width: 160px; height: 160px; display: block;" />
+                </div>
+                <p style="margin: 12px 0 0 0; font-size: 13px; color: ${tone.bodyText};">
+                  Share this QR code in-store or on social media
+                </p>
+              </div>`
+                  : ""
+              }
+
+              ${storyBlocksHtml}
             </td>
           </tr>
           <tr>
-            <td style="padding: 0 40px 24px 40px;">
-              ${renderButton({
-                url: ambassadorPortalUrl,
-                label: "Open Ambassador Portal",
-                background: portalButtonGradient,
-                textColor: tone.portalButtonText,
-                shadow: portalButtonShadow,
-                borderColor: hexToRgba(brandHighlight, 0.4),
-                fontFamily: tone.bodyFont,
-                fullWidth: true,
-              })}
-              <p style="margin: 10px 0 12px 0; color: ${tone.mutedText}; font-size: 11px;">
-                Log every offline booking, check status, and trigger payouts from your dashboard.
-              </p>
-              ${renderButton({
-                url: landingUrl,
-                label: "View Referral Program",
-                background: tone.secondaryButtonBackground,
-                textColor: tone.secondaryButtonText,
-                shadow: `0 14px 32px ${hexToRgba(accentDark, 0.28)}`,
-                borderColor: tone.secondaryButtonBackground,
-                fontFamily: tone.bodyFont,
-                fullWidth: true,
-              })}
+            <td style="padding: 0 40px 32px 40px;">
+              <!-- Ambassador Portal Section -->
+              <div style="margin: 0 0 20px 0; border-radius: 20px; border: 1px solid ${tone.borderColor}; background: ${tone.surfaceBackground}; padding: 24px; text-align: center;">
+                <h3 style="margin: 0 0 8px 0; color: ${tone.heroText}; font-size: 18px; font-weight: 800; font-family: ${tone.headingFont};">
+                  Track Your Rewards
+                </h3>
+                <p style="margin: 0 0 16px 0; color: ${tone.bodyText}; font-size: 14px; line-height: 1.6;">
+                  Monitor your referrals, track earnings, and request payouts from your ambassador dashboard
+                </p>
+                ${renderButton({
+                  url: ambassadorPortalUrl,
+                  label: "Open Ambassador Portal",
+                  background: portalButtonGradient,
+                  textColor: tone.portalButtonText,
+                  shadow: portalButtonShadow,
+                  borderColor: hexToRgba(brandHighlight, 0.4),
+                  fontFamily: tone.bodyFont,
+                  fullWidth: true,
+                })}
+              </div>
             </td>
           </tr>
           <tr>
