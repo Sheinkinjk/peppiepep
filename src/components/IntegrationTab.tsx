@@ -118,14 +118,13 @@ export function IntegrationTab({
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-[#0a4b53]/75">
-              Integration playbook
+              Integration Setup
             </p>
             <h2 className="mt-2 text-2xl sm:text-3xl font-black text-[#0a4b53]">
-              Connect {businessName || "your studio"} before importing a single contact.
+              Connect {businessName || "your studio"} to start tracking referrals
             </h2>
             <p className="mt-3 max-w-3xl text-sm sm:text-base text-[#0a4b53]/85">
-              Follow these steps to wire referral links, discount capture, and manual testing so your site,
-              forms, and CRM all speak to the dashboard. Once green, bulk imports and launches stay painless.
+              Set up tracking, add your website code, and test before importing customers.
             </p>
           </div>
           <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 text-sm text-white/90">
@@ -173,21 +172,18 @@ export function IntegrationTab({
               <MousePointerClick className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-900">No-code concierge path</h3>
+              <h3 className="text-xl font-bold text-slate-900">No-code path</h3>
               <p className="text-sm text-slate-600">
-                What owners, ops managers, or concierge teams can do without touching code.
+                For owners and ops teams
               </p>
             </div>
           </div>
           <ul className="list-disc space-y-2 pl-5 text-sm text-slate-600">
-            <li>Use Quick Add to create a “Test ambassador” so you always have a real referral link + discount word.</li>
-            <li>Paste the iframe or CTA snippet (below) into Webflow, Squarespace, Notion, or any CMS block.</li>
-            <li>Keep an eye on <strong>Performance → Journey tracker</strong>; every link visit or signup shows up instantly.</li>
-            <li>If checkout updates aren’t ready, log bookings via <strong>Performance → Manual Conversion</strong> so payouts and stats stay accurate.</li>
+            <li>Create a test ambassador to get a real referral link</li>
+            <li>Paste the iframe snippet into your website builder</li>
+            <li>Track activity in <strong>Measure ROI → Journey timeline</strong></li>
+            <li>Log offline bookings via <strong>Measure ROI → Manual referral</strong></li>
           </ul>
-          <p className="text-xs text-slate-500">
-            Tip: pin this tab in your browser during onboarding—no developer required to start sending referral emails and landing guests on brand.
-          </p>
         </div>
         <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-3">
           <div className="flex items-center gap-3">
@@ -195,82 +191,62 @@ export function IntegrationTab({
               <Terminal className="h-6 w-6" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-900">Developer handoff packet</h3>
+              <h3 className="text-xl font-bold text-slate-900">Developer setup</h3>
               <p className="text-sm text-slate-600">
-                Everything an engineer needs to wire discount codes or custom automations.
+                For technical implementation
               </p>
             </div>
           </div>
           <ul className="list-disc space-y-2 pl-5 text-sm text-slate-600">
-            <li>Grab the <code className="font-mono text-xs">x-pepf-discount-secret</code> in Program Settings → Website capture and keep it server-side.</li>
-            <li>POST every captured discount code to <code className="font-mono text-xs">/api/discount-codes/redeem</code> (example payload below).</li>
-            <li>Optionally pull live stats via <code className="font-mono text-xs">/api/referral-stats</code> to show progress inside your app.</li>
-            <li>Send devs to <strong>Performance → Journey tracker</strong> so they can see how link visits, submissions, and conversions sync in real time.</li>
+            <li>Get <code className="font-mono text-xs">x-pepf-discount-secret</code> from Program Settings</li>
+            <li>POST discount codes to <code className="font-mono text-xs">/api/discount-codes/redeem</code></li>
+            <li>Use <code className="font-mono text-xs">/api/referral-stats</code> for live data</li>
           </ul>
-          <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-500">
-            Need webhook or CRM integrations? Use the same ambassador IDs returned in the POST response to map data to HubSpot, Shopify Flow, or Zapier.
-          </div>
         </div>
       </div>
 
       {/* Data flow explanation */}
-      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/70 space-y-4">
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/70 space-y-3">
         <div className="flex items-center gap-3">
           <div className="h-11 w-11 rounded-2xl bg-slate-900 text-white flex items-center justify-center">
             <LayoutDashboard className="h-5 w-5" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-slate-900">How data flows into the dashboard</h3>
+            <h3 className="text-xl font-bold text-slate-900">How tracking works</h3>
             <p className="text-sm text-slate-600">
-              Every click, submission, and redemption fuels specific widgets across the dashboard tabs.
+              Link visits, form submissions, and checkouts automatically update your dashboard.
             </p>
           </div>
         </div>
-        <div className="space-y-4">
-          {[
-            {
-              title: "Referral link visit",
-              icon: <Link2 className="h-4 w-4 text-cyan-500" />,
-              copy:
-                "Ambassadors share their personal /r/CODE link. Each visit logs an event you can see in Performance → Journey tracker and the Campaigns analytics.",
-              metric: "Feeds: Campaign ROI chart, Journey heatmap, Ambassador activity badges.",
-            },
-            {
-              title: "Landing form submission",
-              icon: <Gift className="h-4 w-4 text-emerald-500" />,
-              copy:
-                "When a prospect completes the referral landing form, the lead appears in Performance with the source campaign, timestamp, and ambassador attribution.",
-              metric: "Feeds: Pending referrals table, Manual conversion baseline, Performance summary cards.",
-            },
-            {
-              title: "Discount code redemption",
-              icon: <PlugZap className="h-4 w-4 text-purple-500" />,
-              copy:
-                "Your checkout or POS calls the discount redemption endpoint, instantly marking the referral as conversion-ready. Credits auto-calc once you approve.",
-              metric: "Feeds: Rewards pending count, Credits issued stat, Ambassador portal balances.",
-            },
-            {
-              title: "Manual conversion or payout",
-              icon: <LineChart className="h-4 w-4 text-amber-500" />,
-              copy:
-                "If an offline booking happens, log it manually. Marking a referral complete updates Credits, triggers ambassador SMS/email alerts, and refreshes the snapshot tiles at the top of the dashboard.",
-              metric: "Feeds: Referral tables, Credits ledger, Email/SMS notifications.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4 flex flex-col gap-1"
-            >
-              <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
-                <span className="h-8 w-8 rounded-xl bg-white flex items-center justify-center border border-slate-200">
-                  {item.icon}
-                </span>
-                {item.title}
-              </div>
-              <p className="text-sm text-slate-600">{item.copy}</p>
-              <p className="text-xs font-semibold text-slate-500">{item.metric}</p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
+              <Link2 className="h-4 w-4 text-cyan-500" />
+              Link visits
             </div>
-          ))}
+            <p className="text-xs text-slate-600">Tracks clicks in Track Campaigns and Journey timeline</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
+              <Gift className="h-4 w-4 text-emerald-500" />
+              Form submissions
+            </div>
+            <p className="text-xs text-slate-600">Creates pending referrals in Measure ROI</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
+              <PlugZap className="h-4 w-4 text-purple-500" />
+              Checkout redemptions
+            </div>
+            <p className="text-xs text-slate-600">Updates credits and conversion stats</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
+              <LineChart className="h-4 w-4 text-amber-500" />
+              Manual logging
+            </div>
+            <p className="text-xs text-slate-600">For offline bookings via Manual Referral form</p>
+          </div>
         </div>
       </section>
 
@@ -351,43 +327,50 @@ export function IntegrationTab({
         </CollapsibleContent>
       </Collapsible>
 
-      <div className="space-y-6" id="integration-wordpress" >
-        <section
-          id="integration-wordpress"
-          className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4 scroll-mt-32"
-        >
-          <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 flex items-center justify-center">
-              <Globe className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-slate-900">WordPress &amp; WooCommerce setup</h3>
-              <p className="text-sm text-slate-600">
-                Guide even non-technical teams through publishing referral links and capturing discount codes on WordPress.
-              </p>
+      <Collapsible open={openSection === 'wordpress'} onOpenChange={(isOpen) => setOpenSection(isOpen ? 'wordpress' : null)}>
+        <CollapsibleTrigger className="w-full">
+          <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3 flex-1 text-left">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 flex items-center justify-center">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">WordPress &amp; WooCommerce Setup</h3>
+                  <p className="text-sm text-slate-600">Add referral pages and discount capture to WordPress sites</p>
+                </div>
+              </div>
+              {openSection === 'wordpress' ? (
+                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              )}
             </div>
           </div>
-          <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-600">
-            <li>Create a new page (e.g., <em>Refer a friend</em>) and drop a Custom HTML block wherever you want the referral portal to render.</li>
-            <li>Use the shortcode below if you prefer editing in Gutenberg. Swap <code className="font-mono text-xs">YOURCODE</code> with each ambassador&apos;s referral code.</li>
-            <li>WooCommerce teams can paste the PHP hook into <code className="font-mono text-xs">functions.php</code> (or a site-specific plugin) so each checkout posts redemptions back to the dashboard.</li>
-          </ol>
-          <div className="grid gap-4 lg:grid-cols-2">
-            <div className="space-y-2">
-              <p className="text-sm font-semibold text-slate-800">Gutenberg shortcode</p>
-              <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
+          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
+            <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-600">
+              <li>Create a new page and add a Custom HTML block</li>
+              <li>Use the shortcode below (swap <code className="font-mono text-xs">YOURCODE</code> with ambassador's code)</li>
+              <li>For WooCommerce, paste the PHP hook into <code className="font-mono text-xs">functions.php</code></li>
+            </ol>
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div className="space-y-2">
+                <p className="text-sm font-semibold text-slate-800">Gutenberg shortcode</p>
+                <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
 {`add_shortcode('peppiepep_referral', function($atts = []) {
   $code = isset($atts['code']) ? esc_attr($atts['code']) : 'VIPCODE1234';
   return '<iframe src="${siteUrl}/r/' . $code . '?embed=1" style="width:100%;min-height:640px;border:none;border-radius:32px;"></iframe>';
 });`}
-              </pre>
-              <p className="text-xs text-slate-500">
-                Usage: <code className="font-mono">[peppiepep_referral code=&quot;AMBCODE&quot;]</code> inside any block or classic editor section.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-sm font-semibold text-slate-800">WooCommerce discount capture</p>
-              <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
+                </pre>
+                <p className="text-xs text-slate-500">
+                  Usage: <code className="font-mono">[peppiepep_referral code=&quot;AMBCODE&quot;]</code>
+                </p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm font-semibold text-slate-800">WooCommerce capture</p>
+                <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
 {`add_action('woocommerce_checkout_create_order', function($order) {
   $code = $order->get_coupon_codes() ? reset($order->get_coupon_codes()) : null;
   if (!$code) {
@@ -408,35 +391,37 @@ export function IntegrationTab({
     'timeout' => 12,
   ]);
 }, 20, 1);`}
-              </pre>
-              <p className="text-xs text-slate-500">
-                Works with coupon codes or custom checkout fields. Keep the secret server-side so ambassadors can&apos;t tamper with it.
-              </p>
+                </pre>
+              </div>
             </div>
           </div>
-          <div className="rounded-2xl border border-dashed border-cyan-200 bg-cyan-50/50 p-4 text-sm text-slate-600 space-y-1.5">
-            <p className="font-semibold text-slate-900">Need a no-code alternative?</p>
-            <p>
-              Paste the iframe or CTA button snippet from above straight into Elementor, Divi, or Squarespace embed blocks. The referral card auto-resizes so mobile visitors still see the premium design.
-            </p>
-          </div>
-        </section>
-        <div
-          id="integration-discount"
-          className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4 scroll-mt-32"
-        >
-          <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
-              <Code2 className="h-6 w-6 text-white" />
+        </CollapsibleContent>
+      </Collapsible>
+
+      <Collapsible open={openSection === 'discount'} onOpenChange={(isOpen) => setOpenSection(isOpen ? 'discount' : null)}>
+        <CollapsibleTrigger className="w-full">
+          <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3 flex-1 text-left">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
+                  <Code2 className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">Discount Capture Endpoint</h3>
+                  <p className="text-sm text-slate-600">API call for checkout, Shopify, or POS integration</p>
+                </div>
+              </div>
+              {openSection === 'discount' ? (
+                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              )}
             </div>
-            <div>
-              <h3 className="text-xl font-bold text-slate-900">Discount capture endpoint</h3>
-              <p className="text-sm text-slate-600">
-                Drop this call into your checkout, Shopify function, or POS flow whenever a discount word is present.
-              </p>
-            </div>
           </div>
-          <pre className="rounded-2xl bg-slate-900/95 p-4 text-xs text-slate-100 overflow-x-auto">
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
+          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
+            <pre className="rounded-2xl bg-slate-900/95 p-4 text-xs text-slate-100 overflow-x-auto">
 {`POST ${endpointPreview}
 Headers:
   x-pepf-discount-secret: ${secretPreview}
@@ -447,26 +432,10 @@ Body:
   "amount": 450,
   "source": "shopify-checkout"
 }`}
-          </pre>
-          <p className="text-xs text-slate-500">
-            Need reusable code? Use the Website Integration snippets or contact support to wire custom flows.
-          </p>
-        </div>
-      </div>
-
-      {/* Troubleshooting */}
-      <section className="rounded-3xl border border-slate-200 bg-slate-50/80 p-6 space-y-3">
-        <h3 className="text-lg font-bold text-slate-900">Manual QA script</h3>
-        <p className="text-sm text-slate-600">
-          Share this with your dev or concierge team so they know exactly how to validate referrals end-to-end.
-        </p>
-        <ul className="list-disc space-y-1.5 pl-5 text-sm text-slate-600">
-          <li>Copy your test ambassador’s referral link and open it on desktop + mobile—confirm branding, logo, and CTAs.</li>
-          <li>Submit the referral landing form; the lead should appear under Performance → Journey tracker immediately.</li>
-          <li>At checkout, enter the discount code and ensure your system POSTs to the endpoint above. Look for the entry under discount redemptions in the dashboard.</li>
-          <li>If a referral happens offline, log it via Manual Conversion so ambassadors still receive instant credit.</li>
-        </ul>
-      </section>
+            </pre>
+          </div>
+        </CollapsibleContent>
+      </Collapsible>
     </div>
   );
 }

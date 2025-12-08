@@ -1142,46 +1142,37 @@ export default async function Dashboard() {
                 All Customers ({safeCustomers.length})
               </h3>
               <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
-                <p className="text-sm font-semibold text-slate-900 mb-3">Ambassador Status Guide:</p>
+                <p className="text-sm font-semibold text-slate-900 mb-3">Status Guide:</p>
                 <div className="grid gap-2 sm:grid-cols-3 text-xs">
                   <div className="flex items-start gap-2">
                     <div className="h-2 w-2 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></div>
                     <div>
                       <p className="font-semibold text-slate-900">Pending</p>
-                      <p className="text-slate-600">Newly added, awaiting verification or first activity</p>
+                      <p className="text-slate-600">Newly added</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
                     <div className="h-2 w-2 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0"></div>
                     <div>
                       <p className="font-semibold text-slate-900">Verified</p>
-                      <p className="text-slate-600">Email/phone confirmed, ready to receive campaigns</p>
+                      <p className="text-slate-600">Email/phone confirmed</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
                     <div className="h-2 w-2 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></div>
                     <div>
                       <p className="font-semibold text-slate-900">Active</p>
-                      <p className="text-slate-600">Has sent referrals or earned credits - top performers</p>
+                      <p className="text-slate-600">Has earned credits</p>
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-slate-500 mt-3">
-                  💡 Statuses update automatically based on activity. Adjust credits in the table to reward ambassadors manually.
-                </p>
               </div>
 
               <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-4 mt-4">
-                <p className="text-sm font-semibold text-emerald-900 mb-2">💰 How Credits Work:</p>
-                <p className="text-xs text-emerald-800 mb-2">
-                  The "Adjust Credits" feature lets you reward ambassadors with store credit or compensation. When you adjust credits:
+                <p className="text-sm font-semibold text-emerald-900 mb-2">💰 Credits:</p>
+                <p className="text-xs text-emerald-800">
+                  Use "Adjust Credits" to reward ambassadors. Credits appear in their portal and in Measure ROI stats.
                 </p>
-                <ul className="text-xs text-emerald-800 space-y-1 ml-4 list-disc">
-                  <li><strong>Credits Issued</strong> (top stats) increases - tracks total rewards given</li>
-                  <li>Ambassador sees updated balance in their portal at <code className="bg-white px-1 rounded">/referral</code></li>
-                  <li><strong>Measure ROI</strong> tab shows this in "Credits issued" and "Referral Revenue" metrics</li>
-                  <li>Use manual credits for offline bookings or bonus rewards beyond automated referrals</li>
-                </ul>
               </div>
             </div>
             <CustomersTable
@@ -1385,7 +1376,7 @@ export default async function Dashboard() {
                   <div>
                     <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Referrals & Performance</h2>
                     <p className="text-sm text-slate-600">
-                      Track all referrals and performance metrics, including manual transactions that happen outside the referral link.
+                      All referrals, both tracked and manually logged.
                     </p>
                   </div>
                 </div>
@@ -1402,15 +1393,15 @@ export default async function Dashboard() {
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900">
-                        Add Manual Referral Conversion
+                        Add Manual Referral
                       </h3>
                       <p className="text-xs text-slate-600">
-                        Use this when a referred customer books offline or via another channel. You can attribute by ambassador or by referral code.
+                        For offline bookings or when customers mention a referral code directly.
                       </p>
                       <div className="mt-3 grid gap-3 sm:grid-cols-3 text-xs text-slate-600">
                         <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
                           <p className="text-[11px] uppercase tracking-wide text-slate-500">
-                            Manual total
+                            Manual
                           </p>
                           <p className="text-base font-black text-slate-900">
                             {manualReferralCount}
@@ -1418,7 +1409,7 @@ export default async function Dashboard() {
                         </div>
                         <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
                           <p className="text-[11px] uppercase tracking-wide text-slate-500">
-                            Manual value
+                            Value
                           </p>
                           <p className="text-base font-black text-emerald-600">
                             ${manualReferralValue.toFixed(0)}
@@ -1426,7 +1417,7 @@ export default async function Dashboard() {
                         </div>
                         <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
                           <p className="text-[11px] uppercase tracking-wide text-slate-500">
-                            Link tracked
+                            Tracked
                           </p>
                           <p className="text-base font-black text-indigo-600">
                             {trackedReferralCount}
