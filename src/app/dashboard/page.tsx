@@ -1603,7 +1603,7 @@ export default async function Dashboard() {
             </div>
             <DashboardExplainerDialog />
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-purple-600">Ambassadors</p>
               <p className="text-3xl font-black text-purple-900 mt-1">{safeCustomers.length}</p>
@@ -1617,8 +1617,16 @@ export default async function Dashboard() {
               <p className="text-3xl font-black text-blue-900 mt-1">{totalCampaignsSent}</p>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-amber-600">Revenue</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-amber-600">Additional Revenue</p>
               <p className="text-3xl font-black text-amber-900 mt-1">${Math.round(totalReferralRevenue)}</p>
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-rose-600">Referral Rewards</p>
+              <p className="text-3xl font-black text-rose-900 mt-1">${Math.round(totalRewards)}</p>
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-indigo-600">Sign-on Bonuses</p>
+              <p className="text-3xl font-black text-indigo-900 mt-1">$0</p>
             </div>
           </div>
         </div>
