@@ -25,6 +25,8 @@ import {
   Database as DatabaseIcon,
   ShieldCheck,
   FileDown,
+  Upload,
+  Mail,
 } from "lucide-react";
 
 type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
@@ -99,6 +101,33 @@ export function CRMIntegrationTab({
     `-H 'x-pepf-discount-secret: ${discountCaptureSecret ?? "YOUR_SECRET"}'`,
     `-d '${samplePayload.replace(/\n/g, " ")}'`,
   ].join(" \\\n  ");
+
+  const campaignSteps = [
+    {
+      number: 1,
+      title: "Export Your Ambassador Data",
+      description: "Click the 'Export as CSV' or 'Export as Excel' button above to download your complete ambassador database. This file contains all unique referral codes, tracking links, and contact information.",
+      icon: <Download className="h-5 w-5 text-emerald-600" />,
+    },
+    {
+      number: 2,
+      title: "Import Into Your CRM",
+      description: "Open your email platform (Klaviyo, Mailchimp, etc.) and import the CSV/Excel file. Map the fields: 'referral_code', 'referral_link', 'email', 'name', and 'phone' to your CRM's custom properties or merge tags.",
+      icon: <Upload className="h-5 w-5 text-blue-600" />,
+    },
+    {
+      number: 3,
+      title: "Create Your Email Template",
+      description: "Design your email campaign in your CRM. Insert the 'referral_link' field as your main call-to-action button. Personalize with 'name' and mention the rewards. Example: 'Hi {{name}}, share your link {{referral_link}} and earn $25 per referral!'",
+      icon: <Mail className="h-5 w-5 text-purple-600" />,
+    },
+    {
+      number: 4,
+      title: "Send & Track Automatically",
+      description: "Send your campaign through your CRM. Every click is automatically tracked in Pepform via UTM parameters. When customers convert using the discount codes, Pepform credits the correct ambassador—no manual work required.",
+      icon: <ShieldCheck className="h-5 w-5 text-cyan-600" />,
+    },
+  ];
 
   const integrationPlatforms = [
     {
@@ -325,6 +354,68 @@ export function CRMIntegrationTab({
             </p>
             <p className="text-2xl font-black">{uniqueCodes}</p>
             <p className="text-xs text-white/80">Tracked across all integrations</p>
+          </div>
+        </div>
+      </Card>
+
+      <Card className="rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-6 sm:p-8 shadow-xl shadow-emerald-200/50 space-y-6">
+        <div className="flex items-start gap-4">
+          <div className="rounded-2xl bg-emerald-600 p-3 shadow-lg">
+            <Mail className="h-8 w-8 text-white" />
+          </div>
+          <div className="flex-1">
+            <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
+              Step-by-Step Guide
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight mb-2">
+              How to Send Campaigns With Your Own CRM
+            </h2>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              Follow these steps to send referral campaigns through Klaviyo, Mailchimp, or any email platform while keeping all tracking and analytics in Pepform.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {campaignSteps.map((step) => (
+            <div
+              key={step.number}
+              className="rounded-2xl border-2 border-white bg-white/80 p-5 shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="flex items-start gap-3 mb-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-600 text-white font-black text-lg shadow-md">
+                  {step.number}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    {step.icon}
+                    <h3 className="text-base font-black text-slate-900">{step.title}</h3>
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-2xl border-2 border-dashed border-emerald-300 bg-white/60 p-5">
+          <div className="flex items-start gap-3">
+            <ShieldCheck className="h-6 w-6 text-emerald-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold text-slate-900 mb-2 text-sm">Example Email Template</p>
+              <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 font-mono text-xs text-slate-700 leading-relaxed">
+                <p className="mb-2"><strong>Subject:</strong> You're invited to our VIP referral program 🎉</p>
+                <p className="mb-3"><strong>Body:</strong></p>
+                <p>Hi <span className="bg-purple-100 px-1 rounded">{'{{name}}'}</span>,</p>
+                <p className="mt-2 mb-2">Great news! You've been selected for our exclusive referral program.</p>
+                <p className="mb-2">Share your unique link with friends and earn <strong>$25</strong> for every person who books:</p>
+                <p className="mb-3 text-blue-600 underline"><span className="bg-blue-100 px-1 rounded">{'{{referral_link}}'}</span></p>
+                <p>Your friends get <strong>$50 off</strong> their first visit, and you earn rewards. Win-win! 💰</p>
+              </div>
+              <p className="text-xs text-slate-600 mt-3">
+                Replace <code className="bg-slate-200 px-1 rounded">{'{{name}}'}</code> and <code className="bg-slate-200 px-1 rounded">{'{{referral_link}}'}</code> with your CRM's merge tag syntax (e.g., Klaviyo uses <code className="bg-slate-200 px-1 rounded">{'{{ first_name }}'}</code>).
+              </p>
+            </div>
           </div>
         </div>
       </Card>
