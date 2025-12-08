@@ -1544,7 +1544,6 @@ export default async function Dashboard() {
 
         <DashboardWelcomeModal
           businessName={business.name || "Your Business"}
-          onClose={() => {}}
         />
 
         {/* Condensed Header */}

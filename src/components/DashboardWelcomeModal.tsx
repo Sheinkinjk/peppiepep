@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 
 type WelcomeModalProps = {
   businessName: string;
-  onClose: () => void;
+  onClose?: () => void;
 };
 
 export function DashboardWelcomeModal({ businessName, onClose }: WelcomeModalProps) {
@@ -24,7 +24,7 @@ export function DashboardWelcomeModal({ businessName, onClose }: WelcomeModalPro
   const handleClose = () => {
     localStorage.setItem("dashboard_welcome_seen", "true");
     setOpen(false);
-    onClose();
+    onClose?.();
   };
 
   const steps = [
