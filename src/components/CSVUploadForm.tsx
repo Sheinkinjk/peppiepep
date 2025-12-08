@@ -109,9 +109,6 @@ export function CSVUploadForm() {
             Download template CSV
           </a>
         </Button>
-        <p className="text-xs text-slate-500">
-          Tip: keep any extra spreadsheet columns—you can leave unwanted cells blank and we&apos;ll ignore them.
-        </p>
       </div>
 
       <input

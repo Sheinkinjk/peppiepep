@@ -139,11 +139,6 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                         <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                           {step.description}
                         </p>
-                        {step.helpText && !isExpanded && (
-                          <p className="text-xs text-slate-600 mt-2 italic">
-                            💡 {step.helpText}
-                          </p>
-                        )}
                       </div>
 
                       {/* Expand/Collapse Icon */}
@@ -174,16 +169,6 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
               )}
             >
               <div className="p-6 pt-0 bg-white">
-                {step.helpText && (
-                  <div className="mb-6 rounded-2xl border-2 border-dashed border-blue-200 bg-blue-50/50 p-4">
-                    <div className="flex items-start gap-3">
-                      <Sparkles className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-blue-900 leading-relaxed">
-                        <strong>Quick Tip:</strong> {step.helpText}
-                      </p>
-                    </div>
-                  </div>
-                )}
                 <div className="space-y-6">
                   {step.content}
                 </div>

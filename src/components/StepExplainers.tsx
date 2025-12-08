@@ -378,7 +378,7 @@ export function Step4Explainer() {
                 </ul>
               </div>
               <div className="rounded-xl bg-blue-50 border border-blue-200 p-3">
-                <p className="text-xs font-semibold text-blue-900">✓ Pro tip: Compare campaigns to see which messages and timing work best for your audience.</p>
+                <p className="text-xs font-semibold text-blue-900">✓ Compare campaigns to see which messages and timing work best for your audience.</p>
               </div>
             </div>
           </div>
