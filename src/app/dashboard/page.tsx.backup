@@ -1053,7 +1053,7 @@ export default async function Dashboard() {
       title: "Setup Integration",
       description: "Install tracking code and configure your referral program settings",
       icon: <Settings className="h-5 w-5" />,
-      status: hasProgramSettings ? "complete" : "in_progress",
+      status: hasProgramSettings ? "complete" : "active",
       content: (
         <IntegrationTab
           siteUrl={siteUrl}
@@ -1074,7 +1074,7 @@ export default async function Dashboard() {
       title: "Add Clients & Ambassadors",
       description: "Import your customer base and generate personalized referral links",
       icon: <Users className="h-5 w-5" />,
-      status: hasCustomers ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
+      status: hasCustomers ? "complete" : hasProgramSettings ? "active" : "pending",
       content: (
         <div className="space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
@@ -1157,7 +1157,7 @@ export default async function Dashboard() {
       title: "Launch Campaigns",
       description: "Create and send referral campaigns through your CRM or our system",
       icon: <Mail className="h-5 w-5" />,
-      status: totalCampaignsSent > 0 ? "complete" : hasCustomers ? "in_progress" : "incomplete",
+      status: totalCampaignsSent > 0 ? "complete" : hasCustomers ? "active" : "pending",
       content: (
         <div className="space-y-6">
           <CRMIntegrationTab
@@ -1199,7 +1199,7 @@ export default async function Dashboard() {
       title: "Track Campaigns",
       description: "Monitor campaign performance, analytics, and results",
       icon: <Target className="h-5 w-5" />,
-      status: totalCampaignsSent > 0 ? "in_progress" : "incomplete",
+      status: totalCampaignsSent > 0 ? "active" : "pending",
       content: (
         <Tabs defaultValue="analytics" className="space-y-6">
           <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-sm">
@@ -1293,7 +1293,7 @@ export default async function Dashboard() {
       title: "Measure ROI",
       description: "View ambassador performance, referral metrics, and program ROI",
       icon: <BarChart3 className="h-5 w-5" />,
-      status: safeReferrals.length > 0 ? "in_progress" : "incomplete",
+      status: safeReferrals.length > 0 ? "active" : "pending",
       content: (
         <Tabs defaultValue="referrals" className="space-y-6">
           <div className="rounded-3xl border border-slate-200/80 bg-white/70 p-2 shadow-inner shadow-slate-200/80">
@@ -1576,10 +1576,504 @@ export default async function Dashboard() {
           </div>
         </div>
 
-        <GuidedStepFlow
-          steps={guidedSteps}
-          defaultOpenStep={!hasProgramSettings ? "setup-integration" : !hasCustomers ? "clients-ambassadors" : "crm-integration"}
-        />
+        <Tabs defaultValue={initialTab} className="space-y-6" id="dashboard-tabs">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
+            <TabsTrigger
+              value="integration"
+              data-tab-target="integration"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-cyan-600 data-[state=active]:via-teal-600 data-[state=active]:to-emerald-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <Link2 className="h-5 w-5 mr-2" />
+              <span>Setup integration</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="crm"
+              data-tab-target="crm"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-sky-600 data-[state=active]:via-cyan-600 data-[state=active]:to-blue-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-sky-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <Share2 className="h-5 w-5 mr-2" />
+              <span className="hidden sm:inline">CRM Integration</span>
+              <span className="sm:hidden">CRM</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="clients"
+              id="tab-trigger-clients"
+              data-tab-target="clients"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-emerald-600 data-[state=active]:via-teal-600 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-emerald-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <Users className="h-5 w-5 mr-2" />
+              <span className="hidden sm:inline">Clients & Ambassadors</span>
+              <span className="sm:hidden">Clients</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="campaigns"
+              id="tab-trigger-campaigns"
+              data-tab-target="campaigns"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-600 data-[state=active]:via-pink-600 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <Rocket className="h-5 w-5 mr-2" />
+              <span className="hidden sm:inline">View Campaigns</span>
+              <span className="sm:hidden">Campaigns</span>
+            </TabsTrigger>
+            <TabsTrigger
+              value="performance"
+              data-tab-target="performance"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:via-indigo-600 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <BarChart3 className="h-5 w-5 mr-2" />
+              <span className="hidden sm:inline">Performance</span>
+              <span className="sm:hidden">Stats</span>
+            </TabsTrigger>
+          </TabsList>
+
+        <TabsContent value="integration" id="tab-section-integration" className="space-y-6">
+          <IntegrationTab
+            siteUrl={siteUrl}
+            businessName={business.name || "Your Business"}
+            offerText={business.offer_text}
+            clientRewardText={business.client_reward_text}
+            newUserRewardText={business.new_user_reward_text}
+            discountCaptureSecret={business.discount_capture_secret ?? null}
+            hasProgramSettings={hasProgramSettings}
+            hasCustomers={hasCustomers}
+          />
+        </TabsContent>
+
+        <TabsContent value="crm" id="tab-section-crm" className="space-y-6">
+          <CRMIntegrationTab
+            customers={safeCustomers}
+            siteUrl={siteUrl}
+            businessName={business.name || "Your Business"}
+            businessId={business.id}
+            discountCaptureSecret={business.discount_capture_secret ?? null}
+          />
+        </TabsContent>
+
+        <TabsContent value="campaigns" id="tab-section-campaigns" forceMount>
+          <Tabs defaultValue="builder" className="space-y-6">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-sm">
+              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
+                Campaign control
+              </div>
+              <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
+                <TabsTrigger
+                  value="builder"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                >
+                  Launch campaigns
+                </TabsTrigger>
+                <TabsTrigger
+                  value="analytics"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                >
+                  Analytics
+                </TabsTrigger>
+                <TabsTrigger
+                  value="history"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                >
+                  Performance log
+                </TabsTrigger>
+                <TabsTrigger
+                  value="share"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                >
+                  Share assets
+                </TabsTrigger>
+              </TabsList>
+            </div>
+
+            <TabsContent value="builder" className="space-y-6">
+              <CampaignBuilder
+                customers={safeCustomers}
+                businessName={business.name || "Your Business"}
+                siteUrl={siteUrl}
+                offerText={business.offer_text}
+                newUserRewardText={business.new_user_reward_text}
+                clientRewardText={business.client_reward_text}
+                rewardType={business.reward_type}
+                rewardAmount={business.reward_amount}
+                upgradeName={business.upgrade_name}
+                rewardTerms={business.reward_terms}
+                brandHighlightColor={business.brand_highlight_color ?? null}
+                brandTone={business.brand_tone ?? null}
+                uploadLogoAction={uploadLogo}
+              />
+            </TabsContent>
+
+            <TabsContent value="analytics" className="space-y-6">
+              <CampaignAnalyticsDashboard
+                campaigns={campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]}
+                referrals={safeReferrals}
+                eventStats={campaignEventStats}
+              />
+            </TabsContent>
+
+            <TabsContent value="history">
+              <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+                <h3 className="text-xl font-black text-slate-900 mb-4">
+                  View Campaigns
+                </h3>
+                <div className="overflow-x-auto -mx-6 px-6">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Channel</TableHead>
+                        <TableHead>Status</TableHead>
+                        <TableHead className="text-right">Recipients</TableHead>
+                        <TableHead className="text-right">Clicks</TableHead>
+                        <TableHead className="text-right">Conversions</TableHead>
+                        <TableHead className="text-right">Reward Spend</TableHead>
+                        <TableHead className="text-right">ROI</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <CampaignsTable
+                      campaigns={
+                        campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]
+                      }
+                      referrals={safeReferrals}
+                      eventStats={campaignEventStats}
+                    />
+                  </Table>
+                </div>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="share">
+              <ShareReferralCard
+                customers={safeCustomers.map((customer) => ({
+                  id: customer.id,
+                  name: customer.name,
+                  referral_code: customer.referral_code,
+                  discount_code: customer.discount_code,
+                }))}
+                siteUrl={siteUrl}
+                clientRewardText={business.client_reward_text}
+                newUserRewardText={business.new_user_reward_text}
+                rewardAmount={business.reward_amount}
+                offerText={business.offer_text}
+                businessName={business.name}
+              />
+            </TabsContent>
+          </Tabs>
+        </TabsContent>
+
+        <TabsContent value="clients" id="tab-section-clients" className="space-y-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
+            <ImplementationGuideDialog
+              siteUrl={siteUrl}
+              businessName={business.name || "Your Business"}
+              discountCaptureSecret={business.discount_capture_secret}
+            />
+            <ProgramSettingsDialog
+              businessName={business.name || "Your Business"}
+              offerText={business.offer_text}
+              newUserRewardText={business.new_user_reward_text}
+              clientRewardText={business.client_reward_text}
+              rewardType={business.reward_type}
+              rewardAmount={business.reward_amount}
+              upgradeName={business.upgrade_name}
+              rewardTerms={business.reward_terms}
+              logoUrl={business.logo_url ?? null}
+              brandHighlightColor={business.brand_highlight_color ?? null}
+              brandTone={business.brand_tone ?? null}
+              updateSettingsAction={updateSettings}
+            />
+          </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95" data-csv-upload>
+              <div className="flex items-start gap-3 mb-6">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center">
+                  <Upload className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-900">Import Customers</h2>
+                  <p className="text-sm text-slate-600">Bulk upload spreadsheets to instantly generate referral links.</p>
+                </div>
+              </div>
+              <CSVUploadForm />
+              <div className="mt-6 rounded-xl bg-purple-50 p-4 border border-purple-200">
+                <p className="text-sm font-semibold text-purple-900 mb-2">
+                  💡 Pro tip
+                </p>
+                <p className="text-sm text-purple-700">
+                  Include <span className="font-mono bg-white px-2 py-0.5 rounded">name</span>,{" "}
+                  <span className="font-mono bg-white px-2 py-0.5 rounded">phone</span>, and{" "}
+                  <span className="font-mono bg-white px-2 py-0.5 rounded">email</span> columns.
+                  We&apos;ll create unique referral links for each contact.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95" data-quick-add>
+              <QuickAddCustomerForm quickAddAction={quickAddCustomer} />
+              <div className="mt-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 p-5">
+                <p className="text-sm font-semibold text-emerald-800">
+                  Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
+                </p>
+                <p className="text-xs text-emerald-700 mt-2">
+                  Every manual addition instantly receives their shareable link.
+                </p>
+              </div>
+            </Card>
+          </div>
+
+          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+            <h3 className="text-xl font-black text-slate-900 mb-4">
+              All Customers ({safeCustomers.length})
+            </h3>
+            <CustomersTable
+              initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+              initialTotal={safeCustomers.length}
+              siteUrl={siteUrl}
+              adjustCreditsAction={adjustCustomerCredits}
+            />
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="performance" id="tab-section-performance" className="space-y-6">
+          <Tabs defaultValue="referrals" className="space-y-6">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/70 p-2 shadow-inner shadow-slate-200/80">
+              <TabsList className="flex flex-wrap gap-2 rounded-2xl bg-slate-100/80 p-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                <TabsTrigger
+                  value="referrals"
+                  className="rounded-2xl px-4 py-2 data-[state=active]:bg-white data-[state=active]:text-slate-900"
+                >
+                  Referral table
+                </TabsTrigger>
+                <TabsTrigger
+                  value="journey"
+                  className="rounded-2xl px-4 py-2 data-[state=active]:bg-white data-[state=active]:text-slate-900"
+                >
+                  Journey timeline
+                </TabsTrigger>
+                <TabsTrigger
+                  value="analytics"
+                  className="rounded-2xl px-4 py-2 data-[state=active]:bg-white data-[state=active]:text-slate-900"
+                >
+                  Metrics
+                </TabsTrigger>
+              </TabsList>
+            </div>
+
+            <TabsContent value="referrals">
+              <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+                <div className="space-y-5">
+                  <div className="flex items-center gap-3">
+                    <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
+                      <TrendingUp className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Referrals & Performance</h2>
+                      <p className="text-sm text-slate-600">
+                        Track all referrals and performance metrics, including manual transactions that happen outside the referral link.
+                      </p>
+                    </div>
+                  </div>
+                  <ReferralsTable
+                    initialReferrals={safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT)}
+                    initialTotal={safeReferrals.length}
+                    completionAction={markReferralCompleted}
+                  />
+
+                  <div className="mt-6 rounded-2xl bg-slate-50 p-4 border border-slate-200">
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                        <DollarSign className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-900">
+                          Add Manual Referral Conversion
+                        </h3>
+                        <p className="text-xs text-slate-600">
+                          Use this when a referred customer books offline or via another channel. You can attribute by ambassador or by referral code.
+                        </p>
+                        <div className="mt-3 grid gap-3 sm:grid-cols-3 text-xs text-slate-600">
+                          <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                            <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                              Manual total
+                            </p>
+                            <p className="text-base font-black text-slate-900">
+                              {manualReferralCount}
+                            </p>
+                          </div>
+                          <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                            <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                              Manual value
+                            </p>
+                            <p className="text-base font-black text-emerald-600">
+                              ${manualReferralValue.toFixed(0)}
+                            </p>
+                          </div>
+                          <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                            <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                              Link tracked
+                            </p>
+                            <p className="text-base font-black text-indigo-600">
+                              {trackedReferralCount}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-manual-referral-form>
+                      <ManualReferralForm
+                        ambassadors={safeCustomers.map((c) => ({
+                          id: c.id,
+                          name: c.name,
+                        }))}
+                        addManualReferralAction={addManualReferral}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="journey" className="space-y-6">
+              <ReferralJourneyReport events={referralJourneyEvents} />
+            </TabsContent>
+
+            <TabsContent value="analytics">
+              <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+                <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Performance Analytics</h2>
+
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-purple-600 flex items-center justify-center">
+                        <Users className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Total Ambassadors</h3>
+                    </div>
+                    <p className="text-3xl font-black text-purple-700">{safeCustomers.length}</p>
+                    <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                        <TrendingUp className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Total Referrals</h3>
+                    </div>
+                    <p className="text-3xl font-black text-emerald-700">{safeReferrals.length}</p>
+                    <p className="text-sm text-slate-600 mt-1">{completedReferrals} completed</p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-blue-600 flex items-center justify-center">
+                        <Zap className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Conversion Rate</h3>
+                    </div>
+                    <p className="text-3xl font-black text-blue-700">
+                      {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">Referral to completion</p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
+                        <CreditCard className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Referral Revenue</h3>
+                    </div>
+                    <p className="text-3xl font-black text-amber-700">
+                      ${Math.round(totalReferralRevenue)}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Avg ticket: $
+                      {averageTransactionValue > 0
+                        ? Math.round(averageTransactionValue)
+                        : 0}{" "}
+                      • Credits issued: ${totalRewards}
+                    </p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                        <ClipboardList className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Manual Transactions</h3>
+                    </div>
+                    <p className="text-3xl font-black text-slate-900">
+                      {manualReferralCount}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      ${manualReferralValue.toFixed(0)} recorded offline
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 border border-pink-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-pink-600 flex items-center justify-center">
+                        <Gift className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Pending Rewards</h3>
+                    </div>
+                    <p className="text-3xl font-black text-pink-700">{pendingReferrals}</p>
+                    <p className="text-sm text-slate-600 mt-1">Awaiting completion</p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
+                        <Award className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Avg per Ambassador</h3>
+                    </div>
+                    <p className="text-3xl font-black text-indigo-700">
+                      {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-rose-600 flex items-center justify-center">
+                        <MessageSquare className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Campaigns Sent</h3>
+                    </div>
+                    <p className="text-3xl font-black text-rose-700">{totalCampaignsSent}</p>
+                    <p className="text-sm text-slate-600 mt-1">Live SMS & email blasts</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                        <Send className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Messages Delivered</h3>
+                    </div>
+                    <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
+                    <p className="text-sm text-slate-600 mt-1">Across all channels</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                        <DollarSign className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Program ROI</h3>
+                    </div>
+                    <p className="text-3xl font-black text-emerald-700">
+                      {roiMultiple && roiMultiple > 0
+                        ? `${roiMultiple.toFixed(1)}×`
+                        : "—"}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Revenue ÷ estimated send cost
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </TabsContent>
+      </Tabs>
+
       {isMobile && (
         <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
           <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
