@@ -17,12 +17,14 @@ import {
   CloudCog,
   Copy,
   Download,
+  FileSpreadsheet,
   Link2,
-  Mail,
-  Phone,
-  Share2,
+  Zap,
+  Webhook,
+  DollarSign,
+  Database as DatabaseIcon,
   ShieldCheck,
-  Upload,
+  FileDown,
 } from "lucide-react";
 
 type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
@@ -84,8 +86,8 @@ export function CRMIntegrationTab({
       referral_code: "AMB12345",
       conversion_amount: 250,
       currency: "USD",
-      crm_event_id: "klaviyo-flow-01",
-      channel: "klaviyo",
+      crm_event_id: "external-system-01",
+      channel: "external_crm",
     },
     null,
     2,
@@ -98,52 +100,58 @@ export function CRMIntegrationTab({
     `-d '${samplePayload.replace(/\n/g, " ")}'`,
   ].join(" \\\n  ");
 
-  const providerGuides = [
+  const integrationPlatforms = [
     {
-      name: "Klaviyo journey",
-      icon: <Mail className="h-5 w-5 text-purple-600" />,
-      steps: [
-        "Upload the CSV below and map referral_code to a custom profile property (e.g., pepform_code).",
-        "Add a hidden profile property for referral_link and drop it into your email as the primary CTA.",
-        "Append ?utm_campaign=pepf-crm to every CTA so dashboard reporting distinguishes CRM sends.",
-        "Automate flows based on `pepform_code` existence, but keep payout + conversion reporting inside the Pepform dashboard.",
+      name: "Webhooks & API",
+      icon: <Webhook className="h-6 w-6 text-indigo-600" />,
+      description: "Flexible API and webhook capabilities for custom integrations",
+      features: [
+        "Real-time conversion tracking via webhooks",
+        "RESTful API for data sync",
+        "Secure authentication with API keys",
+        "Custom event triggers and callbacks",
       ],
+      color: "from-indigo-50 to-blue-50",
+      borderColor: "border-indigo-200",
     },
     {
-      name: "Mailchimp broadcast",
-      icon: <Share2 className="h-5 w-5 text-amber-600" />,
-      steps: [
-        "Create merge tags for *|PEPFORMCODE|* and *|PEPFORMURL|* when importing contacts.",
-        "Use segments (example recipes below) to split VIP ambassadors from dormant ones.",
-        "When conversions happen, keep asking your team to log the discount code or rely on the secure endpoint below so Pepform sees the win.",
+      name: "Zapier",
+      icon: <Zap className="h-6 w-6 text-orange-600" />,
+      description: "Connect Pepform with 5,000+ apps through Zapier automations",
+      features: [
+        "No-code workflow automation",
+        "Trigger actions when referrals convert",
+        "Sync ambassador data to spreadsheets",
+        "Send notifications to Slack, email, etc.",
       ],
+      color: "from-orange-50 to-amber-50",
+      borderColor: "border-orange-200",
     },
     {
-      name: "Custom CRM / SMS",
-      icon: <Phone className="h-5 w-5 text-emerald-600" />,
-      steps: [
-        "Use the CSV export to seed your CRM, then update records weekly with new ambassadors.",
-        "Drop the referral_link into any SMS template; shorten it inside your CRM if desired.",
-        "Post the captured discount words back to Pepform via the curl/API example below so payouts and analytics stay in sync.",
+      name: "Salesforce",
+      icon: <DatabaseIcon className="h-6 w-6 text-blue-600" />,
+      description: "Sync referral program data with your Salesforce CRM",
+      features: [
+        "Bi-directional contact synchronization",
+        "Track referrals as Salesforce opportunities",
+        "Custom field mapping for ambassador data",
+        "Automated lead scoring from referrals",
       ],
-    },
-  ];
-
-  const segmentBlueprints = [
-    {
-      name: "VIP streak",
-      description:
-        "Filter: status = active, credits ≥ 150, referral_code present. Perfect for priority launches.",
+      color: "from-blue-50 to-cyan-50",
+      borderColor: "border-blue-200",
     },
     {
-      name: "Dormant with phone",
-      description:
-        "Filter: status != archived, last contacted > 45 days, phone present. Trigger SMS reminders from your CRM.",
-    },
-    {
-      name: "Needs onboarding",
-      description:
-        "Filter: referral_code missing OR email missing. Use Pepform Quick Add or invite to finish setup.",
+      name: "Stripe",
+      icon: <DollarSign className="h-6 w-6 text-purple-600" />,
+      description: "Automate payment processing and payout distribution",
+      features: [
+        "Automatic ambassador payout processing",
+        "Track revenue from referral conversions",
+        "Subscription-based reward redemption",
+        "Real-time transaction monitoring",
+      ],
+      color: "from-purple-50 to-pink-50",
+      borderColor: "border-purple-200",
     },
   ];
 
@@ -154,7 +162,7 @@ export function CRMIntegrationTab({
       toast({
         variant: "destructive",
         title: "No ambassadors to export yet",
-        description: "Add clients in Clients & Ambassadors before syncing to your CRM.",
+        description: "Add clients in Clients & Ambassadors before exporting data.",
       });
       return;
     }
@@ -163,7 +171,7 @@ export function CRMIntegrationTab({
       toast({
         variant: "destructive",
         title: "Browser action unavailable",
-        description: "Open this dashboard in a browser to export CRM-ready data.",
+        description: "Open this dashboard in a browser to export data.",
       });
       return;
     }
@@ -185,7 +193,7 @@ export function CRMIntegrationTab({
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `pepf-crm-export-${new Date()
+    link.download = `pepform-ambassadors-${new Date()
       .toISOString()
       .slice(0, 10)}.csv`;
     document.body.appendChild(link);
@@ -194,8 +202,54 @@ export function CRMIntegrationTab({
     URL.revokeObjectURL(url);
 
     toast({
-      title: "CRM export ready",
-      description: "Upload the CSV into Klaviyo, Mailchimp, or any CRM that supports custom properties.",
+      title: "CSV export ready",
+      description: "Import this file into any CRM system that supports CSV uploads.",
+    });
+  };
+
+  const handleExportExcel = () => {
+    if (!customers.length) {
+      toast({
+        variant: "destructive",
+        title: "No ambassadors to export yet",
+        description: "Add clients in Clients & Ambassadors before exporting data.",
+      });
+      return;
+    }
+
+    if (typeof window === "undefined" || typeof document === "undefined") {
+      toast({
+        variant: "destructive",
+        title: "Browser action unavailable",
+        description: "Open this dashboard in a browser to export data.",
+      });
+      return;
+    }
+
+    // Create Excel-compatible TSV format with UTF-16LE encoding
+    const rows = [csvHeader, ...csvRows];
+    const tsvContent = rows.map((row) => row.join("\t")).join("\n");
+
+    // Add BOM for Excel UTF-16LE
+    const bom = "\ufeff";
+    const blob = new Blob([bom + tsvContent], {
+      type: "application/vnd.ms-excel;charset=utf-16le;"
+    });
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `pepform-ambassadors-${new Date()
+      .toISOString()
+      .slice(0, 10)}.xls`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    toast({
+      title: "Excel export ready",
+      description: "Open this file directly in Microsoft Excel or Google Sheets.",
     });
   };
 
@@ -233,13 +287,13 @@ export function CRMIntegrationTab({
           </div>
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.35em] text-white/80">
-              CRM integration
+              Integration Hub
             </p>
             <h2 className="text-2xl sm:text-3xl font-black leading-tight">
-              Keep {businessName || "your studio"} reporting inside Pepform while supercharging Klaviyo, Mailchimp, or any CRM.
+              Connect Pepform with Your Entire Tech Stack
             </h2>
             <p className="text-sm sm:text-base text-white/90">
-              Export referral codes, map them to merge tags, and keep discount capture flowing back into Pepform so the dashboard tracks every win—even when campaigns fire from your own stack.
+              Export ambassador data, integrate with your CRM, automate workflows, and keep conversion tracking in sync—all while maintaining full analytics in your Pepform dashboard.
             </p>
           </div>
         </div>
@@ -249,171 +303,188 @@ export function CRMIntegrationTab({
               Active ambassadors
             </p>
             <p className="text-2xl font-black">{totalCustomers}</p>
-            <p className="text-xs text-white/80">Synced once you import the CSV</p>
+            <p className="text-xs text-white/80">Ready to export and sync</p>
           </div>
           <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
             <p className="text-[11px] uppercase tracking-[0.35em] text-white/75">
-              Email ready
+              Email contacts
             </p>
             <p className="text-2xl font-black">{emailReady}</p>
-            <p className="text-xs text-white/80">Have verified email + referral codes</p>
+            <p className="text-xs text-white/80">Can sync to email marketing platforms</p>
           </div>
           <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
             <p className="text-[11px] uppercase tracking-[0.35em] text-white/75">
-              SMS ready
+              SMS contacts
             </p>
             <p className="text-2xl font-black">{smsReady}</p>
-            <p className="text-xs text-white/80">Can power CRM-driven SMS nudges</p>
+            <p className="text-xs text-white/80">Available for SMS automation</p>
           </div>
           <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
             <p className="text-[11px] uppercase tracking-[0.35em] text-white/75">
               Unique codes
             </p>
             <p className="text-2xl font-black">{uniqueCodes}</p>
-            <p className="text-xs text-white/80">Mapped back to Pepform automatically</p>
+            <p className="text-xs text-white/80">Tracked across all integrations</p>
           </div>
         </div>
       </Card>
+
+      <div className="grid gap-5 lg:grid-cols-2">
+        {integrationPlatforms.map((platform) => (
+          <Card key={platform.name} className={`rounded-3xl border p-6 shadow-lg bg-gradient-to-br ${platform.color} ${platform.borderColor} space-y-4`}>
+            <div className="flex items-start gap-4">
+              <div className="rounded-2xl bg-white shadow-md p-3 flex-shrink-0">
+                {platform.icon}
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-black text-slate-900 mb-1">{platform.name}</h3>
+                <p className="text-sm text-slate-600">{platform.description}</p>
+              </div>
+            </div>
+            <ul className="space-y-2 ml-16">
+              {platform.features.map((feature) => (
+                <li key={feature} className="flex items-start gap-2 text-sm text-slate-700">
+                  <ShieldCheck className="h-4 w-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="ml-16 pt-2">
+              <p className="text-xs text-slate-500">
+                Contact support to enable this integration for your account
+              </p>
+            </div>
+          </Card>
+        ))}
+      </div>
 
       <div className="grid gap-5 lg:grid-cols-[2fr_1fr]">
         <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
           <div className="flex flex-col gap-2">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
-              Export + Automate
+              Universal Export
             </p>
             <h3 className="text-xl font-bold text-slate-900">
-              One-click export for Klaviyo, Mailchimp, and SMS platforms
+              Export Ambassador Data for Any Platform
             </h3>
             <p className="text-sm text-slate-600">
-              Generate a CSV containing name, contact info, referral codes, and ready-to-drop referral links. Upload it into any CRM and build merge tags that always point back to Pepform tracking.
+              Download your complete ambassador database with referral codes, discount codes, and tracking links. Import into any CRM, email platform, or spreadsheet tool.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button onClick={handleExportCsv} className="flex-1 min-w-[200px] bg-emerald-600 hover:bg-emerald-700">
               <Download className="mr-2 h-4 w-4" />
-              Export referral codes (CSV)
+              Export as CSV
             </Button>
-            <Button
-              type="button"
-              variant="outline"
-              className="flex-1 min-w-[200px]"
-              onClick={() => handleCopy(curlSnippet, "API snippet")}
-            >
-              <Upload className="mr-2 h-4 w-4" />
-              Copy capture endpoint
+            <Button onClick={handleExportExcel} className="flex-1 min-w-[200px] bg-blue-600 hover:bg-blue-700">
+              <FileSpreadsheet className="mr-2 h-4 w-4" />
+              Export as Excel
             </Button>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs text-slate-600 space-y-2 font-mono">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-slate-500">
-              Example curl
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs text-slate-600 space-y-2">
+            <p className="text-[11px] uppercase tracking-[0.35em] text-slate-500 font-semibold">
+              Export includes
             </p>
-            <pre className="whitespace-pre-wrap break-words text-[11px] leading-relaxed">
-{curlSnippet}
-            </pre>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                <span>Ambassador name & contact info</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                <span>Unique referral codes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                <span>Full tracking URLs with UTM</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                <span>Discount codes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                <span>Current credit balances</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                <span>Ambassador status</span>
+              </div>
+            </div>
           </div>
         </Card>
         <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
-            Field mapping
+            API Integration
           </p>
           <div className="space-y-3 text-sm text-slate-600">
             <div className="flex items-start gap-3">
-              <ShieldCheck className="h-5 w-5 text-emerald-600 mt-0.5" />
-              <div>
-                <p className="font-semibold text-slate-900">referral_code → CRM merge tag</p>
-                <p>Use this as the personalized code your CRM drops into subject lines or buttons. Pepform matches conversions on this value.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
               <Link2 className="h-5 w-5 text-indigo-600 mt-0.5" />
               <div>
-                <p className="font-semibold text-slate-900">referral_link → CTA destination</p>
-                <p>Always link back to the Pepform-hosted referral experience so dashboards stay accurate.</p>
+                <p className="font-semibold text-slate-900">Conversion Webhook</p>
+                <p>POST conversions from external systems to keep payouts synchronized</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Copy className="h-5 w-5 text-slate-600 mt-0.5" />
               <div>
-                <p className="font-semibold text-slate-900">discount_code → verification</p>
-                <p>When the referred friend redeems this code, post it back to Pepform (or log manually) to trigger credits.</p>
+                <p className="font-semibold text-slate-900">API Authentication</p>
+                <p>Secure endpoints with your unique capture secret key</p>
               </div>
             </div>
           </div>
           <div className="rounded-2xl border border-dashed border-slate-200 p-4 text-xs text-slate-500">
-            Header to send with every API call:
+            API Secret Key:
             <div className="mt-2 flex items-center justify-between rounded-xl bg-slate-50 px-3 py-2 font-mono text-[11px]">
-              <span>x-pepf-discount-secret</span>
+              <span className="truncate">{discountCaptureSecret ?? "YOUR_SECRET"}</span>
               <button
                 type="button"
-                className="text-indigo-600 font-semibold"
+                className="text-indigo-600 font-semibold ml-2 flex-shrink-0"
                 onClick={() =>
                   handleCopy(
                     discountCaptureSecret ?? "YOUR_SECRET",
-                    "discount capture secret",
+                    "API secret",
                   )
                 }
               >
-                {discountCaptureSecret ?? "YOUR_SECRET"}
+                Copy
               </button>
             </div>
           </div>
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full"
+            onClick={() => handleCopy(curlSnippet, "API snippet")}
+          >
+            <Copy className="mr-2 h-4 w-4" />
+            Copy webhook example
+          </Button>
         </Card>
       </div>
-
-      <div className="grid gap-5 lg:grid-cols-3">
-        {providerGuides.map((guide) => (
-          <Card key={guide.name} className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-md shadow-slate-200/60 space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="rounded-2xl bg-slate-100 p-3">{guide.icon}</div>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-                  Playbook
-                </p>
-                <h3 className="text-lg font-bold text-slate-900">{guide.name}</h3>
-              </div>
-            </div>
-            <ul className="list-disc space-y-2 pl-5 text-sm text-slate-600">
-              {guide.steps.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ul>
-          </Card>
-        ))}
-      </div>
-
-      <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-5">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
-              Segment recipes
-            </p>
-            <h3 className="text-xl font-bold text-slate-900">
-              Build CRM segments that map cleanly back to Pepform statuses
-            </h3>
-          </div>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {segmentBlueprints.map((segment) => (
-            <div key={segment.name} className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-              <p className="text-sm font-semibold text-slate-900">{segment.name}</p>
-              <p className="text-xs text-slate-600 mt-2">{segment.description}</p>
-            </div>
-          ))}
-        </div>
-      </Card>
 
       <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
-              Ambassador spot check
+              Data Preview
             </p>
             <h3 className="text-xl font-bold text-slate-900">
               Preview the data your CRM will receive
             </h3>
             <p className="text-sm text-slate-600">
-              Validate merge tags before sending by copying any code or link directly from this table.
+              See exactly what data will be exported before importing into your external systems.
             </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button onClick={handleExportCsv} className="bg-emerald-600 hover:bg-emerald-700">
+              <FileDown className="mr-2 h-4 w-4" />
+              Export CSV
+            </Button>
+            <Button onClick={handleExportExcel} className="bg-blue-600 hover:bg-blue-700">
+              <FileSpreadsheet className="mr-2 h-4 w-4" />
+              Export Excel
+            </Button>
           </div>
         </div>
         <div className="overflow-x-auto rounded-2xl border border-slate-200">
@@ -424,14 +495,14 @@ export function CRMIntegrationTab({
                 <TableHead>Email</TableHead>
                 <TableHead>Phone</TableHead>
                 <TableHead>Referral code</TableHead>
-                <TableHead className="text-right">Link</TableHead>
+                <TableHead className="text-right">Tracking Link</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {ambassadorPreview.length === 0 && (
                 <TableRow>
                   <TableCell colSpan={5} className="text-center text-sm text-slate-500">
-                    No ambassadors created yet. Add clients to unlock CRM exports.
+                    No ambassadors created yet. Add clients to unlock exports and integrations.
                   </TableCell>
                 </TableRow>
               )}
@@ -476,7 +547,24 @@ export function CRMIntegrationTab({
             </TableBody>
           </Table>
         </div>
+        {ambassadorPreview.length > 0 && (
+          <p className="text-xs text-slate-500 text-center">
+            Showing {ambassadorPreview.length} of {totalCustomers} ambassadors. Export full list using the buttons above.
+          </p>
+        )}
       </Card>
+
+      <div className="rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50/80 p-6 text-sm text-slate-600">
+        <div className="flex items-start gap-3">
+          <ShieldCheck className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="font-semibold text-slate-900 mb-2">How Tracking Works Across Integrations</p>
+            <p className="leading-relaxed">
+              All exported referral links include UTM tracking parameters (utm_source=crm). When customers click these links from your external CRM campaigns, Pepform automatically logs the visit and attributes conversions to the correct ambassador. Your external system sends campaigns, while Pepform handles all tracking, analytics, and payout calculations.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
