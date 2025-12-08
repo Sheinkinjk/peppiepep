@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +11,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { toast } from "@/hooks/use-toast";
 import { Database } from "@/types/supabase";
 import {
@@ -27,6 +33,8 @@ import {
   FileDown,
   Upload,
   Mail,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 import { CustomReferralPageGuide } from "@/components/CustomReferralPageGuide";
 
@@ -310,6 +318,15 @@ export function CRMIntegrationTab({
     }
   };
 
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const shortcuts = [
+    { id: "export", label: "Export Data", icon: <Download className="h-4 w-4" /> },
+    { id: "crm-guide", label: "CRM Guide", icon: <Mail className="h-4 w-4" /> },
+    { id: "integrations", label: "Integrations", icon: <Zap className="h-4 w-4" /> },
+    { id: "api", label: "API", icon: <Webhook className="h-4 w-4" /> },
+  ];
+
   return (
     <div className="space-y-6">
       <Card className="rounded-3xl border-cyan-200/70 bg-gradient-to-br from-sky-600 via-cyan-600 to-emerald-500 text-white shadow-[0_20px_55px_rgba(15,118,110,0.35)] p-6 sm:p-8 space-y-4">
@@ -361,24 +378,55 @@ export function CRMIntegrationTab({
         </div>
       </Card>
 
-      <Card className="rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-6 sm:p-8 shadow-xl shadow-emerald-200/50 space-y-6">
-        <div className="flex items-start gap-4">
-          <div className="rounded-2xl bg-emerald-600 p-3 shadow-lg">
-            <Mail className="h-8 w-8 text-white" />
-          </div>
-          <div className="flex-1">
-            <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
-              Step-by-Step Guide
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight mb-2">
-              How to Send Campaigns With Your Own CRM
-            </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Follow these steps to send referral campaigns through Klaviyo, Mailchimp, or any email platform while keeping all tracking and analytics in Pepform.
-            </p>
-          </div>
+      {/* Quick Navigation Shortcuts */}
+      <Card className="rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-5 shadow-md">
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 mb-3">
+          Quick Actions
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {shortcuts.map((shortcut) => (
+            <button
+              key={shortcut.id}
+              onClick={() => setOpenSection(openSection === shortcut.id ? null : shortcut.id)}
+              className="flex items-center gap-2 rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-700 hover:border-[#0abab5] hover:bg-slate-50 transition-all"
+            >
+              {shortcut.icon}
+              <span>{shortcut.label}</span>
+            </button>
+          ))}
         </div>
+      </Card>
 
+      <Collapsible open={openSection === "crm-guide"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "crm-guide" : null)}>
+        <CollapsibleTrigger className="w-full">
+          <Card className="rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+            <div className="flex items-center justify-between">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="rounded-2xl bg-emerald-600 p-3 shadow-lg">
+                  <Mail className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
+                    Step-by-Step Guide
+                  </p>
+                  <h2 className="text-2xl font-black text-slate-900 leading-tight">
+                    How to Send Campaigns With Your Own CRM
+                  </h2>
+                  <p className="text-sm text-slate-700 mt-1">
+                    Follow these steps to send referral campaigns through Klaviyo, Mailchimp, or any email platform
+                  </p>
+                </div>
+              </div>
+              {openSection === "crm-guide" ? (
+                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              )}
+            </div>
+          </Card>
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
+          <Card className="rounded-3xl border-2 border-emerald-200 bg-white p-6 sm:p-8 shadow-xl shadow-emerald-200/50 space-y-6">
         <div className="grid gap-4 md:grid-cols-2">
           {campaignSteps.map((step) => (
             <div
@@ -422,7 +470,38 @@ export function CRMIntegrationTab({
           </div>
         </div>
       </Card>
+        </CollapsibleContent>
+      </Collapsible>
 
+      <Collapsible open={openSection === "integrations"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "integrations" : null)}>
+        <CollapsibleTrigger className="w-full">
+          <Card className="rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+            <div className="flex items-center justify-between">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="rounded-2xl bg-indigo-600 p-3 shadow-lg">
+                  <Zap className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-xs uppercase tracking-[0.35em] text-indigo-700 font-semibold">
+                    Platform Connections
+                  </p>
+                  <h2 className="text-2xl font-black text-slate-900 leading-tight">
+                    Integration Platforms
+                  </h2>
+                  <p className="text-sm text-slate-700 mt-1">
+                    Connect with Webhooks, Zapier, Salesforce, Stripe, and more
+                  </p>
+                </div>
+              </div>
+              {openSection === "integrations" ? (
+                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              )}
+            </div>
+          </Card>
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
       <div className="grid gap-5 lg:grid-cols-2">
         {integrationPlatforms.map((platform) => (
           <Card key={platform.name} className={`rounded-3xl border p-6 shadow-lg bg-gradient-to-br ${platform.color} ${platform.borderColor} space-y-4`}>
@@ -451,7 +530,38 @@ export function CRMIntegrationTab({
           </Card>
         ))}
       </div>
+        </CollapsibleContent>
+      </Collapsible>
 
+      <Collapsible open={openSection === "export"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "export" : null)}>
+        <CollapsibleTrigger className="w-full">
+          <Card className="rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+            <div className="flex items-center justify-between">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="rounded-2xl bg-emerald-600 p-3 shadow-lg">
+                  <Download className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
+                    Data Export
+                  </p>
+                  <h2 className="text-2xl font-black text-slate-900 leading-tight">
+                    Export & API Access
+                  </h2>
+                  <p className="text-sm text-slate-700 mt-1">
+                    Download ambassador data or integrate via webhooks
+                  </p>
+                </div>
+              </div>
+              {openSection === "export" ? (
+                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              )}
+            </div>
+          </Card>
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
       <div className="grid gap-5 lg:grid-cols-[2fr_1fr]">
         <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
           <div className="flex flex-col gap-2">
@@ -647,6 +757,8 @@ export function CRMIntegrationTab({
           </p>
         )}
       </Card>
+        </CollapsibleContent>
+      </Collapsible>
 
       <CustomReferralPageGuide siteUrl={normalizedSite} businessId={businessId} />
 
