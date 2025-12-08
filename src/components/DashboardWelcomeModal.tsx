@@ -56,7 +56,9 @@ export function DashboardWelcomeModal({ businessName, onClose }: WelcomeModalPro
   ];
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(newOpen) => {
+      if (!newOpen) handleClose();
+    }}>
       <DialogContent className="max-w-2xl rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-white to-pink-50 p-0 overflow-hidden">
         {/* Header with Gradient */}
         <div className="bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 p-8 text-white">

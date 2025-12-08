@@ -10,6 +10,7 @@ import { toast } from "@/hooks/use-toast";
 type Ambassador = {
   id: string;
   name: string | null;
+  referral_code?: string | null;
 };
 
 type ManualReferralFormProps = {
@@ -22,6 +23,20 @@ export function ManualReferralForm({
   addManualReferralAction,
 }: ManualReferralFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedAmbassador, setSelectedAmbassador] = useState<string>("");
+  const [referralCode, setReferralCode] = useState<string>("");
+
+  const handleAmbassadorChange = (ambassadorId: string) => {
+    setSelectedAmbassador(ambassadorId);
+
+    // Find the ambassador and set their referral code
+    const ambassador = ambassadors.find(amb => amb.id === ambassadorId);
+    if (ambassador && ambassador.referral_code) {
+      setReferralCode(ambassador.referral_code);
+    } else {
+      setReferralCode("");
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,6 +59,8 @@ export function ManualReferralForm({
           description: result.success,
         });
         e.currentTarget.reset();
+        setSelectedAmbassador("");
+        setReferralCode("");
       }
     } catch (error) {
       console.error("Manual referral error:", error);
@@ -69,6 +86,8 @@ export function ManualReferralForm({
           <select
             id="ambassador_id"
             name="ambassador_id"
+            value={selectedAmbassador}
+            onChange={(e) => handleAmbassadorChange(e.target.value)}
             className="w-full rounded-2xl border border-slate-200 p-2.5 text-sm"
           >
             <option value="">Select ambassador</option>
@@ -123,10 +142,17 @@ export function ManualReferralForm({
           <Input
             id="referral_code"
             name="referral_code"
+            value={referralCode}
+            onChange={(e) => setReferralCode(e.target.value)}
             placeholder="e.g., ABC123 (if known)"
+            className={referralCode && selectedAmbassador ? "bg-emerald-50 border-emerald-300" : ""}
           />
           <p className="text-[11px] text-slate-500">
-            If provided, we&apos;ll match the ambassador from this code.
+            {referralCode && selectedAmbassador ? (
+              <span className="text-emerald-600 font-semibold">✓ Auto-filled from selected ambassador</span>
+            ) : (
+              "If provided, we'll match the ambassador from this code."
+            )}
           </p>
         </div>
       </div>

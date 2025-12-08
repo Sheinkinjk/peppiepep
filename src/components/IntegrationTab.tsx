@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from "react";
 import {
   AlertTriangle,
   CheckCircle2,
@@ -15,7 +16,10 @@ import {
   ShieldCheck,
   Sparkles,
   Terminal,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { WebsiteIntegrationCard } from "@/components/WebsiteIntegrationCard";
 
 type IntegrationTabProps = {
@@ -99,25 +103,27 @@ export function IntegrationTab({
   ];
 
   const quickNav = [
-    { id: "integration-website", label: "Website & Shopify", description: "Embed + CTA snippets" },
-    { id: "integration-wordpress", label: "WordPress setup", description: "Page + checkout hooks" },
-    { id: "integration-discount", label: "Discount capture", description: "API + Shopify" },
-    { id: "integration-testing", label: "Pre-flight", description: "QA checklist" },
+    { id: "integration-website", label: "Website & Shopify", description: "Embed + CTA snippets", action: () => setOpenSection('website') },
+    { id: "integration-wordpress", label: "WordPress setup", description: "Page + checkout hooks", action: () => setOpenSection('wordpress') },
+    { id: "integration-discount", label: "Discount capture", description: "API + Shopify", action: () => setOpenSection('discount') },
+    { id: "integration-testing", label: "Pre-flight", description: "QA checklist", action: () => setOpenSection('testing') },
   ];
+
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
   return (
     <div className="space-y-8">
       {/* Hero */}
-      <section className="rounded-3xl border border-cyan-200/60 bg-gradient-to-br from-[#0abab5] via-[#24d9e2] to-[#0abab5] text-white shadow-[0_18px_60px_rgba(10,171,181,0.25)] p-6 sm:p-8">
+      <section className="rounded-3xl border border-cyan-200/60 bg-gradient-to-br from-[#0abab5] via-[#24d9e2] to-[#0abab5] shadow-[0_18px_60px_rgba(10,171,181,0.25)] p-6 sm:p-8">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.35em] text-white/75">
+            <p className="text-xs uppercase tracking-[0.35em] text-[#0a4b53]/75">
               Integration playbook
             </p>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-black">
+            <h2 className="mt-2 text-2xl sm:text-3xl font-black text-[#0a4b53]">
               Connect {businessName || "your studio"} before importing a single contact.
             </h2>
-            <p className="mt-3 max-w-3xl text-sm sm:text-base text-white/85">
+            <p className="mt-3 max-w-3xl text-sm sm:text-base text-[#0a4b53]/85">
               Follow these steps to wire referral links, discount capture, and manual testing so your site,
               forms, and CRM all speak to the dashboard. Once green, bulk imports and launches stay painless.
             </p>
@@ -143,18 +149,18 @@ export function IntegrationTab({
       {/* Quick navigation */}
       <nav className="rounded-3xl border border-slate-200 bg-white/95 p-4 shadow-sm shadow-slate-200/60">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
-          Jump to a section
+          Quick shortcuts - Click to expand section
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {quickNav.map((item) => (
-            <a
+            <button
               key={item.id}
-              href={`#${item.id}`}
+              onClick={item.action}
               className="group rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-left transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow"
             >
               <p className="text-sm font-semibold text-slate-800 group-hover:text-[#0abab5]">{item.label}</p>
               <p className="text-xs text-slate-500">{item.description}</p>
-            </a>
+            </button>
           ))}
         </div>
       </nav>
@@ -312,15 +318,40 @@ export function IntegrationTab({
         </ol>
       </section>
 
-      <div className="space-y-6" id="integration-website" >
-        <WebsiteIntegrationCard
-          siteUrl={siteUrl}
-          businessName={businessName}
-          offerText={offerText}
-          clientRewardText={clientRewardText}
-          newUserRewardText={newUserRewardText}
-          discountCaptureSecret={discountCaptureSecret ?? null}
-        />
+      <Collapsible open={openSection === 'website'} onOpenChange={(isOpen) => setOpenSection(isOpen ? 'website' : null)}>
+        <CollapsibleTrigger className="w-full">
+          <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3 flex-1 text-left">
+                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#0abab5] to-cyan-500 flex items-center justify-center">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">Website & Shopify Integration</h3>
+                  <p className="text-sm text-slate-600">Embed referral pages and CTA buttons on your site</p>
+                </div>
+              </div>
+              {openSection === 'website' ? (
+                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              )}
+            </div>
+          </div>
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
+          <WebsiteIntegrationCard
+            siteUrl={siteUrl}
+            businessName={businessName}
+            offerText={offerText}
+            clientRewardText={clientRewardText}
+            newUserRewardText={newUserRewardText}
+            discountCaptureSecret={discountCaptureSecret ?? null}
+          />
+        </CollapsibleContent>
+      </Collapsible>
+
+      <div className="space-y-6" id="integration-wordpress" >
         <section
           id="integration-wordpress"
           className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4 scroll-mt-32"

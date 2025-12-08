@@ -1137,9 +1137,53 @@ export default async function Dashboard() {
           </div>
 
           <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
-            <h3 className="text-xl font-black text-slate-900 mb-4">
-              All Customers ({safeCustomers.length})
-            </h3>
+            <div className="mb-6">
+              <h3 className="text-xl font-black text-slate-900 mb-2">
+                All Customers ({safeCustomers.length})
+              </h3>
+              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                <p className="text-sm font-semibold text-slate-900 mb-3">Ambassador Status Guide:</p>
+                <div className="grid gap-2 sm:grid-cols-3 text-xs">
+                  <div className="flex items-start gap-2">
+                    <div className="h-2 w-2 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-semibold text-slate-900">Pending</p>
+                      <p className="text-slate-600">Newly added, awaiting verification or first activity</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="h-2 w-2 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-semibold text-slate-900">Verified</p>
+                      <p className="text-slate-600">Email/phone confirmed, ready to receive campaigns</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                      <p className="font-semibold text-slate-900">Active</p>
+                      <p className="text-slate-600">Has sent referrals or earned credits - top performers</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mt-3">
+                  💡 Statuses update automatically based on activity. Adjust credits in the table to reward ambassadors manually.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-4 mt-4">
+                <p className="text-sm font-semibold text-emerald-900 mb-2">💰 How Credits Work:</p>
+                <p className="text-xs text-emerald-800 mb-2">
+                  The "Adjust Credits" feature lets you reward ambassadors with store credit or compensation. When you adjust credits:
+                </p>
+                <ul className="text-xs text-emerald-800 space-y-1 ml-4 list-disc">
+                  <li><strong>Credits Issued</strong> (top stats) increases - tracks total rewards given</li>
+                  <li>Ambassador sees updated balance in their portal at <code className="bg-white px-1 rounded">/referral</code></li>
+                  <li><strong>Measure ROI</strong> tab shows this in "Credits issued" and "Referral Revenue" metrics</li>
+                  <li>Use manual credits for offline bookings or bonus rewards beyond automated referrals</li>
+                </ul>
+              </div>
+            </div>
             <CustomersTable
               initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
               initialTotal={safeCustomers.length}
@@ -1160,6 +1204,18 @@ export default async function Dashboard() {
       status: totalCampaignsSent > 0 ? "complete" : hasCustomers ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
+          <Card className="p-6 sm:p-8 shadow-xl shadow-emerald-200/60 ring-2 ring-emerald-200/80 rounded-3xl border-emerald-200/80 bg-gradient-to-br from-emerald-50 to-white">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-2xl font-black text-slate-900 mb-2">Ready to Launch?</h3>
+                <p className="text-sm text-slate-600">Send SMS or email blasts to your ambassadors instantly</p>
+              </div>
+              <div>
+                <StartCampaignCTA />
+              </div>
+            </div>
+          </Card>
+
           <CRMIntegrationTab
             customers={safeCustomers}
             siteUrl={siteUrl}
@@ -1384,6 +1440,7 @@ export default async function Dashboard() {
                       ambassadors={safeCustomers.map((c) => ({
                         id: c.id,
                         name: c.name,
+                        referral_code: c.referral_code,
                       }))}
                       addManualReferralAction={addManualReferral}
                     />
