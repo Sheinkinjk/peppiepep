@@ -28,6 +28,7 @@ import {
   Upload,
   Mail,
 } from "lucide-react";
+import { CustomReferralPageGuide } from "@/components/CustomReferralPageGuide";
 
 type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
 
@@ -35,6 +36,7 @@ type CRMIntegrationTabProps = {
   customers: CustomerRow[];
   siteUrl: string;
   businessName: string;
+  businessId: string;
   discountCaptureSecret?: string | null;
 };
 
@@ -42,6 +44,7 @@ export function CRMIntegrationTab({
   customers,
   siteUrl,
   businessName,
+  businessId,
   discountCaptureSecret,
 }: CRMIntegrationTabProps) {
   const normalizedSite =
@@ -644,6 +647,8 @@ export function CRMIntegrationTab({
           </p>
         )}
       </Card>
+
+      <CustomReferralPageGuide siteUrl={normalizedSite} businessId={businessId} />
 
       <div className="rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50/80 p-6 text-sm text-slate-600">
         <div className="flex items-start gap-3">

@@ -1136,6 +1136,7 @@ export default async function Dashboard() {
             customers={safeCustomers}
             siteUrl={siteUrl}
             businessName={business.name || "Your Business"}
+            businessId={business.id}
             discountCaptureSecret={business.discount_capture_secret ?? null}
           />
         </TabsContent>
