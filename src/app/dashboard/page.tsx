@@ -27,6 +27,7 @@ import { StartCampaignCTA } from "@/components/StartCampaignCTA";
 import { DashboardExplainerDialog } from "@/components/DashboardExplainerDialog";
 import { ManualReferralForm } from "@/components/ManualReferralForm";
 import { CampaignsTable } from "@/components/CampaignsTable";
+import { CampaignAnalyticsDashboard } from "@/components/CampaignAnalyticsDashboard";
 import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
 import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialog";
 import { ReferralsTable } from "@/components/ReferralsTable";
@@ -1145,12 +1146,18 @@ export default async function Dashboard() {
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
                 Campaign control
               </div>
-              <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-3">
+              <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
                 <TabsTrigger
                   value="builder"
                   className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
                 >
                   Launch campaigns
+                </TabsTrigger>
+                <TabsTrigger
+                  value="analytics"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                >
+                  Analytics
                 </TabsTrigger>
                 <TabsTrigger
                   value="history"
@@ -1182,6 +1189,14 @@ export default async function Dashboard() {
                 brandHighlightColor={business.brand_highlight_color ?? null}
                 brandTone={business.brand_tone ?? null}
                 uploadLogoAction={uploadLogo}
+              />
+            </TabsContent>
+
+            <TabsContent value="analytics" className="space-y-6">
+              <CampaignAnalyticsDashboard
+                campaigns={campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]}
+                referrals={safeReferrals}
+                eventStats={campaignEventStats}
               />
             </TabsContent>
 
