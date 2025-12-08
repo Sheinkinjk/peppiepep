@@ -34,6 +34,7 @@ import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
 import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialog";
 import { ReferralsTable } from "@/components/ReferralsTable";
 import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingChecklist";
+import { Step2Explainer, Step3Explainer, Step4Explainer, Step5Explainer } from "@/components/StepExplainers";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
@@ -1077,6 +1078,7 @@ export default async function Dashboard() {
       status: hasCustomers ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
+          <Step2Explainer />
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
             <ImplementationGuideDialog
               siteUrl={siteUrl}
@@ -1110,17 +1112,6 @@ export default async function Dashboard() {
                 </div>
               </div>
               <CSVUploadForm />
-              <div className="mt-6 rounded-xl bg-purple-50 p-4 border border-purple-200">
-                <p className="text-sm font-semibold text-purple-900 mb-2">
-                  💡 Pro tip
-                </p>
-                <p className="text-sm text-purple-700">
-                  Include <span className="font-mono bg-white px-2 py-0.5 rounded">name</span>,{" "}
-                  <span className="font-mono bg-white px-2 py-0.5 rounded">phone</span>, and{" "}
-                  <span className="font-mono bg-white px-2 py-0.5 rounded">email</span> columns.
-                  We&apos;ll create unique referral links for each contact.
-                </p>
-              </div>
             </Card>
 
             <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95" data-quick-add>
@@ -1141,39 +1132,6 @@ export default async function Dashboard() {
               <h3 className="text-xl font-black text-slate-900 mb-2">
                 All Customers ({safeCustomers.length})
               </h3>
-              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
-                <p className="text-sm font-semibold text-slate-900 mb-3">Status Guide:</p>
-                <div className="grid gap-2 sm:grid-cols-3 text-xs">
-                  <div className="flex items-start gap-2">
-                    <div className="h-2 w-2 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></div>
-                    <div>
-                      <p className="font-semibold text-slate-900">Pending</p>
-                      <p className="text-slate-600">Newly added</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="h-2 w-2 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0"></div>
-                    <div>
-                      <p className="font-semibold text-slate-900">Verified</p>
-                      <p className="text-slate-600">Email/phone confirmed</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></div>
-                    <div>
-                      <p className="font-semibold text-slate-900">Active</p>
-                      <p className="text-slate-600">Has earned credits</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-4 mt-4">
-                <p className="text-sm font-semibold text-emerald-900 mb-2">💰 Credits:</p>
-                <p className="text-xs text-emerald-800">
-                  Use "Adjust Credits" to reward ambassadors. Credits appear in their portal and in Measure ROI stats.
-                </p>
-              </div>
             </div>
             <CustomersTable
               initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
@@ -1195,6 +1153,7 @@ export default async function Dashboard() {
       status: totalCampaignsSent > 0 ? "complete" : hasCustomers ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
+          <Step3Explainer />
           <Card className="p-6 sm:p-8 shadow-xl shadow-emerald-200/60 ring-2 ring-emerald-200/80 rounded-3xl border-emerald-200/80 bg-gradient-to-br from-emerald-50 to-white">
             <div className="flex items-center justify-between">
               <div>
@@ -1248,7 +1207,9 @@ export default async function Dashboard() {
       icon: <Target className="h-5 w-5" />,
       status: totalCampaignsSent > 0 ? "in_progress" : "incomplete",
       content: (
-        <Tabs defaultValue="analytics" className="space-y-6">
+        <div className="space-y-6">
+          <Step4Explainer />
+        <Tabs defaultValue="analytics">
           <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-sm">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
               Campaign insights
@@ -1331,6 +1292,7 @@ export default async function Dashboard() {
             />
           </TabsContent>
         </Tabs>
+        </div>
       ),
       helpText: "Review campaign performance and see which ambassadors are driving the most referrals.",
     },
@@ -1342,7 +1304,9 @@ export default async function Dashboard() {
       icon: <BarChart3 className="h-5 w-5" />,
       status: safeReferrals.length > 0 ? "in_progress" : "incomplete",
       content: (
-        <Tabs defaultValue="referrals" className="space-y-6">
+        <div className="space-y-6">
+          <Step5Explainer />
+        <Tabs defaultValue="referrals">
           <div className="rounded-3xl border border-slate-200/80 bg-white/70 p-2 shadow-inner shadow-slate-200/80">
             <TabsList className="flex flex-wrap gap-2 rounded-2xl bg-slate-100/80 p-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
               <TabsTrigger
@@ -1581,6 +1545,7 @@ export default async function Dashboard() {
             </Card>
           </TabsContent>
         </Tabs>
+        </div>
       ),
       helpText: "Track every referral, monitor ambassador performance, and measure your program's ROI.",
     },

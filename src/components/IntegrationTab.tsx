@@ -2,20 +2,9 @@
 
 import { useState } from "react";
 import {
-  AlertTriangle,
-  CheckCircle2,
   ClipboardList,
   Code2,
-  Gift,
   Globe,
-  LayoutDashboard,
-  Link2,
-  LineChart,
-  MousePointerClick,
-  PlugZap,
-  ShieldCheck,
-  Sparkles,
-  Terminal,
   ChevronDown,
   ChevronRight,
 } from "lucide-react";
@@ -48,251 +37,246 @@ export function IntegrationTab({
   const endpointPreview = `${normalizedSite}/api/discount-codes/redeem`;
   const secretPreview = discountCaptureSecret ?? "<Generate this secret in Program Settings>";
 
-  const statusCards = [
-    {
-      title: "Program identity",
-      description:
-        "Logo, reward copy, and highlight color configured in Program Settings so every referral surface is on-brand.",
-      complete: hasProgramSettings,
-    },
-    {
-      title: "Test ambassador",
-      description:
-        "Create at least one profile via Quick Add so you can copy their referral link and discount word while integrating.",
-      complete: hasCustomers,
-    },
-  ];
-
-  const stepCards = [
-    {
-      title: "1. Lock your referral brand",
-      icon: <Sparkles className="h-5 w-5 text-cyan-500" />,
-      body: [
-        "Open Program Settings in Clients & Ambassadors.",
-        "Add your offer copy, client reward text, and optionally upload a logo.",
-        "Pick a highlight color / tone so emails, referral pages, and QR modules match your visual identity.",
-      ],
-    },
-    {
-      title: "2. Spin up a test ambassador",
-      icon: <ClipboardList className="h-5 w-5 text-emerald-500" />,
-      body: [
-        "Use Quick Add to create an internal profile (e.g., “Integration Tester”).",
-        "Copy their referral URL and discount code—these fuel the next steps.",
-        "Visit /referral?project=<your-project>&code=<CODE> to see the ambassador portal with your brand.",
-      ],
-    },
-    {
-      title: "3. Place the referral surfaces",
-      icon: <Link2 className="h-5 w-5 text-indigo-500" />,
-      body: [
-        "Either embed the hosted referral landing (recommended) or drop the referral CTA button onto your site.",
-        "Link every “Refer a friend” button to the copied referral URL so tracking stays consistent.",
-        "Use the Website Integration card below for iframe + CTA snippets.",
-      ],
-    },
-    {
-      title: "4. Capture discount submissions",
-      icon: <Code2 className="h-5 w-5 text-amber-500" />,
-      body: [
-        "When your checkout or intake form receives the discount word, POST it to the secure endpoint.",
-        "Include the secret header so PeppiePep can attribute the conversion to the correct ambassador.",
-        "Log offline conversions via Performance → Manual Conversion whenever a guest references their code in person.",
-      ],
-    },
-  ];
-
-  const quickNav = [
-    { id: "integration-website", label: "Website & Shopify", description: "Embed + CTA snippets", action: () => setOpenSection('website') },
-    { id: "integration-wordpress", label: "WordPress setup", description: "Page + checkout hooks", action: () => setOpenSection('wordpress') },
-    { id: "integration-discount", label: "Discount capture", description: "API + Shopify", action: () => setOpenSection('discount') },
-    { id: "integration-testing", label: "Pre-flight", description: "QA checklist", action: () => setOpenSection('testing') },
-  ];
-
-  const [openSection, setOpenSection] = useState<string | null>(null);
+  const [openSection, setOpenSection] = useState<string | null>('setup-guide');
 
   return (
-    <div className="space-y-8">
-      {/* Hero */}
-      <section className="rounded-3xl border border-cyan-200/60 bg-gradient-to-br from-[#0abab5] via-[#24d9e2] to-[#0abab5] shadow-[0_18px_60px_rgba(10,171,181,0.25)] p-6 sm:p-8">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-xs uppercase tracking-[0.35em] text-[#0a4b53]/75">
-              Integration Setup
-            </p>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-black text-[#0a4b53]">
-              Connect {businessName || "your studio"} to start tracking referrals
-            </h2>
-            <p className="mt-3 max-w-3xl text-sm sm:text-base text-[#0a4b53]/85">
-              Set up tracking, add your website code, and test before importing customers.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 text-sm text-white/90">
-            {statusCards.map((card) => (
-              <div key={card.title} className="flex items-start gap-3">
-                {card.complete ? (
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-200" />
-                ) : (
-                  <AlertTriangle className="mt-0.5 h-5 w-5 text-amber-200" />
-                )}
-                <div>
-                  <p className="font-semibold">{card.title}</p>
-                  <p className="text-xs text-white/75">{card.description}</p>
+    <div className="space-y-6">
+      {/* Step-by-Step Setup Guide - Expandable */}
+      <Collapsible open={openSection === 'setup-guide'} onOpenChange={(isOpen) => setOpenSection(isOpen ? 'setup-guide' : null)}>
+        <CollapsibleTrigger className="w-full">
+          <div className="rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer">
+            <div className="flex items-center justify-between">
+              <div className="flex items-start gap-4 flex-1 text-left">
+                <div className="rounded-2xl bg-emerald-600 p-3 shadow-lg">
+                  <ClipboardList className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
+                    Complete Integration Guide
+                  </p>
+                  <h2 className="text-2xl font-black text-slate-900 leading-tight mt-1">
+                    How to Connect Your Website & Verify Tracking Works
+                  </h2>
+                  <p className="text-sm text-slate-700 mt-1">
+                    Step-by-step instructions to connect {businessName || "your website"}, test referral links, and confirm everything is working
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quick navigation */}
-      <nav className="rounded-3xl border border-slate-200 bg-white/95 p-4 shadow-sm shadow-slate-200/60">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
-          Quick shortcuts - Click to expand section
-        </p>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {quickNav.map((item) => (
-            <button
-              key={item.id}
-              onClick={item.action}
-              className="group rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-left transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow"
-            >
-              <p className="text-sm font-semibold text-slate-800 group-hover:text-[#0abab5]">{item.label}</p>
-              <p className="text-xs text-slate-500">{item.description}</p>
-            </button>
-          ))}
-        </div>
-      </nav>
-
-      {/* Role-specific guide */}
-      <div className="grid gap-5 lg:grid-cols-2">
-        <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-              <MousePointerClick className="h-6 w-6" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-slate-900">No-code path</h3>
-              <p className="text-sm text-slate-600">
-                For owners and ops teams
-              </p>
+              {openSection === 'setup-guide' ? (
+                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+              )}
             </div>
           </div>
-          <ul className="list-disc space-y-2 pl-5 text-sm text-slate-600">
-            <li>Create a test ambassador to get a real referral link</li>
-            <li>Paste the iframe snippet into your website builder</li>
-            <li>Track activity in <strong>Measure ROI → Journey timeline</strong></li>
-            <li>Log offline bookings via <strong>Measure ROI → Manual referral</strong></li>
-          </ul>
-        </div>
-        <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
-              <Terminal className="h-6 w-6" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-slate-900">Developer setup</h3>
-              <p className="text-sm text-slate-600">
-                For technical implementation
-              </p>
-            </div>
-          </div>
-          <ul className="list-disc space-y-2 pl-5 text-sm text-slate-600">
-            <li>Get <code className="font-mono text-xs">x-pepf-discount-secret</code> from Program Settings</li>
-            <li>POST discount codes to <code className="font-mono text-xs">/api/discount-codes/redeem</code></li>
-            <li>Use <code className="font-mono text-xs">/api/referral-stats</code> for live data</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Data flow explanation */}
-      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/70 space-y-3">
-        <div className="flex items-center gap-3">
-          <div className="h-11 w-11 rounded-2xl bg-slate-900 text-white flex items-center justify-center">
-            <LayoutDashboard className="h-5 w-5" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-slate-900">How tracking works</h3>
-            <p className="text-sm text-slate-600">
-              Link visits, form submissions, and checkouts automatically update your dashboard.
-            </p>
-          </div>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
-            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
-              <Link2 className="h-4 w-4 text-cyan-500" />
-              Link visits
-            </div>
-            <p className="text-xs text-slate-600">Tracks clicks in Track Campaigns and Journey timeline</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
-            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
-              <Gift className="h-4 w-4 text-emerald-500" />
-              Form submissions
-            </div>
-            <p className="text-xs text-slate-600">Creates pending referrals in Measure ROI</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
-            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
-              <PlugZap className="h-4 w-4 text-purple-500" />
-              Checkout redemptions
-            </div>
-            <p className="text-xs text-slate-600">Updates credits and conversion stats</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-3">
-            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-1">
-              <LineChart className="h-4 w-4 text-amber-500" />
-              Manual logging
-            </div>
-            <p className="text-xs text-slate-600">For offline bookings via Manual Referral form</p>
-          </div>
-        </div>
-      </section>
-
-      <div className="grid gap-5 lg:grid-cols-2">
-        {stepCards.map((card) => (
-          <div
-            key={card.title}
-            className="rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-sm shadow-slate-200/60"
-          >
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-2xl bg-slate-100 flex items-center justify-center">
-                {card.icon}
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
+          <div className="rounded-3xl border-2 border-emerald-200 bg-white p-6 sm:p-8 shadow-xl space-y-6">
+            {/* Step 1 */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  1
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-black text-slate-900">Configure Your Program Settings</h3>
+                  <p className="text-sm text-slate-700 mt-1">Before connecting your website, you need to set up your referral program basics.</p>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
+              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Go to Step 2: Clients & Ambassadors</p>
+                  <p className="text-sm text-slate-600 mt-1">Click "Program Settings" button (top right)</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Fill out these required fields:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
+                    <li><strong>Business name:</strong> Your company name</li>
+                    <li><strong>Offer text:</strong> What you're offering (e.g., "Refer a friend and get $25 credit")</li>
+                    <li><strong>Client reward:</strong> What the referrer gets (e.g., "$25 in store credit")</li>
+                    <li><strong>New user reward:</strong> What the referred person gets (e.g., "15% off first visit")</li>
+                    <li><strong>Reward type:</strong> Choose credit, discount, upgrade, or points</li>
+                    <li><strong>Reward amount:</strong> Enter dollar amount (e.g., 25)</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Generate discount capture secret:</p>
+                  <p className="text-sm text-slate-600 mt-1">Click "Generate Secret" in the Website Capture section. <strong>Copy this secret</strong> - you'll need it for Step 4.</p>
+                </div>
+                <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
+                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: Click "Save Changes" - you should see a success message.</p>
+                </div>
+              </div>
             </div>
-            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-slate-600">
-              {card.body.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
 
-      <section
-        id="integration-testing"
-        className="rounded-2xl border border-slate-200/70 bg-white/95 p-5 shadow-lg shadow-slate-200/70 space-y-4 scroll-mt-32"
-      >
-        <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-            <ShieldCheck className="h-5 w-5" />
+            {/* Step 2 */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  2
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-black text-slate-900">Create a Test Ambassador</h3>
+                  <p className="text-sm text-slate-700 mt-1">Create a test profile so you have a real referral link to work with.</p>
+                </div>
+              </div>
+              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">In Step 2: Clients & Ambassadors</p>
+                  <p className="text-sm text-slate-600 mt-1">Find the "Quick Add Customer" card (right side)</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Add a test customer:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
+                    <li><strong>Name:</strong> "Test Ambassador" (or your name)</li>
+                    <li><strong>Email:</strong> Your email address</li>
+                    <li><strong>Phone:</strong> Your phone number (optional)</li>
+                    <li>Click "Add Customer"</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Copy your test link:</p>
+                  <p className="text-sm text-slate-600 mt-1">Scroll to "All Customers" table below. Find your test customer and click "Copy Link". <strong>Save this link</strong> - you'll test it in Step 5.</p>
+                </div>
+                <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
+                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: You should see your test customer in the table with a referral link like <code className="bg-white px-1 rounded">{siteUrl}/r/ABC123DEF456</code></p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  3
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-black text-slate-900">Add Referral Page to Your Website</h3>
+                  <p className="text-sm text-slate-700 mt-1">Embed the referral landing page on your website so customers can refer friends.</p>
+                </div>
+              </div>
+              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Scroll down to "Website & Shopify Integration" section below</p>
+                  <p className="text-sm text-slate-600 mt-1">Click to expand it</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Choose your integration method:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
+                    <li><strong>Iframe embed (recommended):</strong> Copy the iframe code and paste into your website's HTML</li>
+                    <li><strong>Redirect button:</strong> Copy the button code and add to your "Refer a friend" page</li>
+                    <li><strong>WordPress:</strong> Use the WordPress section below for shortcode method</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Where to add the code:</p>
+                  <p className="text-sm text-slate-600 mt-1">Add to your referral page (e.g., yoursite.com/referrals). For Shopify, add a new page and paste the code in the HTML editor. For WordPress, see the WordPress section below.</p>
+                </div>
+                <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
+                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: Visit your referral page - you should see the PeppiePep referral form embedded with your branding.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  4
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-black text-slate-900">Connect Your Checkout (Discount Tracking)</h3>
+                  <p className="text-sm text-slate-700 mt-1">Set up discount code tracking so you know when referrals convert to sales.</p>
+                </div>
+              </div>
+              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">You need your discount capture secret from Step 1</p>
+                  <p className="text-sm text-slate-600 mt-1">If you didn't save it, go back to Program Settings → Website Capture and copy it</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Choose your platform:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-2">
+                    <li><strong>Shopify:</strong> Scroll to "Discount Capture Endpoint" section below and follow the Shopify Flow instructions</li>
+                    <li><strong>WooCommerce:</strong> Scroll to "WordPress & WooCommerce Setup" section below and copy the PHP code into functions.php</li>
+                    <li><strong>Custom checkout:</strong> Use the "Discount Capture Endpoint" section - send a POST request when a discount code is used</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-amber-50 border border-amber-200 p-3">
+                  <p className="text-xs font-semibold text-amber-900">⚠️ Important: Keep your secret secure! Never expose it in client-side code. This must be server-side only.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 5 */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  5
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-black text-slate-900">Test Everything End-to-End</h3>
+                  <p className="text-sm text-slate-700 mt-1">Verify that referral links work, tracking is active, and conversions are recorded.</p>
+                </div>
+              </div>
+              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Test 1: Referral link tracking</p>
+                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
+                    <li>Open your test ambassador's referral link from Step 2</li>
+                    <li>Fill out the referral form with a fake friend's details</li>
+                    <li>Submit the form</li>
+                    <li>Go to <strong>Step 5: Measure ROI → Journey timeline</strong> tab</li>
+                    <li><strong>✓ You should see:</strong> A "link_visit" event and a "signup_submitted" event</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Test 2: Discount code tracking</p>
+                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
+                    <li>Copy the discount code from your test ambassador (in the Customers table)</li>
+                    <li>Go to your checkout page and enter the discount code</li>
+                    <li>Complete a test purchase (or test transaction)</li>
+                    <li>Go to <strong>Step 5: Measure ROI → Referral table</strong></li>
+                    <li><strong>✓ You should see:</strong> A new referral marked as "pending" with the transaction details</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Test 3: Manual referral logging</p>
+                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
+                    <li>Go to <strong>Step 5: Measure ROI → Referral table</strong></li>
+                    <li>Scroll down to "Add Manual Referral" form</li>
+                    <li>Fill out a test offline booking</li>
+                    <li><strong>✓ You should see:</strong> The manual referral appear in the table immediately</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
+                  <p className="text-xs font-semibold text-emerald-900">✓ Everything working? You're ready to import your real customers and launch campaigns!</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Troubleshooting */}
+            <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
+              <h4 className="font-bold text-slate-900 text-sm mb-2">Common Issues & Solutions:</h4>
+              <div className="space-y-2 text-xs text-slate-600">
+                <div>
+                  <p className="font-semibold text-slate-900">Referral link doesn't show my branding:</p>
+                  <p>Go back to Program Settings and make sure you filled out all fields and clicked "Save Changes"</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900">Events not showing in Journey timeline:</p>
+                  <p>Wait 30 seconds and refresh the page. If still not working, check that your referral link includes the correct code</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900">Discount code not tracking:</p>
+                  <p>Verify your discount capture secret is correct and your checkout is sending the POST request. Check browser console for errors</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <p className="text-sm font-bold text-slate-900">Pre-flight testing</p>
-            <p className="text-xs text-slate-600">
-              Run this checklist before inviting ambassadors or uploading CSVs.
-            </p>
-          </div>
-        </div>
-        <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-600">
-          <li>Visit /referral with your test ambassador code and verify every CTA opens your actual site.</li>
-          <li>Submit the referral intake form and confirm the lead appears in the Performance tab.</li>
-          <li>Trigger the discount capture API (sample below) and ensure the conversion logs against your tester.</li>
-          <li>Use Manual Conversion to log an offline booking to confirm payouts post correctly.</li>
-        </ol>
-      </section>
+        </CollapsibleContent>
+      </Collapsible>
+
 
       <Collapsible open={openSection === 'website'} onOpenChange={(isOpen) => setOpenSection(isOpen ? 'website' : null)}>
         <CollapsibleTrigger className="w-full">
