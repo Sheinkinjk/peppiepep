@@ -54,25 +54,23 @@ export async function GET(
       );
     }
 
-    type CustomerWithBusiness = typeof customer & {
-      business: {
-        id: string;
-        name: string | null;
-        offer_text: string | null;
-        client_reward_text: string | null;
-        new_user_reward_text: string | null;
-        reward_type: string | null;
-        reward_amount: number | null;
-        upgrade_name: string | null;
-        reward_terms: string | null;
-        logo_url: string | null;
-        brand_highlight_color: string | null;
-        site_url: string | null;
-      } | null;
-    };
-
-    const typed = customer as CustomerWithBusiness;
-    const business = typed.business;
+    // Type the customer data
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const typed = customer as any;
+    const business = typed.business as {
+      id: string;
+      name: string | null;
+      offer_text: string | null;
+      client_reward_text: string | null;
+      new_user_reward_text: string | null;
+      reward_type: string | null;
+      reward_amount: number | null;
+      upgrade_name: string | null;
+      reward_terms: string | null;
+      logo_url: string | null;
+      brand_highlight_color: string | null;
+      site_url: string | null;
+    } | null;
 
     // Build reward texts
     const rewardAmount = business?.reward_amount || 15;
