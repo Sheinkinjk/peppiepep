@@ -1047,16 +1047,13 @@ export default async function Dashboard() {
           <DashboardSurface variant="hero" className="relative overflow-hidden p-4">
             <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),transparent_65%),radial-gradient(circle_at_bottom,_rgba(255,255,255,0.15),transparent_80%)]" />
             <div className="relative z-10 space-y-3">
-              <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.35em] text-white/75">
-                <Crown className="h-4 w-4 text-[#1de9b6]" />
-                <span>Welcome</span>
-              </div>
-              <div>
+              <div className="flex items-center justify-between">
                 <h1 className="text-xl font-black">Welcome to your growth hacking dashboard</h1>
-                <p className="text-xs text-white/80 mt-2">
-                  Track ambassadors, referrals, and payouts from one control strip.
-                </p>
+                <DashboardExplainerDialog className="ml-3" />
               </div>
+              <p className="text-xs text-white/80">
+                Track ambassadors, referrals, and payouts from one control strip.
+              </p>
               <div className="grid grid-cols-3 gap-3 text-left">
                 <DashboardStat label="Ambassadors" value={safeCustomers.length} />
                 <DashboardStat label="Campaigns sent" value={totalCampaignsSent} />
@@ -1065,16 +1062,13 @@ export default async function Dashboard() {
             </div>
           </DashboardSurface>
 
-          <DashboardSurface variant="card" className="space-y-2 p-4 h-full flex flex-col">
-            <div className="flex justify-end">
-              <DashboardExplainerDialog />
-            </div>
-            <StartCampaignCTA variant="compact" className="flex-1 rounded-2xl border border-slate-100 shadow-inner" />
+          <DashboardSurface variant="card" className="p-4 h-full flex flex-col items-center justify-center">
+            <StartCampaignCTA variant="compact" className="w-full rounded-2xl border border-slate-100 shadow-inner" />
           </DashboardSurface>
         </div>
 
         <Tabs defaultValue={initialTab} className="space-y-6" id="dashboard-tabs">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 p-2 bg-white/95 backdrop-blur-xl shadow-2xl shadow-slate-300/50 ring-1 ring-slate-300/50 rounded-3xl h-auto gap-2">
             <TabsTrigger
               value="integration"
               data-tab-target="integration"
@@ -1093,16 +1087,6 @@ export default async function Dashboard() {
               <span className="sm:hidden">CRM</span>
             </TabsTrigger>
             <TabsTrigger
-              value="campaigns"
-              id="tab-trigger-campaigns"
-              data-tab-target="campaigns"
-              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-600 data-[state=active]:via-pink-600 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
-            >
-              <Rocket className="h-5 w-5 mr-2" />
-              <span className="hidden sm:inline">View Campaigns</span>
-              <span className="sm:hidden">Campaigns</span>
-            </TabsTrigger>
-            <TabsTrigger
               value="clients"
               id="tab-trigger-clients"
               data-tab-target="clients"
@@ -1113,6 +1097,16 @@ export default async function Dashboard() {
               <span className="sm:hidden">Clients</span>
             </TabsTrigger>
             <TabsTrigger
+              value="campaigns"
+              id="tab-trigger-campaigns"
+              data-tab-target="campaigns"
+              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-600 data-[state=active]:via-pink-600 data-[state=active]:to-orange-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+            >
+              <Rocket className="h-5 w-5 mr-2" />
+              <span className="hidden sm:inline">View Campaigns</span>
+              <span className="sm:hidden">Campaigns</span>
+            </TabsTrigger>
+            <TabsTrigger
               value="performance"
               data-tab-target="performance"
               className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-blue-600 data-[state=active]:via-indigo-600 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
@@ -1120,15 +1114,6 @@ export default async function Dashboard() {
               <BarChart3 className="h-5 w-5 mr-2" />
               <span className="hidden sm:inline">Performance</span>
               <span className="sm:hidden">Stats</span>
-            </TabsTrigger>
-            <TabsTrigger
-              value="ai"
-              data-tab-target="ai"
-              className="text-base px-6 py-4 font-black rounded-2xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-fuchsia-600 data-[state=active]:via-purple-600 data-[state=active]:to-indigo-500 data-[state=active]:text-white data-[state=active]:shadow-2xl data-[state=active]:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"
-            >
-              <Zap className="h-5 w-5 mr-2" />
-              <span className="hidden sm:inline">AI Assistance</span>
-              <span className="sm:hidden">AI</span>
             </TabsTrigger>
           </TabsList>
 
@@ -1249,38 +1234,6 @@ export default async function Dashboard() {
             </TabsContent>
           </Tabs>
         </TabsContent>
-
-        <TabsContent value="ai" id="tab-section-ai" className="space-y-6">
-          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80 bg-white/95">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-fuchsia-600 to-purple-600 flex items-center justify-center">
-                  <Zap className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                    AI Assistance
-                  </h2>
-                  <p className="text-sm text-slate-600">
-                    Use AI to generate messages, score ambassadors, and forecast ROI.
-                  </p>
-                </div>
-              </div>
-              <AITools
-                customers={safeCustomers.map((c) => ({
-                  ...c,
-                  phone: c.phone || null,
-                  email: c.email || null,
-                }))}
-                referrals={safeReferrals}
-                businessName={business.name || "Your Business"}
-                offerText={business.offer_text}
-                rewardAmount={business.reward_amount || 0}
-              />
-            </div>
-          </Card>
-        </TabsContent>
-
 
         <TabsContent value="clients" id="tab-section-clients" className="space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
