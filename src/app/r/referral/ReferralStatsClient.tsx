@@ -184,7 +184,7 @@ export default function ReferralStatsClient({
           <h2 className="text-2xl font-black">Access needed</h2>
           <p className="text-sm text-red-100/90">{error}</p>
           <p className="text-xs text-red-100/70">
-            Ask the business owner to regenerate your secure link from the Pepform
+            Ask the business owner to regenerate your secure link from the Refer Labs
             dashboard, or log into the owner dashboard to manage records directly.
           </p>
         </div>

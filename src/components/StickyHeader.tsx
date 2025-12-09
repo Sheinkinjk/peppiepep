@@ -65,9 +65,9 @@ export function StickyHeader() {
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16 text-[#00505B]">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group" aria-label="Pepform home">
+            <Link href="/" className="flex items-center gap-3 group" aria-label="Refer Labs home">
               <PepformLogo className="h-10 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
-              <span className="sr-only">Pepform home</span>
+              <span className="sr-only">Refer Labs home</span>
             </Link>
 
             {/* Desktop Navigation */}

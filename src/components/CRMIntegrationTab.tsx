@@ -768,7 +768,7 @@ export function CRMIntegrationTab({
           <div>
             <p className="font-semibold text-slate-900 mb-2">How Tracking Works Across Integrations</p>
             <p className="leading-relaxed">
-              All exported referral links include UTM tracking parameters (utm_source=crm). When customers click these links from your external CRM campaigns, Pepform automatically logs the visit and attributes conversions to the correct ambassador. Your external system sends campaigns, while Pepform handles all tracking, analytics, and payout calculations.
+              All exported referral links include UTM tracking parameters (utm_source=crm). When customers click these links from your external CRM campaigns, Refer Labs automatically logs the visit and attributes conversions to the correct ambassador. Your external system sends campaigns, while Refer Labs handles all tracking, analytics, and payout calculations.
             </p>
           </div>
         </div>

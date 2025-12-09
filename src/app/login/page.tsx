@@ -270,7 +270,7 @@ function LoginContent() {
   return (
     <main
       className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
-      aria-label="Pepform account access"
+      aria-label="Refer Labs account access"
     >
       <div className="w-full max-w-5xl">
         <div className="text-center mb-8">
@@ -278,7 +278,7 @@ function LoginContent() {
             Join the referral revolution
           </h1>
           <p className="text-lg text-slate-600">
-            180+ businesses growing on autopilot with Pepform
+            180+ businesses growing on autopilot with Refer Labs
           </p>
         </div>
 
@@ -347,7 +347,7 @@ function LoginContent() {
                 <div className="flex items-center gap-2 mb-4">
                   <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">Pepform</p>
+                    <p className="text-sm font-semibold text-slate-900">Refer Labs</p>
                     <p className="text-xs text-slate-500">Cloud account</p>
                   </div>
                 </div>
@@ -358,7 +358,7 @@ function LoginContent() {
                 <p className="text-sm text-slate-600 mb-6">
                   {isSignUp
                     ? "Full cloud access with SMS automation"
-                    : "Access your Pepform dashboard"}
+                    : "Access your Refer Labs dashboard"}
                 </p>
               </div>
 

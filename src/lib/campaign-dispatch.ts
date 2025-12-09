@@ -386,7 +386,7 @@ async function sendEmailMessage(
       ? configuredFrom
       : "onboarding@resend.dev";
   const businessName =
-    record.business?.name || campaignSnapshot.name || "Pepform";
+    record.business?.name || campaignSnapshot.name || "Refer Labs";
   const businessEmail =
     fallbackFromEmail.includes("<") && fallbackFromEmail.includes(">")
       ? fallbackFromEmail

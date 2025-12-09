@@ -17,7 +17,7 @@ const referralPillars = [
     number: "02",
     title: "VIP incentives that feel on-brand",
     copy:
-      "Pepform issues wallet cards, QR lounges, and luxury-grade perks automatically so the experience feels bespoke—never like a generic promo code blast.",
+      "Refer Labs issues wallet cards, QR lounges, and luxury-grade perks automatically so the experience feels bespoke—never like a generic promo code blast.",
     highlight: "Bespoke perks auto-issued",
     highlightColor: "text-blue-600",
     chipBg: "bg-emerald-50 text-emerald-600",
@@ -26,7 +26,7 @@ const referralPillars = [
     number: "03",
     title: "CRM imports become referral fuel",
     copy:
-      "Upload spreadsheets or sync a CRM export and Pepform immediately assigns links, discount words, and share kits for every contact without manual ops.",
+      "Upload spreadsheets or sync a CRM export and Refer Labs immediately assigns links, discount words, and share kits for every contact without manual ops.",
     highlight: "Millions of contacts supported",
     highlightColor: "text-slate-500",
     chipBg: "bg-sky-50 text-sky-600",

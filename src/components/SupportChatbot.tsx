@@ -17,7 +17,7 @@ const INITIAL_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hey! I'm the Pepform concierge. Curious about fees, referral code limits, or how we run VIP campaigns? Ask anything and I’ll map out the plan or line up a demo for you.",
+    "Hey! I'm the Refer Labs concierge. Curious about fees, referral code limits, or how we run VIP campaigns? Ask anything and I'll map out the plan or line up a demo for you.",
 };
 
 const SUGGESTIONS = [
@@ -122,8 +122,8 @@ export function SupportChatbot() {
           isOpen && "translate-y-1 opacity-90",
         )}
         aria-expanded={isOpen}
-        aria-controls="pepform-chatbot-panel"
-        aria-label={isOpen ? "Hide Pepform concierge chat" : "Open Pepform concierge chat"}
+        aria-controls="referlabs-chatbot-panel"
+        aria-label={isOpen ? "Hide Refer Labs concierge chat" : "Open Refer Labs concierge chat"}
       >
         <MessageCircle className="h-5 w-5 text-[#013136]" />
         <span className="hidden sm:inline font-bold">Speak with us</span>
@@ -132,10 +132,10 @@ export function SupportChatbot() {
       {/* Chat Panel */}
       {isOpen && (
         <div
-          id="pepform-chatbot-panel"
+          id="referlabs-chatbot-panel"
           className="fixed bottom-24 right-4 z-50 w-[92vw] max-w-md rounded-3xl border border-white/50 bg-white/95 p-4 shadow-2xl shadow-[#003c41]/20 backdrop-blur-xl sm:bottom-32 sm:right-8"
           role="dialog"
-          aria-label="Pepform chatbot dialog"
+          aria-label="Refer Labs chatbot dialog"
         >
           <div className="flex items-center justify-between rounded-2xl bg-gradient-to-r from-[#002d32] to-[#04606b] px-4 py-3 text-white">
             <div className="flex items-center gap-3">
@@ -143,7 +143,7 @@ export function SupportChatbot() {
                 <Bot className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold">Pepform Concierge (Beta)</p>
+                <p className="text-sm font-semibold">Refer Labs Concierge (Beta)</p>
                 <p className="text-xs text-white/80">Ask anything. I respond in seconds.</p>
               </div>
             </div>

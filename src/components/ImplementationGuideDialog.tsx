@@ -95,7 +95,7 @@ export function ImplementationGuideDialog({
                   2. Wire discount codes into your checkout
                 </h3>
                 <p className="text-sm text-slate-600">
-                  Capture the word ambassadors share and send it back to PeppiePep so conversions are
+                  Capture the word ambassadors share and send it back to Refer Labs so conversions are
                   logged automatically.
                 </p>
               </div>

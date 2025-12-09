@@ -506,7 +506,7 @@ export default async function Dashboard() {
             from:
               resendFrom.includes("<") && resendFrom.includes(">")
                 ? resendFrom
-                : `${business.name || "Pepform"} <${resendFrom}>`,
+                : `${business.name || "Refer Labs"} <${resendFrom}>`,
             to: ambassadorEmail,
             subject: "A referral just completed",
             html: `<!doctype html><html><body style="font-family:Arial,sans-serif;background:#f5f5f5;padding:32px"><div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:24px;padding:32px;border:1px solid #e2e8f0"><p style="font-size:18px;font-weight:bold;margin-bottom:16px">Congrats ${
@@ -518,7 +518,7 @@ export default async function Dashboard() {
                 ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
                 : `${baseSiteUrl}/r/referral`
             }" style="display:inline-block;margin-top:20px;background:#0f172a;color:#ffffff;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600">View my portal</a></div><p style="text-align:center;font-size:12px;color:#94a3b8;margin-top:16px">Sent by ${
-              business.name || "Pepform"
+              business.name || "Refer Labs"
             } • ${baseSiteUrl.replace(/^https?:\/\//, "")}</p></body></html>`,
             text: `A referral just completed! Visit your portal to see the reward: ${
               ambassadorReferralCode

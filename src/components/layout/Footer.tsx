@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[#00838F] to-[#4DD0E1] shadow-md" />
           <div>
-            <p className="text-sm font-semibold text-[#0E2B31]">Pepform</p>
+            <p className="text-sm font-semibold text-[#0E2B31]">Refer Labs</p>
             <p className="text-xs text-[#5B6B70]">Referrals that compound</p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="text-xs text-[#4A5B5E]">
-        © 2024 Pepform. All rights reserved. Built for service businesses in Australia.
+        © 2024 Refer Labs. All rights reserved. Built for service businesses in Australia.
       </p>
     </footer>
   );

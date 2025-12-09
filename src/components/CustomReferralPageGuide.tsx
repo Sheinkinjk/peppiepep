@@ -183,7 +183,7 @@ export function ReferralPage() {
 }`,
 
     apiEndpoint: `// Example API endpoint to fetch ambassador data
-// This is already built into Pepform - you don't need to create this
+// This is already built into Refer Labs - you don't need to create this
 
 // GET ${normalizedSiteUrl}/api/ambassadors/:code
 // Returns:
@@ -224,13 +224,13 @@ export function ReferralPage() {
 
     wordpressPlugin: `<?php
 /**
- * Plugin Name: Pepform Referral Integration
- * Description: Display personalized referral pages using Pepform API
+ * Plugin Name: Refer Labs Referral Integration
+ * Description: Display personalized referral pages using Refer Labs API
  * Version: 1.0
  */
 
-// Shortcode: [pepform_referral code="REFERRAL_CODE"]
-function pepform_referral_shortcode($atts) {
+// Shortcode: [referlabs_referral code="REFERRAL_CODE"]
+function referlabs_referral_shortcode($atts) {
     $atts = shortcode_atts(array(
         'code' => '',
     ), $atts);
@@ -251,7 +251,7 @@ function pepform_referral_shortcode($atts) {
 
     ob_start();
     ?>
-    <div class="pepform-referral">
+    <div class="referlabs-referral">
         <h2>You've Been Invited by <?php echo esc_html($data['name']); ?>!</h2>
         <div class="referral-offer">
             <p><?php echo esc_html($data['offerText']); ?></p>
@@ -275,14 +275,14 @@ function pepform_referral_shortcode($atts) {
     }
     </script>
     <style>
-    .pepform-referral { padding: 20px; background: #f9f9f9; border-radius: 8px; }
+    .referlabs-referral { padding: 20px; background: #f9f9f9; border-radius: 8px; }
     .referral-link input { width: 100%; padding: 8px; margin: 8px 0; }
     .discount-code .code { font-size: 24px; font-weight: bold; color: #0abab5; }
     </style>
     <?php
     return ob_get_clean();
 }
-add_shortcode('pepform_referral', 'pepform_referral_shortcode');`,
+add_shortcode('referlabs_referral', 'referlabs_referral_shortcode');`,
 
     webhookTracking: `// Track conversion events when a purchase is completed
 // This should be called from your checkout/booking system
@@ -395,28 +395,28 @@ trackConversion('SARAH50', 150.00);`,
       id: "overview",
       title: "Overview: Building Custom Referral Pages",
       icon: <Globe className="h-5 w-5" />,
-      description: "Understand how Pepform's referral system works and what you can customize",
+      description: "Understand how Refer Labs's referral system works and what you can customize",
       subsections: [
         {
-          title: "How Pepform Referral Pages Work",
+          title: "How Refer Labs Referral Pages Work",
           content: (
             <div className="space-y-3 text-sm text-slate-700">
               <p>
-                Pepform provides hosted referral pages at <code className="bg-slate-100 px-1 rounded">{normalizedSiteUrl}/r/[CODE]</code>, but you can build completely custom pages on your own domain that integrate with Pepform's backend.
+                Refer Labs provides hosted referral pages at <code className="bg-slate-100 px-1 rounded">{normalizedSiteUrl}/r/[CODE]</code>, but you can build completely custom pages on your own domain that integrate with Refer Labs's backend.
               </p>
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <p className="font-semibold text-blue-900 mb-2">The Referral Flow:</p>
                 <ol className="list-decimal list-inside space-y-1 text-blue-900">
                   <li>Ambassador shares their unique code (e.g., SARAH2024)</li>
                   <li>Friend visits your custom page with that code</li>
-                  <li>Your page fetches ambassador data from Pepform API</li>
+                  <li>Your page fetches ambassador data from Refer Labs API</li>
                   <li>Friend sees personalized referral link, discount code, and rewards</li>
-                  <li>Friend submits contact info (tracked in Pepform)</li>
+                  <li>Friend submits contact info (tracked in Refer Labs)</li>
                   <li>Friend completes purchase with discount code</li>
-                  <li>Pepform automatically credits the ambassador</li>
+                  <li>Refer Labs automatically credits the ambassador</li>
                 </ol>
               </div>
-              <p className="font-semibold text-slate-900">What You Get From Pepform:</p>
+              <p className="font-semibold text-slate-900">What You Get From Refer Labs:</p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Unique referral codes for each ambassador</li>
                 <li>Unique discount codes for tracking conversions</li>

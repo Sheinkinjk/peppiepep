@@ -21,8 +21,8 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Join Our Partner Program | PeppiePep",
-  description: "Earn 25% recurring revenue by referring businesses to PeppiePep. Get $250 off your first month when you join our exclusive partner program.",
+  title: "Join Our Partner Program | Refer Labs",
+  description: "Earn 25% recurring revenue by referring businesses to Refer Labs. Get $250 off your first month when you join our exclusive partner program.",
 };
 
 async function submitPartnerApplication(formData: FormData) {
@@ -41,7 +41,7 @@ async function submitPartnerApplication(formData: FormData) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'PeppiePep Partner Program <noreply@peppiepep.com>',
+        from: 'Refer Labs Partner Program <noreply@referlabs.com>',
         to: ['jarredkrowitz@gmail.com'],
         subject: `🎉 New Partner Application: ${name}`,
         html: `

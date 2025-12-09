@@ -173,7 +173,7 @@ export function IntegrationTab({
                   <p className="text-sm text-slate-600 mt-1">Add to your referral page (e.g., yoursite.com/referrals). For Shopify, add a new page and paste the code in the HTML editor. For WordPress, see the WordPress section below.</p>
                 </div>
                 <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
-                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: Visit your referral page - you should see the PeppiePep referral form embedded with your branding.</p>
+                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: Visit your referral page - you should see the Refer Labs referral form embedded with your branding.</p>
                 </div>
               </div>
             </div>
