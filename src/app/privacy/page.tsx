@@ -124,8 +124,8 @@ export default function Privacy() {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">11. Contact Us</h2>
               <p className="text-slate-600">
                 If you have questions about this Privacy Policy, please contact us at{" "}
-                <a href="mailto:jarredkrowitz@gmail.com" className="text-purple-700 hover:underline">
-                  jarredkrowitz@gmail.com
+                <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">
+                  jarred@referlabs.com.au
                 </a>
               </p>
             </div>

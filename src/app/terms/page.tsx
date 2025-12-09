@@ -425,7 +425,7 @@ export default function Terms() {
               </p>
               <div className="bg-purple-50 p-4 rounded-lg">
                 <p className="text-slate-700 font-semibold">Refer Labs Pty Ltd</p>
-                <p className="text-slate-700">Email: <a href="mailto:jarredkrowitz@gmail.com" className="text-purple-700 hover:underline">jarredkrowitz@gmail.com</a></p>
+                <p className="text-slate-700">Email: <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a></p>
                 <p className="text-slate-700">Website: <a href="https://referlabs.com.au" className="text-purple-700 hover:underline">referlabs.com.au</a></p>
               </div>
             </div>

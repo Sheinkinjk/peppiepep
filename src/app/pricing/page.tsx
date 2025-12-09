@@ -52,11 +52,11 @@ export default function Pricing() {
           </h1>
 
           <p className="max-w-3xl text-xl sm:text-2xl leading-relaxed text-purple-100 mx-auto font-medium">
-            Pepform are your partner in optimising the next phase of your marketing and sales strategy
+            Refer Labs are your partner in optimising the next phase of your marketing and sales strategy
           </p>
 
           <div className="rounded-3xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-200 border border-amber-400/30 px-8 py-5 text-base font-bold shadow-2xl shadow-amber-500/10 ring-1 ring-amber-300/20 backdrop-blur-xl">
-            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarredkrowitz@gmail.com" className="underline text-amber-100 hover:text-white transition-colors">jarredkrowitz@gmail.com</a> with any questions.
+            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarred@referlabs.com.au" className="underline text-amber-100 hover:text-white transition-colors">jarred@referlabs.com.au</a> with any questions.
           </div>
         </div>
 
@@ -368,7 +368,7 @@ export default function Pricing() {
                   <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
                 <p className="mt-4 text-base text-purple-200 leading-relaxed">
-                  Try Pepform with complete confidence. If you’re not delighted within 30 days, simply contact us and we’ll refund your subscription—no questions asked.
+                  Try Refer Labs with complete confidence. If you're not delighted within 30 days, simply contact us and we'll refund your subscription—no questions asked.
                 </p>
               </details>
 

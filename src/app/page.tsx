@@ -108,7 +108,7 @@ const referralNumbers = [
   },
   {
     value: "5 Minutes",
-    title: "To Launch With Pepform",
+    title: "To Launch With Refer Labs",
     copy:
       "No coding. No complexity. Turn on your referral program and let your customers become your growth engine.",
     gradient: "from-white/95 to-indigo-50/95",

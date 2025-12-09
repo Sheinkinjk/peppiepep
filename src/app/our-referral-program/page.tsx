@@ -32,7 +32,7 @@ async function submitPartnerApplication(formData: FormData) {
   const email = formData.get('email') as string;
   const phone = formData.get('phone') as string;
 
-  // Send notification email to jarredkrowitz@gmail.com
+  // Send notification email to jarred@referlabs.com.au
   try {
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -42,7 +42,7 @@ async function submitPartnerApplication(formData: FormData) {
       },
       body: JSON.stringify({
         from: 'Refer Labs Partner Program <noreply@referlabs.com>',
-        to: ['jarredkrowitz@gmail.com'],
+        to: ['jarred@referlabs.com.au'],
         subject: `🎉 New Partner Application: ${name}`,
         html: `
           <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto;">

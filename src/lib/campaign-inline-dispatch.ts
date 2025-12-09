@@ -90,7 +90,7 @@ export async function dispatchCampaignMessagesInline({
           siteUrl;
 
         const { html, text } = await buildCampaignEmail({
-          businessName: business.name || "Pepform",
+          businessName: business.name || "Refer Labs",
           siteUrl,
           campaignName: (campaign.name as string | null) || "Private invitation",
           textBody: record.message_body ?? "",
@@ -112,9 +112,9 @@ export async function dispatchCampaignMessagesInline({
           from:
             resendFromEmail.includes("<") && resendFromEmail.includes(">")
               ? resendFromEmail
-              : `${business.name || "Pepform"} <${resendFromEmail}>`,
+              : `${business.name || "Refer Labs"} <${resendFromEmail}>`,
           to: record.to_address ?? "",
-          subject: (campaign.name as string | null) || business.name || "Pepform",
+          subject: (campaign.name as string | null) || business.name || "Refer Labs",
           html,
           text,
           ...(process.env.RESEND_REPLY_TO ? { reply_to: process.env.RESEND_REPLY_TO } : {}),

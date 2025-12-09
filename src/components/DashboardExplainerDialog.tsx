@@ -33,7 +33,7 @@ const TAB_DETAILS = [
       },
       {
         title: "Install Discount Capture",
-        description: "Add the discount capture webhook to your checkout/booking system. This reports when a discount code is used so Pepform can credit the right ambassador.",
+        description: "Add the discount capture webhook to your checkout/booking system. This reports when a discount code is used so Refer Labs can credit the right ambassador.",
       },
       {
         title: "Test the Flow",
@@ -57,7 +57,7 @@ const TAB_DETAILS = [
       },
       {
         title: "Set Up Conversion Webhooks (Advanced)",
-        description: "Use the secure API endpoint to POST conversion data back to Pepform when transactions happen in your CRM, keeping payouts in sync.",
+        description: "Use the secure API endpoint to POST conversion data back to Refer Labs when transactions happen in your CRM, keeping payouts in sync.",
       },
       {
         title: "Automate Referral Campaigns",
@@ -73,7 +73,7 @@ const TAB_DETAILS = [
     steps: [
       {
         title: "Import Your Customer Base",
-        description: "Upload a CSV with name, email, and phone columns. Pepform instantly generates unique referral codes and discount codes for each person.",
+        description: "Upload a CSV with name, email, and phone columns. Refer Labs instantly generates unique referral codes and discount codes for each person.",
       },
       {
         title: "Quick Add VIP Customers",

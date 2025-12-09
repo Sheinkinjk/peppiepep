@@ -183,7 +183,7 @@ function LoginContent() {
     return (
       <main
         className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
-        aria-label="Pepform onboarding form"
+        aria-label="Refer Labs onboarding form"
       >
         <Card className="relative w-full max-w-2xl overflow-hidden border border-white/60 bg-white/80 p-8 shadow-2xl shadow-purple-100 backdrop-blur">
           <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl" />
@@ -333,7 +333,7 @@ function LoginContent() {
                 </Link>
               </Button>
               <p className="text-center text-xs text-slate-500">
-                Prefer email? <a className="font-semibold text-purple-700" href="mailto:jarredkrowitz@gmail.com">jarredkrowitz@gmail.com</a>
+                Prefer email? <a className="font-semibold text-purple-700" href="mailto:jarred@referlabs.com.au">jarred@referlabs.com.au</a>
               </p>
             </div>
           </Card>

@@ -20,7 +20,7 @@ export default function Contact() {
 
         <div className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto w-full">
           <a
-            href="mailto:jarredkrowitz@gmail.com"
+            href="mailto:jarred@referlabs.com.au"
             className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 mb-4">
@@ -31,7 +31,7 @@ export default function Contact() {
               Send us an email and we will get back to you within 24 hours.
             </p>
             <div className="font-semibold text-purple-700 group-hover:underline">
-              jarredkrowitz@gmail.com →
+              jarred@referlabs.com.au →
             </div>
           </a>
 

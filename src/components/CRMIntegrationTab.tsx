@@ -135,7 +135,7 @@ export function CRMIntegrationTab({
     {
       number: 4,
       title: "Send & Track Automatically",
-      description: "Send your campaign through your CRM. Every click is automatically tracked in Pepform via UTM parameters. When customers convert using the discount codes, Pepform credits the correct ambassador—no manual work required.",
+      description: "Send your campaign through your CRM. Every click is automatically tracked in Refer Labs via UTM parameters. When customers convert using the discount codes, Refer Labs credits the correct ambassador—no manual work required.",
       icon: <ShieldCheck className="h-5 w-5 text-cyan-600" />,
     },
   ];
@@ -157,7 +157,7 @@ export function CRMIntegrationTab({
     {
       name: "Zapier",
       icon: <Zap className="h-6 w-6 text-orange-600" />,
-      description: "Connect Pepform with 5,000+ apps through Zapier automations",
+      description: "Connect Refer Labs with 5,000+ apps through Zapier automations",
       features: [
         "No-code workflow automation",
         "Trigger actions when referrals convert",
@@ -339,10 +339,10 @@ export function CRMIntegrationTab({
               Integration Hub
             </p>
             <h2 className="text-2xl sm:text-3xl font-black leading-tight">
-              Connect Pepform with Your Entire Tech Stack
+              Connect Refer Labs with Your Entire Tech Stack
             </h2>
             <p className="text-sm sm:text-base text-white/90">
-              Export ambassador data, integrate with your CRM, automate workflows, and keep conversion tracking in sync—all while maintaining full analytics in your Pepform dashboard.
+              Export ambassador data, integrate with your CRM, automate workflows, and keep conversion tracking in sync—all while maintaining full analytics in your Refer Labs dashboard.
             </p>
           </div>
         </div>

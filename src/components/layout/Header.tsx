@@ -7,7 +7,7 @@ export default function Header() {
       <Link href="/" className="flex items-center gap-2">
         <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
         <div>
-          <p className="text-sm font-semibold text-slate-900">Pepform</p>
+          <p className="text-sm font-semibold text-slate-900">Refer Labs</p>
           <p className="text-[11px] font-medium uppercase tracking-wide text-purple-700">
             Referrals OS
           </p>
