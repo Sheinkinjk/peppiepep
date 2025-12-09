@@ -112,7 +112,7 @@ export default function ReferralStatsClient({
   const siteUrl =
     typeof window !== "undefined"
       ? window.location.origin
-      : "https://peppiepep.vercel.app";
+      : "https://referlabs.com.au";
   const rewardAmount = customer?.business?.reward_amount ?? 200;
   const offerText =
     customer?.business?.offer_text ??
@@ -239,7 +239,7 @@ export default function ReferralStatsClient({
                     Go to <code className="text-amber-300 font-mono bg-black/20 px-2 py-1 rounded">/r/referral?code=YOURCODE</code> using the code we sent you.
                   </p>
                   <p className="text-xs text-slate-300/70 mt-4 border-t border-white/10 pt-3">
-                    Example: <code className="text-emerald-300 font-mono">https://peppiepep.vercel.app/r/referral?code=ABC123</code>
+                    Example: <code className="text-emerald-300 font-mono">https://referlabs.com.au/r/referral?code=ABC123</code>
                   </p>
                 </div>
               </div>

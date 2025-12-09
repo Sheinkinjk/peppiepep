@@ -93,7 +93,7 @@ export async function GET(
       ensureAbsoluteUrl(business?.site_url) ||
       ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ||
       ensureAbsoluteUrl(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ||
-      "https://peppiepep.vercel.app";
+      "https://referlabs.com.au";
 
     const referralLink = `${siteOrigin}/r/${typed.referral_code}`;
 

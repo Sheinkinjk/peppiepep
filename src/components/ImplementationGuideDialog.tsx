@@ -105,7 +105,7 @@ export function ImplementationGuideDialog({
               the secure endpoint below:
             </p>
             <pre className="rounded-2xl bg-slate-900/95 p-4 text-xs text-slate-100 overflow-x-auto">
-{`POST https://peppiepep.vercel.app/api/discount-codes/redeem
+{`POST https://referlabs.com.au/api/discount-codes/redeem
 Headers:
   x-pepf-discount-secret: ${captureSecretDisplay}
 Body:

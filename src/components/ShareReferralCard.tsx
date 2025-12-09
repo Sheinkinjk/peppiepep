@@ -79,7 +79,7 @@ export function ShareReferralCard({
     if (typeof window !== "undefined") {
       return window.location.origin.replace(/\/$/, "");
     }
-    return "https://peppiepep.vercel.app";
+    return "https://referlabs.com.au";
   }, [siteUrl]);
 
   const selectedCustomer = useMemo(() => {

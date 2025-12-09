@@ -424,9 +424,9 @@ export default function Terms() {
                 For questions, concerns, or notices regarding these Terms, please contact us at:
               </p>
               <div className="bg-purple-50 p-4 rounded-lg">
-                <p className="text-slate-700 font-semibold">Pepform Pty Ltd</p>
+                <p className="text-slate-700 font-semibold">Refer Labs Pty Ltd</p>
                 <p className="text-slate-700">Email: <a href="mailto:jarredkrowitz@gmail.com" className="text-purple-700 hover:underline">jarredkrowitz@gmail.com</a></p>
-                <p className="text-slate-700">Website: <a href="https://peppiepep.vercel.app" className="text-purple-700 hover:underline">peppiepep.vercel.app</a></p>
+                <p className="text-slate-700">Website: <a href="https://referlabs.com.au" className="text-purple-700 hover:underline">referlabs.com.au</a></p>
               </div>
             </div>
 

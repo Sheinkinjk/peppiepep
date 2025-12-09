@@ -37,7 +37,7 @@ function normalizeHref(href: string) {
       return href;
     }
   }
-  return `https://peppiepep.vercel.app${href.startsWith("/") ? href : `/${href}`}`;
+  return `https://referlabs.com.au${href.startsWith("/") ? href : `/${href}`}`;
 }
 
 function normalizeHexColor(value?: string | null, fallback = "#0abab5") {

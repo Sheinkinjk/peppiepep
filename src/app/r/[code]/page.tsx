@@ -206,7 +206,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   const siteOrigin =
     ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
     ensureAbsoluteUrl(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ??
-    "https://peppiepep.vercel.app";
+    "https://referlabs.com.au";
   const resolvedReferralUrl = `${siteOrigin}/r/${customerWithBusiness.referral_code ?? params.code}`;
   const shareMessage = `I can get you ${newUserReward} at ${businessName}. Tap ${resolvedReferralUrl}${
     discountCode ? ` and mention ${discountCode}` : ""

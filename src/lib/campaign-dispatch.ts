@@ -8,7 +8,7 @@ import { buildCampaignEmail } from "@/lib/campaign-email";
 const DEFAULT_BATCH_SIZE = 25;
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://peppiepep.vercel.app");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://referlabs.com.au");
 
 type CampaignMessageRecord = {
   id: string;

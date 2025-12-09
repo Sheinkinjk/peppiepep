@@ -95,7 +95,7 @@ export default function AmbassadorJoinClient({
   const siteUrl =
     typeof window !== "undefined"
       ? window.location.origin
-      : "https://peppiepep.vercel.app";
+      : "https://referlabs.com.au";
 
   const business = customer?.business;
   const businessName = business?.name || "your business";
