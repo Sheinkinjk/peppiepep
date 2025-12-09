@@ -167,7 +167,7 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                 isExpanded ? "max-h-[10000px] opacity-100" : "max-h-0 opacity-0"
               )}
             >
-              <div className="p-6 pt-0 bg-white">
+              <div className="p-6 pt-0 pb-8 bg-gradient-to-b from-white to-slate-50/30">
                 <div className="space-y-6">
                   {step.content}
                 </div>
