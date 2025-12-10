@@ -7,9 +7,19 @@ import {
   Globe,
   ChevronDown,
   ChevronRight,
+  Sparkles,
 } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { WebsiteIntegrationCard } from "@/components/WebsiteIntegrationCard";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
+import type { Database } from "@/types/supabase";
+
+type RewardType =
+  Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
 
 type IntegrationTabProps = {
   siteUrl: string;
@@ -18,8 +28,16 @@ type IntegrationTabProps = {
   clientRewardText?: string | null;
   newUserRewardText?: string | null;
   discountCaptureSecret?: string | null;
+  rewardType?: RewardType;
+  rewardAmount?: number | null;
+  upgradeName?: string | null;
+  rewardTerms?: string | null;
+  logoUrl?: string | null;
+  brandHighlightColor?: string | null;
+  brandTone?: string | null;
   hasProgramSettings: boolean;
   hasCustomers: boolean;
+  updateSettingsAction: (formData: FormData) => Promise<void>;
 };
 
 export function IntegrationTab({
@@ -29,8 +47,16 @@ export function IntegrationTab({
   clientRewardText,
   newUserRewardText,
   discountCaptureSecret,
+  rewardType,
+  rewardAmount,
+  upgradeName,
+  rewardTerms,
+  logoUrl,
+  brandHighlightColor,
+  brandTone,
   hasProgramSettings,
   hasCustomers,
+  updateSettingsAction,
 }: IntegrationTabProps) {
   const normalizedSite =
     siteUrl && siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl || "https://example.com";
@@ -38,6 +64,76 @@ export function IntegrationTab({
   const secretPreview = discountCaptureSecret ?? "<Generate this secret in Program Settings>";
 
   const [openSection, setOpenSection] = useState<string | null>('setup-guide');
+
+  // Program Settings form state
+  const [settingsOfferText, setSettingsOfferText] = useState(offerText ?? "");
+  const [settingsNewUserRewardText, setSettingsNewUserRewardText] = useState(
+    newUserRewardText ?? "",
+  );
+  const [settingsClientRewardText, setSettingsClientRewardText] = useState(
+    clientRewardText ?? "",
+  );
+  const [settingsRewardType, setSettingsRewardType] = useState<RewardType>(
+    rewardType ?? "credit",
+  );
+  const [settingsRewardAmount, setSettingsRewardAmount] = useState<number>(
+    rewardAmount ?? 15,
+  );
+  const [settingsUpgradeName, setSettingsUpgradeName] = useState(
+    upgradeName ?? "",
+  );
+  const [settingsRewardTerms, setSettingsRewardTerms] = useState(
+    rewardTerms ?? "",
+  );
+  const [settingsLogoUrl, setSettingsLogoUrl] = useState(logoUrl ?? "");
+  const [settingsBrandHighlightColor, setSettingsBrandHighlightColor] = useState(
+    brandHighlightColor ?? "#7c3aed",
+  );
+  const [settingsBrandTone, setSettingsBrandTone] = useState(
+    brandTone ?? "modern",
+  );
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setIsSaving(true);
+    const formData = new FormData();
+    formData.append("offer_text", settingsOfferText);
+    formData.append("new_user_reward_text", settingsNewUserRewardText);
+    formData.append("client_reward_text", settingsClientRewardText);
+    formData.append("reward_type", settingsRewardType ?? "credit");
+    formData.append(
+      "reward_amount",
+      String(settingsRewardAmount ?? 0),
+    );
+    formData.append("upgrade_name", settingsUpgradeName);
+    formData.append("reward_terms", settingsRewardTerms);
+    formData.append("logo_url", settingsLogoUrl);
+    formData.append(
+      "brand_highlight_color",
+      settingsBrandHighlightColor ?? "",
+    );
+    formData.append("brand_tone", settingsBrandTone ?? "");
+
+    try {
+      await updateSettingsAction(formData);
+      toast({
+        title: "Program settings saved",
+        description:
+          "Your referral program is now configured. You can proceed to create test ambassadors and verify tracking.",
+      });
+    } catch (error) {
+      console.error("Failed to update program settings:", error);
+      toast({
+        variant: "destructive",
+        title: "Failed to save settings",
+        description: "An unexpected error occurred. Please try again.",
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -81,7 +177,7 @@ export function IntegrationTab({
               </p>
             </div>
 
-            {/* Step 1: Create Program Settings - NEW PROMINENT FIRST STEP */}
+            {/* Step 1: Create Program Settings - EMBEDDED FORM */}
             <div className="space-y-3">
               <div className="rounded-2xl bg-gradient-to-r from-purple-100 to-pink-100 border-2 border-purple-300 p-4">
                 <div className="flex items-start gap-3">
@@ -90,8 +186,8 @@ export function IntegrationTab({
                   </div>
                   <div className="flex-1">
                     <p className="text-xs uppercase tracking-wider text-purple-700 font-bold mb-1">🎯 START HERE - CRITICAL FIRST STEP</p>
-                    <h3 className="text-xl font-black text-slate-900">Create Program Settings</h3>
-                    <p className="text-sm text-slate-700 mt-1 font-semibold">This is the foundation of your referral program. Complete this before anything else.</p>
+                    <h3 className="text-xl font-black text-slate-900">Configure Your Referral Program</h3>
+                    <p className="text-sm text-slate-700 mt-1 font-semibold">Set up your rewards, branding, and offer copy. This powers all referral links and tracking.</p>
                   </div>
                 </div>
               </div>
@@ -99,64 +195,214 @@ export function IntegrationTab({
                 <div className="rounded-xl bg-purple-50 border-2 border-purple-200 p-4">
                   <p className="text-sm font-black text-purple-900 mb-2">Why this matters:</p>
                   <p className="text-sm text-slate-700">
-                    Program Settings define your rewards, offer copy, and branding. Without these configured,
-                    referral links won't display properly and tracking won't work. This is the <strong>core configuration</strong>
-                    that powers everything else.
+                    Without these settings configured, referral links won't display properly and tracking won't work.
+                    This is the <strong>core configuration</strong> that powers everything else. Complete all fields below before proceeding.
                   </p>
                 </div>
-                <div>
-                  <p className="font-bold text-slate-900 text-sm mb-2">📍 Where to find it:</p>
-                  <ul className="list-none text-sm text-slate-700 space-y-1">
-                    <li>→ Click the tab <strong>"Step 2: Add Clients & Ambassadors"</strong> above</li>
-                    <li>→ Look for the <strong>"Program Settings"</strong> button (top right corner)</li>
-                    <li>→ Click it to open the settings dialog</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="font-bold text-slate-900 text-sm mb-2">✏️ Required fields to complete:</p>
-                  <div className="space-y-3">
-                    <div className="rounded-lg bg-white border border-slate-200 p-3">
-                      <p className="font-semibold text-slate-900 text-sm">Business Information:</p>
-                      <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1 ml-2">
-                        <li><strong>Business name:</strong> Your company name (e.g., "Luxe Salon & Spa")</li>
-                        <li><strong>Logo URL:</strong> Optional - URL to your logo image</li>
-                        <li><strong>Brand color:</strong> Optional - Your primary brand color in hex (e.g., #0abab5)</li>
-                      </ul>
+
+                {/* PROGRAM SETTINGS FORM */}
+                <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl bg-white border-2 border-purple-200 p-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="ps_offer_text" className="text-sm font-bold text-slate-900">Public headline / offer *</Label>
+                    <Textarea
+                      id="ps_offer_text"
+                      value={settingsOfferText}
+                      onChange={(e) => setSettingsOfferText(e.target.value)}
+                      placeholder="e.g., Turn your loyalty into $200 each time a friend joins"
+                      className="min-h-[72px] rounded-2xl border-2 border-slate-200"
+                      required
+                    />
+                    <p className="text-xs text-slate-500">This appears on referral pages and in campaigns</p>
+                  </div>
+
+                  <div className="grid gap-4 lg:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="ps_new_user_reward_text" className="text-sm font-bold text-slate-900">New user reward *</Label>
+                      <Textarea
+                        id="ps_new_user_reward_text"
+                        value={settingsNewUserRewardText}
+                        onChange={(e) =>
+                          setSettingsNewUserRewardText(e.target.value)
+                        }
+                        placeholder="e.g., $200 welcome credit or free VIP upgrade"
+                        className="min-h-[90px] rounded-2xl border-2 border-slate-200"
+                        required
+                      />
+                      <p className="text-xs text-slate-500">What the referred friend receives</p>
                     </div>
-                    <div className="rounded-lg bg-white border border-slate-200 p-3">
-                      <p className="font-semibold text-slate-900 text-sm">Reward Configuration:</p>
-                      <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1 ml-2">
-                        <li><strong>Reward type:</strong> credit, discount, upgrade, or points</li>
-                        <li><strong>Reward amount:</strong> Dollar value (e.g., 25 for $25)</li>
-                        <li><strong>Upgrade name:</strong> If using "upgrade" type (e.g., "VIP Membership")</li>
-                      </ul>
+                    <div className="space-y-2">
+                      <Label htmlFor="ps_client_reward_text" className="text-sm font-bold text-slate-900">
+                        Client / ambassador reward *
+                      </Label>
+                      <Textarea
+                        id="ps_client_reward_text"
+                        value={settingsClientRewardText}
+                        onChange={(e) =>
+                          setSettingsClientRewardText(e.target.value)
+                        }
+                        placeholder="e.g., $200 salon credit released once the booking is completed"
+                        className="min-h-[90px] rounded-2xl border-2 border-slate-200"
+                        required
+                      />
+                      <p className="text-xs text-slate-500">What the referrer receives</p>
                     </div>
-                    <div className="rounded-lg bg-white border border-slate-200 p-3">
-                      <p className="font-semibold text-slate-900 text-sm">Customer-Facing Copy:</p>
-                      <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1 ml-2">
-                        <li><strong>Offer text:</strong> Main headline (e.g., "Refer a friend and both get $25 credit!")</li>
-                        <li><strong>Client reward text:</strong> What referrer gets (e.g., "$25 store credit when your friend books")</li>
-                        <li><strong>New user reward text:</strong> What referred friend gets (e.g., "$25 off your first visit")</li>
-                        <li><strong>Reward terms:</strong> Any conditions or fine print</li>
-                      </ul>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    <div className="space-y-2">
+                      <Label htmlFor="ps_reward_type" className="text-sm font-bold text-slate-900">Reward type *</Label>
+                      <select
+                        id="ps_reward_type"
+                        value={settingsRewardType ?? "credit"}
+                        onChange={(e) =>
+                          setSettingsRewardType(
+                            e.target.value as RewardType,
+                          )
+                        }
+                        className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                        required
+                      >
+                        <option value="credit">Credit</option>
+                        <option value="upgrade">Upgrade</option>
+                        <option value="discount">Discount</option>
+                        <option value="points">Points</option>
+                      </select>
                     </div>
-                    <div className="rounded-lg bg-white border border-amber-200 p-3 bg-amber-50">
-                      <p className="font-semibold text-amber-900 text-sm">🔐 Generate Discount Capture Secret:</p>
-                      <p className="text-sm text-slate-700 mt-1">
-                        In the Website Capture section, click <strong>"Generate Secret"</strong>.
-                        Copy and save this secret - you'll need it in Step 5 for checkout integration.
+                    <div className="space-y-2">
+                      <Label htmlFor="ps_reward_amount" className="text-sm font-bold text-slate-900">Reward amount *</Label>
+                      <Input
+                        id="ps_reward_amount"
+                        type="number"
+                        min="0"
+                        step="1"
+                        value={settingsRewardAmount}
+                        onChange={(e) =>
+                          setSettingsRewardAmount(
+                            Number(e.target.value || "0") || 0,
+                          )
+                        }
+                        className="rounded-2xl border-2 border-slate-200"
+                        required
+                      />
+                      <p className="text-[11px] text-slate-500">
+                        For credit/discount/points, enter the numeric amount.
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="ps_upgrade_name" className="text-sm font-bold text-slate-900">Upgrade name</Label>
+                      <Input
+                        id="ps_upgrade_name"
+                        value={settingsUpgradeName}
+                        onChange={(e) => setSettingsUpgradeName(e.target.value)}
+                        placeholder="e.g., Complimentary brow tint"
+                        className="rounded-2xl border-2 border-slate-200"
+                      />
+                      <p className="text-[11px] text-slate-500">
+                        Used when reward type is set to &quot;Upgrade&quot;.
                       </p>
                     </div>
                   </div>
-                </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="ps_logo_url" className="text-sm font-bold text-slate-900">Logo URL (optional)</Label>
+                    <Input
+                      id="ps_logo_url"
+                      type="url"
+                      value={settingsLogoUrl}
+                      onChange={(e) => setSettingsLogoUrl(e.target.value)}
+                      placeholder="https://yourdomain.com/logo.png"
+                      className="rounded-2xl border-2 border-slate-200"
+                    />
+                    <p className="text-[11px] text-slate-500">
+                      Used in email campaigns and referral pages to keep
+                      everything on brand.
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="ps_brand_highlight_color" className="text-sm font-bold text-slate-900">Brand highlight color</Label>
+                      <div className="flex items-center gap-3">
+                        <Input
+                          id="ps_brand_highlight_color"
+                          type="color"
+                          value={settingsBrandHighlightColor || "#7c3aed"}
+                          onChange={(e) =>
+                            setSettingsBrandHighlightColor(e.target.value || "#7c3aed")
+                          }
+                          className="h-10 w-16 cursor-pointer rounded-xl p-1 border-2 border-slate-200"
+                        />
+                        <Input
+                          type="text"
+                          value={settingsBrandHighlightColor}
+                          onChange={(e) => setSettingsBrandHighlightColor(e.target.value)}
+                          placeholder="#7c3aed"
+                          className="flex-1 rounded-2xl border-2 border-slate-200"
+                        />
+                      </div>
+                      <p className="text-[11px] text-slate-500">
+                        Controls gradients, CTA buttons, and referral card accents inside your campaigns.
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="ps_brand_tone" className="text-sm font-bold text-slate-900">Brand tone</Label>
+                      <select
+                        id="ps_brand_tone"
+                        value={settingsBrandTone ?? "modern"}
+                        onChange={(e) => setSettingsBrandTone(e.target.value)}
+                        className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                      >
+                        <option value="modern">Modern &amp; energetic</option>
+                        <option value="luxury">Luxury &amp; editorial</option>
+                        <option value="playful">Playful &amp; bold</option>
+                        <option value="earthy">Earthy &amp; grounded</option>
+                        <option value="minimal">Minimal &amp; clean</option>
+                      </select>
+                      <p className="text-[11px] text-slate-500">
+                        Adjusts typography, backgrounds, and textures to match your brand personality.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="ps_reward_terms" className="text-sm font-bold text-slate-900">
+                      Reward terms &amp; conditions
+                    </Label>
+                    <Textarea
+                      id="ps_reward_terms"
+                      value={settingsRewardTerms}
+                      onChange={(e) => setSettingsRewardTerms(e.target.value)}
+                      placeholder="e.g., Reward paid once referred client completes first booking within 60 days."
+                      className="min-h-[80px] rounded-2xl border-2 border-slate-200"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-200 mt-2">
+                    <div className="flex items-center gap-2 text-xs text-slate-500">
+                      <Sparkles className="h-3 w-3 text-amber-500" />
+                      <span>
+                        Changes apply to referral pages, ambassador portal, and new
+                        campaigns.
+                      </span>
+                    </div>
+                    <Button
+                      type="submit"
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 font-bold shadow-md rounded-full px-6"
+                      disabled={isSaving}
+                    >
+                      {isSaving ? "Saving..." : "Save Program Settings"}
+                    </Button>
+                  </div>
+                </form>
+
                 <div className="rounded-xl bg-emerald-50 border-2 border-emerald-300 p-4">
                   <p className="text-sm font-black text-emerald-900 mb-1">✓ How to verify:</p>
-                  <p className="text-sm text-slate-700">Click "Save Changes" - you should see a success message confirming all settings were saved.</p>
+                  <p className="text-sm text-slate-700">Click "Save Program Settings" above - you should see a success message confirming all settings were saved.</p>
                 </div>
                 <div className="rounded-xl bg-blue-50 border-2 border-blue-200 p-4">
                   <p className="text-sm font-black text-blue-900 mb-2">🚀 Next step:</p>
                   <p className="text-sm text-slate-700">
-                    Once Program Settings are saved, you can proceed to create a test ambassador profile to get your first referral link.
+                    Once Program Settings are saved, proceed to Step 2 below to create a test ambassador profile and get your first referral link.
                   </p>
                 </div>
               </div>
@@ -165,15 +411,20 @@ export function IntegrationTab({
             {/* Step 2 */}
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <div className={`rounded-xl ${hasProgramSettings ? 'bg-emerald-600' : 'bg-slate-300'} text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0`}>
                   2
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Create Test Ambassador Profile</h3>
-                  <p className="text-sm text-slate-700 mt-1">Create a test profile to generate your first referral link for integration testing.</p>
+                  <h3 className={`text-lg font-black ${hasProgramSettings ? 'text-slate-900' : 'text-slate-400'}`}>Create Test Ambassador Profile</h3>
+                  <p className={`text-sm ${hasProgramSettings ? 'text-slate-700' : 'text-slate-500'} mt-1`}>Create a test profile to generate your first referral link for integration testing.</p>
+                  {!hasProgramSettings && (
+                    <div className="mt-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+                      <p className="text-xs font-semibold text-amber-900">⚠️ Complete Step 1 first - Program Settings must be configured before creating ambassadors</p>
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-4 border-emerald-200">
+              <div className={`ml-13 space-y-3 pl-6 border-l-4 border-emerald-200 ${!hasProgramSettings ? 'opacity-50 pointer-events-none' : ''}`}>
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">In Step 2: Clients & Ambassadors</p>
                   <p className="text-sm text-slate-600 mt-1">Find the "Quick Add Customer" card (right side)</p>
@@ -200,15 +451,20 @@ export function IntegrationTab({
             {/* Step 3 */}
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <div className={`rounded-xl ${hasProgramSettings ? 'bg-emerald-600' : 'bg-slate-300'} text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0`}>
                   3
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Embed Referral Page on Your Website</h3>
-                  <p className="text-sm text-slate-700 mt-1">Install the referral landing page so customers can view your offer and refer friends.</p>
+                  <h3 className={`text-lg font-black ${hasProgramSettings ? 'text-slate-900' : 'text-slate-400'}`}>Embed Referral Page on Your Website</h3>
+                  <p className={`text-sm ${hasProgramSettings ? 'text-slate-700' : 'text-slate-500'} mt-1`}>Install the referral landing page so customers can view your offer and refer friends.</p>
+                  {!hasProgramSettings && (
+                    <div className="mt-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+                      <p className="text-xs font-semibold text-amber-900">⚠️ Complete Step 1 first - Program Settings define the content shown on referral pages</p>
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-4 border-emerald-200">
+              <div className={`ml-13 space-y-3 pl-6 border-l-4 border-emerald-200 ${!hasProgramSettings ? 'opacity-50 pointer-events-none' : ''}`}>
                 <div className="rounded-xl bg-blue-50 border border-blue-200 p-3">
                   <p className="text-sm font-black text-blue-900 mb-2">📖 How Referral Pages Work:</p>
                   <p className="text-xs text-blue-800 leading-relaxed">
@@ -244,19 +500,24 @@ export function IntegrationTab({
 
             {/* Step 4: Test Referral Link Tracking */}
             <div className="space-y-3">
-              <div className="rounded-2xl bg-gradient-to-r from-blue-100 to-indigo-100 border-2 border-blue-300 p-4">
+              <div className={`rounded-2xl ${hasProgramSettings ? 'bg-gradient-to-r from-blue-100 to-indigo-100 border-2 border-blue-300' : 'bg-slate-100 border-2 border-slate-300'} p-4`}>
                 <div className="flex items-start gap-3">
-                  <div className="rounded-xl bg-blue-600 text-white font-black text-xl w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className={`rounded-xl ${hasProgramSettings ? 'bg-blue-600' : 'bg-slate-400'} text-white font-black text-xl w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-lg`}>
                     4
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs uppercase tracking-wider text-blue-700 font-bold mb-1">🧪 INTEGRATION TEST #1</p>
-                    <h3 className="text-xl font-black text-slate-900">Test Referral Link Tracking</h3>
-                    <p className="text-sm text-slate-700 mt-1 font-semibold">Verify that link visits and form submissions are being tracked correctly.</p>
+                    <p className={`text-xs uppercase tracking-wider ${hasProgramSettings ? 'text-blue-700' : 'text-slate-500'} font-bold mb-1`}>🧪 INTEGRATION TEST #1</p>
+                    <h3 className={`text-xl font-black ${hasProgramSettings ? 'text-slate-900' : 'text-slate-400'}`}>Test Referral Link Tracking</h3>
+                    <p className={`text-sm ${hasProgramSettings ? 'text-slate-700' : 'text-slate-500'} mt-1 font-semibold`}>Verify that link visits and form submissions are being tracked correctly.</p>
+                    {!hasProgramSettings && (
+                      <div className="mt-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+                        <p className="text-xs font-semibold text-amber-900">⚠️ Complete Step 1 first - Cannot test tracking without Program Settings</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
-              <div className="ml-13 space-y-4 pl-6 border-l-4 border-blue-300">
+              <div className={`ml-13 space-y-4 pl-6 border-l-4 ${hasProgramSettings ? 'border-blue-300' : 'border-slate-300'} ${!hasProgramSettings ? 'opacity-50 pointer-events-none' : ''}`}>
                 <div className="rounded-xl bg-blue-50 border-2 border-blue-200 p-4">
                   <p className="text-sm font-black text-blue-900 mb-2">🎯 What you're testing:</p>
                   <p className="text-sm text-slate-700">
@@ -298,15 +559,20 @@ export function IntegrationTab({
             {/* Step 5 */}
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <div className={`rounded-xl ${hasProgramSettings ? 'bg-emerald-600' : 'bg-slate-300'} text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0`}>
                   5
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Connect Checkout Discount Tracking</h3>
-                  <p className="text-sm text-slate-700 mt-1">Set up discount code tracking so conversions are automatically recorded when customers use referral codes.</p>
+                  <h3 className={`text-lg font-black ${hasProgramSettings ? 'text-slate-900' : 'text-slate-400'}`}>Connect Checkout Discount Tracking</h3>
+                  <p className={`text-sm ${hasProgramSettings ? 'text-slate-700' : 'text-slate-500'} mt-1`}>Set up discount code tracking so conversions are automatically recorded when customers use referral codes.</p>
+                  {!hasProgramSettings && (
+                    <div className="mt-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+                      <p className="text-xs font-semibold text-amber-900">⚠️ Complete Step 1 first - Discount capture secret is generated in Program Settings</p>
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-4 border-emerald-200">
+              <div className={`ml-13 space-y-3 pl-6 border-l-4 border-emerald-200 ${!hasProgramSettings ? 'opacity-50 pointer-events-none' : ''}`}>
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">You need your discount capture secret from Step 1</p>
                   <p className="text-sm text-slate-600 mt-1">If you didn't save it, go back to Program Settings → Website Capture and copy it</p>
@@ -327,19 +593,24 @@ export function IntegrationTab({
 
             {/* Step 6: Test Discount Tracking */}
             <div className="space-y-3">
-              <div className="rounded-2xl bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300 p-4">
+              <div className={`rounded-2xl ${hasProgramSettings ? 'bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300' : 'bg-slate-100 border-2 border-slate-300'} p-4`}>
                 <div className="flex items-start gap-3">
-                  <div className="rounded-xl bg-green-600 text-white font-black text-xl w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className={`rounded-xl ${hasProgramSettings ? 'bg-green-600' : 'bg-slate-400'} text-white font-black text-xl w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-lg`}>
                     6
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs uppercase tracking-wider text-green-700 font-bold mb-1">🧪 INTEGRATION TEST #2</p>
-                    <h3 className="text-xl font-black text-slate-900">Test Discount Code Tracking</h3>
-                    <p className="text-sm text-slate-700 mt-1 font-semibold">Verify that discount code usage is captured and creates referral conversions.</p>
+                    <p className={`text-xs uppercase tracking-wider ${hasProgramSettings ? 'text-green-700' : 'text-slate-500'} font-bold mb-1`}>🧪 INTEGRATION TEST #2</p>
+                    <h3 className={`text-xl font-black ${hasProgramSettings ? 'text-slate-900' : 'text-slate-400'}`}>Test Discount Code Tracking</h3>
+                    <p className={`text-sm ${hasProgramSettings ? 'text-slate-700' : 'text-slate-500'} mt-1 font-semibold`}>Verify that discount code usage is captured and creates referral conversions.</p>
+                    {!hasProgramSettings && (
+                      <div className="mt-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+                        <p className="text-xs font-semibold text-amber-900">⚠️ Complete Step 1 first - Cannot test discount tracking without Program Settings</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
-              <div className="ml-13 space-y-4 pl-6 border-l-4 border-green-300">
+              <div className={`ml-13 space-y-4 pl-6 border-l-4 ${hasProgramSettings ? 'border-green-300' : 'border-slate-300'} ${!hasProgramSettings ? 'opacity-50 pointer-events-none' : ''}`}>
                 <div className="rounded-xl bg-green-50 border-2 border-green-200 p-4">
                   <p className="text-sm font-black text-green-900 mb-2">🎯 What you're testing:</p>
                   <p className="text-sm text-slate-700">

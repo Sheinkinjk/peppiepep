@@ -1063,8 +1063,16 @@ export default async function Dashboard() {
           clientRewardText={business.client_reward_text}
           newUserRewardText={business.new_user_reward_text}
           discountCaptureSecret={business.discount_capture_secret ?? null}
+          rewardType={business.reward_type}
+          rewardAmount={business.reward_amount}
+          upgradeName={business.upgrade_name}
+          rewardTerms={business.reward_terms}
+          logoUrl={business.logo_url ?? null}
+          brandHighlightColor={business.brand_highlight_color ?? null}
+          brandTone={business.brand_tone ?? null}
           hasProgramSettings={hasProgramSettings}
           hasCustomers={hasCustomers}
+          updateSettingsAction={updateSettings}
         />
       ),
       helpText: "Start here: Set up your referral rewards and install the tracking code on your website.",
