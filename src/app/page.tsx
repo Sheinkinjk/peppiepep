@@ -109,48 +109,43 @@ const referralNumbers = [
 
 const heroMoments: {
   id: string;
-  tag: string;
-  title: string;
+  text: string;
+  emoji: string;
   bgGradient: string;
-  accentColor: string;
   position: CSSProperties;
   rotate: string;
 }[] = [
   {
     id: "hero-jenny",
-    tag: "Live Referral",
-    title: "Jenny used your referral link",
-    bgGradient: "from-cyan-50 to-cyan-100",
-    accentColor: "text-cyan-700",
-    position: { top: "5%", left: "-8%", maxWidth: "220px" },
-    rotate: "-rotate-[45deg]",
+    text: "Jenny used your referral link",
+    emoji: "🎉",
+    bgGradient: "from-cyan-400/90 to-cyan-500/90",
+    position: { top: "10%", left: "-5%", maxWidth: "260px" },
+    rotate: "-rotate-[35deg]",
   },
   {
     id: "hero-david",
-    tag: "Order Alert",
-    title: "David made an order",
-    bgGradient: "from-amber-50 to-amber-100",
-    accentColor: "text-amber-700",
-    position: { top: "5%", right: "-8%", maxWidth: "220px" },
-    rotate: "rotate-[45deg]",
+    text: "David made an order",
+    emoji: "🛒",
+    bgGradient: "from-amber-400/90 to-amber-500/90",
+    position: { top: "10%", right: "-5%", maxWidth: "240px" },
+    rotate: "rotate-[35deg]",
   },
   {
     id: "hero-campaign",
-    tag: "Campaign",
-    title: "New Campaign sent to 500 Customers",
-    bgGradient: "from-indigo-50 to-indigo-100",
-    accentColor: "text-indigo-700",
-    position: { bottom: "8%", left: "-8%", maxWidth: "220px" },
-    rotate: "rotate-[45deg]",
+    text: "New Campaign sent to 500 Customers",
+    emoji: "📢",
+    bgGradient: "from-indigo-400/90 to-indigo-500/90",
+    position: { bottom: "10%", left: "-5%", maxWidth: "280px" },
+    rotate: "rotate-[35deg]",
   },
   {
     id: "hero-revenue",
-    tag: "Revenue",
-    title: "$45,500 additional revenue generated",
-    bgGradient: "from-purple-50 to-purple-100",
-    accentColor: "text-purple-700",
-    position: { bottom: "8%", right: "-8%", maxWidth: "220px" },
-    rotate: "-rotate-[45deg]",
+    text: "$45,500 additional revenue generated",
+    emoji: "💰",
+    bgGradient: "from-purple-400/90 to-purple-500/90",
+    position: { bottom: "10%", right: "-5%", maxWidth: "280px" },
+    rotate: "-rotate-[35deg]",
   },
 ];
 
@@ -269,17 +264,12 @@ export default function Home() {
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden xl:flex flex-col gap-2 rounded-xl border-2 border-white/60 bg-gradient-to-br ${moment.bgGradient} backdrop-blur-md px-4 py-3 text-left shadow-2xl shadow-slate-900/10 ${moment.rotate} hover:scale-105 transition-transform duration-300`}
+              className={`hero-floating-card hidden xl:flex items-center gap-3 rounded-full border-2 border-white/80 bg-gradient-to-r ${moment.bgGradient} backdrop-blur-sm px-5 py-2.5 shadow-2xl shadow-slate-900/20 ${moment.rotate} hover:scale-105 transition-all duration-300`}
               style={moment.position}
               aria-hidden
             >
-              <div className="flex items-center gap-2">
-                <div className={`w-2 h-2 rounded-full ${moment.accentColor.replace('text-', 'bg-')} animate-pulse`}></div>
-                <span className={`text-[10px] uppercase tracking-wider font-bold ${moment.accentColor}`}>
-                  {moment.tag}
-                </span>
-              </div>
-              <p className="text-sm font-semibold text-slate-900 leading-snug">{moment.title}</p>
+              <span className="text-sm font-bold text-white drop-shadow-md whitespace-nowrap">{moment.text}</span>
+              <span className="text-xl">{moment.emoji}</span>
             </div>
           ))}
 
