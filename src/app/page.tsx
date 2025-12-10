@@ -123,7 +123,7 @@ const heroMoments: {
     detail: "4 VIP spa treatments reserved, stats updated instantly.",
     bgColor: "bg-cyan-50/95",
     accentColor: "text-cyan-600",
-    position: { top: "4%", left: "-6%" },
+    position: { top: "2%", left: "-8%", maxWidth: "200px" },
   },
   {
     id: "hero-michael",
@@ -132,7 +132,7 @@ const heroMoments: {
     detail: "$2,750 gourmet kit tracked with Refer Labs proof.",
     bgColor: "bg-amber-50/95",
     accentColor: "text-amber-600",
-    position: { top: "18%", right: "-5%" },
+    position: { top: "2%", right: "-8%", maxWidth: "200px" },
   },
   {
     id: "hero-campaign",
@@ -141,7 +141,7 @@ const heroMoments: {
     detail: "SMS + email drips queued for 3PM and ready to deploy.",
     bgColor: "bg-indigo-50/95",
     accentColor: "text-indigo-600",
-    position: { top: "34%", left: "-2%" },
+    position: { top: "50%", left: "-10%", maxWidth: "210px" },
   },
   {
     id: "hero-revenue",
@@ -150,7 +150,7 @@ const heroMoments: {
     detail: "Realtime ledger shows compounding referral payouts.",
     bgColor: "bg-purple-50/95",
     accentColor: "text-purple-600",
-    position: { bottom: "-4%", right: "2%" },
+    position: { bottom: "8%", right: "-9%", maxWidth: "200px" },
   },
   {
     id: "hero-sofia",
@@ -159,45 +159,7 @@ const heroMoments: {
     detail: "5 new guests are seeing the luxury upgrade this weekend.",
     bgColor: "bg-emerald-50/95",
     accentColor: "text-emerald-600",
-    position: { bottom: "-6%", left: "10%" },
-  },
-];
-
-const partnerHighlights = [
-  {
-    id: "highlight-jenny",
-    title: "Jenny used your referral link",
-    detail: "Luxury salon session, 4 VIP seats locked in one click.",
-    badge: "Live referral",
-    gradient: "from-sky-500/80 via-cyan-500/50 to-slate-900/60",
-  },
-  {
-    id: "highlight-michael",
-    title: "Michael made an order",
-    detail: "$2,750 gourmet concierge kit tracked in seconds.",
-    badge: "Conversion alert",
-    gradient: "from-amber-400/80 via-orange-500/60 to-slate-900/60",
-  },
-  {
-    id: "highlight-campaign",
-    title: "Campaign to 500 customers just sent",
-    detail: "SMS + email automations fuel a coordinated launch.",
-    badge: "Campaign",
-    gradient: "from-indigo-500/80 via-violet-500/60 to-slate-900/70",
-  },
-  {
-    id: "highlight-revenue",
-    title: "$45,500 additional revenue generated",
-    detail: "Compounding ambassador payouts tracked in real-time.",
-    badge: "Revenue",
-    gradient: "from-fuchsia-500/70 via-pink-500/50 to-slate-900/80",
-  },
-  {
-    id: "highlight-hubspot",
-    title: "HubSpot deals synced instantly",
-    detail: "Each referral record maps into your CRM workflow.",
-    badge: "Workflow",
-    gradient: "from-emerald-500/70 via-teal-500/40 to-slate-900/60",
+    position: { bottom: "8%", left: "-10%", maxWidth: "210px" },
   },
 ];
 
@@ -303,31 +265,30 @@ const partnerLogos: PartnerLogoSpec[] = [
 
 
 export default function Home() {
-  const repeatedPartnerHighlights = [...partnerHighlights, ...partnerHighlights];
   const repeatedPartnerLogos = [...partnerLogos, ...partnerLogos];
 
   return (
     <div className="aurora tiffany-hero relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(0,131,143,0.12),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(77,208,225,0.18),transparent_35%)]" />
 
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-8 md:px-10 lg:px-16">
+      <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-16 px-4 pb-24 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl relative text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden lg:flex flex-col gap-2 rounded-2xl border border-slate-200/60 ${moment.bgColor} backdrop-blur-sm px-4 py-3 text-left shadow-xl ring-1 ring-slate-100/50`}
+              className={`hero-floating-card hidden xl:flex flex-col gap-1.5 rounded-xl border border-slate-200/60 ${moment.bgColor} backdrop-blur-sm px-3 py-2 text-left shadow-lg ring-1 ring-slate-100/50`}
               style={moment.position}
               aria-hidden
             >
-              <p className={`text-[10px] uppercase tracking-[0.3em] font-semibold ${moment.accentColor}`}>
+              <p className={`text-[9px] uppercase tracking-[0.25em] font-semibold ${moment.accentColor}`}>
                 {moment.tag}
               </p>
-              <p className="text-sm font-bold text-slate-900">
+              <p className="text-xs font-bold text-slate-900 leading-snug">
                 {moment.title}
               </p>
-              <p className="text-xs text-slate-600 leading-relaxed">{moment.detail}</p>
+              <p className="text-[10px] text-slate-600 leading-relaxed">{moment.detail}</p>
             </div>
           ))}
 
@@ -571,63 +532,6 @@ export default function Home() {
               </div>
             </div>
 
-          </div>
-        </section>
-
-        {/* Who We Work With */}
-        <section className="space-y-6 rounded-[32px] border border-slate-200 bg-white/90 px-6 py-10 shadow-xl shadow-slate-200/40">
-          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-slate-500">
-                Who we work with
-              </p>
-              <h3 className="mt-2 text-3xl font-black text-slate-900">
-                Industry leaders rely on Refer Labs
-              </h3>
-            </div>
-            <p className="text-sm text-slate-600 max-w-xl">
-              Every partner sees Refer Labs as the flexible growth control room that keeps
-              their referral network and automation stack in seamless sync.
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-br from-slate-900 to-slate-800 p-5 text-white shadow-2xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(92,225,230,0.25),transparent),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent)]" />
-            <div className="relative z-10">
-              <div className="marquee-scroller">
-                <div className="marquee-track py-2">
-                  {repeatedPartnerHighlights.map((highlight, index) => (
-                    <div
-                      key={`${highlight.id}-${index}`}
-                      className={`min-w-[220px] rounded-3xl border border-white/20 bg-gradient-to-br p-4 text-sm shadow-lg shadow-black/40 ${highlight.gradient}`}
-                    >
-                      <p className="text-[11px] uppercase tracking-[0.3em] text-white/70">
-                        {highlight.badge}
-                      </p>
-                      <p className="mt-3 text-lg font-semibold text-white">
-                        {highlight.title}
-                      </p>
-                      <p className="mt-1 text-xs leading-snug text-white/80">
-                        {highlight.detail}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white/90 px-4 py-4 shadow-lg">
-            <div className="logo-marquee gap-10">
-              {repeatedPartnerLogos.map((logo, index) => (
-                <div
-                  key={`${logo.id}-${index}`}
-                  className="min-w-[220px] flex items-center justify-center px-3"
-                >
-                  {logo.render()}
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

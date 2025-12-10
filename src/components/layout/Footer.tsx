@@ -1,16 +1,13 @@
 import Link from "next/link";
+import { ReferLabsLogo } from "../ReferLabsLogo";
 
 export default function Footer() {
   return (
     <footer className="flex flex-col items-start justify-between gap-6 border-t border-brand-light/30 pt-6 text-sm text-[#4A5B5E]">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[#00838F] to-[#4DD0E1] shadow-md" />
-          <div>
-            <p className="text-sm font-semibold text-[#0E2B31]">Refer Labs</p>
-            <p className="text-xs text-[#5B6B70]">Referrals that compound</p>
-          </div>
-        </div>
+        <Link href="/" className="flex items-center group" aria-label="Refer Labs home">
+          <ReferLabsLogo className="h-12 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
+        </Link>
         <div className="flex flex-wrap items-center gap-3 text-[#4A5B5E]">
           <Link className="hover:text-[#0E2B31]" href="/">
             Home
