@@ -16,7 +16,7 @@ const CASE_STUDIES: CaseStudy[] = [
     industry: "Luxury e-commerce",
     tagline: "Turn every unboxing into your next three customers.",
     highlight:
-      "Pepform stitched referral links into the post-purchase journey, so every “I love this” moment triggered ready-to-share links, SMS nudges, and CRM follow-ups.",
+      "Refer Labs stitched referral links into the post-purchase journey, so every "I love this" moment triggered ready-to-share links, SMS nudges, and CRM follow-ups.",
     metrics: [
       { label: "Referral orders", value: "28% of monthly revenue", detail: "Tracked end-to-end with double-sided credit" },
       { label: "UGC volume", value: "4× photo & reel submissions", detail: "Champions auto-tagged via referral codes" },
@@ -25,8 +25,8 @@ const CASE_STUDIES: CaseStudy[] = [
     flows: [
       { stage: "Trigger", description: "Post-purchase SMS + packaging insert with personalised referral QR." },
       { stage: "Share", description: "Ambassadors push their link to VIP WhatsApp groups and IG stories." },
-      { stage: "Track", description: "Friends buy, Pepform auto attributes via referral_code and syncs to Klaviyo." },
-      { stage: "Reward", description: "Store credits unlock instantly in Pepform dashboards + CRM profiles." },
+      { stage: "Track", description: "Friends buy, Refer Labs auto attributes via referral_code and syncs to Klaviyo." },
+      { stage: "Reward", description: "Store credits unlock instantly in Refer Labs dashboards + CRM profiles." },
     ],
     story:
       "By unifying referral codes across Shopify, Klaviyo, and our dashboard, the brand finally saw which advocates, launches, and creatives actually moved revenue—then doubled down on those cohorts.",
@@ -35,26 +35,26 @@ const CASE_STUDIES: CaseStudy[] = [
     industry: "Professional services",
     tagline: "Make warm intros a predictable pipeline channel.",
     highlight:
-      "Advisers used Pepform to send clients one-click referral kits at review milestones; every intro flowed through a compliant intake form and into the CRM.",
+      "Advisers used Refer Labs to send clients one-click referral kits at review milestones; every intro flowed through a compliant intake form and into the CRM.",
     metrics: [
       { label: "Qualified leads", value: "+42% per quarter", detail: "Ideal clients sourced from top-tier accounts" },
       { label: "Close rate", value: "3.1× vs cold leads", detail: "Referred prospects already trusted the firm" },
       { label: "Advisor adoption", value: "93%", detail: "Referral prompts + scripts baked into Pepform tasks" },
     ],
     flows: [
-      { stage: "Trigger", description: "Advisor logs “delighted client” event inside Pepform." },
+      { stage: "Trigger", description: "Advisor logs "delighted client" event inside Refer Labs." },
       { stage: "Share", description: "Client receives co-branded landing page + introduce-a-friend email." },
       { stage: "Track", description: "Referrals push into HubSpot with stage + advisor attribution." },
-      { stage: "Reward", description: "Referrer receives strategy session credits; finance sees audit trail in Pepform." },
+      { stage: "Reward", description: "Referrer receives strategy session credits; finance sees audit trail in Refer Labs." },
     ],
     story:
-      "Instead of hoping advisers remembered to ask, the firm automated prompts, assets, and approvals inside Pepform. Compliance loved the audit trail, GTM loved the pipeline.",
+      "Instead of hoping advisers remembered to ask, the firm automated prompts, assets, and approvals inside Refer Labs. Compliance loved the audit trail, GTM loved the pipeline.",
   },
   {
     industry: "B2B SaaS",
     tagline: "Let power users become your outbound team.",
     highlight:
-      "Pepform monitored activation, NPS, and product milestones to decide when to invite champions into referral campaigns—each intro landed in Salesforce with context.",
+      "Refer Labs monitored activation, NPS, and product milestones to decide when to invite champions into referral campaigns—each intro landed in Salesforce with context.",
     metrics: [
       { label: "Pipeline lift", value: "+37%", detail: "Net-new opportunities sourced from top customers" },
       { label: "Sales cycle", value: "−44 days", detail: "Deals arrived with internal champions already in place" },
@@ -62,7 +62,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     flows: [
       { stage: "Trigger", description: "Power user hits success milestone → referral CTA inside product + email." },
-      { stage: "Share", description: "Champion selects who to intro; Pepform generates a ready-to-forward brief." },
+      { stage: "Share", description: "Champion selects who to intro; Refer Labs generates a ready-to-forward brief." },
       { stage: "Track", description: "Intro logged with referral_code in Salesforce + Slack alerts for AE + CSM." },
       { stage: "Reward", description: "Champions receive VIP roadmap access + credits once deals close." },
     ],
@@ -74,7 +74,7 @@ const CASE_STUDIES: CaseStudy[] = [
 const REFERRAL_FLOW = [
   {
     title: "Capture & code",
-    detail: "Pepform issues airtight referral_code + discount_code pairs per ambassador. Codes sync across CRM, campaigns, landing pages, and packaging so no share ever breaks attribution.",
+    detail: "Refer Labs issues airtight referral_code + discount_code pairs per ambassador. Codes sync across CRM, campaigns, landing pages, and packaging so no share ever breaks attribution.",
   },
   {
     title: "Triggers & asks",
@@ -82,7 +82,7 @@ const REFERRAL_FLOW = [
   },
   {
     title: "A/B test incentives",
-    detail: "Test copy, reward types, and call-to-actions directly in Pepform. See which offers make referrers engage fastest, then automatically route champions into the winning variant.",
+    detail: "Test copy, reward types, and call-to-actions directly in Refer Labs. See which offers make referrers engage fastest, then automatically route champions into the winning variant.",
   },
   {
     title: "Referrer engagement",
@@ -94,7 +94,7 @@ const REFERRAL_FLOW = [
   },
   {
     title: "Revenue & optimisation",
-    detail: "Pepform pipes conversions, MRR, and payout data into analytics so finance knows referral-sourced revenue. Double down on high-performing flows and pause the rest—no guesswork.",
+    detail: "Refer Labs pipes conversions, MRR, and payout data into analytics so finance knows referral-sourced revenue. Double down on high-performing flows and pause the rest—no guesswork.",
   },
 ];
 
@@ -107,15 +107,8 @@ export default function CaseStudiesPage() {
             <p className="text-xs uppercase tracking-[0.4em] text-white/80">Case studies</p>
             <h1 id="case-studies-heading" className="text-3xl font-black">Referral programs that compound trust, pipeline, and revenue</h1>
             <p className="text-sm text-white/85 max-w-3xl">
-              See how Pepform links referral codes to campaigns, CRM, and payouts so every intro is trackable, rewardable, and repeatable. No guesswork, no duct-taped spreadsheets.
+              See how Refer Labs links referral codes to campaigns, CRM, and payouts so every intro is trackable, rewardable, and repeatable. No guesswork, no duct-taped spreadsheets.
             </p>
-            <div className="flex flex-wrap gap-4 text-sm">
-              {["Full referral flows designed in 3–4 weeks", "Codes + CRM + campaigns always in sync", "White-glove reward automation"].map((tag) => (
-                <span key={tag} className="rounded-full border border-white/30 bg-white/15 px-4 py-1">
-                  {tag}
-                </span>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -150,7 +143,7 @@ export default function CaseStudiesPage() {
         <section className="space-y-6">
           <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/70">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Referral operating system</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-900">How Pepform connects every part of your referral program</h2>
+            <h2 className="mt-2 text-2xl font-black text-slate-900">How Refer Labs connects every part of your referral program</h2>
             <div className="mt-6 grid gap-4 lg:grid-cols-3">
               {REFERRAL_FLOW.map((item) => (
                 <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
@@ -176,7 +169,7 @@ export default function CaseStudiesPage() {
                 {
                   title: "Measurement & growth",
                   steps: [
-                    "A/B test referral copy, incentive mixes, and call-to-actions inside Pepform.",
+                    "A/B test referral copy, incentive mixes, and call-to-actions inside Refer Labs.",
                     "Track referrer engagement, CTR, signup-to-conversion rates, and revenue attribution.",
                     "Use dashboards to highlight top advocates, issue payouts instantly, and feed learnings back into marketing + product.",
                   ],
@@ -201,7 +194,7 @@ export default function CaseStudiesPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Next steps</p>
               <h3 className="text-xl font-black text-slate-900">Want a tailored referral plan for your business?</h3>
               <p className="text-sm text-slate-600 max-w-xl">
-                Let’s run a live demo and show how Pepform captures every referral, syncs with your CRM, and pays out champions without spreadsheets.
+                Let's run a live demo and show how Refer Labs captures every referral, syncs with your CRM, and pays out champions without spreadsheets.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

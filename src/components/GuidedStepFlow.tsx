@@ -108,10 +108,10 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
               onClick={() => handleStepToggle(step.id)}
               className={cn(
                 "w-full text-left transition-all duration-300",
-                isExpanded ? "pb-0" : "pb-6"
+                isExpanded ? "pb-0" : "pb-0"
               )}
             >
-              <div className={cn("bg-gradient-to-br p-6", bgColor)}>
+              <div className={cn("bg-gradient-to-br p-6", isExpanded ? "" : "pb-6", bgColor)}>
                 <div className="flex items-start gap-4">
                   {/* Step Number Badge */}
                   <div

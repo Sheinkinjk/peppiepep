@@ -141,10 +141,10 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center gap-4 pt-6 px-4">
             <Link
               href="/login"
-              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-lg font-bold px-8 py-4 shadow-xl shadow-teal-300/50 hover:shadow-2xl hover:shadow-teal-400/60 hover:scale-105 transition-all duration-300")}
+              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-xl font-bold px-10 py-5 hover:scale-105 transition-all duration-300")}
             >
               Start Getting Referrals
-              <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function Home() {
                   Why a referral program is your best resource for growth hacking
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-0 sm:mx-auto">
-                  Your next best customers are already in your existing customers’ network. Pepform
+                  Your next best customers are already in your existing customers' network. Refer Labs
                   helps you turn that network into a structured, trackable growth engine that feels
                   natural for them and powerful for you.
                 </p>
@@ -197,7 +197,7 @@ export default function Home() {
                     Ready to make referrals your highest-ROI channel?
                   </p>
                   <p className="mt-1 text-xs text-slate-500">
-                    Plug Pepform into your existing sales and marketing stack and start activating the
+                    Plug Refer Labs into your existing sales and marketing stack and start activating the
                     customers you already have.
                   </p>
                 </div>
@@ -354,7 +354,7 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <Link
                         href="/login"
-                        className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold")}
+                        className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold shadow-none")}
                       >
                         Launch my dashboard
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -389,7 +389,7 @@ export default function Home() {
             </div>
             <Link
               href="/roi-calculator"
-              className={cn(buttonVariants({ variant: "cta" }), "group self-start md:self-center text-base font-bold pointer-events-auto cursor-pointer")}
+              className={cn(buttonVariants({ variant: "cta" }), "group self-start md:self-center text-base font-bold")}
             >
               Calculate ROI <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>

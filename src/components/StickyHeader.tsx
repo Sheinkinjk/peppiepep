@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Calendar, Home, Menu, X } from "lucide-react";
-import { PepformLogo } from "./PepformLogo";
+import { ReferLabsLogo } from "./ReferLabsLogo";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 export function StickyHeader() {
@@ -66,7 +66,7 @@ export function StickyHeader() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group" aria-label="Refer Labs home">
-              <PepformLogo className="h-10 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
+              <ReferLabsLogo className="h-10 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
               <span className="sr-only">Refer Labs home</span>
             </Link>
 

@@ -54,10 +54,6 @@ export default function Pricing() {
           <p className="max-w-3xl text-xl sm:text-2xl leading-relaxed text-purple-100 mx-auto font-medium">
             Refer Labs are your partner in optimising the next phase of your marketing and sales strategy
           </p>
-
-          <div className="rounded-3xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-200 border border-amber-400/30 px-8 py-5 text-base font-bold shadow-2xl shadow-amber-500/10 ring-1 ring-amber-300/20 backdrop-blur-xl">
-            NOTE: Prices are waived during the testing period. Email <a href="mailto:jarred@referlabs.com.au" className="underline text-amber-100 hover:text-white transition-colors">jarred@referlabs.com.au</a> with any questions.
-          </div>
         </div>
 
         {/* Premium billing toggle */}
@@ -77,9 +73,6 @@ export default function Pricing() {
               </button>
             </div>
             <div className="relative">
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 px-5 py-2 text-sm font-black uppercase tracking-wide text-white shadow-2xl shadow-emerald-500/60 animate-pulse ring-2 ring-white/30 backdrop-blur">
-                💰 Save 20% Annually
-              </span>
               <button
                 type="button"
                 onClick={() => setBillingCycle("annual")}
@@ -89,6 +82,9 @@ export default function Pricing() {
                     : "text-purple-300 hover:text-white hover:bg-slate-800/50"
                 }`}
               >
+                <span className="absolute -top-3 -right-2 rounded-xl bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 px-3 py-1 text-xs font-black uppercase tracking-wide text-white shadow-2xl shadow-emerald-500/60 animate-pulse ring-2 ring-white/30">
+                  Save 20%
+                </span>
                 Annual billing
               </button>
             </div>

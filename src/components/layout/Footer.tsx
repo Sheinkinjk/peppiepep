@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="text-xs text-[#4A5B5E]">
-        © 2025 Refer Labs. All rights reserved. Built for service businesses in Australia.
+        © 2025 Refer Labs. All rights reserved.
       </p>
     </footer>
   );
