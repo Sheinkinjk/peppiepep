@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import {
-  Gift,
   Users,
   TrendingUp,
   CheckCircle,
@@ -18,7 +17,6 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Join Our Partner Program | Refer Labs",
@@ -114,18 +112,9 @@ export default function OurReferralProgramPage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-            <div className="flex flex-col gap-2 text-white text-sm sm:text-base max-w-[360px] text-center sm:text-left">
-              <div className="flex items-center gap-2 justify-center sm:justify-start">
-                <CheckCircle className="h-5 w-5" />
-                <span className="font-semibold">+ $250 Sign-On Bonus</span>
-              </div>
-                <p>
-                  Partners can offer each new customer they sign up a $250 account credit, so referrals step into the platform with immediate value and the ability to try Refer Labs before paying.
-                </p>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
       {/* Rewards Section */}
@@ -140,7 +129,7 @@ export default function OurReferralProgramPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="mb-12">
             <Card className="p-8 sm:p-10 rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white shadow-xl hover:shadow-2xl transition-all">
               <div className="flex items-start gap-4 mb-6">
                 <div className="rounded-2xl bg-emerald-600 p-4 shadow-lg">
@@ -175,41 +164,6 @@ export default function OurReferralProgramPage() {
                 </p>
               </div>
             </Card>
-
-            <Card className="p-8 sm:p-10 rounded-3xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-white shadow-xl hover:shadow-2xl transition-all">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="rounded-2xl bg-indigo-600 p-4 shadow-lg">
-                  <Gift className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-2">$250 Sign-On Bonus</h3>
-                  <p className="text-slate-600">Start earning immediately</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-indigo-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">$250 credit applied to your first month</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-indigo-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">Use PeppiePep for your own business for free</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-indigo-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">Experience the platform before referring</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-indigo-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">Instant approval for qualified applicants</p>
-                </div>
-              </div>
-              <div className="mt-6 p-4 bg-indigo-100 rounded-xl">
-                <p className="text-sm font-semibold text-indigo-900">
-                  🎁 Applied automatically when you&rsquo;re approved
-                </p>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
@@ -223,6 +177,14 @@ export default function OurReferralProgramPage() {
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               The world&rsquo;s most elegant referral marketing platform for premium businesses
+            </p>
+          </div>
+          <div className="mb-10 rounded-3xl border border-[#cfeef4] bg-[#f3fcff] px-6 py-5 mx-auto max-w-3xl text-center">
+            <div className="inline-flex items-center justify-center bg-gradient-to-r from-[#0abab5] via-[#5fd9e4] to-[#1a9eb7] rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white shadow-lg shadow-[#0a9fb3]/40 mb-3">
+              + $250 Account Credit
+            </div>
+            <p className="text-sm text-slate-600">
+              Partners can grant every new customer they sign up a $250 account credit, giving referrals instant value and a chance to explore Refer Labs before committing.
             </p>
           </div>
 
@@ -401,28 +363,6 @@ export default function OurReferralProgramPage() {
               </p>
             </form>
           </Card>
-        </div>
-      </section>
-
-      {/* Footer Navigation */}
-      <section className="py-12 bg-slate-950 border-t border-slate-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-6">
-              <Link href="/" className="text-slate-400 hover:text-white text-sm transition-colors">
-                Home
-              </Link>
-              <Link href="/pricing" className="text-slate-400 hover:text-white text-sm transition-colors">
-                Pricing
-              </Link>
-              <Link href="/contact" className="text-slate-400 hover:text-white text-sm transition-colors">
-                Contact
-              </Link>
-            </div>
-            <p className="text-slate-500 text-sm">
-              © 2024 PeppiePep. All rights reserved.
-            </p>
-          </div>
         </div>
       </section>
 
