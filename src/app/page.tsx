@@ -296,7 +296,7 @@ export default function Home() {
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden lg:flex items-center justify-between gap-2.5 rounded-full border-2 border-white/80 bg-gradient-to-r ${moment.bgGradient} px-4 py-2 shadow-[0_20px_50px_rgba(15,23,42,0.3)] ${moment.rotate} hover:scale-105 transition-all duration-300`}
+              className={`hero-floating-card hidden lg:flex absolute items-center justify-between gap-2.5 rounded-full border-2 border-white/80 bg-gradient-to-r ${moment.bgGradient} px-4 py-2 shadow-[0_20px_50px_rgba(15,23,42,0.3)] ${moment.rotate} hover:scale-105 transition-all duration-300`}
               style={moment.position}
               aria-hidden
             >
@@ -551,25 +551,22 @@ export default function Home() {
         </section>
 
         {/* Who We Work With */}
-        <section className="space-y-6 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 bg-gradient-to-br from-[#e5f7fb] via-white to-[#d6f0ff]">
-          <div className="space-y-1 text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-slate-500 font-semibold">
+        <section className="-mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 py-10 bg-gradient-to-r from-cyan-50/60 via-teal-50/40 to-cyan-50/60">
+          <div className="space-y-6">
+            <p className="text-center text-xs uppercase tracking-[0.4em] text-slate-600 font-bold">
               Our Partners
             </p>
-            <h3 className="text-2xl font-black text-slate-900">
-              Trusted platform partners that keep referrals in sync
-            </h3>
-          </div>
-          <div className="overflow-hidden rounded-[32px] border border-white/70 bg-white/80 px-6 py-8 shadow-2xl shadow-slate-900/10">
-            <div className="logo-marquee gap-10">
-              {repeatedPartnerLogos.map((logo, index) => (
-                <div
-                  key={`partner-${logo.id}-${index}`}
-                  className="min-w-[220px] flex items-center justify-center px-3"
-                >
-                  {logo.render()}
-                </div>
-              ))}
+            <div className="overflow-hidden px-4 py-5">
+              <div className="logo-marquee gap-10">
+                {repeatedPartnerLogos.map((logo, index) => (
+                  <div
+                    key={`partner-${logo.id}-${index}`}
+                    className="min-w-[220px] flex items-center justify-center px-3"
+                  >
+                    {logo.render()}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

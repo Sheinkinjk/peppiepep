@@ -118,7 +118,7 @@ export default function OurReferralProgramPage() {
     </section>
 
       {/* Rewards Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
@@ -129,48 +129,82 @@ export default function OurReferralProgramPage() {
             </p>
           </div>
 
-          <div className="mb-12">
-            <Card className="p-8 sm:p-10 rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white shadow-xl hover:shadow-2xl transition-all">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="rounded-2xl bg-emerald-600 p-4 shadow-lg">
-                  <TrendingUp className="h-8 w-8 text-white" />
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/50 shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
+              <div className="relative">
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <div className="rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 p-4 shadow-lg">
+                    <TrendingUp className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900">25% Recurring Revenue</h3>
+                    <p className="text-slate-600 text-sm">For the lifetime of every client</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-2">25% Recurring Revenue</h3>
-                  <p className="text-slate-600">For the lifetime of every client you bring</p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-700 text-sm">Earn 25% of monthly subscription fees forever</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-700 text-sm">No cap on earnings - refer unlimited clients</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-700 text-sm">Monthly payouts via direct deposit or credit</p>
+                  </div>
+                </div>
+                <div className="p-4 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl border border-emerald-300/50">
+                  <p className="text-sm font-bold text-emerald-900">
+                    💰 Example: Refer 10 clients at $200/mo = $500/mo recurring
+                  </p>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">Earn 25% of monthly subscription fees forever</p>
+            </Card>
+
+            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-cyan-200 bg-gradient-to-br from-cyan-50 via-white to-cyan-50/50 shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl"></div>
+              <div className="relative">
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 p-4 shadow-lg">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900">Partner Support</h3>
+                    <p className="text-slate-600 text-sm">Everything you need to succeed</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">No cap on earnings - refer unlimited clients</p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-700 text-sm">Dedicated partner success manager</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-700 text-sm">Custom marketing materials and resources</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-700 text-sm">Real-time dashboard to track your earnings</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">Passive income that grows with your network</p>
+                <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 rounded-2xl border border-cyan-300/50">
+                  <p className="text-sm font-bold text-cyan-900">
+                    🎯 We help you close deals and maximize your income
+                  </p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-1" />
-                  <p className="text-slate-700">Monthly payouts via direct deposit or credit</p>
-                </div>
-              </div>
-              <div className="mt-6 p-4 bg-emerald-100 rounded-xl">
-                <p className="text-sm font-semibold text-emerald-900">
-                  💰 Example: Refer 10 clients at $200/mo = $500/mo recurring income
-                </p>
               </div>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* What is PeppiePep */}
-      <section className="py-20 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* What You'll Be Promoting */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(14,165,233,0.08),transparent_50%)]"></div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
               What You&apos;ll Be Promoting
@@ -179,47 +213,63 @@ export default function OurReferralProgramPage() {
               The world&rsquo;s most elegant referral marketing platform for premium businesses
             </p>
           </div>
-          <div className="mb-10 rounded-3xl border border-[#cfeef4] bg-[#f3fcff] px-6 py-5 mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center justify-center bg-gradient-to-r from-[#0abab5] via-[#5fd9e4] to-[#1a9eb7] rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white shadow-lg shadow-[#0a9fb3]/40 mb-3">
-              + $250 Account Credit
+
+          <div className="mb-12 rounded-3xl border-2 border-cyan-200 bg-gradient-to-br from-cyan-50/80 via-white to-cyan-50/40 p-8 mx-auto max-w-4xl shadow-xl">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-shrink-0">
+                <div className="inline-flex items-center justify-center bg-gradient-to-r from-[#0abab5] via-[#5fd9e4] to-[#1a9eb7] rounded-2xl px-6 py-3 shadow-2xl">
+                  <span className="text-2xl font-black text-white">$250</span>
+                </div>
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-xl font-black text-slate-900 mb-2">Partner Bonus Credit</h3>
+                <p className="text-slate-600">
+                  Grant every new customer a $250 account credit, giving referrals instant value and a chance to explore Refer Labs risk-free before committing.
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-slate-600">
-              Partners can grant every new customer they sign up a $250 account credit, giving referrals instant value and a chance to explore Refer Labs before committing.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-[#0abab5] transition-all">
-              <div className="rounded-2xl bg-cyan-100 p-3 w-fit mb-4">
-                <Users className="h-6 w-6 text-cyan-600" />
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-cyan-400 hover:shadow-2xl transition-all duration-300">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+              <div className="relative">
+                <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 p-3 w-fit mb-4 shadow-lg">
+                  <Users className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Automated Ambassador Programs</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Businesses turn their best customers into brand ambassadors with personalized referral links, discount codes, and automated tracking.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Automated Ambassador Programs</h3>
-              <p className="text-slate-600 text-sm">
-                Businesses turn their best customers into brand ambassadors with personalized referral links, discount codes, and automated tracking.
-              </p>
             </Card>
 
-            <Card className="p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-[#0abab5] transition-all">
-              <div className="rounded-2xl bg-purple-100 p-3 w-fit mb-4">
-                <Zap className="h-6 w-6 text-purple-600" />
+            <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-purple-400 hover:shadow-2xl transition-all duration-300">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+              <div className="relative">
+                <div className="rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 p-3 w-fit mb-4 shadow-lg">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Campaign Management</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Send SMS and email campaigns to ambassadors, track performance in real-time, and measure ROI with precision analytics.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Campaign Management</h3>
-              <p className="text-slate-600 text-sm">
-                Send SMS and email campaigns to ambassadors, track performance in real-time, and measure ROI with precision analytics.
-              </p>
             </Card>
 
-            <Card className="p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-[#0abab5] transition-all">
-              <div className="rounded-2xl bg-emerald-100 p-3 w-fit mb-4">
-                <Target className="h-6 w-6 text-emerald-600" />
+            <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-emerald-400 hover:shadow-2xl transition-all duration-300">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+              <div className="relative">
+                <div className="rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 p-3 w-fit mb-4 shadow-lg">
+                  <Target className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">White-Glove Onboarding</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Every client gets personalized setup, custom integrations, and ongoing support - making your referrals sticky and profitable.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">White-Glove Onboarding</h3>
-              <p className="text-slate-600 text-sm">
-                Every client gets personalized setup, custom integrations, and ongoing support - making your referrals sticky and profitable.
-              </p>
             </Card>
           </div>
-
         </div>
       </section>
 
@@ -249,7 +299,7 @@ export default function OurReferralProgramPage() {
                 2
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Share Your Link</h3>
-              <p className="text-sm text-slate-600">Introduce businesses to PeppiePep using your personalized referral link</p>
+              <p className="text-sm text-slate-600">Introduce businesses to Refer Labs using your personalized referral link</p>
             </div>
 
             <div className="text-center">

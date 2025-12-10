@@ -11,47 +11,6 @@ import {
 import Link from "next/link";
 import type { CSSProperties } from "react";
 
-const howItWorksHeroHighlights: {
-  id: string;
-  text: string;
-  emoji: string;
-  bgGradient: string;
-  position: CSSProperties;
-  rotate: string;
-}[] = [
-  {
-    id: "hiw-jenny",
-    text: "Jenny shared a referral link",
-    emoji: "🎉",
-    bgGradient: "from-[#4fd6ef] to-[#1aa9c0]",
-    position: { top: "-12%", left: "-6%", maxWidth: "220px" },
-    rotate: "-rotate-2",
-  },
-  {
-    id: "hiw-michael",
-    text: "Michael completed an order",
-    emoji: "🛒",
-    bgGradient: "from-[#ffd387] to-[#f7a911]",
-    position: { top: "-7%", right: "-6%", maxWidth: "210px" },
-    rotate: "rotate-3",
-  },
-  {
-    id: "hiw-campaign",
-    text: "You just launched to 500 customers",
-    emoji: "📢",
-    bgGradient: "from-[#a289ff] to-[#7a5bff]",
-    position: { bottom: "-10%", left: "-4%", maxWidth: "230px" },
-    rotate: "rotate-6",
-  },
-  {
-    id: "hiw-revenue",
-    text: "$45,500 additional revenue today",
-    emoji: "💰",
-    bgGradient: "from-[#f78bff] to-[#ea5ac6]",
-    position: { bottom: "-8%", right: "-6%", maxWidth: "220px" },
-    rotate: "-rotate-4",
-  },
-];
 
 export default function HowItWorks() {
   return (
@@ -60,18 +19,7 @@ export default function HowItWorks() {
 
       <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
 
-        <section className="max-w-3xl space-y-4 relative isolate overflow-visible">
-          {howItWorksHeroHighlights.map((highlight) => (
-            <div
-              key={highlight.id}
-              style={highlight.position}
-              className={`hiw-hero-card hidden lg:flex items-center justify-between gap-2 rounded-[28px] border border-white/80 bg-gradient-to-r ${highlight.bgGradient} px-4 py-3 text-sm font-semibold text-white shadow-[0_25px_60px_rgba(15,23,42,0.25)] ${highlight.rotate}`}
-              aria-hidden
-            >
-              <span className="leading-snug">{highlight.text}</span>
-              <span className="text-lg">{highlight.emoji}</span>
-            </div>
-          ))}
+        <section className="max-w-3xl space-y-4">
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
             How Refer Labs turns customers into micro‑influencers
           </h1>
