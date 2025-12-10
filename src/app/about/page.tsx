@@ -22,7 +22,7 @@ export default function About() {
             We are the referral engine to build your future and monetise word-of-mouth referrals
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-600 mx-auto">
-            We started Pepform because we saw thousands of service businesses losing revenue to the same problem: broken referral systems.
+            We started Refer Labs because we saw thousands of service businesses losing revenue to the same problem: broken referral systems.
           </p>
         </div>
 
@@ -39,10 +39,10 @@ export default function About() {
                 </p>
               </div>
               <p>
-                We built Pepform to solve this: <strong>create an engagement system that rewards your loyal customers</strong> who are the true beacons of growth. These are the people who authentically vouch for your offering because they've experienced real value. They deserve recognition, rewards, and a frictionless way to share what they love.
+                We built Refer Labs to solve this: <strong>create an engagement system that rewards your loyal customers</strong> who are the true beacons of growth. These are the people who authentically vouch for your offering because they've experienced real value. They deserve recognition, rewards, and a frictionless way to share what they love.
               </p>
               <p>
-                Your loyal customers aren't just satisfied—they're advocates. But without a proper engagement system, their word-of-mouth referrals go untracked, unrewarded, and unmotivated. Pepform turns these passionate customers into a structured growth engine, ensuring every referral is captured and every ambassador is celebrated.
+                Your loyal customers aren't just satisfied—they're advocates. But without a proper engagement system, their word-of-mouth referrals go untracked, unrewarded, and unmotivated. Refer Labs turns these passionate customers into a structured growth engine, ensuring every referral is captured and every ambassador is celebrated.
               </p>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function About() {
 
         <section className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-2xl">
           <div className="mx-auto max-w-3xl space-y-6">
-            <h2 className="text-3xl font-bold">The Pepform Difference</h2>
+            <h2 className="text-3xl font-bold text-[#5ce1e6]">The Refer Labs Difference</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <div className="flex items-start gap-3">
@@ -168,7 +168,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Account Executive</h3>
                 <p className="text-purple-100 mb-4">
-                  Close deals and build relationships. Understand service business challenges, demo Pepform's value, and turn prospects into thriving customers.
+                  Close deals and build relationships. Understand service business challenges, demo Refer Labs' value, and turn prospects into thriving customers.
                 </p>
                 <ul className="space-y-2 text-sm text-purple-100">
                   <li className="flex items-start gap-2">
@@ -188,7 +188,7 @@ export default function About() {
             </div>
 
             <div className="rounded-2xl bg-white/95 backdrop-blur p-8 text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">Why Join Pepform Sales?</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Why Join Refer Labs Sales?</h3>
               <div className="grid gap-4 md:grid-cols-3 text-left mb-6">
                 <div>
                   <p className="font-semibold text-slate-900 mb-1">💰 High-Growth Opportunity</p>
@@ -205,13 +205,13 @@ export default function About() {
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="mailto:careers@pepform.com?subject=Sales Role Application"
+                  href="mailto:careers@referlabs.com?subject=Sales Role Application"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-8 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
                 >
                   Apply Now <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="mailto:careers@pepform.com?subject=Sales Role Inquiry"
+                  href="mailto:careers@referlabs.com?subject=Sales Role Inquiry"
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-400"
                 >
                   Learn More
@@ -222,7 +222,7 @@ export default function About() {
             <div className="text-center">
               <p className="text-purple-100 text-sm">
                 Not a sales role? We're also looking for engineers, designers, and marketers who want to help service businesses grow.{" "}
-                <Link href="mailto:careers@pepform.com" className="underline font-semibold text-white hover:text-purple-200">
+                <Link href="mailto:careers@referlabs.com" className="underline font-semibold text-white hover:text-purple-200">
                   Get in touch
                 </Link>
               </p>

@@ -39,7 +39,7 @@ const CASE_STUDIES: CaseStudy[] = [
     metrics: [
       { label: "Qualified leads", value: "+42% per quarter", detail: "Ideal clients sourced from top-tier accounts" },
       { label: "Close rate", value: "3.1× vs cold leads", detail: "Referred prospects already trusted the firm" },
-      { label: "Advisor adoption", value: "93%", detail: "Referral prompts + scripts baked into Pepform tasks" },
+      { label: "Advisor adoption", value: "93%", detail: "Referral prompts + scripts baked into Refer Labs tasks" },
     ],
     flows: [
       { stage: "Trigger", description: "Advisor logs 'delighted client' event inside Refer Labs." },

@@ -13,9 +13,6 @@ export default function Contact() {
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
             Contact Us
           </h1>
-          <p className="max-w-xl mx-auto text-lg leading-relaxed text-slate-600">
-            Have questions? Want to learn more about Pepform? We are here to help.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto w-full">

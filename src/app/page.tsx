@@ -11,54 +11,42 @@ const referralPillars = [
     title: "Introductions that skip cold outreach",
     copy:
       "Brand evangelists text concierge-quality links that do the heavy lifting. Most prospects arrive already primed with context, social proof, and urgency.",
-    highlight: "Close deals in 1–3 touches",
-    highlightColor: "text-emerald-600",
-    chipBg: "bg-indigo-50 text-indigo-600",
+    chipBg: "bg-gradient-to-br from-blue-500 to-indigo-600 text-white",
   },
   {
     number: "02",
     title: "VIP incentives that feel on-brand",
     copy:
       "Refer Labs issues wallet cards, QR lounges, and luxury-grade perks automatically so the experience feels bespoke—never like a generic promo code blast.",
-    highlight: "Bespoke perks auto-issued",
-    highlightColor: "text-blue-600",
-    chipBg: "bg-emerald-50 text-emerald-600",
+    chipBg: "bg-gradient-to-br from-emerald-500 to-teal-600 text-white",
   },
   {
     number: "03",
     title: "CRM imports become referral fuel",
     copy:
       "Upload spreadsheets or sync a CRM export and Refer Labs immediately assigns links, discount words, and share kits for every contact without manual ops.",
-    highlight: "Millions of contacts supported",
-    highlightColor: "text-slate-500",
-    chipBg: "bg-sky-50 text-sky-600",
+    chipBg: "bg-gradient-to-br from-purple-500 to-pink-600 text-white",
   },
   {
     number: "04",
     title: "Automated concierge follow-ups",
     copy:
       "SMS + email journeys keep ambassadors nudged at the perfect cadence with AI-drafted talking points, brand gradients, and instant proofs of reward.",
-    highlight: "15+ touchpoints handled",
-    highlightColor: "text-indigo-600",
-    chipBg: "bg-rose-50 text-rose-600",
+    chipBg: "bg-gradient-to-br from-orange-500 to-red-600 text-white",
   },
   {
     number: "05",
     title: "Payouts & compliance in one ledger",
     copy:
       "Every referral event syncs to a live ledger so finance teams see status, clawbacks, and pending credits. Approvals take minutes, not days.",
-    highlight: "Finance-ready audit trails",
-    highlightColor: "text-emerald-600",
-    chipBg: "bg-amber-50 text-amber-600",
+    chipBg: "bg-gradient-to-br from-amber-500 to-yellow-600 text-white",
   },
   {
     number: "06",
     title: "Intelligence on what to scale next",
     copy:
       "Track who referred who, which assets drove highest AOV, and when advocates go quiet—so you know exactly where to double down for your next drop.",
-    highlight: "Signals, not guesswork",
-    highlightColor: "text-slate-500",
-    chipBg: "bg-purple-50 text-purple-600",
+    chipBg: "bg-gradient-to-br from-cyan-500 to-blue-600 text-white",
   },
 ];
 
@@ -124,7 +112,8 @@ const heroMoments: {
   tag: string;
   title: string;
   detail: string;
-  gradient: string;
+  bgColor: string;
+  accentColor: string;
   position: CSSProperties;
 }[] = [
   {
@@ -132,7 +121,8 @@ const heroMoments: {
     tag: "Live referral",
     title: "Jenny used your referral link",
     detail: "4 VIP spa treatments reserved, stats updated instantly.",
-    gradient: "from-cyan-400/70 via-emerald-400/70 to-white/80",
+    bgColor: "bg-cyan-50/95",
+    accentColor: "text-cyan-600",
     position: { top: "4%", left: "-6%" },
   },
   {
@@ -140,7 +130,8 @@ const heroMoments: {
     tag: "Order alert",
     title: "Michael made an order",
     detail: "$2,750 gourmet kit tracked with Refer Labs proof.",
-    gradient: "from-amber-400/80 via-orange-500/60 to-slate-900/60",
+    bgColor: "bg-amber-50/95",
+    accentColor: "text-amber-600",
     position: { top: "18%", right: "-5%" },
   },
   {
@@ -148,7 +139,8 @@ const heroMoments: {
     tag: "Campaign",
     title: "You just sent a new campaign to 500 customers",
     detail: "SMS + email drips queued for 3PM and ready to deploy.",
-    gradient: "from-indigo-500/80 via-blue-500/60 to-slate-900/70",
+    bgColor: "bg-indigo-50/95",
+    accentColor: "text-indigo-600",
     position: { top: "34%", left: "-2%" },
   },
   {
@@ -156,7 +148,8 @@ const heroMoments: {
     tag: "Revenue",
     title: "$45,500 additional revenue generated",
     detail: "Realtime ledger shows compounding referral payouts.",
-    gradient: "from-fuchsia-500/70 via-purple-600/60 to-slate-900/80",
+    bgColor: "bg-purple-50/95",
+    accentColor: "text-purple-600",
     position: { bottom: "-4%", right: "2%" },
   },
   {
@@ -164,7 +157,8 @@ const heroMoments: {
     tag: "Ambassador win",
     title: "Sofia shared a VIP invite with her community",
     detail: "5 new guests are seeing the luxury upgrade this weekend.",
-    gradient: "from-emerald-400/70 via-teal-400/60 to-slate-900/70",
+    bgColor: "bg-emerald-50/95",
+    accentColor: "text-emerald-600",
     position: { bottom: "-6%", left: "10%" },
   },
 ];
@@ -323,17 +317,17 @@ export default function Home() {
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden lg:flex flex-col gap-2 rounded-3xl border border-white/60 bg-gradient-to-br px-4 py-3 text-left shadow-2xl shadow-teal-500/40 ${moment.gradient}`}
+              className={`hero-floating-card hidden lg:flex flex-col gap-2 rounded-2xl border border-slate-200/60 ${moment.bgColor} backdrop-blur-sm px-4 py-3 text-left shadow-xl ring-1 ring-slate-100/50`}
               style={moment.position}
               aria-hidden
             >
-              <p className="text-[10px] uppercase tracking-[0.4em] text-white/70">
+              <p className={`text-[10px] uppercase tracking-[0.3em] font-semibold ${moment.accentColor}`}>
                 {moment.tag}
               </p>
-              <p className="text-sm font-semibold text-white">
+              <p className="text-sm font-bold text-slate-900">
                 {moment.title}
               </p>
-              <p className="text-xs text-white/80">{moment.detail}</p>
+              <p className="text-xs text-slate-600 leading-relaxed">{moment.detail}</p>
             </div>
           ))}
 
@@ -379,23 +373,18 @@ export default function Home() {
                 {referralPillars.map((pillar) => (
                   <div
                     key={pillar.number}
-                    className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg"
+                    className="group flex flex-col rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg"
                   >
-                    <div>
-                      <div
-                        className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold mb-3 ${pillar.chipBg}`}
-                      >
-                        {pillar.number}
-                      </div>
-                      <h3 className="text-sm font-semibold text-slate-900">
-                        {pillar.title}
-                      </h3>
-                      <p className="mt-2 text-sm text-slate-600">
-                        {pillar.copy}
-                      </p>
+                    <div
+                      className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold mb-3 shadow-md ${pillar.chipBg}`}
+                    >
+                      {pillar.number}
                     </div>
-                    <p className={`mt-3 text-xs font-medium uppercase tracking-wide ${pillar.highlightColor}`}>
-                      {pillar.highlight}
+                    <h3 className="text-sm font-semibold text-slate-900">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-600">
+                      {pillar.copy}
                     </p>
                   </div>
                 ))}
@@ -633,6 +622,25 @@ export default function Home() {
               {repeatedPartnerLogos.map((logo, index) => (
                 <div
                   key={`${logo.id}-${index}`}
+                  className="min-w-[220px] flex items-center justify-center px-3"
+                >
+                  {logo.render()}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Our Partners Strip */}
+        <section className="space-y-6">
+          <p className="text-center text-xs uppercase tracking-[0.3em] text-slate-500 font-semibold">
+            Our Partners
+          </p>
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white/90 px-4 py-6 shadow-lg">
+            <div className="logo-marquee gap-10">
+              {repeatedPartnerLogos.map((logo, index) => (
+                <div
+                  key={`partner-${logo.id}-${index}`}
                   className="min-w-[220px] flex items-center justify-center px-3"
                 >
                   {logo.render()}
