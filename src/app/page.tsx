@@ -129,9 +129,9 @@ export default function Home() {
         <div className="mx-auto max-w-4xl text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
           <div className="space-y-6">
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
-              <span className="block text-balance text-[#00343a]">We help launch successful</span>
+              <span className="block text-balance text-[#00343a]">We Help Launch Successful</span>
               <span className="block text-[#0a727f] drop-shadow-[0_6px_20px_rgba(9,81,93,0.25)]">
-                referral programs
+                Referral Programs
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-semibold">
@@ -156,7 +156,7 @@ export default function Home() {
             <div className="relative z-10 space-y-10">
               <div className="text-left sm:text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                  Why a referral program is your best resource for growth hacking
+                  Why A Referral Program Is Your Best Resource For Growth Hacking
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-0 sm:mx-auto">
                   Your next best customers are already in your existing customers' network. Refer Labs

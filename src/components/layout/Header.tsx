@@ -3,12 +3,12 @@ import { ArrowRight, Home } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between rounded-full border border-white/80 bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
+    <header className="flex items-center justify-between rounded-full border border-white/80 bg-white/80 px-4 py-2 shadow-sm backdrop-blur">
       <Link href="/" className="flex items-center gap-2">
-        <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
+        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
         <div>
-          <p className="text-sm font-semibold text-slate-900">Refer Labs</p>
-          <p className="text-[11px] font-medium uppercase tracking-wide text-purple-700">
+          <p className="text-base font-semibold text-slate-900">Refer Labs</p>
+          <p className="text-xs font-medium uppercase tracking-wide text-purple-700">
             Referrals OS
           </p>
         </div>

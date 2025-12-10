@@ -152,10 +152,17 @@ export function IntegrationTab({
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-black text-slate-900">Add Referral Page to Your Website</h3>
-                  <p className="text-sm text-slate-700 mt-1">Embed the referral landing page on your website so customers can refer friends.</p>
+                  <p className="text-sm text-slate-700 mt-1">Embed the referral landing page on your website so customers can refer friends and view your offer.</p>
                 </div>
               </div>
               <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+                <div className="rounded-xl bg-blue-50 border border-blue-200 p-3">
+                  <p className="text-sm font-black text-blue-900 mb-2">📖 How Referral Pages Work:</p>
+                  <p className="text-xs text-blue-800 leading-relaxed">
+                    When a customer clicks their unique referral link (like {siteUrl}/r/ABC123), they land on a branded referral page showing your offer ("Get $25 credit when you refer a friend").
+                    Friends who visit can then submit the form to join. This page is the connection between your referral links and new customer signups—it's where the magic happens!
+                  </p>
+                </div>
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">Scroll down to "Website & Shopify Integration" section below</p>
                   <p className="text-sm text-slate-600 mt-1">Click to expand it</p>
@@ -163,17 +170,21 @@ export function IntegrationTab({
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">Choose your integration method:</p>
                   <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
-                    <li><strong>Iframe embed (recommended):</strong> Copy the iframe code and paste into your website's HTML</li>
-                    <li><strong>Redirect button:</strong> Copy the button code and add to your "Refer a friend" page</li>
-                    <li><strong>WordPress:</strong> Use the WordPress section below for shortcode method</li>
+                    <li><strong>Iframe embed (recommended):</strong> Copy the iframe code and paste into your website's HTML. This embeds the full referral form on your page.</li>
+                    <li><strong>Redirect button:</strong> Copy the button code and add to your "Refer a friend" page. Clicking redirects to the hosted referral page.</li>
+                    <li><strong>WordPress:</strong> Use the WordPress section below for shortcode method to embed directly in WordPress pages.</li>
                   </ul>
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">Where to add the code:</p>
-                  <p className="text-sm text-slate-600 mt-1">Add to your referral page (e.g., yoursite.com/referrals). For Shopify, add a new page and paste the code in the HTML editor. For WordPress, see the WordPress section below.</p>
+                  <p className="text-sm text-slate-600 mt-1">Create a dedicated referral page on your site (e.g., yoursite.com/referrals or yoursite.com/refer-a-friend). For Shopify, add a new page and paste the code in the HTML editor. For WordPress, see the WordPress section below.</p>
+                </div>
+                <div className="rounded-xl bg-purple-50 border border-purple-200 p-3">
+                  <p className="text-xs font-black text-purple-900 mb-1">💡 Pro Tip:</p>
+                  <p className="text-xs text-purple-800">The referral page you create here is what customers will see when they click any ambassador's referral link. Make sure it clearly shows your offer and how the referral program works!</p>
                 </div>
                 <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
-                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: Visit your referral page - you should see the Refer Labs referral form embedded with your branding.</p>
+                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: Visit your referral page at yoursite.com/referrals - you should see the Refer Labs referral form embedded with your branding and offer details.</p>
                 </div>
               </div>
             </div>

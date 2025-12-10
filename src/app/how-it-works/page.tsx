@@ -19,7 +19,7 @@ export default function HowItWorks() {
 
         <div className="max-w-3xl space-y-4">
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            How Pepform turns customers into micro‑influencers
+            How Refer Labs turns customers into micro‑influencers
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
             From upload to reward in minutes. See how we plug referrals into your marketing campaigns so every happy customer promotes you across SMS, email, and social.
@@ -36,14 +36,14 @@ export default function HowItWorks() {
                 Import your customers (activate your micro‑influencers)
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Upload a simple CSV (name, phone, email). Pepform instantly turns every customer into a trackable, campaign-connected micro‑influencer.
+                Upload a simple CSV (name, phone, email). Refer Labs instantly turns every customer into a trackable, campaign-connected micro‑influencer.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-slate-900">Instant processing</p>
-                    <p className="text-sm text-slate-600">Pepform reads your file and sets everything up in seconds</p>
+                    <p className="text-sm text-slate-600">Refer Labs reads your file and sets everything up in seconds</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -278,7 +278,7 @@ export default function HowItWorks() {
                 Rewards happen automatically
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                When a referred customer books or completes their first purchase, just mark it complete in your dashboard. Pepform instantly credits the ambassador and sends them a celebration SMS.
+                When a referred customer books or completes their first purchase, just mark it complete in your dashboard. Refer Labs instantly credits the ambassador and sends them a celebration SMS.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
