@@ -17,6 +17,9 @@ function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
+  const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
+  const [confirmationSent, setConfirmationSent] = useState(false);
+  const [confirmationEmail, setConfirmationEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [view, setView] = useState<ViewState>("auth");
@@ -78,6 +81,11 @@ function LoginContent() {
   }, [businessName, businessEmail, phone, draftLoaded]);
 
   const handleAuth = async () => {
+    if (isSignUp && !hasAcceptedTerms) {
+      setError("Please accept the Terms of Service before creating an account.");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
@@ -89,28 +97,41 @@ function LoginContent() {
           options: {
             emailRedirectTo: `${location.origin}/auth/callback`,
             data: {
-              needs_onboarding: true
-            }
+              needs_onboarding: true,
+            },
           },
         });
 
         if (signUpError) throw signUpError;
 
         if (data.user) {
-          setView("onboarding");
+          setConfirmationSent(true);
+          setConfirmationEmail(email);
+          setPassword("");
+          setHasAcceptedTerms(false);
+          return;
         }
       } else {
-        const { error: signInError } = await supabase.auth.signInWithPassword({
+        const { data, error: signInError } = await supabase.auth.signInWithPassword({
           email,
-          password
+          password,
         });
 
         if (signInError) throw signInError;
+
+        if (data?.user && !data.user.email_confirmed_at) {
+          await supabase.auth.signOut();
+          setError("Confirm your email before signing in – the verification link just hit your inbox.");
+          return;
+        }
+
         router.push("/dashboard");
       }
     } catch (err: unknown) {
       const message =
-        err instanceof Error ? err.message : "Authentication failed";
+        err instanceof Error
+          ? err.message
+          : "Authentication failed. Please try again.";
       setError(message);
     } finally {
       setLoading(false);
@@ -362,6 +383,19 @@ function LoginContent() {
                 </p>
               </div>
 
+              {confirmationSent && (
+                <div
+                  className="mb-4 rounded-2xl border border-emerald-200 bg-emerald-50/75 px-4 py-3 text-sm text-emerald-900"
+                  role="status"
+                >
+                  We sent a confirmation link to{" "}
+                  <span className="font-semibold text-emerald-800">
+                    {confirmationEmail || email}
+                  </span>
+                  . Confirm to unlock the Refer Labs dashboard.
+                </div>
+              )}
+
               <div className="space-y-3">
                 <div>
                   <Label htmlFor="email">Email</Label>
@@ -383,21 +417,48 @@ function LoginContent() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="mt-1"
-                    placeholder="••••••••"
-                    onKeyDown={(e) => e.key === "Enter" && handleAuth()}
-                  />
-                </div>
+                  placeholder="••••••••"
+                  onKeyDown={(e) => e.key === "Enter" && handleAuth()}
+                />
               </div>
+            </div>
 
-              {error && (
-                <div className="mt-4 rounded-lg bg-red-50 border border-red-200 p-3">
-                  <p className="text-sm text-red-800">{error}</p>
-                </div>
+            {isSignUp && (
+              <label className="mt-4 flex items-start gap-3 text-sm text-slate-600">
+                <input
+                  type="checkbox"
+                  checked={hasAcceptedTerms}
+                  onChange={(event) => setHasAcceptedTerms(event.target.checked)}
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-2 focus:ring-teal-500"
+                />
+                <span className="leading-relaxed">
+                  I agree to the{" "}
+                  <Link href="/terms" className="font-semibold text-slate-900 underline">
+                    Terms of Service
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/privacy" className="font-semibold text-slate-900 underline">
+                    Privacy Policy
+                  </Link>
+                  .
+                </span>
+              </label>
+            )}
+
+            {error && (
+              <div className="mt-4 rounded-lg bg-red-50 border border-red-200 p-3">
+                <p className="text-sm text-red-800">{error}</p>
+              </div>
               )}
 
               <Button
                 onClick={handleAuth}
-                disabled={loading || !email || !password}
+                disabled={
+                  loading ||
+                  !email ||
+                  !password ||
+                  (isSignUp && !hasAcceptedTerms)
+                }
                 className="mt-6 w-full"
               >
                 {loading ? "Please wait..." : (isSignUp ? "Create Account" : "Sign In")}
@@ -445,6 +506,10 @@ function LoginContent() {
                 onClick={() => {
                   setIsSignUp(!isSignUp);
                   setError("");
+                  setConfirmationSent(false);
+                  setConfirmationEmail("");
+                  setHasAcceptedTerms(false);
+                  setPassword("");
                 }}
               >
                 {isSignUp

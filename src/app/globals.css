@@ -164,3 +164,74 @@ body {
 .animate-bounce-slow {
   animation: bounce-slow 2s ease-in-out infinite;
 }
+
+.hero-floating-card {
+  position: absolute;
+  animation: hero-float 9s ease-in-out infinite;
+  pointer-events: none;
+  transform-origin: center;
+  z-index: 0;
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.marquee-scroller {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1rem;
+  animation: marquee-slide 32s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hiw-hero-card {
+  width: 220px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  animation: hero-float 9s ease-in-out infinite;
+}
+
+
+.logo-marquee {
+  display: flex;
+  gap: 4rem;
+  animation: logo-slide 28s linear infinite;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.logo-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logo-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

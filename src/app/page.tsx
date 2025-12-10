@@ -2,6 +2,8 @@ import { ArrowRight, Gift, Sparkles, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+import type { CSSProperties } from "react";
 
 const referralPillars = [
   {
@@ -117,8 +119,199 @@ const referralNumbers = [
   },
 ];
 
+const heroMoments: {
+  id: string;
+  tag: string;
+  title: string;
+  detail: string;
+  gradient: string;
+  position: CSSProperties;
+}[] = [
+  {
+    id: "hero-jenny",
+    tag: "Live referral",
+    title: "Jenny used your referral link",
+    detail: "4 VIP spa treatments reserved, stats updated instantly.",
+    gradient: "from-cyan-400/70 via-emerald-400/70 to-white/80",
+    position: { top: "4%", left: "-6%" },
+  },
+  {
+    id: "hero-michael",
+    tag: "Order alert",
+    title: "Michael made an order",
+    detail: "$2,750 gourmet kit tracked with Refer Labs proof.",
+    gradient: "from-amber-400/80 via-orange-500/60 to-slate-900/60",
+    position: { top: "18%", right: "-5%" },
+  },
+  {
+    id: "hero-campaign",
+    tag: "Campaign",
+    title: "You just sent a new campaign to 500 customers",
+    detail: "SMS + email drips queued for 3PM and ready to deploy.",
+    gradient: "from-indigo-500/80 via-blue-500/60 to-slate-900/70",
+    position: { top: "34%", left: "-2%" },
+  },
+  {
+    id: "hero-revenue",
+    tag: "Revenue",
+    title: "$45,500 additional revenue generated",
+    detail: "Realtime ledger shows compounding referral payouts.",
+    gradient: "from-fuchsia-500/70 via-purple-600/60 to-slate-900/80",
+    position: { bottom: "-4%", right: "2%" },
+  },
+  {
+    id: "hero-sofia",
+    tag: "Ambassador win",
+    title: "Sofia shared a VIP invite with her community",
+    detail: "5 new guests are seeing the luxury upgrade this weekend.",
+    gradient: "from-emerald-400/70 via-teal-400/60 to-slate-900/70",
+    position: { bottom: "-6%", left: "10%" },
+  },
+];
+
+const partnerHighlights = [
+  {
+    id: "highlight-jenny",
+    title: "Jenny used your referral link",
+    detail: "Luxury salon session, 4 VIP seats locked in one click.",
+    badge: "Live referral",
+    gradient: "from-sky-500/80 via-cyan-500/50 to-slate-900/60",
+  },
+  {
+    id: "highlight-michael",
+    title: "Michael made an order",
+    detail: "$2,750 gourmet concierge kit tracked in seconds.",
+    badge: "Conversion alert",
+    gradient: "from-amber-400/80 via-orange-500/60 to-slate-900/60",
+  },
+  {
+    id: "highlight-campaign",
+    title: "Campaign to 500 customers just sent",
+    detail: "SMS + email automations fuel a coordinated launch.",
+    badge: "Campaign",
+    gradient: "from-indigo-500/80 via-violet-500/60 to-slate-900/70",
+  },
+  {
+    id: "highlight-revenue",
+    title: "$45,500 additional revenue generated",
+    detail: "Compounding ambassador payouts tracked in real-time.",
+    badge: "Revenue",
+    gradient: "from-fuchsia-500/70 via-pink-500/50 to-slate-900/80",
+  },
+  {
+    id: "highlight-hubspot",
+    title: "HubSpot deals synced instantly",
+    detail: "Each referral record maps into your CRM workflow.",
+    badge: "Workflow",
+    gradient: "from-emerald-500/70 via-teal-500/40 to-slate-900/60",
+  },
+];
+
+type PartnerLogoSpec = {
+  id: string;
+  name: string;
+  render: () => ReactNode;
+};
+
+const partnerLogos: PartnerLogoSpec[] = [
+  {
+    id: "logo-attentive",
+    name: "Attentive",
+    render: () => (
+      <div className="flex items-baseline gap-1 text-2xl font-black tracking-[0.25em] text-slate-900 lowercase">
+        <span>attentive</span>
+        <span className="text-[0.4rem] uppercase tracking-[0.4em] font-semibold text-slate-600">
+          ®
+        </span>
+      </div>
+    ),
+  },
+  {
+    id: "logo-klaviyo",
+    name: "Klaviyo",
+    render: () => (
+      <div
+        className="flex items-center gap-1 text-2xl font-bold uppercase tracking-[0.2em]"
+        style={{ fontFamily: "Times New Roman, Baskerville, serif" }}
+      >
+        <span>klaviyo</span>
+        <span className="h-3 w-3 rounded-sm bg-[#0c0c0c]" />
+      </div>
+    ),
+  },
+  {
+    id: "logo-mailchimp",
+    name: "Mailchimp",
+    render: () => (
+      <div className="flex items-center gap-3">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1d1d1f] text-4xl font-black text-yellow-50 shadow-lg">
+          m
+        </div>
+        <span className="text-2xl font-black lowercase tracking-[0.1em] text-[#151515]">
+          mailchimp
+        </span>
+      </div>
+    ),
+  },
+  {
+    id: "logo-resend",
+    name: "Resend",
+    render: () => (
+      <div className="text-2xl font-black uppercase tracking-[0.1em] text-[#111111]">
+        Resend
+      </div>
+    ),
+  },
+  {
+    id: "logo-salesforce",
+    name: "Salesforce",
+    render: () => (
+      <div className="flex items-center gap-3">
+        <div className="relative h-10 w-20 overflow-visible">
+          <span className="absolute left-0 top-2 h-8 w-14 rounded-[36px] bg-[#0172de]" />
+          <span className="absolute left-6 top-0 h-10 w-16 rounded-[36px] bg-[#01a0ff]" />
+          <span className="absolute -left-2 top-3 h-5 w-10 rounded-full bg-[#00baff]" />
+        </div>
+        <span className="text-xl font-semibold uppercase tracking-[0.4em] text-[#0172de]">
+          SALESFORCE
+        </span>
+      </div>
+    ),
+  },
+  {
+    id: "logo-hubspot",
+    name: "HubSpot",
+    render: () => (
+      <div className="flex items-center gap-3">
+        <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#ff7a59]">
+          <span className="text-lg font-bold uppercase text-white">H</span>
+          <span className="absolute -right-0 top-0 h-3 w-3 rounded-full bg-white/80" />
+        </div>
+        <span className="text-2xl font-black text-slate-900">HubSpot</span>
+      </div>
+    ),
+  },
+  {
+    id: "logo-shopify",
+    name: "Shopify",
+    render: () => (
+      <div className="flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#0c8a55] shadow-lg">
+          <span className="text-2xl font-black text-white">S</span>
+        </div>
+        <span className="text-2xl font-black lowercase tracking-[0.15em] text-slate-900">
+          shopify
+        </span>
+      </div>
+    ),
+  },
+];
+
 
 export default function Home() {
+  const repeatedPartnerHighlights = [...partnerHighlights, ...partnerHighlights];
+  const repeatedPartnerLogos = [...partnerLogos, ...partnerLogos];
+
   return (
     <div className="aurora tiffany-hero relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(0,131,143,0.12),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(77,208,225,0.18),transparent_35%)]" />
@@ -126,8 +319,25 @@ export default function Home() {
       <main className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-8 md:px-10 lg:px-16">
 
         {/* Hero Section */}
-        <div className="mx-auto max-w-4xl text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
-          <div className="space-y-6">
+        <div className="mx-auto max-w-4xl relative text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
+          {heroMoments.map((moment) => (
+            <div
+              key={moment.id}
+              className={`hero-floating-card hidden lg:flex flex-col gap-2 rounded-3xl border border-white/60 bg-gradient-to-br px-4 py-3 text-left shadow-2xl shadow-teal-500/40 ${moment.gradient}`}
+              style={moment.position}
+              aria-hidden
+            >
+              <p className="text-[10px] uppercase tracking-[0.4em] text-white/70">
+                {moment.tag}
+              </p>
+              <p className="text-sm font-semibold text-white">
+                {moment.title}
+              </p>
+              <p className="text-xs text-white/80">{moment.detail}</p>
+            </div>
+          ))}
+
+          <div className="relative z-10 space-y-6">
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
               <span className="block text-balance text-[#00343a]">We Help Launch Successful</span>
               <span className="block text-[#0a727f] drop-shadow-[0_6px_20px_rgba(9,81,93,0.25)]">
@@ -138,7 +348,7 @@ export default function Home() {
               Activate a growth network that plugs into your sales and marketing to generate new business.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center gap-4 pt-6 px-4">
+          <div className="relative z-10 flex flex-col items-center justify-center gap-4 pt-6 px-4">
             <Link
               href="/login"
               className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-xl font-bold px-10 py-5 hover:scale-105 transition-all duration-300")}
@@ -372,6 +582,63 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        {/* Who We Work With */}
+        <section className="space-y-6 rounded-[32px] border border-slate-200 bg-white/90 px-6 py-10 shadow-xl shadow-slate-200/40">
+          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-slate-500">
+                Who we work with
+              </p>
+              <h3 className="mt-2 text-3xl font-black text-slate-900">
+                Industry leaders rely on Refer Labs
+              </h3>
+            </div>
+            <p className="text-sm text-slate-600 max-w-xl">
+              Every partner sees Refer Labs as the flexible growth control room that keeps
+              their referral network and automation stack in seamless sync.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-br from-slate-900 to-slate-800 p-5 text-white shadow-2xl">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(92,225,230,0.25),transparent),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent)]" />
+            <div className="relative z-10">
+              <div className="marquee-scroller">
+                <div className="marquee-track py-2">
+                  {repeatedPartnerHighlights.map((highlight, index) => (
+                    <div
+                      key={`${highlight.id}-${index}`}
+                      className={`min-w-[220px] rounded-3xl border border-white/20 bg-gradient-to-br p-4 text-sm shadow-lg shadow-black/40 ${highlight.gradient}`}
+                    >
+                      <p className="text-[11px] uppercase tracking-[0.3em] text-white/70">
+                        {highlight.badge}
+                      </p>
+                      <p className="mt-3 text-lg font-semibold text-white">
+                        {highlight.title}
+                      </p>
+                      <p className="mt-1 text-xs leading-snug text-white/80">
+                        {highlight.detail}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white/90 px-4 py-4 shadow-lg">
+            <div className="logo-marquee gap-10">
+              {repeatedPartnerLogos.map((logo, index) => (
+                <div
+                  key={`${logo.id}-${index}`}
+                  className="min-w-[220px] flex items-center justify-center px-3"
+                >
+                  {logo.render()}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

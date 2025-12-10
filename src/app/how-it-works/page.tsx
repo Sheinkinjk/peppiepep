@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import type { CSSProperties } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -10,6 +11,50 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+type HeroCelebration = {
+  id: string;
+  tag: string;
+  title: string;
+  detail: string;
+  gradient: string;
+  style: CSSProperties;
+};
+
+const heroCelebrations: HeroCelebration[] = [
+  {
+    id: "hero-jenny",
+    tag: "LIVE REFERRAL",
+    title: "Jenny used your referral link",
+    detail: "4 VIP spa retreats reserved automatically, stats updated in real time.",
+    gradient: "from-cyan-400/80 via-emerald-400/70 to-white/80",
+    style: { top: "-1rem", left: "-2rem" },
+  },
+  {
+    id: "hero-michael",
+    tag: "ORDER ALERT",
+    title: "Michael made an order",
+    detail: "Luxury kit checkout landed with proof-of-referral in seconds.",
+    gradient: "from-amber-400/80 via-orange-500/60 to-fuchsia-500/20",
+    style: { top: "-2rem", right: "-2rem" },
+  },
+  {
+    id: "hero-campaign",
+    tag: "CAMPAIGN",
+    title: "You just sent a new campaign to 500 customers",
+    detail: "SMS + email drips queued across channels for 3PM launch.",
+    gradient: "from-indigo-500/80 via-sky-500/50 to-slate-900/60",
+    style: { bottom: "-2rem", left: "-1rem" },
+  },
+  {
+    id: "hero-revenue",
+    tag: "REVENUE",
+    title: "$45,500 additional revenue generated",
+    detail: "Realtime ledger shows compounding referral payouts flowing in.",
+    gradient: "from-fuchsia-500/80 via-purple-600/60 to-slate-900/70",
+    style: { bottom: "-2rem", right: "-1rem" },
+  },
+];
+
 export default function HowItWorks() {
   return (
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
@@ -17,14 +62,49 @@ export default function HowItWorks() {
 
       <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
 
-        <div className="max-w-3xl space-y-4">
-          <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            How Refer Labs turns customers into micro‑influencers
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
-            From upload to reward in minutes. See how we plug referrals into your marketing campaigns so every happy customer promotes you across SMS, email, and social.
-          </p>
-        </div>
+        <section className="relative max-w-3xl space-y-4 lg:space-y-6">
+          {heroCelebrations.map((celebration) => (
+            <div
+              key={celebration.id}
+              className={`hiw-hero-card hidden lg:flex flex-col gap-2 rounded-3xl border border-white/60 bg-gradient-to-br px-4 py-3 shadow-2xl shadow-teal-500/30 text-left text-white ${celebration.gradient}`}
+              style={celebration.style}
+              aria-hidden
+            >
+              <p className="text-[10px] uppercase tracking-[0.4em] text-white/70">
+                {celebration.tag}
+              </p>
+              <p className="text-sm font-semibold text-white">{celebration.title}</p>
+              <p className="text-xs text-white/80 leading-tight">{celebration.detail}</p>
+            </div>
+          ))}
+
+          <div className="relative z-10 space-y-4">
+            <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
+              How Refer Labs turns customers into micro‑influencers
+            </h1>
+            <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
+              From upload to reward in minutes. See how we plug referrals into your marketing campaigns so every happy customer promotes you across SMS, email, and social.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:hidden">
+            {heroCelebrations.map((celebration) => (
+              <div
+                key={`inline-${celebration.id}`}
+                className="rounded-3xl border border-slate-200 bg-white p-4 shadow-xl"
+              >
+                <div className={`mb-3 h-1 w-16 rounded-full bg-gradient-to-r ${celebration.gradient}`} />
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+                  {celebration.tag}
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">
+                  {celebration.title}
+                </p>
+                <p className="mt-1 text-xs text-slate-600 leading-tight">{celebration.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="space-y-8">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
