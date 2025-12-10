@@ -16,7 +16,7 @@ const CASE_STUDIES: CaseStudy[] = [
     industry: "Luxury e-commerce",
     tagline: "Turn every unboxing into your next three customers.",
     highlight:
-      "Refer Labs stitched referral links into the post-purchase journey, so every "I love this" moment triggered ready-to-share links, SMS nudges, and CRM follow-ups.",
+      "Refer Labs stitched referral links into the post-purchase journey, so every 'I love this' moment triggered ready-to-share links, SMS nudges, and CRM follow-ups.",
     metrics: [
       { label: "Referral orders", value: "28% of monthly revenue", detail: "Tracked end-to-end with double-sided credit" },
       { label: "UGC volume", value: "4× photo & reel submissions", detail: "Champions auto-tagged via referral codes" },
@@ -42,7 +42,7 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Advisor adoption", value: "93%", detail: "Referral prompts + scripts baked into Pepform tasks" },
     ],
     flows: [
-      { stage: "Trigger", description: "Advisor logs "delighted client" event inside Refer Labs." },
+      { stage: "Trigger", description: "Advisor logs 'delighted client' event inside Refer Labs." },
       { stage: "Share", description: "Client receives co-branded landing page + introduce-a-friend email." },
       { stage: "Track", description: "Referrals push into HubSpot with stage + advisor attribution." },
       { stage: "Reward", description: "Referrer receives strategy session credits; finance sees audit trail in Refer Labs." },
