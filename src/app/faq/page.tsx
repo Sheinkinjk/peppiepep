@@ -11,7 +11,7 @@ export default function FAQPage() {
         {
           question: "What is Refer Labs and who is it built for?",
           answer:
-            "Refer Labs is a concierge-grade referral marketing platform designed for service businesses, agencies, and ambitious teams that want to turn delighted customers into measurable promoters without juggling spreadsheets.",
+            "Refer Labs is a concierge-grade referral marketing platform built for ambitious teams, agencies, and operations groups that want to turn delighted customers into measurable promoters without juggling spreadsheets.",
         },
         {
           question: "How does onboarding work once I create an account?",
@@ -31,7 +31,7 @@ export default function FAQPage() {
         {
           question: "How does the support experience work?",
           answer:
-            "Support is available via the chatbot in the lower-right corner, scheduled calls, or priority Slack access depending on your plan. During onboarding we guide you through every dashboard area and supply playbooks for recurring referral initiatives.",
+            "Support is available via the chatbot in the lower-right corner, scheduled calls, or concierge email access depending on your plan. During onboarding we guide you through every dashboard area and supply playbooks for recurring referral initiatives.",
         },
       ],
     },
@@ -107,11 +107,6 @@ export default function FAQPage() {
           question: "How does Refer Labs prevent fraudulent referrals?",
           answer:
             "Refer Labs detects duplicate emails, IP addresses, and suspicious spending patterns. Automated flags pause reward issuance until a human reviewer clears the activity.",
-        },
-        {
-          question: "What are hero tiles and calendar-style automations?",
-          answer:
-            "Hero tiles highlight KPI snapshots (link clicks, active ambassadors, projected revenue), while calendar automations let you schedule campaigns around launches, holidays, or product drops with recurring checks.",
         },
         {
           question: "Can I pause or duplicate campaigns?",
