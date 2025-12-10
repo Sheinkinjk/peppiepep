@@ -72,39 +72,92 @@ export function IntegrationTab({
         </CollapsibleTrigger>
         <CollapsibleContent className="mt-4">
           <div className="rounded-3xl border-2 border-emerald-200 bg-white p-6 sm:p-8 shadow-xl space-y-6">
-            {/* Step 1 */}
+            {/* Intro */}
+            <div className="rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-300 p-5">
+              <h4 className="text-lg font-black text-emerald-900 mb-2">📋 Integration Overview</h4>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                This guide walks you through setting up and fully testing your referral program integration <strong>before</strong> adding ambassadors or launching campaigns.
+                Follow each step in order to ensure everything works correctly.
+              </p>
+            </div>
+
+            {/* Step 1: Create Program Settings - NEW PROMINENT FIRST STEP */}
             <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
-                  1
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Configure Your Program Settings</h3>
-                  <p className="text-sm text-slate-700 mt-1">Before connecting your website, you need to set up your referral program basics.</p>
+              <div className="rounded-2xl bg-gradient-to-r from-purple-100 to-pink-100 border-2 border-purple-300 p-4">
+                <div className="flex items-start gap-3">
+                  <div className="rounded-xl bg-purple-600 text-white font-black text-xl w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    1
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs uppercase tracking-wider text-purple-700 font-bold mb-1">🎯 START HERE - CRITICAL FIRST STEP</p>
+                    <h3 className="text-xl font-black text-slate-900">Create Program Settings</h3>
+                    <p className="text-sm text-slate-700 mt-1 font-semibold">This is the foundation of your referral program. Complete this before anything else.</p>
+                  </div>
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
-                <div>
-                  <p className="font-semibold text-slate-900 text-sm">Go to Step 2: Clients & Ambassadors</p>
-                  <p className="text-sm text-slate-600 mt-1">Click "Program Settings" button (top right)</p>
+              <div className="ml-13 space-y-4 pl-6 border-l-4 border-purple-300">
+                <div className="rounded-xl bg-purple-50 border-2 border-purple-200 p-4">
+                  <p className="text-sm font-black text-purple-900 mb-2">Why this matters:</p>
+                  <p className="text-sm text-slate-700">
+                    Program Settings define your rewards, offer copy, and branding. Without these configured,
+                    referral links won't display properly and tracking won't work. This is the <strong>core configuration</strong>
+                    that powers everything else.
+                  </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Fill out these required fields:</p>
-                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
-                    <li><strong>Business name:</strong> Your company name</li>
-                    <li><strong>Offer text:</strong> What you're offering (e.g., "Refer a friend and get $25 credit")</li>
-                    <li><strong>Client reward:</strong> What the referrer gets (e.g., "$25 in store credit")</li>
-                    <li><strong>New user reward:</strong> What the referred person gets (e.g., "15% off first visit")</li>
-                    <li><strong>Reward type:</strong> Choose credit, discount, upgrade, or points</li>
-                    <li><strong>Reward amount:</strong> Enter dollar amount (e.g., 25)</li>
+                  <p className="font-bold text-slate-900 text-sm mb-2">📍 Where to find it:</p>
+                  <ul className="list-none text-sm text-slate-700 space-y-1">
+                    <li>→ Click the tab <strong>"Step 2: Add Clients & Ambassadors"</strong> above</li>
+                    <li>→ Look for the <strong>"Program Settings"</strong> button (top right corner)</li>
+                    <li>→ Click it to open the settings dialog</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Generate discount capture secret:</p>
-                  <p className="text-sm text-slate-600 mt-1">Click "Generate Secret" in the Website Capture section. <strong>Copy this secret</strong> - you'll need it for Step 4.</p>
+                  <p className="font-bold text-slate-900 text-sm mb-2">✏️ Required fields to complete:</p>
+                  <div className="space-y-3">
+                    <div className="rounded-lg bg-white border border-slate-200 p-3">
+                      <p className="font-semibold text-slate-900 text-sm">Business Information:</p>
+                      <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1 ml-2">
+                        <li><strong>Business name:</strong> Your company name (e.g., "Luxe Salon & Spa")</li>
+                        <li><strong>Logo URL:</strong> Optional - URL to your logo image</li>
+                        <li><strong>Brand color:</strong> Optional - Your primary brand color in hex (e.g., #0abab5)</li>
+                      </ul>
+                    </div>
+                    <div className="rounded-lg bg-white border border-slate-200 p-3">
+                      <p className="font-semibold text-slate-900 text-sm">Reward Configuration:</p>
+                      <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1 ml-2">
+                        <li><strong>Reward type:</strong> credit, discount, upgrade, or points</li>
+                        <li><strong>Reward amount:</strong> Dollar value (e.g., 25 for $25)</li>
+                        <li><strong>Upgrade name:</strong> If using "upgrade" type (e.g., "VIP Membership")</li>
+                      </ul>
+                    </div>
+                    <div className="rounded-lg bg-white border border-slate-200 p-3">
+                      <p className="font-semibold text-slate-900 text-sm">Customer-Facing Copy:</p>
+                      <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1 ml-2">
+                        <li><strong>Offer text:</strong> Main headline (e.g., "Refer a friend and both get $25 credit!")</li>
+                        <li><strong>Client reward text:</strong> What referrer gets (e.g., "$25 store credit when your friend books")</li>
+                        <li><strong>New user reward text:</strong> What referred friend gets (e.g., "$25 off your first visit")</li>
+                        <li><strong>Reward terms:</strong> Any conditions or fine print</li>
+                      </ul>
+                    </div>
+                    <div className="rounded-lg bg-white border border-amber-200 p-3 bg-amber-50">
+                      <p className="font-semibold text-amber-900 text-sm">🔐 Generate Discount Capture Secret:</p>
+                      <p className="text-sm text-slate-700 mt-1">
+                        In the Website Capture section, click <strong>"Generate Secret"</strong>.
+                        Copy and save this secret - you'll need it in Step 5 for checkout integration.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
-                  <p className="text-xs font-semibold text-emerald-900">✓ How to verify: Click "Save Changes" - you should see a success message.</p>
+                <div className="rounded-xl bg-emerald-50 border-2 border-emerald-300 p-4">
+                  <p className="text-sm font-black text-emerald-900 mb-1">✓ How to verify:</p>
+                  <p className="text-sm text-slate-700">Click "Save Changes" - you should see a success message confirming all settings were saved.</p>
+                </div>
+                <div className="rounded-xl bg-blue-50 border-2 border-blue-200 p-4">
+                  <p className="text-sm font-black text-blue-900 mb-2">🚀 Next step:</p>
+                  <p className="text-sm text-slate-700">
+                    Once Program Settings are saved, you can proceed to create a test ambassador profile to get your first referral link.
+                  </p>
                 </div>
               </div>
             </div>
@@ -116,11 +169,11 @@ export function IntegrationTab({
                   2
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Create a Test Ambassador</h3>
-                  <p className="text-sm text-slate-700 mt-1">Create a test profile so you have a real referral link to work with.</p>
+                  <h3 className="text-lg font-black text-slate-900">Create Test Ambassador Profile</h3>
+                  <p className="text-sm text-slate-700 mt-1">Create a test profile to generate your first referral link for integration testing.</p>
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+              <div className="ml-13 space-y-3 pl-6 border-l-4 border-emerald-200">
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">In Step 2: Clients & Ambassadors</p>
                   <p className="text-sm text-slate-600 mt-1">Find the "Quick Add Customer" card (right side)</p>
@@ -151,11 +204,11 @@ export function IntegrationTab({
                   3
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Add Referral Page to Your Website</h3>
-                  <p className="text-sm text-slate-700 mt-1">Embed the referral landing page on your website so customers can refer friends and view your offer.</p>
+                  <h3 className="text-lg font-black text-slate-900">Embed Referral Page on Your Website</h3>
+                  <p className="text-sm text-slate-700 mt-1">Install the referral landing page so customers can view your offer and refer friends.</p>
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+              <div className="ml-13 space-y-3 pl-6 border-l-4 border-emerald-200">
                 <div className="rounded-xl bg-blue-50 border border-blue-200 p-3">
                   <p className="text-sm font-black text-blue-900 mb-2">📖 How Referral Pages Work:</p>
                   <p className="text-xs text-blue-800 leading-relaxed">
@@ -189,18 +242,71 @@ export function IntegrationTab({
               </div>
             </div>
 
-            {/* Step 4 */}
+            {/* Step 4: Test Referral Link Tracking */}
+            <div className="space-y-3">
+              <div className="rounded-2xl bg-gradient-to-r from-blue-100 to-indigo-100 border-2 border-blue-300 p-4">
+                <div className="flex items-start gap-3">
+                  <div className="rounded-xl bg-blue-600 text-white font-black text-xl w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    4
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs uppercase tracking-wider text-blue-700 font-bold mb-1">🧪 INTEGRATION TEST #1</p>
+                    <h3 className="text-xl font-black text-slate-900">Test Referral Link Tracking</h3>
+                    <p className="text-sm text-slate-700 mt-1 font-semibold">Verify that link visits and form submissions are being tracked correctly.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="ml-13 space-y-4 pl-6 border-l-4 border-blue-300">
+                <div className="rounded-xl bg-blue-50 border-2 border-blue-200 p-4">
+                  <p className="text-sm font-black text-blue-900 mb-2">🎯 What you're testing:</p>
+                  <p className="text-sm text-slate-700">
+                    This test confirms that when someone clicks a referral link and submits the form,
+                    those events are tracked in your dashboard's Journey timeline.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-bold text-slate-900 text-sm mb-2">Test procedure:</p>
+                  <ol className="list-decimal list-inside text-sm text-slate-600 space-y-2 ml-2">
+                    <li>Open your test ambassador's referral link from Step 2 in a <strong>new incognito/private window</strong></li>
+                    <li>You should see your branded referral page with your offer text and rewards</li>
+                    <li>Fill out the referral form with test friend details (name, email, phone)</li>
+                    <li>Click Submit</li>
+                    <li>Go to your dashboard: <strong>Step 5: Measure ROI → Journey timeline tab</strong></li>
+                    <li>Look for events from the past few minutes</li>
+                  </ol>
+                </div>
+                <div className="rounded-xl bg-emerald-50 border-2 border-emerald-300 p-4">
+                  <p className="text-sm font-black text-emerald-900 mb-2">✓ Success criteria:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-700 space-y-1 ml-2">
+                    <li>You see a <strong>"link_visit"</strong> event when you opened the referral link</li>
+                    <li>You see a <strong>"signup_submitted"</strong> event after submitting the form</li>
+                    <li>Both events show the correct ambassador name and referral code</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-amber-50 border-2 border-amber-200 p-4">
+                  <p className="text-sm font-black text-amber-900 mb-2">⚠️ If events aren't showing:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-700 space-y-1 ml-2">
+                    <li>Wait 30-60 seconds and refresh the Journey timeline page</li>
+                    <li>Verify your Program Settings are fully saved (Step 1)</li>
+                    <li>Check that you used the correct referral link from the Customers table</li>
+                    <li>Try the test again in a fresh incognito window</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 5 */}
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
-                  4
+                  5
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Connect Your Checkout (Discount Tracking)</h3>
-                  <p className="text-sm text-slate-700 mt-1">Set up discount code tracking so you know when referrals convert to sales.</p>
+                  <h3 className="text-lg font-black text-slate-900">Connect Checkout Discount Tracking</h3>
+                  <p className="text-sm text-slate-700 mt-1">Set up discount code tracking so conversions are automatically recorded when customers use referral codes.</p>
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
+              <div className="ml-13 space-y-3 pl-6 border-l-4 border-emerald-200">
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">You need your discount capture secret from Step 1</p>
                   <p className="text-sm text-slate-600 mt-1">If you didn't save it, go back to Program Settings → Website Capture and copy it</p>
@@ -219,49 +325,69 @@ export function IntegrationTab({
               </div>
             </div>
 
-            {/* Step 5 */}
+            {/* Step 6: Test Discount Tracking */}
             <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <div className="rounded-xl bg-emerald-600 text-white font-black text-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
-                  5
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-black text-slate-900">Test Everything End-to-End</h3>
-                  <p className="text-sm text-slate-700 mt-1">Verify that referral links work, tracking is active, and conversions are recorded.</p>
+              <div className="rounded-2xl bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300 p-4">
+                <div className="flex items-start gap-3">
+                  <div className="rounded-xl bg-green-600 text-white font-black text-xl w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    6
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs uppercase tracking-wider text-green-700 font-bold mb-1">🧪 INTEGRATION TEST #2</p>
+                    <h3 className="text-xl font-black text-slate-900">Test Discount Code Tracking</h3>
+                    <p className="text-sm text-slate-700 mt-1 font-semibold">Verify that discount code usage is captured and creates referral conversions.</p>
+                  </div>
                 </div>
               </div>
-              <div className="ml-13 space-y-3 pl-6 border-l-2 border-emerald-200">
-                <div>
-                  <p className="font-semibold text-slate-900 text-sm">Test 1: Referral link tracking</p>
-                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
-                    <li>Open your test ambassador's referral link from Step 2</li>
-                    <li>Fill out the referral form with a fake friend's details</li>
-                    <li>Submit the form</li>
-                    <li>Go to <strong>Step 5: Measure ROI → Journey timeline</strong> tab</li>
-                    <li><strong>✓ You should see:</strong> A "link_visit" event and a "signup_submitted" event</li>
-                  </ul>
+              <div className="ml-13 space-y-4 pl-6 border-l-4 border-green-300">
+                <div className="rounded-xl bg-green-50 border-2 border-green-200 p-4">
+                  <p className="text-sm font-black text-green-900 mb-2">🎯 What you're testing:</p>
+                  <p className="text-sm text-slate-700">
+                    This test verifies that when a customer uses a discount code at checkout,
+                    it's captured and creates a referral conversion in your system.
+                  </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Test 2: Discount code tracking</p>
-                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
-                    <li>Copy the discount code from your test ambassador (in the Customers table)</li>
-                    <li>Go to your checkout page and enter the discount code</li>
-                    <li>Complete a test purchase (or test transaction)</li>
-                    <li>Go to <strong>Step 5: Measure ROI → Referral table</strong></li>
-                    <li><strong>✓ You should see:</strong> A new referral marked as "pending" with the transaction details</li>
+                  <p className="font-bold text-slate-900 text-sm mb-2">Test procedure:</p>
+                  <ol className="list-decimal list-inside text-sm text-slate-600 space-y-2 ml-2">
+                    <li>Go to <strong>Step 2: Clients & Ambassadors → All Customers table</strong></li>
+                    <li>Find your test ambassador and copy their <strong>discount code</strong> (not the referral link)</li>
+                    <li>Open your website's checkout page</li>
+                    <li>Add an item to cart and proceed to checkout</li>
+                    <li>Enter the discount code in the discount/promo code field</li>
+                    <li>Complete a test transaction (or trigger your checkout webhook)</li>
+                    <li>Go to <strong>Step 5: Measure ROI → Referral table tab</strong></li>
+                    <li>Look for a new referral entry from the past few minutes</li>
+                  </ol>
+                </div>
+                <div className="rounded-xl bg-emerald-50 border-2 border-emerald-300 p-4">
+                  <p className="text-sm font-black text-emerald-900 mb-2">✓ Success criteria:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-700 space-y-1 ml-2">
+                    <li>A new <strong>pending referral</strong> appears in the Referral table</li>
+                    <li>The referral shows your test ambassador's name</li>
+                    <li>Transaction details (amount, date) are recorded correctly</li>
+                    <li>You can click "Mark Complete" to award the ambassador credit</li>
                   </ul>
                 </div>
-                <div>
-                  <p className="font-semibold text-slate-900 text-sm">Test 3: Manual referral logging</p>
-                  <ul className="list-disc list-inside text-sm text-slate-600 mt-1 space-y-1">
-                    <li>Go to <strong>Step 5: Measure ROI → Referral table</strong></li>
-                    <li>Scroll down to "Add Manual Referral" form</li>
-                    <li>Fill out a test offline booking</li>
-                    <li><strong>✓ You should see:</strong> The manual referral appear in the table immediately</li>
+                <div className="rounded-xl bg-amber-50 border-2 border-amber-200 p-4">
+                  <p className="text-sm font-black text-amber-900 mb-2">⚠️ If discount tracking isn't working:</p>
+                  <ul className="list-disc list-inside text-sm text-slate-700 space-y-1 ml-2">
+                    <li>Verify your discount capture secret is correctly configured (Step 5)</li>
+                    <li>Check that your checkout is sending the POST request to the API endpoint</li>
+                    <li>Look for errors in your browser console or server logs</li>
+                    <li>Confirm the discount code matches exactly (case-sensitive)</li>
                   </ul>
                 </div>
-                <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
-                  <p className="text-xs font-semibold text-emerald-900">✓ Everything working? You're ready to import your real customers and launch campaigns!</p>
+                <div className="rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-400 p-5">
+                  <p className="text-base font-black text-emerald-900 mb-2">🎉 Integration Complete!</p>
+                  <p className="text-sm text-slate-700 mb-3">
+                    If both tests passed, your integration is fully working! You're now ready to:
+                  </p>
+                  <ul className="list-disc list-inside text-sm text-slate-700 space-y-1 ml-2">
+                    <li><strong>Import real customers</strong> (Step 2: Clients & Ambassadors)</li>
+                    <li><strong>Launch campaigns</strong> (Step 3: Launch Campaigns)</li>
+                    <li><strong>Track performance</strong> (Step 4 & 5: Analytics & ROI)</li>
+                  </ul>
                 </div>
               </div>
             </div>

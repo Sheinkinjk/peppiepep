@@ -99,8 +99,7 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
             className={cn(
               "rounded-3xl border-2 overflow-hidden transition-all duration-300",
               borderColor,
-              isExpanded ? "shadow-2xl ring-4 ring-offset-2" : "shadow-lg hover:shadow-xl",
-              isExpanded && borderColor.replace("border-", "ring-")
+              isExpanded ? "shadow-2xl" : "shadow-lg hover:shadow-xl"
             )}
           >
             {/* Step Header - Always Visible */}
