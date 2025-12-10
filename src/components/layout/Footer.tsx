@@ -33,6 +33,10 @@ export default function Footer() {
             Our Referral Program
           </Link>
           <span className="text-[#4A5B5E]">•</span>
+          <Link className="hover:text-[#0E2B31] cursor-pointer" href="/faq">
+            FAQ
+          </Link>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31] cursor-pointer" href="/contact">
             Contact
           </Link>
