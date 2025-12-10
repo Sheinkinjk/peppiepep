@@ -120,32 +120,32 @@ const heroMoments: {
     text: "Jenny used your referral link",
     emoji: "🎉",
     bgGradient: "from-cyan-400/90 to-cyan-500/90",
-    position: { top: "10%", left: "-5%", maxWidth: "260px" },
-    rotate: "-rotate-[35deg]",
+    position: { top: "12%", left: "5%", maxWidth: "280px" },
+    rotate: "rotate-45",
   },
   {
-    id: "hero-michael",
-    text: "Michael made an order",
+    id: "hero-david",
+    text: "David made an order",
     emoji: "🛒",
     bgGradient: "from-amber-400/90 to-amber-500/90",
-    position: { top: "10%", right: "-5%", maxWidth: "240px" },
-    rotate: "rotate-[35deg]",
+    position: { top: "12%", right: "5%", maxWidth: "240px" },
+    rotate: "-rotate-45",
   },
   {
     id: "hero-campaign",
-    text: "You just sent a new campaign to 500 customers",
+    text: "New Campaign sent to 500 Customers",
     emoji: "📢",
     bgGradient: "from-indigo-400/90 to-indigo-500/90",
-    position: { bottom: "10%", left: "-5%", maxWidth: "280px" },
-    rotate: "rotate-[35deg]",
+    position: { bottom: "12%", left: "5%", maxWidth: "300px" },
+    rotate: "-rotate-45",
   },
   {
     id: "hero-revenue",
     text: "$45,500 additional revenue generated",
     emoji: "💰",
     bgGradient: "from-purple-400/90 to-purple-500/90",
-    position: { bottom: "10%", right: "-5%", maxWidth: "280px" },
-    rotate: "-rotate-[35deg]",
+    position: { bottom: "12%", right: "5%", maxWidth: "300px" },
+    rotate: "rotate-45",
   },
 ];
 
@@ -296,14 +296,14 @@ export default function Home() {
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden lg:flex items-center gap-3 rounded-[32px] border border-white/70 bg-gradient-to-r ${moment.bgGradient} px-5 py-3 shadow-[0_25px_60px_rgba(15,23,42,0.25)] ${moment.rotate} hover:scale-105 transition-all duration-300`}
+              className={`hero-floating-card hidden lg:flex items-center justify-between gap-2.5 rounded-full border-2 border-white/80 bg-gradient-to-r ${moment.bgGradient} px-4 py-2 shadow-[0_20px_50px_rgba(15,23,42,0.3)] ${moment.rotate} hover:scale-105 transition-all duration-300`}
               style={moment.position}
               aria-hidden
             >
-              <span className="text-sm font-semibold text-white leading-snug drop-shadow-md whitespace-nowrap">
+              <span className="text-[13px] font-bold text-white leading-tight drop-shadow-md whitespace-nowrap">
                 {moment.text}
               </span>
-              <span className="text-xl">{moment.emoji}</span>
+              <span className="text-lg flex-shrink-0">{moment.emoji}</span>
             </div>
           ))}
 
