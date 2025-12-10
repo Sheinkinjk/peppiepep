@@ -25,9 +25,6 @@ export const metadata: Metadata = {
   description: "Earn 25% recurring revenue by referring businesses to Refer Labs. Offer new customers a $250 sign-on credit when you join our partner program.",
 };
 
-const PARTNER_APPLICATIONS_URL =
-  "https://app.supabase.com/ovpsgbstrdahrdcllswa/database/tables/partner_applications/rows";
-
 async function submitPartnerApplication(formData: FormData) {
   'use server';
 
@@ -222,7 +219,7 @@ export default function OurReferralProgramPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
-              What You'll Be Promoting
+              What You&apos;ll Be Promoting
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               The world&rsquo;s most elegant referral marketing platform for premium businesses
@@ -429,72 +426,6 @@ export default function OurReferralProgramPage() {
         </div>
       </section>
 
-      {/* Automation + Tracking */}
-      <section className="py-16 bg-slate-100">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">Automation & Tracking</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Every applicant triggers an automated email and is logged inside Supabase so you can follow up in seconds.
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Email Notifications</h3>
-              <p className="text-sm text-slate-600 mb-3">
-                The `submitPartnerApplication` server action uses Resend to email `jarred@referlabs.com.au` immediately after each submission, so every lead lands in your inbox.
-              </p>
-              <ol className="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                <li>Install the Resend key into `RESEND_API_KEY` (or update it when rotating secrets).</li>
-                <li>Adjust the recipient list, subject line, or HTML payload in the server action if you want CCs, team-friendly formatting, or open tracking.</li>
-                <li>Submit the “Apply to Become a Partner” form (or use the preview) to confirm the email arrives as expected.</li>
-              </ol>
-              <p className="text-xs text-slate-500">
-                Point `RESEND_API_KEY` at the correct key in your environment variables and edit the HTML payload above to adapt the styling, subject, or add CC recipients.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Tracking Applications</h3>
-              <p className="text-sm text-slate-600 mb-3">
-                Every form submission is stored in the `partner_applications` table in Supabase with `name`, `email`, `phone`, `source`, and created/updated timestamps so you can flag each lead or note review status.
-              </p>
-              <p className="text-sm text-slate-600 mb-3">
-                Add columns such as `status`, `owner`, or `notes` inside Supabase to track next actions or approvals.
-              </p>
-              <p className="text-xs text-slate-500">
-                View the rows here:{" "}
-                <Link href={PARTNER_APPLICATIONS_URL} className="text-[#0abab5] hover:underline">
-                  Supabase table
-                </Link>
-                .
-              </p>
-            </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Next Actions</h3>
-              <ol className="list-decimal list-inside text-sm text-slate-600 space-y-2">
-                <li>Verify the Resend payload renders the data you expect and log any chokepoints.</li>
-                <li>Set up a Supabase Stream or Zapier webhook to notify collaborators by email or your preferred chat channel when a new row appears.</li>
-                <li>Create a dashboard filter in Supabase to mark applications as reviewed once you reach out.</li>
-              </ol>
-            </div>
-          </div>
-          <div className="mt-8 rounded-3xl border border-[#cfeef4] bg-[#f4fbff] px-6 py-5">
-            <p className="text-sm font-semibold text-slate-900 mb-2">Automation checklist</p>
-            <ol className="list-decimal list-inside space-y-2 text-sm text-slate-600">
-              <li>Confirm `RESEND_API_KEY` is set and points at the Resend project you want to use.</li>
-              <li>Customize the HTML payload or recipients inside `submitPartnerApplication` and send a test submission.</li>
-              <li>Review the `partner_applications` table in Supabase, update statuses, and add any review notes.</li>
-            </ol>
-            <p className="mt-3 text-xs text-slate-500">
-              View every applicant inside Supabase:{" "}
-              <Link href={PARTNER_APPLICATIONS_URL} className="text-[#0abab5] underline">
-                partner_applications table
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

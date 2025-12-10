@@ -339,7 +339,7 @@ export default function Home() {
                   Why A Referral Program Is Your Best Resource For Growth Hacking
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-0 sm:mx-auto">
-                  Your next best customers are already in your existing customers' network. Refer Labs
+                  Your next best customers are already in your existing customers&rsquo; network. Refer Labs
                   helps you turn that network into a structured, trackable growth engine that feels
                   natural for them and powerful for you.
                 </p>
@@ -552,16 +552,13 @@ export default function Home() {
 
         {/* Who We Work With */}
         <section className="space-y-6 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 bg-gradient-to-br from-[#e5f7fb] via-white to-[#d6f0ff]">
-          <div className="space-y-3 text-center">
+          <div className="space-y-1 text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-slate-500 font-semibold">
-              Who We Work With
+              Our Partners
             </p>
-            <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
-              Partners, platforms, and teams that keep referrals growing
+            <h3 className="text-2xl font-black text-slate-900">
+              Trusted platform partners that keep referrals in sync
             </h3>
-            <p className="text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              These trusted leaders in commerce, community, and automation keep Refer Labs tied to the tools you already rely on, so you can measure every ambassador touchpoint without switching gears.
-            </p>
           </div>
           <div className="overflow-hidden rounded-[32px] border border-white/70 bg-white/80 px-6 py-8 shadow-2xl shadow-slate-900/10">
             <div className="logo-marquee gap-10">
