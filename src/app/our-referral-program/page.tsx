@@ -1,29 +1,32 @@
 import { Metadata } from "next";
 import {
   Gift,
-  DollarSign,
   Users,
   TrendingUp,
   CheckCircle,
-  Sparkles,
   ArrowRight,
   Mail,
   Phone,
   User,
   Shield,
   Zap,
-  Target
+  Target,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Join Our Partner Program | Refer Labs",
-  description: "Earn 25% recurring revenue by referring businesses to Refer Labs. Get $250 off your first month when you join our exclusive partner program.",
+  description: "Earn 25% recurring revenue by referring businesses to Refer Labs. Offer new customers a $250 sign-on credit when you join our partner program.",
 };
+
+const PARTNER_APPLICATIONS_URL =
+  "https://app.supabase.com/ovpsgbstrdahrdcllswa/database/tables/partner_applications/rows";
 
 async function submitPartnerApplication(formData: FormData) {
   'use server';
@@ -31,6 +34,8 @@ async function submitPartnerApplication(formData: FormData) {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
   const phone = formData.get('phone') as string;
+  const source = formData.get('source') as string | null;
+  const supabase = createServerActionClient({ cookies });
 
   // Send notification email to jarred@referlabs.com.au
   try {
@@ -69,12 +74,25 @@ async function submitPartnerApplication(formData: FormData) {
       }),
     });
 
-    if (!response.ok) {
-      throw new Error('Failed to send notification email');
+      if (!response.ok) {
+        throw new Error('Failed to send notification email');
+      }
+    } catch (error) {
+      console.error('Error sending partner application email:', error);
     }
-  } catch (error) {
-    console.error('Error sending partner application email:', error);
-  }
+
+    try {
+      await supabase.from("partner_applications").insert([
+        {
+          name,
+          email,
+          phone,
+          source,
+        },
+      ]);
+    } catch (dbError) {
+      console.error("Failed to record partner application:", dbError);
+    }
 }
 
 export default function OurReferralProgramPage() {
@@ -85,16 +103,12 @@ export default function OurReferralProgramPage() {
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 mb-6">
-              <Sparkles className="h-4 w-4 text-white" />
-              <span className="text-sm font-semibold text-white">Exclusive Partner Program</span>
-            </div>
             <h1 className="text-4xl sm:text-6xl font-black text-white mb-6 leading-tight">
               Earn 25% Recurring Revenue<br />
               <span className="text-[#0a4b53]">For Every Client You Refer</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Join our partner program and earn passive income by introducing businesses to the world's most elegant referral platform.
+              Join our partner program and earn passive income by introducing businesses to the world&rsquo;s most elegant referral platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="#apply">
@@ -103,14 +117,19 @@ export default function OurReferralProgramPage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-              <div className="flex items-center gap-2 text-white">
+            <div className="flex flex-col gap-2 text-white text-sm sm:text-base max-w-[360px] text-center sm:text-left">
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
                 <CheckCircle className="h-5 w-5" />
-                <span className="text-sm font-semibold">+ $250 Sign-On Bonus</span>
+                <span className="font-semibold">+ $250 Sign-On Bonus</span>
               </div>
+                <p>
+                  Partners can offer each new customer they sign up a $250 account credit, so referrals step into the platform with immediate value and the ability to try Refer Labs before paying.
+                </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Rewards Section */}
       <section className="py-20 bg-white">
@@ -190,7 +209,7 @@ export default function OurReferralProgramPage() {
               </div>
               <div className="mt-6 p-4 bg-indigo-100 rounded-xl">
                 <p className="text-sm font-semibold text-indigo-900">
-                  🎁 Applied automatically when you're approved
+                  🎁 Applied automatically when you&rsquo;re approved
                 </p>
               </div>
             </Card>
@@ -206,7 +225,7 @@ export default function OurReferralProgramPage() {
               What You'll Be Promoting
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The world's most elegant referral marketing platform for premium businesses
+              The world&rsquo;s most elegant referral marketing platform for premium businesses
             </p>
           </div>
 
@@ -242,20 +261,6 @@ export default function OurReferralProgramPage() {
             </Card>
           </div>
 
-          <div className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h3 className="text-2xl font-black mb-2">Perfect For These Verticals</h3>
-                <p className="text-slate-300">Your ideal referral targets</p>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-                <div className="px-4 py-2 bg-white/10 rounded-lg text-center">Wellness Studios</div>
-                <div className="px-4 py-2 bg-white/10 rounded-lg text-center">Med Spas</div>
-                <div className="px-4 py-2 bg-white/10 rounded-lg text-center">Fitness Centers</div>
-                <div className="px-4 py-2 bg-white/10 rounded-lg text-center">Premium Services</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -323,8 +328,9 @@ export default function OurReferralProgramPage() {
             </p>
           </div>
 
-          <Card className="p-8 sm:p-10 rounded-3xl border-2 border-slate-700 bg-slate-800 shadow-2xl">
-            <form action={submitPartnerApplication} className="space-y-6">
+            <Card className="p-8 sm:p-10 rounded-3xl border-2 border-slate-700 bg-slate-800 shadow-2xl">
+              <form action={submitPartnerApplication} className="space-y-6">
+                <input type="hidden" name="source" value="refer-program-page" />
               <div>
                 <Label htmlFor="name" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
                   <User className="h-4 w-4" />
@@ -374,12 +380,12 @@ export default function OurReferralProgramPage() {
                   <CheckCircle className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-white mb-1">What happens after you apply:</p>
-                    <ul className="text-sm text-slate-300 space-y-1">
-                      <li>• We'll review your application within 24 hours</li>
-                      <li>• Upon approval, receive your unique referral link & discount code</li>
-                      <li>• $250 credit automatically applied to your account</li>
-                      <li>• Access to partner resources and marketing materials</li>
-                    </ul>
+                  <ul className="text-sm text-slate-300 space-y-1">
+                    <li>• We&rsquo;ll review your application within 24 hours</li>
+                    <li>• Upon approval, receive your unique referral link & discount code</li>
+                    <li>• $250 credit automatically applied to your account</li>
+                    <li>• Access to partner resources and marketing materials</li>
+                  </ul>
                   </div>
                 </div>
               </div>
@@ -418,6 +424,73 @@ export default function OurReferralProgramPage() {
             </div>
             <p className="text-slate-500 text-sm">
               © 2024 PeppiePep. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Automation + Tracking */}
+      <section className="py-16 bg-slate-100">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">Automation & Tracking</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Every applicant triggers an automated email and is logged inside Supabase so you can follow up in seconds.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Email Notifications</h3>
+              <p className="text-sm text-slate-600 mb-3">
+                The `submitPartnerApplication` server action uses Resend to email `jarred@referlabs.com.au` immediately after each submission, so every lead lands in your inbox.
+              </p>
+              <ol className="list-decimal list-inside text-sm text-slate-600 space-y-1">
+                <li>Install the Resend key into `RESEND_API_KEY` (or update it when rotating secrets).</li>
+                <li>Adjust the recipient list, subject line, or HTML payload in the server action if you want CCs, team-friendly formatting, or open tracking.</li>
+                <li>Submit the “Apply to Become a Partner” form (or use the preview) to confirm the email arrives as expected.</li>
+              </ol>
+              <p className="text-xs text-slate-500">
+                Point `RESEND_API_KEY` at the correct key in your environment variables and edit the HTML payload above to adapt the styling, subject, or add CC recipients.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Tracking Applications</h3>
+              <p className="text-sm text-slate-600 mb-3">
+                Every form submission is stored in the `partner_applications` table in Supabase with `name`, `email`, `phone`, `source`, and created/updated timestamps so you can flag each lead or note review status.
+              </p>
+              <p className="text-sm text-slate-600 mb-3">
+                Add columns such as `status`, `owner`, or `notes` inside Supabase to track next actions or approvals.
+              </p>
+              <p className="text-xs text-slate-500">
+                View the rows here:{" "}
+                <Link href={PARTNER_APPLICATIONS_URL} className="text-[#0abab5] hover:underline">
+                  Supabase table
+                </Link>
+                .
+              </p>
+            </div>
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Next Actions</h3>
+              <ol className="list-decimal list-inside text-sm text-slate-600 space-y-2">
+                <li>Verify the Resend payload renders the data you expect and log any chokepoints.</li>
+                <li>Set up a Supabase Stream or Zapier webhook to notify collaborators by email or your preferred chat channel when a new row appears.</li>
+                <li>Create a dashboard filter in Supabase to mark applications as reviewed once you reach out.</li>
+              </ol>
+            </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-[#cfeef4] bg-[#f4fbff] px-6 py-5">
+            <p className="text-sm font-semibold text-slate-900 mb-2">Automation checklist</p>
+            <ol className="list-decimal list-inside space-y-2 text-sm text-slate-600">
+              <li>Confirm `RESEND_API_KEY` is set and points at the Resend project you want to use.</li>
+              <li>Customize the HTML payload or recipients inside `submitPartnerApplication` and send a test submission.</li>
+              <li>Review the `partner_applications` table in Supabase, update statuses, and add any review notes.</li>
+            </ol>
+            <p className="mt-3 text-xs text-slate-500">
+              View every applicant inside Supabase:{" "}
+              <Link href={PARTNER_APPLICATIONS_URL} className="text-[#0abab5] underline">
+                partner_applications table
+              </Link>
+              .
             </p>
           </div>
         </div>

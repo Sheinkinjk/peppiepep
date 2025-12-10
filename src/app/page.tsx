@@ -124,8 +124,8 @@ const heroMoments: {
     rotate: "-rotate-[35deg]",
   },
   {
-    id: "hero-david",
-    text: "David made an order",
+    id: "hero-michael",
+    text: "Michael made an order",
     emoji: "🛒",
     bgGradient: "from-amber-400/90 to-amber-500/90",
     position: { top: "10%", right: "-5%", maxWidth: "240px" },
@@ -133,7 +133,7 @@ const heroMoments: {
   },
   {
     id: "hero-campaign",
-    text: "New Campaign sent to 500 Customers",
+    text: "You just sent a new campaign to 500 customers",
     emoji: "📢",
     bgGradient: "from-indigo-400/90 to-indigo-500/90",
     position: { bottom: "10%", left: "-5%", maxWidth: "280px" },
@@ -157,13 +157,15 @@ type PartnerLogoSpec = {
 
 const partnerLogos: PartnerLogoSpec[] = [
   {
-    id: "logo-attentive",
-    name: "Attentive",
+    id: "logo-shopify",
+    name: "Shopify",
     render: () => (
-      <div className="flex items-baseline gap-1 text-2xl font-black tracking-[0.25em] text-slate-900 lowercase">
-        <span>attentive</span>
-        <span className="text-[0.4rem] uppercase tracking-[0.4em] font-semibold text-slate-600">
-          ®
+      <div className="flex items-center gap-3">
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1f9b64] shadow-lg shadow-[#1f9b64]/30">
+          <span className="text-2xl font-black text-white">S</span>
+        </div>
+        <span className="text-2xl font-black lowercase tracking-[0.2em] text-slate-900">
+          shopify
         </span>
       </div>
     ),
@@ -205,17 +207,45 @@ const partnerLogos: PartnerLogoSpec[] = [
     ),
   },
   {
-    id: "logo-salesforce",
-    name: "Salesforce",
+    id: "logo-attentive",
+    name: "Attentive",
+    render: () => (
+      <div className="flex items-baseline gap-1 text-2xl font-black tracking-[0.25em] text-slate-900 lowercase">
+        <span>attentive</span>
+        <span className="text-[0.4rem] uppercase tracking-[0.4em] font-semibold text-slate-600">
+          ®
+        </span>
+      </div>
+    ),
+  },
+  {
+    id: "logo-paperrun",
+    name: "PaperRun",
     render: () => (
       <div className="flex items-center gap-3">
-        <div className="relative h-10 w-20 overflow-visible">
-          <span className="absolute left-0 top-2 h-8 w-14 rounded-[36px] bg-[#0172de]" />
-          <span className="absolute left-6 top-0 h-10 w-16 rounded-[36px] bg-[#01a0ff]" />
-          <span className="absolute -left-2 top-3 h-5 w-10 rounded-full bg-[#00baff]" />
+        <div className="relative h-12 w-10">
+          <span className="absolute inset-x-0 top-1 h-4 rounded-[12px] bg-[#1c9fbf]" />
+          <span className="absolute inset-x-0 top-4 h-4 rounded-[12px] bg-[#0c6a88]" />
+          <span className="absolute inset-x-0 top-7 h-4 rounded-[12px] bg-[#6dd3e3]" />
         </div>
-        <span className="text-xl font-semibold uppercase tracking-[0.4em] text-[#0172de]">
-          SALESFORCE
+        <span className="text-xl font-black uppercase tracking-[0.25em] text-slate-900">
+          PaperRun
+        </span>
+      </div>
+    ),
+  },
+  {
+    id: "logo-loop",
+    name: "Loop",
+    render: () => (
+      <div className="flex items-center gap-3">
+        <div className="relative h-12 w-12">
+          <span className="absolute inset-0 rounded-full border-2 border-[#6ec3e8]" />
+          <span className="absolute right-0 top-1/2 h-2 w-6 -translate-y-1/2 rotate-12 rounded-full bg-[#6ec3e8]" />
+          <span className="absolute bottom-1 right-1 h-2 w-2 rounded-full bg-[#6ec3e8]" />
+        </div>
+        <span className="text-2xl font-black uppercase tracking-[0.25em] text-slate-900">
+          LOOP
         </span>
       </div>
     ),
@@ -234,15 +264,17 @@ const partnerLogos: PartnerLogoSpec[] = [
     ),
   },
   {
-    id: "logo-shopify",
-    name: "Shopify",
+    id: "logo-salesforce",
+    name: "Salesforce",
     render: () => (
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#0c8a55] shadow-lg">
-          <span className="text-2xl font-black text-white">S</span>
+        <div className="relative h-10 w-20 overflow-visible">
+          <span className="absolute left-0 top-2 h-8 w-14 rounded-[36px] bg-[#0172de]" />
+          <span className="absolute left-6 top-0 h-10 w-16 rounded-[36px] bg-[#01a0ff]" />
+          <span className="absolute -left-2 top-3 h-5 w-10 rounded-full bg-[#00baff]" />
         </div>
-        <span className="text-2xl font-black lowercase tracking-[0.15em] text-slate-900">
-          shopify
+        <span className="text-xl font-semibold uppercase tracking-[0.4em] text-[#0172de]">
+          SALESFORCE
         </span>
       </div>
     ),
@@ -264,11 +296,13 @@ export default function Home() {
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden xl:flex items-center gap-3 rounded-full border-2 border-white/80 bg-gradient-to-r ${moment.bgGradient} backdrop-blur-sm px-5 py-2.5 shadow-2xl shadow-slate-900/20 ${moment.rotate} hover:scale-105 transition-all duration-300`}
+              className={`hero-floating-card hidden lg:flex items-center gap-3 rounded-[32px] border border-white/70 bg-gradient-to-r ${moment.bgGradient} px-5 py-3 shadow-[0_25px_60px_rgba(15,23,42,0.25)] ${moment.rotate} hover:scale-105 transition-all duration-300`}
               style={moment.position}
               aria-hidden
             >
-              <span className="text-sm font-bold text-white drop-shadow-md whitespace-nowrap">{moment.text}</span>
+              <span className="text-sm font-semibold text-white leading-snug drop-shadow-md whitespace-nowrap">
+                {moment.text}
+              </span>
               <span className="text-xl">{moment.emoji}</span>
             </div>
           ))}
@@ -516,12 +550,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Our Partners Strip */}
-        <section className="space-y-4 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 bg-gradient-to-r from-cyan-50/60 via-teal-50/40 to-cyan-50/60">
-          <p className="text-center text-xs uppercase tracking-[0.3em] text-slate-600 font-bold">
-            Our Partners
-          </p>
-          <div className="overflow-hidden px-4 py-5">
+        {/* Who We Work With */}
+        <section className="space-y-6 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 bg-gradient-to-br from-[#e5f7fb] via-white to-[#d6f0ff]">
+          <div className="space-y-3 text-center">
+            <p className="text-xs uppercase tracking-[0.4em] text-slate-500 font-semibold">
+              Who We Work With
+            </p>
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+              Partners, platforms, and teams that keep referrals growing
+            </h3>
+            <p className="text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              These trusted leaders in commerce, community, and automation keep Refer Labs tied to the tools you already rely on, so you can measure every ambassador touchpoint without switching gears.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-[32px] border border-white/70 bg-white/80 px-6 py-8 shadow-2xl shadow-slate-900/10">
             <div className="logo-marquee gap-10">
               {repeatedPartnerLogos.map((logo, index) => (
                 <div

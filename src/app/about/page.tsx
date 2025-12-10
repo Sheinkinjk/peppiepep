@@ -22,7 +22,7 @@ export default function About() {
             We are the referral engine to build your future and monetise word-of-mouth referrals
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-600 mx-auto">
-            We started Refer Labs because we saw thousands of service businesses losing revenue to the same problem: broken referral systems.
+            We started Refer Labs because we saw thousands of operators losing revenue to the same problem: broken referral systems.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export default function About() {
             <h2 className="text-3xl font-bold text-slate-900">The Problem We Saw</h2>
             <div className="space-y-4 text-lg leading-relaxed text-slate-700">
               <p>
-                Service businesses have always grown through word-of-mouth, but the traditional referral model is broken. Your most loyal customers—the ones who truly love your brand and genuinely vouch for your offering—have no structured way to share their enthusiasm.
+                Word-of-mouth has always grown communities, but the traditional referral model is broken. Your most loyal customers—the ones who truly love your brand and genuinely vouch for your offering—have no structured way to share their enthusiasm.
               </p>
               <div className="rounded-xl bg-purple-50 p-6 border-l-4 border-purple-500">
                 <p className="italic text-slate-800">
@@ -55,7 +55,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-2">Our Mission</h3>
             <p className="text-slate-600">
-              Make referral revenue accessible to every service business—regardless of size, budget, or technical skill.
+              Make referral revenue accessible to every team—regardless of size, budget, or technical skill.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
             <p className="text-slate-600">
-              A world where service businesses grow organically through happy customers, not expensive ads—and every referral is tracked, rewarded, and celebrated.
+              A world where brands grow organically through happy customers, not expensive ads—and every referral is tracked, rewarded, and celebrated.
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function About() {
                 <div className="flex items-start gap-3">
                   <Rocket className="h-5 w-5 text-purple-400 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-semibold">Built for service businesses</p>
+                    <p className="font-semibold">Built for relationship-first teams</p>
                     <p className="text-sm text-slate-300">Not e-commerce. Not SaaS. We understand your workflow.</p>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function About() {
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">We're Hiring Sales Reps</h2>
               <p className="text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-                Be instrumental in our growth. Help service businesses discover the power of word-of-mouth referral systems.
+                Be instrumental in our growth. Help ambitious companies discover the power of word-of-mouth referral systems.
               </p>
             </div>
 
@@ -143,9 +143,9 @@ export default function About() {
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Sales Development Representative</h3>
-                <p className="text-purple-100 mb-4">
-                  Own the top of funnel. Identify and engage service businesses who need referral systems. Book demos, qualify leads, and fuel our growth engine.
-                </p>
+              <p className="text-purple-100 mb-4">
+                Own the top of funnel. Identify and engage growth teams who need referral systems. Book demos, qualify leads, and fuel our growth engine.
+              </p>
                 <ul className="space-y-2 text-sm text-purple-100">
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-300 mt-0.5">✓</span>
@@ -167,9 +167,9 @@ export default function About() {
                   <Target className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Account Executive</h3>
-                <p className="text-purple-100 mb-4">
-                  Close deals and build relationships. Understand service business challenges, demo Refer Labs' value, and turn prospects into thriving customers.
-                </p>
+              <p className="text-purple-100 mb-4">
+                Close deals and build relationships. Understand revenue team challenges, demo Refer Labs' value, and turn prospects into thriving customers.
+              </p>
                 <ul className="space-y-2 text-sm text-purple-100">
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-300 mt-0.5">✓</span>
@@ -200,7 +200,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 mb-1">🚀 Career Accelerator</p>
-                  <p className="text-sm text-slate-600">Learn SaaS sales, understand service businesses, and build skills that translate across industries.</p>
+                  <p className="text-sm text-slate-600">Learn SaaS sales, understand customer-first teams, and build skills that translate across industries.</p>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -221,7 +221,7 @@ export default function About() {
 
             <div className="text-center">
               <p className="text-purple-100 text-sm">
-                Not a sales role? We're also looking for engineers, designers, and marketers who want to help service businesses grow.{" "}
+                Not a sales role? We're also looking for engineers, designers, and marketers who want to help growth teams grow.{" "}
                 <Link href="mailto:careers@referlabs.com" className="underline font-semibold text-white hover:text-purple-200">
                   Get in touch
                 </Link>
@@ -237,7 +237,7 @@ export default function About() {
                 Join us on the journey
               </h3>
               <p className="text-lg text-slate-600">
-                We're just getting started. Help us build the referral engine every service business deserves.
+                We're just getting started. Help us build the referral engine every modern growth team deserves.
               </p>
             </div>
             <a

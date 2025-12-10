@@ -11,27 +11,27 @@ export default function FAQPage() {
         {
           question: "What is Refer Labs and who is it built for?",
           answer:
-            "Refer Labs is a concierge-grade referral marketing platform built for ambitious teams, agencies, and operations groups that want to turn delighted customers into measurable promoters without juggling spreadsheets.",
+            "Refer Labs is a concierge-grade referral platform for growth-minded teams across industries. It stitches together celebratory hero alerts, the ROI calculator, and partner automation so happy customers turn into measurable promoters without juggling spreadsheets.",
         },
         {
           question: "How does onboarding work once I create an account?",
           answer:
-            "After signing up you meet the Refer Labs implementation team, share your customer roster, and we help you configure rewards, brand colors, and automation. We handle the CSV import, ambassador assignment, and referral tracking so the dashboard begins reporting instantly.",
+            "Complete the signup form, share your customer roster, and our concierge team configures branding, rewards, automations, and the $250 sign-on credit you can offer new users. We handle CSV imports, ambassador assignment, and launch-ready campaigns so the dashboard is reporting immediately.",
         },
         {
           question: "Do I need a developer to launch Refer Labs?",
           answer:
-            "No. The platform focuses on non-technical teams—most setup is done via the onboarding form and shared branding assets. If you need custom webhook routing or advanced API calls, Refer Labs engineers can assist through concierge services.",
+            "No—everything in the onboarding form, dashboard, and ROI calculator is drag-and-drop friendly. We import your data, set up messaging, and even provision integrations for you. If you want to extend the system, our team can hand you Supabase hooks or Zapier templates.",
         },
         {
           question: "Is Refer Labs compliant with messaging and privacy regulations?",
           answer:
-            "Yes. Every campaign includes opt-out controls, double opt-in verification, and consent tracking so you stay compliant with TCPA, CASL, GDPR, and other regional rules. Privacy and data handling references live in the Terms and Privacy pages linked from every footer.",
+            "Yes. Every campaign includes opt-out controls, double opt-in verification, and consent tracking so you stay compliant with TCPA, CASL, GDPR, and local Australian privacy rules. Details live in the Terms and Privacy pages linked in every footer.",
         },
         {
           question: "How does the support experience work?",
           answer:
-            "Support is available via the chatbot in the lower-right corner, scheduled calls, or concierge email access depending on your plan. During onboarding we guide you through every dashboard area and supply playbooks for recurring referral initiatives.",
+            "Support starts with the chatbot and expands into dedicated concierge calls, playbooks, and walkthroughs. We guide you through every dashboard area, schedules, and best practices so you’re never guessing what to do next.",
         },
       ],
     },
@@ -41,32 +41,32 @@ export default function FAQPage() {
         {
           question: "What are the main tabs in the dashboard?",
           answer:
-            "The dashboard centers around Campaigns, Ambassadors, Analytics, Rewards, and Settings. Campaigns organizes the referral journeys, Ambassadors surfaces top referrers, Analytics shows ROI, Rewards manages incentives, and Settings keeps integrations and branding aligned.",
+            "Campaigns, Ambassadors, Analytics, Rewards, and Settings, plus an ROI module that mirrors the ‘Calculate your referral program ROI in 4 steps’ panel on the landing page. Campaigns manages flows, Ambassadors surfaces top referrers, Analytics tracks conversions, Rewards handles incentives, and Settings keeps branding and integrations aligned.",
         },
         {
           question: "How do I import or add ambassadors?",
           answer:
-            "Use the CSV import inside the Campaigns tab or manually invite ambassadors from the People panel. Refer Labs automatically generates personalized landing pages and trackable links once a contact is onboarded.",
+            "Upload a CSV, paste a list, or invite ambassadors manually from the People panel. Each contact gets a landing page, tracking link, and share kit automatically so you can start nurturing them today—the how-it-works walkthrough highlights every step.",
         },
         {
           question: "Can I customize ambassador rewards per campaign?",
           answer:
-            "Yes. When building a campaign you pick reward type (credit, gift card, discount), amount, and payout cadence. You may also create tiers and special incentives for VIP referrers directly within the Reward settings.",
+            "Absolutely. Choose reward types (credit, gift card, discount), set payout cadences, and build tiers or one-time boosts within the Reward builder. You can even preview the reward ledger before the campaign launches.",
         },
         {
           question: "How do I monitor referral progress?",
           answer:
-            "The Analytics tab provides live referral feed, conversion trends, credit balances, and breakdowns by ambassador. Use the filters to see yesterday’s performance, high-intent programs, or campaign-specific attribution.",
+            "Analytics provides a live referral feed, conversion trends, credit balances, and campaign-attribution breakdowns. Filters let you inspect yesterday, the last week, or any specific campaign’s ROI.",
         },
         {
           question: "Where do I configure integrations?",
           answer:
-            "Integrations live under Settings → Connections. Hook Refer Labs into Shopify, Klaviyo, Mailchimp, Resend, HubSpot, Salesforce, or your preferred CRM via pre-built connectors. You can also sync via CSV exports or the Refer Labs API/webhooks.",
+            "Head to Settings → Connections to plug in Shopify, Klaviyo, Mailchimp, Resend, Attentive, PaperRun, Loop, HubSpot, Salesforce, or your own webhook/API destination. The new “Who We Work With” strip highlights the primary partners you can enable today.",
         },
         {
           question: "What does the Notifications area show?",
           answer:
-            "Notifications surface invite deliveries, reward approvals, and any compliance warnings from the campaign automation engine so you can act before a customer response window closes.",
+            "Notifications flag invite deliveries, reward approvals, compliance warnings, and automation issues. Each alert links back to the campaign, ambassador, and ROI ledger so you can resolve problems before they impact revenue.",
         },
       ],
     },
@@ -76,52 +76,52 @@ export default function FAQPage() {
         {
           question: "What is a referral campaign in Refer Labs?",
           answer:
-            "A campaign orchestrates how ambassadors share unique links, what messages they send, which rewards they earn, and how conversions are validated. It bundles messaging templates, reward logic, and compliance checks.",
+            "A campaign bundles ambassador invites, messaging templates, reward logic, and compliance checks into one flow. It mirrors the how-it-works steps from import to reward and keeps everything tied to a single ROI ledger.",
         },
         {
           question: "How are referral links generated and tracked?",
           answer:
-            "Every ambassador receives a link embedded with a referral_code. Refer Labs tracks clicks, purchases, and conversions automatically, attributing them back to the ambassador and campaign in real time.",
+            "Every ambassador receives a unique URL (and QR/short code) that automatically captures clicks, purchases, and conversions. Refer Labs attributes that revenue back to both the ambassador and the campaign in real time.",
         },
         {
           question: "Can I customize messaging for each channel?",
           answer:
-            "Yes. Campaign builders let you craft different copy for email, SMS, WhatsApp, and web invite overlays. You can toggle channel delivery, schedule send times, and review preview templates before launching.",
+            "Yes—campaign builders let you craft separate copy for email, SMS, WhatsApp, and web overlays, toggle channel delivery, schedule sends, and preview each template before launching.",
         },
         {
           question: "What happens when a referred customer converts?",
           answer:
-            "The conversion triggers a pipeline: the ambassador earns credits, the customer receives a thank-you, and the analytics ledger updates immediately. You can also automate follow-up sequences or CRM syncs via integrations.",
+            "The conversion triggers a thank-you sequence, credits the ambassador, updates the analytics ledger, and can optionally sync back to your CRM via an integration.",
         },
         {
           question: "How do I manage reward budgets?",
           answer:
-            "Use the Rewards tab to set caps, play with varied credit amounts, and pause payouts once a budget threshold hits. Finance teams love the payout ledger because it exports directly to accounting systems.",
+            "Reward controls let you cap spend per campaign, pause payouts when thresholds hit, and export ledger data for accounting. The live reward feed shows earned credits, payout statuses, and remaining budget.",
         },
         {
           question: "Is there an approval flow for reward releases?",
           answer:
-            "Yes. You can route reward release approvals to managers or finance within the Rewards configuration, so no ambassador is paid before verification is complete.",
+            "Yes—route approvals to finance or ops so no ambassador is paid before a reviewer signs off. The system logs who approved what and when.",
         },
         {
           question: "How does Refer Labs prevent fraudulent referrals?",
           answer:
-            "Refer Labs detects duplicate emails, IP addresses, and suspicious spending patterns. Automated flags pause reward issuance until a human reviewer clears the activity.",
+            "Duplicate emails, shared IP addresses, or suspicious spend patterns are flagged and auto-paused until a reviewer clears the activity.",
         },
         {
           question: "Can I pause or duplicate campaigns?",
           answer:
-            "Yes—each campaign card offers Pause, Duplicate, or Archive controls. Use the Duplicate option to replicate high-performing flows and tweak messages without rebuilding from scratch.",
+            "Each campaign card offers Pause, Duplicate, or Archive controls. Duplicate a high-performing flow and tweak the copy without rebuilding the reward logic.",
         },
         {
           question: "How do leaderboards and performance tiers function?",
           answer:
-            "Leaderboards rank ambassadors by conversions or revenue. You can assign tiers (Bronze/Silver/Gold) so top contributors receive bonus rewards automatically from the reward pipeline.",
+            "Leaderboards rank ambassadors by conversions, revenue, or custom metrics. Tiered incentives (Bronze/Silver/Gold) automatically bump rewards for your top catalysts.",
         },
         {
           question: "How does Refer Labs handle multi-brand or multi-location setups?",
           answer:
-            "Duplicate your base configuration into regional campaigns. Use custom brand colors, domain-specific landing pages, and location filters so each team sees only their referrals.",
+            "Clone your base configuration into regional campaigns, apply location filters, and customize landing pages so each team only sees the referrals that matter to them.",
         },
       ],
     },
@@ -131,32 +131,32 @@ export default function FAQPage() {
         {
           question: "What's the best way to grow my ambassador list?",
           answer:
-            "Start by importing your top customers and tagging them as VIP ambassadors, then use automated nurture sequences to invite additional advocates. Refer Labs can also host referral signup pages with on-brand messaging.",
+            "Import your top customers, tag VIPs, and use automated nurture sequences to invite new advocates. Launch referral sign-up pages and celebrate their wins with the hero-style notifications showcased on the how-it-works page.",
         },
         {
           question: "How do I calculate campaign ROI?",
           answer:
-            "Use the ROI calculator inside the dashboard or export revenue + reward data into your analytics tool. Refer Labs surfaces acquisition cost, conversion lift, and recurring value per ambassador.",
+            "Use the dashboard’s ROI module or the Calculate ROI CTA on the homepage to test scenarios. Refer Labs forecasts acquisition cost, conversion lift, and recurring value per ambassador.",
         },
         {
           question: "Can I integrate Refer Labs with my CRM?",
           answer:
-            "Yes—use the CRM Integrations tab to sync data bi-directionally. Refer Labs can push referral events, reward statuses, and lifetime value into Salesforce, HubSpot, or other systems via native connectors or webhooks.",
+            "Yes—connect Salesforce, HubSpot, or any webhook-ready platform. Refer Labs pushes referral events, reward statuses, and revenue data back into your CRM so every team sees the same numbers.",
         },
         {
           question: "Are there templates for compliance messaging?",
           answer:
-            "Every campaign comes with regulatory-friendly templates that mention opt-out prompts and consent verbiage. You can edit them per region or replicate language across multiple channels.",
+            "Every campaign ships with opt-out-friendly, lawyers-reviewed templates that can be adapted per region and reused across channels.",
         },
         {
           question: "What reporting is available for finance and ops?",
           answer:
-            "Live exportable ledgers display earned credits, fulfilled rewards, and pause reasons. Finance can download CSVs for reconciliation, while ops teams monitor ambassador health via built-in dashboards.",
+            "Downloadable ledgers show earned credits, fulfilled rewards, paused conversions, and approval notes. Scheduled summary emails keep finance or leadership aligned with referral KPIs.",
         },
         {
           question: "How do I keep team members aligned on referral goals?",
           answer:
-            "Use shared dashboards, scheduled summary emails, and segment-specific leaderboards so everyone sees the same KPIs. Comment threads and notifications within Refer Labs keep teams synchronized.",
+            "Share dashboards, pin leaderboard snapshots, and rely on scheduled updates. Comments and notifications within Refer Labs keep everyone on the same page.",
         },
       ],
     },
@@ -171,59 +171,71 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="aurora relative min-h-screen bg-gradient-to-b from-[#dbf0ff] via-white to-[#f6fdff] px-6 py-10 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-5xl space-y-8">
+    <div className="aurora relative min-h-screen bg-gradient-to-b from-[#d5f9ff] via-white to-[#d9f7fe] px-6 py-12 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-6xl space-y-10">
         <header className="space-y-3 text-center">
+          <p className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#0abab5] via-[#5fd9e4] to-[#1a9eb7] px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white shadow-lg shadow-[#0a9fb3]/40">
+            Tiffany-Blue Transparency
+          </p>
           <h1 className="text-4xl font-black text-slate-900 sm:text-5xl lg:text-[3.5rem] leading-tight">
             Refer Labs FAQ
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
-            Everything you need to know about the platform, dashboard features, and referral campaigns so you can launch confidently and manage every moment with clarity.
+            Clear answers to every workflow we highlight on the site—from the hero moments and ROI calculator to the dashboard tabs, referral arcs, and integrations—so you can trust every promise before you launch a program.
           </p>
         </header>
 
         <div className="space-y-10">
           {faqSections.map((section) => (
-            <section key={section.title} className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900">{section.title}</h2>
-              <div className="space-y-4 rounded-3xl border border-white/60 bg-gradient-to-br from-[#cdeef8] via-[#ade4f0] to-white px-5 py-6 shadow-2xl shadow-teal-200/80">
-                {section.questions.map((faq) => {
-                  const id = `${section.title}-${faq.question}`;
-                  const isExpanded = expandedIds.includes(id);
-                  return (
-                    <article
-                      key={id}
-                      className="rounded-2xl border border-white/60 bg-white/70 p-4 transition-shadow duration-200 hover:shadow-lg group"
-                    >
-                      <button
-                        type="button"
-                        onClick={() => handleToggle(id)}
-                        className="w-full text-left flex justify-between items-center space-x-4"
-                        aria-expanded={isExpanded}
+            <section key={section.title} className="space-y-4">
+              <div className="rounded-[44px] border border-white/70 bg-gradient-to-br from-[#e0f7ff] via-[#c5eef6] to-white/80 px-6 py-7 shadow-[0_25px_60px_rgba(15,23,42,0.08)]">
+                <div className="flex flex-col gap-1">
+                  <p className="text-xs uppercase tracking-[0.4em] text-[#0a9fb3]">
+                    {section.title}
+                  </p>
+                  <p className="text-lg font-semibold text-slate-900">
+                    {section.questions.length > 8
+                      ? "Deep dives on the workflows you see across the dashboard"
+                      : "Focused answers for that area of the product"}
+                  </p>
+                </div>
+                <div className="mt-5 space-y-4">
+                  {section.questions.map((faq) => {
+                    const id = `${section.title}-${faq.question}`;
+                    const isExpanded = expandedIds.includes(id);
+                    return (
+                      <article
+                        key={id}
+                        className="overflow-hidden rounded-3xl border border-[#c7eaf1] bg-white/90 p-5 shadow-[0_16px_35px_rgba(15,23,42,0.08)] transition-all duration-200 hover:shadow-[0_20px_45px_rgba(15,23,42,0.15)]"
                       >
-                        <h3 className="text-base font-semibold text-slate-900 transition-colors duration-200 group-hover:text-slate-800">
-                          {faq.question}
-                        </h3>
-                        <span
-                          className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white transition-all duration-200 ${
-                            isExpanded
-                              ? "bg-[#0c8a99] rotate-45"
-                              : "bg-[#47c8df]"
+                        <button
+                          type="button"
+                          onClick={() => handleToggle(id)}
+                          className="flex w-full items-center justify-between gap-4 text-left"
+                          aria-expanded={isExpanded}
+                        >
+                          <h3 className="text-base font-semibold text-slate-900">
+                            {faq.question}
+                          </h3>
+                          <span
+                            className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-lg font-black text-white transition-all duration-200 ${
+                              isExpanded ? "bg-[#0a95a6] rotate-45" : "bg-[#47c8df]"
+                            }`}
+                          >
+                            +
+                          </span>
+                        </button>
+                        <div
+                          className={`mt-4 text-sm leading-relaxed text-slate-600 transition-[max-height] duration-300 ease-in-out overflow-hidden ${
+                            isExpanded ? "max-h-96" : "max-h-0"
                           }`}
                         >
-                          +
-                        </span>
-                      </button>
-                      <p
-                        className={`mt-3 text-sm leading-relaxed text-slate-600 transition-max-height duration-300 ease-in-out ${
-                          isExpanded ? "max-h-96" : "max-h-0"
-                        } overflow-hidden`}
-                      >
-                        {faq.answer}
-                      </p>
-                    </article>
-                  );
-                })}
+                          <p>{faq.answer}</p>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
               </div>
             </section>
           ))}

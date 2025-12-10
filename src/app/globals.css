@@ -218,9 +218,11 @@ body {
 .logo-marquee {
   display: flex;
   gap: 4rem;
-  animation: logo-slide 28s linear infinite;
+  animation: logo-slide 45s linear infinite;
+  animation-direction: reverse;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  min-width: max-content;
 }
 
 .logo-marquee:hover {

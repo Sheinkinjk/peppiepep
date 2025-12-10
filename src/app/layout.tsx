@@ -21,14 +21,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Refer Labs - Referrals that compound",
-  description: "Turn happy customers into your most powerful growth engine. Automated referral tracking, rewards, and ambassador management for service businesses.",
+  description: "Turn happy customers into your most powerful growth engine with automated referral tracking, rewards, and ambassador management.",
   icons: {
     icon: '/logo.svg',
     apple: '/logo.svg',
   },
   openGraph: {
     title: "Refer Labs - Referrals that compound",
-    description: "Turn happy customers into your most powerful growth engine. Automated referral tracking, rewards, and ambassador management for service businesses.",
+    description: "Turn happy customers into your most powerful growth engine with automated referral tracking, rewards, and ambassador management.",
     type: "website",
   },
   twitter: {

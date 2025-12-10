@@ -499,6 +499,11 @@ function LoginContent() {
                 </svg>
                 Continue with Google
               </Button>
+              <p className="mt-3 text-xs text-slate-500">
+                Ensure the Google OAuth provider in Supabase is enabled, add{" "}
+                <code className="font-mono text-[#0a95a6]">https://referlabs.com.au/auth/callback</code>{" "}
+                as a redirect URI, and whitelist this domain in your Supabase project so Google sign-in can complete.
+              </p>
 
               <Button
                 variant="link"

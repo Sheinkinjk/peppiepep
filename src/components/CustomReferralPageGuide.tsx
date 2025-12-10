@@ -537,7 +537,7 @@ trackConversion('SARAH50', 150.00);`,
                 <ul className="list-disc list-inside space-y-1 text-amber-900">
                   <li>Order is marked as "Completed" or "Paid"</li>
                   <li>Booking is confirmed and payment processed</li>
-                  <li>Service is delivered (for service businesses)</li>
+                  <li>Service is delivered (for relationship-driven teams)</li>
                 </ul>
               </div>
             </div>

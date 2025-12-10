@@ -25,7 +25,7 @@ const INDUSTRY_OPTIONS = [
   { value: "fitness", label: "Fitness & Health", conversionRate: "22%", description: "Gyms, studios, trainers" },
   { value: "retail", label: "Retail & E-commerce", conversionRate: "12%", description: "Boutiques, online stores" },
   { value: "hospitality", label: "Hospitality & Food", conversionRate: "15%", description: "Restaurants, cafes, hotels" },
-  { value: "other", label: "Other Services", conversionRate: "15%", description: "General service businesses" },
+  { value: "other", label: "Other Industries", conversionRate: "15%", description: "General growth teams across industries" },
 ] as const;
 
 export function ROICalculator() {
