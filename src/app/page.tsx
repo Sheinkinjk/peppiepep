@@ -115,51 +115,57 @@ const heroMoments: {
   bgColor: string;
   accentColor: string;
   position: CSSProperties;
+  rotate: string;
 }[] = [
   {
     id: "hero-jenny",
     tag: "Live referral",
     title: "Jenny used your referral link",
-    detail: "4 VIP spa treatments reserved, stats updated instantly.",
-    bgColor: "bg-cyan-50/95",
-    accentColor: "text-cyan-600",
-    position: { top: "2%", left: "-8%", maxWidth: "200px" },
+    detail: "4 VIP spa treatments reserved",
+    bgColor: "bg-white/98",
+    accentColor: "text-cyan-700",
+    position: { top: "8%", left: "-6%", maxWidth: "180px" },
+    rotate: "-rotate-6",
   },
   {
     id: "hero-michael",
     tag: "Order alert",
     title: "Michael made an order",
-    detail: "$2,750 gourmet kit tracked with Refer Labs proof.",
-    bgColor: "bg-amber-50/95",
-    accentColor: "text-amber-600",
-    position: { top: "2%", right: "-8%", maxWidth: "200px" },
+    detail: "$2,750 gourmet kit tracked",
+    bgColor: "bg-white/98",
+    accentColor: "text-amber-700",
+    position: { top: "8%", right: "-6%", maxWidth: "180px" },
+    rotate: "rotate-6",
   },
   {
     id: "hero-campaign",
     tag: "Campaign",
-    title: "You just sent a new campaign to 500 customers",
-    detail: "SMS + email drips queued for 3PM and ready to deploy.",
-    bgColor: "bg-indigo-50/95",
-    accentColor: "text-indigo-600",
-    position: { top: "50%", left: "-10%", maxWidth: "210px" },
+    title: "New campaign sent to 500 customers",
+    detail: "SMS + email drips queued",
+    bgColor: "bg-white/98",
+    accentColor: "text-indigo-700",
+    position: { bottom: "12%", left: "-6%", maxWidth: "180px" },
+    rotate: "rotate-6",
   },
   {
     id: "hero-revenue",
     tag: "Revenue",
-    title: "$45,500 additional revenue generated",
-    detail: "Realtime ledger shows compounding referral payouts.",
-    bgColor: "bg-purple-50/95",
-    accentColor: "text-purple-600",
-    position: { bottom: "8%", right: "-9%", maxWidth: "200px" },
+    title: "$45,500 additional revenue",
+    detail: "Realtime ledger shows payouts",
+    bgColor: "bg-white/98",
+    accentColor: "text-purple-700",
+    position: { bottom: "12%", right: "-6%", maxWidth: "180px" },
+    rotate: "-rotate-6",
   },
   {
     id: "hero-sofia",
     tag: "Ambassador win",
-    title: "Sofia shared a VIP invite with her community",
-    detail: "5 new guests are seeing the luxury upgrade this weekend.",
-    bgColor: "bg-emerald-50/95",
-    accentColor: "text-emerald-600",
-    position: { bottom: "8%", left: "-10%", maxWidth: "210px" },
+    title: "Sofia shared a VIP invite",
+    detail: "5 new guests seeing upgrade this weekend",
+    bgColor: "bg-white/98",
+    accentColor: "text-emerald-700",
+    position: { top: "-8%", left: "50%", transform: "translateX(-50%)", maxWidth: "200px" },
+    rotate: "rotate-0",
   },
 ];
 
@@ -271,24 +277,26 @@ export default function Home() {
     <div className="aurora tiffany-hero relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(0,131,143,0.12),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(77,208,225,0.18),transparent_35%)]" />
 
-      <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-16 px-4 pb-24 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 px-4 pb-16 sm:pb-20 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl relative text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden xl:flex flex-col gap-1.5 rounded-xl border border-slate-200/60 ${moment.bgColor} backdrop-blur-sm px-3 py-2 text-left shadow-lg ring-1 ring-slate-100/50`}
+              className={`hero-floating-card hidden xl:flex flex-col gap-1 rounded-lg border border-slate-200 ${moment.bgColor} backdrop-blur-sm px-2.5 py-1.5 text-left shadow-md ${moment.rotate}`}
               style={moment.position}
               aria-hidden
             >
-              <p className={`text-[9px] uppercase tracking-[0.25em] font-semibold ${moment.accentColor}`}>
-                {moment.tag}
-              </p>
-              <p className="text-xs font-bold text-slate-900 leading-snug">
-                {moment.title}
-              </p>
-              <p className="text-[10px] text-slate-600 leading-relaxed">{moment.detail}</p>
+              <div className="flex items-baseline gap-1.5">
+                <span className={`text-[8px] uppercase tracking-wider font-bold ${moment.accentColor}`}>
+                  {moment.tag}
+                </span>
+                <span className="text-[10px] font-bold text-slate-900 leading-tight flex-1">
+                  {moment.title}
+                </span>
+              </div>
+              <p className="text-[9px] text-slate-600 leading-snug">{moment.detail}</p>
             </div>
           ))}
 
@@ -536,11 +544,11 @@ export default function Home() {
         </section>
 
         {/* Our Partners Strip */}
-        <section className="space-y-6">
-          <p className="text-center text-xs uppercase tracking-[0.3em] text-slate-500 font-semibold">
+        <section className="space-y-4 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 bg-gradient-to-r from-cyan-50/60 via-teal-50/40 to-cyan-50/60">
+          <p className="text-center text-xs uppercase tracking-[0.3em] text-slate-600 font-bold">
             Our Partners
           </p>
-          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white/90 px-4 py-6 shadow-lg">
+          <div className="overflow-hidden rounded-2xl border border-slate-200/60 bg-white/80 backdrop-blur-sm px-4 py-5 shadow-sm">
             <div className="logo-marquee gap-10">
               {repeatedPartnerLogos.map((logo, index) => (
                 <div
@@ -555,22 +563,22 @@ export default function Home() {
         </section>
 
         {/* ROI Calculator CTA */}
-        <section className="rounded-[32px] border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 shadow-xl shadow-purple-200/50 px-8 py-10 sm:px-12 sm:py-12">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="space-y-3 max-w-2xl">
+        <section className="rounded-[32px] border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 shadow-xl shadow-purple-200/50 px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
+          <div className="flex flex-col items-center text-center gap-6">
+            <div className="space-y-3 max-w-3xl">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900">
                 Calculate your referral program ROI in 4 steps
               </h3>
-              <p className="text-base text-slate-600 leading-relaxed font-medium">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
                 Get AI-powered revenue and growth forecasts and discover the perfect reward structure for your business.
                 No signup required.
               </p>
             </div>
             <Link
               href="/roi-calculator"
-              className={cn(buttonVariants({ variant: "cta" }), "group self-start md:self-center text-base font-bold")}
+              className={cn(buttonVariants({ variant: "cta" }), "group text-lg font-bold px-8 py-4 cursor-pointer hover:shadow-xl")}
             >
-              Calculate ROI <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              Calculate ROI <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </section>

@@ -73,37 +73,37 @@ export function StickyHeader() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-2">
               <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/"
               >
                 Home
               </Link>
               <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/how-it-works"
               >
                 How it works
               </Link>
               <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/pricing"
               >
                 Pricing
               </Link>
               <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/about"
               >
                 About
               </Link>
               <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/case-studies"
               >
                 Case Studies
               </Link>
               <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/contact"
               >
                 Contact
@@ -112,7 +112,7 @@ export function StickyHeader() {
                 href="https://calendly.com/jarredkrowitz/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF] cursor-pointer"
               >
                 <Calendar className="h-4 w-4" />
                 Schedule Call
@@ -121,14 +121,14 @@ export function StickyHeader() {
                 <>
                   <Link
                     href="/dashboard"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
                   >
                     View Dashboard <ArrowRight className="h-4 w-4" />
                   </Link>
                   <button
                     type="button"
                     onClick={handleLogout}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF]"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF] cursor-pointer"
                   >
                     Log out
                   </button>
@@ -136,7 +136,7 @@ export function StickyHeader() {
               ) : (
                 <Link
                   href="/login"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
                 >
                   Sign in <ArrowRight className="h-4 w-4" />
                 </Link>
