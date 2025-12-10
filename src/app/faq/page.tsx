@@ -1,3 +1,8 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
 export default function FAQPage() {
   const faqSections = [
     {
@@ -162,12 +167,19 @@ export default function FAQPage() {
     },
   ];
 
+  const [expandedIds, setExpandedIds] = useState<string[]>([]);
+
+  const handleToggle = (id: string) => {
+    setExpandedIds((prev) =>
+      prev.includes(id) ? prev.filter((value) => value !== id) : [...prev, id],
+    );
+  };
+
   return (
-    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white px-6 py-10 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-5xl space-y-6">
+    <div className="aurora relative min-h-screen bg-gradient-to-b from-[#dbf0ff] via-white to-[#f6fdff] px-6 py-10 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-5xl space-y-8">
         <header className="space-y-3 text-center">
-          <p className="text-xs uppercase tracking-[0.5em] text-slate-500">Educate</p>
-          <h1 className="text-4xl font-black text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-black text-slate-900 sm:text-5xl lg:text-[3.5rem] leading-tight">
             Refer Labs FAQ
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
@@ -177,25 +189,58 @@ export default function FAQPage() {
 
         <div className="space-y-10">
           {faqSections.map((section) => (
-            <section key={section.title}>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">{section.title}</h2>
-              <div className="space-y-6 rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-lg">
-                {section.questions.map((faq) => (
-                  <article key={faq.question}>
-                    <h3 className="text-lg font-semibold text-slate-900">{faq.question}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{faq.answer}</p>
-                  </article>
-                ))}
+            <section key={section.title} className="space-y-6">
+              <h2 className="text-2xl font-bold text-slate-900">{section.title}</h2>
+              <div className="space-y-4 rounded-3xl border border-white/60 bg-gradient-to-br from-[#cdeef8] via-[#ade4f0] to-white px-5 py-6 shadow-2xl shadow-teal-200/80">
+                {section.questions.map((faq) => {
+                  const id = `${section.title}-${faq.question}`;
+                  const isExpanded = expandedIds.includes(id);
+                  return (
+                    <article
+                      key={id}
+                      className="rounded-2xl border border-white/60 bg-white/70 p-4 transition-shadow duration-200 hover:shadow-lg group"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => handleToggle(id)}
+                        className="w-full text-left flex justify-between items-center space-x-4"
+                        aria-expanded={isExpanded}
+                      >
+                        <h3 className="text-base font-semibold text-slate-900 transition-colors duration-200 group-hover:text-slate-800">
+                          {faq.question}
+                        </h3>
+                        <span
+                          className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white transition-all duration-200 ${
+                            isExpanded
+                              ? "bg-[#0c8a99] rotate-45"
+                              : "bg-[#47c8df]"
+                          }`}
+                        >
+                          +
+                        </span>
+                      </button>
+                      <p
+                        className={`mt-3 text-sm leading-relaxed text-slate-600 transition-max-height duration-300 ease-in-out ${
+                          isExpanded ? "max-h-96" : "max-h-0"
+                        } overflow-hidden`}
+                      >
+                        {faq.answer}
+                      </p>
+                    </article>
+                  );
+                })}
               </div>
             </section>
           ))}
         </div>
 
-        <div className="rounded-3xl border border-slate-200 bg-slate-900/95 p-6 text-white shadow-2xl">
-          <h2 className="text-xl font-bold">Need a deeper dive?</h2>
-          <p className="mt-3 text-sm text-slate-200">
-            Reach out via the chatbot or book a session with our concierge team for guided walkthroughs, tailored dashboards, and proactive strategy adjustments.
-          </p>
+        <div className="flex justify-center">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#53c2ef] via-[#37a9e0] to-[#0d869d] px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-400/40 transition-transform duration-200 hover:-translate-y-0.5"
+          >
+            Would you like to learn more?
+          </Link>
         </div>
       </div>
     </div>
