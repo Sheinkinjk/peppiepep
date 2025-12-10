@@ -111,61 +111,46 @@ const heroMoments: {
   id: string;
   tag: string;
   title: string;
-  detail: string;
-  bgColor: string;
+  bgGradient: string;
   accentColor: string;
   position: CSSProperties;
   rotate: string;
 }[] = [
   {
     id: "hero-jenny",
-    tag: "Live referral",
+    tag: "Live Referral",
     title: "Jenny used your referral link",
-    detail: "4 VIP spa treatments reserved",
-    bgColor: "bg-white/98",
+    bgGradient: "from-cyan-50 to-cyan-100",
     accentColor: "text-cyan-700",
-    position: { top: "8%", left: "-6%", maxWidth: "180px" },
-    rotate: "-rotate-6",
+    position: { top: "5%", left: "-8%", maxWidth: "220px" },
+    rotate: "-rotate-[45deg]",
   },
   {
-    id: "hero-michael",
-    tag: "Order alert",
-    title: "Michael made an order",
-    detail: "$2,750 gourmet kit tracked",
-    bgColor: "bg-white/98",
+    id: "hero-david",
+    tag: "Order Alert",
+    title: "David made an order",
+    bgGradient: "from-amber-50 to-amber-100",
     accentColor: "text-amber-700",
-    position: { top: "8%", right: "-6%", maxWidth: "180px" },
-    rotate: "rotate-6",
+    position: { top: "5%", right: "-8%", maxWidth: "220px" },
+    rotate: "rotate-[45deg]",
   },
   {
     id: "hero-campaign",
     tag: "Campaign",
-    title: "New campaign sent to 500 customers",
-    detail: "SMS + email drips queued",
-    bgColor: "bg-white/98",
+    title: "New Campaign sent to 500 Customers",
+    bgGradient: "from-indigo-50 to-indigo-100",
     accentColor: "text-indigo-700",
-    position: { bottom: "12%", left: "-6%", maxWidth: "180px" },
-    rotate: "rotate-6",
+    position: { bottom: "8%", left: "-8%", maxWidth: "220px" },
+    rotate: "rotate-[45deg]",
   },
   {
     id: "hero-revenue",
     tag: "Revenue",
-    title: "$45,500 additional revenue",
-    detail: "Realtime ledger shows payouts",
-    bgColor: "bg-white/98",
+    title: "$45,500 additional revenue generated",
+    bgGradient: "from-purple-50 to-purple-100",
     accentColor: "text-purple-700",
-    position: { bottom: "12%", right: "-6%", maxWidth: "180px" },
-    rotate: "-rotate-6",
-  },
-  {
-    id: "hero-sofia",
-    tag: "Ambassador win",
-    title: "Sofia shared a VIP invite",
-    detail: "5 new guests seeing upgrade this weekend",
-    bgColor: "bg-white/98",
-    accentColor: "text-emerald-700",
-    position: { top: "-8%", left: "50%", transform: "translateX(-50%)", maxWidth: "200px" },
-    rotate: "rotate-0",
+    position: { bottom: "8%", right: "-8%", maxWidth: "220px" },
+    rotate: "-rotate-[45deg]",
   },
 ];
 
@@ -280,23 +265,21 @@ export default function Home() {
       <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 px-4 pb-16 sm:pb-20 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
         {/* Hero Section */}
-        <div className="mx-auto max-w-4xl relative text-center space-y-8 py-12 sm:py-16 sm:space-y-10">
+        <div className="mx-auto max-w-4xl relative text-center space-y-8 py-20 sm:py-24 sm:space-y-10">
           {heroMoments.map((moment) => (
             <div
               key={moment.id}
-              className={`hero-floating-card hidden xl:flex flex-col gap-1 rounded-lg border border-slate-200 ${moment.bgColor} backdrop-blur-sm px-2.5 py-1.5 text-left shadow-md ${moment.rotate}`}
+              className={`hero-floating-card hidden xl:flex flex-col gap-2 rounded-xl border-2 border-white/60 bg-gradient-to-br ${moment.bgGradient} backdrop-blur-md px-4 py-3 text-left shadow-2xl shadow-slate-900/10 ${moment.rotate} hover:scale-105 transition-transform duration-300`}
               style={moment.position}
               aria-hidden
             >
-              <div className="flex items-baseline gap-1.5">
-                <span className={`text-[8px] uppercase tracking-wider font-bold ${moment.accentColor}`}>
+              <div className="flex items-center gap-2">
+                <div className={`w-2 h-2 rounded-full ${moment.accentColor.replace('text-', 'bg-')} animate-pulse`}></div>
+                <span className={`text-[10px] uppercase tracking-wider font-bold ${moment.accentColor}`}>
                   {moment.tag}
                 </span>
-                <span className="text-[10px] font-bold text-slate-900 leading-tight flex-1">
-                  {moment.title}
-                </span>
               </div>
-              <p className="text-[9px] text-slate-600 leading-snug">{moment.detail}</p>
+              <p className="text-sm font-semibold text-slate-900 leading-snug">{moment.title}</p>
             </div>
           ))}
 
@@ -548,7 +531,7 @@ export default function Home() {
           <p className="text-center text-xs uppercase tracking-[0.3em] text-slate-600 font-bold">
             Our Partners
           </p>
-          <div className="overflow-hidden rounded-2xl border border-slate-200/60 bg-white/80 backdrop-blur-sm px-4 py-5 shadow-sm">
+          <div className="overflow-hidden px-4 py-5">
             <div className="logo-marquee gap-10">
               {repeatedPartnerLogos.map((logo, index) => (
                 <div
@@ -564,22 +547,22 @@ export default function Home() {
 
         {/* ROI Calculator CTA */}
         <section className="rounded-[32px] border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 shadow-xl shadow-purple-200/50 px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
-          <div className="flex flex-col items-center text-center gap-6">
-            <div className="space-y-3 max-w-3xl">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900">
-                Calculate your referral program ROI in 4 steps
-              </h3>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
+          <div className="space-y-4">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 text-center">
+              Calculate your referral program ROI in 4 steps
+            </h3>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium max-w-xl text-center md:text-left">
                 Get AI-powered revenue and growth forecasts and discover the perfect reward structure for your business.
                 No signup required.
               </p>
+              <Link
+                href="/roi-calculator"
+                className={cn(buttonVariants({ variant: "cta" }), "group text-lg font-bold px-8 py-4 cursor-pointer hover:shadow-xl whitespace-nowrap")}
+              >
+                Calculate ROI <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
-            <Link
-              href="/roi-calculator"
-              className={cn(buttonVariants({ variant: "cta" }), "group text-lg font-bold px-8 py-4 cursor-pointer hover:shadow-xl")}
-            >
-              Calculate ROI <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
           </div>
         </section>
 
