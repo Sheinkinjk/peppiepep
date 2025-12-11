@@ -57,6 +57,7 @@ import {
 } from "lucide-react";
 import { createServerComponentClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
+import { BusinessOnboardingMetadata, IntegrationStatusValue, parseBusinessMetadata } from "@/types/business";
 import { calculateNextCredits, parseCreditDelta } from "@/lib/credits";
 import { ensureAbsoluteUrl } from "@/lib/urls";
 
@@ -65,12 +66,13 @@ const INITIAL_REFERRAL_TABLE_LIMIT = 25;
 type BusinessRow = Database["public"]["Tables"]["businesses"]["Row"];
 type BusinessCoreFields = Omit<
   BusinessRow,
-  "logo_url" | "brand_highlight_color" | "brand_tone" | "discount_capture_secret"
+  "logo_url" | "brand_highlight_color" | "brand_tone" | "discount_capture_secret" | "onboarding_metadata"
 > & {
   logo_url?: string | null;
   brand_highlight_color?: string | null;
   brand_tone?: string | null;
   discount_capture_secret?: string | null;
+  onboarding_metadata?: BusinessOnboardingMetadata | null;
 };
 type CampaignSummary = Pick<
   Database["public"]["Tables"]["campaigns"]["Row"],
@@ -115,7 +117,7 @@ async function getBusiness(): Promise<BusinessCoreFields> {
 
   if (!user) redirect("/login");
   const selectColumns =
-    "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret";
+    "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret, onboarding_metadata, sign_on_bonus_enabled, sign_on_bonus_amount, sign_on_bonus_type, sign_on_bonus_description";
 
   const buildOwnerQuery = () =>
     supabase
@@ -125,17 +127,24 @@ async function getBusiness(): Promise<BusinessCoreFields> {
       .order("created_at", { ascending: false });
 
   // Attempt to load a single row; fall back gracefully if the owner somehow has duplicates.
-  const { data, error } = await buildOwnerQuery().single<BusinessCoreFields>();
+  const { data, error } = await buildOwnerQuery().single<BusinessRow>();
   let baseBusiness: BusinessCoreFields | null = null;
   if (data) {
-    baseBusiness = data;
+    baseBusiness = {
+      ...data,
+      onboarding_metadata: parseBusinessMetadata(data.onboarding_metadata ?? null),
+    } as BusinessCoreFields;
   } else if (error?.code === "PGRST116") {
     const { data: fallbackRows, error: fallbackError } = await buildOwnerQuery().limit(1);
     if (!fallbackError && fallbackRows && fallbackRows.length > 0) {
       console.warn(
         "Multiple business records detected for owner. Using the most recently created business.",
       );
-      baseBusiness = fallbackRows[0] as BusinessCoreFields;
+      const fallback = fallbackRows[0] as BusinessRow;
+      baseBusiness = {
+        ...fallback,
+        onboarding_metadata: parseBusinessMetadata(fallback.onboarding_metadata ?? null),
+      } as BusinessCoreFields;
     } else if (fallbackError) {
       console.error("Error fetching business:", fallbackError);
     }
@@ -144,20 +153,22 @@ async function getBusiness(): Promise<BusinessCoreFields> {
   }
 
   if (!baseBusiness) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { data: newBiz } = await (supabase as any)
+    const insertPayload: Database["public"]["Tables"]["businesses"]["Insert"] = {
+      owner_id: user.id,
+      name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
+    };
+    const { data: newBiz } = await supabase
       .from("businesses")
-      .insert([
-        {
-          owner_id: user.id,
-          name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
-        },
-      ])
+      .insert([insertPayload])
       .select(
-        "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret",
+        "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret, onboarding_metadata, sign_on_bonus_enabled, sign_on_bonus_amount, sign_on_bonus_type, sign_on_bonus_description",
       )
-      .single();
-    return newBiz;
+      .single<BusinessRow>();
+
+    return {
+      ...newBiz,
+      onboarding_metadata: parseBusinessMetadata(newBiz?.onboarding_metadata ?? null),
+    } as BusinessCoreFields;
   }
 
   // Attach optional fields like logo_url in a second, non-critical query so we
@@ -167,10 +178,10 @@ async function getBusiness(): Promise<BusinessCoreFields> {
   try {
     const { data: extras, error: extrasError } = await supabase
       .from("businesses")
-      .select("logo_url, brand_highlight_color, brand_tone, discount_capture_secret")
+      .select("logo_url, brand_highlight_color, brand_tone, discount_capture_secret, onboarding_metadata")
       .eq("id", baseBusiness.id)
       .single<
-        Pick<BusinessRow, "logo_url" | "brand_highlight_color" | "brand_tone" | "discount_capture_secret">
+        Pick<BusinessRow, "logo_url" | "brand_highlight_color" | "brand_tone" | "discount_capture_secret" | "onboarding_metadata">
       >();
 
     if (!extrasError && extras) {
@@ -180,6 +191,7 @@ async function getBusiness(): Promise<BusinessCoreFields> {
         brand_highlight_color: extras.brand_highlight_color ?? null,
         brand_tone: extras.brand_tone ?? null,
         discount_capture_secret: extras.discount_capture_secret ?? null,
+        onboarding_metadata: parseBusinessMetadata(extras.onboarding_metadata ?? baseBusiness.onboarding_metadata ?? null),
       };
     } else if (extrasError) {
       if (extrasError.code === "42703") {
@@ -241,6 +253,19 @@ export default async function Dashboard() {
       typeof rewardTypeValue === "string" && allowedRewardTypes.has(rewardTypeValue)
         ? (rewardTypeValue as Database["public"]["Tables"]["businesses"]["Update"]["reward_type"])
         : null;
+    const signOnBonusEnabledRaw = formData.get("sign_on_bonus_enabled");
+    const signOnBonusEnabled =
+      typeof signOnBonusEnabledRaw === "string" ? signOnBonusEnabledRaw === "true" : false;
+    const signOnBonusAmountRaw = (formData.get("sign_on_bonus_amount") as string | null) ?? null;
+    const parsedSignOnAmount = signOnBonusAmountRaw && signOnBonusAmountRaw.trim()
+      ? Number(signOnBonusAmountRaw)
+      : null;
+    const normalizedSignOnAmount =
+      parsedSignOnAmount !== null && Number.isFinite(parsedSignOnAmount)
+        ? parsedSignOnAmount
+        : null;
+    const signOnBonusTypeRaw = (formData.get("sign_on_bonus_type") as string | null) ?? null;
+    const signOnBonusDescriptionRaw = (formData.get("sign_on_bonus_description") as string | null) ?? null;
 
     const logoUrlRaw = (formData.get("logo_url") as string | null) ?? "";
     const logoUrl = logoUrlRaw.trim() || null;
@@ -267,6 +292,16 @@ export default async function Dashboard() {
       logo_url: logoUrl,
       brand_highlight_color: normalizedHighlight,
       brand_tone: normalizedTone,
+      sign_on_bonus_enabled: signOnBonusEnabled,
+      sign_on_bonus_amount: signOnBonusEnabled
+        ? normalizedSignOnAmount ?? 0
+        : null,
+      sign_on_bonus_type: signOnBonusEnabled
+        ? (signOnBonusTypeRaw?.trim() || "credit")
+        : null,
+      sign_on_bonus_description: signOnBonusEnabled
+        ? signOnBonusDescriptionRaw?.trim() || null
+        : null,
     };
 
     const optionalColumns: Array<keyof Database["public"]["Tables"]["businesses"]["Update"]> = [
@@ -313,6 +348,80 @@ export default async function Dashboard() {
       );
     } else if (lastError) {
       console.error("Failed to update business settings:", lastError);
+    }
+
+    revalidatePath("/dashboard");
+  }
+
+  async function updateBusinessOnboarding(formData: FormData) {
+    "use server";
+    const supabase = await createServerComponentClient();
+
+    const getString = (key: string) => {
+      const raw = formData.get(key);
+      if (typeof raw !== "string") return null;
+      const trimmed = raw.trim();
+      return trimmed.length > 0 ? trimmed : null;
+    };
+
+    const parseNumberValue = (key: string) => {
+      const raw = getString(key);
+      if (!raw) return null;
+      const numeric = Number(raw);
+      if (!Number.isFinite(numeric)) {
+        return null;
+      }
+      return numeric;
+    };
+
+    const parseStatusValue = (key: string): IntegrationStatusValue => {
+      const raw = getString(key);
+      const allowed: IntegrationStatusValue[] = [
+        "not_started",
+        "in_progress",
+        "complete",
+      ];
+      if (raw && allowed.includes(raw as IntegrationStatusValue)) {
+        return raw as IntegrationStatusValue;
+      }
+      return "not_started";
+    };
+
+    const normalizedWebsiteInput = getString("website_url");
+    const normalizedWebsite = normalizedWebsiteInput
+      ? ensureAbsoluteUrl(normalizedWebsiteInput) ?? normalizedWebsiteInput
+      : null;
+
+    const metadata: BusinessOnboardingMetadata = {
+      businessType: getString("business_type"),
+      primaryLocation: getString("primary_location"),
+      websiteUrl: normalizedWebsite,
+      websitePlatform: getString("website_platform"),
+      crmPlatform: getString("crm_platform"),
+      crmOwner: getString("crm_owner"),
+      techStack: getString("tech_stack"),
+      integrationNotes: getString("integration_notes"),
+      avgSale: parseNumberValue("avg_sale"),
+      referralGoal: parseNumberValue("referral_goal"),
+      integrationStatus: {
+        website: parseStatusValue("integration_status_website"),
+        crm: parseStatusValue("integration_status_crm"),
+        qa: parseStatusValue("integration_status_qa"),
+      },
+    };
+
+    const updatePayload: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
+      name: getString("business_name") ?? business.name ?? null,
+      onboarding_metadata: metadata,
+    };
+
+    const { error } = await supabase
+      .from("businesses")
+      .update(updatePayload)
+      .eq("id", business.id);
+
+    if (error) {
+      console.error("Failed to save onboarding metadata:", error);
     }
 
     revalidatePath("/dashboard");
@@ -893,7 +1002,7 @@ export default async function Dashboard() {
   const supabase = await createServerComponentClient();
   const { data: customers = [] } = await supabase
     .from("customers")
-    .select("id,status,credits,name,phone,email,referral_code,discount_code")
+    .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
     .eq("business_id", business.id);
 
   const { data: referrals = [] } = await supabase
@@ -1051,8 +1160,8 @@ export default async function Dashboard() {
     {
       id: "setup-integration",
       number: 1,
-      title: "Setup Integration",
-      description: "Install tracking code and configure your referral program settings",
+      title: "Business Setup & Integrations",
+      description: "Capture business context, configure rewards, and confirm website + CRM integrations before inviting ambassadors",
       icon: <Settings className="h-5 w-5" />,
       status: hasProgramSettings ? "complete" : "in_progress",
       content: (
@@ -1067,15 +1176,21 @@ export default async function Dashboard() {
           rewardAmount={business.reward_amount}
           upgradeName={business.upgrade_name}
           rewardTerms={business.reward_terms}
+          signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
+          signOnBonusAmount={business.sign_on_bonus_amount}
+          signOnBonusType={business.sign_on_bonus_type}
+          signOnBonusDescription={business.sign_on_bonus_description}
           logoUrl={business.logo_url ?? null}
           brandHighlightColor={business.brand_highlight_color ?? null}
           brandTone={business.brand_tone ?? null}
           hasProgramSettings={hasProgramSettings}
           hasCustomers={hasCustomers}
+          onboardingMetadata={business.onboarding_metadata ?? null}
           updateSettingsAction={updateSettings}
+          updateOnboardingAction={updateBusinessOnboarding}
         />
       ),
-      helpText: "Start here: Set up your referral rewards and install the tracking code on your website.",
+      helpText: "Start here: lock in business details, finalize rewards, and walk through the integration plan before moving on.",
     },
     {
       id: "clients-ambassadors",
@@ -1095,6 +1210,7 @@ export default async function Dashboard() {
             />
             <ProgramSettingsDialog
               businessName={business.name || "Your Business"}
+              siteUrl={siteUrl}
               offerText={business.offer_text}
               newUserRewardText={business.new_user_reward_text}
               clientRewardText={business.client_reward_text}
@@ -1105,6 +1221,12 @@ export default async function Dashboard() {
               logoUrl={business.logo_url ?? null}
               brandHighlightColor={business.brand_highlight_color ?? null}
               brandTone={business.brand_tone ?? null}
+              onboardingMetadata={business.onboarding_metadata ?? null}
+              signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
+              signOnBonusAmount={business.sign_on_bonus_amount}
+              signOnBonusType={business.sign_on_bonus_type}
+              signOnBonusDescription={business.sign_on_bonus_description}
+              updateOnboardingAction={updateBusinessOnboarding}
               updateSettingsAction={updateSettings}
             />
           </div>

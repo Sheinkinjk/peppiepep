@@ -26,6 +26,13 @@ import { BulkActionDialog } from "@/components/BulkActionDialog";
 type Customer = {
   id: string;
   name: string | null;
+  company: string | null;
+  website: string | null;
+  instagram_handle: string | null;
+  linkedin_handle: string | null;
+  audience_profile: string | null;
+  source: string | null;
+  notes: string | null;
   phone: string | null;
   email: string | null;
   referral_code: string | null;
@@ -54,14 +61,19 @@ type PepWindow = Window & {
 
 const DEFAULT_CUSTOMER_PAGE_SIZE = 50;
 const ROW_TEMPLATE =
-  "36px minmax(160px,1.1fr) minmax(140px,1fr) minmax(220px,1.5fr) minmax(180px,1fr) minmax(90px,0.6fr) minmax(160px,0.9fr) minmax(240px,1.1fr)";
+  "36px minmax(160px,1.1fr) minmax(160px,1.1fr) minmax(210px,1.35fr) minmax(220px,1.4fr) minmax(160px,1fr) minmax(90px,0.5fr) minmax(150px,0.7fr) minmax(220px,1.1fr)";
 
 const csvColumns: CsvColumn<Customer>[] = [
   { header: "Name", accessor: (row) => row.name ?? "" },
+  { header: "Company", accessor: (row) => row.company ?? "" },
   { header: "Email", accessor: (row) => row.email ?? "" },
   { header: "Phone", accessor: (row) => row.phone ?? "" },
+  { header: "Website", accessor: (row) => row.website ?? "" },
+  { header: "Instagram", accessor: (row) => row.instagram_handle ?? "" },
+  { header: "LinkedIn", accessor: (row) => row.linkedin_handle ?? "" },
   { header: "Referral Code", accessor: (row) => row.referral_code ?? "" },
   { header: "Discount Code", accessor: (row) => row.discount_code ?? "" },
+  { header: "Source", accessor: (row) => row.source ?? "" },
   { header: "Credits", accessor: (row) => row.credits ?? 0 },
   { header: "Status", accessor: (row) => row.status ?? "pending" },
 ];
@@ -86,7 +98,7 @@ export function CustomersTable({
   const [adjustingCustomerId, setAdjustingCustomerId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "verified" | "active">("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "verified" | "active" | "applicant">("all");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [selectedRows, setSelectedRows] = useState<Map<string, Customer>>(new Map());
   const [isLoading, setIsLoading] = useState(false);
@@ -432,6 +444,7 @@ export function CustomersTable({
             <option value="pending">Pending</option>
             <option value="verified">Verified</option>
             <option value="active">Active</option>
+            <option value="applicant">Applicants</option>
           </select>
         </div>
       </div>
@@ -493,6 +506,7 @@ export function CustomersTable({
           </div>
           <div>Name</div>
           <div>Contact</div>
+          <div>Application context</div>
           <div>Referral link</div>
           <div>Discount code</div>
           <div className="text-right">Credits</div>
@@ -521,6 +535,10 @@ export function CustomersTable({
                 <div className="space-y-1">
                   <Skeleton className="h-3 w-full max-w-[200px]" />
                   <Skeleton className="h-3 w-20" />
+                </div>
+                <div className="space-y-1">
+                  <Skeleton className="h-3 w-24" />
+                  <Skeleton className="h-3 w-28" />
                 </div>
                 <div className="space-y-1">
                   <Skeleton className="h-3 w-24" />
@@ -620,9 +638,32 @@ export function CustomersTable({
                 const displayStatus =
                   rawStatus === "pending"
                     ? "Ambassador pending"
+                    : rawStatus === "applicant"
+                    ? "New applicant"
                     : isVerified
                     ? "Verified ambassador"
                     : rawStatus;
+                const normalizedSource = customer.source
+                  ? customer.source.replace(/_/g, " ")
+                  : null;
+                const audienceSummary = customer.audience_profile
+                  ? customer.audience_profile.length > 140
+                    ? `${customer.audience_profile.slice(0, 140)}…`
+                    : customer.audience_profile
+                  : null;
+                const instagramHandle = customer.instagram_handle
+                  ? customer.instagram_handle.replace(/^@/, "")
+                  : null;
+                const linkedinHandle = customer.linkedin_handle
+                  ? customer.linkedin_handle.replace(/^@/, "")
+                  : null;
+
+                const statusClass =
+                  rawStatus === "applicant"
+                    ? "bg-amber-100 text-amber-800"
+                    : isVerified
+                    ? "bg-emerald-100 text-emerald-800"
+                    : "bg-slate-100 text-slate-800";
 
                 return (
                   <div
@@ -659,6 +700,55 @@ export function CustomersTable({
                     <div className="space-y-1 text-xs text-slate-600">
                       <p>{customer.email ?? "—"}</p>
                       <p>{customer.phone ?? "—"}</p>
+                    </div>
+                    <div className="space-y-2 text-xs text-slate-600">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <p className="font-semibold text-slate-900">
+                          {customer.company ?? "—"}
+                        </p>
+                        {normalizedSource && (
+                          <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-slate-600">
+                            {normalizedSource}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {customer.website && (
+                          <a
+                            href={customer.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-blue-700 hover:border-blue-400"
+                          >
+                            Website
+                          </a>
+                        )}
+                        {instagramHandle && (
+                          <a
+                            href={`https://instagram.com/${instagramHandle}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-pink-700 hover:border-pink-400"
+                          >
+                            @{instagramHandle}
+                          </a>
+                        )}
+                        {linkedinHandle && (
+                          <a
+                            href={`https://www.linkedin.com/in/${linkedinHandle}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-slate-700 hover:border-slate-400"
+                          >
+                            LinkedIn
+                          </a>
+                        )}
+                      </div>
+                      {audienceSummary && (
+                        <p className="text-[11px] text-slate-500">
+                          {audienceSummary}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       {referralLink ? (
@@ -759,13 +849,7 @@ export function CustomersTable({
                       </span>
                     </div>
                     <div>
-                      <span
-                        className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium capitalize ${
-                          isVerified
-                            ? "bg-emerald-100 text-emerald-800"
-                            : "bg-slate-100 text-slate-800"
-                        }`}
-                      >
+                      <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium capitalize ${statusClass}`}>
                         {displayStatus}
                       </span>
                     </div>

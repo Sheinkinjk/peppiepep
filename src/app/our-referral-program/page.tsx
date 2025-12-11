@@ -10,13 +10,20 @@ import {
   Shield,
   Zap,
   Target,
+  Building2,
+  Globe,
+  Share2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { Textarea } from "@/components/ui/textarea";
+import { createServiceClient } from "@/lib/supabase";
+import { redirect } from "next/navigation";
+import { nanoid } from "nanoid";
+import { generateUniqueDiscountCode } from "@/lib/discount-codes";
+import { ensureAbsoluteUrl } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Join Our Partner Program | Refer Labs",
@@ -24,73 +31,237 @@ export const metadata: Metadata = {
 };
 
 async function submitPartnerApplication(formData: FormData) {
-  'use server';
+  "use server";
+  const supabase = await createServiceClient();
+  const resolvedBusinessId = process.env.PARTNER_PROGRAM_BUSINESS_ID;
+  if (!resolvedBusinessId) {
+    console.error("Missing PARTNER_PROGRAM_BUSINESS_ID env variable");
+    redirect("/our-referral-program?applied=0");
+  }
+  const businessId = resolvedBusinessId;
 
-  const name = formData.get('name') as string;
-  const email = formData.get('email') as string;
-  const phone = formData.get('phone') as string;
-  const source = formData.get('source') as string | null;
-  const supabase = createServerActionClient({ cookies });
+  const getString = (key: string) => {
+    const raw = formData.get(key);
+    if (typeof raw !== "string") return null;
+    const trimmed = raw.trim();
+    return trimmed.length > 0 ? trimmed : null;
+  };
 
-  // Send notification email to jarred@referlabs.com.au
+  const fullName = getString("name");
+  const email = getString("email")?.toLowerCase() ?? null;
+  const phone = getString("phone");
+  const company = getString("company");
+  const websiteInput = getString("website");
+  const website = websiteInput
+    ? ensureAbsoluteUrl(websiteInput) ?? websiteInput
+    : null;
+  const instagramHandleRaw = getString("instagram_handle");
+  const instagram_handle = instagramHandleRaw
+    ? instagramHandleRaw.replace(/^@/, "")
+    : null;
+  const linkedinHandleRaw = getString("linkedin_handle");
+  const linkedin_handle = linkedinHandleRaw
+    ? linkedinHandleRaw.replace(/^https?:\/\/(www\.)?linkedin\.com\//i, "")
+    : null;
+  const audience_profile = getString("audience_profile");
+  const notes = getString("notes");
+  const source = getString("source") ?? "our-referral-program";
+  const fallbackName = company || fullName || email || "Partner applicant";
+  const dedupeFilters: string[] = [];
+  if (email) dedupeFilters.push(`email.ilike.${email}`);
+  if (phone) dedupeFilters.push(`phone.eq.${phone}`);
+
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
+    type ExistingCustomer = {
+      id: string;
+      referral_code: string | null;
+      discount_code: string | null;
+    };
+    let existingCustomer: ExistingCustomer | null = null;
+
+    if (dedupeFilters.length > 0) {
+      const { data } = await supabase
+        .from("customers")
+        .select("id, referral_code, discount_code")
+        .eq("business_id", businessId)
+        .or(dedupeFilters.join(","))
+        .limit(1)
+        .maybeSingle();
+
+      existingCustomer = (data as ExistingCustomer | null) ?? null;
+    }
+
+    let customerId = existingCustomer?.id ?? null;
+    let referralCode = existingCustomer?.referral_code ?? null;
+    let discountCode = existingCustomer?.discount_code ?? null;
+
+    if (!customerId) {
+      referralCode = referralCode ?? nanoid(12);
+      discountCode =
+        discountCode ??
+        (await generateUniqueDiscountCode({
+          supabase,
+          businessId,
+          seedName: fallbackName,
+        }));
+
+      const { data: inserted, error: insertError } = await supabase
+        .from("customers")
+        .insert([
+          {
+            business_id: businessId,
+            name: fullName ?? fallbackName,
+            company: company,
+            website,
+            instagram_handle,
+            linkedin_handle,
+            audience_profile,
+            notes,
+            source,
+            phone,
+            email,
+            referral_code: referralCode,
+            discount_code: discountCode,
+            status: "applicant",
+          },
+        ])
+        .select("id, referral_code, discount_code")
+        .single();
+
+      if (insertError || !inserted) {
+        console.error("Failed to insert applicant customer", insertError);
+        redirect("/our-referral-program?applied=0");
+      }
+
+      customerId = inserted.id;
+      referralCode = inserted.referral_code ?? referralCode;
+      discountCode = inserted.discount_code ?? discountCode;
+    } else {
+      const updatePayload: Record<string, string | null> = {};
+      if (fullName) updatePayload.name = fullName;
+      if (company) updatePayload.company = company;
+      if (website) updatePayload.website = website;
+      if (instagram_handle) updatePayload.instagram_handle = instagram_handle;
+      if (linkedin_handle) updatePayload.linkedin_handle = linkedin_handle;
+      if (audience_profile) updatePayload.audience_profile = audience_profile;
+      if (notes) updatePayload.notes = notes;
+      if (source) updatePayload.source = source;
+      if (Object.keys(updatePayload).length > 0) {
+        await supabase
+          .from("customers")
+          .update(updatePayload)
+          .eq("id", customerId);
+      }
+
+      if (!referralCode) {
+        referralCode = nanoid(12);
+      }
+      if (!discountCode) {
+        discountCode = await generateUniqueDiscountCode({
+          supabase,
+          businessId,
+          seedName: fallbackName,
+        });
+      }
+      if (!existingCustomer?.referral_code || !existingCustomer.discount_code) {
+        await supabase
+          .from("customers")
+          .update({
+            referral_code: referralCode,
+            discount_code: discountCode,
+          })
+          .eq("id", customerId);
+      }
+      await supabase
+        .from("customers")
+        .update({ status: "applicant" })
+        .eq("id", customerId);
+    }
+
+    await supabase.from("partner_applications").insert([
+      {
+        business_id: businessId,
+        customer_id: customerId,
+        name: fullName ?? fallbackName,
+        email,
+        phone,
+        company,
+        website,
+        instagram_handle,
+        linkedin_handle,
+        audience_profile,
+        notes,
+        source,
+        status: "pending",
       },
-      body: JSON.stringify({
-        from: 'Refer Labs Partner Program <noreply@referlabs.com>',
-        to: ['jarred@referlabs.com.au'],
-        subject: `🎉 New Partner Application: ${name}`,
-        html: `
-          <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto;">
-            <div style="background: linear-gradient(135deg, #0abab5 0%, #24d9e2 100%); padding: 40px; text-align: center; border-radius: 16px 16px 0 0;">
-              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 900;">New Partner Application</h1>
-            </div>
-            <div style="background: #f8f9fa; padding: 40px; border-radius: 0 0 16px 16px;">
-              <div style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h2 style="color: #1e293b; margin-top: 0;">Partner Details</h2>
-                <div style="margin: 24px 0; padding: 16px; background: #f1f5f9; border-radius: 8px;">
-                  <p style="margin: 8px 0;"><strong>Name:</strong> ${name}</p>
-                  <p style="margin: 8px 0;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #0abab5;">${email}</a></p>
-                  <p style="margin: 8px 0;"><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-                  <p style="margin: 8px 0;"><strong>Applied:</strong> ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'full', timeStyle: 'short' })}</p>
-                </div>
-                <div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; margin-top: 24px; border-radius: 4px;">
-                  <p style="margin: 0; color: #065f46;"><strong>Next Steps:</strong></p>
-                  <p style="margin: 8px 0 0 0; color: #065f46;">Review this application and send them their unique referral link and discount code.</p>
-                </div>
+    ]);
+
+    const siteOrigin = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ?? "https://referlabs.com.au";
+    const referralLink = referralCode ? `${siteOrigin}/r/${referralCode}` : null;
+
+    if (process.env.RESEND_API_KEY) {
+      try {
+        await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "Refer Labs Partner Program <noreply@referlabs.com>",
+            to: ["jarred@referlabs.com.au"],
+            subject: `New referral program applicant: ${fallbackName}`,
+            html: `
+            <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
+              <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
+                <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">New applicant</p>
+                <h1 style="margin:8px 0 0;font-size:28px;font-weight:800;">${fallbackName}</h1>
+                ${company ? `<p style="margin:4px 0 0;font-size:16px;">${company}</p>` : ""}
+              </div>
+              <div style="padding:32px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;background:white;">
+                <h2 style="margin-top:0;font-size:18px;color:#0f172a;">Snapshot</h2>
+                <ul style="list-style:none;padding:0;margin:0 0 16px;">
+                  ${email ? `<li style="margin:6px 0;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></li>` : ""}
+                  ${phone ? `<li style="margin:6px 0;"><strong>Phone:</strong> ${phone}</li>` : ""}
+                  ${website ? `<li style="margin:6px 0;"><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></li>` : ""}
+                  ${instagram_handle ? `<li style="margin:6px 0;"><strong>Instagram:</strong> @${instagram_handle}</li>` : ""}
+                  ${linkedin_handle ? `<li style="margin:6px 0;"><strong>LinkedIn:</strong> ${linkedin_handle}</li>` : ""}
+                </ul>
+                ${audience_profile ? `<div style="margin-top:16px;"><strong>Audience:</strong><p style="margin:6px 0;color:#475569;">${audience_profile}</p></div>` : ""}
+                ${notes ? `<div style="margin-top:16px;"><strong>Launch plan:</strong><p style="margin:6px 0;color:#475569;">${notes}</p></div>` : ""}
+                ${
+                  referralLink
+                    ? `<div style="margin-top:24px;padding:16px;border-radius:16px;background:#ecfdf5;border:1px solid #bbf7d0;">
+                        <p style="margin:0 0 8px;font-weight:600;">Auto-generated link</p>
+                        <p style="margin:0;"><a href="${referralLink}" target="_blank">${referralLink}</a></p>
+                        ${discountCode ? `<p style="margin:8px 0 0;font-size:14px;color:#065f46;">Discount code: <strong>${discountCode}</strong></p>` : ""}
+                      </div>`
+                    : ""
+                }
               </div>
             </div>
-          </div>
-        `,
-      }),
-    });
-
-      if (!response.ok) {
-        throw new Error('Failed to send notification email');
+          `,
+          }),
+        });
+      } catch (emailError) {
+        console.error("Failed to send partner alert email", emailError);
       }
-    } catch (error) {
-      console.error('Error sending partner application email:', error);
     }
 
-    try {
-      await supabase.from("partner_applications").insert([
-        {
-          name,
-          email,
-          phone,
-          source,
-        },
-      ]);
-    } catch (dbError) {
-      console.error("Failed to record partner application:", dbError);
-    }
+    redirect("/our-referral-program?applied=1");
+  } catch (error) {
+    console.error("Partner application failed", error);
+    redirect("/our-referral-program?applied=0");
+  }
 }
 
-export default function OurReferralProgramPage() {
+type ReferralProgramPageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
+
+export default function OurReferralProgramPage({ searchParams }: ReferralProgramPageProps) {
+  const applied = searchParams?.applied === "1";
+  const applyError = searchParams?.applied === "0";
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
       {/* Hero Section */}
@@ -338,51 +509,149 @@ export default function OurReferralProgramPage() {
           </div>
 
             <Card className="p-8 sm:p-10 rounded-3xl border-2 border-slate-700 bg-slate-800 shadow-2xl">
+              {applied && (
+                <div className="mb-6 rounded-2xl border border-emerald-400/40 bg-emerald-900/30 p-4 text-sm text-emerald-100">
+                  ✅ Application received. We also created your ambassador profile so you can edit everything under{" "}
+                  <span className="font-semibold text-white">Step 2 → Edit Program Settings</span> once you log in.
+                </div>
+              )}
+              {applyError && (
+                <div className="mb-6 rounded-2xl border border-red-400/40 bg-red-900/30 p-4 text-sm text-red-100">
+                  We couldn&apos;t record your application automatically. Please try again or email <a href="mailto:jarred@referlabs.com.au" className="underline">jarred@referlabs.com.au</a>.
+                </div>
+              )}
               <form action={submitPartnerApplication} className="space-y-6">
-                <input type="hidden" name="source" value="refer-program-page" />
-              <div>
-                <Label htmlFor="name" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                  <User className="h-4 w-4" />
-                  Full Name *
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="John Smith"
-                  className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                />
-              </div>
+                <input type="hidden" name="source" value="our-referral-program" />
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <Label htmlFor="name" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                      <User className="h-4 w-4" />
+                      Full Name *
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      placeholder="John Smith"
+                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                      <Phone className="h-4 w-4" />
+                      Phone Number
+                    </Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+61 4 123 456"
+                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <Label htmlFor="email" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                  <Mail className="h-4 w-4" />
-                  Email Address *
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="john@example.com"
-                  className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                />
-              </div>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <Label htmlFor="email" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                      <Mail className="h-4 w-4" />
+                      Email Address *
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="john@example.com"
+                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="company" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                      <Building2 className="h-4 w-4" />
+                      Business Name *
+                    </Label>
+                    <Input
+                      id="company"
+                      name="company"
+                      type="text"
+                      required
+                      placeholder="Refer Labs"
+                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <Label htmlFor="phone" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                  <Phone className="h-4 w-4" />
-                  Phone Number
-                </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+1 (555) 123-4567"
-                  className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                />
-              </div>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <Label htmlFor="website" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                      <Globe className="h-4 w-4" />
+                      Website / Primary URL *
+                    </Label>
+                    <Input
+                      id="website"
+                      name="website"
+                      type="url"
+                      required
+                      placeholder="https://referlabs.com.au"
+                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="instagram_handle" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                      <Share2 className="h-4 w-4" />
+                      Instagram Handle
+                    </Label>
+                    <Input
+                      id="instagram_handle"
+                      name="instagram_handle"
+                      type="text"
+                      placeholder="@referlabs"
+                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <Label htmlFor="linkedin_handle" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                    <Share2 className="h-4 w-4 rotate-45" />
+                    LinkedIn Profile / URL
+                  </Label>
+                  <Input
+                    id="linkedin_handle"
+                    name="linkedin_handle"
+                    type="text"
+                    placeholder="linkedin.com/in/referlabs"
+                    className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="audience_profile" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                    <Users className="h-4 w-4" />
+                    Who do you typically sell to?
+                  </Label>
+                  <Textarea
+                    id="audience_profile"
+                    name="audience_profile"
+                    placeholder="Beauty clinics in Sydney, boutique fitness studios, luxury eCommerce merchants, etc."
+                    className="min-h-[120px] rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 focus:border-[#0abab5]"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="notes" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
+                    <Target className="h-4 w-4" />
+                    How will you promote Refer Labs?
+                  </Label>
+                  <Textarea
+                    id="notes"
+                    name="notes"
+                    placeholder="Share any launch ideas, warm accounts, or channels where you plan to promote Refer Labs."
+                    className="min-h-[120px] rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 focus:border-[#0abab5]"
+                  />
+                </div>
 
               <div className="p-6 bg-emerald-900/20 border-2 border-emerald-500/30 rounded-2xl">
                 <div className="flex items-start gap-3 mb-4">
@@ -394,6 +663,7 @@ export default function OurReferralProgramPage() {
                     <li>• Upon approval, receive your unique referral link & discount code</li>
                     <li>• $250 credit automatically applied to your account</li>
                     <li>• Access to partner resources and marketing materials</li>
+                    <li>• Edit every field again inside Step 2 → Edit Program Settings</li>
                   </ul>
                   </div>
                 </div>

@@ -78,7 +78,7 @@ export async function GET(request: Request) {
     let query = supabase
       .from("customers")
       .select(
-        "id, name, phone, email, referral_code, discount_code, credits, status, created_at",
+        "id, name, phone, email, referral_code, discount_code, credits, status, created_at, company, website, instagram_handle, linkedin_handle, audience_profile, source, notes",
         { count: "exact" },
       )
       .eq("business_id", business.id)
@@ -94,6 +94,12 @@ export async function GET(request: Request) {
           `phone.ilike.${likeValue}`,
           `referral_code.ilike.${likeValue}`,
           `discount_code.ilike.${likeValue}`,
+          `company.ilike.${likeValue}`,
+          `website.ilike.${likeValue}`,
+          `instagram_handle.ilike.${likeValue}`,
+          `linkedin_handle.ilike.${likeValue}`,
+          `audience_profile.ilike.${likeValue}`,
+          `source.ilike.${likeValue}`,
         ].join(","),
       );
     }

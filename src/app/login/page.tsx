@@ -11,7 +11,7 @@ import { Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Database } from "@/types/supabase";
 
-type ViewState = "auth" | "onboarding";
+type ViewState = "auth" | "onboarding" | "forgot-password";
 
 function LoginContent() {
   const [email, setEmail] = useState("");
@@ -20,6 +20,7 @@ function LoginContent() {
   const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
   const [confirmationSent, setConfirmationSent] = useState(false);
   const [confirmationEmail, setConfirmationEmail] = useState("");
+  const [resetEmailSent, setResetEmailSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [view, setView] = useState<ViewState>("auth");
@@ -159,6 +160,34 @@ function LoginContent() {
     }
   };
 
+  const handleForgotPassword = async () => {
+    if (!email) {
+      setError("Please enter your email address");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${location.origin}/auth/reset-password`,
+      });
+
+      if (resetError) throw resetError;
+
+      setResetEmailSent(true);
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Failed to send password reset email";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleOnboarding = async () => {
     setLoading(true);
     setError("");
@@ -199,6 +228,93 @@ function LoginContent() {
       setLoading(false);
     }
   };
+
+  if (view === "forgot-password") {
+    return (
+      <main
+        className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
+        aria-label="Refer Labs password reset"
+      >
+        <Card className="relative w-full max-w-md overflow-hidden border border-white/60 bg-white/80 p-8 shadow-2xl shadow-purple-100 backdrop-blur">
+          <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl" />
+
+          <div className="relative">
+            <div className="mb-6">
+              <h1 className="text-2xl font-bold text-slate-900 mb-2">
+                Reset your password
+              </h1>
+              <p className="text-sm text-slate-600">
+                Enter your email address and we&rsquo;ll send you a link to reset your password.
+              </p>
+            </div>
+
+            {resetEmailSent ? (
+              <div className="space-y-4">
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50/75 px-4 py-3 text-sm text-emerald-900">
+                  <p className="font-semibold mb-1">Check your email</p>
+                  <p>
+                    We sent a password reset link to{" "}
+                    <span className="font-semibold">{email}</span>. Click the link in the email to create a new password.
+                  </p>
+                </div>
+                <Button
+                  onClick={() => {
+                    setView("auth");
+                    setResetEmailSent(false);
+                    setEmail("");
+                  }}
+                  variant="outline"
+                  className="w-full"
+                >
+                  Back to sign in
+                </Button>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="reset-email">Email address</Label>
+                  <Input
+                    id="reset-email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="mt-1"
+                    placeholder="you@yourbusiness.com"
+                    onKeyDown={(e) => e.key === "Enter" && handleForgotPassword()}
+                  />
+                </div>
+
+                {error && (
+                  <div className="rounded-lg bg-red-50 border border-red-200 p-3">
+                    <p className="text-sm text-red-800">{error}</p>
+                  </div>
+                )}
+
+                <Button
+                  onClick={handleForgotPassword}
+                  disabled={loading || !email}
+                  className="w-full"
+                >
+                  {loading ? "Sending..." : "Send reset link"}
+                </Button>
+
+                <Button
+                  variant="link"
+                  className="w-full text-slate-700"
+                  onClick={() => {
+                    setView("auth");
+                    setError("");
+                  }}
+                >
+                  Back to sign in
+                </Button>
+              </div>
+            )}
+          </div>
+        </Card>
+      </main>
+    );
+  }
 
   if (view === "onboarding") {
     return (
@@ -410,18 +526,32 @@ function LoginContent() {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="password">Password</Label>
+                  <div className="flex items-center justify-between">
+                    <Label htmlFor="password">Password</Label>
+                    {!isSignUp && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setView("forgot-password");
+                          setError("");
+                        }}
+                        className="text-xs font-semibold text-purple-700 hover:text-purple-800"
+                      >
+                        Forgot password?
+                      </button>
+                    )}
+                  </div>
                   <Input
                     id="password"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="mt-1"
-                  placeholder="••••••••"
-                  onKeyDown={(e) => e.key === "Enter" && handleAuth()}
-                />
+                    placeholder="••••••••"
+                    onKeyDown={(e) => e.key === "Enter" && handleAuth()}
+                  />
+                </div>
               </div>
-            </div>
 
             {isSignUp && (
               <label className="mt-4 flex items-start gap-3 text-sm text-slate-600">
@@ -499,11 +629,6 @@ function LoginContent() {
                 </svg>
                 Continue with Google
               </Button>
-              <p className="mt-3 text-xs text-slate-500">
-                Ensure the Google OAuth provider in Supabase is enabled, add{" "}
-                <code className="font-mono text-[#0a95a6]">https://referlabs.com.au/auth/callback</code>{" "}
-                as a redirect URI, and whitelist this domain in your Supabase project so Google sign-in can complete.
-              </p>
 
               <Button
                 variant="link"

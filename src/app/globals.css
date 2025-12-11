@@ -121,6 +121,95 @@ body {
   background-attachment: fixed;
 }
 
+.hero-notification-card {
+  pointer-events: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245,250,255,0.95));
+  box-shadow: 0 20px 48px rgba(2, 48, 71, 0.08);
+  color: #1f2937;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-notification-card--floating {
+  position: absolute;
+  width: clamp(190px, 21vw, 250px);
+}
+
+.hero-notification-card--stacked {
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  margin: 0 auto;
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.15);
+}
+
+.hero-card--top-center {
+  top: 6%;
+  left: 52%;
+  transform: translateX(-52%);
+}
+
+.hero-card--top-right {
+  top: 10%;
+  right: 6%;
+}
+
+.hero-card--left-middle {
+  top: 38%;
+  left: 6%;
+}
+
+.hero-card--bottom-left {
+  bottom: 18%;
+  left: 42%;
+}
+
+.hero-card--bottom-right {
+  bottom: 16%;
+  right: 8%;
+}
+
+.hero-notification-card::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 1.5rem;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.08));
+}
+
+@media (max-width: 1024px) {
+  .hero-notification-card {
+    position: static !important;
+    width: 100%;
+    max-width: 280px;
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow: 0 6px 30px rgba(15, 23, 42, 0.12);
+  }
+
+  .hero-notification-card::after {
+    left: 1rem;
+  }
+
+  .hero-notification-card--stacked::after {
+    display: none;
+  }
+}
+
 .glass {
   backdrop-filter: blur(10px);
   background: linear-gradient(120deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5));
@@ -163,24 +252,6 @@ body {
 
 .animate-bounce-slow {
   animation: bounce-slow 2s ease-in-out infinite;
-}
-
-.hero-floating-card {
-  position: absolute;
-  animation: hero-float 9s ease-in-out infinite;
-  pointer-events: none;
-  transform-origin: center;
-  z-index: 0;
-}
-
-@keyframes hero-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
 }
 
 .marquee-scroller {

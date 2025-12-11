@@ -1,9 +1,9 @@
 import { ArrowRight, Gift, Sparkles, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
-import type { CSSProperties } from "react";
+import type { ReactNode, CSSProperties } from "react";
 
 const referralPillars = [
   {
@@ -107,47 +107,47 @@ const referralNumbers = [
   },
 ];
 
-const heroMoments: {
+type HeroNotification = {
   id: string;
+  label: string;
   text: string;
-  emoji: string;
-  bgGradient: string;
-  position: CSSProperties;
-  rotate: string;
-}[] = [
+};
+
+const heroNotifications: HeroNotification[] = [
   {
     id: "hero-jenny",
-    text: "Jenny used your referral link",
-    emoji: "🎉",
-    bgGradient: "from-cyan-400/90 to-cyan-500/90",
-    position: { top: "12%", left: "5%", maxWidth: "280px" },
-    rotate: "rotate-45",
+    label: "New referral",
+    text: "Jenny used her referral link",
   },
   {
     id: "hero-david",
-    text: "David made an order",
-    emoji: "🛒",
-    bgGradient: "from-amber-400/90 to-amber-500/90",
-    position: { top: "12%", right: "5%", maxWidth: "240px" },
-    rotate: "-rotate-45",
+    label: "VIP booking",
+    text: "David confirmed a premium order",
+  },
+  {
+    id: "hero-jake",
+    label: "Leaderboard",
+    text: "Jake is your top Referrer with 24 referrals this month",
   },
   {
     id: "hero-campaign",
-    text: "New Campaign sent to 500 Customers",
-    emoji: "📢",
-    bgGradient: "from-indigo-400/90 to-indigo-500/90",
-    position: { bottom: "12%", left: "5%", maxWidth: "300px" },
-    rotate: "-rotate-45",
+    label: "Campaign drop",
+    text: "500 ambassadors received your drop",
   },
   {
     id: "hero-revenue",
-    text: "$45,500 additional revenue generated",
-    emoji: "💰",
-    bgGradient: "from-purple-400/90 to-purple-500/90",
-    position: { bottom: "12%", right: "5%", maxWidth: "300px" },
-    rotate: "rotate-45",
+    label: "Revenue boost",
+    text: "$45,500 in attributed revenue",
   },
 ];
+
+const heroPositionClasses: Record<string, string> = {
+  "hero-jenny": "hero-card--top-center",
+  "hero-david": "hero-card--top-right",
+  "hero-jake": "hero-card--left-middle",
+  "hero-campaign": "hero-card--bottom-right",
+  "hero-revenue": "hero-card--bottom-left",
+};
 
 type PartnerLogoSpec = {
   id: string;
@@ -282,6 +282,51 @@ const partnerLogos: PartnerLogoSpec[] = [
 ];
 
 
+const NotificationCard = ({
+  notification,
+  variant,
+  positionClass = "",
+}: {
+  notification: HeroNotification;
+  variant: "floating" | "stacked";
+  positionClass?: string;
+}) => {
+  const cardContent = (
+    <div className="flex items-center gap-3">
+      <div className="flex h-7 w-14 items-center justify-center rounded-lg border border-[#0a727f]/40 bg-white/90 px-2">
+        <Image src="/logo.svg" alt="Refer Labs" width={44} height={18} className="h-4 w-12 object-contain" />
+      </div>
+      <div className="leading-tight">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">
+          {notification.label}
+        </p>
+        <p className="text-[13px] font-semibold text-slate-900">{notification.text}</p>
+      </div>
+    </div>
+  );
+
+  if (variant === "floating") {
+    return (
+      <div
+        key={notification.id}
+        className={`hero-notification-card hero-notification-card--floating ${positionClass}`}
+        aria-hidden
+      >
+        {cardContent}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      key={`mobile-${notification.id}`}
+      className="hero-notification-card hero-notification-card--stacked"
+    >
+      {cardContent}
+    </div>
+  );
+};
+
 export default function Home() {
   const repeatedPartnerLogos = [...partnerLogos, ...partnerLogos];
 
@@ -293,26 +338,26 @@ export default function Home() {
 
         {/* Hero Section */}
         <div className="mx-auto max-w-4xl relative text-center space-y-8 py-20 sm:py-24 sm:space-y-10">
-          {heroMoments.map((moment) => (
-            <div
-              key={moment.id}
-              className={`hero-floating-card hidden lg:flex absolute items-center justify-between gap-2.5 rounded-full border-2 border-white/80 bg-gradient-to-r ${moment.bgGradient} px-4 py-2 shadow-[0_20px_50px_rgba(15,23,42,0.3)] ${moment.rotate} hover:scale-105 transition-all duration-300`}
-              style={moment.position}
-              aria-hidden
-            >
-              <span className="text-[13px] font-bold text-white leading-tight drop-shadow-md whitespace-nowrap">
-                {moment.text}
-              </span>
-              <span className="text-lg flex-shrink-0">{moment.emoji}</span>
-            </div>
-          ))}
+          <div className="pointer-events-none absolute inset-0 hidden lg:block">
+            {heroNotifications.map((notification) => (
+              <NotificationCard
+                key={notification.id}
+                notification={notification}
+                variant="floating"
+                positionClass={heroPositionClasses[notification.id]}
+              />
+            ))}
+          </div>
 
           <div className="relative z-10 space-y-6">
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
-              <span className="block text-balance text-[#00343a]">We Help Launch Successful</span>
-              <span className="block text-[#0a727f] drop-shadow-[0_6px_20px_rgba(9,81,93,0.25)]">
-                Referral Programs
-              </span>
+            <div className="flex flex-col items-center gap-3 lg:hidden">
+              {heroNotifications.map((notification) => (
+                <NotificationCard key={`stacked-${notification.id}`} notification={notification} variant="stacked" />
+              ))}
+            </div>
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#0abab5] sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
+              <span className="block text-balance">We Help Launch Successful</span>
+              <span className="block">Referral Programs</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-semibold">
               Activate a growth network that plugs into your sales and marketing to generate new business.

@@ -1,5 +1,7 @@
 // Minimal hand-written Supabase types to align with the queries used in the app.
 // Replace with generated types from `supabase gen types typescript` when available.
+export type Json = string | number | boolean | null | { [key: string]: Json } | Json[];
+
 export interface Database {
   public: {
     Tables: {
@@ -19,6 +21,11 @@ export interface Database {
           brand_highlight_color: string | null;
           brand_tone: string | null;
           discount_capture_secret: string | null;
+          sign_on_bonus_enabled: boolean | null;
+          sign_on_bonus_amount: number | null;
+          sign_on_bonus_type: string | null;
+          sign_on_bonus_description: string | null;
+          onboarding_metadata: Json | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -37,6 +44,11 @@ export interface Database {
           brand_highlight_color?: string | null;
           brand_tone?: string | null;
           discount_capture_secret?: string | null;
+          sign_on_bonus_enabled?: boolean | null;
+          sign_on_bonus_amount?: number | null;
+          sign_on_bonus_type?: string | null;
+          sign_on_bonus_description?: string | null;
+          onboarding_metadata?: Json | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -55,6 +67,11 @@ export interface Database {
           brand_highlight_color?: string | null;
           brand_tone?: string | null;
           discount_capture_secret?: string | null;
+          sign_on_bonus_enabled?: boolean | null;
+          sign_on_bonus_amount?: number | null;
+          sign_on_bonus_type?: string | null;
+          sign_on_bonus_description?: string | null;
+          onboarding_metadata?: Json | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -65,10 +82,17 @@ export interface Database {
           id: string;
           business_id: string;
           name: string | null;
+          company: string | null;
+          website: string | null;
+          instagram_handle: string | null;
+          linkedin_handle: string | null;
+          audience_profile: string | null;
+          source: string | null;
+          notes: string | null;
           phone: string | null;
           email: string | null;
           referral_code: string | null;
-           discount_code: string | null;
+          discount_code: string | null;
           status: string | null;
           credits: number | null;
           created_at?: string | null;
@@ -78,6 +102,13 @@ export interface Database {
           id?: string;
           business_id: string;
           name?: string | null;
+          company?: string | null;
+          website?: string | null;
+          instagram_handle?: string | null;
+          linkedin_handle?: string | null;
+          audience_profile?: string | null;
+          source?: string | null;
+          notes?: string | null;
           phone?: string | null;
           email?: string | null;
           referral_code?: string | null;
@@ -91,12 +122,76 @@ export interface Database {
           id?: string;
           business_id?: string;
           name?: string | null;
+          company?: string | null;
+          website?: string | null;
+          instagram_handle?: string | null;
+          linkedin_handle?: string | null;
+          audience_profile?: string | null;
+          source?: string | null;
+          notes?: string | null;
           phone?: string | null;
           email?: string | null;
           referral_code?: string | null;
           discount_code?: string | null;
           status?: string | null;
           credits?: number | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Relationships: never[];
+      };
+      partner_applications: {
+        Row: {
+          id: string;
+          business_id: string;
+          customer_id: string | null;
+          name: string | null;
+          email: string | null;
+          phone: string | null;
+          company: string | null;
+          website: string | null;
+          instagram_handle: string | null;
+          linkedin_handle: string | null;
+          audience_profile: string | null;
+          notes: string | null;
+          source: string | null;
+          status: "pending" | "under_review" | "approved" | "rejected" | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Insert: {
+          id?: string;
+          business_id: string;
+          customer_id?: string | null;
+          name?: string | null;
+          email?: string | null;
+          phone?: string | null;
+          company?: string | null;
+          website?: string | null;
+          instagram_handle?: string | null;
+          linkedin_handle?: string | null;
+          audience_profile?: string | null;
+          notes?: string | null;
+          source?: string | null;
+          status?: "pending" | "under_review" | "approved" | "rejected" | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          business_id?: string;
+          customer_id?: string | null;
+          name?: string | null;
+          email?: string | null;
+          phone?: string | null;
+          company?: string | null;
+          website?: string | null;
+          instagram_handle?: string | null;
+          linkedin_handle?: string | null;
+          audience_profile?: string | null;
+          notes?: string | null;
+          source?: string | null;
+          status?: "pending" | "under_review" | "approved" | "rejected" | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
