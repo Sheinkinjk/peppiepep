@@ -58,7 +58,7 @@ export function CRMIntegrationTab({
   const normalizedSite =
     siteUrl && siteUrl.endsWith("/")
       ? siteUrl.slice(0, -1)
-      : siteUrl || "https://peppiepep.com";
+      : siteUrl || "https://referlabs.com.au";
   const fallbackReferralUrl = `${normalizedSite}/referral?project=spa`;
 
   const referralLinkFor = (code?: string | null) => {
@@ -109,7 +109,7 @@ export function CRMIntegrationTab({
   const curlSnippet = [
     `curl -X POST '${normalizedSite}/api/discount-codes/redeem'`,
     "-H 'Content-Type: application/json'",
-    `-H 'x-pepf-discount-secret: ${discountCaptureSecret ?? "YOUR_SECRET"}'`,
+    `-H 'x-referlabs-discount-secret: ${discountCaptureSecret ?? "YOUR_SECRET"}'`,
     `-d '${samplePayload.replace(/\n/g, " ")}'`,
   ].join(" \\\n  ");
 

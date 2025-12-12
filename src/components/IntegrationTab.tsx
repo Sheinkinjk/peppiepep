@@ -883,13 +883,13 @@ export function IntegrationTab({
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-slate-800">Gutenberg shortcode</p>
                 <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
-{`add_shortcode('peppiepep_referral', function($atts = []) {
+{`add_shortcode('referlabs_referral', function($atts = []) {
   $code = isset($atts['code']) ? esc_attr($atts['code']) : 'VIPCODE1234';
   return '<iframe src="${siteUrl}/r/' . $code . '?embed=1" style="width:100%;min-height:640px;border:none;border-radius:32px;"></iframe>';
 });`}
                 </pre>
                 <p className="text-xs text-slate-500">
-                  Usage: <code className="font-mono">[peppiepep_referral code=&quot;AMBCODE&quot;]</code>
+                  Usage: <code className="font-mono">[referlabs_referral code=&quot;AMBCODE&quot;]</code>
                 </p>
               </div>
               <div className="space-y-2">

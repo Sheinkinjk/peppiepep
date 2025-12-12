@@ -12,7 +12,7 @@ type CRMIntegrationGuideCardProps = {
 };
 
 export function CRMIntegrationGuideCard({ siteUrl, businessName, discountCaptureSecret }: CRMIntegrationGuideCardProps) {
-  const normalizedSite = siteUrl && siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl || "https://peppiepep.com";
+  const normalizedSite = siteUrl && siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl || "https://referlabs.com.au";
   const [copied, setCopied] = useState(false);
 
   const samplePayload = JSON.stringify(
@@ -30,7 +30,7 @@ export function CRMIntegrationGuideCard({ siteUrl, businessName, discountCapture
   const curlSnippet = [
     `curl -X POST '${normalizedSite}/api/discount-codes/redeem'`,
     "-H 'Content-Type: application/json'",
-    `-H 'x-pepf-discount-secret: ${discountCaptureSecret ?? "YOUR_SECRET"}'`,
+    `-H 'x-referlabs-discount-secret: ${discountCaptureSecret ?? "YOUR_SECRET"}'`,
     `-d '${samplePayload.replace(/\n/g, " ")}'`,
   ].join(" \\\n  ");
 

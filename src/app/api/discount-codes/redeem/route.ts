@@ -27,11 +27,13 @@ const redemptionPayloadSchema = z.object({
 });
 
 function normalizeHeaderSecret(request: Request) {
-  const headerKeys = [
-    "x-pepf-discount-secret",
-    "x-peppiepep-secret",
-    "x-discount-secret",
-  ];
+const headerKeys = [
+  "x-referlabs-discount-secret",
+  "x-referlabs-secret",
+  "x-pepf-discount-secret",
+  "x-peppiepep-secret",
+  "x-discount-secret",
+];
   for (const key of headerKeys) {
     const value = request.headers.get(key);
     if (value) return value.trim();
@@ -69,7 +71,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            "Missing discount capture secret. Include it in the x-pepf-discount-secret header.",
+            "Missing discount capture secret. Include it in the x-referlabs-discount-secret header.",
         },
         { status: 401 },
       );

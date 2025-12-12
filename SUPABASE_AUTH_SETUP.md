@@ -15,7 +15,7 @@ This guide will help you fix the authentication issues with both Google OAuth an
 ### Go to Supabase Dashboard
 
 1. Navigate to https://supabase.com/dashboard
-2. Select your **Peppiepep** project
+2. Select your **Refer Labs** project
 3. Go to **Authentication** → **Providers** → **Email**
 
 ### Disable Email Confirmation (For MVP Testing)
@@ -42,7 +42,7 @@ This guide will help you fix the authentication issues with both Google OAuth an
 ### A. Create Google OAuth Credentials
 
 1. Go to **Google Cloud Console**: https://console.cloud.google.com
-2. Select or create a project for Pepform
+2. Select or create a project for Refer Labs (jarred@referlabs.com.au)
 
 #### Enable Google+ API
 
@@ -55,13 +55,13 @@ This guide will help you fix the authentication issues with both Google OAuth an
 6. Go to **APIs & Services** → **OAuth consent screen**
 7. Select **External** user type
 8. Fill in the form:
-   - **App name:** Pepform
-   - **User support email:** jarredkrowitz@gmail.com
-   - **Developer contact:** jarredkrowitz@gmail.com
-   - **Authorized domains:** peppiepep.vercel.app
+   - **App name:** Refer Labs
+   - **User support email:** jarred@referlabs.com.au
+   - **Developer contact:** jarred@referlabs.com.au
+   - **Authorized domains:** referlabs.com.au, supabase.co
 9. Click **Save and Continue**
 10. On **Scopes** page, click **Save and Continue** (use defaults)
-11. On **Test users** page, add your email: jarredkrowitz@gmail.com
+11. On **Test users** page, add your email: jarred@referlabs.com.au
 12. Click **Save and Continue**
 
 #### Create OAuth Client ID
@@ -70,20 +70,21 @@ This guide will help you fix the authentication issues with both Google OAuth an
 14. Click **Create Credentials** → **OAuth client ID**
 15. Select **Web application**
 16. Fill in the form:
-    - **Name:** Pepform Web Client
+    - **Name:** Refer Labs Web Client
     - **Authorized JavaScript origins:**
       ```
-      https://peppiepep.vercel.app
+      https://referlabs.com.au
       http://localhost:3000
       ```
     - **Authorized redirect URIs:**
       ```
-      https://YOUR_SUPABASE_PROJECT.supabase.co/auth/v1/callback
-      https://peppiepep.vercel.app/auth/callback
+      https://ovpsgbstrdahrdcllswa.supabase.co/auth/v1/callback
+      https://referlabs.com.au/auth/callback
       http://localhost:3000/auth/callback
       ```
 17. Click **Create**
 18. **Copy the Client ID and Client Secret** - you'll need these next
+    - Keep the Refer Labs workspace Client ID handy: `1053863421786-nscteoa460rqbdtom2ub00bfmb9ldrmj.apps.googleusercontent.com`
 
 ### B. Configure Google OAuth in Supabase
 
@@ -92,9 +93,9 @@ This guide will help you fix the authentication issues with both Google OAuth an
 3. Find **Google** in the list
 4. Click to expand Google settings
 5. **Enable** the Google provider
-6. Paste your **Client ID** (from Google Cloud Console)
+6. Paste your **Client ID** (`1053863421786-nscteoa460rqbdtom2ub00bfmb9ldrmj.apps.googleusercontent.com`)
 7. Paste your **Client Secret** (from Google Cloud Console)
-8. The **Redirect URL** should be: `https://YOUR_SUPABASE_PROJECT.supabase.co/auth/v1/callback`
+8. The **Redirect URL** should be: `https://ovpsgbstrdahrdcllswa.supabase.co/auth/v1/callback`
 9. Click **Save**
 
 ### C. Update Google OAuth Redirect URI
@@ -117,11 +118,11 @@ This guide will help you fix the authentication issues with both Google OAuth an
 ## Step 3: Configure Site URL in Supabase
 
 1. In Supabase Dashboard, go to **Authentication** → **URL Configuration**
-2. Set **Site URL** to: `https://peppiepep.vercel.app`
+2. Set **Site URL** to: `https://referlabs.com.au`
 3. Add **Redirect URLs**:
    ```
-   https://peppiepep.vercel.app/auth/callback
-   https://peppiepep.vercel.app/dashboard
+   https://referlabs.com.au/auth/callback
+   https://referlabs.com.au/dashboard
    http://localhost:3000/auth/callback
    http://localhost:3000/dashboard
    ```
@@ -131,11 +132,12 @@ This guide will help you fix the authentication issues with both Google OAuth an
 
 ## Step 4: Verify Environment Variables
 
-Make sure your `.env.local` file has the correct Supabase credentials:
+Make sure your `.env.local` file and any deployed environment variables point at the Refer Labs Supabase project:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxxxxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://ovpsgbstrdahrdcllswa.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
+NEXT_PUBLIC_SITE_URL=https://referlabs.com.au
 ```
 
 You can find these in **Supabase Dashboard** → **Settings** → **API**
@@ -146,10 +148,10 @@ You can find these in **Supabase Dashboard** → **Settings** → **API**
 
 ### Create a Test Account
 
-1. Go to https://peppiepep.vercel.app/login
+1. Go to https://referlabs.com.au/login
 2. Click **"Don't have an account? Sign up"**
 3. Enter:
-   - Email: jarredkrowitz@gmail.com
+   - Email: jarred@referlabs.com.au
    - Password: (choose a strong password)
 4. Click **Create Account**
 
@@ -170,7 +172,7 @@ You can find these in **Supabase Dashboard** → **Settings** → **API**
 
 ## Step 6: Test Google OAuth Login
 
-1. Go to https://peppiepep.vercel.app/login
+1. Go to https://referlabs.com.au/login
 2. Click **Continue with Google**
 3. Select your Google account
 4. Authorize the app
@@ -252,7 +254,7 @@ Wait 1-2 minutes for Vercel to deploy, then test again.
    - Look for error messages
 4. **Check browser console for errors**
 5. **Verify environment variables** are correct in Vercel:
-   - Go to Vercel Dashboard → Peppiepep project → Settings → Environment Variables
+   - Go to Vercel Dashboard → Refer Labs project → Settings → Environment Variables
    - Make sure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are set
 
 ---
@@ -265,7 +267,7 @@ Before testing, verify:
 - [ ] Google OAuth provider is **enabled** in Supabase
 - [ ] Google OAuth Client ID and Secret are **configured** in Supabase
 - [ ] Redirect URLs are **configured** in both Google Cloud and Supabase
-- [ ] Site URL is set to `https://peppiepep.vercel.app` in Supabase
+- [ ] Site URL is set to `https://referlabs.com.au` in Supabase
 - [ ] `/auth/callback/route.ts` file exists in your codebase
 - [ ] Changes are **deployed** to Vercel
 - [ ] Environment variables are correct in `.env.local` and Vercel

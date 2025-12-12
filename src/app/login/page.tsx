@@ -170,14 +170,20 @@ function LoginContent() {
     setError("");
 
     try {
-      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${location.origin}/auth/reset-password`,
-      });
+    const response = await fetch("/api/auth/send-recovery", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
 
-      if (resetError) throw resetError;
+    const payload = await response.json().catch(() => null);
 
-      setResetEmailSent(true);
-    } catch (err: unknown) {
+    if (!response.ok) {
+      throw new Error(payload?.error || "Failed to send password reset email");
+    }
+
+    setResetEmailSent(true);
+  } catch (err: unknown) {
       const message =
         err instanceof Error
           ? err.message

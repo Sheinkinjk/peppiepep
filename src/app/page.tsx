@@ -141,13 +141,8 @@ const heroNotifications: HeroNotification[] = [
   },
 ];
 
-const heroPositionClasses: Record<string, string> = {
-  "hero-jenny": "hero-card--top-center",
-  "hero-david": "hero-card--top-right",
-  "hero-jake": "hero-card--left-middle",
-  "hero-campaign": "hero-card--bottom-right",
-  "hero-revenue": "hero-card--bottom-left",
-};
+// Legacy position classes - no longer used in new redesign
+// Kept for reference if needed for other pages
 
 type PartnerLogoSpec = {
   id: string;
@@ -336,41 +331,67 @@ export default function Home() {
 
       <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 px-4 pb-16 sm:pb-20 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
-        {/* Hero Section */}
-        <div className="mx-auto max-w-4xl relative text-center space-y-8 py-20 sm:py-24 sm:space-y-10">
-          <div className="pointer-events-none absolute inset-0 hidden lg:block">
-            {heroNotifications.map((notification) => (
-              <NotificationCard
-                key={notification.id}
-                notification={notification}
-                variant="floating"
-                positionClass={heroPositionClasses[notification.id]}
-              />
-            ))}
+        {/* Hero Section - Redesigned with bulletproof positioning */}
+        <div className="mx-auto w-full max-w-7xl relative py-12 sm:py-16 lg:py-24 min-h-[600px] lg:min-h-[700px]">
+          {/* Floating notification cards - Desktop only (xl screens and up) */}
+          <div className="hidden xl:block absolute inset-0 pointer-events-none">
+            {/* Only show 4 cards positioned in corners to avoid overlap */}
+            <NotificationCard
+              notification={heroNotifications[0]}
+              variant="floating"
+              positionClass="hero-card--redesign-top-left"
+            />
+            <NotificationCard
+              notification={heroNotifications[1]}
+              variant="floating"
+              positionClass="hero-card--redesign-top-right"
+            />
+            <NotificationCard
+              notification={heroNotifications[3]}
+              variant="floating"
+              positionClass="hero-card--redesign-bottom-left"
+            />
+            <NotificationCard
+              notification={heroNotifications[4]}
+              variant="floating"
+              positionClass="hero-card--redesign-bottom-right"
+            />
           </div>
 
-          <div className="relative z-10 space-y-6">
-            <div className="flex flex-col items-center gap-3 lg:hidden">
-              {heroNotifications.map((notification) => (
-                <NotificationCard key={`stacked-${notification.id}`} notification={notification} variant="stacked" />
+          {/* Center content container with guaranteed spacing */}
+          <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            {/* Mobile stacked cards - show above heading on mobile/tablet */}
+            <div className="flex flex-col items-center gap-3 mb-8 xl:hidden">
+              {heroNotifications.slice(0, 4).map((notification) => (
+                <NotificationCard
+                  key={`stacked-${notification.id}`}
+                  notification={notification}
+                  variant="stacked"
+                />
               ))}
             </div>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#0abab5] sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
-              <span className="block text-balance">We Help Launch Successful</span>
-              <span className="block">Referral Programs</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-semibold">
-              Activate a growth network that plugs into your sales and marketing to generate new business.
-            </p>
-          </div>
-          <div className="relative z-10 flex flex-col items-center justify-center gap-4 pt-6 px-4">
-            <Link
-              href="/login"
-              className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-xl font-bold px-10 py-5 hover:scale-105 transition-all duration-300")}
-            >
-              Start Getting Referrals
-              <ArrowRight className="h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+
+            {/* Main hero content */}
+            <div className="text-center space-y-6 sm:space-y-8">
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#0abab5] sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
+                <span className="block text-balance">We Help Launch Successful</span>
+                <span className="block">Referral Programs</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-semibold">
+                Activate a growth network that plugs into your sales and marketing to generate new business.
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex flex-col items-center justify-center gap-4 pt-8 sm:pt-10">
+              <Link
+                href="/login"
+                className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-xl font-bold px-10 py-5 hover:scale-105 transition-all duration-300")}
+              >
+                Start Getting Referrals
+                <ArrowRight className="h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </div>
 

@@ -93,6 +93,7 @@ This guide will walk you through setting up Google Sign-In for your Refer Labs a
    - **Client ID**: Paste the Client ID from Google Cloud Console
    - **Client Secret**: Paste the Client Secret from Google Cloud Console
 7. Click **Save**
+8. Double-check that the Google provider fields actually contain the workspace client ID (`1053863421786-nscteoa460rqbdtom2ub00bfmb9ldrmj.apps.googleusercontent.com`); if Supabase still references your old Gmail project, replace those values so Supabase talks to the Refer Labs project.
 
 ### Step 2: Configure Redirect URLs in Supabase
 
@@ -201,6 +202,7 @@ You can find these in Supabase Dashboard > **Settings** > **API**
 - Double-check that you copied the correct Client ID and Secret from Google Cloud Console
 - Make sure there are no extra spaces or characters
 - Try regenerating the credentials in Google Cloud Console
+- Confirm Supabase is calling the Refer Labs workspace OAuth client (`1053863421786-nscteoa460rqbdtom2ub00bfmb9ldrmj.apps.googleusercontent.com`) by pasting that Client ID/Secret pair into the Google provider panel, and remove any legacy credentials tied to personal Gmail projects.
 
 #### 4. User Creates Account but Can't Sign In
 

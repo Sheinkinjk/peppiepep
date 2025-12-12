@@ -8,8 +8,9 @@ const deploymentOrigin =
 const allowedOrigins = Array.from(
   new Set(
     [
-      "http://localhost:3000",
+    "http://localhost:3000",
       "https://localhost:3000",
+      "https://referlabs.com.au",
       "https://peppiepep.vercel.app",
       deploymentOrigin,
     ].filter(Boolean),
