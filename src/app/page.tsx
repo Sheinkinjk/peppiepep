@@ -287,22 +287,19 @@ const NotificationCard = ({
   positionClass?: string;
 }) => {
   const cardContent = (
-    <div className="flex flex-col gap-2.5 w-full">
-      {/* Header with logo */}
-      <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200/60">
-        <div className="flex h-6 w-auto items-center justify-center">
-          <Image src="/logo.svg" alt="Refer Labs" width={60} height={20} className="h-5 w-auto object-contain" />
-        </div>
-        <span className="text-[11px] font-bold text-[#008B8B]">Refer Labs</span>
+    <div className="flex items-center gap-1.5 w-full">
+      {/* Compact logo */}
+      <div className="flex h-3 w-auto items-center justify-center flex-shrink-0">
+        <Image src="/logo.svg" alt="Refer Labs" width={36} height={12} className="h-3 w-auto object-contain" />
       </div>
-      {/* Notification content */}
-      <div className="leading-snug">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-500 mb-1">
+      {/* Single-line text: LABEL + message */}
+      <div className="flex items-center gap-1 leading-none whitespace-nowrap overflow-hidden">
+        <span className="text-[8px] font-bold uppercase tracking-wider text-slate-600">
           {notification.label}
-        </p>
-        <p className="text-[13px] font-semibold text-slate-900 leading-tight">
+        </span>
+        <span className="text-[9px] font-semibold text-slate-900 truncate">
           {notification.text}
-        </p>
+        </span>
       </div>
     </div>
   );
