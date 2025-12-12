@@ -287,15 +287,22 @@ const NotificationCard = ({
   positionClass?: string;
 }) => {
   const cardContent = (
-    <div className="flex items-center gap-3">
-      <div className="flex h-7 w-14 items-center justify-center rounded-lg border border-[#0a727f]/40 bg-white/90 px-2">
-        <Image src="/logo.svg" alt="Refer Labs" width={44} height={18} className="h-4 w-12 object-contain" />
+    <div className="flex flex-col gap-2.5 w-full">
+      {/* Header with logo */}
+      <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200/60">
+        <div className="flex h-6 w-auto items-center justify-center">
+          <Image src="/logo.svg" alt="Refer Labs" width={60} height={20} className="h-5 w-auto object-contain" />
+        </div>
+        <span className="text-[11px] font-bold text-[#008B8B]">Refer Labs</span>
       </div>
-      <div className="leading-tight">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500">
+      {/* Notification content */}
+      <div className="leading-snug">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-500 mb-1">
           {notification.label}
         </p>
-        <p className="text-[13px] font-semibold text-slate-900">{notification.text}</p>
+        <p className="text-[13px] font-semibold text-slate-900 leading-tight">
+          {notification.text}
+        </p>
       </div>
     </div>
   );
@@ -373,12 +380,13 @@ export default function Home() {
 
             {/* Main hero content */}
             <div className="text-center space-y-6 sm:space-y-8">
-              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#0abab5] sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight bg-gradient-to-r from-[#008B8B] to-[#006D6D] bg-clip-text text-transparent sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
                 <span className="block text-balance">We Help Launch Successful</span>
                 <span className="block">Referral Programs</span>
               </h1>
               <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-semibold">
-                Activate a growth network that plugs into your sales and marketing to generate new business.
+                <span className="block">We'll Activate Additional Revenue That Plugs</span>
+                <span className="block">Straight Into Your Sales and Marketing Strategy.</span>
               </p>
             </div>
 
