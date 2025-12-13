@@ -601,8 +601,6 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
   const accentBorderColor = hexToRgba(brandHighlight, 0.32);
   const portalButtonGradient = `linear-gradient(135deg, ${brandHighlight} 0%, ${accentDark} 100%)`;
   const portalButtonShadow = `0 18px 45px ${hexToRgba(accentDark, 0.32)}`;
-  const referralLinkBackground = `linear-gradient(120deg, ${accentDark} 0%, ${brandHighlight} 100%)`;
-  const referralLinkBorder = `1px dashed ${hexToRgba("#ffffff", 0.4)}`;
   const containerShadow = `0 24px 60px ${hexToRgba(accentMuted, 0.22)}`;
   const viewInBrowserColor = brandHighlight;
 

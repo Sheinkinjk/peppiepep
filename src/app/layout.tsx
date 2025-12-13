@@ -4,6 +4,7 @@ import "./globals.css";
 import { StickyHeader } from "@/components/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import { SupportChatbot } from "@/components/SupportChatbot";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,6 +61,7 @@ export default function RootLayout({
           </div>
         </div>
         <SupportChatbot />
+        <Toaster />
       </body>
     </html>
   );

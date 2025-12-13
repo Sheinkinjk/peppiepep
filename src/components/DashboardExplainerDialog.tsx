@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Info, Link2, Share2, Rocket, Users, BarChart3, Zap } from "lucide-react";
+import { Info, Link2, Share2, Rocket, Users, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type DashboardExplainerDialogProps = {
@@ -168,7 +168,7 @@ export function DashboardExplainerDialog({ className }: DashboardExplainerDialog
         </DialogHeader>
 
         <div className="space-y-6">
-          {TAB_DETAILS.map((tab, index) => (
+          {TAB_DETAILS.map((tab) => (
             <div
               key={tab.title}
               className={cn(

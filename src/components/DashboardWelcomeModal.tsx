@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+/* eslint-disable react/no-unescaped-entities */
+
+import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
@@ -11,15 +13,10 @@ type WelcomeModalProps = {
 };
 
 export function DashboardWelcomeModal({ businessName, onClose }: WelcomeModalProps) {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    // Check if user has seen the welcome modal before
-    const hasSeenWelcome = localStorage.getItem("dashboard_welcome_seen");
-    if (!hasSeenWelcome) {
-      setOpen(true);
-    }
-  }, []);
+  const [open, setOpen] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !window.localStorage.getItem("dashboard_welcome_seen");
+  });
 
   const handleClose = () => {
     localStorage.setItem("dashboard_welcome_seen", "true");

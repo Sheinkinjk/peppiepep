@@ -9,7 +9,6 @@ import {
   BarChart3,
 } from "lucide-react";
 import Link from "next/link";
-import type { CSSProperties } from "react";
 
 
 export default function HowItWorks() {

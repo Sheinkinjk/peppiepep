@@ -18,11 +18,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GuidedStepFlow, type GuidedStep } from "@/components/GuidedStepFlow";
 import { DashboardWelcomeModal } from "@/components/DashboardWelcomeModal";
-import { Toaster } from "@/components/ui/toaster";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
 import { QuickAddCustomerForm } from "@/components/QuickAddCustomerForm";
-import { AITools } from "@/components/AITools";
 import { CustomersTable } from "@/components/CustomersTable";
 import { FloatingCampaignTrigger } from "@/components/FloatingCampaignTrigger";
 import { StartCampaignCTA } from "@/components/StartCampaignCTA";
@@ -38,21 +36,18 @@ import { Step2Explainer, Step3Explainer, Step4Explainer, Step5Explainer } from "
 import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
-import { DashboardSurface } from "@/components/dashboard/DashboardSurface";
-import { DashboardStat } from "@/components/dashboard/DashboardStat";
 import { ReferralJourneyReport, type ReferralJourneyEvent } from "@/components/ReferralJourneyReport";
 import { logReferralEvent } from "@/lib/referral-events";
 import { completeReferralAttribution } from "@/lib/referral-revenue";
 import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
-  Gift, Crown, BarChart3,
-  Award, Rocket, CreditCard, Send, Link2, Share2,
+  Gift, BarChart3,
+  Award, CreditCard, Send,
   ClipboardList,
   AlertTriangle,
   Settings,
   Target,
-  Globe,
   Mail,
 } from "lucide-react";
 import { createServerComponentClient } from "@/lib/supabase";
@@ -1150,7 +1145,6 @@ export default async function Dashboard() {
     return acc;
   }, {});
 
-  const initialTab = hasProgramSettings && hasCustomers ? "clients" : "integration";
   const headerList = await headers();
   const userAgent = headerList.get("user-agent") ?? "";
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
@@ -1299,7 +1293,6 @@ export default async function Dashboard() {
           <CRMIntegrationTab
             customers={safeCustomers}
             siteUrl={siteUrl}
-            businessName={business.name || "Your Business"}
             businessId={business.id}
             discountCaptureSecret={business.discount_capture_secret ?? null}
           />
@@ -1690,38 +1683,30 @@ export default async function Dashboard() {
         />
 
         {/* Condensed Header */}
-        <div className="mb-6 rounded-3xl border border-slate-200/80 bg-white/70 p-6 shadow-sm">
-          <div className="flex items-center justify-between mb-4">
+        <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
+          <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-2xl font-black text-slate-900">Growth Dashboard</h1>
-              <p className="text-sm text-slate-600">Follow the 5 steps below to launch your referral program</p>
+              <h1 className="text-3xl font-bold text-slate-900">Growth Dashboard</h1>
+              <p className="text-sm text-slate-600 mt-1">Follow the 5 steps below to launch your referral program</p>
             </div>
             <DashboardExplainerDialog />
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-purple-600">Ambassadors</p>
-              <p className="text-3xl font-black text-purple-900 mt-1">{safeCustomers.length}</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="rounded-xl bg-slate-50 border border-slate-200 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Ambassadors</p>
+              <p className="text-4xl font-bold text-slate-900 mt-2">{safeCustomers.length}</p>
             </div>
-            <div className="rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-600">Referrals</p>
-              <p className="text-3xl font-black text-emerald-900 mt-1">{safeReferrals.length}</p>
+            <div className="rounded-xl bg-slate-50 border border-slate-200 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Referrals</p>
+              <p className="text-4xl font-bold text-slate-900 mt-2">{safeReferrals.length}</p>
             </div>
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-blue-600">Campaigns</p>
-              <p className="text-3xl font-black text-blue-900 mt-1">{totalCampaignsSent}</p>
+            <div className="rounded-xl bg-slate-50 border border-slate-200 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Campaigns</p>
+              <p className="text-4xl font-bold text-slate-900 mt-2">{totalCampaignsSent}</p>
             </div>
-            <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-amber-600">Additional Revenue</p>
-              <p className="text-3xl font-black text-amber-900 mt-1">${Math.round(totalReferralRevenue)}</p>
-            </div>
-            <div className="rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-rose-600">Referral Rewards</p>
-              <p className="text-3xl font-black text-rose-900 mt-1">${Math.round(totalRewards)}</p>
-            </div>
-            <div className="rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-indigo-600">Sign-on Bonuses</p>
-              <p className="text-3xl font-black text-indigo-900 mt-1">$0</p>
+            <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">Revenue</p>
+              <p className="text-4xl font-bold text-emerald-900 mt-2">${Math.round(totalReferralRevenue)}</p>
             </div>
           </div>
         </div>
@@ -1752,7 +1737,6 @@ export default async function Dashboard() {
       />
 
       <FloatingCampaignTrigger />
-      <Toaster />
       </div>
     </div>
   );

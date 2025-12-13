@@ -19,13 +19,45 @@ export default function ResetPasswordPage() {
   const supabase = createBrowserSupabaseClient();
 
   useEffect(() => {
-    // Check if user has a valid session from the reset link
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) {
-        setError("Invalid or expired reset link. Please request a new password reset.");
+    let cancelled = false;
+
+    const ensureRecoverySession = async () => {
+      try {
+        if (typeof window !== "undefined" && window.location.hash.includes("access_token")) {
+          const params = new URLSearchParams(window.location.hash.slice(1));
+          const accessToken = params.get("access_token");
+          const refreshToken = params.get("refresh_token");
+
+          if (accessToken && refreshToken) {
+            const { error: sessionError } = await supabase.auth.setSession({
+              access_token: accessToken,
+              refresh_token: refreshToken,
+            });
+            if (sessionError) {
+              throw sessionError;
+            }
+            window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+          }
+        }
+
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session && !cancelled) {
+          setError("Invalid or expired reset link. Please request a new password reset.");
+        }
+      } catch (sessionError) {
+        if (!cancelled) {
+          setError("Invalid or expired reset link. Please request a new password reset.");
+          console.error("Failed to bootstrap recovery session:", sessionError);
+        }
       }
-    });
-  }, [supabase.auth]);
+    };
+
+    ensureRecoverySession();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [supabase]);
 
   const handleResetPassword = async () => {
     if (!password || !confirmPassword) {

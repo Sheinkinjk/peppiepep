@@ -20,6 +20,7 @@ import { Database } from "@/types/supabase";
 import { campaignSchedulerEnabled } from "@/lib/feature-flags";
 import { CampaignTemplateSelector } from "@/components/CampaignTemplateSelector";
 import { type CampaignTemplate } from "@/lib/campaign-templates";
+import { toast } from "@/hooks/use-toast";
 
 type Customer = Database["public"]["Tables"]["customers"]["Row"];
 
@@ -65,6 +66,14 @@ export function CampaignBuilder({
   const [scheduleDate, setScheduleDate] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const notifyCampaignStatus = (type: "success" | "error", text: string) => {
+    setStatusMessage({ type, text });
+    toast({
+      variant: type === "success" ? "default" : "destructive",
+      title: type === "success" ? "Campaign queued" : "Campaign issue",
+      description: text,
+    });
+  };
 
   const [settingsOfferText, setSettingsOfferText] = useState(offerText ?? "");
   const [settingsNewUserRewardText, setSettingsNewUserRewardText] = useState(
@@ -194,34 +203,28 @@ export function CampaignBuilder({
 
   const handleSendCampaign = async () => {
     if (!campaignName || selectedCustomers.length === 0) {
-      setStatusMessage({
-        type: "error",
-        text: "Please give your campaign a name and select at least one customer.",
-      });
+      notifyCampaignStatus(
+        "error",
+        "Please give your campaign a name and select at least one customer."
+      );
       return;
     }
 
     if (campaignChannel === "sms" && !campaignMessage) {
-      setStatusMessage({
-        type: "error",
-        text: "Please write an SMS message or switch to email.",
-      });
+      notifyCampaignStatus("error", "Please write an SMS message or switch to email.");
       return;
     }
 
     if (scheduleDateMissing) {
-      setStatusMessage({
-        type: "error",
-        text: "Please pick a future date and time to schedule this campaign.",
-      });
+      notifyCampaignStatus("error", "Please pick a future date and time to schedule this campaign.");
       return;
     }
 
     if (!isSettingsComplete) {
-      setStatusMessage({
-        type: "error",
-        text: "Please complete Settings & Rewards (offer, rewards, and reward amount) before sending this campaign.",
-      });
+      notifyCampaignStatus(
+        "error",
+        "Please complete Settings & Rewards (offer, rewards, and reward amount) before sending this campaign."
+      );
       return;
     }
 
@@ -248,16 +251,15 @@ export function CampaignBuilder({
       const result = await response.json();
 
       if (!response.ok || result.error) {
-        setStatusMessage({
-          type: "error",
-          text:
-            result?.error ||
-            "Unable to queue your campaign. Please verify your settings and try again.",
-        });
+        notifyCampaignStatus(
+          "error",
+          result?.error ||
+            "Unable to queue your campaign. Please verify your settings and try again."
+        );
         return;
       }
 
-      setStatusMessage({ type: "success", text: result.success });
+      notifyCampaignStatus("success", result.success ?? "Campaign queued successfully.");
       setShowCampaignModal(false);
       // Reset form
       setCampaignName("");
@@ -267,13 +269,12 @@ export function CampaignBuilder({
       setScheduleDate("");
     } catch (error) {
       console.error("Campaign send error:", error);
-      setStatusMessage({
-        type: "error",
-        text:
-          error instanceof Error
-            ? `Failed to send campaign: ${error.message}`
-            : "Failed to send campaign. Please try again.",
-      });
+      notifyCampaignStatus(
+        "error",
+        error instanceof Error
+          ? `Failed to send campaign: ${error.message}`
+          : "Failed to send campaign. Please try again."
+      );
     } finally {
       setIsSending(false);
     }

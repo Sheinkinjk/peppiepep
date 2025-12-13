@@ -1,19 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, type KeyboardEvent, type ReactNode } from "react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  ChevronDown,
-  ChevronRight,
-  Settings,
-  Users,
-  Mail,
-  BarChart3,
-  TrendingUp,
-  CheckCircle2,
-  AlertCircle,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type StepStatus = "incomplete" | "in_progress" | "complete";
@@ -23,9 +12,9 @@ export type GuidedStep = {
   number: number;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   status: StepStatus;
-  content: React.ReactNode;
+  content: ReactNode;
   helpText?: string;
 };
 
@@ -36,90 +25,88 @@ type GuidedStepFlowProps = {
 };
 
 export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedStepFlowProps) {
-  const [expandedStep, setExpandedStep] = useState<string | null>(defaultOpenStep || null);
-
-  useEffect(() => {
-    if (defaultOpenStep) {
-      setExpandedStep(defaultOpenStep);
-    }
-  }, [defaultOpenStep]);
+  const isControlled = typeof defaultOpenStep === "string" && defaultOpenStep.length > 0;
+  const [internalExpandedStep, setInternalExpandedStep] = useState<string | null>(() => defaultOpenStep || null);
+  const expandedStep = isControlled ? defaultOpenStep : internalExpandedStep;
 
   const handleStepToggle = (stepId: string) => {
-    const newStep = expandedStep === stepId ? null : stepId;
-    setExpandedStep(newStep);
-    if (newStep && onStepChange) {
-      onStepChange(newStep);
+    const nextValue = expandedStep === stepId ? null : stepId;
+    if (!isControlled) {
+      setInternalExpandedStep(nextValue);
+    }
+    if (nextValue && onStepChange) {
+      onStepChange(nextValue);
     }
   };
 
-  const getStepGradient = (number: number) => {
-    const gradients = [
-      "from-emerald-500 to-teal-600", // Step 1: Setup
-      "from-blue-500 to-indigo-600",  // Step 2: Clients
-      "from-purple-500 to-pink-600",  // Step 3: CRM
-      "from-amber-500 to-orange-600", // Step 4: Campaigns
-      "from-cyan-500 to-blue-600",    // Step 5: Performance
-    ];
-    return gradients[number - 1] || gradients[0];
+  const getStepGradient = () => {
+    // Simplified: single teal gradient for all steps
+    return "from-teal-600 to-teal-700";
   };
 
-  const getStepBorderColor = (number: number) => {
-    const borders = [
-      "border-emerald-200",
-      "border-blue-200",
-      "border-purple-200",
-      "border-amber-200",
-      "border-cyan-200",
-    ];
-    return borders[number - 1] || borders[0];
+  const getStepBorderColor = () => {
+    // Simplified: single border color
+    return "border-slate-200";
   };
 
-  const getStepBgColor = (number: number) => {
-    const backgrounds = [
-      "from-emerald-50 to-teal-50",
-      "from-blue-50 to-indigo-50",
-      "from-purple-50 to-pink-50",
-      "from-amber-50 to-orange-50",
-      "from-cyan-50 to-blue-50",
-    ];
-    return backgrounds[number - 1] || backgrounds[0];
+  const getStepBgColor = () => {
+    // Simplified: white background instead of gradients
+    return "from-white to-slate-50";
   };
 
   return (
     <div className="space-y-4">
       {steps.map((step) => {
         const isExpanded = expandedStep === step.id;
-        const gradient = getStepGradient(step.number);
-        const borderColor = getStepBorderColor(step.number);
-        const bgColor = getStepBgColor(step.number);
+        const gradient = getStepGradient();
+        const borderColor = getStepBorderColor();
+        const bgColor = getStepBgColor();
+
+        const handleHeaderKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            handleStepToggle(step.id);
+          }
+        };
 
         return (
           <Card
             key={step.id}
             className={cn(
-              "rounded-3xl border-2 overflow-hidden transition-all duration-300",
+              "rounded-2xl border overflow-hidden transition-all duration-300",
               borderColor,
-              isExpanded ? "shadow-2xl" : "shadow-lg hover:shadow-xl"
+              isExpanded ? "shadow-lg" : "shadow-md hover:shadow-lg"
             )}
           >
             {/* Step Header - Always Visible */}
-            <button
+            <div
+              role="button"
+              tabIndex={0}
+              aria-expanded={isExpanded}
               onClick={() => handleStepToggle(step.id)}
+              onKeyDown={handleHeaderKeyDown}
               className={cn(
-                "w-full text-left transition-all duration-300",
+                "group w-full text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-teal-200/60",
                 isExpanded ? "pb-0" : "pb-0"
               )}
             >
-              <div className={cn("bg-gradient-to-br p-6", isExpanded ? "" : "pb-6", bgColor)}>
+              <div
+                className={cn(
+                  "flex w-full items-center justify-between gap-4 p-6 transition-all duration-300",
+                  "bg-gradient-to-br",
+                  bgColor,
+                  "group-hover:bg-slate-50"
+                )}
+              >
                 <div className="flex items-start gap-4">
                   {/* Step Number Badge */}
                   <div
                     className={cn(
-                      "flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg",
+                      "flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-md",
                       gradient
                     )}
                   >
-                    <span className="text-2xl font-black">{step.number}</span>
+                    <span className="text-xl font-bold">{step.number}</span>
                   </div>
 
                   {/* Step Content */}
@@ -127,14 +114,14 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <div className={cn("p-2 rounded-xl bg-white shadow-md")}>
+                          <div className={cn("p-1.5 rounded-lg bg-white shadow-sm")}>
                             {step.icon}
                           </div>
-                          <h3 className="text-xl sm:text-2xl font-black text-slate-900">
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-900">
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                        <p className="text-sm text-slate-600 leading-relaxed">
                           {step.description}
                         </p>
                       </div>
@@ -144,12 +131,12 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                         <div className={cn(
                           "rounded-full p-2 transition-all duration-300",
                           isExpanded
-                            ? "bg-white shadow-lg rotate-180"
-                            : "bg-white/50 hover:bg-white"
+                            ? "bg-slate-100 rotate-180"
+                            : "bg-slate-50 hover:bg-slate-100"
                         )}>
                           <ChevronDown className={cn(
-                            "h-6 w-6 transition-transform duration-300",
-                            isExpanded ? "text-slate-900" : "text-slate-600"
+                            "h-5 w-5 transition-transform duration-300",
+                            "text-slate-600"
                           )} />
                         </div>
                       </div>
@@ -157,7 +144,7 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                   </div>
                 </div>
               </div>
-            </button>
+            </div>
 
             {/* Step Content - Expandable */}
             <div
@@ -166,7 +153,7 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                 isExpanded ? "max-h-[10000px] opacity-100" : "max-h-0 opacity-0"
               )}
             >
-              <div className="p-6 pt-0 pb-8 bg-gradient-to-b from-white to-slate-50/30">
+              <div className="p-6 pt-4 pb-6 bg-white border-t border-slate-100">
                 <div className="space-y-6">
                   {step.content}
                 </div>

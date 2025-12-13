@@ -40,10 +40,9 @@ type AIToolsProps = {
   referrals: Referral[];
   businessName: string;
   offerText: string | null;
-  rewardAmount: number;
 };
 
-export function AITools({ customers, referrals, businessName, offerText, rewardAmount }: AIToolsProps) {
+export function AITools({ customers, referrals, businessName, offerText }: AIToolsProps) {
   const [scoredCustomers, setScoredCustomers] = useState<ScoredCustomer[]>([]);
   const [aiMessageInput, setAiMessageInput] = useState("");
   const [aiGeneratedMessage, setAiGeneratedMessage] = useState("");

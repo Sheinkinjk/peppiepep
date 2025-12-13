@@ -7,14 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Calculator,
-  TrendingUp,
-  DollarSign,
-  Users,
-  Zap,
   CheckCircle2,
-  AlertCircle,
   Sparkles,
-  Target,
   Lightbulb,
   PieChart,
 } from "lucide-react";

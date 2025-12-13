@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import { ArrowRight, Gift, Sparkles, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { ReactNode, CSSProperties } from "react";
 
 const referralPillars = [
   {
@@ -107,37 +108,44 @@ const referralNumbers = [
   },
 ];
 
-type HeroNotification = {
+type ReferralPillar = (typeof referralPillars)[number];
+
+type HeroBadgeSpec = {
   id: string;
-  label: string;
+  title: string;
   text: string;
+  colors: [string, string];
+  position: string;
 };
 
-const heroNotifications: HeroNotification[] = [
+const heroBadges: HeroBadgeSpec[] = [
   {
-    id: "hero-jenny",
-    label: "New referral",
-    text: "Jenny used her referral link",
+    id: "hero-referral",
+    title: "NEW REFERRAL",
+    text: "Jenny used a referral link",
+    colors: ["#855b4c", "#a87261"],
+    position: "top-6 left-4",
   },
   {
-    id: "hero-david",
-    label: "VIP booking",
-    text: "David confirmed a premium order",
+    id: "hero-vip",
+    title: "VIP BOOKING",
+    text: "David confirmed a new order",
+    colors: ["#2c5248", "#356757"],
+    position: "top-6 right-4",
   },
   {
-    id: "hero-jake",
-    label: "Leaderboard",
-    text: "Jake is your top Referrer with 24 referrals this month",
-  },
-  {
-    id: "hero-campaign",
-    label: "Campaign drop",
-    text: "500 ambassadors received your drop",
+    id: "hero-leaderboard",
+    title: "LEADERBOARD",
+    text: "Jake referred 24 orders this month",
+    colors: ["#1f2c3b", "#3b4e5d"],
+    position: "bottom-8 left-6",
   },
   {
     id: "hero-revenue",
-    label: "Revenue boost",
-    text: "$45,500 in attributed revenue",
+    title: "REVENUE BOOK",
+    text: "$35,500 additional revenue generated",
+    colors: ["#3a3334", "#54484a"],
+    position: "bottom-8 right-6",
   },
 ];
 
@@ -147,184 +155,111 @@ const heroNotifications: HeroNotification[] = [
 type PartnerLogoSpec = {
   id: string;
   name: string;
-  render: () => ReactNode;
+  src: string;
+  width: number;
+  height: number;
+  backgroundClass?: string;
 };
 
 const partnerLogos: PartnerLogoSpec[] = [
   {
-    id: "logo-shopify",
-    name: "Shopify",
-    render: () => (
-      <div className="flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#1f9b64] shadow-lg shadow-[#1f9b64]/30">
-          <span className="text-2xl font-black text-white">S</span>
-        </div>
-        <span className="text-2xl font-black lowercase tracking-[0.2em] text-slate-900">
-          shopify
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: "logo-klaviyo",
-    name: "Klaviyo",
-    render: () => (
-      <div
-        className="flex items-center gap-1 text-2xl font-bold uppercase tracking-[0.2em]"
-        style={{ fontFamily: "Times New Roman, Baskerville, serif" }}
-      >
-        <span>klaviyo</span>
-        <span className="h-3 w-3 rounded-sm bg-[#0c0c0c]" />
-      </div>
-    ),
-  },
-  {
-    id: "logo-mailchimp",
-    name: "Mailchimp",
-    render: () => (
-      <div className="flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1d1d1f] text-4xl font-black text-yellow-50 shadow-lg">
-          m
-        </div>
-        <span className="text-2xl font-black lowercase tracking-[0.1em] text-[#151515]">
-          mailchimp
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: "logo-resend",
-    name: "Resend",
-    render: () => (
-      <div className="text-2xl font-black uppercase tracking-[0.1em] text-[#111111]">
-        Resend
-      </div>
-    ),
-  },
-  {
     id: "logo-attentive",
     name: "Attentive",
-    render: () => (
-      <div className="flex items-baseline gap-1 text-2xl font-black tracking-[0.25em] text-slate-900 lowercase">
-        <span>attentive</span>
-        <span className="text-[0.4rem] uppercase tracking-[0.4em] font-semibold text-slate-600">
-          ®
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: "logo-paperrun",
-    name: "PaperRun",
-    render: () => (
-      <div className="flex items-center gap-3">
-        <div className="relative h-12 w-10">
-          <span className="absolute inset-x-0 top-1 h-4 rounded-[12px] bg-[#1c9fbf]" />
-          <span className="absolute inset-x-0 top-4 h-4 rounded-[12px] bg-[#0c6a88]" />
-          <span className="absolute inset-x-0 top-7 h-4 rounded-[12px] bg-[#6dd3e3]" />
-        </div>
-        <span className="text-xl font-black uppercase tracking-[0.25em] text-slate-900">
-          PaperRun
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: "logo-loop",
-    name: "Loop",
-    render: () => (
-      <div className="flex items-center gap-3">
-        <div className="relative h-12 w-12">
-          <span className="absolute inset-0 rounded-full border-2 border-[#6ec3e8]" />
-          <span className="absolute right-0 top-1/2 h-2 w-6 -translate-y-1/2 rotate-12 rounded-full bg-[#6ec3e8]" />
-          <span className="absolute bottom-1 right-1 h-2 w-2 rounded-full bg-[#6ec3e8]" />
-        </div>
-        <span className="text-2xl font-black uppercase tracking-[0.25em] text-slate-900">
-          LOOP
-        </span>
-      </div>
-    ),
+    src: "/partners/attentive.svg",
+    width: 180,
+    height: 60,
   },
   {
     id: "logo-hubspot",
     name: "HubSpot",
-    render: () => (
-      <div className="flex items-center gap-3">
-        <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#ff7a59]">
-          <span className="text-lg font-bold uppercase text-white">H</span>
-          <span className="absolute -right-0 top-0 h-3 w-3 rounded-full bg-white/80" />
-        </div>
-        <span className="text-2xl font-black text-slate-900">HubSpot</span>
-      </div>
-    ),
+    src: "/partners/hubspot.svg",
+    width: 160,
+    height: 60,
+  },
+  {
+    id: "logo-resend",
+    name: "Resend",
+    src: "/partners/resend.svg",
+    width: 160,
+    height: 60,
+  },
+  {
+    id: "logo-shopify",
+    name: "Shopify",
+    src: "/partners/shopify.svg",
+    width: 150,
+    height: 60,
   },
   {
     id: "logo-salesforce",
     name: "Salesforce",
-    render: () => (
-      <div className="flex items-center gap-3">
-        <div className="relative h-10 w-20 overflow-visible">
-          <span className="absolute left-0 top-2 h-8 w-14 rounded-[36px] bg-[#0172de]" />
-          <span className="absolute left-6 top-0 h-10 w-16 rounded-[36px] bg-[#01a0ff]" />
-          <span className="absolute -left-2 top-3 h-5 w-10 rounded-full bg-[#00baff]" />
-        </div>
-        <span className="text-xl font-semibold uppercase tracking-[0.4em] text-[#0172de]">
-          SALESFORCE
-        </span>
-      </div>
-    ),
+    src: "/partners/salesforce.svg",
+    width: 170,
+    height: 60,
+  },
+  {
+    id: "logo-mailchimp",
+    name: "Mailchimp",
+    src: "/partners/mailchimp.svg",
+    width: 170,
+    height: 60,
+  },
+  {
+    id: "logo-klaviyo",
+    name: "Klaviyo",
+    src: "/partners/klaviyo.svg",
+    width: 170,
+    height: 60,
+  },
+  {
+    id: "logo-referlabs",
+    name: "Refer Labs",
+    src: "/logo.svg",
+    width: 120,
+    height: 60,
+    backgroundClass: "bg-white",
   },
 ];
 
-
-const NotificationCard = ({
-  notification,
-  variant,
-  positionClass = "",
-}: {
-  notification: HeroNotification;
-  variant: "floating" | "stacked";
-  positionClass?: string;
-}) => {
-  const cardContent = (
-    <div className="flex items-center gap-1.5 w-full">
-      {/* Compact logo */}
-      <div className="flex h-3 w-auto items-center justify-center flex-shrink-0">
-        <Image src="/logo.svg" alt="Refer Labs" width={36} height={12} className="h-3 w-auto object-contain" />
-      </div>
-      {/* Single-line text: LABEL + message */}
-      <div className="flex items-center gap-1 leading-none whitespace-nowrap overflow-hidden">
-        <span className="text-[8px] font-bold uppercase tracking-wider text-slate-600">
-          {notification.label}
-        </span>
-        <span className="text-[9px] font-semibold text-slate-900 truncate">
-          {notification.text}
-        </span>
-      </div>
-    </div>
-  );
-
-  if (variant === "floating") {
-    return (
-      <div
-        key={notification.id}
-        className={`hero-notification-card hero-notification-card--floating ${positionClass}`}
-        aria-hidden
-      >
-        {cardContent}
-      </div>
-    );
-  }
-
-  return (
+const PillarCard = ({ pillar }: { pillar: ReferralPillar }) => (
+  <div className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg">
     <div
-      key={`mobile-${notification.id}`}
-      className="hero-notification-card hero-notification-card--stacked"
+      className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold mb-3 shadow-md ${pillar.chipBg}`}
     >
-      {cardContent}
+      {pillar.number}
     </div>
-  );
-};
+    <h3 className="text-lg font-semibold text-slate-900">{pillar.title}</h3>
+    <p className="mt-3 text-sm text-slate-600 leading-relaxed">{pillar.copy}</p>
+  </div>
+);
+
+const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
+  <div
+    className={cn(
+      "hero-badge pointer-events-none select-none rounded-[26px] border border-white/30 bg-white/90 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-md sm:px-6 sm:py-4",
+      "flex min-w-[240px] max-w-[300px] items-center gap-4 transition-all duration-300",
+      className,
+    )}
+    style={{
+      background: `linear-gradient(120deg, ${badge.colors[0]}, ${badge.colors[1]})`,
+    }}
+  >
+    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-white shadow-inner shadow-black/10">
+      <Image
+        src="/logo.svg"
+        alt="Refer Labs logo"
+        width={48}
+        height={48}
+        className="h-10 w-10 object-contain"
+        priority={false}
+      />
+    </div>
+    <div className="space-y-1 text-left text-white">
+      <p className="text-xs font-bold uppercase tracking-[0.2em]">{badge.title}</p>
+      <p className="text-sm font-semibold leading-tight text-white/90">{badge.text}</p>
+    </div>
+  </div>
+);
 
 export default function Home() {
   const repeatedPartnerLogos = [...partnerLogos, ...partnerLogos];
@@ -336,67 +271,39 @@ export default function Home() {
       <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 px-4 pb-16 sm:pb-20 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
         {/* Hero Section - Redesigned with bulletproof positioning */}
-        <div className="mx-auto w-full max-w-7xl relative py-12 sm:py-16 lg:py-24 min-h-[600px] lg:min-h-[700px]">
-          {/* Floating notification cards - Desktop only (xl screens and up) */}
-          <div className="hidden xl:block absolute inset-0 pointer-events-none">
-            {/* Only show 4 cards positioned in corners to avoid overlap */}
-            <NotificationCard
-              notification={heroNotifications[0]}
-              variant="floating"
-              positionClass="hero-card--redesign-top-left"
-            />
-            <NotificationCard
-              notification={heroNotifications[1]}
-              variant="floating"
-              positionClass="hero-card--redesign-top-right"
-            />
-            <NotificationCard
-              notification={heroNotifications[3]}
-              variant="floating"
-              positionClass="hero-card--redesign-bottom-left"
-            />
-            <NotificationCard
-              notification={heroNotifications[4]}
-              variant="floating"
-              positionClass="hero-card--redesign-bottom-right"
-            />
+        <div className="mx-auto w-full max-w-7xl relative py-10 sm:py-12 lg:py-16 min-h-[520px] lg:min-h-[620px]">
+          {/* New hero badges positioned in corners */}
+          <div className="pointer-events-none absolute inset-0 hidden lg:block">
+            {heroBadges.map((badge) => (
+              <HeroBadge
+                key={badge.id}
+                badge={badge}
+                className={cn("absolute", badge.position)}
+              />
+            ))}
           </div>
 
-          {/* Center content container with guaranteed spacing */}
-          <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            {/* Mobile stacked cards - show above heading on mobile/tablet */}
-            <div className="flex flex-col items-center gap-3 mb-8 xl:hidden">
-              {heroNotifications.slice(0, 4).map((notification) => (
-                <NotificationCard
-                  key={`stacked-${notification.id}`}
-                  notification={notification}
-                  variant="stacked"
-                />
-              ))}
-            </div>
-
-            {/* Main hero content */}
-            <div className="text-center space-y-6 sm:space-y-8">
-              <h1 className="text-4xl font-extrabold leading-tight tracking-tight bg-gradient-to-r from-[#008B8B] to-[#006D6D] bg-clip-text text-transparent sm:text-[3.35rem] lg:text-[3.75rem] xl:text-[3.85rem]">
-                <span className="block text-balance">We Help Launch Successful</span>
+          <div className="relative z-10 flex min-h-[460px] flex-col items-center justify-center gap-8 px-4 text-center sm:px-6 lg:px-8">
+            <div className="space-y-5 sm:space-y-6">
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-[3.25rem] lg:text-[3.75rem]">
+                <span className="block">We Help Launch Successful</span>
                 <span className="block">Referral Programs</span>
               </h1>
-              <p className="text-lg sm:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto font-semibold">
-                <span className="block">We'll Activate Additional Revenue That Plugs</span>
-                <span className="block">Straight Into Your Sales and Marketing Strategy.</span>
+              <p className="max-w-3xl text-lg font-semibold leading-snug text-slate-700 sm:text-xl">
+                We'll Activate Additional Revenue That Plugs Straight Into Your Sales and Marketing Strategy.
               </p>
             </div>
+            <Link
+              href="/login"
+              className={cn(
+                buttonVariants({ variant: "cta" }),
+                "text-xl font-black px-12 py-5 shadow-xl shadow-teal-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              )}
+            >
+              Start Getting Referrals
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </Link>
 
-            {/* CTA Button */}
-            <div className="flex flex-col items-center justify-center gap-4 pt-8 sm:pt-10">
-              <Link
-                href="/login"
-                className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-xl font-bold px-10 py-5 hover:scale-105 transition-all duration-300")}
-              >
-                Start Getting Referrals
-                <ArrowRight className="h-7 w-7 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
           </div>
         </div>
 
@@ -416,25 +323,23 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="hidden md:grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {referralPillars.map((pillar) => (
-                  <div
-                    key={pillar.number}
-                    className="group flex flex-col rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg"
-                  >
-                    <div
-                      className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold mb-3 shadow-md ${pillar.chipBg}`}
-                    >
-                      {pillar.number}
-                    </div>
-                    <h3 className="text-sm font-semibold text-slate-900">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-600">
-                      {pillar.copy}
-                    </p>
-                  </div>
+                  <PillarCard key={pillar.number} pillar={pillar} />
                 ))}
+              </div>
+
+              <div className="md:hidden -mx-2">
+                <div
+                  className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                  aria-label="Referral program pillars"
+                >
+                  {referralPillars.map((pillar) => (
+                    <div key={pillar.number} className="min-w-[260px] snap-center">
+                      <PillarCard pillar={pillar} />
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -481,7 +386,7 @@ export default function Home() {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4">
+            <div className="hidden md:grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4">
               {referralNumbers.map((stat) => (
                 <div
                   key={stat.title}
@@ -503,6 +408,36 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="md:hidden -mx-2">
+              <div
+                className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                aria-label="Referral performance stats"
+              >
+                {referralNumbers.map((stat) => (
+                  <div key={stat.title} className="min-w-[260px] snap-center">
+                    <div
+                      className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br ${stat.gradient} backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
+                    >
+                      <div
+                        className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
+                      >
+                        <stat.accentIcon className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="relative space-y-3">
+                        <p className="text-5xl font-black text-[#024b56]">{stat.value}</p>
+                        <p className="text-xs font-black uppercase tracking-wide text-[#024b56]">
+                          {stat.title}
+                        </p>
+                        <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                          {stat.copy}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Growth Hacking Value Proposition */}
@@ -634,7 +569,21 @@ export default function Home() {
                     key={`partner-${logo.id}-${index}`}
                     className="min-w-[220px] flex items-center justify-center px-3"
                   >
-                    {logo.render()}
+                    <div
+                      className={cn(
+                        "flex h-20 w-full max-w-[220px] items-center justify-center rounded-2xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm backdrop-blur",
+                        logo.backgroundClass ?? ""
+                      )}
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={`${logo.name} logo`}
+                        width={logo.width}
+                        height={logo.height}
+                        className="h-12 w-auto object-contain"
+                        priority={index < 4}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>

@@ -24,7 +24,6 @@ import {
   Send,
   MousePointerClick,
   CheckCircle2,
-  Mail,
   MessageSquare,
   Calendar,
   Download,
@@ -69,15 +68,6 @@ const COLORS = {
   purple: "#8b5cf6",
   pink: "#ec4899",
 };
-
-const CHART_COLORS = [
-  COLORS.primary,
-  COLORS.success,
-  COLORS.warning,
-  COLORS.purple,
-  COLORS.pink,
-  COLORS.danger,
-];
 
 export function CampaignAnalyticsDashboard({
   campaigns,

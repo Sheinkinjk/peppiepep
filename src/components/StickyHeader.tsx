@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Calendar, Home, Menu, X } from "lucide-react";
+import { ArrowRight, Calendar, Menu, X } from "lucide-react";
 import { ReferLabsLogo } from "./ReferLabsLogo";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 

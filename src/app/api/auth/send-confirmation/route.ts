@@ -23,27 +23,24 @@ export async function POST(request: Request) {
   const normalizedSite = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
 
   const { data, error } = await supabase.auth.admin.generateLink({
-    type: "recovery",
+    type: "magiclink",
     email,
     options: {
-      redirectTo: `${normalizedSite}/auth/reset-password`,
+      redirectTo: `${normalizedSite}/auth/callback`,
     },
   });
 
   if (error || !data?.properties) {
-    console.error("Failed to generate recovery link", error);
+    console.error("Failed to generate confirmation link", error);
     return NextResponse.json(
-      { error: "Unable to generate a recovery link right now, please try again shortly." },
+      { error: "Unable to send confirmation email. Please try again shortly." },
       { status: 500 },
     );
   }
 
-  const recoveryLink = data.properties.action_link;
-  if (!recoveryLink) {
-    return NextResponse.json(
-      { error: "Unable to generate recovery link." },
-      { status: 500 },
-    );
+  const confirmationLink = data.properties.action_link;
+  if (!confirmationLink) {
+    return NextResponse.json({ error: "Unable to create confirmation link." }, { status: 500 });
   }
 
   const resendApiKey = process.env.RESEND_API_KEY;
@@ -61,23 +58,23 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: resendFrom,
       to: email,
-      subject: "Refer Labs password reset",
+      subject: "Confirm your Refer Labs account",
       html: `
         <div style="font-family: Arial, sans-serif; padding: 24px; background: #f9fafb; text-align: center;">
           <img src="${logoUrl}" alt="Refer Labs" width="120" height="auto" style="margin-bottom:16px;" />
-          <h2 style="color:#0f172a;">Refer Labs</h2>
-          <p style="color:#475569; font-size:16px;">Click the button below to reset your password.</p>
-          <a href="${recoveryLink}" style="display:inline-block;margin-top:18px;padding:14px 28px;border-radius:30px;background:#6d28d9;color:#fff;text-decoration:none;font-weight:600;">Reset my password</a>
-          <p style="margin-top:20px;font-size:14px;color:#94a3b8;">If you did not request this, you can safely ignore this email.</p>
+          <h2 style="color:#0f172a;">You're almost in!</h2>
+          <p style="color:#475569; font-size:16px;">Click the button below to confirm your email and unlock the Refer Labs dashboard.</p>
+          <a href="${confirmationLink}" style="display:inline-block;margin-top:18px;padding:14px 28px;border-radius:30px;background:#6d28d9;color:#fff;text-decoration:none;font-weight:600;">Confirm my email</a>
+          <p style="margin-top:20px;font-size:14px;color:#94a3b8;">If you didn't request this, you can safely ignore this email.</p>
         </div>
       `,
-      text: `Reset your Refer Labs password: ${recoveryLink}`,
+      text: `Confirm your Refer Labs account: ${confirmationLink}`,
       ...(process.env.RESEND_REPLY_TO ? { reply_to: process.env.RESEND_REPLY_TO } : {}),
     });
   } catch (sendError) {
-    console.error("Resend recovery email failed", sendError);
+    console.error("Resend confirmation email failed", sendError);
     return NextResponse.json(
-      { error: "Unable to send the recovery email right now. Try again in a moment." },
+      { error: "Unable to send the confirmation email right now. Try again in a moment." },
       { status: 500 },
     );
   }

@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable react/no-unescaped-entities */
+
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -46,6 +48,7 @@ export function CustomReferralPageGuide({ siteUrl, businessId }: { siteUrl: stri
   };
 
   const normalizedSiteUrl = siteUrl.replace(/\/$/, "");
+  const sampleBusinessId = businessId || "uuid";
 
   const codeSnippets = {
     basicHTML: `<!DOCTYPE html>
@@ -197,7 +200,7 @@ export function ReferralPage() {
   "offerText": "$50 off first visit",
   "clientReward": "$25 credit",
   "newUserReward": "$50 off",
-  "businessId": "uuid",
+  "businessId": "${sampleBusinessId}",
   "credits": 125,
   "totalReferrals": 8
 }
@@ -214,7 +217,7 @@ export function ReferralPage() {
 // POST ${normalizedSiteUrl}/api/referrals
 // Submit a new referral
 {
-  "businessId": "uuid",
+  "businessId": "${sampleBusinessId}",
   "ambassadorId": "uuid",
   "referredName": "John Doe",
   "referredPhone": "+1234567890",

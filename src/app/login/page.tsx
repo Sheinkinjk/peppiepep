@@ -11,11 +11,40 @@ import { Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Database } from "@/types/supabase";
 
+type PasswordStrengthState = {
+  score: number;
+  label: string;
+  textClass: string;
+  barColor: string;
+};
+
+const passwordStrengthLevels: PasswordStrengthState[] = [
+  { score: 0, label: "Add a password", textClass: "text-slate-400", barColor: "bg-slate-200" },
+  { score: 1, label: "Too short", textClass: "text-rose-600", barColor: "bg-rose-500" },
+  { score: 2, label: "Getting there", textClass: "text-amber-600", barColor: "bg-amber-500" },
+  { score: 3, label: "Strong", textClass: "text-emerald-600", barColor: "bg-emerald-500" },
+];
+
+const getPasswordStrength = (password: string): PasswordStrengthState => {
+  if (!password) return passwordStrengthLevels[0];
+
+  if (password.length < 8) {
+    return { ...passwordStrengthLevels[1], score: 1 };
+  }
+
+  let score = 1; // meets min length
+  if (/[A-Z]/.test(password) && /[a-z]/.test(password)) score++;
+  if (/\d/.test(password) || /[^A-Za-z0-9]/.test(password)) score++;
+
+  return passwordStrengthLevels[Math.min(score, passwordStrengthLevels.length - 1)];
+};
+
 type ViewState = "auth" | "onboarding" | "forgot-password";
 
 function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
   const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
   const [confirmationSent, setConfirmationSent] = useState(false);
@@ -81,10 +110,25 @@ function LoginContent() {
     localStorage.setItem("pepform_onboarding_draft", JSON.stringify(draft));
   }, [businessName, businessEmail, phone, draftLoaded]);
 
+  const passwordStrength = getPasswordStrength(password);
+  const passwordsMismatch = isSignUp && confirmPassword && confirmPassword !== password;
+
   const handleAuth = async () => {
-    if (isSignUp && !hasAcceptedTerms) {
-      setError("Please accept the Terms of Service before creating an account.");
-      return;
+    if (isSignUp) {
+      if (!hasAcceptedTerms) {
+        setError("Please accept the Terms of Service before creating an account.");
+        return;
+      }
+
+      if (password.length < 8) {
+        setError("Use at least 8 characters for your password.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        setError("Passwords must match before continuing.");
+        return;
+      }
     }
 
     setLoading(true);
@@ -106,9 +150,20 @@ function LoginContent() {
         if (signUpError) throw signUpError;
 
         if (data.user) {
+          try {
+            await fetch("/api/auth/send-confirmation", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email }),
+            });
+          } catch (sendError) {
+            console.error("Failed to send confirmation via Resend:", sendError);
+          }
+
           setConfirmationSent(true);
           setConfirmationEmail(email);
           setPassword("");
+          setConfirmPassword("");
           setHasAcceptedTerms(false);
           return;
         }
@@ -144,6 +199,12 @@ function LoginContent() {
     setError("");
 
     try {
+      try {
+        await supabase.auth.signOut();
+      } catch {
+        // ignore sign-out issues, we just want a clean session
+      }
+
       const { error: signInError } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
@@ -153,8 +214,9 @@ function LoginContent() {
 
       if (signInError) throw signInError;
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : "Google sign-in failed";
+      const fallbackMessage =
+        "Google sign-in failed. Clear your browser cookies or try a private window, then attempt again.";
+      const message = err instanceof Error ? `${err.message}. ${fallbackMessage}` : fallbackMessage;
       setError(message);
       setLoading(false);
     }
@@ -262,18 +324,30 @@ function LoginContent() {
                     We sent a password reset link to{" "}
                     <span className="font-semibold">{email}</span>. Click the link in the email to create a new password.
                   </p>
+                  <p className="mt-2 text-xs text-emerald-900/80">
+                    Can&rsquo;t find it? Check your spam or promotions folder, then resend below.
+                  </p>
                 </div>
-                <Button
-                  onClick={() => {
-                    setView("auth");
-                    setResetEmailSent(false);
-                    setEmail("");
-                  }}
-                  variant="outline"
-                  className="w-full"
-                >
-                  Back to sign in
-                </Button>
+                <div className="space-y-3">
+                  <Button
+                    onClick={handleForgotPassword}
+                    disabled={loading}
+                    variant="secondary"
+                    className="w-full"
+                  >
+                    {loading ? "Resending..." : "Resend email"}
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      setView("auth");
+                      setResetEmailSent(false);
+                    }}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    Back to sign in
+                  </Button>
+                </div>
               </div>
             ) : (
               <div className="space-y-4">
@@ -333,6 +407,17 @@ function LoginContent() {
           <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-gradient-to-tr from-purple-500/20 to-sky-500/20 blur-3xl" />
 
           <div className="relative">
+            <div className="mb-6">
+              <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-500">
+                <span className="text-slate-900">Step 2 of 2</span>
+                <span>Business profile</span>
+              </div>
+              <div className="mt-2 flex items-center gap-2">
+                <span className="h-2 flex-1 rounded-full bg-emerald-500" />
+                <span className="h-2 flex-1 rounded-full bg-slate-200" />
+              </div>
+            </div>
+
             <div className="mb-6 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-pink-500">
                 <Building2 className="h-6 w-6 text-white" />
@@ -342,7 +427,7 @@ function LoginContent() {
                   Set up your business
                 </h1>
                 <p className="text-sm text-slate-600">
-                  Complete your profile to start tracking referrals.
+                  You&rsquo;re moments away from the dashboard—this info keeps your referral portal compliant and on-brand.
                 </p>
               </div>
             </div>
@@ -383,7 +468,7 @@ function LoginContent() {
                   className="mt-1"
                 />
                 <p className="text-xs text-slate-500 mt-1">
-                  We&rsquo;ll use this for account setup and support. You can configure offers and rewards inside the dashboard.
+                  We use this to personalize your referral portal, contracts, and payouts.
                 </p>
               </div>
 
@@ -532,9 +617,27 @@ function LoginContent() {
                   />
                 </div>
                 <div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
                     <Label htmlFor="password">Password</Label>
-                    {!isSignUp && (
+                    {isSignUp ? (
+                      <div className="flex items-center gap-2">
+                        <div className="flex w-16 gap-1">
+                          {[0, 1, 2].map((index) => (
+                            <span
+                              key={index}
+                              className={`h-1.5 flex-1 rounded-full transition-colors duration-200 ${
+                                passwordStrength.score > index
+                                  ? passwordStrength.barColor
+                                  : "bg-slate-200"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className={`text-xs font-semibold ${passwordStrength.textClass}`}>
+                          {passwordStrength.label}
+                        </span>
+                      </div>
+                    ) : (
                       <button
                         type="button"
                         onClick={() => {
@@ -556,7 +659,30 @@ function LoginContent() {
                     placeholder="••••••••"
                     onKeyDown={(e) => e.key === "Enter" && handleAuth()}
                   />
+                  {isSignUp && (
+                    <p className="mt-2 text-xs text-slate-500">
+                      Use at least 8 characters with a mix of upper/lowercase letters and a number or symbol.
+                    </p>
+                  )}
                 </div>
+                {isSignUp && (
+                  <div>
+                    <Label htmlFor="confirm-password">Confirm password</Label>
+                    <Input
+                      id="confirm-password"
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      className="mt-1"
+                      placeholder="Re-enter your password"
+                    />
+                    {passwordsMismatch && (
+                      <p className="mt-2 text-xs font-semibold text-rose-600">
+                        Passwords must match before you can create an account.
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
 
             {isSignUp && (
@@ -593,7 +719,8 @@ function LoginContent() {
                   loading ||
                   !email ||
                   !password ||
-                  (isSignUp && !hasAcceptedTerms)
+                  (isSignUp &&
+                    (!hasAcceptedTerms || !confirmPassword || passwordsMismatch || password.length < 8))
                 }
                 className="mt-6 w-full"
               >
@@ -646,6 +773,7 @@ function LoginContent() {
                   setConfirmationEmail("");
                   setHasAcceptedTerms(false);
                   setPassword("");
+                  setConfirmPassword("");
                 }}
               >
                 {isSignUp

@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable react/no-unescaped-entities */
+
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -43,7 +45,6 @@ type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
 type CRMIntegrationTabProps = {
   customers: CustomerRow[];
   siteUrl: string;
-  businessName: string;
   businessId: string;
   discountCaptureSecret?: string | null;
 };
@@ -51,7 +52,6 @@ type CRMIntegrationTabProps = {
 export function CRMIntegrationTab({
   customers,
   siteUrl,
-  businessName,
   businessId,
   discountCaptureSecret,
 }: CRMIntegrationTabProps) {

@@ -99,6 +99,7 @@ export function CustomersTable({
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "verified" | "active" | "applicant">("all");
+  const [sortOption, setSortOption] = useState<"recent" | "credits_desc" | "credits_asc" | "name_asc">("recent");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [selectedRows, setSelectedRows] = useState<Map<string, Customer>>(new Map());
   const [isLoading, setIsLoading] = useState(false);
@@ -390,20 +391,45 @@ export function CustomersTable({
     }, 100);
   };
 
+  const sortedCustomers = useMemo(() => {
+    if (sortOption === "recent") return customers;
+
+    const next = [...customers];
+    switch (sortOption) {
+      case "credits_desc":
+        return next.sort((a, b) => (b.credits ?? 0) - (a.credits ?? 0));
+      case "credits_asc":
+        return next.sort((a, b) => (a.credits ?? 0) - (b.credits ?? 0));
+      case "name_asc":
+        return next.sort((a, b) => {
+          const nameA = (a.name ?? "").toLowerCase();
+          const nameB = (b.name ?? "").toLowerCase();
+          if (!nameA && !nameB) return 0;
+          if (!nameA) return 1;
+          if (!nameB) return -1;
+          return nameA.localeCompare(nameB);
+        });
+      default:
+        return next;
+    }
+  }, [customers, sortOption]);
+
   const rowVirtualizer = useVirtualizer({
-    count: customers.length,
+    count: sortedCustomers.length,
     getScrollElement: () => parentRef.current,
     estimateSize: () => 96,
     overscan: 6,
   });
 
+  const visibleCustomers = sortedCustomers;
+
   const totalPages = Math.max(1, Math.ceil(total / Math.max(pageSize, 1)));
   const firstItemIndex = total === 0 ? 0 : (page - 1) * pageSize + 1;
   const lastItemIndex =
-    total === 0 ? 0 : Math.min(total, firstItemIndex + customers.length - 1);
+    total === 0 ? 0 : Math.min(total, firstItemIndex + visibleCustomers.length - 1);
   const selectedCount = selectedIds.size;
 
-  const currentIds = customers.map((customer) => customer.id);
+  const currentIds = visibleCustomers.map((customer) => customer.id);
   const allSelectedOnPage =
     currentIds.length > 0 && currentIds.every((id) => selectedIds.has(id));
   const partiallySelected =
@@ -445,6 +471,18 @@ export function CustomersTable({
             <option value="verified">Verified</option>
             <option value="active">Active</option>
             <option value="applicant">Applicants</option>
+          </select>
+          <select
+            className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
+            value={sortOption}
+            onChange={(e) => {
+              setSortOption(e.target.value as typeof sortOption);
+            }}
+          >
+            <option value="recent">Sort: Newest first</option>
+            <option value="credits_desc">Sort: Highest credits</option>
+            <option value="credits_asc">Sort: Lowest credits</option>
+            <option value="name_asc">Sort: A–Z</option>
           </select>
         </div>
       </div>
@@ -616,7 +654,7 @@ export function CustomersTable({
               style={{ height: rowVirtualizer.getTotalSize() }}
             >
               {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-                const customer = customers[virtualRow.index];
+                const customer = sortedCustomers[virtualRow.index];
                 if (!customer) return null;
                 const referralLink = customer?.referral_code
                   ? `${siteUrl}/r/${customer.referral_code}`

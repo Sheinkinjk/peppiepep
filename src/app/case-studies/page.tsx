@@ -194,7 +194,7 @@ export default function CaseStudiesPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Next steps</p>
               <h3 className="text-xl font-black text-slate-900">Want a tailored referral plan for your business?</h3>
               <p className="text-sm text-slate-600 max-w-xl">
-                Let's run a live demo and show how Refer Labs captures every referral, syncs with your CRM, and pays out champions without spreadsheets.
+                Let&rsquo;s run a live demo and show how Refer Labs captures every referral, syncs with your CRM, and pays out champions without spreadsheets.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
