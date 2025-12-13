@@ -25,17 +25,14 @@ type GuidedStepFlowProps = {
 };
 
 export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedStepFlowProps) {
-  const isControlled = typeof defaultOpenStep === "string" && defaultOpenStep.length > 0;
-  const [internalExpandedStep, setInternalExpandedStep] = useState<string | null>(() => defaultOpenStep || null);
-  const expandedStep = isControlled ? defaultOpenStep : internalExpandedStep;
+  // Always use internal state for managing expanded step
+  const [expandedStep, setExpandedStep] = useState<string | null>(() => defaultOpenStep || null);
 
   const handleStepToggle = (stepId: string) => {
     const nextValue = expandedStep === stepId ? null : stepId;
-    if (!isControlled) {
-      setInternalExpandedStep(nextValue);
-    }
-    if (nextValue && onStepChange) {
-      onStepChange(nextValue);
+    setExpandedStep(nextValue);
+    if (onStepChange) {
+      onStepChange(nextValue || "");
     }
   };
 

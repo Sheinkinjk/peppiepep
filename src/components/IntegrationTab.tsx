@@ -851,50 +851,51 @@ export function IntegrationTab({
         </Collapsible>
       </div>
 
-      <Collapsible open={openSection === "wordpress"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "wordpress" : null)}>
-        <CollapsibleTrigger className="w-full">
-          <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3 flex-1 text-left">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 flex items-center justify-center">
-                  <Globe className="h-6 w-6 text-white" />
+      <div className="grid gap-6 lg:grid-cols-2">
+        <Collapsible open={openSection === "wordpress"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "wordpress" : null)}>
+          <CollapsibleTrigger className="w-full">
+            <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3 flex-1 text-left">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 flex items-center justify-center">
+                    <Globe className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900">WordPress &amp; WooCommerce Setup</h3>
+                    <p className="text-sm text-slate-600">Add referral pages and discount capture to WordPress sites</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900">WordPress &amp; WooCommerce Setup</h3>
-                  <p className="text-sm text-slate-600">Add referral pages and discount capture to WordPress sites</p>
-                </div>
+                {openSection === "wordpress" ? (
+                  <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                ) : (
+                  <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                )}
               </div>
-              {openSection === "wordpress" ? (
-                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              ) : (
-                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              )}
             </div>
-          </div>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="mt-4">
-          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
-            <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-600">
-              <li>Create a new page and add a Custom HTML block</li>
-              <li>Use the shortcode below (swap <code className="font-mono text-xs">YOURCODE</code> with ambassador&rsquo;s code)</li>
-              <li>For WooCommerce, paste the PHP hook into <code className="font-mono text-xs">functions.php</code></li>
-            </ol>
-            <div className="grid gap-4 lg:grid-cols-2">
-              <div className="space-y-2">
-                <p className="text-sm font-semibold text-slate-800">Gutenberg shortcode</p>
-                <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
+          </CollapsibleTrigger>
+          <CollapsibleContent className="mt-4">
+            <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
+              <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-600">
+                <li>Create a new page and add a Custom HTML block</li>
+                <li>Use the shortcode below (swap <code className="font-mono text-xs">YOURCODE</code> with ambassador&rsquo;s code)</li>
+                <li>For WooCommerce, paste the PHP hook into <code className="font-mono text-xs">functions.php</code></li>
+              </ol>
+              <div className="grid gap-4 lg:grid-cols-2">
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-slate-800">Gutenberg shortcode</p>
+                  <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
 {`add_shortcode('referlabs_referral', function($atts = []) {
   $code = isset($atts['code']) ? esc_attr($atts['code']) : 'VIPCODE1234';
   return '<iframe src="${siteUrl}/r/' . $code . '?embed=1" style="width:100%;min-height:640px;border:none;border-radius:32px;"></iframe>';
 });`}
-                </pre>
-                <p className="text-xs text-slate-500">
-                  Usage: <code className="font-mono">[referlabs_referral code=&quot;AMBCODE&quot;]</code>
-                </p>
-              </div>
-              <div className="space-y-2">
-                <p className="text-sm font-semibold text-slate-800">WooCommerce capture</p>
-                <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
+                  </pre>
+                  <p className="text-xs text-slate-500">
+                    Usage: <code className="font-mono">[referlabs_referral code=&quot;AMBCODE&quot;]</code>
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-slate-800">WooCommerce capture</p>
+                  <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
 {`add_action('woocommerce_checkout_create_order', function($order) {
   $code = $order-&gt;get_coupon_codes() ? reset($order-&gt;get_coupon_codes()) : null;
   if (!$code) {
@@ -915,34 +916,34 @@ export function IntegrationTab({
     'timeout' => 12,
   ]);
 }, 20, 1);`}
-                </pre>
+                  </pre>
+                </div>
               </div>
             </div>
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
+          </CollapsibleContent>
+        </Collapsible>
 
-      <Collapsible open={openSection === "discount"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "discount" : null)}>
-        <CollapsibleTrigger className="w-full">
-          <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3 flex-1 text-left">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
-                  <Code2 className="h-6 w-6 text-white" />
+        <Collapsible open={openSection === "discount"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "discount" : null)}>
+          <CollapsibleTrigger className="w-full">
+            <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3 flex-1 text-left">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
+                    <Code2 className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900">Discount capture endpoint</h3>
+                    <p className="text-sm text-slate-600">API call for checkout, Shopify, or POS integration</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900">Discount capture endpoint</h3>
-                  <p className="text-sm text-slate-600">API call for checkout, Shopify, or POS integration</p>
-                </div>
+                {openSection === "discount" ? (
+                  <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                ) : (
+                  <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                )}
               </div>
-              {openSection === "discount" ? (
-                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              ) : (
-                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              )}
             </div>
-          </div>
-        </CollapsibleTrigger>
+          </CollapsibleTrigger>
         <CollapsibleContent className="mt-4">
           <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
             <pre className="rounded-2xl bg-slate-900/95 p-4 text-xs text-slate-100 overflow-x-auto">
@@ -959,7 +960,8 @@ Body:
             </pre>
           </div>
         </CollapsibleContent>
-      </Collapsible>
+        </Collapsible>
+      </div>
     </div>
   );
 }
