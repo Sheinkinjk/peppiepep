@@ -124,28 +124,28 @@ const heroBadges: HeroBadgeSpec[] = [
     title: "NEW REFERRAL",
     text: "Jenny used a referral link",
     colors: ["#855b4c", "#a87261"],
-    position: "top-6 left-4",
+    position: "top-3 left-2",
   },
   {
     id: "hero-vip",
     title: "VIP BOOKING",
     text: "David confirmed a new order",
     colors: ["#2c5248", "#356757"],
-    position: "top-6 right-4",
+    position: "top-3 right-2",
   },
   {
     id: "hero-leaderboard",
     title: "LEADERBOARD",
     text: "Jake referred 24 orders this month",
     colors: ["#1f2c3b", "#3b4e5d"],
-    position: "bottom-8 left-6",
+    position: "bottom-6 left-3",
   },
   {
     id: "hero-revenue",
     title: "REVENUE BOOK",
     text: "$35,500 additional revenue generated",
     colors: ["#3a3334", "#54484a"],
-    position: "bottom-8 right-6",
+    position: "bottom-6 right-3",
   },
 ];
 
@@ -236,27 +236,27 @@ const PillarCard = ({ pillar }: { pillar: ReferralPillar }) => (
 const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
   <div
     className={cn(
-      "hero-badge pointer-events-none select-none rounded-[26px] border border-white/30 bg-white/90 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-md sm:px-6 sm:py-4",
-      "flex min-w-[240px] max-w-[300px] items-center gap-4 transition-all duration-300",
+      "hero-badge pointer-events-none select-none rounded-[22px] border border-white/20 bg-white/60 px-3.5 py-2.5 shadow-lg shadow-black/8 backdrop-blur-sm sm:px-5 sm:py-3.5",
+      "flex min-w-[220px] max-w-[280px] items-center gap-3.5 transition-all duration-300 opacity-75 hover:opacity-90",
       className,
     )}
     style={{
-      background: `linear-gradient(120deg, ${badge.colors[0]}, ${badge.colors[1]})`,
+      background: `linear-gradient(120deg, ${badge.colors[0]}dd, ${badge.colors[1]}dd)`,
     }}
   >
-    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-white shadow-inner shadow-black/10">
+    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white/95 shadow-sm shadow-black/5">
       <Image
         src="/logo.svg"
         alt="Refer Labs logo"
-        width={48}
-        height={48}
-        className="h-10 w-10 object-contain"
+        width={44}
+        height={44}
+        className="h-9 w-9 object-contain opacity-90"
         priority={false}
       />
     </div>
-    <div className="space-y-1 text-left text-white">
-      <p className="text-xs font-bold uppercase tracking-[0.2em]">{badge.title}</p>
-      <p className="text-sm font-semibold leading-tight text-white/90">{badge.text}</p>
+    <div className="space-y-0.5 text-left text-white">
+      <p className="text-[10px] font-bold uppercase tracking-[0.15em] opacity-90">{badge.title}</p>
+      <p className="text-sm font-semibold leading-tight text-white/85">{badge.text}</p>
     </div>
   </div>
 );
