@@ -2,7 +2,7 @@
 
 import { useState, type KeyboardEvent, type ReactNode } from "react";
 import { Card } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, CheckCircle2, Circle, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type StepStatus = "incomplete" | "in_progress" | "complete";
@@ -117,6 +117,25 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                           <h3 className="text-lg sm:text-xl font-bold text-slate-900">
                             {step.title}
                           </h3>
+                          {/* Status Badge */}
+                          {step.status === "complete" && (
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 border border-emerald-200">
+                              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-700" />
+                              <span className="text-xs font-semibold text-emerald-700">Complete</span>
+                            </div>
+                          )}
+                          {step.status === "in_progress" && (
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-100 border border-teal-200">
+                              <Circle className="h-3.5 w-3.5 text-teal-700 fill-teal-700" />
+                              <span className="text-xs font-semibold text-teal-700">In Progress</span>
+                            </div>
+                          )}
+                          {step.status === "incomplete" && (
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200">
+                              <AlertCircle className="h-3.5 w-3.5 text-slate-500" />
+                              <span className="text-xs font-semibold text-slate-500">Locked</span>
+                            </div>
+                          )}
                         </div>
                         <p className="text-sm text-slate-600 leading-relaxed">
                           {step.description}

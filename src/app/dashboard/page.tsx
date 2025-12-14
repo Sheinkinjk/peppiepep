@@ -55,6 +55,9 @@ import { Database } from "@/types/supabase";
 import { BusinessOnboardingMetadata, IntegrationStatusValue, parseBusinessMetadata } from "@/types/business";
 import { calculateNextCredits, parseCreditDelta } from "@/lib/credits";
 import { ensureAbsoluteUrl } from "@/lib/urls";
+import { DashboardHeader } from "./components/DashboardHeader";
+import { ProgressTracker } from "./components/ProgressTracker";
+import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -1149,6 +1152,19 @@ export default async function Dashboard() {
   const userAgent = headerList.get("user-agent") ?? "";
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
+  // Validate steps and calculate progress
+  const stepValidations = validateSteps({
+    hasProgramSettings,
+    hasCustomers,
+    totalCampaignsSent,
+    hasReferrals: safeReferrals.length > 0,
+    hasIntegrationSetup: business.onboarding_metadata?.integrationStatus?.website === 'complete',
+    hasDiscountCapture: !!business.discount_capture_secret,
+  });
+
+  const autoExpandStep = getNextIncompleteStep(stepValidations);
+  const overallProgress = calculateOverallProgress(stepValidations);
+
   // Define guided steps for new dashboard flow
   const guidedSteps: GuidedStep[] = [
     {
@@ -1682,38 +1698,24 @@ export default async function Dashboard() {
           businessName={business.name || "Your Business"}
         />
 
-        {/* Condensed Header */}
-        <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-3xl font-bold text-slate-900">Growth Dashboard</h1>
-              <p className="text-sm text-slate-600 mt-1">Follow the 5 steps below to launch your referral program</p>
-            </div>
-            <DashboardExplainerDialog />
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="rounded-xl bg-slate-50 border border-slate-200 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Ambassadors</p>
-              <p className="text-4xl font-bold text-slate-900 mt-2">{safeCustomers.length}</p>
-            </div>
-            <div className="rounded-xl bg-slate-50 border border-slate-200 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Referrals</p>
-              <p className="text-4xl font-bold text-slate-900 mt-2">{safeReferrals.length}</p>
-            </div>
-            <div className="rounded-xl bg-slate-50 border border-slate-200 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Campaigns</p>
-              <p className="text-4xl font-bold text-slate-900 mt-2">{totalCampaignsSent}</p>
-            </div>
-            <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">Revenue</p>
-              <p className="text-4xl font-bold text-emerald-900 mt-2">${Math.round(totalReferralRevenue)}</p>
-            </div>
-          </div>
-        </div>
+        {/* Dashboard Header with Stats */}
+        <DashboardHeader
+          ambassadorCount={safeCustomers.length}
+          referralCount={safeReferrals.length}
+          campaignsSent={totalCampaignsSent}
+          revenue={totalReferralRevenue}
+        />
+
+        {/* Progress Tracker */}
+        <ProgressTracker
+          validations={stepValidations}
+          currentStep={autoExpandStep}
+          overallProgress={overallProgress}
+        />
 
         <GuidedStepFlow
           steps={guidedSteps}
-          defaultOpenStep={!hasProgramSettings ? "setup-integration" : !hasCustomers ? "clients-ambassadors" : "crm-integration"}
+          defaultOpenStep={autoExpandStep}
         />
       {isMobile && (
         <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
