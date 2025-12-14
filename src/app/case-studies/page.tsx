@@ -1,212 +1,392 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { ChevronDown, ArrowRight, TrendingUp, Users, Briefcase, Building2, Heart } from "lucide-react";
 
-type CaseStudy = {
-  industry: string;
-  tagline: string;
-  highlight: string;
-  metrics: { label: string; value: string; detail: string }[];
-  flows: { stage: string; description: string }[];
-  story: string;
+type MetricCard = {
+  title: string;
+  metric: string;
+  caption: string;
 };
 
-const CASE_STUDIES: CaseStudy[] = [
+type AccordionItem = {
+  title: string;
+  content: string;
+};
+
+type IndustryCard = {
+  industry: string;
+  whyItWins: string;
+  bestTrigger: string;
+  icon: typeof Building2;
+};
+
+const luxuryMetrics: MetricCard[] = [
+  { title: "Referral Revenue", metric: "28%", caption: "Of monthly revenue sourced from referrals" },
+  { title: "UGC Lift", metric: "4×", caption: "Increase in customer photo + reel submissions" },
+  { title: "Margin Impact", metric: "+9% AOV", caption: "Rewards protect pricing vs discounts" },
+];
+
+const luxuryAccordion: AccordionItem[] = [
+  { title: "Trigger", content: "Post-purchase SMS and packaging inserts delivered personalised referral QR codes the moment customers received their order." },
+  { title: "Share", content: "Customers shared referral links into private WhatsApp groups, Instagram stories, and DMs." },
+  { title: "Track", content: "Every purchase was attributed via referral_code synced across Shopify and Klaviyo — no broken links, no manual matching." },
+  { title: "Reward", content: "Store credits unlocked instantly inside Refer Labs dashboards and synced to CRM profiles." },
+];
+
+const professionalMetrics: MetricCard[] = [
+  { title: "Qualified Leads", metric: "+42%", caption: "Quarter-on-quarter growth" },
+  { title: "Close Rate", metric: "3.1×", caption: "Versus cold inbound leads" },
+  { title: "Advisor Adoption", metric: "93%", caption: "Prompts baked into daily workflows" },
+];
+
+const professionalAccordion: AccordionItem[] = [
+  { title: "Trigger", content: "Advisers logged \"delighted client\" moments inside Refer Labs after reviews or milestones." },
+  { title: "Share", content: "Clients received a co-branded referral page and introduce-a-friend email with zero friction." },
+  { title: "Track", content: "Referrals flowed directly into HubSpot with advisor attribution and deal stage visibility." },
+  { title: "Reward", content: "Referrers received strategy session credits with a full compliance audit trail for finance." },
+];
+
+const saasMetrics: MetricCard[] = [
+  { title: "Pipeline Lift", metric: "+37%", caption: "Net-new opportunities from referrals" },
+  { title: "Sales Cycle", metric: "−44 days", caption: "Deals arrived with internal champions" },
+  { title: "Expansion Revenue", metric: "+18%", caption: "Referrals unlocked multi-team deals" },
+];
+
+const saasAccordion: AccordionItem[] = [
+  { title: "Trigger", content: "Power users hit product success milestones (activation, NPS, feature adoption)." },
+  { title: "Share", content: "Champions selected who to introduce; Refer Labs generated a ready-to-forward brief." },
+  { title: "Track", content: "Introductions logged into Salesforce with referral_code and Slack alerts for AE + CSM." },
+  { title: "Reward", content: "Champions unlocked VIP roadmap access and credits once deals closed." },
+];
+
+const industries: IndustryCard[] = [
   {
-    industry: "Luxury e-commerce",
-    tagline: "Turn every unboxing into your next three customers.",
-    highlight:
-      "Refer Labs stitched referral links into the post-purchase journey, so every 'I love this' moment triggered ready-to-share links, SMS nudges, and CRM follow-ups.",
-    metrics: [
-      { label: "Referral orders", value: "28% of monthly revenue", detail: "Tracked end-to-end with double-sided credit" },
-      { label: "UGC volume", value: "4× photo & reel submissions", detail: "Champions auto-tagged via referral codes" },
-      { label: "Margin impact", value: "+9% AOV", detail: "Credit rewards protect pricing vs deep discounting" },
-    ],
-    flows: [
-      { stage: "Trigger", description: "Post-purchase SMS + packaging insert with personalised referral QR." },
-      { stage: "Share", description: "Ambassadors push their link to VIP WhatsApp groups and IG stories." },
-      { stage: "Track", description: "Friends buy, Refer Labs auto attributes via referral_code and syncs to Klaviyo." },
-      { stage: "Reward", description: "Store credits unlock instantly in Refer Labs dashboards + CRM profiles." },
-    ],
-    story:
-      "By unifying referral codes across Shopify, Klaviyo, and our dashboard, the brand finally saw which advocates, launches, and creatives actually moved revenue—then doubled down on those cohorts.",
+    industry: "Financial Advisers & Accountants",
+    whyItWins: "Trust-driven, high LTV, natural intro behaviour",
+    bestTrigger: "Review meetings, EOFY, life events",
+    icon: Briefcase,
   },
   {
-    industry: "Professional services",
-    tagline: "Make warm intros a predictable pipeline channel.",
-    highlight:
-      "Advisers used Refer Labs to send clients one-click referral kits at review milestones; every intro flowed through a compliant intake form and into the CRM.",
-    metrics: [
-      { label: "Qualified leads", value: "+42% per quarter", detail: "Ideal clients sourced from top-tier accounts" },
-      { label: "Close rate", value: "3.1× vs cold leads", detail: "Referred prospects already trusted the firm" },
-      { label: "Advisor adoption", value: "93%", detail: "Referral prompts + scripts baked into Refer Labs tasks" },
-    ],
-    flows: [
-      { stage: "Trigger", description: "Advisor logs 'delighted client' event inside Refer Labs." },
-      { stage: "Share", description: "Client receives co-branded landing page + introduce-a-friend email." },
-      { stage: "Track", description: "Referrals push into HubSpot with stage + advisor attribution." },
-      { stage: "Reward", description: "Referrer receives strategy session credits; finance sees audit trail in Refer Labs." },
-    ],
-    story:
-      "Instead of hoping advisers remembered to ask, the firm automated prompts, assets, and approvals inside Refer Labs. Compliance loved the audit trail, GTM loved the pipeline.",
+    industry: "Agencies & Consultants",
+    whyItWins: "Founder-led sales + network effects",
+    bestTrigger: "Project completion, wins, renewals",
+    icon: Users,
   },
   {
-    industry: "B2B SaaS",
-    tagline: "Let power users become your outbound team.",
-    highlight:
-      "Refer Labs monitored activation, NPS, and product milestones to decide when to invite champions into referral campaigns—each intro landed in Salesforce with context.",
-    metrics: [
-      { label: "Pipeline lift", value: "+37%", detail: "Net-new opportunities sourced from top customers" },
-      { label: "Sales cycle", value: "−44 days", detail: "Deals arrived with internal champions already in place" },
-      { label: "Expansion revenue", value: "+18%", detail: "Referrals opened multi-team and multi-region deals" },
-    ],
-    flows: [
-      { stage: "Trigger", description: "Power user hits success milestone → referral CTA inside product + email." },
-      { stage: "Share", description: "Champion selects who to intro; Refer Labs generates a ready-to-forward brief." },
-      { stage: "Track", description: "Intro logged with referral_code in Salesforce + Slack alerts for AE + CSM." },
-      { stage: "Reward", description: "Champions receive VIP roadmap access + credits once deals close." },
-    ],
-    story:
-      "Referrals stopped being random. Product, CS, and sales all saw the same referral data, so follow-ups, rewards, and forecasting finally aligned.",
+    industry: "E-commerce (Premium / DTC)",
+    whyItWins: "Social proof + community sharing",
+    bestTrigger: "Unboxing, reorder, loyalty milestones",
+    icon: TrendingUp,
+  },
+  {
+    industry: "SaaS (B2B & Vertical)",
+    whyItWins: "Champion-led buying and expansion",
+    bestTrigger: "Activation, NPS, usage thresholds",
+    icon: Building2,
+  },
+  {
+    industry: "Health, Wellness & Clinics",
+    whyItWins: "Word-of-mouth already exists, just untracked",
+    bestTrigger: "Outcome milestones, reviews, follow-ups",
+    icon: Heart,
   },
 ];
 
-const REFERRAL_FLOW = [
+const platformCapabilities: AccordionItem[] = [
   {
-    title: "Capture & code",
-    detail: "Refer Labs issues airtight referral_code + discount_code pairs per ambassador. Codes sync across CRM, campaigns, landing pages, and packaging so no share ever breaks attribution.",
+    title: "Capture & Code",
+    content: "Refer Labs issues airtight referral_code and discount_code pairs per ambassador. Codes sync across CRM, campaigns, landing pages, packaging, and checkout.",
   },
   {
-    title: "Triggers & asks",
-    detail: "Emails, in-app prompts, CS playbooks, and SMS fire the moment someone hits a success milestone. Each touchpoint uses the same referral code so your message stays on-brand.",
+    title: "Triggers & Asks",
+    content: "Email, SMS, in-app prompts, and CS playbooks fire the moment someone hits a success milestone — always using the same referral code.",
   },
   {
-    title: "A/B test incentives",
-    detail: "Test copy, reward types, and call-to-actions directly in Refer Labs. See which offers make referrers engage fastest, then automatically route champions into the winning variant.",
+    title: "A/B Test Incentives",
+    content: "Test copy, rewards, and CTAs directly inside Refer Labs. Automatically route champions into the highest-performing variant.",
   },
   {
-    title: "Referrer engagement",
-    detail: "Advocates see live dashboards, leaderboards, and surprise-and-delight rewards. SMS nudges, email recaps, and CRM tasks keep top referrers motivated without manual chasing.",
+    title: "Referrer Engagement",
+    content: "Live dashboards, leaderboards, surprise rewards, and automated nudges keep advocates active without manual chasing.",
   },
   {
-    title: "Prospect experience",
-    detail: "New users land on personalised referral pages, book into your CRM, or apply discount codes instantly. Every signup or purchase flows straight into your funnel with referral metadata intact.",
+    title: "Prospect Experience",
+    content: "Personalised referral pages, instant booking, or discount redemption — every conversion flows straight into your funnel with metadata intact.",
   },
   {
-    title: "Revenue & optimisation",
-    detail: "Refer Labs pipes conversions, MRR, and payout data into analytics so finance knows referral-sourced revenue. Double down on high-performing flows and pause the rest—no guesswork.",
+    title: "Revenue & Optimisation",
+    content: "Finance sees referral-sourced revenue, payouts, and ROI. Double down on what works, pause what doesn't.",
   },
 ];
+
+const timelineCards = [
+  { period: "Weeks 1–2", task: "Map customer journeys, define success triggers, import ambassadors." },
+  { period: "Weeks 2–3", task: "Configure campaigns, referral pages, CRM syncs, and reward logic." },
+  { period: "Weeks 3–4", task: "Train teams, activate automation, launch across email, SMS, and product." },
+];
+
+function MetricCard({ title, metric, caption }: MetricCard) {
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">{title}</p>
+      <p className="text-4xl font-black text-teal-700 mb-1">{metric}</p>
+      <p className="text-sm text-slate-600">{caption}</p>
+    </div>
+  );
+}
+
+function AccordionSection({ items }: { items: AccordionItem[] }) {
+  const [openItems, setOpenItems] = useState<string[]>([]);
+
+  const toggleItem = (title: string) => {
+    setOpenItems(prev =>
+      prev.includes(title) ? prev.filter(t => t !== title) : [...prev, title]
+    );
+  };
+
+  return (
+    <div className="space-y-3">
+      {items.map((item) => (
+        <Collapsible
+          key={item.title}
+          open={openItems.includes(item.title)}
+          onOpenChange={() => toggleItem(item.title)}
+        >
+          <CollapsibleTrigger className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-white px-5 py-4 text-left hover:bg-slate-50 transition-colors">
+            <span className="text-base font-bold text-slate-900">{item.title}</span>
+            <ChevronDown
+              className={cn(
+                "h-5 w-5 text-slate-500 transition-transform duration-200",
+                openItems.includes(item.title) && "rotate-180"
+              )}
+            />
+          </CollapsibleTrigger>
+          <CollapsibleContent className="px-5 py-4 text-sm text-slate-600 leading-relaxed">
+            {item.content}
+          </CollapsibleContent>
+        </Collapsible>
+      ))}
+    </div>
+  );
+}
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100" aria-labelledby="case-studies-heading">
-      <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8 space-y-12">
-        <section className="rounded-3xl border border-cyan-200 bg-gradient-to-br from-[#0abab5] via-[#11c6d4] to-[#12d1e3] p-6 text-white shadow-[0_25px_60px_rgba(10,171,181,0.25)]">
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/80">Case studies</p>
-            <h1 id="case-studies-heading" className="text-3xl font-black">Referral programs that compound trust, pipeline, and revenue</h1>
-            <p className="text-sm text-white/85 max-w-3xl">
-              See how Refer Labs links referral codes to campaigns, CRM, and payouts so every intro is trackable, rewardable, and repeatable. No guesswork, no duct-taped spreadsheets.
-            </p>
-          </div>
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+        {/* Page Title Section */}
+        <section className="mb-12 text-center space-y-4">
+          <h1 className="text-4xl sm:text-5xl font-black text-slate-900 leading-tight">
+            Case Studies
+          </h1>
+          <p className="text-xl sm:text-2xl font-semibold text-slate-700 max-w-4xl mx-auto leading-snug">
+            Referral programs that compound trust, pipeline, and revenue
+          </p>
+          <p className="text-base text-slate-600 max-w-3xl mx-auto">
+            See how Refer Labs links referral codes to campaigns, CRM, and payouts so every introduction is trackable, rewardable, and repeatable — no guesswork.
+          </p>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-3">
-          {CASE_STUDIES.map((study) => (
-            <article key={study.industry} className="rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-xl shadow-slate-200/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{study.industry}</p>
-              <h2 className="mt-2 text-lg font-bold text-slate-900">{study.tagline}</h2>
-              <p className="mt-1 text-sm text-slate-600">{study.highlight}</p>
-              <div className="mt-4 grid gap-3">
-                {study.metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-2xl border border-slate-100 bg-slate-50/70 px-3 py-2">
-                    <p className="text-[11px] uppercase tracking-wide text-slate-500">{metric.label}</p>
-                    <p className="text-xl font-black text-slate-900">{metric.value}</p>
-                    <p className="text-xs text-slate-600">{metric.detail}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 space-y-2">
-                {study.flows.map((flow) => (
-                  <div key={flow.stage} className="rounded-2xl border border-slate-100 bg-white px-3 py-2">
-                    <p className="text-sm font-semibold text-slate-800">{flow.stage}</p>
-                    <p className="text-xs text-slate-600">{flow.description}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-4 text-sm text-slate-600">{study.story}</p>
-            </article>
-          ))}
-        </section>
+        {/* Tabs Section */}
+        <Tabs defaultValue="luxury" className="space-y-8">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 gap-2 bg-slate-100 p-2 rounded-2xl">
+            <TabsTrigger value="luxury" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+              Luxury & Lifestyle E-commerce
+            </TabsTrigger>
+            <TabsTrigger value="professional" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+              Professional Services
+            </TabsTrigger>
+            <TabsTrigger value="saas" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+              B2B SaaS
+            </TabsTrigger>
+            <TabsTrigger value="industries" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+              Industries That Win
+            </TabsTrigger>
+            <TabsTrigger value="platform" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+              Referral OS
+            </TabsTrigger>
+          </TabsList>
 
-        <section className="space-y-6">
-          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/70">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Referral operating system</p>
-            <h2 className="mt-2 text-2xl font-black text-slate-900">How Refer Labs connects every part of your referral program</h2>
-            <div className="mt-6 grid gap-4 lg:grid-cols-3">
-              {REFERRAL_FLOW.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
-                  <p className="text-sm font-bold text-slate-900">{item.title}</p>
-                  <p className="mt-2 text-sm text-slate-600">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/70">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Deployment playbook</p>
-            <div className="grid gap-6 lg:grid-cols-2">
-              {[
-                {
-                  title: "Launch & rollout",
-                  steps: [
-                    "Week 1–2: Map customer journeys, pick success triggers, and import ambassadors.",
-                    "Week 2–3: Configure campaigns, CRM exports, referral landing pages, and reward logic.",
-                    "Week 3–4: Train GTM teams, activate automated prompts, and go live across email/SMS/in-product channels.",
-                  ],
-                },
-                {
-                  title: "Measurement & growth",
-                  steps: [
-                    "A/B test referral copy, incentive mixes, and call-to-actions inside Refer Labs.",
-                    "Track referrer engagement, CTR, signup-to-conversion rates, and revenue attribution.",
-                    "Use dashboards to highlight top advocates, issue payouts instantly, and feed learnings back into marketing + product.",
-                  ],
-                },
-              ].map((block) => (
-                <div key={block.title} className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
-                  <p className="text-sm font-bold text-slate-900">{block.title}</p>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-600">
-                    {block.steps.map((step) => (
-                      <li key={step}>{step}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-inner">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Next steps</p>
-              <h3 className="text-xl font-black text-slate-900">Want a tailored referral plan for your business?</h3>
-              <p className="text-sm text-slate-600 max-w-xl">
-                Let&rsquo;s run a live demo and show how Refer Labs captures every referral, syncs with your CRM, and pays out champions without spreadsheets.
+          {/* Tab 1: Luxury & Lifestyle */}
+          <TabsContent value="luxury" className="space-y-8">
+            <div className="text-center">
+              <p className="text-2xl font-bold text-slate-900">
+                Turn every unboxing, DM, and "I love this" moment into your next customers.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+
+            {/* Metrics */}
+            <div className="grid gap-6 md:grid-cols-3">
+              {luxuryMetrics.map((metric) => (
+                <MetricCard key={metric.title} {...metric} />
+              ))}
+            </div>
+
+            {/* How It Worked */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
+              <AccordionSection items={luxuryAccordion} />
+            </div>
+
+            {/* Proof Statement */}
+            <div className="rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 p-8">
+              <p className="text-lg text-slate-800 leading-relaxed italic">
+                By unifying referral codes across Shopify, Klaviyo, packaging, and SMS, the brand finally saw which advocates, launches, and creatives actually moved revenue — then doubled down on those cohorts.
+              </p>
+            </div>
+          </TabsContent>
+
+          {/* Tab 2: Professional Services */}
+          <TabsContent value="professional" className="space-y-8">
+            <div className="text-center">
+              <p className="text-2xl font-bold text-slate-900">
+                Turn warm introductions into a predictable, compliant pipeline channel.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              {professionalMetrics.map((metric) => (
+                <MetricCard key={metric.title} {...metric} />
+              ))}
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
+              <AccordionSection items={professionalAccordion} />
+            </div>
+
+            <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-8">
+              <p className="text-lg text-slate-800 leading-relaxed italic">
+                Instead of hoping advisers remembered to ask, the firm automated prompts, assets, approvals, and tracking. Compliance loved the audit trail. GTM loved the pipeline.
+              </p>
+            </div>
+          </TabsContent>
+
+          {/* Tab 3: B2B SaaS */}
+          <TabsContent value="saas" className="space-y-8">
+            <div className="text-center">
+              <p className="text-2xl font-bold text-slate-900">
+                Let your power users become your highest-converting outbound team.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              {saasMetrics.map((metric) => (
+                <MetricCard key={metric.title} {...metric} />
+              ))}
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
+              <AccordionSection items={saasAccordion} />
+            </div>
+
+            <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 p-8">
+              <p className="text-lg text-slate-800 leading-relaxed italic">
+                Referrals stopped being random. Product, customer success, and sales all worked from the same referral data — so forecasting, follow-ups, and rewards finally aligned.
+              </p>
+            </div>
+          </TabsContent>
+
+          {/* Tab 4: Industries */}
+          <TabsContent value="industries" className="space-y-8">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {industries.map((industry) => (
+                <div
+                  key={industry.industry}
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="h-12 w-12 rounded-xl bg-teal-100 flex items-center justify-center">
+                      <industry.icon className="h-6 w-6 text-teal-700" />
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900">{industry.industry}</h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
+                        Why It Wins
+                      </p>
+                      <p className="text-sm text-slate-700">{industry.whyItWins}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
+                        Best Trigger
+                      </p>
+                      <p className="text-sm text-slate-700">{industry.bestTrigger}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 p-8 text-center">
+              <p className="text-xl font-semibold text-slate-900">
+                If your customers already recommend you — Refer Labs turns that behaviour into a measurable, scalable acquisition channel.
+              </p>
+            </div>
+          </TabsContent>
+
+          {/* Tab 5: Platform */}
+          <TabsContent value="platform" className="space-y-8">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Platform Capabilities</h3>
+              <AccordionSection items={platformCapabilities} />
+            </div>
+
+            {/* Deployment Playbook */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Deployment Playbook</h3>
+              <div className="grid gap-6 md:grid-cols-3">
+                {timelineCards.map((card) => (
+                  <div
+                    key={card.period}
+                    className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-cyan-50 p-6"
+                  >
+                    <p className="text-sm font-bold uppercase tracking-wide text-teal-700 mb-2">
+                      {card.period}
+                    </p>
+                    <p className="text-sm text-slate-700 leading-relaxed">{card.task}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+
+        {/* Bottom CTA */}
+        <div className="mt-12 sticky bottom-6 z-10">
+          <div className="rounded-3xl border-2 border-teal-200 bg-gradient-to-br from-white to-teal-50 p-8 shadow-2xl">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="text-center sm:text-left">
+                <p className="text-2xl font-bold text-slate-900 mb-2">
+                  Turn your customers into a measurable growth channel.
+                </p>
+                <p className="text-sm text-slate-600">
+                  Launch your referral program in under 5 minutes.
+                </p>
+              </div>
               <Link
-                href="https://calendly.com/jarredkrowitz/30min"
-                className={cn(buttonVariants({ variant: "cta" }))}
+                href="/login"
+                className={cn(
+                  buttonVariants({ variant: "cta" }),
+                  "text-lg font-bold px-8 py-6 shadow-xl whitespace-nowrap"
+                )}
               >
-                Book demo
+                Start Getting Referrals
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </div>
           </div>
-        </section>
+        </div>
+
       </div>
     </main>
   );
