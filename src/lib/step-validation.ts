@@ -76,25 +76,26 @@ function validateStep1(checks: {
   const warnings: string[] = [];
   let completionPercentage = 0;
 
-  // Check program settings
+  // Check program settings (required for completion)
   if (!checks.hasProgramSettings) {
     blockers.push("Complete business setup and reward configuration");
+    // Start at 0%, only give credit once settings are saved
   } else {
-    completionPercentage += 60;
+    completionPercentage += 70; // Primary requirement
   }
 
-  // Check integration setup
+  // Check integration setup (optional but recommended)
   if (!checks.hasIntegrationSetup) {
     warnings.push("Website integration not verified");
   } else {
-    completionPercentage += 20;
+    completionPercentage += 15;
   }
 
-  // Check discount capture
+  // Check discount capture (optional but recommended)
   if (!checks.hasDiscountCapture) {
     warnings.push("Discount capture endpoint not configured");
   } else {
-    completionPercentage += 20;
+    completionPercentage += 15;
   }
 
   return {
@@ -118,14 +119,12 @@ function validateStep2(checks: {
 
   if (!checks.hasProgramSettings) {
     blockers.push("Complete Step 1: Business Setup first");
-  } else {
-    completionPercentage += 30;
-  }
-
-  if (!checks.hasCustomers) {
+    // 0% until prerequisites are met
+  } else if (!checks.hasCustomers) {
     blockers.push("Add at least one customer/ambassador");
+    // Still 0% - prerequisites met but main task not done
   } else {
-    completionPercentage += 70;
+    completionPercentage = 100; // Only give credit when customers are added
   }
 
   return {
@@ -150,20 +149,15 @@ function validateStep3(checks: {
 
   if (!checks.hasProgramSettings) {
     blockers.push("Complete Step 1: Business Setup first");
-  } else {
-    completionPercentage += 20;
-  }
-
-  if (!checks.hasCustomers) {
+    // 0% until prerequisites are met
+  } else if (!checks.hasCustomers) {
     blockers.push("Complete Step 2: Add ambassadors first");
-  } else {
-    completionPercentage += 30;
-  }
-
-  if (checks.totalCampaignsSent === 0) {
+    // Still 0% until all prerequisites are met
+  } else if (checks.totalCampaignsSent === 0) {
     blockers.push("Launch your first campaign");
+    // Still 0% - prerequisites met but main task not done
   } else {
-    completionPercentage += 50;
+    completionPercentage = 100; // Only give credit when campaign is launched
   }
 
   return {
@@ -211,15 +205,12 @@ function validateStep5(checks: {
 
   if (checks.totalCampaignsSent === 0) {
     warnings.push("Launch campaigns to generate referrals");
-    completionPercentage += 30;
+    // 0% until campaigns are launched
+  } else if (!checks.hasReferrals) {
+    warnings.push("No referrals tracked yet - give it time or add manual referrals");
+    // Still 0% until referrals come in
   } else {
-    completionPercentage += 50;
-  }
-
-  if (!checks.hasReferrals) {
-    warnings.push("No referrals tracked yet");
-  } else {
-    completionPercentage += 50;
+    completionPercentage = 100; // Only give credit when referrals are tracked
   }
 
   return {
