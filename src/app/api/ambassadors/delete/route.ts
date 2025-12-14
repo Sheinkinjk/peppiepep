@@ -1,10 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { cookies } from "next/headers";
-import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
-
-import { createServiceClient } from "@/lib/supabase";
+import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import type { Database } from "@/types/supabase";
 import { createApiLogger } from "@/lib/api-logger";
 import { parseJsonBody } from "@/lib/api-validation";
@@ -86,10 +83,10 @@ export async function POST(request: Request) {
   }
 
   try {
-    const routeClient = createRouteHandlerClient<Database>({ cookies });
+    const supabase = await createServerComponentClient();
     const {
       data: { user },
-    } = await routeClient.auth.getUser();
+    } = await supabase.auth.getUser();
     const schema = z.object({ code: z.string().trim().min(1, "referral code is required") });
 
     if (!user) {

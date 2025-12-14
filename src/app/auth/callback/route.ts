@@ -1,8 +1,22 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
+import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import type { Database } from '@/types/supabase'
+
+function normalizeCookieValue(value?: string | null) {
+  if (!value) return value;
+  const base64Prefix = "base64-";
+  if (value.startsWith(base64Prefix)) {
+    const encoded = value.slice(base64Prefix.length);
+    try {
+      return Buffer.from(encoded, "base64").toString("utf8");
+    } catch {
+      return value;
+    }
+  }
+  return value;
+}
 
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url)
@@ -21,10 +35,33 @@ export async function GET(request: NextRequest) {
       return NextResponse.redirect(`${requestUrl.origin}/login`)
     }
 
-    const cookieStore = cookies()
-    const supabase = createRouteHandlerClient<Database>({
-      cookies: () => cookieStore,
-    })
+    // Next.js 15+ requires cookies() to be awaited
+    const cookieStore = await cookies()
+
+    const supabase = createServerClient<Database>(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return cookieStore.getAll().map(({ name, value }) => ({
+              name,
+              value: normalizeCookieValue(value) ?? "",
+            }));
+          },
+          setAll(cookiesToSet) {
+            try {
+              cookiesToSet.forEach(({ name, value, options }) =>
+                cookieStore.set(name, value, options),
+              );
+            } catch (error) {
+              // Ignore errors in route handlers
+              console.error('Cookie setting error:', error);
+            }
+          },
+        },
+      }
+    )
 
     const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
     if (exchangeError) {
