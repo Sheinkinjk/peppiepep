@@ -7,9 +7,6 @@ export default function Contact() {
       <main className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10">
 
         <div className="max-w-2xl mx-auto space-y-4 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
-            Get in touch
-          </div>
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
             Contact Us
           </h1>
@@ -50,38 +47,6 @@ export default function Contact() {
             </div>
           </a>
         </div>
-
-        <section className="rounded-3xl bg-white/80 p-8 shadow-xl ring-1 ring-slate-100 backdrop-blur max-w-3xl mx-auto w-full">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold text-slate-900 mb-2">
-                What is the best way to get started?
-              </h3>
-              <p className="text-sm text-slate-600">
-                Sign up for a free account and upload your first customer list. You can have a working referral program in under 5 minutes. If you need help, schedule a call and we will walk you through it.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-slate-900 mb-2">
-                Do you offer custom integrations?
-              </h3>
-              <p className="text-sm text-slate-600">
-                We are currently in private beta and gathering feedback on which integrations would be most valuable. Email us with your specific needs and we will let you know what is possible.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-slate-900 mb-2">
-                Can I get help setting up my first campaign?
-              </h3>
-              <p className="text-sm text-slate-600">
-                Absolutely! We offer white-glove onboarding for all new users. Schedule a call and we will help you upload your customers, set up rewards, and launch your first referral campaign.
-              </p>
-            </div>
-          </div>
-        </section>
 
       </main>
     </div>
