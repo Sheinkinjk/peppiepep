@@ -5,6 +5,7 @@ import { StickyHeader } from "@/components/StickyHeader";
 import Footer from "@/components/layout/Footer";
 import { SupportChatbot } from "@/components/SupportChatbot";
 import { Toaster } from "@/components/ui/toaster";
+import { SupabaseSessionListener } from "@/components/SupabaseSessionListener";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({
         </div>
         <SupportChatbot />
         <Toaster />
+        <SupabaseSessionListener />
       </body>
     </html>
   );

@@ -1,8 +1,9 @@
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-import type { Database } from '@/types/supabase'
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import type { Session } from '@supabase/supabase-js';
+import type { Database } from '@/types/supabase';
 
 function normalizeCookieValue(value?: string | null) {
   if (!value) return value;
@@ -16,6 +17,36 @@ function normalizeCookieValue(value?: string | null) {
     }
   }
   return value;
+}
+
+async function createSupabaseRouteClient() {
+  const cookieStore = await cookies();
+
+  const supabase = createServerClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll().map(({ name, value }) => ({
+            name,
+            value: normalizeCookieValue(value) ?? "",
+          }));
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options),
+            );
+          } catch (error) {
+            console.error('Cookie setting error:', error);
+          }
+        },
+      },
+    },
+  );
+
+  return supabase;
 }
 
 export async function GET(request: NextRequest) {
@@ -35,33 +66,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.redirect(`${requestUrl.origin}/login`)
     }
 
-    // Next.js 15+ requires cookies() to be awaited
-    const cookieStore = await cookies()
-
-    const supabase = createServerClient<Database>(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() {
-            return cookieStore.getAll().map(({ name, value }) => ({
-              name,
-              value: normalizeCookieValue(value) ?? "",
-            }));
-          },
-          setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options),
-              );
-            } catch (error) {
-              // Ignore errors in route handlers
-              console.error('Cookie setting error:', error);
-            }
-          },
-        },
-      }
-    )
+    const supabase = await createSupabaseRouteClient();
 
     const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
     if (exchangeError) {
@@ -104,5 +109,39 @@ export async function GET(request: NextRequest) {
         ? callbackError.message
         : 'Authentication failed. Please try again.'
     return NextResponse.redirect(`${requestUrl.origin}/login?error=${encodeURIComponent(message)}`)
+  }
+}
+
+type AuthStatePayload = {
+  event: string;
+  session: Session | null;
+};
+
+export async function POST(request: NextRequest) {
+  try {
+    const { event, session }: AuthStatePayload = await request.json();
+    const supabase = await createSupabaseRouteClient();
+
+    const shouldPersistSession = new Set([
+      'INITIAL_SESSION',
+      'SIGNED_IN',
+      'TOKEN_REFRESHED',
+      'USER_UPDATED',
+    ]);
+    const shouldClearSession = new Set(['SIGNED_OUT', 'USER_DELETED', 'PASSWORD_RECOVERY']);
+
+    if (session && shouldPersistSession.has(event)) {
+      await supabase.auth.setSession(session);
+    } else if (!session && shouldClearSession.has(event)) {
+      await supabase.auth.signOut();
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Auth session sync error:', error);
+    return NextResponse.json(
+      { error: 'Unable to sync auth session' },
+      { status: 500 },
+    );
   }
 }

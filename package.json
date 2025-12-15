@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "test:auth-flow": "node scripts/test-auth-flow.mjs",
     "supabase:types": "supabase gen types typescript --project-id $SUPABASE_PROJECT_ID > src/types/supabase.ts",
     "deploy:prod": "node scripts/deploy-prod.mjs"
   },
