@@ -5,20 +5,6 @@ import type { NextRequest } from 'next/server';
 import type { Session } from '@supabase/supabase-js';
 import type { Database } from '@/types/supabase';
 
-function normalizeCookieValue(value?: string | null) {
-  if (!value) return value;
-  const base64Prefix = "base64-";
-  if (value.startsWith(base64Prefix)) {
-    const encoded = value.slice(base64Prefix.length);
-    try {
-      return Buffer.from(encoded, "base64").toString("utf8");
-    } catch {
-      return value;
-    }
-  }
-  return value;
-}
-
 async function createSupabaseRouteClient() {
   const cookieStore = await cookies();
 
@@ -28,10 +14,7 @@ async function createSupabaseRouteClient() {
     {
       cookies: {
         getAll() {
-          return cookieStore.getAll().map(({ name, value }) => ({
-            name,
-            value: normalizeCookieValue(value) ?? "",
-          }));
+          return cookieStore.getAll();
         },
         setAll(cookiesToSet) {
           try {
