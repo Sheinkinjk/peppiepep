@@ -10,7 +10,6 @@ import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 import { Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Database } from "@/types/supabase";
-import type { Session } from "@supabase/supabase-js";
 
 type PasswordStrengthState = {
   score: number;
@@ -65,19 +64,6 @@ function LoginContent() {
   const searchParams = useSearchParams();
   const supabase = createBrowserSupabaseClient();
   type BusinessInsert = Database["public"]["Tables"]["businesses"]["Insert"];
-
-  const syncServerAuthSession = async (session: Session | null, event: string) => {
-    try {
-      await fetch("/auth/callback", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "same-origin",
-        body: JSON.stringify({ event, session }),
-      });
-    } catch (syncError) {
-      console.error("Failed to sync auth session", syncError);
-    }
-  };
 
   // Check for URL error parameters
   useEffect(() => {
@@ -195,8 +181,9 @@ function LoginContent() {
           return;
         }
 
-        await syncServerAuthSession(data.session ?? null, "SIGNED_IN");
-        router.push("/dashboard");
+        // Use window.location.href instead of router.push to ensure cookies are sent with the request
+        // This does a full page navigation which guarantees the middleware sees the auth cookies
+        window.location.href = "/dashboard";
       }
     } catch (err: unknown) {
       const message =
