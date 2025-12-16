@@ -48,6 +48,14 @@ export async function middleware(request: NextRequest) {
   // supabase.auth.getUser(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
 
+  // Don't run auth checks on auth callback routes - they handle their own auth
+  if (
+    request.nextUrl.pathname === '/auth/callback' ||
+    request.nextUrl.pathname === '/auth/reset-password'
+  ) {
+    return supabaseResponse
+  }
+
   const {
     data: { user },
   } = await supabase.auth.getUser()

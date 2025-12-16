@@ -214,20 +214,16 @@ function LoginContent() {
     setError("");
 
     try {
-      try {
-        await supabase.auth.signOut();
-      } catch {
-        // ignore sign-out issues, we just want a clean session
-      }
-
       const { error: signInError } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: `${location.origin}/auth/callback`,
+          skipBrowserRedirect: false,
         },
       });
 
       if (signInError) throw signInError;
+      // Browser will redirect to Google, don't set loading to false
     } catch (err: unknown) {
       const fallbackMessage =
         "Google sign-in failed. Clear your browser cookies or try a private window, then attempt again.";
