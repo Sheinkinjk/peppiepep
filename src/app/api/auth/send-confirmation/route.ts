@@ -3,6 +3,7 @@ import { z } from "zod";
 import { Resend } from "resend";
 
 import { createServiceClient } from "@/lib/supabase";
+import { sendAdminNotification, buildNewAccountEmail } from "@/lib/email-notifications";
 
 const bodySchema = z.object({
   email: z.string().email(),
@@ -70,6 +71,18 @@ export async function POST(request: Request) {
       `,
       text: `Confirm your Refer Labs account: ${confirmationLink}`,
       ...(process.env.RESEND_REPLY_TO ? { reply_to: process.env.RESEND_REPLY_TO } : {}),
+    });
+
+    // Send admin notification about new account
+    await sendAdminNotification({
+      subject: `🎉 New account created: ${email}`,
+      html: buildNewAccountEmail({
+        email,
+        createdAt: new Date().toISOString(),
+      }),
+    }).catch((err) => {
+      console.error("Failed to send admin notification for new account:", err);
+      // Don't fail the request if admin notification fails
     });
   } catch (sendError) {
     console.error("Resend confirmation email failed", sendError);

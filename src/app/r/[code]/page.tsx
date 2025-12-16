@@ -61,21 +61,22 @@ function initialsFromName(name?: string | null) {
 type ReferralSearchParams = Record<string, string | string[] | undefined>;
 
 interface ReferralPageProps {
-  params: { code: string };
+  params: Promise<{ code: string }>;
   searchParams?: ReferralSearchParams;
 }
 
 export default async function ReferralPage({ params, searchParams }: ReferralPageProps) {
   const supabase = await createServiceClient();
+  const { code } = await params;
 
   const { data: customer } = await supabase
     .from("customers")
     .select("*, business:business_id(*)")
-    .ilike("referral_code", params.code)
+    .ilike("referral_code", code)
     .single();
 
   if (!customer) {
-    redirect(`/referral?code=${encodeURIComponent(params.code)}`);
+    redirect(`/referral?code=${encodeURIComponent(code)}`);
   }
 
   type CustomerWithBusiness = Database["public"]["Tables"]["customers"]["Row"] & {
@@ -83,6 +84,29 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   };
 
   const customerWithBusiness = customer as CustomerWithBusiness;
+
+  // Check if this is the admin's referral code - redirect to partner program with attribution
+  const ADMIN_REFERRAL_CODE = process.env.ADMIN_REFERRAL_CODE || "Jn9wjbn2kQlO";
+  if (code.toLowerCase() === ADMIN_REFERRAL_CODE.toLowerCase()) {
+    // Redirect to route handler that will set attribution cookie and redirect to partner program
+    // This is necessary because cookies can only be set in Route Handlers or Server Actions in Next.js 16+
+    const params = new URLSearchParams();
+    params.set("code", customerWithBusiness.referral_code || code);
+    params.set("ambassador_id", customerWithBusiness.id);
+    params.set("business_id", customerWithBusiness.business_id);
+
+    // Pass through any UTM or tracking parameters
+    if (searchParams) {
+      Object.entries(searchParams).forEach(([key, value]) => {
+        const strValue = Array.isArray(value) ? value[0] : value;
+        if (strValue) {
+          params.set(key, strValue);
+        }
+      });
+    }
+
+    redirect(`/api/referral-redirect?${params.toString()}`);
+  }
   const offerText = customerWithBusiness.business?.offer_text || "$15 credit";
   const businessName = customerWithBusiness.business?.name || "our business";
   const rewardAmount = customerWithBusiness.business?.reward_amount || 15;
@@ -207,7 +231,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
     ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
     ensureAbsoluteUrl(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ??
     "https://referlabs.com.au";
-  const resolvedReferralUrl = `${siteOrigin}/r/${customerWithBusiness.referral_code ?? params.code}`;
+  const resolvedReferralUrl = `${siteOrigin}/r/${customerWithBusiness.referral_code ?? code}`;
   const shareMessage = `I can get you ${newUserReward} at ${businessName}. Tap ${resolvedReferralUrl}${
     discountCode ? ` and mention ${discountCode}` : ""
   } so their concierge locks it in for you.`;

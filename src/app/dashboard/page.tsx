@@ -58,6 +58,7 @@ import { ensureAbsoluteUrl } from "@/lib/urls";
 import { DashboardHeader } from "./components/DashboardHeader";
 import { ProgressTracker } from "./components/ProgressTracker";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
+import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -420,6 +421,29 @@ export default async function Dashboard() {
 
     if (error) {
       console.error("Failed to save onboarding metadata:", error);
+    } else {
+      // Send admin notification about onboarding progress
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      await sendAdminNotification({
+        subject: `📋 Onboarding snapshot saved: ${updatePayload.name || business.name}`,
+        html: buildOnboardingSnapshotEmail({
+          businessName: updatePayload.name || business.name || "Business",
+          userEmail: user?.email || "Unknown user",
+          businessType: metadata.businessType || undefined,
+          websiteUrl: metadata.websiteUrl || undefined,
+          websitePlatform: metadata.websitePlatform || undefined,
+          crmPlatform: metadata.crmPlatform || undefined,
+          avgSale: metadata.avgSale || undefined,
+          referralGoal: metadata.referralGoal || undefined,
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch((err) => {
+        console.error("Failed to send onboarding snapshot notification:", err);
+        // Don't fail the request if notification fails
+      });
     }
 
     revalidatePath("/dashboard");

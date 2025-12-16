@@ -41,6 +41,30 @@ async function submitPartnerApplication(formData: FormData) {
   }
   const businessId = resolvedBusinessId;
 
+  // Check for attribution cookie from admin referral link
+  const { cookies } = await import("next/headers");
+  const cookieStore = await cookies();
+  const refAmbassadorCookie = cookieStore.get("ref_ambassador");
+  let attributedAmbassadorId: string | null = null;
+  let attributedAmbassadorCode: string | null = null;
+  let attributedBusinessId: string | null = null;
+
+  if (refAmbassadorCookie?.value) {
+    try {
+      const ambassadorData = JSON.parse(refAmbassadorCookie.value);
+      // Check if cookie is still within 30-day window
+      const cookieAge = Date.now() - (ambassadorData.timestamp || 0);
+      const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+      if (cookieAge < thirtyDaysMs) {
+        attributedAmbassadorId = ambassadorData.id;
+        attributedAmbassadorCode = ambassadorData.code;
+        attributedBusinessId = ambassadorData.business_id;
+      }
+    } catch (err) {
+      console.error("Failed to parse attribution cookie:", err);
+    }
+  }
+
   const getString = (key: string) => {
     const raw = formData.get(key);
     if (typeof raw !== "string") return null;
@@ -197,6 +221,49 @@ async function submitPartnerApplication(formData: FormData) {
       },
     ]);
 
+    // Create referral record if attributed to an ambassador (e.g., admin's referral link)
+    if (attributedAmbassadorId && attributedBusinessId) {
+      try {
+        await supabase.from("referrals").insert([
+          {
+            business_id: attributedBusinessId,
+            ambassador_id: attributedAmbassadorId,
+            referred_name: fullName ?? fallbackName,
+            referred_phone: phone,
+            referred_email: email,
+            status: "pending",
+            source: "partner_program",
+            campaign_id: null,
+            consent_given: true, // Partner application implies consent
+            locale: "en",
+            metadata: {
+              company,
+              website,
+              application_type: "partner",
+            },
+          },
+        ]);
+
+        // Log the referral signup event
+        await supabase.from("referral_events").insert([
+          {
+            business_id: attributedBusinessId,
+            ambassador_id: attributedAmbassadorId,
+            event_type: "signup_submitted",
+            source: "partner_program",
+            device: null,
+            metadata: {
+              referred_customer_id: customerId,
+              application_company: company,
+            },
+          },
+        ]);
+      } catch (refError) {
+        console.error("Failed to create referral record:", refError);
+        // Don't fail the entire application if referral tracking fails
+      }
+    }
+
     const siteOrigin = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ?? "https://referlabs.com.au";
     const referralLink = referralCode ? `${siteOrigin}/r/${referralCode}` : null;
 
@@ -236,6 +303,15 @@ async function submitPartnerApplication(formData: FormData) {
                         <p style="margin:0 0 8px;font-weight:600;">Auto-generated link</p>
                         <p style="margin:0;"><a href="${referralLink}" target="_blank">${referralLink}</a></p>
                         ${discountCode ? `<p style="margin:8px 0 0;font-size:14px;color:#065f46;">Discount code: <strong>${discountCode}</strong></p>` : ""}
+                      </div>`
+                    : ""
+                }
+                ${
+                  attributedAmbassadorCode
+                    ? `<div style="margin-top:16px;padding:16px;border-radius:16px;background:#fef3c7;border:1px solid #fcd34d;">
+                        <p style="margin:0 0 4px;font-weight:600;color:#92400e;">🎯 Referred by Ambassador</p>
+                        <p style="margin:0;font-size:14px;color:#78350f;">This application was attributed to referral code: <strong>${attributedAmbassadorCode}</strong></p>
+                        <p style="margin:4px 0 0;font-size:12px;color:#92400e;">A referral record has been created in the dashboard.</p>
                       </div>`
                     : ""
                 }
