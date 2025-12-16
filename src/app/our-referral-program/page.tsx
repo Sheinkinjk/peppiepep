@@ -24,6 +24,7 @@ import { redirect } from "next/navigation";
 import { nanoid } from "nanoid";
 import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import { ensureAbsoluteUrl } from "@/lib/urls";
+import { PartnerApplicationSuccessModal } from "@/components/PartnerApplicationSuccessModal";
 
 export const metadata: Metadata = {
   title: "Join Our Partner Program | Refer Labs",
@@ -264,6 +265,9 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
   const applyError = searchParams?.applied === "0";
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      {/* Success Modal */}
+      <PartnerApplicationSuccessModal />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0abab5] via-[#24d9e2] to-[#0abab5] py-20 sm:py-32">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
