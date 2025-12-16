@@ -124,28 +124,28 @@ const heroBadges: HeroBadgeSpec[] = [
     title: "NEW REFERRAL",
     text: "Jenny used a referral link",
     colors: ["#855b4c", "#a87261"],
-    position: "top-3 left-2",
+    position: "top-6 left-4 lg:top-4 lg:left-6",
   },
   {
     id: "hero-vip",
     title: "VIP BOOKING",
     text: "David confirmed a new order",
     colors: ["#2c5248", "#356757"],
-    position: "top-3 right-2",
+    position: "top-6 right-4 lg:top-4 lg:right-6",
   },
   {
     id: "hero-leaderboard",
     title: "LEADERBOARD",
-    text: "Jake referred 24 orders this month",
+    text: "Jake referred 24 orders",
     colors: ["#1f2c3b", "#3b4e5d"],
-    position: "bottom-6 left-3",
+    position: "bottom-8 left-4 lg:bottom-6 lg:left-6",
   },
   {
     id: "hero-revenue",
-    title: "REVENUE BOOK",
-    text: "$35,500 additional revenue generated",
+    title: "REVENUE",
+    text: "$35,500 generated",
     colors: ["#3a3334", "#54484a"],
-    position: "bottom-6 right-3",
+    position: "bottom-8 right-4 lg:bottom-6 lg:right-6",
   },
 ];
 
@@ -236,27 +236,28 @@ const PillarCard = ({ pillar }: { pillar: ReferralPillar }) => (
 const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
   <div
     className={cn(
-      "hero-badge pointer-events-none select-none rounded-[22px] border border-white/20 bg-white/60 px-3.5 py-2.5 shadow-lg shadow-black/8 backdrop-blur-sm sm:px-5 sm:py-3.5",
-      "flex min-w-[220px] max-w-[280px] items-center gap-3.5 transition-all duration-300 opacity-75 hover:opacity-90",
+      "hero-badge pointer-events-none select-none rounded-xl border border-white/15 bg-white/40 px-2.5 py-2",
+      "flex min-w-[140px] max-w-[180px] items-center gap-2.5 transition-all duration-300",
+      "opacity-60 hover:opacity-75 backdrop-blur-md shadow-sm shadow-black/5",
       className,
     )}
     style={{
-      background: `linear-gradient(120deg, ${badge.colors[0]}dd, ${badge.colors[1]}dd)`,
+      background: `linear-gradient(120deg, ${badge.colors[0]}cc, ${badge.colors[1]}cc)`,
     }}
   >
-    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white/95 shadow-sm shadow-black/5">
+    <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-white/90 shadow-sm">
       <Image
         src="/logo.svg"
-        alt="Refer Labs logo"
-        width={44}
-        height={44}
-        className="h-9 w-9 object-contain opacity-90"
+        alt="Refer Labs"
+        width={24}
+        height={24}
+        className="h-5 w-5 object-contain opacity-85"
         priority={false}
       />
     </div>
-    <div className="space-y-0.5 text-left text-white">
-      <p className="text-[10px] font-bold uppercase tracking-[0.15em] opacity-90">{badge.title}</p>
-      <p className="text-sm font-semibold leading-tight text-white/85">{badge.text}</p>
+    <div className="flex-1 min-w-0">
+      <p className="text-[9px] font-bold uppercase tracking-wider opacity-85 text-white/90 truncate">{badge.title}</p>
+      <p className="text-xs font-medium leading-tight text-white/80 truncate">{badge.text}</p>
     </div>
   </div>
 );
@@ -270,10 +271,10 @@ export default function Home() {
 
       <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 px-4 pb-16 sm:pb-20 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
-        {/* Hero Section - Redesigned with bulletproof positioning */}
-        <div className="mx-auto w-full max-w-7xl relative py-10 sm:py-12 lg:py-16 min-h-[520px] lg:min-h-[620px]">
-          {/* New hero badges positioned in corners */}
-          <div className="pointer-events-none absolute inset-0 hidden lg:block">
+        {/* Hero Section - Premium Polish */}
+        <div className="mx-auto w-full max-w-7xl relative py-10 sm:py-12 lg:py-20 min-h-[480px] lg:min-h-[580px]">
+          {/* Corner notification cards - Desktop only, subtle and ambient */}
+          <div className="pointer-events-none absolute inset-0 hidden xl:block">
             {heroBadges.map((badge) => (
               <HeroBadge
                 key={badge.id}
@@ -283,13 +284,24 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="relative z-10 flex min-h-[460px] flex-col items-center justify-center gap-8 px-4 text-center sm:px-6 lg:px-8">
-            <div className="space-y-5 sm:space-y-6">
+          {/* Mobile: Show only top 2 cards, even more subtle */}
+          <div className="pointer-events-none absolute inset-0 xl:hidden">
+            {heroBadges.slice(0, 2).map((badge) => (
+              <HeroBadge
+                key={badge.id}
+                badge={badge}
+                className={cn("absolute hidden sm:flex", badge.position, "opacity-40")}
+              />
+            ))}
+          </div>
+
+          <div className="relative z-10 flex min-h-[420px] flex-col items-center justify-center gap-8 px-4 text-center sm:px-8 lg:px-16">
+            <div className="space-y-5 sm:space-y-6 max-w-5xl">
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-[3.25rem] lg:text-[3.75rem]">
                 <span className="block">We Help Launch Successful</span>
                 <span className="block">Referral Programs</span>
               </h1>
-              <p className="max-w-3xl text-lg font-semibold leading-snug text-slate-700 sm:text-xl">
+              <p className="max-w-3xl mx-auto text-lg font-semibold leading-snug text-slate-700 sm:text-xl">
                 We'll Activate Additional Revenue That Plugs Straight Into Your Sales and Marketing Strategy.
               </p>
             </div>
