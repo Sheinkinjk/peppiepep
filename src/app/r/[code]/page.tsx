@@ -1,5 +1,7 @@
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+export const runtime = "nodejs"; // Force Node.js runtime for server-side redirects
+export const fetchCache = "force-no-store"; // Prevent caching of this page
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

@@ -44,17 +44,25 @@ export async function GET(request: NextRequest) {
   const response = NextResponse.redirect(new URL("/our-referral-program", request.url));
 
   // Set attribution cookie (30-day window)
-  response.cookies.set("ref_ambassador", JSON.stringify({
+  const cookieData = {
     id: ambassadorId,
     code,
     business_id: businessId,
     timestamp: Date.now(),
-  }), {
+    source: sourceParam ?? "direct",
+  };
+
+  response.cookies.set("ref_ambassador", JSON.stringify(cookieData), {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: 30 * 24 * 60 * 60, // 30 days
     path: "/",
+    // Set domain for subdomain support (e.g., www.referlabs.com.au)
+    // Note: Only set domain in production, not in local development
+    ...(process.env.NODE_ENV === "production" && {
+      domain: ".referlabs.com.au"
+    })
   });
 
   return response;
