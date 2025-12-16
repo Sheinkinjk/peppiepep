@@ -1,23 +1,12 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-function normalizeCookieValue(value?: string | null) {
-  if (!value) return value;
-  const base64Prefix = "base64-";
-  if (value.startsWith(base64Prefix)) {
-    const encoded = value.slice(base64Prefix.length);
-    try {
-      return Buffer.from(encoded, "base64").toString("utf8");
-    } catch {
-      return value;
-    }
-  }
-  return value;
-}
-
 export async function middleware(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({
-    request,
+  // Create a response that we'll update with cookies
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    },
   })
 
   const supabase = createServerClient(
@@ -26,19 +15,12 @@ export async function middleware(request: NextRequest) {
     {
       cookies: {
         getAll() {
-          return request.cookies.getAll().map(({ name, value }) => ({
-            name,
-            value: normalizeCookieValue(value) ?? "",
-          }))
+          return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
-          supabaseResponse = NextResponse.next({
-            request,
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options)
           })
-          cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
-          )
         },
       },
     }
@@ -53,7 +35,7 @@ export async function middleware(request: NextRequest) {
     request.nextUrl.pathname === '/auth/callback' ||
     request.nextUrl.pathname === '/auth/reset-password'
   ) {
-    return supabaseResponse
+    return response
   }
 
   const {
@@ -74,20 +56,9 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // IMPORTANT: You *must* return the supabaseResponse object as it is. If you're
-  // creating a new response object with NextResponse.next() make sure to:
-  // 1. Pass the request in it, like so:
-  //    const myNewResponse = NextResponse.next({ request })
-  // 2. Copy over the cookies, like so:
-  //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
-  // 3. Change the myNewResponse object to fit your needs, but avoid changing
-  //    the cookies!
-  // 4. Finally:
-  //    return myNewResponse
-  // If this is not done, you may be causing the browser and server to go out
-  // of sync and terminate the user's session prematurely!
-
-  return supabaseResponse
+  // IMPORTANT: You *must* return the response object as it is.
+  // This response has cookies set by Supabase's session refresh logic.
+  return response
 }
 
 export const config = {
