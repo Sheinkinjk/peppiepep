@@ -1042,7 +1042,7 @@ export default async function Dashboard() {
 
   // Query partner referrals separately (B2B referrals to Refer Labs partner program)
   // Filter admin's referrals (these are likely B2B partner referrals)
-  const adminReferralCode = process.env.ADMIN_REFERRAL_CODE || "Jn9wjbn2kQlO";
+  const adminReferralCode = process.env.ADMIN_REFERRAL_CODE?.trim() || "Jn9wjbn2kQlO";
   const adminCustomer = safeCustomers.find(c => c.referral_code === adminReferralCode);
 
   const safePartnerReferrals = adminCustomer

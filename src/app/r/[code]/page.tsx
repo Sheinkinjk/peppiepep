@@ -88,7 +88,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   const customerWithBusiness = customer as CustomerWithBusiness;
 
   // Check if this is the admin's referral code - redirect to partner program with attribution
-  const ADMIN_REFERRAL_CODE = process.env.ADMIN_REFERRAL_CODE || "Jn9wjbn2kQlO";
+  const ADMIN_REFERRAL_CODE = process.env.ADMIN_REFERRAL_CODE?.trim() || "Jn9wjbn2kQlO";
   if (code.toLowerCase() === ADMIN_REFERRAL_CODE.toLowerCase()) {
     // Redirect to route handler that will set attribution cookie and redirect to partner program
     // This is necessary because cookies can only be set in Route Handlers or Server Actions in Next.js 16+

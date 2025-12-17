@@ -4,7 +4,7 @@ import { createServiceClient } from "@/lib/supabase";
 export async function GET() {
   try {
     const supabase = await createServiceClient();
-    const ADMIN_CODE = process.env.ADMIN_REFERRAL_CODE;
+    const ADMIN_CODE = process.env.ADMIN_REFERRAL_CODE?.trim();
 
     if (!ADMIN_CODE) {
       return NextResponse.json({
