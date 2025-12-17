@@ -1275,9 +1275,9 @@ export default async function Dashboard() {
             />
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95" data-csv-upload>
+            <Card className="p-6 border border-slate-200 rounded-lg bg-white" data-csv-upload>
               <div className="flex items-start gap-3 mb-6">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center">
+                <div className="h-12 w-12 rounded-lg bg-purple-600 flex items-center justify-center">
                   <Upload className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -1288,9 +1288,9 @@ export default async function Dashboard() {
               <CSVUploadForm />
             </Card>
 
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95" data-quick-add>
+            <Card className="p-6 border border-slate-200 rounded-lg bg-white" data-quick-add>
               <QuickAddCustomerForm quickAddAction={quickAddCustomer} />
-              <div className="mt-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200 p-5">
+              <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-5">
                 <p className="text-sm font-semibold text-emerald-800">
                   Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
                 </p>
@@ -1301,7 +1301,7 @@ export default async function Dashboard() {
             </Card>
           </div>
 
-          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+          <Card className="p-6 border border-slate-200 rounded-lg bg-white">
             <div className="mb-6">
               <h3 className="text-xl font-black text-slate-900 mb-2">
                 All Customers ({safeCustomers.length})
@@ -1328,7 +1328,7 @@ export default async function Dashboard() {
       content: (
         <div className="space-y-6">
           <Step3Explainer />
-          <Card className="p-6 sm:p-8 shadow-xl shadow-emerald-200/60 ring-2 ring-emerald-200/80 rounded-3xl border-emerald-200/80 bg-gradient-to-br from-emerald-50 to-white">
+          <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-2xl font-black text-slate-900 mb-2">Ready to Launch?</h3>
@@ -1347,7 +1347,7 @@ export default async function Dashboard() {
             discountCaptureSecret={business.discount_capture_secret ?? null}
           />
 
-          <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+          <Card className="p-6 border border-slate-200 rounded-lg bg-white">
             <div className="mb-6">
               <h3 className="text-xl font-black text-slate-900">Campaign Builder</h3>
               <p className="text-sm text-slate-600 mt-1">Design and send personalized campaigns to your ambassadors</p>
@@ -1383,32 +1383,32 @@ export default async function Dashboard() {
         <div className="space-y-6">
           <Step4Explainer />
         <Tabs defaultValue="analytics">
-          <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-sm">
+          <div className="border border-slate-200 bg-white p-4 rounded-lg">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
               Campaign insights
             </div>
             <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
               <TabsTrigger
                 value="analytics"
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
               >
                 Analytics
               </TabsTrigger>
               <TabsTrigger
                 value="history"
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
               >
                 Campaign History
               </TabsTrigger>
               <TabsTrigger
                 value="partner-referrals"
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
               >
                 Partner Referrals {safePartnerReferrals.length > 0 && `(${safePartnerReferrals.length})`}
               </TabsTrigger>
               <TabsTrigger
                 value="share"
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
               >
                 Share Assets
               </TabsTrigger>
@@ -1424,7 +1424,7 @@ export default async function Dashboard() {
           </TabsContent>
 
           <TabsContent value="history">
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95">
+            <Card className="p-6 border border-slate-200 rounded-lg bg-white">
               <h3 className="text-xl font-black text-slate-900 mb-4">
                 Campaign History
               </h3>
@@ -1517,7 +1517,7 @@ export default async function Dashboard() {
           </div>
 
           <TabsContent value="referrals">
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+            <Card className="p-6 border border-slate-200 rounded-lg bg-white">
               <div className="space-y-5">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
@@ -1596,7 +1596,7 @@ export default async function Dashboard() {
           </TabsContent>
 
           <TabsContent value="analytics">
-            <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 rounded-3xl border-slate-200/80">
+            <Card className="p-6 border border-slate-200 rounded-lg bg-white">
               <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Performance Analytics</h2>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -1611,7 +1611,7 @@ export default async function Dashboard() {
                   <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                <div className="p-6 rounded-lg bg-emerald-50 border border-emerald-200">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
                       <TrendingUp className="h-5 w-5 text-white" />
@@ -1711,7 +1711,7 @@ export default async function Dashboard() {
                   <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
                   <p className="text-sm text-slate-600 mt-1">Across all channels</p>
                 </div>
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                <div className="p-6 rounded-lg bg-emerald-50 border border-emerald-200">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
                       <DollarSign className="h-5 w-5 text-white" />
