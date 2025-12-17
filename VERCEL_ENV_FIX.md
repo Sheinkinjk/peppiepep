@@ -35,31 +35,27 @@ Without this variable:
 
 5. Click **"Save"**
 
-### Step 2: Fix Existing Variables with Trailing Newlines
+### Step 2: (OPTIONAL) Fix Existing Variables with Trailing Newlines
 
-The following environment variables have trailing `\n` characters and should be cleaned up:
+**STATUS:** ✅ Code has been updated to handle these automatically via `.trim()`
 
-1. **AMBASSADOR_API_SECRET**
-   - Current value ends with: `...bc0b\n`
-   - Fix: Remove the `\n`
+The following environment variables have trailing `\n` characters. The code now automatically trims these, but you can optionally clean them up in Vercel for hygiene:
 
-2. **RESEND_REPLY_TO**
-   - Current value ends with: `...dev\n`
-   - Fix: Remove the `\n`
+1. **AMBASSADOR_API_SECRET** - ends with `\n`
+2. **RESEND_REPLY_TO** - ends with `\n`
+3. **RESEND_WEBHOOK_TOKEN** - ends with `\n`
+4. **TWILIO_WEBHOOK_TOKEN** - ends with `\n`
 
-3. **RESEND_WEBHOOK_TOKEN**
-   - Current value ends with: `...afb\n`
-   - Fix: Remove the `\n`
+**Code Fix Deployed (commit: 16e98ca):**
+All code now uses `.trim()` when reading these variables, so they will work correctly even with trailing whitespace.
 
-4. **TWILIO_WEBHOOK_TOKEN**
-   - Current value ends with: `...d281\n`
-   - Fix: Remove the `\n`
-
-**How to fix:**
+**Optional Cleanup in Vercel:**
 1. Go to each environment variable in Vercel
 2. Click "Edit"
 3. Remove any trailing whitespace/newlines
 4. Save
+
+This is purely for cleanliness - the system will work fine either way.
 
 ### Step 3: Redeploy
 
