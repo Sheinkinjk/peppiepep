@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     return rateLimitCheck.response;
   }
 
-  const webhookSecret = process.env.TWILIO_WEBHOOK_TOKEN;
+  const webhookSecret = process.env.TWILIO_WEBHOOK_TOKEN?.trim();
   if (!webhookSecret) {
     logger.error("TWILIO_WEBHOOK_TOKEN missing");
     return NextResponse.json(

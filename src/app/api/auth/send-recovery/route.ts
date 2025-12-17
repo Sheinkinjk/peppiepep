@@ -72,7 +72,7 @@ export async function POST(request: Request) {
         </div>
       `,
       text: `Reset your Refer Labs password: ${recoveryLink}`,
-      ...(process.env.RESEND_REPLY_TO ? { reply_to: process.env.RESEND_REPLY_TO } : {}),
+      ...(process.env.RESEND_REPLY_TO?.trim() ? { reply_to: process.env.RESEND_REPLY_TO.trim() } : {}),
     });
   } catch (sendError) {
     console.error("Resend recovery email failed", sendError);

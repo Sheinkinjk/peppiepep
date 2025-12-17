@@ -117,7 +117,7 @@ export async function dispatchCampaignMessagesInline({
           subject: (campaign.name as string | null) || business.name || "Refer Labs",
           html,
           text,
-          ...(process.env.RESEND_REPLY_TO ? { reply_to: process.env.RESEND_REPLY_TO } : {}),
+          ...(process.env.RESEND_REPLY_TO?.trim() ? { reply_to: process.env.RESEND_REPLY_TO.trim() } : {}),
         });
 
         const providerMessageId = response?.data?.id ?? null;

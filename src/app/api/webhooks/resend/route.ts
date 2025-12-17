@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     return rateLimitCheck.response;
   }
 
-  const secret = process.env.RESEND_WEBHOOK_TOKEN;
+  const secret = process.env.RESEND_WEBHOOK_TOKEN?.trim();
   if (!secret) {
     logger.error("RESEND_WEBHOOK_TOKEN missing");
     return NextResponse.json(

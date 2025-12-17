@@ -4,10 +4,10 @@ const DEFAULT_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
 function getAmbassadorSecret() {
   const secret =
-    process.env.AMBASSADOR_API_SECRET ??
-    process.env.NEXT_PUBLIC_AMBASSADOR_API_SECRET ??
-    process.env.SUPABASE_SERVICE_ROLE_KEY ??
-    process.env.SUPABASE_ANON_KEY;
+    process.env.AMBASSADOR_API_SECRET?.trim() ??
+    process.env.NEXT_PUBLIC_AMBASSADOR_API_SECRET?.trim() ??
+    process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ??
+    process.env.SUPABASE_ANON_KEY?.trim();
 
   if (!secret) {
     throw new Error(

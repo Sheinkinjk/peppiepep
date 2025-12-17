@@ -70,7 +70,7 @@ export async function POST(request: Request) {
         </div>
       `,
       text: `Confirm your Refer Labs account: ${confirmationLink}`,
-      ...(process.env.RESEND_REPLY_TO ? { reply_to: process.env.RESEND_REPLY_TO } : {}),
+      ...(process.env.RESEND_REPLY_TO?.trim() ? { reply_to: process.env.RESEND_REPLY_TO.trim() } : {}),
     });
 
     // Send admin notification about new account
