@@ -37,6 +37,7 @@ import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
 import { ReferralJourneyReport, type ReferralJourneyEvent } from "@/components/ReferralJourneyReport";
+import { PartnerReferralsTab } from "@/components/PartnerReferralsTab";
 import { logReferralEvent } from "@/lib/referral-events";
 import { completeReferralAttribution } from "@/lib/referral-revenue";
 import { generateUniqueDiscountCode } from "@/lib/discount-codes";
@@ -1039,6 +1040,15 @@ export default async function Dashboard() {
   const safeCustomers =
     (customers ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
 
+  // Query partner referrals separately (B2B referrals to Refer Labs partner program)
+  // Filter admin's referrals (these are likely B2B partner referrals)
+  const adminReferralCode = process.env.ADMIN_REFERRAL_CODE || "Jn9wjbn2kQlO";
+  const adminCustomer = safeCustomers.find(c => c.referral_code === adminReferralCode);
+
+  const safePartnerReferrals = adminCustomer
+    ? safeReferrals.filter(r => r.ambassador_id === adminCustomer.id)
+    : [];
+
   const pendingReferrals =
     safeReferrals.filter((r) => r.status === "pending").length || 0;
   const completedReferrals =
@@ -1377,7 +1387,7 @@ export default async function Dashboard() {
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
               Campaign insights
             </div>
-            <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-3">
+            <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
               <TabsTrigger
                 value="analytics"
                 className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
@@ -1389,6 +1399,12 @@ export default async function Dashboard() {
                 className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
               >
                 Campaign History
+              </TabsTrigger>
+              <TabsTrigger
+                value="partner-referrals"
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-600 data-[state=active]:border-[#0abab5] data-[state=active]:text-[#0a4b53] data-[state=active]:shadow-lg"
+              >
+                Partner Referrals {safePartnerReferrals.length > 0 && `(${safePartnerReferrals.length})`}
               </TabsTrigger>
               <TabsTrigger
                 value="share"
@@ -1436,6 +1452,13 @@ export default async function Dashboard() {
                 </Table>
               </div>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="partner-referrals">
+            <PartnerReferralsTab
+              referrals={safePartnerReferrals}
+              adminName={adminCustomer?.name || "Admin"}
+            />
           </TabsContent>
 
           <TabsContent value="share">
