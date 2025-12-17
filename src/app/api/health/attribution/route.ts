@@ -44,7 +44,6 @@ export async function GET() {
       .from('referrals')
       .select('id, created_at, referred_email')
       .eq('ambassador_id', admin.id)
-      .eq('source', 'partner_program')
       .gte('created_at', sevenDaysAgo);
 
     const recentAppCount = recentApps?.length || 0;
