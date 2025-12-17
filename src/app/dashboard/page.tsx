@@ -33,6 +33,7 @@ import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialo
 import { ReferralsTable } from "@/components/ReferralsTable";
 import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingChecklist";
 import { Step2Explainer, Step3Explainer, Step4Explainer, Step5Explainer } from "@/components/StepExplainers";
+import { Step1Education, Step2Education, Step3Education, Step4Education } from "@/components/dashboard/StepEducation";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
@@ -1209,30 +1210,33 @@ export default async function Dashboard() {
       icon: <Settings className="h-5 w-5" />,
       status: hasProgramSettings ? "complete" : "in_progress",
       content: (
-        <IntegrationTab
-          siteUrl={siteUrl}
-          businessName={business.name || "Your Business"}
-          offerText={business.offer_text}
-          clientRewardText={business.client_reward_text}
-          newUserRewardText={business.new_user_reward_text}
-          discountCaptureSecret={business.discount_capture_secret ?? null}
-          rewardType={business.reward_type}
-          rewardAmount={business.reward_amount}
-          upgradeName={business.upgrade_name}
-          rewardTerms={business.reward_terms}
-          signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
-          signOnBonusAmount={business.sign_on_bonus_amount}
-          signOnBonusType={business.sign_on_bonus_type}
-          signOnBonusDescription={business.sign_on_bonus_description}
-          logoUrl={business.logo_url ?? null}
-          brandHighlightColor={business.brand_highlight_color ?? null}
-          brandTone={business.brand_tone ?? null}
-          hasProgramSettings={hasProgramSettings}
-          hasCustomers={hasCustomers}
-          onboardingMetadata={business.onboarding_metadata ?? null}
-          updateSettingsAction={updateSettings}
-          updateOnboardingAction={updateBusinessOnboarding}
-        />
+        <div className="space-y-6">
+          <Step1Education />
+          <IntegrationTab
+            siteUrl={siteUrl}
+            businessName={business.name || "Your Business"}
+            offerText={business.offer_text}
+            clientRewardText={business.client_reward_text}
+            newUserRewardText={business.new_user_reward_text}
+            discountCaptureSecret={business.discount_capture_secret ?? null}
+            rewardType={business.reward_type}
+            rewardAmount={business.reward_amount}
+            upgradeName={business.upgrade_name}
+            rewardTerms={business.reward_terms}
+            signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
+            signOnBonusAmount={business.sign_on_bonus_amount}
+            signOnBonusType={business.sign_on_bonus_type}
+            signOnBonusDescription={business.sign_on_bonus_description}
+            logoUrl={business.logo_url ?? null}
+            brandHighlightColor={business.brand_highlight_color ?? null}
+            brandTone={business.brand_tone ?? null}
+            hasProgramSettings={hasProgramSettings}
+            hasCustomers={hasCustomers}
+            onboardingMetadata={business.onboarding_metadata ?? null}
+            updateSettingsAction={updateSettings}
+            updateOnboardingAction={updateBusinessOnboarding}
+          />
+        </div>
       ),
       helpText: "Start here: lock in business details, finalize rewards, and walk through the integration plan before moving on.",
     },
@@ -1245,6 +1249,7 @@ export default async function Dashboard() {
       status: hasCustomers ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
+          <Step2Education />
           <Step2Explainer />
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
             <ImplementationGuideDialog
@@ -1327,6 +1332,7 @@ export default async function Dashboard() {
       status: totalCampaignsSent > 0 ? "complete" : hasCustomers ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
+          <Step3Education />
           <Step3Explainer />
           <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
             <div className="flex items-center justify-between">
@@ -1381,6 +1387,7 @@ export default async function Dashboard() {
       status: totalCampaignsSent > 0 ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
+          <Step4Education />
           <Step4Explainer />
         <Tabs defaultValue="analytics">
           <div className="border border-slate-200 bg-white p-4 rounded-lg">
