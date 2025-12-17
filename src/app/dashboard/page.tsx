@@ -34,6 +34,8 @@ import { ReferralsTable } from "@/components/ReferralsTable";
 import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingChecklist";
 import { Step2Explainer, Step3Explainer, Step4Explainer, Step5Explainer } from "@/components/StepExplainers";
 import { Step1Education, Step2Education, Step3Education, Step4Education } from "@/components/dashboard/StepEducation";
+import { TwoColumnLayout } from "@/components/dashboard/TwoColumnLayout";
+import { Step1Sidebar, Step2Sidebar, Step3Sidebar, Step4Sidebar } from "@/components/dashboard/StepSidebars";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
@@ -1210,33 +1212,40 @@ export default async function Dashboard() {
       icon: <Settings className="h-5 w-5" />,
       status: hasProgramSettings ? "complete" : "in_progress",
       content: (
-        <div className="space-y-6">
-          <Step1Education />
-          <IntegrationTab
-            siteUrl={siteUrl}
-            businessName={business.name || "Your Business"}
-            offerText={business.offer_text}
-            clientRewardText={business.client_reward_text}
-            newUserRewardText={business.new_user_reward_text}
-            discountCaptureSecret={business.discount_capture_secret ?? null}
-            rewardType={business.reward_type}
-            rewardAmount={business.reward_amount}
-            upgradeName={business.upgrade_name}
-            rewardTerms={business.reward_terms}
-            signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
-            signOnBonusAmount={business.sign_on_bonus_amount}
-            signOnBonusType={business.sign_on_bonus_type}
-            signOnBonusDescription={business.sign_on_bonus_description}
-            logoUrl={business.logo_url ?? null}
-            brandHighlightColor={business.brand_highlight_color ?? null}
-            brandTone={business.brand_tone ?? null}
-            hasProgramSettings={hasProgramSettings}
-            hasCustomers={hasCustomers}
-            onboardingMetadata={business.onboarding_metadata ?? null}
-            updateSettingsAction={updateSettings}
-            updateOnboardingAction={updateBusinessOnboarding}
-          />
-        </div>
+        <TwoColumnLayout
+          learnContent={
+            <>
+              <Step1Education />
+              <Step1Sidebar />
+            </>
+          }
+          implementContent={
+            <IntegrationTab
+              siteUrl={siteUrl}
+              businessName={business.name || "Your Business"}
+              offerText={business.offer_text}
+              clientRewardText={business.client_reward_text}
+              newUserRewardText={business.new_user_reward_text}
+              discountCaptureSecret={business.discount_capture_secret ?? null}
+              rewardType={business.reward_type}
+              rewardAmount={business.reward_amount}
+              upgradeName={business.upgrade_name}
+              rewardTerms={business.reward_terms}
+              signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
+              signOnBonusAmount={business.sign_on_bonus_amount}
+              signOnBonusType={business.sign_on_bonus_type}
+              signOnBonusDescription={business.sign_on_bonus_description}
+              logoUrl={business.logo_url ?? null}
+              brandHighlightColor={business.brand_highlight_color ?? null}
+              brandTone={business.brand_tone ?? null}
+              hasProgramSettings={hasProgramSettings}
+              hasCustomers={hasCustomers}
+              onboardingMetadata={business.onboarding_metadata ?? null}
+              updateSettingsAction={updateSettings}
+              updateOnboardingAction={updateBusinessOnboarding}
+            />
+          }
+        />
       ),
       helpText: "Start here: lock in business details, finalize rewards, and walk through the integration plan before moving on.",
     },
@@ -1248,78 +1257,87 @@ export default async function Dashboard() {
       icon: <Users className="h-5 w-5" />,
       status: hasCustomers ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
       content: (
-        <div className="space-y-6">
-          <Step2Education />
-          <Step2Explainer />
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
-            <ImplementationGuideDialog
-              siteUrl={siteUrl}
-              businessName={business.name || "Your Business"}
-              discountCaptureSecret={business.discount_capture_secret}
-            />
-            <ProgramSettingsDialog
-              businessName={business.name || "Your Business"}
-              siteUrl={siteUrl}
-              offerText={business.offer_text}
-              newUserRewardText={business.new_user_reward_text}
-              clientRewardText={business.client_reward_text}
-              rewardType={business.reward_type}
-              rewardAmount={business.reward_amount}
-              upgradeName={business.upgrade_name}
-              rewardTerms={business.reward_terms}
-              logoUrl={business.logo_url ?? null}
-              brandHighlightColor={business.brand_highlight_color ?? null}
-              brandTone={business.brand_tone ?? null}
-              onboardingMetadata={business.onboarding_metadata ?? null}
-              signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
-              signOnBonusAmount={business.sign_on_bonus_amount}
-              signOnBonusType={business.sign_on_bonus_type}
-              signOnBonusDescription={business.sign_on_bonus_description}
-              updateOnboardingAction={updateBusinessOnboarding}
-              updateSettingsAction={updateSettings}
-            />
-          </div>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <Card className="p-6 border border-slate-200 rounded-lg bg-white" data-csv-upload>
-              <div className="flex items-start gap-3 mb-6">
-                <div className="h-12 w-12 rounded-lg bg-purple-600 flex items-center justify-center">
-                  <Upload className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-black text-slate-900">Import Customers</h2>
-                  <p className="text-sm text-slate-600">Bulk upload spreadsheets to instantly generate referral links.</p>
-                </div>
+        <TwoColumnLayout
+          learnContent={
+            <>
+              <Step2Education />
+              <Step2Sidebar />
+            </>
+          }
+          implementContent={
+            <>
+              <Step2Explainer />
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
+                <ImplementationGuideDialog
+                  siteUrl={siteUrl}
+                  businessName={business.name || "Your Business"}
+                  discountCaptureSecret={business.discount_capture_secret}
+                />
+                <ProgramSettingsDialog
+                  businessName={business.name || "Your Business"}
+                  siteUrl={siteUrl}
+                  offerText={business.offer_text}
+                  newUserRewardText={business.new_user_reward_text}
+                  clientRewardText={business.client_reward_text}
+                  rewardType={business.reward_type}
+                  rewardAmount={business.reward_amount}
+                  upgradeName={business.upgrade_name}
+                  rewardTerms={business.reward_terms}
+                  logoUrl={business.logo_url ?? null}
+                  brandHighlightColor={business.brand_highlight_color ?? null}
+                  brandTone={business.brand_tone ?? null}
+                  onboardingMetadata={business.onboarding_metadata ?? null}
+                  signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
+                  signOnBonusAmount={business.sign_on_bonus_amount}
+                  signOnBonusType={business.sign_on_bonus_type}
+                  signOnBonusDescription={business.sign_on_bonus_description}
+                  updateOnboardingAction={updateBusinessOnboarding}
+                  updateSettingsAction={updateSettings}
+                />
               </div>
-              <CSVUploadForm />
-            </Card>
+              <div className="grid gap-6 lg:grid-cols-2">
+                <Card className="p-6 border border-slate-200 rounded-lg bg-white" data-csv-upload>
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="h-12 w-12 rounded-lg bg-purple-600 flex items-center justify-center">
+                      <Upload className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-black text-slate-900">Import Customers</h2>
+                      <p className="text-sm text-slate-600">Bulk upload spreadsheets to instantly generate referral links.</p>
+                    </div>
+                  </div>
+                  <CSVUploadForm />
+                </Card>
 
-            <Card className="p-6 border border-slate-200 rounded-lg bg-white" data-quick-add>
-              <QuickAddCustomerForm quickAddAction={quickAddCustomer} />
-              <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-5">
-                <p className="text-sm font-semibold text-emerald-800">
-                  Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
-                </p>
-                <p className="text-xs text-emerald-700 mt-2">
-                  Every manual addition instantly receives their shareable link.
-                </p>
+                <Card className="p-6 border border-slate-200 rounded-lg bg-white" data-quick-add>
+                  <QuickAddCustomerForm quickAddAction={quickAddCustomer} />
+                  <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-5">
+                    <p className="text-sm font-semibold text-emerald-800">
+                      Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
+                    </p>
+                    <p className="text-xs text-emerald-700 mt-2">
+                      Every manual addition instantly receives their shareable link.
+                    </p>
+                  </div>
+                </Card>
               </div>
-            </Card>
-          </div>
 
-          <Card className="p-6 border border-slate-200 rounded-lg bg-white">
-            <div className="mb-6">
-              <h3 className="text-xl font-black text-slate-900 mb-2">
-                All Customers ({safeCustomers.length})
-              </h3>
-            </div>
-            <CustomersTable
-              initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
-              initialTotal={safeCustomers.length}
-              siteUrl={siteUrl}
-              adjustCreditsAction={adjustCustomerCredits}
-            />
-          </Card>
-        </div>
+              <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+                <div className="mb-6">
+                  <h3 className="text-xl font-black text-slate-900 mb-2">
+                    All Customers ({safeCustomers.length})
+                  </h3>
+                </div>
+                <CustomersTable
+                  initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+                  initialTotal={safeCustomers.length}
+                  siteUrl={siteUrl}
+                  adjustCreditsAction={adjustCustomerCredits}
+                />
+              </Card>
+            </>
+          }
+        />
       ),
       helpText: "Upload a CSV or add customers one-by-one. Each gets a unique referral link automatically.",
     },
@@ -1331,50 +1349,59 @@ export default async function Dashboard() {
       icon: <Mail className="h-5 w-5" />,
       status: totalCampaignsSent > 0 ? "complete" : hasCustomers ? "in_progress" : "incomplete",
       content: (
-        <div className="space-y-6">
-          <Step3Education />
-          <Step3Explainer />
-          <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-2xl font-black text-slate-900 mb-2">Ready to Launch?</h3>
-                <p className="text-sm text-slate-600">Send SMS or email blasts to your ambassadors instantly</p>
-              </div>
-              <div>
-                <StartCampaignCTA />
-              </div>
-            </div>
-          </Card>
+        <TwoColumnLayout
+          learnContent={
+            <>
+              <Step3Education />
+              <Step3Sidebar />
+            </>
+          }
+          implementContent={
+            <>
+              <Step3Explainer />
+              <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900 mb-2">Ready to Launch?</h3>
+                    <p className="text-sm text-slate-600">Send SMS or email blasts to your ambassadors instantly</p>
+                  </div>
+                  <div>
+                    <StartCampaignCTA />
+                  </div>
+                </div>
+              </Card>
 
-          <CRMIntegrationTab
-            customers={safeCustomers}
-            siteUrl={siteUrl}
-            businessId={business.id}
-            discountCaptureSecret={business.discount_capture_secret ?? null}
-          />
+              <CRMIntegrationTab
+                customers={safeCustomers}
+                siteUrl={siteUrl}
+                businessId={business.id}
+                discountCaptureSecret={business.discount_capture_secret ?? null}
+              />
 
-          <Card className="p-6 border border-slate-200 rounded-lg bg-white">
-            <div className="mb-6">
-              <h3 className="text-xl font-black text-slate-900">Campaign Builder</h3>
-              <p className="text-sm text-slate-600 mt-1">Design and send personalized campaigns to your ambassadors</p>
-            </div>
-            <CampaignBuilder
-              customers={safeCustomers}
-              businessName={business.name || "Your Business"}
-              siteUrl={siteUrl}
-              offerText={business.offer_text}
-              newUserRewardText={business.new_user_reward_text}
-              clientRewardText={business.client_reward_text}
-              rewardType={business.reward_type}
-              rewardAmount={business.reward_amount}
-              upgradeName={business.upgrade_name}
-              rewardTerms={business.reward_terms}
-              brandHighlightColor={business.brand_highlight_color ?? null}
-              brandTone={business.brand_tone ?? null}
-              uploadLogoAction={uploadLogo}
-            />
-          </Card>
-        </div>
+              <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+                <div className="mb-6">
+                  <h3 className="text-xl font-black text-slate-900">Campaign Builder</h3>
+                  <p className="text-sm text-slate-600 mt-1">Design and send personalized campaigns to your ambassadors</p>
+                </div>
+                <CampaignBuilder
+                  customers={safeCustomers}
+                  businessName={business.name || "Your Business"}
+                  siteUrl={siteUrl}
+                  offerText={business.offer_text}
+                  newUserRewardText={business.new_user_reward_text}
+                  clientRewardText={business.client_reward_text}
+                  rewardType={business.reward_type}
+                  rewardAmount={business.reward_amount}
+                  upgradeName={business.upgrade_name}
+                  rewardTerms={business.reward_terms}
+                  brandHighlightColor={business.brand_highlight_color ?? null}
+                  brandTone={business.brand_tone ?? null}
+                  uploadLogoAction={uploadLogo}
+                />
+              </Card>
+            </>
+          }
+        />
       ),
       helpText: "Launch your first campaign! Send personalized referral links via SMS or email.",
     },
@@ -1386,106 +1413,115 @@ export default async function Dashboard() {
       icon: <Target className="h-5 w-5" />,
       status: totalCampaignsSent > 0 ? "in_progress" : "incomplete",
       content: (
-        <div className="space-y-6">
-          <Step4Education />
-          <Step4Explainer />
-        <Tabs defaultValue="analytics">
-          <div className="border border-slate-200 bg-white p-4 rounded-lg">
-            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
-              Campaign insights
-            </div>
-            <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
-              <TabsTrigger
-                value="analytics"
-                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
-              >
-                Analytics
-              </TabsTrigger>
-              <TabsTrigger
-                value="history"
-                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
-              >
-                Campaign History
-              </TabsTrigger>
-              <TabsTrigger
-                value="partner-referrals"
-                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
-              >
-                Partner Referrals {safePartnerReferrals.length > 0 && `(${safePartnerReferrals.length})`}
-              </TabsTrigger>
-              <TabsTrigger
-                value="share"
-                className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
-              >
-                Share Assets
-              </TabsTrigger>
-            </TabsList>
-          </div>
+        <TwoColumnLayout
+          learnContent={
+            <>
+              <Step4Education />
+              <Step4Sidebar />
+            </>
+          }
+          implementContent={
+            <>
+              <Step4Explainer />
+              <Tabs defaultValue="analytics">
+                <div className="border border-slate-200 bg-white p-4 rounded-lg">
+                  <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
+                    Campaign insights
+                  </div>
+                  <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
+                    <TabsTrigger
+                      value="analytics"
+                      className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
+                    >
+                      Analytics
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="history"
+                      className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
+                    >
+                      Campaign History
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="partner-referrals"
+                      className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
+                    >
+                      Partner Referrals {safePartnerReferrals.length > 0 && `(${safePartnerReferrals.length})`}
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="share"
+                      className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
+                    >
+                      Share Assets
+                    </TabsTrigger>
+                  </TabsList>
+                </div>
 
-          <TabsContent value="analytics" className="space-y-6">
-            <CampaignAnalyticsDashboard
-              campaigns={campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]}
-              referrals={safeReferrals}
-              eventStats={campaignEventStats}
-            />
-          </TabsContent>
-
-          <TabsContent value="history">
-            <Card className="p-6 border border-slate-200 rounded-lg bg-white">
-              <h3 className="text-xl font-black text-slate-900 mb-4">
-                Campaign History
-              </h3>
-              <div className="overflow-x-auto -mx-6 px-6">
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Name</TableHead>
-                      <TableHead>Channel</TableHead>
-                      <TableHead>Status</TableHead>
-                      <TableHead className="text-right">Recipients</TableHead>
-                      <TableHead className="text-right">Clicks</TableHead>
-                      <TableHead className="text-right">Conversions</TableHead>
-                      <TableHead className="text-right">Reward Spend</TableHead>
-                      <TableHead className="text-right">ROI</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <CampaignsTable
-                    campaigns={
-                      campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]
-                    }
+                <TabsContent value="analytics" className="space-y-6">
+                  <CampaignAnalyticsDashboard
+                    campaigns={campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]}
                     referrals={safeReferrals}
                     eventStats={campaignEventStats}
                   />
-                </Table>
-              </div>
-            </Card>
-          </TabsContent>
+                </TabsContent>
 
-          <TabsContent value="partner-referrals">
-            <PartnerReferralsTab
-              referrals={safePartnerReferrals}
-              adminName={adminCustomer?.name || "Admin"}
-            />
-          </TabsContent>
+                <TabsContent value="history">
+                  <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+                    <h3 className="text-xl font-black text-slate-900 mb-4">
+                      Campaign History
+                    </h3>
+                    <div className="overflow-x-auto -mx-6 px-6">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead>Name</TableHead>
+                            <TableHead>Channel</TableHead>
+                            <TableHead>Status</TableHead>
+                            <TableHead className="text-right">Recipients</TableHead>
+                            <TableHead className="text-right">Clicks</TableHead>
+                            <TableHead className="text-right">Conversions</TableHead>
+                            <TableHead className="text-right">Reward Spend</TableHead>
+                            <TableHead className="text-right">ROI</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <CampaignsTable
+                          campaigns={
+                            campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]
+                          }
+                          referrals={safeReferrals}
+                          eventStats={campaignEventStats}
+                        />
+                      </Table>
+                    </div>
+                  </Card>
+                </TabsContent>
 
-          <TabsContent value="share">
-            <ShareReferralCard
-              customers={safeCustomers.map((customer) => ({
-                id: customer.id,
-                name: customer.name,
-                referral_code: customer.referral_code,
-                discount_code: customer.discount_code,
-              }))}
-              siteUrl={siteUrl}
-              clientRewardText={business.client_reward_text}
-              newUserRewardText={business.new_user_reward_text}
-              rewardAmount={business.reward_amount}
-              offerText={business.offer_text}
-              businessName={business.name}
-            />
-          </TabsContent>
-        </Tabs>
-        </div>
+                <TabsContent value="partner-referrals">
+                  <PartnerReferralsTab
+                    referrals={safePartnerReferrals}
+                    adminName={adminCustomer?.name || "Admin"}
+                  />
+                </TabsContent>
+
+                <TabsContent value="share">
+                  <ShareReferralCard
+                    customers={safeCustomers.map((customer) => ({
+                      id: customer.id,
+                      name: customer.name,
+                      referral_code: customer.referral_code,
+                      discount_code: customer.discount_code,
+                    }))}
+                    siteUrl={siteUrl}
+                    clientRewardText={business.client_reward_text}
+                    newUserRewardText={business.new_user_reward_text}
+                    rewardAmount={business.reward_amount}
+                    offerText={business.offer_text}
+                    businessName={business.name}
+                  />
+                </TabsContent>
+              </Tabs>
+            </>
+          }
+        />
       ),
       helpText: "Review campaign performance and see which ambassadors are driving the most referrals.",
     },
