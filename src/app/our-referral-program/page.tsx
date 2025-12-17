@@ -232,7 +232,6 @@ async function submitPartnerApplication(formData: FormData) {
             referred_phone: phone,
             referred_email: email,
             status: "pending",
-            source: "partner_program",
             campaign_id: null,
             consent_given: true, // Partner application implies consent
             locale: "en",
@@ -240,6 +239,7 @@ async function submitPartnerApplication(formData: FormData) {
               company,
               website,
               application_type: "partner",
+              source: "partner_program",
             },
           },
         ]);
