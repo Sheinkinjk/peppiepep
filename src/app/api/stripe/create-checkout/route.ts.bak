@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, STRIPE_CURRENCY } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
