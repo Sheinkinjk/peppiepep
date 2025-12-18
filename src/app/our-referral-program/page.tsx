@@ -224,7 +224,7 @@ async function submitPartnerApplication(formData: FormData) {
     // Create referral record if attributed to an ambassador (e.g., admin's referral link)
     if (attributedAmbassadorId && attributedBusinessId) {
       try {
-        await supabase.from("referrals").insert([
+        const { data: referralData } = await supabase.from("referrals").insert([
           {
             business_id: attributedBusinessId,
             ambassador_id: attributedAmbassadorId,
@@ -242,7 +242,35 @@ async function submitPartnerApplication(formData: FormData) {
               source: "partner_program",
             },
           },
-        ]);
+        ]).select().single();
+
+        // Create signup bonus commission for the ambassador
+        if (referralData) {
+          try {
+            await supabase.from("stripe_commissions").insert([
+              {
+                business_id: attributedBusinessId,
+                ambassador_id: attributedAmbassadorId,
+                referral_id: referralData.id,
+                amount: 10000, // $100 AUD signup bonus
+                currency: "aud",
+                commission_type: "signup_bonus",
+                status: "approved", // Auto-approve signup bonuses
+                approved_at: new Date().toISOString(),
+                metadata: {
+                  rule: "Partner signup bonus",
+                  amount_aud: 100,
+                  partner_company: company,
+                  partner_email: email,
+                },
+              },
+            ]);
+            console.log("✅ Created $100 signup bonus commission for ambassador");
+          } catch (commissionError) {
+            console.error("Failed to create commission:", commissionError);
+            // Don't fail application if commission creation fails
+          }
+        }
 
         // Log the referral signup event
         await supabase.from("referral_events").insert([

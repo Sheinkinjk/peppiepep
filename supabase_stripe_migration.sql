@@ -311,7 +311,7 @@ DROP POLICY IF EXISTS "Service role has full access to stripe_webhook_events" ON
 -- Policies for stripe_customers
 CREATE POLICY "Users can view their own Stripe customers"
   ON stripe_customers FOR SELECT
-  USING (business_id IN (SELECT id FROM businesses WHERE user_id = auth.uid()));
+  USING (business_id IN (SELECT id FROM businesses WHERE owner_id = auth.uid()));
 
 CREATE POLICY "Service role has full access to stripe_customers"
   ON stripe_customers FOR ALL
@@ -320,7 +320,7 @@ CREATE POLICY "Service role has full access to stripe_customers"
 -- Policies for stripe_payments
 CREATE POLICY "Users can view their own payments"
   ON stripe_payments FOR SELECT
-  USING (business_id IN (SELECT id FROM businesses WHERE user_id = auth.uid()));
+  USING (business_id IN (SELECT id FROM businesses WHERE owner_id = auth.uid()));
 
 CREATE POLICY "Service role has full access to stripe_payments"
   ON stripe_payments FOR ALL
@@ -333,7 +333,7 @@ CREATE POLICY "Ambassadors can view their own commissions"
 
 CREATE POLICY "Business owners can view their commissions"
   ON stripe_commissions FOR SELECT
-  USING (business_id IN (SELECT id FROM businesses WHERE user_id = auth.uid()));
+  USING (business_id IN (SELECT id FROM businesses WHERE owner_id = auth.uid()));
 
 CREATE POLICY "Service role has full access to stripe_commissions"
   ON stripe_commissions FOR ALL
@@ -346,7 +346,7 @@ CREATE POLICY "Ambassadors can view their own payouts"
 
 CREATE POLICY "Business owners can view their payouts"
   ON stripe_payouts FOR SELECT
-  USING (business_id IN (SELECT id FROM businesses WHERE user_id = auth.uid()));
+  USING (business_id IN (SELECT id FROM businesses WHERE owner_id = auth.uid()));
 
 CREATE POLICY "Service role has full access to stripe_payouts"
   ON stripe_payouts FOR ALL
