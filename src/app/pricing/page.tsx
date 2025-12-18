@@ -26,11 +26,11 @@ export default function Pricing() {
     () => ({
       base: {
         monthly: 499,
-        annual: 479, // Actual price from Stripe
+        annual: 399, // 20% discount: $4,790.40/year = $399.20/month
       },
       scale: {
         monthly: 599,
-        annual: 575, // Actual price from Stripe
+        annual: 479, // 20% discount: $5,750.40/year = $479.20/month
       },
     }),
     [],
@@ -373,7 +373,160 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Remaining sections stay the same... */}
+        <section className="rounded-3xl bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-8 sm:p-12 shadow-2xl ring-1 ring-purple-500/20 backdrop-blur-xl">
+          <div className="mx-auto max-w-3xl space-y-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
+                Compare plans
+              </h2>
+              <p className="text-purple-200 text-base sm:text-lg">Find the perfect fit for your business</p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b border-purple-500/30">
+                    <th className="pb-4 text-sm sm:text-base font-bold text-purple-200">Features</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-purple-200">Base</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-purple-200">Scale</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-purple-200">Enterprise</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm sm:text-base">
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Ambassadors</td>
+                    <td className="py-4 text-center text-purple-200">50</td>
+                    <td className="py-4 text-center text-purple-200">125</td>
+                    <td className="py-4 text-center font-bold text-white">Unlimited</td>
+                  </tr>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">SMS credits/month</td>
+                    <td className="py-4 text-center text-purple-200">5,000</td>
+                    <td className="py-4 text-center text-purple-200">12,500</td>
+                    <td className="py-4 text-center font-bold text-white">Unlimited</td>
+                  </tr>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Analytics & reporting</td>
+                    <td className="py-4 text-center text-purple-200">Basic</td>
+                    <td className="py-4 text-center text-purple-200">Advanced</td>
+                    <td className="py-4 text-center font-bold text-white">Advanced</td>
+                  </tr>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Custom branding</td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
+                  </tr>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">White-label portals</td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
+                  </tr>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">API access</td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
+                  </tr>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-purple-100">Support</td>
+                    <td className="py-4 text-center text-purple-200">Email</td>
+                    <td className="py-4 text-center text-purple-200">Priority email</td>
+                    <td className="py-4 text-center font-bold text-white">Phone + chat</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section className="rounded-3xl bg-gradient-to-b from-purple-600/20 to-purple-800/20 p-8 sm:p-12 ring-1 ring-purple-400/30 backdrop-blur-xl">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl font-black text-white mb-6 sm:mb-8 text-center">
+              Frequently asked questions
+            </h2>
+            <div className="space-y-4">
+              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
+                  What's included in the free trial?
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
+                </summary>
+                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                  All plans include a 14-day free trial with full access to all features. No credit card required to start.
+                </p>
+              </details>
+
+              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
+                  How does SMS pricing work?
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
+                </summary>
+                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                  Scale and Enterprise plans include SMS credits each month. Additional credits are $0.05/SMS. Base plan users can purchase SMS credits as needed.
+                </p>
+              </details>
+
+              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
+                  Can I change plans later?
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
+                </summary>
+                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                  Yes! Upgrade or downgrade anytime. Changes take effect immediately, and we'll pro-rate your billing accordingly.
+                </p>
+              </details>
+
+              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
+                  What payment methods do you accept?
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
+                </summary>
+                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                  We accept all major credit cards (Visa, Mastercard, Amex) and direct debit for annual plans.
+                </p>
+              </details>
+
+              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
+                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
+                  What happens if I exceed my ambassador limit?
+                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
+                </summary>
+                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                  We'll notify you when you're approaching your limit. You can upgrade anytime to add more ambassadors with no downtime.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section className="rounded-3xl bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 p-[2px] shadow-2xl">
+          <div className="flex flex-col gap-6 sm:gap-8 rounded-3xl bg-slate-900/95 p-8 sm:p-12 backdrop-blur-xl md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-3">
+                Still not sure which plan is right?
+              </h3>
+              <p className="text-base sm:text-lg lg:text-xl text-purple-200">
+                Start with a free trial or talk to our team to find the perfect fit for your business.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/login"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white shadow-2xl shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-400/70 whitespace-nowrap"
+              >
+                Start free trial <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 whitespace-nowrap"
+              >
+                See how it works
+              </Link>
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
   );
