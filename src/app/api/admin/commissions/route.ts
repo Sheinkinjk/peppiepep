@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '50');
     const offset = parseInt(searchParams.get('offset') || '0');
 
-    const supabase = createServerComponentClient();
+    const supabase = await createServerComponentClient();
 
     // Build query
     let query = supabase
@@ -88,7 +88,7 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    const supabase = createServerComponentClient();
+    const supabase = await createServerComponentClient();
 
     // TODO: Get admin user ID from auth
     const adminUserId = 'ADMIN_USER_ID';
