@@ -5,6 +5,7 @@ import { createServerComponentClient } from "@/lib/supabase";
 import { redirect } from "next/navigation";
 import { formatAmount } from "@/lib/stripe";
 import Link from "next/link";
+import { ChevronDown, ChevronUp, Mail, Users, Link as LinkIcon, TrendingUp, DollarSign, Activity } from "lucide-react";
 
 export default async function MasterAdminDashboard() {
   const supabase = await createServerComponentClient();
@@ -18,7 +19,7 @@ export default async function MasterAdminDashboard() {
     redirect("/dashboard");
   }
 
-  // Fetch comprehensive cross-account data
+  // Fetch comprehensive cross-account data with deep relationships
 
   // 1. ALL USERS & BUSINESSES
   const { data: allBusinesses } = await supabase
@@ -34,7 +35,47 @@ export default async function MasterAdminDashboard() {
     .select("*")
     .order("created_at", { ascending: false });
 
-  // 2. ALL PAYMENTS (no limit)
+  // 2. ALL CAMPAIGNS WITH MESSAGE COUNTS
+  const { data: allCampaigns } = await supabase
+    .from("campaigns")
+    .select(`
+      *,
+      business:businesses(id, name)
+    `)
+    .order("created_at", { ascending: false });
+
+  // 3. ALL CAMPAIGN MESSAGES (email tracking)
+  const { data: allCampaignMessages } = await supabase
+    .from("campaign_messages")
+    .select(`
+      *,
+      campaign:campaigns(id, name, business_id),
+      customer:customers(id, name, email)
+    `)
+    .order("created_at", { ascending: false });
+
+  // 4. ALL REFERRAL EVENTS (link clicks, conversions)
+  const { data: allReferralEvents } = await supabase
+    .from("referral_events")
+    .select(`
+      *,
+      business:businesses(id, name),
+      ambassador:customers!ambassador_id(id, name, email, referral_code)
+    `)
+    .order("created_at", { ascending: false });
+
+  // 5. ALL REFERRALS
+  const { data: allReferrals } = await supabase
+    .from("referrals")
+    .select(`
+      *,
+      business:businesses(id, name),
+      customer:customers(id, email, name),
+      ambassador:customers!referrer_id(id, email, name, referral_code)
+    `)
+    .order("created_at", { ascending: false });
+
+  // 6. ALL PAYMENTS
   const { data: allPayments } = await supabase
     .from("stripe_payments")
     .select(`
@@ -43,7 +84,7 @@ export default async function MasterAdminDashboard() {
     `)
     .order("created_at", { ascending: false });
 
-  // 3. ALL COMMISSIONS
+  // 7. ALL COMMISSIONS
   const { data: allCommissions } = await supabase
     .from("stripe_commissions")
     .select(`
@@ -53,125 +94,109 @@ export default async function MasterAdminDashboard() {
     `)
     .order("created_at", { ascending: false });
 
-  // 4. ALL REFERRALS
-  const { data: allReferrals } = await supabase
-    .from("referrals")
-    .select(`
-      *,
-      business:businesses(id, name),
-      customer:customers(id, email, name),
-      ambassador:customers!referrer_id(id, email, name)
-    `)
-    .order("created_at", { ascending: false });
+  // Calculate comprehensive per-customer metrics
+  const businessMetrics = allBusinesses?.map(business => {
+    // Customers/Ambassadors for this business
+    const businessCustomers = allCustomers?.filter(c => c.business_id === business.id) || [];
+    const totalAmbassadors = businessCustomers.length;
 
-  // 5. ALL CAMPAIGNS
-  const { data: allCampaigns } = await supabase
-    .from("campaigns")
-    .select(`
-      *,
-      business:businesses(id, name)
-    `)
-    .order("created_at", { ascending: false });
+    // Campaigns for this business
+    const businessCampaigns = allCampaigns?.filter(c => c.business_id === business.id) || [];
+    const totalCampaigns = businessCampaigns.length;
+    const activeCampaigns = businessCampaigns.filter(c => c.status === "active").length;
 
-  // 6. AMBASSADOR BALANCES
-  const { data: ambassadorBalances } = await supabase
-    .from("ambassador_commission_balances")
-    .select("*")
-    .order("lifetime_earnings", { ascending: false });
+    // Campaign messages (emails sent)
+    const campaignIds = businessCampaigns.map(c => c.id);
+    const businessMessages = allCampaignMessages?.filter(m =>
+      campaignIds.includes(m.campaign_id)
+    ) || [];
+    const totalEmailsSent = businessMessages.length;
+    const emailsDelivered = businessMessages.filter(m => m.status === "delivered" || m.status === "sent").length;
+    const emailsFailed = businessMessages.filter(m => m.status === "failed").length;
 
-  // Calculate Platform-Wide Metrics
+    // Referral events (link clicks, page views)
+    const businessEvents = allReferralEvents?.filter(e => e.business_id === business.id) || [];
+    const linkClicks = businessEvents.filter(e => e.event_type === "link_click").length;
+    const pageViews = businessEvents.filter(e => e.event_type === "page_view").length;
+
+    // Referrals and conversions
+    const businessReferrals = allReferrals?.filter(r => r.business_id === business.id) || [];
+    const totalReferrals = businessReferrals.length;
+    const convertedReferrals = businessReferrals.filter(r => r.status === "converted").length;
+    const conversionRate = totalReferrals > 0 ? ((convertedReferrals / totalReferrals) * 100).toFixed(1) : "0.0";
+
+    // Payments and revenue
+    const businessPayments = allPayments?.filter(p => p.business_id === business.id) || [];
+    const totalRevenue = businessPayments
+      .filter(p => p.status === "succeeded")
+      .reduce((sum, p) => sum + p.amount_total, 0);
+    const succeededPayments = businessPayments.filter(p => p.status === "succeeded").length;
+
+    // Commissions
+    const businessCommissions = allCommissions?.filter(c => c.business_id === business.id) || [];
+    const totalCommissions = businessCommissions.reduce((sum, c) => sum + c.amount, 0);
+    const paidCommissions = businessCommissions.filter(c => c.status === "paid").reduce((sum, c) => sum + c.amount, 0);
+
+    // Get unique referral codes used by this business's ambassadors
+    const referralCodes = businessCustomers
+      .filter(c => c.referral_code)
+      .map(c => ({
+        code: c.referral_code,
+        ambassadorName: c.name,
+        ambassadorEmail: c.email,
+        ambassadorId: c.id,
+        // Get events for this specific code
+        clicks: businessEvents.filter(e => e.ambassador_id === c.id && e.event_type === "link_click").length,
+        referrals: businessReferrals.filter(r => r.referrer_id === c.id).length,
+        conversions: businessReferrals.filter(r => r.referrer_id === c.id && r.status === "converted").length,
+      }));
+
+    return {
+      business,
+      metrics: {
+        totalAmbassadors,
+        totalCampaigns,
+        activeCampaigns,
+        totalEmailsSent,
+        emailsDelivered,
+        emailsFailed,
+        emailDeliveryRate: totalEmailsSent > 0 ? ((emailsDelivered / totalEmailsSent) * 100).toFixed(1) : "0.0",
+        linkClicks,
+        pageViews,
+        totalReferrals,
+        convertedReferrals,
+        conversionRate,
+        totalRevenue,
+        succeededPayments,
+        totalCommissions,
+        paidCommissions,
+        referralCodes,
+      }
+    };
+  }) || [];
+
+  // Platform-wide aggregates
   const totalUsers = allBusinesses?.length || 0;
   const activeBusinesses = allBusinesses?.filter(b => b.is_active !== false).length || 0;
   const totalCustomers = allCustomers?.length || 0;
-
-  // Revenue Metrics
-  const totalRevenue = allPayments?.reduce((sum, p) =>
-    sum + (p.status === "succeeded" ? p.amount_total : 0), 0) || 0;
-  const succeededPayments = allPayments?.filter(p => p.status === "succeeded") || [];
-  const failedPayments = allPayments?.filter(p => p.status === "failed") || [];
-
-  // Calculate MRR (last 30 days)
-  const thirtyDaysAgo = new Date();
-  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-  const recentPayments = allPayments?.filter(p =>
-    new Date(p.created_at) > thirtyDaysAgo && p.status === "succeeded"
-  ) || [];
-  const mrr = recentPayments.reduce((sum, p) => sum + p.amount_total, 0);
-
-  // Commission Metrics
-  const totalCommissionsValue = allCommissions?.reduce((sum, c) => sum + c.amount, 0) || 0;
-  const pendingCommissionsValue = allCommissions?.filter(c => c.status === "approved")
-    .reduce((sum, c) => sum + c.amount, 0) || 0;
-  const paidCommissionsValue = allCommissions?.filter(c => c.status === "paid")
-    .reduce((sum, c) => sum + c.amount, 0) || 0;
-
-  // Referral Metrics
+  const totalEmailsSent = allCampaignMessages?.length || 0;
+  const totalLinkClicks = allReferralEvents?.filter(e => e.event_type === "link_click").length || 0;
   const totalReferrals = allReferrals?.length || 0;
   const convertedReferrals = allReferrals?.filter(r => r.status === "converted").length || 0;
-  const conversionRate = totalReferrals > 0
+  const platformConversionRate = totalReferrals > 0
     ? ((convertedReferrals / totalReferrals) * 100).toFixed(1)
     : "0.0";
 
-  // Campaign Metrics
-  const activeCampaigns = allCampaigns?.filter(c => c.status === "active").length || 0;
-  const totalCampaigns = allCampaigns?.length || 0;
+  const totalRevenue = allPayments?.reduce((sum, p) =>
+    sum + (p.status === "succeeded" ? p.amount_total : 0), 0) || 0;
+  const totalCommissions = allCommissions?.reduce((sum, c) => sum + c.amount, 0) || 0;
 
-  // Top Performing Ambassadors (by referrals)
-  const referralsByAmbassador = allReferrals?.reduce((acc, ref) => {
-    const ambassadorId = ref.referrer_id;
-    if (!ambassadorId) return acc;
-    if (!acc[ambassadorId]) {
-      acc[ambassadorId] = {
-        ambassador: ref.ambassador,
-        count: 0,
-        converted: 0,
-      };
-    }
-    acc[ambassadorId].count++;
-    if (ref.status === "converted") acc[ambassadorId].converted++;
-    return acc;
-  }, {} as Record<string, any>);
-
-  const topAmbassadors = Object.values(referralsByAmbassador || {})
-    .sort((a: any, b: any) => b.count - a.count)
-    .slice(0, 10);
-
-  // Revenue by Business
-  const revenueByBusiness = allPayments?.reduce((acc, payment) => {
-    if (payment.status !== "succeeded") return acc;
-    const businessId = payment.business_id;
-    if (!businessId) return acc;
-    if (!acc[businessId]) {
-      acc[businessId] = {
-        business: payment.business,
-        revenue: 0,
-        payments: 0,
-      };
-    }
-    acc[businessId].revenue += payment.amount_total;
-    acc[businessId].payments++;
-    return acc;
-  }, {} as Record<string, any>);
-
-  const topBusinesses = Object.values(revenueByBusiness || {})
-    .sort((a: any, b: any) => b.revenue - a.revenue)
-    .slice(0, 10);
-
-  // Growth Metrics (last 7 days vs previous 7 days)
-  const sevenDaysAgo = new Date();
-  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-  const fourteenDaysAgo = new Date();
-  fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
-
-  const newUsersThisWeek = allBusinesses?.filter(b =>
-    new Date(b.created_at) > sevenDaysAgo
-  ).length || 0;
-  const newUsersLastWeek = allBusinesses?.filter(b =>
-    new Date(b.created_at) > fourteenDaysAgo && new Date(b.created_at) <= sevenDaysAgo
-  ).length || 0;
-  const userGrowth = newUsersLastWeek > 0
-    ? (((newUsersThisWeek - newUsersLastWeek) / newUsersLastWeek) * 100).toFixed(1)
-    : newUsersThisWeek > 0 ? "+100" : "0";
+  // Sort businesses by activity (most active first)
+  const sortedBusinessMetrics = businessMetrics.sort((a, b) => {
+    const scoreA = a.metrics.totalEmailsSent + a.metrics.linkClicks + a.metrics.totalReferrals;
+    const scoreB = b.metrics.totalEmailsSent + b.metrics.linkClicks + b.metrics.totalReferrals;
+    return scoreB - scoreA;
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 p-4 sm:p-8">
@@ -180,10 +205,10 @@ export default async function MasterAdminDashboard() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-4xl font-black text-gray-900 mb-2">
-              Master Admin Dashboard
+              Enterprise Control Center
             </h1>
-            <p className="text-gray-600">
-              Platform-wide analytics and cross-account insights
+            <p className="text-gray-600 text-lg">
+              Deep insights, real-time tracking, complete platform visibility
             </p>
           </div>
           <div className="flex gap-4">
@@ -202,393 +227,297 @@ export default async function MasterAdminDashboard() {
           </div>
         </div>
 
-        {/* Platform Overview Metrics */}
+        {/* Platform-Wide KPIs */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
-            <p className="text-sm font-semibold text-gray-600 mb-1">Total Users</p>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-blue-100 rounded-lg">
+                <Users className="h-6 w-6 text-blue-600" />
+              </div>
+              <p className="text-sm font-semibold text-gray-600">Total Customers</p>
+            </div>
             <p className="text-4xl font-black text-blue-600">{totalUsers}</p>
-            <p className="text-xs text-gray-500 mt-2">
-              {activeBusinesses} active businesses
-            </p>
-            <p className="text-xs text-green-600 font-semibold mt-1">
-              {userGrowth}% vs last week
-            </p>
+            <p className="text-xs text-gray-500 mt-2">{activeBusinesses} active · {totalCustomers} total ambassadors</p>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
-            <p className="text-sm font-semibold text-gray-600 mb-1">Total Revenue</p>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-green-100 rounded-lg">
+                <DollarSign className="h-6 w-6 text-green-600" />
+              </div>
+              <p className="text-sm font-semibold text-gray-600">Total Revenue</p>
+            </div>
             <p className="text-4xl font-black text-green-600">{formatAmount(totalRevenue)}</p>
-            <p className="text-xs text-gray-500 mt-2">
-              {succeededPayments.length} successful payments
-            </p>
-            <p className="text-xs text-gray-600 font-semibold mt-1">
-              MRR: {formatAmount(mrr)}
-            </p>
+            <p className="text-xs text-gray-500 mt-2">Commissions: {formatAmount(totalCommissions)}</p>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
-            <p className="text-sm font-semibold text-gray-600 mb-1">Total Referrals</p>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-purple-100 rounded-lg">
+                <TrendingUp className="h-6 w-6 text-purple-600" />
+              </div>
+              <p className="text-sm font-semibold text-gray-600">Referrals</p>
+            </div>
             <p className="text-4xl font-black text-purple-600">{totalReferrals}</p>
-            <p className="text-xs text-gray-500 mt-2">
-              {convertedReferrals} converted
-            </p>
-            <p className="text-xs text-purple-600 font-semibold mt-1">
-              {conversionRate}% conversion rate
-            </p>
+            <p className="text-xs text-gray-500 mt-2">{convertedReferrals} converted · {platformConversionRate}% rate</p>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500">
-            <p className="text-sm font-semibold text-gray-600 mb-1">Total Customers</p>
-            <p className="text-4xl font-black text-orange-600">{totalCustomers}</p>
-            <p className="text-xs text-gray-500 mt-2">
-              {ambassadorBalances?.length || 0} ambassadors with earnings
-            </p>
-            <p className="text-xs text-orange-600 font-semibold mt-1">
-              {activeCampaigns} active campaigns
-            </p>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-orange-100 rounded-lg">
+                <Activity className="h-6 w-6 text-orange-600" />
+              </div>
+              <p className="text-sm font-semibold text-gray-600">Platform Activity</p>
+            </div>
+            <p className="text-4xl font-black text-orange-600">{totalLinkClicks}</p>
+            <p className="text-xs text-gray-500 mt-2">{totalEmailsSent} emails sent</p>
           </div>
         </div>
 
-        {/* Commission Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white">
-            <p className="text-sm font-semibold opacity-90 mb-1">Total Commissions</p>
-            <p className="text-3xl font-black">{formatAmount(totalCommissionsValue)}</p>
-            <p className="text-xs opacity-80 mt-2">
-              {allCommissions?.length || 0} total commissions
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl shadow-lg p-6 text-white">
-            <p className="text-sm font-semibold opacity-90 mb-1">Pending Payouts</p>
-            <p className="text-3xl font-black">{formatAmount(pendingCommissionsValue)}</p>
-            <p className="text-xs opacity-80 mt-2">
-              {allCommissions?.filter(c => c.status === "approved").length || 0} approved
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl shadow-lg p-6 text-white">
-            <p className="text-sm font-semibold opacity-90 mb-1">Paid Out</p>
-            <p className="text-3xl font-black">{formatAmount(paidCommissionsValue)}</p>
-            <p className="text-xs opacity-80 mt-2">
-              {allCommissions?.filter(c => c.status === "paid").length || 0} paid commissions
-            </p>
-          </div>
-        </div>
-
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Top Businesses by Revenue */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4">
-              <h2 className="text-xl font-bold text-white">
-                Top Businesses by Revenue
-              </h2>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                      Business
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                      Revenue
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                      Payments
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {topBusinesses.length > 0 ? (
-                    topBusinesses.map((item: any, idx) => (
-                      <tr key={idx} className="hover:bg-gray-50">
-                        <td className="px-6 py-4">
-                          <div className="text-sm font-semibold text-gray-900">
-                            {item.business?.name || "Unknown"}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 text-sm font-bold text-green-600">
-                          {formatAmount(item.revenue)}
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-600">
-                          {item.payments}
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={3} className="px-6 py-4 text-center text-gray-500">
-                        No revenue data yet
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Top Ambassadors by Referrals */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-4">
-              <h2 className="text-xl font-bold text-white">
-                Top Ambassadors by Referrals
-              </h2>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                      Ambassador
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                      Referrals
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                      Converted
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {topAmbassadors.length > 0 ? (
-                    topAmbassadors.map((item: any, idx) => (
-                      <tr key={idx} className="hover:bg-gray-50">
-                        <td className="px-6 py-4">
-                          <div className="text-sm font-semibold text-gray-900">
-                            {item.ambassador?.name || "Unknown"}
-                          </div>
-                          <div className="text-xs text-gray-500">
-                            {item.ambassador?.email}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 text-sm font-bold text-purple-600">
-                          {item.count}
-                        </td>
-                        <td className="px-6 py-4 text-sm text-green-600 font-semibold">
-                          {item.converted}
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={3} className="px-6 py-4 text-center text-gray-500">
-                        No referral data yet
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        {/* All Businesses Table */}
+        {/* Customer Deep Dive Section */}
         <div className="bg-white rounded-xl shadow-lg mb-8 overflow-hidden">
-          <div className="bg-gradient-to-r from-slate-700 to-slate-900 px-6 py-4">
-            <h2 className="text-xl font-bold text-white">
-              All Registered Businesses ({totalUsers})
+          <div className="bg-gradient-to-r from-slate-700 to-slate-900 px-6 py-5">
+            <h2 className="text-2xl font-bold text-white">
+              Customer Deep Dive ({totalUsers} Accounts)
             </h2>
+            <p className="text-slate-300 text-sm mt-1">
+              Comprehensive per-customer metrics, email tracking, referral performance, and transaction data
+            </p>
           </div>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Business Name
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Owner Email
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Created
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Last Sign In
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Status
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {allBusinesses && allBusinesses.length > 0 ? (
-                  allBusinesses.map((business) => (
-                    <tr key={business.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4">
-                        <div className="text-sm font-semibold text-gray-900">
-                          {business.name}
+
+          <div className="divide-y divide-gray-200">
+            {sortedBusinessMetrics.map((item, idx) => {
+              const { business, metrics } = item;
+
+              return (
+                <details key={business.id} className="group">
+                  <summary className="px-6 py-5 hover:bg-slate-50 cursor-pointer transition-colors">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h3 className="text-lg font-bold text-gray-900">{business.name}</h3>
+                          <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
+                            business.is_active !== false
+                              ? "bg-green-100 text-green-800"
+                              : "bg-red-100 text-red-800"
+                          }`}>
+                            {business.is_active !== false ? "Active" : "Inactive"}
+                          </span>
                         </div>
-                        <div className="text-xs text-gray-500">
-                          ID: {business.id}
+                        <p className="text-sm text-gray-600 mb-3">{business.owner?.email}</p>
+
+                        {/* Quick Stats Grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-3">
+                          <div className="bg-blue-50 rounded-lg p-3">
+                            <p className="text-xs text-blue-600 font-semibold mb-1">Ambassadors</p>
+                            <p className="text-2xl font-black text-blue-700">{metrics.totalAmbassadors}</p>
+                          </div>
+                          <div className="bg-purple-50 rounded-lg p-3">
+                            <p className="text-xs text-purple-600 font-semibold mb-1">Emails Sent</p>
+                            <p className="text-2xl font-black text-purple-700">{metrics.totalEmailsSent}</p>
+                          </div>
+                          <div className="bg-orange-50 rounded-lg p-3">
+                            <p className="text-xs text-orange-600 font-semibold mb-1">Link Clicks</p>
+                            <p className="text-2xl font-black text-orange-700">{metrics.linkClicks}</p>
+                          </div>
+                          <div className="bg-pink-50 rounded-lg p-3">
+                            <p className="text-xs text-pink-600 font-semibold mb-1">Referrals</p>
+                            <p className="text-2xl font-black text-pink-700">{metrics.totalReferrals}</p>
+                          </div>
+                          <div className="bg-green-50 rounded-lg p-3">
+                            <p className="text-xs text-green-600 font-semibold mb-1">Revenue</p>
+                            <p className="text-lg font-black text-green-700">{formatAmount(metrics.totalRevenue)}</p>
+                          </div>
+                          <div className="bg-emerald-50 rounded-lg p-3">
+                            <p className="text-xs text-emerald-600 font-semibold mb-1">Conv. Rate</p>
+                            <p className="text-2xl font-black text-emerald-700">{metrics.conversionRate}%</p>
+                          </div>
                         </div>
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        {business.owner?.email || "N/A"}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        {new Date(business.created_at).toLocaleDateString()}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        {business.owner?.last_sign_in_at
-                          ? new Date(business.owner.last_sign_in_at).toLocaleDateString()
-                          : "Never"}
-                      </td>
-                      <td className="px-6 py-4">
-                        <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                          business.is_active !== false
-                            ? "bg-green-100 text-green-800"
-                            : "bg-red-100 text-red-800"
-                        }`}>
-                          {business.is_active !== false ? "Active" : "Inactive"}
-                        </span>
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
-                      No businesses found
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
+                      </div>
+                      <ChevronDown className="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0" />
+                    </div>
+                  </summary>
 
-        {/* Payment Success/Failure Analysis */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">
-              Payment Status Distribution
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
-                <div>
-                  <p className="text-sm font-semibold text-gray-700">Succeeded</p>
-                  <p className="text-2xl font-black text-green-600">
-                    {succeededPayments.length}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600">Total Value</p>
-                  <p className="text-lg font-bold text-green-700">
-                    {formatAmount(totalRevenue)}
-                  </p>
-                </div>
-              </div>
+                  {/* Expanded Details */}
+                  <div className="px-6 py-6 bg-slate-50 border-t border-slate-200">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-              <div className="flex items-center justify-between p-4 bg-red-50 rounded-lg">
-                <div>
-                  <p className="text-sm font-semibold text-gray-700">Failed</p>
-                  <p className="text-2xl font-black text-red-600">
-                    {failedPayments.length}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600">Success Rate</p>
-                  <p className="text-lg font-bold text-gray-700">
-                    {allPayments && allPayments.length > 0
-                      ? ((succeededPayments.length / allPayments.length) * 100).toFixed(1)
-                      : "0"}%
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+                      {/* Email & Campaign Metrics */}
+                      <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-200">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Mail className="h-5 w-5 text-purple-600" />
+                          <h4 className="text-md font-bold text-gray-900">Email & Campaign Performance</h4>
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Total Campaigns</span>
+                            <span className="font-bold text-gray-900">{metrics.totalCampaigns}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Active Campaigns</span>
+                            <span className="font-bold text-green-600">{metrics.activeCampaigns}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Emails Sent</span>
+                            <span className="font-bold text-purple-600">{metrics.totalEmailsSent}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Delivered</span>
+                            <span className="font-bold text-green-600">{metrics.emailsDelivered}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Failed</span>
+                            <span className="font-bold text-red-600">{metrics.emailsFailed}</span>
+                          </div>
+                          <div className="flex justify-between items-center pt-2 border-t">
+                            <span className="text-sm font-semibold text-gray-700">Delivery Rate</span>
+                            <span className="font-black text-blue-600">{metrics.emailDeliveryRate}%</span>
+                          </div>
+                        </div>
+                      </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">
-              Campaign Activity
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                <div>
-                  <p className="text-sm font-semibold text-gray-700">Active Campaigns</p>
-                  <p className="text-2xl font-black text-blue-600">
-                    {activeCampaigns}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600">Total</p>
-                  <p className="text-lg font-bold text-gray-700">
-                    {totalCampaigns}
-                  </p>
-                </div>
-              </div>
+                      {/* Referral & Conversion Metrics */}
+                      <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-200">
+                        <div className="flex items-center gap-2 mb-4">
+                          <TrendingUp className="h-5 w-5 text-emerald-600" />
+                          <h4 className="text-md font-bold text-gray-900">Referral & Conversion Tracking</h4>
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Link Clicks</span>
+                            <span className="font-bold text-orange-600">{metrics.linkClicks}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Page Views</span>
+                            <span className="font-bold text-gray-900">{metrics.pageViews}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Total Referrals</span>
+                            <span className="font-bold text-purple-600">{metrics.totalReferrals}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Converted</span>
+                            <span className="font-bold text-green-600">{metrics.convertedReferrals}</span>
+                          </div>
+                          <div className="flex justify-between items-center pt-2 border-t">
+                            <span className="text-sm font-semibold text-gray-700">Conversion Rate</span>
+                            <span className="font-black text-emerald-600">{metrics.conversionRate}%</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm font-semibold text-gray-700">Click-to-Referral</span>
+                            <span className="font-bold text-blue-600">
+                              {metrics.linkClicks > 0 ? ((metrics.totalReferrals / metrics.linkClicks) * 100).toFixed(1) : "0.0"}%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
 
-              <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
-                <div>
-                  <p className="text-sm font-semibold text-gray-700">Avg Referrals/Campaign</p>
-                  <p className="text-2xl font-black text-purple-600">
-                    {totalCampaigns > 0
-                      ? (totalReferrals / totalCampaigns).toFixed(1)
-                      : "0"}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600">Conversion</p>
-                  <p className="text-lg font-bold text-gray-700">
-                    {conversionRate}%
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                      {/* Revenue & Commissions */}
+                      <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-200">
+                        <div className="flex items-center gap-2 mb-4">
+                          <DollarSign className="h-5 w-5 text-green-600" />
+                          <h4 className="text-md font-bold text-gray-900">Revenue & Commissions</h4>
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Total Revenue</span>
+                            <span className="font-bold text-green-600">{formatAmount(metrics.totalRevenue)}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Successful Payments</span>
+                            <span className="font-bold text-gray-900">{metrics.succeededPayments}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Total Commissions</span>
+                            <span className="font-bold text-purple-600">{formatAmount(metrics.totalCommissions)}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Paid Out</span>
+                            <span className="font-bold text-emerald-600">{formatAmount(metrics.paidCommissions)}</span>
+                          </div>
+                          <div className="flex justify-between items-center pt-2 border-t">
+                            <span className="text-sm font-semibold text-gray-700">Net Revenue</span>
+                            <span className="font-black text-blue-600">
+                              {formatAmount(metrics.totalRevenue - metrics.totalCommissions)}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
 
-        {/* Recent Activity Feed */}
-        <div className="bg-white rounded-xl shadow-lg mb-8">
-          <div className="bg-gradient-to-r from-indigo-600 to-blue-600 px-6 py-4">
-            <h2 className="text-xl font-bold text-white">
-              Recent Platform Activity (Last 50)
-            </h2>
-          </div>
-          <div className="divide-y divide-gray-200 max-h-[600px] overflow-y-auto">
-            {allPayments && allPayments.slice(0, 20).map((payment) => (
-              <div key={payment.id} className="px-6 py-4 hover:bg-gray-50 transition-colors">
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-gray-900">
-                      Payment {payment.status === "succeeded" ? "✅" : "❌"} - {payment.business?.name || "Unknown"}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {new Date(payment.created_at).toLocaleString()} · {formatAmount(payment.amount_total)}
-                    </p>
+                      {/* Referral Codes & Links Performance */}
+                      <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-200">
+                        <div className="flex items-center gap-2 mb-4">
+                          <LinkIcon className="h-5 w-5 text-blue-600" />
+                          <h4 className="text-md font-bold text-gray-900">Active Referral Codes ({metrics.referralCodes.length})</h4>
+                        </div>
+                        {metrics.referralCodes.length > 0 ? (
+                          <div className="space-y-2 max-h-64 overflow-y-auto">
+                            {metrics.referralCodes.slice(0, 10).map((codeData, i) => (
+                              <div key={i} className="bg-slate-50 rounded p-3 border border-slate-200">
+                                <div className="flex items-start justify-between mb-2">
+                                  <div className="flex-1">
+                                    <p className="font-mono text-sm font-bold text-blue-600">{codeData.code}</p>
+                                    <p className="text-xs text-gray-600 mt-0.5">{codeData.ambassadorName || codeData.ambassadorEmail}</p>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-2 mt-2">
+                                  <div className="text-center">
+                                    <p className="text-xs text-gray-500">Clicks</p>
+                                    <p className="text-sm font-bold text-orange-600">{codeData.clicks}</p>
+                                  </div>
+                                  <div className="text-center">
+                                    <p className="text-xs text-gray-500">Referrals</p>
+                                    <p className="text-sm font-bold text-purple-600">{codeData.referrals}</p>
+                                  </div>
+                                  <div className="text-center">
+                                    <p className="text-xs text-gray-500">Converted</p>
+                                    <p className="text-sm font-bold text-green-600">{codeData.conversions}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                            {metrics.referralCodes.length > 10 && (
+                              <p className="text-xs text-gray-500 text-center py-2">
+                                + {metrics.referralCodes.length - 10} more codes
+                              </p>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-gray-500 text-center py-4">No referral codes yet</p>
+                        )}
+                      </div>
+
+                    </div>
+
+                    {/* Account Details Footer */}
+                    <div className="mt-6 pt-4 border-t border-slate-200">
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-500 text-xs">Account Created</p>
+                          <p className="font-semibold text-gray-900">{new Date(business.created_at).toLocaleDateString()}</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-500 text-xs">Last Login</p>
+                          <p className="font-semibold text-gray-900">
+                            {business.owner?.last_sign_in_at
+                              ? new Date(business.owner.last_sign_in_at).toLocaleDateString()
+                              : "Never"}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-gray-500 text-xs">Business ID</p>
+                          <p className="font-mono text-xs text-gray-600">{business.id.slice(0, 8)}...</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-500 text-xs">Owner ID</p>
+                          <p className="font-mono text-xs text-gray-600">{business.owner_id.slice(0, 8)}...</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <span className={`px-3 py-1 text-xs font-bold rounded-full ${
-                    payment.status === "succeeded"
-                      ? "bg-green-100 text-green-800"
-                      : "bg-red-100 text-red-800"
-                  }`}>
-                    {payment.status}
-                  </span>
-                </div>
-              </div>
-            ))}
-            {allReferrals && allReferrals.slice(0, 20).map((referral) => (
-              <div key={referral.id} className="px-6 py-4 hover:bg-gray-50 transition-colors">
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-gray-900">
-                      New Referral - {referral.ambassador?.name || "Unknown Ambassador"}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {new Date(referral.created_at).toLocaleString()} · {referral.business?.name}
-                    </p>
-                  </div>
-                  <span className={`px-3 py-1 text-xs font-bold rounded-full ${
-                    referral.status === "converted"
-                      ? "bg-purple-100 text-purple-800"
-                      : "bg-gray-100 text-gray-800"
-                  }`}>
-                    {referral.status}
-                  </span>
-                </div>
-              </div>
-            ))}
+                </details>
+              );
+            })}
           </div>
         </div>
 
