@@ -241,7 +241,7 @@ const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?
   <div
     className={cn(
       "hero-badge pointer-events-none select-none rounded-2xl border border-white/20 bg-white/50",
-      "flex flex-row items-center gap-3 w-[200px] sm:w-[240px] lg:w-[280px] h-[70px] sm:h-[80px] px-3 sm:px-4 py-3 transition-all duration-300",
+      "flex flex-row items-center gap-2.5 w-[180px] sm:w-[220px] lg:w-[260px] h-[65px] sm:h-[75px] px-2.5 sm:px-3 py-2.5 transition-all duration-300",
       "opacity-70 hover:opacity-85 backdrop-blur-lg shadow-lg shadow-black/15",
       className,
     )}
@@ -250,13 +250,13 @@ const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?
     }}
   >
     {/* Logo on left */}
-    <div className="flex h-11 w-11 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/95 shadow-md">
+    <div className="flex h-10 w-10 sm:h-11 sm:w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white/95 shadow-md">
       <Image
         src="/logo.svg"
         alt="Refer Labs"
-        width={36}
-        height={36}
-        className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
+        width={32}
+        height={32}
+        className="h-7 w-7 sm:h-8 sm:w-8 object-contain"
         priority={true}
       />
     </div>
@@ -312,7 +312,7 @@ export default function Home() {
                 <span className="block">We Help Launch Successful</span>
                 <span className="block">Referral Programs</span>
               </h1>
-              <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-700 sm:text-2xl lg:text-[1.75rem]">
+              <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-900 sm:text-2xl lg:text-[1.75rem]">
                 We'll Activate Additional Revenue That Plugs Straight Into Your Sales and Marketing Strategy
               </p>
             </div>
