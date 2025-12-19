@@ -3,6 +3,7 @@ export const revalidate = 0;
 export const runtime = "nodejs";
 
 import { nanoid } from "nanoid";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
@@ -225,6 +226,11 @@ async function getBusiness(): Promise<BusinessCoreFields> {
 
 export default async function Dashboard() {
   const business = await getBusiness();
+
+  // Get user for admin check
+  const authSupabase = await createServerComponentClient();
+  const { data: { user } } = await authSupabase.auth.getUser();
+
   const defaultSiteUrl = ensureAbsoluteUrl("http://localhost:3000") ?? "http://localhost:3000";
   const configuredSiteUrl = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL);
   const siteUrl = configuredSiteUrl ?? defaultSiteUrl;
@@ -1795,6 +1801,26 @@ export default async function Dashboard() {
           campaignsSent={totalCampaignsSent}
           revenue={totalReferralRevenue}
         />
+
+        {/* Admin Navigation - Only visible to jarred@referlabs.com.au */}
+        {user?.email === "jarred@referlabs.com.au" && (
+          <div className="mb-6 flex gap-4 justify-end">
+            <Link
+              href="/dashboard/admin-master"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all shadow-md hover:shadow-lg"
+            >
+              <Settings className="h-5 w-5" />
+              Master Admin Dashboard
+            </Link>
+            <Link
+              href="/dashboard/admin-payments"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
+            >
+              <CreditCard className="h-5 w-5" />
+              Admin Payments
+            </Link>
+          </div>
+        )}
 
         {/* Progress Tracker */}
         <ProgressTracker
