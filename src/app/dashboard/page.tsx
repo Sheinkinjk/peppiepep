@@ -33,8 +33,7 @@ import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
 import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialog";
 import { ReferralsTable } from "@/components/ReferralsTable";
 import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingChecklist";
-import { Step2Explainer, Step3Explainer, Step4Explainer, Step5Explainer } from "@/components/StepExplainers";
-import { Step1Education, Step2Education, Step3Education, Step4Education } from "@/components/dashboard/StepEducation";
+import { Step1Education, Step2Education, Step3Education, Step4Education, Step5Education } from "@/components/dashboard/StepEducation";
 import { TwoColumnLayout } from "@/components/dashboard/TwoColumnLayout";
 import { Step1Sidebar, Step2Sidebar, Step3Sidebar, Step4Sidebar } from "@/components/dashboard/StepSidebars";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
@@ -1272,7 +1271,6 @@ export default async function Dashboard() {
           }
           implementContent={
             <>
-              <Step2Explainer />
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
                 <ImplementationGuideDialog
                   siteUrl={siteUrl}
@@ -1364,7 +1362,6 @@ export default async function Dashboard() {
           }
           implementContent={
             <>
-              <Step3Explainer />
               <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
                 <div className="flex items-center justify-between">
                   <div>
@@ -1428,7 +1425,6 @@ export default async function Dashboard() {
           }
           implementContent={
             <>
-              <Step4Explainer />
               <Tabs defaultValue="analytics">
                 <div className="border border-slate-200 bg-white p-4 rounded-lg">
                   <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
@@ -1540,7 +1536,9 @@ export default async function Dashboard() {
       status: safeReferrals.length > 0 ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
-          <Step5Explainer />
+          <div className="max-w-md">
+            <Step5Education />
+          </div>
         <Tabs defaultValue="referrals">
           <div className="rounded-3xl border border-slate-200/80 bg-white/70 p-2 shadow-inner shadow-slate-200/80">
             <TabsList className="flex flex-wrap gap-2 rounded-2xl bg-slate-100/80 p-1 text-xs font-semibold uppercase tracking-wide text-slate-500">

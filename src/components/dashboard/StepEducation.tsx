@@ -148,3 +148,46 @@ export function Step4Education() {
     </HowThisWorksSection>
   )
 }
+
+export function Step5Education() {
+  return (
+    <HowThisWorksSection title="How does ROI measurement work?">
+      <h4>Why This Step Matters</h4>
+      <p>
+        Track every referral from click to conversion and calculate your program's return on investment.
+        This data helps you optimize rewards and identify your top performers.
+      </p>
+
+      <h4>Managing Referrals</h4>
+      <ol>
+        <li>
+          <strong>View All Referrals:</strong> See pending and completed referrals in one table
+          <ul>
+            <li>Filter by ambassador, status, or date</li>
+            <li>See transaction values and conversion rates</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Mark Conversions:</strong> When a referral books, mark it complete
+          <ul>
+            <li>Ambassador receives reward automatically</li>
+            <li>Revenue attribution is tracked</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Add Manual Referrals:</strong> Record offline or phone referrals
+          <ul>
+            <li>Ensure ambassadors get credit for all referrals</li>
+            <li>Keep accurate ROI calculations</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h4>Pro Tip</h4>
+      <p>
+        💡 Aim for 5x+ ROI. If you're below that, either increase transaction values or
+        reduce reward costs. Your top 20% of ambassadors typically drive 80% of results.
+      </p>
+    </HowThisWorksSection>
+  )
+}
