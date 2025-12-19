@@ -7,7 +7,7 @@ import { formatAmount } from "@/lib/stripe";
 import Link from "next/link";
 
 export default async function AdminPaymentsPage() {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   // Check if user is jarred@referlabs.com.au
   const {
