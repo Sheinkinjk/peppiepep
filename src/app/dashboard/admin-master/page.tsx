@@ -1,23 +1,25 @@
 // @ts-nocheck
 export const dynamic = "force-dynamic";
 
-import { createServerComponentClient } from "@/lib/supabase";
+import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import { redirect } from "next/navigation";
 import { formatAmount } from "@/lib/stripe";
 import Link from "next/link";
 import { ChevronDown, ChevronUp, Mail, Users, Link as LinkIcon, TrendingUp, DollarSign, Activity } from "lucide-react";
 
 export default async function MasterAdminDashboard() {
-  const supabase = await createServerComponentClient();
-
-  // Check if user is jarred@referlabs.com.au
+  // First check auth with regular client
+  const authClient = await createServerComponentClient();
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await authClient.auth.getUser();
 
   if (!user || user.email !== "jarred@referlabs.com.au") {
     redirect("/dashboard");
   }
+
+  // Use service client to bypass RLS and fetch ALL data across all accounts
+  const supabase = await createServiceClient();
 
   // Fetch comprehensive cross-account data with deep relationships
 
