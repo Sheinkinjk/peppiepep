@@ -240,28 +240,35 @@ const PillarCard = ({ pillar }: { pillar: ReferralPillar }) => (
 const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
   <div
     className={cn(
-      "hero-badge pointer-events-none select-none rounded-xl border border-white/15 bg-white/40",
-      "flex flex-col w-[140px] sm:w-[160px] h-[120px] sm:h-[140px] p-3 sm:p-4 transition-all duration-300",
-      "opacity-60 hover:opacity-75 backdrop-blur-md shadow-md shadow-black/10",
+      "hero-badge pointer-events-none select-none rounded-2xl border border-white/20 bg-white/50",
+      "flex flex-row items-center gap-3 w-[200px] sm:w-[240px] lg:w-[280px] h-[70px] sm:h-[80px] px-3 sm:px-4 py-3 transition-all duration-300",
+      "opacity-70 hover:opacity-85 backdrop-blur-lg shadow-lg shadow-black/15",
       className,
     )}
     style={{
-      background: `linear-gradient(120deg, ${badge.colors[0]}cc, ${badge.colors[1]}cc)`,
+      background: `linear-gradient(135deg, ${badge.colors[0]}dd, ${badge.colors[1]}dd)`,
     }}
   >
-    <div className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-lg bg-white/95 shadow-sm mb-2.5">
+    {/* Logo on left */}
+    <div className="flex h-11 w-11 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/95 shadow-md">
       <Image
         src="/logo.svg"
         alt="Refer Labs"
-        width={32}
-        height={32}
-        className="h-7 w-7 sm:h-8 sm:w-8 object-contain opacity-90"
+        width={36}
+        height={36}
+        className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
         priority={true}
       />
     </div>
-    <div className="flex-1 flex flex-col justify-center">
-      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-90 text-white/95 mb-1 leading-tight">{badge.title}</p>
-      <p className="text-xs sm:text-sm font-medium leading-snug text-white/85 line-clamp-2">{badge.text}</p>
+
+    {/* Text on right - 2 lines */}
+    <div className="flex-1 min-w-0 flex flex-col justify-center">
+      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white/90 mb-0.5 leading-tight">
+        {badge.title}
+      </p>
+      <p className="text-xs sm:text-sm font-semibold leading-tight text-white line-clamp-2">
+        {badge.text}
+      </p>
     </div>
   </div>
 );
