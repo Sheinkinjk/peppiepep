@@ -240,8 +240,8 @@ const PillarCard = ({ pillar }: { pillar: ReferralPillar }) => (
 const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
   <div
     className={cn(
-      "hero-badge pointer-events-none select-none rounded-xl border border-white/15 bg-white/40 px-3 py-2.5 sm:px-3.5 sm:py-3",
-      "flex min-w-[160px] max-w-[220px] sm:min-w-[180px] sm:max-w-[240px] items-center gap-3 transition-all duration-300",
+      "hero-badge pointer-events-none select-none rounded-xl border border-white/15 bg-white/40",
+      "flex flex-col w-[140px] sm:w-[160px] h-[120px] sm:h-[140px] p-3 sm:p-4 transition-all duration-300",
       "opacity-60 hover:opacity-75 backdrop-blur-md shadow-md shadow-black/10",
       className,
     )}
@@ -249,19 +249,19 @@ const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?
       background: `linear-gradient(120deg, ${badge.colors[0]}cc, ${badge.colors[1]}cc)`,
     }}
   >
-    <div className="flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-lg bg-white/95 shadow-sm">
+    <div className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-lg bg-white/95 shadow-sm mb-2.5">
       <Image
         src="/logo.svg"
         alt="Refer Labs"
-        width={28}
-        height={28}
-        className="h-6 w-6 sm:h-7 sm:w-7 object-contain opacity-90"
-        priority={false}
+        width={32}
+        height={32}
+        className="h-7 w-7 sm:h-8 sm:w-8 object-contain opacity-90"
+        priority={true}
       />
     </div>
-    <div className="flex-1 min-w-0">
-      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-90 text-white/95">{badge.title}</p>
-      <p className="text-xs sm:text-sm font-medium leading-tight text-white/85 mt-0.5">{badge.text}</p>
+    <div className="flex-1 flex flex-col justify-center">
+      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-90 text-white/95 mb-1 leading-tight">{badge.title}</p>
+      <p className="text-xs sm:text-sm font-medium leading-snug text-white/85 line-clamp-2">{badge.text}</p>
     </div>
   </div>
 );
@@ -509,29 +509,77 @@ export default function Home() {
                         </div>
                         <div>
                           <h4 className="text-lg font-bold text-white mb-1">Traditional Marketing</h4>
-                          <p className="text-sm text-slate-400">High cost, low trust, diminishing returns</p>
+                          <p className="text-sm text-slate-400">Expensive, hard to track, declining trust</p>
                         </div>
                       </div>
-                      <ul className="space-y-3">
+                      <ul className="space-y-3.5">
                         <li className="flex items-start gap-2 text-slate-300">
                           <span className="text-red-400 mt-0.5">•</span>
-                          <span className="text-sm">Facebook/Instagram ads: <span className="font-bold text-white">$200-500 CAC</span></span>
+                          <div className="text-sm">
+                            <div>Paid ads CAC: <span className="font-bold text-white">$200-400+</span></div>
+                            <div className="text-xs text-slate-500 mt-0.5 italic">
+                              Source:{" "}
+                              <a
+                                href="https://www.webfx.com/digital-advertising/pricing/cost-per-acquisition/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 underline decoration-dotted"
+                              >
+                                WebFX 2024
+                              </a>
+                            </div>
+                          </div>
                         </li>
                         <li className="flex items-start gap-2 text-slate-300">
                           <span className="text-red-400 mt-0.5">•</span>
-                          <span className="text-sm">Google Ads: <span className="font-bold text-white">$150-400 CAC</span> + ongoing spend</span>
+                          <div className="text-sm">
+                            <div>Attribution unclear: <span className="font-bold text-white">50% can't track ROI</span></div>
+                            <div className="text-xs text-slate-500 mt-0.5 italic">
+                              Source:{" "}
+                              <a
+                                href="https://www.gartner.com/en/marketing/research/marketing-analytics-and-data-science-survey"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 underline decoration-dotted"
+                              >
+                                Gartner
+                              </a>
+                            </div>
+                          </div>
                         </li>
                         <li className="flex items-start gap-2 text-slate-300">
                           <span className="text-red-400 mt-0.5">•</span>
-                          <span className="text-sm">Sales team: <span className="font-bold text-white">$60K+ per rep</span> + commission + training</span>
+                          <div className="text-sm">
+                            <div>Ad trust declining: <span className="font-bold text-white">Only 25% trust ads</span></div>
+                            <div className="text-xs text-slate-500 mt-0.5 italic">
+                              Source:{" "}
+                              <a
+                                href="https://www.nielsen.com/insights/2021/trust-in-advertising-2021/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 underline decoration-dotted"
+                              >
+                                Nielsen
+                              </a>
+                            </div>
+                          </div>
                         </li>
                         <li className="flex items-start gap-2 text-slate-300">
                           <span className="text-red-400 mt-0.5">•</span>
-                          <span className="text-sm">Cold outreach: <span className="font-bold text-white">1-3% response rate</span>, low trust</span>
-                        </li>
-                        <li className="flex items-start gap-2 text-slate-300">
-                          <span className="text-red-400 mt-0.5">•</span>
-                          <span className="text-sm">Ad costs rising <span className="font-bold text-white">30% year-over-year</span></span>
+                          <div className="text-sm">
+                            <div>Rising costs: <span className="font-bold text-white">CPM up 61% since 2020</span></div>
+                            <div className="text-xs text-slate-500 mt-0.5 italic">
+                              Source:{" "}
+                              <a
+                                href="https://www.statista.com/statistics/1219187/average-cpm-facebook-instagram-ads-worldwide/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 underline decoration-dotted"
+                              >
+                                Statista
+                              </a>
+                            </div>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -543,30 +591,65 @@ export default function Home() {
                           <span className="text-2xl">✅</span>
                         </div>
                         <div>
-                          <h4 className="text-lg font-bold text-white mb-1">Referral Marketing</h4>
-                          <p className="text-sm text-emerald-200">Low cost, high trust, compounding growth</p>
+                          <h4 className="text-lg font-bold text-white mb-1">Referral Marketing with Refer Labs</h4>
+                          <p className="text-sm text-emerald-200">Lower cost, trackable, trusted by default</p>
                         </div>
                       </div>
-                      <ul className="space-y-3">
+                      <ul className="space-y-3.5">
                         <li className="flex items-start gap-2 text-purple-100">
                           <span className="text-emerald-400 mt-0.5">•</span>
-                          <span className="text-sm">Customer referrals: <span className="font-bold text-white">$15-30 CAC</span> (16x cheaper)</span>
+                          <div className="text-sm">
+                            <div>Referred CAC: <span className="font-bold text-white">70% lower</span> than paid ads</div>
+                            <div className="text-xs text-emerald-100/60 mt-0.5 italic">
+                              Source:{" "}
+                              <a
+                                href="https://www.nielsen.com/insights/2021/trust-in-advertising-2021/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-emerald-300 hover:text-emerald-200 underline decoration-dotted"
+                              >
+                                Nielsen
+                              </a>
+                            </div>
+                          </div>
                         </li>
                         <li className="flex items-start gap-2 text-purple-100">
                           <span className="text-emerald-400 mt-0.5">•</span>
-                          <span className="text-sm">Existing customers = free sales force: <span className="font-bold text-white">$0 payroll</span></span>
+                          <div className="text-sm">
+                            <div><span className="font-bold text-white">100% attribution:</span> Track every click, signup, conversion</div>
+                            <div className="text-xs text-emerald-100/60 mt-0.5 italic">Refer Labs tracks full customer journey</div>
+                          </div>
                         </li>
                         <li className="flex items-start gap-2 text-purple-100">
                           <span className="text-emerald-400 mt-0.5">•</span>
-                          <span className="text-sm">Warm introductions: <span className="font-bold text-white">30% conversion rate</span> (4x higher)</span>
+                          <div className="text-sm">
+                            <div>Trust advantage: <span className="font-bold text-white">92% trust peer recommendations</span></div>
+                            <div className="text-xs text-emerald-100/60 mt-0.5 italic">
+                              Source:{" "}
+                              <a
+                                href="https://www.nielsen.com/insights/2021/trust-in-advertising-2021/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-emerald-300 hover:text-emerald-200 underline decoration-dotted"
+                              >
+                                Nielsen
+                              </a>
+                            </div>
+                          </div>
                         </li>
                         <li className="flex items-start gap-2 text-purple-100">
                           <span className="text-emerald-400 mt-0.5">•</span>
-                          <span className="text-sm">Compounding network effects: <span className="font-bold text-white">Each customer recruits 2-3 more</span></span>
+                          <div className="text-sm">
+                            <div>Network effect: <span className="font-bold text-white">Each customer can recruit 2-5 more</span></div>
+                            <div className="text-xs text-emerald-100/60 mt-0.5 italic">Compounding growth automatically tracked in dashboard</div>
+                          </div>
                         </li>
                         <li className="flex items-start gap-2 text-purple-100">
                           <span className="text-emerald-400 mt-0.5">•</span>
-                          <span className="text-sm">Cost stays flat while growth accelerates</span>
+                          <div className="text-sm">
+                            <div><span className="font-bold text-white">Automated rewards:</span> Instant payouts when targets hit</div>
+                            <div className="text-xs text-emerald-100/60 mt-0.5 italic">Refer Labs handles tracking, reporting, payments</div>
+                          </div>
                         </li>
                       </ul>
                     </div>
