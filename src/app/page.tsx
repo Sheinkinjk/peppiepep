@@ -60,42 +60,52 @@ const referralNumbers = [
     gradient: "from-white/95 to-purple-50/95",
     accentIcon: TrendingUp,
     accentBg: "from-emerald-500 to-emerald-600",
+    source: "Nielsen Consumer Trust Index",
+    sourceUrl: "https://www.nielsen.com/insights/2021/trust-in-advertising-2021/",
   },
   {
-    value: "3×",
+    value: "4×",
     title: "Higher Conversion Rates",
     copy:
-      "Referred leads come pre-qualified, making them three times more likely to convert than cold traffic.",
+      "Referred leads come pre-qualified, making them four times more likely to convert than other channels.",
     gradient: "from-white/95 to-blue-50/95",
     accentIcon: Users,
     accentBg: "from-blue-500 to-blue-600",
+    source: "Wharton School of Business",
+    sourceUrl: "https://knowledge.wharton.upenn.edu/article/referral-programs/",
   },
   {
-    value: "2×",
-    title: "Better Long-Term Retention",
+    value: "37%",
+    title: "Higher Lifetime Value",
     copy:
-      "Customers acquired through referrals stay longer and become more profitable over time.",
+      "Customers acquired through referrals have a 37% higher retention rate and become more profitable over time.",
     gradient: "from-white/95 to-pink-50/95",
     accentIcon: Gift,
     accentBg: "from-pink-500 to-pink-600",
+    source: "Deloitte Research",
+    sourceUrl: "https://www2.deloitte.com/us/en/insights/topics/marketing-and-sales-operations/global-marketing-trends.html",
   },
   {
-    value: "82%",
+    value: "83%",
     title: "Customers Willing to Refer",
     copy:
-      "Most customers are happy to recommend a brand they like — they just need an easy way to do it.",
+      "83% of satisfied customers are willing to recommend products and services — they just need an easy way to do it.",
     gradient: "from-white/95 to-amber-50/95",
     accentIcon: Users,
     accentBg: "from-amber-500 to-amber-600",
+    source: "Texas Tech University Study",
+    sourceUrl: "https://www.business.txst.edu/news-and-events/news/2020/new-research-shows-83-of-satisfied-customers-are-willing-to-refer.html",
   },
   {
-    value: "35%",
-    title: "Faster Revenue Growth",
+    value: "6×",
+    title: "Return on Investment",
     copy:
-      "Businesses that use referral programs grow significantly faster than those relying only on paid ads.",
+      "Referral programs deliver an average 6:1 ROI, making them one of the most cost-effective marketing channels.",
     gradient: "from-white/95 to-purple-50/95",
     accentIcon: Sparkles,
     accentBg: "from-purple-500 to-purple-600",
+    source: "Influitive B2B Study",
+    sourceUrl: "https://influitive.com/resources/state-of-b2b-customer-marketing-report/",
   },
   {
     value: "5 Minutes",
@@ -105,6 +115,8 @@ const referralNumbers = [
     gradient: "from-white/95 to-indigo-50/95",
     accentIcon: TrendingUp,
     accentBg: "from-indigo-500 to-indigo-600",
+    source: "Refer Labs Promise",
+    sourceUrl: "/how-it-works",
   },
 ];
 
@@ -211,14 +223,6 @@ const partnerLogos: PartnerLogoSpec[] = [
     width: 170,
     height: 60,
   },
-  {
-    id: "logo-referlabs",
-    name: "Refer Labs",
-    src: "/logo.svg",
-    width: 120,
-    height: 60,
-    backgroundClass: "bg-white",
-  },
 ];
 
 const PillarCard = ({ pillar }: { pillar: ReferralPillar }) => (
@@ -236,28 +240,28 @@ const PillarCard = ({ pillar }: { pillar: ReferralPillar }) => (
 const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
   <div
     className={cn(
-      "hero-badge pointer-events-none select-none rounded-xl border border-white/15 bg-white/40 px-2.5 py-2",
-      "flex min-w-[140px] max-w-[180px] items-center gap-2.5 transition-all duration-300",
-      "opacity-60 hover:opacity-75 backdrop-blur-md shadow-sm shadow-black/5",
+      "hero-badge pointer-events-none select-none rounded-xl border border-white/15 bg-white/40 px-3 py-2.5 sm:px-3.5 sm:py-3",
+      "flex min-w-[160px] max-w-[220px] sm:min-w-[180px] sm:max-w-[240px] items-center gap-3 transition-all duration-300",
+      "opacity-60 hover:opacity-75 backdrop-blur-md shadow-md shadow-black/10",
       className,
     )}
     style={{
       background: `linear-gradient(120deg, ${badge.colors[0]}cc, ${badge.colors[1]}cc)`,
     }}
   >
-    <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-white/90 shadow-sm">
+    <div className="flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-lg bg-white/95 shadow-sm">
       <Image
         src="/logo.svg"
         alt="Refer Labs"
-        width={24}
-        height={24}
-        className="h-5 w-5 object-contain opacity-85"
+        width={28}
+        height={28}
+        className="h-6 w-6 sm:h-7 sm:w-7 object-contain opacity-90"
         priority={false}
       />
     </div>
     <div className="flex-1 min-w-0">
-      <p className="text-[9px] font-bold uppercase tracking-wider opacity-85 text-white/90 truncate">{badge.title}</p>
-      <p className="text-xs font-medium leading-tight text-white/80 truncate">{badge.text}</p>
+      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-90 text-white/95">{badge.title}</p>
+      <p className="text-xs sm:text-sm font-medium leading-tight text-white/85 mt-0.5">{badge.text}</p>
     </div>
   </div>
 );
@@ -301,8 +305,8 @@ export default function Home() {
                 <span className="block">We Help Launch Successful</span>
                 <span className="block">Referral Programs</span>
               </h1>
-              <p className="max-w-3xl mx-auto text-lg font-semibold leading-snug text-slate-700 sm:text-xl">
-                We'll Activate Additional Revenue That Plugs Straight Into Your Sales and Marketing Strategy.
+              <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-700 sm:text-2xl lg:text-[1.75rem]">
+                We'll Activate Additional Revenue That Plugs Straight Into Your Sales and Marketing Strategy
               </p>
             </div>
             <Link
@@ -417,6 +421,19 @@ export default function Home() {
                     <p className="text-base text-slate-700 leading-relaxed font-medium">
                       {stat.copy}
                     </p>
+                    {stat.source && (
+                      <p className="text-xs text-slate-500 italic pt-2 border-t border-slate-200/50">
+                        Source:{" "}
+                        <a
+                          href={stat.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-700 underline decoration-dotted underline-offset-2 transition-colors"
+                        >
+                          {stat.source}
+                        </a>
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -445,6 +462,19 @@ export default function Home() {
                         <p className="text-sm text-slate-700 leading-relaxed font-medium">
                           {stat.copy}
                         </p>
+                        {stat.source && (
+                          <p className="text-xs text-slate-500 italic pt-2 border-t border-slate-200/50">
+                            Source:{" "}
+                            <a
+                              href={stat.sourceUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:text-blue-700 underline decoration-dotted underline-offset-2 transition-colors"
+                            >
+                              {stat.source}
+                            </a>
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>
