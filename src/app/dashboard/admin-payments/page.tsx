@@ -63,12 +63,34 @@ export default async function AdminPaymentsPage() {
           <h1 className="text-3xl font-bold text-gray-900">
             Admin - Payments & Commissions
           </h1>
-          <Link
-            href="/dashboard"
-            className="text-blue-600 hover:text-blue-800 font-semibold"
-          >
-            ← Back to Dashboard
-          </Link>
+          <div className="flex gap-4">
+            <Link
+              href="/dashboard/admin-master"
+              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-semibold transition-colors"
+            >
+              Master Dashboard
+            </Link>
+            <Link
+              href="/api/admin/export?type=payments"
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold transition-colors"
+              download
+            >
+              Export Payments
+            </Link>
+            <Link
+              href="/api/admin/export?type=commissions"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold transition-colors"
+              download
+            >
+              Export Commissions
+            </Link>
+            <Link
+              href="/dashboard"
+              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 font-semibold transition-colors"
+            >
+              ← Dashboard
+            </Link>
+          </div>
         </div>
 
         {/* Summary Cards */}
