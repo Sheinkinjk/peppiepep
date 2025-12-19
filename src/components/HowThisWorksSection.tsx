@@ -11,10 +11,15 @@ interface HowThisWorksSectionProps {
   defaultOpen?: boolean
 }
 
+/**
+ * Section-level explainer with true binary states:
+ * - Collapsed: Shows only icon + title + chevron (NO body text)
+ * - Expanded: Shows full explanation with all content
+ */
 export function HowThisWorksSection({
   title = "How does this step work?",
   children,
-  defaultOpen = true
+  defaultOpen = false
 }: HowThisWorksSectionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
@@ -23,7 +28,7 @@ export function HowThisWorksSection({
       <Card className="overflow-hidden border-blue-200 bg-gradient-to-br from-blue-50 to-white">
         <CollapsibleTrigger className="w-full flex items-center gap-2 px-4 py-3 text-left font-medium text-blue-700 hover:text-blue-900 hover:bg-blue-100/50 transition-all group">
           <BookOpen className="h-4 w-4 flex-shrink-0" />
-          <span className="flex-1 text-sm">{isOpen ? title : `${title} (click to expand)`}</span>
+          <span className="flex-1 text-sm font-semibold">{title}</span>
           <ChevronDown className={`h-4 w-4 transition-transform duration-200 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
         </CollapsibleTrigger>
         <CollapsibleContent>
