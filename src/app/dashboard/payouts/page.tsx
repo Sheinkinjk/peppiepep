@@ -11,6 +11,7 @@ import {
   MINIMUM_PAYOUT,
   type ConnectAccountStatus,
 } from "@/lib/stripe-payouts";
+import { getCurrentCustomer, getCurrentUser } from "@/lib/auth-helpers";
 
 interface CommissionBalance {
   pending_balance: number;
@@ -29,22 +30,51 @@ export default function PayoutsPage() {
   const [payoutLoading, setPayoutLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-
-  // TODO: Get these from your auth context
-  const customerId = "REPLACE_WITH_ACTUAL_CUSTOMER_ID";
-  const ambassadorId = "REPLACE_WITH_ACTUAL_CUSTOMER_ID";
-  const userEmail = "REPLACE_WITH_ACTUAL_EMAIL";
+  const [customerId, setCustomerId] = useState<string | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
 
   useEffect(() => {
-    loadData();
+    initializeUser();
+  }, []);
+
+  useEffect(() => {
+    if (customerId && userEmail) {
+      loadData();
+    }
 
     // Check for setup completion
     if (searchParams.get("setup") === "complete") {
       setSuccess("Payout account setup complete! You can now request payouts.");
     }
-  }, [searchParams]);
+  }, [customerId, userEmail, searchParams]);
+
+  async function initializeUser() {
+    try {
+      const user = await getCurrentUser();
+      if (!user) {
+        setError("Please log in to view payouts");
+        setLoading(false);
+        return;
+      }
+
+      const customer = await getCurrentCustomer();
+      if (!customer) {
+        setError("Customer account not found");
+        setLoading(false);
+        return;
+      }
+
+      setCustomerId(customer.id);
+      setUserEmail(user.email || "");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load user");
+      setLoading(false);
+    }
+  }
 
   async function loadData() {
+    if (!customerId || !userEmail) return;
+
     try {
       setLoading(true);
       setError(null);
@@ -53,17 +83,15 @@ export default function PayoutsPage() {
       const status = await getConnectAccountStatus(customerId);
       setConnectStatus(status);
 
-      // Load commission balance
-      // TODO: Create an API endpoint to fetch this
-      // For now, using placeholder data
-      setBalance({
-        pending_balance: 15000, // $150 in cents
-        paid_total: 0,
-        lifetime_earnings: 15000,
-        pending_commissions: 2,
-        paid_commissions: 0,
-        last_payout_date: null,
-      });
+      // Load commission balance from API
+      const response = await fetch(`/api/commissions/balance?customer_id=${customerId}`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to load balance');
+      }
+
+      setBalance(data.balance);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to load data");
     } finally {
@@ -72,6 +100,11 @@ export default function PayoutsPage() {
   }
 
   async function handleSetupPayout() {
+    if (!customerId || !userEmail) {
+      setError("User information not available");
+      return;
+    }
+
     try {
       setLoading(true);
       setError(null);
@@ -83,12 +116,17 @@ export default function PayoutsPage() {
   }
 
   async function handleRequestPayout() {
+    if (!customerId) {
+      setError("Customer ID not available");
+      return;
+    }
+
     try {
       setPayoutLoading(true);
       setError(null);
       setSuccess(null);
 
-      const result = await requestPayout(ambassadorId);
+      const result = await requestPayout(customerId);
 
       if (result.success && result.payout) {
         setSuccess(

@@ -5,11 +5,14 @@ const deploymentOrigin =
     ? `https://${process.env.VERCEL_URL}`
     : null;
 
+// Only allow localhost in development, not in production
+const isProduction = process.env.NODE_ENV === 'production';
+
 const allowedOrigins = Array.from(
   new Set(
     [
-    "http://localhost:3000",
-      "https://localhost:3000",
+      // Only include localhost in development
+      ...(!isProduction ? ["http://localhost:3000", "https://localhost:3000"] : []),
       "https://referlabs.com.au",
       "https://peppiepep.vercel.app",
       deploymentOrigin,

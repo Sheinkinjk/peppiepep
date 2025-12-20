@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerComponentClient } from '@/lib/supabase';
+import { createServiceClient } from '@/lib/supabase';
+import { getCurrentAdmin } from '@/lib/admin-auth';
 
 /**
  * Get platform-wide analytics
@@ -9,13 +10,14 @@ import { createServerComponentClient } from '@/lib/supabase';
  */
 export async function GET(request: NextRequest) {
   try {
-    const supabase = await createServerComponentClient();
-
-    // Check admin auth
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user || user.email !== 'jarred@referlabs.com.au') {
+    // Check admin auth using RBAC
+    const admin = await getCurrentAdmin();
+    if (!admin) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    // Use service client for cross-account data
+    const supabase = await createServiceClient();
 
     // Fetch all data for analytics
     const [

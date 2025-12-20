@@ -1,22 +1,15 @@
 // @ts-nocheck
 export const dynamic = "force-dynamic";
 
-import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
-import { redirect } from "next/navigation";
+import { createServiceClient } from "@/lib/supabase";
+import { requireAdmin } from "@/lib/admin-auth";
 import { formatAmount } from "@/lib/stripe";
 import Link from "next/link";
 import { ChevronDown, ChevronUp, Mail, Users, Link as LinkIcon, TrendingUp, DollarSign, Activity } from "lucide-react";
 
 export default async function MasterAdminDashboard() {
-  // First check auth with regular client
-  const authClient = await createServerComponentClient();
-  const {
-    data: { user },
-  } = await authClient.auth.getUser();
-
-  if (!user || user.email !== "jarred@referlabs.com.au") {
-    redirect("/dashboard");
-  }
+  // Require admin access using RBAC system
+  const admin = await requireAdmin();
 
   // Use service client to bypass RLS and fetch ALL data across all accounts
   const supabase = await createServiceClient();
