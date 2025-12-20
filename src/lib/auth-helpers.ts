@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Auth Helper Utilities
  * Provides helper functions for getting current user context

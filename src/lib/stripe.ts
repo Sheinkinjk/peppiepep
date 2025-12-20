@@ -1,12 +1,15 @@
 import Stripe from 'stripe';
 
-// Validate environment variables
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing STRIPE_SECRET_KEY environment variable');
+// Validate environment variables with graceful degradation
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+const isStripeConfigured = Boolean(STRIPE_SECRET_KEY);
+
+if (!isStripeConfigured && process.env.NODE_ENV === 'production') {
+  console.error('CRITICAL: Missing STRIPE_SECRET_KEY in production environment');
 }
 
-// Initialize Stripe with latest API version
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+// Initialize Stripe with latest API version - use placeholder in dev if not configured
+export const stripe = new Stripe(STRIPE_SECRET_KEY || 'sk_test_placeholder_not_configured', {
   apiVersion: '2025-12-15.clover',
   typescript: true,
   appInfo: {
@@ -15,6 +18,13 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
     url: 'https://referlabs.com.au',
   },
 });
+
+// Helper to check if Stripe is properly configured
+export function requireStripe(): void {
+  if (!isStripeConfigured) {
+    throw new Error('Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable.');
+  }
+}
 
 // Helper to get publishable key (client-side)
 export function getStripePublishableKey(): string {

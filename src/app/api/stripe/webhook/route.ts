@@ -1,18 +1,31 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import Stripe from 'stripe';
-import { stripe } from '@/lib/stripe';
+import { stripe, requireStripe } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
+import { createApiLogger } from '@/lib/api-logger';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
 export async function POST(request: NextRequest) {
+  const logger = createApiLogger('stripe-webhook');
+
+  try {
+    requireStripe();
+  } catch (error) {
+    logger.error('Stripe not configured', { error });
+    return NextResponse.json(
+      { error: 'Payment processing is not available' },
+      { status: 503 }
+    );
+  }
+
   const body = await request.text();
   const headersList = await headers();
   const signature = headersList.get('stripe-signature');
 
   if (!signature) {
+    logger.warn('Webhook request missing signature');
     return NextResponse.json(
       { error: 'No signature provided' },
       { status: 400 }
@@ -24,7 +37,7 @@ export async function POST(request: NextRequest) {
   try {
     event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
   } catch (err) {
-    console.error('Webhook signature verification failed:', err);
+    logger.error('Webhook signature verification failed', { error: err });
     return NextResponse.json(
       { error: `Webhook Error: ${(err as Error).message}` },
       { status: 400 }
@@ -46,7 +59,7 @@ export async function POST(request: NextRequest) {
       },
     ]);
   } catch (logError) {
-    console.error('Failed to log webhook event:', logError);
+    logger.error('Failed to log webhook event to database', { error: logError });
     // Continue processing even if logging fails
   }
 
@@ -54,27 +67,27 @@ export async function POST(request: NextRequest) {
   try {
     switch (event.type) {
       case 'checkout.session.completed':
-        await handleCheckoutSessionCompleted(event.data.object as Stripe.Checkout.Session);
+        await handleCheckoutSessionCompleted(event.data.object as Stripe.Checkout.Session, logger);
         break;
 
       case 'payment_intent.succeeded':
-        await handlePaymentIntentSucceeded(event.data.object as Stripe.PaymentIntent);
+        await handlePaymentIntentSucceeded(event.data.object as Stripe.PaymentIntent, logger);
         break;
 
       case 'payment_intent.payment_failed':
-        await handlePaymentIntentFailed(event.data.object as Stripe.PaymentIntent);
+        await handlePaymentIntentFailed(event.data.object as Stripe.PaymentIntent, logger);
         break;
 
       case 'customer.created':
-        await handleCustomerCreated(event.data.object as Stripe.Customer);
+        await handleCustomerCreated(event.data.object as Stripe.Customer, logger);
         break;
 
       case 'charge.refunded':
-        await handleChargeRefunded(event.data.object as Stripe.Charge);
+        await handleChargeRefunded(event.data.object as Stripe.Charge, logger);
         break;
 
       default:
-        console.log(`Unhandled event type: ${event.type}`);
+        logger.info('Unhandled event type received', { eventType: event.type });
     }
 
     // Mark event as processed
@@ -83,9 +96,10 @@ export async function POST(request: NextRequest) {
       .update({ processed: true, processed_at: new Date().toISOString() })
       .eq('stripe_event_id', event.id);
 
+    logger.info('Webhook processed successfully', { eventType: event.type, eventId: event.id });
     return NextResponse.json({ received: true });
   } catch (error) {
-    console.error('Webhook handler error:', error);
+    logger.error('Webhook handler error', { error, eventType: event.type, eventId: event.id });
 
     // Update error in webhook log
     await supabase
@@ -106,23 +120,26 @@ export async function POST(request: NextRequest) {
 /**
  * Handle checkout session completed
  */
-async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) {
+async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session, logger: ReturnType<typeof createApiLogger>) {
   const supabase = await createServerComponentClient();
 
-  console.log('Processing checkout.session.completed:', session.id);
+  logger.info('Processing checkout session completed', { sessionId: session.id, customerId: session.customer });
 
   // Payment is already recorded in payment_intent.succeeded
   // This event is mainly for subscription setups or additional metadata
-  console.log('Checkout session completed for:', session.customer);
 }
 
 /**
  * Handle successful payment
  */
-async function handlePaymentIntentSucceeded(paymentIntent: Stripe.PaymentIntent) {
+async function handlePaymentIntentSucceeded(paymentIntent: Stripe.PaymentIntent, logger: ReturnType<typeof createApiLogger>) {
   const supabase = await createServerComponentClient();
 
-  console.log('Processing payment_intent.succeeded:', paymentIntent.id);
+  logger.info('Processing payment intent succeeded', {
+    paymentIntentId: paymentIntent.id,
+    amount: paymentIntent.amount,
+    currency: paymentIntent.currency
+  });
 
   // Extract metadata
   const businessId = paymentIntent.metadata.platform_business_id || null;
@@ -152,25 +169,30 @@ async function handlePaymentIntentSucceeded(paymentIntent: Stripe.PaymentIntent)
     .single();
 
   if (paymentError) {
+    logger.error('Failed to create payment record', { error: paymentError });
     throw new Error(`Failed to create payment record: ${paymentError.message}`);
   }
 
-  console.log('Payment record created:', payment.id);
+  logger.info('Payment record created', { paymentId: payment.id });
 
   // Check if this payment should generate revenue share commissions
   // This would happen for subscription payments where the customer was referred
   if (businessId) {
-    await createRevenueShareCommission(businessId, payment.id, paymentIntent.amount);
+    await createRevenueShareCommission(businessId, payment.id, paymentIntent.amount, logger);
   }
 }
 
 /**
  * Handle failed payment
  */
-async function handlePaymentIntentFailed(paymentIntent: Stripe.PaymentIntent) {
+async function handlePaymentIntentFailed(paymentIntent: Stripe.PaymentIntent, logger: ReturnType<typeof createApiLogger>) {
   const supabase = await createServerComponentClient();
 
-  console.log('Processing payment_intent.payment_failed:', paymentIntent.id);
+  logger.warn('Processing payment intent failed', {
+    paymentIntentId: paymentIntent.id,
+    failureCode: paymentIntent.last_payment_error?.code,
+    failureMessage: paymentIntent.last_payment_error?.message
+  });
 
   // Record failed payment
   await supabase.from('stripe_payments').insert([
@@ -192,14 +214,14 @@ async function handlePaymentIntentFailed(paymentIntent: Stripe.PaymentIntent) {
     },
   ]);
 
-  console.log('Failed payment recorded');
+  logger.info('Failed payment recorded');
 }
 
 /**
  * Handle customer creation
  */
-async function handleCustomerCreated(customer: Stripe.Customer) {
-  console.log('Processing customer.created:', customer.id);
+async function handleCustomerCreated(customer: Stripe.Customer, logger: ReturnType<typeof createApiLogger>) {
+  logger.info('Processing customer created', { customerId: customer.id });
   // Customer is already created via create-checkout endpoint
   // This is just for logging
 }
@@ -207,10 +229,10 @@ async function handleCustomerCreated(customer: Stripe.Customer) {
 /**
  * Handle refund
  */
-async function handleChargeRefunded(charge: Stripe.Charge) {
+async function handleChargeRefunded(charge: Stripe.Charge, logger: ReturnType<typeof createApiLogger>) {
   const supabase = await createServerComponentClient();
 
-  console.log('Processing charge.refunded:', charge.id);
+  logger.info('Processing charge refunded', { chargeId: charge.id, amountRefunded: charge.amount_refunded });
 
   // Find the payment by payment intent
   const { data: payment } = await supabase
@@ -229,7 +251,7 @@ async function handleChargeRefunded(charge: Stripe.Charge) {
       })
       .eq('id', payment.id);
 
-    console.log('Payment marked as refunded:', payment.id);
+    logger.info('Payment marked as refunded', { paymentId: payment.id });
   }
 }
 
@@ -239,7 +261,8 @@ async function handleChargeRefunded(charge: Stripe.Charge) {
 async function createRevenueShareCommission(
   businessId: string,
   paymentId: string,
-  amount: number
+  amount: number,
+  logger: ReturnType<typeof createApiLogger>
 ) {
   const supabase = await createServerComponentClient();
 
@@ -252,7 +275,7 @@ async function createRevenueShareCommission(
     .single();
 
   if (!referral) {
-    console.log('No referral found for business:', businessId);
+    logger.info('No referral found for business', { businessId });
     return;
   }
 
@@ -287,9 +310,9 @@ async function createRevenueShareCommission(
     .single();
 
   if (commissionError) {
-    console.error('Failed to create revenue share commission:', commissionError);
+    logger.error('Failed to create revenue share commission', { error: commissionError });
     throw commissionError;
   }
 
-  console.log('Revenue share commission created:', commission.id);
+  logger.info('Revenue share commission created', { commissionId: commission.id, amount: commissionAmount });
 }

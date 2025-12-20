@@ -1,6 +1,6 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerComponentClient } from '@/lib/supabase';
+import { getCurrentAdmin } from '@/lib/admin-auth';
 
 /**
  * Get all commissions with filters
@@ -9,6 +9,12 @@ import { createServerComponentClient } from '@/lib/supabase';
  */
 export async function GET(request: NextRequest) {
   try {
+    // Check admin auth using RBAC
+    const admin = await getCurrentAdmin();
+    if (!admin) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status');
     const ambassadorId = searchParams.get('ambassadorId');
@@ -79,6 +85,12 @@ export async function GET(request: NextRequest) {
  */
 export async function PATCH(request: NextRequest) {
   try {
+    // Check admin auth using RBAC
+    const admin = await getCurrentAdmin();
+    if (!admin) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const body = await request.json();
     const { commissionId, status, notes } = body;
 
@@ -91,8 +103,8 @@ export async function PATCH(request: NextRequest) {
 
     const supabase = await createServerComponentClient();
 
-    // TODO: Get admin user ID from auth
-    const adminUserId = 'ADMIN_USER_ID';
+    // Get admin user ID from authenticated session
+    const adminUserId = admin.id;
 
     const updateData: any = {
       status,

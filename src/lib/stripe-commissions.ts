@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { createServerComponentClient } from '@/lib/supabase';
 import { stripe, calculateCommission, COMMISSION_RULES } from '@/lib/stripe';
 
