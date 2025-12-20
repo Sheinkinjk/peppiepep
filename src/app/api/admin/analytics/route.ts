@@ -43,7 +43,15 @@ export async function GET(request: NextRequest) {
         .select('status, created_at')
         .gte('created_at', new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString())
         .order('created_at', { ascending: false }),
-    ]);
+    ]) as [
+      { count: number | null },
+      { count: number | null },
+      { count: number | null },
+      { count: number | null },
+      { count: number | null },
+      { data: Array<{ amount_total: number; status: string; created_at: string }> | null },
+      { data: Array<{ status: string; created_at: string }> | null },
+    ];
 
     // Calculate revenue
     const totalRevenue = recentPayments?.reduce((sum, p) =>

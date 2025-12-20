@@ -137,9 +137,12 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                             </div>
                           )}
                         </div>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          {step.description}
-                        </p>
+                        {/* Description - Only show when expanded */}
+                        {isExpanded && (
+                          <p className="text-sm text-slate-600 leading-relaxed mt-2">
+                            {step.description}
+                          </p>
+                        )}
                       </div>
 
                       {/* Expand/Collapse Icon */}

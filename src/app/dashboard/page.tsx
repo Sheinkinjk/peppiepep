@@ -63,6 +63,7 @@ import { DashboardHeader } from "./components/DashboardHeader";
 import { ProgressTracker } from "./components/ProgressTracker";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
+import { getCurrentAdmin } from "@/lib/admin-auth";
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -229,6 +230,9 @@ export default async function Dashboard() {
   // Get user for admin check
   const authSupabase = await createServerComponentClient();
   const { data: { user } } = await authSupabase.auth.getUser();
+
+  // Check if user is actually an admin (for admin dashboard button)
+  const currentAdmin = await getCurrentAdmin();
 
   const defaultSiteUrl = ensureAbsoluteUrl("http://localhost:3000") ?? "http://localhost:3000";
   const configuredSiteUrl = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL);
@@ -1800,8 +1804,8 @@ export default async function Dashboard() {
           revenue={totalReferralRevenue}
         />
 
-        {/* Admin Navigation - Only visible to jarred@referlabs.com.au */}
-        {user?.email === "jarred@referlabs.com.au" && (
+        {/* Admin Navigation - Only visible to users with admin role */}
+        {currentAdmin && (
           <div className="mb-6 flex gap-4 justify-end">
             <Link
               href="/dashboard/admin-master"
