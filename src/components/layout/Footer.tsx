@@ -29,6 +29,10 @@ export default function Footer() {
             How it works
           </Link>
           <span className="text-[#4A5B5E]">•</span>
+          <Link className="hover:text-[#0E2B31] cursor-pointer" href="/lead-hacking">
+            Lead Hacking
+          </Link>
+          <span className="text-[#4A5B5E]">•</span>
           <Link className="hover:text-[#0E2B31] cursor-pointer" href="/our-referral-program">
             Our Referral Program
           </Link>

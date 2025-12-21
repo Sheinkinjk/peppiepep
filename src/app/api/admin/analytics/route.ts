@@ -61,13 +61,13 @@ export async function GET(request: NextRequest) {
     const failedPayments = recentPayments?.filter(p => p.status === 'failed').length || 0;
     const successRate = totalPayments
       ? ((successfulPayments / (successfulPayments + failedPayments || 1)) * 100).toFixed(1)
-      : 0;
+      : '0';
 
     // Calculate referral metrics
     const convertedReferrals = recentReferrals?.filter(r => r.status === 'converted').length || 0;
     const conversionRate = recentReferrals?.length
       ? ((convertedReferrals / recentReferrals.length) * 100).toFixed(1)
-      : 0;
+      : '0';
 
     // Daily breakdown for last 30 days
     const dailyStats = [];
