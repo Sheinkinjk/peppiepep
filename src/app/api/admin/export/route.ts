@@ -32,7 +32,17 @@ export async function GET(request: NextRequest) {
             *,
             business:businesses(id, name)
           `)
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: false }) as {
+            data: Array<{
+              created_at: string;
+              amount_total: number;
+              currency: string;
+              status: string;
+              stripe_payment_intent_id: string | null;
+              receipt_url: string | null;
+              business: { id: string; name: string } | null;
+            }> | null;
+          };
 
         csv = 'Date,Business,Amount,Currency,Status,Payment Intent ID,Receipt URL\n';
         payments?.forEach(p => {
@@ -50,7 +60,18 @@ export async function GET(request: NextRequest) {
             ambassador:customers!ambassador_id(id, email, name),
             business:businesses(id, name)
           `)
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: false }) as {
+            data: Array<{
+              created_at: string;
+              commission_type: string;
+              amount: number;
+              currency: string;
+              status: string;
+              paid_at: string | null;
+              ambassador: { id: string; email: string; name: string | null } | null;
+              business: { id: string; name: string } | null;
+            }> | null;
+          };
 
         csv = 'Date,Ambassador Name,Ambassador Email,Business,Type,Amount,Currency,Status,Paid At\n';
         commissions?.forEach(c => {
@@ -67,7 +88,15 @@ export async function GET(request: NextRequest) {
             *,
             owner:users!owner_id(id, email, created_at, last_sign_in_at)
           `)
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: false }) as {
+            data: Array<{
+              id: string;
+              name: string;
+              created_at: string;
+              is_active: boolean;
+              owner: { id: string; email: string; created_at: string; last_sign_in_at: string | null } | null;
+            }> | null;
+          };
 
         csv = 'Business Name,Owner Email,Created,Last Sign In,Status,ID\n';
         businesses?.forEach(b => {
@@ -86,7 +115,17 @@ export async function GET(request: NextRequest) {
             customer:customers(id, email, name),
             ambassador:customers!referrer_id(id, email, name)
           `)
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: false }) as {
+            data: Array<{
+              created_at: string;
+              status: string;
+              type: string | null;
+              referral_code: string | null;
+              business: { id: string; name: string } | null;
+              customer: { id: string; email: string; name: string | null } | null;
+              ambassador: { id: string; email: string; name: string | null } | null;
+            }> | null;
+          };
 
         csv = 'Date,Business,Ambassador Name,Ambassador Email,Customer Name,Customer Email,Status,Type,Code\n';
         referrals?.forEach(r => {
@@ -100,7 +139,18 @@ export async function GET(request: NextRequest) {
         const { data: balances } = await supabase
           .from('ambassador_commission_balances')
           .select('*')
-          .order('lifetime_earnings', { ascending: false });
+          .order('lifetime_earnings', { ascending: false }) as {
+            data: Array<{
+              ambassador_email: string | null;
+              ambassador_name: string | null;
+              pending_balance: number | null;
+              paid_total: number | null;
+              lifetime_earnings: number | null;
+              pending_commissions: number | null;
+              paid_commissions: number | null;
+              last_payout_date: string | null;
+            }> | null;
+          };
 
         csv = 'Ambassador Email,Ambassador Name,Pending Balance,Paid Total,Lifetime Earnings,Pending Commissions,Paid Commissions,Last Payout Date\n';
         balances?.forEach(b => {

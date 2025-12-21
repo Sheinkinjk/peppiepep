@@ -27,16 +27,24 @@ export async function GET(request: NextRequest) {
     // Verify the customer belongs to this user's business or is the user's email
     const { data: customer, error: customerError } = await supabase
       .from('customers')
-      .select('id, email, business_id, businesses(owner_id)')
+      .select('id, email, business_id, business:businesses!business_id(owner_id)')
       .eq('id', customerId)
-      .single();
+      .single() as {
+        data: {
+          id: string;
+          email: string;
+          business_id: string;
+          business: { owner_id: string } | null;
+        } | null;
+        error: any;
+      };
 
     if (customerError || !customer) {
       return NextResponse.json({ error: 'Customer not found' }, { status: 404 });
     }
 
     // Check authorization: either owns the business or is the customer themselves
-    const isBusinessOwner = customer.businesses?.owner_id === user.id;
+    const isBusinessOwner = customer.business?.owner_id === user.id;
     const isCustomerThemselves = customer.email === user.email;
 
     if (!isBusinessOwner && !isCustomerThemselves) {
@@ -48,11 +56,21 @@ export async function GET(request: NextRequest) {
       .from('ambassador_commission_balances')
       .select('*')
       .eq('customer_id', customerId)
-      .single();
+      .single() as {
+        data: {
+          pending_balance: number | null;
+          paid_total: number | null;
+          lifetime_earnings: number | null;
+          pending_commissions: number | null;
+          paid_commissions: number | null;
+          last_payout_date: string | null;
+        } | null;
+        error: any;
+      };
 
-    if (balanceError) {
+    if (balanceError || !balance) {
       // If no commissions exist yet, return zero balance
-      if (balanceError.code === 'PGRST116') {
+      if (balanceError?.code === 'PGRST116' || !balance) {
         return NextResponse.json({
           success: true,
           balance: {

@@ -32,7 +32,9 @@ export async function POST(request: NextRequest) {
         .from('stripe_customers')
         .select('stripe_customer_id')
         .eq('customer_id', customerId)
-        .single();
+        .single() as {
+          data: { stripe_customer_id: string } | null;
+        };
 
       if (existingCustomer) {
         stripeCustomerId = existingCustomer.stripe_customer_id;
@@ -42,7 +44,9 @@ export async function POST(request: NextRequest) {
           .from('customers')
           .select('email, name')
           .eq('id', customerId)
-          .single();
+          .single() as {
+            data: { email: string; name: string | null } | null;
+          };
 
         if (!customerData) {
           return NextResponse.json(
