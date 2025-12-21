@@ -162,7 +162,17 @@ export async function GET(request: NextRequest) {
       .from('stripe_connect_accounts')
       .select('*')
       .eq('customer_id', customerId)
-      .single();
+      .single() as {
+        data: {
+          id: string;
+          stripe_account_id: string;
+          charges_enabled: boolean;
+          payouts_enabled: boolean;
+          details_submitted: boolean;
+          onboarding_completed: boolean;
+        } | null;
+        error: any;
+      };
 
     if (error || !connectAccount) {
       return NextResponse.json({
@@ -185,7 +195,7 @@ export async function GET(request: NextRequest) {
           details_submitted: account.details_submitted || false,
           onboarding_completed: account.details_submitted && account.payouts_enabled,
           requirements: account.requirements as any,
-        })
+        } as any)
         .eq('id', connectAccount.id);
 
       return NextResponse.json({
