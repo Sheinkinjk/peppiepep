@@ -39,7 +39,13 @@ export async function POST(request: NextRequest) {
       .from('stripe_connect_accounts')
       .select('*')
       .eq('customer_id', customerId)
-      .single();
+      .single() as {
+        data: {
+          stripe_account_id: string;
+          onboarding_url: string | null;
+          onboarding_expires_at: string | null;
+        } | null;
+      };
 
     if (existingAccount) {
       // Account exists, create new onboarding link
@@ -56,8 +62,8 @@ export async function POST(request: NextRequest) {
         .update({
           onboarding_url: accountLink.url,
           onboarding_expires_at: new Date(accountLink.expires_at * 1000).toISOString(),
-        })
-        .eq('id', existingAccount.id);
+        } as any)
+        .eq('customer_id', customerId);
 
       return NextResponse.json({
         success: true,
@@ -92,24 +98,22 @@ export async function POST(request: NextRequest) {
     // Save to database
     const { data: connectAccount, error: dbError } = await supabase
       .from('stripe_connect_accounts')
-      .insert([
-        {
-          customer_id: customerId,
-          stripe_account_id: account.id,
-          account_type: 'express',
-          charges_enabled: account.charges_enabled,
-          payouts_enabled: account.payouts_enabled,
-          details_submitted: account.details_submitted || false,
-          country: account.country,
-          email: account.email,
-          onboarding_completed: false,
-          onboarding_url: accountLink.url,
-          onboarding_expires_at: new Date(accountLink.expires_at * 1000).toISOString(),
-          metadata: {
-            created_at: new Date().toISOString(),
-          },
+      .insert({
+        customer_id: customerId,
+        stripe_account_id: account.id,
+        account_type: 'express',
+        charges_enabled: account.charges_enabled,
+        payouts_enabled: account.payouts_enabled,
+        details_submitted: account.details_submitted || false,
+        country: account.country,
+        email: account.email,
+        onboarding_completed: false,
+        onboarding_url: accountLink.url,
+        onboarding_expires_at: new Date(accountLink.expires_at * 1000).toISOString(),
+        metadata: {
+          created_at: new Date().toISOString(),
         },
-      ])
+      } as any)
       .select()
       .single();
 

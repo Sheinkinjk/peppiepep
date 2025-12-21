@@ -68,18 +68,16 @@ export async function POST(request: NextRequest) {
         stripeCustomerId = stripeCustomer.id;
 
         // Save to database
-        await supabase.from('stripe_customers').insert([
-          {
-            business_id: businessId || null,
-            customer_id: customerId,
-            stripe_customer_id: stripeCustomerId,
-            email: customerData.email,
-            name: customerData.name,
-            metadata: {
-              created_via: 'checkout',
-            },
+        await supabase.from('stripe_customers').insert({
+          business_id: businessId || null,
+          customer_id: customerId,
+          stripe_customer_id: stripeCustomerId,
+          email: customerData.email,
+          name: customerData.name,
+          metadata: {
+            created_via: 'checkout',
           },
-        ]);
+        } as any);
       }
     } else {
       // Create customer without platform linking (for one-off payments)
