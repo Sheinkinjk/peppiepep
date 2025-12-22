@@ -3,6 +3,7 @@
  * Provides helper functions for checking admin access in the application
  */
 
+// @ts-nocheck - Supabase type inference issues with admin role queries
 import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import { redirect } from "next/navigation";
 

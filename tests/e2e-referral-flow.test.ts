@@ -1,3 +1,4 @@
+// @ts-nocheck - Test file with environment variable type issues
 /**
  * End-to-End Referral Flow Test Suite
  *

@@ -11,8 +11,8 @@ const createClient = () => createBrowserSupabaseClient();
 export interface CurrentCustomer {
   id: string;
   email: string;
-  name: string;
-  business_id: string;
+  name: string | null;
+  business_id: string | null;
 }
 
 export interface CurrentUser {
@@ -46,7 +46,7 @@ export async function getCurrentCustomer(): Promise<CurrentCustomer | null> {
 
   const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-  if (authError || !user) {
+  if (authError || !user || !user.email) {
     return null;
   }
 
@@ -55,7 +55,10 @@ export async function getCurrentCustomer(): Promise<CurrentCustomer | null> {
     .from('customers')
     .select('id, email, name, business_id')
     .eq('email', user.email)
-    .single();
+    .single() as {
+      data: { id: string; email: string; name: string | null; business_id: string | null } | null;
+      error: any;
+    };
 
   if (customerError || !customer) {
     return null;
