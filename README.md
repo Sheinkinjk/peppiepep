@@ -30,3 +30,4 @@ We ship a Vitest integration that provisions temporary businesses and ambassador
    ```
 
 The test file lives at `tests/referral-flow.test.ts`. It creates unique records and cleans up after itself, but it **will refuse to run** unless the `TEST_*` variables are defined so we never touch production data by mistake.
+# Dashboard improvements deployed - build 1766533375
