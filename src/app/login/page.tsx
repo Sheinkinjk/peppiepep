@@ -189,9 +189,19 @@ function LoginContent() {
           return;
         }
 
+        // Verify session was established before redirecting
+        const { data: sessionData } = await supabase.auth.getSession();
+        if (!sessionData.session) {
+          setError("Session could not be established. Please try again or clear your browser cookies.");
+          return;
+        }
+
         // Use window.location.href instead of router.push to ensure cookies are sent with the request
         // This does a full page navigation which guarantees the middleware sees the auth cookies
-        window.location.href = nextPath;
+        // Add a small delay to ensure cookies are fully set
+        setTimeout(() => {
+          window.location.href = nextPath;
+        }, 100);
       }
     } catch (err: unknown) {
       const message =
