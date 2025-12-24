@@ -3,21 +3,15 @@
 export const dynamic = "force-dynamic";
 
 import { createServerComponentClient } from "@/lib/supabase";
-import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/admin-auth";
 import { formatAmount } from "@/lib/stripe";
 import Link from "next/link";
 
 export default async function AdminPaymentsPage() {
+  // Require admin access using RBAC
+  await requireAdmin();
+
   const supabase = await createServerComponentClient();
-
-  // Check if user is jarred@referlabs.com.au
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user || user.email !== "jarred@referlabs.com.au") {
-    redirect("/dashboard");
-  }
 
   // Fetch payments
   const { data: payments } = await supabase
