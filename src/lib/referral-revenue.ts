@@ -3,6 +3,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase";
 import { calculateNextCredits } from "@/lib/credits";
 import { logReferralEvent } from "@/lib/referral-events";
+// import { tryInsertCreditLedgerEntry } from "@/lib/credits-ledger";
 
 type CompleteReferralAttributionInput = {
   supabase: SupabaseClient<Database>;
@@ -84,6 +85,16 @@ export async function completeReferralAttribution({
     if (creditError) {
       throw new Error(`Failed to update ambassador credits: ${creditError.message}`);
     }
+
+    // Optional credit ledger entry (currently disabled)
+    // await tryInsertCreditLedgerEntry(supabase, {
+    //   businessId,
+    //   customerId: ambassadorId,
+    //   referralId,
+    //   delta: rewardAmount,
+    //   type: "issued",
+    //   source: "referral_reward",
+    // });
 
     await logReferralEvent({
       supabase,

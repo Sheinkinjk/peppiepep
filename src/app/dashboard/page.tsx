@@ -1649,135 +1649,164 @@ export default async function Dashboard() {
             <Card className="p-6 border border-slate-200 rounded-lg bg-white">
               <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Performance Analytics</h2>
 
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-purple-600 flex items-center justify-center">
-                      <Users className="h-5 w-5 text-white" />
+              {/* KEY METRICS - Prominently displayed */}
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Key Metrics</h3>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                  {/* Revenue - Most important */}
+                  <div className="p-8 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 border border-emerald-400 shadow-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <DollarSign className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="font-bold text-white">Revenue</h3>
                     </div>
-                    <h3 className="font-bold text-slate-900">Total Ambassadors</h3>
+                    <p className="text-4xl font-black text-white mb-2">
+                      ${Math.round(totalReferralRevenue)}
+                    </p>
+                    <p className="text-sm text-emerald-50">
+                      From {completedReferrals} completed referrals
+                    </p>
                   </div>
-                  <p className="text-3xl font-black text-purple-700">{safeCustomers.length}</p>
-                  <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
-                </div>
 
-                <div className="p-6 rounded-lg bg-emerald-50 border border-emerald-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
-                      <TrendingUp className="h-5 w-5 text-white" />
+                  {/* ROI */}
+                  <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 border border-purple-400 shadow-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <TrendingUp className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="font-bold text-white">Program ROI</h3>
                     </div>
-                    <h3 className="font-bold text-slate-900">Total Referrals</h3>
+                    <p className="text-4xl font-black text-white mb-2">
+                      {roiMultiple && roiMultiple > 0
+                        ? `${roiMultiple.toFixed(1)}×`
+                        : "—"}
+                    </p>
+                    <p className="text-sm text-purple-50">
+                      Revenue ÷ estimated send cost
+                    </p>
                   </div>
-                  <p className="text-3xl font-black text-emerald-700">{safeReferrals.length}</p>
-                  <p className="text-sm text-slate-600 mt-1">{completedReferrals} completed</p>
-                </div>
 
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-blue-600 flex items-center justify-center">
-                      <Zap className="h-5 w-5 text-white" />
+                  {/* Total Referrals */}
+                  <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 border border-blue-400 shadow-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <Users className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="font-bold text-white">Total Referrals</h3>
                     </div>
-                    <h3 className="font-bold text-slate-900">Conversion Rate</h3>
+                    <p className="text-4xl font-black text-white mb-2">
+                      {safeReferrals.length}
+                    </p>
+                    <p className="text-sm text-blue-50">
+                      {completedReferrals} completed • {pendingReferrals} pending
+                    </p>
                   </div>
-                  <p className="text-3xl font-black text-blue-700">
-                    {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
-                  </p>
-                  <p className="text-sm text-slate-600 mt-1">Referral to completion</p>
-                </div>
 
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
-                      <CreditCard className="h-5 w-5 text-white" />
+                  {/* Conversion Rate */}
+                  <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 border border-amber-400 shadow-lg">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <Zap className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="font-bold text-white">Conversion Rate</h3>
                     </div>
-                    <h3 className="font-bold text-slate-900">Referral Revenue</h3>
+                    <p className="text-4xl font-black text-white mb-2">
+                      {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
+                    </p>
+                    <p className="text-sm text-amber-50">
+                      Referral to completion
+                    </p>
                   </div>
-                  <p className="text-3xl font-black text-amber-700">
-                    ${Math.round(totalReferralRevenue)}
-                  </p>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Avg ticket: $
-                    {averageTransactionValue > 0
-                      ? Math.round(averageTransactionValue)
-                      : 0}{" "}
-                    • Credits issued: ${totalRewards}
-                  </p>
-                </div>
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
-                      <ClipboardList className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-slate-900">Manual Transactions</h3>
-                  </div>
-                  <p className="text-3xl font-black text-slate-900">
-                    {manualReferralCount}
-                  </p>
-                  <p className="text-sm text-slate-600 mt-1">
-                    ${manualReferralValue.toFixed(0)} recorded offline
-                  </p>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 border border-pink-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-pink-600 flex items-center justify-center">
-                      <Gift className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-slate-900">Pending Rewards</h3>
-                  </div>
-                  <p className="text-3xl font-black text-pink-700">{pendingReferrals}</p>
-                  <p className="text-sm text-slate-600 mt-1">Awaiting completion</p>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
-                      <Award className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-slate-900">Avg per Ambassador</h3>
-                  </div>
-                  <p className="text-3xl font-black text-indigo-700">
-                    {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
-                  </p>
-                  <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
-                </div>
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-rose-600 flex items-center justify-center">
-                      <MessageSquare className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-slate-900">Campaigns Sent</h3>
-                  </div>
-                  <p className="text-3xl font-black text-rose-700">{totalCampaignsSent}</p>
-                  <p className="text-sm text-slate-600 mt-1">Live SMS & email blasts</p>
-                </div>
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
-                      <Send className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-slate-900">Messages Delivered</h3>
-                  </div>
-                  <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
-                  <p className="text-sm text-slate-600 mt-1">Across all channels</p>
-                </div>
-                <div className="p-6 rounded-lg bg-emerald-50 border border-emerald-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
-                      <DollarSign className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="font-bold text-slate-900">Program ROI</h3>
-                  </div>
-                  <p className="text-3xl font-black text-emerald-700">
-                    {roiMultiple && roiMultiple > 0
-                      ? `${roiMultiple.toFixed(1)}×`
-                      : "—"}
-                  </p>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Revenue ÷ estimated send cost
-                  </p>
                 </div>
               </div>
+
+              {/* DETAILED METRICS - Collapsible */}
+              <details className="group">
+                <summary className="cursor-pointer flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors mb-4">
+                  <span>Show Detailed Metrics</span>
+                  <svg className="h-4 w-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-purple-600 flex items-center justify-center">
+                        <Users className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Total Ambassadors</h3>
+                    </div>
+                    <p className="text-3xl font-black text-purple-700">{safeCustomers.length}</p>
+                    <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
+                        <CreditCard className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Avg Transaction</h3>
+                    </div>
+                    <p className="text-3xl font-black text-amber-700">
+                      ${averageTransactionValue > 0 ? Math.round(averageTransactionValue) : 0}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Credits issued: ${totalRewards}
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                        <ClipboardList className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Manual Transactions</h3>
+                    </div>
+                    <p className="text-3xl font-black text-slate-900">
+                      {manualReferralCount}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      ${manualReferralValue.toFixed(0)} recorded offline
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
+                        <Award className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Avg per Ambassador</h3>
+                    </div>
+                    <p className="text-3xl font-black text-indigo-700">
+                      {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-rose-600 flex items-center justify-center">
+                        <MessageSquare className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Campaigns Sent</h3>
+                    </div>
+                    <p className="text-3xl font-black text-rose-700">{totalCampaignsSent}</p>
+                    <p className="text-sm text-slate-600 mt-1">Live SMS & email blasts</p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                        <Send className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Messages Delivered</h3>
+                    </div>
+                    <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
+                    <p className="text-sm text-slate-600 mt-1">Across all channels</p>
+                  </div>
+                </div>
+              </details>
             </Card>
           </TabsContent>
         </Tabs>
