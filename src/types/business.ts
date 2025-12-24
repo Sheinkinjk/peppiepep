@@ -13,6 +13,10 @@ export type BusinessOnboardingMetadata = {
   avgSale?: number | null;
   referralGoal?: number | null;
   integrationNotes?: string | null;
+  campaignCostEstimates?: {
+    sms?: number | null;
+    email?: number | null;
+  };
   integrationStatus?: {
     website?: IntegrationStatusValue;
     crm?: IntegrationStatusValue;
