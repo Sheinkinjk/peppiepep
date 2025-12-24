@@ -1336,12 +1336,24 @@ export default async function Dashboard() {
                     All Customers ({safeCustomers.length})
                   </h3>
                 </div>
-                <CustomersTable
-                  initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
-                  initialTotal={safeCustomers.length}
-                  siteUrl={siteUrl}
-                  adjustCreditsAction={adjustCustomerCredits}
-                />
+                {safeCustomers.length === 0 ? (
+                  <div className="py-12 text-center">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
+                      <Users className="h-8 w-8 text-slate-400" />
+                    </div>
+                    <h3 className="mb-2 text-lg font-bold text-slate-900">No customers yet</h3>
+                    <p className="mb-6 text-sm text-slate-600 max-w-md mx-auto">
+                      Add your first customer using the quick form above, or upload a CSV to get started with your referral program.
+                    </p>
+                  </div>
+                ) : (
+                  <CustomersTable
+                    initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+                    initialTotal={safeCustomers.length}
+                    siteUrl={siteUrl}
+                    adjustCreditsAction={adjustCustomerCredits}
+                  />
+                )}
               </Card>
             </>
           }
