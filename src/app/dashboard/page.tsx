@@ -1463,11 +1463,29 @@ export default async function Dashboard() {
                 </div>
 
                 <TabsContent value="analytics" className="space-y-6">
-                  <CampaignAnalyticsDashboard
-                    campaigns={campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]}
-                    referrals={safeReferrals}
-                    eventStats={campaignEventStats}
-                  />
+                  {campaignsData.length === 0 ? (
+                    <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+                      <div className="py-16 text-center">
+                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
+                          <BarChart3 className="h-8 w-8 text-slate-400" />
+                        </div>
+                        <h3 className="mb-2 text-lg font-bold text-slate-900">No campaigns yet</h3>
+                        <p className="mb-6 text-sm text-slate-600 max-w-md mx-auto">
+                          Launch your first campaign to start tracking analytics and performance metrics.
+                        </p>
+                        <a href="#crm-integration" className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors">
+                          <Mail className="h-4 w-4" />
+                          Launch First Campaign
+                        </a>
+                      </div>
+                    </Card>
+                  ) : (
+                    <CampaignAnalyticsDashboard
+                      campaigns={campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]}
+                      referrals={safeReferrals}
+                      eventStats={campaignEventStats}
+                    />
+                  )}
                 </TabsContent>
 
                 <TabsContent value="history">
