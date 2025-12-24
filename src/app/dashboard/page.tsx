@@ -1832,6 +1832,21 @@ export default async function Dashboard() {
           revenue={totalReferralRevenue}
         />
 
+        {/* Mobile Warning - Show at top for immediate visibility */}
+        {isMobile && (
+          <div className="mb-6 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
+            <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
+            <div className="space-y-1">
+              <p className="text-sm font-semibold">
+                Mobile features are coming soon - please use your computer in the meantime.
+              </p>
+              <p className="text-xs text-amber-900/80">
+                We're finishing the mobile toolkit now; dashboards work best on desktop today so you don't miss any controls.
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Admin Navigation - Only visible to users with admin role */}
         {currentAdmin && (
           <div className="mb-6 flex gap-4 justify-end">
@@ -1863,19 +1878,6 @@ export default async function Dashboard() {
           steps={guidedSteps}
           defaultOpenStep={autoExpandStep}
         />
-      {isMobile && (
-        <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
-          <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
-          <div className="space-y-1">
-            <p className="text-sm font-semibold">
-              Mobile features are coming soon - please use your computer in the meantime.
-            </p>
-            <p className="text-xs text-amber-900/80">
-              We’re finishing the mobile toolkit now; dashboards work best on desktop today so you don’t miss any controls.
-            </p>
-          </div>
-        </div>
-      )}
 
       <DashboardOnboardingChecklist
         hasCustomers={hasCustomers}
