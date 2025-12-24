@@ -735,6 +735,16 @@ export default async function Dashboard() {
         return { error: "Enter at least a name, phone, or email before adding a customer." };
       }
 
+      // Validate email format if provided
+      if (normalizedEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+        return { error: "Invalid email format. Please enter a valid email address." };
+      }
+
+      // Validate phone format if provided (basic validation for international formats)
+      if (phone && !/^\+?[1-9]\d{1,14}$/.test(phone.replace(/[\s\-\(\)]/g, ""))) {
+        return { error: "Invalid phone format. Please enter a valid phone number (e.g., +1234567890)." };
+      }
+
       const supabase = await createServerComponentClient();
       let duplicateCustomer: { id: string; name: string | null } | null = null;
       const duplicateFilters: string[] = [];
@@ -945,6 +955,20 @@ export default async function Dashboard() {
         return {
           error:
             "Please provide at least a name, email, or phone for the referred customer.",
+        };
+      }
+
+      // Validate email format if provided
+      if (referredEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(referredEmail)) {
+        return {
+          error: "Invalid email format for referred customer. Please enter a valid email address.",
+        };
+      }
+
+      // Validate phone format if provided
+      if (referredPhone && !/^\+?[1-9]\d{1,14}$/.test(referredPhone.replace(/[\s\-\(\)]/g, ""))) {
+        return {
+          error: "Invalid phone format for referred customer. Please enter a valid phone number (e.g., +1234567890).",
         };
       }
 
