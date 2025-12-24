@@ -263,12 +263,12 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
   const smsCostEstimate =
     typeof business.onboarding_metadata?.campaignCostEstimates?.sms === "number" &&
     Number.isFinite(business.onboarding_metadata?.campaignCostEstimates?.sms)
-      ? business.onboarding_metadata.campaignCostEstimates.sms
+      ? business.onboarding_metadata?.campaignCostEstimates?.sms ?? DEFAULT_SMS_COST_PER_MESSAGE
       : DEFAULT_SMS_COST_PER_MESSAGE;
   const emailCostEstimate =
     typeof business.onboarding_metadata?.campaignCostEstimates?.email === "number" &&
     Number.isFinite(business.onboarding_metadata?.campaignCostEstimates?.email)
-      ? business.onboarding_metadata.campaignCostEstimates.email
+      ? business.onboarding_metadata?.campaignCostEstimates?.email ?? DEFAULT_EMAIL_COST_PER_MESSAGE
       : DEFAULT_EMAIL_COST_PER_MESSAGE;
 
   const defaultSiteUrl = ensureAbsoluteUrl("http://localhost:3000") ?? "http://localhost:3000";
