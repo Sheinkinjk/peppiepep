@@ -21,11 +21,13 @@ import { campaignSchedulerEnabled } from "@/lib/feature-flags";
 import { CampaignTemplateSelector } from "@/components/CampaignTemplateSelector";
 import { type CampaignTemplate } from "@/lib/campaign-templates";
 import { toast } from "@/hooks/use-toast";
+import { fetchAllPages } from "@/lib/customers-api-client";
 
 type Customer = Database["public"]["Tables"]["customers"]["Row"];
 
 type CampaignBuilderProps = {
   customers: Customer[];
+  customersTotal?: number;
   businessName: string;
   siteUrl: string;
   offerText: string | null;
@@ -43,6 +45,7 @@ type CampaignBuilderProps = {
 
 export function CampaignBuilder({
   customers,
+  customersTotal,
   businessName,
   siteUrl,
   offerText,
@@ -57,6 +60,11 @@ export function CampaignBuilder({
   brandTone,
   uploadLogoAction,
 }: CampaignBuilderProps) {
+  const [availableCustomers, setAvailableCustomers] = useState<Customer[]>(customers);
+  const [isLoadingAllCustomers, setIsLoadingAllCustomers] = useState(false);
+  const hasPartialCustomerList =
+    typeof customersTotal === "number" && customersTotal > availableCustomers.length;
+
   const [showCampaignModal, setShowCampaignModal] = useState(false);
   const [campaignName, setCampaignName] = useState("");
   const [campaignMessage, setCampaignMessage] = useState("");
@@ -99,6 +107,33 @@ export function CampaignBuilder({
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
   const [includeQrModule, setIncludeQrModule] = useState(true);
 
+  useEffect(() => {
+    setAvailableCustomers(customers);
+  }, [customers]);
+
+  const loadAllCustomers = async () => {
+    if (!hasPartialCustomerList) return;
+    setIsLoadingAllCustomers(true);
+    try {
+      const { rows, total } = await fetchAllPages<Customer>("/api/customers", {
+        pageSize: 200,
+      });
+      setAvailableCustomers(rows);
+      toast({
+        title: "Ambassadors loaded",
+        description: `Loaded ${rows.length}${total ? ` of ${total}` : ""} ambassadors.`,
+      });
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Failed to load ambassadors",
+        description: error instanceof Error ? error.message : "Unable to load ambassadors.",
+      });
+    } finally {
+      setIsLoadingAllCustomers(false);
+    }
+  };
+
   const handleTemplateSelect = (template: CampaignTemplate) => {
     setCampaignMessage(template.message);
     setCampaignName(template.name);
@@ -120,19 +155,21 @@ export function CampaignBuilder({
     settingsRewardType !== null &&
     (settingsRewardType !== "credit" || settingsRewardAmount > 0);
 
-  const eligibleCustomers = customers.filter(c =>
-    campaignChannel === "sms" ? c.phone : c.email
+  const eligibleCustomers = availableCustomers.filter((customer) =>
+    campaignChannel === "sms" ? customer.phone : customer.email,
   );
 
-  const smsEligibleCount = customers.filter((c) => !!c.phone).length;
-  const emailEligibleCount = customers.filter((c) => !!c.email).length;
-  const omnichannelReadyCount = customers.filter((c) => c.phone && c.email).length;
+  const smsEligibleCount = availableCustomers.filter((customer) => !!customer.phone).length;
+  const emailEligibleCount = availableCustomers.filter((customer) => !!customer.email).length;
+  const omnichannelReadyCount = availableCustomers.filter(
+    (customer) => customer.phone && customer.email,
+  ).length;
 
   const selectedCount = selectedCustomers.length;
   const costPerMessage = campaignChannel === "sms" ? 0.02 : 0.01;
   const estimatedCost = selectedCount * costPerMessage;
   const previewCustomer = selectedCustomers.length
-    ? customers.find((c) => c.id === selectedCustomers[0])
+    ? availableCustomers.find((customer) => customer.id === selectedCustomers[0])
     : null;
   const previewReferralCode = previewCustomer?.referral_code ?? "VIPCODE1234";
   const previewReferralUrl =
@@ -259,7 +296,23 @@ export function CampaignBuilder({
         return;
       }
 
-      notifyCampaignStatus("success", result.success ?? "Campaign queued successfully.");
+      const successMsg = result.success ?? "Campaign queued successfully.";
+      const recipientsText = `${selectedCount} ${selectedCount === 1 ? "recipient" : "recipients"}`;
+
+      notifyCampaignStatus(
+        "success",
+        `${successMsg} Sent to ${recipientsText}. Track results in the Analytics tab.`
+      );
+
+      // Show extended success message with tracking info
+      setTimeout(() => {
+        toast({
+          title: "Campaign Tracking Active",
+          description: `All ${recipientsText} have unique trackable links. Conversions will appear in your Analytics dashboard automatically.`,
+          duration: 8000,
+        });
+      }, 3000);
+
       setShowCampaignModal(false);
       // Reset form
       setCampaignName("");
@@ -393,9 +446,21 @@ export function CampaignBuilder({
             </div>
           </div>
 
-          <p className="text-xs text-slate-500">
-            Use the <span className="font-semibold text-slate-700">Start Campaign</span> action near the top of the dashboard whenever you&apos;re ready to open this composer.
-          </p>
+          <div className="rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 p-4">
+            <div className="flex items-start gap-3">
+              <div className="rounded-xl bg-emerald-600 p-2 shadow-sm">
+                <CheckCircle className="h-5 w-5 text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-bold text-emerald-900 mb-1">
+                  Automatic Conversion Tracking
+                </p>
+                <p className="text-xs text-emerald-800">
+                  Every campaign email includes unique trackable referral links. When recipients share their links and friends convert, you&apos;ll see the attribution in your Analytics dashboard automatically—no manual tracking required.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-wrap gap-3 text-xs text-slate-500">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 bg-white">
@@ -421,25 +486,58 @@ export function CampaignBuilder({
           </DialogHeader>
 
           <div className="space-y-6 py-4">
-            <div className="rounded-2xl border border-dashed border-indigo-200 bg-indigo-50/60 px-4 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-sm font-semibold text-indigo-900">
-                  Prefer to send from Klaviyo, Mailchimp, or your own CRM?
-                </p>
-                <p className="text-xs text-indigo-800">
-                  Export referral codes + merge tags from the CRM Integration tab so Pepform keeps tracking every conversion.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-                <Button
-                  type="button"
-                  variant="secondary"
-                  className="bg-indigo-600 text-white hover:bg-indigo-700"
-                  onClick={navigateToCrmIntegration}
-                >
-                  <Share2 className="mr-2 h-4 w-4" />
-                  Integrate CRM
-                </Button>
+            <div className="rounded-2xl border-2 border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 px-5 py-5 shadow-sm">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="rounded-xl bg-indigo-600 p-2 shadow-md">
+                    <Share2 className="h-5 w-5 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-base font-bold text-indigo-900 mb-1">
+                      Use Your Own CRM? No Problem.
+                    </p>
+                    <p className="text-sm text-indigo-800 mb-3">
+                      Send campaigns from Klaviyo, Mailchimp, or any email platform you already use. Refer Labs handles all tracking automatically.
+                    </p>
+                    <div className="space-y-2 text-xs text-indigo-900">
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                        <span><strong>Step 1:</strong> Export your ambassador data with unique referral links</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                        <span><strong>Step 2:</strong> Import into your CRM as merge tags/custom fields</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                        <span><strong>Step 3:</strong> Send from your CRM while we track conversions automatically</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Button
+                    type="button"
+                    className="bg-indigo-600 text-white hover:bg-indigo-700 shadow-md"
+                    onClick={navigateToCrmIntegration}
+                  >
+                    <Share2 className="mr-2 h-4 w-4" />
+                    Go to CRM Integration
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="border-indigo-300 text-indigo-900 hover:bg-indigo-100"
+                    onClick={() => {
+                      toast({
+                        title: "CRM Integration Benefits",
+                        description: "Use your existing email platform while Refer Labs automatically tracks all referral conversions via unique links.",
+                      });
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -842,43 +940,85 @@ export function CampaignBuilder({
 
             {/* Customer Selection */}
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <Label>Select Recipients ({selectedCount} selected)</Label>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                  <Label className="text-base font-semibold">Select Recipients</Label>
+                  <p className="text-xs text-slate-500 mt-1">
+                    {selectedCount > 0 ? (
+                      <span className="font-semibold text-emerald-700">
+                        {selectedCount} {selectedCount === 1 ? "ambassador" : "ambassadors"} selected
+                      </span>
+                    ) : (
+                      <span className="text-amber-700">No recipients selected yet</span>
+                    )}
+                    {selectedCount > 0 && (
+                      <span className="text-slate-500"> • Est. cost: ${estimatedCost.toFixed(2)}</span>
+                    )}
+                  </p>
+                </div>
                 <div className="flex gap-2">
                   <Button
                     type="button"
                     variant="outline"
                     size="sm"
                     onClick={selectAllCustomers}
+                    className="border-emerald-300 text-emerald-700 hover:bg-emerald-50"
                   >
-                    Select All
+                    <CheckCircle className="mr-1 h-3 w-3" />
+                    Select All ({eligibleCustomers.length})
                   </Button>
                   <Button
                     type="button"
                     variant="outline"
                     size="sm"
                     onClick={deselectAllCustomers}
+                    disabled={selectedCount === 0}
+                    className="border-slate-300 text-slate-700 hover:bg-slate-50"
                   >
-                    Deselect All
+                    Clear
                   </Button>
                 </div>
               </div>
 
-              <div className="border rounded-lg p-4 max-h-64 overflow-y-auto space-y-2">
-                {eligibleCustomers.length === 0 && (
-                  <p className="text-sm text-slate-500 text-center py-4">
-                    No customers have {campaignChannel === "sms" ? "phone numbers" : "email addresses"} on file.
+              {hasPartialCustomerList && (
+                <div className="mb-3 flex flex-col gap-2 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="text-xs font-semibold">
+                    Showing {availableCustomers.length} of {customersTotal} ambassadors. Load all to target everyone.
                   </p>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    className="border-amber-300 bg-white text-amber-900 hover:bg-amber-100"
+                    onClick={loadAllCustomers}
+                    disabled={isLoadingAllCustomers}
+                  >
+                    {isLoadingAllCustomers ? "Loading…" : "Load all ambassadors"}
+                  </Button>
+                </div>
+              )}
+
+              <div className="border-2 border-slate-200 rounded-2xl p-4 max-h-80 overflow-y-auto space-y-2 bg-slate-50/50">
+                {eligibleCustomers.length === 0 && (
+                  <div className="text-center py-8">
+                    <AlertCircle className="h-12 w-12 text-slate-300 mx-auto mb-3" />
+                    <p className="text-sm font-semibold text-slate-700 mb-1">
+                      No eligible recipients
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      No customers have {campaignChannel === "sms" ? "phone numbers" : "email addresses"} on file.
+                    </p>
+                  </div>
                 )}
                 {eligibleCustomers.map((customer) => {
                   const isSelected = selectedCustomers.includes(customer.id);
                   return (
                     <div
                       key={customer.id}
-                      className={`flex items-center gap-3 p-3 rounded-lg transition-all cursor-pointer border-2 ${
+                      className={`flex items-center gap-3 p-4 rounded-xl transition-all cursor-pointer border-2 ${
                         isSelected
-                          ? "bg-purple-50 border-purple-300 shadow-sm"
-                          : "bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                          ? "bg-gradient-to-r from-purple-50 to-pink-50 border-purple-400 shadow-md transform scale-[1.02]"
+                          : "bg-white border-slate-200 hover:border-purple-300 hover:bg-purple-50/30 hover:shadow-sm"
                       }`}
                       onClick={() => toggleCustomerSelection(customer.id)}
                     >
@@ -887,15 +1027,21 @@ export function CampaignBuilder({
                         onCheckedChange={() => {
                           // Don't call toggleCustomerSelection here since onClick on parent div handles it
                         }}
+                        className={isSelected ? "border-purple-600" : ""}
                       />
-                      <div className="flex-1">
-                        <p className="font-semibold text-sm">{customer.name}</p>
-                        <p className="text-xs text-slate-500">
+                      <div className="flex-1 min-w-0">
+                        <p className={`font-semibold text-sm truncate ${isSelected ? "text-purple-900" : "text-slate-900"}`}>
+                          {customer.name}
+                        </p>
+                        <p className={`text-xs truncate ${isSelected ? "text-purple-700" : "text-slate-500"}`}>
                           {campaignChannel === "sms" ? customer.phone : customer.email}
                         </p>
                       </div>
                       {isSelected && (
-                        <div className="text-purple-600 font-bold text-xs">✓ Selected</div>
+                        <div className="flex items-center gap-1.5 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                          <CheckCircle className="h-3 w-3" />
+                          Selected
+                        </div>
                       )}
                     </div>
                   );

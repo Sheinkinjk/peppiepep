@@ -2,7 +2,8 @@
 
 /* eslint-disable react/no-unescaped-entities */
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +21,7 @@ import {
 } from "@/components/ui/collapsible";
 import { toast } from "@/hooks/use-toast";
 import { Database } from "@/types/supabase";
+import { fetchAllPages } from "@/lib/customers-api-client";
 import {
   ArrowRight,
   CloudCog,
@@ -44,6 +46,12 @@ type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
 
 type CRMIntegrationTabProps = {
   customers: CustomerRow[];
+  customersTotal?: number;
+  customerCounts?: {
+    emailReady: number;
+    smsReady: number;
+    uniqueCodes: number;
+  };
   siteUrl: string;
   businessId: string;
   discountCaptureSecret?: string | null;
@@ -51,25 +59,41 @@ type CRMIntegrationTabProps = {
 
 export function CRMIntegrationTab({
   customers,
+  customersTotal,
+  customerCounts,
   siteUrl,
   businessId,
   discountCaptureSecret,
 }: CRMIntegrationTabProps) {
-  const normalizedSite =
-    siteUrl && siteUrl.endsWith("/")
-      ? siteUrl.slice(0, -1)
-      : siteUrl || "https://referlabs.com.au";
-  const fallbackReferralUrl = `${normalizedSite}/referral?project=spa`;
+  const normalizedSite = useMemo(() => {
+    const trimmed = siteUrl?.trim();
+    if (trimmed) {
+      return trimmed.endsWith("/") ? trimmed.slice(0, -1) : trimmed;
+    }
+    // Avoid hard-coding a brand domain for new tenants; default to current origin.
+    if (typeof window !== "undefined" && window.location?.origin) {
+      return window.location.origin;
+    }
+    return "";
+  }, [siteUrl]);
+
+  const fallbackReferralUrl = normalizedSite
+    ? `${normalizedSite}/referral?project=spa`
+    : "/referral?project=spa";
 
   const referralLinkFor = (code?: string | null) => {
-    const base = code ? `${normalizedSite}/r/${code}` : fallbackReferralUrl;
+    const base = code
+      ? normalizedSite
+        ? `${normalizedSite}/r/${code}`
+        : `/r/${code}`
+      : fallbackReferralUrl;
     return `${base}${base.includes("?") ? "&" : "?"}utm_source=crm&utm_medium=email`;
   };
 
-  const totalCustomers = customers.length;
-  const emailReady = customers.filter((c) => !!c.email).length;
-  const smsReady = customers.filter((c) => !!c.phone).length;
-  const uniqueCodes = customers.filter((c) => !!c.referral_code).length;
+  const totalCustomers = customersTotal ?? customers.length;
+  const emailReady = customerCounts?.emailReady ?? customers.filter((c) => !!c.email).length;
+  const smsReady = customerCounts?.smsReady ?? customers.filter((c) => !!c.phone).length;
+  const uniqueCodes = customerCounts?.uniqueCodes ?? customers.filter((c) => !!c.referral_code).length;
 
   const csvHeader = [
     "name",
@@ -81,17 +105,6 @@ export function CRMIntegrationTab({
     "discount_code",
     "credits",
   ];
-
-  const csvRows = customers.map((customer) => [
-    customer.name ?? "",
-    customer.email ?? "",
-    customer.phone ?? "",
-    customer.status ?? "",
-    customer.referral_code ?? "",
-    referralLinkFor(customer.referral_code),
-    customer.discount_code ?? "",
-    customer.credits?.toString() ?? "0",
-  ]);
 
   const samplePayload = JSON.stringify(
     {
@@ -106,8 +119,9 @@ export function CRMIntegrationTab({
     2,
   );
 
+  const curlSnippetBase = normalizedSite || "https://YOUR_DOMAIN";
   const curlSnippet = [
-    `curl -X POST '${normalizedSite}/api/discount-codes/redeem'`,
+    `curl -X POST '${curlSnippetBase}/api/discount-codes/redeem'`,
     "-H 'Content-Type: application/json'",
     `-H 'x-referlabs-discount-secret: ${discountCaptureSecret ?? "YOUR_SECRET"}'`,
     `-d '${samplePayload.replace(/\n/g, " ")}'`,
@@ -153,6 +167,7 @@ export function CRMIntegrationTab({
       ],
       color: "from-indigo-50 to-blue-50",
       borderColor: "border-indigo-200",
+      status: "available" as const,
     },
     {
       name: "Zapier",
@@ -166,6 +181,7 @@ export function CRMIntegrationTab({
       ],
       color: "from-orange-50 to-amber-50",
       borderColor: "border-orange-200",
+      status: "coming_soon" as const,
     },
     {
       name: "Salesforce",
@@ -179,11 +195,12 @@ export function CRMIntegrationTab({
       ],
       color: "from-blue-50 to-cyan-50",
       borderColor: "border-blue-200",
+      status: "coming_soon" as const,
     },
     {
       name: "Stripe",
       icon: <DollarSign className="h-6 w-6 text-purple-600" />,
-      description: "Automate payment processing and payout distribution",
+      description: "Configure payouts and automate ambassador commissions through Stripe",
       features: [
         "Automatic ambassador payout processing",
         "Track revenue from referral conversions",
@@ -192,13 +209,24 @@ export function CRMIntegrationTab({
       ],
       color: "from-purple-50 to-pink-50",
       borderColor: "border-purple-200",
+      status: "available" as const,
     },
   ];
 
   const ambassadorPreview = customers.slice(0, 6);
+  const hasPartialCustomerList =
+    typeof customersTotal === "number" && customersTotal > customers.length;
 
-  const handleExportCsv = () => {
-    if (!customers.length) {
+  const loadAllCustomers = async () => {
+    if (!hasPartialCustomerList) {
+      return customers;
+    }
+    const { rows } = await fetchAllPages<CustomerRow>("/api/customers", { pageSize: 200 });
+    return rows;
+  };
+
+  const handleExportCsv = async () => {
+    if (!totalCustomers) {
       toast({
         variant: "destructive",
         title: "No ambassadors to export yet",
@@ -216,7 +244,37 @@ export function CRMIntegrationTab({
       return;
     }
 
-    const rows = [csvHeader, ...csvRows];
+    let exportCustomers = customers;
+    try {
+      toast({
+        title: "Preparing export…",
+        description: hasPartialCustomerList
+          ? "Loading your full ambassador list before generating the CSV."
+          : "Generating CSV export.",
+      });
+      exportCustomers = await loadAllCustomers();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Export failed",
+        description:
+          error instanceof Error ? error.message : "Failed to load ambassadors for export.",
+      });
+      return;
+    }
+
+    const exportRows = exportCustomers.map((customer) => [
+      customer.name ?? "",
+      customer.email ?? "",
+      customer.phone ?? "",
+      customer.status ?? "",
+      customer.referral_code ?? "",
+      referralLinkFor(customer.referral_code),
+      customer.discount_code ?? "",
+      customer.credits?.toString() ?? "0",
+    ]);
+
+    const rows = [csvHeader, ...exportRows];
     const csvContent = rows.map((row) =>
       row
         .map((value) => {
@@ -247,8 +305,8 @@ export function CRMIntegrationTab({
     });
   };
 
-  const handleExportExcel = () => {
-    if (!customers.length) {
+  const handleExportExcel = async () => {
+    if (!totalCustomers) {
       toast({
         variant: "destructive",
         title: "No ambassadors to export yet",
@@ -266,8 +324,38 @@ export function CRMIntegrationTab({
       return;
     }
 
+    let exportCustomers = customers;
+    try {
+      toast({
+        title: "Preparing export…",
+        description: hasPartialCustomerList
+          ? "Loading your full ambassador list before generating the Excel file."
+          : "Generating Excel export.",
+      });
+      exportCustomers = await loadAllCustomers();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Export failed",
+        description:
+          error instanceof Error ? error.message : "Failed to load ambassadors for export.",
+      });
+      return;
+    }
+
+    const exportRows = exportCustomers.map((customer) => [
+      customer.name ?? "",
+      customer.email ?? "",
+      customer.phone ?? "",
+      customer.status ?? "",
+      customer.referral_code ?? "",
+      referralLinkFor(customer.referral_code),
+      customer.discount_code ?? "",
+      customer.credits?.toString() ?? "0",
+    ]);
+
     // Create Excel-compatible TSV format with UTF-16LE encoding
-    const rows = [csvHeader, ...csvRows];
+    const rows = [csvHeader, ...exportRows];
     const tsvContent = rows.map((row) => row.join("\t")).join("\n");
 
     // Add BOM for Excel UTF-16LE
@@ -384,16 +472,23 @@ export function CRMIntegrationTab({
           Quick Actions
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {shortcuts.map((shortcut) => (
-            <button
-              key={shortcut.id}
-              onClick={() => setOpenSection(openSection === shortcut.id ? null : shortcut.id)}
-              className="flex items-center gap-2 rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-700 hover:border-[#0abab5] hover:bg-slate-50 transition-all"
-            >
-              {shortcut.icon}
-              <span>{shortcut.label}</span>
-            </button>
-          ))}
+          {shortcuts.map((shortcut) => {
+            const isActive = openSection === shortcut.id;
+            return (
+              <button
+                key={shortcut.id}
+                onClick={() => setOpenSection(isActive ? null : shortcut.id)}
+                className={`flex items-center gap-2 rounded-2xl border-2 px-4 py-3 text-left text-sm font-semibold transition-all ${
+                  isActive
+                    ? "border-[#0abab5] bg-[#0abab5] text-white shadow-lg shadow-[#0abab5]/30"
+                    : "border-slate-200 bg-white text-slate-700 hover:border-[#0abab5] hover:bg-slate-50"
+                }`}
+              >
+                {shortcut.icon}
+                <span>{shortcut.label}</span>
+              </button>
+            );
+          })}
         </div>
       </Card>
 
@@ -502,7 +597,7 @@ export function CRMIntegrationTab({
           </Card>
         </CollapsibleTrigger>
         <CollapsibleContent className="mt-4">
-      <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
         {integrationPlatforms.map((platform) => (
           <Card key={platform.name} className={`rounded-3xl border p-6 shadow-lg bg-gradient-to-br ${platform.color} ${platform.borderColor} space-y-4`}>
             <div className="flex items-start gap-4">
@@ -510,7 +605,18 @@ export function CRMIntegrationTab({
                 {platform.icon}
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-black text-slate-900 mb-1">{platform.name}</h3>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="text-xl font-black text-slate-900">{platform.name}</h3>
+                  <span
+                    className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${
+                      platform.status === "coming_soon"
+                        ? "bg-slate-100 text-slate-600"
+                        : "bg-emerald-100 text-emerald-700"
+                    }`}
+                  >
+                    {platform.status === "coming_soon" ? "Coming soon" : "Available"}
+                  </span>
+                </div>
                 <p className="text-sm text-slate-600">{platform.description}</p>
               </div>
             </div>
@@ -523,9 +629,33 @@ export function CRMIntegrationTab({
               ))}
             </ul>
             <div className="ml-16 pt-2">
-              <p className="text-xs text-slate-500">
-                Contact support to enable this integration for your account
-              </p>
+              {platform.name === "Webhooks & API" ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="h-9 px-4 text-sm"
+                  onClick={() => setOpenSection("export")}
+                >
+                  Open API setup
+                </Button>
+              ) : platform.name === "Stripe" ? (
+                <Link href="/dashboard/payouts" className="inline-flex">
+                  <Button type="button" variant="outline" className="h-9 px-4 text-sm">
+                    Go to payouts setup
+                  </Button>
+                </Link>
+              ) : (
+                <p className="text-xs text-slate-500">
+                  Coming soon. Want early access? Email{" "}
+                  <a
+                    className="text-indigo-700 underline"
+                    href={`mailto:support@referlabs.com.au?subject=${encodeURIComponent(`${platform.name} integration early access`)}`}
+                  >
+                    support@referlabs.com.au
+                  </a>
+                  .
+                </p>
+              )}
             </div>
           </Card>
         ))}
