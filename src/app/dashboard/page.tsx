@@ -1505,29 +1505,45 @@ export default async function Dashboard() {
                     <h3 className="text-xl font-black text-slate-900 mb-4">
                       Campaign History
                     </h3>
-                    <div className="overflow-x-auto -mx-6 px-6">
-                      <Table>
-                        <TableHeader>
-                          <TableRow>
-                            <TableHead>Name</TableHead>
-                            <TableHead>Channel</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead className="text-right">Recipients</TableHead>
-                            <TableHead className="text-right">Clicks</TableHead>
-                            <TableHead className="text-right">Conversions</TableHead>
-                            <TableHead className="text-right">Reward Spend</TableHead>
-                            <TableHead className="text-right">ROI</TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <CampaignsTable
-                          campaigns={
-                            campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]
-                          }
-                          referrals={safeReferrals}
-                          eventStats={campaignEventStats}
-                        />
-                      </Table>
-                    </div>
+                    {campaignsData.length === 0 ? (
+                      <div className="py-12 text-center">
+                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
+                          <Mail className="h-8 w-8 text-slate-400" />
+                        </div>
+                        <h3 className="mb-2 text-lg font-bold text-slate-900">No campaigns yet</h3>
+                        <p className="mb-6 text-sm text-slate-600 max-w-md mx-auto">
+                          Launch your first campaign to start building your campaign history and tracking performance over time.
+                        </p>
+                        <a href="#crm-integration" className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors">
+                          <Mail className="h-4 w-4" />
+                          Launch First Campaign
+                        </a>
+                      </div>
+                    ) : (
+                      <div className="overflow-x-auto -mx-6 px-6">
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead>Name</TableHead>
+                              <TableHead>Channel</TableHead>
+                              <TableHead>Status</TableHead>
+                              <TableHead className="text-right">Recipients</TableHead>
+                              <TableHead className="text-right">Clicks</TableHead>
+                              <TableHead className="text-right">Conversions</TableHead>
+                              <TableHead className="text-right">Reward Spend</TableHead>
+                              <TableHead className="text-right">ROI</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <CampaignsTable
+                            campaigns={
+                              campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]
+                            }
+                            referrals={safeReferrals}
+                            eventStats={campaignEventStats}
+                          />
+                        </Table>
+                      </div>
+                    )}
                   </Card>
                 </TabsContent>
 
