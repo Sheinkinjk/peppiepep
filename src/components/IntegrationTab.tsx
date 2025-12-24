@@ -49,8 +49,8 @@ type IntegrationTabProps = {
   hasProgramSettings: boolean;
   hasCustomers: boolean;
   onboardingMetadata?: BusinessOnboardingMetadata | null;
-  updateSettingsAction: (formData: FormData) => Promise<void>;
-  updateOnboardingAction: (formData: FormData) => Promise<void>;
+  updateSettingsAction: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
+  updateOnboardingAction: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
 };
 
 export function IntegrationTab({
@@ -229,7 +229,16 @@ export function IntegrationTab({
     formData.append("sign_on_bonus_description", signOnBonusDescriptionInput);
 
     try {
-      await updateSettingsAction(formData);
+      const result = await updateSettingsAction(formData);
+      if (result && 'error' in result) {
+        toast({
+          variant: "destructive",
+          title: "Failed to save settings",
+          description: result.error,
+        });
+        return;
+      }
+
       toast({
         title: "Program settings saved",
         description:

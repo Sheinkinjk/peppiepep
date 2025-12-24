@@ -290,10 +290,19 @@ export default async function Dashboard() {
         ? toneRaw
         : null;
 
+    // Validate numeric inputs
+    const rewardAmountRaw = formData.get("reward_amount");
+    const rewardAmount = rewardAmountRaw ? Number(rewardAmountRaw) : 0;
+    if (Number.isNaN(rewardAmount)) {
+      return {
+        error: "Invalid reward amount. Please enter a valid number.",
+      };
+    }
+
     const updateData: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
       offer_text: (formData.get("offer_text") as string) ?? null,
       reward_type: normalizedRewardType,
-      reward_amount: Number(formData.get("reward_amount") || 0),
+      reward_amount: rewardAmount,
       upgrade_name: ((formData.get("upgrade_name") as string) || "").trim() || null,
       client_reward_text:
         ((formData.get("client_reward_text") as string) || "").trim() || null,
@@ -360,9 +369,11 @@ export default async function Dashboard() {
       );
     } else if (lastError) {
       console.error("Failed to update business settings:", lastError);
+      return { error: "Failed to save settings. Please try again." };
     }
 
     revalidatePath("/dashboard");
+    return { success: "Settings saved successfully" };
   }
 
   async function updateBusinessOnboarding(formData: FormData) {
@@ -434,32 +445,34 @@ export default async function Dashboard() {
 
     if (error) {
       console.error("Failed to save onboarding metadata:", error);
-    } else {
-      // Send admin notification about onboarding progress
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      await sendAdminNotification({
-        subject: `📋 Onboarding snapshot saved: ${updatePayload.name || business.name}`,
-        html: buildOnboardingSnapshotEmail({
-          businessName: updatePayload.name || business.name || "Business",
-          userEmail: user?.email || "Unknown user",
-          businessType: metadata.businessType || undefined,
-          websiteUrl: metadata.websiteUrl || undefined,
-          websitePlatform: metadata.websitePlatform || undefined,
-          crmPlatform: metadata.crmPlatform || undefined,
-          avgSale: metadata.avgSale || undefined,
-          referralGoal: metadata.referralGoal || undefined,
-          timestamp: new Date().toISOString(),
-        }),
-      }).catch((err) => {
-        console.error("Failed to send onboarding snapshot notification:", err);
-        // Don't fail the request if notification fails
-      });
+      return { error: "Failed to save onboarding information. Please try again." };
     }
 
+    // Send admin notification about onboarding progress
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    await sendAdminNotification({
+      subject: `📋 Onboarding snapshot saved: ${updatePayload.name || business.name}`,
+      html: buildOnboardingSnapshotEmail({
+        businessName: updatePayload.name || business.name || "Business",
+        userEmail: user?.email || "Unknown user",
+        businessType: metadata.businessType || undefined,
+        websiteUrl: metadata.websiteUrl || undefined,
+        websitePlatform: metadata.websitePlatform || undefined,
+        crmPlatform: metadata.crmPlatform || undefined,
+        avgSale: metadata.avgSale || undefined,
+        referralGoal: metadata.referralGoal || undefined,
+        timestamp: new Date().toISOString(),
+      }),
+    }).catch((err) => {
+      console.error("Failed to send onboarding snapshot notification:", err);
+      // Don't fail the request if notification fails
+    });
+
     revalidatePath("/dashboard");
+    return { success: "Onboarding information saved successfully" };
   }
 
   async function markReferralCompleted(formData: FormData) {
@@ -497,7 +510,13 @@ export default async function Dashboard() {
         };
       }
 
-      const transactionDate = new Date(transactionDateRaw).toISOString();
+      const parsedTransactionDate = new Date(transactionDateRaw);
+      if (Number.isNaN(parsedTransactionDate.getTime())) {
+        return {
+          error: "Invalid transaction date. Please select a valid date.",
+        };
+      }
+      const transactionDate = parsedTransactionDate.toISOString();
 
       const {
         data: { user: currentUser },
@@ -969,7 +988,13 @@ export default async function Dashboard() {
         };
       }
 
-      const transactionDate = new Date(transactionDateRaw).toISOString();
+      const parsedDate = new Date(transactionDateRaw);
+      if (Number.isNaN(parsedDate.getTime())) {
+        return {
+          error: "Invalid transaction date. Please select a valid date.",
+        };
+      }
+      const transactionDate = parsedDate.toISOString();
 
       const {
         data: {

@@ -39,8 +39,8 @@ type ProgramSettingsDialogProps = {
   signOnBonusAmount?: number | null;
   signOnBonusType?: string | null;
   signOnBonusDescription?: string | null;
-  updateOnboardingAction: (formData: FormData) => Promise<void>;
-  updateSettingsAction: (formData: FormData) => Promise<void>;
+  updateOnboardingAction: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
+  updateSettingsAction: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
 };
 
 export function ProgramSettingsDialog({
@@ -174,8 +174,26 @@ export function ProgramSettingsDialog({
     settingsForm.append("sign_on_bonus_description", signOnBonusDescriptionInput);
 
     try {
-      await updateOnboardingAction(snapshotForm);
-      await updateSettingsAction(settingsForm);
+      const onboardingResult = await updateOnboardingAction(snapshotForm);
+      if (onboardingResult && 'error' in onboardingResult) {
+        toast({
+          variant: "destructive",
+          title: "Failed to update onboarding",
+          description: onboardingResult.error,
+        });
+        return;
+      }
+
+      const settingsResult = await updateSettingsAction(settingsForm);
+      if (settingsResult && 'error' in settingsResult) {
+        toast({
+          variant: "destructive",
+          title: "Failed to update settings",
+          description: settingsResult.error,
+        });
+        return;
+      }
+
       toast({
         title: "Program settings updated",
         description:
