@@ -9,6 +9,7 @@ import { getCurrentAdmin } from '@/lib/admin-auth';
  */
 export async function GET(request: NextRequest) {
   try {
+    void request;
     const authClient = await createServerComponentClient();
     const serviceClient = await createServiceClient();
 

@@ -65,6 +65,14 @@ function LoginContent() {
   const supabase = createBrowserSupabaseClient();
   type BusinessInsert = Database["public"]["Tables"]["businesses"]["Insert"];
 
+  const nextPath = (() => {
+    const raw = searchParams.get("next");
+    if (!raw) return "/dashboard";
+    // Only allow same-origin relative paths.
+    if (!raw.startsWith("/") || raw.startsWith("//")) return "/dashboard";
+    return raw;
+  })();
+
   // Check for URL error parameters
   useEffect(() => {
     const urlError = searchParams.get('error');
@@ -183,7 +191,7 @@ function LoginContent() {
 
         // Use window.location.href instead of router.push to ensure cookies are sent with the request
         // This does a full page navigation which guarantees the middleware sees the auth cookies
-        window.location.href = "/dashboard";
+        window.location.href = nextPath;
       }
     } catch (err: unknown) {
       const message =
@@ -204,7 +212,7 @@ function LoginContent() {
       const { error: signInError } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${location.origin}/auth/callback`,
+          redirectTo: `${location.origin}/auth/callback?next=${encodeURIComponent(nextPath)}`,
           skipBrowserRedirect: false,
         },
       });
@@ -285,7 +293,7 @@ function LoginContent() {
       if (insertError) throw insertError;
 
       localStorage.removeItem("pepform_onboarding_draft");
-      router.push("/dashboard");
+      router.push(nextPath);
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Failed to create business profile";

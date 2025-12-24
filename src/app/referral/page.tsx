@@ -2,8 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import {
   Gift,
-  TrendingUp,
-  Users,
   Sparkles,
   ArrowRight,
   CheckCircle,
@@ -200,7 +198,7 @@ export default function ReferralProgramPage() {
                 Your Unique Referral Link
               </h2>
               <p className="text-lg text-slate-600 mb-8">
-                Share this link with businesses and start earning. It's automatically tracked to your account.
+                Share this link with businesses and start earning. It&apos;s automatically tracked to your account.
               </p>
             </div>
 
@@ -271,7 +269,7 @@ export default function ReferralProgramPage() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-1">Referral Attribution</h3>
                   <p className="text-slate-600">
-                    30-day cookie window ensures you get credit even if the business doesn't sign up immediately. Cross-device tracking included.
+                    30-day cookie window ensures you get credit even if the business doesn&apos;t sign up immediately. Cross-device tracking included.
                   </p>
                 </div>
               </div>

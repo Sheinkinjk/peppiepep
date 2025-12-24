@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import { Metadata } from "next";
 import {
@@ -266,7 +267,6 @@ async function submitPartnerApplication(formData: FormData) {
                 },
               },
             ]);
-            console.log("✅ Created $100 signup bonus commission for ambassador");
           } catch (commissionError) {
             console.error("Failed to create commission:", commissionError);
             // Don't fail application if commission creation fails

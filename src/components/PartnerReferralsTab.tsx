@@ -17,10 +17,9 @@ interface PartnerReferral {
 
 interface PartnerReferralsTabProps {
   referrals: PartnerReferral[];
-  adminName?: string;
 }
 
-export function PartnerReferralsTab({ referrals, adminName = "You" }: PartnerReferralsTabProps) {
+export function PartnerReferralsTab({ referrals }: PartnerReferralsTabProps) {
   const metrics = useMemo(() => {
     const total = referrals.length;
     const pending = referrals.filter(r => r.status === 'pending').length;

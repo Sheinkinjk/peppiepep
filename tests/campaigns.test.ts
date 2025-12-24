@@ -254,7 +254,7 @@ describe("campaign helpers", () => {
     });
 
     expect(email.html).not.toContain("Scan on mobile to claim instantly");
-    expect(email.html).toContain("Open Referral Landing");
+    expect(email.html).toContain("Share Your Link Now");
   });
 
   it("falls back to the default email body when no custom copy is provided", () => {

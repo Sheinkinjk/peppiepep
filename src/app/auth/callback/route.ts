@@ -34,6 +34,11 @@ async function createSupabaseRouteClient() {
 
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url)
+  const nextParam = requestUrl.searchParams.get("next");
+  const nextPath =
+    nextParam && nextParam.startsWith("/") && !nextParam.startsWith("//")
+      ? nextParam
+      : "/dashboard";
 
   try {
     const code = requestUrl.searchParams.get('code')
@@ -81,10 +86,12 @@ export async function GET(request: NextRequest) {
     }
 
     if (!business) {
-      return NextResponse.redirect(`${requestUrl.origin}/login?needs_onboarding=true`)
+      return NextResponse.redirect(
+        `${requestUrl.origin}/login?needs_onboarding=true&next=${encodeURIComponent(nextPath)}`,
+      )
     }
 
-    return NextResponse.redirect(`${requestUrl.origin}/dashboard`)
+    return NextResponse.redirect(`${requestUrl.origin}${nextPath}`)
   } catch (callbackError) {
     console.error('Unhandled auth callback error:', callbackError)
     const message =

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { createClient } = require('@supabase/supabase-js');
 const { nanoid } = require('nanoid');
 require('dotenv').config({ path: '.env.local' });
@@ -23,7 +24,7 @@ function generateDiscountCode(name) {
   const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
   const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
 
-  return `${name}${adj}${randomNum}`;
+  return `${name}${adj}${suffix}${randomNum}`;
 }
 
 async function createAdminReferral() {

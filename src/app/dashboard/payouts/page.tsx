@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   getConnectAccountStatus,
@@ -33,46 +33,7 @@ export default function PayoutsPage() {
   const [customerId, setCustomerId] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
 
-  useEffect(() => {
-    initializeUser();
-  }, []);
-
-  useEffect(() => {
-    if (customerId && userEmail) {
-      loadData();
-    }
-
-    // Check for setup completion
-    if (searchParams.get("setup") === "complete") {
-      setSuccess("Payout account setup complete! You can now request payouts.");
-    }
-  }, [customerId, userEmail, searchParams]);
-
-  async function initializeUser() {
-    try {
-      const user = await getCurrentUser();
-      if (!user) {
-        setError("Please log in to view payouts");
-        setLoading(false);
-        return;
-      }
-
-      const customer = await getCurrentCustomer();
-      if (!customer) {
-        setError("Customer account not found");
-        setLoading(false);
-        return;
-      }
-
-      setCustomerId(customer.id);
-      setUserEmail(user.email || "");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load user");
-      setLoading(false);
-    }
-  }
-
-  async function loadData() {
+  const loadData = useCallback(async () => {
     if (!customerId || !userEmail) return;
 
     try {
@@ -97,7 +58,45 @@ export default function PayoutsPage() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [customerId, userEmail]);
+
+  const initializeUser = useCallback(async () => {
+    try {
+      const user = await getCurrentUser();
+      if (!user) {
+        setError("Please log in to view payouts");
+        setLoading(false);
+        return;
+      }
+
+      const customer = await getCurrentCustomer();
+      if (!customer) {
+        setError("Customer account not found");
+        setLoading(false);
+        return;
+      }
+
+      setCustomerId(customer.id);
+      setUserEmail(user.email || "");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load user");
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    initializeUser();
+  }, [initializeUser]);
+
+  useEffect(() => {
+    if (customerId && userEmail) {
+      loadData();
+    }
+
+    if (searchParams.get("setup") === "complete") {
+      setSuccess("Payout account setup complete! You can now request payouts.");
+    }
+  }, [customerId, userEmail, searchParams, loadData]);
 
   async function handleSetupPayout() {
     if (!customerId || !userEmail) {

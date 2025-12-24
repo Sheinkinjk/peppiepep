@@ -1,6 +1,4 @@
 "use client";
-
-/* eslint-disable react/no-unescaped-entities */
 import { useMemo, useState } from "react";
 import { ArrowRight, Check, Zap, Users, Crown } from "lucide-react";
 import Link from "next/link";

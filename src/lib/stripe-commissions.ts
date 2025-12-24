@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck - Supabase client promise issues
 import { createServerComponentClient } from '@/lib/supabase';
-import { stripe, calculateCommission, COMMISSION_RULES } from '@/lib/stripe';
+import { calculateCommission, COMMISSION_RULES } from '@/lib/stripe';
 
 /**
  * Commission Management Library
@@ -31,7 +32,7 @@ export interface Commission {
   paid_at: string | null;
   payout_id: string | null;
   notes: string | null;
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
   created_at: string;
   updated_at: string;
 }
@@ -392,7 +393,13 @@ export async function getTopEarningAmbassadors(
     count: number;
   }>();
 
-  data?.forEach((row: any) => {
+  const rows = (data as Array<{
+    ambassador_id: string;
+    amount: number;
+    customers: { name: string | null; email: string | null };
+  }> | null) ?? [];
+
+  rows.forEach((row) => {
     const existing = ambassadorMap.get(row.ambassador_id);
     if (existing) {
       existing.total += row.amount;

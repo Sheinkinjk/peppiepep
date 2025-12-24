@@ -9,7 +9,7 @@ export function Step1Education() {
         and your rewards are configured properly <strong>before</strong> you invite ambassadors.
       </p>
 
-      <h4>What You'll Do</h4>
+      <h4>What You&apos;ll Do</h4>
       <ol>
         <li><strong>Enter business details:</strong> Name, website, and branding</li>
         <li><strong>Configure rewards:</strong> Set what ambassadors and new customers receive</li>
@@ -42,7 +42,7 @@ export function Step2Education() {
           <ul>
             <li>Download our template</li>
             <li>Fill in customer details (name, email, phone)</li>
-            <li>Upload and we'll generate unique links instantly</li>
+            <li>Upload and we&apos;ll generate unique links instantly</li>
           </ul>
         </li>
         <li>
@@ -80,7 +80,7 @@ export function Step3Education() {
           <ul>
             <li>Import into your existing email platform</li>
             <li>Full control over design and timing</li>
-            <li>Use your brand's email templates</li>
+            <li>Use your brand&apos;s email templates</li>
           </ul>
         </li>
         <li>
@@ -143,7 +143,7 @@ export function Step4Education() {
       <h4>Pro Tip</h4>
       <p>
         💡 Check your analytics <strong>weekly</strong> to spot trends early. If a campaign
-        isn't performing well, you can adjust your messaging before the next send.
+        isn&apos;t performing well, you can adjust your messaging before the next send.
       </p>
     </HowThisWorksSection>
   )
@@ -154,7 +154,7 @@ export function Step5Education() {
     <HowThisWorksSection title="How does ROI measurement work?">
       <h4>Why This Step Matters</h4>
       <p>
-        Track every referral from click to conversion and calculate your program's return on investment.
+        Track every referral from click to conversion and calculate your program&apos;s return on investment.
         This data helps you optimize rewards and identify your top performers.
       </p>
 
@@ -185,7 +185,7 @@ export function Step5Education() {
 
       <h4>Pro Tip</h4>
       <p>
-        💡 Aim for 5x+ ROI. If you're below that, either increase transaction values or
+        💡 Aim for 5x+ ROI. If you&apos;re below that, either increase transaction values or
         reduce reward costs. Your top 20% of ambassadors typically drive 80% of results.
       </p>
     </HowThisWorksSection>

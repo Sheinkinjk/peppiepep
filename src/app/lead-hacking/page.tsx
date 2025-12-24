@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Target, TrendingUp, Zap, Users, BarChart3, Rocket, CheckCircle2, DollarSign, LineChart } from "lucide-react";
+import { ArrowRight, Target, TrendingUp, Zap, Users, BarChart3, Rocket, CheckCircle2, DollarSign } from "lucide-react";
 
 const metrics = [
   { value: "3-5x", label: "Average ROI", sublabel: "on lead acquisition campaigns" },
@@ -235,7 +235,7 @@ export default function LeadHackingPage() {
                 </div>
               </div>
               <p className="mb-6 text-slate-300">
-                We build multi-channel lead gen systems that don't just get you leads today—they compound month over month as we optimize, scale, and add new channels.
+                We build multi-channel lead gen systems that don&apos;t just get you leads today—they compound month over month as we optimize, scale, and add new channels.
               </p>
               <div className="space-y-3">
                 {[
@@ -301,7 +301,7 @@ export default function LeadHackingPage() {
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-400">Our Arsenal</p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">Growth Tactics We Deploy</h2>
             <p className="mt-4 max-w-3xl text-lg text-slate-300">
-              We test fast, scale what works, and kill what doesn't. Here are the exact tactics we use to generate qualified leads at scale.
+              We test fast, scale what works, and kill what doesn&apos;t. Here are the exact tactics we use to generate qualified leads at scale.
             </p>
           </div>
 
@@ -325,7 +325,7 @@ export default function LeadHackingPage() {
         <section className="mb-20">
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-400">Real Results</p>
-            <h2 className="text-4xl font-black text-white sm:text-5xl">Companies We've Scaled</h2>
+            <h2 className="text-4xl font-black text-white sm:text-5xl">Companies We&apos;ve Scaled</h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -421,7 +421,7 @@ export default function LeadHackingPage() {
             Ready to Build a Lead Gen Engine?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300">
-            We'll audit your current lead gen strategy, identify the highest-ROI channels, and show you exactly how we'd generate 50-200+ qualified leads per month for your business.
+            We&apos;ll audit your current lead gen strategy, identify the highest-ROI channels, and show you exactly how we&apos;d generate 50-200+ qualified leads per month for your business.
           </p>
           <Link
             href="/contact"

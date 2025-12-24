@@ -216,7 +216,7 @@ export function SupportChatbot() {
           {!hasProvidedInfo ? (
             /* Lead Capture Form */
             <div className="mt-4 rounded-2xl border border-slate-100 bg-white p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Let's get started</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Let&apos;s get started</h3>
               <p className="text-sm text-slate-600 mb-4">
                 Share your details so I can personalize our conversation and follow up with you.
               </p>

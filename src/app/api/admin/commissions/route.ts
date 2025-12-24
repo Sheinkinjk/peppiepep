@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerComponentClient } from '@/lib/supabase';
 import { getCurrentAdmin } from '@/lib/admin-auth';
@@ -21,7 +22,7 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '50');
     const offset = parseInt(searchParams.get('offset') || '0');
 
-    const supabase = await createServerComponentClient();
+    const supabase = await createServerComponentClient() as any;
 
     // Build query
     let query = supabase
@@ -101,12 +102,18 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    const supabase = await createServerComponentClient();
+    const supabase = await createServerComponentClient() as any;
 
     // Get admin user ID from authenticated session
     const adminUserId = admin.id;
 
-    const updateData: any = {
+    const updateData: {
+      status: string;
+      updated_at: string;
+      approved_at?: string;
+      approved_by?: string;
+      notes?: string;
+    } = {
       status,
       updated_at: new Date().toISOString(),
     };
@@ -120,7 +127,7 @@ export async function PATCH(request: NextRequest) {
       updateData.notes = notes;
     }
 
-    const { data: commission, error } = await (supabase as any)
+    const { data: commission, error } = await supabase
       .from('stripe_commissions')
       .update(updateData)
       .eq('id', commissionId)

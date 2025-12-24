@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import type { PostgrestError } from '@supabase/supabase-js';
 import { createServerComponentClient } from '@/lib/supabase';
 
 /**
@@ -36,7 +37,7 @@ export async function GET(request: NextRequest) {
           business_id: string;
           business: { owner_id: string } | null;
         } | null;
-        error: any;
+        error: PostgrestError | null;
       };
 
     if (customerError || !customer) {
@@ -65,7 +66,7 @@ export async function GET(request: NextRequest) {
           paid_commissions: number | null;
           last_payout_date: string | null;
         } | null;
-        error: any;
+        error: PostgrestError | null;
       };
 
     if (balanceError || !balance) {

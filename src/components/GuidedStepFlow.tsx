@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useState, type KeyboardEvent, type ReactNode } from "react";
 import { Card } from "@/components/ui/card";
 import { ChevronDown, CheckCircle2, Circle, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -27,6 +27,29 @@ type GuidedStepFlowProps = {
 export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedStepFlowProps) {
   // Always use internal state for managing expanded step
   const [expandedStep, setExpandedStep] = useState<string | null>(() => defaultOpenStep || null);
+
+  useEffect(() => {
+    const handler = (event: Event) => {
+      const customEvent = event as CustomEvent<{ stepId?: string; anchorId?: string }>;
+      const stepId = customEvent.detail?.stepId;
+      if (!stepId) return;
+
+      setExpandedStep(stepId);
+      if (onStepChange) onStepChange(stepId);
+
+      const anchorId = customEvent.detail?.anchorId;
+      const targetId = anchorId || `step-${stepId}`;
+
+      // Allow the UI to expand before scrolling.
+      setTimeout(() => {
+        const node = document.getElementById(targetId);
+        node?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    };
+
+    window.addEventListener("pep-open-step", handler);
+    return () => window.removeEventListener("pep-open-step", handler);
+  }, [onStepChange]);
 
   const handleStepToggle = (stepId: string) => {
     const nextValue = expandedStep === stepId ? null : stepId;
@@ -69,6 +92,7 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
         return (
           <Card
             key={step.id}
+            id={`step-${step.id}`}
             className={cn(
               "rounded-2xl border overflow-hidden transition-all duration-300",
               borderColor,

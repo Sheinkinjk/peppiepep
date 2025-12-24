@@ -9,6 +9,7 @@ import { getCurrentAdmin } from '@/lib/admin-auth';
  */
 export async function GET(request: NextRequest) {
   try {
+    void request;
     // Check admin auth using RBAC
     const admin = await getCurrentAdmin();
     if (!admin) {

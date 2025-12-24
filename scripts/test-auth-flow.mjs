@@ -94,30 +94,6 @@ async function fetchDashboard(cookie) {
   };
 }
 
-async function signOut(cookie) {
-  const response = await fetch(`${targetOrigin}/auth/callback`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Cookie: cookie,
-    },
-    body: JSON.stringify({ event: "SIGNED_OUT", session: null }),
-  });
-
-  const setCookieHeaders =
-    response.headers.getSetCookie?.() ?? response.headers.raw?.()["set-cookie"] ?? [];
-  const sessionCookie = setCookieHeaders.find((value) =>
-    value.startsWith(`${authCookieName}=`),
-  );
-
-  if (!sessionCookie) {
-    return null;
-  }
-
-  const parsed = sessionCookie.split(";")[0] ?? "";
-  return parsed.length > `${authCookieName}=`.length ? parsed : null;
-}
-
 async function run() {
   console.log(`\nTarget origin: ${targetOrigin}`);
   const credentials = await createConfirmedUser();

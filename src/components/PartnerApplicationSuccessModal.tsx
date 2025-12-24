@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { X, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,13 +8,7 @@ import { Button } from "@/components/ui/button";
 function PartnerApplicationSuccessModalContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (searchParams.get("applied") === "1") {
-      setIsOpen(true);
-    }
-  }, [searchParams]);
+  const [isOpen, setIsOpen] = useState(() => searchParams.get("applied") === "1");
 
   const handleClose = () => {
     setIsOpen(false);
@@ -51,13 +45,13 @@ function PartnerApplicationSuccessModalContent() {
 
           {/* Message */}
           <p className="text-slate-600 mb-6 leading-relaxed">
-            Thank you for applying to our partner program. We'll review your application and be in touch within 24 hours regarding your registration.
+            Thank you for applying to our partner program. We&apos;ll review your application and be in touch within 24 hours regarding your registration.
           </p>
 
           {/* Additional info */}
           <div className="w-full p-4 bg-emerald-50 border border-emerald-200 rounded-2xl mb-6">
             <p className="text-sm text-emerald-900">
-              <strong>What's next?</strong> Check your email for confirmation details and your unique partner resources.
+              <strong>What&apos;s next?</strong> Check your email for confirmation details and your unique partner resources.
             </p>
           </div>
 

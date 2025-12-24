@@ -1,17 +1,12 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 function SuccessContent() {
   const searchParams = useSearchParams();
-  const [sessionId, setSessionId] = useState<string | null>(null);
-
-  useEffect(() => {
-    const session_id = searchParams.get("session_id");
-    setSessionId(session_id);
-  }, [searchParams]);
+  const sessionId = searchParams.get("session_id");
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">

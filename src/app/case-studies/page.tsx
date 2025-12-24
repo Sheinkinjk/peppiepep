@@ -218,7 +218,7 @@ export default function CaseStudiesPage() {
           <TabsContent value="luxury" className="space-y-8">
             <div className="text-center">
               <p className="text-2xl font-bold text-slate-900">
-                Turn every unboxing, DM, and "I love this" moment into your next customers.
+                Turn every unboxing, DM, and &quot;I love this&quot; moment into your next customers.
               </p>
             </div>
 

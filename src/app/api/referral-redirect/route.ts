@@ -58,11 +58,8 @@ export async function GET(request: NextRequest) {
     sameSite: "lax",
     maxAge: 30 * 24 * 60 * 60, // 30 days
     path: "/",
-    // Set domain for subdomain support (e.g., www.referlabs.com.au)
-    // Note: Only set domain in production, not in local development
-    ...(process.env.NODE_ENV === "production" && {
-      domain: ".referlabs.com.au"
-    })
+    // Important: avoid hard-coding a domain (multi-tenant). Host-only cookies work as long as
+    // the referral click and landing page share the same origin.
   });
 
   return response;

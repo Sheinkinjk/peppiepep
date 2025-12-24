@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 export const dynamic = "force-dynamic";
 
@@ -5,11 +6,11 @@ import { createServiceClient } from "@/lib/supabase";
 import { requireAdmin } from "@/lib/admin-auth";
 import { formatAmount } from "@/lib/stripe";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, Mail, Users, Link as LinkIcon, TrendingUp, DollarSign, Activity } from "lucide-react";
+import { ChevronDown, Mail, Users, Link as LinkIcon, TrendingUp, DollarSign, Activity } from "lucide-react";
 
 export default async function MasterAdminDashboard() {
   // Require admin access using RBAC system
-  const admin = await requireAdmin();
+  await requireAdmin();
 
   // Use service client to bypass RLS and fetch ALL data across all accounts
   const supabase = await createServiceClient();
@@ -281,7 +282,7 @@ export default async function MasterAdminDashboard() {
           </div>
 
           <div className="divide-y divide-gray-200">
-            {sortedBusinessMetrics.map((item, idx) => {
+            {sortedBusinessMetrics.map((item) => {
               const { business, metrics } = item;
 
               return (

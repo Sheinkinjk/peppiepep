@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck - Supabase type inference issues with payout operations
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, PAYOUT_THRESHOLD, PAYOUT_CURRENCY } from '@/lib/stripe';

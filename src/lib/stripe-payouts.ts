@@ -11,7 +11,7 @@ export interface ConnectAccountStatus {
     payouts_enabled: boolean;
     details_submitted: boolean;
     onboarding_completed: boolean;
-    requirements?: any;
+    requirements?: Record<string, unknown>;
   } | null;
 }
 

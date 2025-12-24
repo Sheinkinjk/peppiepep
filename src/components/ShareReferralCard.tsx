@@ -24,6 +24,7 @@ import {
 import { nanoid } from "nanoid";
 import QRCodeGenerator from "@/components/QRCodeGenerator";
 import type { Database } from "@/types/supabase";
+import { fetchAllPages } from "@/lib/customers-api-client";
 
 const placeholderLink = "Add an ambassador to generate referral links";
 
@@ -34,6 +35,7 @@ type CustomerRow = Pick<
 
 type ShareReferralCardProps = {
   customers: CustomerRow[];
+  customersTotal?: number;
   siteUrl: string;
   clientRewardText?: string | null;
   newUserRewardText?: string | null;
@@ -44,6 +46,7 @@ type ShareReferralCardProps = {
 
 export function ShareReferralCard({
   customers,
+  customersTotal,
   siteUrl,
   clientRewardText,
   newUserRewardText,
@@ -51,9 +54,18 @@ export function ShareReferralCard({
   offerText,
   businessName = "your business",
 }: ShareReferralCardProps) {
+  const [availableCustomers, setAvailableCustomers] = useState<CustomerRow[]>(customers);
+  const [isLoadingAllCustomers, setIsLoadingAllCustomers] = useState(false);
+  const hasPartialCustomerList =
+    typeof customersTotal === "number" && customersTotal > availableCustomers.length;
+
+  useEffect(() => {
+    setAvailableCustomers(customers);
+  }, [customers]);
+
   const shareableCustomers = useMemo(
-    () => customers.filter((customer) => Boolean(customer.referral_code)),
-    [customers],
+    () => availableCustomers.filter((customer) => Boolean(customer.referral_code)),
+    [availableCustomers],
   );
   const firstWithCode = shareableCustomers[0];
   const [selectedId, setSelectedId] = useState<string | null>(firstWithCode?.id ?? null);
@@ -72,6 +84,33 @@ export function ShareReferralCard({
   const [mediaKitStatusTone, setMediaKitStatusTone] = useState<"info" | "error">("info");
   const [scheduleStatus, setScheduleStatus] = useState<string | null>(null);
   const canNativeShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
+
+  const loadAllCustomers = async () => {
+    if (!hasPartialCustomerList) return;
+    setIsLoadingAllCustomers(true);
+    try {
+      const { rows, total } = await fetchAllPages<CustomerRow>("/api/customers", { pageSize: 200 });
+      const mapped = rows.map((row) => ({
+        id: row.id,
+        name: row.name,
+        referral_code: row.referral_code,
+        discount_code: row.discount_code,
+      }));
+      setAvailableCustomers(mapped);
+      setMediaKitStatusTone("info");
+      setMediaKitStatus(
+        `Loaded ${mapped.length}${total ? ` of ${total}` : ""} ambassadors.`,
+      );
+    } catch (error) {
+      setMediaKitStatusTone("error");
+      setMediaKitStatus(
+        error instanceof Error ? error.message : "Failed to load ambassadors.",
+      );
+    } finally {
+      setIsLoadingAllCustomers(false);
+      window.setTimeout(() => setMediaKitStatus(null), 4000);
+    }
+  };
 
   const normalizedSiteUrl = useMemo(() => {
     const trimmed = siteUrl?.replace(/\/$/, "");
@@ -400,6 +439,24 @@ const downloadMediaKit = async () => {
           </TabsList>
 
           <TabsContent value="share" className="space-y-6">
+            {hasPartialCustomerList && (
+              <div className="flex flex-col gap-2 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-xs font-semibold">
+                  Showing {availableCustomers.length} of {customersTotal} ambassadors. Load all to search the full list.
+                </p>
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  className="border-amber-300 bg-white text-amber-900 hover:bg-amber-100"
+                  onClick={loadAllCustomers}
+                  disabled={isLoadingAllCustomers}
+                >
+                  {isLoadingAllCustomers ? "Loading…" : "Load all ambassadors"}
+                </Button>
+              </div>
+            )}
+
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
                 <Label htmlFor="share-ambassador" className="text-xs font-semibold text-slate-500">

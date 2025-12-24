@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card"
-import { Settings, Users, Mail, Target, CheckCircle2, BookOpen, Lightbulb } from "lucide-react"
+import { BookOpen, Lightbulb } from "lucide-react"
 
 interface SidebarSection {
   title: string

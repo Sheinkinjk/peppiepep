@@ -3,6 +3,7 @@
  * Provides helper functions for getting current user context
  */
 
+import type { PostgrestError } from "@supabase/supabase-js";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 // Create client instance
@@ -57,7 +58,7 @@ export async function getCurrentCustomer(): Promise<CurrentCustomer | null> {
     .eq('email', user.email)
     .single() as {
       data: { id: string; email: string; name: string | null; business_id: string | null } | null;
-      error: any;
+      error: PostgrestError | null;
     };
 
   if (customerError || !customer) {

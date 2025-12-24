@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
-import type { Database } from "@/types/supabase";
 import { createApiLogger } from "@/lib/api-logger";
 import { parseJsonBody } from "@/lib/api-validation";
 import { checkRateLimit } from "@/lib/rate-limit";

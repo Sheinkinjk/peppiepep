@@ -5,13 +5,14 @@
  * Run with: npx tsx qa-test.ts
  */
 
+import fs from 'fs'
+import path from 'path'
 import { config } from 'dotenv'
-import { join } from 'path'
 import { createClient } from '@supabase/supabase-js'
 import type { Database } from './src/types/supabase'
 
 // Load environment variables from .env.local
-config({ path: join(process.cwd(), '.env.local') })
+config({ path: path.join(process.cwd(), '.env.local') })
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -67,7 +68,7 @@ async function testRLSPolicies() {
     const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY)
 
     // Try to access businesses without auth (should fail or return empty)
-    const { data, error } = await supabase.from('businesses').select('*')
+    const { data } = await supabase.from('businesses').select('*')
 
     if (data && data.length > 0) {
       log({
@@ -110,7 +111,8 @@ async function testTableStructure() {
     let allTablesExist = true
 
     for (const table of tables) {
-      const { error } = await (supabase as any).from(table).select('count').limit(1)
+      const tableName = table as keyof Database['public']['Tables']
+      const { error } = await supabase.from(tableName).select('count').limit(1)
       if (error && error.code === '42P01') {
         log({
           name: `Table Existence: ${table}`,
@@ -171,9 +173,6 @@ async function testEnvironmentVariables() {
 }
 
 async function testBuildOutput() {
-  const fs = require('fs')
-  const path = require('path')
-
   const buildDir = path.join(process.cwd(), '.next')
 
   if (!fs.existsSync(buildDir)) {

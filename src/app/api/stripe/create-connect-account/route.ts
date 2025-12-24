@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-explicit-any */
 // @ts-nocheck - Supabase type inference issues with Stripe Connect operations
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
@@ -97,7 +98,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Save to database
-    const { data: connectAccount, error: dbError } = await supabase
+    const { error: dbError } = await supabase
       .from('stripe_connect_accounts')
       .insert({
         customer_id: customerId,

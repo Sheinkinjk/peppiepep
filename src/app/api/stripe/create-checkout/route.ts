@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
-import { stripe, STRIPE_CURRENCY } from '@/lib/stripe';
+import { stripe } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
 
 export async function POST(request: NextRequest) {
@@ -27,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     if (customerId) {
       // Check if we already have a Stripe customer ID for this platform customer
-      const supabase = await createServerComponentClient();
+      const supabase = await createServerComponentClient() as any;
       const { data: existingCustomer } = await supabase
         .from('stripe_customers')
         .select('stripe_customer_id')
@@ -77,7 +78,7 @@ export async function POST(request: NextRequest) {
           metadata: {
             created_via: 'checkout',
           },
-        } as any);
+        } as Record<string, unknown>);
       }
     } else {
       // Create customer without platform linking (for one-off payments)

@@ -3,6 +3,7 @@
  * Provides helper functions for checking admin access in the application
  */
 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck - Supabase type inference issues with admin role queries
 import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import { redirect } from "next/navigation";
@@ -13,7 +14,7 @@ export interface AdminUser {
   id: string;
   email: string;
   role: AdminRole;
-  permissions: Record<string, any>;
+  permissions: Record<string, unknown>;
   is_active: boolean;
 }
 
@@ -32,6 +33,20 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
     return null;
   }
 
+  // Prefer the SECURITY DEFINER RPC (avoids RLS/policy recursion issues on admin_roles).
+  // If the function isn't installed, this will fail and we fall back to direct table reads.
+  let rpcRole: string | null = null;
+  try {
+    const { data: roleData, error: roleError } = await authClient.rpc(
+      "get_current_user_admin_role",
+    );
+    if (!roleError && typeof roleData === "string" && roleData.length > 0) {
+      rpcRole = roleData;
+    }
+  } catch {
+    // Ignore and fall back.
+  }
+
   // Use service client to check admin_roles table
   const supabase = await createServiceClient();
 
@@ -43,16 +58,50 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
     .is('revoked_at', null)
     .single();
 
-  if (error || !adminRole) {
+  // Fallback: some environments may have an admin role keyed to email rather than user_id
+  // (e.g., if a user was re-created). If the user_id lookup fails, try the email match.
+  let resolvedAdminRole = adminRole;
+  if (!resolvedAdminRole && user.email) {
+    const { data: adminRoleByEmail, error: emailError } = await supabase
+      .from("admin_roles")
+      .select("*")
+      .ilike("email", user.email)
+      .eq("is_active", true)
+      .is("revoked_at", null)
+      .limit(1)
+      .maybeSingle();
+
+    if (emailError) {
+      console.warn("Admin role lookup by email failed:", emailError);
+    }
+
+    resolvedAdminRole = adminRoleByEmail;
+  }
+
+  if (error) {
+    console.warn("Admin role lookup by user_id failed:", error);
+  }
+
+  if (!resolvedAdminRole && rpcRole && user.email) {
+    return {
+      id: user.id,
+      email: user.email,
+      role: rpcRole as AdminRole,
+      permissions: {},
+      is_active: true,
+    };
+  }
+
+  if (!resolvedAdminRole) {
     return null;
   }
 
   return {
     id: user.id,
-    email: adminRole.email,
-    role: adminRole.role as AdminRole,
-    permissions: adminRole.permissions || {},
-    is_active: adminRole.is_active,
+    email: resolvedAdminRole.email,
+    role: resolvedAdminRole.role as AdminRole,
+    permissions: resolvedAdminRole.permissions || {},
+    is_active: resolvedAdminRole.is_active,
   };
 }
 
@@ -134,7 +183,7 @@ export async function getAllAdmins(): Promise<AdminUser[]> {
 export async function grantAdminRole(
   userEmail: string,
   role: AdminRole,
-  permissions: Record<string, any> = {},
+  permissions: Record<string, unknown> = {},
   notes?: string
 ): Promise<{ success: boolean; error?: string }> {
   const currentAdmin = await requireAdminRole('super_admin');
