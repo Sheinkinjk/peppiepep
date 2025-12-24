@@ -1580,11 +1580,32 @@ export default async function Dashboard() {
                     </p>
                   </div>
                 </div>
-                <ReferralsTable
-                  initialReferrals={safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT)}
-                  initialTotal={safeReferrals.length}
-                  completionAction={markReferralCompleted}
-                />
+
+                {safeReferrals.length === 0 ? (
+                  <div className="py-12 text-center">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
+                      <TrendingUp className="h-8 w-8 text-slate-400" />
+                    </div>
+                    <h3 className="mb-2 text-lg font-bold text-slate-900">No referrals yet</h3>
+                    <p className="mb-6 text-sm text-slate-600 max-w-md mx-auto">
+                      Once you launch campaigns and ambassadors start sharing, referrals will appear here. You can also add manual referrals below.
+                    </p>
+                    <div className="flex gap-3 justify-center">
+                      <a
+                        href="#crm-integration"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
+                      >
+                        Launch Campaign
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <ReferralsTable
+                    initialReferrals={safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT)}
+                    initialTotal={safeReferrals.length}
+                    completionAction={markReferralCompleted}
+                  />
+                )}
 
                 <div className="mt-6 rounded-2xl bg-slate-50 p-4 border border-slate-200">
                   <div className="flex items-start gap-3 mb-3">
@@ -1649,10 +1670,31 @@ export default async function Dashboard() {
             <Card className="p-6 border border-slate-200 rounded-lg bg-white">
               <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Performance Analytics</h2>
 
-              {/* KEY METRICS - Prominently displayed */}
-              <div className="mb-8">
-                <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Key Metrics</h3>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {safeReferrals.length === 0 ? (
+                <div className="py-16 text-center">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
+                    <BarChart3 className="h-8 w-8 text-slate-400" />
+                  </div>
+                  <h3 className="mb-2 text-lg font-bold text-slate-900">Start tracking your ROI</h3>
+                  <p className="mb-6 text-sm text-slate-600 max-w-md mx-auto">
+                    Launch your first campaign to start tracking revenue, ROI, and conversion metrics in real-time.
+                  </p>
+                  <div className="flex gap-3 justify-center">
+                    <a
+                      href="#crm-integration"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
+                    >
+                      <Mail className="h-4 w-4" />
+                      Launch First Campaign
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {/* KEY METRICS - Prominently displayed */}
+                  <div className="mb-8">
+                    <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Key Metrics</h3>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                   {/* Revenue - Most important */}
                   <div className="p-8 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 border border-emerald-400 shadow-lg">
                     <div className="flex items-center gap-3 mb-4">
@@ -1807,6 +1849,8 @@ export default async function Dashboard() {
                   </div>
                 </div>
               </details>
+                </>
+              )}
             </Card>
           </TabsContent>
         </Tabs>
