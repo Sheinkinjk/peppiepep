@@ -47,7 +47,6 @@ export async function sendAdminNotification({
     }
 
     const data = await response.json();
-    console.log("Admin notification sent successfully:", { subject, id: data.id });
     return { success: true };
   } catch (error) {
     console.error("Failed to send admin notification:", error);
