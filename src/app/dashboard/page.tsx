@@ -20,9 +20,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GuidedStepFlow, type GuidedStep } from "@/components/GuidedStepFlow";
 import { DashboardWelcomeModal } from "@/components/DashboardWelcomeModal";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
+import { CampaignBuilder } from "@/components/CampaignBuilder";
 import { QuickAddCustomerForm } from "@/components/QuickAddCustomerForm";
 import { CustomersTable } from "@/components/CustomersTable";
 import { FloatingCampaignTrigger } from "@/components/FloatingCampaignTrigger";
+import { StartCampaignCTA } from "@/components/StartCampaignCTA";
+import { DashboardExplainerDialog } from "@/components/DashboardExplainerDialog";
 import { ManualReferralForm } from "@/components/ManualReferralForm";
 import { CampaignsTable } from "@/components/CampaignsTable";
 import { CampaignAnalyticsDashboard } from "@/components/CampaignAnalyticsDashboard";
@@ -33,11 +36,9 @@ import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingCh
 import { Step1Education, Step2Education, Step3Education, Step4Education, Step5Education } from "@/components/dashboard/StepEducation";
 import { TwoColumnLayout } from "@/components/dashboard/TwoColumnLayout";
 import { Step1Sidebar, Step2Sidebar, Step3Sidebar, Step4Sidebar } from "@/components/dashboard/StepSidebars";
-import { CampaignLaunchChooser } from "@/components/dashboard/CampaignLaunchChooser";
-import { ShareAssetsPromoCard } from "@/components/dashboard/ShareAssetsPromoCard";
-import { CampaignCostEstimatesDialog } from "@/components/dashboard/CampaignCostEstimatesDialog";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
+import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
 import { ReferralJourneyReport, type ReferralJourneyEvent } from "@/components/ReferralJourneyReport";
 import { PartnerReferralsTab } from "@/components/PartnerReferralsTab";
 import { logReferralEvent } from "@/lib/referral-events";
@@ -54,7 +55,6 @@ import {
   Mail,
 } from "lucide-react";
 import { createServerComponentClient } from "@/lib/supabase";
-import { createServiceClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
 import { BusinessOnboardingMetadata, IntegrationStatusValue, parseBusinessMetadata } from "@/types/business";
 import { calculateNextCredits, parseCreditDelta } from "@/lib/credits";
@@ -64,7 +64,6 @@ import { ProgressTracker } from "./components/ProgressTracker";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 import { getCurrentAdmin } from "@/lib/admin-auth";
-import { tryInsertCreditLedgerEntry } from "@/lib/credits-ledger";
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -225,51 +224,15 @@ async function getBusiness(): Promise<BusinessCoreFields> {
   return businessWithExtras;
 }
 
-type DashboardPageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
-};
-
-type AnalyticsRangeKey = "30d" | "90d" | "365d" | "all";
-
-function normalizeAnalyticsRange(value: unknown): AnalyticsRangeKey {
-  if (typeof value !== "string") return "90d";
-  const normalized = value.trim().toLowerCase();
-  if (normalized === "30d" || normalized === "90d" || normalized === "365d" || normalized === "all") {
-    return normalized;
-  }
-  return "90d";
-}
-
-function rangeKeyToDays(range: AnalyticsRangeKey): number | null {
-  if (range === "30d") return 30;
-  if (range === "90d") return 90;
-  if (range === "365d") return 365;
-  return null;
-}
-
-export default async function Dashboard({ searchParams }: DashboardPageProps) {
+export default async function Dashboard() {
   const business = await getBusiness();
 
   // Get user for admin check
   const authSupabase = await createServerComponentClient();
-  await authSupabase.auth.getUser();
+  const { data: { user } } = await authSupabase.auth.getUser();
 
   // Check if user is actually an admin (for admin dashboard button)
   const currentAdmin = await getCurrentAdmin();
-
-  const DEFAULT_SMS_COST_PER_MESSAGE = 0.02;
-  const DEFAULT_EMAIL_COST_PER_MESSAGE = 0.01;
-
-  const smsCostEstimate =
-    typeof business.onboarding_metadata?.campaignCostEstimates?.sms === "number" &&
-    Number.isFinite(business.onboarding_metadata?.campaignCostEstimates?.sms)
-      ? business.onboarding_metadata?.campaignCostEstimates?.sms ?? DEFAULT_SMS_COST_PER_MESSAGE
-      : DEFAULT_SMS_COST_PER_MESSAGE;
-  const emailCostEstimate =
-    typeof business.onboarding_metadata?.campaignCostEstimates?.email === "number" &&
-    Number.isFinite(business.onboarding_metadata?.campaignCostEstimates?.email)
-      ? business.onboarding_metadata?.campaignCostEstimates?.email ?? DEFAULT_EMAIL_COST_PER_MESSAGE
-      : DEFAULT_EMAIL_COST_PER_MESSAGE;
 
   const defaultSiteUrl = ensureAbsoluteUrl("http://localhost:3000") ?? "http://localhost:3000";
   const configuredSiteUrl = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL);
@@ -406,17 +369,15 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
     "use server";
     const supabase = await createServerComponentClient();
 
-    const getOptionalString = (key: string) => {
-      if (!formData.has(key)) return undefined;
+    const getString = (key: string) => {
       const raw = formData.get(key);
       if (typeof raw !== "string") return null;
       const trimmed = raw.trim();
       return trimmed.length > 0 ? trimmed : null;
     };
 
-    const parseOptionalNumberValue = (key: string) => {
-      const raw = getOptionalString(key);
-      if (raw === undefined) return undefined;
+    const parseNumberValue = (key: string) => {
+      const raw = getString(key);
       if (!raw) return null;
       const numeric = Number(raw);
       if (!Number.isFinite(numeric)) {
@@ -426,8 +387,7 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
     };
 
     const parseStatusValue = (key: string): IntegrationStatusValue => {
-      const raw = getOptionalString(key);
-      if (raw === undefined) return "not_started";
+      const raw = getString(key);
       const allowed: IntegrationStatusValue[] = [
         "not_started",
         "in_progress",
@@ -439,65 +399,31 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
       return "not_started";
     };
 
-    const normalizedWebsiteInput = getOptionalString("website_url");
+    const normalizedWebsiteInput = getString("website_url");
     const normalizedWebsite = normalizedWebsiteInput
       ? ensureAbsoluteUrl(normalizedWebsiteInput) ?? normalizedWebsiteInput
       : null;
 
-    const existing = (business.onboarding_metadata ?? {}) as BusinessOnboardingMetadata;
-    const metadata: BusinessOnboardingMetadata = { ...existing };
-
-    const businessType = getOptionalString("business_type");
-    if (businessType !== undefined) metadata.businessType = businessType;
-    const primaryLocation = getOptionalString("primary_location");
-    if (primaryLocation !== undefined) metadata.primaryLocation = primaryLocation;
-    if (normalizedWebsiteInput !== undefined) metadata.websiteUrl = normalizedWebsite;
-    const websitePlatform = getOptionalString("website_platform");
-    if (websitePlatform !== undefined) metadata.websitePlatform = websitePlatform;
-    const crmPlatform = getOptionalString("crm_platform");
-    if (crmPlatform !== undefined) metadata.crmPlatform = crmPlatform;
-    const crmOwner = getOptionalString("crm_owner");
-    if (crmOwner !== undefined) metadata.crmOwner = crmOwner;
-    const techStack = getOptionalString("tech_stack");
-    if (techStack !== undefined) metadata.techStack = techStack;
-    const integrationNotes = getOptionalString("integration_notes");
-    if (integrationNotes !== undefined) metadata.integrationNotes = integrationNotes;
-    const avgSale = parseOptionalNumberValue("avg_sale");
-    if (avgSale !== undefined) metadata.avgSale = avgSale;
-    const referralGoal = parseOptionalNumberValue("referral_goal");
-    if (referralGoal !== undefined) metadata.referralGoal = referralGoal;
-
-    if (
-      formData.has("integration_status_website") ||
-      formData.has("integration_status_crm") ||
-      formData.has("integration_status_qa")
-    ) {
-      metadata.integrationStatus = {
-        ...(existing.integrationStatus ?? {}),
-        ...(formData.has("integration_status_website")
-          ? { website: parseStatusValue("integration_status_website") }
-          : {}),
-        ...(formData.has("integration_status_crm")
-          ? { crm: parseStatusValue("integration_status_crm") }
-          : {}),
-        ...(formData.has("integration_status_qa")
-          ? { qa: parseStatusValue("integration_status_qa") }
-          : {}),
-      };
-    }
-
-    const costSms = parseOptionalNumberValue("campaign_cost_sms");
-    const costEmail = parseOptionalNumberValue("campaign_cost_email");
-    if (costSms !== undefined || costEmail !== undefined) {
-      metadata.campaignCostEstimates = {
-        ...(existing.campaignCostEstimates ?? {}),
-        ...(costSms !== undefined ? { sms: costSms } : {}),
-        ...(costEmail !== undefined ? { email: costEmail } : {}),
-      };
-    }
+    const metadata: BusinessOnboardingMetadata = {
+      businessType: getString("business_type"),
+      primaryLocation: getString("primary_location"),
+      websiteUrl: normalizedWebsite,
+      websitePlatform: getString("website_platform"),
+      crmPlatform: getString("crm_platform"),
+      crmOwner: getString("crm_owner"),
+      techStack: getString("tech_stack"),
+      integrationNotes: getString("integration_notes"),
+      avgSale: parseNumberValue("avg_sale"),
+      referralGoal: parseNumberValue("referral_goal"),
+      integrationStatus: {
+        website: parseStatusValue("integration_status_website"),
+        crm: parseStatusValue("integration_status_crm"),
+        qa: parseStatusValue("integration_status_qa"),
+      },
+    };
 
     const updatePayload: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
-      name: getOptionalString("business_name") ?? business.name ?? null,
+      name: getString("business_name") ?? business.name ?? null,
       onboarding_metadata: metadata,
     };
 
@@ -531,44 +457,6 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
         console.error("Failed to send onboarding snapshot notification:", err);
         // Don't fail the request if notification fails
       });
-    }
-
-    revalidatePath("/dashboard");
-  }
-
-  async function updateCampaignCostEstimates(formData: FormData) {
-    "use server";
-    const supabase = await createServerComponentClient();
-
-    const parseCost = (key: string) => {
-      const raw = formData.get(key);
-      if (typeof raw !== "string") return null;
-      const numeric = Number(raw.trim());
-      if (!Number.isFinite(numeric) || numeric < 0) return null;
-      return numeric;
-    };
-
-    const sms = parseCost("campaign_cost_sms");
-    const email = parseCost("campaign_cost_email");
-    if (sms === null || email === null) return;
-
-    const existing = (business.onboarding_metadata ?? {}) as BusinessOnboardingMetadata;
-    const nextMetadata: BusinessOnboardingMetadata = {
-      ...existing,
-      campaignCostEstimates: {
-        ...(existing.campaignCostEstimates ?? {}),
-        sms,
-        email,
-      },
-    };
-
-    const { error } = await supabase
-      .from("businesses")
-      .update({ onboarding_metadata: nextMetadata })
-      .eq("id", business.id);
-
-    if (error) {
-      console.error("Failed to update campaign cost estimates:", error);
     }
 
     revalidatePath("/dashboard");
@@ -940,15 +828,6 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
         return { error: "Unable to update credits. Please try again." };
       }
 
-      await tryInsertCreditLedgerEntry(supabase, {
-        businessId: business.id,
-        customerId,
-        delta,
-        type: "adjustment",
-        source: "admin_adjustment",
-        note: "Adjusted via dashboard",
-      });
-
       revalidatePath("/dashboard");
       return { success: "Credits updated" };
     } catch (error) {
@@ -1108,32 +987,12 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
         created_by: currentUser?.id ?? null,
       };
 
-      // Prefer a dedicated flag for manual-only referrals when the column exists.
-      // If the column isn't installed yet, fall back to the legacy payload.
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      let insertResult: any = null;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const referralPayloadWithManualFlag = { ...(referralPayload as any), is_manual: true };
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { data: insertedReferralFlagged, error: insertErrorFlagged } = await (supabase as any)
+      const { data: insertedReferral, error: insertError } = await (supabase as any)
         .from("referrals")
-        .insert([referralPayloadWithManualFlag])
+        .insert([referralPayload])
         .select("id")
         .single();
-
-      if (insertErrorFlagged?.code === "42703") {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        insertResult = await (supabase as any)
-          .from("referrals")
-          .insert([referralPayload])
-          .select("id")
-          .single();
-      } else {
-        insertResult = { data: insertedReferralFlagged, error: insertErrorFlagged };
-      }
-
-      const insertedReferral = insertResult?.data;
-      const insertError = insertResult?.error;
 
       if (insertError) {
         console.error("Failed to insert manual referral:", insertError);
@@ -1176,262 +1035,61 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
   }
 
   const supabase = await createServerComponentClient();
-  // Load only the first page of customers/referrals for SSR. The tables page through
-  // `/api/customers` + `/api/referrals` on the client, so we should not fetch the full dataset here.
-  const { data: customersPage, count: customersTotalCount } = await supabase
+  const { data: customers = [] } = await supabase
     .from("customers")
-    .select(
-      "id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes,created_at",
-      { count: "exact" },
-    )
-    .eq("business_id", business.id)
-    .order("created_at", { ascending: false })
-    .range(0, INITIAL_CUSTOMER_TABLE_LIMIT - 1);
+    .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
+    .eq("business_id", business.id);
 
-  const { data: referralsPage, count: referralsTotalCount } = await supabase
+  const { data: referrals = [] } = await supabase
     .from("referrals")
     .select(
-      `
-        id,
-        business_id,
-        ambassador_id,
-        referred_name,
-        referred_email,
-        referred_phone,
-        status,
-        created_by,
-        created_at,
-        updated_at,
-        campaign_id,
-        consent_given,
-        locale,
-        rewarded_at,
-        transaction_value,
-        transaction_date,
-        service_type,
-        ambassador:customers!referrals_ambassador_id_fkey (
-          id,
-          name,
-          email,
-          phone
-        )
-      `,
-      { count: "exact" },
+      "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
     )
-    .eq("business_id", business.id)
-    .order("created_at", { ascending: false })
-    .range(0, INITIAL_REFERRAL_TABLE_LIMIT - 1);
+    .eq("business_id", business.id);
 
+  const safeReferrals =
+    (referrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
   const safeCustomers =
-    (customersPage ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
-  type DashboardReferralRow = Database["public"]["Tables"]["referrals"]["Row"] & {
-    ambassador?: { id: string | null; name: string | null; email: string | null; phone: string | null } | null;
-  };
+    (customers ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
 
-  const safeReferrals = (referralsPage ?? []) as unknown as DashboardReferralRow[];
+  // Query partner referrals separately (B2B referrals to Refer Labs partner program)
+  // Filter admin's referrals (these are likely B2B partner referrals)
+  const adminReferralCode = process.env.ADMIN_REFERRAL_CODE?.trim() || "Jn9wjbn2kQlO";
+  const adminCustomer = safeCustomers.find(c => c.referral_code === adminReferralCode);
 
-  const customersTotal = customersTotalCount ?? safeCustomers.length ?? 0;
-  const referralsTotal = referralsTotalCount ?? safeReferrals.length ?? 0;
+  const safePartnerReferrals = adminCustomer
+    ? safeReferrals.filter(r => r.ambassador_id === adminCustomer.id)
+    : [];
 
-  // Partner program referrals live under a dedicated "partner program business" (B2B)
-  // and should only be visible to admins.
-  const partnerProgramBusinessId = process.env.PARTNER_PROGRAM_BUSINESS_ID?.trim() ?? null;
-  const adminReferralCode = process.env.ADMIN_REFERRAL_CODE?.trim() ?? null;
-  let partnerProgramAdminCustomer: { id: string; name: string | null } | null = null;
-  let partnerProgramReferrals: Database["public"]["Tables"]["referrals"]["Row"][] = [];
-
-  if (currentAdmin && partnerProgramBusinessId && adminReferralCode) {
-    try {
-      const serviceClient = await createServiceClient();
-      const { data: matchedCustomer } = await serviceClient
-        .from("customers")
-        .select("id, name")
-        .eq("business_id", partnerProgramBusinessId)
-        .eq("referral_code", adminReferralCode)
-        .maybeSingle();
-
-      if (matchedCustomer) {
-        partnerProgramAdminCustomer = matchedCustomer as { id: string; name: string | null };
-        const { data: partnerReferrals } = await serviceClient
-          .from("referrals")
-          .select(
-            "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
-          )
-          .eq("business_id", partnerProgramBusinessId)
-          .eq("ambassador_id", partnerProgramAdminCustomer.id);
-
-        partnerProgramReferrals =
-          (partnerReferrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
-      }
-    } catch (partnerReferralError) {
-      console.error("Failed to load partner program referrals:", partnerReferralError);
-    }
-  }
-
-  const showPartnerReferralsTab = Boolean(currentAdmin && partnerProgramAdminCustomer);
-
-  const [{ count: pendingReferralsRaw }, { count: completedReferralsRaw }] = await Promise.all([
-    supabase
-      .from("referrals")
-      .select("id", { count: "exact", head: true })
-      .eq("business_id", business.id)
-      .eq("status", "pending"),
-    supabase
-      .from("referrals")
-      .select("id", { count: "exact", head: true })
-      .eq("business_id", business.id)
-      .eq("status", "completed"),
-  ]);
-  const pendingReferrals = pendingReferralsRaw ?? 0;
-  const completedReferrals = completedReferralsRaw ?? 0;
-
-  const getAggregateWithError = async (
-    query: unknown,
-  ): Promise<{ value: number; error: { code?: string } | null }> => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const result = (await query) as any;
-    if (result?.error) return { value: 0, error: result.error };
-    const row = Array.isArray(result?.data) ? result.data[0] : result?.data;
-    if (!row || typeof row !== "object") return { value: 0, error: null };
-    const value = Object.values(row)[0];
-    return {
-      value: typeof value === "number" && Number.isFinite(value) ? value : 0,
-      error: null,
-    };
-  };
-
-  const manualStatsByFlag = await supabase
-    .from("referrals")
-    .select("id", { count: "exact", head: true })
-    .eq("business_id", business.id)
-    .eq("is_manual", true);
-
-  const manualCountFallbackQuery = () =>
-    supabase
-      .from("referrals")
-      .select("id", { count: "exact", head: true })
-      .eq("business_id", business.id)
-      .not("created_by", "is", null);
-
-  const manualReferralCount =
-    manualStatsByFlag.error?.code === "42703"
-      ? (await manualCountFallbackQuery()).count ?? 0
-      : manualStatsByFlag.count ?? 0;
-
-  const manualDetectionMethod =
-    manualStatsByFlag.error?.code === "42703" ? "created_by" : "is_manual";
-
-  const trackedReferralCount = Math.max(referralsTotal - manualReferralCount, 0);
-
-  const [{ count: emailReadyRaw }, { count: smsReadyRaw }, { count: uniqueCodesRaw }] =
-    await Promise.all([
-      supabase
-        .from("customers")
-        .select("id", { count: "exact", head: true })
-        .eq("business_id", business.id)
-        .not("email", "is", null),
-      supabase
-        .from("customers")
-        .select("id", { count: "exact", head: true })
-        .eq("business_id", business.id)
-        .not("phone", "is", null),
-      supabase
-        .from("customers")
-        .select("id", { count: "exact", head: true })
-        .eq("business_id", business.id)
-        .not("referral_code", "is", null),
-    ]);
-  const emailReady = emailReadyRaw ?? 0;
-  const smsReady = smsReadyRaw ?? 0;
-  const uniqueCodes = uniqueCodesRaw ?? 0;
-
-  const readAggregate = async (query: unknown): Promise<number> => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const result = (await query) as any;
-    if (result?.error) return 0;
-    const row = Array.isArray(result?.data) ? result.data[0] : result?.data;
-    if (!row || typeof row !== "object") return 0;
-    const value = Object.values(row)[0];
-    return typeof value === "number" && Number.isFinite(value) ? value : 0;
-  };
-
-  // Credits Outstanding: current credits on customer accounts (can go down when spent/expired).
-  // Use PostgREST aggregates when available. If the backend doesn't support them,
-  // we fall back to 0 instead of pulling entire tables into memory.
-  const creditsOutstanding = await readAggregate(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (supabase as any)
-      .from("customers")
-      .select("credits.sum()")
-      .eq("business_id", business.id),
-  );
-
-  // Credits Issued: lifetime credits granted.
-  // Prefer the credit ledger table when available; otherwise fall back to an estimate.
-  const creditsIssuedFromLedger = await getAggregateWithError(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (supabase as any)
-      .from("credit_ledger")
-      .select("delta.sum()")
-      .eq("business_id", business.id)
-      .eq("entry_type", "issued"),
-  );
-
-  const creditsIssuedEstimate =
-    creditsIssuedFromLedger.error?.code === "42P01"
-      ? business.reward_type === "credit" && (business.reward_amount ?? 0) > 0
-        ? completedReferrals * (business.reward_amount ?? 0)
-        : null
-      : creditsIssuedFromLedger.value;
-
-  const totalReferralRevenue = await readAggregate(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (supabase as any)
-      .from("referrals")
-      .select("transaction_value.sum()")
-      .eq("business_id", business.id),
-  );
-
-  const manualReferralValueByFlag = await getAggregateWithError(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (supabase as any)
-      .from("referrals")
-      .select("transaction_value.sum()")
-      .eq("business_id", business.id)
-      .eq("is_manual", true)
-      .not("transaction_value", "is", null),
-  );
-
+  const pendingReferrals =
+    safeReferrals.filter((r) => r.status === "pending").length || 0;
+  const completedReferrals =
+    safeReferrals.filter((r) => r.status === "completed").length || 0;
+  const manualReferralsList = safeReferrals.filter((r) => r.created_by);
+  const manualReferralCount = manualReferralsList.length;
   const manualReferralValue =
-    manualReferralValueByFlag.error?.code === "42703"
-      ? await readAggregate(
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (supabase as any)
-            .from("referrals")
-            .select("transaction_value.sum()")
-            .eq("business_id", business.id)
-            .not("created_by", "is", null),
-        )
-      : manualReferralValueByFlag.value;
-
-  const completedValueSum = await readAggregate(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (supabase as any)
-      .from("referrals")
-      .select("transaction_value.sum()")
-      .eq("business_id", business.id)
-      .eq("status", "completed")
-      .not("transaction_value", "is", null),
+    manualReferralsList.reduce(
+      (sum, r) => sum + (r.transaction_value ?? 0),
+      0,
+    ) || 0;
+  const trackedReferralCount = safeReferrals.length - manualReferralCount;
+  const totalRewards =
+    safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
+  const totalReferralRevenue =
+    safeReferrals.reduce(
+      (sum, r) => sum + (r.transaction_value ?? 0),
+      0,
+    ) || 0;
+  const completedWithValue = safeReferrals.filter(
+    (r) => r.status === "completed" && r.transaction_value !== null,
   );
-  const { count: completedWithValueCountRaw } = await supabase
-    .from("referrals")
-    .select("id", { count: "exact", head: true })
-    .eq("business_id", business.id)
-    .eq("status", "completed")
-    .not("transaction_value", "is", null);
-  const completedWithValueCount = completedWithValueCountRaw ?? 0;
   const averageTransactionValue =
-    completedWithValueCount > 0 ? completedValueSum / completedWithValueCount : 0;
+    completedWithValue.length > 0
+      ? completedWithValue.reduce(
+          (sum, r) => sum + (r.transaction_value ?? 0),
+          0,
+        ) / completedWithValue.length
+      : 0;
   let totalCampaignsSent = 0;
   let totalMessagesSent = 0;
   let campaignsData: CampaignSummary[] = [];
@@ -1458,7 +1116,7 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
     (sum, campaign) => {
       const sentCount = campaign.sent_count ?? 0;
       const channel = campaign.channel as "sms" | "email" | null;
-      const costPerMessage = channel === "sms" ? smsCostEstimate : emailCostEstimate;
+      const costPerMessage = channel === "sms" ? 0.02 : 0.01;
       return sum + sentCount * costPerMessage;
     },
     0,
@@ -1469,9 +1127,9 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
       ? totalReferralRevenue / totalEstimatedCampaignSpend
       : null;
 
-  const hasCustomers = customersTotal > 0;
+  const hasCustomers = safeCustomers.length > 0;
   const hasCampaigns = campaignsData.length > 0;
-  const hasReferrals = referralsTotal > 0;
+  const hasReferrals = safeReferrals.length > 0;
   const hasProgramSettings =
     !!business.offer_text &&
     !!business.new_user_reward_text &&
@@ -1479,11 +1137,6 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
     (business.reward_type === "credit"
       ? (business.reward_amount ?? 0) > 0
       : business.reward_type !== null);
-
-  const selectedRange = normalizeAnalyticsRange(searchParams?.eventRange);
-  const rangeDays = rangeKeyToDays(selectedRange);
-  const cutoffIso =
-    rangeDays !== null ? new Date(Date.now() - rangeDays * 24 * 60 * 60 * 1000).toISOString() : null;
 
   const { data: referralEventsData } = await supabase
     .from("referral_events")
@@ -1504,7 +1157,6 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
       `,
     )
     .eq("business_id", business.id)
-    .gte("created_at", cutoffIso ?? "1970-01-01T00:00:00.000Z")
     .order("created_at", { ascending: false })
     .limit(100);
 
@@ -1527,61 +1179,20 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
         : null,
     }),
   );
-  // Campaign analytics should not be derived from the "latest 100 events" timeline.
-  // Instead, load all relevant event types over a selectable time range and aggregate in-memory.
-  const campaignEventStats: CampaignEventStats = {};
-  const analyticsEventTypes: Array<ReferralJourneyEvent["event_type"]> = [
-    "link_visit",
-    "signup_submitted",
-    "conversion_completed",
-  ];
-
-  if (campaignsData.length > 0) {
-    const pageSize = 1000;
-    const maxRows = 20000;
-    let offset = 0;
-
-    while (offset < maxRows) {
-      let query = supabase
-        .from("referral_events")
-        .select("source,event_type,created_at")
-        .eq("business_id", business.id)
-        .in("event_type", analyticsEventTypes)
-        .not("source", "is", null)
-        .order("created_at", { ascending: false })
-        .range(offset, offset + pageSize - 1);
-
-      if (cutoffIso) {
-        query = query.gte("created_at", cutoffIso);
-      }
-
-      const { data: rows, error } = await query;
-      if (error) {
-        console.warn("Failed to load campaign analytics events:", error);
-        break;
-      }
-
-      const batch = (rows ?? []) as Array<{ source: string | null; event_type: string | null }>;
-      if (batch.length === 0) break;
-
-      for (const row of batch) {
-        if (!row.source || !row.event_type) continue;
-        if (!campaignEventStats[row.source]) {
-          campaignEventStats[row.source] = { clicks: 0, signups: 0, conversions: 0 };
-        }
-        if (row.event_type === "link_visit") {
-          campaignEventStats[row.source].clicks += 1;
-        } else if (row.event_type === "signup_submitted") {
-          campaignEventStats[row.source].signups += 1;
-        } else if (row.event_type === "conversion_completed") {
-          campaignEventStats[row.source].conversions += 1;
-        }
-      }
-
-      if (batch.length < pageSize) break;
-      offset += pageSize;
+  const campaignEventStats = referralJourneyEvents.reduce<CampaignEventStats>((acc, event) => {
+    if (!event.source) return acc;
+    if (!acc[event.source]) {
+      acc[event.source] = { clicks: 0, signups: 0, conversions: 0 };
     }
-  }
+    if (event.event_type === "link_visit") {
+      acc[event.source].clicks += 1;
+    } else if (event.event_type === "signup_submitted") {
+      acc[event.source].signups += 1;
+    } else if (event.event_type === "conversion_completed") {
+      acc[event.source].conversions += 1;
+    }
+    return acc;
+  }, {});
 
   const headerList = await headers();
   const userAgent = headerList.get("user-agent") ?? "";
@@ -1592,23 +1203,13 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
     hasProgramSettings,
     hasCustomers,
     totalCampaignsSent,
-    hasReferrals: referralsTotal > 0,
+    hasReferrals: safeReferrals.length > 0,
     hasIntegrationSetup: business.onboarding_metadata?.integrationStatus?.website === 'complete',
     hasDiscountCapture: !!business.discount_capture_secret,
   });
 
   const autoExpandStep = getNextIncompleteStep(stepValidations);
   const overallProgress = calculateOverallProgress(stepValidations);
-  const trackCampaignsStatus =
-    stepValidations["view-campaigns"].isComplete
-      ? "complete"
-      : "incomplete";
-  const performanceStatus =
-    stepValidations.performance.isComplete
-      ? "complete"
-      : totalCampaignsSent > 0
-        ? "in_progress"
-        : "incomplete";
 
   // Define guided steps for new dashboard flow
   const guidedSteps: GuidedStep[] = [
@@ -1720,7 +1321,7 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
                   <QuickAddCustomerForm quickAddAction={quickAddCustomer} />
                   <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-5">
                     <p className="text-sm font-semibold text-emerald-800">
-                      Active ambassadors: <span className="text-2xl font-black ml-2">{customersTotal}</span>
+                      Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
                     </p>
                     <p className="text-xs text-emerald-700 mt-2">
                       Every manual addition instantly receives their shareable link.
@@ -1732,12 +1333,12 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
               <Card className="p-6 border border-slate-200 rounded-lg bg-white">
                 <div className="mb-6">
                   <h3 className="text-xl font-black text-slate-900 mb-2">
-                    All Customers ({customersTotal})
+                    All Customers ({safeCustomers.length})
                   </h3>
                 </div>
                 <CustomersTable
-                  initialCustomers={safeCustomers}
-                  initialTotal={customersTotal}
+                  initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+                  initialTotal={safeCustomers.length}
                   siteUrl={siteUrl}
                   adjustCreditsAction={adjustCustomerCredits}
                 />
@@ -1765,33 +1366,46 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
           }
           implementContent={
             <>
-              <ShareAssetsPromoCard
-                ambassadorsTotal={customersTotal}
-                disabled={!hasCustomers}
-              />
-              <CampaignLaunchChooser
+              <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900 mb-2">Ready to Launch?</h3>
+                    <p className="text-sm text-slate-600">Send SMS or email blasts to your ambassadors instantly</p>
+                  </div>
+                  <div>
+                    <StartCampaignCTA />
+                  </div>
+                </div>
+              </Card>
+
+              <CRMIntegrationTab
                 customers={safeCustomers}
-                customersTotal={customersTotal}
-                customerCounts={{
-                  emailReady,
-                  smsReady,
-                  uniqueCodes,
-                }}
                 siteUrl={siteUrl}
                 businessId={business.id}
                 discountCaptureSecret={business.discount_capture_secret ?? null}
-                businessName={business.name || "Your Business"}
-                offerText={business.offer_text}
-                newUserRewardText={business.new_user_reward_text}
-                clientRewardText={business.client_reward_text}
-                rewardType={business.reward_type}
-                rewardAmount={business.reward_amount}
-                upgradeName={business.upgrade_name}
-                rewardTerms={business.reward_terms}
-                brandHighlightColor={business.brand_highlight_color ?? null}
-                brandTone={business.brand_tone ?? null}
-                uploadLogoAction={uploadLogo}
               />
+
+              <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+                <div className="mb-6">
+                  <h3 className="text-xl font-black text-slate-900">Campaign Builder</h3>
+                  <p className="text-sm text-slate-600 mt-1">Design and send personalized campaigns to your ambassadors</p>
+                </div>
+                <CampaignBuilder
+                  customers={safeCustomers}
+                  businessName={business.name || "Your Business"}
+                  siteUrl={siteUrl}
+                  offerText={business.offer_text}
+                  newUserRewardText={business.new_user_reward_text}
+                  clientRewardText={business.client_reward_text}
+                  rewardType={business.reward_type}
+                  rewardAmount={business.reward_amount}
+                  upgradeName={business.upgrade_name}
+                  rewardTerms={business.reward_terms}
+                  brandHighlightColor={business.brand_highlight_color ?? null}
+                  brandTone={business.brand_tone ?? null}
+                  uploadLogoAction={uploadLogo}
+                />
+              </Card>
             </>
           }
         />
@@ -1804,7 +1418,7 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
       title: "Track Campaigns",
       description: "Monitor campaign performance, analytics, and results",
       icon: <Target className="h-5 w-5" />,
-      status: trackCampaignsStatus,
+      status: totalCampaignsSent > 0 ? "in_progress" : "incomplete",
       content: (
         <TwoColumnLayout
           learnContent={
@@ -1820,27 +1434,7 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
                   <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
                     Campaign insights
                   </div>
-                  <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">
-                      Analytics window
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {(["30d", "90d", "365d", "all"] as AnalyticsRangeKey[]).map((range) => (
-                        <Link
-                          key={range}
-                          href={`/dashboard?eventRange=${range}`}
-                          className={`rounded-full border px-3 py-1 text-xs font-semibold ${
-                            selectedRange === range
-                              ? "border-indigo-300 bg-white text-indigo-700"
-                              : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
-                          }`}
-                        >
-                          {range === "all" ? "All time" : range.toUpperCase()}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                  <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-2">
+                  <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
                     <TabsTrigger
                       value="analytics"
                       className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
@@ -1853,13 +1447,25 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
                     >
                       Campaign History
                     </TabsTrigger>
+                    <TabsTrigger
+                      value="partner-referrals"
+                      className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
+                    >
+                      Partner Referrals {safePartnerReferrals.length > 0 && `(${safePartnerReferrals.length})`}
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="share"
+                      className="border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-600 rounded-md data-[state=active]:border-blue-500 data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
+                    >
+                      Share Assets
+                    </TabsTrigger>
                   </TabsList>
                 </div>
 
                 <TabsContent value="analytics" className="space-y-6">
                   <CampaignAnalyticsDashboard
                     campaigns={campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]}
-                    referrals={safeReferrals as unknown as Database["public"]["Tables"]["referrals"]["Row"][]}
+                    referrals={safeReferrals}
                     eventStats={campaignEventStats}
                   />
                 </TabsContent>
@@ -1887,7 +1493,7 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
                           campaigns={
                             campaignsData as Database["public"]["Tables"]["campaigns"]["Row"][]
                           }
-                          referrals={safeReferrals as unknown as Database["public"]["Tables"]["referrals"]["Row"][]}
+                          referrals={safeReferrals}
                           eventStats={campaignEventStats}
                         />
                       </Table>
@@ -1895,50 +1501,30 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
                   </Card>
                 </TabsContent>
 
-              </Tabs>
-
-              <Card id="share-assets" className="mt-6 p-6 border border-slate-200 rounded-lg bg-white">
-                <div className="mb-6">
-                  <h3 className="text-xl font-black text-slate-900">Share Assets</h3>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Generate links, QR codes, and shareable assets for your ambassadors.
-                  </p>
-                </div>
-                <ShareReferralCard
-                  customers={safeCustomers.map((customer) => ({
-                    id: customer.id,
-                    name: customer.name,
-                    referral_code: customer.referral_code,
-                    discount_code: customer.discount_code,
-                  }))}
-                  customersTotal={customersTotal}
-                  siteUrl={siteUrl}
-                  clientRewardText={business.client_reward_text}
-                  newUserRewardText={business.new_user_reward_text}
-                  rewardAmount={business.reward_amount}
-                  offerText={business.offer_text}
-                  businessName={business.name}
-                />
-              </Card>
-
-              {showPartnerReferralsTab && (
-                <Card className="mt-6 p-6 border border-slate-200 rounded-lg bg-white">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-black text-slate-900">
-                      Partner Referrals
-                      {partnerProgramReferrals.length > 0
-                        ? ` (${partnerProgramReferrals.length})`
-                        : ""}
-                    </h3>
-                    <p className="text-sm text-slate-600 mt-1">
-                      Admin-only view of partner program referral performance.
-                    </p>
-                  </div>
+                <TabsContent value="partner-referrals">
                   <PartnerReferralsTab
-                    referrals={partnerProgramReferrals}
+                    referrals={safePartnerReferrals}
+                    adminName={adminCustomer?.name || "Admin"}
                   />
-                </Card>
-              )}
+                </TabsContent>
+
+                <TabsContent value="share">
+                  <ShareReferralCard
+                    customers={safeCustomers.map((customer) => ({
+                      id: customer.id,
+                      name: customer.name,
+                      referral_code: customer.referral_code,
+                      discount_code: customer.discount_code,
+                    }))}
+                    siteUrl={siteUrl}
+                    clientRewardText={business.client_reward_text}
+                    newUserRewardText={business.new_user_reward_text}
+                    rewardAmount={business.reward_amount}
+                    offerText={business.offer_text}
+                    businessName={business.name}
+                  />
+                </TabsContent>
+              </Tabs>
             </>
           }
         />
@@ -1951,7 +1537,7 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
       title: "Measure ROI",
       description: "View ambassador performance, referral metrics, and program ROI",
       icon: <BarChart3 className="h-5 w-5" />,
-      status: performanceStatus,
+      status: safeReferrals.length > 0 ? "in_progress" : "incomplete",
       content: (
         <div className="space-y-6">
           <div className="max-w-md">
@@ -1996,8 +1582,8 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
                   </div>
                 </div>
                 <ReferralsTable
-                  initialReferrals={safeReferrals}
-                  initialTotal={referralsTotal}
+                  initialReferrals={safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT)}
+                  initialTotal={safeReferrals.length}
                   completionAction={markReferralCompleted}
                 />
 
@@ -2064,210 +1650,135 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
             <Card className="p-6 border border-slate-200 rounded-lg bg-white">
               <h2 className="text-xl sm:text-2xl font-extrabold mb-6 text-slate-900 tracking-tight">Performance Analytics</h2>
 
-              {/* Empty State - Show when no referrals yet */}
-              {referralsTotal === 0 && (
-                <div className="py-16 text-center">
-                  <div className="mx-auto w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center mb-6">
-                    <BarChart3 className="h-12 w-12 text-slate-400" />
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-purple-600 flex items-center justify-center">
+                      <Users className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-900">Total Ambassadors</h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">No Data Yet</h3>
-                  <p className="text-slate-600 mb-6 max-w-md mx-auto">
-                    Once you launch your first campaign and ambassadors start referring, you'll see performance metrics here.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    {!hasCustomers && (
-                      <Link
-                        href="#clients-ambassadors"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all shadow-md hover:shadow-lg"
-                      >
-                        <Upload className="h-5 w-5" />
-                        Upload Your Customer List
-                      </Link>
-                    )}
-                    {hasCustomers && totalCampaignsSent === 0 && (
-                      <Link
-                        href="#crm-integration"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
-                      >
-                        <Mail className="h-5 w-5" />
-                        Launch Your First Campaign
-                      </Link>
-                    )}
-                  </div>
+                  <p className="text-3xl font-black text-purple-700">{safeCustomers.length}</p>
+                  <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
                 </div>
-              )}
 
-              {/* KEY METRICS - Prominently displayed */}
-              {referralsTotal > 0 && (
-              <>
-              <div className="mb-8">
-                <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Key Metrics</h3>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                  {/* Referral Revenue - Most important */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 border border-emerald-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <DollarSign className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="font-bold text-white">Revenue</h3>
+                <div className="p-6 rounded-lg bg-emerald-50 border border-emerald-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                      <TrendingUp className="h-5 w-5 text-white" />
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">
-                      ${Math.round(totalReferralRevenue)}
-                    </p>
-                    <p className="text-sm text-emerald-50">
-                      From {completedReferrals} completed referrals
-                    </p>
+                    <h3 className="font-bold text-slate-900">Total Referrals</h3>
                   </div>
+                  <p className="text-3xl font-black text-emerald-700">{safeReferrals.length}</p>
+                  <p className="text-sm text-slate-600 mt-1">{completedReferrals} completed</p>
+                </div>
 
-                  {/* Program ROI */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 border border-blue-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <TrendingUp className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-white">Program ROI</h3>
-                        <span className="text-xs text-blue-100">Estimated</span>
-                      </div>
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-blue-600 flex items-center justify-center">
+                      <Zap className="h-5 w-5 text-white" />
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">
-                      {roiMultiple && roiMultiple > 0 ? `${roiMultiple.toFixed(1)}×` : "—"}
-                    </p>
-                    <p className="text-sm text-blue-50">
-                      Revenue ÷ campaign cost
-                    </p>
+                    <h3 className="font-bold text-slate-900">Conversion Rate</h3>
                   </div>
+                  <p className="text-3xl font-black text-blue-700">
+                    {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
+                  </p>
+                  <p className="text-sm text-slate-600 mt-1">Referral to completion</p>
+                </div>
 
-                  {/* Total Referrals */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 border border-purple-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <Users className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="font-bold text-white">Referrals</h3>
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
+                      <CreditCard className="h-5 w-5 text-white" />
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">{referralsTotal}</p>
-                    <p className="text-sm text-purple-50">
-                      {pendingReferrals} pending, {completedReferrals} completed
-                    </p>
+                    <h3 className="font-bold text-slate-900">Referral Revenue</h3>
                   </div>
+                  <p className="text-3xl font-black text-amber-700">
+                    ${Math.round(totalReferralRevenue)}
+                  </p>
+                  <p className="text-sm text-slate-600 mt-1">
+                    Avg ticket: $
+                    {averageTransactionValue > 0
+                      ? Math.round(averageTransactionValue)
+                      : 0}{" "}
+                    • Credits issued: ${totalRewards}
+                  </p>
+                </div>
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                      <ClipboardList className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-900">Manual Transactions</h3>
+                  </div>
+                  <p className="text-3xl font-black text-slate-900">
+                    {manualReferralCount}
+                  </p>
+                  <p className="text-sm text-slate-600 mt-1">
+                    ${manualReferralValue.toFixed(0)} recorded offline
+                  </p>
+                </div>
 
-                  {/* Conversion Rate */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 border border-amber-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <Zap className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="font-bold text-white">Conversion</h3>
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 border border-pink-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-pink-600 flex items-center justify-center">
+                      <Gift className="h-5 w-5 text-white" />
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">
-                      {referralsTotal > 0 ? Math.round((completedReferrals / referralsTotal) * 100) : 0}%
-                    </p>
-                    <p className="text-sm text-amber-50">
-                      Referral to completion rate
-                    </p>
+                    <h3 className="font-bold text-slate-900">Pending Rewards</h3>
                   </div>
+                  <p className="text-3xl font-black text-pink-700">{pendingReferrals}</p>
+                  <p className="text-sm text-slate-600 mt-1">Awaiting completion</p>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
+                      <Award className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-900">Avg per Ambassador</h3>
+                  </div>
+                  <p className="text-3xl font-black text-indigo-700">
+                    {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
+                  </p>
+                  <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
+                </div>
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-rose-600 flex items-center justify-center">
+                      <MessageSquare className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-900">Campaigns Sent</h3>
+                  </div>
+                  <p className="text-3xl font-black text-rose-700">{totalCampaignsSent}</p>
+                  <p className="text-sm text-slate-600 mt-1">Live SMS & email blasts</p>
+                </div>
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
+                      <Send className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-900">Messages Delivered</h3>
+                  </div>
+                  <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
+                  <p className="text-sm text-slate-600 mt-1">Across all channels</p>
+                </div>
+                <div className="p-6 rounded-lg bg-emerald-50 border border-emerald-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                      <DollarSign className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-900">Program ROI</h3>
+                  </div>
+                  <p className="text-3xl font-black text-emerald-700">
+                    {roiMultiple && roiMultiple > 0
+                      ? `${roiMultiple.toFixed(1)}×`
+                      : "—"}
+                  </p>
+                  <p className="text-sm text-slate-600 mt-1">
+                    Revenue ÷ estimated send cost
+                  </p>
                 </div>
               </div>
-
-              {/* DETAILED METRICS - Collapsible */}
-              <details className="group">
-                <summary className="cursor-pointer flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors mb-4">
-                  <svg className="h-4 w-4 transition-transform group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span>Show Detailed Metrics</span>
-                </summary>
-
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
-                  {/* Ambassadors */}
-                  <div className="p-4 rounded-lg bg-slate-50 border border-slate-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Users className="h-4 w-4 text-slate-600" />
-                      <h4 className="font-semibold text-slate-900 text-sm">Total Ambassadors</h4>
-                    </div>
-                    <p className="text-2xl font-bold text-slate-900">{customersTotal}</p>
-                    <p className="text-xs text-slate-600 mt-1">Active micro-influencers</p>
-                  </div>
-
-                  {/* Avg per Ambassador */}
-                  <div className="p-4 rounded-lg bg-indigo-50 border border-indigo-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Award className="h-4 w-4 text-indigo-600" />
-                      <h4 className="font-semibold text-slate-900 text-sm">Avg per Ambassador</h4>
-                    </div>
-                    <p className="text-2xl font-bold text-indigo-700">
-                      {customersTotal > 0 ? (referralsTotal / customersTotal).toFixed(1) : 0}
-                    </p>
-                    <p className="text-xs text-slate-600 mt-1">Referrals per person</p>
-                  </div>
-
-                  {/* Average Transaction */}
-                  <div className="p-4 rounded-lg bg-amber-50 border border-amber-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <CreditCard className="h-4 w-4 text-amber-600" />
-                      <h4 className="font-semibold text-slate-900 text-sm">Avg Transaction</h4>
-                    </div>
-                    <p className="text-2xl font-bold text-amber-700">
-                      ${averageTransactionValue > 0 ? Math.round(averageTransactionValue) : 0}
-                    </p>
-                    <p className="text-xs text-slate-600 mt-1">Per completed referral</p>
-                  </div>
-
-                  {/* Credits Outstanding */}
-                  <div className="p-4 rounded-lg bg-pink-50 border border-pink-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Gift className="h-4 w-4 text-pink-600" />
-                      <h4 className="font-semibold text-slate-900 text-sm">Credits Outstanding</h4>
-                    </div>
-                    <p className="text-2xl font-bold text-pink-700">${Math.round(creditsOutstanding)}</p>
-                    <p className="text-xs text-slate-600 mt-1">Pending ambassador rewards</p>
-                  </div>
-
-                  {/* Manual Transactions */}
-                  <div className="p-4 rounded-lg bg-slate-50 border border-slate-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <ClipboardList className="h-4 w-4 text-slate-600" />
-                      <h4 className="font-semibold text-slate-900 text-sm">Manual Transactions</h4>
-                    </div>
-                    <p className="text-2xl font-bold text-slate-900">{manualReferralCount}</p>
-                    <p className="text-xs text-slate-600 mt-1">
-                      ${manualReferralValue.toFixed(0)} offline
-                      {manualDetectionMethod === "created_by" ? " (est.)" : ""}
-                    </p>
-                  </div>
-
-                  {/* Campaigns Sent */}
-                  <div className="p-4 rounded-lg bg-rose-50 border border-rose-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <MessageSquare className="h-4 w-4 text-rose-600" />
-                      <h4 className="font-semibold text-slate-900 text-sm">Campaigns Sent</h4>
-                    </div>
-                    <p className="text-2xl font-bold text-rose-700">{totalCampaignsSent}</p>
-                    <p className="text-xs text-slate-600 mt-1">{totalMessagesSent} messages delivered</p>
-                  </div>
-                </div>
-
-                {currentAdmin && (
-                  <div className="mt-4 p-4 rounded-lg bg-blue-50 border border-blue-200">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h4 className="font-semibold text-slate-900 text-sm mb-1">Campaign Cost Settings</h4>
-                        <p className="text-xs text-slate-600">
-                          ${smsCostEstimate.toFixed(3)} per SMS, ${emailCostEstimate.toFixed(3)} per email
-                        </p>
-                      </div>
-                      <CampaignCostEstimatesDialog
-                        smsCost={smsCostEstimate}
-                        emailCost={emailCostEstimate}
-                        updateCostsAction={updateCampaignCostEstimates}
-                      />
-                    </div>
-                  </div>
-                )}
-              </details>
-              </>
-            )}
             </Card>
           </TabsContent>
         </Tabs>
@@ -2287,26 +1798,11 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
 
         {/* Dashboard Header with Stats */}
         <DashboardHeader
-          ambassadorCount={customersTotal}
-          referralCount={referralsTotal}
+          ambassadorCount={safeCustomers.length}
+          referralCount={safeReferrals.length}
           campaignsSent={totalCampaignsSent}
           revenue={totalReferralRevenue}
         />
-
-        {/* Mobile Notice - Shown at top for visibility */}
-        {isMobile && (
-          <div className="mb-6 flex items-start gap-3 rounded-xl border-2 border-blue-200 bg-blue-50 px-5 py-4 shadow-sm">
-            <AlertTriangle className="mt-0.5 h-6 w-6 flex-shrink-0 text-blue-600" />
-            <div className="space-y-2 flex-1">
-              <p className="text-sm font-bold text-blue-900">
-                Best viewed on desktop
-              </p>
-              <p className="text-sm text-blue-800">
-                While you can view data on mobile, full dashboard features (editing campaigns, uploading CSVs, detailed analytics) work best on a larger screen. Switch to desktop for the complete experience.
-              </p>
-            </div>
-          </div>
-        )}
 
         {/* Admin Navigation - Only visible to users with admin role */}
         {currentAdmin && (
@@ -2339,6 +1835,19 @@ export default async function Dashboard({ searchParams }: DashboardPageProps) {
           steps={guidedSteps}
           defaultOpenStep={autoExpandStep}
         />
+      {isMobile && (
+        <div className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
+          <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
+          <div className="space-y-1">
+            <p className="text-sm font-semibold">
+              Mobile features are coming soon - please use your computer in the meantime.
+            </p>
+            <p className="text-xs text-amber-900/80">
+              We’re finishing the mobile toolkit now; dashboards work best on desktop today so you don’t miss any controls.
+            </p>
+          </div>
+        </div>
+      )}
 
       <DashboardOnboardingChecklist
         hasCustomers={hasCustomers}
