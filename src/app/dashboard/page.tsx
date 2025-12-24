@@ -1504,7 +1504,6 @@ export default async function Dashboard() {
                 <TabsContent value="partner-referrals">
                   <PartnerReferralsTab
                     referrals={safePartnerReferrals}
-                    adminName={adminCustomer?.name || "Admin"}
                   />
                 </TabsContent>
 
