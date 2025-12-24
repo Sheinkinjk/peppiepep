@@ -40,12 +40,27 @@ export async function middleware(request: NextRequest) {
 
   const {
     data: { user },
+    error: authError
   } = await supabase.auth.getUser()
+
+  // Debug logging for authentication issues
+  if (authError) {
+    console.error('[Middleware] Auth error:', authError)
+  }
+  if (request.nextUrl.pathname.startsWith('/dashboard')) {
+    console.log('[Middleware] Dashboard access attempt:', {
+      path: request.nextUrl.pathname,
+      hasUser: !!user,
+      userId: user?.id,
+      cookies: request.cookies.getAll().map(c => c.name)
+    })
+  }
 
   // Protect dashboard routes - redirect to login if not authenticated
   if (request.nextUrl.pathname.startsWith('/dashboard') && !user) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
+    url.searchParams.set('next', request.nextUrl.pathname)
     return NextResponse.redirect(url)
   }
 

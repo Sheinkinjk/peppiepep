@@ -176,32 +176,22 @@ function LoginContent() {
           return;
         }
       } else {
-        const { data, error: signInError } = await supabase.auth.signInWithPassword({
-          email,
-          password,
+        // Use server-side sign in to ensure cookies are properly set
+        const response = await fetch('/api/auth/signin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
         });
 
-        if (signInError) throw signInError;
+        const result = await response.json();
 
-        if (data?.user && !data.user.email_confirmed_at) {
-          await supabase.auth.signOut();
-          setError("Confirm your email before signing in – the verification link just hit your inbox.");
-          return;
+        if (!response.ok) {
+          throw new Error(result.error || 'Authentication failed');
         }
 
-        // Verify session was established before redirecting
-        const { data: sessionData } = await supabase.auth.getSession();
-        if (!sessionData.session) {
-          setError("Session could not be established. Please try again or clear your browser cookies.");
-          return;
-        }
-
-        // Use window.location.href instead of router.push to ensure cookies are sent with the request
-        // This does a full page navigation which guarantees the middleware sees the auth cookies
-        // Add a small delay to ensure cookies are fully set
-        setTimeout(() => {
-          window.location.href = nextPath;
-        }, 100);
+        // Server has set cookies properly, now redirect
+        // Use window.location.href for full page reload to ensure middleware sees cookies
+        window.location.href = nextPath;
       }
     } catch (err: unknown) {
       const message =
