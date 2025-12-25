@@ -1,0 +1,45 @@
+# Refer Labs Robots.txt
+# Allow all crawlers access to public pages
+
+User-agent: *
+Allow: /
+
+# Disallow private/authenticated pages
+Disallow: /dashboard/
+Disallow: /dashboard/*
+Disallow: /api/
+Disallow: /api/*
+
+# Disallow dynamic referral pages (personalized content)
+Disallow: /r/*/
+Disallow: /me/*/
+
+# Disallow payment pages (temporary, session-based)
+Disallow: /payment/
+Disallow: /payment/*
+
+# Disallow auth pages
+Disallow: /auth/
+Disallow: /auth/*
+Disallow: /login
+
+# Allow specific marketing pages
+Allow: /pricing
+Allow: /how-it-works
+Allow: /case-studies
+Allow: /about
+Allow: /contact
+Allow: /faq
+Allow: /roi-calculator
+Allow: /security
+Allow: /privacy
+Allow: /terms
+Allow: /lead-hacking
+Allow: /our-referral-program
+
+# Sitemap location
+Sitemap: https://referlabs.com.au/sitemap.xml
+
+# Crawl-delay for respectful crawling (optional)
+# User-agent: *
+# Crawl-delay: 1

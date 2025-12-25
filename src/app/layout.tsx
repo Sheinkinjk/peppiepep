@@ -7,6 +7,8 @@ import { SupportChatbot } from "@/components/SupportChatbot";
 import { Toaster } from "@/components/ui/toaster";
 import { SupabaseSessionListener } from "@/components/SupabaseSessionListener";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
+import { GoogleAnalytics, GoogleTagManager } from "@/components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +33,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <OrganizationSchema />
+        <WebsiteSchema />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
+        <GoogleAnalytics />
+        <GoogleTagManager />
         <div className="flex min-h-screen flex-col">
           <StickyHeader />
           <div className="flex-1" role="presentation">
