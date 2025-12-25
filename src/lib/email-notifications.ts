@@ -18,7 +18,7 @@ export async function sendAdminNotification({
 }: EmailParams): Promise<{ success: boolean; error?: string }> {
   try {
     const resendApiKey = process.env.RESEND_API_KEY?.trim();
-    const resendFrom = from || process.env.RESEND_FROM_EMAIL?.trim() || "Refer Labs <noreply@referlabs.com>";
+    const resendFrom = from || process.env.RESEND_FROM_EMAIL?.trim() || "Refer Labs <jarred@referlabs.com.au>";
     const resendTo = to || "jarred@referlabs.com.au";
 
     if (!resendApiKey) {

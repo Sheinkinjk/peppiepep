@@ -305,7 +305,7 @@ async function submitPartnerApplication(formData: FormData) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "Refer Labs Partner Program <noreply@referlabs.com>",
+            from: "Refer Labs Partner Program <jarred@referlabs.com.au>",
             to: ["jarred@referlabs.com.au"],
             subject: `New referral program applicant: ${fallbackName}`,
             html: `
