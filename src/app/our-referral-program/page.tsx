@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
+// @ts-nocheck - Complex Supabase type inference with joined queries and insert operations
 import { Metadata } from "next";
 import {
   Users,

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
+// @ts-nocheck - Complex Supabase type inference with joined queries
 export const dynamic = "force-dynamic";
 
 import { createServerComponentClient } from "@/lib/supabase";
@@ -46,10 +46,10 @@ export default async function AdminPaymentsPage() {
     .order("lifetime_earnings", { ascending: false });
 
   // Calculate totals
-  const totalPayments = payments?.reduce((sum, p) => sum + (p.status === "succeeded" ? p.amount_total : 0), 0) || 0;
-  const totalCommissions = commissions?.reduce((sum, c) => sum + c.amount, 0) || 0;
-  const pendingCommissions = commissions?.filter(c => c.status === "approved").reduce((sum, c) => sum + c.amount, 0) || 0;
-  const paidCommissions = commissions?.filter(c => c.status === "paid").reduce((sum, c) => sum + c.amount, 0) || 0;
+  const totalPayments = payments?.reduce((sum: number, p: any) => sum + (p.status === "succeeded" ? p.amount_total : 0), 0) || 0;
+  const totalCommissions = commissions?.reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
+  const pendingCommissions = commissions?.filter((c: any) => c.status === "approved").reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
+  const paidCommissions = commissions?.filter((c: any) => c.status === "paid").reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -96,7 +96,7 @@ export default async function AdminPaymentsPage() {
               {formatAmount(totalPayments)}
             </p>
             <p className="text-xs text-gray-500 mt-1">
-              {payments?.filter(p => p.status === "succeeded").length || 0} successful
+              {payments?.filter((p: any) => p.status === "succeeded").length || 0} successful
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export default async function AdminPaymentsPage() {
               {formatAmount(pendingCommissions)}
             </p>
             <p className="text-xs text-gray-500 mt-1">
-              {commissions?.filter(c => c.status === "approved").length || 0} approved
+              {commissions?.filter((c: any) => c.status === "approved").length || 0} approved
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default async function AdminPaymentsPage() {
               {formatAmount(paidCommissions)}
             </p>
             <p className="text-xs text-gray-500 mt-1">
-              {commissions?.filter(c => c.status === "paid").length || 0} paid
+              {commissions?.filter((c: any) => c.status === "paid").length || 0} paid
             </p>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default async function AdminPaymentsPage() {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {balances && balances.length > 0 ? (
-                  balances.map((balance) => (
+                  balances.map((balance: any) => (
                     <tr key={balance.customer_id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div>
@@ -231,7 +231,7 @@ export default async function AdminPaymentsPage() {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {payments && payments.length > 0 ? (
-                  payments.map((payment) => (
+                  payments.map((payment: any) => (
                     <tr key={payment.id}>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {new Date(payment.created_at).toLocaleDateString()}
@@ -305,7 +305,7 @@ export default async function AdminPaymentsPage() {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {commissions && commissions.length > 0 ? (
-                  commissions.map((commission) => (
+                  commissions.map((commission: any) => (
                     <tr key={commission.id}>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {new Date(commission.created_at).toLocaleDateString()}

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
+// @ts-nocheck - Complex Supabase type inference with multiple joined queries
 export const dynamic = "force-dynamic";
 
 import { createServiceClient } from "@/lib/supabase";
@@ -91,60 +91,60 @@ export default async function MasterAdminDashboard() {
     .order("created_at", { ascending: false });
 
   // Calculate comprehensive per-customer metrics
-  const businessMetrics = allBusinesses?.map(business => {
+  const businessMetrics = allBusinesses?.map((business: any) => {
     // Customers/Ambassadors for this business
-    const businessCustomers = allCustomers?.filter(c => c.business_id === business.id) || [];
+    const businessCustomers = allCustomers?.filter((c: any) => c.business_id === business.id) || [];
     const totalAmbassadors = businessCustomers.length;
 
     // Campaigns for this business
-    const businessCampaigns = allCampaigns?.filter(c => c.business_id === business.id) || [];
+    const businessCampaigns = allCampaigns?.filter((c: any) => c.business_id === business.id) || [];
     const totalCampaigns = businessCampaigns.length;
-    const activeCampaigns = businessCampaigns.filter(c => c.status === "active").length;
+    const activeCampaigns = businessCampaigns.filter((c: any) => c.status === "active").length;
 
     // Campaign messages (emails sent)
-    const campaignIds = businessCampaigns.map(c => c.id);
-    const businessMessages = allCampaignMessages?.filter(m =>
+    const campaignIds = businessCampaigns.map((c: any) => c.id);
+    const businessMessages = allCampaignMessages?.filter((m: any) =>
       campaignIds.includes(m.campaign_id)
     ) || [];
     const totalEmailsSent = businessMessages.length;
-    const emailsDelivered = businessMessages.filter(m => m.status === "delivered" || m.status === "sent").length;
-    const emailsFailed = businessMessages.filter(m => m.status === "failed").length;
+    const emailsDelivered = businessMessages.filter((m: any) => m.status === "delivered" || m.status === "sent").length;
+    const emailsFailed = businessMessages.filter((m: any) => m.status === "failed").length;
 
     // Referral events (link clicks, page views)
-    const businessEvents = allReferralEvents?.filter(e => e.business_id === business.id) || [];
-    const linkClicks = businessEvents.filter(e => e.event_type === "link_click").length;
-    const pageViews = businessEvents.filter(e => e.event_type === "page_view").length;
+    const businessEvents = allReferralEvents?.filter((e: any) => e.business_id === business.id) || [];
+    const linkClicks = businessEvents.filter((e: any) => e.event_type === "link_click").length;
+    const pageViews = businessEvents.filter((e: any) => e.event_type === "page_view").length;
 
     // Referrals and conversions
-    const businessReferrals = allReferrals?.filter(r => r.business_id === business.id) || [];
+    const businessReferrals = allReferrals?.filter((r: any) => r.business_id === business.id) || [];
     const totalReferrals = businessReferrals.length;
-    const convertedReferrals = businessReferrals.filter(r => r.status === "converted").length;
+    const convertedReferrals = businessReferrals.filter((r: any) => r.status === "converted").length;
     const conversionRate = totalReferrals > 0 ? ((convertedReferrals / totalReferrals) * 100).toFixed(1) : "0.0";
 
     // Payments and revenue
-    const businessPayments = allPayments?.filter(p => p.business_id === business.id) || [];
+    const businessPayments = allPayments?.filter((p: any) => p.business_id === business.id) || [];
     const totalRevenue = businessPayments
-      .filter(p => p.status === "succeeded")
-      .reduce((sum, p) => sum + p.amount_total, 0);
-    const succeededPayments = businessPayments.filter(p => p.status === "succeeded").length;
+      .filter((p: any) => p.status === "succeeded")
+      .reduce((sum: number, p: any) => sum + p.amount_total, 0);
+    const succeededPayments = businessPayments.filter((p: any) => p.status === "succeeded").length;
 
     // Commissions
-    const businessCommissions = allCommissions?.filter(c => c.business_id === business.id) || [];
-    const totalCommissions = businessCommissions.reduce((sum, c) => sum + c.amount, 0);
-    const paidCommissions = businessCommissions.filter(c => c.status === "paid").reduce((sum, c) => sum + c.amount, 0);
+    const businessCommissions = allCommissions?.filter((c: any) => c.business_id === business.id) || [];
+    const totalCommissions = businessCommissions.reduce((sum: number, c: any) => sum + c.amount, 0);
+    const paidCommissions = businessCommissions.filter((c: any) => c.status === "paid").reduce((sum: number, c: any) => sum + c.amount, 0);
 
     // Get unique referral codes used by this business's ambassadors
     const referralCodes = businessCustomers
-      .filter(c => c.referral_code)
-      .map(c => ({
+      .filter((c: any) => c.referral_code)
+      .map((c: any) => ({
         code: c.referral_code,
         ambassadorName: c.name,
         ambassadorEmail: c.email,
         ambassadorId: c.id,
         // Get events for this specific code
-        clicks: businessEvents.filter(e => e.ambassador_id === c.id && e.event_type === "link_click").length,
-        referrals: businessReferrals.filter(r => r.referrer_id === c.id).length,
-        conversions: businessReferrals.filter(r => r.referrer_id === c.id && r.status === "converted").length,
+        clicks: businessEvents.filter((e: any) => e.ambassador_id === c.id && e.event_type === "link_click").length,
+        referrals: businessReferrals.filter((r: any) => r.referrer_id === c.id).length,
+        conversions: businessReferrals.filter((r: any) => r.referrer_id === c.id && r.status === "converted").length,
       }));
 
     return {
@@ -173,19 +173,19 @@ export default async function MasterAdminDashboard() {
 
   // Platform-wide aggregates
   const totalUsers = allBusinesses?.length || 0;
-  const activeBusinesses = allBusinesses?.filter(b => b.is_active !== false).length || 0;
+  const activeBusinesses = allBusinesses?.filter((b: any) => b.is_active !== false).length || 0;
   const totalCustomers = allCustomers?.length || 0;
   const totalEmailsSent = allCampaignMessages?.length || 0;
-  const totalLinkClicks = allReferralEvents?.filter(e => e.event_type === "link_click").length || 0;
+  const totalLinkClicks = allReferralEvents?.filter((e: any) => e.event_type === "link_click").length || 0;
   const totalReferrals = allReferrals?.length || 0;
-  const convertedReferrals = allReferrals?.filter(r => r.status === "converted").length || 0;
+  const convertedReferrals = allReferrals?.filter((r: any) => r.status === "converted").length || 0;
   const platformConversionRate = totalReferrals > 0
     ? ((convertedReferrals / totalReferrals) * 100).toFixed(1)
     : "0.0";
 
-  const totalRevenue = allPayments?.reduce((sum, p) =>
+  const totalRevenue = allPayments?.reduce((sum: number, p: any) =>
     sum + (p.status === "succeeded" ? p.amount_total : 0), 0) || 0;
-  const totalCommissions = allCommissions?.reduce((sum, c) => sum + c.amount, 0) || 0;
+  const totalCommissions = allCommissions?.reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
 
   // Sort businesses by activity (most active first)
   const sortedBusinessMetrics = businessMetrics.sort((a, b) => {
