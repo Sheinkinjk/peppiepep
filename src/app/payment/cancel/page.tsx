@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { stripe } from "@/lib/stripe";
 
 interface PageProps {
   searchParams: Promise<{
@@ -11,27 +12,65 @@ interface PageProps {
 export default async function PaymentCancelPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const sessionId = params.session_id;
-  const status = params.status;
+  let status = params.status;
   const error = params.error;
+
+  // Verify the session with Stripe if session ID is provided
+  let verifiedStatus = status;
+  let customerEmail = "";
+  let amount = 0;
+  let currency = "usd";
+
+  if (sessionId && !error) {
+    try {
+      const session = await stripe.checkout.sessions.retrieve(sessionId);
+      verifiedStatus = session.payment_status || "unknown";
+      customerEmail = session.customer_details?.email || "";
+      amount = session.amount_total || 0;
+      currency = session.currency || "usd";
+
+      // Log the cancellation for analytics
+      console.log("Payment cancelled:", {
+        sessionId,
+        status: verifiedStatus,
+        email: customerEmail,
+        amount,
+      });
+    } catch (stripeError) {
+      console.error("Error verifying cancelled session:", stripeError);
+      // If we can't verify, treat as invalid session
+      verifiedStatus = "error";
+    }
+  }
 
   // Determine the cancellation reason
   let title = "Payment Cancelled";
   let message = "Your payment was cancelled. No charges were made to your account.";
   let reason = "";
 
-  if (error === "invalid_session") {
+  if (error === "invalid_session" || verifiedStatus === "error") {
     title = "Invalid Payment Session";
     message = "The payment session could not be verified. Please try again.";
     reason = "The payment link may have expired or is invalid.";
-  } else if (status === "unpaid") {
+  } else if (verifiedStatus === "unpaid") {
     title = "Payment Incomplete";
     message = "Your payment was not completed.";
     reason = "The payment process was not finished.";
-  } else if (status && status !== "paid") {
+  } else if (verifiedStatus && verifiedStatus !== "paid") {
     title = "Payment Failed";
     message = "Your payment could not be processed.";
-    reason = `Payment status: ${status}`;
+    reason = verifiedStatus === "unknown"
+      ? "Unable to verify payment status."
+      : `Payment status: ${verifiedStatus}`;
   }
+
+  // Format amount if available
+  const formattedAmount = amount > 0
+    ? new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: currency.toUpperCase(),
+      }).format(amount / 100)
+    : null;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-yellow-50 via-white to-white px-4">
@@ -73,6 +112,21 @@ export default async function PaymentCancelPage({ searchParams }: PageProps) {
               </svg>
               <span>{reason}</span>
             </p>
+          </div>
+        )}
+
+        {/* Payment Details if available */}
+        {formattedAmount && customerEmail && (
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-6">
+            <p className="text-sm font-semibold text-gray-900 mb-2">
+              Transaction Details
+            </p>
+            <div className="space-y-1 text-sm text-gray-600">
+              <p>Amount: <span className="font-medium text-gray-900">{formattedAmount}</span></p>
+              {customerEmail && (
+                <p>Email: <span className="font-medium text-gray-900">{customerEmail}</span></p>
+              )}
+            </div>
           </div>
         )}
 
