@@ -65,8 +65,8 @@ export default function ResetPasswordPage() {
       return;
     }
 
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters long");
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long");
       return;
     }
 
@@ -146,7 +146,7 @@ export default function ResetPasswordPage() {
                   onKeyDown={(e) => e.key === "Enter" && handleResetPassword()}
                 />
                 <p className="text-xs text-slate-500 mt-1">
-                  Must be at least 6 characters
+                  Must be at least 8 characters
                 </p>
               </div>
 
