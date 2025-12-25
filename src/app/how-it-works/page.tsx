@@ -9,7 +9,9 @@ import {
   BarChart3,
 } from "lucide-react";
 import Link from "next/link";
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+export const metadata = generateSEOMetadata(seoConfig.howItWorks);
 
 export default function HowItWorks() {
   return (

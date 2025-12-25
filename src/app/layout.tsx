@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { SupportChatbot } from "@/components/SupportChatbot";
 import { Toaster } from "@/components/ui/toaster";
 import { SupabaseSessionListener } from "@/components/SupabaseSessionListener";
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,24 +22,7 @@ const geistMono = Geist_Mono({
   preload: true,
 });
 
-export const metadata: Metadata = {
-  title: "Refer Labs - Referrals that compound",
-  description: "Turn happy customers into your most powerful growth engine with automated referral tracking, rewards, and ambassador management.",
-  icons: {
-    icon: '/logo.svg',
-    apple: '/logo.svg',
-  },
-  openGraph: {
-    title: "Refer Labs - Referrals that compound",
-    description: "Turn happy customers into your most powerful growth engine with automated referral tracking, rewards, and ambassador management.",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Refer Labs - Referrals that compound",
-    description: "Turn happy customers into your most powerful growth engine.",
-  },
-};
+export const metadata: Metadata = generateSEOMetadata(seoConfig.home);
 
 export default function RootLayout({
   children,

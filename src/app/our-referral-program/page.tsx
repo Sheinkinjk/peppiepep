@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck - Complex Supabase type inference with joined queries and insert operations
-import { Metadata } from "next";
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import {
   Users,
   TrendingUp,
@@ -28,10 +28,7 @@ import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import { ensureAbsoluteUrl } from "@/lib/urls";
 import { PartnerApplicationSuccessModal } from "@/components/PartnerApplicationSuccessModal";
 
-export const metadata: Metadata = {
-  title: "Join Our Partner Program | Refer Labs",
-  description: "Earn 25% recurring revenue by referring businesses to Refer Labs. Offer new customers a $250 sign-on credit when you join our partner program.",
-};
+export const metadata = generateSEOMetadata(seoConfig.partnerProgram);
 
 async function submitPartnerApplication(formData: FormData) {
   "use server";

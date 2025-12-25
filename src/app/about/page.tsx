@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import {
   ArrowRight,
   Target,
@@ -9,6 +10,8 @@ import {
   Heart,
 } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = generateSEOMetadata(seoConfig.about);
 
 export default function About() {
   return (

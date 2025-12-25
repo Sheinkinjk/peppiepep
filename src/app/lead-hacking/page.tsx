@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, BarChart3, CheckCircle2, Route, Send, Target, Users, Wrench, Zap } from "lucide-react";
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+
+export const metadata = generateSEOMetadata(seoConfig.leadHacking);
 
 import { AutomateLeadToolForm } from "./sections/AutomateLeadToolForm";
 

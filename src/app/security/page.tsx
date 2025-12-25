@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import {
   ArrowRight,
   Shield,
@@ -10,6 +11,8 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = generateSEOMetadata(seoConfig.security);
 
 export default function Security() {
   return (

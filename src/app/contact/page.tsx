@@ -1,4 +1,7 @@
 import { Mail, Calendar } from "lucide-react";
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+
+export const metadata = generateSEOMetadata(seoConfig.contact);
 
 export default function Contact() {
   return (

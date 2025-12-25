@@ -1,4 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+
+export const metadata = generateSEOMetadata(seoConfig.privacy);
 
 export default function Privacy() {
   return (
