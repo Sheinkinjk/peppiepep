@@ -244,6 +244,24 @@ const rateLimiters = {
     windowMs: 60 * 1000,
     maxSize: 2000,
   }),
+  authentication: new RateLimiter({
+    name: "authentication",
+    limit: 5,
+    windowMs: 60 * 1000,
+    maxSize: 1000,
+  }),
+  payment: new RateLimiter({
+    name: "payment",
+    limit: 10,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
+  payout: new RateLimiter({
+    name: "payout",
+    limit: 3,
+    windowMs: 60 * 1000,
+    maxSize: 500,
+  }),
 };
 
 export const rateLimitPresets = rateLimiters;

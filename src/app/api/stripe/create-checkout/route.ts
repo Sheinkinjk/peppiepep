@@ -2,8 +2,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
+import { checkRateLimit } from '@/lib/rate-limit';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting: 10 payment attempts per minute to prevent abuse
+  const rateLimitCheck = await checkRateLimit(request, 'payment');
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    return rateLimitCheck.response;
+  }
+
   try {
     const body = await request.json();
     const { priceId, customerId, businessId, successUrl, cancelUrl, metadata = {} } = body;

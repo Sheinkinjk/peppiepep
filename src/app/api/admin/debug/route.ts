@@ -1,13 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerComponentClient, createServiceClient } from '@/lib/supabase';
-import { getCurrentAdmin } from '@/lib/admin-auth';
+import { requireAdmin, getCurrentAdmin } from '@/lib/admin-auth';
 
 /**
  * Debug endpoint to check admin status and configuration
+ * PROTECTED: Requires admin authentication
  *
  * GET /api/admin/debug
  */
 export async function GET(request: NextRequest) {
+  // Require admin access to prevent information disclosure
+  try {
+    await requireAdmin();
+  } catch (error) {
+    return NextResponse.json(
+      {
+        status: 'unauthorized',
+        error: 'Unauthorized. Admin access required.',
+        message: 'This endpoint is only accessible to admin users.'
+      },
+      { status: 403 }
+    );
+  }
+
   try {
     void request;
     const authClient = await createServerComponentClient();

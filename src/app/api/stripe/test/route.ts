@@ -1,13 +1,25 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { stripe, getStripePublishableKey } from '@/lib/stripe';
+import { requireAdmin } from '@/lib/admin-auth';
 
 /**
  * Test endpoint to verify Stripe connection
  * GET /api/stripe/test
+ * PROTECTED: Requires admin authentication
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Require admin access to prevent information disclosure
+  try {
+    await requireAdmin();
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Unauthorized. Admin access required.' },
+      { status: 403 }
+    );
+  }
+
   try {
     // Test Stripe connection by fetching account details
     const account = await stripe.accounts.retrieve();

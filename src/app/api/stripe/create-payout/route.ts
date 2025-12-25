@@ -3,6 +3,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, PAYOUT_THRESHOLD, PAYOUT_CURRENCY } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
+import { checkRateLimit } from '@/lib/rate-limit';
 
 /**
  * Create a payout to an ambassador's connected account
@@ -14,6 +15,12 @@ import { createServerComponentClient } from '@/lib/supabase';
  * }
  */
 export async function POST(request: NextRequest) {
+  // Rate limiting: 3 payout attempts per minute to prevent abuse
+  const rateLimitCheck = await checkRateLimit(request, 'payout');
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    return rateLimitCheck.response;
+  }
+
   try {
     const body = await request.json();
     const { ambassadorId, amount: requestedAmount } = body;
