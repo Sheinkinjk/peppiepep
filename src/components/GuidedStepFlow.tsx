@@ -2,8 +2,9 @@
 
 import { useEffect, useState, type KeyboardEvent, type ReactNode } from "react";
 import { Card } from "@/components/ui/card";
-import { ChevronDown, CheckCircle2, Circle, AlertCircle } from "lucide-react";
+import { ChevronDown, CheckCircle2, Circle, AlertCircle, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
 
 type StepStatus = "incomplete" | "in_progress" | "complete";
 
@@ -16,6 +17,7 @@ export type GuidedStep = {
   status: StepStatus;
   content: ReactNode;
   helpText?: string;
+  helpContent?: ReactNode;
 };
 
 type GuidedStepFlowProps = {
@@ -27,6 +29,7 @@ type GuidedStepFlowProps = {
 export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedStepFlowProps) {
   // Always use internal state for managing expanded step
   const [expandedStep, setExpandedStep] = useState<string | null>(() => defaultOpenStep || null);
+  const [helpOpenByStep, setHelpOpenByStep] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const handler = (event: Event) => {
@@ -57,6 +60,11 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
     if (onStepChange) {
       onStepChange(nextValue || "");
     }
+  };
+
+  const toggleHelp = (stepId: string) => {
+    setExpandedStep(stepId);
+    setHelpOpenByStep((prev) => ({ ...prev, [stepId]: !prev[stepId] }));
   };
 
   const getStepGradient = () => {
@@ -169,8 +177,26 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
                         )}
                       </div>
 
-                      {/* Expand/Collapse Icon */}
-                      <div className="flex-shrink-0">
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <button
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            toggleHelp(step.id);
+                          }}
+                          onKeyDown={(event) => event.stopPropagation()}
+                          className={cn(
+                            "inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold transition",
+                            helpOpenByStep[step.id]
+                              ? "border-teal-200 bg-teal-50 text-teal-800"
+                              : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+                          )}
+                          aria-label={`Help for ${step.title}`}
+                        >
+                          <HelpCircle className="h-4 w-4" />
+                          What&apos;s this?
+                        </button>
+
                         <div className={cn(
                           "rounded-full p-2 transition-all duration-300",
                           isExpanded
@@ -198,6 +224,19 @@ export function GuidedStepFlow({ steps, onStepChange, defaultOpenStep }: GuidedS
             >
               <div className="p-6 pt-4 pb-6 bg-white border-t border-slate-100">
                 <div className="space-y-6">
+                  {(step.helpContent || step.helpText) && (
+                    <Collapsible open={!!helpOpenByStep[step.id]}>
+                      <CollapsibleContent>
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                          {step.helpContent ? (
+                            step.helpContent
+                          ) : (
+                            <p className="text-sm text-slate-700 leading-relaxed">{step.helpText}</p>
+                          )}
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  )}
                   {step.content}
                 </div>
               </div>

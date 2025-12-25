@@ -4,9 +4,20 @@
 
 export type StepValidation = {
   isComplete: boolean;
-  blockers: string[];
-  warnings: string[];
+  items: StepChecklistItem[];
   completionPercentage: number;
+};
+
+export type StepChecklistItemKind = "action_required" | "recommended" | "info_only";
+
+export type StepChecklistItem = {
+  kind: StepChecklistItemKind;
+  label: string;
+  where: string;
+  cta?: {
+    label: string;
+    stepId: keyof StepValidations;
+  };
 };
 
 export type StepValidations = {
@@ -72,13 +83,17 @@ function validateStep1(checks: {
   hasIntegrationSetup: boolean;
   hasDiscountCapture: boolean;
 }): StepValidation {
-  const blockers: string[] = [];
-  const warnings: string[] = [];
+  const items: StepChecklistItem[] = [];
   let completionPercentage = 0;
 
   // Check program settings (required for completion)
   if (!checks.hasProgramSettings) {
-    blockers.push("Complete business setup and reward configuration");
+    items.push({
+      kind: "action_required",
+      label: "Complete business setup and reward configuration",
+      where: "In Refer Labs (Step 1)",
+      cta: { label: "Open Step 1", stepId: "setup-integration" },
+    });
     // Start at 0%, only give credit once settings are saved
   } else {
     completionPercentage += 70; // Primary requirement
@@ -86,22 +101,37 @@ function validateStep1(checks: {
 
   // Check integration setup (optional but recommended)
   if (!checks.hasIntegrationSetup) {
-    warnings.push("Website integration not verified");
+    items.push({
+      kind: "recommended",
+      label: "Verify website integration",
+      where: "On your website (install/verify snippet)",
+      cta: { label: "View Step 1", stepId: "setup-integration" },
+    });
   } else {
     completionPercentage += 15;
   }
 
   // Check discount capture (optional but recommended)
   if (!checks.hasDiscountCapture) {
-    warnings.push("Discount capture endpoint not configured");
+    items.push({
+      kind: "recommended",
+      label: "Add the discount capture endpoint (if you use discount codes)",
+      where: "On your website / checkout system",
+      cta: { label: "View Step 1", stepId: "setup-integration" },
+    });
   } else {
     completionPercentage += 15;
   }
 
+  items.push({
+    kind: "info_only",
+    label: "Tip: lock this in before inviting ambassadors so rewards stay consistent.",
+    where: "Info",
+  });
+
   return {
-    isComplete: checks.hasProgramSettings && blockers.length === 0,
-    blockers,
-    warnings,
+    isComplete: checks.hasProgramSettings,
+    items,
     completionPercentage: Math.min(completionPercentage, 100),
   };
 }
@@ -113,24 +143,41 @@ function validateStep2(checks: {
   hasProgramSettings: boolean;
   hasCustomers: boolean;
 }): StepValidation {
-  const blockers: string[] = [];
-  const warnings: string[] = [];
+  const items: StepChecklistItem[] = [];
   let completionPercentage = 0;
 
   if (!checks.hasProgramSettings) {
-    blockers.push("Complete Step 1: Business Setup first");
+    items.push({
+      kind: "action_required",
+      label: "Complete Step 1 first (business setup)",
+      where: "In Refer Labs (Step 1)",
+      cta: { label: "Open Step 1", stepId: "setup-integration" },
+    });
     // 0% until prerequisites are met
   } else if (!checks.hasCustomers) {
-    blockers.push("Add at least one customer/ambassador");
+    items.push({
+      kind: "action_required",
+      label: "Add at least one client/ambassador",
+      where: "In Refer Labs (Step 2)",
+      cta: { label: "Open Step 2", stepId: "clients-ambassadors" },
+    });
     // Still 0% - prerequisites met but main task not done
   } else {
     completionPercentage = 100; // Only give credit when customers are added
   }
 
+  if (checks.hasProgramSettings && !checks.hasCustomers) {
+    items.push({
+      kind: "recommended",
+      label: "Start with 10–20 loyal clients first (then scale with CSV)",
+      where: "In Refer Labs (Step 2)",
+      cta: { label: "Open Step 2", stepId: "clients-ambassadors" },
+    });
+  }
+
   return {
     isComplete: checks.hasProgramSettings && checks.hasCustomers,
-    blockers,
-    warnings,
+    items,
     completionPercentage: Math.min(completionPercentage, 100),
   };
 }
@@ -143,27 +190,46 @@ function validateStep3(checks: {
   hasCustomers: boolean;
   totalCampaignsSent: number;
 }): StepValidation {
-  const blockers: string[] = [];
-  const warnings: string[] = [];
+  const items: StepChecklistItem[] = [];
   let completionPercentage = 0;
 
   if (!checks.hasProgramSettings) {
-    blockers.push("Complete Step 1: Business Setup first");
+    items.push({
+      kind: "action_required",
+      label: "Complete Step 1 first (business setup)",
+      where: "In Refer Labs (Step 1)",
+      cta: { label: "Open Step 1", stepId: "setup-integration" },
+    });
     // 0% until prerequisites are met
   } else if (!checks.hasCustomers) {
-    blockers.push("Complete Step 2: Add ambassadors first");
+    items.push({
+      kind: "action_required",
+      label: "Add ambassadors before launching a campaign",
+      where: "In Refer Labs (Step 2)",
+      cta: { label: "Open Step 2", stepId: "clients-ambassadors" },
+    });
     // Still 0% until all prerequisites are met
   } else if (checks.totalCampaignsSent === 0) {
-    blockers.push("Launch your first campaign");
+    items.push({
+      kind: "action_required",
+      label: "Launch your first campaign",
+      where: "In Refer Labs (Step 3) or your CRM",
+      cta: { label: "Open Step 3", stepId: "crm-integration" },
+    });
     // Still 0% - prerequisites met but main task not done
   } else {
     completionPercentage = 100; // Only give credit when campaign is launched
   }
 
+  items.push({
+    kind: "info_only",
+    label: "Tip: send a test message to yourself first to confirm links and formatting.",
+    where: "Info",
+  });
+
   return {
-    isComplete: checks.totalCampaignsSent > 0 && blockers.length === 0,
-    blockers,
-    warnings,
+    isComplete: checks.totalCampaignsSent > 0,
+    items,
     completionPercentage: Math.min(completionPercentage, 100),
   };
 }
@@ -174,20 +240,29 @@ function validateStep3(checks: {
 function validateStep4(checks: {
   totalCampaignsSent: number;
 }): StepValidation {
-  const blockers: string[] = [];
-  const warnings: string[] = [];
+  const items: StepChecklistItem[] = [];
   let completionPercentage = 0;
 
   if (checks.totalCampaignsSent === 0) {
-    blockers.push("Complete Step 3: Launch a campaign first");
+    items.push({
+      kind: "action_required",
+      label: "Launch a campaign first",
+      where: "In Refer Labs (Step 3) or your CRM",
+      cta: { label: "Open Step 3", stepId: "crm-integration" },
+    });
   } else {
     completionPercentage += 100;
+    items.push({
+      kind: "recommended",
+      label: "Review clicks, conversions, and top ambassadors weekly",
+      where: "In Refer Labs (Step 4)",
+      cta: { label: "Open Step 4", stepId: "view-campaigns" },
+    });
   }
 
   return {
     isComplete: checks.totalCampaignsSent > 0,
-    blockers,
-    warnings,
+    items,
     completionPercentage: Math.min(completionPercentage, 100),
   };
 }
@@ -199,15 +274,24 @@ function validateStep5(checks: {
   hasReferrals: boolean;
   totalCampaignsSent: number;
 }): StepValidation {
-  const blockers: string[] = [];
-  const warnings: string[] = [];
+  const items: StepChecklistItem[] = [];
   let completionPercentage = 0;
 
   if (checks.totalCampaignsSent === 0) {
-    warnings.push("Launch campaigns to generate referrals");
+    items.push({
+      kind: "recommended",
+      label: "Launch campaigns to start generating referrals",
+      where: "In Refer Labs (Step 3) or your CRM",
+      cta: { label: "Open Step 3", stepId: "crm-integration" },
+    });
     // 0% until campaigns are launched
   } else if (!checks.hasReferrals) {
-    warnings.push("No referrals tracked yet - give it time or add manual referrals");
+    items.push({
+      kind: "recommended",
+      label: "No referrals tracked yet — give it time or add a manual referral",
+      where: "In Refer Labs (Step 5)",
+      cta: { label: "Open Step 5", stepId: "performance" },
+    });
     // Still 0% until referrals come in
   } else {
     completionPercentage = 100; // Only give credit when referrals are tracked
@@ -215,8 +299,7 @@ function validateStep5(checks: {
 
   return {
     isComplete: checks.hasReferrals,
-    blockers,
-    warnings,
+    items,
     completionPercentage: Math.min(completionPercentage, 100),
   };
 }
