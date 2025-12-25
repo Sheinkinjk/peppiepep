@@ -1,15 +1,46 @@
-"use client";
-
 import Link from "next/link";
 
-export default function PaymentCancelPage() {
+interface PageProps {
+  searchParams: Promise<{
+    session_id?: string;
+    status?: string;
+    error?: string;
+  }>;
+}
+
+export default async function PaymentCancelPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const sessionId = params.session_id;
+  const status = params.status;
+  const error = params.error;
+
+  // Determine the cancellation reason
+  let title = "Payment Cancelled";
+  let message = "Your payment was cancelled. No charges were made to your account.";
+  let reason = "";
+
+  if (error === "invalid_session") {
+    title = "Invalid Payment Session";
+    message = "The payment session could not be verified. Please try again.";
+    reason = "The payment link may have expired or is invalid.";
+  } else if (status === "unpaid") {
+    title = "Payment Incomplete";
+    message = "Your payment was not completed.";
+    reason = "The payment process was not finished.";
+  } else if (status && status !== "paid") {
+    title = "Payment Failed";
+    message = "Your payment could not be processed.";
+    reason = `Payment status: ${status}`;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-yellow-50 via-white to-white px-4">
+      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl border border-yellow-100 p-8 text-center">
+        {/* Warning Icon */}
         <div className="mb-6">
-          <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-yellow-100">
+          <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-gradient-to-br from-yellow-100 to-amber-100 shadow-lg shadow-yellow-200/50">
             <svg
-              className="h-8 w-8 text-yellow-600"
+              className="h-10 w-10 text-yellow-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -24,34 +55,68 @@ export default function PaymentCancelPage() {
           </div>
         </div>
 
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
-          Payment Cancelled
+        {/* Title and Message */}
+        <h1 className="text-3xl font-bold text-gray-900 mb-3">
+          {title}
         </h1>
 
         <p className="text-gray-600 mb-6">
-          Your payment was cancelled. No charges were made.
+          {message}
         </p>
 
-        <div className="space-y-3">
-          <p className="text-sm text-gray-600">
-            If you experienced any issues, please contact our support team.
-          </p>
-
-          <div className="pt-4 space-y-2">
-            <Link
-              href="/dashboard"
-              className="inline-block w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Go to Dashboard
-            </Link>
-
-            <Link
-              href="/pricing"
-              className="inline-block w-full bg-white text-gray-700 font-semibold py-3 px-6 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors"
-            >
-              View Pricing
-            </Link>
+        {/* Reason */}
+        {reason && (
+          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+            <p className="text-sm text-yellow-900 flex items-start gap-2">
+              <svg className="h-5 w-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{reason}</span>
+            </p>
           </div>
+        )}
+
+        {/* Session ID if available */}
+        {sessionId && (
+          <div className="bg-gray-50 rounded-lg p-3 mb-6">
+            <p className="text-xs text-gray-500">
+              Reference: {sessionId.substring(0, 20)}...
+            </p>
+          </div>
+        )}
+
+        {/* Help Section */}
+        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
+          <p className="text-sm text-blue-900 font-medium mb-2">
+            Need Help?
+          </p>
+          <p className="text-sm text-blue-800">
+            If you experienced any issues or have questions about your payment, our support team is here to help.
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="space-y-3">
+          <Link
+            href="/pricing"
+            className="inline-block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40"
+          >
+            Try Again
+          </Link>
+
+          <Link
+            href="/dashboard"
+            className="inline-block w-full bg-white text-gray-700 font-semibold py-3 px-6 rounded-xl border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors"
+          >
+            Go to Dashboard
+          </Link>
+
+          <Link
+            href="/contact"
+            className="inline-block w-full text-gray-600 font-medium py-2 px-6 rounded-lg hover:text-gray-900 hover:bg-gray-50 transition-colors text-sm"
+          >
+            Contact Support
+          </Link>
         </div>
       </div>
     </div>
