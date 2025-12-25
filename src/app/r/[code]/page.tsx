@@ -19,6 +19,7 @@ import { ensureAbsoluteUrl } from "@/lib/urls";
 import { ReferralSubmissionForm } from "@/components/ReferralSubmissionForm";
 import { ReferralShareCard } from "@/components/ReferralShareCard";
 import { DiscountCodeCard } from "@/components/DiscountCodeCard";
+import { rateLimitPresets, getClientIdentifier } from "@/lib/rate-limit";
 
 function normalizeHexColor(value?: string | null, fallback = "#0abab5") {
   if (!value) return fallback;
@@ -256,6 +257,24 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   async function submitReferral(formData: FormData) {
     "use server";
     try {
+      // Rate limiting: 5 submissions per minute per IP to prevent spam
+      const headerStore = await headers();
+      const mockRequest = new Request("http://localhost", {
+        headers: headerStore,
+      });
+      const identifier = getClientIdentifier(mockRequest);
+      const rateLimitResult = await rateLimitPresets.referralSubmission.check(identifier);
+
+      if (!rateLimitResult.success) {
+        const retryAfter = Math.max(1, Math.ceil((rateLimitResult.reset - Date.now()) / 1000));
+        return {
+          error:
+            selectedLocale === "es"
+              ? `Demasiados intentos. Por favor espera ${retryAfter} segundos.`
+              : `Too many submissions. Please wait ${retryAfter} seconds before trying again.`,
+        };
+      }
+
       const supabase = await createServiceClient();
       const campaignIdFromForm =
         (formData.get("campaign_id")?.toString().trim() || null) ?? null;

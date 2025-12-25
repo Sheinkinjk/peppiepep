@@ -262,6 +262,12 @@ const rateLimiters = {
     windowMs: 60 * 1000,
     maxSize: 500,
   }),
+  referralSubmission: new RateLimiter({
+    name: "referralSubmission",
+    limit: 5,
+    windowMs: 60 * 1000,
+    maxSize: 2000,
+  }),
 };
 
 export const rateLimitPresets = rateLimiters;
