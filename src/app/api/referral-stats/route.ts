@@ -167,12 +167,31 @@ export async function GET(request: NextRequest) {
       business: safeBusiness,
     };
 
+    // Helper function to mask email addresses for privacy
+    const maskEmail = (email: string | null): string | null => {
+      if (!email) return null;
+      const [username, domain] = email.split('@');
+      if (!username || !domain) return null;
+      const maskedUsername = username.length > 2
+        ? username[0] + '*'.repeat(Math.min(username.length - 2, 4)) + username[username.length - 1]
+        : username[0] + '*';
+      return `${maskedUsername}@${domain}`;
+    };
+
+    // Helper function to mask phone numbers for privacy
+    const maskPhone = (phone: string | null): string | null => {
+      if (!phone) return null;
+      const cleaned = phone.replace(/\D/g, '');
+      if (cleaned.length < 4) return '***';
+      return '***-***-' + cleaned.slice(-4);
+    };
+
     const typedReferrals = (referrals || []) as ReferralStatsEntry[];
     const safeReferrals = typedReferrals.map((referral) => ({
       id: referral.id,
       referred_name: referral.referred_name,
-      referred_email: referral.referred_email,
-      referred_phone: referral.referred_phone,
+      referred_email: maskEmail(referral.referred_email),
+      referred_phone: maskPhone(referral.referred_phone),
       status: referral.status,
       created_at: referral.created_at,
       rewarded_at: referral.rewarded_at,

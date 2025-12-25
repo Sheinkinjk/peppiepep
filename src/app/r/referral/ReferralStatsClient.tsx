@@ -412,8 +412,13 @@ export default function ReferralStatsClient({
                               <p className="font-bold text-white text-lg">
                                 {referral.referred_name || "New Contact"}
                               </p>
-                              <p className="text-sm text-slate-300">
+                              <p className="text-sm text-slate-300 flex items-center gap-2">
                                 {referral.referred_email || referral.referred_phone || "Awaiting contact info"}
+                                {(referral.referred_email || referral.referred_phone) && (
+                                  <span className="text-xs text-slate-400/80" title="Contact info is masked for privacy">
+                                    (masked)
+                                  </span>
+                                )}
                               </p>
                             </div>
                             <span

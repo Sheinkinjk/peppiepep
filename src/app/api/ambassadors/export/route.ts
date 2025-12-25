@@ -55,8 +55,35 @@ async function handleExport(
     return NextResponse.json({ error: "Failed to load referrals" }, { status: 500 });
   }
 
+  // Helper function to mask email addresses for privacy
+  const maskEmail = (email: string | null): string | null => {
+    if (!email) return null;
+    const [username, domain] = email.split('@');
+    if (!username || !domain) return null;
+    const maskedUsername = username.length > 2
+      ? username[0] + '*'.repeat(Math.min(username.length - 2, 4)) + username[username.length - 1]
+      : username[0] + '*';
+    return `${maskedUsername}@${domain}`;
+  };
+
+  // Helper function to mask phone numbers for privacy
+  const maskPhone = (phone: string | null): string | null => {
+    if (!phone) return null;
+    const cleaned = phone.replace(/\D/g, '');
+    if (cleaned.length < 4) return '***';
+    return '***-***-' + cleaned.slice(-4);
+  };
+
+  // Mask referred contacts' PII for privacy - ambassadors should see their own data unmasked,
+  // but referred contacts' sensitive info should be masked
+  const maskedReferrals = (referrals ?? []).map((referral) => ({
+    ...referral,
+    referred_email: maskEmail(referral.referred_email),
+    referred_phone: maskPhone(referral.referred_phone),
+  }));
+
   logger.info("Ambassador export delivered", { code, referralCount: referrals?.length ?? 0 });
-  return NextResponse.json({ ambassador, referrals: referrals ?? [] });
+  return NextResponse.json({ ambassador, referrals: maskedReferrals });
 }
 
 export async function POST(request: Request) {
