@@ -57,7 +57,7 @@ export function PartnerApplicationsManager() {
   }
 
   async function approveApplication(applicationId: string) {
-    if (!confirm("Approve this partner application? They will receive their referral link and $250 credit.")) {
+    if (!confirm("Approve this partner application? They will earn 25% recurring revenue for every client they refer.")) {
       return;
     }
 
@@ -74,11 +74,39 @@ export function PartnerApplicationsManager() {
         throw new Error(error.error || "Failed to approve application");
       }
 
-      alert("Partner approved! Approval email sent.");
+      alert("Partner approved! Approval email sent with 25% recurring revenue details.");
       await fetchApplications();
     } catch (error) {
       console.error("Error approving application:", error);
       alert(`Error: ${error instanceof Error ? error.message : "Failed to approve"}`);
+    } finally {
+      setApproving(null);
+    }
+  }
+
+  async function rejectApplication(applicationId: string) {
+    if (!confirm("Reject this partner application? This action cannot be undone.")) {
+      return;
+    }
+
+    setApproving(applicationId);
+    try {
+      const response = await fetch("/api/admin/partner-applications/reject", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ applicationId }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || "Failed to reject application");
+      }
+
+      alert("Partner application rejected.");
+      await fetchApplications();
+    } catch (error) {
+      console.error("Error rejecting application:", error);
+      alert(`Error: ${error instanceof Error ? error.message : "Failed to reject"}`);
     } finally {
       setApproving(null);
     }
@@ -205,13 +233,24 @@ export function PartnerApplicationsManager() {
                 </div>
 
                 {app.status === "pending" && (
-                  <Button
-                    onClick={() => approveApplication(app.id)}
-                    disabled={approving === app.id}
-                    className="bg-emerald-600 hover:bg-emerald-700"
-                  >
-                    {approving === app.id ? "Approving..." : "Approve Partner"}
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={() => approveApplication(app.id)}
+                      disabled={approving === app.id}
+                      className="bg-emerald-600 hover:bg-emerald-700"
+                    >
+                      <CheckCircle className="h-4 w-4 mr-2" />
+                      {approving === app.id ? "Approving..." : "Approve"}
+                    </Button>
+                    <Button
+                      onClick={() => rejectApplication(app.id)}
+                      disabled={approving === app.id}
+                      variant="destructive"
+                    >
+                      <XCircle className="h-4 w-4 mr-2" />
+                      Reject
+                    </Button>
+                  </div>
                 )}
               </div>
 

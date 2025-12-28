@@ -79,11 +79,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Update customer status to "verified" (active ambassador)
+    // No credits given - partners earn 25% recurring revenue only
     const { error: updateCustomerError } = await supabase
       .from("customers")
       .update({
         status: "verified",
-        credits: 25000, // $250 credit (in cents)
       })
       .eq("id", appData.customer_id);
 
@@ -125,20 +125,17 @@ export async function POST(request: NextRequest) {
                 <p style="margin:0 0 16px;font-size:16px;color:#0f172a;">Hi ${appData.name || "there"},</p>
 
                 <p style="margin:0 0 16px;font-size:16px;color:#475569;line-height:1.6;">
-                  Congratulations! Your partner application has been approved. You can now start earning 25% recurring revenue for every business you refer to Refer Labs.
+                  Congratulations! Your partner application has been approved. You can now start earning <strong>25% recurring revenue</strong> for every business you refer to Refer Labs.
                 </p>
 
-                <!-- Account Credit -->
-                <div style="margin:24px 0;padding:20px;border-radius:16px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #10b981;">
-                  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                    <div style="width:40px;height:40px;border-radius:12px;background:#10b981;display:flex;align-items:center;justify-content:center;color:white;font-size:20px;font-weight:bold;">$</div>
-                    <div>
-                      <p style="margin:0;font-size:14px;color:#065f46;font-weight:600;">Welcome Bonus Applied</p>
-                      <p style="margin:0;font-size:24px;color:#047857;font-weight:800;">$250 Account Credit</p>
-                    </div>
+                <!-- Revenue Share Highlight -->
+                <div style="margin:24px 0;padding:24px;border-radius:16px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #10b981;">
+                  <div style="text-align:center;margin-bottom:16px;">
+                    <div style="font-size:48px;font-weight:900;color:#047857;line-height:1;">25%</div>
+                    <p style="margin:4px 0 0;font-size:16px;color:#065f46;font-weight:600;">Recurring Revenue</p>
                   </div>
-                  <p style="margin:0;font-size:14px;color:#065f46;">
-                    We've added $250 to your account. Use it for your own Refer Labs subscription or grant it to referrals as a sign-on bonus.
+                  <p style="margin:0;font-size:14px;color:#065f46;text-align:center;line-height:1.6;">
+                    Earn 25% of every payment from businesses you refer, for the lifetime of their subscription. The more successful your referrals, the more you earn—month after month.
                   </p>
                 </div>
 
@@ -246,7 +243,7 @@ export async function POST(request: NextRequest) {
               <p><strong>Email:</strong> ${appData.email}</p>
               <p><strong>Company:</strong> ${appData.company || "N/A"}</p>
               <p><strong>Referral Link:</strong> <a href="${referralLink}">${referralLink}</a></p>
-              <p><strong>Account Credit:</strong> $250 added</p>
+              <p><strong>Commission:</strong> 25% recurring revenue on all referrals</p>
               <p><strong>Status:</strong> Now active - can start referring</p>
             </div>
           </div>
