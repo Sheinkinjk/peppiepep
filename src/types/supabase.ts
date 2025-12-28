@@ -156,6 +156,8 @@ export interface Database {
           notes: string | null;
           source: string | null;
           status: "pending" | "under_review" | "approved" | "rejected" | null;
+          approved_at?: string | null;
+          approved_by?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -174,6 +176,8 @@ export interface Database {
           notes?: string | null;
           source?: string | null;
           status?: "pending" | "under_review" | "approved" | "rejected" | null;
+          approved_at?: string | null;
+          approved_by?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -192,6 +196,8 @@ export interface Database {
           notes?: string | null;
           source?: string | null;
           status?: "pending" | "under_review" | "approved" | "rejected" | null;
+          approved_at?: string | null;
+          approved_by?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
