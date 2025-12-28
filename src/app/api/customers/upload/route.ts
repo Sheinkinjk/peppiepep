@@ -8,6 +8,7 @@ import { z } from "zod";
 import type { Database } from "@/types/supabase";
 import { buildCustomersFromRows } from "@/lib/customer-import";
 import { generateUniqueDiscountCode } from "@/lib/discount-codes";
+import { ensureUniqueReferralCodesForCustomerInserts } from "@/lib/referral-codes";
 import { createServerComponentClient } from "@/lib/supabase";
 import { createApiLogger } from "@/lib/api-logger";
 import { validateWithSchema } from "@/lib/api-validation";
@@ -174,6 +175,11 @@ export async function POST(request: Request) {
       });
     }
 
+    const customersWithUniqueReferralCodes = await ensureUniqueReferralCodesForCustomerInserts({
+      supabase,
+      rows: customersToInsert,
+    });
+
     if (customersToInsert.length === 0) {
       return NextResponse.json(
         {
@@ -186,7 +192,7 @@ export async function POST(request: Request) {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { error: insertError } = await (supabase.from("customers") as any).insert(
-      customersToInsert,
+      customersWithUniqueReferralCodes,
     );
 
     if (insertError) {
@@ -201,13 +207,13 @@ export async function POST(request: Request) {
 
     logger.info("Customers imported", {
       businessId,
-      count: customersToInsert.length,
+      count: customersWithUniqueReferralCodes.length,
       userId: user.id,
     });
 
     return NextResponse.json({
-      success: `Imported ${customersToInsert.length} customer${
-        customersToInsert.length === 1 ? "" : "s"
+      success: `Imported ${customersWithUniqueReferralCodes.length} customer${
+        customersWithUniqueReferralCodes.length === 1 ? "" : "s"
       }. Referral links are live.`,
     });
   } catch (error) {

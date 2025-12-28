@@ -18,6 +18,12 @@ export type BusinessOnboardingMetadata = {
     crm?: IntegrationStatusValue;
     qa?: IntegrationStatusValue;
   };
+  notifications?: {
+    firstReferralReceivedAt?: string | null;
+    firstConversionCapturedAt?: string | null;
+    goLiveConfirmedAt?: string | null;
+    lastIntegrationHealthAlertAt?: string | null;
+  };
 };
 
 export const parseBusinessMetadata = (value: Json | null | undefined): BusinessOnboardingMetadata | null => {

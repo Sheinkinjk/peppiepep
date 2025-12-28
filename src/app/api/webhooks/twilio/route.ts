@@ -4,6 +4,8 @@ import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent } from "@/lib/referral-events";
 import { createApiLogger } from "@/lib/api-logger";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { shouldSendOnce } from "@/lib/alert-bucket";
+import { sendTransactionalEmail } from "@/lib/transactional-email";
 
 export async function POST(request: Request) {
   const logger = createApiLogger("api:webhooks:twilio");
@@ -18,6 +20,18 @@ export async function POST(request: Request) {
   const webhookSecret = process.env.TWILIO_WEBHOOK_TOKEN?.trim();
   if (!webhookSecret) {
     logger.error("TWILIO_WEBHOOK_TOKEN missing");
+    const shouldAlert = await shouldSendOnce({ key: "twilio_webhook_missing_token", ttlSeconds: 6 * 60 * 60 }).catch(
+      () => false,
+    );
+    if (shouldAlert) {
+      await sendTransactionalEmail({
+        to: (process.env.ADMIN_ALERT_EMAILS?.split(",").map((e) => e.trim()).filter(Boolean) ?? [
+          "jarred@referlabs.com.au",
+        ]) as string[],
+        subject: "Twilio webhook misconfigured (missing token)",
+        html: "<p><strong>TWILIO_WEBHOOK_TOKEN</strong> is missing, so delivery webhooks cannot be verified.</p>",
+      }).catch(() => null);
+    }
     return NextResponse.json(
       { error: "TWILIO_WEBHOOK_TOKEN is not configured" },
       { status: 500 },
@@ -27,6 +41,16 @@ export async function POST(request: Request) {
   const header = request.headers.get("authorization");
   if (header !== `Bearer ${webhookSecret}`) {
     logger.warn("Twilio webhook unauthorized");
+    const shouldAlert = await shouldSendOnce({ key: "twilio_webhook_unauthorized", ttlSeconds: 60 * 60 }).catch(() => false);
+    if (shouldAlert) {
+      await sendTransactionalEmail({
+        to: (process.env.ADMIN_ALERT_EMAILS?.split(",").map((e) => e.trim()).filter(Boolean) ?? [
+          "jarred@referlabs.com.au",
+        ]) as string[],
+        subject: "Twilio webhook unauthorized requests detected",
+        html: "<p>Received a Twilio webhook request with an invalid Authorization header.</p>",
+      }).catch(() => null);
+    }
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

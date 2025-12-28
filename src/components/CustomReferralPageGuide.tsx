@@ -491,7 +491,7 @@ trackConversion('SARAH50', 150.00);`,
           title: "Option 3: WordPress Plugin",
           content: (
             <p className="text-sm text-slate-700">
-              Use shortcodes to embed referral pages anywhere in WordPress. No coding required after plugin installation.
+              Use shortcodes to embed referral pages anywhere in WordPress. One-click install the plugin zip, then paste a shortcode block.
             </p>
           ),
           codeSnippets: [
@@ -499,7 +499,7 @@ trackConversion('SARAH50', 150.00);`,
               title: "WordPress Plugin Code",
               language: "php",
               code: codeSnippets.wordpressPlugin,
-              description: "Save as a plugin file and activate. Use shortcode [pepform_referral code=\"SARAH2024\"] on any page.",
+              description: "Recommended: install the plugin zip from /wordpress. Shortcode: [referlabs_referral code=\"SARAH2024\" height=\"720\" radius=\"32\"].",
             },
           ],
         },

@@ -88,46 +88,13 @@ function validateStep1(checks: {
 
   // Check program settings (required for completion)
   if (!checks.hasProgramSettings) {
-    items.push({
-      kind: "action_required",
-      label: "Complete business setup and reward configuration",
-      where: "In Refer Labs (Step 1)",
-      cta: { label: "Open Step 1", stepId: "setup-integration" },
-    });
     // Start at 0%, only give credit once settings are saved
   } else {
     completionPercentage += 70; // Primary requirement
   }
 
-  // Check integration setup (optional but recommended)
-  if (!checks.hasIntegrationSetup) {
-    items.push({
-      kind: "recommended",
-      label: "Verify website integration",
-      where: "On your website (install/verify snippet)",
-      cta: { label: "View Step 1", stepId: "setup-integration" },
-    });
-  } else {
-    completionPercentage += 15;
-  }
-
-  // Check discount capture (optional but recommended)
-  if (!checks.hasDiscountCapture) {
-    items.push({
-      kind: "recommended",
-      label: "Add the discount capture endpoint (if you use discount codes)",
-      where: "On your website / checkout system",
-      cta: { label: "View Step 1", stepId: "setup-integration" },
-    });
-  } else {
-    completionPercentage += 15;
-  }
-
-  items.push({
-    kind: "info_only",
-    label: "Tip: lock this in before inviting ambassadors so rewards stay consistent.",
-    where: "Info",
-  });
+  void checks.hasIntegrationSetup;
+  void checks.hasDiscountCapture;
 
   return {
     isComplete: checks.hasProgramSettings,

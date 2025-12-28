@@ -74,12 +74,6 @@ export function StickyHeader() {
             <nav className="hidden lg:flex items-center gap-2">
               <Link
                 className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
-                href="/"
-              >
-                Home
-              </Link>
-              <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/how-it-works"
               >
                 How it works
@@ -163,13 +157,6 @@ export function StickyHeader() {
           <div className="lg:hidden border-t border-[#D6EFF4] mt-3 bg-white text-[#00505B]">
             <nav className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-2">
               <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200 "
-                href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
                 className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/how-it-works"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -184,21 +171,21 @@ export function StickyHeader() {
                 Pricing
               </Link>
               <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
+                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/about"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
+                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/case-studies"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Case Studies
               </Link>
               <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-all duration-200"
+                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

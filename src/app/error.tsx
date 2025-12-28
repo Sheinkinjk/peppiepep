@@ -1,10 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
+import { ErrorShell } from "@/components/errors/ErrorShell";
 
 export default function GlobalError({
   error,
@@ -21,71 +18,13 @@ export default function GlobalError({
   return (
     <html>
       <body>
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-red-50 via-white to-white px-4">
-          <Card className="max-w-md w-full p-8 text-center">
-            {/* Error Icon */}
-            <div className="mb-6">
-              <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-gradient-to-br from-red-100 to-rose-100 shadow-lg shadow-red-200/50">
-                <AlertTriangle className="h-10 w-10 text-red-600" />
-              </div>
-            </div>
-
-            {/* Title and Message */}
-            <h1 className="text-3xl font-bold text-gray-900 mb-3">
-              Something went wrong
-            </h1>
-
-            <p className="text-gray-600 mb-6">
-              We encountered an unexpected error. This has been logged and we'll look into it.
-            </p>
-
-            {/* Error Details (only in development) */}
-            {process.env.NODE_ENV === 'development' && (
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6 text-left">
-                <p className="text-xs font-mono text-gray-700 break-all">
-                  {error.message}
-                </p>
-                {error.digest && (
-                  <p className="text-xs text-gray-500 mt-2">
-                    Error ID: {error.digest}
-                  </p>
-                )}
-              </div>
-            )}
-
-            {/* Action Buttons */}
-            <div className="space-y-3">
-              <Button
-                onClick={reset}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-500/30"
-              >
-                <RefreshCw className="mr-2 h-4 w-4" />
-                Try Again
-              </Button>
-
-              <Button
-                asChild
-                variant="outline"
-                className="w-full border-2 border-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-xl hover:bg-gray-50"
-              >
-                <Link href="/">
-                  <Home className="mr-2 h-4 w-4" />
-                  Go to Homepage
-                </Link>
-              </Button>
-
-              <Button
-                asChild
-                variant="link"
-                className="w-full text-gray-600 font-medium py-2 px-6 rounded-lg hover:text-gray-900 text-sm"
-              >
-                <Link href="/contact">
-                  Contact Support
-                </Link>
-              </Button>
-            </div>
-          </Card>
-        </div>
+        <ErrorShell
+          title="Something went wrong"
+          message="We hit an unexpected error. Try again, or check system status to confirm integrations are configured."
+          error={error}
+          reset={reset}
+          primaryCtaLabel="Try again"
+        />
       </body>
     </html>
   );

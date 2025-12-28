@@ -36,6 +36,10 @@ export function ReferralCompletionForm({
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsCompleting(true);
+    let ok = false;
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("pep-refresh-start", { detail: { source: "referral-complete" } }));
+    }
 
     const formData = new FormData(e.currentTarget);
 
@@ -55,6 +59,7 @@ export function ReferralCompletionForm({
         });
         setOpen(false);
         onCompleted?.();
+        ok = true;
       }
     } catch (error) {
       console.error("Completion error:", error);
@@ -65,6 +70,11 @@ export function ReferralCompletionForm({
       });
     } finally {
       setIsCompleting(false);
+      if (typeof window !== "undefined") {
+        window.setTimeout(() => {
+          window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "referral-complete", ok } }));
+        }, 800);
+      }
     }
   }
 

@@ -77,4 +77,42 @@ describe("customer import helper", () => {
       email: "lia@example.com",
     });
   });
+
+  it("builds name from first/last when full name missing", () => {
+    const customers = buildCustomersFromRows(
+      [{ "First Name": "  Lia ", "Last_Name": "  Monet  ", email: "lia@example.com" }],
+      { businessId, referralCodeFactory: () => "code" },
+    );
+
+    expect(customers).toHaveLength(1);
+    expect(customers[0]).toMatchObject({
+      name: "Lia Monet",
+      email: "lia@example.com",
+      referral_code: "code",
+    });
+  });
+
+  it("ignores whitespace-only contact fields", () => {
+    const customers = buildCustomersFromRows(
+      [{ name: "   ", email: "   ", phone: "   " }, { name: "Valid", email: "valid@example.com" }],
+      { businessId, referralCodeFactory: () => "code" },
+    );
+
+    expect(customers).toHaveLength(1);
+    expect(customers[0].name).toBe("Valid");
+  });
+
+  it("dedupes referral codes within a batch", () => {
+    const customers = buildCustomersFromRows(
+      [{ name: "A" }, { name: "B" }],
+      { businessId, referralCodeFactory: () => "dup" },
+    );
+
+    expect(customers).toHaveLength(2);
+    expect(customers[0].referral_code).toBeTruthy();
+    expect(customers[1].referral_code).toBeTruthy();
+    expect(customers[0].referral_code).not.toBe(customers[1].referral_code);
+    expect(customers[0].referral_code).toBe("dup");
+    expect(customers[1].referral_code).not.toBe("dup");
+  });
 });

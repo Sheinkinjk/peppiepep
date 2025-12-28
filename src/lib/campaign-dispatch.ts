@@ -4,6 +4,7 @@ import twilio from "twilio";
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent } from "@/lib/referral-events";
 import { buildCampaignEmail } from "@/lib/campaign-email";
+import { sendCampaignDeliveredSummaryOwnerEmail } from "@/lib/business-notifications";
 
 const DEFAULT_BATCH_SIZE = 25;
 const SITE_URL =
@@ -546,5 +547,24 @@ async function finalizeCampaigns(
       .from("campaigns")
       .update({ status: hasFailures ? "partial" : "completed" })
       .eq("id", campaignId);
+
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data: campaign } = await (supabase as any)
+        .from("campaigns")
+        .select("business_id")
+        .eq("id", campaignId)
+        .single();
+      const businessId = (campaign as { business_id?: string | null } | null)?.business_id ?? null;
+      if (businessId) {
+        await sendCampaignDeliveredSummaryOwnerEmail({
+          supabase,
+          campaignId,
+          businessId,
+        });
+      }
+    } catch (error) {
+      console.warn("Failed to send campaign summary email (non-fatal):", error);
+    }
   }
 }

@@ -56,7 +56,7 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
     .eq('user_id', user.id)
     .eq('is_active', true)
     .is('revoked_at', null)
-    .single();
+    .maybeSingle();
 
   // Fallback: some environments may have an admin role keyed to email rather than user_id
   // (e.g., if a user was re-created). If the user_id lookup fails, try the email match.
@@ -78,7 +78,7 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
     resolvedAdminRole = adminRoleByEmail;
   }
 
-  if (error) {
+  if (error && error.code !== "PGRST116") {
     console.warn("Admin role lookup by user_id failed:", error);
   }
 

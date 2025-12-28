@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { nanoid } from "nanoid";
 import { z } from "zod";
 
 import type { Database } from "@/types/supabase";
@@ -13,6 +12,7 @@ import { dispatchCampaignMessagesInline } from "@/lib/campaign-inline-dispatch";
 import { ensureAbsoluteUrl } from "@/lib/urls";
 import { createServerComponentClient } from "@/lib/supabase";
 import { resolveEmailCampaignMessage } from "@/lib/campaign-copy";
+import { generateUniqueReferralCode } from "@/lib/referral-codes";
 import { createApiLogger } from "@/lib/api-logger";
 import type { ApiLogger } from "@/lib/api-logger";
 import { parseJsonBody } from "@/lib/api-validation";
@@ -291,7 +291,7 @@ export async function POST(request: Request) {
     const selectedCustomersWithCodes = await Promise.all(
       customersData.map(async (customer) => {
         if (customer.referral_code) return customer;
-        const newCode = nanoid(12);
+        const newCode = await generateUniqueReferralCode({ supabase, length: 12 });
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await (supabase.from("customers") as any)
           .update({ referral_code: newCode })
@@ -499,12 +499,13 @@ export async function POST(request: Request) {
         .order("created_at", { ascending: true })
         .limit(messagesToInsert.length);
 
-      if (fetchedMessages && fetchedMessages.length > 0) {
-        messagesWithIds = fetchedMessages as Array<CampaignMessagePayload & { id: string }>;
-      }
+    if (fetchedMessages && fetchedMessages.length > 0) {
+      messagesWithIds = fetchedMessages as Array<CampaignMessagePayload & { id: string }>;
     }
+  }
 
-    const shouldDispatchInline = !wantsScheduledSend;
+    const dispatchDisabled = process.env.DISABLE_CAMPAIGN_DISPATCH === "1";
+    const shouldDispatchInline = !wantsScheduledSend && !dispatchDisabled;
     const inlineDispatch = shouldDispatchInline
       ? await dispatchCampaignMessagesInline({
           supabase,
@@ -524,15 +525,23 @@ export async function POST(request: Request) {
         : "";
 
     const scheduleNote = wantsScheduledSend ? ` Scheduled for ${scheduledAt.toLocaleString()}.` : "";
-    const dispatchNote = shouldDispatchInline
-      ? inlineDispatch.error
-        ? ` Dispatch failed: ${inlineDispatch.error}`
-        : inlineDispatch.sent > 0
-        ? " Dispatching now."
-        : " Our dispatcher will send them shortly."
-      : " Added to the dispatcher queue.";
+    const dispatchMode = wantsScheduledSend
+      ? "scheduled"
+      : shouldDispatchInline
+        ? "inline"
+        : "queued";
+    const dispatchNote =
+      dispatchMode === "inline"
+        ? inlineDispatch.error
+          ? ` Dispatch failed: ${inlineDispatch.error}`
+          : inlineDispatch.sent > 0
+            ? " Dispatching now."
+            : " Our dispatcher will send them shortly."
+        : dispatchDisabled
+          ? " Dispatch disabled (queued only)."
+          : " Added to the dispatcher queue.";
     const sendStatusLabel =
-      inlineDispatch.sent > 0 ? "Sending" : shouldDispatchInline ? "Queued" : "Scheduled";
+      inlineDispatch.sent > 0 ? "Sending" : dispatchMode === "scheduled" ? "Scheduled" : "Queued";
 
     revalidatePath("/dashboard");
 

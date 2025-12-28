@@ -36,6 +36,11 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
     }
 
     startTransition(async () => {
+      let ok = false;
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("pep-refresh-start", { detail: { source: "quick-add" } }));
+      }
+
       const formData = new FormData();
       formData.append("quick_name", name.trim());
       formData.append("quick_phone", phone.trim());
@@ -71,6 +76,7 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
         setPhone("");
         setEmail("");
         router.refresh();
+        ok = true;
       } catch (error) {
         console.error("Quick add failed:", error);
         toast({
@@ -82,6 +88,12 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
           type: "error",
           message: "An unexpected error occurred. Please try again.",
         });
+      } finally {
+        if (typeof window !== "undefined") {
+          window.setTimeout(() => {
+            window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "quick-add", ok } }));
+          }, 800);
+        }
       }
     });
   };

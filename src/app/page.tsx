@@ -136,33 +136,40 @@ const heroBadges: HeroBadgeSpec[] = [
     title: "NEW REFERRAL",
     text: "Jenny used a referral link",
     colors: ["#855b4c", "#a87261"],
-    position: "top-6 left-4 lg:top-4 lg:left-6",
+    position: "top-3 left-3 lg:top-4 lg:left-6",
   },
   {
     id: "hero-vip",
     title: "VIP BOOKING",
     text: "David confirmed a new order",
     colors: ["#2c5248", "#356757"],
-    position: "top-6 right-4 lg:top-4 lg:right-6",
+    position: "top-3 right-3 lg:top-4 lg:right-6",
   },
   {
     id: "hero-leaderboard",
     title: "LEADERBOARD",
     text: "Jake referred 24 orders",
     colors: ["#1f2c3b", "#3b4e5d"],
-    position: "bottom-8 left-4 lg:bottom-6 lg:left-6",
+    position: "bottom-3 left-3 lg:bottom-6 lg:left-6",
   },
   {
     id: "hero-revenue",
     title: "REVENUE",
     text: "$35,500 generated",
     colors: ["#3a3334", "#54484a"],
-    position: "bottom-8 right-4 lg:bottom-6 lg:right-6",
+    position: "bottom-3 right-3 lg:bottom-6 lg:right-6",
   },
 ];
 
 // Legacy position classes - no longer used in new redesign
 // Kept for reference if needed for other pages
+
+const heroBadgeOrientation: Record<string, string> = {
+  "hero-referral": "-rotate-2 origin-top-left",
+  "hero-vip": "rotate-2 origin-top-right",
+  "hero-leaderboard": "rotate-2 origin-bottom-left",
+  "hero-revenue": "-rotate-2 origin-bottom-right",
+};
 
 type PartnerLogoSpec = {
   id: string;
@@ -290,7 +297,7 @@ export default function Home() {
               <HeroBadge
                 key={badge.id}
                 badge={badge}
-                className={cn("absolute", badge.position)}
+                className={cn("absolute", badge.position, heroBadgeOrientation[badge.id])}
               />
             ))}
           </div>
@@ -301,7 +308,12 @@ export default function Home() {
               <HeroBadge
                 key={badge.id}
                 badge={badge}
-                className={cn("absolute hidden sm:flex", badge.position, "opacity-40")}
+                className={cn(
+                  "absolute hidden sm:flex",
+                  badge.position,
+                  heroBadgeOrientation[badge.id],
+                  "opacity-40",
+                )}
               />
             ))}
           </div>
@@ -313,19 +325,21 @@ export default function Home() {
                 <span className="block">Referral Programs</span>
               </h1>
               <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-900 sm:text-2xl lg:text-[1.75rem]">
-                We'll Activate Additional Revenue That Plugs Straight Into Your Sales and Marketing Strategy
+                We Unlock Additional Revenue by Integrating Directly With Your Sales and Marketing Strategy
               </p>
             </div>
-            <Link
-              href="/login"
-              className={cn(
-                buttonVariants({ variant: "cta" }),
-                "text-xl font-black px-12 py-5 shadow-xl shadow-teal-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              )}
-            >
-              Start Getting Referrals
-              <ArrowRight className="ml-3 h-6 w-6" />
-            </Link>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+              <Link
+                href="/login"
+                className={cn(
+                  buttonVariants({ variant: "cta" }),
+                  "text-xl font-black px-12 py-5 shadow-xl shadow-teal-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                )}
+              >
+                Start Getting Referrals
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Link>
+            </div>
 
           </div>
         </div>

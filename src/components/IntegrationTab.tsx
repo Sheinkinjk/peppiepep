@@ -8,6 +8,7 @@ import {
   ChevronDown,
   ChevronRight,
   Sparkles,
+  Wrench,
   Workflow,
 } from "lucide-react";
 import {
@@ -85,6 +86,7 @@ export function IntegrationTab({
   const [snapshotOpen, setSnapshotOpen] = useState(true);
   const [rewardsOpen, setRewardsOpen] = useState(true);
   const [guideOpen, setGuideOpen] = useState(true);
+  const [integrationsOpen, setIntegrationsOpen] = useState(true);
   const websiteGuideRef = useRef<HTMLDivElement | null>(null);
 
   // Business onboarding form state
@@ -748,214 +750,250 @@ export function IntegrationTab({
       </div>
 
       <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600">Step 1C · Integration step-by-step</p>
-            <h3 className="text-xl font-black text-slate-900">Follow the five proof points</h3>
-            <p className="text-sm text-slate-600">Use this guide to test every touchpoint while you complete Step 1.</p>
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600">Step 1C · Integrations</p>
+            <h3 className="text-xl font-black text-slate-900">Integrations</h3>
+            <p className="text-sm text-slate-600">
+              Setup what lives on your site, connect what lives in your internal systems, then run one end-to-end test before you go live.
+            </p>
           </div>
-          <button
-            type="button"
-            onClick={() => setGuideOpen((prev) => !prev)}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600"
-          >
-            {guideOpen ? "Collapse" : "Expand"}
-            <ChevronDown className={`h-4 w-4 transition-transform ${guideOpen ? "rotate-180" : ""}`} />
-          </button>
-        </div>
-        {guideOpen && (
-          <div className="mt-6 space-y-5 text-sm text-slate-600">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">1. Configure rewards + copy (Step 1B)</p>
-              <p>Save both referral rewards and optional sign-on bonus. Preview the copy on your hosted referral page afterwards.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">2. Create a test ambassador (Step 2)</p>
-              <p>Use Quick Add -&gt; copy the referral link and discount code. Keep them handy for the QA steps below.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">3. Embed the referral form</p>
-              <p>Drop the iframe/button snippet on your website, or use the WordPress shortcode. Update the integration tracker in Step 1A once you can see your branded offer live.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">4. Test tracking</p>
-              <p>Open the test ambassador link in an incognito window, submit the referral form, and confirm link visits + signups appear in Step 5 -&gt; Journey timeline.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">5. Trigger a checkout event</p>
-              <p>Use the discount capture endpoint (Shopify/WooCommerce/custom) and verify the pending referral shows with the right ambassador + transaction value.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">6. Promote with your CRM</p>
-              <p>Export ambassadors, map the referral_link merge field, and send yourself a CRM campaign that deep links back to Refer Labs for analytics.</p>
-            </div>
-          </div>
-        )}
-      </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div ref={websiteGuideRef}>
-          <Collapsible open={openSection === "website"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "website" : null)}>
-            <CollapsibleTrigger className="w-full">
-              <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3 flex-1 text-left">
-                    <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#0abab5] to-cyan-500 flex items-center justify-center">
-                    <Globe className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">Website & Shopify Integration</h3>
-                    <p className="text-sm text-slate-600">Embed referral pages and CTA buttons on your site</p>
-                  </div>
-                </div>
-                {openSection === "website" ? (
-                  <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                ) : (
-                  <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                )}
-              </div>
-            </div>
-            </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4">
-              <WebsiteIntegrationCard
-                siteUrl={siteUrl}
-                businessName={businessName}
-                offerText={offerText}
-                clientRewardText={clientRewardText}
-                newUserRewardText={newUserRewardText}
-                discountCaptureSecret={discountCaptureSecret ?? null}
-              />
-            </CollapsibleContent>
-          </Collapsible>
+          <div className="flex flex-wrap items-center gap-2">
+            <span
+              className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                websiteStatus === "complete"
+                  ? "bg-emerald-50 text-emerald-700"
+                  : websiteStatus === "in_progress"
+                    ? "bg-amber-50 text-amber-700"
+                    : "bg-slate-100 text-slate-700"
+              }`}
+            >
+              Website: {statusOptions.find((option) => option.value === websiteStatus)?.label ?? "Not started"}
+            </span>
+            <span
+              className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                crmStatus === "complete"
+                  ? "bg-emerald-50 text-emerald-700"
+                  : crmStatus === "in_progress"
+                    ? "bg-amber-50 text-amber-700"
+                    : "bg-slate-100 text-slate-700"
+              }`}
+            >
+              CRM: {statusOptions.find((option) => option.value === crmStatus)?.label ?? "Not started"}
+            </span>
+            <span
+              className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                qaStatus === "complete"
+                  ? "bg-emerald-50 text-emerald-700"
+                  : qaStatus === "in_progress"
+                    ? "bg-amber-50 text-amber-700"
+                    : "bg-slate-100 text-slate-700"
+              }`}
+            >
+              Go-live: {statusOptions.find((option) => option.value === qaStatus)?.label ?? "Not started"}
+            </span>
+
+            <button
+              type="button"
+              onClick={() => setIntegrationsOpen((prev) => !prev)}
+              className="ml-1 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-700 hover:bg-slate-50"
+            >
+              {integrationsOpen ? "Collapse" : "Expand"}
+              <ChevronDown className={`h-4 w-4 transition-transform ${integrationsOpen ? "rotate-180" : ""}`} />
+            </button>
+          </div>
         </div>
 
-        <Collapsible open={openSection === "crm"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "crm" : null)}>
-          <CollapsibleTrigger className="w-full">
-            <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 flex-1 text-left">
-                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
-                    <Workflow className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">CRM & automation guide</h3>
-                    <p className="text-sm text-slate-600">Map referral links, export ambassadors, and test API calls</p>
-                  </div>
-                </div>
-                {openSection === "crm" ? (
-                  <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                ) : (
-                  <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                )}
-              </div>
-            </div>
-          </CollapsibleTrigger>
-          <CollapsibleContent className="mt-4">
-            <CRMIntegrationGuideCard
-              siteUrl={siteUrl}
-              businessName={businessName}
-              discountCaptureSecret={discountCaptureSecret}
-            />
-          </CollapsibleContent>
-        </Collapsible>
-      </div>
+        <div className="mt-5 grid gap-4 sm:grid-cols-3">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+            <p className="text-sm font-bold text-slate-900">Setup</p>
+            <p className="mt-1 text-sm text-slate-600">Embed referral pages and connect your conversion source.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+            <p className="text-sm font-bold text-slate-900">Testing</p>
+            <p className="mt-1 text-sm text-slate-600">Run one click → signup → conversion test and confirm attribution.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+            <p className="text-sm font-bold text-slate-900">Live</p>
+            <p className="mt-1 text-sm text-slate-600">Roll out to ambassadors and monitor real-time dashboard updates.</p>
+          </div>
+        </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Collapsible open={openSection === "wordpress"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "wordpress" : null)}>
-          <CollapsibleTrigger className="w-full">
-            <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 flex-1 text-left">
-                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 flex items-center justify-center">
-                    <Globe className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">WordPress &amp; WooCommerce Setup</h3>
-                    <p className="text-sm text-slate-600">Add referral pages and discount capture to WordPress sites</p>
-                  </div>
-                </div>
-                {openSection === "wordpress" ? (
-                  <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                ) : (
-                  <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                )}
-              </div>
-            </div>
-          </CollapsibleTrigger>
-          <CollapsibleContent className="mt-4">
-            <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
-              <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-600">
-                <li>Create a new page and add a Custom HTML block</li>
-                <li>Use the shortcode below (swap <code className="font-mono text-xs">YOURCODE</code> with ambassador&rsquo;s code)</li>
-                <li>For WooCommerce, paste the PHP hook into <code className="font-mono text-xs">functions.php</code></li>
-              </ol>
-              <div className="grid gap-4 lg:grid-cols-2">
-                <div className="space-y-2">
-                  <p className="text-sm font-semibold text-slate-800">Gutenberg shortcode</p>
-                  <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
-{`add_shortcode('referlabs_referral', function($atts = []) {
-  $code = isset($atts['code']) ? esc_attr($atts['code']) : 'VIPCODE1234';
-  return '<iframe src="${siteUrl}/r/' . $code . '?embed=1" style="width:100%;min-height:640px;border:none;border-radius:32px;"></iframe>';
-});`}
-                  </pre>
-                  <p className="text-xs text-slate-500">
-                    Usage: <code className="font-mono">[referlabs_referral code=&quot;AMBCODE&quot;]</code>
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-sm font-semibold text-slate-800">WooCommerce capture</p>
-                  <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
-{`add_action('woocommerce_checkout_create_order', function($order) {
-  $code = $order-&gt;get_coupon_codes() ? reset($order-&gt;get_coupon_codes()) : null;
-  if (!$code) {
-    $code = $order-&gt;get_meta('discount_code') ?: null;
-  }
-  if (!$code) return;
-  wp_remote_post('${siteUrl}/api/discount-codes/redeem', [
-    'headers' => [
-      'Content-Type' => 'application/json',
-      'x-pepf-discount-secret' => '${discountCaptureSecret ?? "<ADD_SECRET>"}',
-    ],
-    'body' => wp_json_encode([
-      'discountCode' => $code,
-      'orderReference' => $order-&gt;get_order_number(),
-      'amount' => (float) $order-&gt;get_total(),
-      'source' => 'woocommerce',
-    ]),
-    'timeout' => 12,
-  ]);
-}, 20, 1);`}
-                  </pre>
-                </div>
-              </div>
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
+          <p className="text-sm font-semibold text-slate-900">
+            Need a step-by-step guide?
+            <br />
+            Follow the dedicated setup pages (with built-in testing checkpoints) for each platform.
+          </p>
+        </div>
 
-        <Collapsible open={openSection === "discount"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "discount" : null)}>
-          <CollapsibleTrigger className="w-full">
-            <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 flex-1 text-left">
-                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
-                    <Code2 className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">Discount capture endpoint</h3>
-                    <p className="text-sm text-slate-600">API call for checkout, Shopify, or POS integration</p>
-                  </div>
-                </div>
-                {openSection === "discount" ? (
-                  <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                ) : (
-                  <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                )}
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/shopify" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify</a>
+          <a href="/wordpress" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">WordPress</a>
+          <a href="/webflow" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Webflow</a>
+          <a href="/squarespace" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Squarespace</a>
+          <a href="/wix" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Wix</a>
+          <a href="/gtm" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Tag Manager (GTM)</a>
+          <a href="/analytics" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Analytics</a>
+          <a href="/go-live" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Go-Live Checklist</a>
+          <a href="/meta-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Meta Ads</a>
+          <a href="/google-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Ads</a>
+          <a href="/tiktok-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">TikTok Ads</a>
+          <a href="/integrations" className="rounded-2xl border border-slate-200 bg-slate-900 px-4 py-3 text-sm font-bold text-white hover:bg-slate-800">View all guides</a>
+        </div>
+        {integrationsOpen && (
+          <>
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
+              <div ref={websiteGuideRef}>
+                <Collapsible open={openSection === "website"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "website" : null)}>
+                  <CollapsibleTrigger className="w-full">
+                    <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3 flex-1 text-left">
+                          <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#0abab5] to-cyan-500 flex items-center justify-center">
+                            <Globe className="h-6 w-6 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-slate-900">Website &amp; Shopify Integration</h3>
+                            <p className="text-sm text-slate-600">Embed referral pages, CTA buttons, and tracking scripts</p>
+                          </div>
+                        </div>
+                        {openSection === "website" ? (
+                          <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                        ) : (
+                          <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                        )}
+                      </div>
+                    </div>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-4">
+                    <WebsiteIntegrationCard
+                      siteUrl={siteUrl}
+                      businessName={businessName}
+                      offerText={offerText}
+                      clientRewardText={clientRewardText}
+                      newUserRewardText={newUserRewardText}
+                      discountCaptureSecret={discountCaptureSecret ?? null}
+                    />
+                  </CollapsibleContent>
+                </Collapsible>
               </div>
+
+              <Collapsible open={openSection === "crm"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "crm" : null)}>
+                <CollapsibleTrigger className="w-full">
+                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 flex-1 text-left">
+                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
+                          <Workflow className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-slate-900">CRM &amp; Automation Setup</h3>
+                          <p className="text-sm text-slate-600">Map referral links, connect automations, and test API calls end-to-end</p>
+                        </div>
+                      </div>
+                      {openSection === "crm" ? (
+                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      ) : (
+                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      )}
+                    </div>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-4">
+                  <CRMIntegrationGuideCard
+                    siteUrl={siteUrl}
+                    businessName={businessName}
+                    discountCaptureSecret={discountCaptureSecret}
+                    crmPlatform={crmPlatform}
+                  />
+                </CollapsibleContent>
+              </Collapsible>
             </div>
-          </CollapsibleTrigger>
-        <CollapsibleContent className="mt-4">
-          <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
-            <pre className="rounded-2xl bg-slate-900/95 p-4 text-xs text-slate-100 overflow-x-auto">
+
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
+              <Collapsible open={openSection === "wordpress"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "wordpress" : null)}>
+                <CollapsibleTrigger className="w-full">
+                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 flex-1 text-left">
+                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 flex items-center justify-center">
+                          <Globe className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-slate-900">WordPress &amp; WooCommerce Setup</h3>
+                          <p className="text-sm text-slate-600">Add referral pages, capture discounts, and verify attribution</p>
+                        </div>
+                      </div>
+                      {openSection === "wordpress" ? (
+                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      ) : (
+                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      )}
+                    </div>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-4">
+                  <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
+                    <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4">
+                      <p className="text-sm font-bold text-emerald-900">Recommended: install the WordPress plugin (one click)</p>
+                      <p className="mt-1 text-sm text-emerald-900/80">
+                        Download the plugin zip, install it in WordPress, and embed any ambassador&rsquo;s referral page with a shortcode.
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-3">
+                        <a
+                          href="/referlabs-referral-integration.zip"
+                          className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-4 py-2 text-sm font-bold text-white hover:bg-emerald-800"
+                        >
+                          Download plugin zip
+                        </a>
+                        <a
+                          href="/wordpress"
+                          className="inline-flex items-center gap-2 rounded-xl border border-emerald-300 bg-white px-4 py-2 text-sm font-bold text-emerald-800 hover:bg-emerald-50"
+                        >
+                          View install guide
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold text-slate-800">Shortcode (paste into a Shortcode block)</p>
+                      <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
+{`[referlabs_referral code="AMBCODE" height="720" radius="32" utm_source="wordpress"]`}
+                      </pre>
+                      <p className="text-xs text-slate-500">
+                        Required: <code className="font-mono">code</code>. Optional: <code className="font-mono">height</code>, <code className="font-mono">radius</code>, <code className="font-mono">embed</code>, <code className="font-mono">utm_campaign</code>.
+                      </p>
+                    </div>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+
+              <Collapsible open={openSection === "discount"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "discount" : null)}>
+                <CollapsibleTrigger className="w-full">
+                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 flex-1 text-left">
+                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
+                          <Code2 className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-slate-900">Discount Capture Endpoint</h3>
+                          <p className="text-sm text-slate-600">Configure endpoints to capture and validate discount usage</p>
+                        </div>
+                      </div>
+                      {openSection === "discount" ? (
+                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      ) : (
+                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      )}
+                    </div>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-4">
+                  <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
+                    <pre className="rounded-2xl bg-slate-900/95 p-4 text-xs text-slate-100 overflow-x-auto">
 {`POST ${normalizedSite}/api/discount-codes/redeem
 Headers:
   x-pepf-discount-secret: ${discountCaptureSecret ?? "<Generate this secret in Program Settings>"}
@@ -966,11 +1004,134 @@ Body:
   "amount": 450,
   "source": "shopify-checkout"
 }`}
-            </pre>
-          </div>
-        </CollapsibleContent>
-        </Collapsible>
+                    </pre>
+                    <p className="text-xs text-slate-500">
+                      Use a real ambassador discount code, run one test conversion, and confirm it appears in the dashboard with the correct attribution.
+                    </p>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
+            <div className="mt-6">
+              <Collapsible open={openSection === "checkout"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "checkout" : null)}>
+                <CollapsibleTrigger className="w-full">
+                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 flex-1 text-left">
+                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-500 flex items-center justify-center">
+                          <Wrench className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-slate-900">API &amp; Checkout Integrations</h3>
+                          <p className="text-sm text-slate-600">Implement API calls for checkout, Shopify, POS, or custom flows</p>
+                        </div>
+                      </div>
+                      {openSection === "checkout" ? (
+                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      ) : (
+                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
+                      )}
+                    </div>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-4">
+                  <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
+                    <p className="text-sm text-slate-700">
+                      This is the layer that makes attribution and rewards reliable. When a conversion happens, your system should send a server-side signal (webhook or API call).
+                    </p>
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                      <a href="/stripe" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Stripe</a>
+                      <a href="/shopify/checkout-extensibility" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify Checkout Extensibility</a>
+                      <a href="/square" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Square POS</a>
+                      <a href="/calendly" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Calendly</a>
+                      <a href="/servicem8" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">ServiceM8</a>
+                      <a href="/api-guide" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Custom API</a>
+                    </div>
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 text-sm text-slate-700">
+                      <p className="font-bold text-slate-900">Go-live sanity check</p>
+                      <p className="mt-1">
+                        Run the full checklist at <a href="/go-live" className="font-semibold underline">/go-live</a> before inviting ambassadors.
+                      </p>
+                    </div>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+          </>
+        )}
       </div>
+
+      <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600">Step 1D · Integration Step-by-Step</p>
+            <h3 className="text-xl font-black text-slate-900">Integration Step-by-Step</h3>
+            <p className="text-sm text-slate-600">Use this walkthrough to verify each touchpoint in order, end-to-end.</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setGuideOpen((prev) => !prev)}
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600"
+          >
+            {guideOpen ? "Collapse" : "Expand"}
+            <ChevronDown className={`h-4 w-4 transition-transform ${guideOpen ? "rotate-180" : ""}`} />
+          </button>
+        </div>
+	        {guideOpen && (
+	          <div className="mt-6 space-y-5 text-sm text-slate-600">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+              <p className="font-bold text-slate-900">1. Configure rewards + copy (Step 1B)</p>
+              <p>Save both referral rewards and optional sign-on bonus. Preview the copy on your hosted referral page afterwards.</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+              <p className="font-bold text-slate-900">2. Create a test ambassador (Step 2)</p>
+              <p>Use Quick Add -&gt; copy the referral link and discount code. Keep them handy for the QA steps below.</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+              <p className="font-bold text-slate-900">3. Embed the referral form</p>
+              <p>
+                Drop the iframe/button snippet on your website, or use the WordPress shortcode plugin. Follow the install guide at{" "}
+                <a href="/wordpress" className="font-semibold text-slate-900 underline hover:text-slate-700">/wordpress</a>.
+                Update the integration tracker in Step 1A once you can see your branded offer live.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+              <p className="font-bold text-slate-900">4. Test tracking</p>
+              <p>Open the test ambassador link in an incognito window, submit the referral form, and confirm link visits + signups appear in Step 5 -&gt; Journey timeline.</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+              <p className="font-bold text-slate-900">5. Trigger a checkout event</p>
+              <p>
+                Use the discount capture endpoint (Shopify/WooCommerce/custom) and verify the pending referral shows with the right ambassador + transaction value. Shopify guide:{" "}
+                <a href="/shopify" className="font-semibold text-slate-900 underline hover:text-slate-700">/shopify</a>.
+              </p>
+            </div>
+	            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+	              <p className="font-bold text-slate-900">6. Promote with your CRM</p>
+	              <p>Export ambassadors, map the referral_link merge field, and send yourself a CRM campaign that deep links back to Refer Labs for analytics.</p>
+	            </div>
+	          </div>
+	        )}
+
+	        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/60 p-4 text-sm text-slate-700">
+	          <p className="font-bold text-slate-900">Recommended order</p>
+	          <p className="mt-1">
+	            Start with your website platform guide (Shopify/WordPress/Webflow/etc), then verify conversion capture (Stripe/POS/booking), then finish with analytics/ad tags.
+	          </p>
+	          <div className="mt-3 flex flex-wrap gap-2">
+	            <a href="/integrations" className="rounded-xl bg-slate-900 px-3 py-2 text-xs font-bold text-white hover:bg-slate-800">View all guides</a>
+	            <a href="/go-live" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Go-live checklist</a>
+	            <a href="/gtm" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">GTM</a>
+	            <a href="/analytics" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Analytics</a>
+	            <a href="/meta-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Meta Ads</a>
+	            <a href="/google-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Google Ads</a>
+	            <a href="/tiktok-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">TikTok Ads</a>
+	          </div>
+	        </div>
+	      </div>
+
+      
     </div>
   );
 }

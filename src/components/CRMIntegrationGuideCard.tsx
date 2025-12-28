@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ClipboardList, Link2, Webhook, Check, Copy } from "lucide-react";
@@ -9,11 +10,45 @@ type CRMIntegrationGuideCardProps = {
   siteUrl: string;
   businessName: string;
   discountCaptureSecret?: string | null;
+  crmPlatform?: string;
 };
 
-export function CRMIntegrationGuideCard({ siteUrl, businessName, discountCaptureSecret }: CRMIntegrationGuideCardProps) {
+export function CRMIntegrationGuideCard({
+  siteUrl,
+  businessName,
+  discountCaptureSecret,
+  crmPlatform,
+}: CRMIntegrationGuideCardProps) {
   const normalizedSite = siteUrl && siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl || "https://referlabs.com.au";
   const [copied, setCopied] = useState(false);
+  const normalizedPlatform = (crmPlatform ?? "").trim().toLowerCase();
+
+  const crmGuides = [
+    { label: "Klaviyo", href: "/klaviyo" },
+    { label: "Mailchimp", href: "/mailchimp" },
+    { label: "HubSpot", href: "/hubspot" },
+  ];
+
+  const automationGuides = [
+    { label: "Zapier", href: "/zapier" },
+    { label: "Make", href: "/make" },
+    { label: "Custom API", href: "/api-guide" },
+  ];
+
+  const posBookingGuides = [
+    { label: "Square POS", href: "/square" },
+    { label: "Calendly", href: "/calendly" },
+    { label: "ServiceM8", href: "/servicem8" },
+  ];
+
+  const recommendedGuide =
+    normalizedPlatform === "klaviyo"
+      ? "/klaviyo"
+      : normalizedPlatform === "mailchimp"
+        ? "/mailchimp"
+        : normalizedPlatform === "hubspot"
+          ? "/hubspot"
+          : null;
 
   const samplePayload = JSON.stringify(
     {
@@ -71,6 +106,56 @@ export function CRMIntegrationGuideCard({ siteUrl, businessName, discountCapture
         <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Step 1C · CRM integration</p>
         <h3 className="text-xl sm:text-2xl font-black text-slate-900">Connect {businessName || "your business"} to your CRM</h3>
         <p className="text-sm text-slate-600">Use this card to brief your ops team and test a conversion before you import ambassadors.</p>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {crmGuides.map((guide) => {
+          const isRecommended = recommendedGuide === guide.href;
+          return (
+            <Link
+              key={guide.href}
+              href={guide.href}
+              className={
+                isRecommended
+                  ? "rounded-xl bg-indigo-600 px-3 py-2 text-xs font-bold text-white hover:bg-indigo-700"
+                  : "rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+              }
+            >
+              {guide.label}
+              {isRecommended ? " (recommended)" : ""}
+            </Link>
+          );
+        })}
+        <Link
+          href="/integrations"
+          className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+        >
+          All guides
+        </Link>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {automationGuides.map((guide) => (
+          <Link
+            key={guide.href}
+            href={guide.href}
+            className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+          >
+            {guide.label}
+          </Link>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {posBookingGuides.map((guide) => (
+          <Link
+            key={guide.href}
+            href={guide.href}
+            className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+          >
+            {guide.label}
+          </Link>
+        ))}
       </div>
 
       <div className="space-y-4">

@@ -51,10 +51,10 @@ export async function GET(request: Request) {
     const queryValidation = validateWithSchema(
       paramsSchema,
       {
-        q: url.searchParams.get("q"),
-        status: url.searchParams.get("status"),
-        page: url.searchParams.get("page"),
-        pageSize: url.searchParams.get("pageSize"),
+        q: url.searchParams.get("q") ?? undefined,
+        status: url.searchParams.get("status") ?? undefined,
+        page: url.searchParams.get("page") ?? undefined,
+        pageSize: url.searchParams.get("pageSize") ?? undefined,
       },
       logger,
     );

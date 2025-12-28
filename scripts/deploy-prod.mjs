@@ -3,16 +3,31 @@ import { spawn } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const vercelBin = path.join(projectRoot, "node_modules", ".bin", "vercel");
 const npxBin = process.platform === "win32" ? "npx.cmd" : "npx";
 const deploymentUrlPattern = /https:\/\/peppiepep-[a-z0-9-]+\.vercel\.app/gi;
+const vercelProjectConfigPath = path.join(projectRoot, ".vercel", "project.json");
+
+function getVercelScope() {
+  try {
+    const raw = fs.readFileSync(vercelProjectConfigPath, "utf8");
+    const parsed = JSON.parse(raw);
+    return typeof parsed?.orgId === "string" ? parsed.orgId : null;
+  } catch {
+    return null;
+  }
+}
+
+const vercelScope = getVercelScope();
 
 function runVercelAndCapture(args) {
   return new Promise((resolve, reject) => {
-    const child = spawn(vercelBin, args, {
+    const scopedArgs = vercelScope ? [...args, "--scope", vercelScope] : args;
+    const child = spawn(vercelBin, scopedArgs, {
       cwd: projectRoot,
       stdio: ["inherit", "pipe", "pipe"],
       env: process.env,
@@ -40,15 +55,22 @@ function runVercelAndCapture(args) {
     child.on("close", (code) => {
       if (code === 0) {
         resolve({ stdout, stderr });
-      } else {
-        const error = new Error(
-          `vercel ${args.join(" ")} exited with code ${code ?? "unknown"}`,
-        );
-        error.stdout = stdout;
-        error.stderr = stderr;
-        error.code = code;
-        reject(error);
+        return;
       }
+
+      // Vercel `promote` returns exit code 1 for "already current production" (409).
+      if (args[0] === "promote" && /already the current production deployment/i.test(stderr)) {
+        resolve({ stdout, stderr });
+        return;
+      }
+
+      const error = new Error(
+        `vercel ${args.join(" ")} exited with code ${code ?? "unknown"}`,
+      );
+      error.stdout = stdout;
+      error.stderr = stderr;
+      error.code = code;
+      reject(error);
     });
   });
 }
@@ -118,6 +140,9 @@ async function main() {
   console.log(`\n🔗 Detected deployment: ${deploymentUrl}`);
   console.log("📌 Updating peppiepep.vercel.app alias...");
   await runVercelAndCapture(["alias", deploymentUrl, "peppiepep.vercel.app"]);
+
+  console.log("📌 Promoting deployment to current production...");
+  await runVercelAndCapture(["promote", deploymentUrl, "--yes"]);
   console.log("✅ Deployment live at https://peppiepep.vercel.app");
 }
 

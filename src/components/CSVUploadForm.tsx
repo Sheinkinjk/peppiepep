@@ -19,6 +19,7 @@ export function CSVUploadForm() {
     e.preventDefault();
     const formElement = e.currentTarget;
     setIsUploading(true);
+    let ok = false;
 
     const file = fileInputRef.current?.files?.[0];
     if (!file) {
@@ -37,6 +38,10 @@ export function CSVUploadForm() {
 
     const formData = new FormData();
     formData.append("file", file);
+
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("pep-refresh-start", { detail: { source: "customer-upload" } }));
+    }
 
     try {
       const response = await fetch("/api/customers/upload", {
@@ -66,6 +71,7 @@ export function CSVUploadForm() {
       formElement.reset();
       setFileName("");
       router.refresh();
+      ok = true;
     } catch (error) {
       console.error("Upload error:", error);
       const message =
@@ -81,6 +87,11 @@ export function CSVUploadForm() {
       });
     } finally {
       setIsUploading(false);
+      if (typeof window !== "undefined") {
+        window.setTimeout(() => {
+          window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "customer-upload", ok } }));
+        }, 800);
+      }
     }
   }
 

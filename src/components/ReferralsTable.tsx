@@ -14,6 +14,7 @@ import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
 import { BulkActionDialog } from "@/components/BulkActionDialog";
 import { toast } from "@/hooks/use-toast";
+import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
 
@@ -36,6 +37,7 @@ type ReferralsApiResponse = {
 type ReferralsTableProps = {
   initialReferrals?: ReferralRecord[];
   initialTotal?: number;
+  businessId: string;
   completionAction: (
     formData: FormData,
   ) => Promise<{ error?: string; success?: string }>;
@@ -69,6 +71,7 @@ const csvColumns: CsvColumn<ReferralRecord>[] = [
 export function ReferralsTable({
   initialReferrals = [],
   initialTotal = 0,
+  businessId,
   completionAction,
 }: ReferralsTableProps) {
   const bootstrappedReferrals = useMemo(
@@ -131,6 +134,10 @@ export function ReferralsTable({
       abortRef.current = controller;
       setIsLoading(true);
       setError(null);
+      let ok = false;
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("pep-refresh-start", { detail: { source: "referrals" } }));
+      }
 
       try {
         const params = new URLSearchParams({
@@ -154,6 +161,7 @@ export function ReferralsTable({
         setReferrals(payload.data ?? []);
         setTotal(payload.total ?? 0);
         setPage(payload.page ?? targetPage);
+        ok = true;
 
         if (payload.data) {
           setSelectedRows((prev) => {
@@ -174,6 +182,9 @@ export function ReferralsTable({
       } finally {
         if (!controller.signal.aborted) {
           setIsLoading(false);
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "referrals", ok } }));
+          }
         }
       }
     },
@@ -199,6 +210,34 @@ export function ReferralsTable({
       limit: pageSize,
     });
   }, [fetchPage, page, debouncedSearch, statusFilter, sourceFilter, pageSize]);
+
+  useEffect(() => {
+    if (!businessId) return;
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      return;
+    }
+
+    const supabase = createBrowserSupabaseClient();
+    const channel = supabase
+      .channel(`referrals-${businessId}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "referrals",
+          filter: `business_id=eq.${businessId}`,
+        },
+        () => {
+          refreshCurrentPage();
+        },
+      )
+      .subscribe();
+
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [businessId, refreshCurrentPage]);
 
   const toggleSelection = (row: ReferralRecord) => {
     setSelectedIds((prev) => {

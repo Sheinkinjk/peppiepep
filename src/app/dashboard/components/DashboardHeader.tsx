@@ -1,8 +1,10 @@
 "use client";
 
 import { DashboardExplainerDialog } from "@/components/DashboardExplainerDialog";
-import { Users, Send, TrendingUp, DollarSign, CheckCircle2, Circle, AlertCircle, ArrowRight, Info, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { Users, Send, TrendingUp, DollarSign, CheckCircle2, Circle, AlertCircle, ArrowRight, Info, Sparkles, Settings, CreditCard } from "lucide-react";
 import { type StepChecklistItem, type StepChecklistItemKind, type StepValidations } from "@/lib/step-validation";
+import { DashboardFreshnessIndicator } from "./DashboardFreshnessIndicator";
 
 type DashboardHeaderProps = {
   ambassadorCount: number;
@@ -12,6 +14,7 @@ type DashboardHeaderProps = {
   validations: StepValidations;
   currentStep: string | null;
   overallProgress: number;
+  showAdminLinks?: boolean;
 };
 
 export function DashboardHeader({
@@ -22,6 +25,7 @@ export function DashboardHeader({
   validations,
   currentStep,
   overallProgress,
+  showAdminLinks = false,
 }: DashboardHeaderProps) {
   const steps = [
     { id: 'setup-integration', number: 1, label: 'Setup' },
@@ -63,6 +67,25 @@ export function DashboardHeader({
           </p>
         </div>
         <div className="flex items-center gap-3">
+          {showAdminLinks && (
+            <div className="hidden sm:flex items-center gap-2">
+              <Link
+                href="/dashboard/admin-master"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+              >
+                <Settings className="h-4 w-4" />
+                Master Admin
+              </Link>
+              <Link
+                href="/dashboard/admin-payments"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+              >
+                <CreditCard className="h-4 w-4" />
+                Admin Payments
+              </Link>
+            </div>
+          )}
+          <DashboardFreshnessIndicator />
           {currentStep && (
             <button
               type="button"
@@ -187,7 +210,6 @@ export function DashboardHeader({
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div className="min-w-0">
                           <p className="text-sm font-semibold text-slate-900">{item.label}</p>
-                          <p className="mt-0.5 text-xs text-slate-600">Where: {item.where}</p>
                         </div>
                         {item.cta && (
                           <button
@@ -227,7 +249,6 @@ export function DashboardHeader({
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div className="min-w-0">
                           <p className="text-sm font-semibold text-slate-900">{item.label}</p>
-                          <p className="mt-0.5 text-xs text-slate-600">Where: {item.where}</p>
                         </div>
                         {item.cta && (
                           <button

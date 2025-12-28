@@ -4,9 +4,13 @@ import { useEffect, useState } from "react";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 export function SupabaseSessionListener() {
-  const [supabase] = useState(() => createBrowserSupabaseClient());
+  const hasSupabaseConfig = Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  );
+  const [supabase] = useState(() => (hasSupabaseConfig ? createBrowserSupabaseClient() : null));
 
   useEffect(() => {
+    if (!supabase) return;
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {

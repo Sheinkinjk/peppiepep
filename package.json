@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/build-wordpress-plugin.mjs",
     "dev": "next dev",
     "dev:env": "set -a && source .env.local && npm run dev",
     "build": "next build",
@@ -10,6 +11,8 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:auth-flow": "node scripts/test-auth-flow.mjs",
+    "test:attribution-cookie": "node scripts/test-attribution-cookie.mjs",
+    "test:dashboard-e2e": "node scripts/test-dashboard-e2e.mjs",
     "supabase:types": "supabase gen types typescript --project-id $SUPABASE_PROJECT_ID > src/types/supabase.ts",
     "deploy:prod": "node scripts/deploy-prod.mjs"
   },

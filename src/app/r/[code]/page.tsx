@@ -65,12 +65,13 @@ type ReferralSearchParams = Record<string, string | string[] | undefined>;
 
 interface ReferralPageProps {
   params: Promise<{ code: string }>;
-  searchParams?: ReferralSearchParams;
+  searchParams?: Promise<ReferralSearchParams>;
 }
 
 export default async function ReferralPage({ params, searchParams }: ReferralPageProps) {
   const supabase = await createServiceClient();
   const { code } = await params;
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
 
   const { data: customer } = await supabase
     .from("customers")
@@ -99,8 +100,8 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
     params.set("business_id", customerWithBusiness.business_id);
 
     // Pass through any UTM or tracking parameters
-    if (searchParams) {
-      Object.entries(searchParams).forEach(([key, value]) => {
+    if (resolvedSearchParams) {
+      Object.entries(resolvedSearchParams).forEach(([key, value]) => {
         const strValue = Array.isArray(value) ? value[0] : value;
         if (strValue) {
           params.set(key, strValue);
@@ -157,8 +158,8 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   } as const;
 
   const getParam = (key: string) => {
-    if (!searchParams) return null;
-    const raw = searchParams[key];
+    if (!resolvedSearchParams) return null;
+    const raw = resolvedSearchParams[key];
     if (Array.isArray(raw)) return raw[0] ?? null;
     return raw ?? null;
   };
@@ -166,9 +167,9 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   const sourceParam = getParam("utm_source") ?? getParam("source");
   const campaignParam = getParam("utm_campaign");
   const metadataQuery =
-    searchParams
+    resolvedSearchParams
       ? Object.fromEntries(
-          Object.entries(searchParams).map(([key, value]) => [
+          Object.entries(resolvedSearchParams).map(([key, value]) => [
             key,
             Array.isArray(value) ? value[0] ?? null : value ?? null,
           ]),

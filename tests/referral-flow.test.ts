@@ -5,9 +5,9 @@ import { nanoid } from "nanoid";
 import { recordReferralSubmission } from "@/lib/referrals";
 import type { Database } from "@/types/supabase";
 
-const TEST_SUPABASE_URL = process.env.TEST_SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
-const TEST_SUPABASE_SERVICE_KEY =
-  process.env.TEST_SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
+// Safety: only run when a dedicated TEST Supabase project is explicitly configured.
+const TEST_SUPABASE_URL = process.env.TEST_SUPABASE_URL;
+const TEST_SUPABASE_SERVICE_KEY = process.env.TEST_SUPABASE_SERVICE_ROLE_KEY;
 const hasSupabaseTestEnv = Boolean(TEST_SUPABASE_URL && TEST_SUPABASE_SERVICE_KEY);
 const adminClient = hasSupabaseTestEnv
   ? createClient<Database>(TEST_SUPABASE_URL as string, TEST_SUPABASE_SERVICE_KEY as string)

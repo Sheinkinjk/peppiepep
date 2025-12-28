@@ -78,7 +78,29 @@ export function buildCustomersFromRows(
   rows: RawCustomerRow[],
   { businessId, status = "pending", referralCodeFactory }: BuildCustomerOptions,
 ): Database["public"]["Tables"]["customers"]["Insert"][] {
-  const getReferralCode = referralCodeFactory ?? (() => nanoid(12));
+  const fallbackReferralCode = () => nanoid(12);
+  const preferredReferralCode = referralCodeFactory ?? fallbackReferralCode;
+  const usedCodes = new Set<string>();
+
+  const getUniqueReferralCode = () => {
+    for (let attempt = 0; attempt < 20; attempt += 1) {
+      const code = preferredReferralCode();
+      if (!usedCodes.has(code)) {
+        usedCodes.add(code);
+        return code;
+      }
+    }
+
+    for (let attempt = 0; attempt < 50; attempt += 1) {
+      const code = fallbackReferralCode();
+      if (!usedCodes.has(code)) {
+        usedCodes.add(code);
+        return code;
+      }
+    }
+
+    throw new Error("Unable to generate unique referral codes for import batch.");
+  };
 
   const normalizedRows: Database["public"]["Tables"]["customers"]["Insert"][] = [];
 
@@ -106,7 +128,7 @@ export function buildCustomersFromRows(
       name: name || null,
       phone: phone || null,
       email: email || null,
-      referral_code: getReferralCode(),
+      referral_code: getUniqueReferralCode(),
       status,
     });
   }

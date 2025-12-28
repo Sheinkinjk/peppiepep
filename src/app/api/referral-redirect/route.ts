@@ -12,33 +12,44 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(new URL("/our-referral-program", request.url));
   }
 
-  // Log the visit event
-  const supabase = await createServiceClient();
-  const device = inferDeviceFromUserAgent(request.headers.get("user-agent"));
-  const referrer = request.headers.get("referer");
-
   const sourceParam = searchParams.get("utm_source") ?? searchParams.get("source");
-  const campaignParam = searchParams.get("utm_campaign");
 
-  // Build metadata from query params
-  const metadataQuery: Record<string, string> = {};
-  searchParams.forEach((value, key) => {
-    metadataQuery[key] = value;
-  });
+  // Log the visit event (best-effort; cookie attribution should still work even if logging is disabled)
+  const loggingDisabled = process.env.DISABLE_REFERRAL_EVENT_LOGGING === "1";
+  const hasSupabaseConfig = Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY,
+  );
 
-  await logReferralEvent({
-    supabase,
-    businessId,
-    ambassadorId,
-    eventType: "link_visit",
-    source: campaignParam ?? sourceParam ?? "direct",
-    device,
-    metadata: {
-      referrer,
-      query: metadataQuery,
-      redirect_destination: "partner_program",
-    },
-  });
+  if (!loggingDisabled && hasSupabaseConfig) {
+    try {
+      const supabase = await createServiceClient();
+      const device = inferDeviceFromUserAgent(request.headers.get("user-agent"));
+      const referrer = request.headers.get("referer");
+      const campaignParam = searchParams.get("utm_campaign");
+
+      // Build metadata from query params
+      const metadataQuery: Record<string, string> = {};
+      searchParams.forEach((value, key) => {
+        metadataQuery[key] = value;
+      });
+
+      await logReferralEvent({
+        supabase,
+        businessId,
+        ambassadorId,
+        eventType: "link_visit",
+        source: campaignParam ?? sourceParam ?? "direct",
+        device,
+        metadata: {
+          referrer,
+          query: metadataQuery,
+          redirect_destination: "partner_program",
+        },
+      });
+    } catch (error) {
+      console.warn("Referral redirect event logging failed", error);
+    }
+  }
 
   // Create response with redirect
   const response = NextResponse.redirect(new URL("/our-referral-program", request.url));

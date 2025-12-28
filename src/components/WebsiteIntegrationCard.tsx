@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Copy, Check, Globe, Code } from "lucide-react";
@@ -225,6 +226,87 @@ fetch("${siteUrl}/api/discount-codes/redeem", {
         server (using <code className="font-mono">AMBASSADOR_API_SECRET</code>) and
         pass it as the <code className="font-mono">token</code> query parameter.
       </p>
+
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 text-sm text-slate-700">
+        <p className="font-semibold text-slate-900">Need a step-by-step guide?</p>
+        <p className="mt-1 text-sm text-slate-600">
+          Follow the dedicated setup pages (with testing checkpoints) for each platform.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-3">
+          <Link
+            href="/shopify"
+            className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-800"
+          >
+            Shopify guide
+          </Link>
+          <Link
+            href="/wordpress"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            WordPress guide
+          </Link>
+          <Link
+            href="/webflow"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            Webflow guide
+          </Link>
+          <Link
+            href="/squarespace"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            Squarespace guide
+          </Link>
+          <Link
+            href="/wix"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            Wix guide
+          </Link>
+          <Link
+            href="/gtm"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            GTM guide
+          </Link>
+          <Link
+            href="/analytics"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            Analytics
+          </Link>
+          <Link
+            href="/go-live"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            Go-live checklist
+          </Link>
+          <Link
+            href="/meta-ads"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            Meta Ads
+          </Link>
+          <Link
+            href="/google-ads"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            Google Ads
+          </Link>
+          <Link
+            href="/tiktok-ads"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            TikTok Ads
+          </Link>
+          <Link
+            href="/integrations"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50"
+          >
+            All guides
+          </Link>
+        </div>
+      </div>
     </Card>
   );
 }

@@ -6,6 +6,8 @@ import { buildCampaignEmail } from "@/lib/campaign-email";
 import { logReferralEvent } from "@/lib/referral-events";
 import type { CampaignMessagePayload } from "@/lib/campaigns";
 import type { Database } from "@/types/supabase";
+import { createServiceClient } from "@/lib/supabase";
+import { sendCampaignDeliveredSummaryOwnerEmail } from "@/lib/business-notifications";
 
 type CampaignMessageRecord = CampaignMessagePayload & { id: string };
 
@@ -280,6 +282,28 @@ export async function dispatchCampaignMessagesInline({
       .from("campaigns")
       .update({ status: finalStatus })
       .eq("id", campaign.id);
+
+    // Send a best-effort campaign summary email to the business owner.
+    try {
+      const hasServiceRole = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+      if (!hasServiceRole) return {
+        sent,
+        failed,
+        error: failures.length > 0 ? failures[0] : null,
+      };
+
+      const service = await createServiceClient();
+      const businessId = (messages[0] as { business_id?: string | null } | null)?.business_id ?? null;
+      if (businessId) {
+        await sendCampaignDeliveredSummaryOwnerEmail({
+          supabase: service as unknown as SupabaseClient<Database>,
+          campaignId: campaign.id,
+          businessId,
+        });
+      }
+    } catch (error) {
+      console.warn("Failed to send campaign summary email (non-fatal):", error);
+    }
   }
 
   return {

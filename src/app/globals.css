@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
-    sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -79,13 +74,47 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
+      sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
   }
+
+  p,
+  li {
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight;
+    line-height: 1.15;
+  }
+
   h1,
   h2,
   h3,
   h4 {
     color: var(--heading-color);
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-12;
+  }
+
+  .card-pad {
+    @apply p-6 sm:p-8;
+  }
+
+  .stack {
+    @apply space-y-4 sm:space-y-6;
   }
 }
 

@@ -56,11 +56,11 @@ export async function GET(request: Request) {
     const validation = validateWithSchema(
       querySchema,
       {
-        q: url.searchParams.get("q"),
-        status: url.searchParams.get("status"),
-        source: url.searchParams.get("source"),
-        page: url.searchParams.get("page"),
-        pageSize: url.searchParams.get("pageSize"),
+        q: url.searchParams.get("q") ?? undefined,
+        status: url.searchParams.get("status") ?? undefined,
+        source: url.searchParams.get("source") ?? undefined,
+        page: url.searchParams.get("page") ?? undefined,
+        pageSize: url.searchParams.get("pageSize") ?? undefined,
       },
       logger,
     );

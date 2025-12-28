@@ -2,6 +2,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 
 import type { Database } from "@/types/supabase";
 import { logReferralEvent } from "@/lib/referral-events";
+import { maybeSendFirstReferralReceivedOwnerEmail } from "@/lib/business-notifications";
 
 type ReferralInput = {
   supabase: SupabaseClient<Database>;
@@ -78,6 +79,10 @@ export async function recordReferralSubmission({
       consent_given: consentGiven,
       locale,
     },
+  });
+
+  await maybeSendFirstReferralReceivedOwnerEmail({ supabase, businessId }).catch((error) => {
+    console.warn("Failed to send first referral owner email (non-fatal):", error);
   });
 
   return referralRow;

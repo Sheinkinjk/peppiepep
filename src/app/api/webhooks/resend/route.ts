@@ -6,6 +6,8 @@ import { logReferralEvent } from "@/lib/referral-events";
 import { createApiLogger } from "@/lib/api-logger";
 import { parseJsonBody } from "@/lib/api-validation";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { shouldSendOnce } from "@/lib/alert-bucket";
+import { sendTransactionalEmail } from "@/lib/transactional-email";
 
 type ResendEvent = {
   type: string;
@@ -42,6 +44,18 @@ export async function POST(request: Request) {
   const secret = process.env.RESEND_WEBHOOK_TOKEN?.trim();
   if (!secret) {
     logger.error("RESEND_WEBHOOK_TOKEN missing");
+    const shouldAlert = await shouldSendOnce({ key: "resend_webhook_missing_token", ttlSeconds: 6 * 60 * 60 }).catch(
+      () => false,
+    );
+    if (shouldAlert) {
+      await sendTransactionalEmail({
+        to: (process.env.ADMIN_ALERT_EMAILS?.split(",").map((e) => e.trim()).filter(Boolean) ?? [
+          "jarred@referlabs.com.au",
+        ]) as string[],
+        subject: "Resend webhook misconfigured (missing token)",
+        html: "<p><strong>RESEND_WEBHOOK_TOKEN</strong> is missing, so delivery webhooks cannot be verified.</p>",
+      }).catch(() => null);
+    }
     return NextResponse.json(
       { error: "RESEND_WEBHOOK_TOKEN is not configured" },
       { status: 500 },
@@ -51,6 +65,16 @@ export async function POST(request: Request) {
   const header = request.headers.get("authorization");
   if (header !== `Bearer ${secret}`) {
     logger.warn("Resend webhook unauthorized");
+    const shouldAlert = await shouldSendOnce({ key: "resend_webhook_unauthorized", ttlSeconds: 60 * 60 }).catch(() => false);
+    if (shouldAlert) {
+      await sendTransactionalEmail({
+        to: (process.env.ADMIN_ALERT_EMAILS?.split(",").map((e) => e.trim()).filter(Boolean) ?? [
+          "jarred@referlabs.com.au",
+        ]) as string[],
+        subject: "Resend webhook unauthorized requests detected",
+        html: "<p>Received a Resend webhook request with an invalid Authorization header.</p>",
+      }).catch(() => null);
+    }
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

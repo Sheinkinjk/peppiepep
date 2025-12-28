@@ -74,11 +74,11 @@ export function CampaignBuilder({
   const [scheduleDate, setScheduleDate] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
-  const notifyCampaignStatus = (type: "success" | "error", text: string) => {
+  const notifyCampaignStatus = (type: "success" | "error", text: string, title?: string) => {
     setStatusMessage({ type, text });
     toast({
       variant: type === "success" ? "default" : "destructive",
-      title: type === "success" ? "Campaign queued" : "Campaign issue",
+      title: title ?? (type === "success" ? "Campaign queued" : "Campaign issue"),
       description: text,
     });
   };
@@ -267,6 +267,10 @@ export function CampaignBuilder({
 
     setIsSending(true);
     setStatusMessage(null);
+    let refreshOk = false;
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("pep-refresh-start", { detail: { source: "campaign-send" } }));
+    }
 
     try {
       const response = await fetch("/api/campaigns/send", {
@@ -298,11 +302,15 @@ export function CampaignBuilder({
 
       const successMsg = result.success ?? "Campaign queued successfully.";
       const recipientsText = `${selectedCount} ${selectedCount === 1 ? "recipient" : "recipients"}`;
+      const statusTitle =
+        effectiveScheduleType === "later" ? "Campaign scheduled" : "Campaign sending";
 
       notifyCampaignStatus(
         "success",
-        `${successMsg} Sent to ${recipientsText}. Track results in the Analytics tab.`
+        `${successMsg} Sent to ${recipientsText}. Track results in the Analytics tab.`,
+        statusTitle,
       );
+      refreshOk = true;
 
       // Show extended success message with tracking info
       setTimeout(() => {
@@ -330,6 +338,11 @@ export function CampaignBuilder({
       );
     } finally {
       setIsSending(false);
+      if (typeof window !== "undefined") {
+        window.setTimeout(() => {
+          window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "campaign-send", ok: refreshOk } }));
+        }, 800);
+      }
     }
   };
 
