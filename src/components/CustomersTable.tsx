@@ -22,6 +22,7 @@ import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
 import { BulkActionDialog } from "@/components/BulkActionDialog";
+import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 type Customer = {
   id: string;
@@ -45,6 +46,7 @@ type CustomersTableProps = {
   initialCustomers?: Customer[];
   initialTotal?: number;
   siteUrl: string;
+  businessId: string;
   adjustCreditsAction: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
 };
 
@@ -82,6 +84,7 @@ export function CustomersTable({
   initialCustomers = [],
   initialTotal = 0,
   siteUrl,
+  businessId,
   adjustCreditsAction,
 }: CustomersTableProps) {
   const bootstrappedCustomers = useMemo(
@@ -136,6 +139,10 @@ export function CustomersTable({
       abortRef.current = controller;
       setIsLoading(true);
       setError(null);
+      let ok = false;
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("pep-refresh-start", { detail: { source: "customers" } }));
+      }
 
       try {
         const params = new URLSearchParams({
@@ -159,6 +166,7 @@ export function CustomersTable({
         setCustomers(payload.data ?? []);
         setTotal(payload.total ?? 0);
         setPage(payload.page ?? targetPage);
+        ok = true;
 
         if (payload.data) {
           setSelectedRows((prev) => {
@@ -181,6 +189,9 @@ export function CustomersTable({
       } finally {
         if (!controller.signal.aborted) {
           setIsLoading(false);
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "customers", ok } }));
+          }
         }
       }
     },
@@ -204,6 +215,34 @@ export function CustomersTable({
       limit: pageSize,
     });
   }, [fetchPage, page, debouncedSearch, statusFilter, pageSize]);
+
+  useEffect(() => {
+    if (!businessId) return;
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      return;
+    }
+
+    const supabase = createBrowserSupabaseClient();
+    const channel = supabase
+      .channel(`customers-${businessId}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "customers",
+          filter: `business_id=eq.${businessId}`,
+        },
+        () => {
+          refreshCurrentPage();
+        },
+      )
+      .subscribe();
+
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [businessId, refreshCurrentPage]);
 
   const copyToClipboard = async (text: string, key: string) => {
     try {
@@ -354,18 +393,66 @@ export function CustomersTable({
     if (selectedRows.size === 0) return;
 
     setIsBulkProcessing(true);
+    setBulkStatusDialogOpen(false);
 
-    // This would require a new API endpoint for bulk status updates
-    // For now, we'll show a toast that this feature is coming
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Only "verified" status uses the approval API with welcome emails
+      if (newStatus === "verified") {
+        const response = await fetch("/api/ambassadors/approve", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            customerIds: Array.from(selectedRows.keys()),
+          }),
+        });
 
-    setIsBulkProcessing(false);
-    clearSelection();
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.error || "Failed to approve ambassadors");
+        }
 
-    toast({
-      title: "Status updated",
-      description: `${selectedRows.size} ambassador${selectedRows.size === 1 ? "" : "s"} marked as ${newStatus}.`,
-    });
+        const result = await response.json();
+
+        toast({
+          title: "Ambassadors approved!",
+          description: `${result.approvedCount} ambassador${result.approvedCount === 1 ? "" : "s"} approved. Welcome emails sent: ${result.emailsSent}.`,
+        });
+      } else {
+        // For other status updates, use direct Supabase update
+        const supabase = createBrowserSupabaseClient();
+        const { error } = await supabase
+          .from("customers")
+          .update({ status: newStatus })
+          .in("id", Array.from(selectedRows.keys()))
+          .eq("business_id", businessId);
+
+        if (error) throw error;
+
+        toast({
+          title: "Status updated",
+          description: `${selectedRows.size} ambassador${selectedRows.size === 1 ? "" : "s"} marked as ${newStatus}.`,
+        });
+      }
+
+      // Refresh the customer list
+      await fetchPage({
+        page,
+        search: debouncedSearch,
+        status: statusFilter,
+        limit: pageSize,
+      });
+
+      clearSelection();
+    } catch (error) {
+      console.error("Error updating status:", error);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to update status",
+        variant: "destructive",
+      });
+    } finally {
+      setIsBulkProcessing(false);
+    }
   };
 
   const bulkSendCampaign = async () => {
@@ -513,7 +600,7 @@ export function CustomersTable({
             </Button>
             <Button size="sm" onClick={() => setBulkStatusDialogOpen(true)} disabled={isBulkProcessing}>
               <UserCheck className="mr-2 h-4 w-4" />
-              Update Status
+              Approve Ambassadors
             </Button>
             <Button
               size="sm"
@@ -998,11 +1085,11 @@ export function CustomersTable({
       <BulkActionDialog
         open={bulkStatusDialogOpen}
         onOpenChange={setBulkStatusDialogOpen}
-        title="Update status"
-        description="Mark all selected ambassadors as active. This will update their status in the system."
-        actionLabel="Update status"
+        title="Approve Ambassadors"
+        description="Approve selected ambassadors and send them welcome emails with their unique referral links and discount codes. They'll be able to start sharing immediately."
+        actionLabel="Approve & Send Welcome Emails"
         variant="default"
-        onConfirm={() => bulkUpdateStatus("active")}
+        onConfirm={() => bulkUpdateStatus("verified")}
         itemCount={selectedCount}
         itemLabel="ambassador"
       />

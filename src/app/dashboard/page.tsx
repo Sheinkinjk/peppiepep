@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import twilio from "twilio";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { Card } from "@/components/ui/card";
 import {
@@ -40,7 +41,7 @@ import { ReferralJourneyReport, type ReferralJourneyEvent } from "@/components/R
 import { PartnerReferralsTab } from "@/components/PartnerReferralsTab";
 import { logReferralEvent } from "@/lib/referral-events";
 import { completeReferralAttribution } from "@/lib/referral-revenue";
-import { generateUniqueDiscountCode } from "@/lib/discount-codes";
+import { quickAddCustomerProfile } from "@/lib/customers-quick-add";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
   BarChart3,
@@ -57,9 +58,12 @@ import { BusinessOnboardingMetadata, IntegrationStatusValue, parseBusinessMetada
 import { calculateNextCredits, parseCreditDelta } from "@/lib/credits";
 import { ensureAbsoluteUrl } from "@/lib/urls";
 import { DashboardHeader } from "./components/DashboardHeader";
+import { PartnerApplicationsManager } from "./components/PartnerApplicationsManager";
+import { DashboardRealtimeSync } from "./components/DashboardRealtimeSync";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 import { getCurrentAdmin } from "@/lib/admin-auth";
+import { maybeSendGoLiveOwnerEmail } from "@/lib/business-notifications";
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -464,6 +468,9 @@ export default async function Dashboard() {
     });
 
     revalidatePath("/dashboard");
+    await maybeSendGoLiveOwnerEmail({ supabase: supabase as unknown as SupabaseClient<Database>, businessId: business.id }).catch(
+      (err) => console.error("Failed to send go-live email (non-fatal):", err),
+    );
     return { success: "Onboarding information saved successfully" };
   }
 
@@ -666,9 +673,9 @@ export default async function Dashboard() {
             subject: "A referral just completed",
             html: `<!doctype html><html><body style="font-family:Arial,sans-serif;background:#f5f5f5;padding:32px"><div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:24px;padding:32px;border:1px solid #e2e8f0"><p style="font-size:18px;font-weight:bold;margin-bottom:16px">Congrats ${
               ambassadorName || "Ambassador"
-            }!</p><p style="font-size:15px;color:#475569;line-height:1.6;margin-bottom:16px">One of your referrals just completed their booking. Once the team releases the payout, you'll see <strong>$${amount.toFixed(
+            }!</p><p style="font-size:15px;color:#475569;line-height:1.6;margin-bottom:16px">One of your referrals just completed their booking. <strong>$${amount.toFixed(
               0,
-            )} credit</strong> inside your portal.</p><a href="${
+            )} credit</strong> has been released to your account.</p><a href="${
               ambassadorReferralCode
                 ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
                 : `${baseSiteUrl}/r/referral`
@@ -717,83 +724,25 @@ export default async function Dashboard() {
   async function quickAddCustomer(formData: FormData) {
     "use server";
     try {
-      const name = (formData.get("quick_name") as string | null)?.trim() || "";
-      const phoneInput = (formData.get("quick_phone") as string | null)?.trim() || "";
-      const emailInput = (formData.get("quick_email") as string | null)?.trim() || "";
-      const normalizedEmail = emailInput ? emailInput.toLowerCase() : "";
-      const phone = phoneInput;
-
-      if (!name && !phone && !normalizedEmail) {
-        return { error: "Enter at least a name, phone, or email before adding a customer." };
-      }
-
-      // Validate email format if provided
-      if (normalizedEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
-        return { error: "Invalid email format. Please enter a valid email address." };
-      }
-
-      // Validate phone format if provided (basic validation for international formats)
-      if (phone && !/^\+?[1-9]\d{1,14}$/.test(phone.replace(/[\s\-\(\)]/g, ""))) {
-        return { error: "Invalid phone format. Please enter a valid phone number (e.g., +1234567890)." };
-      }
-
+      const name = (formData.get("quick_name") as string | null) ?? "";
+      const phone = (formData.get("quick_phone") as string | null) ?? "";
+      const email = (formData.get("quick_email") as string | null) ?? "";
       const supabase = await createServerComponentClient();
-      let duplicateCustomer: { id: string; name: string | null } | null = null;
-      const duplicateFilters: string[] = [];
-      if (normalizedEmail) {
-        duplicateFilters.push(`email.ilike.${normalizedEmail}`);
-      }
-      if (phone) {
-        duplicateFilters.push(`phone.eq.${phone}`);
-      }
 
-      if (duplicateFilters.length > 0) {
-        const { data: existingMatches, error: duplicateError } = await supabase
-          .from("customers")
-          .select("id, name")
-          .eq("business_id", business.id)
-          .or(duplicateFilters.join(","))
-          .limit(1);
-
-        if (!duplicateError && existingMatches && existingMatches.length > 0) {
-          duplicateCustomer = existingMatches[0] as { id: string; name: string | null };
-        }
-      }
-
-      if (duplicateCustomer) {
-        return {
-          success: `${duplicateCustomer.name || "Ambassador"} already has a referral profile, so we skipped a duplicate.`,
-        };
-      }
-
-      const referral_code = nanoid(12);
-      const discount_code = await generateUniqueDiscountCode({
+      const result = await quickAddCustomerProfile({
         supabase,
         businessId: business.id,
-        seedName: name || normalizedEmail || phone,
+        name,
+        phone,
+        email,
       });
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error } = await (supabase as any).from("customers").insert([
-        {
-          business_id: business.id,
-          name: name || null,
-          phone: phone || null,
-          email: normalizedEmail || null,
-          referral_code,
-          discount_code,
-          status: "pending",
-        },
-      ]);
-
-      if (error) {
-        console.error("Quick add error:", error);
-        return { error: "Unable to add customer. Please try again." };
+      if (result.status === "error") {
+        return { error: result.error };
       }
 
       revalidatePath("/dashboard");
-      const displayLabel = name || phone || normalizedEmail || "Customer";
-      return { success: `${displayLabel} added and ready to refer.` };
+      return { success: result.message };
     } catch (error) {
       console.error("Quick add error:", error);
       return { error: "An unexpected error occurred. Please try again." };
@@ -1375,6 +1324,7 @@ export default async function Dashboard() {
 	                initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
 	                initialTotal={safeCustomers.length}
 	                siteUrl={siteUrl}
+                  businessId={business.id}
 	                adjustCreditsAction={adjustCustomerCredits}
 	              />
 	            )}
@@ -1649,6 +1599,7 @@ export default async function Dashboard() {
                   <ReferralsTable
                     initialReferrals={safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT)}
                     initialTotal={safeReferrals.length}
+                    businessId={business.id}
                     completionAction={markReferralCompleted}
                   />
                 )}
@@ -1915,16 +1866,19 @@ export default async function Dashboard() {
           businessName={business.name || "Your Business"}
         />
 
+        <DashboardRealtimeSync businessId={business.id} />
+
 	        {/* Dashboard Header with Stats */}
-	        <DashboardHeader
-	          ambassadorCount={safeCustomers.length}
-	          referralCount={safeReferrals.length}
-	          campaignsSent={totalCampaignsSent}
-	          revenue={totalReferralRevenue}
-	          validations={stepValidations}
-	          currentStep={autoExpandStep}
-	          overallProgress={overallProgress}
-	        />
+		        <DashboardHeader
+		          ambassadorCount={safeCustomers.length}
+		          referralCount={safeReferrals.length}
+		          campaignsSent={totalCampaignsSent}
+		          revenue={totalReferralRevenue}
+		          validations={stepValidations}
+		          currentStep={autoExpandStep}
+		          overallProgress={overallProgress}
+              showAdminLinks={Boolean(currentAdmin)}
+		        />
 
         {/* Mobile Warning - Show at top for immediate visibility */}
         {isMobile && (
@@ -1941,30 +1895,23 @@ export default async function Dashboard() {
           </div>
         )}
 
-        {/* Admin Navigation - Only visible to users with admin role */}
+        {/* Admin Only: Partner Applications Manager */}
         {currentAdmin && (
-          <div className="mb-6 flex gap-4 justify-end">
-            <Link
-              href="/dashboard/admin-master"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all shadow-md hover:shadow-lg"
-            >
-              <Settings className="h-5 w-5" />
-              Master Admin Dashboard
-            </Link>
-            <Link
-              href="/dashboard/admin-payments"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
-            >
-              <CreditCard className="h-5 w-5" />
-              Admin Payments
-            </Link>
+          <div className="mb-8">
+            <div className="mb-4">
+              <h2 className="text-2xl font-bold text-slate-900">Partner Applications</h2>
+              <p className="text-sm text-slate-600 mt-1">
+                Review and approve partner applications. Approved partners receive $250 credit and their unique referral link.
+              </p>
+            </div>
+            <PartnerApplicationsManager />
           </div>
         )}
 
-	        <GuidedStepFlow
-	          steps={guidedSteps}
-	          defaultOpenStep={autoExpandStep}
-	        />
+		        <GuidedStepFlow
+		          steps={guidedSteps}
+		          defaultOpenStep={autoExpandStep}
+		        />
 
       <DashboardOnboardingChecklist
         hasCustomers={hasCustomers}
