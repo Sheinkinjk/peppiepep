@@ -58,30 +58,18 @@ export async function POST(request: NextRequest) {
     });
 
     // Create a referral record for this application
+    // Note: metadata is NOT a column in referrals table - we store extra data in referral_events
     const { data: referralData, error: referralError } = await supabase
       .from("referrals")
       .insert({
         business_id: businessId,
-        referrer_id: ambassadorId, // Use referrer_id (the column name in the table)
+        ambassador_id: ambassadorId, // Correct column name
         referred_name: fullName,
         referred_email: email,
         referred_phone: phone,
         status: "pending",
         consent_given: true,
         locale: "en",
-        metadata: {
-          source: "referred_application_form",
-          referral_code: referralCode,
-          business_name: businessName,
-          industry,
-          website,
-          monthly_revenue: monthlyRevenue,
-          team_size: teamSize,
-          role,
-          referral_source: referralSource,
-          goals,
-          application_type: "business_application",
-        },
       })
       .select()
       .single();
@@ -101,7 +89,7 @@ export async function POST(request: NextRequest) {
 
     console.log("✅ Referral record created:", referralData?.id);
 
-    // Log the application submission event
+    // Log the application submission event with full details in metadata
     await logReferralEvent({
       supabase,
       businessId,
@@ -114,7 +102,13 @@ export async function POST(request: NextRequest) {
         referral_code: referralCode,
         business_name: businessName,
         industry,
+        website,
         monthly_revenue: monthlyRevenue,
+        team_size: teamSize,
+        role,
+        goals,
+        referral_source: referralSource,
+        application_type: "business_application",
       },
     });
 
