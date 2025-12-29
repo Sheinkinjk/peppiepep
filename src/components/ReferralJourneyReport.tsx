@@ -16,6 +16,8 @@ import {
   AlertTriangle,
   Rocket,
   Flag,
+  Calendar,
+  Phone,
 } from "lucide-react";
 
 import type { ReferralEventType } from "@/lib/referral-events";
@@ -113,6 +115,18 @@ const EVENT_META: Record<ReferralEventType, { label: string; description: string
     description: "Dispatcher finished the current batch",
     color: "text-green-700",
     Icon: Flag,
+  },
+  schedule_call_clicked: {
+    label: "Schedule Call Clicked",
+    description: "Prospect clicked Schedule a Call button",
+    color: "text-teal-600",
+    Icon: Calendar,
+  },
+  contact_us_clicked: {
+    label: "Contact Us Clicked",
+    description: "Prospect clicked Contact Us button",
+    color: "text-purple-600",
+    Icon: Phone,
   },
 };
 

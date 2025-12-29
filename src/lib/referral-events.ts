@@ -15,7 +15,9 @@ export type ReferralEventType =
   | "campaign_message_delivered"
   | "campaign_message_failed"
   | "campaign_delivery_batch_started"
-  | "campaign_delivery_batch_finished";
+  | "campaign_delivery_batch_finished"
+  | "schedule_call_clicked"
+  | "contact_us_clicked";
 
 type LogReferralEventInput = {
   supabase: SupabaseClient<Database>;
