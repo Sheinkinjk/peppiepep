@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
   }
 
   // Create response with redirect based on destination
-  const redirectPath = destination === "client" ? "/" : "/our-referral-program";
+  const redirectPath = destination === "client" ? "/referred" : "/our-referral-program";
   const response = NextResponse.redirect(new URL(redirectPath, request.url));
 
   // Set attribution cookie (30-day window)
