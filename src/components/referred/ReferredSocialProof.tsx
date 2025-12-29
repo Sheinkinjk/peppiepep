@@ -4,29 +4,29 @@ export function ReferredSocialProof() {
   const stats = [
     {
       icon: Users,
-      value: "500+",
-      label: "Active Businesses",
+      value: "Growing",
+      label: "Partner Network",
       color: "text-teal-600",
       bgColor: "bg-teal-50",
     },
     {
       icon: DollarSign,
-      value: "$2M+",
-      label: "Revenue Generated",
+      value: "25%",
+      label: "Recurring Revenue",
       color: "text-cyan-600",
       bgColor: "bg-cyan-50",
     },
     {
       icon: TrendingUp,
-      value: "3.2x",
-      label: "Average ROI",
+      value: "30 Days",
+      label: "Attribution Window",
       color: "text-emerald-600",
       bgColor: "bg-emerald-50",
     },
     {
       icon: Star,
-      value: "4.9/5",
-      label: "Customer Rating",
+      value: "AU Based",
+      label: "Local Support",
       color: "text-amber-600",
       bgColor: "bg-amber-50",
     },
@@ -34,22 +34,22 @@ export function ReferredSocialProof() {
 
   const testimonials = [
     {
-      quote: "Refer Labs transformed our customer acquisition. We're now generating 40% of new customers through referrals.",
-      author: "Sarah Chen",
-      role: "CEO, FitnessPro",
-      revenue: "$120k",
+      quote: "The attribution system gives us complete confidence that every referral is tracked. No missed commissions.",
+      author: "Partner Ambassador",
+      role: "Business Development",
+      highlight: "Full Attribution",
     },
     {
-      quote: "The ROI is incredible. We invested $5k and generated over $150k in referred revenue in the first 6 months.",
-      author: "Michael Torres",
-      role: "Founder, TechStart",
-      revenue: "$150k",
+      quote: "Easy to set up and the 30-day cookie window means we have time to nurture leads properly.",
+      author: "Partner Ambassador",
+      role: "Marketing Consultant",
+      highlight: "Simple Setup",
     },
     {
-      quote: "Our customer acquisition cost dropped by 60% after implementing Refer Labs. Best decision we ever made.",
-      author: "Emma Wilson",
-      role: "CMO, BeautyBox",
-      revenue: "$95k",
+      quote: "Great platform for building sustainable referral revenue. The 25% recurring commission is fantastic.",
+      author: "Partner Ambassador",
+      role: "Agency Owner",
+      highlight: "Recurring Revenue",
     },
   ];
 
@@ -79,10 +79,10 @@ export function ReferredSocialProof() {
         {/* Testimonials */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-            Real Results from Real Businesses
+            Trusted by Business Partners
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            See how businesses like yours are unlocking revenue with Refer Labs
+            See what our ambassador partners say about the program
           </p>
         </div>
 
@@ -106,8 +106,8 @@ export function ReferredSocialProof() {
                   <div className="text-sm text-slate-600">{testimonial.role}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm text-slate-500">Generated</div>
-                  <div className="font-black text-teal-600">{testimonial.revenue}</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wide">Key Benefit</div>
+                  <div className="font-bold text-teal-600">{testimonial.highlight}</div>
                 </div>
               </div>
             </div>

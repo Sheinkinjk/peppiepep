@@ -18,11 +18,20 @@ export function ReferredLandingHero({
   const [loading, setLoading] = useState(false);
 
   async function handleScheduleCall() {
+    console.log("📞 Book a Call clicked (hero section)");
+    console.log("Attribution data:", {
+      ambassadorId,
+      businessId,
+      referralCode,
+    });
+
     setLoading(true);
 
     try {
       // Track the schedule call event
-      await fetch("/api/track-conversion", {
+      console.log("📊 Tracking schedule_call_clicked event...");
+
+      const response = await fetch("/api/track-conversion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -34,10 +43,18 @@ export function ReferredLandingHero({
         }),
       });
 
+      if (response.ok) {
+        console.log("✅ Event tracked successfully");
+      } else {
+        console.warn("⚠️ Event tracking failed:", response.status);
+      }
+
       // Redirect to Calendly
+      console.log("🔗 Redirecting to Calendly...");
       window.location.href = "https://calendly.com/jarredkro/30min";
     } catch (error) {
-      console.error("Error tracking schedule call:", error);
+      console.error("❌ Error tracking schedule call:", error);
+      console.log("🔗 Redirecting to Calendly anyway...");
       window.location.href = "https://calendly.com/jarredkro/30min";
     }
   }
@@ -128,7 +145,7 @@ export function ReferredLandingHero({
 
           {/* Trust indicator */}
           <p className="text-slate-400 text-sm mt-8">
-            Trusted by 500+ businesses generating $2M+ in referral revenue
+            Referred by partner code: {referralCode}
           </p>
         </div>
       </div>
