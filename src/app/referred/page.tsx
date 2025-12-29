@@ -5,7 +5,6 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ReferredLandingHero } from "@/components/referred/ReferredLandingHero";
 import { ReferredApplicationForm } from "@/components/referred/ReferredApplicationForm";
-import { ReferredSocialProof } from "@/components/referred/ReferredSocialProof";
 import { ReferredFeatures } from "@/components/referred/ReferredFeatures";
 import { ReferredCTA } from "@/components/referred/ReferredCTA";
 
@@ -51,9 +50,6 @@ export default async function ReferredPage() {
         businessId={ambassadorData.business_id}
         referralCode={ambassadorData.code}
       />
-
-      {/* Social Proof */}
-      <ReferredSocialProof />
 
       {/* Features Section */}
       <ReferredFeatures />

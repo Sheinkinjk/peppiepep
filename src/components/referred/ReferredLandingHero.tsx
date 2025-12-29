@@ -80,33 +80,25 @@ export function ReferredLandingHero({
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 backdrop-blur-sm mb-8">
-            <Sparkles className="h-4 w-4 text-teal-400" />
-            <span className="text-sm font-semibold text-teal-300">
-              You've Been Personally Referred
-            </span>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-            Join the referral program{" "}
+            Welcome to the Referral Program{" "}
             <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              revolution
+              Revolution
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            We unlock additional revenue by integrating directly with your sales and marketing strategy.
+            We unlock additional revenue by integrating directly into your sales and marketing strategy to create additional value.
           </p>
 
           {/* Key Benefits */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-              <div className="text-4xl font-black text-teal-400 mb-2">25%</div>
-              <div className="text-white font-semibold mb-1">Revenue Share</div>
-              <div className="text-slate-400 text-sm">For every customer you refer</div>
+              <div className="text-4xl font-black text-teal-400 mb-2">30 Days</div>
+              <div className="text-white font-semibold mb-1">Money-Back Guarantee</div>
+              <div className="text-slate-400 text-sm">Risk-free trial period</div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <div className="text-4xl font-black text-cyan-400 mb-2">30min</div>
@@ -116,7 +108,7 @@ export function ReferredLandingHero({
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <div className="text-4xl font-black text-emerald-400 mb-2">∞</div>
               <div className="text-white font-semibold mb-1">Unlimited Scale</div>
-              <div className="text-slate-400 text-sm">No cap on your earnings</div>
+              <div className="text-slate-400 text-sm">Grow without limits</div>
             </div>
           </div>
 
