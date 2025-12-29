@@ -50,12 +50,19 @@ export async function POST(request: NextRequest) {
     const supabase = await createServiceClient();
     const device = inferDeviceFromUserAgent(request.headers.get("user-agent"));
 
+    console.log("📝 Creating referral record with:", {
+      business_id: businessId,
+      ambassador_id: ambassadorId,
+      referred_name: fullName,
+      referred_email: email,
+    });
+
     // Create a referral record for this application
     const { data: referralData, error: referralError } = await supabase
       .from("referrals")
       .insert({
         business_id: businessId,
-        ambassador_id: ambassadorId,
+        referrer_id: ambassadorId, // Use referrer_id (the column name in the table)
         referred_name: fullName,
         referred_email: email,
         referred_phone: phone,
@@ -80,12 +87,19 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (referralError) {
-      console.error("Failed to create referral record:", referralError);
+      console.error("❌ Failed to create referral record:", referralError);
+      console.error("Error details:", JSON.stringify(referralError, null, 2));
       return NextResponse.json(
-        { error: "Failed to create referral record" },
+        {
+          error: "Failed to create referral record",
+          details: referralError.message || "Database error",
+          code: referralError.code
+        },
         { status: 500 }
       );
     }
+
+    console.log("✅ Referral record created:", referralData?.id);
 
     // Log the application submission event
     await logReferralEvent({
@@ -105,6 +119,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Send notification email to admin
+    console.log("📧 Sending admin notification email to jarred@referlabs.com.au...");
     try {
       await resend.emails.send({
         from: "Refer Labs <noreply@referlabs.com.au>",
@@ -251,12 +266,14 @@ export async function POST(request: NextRequest) {
 </html>
         `,
       });
+      console.log("✅ Admin notification email sent successfully");
     } catch (emailError) {
-      console.error("Failed to send admin notification email:", emailError);
+      console.error("❌ Failed to send admin notification email:", emailError);
       // Don't fail the request if email fails
     }
 
     // Send confirmation email to applicant
+    console.log(`📧 Sending confirmation email to ${email}...`);
     try {
       await resend.emails.send({
         from: "Refer Labs <noreply@referlabs.com.au>",
@@ -325,20 +342,26 @@ export async function POST(request: NextRequest) {
 </html>
         `,
       });
+      console.log("✅ Confirmation email sent successfully");
     } catch (emailError) {
-      console.error("Failed to send confirmation email:", emailError);
+      console.error("❌ Failed to send confirmation email:", emailError);
       // Don't fail the request if email fails
     }
 
+    console.log("🎉 Application submission completed successfully!");
     return NextResponse.json({
       success: true,
       message: "Application submitted successfully",
       referralId: referralData?.id,
     });
   } catch (error) {
-    console.error("Error submitting application:", error);
+    console.error("❌ Critical error submitting application:", error);
+    console.error("Error stack:", error instanceof Error ? error.stack : "No stack trace");
     return NextResponse.json(
-      { error: "Failed to submit application" },
+      {
+        error: "Failed to submit application",
+        details: error instanceof Error ? error.message : "Unknown error"
+      },
       { status: 500 }
     );
   }
