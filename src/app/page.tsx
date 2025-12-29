@@ -3,8 +3,10 @@
 import { ArrowRight, Gift, Sparkles, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { cookies } from "next/headers";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { TrackedCTA } from "@/components/TrackedCTA";
 
 const referralPillars = [
   {
@@ -280,8 +282,31 @@ const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?
   </div>
 );
 
-export default function Home() {
+export default async function Home() {
   const repeatedPartnerLogos = [...partnerLogos, ...partnerLogos];
+
+  // Read attribution cookie if present
+  const cookieStore = await cookies();
+  const refAmbassadorCookie = cookieStore.get("ref_ambassador");
+  let ambassadorData: { id: string; code: string; business_id: string } | null = null;
+
+  if (refAmbassadorCookie?.value) {
+    try {
+      const parsed = JSON.parse(refAmbassadorCookie.value);
+      // Check if cookie is still within 30-day window
+      const cookieAge = Date.now() - (parsed.timestamp || 0);
+      const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+      if (cookieAge < thirtyDaysMs) {
+        ambassadorData = {
+          id: parsed.id,
+          code: parsed.code,
+          business_id: parsed.business_id,
+        };
+      }
+    } catch (err) {
+      console.error("Failed to parse attribution cookie:", err);
+    }
+  }
 
   return (
     <div className="aurora tiffany-hero relative min-h-screen overflow-hidden">
@@ -328,18 +353,11 @@ export default function Home() {
                 We Unlock Additional Revenue by Integrating Directly With Your Sales and Marketing Strategy
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-              <Link
-                href="/login"
-                className={cn(
-                  buttonVariants({ variant: "cta" }),
-                  "text-xl font-black px-12 py-5 shadow-xl shadow-teal-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-                )}
-              >
-                Start Getting Referrals
-                <ArrowRight className="ml-3 h-6 w-6" />
-              </Link>
-            </div>
+            <TrackedCTA
+              ambassadorId={ambassadorData?.id}
+              businessId={ambassadorData?.business_id}
+              referralCode={ambassadorData?.code}
+            />
 
           </div>
         </div>
@@ -389,15 +407,11 @@ export default function Home() {
                     customers you already have.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    href="/login"
-                    className={cn(buttonVariants({ variant: "default", size: "default" }), "min-w-[220px]")}
-                  >
-                    Start Getting Referrals
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
+                <TrackedCTA
+                  ambassadorId={ambassadorData?.id}
+                  businessId={ambassadorData?.business_id}
+                  referralCode={ambassadorData?.code}
+                />
               </div>
             </div>
           </div>

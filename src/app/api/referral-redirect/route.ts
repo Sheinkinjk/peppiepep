@@ -7,9 +7,10 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get("code");
   const ambassadorId = searchParams.get("ambassador_id");
   const businessId = searchParams.get("business_id");
+  const destination = searchParams.get("destination"); // 'client' or 'partner' (default)
 
   if (!code || !ambassadorId || !businessId) {
-    return NextResponse.redirect(new URL("/our-referral-program", request.url));
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
   const sourceParam = searchParams.get("utm_source") ?? searchParams.get("source");
@@ -43,7 +44,7 @@ export async function GET(request: NextRequest) {
         metadata: {
           referrer,
           query: metadataQuery,
-          redirect_destination: "partner_program",
+          redirect_destination: destination === "client" ? "client_acquisition" : "partner_program",
         },
       });
     } catch (error) {
@@ -51,8 +52,9 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // Create response with redirect
-  const response = NextResponse.redirect(new URL("/our-referral-program", request.url));
+  // Create response with redirect based on destination
+  const redirectPath = destination === "client" ? "/" : "/our-referral-program";
+  const response = NextResponse.redirect(new URL(redirectPath, request.url));
 
   // Set attribution cookie (30-day window)
   const cookieData = {

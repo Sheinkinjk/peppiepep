@@ -89,11 +89,16 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
 
   const customerWithBusiness = customer as CustomerWithBusiness;
 
-  // Check if this is the admin's referral code - redirect to partner program with attribution
+  // Check if this is a Refer Labs partner referral link
+  // Refer Labs partners should redirect to client acquisition page, not partner program
+  const PARTNER_PROGRAM_BUSINESS_ID = process.env.PARTNER_PROGRAM_BUSINESS_ID?.trim();
   const ADMIN_REFERRAL_CODE = process.env.ADMIN_REFERRAL_CODE?.trim() || "Jn9wjbn2kQlO";
-  if (code.toLowerCase() === ADMIN_REFERRAL_CODE.toLowerCase()) {
-    // Redirect to route handler that will set attribution cookie and redirect to partner program
-    // This is necessary because cookies can only be set in Route Handlers or Server Actions in Next.js 16+
+
+  const isReferLabsPartner = customerWithBusiness.business_id === PARTNER_PROGRAM_BUSINESS_ID;
+  const isAdminCode = code.toLowerCase() === ADMIN_REFERRAL_CODE.toLowerCase();
+
+  if (isReferLabsPartner) {
+    // Redirect to route handler that will set attribution cookie
     const params = new URLSearchParams();
     params.set("code", customerWithBusiness.referral_code || code);
     params.set("ambassador_id", customerWithBusiness.id);
@@ -109,7 +114,12 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
       });
     }
 
-    redirect(`/api/referral-redirect?${params.toString()}`);
+    // Admin code goes to partner program, all other Refer Labs partners go to client acquisition
+    if (isAdminCode) {
+      redirect(`/api/referral-redirect?${params.toString()}`);
+    } else {
+      redirect(`/api/referral-redirect?destination=client&${params.toString()}`);
+    }
   }
   const offerText = customerWithBusiness.business?.offer_text || "$15 credit";
   const businessName = customerWithBusiness.business?.name || "our business";
