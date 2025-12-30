@@ -90,12 +90,6 @@ export function TrackedCTA({ ambassadorId, businessId, referralCode }: TrackedCT
         <MessageSquare className="mr-2 h-5 w-5" />
         Contact Us
       </Button>
-
-      {ambassadorId && (
-        <p className="text-xs text-slate-500 mt-2 sm:mt-0">
-          Referred by partner code: {referralCode}
-        </p>
-      )}
     </div>
   );
 }

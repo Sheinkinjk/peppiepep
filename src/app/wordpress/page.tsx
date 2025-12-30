@@ -66,7 +66,7 @@ export default function WordPressGuidePage() {
             <p><span className="font-semibold">Optional:</span> <code className="font-mono">height</code>, <code className="font-mono">radius</code>, <code className="font-mono">embed</code>, <code className="font-mono">utm_source</code>, <code className="font-mono">utm_campaign</code></p>
           </div>
           <p className="mt-4 text-xs text-slate-500">
-            Tip: set <code className="font-mono">embed="0"</code> to render a link instead of an iframe.
+            Tip: set <code className="font-mono">embed=&quot;0&quot;</code> to render a link instead of an iframe.
           </p>
         </Card>
       </div>
@@ -140,7 +140,11 @@ export default function WordPressGuidePage() {
         <h2 className="text-lg font-bold text-slate-900">Testing checkpoints (do these in order)</h2>
         <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-700">
           <li>Install + activate the plugin zip.</li>
-          <li>Create a page and paste <code className="font-mono">[referlabs_referral code="AMBCODE"]</code> using a real ambassador code from your dashboard.</li>
+          <li>
+            Create a page and paste{" "}
+            <code className="font-mono">[referlabs_referral code=&quot;AMBCODE&quot;]</code>{" "}
+            using a real ambassador code from your dashboard.
+          </li>
           <li>Open the page in an incognito window and confirm the embedded referral page loads.</li>
           <li>Submit the referral form and confirm the signup appears in the dashboard (Journey timeline).</li>
           <li>If using WooCommerce conversion capture, place a test order using a coupon/discount code and confirm it appears in the dashboard.</li>

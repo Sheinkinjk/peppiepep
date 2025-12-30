@@ -1,6 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerComponentClient } from "@/lib/supabase";
 import { Resend } from "resend";
+import type { Database } from "@/types/supabase";
+
+type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
+type AmbassadorCustomer = Pick<
+  CustomerRow,
+  | "id"
+  | "name"
+  | "email"
+  | "phone"
+  | "referral_code"
+  | "discount_code"
+  | "status"
+  | "company"
+  | "website"
+  | "instagram_handle"
+  | "linkedin_handle"
+  | "audience_profile"
+>;
 
 /**
  * Ambassador Approval API
@@ -77,6 +95,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const typedCustomers = customers as AmbassadorCustomer[];
+
     // Update all customers to verified status
     const { error: updateError } = await supabase
       .from("customers")
@@ -103,39 +123,38 @@ export async function POST(request: NextRequest) {
     if (resendApiKey) {
       const resend = new Resend(resendApiKey);
 
-      for (const customer of customers) {
-        const custData = customer as any;
-        if (!custData.email) {
+      for (const customer of typedCustomers) {
+        if (!customer.email) {
           emailsFailed++;
           continue;
         }
 
         try {
-          const referralLink = custData.referral_code
-            ? `${siteUrl}/r/${custData.referral_code}`
+          const referralLink = customer.referral_code
+            ? `${siteUrl}/r/${customer.referral_code}`
             : null;
 
-          const ambassadorPortalLink = custData.referral_code
-            ? `${siteUrl}/r/referral?code=${custData.referral_code}`
+          const ambassadorPortalLink = customer.referral_code
+            ? `${siteUrl}/r/referral?code=${customer.referral_code}`
             : null;
 
           await resend.emails.send({
             from: fromEmail,
-            to: custData.email,
+            to: customer.email,
             subject: `🎉 Welcome to the ${businessName} Ambassador Program!`,
             html: buildAmbassadorWelcomeEmail({
-              ambassadorName: custData.name || "Ambassador",
+              ambassadorName: customer.name || "Ambassador",
               businessName,
               referralLink,
               ambassadorPortalLink,
-              discountCode: custData.discount_code,
+              discountCode: customer.discount_code,
               siteUrl,
             }),
           });
 
           emailsSent++;
         } catch (emailError) {
-          console.error(`Failed to send email to ${custData.email}:`, emailError);
+          console.error(`Failed to send email to ${customer.email}:`, emailError);
           emailsFailed++;
         }
       }
@@ -152,7 +171,7 @@ export async function POST(request: NextRequest) {
           html: buildOwnerNotificationEmail({
             businessName,
             approvedCount: customers.length,
-            ambassadorNames: customers.map((c: any) => c.name || c.email || "Ambassador"),
+            ambassadorNames: typedCustomers.map((customer) => customer.name || customer.email || "Ambassador"),
             siteUrl,
           }),
         });

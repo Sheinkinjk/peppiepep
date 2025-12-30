@@ -69,7 +69,7 @@ test.describe('Attribution Flow E2E Tests', () => {
     await page.goto(`${SITE_URL}/r/${TEST_REFERRAL_CODE}`);
 
     // Set up network monitoring
-    const trackingRequests: any[] = [];
+    const trackingRequests: Array<Record<string, unknown>> = [];
     page.on('request', request => {
       if (request.url().includes('/api/track-conversion')) {
         trackingRequests.push({
@@ -143,7 +143,7 @@ test.describe('Attribution Flow E2E Tests', () => {
     await page.getByLabel(/How did you hear/i).fill('E2E Test');
 
     // Set up network monitoring for submission
-    const submissionRequests: any[] = [];
+    const submissionRequests: Array<Record<string, unknown>> = [];
     page.on('request', request => {
       if (request.url().includes('/api/referred/submit-application')) {
         submissionRequests.push({

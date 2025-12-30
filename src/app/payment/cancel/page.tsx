@@ -12,7 +12,7 @@ interface PageProps {
 export default async function PaymentCancelPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const sessionId = params.session_id;
-  let status = params.status;
+  const status = params.status;
   const error = params.error;
 
   // Verify the session with Stripe if session ID is provided

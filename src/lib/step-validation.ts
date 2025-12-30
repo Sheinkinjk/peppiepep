@@ -86,15 +86,39 @@ function validateStep1(checks: {
   const items: StepChecklistItem[] = [];
   let completionPercentage = 0;
 
-  // Check program settings (required for completion)
   if (!checks.hasProgramSettings) {
-    // Start at 0%, only give credit once settings are saved
-  } else {
-    completionPercentage += 70; // Primary requirement
+    items.push({
+      kind: "action_required",
+      label: "Save your program settings (offer + rewards)",
+      where: "In Refer Labs (Step 1)",
+      cta: { label: "Open Step 1", stepId: "setup-integration" },
+    });
+    return {
+      isComplete: false,
+      items,
+      completionPercentage: 0,
+    };
   }
 
-  void checks.hasIntegrationSetup;
-  void checks.hasDiscountCapture;
+  completionPercentage = 100;
+
+  if (!checks.hasDiscountCapture) {
+    items.push({
+      kind: "recommended",
+      label: "Enable automatic conversion tracking (discount capture secret missing)",
+      where: "In Refer Labs (Step 1C)",
+      cta: { label: "Open Step 1", stepId: "setup-integration" },
+    });
+  }
+
+  if (!checks.hasIntegrationSetup) {
+    items.push({
+      kind: "recommended",
+      label: "Complete the website integration checklist (mark website integration complete)",
+      where: "In Refer Labs (Step 1D)",
+      cta: { label: "Open Step 1", stepId: "setup-integration" },
+    });
+  }
 
   return {
     isComplete: checks.hasProgramSettings,

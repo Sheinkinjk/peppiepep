@@ -160,6 +160,7 @@ async function getBusiness(): Promise<BusinessCoreFields> {
     const insertPayload: Database["public"]["Tables"]["businesses"]["Insert"] = {
       owner_id: user.id,
       name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
+      discount_capture_secret: nanoid(32),
     };
     const { data: newBiz } = await supabase
       .from("businesses")
@@ -219,6 +220,25 @@ async function getBusiness(): Promise<BusinessCoreFields> {
     }
   } catch (extrasUnexpectedError) {
     console.warn("Failed to load optional business fields:", extrasUnexpectedError);
+  }
+
+  if (!businessWithExtras.discount_capture_secret) {
+    const generatedSecret = nanoid(32);
+    const { data: updated, error: updateError } = await supabase
+      .from("businesses")
+      .update({ discount_capture_secret: generatedSecret })
+      .eq("id", businessWithExtras.id)
+      .select("discount_capture_secret")
+      .single<Pick<BusinessRow, "discount_capture_secret">>();
+
+    if (!updateError) {
+      businessWithExtras = {
+        ...businessWithExtras,
+        discount_capture_secret: updated?.discount_capture_secret ?? generatedSecret,
+      };
+    } else if (updateError.code !== "42703") {
+      console.warn("Failed to backfill discount capture secret:", updateError);
+    }
   }
 
   return businessWithExtras;
@@ -1202,14 +1222,14 @@ export default async function Dashboard() {
   const overallProgress = calculateOverallProgress(stepValidations);
 
   // Define guided steps for new dashboard flow
-  const guidedSteps: GuidedStep[] = [
+	  const guidedSteps: GuidedStep[] = [
 	    {
 	      id: "setup-integration",
 	      number: 1,
 	      title: "Business Setup & Integrations",
 	      description: "Capture business context, configure rewards, and confirm website + CRM integrations before inviting ambassadors",
 	      icon: <Settings className="h-5 w-5" />,
-	      status: hasProgramSettings ? "complete" : "in_progress",
+	      status: stepValidations["setup-integration"].isComplete ? "complete" : "in_progress",
 	      content: (
 	        <IntegrationTab
 	          siteUrl={siteUrl}
@@ -1245,7 +1265,11 @@ export default async function Dashboard() {
 	      title: "Add Clients & Ambassadors",
 	      description: "Import your customer base and generate personalized referral links",
 	      icon: <Users className="h-5 w-5" />,
-	      status: hasCustomers ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
+	      status: stepValidations["clients-ambassadors"].isComplete
+	        ? "complete"
+	        : stepValidations["setup-integration"].isComplete
+	          ? "in_progress"
+	          : "incomplete",
 	      content: (
 	        <>
 	          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
@@ -1340,7 +1364,11 @@ export default async function Dashboard() {
 	      title: "Launch Campaigns",
 	      description: "Create and send referral campaigns through your CRM or our system",
 	      icon: <Mail className="h-5 w-5" />,
-	      status: totalCampaignsSent > 0 ? "complete" : hasCustomers ? "in_progress" : "incomplete",
+	      status: stepValidations["crm-integration"].isComplete
+	        ? "complete"
+	        : stepValidations["clients-ambassadors"].isComplete
+	          ? "in_progress"
+	          : "incomplete",
 	      content: (
 	        <>
 	          <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
@@ -1394,7 +1422,11 @@ export default async function Dashboard() {
 	      title: "Track Campaigns",
 	      description: "Monitor campaign performance, analytics, and results",
 	      icon: <Target className="h-5 w-5" />,
-	      status: totalCampaignsSent > 0 ? "in_progress" : "incomplete",
+	      status: stepValidations["view-campaigns"].isComplete
+	        ? "complete"
+	        : stepValidations["crm-integration"].isComplete
+	          ? "in_progress"
+	          : "incomplete",
 	      content: (
 	        <>
 	          <Tabs defaultValue="analytics">
@@ -1535,7 +1567,11 @@ export default async function Dashboard() {
       title: "Measure ROI",
       description: "View ambassador performance, referral metrics, and program ROI",
       icon: <BarChart3 className="h-5 w-5" />,
-	      status: safeReferrals.length > 0 ? "in_progress" : "incomplete",
+	      status: stepValidations["performance"].isComplete
+	        ? "complete"
+	        : stepValidations["view-campaigns"].isComplete
+	          ? "in_progress"
+	          : "incomplete",
 	      content: (
 	        <div className="space-y-6">
 	        <Tabs defaultValue="referrals">

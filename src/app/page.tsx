@@ -294,6 +294,7 @@ export default async function Home() {
     try {
       const parsed = JSON.parse(refAmbassadorCookie.value);
       // Check if cookie is still within 30-day window
+      // eslint-disable-next-line react-hooks/purity
       const cookieAge = Date.now() - (parsed.timestamp || 0);
       const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
       if (cookieAge < thirtyDaysMs) {

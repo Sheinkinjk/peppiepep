@@ -47,13 +47,15 @@ export function StatusChecks() {
         url: "/api/health/attribution",
         describeOk: (payload) => {
           if (typeof payload === "object" && payload && "status" in payload) {
-            return `Healthy (${String((payload as any).status)})`;
+            const record = payload as Record<string, unknown>;
+            return `Healthy (${String(record.status)})`;
           }
           return "Healthy";
         },
         describeError: (payload) => {
           if (typeof payload === "object" && payload && "error" in payload) {
-            return asString((payload as any).error) ?? "Unhealthy";
+            const record = payload as Record<string, unknown>;
+            return asString(record.error) ?? "Unhealthy";
           }
           return "Unhealthy";
         },
@@ -149,4 +151,3 @@ export function StatusChecks() {
     </Card>
   );
 }
-

@@ -192,7 +192,7 @@ export function ReferredApplicationForm({
           <ul className="text-left space-y-2 text-sm text-slate-600">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-4 w-4 text-teal-600 mt-0.5 flex-shrink-0" />
-              <span>We'll review your business details and growth goals</span>
+              <span>We&apos;ll review your business details and growth goals</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-4 w-4 text-teal-600 mt-0.5 flex-shrink-0" />
@@ -200,7 +200,7 @@ export function ReferredApplicationForm({
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-4 w-4 text-teal-600 mt-0.5 flex-shrink-0" />
-              <span>We'll create a custom referral program plan for your business</span>
+              <span>We&apos;ll create a custom referral program plan for your business</span>
             </li>
           </ul>
         </div>
@@ -227,7 +227,7 @@ export function ReferredApplicationForm({
               Submit Your Application
             </h3>
             <p className="text-slate-600">
-              Tell us about your business and we'll create a custom referral strategy
+              Tell us about your business and we&apos;ll create a custom referral strategy
             </p>
           </div>
 
@@ -461,7 +461,7 @@ export function ReferredApplicationForm({
               Prefer to Talk First?
             </h3>
             <p className="text-slate-300">
-              Book a 30-minute strategy call and we'll walk you through how Refer Labs can transform your revenue.
+              Book a 30-minute strategy call and we&apos;ll walk you through how Refer Labs can transform your revenue.
             </p>
           </div>
 
@@ -484,7 +484,7 @@ export function ReferredApplicationForm({
               <CheckCircle2 className="h-5 w-5 text-teal-400 mt-0.5 flex-shrink-0" />
               <div>
                 <p className="font-semibold">No Commitment Required</p>
-                <p className="text-sm text-slate-400">Just exploring? That's fine!</p>
+                <p className="text-sm text-slate-400">Just exploring? That&apos;s fine!</p>
               </div>
             </div>
           </div>

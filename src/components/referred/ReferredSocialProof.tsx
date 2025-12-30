@@ -98,7 +98,7 @@ export function ReferredSocialProof() {
                 ))}
               </div>
               <p className="text-slate-700 mb-6 leading-relaxed">
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="flex items-center justify-between pt-4 border-t border-slate-200">
                 <div>

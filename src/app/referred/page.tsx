@@ -19,15 +19,16 @@ export default async function ReferredPage() {
   const refAmbassadorCookie = cookieStore.get("ref_ambassador");
   let ambassadorData: { id: string; code: string; business_id: string } | null = null;
 
-  if (refAmbassadorCookie?.value) {
-    try {
-      const parsed = JSON.parse(refAmbassadorCookie.value);
-      // Check if cookie is still within 30-day window
-      const cookieAge = Date.now() - (parsed.timestamp || 0);
-      const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
-      if (cookieAge < thirtyDaysMs) {
-        ambassadorData = {
-          id: parsed.id,
+	if (refAmbassadorCookie?.value) {
+	  try {
+	    const parsed = JSON.parse(refAmbassadorCookie.value);
+	    // Check if cookie is still within 30-day window
+	    // eslint-disable-next-line react-hooks/purity
+	    const cookieAge = Date.now() - (parsed.timestamp || 0);
+	    const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+	    if (cookieAge < thirtyDaysMs) {
+	      ambassadorData = {
+	        id: parsed.id,
           code: parsed.code,
           business_id: parsed.business_id,
         };

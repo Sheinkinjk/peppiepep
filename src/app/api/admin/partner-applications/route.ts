@@ -2,6 +2,27 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 
+type PartnerApplicationCustomerLite = {
+  id: string;
+  name: string | null;
+  email: string | null;
+  phone: string | null;
+  company: string | null;
+  website: string | null;
+  referral_code: string | null;
+  discount_code: string | null;
+  status: string | null;
+  credits: number | null;
+};
+
+type PartnerApplicationRecord = {
+  id: string;
+  customer_id: string | null;
+  customer: PartnerApplicationCustomerLite | null;
+};
+
+type CommissionAmountRecord = { amount: number | null };
+
 export async function GET(request: NextRequest) {
   try {
     // Check admin authentication
@@ -46,7 +67,7 @@ export async function GET(request: NextRequest) {
     // Get referral counts for each partner
     const applicationsWithStats = await Promise.all(
       (applications || []).map(async (app) => {
-        const appData = app as any;
+        const appData = app as unknown as PartnerApplicationRecord;
         if (!appData.customer_id) return { ...appData, referralCount: 0, totalEarnings: 0 };
 
         // Get referral count
@@ -62,9 +83,9 @@ export async function GET(request: NextRequest) {
           .eq("ambassador_id", appData.customer_id)
           .eq("status", "approved");
 
-        const totalEarnings = (commissions || []).reduce(
-          (sum, c: any) => sum + (c.amount || 0),
-          0
+        const totalEarnings = ((commissions ?? []) as CommissionAmountRecord[]).reduce(
+          (sum, commission) => sum + (commission.amount || 0),
+          0,
         );
 
         return {

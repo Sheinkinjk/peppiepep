@@ -3,6 +3,26 @@ import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { Resend } from "resend";
 
+type PartnerApplicationCustomer = {
+  id: string;
+  name: string | null;
+  email: string | null;
+  referral_code: string | null;
+  discount_code: string | null;
+  company: string | null;
+  website: string | null;
+};
+
+type PartnerApplicationRecord = {
+  id: string;
+  customer_id: string | null;
+  email: string | null;
+  name?: string | null;
+  company?: string | null;
+  status: string | null;
+  customer: PartnerApplicationCustomer | null;
+};
+
 export async function POST(request: NextRequest) {
   try {
     // Check admin authentication
@@ -52,11 +72,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const appData = application as any;
+    const appData = application as unknown as PartnerApplicationRecord;
     if (appData.status === "approved") {
       return NextResponse.json(
         { error: "Application already approved" },
         { status: 400 }
+      );
+    }
+
+    if (!appData.customer_id) {
+      return NextResponse.json(
+        { error: "Application is missing a linked customer record" },
+        { status: 500 },
       );
     }
 
@@ -93,7 +120,7 @@ export async function POST(request: NextRequest) {
 
     // Generate referral URLs
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://referlabs.com.au";
-    const customer = appData.customer as any;
+    const customer = appData.customer;
     const referralLink = customer?.referral_code
       ? `${siteUrl}/r/${customer.referral_code}`
       : null;

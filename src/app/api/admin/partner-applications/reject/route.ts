@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 
+type PartnerApplicationLite = {
+  id: string;
+  status: string | null;
+  name: string | null;
+  email: string | null;
+};
+
 export async function POST(request: NextRequest) {
   try {
     // Check admin authentication
@@ -40,7 +47,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const appData = application as any;
+    const appData = application as unknown as PartnerApplicationLite;
     if (appData.status === "rejected") {
       return NextResponse.json(
         { error: "Application already rejected" },

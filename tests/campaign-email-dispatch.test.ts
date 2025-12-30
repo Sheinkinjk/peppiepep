@@ -1,4 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import type { SupabaseClient } from "@supabase/supabase-js";
+
+import type { CampaignMessagePayload } from "@/lib/campaigns";
+import type { Database } from "@/types/supabase";
 
 const envSnapshot = { ...process.env };
 
@@ -61,7 +65,7 @@ describe("Resend campaign email dispatch (inline)", () => {
     const { dispatchCampaignMessagesInline } = await import("@/lib/campaign-inline-dispatch");
 
     const result = await dispatchCampaignMessagesInline({
-      supabase: supabase as any,
+      supabase: supabase as unknown as SupabaseClient<Database>,
       messages: [
         {
           id: "msg_1",
@@ -73,7 +77,8 @@ describe("Resend campaign email dispatch (inline)", () => {
           customer_id: "cust_1",
           campaign_id: "camp_1",
           metadata: {},
-        } as any,
+          scheduled_at: new Date().toISOString(),
+        } satisfies CampaignMessagePayload & { id: string },
       ],
       campaign: { id: "camp_1", name: "Test Campaign" },
       business: { name: "Refer Labs", logo_url: null, brand_highlight_color: null, brand_tone: null },
@@ -84,9 +89,13 @@ describe("Resend campaign email dispatch (inline)", () => {
     expect(resendConstructorMock).not.toHaveBeenCalled();
     expect(resendSendMock).not.toHaveBeenCalled();
 
-    expect(supabase.updates.some((u) => u.table === "campaign_messages" && (u.values as any)?.status === "failed")).toBe(
-      true,
-    );
+    expect(
+      supabase.updates.some((update) => {
+        if (update.table !== "campaign_messages") return false;
+        const values = update.values as Record<string, unknown>;
+        return values.status === "failed";
+      }),
+    ).toBe(true);
   });
 
   it("sends email via Resend and marks message sent with provider id", async () => {
@@ -98,7 +107,7 @@ describe("Resend campaign email dispatch (inline)", () => {
     const { dispatchCampaignMessagesInline } = await import("@/lib/campaign-inline-dispatch");
 
     const result = await dispatchCampaignMessagesInline({
-      supabase: supabase as any,
+      supabase: supabase as unknown as SupabaseClient<Database>,
       messages: [
         {
           id: "msg_1",
@@ -110,7 +119,8 @@ describe("Resend campaign email dispatch (inline)", () => {
           customer_id: "cust_1",
           campaign_id: "camp_1",
           metadata: { ambassador_portal_url: "https://referlabs.test/r/referral" },
-        } as any,
+          scheduled_at: new Date().toISOString(),
+        } satisfies CampaignMessagePayload & { id: string },
       ],
       campaign: { id: "camp_1", name: "Test Campaign" },
       business: { name: "Refer Labs", logo_url: null, brand_highlight_color: null, brand_tone: null },
@@ -130,10 +140,10 @@ describe("Resend campaign email dispatch (inline)", () => {
     expect(call.reply_to).toBe("support@referlabs.test");
 
     const sentUpdate = supabase.updates.find(
-      (u) => u.table === "campaign_messages" && (u.values as any)?.status === "sent",
+      (update) => update.table === "campaign_messages" && (update.values as Record<string, unknown>).status === "sent",
     );
     expect(sentUpdate).toBeTruthy();
-    expect((sentUpdate?.values as any)?.provider_message_id).toBe("provider_123");
+    expect((sentUpdate?.values as Record<string, unknown>)?.provider_message_id).toBe("provider_123");
 
     expect(buildCampaignEmailMock).toHaveBeenCalledTimes(1);
   });

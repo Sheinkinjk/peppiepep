@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // @ts-nocheck - Complex Supabase type inference with multiple joined queries
 export const dynamic = "force-dynamic";
 

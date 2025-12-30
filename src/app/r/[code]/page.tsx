@@ -277,6 +277,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
       const rateLimitResult = await rateLimitPresets.referralSubmission.check(identifier);
 
       if (!rateLimitResult.success) {
+        // eslint-disable-next-line react-hooks/purity
         const retryAfter = Math.max(1, Math.ceil((rateLimitResult.reset - Date.now()) / 1000));
         return {
           error:
