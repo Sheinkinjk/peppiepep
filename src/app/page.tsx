@@ -351,7 +351,7 @@ export default async function Home() {
                 <span className="block">Referral Programs</span>
               </h1>
               <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-900 sm:text-2xl lg:text-[1.75rem]">
-                We Unlock Additional Revenue by Integrating Directly With Your Sales and Marketing Strategy
+                Generate Additional Revenue That Complements Your Sales and Marketing Strategies
               </p>
             </div>
             <TrackedCTA
@@ -373,9 +373,8 @@ export default async function Home() {
                   Why A Referral Program Is Your Best Resource For Growth Hacking
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-0 sm:mx-auto">
-                  Your next best customers are already in your existing customers&rsquo; network. Refer Labs
-                  helps you turn that network into a structured, trackable growth engine that feels
-                  natural for them and powerful for you.
+                  Your next best customers are already in your existing customers&rsquo; network.<br />
+                  Refer Labs helps you turn that network into a structured, trackable growth engine that feels natural for them and powerful for you.
                 </p>
               </div>
 
@@ -702,7 +701,7 @@ export default async function Home() {
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                       <Link
-                        href="/referral"
+                        href="/r/DEMO2025"
                         className={cn(buttonVariants({ variant: "outline" }), "group w-full sm:w-auto text-base font-bold")}
                       >
                         Preview referral landing
