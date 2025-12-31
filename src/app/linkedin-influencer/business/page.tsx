@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import {
   ArrowRight,
   BadgeCheck,
@@ -17,6 +18,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { createServiceClient } from "@/lib/supabase";
 import { sendAdminNotification } from "@/lib/email-notifications";
 import { sendTransactionalEmail } from "@/lib/transactional-email";
+import { logReferralEvent } from "@/lib/referral-events";
 
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencerBusiness);
 
@@ -99,6 +101,12 @@ async function submitBusinessPartner(formData: FormData) {
   const submittedAt = new Date().toISOString();
   const businessId = process.env.PARTNER_PROGRAM_BUSINESS_ID?.trim();
 
+  // Check for referral attribution cookies
+  const cookieStore = await cookies();
+  const ambassadorId = cookieStore.get("pep_ambassador_id")?.value || null;
+  const attributionBusinessId = cookieStore.get("pep_business_id")?.value || null;
+  const attributionReferralCode = cookieStore.get("pep_referral_code")?.value || null;
+
   if (businessId) {
     try {
       const supabase = await createServiceClient();
@@ -133,6 +141,44 @@ async function submitBusinessPartner(formData: FormData) {
       if (customerError || !customer) {
         console.error("Failed to create customer record:", customerError);
         redirect("/linkedin-influencer/business?submitted=0");
+      }
+
+      // Create referral record if attribution data exists
+      if (ambassadorId && attributionBusinessId) {
+        const { data: referralData } = await supabase
+          .from("referrals")
+          .insert({
+            business_id: attributionBusinessId,
+            ambassador_id: ambassadorId,
+            referred_name: contactName,
+            referred_email: email,
+            referred_phone: null,
+            status: "pending",
+            consent_given: true,
+            locale: "en",
+          })
+          .select()
+          .single();
+
+        // Log the signup event
+        await logReferralEvent({
+          supabase,
+          businessId: attributionBusinessId,
+          ambassadorId,
+          referralId: referralData?.id || null,
+          eventType: "signup_submitted",
+          source: "linkedin_influencer_business_form",
+          device: "unknown",
+          metadata: {
+            referral_code: attributionReferralCode,
+            form_type: "linkedin_influencer_business",
+            company,
+            website,
+            industry,
+            target_buyer: targetBuyer,
+            desired_outcome: desiredOutcome,
+          },
+        });
       }
 
       const adminClient = supabase as unknown as {
