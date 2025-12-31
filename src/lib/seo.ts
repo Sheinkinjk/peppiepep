@@ -292,6 +292,47 @@ export const seoConfig = {
       "recurring revenue",
     ],
   },
+  linkedinInfluencer: {
+    title: "LinkedIn Influencer - Performance-based referral marketplace",
+    description:
+      "Connect trusted LinkedIn creators with SaaS and e-commerce companies to drive demos, sign-ups, and revenue without ads or SDRs.",
+    keywords: [
+      "LinkedIn influencers",
+      "creator referrals",
+      "performance marketing",
+      "B2B creator partnerships",
+      "SaaS growth",
+      "e-commerce growth",
+      "referral marketplace",
+    ],
+    url: `${SITE_URL}/linkedin-influencer`,
+  },
+  linkedinInfluencerCreator: {
+    title: "Join LinkedIn Influencer - Creator Application",
+    description:
+      "Apply to join the LinkedIn Influencer marketplace. Drive demos and conversions with performance-based referral partnerships.",
+    keywords: [
+      "LinkedIn creator application",
+      "influencer partnerships",
+      "performance-based referrals",
+      "creator revenue",
+      "LinkedIn monetization",
+    ],
+    url: `${SITE_URL}/linkedin-influencer/influencer`,
+  },
+  linkedinInfluencerBusiness: {
+    title: "Partner with LinkedIn Influencer - Business Application",
+    description:
+      "Partner with LinkedIn creators to drive demos, sign-ups, and revenue. Performance-based acquisition without ads or SDRs.",
+    keywords: [
+      "LinkedIn creator partnerships",
+      "performance marketing",
+      "B2B demand generation",
+      "SaaS pipeline",
+      "e-commerce growth",
+    ],
+    url: `${SITE_URL}/linkedin-influencer/business`,
+  },
 
   dashboard: {
     title: "Dashboard",
