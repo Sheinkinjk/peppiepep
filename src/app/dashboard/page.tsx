@@ -1458,28 +1458,19 @@ export default async function Dashboard() {
 	          : "incomplete",
 		      content: (
 		        <>
-		          <Card className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+		          <Card className="overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/30 p-8 shadow-sm">
 		            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
 		              <div className="min-w-0">
-		                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600">
-		                  Resend-powered campaigns
-		                </p>
-		                <h3 className="mt-2 text-2xl font-black text-slate-900">
-		                  Launch a high-converting campaign in minutes
-		                </h3>
-		                <p className="mt-2 text-sm text-slate-600">
-		                  Send premium branded emails (recommended) or SMS, with unique links per ambassador and live delivery tracking.
-		                </p>
-		                <div className="mt-4 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
-		                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-		                    <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Personalization</p>
-		                    <p className="mt-1 font-semibold text-slate-900">Auto-inserts each ambassador’s referral link</p>
-		                  </div>
-		                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-		                    <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Proof + Tracking</p>
-		                    <p className="mt-1 font-semibold text-slate-900">Delivery status + click/conversion attribution</p>
-		                  </div>
+		                <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-3 py-1 text-xs font-bold text-white shadow-sm">
+		                  <Mail className="h-3.5 w-3.5" />
+		                  Premium Campaigns
 		                </div>
+		                <h3 className="mt-3 text-3xl font-black text-slate-900">
+		                  Launch High-Converting Campaigns
+		                </h3>
+		                <p className="mt-2 text-base text-slate-600">
+		                  Send beautifully designed emails and SMS campaigns with personalized links and real-time tracking.
+		                </p>
 		              </div>
 		              <div className="lg:w-[360px]">
 		                <StartCampaignCTA />

@@ -29,38 +29,36 @@ export function StartCampaignCTA({ className = "", variant = "default" }: StartC
   return (
     <div
       className={cn(
-        "rounded-3xl border border-slate-200/70 bg-white/90 shadow-lg shadow-slate-200/60 sm:flex sm:items-center sm:justify-between",
-        isCompact ? "px-4 py-3 gap-3" : "px-5 py-4",
+        "rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 shadow-md sm:flex sm:items-center sm:justify-between",
+        isCompact ? "px-4 py-3 gap-3" : "px-6 py-5",
         className,
       )}
     >
       <div>
-        <p className={cn("uppercase tracking-[0.3em] text-slate-500", isCompact ? "text-[10px]" : "text-[11px]")}>
-          Start New Campaign
+        <p className={cn("uppercase tracking-[0.3em] text-emerald-700 font-bold", isCompact ? "text-[10px]" : "text-[11px]")}>
+          Create Campaign
         </p>
         <p
           className={cn(
-            "font-semibold text-slate-900 leading-tight",
-            isCompact ? "text-base" : "text-lg",
+            "font-black text-slate-900 leading-tight",
+            isCompact ? "text-lg" : "text-xl",
           )}
         >
-          Launch a Resend-powered email or SMS campaign
+          Launch Email or SMS Campaign
         </p>
-        {isCompact && (
-          <p className="mt-1 text-xs text-slate-500">
-            Opens the campaign composer with templates, tracking, and live delivery.
-          </p>
-        )}
+        <p className="mt-1 text-sm text-slate-600">
+          Premium templates with personalized links and tracking
+        </p>
       </div>
       <Button
         onClick={handleClick}
         variant="cta"
         className={cn(
-          "mt-4 w-full sm:mt-0 sm:w-auto",
-          isCompact && "h-10 px-4 text-sm font-semibold",
+          "mt-4 w-full sm:mt-0 sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 font-bold shadow-lg",
+          isCompact ? "h-11 px-5 text-sm" : "h-12 px-6",
         )}
       >
-        Start campaign
+        Launch Campaign
         <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </div>

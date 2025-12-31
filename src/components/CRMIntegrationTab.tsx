@@ -417,51 +417,44 @@ export function CRMIntegrationTab({
 
   return (
     <div className="space-y-6">
-      <Card className="rounded-3xl border-cyan-200/70 bg-gradient-to-br from-sky-600 via-cyan-600 to-emerald-500 text-white shadow-[0_20px_55px_rgba(15,118,110,0.35)] p-6 sm:p-8 space-y-4">
-        <div className="flex items-start gap-4">
-          <div className="rounded-2xl bg-white/15 p-3">
-            <CloudCog className="h-8 w-8" />
+      <Card className="rounded-2xl border-cyan-200/70 bg-gradient-to-br from-sky-600 via-cyan-600 to-emerald-500 text-white shadow-lg p-5 sm:p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="rounded-xl bg-white/15 p-2">
+            <CloudCog className="h-6 w-6" />
           </div>
-          <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/80">
+          <div>
+            <h2 className="text-xl font-black leading-tight">
               Integration Hub
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-black leading-tight">
-              Connect Refer Labs with Your Entire Tech Stack
             </h2>
-            <p className="text-sm sm:text-base text-white/90">
-              Export ambassador data, integrate with your CRM, automate workflows, and keep conversion tracking in sync—all while maintaining full analytics in your Refer Labs dashboard.
+            <p className="text-sm text-white/90">
+              Connect your CRM, automate workflows, and sync data
             </p>
           </div>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-white/75">
-              Active ambassadors
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
+            <p className="text-[10px] uppercase tracking-wider text-white/75">
+              Ambassadors
             </p>
-            <p className="text-2xl font-black">{totalCustomers}</p>
-            <p className="text-xs text-white/80">Ready to export and sync</p>
+            <p className="text-xl font-black">{totalCustomers}</p>
           </div>
-          <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-white/75">
-              Email contacts
+          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
+            <p className="text-[10px] uppercase tracking-wider text-white/75">
+              Email
             </p>
-            <p className="text-2xl font-black">{emailReady}</p>
-            <p className="text-xs text-white/80">Can sync to email marketing platforms</p>
+            <p className="text-xl font-black">{emailReady}</p>
           </div>
-          <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-white/75">
-              SMS contacts
+          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
+            <p className="text-[10px] uppercase tracking-wider text-white/75">
+              SMS
             </p>
-            <p className="text-2xl font-black">{smsReady}</p>
-            <p className="text-xs text-white/80">Available for SMS automation</p>
+            <p className="text-xl font-black">{smsReady}</p>
           </div>
-          <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-white/75">
-              Unique codes
+          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
+            <p className="text-[10px] uppercase tracking-wider text-white/75">
+              Codes
             </p>
-            <p className="text-2xl font-black">{uniqueCodes}</p>
-            <p className="text-xs text-white/80">Tracked across all integrations</p>
+            <p className="text-xl font-black">{uniqueCodes}</p>
           </div>
         </div>
       </Card>
