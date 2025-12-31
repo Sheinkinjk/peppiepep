@@ -111,9 +111,9 @@ const referralNumbers = [
   },
   {
     value: "5 Minutes",
-    title: "To Launch With Refer Labs",
+    title: "To Get Started",
     copy:
-      "No coding. No complexity. Turn on your referral program and let your customers become your growth engine.",
+      "No coding required. Create your account and start inviting ambassadors in minutes. Full deployment and customization available when you're ready.",
     gradient: "from-white/95 to-white/95",
     accentIcon: TrendingUp,
     accentBg: "bg-[#5ce1e6]",

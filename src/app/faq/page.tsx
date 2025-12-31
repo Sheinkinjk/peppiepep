@@ -16,7 +16,7 @@ export default function FAQPage() {
         {
           question: "How does onboarding work once I create an account?",
           answer:
-            "Complete the signup form, share your customer roster, and our concierge team configures branding, rewards, automations, and the $250 sign-on credit you can offer new users. We handle CSV imports, ambassador assignment, and launch-ready campaigns so the dashboard is reporting immediately.",
+            "Complete the signup form and you can start inviting ambassadors right away. Our concierge team helps you configure branding, rewards, automations, and the $250 sign-on credit you can offer new users. We assist with CSV imports, ambassador assignment, and launch-ready campaigns to get your dashboard reporting quickly.",
         },
         {
           question: "Do I need a developer to launch Refer Labs?",
@@ -24,9 +24,9 @@ export default function FAQPage() {
             "No—everything in the onboarding form, dashboard, and ROI calculator is drag-and-drop friendly. We import your data, set up messaging, and even provision integrations for you. If you want to extend the system, our team can hand you Supabase hooks or Zapier templates.",
         },
         {
-          question: "Is Refer Labs compliant with messaging and privacy regulations?",
+          question: "Does Refer Labs provide compliance tools for messaging and privacy regulations?",
           answer:
-            "Yes. Every campaign includes opt-out controls, double opt-in verification, and consent tracking so you stay compliant with TCPA, CASL, GDPR, and local Australian privacy rules. Details live in the Terms and Privacy pages linked in every footer.",
+            "Yes. Refer Labs provides compliance tools including opt-out controls, double opt-in verification, and consent tracking to help you meet regulatory requirements. However, you are responsible for ensuring your use of the platform complies with TCPA, CASL, GDPR, and all applicable local privacy laws in your jurisdiction. Details about our privacy practices are available in the Terms and Privacy pages linked in every footer.",
         },
         {
           question: "How does the support experience work?",
@@ -99,14 +99,14 @@ export default function FAQPage() {
             "Reward controls let you cap spend per campaign, pause payouts when thresholds hit, and export ledger data for accounting. The live reward feed shows earned credits, payout statuses, and remaining budget.",
         },
         {
-          question: "Is there an approval flow for reward releases?",
+          question: "Is there an approval process for referrals and rewards?",
           answer:
-            "Yes—route approvals to finance or ops so no ambassador is paid before a reviewer signs off. The system logs who approved what and when.",
+            "Yes. All referrals start with pending status, allowing you to review each referral before marking it as complete. You have full control over when ambassadors receive credit for their referrals, giving you time to verify legitimacy and confirm purchases.",
         },
         {
-          question: "How does Refer Labs prevent fraudulent referrals?",
+          question: "How does Refer Labs help prevent fraudulent referrals?",
           answer:
-            "Duplicate emails, shared IP addresses, or suspicious spend patterns are flagged and auto-paused until a reviewer clears the activity.",
+            "Refer Labs includes duplicate detection for emails and phones to prevent the same customer from being added multiple times. All referrals start with pending status, giving you the ability to review and approve each one before rewards are issued. You maintain full control over which referrals are legitimate.",
         },
         {
           question: "Can I pause or duplicate campaigns?",
@@ -146,7 +146,7 @@ export default function FAQPage() {
         {
           question: "Are there templates for compliance messaging?",
           answer:
-            "Every campaign ships with opt-out-friendly, lawyers-reviewed templates that can be adapted per region and reused across channels.",
+            "Every campaign ships with opt-out-friendly templates that can be adapted per region and reused across channels. These templates are provided as guides to help you get started. You are responsible for ensuring all messaging complies with applicable laws (TCPA, CAN-SPAM, GDPR, CASL, etc.) in your jurisdiction.",
         },
         {
           question: "What reporting is available for finance and ops?",
