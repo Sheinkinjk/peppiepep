@@ -807,29 +807,6 @@ export function IntegrationTab({
 
         {integrationsOpen ? (
           <>
-            <div className="mt-5 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-                <p className="text-sm font-bold text-slate-900">Setup</p>
-                <p className="mt-1 text-sm text-slate-600">Embed referral pages and connect your conversion source.</p>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-                <p className="text-sm font-bold text-slate-900">Testing</p>
-                <p className="mt-1 text-sm text-slate-600">Run one click → signup → conversion test and confirm attribution.</p>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-                <p className="text-sm font-bold text-slate-900">Live</p>
-                <p className="mt-1 text-sm text-slate-600">Roll out to ambassadors and monitor real-time dashboard updates.</p>
-              </div>
-            </div>
-
-            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
-              <p className="text-sm font-semibold text-slate-900">
-                Need a step-by-step guide?
-                <br />
-                Follow the dedicated setup pages (with built-in testing checkpoints) for each platform.
-              </p>
-            </div>
-
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <a href="/shopify" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify</a>
               <a href="/wordpress" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">WordPress</a>
