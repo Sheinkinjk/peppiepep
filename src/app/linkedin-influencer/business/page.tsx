@@ -102,6 +102,39 @@ async function submitBusinessPartner(formData: FormData) {
   if (businessId) {
     try {
       const supabase = await createServiceClient();
+
+      // Import customer creation utilities
+      const { generateUniqueReferralCode } = await import("@/lib/referral-codes");
+      const { generateUniqueDiscountCode } = await import("@/lib/discount-codes");
+
+      // Create customer record first
+      const referralCode = await generateUniqueReferralCode({ supabase });
+      const discountCode = await generateUniqueDiscountCode({
+        supabase,
+        businessId,
+        seedName: contactName,
+      });
+
+      const { data: customer, error: customerError } = await supabase
+        .from("customers")
+        .insert([{
+          business_id: businessId,
+          name: contactName,
+          email,
+          referral_code: referralCode,
+          discount_code: discountCode,
+          company,
+          website,
+          status: "applicant", // Special status for LinkedIn Influencer business applicants
+        }])
+        .select("id")
+        .single();
+
+      if (customerError || !customer) {
+        console.error("Failed to create customer record:", customerError);
+        redirect("/linkedin-influencer/business?submitted=0");
+      }
+
       const adminClient = supabase as unknown as {
         from: (table: string) => {
           insert: (values: Array<Record<string, unknown>>) => Promise<unknown>;
@@ -121,9 +154,11 @@ async function submitBusinessPartner(formData: FormData) {
         .filter(Boolean)
         .join("\n");
 
+      // Create partner application linked to customer
       await adminClient.from("partner_applications").insert([
         {
           business_id: businessId,
+          customer_id: customer.id, // Link to the customer record
           name: contactName,
           email,
           company,

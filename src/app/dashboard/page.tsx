@@ -1057,10 +1057,30 @@ export default async function Dashboard() {
     )
     .eq("business_id", business.id);
 
+  // Query partner applications to identify LinkedIn Influencer customers
+  const { data: partnerApplications = [] } = await supabase
+    .from("partner_applications")
+    .select("customer_id,source")
+    .eq("business_id", business.id)
+    .in("source", ["linkedin-influencer", "linkedin-influencer-business"]);
+
   const safeReferrals =
     (referrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
   const safeCustomers =
     (customers ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
+
+  // Filter LinkedIn Influencer customers based on linked partner applications
+  const linkedInInfluencerCustomerIds = new Set(
+    (partnerApplications ?? [])
+      .map((app: { customer_id: string | null }) => app.customer_id)
+      .filter((id): id is string => id !== null)
+  );
+  const linkedInInfluencerCustomers = safeCustomers.filter(c =>
+    linkedInInfluencerCustomerIds.has(c.id)
+  );
+  const regularCustomers = safeCustomers.filter(c =>
+    !linkedInInfluencerCustomerIds.has(c.id)
+  );
 
   // Query partner referrals separately (B2B referrals to Refer Labs partner program)
   // Filter admin's referrals (these are likely B2B partner referrals)
@@ -1356,13 +1376,51 @@ export default async function Dashboard() {
               </div>
             )}
 
+            {/* Admin-only: LinkedIn Influencer customers section */}
+            {currentAdmin && linkedInInfluencerCustomers.length > 0 && (
+              <div id="linkedin-influencer-customers" className="scroll-mt-24">
+                <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+                  <div className="mb-6">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-emerald-500">
+                        <Users className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                          LinkedIn Influencer Program
+                        </p>
+                        <h3 className="text-xl font-black text-slate-900">
+                          LinkedIn Influencer Customers ({linkedInInfluencerCustomers.length})
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-sm text-slate-600">
+                      Customers from LinkedIn Influencer marketplace signups (influencers and businesses). These are separate from the regular referral program.
+                    </p>
+                  </div>
+                  <CustomersTable
+                    initialCustomers={linkedInInfluencerCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+                    initialTotal={linkedInInfluencerCustomers.length}
+                    siteUrl={siteUrl}
+                    businessId={business.id}
+                    adjustCreditsAction={adjustCustomerCredits}
+                  />
+                </Card>
+              </div>
+            )}
+
 	          <Card className="p-6 border border-slate-200 rounded-lg bg-white">
 	            <div className="mb-6">
 	              <h3 className="text-xl font-black text-slate-900 mb-2">
-	                All Customers ({safeCustomers.length})
+	                All Customers ({regularCustomers.length})
 	              </h3>
+	              {currentAdmin && linkedInInfluencerCustomers.length > 0 && (
+	                <p className="text-sm text-slate-600">
+	                  Regular referral program customers. LinkedIn Influencer customers are shown separately above.
+	                </p>
+	              )}
 	            </div>
-	            {safeCustomers.length === 0 ? (
+	            {regularCustomers.length === 0 ? (
 	              <div className="py-12 text-center">
 	                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
 	                  <Users className="h-8 w-8 text-slate-400" />
@@ -1374,8 +1432,8 @@ export default async function Dashboard() {
 	              </div>
 	            ) : (
 	              <CustomersTable
-	                initialCustomers={safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
-	                initialTotal={safeCustomers.length}
+	                initialCustomers={regularCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+	                initialTotal={regularCustomers.length}
 	                siteUrl={siteUrl}
                   businessId={business.id}
 	                adjustCreditsAction={adjustCustomerCredits}
