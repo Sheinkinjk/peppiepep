@@ -179,10 +179,6 @@ export default function LinkedInInfluencerPage() {
         {/* Hero */}
         <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-8 animate-in fade-in duration-700">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.32em] text-cyan-200">
-              <Zap className="h-3.5 w-3.5" />
-              LinkedIn Influencer
-            </div>
             <h1 className="text-balance text-4xl font-black leading-[1.05] sm:text-5xl lg:text-6xl">
               Turn LinkedIn Influence Into{" "}
               <span className="bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent">
@@ -292,27 +288,84 @@ export default function LinkedInInfluencerPage() {
           </div>
         </section>
 
-        {/* How it works */}
+        {/* How it works - Visual Flow Diagram */}
         <section className="mt-20 animate-in fade-in duration-700 delay-400">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">How it works</p>
-              <h2 className="text-3xl font-black text-white">From join → launch → scale</h2>
-            </div>
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">How it works</p>
+            <h2 className="text-3xl font-black text-white mt-2">From Join → Launch → Scale</h2>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {modelSteps.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-                <div className="flex items-center justify-between">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
-                    Step {index + 1}
-                  </p>
-                  <step.icon className="h-5 w-5 text-cyan-300" />
-                </div>
-                <h3 className="mt-3 text-lg font-bold text-white">{step.title}</h3>
-                <p className="mt-2 text-sm text-slate-200/90">{step.detail}</p>
-              </div>
-            ))}
+
+          {/* Flow Diagram */}
+          <div className="relative">
+            {/* Desktop: Horizontal Flow */}
+            <div className="hidden lg:grid lg:grid-cols-5 gap-4">
+              {modelSteps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.title} className="relative">
+                    {/* Connecting Arrow */}
+                    {index < modelSteps.length - 1 && (
+                      <div className="absolute top-[60px] -right-[18px] z-10">
+                        <ChevronRight className="h-8 w-8 text-cyan-400/60" />
+                      </div>
+                    )}
+
+                    {/* Step Card */}
+                    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur p-5 h-full flex flex-col items-center text-center">
+                      {/* Step Number Badge */}
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 text-lg font-black text-white shadow-lg">
+                        {index + 1}
+                      </div>
+
+                      {/* Icon */}
+                      <div className="mb-4 rounded-xl bg-white/5 p-3">
+                        <Icon className="h-6 w-6 text-cyan-300" />
+                      </div>
+
+                      {/* Content */}
+                      <h3 className="text-sm font-bold text-white mb-2">{step.title}</h3>
+                      <p className="text-xs text-slate-300/80 leading-relaxed">{step.detail}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Mobile: Vertical Flow */}
+            <div className="lg:hidden space-y-6">
+              {modelSteps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.title} className="relative">
+                    {/* Connecting Line */}
+                    {index < modelSteps.length - 1 && (
+                      <div className="absolute left-[30px] top-[120px] bottom-[-24px] w-0.5 bg-gradient-to-b from-cyan-400/60 to-transparent" />
+                    )}
+
+                    {/* Step Card */}
+                    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur p-6">
+                      <div className="flex gap-4">
+                        {/* Step Number */}
+                        <div className="flex-shrink-0 flex h-[60px] w-[60px] items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 text-2xl font-black text-white shadow-lg">
+                          {index + 1}
+                        </div>
+
+                        <div className="flex-1">
+                          {/* Icon */}
+                          <div className="inline-flex mb-3 rounded-xl bg-white/5 p-2.5">
+                            <Icon className="h-5 w-5 text-cyan-300" />
+                          </div>
+
+                          {/* Content */}
+                          <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
+                          <p className="text-sm text-slate-300/80 leading-relaxed">{step.detail}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
