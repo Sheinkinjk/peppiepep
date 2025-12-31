@@ -55,17 +55,17 @@ export async function POST(request: Request) {
     ensureAbsoluteUrl(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ??
     "https://referlabs.com.au";
 
-  const businessName = "Refer Labs";
-  const referralCode = "TESTCODE123";
-  const referralLink = `${siteUrl.replace(/\/$/, "")}/r/${referralCode}?utm_campaign=test_email&utm_medium=email&utm_source=dashboard`;
+  const businessName = "Your Business";
+  const referralCode = "PREVIEW2025";
+  const referralLink = `${siteUrl.replace(/\/$/, "")}/r/${referralCode}?utm_campaign=preview&utm_medium=email&utm_source=dashboard`;
   const referralLandingUrl = `${siteUrl.replace(/\/$/, "")}/referral?code=${referralCode}`;
   const ambassadorPortalUrl = `${siteUrl.replace(/\/$/, "")}/r/referral?code=${referralCode}`;
 
   const body = buildDefaultEmailBody({
     businessName,
-    offerText: "VIP reward for your inner circle",
-    clientRewardText: "$25 credit",
-    newUserRewardText: "$25 welcome credit",
+    offerText: "You're invited to join our exclusive ambassador program and earn premium rewards",
+    clientRewardText: "exclusive rewards",
+    newUserRewardText: "special welcome bonus",
   });
 
   const { html, text } = await buildCampaignEmail({
@@ -76,17 +76,41 @@ export async function POST(request: Request) {
     referralLink,
     referralLandingUrl,
     ambassadorPortalUrl,
-    preheaderText: parsed.data.preheader ?? null,
+    preheaderText: parsed.data.preheader ?? "Earn rewards by sharing with your network",
+    brand: {
+      logoUrl: null,
+      highlightColor: "#7c3aed",
+      tone: "modern",
+    },
     includeQrCode: parsed.data.includeQr,
     snapshot: {
-      newUserRewardText: "$25 welcome credit",
-      clientRewardText: "$25 credit",
+      newUserRewardText: "special welcome bonus",
+      clientRewardText: "exclusive rewards",
       rewardType: "credit",
-      rewardAmount: 25,
+      rewardAmount: 50,
       upgradeName: null,
-      rewardTerms: "Test email only",
+      rewardTerms: "This is a preview email showing how your campaigns will look",
       logoUrl: null,
-      storyBlocks: null,
+      storyBlocks: [
+        {
+          icon: "gift",
+          label: "Share & Earn",
+          title: "Get Rewarded",
+          description: "Every friend you refer unlocks exclusive rewards for both of you",
+        },
+        {
+          icon: "users",
+          label: "Grow Together",
+          title: "Build Your Network",
+          description: "Help your friends discover something amazing while earning premium perks",
+        },
+        {
+          icon: "star",
+          label: "VIP Status",
+          title: "Unlock Benefits",
+          description: "Top ambassadors get exclusive access to special offers and early releases",
+        },
+      ],
       includeQr: parsed.data.includeQr,
     },
   });

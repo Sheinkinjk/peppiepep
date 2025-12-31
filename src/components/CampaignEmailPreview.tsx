@@ -144,27 +144,41 @@ export function CampaignEmailPreview({
   ]);
 
   return (
-    <div className="bg-slate-100/70 p-3 rounded-[28px] text-sm text-slate-700">
-      <div className="mb-3 text-xs uppercase tracking-[0.22em] text-slate-500">
-        Live campaign preview
+    <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-white shadow-lg">
+      <div className="sticky top-0 z-10 border-b border-slate-200 bg-white/95 backdrop-blur-sm px-5 py-3">
+        <div className="flex items-center gap-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600">
+            <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-bold text-slate-900">Email Preview</p>
+            <p className="text-xs text-slate-600">Live preview of how your campaign will look</p>
+          </div>
+          {isRendering && (
+            <div className="flex items-center gap-2 text-xs text-slate-500">
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              <span>Rendering...</span>
+            </div>
+          )}
+        </div>
       </div>
-      <div className="rounded-[24px] border border-slate-200 bg-white shadow-sm overflow-hidden">
-        {isRendering && (
-          <div className="flex items-center justify-center gap-2 py-6 text-slate-500">
-            <Loader2 className="h-4 w-4 animate-spin" />
-            Rendering premium layout…
+      <div className="bg-slate-50 p-4">
+        {renderError && (
+          <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            {renderError}
           </div>
         )}
-        {renderError && (
-          <div className="px-6 py-5 text-sm text-red-600">{renderError}</div>
-        )}
         {previewHtml && (
-          <iframe
-            title="Campaign email preview"
-            className="w-full min-h-[900px] border-t border-slate-200"
-            srcDoc={previewHtml}
-            sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          />
+          <div className="rounded-xl border border-slate-300 bg-white shadow-md overflow-hidden">
+            <iframe
+              title="Campaign email preview"
+              className="w-full min-h-[900px]"
+              srcDoc={previewHtml}
+              sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            />
+          </div>
         )}
       </div>
     </div>

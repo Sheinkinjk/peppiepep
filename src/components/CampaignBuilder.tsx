@@ -309,12 +309,12 @@ export function CampaignBuilder({
           campaignName: effectiveCampaignName,
           campaignMessage,
           campaignChannel,
-          emailSubject,
-          emailPreheader,
+          emailSubject: emailSubject.trim() || null,
+          emailPreheader: emailPreheader.trim() || null,
           senderName: senderName.trim() || null,
           replyTo: replyTo.trim() || null,
-          utmSource,
-          utmContent,
+          utmSource: utmSource.trim() || null,
+          utmContent: utmContent.trim() || null,
           scheduleType: effectiveScheduleType,
           scheduleDate: effectiveScheduleDate,
           selectedCustomers,
@@ -668,7 +668,7 @@ export function CampaignBuilder({
                       Use Your Own CRM? No Problem.
                     </p>
                     <p className="text-sm text-indigo-800 mb-3">
-                      Send campaigns from Klaviyo, Mailchimp, or any email platform you already use. Refer Labs handles all tracking automatically.
+                      Export your ambassador list and import into your email platform. Follow our integration guides for Klaviyo, Mailchimp, HubSpot, and more.
                     </p>
                     <div className="space-y-2 text-xs text-indigo-900">
                       <div className="flex items-start gap-2">
@@ -700,13 +700,10 @@ export function CampaignBuilder({
                     variant="outline"
                     className="border-indigo-300 text-indigo-900 hover:bg-indigo-100"
                     onClick={() => {
-                      toast({
-                        title: "CRM Integration Benefits",
-                        description: "Use your existing email platform while Refer Labs automatically tracks all referral conversions via unique links.",
-                      });
+                      window.open('/integrations', '_blank');
                     }}
                   >
-                    Learn More
+                    View Integration Guides
                   </Button>
                 </div>
               </div>
@@ -766,7 +763,7 @@ export function CampaignBuilder({
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="flex-1">
                   <p className="text-sm font-semibold text-slate-900">Start with a proven template</p>
-                  <p className="text-xs text-slate-600">Save time with professionally-written campaign copy</p>
+                  <p className="text-xs text-slate-600">Choose from pre-written campaign templates designed to drive engagement</p>
                 </div>
                 <div className="sm:shrink-0">
                   <CampaignTemplateSelector
@@ -784,9 +781,9 @@ export function CampaignBuilder({
               <div className="rounded-2xl border border-slate-200 bg-white p-4 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">Resend email essentials</p>
+                    <p className="text-sm font-semibold text-slate-900">Email Configuration</p>
                     <p className="text-xs text-slate-500">
-                      Subject + preview text drive opens. UTM tags keep your analytics accurate.
+                      Subject line and preview text to improve open rates. UTM parameters for tracking.
                     </p>
                   </div>
                   <Button
@@ -1078,61 +1075,6 @@ export function CampaignBuilder({
                     a valid reward amount before sending this campaign.
                   </p>
                 )}
-                <div className="rounded-2xl border border-slate-200 bg-white/90 shadow-inner p-4 space-y-3">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-slate-500 font-semibold">
-                      Settings preview
-                    </p>
-                    <p className="text-[11px] text-slate-500">
-                      Live snapshot of what ambassadors and friends will see in emails/referral pages.
-                    </p>
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
-                        Headline / offer
-                      </p>
-                      <p className="text-sm font-semibold text-slate-900">
-                        {settingsOfferText || "Not set"}
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
-                        Friend reward
-                      </p>
-                      <p className="text-sm font-semibold text-slate-900">
-                        {settingsNewUserRewardText || "Not set"}
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
-                        Ambassador reward
-                      </p>
-                      <p className="text-sm font-semibold text-slate-900">
-                        {settingsClientRewardText || "Not set"}
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                      <p className="text-[11px] uppercase tracking-wide text-slate-500">
-                        Reward structure
-                      </p>
-                      <p className="text-sm font-semibold text-slate-900">
-                        {settingsRewardType || "Not set"}{" "}
-                        {settingsRewardType === "credit" && settingsRewardAmount
-                          ? `($${settingsRewardAmount})`
-                          : ""}
-                      </p>
-                    </div>
-                  </div>
-                  {settingsRewardTerms && (
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600">
-                      <p className="text-[11px] uppercase tracking-wide text-slate-500 mb-1">
-                        Terms
-                      </p>
-                      {settingsRewardTerms}
-                    </div>
-                  )}
-                </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div>
                     <p className="text-sm font-semibold text-slate-900">
