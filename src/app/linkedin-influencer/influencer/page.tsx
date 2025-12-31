@@ -198,8 +198,41 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
   const submitted = params?.submitted === "1";
   const failed = params?.submitted === "0";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LinkedIn Creator Application",
+    "description": "Join Refer Labs' LinkedIn Influencer marketplace to earn 25% recurring revenue",
+    "url": "https://referlabs.com.au/linkedin-influencer/influencer",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "name": "Creator Partnership Program",
+      "description": "Earn 25% recurring revenue by promoting SaaS and e-commerce products to your LinkedIn audience",
+      "seller": {
+        "@type": "Organization",
+        "name": "Refer Labs"
+      },
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to join - earn commission on referrals"
+      }
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "LinkedIn Creators and Influencers"
+    }
+  };
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#070b12] via-[#0b121b] to-[#05070b] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(34,211,238,0.16),transparent_55%),radial-gradient(circle_at_85%_15%,rgba(16,185,129,0.2),transparent_55%)]" />
       <div className="absolute -top-20 right-0 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-400/30 to-transparent blur-3xl animate-pulse" />
       <div

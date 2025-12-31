@@ -102,8 +102,66 @@ const comparison = [
 ];
 
 export default function LinkedInInfluencerPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "LinkedIn Influencer Marketplace",
+    "description": "Connect verified LinkedIn creators with SaaS & e-commerce brands through performance-based referral partnerships",
+    "url": "https://referlabs.com.au/linkedin-influencer",
+    "provider": {
+      "@type": "Organization",
+      "name": "Refer Labs",
+      "url": "https://referlabs.com.au",
+      "logo": "https://referlabs.com.au/logo.png"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Creator Partnership",
+        "description": "Earn 25% recurring revenue promoting SaaS and e-commerce products",
+        "url": "https://referlabs.com.au/linkedin-influencer/influencer"
+      },
+      {
+        "@type": "Offer",
+        "name": "Business Partnership",
+        "description": "Scale with LinkedIn creator partnerships - pay only for results",
+        "url": "https://referlabs.com.au/linkedin-influencer/business"
+      }
+    ],
+    "mainEntity": {
+      "@type": "Service",
+      "serviceType": "Performance Marketing Platform",
+      "provider": {
+        "@type": "Organization",
+        "name": "Refer Labs"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Global"
+      },
+      "audience": [
+        {
+          "@type": "Audience",
+          "audienceType": "LinkedIn Creators"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "SaaS Companies"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "E-commerce Businesses"
+        }
+      ]
+    }
+  };
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#070b12] via-[#0b121b] to-[#05070b] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <p className="sr-only">
         LinkedIn Influencer is a performance-based referral marketplace that connects high-quality LinkedIn creators
         with SaaS and e-commerce brands, enabling creators to drive demos and conversions while businesses replace

@@ -118,7 +118,11 @@ describe("Resend campaign email dispatch (inline)", () => {
           business_id: "biz_1",
           customer_id: "cust_1",
           campaign_id: "camp_1",
-          metadata: { ambassador_portal_url: "https://referlabs.test/r/referral" },
+          metadata: {
+            ambassador_portal_url: "https://referlabs.test/r/referral",
+            email_subject: "Subject override",
+            email_preheader: "Preheader override",
+          },
           scheduled_at: new Date().toISOString(),
         } satisfies CampaignMessagePayload & { id: string },
       ],
@@ -134,7 +138,7 @@ describe("Resend campaign email dispatch (inline)", () => {
     expect(resendSendMock).toHaveBeenCalledTimes(1);
     const call = resendSendMock.mock.calls[0][0];
     expect(call.to).toBe("user@example.com");
-    expect(call.subject).toBe("Test Campaign");
+    expect(call.subject).toBe("Subject override");
     expect(call.html).toContain("email");
     expect(call.text).toContain("email");
     expect(call.reply_to).toBe("support@referlabs.test");

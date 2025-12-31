@@ -44,11 +44,11 @@ export function StartCampaignCTA({ className = "", variant = "default" }: StartC
             isCompact ? "text-base" : "text-lg",
           )}
         >
-          Launch SMS or email blasts instantly
+          Launch a Resend-powered email or SMS campaign
         </p>
         {isCompact && (
           <p className="mt-1 text-xs text-slate-500">
-            Opens the five-step composer with recipients preselected.
+            Opens the campaign composer with templates, tracking, and live delivery.
           </p>
         )}
       </div>

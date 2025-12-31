@@ -1327,6 +1327,35 @@ export default async function Dashboard() {
 	            </Card>
 	          </div>
 
+            {/* Admin-only: Partner applications are created as customers (status: applicant) and show up in "All Customers". */}
+            {currentAdmin && (
+              <div id="partner-applications" className="scroll-mt-24">
+                <details className="rounded-2xl border border-slate-200 bg-white">
+                  <summary className="cursor-pointer list-none px-6 py-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                          Admin tools
+                        </p>
+                        <h3 className="mt-1 text-lg font-extrabold text-slate-900">
+                          Partner applications
+                        </h3>
+                        <p className="mt-1 text-sm text-slate-600">
+                          Review/approve partner applicants. Approved partners are treated the same as any customer/ambassador and will appear in the table below.
+                        </p>
+                      </div>
+                      <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
+                        Expand
+                      </span>
+                    </div>
+                  </summary>
+                  <div className="border-t border-slate-200 px-6 py-6">
+                    <PartnerApplicationsManager />
+                  </div>
+                </details>
+              </div>
+            )}
+
 	          <Card className="p-6 border border-slate-200 rounded-lg bg-white">
 	            <div className="mb-6">
 	              <h3 className="text-xl font-black text-slate-900 mb-2">
@@ -1369,19 +1398,36 @@ export default async function Dashboard() {
 	        : stepValidations["clients-ambassadors"].isComplete
 	          ? "in_progress"
 	          : "incomplete",
-	      content: (
-	        <>
-	          <Card className="p-6 border-2 border-emerald-200 rounded-lg bg-emerald-50">
-	            <div className="flex items-center justify-between">
-	              <div>
-	                <h3 className="text-2xl font-black text-slate-900 mb-2">Ready to Launch?</h3>
-	                <p className="text-sm text-slate-600">Send SMS or email blasts to your ambassadors instantly</p>
-	              </div>
-	              <div>
-	                <StartCampaignCTA />
-	              </div>
-	            </div>
-	          </Card>
+		      content: (
+		        <>
+		          <Card className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+		            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+		              <div className="min-w-0">
+		                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600">
+		                  Resend-powered campaigns
+		                </p>
+		                <h3 className="mt-2 text-2xl font-black text-slate-900">
+		                  Launch a high-converting campaign in minutes
+		                </h3>
+		                <p className="mt-2 text-sm text-slate-600">
+		                  Send premium branded emails (recommended) or SMS, with unique links per ambassador and live delivery tracking.
+		                </p>
+		                <div className="mt-4 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
+		                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+		                    <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Personalization</p>
+		                    <p className="mt-1 font-semibold text-slate-900">Auto-inserts each ambassador’s referral link</p>
+		                  </div>
+		                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+		                    <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Proof + Tracking</p>
+		                    <p className="mt-1 font-semibold text-slate-900">Delivery status + click/conversion attribution</p>
+		                  </div>
+		                </div>
+		              </div>
+		              <div className="lg:w-[360px]">
+		                <StartCampaignCTA />
+		              </div>
+		            </div>
+		          </Card>
 
 	          <CRMIntegrationTab
 	            customers={safeCustomers}
@@ -1928,19 +1974,6 @@ export default async function Dashboard() {
 	                We&apos;re finishing the mobile toolkit now; dashboards work best on desktop today so you don&apos;t miss any controls.
 	              </p>
             </div>
-          </div>
-        )}
-
-        {/* Admin Only: Partner Applications Manager */}
-        {currentAdmin && (
-          <div className="mb-8">
-            <div className="mb-4">
-              <h2 className="text-2xl font-bold text-slate-900">Partner Applications</h2>
-              <p className="text-sm text-slate-600 mt-1">
-                Review and approve partner applications. Approved partners receive $250 credit and their unique referral link.
-              </p>
-            </div>
-            <PartnerApplicationsManager />
           </div>
         )}
 

@@ -68,11 +68,22 @@ export function CampaignBuilder({
   const [showCampaignModal, setShowCampaignModal] = useState(false);
   const [campaignName, setCampaignName] = useState("");
   const [campaignMessage, setCampaignMessage] = useState("");
+  const [emailSubject, setEmailSubject] = useState("");
+  const [emailPreheader, setEmailPreheader] = useState("");
+  const [senderName, setSenderName] = useState(businessName);
+  const [replyTo, setReplyTo] = useState("");
+  const [utmSource, setUtmSource] = useState("dashboard");
+  const [utmContent, setUtmContent] = useState("");
   const [selectedCustomers, setSelectedCustomers] = useState<string[]>([]);
   const [campaignChannel, setCampaignChannel] = useState<"sms" | "email">("email");
+  const [recipientStatusFilter, setRecipientStatusFilter] = useState<
+    "all" | "pending" | "verified" | "active" | "applicant"
+  >("all");
+  const [recipientSearch, setRecipientSearch] = useState("");
   const [scheduleType, setScheduleType] = useState<"now" | "later">("now");
   const [scheduleDate, setScheduleDate] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const [isSendingTestEmail, setIsSendingTestEmail] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const notifyCampaignStatus = (type: "success" | "error", text: string, title?: string) => {
     setStatusMessage({ type, text });
@@ -137,6 +148,7 @@ export function CampaignBuilder({
   const handleTemplateSelect = (template: CampaignTemplate) => {
     setCampaignMessage(template.message);
     setCampaignName(template.name);
+    setEmailSubject(template.name);
     if (template.channel !== "both") {
       setCampaignChannel(template.channel);
     }
@@ -158,6 +170,15 @@ export function CampaignBuilder({
   const eligibleCustomers = availableCustomers.filter((customer) =>
     campaignChannel === "sms" ? customer.phone : customer.email,
   );
+  const filteredEligibleCustomers = eligibleCustomers.filter((customer) => {
+    if (recipientStatusFilter !== "all" && customer.status !== recipientStatusFilter) {
+      return false;
+    }
+    const query = recipientSearch.trim().toLowerCase();
+    if (!query) return true;
+    const haystack = `${customer.name ?? ""} ${customer.email ?? ""} ${customer.phone ?? ""}`.toLowerCase();
+    return haystack.includes(query);
+  });
 
   const smsEligibleCount = availableCustomers.filter((customer) => !!customer.phone).length;
   const emailEligibleCount = availableCustomers.filter((customer) => !!customer.email).length;
@@ -216,7 +237,7 @@ export function CampaignBuilder({
   };
 
   const selectAllCustomers = () => {
-    setSelectedCustomers(eligibleCustomers.map(c => c.id));
+    setSelectedCustomers(filteredEligibleCustomers.map((customer) => customer.id));
   };
 
   const deselectAllCustomers = () => {
@@ -239,7 +260,8 @@ export function CampaignBuilder({
   };
 
   const handleSendCampaign = async () => {
-    if (!campaignName || selectedCustomers.length === 0) {
+    const effectiveCampaignName = (campaignName || "").trim() || (emailSubject || "").trim();
+    if (!effectiveCampaignName || selectedCustomers.length === 0) {
       notifyCampaignStatus(
         "error",
         "Please give your campaign a name and select at least one customer."
@@ -249,6 +271,11 @@ export function CampaignBuilder({
 
     if (campaignChannel === "sms" && !campaignMessage) {
       notifyCampaignStatus("error", "Please write an SMS message or switch to email.");
+      return;
+    }
+
+    if (campaignChannel === "email" && !emailSubject.trim()) {
+      notifyCampaignStatus("error", "Please write a subject line for your email campaign.");
       return;
     }
 
@@ -279,9 +306,15 @@ export function CampaignBuilder({
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          campaignName,
+          campaignName: effectiveCampaignName,
           campaignMessage,
           campaignChannel,
+          emailSubject,
+          emailPreheader,
+          senderName: senderName.trim() || null,
+          replyTo: replyTo.trim() || null,
+          utmSource,
+          utmContent,
           scheduleType: effectiveScheduleType,
           scheduleDate: effectiveScheduleDate,
           selectedCustomers,
@@ -289,7 +322,17 @@ export function CampaignBuilder({
         }),
       });
 
-      const result = await response.json();
+      const result = (await response.json().catch(() => ({}))) as {
+        success?: string;
+        error?: string;
+        campaignId?: string;
+        queuedCount?: number;
+        inlineSent?: number;
+        inlineFailed?: number;
+        remainingQueued?: number;
+        dispatchMode?: string;
+        scheduledAt?: string;
+      };
 
       if (!response.ok || result.error) {
         notifyCampaignStatus(
@@ -312,6 +355,69 @@ export function CampaignBuilder({
       );
       refreshOk = true;
 
+      if (
+        effectiveScheduleType === "now" &&
+        result.campaignId &&
+        (result.remainingQueued ?? 0) > 0 &&
+        (result.dispatchMode === "queued" || result.dispatchMode === "inline_partial")
+      ) {
+        const campaignId = result.campaignId;
+        const remaining = result.remainingQueued ?? 0;
+        toast({
+          title: "Continuing delivery",
+          description: `Sending the remaining ${remaining} queued messages in the background…`,
+          duration: 6000,
+        });
+
+        void (async () => {
+          let totalSent = result.inlineSent ?? 0;
+          let totalFailed = result.inlineFailed ?? 0;
+          let loops = 0;
+          while (loops < 40) {
+            loops += 1;
+            const dispatchResponse = await fetch("/api/campaign-messages/dispatch-owner", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ campaignId, batchSize: 25 }),
+            });
+            const dispatchResult = (await dispatchResponse.json().catch(() => ({}))) as {
+              processed?: number;
+              sent?: number;
+              failed?: number;
+              error?: string;
+            };
+            if (!dispatchResponse.ok || dispatchResult.error) {
+              toast({
+                variant: "destructive",
+                title: "Delivery paused",
+                description:
+                  dispatchResult.error ||
+                  "Unable to continue sending queued messages. Refresh the dashboard and try again.",
+                duration: 8000,
+              });
+              return;
+            }
+            totalSent += dispatchResult.sent ?? 0;
+            totalFailed += dispatchResult.failed ?? 0;
+            const processed = dispatchResult.processed ?? 0;
+            if (processed === 0) {
+              toast({
+                title: "Delivery complete",
+                description: `Sent ${totalSent} message${totalSent === 1 ? "" : "s"}${totalFailed ? ` • ${totalFailed} failed` : ""}.`,
+                duration: 8000,
+              });
+              return;
+            }
+            await new Promise((resolve) => setTimeout(resolve, 700));
+          }
+          toast({
+            title: "Delivery still running",
+            description: "More messages remain in the queue. Keep the dashboard open or trigger delivery again later.",
+            duration: 8000,
+          });
+        })();
+      }
+
       // Show extended success message with tracking info
       setTimeout(() => {
         toast({
@@ -325,6 +431,12 @@ export function CampaignBuilder({
       // Reset form
       setCampaignName("");
       setCampaignMessage("");
+      setEmailSubject("");
+      setEmailPreheader("");
+      setSenderName(businessName);
+      setReplyTo("");
+      setUtmSource("dashboard");
+      setUtmContent("");
       setSelectedCustomers([]);
       setScheduleType("now");
       setScheduleDate("");
@@ -343,6 +455,52 @@ export function CampaignBuilder({
           window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "campaign-send", ok: refreshOk } }));
         }, 800);
       }
+    }
+  };
+
+  const handleSendTestEmail = async () => {
+    if (campaignChannel !== "email") return;
+    if (!emailSubject.trim()) {
+      toast({
+        variant: "destructive",
+        title: "Subject required",
+        description: "Add a subject line before sending a test email.",
+      });
+      return;
+    }
+
+    setIsSendingTestEmail(true);
+    try {
+      const response = await fetch("/api/campaigns/test-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: emailSubject.trim(),
+          preheader: emailPreheader.trim() || null,
+          includeQr: includeQrModule,
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result?.error) {
+        toast({
+          variant: "destructive",
+          title: "Test email failed",
+          description: result?.error || "Unable to send test email. Check Resend settings.",
+        });
+        return;
+      }
+      toast({
+        title: "Test email sent",
+        description: "Check your inbox for a preview email from Resend.",
+      });
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Test email failed",
+        description: error instanceof Error ? error.message : "Unable to send test email.",
+      });
+    } finally {
+      setIsSendingTestEmail(false);
     }
   };
 
@@ -557,7 +715,7 @@ export function CampaignBuilder({
             {/* Campaign Name & Channel */}
             <div className="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)] items-start">
               <div className="space-y-2">
-                <Label htmlFor="campaignName">Campaign Name</Label>
+                <Label htmlFor="campaignName">Campaign name (internal)</Label>
                 <Input
                   id="campaignName"
                   value={campaignName}
@@ -621,6 +779,106 @@ export function CampaignBuilder({
                 </div>
               </div>
             </div>
+
+            {campaignChannel === "email" && (
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">Resend email essentials</p>
+                    <p className="text-xs text-slate-500">
+                      Subject + preview text drive opens. UTM tags keep your analytics accurate.
+                    </p>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleSendTestEmail}
+                    disabled={isSending || isSendingTestEmail}
+                    className="sm:shrink-0"
+                  >
+                    {isSendingTestEmail ? "Sending test…" : "Send test email"}
+                  </Button>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="emailSubject">Subject line *</Label>
+                    <Input
+                      id="emailSubject"
+                      value={emailSubject}
+                      onChange={(e) => setEmailSubject(e.target.value)}
+                      placeholder="e.g., Your VIP link is ready — earn rewards when friends book"
+                      maxLength={140}
+                    />
+                    <p className="text-[11px] text-slate-500">
+                      This is what ambassadors see in their inbox.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="emailPreheader">Preview text (optional)</Label>
+                    <Input
+                      id="emailPreheader"
+                      value={emailPreheader}
+                      onChange={(e) => setEmailPreheader(e.target.value)}
+                      placeholder="e.g., Share once, track every referral automatically."
+                      maxLength={200}
+                    />
+                    <p className="text-[11px] text-slate-500">
+                      Appears next to the subject in most inboxes.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="senderName">Sender name (From)</Label>
+                    <Input
+                      id="senderName"
+                      value={senderName}
+                      onChange={(e) => setSenderName(e.target.value)}
+                      placeholder={businessName}
+                      maxLength={80}
+                    />
+                    <p className="text-[11px] text-slate-500">
+                      Uses your verified Resend from-address; this controls the display name.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="replyTo">Reply-to (optional)</Label>
+                    <Input
+                      id="replyTo"
+                      value={replyTo}
+                      onChange={(e) => setReplyTo(e.target.value)}
+                      placeholder="hello@yourdomain.com"
+                    />
+                    <p className="text-[11px] text-slate-500">
+                      Where replies should go. Leave blank to use the default configuration.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="utmSource">UTM source</Label>
+                    <Input
+                      id="utmSource"
+                      value={utmSource}
+                      onChange={(e) => setUtmSource(e.target.value)}
+                      placeholder="dashboard"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="utmContent">UTM content (optional)</Label>
+                    <Input
+                      id="utmContent"
+                      value={utmContent}
+                      onChange={(e) => setUtmContent(e.target.value)}
+                      placeholder="vip-invitation"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* SMS Message (only when SMS selected) */}
             {campaignChannel === "sms" && (
@@ -978,7 +1236,7 @@ export function CampaignBuilder({
                     className="border-emerald-300 text-emerald-700 hover:bg-emerald-50"
                   >
                     <CheckCircle className="mr-1 h-3 w-3" />
-                    Select All ({eligibleCustomers.length})
+                    Select All ({filteredEligibleCustomers.length})
                   </Button>
                   <Button
                     type="button"
@@ -1012,6 +1270,37 @@ export function CampaignBuilder({
               )}
 
               <div className="border-2 border-slate-200 rounded-2xl p-4 max-h-80 overflow-y-auto space-y-2 bg-slate-50/50">
+                <div className="mb-3 grid gap-2 sm:grid-cols-2">
+                  <Input
+                    value={recipientSearch}
+                    onChange={(e) => setRecipientSearch(e.target.value)}
+                    placeholder="Search recipients (name, email, phone)…"
+                    className="bg-white"
+                  />
+                  <div className="flex flex-wrap gap-2">
+                    {(
+                      [
+                        { key: "all", label: "All" },
+                        { key: "verified", label: "Verified" },
+                        { key: "active", label: "Active" },
+                        { key: "pending", label: "Pending" },
+                        { key: "applicant", label: "Applicants" },
+                      ] as const
+                    ).map((option) => (
+                      <Button
+                        key={option.key}
+                        type="button"
+                        variant={recipientStatusFilter === option.key ? "default" : "outline"}
+                        size="sm"
+                        className="h-8"
+                        onClick={() => setRecipientStatusFilter(option.key)}
+                      >
+                        {option.label}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+
                 {eligibleCustomers.length === 0 && (
                   <div className="text-center py-8">
                     <AlertCircle className="h-12 w-12 text-slate-300 mx-auto mb-3" />
@@ -1023,7 +1312,18 @@ export function CampaignBuilder({
                     </p>
                   </div>
                 )}
-                {eligibleCustomers.map((customer) => {
+                {eligibleCustomers.length > 0 && filteredEligibleCustomers.length === 0 && (
+                  <div className="text-center py-8">
+                    <AlertCircle className="h-12 w-12 text-slate-300 mx-auto mb-3" />
+                    <p className="text-sm font-semibold text-slate-700 mb-1">
+                      No matches for this filter
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Try clearing the search box or switching the status filter.
+                    </p>
+                  </div>
+                )}
+                {filteredEligibleCustomers.map((customer) => {
                   const isSelected = selectedCustomers.includes(customer.id);
                   return (
                     <div
@@ -1080,7 +1380,7 @@ export function CampaignBuilder({
                   logoUrl={settingsLogoUrl}
                   brandHighlightColor={brandHighlightColor ?? undefined}
                   brandTone={brandTone ?? undefined}
-                  campaignName={campaignName || "Your private ambassador invitation"}
+                  campaignName={emailSubject || campaignName || "Your private ambassador invitation"}
                   newUserReward={settingsNewUserRewardText || "Reward for friends"}
                   clientReward={
                     settingsClientRewardText ||
@@ -1125,18 +1425,19 @@ export function CampaignBuilder({
               >
                 Cancel
               </Button>
-              <Button
-                type="button"
-                onClick={handleSendCampaign}
-                disabled={
-                  isSending ||
-                  selectedCustomers.length === 0 ||
-                  !campaignName ||
-                  (campaignChannel === "sms" && !campaignMessage) ||
-                  scheduleDateMissing
-                }
-                className="flex-1 bg-emerald-600 hover:bg-emerald-700 font-bold"
-              >
+	              <Button
+	                type="button"
+	                onClick={handleSendCampaign}
+	                disabled={
+	                  isSending ||
+	                  selectedCustomers.length === 0 ||
+	                  !(campaignName.trim() || emailSubject.trim()) ||
+	                  (campaignChannel === "sms" && !campaignMessage) ||
+	                  (campaignChannel === "email" && !emailSubject.trim()) ||
+	                  scheduleDateMissing
+	                }
+	                className="flex-1 bg-emerald-600 hover:bg-emerald-700 font-bold"
+	              >
                 {isSending ? (
                   <>Sending...</>
                 ) : (

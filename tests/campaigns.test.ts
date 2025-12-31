@@ -65,7 +65,37 @@ describe("campaign helpers", () => {
     expect(message.message_body).toMatch(/Your unique referral link:/);
     expect(message.message_body).toMatch(/Referral landing page:/);
     expect(message.referral_link).toContain("utm_campaign=cmp_1");
+    expect(message.referral_link).toContain("utm_medium=sms");
     expect(message.metadata.ambassador_portal_url).toContain("/r/referral");
+  });
+
+  it("adds UTM source/content when provided", () => {
+    const scheduledAt = new Date().toISOString();
+    const { messages } = buildCampaignMessages({
+      campaignId: "cmp_tracking",
+      businessId: "biz_tracking",
+      baseSiteUrl: "https://pepform.dev",
+      campaignName: "Tracking Drop",
+      campaignMessage: "Hi {{name}}",
+      campaignChannel: "email",
+      scheduledAtIso: scheduledAt,
+      tracking: { utm_source: "dashboard", utm_content: "vip-invite" },
+      customers: [
+        {
+          id: "cust_1",
+          name: "Charlie",
+          phone: "+61400000000",
+          email: "charlie@example.com",
+          referral_code: "abc123",
+        },
+      ],
+    });
+
+    expect(messages).toHaveLength(1);
+    expect(messages[0].referral_link).toContain("utm_campaign=cmp_tracking");
+    expect(messages[0].referral_link).toContain("utm_medium=email");
+    expect(messages[0].referral_link).toContain("utm_source=dashboard");
+    expect(messages[0].referral_link).toContain("utm_content=vip-invite");
   });
 
   it("creates email payloads only when an address and code exist", () => {

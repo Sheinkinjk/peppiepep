@@ -90,17 +90,32 @@ export async function dispatchCampaignMessagesInline({
           (record.metadata?.["referral_landing_url"] as string | undefined) ||
           record.referral_link ||
           siteUrl;
+        const emailSubject =
+          (record.metadata?.["email_subject"] as string | undefined) ||
+          (campaign.name as string | null) ||
+          business.name ||
+          "Refer Labs";
+        const emailPreheader = (record.metadata?.["email_preheader"] as string | undefined) || null;
+        const senderName =
+          (record.metadata?.["sender_name"] as string | undefined)?.trim() ||
+          business.name ||
+          "Refer Labs";
+        const replyTo =
+          (record.metadata?.["reply_to"] as string | undefined)?.trim() ||
+          process.env.RESEND_REPLY_TO?.trim() ||
+          undefined;
 
         const { html, text } = await buildCampaignEmail({
           businessName: business.name || "Refer Labs",
           siteUrl,
-          campaignName: (campaign.name as string | null) || "Private invitation",
+          campaignName: emailSubject,
           textBody: record.message_body ?? "",
           referralLink: record.referral_link || "",
           referralLandingUrl,
           ambassadorPortalUrl:
             (record.metadata?.["ambassador_portal_url"] as string) ||
             `${siteUrl}/r/referral`,
+          preheaderText: emailPreheader,
           brand: {
             logoUrl: snapshot.logoUrl ?? business.logo_url ?? null,
             highlightColor: business.brand_highlight_color ?? null,
@@ -114,12 +129,12 @@ export async function dispatchCampaignMessagesInline({
           from:
             resendFromEmail.includes("<") && resendFromEmail.includes(">")
               ? resendFromEmail
-              : `${business.name || "Refer Labs"} <${resendFromEmail}>`,
+              : `${senderName} <${resendFromEmail}>`,
           to: record.to_address ?? "",
-          subject: (campaign.name as string | null) || business.name || "Refer Labs",
+          subject: emailSubject,
           html,
           text,
-          ...(process.env.RESEND_REPLY_TO?.trim() ? { reply_to: process.env.RESEND_REPLY_TO.trim() } : {}),
+          ...(replyTo ? { reply_to: replyTo } : {}),
         });
 
         const providerMessageId = response?.data?.id ?? null;

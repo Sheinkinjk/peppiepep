@@ -126,6 +126,14 @@ type BuildCampaignMessagesArgs = {
   customers: CampaignCustomer[];
   scheduledAtIso: string;
   referralProjectSlug?: string | null;
+  tracking?: {
+    utm_source?: string | null;
+    utm_content?: string | null;
+  } | null;
+  emailSubject?: string | null;
+  emailPreheader?: string | null;
+  senderName?: string | null;
+  replyTo?: string | null;
 };
 
 export function buildCampaignSnapshot(business: BusinessSnapshotSource) {
@@ -222,13 +230,22 @@ export function buildCampaignMessages({
   customers,
   scheduledAtIso,
   referralProjectSlug,
+  tracking,
+  emailSubject,
+  emailPreheader,
+  senderName,
+  replyTo,
 }: BuildCampaignMessagesArgs): { messages: CampaignMessagePayload[]; skipped: number } {
   const messages: CampaignMessagePayload[] = [];
   let skipped = 0;
-  const trackingSuffix =
-    campaignChannel === "sms" || campaignChannel === "email"
-      ? `utm_campaign=${campaignId}&utm_medium=${campaignChannel}`
-      : "";
+  const trackingParams = new URLSearchParams();
+  if (campaignChannel === "sms" || campaignChannel === "email") {
+    trackingParams.set("utm_campaign", campaignId);
+    trackingParams.set("utm_medium", campaignChannel);
+  }
+  if (tracking?.utm_source) trackingParams.set("utm_source", tracking.utm_source);
+  if (tracking?.utm_content) trackingParams.set("utm_content", tracking.utm_content);
+  const trackingSuffix = trackingParams.toString();
 
   for (const customer of customers) {
     const referralCode = customer.referral_code;
@@ -261,6 +278,10 @@ export function buildCampaignMessages({
       referral_landing_url: referralLandingUrl,
       personal_referral_url: personalReferralUrl,
       campaign_name: campaignName,
+      ...(emailSubject ? { email_subject: emailSubject } : {}),
+      ...(emailPreheader ? { email_preheader: emailPreheader } : {}),
+      ...(senderName ? { sender_name: senderName } : {}),
+      ...(replyTo ? { reply_to: replyTo } : {}),
     };
 
     if (campaignChannel === "sms") {

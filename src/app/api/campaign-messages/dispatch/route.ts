@@ -5,11 +5,11 @@ import { createApiLogger } from "@/lib/api-logger";
 
 export async function POST(request: Request) {
   const logger = createApiLogger("api:campaign-messages:dispatch");
-  const dispatchToken = process.env.CAMPAIGN_DISPATCH_TOKEN;
+  const dispatchToken = (process.env.CAMPAIGN_DISPATCH_TOKEN || process.env.CRON_SECRET)?.trim();
   if (!dispatchToken) {
     logger.error("Dispatch token missing");
     return NextResponse.json(
-      { error: "CAMPAIGN_DISPATCH_TOKEN is not configured" },
+      { error: "CAMPAIGN_DISPATCH_TOKEN (or CRON_SECRET) is not configured" },
       { status: 500 },
     );
   }

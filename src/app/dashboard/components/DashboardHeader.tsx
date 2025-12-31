@@ -57,12 +57,20 @@ export function DashboardHeader({
     return groups;
   })();
 
+  const nextActionsSummary = (() => {
+    if (!activeValidation) return null;
+    const required = activeValidation.items.filter((item) => item.kind === "action_required").length;
+    const recommended = activeValidation.items.filter((item) => item.kind === "recommended").length;
+    const info = activeValidation.items.filter((item) => item.kind === "info_only").length;
+    return { required, recommended, info };
+  })();
+
   return (
-    <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
-      <div className="flex items-center justify-between mb-6">
+    <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
-          <p className="text-sm text-slate-600 mt-1">
+          <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
+          <p className="text-xs text-slate-600 mt-1">
             See your status, your next step, and what to do next.
           </p>
         </div>
@@ -101,8 +109,8 @@ export function DashboardHeader({
       </div>
 
       {/* Setup Progress (merged into header) */}
-      <div className="mb-6 rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
-        <div className="mb-3 flex items-center justify-between gap-3">
+      <div className="mb-4 rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
+        <div className="mb-2 flex items-center justify-between gap-3">
           <div>
             <h2 className="text-sm font-semibold text-slate-800">Setup Progress</h2>
             {currentStep && (
@@ -116,14 +124,14 @@ export function DashboardHeader({
           </div>
           <span className="text-sm font-bold text-teal-700">{overallProgress}% Complete</span>
         </div>
-        <div className="h-2 overflow-hidden rounded-full bg-slate-200/70">
+        <div className="h-1.5 overflow-hidden rounded-full bg-slate-200/70">
           <div
             className="h-full bg-gradient-to-r from-teal-600 to-teal-500 transition-all duration-500 ease-out"
             style={{ width: `${overallProgress}%` }}
           />
         </div>
 
-        <div className="mt-4 flex items-center justify-between">
+        <div className="mt-3 flex items-center justify-between">
           {steps.map((step, index) => {
             const validation = validations[step.id as keyof StepValidations];
             const isActive = currentStep === step.id;
@@ -134,7 +142,7 @@ export function DashboardHeader({
               <div key={step.id} className="flex items-center flex-1">
                 <div className="flex flex-col items-center flex-1">
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
+                    className={`flex h-8 w-8 items-center justify-center rounded-full border-2 transition-all duration-300 ${
                       isComplete
                         ? "border-teal-600 bg-teal-600"
                         : isActive
@@ -146,16 +154,16 @@ export function DashboardHeader({
                     aria-label={`Step ${step.number}: ${step.label}`}
                   >
                     {isComplete ? (
-                      <CheckCircle2 className="h-5 w-5 text-white" />
+                      <CheckCircle2 className="h-4 w-4 text-white" />
                     ) : (
-                      <span className={`text-sm font-bold ${isActive ? "text-teal-700" : "text-slate-400"}`}>
+                      <span className={`text-xs font-bold ${isActive ? "text-teal-700" : "text-slate-400"}`}>
                         {step.number}
                       </span>
                     )}
                   </div>
 
                   <span
-                    className={`mt-2 text-xs font-medium text-center ${
+                    className={`mt-2 hidden text-xs font-medium text-center md:block ${
                       isActive ? "text-teal-700" : isComplete ? "text-slate-700" : "text-slate-400"
                     }`}
                   >
@@ -164,7 +172,7 @@ export function DashboardHeader({
                 </div>
 
                 {index < steps.length - 1 && (
-                  <div className="mx-2 -mt-10 h-0.5 flex-1">
+                  <div className="mx-2 -mt-8 h-0.5 flex-1">
                     <div className={`h-full transition-all duration-300 ${isComplete ? "bg-teal-600" : "bg-slate-200"}`} />
                   </div>
                 )}
@@ -176,25 +184,35 @@ export function DashboardHeader({
 
       {/* Next actions (required vs optional vs info) */}
       {currentStep && activeValidation && (
-        <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-5">
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Your next actions</p>
-              <p className="mt-1 text-sm text-slate-700">
-                Focus on what&apos;s required first. Everything else is optional or informational.
-              </p>
+        <details className="mb-4 rounded-2xl border border-slate-200 bg-white">
+          <summary className="cursor-pointer list-none px-4 py-3">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Your next actions</p>
+                <p className="mt-1 text-xs text-slate-700">
+                  {nextActionsSummary
+                    ? `${nextActionsSummary.required} required • ${nextActionsSummary.recommended} recommended • ${nextActionsSummary.info} info`
+                    : "Open to see action items."}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.preventDefault();
+                  openNextStep();
+                }}
+                className="inline-flex items-center gap-2 rounded-lg bg-teal-600 px-3 py-2 text-xs font-bold text-white hover:bg-teal-700"
+              >
+                Open step
+                <ArrowRight className="h-4 w-4" />
+              </button>
             </div>
-            <button
-              type="button"
-              onClick={openNextStep}
-              className="inline-flex items-center gap-2 rounded-lg bg-teal-600 px-3.5 py-2 text-xs font-bold text-white hover:bg-teal-700"
-            >
-              Open step
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
-
-          <div className="space-y-4">
+          </summary>
+          <div className="border-t border-slate-200 px-4 py-4">
+            <p className="mb-4 text-xs text-slate-600">
+              Focus on what&apos;s required first. Everything else is optional or informational.
+            </p>
+            <div className="space-y-4">
             {groupedItems && groupedItems.action_required.length > 0 ? (
               <div>
                 <div className="mb-2 flex items-center gap-2">
@@ -291,7 +309,8 @@ export function DashboardHeader({
               </div>
             )}
           </div>
-        </div>
+          </div>
+        </details>
       )}
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">

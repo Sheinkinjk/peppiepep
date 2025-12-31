@@ -805,49 +805,51 @@ export function IntegrationTab({
           </div>
         </div>
 
-        <div className="mt-5 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-            <p className="text-sm font-bold text-slate-900">Setup</p>
-            <p className="mt-1 text-sm text-slate-600">Embed referral pages and connect your conversion source.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-            <p className="text-sm font-bold text-slate-900">Testing</p>
-            <p className="mt-1 text-sm text-slate-600">Run one click → signup → conversion test and confirm attribution.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-            <p className="text-sm font-bold text-slate-900">Live</p>
-            <p className="mt-1 text-sm text-slate-600">Roll out to ambassadors and monitor real-time dashboard updates.</p>
-          </div>
-        </div>
-
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
-          <p className="text-sm font-semibold text-slate-900">
-            Need a step-by-step guide?
-            <br />
-            Follow the dedicated setup pages (with built-in testing checkpoints) for each platform.
-          </p>
-        </div>
-
-        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <a href="/shopify" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify</a>
-          <a href="/wordpress" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">WordPress</a>
-          <a href="/webflow" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Webflow</a>
-          <a href="/squarespace" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Squarespace</a>
-          <a href="/wix" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Wix</a>
-          <a href="/gtm" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Tag Manager (GTM)</a>
-          <a href="/analytics" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Analytics</a>
-          <a href="/go-live" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Go-Live Checklist</a>
-          <a href="/meta-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Meta Ads</a>
-          <a href="/google-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Ads</a>
-          <a href="/tiktok-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">TikTok Ads</a>
-          <a href="/integrations" className="rounded-2xl border border-slate-200 bg-slate-900 px-4 py-3 text-sm font-bold text-white hover:bg-slate-800">View all guides</a>
-        </div>
-        {integrationsOpen && (
+        {integrationsOpen ? (
           <>
+            <div className="mt-5 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+                <p className="text-sm font-bold text-slate-900">Setup</p>
+                <p className="mt-1 text-sm text-slate-600">Embed referral pages and connect your conversion source.</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+                <p className="text-sm font-bold text-slate-900">Testing</p>
+                <p className="mt-1 text-sm text-slate-600">Run one click → signup → conversion test and confirm attribution.</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+                <p className="text-sm font-bold text-slate-900">Live</p>
+                <p className="mt-1 text-sm text-slate-600">Roll out to ambassadors and monitor real-time dashboard updates.</p>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
+              <p className="text-sm font-semibold text-slate-900">
+                Need a step-by-step guide?
+                <br />
+                Follow the dedicated setup pages (with built-in testing checkpoints) for each platform.
+              </p>
+            </div>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <a href="/shopify" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify</a>
+              <a href="/wordpress" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">WordPress</a>
+              <a href="/webflow" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Webflow</a>
+              <a href="/squarespace" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Squarespace</a>
+              <a href="/wix" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Wix</a>
+              <a href="/gtm" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Tag Manager (GTM)</a>
+              <a href="/analytics" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Analytics</a>
+              <a href="/go-live" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Go-Live Checklist</a>
+              <a href="/meta-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Meta Ads</a>
+              <a href="/google-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Ads</a>
+              <a href="/tiktok-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">TikTok Ads</a>
+              <a href="/integrations" className="rounded-2xl border border-slate-200 bg-slate-900 px-4 py-3 text-sm font-bold text-white hover:bg-slate-800">View all guides</a>
+            </div>
+
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <div ref={websiteGuideRef}>
                 <Collapsible open={openSection === "website"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "website" : null)}>
-                  <CollapsibleTrigger className="w-full">
+                  <CollapsibleTrigger asChild>
+                    <button type="button" className="w-full text-left">
                     <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3 flex-1 text-left">
@@ -866,6 +868,7 @@ export function IntegrationTab({
                         )}
                       </div>
                     </div>
+                    </button>
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-4">
                     <WebsiteIntegrationCard
@@ -881,7 +884,8 @@ export function IntegrationTab({
               </div>
 
               <Collapsible open={openSection === "crm"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "crm" : null)}>
-                <CollapsibleTrigger className="w-full">
+                <CollapsibleTrigger asChild>
+                  <button type="button" className="w-full text-left">
                   <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 flex-1 text-left">
@@ -900,6 +904,7 @@ export function IntegrationTab({
                       )}
                     </div>
                   </div>
+                  </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4">
                   <CRMIntegrationGuideCard
@@ -914,7 +919,8 @@ export function IntegrationTab({
 
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <Collapsible open={openSection === "wordpress"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "wordpress" : null)}>
-                <CollapsibleTrigger className="w-full">
+                <CollapsibleTrigger asChild>
+                  <button type="button" className="w-full text-left">
                   <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 flex-1 text-left">
@@ -933,6 +939,7 @@ export function IntegrationTab({
                       )}
                     </div>
                   </div>
+                  </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4">
                   <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
@@ -971,7 +978,8 @@ export function IntegrationTab({
               </Collapsible>
 
               <Collapsible open={openSection === "discount"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "discount" : null)}>
-                <CollapsibleTrigger className="w-full">
+                <CollapsibleTrigger asChild>
+                  <button type="button" className="w-full text-left">
                   <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 flex-1 text-left">
@@ -990,6 +998,7 @@ export function IntegrationTab({
                       )}
                     </div>
                   </div>
+                  </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4">
                   <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
@@ -1015,7 +1024,8 @@ Body:
 
             <div className="mt-6">
               <Collapsible open={openSection === "checkout"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "checkout" : null)}>
-                <CollapsibleTrigger className="w-full">
+                <CollapsibleTrigger asChild>
+                  <button type="button" className="w-full text-left">
                   <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 flex-1 text-left">
@@ -1034,6 +1044,7 @@ Body:
                       )}
                     </div>
                   </div>
+                  </button>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4">
                   <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
@@ -1059,6 +1070,10 @@ Body:
               </Collapsible>
             </div>
           </>
+        ) : (
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-slate-700">
+            Integrations are collapsed. Expand to see the setup guides and integration cards.
+          </div>
         )}
       </div>
 

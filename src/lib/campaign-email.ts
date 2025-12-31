@@ -16,6 +16,7 @@ type CampaignEmailOptions = {
   referralLink: string;
   referralLandingUrl: string;
   ambassadorPortalUrl: string;
+  preheaderText?: string | null;
   brand?: BrandIdentity;
   includeQrCode?: boolean;
   snapshot: {
@@ -565,6 +566,7 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
     referralLink,
     referralLandingUrl,
     ambassadorPortalUrl,
+    preheaderText: preheaderOverride,
     brand,
     includeQrCode = true,
     snapshot,
@@ -585,7 +587,9 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
       ? `${snapshot.rewardAmount ?? 0}% discount`
       : `${snapshot.rewardAmount ?? 100} points`);
 
-  const preheaderText = `Earn ${clientReward} per referral + share ${newUserReward} with friends.`;
+  const preheaderText =
+    normalizeText(preheaderOverride) ??
+    `Earn ${clientReward} per referral + share ${newUserReward} with friends.`;
 
   const brandHighlight = normalizeHexColor(brand?.highlightColor) ?? "#7c3aed";
   const tone = resolveToneStyle(brand?.tone);

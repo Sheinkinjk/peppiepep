@@ -207,8 +207,41 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
   const submitted = params?.submitted === "1";
   const failed = params?.submitted === "0";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "LinkedIn Influencer Business Partnership",
+    "description": "Partner with verified LinkedIn creators to drive qualified demos and revenue. Performance-based B2B marketing without SDRs or ads.",
+    "url": "https://referlabs.com.au/linkedin-influencer/business",
+    "serviceType": "Performance Marketing",
+    "provider": {
+      "@type": "Organization",
+      "name": "Refer Labs",
+      "url": "https://referlabs.com.au"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Global"
+    },
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "SaaS Companies"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "E-commerce Businesses"
+      }
+    ],
+    "termsOfService": "https://referlabs.com.au/terms"
+  };
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#070b12] via-[#0b121b] to-[#05070b] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(14,165,233,0.18),transparent_55%),radial-gradient(circle_at_85%_15%,rgba(124,58,237,0.16),transparent_55%)]" />
       <div className="absolute -top-20 right-0 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-400/30 to-transparent blur-3xl animate-pulse" />
       <div

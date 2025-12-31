@@ -29,6 +29,39 @@ const campaignPayloadSchema = z.object({
     .optional()
     .transform((val) => (val ?? "").trim()),
   campaignChannel: z.enum(["sms", "email"]),
+  emailSubject: z
+    .string()
+    .optional()
+    .transform((val) => (val ?? "").trim())
+    .nullable(),
+  emailPreheader: z
+    .string()
+    .optional()
+    .transform((val) => (val ?? "").trim())
+    .nullable(),
+  senderName: z
+    .string()
+    .optional()
+    .transform((val) => (val ?? "").trim())
+    .nullable(),
+  replyTo: z
+    .string()
+    .optional()
+    .transform((val) => (val ?? "").trim())
+    .nullable()
+    .refine((value) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), {
+      message: "Reply-to must be a valid email address.",
+    }),
+  utmSource: z
+    .string()
+    .optional()
+    .transform((val) => (val ?? "").trim())
+    .nullable(),
+  utmContent: z
+    .string()
+    .optional()
+    .transform((val) => (val ?? "").trim())
+    .nullable(),
   scheduleType: z.enum(["now", "later"]).default("now"),
   scheduleDate: z.union([z.string().trim().min(1), z.null()]).optional(),
   selectedCustomers: z
@@ -178,6 +211,12 @@ export async function POST(request: Request) {
       campaignName,
       campaignMessage: rawCampaignMessage,
       campaignChannel,
+      emailSubject,
+      emailPreheader,
+      senderName,
+      replyTo,
+      utmSource,
+      utmContent,
       scheduleType,
       scheduleDate,
       selectedCustomers,
@@ -391,6 +430,11 @@ export async function POST(request: Request) {
       >,
       scheduledAtIso,
       referralProjectSlug,
+      tracking: { utm_source: utmSource ?? null, utm_content: utmContent ?? null },
+      emailSubject: emailSubject ?? null,
+      emailPreheader: emailPreheader ?? null,
+      senderName: senderName ?? null,
+      replyTo: replyTo ?? null,
     });
 
     if (messagesToInsert.length === 0) {
@@ -506,15 +550,23 @@ export async function POST(request: Request) {
 
     const dispatchDisabled = process.env.DISABLE_CAMPAIGN_DISPATCH === "1";
     const shouldDispatchInline = !wantsScheduledSend && !dispatchDisabled;
-    const inlineDispatch = shouldDispatchInline
-      ? await dispatchCampaignMessagesInline({
-          supabase,
-          messages: messagesWithIds as Array<CampaignMessagePayload & { id: string }>,
-          campaign: campaignData,
-          business,
-          siteUrl,
-        })
-      : { sent: 0, failed: 0, error: null };
+    const maxInlineDispatch = Math.max(
+      0,
+      Math.min(150, Number(process.env.CAMPAIGN_INLINE_DISPATCH_MAX ?? 60)),
+    );
+    const allMessagesWithIds = messagesWithIds as Array<CampaignMessagePayload & { id: string }>;
+    const inlineBatch = shouldDispatchInline ? allMessagesWithIds.slice(0, maxInlineDispatch) : [];
+    const remainingQueued = Math.max(0, allMessagesWithIds.length - inlineBatch.length);
+    const inlineDispatch =
+      inlineBatch.length > 0
+        ? await dispatchCampaignMessagesInline({
+            supabase,
+            messages: inlineBatch,
+            campaign: campaignData,
+            business,
+            siteUrl,
+          })
+        : { sent: 0, failed: 0, error: null };
 
     const queuedCount = messagesToInsert.length;
     const skippedNote =
@@ -528,7 +580,9 @@ export async function POST(request: Request) {
     const dispatchMode = wantsScheduledSend
       ? "scheduled"
       : shouldDispatchInline
-        ? "inline"
+        ? remainingQueued > 0
+          ? "inline_partial"
+          : "inline"
         : "queued";
     const dispatchNote =
       dispatchMode === "inline"
@@ -558,6 +612,13 @@ export async function POST(request: Request) {
       success: `${sendStatusLabel} ${queuedCount} ${
         campaignChannel === "sms" ? "SMS" : "email"
       } message${queuedCount === 1 ? "" : "s"}.${dispatchNote}${scheduleNote}${skippedNote}`,
+      campaignId,
+      queuedCount,
+      inlineSent: inlineDispatch.sent ?? 0,
+      inlineFailed: inlineDispatch.failed ?? 0,
+      remainingQueued,
+      dispatchMode,
+      scheduledAt: scheduledAtIso,
     });
   } catch (error) {
     logger.error("Campaign send API error", { error });

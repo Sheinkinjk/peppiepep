@@ -68,6 +68,7 @@ export async function runCampaignDispatchBatch(
   options: DispatchOptions = {},
 ): Promise<DispatchBatchResult> {
   const batchSize = options.batchSize ?? DEFAULT_BATCH_SIZE;
+  const maxAttempts = Number(process.env.CAMPAIGN_MAX_ATTEMPTS ?? 3);
   try {
     const supabase = await createServiceClient();
     const nowIso = new Date().toISOString();
@@ -119,7 +120,8 @@ export async function runCampaignDispatchBatch(
       .eq("status", "queued")
       .or(`scheduled_at.is.null,scheduled_at.lte.${nowIso}`)
       .order("created_at", { ascending: true })
-      .limit(batchSize);
+      // Fetch extra rows so we can drop max-attempt messages without starving the batch.
+      .limit(Math.max(batchSize * 2, batchSize));
 
     if (options.restrictCampaignId) {
       query = query.eq("campaign_id", options.restrictCampaignId);
@@ -135,15 +137,51 @@ export async function runCampaignDispatchBatch(
       return { processed: 0, sent: 0, failed: 0 };
     }
 
+    const eligibleQueue = (queue as CampaignMessageRecord[]).filter(
+      (record) => (record.attempts ?? 0) < maxAttempts,
+    );
+
+    // Fail messages that have exceeded max attempts (so they don't clog the queue forever).
+    const overAttemptQueue = (queue as CampaignMessageRecord[]).filter(
+      (record) => (record.attempts ?? 0) >= maxAttempts,
+    );
+    for (const record of overAttemptQueue) {
+      await markMessageAs(
+        supabase,
+        record.id,
+        "failed",
+        `Max send attempts reached (${maxAttempts}).`,
+      );
+      await incrementCampaignCounts(supabase, record.campaign_id, 0, 1);
+      await logReferralEvent({
+        supabase,
+        businessId: record.business_id,
+        ambassadorId: record.customer_id,
+        eventType: "campaign_message_failed",
+        metadata: {
+          campaign_id: record.campaign_id,
+          campaign_message_id: record.id,
+          reason: "Max attempts reached",
+          max_attempts: maxAttempts,
+          channel: record.channel,
+        },
+      });
+    }
+
+    const batchQueue = eligibleQueue.slice(0, batchSize);
+    if (batchQueue.length === 0) {
+      return { processed: 0, sent: 0, failed: overAttemptQueue.length };
+    }
+
     const batchBusinessId =
-      queue.length > 0 ? (queue[0] as CampaignMessageRecord).business_id : null;
+      batchQueue.length > 0 ? (batchQueue[0] as CampaignMessageRecord).business_id : null;
     if (batchBusinessId && !options.skipBatchEvents) {
       await logReferralEvent({
         supabase,
         businessId: batchBusinessId,
         ambassadorId: null,
         eventType: "campaign_delivery_batch_started",
-        metadata: { batch_size: queue.length },
+        metadata: { batch_size: batchQueue.length },
       });
     }
 
@@ -151,7 +189,7 @@ export async function runCampaignDispatchBatch(
     let sent = 0;
     let failed = 0;
 
-    for (const record of queue as CampaignMessageRecord[]) {
+    for (const record of batchQueue as CampaignMessageRecord[]) {
       const locked = await lockMessage(supabase, record);
       if (!locked) continue;
 
@@ -172,14 +210,14 @@ export async function runCampaignDispatchBatch(
         businessId: batchBusinessId,
         ambassadorId: null,
         eventType: "campaign_delivery_batch_finished",
-        metadata: { processed: queue.length, sent, failed },
+        metadata: { processed: batchQueue.length, sent, failed },
       });
     }
 
     return {
-      processed: queue.length,
+      processed: batchQueue.length,
       sent,
-      failed,
+      failed: failed + overAttemptQueue.length,
     };
   } catch (error) {
     console.error("Campaign dispatch error:", error);
@@ -334,7 +372,10 @@ async function sendEmailMessage(
 ) {
   const apiKey = process.env.RESEND_API_KEY;
   const configuredFrom = process.env.RESEND_FROM_EMAIL?.trim();
-  const replyTo = process.env.RESEND_REPLY_TO?.trim();
+  const replyTo =
+    (record.metadata?.reply_to as string | undefined)?.trim() ||
+    process.env.RESEND_REPLY_TO?.trim() ||
+    undefined;
 
   if (!apiKey) {
     await markMessageAs(
@@ -388,15 +429,22 @@ async function sendEmailMessage(
       : "onboarding@resend.dev";
   const businessName =
     record.business?.name || campaignSnapshot.name || "Refer Labs";
+  const senderName =
+    (record.metadata?.sender_name as string | undefined)?.trim() || businessName;
   const businessEmail =
     fallbackFromEmail.includes("<") && fallbackFromEmail.includes(">")
       ? fallbackFromEmail
-      : `${businessName} <${fallbackFromEmail}>`;
+      : `${senderName} <${fallbackFromEmail}>`;
 
   const referralLandingUrl =
     (record.metadata?.referral_landing_url as string | undefined) ||
     record.referral_link ||
     SITE_URL;
+  const emailSubject =
+    (record.metadata?.email_subject as string | undefined) ||
+    campaignSnapshot.name ||
+    businessName;
+  const emailPreheader = (record.metadata?.email_preheader as string | undefined) || null;
 
   const brandLogo =
     campaignSnapshot.snapshot_logo_url ||
@@ -406,13 +454,14 @@ async function sendEmailMessage(
   const { html, text } = await buildCampaignEmail({
     businessName,
     siteUrl: SITE_URL,
-    campaignName: campaignSnapshot.name || "Private invitation",
+    campaignName: emailSubject,
     textBody: record.message_body ?? "",
     referralLink: record.referral_link || "",
     referralLandingUrl,
     ambassadorPortalUrl:
       (record.metadata?.ambassador_portal_url as string) ||
       `${SITE_URL}/r/referral`,
+    preheaderText: emailPreheader,
     brand: {
       logoUrl: brandLogo,
       highlightColor: record.business?.brand_highlight_color ?? null,
@@ -437,7 +486,7 @@ async function sendEmailMessage(
     const response = await resend.emails.send({
       from: businessEmail,
       to: toAddress,
-      subject: campaignSnapshot.name || businessName,
+      subject: emailSubject,
       html,
       text,
       ...(replyTo ? { reply_to: replyTo } : {}),
