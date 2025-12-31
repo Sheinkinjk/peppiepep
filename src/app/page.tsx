@@ -14,42 +14,42 @@ const referralPillars = [
     title: "Introductions that skip cold outreach",
     copy:
       "Brand evangelists text concierge-quality links that do the heavy lifting. Most prospects arrive already primed with context, social proof, and urgency.",
-    chipBg: "bg-gradient-to-br from-blue-500 to-indigo-600 text-white",
+    chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "02",
     title: "VIP incentives that feel on-brand",
     copy:
       "Refer Labs issues wallet cards, QR lounges, and luxury-grade perks automatically so the experience feels bespoke—never like a generic promo code blast.",
-    chipBg: "bg-gradient-to-br from-emerald-500 to-teal-600 text-white",
+    chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "03",
     title: "CRM imports become referral fuel",
     copy:
       "Upload spreadsheets or sync a CRM export and Refer Labs immediately assigns links, discount words, and share kits for every contact without manual ops.",
-    chipBg: "bg-gradient-to-br from-purple-500 to-pink-600 text-white",
+    chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "04",
     title: "Automated concierge follow-ups",
     copy:
       "SMS + email journeys keep ambassadors nudged at the perfect cadence with AI-drafted talking points, brand gradients, and instant proofs of reward.",
-    chipBg: "bg-gradient-to-br from-orange-500 to-red-600 text-white",
+    chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "05",
     title: "Payouts & compliance in one ledger",
     copy:
       "Every referral event syncs to a live ledger so finance teams see status, clawbacks, and pending credits. Approvals take minutes, not days.",
-    chipBg: "bg-gradient-to-br from-amber-500 to-yellow-600 text-white",
+    chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "06",
     title: "Intelligence on what to scale next",
     copy:
       "Track who referred who, which assets drove highest AOV, and when advocates go quiet—so you know exactly where to double down for your next drop.",
-    chipBg: "bg-gradient-to-br from-cyan-500 to-blue-600 text-white",
+    chipBg: "bg-[#5ce1e6] text-white",
   },
 ];
 
@@ -59,9 +59,9 @@ const referralNumbers = [
     title: "Lower Acquisition Costs",
     copy:
       "Referral-driven customers require significantly less marketing spend because trust is already established.",
-    gradient: "from-white/95 to-purple-50/95",
+    gradient: "from-white/95 to-white/95",
     accentIcon: TrendingUp,
-    accentBg: "from-emerald-500 to-emerald-600",
+    accentBg: "bg-[#5ce1e6]",
     source: "Nielsen Consumer Trust Index",
     sourceUrl: "https://www.nielsen.com/insights/2021/trust-in-advertising-2021/",
   },
@@ -70,9 +70,9 @@ const referralNumbers = [
     title: "Higher Conversion Rates",
     copy:
       "Referred leads come pre-qualified, making them four times more likely to convert than other channels.",
-    gradient: "from-white/95 to-blue-50/95",
+    gradient: "from-white/95 to-white/95",
     accentIcon: Users,
-    accentBg: "from-blue-500 to-blue-600",
+    accentBg: "bg-[#5ce1e6]",
     source: "Wharton School of Business",
     sourceUrl: "https://knowledge.wharton.upenn.edu/article/referral-programs/",
   },
@@ -81,9 +81,9 @@ const referralNumbers = [
     title: "Higher Lifetime Value",
     copy:
       "Customers acquired through referrals have a 37% higher retention rate and become more profitable over time.",
-    gradient: "from-white/95 to-pink-50/95",
+    gradient: "from-white/95 to-white/95",
     accentIcon: Gift,
-    accentBg: "from-pink-500 to-pink-600",
+    accentBg: "bg-[#5ce1e6]",
     source: "Deloitte Research",
     sourceUrl: "https://www2.deloitte.com/us/en/insights/topics/marketing-and-sales-operations/global-marketing-trends.html",
   },
@@ -92,9 +92,9 @@ const referralNumbers = [
     title: "Customers Willing to Refer",
     copy:
       "83% of satisfied customers are willing to recommend products and services — they just need an easy way to do it.",
-    gradient: "from-white/95 to-amber-50/95",
+    gradient: "from-white/95 to-white/95",
     accentIcon: Users,
-    accentBg: "from-amber-500 to-amber-600",
+    accentBg: "bg-[#5ce1e6]",
     source: "Texas Tech University Study",
     sourceUrl: "https://www.business.txst.edu/news-and-events/news/2020/new-research-shows-83-of-satisfied-customers-are-willing-to-refer.html",
   },
@@ -103,9 +103,9 @@ const referralNumbers = [
     title: "Return on Investment",
     copy:
       "Referral programs deliver an average 6:1 ROI, making them one of the most cost-effective marketing channels.",
-    gradient: "from-white/95 to-purple-50/95",
+    gradient: "from-white/95 to-white/95",
     accentIcon: Sparkles,
-    accentBg: "from-purple-500 to-purple-600",
+    accentBg: "bg-[#5ce1e6]",
     source: "Influitive B2B Study",
     sourceUrl: "https://influitive.com/resources/state-of-b2b-customer-marketing-report/",
   },
@@ -114,9 +114,9 @@ const referralNumbers = [
     title: "To Launch With Refer Labs",
     copy:
       "No coding. No complexity. Turn on your referral program and let your customers become your growth engine.",
-    gradient: "from-white/95 to-indigo-50/95",
+    gradient: "from-white/95 to-white/95",
     accentIcon: TrendingUp,
-    accentBg: "from-indigo-500 to-indigo-600",
+    accentBg: "bg-[#5ce1e6]",
     source: "Refer Labs Promise",
     sourceUrl: "/how-it-works",
   },
@@ -441,10 +441,10 @@ export default async function Home() {
               {referralNumbers.map((stat) => (
                 <div
                   key={stat.title}
-                  className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br ${stat.gradient} backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
+                  className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-white/95 backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
                 >
                   <div
-                    className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
+                    className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
                   >
                     <stat.accentIcon className="h-8 w-8 text-white" />
                   </div>
@@ -482,10 +482,10 @@ export default async function Home() {
                 {referralNumbers.map((stat) => (
                   <div key={stat.title} className="min-w-[260px] snap-center">
                     <div
-                      className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br ${stat.gradient} backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
+                      className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-white/95 backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
                     >
                       <div
-                        className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl bg-gradient-to-br ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
+                        className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
                       >
                         <stat.accentIcon className="h-8 w-8 text-white" />
                       </div>

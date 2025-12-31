@@ -371,7 +371,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
       <PartnerApplicationSuccessModal />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0abab5] via-[#24d9e2] to-[#0abab5] py-20 sm:py-32">
+      <section className="relative overflow-hidden bg-[#5ce1e6] py-20 sm:py-32">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -384,7 +384,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="#apply">
-                <Button size="lg" className="bg-white text-[#0abab5] hover:bg-slate-50 text-lg px-8 py-6 rounded-2xl shadow-2xl">
+                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-50 text-lg px-8 py-6 rounded-2xl shadow-2xl">
                   Apply Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -407,11 +407,11 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/50 shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
+            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-emerald-200 bg-white shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
               <div className="relative">
                 <div className="inline-flex items-center gap-3 mb-6">
-                  <div className="rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 p-4 shadow-lg">
+                  <div className="rounded-2xl bg-[#5ce1e6] p-4 shadow-lg">
                     <TrendingUp className="h-8 w-8 text-white" />
                   </div>
                   <div>
@@ -433,7 +433,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
                     <p className="text-slate-700 text-sm">Monthly payouts via direct deposit or credit</p>
                   </div>
                 </div>
-                <div className="p-4 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl border border-emerald-300/50">
+                <div className="p-4 bg-emerald-100 rounded-2xl border border-emerald-300/50">
                   <p className="text-sm font-bold text-emerald-900">
                     💰 Example: Refer 10 clients at $200/mo = $500/mo recurring
                   </p>
@@ -441,11 +441,11 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
               </div>
             </Card>
 
-            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-cyan-200 bg-gradient-to-br from-cyan-50 via-white to-cyan-50/50 shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
+            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-cyan-200 bg-white shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl"></div>
               <div className="relative">
                 <div className="inline-flex items-center gap-3 mb-6">
-                  <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 p-4 shadow-lg">
+                  <div className="rounded-2xl bg-[#5ce1e6] p-4 shadow-lg">
                     <Shield className="h-8 w-8 text-white" />
                   </div>
                   <div>
@@ -467,7 +467,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
                     <p className="text-slate-700 text-sm">Real-time dashboard to track your earnings</p>
                   </div>
                 </div>
-                <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 rounded-2xl border border-cyan-300/50">
+                <div className="p-4 bg-cyan-100 rounded-2xl border border-cyan-300/50">
                   <p className="text-sm font-bold text-cyan-900">
                     🎯 We help you close deals and maximize your income
                   </p>
@@ -491,10 +491,10 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             </p>
           </div>
 
-          <div className="mb-12 rounded-3xl border-2 border-cyan-200 bg-gradient-to-br from-cyan-50/80 via-white to-cyan-50/40 p-8 mx-auto max-w-4xl shadow-xl">
+          <div className="mb-12 rounded-3xl border-2 border-cyan-200 bg-white p-8 mx-auto max-w-4xl shadow-xl">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-shrink-0">
-                <div className="inline-flex items-center justify-center bg-gradient-to-r from-[#0abab5] via-[#5fd9e4] to-[#1a9eb7] rounded-2xl px-6 py-3 shadow-2xl">
+                <div className="inline-flex items-center justify-center bg-[#5ce1e6] rounded-2xl px-6 py-3 shadow-2xl">
                   <span className="text-2xl font-black text-white">$250</span>
                 </div>
               </div>
@@ -511,7 +511,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-cyan-400 hover:shadow-2xl transition-all duration-300">
               <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
               <div className="relative">
-                <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 p-3 w-fit mb-4 shadow-lg">
+                <div className="rounded-2xl bg-[#5ce1e6] p-3 w-fit mb-4 shadow-lg">
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Automated Ambassador Programs</h3>
@@ -524,7 +524,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-purple-400 hover:shadow-2xl transition-all duration-300">
               <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
               <div className="relative">
-                <div className="rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 p-3 w-fit mb-4 shadow-lg">
+                <div className="rounded-2xl bg-[#5ce1e6] p-3 w-fit mb-4 shadow-lg">
                   <Zap className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Campaign Management</h3>
@@ -537,7 +537,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-emerald-400 hover:shadow-2xl transition-all duration-300">
               <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
               <div className="relative">
-                <div className="rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 p-3 w-fit mb-4 shadow-lg">
+                <div className="rounded-2xl bg-[#5ce1e6] p-3 w-fit mb-4 shadow-lg">
                   <Target className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">White-Glove Onboarding</h3>
@@ -564,7 +564,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
 
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="rounded-full bg-gradient-to-br from-[#0abab5] to-cyan-500 w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
+              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
                 1
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Apply & Get Approved</h3>
@@ -572,7 +572,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             </div>
 
             <div className="text-center">
-              <div className="rounded-full bg-gradient-to-br from-emerald-500 to-green-500 w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
+              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
                 2
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Share Your Link</h3>
@@ -580,7 +580,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             </div>
 
             <div className="text-center">
-              <div className="rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
+              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
                 3
               </div>
               <h3 className="font-bold text-slate-900 mb-2">They Sign Up</h3>
@@ -588,7 +588,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             </div>
 
             <div className="text-center">
-              <div className="rounded-full bg-gradient-to-br from-amber-500 to-orange-500 w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
+              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
                 4
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Earn Forever</h3>
@@ -778,7 +778,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-gradient-to-r from-[#0abab5] to-[#24d9e2] hover:from-[#099a95] hover:to-[#1fc8d1] text-white text-lg font-bold py-6 rounded-2xl shadow-2xl"
+                className="w-full bg-[#5ce1e6] hover:bg-[#4dd4d9] text-slate-900 text-lg font-bold py-6 rounded-2xl shadow-2xl"
               >
                 Submit Application
                 <ArrowRight className="ml-2 h-5 w-5" />

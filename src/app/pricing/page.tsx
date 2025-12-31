@@ -515,7 +515,7 @@ export default function Pricing() {
                 href="https://calendly.com/jarredkro/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white shadow-2xl shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-400/70 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#5ce1e6] hover:bg-[#4dd4d9] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-slate-900 shadow-2xl transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
               >
                 Schedule a Demo <ArrowRight className="h-5 w-5" />
               </Link>

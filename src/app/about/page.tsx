@@ -127,7 +127,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-br from-[#5ce1e6] via-teal-400 to-cyan-500 p-6 sm:p-8 shadow-2xl">
+        <section className="rounded-3xl bg-[#5ce1e6] p-6 sm:p-8 shadow-2xl">
           <div className="mx-auto max-w-3xl space-y-6">
             <div className="text-center space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur px-4 py-2 text-sm font-bold text-white ring-1 ring-white/30">
