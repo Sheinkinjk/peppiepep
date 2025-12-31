@@ -44,7 +44,11 @@ export async function GET(request: NextRequest) {
         metadata: {
           referrer,
           query: metadataQuery,
-          redirect_destination: destination === "client" ? "client_acquisition" : "partner_program",
+          redirect_destination:
+            destination === "client" ? "client_acquisition" :
+            destination === "linkedin-influencer" ? "linkedin_influencer_creator" :
+            destination === "linkedin-business" ? "linkedin_influencer_business" :
+            "partner_program",
         },
       });
     } catch (error) {
@@ -53,7 +57,14 @@ export async function GET(request: NextRequest) {
   }
 
   // Create response with redirect based on destination
-  const redirectPath = destination === "client" ? "/referred" : "/our-referral-program";
+  let redirectPath = "/our-referral-program"; // default: partner program
+  if (destination === "client") {
+    redirectPath = "/referred";
+  } else if (destination === "linkedin-influencer") {
+    redirectPath = "/linkedin-influencer/influencer";
+  } else if (destination === "linkedin-business") {
+    redirectPath = "/linkedin-influencer/business";
+  }
   const response = NextResponse.redirect(new URL(redirectPath, request.url));
 
   // Set attribution cookie (30-day window)

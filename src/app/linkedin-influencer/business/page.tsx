@@ -101,11 +101,28 @@ async function submitBusinessPartner(formData: FormData) {
   const submittedAt = new Date().toISOString();
   const businessId = process.env.PARTNER_PROGRAM_BUSINESS_ID?.trim();
 
-  // Check for referral attribution cookies
+  // Check for referral attribution cookie
   const cookieStore = await cookies();
-  const ambassadorId = cookieStore.get("pep_ambassador_id")?.value || null;
-  const attributionBusinessId = cookieStore.get("pep_business_id")?.value || null;
-  const attributionReferralCode = cookieStore.get("pep_referral_code")?.value || null;
+  const refAmbassadorCookie = cookieStore.get("ref_ambassador");
+  let ambassadorId: string | null = null;
+  let attributionBusinessId: string | null = null;
+  let attributionReferralCode: string | null = null;
+
+  if (refAmbassadorCookie?.value) {
+    try {
+      const parsed = JSON.parse(refAmbassadorCookie.value);
+      // Check if cookie is still within 30-day window
+      const cookieAge = Date.now() - (parsed.timestamp || 0);
+      const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+      if (cookieAge < thirtyDaysMs) {
+        ambassadorId = parsed.id;
+        attributionBusinessId = parsed.business_id;
+        attributionReferralCode = parsed.code;
+      }
+    } catch (err) {
+      console.error("Failed to parse attribution cookie:", err);
+    }
+  }
 
   if (businessId) {
     try {
