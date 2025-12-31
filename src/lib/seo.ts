@@ -311,7 +311,7 @@ export const seoConfig = {
       "creator economy",
     ],
     url: `${SITE_URL}/linkedin-influencer`,
-    image: `${SITE_URL}/og-linkedin-influencer.png`,
+    // Using default image - TODO: Create custom at /public/og-linkedin-influencer.png (1200x630)
   },
   linkedinInfluencerCreator: {
     title: "Join as LinkedIn Creator - Earn 25% Recurring Revenue | Refer Labs",
@@ -331,7 +331,7 @@ export const seoConfig = {
       "creator marketplace",
     ],
     url: `${SITE_URL}/linkedin-influencer/influencer`,
-    image: `${SITE_URL}/og-linkedin-creator.png`,
+    // Using default image - TODO: Create custom at /public/og-linkedin-creator.png (1200x630)
   },
   linkedinInfluencerBusiness: {
     title: "Partner with LinkedIn Creators - Replace SDRs with Trusted Distribution",
@@ -351,7 +351,7 @@ export const seoConfig = {
       "SaaS customer acquisition",
     ],
     url: `${SITE_URL}/linkedin-influencer/business`,
-    image: `${SITE_URL}/og-linkedin-business.png`,
+    // Using default image - TODO: Create custom at /public/og-linkedin-business.png (1200x630)
   },
 
   dashboard: {
