@@ -512,16 +512,12 @@ export default function Pricing() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/login"
+                href="https://calendly.com/jarredkro/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white shadow-2xl shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-purple-400/70 whitespace-nowrap"
               >
-                Start free trial <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 whitespace-nowrap"
-              >
-                See how it works
+                Schedule a Demo <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
           </div>

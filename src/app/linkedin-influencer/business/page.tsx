@@ -347,14 +347,11 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
         style={{ animationDelay: "1.1s" }}
       />
       <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-14 sm:px-10 lg:px-16">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.32em] text-cyan-200">
-          <Zap className="h-3.5 w-3.5" />
-          LinkedIn Influencer
-        </div>
+        <div className="sr-only">Business Partnership Program</div>
 
         <section className="mt-6 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center animate-in fade-in duration-700">
           <div className="space-y-6">
-            <h1 className="text-balance text-4xl font-black leading-tight sm:text-5xl">
+            <h1 className="text-balance text-4xl font-black leading-tight sm:text-5xl" style={{color: '#5ce1e6'}}>
               Replace Outbound With LinkedIn Distribution
             </h1>
             <p className="text-lg text-slate-200/90">

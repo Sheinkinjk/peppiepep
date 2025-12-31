@@ -120,10 +120,7 @@ export default function LeadHackingPage() {
         {/* Hero */}
         <section className="mb-20 grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
-              <Zap className="h-3.5 w-3.5" />
-              Lead Hacking
-            </div>
+            <div className="sr-only">Lead Generation Tools</div>
 
             <h1 className="text-balance text-5xl font-black leading-[1.1] sm:text-6xl lg:text-7xl">
               Grow Your Pool Of{" "}

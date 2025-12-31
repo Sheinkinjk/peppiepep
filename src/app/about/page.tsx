@@ -22,7 +22,7 @@ export default function About() {
 
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            We are the referral engine to build your future and monetise word-of-mouth referrals
+            We are the referral engine to build your future<br />and monetise word-of-mouth referrals
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-600 mx-auto">
             We started Refer Labs because we saw thousands of operators losing revenue to the same problem: broken referral systems.
@@ -127,107 +127,44 @@ export default function About() {
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-br from-purple-600 via-purple-500 to-pink-500 p-8 sm:p-12 shadow-2xl">
-          <div className="mx-auto max-w-4xl space-y-8">
-            <div className="text-center space-y-4">
+        <section className="rounded-3xl bg-gradient-to-br from-[#5ce1e6] via-teal-400 to-cyan-500 p-6 sm:p-8 shadow-2xl">
+          <div className="mx-auto max-w-3xl space-y-6">
+            <div className="text-center space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur px-4 py-2 text-sm font-bold text-white ring-1 ring-white/30">
-                <Rocket className="h-4 w-4" />
-                JOIN OUR TEAM
+                <Users className="h-4 w-4" />
+                PARTNER WITH US
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">We're Hiring Sales Reps</h2>
-              <p className="text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-                Be instrumental in our growth. Help ambitious companies discover the power of word-of-mouth referral systems.
+              <h2 className="text-2xl sm:text-3xl font-black text-white">Become a Refer Labs Partner</h2>
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
+                Join our partner program and earn recurring revenue by referring businesses to Refer Labs.
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl bg-white/10 backdrop-blur border border-white/20 p-6">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Sales Development Representative</h3>
-              <p className="text-purple-100 mb-4">
-                Own the top of funnel. Identify and engage growth teams who need referral systems. Book demos, qualify leads, and fuel our growth engine.
-              </p>
-                <ul className="space-y-2 text-sm text-purple-100">
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-300 mt-0.5">✓</span>
-                    <span>Commission-based compensation + base salary</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-300 mt-0.5">✓</span>
-                    <span>Work with warm inbound leads from marketing</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-300 mt-0.5">✓</span>
-                    <span>Build skills in SaaS sales & service industry</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="rounded-2xl bg-white/10 backdrop-blur border border-white/20 p-6">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
-                  <Target className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Account Executive</h3>
-              <p className="text-purple-100 mb-4">
-                Close deals and build relationships. Understand revenue team challenges, demo Refer Labs' value, and turn prospects into thriving customers.
-              </p>
-                <ul className="space-y-2 text-sm text-purple-100">
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-300 mt-0.5">✓</span>
-                    <span>Uncapped commission potential</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-300 mt-0.5">✓</span>
-                    <span>Own the full sales cycle from demo to close</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-300 mt-0.5">✓</span>
-                    <span>Shape our sales playbook as an early hire</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white/95 backdrop-blur p-8 text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">Why Join Refer Labs Sales?</h3>
-              <div className="grid gap-4 md:grid-cols-3 text-left mb-6">
+            <div className="rounded-2xl bg-white/95 backdrop-blur p-6 text-center space-y-4">
+              <div className="grid gap-3 sm:grid-cols-3 text-left">
                 <div>
-                  <p className="font-semibold text-slate-900 mb-1">💰 High-Growth Opportunity</p>
-                  <p className="text-sm text-slate-600">Ground floor position at a fast-growing SaaS company. Your work directly impacts our trajectory.</p>
+                  <p className="font-semibold text-slate-900 mb-1">💰 Earn Revenue</p>
+                  <p className="text-sm text-slate-600">Get paid for every business you refer that joins Refer Labs</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 mb-1">🎯 Product-Market Fit</p>
-                  <p className="text-sm text-slate-600">You're selling a solution businesses desperately need. Real problem, proven solution, hungry market.</p>
+                  <p className="font-semibold text-slate-900 mb-1">🎯 Track Everything</p>
+                  <p className="text-sm text-slate-600">Full dashboard to see all your referrals and commissions</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 mb-1">🚀 Career Accelerator</p>
-                  <p className="text-sm text-slate-600">Learn SaaS sales, understand customer-first teams, and build skills that translate across industries.</p>
+                  <p className="font-semibold text-slate-900 mb-1">🚀 Grow Together</p>
+                  <p className="text-sm text-slate-600">Help businesses unlock referral revenue while building yours</p>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="mailto:careers@referlabs.com?subject=Sales Role Application"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-8 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
-                >
-                  Apply Now <ArrowRight className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="mailto:careers@referlabs.com?subject=Sales Role Inquiry"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-400"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <p className="text-purple-100 text-sm">
-                Not a sales role? We're also looking for engineers, designers, and marketers who want to help growth teams grow.{" "}
-                <Link href="mailto:careers@referlabs.com" className="underline font-semibold text-white hover:text-purple-200">
-                  Get in touch
-                </Link>
+              <Link
+                href="https://calendly.com/jarredkro/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-8 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
+              >
+                Schedule a Call <ArrowRight className="h-5 w-5" />
+              </Link>
+              <p className="text-sm text-slate-600">
+                Learn more about our <Link href="/our-referral-program" className="underline font-semibold text-slate-900 hover:text-purple-600">partner program</Link>
               </p>
             </div>
           </div>

@@ -174,14 +174,11 @@ export default function FAQPage() {
     <div className="aurora relative min-h-screen bg-gradient-to-b from-[#d5f9ff] via-white to-[#d9f7fe] px-6 py-12 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl space-y-10">
         <header className="space-y-3 text-center">
-          <p className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#0abab5] via-[#5fd9e4] to-[#1a9eb7] px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white shadow-lg shadow-[#0a9fb3]/40">
-            Tiffany-Blue Transparency
-          </p>
           <h1 className="text-4xl font-black text-slate-900 sm:text-5xl lg:text-[3.5rem] leading-tight">
             Refer Labs FAQ
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
-            Clear answers to every workflow we highlight on the site—from the hero moments and ROI calculator to the dashboard tabs, referral arcs, and integrations—so you can trust every promise before you launch a program.
+            Get answers to common questions about Refer Labs.
           </p>
         </header>
 
@@ -194,9 +191,7 @@ export default function FAQPage() {
                     {section.title}
                   </p>
                   <p className="text-lg font-semibold text-slate-900">
-                    {section.questions.length > 8
-                      ? "Deep dives on the workflows you see across the dashboard"
-                      : "Focused answers for that area of the product"}
+                    {section.questions.length} Questions
                   </p>
                 </div>
                 <div className="mt-5 space-y-4">
@@ -246,7 +241,7 @@ export default function FAQPage() {
             href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#53c2ef] via-[#37a9e0] to-[#0d869d] px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-400/40 transition-transform duration-200 hover:-translate-y-0.5"
           >
-            Would you like to learn more?
+            Contact Us
           </Link>
         </div>
       </div>

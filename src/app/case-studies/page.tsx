@@ -361,6 +361,71 @@ export default function CaseStudiesPage() {
           </TabsContent>
         </Tabs>
 
+        {/* Comparison Table */}
+        <section className="mt-16 space-y-6">
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+              Why Refer Labs Wins
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Compare traditional referral approaches vs. the Refer Labs platform
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-xl">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b-2 border-slate-200 bg-gradient-to-r from-slate-50 to-slate-100">
+                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wide text-slate-700">Feature</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wide text-red-600">Manual Tracking</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wide text-orange-600">Basic Tools</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wide text-teal-600">Refer Labs</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Unique Referral Codes</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900">CRM Integration</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Automated Campaigns</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Revenue Attribution</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Ambassador Dashboard</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                  </tr>
+                  <tr className="bg-gradient-to-r from-teal-50 to-cyan-50">
+                    <td className="px-6 py-4 text-sm font-bold text-slate-900">Setup Time</td>
+                    <td className="px-6 py-4 text-center text-sm font-semibold text-red-700">Weeks</td>
+                    <td className="px-6 py-4 text-center text-sm font-semibold text-orange-700">Days</td>
+                    <td className="px-6 py-4 text-center text-sm font-semibold text-teal-700">Minutes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* Bottom CTA */}
         <div className="mt-12 sticky bottom-6 z-10">
           <div className="rounded-3xl border-2 border-teal-200 bg-gradient-to-br from-white to-teal-50 p-8 shadow-2xl">
