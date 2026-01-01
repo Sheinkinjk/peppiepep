@@ -509,7 +509,7 @@ function LoginContent() {
       <div className="w-full max-w-5xl">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-slate-900 mb-3">
-            Join the referral revolution
+            Join The Referral Revolution
           </h1>
         </div>
 
@@ -572,14 +572,6 @@ function LoginContent() {
 
             <div className="relative">
               <div className="mb-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">Refer Labs</p>
-                    <p className="text-xs text-slate-500">Cloud account</p>
-                  </div>
-                </div>
-
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">
                   {isSignUp ? "Create your account" : "Welcome back"}
                 </h2>
