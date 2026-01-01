@@ -290,7 +290,9 @@ async function submitPartnerApplication(formData: FormData) {
       }
     }
 
-    const siteOrigin = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ?? "https://referlabs.com.au";
+    const siteOrigin = ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ||
+      (process.env.VERCEL_URL ? ensureAbsoluteUrl(`https://${process.env.VERCEL_URL}`) : null) ||
+      "https://referlabs.com.au";
     const referralLink = referralCode ? `${siteOrigin}/r/${referralCode}` : null;
 
     if (process.env.RESEND_API_KEY) {
