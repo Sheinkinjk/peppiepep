@@ -2069,7 +2069,7 @@ export default async function Dashboard() {
 
 		        <GuidedStepFlow
 		          steps={guidedSteps}
-		          defaultOpenStep={autoExpandStep}
+		          defaultOpenStep={null}
 		        />
 
       <DashboardOnboardingChecklist

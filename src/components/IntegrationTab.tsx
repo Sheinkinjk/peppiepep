@@ -85,7 +85,6 @@ export function IntegrationTab({
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [snapshotOpen, setSnapshotOpen] = useState(true);
   const [rewardsOpen, setRewardsOpen] = useState(true);
-  const [guideOpen, setGuideOpen] = useState(true);
   const [integrationsOpen, setIntegrationsOpen] = useState(true);
   const websiteGuideRef = useRef<HTMLDivElement | null>(null);
 
@@ -161,7 +160,6 @@ export function IntegrationTab({
 
   const handleReviewWebsiteGuide = () => {
     setOpenSection("website");
-    setGuideOpen(true);
     setTimeout(() => {
       websiteGuideRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 140);
@@ -1054,74 +1052,6 @@ Body:
         )}
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600">Step 1D · Integration Step-by-Step</p>
-            <h3 className="text-xl font-black text-slate-900">Integration Step-by-Step</h3>
-            <p className="text-sm text-slate-600">Use this walkthrough to verify each touchpoint in order, end-to-end.</p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setGuideOpen((prev) => !prev)}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600"
-          >
-            {guideOpen ? "Collapse" : "Expand"}
-            <ChevronDown className={`h-4 w-4 transition-transform ${guideOpen ? "rotate-180" : ""}`} />
-          </button>
-        </div>
-	        {guideOpen && (
-	          <div className="mt-6 space-y-5 text-sm text-slate-600">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">1. Configure rewards + copy (Step 1B)</p>
-              <p>Save both referral rewards and optional sign-on bonus. Preview the copy on your hosted referral page afterwards.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">2. Create a test ambassador (Step 2)</p>
-              <p>Use Quick Add -&gt; copy the referral link and discount code. Keep them handy for the QA steps below.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">3. Embed the referral form</p>
-              <p>
-                Drop the iframe/button snippet on your website, or use the WordPress shortcode plugin. Follow the install guide at{" "}
-                <a href="/wordpress" className="font-semibold text-slate-900 underline hover:text-slate-700">/wordpress</a>.
-                Update the integration tracker in Step 1A once you can see your branded offer live.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">4. Test tracking</p>
-              <p>Open the test ambassador link in an incognito window, submit the referral form, and confirm link visits + signups appear in Step 5 -&gt; Journey timeline.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-              <p className="font-bold text-slate-900">5. Trigger a checkout event</p>
-              <p>
-                Use the discount capture endpoint (Shopify/WooCommerce/custom) and verify the pending referral shows with the right ambassador + transaction value. Shopify guide:{" "}
-                <a href="/shopify" className="font-semibold text-slate-900 underline hover:text-slate-700">/shopify</a>.
-              </p>
-            </div>
-	            <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-	              <p className="font-bold text-slate-900">6. Promote with your CRM</p>
-	              <p>Export ambassadors, map the referral_link merge field, and send yourself a CRM campaign that deep links back to Refer Labs for analytics.</p>
-	            </div>
-	          </div>
-	        )}
-
-	        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/60 p-4 text-sm text-slate-700">
-	          <p className="font-bold text-slate-900">Recommended order</p>
-	          <p className="mt-1">
-	            Start with your website platform guide (Shopify/WordPress/Webflow/etc), then verify conversion capture (Stripe/POS/booking), then finish with analytics/ad tags.
-	          </p>
-	          <div className="mt-3 flex flex-wrap gap-2">
-	            <a href="/integrations" className="rounded-xl bg-slate-900 px-3 py-2 text-xs font-bold text-white hover:bg-slate-800">View all guides</a>
-	            <a href="/go-live" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Go-live checklist</a>
-	            <a href="/gtm" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">GTM</a>
-	            <a href="/analytics" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Analytics</a>
-	            <a href="/meta-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Meta Ads</a>
-	            <a href="/google-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">Google Ads</a>
-	            <a href="/tiktok-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-50">TikTok Ads</a>
-	          </div>
-	        </div>
-	      </div>
 
       
     </div>
