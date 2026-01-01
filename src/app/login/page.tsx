@@ -511,9 +511,6 @@ function LoginContent() {
           <h1 className="text-4xl font-bold text-slate-900 mb-3">
             Join the referral revolution
           </h1>
-          <p className="text-lg text-slate-600">
-            180+ businesses growing on autopilot with Refer Labs
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6">
@@ -524,11 +521,8 @@ function LoginContent() {
 
             <div className="relative space-y-5">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 px-3 py-1.5 mb-3 bg-white/80 text-purple-800 text-xs font-semibold tracking-wide">
-                  WHITE-GLOVE ONBOARDING
-                </div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">
-                  Launch live with our concierge team
+                  Speak to our Concierge Team
                 </h2>
                 <p className="text-sm text-slate-700 leading-relaxed">
                   Every customer gets hands-on setup assistance. No sandbox. No fake data. We configure your rewards, upload ambassadors, and QA the flow before you invite anyone.
@@ -562,7 +556,7 @@ function LoginContent() {
                 className="w-full border-purple-200 text-purple-800 font-semibold bg-white hover:bg-purple-50"
               >
                 <Link href="https://calendly.com/jarredkrowitz/30min" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                  Book onboarding call
+                  Schedule a Call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
