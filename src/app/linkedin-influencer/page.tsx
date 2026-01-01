@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   ChevronRight,
   Globe2,
-  Handshake,
   Layers,
   LineChart,
   Megaphone,
@@ -17,6 +16,30 @@ import {
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencer);
+
+const referralGoals = [
+  {
+    title: "Book SaaS Demos",
+    detail: "Drive qualified demo bookings through creator-led posts that showcase real product use cases and benefits to engaged LinkedIn audiences.",
+    icon: Target,
+    gradient: "from-cyan-500/20 to-teal-500/20",
+    border: "border-cyan-400/30",
+  },
+  {
+    title: "Educate to Transaction",
+    detail: "Guide prospects from awareness to purchase with educational content that builds trust and positions your product as the solution.",
+    icon: Sparkles,
+    gradient: "from-purple-500/20 to-pink-500/20",
+    border: "border-purple-400/30",
+  },
+  {
+    title: "Brand Exposure Posts",
+    detail: "Amplify brand awareness through authentic creator content that reaches new audiences and builds credibility in your target market.",
+    icon: Megaphone,
+    gradient: "from-emerald-500/20 to-teal-500/20",
+    border: "border-emerald-400/30",
+  },
+];
 
 const problemSignals = [
   {
@@ -177,57 +200,72 @@ export default function LinkedInInfluencerPage() {
 
       <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-14 sm:px-10 lg:px-16">
         {/* Hero */}
-        <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-8 animate-in fade-in duration-700">
-            <h1 className="text-balance text-4xl font-black leading-[1.05] sm:text-5xl lg:text-6xl">
-              Turn LinkedIn Influence Into{" "}
-              <span className="bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent">
-                Scalable Revenue
-              </span>
-            </h1>
-            <p className="text-lg text-slate-200/90 leading-relaxed">
-              Connect trusted LinkedIn creators with SaaS &amp; e-commerce companies to drive demos, sign-ups, and real
-              revenue — without ads or SDRs.
+        <section className="space-y-8 animate-in fade-in duration-700 text-center max-w-4xl mx-auto">
+          <h1 className="text-balance text-4xl font-black leading-[1.05] sm:text-5xl lg:text-6xl text-white">
+            Turn LinkedIn Influence Into Scalable Revenue
+          </h1>
+          <p className="text-lg text-slate-200/90 leading-relaxed">
+            Connect trusted LinkedIn creators with SaaS &amp; e-commerce companies to drive demos, sign-ups, and real
+            revenue — without ads or SDRs.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/linkedin-influencer/influencer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#5ce1e6] hover:bg-[#4dd4d9] px-8 py-3 text-sm font-bold text-slate-900 shadow-2xl shadow-cyan-500/30 transition hover:scale-[1.02]"
+            >
+              Join as a LinkedIn Influencer
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/linkedin-influencer/business"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3 text-sm font-bold text-white/90 backdrop-blur transition hover:border-white/60"
+            >
+              Partner as a Business
+            </Link>
+          </div>
+        </section>
+
+        {/* Referral Program Goals */}
+        <section className="mt-20 animate-in fade-in duration-700 delay-150">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Referral Program Goals</p>
+            <h2 className="text-3xl font-black text-white mt-2">What Can Your LinkedIn Referral Program Achieve?</h2>
+            <p className="mt-4 text-base text-slate-200/90 max-w-3xl mx-auto">
+              Whether you're launching a SaaS product, educating prospects, or building brand awareness — LinkedIn creator partnerships deliver measurable results tied directly to your business objectives.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/linkedin-influencer/influencer"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-500 px-8 py-3 text-sm font-bold text-slate-900 shadow-2xl shadow-cyan-500/30 transition hover:scale-[1.02]"
-              >
-                Join as a LinkedIn Influencer
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/linkedin-influencer/business"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-3 text-sm font-bold text-white/90 backdrop-blur transition hover:border-white/60"
-              >
-                Partner as a Business
-              </Link>
-            </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur animate-in fade-in duration-700 delay-150">
-            <div className="flex items-center gap-4">
-              <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-500 p-3 text-white shadow-lg">
-                <Handshake className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Marketplace</p>
-                <p className="text-xl font-bold text-white">Authentic, performance-driven distribution</p>
-              </div>
-            </div>
-            <div className="mt-6 space-y-4 text-sm text-slate-200/90">
-              {[
-                "Creators share insights that feel native in the feed",
-                "Brands pay only for demos, sign-ups, or conversions",
-                "Referral links track every action end-to-end",
-                "Growth scales without cold outreach or ad fatigue",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-300" />
-                  <span>{item}</span>
+          <div className="grid gap-6 md:grid-cols-3">
+            {referralGoals.map((goal) => {
+              const Icon = goal.icon;
+              return (
+                <div
+                  key={goal.title}
+                  className={`rounded-3xl border ${goal.border} bg-gradient-to-br ${goal.gradient} backdrop-blur-sm p-8 hover:scale-[1.02] transition-transform duration-300`}
+                >
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="rounded-2xl bg-white/10 p-4 backdrop-blur">
+                      <Icon className="h-8 w-8 text-cyan-300" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{goal.title}</h3>
+                    <p className="text-sm text-slate-200/90 leading-relaxed">{goal.detail}</p>
+                  </div>
                 </div>
-              ))}
+              );
+            })}
+          </div>
+
+          <div className="mt-10 rounded-3xl border border-amber-400/30 bg-gradient-to-br from-amber-500/10 to-orange-500/10 p-8 backdrop-blur">
+            <div className="flex items-start gap-4">
+              <div className="rounded-xl bg-amber-400/20 p-3 backdrop-blur">
+                <Zap className="h-6 w-6 text-amber-300" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-white mb-2">Performance-Based Tracking</h3>
+                <p className="text-sm text-slate-200/90 leading-relaxed">
+                  Every goal is tracked end-to-end with unique referral links, conversion analytics, and real-time dashboards. You only pay for outcomes — demos booked, purchases completed, or engagement delivered.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -259,32 +297,48 @@ export default function LinkedInInfluencerPage() {
         </section>
 
         {/* Model */}
-        <section className="mt-20 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center animate-in fade-in duration-700 delay-300">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">The solution</p>
-            <h2 className="text-3xl font-black text-white">A New Way to Sell Through LinkedIn</h2>
-            <p className="mt-4 text-base text-slate-200/90">
-              LinkedIn Influencer is a performance-based referral model where creators promote products they believe
-              in, while businesses pay only for outcomes (demos, sign-ups, or conversions).
-            </p>
-            <div className="mt-6 space-y-3 text-sm text-slate-200/90">
-              {creatorBenefits.map((benefit) => (
-                <div key={benefit} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" />
-                  <span>{benefit}</span>
+        <section className="mt-20 animate-in fade-in duration-700 delay-300">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-10 lg:p-12 backdrop-blur">
+            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">The solution</p>
+                <h2 className="text-3xl font-black text-white mt-2">A New Way to Sell Through LinkedIn</h2>
+                <p className="mt-4 text-base text-slate-200/90 leading-relaxed">
+                  LinkedIn Influencer is a performance-based referral model where creators promote products they believe
+                  in, while businesses pay only for outcomes (demos, sign-ups, or conversions).
+                </p>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {creatorBenefits.map((benefit) => (
+                    <div key={benefit} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/40 p-4">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-300" />
+                      <span className="text-sm text-slate-200/90">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/15 via-slate-900/70 to-emerald-500/10 p-8 backdrop-blur">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="rounded-xl bg-cyan-400/20 p-2.5">
+                    <Sparkles className="h-6 w-6 text-cyan-200" />
+                  </div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Outcome-based GTM</p>
+                </div>
+                <p className="text-2xl font-bold text-white leading-tight">Influencers earn on performance. Brands scale with proof.</p>
+                <p className="mt-4 text-base text-slate-200/90 leading-relaxed">
+                  No cold outreach. No generic ads. Just trusted distribution inside the LinkedIn feed that converts.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-xs font-semibold text-emerald-200">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    Performance-based
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-xs font-semibold text-cyan-200">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    Transparent tracking
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/15 via-slate-900/70 to-emerald-500/10 p-6">
-            <div className="flex items-center gap-3">
-              <Sparkles className="h-5 w-5 text-cyan-200" />
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Outcome-based GTM</p>
-            </div>
-            <p className="mt-4 text-xl font-bold text-white">Influencers earn on performance. Brands scale with proof.</p>
-            <p className="mt-4 text-sm text-slate-200/80">
-              No cold outreach. No generic ads. Just trusted distribution inside the LinkedIn feed.
-            </p>
           </div>
         </section>
 
@@ -409,37 +463,104 @@ export default function LinkedInInfluencerPage() {
           </div>
         </section>
 
+        {/* Compliance & Transparency */}
+        <section className="mt-20 rounded-3xl border border-blue-400/30 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 p-10 backdrop-blur animate-in fade-in duration-700 delay-550">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="rounded-xl bg-blue-400/20 p-3 backdrop-blur">
+              <CheckCircle2 className="h-6 w-6 text-blue-300" />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-200 mb-2">Compliance & Transparency</p>
+              <h2 className="text-2xl font-black text-white">Creator Partnerships Are Marketing</h2>
+            </div>
+          </div>
+
+          <div className="space-y-4 text-sm text-slate-200/90 leading-relaxed">
+            <p>
+              When a trusted LinkedIn creator announces they've partnered with a specific brand, this constitutes marketing and advertising. All creator partnerships facilitated through Refer Labs are performance-based marketing relationships.
+            </p>
+            <p>
+              <strong className="text-white">Disclosure Requirements:</strong> Creators are required to clearly disclose their partnership with brands in accordance with FTC guidelines, ASA regulations, and local advertising standards. This includes using appropriate hashtags (#ad, #sponsored, #partner) and clear language indicating the commercial relationship.
+            </p>
+            <p>
+              <strong className="text-white">Brand Responsibility:</strong> Businesses partnering with creators must ensure that all claims made about their products are truthful, substantiated, and compliant with applicable advertising regulations in their jurisdiction.
+            </p>
+            <p>
+              <strong className="text-white">Platform Compliance:</strong> All partnerships must comply with LinkedIn's policies on sponsored content and commercial relationships. Refer Labs provides guidance and templates to help both creators and businesses maintain compliance, but ultimate responsibility for regulatory compliance rests with the parties involved.
+            </p>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200 mb-2">Important Notice</p>
+            <p className="text-sm text-slate-200/90">
+              This platform facilitates business-to-creator partnerships for marketing purposes. All participants are responsible for understanding and complying with advertising regulations including FTC endorsement guidelines, truth-in-advertising laws, and platform-specific commercial content policies. Refer Labs provides tools and guidance but does not provide legal advice. Consult with legal counsel regarding your specific compliance obligations.
+            </p>
+          </div>
+        </section>
+
         {/* Business use cases */}
         <section className="mt-20 animate-in fade-in duration-700 delay-600">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Business outcomes</p>
-              <h2 className="text-3xl font-black text-white">Use cases that outperform outbound</h2>
-            </div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-slate-200/80">
-              <Globe2 className="h-3.5 w-3.5 text-cyan-200" />
-              LinkedIn-native distribution
-            </span>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {businessUseCases.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-                <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-200/90">{item.detail}</p>
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-10 lg:p-12 backdrop-blur">
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Business outcomes</p>
+                <h2 className="text-3xl font-black text-white mt-2">Use Cases That Outperform Outbound</h2>
               </div>
-            ))}
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200/80">
+                <Globe2 className="h-3.5 w-3.5 text-cyan-200" />
+                LinkedIn-native distribution
+              </span>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2">
+              {businessUseCases.map((item, index) => {
+                const colors = [
+                  { border: "border-cyan-400/30", bg: "from-cyan-500/10 to-teal-500/10", icon: "text-cyan-300" },
+                  { border: "border-purple-400/30", bg: "from-purple-500/10 to-pink-500/10", icon: "text-purple-300" },
+                  { border: "border-emerald-400/30", bg: "from-emerald-500/10 to-green-500/10", icon: "text-emerald-300" },
+                  { border: "border-amber-400/30", bg: "from-amber-500/10 to-orange-500/10", icon: "text-amber-300" },
+                ];
+                const color = colors[index % colors.length];
+
+                return (
+                  <div
+                    key={item.title}
+                    className={`rounded-3xl border ${color.border} bg-gradient-to-br ${color.bg} p-6 lg:p-7 hover:scale-[1.02] transition-transform duration-300`}
+                  >
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className={`rounded-xl bg-white/10 p-2.5 ${color.icon}`}>
+                        <Target className="h-5 w-5" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white flex-1">{item.title}</h3>
+                    </div>
+                    <p className="text-sm text-slate-200/90 leading-relaxed">{item.detail}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* Comparison */}
-        <section className="mt-20 rounded-3xl border border-white/10 bg-white/5 p-10 animate-in fade-in duration-700 delay-700">
-          <h2 className="text-3xl font-black text-white">Why LinkedIn Referrals Beat Ads &amp; Outbound</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {comparison.map((item) => (
-              <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-sm text-slate-200/90">
-                {item}
-              </div>
-            ))}
+        <section className="mt-20 rounded-3xl border border-white/10 bg-white/5 p-10 lg:p-12 backdrop-blur animate-in fade-in duration-700 delay-700">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-black text-white">Why LinkedIn Referrals Beat Ads &amp; Outbound</h2>
+            <p className="mt-3 text-base text-slate-200/80">The future of B2B growth is relationship-driven, not transaction-driven</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {comparison.map((item, index) => {
+              const icons = [CheckCircle2, Sparkles, Target, LineChart];
+              const Icon = icons[index % icons.length];
+              return (
+                <div key={item} className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/40 p-6 hover:border-cyan-400/30 transition-colors duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-xl bg-cyan-400/10 p-2.5">
+                      <Icon className="h-5 w-5 text-cyan-300" />
+                    </div>
+                    <p className="text-base font-semibold text-white">{item}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -477,24 +598,29 @@ export default function LinkedInInfluencerPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="mt-20 text-center animate-in fade-in duration-700 delay-900">
-          <h2 className="text-3xl font-black text-white">
-            Turn Influence Into Revenue. Turn Products Into Conversations.
-          </h2>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/linkedin-influencer/influencer"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-8 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
-            >
-              Join as an Influencer
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/linkedin-influencer/business"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-8 py-3 text-sm font-bold text-white/90 backdrop-blur"
-            >
-              Work With Influencers
-            </Link>
+        <section className="mt-20 rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 p-12 lg:p-16 text-center backdrop-blur animate-in fade-in duration-700 delay-900">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+              Turn Influence Into Revenue. Turn Products Into Conversations.
+            </h2>
+            <p className="mt-4 text-lg text-slate-200/90">
+              Join the performance-based referral marketplace where creators and brands grow together
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/linkedin-influencer/influencer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#5ce1e6] hover:bg-[#4dd4d9] px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
+              >
+                Join as an Influencer
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link
+                href="/linkedin-influencer/business"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/5 px-8 py-4 text-base font-bold text-white backdrop-blur hover:border-white/50 hover:bg-white/10 transition"
+              >
+                Work With Influencers
+              </Link>
+            </div>
           </div>
         </section>
       </main>
