@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-explicit-any */
-// @ts-nocheck - Supabase type inference issues with webhook operations
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import Stripe from 'stripe';
@@ -207,8 +206,8 @@ async function handlePaymentIntentFailed(paymentIntent: Stripe.PaymentIntent, lo
       description: paymentIntent.description || null,
       metadata: {
         ...paymentIntent.metadata,
-        failure_code: paymentIntent.last_payment_error?.code,
-        failure_message: paymentIntent.last_payment_error?.message,
+        failure_code: paymentIntent.last_payment_error?.code ?? null,
+        failure_message: paymentIntent.last_payment_error?.message ?? null,
       },
     },
   ]);
@@ -266,7 +265,8 @@ async function createRevenueShareCommission(
   const supabase = await createServerComponentClient();
 
   // Check if this business was referred by someone
-  const { data: referral } = await supabase
+  // Use a loosely typed query to avoid Supabase relationship inference errors at build time.
+  const { data: referral } = await (supabase as any)
     .from('referrals')
     .select('id, referred_by, referrer:customers!referred_by(id, email, name)')
     .eq('referred_to', businessId)
@@ -275,6 +275,11 @@ async function createRevenueShareCommission(
 
   if (!referral) {
     logger.info('No referral found for business', { businessId });
+    return;
+  }
+
+  if (!referral.referred_by) {
+    logger.warn('Referral missing referrer, skipping commission', { businessId, referralId: referral.id });
     return;
   }
 

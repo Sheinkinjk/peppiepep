@@ -3,10 +3,9 @@
  * Provides helper functions for checking admin access in the application
  */
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck - Supabase type inference issues with admin role queries
 import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import { redirect } from "next/navigation";
+import type { Database, Json } from "@/types/supabase";
 
 export type AdminRole = 'super_admin' | 'admin' | 'support' | 'analyst';
 
@@ -16,6 +15,15 @@ export interface AdminUser {
   role: AdminRole;
   permissions: Record<string, unknown>;
   is_active: boolean;
+}
+
+type AdminRoleRow = Database["public"]["Tables"]["admin_roles"]["Row"];
+
+function normalizePermissions(value: AdminRoleRow["permissions"]): Record<string, unknown> {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    return value as Record<string, unknown>;
+  }
+  return {};
 }
 
 /**
@@ -37,7 +45,7 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
   // If the function isn't installed, this will fail and we fall back to direct table reads.
   let rpcRole: string | null = null;
   try {
-    const { data: roleData, error: roleError } = await authClient.rpc(
+    const { data: roleData, error: roleError } = await (authClient as any).rpc(
       "get_current_user_admin_role",
     );
     if (!roleError && typeof roleData === "string" && roleData.length > 0) {
@@ -96,12 +104,13 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
     return null;
   }
 
+  const roleRow = resolvedAdminRole as AdminRoleRow;
   return {
     id: user.id,
-    email: resolvedAdminRole.email,
-    role: resolvedAdminRole.role as AdminRole,
-    permissions: resolvedAdminRole.permissions || {},
-    is_active: resolvedAdminRole.is_active,
+    email: roleRow.email,
+    role: roleRow.role as AdminRole,
+    permissions: normalizePermissions(roleRow.permissions),
+    is_active: roleRow.is_active,
   };
 }
 
@@ -168,11 +177,11 @@ export async function getAllAdmins(): Promise<AdminUser[]> {
     return [];
   }
 
-  return adminRoles.map(role => ({
+  return adminRoles.map((role) => ({
     id: role.user_id,
     email: role.email,
     role: role.role as AdminRole,
-    permissions: role.permissions || {},
+    permissions: normalizePermissions(role.permissions),
     is_active: role.is_active,
   }));
 }
@@ -211,7 +220,7 @@ export async function grantAdminRole(
       .from('admin_roles')
       .update({
         role,
-        permissions,
+        permissions: permissions as Json,
         is_active: true,
         revoked_at: null,
         notes: notes || existing.notes,
@@ -230,7 +239,7 @@ export async function grantAdminRole(
         user_id: targetUser.id,
         email: userEmail,
         role,
-        permissions,
+        permissions: permissions as Json,
         granted_by: currentAdmin.id,
         is_active: true,
         notes,

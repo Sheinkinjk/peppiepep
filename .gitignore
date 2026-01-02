@@ -48,3 +48,4 @@ next-env.d.ts
 
 # supabase CLI artifacts
 supabase/.temp/
+.env*.local

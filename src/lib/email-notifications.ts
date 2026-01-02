@@ -148,7 +148,7 @@ export function buildOnboardingSnapshotEmail(snapshotData: {
         <ul style="list-style:none;padding:0;margin:0 0 16px;">
           <li style="margin:6px 0;"><strong>Business Name:</strong> ${snapshotData.businessName}</li>
           ${snapshotData.businessType ? `<li style="margin:6px 0;"><strong>Business Type:</strong> ${snapshotData.businessType}</li>` : ""}
-          ${snapshotData.websiteUrl ? `<li style="margin:6px 0;"><strong>Website:</strong> <a href="${snapshotData.websiteUrl}" target="_blank">${snapshotData.websiteUrl}</a></li>` : ""}
+          ${snapshotData.websiteUrl ? `<li style="margin:6px 0;"><strong>Website:</strong> <a href="${snapshotData.websiteUrl}" target="_blank" rel="noopener noreferrer">${snapshotData.websiteUrl}</a></li>` : ""}
           ${snapshotData.websitePlatform ? `<li style="margin:6px 0;"><strong>Platform:</strong> ${snapshotData.websitePlatform}</li>` : ""}
           ${snapshotData.crmPlatform ? `<li style="margin:6px 0;"><strong>CRM:</strong> ${snapshotData.crmPlatform}</li>` : ""}
           ${snapshotData.avgSale ? `<li style="margin:6px 0;"><strong>Avg Sale:</strong> $${snapshotData.avgSale}</li>` : ""}

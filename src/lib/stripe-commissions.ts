@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck - Supabase client promise issues
 import { createServerComponentClient } from '@/lib/supabase';
+import type { Json } from '@/types/supabase';
 import { calculateCommission, COMMISSION_RULES } from '@/lib/stripe';
 
 /**
@@ -12,12 +11,12 @@ import { calculateCommission, COMMISSION_RULES } from '@/lib/stripe';
 // Types
 // ============================================
 
-export type CommissionType = 'signup_bonus' | 'revenue_share' | 'one_time' | 'recurring';
-export type CommissionStatus = 'pending' | 'approved' | 'paid' | 'cancelled' | 'disputed';
+export type CommissionType = 'signup_bonus' | 'revenue_share' | 'one_time' | 'recurring' | string;
+export type CommissionStatus = 'pending' | 'approved' | 'paid' | 'cancelled' | 'disputed' | string;
 
 export interface Commission {
   id: string;
-  business_id: string;
+  business_id: string | null;
   ambassador_id: string;
   referral_id: string | null;
   payment_id: string | null;
@@ -32,9 +31,9 @@ export interface Commission {
   paid_at: string | null;
   payout_id: string | null;
   notes: string | null;
-  metadata: Record<string, unknown>;
-  created_at: string;
-  updated_at: string;
+  metadata: Json | null;
+  created_at?: string | null;
+  updated_at?: string | null;
 }
 
 export interface CommissionBalance {
@@ -59,7 +58,7 @@ export async function createSignupBonusCommission(
   ambassadorId: string,
   businessId: string
 ): Promise<Commission> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   const amount = COMMISSION_RULES.PARTNER_SIGNUP_BONUS;
 
@@ -100,7 +99,7 @@ export async function createRevenueShareCommission(
   businessId: string,
   paymentAmount: number
 ): Promise<Commission> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   const commissionAmount = calculateCommission('revenue_share', paymentAmount);
 
@@ -143,7 +142,7 @@ export async function createRevenueShareCommission(
  * Get ambassador's commission balance
  */
 export async function getAmbassadorBalance(ambassadorId: string): Promise<CommissionBalance> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   const { data, error } = await supabase
     .from('ambassador_commission_balances')
@@ -180,7 +179,7 @@ export async function getAmbassadorCommissions(
   ambassadorId: string,
   status?: CommissionStatus
 ): Promise<Commission[]> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   let query = supabase
     .from('stripe_commissions')
@@ -244,7 +243,7 @@ export async function approveCommission(
   commissionId: string,
   approvedBy: string
 ): Promise<Commission> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   const { data, error } = await supabase
     .from('stripe_commissions')
@@ -271,7 +270,7 @@ export async function markCommissionsAsPaid(
   commissionIds: string[],
   payoutId: string
 ): Promise<void> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   const { error } = await supabase
     .from('stripe_commissions')
@@ -294,7 +293,7 @@ export async function cancelCommission(
   commissionId: string,
   reason: string
 ): Promise<Commission> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   const { data, error } = await supabase
     .from('stripe_commissions')
@@ -327,7 +326,7 @@ export async function getBusinessCommissionSummary(businessId: string): Promise<
   commission_count: number;
   ambassador_count: number;
 }> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
   const { data, error } = await supabase
     .from('stripe_commissions')
@@ -360,14 +359,14 @@ export async function getTopEarningAmbassadors(
   limit: number = 10
 ): Promise<Array<{
   ambassador_id: string;
-  ambassador_name: string;
-  ambassador_email: string;
+  ambassador_name: string | null;
+  ambassador_email: string | null;
   total_earnings: number;
   commission_count: number;
 }>> {
-  const supabase = createServerComponentClient();
+  const supabase = await createServerComponentClient();
 
-  const { data, error } = await supabase
+  const { data, error } = await (supabase as any)
     .from('stripe_commissions')
     .select(`
       ambassador_id,
@@ -387,8 +386,8 @@ export async function getTopEarningAmbassadors(
   // Group by ambassador
   const ambassadorMap = new Map<string, {
     id: string;
-    name: string;
-    email: string;
+    name: string | null;
+    email: string | null;
     total: number;
     count: number;
   }>();

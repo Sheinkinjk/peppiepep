@@ -4,6 +4,7 @@ import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
+import dotenv from "dotenv";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
@@ -11,6 +12,7 @@ const vercelBin = path.join(projectRoot, "node_modules", ".bin", "vercel");
 const npxBin = process.platform === "win32" ? "npx.cmd" : "npx";
 const deploymentUrlPattern = /https:\/\/peppiepep-[a-z0-9-]+\.vercel\.app/gi;
 const vercelProjectConfigPath = path.join(projectRoot, ".vercel", "project.json");
+dotenv.config({ path: path.join(projectRoot, ".env.local") });
 
 function getVercelScope() {
   try {

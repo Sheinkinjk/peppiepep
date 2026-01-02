@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck - Complex Supabase type inference with joined queries and insert operations
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import {
   Users,
@@ -319,7 +317,7 @@ async function submitPartnerApplication(formData: FormData) {
                 <ul style="list-style:none;padding:0;margin:0 0 16px;">
                   ${email ? `<li style="margin:6px 0;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></li>` : ""}
                   ${phone ? `<li style="margin:6px 0;"><strong>Phone:</strong> ${phone}</li>` : ""}
-                  ${website ? `<li style="margin:6px 0;"><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></li>` : ""}
+                  ${website ? `<li style="margin:6px 0;"><strong>Website:</strong> <a href="${website}" target="_blank" rel="noopener noreferrer">${website}</a></li>` : ""}
                   ${instagram_handle ? `<li style="margin:6px 0;"><strong>Instagram:</strong> @${instagram_handle}</li>` : ""}
                   ${linkedin_handle ? `<li style="margin:6px 0;"><strong>LinkedIn:</strong> ${linkedin_handle}</li>` : ""}
                 </ul>
@@ -329,7 +327,7 @@ async function submitPartnerApplication(formData: FormData) {
                   referralLink
                     ? `<div style="margin-top:24px;padding:16px;border-radius:16px;background:#ecfdf5;border:1px solid #bbf7d0;">
                         <p style="margin:0 0 8px;font-weight:600;">Auto-generated link</p>
-                        <p style="margin:0;"><a href="${referralLink}" target="_blank">${referralLink}</a></p>
+                        <p style="margin:0;"><a href="${referralLink}" target="_blank" rel="noopener noreferrer">${referralLink}</a></p>
                         ${discountCode ? `<p style="margin:8px 0 0;font-size:14px;color:#065f46;">Discount code: <strong>${discountCode}</strong></p>` : ""}
                       </div>`
                     : ""

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, getStripePublishableKey } from '@/lib/stripe';
 import { requireAdmin } from '@/lib/admin-auth';
