@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   LineChart,
   Target,
+  TrendingUp,
   Users,
   Zap,
 } from "lucide-react";
@@ -101,7 +102,6 @@ async function submitBusinessPartner(formData: FormData) {
   const submittedAt = new Date().toISOString();
   const businessId = process.env.PARTNER_PROGRAM_BUSINESS_ID?.trim();
 
-  // Check for referral attribution cookie
   const cookieStore = await cookies();
   const refAmbassadorCookie = cookieStore.get("ref_ambassador");
   let ambassadorId: string | null = null;
@@ -111,7 +111,6 @@ async function submitBusinessPartner(formData: FormData) {
   if (refAmbassadorCookie?.value) {
     try {
       const parsed = JSON.parse(refAmbassadorCookie.value);
-      // Check if cookie is still within 30-day window
       const cookieAge = Date.now() - (parsed.timestamp || 0);
       const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
       if (cookieAge < thirtyDaysMs) {
@@ -127,12 +126,9 @@ async function submitBusinessPartner(formData: FormData) {
   if (businessId) {
     try {
       const supabase = await createServiceClient();
-
-      // Import customer creation utilities
       const { generateUniqueReferralCode } = await import("@/lib/referral-codes");
       const { generateUniqueDiscountCode } = await import("@/lib/discount-codes");
 
-      // Create customer record first
       const referralCode = await generateUniqueReferralCode({ supabase });
       const discountCode = await generateUniqueDiscountCode({
         supabase,
@@ -150,7 +146,7 @@ async function submitBusinessPartner(formData: FormData) {
           discount_code: discountCode,
           company,
           website,
-          status: "applicant", // Special status for LinkedIn Influencer business applicants
+          status: "applicant",
         }])
         .select("id")
         .single();
@@ -160,7 +156,6 @@ async function submitBusinessPartner(formData: FormData) {
         redirect("/linkedin-influencer/business?submitted=0");
       }
 
-      // Create referral record if attribution data exists
       if (ambassadorId && attributionBusinessId) {
         const { data: referralData } = await supabase
           .from("referrals")
@@ -177,7 +172,6 @@ async function submitBusinessPartner(formData: FormData) {
           .select()
           .single();
 
-        // Log the signup event
         await logReferralEvent({
           supabase,
           businessId: attributionBusinessId,
@@ -217,11 +211,10 @@ async function submitBusinessPartner(formData: FormData) {
         .filter(Boolean)
         .join("\n");
 
-      // Create partner application linked to customer
       await adminClient.from("partner_applications").insert([
         {
           business_id: businessId,
-          customer_id: customer.id, // Link to the customer record
+          customer_id: customer.id,
           name: contactName,
           email,
           company,
@@ -239,8 +232,8 @@ async function submitBusinessPartner(formData: FormData) {
   const html = `
     <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:760px;">
       <div style="padding:28px;border-radius:20px 20px 0 0;background:linear-gradient(135deg,#0ea5e9,#7c3aed);color:white;">
-        <p style="margin:0;text-transform:uppercase;letter-spacing:0.28em;font-size:12px;">🏢 LinkedIn Influencer</p>
-        <h1 style="margin:8px 0 0;font-size:26px;font-weight:800;">New Business Partnership</h1>
+        <p style="margin:0;text-transform:uppercase;letter-spacing:0.28em;font-size:12px;">🏢 LinkedIn Creator Partnership</p>
+        <h1 style="margin:8px 0 0;font-size:26px;font-weight:800;">New Business Application</h1>
         <p style="margin:6px 0 0;font-size:14px;opacity:0.95;">${escapeHtml(contactName)} · <a style="color:white;" href="mailto:${escapeHtml(
     email,
   )}">${escapeHtml(email)}</a></p>
@@ -265,23 +258,23 @@ async function submitBusinessPartner(formData: FormData) {
   `;
 
   await sendAdminNotification({
-    subject: `LinkedIn Influencer business partner: ${company} (${email})`,
+    subject: `LinkedIn Creator Partnership: ${company} (${email})`,
     html,
   });
 
   const applicantHtml = `
     <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
       <div style="padding:28px;border-radius:20px 20px 0 0;background:linear-gradient(135deg,#0ea5e9,#7c3aed);color:white;">
-        <p style="margin:0;text-transform:uppercase;letter-spacing:0.28em;font-size:12px;">LinkedIn Influencer</p>
+        <p style="margin:0;text-transform:uppercase;letter-spacing:0.28em;font-size:12px;">LinkedIn Creator Partnership</p>
         <h1 style="margin:8px 0 0;font-size:24px;font-weight:800;">We received your partnership request</h1>
-        <p style="margin:6px 0 0;font-size:14px;opacity:0.95;">We’ll review your goals and follow up shortly.</p>
+        <p style="margin:6px 0 0;font-size:14px;opacity:0.95;">Our team will review and follow up within 24 hours.</p>
       </div>
       <div style="padding:28px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 20px 20px;background:white;">
         <p style="margin:0 0 12px;font-size:14px;color:#0f172a;">
-          Thanks for reaching out, ${escapeHtml(contactName)}. We&apos;ll confirm fit and recommended creator matches for ${escapeHtml(company)}.
+          Thanks for your interest, ${escapeHtml(contactName)}. We'll review your goals for ${escapeHtml(company)} and match you with aligned creators who can drive ${escapeHtml(desiredOutcome)}.
         </p>
-        <p style="margin:0;font-size:13px;color:#475569;">
-          If you have updates, reply to this email and we’ll keep your request current.
+        <p style="margin:12px 0 0;font-size:13px;color:#475569;">
+          Next steps: We'll email you creator profiles within 2-3 business days. If you have questions, reply to this email.
         </p>
       </div>
     </div>
@@ -289,7 +282,7 @@ async function submitBusinessPartner(formData: FormData) {
 
   await sendTransactionalEmail({
     to: email,
-    subject: "We received your LinkedIn Influencer partnership request",
+    subject: "We received your creator partnership request",
     html: applicantHtml,
   });
 
@@ -308,8 +301,8 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "LinkedIn Influencer Business Partnership",
-    "description": "Partner with verified LinkedIn creators to drive qualified demos and revenue. Performance-based B2B marketing without SDRs or ads.",
+    "name": "LinkedIn Creator Partnership for Businesses",
+    "description": "Launch performance-based LinkedIn creator campaigns. Drive qualified demos, signups, and revenue through trusted creator distribution.",
     "url": "https://referlabs.com.au/linkedin-influencer/business",
     "serviceType": "Performance Marketing",
     "provider": {
@@ -329,6 +322,10 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
       {
         "@type": "Audience",
         "audienceType": "E-commerce Businesses"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "B2B Technology Companies"
       }
     ],
     "termsOfService": "https://referlabs.com.au/terms"
@@ -340,321 +337,378 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(14,165,233,0.18),transparent_55%),radial-gradient(circle_at_85%_15%,rgba(124,58,237,0.16),transparent_55%)]" />
-      <div className="absolute -top-20 right-0 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-400/30 to-transparent blur-3xl animate-pulse" />
-      <div
-        className="absolute bottom-0 left-16 h-96 w-96 rounded-full bg-gradient-to-br from-indigo-400/25 to-transparent blur-3xl animate-pulse"
-        style={{ animationDelay: "1.1s" }}
-      />
-      <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-14 sm:px-10 lg:px-16">
-        <div className="sr-only">Business Partnership Program</div>
 
-        <section className="mt-6 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center animate-in fade-in duration-700">
-          <div className="space-y-6">
-            <h1 className="text-balance text-4xl font-black leading-tight sm:text-5xl" style={{color: '#5ce1e6'}}>
-              Replace Outbound With LinkedIn Distribution
+      {/* Ambient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(14,165,233,0.16),transparent_50%),radial-gradient(circle_at_85%_15%,rgba(124,58,237,0.14),transparent_50%)]" />
+
+      <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
+
+        {/* Breadcrumb */}
+        <div className="mb-8">
+          <Link href="/linkedin-influencer" className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-300 transition">
+            ← Back to Overview
+          </Link>
+        </div>
+
+        {/* Hero Section */}
+        <section className="mb-16 animate-in fade-in duration-700">
+          <div className="text-center max-w-3xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-200 backdrop-blur">
+              <Briefcase className="h-4 w-4" />
+              For B2B & E-commerce Companies
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl font-black leading-tight text-white">
+              Launch Your First Creator Campaign in 7 Days
             </h1>
-            <p className="text-lg text-slate-200/90">
-              We&apos;re building a pool of SaaS and e-commerce companies ready to scale through trusted LinkedIn
-              creators. Share your goals and we&apos;ll match you with aligned operators.
+
+            <p className="text-lg text-slate-200/90 leading-relaxed">
+              We match you with vetted LinkedIn creators whose audiences align with your ICP.
+              You approve partnerships, creators promote your product, and you track every conversion.
             </p>
-            <div className="grid gap-3 sm:grid-cols-2 text-sm text-slate-200/90">
-              {[
-                "Pay for demos, sign-ups, or revenue",
-                "Launch creator-led campaigns fast",
-                "Warm audiences with buying intent",
-                "Track performance end-to-end",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-300" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
-            <div className="flex items-center gap-3">
-              <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-indigo-500 p-3 text-white">
-                <Briefcase className="h-6 w-6" />
+        </section>
+
+        {/* Value Props Grid */}
+        <section className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: Target,
+              title: "Pay for Outcomes",
+              detail: "Demos booked, signups completed, revenue generated. You define the goal, we track the results.",
+              color: "from-cyan-500/20 to-teal-500/20",
+              border: "border-cyan-400/30"
+            },
+            {
+              icon: Users,
+              title: "Vetted Creator Pool",
+              detail: "We match you with 5-10 creators whose audiences are already looking for solutions like yours.",
+              color: "from-purple-500/20 to-pink-500/20",
+              border: "border-purple-400/30"
+            },
+            {
+              icon: BarChart3,
+              title: "Full Attribution",
+              detail: "See which creators drive results. Scale top performers, pause underperformers. ROI dashboards included.",
+              color: "from-emerald-500/20 to-teal-500/20",
+              border: "border-emerald-400/30"
+            }
+          ].map((item) => (
+            <div key={item.title} className={`rounded-3xl border ${item.border} bg-gradient-to-br ${item.color} backdrop-blur p-6`}>
+              <div className="rounded-xl bg-white/10 p-3 w-fit mb-4">
+                <item.icon className="h-6 w-6 text-cyan-300" />
               </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Ideal partners</p>
-                <p className="text-lg font-bold text-white">SaaS &amp; e-commerce teams ready to scale</p>
+              <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-sm text-slate-200/80 leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Who This Works For */}
+        <section className="mb-16 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="rounded-xl bg-cyan-500/20 p-3">
+              <BadgeCheck className="h-6 w-6 text-cyan-300" />
+            </div>
+            <h2 className="text-2xl font-black text-white">Best-Fit Companies</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-base font-bold text-white mb-4">You're a Great Fit If:</h3>
+              <div className="space-y-3 text-sm text-slate-200/90">
+                {[
+                  "You have product-market fit and a defined ICP",
+                  "You can track conversions (demos, signups, purchases)",
+                  "You have budget allocated for performance marketing",
+                  "You're open to testing 3-5 creators to start"
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-300 flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="mt-5 space-y-3 text-sm text-slate-200/90">
-              {[
-                "Clear product-market fit",
-                "Defined conversion goals",
-                "Ability to track outcomes",
-                "Budget allocated for performance payouts",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <BadgeCheck className="mt-0.5 h-4 w-4 text-cyan-300" />
-                  <span>{item}</span>
-                </div>
-              ))}
+
+            <div>
+              <h3 className="text-base font-bold text-white mb-4">Industries That Excel:</h3>
+              <div className="grid grid-cols-2 gap-3 text-sm text-slate-200/90">
+                {["SaaS (B2B)", "Fintech", "E-commerce", "MarTech", "HR Tech", "Data Tools"].map((industry) => (
+                  <div key={industry} className="rounded-xl border border-white/10 bg-slate-900/40 px-4 py-2.5 text-center font-semibold">
+                    {industry}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-cyan-500/10">
-          <h2 className="text-2xl font-black text-white">How partnership works</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+        {/* How It Works */}
+        <section className="mb-16 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
+          <h2 className="text-2xl font-black text-white mb-8 text-center">From Application to First Conversions</h2>
+
+          <div className="grid gap-6 md:grid-cols-4">
             {[
-              {
-                icon: Target,
-                title: "Define outcomes",
-                detail: "Set demo, signup, or revenue targets with payouts.",
-              },
-              {
-                icon: Users,
-                title: "Match creators",
-                detail: "We connect you with creators aligned to your ICP.",
-              },
-              {
-                icon: BarChart3,
-                title: "Track performance",
-                detail: "See results in real time and scale what works.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
-                <item.icon className="h-5 w-5 text-cyan-300" />
-                <p className="mt-3 text-base font-semibold text-white">{item.title}</p>
-                <p className="mt-2 text-sm text-slate-200/80">{item.detail}</p>
+              { step: "1", title: "Submit Request", detail: "Tell us your ICP, goals, and budget. Takes 5 minutes." },
+              { step: "2", title: "Review Creators", detail: "We present 5-10 vetted creators within 2-3 days." },
+              { step: "3", title: "Approve & Launch", detail: "Creators draft content for your approval, then post." },
+              { step: "4", title: "Track & Scale", detail: "Watch conversions roll in. Scale what works." }
+            ].map((item, idx) => (
+              <div key={item.step} className="relative">
+                <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 h-full">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 text-lg font-black text-white shadow-lg mb-4">
+                    {item.step}
+                  </div>
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-300/80 leading-relaxed">{item.detail}</p>
+                </div>
+                {idx < 3 && (
+                  <div className="hidden md:block absolute top-1/2 -right-3 z-10">
+                    <ArrowRight className="h-5 w-5 text-cyan-400/60" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-indigo-500/10">
-          <h2 className="text-2xl font-black text-white">Tell us about your business</h2>
-          <p className="mt-2 text-sm text-slate-200/80">
-            We&apos;ll use this to match you with the right creators and craft partnership incentives.
-          </p>
+        {/* Application Form */}
+        <section className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/70 to-blue-500/10 p-10 lg:p-12 backdrop-blur shadow-2xl shadow-cyan-500/10">
+          <div className="mb-8">
+            <h2 className="text-3xl font-black text-white mb-3">Ready to Launch?</h2>
+            <p className="text-base text-slate-200/90">
+              Fill out the form below and we'll match you with creators whose audiences are already looking for solutions in your space.
+            </p>
+          </div>
 
           {submitted && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm">
               <div className="w-full max-w-lg rounded-3xl border border-cyan-300/40 bg-slate-950/95 p-8 text-left shadow-2xl shadow-cyan-500/20">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 mb-6">
                   <div className="rounded-2xl bg-cyan-500/20 p-3 text-cyan-200">
-                    <CheckCircle2 className="h-6 w-6" />
+                    <CheckCircle2 className="h-7 w-7" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Submitted</p>
-                    <h3 className="text-xl font-black text-white">We&apos;ll be in touch</h3>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Success</p>
+                    <h3 className="text-2xl font-black text-white">We'll Be in Touch Within 24 Hours</h3>
                   </div>
                 </div>
-                <p className="mt-4 text-sm text-slate-200/80">
-                  Thanks for your request. We&apos;ll review your goals and follow up with next steps and creator matches.
+                <p className="text-base text-slate-200/80 mb-6">
+                  Thanks for your request. We're reviewing your goals and will email you with aligned creator profiles within 2-3 business days.
                 </p>
-                <div className="mt-6 flex gap-3">
+                <div className="flex gap-3">
                   <Link
                     href="/linkedin-influencer/business"
-                    className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-bold text-slate-900"
+                    className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-900 hover:bg-cyan-300 transition"
                   >
                     Got it
                   </Link>
                   <Link
                     href="/linkedin-influencer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white/80"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/80 hover:bg-white/5 transition"
                   >
-                    Back to overview
+                    Back to Overview
                   </Link>
                 </div>
               </div>
             </div>
           )}
+
           {failed && (
-            <div className="mt-6 rounded-2xl border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100">
-              Something went wrong. Please check the required fields and try again.
+            <div className="mb-6 rounded-2xl border border-rose-300/40 bg-rose-500/10 px-5 py-4 text-sm text-rose-100">
+              <strong className="font-bold">Submission failed.</strong> Please check all required fields and try again.
             </div>
           )}
 
-          <form action={submitBusinessPartner} className="mt-8 grid gap-5">
+          <form action={submitBusinessPartner} className="grid gap-6">
+            {/* Contact Info */}
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="contactName">
-                  Contact name *
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="contactName">
+                  Your Name *
                 </label>
                 <input
                   id="contactName"
                   name="contactName"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="Your name"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="Jane Smith"
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="email">
-                  Email *
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="email">
+                  Work Email *
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="you@company.com"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="jane@company.com"
                 />
               </div>
             </div>
 
+            {/* Company Info */}
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="role">
-                  Role *
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="role">
+                  Your Role *
                 </label>
                 <input
                   id="role"
                   name="role"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="Founder, Growth Lead, Marketing..."
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="Head of Growth, Founder, CMO..."
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="company">
-                  Company *
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="company">
+                  Company Name *
                 </label>
                 <input
                   id="company"
                   name="company"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="Company name"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="Acme Inc"
                 />
               </div>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="website">
-                  Website *
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="website">
+                  Company Website *
                 </label>
                 <input
                   id="website"
                   name="website"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="https://yourcompany.com"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="https://acme.com"
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="companySize">
-                  Company size *
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="companySize">
+                  Company Size *
                 </label>
                 <input
                   id="companySize"
                   name="companySize"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="e.g., 11-50, 51-200"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="11-50, 51-200, 200+..."
                 />
               </div>
             </div>
 
+            {/* Goals */}
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="industry">
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="industry">
                   Industry *
                 </label>
                 <input
                   id="industry"
                   name="industry"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
                   placeholder="SaaS, E-commerce, Fintech..."
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="desiredOutcome">
-                  Desired outcome *
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="desiredOutcome">
+                  Primary Goal *
                 </label>
                 <input
                   id="desiredOutcome"
                   name="desiredOutcome"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="Demos booked, sign-ups, revenue..."
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="Demos booked, signups, revenue..."
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-sm font-semibold text-white" htmlFor="targetBuyer">
-                Target buyer / ICP *
+              <label className="block text-sm font-semibold text-white mb-2" htmlFor="targetBuyer">
+                Ideal Customer Profile (ICP) *
               </label>
               <textarea
                 id="targetBuyer"
                 name="targetBuyer"
                 required
                 rows={3}
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                placeholder="Roles, industries, pain points, deal size..."
+                className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                placeholder="Who are your ideal customers? (e.g., RevOps leaders at Series B+ SaaS companies, e-commerce founders doing $1M+ ARR...)"
               />
             </div>
 
+            {/* Budget & Timeline */}
             <div className="grid gap-4 md:grid-cols-3">
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="payoutModel">
-                  Payout model
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="payoutModel">
+                  Payout Model (Optional)
                 </label>
                 <input
                   id="payoutModel"
                   name="payoutModel"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="Per demo, per signup..."
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="$50/demo, 20% rev share..."
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="budgetRange">
-                  Monthly budget range
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="budgetRange">
+                  Monthly Budget
                 </label>
                 <input
                   id="budgetRange"
                   name="budgetRange"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="$5k-$15k"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="$5k-$15k/mo"
                 />
               </div>
               <div>
-                <label className="text-sm font-semibold text-white" htmlFor="timeline">
+                <label className="block text-sm font-semibold text-white mb-2" htmlFor="timeline">
                   Timeline
                 </label>
                 <input
                   id="timeline"
                   name="timeline"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                  placeholder="Launch this month"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                  placeholder="Launch this month, Q2..."
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-sm font-semibold text-white" htmlFor="notes">
-                Additional notes
+              <label className="block text-sm font-semibold text-white mb-2" htmlFor="notes">
+                Additional Context (Optional)
               </label>
               <textarea
                 id="notes"
                 name="notes"
                 rows={3}
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-                placeholder="Any creator preferences, target markets, or constraints?"
+                className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-cyan-400/50 focus:outline-none focus:ring-2 focus:ring-cyan-400/20"
+                placeholder="Any creator preferences, target markets, or constraints we should know about?"
               />
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400 px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
               >
-                Submit partnership request
-                <ArrowRight className="h-4 w-4" />
+                Submit Partnership Request
+                <ArrowRight className="h-5 w-5" />
               </button>
               <Link
                 href="/linkedin-influencer"
-                className="text-sm font-semibold text-slate-200/80 hover:text-white"
+                className="text-sm font-semibold text-slate-200/80 hover:text-white transition"
               >
                 Back to overview
               </Link>
@@ -662,12 +716,14 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
           </form>
         </section>
 
-        <section className="mt-12 text-sm text-slate-400">
-          <div className="flex items-center gap-2">
-            <LineChart className="h-4 w-4 text-cyan-300" />
-            We&apos;ll match you with creators once the marketplace pool is ready.
+        {/* Social Proof Footer */}
+        <section className="mt-12 text-center">
+          <div className="inline-flex items-center gap-2 text-sm text-slate-400">
+            <TrendingUp className="h-4 w-4 text-cyan-300" />
+            We match you with creators once we confirm fit and availability.
           </div>
         </section>
+
       </main>
     </div>
   );
