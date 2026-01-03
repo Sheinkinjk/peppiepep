@@ -89,29 +89,45 @@ function extractDeploymentUrl(stdout, stderr) {
 function runSupabaseMigrations() {
   console.log("📦 Running Supabase migrations before deploy...");
   return new Promise((resolve, reject) => {
+    // Use the direct database URL (not pooler) for migrations
+    const dbUrl = process.env.POSTGRES_URL_NON_POOLING || process.env.SUPABASE_DB_URL;
+
+    if (!dbUrl) {
+      console.warn("⚠️  No direct database URL found. Skipping migrations.");
+      resolve();
+      return;
+    }
+
+    const args = ["--yes", "supabase", "db", "push", "--db-url", dbUrl];
+
     const child = spawn(
       npxBin,
-      ["--yes", "supabase", "db", "push"],
+      args,
       {
         cwd: projectRoot,
         stdio: "inherit",
-        env: process.env,
+        env: {
+          ...process.env,
+          SUPABASE_ACCESS_TOKEN: process.env.SUPABASE_ACCESS_TOKEN,
+        },
       },
     );
 
     child.on("error", (error) => {
-      reject(error);
+      console.error("⚠️  Migration failed:", error.message);
+      console.log("⚠️  Continuing with deployment despite migration failure...");
+      resolve(); // Don't block deployment on migration failures
     });
 
     child.on("close", (code) => {
       if (code === 0) {
+        console.log("✅ Migrations completed successfully");
         resolve();
       } else {
-        reject(
-          new Error(
-            `supabase db push exited with code ${code ?? "unknown"}`,
-          ),
+        console.warn(
+          `⚠️  Supabase migrations exited with code ${code ?? "unknown"}. Continuing with deployment...`,
         );
+        resolve(); // Don't block deployment on migration failures
       }
     });
   });

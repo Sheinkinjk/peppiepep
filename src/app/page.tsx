@@ -369,12 +369,16 @@ export default async function Home() {
             <div className="pointer-events-none absolute inset-x-16 -top-24 h-64 bg-gradient-to-br from-indigo-500/15 via-sky-500/10 to-emerald-400/10 blur-3xl" />
             <div className="relative z-10 space-y-10">
               <div className="text-left sm:text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] sm:whitespace-nowrap">
                   Why A Referral Program Is Your Best Resource For Growth Hacking
                 </h2>
-                <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-0 sm:mx-auto">
-                  Your next best customers are already in your existing customers&rsquo; network.<br />
-                  Refer Labs helps you turn that network into a structured, trackable growth engine that feels natural for them and powerful for you.
+                <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-0 sm:mx-auto text-balance">
+                  <span className="block">
+                    Your next best customers are already in your existing customers&rsquo; network.
+                  </span>
+                  <span className="block">
+                    Refer Labs helps you turn that network into a structured, trackable growth engine that feels natural for them and powerful for you.
+                  </span>
                 </p>
               </div>
 
@@ -760,7 +764,6 @@ export default async function Home() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium max-w-xl text-center md:text-left">
                 Get AI-powered revenue and growth forecasts and discover the perfect reward structure for your business.
-                No signup required.
               </p>
               <Link
                 href="/roi-calculator"
