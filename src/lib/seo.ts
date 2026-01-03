@@ -310,7 +310,7 @@ export const seoConfig = {
       "LinkedIn B2B marketing",
       "creator economy",
     ],
-    url: `${SITE_URL}/linkedin-influencer`,
+    url: `${SITE_URL}/linkedin-growth`,
     image: `${SITE_URL}/og-linkedin-influencer.png`,
   },
   linkedinInfluencerCreator: {
@@ -330,7 +330,7 @@ export const seoConfig = {
       "LinkedIn ambassador program",
       "creator marketplace",
     ],
-    url: `${SITE_URL}/linkedin-influencer/influencer`,
+    url: `${SITE_URL}/linkedin-growth/influencer`,
     image: `${SITE_URL}/og-linkedin-creator.png`,
   },
   linkedinInfluencerBusiness: {
@@ -350,7 +350,7 @@ export const seoConfig = {
       "warm lead generation",
       "SaaS customer acquisition",
     ],
-    url: `${SITE_URL}/linkedin-influencer/business`,
+    url: `${SITE_URL}/linkedin-growth/business`,
     image: `${SITE_URL}/og-linkedin-business.png`,
   },
 

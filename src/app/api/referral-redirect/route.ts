@@ -61,9 +61,9 @@ export async function GET(request: NextRequest) {
   if (destination === "client") {
     redirectPath = "/referred";
   } else if (destination === "linkedin-influencer") {
-    redirectPath = "/linkedin-influencer/influencer";
+    redirectPath = "/linkedin-growth/influencer";
   } else if (destination === "linkedin-business") {
-    redirectPath = "/linkedin-influencer/business";
+    redirectPath = "/linkedin-growth/business";
   }
   const response = NextResponse.redirect(new URL(redirectPath, request.url));
 

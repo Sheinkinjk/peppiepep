@@ -111,19 +111,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/linkedin-influencer`,
+      url: `${baseUrl}/linkedin-growth`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/linkedin-influencer/business`,
+      url: `${baseUrl}/linkedin-growth/business`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/linkedin-influencer/influencer`,
+      url: `${baseUrl}/linkedin-growth/influencer`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,

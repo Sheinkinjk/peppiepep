@@ -28,6 +28,25 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "8mb",
     },
   },
+  async redirects() {
+    return [
+      {
+        source: '/linkedin-influencer',
+        destination: '/linkedin-growth',
+        permanent: true,
+      },
+      {
+        source: '/linkedin-influencer/business',
+        destination: '/linkedin-growth/business',
+        permanent: true,
+      },
+      {
+        source: '/linkedin-influencer/influencer',
+        destination: '/linkedin-growth/influencer',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

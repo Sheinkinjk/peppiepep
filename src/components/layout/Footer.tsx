@@ -33,7 +33,7 @@ export default function Footer() {
             Lead Hacking
           </Link>
           <span className="text-[#4A5B5E]">•</span>
-          <Link className="hover:text-[#0E2B31] cursor-pointer" href="/linkedin-influencer">
+          <Link className="hover:text-[#0E2B31] cursor-pointer" href="/linkedin-growth">
             LinkedIn Influencer
           </Link>
           <span className="text-[#4A5B5E]">•</span>
