@@ -2,15 +2,27 @@
 -- This resolves the discrepancy where CSV exports include referral_link
 -- but the database schema doesn't have this field
 
--- Add the computed referral_link column
-ALTER TABLE customers
-ADD COLUMN referral_link TEXT GENERATED ALWAYS AS (
-  CASE
-    WHEN referral_code IS NOT NULL
-    THEN 'https://referlabs.com.au/r/' || referral_code
-    ELSE NULL
-  END
-) STORED;
+-- Add the computed referral_link column (idempotent)
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1
+    FROM information_schema.columns
+    WHERE table_schema = 'public'
+      AND table_name = 'customers'
+      AND column_name = 'referral_link'
+  ) THEN
+    ALTER TABLE customers
+    ADD COLUMN referral_link TEXT GENERATED ALWAYS AS (
+      CASE
+        WHEN referral_code IS NOT NULL
+        THEN 'https://referlabs.com.au/r/' || referral_code
+        ELSE NULL
+      END
+    ) STORED;
+  END IF;
+END
+$$;
 
 -- Add comment to document the column
 COMMENT ON COLUMN customers.referral_link IS

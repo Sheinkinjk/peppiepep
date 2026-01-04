@@ -214,11 +214,13 @@ COMMENT ON TABLE admin_role_audit_log IS 'Audit log for all admin role changes';
 ALTER TABLE admin_role_audit_log ENABLE ROW LEVEL SECURITY;
 
 -- Only admins can view audit log
+DROP POLICY IF EXISTS "Admins can view audit log" ON admin_role_audit_log;
 CREATE POLICY "Admins can view audit log"
   ON admin_role_audit_log FOR SELECT
   USING (is_current_user_admin());
 
 -- Service role has full access
+DROP POLICY IF EXISTS "Service role has full access to admin_audit_log" ON admin_role_audit_log;
 CREATE POLICY "Service role has full access to admin_audit_log"
   ON admin_role_audit_log FOR ALL
   USING (auth.role() = 'service_role');

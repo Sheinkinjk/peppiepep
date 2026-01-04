@@ -51,6 +51,9 @@ import {
   Settings,
   Target,
   Mail,
+  Link2,
+  CalendarCheck,
+  FileText,
 } from "lucide-react";
 import { createServerComponentClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
@@ -97,6 +100,13 @@ type CampaignEventStats = Record<
     conversions: number;
   }
 >;
+
+type DiscountRedemptionRow = {
+  id: string;
+  discount_code: string;
+  order_reference: string | null;
+  captured_at: string | null;
+};
 
 type ReferralEventRow = {
   id: string;
@@ -244,7 +254,12 @@ async function getBusiness(): Promise<BusinessCoreFields> {
   return businessWithExtras;
 }
 
-export default async function Dashboard() {
+export default async function Dashboard({
+  searchParams,
+}: {
+  searchParams?: { window?: string } | Promise<{ window?: string }>;
+}) {
+  const resolvedSearchParams = await Promise.resolve(searchParams);
   const business = await getBusiness();
 
   // Check if user is actually an admin (for admin dashboard button)
@@ -1069,6 +1084,15 @@ export default async function Dashboard() {
   const safeCustomers =
     (customers ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
 
+  const selectedWindow = resolvedSearchParams?.window === "7" ? 7 : 30;
+  const windowStart = Date.now() - selectedWindow * 24 * 60 * 60 * 1000;
+  const isWithinWindow = (timestamp: string | null) => {
+    if (!timestamp) return false;
+    const parsed = Date.parse(timestamp);
+    if (Number.isNaN(parsed)) return false;
+    return parsed >= windowStart;
+  };
+
   // Filter LinkedIn Influencer customers based on linked partner applications
   const linkedInInfluencerCustomerIds = new Set(
     (partnerApplications ?? [])
@@ -1095,6 +1119,13 @@ export default async function Dashboard() {
     safeReferrals.filter((r) => r.status === "pending").length || 0;
   const completedReferrals =
     safeReferrals.filter((r) => r.status === "completed").length || 0;
+  const windowedReferrals = safeReferrals.filter((r) =>
+    isWithinWindow(r.transaction_date ?? r.created_at ?? null),
+  );
+  const windowedPendingReferrals =
+    windowedReferrals.filter((r) => r.status === "pending").length || 0;
+  const windowedCompletedReferrals =
+    windowedReferrals.filter((r) => r.status === "completed").length || 0;
   const manualReferralsList = safeReferrals.filter((r) => r.created_by);
   const manualReferralCount = manualReferralsList.length;
   const manualReferralValue =
@@ -1110,7 +1141,15 @@ export default async function Dashboard() {
       (sum, r) => sum + (r.transaction_value ?? 0),
       0,
     ) || 0;
+  const windowedReferralRevenue =
+    windowedReferrals.reduce(
+      (sum, r) => sum + (r.transaction_value ?? 0),
+      0,
+    ) || 0;
   const completedWithValue = safeReferrals.filter(
+    (r) => r.status === "completed" && r.transaction_value !== null,
+  );
+  const windowedCompletedWithValue = windowedReferrals.filter(
     (r) => r.status === "completed" && r.transaction_value !== null,
   );
   const averageTransactionValue =
@@ -1152,9 +1191,26 @@ export default async function Dashboard() {
     0,
   );
 
+  const windowedCampaigns = campaignsData.filter((campaign) =>
+    isWithinWindow(campaign.created_at ?? null),
+  );
+  const windowedEstimatedCampaignSpend = windowedCampaigns.reduce(
+    (sum, campaign) => {
+      const sentCount = campaign.sent_count ?? 0;
+      const channel = campaign.channel as "sms" | "email" | null;
+      const costPerMessage = channel === "sms" ? 0.02 : 0.01;
+      return sum + sentCount * costPerMessage;
+    },
+    0,
+  );
+
   const roiMultiple =
     totalEstimatedCampaignSpend > 0
       ? totalReferralRevenue / totalEstimatedCampaignSpend
+      : null;
+  const windowedRoiMultiple =
+    windowedEstimatedCampaignSpend > 0
+      ? windowedReferralRevenue / windowedEstimatedCampaignSpend
       : null;
 
   const hasCustomers = safeCustomers.length > 0;
@@ -1188,7 +1244,7 @@ export default async function Dashboard() {
     )
     .eq("business_id", business.id)
     .order("created_at", { ascending: false })
-    .limit(100);
+    .limit(300);
 
   const typedReferralEvents = (referralEventsData ?? []) as ReferralEventRow[];
   const referralJourneyEvents: ReferralJourneyEvent[] = typedReferralEvents.map(
@@ -1223,6 +1279,82 @@ export default async function Dashboard() {
     }
     return acc;
   }, {});
+
+  const { data: discountRedemptionsData, count: discountRedemptionCount } = await supabase
+    .from("discount_redemptions")
+    .select("id, discount_code, order_reference, captured_at", { count: "exact" })
+    .eq("business_id", business.id)
+    .order("captured_at", { ascending: false })
+    .limit(50);
+
+  const discountRedemptions = (discountRedemptionsData ?? []) as DiscountRedemptionRow[];
+  const windowedReferralEvents = referralJourneyEvents.filter((event) =>
+    isWithinWindow(event.created_at),
+  );
+  const windowedRedemptions = discountRedemptions.filter((redemption) =>
+    isWithinWindow(redemption.captured_at),
+  );
+
+  const linkVisitEvents = windowedReferralEvents.filter(
+    (event) => event.event_type === "link_visit",
+  );
+  const uniqueLinkOpeners = new Set<string>();
+  linkVisitEvents.forEach((event) => {
+    const metadata = event.metadata ?? null;
+    const metadataReferralCode =
+      metadata && typeof metadata.referral_code === "string"
+        ? metadata.referral_code
+        : null;
+    const key = event.ambassador?.id ?? event.referral_id ?? metadataReferralCode;
+    if (key) {
+      uniqueLinkOpeners.add(key);
+    }
+  });
+  const uniqueLinkOpens = uniqueLinkOpeners.size;
+  const totalLinkOpens = linkVisitEvents.length;
+  const meetingsBooked = windowedReferralEvents.filter(
+    (event) => event.event_type === "schedule_call_clicked",
+  ).length;
+  const formsSubmitted = windowedReferralEvents.filter(
+    (event) => event.event_type === "signup_submitted",
+  ).length;
+
+  const interactionActivityItems = [
+    ...windowedReferralEvents.map((event) => {
+      const ambassadorLabel =
+        event.ambassador?.name ||
+        event.ambassador?.referral_code ||
+        "Unknown ambassador";
+      const label =
+        event.event_type === "link_visit"
+          ? "Link opened"
+          : event.event_type === "signup_submitted"
+            ? "Form submitted"
+            : event.event_type === "schedule_call_clicked"
+              ? "Meeting booked"
+              : event.event_type === "contact_us_clicked"
+                ? "Contact clicked"
+                : event.event_type === "conversion_completed"
+                  ? "Conversion completed"
+                  : "Referral activity";
+
+      return {
+        id: `event-${event.id}`,
+        label,
+        detail: ambassadorLabel,
+        timestamp: event.created_at,
+      };
+    }),
+    ...windowedRedemptions.map((redemption) => ({
+      id: `redemption-${redemption.id}`,
+      label: "Discount code redeemed",
+      detail: redemption.discount_code,
+      timestamp: redemption.captured_at,
+    })),
+  ]
+    .filter((item) => Boolean(item.timestamp))
+    .sort((a, b) => (Date.parse(b.timestamp ?? "") || 0) - (Date.parse(a.timestamp ?? "") || 0))
+    .slice(0, 8);
 
   const headerList = await headers();
   const userAgent = headerList.get("user-agent") ?? "";
@@ -1860,9 +1992,149 @@ export default async function Dashboard() {
                 </div>
               ) : (
                 <>
+                  <div className="mb-10">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                      <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+                        Interaction Hub
+                      </h3>
+                      <div className="flex items-center gap-2 rounded-full bg-slate-100 p-1 text-xs font-semibold">
+                        <Link
+                          href="/dashboard?window=7"
+                          className={`rounded-full px-3 py-1 transition ${
+                            selectedWindow === 7
+                              ? "bg-white text-slate-900 shadow"
+                              : "text-slate-500 hover:text-slate-800"
+                          }`}
+                        >
+                          Last 7 days
+                        </Link>
+                        <Link
+                          href="/dashboard?window=30"
+                          className={`rounded-full px-3 py-1 transition ${
+                            selectedWindow === 30
+                              ? "bg-white text-slate-900 shadow"
+                              : "text-slate-500 hover:text-slate-800"
+                          }`}
+                        >
+                          Last 30 days
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="grid gap-6 lg:grid-cols-[2fr,1fr]">
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100 border border-sky-200">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-10 w-10 rounded-lg bg-sky-600 flex items-center justify-center">
+                              <Link2 className="h-5 w-5 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Unique Link Opens</h3>
+                          </div>
+                          <p className="text-3xl font-black text-sky-700">{uniqueLinkOpens}</p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Distinct ambassadors opening links in the last {selectedWindow} days
+                          </p>
+                        </div>
+
+                        <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-10 w-10 rounded-lg bg-cyan-600 flex items-center justify-center">
+                              <Target className="h-5 w-5 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Total Link Opens</h3>
+                          </div>
+                          <p className="text-3xl font-black text-cyan-700">{totalLinkOpens}</p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Every click across ambassador links in the last {selectedWindow} days
+                          </p>
+                        </div>
+
+                        <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
+                              <CalendarCheck className="h-5 w-5 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Meetings Booked</h3>
+                          </div>
+                          <p className="text-3xl font-black text-indigo-700">{meetingsBooked}</p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Schedule call clicks in the last {selectedWindow} days
+                          </p>
+                        </div>
+
+                        <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                              <FileText className="h-5 w-5 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Forms Submitted</h3>
+                          </div>
+                          <p className="text-3xl font-black text-emerald-700">{formsSubmitted}</p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Referral applications captured in the last {selectedWindow} days
+                          </p>
+                        </div>
+
+                        <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
+                              <CreditCard className="h-5 w-5 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Discount Redemptions</h3>
+                          </div>
+                          <p className="text-3xl font-black text-amber-700">
+                            {windowedRedemptions.length}
+                          </p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            {discountRedemptionCount ?? 0} all-time redemptions
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">
+                            Recent Interaction Activity
+                          </h3>
+                          <span className="text-xs font-medium text-slate-400">
+                            Last {interactionActivityItems.length} in {selectedWindow} days
+                          </span>
+                        </div>
+                        <div className="space-y-4">
+                          {interactionActivityItems.length === 0 ? (
+                            <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
+                              No interaction events recorded yet.
+                            </div>
+                          ) : (
+                            interactionActivityItems.map((item) => (
+                              <div key={item.id} className="flex items-start gap-3">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <div>
+                                  <p className="text-sm font-semibold text-slate-900">
+                                    {item.label}
+                                  </p>
+                                  <p className="text-xs text-slate-500">
+                                    {item.detail}
+                                  </p>
+                                  <p className="text-xs text-slate-400">
+                                    {item.timestamp
+                                      ? new Date(item.timestamp).toLocaleString()
+                                      : "—"}
+                                  </p>
+                                </div>
+                              </div>
+                            ))
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* KEY METRICS - Prominently displayed */}
                   <div className="mb-8">
                     <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Key Metrics</h3>
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                      Last {selectedWindow} days
+                    </p>
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                   {/* Revenue - Most important */}
                   <div className="p-8 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 border border-emerald-400 shadow-lg">
@@ -1873,10 +2145,10 @@ export default async function Dashboard() {
                       <h3 className="font-bold text-white">Revenue</h3>
                     </div>
                     <p className="text-4xl font-black text-white mb-2">
-                      ${Math.round(totalReferralRevenue)}
+                      ${Math.round(windowedReferralRevenue)}
                     </p>
                     <p className="text-sm text-emerald-50">
-                      From {completedReferrals} completed referrals
+                      From {windowedCompletedReferrals} completed referrals
                     </p>
                   </div>
 
@@ -1889,12 +2161,12 @@ export default async function Dashboard() {
                       <h3 className="font-bold text-white">Program ROI</h3>
                     </div>
                     <p className="text-4xl font-black text-white mb-2">
-                      {roiMultiple && roiMultiple > 0
-                        ? `${roiMultiple.toFixed(1)}×`
+                      {windowedRoiMultiple && windowedRoiMultiple > 0
+                        ? `${windowedRoiMultiple.toFixed(1)}×`
                         : "—"}
                     </p>
                     <p className="text-sm text-purple-50">
-                      Revenue ÷ estimated send cost
+                      Revenue ÷ estimated send cost ({selectedWindow} days)
                     </p>
                   </div>
 
@@ -1907,10 +2179,10 @@ export default async function Dashboard() {
                       <h3 className="font-bold text-white">Total Referrals</h3>
                     </div>
                     <p className="text-4xl font-black text-white mb-2">
-                      {safeReferrals.length}
+                      {windowedReferrals.length}
                     </p>
                     <p className="text-sm text-blue-50">
-                      {completedReferrals} completed • {pendingReferrals} pending
+                      {windowedCompletedReferrals} completed • {windowedPendingReferrals} pending
                     </p>
                   </div>
 
@@ -1923,10 +2195,13 @@ export default async function Dashboard() {
                       <h3 className="font-bold text-white">Conversion Rate</h3>
                     </div>
                     <p className="text-4xl font-black text-white mb-2">
-                      {safeReferrals.length > 0 ? Math.round((completedReferrals / safeReferrals.length) * 100) : 0}%
+                      {windowedReferrals.length > 0
+                        ? Math.round((windowedCompletedReferrals / windowedReferrals.length) * 100)
+                        : 0}
+                      %
                     </p>
                     <p className="text-sm text-amber-50">
-                      Referral to completion
+                      Referral to completion ({selectedWindow} days)
                     </p>
                   </div>
                 </div>

@@ -557,6 +557,23 @@ export function CRMIntegrationTab({
             </div>
           </div>
         </div>
+
+        <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5">
+          <div className="flex items-start gap-3">
+            <ShieldCheck className="h-6 w-6 text-emerald-700 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold text-slate-900 mb-2 text-sm">CRM Test Checklist (before you go live)</p>
+              <ol className="list-decimal pl-5 space-y-2 text-sm text-slate-700">
+                <li>Send a test campaign to yourself using the merge tags for name + referral link.</li>
+                <li>Open the email on desktop + mobile and confirm the layout looks polished.</li>
+                <li>Click the referral link and confirm the referral landing page loads correctly.</li>
+                <li>Check that the attribution badge shows the correct referral code.</li>
+                <li>Submit a test form or book a call and confirm the event appears in the dashboard.</li>
+                <li>Verify discount capture is working by posting a test conversion.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
       </Card>
         </CollapsibleContent>
       </Collapsible>

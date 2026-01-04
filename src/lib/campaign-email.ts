@@ -623,6 +623,35 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
         )
         .join("")
     : "";
+  const rewardSummaryHtml = `
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin: 0 0 24px 0; border-radius: 18px; border: 1px solid ${accentBorderColor}; background: ${tone.surfaceBackground}; padding: 18px 20px;">
+      <tr>
+        <td style="padding: 12px 14px; text-align: left; border-radius: 14px; background: ${tone.cardBackground}; border: 1px solid ${hexToRgba(
+          brandHighlight,
+          0.18,
+        )};">
+          <p style="margin: 0 0 6px 0; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: ${tone.labelColor}; font-weight: 700;">
+            Your reward
+          </p>
+          <p style="margin: 0; font-size: 18px; font-weight: 800; color: ${tone.heroText}; font-family: ${tone.headingFont};">
+            ${clientReward}
+          </p>
+        </td>
+        <td width="16"></td>
+        <td style="padding: 12px 14px; text-align: left; border-radius: 14px; background: ${tone.cardBackground}; border: 1px solid ${hexToRgba(
+          brandHighlight,
+          0.18,
+        )};">
+          <p style="margin: 0 0 6px 0; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: ${tone.labelColor}; font-weight: 700;">
+            Friend reward
+          </p>
+          <p style="margin: 0; font-size: 18px; font-weight: 800; color: ${tone.heroText}; font-family: ${tone.headingFont};">
+            ${newUserReward}
+          </p>
+        </td>
+      </tr>
+    </table>
+  `;
   const fallbackStoryBlocks = () =>
     buildFallbackStoryBlocks(businessName, newUserReward, clientReward);
   const storyBlocks = coerceStoryBlocks(snapshot.storyBlocks, fallbackStoryBlocks);
@@ -708,6 +737,7 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
           </tr>
           <tr>
             <td style="padding: 0 40px 32px 40px;">
+              ${rewardSummaryHtml}
               ${campaignParagraphs}
 
               <!-- Main CTA Card -->
@@ -729,7 +759,7 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
                 <!-- Share Button -->
                 ${renderButton({
                   url: landingUrl,
-                  label: "📧 Share Your Link Now",
+                  label: "Share your link",
                   background: heroButtonGradient,
                   textColor: tone.primaryButtonText,
                   shadow: heroButtonShadow,

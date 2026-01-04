@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { HowThisWorksSection } from "@/components/HowThisWorksSection"
 
 export function Step1Education() {

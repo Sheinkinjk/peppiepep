@@ -86,51 +86,77 @@ function extractDeploymentUrl(stdout, stderr) {
   return matches[matches.length - 1];
 }
 
-function runSupabaseMigrations() {
-  console.log("📦 Running Supabase migrations before deploy...");
-  return new Promise((resolve, reject) => {
-    // Use the direct database URL (not pooler) for migrations
-    const dbUrl = process.env.POSTGRES_URL_NON_POOLING || process.env.SUPABASE_DB_URL;
-
-    if (!dbUrl) {
-      console.warn("⚠️  No direct database URL found. Skipping migrations.");
-      resolve();
-      return;
-    }
-
-    const args = ["--yes", "supabase", "db", "push", "--db-url", dbUrl];
-
-    const child = spawn(
-      npxBin,
-      args,
-      {
-        cwd: projectRoot,
-        stdio: "inherit",
-        env: {
-          ...process.env,
-          SUPABASE_ACCESS_TOKEN: process.env.SUPABASE_ACCESS_TOKEN,
-        },
+function runCommand(command, args, extraEnv = {}) {
+  return new Promise((resolve) => {
+    const child = spawn(command, args, {
+      cwd: projectRoot,
+      stdio: "inherit",
+      env: {
+        ...process.env,
+        ...extraEnv,
       },
-    );
+    });
 
     child.on("error", (error) => {
-      console.error("⚠️  Migration failed:", error.message);
-      console.log("⚠️  Continuing with deployment despite migration failure...");
-      resolve(); // Don't block deployment on migration failures
+      console.error("⚠️  Command failed:", error.message);
+      resolve({ code: 1 });
     });
 
     child.on("close", (code) => {
-      if (code === 0) {
-        console.log("✅ Migrations completed successfully");
-        resolve();
-      } else {
-        console.warn(
-          `⚠️  Supabase migrations exited with code ${code ?? "unknown"}. Continuing with deployment...`,
-        );
-        resolve(); // Don't block deployment on migration failures
-      }
+      resolve({ code: code ?? 1 });
     });
   });
+}
+
+async function runSupabaseMigrations() {
+  console.log("📦 Running Supabase migrations before deploy...");
+  const directDbUrl = process.env.POSTGRES_URL_NON_POOLING || process.env.SUPABASE_DB_URL;
+  const poolerDbUrl = process.env.SUPABASE_DB_URL_POOLER;
+  const hasProjectRef = Boolean(process.env.SUPABASE_PROJECT_ID);
+
+  if (!directDbUrl && !poolerDbUrl && !hasProjectRef) {
+    console.warn("⚠️  No Supabase connection details found. Skipping migrations.");
+    return;
+  }
+
+  if (directDbUrl) {
+    const directResult = await runCommand(
+      npxBin,
+      ["--yes", "supabase", "db", "push", "--db-url", directDbUrl],
+      { SUPABASE_ACCESS_TOKEN: process.env.SUPABASE_ACCESS_TOKEN },
+    );
+    if (directResult.code === 0) {
+      console.log("✅ Migrations completed successfully");
+      return;
+    }
+    console.warn("⚠️  Direct DB URL failed. Falling back to Supabase CLI connection.");
+  }
+
+  if (hasProjectRef) {
+    const projectResult = await runCommand(
+      npxBin,
+      ["--yes", "supabase", "db", "push"],
+      { SUPABASE_ACCESS_TOKEN: process.env.SUPABASE_ACCESS_TOKEN },
+    );
+    if (projectResult.code === 0) {
+      console.log("✅ Migrations completed successfully via Supabase project ref");
+      return;
+    }
+  }
+
+  if (poolerDbUrl) {
+    const poolerResult = await runCommand(
+      npxBin,
+      ["--yes", "supabase", "db", "push", "--db-url", poolerDbUrl],
+      { SUPABASE_ACCESS_TOKEN: process.env.SUPABASE_ACCESS_TOKEN },
+    );
+    if (poolerResult.code === 0) {
+      console.log("✅ Migrations completed successfully via pooler URL");
+      return;
+    }
+  }
+
+  console.warn("⚠️  Supabase migrations failed. Continuing with deployment...");
 }
 
 async function main() {

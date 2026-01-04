@@ -45,7 +45,7 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
   // If the function isn't installed, this will fail and we fall back to direct table reads.
   let rpcRole: string | null = null;
   try {
-    const { data: roleData, error: roleError } = await (authClient as any).rpc(
+    const { data: roleData, error: roleError } = await authClient.rpc(
       "get_current_user_admin_role",
     );
     if (!roleError && typeof roleData === "string" && roleData.length > 0) {

@@ -941,6 +941,10 @@ export interface Database {
     };
     Views: Record<string, never>;
     Functions: {
+      get_current_user_admin_role: {
+        Args: Record<string, never>;
+        Returns: string;
+      };
       increment_campaign_counts: {
         Args: {
           target: string;

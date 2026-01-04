@@ -366,37 +366,24 @@ export async function getTopEarningAmbassadors(
 }>> {
   const supabase = await createServerComponentClient();
 
-  const { data, error } = await (supabase as any)
-    .from('stripe_commissions')
-    .select(`
-      ambassador_id,
-      amount,
-      customers!inner (
-        name,
-        email
-      )
-    `)
-    .eq('business_id', businessId)
-    .eq('status', 'paid');
+  const { data, error } = await supabase
+    .from("stripe_commissions")
+    .select("ambassador_id, amount")
+    .eq("business_id", businessId)
+    .eq("status", "paid");
 
   if (error) {
     throw new Error(`Failed to get top ambassadors: ${error.message}`);
   }
 
   // Group by ambassador
-  const ambassadorMap = new Map<string, {
-    id: string;
-    name: string | null;
-    email: string | null;
-    total: number;
-    count: number;
-  }>();
+  const ambassadorMap = new Map<
+    string,
+    { id: string; name: string | null; email: string | null; total: number; count: number }
+  >();
 
-  const rows = (data as Array<{
-    ambassador_id: string;
-    amount: number;
-    customers: { name: string | null; email: string | null };
-  }> | null) ?? [];
+  const rows =
+    (data as Array<{ ambassador_id: string; amount: number }> | null) ?? [];
 
   rows.forEach((row) => {
     const existing = ambassadorMap.get(row.ambassador_id);
@@ -406,13 +393,33 @@ export async function getTopEarningAmbassadors(
     } else {
       ambassadorMap.set(row.ambassador_id, {
         id: row.ambassador_id,
-        name: row.customers.name,
-        email: row.customers.email,
+        name: null,
+        email: null,
         total: row.amount,
         count: 1,
       });
     }
   });
+
+  const ambassadorIds = Array.from(ambassadorMap.keys());
+  if (ambassadorIds.length > 0) {
+    const { data: ambassadors, error: ambassadorsError } = await supabase
+      .from("customers")
+      .select("id, name, email")
+      .in("id", ambassadorIds);
+
+    if (ambassadorsError) {
+      throw new Error(`Failed to get ambassador details: ${ambassadorsError.message}`);
+    }
+
+    ambassadors?.forEach((ambassador) => {
+      const existing = ambassadorMap.get(ambassador.id);
+      if (existing) {
+        existing.name = ambassador.name;
+        existing.email = ambassador.email;
+      }
+    });
+  }
 
   // Convert to array and sort
   return Array.from(ambassadorMap.values())

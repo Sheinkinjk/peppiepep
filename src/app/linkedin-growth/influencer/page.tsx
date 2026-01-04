@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+/* eslint-disable react/no-unescaped-entities */
 import {
   ArrowRight,
   BadgeCheck,

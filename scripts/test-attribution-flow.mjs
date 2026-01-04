@@ -162,6 +162,83 @@ async function test4_checkRecentReferrals(customerId) {
   return referrals;
 }
 
+// Test 4b: Verify discount code coverage
+async function test4b_verifyDiscountCode(customer) {
+  console.log('\n📋 Test 4b: Verify Referral Discount Code');
+  console.log('-'.repeat(60));
+
+  if (!customer.discount_code) {
+    console.error('❌ FAILED: Customer missing discount code');
+    return { passed: false, count: 0 };
+  }
+
+  const { data: redemptions, error } = await supabase
+    .from('discount_redemptions')
+    .select('id, order_reference, captured_at')
+    .eq('business_id', customer.business_id)
+    .ilike('discount_code', customer.discount_code)
+    .order('captured_at', { ascending: false })
+    .limit(5);
+
+  if (error) {
+    console.error('❌ FAILED: Could not fetch discount redemptions');
+    console.error('   Error:', error.message);
+    return { passed: false, count: 0 };
+  }
+
+  console.log('✅ PASSED: Discount code is assigned and queryable');
+  console.log('   Discount Code:', customer.discount_code);
+  console.log(`   Recent Redemptions Found: ${redemptions.length}`);
+
+  if (redemptions.length > 0) {
+    console.log('\nRecent Redemptions:');
+    redemptions.forEach((redemption, index) => {
+      console.log(`\n   ${index + 1}. Order Reference: ${redemption.order_reference || 'N/A'}`);
+      console.log(`      Captured: ${redemption.captured_at ? new Date(redemption.captured_at).toLocaleString() : 'N/A'}`);
+    });
+  }
+
+  return { passed: true, count: redemptions.length };
+}
+
+// Test 4c: Verify engagement metrics coverage
+async function test4c_checkEngagementMetrics(businessId) {
+  console.log('\n📋 Test 4c: Verify Engagement Metrics');
+  console.log('-'.repeat(60));
+
+  const { data: events, error } = await supabase
+    .from('referral_events')
+    .select('id, event_type, ambassador_id, referral_id, metadata, created_at')
+    .eq('business_id', businessId)
+    .order('created_at', { ascending: false })
+    .limit(200);
+
+  if (error) {
+    console.error('❌ FAILED: Could not fetch referral events for engagement metrics');
+    console.error('   Error:', error.message);
+    return false;
+  }
+
+  const linkVisits = events.filter(event => event.event_type === 'link_visit');
+  const meetingsBooked = events.filter(event => event.event_type === 'schedule_call_clicked');
+  const formsSubmitted = events.filter(event => event.event_type === 'signup_submitted');
+
+  const uniqueLinkOpeners = new Set();
+  linkVisits.forEach((event) => {
+    const metadataCode = event?.metadata?.referral_code;
+    const key = event.ambassador_id || event.referral_id || (typeof metadataCode === 'string' ? metadataCode : null);
+    if (key) uniqueLinkOpeners.add(key);
+  });
+
+  console.log('✅ PASSED: Engagement metrics derived from events');
+  console.log(`   Unique Link Opens: ${uniqueLinkOpeners.size}`);
+  console.log(`   Total Link Opens: ${linkVisits.length}`);
+  console.log(`   Meetings Booked: ${meetingsBooked.length}`);
+  console.log(`   Forms Submitted: ${formsSubmitted.length}`);
+
+  return true;
+}
+
 // Test 5: Simulate cookie data structure
 async function test5_validateCookieStructure(customer) {
   console.log('\n📋 Test 5: Validate Cookie Data Structure');
@@ -404,6 +481,20 @@ async function runTests() {
     // Test 4
     await test4_checkRecentReferrals(testCustomer.id);
     results.push({ name: 'Check Recent Referrals', passed: true });
+
+    // Test 4b
+    const discountCheck = await test4b_verifyDiscountCode(testCustomer);
+    results.push({
+      name: 'Verify Referral Discount Code',
+      passed: discountCheck.passed,
+    });
+
+    // Test 4c
+    const engagementCheck = await test4c_checkEngagementMetrics(testCustomer.business_id);
+    results.push({
+      name: 'Verify Engagement Metrics',
+      passed: engagementCheck,
+    });
 
     // Test 5
     const cookieData = await test5_validateCookieStructure(testCustomer);
