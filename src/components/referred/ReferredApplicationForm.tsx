@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   Loader2
 } from "lucide-react";
+import { logger } from "@/lib/logger";
 
 interface ReferredApplicationFormProps {
   ambassadorId: string;
@@ -62,48 +63,26 @@ export function ReferredApplicationForm({
       referralCode,
     };
 
-    console.log("📋 Form submission started");
-    console.log("Form data:", {
-      businessName: data.businessName,
-      industry: data.industry,
-      fullName: data.fullName,
-      email: data.email,
-    });
-    console.log("Attribution data:", {
-      ambassadorId,
-      businessId,
-      referralCode,
-    });
-
     try {
-      console.log("🚀 Sending POST request to /api/referred/submit-application");
-
       const response = await fetch("/api/referred/submit-application", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      console.log("📡 Response status:", response.status, response.statusText);
-
       const result = await response.json();
-      console.log("📦 Response data:", result);
 
       if (!response.ok) {
         const errorMessage = result.error || result.details || "Failed to submit application";
-        console.error("❌ API Error:", errorMessage);
+        logger.error("API Error:", errorMessage);
         throw new Error(errorMessage);
       }
-
-      console.log("✅ Application submitted successfully!");
-      console.log("Referral ID:", result.referralId);
 
       setSubmitted(true);
 
       // Track conversion event
-      console.log("📊 Tracking conversion event...");
       try {
-        const trackingResponse = await fetch("/api/track-conversion", {
+        await fetch("/api/track-conversion", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -117,18 +96,12 @@ export function ReferredApplicationForm({
             },
           }),
         });
-
-        if (trackingResponse.ok) {
-          console.log("✅ Conversion event tracked successfully");
-        } else {
-          console.warn("⚠️ Failed to track conversion event, but form submitted");
-        }
       } catch (trackingError) {
-        console.error("⚠️ Error tracking conversion:", trackingError);
         // Don't fail the whole submission if tracking fails
+        logger.error("Error tracking conversion:", trackingError);
       }
     } catch (err) {
-      console.error("❌ Error submitting application:", err);
+      logger.error("Error submitting application:", err);
       const errorMessage = err instanceof Error ? err.message : "Failed to submit application";
       setError(`${errorMessage}. Please try again or book a call instead.`);
     } finally {
@@ -137,18 +110,9 @@ export function ReferredApplicationForm({
   }
 
   async function handleBookCall() {
-    console.log("📞 Book a Call clicked");
-    console.log("Attribution data:", {
-      ambassadorId,
-      businessId,
-      referralCode,
-    });
-
     try {
       // Track the schedule call event
-      console.log("📊 Tracking schedule_call_clicked event...");
-
-      const response = await fetch("/api/track-conversion", {
+      await fetch("/api/track-conversion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -159,18 +123,10 @@ export function ReferredApplicationForm({
           metadata: { source: "referred_application_form_cta" },
         }),
       });
-
-      if (response.ok) {
-        console.log("✅ Event tracked successfully");
-      } else {
-        console.warn("⚠️ Event tracking failed:", response.status);
-      }
-
-      console.log("🔗 Redirecting to Calendly...");
-      window.location.href = "https://calendly.com/jarredkro/30min";
     } catch (error) {
-      console.error("❌ Error tracking schedule call:", error);
-      console.log("🔗 Redirecting to Calendly anyway...");
+      logger.error("Error tracking schedule call:", error);
+    } finally {
+      // Redirect to Calendly regardless of tracking result
       window.location.href = "https://calendly.com/jarredkro/30min";
     }
   }

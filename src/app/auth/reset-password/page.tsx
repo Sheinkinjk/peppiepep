@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, AlertCircle, Mail } from "lucide-react";
+import { logger } from "@/lib/logger";
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState("");
@@ -47,7 +49,7 @@ export default function ResetPasswordPage() {
       } catch (sessionError) {
         if (!cancelled) {
           setError("Invalid or expired reset link. Please request a new password reset.");
-          console.error("Failed to bootstrap recovery session:", sessionError);
+          logger.error("Failed to bootstrap recovery session:", sessionError);
         }
       }
     };
@@ -164,8 +166,33 @@ export default function ResetPasswordPage() {
               </div>
 
               {error && (
-                <div className="rounded-lg bg-red-50 border border-red-200 p-3">
-                  <p className="text-sm text-red-800">{error}</p>
+                <div className="rounded-lg bg-red-50 border border-red-200 p-4 space-y-3">
+                  <div className="flex items-start gap-3">
+                    <AlertCircle className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex-1">
+                      <h3 className="text-sm font-medium text-red-800 mb-1">
+                        Reset Link Invalid or Expired
+                      </h3>
+                      <p className="text-sm text-red-700">
+                        {error}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-2 pt-1">
+                    <Link
+                      href="/login?forgot=true"
+                      className="inline-flex items-center justify-center gap-2 text-sm font-medium text-red-700 hover:text-red-800 bg-red-100 hover:bg-red-150 px-4 py-2 rounded-md transition-colors"
+                    >
+                      <Mail className="h-4 w-4" />
+                      Request new reset link
+                    </Link>
+                    <Link
+                      href="/login"
+                      className="inline-flex items-center justify-center text-sm text-red-600 hover:text-red-700 px-4 py-2"
+                    >
+                      Back to login →
+                    </Link>
+                  </div>
                 </div>
               )}
 

@@ -15,7 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Phone, Mail, Calendar, Send, AlertCircle, CheckCircle, Share2 } from "lucide-react";
+import { Phone, Mail, Calendar, Send, AlertCircle, CheckCircle, Share2, Loader2 } from "lucide-react";
 import { Database } from "@/types/supabase";
 import { campaignSchedulerEnabled } from "@/lib/feature-flags";
 import { CampaignTemplateSelector } from "@/components/CampaignTemplateSelector";
@@ -793,7 +793,17 @@ export function CampaignBuilder({
                     disabled={isSending || isSendingTestEmail}
                     className="sm:shrink-0"
                   >
-                    {isSendingTestEmail ? "Sending test…" : "Send test email"}
+                    {isSendingTestEmail ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending test…
+                      </>
+                    ) : (
+                      <>
+                        <Mail className="mr-2 h-4 w-4" />
+                        Send test email
+                      </>
+                    )}
                   </Button>
                 </div>
 
@@ -1381,7 +1391,10 @@ export function CampaignBuilder({
 	                className="flex-1 bg-emerald-600 hover:bg-emerald-700 font-bold"
 	              >
                 {isSending ? (
-                  <>Sending...</>
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
                 ) : (
                   <>
                     <Send className="mr-2 h-4 w-4" />
