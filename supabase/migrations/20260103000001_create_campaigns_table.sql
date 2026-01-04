@@ -33,29 +33,47 @@ CREATE INDEX IF NOT EXISTS campaigns_created_at_idx ON campaigns(created_at DESC
 ALTER TABLE campaigns ENABLE ROW LEVEL SECURITY;
 
 -- RLS Policies
-CREATE POLICY "Users can view their own business campaigns"
-  ON campaigns FOR SELECT
-  USING (
-    business_id IN (
-      SELECT id FROM businesses WHERE owner_id = auth.uid()
-    )
-  );
+DO $$ BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'campaigns' AND policyname = 'Users can view their own business campaigns'
+  ) THEN
+    CREATE POLICY "Users can view their own business campaigns"
+      ON campaigns FOR SELECT
+      USING (
+        business_id IN (
+          SELECT id FROM businesses WHERE owner_id = auth.uid()
+        )
+      );
+  END IF;
+END $$;
 
-CREATE POLICY "Users can create campaigns for their business"
-  ON campaigns FOR INSERT
-  WITH CHECK (
-    business_id IN (
-      SELECT id FROM businesses WHERE owner_id = auth.uid()
-    )
-  );
+DO $$ BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'campaigns' AND policyname = 'Users can create campaigns for their business'
+  ) THEN
+    CREATE POLICY "Users can create campaigns for their business"
+      ON campaigns FOR INSERT
+      WITH CHECK (
+        business_id IN (
+          SELECT id FROM businesses WHERE owner_id = auth.uid()
+        )
+      );
+  END IF;
+END $$;
 
-CREATE POLICY "Users can update their own business campaigns"
-  ON campaigns FOR UPDATE
-  USING (
-    business_id IN (
-      SELECT id FROM businesses WHERE owner_id = auth.uid()
-    )
-  );
+DO $$ BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'campaigns' AND policyname = 'Users can update their own business campaigns'
+  ) THEN
+    CREATE POLICY "Users can update their own business campaigns"
+      ON campaigns FOR UPDATE
+      USING (
+        business_id IN (
+          SELECT id FROM businesses WHERE owner_id = auth.uid()
+        )
+      );
+  END IF;
+END $$;
 
 -- Add updated_at trigger
 CREATE OR REPLACE FUNCTION update_campaigns_updated_at()
@@ -66,7 +84,13 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER campaigns_updated_at_trigger
-  BEFORE UPDATE ON campaigns
-  FOR EACH ROW
-  EXECUTE FUNCTION update_campaigns_updated_at();
+DO $$ BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_trigger WHERE tgname = 'campaigns_updated_at_trigger'
+  ) THEN
+    CREATE TRIGGER campaigns_updated_at_trigger
+      BEFORE UPDATE ON campaigns
+      FOR EACH ROW
+      EXECUTE FUNCTION update_campaigns_updated_at();
+  END IF;
+END $$;
