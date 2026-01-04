@@ -10,8 +10,9 @@ export const referredApplicationSchema = z.object({
     .min(1, "Industry is required"),
 
   website: z.string()
-    .url("Please enter a valid website URL")
-    .or(z.literal(""))
+    .refine((val) => !val || val.startsWith('http://') || val.startsWith('https://'), {
+      message: "Please enter a valid website URL starting with http:// or https://"
+    })
     .optional(),
 
   monthlyRevenue: z.string()
