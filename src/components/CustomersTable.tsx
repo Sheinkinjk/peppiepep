@@ -62,6 +62,7 @@ type PepWindow = Window & {
 };
 
 const DEFAULT_CUSTOMER_PAGE_SIZE = 50;
+
 const ROW_TEMPLATE =
   "36px minmax(160px,1.1fr) minmax(160px,1.1fr) minmax(210px,1.35fr) minmax(220px,1.4fr) minmax(160px,1fr) minmax(90px,0.5fr) minmax(150px,0.7fr) minmax(220px,1.1fr)";
 
@@ -615,7 +616,9 @@ export function CustomersTable({
         </div>
       )}
 
-      <div className="rounded-2xl border border-slate-200">
+      <div className="rounded-2xl border border-slate-200 overflow-hidden">
+        <div className="overflow-x-auto">
+          <div className="min-w-[1200px]">
         <div
           className="grid gap-4 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-600"
           style={{ gridTemplateColumns: ROW_TEMPLATE }}
@@ -991,6 +994,12 @@ export function CustomersTable({
             </div>
           </div>
         )}
+          </div>
+        </div>
+        {/* Mobile scroll hint */}
+        <p className="text-xs text-gray-500 px-4 py-2 border-t border-slate-200 bg-slate-50 md:hidden">
+          ← Scroll horizontally to see all columns →
+        </p>
       </div>
 
       {error && (

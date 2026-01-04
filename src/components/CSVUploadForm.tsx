@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { Upload, Download } from "lucide-react";
+import { logger } from "@/lib/logger";
 
 export function CSVUploadForm() {
   const router = useRouter();
@@ -73,7 +74,7 @@ export function CSVUploadForm() {
       router.refresh();
       ok = true;
     } catch (error) {
-      console.error("Upload error:", error);
+      logger.error("Upload error:", error);
       const message =
         error instanceof Error ? error.message : "An unexpected error occurred. Please try again.";
       toast({
@@ -97,7 +98,33 @@ export function CSVUploadForm() {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    setFileName(file ? file.name : "");
+
+    if (file) {
+      // Validate file size (max 10MB)
+      const maxSizeInBytes = 10 * 1024 * 1024; // 10MB
+      if (file.size > maxSizeInBytes) {
+        toast({
+          variant: "destructive",
+          title: "File too large",
+          description: `File size must be less than 10MB. Your file is ${(file.size / (1024 * 1024)).toFixed(2)}MB.`,
+        });
+        setStatus({
+          type: "error",
+          message: "File size exceeds 10MB limit.",
+        });
+        // Clear the file input
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
+        setFileName("");
+        return;
+      }
+
+      setFileName(file.name);
+      setStatus(null); // Clear any previous errors
+    } else {
+      setFileName("");
+    }
   };
 
   return (

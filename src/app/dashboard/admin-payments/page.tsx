@@ -138,6 +138,7 @@ export default async function AdminPaymentsPage() {
             </h2>
           </div>
           <div className="overflow-x-auto">
+            <div className="min-w-[800px]">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
@@ -199,6 +200,10 @@ export default async function AdminPaymentsPage() {
                 )}
               </tbody>
             </table>
+            </div>
+            <p className="text-xs text-gray-500 px-6 py-2 border-t border-gray-200 md:hidden">
+              ← Scroll horizontally to see all columns →
+            </p>
           </div>
         </div>
 
