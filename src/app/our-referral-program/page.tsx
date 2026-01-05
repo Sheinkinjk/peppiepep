@@ -25,6 +25,7 @@ import { nanoid } from "nanoid";
 import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import { ensureAbsoluteUrl } from "@/lib/urls";
 import { PartnerApplicationSuccessModal } from "@/components/PartnerApplicationSuccessModal";
+import { logReferralEvent } from "@/lib/referral-events";
 
 export const metadata = generateSEOMetadata(seoConfig.partnerProgram);
 
@@ -87,7 +88,9 @@ async function submitPartnerApplication(formData: FormData) {
     : null;
   const audience_profile = getString("audience_profile");
   const notes = getString("notes");
-  const source = getString("source") ?? "our-referral-program";
+  const utmSource = getString("utm_source");
+  const utmCampaign = getString("utm_campaign");
+  const source = getString("source") ?? utmSource ?? "partner_program";
   const fallbackName = company || fullName || email || "Partner applicant";
   const dedupeFilters: string[] = [];
   if (email) dedupeFilters.push(`email.ilike.${email}`);
@@ -269,22 +272,45 @@ async function submitPartnerApplication(formData: FormData) {
         }
 
         // Log the referral signup event
-        await supabase.from("referral_events").insert([
-          {
-            business_id: attributedBusinessId,
-            ambassador_id: attributedAmbassadorId,
-            event_type: "signup_submitted",
-            source: "partner_program",
-            device: null,
-            metadata: {
-              referred_customer_id: customerId,
-              application_company: company,
-            },
+        await logReferralEvent({
+          supabase,
+          businessId: attributedBusinessId,
+          ambassadorId: attributedAmbassadorId,
+          referralId: null,
+          eventType: "signup_submitted",
+          source,
+          device: null,
+          metadata: {
+            referred_customer_id: customerId,
+            customer_id: customerId,
+            application_company: company,
+            utm_source: utmSource ?? "direct",
+            utm_campaign: utmCampaign ?? "direct",
           },
-        ]);
+        });
       } catch (refError) {
         console.error("Failed to create referral record:", refError);
         // Don't fail the entire application if referral tracking fails
+      }
+    } else {
+      try {
+        await logReferralEvent({
+          supabase,
+          businessId,
+          ambassadorId: null,
+          referralId: null,
+          eventType: "signup_submitted",
+          source,
+          device: null,
+          metadata: {
+            customer_id: customerId,
+            application_company: company,
+            utm_source: utmSource ?? "direct",
+            utm_campaign: utmCampaign ?? "direct",
+          },
+        });
+      } catch (refError) {
+        console.error("Failed to log partner application event:", refError);
       }
     }
 
@@ -365,6 +391,11 @@ type ReferralProgramPageProps = {
 export default function OurReferralProgramPage({ searchParams }: ReferralProgramPageProps) {
   const applied = searchParams?.applied === "1";
   const applyError = searchParams?.applied === "0";
+  const utmSource =
+    typeof searchParams?.utm_source === "string" ? searchParams?.utm_source : undefined;
+  const utmCampaign =
+    typeof searchParams?.utm_campaign === "string" ? searchParams?.utm_campaign : undefined;
+  const formSource = "partner_program";
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Success Modal */}
@@ -626,7 +657,10 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
                   We couldn&apos;t record your application automatically. Please try again or email <a href="mailto:jarred@referlabs.com.au" className="underline">jarred@referlabs.com.au</a>.
                 </div>
               )}
-              <form action={submitPartnerApplication} className="space-y-6">
+            <form action={submitPartnerApplication} className="space-y-6">
+              <input type="hidden" name="source" value={formSource} />
+              <input type="hidden" name="utm_source" value={utmSource ?? "direct"} />
+              <input type="hidden" name="utm_campaign" value={utmCampaign ?? "direct"} />
                 <input type="hidden" name="source" value="our-referral-program" />
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>

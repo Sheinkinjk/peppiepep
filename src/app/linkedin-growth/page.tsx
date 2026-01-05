@@ -215,7 +215,7 @@ export default function LinkedInGrowthPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-white mb-2">The Creator Partnership Playbook</h3>
-                  <p className="text-sm text-cyan-200 font-semibold uppercase tracking-[0.12em]">For B2B Marketing & Growth Teams</p>
+                  <p className="text-sm text-cyan-100 font-semibold uppercase tracking-[0.08em]">For B2B Marketing & Growth Teams</p>
                 </div>
               </div>
 
@@ -262,7 +262,7 @@ export default function LinkedInGrowthPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-white mb-2">LinkedIn Creator Economics</h3>
-                  <p className="text-sm text-purple-200 font-semibold uppercase tracking-[0.12em]">Benchmarks & Market Data (2025)</p>
+                  <p className="text-sm text-purple-100 font-semibold uppercase tracking-[0.08em]">Benchmarks & Market Data (2025)</p>
                 </div>
               </div>
 
@@ -419,6 +419,47 @@ export default function LinkedInGrowthPage() {
                     <ChevronRight className="h-6 w-6 text-cyan-400/60" />
                   </div>
                 )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Pricing & Commission Models */}
+        <section className="mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-white">Choose the Payout Model That Matches ROI</h2>
+            <p className="mt-4 text-lg text-slate-200/90 max-w-3xl mx-auto">
+              Run creator partnerships on performance terms that fit your funnel. Start with a test model and scale what converts.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Flat Fee per Conversion",
+                detail: "Pay a fixed amount when a qualified demo is booked or a signup is verified.",
+                example: "$75 per demo · $40 per trial",
+                accent: "from-cyan-500/20 to-blue-500/20",
+              },
+              {
+                title: "Revenue Share",
+                detail: "Reward creators with a percentage of revenue they generate over time.",
+                example: "15-25% recurring revenue",
+                accent: "from-emerald-500/20 to-teal-500/20",
+              },
+              {
+                title: "Demo Payout + Bonus",
+                detail: "Blend a base demo payout with a performance bonus for closed deals.",
+                example: "$50 per demo + 5% close bonus",
+                accent: "from-purple-500/20 to-pink-500/20",
+              },
+            ].map((item) => (
+              <div key={item.title} className={`rounded-3xl border border-white/10 bg-gradient-to-br ${item.accent} p-6 backdrop-blur`}>
+                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-200/80 leading-relaxed mb-4">{item.detail}</p>
+                <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/80">
+                  Example: {item.example}
+                </div>
               </div>
             ))}
           </div>

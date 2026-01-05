@@ -76,6 +76,26 @@ export async function GET(request: NextRequest) {
           .select("*", { count: "exact", head: true })
           .eq("ambassador_id", appData.customer_id);
 
+        const { data: referralEvent } = await supabase
+          .from("referral_events")
+          .select("source, metadata, created_at")
+          .eq("event_type", "signup_submitted")
+          .or(
+            `metadata->>referred_customer_id.eq.${appData.customer_id},metadata->>customer_id.eq.${appData.customer_id}`,
+          )
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+
+        const referralSource = referralEvent?.source ?? null;
+        const metadata = (referralEvent?.metadata ?? null) as Record<string, unknown> | null;
+        const metadataUtm =
+          metadata && typeof metadata.utm_campaign === "string"
+            ? metadata.utm_campaign
+            : metadata && typeof metadata.query === "object" && metadata.query
+              ? (metadata.query as Record<string, unknown>).utm_campaign
+              : null;
+
         // Get total earnings from commissions
         const { data: commissions } = await supabase
           .from("stripe_commissions")
@@ -92,6 +112,8 @@ export async function GET(request: NextRequest) {
           ...appData,
           referralCount: referralCount || 0,
           totalEarnings: totalEarnings / 100, // Convert cents to dollars
+          referralSource,
+          referralUtmCampaign: typeof metadataUtm === "string" ? metadataUtm : null,
         };
       })
     );

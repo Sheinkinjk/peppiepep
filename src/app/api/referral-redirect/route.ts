@@ -39,10 +39,12 @@ export async function GET(request: NextRequest) {
         businessId,
         ambassadorId,
         eventType: "link_visit",
-        source: campaignParam ?? sourceParam ?? "direct",
+        source: sourceParam ?? "referral_link",
         device,
         metadata: {
           referrer,
+          utm_source: sourceParam ?? "direct",
+          utm_campaign: campaignParam ?? "direct",
           query: metadataQuery,
           redirect_destination:
             destination === "client" ? "client_acquisition" :

@@ -35,6 +35,9 @@ const formSchema = z.object({
   avgEngagement: z.string().trim().optional().default(""),
   pastPartnerships: z.string().trim().optional().default(""),
   notes: z.string().trim().optional().default(""),
+  source: z.string().trim().optional().default(""),
+  utmSource: z.string().trim().optional().default(""),
+  utmCampaign: z.string().trim().optional().default(""),
 });
 
 function escapeHtml(value: string) {
@@ -73,6 +76,9 @@ async function submitInfluencerApplication(formData: FormData) {
     avgEngagement: formData.get("avgEngagement"),
     pastPartnerships: formData.get("pastPartnerships"),
     notes: formData.get("notes"),
+    source: formData.get("source"),
+    utmSource: formData.get("utm_source"),
+    utmCampaign: formData.get("utm_campaign"),
   });
 
   if (!parsed.success) {
@@ -91,7 +97,11 @@ async function submitInfluencerApplication(formData: FormData) {
     avgEngagement,
     pastPartnerships,
     notes,
+    source: rawSource,
+    utmSource,
+    utmCampaign,
   } = parsed.data;
+  const source = rawSource || utmSource || "linkedin_growth_influencer";
 
   const submittedAt = new Date().toISOString();
   const businessId = process.env.PARTNER_PROGRAM_BUSINESS_ID?.trim();
@@ -177,11 +187,36 @@ async function submitInfluencerApplication(formData: FormData) {
           ambassadorId,
           referralId: referralData?.id || null,
           eventType: "signup_submitted",
-          source: "linkedin_influencer_form",
+          source,
           device: "unknown",
           metadata: {
+            customer_id: customer.id,
             referral_code: attributionReferralCode,
             form_type: "linkedin_influencer",
+            form_source: "linkedin_growth_influencer",
+            utm_source: utmSource ?? "direct",
+            utm_campaign: utmCampaign ?? "direct",
+            linkedin_url: linkedinUrl,
+            follower_count: followerCount,
+            audience_focus: audienceFocus,
+            content_topics: contentTopics,
+          },
+        });
+      } else {
+        await logReferralEvent({
+          supabase,
+          businessId,
+          ambassadorId: null,
+          referralId: null,
+          eventType: "signup_submitted",
+          source,
+          device: "unknown",
+          metadata: {
+            customer_id: customer.id,
+            form_type: "linkedin_influencer",
+            form_source: "linkedin_growth_influencer",
+            utm_source: utmSource ?? "direct",
+            utm_campaign: utmCampaign ?? "direct",
             linkedin_url: linkedinUrl,
             follower_count: followerCount,
             audience_focus: audienceFocus,
@@ -293,6 +328,11 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
   const params = await searchParams;
   const submitted = params?.submitted === "1";
   const failed = params?.submitted === "0";
+  const utmSource =
+    typeof params?.utm_source === "string" ? params?.utm_source : undefined;
+  const utmCampaign =
+    typeof params?.utm_campaign === "string" ? params?.utm_campaign : undefined;
+  const formSource = "linkedin_growth_influencer";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -550,6 +590,9 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
           )}
 
           <form action={submitInfluencerApplication} className="grid gap-6">
+            <input type="hidden" name="source" value={formSource} />
+            <input type="hidden" name="utm_source" value={utmSource ?? "direct"} />
+            <input type="hidden" name="utm_campaign" value={utmCampaign ?? "direct"} />
             <div className="grid gap-5 md:grid-cols-2">
               <div>
                 <label className="text-sm font-semibold text-white mb-2 block" htmlFor="fullName">

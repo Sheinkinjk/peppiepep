@@ -9,6 +9,7 @@ import {
   Briefcase,
   CheckCircle2,
   LineChart,
+  Shield,
   Target,
   TrendingUp,
   Users,
@@ -38,6 +39,9 @@ const formSchema = z.object({
   budgetRange: z.string().trim().optional().default(""),
   timeline: z.string().trim().optional().default(""),
   notes: z.string().trim().optional().default(""),
+  source: z.string().trim().optional().default(""),
+  utmSource: z.string().trim().optional().default(""),
+  utmCampaign: z.string().trim().optional().default(""),
 });
 
 function escapeHtml(value: string) {
@@ -78,6 +82,9 @@ async function submitBusinessPartner(formData: FormData) {
     budgetRange: formData.get("budgetRange"),
     timeline: formData.get("timeline"),
     notes: formData.get("notes"),
+    source: formData.get("source"),
+    utmSource: formData.get("utm_source"),
+    utmCampaign: formData.get("utm_campaign"),
   });
 
   if (!parsed.success) {
@@ -98,7 +105,11 @@ async function submitBusinessPartner(formData: FormData) {
     budgetRange,
     timeline,
     notes,
+    source: rawSource,
+    utmSource,
+    utmCampaign,
   } = parsed.data;
+  const source = rawSource || utmSource || "linkedin_growth_business";
 
   const submittedAt = new Date().toISOString();
   const businessId = process.env.PARTNER_PROGRAM_BUSINESS_ID?.trim();
@@ -179,11 +190,37 @@ async function submitBusinessPartner(formData: FormData) {
           ambassadorId,
           referralId: referralData?.id || null,
           eventType: "signup_submitted",
-          source: "linkedin_influencer_business_form",
+          source,
           device: "unknown",
           metadata: {
+            customer_id: customer.id,
             referral_code: attributionReferralCode,
             form_type: "linkedin_influencer_business",
+            form_source: "linkedin_growth_business",
+            utm_source: utmSource ?? "direct",
+            utm_campaign: utmCampaign ?? "direct",
+            company,
+            website,
+            industry,
+            target_buyer: targetBuyer,
+            desired_outcome: desiredOutcome,
+          },
+        });
+      } else {
+        await logReferralEvent({
+          supabase,
+          businessId,
+          ambassadorId: null,
+          referralId: null,
+          eventType: "signup_submitted",
+          source,
+          device: "unknown",
+          metadata: {
+            customer_id: customer.id,
+            form_type: "linkedin_influencer_business",
+            form_source: "linkedin_growth_business",
+            utm_source: utmSource ?? "direct",
+            utm_campaign: utmCampaign ?? "direct",
             company,
             website,
             industry,
@@ -268,14 +305,14 @@ async function submitBusinessPartner(formData: FormData) {
       <div style="padding:28px;border-radius:20px 20px 0 0;background:linear-gradient(135deg,#0ea5e9,#7c3aed);color:white;">
         <p style="margin:0;text-transform:uppercase;letter-spacing:0.28em;font-size:12px;">LinkedIn Creator Partnership</p>
         <h1 style="margin:8px 0 0;font-size:24px;font-weight:800;">We received your partnership request</h1>
-        <p style="margin:6px 0 0;font-size:14px;opacity:0.95;">Our team will review and follow up within 24 hours.</p>
+        <p style="margin:6px 0 0;font-size:14px;opacity:0.95;">Our team will review and follow up within 48-72 hours.</p>
       </div>
       <div style="padding:28px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 20px 20px;background:white;">
         <p style="margin:0 0 12px;font-size:14px;color:#0f172a;">
           Thanks for your interest, ${escapeHtml(contactName)}. We'll review your goals for ${escapeHtml(company)} and match you with aligned creators who can drive ${escapeHtml(desiredOutcome)}.
         </p>
         <p style="margin:12px 0 0;font-size:13px;color:#475569;">
-          Next steps: We'll email you creator profiles within 2-3 business days. If you have questions, reply to this email.
+          Next steps: We'll email you creator profiles within 48-72 hours. If you have questions, reply to this email.
         </p>
       </div>
     </div>
@@ -285,6 +322,32 @@ async function submitBusinessPartner(formData: FormData) {
     to: email,
     subject: "We received your creator partnership request",
     html: applicantHtml,
+  });
+
+  const followUpHtml = `
+    <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
+      <div style="padding:28px;border-radius:20px 20px 0 0;background:#0f172a;color:white;">
+        <p style="margin:0;text-transform:uppercase;letter-spacing:0.22em;font-size:12px;">Next Steps</p>
+        <h2 style="margin:10px 0 0;font-size:22px;font-weight:800;">Creator shortlist in 48-72 hours</h2>
+        <p style="margin:8px 0 0;font-size:14px;opacity:0.9;">Here is what happens next so you can plan your launch.</p>
+      </div>
+      <div style="padding:24px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 20px 20px;background:white;">
+        <ol style="margin:0;padding-left:18px;font-size:14px;color:#0f172a;line-height:1.6;">
+          <li>We validate fit based on your ICP, budget, and timeline.</li>
+          <li>We share 5-10 vetted creator profiles tailored to your goals.</li>
+          <li>You approve the best matches and we coordinate content drafts.</li>
+        </ol>
+        <p style="margin:16px 0 0;font-size:13px;color:#475569;">
+          Questions or changes to your requirements? Reply here and we'll adjust your shortlist.
+        </p>
+      </div>
+    </div>
+  `;
+
+  await sendTransactionalEmail({
+    to: email,
+    subject: "Next steps for your creator shortlist",
+    html: followUpHtml,
   });
 
   redirect("/linkedin-growth/business?submitted=1");
@@ -298,6 +361,11 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
   const params = await searchParams;
   const submitted = params?.submitted === "1";
   const failed = params?.submitted === "0";
+  const utmSource =
+    typeof params?.utm_source === "string" ? params?.utm_source : undefined;
+  const utmCampaign =
+    typeof params?.utm_campaign === "string" ? params?.utm_campaign : undefined;
+  const formSource = "linkedin_growth_business";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -370,6 +438,19 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
           </div>
         </section>
 
+        {/* SLA Banner */}
+        <section className="mb-12">
+          <div className="rounded-3xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/15 via-slate-900/70 to-blue-500/15 px-6 py-5 text-center backdrop-blur">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-100">
+              <LineChart className="h-4 w-4 text-cyan-300" />
+              Creator shortlist SLA: 48-72 hours from submission
+            </div>
+            <p className="mt-2 text-sm text-slate-200/80">
+              We'll send your shortlist with audience notes, sample posts, and recommended compensation bands.
+            </p>
+          </div>
+        </section>
+
         {/* Value Props Grid */}
         <section className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[
@@ -385,7 +466,8 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
               title: "Vetted Creator Pool",
               detail: "We match you with 5-10 creators whose audiences are already looking for solutions like yours.",
               color: "from-purple-500/20 to-pink-500/20",
-              border: "border-purple-400/30"
+              border: "border-purple-400/30",
+              badge: "Verified creators",
             },
             {
               icon: BarChart3,
@@ -401,6 +483,12 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
               </div>
               <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
               <p className="text-sm text-slate-200/80 leading-relaxed">{item.detail}</p>
+              {item.badge && (
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-300/40 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">
+                  <BadgeCheck className="h-3.5 w-3.5" />
+                  {item.badge}
+                </div>
+              )}
             </div>
           ))}
         </section>
@@ -474,6 +562,69 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
           </div>
         </section>
 
+        {/* Pricing & Commission Models */}
+        <section className="mb-16 rounded-3xl border border-white/10 bg-slate-900/40 p-10 backdrop-blur">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-black text-white">Flexible Payout Models</h2>
+            <p className="text-sm text-slate-200/80 mt-2">
+              Choose the performance model that matches your funnel and risk appetite.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Flat Fee",
+                detail: "Fixed payout per demo or signup.",
+                example: "$75/demo",
+              },
+              {
+                title: "Revenue Share",
+                detail: "Share recurring revenue with creators.",
+                example: "15-25% rev share",
+              },
+              {
+                title: "Hybrid",
+                detail: "Base payout + success bonus.",
+                example: "$50/demo + 5% close",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
+                <h3 className="text-sm font-bold text-white mb-1">{item.title}</h3>
+                <p className="text-xs text-slate-300/80 mb-3">{item.detail}</p>
+                <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-white/70">
+                  {item.example}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Disclosure & Compliance Checklist */}
+        <section className="mb-16 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="rounded-xl bg-emerald-500/20 p-3">
+              <Shield className="h-6 w-6 text-emerald-300" />
+            </div>
+            <h2 className="text-2xl font-black text-white">Brand Safety & FTC Compliance</h2>
+          </div>
+          <p className="text-sm text-slate-200/80 mb-6">
+            Every creator partnership includes disclosure requirements and content review safeguards so your program stays compliant.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              "Creators must disclose partnerships with #ad or #sponsored",
+              "Content is reviewed against FTC and platform policies",
+              "Claims must be accurate and supported with proof",
+              "We monitor for inauthentic engagement and remove violators",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300" />
+                <p className="text-sm text-slate-200/80">{item}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Application Form */}
         <section className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/70 to-blue-500/10 p-10 lg:p-12 backdrop-blur shadow-2xl shadow-cyan-500/10">
           <div className="mb-8">
@@ -481,6 +632,39 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
             <p className="text-base text-slate-200/90">
               Fill out the form below and we'll match you with creators whose audiences are already looking for solutions in your space.
             </p>
+          </div>
+
+          <div className="mb-10 rounded-2xl border border-white/10 bg-slate-900/50 p-6">
+            <div className="flex items-center justify-between gap-4 mb-5">
+              <h3 className="text-lg font-bold text-white">Match Criteria</h3>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Step 1 of 3</span>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  title: "ICP",
+                  detail: "Define the exact buyer persona you want creators to reach.",
+                },
+                {
+                  title: "Budget",
+                  detail: "Share the monthly range so we shortlist aligned creator tiers.",
+                },
+                {
+                  title: "Timeline",
+                  detail: "Let us know when you want campaigns live.",
+                },
+              ].map((item, index) => (
+                <div key={item.title} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-cyan-500/20 text-xs font-bold text-cyan-200">
+                      {index + 1}
+                    </div>
+                    <p className="text-sm font-semibold text-white">{item.title}</p>
+                  </div>
+                  <p className="text-xs text-slate-300/80 leading-relaxed">{item.detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {submitted && (
@@ -523,6 +707,9 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
           )}
 
           <form action={submitBusinessPartner} className="grid gap-6">
+            <input type="hidden" name="source" value={formSource} />
+            <input type="hidden" name="utm_source" value={utmSource ?? "direct"} />
+            <input type="hidden" name="utm_campaign" value={utmCampaign ?? "direct"} />
             {/* Contact Info */}
             <div className="grid gap-4 md:grid-cols-2">
               <div>

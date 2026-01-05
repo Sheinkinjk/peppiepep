@@ -371,17 +371,14 @@ export default async function Home() {
             <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white px-6 py-10 shadow-xl sm:px-10 sm:py-12">
               <div className="relative z-10 space-y-10">
                 <div className="text-left sm:text-center">
-                  <h2 className="text-[1.85rem] font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] max-w-5xl sm:mx-auto text-balance">
-                    <span className="block sm:whitespace-nowrap">Why A Referral Program Is Your Best Resource</span>
-                    <span className="block sm:whitespace-nowrap">For Growth Hacking</span>
+                  <h2 className="text-[1.9rem] font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] max-w-5xl sm:mx-auto text-balance">
+                    <span className="block">Why A Referral Program Is Your Best Resource</span>
+                    <span className="block">For Growth Hacking</span>
                   </h2>
-                  <p className="mt-4 text-[1.02rem] sm:text-lg text-slate-600 max-w-4xl mx-0 sm:mx-auto text-balance">
-                    <span className="block sm:whitespace-nowrap">
-                      Your next best customers are already in your existing customers&rsquo; network.
-                    </span>
-                    <span className="block sm:whitespace-nowrap">
-                      Refer Labs helps you turn that network into a structured, trackable growth engine that feels natural for them and powerful for you.
-                    </span>
+                  <p className="mt-4 text-[1.02rem] sm:text-lg md:text-[1.12rem] text-slate-600 max-w-[52rem] mx-0 sm:mx-auto text-balance leading-relaxed">
+                    Your next best customers are already in your existing customers&rsquo; network. Refer Labs helps you
+                    turn that network into a structured, trackable growth engine that feels natural for them and powerful
+                    for you.
                   </p>
                 </div>
 

@@ -1,9 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, XCircle, Clock, ExternalLink, Mail, Phone, Globe, Users, TrendingUp } from "lucide-react";
+import {
+  CheckCircle,
+  XCircle,
+  Clock,
+  ExternalLink,
+  Mail,
+  Phone,
+  Globe,
+  Users,
+  TrendingUp,
+  AlertCircle,
+} from "lucide-react";
+import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 interface PartnerApplication {
   id: string;
@@ -30,13 +42,57 @@ interface PartnerApplication {
   } | null;
   referralCount: number;
   totalEarnings: number;
+  referralSource?: string | null;
+  referralUtmCampaign?: string | null;
 }
+
+const replyTemplates = [
+  {
+    id: "need-icp",
+    label: "Request: ICP details",
+    subject: "Quick follow-up on your partner application",
+    body:
+      "Thanks for applying to the Refer Labs partner program. Could you share your ideal customer profile (industry, company size, buyer persona) so we can match you correctly?",
+  },
+  {
+    id: "need-budget",
+    label: "Request: Budget + timeline",
+    subject: "A few details to finalize your review",
+    body:
+      "Thanks for applying. To complete your review, can you confirm your expected budget range and target launch timeline?",
+  },
+  {
+    id: "need-audience",
+    label: "Request: Audience details",
+    subject: "Clarifying your audience fit",
+    body:
+      "We love the application. Can you share more detail on your audience (job titles, regions, and engagement style) so we can finalize approval?",
+  },
+  {
+    id: "reject-not-fit",
+    label: "Reject: Not a fit right now",
+    subject: "Update on your partner application",
+    body:
+      "Thanks for applying to the Refer Labs partner program. After review, we are not the right fit at this time. We will keep your details on file and reach out if a future opportunity aligns.",
+  },
+];
 
 export function PartnerApplicationsManager() {
   const [applications, setApplications] = useState<PartnerApplication[]>([]);
+  const [incomingFeed, setIncomingFeed] = useState<PartnerApplication[]>([]);
   const [loading, setLoading] = useState(true);
   const [approving, setApproving] = useState<string | null>(null);
+  const [replySelection, setReplySelection] = useState<Record<string, string>>({});
+  const [actionErrors, setActionErrors] = useState<Record<string, string>>({});
+  const [lastError, setLastError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | "pending" | "approved" | "rejected">("all");
+  const hasSupabaseConfig = Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  );
+  const supabase = useMemo(
+    () => (hasSupabaseConfig ? createBrowserSupabaseClient() : null),
+    [hasSupabaseConfig],
+  );
 
   useEffect(() => {
     fetchApplications();
@@ -49,6 +105,9 @@ export function PartnerApplicationsManager() {
 
       const data = await response.json();
       setApplications(data.applications || []);
+      setIncomingFeed(
+        (data.applications || []).slice(0, 5),
+      );
     } catch (error) {
       console.error("Error fetching applications:", error);
     } finally {
@@ -56,12 +115,35 @@ export function PartnerApplicationsManager() {
     }
   }
 
+  useEffect(() => {
+    if (!supabase) return;
+
+    const channel = supabase
+      .channel("partner-applications-feed")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "partner_applications" },
+        (payload) => {
+          const incoming = payload.new as PartnerApplication;
+          setIncomingFeed((prev) => [incoming, ...prev].slice(0, 5));
+          void fetchApplications();
+        },
+      );
+
+    channel.subscribe();
+
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [supabase]);
+
   async function approveApplication(applicationId: string) {
     if (!confirm("Approve this partner application? They will earn 25% recurring revenue for every client they refer.")) {
       return;
     }
 
     setApproving(applicationId);
+    setLastError(null);
     try {
       const response = await fetch("/api/admin/partner-applications/approve", {
         method: "POST",
@@ -74,27 +156,30 @@ export function PartnerApplicationsManager() {
         throw new Error(error.error || "Failed to approve application");
       }
 
-      alert("Partner approved! Approval email sent with 25% recurring revenue details.");
+      setActionErrors((prev) => ({ ...prev, [applicationId]: "" }));
       await fetchApplications();
     } catch (error) {
       console.error("Error approving application:", error);
-      alert(`Error: ${error instanceof Error ? error.message : "Failed to approve"}`);
+      const message = error instanceof Error ? error.message : "Failed to approve";
+      setActionErrors((prev) => ({ ...prev, [applicationId]: message }));
+      setLastError(message);
     } finally {
       setApproving(null);
     }
   }
 
-  async function rejectApplication(applicationId: string) {
+  async function rejectApplication(applicationId: string, message?: string, subject?: string) {
     if (!confirm("Reject this partner application? This action cannot be undone.")) {
       return;
     }
 
     setApproving(applicationId);
+    setLastError(null);
     try {
       const response = await fetch("/api/admin/partner-applications/reject", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ applicationId }),
+        body: JSON.stringify({ applicationId, message, subject }),
       });
 
       if (!response.ok) {
@@ -102,11 +187,44 @@ export function PartnerApplicationsManager() {
         throw new Error(error.error || "Failed to reject application");
       }
 
-      alert("Partner application rejected.");
+      setActionErrors((prev) => ({ ...prev, [applicationId]: "" }));
       await fetchApplications();
     } catch (error) {
       console.error("Error rejecting application:", error);
-      alert(`Error: ${error instanceof Error ? error.message : "Failed to reject"}`);
+      const message = error instanceof Error ? error.message : "Failed to reject";
+      setActionErrors((prev) => ({ ...prev, [applicationId]: message }));
+      setLastError(message);
+    } finally {
+      setApproving(null);
+    }
+  }
+
+  async function requestMoreInfo(applicationId: string, message: string, subject: string) {
+    if (!confirm("Send a request for more info to this applicant?")) {
+      return;
+    }
+
+    setApproving(applicationId);
+    setLastError(null);
+    try {
+      const response = await fetch("/api/admin/partner-applications/request-info", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ applicationId, message, subject }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || "Failed to send request");
+      }
+
+      setActionErrors((prev) => ({ ...prev, [applicationId]: "" }));
+      await fetchApplications();
+    } catch (error) {
+      console.error("Error requesting more info:", error);
+      const errMessage = error instanceof Error ? error.message : "Failed to send request";
+      setActionErrors((prev) => ({ ...prev, [applicationId]: errMessage }));
+      setLastError(errMessage);
     } finally {
       setApproving(null);
     }
@@ -127,6 +245,18 @@ export function PartnerApplicationsManager() {
       </Card>
     );
   }
+
+  const formatRelativeTime = (dateString: string) => {
+    const timestamp = Date.parse(dateString);
+    if (Number.isNaN(timestamp)) return "Just now";
+    const minutes = Math.floor((Date.now() - timestamp) / 60000);
+    if (minutes < 1) return "Just now";
+    if (minutes < 60) return `${minutes}m ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    return `${days}d ago`;
+  };
 
   return (
     <div className="space-y-6">
@@ -168,6 +298,55 @@ export function PartnerApplicationsManager() {
           </div>
         </Card>
       </div>
+
+      {/* Incoming Applications Feed */}
+      <Card className="p-5 border border-blue-200/70 bg-blue-50/60">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+              Incoming Applications
+            </p>
+            <p className="text-sm text-blue-900">Live feed updates when new applications arrive.</p>
+          </div>
+          <span className="text-xs font-semibold text-blue-700">
+            {incomingFeed.length} recent
+          </span>
+        </div>
+        {incomingFeed.length === 0 ? (
+          <div className="rounded-lg border border-dashed border-blue-200 bg-white px-4 py-5 text-sm text-blue-700">
+            No new applications yet.
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {incomingFeed.map((app) => (
+              <div key={app.id} className="rounded-lg border border-blue-200/70 bg-white px-4 py-3">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">
+                      {app.name || "New applicant"}
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      {app.company || "Company pending"} · {app.email}
+                    </p>
+                  </div>
+                  <span className="text-xs font-semibold text-blue-700">
+                    {formatRelativeTime(app.created_at)}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </Card>
+
+      {lastError && (
+        <Card className="border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+          <div className="flex items-center gap-2">
+            <AlertCircle className="h-4 w-4" />
+            <span className="font-semibold">Last error:</span> {lastError}
+          </div>
+        </Card>
+      )}
 
       {/* Filter Tabs */}
       <Card className="p-4">
@@ -243,16 +422,70 @@ export function PartnerApplicationsManager() {
                       {approving === app.id ? "Approving..." : "Approve"}
                     </Button>
                     <Button
-                      onClick={() => rejectApplication(app.id)}
+                      onClick={() => {
+                        const templateId = replySelection[app.id];
+                        const template = replyTemplates.find((item) => item.id === templateId);
+                        void rejectApplication(app.id, template?.body, template?.subject);
+                      }}
                       disabled={approving === app.id}
                       variant="destructive"
                     >
                       <XCircle className="h-4 w-4 mr-2" />
                       Reject
                     </Button>
+                    <Button
+                      onClick={() => {
+                        const templateId = replySelection[app.id];
+                        const template = replyTemplates.find((item) => item.id === templateId);
+                        if (!template) {
+                          alert("Select a reply template before requesting more info.");
+                          return;
+                        }
+                        if (template.id.startsWith("reject")) {
+                          alert("Select a request template (not a reject template).");
+                          return;
+                        }
+                        void requestMoreInfo(app.id, template.body, template.subject);
+                      }}
+                      disabled={approving === app.id}
+                      variant="outline"
+                    >
+                      <AlertCircle className="h-4 w-4 mr-2" />
+                      Request Info
+                    </Button>
                   </div>
                 )}
               </div>
+              {actionErrors[app.id] && (
+                <div className="mb-4 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
+                  {actionErrors[app.id]}
+                </div>
+              )}
+
+              {app.status === "pending" && (
+                <div className="mb-4 flex flex-wrap items-center gap-3">
+                  <label className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                    Quick reply template
+                  </label>
+                  <select
+                    value={replySelection[app.id] ?? ""}
+                    onChange={(event) =>
+                      setReplySelection((prev) => ({
+                        ...prev,
+                        [app.id]: event.target.value,
+                      }))
+                    }
+                    className="min-w-[240px] rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700"
+                  >
+                    <option value="">Select a template...</option>
+                    {replyTemplates.map((template) => (
+                      <option key={template.id} value={template.id}>
+                        {template.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
               {/* Contact Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -295,6 +528,22 @@ export function PartnerApplicationsManager() {
                   {app.linkedin_handle && (
                     <span className="text-slate-600">
                       LinkedIn: <span className="font-medium">{app.linkedin_handle}</span>
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {(app.referralSource || app.referralUtmCampaign) && (
+                <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold">
+                  <span className="uppercase tracking-[0.12em] text-slate-500">Referral Source</span>
+                  {app.referralSource && (
+                    <span className="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-blue-700">
+                      {app.referralSource.replaceAll("_", " ")}
+                    </span>
+                  )}
+                  {app.referralUtmCampaign && (
+                    <span className="rounded-full border border-slate-200 bg-slate-100 px-2.5 py-1 text-slate-600">
+                      utm_campaign: {app.referralUtmCampaign}
                     </span>
                   )}
                 </div>

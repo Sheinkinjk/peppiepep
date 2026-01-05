@@ -113,6 +113,60 @@ export default async function MasterAdminDashboard() {
     const businessEvents = allReferralEvents?.filter((e: any) => e.business_id === business.id) || [];
     const linkClicks = businessEvents.filter((e: any) => e.event_type === "link_click").length;
     const pageViews = businessEvents.filter((e: any) => e.event_type === "page_view").length;
+    const submissionEvents = businessEvents.filter((e: any) => e.event_type === "signup_submitted");
+    const submissionSources = submissionEvents.reduce((acc: Record<string, number>, event: any) => {
+      const key = event.source || "unknown";
+      acc[key] = (acc[key] ?? 0) + 1;
+      return acc;
+    }, {});
+    const linkedInGrowthSubmissions =
+      (submissionSources["linkedin_growth_business"] ?? 0) +
+      (submissionSources["linkedin_growth_influencer"] ?? 0) +
+      (submissionSources["linkedin_influencer_business_form"] ?? 0) +
+      (submissionSources["linkedin_influencer_form"] ?? 0);
+    const partnerProgramSubmissions =
+      (submissionSources["partner_program"] ?? 0) +
+      (submissionSources["our-referral-program"] ?? 0);
+
+    const sourceAttributionMap: Record<string, {
+      source: string;
+      utmCampaign: string | null;
+      signups: number;
+      conversions: number;
+    }> = {};
+
+    businessEvents.forEach((event: any) => {
+      if (event.event_type !== "signup_submitted" && event.event_type !== "conversion_completed") {
+        return;
+      }
+      const source = event.source || "unknown";
+      const metadata = event.metadata || {};
+      const utmCampaign =
+        typeof metadata.utm_campaign === "string"
+          ? metadata.utm_campaign
+          : metadata.query && typeof metadata.query.utm_campaign === "string"
+            ? metadata.query.utm_campaign
+            : null;
+      const key = `${source}::${utmCampaign ?? "none"}`;
+      if (!sourceAttributionMap[key]) {
+        sourceAttributionMap[key] = {
+          source,
+          utmCampaign,
+          signups: 0,
+          conversions: 0,
+        };
+      }
+      if (event.event_type === "signup_submitted") {
+        sourceAttributionMap[key].signups += 1;
+      }
+      if (event.event_type === "conversion_completed") {
+        sourceAttributionMap[key].conversions += 1;
+      }
+    });
+
+    const sourceAttribution = Object.values(sourceAttributionMap)
+      .sort((a, b) => b.signups - a.signups)
+      .slice(0, 6);
 
     // Referrals and conversions
     const businessReferrals = allReferrals?.filter((r: any) => r.business_id === business.id) || [];
@@ -158,6 +212,9 @@ export default async function MasterAdminDashboard() {
         emailDeliveryRate: totalEmailsSent > 0 ? ((emailsDelivered / totalEmailsSent) * 100).toFixed(1) : "0.0",
         linkClicks,
         pageViews,
+        linkedInGrowthSubmissions,
+        partnerProgramSubmissions,
+        sourceAttribution,
         totalReferrals,
         convertedReferrals,
         conversionRate,
@@ -387,6 +444,14 @@ export default async function MasterAdminDashboard() {
                             <span className="font-bold text-gray-900">{metrics.pageViews}</span>
                           </div>
                           <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">LinkedIn Growth submissions</span>
+                            <span className="font-bold text-blue-600">{metrics.linkedInGrowthSubmissions}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Partner program submissions</span>
+                            <span className="font-bold text-emerald-600">{metrics.partnerProgramSubmissions}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
                             <span className="text-sm text-gray-600">Total Referrals</span>
                             <span className="font-bold text-purple-600">{metrics.totalReferrals}</span>
                           </div>
@@ -405,6 +470,38 @@ export default async function MasterAdminDashboard() {
                             </span>
                           </div>
                         </div>
+                      </div>
+
+                      {/* Referral Source Attribution */}
+                      <div className="bg-white rounded-lg p-5 shadow-sm border border-slate-200">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Activity className="h-5 w-5 text-blue-600" />
+                          <h4 className="text-md font-bold text-gray-900">Referral Source Attribution</h4>
+                        </div>
+                        {metrics.sourceAttribution.length === 0 ? (
+                          <p className="text-sm text-gray-500">No source attribution recorded yet.</p>
+                        ) : (
+                          <div className="space-y-3">
+                            {metrics.sourceAttribution.map((item, index) => (
+                              <div key={`${item.source}-${item.utmCampaign ?? "none"}-${index}`} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+                                <div className="flex flex-wrap items-center justify-between gap-2">
+                                  <div className="flex flex-col">
+                                    <span className="text-sm font-semibold text-slate-800">
+                                      {item.source.replaceAll("_", " ")}
+                                    </span>
+                                    <span className="text-xs text-slate-500">
+                                      utm_campaign: {item.utmCampaign ?? "none"}
+                                    </span>
+                                  </div>
+                                  <div className="flex items-center gap-4 text-xs font-semibold">
+                                    <span className="text-emerald-700">Signups {item.signups}</span>
+                                    <span className="text-indigo-700">Conversions {item.conversions}</span>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                       {/* Revenue & Commissions */}
