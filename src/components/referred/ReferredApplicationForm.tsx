@@ -180,34 +180,41 @@ export function ReferredApplicationForm({
             {/* Business Information Section */}
             <div className="space-y-4">
               <h4 className="font-semibold text-slate-700 flex items-center gap-2">
-                <Building2 className="h-4 w-4 text-teal-600" />
+                <Building2 className="h-4 w-4 text-teal-600" aria-hidden="true" />
                 Business Information
               </h4>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">
                   Business Name *
                 </label>
                 <input
                   type="text"
+                  id="businessName"
                   {...register("businessName")}
                   required
+                  aria-invalid={errors.businessName ? "true" : "false"}
+                  aria-describedby={errors.businessName ? "businessName-error" : undefined}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.businessName ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="Your Company Pty Ltd"
                 />
                 {errors.businessName && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="businessName-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.businessName.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="industry" className="block text-sm font-medium text-slate-700 mb-1">
                   Industry *
                 </label>
-                <select {...register("industry")}
+                <select
+                  id="industry"
+                  {...register("industry")}
+                  aria-invalid={errors.industry ? "true" : "false"}
+                  aria-describedby={errors.industry ? "industry-error" : undefined}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.industry ? 'border-red-500' : 'border-slate-300'}`}
                 >
                   <option value="">Select your industry</option>
@@ -223,28 +230,32 @@ export function ReferredApplicationForm({
                   <option value="other">Other</option>
                 </select>
                 {errors.industry && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="industry-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.industry.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-1">
                   Website
                 </label>
                 <div className="relative">
-                  <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                  <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" aria-hidden="true" />
                   <input
-                    type="url" {...register("website")}
+                    type="url"
+                    id="website"
+                    {...register("website")}
+                    aria-invalid={errors.website ? "true" : "false"}
+                    aria-describedby={errors.website ? "website-error" : undefined}
                     className={`w-full pl-11 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.website ? 'border-red-500' : 'border-slate-300'}`}
                     placeholder="https://yourwebsite.com"
                   />
                 </div>
                 {errors.website && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="website-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.website.message}
                   </p>
                 )}
@@ -252,10 +263,14 @@ export function ReferredApplicationForm({
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label htmlFor="monthlyRevenue" className="block text-sm font-medium text-slate-700 mb-1">
                     Monthly Revenue *
                   </label>
-                  <select {...register("monthlyRevenue")}
+                  <select
+                    id="monthlyRevenue"
+                    {...register("monthlyRevenue")}
+                    aria-invalid={errors.monthlyRevenue ? "true" : "false"}
+                    aria-describedby={errors.monthlyRevenue ? "monthlyRevenue-error" : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.monthlyRevenue ? 'border-red-500' : 'border-slate-300'}`}
                   >
                     <option value="">Select range</option>
@@ -266,18 +281,22 @@ export function ReferredApplicationForm({
                     <option value="500k+">$500k+</option>
                   </select>
                   {errors.monthlyRevenue && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <AlertCircle className="h-3 w-3" />
+                    <p id="monthlyRevenue-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <AlertCircle className="h-3 w-3" aria-hidden="true" />
                       {errors.monthlyRevenue.message}
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label htmlFor="teamSize" className="block text-sm font-medium text-slate-700 mb-1">
                     Team Size *
                   </label>
-                  <select {...register("teamSize")}
+                  <select
+                    id="teamSize"
+                    {...register("teamSize")}
+                    aria-invalid={errors.teamSize ? "true" : "false"}
+                    aria-describedby={errors.teamSize ? "teamSize-error" : undefined}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.teamSize ? 'border-red-500' : 'border-slate-300'}`}
                   >
                     <option value="">Select size</option>
@@ -288,8 +307,8 @@ export function ReferredApplicationForm({
                     <option value="201+">201+ people</option>
                   </select>
                   {errors.teamSize && (
-                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <AlertCircle className="h-3 w-3" />
+                    <p id="teamSize-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <AlertCircle className="h-3 w-3" aria-hidden="true" />
                       {errors.teamSize.message}
                     </p>
                   )}
@@ -300,79 +319,95 @@ export function ReferredApplicationForm({
             {/* Contact Information Section */}
             <div className="space-y-4 pt-6 border-t border-slate-200">
               <h4 className="font-semibold text-slate-700 flex items-center gap-2">
-                <User className="h-4 w-4 text-teal-600" />
+                <User className="h-4 w-4 text-teal-600" aria-hidden="true" />
                 Your Contact Information
               </h4>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 mb-1">
                   Full Name *
                 </label>
                 <input
-                  type="text" {...register("fullName")}
+                  type="text"
+                  id="fullName"
+                  {...register("fullName")}
+                  aria-invalid={errors.fullName ? "true" : "false"}
+                  aria-describedby={errors.fullName ? "fullName-error" : undefined}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.fullName ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="John Smith"
                 />
                 {errors.fullName && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="fullName-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.fullName.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
                   Email *
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" aria-hidden="true" />
                   <input
-                    type="email" {...register("email")}
+                    type="email"
+                    id="email"
+                    {...register("email")}
+                    aria-invalid={errors.email ? "true" : "false"}
+                    aria-describedby={errors.email ? "email-error" : undefined}
                     className={`w-full pl-11 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.email ? 'border-red-500' : 'border-slate-300'}`}
                     placeholder="john@company.com"
                   />
                 </div>
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="email-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.email.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">
                   Phone *
                 </label>
                 <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                  <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" aria-hidden="true" />
                   <input
-                    type="tel" {...register("phone")}
+                    type="tel"
+                    id="phone"
+                    {...register("phone")}
+                    aria-invalid={errors.phone ? "true" : "false"}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
                     className={`w-full pl-11 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-slate-300'}`}
                     placeholder="+61 400 000 000"
                   />
                 </div>
                 {errors.phone && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="phone-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.phone.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="role" className="block text-sm font-medium text-slate-700 mb-1">
                   Your Role *
                 </label>
                 <input
-                  type="text" {...register("role")}
+                  type="text"
+                  id="role"
+                  {...register("role")}
+                  aria-invalid={errors.role ? "true" : "false"}
+                  aria-describedby={errors.role ? "role-error" : undefined}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.role ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="Founder / Marketing Manager / CEO"
                 />
                 {errors.role && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="role-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.role.message}
                   </p>
                 )}
@@ -382,34 +417,42 @@ export function ReferredApplicationForm({
             {/* Goals Section */}
             <div className="space-y-4 pt-6 border-t border-slate-200">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="goals" className="block text-sm font-medium text-slate-700 mb-1">
                   What are your main goals? *
                 </label>
-                <textarea {...register("goals")}
+                <textarea
+                  id="goals"
+                  {...register("goals")}
                   rows={4}
+                  aria-invalid={errors.goals ? "true" : "false"}
+                  aria-describedby={errors.goals ? "goals-error" : undefined}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none ${errors.goals ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="e.g., Increase customer acquisition, reduce CAC, build a referral program..."
                 />
                 {errors.goals && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="goals-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.goals.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="referralSource" className="block text-sm font-medium text-slate-700 mb-1">
                   How did you hear about us?
                 </label>
                 <input
-                  type="text" {...register("referralSource")}
+                  type="text"
+                  id="referralSource"
+                  {...register("referralSource")}
+                  aria-invalid={errors.referralSource ? "true" : "false"}
+                  aria-describedby={errors.referralSource ? "referralSource-error" : undefined}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.referralSource ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="Referral from partner, social media, search..."
                 />
                 {errors.referralSource && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                    <AlertCircle className="h-3 w-3" />
+                  <p id="referralSource-error" role="alert" aria-live="polite" className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" aria-hidden="true" />
                     {errors.referralSource.message}
                   </p>
                 )}
@@ -417,7 +460,7 @@ export function ReferredApplicationForm({
             </div>
 
             {error && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+              <div role="alert" aria-live="polite" className="p-4 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-sm text-red-600">{error}</p>
               </div>
             )}
