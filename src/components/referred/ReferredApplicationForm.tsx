@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -14,9 +16,11 @@ import {
   Calendar,
   ArrowRight,
   CheckCircle2,
-  Loader2
+  Loader2,
+  AlertCircle
 } from "lucide-react";
 import { logger } from "@/lib/logger";
+import { referredApplicationSchema, type ReferredApplicationFormData } from "@/lib/validation/referred-form";
 
 interface ReferredApplicationFormProps {
   ambassadorId: string;
@@ -29,39 +33,26 @@ export function ReferredApplicationForm({
   businessId,
   referralCode,
 }: ReferredApplicationFormProps) {
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      // Business Information
-      businessName: formData.get("businessName"),
-      industry: formData.get("industry"),
-      website: formData.get("website"),
-      monthlyRevenue: formData.get("monthlyRevenue"),
-      teamSize: formData.get("teamSize"),
-
-      // Contact Information
-      fullName: formData.get("fullName"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      role: formData.get("role"),
-
-      // Additional Context
-      referralSource: formData.get("referralSource"),
-      goals: formData.get("goals"),
-
-      // Attribution
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ReferredApplicationFormData>({
+    resolver: zodResolver(referredApplicationSchema),
+    defaultValues: {
       ambassadorId,
       businessId,
       referralCode,
-    };
+      website: "",
+      referralSource: "",
+    },
+  });
+
+  async function onSubmit(data: ReferredApplicationFormData) {
+    setError(null);
 
     try {
       const response = await fetch("/api/referred/submit-application", {
@@ -104,8 +95,6 @@ export function ReferredApplicationForm({
       logger.error("Error submitting application:", err);
       const errorMessage = err instanceof Error ? err.message : "Failed to submit application";
       setError(`${errorMessage}. Please try again or book a call instead.`);
-    } finally {
-      setLoading(false);
     }
   }
 
@@ -187,7 +176,7 @@ export function ReferredApplicationForm({
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Business Information Section */}
             <div className="space-y-4">
               <h4 className="font-semibold text-slate-700 flex items-center gap-2">
@@ -201,21 +190,25 @@ export function ReferredApplicationForm({
                 </label>
                 <input
                   type="text"
-                  name="businessName"
+                  {...register("businessName")}
                   required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.businessName ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="Your Company Pty Ltd"
                 />
+                {errors.businessName && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.businessName.message}
+                  </p>
+                )}
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
                   Industry *
                 </label>
-                <select
-                  name="industry"
-                  required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                <select {...register("industry")}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.industry ? 'border-red-500' : 'border-slate-300'}`}
                 >
                   <option value="">Select your industry</option>
                   <option value="saas">SaaS / Software</option>
@@ -229,6 +222,12 @@ export function ReferredApplicationForm({
                   <option value="hospitality">Hospitality</option>
                   <option value="other">Other</option>
                 </select>
+                {errors.industry && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.industry.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -238,12 +237,17 @@ export function ReferredApplicationForm({
                 <div className="relative">
                   <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
                   <input
-                    type="url"
-                    name="website"
-                    className="w-full pl-11 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    type="url" {...register("website")}
+                    className={`w-full pl-11 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.website ? 'border-red-500' : 'border-slate-300'}`}
                     placeholder="https://yourwebsite.com"
                   />
                 </div>
+                {errors.website && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.website.message}
+                  </p>
+                )}
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
@@ -251,10 +255,8 @@ export function ReferredApplicationForm({
                   <label className="block text-sm font-medium text-slate-700 mb-1">
                     Monthly Revenue *
                   </label>
-                  <select
-                    name="monthlyRevenue"
-                    required
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  <select {...register("monthlyRevenue")}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.monthlyRevenue ? 'border-red-500' : 'border-slate-300'}`}
                   >
                     <option value="">Select range</option>
                     <option value="0-10k">$0 - $10k</option>
@@ -263,16 +265,20 @@ export function ReferredApplicationForm({
                     <option value="100k-500k">$100k - $500k</option>
                     <option value="500k+">$500k+</option>
                   </select>
+                  {errors.monthlyRevenue && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <AlertCircle className="h-3 w-3" />
+                      {errors.monthlyRevenue.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">
                     Team Size *
                   </label>
-                  <select
-                    name="teamSize"
-                    required
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  <select {...register("teamSize")}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.teamSize ? 'border-red-500' : 'border-slate-300'}`}
                   >
                     <option value="">Select size</option>
                     <option value="1-5">1-5 people</option>
@@ -281,6 +287,12 @@ export function ReferredApplicationForm({
                     <option value="51-200">51-200 people</option>
                     <option value="201+">201+ people</option>
                   </select>
+                  {errors.teamSize && (
+                    <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                      <AlertCircle className="h-3 w-3" />
+                      {errors.teamSize.message}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -297,12 +309,16 @@ export function ReferredApplicationForm({
                   Full Name *
                 </label>
                 <input
-                  type="text"
-                  name="fullName"
-                  required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  type="text" {...register("fullName")}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.fullName ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="John Smith"
                 />
+                {errors.fullName && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.fullName.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -312,13 +328,17 @@ export function ReferredApplicationForm({
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
                   <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full pl-11 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    type="email" {...register("email")}
+                    className={`w-full pl-11 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.email ? 'border-red-500' : 'border-slate-300'}`}
                     placeholder="john@company.com"
                   />
                 </div>
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -328,13 +348,17 @@ export function ReferredApplicationForm({
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
                   <input
-                    type="tel"
-                    name="phone"
-                    required
-                    className="w-full pl-11 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    type="tel" {...register("phone")}
+                    className={`w-full pl-11 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.phone ? 'border-red-500' : 'border-slate-300'}`}
                     placeholder="+61 400 000 000"
                   />
                 </div>
+                {errors.phone && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.phone.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -342,12 +366,16 @@ export function ReferredApplicationForm({
                   Your Role *
                 </label>
                 <input
-                  type="text"
-                  name="role"
-                  required
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  type="text" {...register("role")}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.role ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="Founder / Marketing Manager / CEO"
                 />
+                {errors.role && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.role.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -357,13 +385,17 @@ export function ReferredApplicationForm({
                 <label className="block text-sm font-medium text-slate-700 mb-1">
                   What are your main goals? *
                 </label>
-                <textarea
-                  name="goals"
-                  required
+                <textarea {...register("goals")}
                   rows={4}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none ${errors.goals ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="e.g., Increase customer acquisition, reduce CAC, build a referral program..."
                 />
+                {errors.goals && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.goals.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -371,11 +403,16 @@ export function ReferredApplicationForm({
                   How did you hear about us?
                 </label>
                 <input
-                  type="text"
-                  name="referralSource"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  type="text" {...register("referralSource")}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent ${errors.referralSource ? 'border-red-500' : 'border-slate-300'}`}
                   placeholder="Referral from partner, social media, search..."
                 />
+                {errors.referralSource && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="h-3 w-3" />
+                    {errors.referralSource.message}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -387,10 +424,10 @@ export function ReferredApplicationForm({
 
             <Button
               type="submit"
-              disabled={loading}
+              disabled={isSubmitting}
               className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-bold py-6 text-lg shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
-              {loading ? (
+              {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                   Submitting...
