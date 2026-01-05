@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { TrackedCTA } from "@/components/TrackedCTA";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { logger } from "@/lib/logger";
 
 const referralPillars = [
   {
@@ -306,7 +307,7 @@ export default async function Home() {
         };
       }
     } catch (err) {
-      console.error("Failed to parse attribution cookie:", err);
+      logger.error("Failed to parse attribution cookie:", err);
     }
   }
 

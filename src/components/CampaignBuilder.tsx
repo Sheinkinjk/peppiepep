@@ -22,6 +22,7 @@ import { CampaignTemplateSelector } from "@/components/CampaignTemplateSelector"
 import { type CampaignTemplate } from "@/lib/campaign-templates";
 import { toast } from "@/hooks/use-toast";
 import { fetchAllPages } from "@/lib/customers-api-client";
+import { logger } from "@/lib/logger";
 
 type Customer = Database["public"]["Tables"]["customers"]["Row"];
 
@@ -442,7 +443,7 @@ export function CampaignBuilder({
       setScheduleType("now");
       setScheduleDate("");
     } catch (error) {
-      console.error("Campaign send error:", error);
+      logger.error("Campaign send error:", error);
       notifyCampaignStatus(
         "error",
         error instanceof Error
@@ -534,7 +535,7 @@ export function CampaignBuilder({
         });
       }
     } catch (error) {
-      console.error("Logo upload error:", error);
+      logger.error("Logo upload error:", error);
       setStatusMessage({
         type: "error",
         text: "Failed to upload logo. Please try again.",

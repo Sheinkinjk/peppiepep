@@ -25,6 +25,7 @@ import { nanoid } from "nanoid";
 import QRCodeGenerator from "@/components/QRCodeGenerator";
 import type { Database } from "@/types/supabase";
 import { fetchAllPages } from "@/lib/customers-api-client";
+import { logger } from "@/lib/logger";
 
 const placeholderLink = "Add an ambassador to generate referral links";
 
@@ -202,7 +203,7 @@ export function ShareReferralCard({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
-      console.error("Failed to copy referral link", error);
+      logger.error("Failed to copy referral link", error);
     }
   };
 
@@ -217,7 +218,7 @@ export function ShareReferralCard({
         url: referralLink,
       });
     } catch (error) {
-      console.error("Native share cancelled", error);
+      logger.error("Native share cancelled", error);
     }
   };
 
@@ -324,7 +325,7 @@ export function ShareReferralCard({
       await navigator.clipboard.writeText(discountCode);
       setCopiedDiscount(true);
     } catch (error) {
-      console.error("Failed to copy discount code", error);
+      logger.error("Failed to copy discount code", error);
     }
   };
 
@@ -335,7 +336,7 @@ export function ShareReferralCard({
       setCopiedSnippet(key);
       setTimeout(() => setCopiedSnippet(null), 2000);
     } catch (error) {
-      console.error("Failed to copy snippet", error);
+      logger.error("Failed to copy snippet", error);
     }
   };
 
@@ -346,7 +347,7 @@ export function ShareReferralCard({
       setCopiedTemplate(key);
       setTimeout(() => setCopiedTemplate(null), 2000);
     } catch (error) {
-      console.error("Failed to copy template", error);
+      logger.error("Failed to copy template", error);
     }
   };
 
@@ -399,7 +400,7 @@ const downloadMediaKit = async () => {
       setMediaKitStatus("Media kit downloaded.");
       setMediaKitStatusTone("info");
     } catch (error) {
-      console.error("Media kit download error:", error);
+      logger.error("Media kit download error:", error);
       setMediaKitStatus(
         error instanceof Error ? error.message : "Unable to download media kit.",
       );

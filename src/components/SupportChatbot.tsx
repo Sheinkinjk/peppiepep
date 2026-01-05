@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Bot, Loader2, MessageCircle, Send, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { logger } from "@/lib/logger";
 
 type ChatRole = "assistant" | "user";
 
@@ -96,7 +97,7 @@ export function SupportChatbot() {
       };
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (apiError) {
-      console.error("Failed to send chat message:", apiError);
+      logger.error("Failed to send chat message:", apiError);
       setError("We couldn't reach the AI concierge. Please try again in a few seconds.");
     } finally {
       setIsSending(false);
@@ -157,7 +158,7 @@ export function SupportChatbot() {
       };
       setMessages((prev) => [...prev, welcomeMessage]);
     } catch (leadError) {
-      console.error("Failed to submit lead info:", leadError);
+      logger.error("Failed to submit lead info:", leadError);
       // Even if notification fails, let them continue chatting
       setHasProvidedInfo(true);
       setError(null);

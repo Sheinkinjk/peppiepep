@@ -10,6 +10,7 @@ import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 import { Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Database } from "@/types/supabase";
+import { logger } from "@/lib/logger";
 
 type PasswordStrengthState = {
   score: number;
@@ -165,7 +166,7 @@ function LoginContent() {
               body: JSON.stringify({ email }),
             });
           } catch (sendError) {
-            console.error("Failed to send confirmation via Resend:", sendError);
+            logger.error("Failed to send confirmation via Resend:", sendError);
           }
 
           setConfirmationSent(true);

@@ -70,6 +70,7 @@ import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { maybeSendGoLiveOwnerEmail } from "@/lib/business-notifications";
+import { logger } from "@/lib/logger";
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -154,7 +155,7 @@ async function getBusiness(): Promise<BusinessCoreFields> {
   } else if (error?.code === "PGRST116") {
     const { data: fallbackRows, error: fallbackError } = await buildOwnerQuery().limit(1);
     if (!fallbackError && fallbackRows && fallbackRows.length > 0) {
-      console.warn(
+      logger.warn(
         "Multiple business records detected for owner. Using the most recently created business.",
       );
       const fallback = fallbackRows[0] as BusinessRow;
@@ -163,10 +164,10 @@ async function getBusiness(): Promise<BusinessCoreFields> {
         onboarding_metadata: parseBusinessMetadata(fallback.onboarding_metadata ?? null),
       } as BusinessCoreFields;
     } else if (fallbackError) {
-      console.error("Error fetching business:", fallbackError);
+      logger.error("Error fetching business:", fallbackError);
     }
   } else if (error) {
-    console.error("Error fetching business:", error);
+    logger.error("Error fetching business:", error);
   }
 
   if (!baseBusiness) {
@@ -225,14 +226,14 @@ async function getBusiness(): Promise<BusinessCoreFields> {
             logo_url: legacyLogo.logo_url ?? null,
           };
         } else if (legacyError && legacyError.code !== "42703") {
-          console.warn("Optional business fields not available:", legacyError);
+          logger.warn("Optional business fields not available:", legacyError);
         }
       } else {
-        console.warn("Optional business fields not available:", extrasError);
+        logger.warn("Optional business fields not available:", extrasError);
       }
     }
   } catch (extrasUnexpectedError) {
-    console.warn("Failed to load optional business fields:", extrasUnexpectedError);
+    logger.warn("Failed to load optional business fields:", extrasUnexpectedError);
   }
 
   if (!businessWithExtras.discount_capture_secret) {
@@ -250,7 +251,7 @@ async function getBusiness(): Promise<BusinessCoreFields> {
         discount_capture_secret: updated?.discount_capture_secret ?? generatedSecret,
       };
     } else if (updateError.code !== "42703") {
-      console.warn("Failed to backfill discount capture secret:", updateError);
+      logger.warn("Failed to backfill discount capture secret:", updateError);
     }
   }
 
@@ -397,12 +398,12 @@ export default async function Dashboard({
     }
 
     if (lastError && lastError.code === "42703") {
-      console.warn(
+      logger.warn(
         "Business settings saved without optional branding columns due to missing schema:",
         lastError,
       );
     } else if (lastError) {
-      console.error("Failed to update business settings:", lastError);
+      logger.error("Failed to update business settings:", lastError);
       return { error: "Failed to save settings. Please try again." };
     }
 
@@ -478,7 +479,7 @@ export default async function Dashboard({
       .eq("id", business.id);
 
     if (error) {
-      console.error("Failed to save onboarding metadata:", error);
+      logger.error("Failed to save onboarding metadata:", error);
       return { error: "Failed to save onboarding information. Please try again." };
     }
 
@@ -501,13 +502,13 @@ export default async function Dashboard({
         timestamp: new Date().toISOString(),
       }),
     }).catch((err) => {
-      console.error("Failed to send onboarding snapshot notification:", err);
+      logger.error("Failed to send onboarding snapshot notification:", err);
       // Don't fail the request if notification fails
     });
 
     revalidatePath("/dashboard");
     await maybeSendGoLiveOwnerEmail({ supabase: supabase as unknown as SupabaseClient<Database>, businessId: business.id }).catch(
-      (err) => console.error("Failed to send go-live email (non-fatal):", err),
+      (err) => logger.error("Failed to send go-live email (non-fatal):", err),
     );
     return { success: "Onboarding information saved successfully" };
   }
@@ -581,7 +582,7 @@ export default async function Dashboard({
         .single();
 
       if (referralError || !updatedReferral) {
-        console.error("Failed to update referral:", referralError);
+        logger.error("Failed to update referral:", referralError);
         return { error: "Referral has already been processed or was not found." };
       }
 
@@ -596,7 +597,7 @@ export default async function Dashboard({
           .single();
 
         if (ambassadorError) {
-          console.error("Failed to fetch ambassador:", ambassadorError);
+          logger.error("Failed to fetch ambassador:", ambassadorError);
           return { error: "Failed to fetch ambassador details." };
         }
 
@@ -620,7 +621,7 @@ export default async function Dashboard({
           .eq("business_id", business.id);
 
         if (creditError) {
-          console.error("Failed to update credits:", creditError);
+          logger.error("Failed to update credits:", creditError);
           return { error: "Failed to update ambassador credits." };
         }
 
@@ -645,7 +646,7 @@ export default async function Dashboard({
           .single();
 
         if (ambassadorError) {
-          console.error("Failed to fetch ambassador:", ambassadorError);
+          logger.error("Failed to fetch ambassador:", ambassadorError);
         }
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -672,7 +673,7 @@ export default async function Dashboard({
             to: ambassadorPhone,
           });
         } catch (smsError) {
-          console.error("Failed to send SMS notification:", smsError);
+          logger.error("Failed to send SMS notification:", smsError);
           // Don't return error - referral was completed successfully
           // SMS notification is a bonus feature
         }
@@ -691,7 +692,7 @@ export default async function Dashboard({
           .single();
 
         if (ambassadorProfileError) {
-          console.error("Failed to load ambassador email:", ambassadorProfileError);
+          logger.error("Failed to load ambassador email:", ambassadorProfileError);
         } else {
           ambassadorEmail = ambassadorProfile?.email ?? null;
           ambassadorName = ambassadorProfile?.name ?? null;
@@ -728,10 +729,10 @@ export default async function Dashboard({
           });
 
           if (response.error) {
-            console.error("Failed to send ambassador email:", response.error);
+            logger.error("Failed to send ambassador email:", response.error);
           }
         } catch (emailError) {
-          console.error("Resend notification failed:", emailError);
+          logger.error("Resend notification failed:", emailError);
         }
       }
 
@@ -754,7 +755,7 @@ export default async function Dashboard({
       revalidatePath("/dashboard");
       return { success: `Referral completed! ${amount > 0 ? `$${amount} credited to ambassador.` : ''}` };
     } catch (error) {
-      console.error("Mark referral completed error:", error);
+      logger.error("Mark referral completed error:", error);
       return { error: "An unexpected error occurred. Please try again." };
     }
   }
@@ -782,7 +783,7 @@ export default async function Dashboard({
       revalidatePath("/dashboard");
       return { success: result.message };
     } catch (error) {
-      console.error("Quick add error:", error);
+      logger.error("Quick add error:", error);
       return { error: "An unexpected error occurred. Please try again." };
     }
   }
@@ -810,7 +811,7 @@ export default async function Dashboard({
         .single();
 
       if (fetchError || !customerRecord) {
-        console.error("Failed to load customer credits:", fetchError);
+        logger.error("Failed to load customer credits:", fetchError);
         return { error: "Unable to locate that customer." };
       }
 
@@ -832,14 +833,14 @@ export default async function Dashboard({
         .eq("id", customerId);
 
       if (updateError) {
-        console.error("Failed to update customer credits:", updateError);
+        logger.error("Failed to update customer credits:", updateError);
         return { error: "Unable to update credits. Please try again." };
       }
 
       revalidatePath("/dashboard");
       return { success: "Credits updated" };
     } catch (error) {
-      console.error("Adjust credits error:", error);
+      logger.error("Adjust credits error:", error);
       return { error: "Unexpected error while updating credits." };
     }
   }
@@ -869,7 +870,7 @@ export default async function Dashboard({
         });
 
       if (uploadError || !uploadResult) {
-        console.error("Logo upload error:", uploadError);
+        logger.error("Logo upload error:", uploadError);
         return {
           error:
             "Unable to upload logo. Please check your storage configuration or try again.",
@@ -888,7 +889,7 @@ export default async function Dashboard({
         .eq("id", business.id);
 
       if (updateError) {
-        console.error("Failed to store logo URL on business:", updateError);
+        logger.error("Failed to store logo URL on business:", updateError);
         return {
           error:
             "Logo uploaded but could not be saved to your profile. Please try again.",
@@ -898,7 +899,7 @@ export default async function Dashboard({
       revalidatePath("/dashboard");
       return { success: "Logo uploaded", url: publicUrl as string };
     } catch (error) {
-      console.error("Unexpected logo upload error:", error);
+      logger.error("Unexpected logo upload error:", error);
       return { error: "Unexpected error while uploading logo." };
     }
   }
@@ -1023,7 +1024,7 @@ export default async function Dashboard({
         .single();
 
       if (insertError) {
-        console.error("Failed to insert manual referral:", insertError);
+        logger.error("Failed to insert manual referral:", insertError);
         return { error: "Failed to add referral. Please try again." };
       }
 
@@ -1057,7 +1058,7 @@ export default async function Dashboard({
         success: "Manual referral recorded and ambassador credits updated.",
       };
     } catch (error) {
-      console.error("Manual referral add error:", error);
+      logger.error("Manual referral add error:", error);
       return { error: "Unexpected error while adding referral." };
     }
   }
@@ -1200,7 +1201,7 @@ export default async function Dashboard({
       0,
     );
   } catch (campaignFetchError) {
-    console.warn("Campaign data unavailable:", campaignFetchError);
+    logger.warn("Campaign data unavailable:", campaignFetchError);
   }
 
   const totalEstimatedCampaignSpend = campaignsData.reduce(

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { stripe } from "@/lib/stripe";
+import { logger } from "@/lib/logger";
 
 interface PageProps {
   searchParams: Promise<{
@@ -29,15 +30,15 @@ export default async function PaymentCancelPage({ searchParams }: PageProps) {
       amount = session.amount_total || 0;
       currency = session.currency || "usd";
 
-      // Log the cancellation for analytics
-      console.log("Payment cancelled:", {
-        sessionId,
+      // Log the cancellation for analytics (without sensitive customer data)
+      logger.info("Payment cancelled", {
+        sessionId: sessionId.substring(0, 20) + "...", // Truncated for privacy
         status: verifiedStatus,
-        email: customerEmail,
         amount,
+        currency,
       });
     } catch (stripeError) {
-      console.error("Error verifying cancelled session:", stripeError);
+      logger.error("Error verifying cancelled session:", stripeError);
       // If we can't verify, treat as invalid session
       verifiedStatus = "error";
     }

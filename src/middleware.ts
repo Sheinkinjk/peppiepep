@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { logger } from '@/lib/logger'
 
 export async function middleware(request: NextRequest) {
   // Create a response that we'll update with cookies
@@ -43,17 +44,18 @@ export async function middleware(request: NextRequest) {
     error: authError
   } = await supabase.auth.getUser()
 
-  // Debug logging for authentication issues
-  if (authError) {
-    console.error('[Middleware] Auth error:', authError)
-  }
-  if (request.nextUrl.pathname.startsWith('/dashboard')) {
-    console.log('[Middleware] Dashboard access attempt:', {
-      path: request.nextUrl.pathname,
-      hasUser: !!user,
-      userId: user?.id,
-      cookies: request.cookies.getAll().map(c => c.name)
-    })
+  // Debug logging for authentication issues (development only)
+  if (process.env.NODE_ENV === 'development') {
+    if (authError) {
+      logger.error('[Middleware] Auth error:', authError)
+    }
+    if (request.nextUrl.pathname.startsWith('/dashboard')) {
+      logger.info('[Middleware] Dashboard access attempt:', {
+        path: request.nextUrl.pathname,
+        hasUser: !!user,
+        userId: user?.id ? user.id.substring(0, 8) + '...' : undefined, // Truncated for privacy
+      })
+    }
   }
 
   // Protect dashboard routes - redirect to login if not authenticated

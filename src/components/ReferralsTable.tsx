@@ -15,6 +15,7 @@ import { Skeleton } from "@/components/Skeleton";
 import { BulkActionDialog } from "@/components/BulkActionDialog";
 import { toast } from "@/hooks/use-toast";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
+import { logger } from "@/lib/logger";
 
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
 
@@ -177,7 +178,7 @@ export function ReferralsTable({
         }
       } catch (err) {
         if ((err as Error).name === "AbortError") return;
-        console.error("Referrals fetch error:", err);
+        logger.error("Referrals fetch error:", err);
         setError(err instanceof Error ? err.message : "Failed to load referrals.");
       } finally {
         if (!controller.signal.aborted) {
@@ -318,7 +319,7 @@ export function ReferralsTable({
         }
       } catch (error) {
         errorCount++;
-        console.error(`Failed to complete referral ${referral.id}:`, error);
+        logger.error(`Failed to complete referral ${referral.id}:`, error);
       }
     }
 

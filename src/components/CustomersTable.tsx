@@ -23,6 +23,7 @@ import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
 import { BulkActionDialog } from "@/components/BulkActionDialog";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
+import { logger } from "@/lib/logger";
 
 type Customer = {
   id: string;
@@ -185,7 +186,7 @@ export function CustomersTable({
         if ((err as Error).name === "AbortError") {
           return;
         }
-        console.error("Customers fetch error:", err);
+        logger.error("Customers fetch error:", err);
         setError(err instanceof Error ? err.message : "Failed to load customers.");
       } finally {
         if (!controller.signal.aborted) {
@@ -251,7 +252,7 @@ export function CustomersTable({
       setCopiedKey(key);
       setTimeout(() => setCopiedKey(null), 2000);
     } catch (err) {
-      console.error("Failed to copy:", err);
+      logger.error("Failed to copy:", err);
     }
   };
 
@@ -280,7 +281,7 @@ export function CustomersTable({
         refreshCurrentPage();
       }
     } catch (error) {
-      console.error("Adjust credits error:", error);
+      logger.error("Adjust credits error:", error);
       toast({
         variant: "destructive",
         title: "Failed to update credits",
@@ -372,7 +373,7 @@ export function CustomersTable({
         }
       } catch (error) {
         errorCount++;
-        console.error(`Failed to delete ambassador ${code}:`, error);
+        logger.error(`Failed to delete ambassador ${code}:`, error);
       }
     }
 
@@ -445,7 +446,7 @@ export function CustomersTable({
 
       clearSelection();
     } catch (error) {
-      console.error("Error updating status:", error);
+      logger.error("Error updating status:", error);
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to update status",
