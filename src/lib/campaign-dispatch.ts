@@ -1,5 +1,4 @@
 import { Resend } from "resend";
-import twilio from "twilio";
 
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent } from "@/lib/referral-events";
@@ -321,6 +320,8 @@ async function sendSmsMessage(
   }
 
   try {
+    // Dynamic import to reduce bundle size (Twilio is 13MB)
+    const { default: twilio } = await import("twilio");
     const client = twilio(sid, token);
     const response = await client.messages.create({
       body: record.message_body ?? "",

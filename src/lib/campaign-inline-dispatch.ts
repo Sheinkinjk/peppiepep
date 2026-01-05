@@ -1,4 +1,3 @@
-import twilio from "twilio";
 import { Resend } from "resend";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
@@ -47,8 +46,6 @@ export async function dispatchCampaignMessagesInline({
   const twilioSid = process.env.TWILIO_ACCOUNT_SID;
   const twilioToken = process.env.TWILIO_AUTH_TOKEN;
   const twilioFrom = process.env.TWILIO_PHONE_NUMBER;
-  const twilioClient =
-    twilioSid && twilioToken && twilioFrom ? twilio(twilioSid, twilioToken) : null;
 
   const campaignSnapshot = campaign as CampaignSnapshot;
   const snapshot = {
@@ -202,7 +199,7 @@ export async function dispatchCampaignMessagesInline({
     }
 
     if (record.channel === "sms") {
-      if (!twilioClient || !twilioFrom) {
+      if (!twilioSid || !twilioToken || !twilioFrom) {
         failures.push("Twilio is not configured");
         failed += 1;
         await supabaseClient
@@ -216,6 +213,9 @@ export async function dispatchCampaignMessagesInline({
       }
 
       try {
+        // Dynamic import to reduce bundle size (Twilio is 13MB)
+        const { default: twilio } = await import("twilio");
+        const twilioClient = twilio(twilioSid, twilioToken);
         const response = await twilioClient.messages.create({
           body: record.message_body ?? "",
           from: twilioFrom,
