@@ -4,6 +4,7 @@ import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent } from "@/lib/referral-events";
 import { buildCampaignEmail } from "@/lib/campaign-email";
 import { sendCampaignDeliveredSummaryOwnerEmail } from "@/lib/business-notifications";
+import { logger } from "@/lib/logger";
 
 const DEFAULT_BATCH_SIZE = 25;
 const SITE_URL =
@@ -128,7 +129,7 @@ export async function runCampaignDispatchBatch(
 
     const { data: queue, error: queueError } = await query;
     if (queueError) {
-      console.error("Failed to load campaign queue:", queueError);
+      logger.error("Failed to load campaign queue:", queueError);
       return { processed: 0, sent: 0, failed: 0, error: "Failed to load queued messages." };
     }
 
@@ -219,7 +220,7 @@ export async function runCampaignDispatchBatch(
       failed: failed + overAttemptQueue.length,
     };
   } catch (error) {
-    console.error("Campaign dispatch error:", error);
+    logger.error("Campaign dispatch error:", error);
     return { processed: 0, sent: 0, failed: 0, error: `${error}` };
   }
 }
@@ -348,7 +349,7 @@ async function sendSmsMessage(
     });
     return "sent";
   } catch (error) {
-    console.error("Twilio send error:", error);
+    logger.error("Twilio send error:", error);
     await markMessageAs(supabase, record.id, "failed", `${error}`);
     await incrementCampaignCounts(supabase, record.campaign_id, 0, 1);
     await logReferralEvent({
@@ -514,7 +515,7 @@ async function sendEmailMessage(
     });
     return "sent";
   } catch (error) {
-    console.error("Resend send error:", error);
+    logger.error("Resend send error:", error);
     await markMessageAs(supabase, record.id, "failed", `${error}`);
     await incrementCampaignCounts(supabase, record.campaign_id, 0, 1);
     await logReferralEvent({
@@ -614,7 +615,7 @@ async function finalizeCampaigns(
         });
       }
     } catch (error) {
-      console.warn("Failed to send campaign summary email (non-fatal):", error);
+      logger.warn("Failed to send campaign summary email (non-fatal):", error);
     }
   }
 }

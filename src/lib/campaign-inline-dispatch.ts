@@ -7,6 +7,7 @@ import type { CampaignMessagePayload } from "@/lib/campaigns";
 import type { Database } from "@/types/supabase";
 import { createServiceClient } from "@/lib/supabase";
 import { sendCampaignDeliveredSummaryOwnerEmail } from "@/lib/business-notifications";
+import { logger } from "@/lib/logger";
 
 type CampaignMessageRecord = CampaignMessagePayload & { id: string };
 
@@ -317,7 +318,7 @@ export async function dispatchCampaignMessagesInline({
         });
       }
     } catch (error) {
-      console.warn("Failed to send campaign summary email (non-fatal):", error);
+      logger.warn("Failed to send campaign summary email (non-fatal):", error);
     }
   }
 
