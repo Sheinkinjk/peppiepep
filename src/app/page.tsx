@@ -7,6 +7,7 @@ import { cookies } from "next/headers";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { TrackedCTA } from "@/components/TrackedCTA";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const referralPillars = [
   {
@@ -272,7 +273,7 @@ const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?
 
     {/* Text on right - 2 lines */}
     <div className="flex-1 min-w-0 flex flex-col justify-center">
-      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white/90 mb-0.5 leading-tight">
+      <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.16em] text-white/90 mb-0.5 leading-tight">
         {badge.title}
       </p>
       <p className="text-xs sm:text-sm font-semibold leading-tight text-white line-clamp-2">
@@ -364,71 +365,70 @@ export default async function Home() {
         </div>
 
         {/* How It Works Section - Premium Redesign */}
-        <section className="space-y-12 sm:space-y-16 relative">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/80 px-6 py-10 shadow-xl sm:px-10 sm:py-12">
-            <div className="pointer-events-none absolute inset-x-16 -top-24 h-64 bg-gradient-to-br from-indigo-500/15 via-sky-500/10 to-emerald-400/10 blur-3xl" />
-            <div className="relative z-10 space-y-10">
-              <div className="text-left sm:text-center">
-                <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] sm:whitespace-nowrap">
-                  Why A Referral Program Is Your Best Resource For Growth Hacking
-                </h2>
-                <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-0 sm:mx-auto text-balance">
-                  <span className="block">
-                    Your next best customers are already in your existing customers&rsquo; network.
-                  </span>
-                  <span className="block">
-                    Refer Labs helps you turn that network into a structured, trackable growth engine that feels natural for them and powerful for you.
-                  </span>
-                </p>
-              </div>
+        <RevealOnScroll>
+          <section className="space-y-12 sm:space-y-16 relative border-t border-slate-200/70 pt-12 sm:pt-16">
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white px-6 py-10 shadow-xl sm:px-10 sm:py-12">
+              <div className="relative z-10 space-y-10">
+                <div className="text-left sm:text-center">
+                  <h2 className="text-[1.85rem] font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] max-w-5xl sm:mx-auto text-balance">
+                    <span className="block sm:whitespace-nowrap">Why A Referral Program Is Your Best Resource</span>
+                    <span className="block sm:whitespace-nowrap">For Growth Hacking</span>
+                  </h2>
+                  <p className="mt-4 text-[1.02rem] sm:text-lg text-slate-600 max-w-4xl mx-0 sm:mx-auto text-balance">
+                    <span className="block sm:whitespace-nowrap">
+                      Your next best customers are already in your existing customers&rsquo; network.
+                    </span>
+                    <span className="block sm:whitespace-nowrap">
+                      Refer Labs helps you turn that network into a structured, trackable growth engine that feels natural for them and powerful for you.
+                    </span>
+                  </p>
+                </div>
 
-              <div className="hidden md:grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {referralPillars.map((pillar) => (
-                  <PillarCard key={pillar.number} pillar={pillar} />
-                ))}
-              </div>
-
-              <div className="md:hidden -mx-2">
-                <div
-                  className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-                  aria-label="Referral program pillars"
-                >
+                <div className="hidden md:grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {referralPillars.map((pillar) => (
-                    <div key={pillar.number} className="min-w-[260px] snap-center">
-                      <PillarCard pillar={pillar} />
-                    </div>
+                    <PillarCard key={pillar.number} pillar={pillar} />
                   ))}
                 </div>
-              </div>
 
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-sm font-medium text-slate-900">
-                    Ready to make referrals your highest-ROI channel?
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500">
-                    Plug Refer Labs into your existing sales and marketing stack and start activating the
-                    customers you already have.
-                  </p>
+                <div className="md:hidden -mx-2">
+                  <div
+                    className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    aria-label="Referral program pillars"
+                  >
+                    {referralPillars.map((pillar) => (
+                      <div key={pillar.number} className="min-w-[260px] snap-center">
+                        <PillarCard pillar={pillar} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <TrackedCTA
-                  ambassadorId={ambassadorData?.id}
-                  businessId={ambassadorData?.business_id}
-                  referralCode={ambassadorData?.code}
-                />
+
+                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-slate-900">
+                      Ready to make referrals your highest-ROI channel?
+                    </p>
+                    <p className="mt-1 text-xs text-slate-500">
+                      Plug Refer Labs into your existing sales and marketing stack and start activating the
+                      customers you already have.
+                    </p>
+                  </div>
+                  <TrackedCTA
+                    ambassadorId={ambassadorData?.id}
+                    businessId={ambassadorData?.business_id}
+                    referralCode={ambassadorData?.code}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </RevealOnScroll>
 
 
         {/* Why Start a Referral Program - Premium Section */}
-        <section className="relative overflow-hidden">
-          {/* Premium Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#021013] via-[#01343C] to-[#031C20]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,131,143,0.22),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(77,208,225,0.18),transparent_50%)]" />
-
-          <div className="relative space-y-12 sm:space-y-16 py-16 sm:py-24">
+        <RevealOnScroll>
+          <section className="relative overflow-hidden border-t border-slate-900/60 bg-slate-950 pt-12 sm:pt-16">
+            <div className="relative space-y-12 sm:space-y-16 py-12 sm:py-20">
 
             {/* Section Header */}
             <div className="text-center space-y-6 px-4">
@@ -453,11 +453,11 @@ export default async function Home() {
                     <stat.accentIcon className="h-8 w-8 text-white" />
                   </div>
                   <div className="relative space-y-3">
-                    <p className="text-6xl font-black text-[#024b56]">{stat.value}</p>
-                    <p className="text-sm font-black uppercase tracking-wide text-[#024b56]">
+                    <p className="text-4xl sm:text-6xl font-black text-[#024b56]">{stat.value}</p>
+                    <p className="text-sm font-black uppercase tracking-[0.12em] text-[#024b56]">
                       {stat.title}
                     </p>
-                    <p className="text-base text-slate-700 leading-relaxed font-medium">
+                    <p className="text-[1.05rem] sm:text-base text-slate-700 leading-relaxed font-medium">
                       {stat.copy}
                     </p>
                     {stat.source && (
@@ -494,11 +494,11 @@ export default async function Home() {
                         <stat.accentIcon className="h-8 w-8 text-white" />
                       </div>
                       <div className="relative space-y-3">
-                        <p className="text-5xl font-black text-[#024b56]">{stat.value}</p>
-                        <p className="text-xs font-black uppercase tracking-wide text-[#024b56]">
+                        <p className="text-3xl sm:text-5xl font-black text-[#024b56]">{stat.value}</p>
+                        <p className="text-xs font-black uppercase tracking-[0.12em] text-[#024b56]">
                           {stat.title}
                         </p>
-                        <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                        <p className="text-[0.95rem] sm:text-sm text-slate-700 leading-relaxed font-medium">
                           {stat.copy}
                         </p>
                         {stat.source && (
@@ -717,46 +717,55 @@ export default async function Home() {
               </div>
             </div>
 
-          </div>
-        </section>
+            </div>
+          </section>
+        </RevealOnScroll>
 
         {/* Who We Work With */}
-        <section className="-mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 py-10 bg-gradient-to-r from-cyan-50/60 via-teal-50/40 to-cyan-50/60">
-          <div className="space-y-6">
-            <p className="text-center text-xs uppercase tracking-[0.4em] text-slate-600 font-bold">
-              Our Partners
-            </p>
-            <div className="overflow-hidden px-4 py-5">
-              <div className="logo-marquee gap-10">
-                {repeatedPartnerLogos.map((logo, index) => (
-                  <div
-                    key={`partner-${logo.id}-${index}`}
-                    className="min-w-[220px] flex items-center justify-center px-3"
-                  >
+        <RevealOnScroll>
+          <section className="-mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 border-t border-slate-200/70 py-16 sm:py-20 bg-slate-50/80">
+            <div className="space-y-6">
+              <p className="text-center text-xs uppercase tracking-[0.18em] text-slate-600 font-bold">
+                Our Partners
+              </p>
+              <div className="overflow-hidden px-4 py-5">
+                <div className="logo-marquee gap-10">
+                  {repeatedPartnerLogos.map((logo, index) => (
                     <div
-                      className={cn(
-                        "flex h-20 w-full max-w-[220px] items-center justify-center rounded-2xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm backdrop-blur",
-                        logo.backgroundClass ?? ""
-                      )}
+                      key={`partner-${logo.id}-${index}`}
+                      className="min-w-[220px] flex items-center justify-center px-3"
                     >
-                      <Image
-                        src={logo.src}
-                        alt={`${logo.name} logo`}
-                        width={logo.width}
-                        height={logo.height}
-                        className="h-12 w-auto object-contain"
-                        priority={index < 4}
-                      />
+                      <div
+                        className={cn(
+                          "flex h-20 w-full max-w-[220px] items-center justify-center rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 shadow-sm",
+                          logo.backgroundClass ?? ""
+                        )}
+                      >
+                        {logo.src ? (
+                          <Image
+                            src={logo.src}
+                            alt={`${logo.name} logo`}
+                            width={logo.width}
+                            height={logo.height}
+                            className="h-12 w-auto object-contain"
+                            priority={index < 4}
+                          />
+                        ) : (
+                          <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
+                            {logo.name}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </RevealOnScroll>
 
         {/* ROI Calculator CTA */}
-        <section className="rounded-[32px] border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 shadow-xl shadow-purple-200/50 px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
+        <section className="rounded-[32px] border-t border-slate-200/70 border-2 border-purple-200 bg-white shadow-xl shadow-purple-200/50 px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20">
           <div className="space-y-4">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 text-center">
               Calculate your referral program ROI in 4 steps

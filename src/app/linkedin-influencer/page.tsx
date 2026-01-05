@@ -186,7 +186,7 @@ export default function LinkedInInfluencerPage() {
               Trusted LinkedIn Distribution for B2B Growth
             </div>
 
-            <h1 className="text-balance text-5xl font-black leading-[1.08] sm:text-6xl lg:text-7xl text-white">
+            <h1 className="text-balance text-4xl font-black leading-[1.08] sm:text-5xl lg:text-6xl text-white">
               Your Next Customer Is Already Following Someone on LinkedIn
             </h1>
 
@@ -231,7 +231,7 @@ export default function LinkedInInfluencerPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-white mb-2">The Creator Partnership Playbook</h3>
-                  <p className="text-sm text-cyan-200 font-semibold uppercase tracking-wide">For B2B Marketing & Growth Teams</p>
+                  <p className="text-sm text-cyan-200 font-semibold uppercase tracking-[0.12em]">For B2B Marketing & Growth Teams</p>
                 </div>
               </div>
 
@@ -274,7 +274,7 @@ export default function LinkedInInfluencerPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black text-white mb-2">LinkedIn Creator Economics</h3>
-                  <p className="text-sm text-purple-200 font-semibold uppercase tracking-wide">Benchmarks & Market Data (2025)</p>
+                  <p className="text-sm text-purple-200 font-semibold uppercase tracking-[0.12em]">Benchmarks & Market Data (2025)</p>
                 </div>
               </div>
 

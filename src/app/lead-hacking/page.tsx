@@ -122,7 +122,7 @@ export default function LeadHackingPage() {
           <div className="space-y-8">
             <div className="sr-only">Lead Generation Tools</div>
 
-            <h1 className="text-balance text-5xl font-black leading-[1.1] sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-4xl font-black leading-[1.1] sm:text-5xl lg:text-6xl">
               Grow Your Pool Of{" "}
               <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
                 Prospective Clients.
@@ -174,7 +174,7 @@ export default function LeadHackingPage() {
                   <Route className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-wider text-slate-400">The Outcome</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-400">The Outcome</p>
                   <p className="text-2xl font-black text-white">A Repeatable Lead Flow</p>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function LeadHackingPage() {
         {/* Automate section */}
         <section id="automate-tool" className="mb-20">
           <div className="mb-12">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-400">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
               Automate a Lead Generating Tool
             </p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">Tell us who you want to reach.</h2>
@@ -218,7 +218,7 @@ export default function LeadHackingPage() {
         {/* What we build */}
         <section className="mb-20">
           <div className="mb-12 text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-400">What We Build</p>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">What We Build</p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">Lead Systems You Can Run Weekly</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
               A simple, automated setup that captures fit, routes leads, and supports consistent follow-up.
@@ -237,7 +237,7 @@ export default function LeadHackingPage() {
                   <h3 className="mb-3 text-2xl font-black text-white">{service.title}</h3>
                   <p className="mb-6 text-sm leading-relaxed text-slate-300">{service.description}</p>
                   <div className="space-y-2 border-t border-slate-700/50 pt-6">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">What you get:</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">What you get:</p>
                     {service.bullets.map((bullet) => (
                       <div key={bullet} className="flex items-start gap-2">
                         <BarChart3 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
@@ -254,7 +254,7 @@ export default function LeadHackingPage() {
         {/* Tactics */}
         <section className="mb-20">
           <div className="mb-12">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-400">Tactics</p>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">Tactics</p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">Growth Tactics We Deploy</h2>
             <p className="mt-4 max-w-3xl text-lg text-slate-300">
               We use the right mix of channels for your audience, then automate capture and follow-up so the work is repeatable.
@@ -280,7 +280,7 @@ export default function LeadHackingPage() {
         {/* Process */}
         <section className="mb-20">
           <div className="mb-12">
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald-400">How It Works</p>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">How It Works</p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">From Brief to Booked Conversations</h2>
           </div>
 

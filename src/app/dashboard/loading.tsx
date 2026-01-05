@@ -16,7 +16,7 @@ export default function DashboardLoading() {
           <div className="absolute -left-20 bottom-0 h-28 w-28 rounded-full bg-[#7ff6ff]/35 blur-3xl" />
           <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/70">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.24em] text-white/70">
                 <Crown className="h-4 w-4 text-[#1de9b6]" />
                 <span>Welcome to your referral dashboard.</span>
               </div>

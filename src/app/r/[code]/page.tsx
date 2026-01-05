@@ -361,7 +361,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
                   </div>
                 )}
                 <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-white/70">Private invitation</p>
+                  <p className="text-xs uppercase tracking-[0.22em] text-white/70">Private invitation</p>
                   <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{businessName}</h1>
                   <p className="text-sm text-white/85">
                     {offerText || `Concierge referral program hosted by ${businessName}.`}
@@ -375,15 +375,15 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">Reward for you</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/60">Reward for you</p>
                 <p className="mt-2 text-2xl font-black">{newUserReward}</p>
               </div>
               <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">Thank-you for {ambassadorName}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/60">Thank-you for {ambassadorName}</p>
                 <p className="mt-2 text-2xl font-black">{clientReward}</p>
               </div>
               <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">Ambassador stats</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/60">Ambassador stats</p>
                 <p className="mt-2 text-lg font-semibold">
                   {totalReferrals} introductions · ${ambassadorCredits} earned
                 </p>
@@ -431,7 +431,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
         <section className="rounded-[32px] border border-slate-200 bg-white/95 p-6 shadow-xl space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Reserve your reward</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Reserve your reward</p>
               <h2 className="text-2xl font-black text-slate-900">
                 Claim {newUserReward} at {businessName}
               </h2>
@@ -490,7 +490,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
               <Sparkles className="h-6 w-6" />
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">How it works</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">How it works</p>
               <h3 className="text-xl font-black text-slate-900">A simple 3-step journey</h3>
             </div>
           </div>

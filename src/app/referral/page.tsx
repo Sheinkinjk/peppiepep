@@ -81,7 +81,7 @@ export default function ReferralProgramPage() {
               <Sparkles className="h-4 w-4" />
               Exclusive Referral Program
             </div>
-            <h1 className="text-4xl sm:text-6xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
               Earn 25% Recurring Revenue<br />
               <span className="text-[#0a4b53]">For Every Business You Refer</span>
             </h1>
@@ -155,7 +155,7 @@ export default function ReferralProgramPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 sm:py-32 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-20 sm:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
@@ -239,7 +239,7 @@ export default function ReferralProgramPage() {
       </section>
 
       {/* Program Details */}
-      <section className="py-20 sm:py-32 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-20 sm:py-32 bg-slate-50/60">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">

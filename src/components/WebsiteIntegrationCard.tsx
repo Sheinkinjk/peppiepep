@@ -171,7 +171,7 @@ fetch("${siteUrl}/api/discount-codes/redeem", {
           <>
             <div className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-xs uppercase font-semibold tracking-wide text-slate-500">
+                <p className="text-xs uppercase font-semibold tracking-[0.12em] text-slate-500">
                   API secret
                 </p>
                 <p className="font-mono text-sm text-slate-900 break-all">

@@ -417,7 +417,7 @@ const downloadMediaKit = async () => {
             <Share2 className="h-7 w-7" />
           </div>
           <div className="flex-1 min-w-[200px]">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Invite a friend today</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Invite a friend today</p>
             <h3 className="text-2xl font-black text-slate-900">Share & you both get rewarded</h3>
             <p className="text-sm text-slate-600">
               Share a live referral link with any ambassador. When their friend signs up, you give them {friendReward} and the ambassador earns {ambassadorReward} automatically.
@@ -426,7 +426,7 @@ const downloadMediaKit = async () => {
         </div>
 
         <Tabs defaultValue="share" className="space-y-5">
-          <TabsList className="grid grid-cols-3 rounded-2xl bg-slate-100/80 p-1 text-sm font-semibold text-slate-500">
+          <TabsList className="grid grid-cols-3 rounded-2xl bg-slate-100/80 p-1 text-xs font-semibold text-slate-500">
             <TabsTrigger value="share" className="rounded-2xl data-[state=active]:bg-white data-[state=active]:text-slate-900">
               Share
             </TabsTrigger>
@@ -486,7 +486,12 @@ const downloadMediaKit = async () => {
             </div>
 
             <div className="space-y-2">
-              <p className="text-sm font-semibold text-slate-700">Share this unique link</p>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-400">
+                  Personal link (auto-tracked)
+                </p>
+                <p className="text-sm font-semibold text-slate-700">Share this unique link</p>
+              </div>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Input readOnly value={referralLink ?? placeholderLink} className="text-sm font-mono" disabled={!hasSharableCustomer} />
                 <Button type="button" onClick={handleCopy} disabled={!hasSharableCustomer} className="sm:w-40 font-semibold">
@@ -514,7 +519,7 @@ const downloadMediaKit = async () => {
                 <Input
                   readOnly
                   value={discountCode ?? "Add an ambassador to generate their discount code automatically."}
-                  className="text-sm font-mono tracking-wide"
+                  className="text-sm font-mono tracking-[0.12em]"
                   disabled={!hasDiscountCode}
                 />
                 <Button type="button" onClick={handleCopyDiscount} disabled={!hasDiscountCode} className="sm:w-40 font-semibold">
@@ -630,7 +635,7 @@ const downloadMediaKit = async () => {
                         <p className="font-semibold text-slate-800 capitalize">
                           {entry.channel} • {new Date(entry.scheduledFor).toLocaleString()}
                         </p>
-                        <p className="text-[11px] uppercase tracking-wide">
+                        <p className="text-[11px] uppercase tracking-[0.12em]">
                           {entry.status === "sent" ? "Sent" : "Scheduled"}
                         </p>
                       </div>

@@ -137,12 +137,14 @@ export function DashboardOnboardingChecklist({
       cta: "View performance",
     },
   ];
+  const completedCount = steps.filter((step) => step.done).length;
+  const completionPercent = Math.round((completedCount / steps.length) * 100);
 
   return (
     <Card className="mb-8 border-dashed border-slate-200 bg-white/80 p-4 shadow-sm sm:p-5">
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
             Getting started
           </p>
           <h2 className="text-base font-bold text-slate-900 sm:text-lg">
@@ -152,6 +154,17 @@ export function DashboardOnboardingChecklist({
             Follow these four steps once and your dashboard will stay fully
             live and connected.
           </p>
+          <div className="mt-3 flex items-center gap-3">
+            <div className="h-2 w-36 overflow-hidden rounded-full bg-slate-200">
+              <div
+                className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300"
+                style={{ width: `${completionPercent}%` }}
+              />
+            </div>
+            <span className="text-[11px] font-semibold text-slate-500">
+              {completedCount}/{steps.length} complete
+            </span>
+          </div>
         </div>
         <Button
           variant="ghost"
@@ -166,14 +179,18 @@ export function DashboardOnboardingChecklist({
       <div className="grid gap-3 sm:grid-cols-2">
         {steps.map((step) => {
           const Icon = step.icon;
+          const cardTone = step.done
+            ? "border-emerald-200 bg-emerald-50/70 hover:border-emerald-300"
+            : "border-slate-200 bg-white hover:border-slate-300";
+          const iconTone = step.done ? "bg-emerald-600/10 text-emerald-700" : "bg-slate-100 text-slate-700";
           return (
             <button
               key={step.id}
               type="button"
               onClick={step.action}
-              className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50/60 px-3 py-3 text-left transition hover:border-slate-300 hover:bg-white"
+              className={`group flex items-start gap-3 rounded-2xl border px-3 py-3 text-left transition hover:-translate-y-0.5 hover:shadow-md ${cardTone}`}
             >
-              <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm">
+              <div className={`mt-0.5 flex h-9 w-9 items-center justify-center rounded-full shadow-sm ${iconTone}`}>
                 {step.done ? (
                   <CheckCircle2 className="h-5 w-5 text-emerald-600" />
                 ) : (
@@ -185,11 +202,14 @@ export function DashboardOnboardingChecklist({
                   {step.label}
                 </p>
                 <p className="text-xs text-slate-600">{step.description}</p>
-                {!step.done && (
-                  <p className="mt-1 text-[11px] font-semibold text-purple-600">
-                    {step.cta}
+                <div className="mt-2 flex items-center justify-between">
+                  <p className={`text-[11px] font-semibold ${step.done ? "text-emerald-700" : "text-purple-600"}`}>
+                    {step.done ? "Completed" : step.cta}
                   </p>
-                )}
+                  <span className={`text-[10px] uppercase tracking-[0.12em] ${step.done ? "text-emerald-600" : "text-slate-400"}`}>
+                    {step.done ? "Done" : "Next"}
+                  </span>
+                </div>
               </div>
             </button>
           );

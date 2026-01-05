@@ -54,6 +54,9 @@ import {
   Link2,
   CalendarCheck,
   FileText,
+  ArrowUpRight,
+  ArrowDownRight,
+  Minus,
 } from "lucide-react";
 import { createServerComponentClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
@@ -1086,11 +1089,18 @@ export default async function Dashboard({
 
   const selectedWindow = resolvedSearchParams?.window === "7" ? 7 : 30;
   const windowStart = Date.now() - selectedWindow * 24 * 60 * 60 * 1000;
+  const previousWindowStart = windowStart - selectedWindow * 24 * 60 * 60 * 1000;
   const isWithinWindow = (timestamp: string | null) => {
     if (!timestamp) return false;
     const parsed = Date.parse(timestamp);
     if (Number.isNaN(parsed)) return false;
     return parsed >= windowStart;
+  };
+  const isWithinPreviousWindow = (timestamp: string | null) => {
+    if (!timestamp) return false;
+    const parsed = Date.parse(timestamp);
+    if (Number.isNaN(parsed)) return false;
+    return parsed >= previousWindowStart && parsed < windowStart;
   };
 
   // Filter LinkedIn Influencer customers based on linked partner applications
@@ -1122,10 +1132,17 @@ export default async function Dashboard({
   const windowedReferrals = safeReferrals.filter((r) =>
     isWithinWindow(r.transaction_date ?? r.created_at ?? null),
   );
+  const previousWindowedReferrals = safeReferrals.filter((r) =>
+    isWithinPreviousWindow(r.transaction_date ?? r.created_at ?? null),
+  );
   const windowedPendingReferrals =
     windowedReferrals.filter((r) => r.status === "pending").length || 0;
   const windowedCompletedReferrals =
     windowedReferrals.filter((r) => r.status === "completed").length || 0;
+  const previousWindowedPendingReferrals =
+    previousWindowedReferrals.filter((r) => r.status === "pending").length || 0;
+  const previousWindowedCompletedReferrals =
+    previousWindowedReferrals.filter((r) => r.status === "completed").length || 0;
   const manualReferralsList = safeReferrals.filter((r) => r.created_by);
   const manualReferralCount = manualReferralsList.length;
   const manualReferralValue =
@@ -1143,6 +1160,11 @@ export default async function Dashboard({
     ) || 0;
   const windowedReferralRevenue =
     windowedReferrals.reduce(
+      (sum, r) => sum + (r.transaction_value ?? 0),
+      0,
+    ) || 0;
+  const previousWindowedReferralRevenue =
+    previousWindowedReferrals.reduce(
       (sum, r) => sum + (r.transaction_value ?? 0),
       0,
     ) || 0;
@@ -1194,7 +1216,19 @@ export default async function Dashboard({
   const windowedCampaigns = campaignsData.filter((campaign) =>
     isWithinWindow(campaign.created_at ?? null),
   );
+  const previousWindowedCampaigns = campaignsData.filter((campaign) =>
+    isWithinPreviousWindow(campaign.created_at ?? null),
+  );
   const windowedEstimatedCampaignSpend = windowedCampaigns.reduce(
+    (sum, campaign) => {
+      const sentCount = campaign.sent_count ?? 0;
+      const channel = campaign.channel as "sms" | "email" | null;
+      const costPerMessage = channel === "sms" ? 0.02 : 0.01;
+      return sum + sentCount * costPerMessage;
+    },
+    0,
+  );
+  const previousWindowedEstimatedCampaignSpend = previousWindowedCampaigns.reduce(
     (sum, campaign) => {
       const sentCount = campaign.sent_count ?? 0;
       const channel = campaign.channel as "sms" | "email" | null;
@@ -1212,6 +1246,72 @@ export default async function Dashboard({
     windowedEstimatedCampaignSpend > 0
       ? windowedReferralRevenue / windowedEstimatedCampaignSpend
       : null;
+  const previousWindowedRoiMultiple =
+    previousWindowedEstimatedCampaignSpend > 0
+      ? previousWindowedReferralRevenue / previousWindowedEstimatedCampaignSpend
+      : null;
+  const revenueDelta = windowedReferralRevenue - previousWindowedReferralRevenue;
+  const referralsDelta = windowedReferrals.length - previousWindowedReferrals.length;
+  const currentConversionRate = windowedReferrals.length > 0
+    ? (windowedCompletedReferrals / windowedReferrals.length) * 100
+    : 0;
+  const previousConversionRate = previousWindowedReferrals.length > 0
+    ? (previousWindowedCompletedReferrals / previousWindowedReferrals.length) * 100
+    : 0;
+  const conversionRateDelta = currentConversionRate - previousConversionRate;
+  const roiDelta =
+    windowedRoiMultiple !== null && previousWindowedRoiMultiple !== null
+      ? windowedRoiMultiple - previousWindowedRoiMultiple
+      : null;
+  const buildTrendChip = (
+    delta: number | null,
+    format: "currency" | "count" | "rate" | "roi",
+  ) => {
+    if (delta === null || Number.isNaN(delta)) {
+      return {
+        label: "No prior",
+        tone: "border border-slate-200/80 bg-slate-100 text-slate-600",
+        direction: "flat" as const,
+      };
+    }
+
+    if (delta === 0) {
+      return {
+        label: "Flat",
+        tone: "border border-slate-200/80 bg-slate-100 text-slate-600",
+        direction: "flat" as const,
+      };
+    }
+
+    const direction = delta > 0 ? "up" : "down";
+    const label = (() => {
+      const value = Math.abs(delta);
+      switch (format) {
+        case "currency":
+          return `${delta > 0 ? "+" : "-"}$${Math.round(value)}`;
+        case "rate":
+          return `${delta > 0 ? "+" : ""}${value.toFixed(1)} pts`;
+        case "roi":
+          return `${delta > 0 ? "+" : ""}${value.toFixed(1)}x`;
+        case "count":
+        default:
+          return `${delta > 0 ? "+" : ""}${Math.round(value)}`;
+      }
+    })();
+
+    return {
+      label,
+      tone:
+        direction === "up"
+          ? "border border-emerald-200/80 bg-emerald-100 text-emerald-700"
+          : "border border-rose-200/80 bg-rose-100 text-rose-700",
+      direction,
+    };
+  };
+  const revenueTrend = buildTrendChip(revenueDelta, "currency");
+  const roiTrend = buildTrendChip(roiDelta, "roi");
+  const referralsTrend = buildTrendChip(referralsDelta, "count");
+  const conversionTrend = buildTrendChip(conversionRateDelta, "rate");
 
   const hasCustomers = safeCustomers.length > 0;
   const hasCampaigns = campaignsData.length > 0;
@@ -1319,6 +1419,15 @@ export default async function Dashboard({
     (event) => event.event_type === "signup_submitted",
   ).length;
 
+  type InteractionActivityKind =
+    | "link"
+    | "form"
+    | "meeting"
+    | "contact"
+    | "conversion"
+    | "redemption"
+    | "generic";
+
   const interactionActivityItems = [
     ...windowedReferralEvents.map((event) => {
       const ambassadorLabel =
@@ -1337,10 +1446,23 @@ export default async function Dashboard({
                 : event.event_type === "conversion_completed"
                   ? "Conversion completed"
                   : "Referral activity";
+      const kind: InteractionActivityKind =
+        event.event_type === "link_visit"
+          ? "link"
+          : event.event_type === "signup_submitted"
+            ? "form"
+            : event.event_type === "schedule_call_clicked"
+              ? "meeting"
+              : event.event_type === "contact_us_clicked"
+                ? "contact"
+                : event.event_type === "conversion_completed"
+                  ? "conversion"
+                  : "generic";
 
       return {
         id: `event-${event.id}`,
         label,
+        kind,
         detail: ambassadorLabel,
         timestamp: event.created_at,
       };
@@ -1348,6 +1470,7 @@ export default async function Dashboard({
     ...windowedRedemptions.map((redemption) => ({
       id: `redemption-${redemption.id}`,
       label: "Discount code redeemed",
+      kind: "redemption" as const,
       detail: redemption.discount_code,
       timestamp: redemption.captured_at,
     })),
@@ -1355,6 +1478,40 @@ export default async function Dashboard({
     .filter((item) => Boolean(item.timestamp))
     .sort((a, b) => (Date.parse(b.timestamp ?? "") || 0) - (Date.parse(a.timestamp ?? "") || 0))
     .slice(0, 8);
+
+  const activityIconMap: Record<
+    InteractionActivityKind,
+    { icon: React.ReactNode; className: string }
+  > = {
+    link: {
+      icon: <Link2 className="h-3.5 w-3.5" />,
+      className: "bg-sky-50 text-sky-700 border-sky-200",
+    },
+    form: {
+      icon: <FileText className="h-3.5 w-3.5" />,
+      className: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    },
+    meeting: {
+      icon: <CalendarCheck className="h-3.5 w-3.5" />,
+      className: "bg-indigo-50 text-indigo-700 border-indigo-200",
+    },
+    contact: {
+      icon: <MessageSquare className="h-3.5 w-3.5" />,
+      className: "bg-slate-100 text-slate-600 border-slate-200",
+    },
+    conversion: {
+      icon: <Award className="h-3.5 w-3.5" />,
+      className: "bg-purple-50 text-purple-700 border-purple-200",
+    },
+    redemption: {
+      icon: <CreditCard className="h-3.5 w-3.5" />,
+      className: "bg-amber-50 text-amber-700 border-amber-200",
+    },
+    generic: {
+      icon: <Zap className="h-3.5 w-3.5" />,
+      className: "bg-slate-100 text-slate-500 border-slate-200",
+    },
+  };
 
   const headerList = await headers();
   const userAgent = headerList.get("user-agent") ?? "";
@@ -1486,7 +1643,7 @@ export default async function Dashboard({
                   <summary className="cursor-pointer list-none px-6 py-4">
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <div className="min-w-0">
-                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                           Admin tools
                         </p>
                         <h3 className="mt-1 text-lg font-extrabold text-slate-900">
@@ -1518,7 +1675,7 @@ export default async function Dashboard({
                         <Users className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                           LinkedIn Influencer Program
                         </p>
                         <h3 className="text-xl font-black text-slate-900">
@@ -1599,7 +1756,7 @@ export default async function Dashboard({
 		              <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
 		                <div className="flex-1 min-w-0">
 		                  {/* Badge */}
-		                  <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-emerald-500/30">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500/80 to-teal-500/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm shadow-emerald-500/20">
 		                    <Mail className="h-4 w-4" />
 		                    Premium Campaigns
 		                  </div>
@@ -1699,7 +1856,7 @@ export default async function Dashboard({
 	        <>
 	          <Tabs defaultValue="analytics">
 	            <div className="border border-slate-200 bg-white p-4 rounded-lg">
-	              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 mb-3">
+	              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-3">
 	                Campaign insights
 	              </div>
 	              <TabsList className="grid gap-3 border-none bg-transparent p-0 text-left md:grid-cols-4">
@@ -1844,7 +2001,7 @@ export default async function Dashboard({
 	        <div className="space-y-6">
 	        <Tabs defaultValue="referrals">
 	          <div className="rounded-3xl border border-slate-200/80 bg-white/70 p-2 shadow-inner shadow-slate-200/80">
-            <TabsList className="flex flex-wrap gap-2 rounded-2xl bg-slate-100/80 p-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <TabsList className="flex flex-wrap gap-2 rounded-2xl bg-slate-100/80 p-1 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
               <TabsTrigger
                 value="referrals"
                 className="rounded-2xl px-4 py-2 data-[state=active]:bg-white data-[state=active]:text-slate-900"
@@ -1920,25 +2077,25 @@ export default async function Dashboard({
                       <p className="text-xs text-slate-600">
                         For offline bookings or when customers mention a referral code directly.
                       </p>
-                      <div className="mt-3 grid gap-3 sm:grid-cols-3 text-xs text-slate-600">
-                        <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-                          <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                      <div className="mt-4 grid gap-4 sm:grid-cols-3 text-xs text-slate-600">
+                        <div className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+                          <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">
                             Manual
                           </p>
                           <p className="text-base font-black text-slate-900">
                             {manualReferralCount}
                           </p>
                         </div>
-                        <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-                          <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                        <div className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+                          <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">
                             Value
                           </p>
                           <p className="text-base font-black text-emerald-600">
                             ${manualReferralValue.toFixed(0)}
                           </p>
                         </div>
-                        <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
-                          <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                        <div className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+                          <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">
                             Tracked
                           </p>
                           <p className="text-base font-black text-indigo-600">
@@ -1992,9 +2149,9 @@ export default async function Dashboard({
                 </div>
               ) : (
                 <>
-                  <div className="mb-10">
-                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                      <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+                  <div className="mb-5">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                      <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-[0.12em]">
                         Interaction Hub
                       </h3>
                       <div className="flex items-center gap-2 rounded-full bg-slate-100 p-1 text-xs font-semibold">
@@ -2020,12 +2177,12 @@ export default async function Dashboard({
                         </Link>
                       </div>
                     </div>
-                    <div className="grid gap-6 lg:grid-cols-[2fr,1fr]">
-                      <div className="grid gap-6 md:grid-cols-2">
-                        <div className="p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100 border border-sky-200">
+                    <div className="grid gap-3 lg:grid-cols-[2fr,1fr]">
+                      <div className="grid gap-3 md:grid-cols-2">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                           <div className="flex items-center gap-3 mb-3">
-                            <div className="h-10 w-10 rounded-lg bg-sky-600 flex items-center justify-center">
-                              <Link2 className="h-5 w-5 text-white" />
+                            <div className="h-8 w-8 rounded-lg bg-sky-600 flex items-center justify-center">
+                              <Link2 className="h-4 w-4 text-white" />
                             </div>
                             <h3 className="font-bold text-slate-900">Unique Link Opens</h3>
                           </div>
@@ -2035,10 +2192,10 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                           <div className="flex items-center gap-3 mb-3">
-                            <div className="h-10 w-10 rounded-lg bg-cyan-600 flex items-center justify-center">
-                              <Target className="h-5 w-5 text-white" />
+                            <div className="h-8 w-8 rounded-lg bg-cyan-600 flex items-center justify-center">
+                              <Target className="h-4 w-4 text-white" />
                             </div>
                             <h3 className="font-bold text-slate-900">Total Link Opens</h3>
                           </div>
@@ -2048,10 +2205,10 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                           <div className="flex items-center gap-3 mb-3">
-                            <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
-                              <CalendarCheck className="h-5 w-5 text-white" />
+                            <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center">
+                              <CalendarCheck className="h-4 w-4 text-white" />
                             </div>
                             <h3 className="font-bold text-slate-900">Meetings Booked</h3>
                           </div>
@@ -2061,10 +2218,10 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                           <div className="flex items-center gap-3 mb-3">
-                            <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
-                              <FileText className="h-5 w-5 text-white" />
+                            <div className="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center">
+                              <FileText className="h-4 w-4 text-white" />
                             </div>
                             <h3 className="font-bold text-slate-900">Forms Submitted</h3>
                           </div>
@@ -2074,10 +2231,10 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                           <div className="flex items-center gap-3 mb-3">
-                            <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
-                              <CreditCard className="h-5 w-5 text-white" />
+                            <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
+                              <CreditCard className="h-4 w-4 text-white" />
                             </div>
                             <h3 className="font-bold text-slate-900">Discount Redemptions</h3>
                           </div>
@@ -2090,121 +2247,186 @@ export default async function Dashboard({
                         </div>
                       </div>
 
-                      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                        <div className="flex items-center justify-between mb-4">
-                          <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">
+                      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                        <div className="flex items-center justify-between mb-3">
+                          <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-[0.12em]">
                             Recent Interaction Activity
                           </h3>
                           <span className="text-xs font-medium text-slate-400">
                             Last {interactionActivityItems.length} in {selectedWindow} days
                           </span>
                         </div>
-                        <div className="space-y-4">
-                          {interactionActivityItems.length === 0 ? (
-                            <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
-                              No interaction events recorded yet.
+                        {interactionActivityItems.length === 0 ? (
+                          <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
+                            No interaction events recorded yet.
+                          </div>
+                        ) : (
+                          <div className="relative pl-6">
+                            <div className="absolute left-2 top-2 bottom-2 w-px bg-slate-200" />
+                            <div className="space-y-3">
+                              {interactionActivityItems.map((item) => {
+                                const activityIcon = activityIconMap[item.kind] ?? activityIconMap.generic;
+                                return (
+                                  <div key={item.id} className="relative pl-8">
+                                    <span
+                                      className={`absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border ${activityIcon.className}`}
+                                    >
+                                      {activityIcon.icon}
+                                    </span>
+                                    <div>
+                                      <p className="text-sm font-semibold text-slate-900">
+                                        {item.label}
+                                      </p>
+                                      <p className="text-xs text-slate-500">
+                                        {item.detail}
+                                      </p>
+                                      <p className="text-xs text-slate-400">
+                                        {item.timestamp
+                                          ? new Date(item.timestamp).toLocaleString()
+                                          : "—"}
+                                      </p>
+                                    </div>
+                                  </div>
+                                );
+                              })}
                             </div>
-                          ) : (
-                            interactionActivityItems.map((item) => (
-                              <div key={item.id} className="flex items-start gap-3">
-                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
-                                <div>
-                                  <p className="text-sm font-semibold text-slate-900">
-                                    {item.label}
-                                  </p>
-                                  <p className="text-xs text-slate-500">
-                                    {item.detail}
-                                  </p>
-                                  <p className="text-xs text-slate-400">
-                                    {item.timestamp
-                                      ? new Date(item.timestamp).toLocaleString()
-                                      : "—"}
-                                  </p>
-                                </div>
-                              </div>
-                            ))
-                          )}
-                        </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
 
                   {/* KEY METRICS - Prominently displayed */}
                   <div className="mb-8">
-                    <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Key Metrics</h3>
-                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                    <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-[0.12em] mb-4">Key Metrics</h3>
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
                       Last {selectedWindow} days
                     </p>
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <div className="rounded-3xl border border-slate-200 bg-slate-50/80 p-4 sm:p-6">
+                      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                   {/* Revenue - Most important */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 border border-emerald-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <DollarSign className="h-6 w-6 text-white" />
+                  <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-12 w-12 rounded-xl bg-emerald-100 flex items-center justify-center">
+                          <DollarSign className="h-6 w-6 text-emerald-700" />
+                        </div>
+                        <h3 className="font-bold text-slate-900">Revenue</h3>
                       </div>
-                      <h3 className="font-bold text-white">Revenue</h3>
+                      <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold ${revenueTrend.tone}`}>
+                        {revenueTrend.direction === "down" ? (
+                          <ArrowDownRight className="h-3 w-3" />
+                        ) : revenueTrend.direction === "up" ? (
+                          <ArrowUpRight className="h-3 w-3" />
+                        ) : (
+                          <Minus className="h-3 w-3" />
+                        )}
+                        {revenueTrend.label}
+                      </span>
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">
-                      ${Math.round(windowedReferralRevenue)}
-                    </p>
-                    <p className="text-sm text-emerald-50">
+                    <div className="min-h-[48px] flex items-end">
+                      <p className="text-4xl font-black text-slate-900 leading-none">
+                        ${Math.round(windowedReferralRevenue)}
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 mt-2">
                       From {windowedCompletedReferrals} completed referrals
                     </p>
                   </div>
 
                   {/* ROI */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 border border-purple-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <TrendingUp className="h-6 w-6 text-white" />
+                  <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-12 w-12 rounded-xl bg-purple-100 flex items-center justify-center">
+                          <TrendingUp className="h-6 w-6 text-purple-700" />
+                        </div>
+                        <h3 className="font-bold text-slate-900">Program ROI</h3>
                       </div>
-                      <h3 className="font-bold text-white">Program ROI</h3>
+                      <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold ${roiTrend.tone}`}>
+                        {roiTrend.direction === "down" ? (
+                          <ArrowDownRight className="h-3 w-3" />
+                        ) : roiTrend.direction === "up" ? (
+                          <ArrowUpRight className="h-3 w-3" />
+                        ) : (
+                          <Minus className="h-3 w-3" />
+                        )}
+                        {roiTrend.label}
+                      </span>
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">
-                      {windowedRoiMultiple && windowedRoiMultiple > 0
-                        ? `${windowedRoiMultiple.toFixed(1)}×`
-                        : "—"}
-                    </p>
-                    <p className="text-sm text-purple-50">
+                    <div className="min-h-[48px] flex items-end">
+                      <p className="text-4xl font-black text-slate-900 leading-none">
+                        {windowedRoiMultiple && windowedRoiMultiple > 0
+                          ? `${windowedRoiMultiple.toFixed(1)}×`
+                          : "—"}
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 mt-2">
                       Revenue ÷ estimated send cost ({selectedWindow} days)
                     </p>
                   </div>
 
                   {/* Total Referrals */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 border border-blue-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <Users className="h-6 w-6 text-white" />
+                  <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center">
+                          <Users className="h-6 w-6 text-blue-700" />
+                        </div>
+                        <h3 className="font-bold text-slate-900">Total Referrals</h3>
                       </div>
-                      <h3 className="font-bold text-white">Total Referrals</h3>
+                      <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold ${referralsTrend.tone}`}>
+                        {referralsTrend.direction === "down" ? (
+                          <ArrowDownRight className="h-3 w-3" />
+                        ) : referralsTrend.direction === "up" ? (
+                          <ArrowUpRight className="h-3 w-3" />
+                        ) : (
+                          <Minus className="h-3 w-3" />
+                        )}
+                        {referralsTrend.label}
+                      </span>
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">
-                      {windowedReferrals.length}
-                    </p>
-                    <p className="text-sm text-blue-50">
+                    <div className="min-h-[48px] flex items-end">
+                      <p className="text-4xl font-black text-slate-900 leading-none">
+                        {windowedReferrals.length}
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 mt-2">
                       {windowedCompletedReferrals} completed • {windowedPendingReferrals} pending
                     </p>
                   </div>
 
                   {/* Conversion Rate */}
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 border border-amber-400 shadow-lg">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <Zap className="h-6 w-6 text-white" />
+                  <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-12 w-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                          <Zap className="h-6 w-6 text-amber-700" />
+                        </div>
+                        <h3 className="font-bold text-slate-900">Conversion Rate</h3>
                       </div>
-                      <h3 className="font-bold text-white">Conversion Rate</h3>
+                      <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold ${conversionTrend.tone}`}>
+                        {conversionTrend.direction === "down" ? (
+                          <ArrowDownRight className="h-3 w-3" />
+                        ) : conversionTrend.direction === "up" ? (
+                          <ArrowUpRight className="h-3 w-3" />
+                        ) : (
+                          <Minus className="h-3 w-3" />
+                        )}
+                        {conversionTrend.label}
+                      </span>
                     </div>
-                    <p className="text-4xl font-black text-white mb-2">
-                      {windowedReferrals.length > 0
-                        ? Math.round((windowedCompletedReferrals / windowedReferrals.length) * 100)
-                        : 0}
-                      %
-                    </p>
-                    <p className="text-sm text-amber-50">
+                    <div className="min-h-[48px] flex items-end">
+                      <p className="text-4xl font-black text-slate-900 leading-none">
+                        {Math.round(currentConversionRate)}%
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 mt-2">
                       Referral to completion ({selectedWindow} days)
                     </p>
                   </div>
                 </div>
+              </div>
               </div>
 
               {/* DETAILED METRICS - Collapsible */}
@@ -2216,25 +2438,25 @@ export default async function Dashboard({
                   </svg>
                 </summary>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="h-10 w-10 rounded-lg bg-purple-600 flex items-center justify-center">
-                        <Users className="h-5 w-5 text-white" />
+                      <div className="h-10 w-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                        <Users className="h-5 w-5 text-purple-700" />
                       </div>
                       <h3 className="font-bold text-slate-900">Total Ambassadors</h3>
                     </div>
-                    <p className="text-3xl font-black text-purple-700">{safeCustomers.length}</p>
+                    <p className="text-3xl font-black text-slate-900">{safeCustomers.length}</p>
                     <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="h-10 w-10 rounded-lg bg-amber-600 flex items-center justify-center">
-                        <CreditCard className="h-5 w-5 text-white" />
+                      <div className="h-10 w-10 rounded-lg bg-amber-100 flex items-center justify-center">
+                        <CreditCard className="h-5 w-5 text-amber-700" />
                       </div>
                       <h3 className="font-bold text-slate-900">Avg Transaction</h3>
                     </div>
-                    <p className="text-3xl font-black text-amber-700">
+                    <p className="text-3xl font-black text-slate-900">
                       ${averageTransactionValue > 0 ? Math.round(averageTransactionValue) : 0}
                     </p>
                     <p className="text-sm text-slate-600 mt-1">
@@ -2242,10 +2464,10 @@ export default async function Dashboard({
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
-                        <ClipboardList className="h-5 w-5 text-white" />
+                      <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                        <ClipboardList className="h-5 w-5 text-slate-700" />
                       </div>
                       <h3 className="font-bold text-slate-900">Manual Transactions</h3>
                     </div>
@@ -2257,38 +2479,38 @@ export default async function Dashboard({
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="h-10 w-10 rounded-lg bg-indigo-600 flex items-center justify-center">
-                        <Award className="h-5 w-5 text-white" />
+                      <div className="h-10 w-10 rounded-lg bg-indigo-100 flex items-center justify-center">
+                        <Award className="h-5 w-5 text-indigo-700" />
                       </div>
                       <h3 className="font-bold text-slate-900">Avg per Ambassador</h3>
                     </div>
-                    <p className="text-3xl font-black text-indigo-700">
+                    <p className="text-3xl font-black text-slate-900">
                       {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
                     </p>
                     <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="h-10 w-10 rounded-lg bg-rose-600 flex items-center justify-center">
-                        <MessageSquare className="h-5 w-5 text-white" />
+                      <div className="h-10 w-10 rounded-lg bg-rose-100 flex items-center justify-center">
+                        <MessageSquare className="h-5 w-5 text-rose-700" />
                       </div>
                       <h3 className="font-bold text-slate-900">Campaigns Sent</h3>
                     </div>
-                    <p className="text-3xl font-black text-rose-700">{totalCampaignsSent}</p>
+                    <p className="text-3xl font-black text-slate-900">{totalCampaignsSent}</p>
                     <p className="text-sm text-slate-600 mt-1">Live SMS & email blasts</p>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="h-10 w-10 rounded-lg bg-slate-700 flex items-center justify-center">
-                        <Send className="h-5 w-5 text-white" />
+                      <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                        <Send className="h-5 w-5 text-slate-700" />
                       </div>
                       <h3 className="font-bold text-slate-900">Messages Delivered</h3>
                     </div>
-                    <p className="text-3xl font-black text-slate-800">{totalMessagesSent}</p>
+                    <p className="text-3xl font-black text-slate-900">{totalMessagesSent}</p>
                     <p className="text-sm text-slate-600 mt-1">Across all channels</p>
                   </div>
                 </div>
@@ -2306,7 +2528,7 @@ export default async function Dashboard({
 	  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
 
         <DashboardWelcomeModal

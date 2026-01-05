@@ -264,7 +264,7 @@ export function IntegrationTab({
             <ClipboardList className="h-8 w-8 text-white" />
           </div>
           <div className="flex-1 space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-700">Step 1A · Business Snapshot</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">Step 1A · Business Snapshot</p>
             <h2 className="text-2xl font-black text-slate-900 leading-tight">Document your business and integration plan</h2>
             <p className="text-sm text-slate-600">
               Capture context for our team, map your CRM + website stack, and log verification checkpoints before moving to Step 2. You can also revisit every field inside
@@ -417,7 +417,7 @@ export function IntegrationTab({
               </div>
             </div>
             <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-800">Integration tracker</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-800">Integration tracker</p>
               <div className="mt-3 grid gap-4 lg:grid-cols-3">
                 <div className="space-y-1">
                   <Label htmlFor="status-website" className="text-sm font-semibold text-slate-900">Website embed</Label>
@@ -509,7 +509,7 @@ export function IntegrationTab({
       <div className="rounded-3xl border-2 border-purple-200 bg-white/95 p-6 sm:p-8 shadow-xl">
         <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
           <div className="space-y-1">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-purple-700">Step 1B · Rewards & creative</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-purple-700">Step 1B · Rewards & creative</p>
             <h2 className="text-2xl font-black text-slate-900">Configure referral + sign-on incentives</h2>
             <p className="text-sm text-slate-600">Everything below powers referral pages, ambassador portals, and campaign templates. You can edit it again in Step 2 via the “Edit Program Settings” button.</p>
             <div className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${hasProgramSettings ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"}`}>
@@ -625,7 +625,7 @@ export function IntegrationTab({
                 <button
                   type="button"
                   onClick={() => setSignOnBonusActive((prev) => !prev)}
-                  className="inline-flex items-center gap-2 rounded-full border border-pink-200 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-pink-700"
+                  className="inline-flex items-center gap-2 rounded-full border border-pink-200 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-pink-700"
                 >
                   {signOnBonusActive ? "Disable bonus" : "Enable bonus"}
                   <ChevronDown className={`h-4 w-4 transition-transform ${signOnBonusActive ? "rotate-180" : ""}`} />
@@ -750,7 +750,7 @@ export function IntegrationTab({
       <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600">Step 1C · Integrations</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-600">Step 1C · Integrations</p>
             <h3 className="text-xl font-black text-slate-900">Integrations</h3>
             <p className="text-sm text-slate-600">
               Setup what lives on your site, connect what lives in your internal systems, then run one end-to-end test before you go live.

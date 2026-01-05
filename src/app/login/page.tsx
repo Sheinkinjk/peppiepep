@@ -414,7 +414,7 @@ function LoginContent() {
 
           <div className="relative">
             <div className="mb-6">
-              <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                 <span className="text-slate-900">Step 2 of 2</span>
                 <span>Business profile</span>
               </div>

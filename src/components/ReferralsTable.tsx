@@ -397,6 +397,7 @@ export function ReferralsTable({
             className="h-8 w-full text-xs sm:w-64"
           />
           <select
+            aria-label="Filter referrals by status"
             className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
             value={statusFilter}
             onChange={(e) => {
@@ -409,6 +410,7 @@ export function ReferralsTable({
             <option value="completed">Completed</option>
           </select>
           <select
+            aria-label="Filter referrals by source"
             className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
             value={sourceFilter}
             onChange={(e) => {
@@ -462,7 +464,7 @@ export function ReferralsTable({
 
       <div className="rounded-2xl border border-slate-200">
         <div
-          className="grid gap-4 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-600"
+          className="grid gap-4 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600"
           style={{ gridTemplateColumns: ROW_TEMPLATE }}
         >
           <div className="flex items-center">
@@ -588,13 +590,16 @@ export function ReferralsTable({
                   ? new Date(referral.transaction_date).toLocaleDateString()
                   : createdAt;
 
+                const zebraClass =
+                  virtualRow.index % 2 === 0 ? "bg-slate-50/60" : "bg-white";
+
                 return (
                   <div
                     key={referral.id}
                     ref={(node) => {
                       if (node) rowVirtualizer.measureElement(node);
                     }}
-                    className="grid items-center gap-4 border-b border-slate-100 px-4 py-4 text-sm"
+                    className={`grid items-center gap-4 border-b border-slate-100 px-4 py-3 text-sm ${zebraClass}`}
                     style={{
                       gridTemplateColumns: ROW_TEMPLATE,
                       position: "absolute",
@@ -737,8 +742,8 @@ export function ReferralsTable({
       </div>
 
       {isLoading && (
-        <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-slate-500">
-          <Loader2 className="h-4 w-4 animate-spin" />
+        <div role="status" aria-live="polite" className="flex items-center gap-2 text-xs uppercase tracking-[0.12em] text-slate-500">
+          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
           Syncing referrals…
         </div>
       )}

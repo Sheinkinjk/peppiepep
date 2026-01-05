@@ -40,11 +40,11 @@ export function DiscountCodeCard({
       </div>
       {discountCode ? (
         <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
             Your code
           </p>
           <p
-            className="text-3xl font-black tracking-[0.3em] text-slate-900"
+            className="text-3xl font-black tracking-[0.2em] text-slate-900"
             style={{ color: accentColor }}
           >
             {discountCode}

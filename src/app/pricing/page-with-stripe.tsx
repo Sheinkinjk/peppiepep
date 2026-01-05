@@ -130,7 +130,7 @@ export default function Pricing() {
                     : "text-purple-300 hover:text-white hover:bg-slate-800/50"
                 }`}
               >
-                <span className="absolute -top-3 -right-2 rounded-xl bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-black uppercase tracking-wide text-white shadow-2xl shadow-emerald-500/60 animate-pulse ring-2 ring-white/30">
+                <span className="absolute -top-3 -right-2 rounded-xl bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-black uppercase tracking-[0.12em] text-white shadow-2xl shadow-emerald-500/60 animate-pulse ring-2 ring-white/30">
                   Save 20%
                 </span>
                 Annual billing

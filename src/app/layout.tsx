@@ -40,13 +40,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-teal-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
         <GoogleAnalytics />
         <GoogleTagManager />
         <div className="flex min-h-screen flex-col">
           <StickyHeader />
-          <div className="flex-1" role="presentation">
+          <main id="main-content" className="flex-1">
             {children}
-          </div>
+          </main>
           <div className="bg-white/90">
             <div className="mx-auto max-w-6xl px-6 pb-10 md:px-10 lg:px-16">
               <Footer />

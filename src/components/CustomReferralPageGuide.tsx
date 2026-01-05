@@ -673,7 +673,7 @@ trackConversion('SARAH50', 150.00);`,
             <Code className="h-8 w-8 text-white" />
           </div>
           <div className="flex-1">
-            <p className="text-xs uppercase tracking-[0.35em] text-blue-700 font-semibold">
+            <p className="text-xs uppercase tracking-[0.22em] text-blue-700 font-semibold">
               Developer Guide
             </p>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight mb-2">

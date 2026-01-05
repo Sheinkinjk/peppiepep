@@ -243,7 +243,7 @@ export function ProgramSettingsDialog({
           <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4 space-y-4">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Step 1A data</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Step 1A data</p>
                 <h3 className="text-lg font-bold text-slate-900">Business snapshot</h3>
                 <p className="text-xs text-slate-600">This powers the Implementation Guide + CRM handoff.</p>
               </div>
@@ -525,7 +525,7 @@ export function ProgramSettingsDialog({
               <button
                 type="button"
                 onClick={() => setSignOnBonusActive((prev) => !prev)}
-                className="inline-flex items-center gap-2 rounded-full border border-pink-200 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-pink-700"
+                className="inline-flex items-center gap-2 rounded-full border border-pink-200 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-pink-700"
               >
                 {signOnBonusActive ? "Disable bonus" : "Enable bonus"}
                 <ChevronDown className={`h-4 w-4 transition-transform ${signOnBonusActive ? "rotate-180" : ""}`} />

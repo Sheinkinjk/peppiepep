@@ -124,7 +124,7 @@ export function ProjectLandingClient({
           <div className="relative space-y-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
                   {config.heroTagline}
                 </p>
                 <h1 className="text-3xl font-black tracking-tight sm:text-4xl">
@@ -156,19 +156,19 @@ export function ProjectLandingClient({
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-3xl border border-white/30 bg-white/10 p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/70">You receive</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/70">You receive</p>
                 <p className="mt-3 text-4xl font-black">{friendReward}</p>
                 <p className="text-xs text-white/75">Automatically locked in once you submit and book.</p>
               </div>
               <div className="rounded-3xl border border-white/30 bg-white/10 p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/70">
                   {ambassador?.name || "Your host"} receives
                 </p>
                 <p className="mt-3 text-4xl font-black">{ambassadorReward}</p>
                 <p className="text-xs text-white/75">Released the moment your visit is complete.</p>
               </div>
               <div className="rounded-3xl border border-white/30 bg-white/10 p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/70">Why it matters</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/70">Why it matters</p>
                 <p className="mt-3 text-lg font-semibold">
                   Concierges confirm within {config.stats[2]?.value ?? "<2h"}
                 </p>
@@ -197,7 +197,7 @@ export function ProjectLandingClient({
             <div className="rounded-[30px] border border-slate-200 bg-white/95 p-6 shadow-lg space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Your referral link</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Your referral link</p>
                   <p className="text-sm text-slate-600">Press the button to reveal and copy your share-ready link.</p>
                 </div>
                 <Button
@@ -249,7 +249,7 @@ export function ProjectLandingClient({
 
         <section className="rounded-[34px] border border-slate-200 bg-white p-6 shadow-xl space-y-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Loyalty program</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Loyalty program</p>
             <h2 className="text-2xl font-black text-slate-900">{businessName} ambassador advantages</h2>
             <p className="mt-2 text-sm text-slate-600">
               Every introduction is concierge-tracked. You get credited the instant your friend completes their visit.
@@ -268,7 +268,7 @@ export function ProjectLandingClient({
         <section className="grid gap-6 lg:grid-cols-3">
           {config.miniHighlights.map((highlight) => (
             <div key={highlight.title} className="rounded-[26px] border border-slate-200 bg-white/95 p-5 shadow-md">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">{highlight.title}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">{highlight.title}</p>
               <p className="mt-2 text-sm text-slate-600">{highlight.copy}</p>
             </div>
           ))}

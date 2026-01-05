@@ -32,7 +32,7 @@ export function DashboardStat({
         className,
       )}
     >
-      <p className="text-[10px] uppercase tracking-[0.35em] opacity-80">
+      <p className="text-[10px] uppercase tracking-[0.22em] opacity-80">
         {label}
       </p>
       <p className="text-lg font-black">{value}</p>

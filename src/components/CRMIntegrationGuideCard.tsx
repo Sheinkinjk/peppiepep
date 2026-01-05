@@ -103,7 +103,7 @@ export function CRMIntegrationGuideCard({
   return (
     <Card className="p-6 sm:p-8 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/80 rounded-3xl border-slate-200/80 bg-white/95 space-y-6">
       <div className="space-y-1">
-        <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Step 1C · CRM integration</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Step 1C · CRM integration</p>
         <h3 className="text-xl sm:text-2xl font-black text-slate-900">Connect {businessName || "your business"} to your CRM</h3>
         <p className="text-sm text-slate-600">Use this card to brief your ops team and test a conversion before you import ambassadors.</p>
       </div>

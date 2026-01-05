@@ -112,6 +112,20 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
         const rewardAmount = campaign.snapshot_reward_amount;
         const upgradeName = campaign.snapshot_upgrade_name;
         const rewardTerms = campaign.snapshot_reward_terms;
+        const rawStatus = campaign.status?.toLowerCase() ?? "unknown";
+        const statusStyles: Record<string, string> = {
+          queued: "bg-amber-100 text-amber-800",
+          scheduled: "bg-indigo-100 text-indigo-800",
+          sending: "bg-sky-100 text-sky-800",
+          processing: "bg-sky-100 text-sky-800",
+          sent: "bg-emerald-100 text-emerald-800",
+          failed: "bg-rose-100 text-rose-800",
+          canceled: "bg-slate-100 text-slate-700",
+          cancelled: "bg-slate-100 text-slate-700",
+          draft: "bg-slate-100 text-slate-700",
+        };
+        const statusLabel = campaign.status ? campaign.status.replace(/_/g, " ") : "unknown";
+        const statusClass = statusStyles[rawStatus] ?? "bg-slate-100 text-slate-700";
 
         const currentCreatedAt = campaign.created_at
           ? new Date(campaign.created_at).getTime()
@@ -184,7 +198,9 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
                 {campaign.channel ?? "—"}
               </TableCell>
               <TableCell className="capitalize">
-                {campaign.status ?? "—"}
+                <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${statusClass}`}>
+                  {statusLabel}
+                </span>
               </TableCell>
               <TableCell className="text-right text-sm">
                 {campaign.total_recipients ?? 0}
@@ -263,7 +279,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
                       </p>
                       <div className="grid gap-2 sm:grid-cols-4">
                         <div>
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
                             Created
                           </p>
                           <p className="text-slate-800">
@@ -278,7 +294,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
                           </p>
                         </div>
                         <div>
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
                             Sends
                           </p>
                           <p className="text-slate-800">
@@ -290,7 +306,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
                           </p>
                         </div>
                         <div>
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
                             Engagement
                           </p>
                           <p className="text-slate-800">
@@ -302,7 +318,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
                           </p>
                         </div>
                         <div>
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
                             Outcomes
                           </p>
                           <p className="text-slate-800">

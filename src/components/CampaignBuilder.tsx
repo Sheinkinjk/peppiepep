@@ -156,7 +156,8 @@ export function CampaignBuilder({
 
   const schedulingEnabled = campaignSchedulerEnabled;
   const effectiveScheduleType = schedulingEnabled ? scheduleType : "now";
-  const effectiveScheduleDate = schedulingEnabled ? scheduleDate : "";
+  const effectiveScheduleDate =
+    schedulingEnabled && scheduleType === "later" ? scheduleDate : null;
   const scheduleDateMissing =
     schedulingEnabled && scheduleType === "later" && !scheduleDate;
 
@@ -572,7 +573,7 @@ export function CampaignBuilder({
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
                 Campaign control
               </p>
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
@@ -595,21 +596,21 @@ export function CampaignBuilder({
 
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-[11px] uppercase tracking-wide text-slate-500">
+              <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">
                 SMS ready
               </p>
               <p className="text-2xl font-black text-slate-900">{smsEligibleCount}</p>
               <p className="text-xs text-slate-500">Ambassadors with phone numbers</p>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-[11px] uppercase tracking-wide text-slate-500">
+              <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">
                 Email ready
               </p>
               <p className="text-2xl font-black text-slate-900">{emailEligibleCount}</p>
               <p className="text-xs text-slate-500">Ambassadors with verified email</p>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-[11px] uppercase tracking-wide text-slate-500">
+              <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">
                 Omnichannel ready
               </p>
               <p className="text-2xl font-black text-slate-900">{omnichannelReadyCount}</p>
@@ -1133,7 +1134,7 @@ export function CampaignBuilder({
                   <div className="flex flex-col items-start">
                     <span>Schedule Later</span>
                     {!schedulingEnabled && (
-                      <span className="text-[10px] uppercase tracking-wide text-slate-500">
+                      <span className="text-[10px] uppercase tracking-[0.12em] text-slate-500">
                         Coming soon
                       </span>
                     )}

@@ -134,7 +134,7 @@ const timelineCards = [
 function MetricCard({ title, metric, caption }: MetricCard) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">{title}</p>
+      <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-2">{title}</p>
       <p className="text-4xl font-black text-teal-700 mb-1">{metric}</p>
       <p className="text-sm text-slate-600">{caption}</p>
     </div>
@@ -179,7 +179,7 @@ function AccordionSection({ items }: { items: AccordionItem[] }) {
 export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
 
         {/* Page Title Section */}
         <section className="mb-12 text-center space-y-4">
@@ -196,7 +196,7 @@ export default function CaseStudiesPage() {
 
         {/* Tabs Section */}
         <Tabs defaultValue="luxury" className="space-y-8">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 gap-2 bg-slate-100 p-2 rounded-2xl">
+          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 bg-slate-100 p-2 rounded-2xl">
             <TabsTrigger value="luxury" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
               Luxury & Lifestyle E-commerce
             </TabsTrigger>
@@ -311,13 +311,13 @@ export default function CaseStudiesPage() {
                   </div>
                   <div className="space-y-3">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-1">
                         Why It Wins
                       </p>
                       <p className="text-sm text-slate-700">{industry.whyItWins}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-1">
                         Best Trigger
                       </p>
                       <p className="text-sm text-slate-700">{industry.bestTrigger}</p>
@@ -350,7 +350,7 @@ export default function CaseStudiesPage() {
                     key={card.period}
                     className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-cyan-50 p-6"
                   >
-                    <p className="text-sm font-bold uppercase tracking-wide text-teal-700 mb-2">
+                    <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal-700 mb-2">
                       {card.period}
                     </p>
                     <p className="text-sm text-slate-700 leading-relaxed">{card.task}</p>
@@ -377,10 +377,10 @@ export default function CaseStudiesPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b-2 border-slate-200 bg-gradient-to-r from-slate-50 to-slate-100">
-                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wide text-slate-700">Feature</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wide text-red-600">Manual Tracking</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wide text-orange-600">Basic Tools</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wide text-teal-600">Refer Labs</th>
+                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-[0.12em] text-slate-700">Feature</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-red-600">Manual Tracking</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-orange-600">Basic Tools</th>
+                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-teal-600">Refer Labs</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">

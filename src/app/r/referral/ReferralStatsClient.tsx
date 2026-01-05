@@ -204,13 +204,13 @@ export default function ReferralStatsClient({
         {/* Premium Header Section */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/30 px-4 py-2 text-sm font-bold uppercase tracking-wide text-amber-300 shadow-lg">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/30 px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-amber-300 shadow-lg">
               <Trophy className="h-4 w-4" />
               VIP Ambassador Portal
             </div>
           </div>
           <div>
-            <h1 className="text-5xl font-black leading-tight sm:text-6xl lg:text-7xl bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
               Your Referral Empire
             </h1>
             <p className="mt-4 text-xl text-slate-300/90 sm:text-2xl max-w-3xl">
@@ -278,7 +278,7 @@ export default function ReferralStatsClient({
                       <Trophy className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-wide text-amber-300 font-bold">Total Earnings</p>
+                      <p className="text-xs uppercase tracking-[0.12em] text-amber-300 font-bold">Total Earnings</p>
                       <p className="text-3xl font-black text-white">${totalEarnings.toLocaleString()}</p>
                     </div>
                   </div>
@@ -286,15 +286,15 @@ export default function ReferralStatsClient({
                   <div className="grid grid-cols-3 gap-4">
                     <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4 text-center">
                       <div className="text-3xl font-black text-emerald-400">{total}</div>
-                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-wide">Total Referrals</div>
+                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-[0.12em]">Total Referrals</div>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4 text-center">
                       <div className="text-3xl font-black text-green-400">{earned}</div>
-                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-wide">Earned</div>
+                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-[0.12em]">Earned</div>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-4 text-center">
                       <div className="text-3xl font-black text-amber-400">{pending}</div>
-                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-wide">Pending</div>
+                      <div className="text-xs text-slate-300 mt-1 uppercase tracking-[0.12em]">Pending</div>
                     </div>
                   </div>
 
@@ -316,7 +316,7 @@ export default function ReferralStatsClient({
                       <Share2 className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-wide text-purple-300 font-bold">Your Referral Link</p>
+                      <p className="text-xs uppercase tracking-[0.12em] text-purple-300 font-bold">Your Referral Link</p>
                       <p className="text-sm text-slate-200">Share and start earning {clientReward} per friend</p>
                     </div>
                   </div>
@@ -422,7 +422,7 @@ export default function ReferralStatsClient({
                               </p>
                             </div>
                             <span
-                              className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-wide shadow-lg ${
+                              className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.12em] shadow-lg ${
                                 isEarned ? "bg-emerald-600 text-white" : "bg-amber-600 text-white"
                               }`}
                             >
@@ -457,7 +457,7 @@ export default function ReferralStatsClient({
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-4">
                     <Sparkles className="h-5 w-5 text-amber-300" />
-                    <p className="text-xs uppercase tracking-wide text-amber-200 font-bold">How It Works</p>
+                    <p className="text-xs uppercase tracking-[0.12em] text-amber-200 font-bold">How It Works</p>
                   </div>
                   <h3 className="text-2xl font-black mb-5">Turn Friends Into Cash</h3>
                   <div className="space-y-4">
@@ -502,7 +502,7 @@ export default function ReferralStatsClient({
               <Card className="border border-amber-400/30 bg-gradient-to-br from-amber-600/10 to-orange-600/10 backdrop-blur-xl p-8 text-white shadow-2xl">
                 <div className="flex items-center gap-2 mb-4">
                   <Award className="h-5 w-5 text-amber-300" />
-                  <p className="text-xs uppercase tracking-wide text-amber-200 font-bold">Your VIP Perks</p>
+                  <p className="text-xs uppercase tracking-[0.12em] text-amber-200 font-bold">Your VIP Perks</p>
                 </div>
                 <h3 className="text-2xl font-black mb-5">Ambassador Benefits</h3>
                 <div className="space-y-3">
@@ -545,7 +545,7 @@ export default function ReferralStatsClient({
               <Card className="border border-emerald-400/30 bg-gradient-to-br from-emerald-600/10 to-teal-600/10 backdrop-blur-xl p-8 text-white shadow-2xl">
                 <div className="flex items-center gap-2 mb-4">
                   <Users className="h-5 w-5 text-emerald-300" />
-                  <p className="text-xs uppercase tracking-wide text-emerald-200 font-bold">Need Help?</p>
+                  <p className="text-xs uppercase tracking-[0.12em] text-emerald-200 font-bold">Need Help?</p>
                 </div>
                 <h4 className="text-xl font-black mb-3">Full Support & Transparency</h4>
                 <p className="text-sm text-slate-200/90 mb-5">

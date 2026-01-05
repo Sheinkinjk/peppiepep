@@ -216,7 +216,7 @@ export function DashboardExplainerDialog({ className }: DashboardExplainerDialog
                   Track conversions via discount capture (Step 1) or manual entry (Step 5) → Credits automatically awarded to the correct ambassador.
                 </p>
                 <div className="mt-4 p-4 rounded-xl bg-white/80 border border-purple-200">
-                  <p className="text-xs text-slate-600 font-semibold uppercase tracking-wide mb-2">Pro Tip</p>
+                  <p className="text-xs text-slate-600 font-semibold uppercase tracking-[0.12em] mb-2">Pro Tip</p>
                   <p className="text-sm text-slate-700">
                     Start with Steps 1-3 to build your foundation, then use Step 4 to activate your ambassadors with campaigns,
                     and monitor everything in Step 5. Each step is essential for a fully automated referral program.

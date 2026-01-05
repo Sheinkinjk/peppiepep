@@ -433,25 +433,25 @@ export function CRMIntegrationTab({
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-wider text-white/75">
+            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
               Ambassadors
             </p>
             <p className="text-xl font-black">{totalCustomers}</p>
           </div>
           <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-wider text-white/75">
+            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
               Email
             </p>
             <p className="text-xl font-black">{emailReady}</p>
           </div>
           <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-wider text-white/75">
+            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
               SMS
             </p>
             <p className="text-xl font-black">{smsReady}</p>
           </div>
           <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-wider text-white/75">
+            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
               Codes
             </p>
             <p className="text-xl font-black">{uniqueCodes}</p>
@@ -461,7 +461,7 @@ export function CRMIntegrationTab({
 
       {/* Quick Navigation Shortcuts */}
       <Card className="rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-5 shadow-md">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 mb-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 mb-3">
           Quick Actions
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -494,7 +494,7 @@ export function CRMIntegrationTab({
                   <Mail className="h-8 w-8 text-white" />
                 </div>
                 <div className="flex-1 text-left">
-                  <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
+                  <p className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-semibold">
                     Step-by-Step Guide
                   </p>
                   <h2 className="text-2xl font-black text-slate-900 leading-tight">
@@ -543,13 +543,37 @@ export function CRMIntegrationTab({
             <div>
               <p className="font-bold text-slate-900 mb-2 text-sm">Example Email Template</p>
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 font-mono text-xs text-slate-700 leading-relaxed">
-                <p className="mb-2"><strong>Subject:</strong> You're invited to our VIP referral program 🎉</p>
-                <p className="mb-3"><strong>Body:</strong></p>
-                <p>Hi <span className="bg-purple-100 px-1 rounded">{'{{name}}'}</span>,</p>
-                <p className="mt-2 mb-2">Great news! You've been selected for our exclusive referral program.</p>
-                <p className="mb-2">Share your unique link with friends and earn <strong>$25</strong> for every person who books:</p>
-                <p className="mb-3 text-blue-600 underline"><span className="bg-blue-100 px-1 rounded">{'{{referral_link}}'}</span></p>
-                <p>Your friends get <strong>$50 off</strong> their first visit, and you earn rewards. Win-win! 💰</p>
+                <div className="max-w-[420px] space-y-1.5">
+                  <p className="mb-2"><strong>Subject:</strong> You're invited to our VIP referral program 🎉</p>
+                  <p className="mb-3"><strong>Body:</strong></p>
+                  <p className="flex flex-wrap items-center gap-2">
+                    <span>Hi</span>
+                    <span className="bg-purple-100 px-1 rounded">{'{{name}}'}</span>
+                    <button
+                      type="button"
+                      onClick={() => handleCopy("{{name}}", "Merge tag {{name}}")}
+                      className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-slate-600 hover:bg-slate-100"
+                    >
+                      <Copy className="h-3 w-3" />
+                      Copy
+                    </button>
+                    <span>,</span>
+                  </p>
+                  <p>Great news! You've been selected for our exclusive referral program.</p>
+                  <p>Share your unique link with friends and earn <strong>$25</strong> for every person who books:</p>
+                  <p className="flex flex-wrap items-center gap-2 text-blue-600 underline">
+                    <span className="bg-blue-100 px-1 rounded">{'{{referral_link}}'}</span>
+                    <button
+                      type="button"
+                      onClick={() => handleCopy("{{referral_link}}", "Merge tag {{referral_link}}")}
+                      className="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-blue-700 hover:bg-blue-50"
+                    >
+                      <Copy className="h-3 w-3" />
+                      Copy
+                    </button>
+                  </p>
+                  <p>Your friends get <strong>$50 off</strong> their first visit, and you earn rewards. Win-win! 💰</p>
+                </div>
               </div>
               <p className="text-xs text-slate-600 mt-3">
                 Replace <code className="bg-slate-200 px-1 rounded">{'{{name}}'}</code> and <code className="bg-slate-200 px-1 rounded">{'{{referral_link}}'}</code> with your CRM's merge tag syntax (e.g., Klaviyo uses <code className="bg-slate-200 px-1 rounded">{'{{ first_name }}'}</code>).
@@ -587,7 +611,7 @@ export function CRMIntegrationTab({
                   <Zap className="h-8 w-8 text-white" />
                 </div>
                 <div className="flex-1 text-left">
-                  <p className="text-xs uppercase tracking-[0.35em] text-indigo-700 font-semibold">
+                  <p className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-semibold">
                     Platform Connections
                   </p>
                   <h2 className="text-2xl font-black text-slate-900 leading-tight">
@@ -618,7 +642,7 @@ export function CRMIntegrationTab({
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="text-xl font-black text-slate-900">{platform.name}</h3>
                   <span
-                    className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${
+                    className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
                       platform.status === "coming_soon"
                         ? "bg-slate-100 text-slate-600"
                         : "bg-emerald-100 text-emerald-700"
@@ -682,7 +706,7 @@ export function CRMIntegrationTab({
                   <Download className="h-8 w-8 text-white" />
                 </div>
                 <div className="flex-1 text-left">
-                  <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
+                  <p className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-semibold">
                     Data Export
                   </p>
                   <h2 className="text-2xl font-black text-slate-900 leading-tight">
@@ -705,7 +729,7 @@ export function CRMIntegrationTab({
       <div className="grid gap-5 lg:grid-cols-[2fr_1fr]">
         <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
           <div className="flex flex-col gap-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
               Universal Export
             </p>
             <h3 className="text-xl font-bold text-slate-900">
@@ -726,7 +750,7 @@ export function CRMIntegrationTab({
             </Button>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs text-slate-600 space-y-2">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-slate-500 font-semibold">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500 font-semibold">
               Export includes
             </p>
             <div className="grid grid-cols-2 gap-2">
@@ -758,7 +782,7 @@ export function CRMIntegrationTab({
           </div>
         </Card>
         <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
             API Integration
           </p>
           <div className="space-y-3 text-sm text-slate-600">
@@ -810,7 +834,7 @@ export function CRMIntegrationTab({
       <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
               Data Preview
             </p>
             <h3 className="text-xl font-bold text-slate-900">

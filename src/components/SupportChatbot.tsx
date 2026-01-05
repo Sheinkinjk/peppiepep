@@ -288,7 +288,7 @@ export function SupportChatbot() {
                         )}
                       >
                         {message.role === "assistant" && (
-                          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#00a6b4]">
+                          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#00a6b4]">
                             <Sparkles className="h-3.5 w-3.5" />
                             Concierge
                           </div>
@@ -314,7 +314,7 @@ export function SupportChatbot() {
 
                 {messages.length <= 3 && (
                   <div className="border-t border-slate-200 bg-white/80 px-4 py-3">
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                       Ask me:
                     </p>
                     <div className="flex flex-wrap gap-2">

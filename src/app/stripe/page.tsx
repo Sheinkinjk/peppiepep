@@ -19,7 +19,7 @@ function CodeBlock({ children }: { children: string }) {
 
 export default function StripeGuidePage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
@@ -77,7 +77,7 @@ export default function StripeGuidePage() {
                 Stripe should send events to the webhook endpoint below (configured in Stripe Dashboard → Developers → Webhooks).
               </p>
               <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Webhook URL</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Webhook URL</p>
                 <p className="mt-1 font-mono text-sm text-slate-900">https://referlabs.com.au/api/stripe/webhook</p>
               </div>
             </div>

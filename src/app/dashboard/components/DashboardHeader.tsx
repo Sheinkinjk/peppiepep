@@ -188,7 +188,7 @@ export function DashboardHeader({
           <summary className="cursor-pointer list-none px-4 py-3">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Your next actions</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Your next actions</p>
                 <p className="mt-1 text-xs text-slate-700">
                   {nextActionsSummary
                     ? `${nextActionsSummary.required} required • ${nextActionsSummary.recommended} recommended • ${nextActionsSummary.info} info`
@@ -313,7 +313,8 @@ export function DashboardHeader({
         </details>
       )}
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-200/70 via-white to-emerald-100/70 p-1 shadow-sm">
+        <div className="grid grid-cols-2 divide-y divide-slate-200/60 lg:grid-cols-4 lg:divide-y-0 lg:divide-x lg:divide-slate-200/60">
         {/* Ambassadors */}
         <StatCard
           label="Ambassadors"
@@ -350,6 +351,7 @@ export function DashboardHeader({
           emptyMessage="$0 tracked"
           emptySubtext="Revenue appears when referrals convert"
         />
+        </div>
       </div>
     </div>
   );
@@ -377,18 +379,18 @@ function StatCard({
 
   return (
     <div
-      className={`rounded-xl border p-5 transition-all duration-200 ${
+      className={`rounded-[14px] p-5 shadow-sm ring-1 transition-all duration-200 ${
         isRevenue
-          ? "bg-emerald-50 border-emerald-200"
-          : "bg-slate-50 border-slate-200"
+          ? "bg-white/95 ring-emerald-200/70"
+          : "bg-white/95 ring-slate-200/70"
       }`}
     >
-      <div className="flex items-center gap-2 mb-2">
+      <div className="flex items-center gap-2 mb-2 min-h-[20px]">
         <div className={`${isRevenue ? 'text-emerald-700' : 'text-slate-500'}`}>
           {icon}
         </div>
         <p
-          className={`text-xs font-semibold uppercase tracking-wide ${
+          className={`text-xs font-semibold uppercase tracking-[0.12em] leading-none ${
             isRevenue ? "text-emerald-700" : "text-slate-500"
           }`}
         >

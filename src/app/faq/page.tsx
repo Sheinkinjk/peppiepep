@@ -171,7 +171,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="aurora relative min-h-screen bg-gradient-to-b from-[#d5f9ff] via-white to-[#d9f7fe] px-6 py-12 sm:px-10 lg:px-16">
+    <div className="aurora relative min-h-screen bg-gradient-to-b from-[#d5f9ff] via-white to-[#d9f7fe] px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
       <div className="mx-auto max-w-6xl space-y-10">
         <header className="space-y-3 text-center">
           <h1 className="text-4xl font-black text-slate-900 sm:text-5xl lg:text-[3.5rem] leading-tight">
@@ -187,7 +187,7 @@ export default function FAQPage() {
             <section key={section.title} className="space-y-4">
               <div className="rounded-[44px] border border-white/70 bg-gradient-to-br from-[#e0f7ff] via-[#c5eef6] to-white/80 px-6 py-7 shadow-[0_25px_60px_rgba(15,23,42,0.08)]">
                 <div className="flex flex-col gap-1">
-                  <p className="text-xs uppercase tracking-[0.4em] text-[#0a9fb3]">
+                  <p className="text-xs uppercase tracking-[0.24em] text-[#0a9fb3]">
                     {section.title}
                   </p>
                   <p className="text-lg font-semibold text-slate-900">

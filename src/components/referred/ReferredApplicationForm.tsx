@@ -468,17 +468,18 @@ export function ReferredApplicationForm({
             <Button
               type="submit"
               disabled={isSubmitting}
+              aria-busy={isSubmitting}
               className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-bold py-6 text-lg shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" aria-hidden="true" />
                   Submitting...
                 </>
               ) : (
                 <>
                   Submit Application
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                 </>
               )}
             </Button>

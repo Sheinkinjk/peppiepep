@@ -470,12 +470,12 @@ function renderButton(options: {
   return `
 <table role="presentation" cellpadding="0" cellspacing="0" style="${widthStyle} margin:0; border-collapse:separate;">
   <tr>
-    <td align="center" style="border-radius:999px; background:${options.background}; padding:0; border:1px solid ${borderColor}; ${shadowStyle}">
+    <td align="center" style="border-radius:16px; background:${options.background}; padding:0; border:1px solid ${borderColor}; ${shadowStyle}">
       <a
         href="${href}"
         target="_blank"
         rel="noopener noreferrer"
-        style="display:inline-block; padding:14px 34px; font-size:14px; line-height:1.2; font-weight:800; letter-spacing:0.02em; font-family:${options.fontFamily}; color:${options.textColor}; text-decoration:none;"
+        style="display:inline-block; padding:14px 34px; font-size:14px; line-height:1.2; font-weight:800; letter-spacing:0.02em; font-family:${options.fontFamily}; color:${options.textColor}; text-decoration:none; border-radius:16px;"
       >
         ${safeLabel}
       </a>
@@ -824,6 +824,12 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
               <p style="margin: 0 0 4px 0; color: ${tone.footerMutedText}; font-size: 12px;">
                 <a href="${siteUrl}" style="color: ${viewInBrowserColor}; text-decoration: none;">${websiteLabel}</a>
               </p>
+              <div style="margin: 10px auto 0 auto; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; background: ${hexToRgba(
+                brandHighlight,
+                0.12,
+              )}; color: ${tone.footerTextColor}; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">
+                Refer Labs
+              </div>
               ${
                 snapshot.rewardTerms
                   ? `<p style="margin: 0; color: ${tone.footerMutedText}; font-size: 11px;">${snapshot.rewardTerms}</p>`

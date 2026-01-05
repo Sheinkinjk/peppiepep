@@ -35,7 +35,7 @@ export function StartCampaignCTA({ className = "", variant = "default" }: StartC
       )}
     >
       <div>
-        <p className={cn("uppercase tracking-[0.3em] text-emerald-700 font-bold", isCompact ? "text-[10px]" : "text-[11px]")}>
+        <p className={cn("uppercase tracking-[0.2em] text-emerald-700 font-bold", isCompact ? "text-[10px]" : "text-[11px]")}>
           Create Campaign
         </p>
         <p

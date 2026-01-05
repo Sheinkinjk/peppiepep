@@ -517,7 +517,7 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
                     <CheckCircle2 className="h-7 w-7" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">Success</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">Success</p>
                     <h3 className="text-2xl font-black text-white">We'll Review & Follow Up</h3>
                   </div>
                 </div>

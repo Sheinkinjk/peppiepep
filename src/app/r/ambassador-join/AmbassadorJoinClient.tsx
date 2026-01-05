@@ -170,7 +170,7 @@ export default function AmbassadorJoinClient({
       <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-4 py-14 lg:px-10">
         {/* Header */}
         <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/40 px-4 py-2 text-xs font-bold uppercase tracking-wide text-amber-200 shadow-lg">
+          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-amber-200 shadow-lg">
             <Sparkles className="h-4 w-4" />
             Official Ambassador Invitation
           </div>
@@ -198,7 +198,7 @@ export default function AmbassadorJoinClient({
                   <Gift className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-purple-200 font-bold">
+                  <p className="text-xs uppercase tracking-[0.12em] text-purple-200 font-bold">
                     Step 1 · Confirm your spot
                   </p>
                   <p className="text-lg font-black text-white">
@@ -213,7 +213,7 @@ export default function AmbassadorJoinClient({
               </p>
 
               <div className="space-y-3 rounded-2xl border border-white/20 bg-black/20 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-200 mb-1">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-200 mb-1">
                   Optional · Confirm your details
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -267,7 +267,7 @@ export default function AmbassadorJoinClient({
                   <Trophy className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-emerald-200 font-bold">
+                  <p className="text-xs uppercase tracking-[0.12em] text-emerald-200 font-bold">
                     Your rewards
                   </p>
                   <p className="text-lg font-semibold text-white">
@@ -278,13 +278,13 @@ export default function AmbassadorJoinClient({
 
               <div className="space-y-3 text-sm text-slate-100/90">
                 <div className="rounded-2xl border border-white/15 bg-black/10 p-3">
-                  <p className="text-xs uppercase tracking-wide text-slate-300 mb-1">
+                  <p className="text-xs uppercase tracking-[0.12em] text-slate-300 mb-1">
                     Friends receive
                   </p>
                   <p className="font-semibold text-white">{newUserReward}</p>
                 </div>
                 <div className="rounded-2xl border border-white/15 bg-black/10 p-3">
-                  <p className="text-xs uppercase tracking-wide text-slate-300 mb-1">
+                  <p className="text-xs uppercase tracking-[0.12em] text-slate-300 mb-1">
                     You receive
                   </p>
                   <p className="font-semibold text-white">{clientReward}</p>

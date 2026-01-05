@@ -491,7 +491,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
                     <CheckCircle2 className="h-7 w-7" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Success</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Success</p>
                     <h3 className="text-2xl font-black text-white">We'll Be in Touch Within 24 Hours</h3>
                   </div>
                 </div>

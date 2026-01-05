@@ -106,7 +106,7 @@ export function ReferredSocialProof() {
                   <div className="text-sm text-slate-600">{testimonial.role}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-slate-500 uppercase tracking-wide">Key Benefit</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-[0.12em]">Key Benefit</div>
                   <div className="font-bold text-teal-600">{testimonial.highlight}</div>
                 </div>
               </div>

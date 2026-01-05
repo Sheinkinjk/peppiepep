@@ -8,7 +8,7 @@ export default function Header() {
         <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-lg" />
         <div>
           <p className="text-base font-semibold text-slate-900">Refer Labs</p>
-          <p className="text-xs font-medium uppercase tracking-wide text-purple-700">
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-purple-700">
             Referrals OS
           </p>
         </div>

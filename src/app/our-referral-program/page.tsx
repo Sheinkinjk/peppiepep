@@ -366,7 +366,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
   const applied = searchParams?.applied === "1";
   const applyError = searchParams?.applied === "0";
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Success Modal */}
       <PartnerApplicationSuccessModal />
 
@@ -375,7 +375,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-6xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
               Earn 25% Recurring Revenue<br />
               <span className="text-[#0a4b53]">For Every Client You Refer</span>
             </h1>
@@ -395,7 +395,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
     </section>
 
       {/* Rewards Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
@@ -599,7 +599,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
       </section>
 
       {/* Application Form */}
-      <section id="apply" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section id="apply" className="py-20 bg-slate-900">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 mb-6">

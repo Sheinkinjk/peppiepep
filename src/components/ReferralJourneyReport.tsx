@@ -188,11 +188,11 @@ export function ReferralJourneyReport({ events }: { events: ReferralJourneyEvent
             <div key={ambassadorId} className="rounded-2xl border border-slate-200 bg-white">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 px-4 py-3">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Ambassador</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Ambassador</p>
                   <p className="text-lg font-bold text-slate-900">{ambassadorName}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Referral code</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Referral code</p>
                   <p className="text-sm font-mono text-slate-700">{referralCode}</p>
                 </div>
               </div>

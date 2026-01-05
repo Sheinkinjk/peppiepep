@@ -547,6 +547,7 @@ export function CustomersTable({
             className="h-8 w-full text-xs sm:w-56"
           />
           <select
+            aria-label="Filter ambassadors by status"
             className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
             value={statusFilter}
             onChange={(e) => {
@@ -561,6 +562,7 @@ export function CustomersTable({
             <option value="applicant">Applicants</option>
           </select>
           <select
+            aria-label="Sort ambassadors"
             className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
             value={sortOption}
             onChange={(e) => {
@@ -620,7 +622,7 @@ export function CustomersTable({
         <div className="overflow-x-auto">
           <div className="min-w-[1200px]">
         <div
-          className="grid gap-4 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-600"
+          className="grid gap-4 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-600"
           style={{ gridTemplateColumns: ROW_TEMPLATE }}
         >
           <div className="flex items-center">
@@ -793,6 +795,9 @@ export function CustomersTable({
                     ? "bg-emerald-100 text-emerald-800"
                     : "bg-slate-100 text-slate-800";
 
+                const zebraClass =
+                  virtualRow.index % 2 === 0 ? "bg-slate-50/60" : "bg-white";
+
                 return (
                   <div
                     key={customer.id}
@@ -800,7 +805,7 @@ export function CustomersTable({
                     ref={(node) => {
                       if (node) rowVirtualizer.measureElement(node);
                     }}
-                    className="grid items-center gap-4 border-b border-slate-100 px-4 py-4 text-sm"
+                    className={`grid items-center gap-4 border-b border-slate-100 px-4 py-3 text-sm ${zebraClass}`}
                     style={{
                       gridTemplateColumns: ROW_TEMPLATE,
                       position: "absolute",
@@ -835,7 +840,7 @@ export function CustomersTable({
                           {customer.company ?? "—"}
                         </p>
                         {normalizedSource && (
-                          <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-slate-600">
+                          <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-slate-600">
                             {normalizedSource}
                           </span>
                         )}
@@ -1015,8 +1020,9 @@ export function CustomersTable({
             : `Showing ${firstItemIndex}-${lastItemIndex} of ${total} ambassadors`}
         </p>
         <div className="flex items-center gap-2">
-          <span>Rows per page:</span>
+          <span id="rows-per-page-label">Rows per page:</span>
           <select
+            aria-labelledby="rows-per-page-label"
             className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
             value={pageSize}
             onChange={(e) => {
@@ -1060,7 +1066,7 @@ export function CustomersTable({
       </div>
 
       {isLoading && (
-        <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-slate-500">
+        <div className="flex items-center gap-2 text-xs uppercase tracking-[0.12em] text-slate-500">
           <Loader2 className="h-4 w-4 animate-spin" />
           Syncing results…
         </div>

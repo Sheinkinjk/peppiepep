@@ -55,7 +55,7 @@ function IntegrationCard({
 
 export default function IntegrationsHubPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
       <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
         <Wrench className="h-4 w-4" />
         Integrations

@@ -19,7 +19,7 @@ export function Step2Explainer() {
                 <Users className="h-8 w-8 text-white" />
               </div>
               <div className="flex-1">
-                <p className="text-xs uppercase tracking-[0.35em] text-purple-700 font-semibold">
+                <p className="text-xs uppercase tracking-[0.22em] text-purple-700 font-semibold">
                   Step-by-Step Guide
                 </p>
                 <h2 className="text-2xl font-black text-slate-900 leading-tight mt-1">
@@ -172,7 +172,7 @@ export function Step3Explainer() {
                 <Mail className="h-8 w-8 text-white" />
               </div>
               <div className="flex-1">
-                <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 font-semibold">
+                <p className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-semibold">
                   Step-by-Step Guide
                 </p>
                 <h2 className="text-2xl font-black text-slate-900 leading-tight mt-1">
@@ -310,7 +310,7 @@ export function Step4Explainer() {
                 <Target className="h-8 w-8 text-white" />
               </div>
               <div className="flex-1">
-                <p className="text-xs uppercase tracking-[0.35em] text-blue-700 font-semibold">
+                <p className="text-xs uppercase tracking-[0.22em] text-blue-700 font-semibold">
                   Step-by-Step Guide
                 </p>
                 <h2 className="text-2xl font-black text-slate-900 leading-tight mt-1">
@@ -435,7 +435,7 @@ export function Step5Explainer() {
                 <BarChart3 className="h-8 w-8 text-white" />
               </div>
               <div className="flex-1">
-                <p className="text-xs uppercase tracking-[0.35em] text-indigo-700 font-semibold">
+                <p className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-semibold">
                   Step-by-Step Guide
                 </p>
                 <h2 className="text-2xl font-black text-slate-900 leading-tight mt-1">
