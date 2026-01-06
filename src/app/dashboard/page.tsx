@@ -45,7 +45,7 @@ import { PartnerReferralsTab } from "@/components/PartnerReferralsTab";
 import { logReferralEvent } from "@/lib/referral-events";
 import { completeReferralAttribution } from "@/lib/referral-revenue";
 import { quickAddCustomerProfile } from "@/lib/customers-quick-add";
-import { tryInsertCreditLedgerEntry } from "@/lib/credits-ledger";
+import { tryInsertCreditLedgerEntry, fetchCreditLedger, calculateCreditTotals } from "@/lib/credits-ledger";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
   BarChart3,
@@ -61,6 +61,8 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   Minus,
+  Coins,
+  Wallet,
 } from "lucide-react";
 import { createServerComponentClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
@@ -1397,6 +1399,11 @@ export default async function Dashboard({
     .limit(50);
 
   const discountRedemptions = (discountRedemptionsData ?? []) as DiscountRedemptionRow[];
+
+  // Fetch credit ledger data for Rewards tab
+  const creditLedgerEntries = await fetchCreditLedger(supabase, business.id, { limit: 100 });
+  const creditTotals = await calculateCreditTotals(supabase, business.id, selectedWindow);
+
   const windowedReferralEvents = referralJourneyEvents.filter((event) =>
     isWithinWindow(event.created_at),
   );
@@ -1752,6 +1759,12 @@ export default async function Dashboard({
                 className="rounded-2xl px-4 py-2 data-[state=active]:bg-white data-[state=active]:text-slate-900"
               >
                 Metrics
+              </TabsTrigger>
+              <TabsTrigger
+                value="rewards"
+                className="rounded-2xl px-4 py-2 data-[state=active]:bg-white data-[state=active]:text-slate-900"
+              >
+                Rewards
               </TabsTrigger>
             </TabsList>
           </div>
@@ -2268,6 +2281,154 @@ export default async function Dashboard({
               </details>
                 </>
               )}
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="rewards">
+            <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+              <div className="space-y-6">
+                {/* Header */}
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                    <Coins className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+                      Ambassador Rewards
+                    </h2>
+                    <p className="text-sm text-slate-600">
+                      Track credits issued, program costs, and reward performance
+                    </p>
+                  </div>
+                </div>
+
+                {/* Summary Cards */}
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  {/* Total Credits Issued */}
+                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center">
+                        <DollarSign className="h-4 w-4 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Credits Issued</h3>
+                    </div>
+                    <p className="text-3xl font-black text-emerald-700">
+                      ${Math.round(creditTotals.totalIssued)}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      From {windowedCompletedReferrals} completed referrals
+                    </p>
+                  </div>
+
+                  {/* Outstanding Credits */}
+                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-amber-50 to-white p-6 shadow-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
+                        <Wallet className="h-4 w-4 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Outstanding</h3>
+                    </div>
+                    <p className="text-3xl font-black text-amber-700">
+                      ${Math.round(creditTotals.outstandingBalance)}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Credit liability
+                    </p>
+                  </div>
+
+                  {/* Credits Spent */}
+                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-8 w-8 rounded-lg bg-slate-600 flex items-center justify-center">
+                        <CreditCard className="h-4 w-4 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Credits Spent</h3>
+                    </div>
+                    <p className="text-3xl font-black text-slate-700">
+                      ${Math.round(creditTotals.totalSpent)}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Redeemed by ambassadors
+                    </p>
+                  </div>
+
+                  {/* Avg Reward per Conversion */}
+                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
+                        <Award className="h-4 w-4 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Avg per Conversion</h3>
+                    </div>
+                    <p className="text-3xl font-black text-blue-700">
+                      ${windowedCompletedReferrals > 0 ? (creditTotals.totalIssued / windowedCompletedReferrals).toFixed(2) : "0.00"}
+                    </p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Based on reward settings
+                    </p>
+                  </div>
+                </div>
+
+                {/* Credit Ledger Timeline */}
+                <div className="mt-8">
+                  <h3 className="text-lg font-bold text-slate-900 mb-4">Credit History</h3>
+                  <div className="space-y-3">
+                    {creditLedgerEntries.length === 0 ? (
+                      <div className="text-center py-8 text-slate-500">
+                        <Coins className="h-12 w-12 mx-auto mb-3 text-slate-300" />
+                        <p>No credit transactions yet</p>
+                        <p className="text-sm mt-1">Credits will appear here when rewards are issued</p>
+                      </div>
+                    ) : (
+                      creditLedgerEntries.map((entry) => (
+                        <div key={entry.id} className="flex items-start gap-4 p-4 rounded-lg border border-slate-200 bg-white hover:bg-slate-50">
+                          <div className={`h-10 w-10 rounded-lg flex items-center justify-center ${
+                            entry.entry_type === "issued" ? "bg-emerald-100" :
+                            entry.entry_type === "spent" ? "bg-red-100" :
+                            entry.entry_type === "adjustment" ? "bg-amber-100" :
+                            "bg-slate-100"
+                          }`}>
+                            {entry.entry_type === "issued" && <Award className="h-5 w-5 text-emerald-700" />}
+                            {entry.entry_type === "spent" && <CreditCard className="h-5 w-5 text-red-700" />}
+                            {entry.entry_type === "adjustment" && <Settings className="h-5 w-5 text-amber-700" />}
+                            {entry.entry_type === "expired" && <AlertTriangle className="h-5 w-5 text-slate-700" />}
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-semibold text-slate-900">
+                                {entry.customer?.name || "Ambassador"}
+                                {entry.customer?.referral_code && (
+                                  <span className="text-sm text-slate-500 ml-2">({entry.customer.referral_code})</span>
+                                )}
+                              </p>
+                              <p className={`font-bold ${
+                                entry.entry_type === "issued" ? "text-emerald-700" :
+                                entry.entry_type === "spent" ? "text-red-700" :
+                                "text-amber-700"
+                              }`}>
+                                {entry.entry_type === "spent" ? "-" : "+"}${Math.abs(entry.delta || 0)}
+                              </p>
+                            </div>
+                            <p className="text-sm text-slate-600 mt-1">
+                              {entry.entry_type === "issued" && "Credit issued"}
+                              {entry.entry_type === "spent" && "Credit redeemed"}
+                              {entry.entry_type === "adjustment" && "Manual adjustment"}
+                              {entry.entry_type === "expired" && "Credit expired"}
+                              {entry.referral?.referred_name && ` for ${entry.referral.referred_name}`}
+                            </p>
+                            {entry.note && (
+                              <p className="text-sm text-slate-500 mt-1 italic">{entry.note}</p>
+                            )}
+                            <p className="text-xs text-slate-400 mt-1">
+                              {new Date(entry.created_at!).toLocaleString()}
+                            </p>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
             </Card>
           </TabsContent>
 	        </Tabs>
