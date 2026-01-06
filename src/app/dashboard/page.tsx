@@ -1287,8 +1287,8 @@ export default async function Dashboard({
 
   // Calculate total program cost including rewards
   const totalProgramCost = totalEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
-  const windowedTotalProgramCost = windowedEstimatedCampaignSpend + creditTotals.totalIssued;
-  const previousWindowedTotalProgramCost = previousWindowedEstimatedCampaignSpend + (creditTotals.totalIssued || 0);
+  const windowedTotalProgramCost = windowedEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
+  const previousWindowedTotalProgramCost = previousWindowedEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
 
   // True ROI = Revenue / (Campaign Spend + Credits Issued)
   const roiMultiple =
