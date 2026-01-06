@@ -34,10 +34,19 @@ export async function POST(request: NextRequest) {
 
     const supabase = await createServerComponentClient();
 
+    // SECURITY FIX: Verify user is authenticated and owns this ambassador account
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
+      return NextResponse.json(
+        { error: 'Unauthorized - authentication required' },
+        { status: 401 }
+      );
+    }
+
     // Get ambassador details
     const { data: ambassador, error: ambassadorError } = await supabase
       .from('customers')
-      .select('id, email, name')
+      .select('id, email, name, business_id')
       .eq('id', ambassadorId)
       .single();
 
@@ -45,6 +54,20 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Ambassador not found' },
         { status: 404 }
+      );
+    }
+
+    // SECURITY FIX: Verify the authenticated user owns the business this ambassador belongs to
+    const { data: business, error: businessError } = await supabase
+      .from('businesses')
+      .select('owner_id')
+      .eq('id', ambassador.business_id)
+      .single();
+
+    if (businessError || !business || business.owner_id !== user.id) {
+      return NextResponse.json(
+        { error: 'Unauthorized - you can only request payouts for ambassadors in your business' },
+        { status: 403 }
       );
     }
 

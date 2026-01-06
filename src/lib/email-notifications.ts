@@ -3,6 +3,17 @@
  * Sends automated notifications to jarred@referlabs.com.au for key events
  */
 
+// SECURITY FIX: HTML escape function to prevent XSS in emails
+export function escapeHtml(unsafe: string | null | undefined): string {
+  if (!unsafe) return "";
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 type EmailParams = {
   subject: string;
   html: string;
@@ -62,18 +73,22 @@ export function buildNewAccountEmail(userData: {
   businessName?: string;
   createdAt: string;
 }): string {
+  // SECURITY FIX: Escape all user-generated content
+  const safeEmail = escapeHtml(userData.email);
+  const safeBusinessName = escapeHtml(userData.businessName) || "New User";
+
   return `
     <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
       <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
         <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">🎉 New Account Created</p>
-        <h1 style="margin:8px 0 0;font-size:28px;font-weight:800;">${userData.businessName || "New User"}</h1>
-        <p style="margin:4px 0 0;font-size:14px;opacity:0.9;">${userData.email}</p>
+        <h1 style="margin:8px 0 0;font-size:28px;font-weight:800;">${safeBusinessName}</h1>
+        <p style="margin:4px 0 0;font-size:14px;opacity:0.9;">${safeEmail}</p>
       </div>
       <div style="padding:32px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;background:white;">
         <h2 style="margin-top:0;font-size:18px;color:#0f172a;">Account Details</h2>
         <ul style="list-style:none;padding:0;margin:0 0 16px;">
-          <li style="margin:6px 0;"><strong>Email:</strong> <a href="mailto:${userData.email}">${userData.email}</a></li>
-          <li style="margin:6px 0;"><strong>Business Name:</strong> ${userData.businessName || "Not provided yet"}</li>
+          <li style="margin:6px 0;"><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></li>
+          <li style="margin:6px 0;"><strong>Business Name:</strong> ${safeBusinessName === "New User" ? "Not provided yet" : safeBusinessName}</li>
           <li style="margin:6px 0;"><strong>Created:</strong> ${new Date(userData.createdAt).toLocaleString("en-AU", { timeZone: "Australia/Sydney" })}</li>
         </ul>
         <div style="margin-top:24px;padding:16px;border-radius:16px;background:#f1f5f9;border:1px solid #e2e8f0;">

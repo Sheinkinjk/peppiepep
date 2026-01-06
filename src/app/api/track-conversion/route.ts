@@ -1,8 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent, inferDeviceFromUserAgent } from "@/lib/referral-events";
+import { checkRateLimit } from "@/lib/rate-limit";
 
+// SECURITY FIX: Add rate limiting and origin validation
 export async function POST(request: NextRequest) {
+  // SECURITY FIX: Rate limiting - prevent abuse (using general category)
+  const rateLimitCheck = await checkRateLimit(request, "general");
+  if (!rateLimitCheck.success && rateLimitCheck.response) {
+    return rateLimitCheck.response;
+  }
+
+  // SECURITY FIX: Validate origin to prevent cross-site abuse
+  const origin = request.headers.get("origin");
+  const allowedOrigins = [
+    "https://referlabs.com.au",
+    "https://peppiepep.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL,
+  ].filter(Boolean);
+
+  if (origin && !allowedOrigins.includes(origin)) {
+    return NextResponse.json(
+      { error: "Unauthorized origin" },
+      { status: 403 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { eventType, ambassadorId, businessId, referralCode, metadata } = body;
@@ -10,6 +33,15 @@ export async function POST(request: NextRequest) {
     if (!eventType || !ambassadorId || !businessId) {
       return NextResponse.json(
         { error: "Missing required fields" },
+        { status: 400 }
+      );
+    }
+
+    // SECURITY FIX: Validate UUID format to prevent injection
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (!uuidRegex.test(ambassadorId) || !uuidRegex.test(businessId)) {
+      return NextResponse.json(
+        { error: "Invalid ID format" },
         { status: 400 }
       );
     }

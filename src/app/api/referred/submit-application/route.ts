@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       referralCode,
     } = body;
 
-    // Validate required fields
+    // SECURITY FIX: Validate required fields with length limits
     if (!businessName || !industry || !fullName || !email || !phone || !role || !goals) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -41,9 +41,60 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // SECURITY FIX: Enforce input length limits to prevent DoS
+    if (
+      businessName.length > 200 ||
+      industry.length > 100 ||
+      fullName.length > 200 ||
+      email.length > 320 ||
+      phone.length > 50 ||
+      role.length > 100 ||
+      goals.length > 1000 ||
+      (website && website.length > 500)
+    ) {
+      return NextResponse.json(
+        { error: "Input exceeds maximum length" },
+        { status: 400 }
+      );
+    }
+
+    // SECURITY FIX: Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: "Invalid email format" },
+        { status: 400 }
+      );
+    }
+
+    // SECURITY FIX: Check for disposable email domains
+    const disposableDomains = [
+      "tempmail.com",
+      "guerrillamail.com",
+      "10minutemail.com",
+      "throwaway.email",
+      "mailinator.com",
+    ];
+    const emailDomain = email.split("@")[1]?.toLowerCase();
+    if (disposableDomains.includes(emailDomain)) {
+      return NextResponse.json(
+        { error: "Please use a business email address" },
+        { status: 400 }
+      );
+    }
+
     if (!ambassadorId || !businessId || !referralCode) {
       return NextResponse.json(
         { error: "Missing attribution data" },
+        { status: 400 }
+      );
+    }
+
+    // SECURITY FIX: Validate UUID format
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (!uuidRegex.test(ambassadorId) || !uuidRegex.test(businessId)) {
+      return NextResponse.json(
+        { error: "Invalid attribution data format" },
         { status: 400 }
       );
     }
