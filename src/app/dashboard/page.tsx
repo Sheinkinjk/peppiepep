@@ -2524,7 +2524,7 @@ export default async function Dashboard({
                       <h3 className="font-bold text-slate-900">Credits Issued</h3>
                     </div>
                     <p className="text-3xl font-black text-emerald-700">
-                      ${Math.round(creditTotals.totalIssued)}
+                      ${Math.round(creditTotals?.totalIssued || 0)}
                     </p>
                     <p className="text-sm text-slate-600 mt-1">
                       From {windowedCompletedReferrals} completed referrals
@@ -2540,7 +2540,7 @@ export default async function Dashboard({
                       <h3 className="font-bold text-slate-900">Outstanding</h3>
                     </div>
                     <p className="text-3xl font-black text-amber-700">
-                      ${Math.round(creditTotals.outstandingBalance)}
+                      ${Math.round(creditTotals?.outstandingBalance || 0)}
                     </p>
                     <p className="text-sm text-slate-600 mt-1">
                       Credit liability
@@ -2556,7 +2556,7 @@ export default async function Dashboard({
                       <h3 className="font-bold text-slate-900">Credits Spent</h3>
                     </div>
                     <p className="text-3xl font-black text-slate-700">
-                      ${Math.round(creditTotals.totalSpent)}
+                      ${Math.round(creditTotals?.totalSpent || 0)}
                     </p>
                     <p className="text-sm text-slate-600 mt-1">
                       Redeemed by ambassadors
@@ -2572,7 +2572,7 @@ export default async function Dashboard({
                       <h3 className="font-bold text-slate-900">Avg per Conversion</h3>
                     </div>
                     <p className="text-3xl font-black text-blue-700">
-                      ${windowedCompletedReferrals > 0 ? (creditTotals.totalIssued / windowedCompletedReferrals).toFixed(2) : "0.00"}
+                      ${windowedCompletedReferrals > 0 ? ((creditTotals?.totalIssued || 0) / windowedCompletedReferrals).toFixed(2) : "0.00"}
                     </p>
                     <p className="text-sm text-slate-600 mt-1">
                       Based on reward settings
