@@ -320,6 +320,63 @@ async function submitPartnerApplication(formData: FormData) {
     const referralLink = referralCode ? `${siteOrigin}/r/${referralCode}` : null;
 
     if (process.env.RESEND_API_KEY) {
+      // Send confirmation email to applicant
+      if (email) {
+        try {
+          await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              from: "Refer Labs Partner Program <jarred@referlabs.com.au>",
+              to: [email],
+              subject: "Your Partner Program Application - Refer Labs",
+              html: `
+              <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
+                <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
+                  <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">Partner Program</p>
+                  <h1 style="margin:8px 0 0;font-size:28px;font-weight:800;">Application Received!</h1>
+                  <p style="margin:4px 0 0;font-size:16px;opacity:0.9;">Thank you for your interest, ${fullName || fallbackName}</p>
+                </div>
+                <div style="padding:32px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;background:white;">
+                  <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#0f172a;">
+                    We've received your application to join the Refer Labs Partner Program. Our team will review your submission and get back to you <strong>within 2 business days</strong>.
+                  </p>
+
+                  <div style="margin:24px 0;padding:16px;border-radius:16px;background:#ecfdf5;border:1px solid #bbf7d0;">
+                    <p style="margin:0 0 8px;font-weight:600;color:#065f46;">✅ What's Next?</p>
+                    <ul style="margin:0;padding-left:20px;color:#065f46;font-size:14px;line-height:1.8;">
+                      <li>We'll review your application details</li>
+                      <li>If approved, you'll receive your unique referral link</li>
+                      <li>You'll get access to partner marketing resources</li>
+                      <li>Start earning 25% recurring revenue on every referral</li>
+                    </ul>
+                  </div>
+
+                  <p style="margin:24px 0 0;font-size:14px;color:#475569;">
+                    If you have any questions in the meantime, feel free to reply to this email.
+                  </p>
+
+                  <div style="margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
+                    <p style="margin:0;font-size:12px;color:#94a3b8;">
+                      Best regards,<br/>
+                      <strong style="color:#0f172a;">The Refer Labs Team</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            `,
+            }),
+          });
+        } catch (emailError) {
+          console.error("Failed to send applicant confirmation email", emailError);
+          // Non-fatal - don't block application
+        }
+      }
+
+      // Send notification email to admin
       try {
         await fetch("https://api.resend.com/emails", {
           method: "POST",

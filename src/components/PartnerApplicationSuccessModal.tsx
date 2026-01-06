@@ -45,13 +45,13 @@ function PartnerApplicationSuccessModalContent() {
 
           {/* Message */}
           <p className="text-slate-600 mb-6 leading-relaxed">
-            Thank you for applying to our partner program. We&apos;ll review your application and be in touch within 24 hours regarding your registration.
+            Thank you for applying to our partner program. We&apos;ll review your application and be in touch <strong>within 2 business days</strong> regarding your registration.
           </p>
 
           {/* Additional info */}
           <div className="w-full p-4 bg-emerald-50 border border-emerald-200 rounded-2xl mb-6">
             <p className="text-sm text-emerald-900">
-              <strong>What&apos;s next?</strong> Check your email for confirmation details and your unique partner resources.
+              <strong>What&apos;s next?</strong> Check your email for a confirmation message with next steps and timeline.
             </p>
           </div>
 
