@@ -68,9 +68,17 @@ export default function Footer() {
           <NewsletterFooterForm />
         </div>
       </div>
-      <p className="text-xs text-[#4A5B5E]">
-        © 2025 Refer Labs. All rights reserved.
-      </p>
+      <div className="flex w-full flex-col gap-2 text-xs text-[#4A5B5E]">
+        <p>
+          © 2025 Refer Labs. All rights reserved.
+        </p>
+        <p>
+          Pepform Pty Ltd (trading as Refer Labs) | ABN: 32 660 008 159
+        </p>
+        <p>
+          Email: <a href="mailto:jarred@referlabs.com.au" className="hover:text-[#0E2B31] underline">jarred@referlabs.com.au</a>
+        </p>
+      </div>
     </footer>
   );
 }

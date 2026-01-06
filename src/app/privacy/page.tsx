@@ -29,10 +29,11 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Data Controller</h2>
               <p className="text-slate-600 mb-2">
-                Refer Labs is the data controller responsible for your personal information:
+                Pepform Pty Ltd (trading as Refer Labs) is the data controller responsible for your personal information:
               </p>
               <ul className="list-none text-slate-600 space-y-1 pl-0">
-                <li><strong>Entity:</strong> Refer Labs</li>
+                <li><strong>Entity:</strong> Pepform Pty Ltd (trading as Refer Labs)</li>
+                <li><strong>ABN:</strong> 32 660 008 159</li>
                 <li><strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a></li>
                 <li><strong>Location:</strong> Australia</li>
                 <li><strong>Privacy Officer:</strong> Available upon request via email</li>
@@ -103,16 +104,6 @@ export default function Privacy() {
                 </div>
 
                 <div className="bg-slate-50 rounded-lg p-4">
-                  <p className="font-semibold text-slate-800 mb-1">Twilio (SMS Notifications)</p>
-                  <ul className="text-sm text-slate-600 list-disc list-inside space-y-0.5">
-                    <li><strong>Data Shared:</strong> Phone numbers, message content you create</li>
-                    <li><strong>Purpose:</strong> Deliver SMS notifications to your customers</li>
-                    <li><strong>Location:</strong> United States</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://www.twilio.com/legal/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">twilio.com/legal/privacy</a></li>
-                  </ul>
-                </div>
-
-                <div className="bg-slate-50 rounded-lg p-4">
                   <p className="font-semibold text-slate-800 mb-1">Resend (Email Delivery)</p>
                   <ul className="text-sm text-slate-600 list-disc list-inside space-y-0.5">
                     <li><strong>Data Shared:</strong> Email addresses, message content you create</li>
@@ -130,16 +121,6 @@ export default function Privacy() {
                     <li><strong>Location:</strong> United States</li>
                     <li><strong>Note:</strong> No customer PII is sent; only anonymized prompts</li>
                     <li><strong>Privacy Policy:</strong> <a href="https://openai.com/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">openai.com/privacy</a></li>
-                  </ul>
-                </div>
-
-                <div className="bg-slate-50 rounded-lg p-4">
-                  <p className="font-semibold text-slate-800 mb-1">Stripe (Payment Processing)</p>
-                  <ul className="text-sm text-slate-600 list-disc list-inside space-y-0.5">
-                    <li><strong>Data Shared:</strong> Email, business name, payment information</li>
-                    <li><strong>Purpose:</strong> Process subscription payments and commission payouts</li>
-                    <li><strong>Location:</strong> United States (with EU data residency options)</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://stripe.com/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">stripe.com/privacy</a></li>
                   </ul>
                 </div>
 
@@ -176,8 +157,7 @@ export default function Privacy() {
                 Your data may be processed in countries outside Australia, including:
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-1">
-                <li><strong>United States:</strong> AWS (via Supabase), Twilio, Resend, OpenAI, Stripe, Vercel</li>
-                <li><strong>European Union:</strong> Optional for Stripe data residency</li>
+                <li><strong>United States:</strong> AWS (via Supabase), Resend, OpenAI, Vercel</li>
               </ul>
               <p className="text-slate-600 mt-2">
                 We ensure appropriate safeguards are in place through:
@@ -282,6 +262,81 @@ export default function Privacy() {
 
               <p className="text-slate-600 mt-4">
                 <strong>To exercise your rights:</strong> Email <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a> with "Privacy Rights Request" in the subject line. We will respond within 30 days.
+              </p>
+            </div>
+
+            {/* CCPA California Privacy Rights */}
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">7A. California Privacy Rights (CCPA)</h2>
+              <p className="text-slate-600 mb-3">
+                If you are a California resident, you have additional privacy rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA). This section supplements the information in Section 7.
+              </p>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">7A.1 California-Specific Rights</h3>
+              <p className="text-slate-600 mb-2">California residents have the right to:</p>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li><strong>Know:</strong> Request disclosure of personal information we collect, use, disclose, and sell (categories and specific pieces)</li>
+                <li><strong>Delete:</strong> Request deletion of personal information we hold about you (subject to certain exceptions)</li>
+                <li><strong>Opt-Out of Sale/Sharing:</strong> Opt out of the "sale" or "sharing" of your personal information for targeted advertising</li>
+                <li><strong>Correct:</strong> Request correction of inaccurate personal information</li>
+                <li><strong>Limit Use of Sensitive Personal Information:</strong> Limit our use of sensitive personal information to necessary business purposes</li>
+                <li><strong>Non-Discrimination:</strong> Not be discriminated against for exercising your CCPA rights</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">7A.2 Do Not Sell or Share My Personal Information</h3>
+              <p className="text-slate-600 mb-3">
+                <strong>Important Notice:</strong> Refer Labs does NOT sell your personal information to third parties. We do NOT share your personal information for cross-context behavioral advertising (targeted advertising).
+              </p>
+              <p className="text-slate-600 mb-3">
+                We only share data with service providers (listed in Section 3.1) who are contractually required to use data solely for providing services to us and are prohibited from selling or sharing your information.
+              </p>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">7A.3 Categories of Personal Information Collected</h3>
+              <p className="text-slate-600 mb-2">In the past 12 months, we have collected the following categories of personal information from California residents:</p>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li><strong>Identifiers:</strong> Name, email address, IP address, unique identifiers</li>
+                <li><strong>Commercial Information:</strong> Purchase history, subscription records, commission earnings</li>
+                <li><strong>Internet Activity:</strong> Website interactions, usage patterns, referral link clicks</li>
+                <li><strong>Professional Information:</strong> Business name, industry, job title (for B2B purposes)</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">7A.4 Business Purposes for Processing</h3>
+              <p className="text-slate-600 mb-2">We use personal information for the following business purposes:</p>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li>Providing and maintaining the Service</li>
+                <li>Processing transactions and managing referral programs</li>
+                <li>Communicating with you about your account and services</li>
+                <li>Detecting, preventing, and responding to security incidents and fraud</li>
+                <li>Debugging and repairing errors</li>
+                <li>Internal research for technological development and demonstration</li>
+                <li>Compliance with legal obligations</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">7A.5 Exercising Your California Rights</h3>
+              <p className="text-slate-600 mb-2">
+                To exercise your CCPA rights, contact us at:
+              </p>
+              <div className="bg-amber-50 rounded-lg p-4 border border-amber-200 mb-3">
+                <p className="text-slate-700">
+                  <strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a>
+                  <br />
+                  <strong>Subject Line:</strong> "CCPA Privacy Rights Request"
+                  <br />
+                  <strong>Required Information:</strong> Your name, email address, description of request, and sufficient information to verify your identity
+                </p>
+              </div>
+              <p className="text-slate-600 mb-3">
+                We will acknowledge your request within 10 business days and respond within 45 days (extendable by 45 additional days if necessary). We will not discriminate against you for exercising your CCPA rights.
+              </p>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">7A.6 Authorized Agent Requests</h3>
+              <p className="text-slate-600 mb-3">
+                You may designate an authorized agent to make a CCPA request on your behalf. The agent must provide proof of authorization (signed permission) and you may be required to verify your identity directly with us.
+              </p>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">7A.7 Retention Periods</h3>
+              <p className="text-slate-600 mb-3">
+                We retain personal information for as long as necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law. See Section 5 for specific retention periods.
               </p>
             </div>
 

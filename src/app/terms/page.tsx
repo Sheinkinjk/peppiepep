@@ -209,6 +209,112 @@ export default function Terms() {
             </div>
 
             <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">8A. Referral Program and Commission Structure</h2>
+              <p className="text-slate-600 mb-3">
+                Refer Labs operates a referral partner program that allows ambassadors to earn commissions by referring new partners and clients to the platform. By participating as an ambassador, you agree to the following commission terms:
+              </p>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8A.1 Commission Schedule</h3>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <li><strong>Partner Signup Bonus:</strong> $100 AUD per new partner who completes registration through your unique referral link and is verified by Refer Labs</li>
+                <li><strong>Revenue Share:</strong> 10% commission on all subscription payments made by partners you refer, calculated on the gross payment amount (excluding taxes and fees)</li>
+                <li><strong>Payout Threshold:</strong> Minimum balance of $500 AUD required to request a payout</li>
+                <li><strong>Payment Terms:</strong> Payouts processed within 14 business days of approved payout requests</li>
+                <li><strong>Currency:</strong> All commissions calculated and paid in Australian Dollars (AUD)</li>
+              </ul>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8A.2 Commission Approval Process</h3>
+              <p className="text-slate-600 mb-2">
+                All commissions require manual approval to prevent fraud and ensure compliance:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <li>Commissions are initially marked as "pending" upon the qualifying event (signup or payment)</li>
+                <li>Refer Labs reviews and approves commissions within 3 business days</li>
+                <li>Approved commissions become available for payout once they reach the minimum threshold</li>
+                <li>Refer Labs reserves the right to withhold, reduce, or cancel commissions for suspected fraud, violation of terms, chargebacks, refunds, or invalid referrals</li>
+                <li>Commission disputes must be submitted in writing within 30 days of the commission event</li>
+              </ul>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8A.3 Ambassador Obligations</h3>
+              <p className="text-slate-600 mb-2">
+                As an ambassador, you agree to:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <li>Promote Refer Labs in good faith and comply with all applicable laws and regulations</li>
+                <li>Not engage in fraudulent referrals, self-referrals, or artificial inflation of commissions</li>
+                <li>Not misrepresent the Service, pricing, or commission structure to potential referrals</li>
+                <li>Maintain accurate tax information and be responsible for all tax obligations on commission earnings</li>
+                <li>Comply with advertising standards and obtain proper disclosures for sponsored content where required</li>
+              </ul>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8A.4 Tax Reporting and Compliance</h3>
+              <p className="text-slate-600 mb-3">
+                <strong>Important:</strong> Commission earnings may be taxable income in your jurisdiction. You are solely responsible for:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <li>Reporting all commission income to tax authorities as required by law</li>
+                <li>Paying all applicable income taxes, VAT, GST, or other taxes on commission earnings</li>
+                <li>Providing accurate tax identification information (ABN for Australian businesses, TFN where applicable)</li>
+                <li>Maintaining records of commission earnings for tax reporting purposes</li>
+              </ul>
+              <p className="text-slate-600 mb-4">
+                For Australian ambassadors earning over $75,000 AUD annually, GST may apply to commission payments. For ambassadors in countries requiring tax reporting (such as 1099-NEC forms in the United States), Refer Labs will issue required tax documentation for earnings exceeding applicable thresholds. You are required to provide valid tax information upon request.
+              </p>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8A.5 Commission Modifications</h3>
+              <p className="text-slate-600 mb-4">
+                Refer Labs reserves the right to modify commission rates, payout thresholds, and program terms at any time with 30 days' notice to active ambassadors. Changes will not affect commissions already earned and approved prior to the modification date.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">8B. Refund and Cancellation Policy</h2>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8B.1 Subscription Cancellations</h3>
+              <p className="text-slate-600 mb-3">
+                You may cancel your subscription at any time by contacting support at jarred@referlabs.com.au or through your account dashboard. Upon cancellation:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <li>Your subscription will remain active until the end of the current billing period</li>
+                <li>You will retain access to the Service until the end of the paid period</li>
+                <li>No refunds will be provided for the unused portion of the current billing period</li>
+                <li>Recurring billing will be stopped and no further charges will be made</li>
+                <li>Your account and data may be deleted 30 days after the subscription ends unless otherwise requested</li>
+              </ul>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8B.2 Refund Eligibility</h3>
+              <p className="text-slate-600 mb-3">
+                Refunds are generally not provided except in the following circumstances:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <li><strong>Service Failure:</strong> If the Service is unavailable for more than 72 consecutive hours due to issues within Refer Labs' control, you may request a pro-rata refund for the downtime period</li>
+                <li><strong>Billing Errors:</strong> If you were incorrectly charged due to a billing system error, the erroneous charge will be refunded in full</li>
+                <li><strong>Duplicate Charges:</strong> If you were charged multiple times for the same billing period, duplicate charges will be refunded</li>
+                <li><strong>Unauthorized Charges:</strong> If unauthorized charges were made to your account due to fraud or unauthorized access, charges will be refunded upon verification</li>
+                <li><strong>Legal Requirements:</strong> Where required by applicable consumer protection laws (such as Australian Consumer Law)</li>
+              </ul>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8B.3 Refund Process</h3>
+              <p className="text-slate-600 mb-3">
+                To request a refund, contact support at jarred@referlabs.com.au with:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <li>Your account email and business name</li>
+                <li>Invoice number or transaction ID</li>
+                <li>Detailed explanation of why the refund is being requested</li>
+                <li>Supporting documentation if applicable</li>
+              </ul>
+              <p className="text-slate-600 mb-4">
+                Refund requests will be reviewed within 5 business days. Approved refunds will be processed to the original payment method within 14 business days. Refunds may take additional time to appear in your account depending on your financial institution.
+              </p>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">8B.4 Australian Consumer Law Rights</h3>
+              <p className="text-slate-600 mb-4">
+                Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law (ACL) or other applicable consumer protection legislation that cannot be excluded, restricted, or modified by agreement. If the Service fails to meet a consumer guarantee, you may be entitled to a remedy under the ACL.
+              </p>
+            </div>
+
+            <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">9. Intellectual Property Rights</h2>
               <p className="text-slate-600 mb-3">
                 All intellectual property rights in the Service, including but not limited to software, algorithms, user interfaces, designs, trademarks, logos, documentation, and proprietary methodologies, are owned exclusively by Pepform or its licensors. These Terms do not grant you any ownership rights in the Service.
@@ -363,17 +469,30 @@ export default function Terms() {
 
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">18. Dispute Resolution and Governing Law</h2>
-              <p className="text-slate-600 mb-3">
-                These Terms shall be governed by and construed in accordance with the laws of Australia, without regard to conflict of law principles. The United Nations Convention on Contracts for the International Sale of Goods shall not apply.
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">18.1 Governing Law</h3>
+              <p className="text-slate-600 mb-4">
+                These Terms shall be governed by and construed in accordance with the laws of New South Wales, Australia, without regard to conflict of law principles. The United Nations Convention on Contracts for the International Sale of Goods shall not apply.
               </p>
-              <p className="text-slate-600 mb-3">
-                Any dispute arising from these Terms or the Service shall be resolved exclusively in the courts located in Sydney, Australia. You irrevocably submit to the exclusive jurisdiction of those courts and waive any objection to venue or inconvenient forum.
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">18.2 Informal Dispute Resolution</h3>
+              <p className="text-slate-600 mb-4">
+                Before initiating formal proceedings, you agree to first attempt to resolve any dispute informally by contacting us at jarred@referlabs.com.au with a detailed description of the dispute. We will make good faith efforts to resolve the dispute within 30 days of notification.
               </p>
-              <p className="text-slate-600 mb-3 font-bold">
-                Mandatory Arbitration (if applicable): For users in jurisdictions requiring arbitration, disputes shall be resolved through binding arbitration under the rules of the Australian Dispute Resolution Association. You agree to arbitrate on an individual basis and waive any right to participate in class actions.
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">18.3 Jurisdiction and Venue</h3>
+              <p className="text-slate-600 mb-4">
+                If informal resolution fails, any dispute arising from these Terms or the Service shall be resolved exclusively in the courts located in Sydney, New South Wales, Australia. You irrevocably submit to the exclusive jurisdiction of those courts and waive any objection to venue or inconvenient forum.
               </p>
-              <p className="text-slate-600">
-                Time Limit for Claims: Any claim relating to the Service must be filed within one (1) year after the cause of action arises, or such claim is permanently barred.
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">18.4 Time Limit for Claims</h3>
+              <p className="text-slate-600 mb-4">
+                Any claim relating to the Service must be filed within one (1) year after the cause of action arises, or such claim is permanently barred. This limitation period applies to the fullest extent permitted by applicable law.
+              </p>
+
+              <h3 className="text-lg font-bold text-slate-900 mb-2">18.5 Class Action Waiver</h3>
+              <p className="text-slate-600 mb-4">
+                To the fullest extent permitted by law, you agree to bring any dispute against Refer Labs in your individual capacity only, and not as a plaintiff or class member in any purported class, representative, or collective proceeding. This waiver does not apply where prohibited by law, including under Australian Consumer Law.
               </p>
             </div>
 
@@ -427,7 +546,8 @@ export default function Terms() {
                 For questions, concerns, or notices regarding these Terms, please contact us at:
               </p>
               <div className="bg-purple-50 p-4 rounded-lg">
-                <p className="text-slate-700 font-semibold">Refer Labs Pty Ltd</p>
+                <p className="text-slate-700 font-semibold">Pepform Pty Ltd (trading as Refer Labs)</p>
+                <p className="text-slate-700">ABN: 32 660 008 159</p>
                 <p className="text-slate-700">Email: <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a></p>
                 <p className="text-slate-700">Website: <a href="https://referlabs.com.au" className="text-purple-700 hover:underline">referlabs.com.au</a></p>
               </div>
