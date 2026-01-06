@@ -77,6 +77,7 @@ import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { maybeSendGoLiveOwnerEmail } from "@/lib/business-notifications";
 import { logger } from "@/lib/logger";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -403,6 +404,27 @@ export default async function Dashboard({
       return { error: "Failed to save settings. Please try again." };
     }
 
+    await logReferralEvent({
+      supabase,
+      businessId: business.id,
+      ambassadorId: null,
+      eventType: "program_settings_updated",
+      source: "business_setup_step_1b",
+      device: "server",
+      metadata: {
+        reward_type: normalizedRewardType,
+        reward_amount: rewardAmount,
+        offer_text: updateData.offer_text,
+        new_user_reward_text: updateData.new_user_reward_text,
+        client_reward_text: updateData.client_reward_text,
+        reward_terms: updateData.reward_terms,
+        sign_on_bonus_enabled: signOnBonusEnabled,
+        sign_on_bonus_type: updateData.sign_on_bonus_type,
+        sign_on_bonus_amount: updateData.sign_on_bonus_amount,
+        has_branding: Boolean(logoUrl || normalizedHighlight || normalizedTone),
+      },
+    });
+
     revalidatePath("/dashboard");
     return { success: "Settings saved successfully" };
   }
@@ -699,6 +721,26 @@ export default async function Dashboard({
         try {
           const { Resend } = await import("resend");
           const resend = new Resend(resendApiKey);
+          const portalUrl = ambassadorReferralCode
+            ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
+            : `${baseSiteUrl}/r/referral`;
+          const emailHtml = buildPremiumEmail({
+            title: "A referral just completed",
+            subtitle: `Congrats ${ambassadorName || "Ambassador"}!`,
+            preheader: `You earned $${amount.toFixed(0)} credit.`,
+            bodyHtml: `
+              <p style="margin:0 0 12px;">
+                One of your referrals just completed their booking. <strong>$${amount.toFixed(0)} credit</strong> has been released to your account.
+              </p>
+              <p style="margin:0;color:#475569;font-size:13px;">
+                Open your portal to track rewards and new activity.
+              </p>
+            `,
+            cta: { label: "View my portal", url: portalUrl },
+            footerNote: `${business.name || "Refer Labs"} • ${baseSiteUrl.replace(/^https?:\/\//, "")}`,
+            brandName: business.name || "Refer Labs",
+            logoUrl: `${baseSiteUrl}/logo.svg`,
+          });
           const response = await resend.emails.send({
             from:
               resendFrom.includes("<") && resendFrom.includes(">")
@@ -706,17 +748,7 @@ export default async function Dashboard({
                 : `${business.name || "Refer Labs"} <${resendFrom}>`,
             to: ambassadorEmail,
             subject: "A referral just completed",
-            html: `<!doctype html><html><body style="font-family:Arial,sans-serif;background:#f5f5f5;padding:32px"><div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:24px;padding:32px;border:1px solid #e2e8f0"><p style="font-size:18px;font-weight:bold;margin-bottom:16px">Congrats ${
-              ambassadorName || "Ambassador"
-            }!</p><p style="font-size:15px;color:#475569;line-height:1.6;margin-bottom:16px">One of your referrals just completed their booking. <strong>$${amount.toFixed(
-              0,
-            )} credit</strong> has been released to your account.</p><a href="${
-              ambassadorReferralCode
-                ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
-                : `${baseSiteUrl}/r/referral`
-            }" style="display:inline-block;margin-top:20px;background:#0f172a;color:#ffffff;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600">View my portal</a></div><p style="text-align:center;font-size:12px;color:#94a3b8;margin-top:16px">Sent by ${
-              business.name || "Refer Labs"
-            } • ${baseSiteUrl.replace(/^https?:\/\//, "")}</p></body></html>`,
+            html: emailHtml,
             text: `A referral just completed! Visit your portal to see the reward: ${
               ambassadorReferralCode
                 ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
@@ -1249,18 +1281,34 @@ export default async function Dashboard({
     0,
   );
 
+  // Fetch credit ledger data for Rewards tab
+  const creditLedgerEntries = await fetchCreditLedger(supabase, business.id, { limit: 100 });
+  const creditTotals = await calculateCreditTotals(supabase, business.id, selectedWindow);
+
+  // Calculate total program cost including rewards
+  const totalProgramCost = totalEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
+  const windowedTotalProgramCost = windowedEstimatedCampaignSpend + creditTotals.totalIssued;
+  const previousWindowedTotalProgramCost = previousWindowedEstimatedCampaignSpend + (creditTotals.totalIssued || 0);
+
+  // True ROI = Revenue / (Campaign Spend + Credits Issued)
   const roiMultiple =
-    totalEstimatedCampaignSpend > 0
-      ? totalReferralRevenue / totalEstimatedCampaignSpend
+    totalProgramCost > 0
+      ? totalReferralRevenue / totalProgramCost
       : null;
   const windowedRoiMultiple =
-    windowedEstimatedCampaignSpend > 0
-      ? windowedReferralRevenue / windowedEstimatedCampaignSpend
+    windowedTotalProgramCost > 0
+      ? windowedReferralRevenue / windowedTotalProgramCost
       : null;
   const previousWindowedRoiMultiple =
-    previousWindowedEstimatedCampaignSpend > 0
-      ? previousWindowedReferralRevenue / previousWindowedEstimatedCampaignSpend
+    previousWindowedTotalProgramCost > 0
+      ? previousWindowedReferralRevenue / previousWindowedTotalProgramCost
       : null;
+
+  // Cost per Acquisition
+  const windowedCostPerAcquisition =
+    windowedCompletedReferrals > 0
+      ? windowedTotalProgramCost / windowedCompletedReferrals
+      : 0;
   const revenueDelta = windowedReferralRevenue - previousWindowedReferralRevenue;
   const referralsDelta = windowedReferrals.length - previousWindowedReferrals.length;
   const currentConversionRate = windowedReferrals.length > 0
@@ -1400,10 +1448,6 @@ export default async function Dashboard({
 
   const discountRedemptions = (discountRedemptionsData ?? []) as DiscountRedemptionRow[];
 
-  // Fetch credit ledger data for Rewards tab
-  const creditLedgerEntries = await fetchCreditLedger(supabase, business.id, { limit: 100 });
-  const creditTotals = await calculateCreditTotals(supabase, business.id, selectedWindow);
-
   const windowedReferralEvents = referralJourneyEvents.filter((event) =>
     isWithinWindow(event.created_at),
   );
@@ -1434,6 +1478,21 @@ export default async function Dashboard({
   const formsSubmitted = windowedReferralEvents.filter(
     (event) => event.event_type === "signup_submitted",
   ).length;
+  const campaignMessagesQueued = windowedReferralEvents.filter(
+    (event) => event.event_type === "campaign_message_queued",
+  ).length;
+  const campaignMessagesSent = windowedReferralEvents.filter(
+    (event) => event.event_type === "campaign_message_sent",
+  ).length;
+  const campaignMessagesDelivered = windowedReferralEvents.filter(
+    (event) => event.event_type === "campaign_message_delivered",
+  ).length;
+  const campaignMessagesFailed = windowedReferralEvents.filter(
+    (event) => event.event_type === "campaign_message_failed",
+  ).length;
+  const rewardSettingsUpdates = windowedReferralEvents.filter(
+    (event) => event.event_type === "program_settings_updated",
+  ).length;
   const submissionSources = windowedReferralEvents
     .filter((event) => event.event_type === "signup_submitted")
     .reduce<Record<string, number>>((acc, event) => {
@@ -1459,11 +1518,24 @@ export default async function Dashboard({
     | "contact"
     | "conversion"
     | "redemption"
+    | "campaign"
+    | "settings"
     | "generic";
+
+  const campaignNameById = new Map<string, string>();
+  campaignsData.forEach((campaign) => {
+    if (campaign.id && campaign.name) {
+      campaignNameById.set(campaign.id, campaign.name);
+    }
+  });
 
   const sourceMeta = (source: string | null) => {
     if (!source) {
       return { label: "Unknown source", className: "bg-slate-100 text-slate-600 border-slate-200" };
+    }
+    const campaignName = campaignNameById.get(source);
+    if (campaignName) {
+      return { label: `Campaign: ${campaignName}`, className: "bg-orange-50 text-orange-700 border-orange-200" };
     }
     if (source.startsWith("linkedin_influencer") || source.startsWith("linkedin_growth")) {
       return { label: "LinkedIn Growth", className: "bg-blue-50 text-blue-700 border-blue-200" };
@@ -1474,7 +1546,45 @@ export default async function Dashboard({
     if (source === "our-referral-program") {
       return { label: "Partner Program", className: "bg-emerald-50 text-emerald-700 border-emerald-200" };
     }
+    if (source === "business_setup_step_1b") {
+      return { label: "Rewards setup", className: "bg-indigo-50 text-indigo-700 border-indigo-200" };
+    }
     return { label: source.replaceAll("_", " "), className: "bg-slate-100 text-slate-600 border-slate-200" };
+  };
+
+  const getCampaignDetail = (event: ReferralJourneyEvent) => {
+    const metadata = event.metadata ?? null;
+    const campaignName =
+      metadata && typeof metadata.campaign_name === "string" ? metadata.campaign_name : null;
+    const campaignId =
+      metadata && typeof metadata.campaign_id === "string"
+        ? metadata.campaign_id
+        : event.source;
+    if (campaignName && campaignId) {
+      return `${campaignName} (${campaignId})`;
+    }
+    if (campaignName) {
+      return campaignName;
+    }
+    if (campaignId) {
+      return `Campaign ${campaignId}`;
+    }
+    return "Campaign message";
+  };
+
+  const getSettingsDetail = (event: ReferralJourneyEvent) => {
+    const metadata = event.metadata ?? null;
+    const rewardType =
+      metadata && typeof metadata.reward_type === "string" ? metadata.reward_type : null;
+    const rewardAmount =
+      metadata && typeof metadata.reward_amount === "number" ? metadata.reward_amount : null;
+    if (rewardType && rewardAmount !== null) {
+      return `${rewardType} · ${rewardAmount}`;
+    }
+    if (rewardType) {
+      return rewardType;
+    }
+    return "Rewards & creative";
   };
 
   const interactionActivityItems = [
@@ -1494,7 +1604,17 @@ export default async function Dashboard({
                 ? "Contact clicked"
                 : event.event_type === "conversion_completed"
                   ? "Conversion completed"
-                  : "Referral activity";
+                  : event.event_type === "program_settings_updated"
+                    ? "Rewards updated"
+                  : event.event_type === "campaign_message_queued"
+                    ? "Campaign message queued"
+                    : event.event_type === "campaign_message_sent"
+                      ? "Campaign message sent"
+                      : event.event_type === "campaign_message_delivered"
+                        ? "Campaign message delivered"
+                        : event.event_type === "campaign_message_failed"
+                          ? "Campaign message failed"
+                          : "Referral activity";
       const kind: InteractionActivityKind =
         event.event_type === "link_visit"
           ? "link"
@@ -1506,13 +1626,25 @@ export default async function Dashboard({
                 ? "contact"
                 : event.event_type === "conversion_completed"
                   ? "conversion"
-                  : "generic";
+                  : event.event_type === "program_settings_updated"
+                    ? "settings"
+                  : event.event_type === "campaign_message_queued" ||
+                      event.event_type === "campaign_message_sent" ||
+                      event.event_type === "campaign_message_delivered" ||
+                      event.event_type === "campaign_message_failed"
+                    ? "campaign"
+                    : "generic";
 
       return {
         id: `event-${event.id}`,
         label,
         kind,
-        detail: ambassadorLabel,
+        detail:
+          kind === "campaign"
+            ? getCampaignDetail(event)
+            : kind === "settings"
+              ? getSettingsDetail(event)
+              : ambassadorLabel,
         timestamp: event.created_at,
         sourceMeta: sourceMeta(event.source),
       };
@@ -1557,6 +1689,14 @@ export default async function Dashboard({
     redemption: {
       icon: <CreditCard className="h-3.5 w-3.5" />,
       className: "bg-amber-50 text-amber-700 border-amber-200",
+    },
+    campaign: {
+      icon: <Send className="h-3.5 w-3.5" />,
+      className: "bg-orange-50 text-orange-700 border-orange-200",
+    },
+    settings: {
+      icon: <Settings className="h-3.5 w-3.5" />,
+      className: "bg-indigo-50 text-indigo-700 border-indigo-200",
     },
     generic: {
       icon: <Zap className="h-3.5 w-3.5" />,
@@ -1992,6 +2132,44 @@ export default async function Dashboard({
 
                         <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                           <div className="flex items-center gap-3 mb-3">
+                            <div className="h-8 w-8 rounded-lg bg-orange-600 flex items-center justify-center">
+                              <Send className="h-4 w-4 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Campaign Messages Sent</h3>
+                          </div>
+                          <p className="text-3xl font-black text-orange-700">
+                            {campaignMessagesSent}
+                          </p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Emails/SMS sent from Launch Campaigns in the last {selectedWindow} days
+                          </p>
+                          <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+                            <span className="rounded-full border border-orange-200 bg-orange-50 px-2.5 py-1 text-orange-700">
+                              Queued {campaignMessagesQueued}
+                            </span>
+                            <span className="rounded-full border border-rose-200 bg-rose-50 px-2.5 py-1 text-rose-700">
+                              Failed {campaignMessagesFailed}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
+                              <Mail className="h-4 w-4 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Campaign Messages Delivered</h3>
+                          </div>
+                          <p className="text-3xl font-black text-amber-700">
+                            {campaignMessagesDelivered}
+                          </p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Confirmed deliveries from Launch Campaigns in the last {selectedWindow} days
+                          </p>
+                        </div>
+
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-3">
                             <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
                               <CreditCard className="h-4 w-4 text-white" />
                             </div>
@@ -2002,6 +2180,21 @@ export default async function Dashboard({
                           </p>
                           <p className="text-sm text-slate-600 mt-1">
                             {discountRedemptionCount ?? 0} all-time redemptions
+                          </p>
+                        </div>
+
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center">
+                              <Settings className="h-4 w-4 text-white" />
+                            </div>
+                            <h3 className="font-bold text-slate-900">Rewards Updates</h3>
+                          </div>
+                          <p className="text-3xl font-black text-indigo-700">
+                            {rewardSettingsUpdates}
+                          </p>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Step 1B saves logged in the last {selectedWindow} days
                           </p>
                         </div>
                       </div>
@@ -2126,7 +2319,7 @@ export default async function Dashboard({
                       </p>
                     </div>
                     <p className="text-sm text-slate-600 mt-2">
-                      Revenue ÷ estimated send cost ({selectedWindow} days)
+                      Revenue ÷ (campaigns + rewards) ({selectedWindow} days)
                     </p>
                   </div>
 
@@ -2187,6 +2380,24 @@ export default async function Dashboard({
                     </div>
                     <p className="text-sm text-slate-600 mt-2">
                       Referral to completion ({selectedWindow} days)
+                    </p>
+                  </div>
+
+                  {/* Cost per Acquisition */}
+                  <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-12 w-12 rounded-xl bg-violet-100 flex items-center justify-center">
+                        <Target className="h-6 w-6 text-violet-700" />
+                      </div>
+                      <h3 className="font-bold text-slate-900">Cost per Acquisition</h3>
+                    </div>
+                    <div className="min-h-[48px] flex items-end">
+                      <p className="text-4xl font-black text-slate-900 leading-none">
+                        ${windowedCostPerAcquisition > 0 ? windowedCostPerAcquisition.toFixed(2) : "0.00"}
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 mt-2">
+                      Total program cost ÷ conversions
                     </p>
                   </div>
                 </div>

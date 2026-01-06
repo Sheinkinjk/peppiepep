@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Upload, Users } from "lucide-react";
+import { Upload, Users, Info } from "lucide-react";
 import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialog";
 import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
@@ -180,6 +180,18 @@ export function Step2Content({
                 Customers from LinkedIn Influencer marketplace signups (influencers and businesses). These are separate from the regular referral program.
               </p>
             </div>
+            <div className="mb-4 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4">
+              <Info className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-blue-900">
+                View ambassador reward analytics, credit history, and program costs in{" "}
+                <a
+                  href="#step-5"
+                  className="font-semibold underline hover:text-blue-700"
+                >
+                  Step 5 → Rewards tab
+                </a>
+              </p>
+            </div>
             <CustomersTable
               initialCustomers={linkedInInfluencerCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
               initialTotal={linkedInInfluencerCustomers.length}
@@ -213,13 +225,27 @@ export function Step2Content({
             </p>
           </div>
         ) : (
-          <CustomersTable
-            initialCustomers={regularCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
-            initialTotal={regularCustomers.length}
-            siteUrl={siteUrl}
-            businessId={businessId}
-            adjustCreditsAction={adjustCustomerCredits}
-          />
+          <>
+            <div className="mb-4 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4">
+              <Info className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-blue-900">
+                View ambassador reward analytics, credit history, and program costs in{" "}
+                <a
+                  href="#step-5"
+                  className="font-semibold underline hover:text-blue-700"
+                >
+                  Step 5 → Rewards tab
+                </a>
+              </p>
+            </div>
+            <CustomersTable
+              initialCustomers={regularCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT)}
+              initialTotal={regularCustomers.length}
+              siteUrl={siteUrl}
+              businessId={businessId}
+              adjustCreditsAction={adjustCustomerCredits}
+            />
+          </>
         )}
       </Card>
     </>

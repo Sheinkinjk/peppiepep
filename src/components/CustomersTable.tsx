@@ -65,7 +65,7 @@ type PepWindow = Window & {
 const DEFAULT_CUSTOMER_PAGE_SIZE = 50;
 
 const ROW_TEMPLATE =
-  "36px minmax(160px,1.1fr) minmax(160px,1.1fr) minmax(210px,1.35fr) minmax(220px,1.4fr) minmax(160px,1fr) minmax(90px,0.5fr) minmax(150px,0.7fr) minmax(220px,1.1fr)";
+  "36px minmax(160px,1.1fr) minmax(160px,1.1fr) minmax(210px,1.35fr) minmax(220px,1.4fr) minmax(160px,1fr) minmax(150px,0.7fr) minmax(220px,1.1fr)";
 
 const csvColumns: CsvColumn<Customer>[] = [
   { header: "Name", accessor: (row) => row.name ?? "" },
@@ -78,7 +78,6 @@ const csvColumns: CsvColumn<Customer>[] = [
   { header: "Referral Code", accessor: (row) => row.referral_code ?? "" },
   { header: "Discount Code", accessor: (row) => row.discount_code ?? "" },
   { header: "Source", accessor: (row) => row.source ?? "" },
-  { header: "Credits", accessor: (row) => row.credits ?? 0 },
   { header: "Status", accessor: (row) => row.status ?? "pending" },
 ];
 
@@ -104,7 +103,7 @@ export function CustomersTable({
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "verified" | "active" | "applicant">("all");
-  const [sortOption, setSortOption] = useState<"recent" | "credits_desc" | "credits_asc" | "name_asc">("recent");
+  const [sortOption, setSortOption] = useState<"recent" | "name_asc">("recent");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [selectedRows, setSelectedRows] = useState<Map<string, Customer>>(new Map());
   const [isLoading, setIsLoading] = useState(false);
@@ -485,10 +484,6 @@ export function CustomersTable({
 
     const next = [...customers];
     switch (sortOption) {
-      case "credits_desc":
-        return next.sort((a, b) => (b.credits ?? 0) - (a.credits ?? 0));
-      case "credits_asc":
-        return next.sort((a, b) => (a.credits ?? 0) - (b.credits ?? 0));
       case "name_asc":
         return next.sort((a, b) => {
           const nameA = (a.name ?? "").toLowerCase();
@@ -571,8 +566,6 @@ export function CustomersTable({
             }}
           >
             <option value="recent">Sort: Newest first</option>
-            <option value="credits_desc">Sort: Highest credits</option>
-            <option value="credits_asc">Sort: Lowest credits</option>
             <option value="name_asc">Sort: A–Z</option>
           </select>
         </div>
@@ -640,7 +633,6 @@ export function CustomersTable({
           <div>Application context</div>
           <div>Referral link</div>
           <div>Discount code</div>
-          <div className="text-right">Credits</div>
           <div>Status</div>
           <div>Actions</div>
         </div>
@@ -970,17 +962,6 @@ export function CustomersTable({
                           )}
                         </Button>
                       )}
-                    </div>
-                    <div className="text-right font-semibold">
-                      <span
-                        className={
-                          customer.credits && customer.credits > 0
-                            ? "text-emerald-600"
-                            : ""
-                        }
-                      >
-                        ${customer.credits ?? 0}
-                      </span>
                     </div>
                     <div>
                       <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium capitalize ${statusClass}`}>
