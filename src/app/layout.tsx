@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { SupportChatbot } from "@/components/SupportChatbot";
 import { Toaster } from "@/components/ui/toaster";
 import { SupabaseSessionListener } from "@/components/SupabaseSessionListener";
+import { CookieConsent } from "@/components/CookieConsent";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
 import { GoogleAnalytics, GoogleTagManager } from "@/components/Analytics";
@@ -62,6 +63,7 @@ export default function RootLayout({
         <SupportChatbot />
         <Toaster />
         <SupabaseSessionListener />
+        <CookieConsent />
       </body>
     </html>
   );

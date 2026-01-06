@@ -361,21 +361,53 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">9. Cookies and Tracking</h2>
 
-              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.1 Essential Cookies</h3>
-              <p className="text-slate-600 mb-2">We use essential cookies required for the service to function:</p>
-              <ul className="list-disc list-inside text-slate-600 space-y-1">
-                <li><strong>Authentication (sb-*-auth-token):</strong> Session management - 30 days</li>
-                <li><strong>Referral Attribution (ref_ambassador):</strong> Tracks referral source - 30 days</li>
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.1 Cookie Consent</h3>
+              <p className="text-slate-600 mb-3">
+                When you first visit our website, you'll see a cookie consent banner that allows you to choose which types of cookies you want to accept. You can:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li><strong>Accept All:</strong> Consent to all cookie categories</li>
+                <li><strong>Necessary Only:</strong> Accept only essential cookies required for the site to function</li>
+                <li><strong>Customize:</strong> Choose specific cookie categories based on your preferences</li>
               </ul>
-
-              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.2 Analytics</h3>
-              <p className="text-slate-600">
-                We currently do <strong>not</strong> use third-party analytics or advertising cookies. Any future addition of analytics tools will be disclosed here and require your consent where legally required.
+              <p className="text-slate-600 mb-3">
+                Your cookie preferences are stored in your browser's local storage and will be remembered for future visits. You can change your preferences at any time by clearing your browser's local storage or contacting us.
               </p>
 
-              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.3 Managing Cookies</h3>
-              <p className="text-slate-600">
-                You can control cookies through your browser settings. Note: Disabling essential cookies will prevent you from using the service.
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.2 Essential Cookies (Always Active)</h3>
+              <p className="text-slate-600 mb-2">These cookies are necessary for the website to function and cannot be disabled:</p>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li><strong>Authentication (sb-*-auth-token):</strong> Session management and user authentication - 30 days</li>
+                <li><strong>Referral Attribution (ref_ambassador):</strong> Tracks referral source for commission attribution - 30 days</li>
+                <li><strong>Cookie Consent (referlabs_cookie_consent):</strong> Stores your cookie preferences - Persistent</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.3 Analytics Cookies (Optional)</h3>
+              <p className="text-slate-600 mb-3">
+                We currently do <strong>not</strong> use third-party analytics or advertising cookies. If we introduce analytics in the future, it will:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li>Require your explicit consent via the cookie banner</li>
+                <li>Be disclosed in this Privacy Policy with provider details</li>
+                <li>Include an opt-out mechanism in your account settings</li>
+              </ul>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.4 Marketing Cookies (Optional)</h3>
+              <p className="text-slate-600 mb-3">
+                We currently do <strong>not</strong> use marketing or advertising cookies. Any future use will require your consent and will be clearly disclosed.
+              </p>
+
+              <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.5 Managing Cookies</h3>
+              <p className="text-slate-600 mb-2">
+                You can control cookies in several ways:
+              </p>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li><strong>Cookie Banner:</strong> Use our cookie consent banner when you first visit the site</li>
+                <li><strong>Browser Settings:</strong> Most browsers allow you to refuse or delete cookies through settings</li>
+                <li><strong>Contact Us:</strong> Email us at jarred@referlabs.com.au to update your cookie preferences</li>
+              </ul>
+              <p className="text-slate-600 bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm">
+                <strong>Important:</strong> Disabling essential cookies will prevent core functionality and you will not be able to use the service properly.
               </p>
             </div>
 

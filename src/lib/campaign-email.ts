@@ -832,9 +832,19 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
               </div>
               ${
                 snapshot.rewardTerms
-                  ? `<p style="margin: 0; color: ${tone.footerMutedText}; font-size: 11px;">${snapshot.rewardTerms}</p>`
+                  ? `<p style="margin: 8px 0 0 0; color: ${tone.footerMutedText}; font-size: 11px;">${snapshot.rewardTerms}</p>`
                   : ""
               }
+              <p style="margin: 12px 0 0 0; color: ${tone.footerMutedText}; font-size: 11px;">
+                <a href="${siteUrl}/contact?subject=Unsubscribe" style="color: ${tone.footerMutedText}; text-decoration: underline;">Unsubscribe</a>
+                ${" | "}
+                <a href="${siteUrl}/privacy" style="color: ${tone.footerMutedText}; text-decoration: underline;">Privacy Policy</a>
+                ${" | "}
+                <a href="${siteUrl}/terms" style="color: ${tone.footerMutedText}; text-decoration: underline;">Terms</a>
+              </p>
+              <p style="margin: 6px 0 0 0; color: ${tone.footerMutedText}; font-size: 10px;">
+                Pepform Pty Ltd (trading as Refer Labs) | ABN: 32 660 008 159
+              </p>
             </td>
           </tr>
         </table>
