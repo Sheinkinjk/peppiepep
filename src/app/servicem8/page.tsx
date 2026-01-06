@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, Truck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "ServiceM8 Integration | Refer Labs",
   description:
     "Capture job conversions from ServiceM8 by collecting the ambassador discount code and posting completed jobs/invoices to Refer Labs for attribution.",
-};
+  url: `${SITE_URL}/servicem8`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -142,4 +144,3 @@ Body:
     </div>
   );
 }
-

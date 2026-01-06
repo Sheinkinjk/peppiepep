@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, Globe, ShieldCheck, Sparkles, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Wix Integration | Refer Labs",
   description:
     "Embed Refer Labs referral pages on Wix and capture conversions via server-side automation (Velo, Zapier/Make, or your backend). Includes testing checkpoints.",
-};
+  url: `${SITE_URL}/wix`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -157,4 +159,3 @@ Body:
     </div>
   );
 }
-

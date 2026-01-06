@@ -11,7 +11,7 @@ export interface SEOConfig {
 }
 
 const SITE_NAME = "Refer Labs";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://referlabs.com.au";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://referlabs.com.au";
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 const TWITTER_HANDLE = "@referlabs";
 
@@ -139,6 +139,7 @@ export const seoConfig = {
     title: "Refer Labs - Referrals that compound",
     description:
       "Turn happy customers into your most powerful growth engine with automated referral tracking, rewards, and ambassador management. Referral software for modern businesses.",
+    url: SITE_URL,
     keywords: [
       "referral software",
       "referral program",
@@ -157,6 +158,7 @@ export const seoConfig = {
     title: "Pricing - Simple, transparent referral software",
     description:
       "Choose the perfect plan for your referral program. From $399/month with all features included. No hidden fees, cancel anytime. Start growing through referrals today.",
+    url: `${SITE_URL}/pricing`,
     keywords: [
       "referral software pricing",
       "referral program cost",
@@ -170,6 +172,7 @@ export const seoConfig = {
     title: "How It Works - Turn customers into micro-influencers",
     description:
       "See how Refer Labs transforms your customer base into a powerful referral engine. Upload contacts, generate unique links, track rewards, and watch your growth compound.",
+    url: `${SITE_URL}/how-it-works`,
     keywords: [
       "referral program process",
       "how referral marketing works",
@@ -183,6 +186,7 @@ export const seoConfig = {
     title: "Case Studies - Real results from referral programs",
     description:
       "See how businesses use Refer Labs to drive growth through customer referrals. Real case studies, metrics, and strategies from successful referral programs.",
+    url: `${SITE_URL}/case-studies`,
     keywords: [
       "referral program case studies",
       "referral marketing results",
@@ -196,6 +200,7 @@ export const seoConfig = {
     title: "About - Helping businesses grow through referrals",
     description:
       "Learn about Refer Labs and our mission to make referral marketing accessible, automated, and effective for businesses of all sizes.",
+    url: `${SITE_URL}/about`,
     keywords: [
       "about refer labs",
       "referral software company",
@@ -207,6 +212,7 @@ export const seoConfig = {
     title: "Contact Us - Get help with your referral program",
     description:
       "Have questions about Refer Labs? Get in touch with our team for support, sales inquiries, or partnership opportunities. We're here to help.",
+    url: `${SITE_URL}/contact`,
     keywords: [
       "contact refer labs",
       "referral software support",
@@ -219,6 +225,7 @@ export const seoConfig = {
     title: "FAQ - Common questions about referral programs",
     description:
       "Find answers to frequently asked questions about Refer Labs, referral programs, pricing, integrations, and getting started.",
+    url: `${SITE_URL}/faq`,
     keywords: [
       "referral program faq",
       "referral software questions",
@@ -231,6 +238,7 @@ export const seoConfig = {
     title: "ROI Calculator - Calculate your referral program returns",
     description:
       "Estimate the potential ROI of your referral program. See how much revenue you could generate by turning customers into brand ambassadors.",
+    url: `${SITE_URL}/roi-calculator`,
     keywords: [
       "referral program ROI",
       "referral calculator",
@@ -244,6 +252,7 @@ export const seoConfig = {
     title: "Security - Enterprise-grade data protection",
     description:
       "Learn about our security practices, data protection, GDPR compliance, and how we keep your customer data safe and private.",
+    url: `${SITE_URL}/security`,
     keywords: [
       "referral software security",
       "data protection",
@@ -257,6 +266,7 @@ export const seoConfig = {
     title: "Privacy Policy - How we protect your data",
     description:
       "Read our privacy policy to understand how Refer Labs collects, uses, and protects your personal information and customer data.",
+    url: `${SITE_URL}/privacy`,
     keywords: ["privacy policy", "data privacy", "GDPR", "data protection"],
   },
 
@@ -264,6 +274,7 @@ export const seoConfig = {
     title: "Terms of Service - Legal terms and conditions",
     description:
       "Read the terms of service for using Refer Labs, including user rights, responsibilities, and legal agreements.",
+    url: `${SITE_URL}/terms`,
     keywords: ["terms of service", "legal terms", "user agreement"],
   },
 
@@ -271,6 +282,7 @@ export const seoConfig = {
     title: "Lead Hacking - AI-powered lead generation tools",
     description:
       "Leverage AI to automate your lead generation and referral outreach. Create personalized campaigns that convert at scale.",
+    url: `${SITE_URL}/lead-hacking`,
     keywords: [
       "lead generation",
       "AI lead generation",
@@ -284,6 +296,7 @@ export const seoConfig = {
     title: "Partner Program - Become a Refer Labs partner",
     description:
       "Join the Refer Labs partner program and earn recurring revenue by referring businesses to our referral marketing platform.",
+    url: `${SITE_URL}/our-referral-program`,
     keywords: [
       "partner program",
       "affiliate program",
@@ -357,12 +370,14 @@ export const seoConfig = {
   dashboard: {
     title: "Dashboard",
     description: "Manage your referral program, track performance, and reward ambassadors.",
+    url: `${SITE_URL}/dashboard`,
     noIndex: true, // Private pages should not be indexed
   },
 
   login: {
     title: "Login - Access your referral dashboard",
     description: "Log in to your Refer Labs account to manage your referral program and track growth.",
+    url: `${SITE_URL}/login`,
     noIndex: true,
   },
 };

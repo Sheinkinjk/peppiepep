@@ -2,12 +2,14 @@ import Link from "next/link";
 import { Code2, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Custom API Integration | Refer Labs",
   description:
     "Send conversion signals and attribution data to Refer Labs from your backend. Includes security, retries, and a testing checklist.",
-};
+  url: `${SITE_URL}/api-guide`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -157,4 +159,3 @@ Body:
     </div>
   );
 }
-

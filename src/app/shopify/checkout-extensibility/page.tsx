@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, ShoppingBag, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Shopify Checkout Extensibility | Refer Labs",
   description:
     "Modern Shopify conversion tracking using webhooks + a server (compatible with Checkout Extensibility). Includes testing checkpoints.",
-};
+  url: `${SITE_URL}/shopify/checkout-extensibility`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -124,4 +126,3 @@ Body:
     </div>
   );
 }
-

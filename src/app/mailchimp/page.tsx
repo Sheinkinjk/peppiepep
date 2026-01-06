@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, Mail, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Mailchimp Integration | Refer Labs",
   description:
     "Import ambassadors into Mailchimp, map merge tags for referral links, and verify click + conversion attribution in your Refer Labs dashboard.",
-};
+  url: `${SITE_URL}/mailchimp`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -156,4 +158,3 @@ Body:
     </div>
   );
 }
-

@@ -3,6 +3,7 @@ import { z } from "zod";
 import { Resend } from "resend";
 
 import { createServiceClient } from "@/lib/supabase";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 const bodySchema = z.object({
   email: z.string().email(),
@@ -58,19 +59,28 @@ export async function POST(request: Request) {
   try {
     const resend = new Resend(resendApiKey);
     const logoUrl = `${normalizedSite}/logo.svg`;
+    const html = buildPremiumEmail({
+      title: "Reset your password",
+      subtitle: "Securely reset your Refer Labs password in one step.",
+      preheader: "Reset your Refer Labs password.",
+      bodyHtml: `
+        <p style="margin:0 0 14px;">
+          Click the button below to reset your password. This link will expire after use.
+        </p>
+        <p style="margin:0;color:#475569;font-size:13px;">
+          If you did not request this, you can safely ignore this email.
+        </p>
+      `,
+      cta: { label: "Reset my password", url: recoveryLink },
+      footerNote: "Questions? Reply to this email for support.",
+      brandName: "Refer Labs",
+      logoUrl,
+    });
     await resend.emails.send({
       from: resendFrom,
       to: email,
       subject: "Refer Labs password reset",
-      html: `
-        <div style="font-family: Arial, sans-serif; padding: 24px; background: #f9fafb; text-align: center;">
-          <img src="${logoUrl}" alt="Refer Labs" width="120" height="auto" style="margin-bottom:16px;" />
-          <h2 style="color:#0f172a;">Refer Labs</h2>
-          <p style="color:#475569; font-size:16px;">Click the button below to reset your password.</p>
-          <a href="${recoveryLink}" style="display:inline-block;margin-top:18px;padding:14px 28px;border-radius:30px;background:#6d28d9;color:#fff;text-decoration:none;font-weight:600;">Reset my password</a>
-          <p style="margin-top:20px;font-size:14px;color:#94a3b8;">If you did not request this, you can safely ignore this email.</p>
-        </div>
-      `,
+      html,
       text: `Reset your Refer Labs password: ${recoveryLink}`,
       ...(process.env.RESEND_REPLY_TO?.trim() ? { reply_to: process.env.RESEND_REPLY_TO.trim() } : {}),
     });

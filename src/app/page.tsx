@@ -175,64 +175,45 @@ const heroBadgeOrientation: Record<string, string> = {
   "hero-revenue": "-rotate-2 origin-bottom-right",
 };
 
-type PartnerLogoSpec = {
-  id: string;
-  name: string;
-  src: string;
-  width: number;
-  height: number;
-  backgroundClass?: string;
-};
-
-const partnerLogos: PartnerLogoSpec[] = [
+const clientTestimonials = [
   {
-    id: "logo-attentive",
-    name: "Attentive",
-    src: "/partners/attentive.svg",
-    width: 180,
-    height: 60,
+    quote:
+      "We went live with Refer Labs in days and immediately had clarity on what was working. The dashboard made attribution simple — link opens, form fills, and booked meetings were all visible without chasing spreadsheets. It’s the first referral setup we’ve used that feels genuinely production-ready.",
+    name: "Sarah N",
+    title: "Head of Growth",
+    verified: true,
   },
   {
-    id: "logo-hubspot",
-    name: "HubSpot",
-    src: "/partners/hubspot.svg",
-    width: 160,
-    height: 60,
+    quote:
+      "Refer Labs turned our happy customers into a measurable acquisition channel. We can finally see which ambassadors are driving real outcomes, not just ‘traffic’. Since launching, our inbound demo flow has been cleaner, more trackable, and easier to optimise.",
+    name: "Michael",
+    title: "Founder",
   },
   {
-    id: "logo-resend",
-    name: "Resend",
-    src: "/partners/resend.svg",
-    width: 160,
-    height: 60,
+    quote:
+      "The biggest win is confidence in the tracking. Every action — from clicking the referral link to submitting a form — is captured and attributed properly, which makes ROI reporting straightforward. We’ve been able to scale outreach without worrying about broken attribution.",
+    name: "Priya Shah",
+    title: "Revenue Operations Lead",
+    verified: true,
   },
   {
-    id: "logo-shopify",
-    name: "Shopify",
-    src: "/partners/shopify.svg",
-    width: 150,
-    height: 60,
+    quote:
+      "We used to run partnerships manually and it was messy. With Refer Labs, the referral flow is structured, the creative is consistent, and we can monitor performance in one place. Since going live, we’ve created a repeatable playbook we can roll out across campaigns.",
+    name: "Daniel R",
+    title: "Partnerships Manager",
   },
   {
-    id: "logo-salesforce",
-    name: "Salesforce",
-    src: "/partners/salesforce.svg",
-    width: 170,
-    height: 60,
+    quote:
+      "What surprised us most was how professional the end-to-end experience feels. The referral pages look premium, the messaging is clear, and prospects convert without confusion. It’s helped us grow pipeline while keeping our brand polished.",
+    name: "Emily",
+    title: "Marketing Director",
   },
   {
-    id: "logo-mailchimp",
-    name: "Mailchimp",
-    src: "/partners/mailchimp.svg",
-    width: 170,
-    height: 60,
-  },
-  {
-    id: "logo-klaviyo",
-    name: "Klaviyo",
-    src: "/partners/klaviyo.svg",
-    width: 170,
-    height: 60,
+    quote:
+      "We wanted a referral program that plugged into our existing sales process, not another tool to babysit. Refer Labs gave us clean tracking, better visibility, and a simple way to activate our network. We saw more qualified conversations within the first few weeks of launch.",
+    name: "James O'Connor",
+    title: "Managing Director",
+    verified: true,
   },
 ];
 
@@ -285,8 +266,6 @@ const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?
 );
 
 export default async function Home() {
-  const repeatedPartnerLogos = [...partnerLogos, ...partnerLogos];
-
   // Read attribution cookie if present
   const cookieStore = await cookies();
   const refAmbassadorCookie = cookieStore.get("ref_ambassador");
@@ -720,45 +699,36 @@ export default async function Home() {
           </section>
         </RevealOnScroll>
 
-        {/* Who We Work With */}
         <RevealOnScroll>
-          <section className="-mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 border-t border-slate-200/70 py-16 sm:py-20 bg-slate-50/80">
-            <div className="space-y-6">
-              <p className="text-center text-xs uppercase tracking-[0.18em] text-slate-600 font-bold">
-                Our Partners
-              </p>
-              <div className="overflow-hidden px-4 py-5">
-                <div className="logo-marquee gap-10">
-                  {repeatedPartnerLogos.map((logo, index) => (
-                    <div
-                      key={`partner-${logo.id}-${index}`}
-                      className="min-w-[220px] flex items-center justify-center px-3"
-                    >
-                      <div
-                        className={cn(
-                          "flex h-20 w-full max-w-[220px] items-center justify-center rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 shadow-sm",
-                          logo.backgroundClass ?? ""
-                        )}
-                      >
-                        {logo.src ? (
-                          <img
-                            src={logo.src}
-                            alt={`${logo.name} logo`}
-                            width={logo.width}
-                            height={logo.height}
-                            className="h-12 w-auto object-contain"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        ) : (
-                          <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">
-                            {logo.name}
-                          </span>
-                        )}
-                      </div>
+          <section className="-mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 border-t border-slate-200/70 bg-white py-16 sm:py-20">
+            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8 lg:px-12">
+              <div className="text-center">
+                <h2 className="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">
+                  Trusted By Our Clients
+                </h2>
+                <p className="mx-auto mt-4 max-w-3xl text-base font-medium text-slate-600 sm:text-lg">
+                  Refer Labs launches referral programs, track attribution end-to-end, and measure
+                  ROI — without adding complexity to their team.
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {clientTestimonials.map((testimonial, index) => (
+                  <div
+                    key={`client-testimonial-${index}`}
+                    className="flex h-full flex-col rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/50"
+                  >
+                    <div className="flex-1 space-y-4">
+                      <p className="text-sm font-medium leading-relaxed text-slate-800 sm:text-base">
+                        {testimonial.quote}
+                      </p>
                     </div>
-                  ))}
-                </div>
+                    <div className="mt-5 text-sm text-slate-600">
+                      <p className="text-sm font-semibold text-slate-900">{testimonial.name}</p>
+                      <p className="mt-1 text-xs text-slate-500">{testimonial.title}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -783,7 +753,6 @@ export default async function Home() {
             </div>
           </div>
         </section>
-
 
       </main>
     </div>

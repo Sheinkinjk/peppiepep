@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, Store, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Square POS Integration | Refer Labs",
   description:
     "Capture in-person and invoice conversions from Square and post discount code redemptions to Refer Labs for reliable ambassador attribution.",
-};
+  url: `${SITE_URL}/square`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -161,4 +163,3 @@ Body:
     </div>
   );
 }
-

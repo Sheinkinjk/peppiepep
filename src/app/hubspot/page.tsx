@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, Users, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "HubSpot Integration | Refer Labs",
   description:
     "Create HubSpot contact properties for referral fields, import ambassadors, and (optionally) post conversion events back to Refer Labs with a secure webhook.",
-};
+  url: `${SITE_URL}/hubspot`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -156,4 +158,3 @@ Body:
     </div>
   );
 }
-

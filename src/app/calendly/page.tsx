@@ -2,12 +2,14 @@ import Link from "next/link";
 import { Calendar, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Calendly Integration | Refer Labs",
   description:
     "Capture booking conversions from Calendly by collecting the ambassador discount code and posting confirmed bookings to Refer Labs via Zapier/Make or your backend.",
-};
+  url: `${SITE_URL}/calendly`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -148,4 +150,3 @@ Body:
     </div>
   );
 }
-

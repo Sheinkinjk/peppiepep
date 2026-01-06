@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, Tag, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Google Tag Manager (GTM) | Refer Labs",
   description:
     "Add GTM to your website and verify referral tracking end-to-end. Includes recommended events, testing checkpoints, and troubleshooting.",
-};
+  url: `${SITE_URL}/gtm`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -153,4 +155,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   );
 }
-

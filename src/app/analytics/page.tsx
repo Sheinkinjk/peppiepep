@@ -2,12 +2,14 @@ import Link from "next/link";
 import { BarChart3, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Analytics Setup | Refer Labs",
   description:
     "Set up GA4 and client-side analytics with clear testing steps so referral traffic and conversions are visible alongside Refer Labs dashboard attribution.",
-};
+  url: `${SITE_URL}/analytics`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -122,4 +124,3 @@ Body:
     </div>
   );
 }
-

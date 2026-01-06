@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent, inferDeviceFromUserAgent } from "@/lib/referral-events";
 import { Resend } from "resend";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -269,72 +270,40 @@ export async function POST(request: NextRequest) {
     // Send confirmation email to applicant
     console.log(`📧 Sending confirmation email to ${email}...`);
     try {
+      const applicantHtml = buildPremiumEmail({
+        title: "Application received",
+        subtitle: "Thanks for your interest in Refer Labs.",
+        preheader: "We received your application and will be in touch shortly.",
+        bodyHtml: `
+          <p style="margin:0 0 12px;">Hi ${fullName},</p>
+          <p style="margin:0 0 16px;color:#475569;">
+            We've received your application and our team is excited to review it.
+          </p>
+          <div style="margin:16px 0;padding:16px;border-radius:12px;background:#f8fafc;border:1px solid #e2e8f0;">
+            <p style="margin:0 0 8px;font-weight:700;color:#0f172a;">What happens next</p>
+            <ul style="margin:0;padding-left:18px;color:#475569;font-size:13px;line-height:1.7;">
+              <li>We review your business details and growth goals.</li>
+              <li>A specialist reaches out within 24 hours to schedule a strategy call.</li>
+              <li>We prepare a custom referral program plan for ${businessName}.</li>
+            </ul>
+          </div>
+          <p style="margin:16px 0 0;color:#475569;font-size:13px;">
+            Prefer to lock in time now? You can schedule a call immediately.
+          </p>
+        `,
+        cta: {
+          label: "Book a call",
+          url: "https://calendly.com/jarred-referlabs/30min?month=2026-01",
+        },
+        footerNote: "Questions? Reply to this email and we’ll assist.",
+        brandName: "Refer Labs",
+        logoUrl: `${process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au"}/logo.svg`,
+      });
       await resend.emails.send({
         from: "Refer Labs <noreply@referlabs.com.au>",
         to: [email],
         subject: "Application Received - Refer Labs",
-        html: `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1e293b; margin: 0; padding: 0; background-color: #f8fafc;">
-  <div style="max-width: 600px; margin: 40px auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-
-    <div style="background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%); padding: 40px 32px; text-align: center;">
-      <h1 style="margin: 0; color: white; font-size: 28px; font-weight: 900;">
-        Application Received! ✅
-      </h1>
-    </div>
-
-    <div style="padding: 32px;">
-      <p style="margin: 0 0 16px; font-size: 16px; color: #1e293b;">
-        Hi ${fullName},
-      </p>
-
-      <p style="margin: 0 0 16px; font-size: 16px; color: #475569;">
-        Thank you for your interest in Refer Labs! We've received your application and our team is excited to review it.
-      </p>
-
-      <div style="background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%); border-left: 4px solid #14b8a6; padding: 20px; margin: 24px 0; border-radius: 8px;">
-        <p style="margin: 0 0 12px; font-size: 16px; font-weight: 700; color: #0f172a;">
-          What happens next?
-        </p>
-        <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px;">
-          <li style="margin-bottom: 8px;">We'll review your business details and growth goals</li>
-          <li style="margin-bottom: 8px;">A specialist will reach out within 24 hours to schedule a strategy call</li>
-          <li style="margin-bottom: 8px;">We'll create a custom referral program plan for ${businessName}</li>
-        </ul>
-      </div>
-
-      <p style="margin: 24px 0 16px; font-size: 16px; color: #475569;">
-        In the meantime, feel free to explore our resources:
-      </p>
-
-      <div style="text-align: center; margin-top: 32px;">
-        <a href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
-           style="display: inline-block; background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; box-shadow: 0 4px 6px rgba(20, 184, 166, 0.3);">
-          Or Book a Call Now →
-        </a>
-      </div>
-
-      <p style="margin: 32px 0 0; font-size: 14px; color: #64748b;">
-        Questions? Reply to this email or call us at +61 400 000 000
-      </p>
-    </div>
-
-    <div style="background: #f8fafc; padding: 24px 32px; text-align: center; border-top: 1px solid #e2e8f0;">
-      <p style="margin: 0; font-size: 12px; color: #94a3b8;">
-        Refer Labs | Unlock Revenue Through Referrals
-      </p>
-    </div>
-
-  </div>
-</body>
-</html>
-        `,
+        html: applicantHtml,
       });
       console.log("✅ Confirmation email sent successfully");
     } catch (emailError) {

@@ -3,6 +3,7 @@ import { stripe, PAYOUT_THRESHOLD, PAYOUT_CURRENCY } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
 import { checkRateLimit } from '@/lib/rate-limit';
 import { sendTransactionalEmail } from "@/lib/transactional-email";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 /**
  * Create a payout to an ambassador's connected account
@@ -196,10 +197,27 @@ export async function POST(request: NextRequest) {
       if (ambassadorEmail) {
         const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au";
         const amountAud = (payoutAmount / 100).toFixed(2);
+        const html = buildPremiumEmail({
+          title: "Payout initiated",
+          subtitle: `Hi ${ambassadorName}, your payout is on the way.`,
+          preheader: `We just initiated your $${amountAud} AUD payout.`,
+          bodyHtml: `
+            <p style="margin:0 0 12px;">
+              We just initiated a payout of <strong>$${amountAud} AUD</strong> to your connected account. It may take a short time to appear depending on your bank.
+            </p>
+            <div style="margin:16px 0 0;padding:14px 16px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;color:#475569;font-size:12px;">
+              Transfer ID: ${transfer.id}
+            </div>
+          `,
+          cta: { label: "View my portal", url: `${siteUrl}/r/referral` },
+          footerNote: "Need help? Reply to this email and we’ll assist.",
+          brandName: "Refer Labs",
+          logoUrl: `${siteUrl}/logo.svg`,
+        });
         await sendTransactionalEmail({
           to: ambassadorEmail,
           subject: `Payout initiated — $${amountAud} AUD`,
-          html: `<!doctype html><html><body style="font-family:Inter,system-ui,-apple-system,sans-serif;background:#f5f5f5;padding:32px"><div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:24px;padding:32px;border:1px solid #e2e8f0"><p style="font-size:18px;font-weight:900;margin:0 0 10px;color:#0f172a">Payout on the way, ${ambassadorName}.</p><p style="margin:0;color:#475569;font-size:14px;line-height:1.6">We just initiated a payout of <strong>$${amountAud} AUD</strong> to your connected account. It may take a short time to appear, depending on your bank.</p><p style="margin:18px 0 0"><a href="${siteUrl}/r/referral" style="display:inline-block;background:#0f172a;color:#ffffff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:800">View my portal</a></p><p style="margin:18px 0 0;color:#94a3b8;font-size:12px">Transfer ID: ${transfer.id}</p></div><p style="text-align:center;font-size:12px;color:#94a3b8;margin-top:14px">Sent by Refer Labs</p></body></html>`,
+          html,
         });
       }
     } catch (emailError) {

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { Resend } from "resend";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 type PartnerApplicationLite = {
   id: string;
@@ -84,22 +85,23 @@ export async function POST(request: NextRequest) {
     if (appData.email && resendApiKey && message) {
       try {
         const resend = new Resend(resendApiKey);
+        const html = buildPremiumEmail({
+          title: "Application update",
+          subtitle: "Refer Labs Partner Program",
+          preheader: "Update on your partner application.",
+          bodyHtml: `
+            <p style="margin:0 0 12px;">Hi ${appData.name || "there"},</p>
+            <p style="margin:0;color:#475569;line-height:1.6;">${message}</p>
+          `,
+          footerNote: "Questions? Reply to this email and we’ll help.",
+          brandName: "Refer Labs",
+          logoUrl: `${process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au"}/logo.svg`,
+        });
         await resend.emails.send({
           from: fromEmail,
           to: appData.email,
           subject: subject || "Update on your partner application",
-          html: `
-            <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
-              <div style="padding:28px;border-radius:20px 20px 0 0;background:#0f172a;color:white;">
-                <p style="margin:0;text-transform:uppercase;letter-spacing:0.22em;font-size:12px;">Refer Labs Partner Program</p>
-                <h1 style="margin:10px 0 0;font-size:22px;font-weight:800;">Application update</h1>
-              </div>
-              <div style="padding:24px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 20px 20px;background:white;">
-                <p style="margin:0 0 12px;font-size:14px;color:#0f172a;">Hi ${appData.name || "there"},</p>
-                <p style="margin:0;font-size:14px;color:#475569;line-height:1.6;">${message}</p>
-              </div>
-            </div>
-          `,
+          html,
         });
       } catch (emailError) {
         console.error("Failed to send rejection email:", emailError);

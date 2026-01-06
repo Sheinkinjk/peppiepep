@@ -2,12 +2,14 @@ import Link from "next/link";
 import { BarChart3, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Google Ads (Tag + Conversions) | Refer Labs",
   description:
     "Set up Google Ads conversion tracking (via GTM or gtag) while keeping Refer Labs attribution accurate. Includes an end-to-end testing checklist.",
-};
+  url: `${SITE_URL}/google-ads`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -122,4 +124,3 @@ Body:
     </div>
   );
 }
-

@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, Wrench, Workflow } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Make (Integromat) Integration | Refer Labs",
   description:
     "Report conversions and referral events to Refer Labs using Make webhooks/HTTP modules. Includes field mapping and an end-to-end test checklist.",
-};
+  url: `${SITE_URL}/make`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -147,4 +149,3 @@ Body (JSON):
     </div>
   );
 }
-

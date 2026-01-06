@@ -4,6 +4,7 @@ import type { Database } from "@/types/supabase";
 import { parseBusinessMetadata, type BusinessOnboardingMetadata } from "@/types/business";
 import { sendTransactionalEmail } from "@/lib/transactional-email";
 import { shouldSendOnce } from "@/lib/alert-bucket";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 type BusinessNotificationContext = {
   businessId: string;
@@ -94,24 +95,15 @@ function withNotificationStamp(
 }
 
 function buildOwnerEmailShell({ title, subtitle, bodyHtml }: { title: string; subtitle: string; bodyHtml: string }) {
-  return `<!doctype html>
-  <html>
-    <body style="font-family:Inter,system-ui,-apple-system,sans-serif;background:#f5f5f5;padding:32px;">
-      <div style="max-width:640px;margin:0 auto;background:#ffffff;border-radius:24px;padding:28px;border:1px solid #e2e8f0;">
-        <div style="padding:20px;border-radius:18px;background:linear-gradient(135deg,#0abab5,#24d9e2);color:#ffffff;">
-          <div style="text-transform:uppercase;letter-spacing:0.28em;font-size:12px;font-weight:700;opacity:0.95;">Refer Labs</div>
-          <div style="font-size:24px;font-weight:900;margin-top:10px;line-height:1.2;">${title}</div>
-          <div style="margin-top:8px;font-size:14px;opacity:0.95;">${subtitle}</div>
-        </div>
-        <div style="margin-top:18px;color:#0f172a;font-size:14px;line-height:1.6;">
-          ${bodyHtml}
-        </div>
-      </div>
-      <div style="max-width:640px;margin:14px auto 0;color:#94a3b8;font-size:12px;text-align:center;">
-        Sent by Refer Labs
-      </div>
-    </body>
-  </html>`;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au";
+  return buildPremiumEmail({
+    title,
+    subtitle,
+    preheader: `${title} — Refer Labs`,
+    bodyHtml,
+    brandName: "Refer Labs",
+    logoUrl: `${siteUrl}/logo.svg`,
+  });
 }
 
 export async function maybeSendFirstReferralReceivedOwnerEmail({

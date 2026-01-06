@@ -21,11 +21,13 @@ import {
 } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Integrations | Refer Labs",
   description: "Step-by-step integration guides for websites, payments, and CRMs.",
-};
+  url: `${SITE_URL}/integrations`,
+});
 
 function IntegrationCard({
   href,

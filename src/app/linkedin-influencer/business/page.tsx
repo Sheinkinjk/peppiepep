@@ -21,6 +21,7 @@ import { createServiceClient } from "@/lib/supabase";
 import { sendAdminNotification } from "@/lib/email-notifications";
 import { sendTransactionalEmail } from "@/lib/transactional-email";
 import { logReferralEvent } from "@/lib/referral-events";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencerBusiness);
 
@@ -263,23 +264,22 @@ async function submitBusinessPartner(formData: FormData) {
     html,
   });
 
-  const applicantHtml = `
-    <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
-      <div style="padding:28px;border-radius:20px 20px 0 0;background:linear-gradient(135deg,#0ea5e9,#7c3aed);color:white;">
-        <p style="margin:0;text-transform:uppercase;letter-spacing:0.28em;font-size:12px;">LinkedIn Creator Partnership</p>
-        <h1 style="margin:8px 0 0;font-size:24px;font-weight:800;">We received your partnership request</h1>
-        <p style="margin:6px 0 0;font-size:14px;opacity:0.95;">Our team will review and follow up within 24 hours.</p>
-      </div>
-      <div style="padding:28px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 20px 20px;background:white;">
-        <p style="margin:0 0 12px;font-size:14px;color:#0f172a;">
-          Thanks for your interest, ${escapeHtml(contactName)}. We'll review your goals for ${escapeHtml(company)} and match you with aligned creators who can drive ${escapeHtml(desiredOutcome)}.
-        </p>
-        <p style="margin:12px 0 0;font-size:13px;color:#475569;">
-          Next steps: We'll email you creator profiles within 2-3 business days. If you have questions, reply to this email.
-        </p>
-      </div>
-    </div>
-  `;
+  const applicantHtml = buildPremiumEmail({
+    title: "We received your partnership request",
+    subtitle: "LinkedIn Creator Partnership",
+    preheader: "We will review and follow up within 24 hours.",
+    bodyHtml: `
+      <p style="margin:0 0 12px;color:#475569;">
+        Thanks for your interest, ${escapeHtml(contactName)}. We'll review your goals for ${escapeHtml(company)} and match you with aligned creators who can drive ${escapeHtml(desiredOutcome)}.
+      </p>
+      <p style="margin:12px 0 0;font-size:13px;color:#475569;">
+        Next steps: we'll email creator profiles within 2-3 business days. If you have questions, reply to this email.
+      </p>
+    `,
+    footerNote: "Refer Labs — premium creator matches with attribution.",
+    brandName: "Refer Labs",
+    logoUrl: `${process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au"}/logo.svg`,
+  });
 
   await sendTransactionalEmail({
     to: email,

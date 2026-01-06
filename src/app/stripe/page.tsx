@@ -2,12 +2,14 @@ import Link from "next/link";
 import { CreditCard, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Stripe Integration | Refer Labs",
   description:
     "Stripe setup guide: webhooks, testing, and common troubleshooting so payments and conversions reflect in the dashboard reliably.",
-};
+  url: `${SITE_URL}/stripe`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -118,4 +120,3 @@ stripe trigger payment_intent.succeeded`}</CodeBlock>
     </div>
   );
 }
-

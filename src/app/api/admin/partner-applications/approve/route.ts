@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { Resend } from "resend";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 type PartnerApplicationCustomer = {
   id: string;
@@ -135,116 +136,68 @@ export async function POST(request: NextRequest) {
     if (appData.email && resendApiKey) {
       try {
         const resend = new Resend(resendApiKey);
+        const bodyHtml = `
+          <p style="margin:0 0 12px;">Hi ${appData.name || "there"},</p>
+          <p style="margin:0 0 16px;color:#475569;line-height:1.6;">
+            Congratulations! Your partner application has been approved. You can now start earning <strong>25% recurring revenue</strong> for every business you refer to Refer Labs.
+          </p>
+          <div style="margin:16px 0;padding:16px;border-radius:14px;background:#ecfdf5;border:1px solid #bbf7d0;color:#065f46;font-size:13px;">
+            Earn 25% of every payment from businesses you refer, for the lifetime of their subscription.
+          </div>
+          ${
+            referralLink
+              ? `<div style="margin:16px 0;padding:16px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;">
+                  <p style="margin:0 0 8px;font-weight:700;color:#0f172a;">Your unique referral link</p>
+                  <div style="padding:10px;border-radius:10px;background:#ffffff;border:1px solid #cbd5e1;margin-bottom:8px;">
+                    <a href="${referralLink}" style="color:#0abab5;font-weight:600;text-decoration:none;word-break:break-all;font-size:13px;">${referralLink}</a>
+                  </div>
+                  <p style="margin:0;font-size:12px;color:#475569;">Share this link with businesses. Every signup is tracked to you.</p>
+                </div>`
+              : ""
+          }
+          ${
+            customer?.discount_code
+              ? `<div style="margin:16px 0;padding:14px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;">
+                  <p style="margin:0 0 6px;font-weight:700;color:#9a3412;font-size:12px;">Referral discount code</p>
+                  <p style="margin:0;font-size:18px;color:#7c2d12;font-weight:800;letter-spacing:1px;">${customer.discount_code}</p>
+                  <p style="margin:6px 0 0;font-size:12px;color:#9a3412;">Give this to referrals to identify their account.</p>
+                </div>`
+              : ""
+          }
+          <div style="margin:16px 0;">
+            <p style="margin:0 0 8px;font-weight:700;color:#0f172a;">How it works</p>
+            <ol style="margin:0;padding-left:18px;color:#475569;font-size:13px;line-height:1.7;">
+              <li>Share your link with businesses in your network.</li>
+              <li>They sign up and launch with Refer Labs.</li>
+              <li>You receive monthly payouts for each active client.</li>
+            </ol>
+          </div>
+          <div style="margin:16px 0;padding:14px;border-radius:12px;background:#fefce8;border:1px solid #fde047;">
+            <p style="margin:0 0 8px;font-weight:700;color:#713f12;font-size:13px;">Commission structure</p>
+            <ul style="margin:0;padding-left:18px;color:#854d0e;font-size:12px;line-height:1.6;">
+              <li>25% recurring revenue per client</li>
+              <li>Monthly payouts</li>
+              <li>No cap on earnings</li>
+            </ul>
+          </div>
+        `;
+        const html = buildPremiumEmail({
+          title: "Welcome to the Partner Program",
+          subtitle: "You're officially a Refer Labs partner.",
+          preheader: "Your partner application has been approved.",
+          bodyHtml,
+          cta: ambassadorPortalLink
+            ? { label: "View your dashboard", url: ambassadorPortalLink }
+            : { label: "Visit Refer Labs", url: siteUrl },
+          footerNote: "Questions? Reply to this email and we’ll help you get started.",
+          brandName: "Refer Labs",
+          logoUrl: `${siteUrl}/logo.svg`,
+        });
         await resend.emails.send({
           from: fromEmail,
           to: appData.email,
           subject: "🎉 You're Now a Refer Labs Partner!",
-          html: `
-            <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
-              <!-- Header -->
-              <div style="padding:40px 32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;text-align:center;">
-                <h1 style="margin:0 0 8px;font-size:32px;font-weight:800;">Welcome to the Partner Program! 🎉</h1>
-                <p style="margin:0;font-size:18px;opacity:0.95;">You're officially a Refer Labs ambassador</p>
-              </div>
-
-              <!-- Body -->
-              <div style="padding:32px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;background:white;">
-                <p style="margin:0 0 16px;font-size:16px;color:#0f172a;">Hi ${appData.name || "there"},</p>
-
-                <p style="margin:0 0 16px;font-size:16px;color:#475569;line-height:1.6;">
-                  Congratulations! Your partner application has been approved. You can now start earning <strong>25% recurring revenue</strong> for every business you refer to Refer Labs.
-                </p>
-
-                <!-- Revenue Share Highlight -->
-                <div style="margin:24px 0;padding:24px;border-radius:16px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #10b981;">
-                  <div style="text-align:center;margin-bottom:16px;">
-                    <div style="font-size:48px;font-weight:900;color:#047857;line-height:1;">25%</div>
-                    <p style="margin:4px 0 0;font-size:16px;color:#065f46;font-weight:600;">Recurring Revenue</p>
-                  </div>
-                  <p style="margin:0;font-size:14px;color:#065f46;text-align:center;line-height:1.6;">
-                    Earn 25% of every payment from businesses you refer, for the lifetime of their subscription. The more successful your referrals, the more you earn—month after month.
-                  </p>
-                </div>
-
-                <!-- Referral Link -->
-                ${referralLink ? `
-                  <div style="margin:24px 0;padding:20px;border-radius:16px;background:#f8fafc;border:2px solid #cbd5e1;">
-                    <p style="margin:0 0 12px;font-weight:700;color:#0f172a;font-size:16px;">🔗 Your Unique Referral Link</p>
-                    <div style="padding:12px;border-radius:12px;background:white;border:1px solid #e2e8f0;margin-bottom:12px;">
-                      <a href="${referralLink}" style="color:#0abab5;font-weight:600;text-decoration:none;word-break:break-all;">${referralLink}</a>
-                    </div>
-                    <p style="margin:0;font-size:14px;color:#64748b;">
-                      Share this link with businesses. Every signup is automatically tracked to your account.
-                    </p>
-                  </div>
-                ` : ''}
-
-                <!-- Discount Code -->
-                ${customer?.discount_code ? `
-                  <div style="margin:24px 0;padding:16px;border-radius:12px;background:#fef3c7;border:1px solid #fbbf24;">
-                    <p style="margin:0 0 8px;font-weight:600;color:#92400e;font-size:14px;">🏷️ Your Referral Discount Code</p>
-                    <p style="margin:0;font-size:20px;color:#78350f;font-weight:800;letter-spacing:1px;">${customer.discount_code}</p>
-                    <p style="margin:8px 0 0;font-size:12px;color:#92400e;">Give this to referrals to identify their account with you.</p>
-                  </div>
-                ` : ''}
-
-                <!-- Ambassador Portal -->
-                ${ambassadorPortalLink ? `
-                  <div style="margin:24px 0;padding:20px;border-radius:16px;background:#ede9fe;border:2px solid #a78bfa;">
-                    <p style="margin:0 0 12px;font-weight:700;color:#5b21b6;font-size:16px;">📊 Track Your Earnings</p>
-                    <p style="margin:0 0 12px;font-size:14px;color:#6b21a8;">
-                      Access your personal ambassador portal to see real-time referrals, earnings, and share tools.
-                    </p>
-                    <a href="${ambassadorPortalLink}" style="display:inline-block;padding:12px 24px;border-radius:12px;background:#8b5cf6;color:white;text-decoration:none;font-weight:600;font-size:14px;">
-                      View Your Dashboard →
-                    </a>
-                  </div>
-                ` : ''}
-
-                <!-- How to Get Started -->
-                <div style="margin:32px 0;">
-                  <h2 style="margin:0 0 16px;font-size:20px;color:#0f172a;font-weight:800;">🚀 How to Get Started</h2>
-                  <div style="margin-bottom:12px;padding-left:28px;position:relative;">
-                    <div style="position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#0abab5;color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;">1</div>
-                    <p style="margin:0;color:#475569;"><strong style="color:#0f172a;">Share Your Link:</strong> Send your referral link to businesses in your network</p>
-                  </div>
-                  <div style="margin-bottom:12px;padding-left:28px;position:relative;">
-                    <div style="position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#10b981;color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;">2</div>
-                    <p style="margin:0;color:#475569;"><strong style="color:#0f172a;">They Sign Up:</strong> When they subscribe, you start earning 25% monthly</p>
-                  </div>
-                  <div style="margin-bottom:12px;padding-left:28px;position:relative;">
-                    <div style="position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#8b5cf6;color:white;display:flex;align-items:center;justify-center;font-size:12px;font-weight:bold;">3</div>
-                    <p style="margin:0;color:#475569;"><strong style="color:#0f172a;">Get Paid:</strong> Automatic monthly payouts for the lifetime of each client</p>
-                  </div>
-                </div>
-
-                <!-- Commission Structure -->
-                <div style="margin:24px 0;padding:20px;border-radius:16px;background:#fefce8;border:1px solid #fde047;">
-                  <p style="margin:0 0 12px;font-weight:700;color:#713f12;font-size:16px;">💰 Your Commission Structure</p>
-                  <ul style="margin:0;padding-left:20px;color:#854d0e;">
-                    <li style="margin:8px 0;"><strong>25% recurring revenue</strong> - Lifetime of each client</li>
-                    <li style="margin:8px 0;"><strong>$100-150/month per client</strong> - Based on their plan</li>
-                    <li style="margin:8px 0;"><strong>No cap on earnings</strong> - Refer unlimited businesses</li>
-                    <li style="margin:8px 0;"><strong>Monthly payouts</strong> - Direct deposit or account credit</li>
-                  </ul>
-                </div>
-
-                <!-- Support -->
-                <div style="margin:32px 0 0;padding-top:24px;border-top:1px solid #e2e8f0;">
-                  <p style="margin:0 0 8px;font-size:14px;color:#475569;">Questions about the partner program?</p>
-                  <p style="margin:0;font-size:14px;color:#475569;">
-                    Reply to this email or reach out at <a href="mailto:jarred@referlabs.com.au" style="color:#0abab5;text-decoration:none;font-weight:600;">jarred@referlabs.com.au</a>
-                  </p>
-                </div>
-
-                <!-- Footer -->
-                <div style="margin:32px 0 0;padding-top:24px;border-top:1px solid #e2e8f0;text-align:center;">
-                  <p style="margin:0 0 8px;font-size:18px;font-weight:700;color:#0f172a;">Let's grow together! 🚀</p>
-                  <p style="margin:0;font-size:14px;color:#64748b;">The Refer Labs Team</p>
-                </div>
-              </div>
-            </div>
-          `,
+          html,
         });
       } catch (emailError) {
         console.error("Failed to send approval email:", emailError);

@@ -18,6 +18,7 @@ import {
   Flag,
   Calendar,
   Phone,
+  Settings,
 } from "lucide-react";
 
 import type { ReferralEventType } from "@/lib/referral-events";
@@ -127,6 +128,12 @@ const EVENT_META: Record<ReferralEventType, { label: string; description: string
     description: "Prospect clicked Contact Us button",
     color: "text-purple-600",
     Icon: Phone,
+  },
+  program_settings_updated: {
+    label: "Rewards Updated",
+    description: "Business updated rewards or program settings",
+    color: "text-indigo-600",
+    Icon: Settings,
   },
 };
 

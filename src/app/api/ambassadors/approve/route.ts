@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerComponentClient } from "@/lib/supabase";
 import { Resend } from "resend";
 import type { Database } from "@/types/supabase";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
 type AmbassadorCustomer = Pick<
@@ -211,129 +212,72 @@ function buildAmbassadorWelcomeEmail({
   discountCode: string | null;
   siteUrl: string;
 }) {
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      </head>
-      <body style="margin:0;padding:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:#f8fafc;">
-        <div style="max-width:640px;margin:0 auto;padding:40px 20px;">
-          <!-- Header -->
-          <div style="background:linear-gradient(135deg,#0abab5,#24d9e2);border-radius:24px 24px 0 0;padding:40px 32px;text-align:center;color:#ffffff;">
-            <div style="font-size:48px;margin-bottom:16px;">🎉</div>
-            <h1 style="margin:0 0 12px;font-size:32px;font-weight:800;line-height:1.2;">Welcome to ${businessName}!</h1>
-            <p style="margin:0;font-size:18px;opacity:0.95;">You're now an official ambassador</p>
-          </div>
-
-          <!-- Body -->
-          <div style="background:#ffffff;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;padding:40px 32px;">
-            <p style="margin:0 0 24px;font-size:16px;color:#0f172a;line-height:1.6;">
-              Hi ${ambassadorName},
+  const bodyHtml = `
+    <p style="margin:0 0 16px;">Hi ${ambassadorName},</p>
+    <p style="margin:0 0 18px;color:#475569;">
+      Great news! Your ambassador application has been approved. You can now start sharing ${businessName} with your network and earn rewards for every successful referral.
+    </p>
+    ${
+      referralLink
+        ? `<div style="margin:20px 0;padding:18px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0;">
+            <p style="margin:0 0 10px;font-weight:700;color:#0f172a;">Your unique referral link</p>
+            <div style="padding:12px;border-radius:12px;background:#ffffff;border:1px solid #cbd5e1;margin-bottom:10px;">
+              <a href="${referralLink}" style="color:#0abab5;font-weight:600;text-decoration:none;word-break:break-all;font-size:13px;">${referralLink}</a>
+            </div>
+            <p style="margin:0;font-size:13px;color:#475569;line-height:1.5;">
+              Share this link with your network. Every time someone signs up, you both benefit.
             </p>
-
-            <p style="margin:0 0 24px;font-size:16px;color:#475569;line-height:1.6;">
-              Great news! Your ambassador application has been approved. You can now start sharing ${businessName} with your network and earn rewards for every successful referral.
+          </div>`
+        : ""
+    }
+    ${
+      discountCode
+        ? `<div style="margin:18px 0;padding:16px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;">
+            <p style="margin:0 0 8px;font-weight:700;color:#9a3412;">Your ambassador discount code</p>
+            <p style="margin:0 0 8px;font-size:20px;color:#7c2d12;font-weight:800;letter-spacing:1.4px;font-family:monospace;">${discountCode}</p>
+            <p style="margin:0;font-size:12px;color:#9a3412;line-height:1.5;">Share this code with your referrals during signup.</p>
+          </div>`
+        : ""
+    }
+    ${
+      ambassadorPortalLink
+        ? `<div style="margin:18px 0;padding:16px;border-radius:12px;background:#ecfeff;border:1px solid #a5f3fc;">
+            <p style="margin:0 0 8px;font-weight:700;color:#0e7490;">Track your performance</p>
+            <p style="margin:0 0 12px;font-size:13px;color:#0f172a;line-height:1.6;">
+              Access your ambassador dashboard to view referrals, track earnings, and download sharing assets.
             </p>
-
-            ${referralLink ? `
-              <!-- Referral Link -->
-              <div style="margin:32px 0;padding:24px;border-radius:16px;background:linear-gradient(135deg,#f8fafc,#e7f5fe);border:2px solid #0abab5;">
-                <p style="margin:0 0 16px;font-size:18px;font-weight:700;color:#0f172a;">🔗 Your Unique Referral Link</p>
-                <div style="padding:16px;border-radius:12px;background:#ffffff;border:1px solid #cbd5e1;margin-bottom:16px;">
-                  <a href="${referralLink}" style="color:#0abab5;font-weight:600;text-decoration:none;word-break:break-all;font-size:15px;">${referralLink}</a>
-                </div>
-                <p style="margin:0;font-size:14px;color:#475569;line-height:1.5;">
-                  Share this link with your network. Every time someone signs up using your link, you'll earn rewards and they'll get exclusive benefits.
-                </p>
-              </div>
-            ` : ''}
-
-            ${discountCode ? `
-              <!-- Discount Code -->
-              <div style="margin:32px 0;padding:20px;border-radius:12px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fbbf24;">
-                <p style="margin:0 0 12px;font-weight:600;color:#92400e;font-size:14px;">🏷️ Your Ambassador Discount Code</p>
-                <p style="margin:0 0 12px;font-size:24px;color:#78350f;font-weight:800;letter-spacing:1.5px;font-family:monospace;">${discountCode}</p>
-                <p style="margin:0;font-size:13px;color:#92400e;line-height:1.5;">
-                  Share this code with your referrals. They can use it during signup to identify themselves as your referral.
-                </p>
-              </div>
-            ` : ''}
-
-            ${ambassadorPortalLink ? `
-              <!-- Ambassador Portal -->
-              <div style="margin:32px 0;padding:24px;border-radius:16px;background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:2px solid#a78bfa;">
-                <p style="margin:0 0 12px;font-weight:700;color:#5b21b6;font-size:16px;">📊 Track Your Performance</p>
-                <p style="margin:0 0 16px;font-size:14px;color:#6b21a8;line-height:1.6;">
-                  Access your personal ambassador dashboard to view real-time referrals, track your earnings, and download sharing assets.
-                </p>
-                <a href="${ambassadorPortalLink}" style="display:inline-block;padding:14px 28px;border-radius:12px;background:#8b5cf6;color:#ffffff;text-decoration:none;font-weight:600;font-size:15px;">
-                  View Dashboard →
-                </a>
-              </div>
-            ` : ''}
-
-            <!-- How It Works -->
-            <div style="margin:40px 0 32px;">
-              <h2 style="margin:0 0 20px;font-size:20px;color:#0f172a;font-weight:800;">🚀 How to Get Started</h2>
-
-              <div style="margin-bottom:16px;padding-left:36px;position:relative;">
-                <div style="position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:#0abab5;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">1</div>
-                <p style="margin:0;color:#475569;font-size:15px;line-height:1.6;">
-                  <strong style="color:#0f172a;">Share Your Link:</strong> Send your referral link to friends, family, and your social network
-                </p>
-              </div>
-
-              <div style="margin-bottom:16px;padding-left:36px;position:relative;">
-                <div style="position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:#10b981;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">2</div>
-                <p style="margin:0;color:#475569;font-size:15px;line-height:1.6;">
-                  <strong style="color:#0f172a;">They Sign Up:</strong> When they use your link or discount code, they're automatically connected to you
-                </p>
-              </div>
-
-              <div style="margin-bottom:16px;padding-left:36px;position:relative;">
-                <div style="position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:#8b5cf6;color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">3</div>
-                <p style="margin:0;color:#475569;font-size:15px;line-height:1.6;">
-                  <strong style="color:#0f172a;">Earn Rewards:</strong> Track your referrals in the dashboard and receive your ambassador benefits
-                </p>
-              </div>
-            </div>
-
-            <!-- Best Practices -->
-            <div style="margin:32px 0;padding:20px;border-radius:12px;background:#f8fafc;border:1px solid #e2e8f0;">
-              <p style="margin:0 0 12px;font-weight:700;color:#0f172a;font-size:15px;">💡 Ambassador Tips</p>
-              <ul style="margin:0;padding-left:20px;color:#475569;font-size:14px;line-height:1.7;">
-                <li>Share why you personally love ${businessName}</li>
-                <li>Post your referral link on social media stories and posts</li>
-                <li>Email your link to people who would benefit from ${businessName}</li>
-                <li>Check your dashboard regularly to see your progress</li>
-              </ul>
-            </div>
-
-            <!-- Support -->
-            <div style="margin:40px 0 0;padding-top:24px;border-top:1px solid #e2e8f0;">
-              <p style="margin:0 0 8px;font-size:14px;color:#475569;">Questions about the ambassador program?</p>
-              <p style="margin:0;font-size:14px;color:#475569;">
-                Reply to this email and we'll be happy to help you get started.
-              </p>
-            </div>
-
-            <!-- Footer -->
-            <div style="margin:32px 0 0;padding-top:24px;border-top:1px solid #e2e8f0;text-align:center;">
-              <p style="margin:0 0 12px;font-size:18px;font-weight:700;color:#0f172a;">Welcome aboard! 🎊</p>
-              <p style="margin:0;font-size:14px;color:#64748b;">The ${businessName} Team</p>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div style="margin-top:24px;text-align:center;color:#94a3b8;font-size:12px;">
-            <p style="margin:0;">Powered by <a href="${siteUrl}" style="color:#0abab5;text-decoration:none;">Refer Labs</a></p>
-          </div>
-        </div>
-      </body>
-    </html>
+            <a href="${ambassadorPortalLink}" style="display:inline-block;padding:10px 18px;border-radius:10px;background:#0abab5;color:#ffffff;text-decoration:none;font-weight:700;font-size:13px;">
+              Open dashboard →
+            </a>
+          </div>`
+        : ""
+    }
+    <div style="margin:18px 0 0;">
+      <p style="margin:0 0 10px;font-weight:700;color:#0f172a;">How to get started</p>
+      <ol style="margin:0;padding-left:18px;color:#475569;font-size:13px;line-height:1.7;">
+        <li>Share your link with friends, clients, and partners.</li>
+        <li>They sign up using your link or discount code.</li>
+        <li>Track rewards and performance in your dashboard.</li>
+      </ol>
+    </div>
+    <div style="margin:18px 0 0;padding:14px;border-radius:12px;background:#f8fafc;border:1px solid #e2e8f0;">
+      <p style="margin:0 0 6px;font-weight:700;color:#0f172a;font-size:13px;">Ambassador tips</p>
+      <p style="margin:0;color:#475569;font-size:12px;line-height:1.6;">
+        Share why you love ${businessName}, post on social, and keep your dashboard handy to celebrate wins.
+      </p>
+    </div>
   `;
+
+  return buildPremiumEmail({
+    title: `Welcome to ${businessName}!`,
+    subtitle: "You're now an official ambassador.",
+    preheader: "Your ambassador account is ready.",
+    bodyHtml,
+    cta: ambassadorPortalLink ? { label: "Open ambassador portal", url: ambassadorPortalLink } : null,
+    footerNote: "Questions? Reply to this email and we’ll help you get started.",
+    brandName: businessName,
+    logoUrl: `${siteUrl}/logo.svg`,
+  });
 }
 
 function buildOwnerNotificationEmail({
@@ -347,34 +291,33 @@ function buildOwnerNotificationEmail({
   ambassadorNames: string[];
   siteUrl: string;
 }) {
-  return `
-    <!DOCTYPE html>
-    <html>
-      <body style="font-family:system-ui,-apple-system,sans-serif;margin:0;padding:20px;background:#f5f5f5;">
-        <div style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
-          <div style="padding:24px;background:#10b981;color:#ffffff;">
-            <h1 style="margin:0;font-size:24px;font-weight:800;">Ambassador${approvedCount === 1 ? "" : "s"} Approved</h1>
-            <p style="margin:8px 0 0;font-size:14px;opacity:0.95;">${businessName}</p>
-          </div>
-          <div style="padding:24px;">
-            <p style="margin:0 0 16px;color:#0f172a;font-size:15px;">
-              You've approved <strong>${approvedCount}</strong> new ambassador${approvedCount === 1 ? "" : "s"}:
-            </p>
-            <ul style="margin:0 0 20px;padding-left:20px;color:#475569;">
-              ${ambassadorNames.slice(0, 10).map(name => `<li style="margin:4px 0;">${name}</li>`).join("")}
-              ${ambassadorNames.length > 10 ? `<li style="margin:4px 0;color:#94a3b8;">...and ${ambassadorNames.length - 10} more</li>` : ""}
-            </ul>
-            <p style="margin:0 0 20px;color:#475569;font-size:14px;">
-              Welcome emails have been sent to all approved ambassadors with their unique referral links and discount codes.
-            </p>
-            <p style="margin:20px 0 0;">
-              <a href="${siteUrl}/dashboard" style="display:inline-block;background:#0f172a;color:#ffffff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">
-                View Dashboard
-              </a>
-            </p>
-          </div>
-        </div>
-      </body>
-    </html>
+  const bodyHtml = `
+    <p style="margin:0 0 12px;">
+      You've approved <strong>${approvedCount}</strong> new ambassador${approvedCount === 1 ? "" : "s"}:
+    </p>
+    <ul style="margin:0 0 16px;padding-left:18px;color:#475569;font-size:13px;line-height:1.6;">
+      ${ambassadorNames
+        .slice(0, 10)
+        .map((name) => `<li style="margin:4px 0;">${name}</li>`)
+        .join("")}
+      ${
+        ambassadorNames.length > 10
+          ? `<li style="margin:4px 0;color:#94a3b8;">...and ${ambassadorNames.length - 10} more</li>`
+          : ""
+      }
+    </ul>
+    <p style="margin:0;color:#475569;font-size:13px;">
+      Welcome emails were sent with unique referral links and discount codes.
+    </p>
   `;
+
+  return buildPremiumEmail({
+    title: `Ambassador${approvedCount === 1 ? "" : "s"} approved`,
+    subtitle: businessName,
+    preheader: "New ambassadors have been approved.",
+    bodyHtml,
+    cta: { label: "View dashboard", url: `${siteUrl}/dashboard` },
+    brandName: businessName,
+    logoUrl: `${siteUrl}/logo.svg`,
+  });
 }

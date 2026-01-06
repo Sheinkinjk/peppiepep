@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, Globe, LayoutTemplate, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Webflow Integration | Refer Labs",
   description:
     "Embed Refer Labs referral pages in Webflow and validate attribution step-by-step. Includes recommended testing checkpoints and troubleshooting.",
-};
+  url: `${SITE_URL}/webflow`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -152,4 +154,3 @@ export default function WebflowGuidePage() {
     </div>
   );
 }
-

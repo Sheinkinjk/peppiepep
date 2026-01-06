@@ -3,11 +3,14 @@ import Image from "next/image";
 import { Download, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "WordPress Shortcode (Plugin) | Refer Labs",
-  description: "Install the Refer Labs WordPress plugin and embed referral pages with a shortcode. Includes WooCommerce conversion capture.",
-};
+  description:
+    "Install the Refer Labs WordPress plugin and embed referral pages with a shortcode. Includes WooCommerce conversion capture.",
+  url: `${SITE_URL}/wordpress`,
+});
 
 export default function WordPressGuidePage() {
   return (

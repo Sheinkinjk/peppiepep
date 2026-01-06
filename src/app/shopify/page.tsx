@@ -3,11 +3,14 @@ import Image from "next/image";
 import { ExternalLink, ShieldCheck, ShoppingBag, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Shopify Integration | Refer Labs",
-  description: "Embed Refer Labs referral pages on Shopify and capture conversions with discount code tracking. Includes testing checkpoints.",
-};
+  description:
+    "Embed Refer Labs referral pages on Shopify and capture conversions with discount code tracking. Includes testing checkpoints.",
+  url: `${SITE_URL}/shopify`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (

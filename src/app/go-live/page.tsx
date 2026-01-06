@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, Rocket, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Go-live Checklist | Refer Labs",
   description:
     "Production go-live checklist to ensure referral links, cookies, webhooks, and dashboard updates work reliably across client sites.",
-};
+  url: `${SITE_URL}/go-live`,
+});
 
 export default function GoLiveChecklistPage() {
   return (
@@ -119,4 +121,3 @@ export default function GoLiveChecklistPage() {
     </div>
   );
 }
-

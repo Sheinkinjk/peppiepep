@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, Globe, ShieldCheck, Square, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Squarespace Integration | Refer Labs",
   description:
     "Embed Refer Labs referral pages in Squarespace using a Code block. Includes a step-by-step testing checklist and conversion capture options.",
-};
+  url: `${SITE_URL}/squarespace`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -157,4 +159,3 @@ Body:
     </div>
   );
 }
-

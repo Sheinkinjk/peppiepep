@@ -4,6 +4,7 @@ import { Resend } from "resend";
 
 import { createServiceClient } from "@/lib/supabase";
 import { sendAdminNotification, buildNewAccountEmail } from "@/lib/email-notifications";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 const bodySchema = z.object({
   email: z.string().email(),
@@ -56,19 +57,28 @@ export async function POST(request: Request) {
   try {
     const resend = new Resend(resendApiKey);
     const logoUrl = `${normalizedSite}/logo.svg`;
+    const html = buildPremiumEmail({
+      title: "You're almost in",
+      subtitle: "Confirm your email to unlock your Refer Labs dashboard.",
+      preheader: "Confirm your Refer Labs account.",
+      bodyHtml: `
+        <p style="margin:0 0 14px;">
+          Tap the button below to confirm your email address and activate your account.
+        </p>
+        <p style="margin:0;color:#475569;font-size:13px;">
+          If you did not request this, you can safely ignore this email.
+        </p>
+      `,
+      cta: { label: "Confirm my email", url: confirmationLink },
+      footerNote: "Need help? Reply to this email and we’ll assist you.",
+      brandName: "Refer Labs",
+      logoUrl,
+    });
     await resend.emails.send({
       from: resendFrom,
       to: email,
       subject: "Confirm your Refer Labs account",
-      html: `
-        <div style="font-family: Arial, sans-serif; padding: 24px; background: #f9fafb; text-align: center;">
-          <img src="${logoUrl}" alt="Refer Labs" width="120" height="auto" style="margin-bottom:16px;" />
-          <h2 style="color:#0f172a;">You're almost in!</h2>
-          <p style="color:#475569; font-size:16px;">Click the button below to confirm your email and unlock the Refer Labs dashboard.</p>
-          <a href="${confirmationLink}" style="display:inline-block;margin-top:18px;padding:14px 28px;border-radius:30px;background:#6d28d9;color:#fff;text-decoration:none;font-weight:600;">Confirm my email</a>
-          <p style="margin-top:20px;font-size:14px;color:#94a3b8;">If you didn't request this, you can safely ignore this email.</p>
-        </div>
-      `,
+      html,
       text: `Confirm your Refer Labs account: ${confirmationLink}`,
       ...(process.env.RESEND_REPLY_TO?.trim() ? { reply_to: process.env.RESEND_REPLY_TO.trim() } : {}),
     });

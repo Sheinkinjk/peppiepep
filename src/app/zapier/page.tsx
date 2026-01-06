@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, Wrench, Zap } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Zapier Integration | Refer Labs",
   description:
     "Send conversions and referral events into Refer Labs using Zapier Webhooks. Includes a step-by-step testing checklist and troubleshooting.",
-};
+  url: `${SITE_URL}/zapier`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -150,4 +152,3 @@ Data:
     </div>
   );
 }
-

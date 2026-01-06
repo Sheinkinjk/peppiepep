@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, Mail, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Klaviyo Integration | Refer Labs",
   description:
     "Sync ambassadors into Klaviyo, map merge fields, and (optionally) post conversions back to Refer Labs with a secure webhook.",
-};
+  url: `${SITE_URL}/klaviyo`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (

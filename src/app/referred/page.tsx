@@ -7,11 +7,14 @@ import { ReferredLandingHero } from "@/components/referred/ReferredLandingHero";
 import { ReferredApplicationForm } from "@/components/referred/ReferredApplicationForm";
 import { ReferredFeatures } from "@/components/referred/ReferredFeatures";
 import { ReferredCTA } from "@/components/referred/ReferredCTA";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Join the Referral Program Revolution | Refer Labs",
-  description: "Unlock additional revenue by integrating directly with your sales and marketing strategy. Referred by a trusted partner.",
-};
+  description:
+    "Unlock additional revenue by integrating directly with your sales and marketing strategy. Referred by a trusted partner.",
+  url: `${SITE_URL}/referred`,
+});
 
 export default async function ReferredPage() {
   // Read attribution cookie if present

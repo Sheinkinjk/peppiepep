@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ExternalLink, ShieldCheck, Tag, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Meta Ads (Pixel/CAPI) | Refer Labs",
   description:
     "Set up Meta Pixel (and optionally CAPI) without breaking referral attribution. Includes testing checkpoints to confirm dashboard attribution stays accurate.",
-};
+  url: `${SITE_URL}/meta-ads`,
+});
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -122,4 +124,3 @@ Body:
     </div>
   );
 }
-
