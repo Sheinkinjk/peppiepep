@@ -314,7 +314,7 @@ export async function POST(request: NextRequest) {
       </p>
 
       <div style="text-align: center; margin-top: 32px;">
-        <a href="https://calendly.com/jarredkro/30min"
+        <a href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
            style="display: inline-block; background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; box-shadow: 0 4px 6px rgba(20, 184, 166, 0.3);">
           Or Book a Call Now →
         </a>

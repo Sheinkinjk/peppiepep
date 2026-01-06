@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, ArrowRight, Sparkles } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -16,6 +16,11 @@ export function ReferredLandingHero({
   referralCode,
 }: ReferredLandingHeroProps) {
   const [loading, setLoading] = useState(false);
+  const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+
+  const openCalendly = () => {
+    window.open(calendlyUrl, "_blank", "noopener,noreferrer");
+  };
 
   async function handleScheduleCall() {
     console.log("📞 Book a Call clicked (hero section)");
@@ -51,11 +56,11 @@ export function ReferredLandingHero({
 
       // Redirect to Calendly
       console.log("🔗 Redirecting to Calendly...");
-      window.location.href = "https://calendly.com/jarredkro/30min";
+      openCalendly();
     } catch (error) {
       console.error("❌ Error tracking schedule call:", error);
       console.log("🔗 Redirecting to Calendly anyway...");
-      window.location.href = "https://calendly.com/jarredkro/30min";
+      openCalendly();
     }
   }
 

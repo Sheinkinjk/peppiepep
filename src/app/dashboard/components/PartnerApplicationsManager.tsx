@@ -303,7 +303,7 @@ export function PartnerApplicationsManager() {
       <Card className="p-5 border border-blue-200/70 bg-blue-50/60">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
               Incoming Applications
             </p>
             <p className="text-sm text-blue-900">Live feed updates when new applications arrive.</p>
@@ -464,7 +464,7 @@ export function PartnerApplicationsManager() {
 
               {app.status === "pending" && (
                 <div className="mb-4 flex flex-wrap items-center gap-3">
-                  <label className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  <label className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-600">
                     Quick reply template
                   </label>
                   <select
@@ -535,7 +535,7 @@ export function PartnerApplicationsManager() {
 
               {(app.referralSource || app.referralUtmCampaign) && (
                 <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold">
-                  <span className="uppercase tracking-[0.12em] text-slate-500">Referral Source</span>
+                  <span className="uppercase tracking-[0.08em] text-slate-600">Referral Source</span>
                   {app.referralSource && (
                     <span className="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-blue-700">
                       {app.referralSource.replaceAll("_", " ")}

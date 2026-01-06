@@ -5,7 +5,7 @@ import { calculateNextCredits } from "@/lib/credits";
 import { logReferralEvent } from "@/lib/referral-events";
 import { maybeSendFirstConversionCapturedOwnerEmail, maybeSendGoLiveOwnerEmail } from "@/lib/business-notifications";
 import { sendTransactionalEmail } from "@/lib/transactional-email";
-// import { tryInsertCreditLedgerEntry } from "@/lib/credits-ledger";
+import { tryInsertCreditLedgerEntry } from "@/lib/credits-ledger";
 
 type CompleteReferralAttributionInput = {
   supabase: SupabaseClient<Database>;
@@ -98,15 +98,20 @@ export async function completeReferralAttribution({
       throw new Error(`Failed to update ambassador credits: ${creditError.message}`);
     }
 
-    // Optional credit ledger entry (currently disabled)
-    // await tryInsertCreditLedgerEntry(supabase, {
-    //   businessId,
-    //   customerId: ambassadorId,
-    //   referralId,
-    //   delta: rewardAmount,
-    //   type: "issued",
-    //   source: "referral_reward",
-    // });
+    // Log to credit ledger for audit trail
+    const ledgerResult = await tryInsertCreditLedgerEntry(supabase, {
+      businessId,
+      customerId: ambassadorId,
+      referralId,
+      delta: rewardAmount,
+      type: "issued",
+      source: "referral_reward",
+      note: `Reward for successful referral`,
+    });
+
+    if (!ledgerResult.success) {
+      console.warn("Credit ledger logging failed (non-fatal):", ledgerResult.error);
+    }
 
     await logReferralEvent({
       supabase,

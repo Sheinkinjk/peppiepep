@@ -350,6 +350,42 @@ export interface Database {
         };
         Relationships: never[];
       };
+      credit_ledger: {
+        Row: {
+          id: string;
+          business_id: string;
+          customer_id: string;
+          referral_id: string | null;
+          delta: number;
+          entry_type: "issued" | "spent" | "expired" | "adjustment";
+          source: string;
+          note: string | null;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          business_id: string;
+          customer_id: string;
+          referral_id?: string | null;
+          delta: number;
+          entry_type: "issued" | "spent" | "expired" | "adjustment";
+          source: string;
+          note?: string | null;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          business_id?: string;
+          customer_id?: string;
+          referral_id?: string | null;
+          delta?: number;
+          entry_type?: "issued" | "spent" | "expired" | "adjustment";
+          source?: string;
+          note?: string | null;
+          created_at?: string | null;
+        };
+        Relationships: never[];
+      };
       discount_redemptions: {
         Row: {
           id: string;

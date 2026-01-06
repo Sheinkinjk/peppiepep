@@ -103,7 +103,7 @@ export function StickyHeader() {
                 Contact
               </Link>
               <a
-                href="https://calendly.com/jarredkrowitz/30min"
+                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF] cursor-pointer"
@@ -192,7 +192,7 @@ export function StickyHeader() {
                 Contact
               </Link>
               <a
-                href="https://calendly.com/jarredkrowitz/30min"
+                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#00838F] px-4 py-3 text-sm font-bold text-[#00838F] transition-all duration-200"

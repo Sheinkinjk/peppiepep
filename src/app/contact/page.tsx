@@ -33,7 +33,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://calendly.com/jarredkrowitz/30min"
+            href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md transition-shadow"

@@ -35,6 +35,11 @@ export function ReferredApplicationForm({
 }: ReferredApplicationFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+
+  const openCalendly = () => {
+    window.open(calendlyUrl, "_blank", "noopener,noreferrer");
+  };
 
   const {
     register,
@@ -116,7 +121,7 @@ export function ReferredApplicationForm({
       logger.error("Error tracking schedule call:", error);
     } finally {
       // Redirect to Calendly regardless of tracking result
-      window.location.href = "https://calendly.com/jarredkro/30min";
+      openCalendly();
     }
   }
 

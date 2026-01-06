@@ -24,6 +24,7 @@ import { sendTransactionalEmail } from "@/lib/transactional-email";
 import { logReferralEvent } from "@/lib/referral-events";
 
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencerBusiness);
+export const revalidate = 3600;
 
 const formSchema = z.object({
   contactName: z.string().trim().min(2, "Name is required."),
@@ -422,32 +423,32 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
         {/* Hero Section */}
         <section className="mb-16 animate-in fade-in duration-700">
           <div className="text-center max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-200 backdrop-blur">
-              <Briefcase className="h-4 w-4" />
-              For B2B & E-commerce Companies
-            </div>
-
             <h1 className="text-4xl sm:text-5xl font-black leading-tight text-white">
-              Launch Your First Creator Campaign in 7 Days
+              Launch A Campaign With Verified And Vetted Creators
             </h1>
 
             <p className="text-lg text-slate-200/90 leading-relaxed">
               We match you with vetted LinkedIn creators whose audiences align with your ICP.
               You approve partnerships, creators promote your product, and you track every conversion.
             </p>
-          </div>
-        </section>
 
-        {/* SLA Banner */}
-        <section className="mb-12">
-          <div className="rounded-3xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/15 via-slate-900/70 to-blue-500/15 px-6 py-5 text-center backdrop-blur">
-            <div className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-100">
-              <LineChart className="h-4 w-4 text-cyan-300" />
-              Creator shortlist SLA: 48-72 hours from submission
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <a
+                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-7 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:bg-cyan-300"
+              >
+                Schedule A Call
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#partnership-form"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/10"
+              >
+                Start a Partnership
+              </a>
             </div>
-            <p className="mt-2 text-sm text-slate-200/80">
-              We'll send your shortlist with audience notes, sample posts, and recommended compensation bands.
-            </p>
           </div>
         </section>
 
@@ -637,7 +638,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
           <div className="mb-10 rounded-2xl border border-white/10 bg-slate-900/50 p-6">
             <div className="flex items-center justify-between gap-4 mb-5">
               <h3 className="text-lg font-bold text-white">Match Criteria</h3>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Step 1 of 3</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-100">Step 1 of 3</span>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {[
@@ -675,7 +676,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
                     <CheckCircle2 className="h-7 w-7" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Success</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-100">Success</p>
                     <h3 className="text-2xl font-black text-white">We'll Be in Touch Within 24 Hours</h3>
                   </div>
                 </div>
@@ -706,7 +707,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
             </div>
           )}
 
-          <form action={submitBusinessPartner} className="grid gap-6">
+          <form id="partnership-form" action={submitBusinessPartner} className="grid gap-6">
             <input type="hidden" name="source" value={formSource} />
             <input type="hidden" name="utm_source" value={utmSource ?? "direct"} />
             <input type="hidden" name="utm_campaign" value={utmCampaign ?? "direct"} />
@@ -889,7 +890,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:bg-cyan-300"
               >
                 Submit Partnership Request
                 <ArrowRight className="h-5 w-5" />

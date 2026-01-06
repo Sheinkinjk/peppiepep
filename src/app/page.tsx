@@ -353,7 +353,8 @@ export default async function Home() {
                 <span className="block">Referral Programs</span>
               </h1>
               <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-900 sm:text-2xl lg:text-[1.75rem]">
-                Generate Additional Revenue That Complements Your Sales and Marketing Strategies
+                <span className="block">Generate Additional Revenue That Complements</span>
+                <span className="block">Your Sales and Marketing Strategies</span>
               </p>
             </div>
             <TrackedCTA
@@ -372,10 +373,10 @@ export default async function Home() {
               <div className="relative z-10 space-y-10">
                 <div className="text-left sm:text-center">
                   <h2 className="text-[1.9rem] font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] max-w-5xl sm:mx-auto text-balance">
-                    <span className="block">Why A Referral Program Is Your Best Resource</span>
-                    <span className="block">For Growth Hacking</span>
+                    <span className="block">Why A Referral Program Is Your Best</span>
+                    <span className="block">Resource For Growth Hacking</span>
                   </h2>
-                  <p className="mt-4 text-[1.02rem] sm:text-lg md:text-[1.12rem] text-slate-600 max-w-[52rem] mx-0 sm:mx-auto text-balance leading-relaxed">
+                  <p className="mt-4 text-[1rem] sm:text-[1.05rem] md:text-[1.08rem] text-slate-600 max-w-[60rem] lg:max-w-[64rem] mx-0 sm:mx-auto text-balance leading-relaxed">
                     Your next best customers are already in your existing customers&rsquo; network. Refer Labs helps you
                     turn that network into a structured, trackable growth engine that feels natural for them and powerful
                     for you.
@@ -740,13 +741,14 @@ export default async function Home() {
                         )}
                       >
                         {logo.src ? (
-                          <Image
+                          <img
                             src={logo.src}
                             alt={`${logo.name} logo`}
                             width={logo.width}
                             height={logo.height}
                             className="h-12 w-auto object-contain"
-                            priority={index < 4}
+                            loading="lazy"
+                            decoding="async"
                           />
                         ) : (
                           <span className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">

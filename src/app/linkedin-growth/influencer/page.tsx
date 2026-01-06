@@ -22,6 +22,7 @@ import { sendTransactionalEmail } from "@/lib/transactional-email";
 import { logReferralEvent } from "@/lib/referral-events";
 
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencerCreator);
+export const revalidate = 3600;
 
 const formSchema = z.object({
   fullName: z.string().trim().min(2, "Full name is required."),
@@ -386,7 +387,7 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
         </div>
 
         <section className="mb-16 animate-in fade-in duration-700">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-emerald-200 mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-emerald-100 mb-6">
             <Sparkles className="h-3.5 w-3.5" />
             For LinkedIn Creators
           </div>
@@ -557,7 +558,7 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
                     <CheckCircle2 className="h-7 w-7" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">Success</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-100">Success</p>
                     <h3 className="text-2xl font-black text-white">We'll Review & Follow Up</h3>
                   </div>
                 </div>

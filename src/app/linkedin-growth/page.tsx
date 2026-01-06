@@ -21,6 +21,7 @@ import {
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencer);
+export const revalidate = 3600;
 
 const businessOutcomes = [
   {
@@ -191,12 +192,82 @@ export default function LinkedInGrowthPage() {
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link
                 href="/linkedin-growth/business"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-cyan-500/40 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0ABAB5] to-cyan-400 hover:from-[#12c7c1] hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-cyan-500/40 transition hover:scale-[1.02]"
               >
                 Partner With Creators
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* CTA Split - Business Primary, Creators Secondary */}
+        <section className="mt-16 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
+          {/* Business CTA - Larger, More Prominent */}
+          <div className="rounded-3xl border border-cyan-400/40 bg-gradient-to-br from-[#0ABAB5]/20 via-slate-900/70 to-cyan-500/15 p-10 lg:p-12 backdrop-blur shadow-2xl shadow-cyan-500/20">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 mb-6">
+              <Zap className="h-4 w-4" />
+              For Businesses
+            </div>
+            <h2 className="text-3xl font-black text-white mb-4">Ready to Replace Cold Outreach?</h2>
+            <p className="text-base text-slate-200/90 leading-relaxed mb-8">
+              Tell us about your business, ICP, and growth goals. We'll match you with creators whose audiences are already looking for solutions like yours.
+            </p>
+
+            <div className="space-y-3 mb-8 text-sm text-slate-200/90">
+              {[
+                "Pay only for verified conversions (demos, signups, revenue)",
+                "Launch your first creator campaign in 7-10 days",
+                "Scale with proven ROI—no long-term contracts",
+                "Full attribution tracking and performance dashboards"
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-200 flex-shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/linkedin-growth/business"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0ABAB5] to-cyan-400 hover:from-[#12c7c1] hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
+            >
+              Start a Partnership
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+
+          {/* Creator CTA - Smaller, Supportive */}
+          <div className="rounded-3xl border border-emerald-400/30 bg-gradient-to-br from-emerald-500/10 via-slate-900/70 to-[#0ABAB5]/15 p-8 backdrop-blur">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100 mb-6">
+              <Users className="h-4 w-4" />
+              For Creators
+            </div>
+            <h3 className="text-2xl font-black text-white mb-4">Monetize Your Audience</h3>
+            <p className="text-sm text-slate-200/90 leading-relaxed mb-6">
+              Join a curated pool of LinkedIn creators earning recurring revenue by promoting products they actually believe in.
+            </p>
+
+            <div className="space-y-2 mb-6 text-sm text-slate-200/90">
+              {[
+                "Performance-based payouts (no follower minimums)",
+                "Only promote products you'd use yourself",
+                "Transparent tracking and monthly payments"
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 text-emerald-300 flex-shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/linkedin-growth/influencer"
+              className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 px-6 py-3 text-sm font-bold text-white backdrop-blur transition"
+            >
+              Apply as a Creator
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </section>
 
@@ -208,7 +279,7 @@ export default function LinkedInGrowthPage() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {/* Guide 1: The Creator Partnership Playbook */}
-            <div className="group rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/50 to-blue-500/10 p-8 backdrop-blur hover:border-cyan-400/50 transition-all duration-300">
+            <div className="group rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-[#0ABAB5]/20 via-slate-900/50 to-blue-500/10 p-8 backdrop-blur hover:border-cyan-400/50 transition-all duration-300 flex flex-col">
               <div className="flex items-start gap-4 mb-6">
                 <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 p-4 text-white shadow-lg">
                   <FileText className="h-7 w-7" />
@@ -247,7 +318,7 @@ export default function LinkedInGrowthPage() {
               <a
                 href="/pdfs/creator-partnership-playbook.pdf"
                 download
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 hover:bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition group-hover:scale-[1.02]"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition group-hover:scale-[1.02] mt-auto"
               >
                 <Download className="h-4 w-4" />
                 Download Free Guide (PDF)
@@ -255,7 +326,7 @@ export default function LinkedInGrowthPage() {
             </div>
 
             {/* Guide 2: LinkedIn Creator Economics */}
-            <div className="group rounded-3xl border border-purple-400/30 bg-gradient-to-br from-purple-500/10 via-slate-900/50 to-pink-500/10 p-8 backdrop-blur hover:border-purple-400/50 transition-all duration-300">
+            <div className="group rounded-3xl border border-purple-400/30 bg-gradient-to-br from-purple-500/10 via-slate-900/50 to-[#0ABAB5]/15 p-8 backdrop-blur hover:border-purple-400/50 transition-all duration-300 flex flex-col">
               <div className="flex items-start gap-4 mb-6">
                 <div className="rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 p-4 text-white shadow-lg">
                   <BarChart3 className="h-7 w-7" />
@@ -294,7 +365,7 @@ export default function LinkedInGrowthPage() {
               <a
                 href="/pdfs/linkedin-creator-economics-2025.pdf"
                 download
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-purple-400 hover:bg-purple-300 px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-purple-500/30 transition group-hover:scale-[1.02]"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-purple-500/30 transition group-hover:scale-[1.02] mt-auto"
               >
                 <Download className="h-4 w-4" />
                 Download Market Report (PDF)
@@ -462,76 +533,6 @@ export default function LinkedInGrowthPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* CTA Split - Business Primary, Creators Secondary */}
-        <section className="mt-24 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
-          {/* Business CTA - Larger, More Prominent */}
-          <div className="rounded-3xl border border-cyan-400/40 bg-gradient-to-br from-cyan-500/15 via-slate-900/70 to-blue-500/15 p-10 lg:p-12 backdrop-blur shadow-2xl shadow-cyan-500/20">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-200 mb-6">
-              <Zap className="h-4 w-4" />
-              For Businesses
-            </div>
-            <h2 className="text-3xl font-black text-white mb-4">Ready to Replace Cold Outreach?</h2>
-            <p className="text-base text-slate-200/90 leading-relaxed mb-8">
-              Tell us about your business, ICP, and growth goals. We'll match you with creators whose audiences are already looking for solutions like yours.
-            </p>
-
-            <div className="space-y-3 mb-8 text-sm text-slate-200/90">
-              {[
-                "Pay only for verified conversions (demos, signups, revenue)",
-                "Launch your first creator campaign in 7-10 days",
-                "Scale with proven ROI—no long-term contracts",
-                "Full attribution tracking and performance dashboards"
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-300 flex-shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <Link
-              href="/linkedin-growth/business"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
-            >
-              Start a Partnership
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-
-          {/* Creator CTA - Smaller, Supportive */}
-          <div className="rounded-3xl border border-emerald-400/30 bg-gradient-to-br from-emerald-500/10 via-slate-900/70 to-teal-500/10 p-8 backdrop-blur">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-200 mb-6">
-              <Users className="h-4 w-4" />
-              For Creators
-            </div>
-            <h3 className="text-2xl font-black text-white mb-4">Monetize Your Audience</h3>
-            <p className="text-sm text-slate-200/90 leading-relaxed mb-6">
-              Join a curated pool of LinkedIn creators earning recurring revenue by promoting products they actually believe in.
-            </p>
-
-            <div className="space-y-2 mb-6 text-sm text-slate-200/90">
-              {[
-                "Performance-based payouts (no follower minimums)",
-                "Only promote products you'd use yourself",
-                "Transparent tracking and monthly payments"
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 text-emerald-300 flex-shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <Link
-              href="/linkedin-growth/influencer"
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 border border-emerald-400/40 hover:bg-emerald-500/30 px-6 py-3 text-sm font-bold text-white backdrop-blur transition"
-            >
-              Apply as a Creator
-              <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </section>
 

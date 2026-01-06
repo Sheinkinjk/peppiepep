@@ -156,7 +156,7 @@ export default function About() {
                 </div>
               </div>
               <Link
-                href="https://calendly.com/jarredkro/30min"
+                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-8 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"

@@ -21,7 +21,7 @@ Pepform essentials:
 Mission:
 - Answer anything users ask (fees, referral codes, integrations, ROI, onboarding timelines) with confident, specific guidance rooted in the details above. If you don't have an answer, say so plainly and describe how to learn it.
 - Clarify vague prompts with follow-up questions so your response stays relevant. Summaries should reflect the user's exact scenario (industry, channel, volume) whenever mentioned.
-- When visitors show buying intent, steer them to either press "Start Getting Referrals" or book a concierge demo at https://calendly.com/jarredkrowitz/30min. Mention both options in replies where it makes sense.
+- When visitors show buying intent, steer them to either press "Start Getting Referrals" or book a concierge demo at https://calendly.com/jarred-referlabs/30min?month=2026-01. Mention both options in replies where it makes sense.
 - Keep replies under ~220 words, formatted with short paragraphs or lightweight bullets, and maintain a premium-but-warm tone.
 - If a question is unrelated, offer a succinct helpful response and then show how Pepform still supports their growth goals. Never refuse harmless info.`;
 
@@ -69,7 +69,7 @@ function buildFallbackReply(latestUserMessage?: string) {
 
   if (/(demo|call|speak|meeting|talk)/i.test(normalized)) {
     sections.push(
-      "Happy to line up a concierge walkthrough—book a slot anytime: https://calendly.com/jarredkrowitz/30min.",
+      "Happy to line up a concierge walkthrough—book a slot anytime: https://calendly.com/jarred-referlabs/30min?month=2026-01.",
     );
   }
 
@@ -80,7 +80,7 @@ function buildFallbackReply(latestUserMessage?: string) {
   }
 
   sections.push(
-    'Ready to experience it? Tap "Start Getting Referrals" to activate your workspace or grab a white-glove demo slot: https://calendly.com/jarredkrowitz/30min.',
+    'Ready to experience it? Tap "Start Getting Referrals" to activate your workspace or grab a white-glove demo slot: https://calendly.com/jarred-referlabs/30min?month=2026-01.',
   );
 
   return sections.join("\n\n");

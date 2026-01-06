@@ -512,7 +512,7 @@ export default function Pricing() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="https://calendly.com/jarredkro/30min"
+                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#5ce1e6] hover:bg-[#4dd4d9] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-slate-900 shadow-2xl transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"

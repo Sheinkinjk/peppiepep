@@ -5,8 +5,15 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
     globals: true,
-    environment: "node",
+    environment: "jsdom",
+    setupFiles: ["./tests/setup.ts"],
     // Playwright-based E2E tests are executed via separate tooling/scripts, not Vitest.
-    exclude: [...configDefaults.exclude, "**/tests/attribution-e2e.test.ts"],
+    exclude: [
+      ...configDefaults.exclude,
+      "**/*.playwright.spec.ts",
+      "**/tests/attribution-e2e.test.ts",
+      "**/tests/e2e-dashboard-refactored.test.ts",
+      "**/tests/visual-dashboard-regression.test.ts",
+    ],
   },
 });

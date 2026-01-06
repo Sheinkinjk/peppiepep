@@ -68,7 +68,7 @@ export async function GET() {
       .order('created_at', { ascending: false })
       .limit(10);
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       healthy: true,
       status,
       admin: {
@@ -103,6 +103,8 @@ export async function GET() {
         referrals: refError?.message
       }
     });
+    response.headers.set("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
+    return response;
   } catch (error) {
     return NextResponse.json({
       healthy: false,

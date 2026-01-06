@@ -16,6 +16,11 @@ export function ReferredCTA({
   referralCode,
 }: ReferredCTAProps) {
   const [loading, setLoading] = useState(false);
+  const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+
+  const openCalendly = () => {
+    window.open(calendlyUrl, "_blank", "noopener,noreferrer");
+  };
 
   async function handleScheduleCall() {
     setLoading(true);
@@ -33,10 +38,10 @@ export function ReferredCTA({
         }),
       });
 
-      window.location.href = "https://calendly.com/jarredkro/30min";
+      openCalendly();
     } catch (error) {
       console.error("Error tracking schedule call:", error);
-      window.location.href = "https://calendly.com/jarredkro/30min";
+      openCalendly();
     }
   }
 

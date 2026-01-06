@@ -1030,7 +1030,14 @@ Body:
                       <a href="/stripe" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Stripe</a>
                       <a href="/shopify/checkout-extensibility" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify Checkout Extensibility</a>
                       <a href="/square" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Square POS</a>
-                      <a href="/calendly" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Calendly</a>
+                      <a
+                        href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50"
+                      >
+                        Calendly
+                      </a>
                       <a href="/servicem8" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">ServiceM8</a>
                       <a href="/api-guide" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Custom API</a>
                     </div>

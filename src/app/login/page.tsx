@@ -556,7 +556,7 @@ function LoginContent() {
                 variant="outline"
                 className="w-full border-purple-200 text-purple-800 font-semibold bg-white hover:bg-purple-50"
               >
-                <Link href="https://calendly.com/jarredkrowitz/30min" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                <Link href="https://calendly.com/jarred-referlabs/30min?month=2026-01" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   Schedule a Call
                   <ArrowRight className="h-4 w-4" />
                 </Link>

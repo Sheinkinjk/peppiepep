@@ -41,14 +41,22 @@ export async function logReferralEvent({
   metadata = null,
 }: LogReferralEventInput) {
   try {
+    const normalizedSource =
+      typeof source === "string" && source.trim().length > 0 ? source.trim() : "unknown";
+    const normalizedDevice =
+      typeof device === "string" && device.trim().length > 0 ? device.trim() : "unknown";
+    const cleanedMetadata = metadata ? JSON.parse(JSON.stringify(metadata)) : null;
+    const normalizedMetadata =
+      cleanedMetadata && Object.keys(cleanedMetadata).length > 0 ? cleanedMetadata : null;
+
     const payload: Database["public"]["Tables"]["referral_events"]["Insert"] = {
       business_id: businessId,
       ambassador_id: ambassadorId,
       referral_id: referralId,
       event_type: eventType,
-      source,
-      device,
-      metadata,
+      source: normalizedSource,
+      device: normalizedDevice,
+      metadata: normalizedMetadata,
     };
 
     await (supabase as unknown as {

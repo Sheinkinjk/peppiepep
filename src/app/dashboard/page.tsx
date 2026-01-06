@@ -45,6 +45,7 @@ import { PartnerReferralsTab } from "@/components/PartnerReferralsTab";
 import { logReferralEvent } from "@/lib/referral-events";
 import { completeReferralAttribution } from "@/lib/referral-revenue";
 import { quickAddCustomerProfile } from "@/lib/customers-quick-add";
+import { tryInsertCreditLedgerEntry } from "@/lib/credits-ledger";
 import {
   Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
   BarChart3,
@@ -786,6 +787,7 @@ export default async function Dashboard({
     try {
       const customerId = (formData.get("customer_id") as string | null) ?? "";
       const deltaInput = (formData.get("credit_amount") as string | null) ?? "";
+      const note = (formData.get("credit_note") as string | null) ?? null;
 
       if (!customerId || !deltaInput) {
         return { error: "Missing customer or credit amount." };
@@ -797,9 +799,9 @@ export default async function Dashboard({
       }
 
       const supabase = await createServerComponentClient();
-      const { data: customerRecord, error: fetchError } = await supabase
+      const { data: customerRecord, error: fetchError} = await supabase
         .from("customers")
-        .select("credits")
+        .select("credits, business_id")
         .eq("id", customerId)
         .single();
 
@@ -828,6 +830,21 @@ export default async function Dashboard({
       if (updateError) {
         logger.error("Failed to update customer credits:", updateError);
         return { error: "Unable to update credits. Please try again." };
+      }
+
+      // Log to credit ledger for audit trail
+      try {
+        await tryInsertCreditLedgerEntry(supabase, {
+          businessId: (customerRecord as { business_id: string }).business_id,
+          customerId,
+          referralId: null, // Manual adjustments don't link to specific referrals
+          delta,
+          type: "adjustment",
+          source: "manual_adjustment",
+          note: note?.trim() || "Manual credit adjustment by admin",
+        });
+      } catch (ledgerErr) {
+        logger.warn("Credit ledger logging failed (non-fatal):", ledgerErr);
       }
 
       revalidatePath("/dashboard");
@@ -2033,7 +2050,7 @@ export default async function Dashboard({
                   {/* KEY METRICS - Prominently displayed */}
                   <div className="mb-8">
                     <h3 className="text-sm font-semibold text-slate-600 uppercase tracking-[0.08em] mb-4">Key Metrics</h3>
-                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
                       Last {selectedWindow} days
                     </p>
                     <div className="rounded-3xl border border-slate-200 bg-slate-50/80 p-4 sm:p-6">

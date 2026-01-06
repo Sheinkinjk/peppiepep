@@ -38,8 +38,15 @@ function IntegrationCard({
   description: string;
   icon: React.ReactNode;
 }) {
+  const isExternal = href.startsWith("http");
+  const Wrapper = isExternal ? "a" : Link;
+
   return (
-    <Link href={href} className="block">
+    <Wrapper
+      href={href}
+      className="block"
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
       <Card className="p-6 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 transition-colors">
         <div className="flex items-start gap-3">
           <div className="rounded-xl bg-slate-900 p-2">{icon}</div>
@@ -49,7 +56,7 @@ function IntegrationCard({
           </div>
         </div>
       </Card>
-    </Link>
+    </Wrapper>
   );
 }
 
@@ -151,7 +158,7 @@ export default function IntegrationsHubPage() {
           icon={<Store className="h-5 w-5 text-white" />}
         />
         <IntegrationCard
-          href="/calendly"
+          href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
           title="Calendly"
           description="Capture bookings as conversions by collecting codes and posting on confirmation."
           icon={<Calendar className="h-5 w-5 text-white" />}

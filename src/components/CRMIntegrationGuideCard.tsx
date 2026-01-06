@@ -37,7 +37,7 @@ export function CRMIntegrationGuideCard({
 
   const posBookingGuides = [
     { label: "Square POS", href: "/square" },
-    { label: "Calendly", href: "/calendly" },
+    { label: "Calendly", href: "https://calendly.com/jarred-referlabs/30min?month=2026-01" },
     { label: "ServiceM8", href: "/servicem8" },
   ];
 
@@ -147,15 +147,27 @@ export function CRMIntegrationGuideCard({
       </div>
 
       <div className="flex flex-wrap gap-2">
-        {posBookingGuides.map((guide) => (
-          <Link
-            key={guide.href}
-            href={guide.href}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
-          >
-            {guide.label}
-          </Link>
-        ))}
+        {posBookingGuides.map((guide) =>
+          guide.href.startsWith("http") ? (
+            <a
+              key={guide.href}
+              href={guide.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+            >
+              {guide.label}
+            </a>
+          ) : (
+            <Link
+              key={guide.href}
+              href={guide.href}
+              className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-800 hover:bg-slate-50"
+            >
+              {guide.label}
+            </Link>
+          )
+        )}
       </div>
 
       <div className="space-y-4">
