@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { createServerComponentClient } from "@/lib/supabase";
+import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import { createApiLogger } from "@/lib/api-logger";
+import { logReferralEvent, type ReferralEventType } from "@/lib/referral-events";
 
 export async function GET() {
   const logger = createApiLogger("api:referral-events");
@@ -48,6 +49,38 @@ export async function GET() {
     return NextResponse.json({ events: data ?? [] });
   } catch (error) {
     logger.error("Referral events API error", { error });
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
+}
+
+export async function POST(request: Request) {
+  const logger = createApiLogger("api:referral-events:post");
+  try {
+    const body = await request.json();
+    const { businessId, ambassadorId, referralId, eventType, source, device, metadata } = body;
+
+    if (!businessId || !eventType) {
+      logger.warn("Missing required fields", { businessId, eventType });
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    const supabase = await createServiceClient();
+
+    await logReferralEvent({
+      supabase,
+      businessId,
+      ambassadorId: ambassadorId || null,
+      referralId: referralId || null,
+      eventType: eventType as ReferralEventType,
+      source: source || "referral_page",
+      device: device || "unknown",
+      metadata: metadata || null,
+    });
+
+    logger.info("Referral event logged", { businessId, eventType });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    logger.error("Failed to log referral event", { error });
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
