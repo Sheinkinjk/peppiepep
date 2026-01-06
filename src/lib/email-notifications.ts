@@ -122,6 +122,32 @@ export function buildChatbotLeadEmail(leadData: {
 }
 
 /**
+ * Email template for newsletter subscription
+ */
+export function buildNewsletterSubscriptionEmail(subscription: {
+  email: string;
+  source: string;
+  createdAt: string;
+}): string {
+  return `
+    <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
+      <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
+        <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">📰 Newsletter Signup</p>
+        <h1 style="margin:8px 0 0;font-size:26px;font-weight:800;">New Subscriber</h1>
+        <p style="margin:4px 0 0;font-size:14px;opacity:0.9;">${subscription.email}</p>
+      </div>
+      <div style="padding:32px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;background:white;">
+        <ul style="list-style:none;padding:0;margin:0 0 16px;">
+          <li style="margin:6px 0;"><strong>Email:</strong> <a href="mailto:${subscription.email}">${subscription.email}</a></li>
+          <li style="margin:6px 0;"><strong>Source:</strong> ${subscription.source}</li>
+          <li style="margin:6px 0;"><strong>Subscribed:</strong> ${new Date(subscription.createdAt).toLocaleString("en-AU", { timeZone: "Australia/Sydney" })}</li>
+        </ul>
+      </div>
+    </div>
+  `;
+}
+
+/**
  * Email template for onboarding snapshot saved
  */
 export function buildOnboardingSnapshotEmail(snapshotData: {
