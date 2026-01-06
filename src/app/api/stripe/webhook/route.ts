@@ -127,6 +127,26 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session, 
 }
 
 /**
+ * Validate Stripe webhook metadata to prevent injection attacks
+ */
+function validateMetadata(metadata: Stripe.Metadata): { valid: boolean; businessId: string | null; customerId: string | null } {
+  const businessId = metadata.platform_business_id || null;
+  const customerId = metadata.platform_customer_id || null;
+
+  // SECURITY FIX: Validate UUIDs to prevent injection
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+  const businessIdValid = !businessId || uuidRegex.test(businessId);
+  const customerIdValid = !customerId || uuidRegex.test(customerId);
+
+  return {
+    valid: businessIdValid && customerIdValid,
+    businessId: businessIdValid ? businessId : null,
+    customerId: customerIdValid ? customerId : null,
+  };
+}
+
+/**
  * Handle successful payment
  */
 async function handlePaymentIntentSucceeded(paymentIntent: Stripe.PaymentIntent, logger: ReturnType<typeof createApiLogger>) {
@@ -138,9 +158,15 @@ async function handlePaymentIntentSucceeded(paymentIntent: Stripe.PaymentIntent,
     currency: paymentIntent.currency
   });
 
-  // Extract metadata
-  const businessId = paymentIntent.metadata.platform_business_id || null;
-  const customerId = paymentIntent.metadata.platform_customer_id || null;
+  // SECURITY FIX: Validate metadata before using
+  const validation = validateMetadata(paymentIntent.metadata);
+  if (!validation.valid) {
+    logger.error('Invalid metadata in payment intent', { metadata: paymentIntent.metadata });
+    throw new Error('Invalid metadata format');
+  }
+
+  const businessId = validation.businessId;
+  const customerId = validation.customerId;
   void customerId;
 
   // Create payment record
@@ -192,10 +218,17 @@ async function handlePaymentIntentFailed(paymentIntent: Stripe.PaymentIntent, lo
     failureMessage: paymentIntent.last_payment_error?.message
   });
 
+  // SECURITY FIX: Validate metadata before using
+  const validation = validateMetadata(paymentIntent.metadata);
+  if (!validation.valid) {
+    logger.error('Invalid metadata in failed payment intent', { metadata: paymentIntent.metadata });
+    throw new Error('Invalid metadata format');
+  }
+
   // Record failed payment
   await supabase.from('stripe_payments').insert([
     {
-      business_id: paymentIntent.metadata.platform_business_id || null,
+      business_id: validation.businessId,
       stripe_customer_id: paymentIntent.customer as string || null,
       stripe_payment_intent_id: paymentIntent.id,
       amount_total: paymentIntent.amount,

@@ -21,8 +21,8 @@ type BusinessLookup = Pick<
 >;
 type CustomerLookup = Pick<Database["public"]["Tables"]["customers"]["Row"], "id" | "discount_code" | "name">;
 
+// SECURITY FIX: Remove secret from body schema - only accept via headers
 const redemptionPayloadSchema = z.object({
-  secret: z.string().trim().optional(),
   discountCode: z.string().trim().optional(),
   code: z.string().trim().optional(),
   discount_code: z.string().trim().optional(),
@@ -36,19 +36,10 @@ const redemptionPayloadSchema = z.object({
   metadata: z.record(z.string(), z.unknown()).optional(),
 });
 
+// SECURITY FIX: Use only primary header name to reduce attack surface
 function normalizeHeaderSecret(request: Request) {
-const headerKeys = [
-  "x-referlabs-discount-secret",
-  "x-referlabs-secret",
-  "x-pepf-discount-secret",
-  "x-peppiepep-secret",
-  "x-discount-secret",
-];
-  for (const key of headerKeys) {
-    const value = request.headers.get(key);
-    if (value) return value.trim();
-  }
-  return null;
+  const value = request.headers.get("x-referlabs-discount-secret");
+  return value ? value.trim() : null;
 }
 
 type ExistingRedemptionRow = Pick<
@@ -87,7 +78,8 @@ export async function POST(request: Request) {
     }
 
     const payload = parsedPayload.data;
-    const secret = headerSecret ?? payload.secret ?? null;
+    // SECURITY FIX: Only accept secret from header, never from request body
+    const secret = headerSecret;
 
     if (!secret) {
       logger.warn("Missing discount capture secret");

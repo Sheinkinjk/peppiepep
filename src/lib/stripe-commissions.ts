@@ -62,7 +62,8 @@ export async function createSignupBonusCommission(
 
   const amount = COMMISSION_RULES.PARTNER_SIGNUP_BONUS;
 
-  const { data, error } = await supabase
+  // SECURITY FIX: Changed from auto-approval to pending status to prevent fraud
+  const { data, error} = await supabase
     .from('stripe_commissions')
     .insert({
       business_id: businessId,
@@ -71,11 +72,12 @@ export async function createSignupBonusCommission(
       amount,
       currency: 'aud',
       commission_type: 'signup_bonus',
-      status: 'approved', // Auto-approve signup bonuses
-      approved_at: new Date().toISOString(),
+      status: 'pending', // Require manual approval to prevent fraud
+      approved_at: null,
       metadata: {
         rule: 'Partner signup bonus',
         amount_aud: amount / 100,
+        requires_manual_approval: true,
       },
     })
     .select()
@@ -103,6 +105,7 @@ export async function createRevenueShareCommission(
 
   const commissionAmount = calculateCommission('revenue_share', paymentAmount);
 
+  // SECURITY FIX: Changed from auto-approval to pending status to prevent fraud
   const { data, error } = await supabase
     .from('stripe_commissions')
     .insert({
@@ -114,13 +117,14 @@ export async function createRevenueShareCommission(
       commission_type: 'revenue_share',
       commission_rate: COMMISSION_RULES.PARTNER_REVENUE_SHARE_RATE,
       original_payment_amount: paymentAmount,
-      status: 'approved', // Auto-approve revenue share
-      approved_at: new Date().toISOString(),
+      status: 'pending', // Require manual approval to prevent fraud
+      approved_at: null,
       metadata: {
         rule: 'Partner revenue share',
         payment_amount_aud: paymentAmount / 100,
         commission_amount_aud: commissionAmount / 100,
         commission_rate: COMMISSION_RULES.PARTNER_REVENUE_SHARE_RATE,
+        requires_manual_approval: true,
       },
     })
     .select()

@@ -48,46 +48,35 @@ export async function GET(request: NextRequest) {
       .is('revoked_at', null)
       .single();
 
-    // Get all admin roles for debugging
-    const { data: allAdminRoles } = await serviceClient
+    // SECURITY FIX: Don't expose all admin roles - only check count
+    const { count: adminRoleCount } = await serviceClient
       .from('admin_roles')
-      .select('*');
+      .select('*', { count: 'exact', head: true });
 
     // Check if getCurrentAdmin works
     const currentAdmin = await getCurrentAdmin();
 
-    // Check Stripe configuration
-    const stripeSecretKeyExists = Boolean(process.env.STRIPE_SECRET_KEY);
-    const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '';
-    const isStripeTestMode = stripePublishableKey.startsWith('pk_test_');
-    const isStripeSecretTestMode = process.env.STRIPE_SECRET_KEY?.startsWith('sk_test_') || false;
+    // SECURITY FIX: Don't expose Stripe key prefixes or detailed config
+    const stripeConfigured = Boolean(process.env.STRIPE_SECRET_KEY);
 
     return NextResponse.json({
       status: 'success',
       currentUser: {
         id: user.id,
         email: user.email,
-        created_at: user.created_at,
       },
       adminRoleQuery: {
         found: Boolean(adminRole),
-        data: adminRole,
+        role: adminRole?.role || null,
         error: adminError?.message,
       },
-      allAdminRoles: {
-        count: allAdminRoles?.length || 0,
-        roles: allAdminRoles,
-      },
+      adminRolesCount: adminRoleCount || 0,
       getCurrentAdminResult: {
         isAdmin: Boolean(currentAdmin),
-        admin: currentAdmin,
+        role: currentAdmin?.role || null,
       },
       stripeConfiguration: {
-        secretKeyConfigured: stripeSecretKeyExists,
-        publishableKeyConfigured: Boolean(stripePublishableKey),
-        isTestMode: isStripeTestMode && isStripeSecretTestMode,
-        publishableKeyPrefix: stripePublishableKey.substring(0, 7),
-        secretKeyPrefix: process.env.STRIPE_SECRET_KEY?.substring(0, 7) || 'not_set',
+        configured: stripeConfigured,
       },
       environment: process.env.NODE_ENV,
     });

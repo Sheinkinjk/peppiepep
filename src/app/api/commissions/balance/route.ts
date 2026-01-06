@@ -45,8 +45,17 @@ export async function GET(request: NextRequest) {
     }
 
     // Check authorization: either owns the business or is the customer themselves
+    // SECURITY FIX: Check customer's user_id instead of email to prevent IDOR
     const isBusinessOwner = customer.business?.owner_id === user.id;
-    const isCustomerThemselves = customer.email === user.email;
+
+    // Get customer's user_id to verify they are the authenticated user
+    const { data: customerUser, error: customerUserError } = await supabase
+      .from('customers')
+      .select('user_id')
+      .eq('id', customerId)
+      .single() as { data: { user_id: string | null } | null; error: PostgrestError | null };
+
+    const isCustomerThemselves = customerUser?.user_id === user.id;
 
     if (!isBusinessOwner && !isCustomerThemselves) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 403 });

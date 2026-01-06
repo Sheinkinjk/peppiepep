@@ -3,15 +3,12 @@ import { createHmac, randomBytes, timingSafeEqual } from "crypto";
 const DEFAULT_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
 function getAmbassadorSecret() {
-  const secret =
-    process.env.AMBASSADOR_API_SECRET?.trim() ??
-    process.env.NEXT_PUBLIC_AMBASSADOR_API_SECRET?.trim() ??
-    process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ??
-    process.env.SUPABASE_ANON_KEY?.trim();
+  // SECURITY FIX: Only use dedicated ambassador secret, never fallback to public keys
+  const secret = process.env.AMBASSADOR_API_SECRET?.trim();
 
   if (!secret) {
     throw new Error(
-      "Missing AMBASSADOR_API_SECRET (or SUPABASE keys). Set a secret to enable ambassador token signing.",
+      "Missing AMBASSADOR_API_SECRET. Set a dedicated secret to enable ambassador token signing. Never use public keys for token signing.",
     );
   }
 

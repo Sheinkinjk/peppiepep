@@ -78,10 +78,11 @@ export async function GET(request: NextRequest) {
     source: sourceParam ?? "direct",
   };
 
+  // SECURITY FIX: Use strict sameSite and always enforce secure in production
   response.cookies.set("ref_ambassador", JSON.stringify(cookieData), {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    secure: true, // Always enforce secure cookies
+    sameSite: "strict", // Prevent CSRF attacks
     maxAge: 30 * 24 * 60 * 60, // 30 days
     path: "/",
     // Important: avoid hard-coding a domain (multi-tenant). Host-only cookies work as long as
