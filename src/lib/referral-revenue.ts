@@ -6,6 +6,7 @@ import { logReferralEvent } from "@/lib/referral-events";
 import { maybeSendFirstConversionCapturedOwnerEmail, maybeSendGoLiveOwnerEmail } from "@/lib/business-notifications";
 import { sendTransactionalEmail } from "@/lib/transactional-email";
 import { tryInsertCreditLedgerEntry } from "@/lib/credits-ledger";
+import { buildPremiumEmail } from "@/lib/premium-email";
 
 type CompleteReferralAttributionInput = {
   supabase: SupabaseClient<Database>;
@@ -22,6 +23,8 @@ type CompleteReferralAttributionInput = {
 /**
  * Marks a referral as completed, records revenue, and releases ambassador rewards.
  * Used by manual conversions and integration tests to mirror the full capture ➝ reward flow.
+ *
+ * IDEMPOTENCY: Checks referral status before processing to prevent duplicate credit issuance.
  */
 export async function completeReferralAttribution({
   supabase,
@@ -34,6 +37,28 @@ export async function completeReferralAttribution({
   rewardAmount,
   serviceType = null,
 }: CompleteReferralAttributionInput) {
+  // CRITICAL: Check if referral is already completed to prevent duplicate credit issuance
+  const { data: existingReferral, error: fetchError } = await supabase
+    .from("referrals")
+    .select("status, rewarded_at")
+    .eq("id", referralId)
+    .eq("business_id", businessId)
+    .single();
+
+  if (fetchError) {
+    throw new Error(`Failed to fetch referral: ${fetchError.message}`);
+  }
+
+  if (existingReferral.status === "completed") {
+    console.warn(`Referral ${referralId} already completed at ${existingReferral.rewarded_at}. Skipping duplicate processing.`);
+    return; // Idempotent: Already processed, exit gracefully
+  }
+
+  // Validate transaction value if provided
+  if (transactionValue !== null && transactionValue < 0) {
+    throw new Error(`Transaction value must be non-negative, got ${transactionValue}`);
+  }
+
   const rewardedAt = new Date().toISOString();
 
   const { error: referralUpdateError } = await supabase
@@ -131,10 +156,28 @@ export async function completeReferralAttribution({
     const ambassadorName = (ambassador as { name?: string | null })?.name ?? "Ambassador";
 
     if (ambassadorEmail) {
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au";
+      const html = buildPremiumEmail({
+        title: "You earned a reward",
+        subtitle: `${ambassadorName}, your referral just converted.`,
+        preheader: "A referral completed and your credit is ready.",
+        bodyHtml: `
+          <p style="margin:0 0 12px;">
+            A referral just completed and <strong>$${Number(rewardAmount).toFixed(0)} credit</strong> has been released to your account.
+          </p>
+          <div style="margin:16px 0 0;padding:14px 16px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;color:#475569;font-size:13px;">
+            Keep sharing your link to grow rewards even faster.
+          </div>
+        `,
+        cta: { label: "View my portal", url: `${siteUrl}/r/referral` },
+        footerNote: "Need help? Reply to this email and we’ll assist.",
+        brandName: "Refer Labs",
+        logoUrl: `${siteUrl}/logo.svg`,
+      });
       await sendTransactionalEmail({
         to: ambassadorEmail,
         subject: "You earned a reward",
-        html: `<!doctype html><html><body style="font-family:Inter,system-ui,-apple-system,sans-serif;background:#f5f5f5;padding:32px"><div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:24px;padding:32px;border:1px solid #e2e8f0"><p style="font-size:18px;font-weight:900;margin:0 0 10px;color:#0f172a">Nice work, ${ambassadorName}.</p><p style="margin:0;color:#475569;font-size:14px;line-height:1.6">A referral just completed and <strong>$${Number(rewardAmount).toFixed(0)} credit</strong> has been released to your account.</p><p style="margin:18px 0 0"><a href="${process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au"}/r/referral" style="display:inline-block;background:#0f172a;color:#ffffff;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:800">View my portal</a></p></div><p style="text-align:center;font-size:12px;color:#94a3b8;margin-top:14px">Sent by Refer Labs</p></body></html>`,
+        html,
       }).catch((error) => console.warn("Failed to send ambassador reward email (non-fatal):", error));
     }
   }

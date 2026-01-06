@@ -74,6 +74,91 @@ export async function tryInsertCreditLedgerEntry(
 }
 
 /**
+ * Record a manual payout to an ambassador (credits spent/redeemed).
+ * Updates customer balance and logs to credit ledger with "spent" entry type.
+ *
+ * Use this when manually paying out ambassadors via bank transfer, PayPal, etc.
+ * The dashboard will show the payout in the Rewards tab credit history.
+ */
+export async function recordManualPayout(
+  supabase: SupabaseClient<Database>,
+  params: {
+    businessId: string;
+    customerId: string;
+    amount: number;
+    paymentMethod: string;
+    note?: string;
+  },
+): Promise<{ success: boolean; error?: string; newBalance?: number }> {
+  try {
+    const { businessId, customerId, amount, paymentMethod, note } = params;
+
+    // Validate amount is positive
+    if (amount <= 0) {
+      return { success: false, error: "Payout amount must be positive" };
+    }
+
+    // Get current credits
+    const { data: customer, error: fetchError } = await supabase
+      .from("customers")
+      .select("credits, name, email")
+      .eq("id", customerId)
+      .eq("business_id", businessId)
+      .single();
+
+    if (fetchError || !customer) {
+      logger.error("Failed to fetch customer for payout:", fetchError);
+      return { success: false, error: "Customer not found" };
+    }
+
+    const currentCredits = customer.credits ?? 0;
+
+    // Check if sufficient balance
+    if (currentCredits < amount) {
+      return {
+        success: false,
+        error: `Insufficient balance. Current: $${currentCredits}, Requested: $${amount}`,
+      };
+    }
+
+    const newBalance = currentCredits - amount;
+
+    // Update customer balance
+    const { error: updateError } = await supabase
+      .from("customers")
+      .update({ credits: newBalance })
+      .eq("id", customerId)
+      .eq("business_id", businessId);
+
+    if (updateError) {
+      logger.error("Failed to update credits for payout:", updateError);
+      return { success: false, error: "Failed to update balance" };
+    }
+
+    // Log to credit ledger as "spent"
+    const ledgerResult = await tryInsertCreditLedgerEntry(supabase, {
+      businessId,
+      customerId,
+      referralId: null, // Manual payouts don't link to specific referrals
+      delta: -amount, // Negative delta for spent credits
+      type: "spent",
+      source: `manual_payout_${paymentMethod.toLowerCase().replace(/\s+/g, "_")}`,
+      note: note?.trim() || `Manual payout via ${paymentMethod}`,
+    });
+
+    if (!ledgerResult.success) {
+      logger.warn("Credit ledger logging failed after payout (non-fatal):", ledgerResult.error);
+    }
+
+    return { success: true, newBalance };
+  } catch (err) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    logger.error("Manual payout exception:", errorMessage);
+    return { success: false, error: errorMessage };
+  }
+}
+
+/**
  * Fetch credit ledger entries for a business with customer and referral details.
  */
 export async function fetchCreditLedger(
