@@ -140,6 +140,27 @@ export interface Database {
         };
         Relationships: never[];
       };
+      newsletter_subscribers: {
+        Row: {
+          id: string;
+          email: string;
+          source: string | null;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          email: string;
+          source?: string | null;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          email?: string;
+          source?: string | null;
+          created_at?: string | null;
+        };
+        Relationships: never[];
+      };
       partner_applications: {
         Row: {
           id: string;
@@ -884,7 +905,8 @@ export interface Database {
             | "campaign_delivery_batch_started"
             | "campaign_delivery_batch_finished"
             | "schedule_call_clicked"
-            | "contact_us_clicked";
+            | "contact_us_clicked"
+            | "program_settings_updated";
           source: string | null;
           device: string | null;
           metadata: Record<string, unknown> | null;
@@ -910,7 +932,8 @@ export interface Database {
             | "campaign_delivery_batch_started"
             | "campaign_delivery_batch_finished"
             | "schedule_call_clicked"
-            | "contact_us_clicked";
+            | "contact_us_clicked"
+            | "program_settings_updated";
           source?: string | null;
           device?: string | null;
           metadata?: Record<string, unknown> | null;
@@ -936,7 +959,8 @@ export interface Database {
             | "campaign_delivery_batch_started"
             | "campaign_delivery_batch_finished"
             | "schedule_call_clicked"
-            | "contact_us_clicked";
+            | "contact_us_clicked"
+            | "program_settings_updated";
           source?: string | null;
           device?: string | null;
           metadata?: Record<string, unknown> | null;
