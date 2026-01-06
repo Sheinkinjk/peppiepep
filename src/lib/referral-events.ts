@@ -17,7 +17,8 @@ export type ReferralEventType =
   | "campaign_delivery_batch_started"
   | "campaign_delivery_batch_finished"
   | "schedule_call_clicked"
-  | "contact_us_clicked";
+  | "contact_us_clicked"
+  | "program_settings_updated";
 
 type LogReferralEventInput = {
   supabase: SupabaseClient<Database>;
@@ -41,8 +42,15 @@ export async function logReferralEvent({
   metadata = null,
 }: LogReferralEventInput) {
   try {
+    const rawSource = typeof source === "string" ? source.trim() : "";
+    const metadataCampaignId =
+      metadata && typeof metadata.campaign_id === "string" ? metadata.campaign_id.trim() : "";
     const normalizedSource =
-      typeof source === "string" && source.trim().length > 0 ? source.trim() : "unknown";
+      rawSource.length > 0 && rawSource !== "unknown"
+        ? rawSource
+        : metadataCampaignId.length > 0
+          ? metadataCampaignId
+          : "unknown";
     const normalizedDevice =
       typeof device === "string" && device.trim().length > 0 ? device.trim() : "unknown";
     const cleanedMetadata = metadata ? JSON.parse(JSON.stringify(metadata)) : null;
