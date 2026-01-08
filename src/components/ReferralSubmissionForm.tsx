@@ -77,7 +77,7 @@ export function ReferralSubmissionForm({
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <Label htmlFor="name" className="text-base font-semibold">
-          {copy.nameLabel}
+          {copy.nameLabel} <span className="text-rose-500">*</span>
         </Label>
         <Input
           id="name"
@@ -93,7 +93,7 @@ export function ReferralSubmissionForm({
       </div>
       <div>
         <Label htmlFor="phone" className="text-base font-semibold">
-          {copy.phoneLabel}
+          {copy.phoneLabel} <span className="text-rose-500">*</span>
         </Label>
         <Input
           id="phone"
@@ -119,7 +119,7 @@ export function ReferralSubmissionForm({
           required
         />
         <Label htmlFor="consent" className="text-sm text-slate-700">
-          {copy.consentLabel}
+          {copy.consentLabel} <span className="text-rose-500">*</span>
           <br />
           <span className="text-xs text-slate-500">{copy.consentNote}</span>
         </Label>

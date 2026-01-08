@@ -204,3 +204,42 @@ export function buildOnboardingSnapshotEmail(snapshotData: {
     </div>
   `;
 }
+
+/**
+ * Email template for admin login alert
+ */
+export function buildAdminLoginAlertEmail(loginData: {
+  email: string;
+  timestamp: string;
+  ipAddress?: string | null;
+  userAgent?: string | null;
+}): string {
+  const safeEmail = escapeHtml(loginData.email);
+  const safeIp = escapeHtml(loginData.ipAddress || "Unknown");
+  const safeAgent = escapeHtml(loginData.userAgent || "Unknown");
+  const formattedTime = new Date(loginData.timestamp).toLocaleString("en-AU", { timeZone: "Australia/Sydney" });
+
+  return `
+    <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
+      <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
+        <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">🔐 Dashboard Login</p>
+        <h1 style="margin:8px 0 0;font-size:28px;font-weight:800;">${safeEmail}</h1>
+        <p style="margin:4px 0 0;font-size:14px;opacity:0.9;">${formattedTime}</p>
+      </div>
+      <div style="padding:32px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;background:white;">
+        <h2 style="margin-top:0;font-size:18px;color:#0f172a;">Login Details</h2>
+        <ul style="list-style:none;padding:0;margin:0 0 16px;">
+          <li style="margin:6px 0;"><strong>User:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></li>
+          <li style="margin:6px 0;"><strong>IP Address:</strong> ${safeIp}</li>
+          <li style="margin:6px 0;"><strong>Browser:</strong> ${safeAgent}</li>
+        </ul>
+        <div style="margin-top:24px;padding:16px;border-radius:16px;background:#f1f5f9;border:1px solid #e2e8f0;">
+          <p style="margin:0;font-weight:600;color:#0f172a;">Security note</p>
+          <p style="margin:6px 0 0;font-size:14px;color:#475569;">
+            If this login looks unfamiliar, follow up with the user and reset their credentials.
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+}

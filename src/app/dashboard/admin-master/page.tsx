@@ -5,7 +5,7 @@ import { createServiceClient } from "@/lib/supabase";
 import { requireAdmin } from "@/lib/admin-auth";
 import { formatAmount } from "@/lib/stripe";
 import Link from "next/link";
-import { ChevronDown, Mail, Users, Link as LinkIcon, TrendingUp, DollarSign, Activity } from "lucide-react";
+import { ChevronDown, Mail, Users, Link as LinkIcon, TrendingUp, DollarSign, Activity, ClipboardList } from "lucide-react";
 
 export default async function MasterAdminDashboard() {
   // Require admin access using RBAC system
@@ -242,6 +242,17 @@ export default async function MasterAdminDashboard() {
   const totalRevenue = allPayments?.reduce((sum: number, p: any) =>
     sum + (p.status === "succeeded" ? p.amount_total : 0), 0) || 0;
   const totalCommissions = allCommissions?.reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
+  const businessesMissingRewards = allBusinesses?.filter((b: any) =>
+    !b.offer_text || !b.client_reward_text || !b.new_user_reward_text
+  ).length || 0;
+  const businessesMissingLogo = allBusinesses?.filter((b: any) => !b.logo_url).length || 0;
+  const businessesMissingDiscountSecret = allBusinesses?.filter((b: any) => !b.discount_capture_secret).length || 0;
+  const businessesWithNoAmbassadors = allBusinesses?.filter((b: any) =>
+    !allCustomers?.some((c: any) => c.business_id === b.id)
+  ).length || 0;
+  const businessesWithNoCampaigns = allBusinesses?.filter((b: any) =>
+    !allCampaigns?.some((c: any) => c.business_id === b.id)
+  ).length || 0;
 
   // Sort businesses by activity (most active first)
   const sortedBusinessMetrics = businessMetrics.sort((a, b) => {
@@ -323,6 +334,50 @@ export default async function MasterAdminDashboard() {
             </div>
             <p className="text-4xl font-black text-orange-600">{totalLinkClicks}</p>
             <p className="text-xs text-gray-500 mt-2">{totalEmailsSent} emails sent</p>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-lg p-6 border border-slate-200 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 rounded-lg bg-emerald-100 text-emerald-700">
+              <ClipboardList className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Admin QA</p>
+              <h3 className="text-lg font-black text-gray-900">Platform readiness signals</h3>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5 text-sm">
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">Missing rewards</p>
+              <p className={businessesMissingRewards > 0 ? "text-amber-700 font-semibold" : "text-emerald-700 font-semibold"}>
+                {businessesMissingRewards}
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">Missing logo</p>
+              <p className={businessesMissingLogo > 0 ? "text-amber-700 font-semibold" : "text-emerald-700 font-semibold"}>
+                {businessesMissingLogo}
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">Missing discount secret</p>
+              <p className={businessesMissingDiscountSecret > 0 ? "text-amber-700 font-semibold" : "text-emerald-700 font-semibold"}>
+                {businessesMissingDiscountSecret}
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">No ambassadors</p>
+              <p className={businessesWithNoAmbassadors > 0 ? "text-amber-700 font-semibold" : "text-emerald-700 font-semibold"}>
+                {businessesWithNoAmbassadors}
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">No campaigns</p>
+              <p className={businessesWithNoCampaigns > 0 ? "text-amber-700 font-semibold" : "text-emerald-700 font-semibold"}>
+                {businessesWithNoCampaigns}
+              </p>
+            </div>
           </div>
         </div>
 

@@ -110,7 +110,6 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
         const clientReward = campaign.snapshot_client_reward_text;
         const rewardType = campaign.snapshot_reward_type;
         const rewardAmount = campaign.snapshot_reward_amount;
-        const upgradeName = campaign.snapshot_upgrade_name;
         const rewardTerms = campaign.snapshot_reward_terms;
         const rawStatus = campaign.status?.toLowerCase() ?? "unknown";
         const statusStyles: Record<string, string> = {
@@ -258,7 +257,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
                           {rewardType === "credit"
                             ? `$${rewardAmount ?? 0} credit`
                             : rewardType === "upgrade"
-                            ? upgradeName || "Upgrade reward"
+                            ? "Upgrade reward"
                             : rewardType === "discount"
                             ? `${rewardAmount ?? 0}% discount`
                             : rewardType === "points"

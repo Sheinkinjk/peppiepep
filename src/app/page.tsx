@@ -348,7 +348,7 @@ export default async function Home() {
         {/* How It Works Section - Premium Redesign */}
         <RevealOnScroll>
           <section className="space-y-12 sm:space-y-16 relative border-t border-slate-200/70 pt-12 sm:pt-16">
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white px-6 py-10 shadow-xl sm:px-10 sm:py-12">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white px-6 py-10 shadow-xl sm:px-10 sm:py-12">
               <div className="relative z-10 space-y-10">
                 <div className="text-left sm:text-center">
                   <h2 className="text-[1.9rem] font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] max-w-5xl sm:mx-auto text-balance">
@@ -423,7 +423,7 @@ export default async function Home() {
               {referralNumbers.map((stat) => (
                 <div
                   key={stat.title}
-                  className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-white/95 backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
+                  className={`group relative overflow-hidden rounded-2xl border border-white/20 bg-white/95 backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
                 >
                   <div
                     className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
@@ -464,7 +464,7 @@ export default async function Home() {
                 {referralNumbers.map((stat) => (
                   <div key={stat.title} className="min-w-[260px] snap-center">
                     <div
-                      className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-white/95 backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
+                      className={`group relative overflow-hidden rounded-2xl border border-white/20 bg-white/95 backdrop-blur p-8 hover:scale-105 hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-500`}
                     >
                       <div
                         className={`absolute -top-4 -right-4 h-16 w-16 rounded-2xl ${stat.accentBg} flex items-center justify-center shadow-2xl shadow-black/30 rotate-12 group-hover:rotate-0 transition-transform duration-500`}
@@ -501,8 +501,8 @@ export default async function Home() {
 
             {/* Growth Hacking Value Proposition */}
             <div className="max-w-6xl mx-auto px-4">
-              <div className="relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-10 sm:p-12 shadow-2xl overflow-hidden border border-white/20">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.15),transparent_60%),radial-gradient(circle_at_bottom_right,rgba(236,72,153,0.12),transparent_60%)]" />
+              <div className="relative rounded-2xl bg-gradient-to-br from-[#0abab5]/20 to-white/5 backdrop-blur-xl p-10 sm:p-12 shadow-2xl overflow-hidden border border-white/20">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(10,186,181,0.18),transparent_60%),radial-gradient(circle_at_bottom_right,rgba(92,225,230,0.12),transparent_60%)]" />
 
                 <div className="relative z-10 space-y-8">
                   <div className="text-center space-y-4">
@@ -602,7 +602,7 @@ export default async function Home() {
                     </div>
 
                     {/* Referral Programs */}
-                    <div className="rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 backdrop-blur p-6 border border-emerald-400/30">
+                    <div className="rounded-2xl bg-gradient-to-br from-[#0abab5]/20 to-[#5ce1e6]/10 backdrop-blur p-6 border border-emerald-400/30">
                       <div className="flex items-start gap-3 mb-4">
                         <div className="h-10 w-10 rounded-lg bg-emerald-500/30 flex items-center justify-center">
                           <span className="text-2xl">✅</span>
@@ -677,14 +677,14 @@ export default async function Home() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <Link
                         href="/login"
-                        className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto text-base font-bold shadow-none")}
+                        className={cn(buttonVariants({ variant: "cta" }), "group w-full sm:w-auto rounded-xl text-base font-bold shadow-none")}
                       >
                         Launch my dashboard
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                       <Link
                         href="/r/DEMO2025"
-                        className={cn(buttonVariants({ variant: "outline" }), "group w-full sm:w-auto text-base font-bold")}
+                        className={cn(buttonVariants({ variant: "outline" }), "group w-full sm:w-auto rounded-xl text-base font-bold")}
                       >
                         Preview referral landing
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -716,9 +716,16 @@ export default async function Home() {
                 {clientTestimonials.map((testimonial, index) => (
                   <div
                     key={`client-testimonial-${index}`}
-                    className="flex h-full flex-col rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/50"
+                    className="flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/50"
                   >
                     <div className="flex-1 space-y-4">
+                      <div className="flex items-center gap-1 text-amber-400 text-base">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                      </div>
                       <p className="text-sm font-medium leading-relaxed text-slate-800 sm:text-base">
                         {testimonial.quote}
                       </p>
@@ -735,7 +742,7 @@ export default async function Home() {
         </RevealOnScroll>
 
         {/* ROI Calculator CTA */}
-        <section className="rounded-[32px] border-t border-slate-200/70 border-2 border-purple-200 bg-white shadow-xl shadow-purple-200/50 px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20">
+        <section className="rounded-2xl border-t border-slate-200/70 border-2 border-purple-200 bg-white shadow-xl shadow-purple-200/50 px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20">
           <div className="space-y-4">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 text-center">
               Calculate your referral program ROI in 4 steps
@@ -746,7 +753,7 @@ export default async function Home() {
               </p>
               <Link
                 href="/roi-calculator"
-                className={cn(buttonVariants({ variant: "cta" }), "group text-lg font-bold px-8 py-4 cursor-pointer hover:shadow-xl whitespace-nowrap")}
+                className={cn(buttonVariants({ variant: "cta" }), "group rounded-xl text-lg font-bold px-8 py-4 cursor-pointer hover:shadow-xl whitespace-nowrap")}
               >
                 Calculate ROI <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>

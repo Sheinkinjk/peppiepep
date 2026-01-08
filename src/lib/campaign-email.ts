@@ -582,7 +582,7 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
     (snapshot.rewardType === "credit"
       ? `$${snapshot.rewardAmount ?? 0} credit`
       : snapshot.rewardType === "upgrade"
-      ? snapshot.upgradeName || "a premium upgrade"
+      ? "a premium upgrade"
       : snapshot.rewardType === "discount"
       ? `${snapshot.rewardAmount ?? 0}% discount`
       : `${snapshot.rewardAmount ?? 100} points`);
@@ -678,6 +678,10 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
       qrCodeDataUrl = null;
     }
   }
+  const qrImageUrl =
+    qrToggleEnabled && landingUrl
+      ? qrCodeDataUrl ?? `${siteUrl}/api/qr?data=${encodeURIComponent(landingUrl)}`
+      : null;
 
   const html = `
 <!DOCTYPE html>
@@ -774,14 +778,14 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
               </div>
 
               ${
-                qrCodeDataUrl
+                qrImageUrl
                   ? `<!-- QR Code Section -->
               <div style="margin: 0 0 24px 0; border-radius: 20px; border: 1px solid ${tone.borderColor}; background: ${tone.surfaceBackground}; padding: 24px; text-align: center;">
                 <p style="margin: 0 0 16px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em; color: ${tone.labelColor}; font-weight: 700;">
                   Or Share With QR Code
                 </p>
                 <div style="display: inline-block; border-radius: 18px; border: 2px solid ${hexToRgba(brandHighlight, 0.2)}; padding: 16px; background: ${tone.cardBackground}; box-shadow: 0 8px 20px ${hexToRgba(accentDark, 0.12)};">
-                  <img src="${qrCodeDataUrl}" alt="Referral QR code" style="width: 160px; height: 160px; display: block;" />
+                  <img src="${qrImageUrl}" alt="Referral QR code" style="width: 160px; height: 160px; display: block;" />
                 </div>
                 <p style="margin: 12px 0 0 0; font-size: 13px; color: ${tone.bodyText};">
                   Share this QR code in-store or on social media

@@ -18,8 +18,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GuidedStepFlow, type GuidedStep } from "@/components/GuidedStepFlow";
+import type { GuidedStep } from "@/components/GuidedStepFlow";
 import { DashboardWelcomeModal } from "@/components/DashboardWelcomeModal";
+import { MeasureRoiQaPanel } from "@/components/dashboard/MeasureRoiQaPanel";
+import { DashboardSectionSwitcher, SectionLink } from "@/components/dashboard/DashboardSectionSwitcher";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
 import { QuickAddCustomerForm } from "@/components/QuickAddCustomerForm";
@@ -58,9 +60,11 @@ import {
   Link2,
   CalendarCheck,
   FileText,
+  ArrowRight,
   ArrowUpRight,
   ArrowDownRight,
   Minus,
+  ShieldCheck,
   Coins,
   Wallet,
 } from "lucide-react";
@@ -69,9 +73,9 @@ import { Database } from "@/types/supabase";
 import { BusinessOnboardingMetadata, IntegrationStatusValue, parseBusinessMetadata } from "@/types/business";
 import { calculateNextCredits, parseCreditDelta } from "@/lib/credits";
 import { ensureAbsoluteUrl } from "@/lib/urls";
-import { DashboardHeader } from "./components/DashboardHeader";
 import { PartnerApplicationsManager } from "./components/PartnerApplicationsManager";
 import { DashboardRealtimeSync } from "./components/DashboardRealtimeSync";
+import { DashboardLoginTracker } from "@/components/DashboardLoginTracker";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 import { getCurrentAdmin } from "@/lib/admin-auth";
@@ -258,7 +262,9 @@ async function getBusiness(): Promise<BusinessCoreFields> {
 export default async function Dashboard({
   searchParams,
 }: {
-  searchParams?: { window?: string } | Promise<{ window?: string }>;
+  searchParams?:
+    | { window?: string; section?: string }
+    | Promise<{ window?: string; section?: string }>;
 }) {
   const resolvedSearchParams = await Promise.resolve(searchParams);
   const business = await getBusiness();
@@ -273,6 +279,9 @@ export default async function Dashboard({
     ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
     ensureAbsoluteUrl(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ??
     siteUrl;
+  const businessWebsiteUrl =
+    ensureAbsoluteUrl(business.onboarding_metadata?.websiteUrl ?? null) ?? baseSiteUrl;
+  const referralBaseUrl = businessWebsiteUrl;
   async function updateSettings(formData: FormData) {
     "use server";
     const supabase = await createServerComponentClient();
@@ -335,7 +344,6 @@ export default async function Dashboard({
       offer_text: (formData.get("offer_text") as string) ?? null,
       reward_type: normalizedRewardType,
       reward_amount: rewardAmount,
-      upgrade_name: ((formData.get("upgrade_name") as string) || "").trim() || null,
       client_reward_text:
         ((formData.get("client_reward_text") as string) || "").trim() || null,
       new_user_reward_text:
@@ -682,7 +690,7 @@ export default async function Dashboard({
         try {
           const client = twilio(sid, token);
           const referralLink = ambassadorReferralCode
-            ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
+            ? `${referralBaseUrl}/r/${ambassadorReferralCode}`
             : "";
 
           await client.messages.create({
@@ -721,9 +729,7 @@ export default async function Dashboard({
         try {
           const { Resend } = await import("resend");
           const resend = new Resend(resendApiKey);
-          const portalUrl = ambassadorReferralCode
-            ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
-            : `${baseSiteUrl}/r/referral`;
+          const portalUrl = `${baseSiteUrl}/r/referral`;
           const emailHtml = buildPremiumEmail({
             title: "A referral just completed",
             subtitle: `Congrats ${ambassadorName || "Ambassador"}!`,
@@ -749,11 +755,7 @@ export default async function Dashboard({
             to: ambassadorEmail,
             subject: "A referral just completed",
             html: emailHtml,
-            text: `A referral just completed! Visit your portal to see the reward: ${
-              ambassadorReferralCode
-                ? `${baseSiteUrl}/r/${ambassadorReferralCode}`
-                : `${baseSiteUrl}/r/referral`
-            }`,
+            text: `A referral just completed! Visit your portal to see the reward: ${baseSiteUrl}/r/referral`,
           });
 
           if (response.error) {
@@ -948,6 +950,58 @@ export default async function Dashboard({
     }
   }
 
+  async function uploadRewardTerms(formData: FormData) {
+    "use server";
+    try {
+      const file = formData.get("file");
+
+      if (!(file instanceof File) || file.size === 0) {
+        return { error: "Please choose a terms file to upload." };
+      }
+
+      if (file.size > 2 * 1024 * 1024) {
+        return { error: "Terms file too large. Please upload under 2MB." };
+      }
+
+      const supabase = await createServerComponentClient();
+      const ext = file.name.split(".").pop() || "pdf";
+      const path = `terms-${business.id}-${nanoid()}.${ext}`;
+
+      const { data: uploadResult, error: uploadError } = await supabase.storage
+        .from("logos")
+        .upload(path, file, {
+          cacheControl: "3600",
+          upsert: true,
+        });
+
+      if (uploadError || !uploadResult) {
+        logger.error("Terms upload error:", uploadError);
+        return { error: "Unable to upload terms file. Please try again." };
+      }
+
+      const {
+        data: { publicUrl },
+      } = supabase.storage.from("logos").getPublicUrl(path);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: updateError } = await (supabase as any)
+        .from("businesses")
+        .update({ reward_terms: publicUrl })
+        .eq("id", business.id);
+
+      if (updateError) {
+        logger.error("Failed to store reward terms URL:", updateError);
+        return { error: "Terms uploaded but could not be saved. Please try again." };
+      }
+
+      revalidatePath("/dashboard");
+      return { success: "Terms uploaded", url: publicUrl as string };
+    } catch (error) {
+      logger.error("Unexpected terms upload error:", error);
+      return { error: "Unexpected error while uploading terms." };
+    }
+  }
+
   async function addManualReferral(formData: FormData) {
     "use server";
     try {
@@ -1108,33 +1162,83 @@ export default async function Dashboard({
   }
 
   const supabase = await createServerComponentClient();
-  const { data: customers = [] } = await supabase
-    .from("customers")
-    .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
-    .eq("business_id", business.id);
+  const selectedWindow = resolvedSearchParams?.window === "7" ? 7 : 30;
+  const windowStart = Date.now() - selectedWindow * 24 * 60 * 60 * 1000;
+  const previousWindowStart = windowStart - selectedWindow * 24 * 60 * 60 * 1000;
 
-  const { data: referrals = [] } = await supabase
-    .from("referrals")
-    .select(
-      "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
-    )
-    .eq("business_id", business.id);
-
-  // Query partner applications to identify LinkedIn Influencer customers
-  const { data: partnerApplications = [] } = await supabase
-    .from("partner_applications")
-    .select("customer_id,source")
-    .eq("business_id", business.id)
-    .in("source", ["linkedin-influencer", "linkedin-influencer-business"]);
+  const [
+    { data: customers = [] },
+    { data: referrals = [] },
+    { data: partnerApplications = [] },
+    campaignsResult,
+    creditLedgerEntries,
+    creditTotals,
+    referralEventsResult,
+    discountRedemptionsResult,
+  ] = await Promise.all([
+    supabase
+      .from("customers")
+      .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
+      .eq("business_id", business.id),
+    supabase
+      .from("referrals")
+      .select(
+        "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
+      )
+      .eq("business_id", business.id),
+    supabase
+      .from("partner_applications")
+      .select("customer_id,source")
+      .eq("business_id", business.id)
+      .in("source", ["linkedin-influencer", "linkedin-influencer-business"]),
+    (async () => {
+      try {
+        return await supabase
+          .from("campaigns")
+          .select("*")
+          .eq("business_id", business.id)
+          .order("created_at", { ascending: false });
+      } catch (campaignFetchError) {
+        logger.warn("Campaign data unavailable:", campaignFetchError);
+        return { data: [] };
+      }
+    })(),
+    fetchCreditLedger(supabase, business.id, { limit: 100 }),
+    calculateCreditTotals(supabase, business.id, selectedWindow),
+    supabase
+      .from("referral_events")
+      .select(
+        `
+        id,
+        event_type,
+        source,
+        device,
+        created_at,
+        metadata,
+        referral_id,
+        ambassador:ambassador_id (
+          id,
+          name,
+          referral_code
+        )
+      `,
+      )
+      .eq("business_id", business.id)
+      .order("created_at", { ascending: false })
+      .limit(300),
+    supabase
+      .from("discount_redemptions")
+      .select("id, discount_code, order_reference, captured_at", { count: "exact" })
+      .eq("business_id", business.id)
+      .order("captured_at", { ascending: false })
+      .limit(50),
+  ]);
 
   const safeReferrals =
     (referrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
   const safeCustomers =
     (customers ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
 
-  const selectedWindow = resolvedSearchParams?.window === "7" ? 7 : 30;
-  const windowStart = Date.now() - selectedWindow * 24 * 60 * 60 * 1000;
-  const previousWindowStart = windowStart - selectedWindow * 24 * 60 * 60 * 1000;
   const isWithinWindow = (timestamp: string | null) => {
     if (!timestamp) return false;
     const parsed = Date.parse(timestamp);
@@ -1190,6 +1294,11 @@ export default async function Dashboard({
     previousWindowedReferrals.filter((r) => r.status === "completed").length || 0;
   const manualReferralsList = safeReferrals.filter((r) => r.created_by);
   const manualReferralCount = manualReferralsList.length;
+  const missingAmbassadorCount = safeReferrals.filter((r) => !r.ambassador_id).length;
+  const missingValueCompletedCount = safeReferrals.filter(
+    (r) => r.status === "completed" && r.transaction_value === null,
+  ).length;
+  const manualMissingValueCount = manualReferralsList.filter((r) => r.transaction_value === null).length;
   const manualReferralValue =
     manualReferralsList.reduce(
       (sum, r) => sum + (r.transaction_value ?? 0),
@@ -1226,25 +1335,12 @@ export default async function Dashboard({
           0,
         ) / completedWithValue.length
       : 0;
-  let totalCampaignsSent = 0;
-  let totalMessagesSent = 0;
-  let campaignsData: CampaignRow[] = [];
-  try {
-    const { data: campaignsRaw } = await supabase
-      .from("campaigns")
-      .select("*")
-      .eq("business_id", business.id)
-      .order("created_at", { ascending: false });
-
-    campaignsData = (campaignsRaw ?? []) as CampaignRow[];
-    totalCampaignsSent = campaignsData.length;
-    totalMessagesSent = campaignsData.reduce(
-      (sum, campaign) => sum + (campaign.sent_count ?? 0),
-      0,
-    );
-  } catch (campaignFetchError) {
-    logger.warn("Campaign data unavailable:", campaignFetchError);
-  }
+  const campaignsData = (campaignsResult.data ?? []) as CampaignRow[];
+  const totalCampaignsSent = campaignsData.length;
+  const totalMessagesSent = campaignsData.reduce(
+    (sum, campaign) => sum + (campaign.sent_count ?? 0),
+    0,
+  );
 
   const totalEstimatedCampaignSpend = campaignsData.reduce(
     (sum, campaign) => {
@@ -1280,10 +1376,6 @@ export default async function Dashboard({
     },
     0,
   );
-
-  // Fetch credit ledger data for Rewards tab
-  const creditLedgerEntries = await fetchCreditLedger(supabase, business.id, { limit: 100 });
-  const creditTotals = await calculateCreditTotals(supabase, business.id, selectedWindow);
 
   // Calculate total program cost including rewards
   const totalProgramCost = totalEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
@@ -1383,29 +1475,7 @@ export default async function Dashboard({
       ? (business.reward_amount ?? 0) > 0
       : business.reward_type !== null);
 
-  const { data: referralEventsData } = await supabase
-    .from("referral_events")
-    .select(
-      `
-        id,
-        event_type,
-        source,
-        device,
-        created_at,
-        metadata,
-        referral_id,
-        ambassador:ambassador_id (
-          id,
-          name,
-          referral_code
-        )
-      `,
-    )
-    .eq("business_id", business.id)
-    .order("created_at", { ascending: false })
-    .limit(300);
-
-  const typedReferralEvents = (referralEventsData ?? []) as ReferralEventRow[];
+  const typedReferralEvents = (referralEventsResult.data ?? []) as ReferralEventRow[];
   const referralJourneyEvents: ReferralJourneyEvent[] = typedReferralEvents.map(
     (event) => ({
       id: event.id,
@@ -1439,14 +1509,8 @@ export default async function Dashboard({
     return acc;
   }, {});
 
-  const { data: discountRedemptionsData, count: discountRedemptionCount } = await supabase
-    .from("discount_redemptions")
-    .select("id, discount_code, order_reference, captured_at", { count: "exact" })
-    .eq("business_id", business.id)
-    .order("captured_at", { ascending: false })
-    .limit(50);
-
-  const discountRedemptions = (discountRedemptionsData ?? []) as DiscountRedemptionRow[];
+  const discountRedemptions = (discountRedemptionsResult.data ?? []) as DiscountRedemptionRow[];
+  const discountRedemptionCount = discountRedemptionsResult.count ?? 0;
 
   const windowedReferralEvents = referralJourneyEvents.filter((event) =>
     isWithinWindow(event.created_at),
@@ -1732,7 +1796,8 @@ export default async function Dashboard({
 	      status: stepValidations["setup-integration"].isComplete ? "complete" : "in_progress",
 	      content: (
 	        <IntegrationTab
-	          siteUrl={siteUrl}
+	          businessId={business.id}
+	          siteUrl={businessWebsiteUrl}
 	          businessName={business.name || "Your Business"}
 	          offerText={business.offer_text}
 	          clientRewardText={business.client_reward_text}
@@ -1740,7 +1805,6 @@ export default async function Dashboard({
 	          discountCaptureSecret={business.discount_capture_secret ?? null}
 	          rewardType={business.reward_type}
 	          rewardAmount={business.reward_amount}
-	          upgradeName={business.upgrade_name}
 	          rewardTerms={business.reward_terms}
 	          signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
 	          signOnBonusAmount={business.sign_on_bonus_amount}
@@ -1749,6 +1813,8 @@ export default async function Dashboard({
 	          logoUrl={business.logo_url ?? null}
 	          brandHighlightColor={business.brand_highlight_color ?? null}
 	          brandTone={business.brand_tone ?? null}
+	          uploadLogoAction={uploadLogo}
+	          uploadRewardTermsAction={uploadRewardTerms}
 	          hasProgramSettings={hasProgramSettings}
 	          hasCustomers={hasCustomers}
 	          onboardingMetadata={business.onboarding_metadata ?? null}
@@ -1772,7 +1838,7 @@ export default async function Dashboard({
 	          : "incomplete",
 	      content: (
 	        <Step2Content
-	          siteUrl={siteUrl}
+	          siteUrl={businessWebsiteUrl}
 	          businessId={business.id}
 	          businessName={business.name || "Your Business"}
 	          discountCaptureSecret={business.discount_capture_secret ?? null}
@@ -1781,7 +1847,6 @@ export default async function Dashboard({
 	          clientRewardText={business.client_reward_text}
 	          rewardType={business.reward_type}
 	          rewardAmount={business.reward_amount}
-	          upgradeName={business.upgrade_name}
 	          rewardTerms={business.reward_terms}
 	          logoUrl={business.logo_url ?? null}
 	          brandHighlightColor={business.brand_highlight_color ?? null}
@@ -1791,6 +1856,8 @@ export default async function Dashboard({
 	          signOnBonusAmount={business.sign_on_bonus_amount}
 	          signOnBonusType={business.sign_on_bonus_type}
 	          signOnBonusDescription={business.sign_on_bonus_description}
+	          uploadLogo={uploadLogo}
+	          uploadRewardTerms={uploadRewardTerms}
 	          safeCustomers={safeCustomers}
 	          currentAdmin={currentAdmin}
 	          linkedInInfluencerCustomers={linkedInInfluencerCustomers}
@@ -1818,20 +1885,18 @@ export default async function Dashboard({
 	      content: (
 		        <Step3Content
 		          safeCustomers={safeCustomers}
-		          siteUrl={siteUrl}
-		          businessId={business.id}
-		          businessName={business.name || "Your Business"}
+		          siteUrl={businessWebsiteUrl}
 		          discountCaptureSecret={business.discount_capture_secret ?? null}
-		          offerText={business.offer_text}
-		          newUserRewardText={business.new_user_reward_text}
-		          clientRewardText={business.client_reward_text}
-		          rewardType={business.reward_type}
-		          rewardAmount={business.reward_amount}
-		          upgradeName={business.upgrade_name}
-		          rewardTerms={business.reward_terms}
-		          brandHighlightColor={business.brand_highlight_color ?? null}
-		          brandTone={business.brand_tone ?? null}
-		          uploadLogo={uploadLogo}
+		          businessName={business.name || "Your Business"}
+          offerText={business.offer_text}
+          newUserRewardText={business.new_user_reward_text}
+          clientRewardText={business.client_reward_text}
+          rewardType={business.reward_type}
+          rewardAmount={business.reward_amount}
+          rewardTerms={business.reward_terms}
+          brandHighlightColor={business.brand_highlight_color ?? null}
+          brandTone={business.brand_tone ?? null}
+          uploadLogo={uploadLogo}
 		        />
 		      ),
 	      helpContent: <Step3Education />,
@@ -1855,7 +1920,7 @@ export default async function Dashboard({
 	          campaignEventStats={campaignEventStats}
 	          safePartnerReferrals={safePartnerReferrals}
 	          safeCustomers={safeCustomers}
-	          siteUrl={siteUrl}
+	          siteUrl={businessWebsiteUrl}
 	          businessName={business.name}
 	          clientRewardText={business.client_reward_text}
 	          newUserRewardText={business.new_user_reward_text}
@@ -1922,6 +1987,48 @@ export default async function Dashboard({
                       All referrals, both tracked and manually logged.
                     </p>
                   </div>
+                </div>
+
+                <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+                      <ShieldCheck className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                        Referral QA
+                      </p>
+                      <h3 className="text-lg font-black text-slate-900">Data integrity snapshot</h3>
+                      <p className="text-sm text-slate-600">
+                        Identify missing ambassador mapping or value fields before reporting.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-3 text-sm">
+                    <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                      <p className="text-xs text-slate-500">Missing ambassador</p>
+                      <p className={missingAmbassadorCount > 0 ? "font-semibold text-amber-700" : "font-semibold text-emerald-700"}>
+                        {missingAmbassadorCount}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                      <p className="text-xs text-slate-500">Completed without value</p>
+                      <p className={missingValueCompletedCount > 0 ? "font-semibold text-amber-700" : "font-semibold text-emerald-700"}>
+                        {missingValueCompletedCount}
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-slate-200 bg-white px-3 py-2">
+                      <p className="text-xs text-slate-500">Manual missing value</p>
+                      <p className={manualMissingValueCount > 0 ? "font-semibold text-amber-700" : "font-semibold text-emerald-700"}>
+                        {manualMissingValueCount}
+                      </p>
+                    </div>
+                  </div>
+                  {(missingAmbassadorCount > 0 || missingValueCompletedCount > 0) && (
+                    <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+                      Fill missing ambassador links or transaction values to keep ROI reporting accurate.
+                    </div>
+                  )}
                 </div>
 
                 {safeReferrals.length === 0 ? (
@@ -2035,7 +2142,8 @@ export default async function Dashboard({
                 </div>
               ) : (
                 <>
-                  <div className="mb-5">
+                  <MeasureRoiQaPanel />
+                  <div id="measure-roi-interaction-hub" className="mb-5 scroll-mt-24">
                     <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
                       <h3 className="text-sm font-semibold text-slate-600 uppercase tracking-[0.08em]">
                         Interaction Hub
@@ -2650,47 +2758,209 @@ export default async function Dashboard({
 	    },
 	  ];
 
-  return (
-    <div className="min-h-screen bg-slate-50">
-      <div className="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
+  const section = resolvedSearchParams?.section ?? "overview";
+  const sectionItems = [
+    { id: "overview", label: "Overview" },
+    { id: "setup-integration", label: "Business Setup & Integrations" },
+    { id: "clients-ambassadors", label: "Clients & Ambassadors" },
+    { id: "crm-integration", label: "Launch Campaigns" },
+    { id: "view-campaigns", label: "Track Campaigns" },
+    { id: "performance", label: "Measure ROI" },
+  ];
+  const stepMap = new Map(guidedSteps.map((step) => [step.id, step]));
+  const nextStep = autoExpandStep && stepMap.get(autoExpandStep);
+  const showAdminLinks = Boolean(currentAdmin);
 
-        <DashboardWelcomeModal
-          businessName={business.name || "Your Business"}
-        />
+  const qaReadinessSteps = [
+    {
+      id: "setup-integration",
+      title: "Step 1 · Business setup & integrations",
+      detail: hasProgramSettings
+        ? "Business profile + rewards saved"
+        : "Finish business profile + rewards setup",
+      status: stepValidations["setup-integration"].isComplete ? "Ready" : "Needs attention",
+      actionLabel: "Review integrations",
+      actionSection: "setup-integration",
+      actionScroll: "step-1c-integrations",
+      tone: stepValidations["setup-integration"].isComplete ? "emerald" : "amber",
+    },
+    {
+      id: "clients-ambassadors",
+      title: "Step 2 · Clients & ambassadors",
+      detail: hasCustomers ? "Ambassadors imported + links active" : "Add your first ambassadors",
+      status: hasCustomers ? "Ready" : "Needs attention",
+      actionLabel: "Add ambassadors",
+      actionSection: "clients-ambassadors",
+      tone: hasCustomers ? "emerald" : "amber",
+    },
+    {
+      id: "crm-integration",
+      title: "Step 3 · Launch campaigns",
+      detail: hasCampaigns ? "Campaigns have been sent" : "Prepare email/CRM campaign flow",
+      status: hasCampaigns ? "Ready" : "Pending",
+      actionLabel: "Review campaigns",
+      actionSection: "crm-integration",
+      tone: hasCampaigns ? "emerald" : "slate",
+    },
+    {
+      id: "view-campaigns",
+      title: "Step 4 · Track campaigns",
+      detail: totalCampaignsSent > 0 ? "Tracking campaign performance" : "Waiting on first campaign",
+      status: totalCampaignsSent > 0 ? "Active" : "Waiting",
+      actionLabel: "Open tracking",
+      actionSection: "view-campaigns",
+      tone: totalCampaignsSent > 0 ? "emerald" : "slate",
+    },
+    {
+      id: "performance",
+      title: "Step 5 · Measure ROI",
+      detail: safeReferrals.length > 0 ? "Attribution + ROI active" : "Run QA to verify attribution",
+      status: safeReferrals.length > 0 ? "Live" : "Needs data",
+      actionLabel: "Open Measure ROI",
+      actionSection: "performance",
+      actionScroll: "measure-roi-interaction-hub",
+      tone: safeReferrals.length > 0 ? "emerald" : "amber",
+    },
+  ];
 
-        <DashboardRealtimeSync businessId={business.id} />
+  const overviewContent = (
+    <div className="space-y-6">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+              Overview
+            </p>
+            <h1 className="text-2xl font-black text-slate-900">
+              Welcome back{business.name ? `, ${business.name}` : ""}.
+            </h1>
+            <p className="mt-2 text-sm text-slate-600">
+              Your program status and next steps are summarized here.
+            </p>
+          </div>
+          {nextStep && (
+            <SectionLink
+              section={nextStep.id}
+              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-800"
+            >
+              Continue setup
+              <ArrowRight className="h-4 w-4" />
+            </SectionLink>
+          )}
+        </div>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Ambassadors</p>
+            <p className="text-xl font-black text-slate-900">{safeCustomers.length}</p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Referrals</p>
+            <p className="text-xl font-black text-slate-900">{safeReferrals.length}</p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Campaigns</p>
+            <p className="text-xl font-black text-slate-900">{totalCampaignsSent}</p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Revenue</p>
+            <p className="text-xl font-black text-slate-900">
+              ${Math.round(totalReferralRevenue)}
+            </p>
+          </div>
+        </div>
+      </div>
 
-	        {/* Dashboard Header with Stats */}
-		        <DashboardHeader
-		          ambassadorCount={safeCustomers.length}
-		          referralCount={safeReferrals.length}
-		          campaignsSent={totalCampaignsSent}
-		          revenue={totalReferralRevenue}
-		          validations={stepValidations}
-		          currentStep={autoExpandStep}
-		          overallProgress={overallProgress}
-              showAdminLinks={Boolean(currentAdmin)}
-		        />
-
-        {/* Mobile Warning - Show at top for immediate visibility */}
-        {isMobile && (
-          <div className="mb-6 flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
-            <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
-            <div className="space-y-1">
-              <p className="text-sm font-semibold">
-                Mobile features are coming soon - please use your computer in the meantime.
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex items-start gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600">
+              <ShieldCheck className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                QA Readiness
               </p>
-	              <p className="text-xs text-amber-900/80">
-	                We&apos;re finishing the mobile toolkit now; dashboards work best on desktop today so you don&apos;t miss any controls.
-	              </p>
+              <h3 className="text-lg font-black text-slate-900">Core setup signals</h3>
+              <p className="text-sm text-slate-600">
+                Follow each step to confirm attribution, campaign flow, and ROI monitoring are fully connected.
+              </p>
             </div>
           </div>
-        )}
-
-		        <GuidedStepFlow
-		          steps={guidedSteps}
-		          defaultOpenStep={null}
-		        />
+          <div className="flex flex-wrap gap-2">
+            <SectionLink
+              section="setup-integration"
+              scrollTo="step-1c-integrations"
+              className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+            >
+              Review integrations
+            </SectionLink>
+            <SectionLink
+              section="setup-integration"
+              scrollTo="integration-qa-panel"
+              className="rounded-full border border-emerald-200 bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700"
+            >
+              Run Integration QA
+            </SectionLink>
+            <SectionLink
+              section="performance"
+              scrollTo="measure-roi-interaction-hub"
+              className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+            >
+              Open Measure ROI
+            </SectionLink>
+          </div>
+        </div>
+        <div className="mt-4">
+          <div className="flex items-center justify-between text-xs text-slate-500">
+            <span>Overall QA readiness</span>
+            <span className="font-semibold text-slate-700">{overallProgress}%</span>
+          </div>
+          <div className="mt-2 h-2 w-full rounded-full bg-slate-100">
+            <div
+              className="h-2 rounded-full bg-emerald-500"
+              style={{ width: `${overallProgress}%` }}
+            />
+          </div>
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          {qaReadinessSteps.map((step) => (
+            <div
+              key={step.id}
+              className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    {step.title}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-slate-900">{step.detail}</p>
+                </div>
+                <span
+                  className={`rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] ${
+                    step.tone === "emerald"
+                      ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                      : step.tone === "amber"
+                        ? "border-amber-200 bg-amber-50 text-amber-700"
+                        : "border-slate-200 bg-white text-slate-500"
+                  }`}
+                >
+                  {step.status}
+                </span>
+              </div>
+              <div className="mt-3">
+                <SectionLink
+                  section={step.actionSection}
+                  scrollTo={step.actionScroll}
+                  className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+                >
+                  {step.actionLabel}
+                  <ArrowRight className="h-3 w-3" />
+                </SectionLink>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <DashboardOnboardingChecklist
         hasCustomers={hasCustomers}
@@ -2698,8 +2968,46 @@ export default async function Dashboard({
         hasCampaigns={hasCampaigns}
         hasReferrals={hasReferrals}
       />
+    </div>
+  );
 
-      <FloatingCampaignTrigger />
+  return (
+    <div className="min-h-screen bg-slate-50">
+      <div className="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
+        <DashboardWelcomeModal
+          businessName={business.name || "Your Business"}
+        />
+
+        <DashboardRealtimeSync businessId={business.id} />
+        <DashboardLoginTracker />
+
+        <div className="space-y-6">
+          {/* Mobile Warning - Show at top for immediate visibility */}
+          {isMobile && (
+            <div className="flex items-start gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-amber-900 shadow-sm shadow-amber-200">
+              <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
+              <div className="space-y-1">
+                <p className="text-sm font-semibold">
+                  Mobile features are coming soon - please use your computer in the meantime.
+                </p>
+                <p className="text-xs text-amber-900/80">
+                  We&apos;re finishing the mobile toolkit now; dashboards work best on desktop today so you don&apos;t miss any controls.
+                </p>
+              </div>
+            </div>
+          )}
+
+          <DashboardSectionSwitcher
+            sectionItems={sectionItems}
+            steps={guidedSteps}
+            overviewContent={overviewContent}
+            defaultSection={section}
+            selectedWindow={selectedWindow}
+            showAdminLinks={showAdminLinks}
+          />
+        </div>
+
+        <FloatingCampaignTrigger />
       </div>
     </div>
   );

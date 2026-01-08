@@ -128,12 +128,20 @@ export function StickyHeader() {
                   </button>
                 </>
               ) : (
-                <Link
-                  href="/login"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
-                >
-                  Sign in <ArrowRight className="h-4 w-4" />
-                </Link>
+                <>
+                  <Link
+                    href="/login"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-xs font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF] cursor-pointer"
+                  >
+                    Log in
+                  </Link>
+                  <Link
+                    href="/login"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
+                  >
+                    Sign Up <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </>
               )}
             </nav>
 
@@ -222,13 +230,22 @@ export function StickyHeader() {
                   </button>
                 </>
               ) : (
-                <Link
-                  href="/login"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Sign in <ArrowRight className="h-4 w-4" />
-                </Link>
+                <>
+                  <Link
+                    href="/login"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#00838F] px-4 py-3 text-sm font-bold text-[#00838F] transition-all duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Log in
+                  </Link>
+                  <Link
+                    href="/login"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Sign Up <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </>
               )}
             </nav>
           </div>

@@ -37,7 +37,6 @@ export async function GET(
           new_user_reward_text,
           reward_type,
           reward_amount,
-          upgrade_name,
           reward_terms,
           logo_url,
           brand_highlight_color,
@@ -65,7 +64,6 @@ export async function GET(
       new_user_reward_text: string | null;
       reward_type: string | null;
       reward_amount: number | null;
-      upgrade_name: string | null;
       reward_terms: string | null;
       logo_url: string | null;
       brand_highlight_color: string | null;
@@ -83,7 +81,7 @@ export async function GET(
       (business?.reward_type === "credit"
         ? `$${rewardAmount} credit`
         : business?.reward_type === "upgrade"
-        ? business?.upgrade_name || "a free upgrade"
+        ? "a free upgrade"
         : business?.reward_type === "discount"
         ? `${rewardAmount}% discount`
         : `${rewardAmount} points`);

@@ -49,6 +49,9 @@ export default async function AdminPaymentsPage() {
   const totalCommissions = commissions?.reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
   const pendingCommissions = commissions?.filter((c: any) => c.status === "approved").reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
   const paidCommissions = commissions?.filter((c: any) => c.status === "paid").reduce((sum: number, c: any) => sum + c.amount, 0) || 0;
+  const failedPayments = payments?.filter((p: any) => p.status !== "succeeded").length || 0;
+  const orphanCommissions = commissions?.filter((c: any) => !c.ambassador_id).length || 0;
+  const missingPaymentLinks = commissions?.filter((c: any) => !c.payment_id).length || 0;
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -127,6 +130,38 @@ export default async function AdminPaymentsPage() {
             <p className="text-xs text-gray-500 mt-1">
               {commissions?.filter((c: any) => c.status === "paid").length || 0} paid
             </p>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow p-6 mb-8 border border-gray-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+              <span className="text-white font-bold text-sm">QA</span>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-gray-500 font-semibold">Payments QA</p>
+              <h3 className="text-lg font-bold text-gray-900">Payout integrity checks</h3>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3 text-sm">
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <p className="text-xs text-gray-500">Failed payments</p>
+              <p className={failedPayments > 0 ? "font-semibold text-yellow-700" : "font-semibold text-green-700"}>
+                {failedPayments}
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <p className="text-xs text-gray-500">Missing ambassadors</p>
+              <p className={orphanCommissions > 0 ? "font-semibold text-yellow-700" : "font-semibold text-green-700"}>
+                {orphanCommissions}
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <p className="text-xs text-gray-500">Commissions without payment</p>
+              <p className={missingPaymentLinks > 0 ? "font-semibold text-yellow-700" : "font-semibold text-green-700"}>
+                {missingPaymentLinks}
+              </p>
+            </div>
           </div>
         </div>
 

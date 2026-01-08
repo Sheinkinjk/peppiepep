@@ -1,35 +1,34 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ClipboardList,
-  Code2,
-  Globe,
   ChevronDown,
-  ChevronRight,
   Sparkles,
-  Wrench,
-  Workflow,
+  ShieldCheck,
+  AlertTriangle,
+  CheckCircle,
 } from "lucide-react";
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { WebsiteIntegrationCard } from "@/components/WebsiteIntegrationCard";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import type { Database } from "@/types/supabase";
-import type { BusinessOnboardingMetadata, IntegrationStatusValue } from "@/types/business";
-import { CRMIntegrationGuideCard } from "@/components/CRMIntegrationGuideCard";
+import type { BusinessOnboardingMetadata } from "@/types/business";
 
 type RewardType =
   Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
 
 type IntegrationTabProps = {
+  businessId: string;
   siteUrl: string;
   businessName: string;
   offerText?: string | null;
@@ -38,7 +37,6 @@ type IntegrationTabProps = {
   discountCaptureSecret?: string | null;
   rewardType?: RewardType;
   rewardAmount?: number | null;
-  upgradeName?: string | null;
   rewardTerms?: string | null;
   signOnBonusEnabled?: boolean | null;
   signOnBonusAmount?: number | null;
@@ -47,6 +45,8 @@ type IntegrationTabProps = {
   logoUrl?: string | null;
   brandHighlightColor?: string | null;
   brandTone?: string | null;
+  uploadLogoAction?: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
+  uploadRewardTermsAction?: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
   hasProgramSettings: boolean;
   hasCustomers: boolean;
   onboardingMetadata?: BusinessOnboardingMetadata | null;
@@ -54,7 +54,35 @@ type IntegrationTabProps = {
   updateOnboardingAction: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
 };
 
+type AttributionHealth = {
+  healthy: boolean;
+  status?: "good" | "warning" | "critical" | "no_data";
+  recommendation?: string;
+  metrics?: {
+    last7Days?: {
+      linkVisits?: number;
+      linkVisitsAttributed?: number;
+      signups?: number;
+      signupsAttributed?: number;
+      conversions?: number;
+      conversionsAttributed?: number;
+      referrals?: number;
+      referralsAttributed?: number;
+      attributionRate?: string;
+    };
+  };
+  error?: string;
+};
+
+type AttributionCookieStatus = {
+  hasAttribution: boolean;
+  reason?: string;
+  message?: string;
+  daysRemaining?: number;
+};
+
 export function IntegrationTab({
+  businessId,
   siteUrl,
   businessName,
   offerText,
@@ -63,7 +91,6 @@ export function IntegrationTab({
   discountCaptureSecret,
   rewardType,
   rewardAmount,
-  upgradeName,
   rewardTerms,
   signOnBonusEnabled,
   signOnBonusAmount,
@@ -72,6 +99,8 @@ export function IntegrationTab({
   logoUrl,
   brandHighlightColor,
   brandTone,
+  uploadLogoAction,
+  uploadRewardTermsAction,
   hasProgramSettings,
   hasCustomers,
   onboardingMetadata,
@@ -82,11 +111,22 @@ export function IntegrationTab({
   const normalizedSite =
     siteUrl && siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl || "https://example.com";
 
-  const [openSection, setOpenSection] = useState<string | null>(null);
   const [snapshotOpen, setSnapshotOpen] = useState(true);
   const [rewardsOpen, setRewardsOpen] = useState(true);
   const [integrationsOpen, setIntegrationsOpen] = useState(true);
-  const websiteGuideRef = useRef<HTMLDivElement | null>(null);
+  const logoFileRef = useRef<HTMLInputElement | null>(null);
+  const rewardTermsFileRef = useRef<HTMLInputElement | null>(null);
+  const [isQaRunning, setIsQaRunning] = useState(false);
+  const [isQaCleanupRunning, setIsQaCleanupRunning] = useState(false);
+  const [isUploadingLogo, setIsUploadingLogo] = useState(false);
+  const [isUploadingRewardTerms, setIsUploadingRewardTerms] = useState(false);
+  const [qaConfirmOpen, setQaConfirmOpen] = useState(false);
+  const [qaCleanupConfirmOpen, setQaCleanupConfirmOpen] = useState(false);
+  const [qaResultsHint, setQaResultsHint] = useState(false);
+  const [healthCheck, setHealthCheck] = useState<AttributionHealth | null>(null);
+  const [cookieCheck, setCookieCheck] = useState<AttributionCookieStatus | null>(null);
+  const [isHealthRunning, setIsHealthRunning] = useState(false);
+  const [isCookieRunning, setIsCookieRunning] = useState(false);
 
   // Business onboarding form state
   const [businessNameInput, setBusinessNameInput] = useState(businessName);
@@ -95,8 +135,6 @@ export function IntegrationTab({
   const [primaryLocation, setPrimaryLocation] = useState(normalizedMetadata.primaryLocation ?? "");
   const [websitePlatform, setWebsitePlatform] = useState(normalizedMetadata.websitePlatform ?? "");
   const [crmPlatform, setCrmPlatform] = useState(normalizedMetadata.crmPlatform ?? "");
-  const [crmOwner, setCrmOwner] = useState(normalizedMetadata.crmOwner ?? "");
-  const [techStack, setTechStack] = useState(normalizedMetadata.techStack ?? "");
   const [avgSale, setAvgSale] = useState(
     typeof normalizedMetadata.avgSale === "number" ? String(normalizedMetadata.avgSale) : "",
   );
@@ -104,16 +142,35 @@ export function IntegrationTab({
     typeof normalizedMetadata.referralGoal === "number" ? String(normalizedMetadata.referralGoal) : "",
   );
   const [integrationNotes, setIntegrationNotes] = useState(normalizedMetadata.integrationNotes ?? "");
-  const [websiteStatus, setWebsiteStatus] = useState<IntegrationStatusValue>(
-    normalizedMetadata.integrationStatus?.website ?? "not_started",
-  );
-  const [crmStatus, setCrmStatus] = useState<IntegrationStatusValue>(
-    normalizedMetadata.integrationStatus?.crm ?? "not_started",
-  );
-  const [qaStatus, setQaStatus] = useState<IntegrationStatusValue>(
-    normalizedMetadata.integrationStatus?.qa ?? "not_started",
-  );
   const [isOnboardingSaving, setIsOnboardingSaving] = useState(false);
+
+  const runHealthCheck = async () => {
+    if (isHealthRunning) return;
+    setIsHealthRunning(true);
+    try {
+      const response = await fetch("/api/health/attribution");
+      const data = (await response.json()) as AttributionHealth;
+      setHealthCheck(data);
+    } catch {
+      setHealthCheck({ healthy: false, error: "Unable to load attribution health." });
+    } finally {
+      setIsHealthRunning(false);
+    }
+  };
+
+  const runCookieCheck = async () => {
+    if (isCookieRunning) return;
+    setIsCookieRunning(true);
+    try {
+      const response = await fetch("/api/verify-attribution");
+      const data = (await response.json()) as AttributionCookieStatus;
+      setCookieCheck(data);
+    } catch {
+      setCookieCheck({ hasAttribution: false, reason: "error", message: "Unable to read attribution cookie." });
+    } finally {
+      setIsCookieRunning(false);
+    }
+  };
 
   // Program settings form state
   const [settingsOfferText, setSettingsOfferText] = useState(offerText ?? "");
@@ -128,9 +185,6 @@ export function IntegrationTab({
   );
   const [settingsRewardAmount, setSettingsRewardAmount] = useState<number>(
     rewardAmount ?? 15,
-  );
-  const [settingsUpgradeName, setSettingsUpgradeName] = useState(
-    upgradeName ?? "",
   );
   const [settingsRewardTerms, setSettingsRewardTerms] = useState(
     rewardTerms ?? "",
@@ -152,17 +206,63 @@ export function IntegrationTab({
   );
   const [isSaving, setIsSaving] = useState(false);
 
-  const statusOptions = [
-    { value: "not_started", label: "Not started" },
-    { value: "in_progress", label: "In progress" },
-    { value: "complete", label: "Complete" },
-  ];
-
   const handleReviewWebsiteGuide = () => {
-    setOpenSection("website");
-    setTimeout(() => {
-      websiteGuideRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 140);
+    if (typeof window !== "undefined") {
+      window.open("/integrations", "_blank", "noopener,noreferrer");
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!integrationsOpen) return;
+    const nextUrl = `${window.location.pathname}${window.location.search}#step-1c-integrations`;
+    if (window.location.hash !== "#step-1c-integrations") {
+      window.history.replaceState(null, "", nextUrl);
+    }
+  }, [integrationsOpen]);
+
+  const buildReferralPreviewUrl = () => {
+    const raw = websiteUrl.trim();
+    if (!raw) return null;
+    const withScheme = raw.startsWith("http") ? raw : `https://${raw}`;
+    try {
+      const parsed = new URL(withScheme);
+      if (!parsed.pathname || parsed.pathname === "/") {
+        parsed.pathname = "/referral";
+      } else if (!parsed.pathname.includes("referral")) {
+        parsed.pathname = `${parsed.pathname.replace(/\/$/, "")}/referral`;
+      }
+      return parsed.toString();
+    } catch (error) {
+      console.error("Invalid website URL:", error);
+      return null;
+    }
+  };
+
+  const handlePreviewReferralPage = () => {
+    const previewUrl = buildReferralPreviewUrl();
+    if (!previewUrl) {
+      toast({
+        variant: "destructive",
+        title: "Missing website URL",
+        description: "Add your Website / booking URL (including https://) to preview the referral page.",
+      });
+      return;
+    }
+    window.open(previewUrl, "_blank", "noopener,noreferrer");
+    toast({
+      title: "Referral preview opened",
+      description: "If the page does not load, your landing page is not connected yet.",
+    });
+  };
+
+  const handleJumpToQaResults = () => {
+    if (typeof window === "undefined") return;
+    window.dispatchEvent(
+      new CustomEvent("dashboard:navigate", {
+        detail: { section: "performance", scrollTo: "measure-roi-interaction-hub" },
+      }),
+    );
   };
 
   const handleOnboardingSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -175,14 +275,9 @@ export function IntegrationTab({
     formData.append("primary_location", primaryLocation);
     formData.append("website_platform", websitePlatform);
     formData.append("crm_platform", crmPlatform);
-    formData.append("crm_owner", crmOwner);
-    formData.append("tech_stack", techStack);
     formData.append("avg_sale", avgSale);
     formData.append("referral_goal", referralGoal);
     formData.append("integration_notes", integrationNotes);
-    formData.append("integration_status_website", websiteStatus);
-    formData.append("integration_status_crm", crmStatus);
-    formData.append("integration_status_qa", qaStatus);
 
     try {
       await updateOnboardingAction(formData);
@@ -202,6 +297,84 @@ export function IntegrationTab({
     }
   };
 
+  const handleLogoFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!uploadLogoAction) return;
+    const file = event.target.files?.[0];
+    if (!file) return;
+    setIsUploadingLogo(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const result = await uploadLogoAction(formData);
+      if (result?.error) {
+        toast({
+          variant: "destructive",
+          title: "Logo upload failed",
+          description: result.error,
+        });
+        return;
+      }
+      if (result?.url) {
+        setSettingsLogoUrl(result.url);
+      }
+      toast({
+        title: "Logo uploaded",
+        description: "Saved to your brand settings.",
+      });
+    } catch (error) {
+      console.error("Logo upload error:", error);
+      toast({
+        variant: "destructive",
+        title: "Logo upload failed",
+        description: "Please try again.",
+      });
+    } finally {
+      setIsUploadingLogo(false);
+      if (event.target) {
+        event.target.value = "";
+      }
+    }
+  };
+
+  const handleRewardTermsFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!uploadRewardTermsAction) return;
+    const file = event.target.files?.[0];
+    if (!file) return;
+    setIsUploadingRewardTerms(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const result = await uploadRewardTermsAction(formData);
+      if (result?.error) {
+        toast({
+          variant: "destructive",
+          title: "Terms upload failed",
+          description: result.error,
+        });
+        return;
+      }
+      if (result?.url) {
+        setSettingsRewardTerms(result.url);
+      }
+      toast({
+        title: "Terms file added",
+        description: "Linked in your reward terms.",
+      });
+    } catch (error) {
+      console.error("Reward terms upload error:", error);
+      toast({
+        variant: "destructive",
+        title: "Terms upload failed",
+        description: "Please try again.",
+      });
+    } finally {
+      setIsUploadingRewardTerms(false);
+      if (event.target) {
+        event.target.value = "";
+      }
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -215,7 +388,6 @@ export function IntegrationTab({
       "reward_amount",
       String(settingsRewardAmount ?? 0),
     );
-    formData.append("upgrade_name", settingsUpgradeName);
     formData.append("reward_terms", settingsRewardTerms);
     formData.append("logo_url", settingsLogoUrl);
     formData.append(
@@ -253,6 +425,87 @@ export function IntegrationTab({
       });
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const runIntegrationQa = async () => {
+    if (isQaRunning) return;
+    setIsQaRunning(true);
+    const events = [
+      { eventType: "link_visit", label: "Referral link opened" },
+      { eventType: "signup_submitted", label: "Form submitted" },
+      { eventType: "schedule_call_clicked", label: "Meeting booked" },
+      { eventType: "conversion_completed", label: "Order completed" },
+    ];
+
+    try {
+      for (const event of events) {
+        const response = await fetch("/api/referral-events", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            businessId,
+            eventType: event.eventType,
+            source: "integration_qa",
+            device: "dashboard",
+            metadata: {
+              qa_simulated: true,
+              qa_label: event.label,
+              qa_step: "1C",
+            },
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to log ${event.eventType}`);
+        }
+      }
+
+      toast({
+        title: "Integration QA logged",
+        description: "Test events are now visible in Measure ROI and Recent Activity.",
+      });
+      setQaResultsHint(true);
+      handleJumpToQaResults();
+    } catch (error) {
+      console.error("Integration QA failed:", error);
+      toast({
+        variant: "destructive",
+        title: "Integration QA failed",
+        description: "We couldn't log the test events. Please try again.",
+      });
+    } finally {
+      setIsQaRunning(false);
+    }
+  };
+
+  const cleanupIntegrationQa = async () => {
+    if (isQaCleanupRunning) return;
+    setIsQaCleanupRunning(true);
+    try {
+      const response = await fetch("/api/referral-events/cleanup-qa", {
+        method: "POST",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to clean QA events");
+      }
+
+      const result = await response.json().catch(() => ({}));
+      toast({
+        title: "Integration QA cleared",
+        description: `${result.deleted ?? 0} QA events removed from Measure ROI.`,
+      });
+      setQaResultsHint(false);
+    } catch (error) {
+      console.error("QA cleanup failed:", error);
+      toast({
+        variant: "destructive",
+        title: "Cleanup failed",
+        description: "We couldn't remove QA events. Please try again.",
+      });
+    } finally {
+      setIsQaCleanupRunning(false);
     }
   };
 
@@ -322,6 +575,7 @@ export function IntegrationTab({
                   placeholder="https://glowatelier.com"
                   className="rounded-2xl border-2 border-slate-200"
                 />
+                <p className="text-xs text-slate-500">Include https:// to ensure links open correctly.</p>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="primary_location" className="text-sm font-bold text-slate-900">Primary location / time zone</Label>
@@ -368,27 +622,6 @@ export function IntegrationTab({
                   <option value="Other">Other</option>
                 </select>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="crm_owner" className="text-sm font-bold text-slate-900">CRM / automation owner</Label>
-                <Input
-                  id="crm_owner"
-                  type="email"
-                  value={crmOwner}
-                  onChange={(e) => setCrmOwner(e.target.value)}
-                  placeholder="ops@glowatelier.com"
-                  className="rounded-2xl border-2 border-slate-200"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="tech_stack" className="text-sm font-bold text-slate-900">Other tools / automation stack</Label>
-                <Textarea
-                  id="tech_stack"
-                  value={techStack}
-                  onChange={(e) => setTechStack(e.target.value)}
-                  placeholder="Zapier, Stripe, Shopify POS, Squarespace scheduling"
-                  className="min-h-[64px] rounded-2xl border-2 border-slate-200"
-                />
-              </div>
             </div>
             <div className="grid gap-5 md:grid-cols-2">
               <div className="space-y-2">
@@ -414,59 +647,6 @@ export function IntegrationTab({
                   placeholder="20"
                   className="rounded-2xl border-2 border-slate-200"
                 />
-              </div>
-            </div>
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-800">Integration tracker</p>
-              <div className="mt-3 grid gap-4 lg:grid-cols-3">
-                <div className="space-y-1">
-                  <Label htmlFor="status-website" className="text-sm font-semibold text-slate-900">Website embed</Label>
-                  <select
-                    id="status-website"
-                    value={websiteStatus}
-                    onChange={(e) => setWebsiteStatus(e.target.value as IntegrationStatusValue)}
-                    className="w-full rounded-2xl border-2 border-white bg-white px-3 py-2 text-sm font-semibold"
-                  >
-                    {statusOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  <p className="text-xs text-slate-600">Embed form + confirm referral link renders on your site.</p>
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="status-crm" className="text-sm font-semibold text-slate-900">CRM sync</Label>
-                  <select
-                    id="status-crm"
-                    value={crmStatus}
-                    onChange={(e) => setCrmStatus(e.target.value as IntegrationStatusValue)}
-                    className="w-full rounded-2xl border-2 border-white bg-white px-3 py-2 text-sm font-semibold"
-                  >
-                    {statusOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  <p className="text-xs text-slate-600">Export ambassadors + map referral link merge fields.</p>
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="status-qa" className="text-sm font-semibold text-slate-900">QA + go-live</Label>
-                  <select
-                    id="status-qa"
-                    value={qaStatus}
-                    onChange={(e) => setQaStatus(e.target.value as IntegrationStatusValue)}
-                    className="w-full rounded-2xl border-2 border-white bg-white px-3 py-2 text-sm font-semibold"
-                  >
-                    {statusOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  <p className="text-xs text-slate-600">Click referral link + redeem a discount test before Step 2.</p>
-                </div>
               </div>
             </div>
             <div className="space-y-2">
@@ -527,9 +707,11 @@ export function IntegrationTab({
         </div>
         {rewardsOpen && (
           <form onSubmit={handleSubmit} className="mt-6 space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor="ps_offer_text" className="text-sm font-bold text-slate-900">Public headline / offer *</Label>
-              <Textarea
+                <div className="space-y-2">
+                  <Label htmlFor="ps_offer_text" className="text-sm font-bold text-slate-900">
+                    Public headline / offer <span className="text-rose-500">*</span>
+                  </Label>
+                  <Textarea
                 id="ps_offer_text"
                 value={settingsOfferText}
                 onChange={(e) => setSettingsOfferText(e.target.value)}
@@ -549,19 +731,22 @@ export function IntegrationTab({
               </div>
               <div className="grid gap-4 lg:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="ps_new_user_reward_text" className="text-sm font-bold text-slate-900">New user reward *</Label>
+                  <Label htmlFor="ps_new_user_reward_text" className="text-sm font-bold text-slate-900">
+                    New user reward <span className="text-slate-400">(optional)</span>
+                  </Label>
                   <Textarea
                     id="ps_new_user_reward_text"
                     value={settingsNewUserRewardText}
                     onChange={(e) => setSettingsNewUserRewardText(e.target.value)}
                     placeholder="e.g., $200 welcome credit or free VIP upgrade"
                     className="min-h-[90px] rounded-2xl border-2 border-slate-200"
-                    required
                   />
                   <p className="text-xs text-slate-500">What the referred friend receives.</p>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="ps_client_reward_text" className="text-sm font-bold text-slate-900">Client / ambassador reward *</Label>
+                  <Label htmlFor="ps_client_reward_text" className="text-sm font-bold text-slate-900">
+                    Client / ambassador reward <span className="text-rose-500">*</span>
+                  </Label>
                   <Textarea
                     id="ps_client_reward_text"
                     value={settingsClientRewardText}
@@ -575,7 +760,9 @@ export function IntegrationTab({
               </div>
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="space-y-2">
-                  <Label htmlFor="ps_reward_type" className="text-sm font-bold text-slate-900">Reward type *</Label>
+                  <Label htmlFor="ps_reward_type" className="text-sm font-bold text-slate-900">
+                    Reward type <span className="text-rose-500">*</span>
+                  </Label>
                   <select
                     id="ps_reward_type"
                     value={settingsRewardType ?? "credit"}
@@ -590,7 +777,9 @@ export function IntegrationTab({
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="ps_reward_amount" className="text-sm font-bold text-slate-900">Reward amount *</Label>
+                  <Label htmlFor="ps_reward_amount" className="text-sm font-bold text-slate-900">
+                    Reward amount <span className="text-rose-500">*</span>
+                  </Label>
                   <Input
                     id="ps_reward_amount"
                     type="number"
@@ -602,17 +791,6 @@ export function IntegrationTab({
                     required
                   />
                   <p className="text-[11px] text-slate-500">If using upgrades, this can be $0.</p>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="ps_upgrade_name" className="text-sm font-bold text-slate-900">Upgrade name</Label>
-                  <Input
-                    id="ps_upgrade_name"
-                    value={settingsUpgradeName}
-                    onChange={(e) => setSettingsUpgradeName(e.target.value)}
-                    placeholder="e.g., Complimentary brow tint"
-                    className="rounded-2xl border-2 border-slate-200"
-                  />
-                  <p className="text-[11px] text-slate-500">Only used when reward type = Upgrade.</p>
                 </div>
               </div>
             </div>
@@ -677,14 +855,37 @@ export function IntegrationTab({
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="ps_logo_url" className="text-sm font-bold text-slate-900">Logo URL (optional)</Label>
-                <Input
-                  id="ps_logo_url"
-                  type="url"
-                  value={settingsLogoUrl}
-                  onChange={(e) => setSettingsLogoUrl(e.target.value)}
-                  placeholder="https://yourdomain.com/logo.png"
-                  className="rounded-2xl border-2 border-slate-200"
-                />
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Input
+                    id="ps_logo_url"
+                    type="url"
+                    value={settingsLogoUrl}
+                    onChange={(e) => setSettingsLogoUrl(e.target.value)}
+                    placeholder="https://yourdomain.com/logo.png"
+                    className="rounded-2xl border-2 border-slate-200"
+                  />
+                  {uploadLogoAction && (
+                    <>
+                      <input
+                        ref={logoFileRef}
+                        type="file"
+                        accept="image/*"
+                        onChange={handleLogoFileChange}
+                        className="hidden"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="rounded-full border-slate-200 text-slate-700"
+                        onClick={() => logoFileRef.current?.click()}
+                        disabled={isUploadingLogo}
+                      >
+                        {isUploadingLogo ? "Uploading..." : "Upload logo"}
+                      </Button>
+                    </>
+                  )}
+                </div>
+                <p className="text-xs text-slate-500">JPG or PNG, up to 1&nbsp;MB.</p>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="ps_brand_highlight_color" className="text-sm font-bold text-slate-900">Brand highlight color</Label>
@@ -724,13 +925,36 @@ export function IntegrationTab({
               </div>
               <div className="space-y-2">
                 <Label htmlFor="ps_reward_terms" className="text-sm font-bold text-slate-900">Reward terms & conditions</Label>
-                <Textarea
-                  id="ps_reward_terms"
-                  value={settingsRewardTerms}
-                  onChange={(e) => setSettingsRewardTerms(e.target.value)}
-                  placeholder="e.g., Reward paid once referred client completes first booking within 60 days."
-                  className="min-h-[80px] rounded-2xl border-2 border-slate-200"
-                />
+                <div className="space-y-3">
+                  <Textarea
+                    id="ps_reward_terms"
+                    value={settingsRewardTerms}
+                    onChange={(e) => setSettingsRewardTerms(e.target.value)}
+                    placeholder="e.g., Reward paid once referred client completes first booking within 60 days."
+                    className="min-h-[80px] rounded-2xl border-2 border-slate-200"
+                  />
+                  {uploadRewardTermsAction && (
+                    <div className="flex flex-wrap items-center gap-3">
+                      <input
+                        ref={rewardTermsFileRef}
+                        type="file"
+                        accept=".pdf,.doc,.docx,.txt"
+                        onChange={handleRewardTermsFileChange}
+                        className="hidden"
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="rounded-full border-slate-200 text-slate-700"
+                        onClick={() => rewardTermsFileRef.current?.click()}
+                        disabled={isUploadingRewardTerms}
+                      >
+                        {isUploadingRewardTerms ? "Uploading..." : "Attach terms file"}
+                      </Button>
+                      <span className="text-xs text-slate-500">PDF or DOCX, up to 2&nbsp;MB.</span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div className="flex items-center justify-between border-t border-slate-200 pt-4">
@@ -747,7 +971,10 @@ export function IntegrationTab({
         )}
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl">
+      <div
+        id="step-1c-integrations"
+        className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl scroll-mt-24"
+      >
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-600">Step 1C · Integrations</p>
@@ -758,40 +985,6 @@ export function IntegrationTab({
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <span
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                websiteStatus === "complete"
-                  ? "bg-emerald-50 text-emerald-700"
-                  : websiteStatus === "in_progress"
-                    ? "bg-amber-50 text-amber-700"
-                    : "bg-slate-100 text-slate-700"
-              }`}
-            >
-              Website: {statusOptions.find((option) => option.value === websiteStatus)?.label ?? "Not started"}
-            </span>
-            <span
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                crmStatus === "complete"
-                  ? "bg-emerald-50 text-emerald-700"
-                  : crmStatus === "in_progress"
-                    ? "bg-amber-50 text-amber-700"
-                    : "bg-slate-100 text-slate-700"
-              }`}
-            >
-              CRM: {statusOptions.find((option) => option.value === crmStatus)?.label ?? "Not started"}
-            </span>
-            <span
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                qaStatus === "complete"
-                  ? "bg-emerald-50 text-emerald-700"
-                  : qaStatus === "in_progress"
-                    ? "bg-amber-50 text-amber-700"
-                    : "bg-slate-100 text-slate-700"
-              }`}
-            >
-              Go-live: {statusOptions.find((option) => option.value === qaStatus)?.label ?? "Not started"}
-            </span>
-
             <button
               type="button"
               onClick={() => setIntegrationsOpen((prev) => !prev)}
@@ -803,258 +996,391 @@ export function IntegrationTab({
           </div>
         </div>
 
+        <Dialog open={qaConfirmOpen} onOpenChange={setQaConfirmOpen}>
+          <DialogContent className="max-w-md md:max-w-lg max-h-[80vh] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-black text-slate-900">Run Integration QA</DialogTitle>
+              <DialogDescription className="text-sm text-slate-600">
+                This will simulate the full Step 1C flow and log test events into Measure ROI
+                so you can confirm attribution end-to-end. These events are tagged as QA and can
+                be cleared afterward.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="mt-4 space-y-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4 text-sm text-emerald-900">
+              <p className="font-semibold">Events that will be logged:</p>
+              <ul className="space-y-1 text-sm text-emerald-900/90">
+                <li>• Referral link opened</li>
+                <li>• Form submitted</li>
+                <li>• Meeting booked</li>
+                <li>• Order completed</li>
+              </ul>
+            </div>
+            <div className="mt-4 space-y-3 rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
+              <p className="font-semibold text-slate-900">Where the test data should appear:</p>
+              <ul className="space-y-1">
+                <li>• Measure ROI → Interaction Hub (counts increment)</li>
+                <li>• Measure ROI → Recent Interaction Activity (source shows “integration_qa”)</li>
+                <li>• Measure ROI → Journey timeline (events listed per ambassador)</li>
+              </ul>
+            </div>
+            <div className="mt-4 space-y-2 rounded-2xl border border-amber-200 bg-amber-50/70 p-4 text-sm text-amber-900">
+              <p className="font-semibold">If something looks wrong:</p>
+              <ul className="space-y-1 text-amber-900/90">
+                <li>• No events? Refresh the dashboard after 10–15 seconds.</li>
+                <li>• Events show “Unknown source”? Check integration status and referral link setup.</li>
+                <li>• Metrics unchanged? Confirm you are viewing the correct 7/30‑day window.</li>
+              </ul>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-full"
+                onClick={handleJumpToQaResults}
+              >
+                Jump to QA results
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-full"
+                onClick={() => setQaConfirmOpen(false)}
+                disabled={isQaRunning}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="button"
+                className="rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
+                onClick={async () => {
+                  setQaConfirmOpen(false);
+                  await runIntegrationQa();
+                }}
+                disabled={isQaRunning}
+              >
+                {isQaRunning ? "Running..." : "Confirm & run QA"}
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        <Dialog open={qaCleanupConfirmOpen} onOpenChange={setQaCleanupConfirmOpen}>
+          <DialogContent className="max-w-md md:max-w-lg max-h-[80vh] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-black text-slate-900">Clear QA Events</DialogTitle>
+              <DialogDescription className="text-sm text-slate-600">
+                This removes QA test events from Measure ROI and Recent Activity so your dashboard
+                reflects only live traffic.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="mt-4 space-y-2 rounded-2xl border border-rose-200 bg-rose-50/70 p-4 text-sm text-rose-900">
+              <p className="font-semibold">This will delete QA data from:</p>
+              <ul className="space-y-1 text-rose-900/90">
+                <li>• Measure ROI → Interaction Hub counts</li>
+                <li>• Measure ROI → Recent Interaction Activity list</li>
+                <li>• Measure ROI → Journey timeline</li>
+              </ul>
+              <p className="mt-2 text-xs text-rose-900/80">
+                Only events tagged with <span className="font-semibold">source = integration_qa</span> are removed.
+              </p>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-full"
+                onClick={() => setQaCleanupConfirmOpen(false)}
+                disabled={isQaCleanupRunning}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="button"
+                className="rounded-full bg-slate-900 text-white hover:bg-slate-800"
+                onClick={async () => {
+                  setQaCleanupConfirmOpen(false);
+                  await cleanupIntegrationQa();
+                }}
+                disabled={isQaCleanupRunning}
+              >
+                {isQaCleanupRunning ? "Clearing..." : "Confirm & clear QA"}
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         {integrationsOpen ? (
-          <>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              <a href="/shopify" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify</a>
-              <a href="/wordpress" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">WordPress</a>
-              <a href="/webflow" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Webflow</a>
-              <a href="/squarespace" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Squarespace</a>
-              <a href="/wix" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Wix</a>
-              <a href="/gtm" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Tag Manager (GTM)</a>
-              <a href="/analytics" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Analytics</a>
-              <a href="/go-live" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Go-Live Checklist</a>
-              <a href="/meta-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Meta Ads</a>
-              <a href="/google-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Google Ads</a>
-              <a href="/tiktok-ads" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">TikTok Ads</a>
-              <a href="/integrations" className="rounded-2xl border border-slate-200 bg-slate-900 px-4 py-3 text-sm font-bold text-white hover:bg-slate-800">View all guides</a>
+          <div className="mt-6 space-y-6">
+            <div className="grid gap-4 lg:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Website + CMS</p>
+                <p className="mt-2 text-sm text-slate-600">Choose the platform hosting your landing page.</p>
+                <div className="mt-3 grid gap-2">
+                  <a href="/shopify" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Shopify</a>
+                  <a href="/wordpress" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">WordPress</a>
+                  <a href="/webflow" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Webflow</a>
+                  <a href="/squarespace" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Squarespace</a>
+                  <a href="/wix" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Wix</a>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">CRM + Messaging</p>
+                <p className="mt-2 text-sm text-slate-600">Connect the tools you use to message ambassadors.</p>
+                <div className="mt-3 grid gap-2">
+                  <a href="/klaviyo" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Klaviyo</a>
+                  <a href="/mailchimp" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Mailchimp</a>
+                  <a href="/hubspot" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">HubSpot</a>
+                  <a href="/make" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Make</a>
+                  <a href="/zapier" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Zapier</a>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Checkout + Scheduling</p>
+                <p className="mt-2 text-sm text-slate-600">Route conversions into Refer Labs reliably.</p>
+                <div className="mt-3 grid gap-2">
+                  <a href="/stripe" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Stripe</a>
+                  <a href="/shopify/checkout-extensibility" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Shopify Checkout</a>
+                  <a href="/square" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Square POS</a>
+                  <a href="/servicem8" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">ServiceM8</a>
+                  <a
+                    href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                  >
+                    Calendly
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-6 grid gap-6 lg:grid-cols-2">
-              <div ref={websiteGuideRef}>
-                <Collapsible open={openSection === "website"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "website" : null)}>
-                  <CollapsibleTrigger asChild>
-                    <button type="button" className="w-full text-left">
-                    <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 flex-1 text-left">
-                          <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#0abab5] to-cyan-500 flex items-center justify-center">
-                            <Globe className="h-6 w-6 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-bold text-slate-900">Website &amp; Shopify Integration</h3>
-                            <p className="text-sm text-slate-600">Embed referral pages, CTA buttons, and tracking scripts</p>
-                          </div>
-                        </div>
-                        {openSection === "website" ? (
-                          <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                        ) : (
-                          <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                        )}
-                      </div>
-                    </div>
-                    </button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-4">
-                    <WebsiteIntegrationCard
-                      siteUrl={siteUrl}
-                      businessName={businessName}
-                      offerText={offerText}
-                      clientRewardText={clientRewardText}
-                      newUserRewardText={newUserRewardText}
-                      discountCaptureSecret={discountCaptureSecret ?? null}
-                    />
-                  </CollapsibleContent>
-                </Collapsible>
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Tracking + Ads</p>
+                <p className="mt-2 text-sm text-slate-600">Validate analytics and paid channels.</p>
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  <a href="/analytics" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Analytics</a>
+                  <a href="/gtm" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Google Tag Manager</a>
+                  <a href="/meta-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Meta Ads</a>
+                  <a href="/google-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Google Ads</a>
+                  <a href="/tiktok-ads" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">TikTok Ads</a>
+                  <a href="/api-guide" className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50">Custom API</a>
+                </div>
               </div>
 
-              <Collapsible open={openSection === "crm"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "crm" : null)}>
-                <CollapsibleTrigger asChild>
-                  <button type="button" className="w-full text-left">
-                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 flex-1 text-left">
-                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
-                          <Workflow className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900">CRM &amp; Automation Setup</h3>
-                          <p className="text-sm text-slate-600">Map referral links, connect automations, and test API calls end-to-end</p>
-                        </div>
-                      </div>
-                      {openSection === "crm" ? (
-                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                      ) : (
-                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                      )}
-                    </div>
-                  </div>
-                  </button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-4">
-                  <CRMIntegrationGuideCard
-                    siteUrl={siteUrl}
-                    businessName={businessName}
-                    discountCaptureSecret={discountCaptureSecret}
-                    crmPlatform={crmPlatform}
-                  />
-                </CollapsibleContent>
-              </Collapsible>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Go-live sanity check</p>
+                <p className="mt-2 text-sm text-slate-600">
+                  Run the full checklist at /go-live before inviting ambassadors.
+                </p>
+                <a
+                  href="/go-live"
+                  className="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+                >
+                  Open go-live checklist
+                </a>
+              </div>
             </div>
 
-            <div className="mt-6 grid gap-6 lg:grid-cols-2">
-              <Collapsible open={openSection === "wordpress"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "wordpress" : null)}>
-                <CollapsibleTrigger asChild>
-                  <button type="button" className="w-full text-left">
-                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 flex-1 text-left">
-                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-sky-600 to-cyan-500 flex items-center justify-center">
-                          <Globe className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900">WordPress &amp; WooCommerce Setup</h3>
-                          <p className="text-sm text-slate-600">Add referral pages, capture discounts, and verify attribution</p>
-                        </div>
-                      </div>
-                      {openSection === "wordpress" ? (
-                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                      ) : (
-                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                      )}
-                    </div>
-                  </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">Connect to your landing page</p>
+                  <p className="mt-1 text-sm text-slate-600">
+                    Make sure referral pages, CTAs, and tracking plugins are live before you launch.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={handlePreviewReferralPage}
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                  >
+                    Preview referral page
                   </button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-4">
-                  <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
-                    <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4">
-                      <p className="text-sm font-bold text-emerald-900">Recommended: install the WordPress plugin (one click)</p>
-                      <p className="mt-1 text-sm text-emerald-900/80">
-                        Download the plugin zip, install it in WordPress, and embed any ambassador&rsquo;s referral page with a shortcode.
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-3">
-                        <a
-                          href="/referlabs-referral-integration.zip"
-                          className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-4 py-2 text-sm font-bold text-white hover:bg-emerald-800"
-                        >
-                          Download plugin zip
-                        </a>
-                        <a
-                          href="/wordpress"
-                          className="inline-flex items-center gap-2 rounded-xl border border-emerald-300 bg-white px-4 py-2 text-sm font-bold text-emerald-800 hover:bg-emerald-50"
-                        >
-                          View install guide
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <p className="text-sm font-semibold text-slate-800">Shortcode (paste into a Shortcode block)</p>
-                      <pre className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-xs font-mono leading-relaxed text-slate-700 overflow-auto">
-{`[referlabs_referral code="AMBCODE" height="720" radius="32" utm_source="wordpress"]`}
-                      </pre>
-                      <p className="text-xs text-slate-500">
-                        Required: <code className="font-mono">code</code>. Optional: <code className="font-mono">height</code>, <code className="font-mono">radius</code>, <code className="font-mono">embed</code>, <code className="font-mono">utm_campaign</code>.
-                      </p>
-                    </div>
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
-
-              <Collapsible open={openSection === "discount"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "discount" : null)}>
-                <CollapsibleTrigger asChild>
-                  <button type="button" className="w-full text-left">
-                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 flex-1 text-left">
-                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
-                          <Code2 className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900">Discount Capture Endpoint</h3>
-                          <p className="text-sm text-slate-600">Configure endpoints to capture and validate discount usage</p>
-                        </div>
-                      </div>
-                      {openSection === "discount" ? (
-                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                      ) : (
-                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                      )}
-                    </div>
-                  </div>
+                  <a
+                    href="/integrations"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                  >
+                    View landing page guides
+                  </a>
+                  <button
+                    type="button"
+                    onClick={handleJumpToQaResults}
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                  >
+                    View QA results
                   </button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-4">
-                  <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
-                    <pre className="rounded-2xl bg-slate-900/95 p-4 text-xs text-slate-100 overflow-x-auto">
-{`POST ${normalizedSite}/api/discount-codes/redeem
-Headers:
-  x-pepf-discount-secret: ${discountCaptureSecret ?? "<Generate this secret in Program Settings>"}
-Body:
-{
-  "discountCode": "LARRYLESS90",
-  "orderReference": "shopify-#1234",
-  "amount": 450,
-  "source": "shopify-checkout"
-}`}
-                    </pre>
-                    <p className="text-xs text-slate-500">
-                      Use a real ambassador discount code, run one test conversion, and confirm it appears in the dashboard with the correct attribution.
-                    </p>
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-6">
-              <Collapsible open={openSection === "checkout"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "checkout" : null)}>
-                <CollapsibleTrigger asChild>
-                  <button type="button" className="w-full text-left">
-                  <div className="rounded-3xl border-2 border-slate-200 bg-white/95 p-6 shadow-lg shadow-slate-200/60 hover:border-[#0abab5] transition-colors">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 flex-1 text-left">
-                        <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-500 flex items-center justify-center">
-                          <Wrench className="h-6 w-6 text-white" />
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600">
+                  <ShieldCheck className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">System QA snapshot</p>
+                  <p className="text-sm text-slate-600">
+                    Run quick checks to ensure attribution + cookies are ready before onboarding ambassadors.
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-3 lg:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution health</p>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="outline"
+                      className="rounded-full"
+                      onClick={runHealthCheck}
+                      disabled={isHealthRunning}
+                    >
+                      {isHealthRunning ? "Running..." : "Run check"}
+                    </Button>
+                  </div>
+                  {healthCheck ? (
+                    <div className="mt-2 text-xs text-slate-700">
+                      <p className="font-semibold">
+                        Status:{" "}
+                        <span className="uppercase">
+                          {healthCheck.status ?? (healthCheck.healthy ? "good" : "error")}
+                        </span>
+                      </p>
+                      <p>{healthCheck.recommendation ?? healthCheck.error}</p>
+                      {healthCheck.metrics?.last7Days && (
+                        <div className="mt-2 space-y-1 rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-[11px] text-slate-700">
+                          <p>
+                            Link opens: {healthCheck.metrics.last7Days.linkVisitsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.linkVisits ?? 0} attributed
+                          </p>
+                          <p>
+                            Form submits: {healthCheck.metrics.last7Days.signupsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.signups ?? 0} attributed
+                          </p>
+                          <p>
+                            Orders: {healthCheck.metrics.last7Days.conversionsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.conversions ?? 0} attributed
+                          </p>
+                          <p>
+                            Referrals: {healthCheck.metrics.last7Days.referralsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.referrals ?? 0} attributed
+                          </p>
+                          <p className="font-semibold">
+                            Attribution rate: {healthCheck.metrics.last7Days.attributionRate ?? "N/A"}
+                          </p>
                         </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900">API &amp; Checkout Integrations</h3>
-                          <p className="text-sm text-slate-600">Implement API calls for checkout, Shopify, POS, or custom flows</p>
+                      )}
+                      {(healthCheck.status === "critical" || healthCheck.status === "warning") && (
+                        <div className="mt-2 space-y-1 text-[11px] text-amber-700">
+                          <p className="font-semibold text-amber-800">Suggested fixes:</p>
+                          <p>• Open a referral link to set the attribution cookie.</p>
+                          <p>• Confirm referral links point to your landing page domain.</p>
+                          <p>• Run Integration QA and review events in Measure ROI.</p>
                         </div>
-                      </div>
-                      {openSection === "checkout" ? (
-                        <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-                      ) : (
-                        <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
                       )}
                     </div>
-                  </div>
-                  </button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-4">
-                  <div className="rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-xl shadow-slate-200/60 space-y-4">
-                    <p className="text-sm text-slate-700">
-                      This is the layer that makes attribution and rewards reliable. When a conversion happens, your system should send a server-side signal (webhook or API call).
+                  ) : (
+                    <p className="mt-2 text-xs text-slate-600">
+                      Confirms your attribution health and recent link activity.
                     </p>
-                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                      <a href="/stripe" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Stripe</a>
-                      <a href="/shopify/checkout-extensibility" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Shopify Checkout Extensibility</a>
-                      <a href="/square" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Square POS</a>
-                      <a
-                        href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50"
+                  )}
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution cookie</p>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="outline"
+                      className="rounded-full"
+                      onClick={runCookieCheck}
+                      disabled={isCookieRunning}
+                    >
+                      {isCookieRunning ? "Checking..." : "Check cookie"}
+                    </Button>
+                  </div>
+                  {cookieCheck ? (
+                    <div className="mt-2 flex items-start gap-2 text-xs text-slate-700">
+                      {cookieCheck.hasAttribution ? (
+                        <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
+                      ) : (
+                        <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
+                      )}
+                      <div>
+                        <p className="font-semibold">
+                          {cookieCheck.hasAttribution ? "Attribution active" : "No attribution cookie"}
+                        </p>
+                        <p>{cookieCheck.message ?? "Open a referral link to set the cookie."}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-xs text-slate-600">
+                      Open a referral link, then check to confirm tracking is stored.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="integration-qa-panel"
+              className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-5 shadow-sm scroll-mt-24"
+            >
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-emerald-900">Run Integration QA (recommended)</p>
+                  <p className="mt-1 text-sm text-emerald-800/80">
+                    Log test events into Measure ROI, confirm attribution, then clear the QA data before go-live.
+                  </p>
+                  {qaResultsHint && (
+                    <div className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-xs text-emerald-900">
+                      <span className="font-semibold">QA events logged.</span>
+                      <span>Open Measure ROI to verify Interaction Hub + Recent Activity.</span>
+                      <button
+                        type="button"
+                        onClick={handleJumpToQaResults}
+                        className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 font-semibold text-emerald-900 hover:bg-emerald-100"
                       >
-                        Calendly
-                      </a>
-                      <a href="/servicem8" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">ServiceM8</a>
-                      <a href="/api-guide" className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-50">Custom API</a>
+                        View QA results
+                      </button>
                     </div>
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 text-sm text-slate-700">
-                      <p className="font-bold text-slate-900">Go-live sanity check</p>
-                      <p className="mt-1">
-                        Run the full checklist at <a href="/go-live" className="font-semibold underline">/go-live</a> before inviting ambassadors.
-                      </p>
-                    </div>
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setQaConfirmOpen(true)}
+                    className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-700 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-emerald-800"
+                    disabled={isQaRunning || isQaCleanupRunning}
+                  >
+                    {isQaRunning ? "Running QA..." : "Run Integration QA"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setQaCleanupConfirmOpen(true)}
+                    className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-bold text-emerald-900 hover:bg-emerald-100"
+                    disabled={isQaCleanupRunning || isQaRunning}
+                  >
+                    {isQaCleanupRunning ? "Clearing..." : "Clear QA Events"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleJumpToQaResults}
+                    className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-bold text-emerald-900 hover:bg-emerald-100"
+                  >
+                    View QA results
+                  </button>
+                </div>
+              </div>
             </div>
-          </>
+          </div>
         ) : (
           <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-slate-700">
-            Integrations are collapsed. Expand to see the setup guides and integration cards.
+            Integrations are collapsed. Expand to see the guide library.
           </div>
         )}
       </div>

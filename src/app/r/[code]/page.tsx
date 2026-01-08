@@ -131,7 +131,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
     (customerWithBusiness.business?.reward_type === "credit"
       ? `$${rewardAmount} credit`
       : customerWithBusiness.business?.reward_type === "upgrade"
-      ? customerWithBusiness.business?.upgrade_name || "a free upgrade"
+      ? "a free upgrade"
       : customerWithBusiness.business?.reward_type === "discount"
       ? `${rewardAmount}% discount`
       : `${rewardAmount} points`);

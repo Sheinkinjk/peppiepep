@@ -6,6 +6,7 @@ import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { QuickAddCustomerForm } from "@/components/QuickAddCustomerForm";
 import { CustomersTable } from "@/components/CustomersTable";
 import { PartnerApplicationsManager } from "@/app/dashboard/components/PartnerApplicationsManager";
+import { Step2QaButton } from "@/components/dashboard/steps/Step2QaButton";
 import type { Database } from "@/types/supabase";
 import type { BusinessOnboardingMetadata } from "@/types/business";
 
@@ -23,7 +24,6 @@ interface Step2ContentProps {
   clientRewardText: string | null;
   rewardType: Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
   rewardAmount: number | null;
-  upgradeName: string | null;
   rewardTerms: string | null;
   logoUrl: string | null;
   brandHighlightColor: string | null;
@@ -33,6 +33,8 @@ interface Step2ContentProps {
   signOnBonusAmount: number | null;
   signOnBonusType: string | null;
   signOnBonusDescription: string | null;
+  uploadLogo: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
+  uploadRewardTerms: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
   safeCustomers: Customer[];
   currentAdmin: { id: string } | null;
   linkedInInfluencerCustomers: Customer[];
@@ -53,7 +55,6 @@ export function Step2Content({
   clientRewardText,
   rewardType,
   rewardAmount,
-  upgradeName,
   rewardTerms,
   logoUrl,
   brandHighlightColor,
@@ -63,6 +64,8 @@ export function Step2Content({
   signOnBonusAmount,
   signOnBonusType,
   signOnBonusDescription,
+  uploadLogo,
+  uploadRewardTerms,
   safeCustomers,
   currentAdmin,
   linkedInInfluencerCustomers,
@@ -88,11 +91,12 @@ export function Step2Content({
           clientRewardText={clientRewardText}
           rewardType={rewardType}
           rewardAmount={rewardAmount}
-          upgradeName={upgradeName}
           rewardTerms={rewardTerms}
           logoUrl={logoUrl}
           brandHighlightColor={brandHighlightColor}
           brandTone={brandTone}
+          uploadLogoAction={uploadLogo}
+          uploadRewardTermsAction={uploadRewardTerms}
           onboardingMetadata={onboardingMetadata}
           signOnBonusEnabled={signOnBonusEnabled}
           signOnBonusAmount={signOnBonusAmount}
@@ -101,6 +105,7 @@ export function Step2Content({
           updateOnboardingAction={updateBusinessOnboarding}
           updateSettingsAction={updateSettings}
         />
+        <Step2QaButton />
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="p-6 border border-slate-200 rounded-lg bg-white" data-csv-upload>

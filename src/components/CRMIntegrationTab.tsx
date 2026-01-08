@@ -2,8 +2,7 @@
 
 /* eslint-disable react/no-unescaped-entities */
 
-import { useMemo, useState } from "react";
-import Link from "next/link";
+import { useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,33 +13,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import { toast } from "@/hooks/use-toast";
 import { Database } from "@/types/supabase";
 import { fetchAllPages } from "@/lib/customers-api-client";
 import {
   ArrowRight,
-  CloudCog,
   Copy,
   Download,
   FileSpreadsheet,
   Link2,
-  Zap,
   Webhook,
-  DollarSign,
-  Database as DatabaseIcon,
   ShieldCheck,
   FileDown,
   Upload,
   Mail,
-  ChevronDown,
-  ChevronRight,
 } from "lucide-react";
-import { CustomReferralPageGuide } from "@/components/CustomReferralPageGuide";
 
 type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
 
@@ -53,7 +40,6 @@ type CRMIntegrationTabProps = {
     uniqueCodes: number;
   };
   siteUrl: string;
-  businessId: string;
   discountCaptureSecret?: string | null;
 };
 
@@ -62,7 +48,6 @@ export function CRMIntegrationTab({
   customersTotal,
   customerCounts,
   siteUrl,
-  businessId,
   discountCaptureSecret,
 }: CRMIntegrationTabProps) {
   const normalizedSite = useMemo(() => {
@@ -127,89 +112,50 @@ export function CRMIntegrationTab({
     `-d '${samplePayload.replace(/\n/g, " ")}'`,
   ].join(" \\\n  ");
 
-  const campaignSteps = [
+  const crmSteps = [
     {
       number: 1,
-      title: "Export Your Ambassador Data",
-      description: "Click the 'Export as CSV' or 'Export as Excel' button above to download your complete ambassador database. This file contains all unique referral codes, tracking links, and contact information.",
+      title: "Export your ambassador list",
+      description:
+        "Download your ambassador database so every contact has their unique referral link and discount code ready for your CRM.",
       icon: <Download className="h-5 w-5 text-emerald-600" />,
+      qa: [
+        "Confirm the export contains ambassador name, email, phone number, and the unique referral link.",
+        "Spot-check a few rows to ensure referral codes and discount codes are populated.",
+      ],
     },
     {
       number: 2,
-      title: "Import Into Your CRM",
-      description: "Open your email platform (Klaviyo, Mailchimp, etc.) and import the CSV/Excel file. Map the fields: 'referral_code', 'referral_link', 'email', 'name', and 'phone' to your CRM's custom properties or merge tags.",
+      title: "Import + map fields in your CRM",
+      description:
+        "Import the file into Klaviyo, Mailchimp, HubSpot, or your CRM. Map the fields for name, email, phone, referral link, and referral code.",
       icon: <Upload className="h-5 w-5 text-blue-600" />,
+      qa: [
+        "Verify your CRM preview shows referral_link and referral_code fields filled.",
+        "Send a test record to yourself and confirm merge tags render correctly.",
+      ],
     },
     {
       number: 3,
-      title: "Create Your Email Template",
-      description: "Design your email campaign in your CRM. Insert the 'referral_link' field as your main call-to-action button. Personalize with 'name' and mention the rewards. Example: 'Hi {{name}}, share your link {{referral_link}} and earn $25 per referral!'",
+      title: "Build your campaign template",
+      description:
+        "Design the email with a single primary CTA that uses the referral_link field. Add reward context and a short introduction.",
       icon: <Mail className="h-5 w-5 text-purple-600" />,
+      qa: [
+        "Preview the email on desktop and mobile to confirm spacing + CTA styling.",
+        "Click the CTA and confirm the referral landing page loads with attribution.",
+      ],
     },
     {
       number: 4,
-      title: "Send & Track Automatically",
-      description: "Send your campaign through your CRM. Every click is automatically tracked in Refer Labs via UTM parameters. When customers convert using the discount codes, Refer Labs credits the correct ambassador—no manual work required.",
+      title: "Run a live attribution test",
+      description:
+        "Send the campaign to yourself, click the link, and complete a test action (form submission, meeting booking, or discount redemption).",
       icon: <ShieldCheck className="h-5 w-5 text-cyan-600" />,
-    },
-  ];
-
-  const integrationPlatforms = [
-    {
-      name: "Webhooks & API",
-      icon: <Webhook className="h-6 w-6 text-indigo-600" />,
-      description: "Flexible API and webhook capabilities for custom integrations",
-      features: [
-        "Real-time conversion tracking via webhooks",
-        "RESTful API for data sync",
-        "Secure authentication with API keys",
-        "Custom event triggers and callbacks",
+      qa: [
+        "Confirm the test interaction appears in Measure ROI with the right ambassador.",
+        "If using discount codes, post a test conversion through the webhook and validate the credit.",
       ],
-      color: "from-indigo-50 to-blue-50",
-      borderColor: "border-indigo-200",
-      status: "available" as const,
-    },
-    {
-      name: "Zapier",
-      icon: <Zap className="h-6 w-6 text-orange-600" />,
-      description: "Connect Refer Labs with 5,000+ apps through Zapier automations",
-      features: [
-        "No-code workflow automation",
-        "Trigger actions when referrals convert",
-        "Sync ambassador data to spreadsheets",
-        "Send notifications to Slack, email, etc.",
-      ],
-      color: "from-orange-50 to-amber-50",
-      borderColor: "border-orange-200",
-      status: "coming_soon" as const,
-    },
-    {
-      name: "Salesforce",
-      icon: <DatabaseIcon className="h-6 w-6 text-blue-600" />,
-      description: "Sync referral program data with your Salesforce CRM",
-      features: [
-        "Bi-directional contact synchronization",
-        "Track referrals as Salesforce opportunities",
-        "Custom field mapping for ambassador data",
-        "Automated lead scoring from referrals",
-      ],
-      color: "from-blue-50 to-cyan-50",
-      borderColor: "border-blue-200",
-      status: "coming_soon" as const,
-    },
-    {
-      name: "Stripe",
-      icon: <DollarSign className="h-6 w-6 text-purple-600" />,
-      description: "Configure payouts and automate ambassador commissions through Stripe",
-      features: [
-        "Automatic ambassador payout processing",
-        "Track revenue from referral conversions",
-        "Subscription-based reward redemption",
-        "Real-time transaction monitoring",
-      ],
-      color: "from-purple-50 to-pink-50",
-      borderColor: "border-purple-200",
-      status: "available" as const,
     },
   ];
 
@@ -275,17 +221,19 @@ export function CRMIntegrationTab({
     ]);
 
     const rows = [csvHeader, ...exportRows];
-    const csvContent = rows.map((row) =>
-      row
-        .map((value) => {
-          const safeValue = value ?? "";
-          if (safeValue.includes(",") || safeValue.includes('"')) {
-            return `"${safeValue.replace(/"/g, '""')}"`;
-          }
-          return safeValue;
-        })
-        .join(","),
-    ).join("\n");
+    const csvContent = rows
+      .map((row) =>
+        row
+          .map((value) => {
+            const safeValue = value ?? "";
+            if (safeValue.includes(",") || safeValue.includes('"')) {
+              return `"${safeValue.replace(/"/g, '""')}"`;
+            }
+            return safeValue;
+          })
+          .join(","),
+      )
+      .join("\n");
 
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
@@ -354,14 +302,12 @@ export function CRMIntegrationTab({
       customer.credits?.toString() ?? "0",
     ]);
 
-    // Create Excel-compatible TSV format with UTF-16LE encoding
     const rows = [csvHeader, ...exportRows];
     const tsvContent = rows.map((row) => row.join("\t")).join("\n");
 
-    // Add BOM for Excel UTF-16LE
     const bom = "\ufeff";
     const blob = new Blob([bom + tsvContent], {
-      type: "application/vnd.ms-excel;charset=utf-16le;"
+      type: "application/vnd.ms-excel;charset=utf-16le;",
     });
 
     const url = URL.createObjectURL(blob);
@@ -406,142 +352,173 @@ export function CRMIntegrationTab({
     }
   };
 
-  const [openSection, setOpenSection] = useState<string | null>(null);
-
-  const shortcuts = [
-    { id: "export", label: "Export Data", icon: <Download className="h-4 w-4" /> },
-    { id: "crm-guide", label: "CRM Guide", icon: <Mail className="h-4 w-4" /> },
-    { id: "integrations", label: "Integrations", icon: <Zap className="h-4 w-4" /> },
-    { id: "api", label: "API", icon: <Webhook className="h-4 w-4" /> },
-  ];
-
   return (
     <div className="space-y-6">
-      <Card className="rounded-2xl border-cyan-200/70 bg-gradient-to-br from-sky-600 via-cyan-600 to-emerald-500 text-white shadow-lg p-5 sm:p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="rounded-xl bg-white/15 p-2">
-            <CloudCog className="h-6 w-6" />
+      <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex items-start gap-4">
+          <div className="rounded-2xl bg-slate-900 p-3 text-white shadow-md">
+            <Mail className="h-6 w-6" />
+          </div>
+          <div className="flex-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+              CRM Campaign Path
+            </p>
+            <h2 className="text-2xl font-black text-slate-900">Send campaigns through your CRM</h2>
+            <p className="text-sm text-slate-600 mt-2">
+              Follow this guided flow to build a campaign, verify tracking, and ensure Measure ROI updates as soon as
+              the campaign is live.
+            </p>
+          </div>
+        </div>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">Ambassadors</p>
+            <p className="text-lg font-black text-slate-900">{totalCustomers}</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">Email Ready</p>
+            <p className="text-lg font-black text-slate-900">{emailReady}</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">SMS Ready</p>
+            <p className="text-lg font-black text-slate-900">{smsReady}</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">Unique Codes</p>
+            <p className="text-lg font-black text-slate-900">{uniqueCodes}</p>
+          </div>
+        </div>
+      </Card>
+
+      <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-600">
+              Shortcut Bar
+            </p>
+            <h3 className="text-lg font-black text-slate-900">CRM launch essentials</h3>
+          </div>
+        </div>
+        <div className="mt-4 grid gap-4 lg:grid-cols-3">
+          <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-semibold text-slate-900">Export ambassador data</p>
+              <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+                Export
+              </span>
+            </div>
+            <p className="text-xs text-slate-600 mt-1">
+              Download CSV or Excel and map to your CRM merge tags.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Button onClick={handleExportCsv} size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+                <Download className="mr-2 h-3.5 w-3.5" />
+                Export CSV
+              </Button>
+              <Button onClick={handleExportExcel} size="sm" className="bg-blue-600 hover:bg-blue-700">
+                <FileSpreadsheet className="mr-2 h-3.5 w-3.5" />
+                Export Excel
+              </Button>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-semibold text-slate-900">Copy merge tags</p>
+              <span className="rounded-full bg-slate-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+                Merge
+              </span>
+            </div>
+            <p className="text-xs text-slate-600 mt-1">
+              Paste these into your CRM template to personalize the campaign.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handleCopy("{{name}}", "Merge tag {{name}}")}
+                className="bg-white"
+              >
+                <Copy className="mr-2 h-3.5 w-3.5" />
+                Copy name tag
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handleCopy("{{referral_link}}", "Merge tag {{referral_link}}")}
+                className="bg-white"
+              >
+                <Copy className="mr-2 h-3.5 w-3.5" />
+                Copy link tag
+              </Button>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-semibold text-slate-900">Check Measure ROI</p>
+              <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+                Verify
+              </span>
+            </div>
+            <p className="text-xs text-slate-600 mt-1">
+              Jump to the Interaction Hub to confirm clicks and submissions.
+            </p>
+            <a
+              href="#measure-roi-interaction-hub"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700"
+            >
+              View live tracking
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </Card>
+
+      <Card className="rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="rounded-2xl bg-emerald-600 p-2.5 text-white shadow-md">
+            <Mail className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-xl font-black leading-tight">
-              Integration Hub
-            </h2>
-            <p className="text-sm text-white/90">
-              Connect your CRM, automate workflows, and sync data
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
+              Step-by-Step CRM Guide
             </p>
+            <h3 className="text-xl font-black text-slate-900">Build, test, and launch with confidence</h3>
           </div>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
-              Ambassadors
-            </p>
-            <p className="text-xl font-black">{totalCustomers}</p>
-          </div>
-          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
-              Email
-            </p>
-            <p className="text-xl font-black">{emailReady}</p>
-          </div>
-          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
-              SMS
-            </p>
-            <p className="text-xl font-black">{smsReady}</p>
-          </div>
-          <div className="rounded-xl border border-white/30 bg-white/10 p-3">
-            <p className="text-[10px] uppercase tracking-[0.16em] text-white/75">
-              Codes
-            </p>
-            <p className="text-xl font-black">{uniqueCodes}</p>
-          </div>
-        </div>
-      </Card>
-
-      {/* Quick Navigation Shortcuts */}
-      <Card className="rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-5 shadow-md">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 mb-3">
-          Quick Actions
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {shortcuts.map((shortcut) => {
-            const isActive = openSection === shortcut.id;
-            return (
-              <button
-                key={shortcut.id}
-                onClick={() => setOpenSection(isActive ? null : shortcut.id)}
-                className={`flex items-center gap-2 rounded-2xl border-2 px-4 py-3 text-left text-sm font-semibold transition-all ${
-                  isActive
-                    ? "border-[#0abab5] bg-[#0abab5] text-white shadow-lg shadow-[#0abab5]/30"
-                    : "border-slate-200 bg-white text-slate-700 hover:border-[#0abab5] hover:bg-slate-50"
-                }`}
-              >
-                {shortcut.icon}
-                <span>{shortcut.label}</span>
-              </button>
-            );
-          })}
-        </div>
-      </Card>
-
-      <Collapsible open={openSection === "crm-guide"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "crm-guide" : null)}>
-        <CollapsibleTrigger className="w-full">
-          <Card className="rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="flex items-center justify-between">
-              <div className="flex items-start gap-4 flex-1">
-                <div className="rounded-2xl bg-emerald-600 p-3 shadow-lg">
-                  <Mail className="h-8 w-8 text-white" />
-                </div>
-                <div className="flex-1 text-left">
-                  <p className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-semibold">
-                    Step-by-Step Guide
-                  </p>
-                  <h2 className="text-2xl font-black text-slate-900 leading-tight">
-                    How to Send Campaigns With Your Own CRM
-                  </h2>
-                  <p className="text-sm text-slate-700 mt-1">
-                    Follow these steps to send referral campaigns through Klaviyo, Mailchimp, or any email platform
-                  </p>
-                </div>
-              </div>
-              {openSection === "crm-guide" ? (
-                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              ) : (
-                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              )}
-            </div>
-          </Card>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="mt-4">
-          <Card className="rounded-3xl border-2 border-emerald-200 bg-white p-6 sm:p-8 shadow-xl shadow-emerald-200/50 space-y-6">
-        <div className="grid gap-4 md:grid-cols-2">
-          {campaignSteps.map((step) => (
-            <div
-              key={step.number}
-              className="rounded-2xl border-2 border-white bg-white/80 p-5 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-600 text-white font-black text-lg shadow-md">
+        <div className="mt-5 grid gap-4 lg:grid-cols-2">
+          {crmSteps.map((step) => (
+            <div key={step.number} className="rounded-2xl border border-white bg-white/80 p-5 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white font-black">
                   {step.number}
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     {step.icon}
-                    <h3 className="text-base font-black text-slate-900">{step.title}</h3>
+                    <h4 className="text-base font-black text-slate-900">{step.title}</h4>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed">{step.description}</p>
+                  <div className="mt-3 rounded-xl border border-emerald-200/70 bg-emerald-50/70 p-3 text-xs text-slate-700">
+                    <p className="font-semibold text-emerald-800 mb-2">QA checkpoint</p>
+                    <ul className="space-y-1.5">
+                      {step.qa.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        <div className="rounded-2xl border-2 border-dashed border-emerald-300 bg-white/60 p-5">
+        <div className="mt-5 rounded-2xl border border-dashed border-emerald-300 bg-white/80 p-5">
           <div className="flex items-start gap-3">
-            <ShieldCheck className="h-6 w-6 text-emerald-600 flex-shrink-0 mt-0.5" />
+            <Mail className="h-5 w-5 text-emerald-700 mt-0.5" />
             <div>
-              <p className="font-bold text-slate-900 mb-2 text-sm">Example Email Template</p>
+              <p className="font-bold text-slate-900 mb-2 text-sm">Example email template</p>
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 font-mono text-xs text-slate-700 leading-relaxed">
                 <div className="max-w-[420px] space-y-1.5">
                   <p className="mb-2"><strong>Subject:</strong> You're invited to our VIP referral program 🎉</p>
@@ -571,172 +548,33 @@ export function CRMIntegrationTab({
                       <Copy className="h-3 w-3" />
                       Copy
                     </button>
+                    <span>,</span>
                   </p>
                   <p>Your friends get <strong>$50 off</strong> their first visit, and you earn rewards. Win-win! 💰</p>
                 </div>
               </div>
               <p className="text-xs text-slate-600 mt-3">
-                Replace <code className="bg-slate-200 px-1 rounded">{'{{name}}'}</code> and <code className="bg-slate-200 px-1 rounded">{'{{referral_link}}'}</code> with your CRM's merge tag syntax (e.g., Klaviyo uses <code className="bg-slate-200 px-1 rounded">{'{{ first_name }}'}</code>).
+                Replace <code className="bg-slate-200 px-1 rounded">{'{{name}}'}</code> and{" "}
+                <code className="bg-slate-200 px-1 rounded">{'{{referral_link}}'}</code> with your CRM's merge tag
+                syntax.
               </p>
             </div>
           </div>
         </div>
-
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5">
-          <div className="flex items-start gap-3">
-            <ShieldCheck className="h-6 w-6 text-emerald-700 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold text-slate-900 mb-2 text-sm">CRM Test Checklist (before you go live)</p>
-              <ol className="list-decimal pl-5 space-y-2 text-sm text-slate-700">
-                <li>Send a test campaign to yourself using the merge tags for name + referral link.</li>
-                <li>Open the email on desktop + mobile and confirm the layout looks polished.</li>
-                <li>Click the referral link and confirm the referral landing page loads correctly.</li>
-                <li>Check that the attribution badge shows the correct referral code.</li>
-                <li>Submit a test form or book a call and confirm the event appears in the dashboard.</li>
-                <li>Verify discount capture is working by posting a test conversion.</li>
-              </ol>
-            </div>
-          </div>
-        </div>
       </Card>
-        </CollapsibleContent>
-      </Collapsible>
 
-      <Collapsible open={openSection === "integrations"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "integrations" : null)}>
-        <CollapsibleTrigger className="w-full">
-          <Card className="rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="flex items-center justify-between">
-              <div className="flex items-start gap-4 flex-1">
-                <div className="rounded-2xl bg-indigo-600 p-3 shadow-lg">
-                  <Zap className="h-8 w-8 text-white" />
-                </div>
-                <div className="flex-1 text-left">
-                  <p className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-semibold">
-                    Platform Connections
-                  </p>
-                  <h2 className="text-2xl font-black text-slate-900 leading-tight">
-                    Integration Platforms
-                  </h2>
-                  <p className="text-sm text-slate-700 mt-1">
-                    Connect with Webhooks, Zapier, Salesforce, Stripe, and more
-                  </p>
-                </div>
-              </div>
-              {openSection === "integrations" ? (
-                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              ) : (
-                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              )}
-            </div>
-          </Card>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="mt-4">
-        <div className="grid gap-5 lg:grid-cols-2">
-        {integrationPlatforms.map((platform) => (
-          <Card key={platform.name} className={`rounded-3xl border p-6 shadow-lg bg-gradient-to-br ${platform.color} ${platform.borderColor} space-y-4`}>
-            <div className="flex items-start gap-4">
-              <div className="rounded-2xl bg-white shadow-md p-3 flex-shrink-0">
-                {platform.icon}
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-xl font-black text-slate-900">{platform.name}</h3>
-                  <span
-                    className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
-                      platform.status === "coming_soon"
-                        ? "bg-slate-100 text-slate-600"
-                        : "bg-emerald-100 text-emerald-700"
-                    }`}
-                  >
-                    {platform.status === "coming_soon" ? "Coming soon" : "Available"}
-                  </span>
-                </div>
-                <p className="text-sm text-slate-600">{platform.description}</p>
-              </div>
-            </div>
-            <ul className="space-y-2 ml-16">
-              {platform.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-2 text-sm text-slate-700">
-                  <ShieldCheck className="h-4 w-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="ml-16 pt-2">
-              {platform.name === "Webhooks & API" ? (
-                <Button
-                  type="button"
-                  variant="outline"
-                  className="h-9 px-4 text-sm"
-                  onClick={() => setOpenSection("export")}
-                >
-                  Open API setup
-                </Button>
-              ) : platform.name === "Stripe" ? (
-                <Link href="/dashboard/payouts" className="inline-flex">
-                  <Button type="button" variant="outline" className="h-9 px-4 text-sm">
-                    Go to payouts setup
-                  </Button>
-                </Link>
-              ) : (
-                <p className="text-xs text-slate-500">
-                  Coming soon. Want early access? Email{" "}
-                  <a
-                    className="text-indigo-700 underline"
-                    href={`mailto:support@referlabs.com.au?subject=${encodeURIComponent(`${platform.name} integration early access`)}`}
-                  >
-                    support@referlabs.com.au
-                  </a>
-                  .
-                </p>
-              )}
-            </div>
-          </Card>
-        ))}
-      </div>
-        </CollapsibleContent>
-      </Collapsible>
-
-      <Collapsible open={openSection === "export"} onOpenChange={(isOpen) => setOpenSection(isOpen ? "export" : null)}>
-        <CollapsibleTrigger className="w-full">
-          <Card className="rounded-3xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="flex items-center justify-between">
-              <div className="flex items-start gap-4 flex-1">
-                <div className="rounded-2xl bg-emerald-600 p-3 shadow-lg">
-                  <Download className="h-8 w-8 text-white" />
-                </div>
-                <div className="flex-1 text-left">
-                  <p className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-semibold">
-                    Data Export
-                  </p>
-                  <h2 className="text-2xl font-black text-slate-900 leading-tight">
-                    Export & API Access
-                  </h2>
-                  <p className="text-sm text-slate-700 mt-1">
-                    Download ambassador data or integrate via webhooks
-                  </p>
-                </div>
-              </div>
-              {openSection === "export" ? (
-                <ChevronDown className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              ) : (
-                <ChevronRight className="h-6 w-6 text-slate-400 flex-shrink-0" />
-              )}
-            </div>
-          </Card>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="mt-4">
       <div className="grid gap-5 lg:grid-cols-[2fr_1fr]">
-        <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
+        <Card className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm space-y-4">
           <div className="flex flex-col gap-2">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
               Universal Export
             </p>
             <h3 className="text-xl font-bold text-slate-900">
-              Export Ambassador Data for Any Platform
+              Export ambassador data for any platform
             </h3>
             <p className="text-sm text-slate-600">
-              Download your complete ambassador database with referral codes, discount codes, and tracking links. Import into any CRM, email platform, or spreadsheet tool.
+              Every export includes ambassador name, phone number, email, and the unique referral link so your CRM can
+              personalize campaigns instantly.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -756,32 +594,32 @@ export function CRMIntegrationTab({
             <div className="grid grid-cols-2 gap-2">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-3 w-3 text-emerald-600" />
-                <span>Ambassador name & contact info</span>
+                <span>Ambassador name</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-3 w-3 text-emerald-600" />
-                <span>Unique referral codes</span>
+                <span>Ambassador email</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-3 w-3 text-emerald-600" />
-                <span>Full tracking URLs with UTM</span>
+                <span>Ambassador phone number</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-3 w-3 text-emerald-600" />
-                <span>Discount codes</span>
+                <span>Unique referral link</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-3 w-3 text-emerald-600" />
-                <span>Current credit balances</span>
+                <span>Referral + discount codes</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-3 w-3 text-emerald-600" />
-                <span>Ambassador status</span>
+                <span>Credits + ambassador status</span>
               </div>
             </div>
           </div>
         </Card>
-        <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
+        <Card className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
             API Integration
           </p>
@@ -789,15 +627,15 @@ export function CRMIntegrationTab({
             <div className="flex items-start gap-3">
               <Link2 className="h-5 w-5 text-indigo-600 mt-0.5" />
               <div>
-                <p className="font-semibold text-slate-900">Conversion Webhook</p>
-                <p>POST conversions from external systems to keep payouts synchronized</p>
+                <p className="font-semibold text-slate-900">Conversion webhook</p>
+                <p>POST conversions from external systems to keep payouts synchronized.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Copy className="h-5 w-5 text-slate-600 mt-0.5" />
+              <Webhook className="h-5 w-5 text-slate-600 mt-0.5" />
               <div>
-                <p className="font-semibold text-slate-900">API Authentication</p>
-                <p>Secure endpoints with your unique capture secret key</p>
+                <p className="font-semibold text-slate-900">Secure authentication</p>
+                <p>Use the capture secret below to authenticate webhook calls.</p>
               </div>
             </div>
           </div>
@@ -808,12 +646,7 @@ export function CRMIntegrationTab({
               <button
                 type="button"
                 className="text-indigo-600 font-semibold ml-2 flex-shrink-0"
-                onClick={() =>
-                  handleCopy(
-                    discountCaptureSecret ?? "YOUR_SECRET",
-                    "API secret",
-                  )
-                }
+                onClick={() => handleCopy(discountCaptureSecret ?? "YOUR_SECRET", "API secret")}
               >
                 Copy
               </button>
@@ -831,7 +664,7 @@ export function CRMIntegrationTab({
         </Card>
       </div>
 
-      <Card className="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-lg shadow-slate-200/70 space-y-4">
+      <Card className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm space-y-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
@@ -841,7 +674,7 @@ export function CRMIntegrationTab({
               Preview the data your CRM will receive
             </h3>
             <p className="text-sm text-slate-600">
-              See exactly what data will be exported before importing into your external systems.
+              Confirm the core fields before importing into your external systems.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -921,18 +754,16 @@ export function CRMIntegrationTab({
           </p>
         )}
       </Card>
-        </CollapsibleContent>
-      </Collapsible>
 
-      <CustomReferralPageGuide siteUrl={normalizedSite} businessId={businessId} />
-
-      <div className="rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50/80 p-6 text-sm text-slate-600">
+      <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-6 text-sm text-slate-600">
         <div className="flex items-start gap-3">
           <ShieldCheck className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
           <div>
-            <p className="font-semibold text-slate-900 mb-2">How Tracking Works Across Integrations</p>
+            <p className="font-semibold text-slate-900 mb-2">Attribution notes</p>
             <p className="leading-relaxed">
-              All exported referral links include UTM tracking parameters (utm_source=crm). When customers click these links from your external CRM campaigns, Refer Labs automatically logs the visit and attributes conversions to the correct ambassador. Your external system sends campaigns, while Refer Labs handles all tracking, analytics, and payout calculations.
+              Every exported referral link includes UTM tracking (utm_source=crm). When your ambassadors click from CRM
+              emails, Refer Labs logs the visit and attributes conversions to the correct ambassador. Your CRM sends the
+              campaign; Refer Labs handles tracking, analytics, and payout calculations.
             </p>
           </div>
         </div>

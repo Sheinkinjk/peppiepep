@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Mail } from "lucide-react";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
 import { StartCampaignCTA } from "@/components/StartCampaignCTA";
@@ -10,15 +10,13 @@ type Customer = Database["public"]["Tables"]["customers"]["Row"];
 interface Step3ContentProps {
   safeCustomers: Customer[];
   siteUrl: string;
-  businessId: string;
-  businessName: string;
   discountCaptureSecret: string | null;
+  businessName: string;
   offerText: string | null;
   newUserRewardText: string | null;
   clientRewardText: string | null;
   rewardType: Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
   rewardAmount: number | null;
-  upgradeName: string | null;
   rewardTerms: string | null;
   brandHighlightColor: string | null;
   brandTone: string | null;
@@ -28,15 +26,13 @@ interface Step3ContentProps {
 export function Step3Content({
   safeCustomers,
   siteUrl,
-  businessId,
-  businessName,
   discountCaptureSecret,
+  businessName,
   offerText,
   newUserRewardText,
   clientRewardText,
   rewardType,
   rewardAmount,
-  upgradeName,
   rewardTerms,
   brandHighlightColor,
   brandTone,
@@ -44,95 +40,111 @@ export function Step3Content({
 }: Step3ContentProps) {
   return (
     <>
-      <div className="relative overflow-hidden rounded-3xl border-2 border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-teal-50 shadow-xl">
-        {/* Decorative background elements */}
-        <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br from-emerald-400/20 to-teal-400/20 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gradient-to-br from-teal-400/20 to-emerald-400/20 blur-3xl" />
+      <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex flex-col gap-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+            Launch Campaigns
+          </p>
+          <h2 className="text-2xl font-black text-slate-900">Choose your campaign path</h2>
+          <p className="text-sm text-slate-600">
+            Pick the workflow that fits your team. Both paths keep attribution and Measure ROI in sync.
+          </p>
+        </div>
+      </Card>
 
-        <div className="relative p-8 lg:p-10">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex-1 min-w-0">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500/80 to-teal-500/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm shadow-emerald-500/20">
-                <Mail className="h-4 w-4" />
-                Premium Campaigns
-              </div>
-
-              {/* Heading */}
-              <h3 className="mt-4 text-4xl font-black text-slate-900 leading-tight lg:text-5xl bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text">
-                Launch High-Converting Campaigns
-              </h3>
-
-              {/* Description */}
-              <p className="mt-3 text-lg text-slate-600 leading-relaxed max-w-2xl">
-                Send beautifully designed emails and SMS campaigns with personalized links and real-time tracking.
-              </p>
-
-              {/* Feature highlights */}
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="flex items-center gap-2 text-sm text-slate-700">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
-                    <svg className="h-3.5 w-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="font-semibold">Personal Links</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-slate-700">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
-                    <svg className="h-3.5 w-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="font-semibold">Live Tracking</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-slate-700">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
-                    <svg className="h-3.5 w-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="font-semibold">Pro Templates</span>
-                </div>
-              </div>
+      <div className="grid gap-6 lg:grid-cols-2">
+        <Card className="rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="rounded-2xl bg-emerald-600 p-2.5 text-white shadow-md">
+              <Mail className="h-5 w-5" />
             </div>
-
-            {/* CTA Card */}
-            <div className="lg:w-[380px] lg:flex-shrink-0">
-              <StartCampaignCTA />
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
+                Path 1
+              </p>
+              <h3 className="text-xl font-black text-slate-900">Send via Refer Labs</h3>
             </div>
           </div>
-        </div>
+          <p className="mt-3 text-sm text-slate-600">
+            Use the Refer Labs backend to send polished campaigns with automatic tracking, link attribution, and ROI
+            reporting included.
+          </p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-700">
+            <li className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-emerald-600" />
+              Branded templates with personalized referral links
+            </li>
+            <li className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-emerald-600" />
+              Built-in QA + tracking without external setup
+            </li>
+            <li className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-emerald-600" />
+              Live attribution tied to Measure ROI
+            </li>
+          </ul>
+          <div className="mt-6">
+            <StartCampaignCTA />
+          </div>
+        </Card>
+
+        <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="rounded-2xl bg-slate-900 p-2.5 text-white shadow-md">
+              <ArrowRight className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Path 2
+              </p>
+              <h3 className="text-xl font-black text-slate-900">Send via your CRM</h3>
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-slate-600">
+            Follow the guided CRM setup below with QA checkpoints to validate templates, tracking, and attribution before
+            you go live.
+          </p>
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+            <p className="font-semibold text-slate-900">You will validate:</p>
+            <ul className="mt-2 space-y-1.5">
+              <li>• Export fields + referral links mapped into your CRM</li>
+              <li>• Test email render + link tracking on desktop & mobile</li>
+              <li>• Measure ROI updates after a real test action</li>
+            </ul>
+          </div>
+          <a
+            href="#crm-campaign-guide"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700"
+          >
+            Open the CRM guide below
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </Card>
       </div>
 
-      <CRMIntegrationTab
-        customers={safeCustomers}
-        siteUrl={siteUrl}
-        businessId={businessId}
-        discountCaptureSecret={discountCaptureSecret}
-      />
-
-      <Card className="p-6 border border-slate-200 rounded-lg bg-white">
-        <div className="mb-6">
-          <h3 className="text-xl font-black text-slate-900">Campaign Builder</h3>
-          <p className="text-sm text-slate-600 mt-1">Design and send personalized campaigns to your ambassadors</p>
-        </div>
-        <CampaignBuilder
+      <div id="crm-campaign-guide">
+        <CRMIntegrationTab
           customers={safeCustomers}
-          businessName={businessName}
           siteUrl={siteUrl}
-          offerText={offerText}
-          newUserRewardText={newUserRewardText}
-          clientRewardText={clientRewardText}
-          rewardType={rewardType}
-          rewardAmount={rewardAmount}
-          upgradeName={upgradeName}
-          rewardTerms={rewardTerms}
-          brandHighlightColor={brandHighlightColor}
-          brandTone={brandTone}
-          uploadLogoAction={uploadLogo}
+          discountCaptureSecret={discountCaptureSecret}
         />
-      </Card>
+      </div>
+
+      <CampaignBuilder
+        customers={safeCustomers}
+        businessName={businessName}
+        siteUrl={siteUrl}
+        offerText={offerText}
+        newUserRewardText={newUserRewardText}
+        clientRewardText={clientRewardText}
+        rewardType={rewardType}
+        rewardAmount={rewardAmount}
+        rewardTerms={rewardTerms}
+        brandHighlightColor={brandHighlightColor}
+        brandTone={brandTone}
+        uploadLogoAction={uploadLogo}
+        displayMode="modal"
+      />
     </>
   );
 }

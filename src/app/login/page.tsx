@@ -10,7 +10,6 @@ import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 import { Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { Database } from "@/types/supabase";
-import { logger } from "@/lib/logger";
 
 type PasswordStrengthState = {
   score: number;
@@ -145,37 +144,23 @@ function LoginContent() {
 
     try {
       if (isSignUp) {
-        const { data, error: signUpError } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: `${location.origin}/auth/callback`,
-            data: {
-              needs_onboarding: true,
-            },
-          },
+        const response = await fetch("/api/auth/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
         });
+        const result = await response.json().catch(() => ({}));
 
-        if (signUpError) throw signUpError;
-
-        if (data.user) {
-          try {
-            await fetch("/api/auth/send-confirmation", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ email }),
-            });
-          } catch (sendError) {
-            logger.error("Failed to send confirmation via Resend:", sendError);
-          }
-
-          setConfirmationSent(true);
-          setConfirmationEmail(email);
-          setPassword("");
-          setConfirmPassword("");
-          setHasAcceptedTerms(false);
-          return;
+        if (!response.ok) {
+          throw new Error(result?.error || "Unable to create your account.");
         }
+
+        setConfirmationSent(true);
+        setConfirmationEmail(email);
+        setPassword("");
+        setConfirmPassword("");
+        setHasAcceptedTerms(false);
+        return;
       } else {
         // Use server-side sign in to ensure cookies are properly set
         const response = await fetch('/api/auth/signin', {

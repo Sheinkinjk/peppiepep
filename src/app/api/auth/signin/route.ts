@@ -3,6 +3,7 @@ import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { checkRateLimit } from '@/lib/rate-limit';
+import { buildAdminLoginAlertEmail, sendAdminNotification } from '@/lib/email-notifications';
 
 export async function POST(request: NextRequest) {
   // Rate limiting: 5 attempts per minute to prevent brute force attacks
@@ -73,6 +74,22 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    const forwardedFor = request.headers.get("x-forwarded-for");
+    const ipAddress = forwardedFor?.split(",")[0]?.trim() || null;
+    const userAgent = request.headers.get("user-agent");
+
+    await sendAdminNotification({
+      subject: `Dashboard login: ${data.user?.email ?? "Unknown user"}`,
+      html: buildAdminLoginAlertEmail({
+        email: data.user?.email ?? "Unknown",
+        timestamp: new Date().toISOString(),
+        ipAddress,
+        userAgent,
+      }),
+    }).catch((notifyError) => {
+      console.error("Failed to send login alert:", notifyError);
+    });
 
     return NextResponse.json({ success: true, user: data.user });
   } catch (error) {

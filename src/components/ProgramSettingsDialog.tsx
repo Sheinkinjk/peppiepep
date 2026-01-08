@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +16,7 @@ import {
 import { Sparkles, Settings as SettingsIcon, ChevronDown } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import type { Database } from "@/types/supabase";
-import type { BusinessOnboardingMetadata, IntegrationStatusValue } from "@/types/business";
+import type { BusinessOnboardingMetadata } from "@/types/business";
 
 type RewardType =
   Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
@@ -29,11 +29,12 @@ type ProgramSettingsDialogProps = {
   clientRewardText: string | null;
   rewardType: RewardType;
   rewardAmount: number | null;
-  upgradeName: string | null;
   rewardTerms: string | null;
   logoUrl?: string | null;
   brandHighlightColor?: string | null;
   brandTone?: string | null;
+  uploadLogoAction?: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
+  uploadRewardTermsAction?: (formData: FormData) => Promise<{ success?: string; error?: string; url?: string }>;
   onboardingMetadata?: BusinessOnboardingMetadata | null;
   signOnBonusEnabled?: boolean | null;
   signOnBonusAmount?: number | null;
@@ -51,11 +52,12 @@ export function ProgramSettingsDialog({
   clientRewardText,
   rewardType,
   rewardAmount,
-  upgradeName,
   rewardTerms,
   logoUrl,
   brandHighlightColor,
   brandTone,
+  uploadLogoAction,
+  uploadRewardTermsAction,
   onboardingMetadata,
   signOnBonusEnabled,
   signOnBonusAmount,
@@ -75,8 +77,6 @@ export function ProgramSettingsDialog({
   const [primaryLocation, setPrimaryLocation] = useState(normalizedMetadata.primaryLocation ?? "");
   const [websitePlatform, setWebsitePlatform] = useState(normalizedMetadata.websitePlatform ?? "");
   const [crmPlatform, setCrmPlatform] = useState(normalizedMetadata.crmPlatform ?? "");
-  const [crmOwner, setCrmOwner] = useState(normalizedMetadata.crmOwner ?? "");
-  const [techStack, setTechStack] = useState(normalizedMetadata.techStack ?? "");
   const [avgSale, setAvgSale] = useState(
     typeof normalizedMetadata.avgSale === "number" ? String(normalizedMetadata.avgSale) : "",
   );
@@ -84,15 +84,8 @@ export function ProgramSettingsDialog({
     typeof normalizedMetadata.referralGoal === "number" ? String(normalizedMetadata.referralGoal) : "",
   );
   const [integrationNotes, setIntegrationNotes] = useState(normalizedMetadata.integrationNotes ?? "");
-  const [websiteStatus, setWebsiteStatus] = useState<IntegrationStatusValue>(
-    normalizedMetadata.integrationStatus?.website ?? "not_started",
-  );
-  const [crmStatus, setCrmStatus] = useState<IntegrationStatusValue>(
-    normalizedMetadata.integrationStatus?.crm ?? "not_started",
-  );
-  const [qaStatus, setQaStatus] = useState<IntegrationStatusValue>(
-    normalizedMetadata.integrationStatus?.qa ?? "not_started",
-  );
+  const logoFileRef = useRef<HTMLInputElement | null>(null);
+  const rewardTermsFileRef = useRef<HTMLInputElement | null>(null);
 
   const [settingsOfferText, setSettingsOfferText] = useState(offerText ?? "");
   const [settingsNewUserRewardText, setSettingsNewUserRewardText] = useState(
@@ -106,9 +99,6 @@ export function ProgramSettingsDialog({
   );
   const [settingsRewardAmount, setSettingsRewardAmount] = useState<number>(
     rewardAmount ?? 15,
-  );
-  const [settingsUpgradeName, setSettingsUpgradeName] = useState(
-    upgradeName ?? "",
   );
   const [settingsRewardTerms, setSettingsRewardTerms] = useState(
     rewardTerms ?? "",
@@ -130,12 +120,86 @@ export function ProgramSettingsDialog({
   );
 
   const [isSaving, setIsSaving] = useState(false);
+  const [isUploadingLogo, setIsUploadingLogo] = useState(false);
+  const [isUploadingRewardTerms, setIsUploadingRewardTerms] = useState(false);
 
-  const statusOptions = [
-    { value: "not_started", label: "Not started" },
-    { value: "in_progress", label: "In progress" },
-    { value: "complete", label: "Complete" },
-  ];
+  const handleLogoFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!uploadLogoAction) return;
+    const file = event.target.files?.[0];
+    if (!file) return;
+    setIsUploadingLogo(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const result = await uploadLogoAction(formData);
+      if (result?.error) {
+        toast({
+          variant: "destructive",
+          title: "Logo upload failed",
+          description: result.error,
+        });
+        return;
+      }
+      if (result?.url) {
+        setSettingsLogoUrl(result.url);
+      }
+      toast({
+        title: "Logo uploaded",
+        description: "Saved to your brand settings.",
+      });
+    } catch (error) {
+      console.error("Logo upload error:", error);
+      toast({
+        variant: "destructive",
+        title: "Logo upload failed",
+        description: "Please try again.",
+      });
+    } finally {
+      setIsUploadingLogo(false);
+      if (event.target) {
+        event.target.value = "";
+      }
+    }
+  };
+
+  const handleRewardTermsFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!uploadRewardTermsAction) return;
+    const file = event.target.files?.[0];
+    if (!file) return;
+    setIsUploadingRewardTerms(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const result = await uploadRewardTermsAction(formData);
+      if (result?.error) {
+        toast({
+          variant: "destructive",
+          title: "Terms upload failed",
+          description: result.error,
+        });
+        return;
+      }
+      if (result?.url) {
+        setSettingsRewardTerms(result.url);
+      }
+      toast({
+        title: "Terms file added",
+        description: "Linked in your reward terms.",
+      });
+    } catch (error) {
+      console.error("Reward terms upload error:", error);
+      toast({
+        variant: "destructive",
+        title: "Terms upload failed",
+        description: "Please try again.",
+      });
+    } finally {
+      setIsUploadingRewardTerms(false);
+      if (event.target) {
+        event.target.value = "";
+      }
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -148,14 +212,9 @@ export function ProgramSettingsDialog({
     snapshotForm.append("primary_location", primaryLocation);
     snapshotForm.append("website_platform", websitePlatform);
     snapshotForm.append("crm_platform", crmPlatform);
-    snapshotForm.append("crm_owner", crmOwner);
-    snapshotForm.append("tech_stack", techStack);
     snapshotForm.append("avg_sale", avgSale);
     snapshotForm.append("referral_goal", referralGoal);
     snapshotForm.append("integration_notes", integrationNotes);
-    snapshotForm.append("integration_status_website", websiteStatus);
-    snapshotForm.append("integration_status_crm", crmStatus);
-    snapshotForm.append("integration_status_qa", qaStatus);
 
     const settingsForm = new FormData();
     settingsForm.append("offer_text", settingsOfferText);
@@ -163,7 +222,6 @@ export function ProgramSettingsDialog({
     settingsForm.append("client_reward_text", settingsClientRewardText);
     settingsForm.append("reward_type", settingsRewardType ?? "credit");
     settingsForm.append("reward_amount", String(settingsRewardAmount ?? 0));
-    settingsForm.append("upgrade_name", settingsUpgradeName);
     settingsForm.append("reward_terms", settingsRewardTerms);
     settingsForm.append("logo_url", settingsLogoUrl);
     settingsForm.append("brand_highlight_color", settingsBrandHighlightColor ?? "");
@@ -277,6 +335,7 @@ export function ProgramSettingsDialog({
                   onChange={(e) => setWebsiteUrl(e.target.value)}
                   placeholder={normalizedSite}
                 />
+                <p className="text-xs text-slate-500">Include https:// to ensure links open correctly.</p>
               </div>
               <div className="space-y-1.5">
                 <Label htmlFor="dialog_primary_location">Primary location / time zone</Label>
@@ -323,17 +382,7 @@ export function ProgramSettingsDialog({
                 </select>
               </div>
             </div>
-            <div className="grid gap-3 md:grid-cols-3">
-              <div className="space-y-1.5">
-                <Label htmlFor="dialog_crm_owner">CRM / automation owner</Label>
-                <Input
-                  id="dialog_crm_owner"
-                  type="email"
-                  value={crmOwner}
-                  onChange={(e) => setCrmOwner(e.target.value)}
-                  placeholder="ops@glowatelier.com"
-                />
-              </div>
+            <div className="grid gap-3 md:grid-cols-2">
               <div className="space-y-1.5">
                 <Label htmlFor="dialog_avg_sale">Average transaction value</Label>
                 <Input
@@ -357,63 +406,6 @@ export function ProgramSettingsDialog({
                 />
               </div>
             </div>
-            <div className="grid gap-3 md:grid-cols-3">
-              <div className="space-y-1.5">
-                <Label htmlFor="dialog_status_website">Website embed status</Label>
-                <select
-                  id="dialog_status_website"
-                  value={websiteStatus}
-                  onChange={(e) => setWebsiteStatus(e.target.value as IntegrationStatusValue)}
-                  className="w-full rounded-2xl border border-slate-200 px-3 py-2 text-sm font-semibold"
-                >
-                  {statusOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="dialog_status_crm">CRM sync status</Label>
-                <select
-                  id="dialog_status_crm"
-                  value={crmStatus}
-                  onChange={(e) => setCrmStatus(e.target.value as IntegrationStatusValue)}
-                  className="w-full rounded-2xl border border-slate-200 px-3 py-2 text-sm font-semibold"
-                >
-                  {statusOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="dialog_status_qa">QA status</Label>
-                <select
-                  id="dialog_status_qa"
-                  value={qaStatus}
-                  onChange={(e) => setQaStatus(e.target.value as IntegrationStatusValue)}
-                  className="w-full rounded-2xl border border-slate-200 px-3 py-2 text-sm font-semibold"
-                >
-                  {statusOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="dialog_tech_stack">Other tools / automation stack</Label>
-              <Textarea
-                id="dialog_tech_stack"
-                value={techStack}
-                onChange={(e) => setTechStack(e.target.value)}
-                placeholder="Zapier, Stripe, Shopify POS, Squarespace scheduling"
-                className="min-h-[60px]"
-              />
-            </div>
             <div className="space-y-1.5">
               <Label htmlFor="dialog_integration_notes">Implementation notes</Label>
               <Textarea
@@ -426,7 +418,9 @@ export function ProgramSettingsDialog({
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="ps_offer_text">Public headline / offer</Label>
+            <Label htmlFor="ps_offer_text">
+              Public headline / offer <span className="text-rose-500">*</span>
+            </Label>
             <Textarea
               id="ps_offer_text"
               value={settingsOfferText}
@@ -438,7 +432,9 @@ export function ProgramSettingsDialog({
 
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="ps_new_user_reward_text">New user reward</Label>
+              <Label htmlFor="ps_new_user_reward_text">
+                New user reward <span className="text-slate-400">(optional)</span>
+              </Label>
               <Textarea
                 id="ps_new_user_reward_text"
                 value={settingsNewUserRewardText}
@@ -451,7 +447,7 @@ export function ProgramSettingsDialog({
             </div>
             <div className="space-y-2">
               <Label htmlFor="ps_client_reward_text">
-                Client / ambassador reward
+                Client / ambassador reward <span className="text-rose-500">*</span>
               </Label>
               <Textarea
                 id="ps_client_reward_text"
@@ -467,7 +463,9 @@ export function ProgramSettingsDialog({
 
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="space-y-2">
-              <Label htmlFor="ps_reward_type">Reward type</Label>
+              <Label htmlFor="ps_reward_type">
+                Reward type <span className="text-rose-500">*</span>
+              </Label>
               <select
                 id="ps_reward_type"
                 value={settingsRewardType ?? "credit"}
@@ -485,7 +483,9 @@ export function ProgramSettingsDialog({
               </select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="ps_reward_amount">Reward amount</Label>
+              <Label htmlFor="ps_reward_amount">
+                Reward amount <span className="text-rose-500">*</span>
+              </Label>
               <Input
                 id="ps_reward_amount"
                 type="number"
@@ -500,18 +500,6 @@ export function ProgramSettingsDialog({
               />
               <p className="text-[11px] text-slate-500">
                 For credit/discount/points, enter the numeric amount.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="ps_upgrade_name">Upgrade name</Label>
-              <Input
-                id="ps_upgrade_name"
-                value={settingsUpgradeName}
-                onChange={(e) => setSettingsUpgradeName(e.target.value)}
-                placeholder="e.g., Complimentary brow tint"
-              />
-              <p className="text-[11px] text-slate-500">
-                Used when reward type is set to &quot;Upgrade&quot;.
               </p>
             </div>
           </div>
@@ -576,13 +564,35 @@ export function ProgramSettingsDialog({
 
           <div className="space-y-2">
             <Label htmlFor="ps_logo_url">Logo URL (optional)</Label>
-            <Input
-              id="ps_logo_url"
-              type="url"
-              value={settingsLogoUrl}
-              onChange={(e) => setSettingsLogoUrl(e.target.value)}
-              placeholder="https://yourdomain.com/logo.png"
-            />
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Input
+                id="ps_logo_url"
+                type="url"
+                value={settingsLogoUrl}
+                onChange={(e) => setSettingsLogoUrl(e.target.value)}
+                placeholder="https://yourdomain.com/logo.png"
+              />
+              {uploadLogoAction && (
+                <>
+                  <input
+                    ref={logoFileRef}
+                    type="file"
+                    accept="image/*"
+                    onChange={handleLogoFileChange}
+                    className="hidden"
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="rounded-full border-slate-200 text-slate-700"
+                    onClick={() => logoFileRef.current?.click()}
+                    disabled={isUploadingLogo}
+                  >
+                    {isUploadingLogo ? "Uploading..." : "Upload logo"}
+                  </Button>
+                </>
+              )}
+            </div>
             <p className="text-[11px] text-slate-500">
               Used in premium email campaigns and referral pages to keep
               everything on brand.
@@ -638,13 +648,36 @@ export function ProgramSettingsDialog({
             <Label htmlFor="ps_reward_terms">
               Reward terms &amp; conditions
             </Label>
-            <Textarea
-              id="ps_reward_terms"
-              value={settingsRewardTerms}
-              onChange={(e) => setSettingsRewardTerms(e.target.value)}
-              placeholder="e.g., Reward paid once referred client completes first booking within 60 days."
-              className="min-h-[80px]"
-            />
+            <div className="space-y-3">
+              <Textarea
+                id="ps_reward_terms"
+                value={settingsRewardTerms}
+                onChange={(e) => setSettingsRewardTerms(e.target.value)}
+                placeholder="e.g., Reward paid once referred client completes first booking within 60 days."
+                className="min-h-[80px]"
+              />
+              {uploadRewardTermsAction && (
+                <div className="flex flex-wrap items-center gap-3">
+                  <input
+                    ref={rewardTermsFileRef}
+                    type="file"
+                    accept=".pdf,.doc,.docx,.txt"
+                    onChange={handleRewardTermsFileChange}
+                    className="hidden"
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="rounded-full border-slate-200 text-slate-700"
+                    onClick={() => rewardTermsFileRef.current?.click()}
+                    disabled={isUploadingRewardTerms}
+                  >
+                    {isUploadingRewardTerms ? "Uploading..." : "Attach terms file"}
+                  </Button>
+                  <span className="text-xs text-slate-500">PDF or DOCX, up to 2&nbsp;MB.</span>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t border-slate-200 mt-2">

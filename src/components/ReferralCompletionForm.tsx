@@ -126,7 +126,7 @@ export function ReferralCompletionForm({
             </div>
             <div className="space-y-2">
               <Label htmlFor={`transaction_date_${referralId}`}>
-                Transaction date
+                Transaction date <span className="text-rose-500">*</span>
               </Label>
               <Input
                 id={`transaction_date_${referralId}`}

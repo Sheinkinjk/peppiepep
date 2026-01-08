@@ -159,6 +159,8 @@ export default function PayoutsPage() {
 
   const needsOnboarding =
     !connectStatus?.exists || !connectStatus?.account?.payouts_enabled;
+  const meetsMinimum = meetsMinimumPayout(balance?.pending_balance || 0);
+  const payoutStatusLabel = needsOnboarding ? "Setup required" : "Ready";
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -224,6 +226,38 @@ export default function PayoutsPage() {
                 {new Date(balance.last_payout_date).toLocaleDateString()}
               </p>
             )}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-6 mb-8 border border-gray-200">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
+              <span className="text-white font-bold text-sm">QA</span>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-gray-500 font-semibold">Payout QA</p>
+              <h3 className="text-lg font-bold text-gray-900">Payout readiness</h3>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3 text-sm">
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <p className="text-xs text-gray-500">Stripe status</p>
+              <p className={needsOnboarding ? "font-semibold text-yellow-700" : "font-semibold text-green-700"}>
+                {payoutStatusLabel}
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <p className="text-xs text-gray-500">Minimum payout</p>
+              <p className={meetsMinimum ? "font-semibold text-green-700" : "font-semibold text-yellow-700"}>
+                {meetsMinimum ? "Met" : `Need ${formatPayoutAmount(MINIMUM_PAYOUT)}`}
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <p className="text-xs text-gray-500">Pending commissions</p>
+              <p className="font-semibold text-gray-900">
+                {balance?.pending_commissions ?? 0}
+              </p>
+            </div>
           </div>
         </div>
 

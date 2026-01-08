@@ -46,7 +46,7 @@ function buildDefaultStoryBlocks(
   const friendReward = newUserReward || business.offer_text || "a VIP welcome credit";
   const rewardTypeLabel =
     business.reward_type === "upgrade"
-      ? business.upgrade_name || "complimentary upgrade"
+      ? "complimentary upgrade"
       : clientReward || "VIP reward";
 
   return [
@@ -146,7 +146,7 @@ export function buildCampaignSnapshot(business: BusinessSnapshotSource) {
     (snapshotRewardType === "credit"
       ? `$${snapshotRewardAmount} credit`
       : snapshotRewardType === "upgrade"
-      ? business.upgrade_name || "a free upgrade"
+      ? "a free upgrade"
       : snapshotRewardType === "discount"
       ? `${snapshotRewardAmount}% discount`
       : snapshotRewardType === "points"
@@ -160,7 +160,7 @@ export function buildCampaignSnapshot(business: BusinessSnapshotSource) {
     snapshot_client_reward_text: snapshotClientReward,
     snapshot_reward_type: snapshotRewardType,
     snapshot_reward_amount: business.reward_amount ?? null,
-    snapshot_upgrade_name: business.upgrade_name ?? null,
+    snapshot_upgrade_name: null,
     snapshot_reward_terms: business.reward_terms ?? null,
     snapshot_logo_url: business.logo_url ?? null,
     snapshot_story_blocks: storyBlocks,

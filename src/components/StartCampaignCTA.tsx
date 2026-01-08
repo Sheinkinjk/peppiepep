@@ -44,7 +44,7 @@ export function StartCampaignCTA({ className = "", variant = "default" }: StartC
             isCompact ? "text-lg" : "text-xl",
           )}
         >
-          Launch Email or SMS Campaign
+          Launch Email Campaign
         </p>
         <p className="mt-1 text-sm text-slate-600">
           Premium templates with personalized links and tracking
