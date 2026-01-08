@@ -76,6 +76,7 @@ import { ensureAbsoluteUrl } from "@/lib/urls";
 import { PartnerApplicationsManager } from "./components/PartnerApplicationsManager";
 import { DashboardRealtimeSync } from "./components/DashboardRealtimeSync";
 import { DashboardLoginTracker } from "@/components/DashboardLoginTracker";
+import { Step1DTestingTab } from "@/components/Step1DTestingTab";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 import { getCurrentAdmin } from "@/lib/admin-auth";
@@ -1812,6 +1813,42 @@ export default async function Dashboard({
 	      ),
 	      helpContent: <Step1Education />,
 	      helpText: "Start here: lock in business details, finalize rewards, and walk through the integration plan before moving on.",
+	    },
+	    {
+	      id: "testing-qa",
+	      number: 1.5,
+	      title: "Testing & QA",
+	      description: "Test landing pages, attribution cookies, and referral tracking before going live",
+	      icon: <ShieldCheck className="h-5 w-5" />,
+	      status: (hasProgramSettings && hasCustomers) ? "complete" : "incomplete",
+	      content: (
+	        <Step1DTestingTab
+	          businessId={business.id}
+	          siteUrl={businessWebsiteUrl}
+	          businessName={business.name || "Your Business"}
+	          discountCaptureSecret={business.discount_capture_secret ?? null}
+	          hasCustomers={hasCustomers}
+	          hasProgramSettings={hasProgramSettings}
+	        />
+	      ),
+	      helpContent: (
+	        <div className="space-y-4">
+	          <h3 className="text-lg font-bold text-slate-900">Testing & QA</h3>
+	          <p className="text-sm text-slate-600">
+	            This step ensures your referral system is working correctly end-to-end before launching campaigns.
+	          </p>
+	          <div className="space-y-2">
+	            <p className="text-sm font-semibold text-slate-900">What to test:</p>
+	            <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
+	              <li>Landing page loads correctly with referral codes</li>
+	              <li>Attribution cookies are set properly</li>
+	              <li>Referral tracking captures events</li>
+	              <li>All systems are configured before go-live</li>
+	            </ul>
+	          </div>
+	        </div>
+	      ),
+	      helpText: "Test your referral system before launching to ensure attribution and tracking work correctly.",
 	    },
 	    {
 	      id: "clients-ambassadors",
