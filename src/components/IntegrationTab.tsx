@@ -1172,216 +1172,126 @@ export function IntegrationTab({
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Go-live sanity check</p>
-                <p className="mt-2 text-sm text-slate-600">
-                  Run the full checklist at /go-live before inviting ambassadors.
-                </p>
-                <a
-                  href="/go-live"
-                  className="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
-                >
-                  Open go-live checklist
-                </a>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">Connect to your landing page</p>
-                  <p className="mt-1 text-sm text-slate-600">
-                    Make sure referral pages, CTAs, and tracking plugins are live before you launch.
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    type="button"
-                    onClick={handlePreviewReferralPage}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-                  >
-                    Preview referral page
-                  </button>
-                  <a
-                    href="/integrations"
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-                  >
-                    View landing page guides
-                  </a>
-                  <button
-                    type="button"
-                    onClick={handleJumpToQaResults}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-                  >
-                    View QA results
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="flex items-start gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600">
-                  <ShieldCheck className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">System QA snapshot</p>
-                  <p className="text-sm text-slate-600">
-                    Run quick checks to ensure attribution + cookies are ready before onboarding ambassadors.
-                  </p>
-                </div>
-              </div>
-              <div className="grid gap-3 lg:grid-cols-2">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution health</p>
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="outline"
-                      className="rounded-full"
-                      onClick={runHealthCheck}
-                      disabled={isHealthRunning}
-                    >
-                      {isHealthRunning ? "Running..." : "Run check"}
-                    </Button>
+              {/* Create Referral Landing Page Section */}
+              <div className="rounded-2xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white p-6 shadow-lg">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="rounded-xl bg-purple-600 p-3">
+                    <Sparkles className="h-6 w-6 text-white" />
                   </div>
-                  {healthCheck ? (
-                    <div className="mt-2 text-xs text-slate-700">
-                      <p className="font-semibold">
-                        Status:{" "}
-                        <span className="uppercase">
-                          {healthCheck.status ?? (healthCheck.healthy ? "good" : "error")}
-                        </span>
-                      </p>
-                      <p>{healthCheck.recommendation ?? healthCheck.error}</p>
-                      {healthCheck.metrics?.last7Days && (
-                        <div className="mt-2 space-y-1 rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-[11px] text-slate-700">
-                          <p>
-                            Link opens: {healthCheck.metrics.last7Days.linkVisitsAttributed ?? 0}/
-                            {healthCheck.metrics.last7Days.linkVisits ?? 0} attributed
-                          </p>
-                          <p>
-                            Form submits: {healthCheck.metrics.last7Days.signupsAttributed ?? 0}/
-                            {healthCheck.metrics.last7Days.signups ?? 0} attributed
-                          </p>
-                          <p>
-                            Orders: {healthCheck.metrics.last7Days.conversionsAttributed ?? 0}/
-                            {healthCheck.metrics.last7Days.conversions ?? 0} attributed
-                          </p>
-                          <p>
-                            Referrals: {healthCheck.metrics.last7Days.referralsAttributed ?? 0}/
-                            {healthCheck.metrics.last7Days.referrals ?? 0} attributed
-                          </p>
-                          <p className="font-semibold">
-                            Attribution rate: {healthCheck.metrics.last7Days.attributionRate ?? "N/A"}
-                          </p>
-                        </div>
-                      )}
-                      {(healthCheck.status === "critical" || healthCheck.status === "warning") && (
-                        <div className="mt-2 space-y-1 text-[11px] text-amber-700">
-                          <p className="font-semibold text-amber-800">Suggested fixes:</p>
-                          <p>• Open a referral link to set the attribution cookie.</p>
-                          <p>• Confirm referral links point to your landing page domain.</p>
-                          <p>• Run Integration QA and review events in Measure ROI.</p>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <p className="mt-2 text-xs text-slate-600">
-                      Confirms your attribution health and recent link activity.
+                  <div className="flex-1">
+                    <p className="text-sm font-bold text-purple-900 mb-1">Create my Referral Landing Page</p>
+                    <p className="text-sm text-slate-700">
+                      Your landing page is where ambassadors send their network. This is the most important page for conversions.
                     </p>
-                  )}
-                </div>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution cookie</p>
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="outline"
-                      className="rounded-full"
-                      onClick={runCookieCheck}
-                      disabled={isCookieRunning}
-                    >
-                      {isCookieRunning ? "Checking..." : "Check cookie"}
-                    </Button>
                   </div>
-                  {cookieCheck ? (
-                    <div className="mt-2 flex items-start gap-2 text-xs text-slate-700">
-                      {cookieCheck.hasAttribution ? (
-                        <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
-                      ) : (
-                        <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
-                      )}
-                      <div>
-                        <p className="font-semibold">
-                          {cookieCheck.hasAttribution ? "Attribution active" : "No attribution cookie"}
-                        </p>
-                        <p>{cookieCheck.message ?? "Open a referral link to set the cookie."}</p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="rounded-lg border border-purple-200 bg-white p-4">
+                    <p className="text-xs font-semibold text-purple-900 mb-2">Landing Page Structure</p>
+                    <div className="space-y-2 text-sm text-slate-700">
+                      <p><strong>URL Format:</strong> <code className="bg-slate-100 px-2 py-1 rounded text-xs">{siteUrl}/landing</code></p>
+                      <p><strong>With Referral Code:</strong> <code className="bg-slate-100 px-2 py-1 rounded text-xs">{siteUrl}/r/ambassador-code</code></p>
+                      <p className="text-xs text-slate-600 mt-2">
+                        When an ambassador shares their unique link, it redirects to your landing page and sets an attribution cookie to track the referral.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
+                    <p className="text-xs font-semibold text-blue-900 mb-2">How Attribution Works</p>
+                    <ol className="space-y-2 text-xs text-blue-800 list-decimal list-inside">
+                      <li>Ambassador shares link: <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/r/AMBASSADOR123</code></li>
+                      <li>Customer clicks link → redirected to your landing page</li>
+                      <li>Attribution cookie is set (lasts 30 days)</li>
+                      <li>Customer browses, fills form, or makes purchase</li>
+                      <li>Conversion is automatically attributed to the ambassador</li>
+                    </ol>
+                  </div>
+
+                  <div className="rounded-lg border border-slate-200 bg-white p-4">
+                    <p className="text-xs font-semibold text-slate-900 mb-3">Landing Page Best Practices</p>
+                    <div className="space-y-2 text-xs text-slate-700">
+                      <div className="flex gap-2">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold">Clear value proposition</p>
+                          <p className="text-slate-600">Explain what you offer and why it's valuable</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold">Strong call-to-action (CTA)</p>
+                          <p className="text-slate-600">"Get Started", "Book Now", "Shop Now" buttons</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold">Mobile responsive</p>
+                          <p className="text-slate-600">Most referrals come from mobile devices</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold">Trust signals</p>
+                          <p className="text-slate-600">Reviews, testimonials, or "referred by" messaging</p>
+                        </div>
                       </div>
                     </div>
-                  ) : (
-                    <p className="mt-2 text-xs text-slate-600">
-                      Open a referral link, then check to confirm tracking is stored.
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <button
+                      type="button"
+                      onClick={handlePreviewReferralPage}
+                      className="rounded-lg border border-purple-200 bg-white px-4 py-3 text-sm font-semibold text-purple-900 hover:bg-purple-50"
+                    >
+                      Preview referral page
+                    </button>
+                    <a
+                      href="/integrations"
+                      className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                    >
+                      Platform guides (WordPress, Shopify, etc)
+                    </a>
+                  </div>
+
+                  <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+                    <p className="text-xs font-semibold text-amber-900 mb-2">⚠️ Important: Test Your Landing Page</p>
+                    <p className="text-xs text-amber-800">
+                      After creating your landing page, go to <strong>Step 1D → Testing & QA</strong> to test attribution cookies and verify tracking is working correctly.
                     </p>
-                  )}
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div
-              id="integration-qa-panel"
-              className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-5 shadow-sm scroll-mt-24"
-            >
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-emerald-900">Run Integration QA (recommended)</p>
-                  <p className="mt-1 text-sm text-emerald-800/80">
-                    Log test events into Measure ROI, confirm attribution, then clear the QA data before go-live.
-                  </p>
-                  {qaResultsHint && (
-                    <div className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-xs text-emerald-900">
-                      <span className="font-semibold">QA events logged.</span>
-                      <span>Open Measure ROI to verify Interaction Hub + Recent Activity.</span>
-                      <button
-                        type="button"
-                        onClick={handleJumpToQaResults}
-                        className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 font-semibold text-emerald-900 hover:bg-emerald-100"
-                      >
-                        View QA results
-                      </button>
-                    </div>
-                  )}
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="rounded-lg bg-slate-100 p-2">
+                  <ShieldCheck className="h-5 w-5 text-slate-700" />
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setQaConfirmOpen(true)}
-                    className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-700 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-emerald-800"
-                    disabled={isQaRunning || isQaCleanupRunning}
-                  >
-                    {isQaRunning ? "Running QA..." : "Run Integration QA"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setQaCleanupConfirmOpen(true)}
-                    className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-bold text-emerald-900 hover:bg-emerald-100"
-                    disabled={isQaCleanupRunning || isQaRunning}
-                  >
-                    {isQaCleanupRunning ? "Clearing..." : "Clear QA Events"}
-                  </button>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-slate-900">Testing & QA moved to Step 1D</p>
+                  <p className="text-xs text-slate-600 mt-1">
+                    All testing tools (attribution checks, cookie verification, go-live checklist) are now in Step 1D for better organization.
+                  </p>
                   <button
                     type="button"
                     onClick={handleJumpToQaResults}
-                    className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-bold text-emerald-900 hover:bg-emerald-100"
+                    className="mt-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
                   >
-                    View QA results
+                    <ShieldCheck className="h-4 w-4" />
+                    Go to Step 1D - Testing & QA
                   </button>
                 </div>
               </div>
             </div>
           </div>
+
         ) : (
           <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm text-slate-700">
             Integrations are collapsed. Expand to see the guide library.
