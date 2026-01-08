@@ -92,7 +92,7 @@ export function DashboardSectionSwitcher({
         params.delete("window");
       }
       const nextUrl = `${window.location.pathname}?${params.toString()}`;
-      window.history.replaceState({}, "", nextUrl);
+      window.history.pushState({}, "", nextUrl);
     },
     [selectedWindow],
   );

@@ -1166,6 +1166,8 @@ export default async function Dashboard({
   const windowStart = Date.now() - selectedWindow * 24 * 60 * 60 * 1000;
   const previousWindowStart = windowStart - selectedWindow * 24 * 60 * 60 * 1000;
 
+  // PERFORMANCE OPTIMIZATION: Load only essential data for initial render
+  // Other data can be loaded on-demand when tabs are accessed
   const [
     { data: customers = [] },
     { data: referrals = [] },
@@ -1173,66 +1175,52 @@ export default async function Dashboard({
     campaignsResult,
     creditLedgerEntries,
     creditTotals,
-    referralEventsResult,
-    discountRedemptionsResult,
   ] = await Promise.all([
+    // Load only first 50 customers (most recently added)
     supabase
       .from("customers")
       .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
-      .eq("business_id", business.id),
+      .eq("business_id", business.id)
+      .order("created_at", { ascending: false })
+      .limit(INITIAL_CUSTOMER_TABLE_LIMIT),
+    // Load only first 25 referrals (most recent)
     supabase
       .from("referrals")
       .select(
         "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
       )
-      .eq("business_id", business.id),
+      .eq("business_id", business.id)
+      .order("created_at", { ascending: false })
+      .limit(INITIAL_REFERRAL_TABLE_LIMIT),
     supabase
       .from("partner_applications")
       .select("customer_id,source")
       .eq("business_id", business.id)
-      .in("source", ["linkedin-influencer", "linkedin-influencer-business"]),
+      .in("source", ["linkedin-influencer", "linkedin-influencer-business"])
+      .limit(50),
     (async () => {
       try {
+        // Load only recent campaigns (last 20)
         return await supabase
           .from("campaigns")
           .select("*")
           .eq("business_id", business.id)
-          .order("created_at", { ascending: false });
+          .order("created_at", { ascending: false })
+          .limit(20);
       } catch (campaignFetchError) {
         logger.warn("Campaign data unavailable:", campaignFetchError);
         return { data: [] };
       }
     })(),
-    fetchCreditLedger(supabase, business.id, { limit: 100 }),
+    // Reduce credit ledger to 25 most recent entries
+    fetchCreditLedger(supabase, business.id, { limit: 25 }),
     calculateCreditTotals(supabase, business.id, selectedWindow),
-    supabase
-      .from("referral_events")
-      .select(
-        `
-        id,
-        event_type,
-        source,
-        device,
-        created_at,
-        metadata,
-        referral_id,
-        ambassador:ambassador_id (
-          id,
-          name,
-          referral_code
-        )
-      `,
-      )
-      .eq("business_id", business.id)
-      .order("created_at", { ascending: false })
-      .limit(300),
-    supabase
-      .from("discount_redemptions")
-      .select("id, discount_code, order_reference, captured_at", { count: "exact" })
-      .eq("business_id", business.id)
-      .order("captured_at", { ascending: false })
-      .limit(50),
   ]);
+
+  // PERFORMANCE: Skip loading events and redemptions on initial load
+  // These can be loaded when the Performance tab is accessed
+  const referralEventsResult = { data: [] as never[], error: null };
+  const discountRedemptionsResult = { data: [] as never[], error: null, count: 0 };
 
   const safeReferrals =
     (referrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
@@ -2849,24 +2837,85 @@ export default async function Dashboard({
           )}
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Ambassadors</p>
-            <p className="text-xl font-black text-slate-900">{safeCustomers.length}</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Referrals</p>
-            <p className="text-xl font-black text-slate-900">{safeReferrals.length}</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Campaigns</p>
-            <p className="text-xl font-black text-slate-900">{totalCampaignsSent}</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Revenue</p>
-            <p className="text-xl font-black text-slate-900">
-              ${Math.round(totalReferralRevenue)}
+          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-purple-50 to-white px-4 py-3">
+            <div className="flex items-center justify-between">
+              <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Ambassadors</p>
+              <Users className="h-4 w-4 text-purple-500" />
+            </div>
+            <p className="text-2xl font-black text-slate-900 mt-1">{safeCustomers.length}</p>
+            <p className="text-xs text-slate-500 mt-1">
+              {linkedInInfluencerCustomers.length > 0 && `${linkedInInfluencerCustomers.length} from LinkedIn`}
             </p>
           </div>
+          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-emerald-50 to-white px-4 py-3">
+            <div className="flex items-center justify-between">
+              <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Referrals</p>
+              <TrendingUp className="h-4 w-4 text-emerald-500" />
+            </div>
+            <p className="text-2xl font-black text-slate-900 mt-1">{safeReferrals.length}</p>
+            <p className="text-xs text-slate-500 mt-1">
+              {completedReferrals} completed • {pendingReferrals} pending
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white px-4 py-3">
+            <div className="flex items-center justify-between">
+              <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Campaigns</p>
+              <Send className="h-4 w-4 text-blue-500" />
+            </div>
+            <p className="text-2xl font-black text-slate-900 mt-1">{totalCampaignsSent}</p>
+            <p className="text-xs text-slate-500 mt-1">
+              {totalMessagesSent.toLocaleString()} messages sent
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-amber-50 to-white px-4 py-3">
+            <div className="flex items-center justify-between">
+              <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Revenue</p>
+              <DollarSign className="h-4 w-4 text-amber-500" />
+            </div>
+            <p className="text-2xl font-black text-slate-900 mt-1">
+              ${Math.round(totalReferralRevenue).toLocaleString()}
+            </p>
+            <p className="text-xs text-slate-500 mt-1">
+              {averageTransactionValue > 0 && `$${Math.round(averageTransactionValue)} avg`}
+            </p>
+          </div>
+        </div>
+
+        {/* Quick Insights */}
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {totalRewards > 0 && (
+            <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
+              <div className="rounded-lg bg-purple-100 p-2">
+                <Award className="h-4 w-4 text-purple-600" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-slate-900">${totalRewards} in rewards</p>
+                <p className="text-xs text-slate-500">Issued to ambassadors</p>
+              </div>
+            </div>
+          )}
+          {manualReferralCount > 0 && (
+            <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
+              <div className="rounded-lg bg-blue-100 p-2">
+                <ClipboardList className="h-4 w-4 text-blue-600" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-slate-900">{manualReferralCount} manual entries</p>
+                <p className="text-xs text-slate-500">${Math.round(manualReferralValue).toLocaleString()} value</p>
+              </div>
+            </div>
+          )}
+          {trackedReferralCount > 0 && (
+            <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
+              <div className="rounded-lg bg-emerald-100 p-2">
+                <Link2 className="h-4 w-4 text-emerald-600" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-slate-900">{trackedReferralCount} tracked refs</p>
+                <p className="text-xs text-slate-500">Via attribution links</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

@@ -520,16 +520,17 @@ export function IntegrationTab({
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">Step 1A · Business Snapshot</p>
             <h2 className="text-2xl font-black text-slate-900 leading-tight">Document your business and integration plan</h2>
             <p className="text-sm text-slate-600">
-              Capture context for our team, map your CRM + website stack, and log verification checkpoints before moving to Step 2. You can also revisit every field inside
-              <span className="font-semibold text-slate-900"> Step 2 -&gt; Edit Program Settings</span> later on.
+              Capture context for our team, map your CRM + website stack, and log verification checkpoints before moving to Step 2.
             </p>
             {hasCustomers ? (
-              <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900">
-                Ambassadors already exist in your workspace — keep this plan updated so integrations stay aligned with live campaigns.
+              <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900 space-y-1">
+                <p>Ambassadors already exist in your workspace — keep this plan updated so integrations stay aligned with live campaigns.</p>
+                <p>You can also revisit every field inside <span className="font-semibold">Step 2 → Edit Program Settings</span> later on.</p>
               </div>
             ) : (
-              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs text-emerald-800">
-                Finish this intake before inviting ambassadors so onboarding feels effortless.
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs text-emerald-800 space-y-1">
+                <p>Finish this intake before inviting ambassadors so onboarding feels effortless.</p>
+                <p>You can also revisit every field inside <span className="font-semibold">Step 2 → Edit Program Settings</span> later on.</p>
               </div>
             )}
           </div>
@@ -1036,7 +1037,10 @@ export function IntegrationTab({
                 type="button"
                 variant="outline"
                 className="rounded-full"
-                onClick={handleJumpToQaResults}
+                onClick={() => {
+                  setQaConfirmOpen(false);
+                  handleJumpToQaResults();
+                }}
               >
                 Jump to QA results
               </Button>
