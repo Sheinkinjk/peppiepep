@@ -864,7 +864,12 @@ export function CustomersTable({
                           {referralLink}
                         </p>
                       ) : (
-                        <span className="text-xs text-slate-400">—</span>
+                        <a
+                          href="#setup-integration"
+                          className="text-xs text-amber-600 hover:text-amber-700 font-semibold underline"
+                        >
+                          Complete Step 1 to activate links
+                        </a>
                       )}
                       <div className="flex flex-wrap gap-2">
                         {referralLink && (

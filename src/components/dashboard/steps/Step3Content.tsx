@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
@@ -38,6 +41,8 @@ export function Step3Content({
   brandTone,
   uploadLogo,
 }: Step3ContentProps) {
+  const [selectedPath, setSelectedPath] = useState<"refer-labs" | "crm" | null>(null);
+
   return (
     <>
       <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -83,7 +88,7 @@ export function Step3Content({
               Live attribution tied to Measure ROI
             </li>
           </ul>
-          <div className="mt-6">
+          <div className="mt-6" onClick={() => setSelectedPath("refer-labs")}>
             <StartCampaignCTA />
           </div>
         </Card>
@@ -112,39 +117,43 @@ export function Step3Content({
               <li>• Measure ROI updates after a real test action</li>
             </ul>
           </div>
-          <a
-            href="#crm-campaign-guide"
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700"
+          <button
+            onClick={() => setSelectedPath("crm")}
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
           >
             Open the CRM guide below
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </button>
         </Card>
       </div>
 
-      <div id="crm-campaign-guide">
-        <CRMIntegrationTab
-          customers={safeCustomers}
-          siteUrl={siteUrl}
-          discountCaptureSecret={discountCaptureSecret}
-        />
-      </div>
+      {selectedPath === "crm" && (
+        <div id="crm-campaign-guide">
+          <CRMIntegrationTab
+            customers={safeCustomers}
+            siteUrl={siteUrl}
+            discountCaptureSecret={discountCaptureSecret}
+          />
+        </div>
+      )}
 
-      <CampaignBuilder
-        customers={safeCustomers}
-        businessName={businessName}
-        siteUrl={siteUrl}
-        offerText={offerText}
-        newUserRewardText={newUserRewardText}
-        clientRewardText={clientRewardText}
-        rewardType={rewardType}
-        rewardAmount={rewardAmount}
-        rewardTerms={rewardTerms}
-        brandHighlightColor={brandHighlightColor}
-        brandTone={brandTone}
-        uploadLogoAction={uploadLogo}
-        displayMode="modal"
-      />
+      {selectedPath === "refer-labs" && (
+        <CampaignBuilder
+          customers={safeCustomers}
+          businessName={businessName}
+          siteUrl={siteUrl}
+          offerText={offerText}
+          newUserRewardText={newUserRewardText}
+          clientRewardText={clientRewardText}
+          rewardType={rewardType}
+          rewardAmount={rewardAmount}
+          rewardTerms={rewardTerms}
+          brandHighlightColor={brandHighlightColor}
+          brandTone={brandTone}
+          uploadLogoAction={uploadLogo}
+          displayMode="modal"
+        />
+      )}
     </>
   );
 }
