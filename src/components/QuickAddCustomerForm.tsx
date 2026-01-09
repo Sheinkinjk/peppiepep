@@ -58,13 +58,14 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
           return;
         }
 
+        const customerName = name.trim() || "Ambassador";
         toast({
-          title: "Customer added",
-          description: (result && result.success) || "We created a referral link instantly.",
+          title: `🎉 ${customerName} is now an ambassador!`,
+          description: "Their unique referral link is ready to share",
         });
         setStatus({
           type: "success",
-          message: (result && result.success) || "Customer added and referral link issued instantly.",
+          message: `🎉 ${customerName} is now an ambassador! Their unique referral link is ready below.`,
         });
         if (result && "success" in result && result.success) {
           const referralCodeMatch = result.success.match(/[A-Z0-9]{6,}/i);

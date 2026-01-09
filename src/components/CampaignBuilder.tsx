@@ -115,6 +115,7 @@ export function CampaignBuilder({
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
   const [includeQrModule, setIncludeQrModule] = useState(true);
   const [useSavedProgramSettings, setUseSavedProgramSettings] = useState(true);
+  const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
 
   useEffect(() => {
     setAvailableCustomers(customers);
@@ -358,14 +359,13 @@ export function CampaignBuilder({
         return;
       }
 
-      const successMsg = result.success ?? "Campaign queued successfully.";
-      const recipientsText = `${selectedCount} ${selectedCount === 1 ? "recipient" : "recipients"}`;
+      const recipientsText = `${selectedCount} ${selectedCount === 1 ? "ambassador" : "ambassadors"}`;
       const statusTitle =
-        effectiveScheduleType === "later" ? "Campaign scheduled" : "Campaign sending";
+        effectiveScheduleType === "later" ? "Campaign scheduled" : "✅ Campaign sent!";
 
       notifyCampaignStatus(
         "success",
-        `${successMsg} Sent to ${recipientsText}. Track results in the Analytics tab.`,
+        `Your campaign just went out to ${recipientsText}. Watch real-time stats in Step 4 → Track Campaigns.`,
         statusTitle,
       );
       refreshOk = true;
@@ -805,6 +805,55 @@ export function CampaignBuilder({
                   </div>
                 </div>
 
+                {/* Advanced Options Toggle */}
+                <div className="border-t border-slate-200 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
+                    className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+                  >
+                    <ArrowRight className={`h-4 w-4 transition-transform ${showAdvancedOptions ? 'rotate-90' : ''}`} />
+                    {showAdvancedOptions ? 'Hide' : 'Show'} advanced options
+                  </button>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Customize sender name, reply-to email, and schedule
+                  </p>
+                </div>
+
+                {showAdvancedOptions && (
+                  <div className="space-y-4 rounded-xl border border-purple-200 bg-purple-50/30 p-4">
+                    <p className="text-xs font-semibold text-purple-900">Advanced Settings</p>
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="senderName">Sender name (From)</Label>
+                        <Input
+                          id="senderName"
+                          value={senderName}
+                          onChange={(e) => setSenderName(e.target.value)}
+                          placeholder={businessName}
+                          maxLength={80}
+                        />
+                        <p className="text-[11px] text-slate-500">
+                          Display name in recipient's inbox
+                        </p>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="replyTo">Reply-to email</Label>
+                        <Input
+                          id="replyTo"
+                          value={replyTo}
+                          onChange={(e) => setReplyTo(e.target.value)}
+                          placeholder="hello@yourdomain.com"
+                        />
+                        <p className="text-[11px] text-slate-500">
+                          Where replies go (optional)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div className="space-y-2">
                   <Label htmlFor="emailBody">Email body (editable copy)</Label>
                   <Textarea
@@ -818,34 +867,6 @@ export function CampaignBuilder({
                   <p className="text-[11px] text-slate-500">
                     If left blank, Refer Labs will generate a premium default message using your rewards and offer.
                   </p>
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="senderName">Sender name (From)</Label>
-                    <Input
-                      id="senderName"
-                      value={senderName}
-                      onChange={(e) => setSenderName(e.target.value)}
-                      placeholder={businessName}
-                      maxLength={80}
-                    />
-                    <p className="text-[11px] text-slate-500">
-                      Uses your verified Resend from-address; this controls the display name.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="replyTo">Reply-to (optional)</Label>
-                    <Input
-                      id="replyTo"
-                      value={replyTo}
-                      onChange={(e) => setReplyTo(e.target.value)}
-                      placeholder="hello@yourdomain.com"
-                    />
-                    <p className="text-[11px] text-slate-500">
-                      Where replies should go. Leave blank to use the default configuration.
-                    </p>
-                  </div>
                 </div>
               </div>
             )}
