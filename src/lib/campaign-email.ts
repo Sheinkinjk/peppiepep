@@ -321,10 +321,10 @@ function buildFallbackStoryBlocks(
   return [
     {
       type: "testimonial",
-      eyebrow: "Ambassador spotlight",
+      eyebrow: "Partner spotlight",
       quote: `"I whispered ${businessName} to my circle and they were ushered into ${newUserReward}. Every intro feels like gifting them VIP status."`,
       author: "Discreet tastemaker",
-      credential: "Private ambassador",
+      credential: "Referral partner",
     },
     {
       type: "reward_calculator",
@@ -347,7 +347,7 @@ function buildFallbackStoryBlocks(
         },
         {
           question: "Where do I track progress?",
-          answer: "In your ambassador portal - live earnings, offline logging, and payout triggers live there.",
+          answer: "In your partner portal - live earnings, offline logging, and payout triggers live there.",
         },
         {
           question: "What do friends receive?",
@@ -732,7 +732,7 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
           <tr>
             <td style="padding: 32px 40px 24px 40px;">
               <h1 style="margin: 0 0 12px 0; color: ${tone.heroText}; font-size: 32px; font-weight: 900; font-family: ${tone.headingFont}; line-height: 1.2;">
-                ${campaignName || "You're Invited to Join Our Ambassador Program"}
+                ${campaignName || "You're Invited to Join Our Referral Partner Program"}
               </h1>
               <p style="margin: 0 0 24px 0; color: ${tone.bodyText}; font-size: 17px; font-family: ${tone.bodyFont}; line-height: 1.6;">
                 Earn ${clientReward} for every friend you refer. Your friends get ${newUserReward}. It's a win-win!
@@ -799,17 +799,17 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
           </tr>
           <tr>
             <td style="padding: 0 40px 32px 40px;">
-              <!-- Ambassador Portal Section -->
+              <!-- Partner Portal Section -->
               <div style="margin: 0 0 20px 0; border-radius: 20px; border: 1px solid ${tone.borderColor}; background: ${tone.surfaceBackground}; padding: 24px; text-align: center;">
                 <h3 style="margin: 0 0 8px 0; color: ${tone.heroText}; font-size: 18px; font-weight: 800; font-family: ${tone.headingFont};">
                   Track Your Rewards
                 </h3>
                 <p style="margin: 0 0 16px 0; color: ${tone.bodyText}; font-size: 14px; line-height: 1.6;">
-                  Monitor your referrals, track earnings, and request payouts from your ambassador dashboard
+                  Monitor your referrals, track earnings, and request payouts from your partner dashboard
                 </p>
                 ${renderButton({
                   url: ambassadorPortalUrl,
-                  label: "Open Ambassador Portal",
+                  label: "Open Partner Portal",
                   background: portalButtonGradient,
                   textColor: tone.portalButtonText,
                   shadow: portalButtonShadow,
