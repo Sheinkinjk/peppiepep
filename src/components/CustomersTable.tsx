@@ -16,7 +16,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter, Trash2, Send, UserCheck } from "lucide-react";
+import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter, Trash2, Send, UserCheck, Info } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
 import { EmptyState } from "@/components/EmptyState";
@@ -48,7 +48,6 @@ type CustomersTableProps = {
   initialTotal?: number;
   siteUrl: string;
   businessId: string;
-  adjustCreditsAction: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
 };
 
 type CustomersApiResponse = {
@@ -86,7 +85,6 @@ export function CustomersTable({
   initialTotal = 0,
   siteUrl,
   businessId,
-  adjustCreditsAction,
 }: CustomersTableProps) {
   const bootstrappedCustomers = useMemo(
     () => initialCustomers.slice(0, DEFAULT_CUSTOMER_PAGE_SIZE),
@@ -99,7 +97,6 @@ export function CustomersTable({
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(DEFAULT_CUSTOMER_PAGE_SIZE);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
-  const [adjustingCustomerId, setAdjustingCustomerId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "verified" | "active" | "applicant">("all");
@@ -255,41 +252,6 @@ export function CustomersTable({
     }
   };
 
-  const handleAdjustSubmit = async (
-    e: React.FormEvent<HTMLFormElement>,
-    customerId: string,
-  ) => {
-    e.preventDefault();
-    setAdjustingCustomerId(customerId);
-
-    try {
-      const formData = new FormData(e.currentTarget);
-      const result = await adjustCreditsAction(formData);
-
-      if (result && "error" in result && result.error) {
-        toast({
-          variant: "destructive",
-          title: "Failed to update credits",
-          description: result.error,
-        });
-      } else if (result && "success" in result && result.success) {
-        toast({
-          title: "Credits updated",
-          description: result.success,
-        });
-        refreshCurrentPage();
-      }
-    } catch (error) {
-      logger.error("Adjust credits error:", error);
-      toast({
-        variant: "destructive",
-        title: "Failed to update credits",
-        description: "An unexpected error occurred. Please try again.",
-      });
-    } finally {
-      setAdjustingCustomerId(null);
-    }
-  };
 
   const toggleSelection = (customer: Customer) => {
     setSelectedIds((prev) => {
@@ -633,7 +595,27 @@ export function CustomersTable({
           <div>Application context</div>
           <div>Referral link</div>
           <div>Discount code</div>
-          <div>Status</div>
+          <div className="flex items-center gap-1.5">
+            <span>Status</span>
+            <div className="relative group">
+              <Info className="h-3.5 w-3.5 text-slate-400 cursor-help" />
+              <div className="absolute left-0 top-full mt-1 hidden group-hover:block z-50 w-72 rounded-lg border border-slate-200 bg-white p-3 shadow-lg text-xs font-normal normal-case tracking-normal text-slate-700">
+                <p className="font-semibold text-slate-900 mb-2">Status types:</p>
+                <div className="space-y-2">
+                  <div>
+                    <span className="font-semibold text-slate-800">Ambassador pending:</span> Ambassador has been added but hasn't been manually verified yet
+                  </div>
+                  <div>
+                    <span className="font-semibold text-emerald-700">Verified ambassador:</span> Ambassador is active and approved to refer
+                  </div>
+                  <div>
+                    <span className="font-semibold text-amber-700">New applicant:</span> Someone applied through your referral program and is awaiting review
+                  </div>
+                </div>
+                <p className="mt-2 text-slate-500 italic">Status updates automatically when you approve ambassadors or when applications are submitted</p>
+              </div>
+            </div>
+          </div>
           <div>Actions</div>
         </div>
         {isLoading && customers.length === 0 ? (
@@ -968,12 +950,8 @@ export function CustomersTable({
                         {displayStatus}
                       </span>
                     </div>
-                    <div className="space-y-2">
-                      <AdjustCreditsDialog
-                        customer={customer}
-                        busy={adjustingCustomerId === customer.id}
-                        onSubmit={handleAdjustSubmit}
-                      />
+                    <div className="text-xs text-slate-500">
+                      —
                     </div>
                   </div>
                 );
@@ -1094,127 +1072,3 @@ export function CustomersTable({
   );
 }
 
-type AdjustCreditsDialogProps = {
-  customer: Customer;
-  busy: boolean;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>, customerId: string) => Promise<void>;
-};
-
-function AdjustCreditsDialog({ customer, busy, onSubmit }: AdjustCreditsDialogProps) {
-  const [mode, setMode] = useState<"add" | "deduct">("add");
-  const [amount, setAmount] = useState("");
-  const signedAmount =
-    amount.trim().length === 0 ? "" : mode === "deduct" ? `-${amount.trim()}` : amount.trim();
-  const presets = [10, 25, 50, 100];
-
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="w-full justify-start">
-          <Coins className="mr-2 h-3 w-3" />
-          Adjust credits
-        </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Adjust credits</DialogTitle>
-          <DialogDescription>
-            Add or deduct credits for {customer.name ?? "this ambassador"} with context.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 mb-3">
-          <p className="font-semibold text-slate-900">Current balance</p>
-          <p className="text-2xl font-black text-emerald-600">${customer.credits ?? 0}</p>
-          <p className="text-xs text-slate-500">
-            Choose Add or Deduct below—no need to remember negative numbers.
-          </p>
-        </div>
-        <form
-          onSubmit={(event) => onSubmit(event, customer.id)}
-          className="space-y-4"
-        >
-          <input type="hidden" name="customer_id" value={customer.id} />
-          <input type="hidden" name="credit_amount" value={signedAmount} />
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label className="text-sm font-semibold">Adjustment type</Label>
-              <div className="inline-flex rounded-full border border-slate-200 bg-white p-1 text-xs font-semibold">
-                {["add", "deduct"].map((value) => (
-                  <button
-                    type="button"
-                    key={value}
-                    className={`px-4 py-1 rounded-full transition ${
-                      mode === value
-                        ? "bg-slate-900 text-white shadow"
-                        : "text-slate-600"
-                    }`}
-                    onClick={() => setMode(value as "add" | "deduct")}
-                  >
-                    {value === "add" ? "Add credit" : "Deduct credit"}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Label className="text-sm font-semibold">Preset amounts</Label>
-              <div className="flex flex-wrap gap-2">
-                {presets.map((preset) => (
-                  <Button
-                    key={preset}
-                    type="button"
-                    size="sm"
-                    variant="outline"
-                    className="h-8 border-slate-200 text-slate-600"
-                    onClick={() => setAmount(String(preset))}
-                  >
-                    ${preset}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="space-y-2">
-            <Label className="text-sm font-semibold">Custom amount</Label>
-            <div className="relative">
-              <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500">
-                $
-              </span>
-              <Input
-                type="number"
-                min="0"
-                step="1"
-                className="pl-6"
-                value={amount}
-                onChange={(event) => setAmount(event.target.value)}
-                placeholder="Enter a custom value"
-              />
-            </div>
-            <p className="text-xs text-slate-500">
-              When you choose Deduct we&apos;ll automatically subtract this amount.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor={`credit_note_${customer.id}`} className="text-sm font-semibold">
-              Internal note (optional)
-            </Label>
-            <Textarea
-              id={`credit_note_${customer.id}`}
-              name="credit_note"
-              rows={3}
-              placeholder="E.g., Added bonus for VIP referral or deducted for refunded booking."
-            />
-          </div>
-          <DialogFooter>
-            <Button
-              type="submit"
-              className="w-full sm:w-auto"
-              disabled={busy || !signedAmount}
-            >
-              {busy ? "Updating..." : "Update credits"}
-            </Button>
-          </DialogFooter>
-        </form>
-      </DialogContent>
-    </Dialog>
-  );
-}

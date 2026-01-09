@@ -819,78 +819,6 @@ export default async function Dashboard({
     }
   }
 
-  async function adjustCustomerCredits(formData: FormData) {
-    "use server";
-    try {
-      const customerId = (formData.get("customer_id") as string | null) ?? "";
-      const deltaInput = (formData.get("credit_amount") as string | null) ?? "";
-      const note = (formData.get("credit_note") as string | null) ?? null;
-
-      if (!customerId || !deltaInput) {
-        return { error: "Missing customer or credit amount." };
-      }
-
-      const delta = parseCreditDelta(deltaInput);
-      if (delta === null) {
-        return { error: "Please enter a valid dollar amount (e.g. 25 or -10)." };
-      }
-
-      const supabase = await createServerComponentClient();
-      const { data: customerRecord, error: fetchError} = await supabase
-        .from("customers")
-        .select("credits, business_id")
-        .eq("id", customerId)
-        .single();
-
-      if (fetchError || !customerRecord) {
-        logger.error("Failed to load customer credits:", fetchError);
-        return { error: "Unable to locate that customer." };
-      }
-
-      const typedCustomerRecord = customerRecord as Pick<
-        Database["public"]["Tables"]["customers"]["Row"],
-        "credits"
-      >;
-      const currentCredits = typedCustomerRecord.credits ?? 0;
-      const nextCredits = calculateNextCredits(currentCredits, delta);
-
-      const adjustCreditsPayload: Database["public"]["Tables"]["customers"]["Update"] = {
-        credits: nextCredits,
-      };
-
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: updateError } = await (supabase as any)
-        .from("customers")
-        .update(adjustCreditsPayload)
-        .eq("id", customerId);
-
-      if (updateError) {
-        logger.error("Failed to update customer credits:", updateError);
-        return { error: "Unable to update credits. Please try again." };
-      }
-
-      // Log to credit ledger for audit trail
-      try {
-        await tryInsertCreditLedgerEntry(supabase, {
-          businessId: (customerRecord as { business_id: string }).business_id,
-          customerId,
-          referralId: null, // Manual adjustments don't link to specific referrals
-          delta,
-          type: "adjustment",
-          source: "manual_adjustment",
-          note: note?.trim() || "Manual credit adjustment by admin",
-        });
-      } catch (ledgerErr) {
-        logger.warn("Credit ledger logging failed (non-fatal):", ledgerErr);
-      }
-
-      revalidatePath("/dashboard");
-      return { success: "Credits updated" };
-    } catch (error) {
-      logger.error("Adjust credits error:", error);
-      return { error: "Unexpected error while updating credits." };
-    }
-  }
 
   async function uploadLogo(formData: FormData) {
     "use server";
@@ -1890,7 +1818,6 @@ export default async function Dashboard({
 	          updateBusinessOnboarding={updateBusinessOnboarding}
 	          updateSettings={updateSettings}
 	          quickAddCustomer={quickAddCustomer}
-	          adjustCustomerCredits={adjustCustomerCredits}
 	        />
 	      ),
 	      helpContent: <Step2Education />,

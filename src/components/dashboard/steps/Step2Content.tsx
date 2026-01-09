@@ -42,7 +42,6 @@ interface Step2ContentProps {
   updateBusinessOnboarding: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
   updateSettings: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
   quickAddCustomer: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
-  adjustCustomerCredits: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
 }
 
 export function Step2Content({
@@ -73,7 +72,6 @@ export function Step2Content({
   updateBusinessOnboarding,
   updateSettings,
   quickAddCustomer,
-  adjustCustomerCredits,
 }: Step2ContentProps) {
   return (
     <>
@@ -202,7 +200,6 @@ export function Step2Content({
               initialTotal={linkedInInfluencerCustomers.length}
               siteUrl={siteUrl}
               businessId={businessId}
-              adjustCreditsAction={adjustCustomerCredits}
             />
           </Card>
         </div>
@@ -248,7 +245,6 @@ export function Step2Content({
               initialTotal={regularCustomers.length}
               siteUrl={siteUrl}
               businessId={businessId}
-              adjustCreditsAction={adjustCustomerCredits}
             />
           </>
         )}
