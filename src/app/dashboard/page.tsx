@@ -2787,6 +2787,7 @@ export default async function Dashboard({
   const sectionItems = [
     { id: "overview", label: "Overview" },
     { id: "setup-integration", label: "Business Setup & Integrations" },
+    { id: "testing-qa", label: "Testing & QA (Step 1D)" },
     { id: "clients-ambassadors", label: "Clients & Ambassadors" },
     { id: "crm-integration", label: "Launch Campaigns" },
     { id: "view-campaigns", label: "Track Campaigns" },
