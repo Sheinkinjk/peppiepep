@@ -95,8 +95,6 @@ export function DashboardOnboardingChecklist({
     }
   };
 
-  if (hidden) return null;
-
   const steps = [
     {
       id: "customers",
@@ -140,40 +138,43 @@ export function DashboardOnboardingChecklist({
   const completedCount = steps.filter((step) => step.done).length;
   const completionPercent = Math.round((completedCount / steps.length) * 100);
 
+  // Auto-hide when 100% complete, but always show if progress < 100%
+  if (completionPercent === 100) {
+    // Mark as hidden after 100% so it doesn't reappear
+    if (typeof window !== "undefined" && !hidden) {
+      window.localStorage.setItem(HIDDEN_STORAGE_KEY, "1");
+    }
+    return null;
+  }
+
   return (
-    <Card className="mb-8 border-dashed border-slate-200 bg-white/80 p-4 shadow-sm sm:p-5">
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+    <Card className="mb-8 border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-md sm:p-5">
+      <div className="mb-4">
+        <div className="flex items-center gap-2 mb-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">
             Getting started
           </p>
-          <h2 className="text-base font-bold text-slate-900 sm:text-lg">
-            Launch checklist
-          </h2>
-          <p className="mt-1 text-xs text-slate-600">
-            Follow these four steps once and your dashboard will stay fully
-            live and connected.
-          </p>
-          <div className="mt-3 flex items-center gap-3">
-            <div className="h-2 w-36 overflow-hidden rounded-full bg-slate-200">
-              <div
-                className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300"
-                style={{ width: `${completionPercent}%` }}
-              />
-            </div>
-            <span className="text-[11px] font-semibold text-slate-500">
-              {completedCount}/{steps.length} complete
-            </span>
+          <div className="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-bold text-white">
+            {completedCount}/{steps.length}
           </div>
         </div>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="text-xs text-slate-500 hover:text-slate-700"
-          onClick={markHidden}
-        >
-          Hide checklist
-        </Button>
+        <h2 className="text-base font-bold text-slate-900 sm:text-lg">
+          Complete these 4 steps to go live
+        </h2>
+        <p className="mt-1 text-xs text-slate-600">
+          Each step takes less than 5 minutes. Your progress is saved automatically.
+        </p>
+        <div className="mt-3 flex items-center gap-3">
+          <div className="h-2.5 flex-1 max-w-xs overflow-hidden rounded-full bg-emerald-200">
+            <div
+              className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 transition-all duration-500"
+              style={{ width: `${completionPercent}%` }}
+            />
+          </div>
+          <span className="text-xs font-bold text-emerald-700">
+            {completionPercent}%
+          </span>
+        </div>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">

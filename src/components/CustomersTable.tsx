@@ -488,13 +488,36 @@ export function CustomersTable({
 
   return (
     <div className="space-y-4">
+      {/* Status Legend */}
+      <div className="rounded-xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-3">
+        <p className="text-xs font-semibold text-slate-700 mb-2">Status Guide:</p>
+        <div className="flex flex-wrap gap-3 text-xs">
+          <div className="flex items-center gap-1.5">
+            <div className="h-2 w-2 rounded-full bg-slate-400"></div>
+            <span className="text-slate-600">Pending</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
+            <span className="text-slate-600">Verified</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+            <span className="text-slate-600">Active</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="h-2 w-2 rounded-full bg-amber-500"></div>
+            <span className="text-slate-600">Applicant</span>
+          </div>
+        </div>
+      </div>
+
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-sm font-semibold text-slate-900">
             Ambassador directory
           </p>
           <p className="text-xs text-slate-500">
-            Search, filter, and take action on high-value customers instantly.
+            {total > 0 ? `${total} ambassador${total === 1 ? '' : 's'} total` : 'No ambassadors yet'}
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">

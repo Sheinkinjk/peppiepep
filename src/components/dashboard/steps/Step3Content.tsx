@@ -50,42 +50,44 @@ export function Step3Content({
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
             Launch Campaigns
           </p>
-          <h2 className="text-2xl font-black text-slate-900">Choose your campaign path</h2>
+          <h2 className="text-2xl font-black text-slate-900">How do you want to send campaigns?</h2>
           <p className="text-sm text-slate-600">
-            Pick the workflow that fits your team. Both paths keep attribution and Measure ROI in sync.
+            Choose the method that works best for you. Quick Send is recommended if you're getting started.
           </p>
         </div>
       </Card>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 shadow-sm">
+        <Card className="rounded-3xl border-2 border-emerald-300 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 shadow-md relative">
+          <div className="absolute top-4 right-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-sm">
+            RECOMMENDED
+          </div>
           <div className="flex items-center gap-3">
             <div className="rounded-2xl bg-emerald-600 p-2.5 text-white shadow-md">
               <Mail className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
-                Path 1
+              <h3 className="text-xl font-black text-slate-900">Quick Send</h3>
+              <p className="text-xs font-medium text-emerald-700">
+                Perfect for getting started
               </p>
-              <h3 className="text-xl font-black text-slate-900">Send via Refer Labs</h3>
             </div>
           </div>
           <p className="mt-3 text-sm text-slate-600">
-            Use the Refer Labs backend to send polished campaigns with automatic tracking, link attribution, and ROI
-            reporting included.
+            Send your first campaign in under 2 minutes. Built-in email templates, automatic tracking, and instant ROI reporting.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
             <li className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-emerald-600" />
-              Branded templates with personalized referral links
+              Professional branded templates ready to use
             </li>
             <li className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-emerald-600" />
-              Built-in QA + tracking without external setup
+              No external tools needed - send right now
             </li>
             <li className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-emerald-600" />
-              Live attribution tied to Measure ROI
+              Automatic attribution and ROI tracking
             </li>
           </ul>
           <div className="mt-6" onClick={() => setSelectedPath("refer-labs")}>
@@ -95,33 +97,32 @@ export function Step3Content({
 
         <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="rounded-2xl bg-slate-900 p-2.5 text-white shadow-md">
+            <div className="rounded-2xl bg-purple-600 p-2.5 text-white shadow-md">
               <ArrowRight className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Path 2
+              <h3 className="text-xl font-black text-slate-900">Use My Email Tool</h3>
+              <p className="text-xs font-medium text-slate-500">
+                For advanced users
               </p>
-              <h3 className="text-xl font-black text-slate-900">Send via your CRM</h3>
             </div>
           </div>
           <p className="mt-3 text-sm text-slate-600">
-            Follow the guided CRM setup below with QA checkpoints to validate templates, tracking, and attribution before
-            you go live.
+            Already using Mailchimp, HubSpot, or Klaviyo? Follow our integration guide to connect your existing email platform while maintaining full attribution tracking.
           </p>
-          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
-            <p className="font-semibold text-slate-900">You will validate:</p>
+          <div className="mt-5 rounded-2xl border border-purple-100 bg-purple-50 p-4 text-sm text-slate-700">
+            <p className="font-semibold text-slate-900">What you'll set up:</p>
             <ul className="mt-2 space-y-1.5">
-              <li>• Export fields + referral links mapped into your CRM</li>
-              <li>• Test email render + link tracking on desktop & mobile</li>
-              <li>• Measure ROI updates after a real test action</li>
+              <li>• Export ambassador data with referral links</li>
+              <li>• Configure merge tags in your email tool</li>
+              <li>• Test attribution tracking end-to-end</li>
             </ul>
           </div>
           <button
             onClick={() => setSelectedPath("crm")}
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
+            className="mt-5 inline-flex items-center gap-2 rounded-lg border-2 border-purple-200 bg-purple-50 px-4 py-2.5 text-sm font-semibold text-purple-700 hover:bg-purple-100 hover:border-purple-300 transition-colors"
           >
-            Open the CRM guide below
+            View Integration Guide
             <ArrowRight className="h-4 w-4" />
           </button>
         </Card>

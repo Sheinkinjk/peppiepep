@@ -19,7 +19,6 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { GuidedStep } from "@/components/GuidedStepFlow";
-import { DashboardWelcomeModal } from "@/components/DashboardWelcomeModal";
 import { MeasureRoiQaPanel } from "@/components/dashboard/MeasureRoiQaPanel";
 import { DashboardSectionSwitcher, SectionLink } from "@/components/dashboard/DashboardSectionSwitcher";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
@@ -2988,10 +2987,6 @@ export default async function Dashboard({
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
-        <DashboardWelcomeModal
-          businessName={business.name || "Your Business"}
-        />
-
         <DashboardRealtimeSync businessId={business.id} />
         <DashboardLoginTracker />
 
