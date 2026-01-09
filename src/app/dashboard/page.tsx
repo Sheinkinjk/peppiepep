@@ -38,6 +38,7 @@ import { Step1Education, Step2Education, Step3Education, Step4Education, Step5Ed
 import { Step2Content } from "@/components/dashboard/steps/Step2Content";
 import { Step3Content } from "@/components/dashboard/steps/Step3Content";
 import { Step4Content } from "@/components/dashboard/steps/Step4Content";
+import { RoiSummaryCards } from "@/components/dashboard/RoiSummaryCards";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
 import { IntegrationTab } from "@/components/IntegrationTab";
 import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
@@ -1895,6 +1896,7 @@ export default async function Dashboard({
 	          : "incomplete",
 	      content: (
 	        <div className="space-y-6">
+	        <RoiSummaryCards allReferrals={safeReferrals} safeCustomers={safeCustomers} />
 	        <Tabs defaultValue="referrals">
 	          <div className="rounded-3xl border border-slate-200/80 bg-white/70 p-2 shadow-inner shadow-slate-200/80">
             <TabsList className="flex flex-wrap gap-2 rounded-2xl bg-slate-100/80 p-1 text-xs font-semibold uppercase tracking-[0.08em] text-slate-600">
