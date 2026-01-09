@@ -36,7 +36,7 @@ const referralPillars = [
     number: "04",
     title: "Automated concierge follow-ups",
     copy:
-      "SMS + email journeys keep ambassadors nudged at the perfect cadence with AI-drafted talking points, brand gradients, and instant proofs of reward.",
+      "SMS + email journeys keep referral partners nudged at the perfect cadence with AI-drafted talking points, brand gradients, and instant proofs of reward.",
     chipBg: "bg-[#5ce1e6] text-white",
   },
   {
@@ -115,7 +115,7 @@ const referralNumbers = [
     value: "5 Minutes",
     title: "To Get Started",
     copy:
-      "No coding required. Create your account and start inviting ambassadors in minutes. Full deployment and customization available when you're ready.",
+      "No coding required. Create your account and start inviting referral partners in minutes. Full deployment and customization available when you're ready.",
     gradient: "from-white/95 to-white/95",
     accentIcon: TrendingUp,
     accentBg: "bg-[#5ce1e6]",
@@ -185,7 +185,7 @@ const clientTestimonials = [
   },
   {
     quote:
-      "Refer Labs turned our happy customers into a measurable acquisition channel. We can finally see which ambassadors are driving real outcomes, not just ‘traffic’. Since launching, our inbound demo flow has been cleaner, more trackable, and easier to optimise.",
+      "Refer Labs turned our happy customers into a measurable acquisition channel. We can finally see which referral partners are driving real outcomes, not just 'traffic'. Since launching, our inbound demo flow has been cleaner, more trackable, and easier to optimise.",
     name: "Michael",
     title: "Founder",
   },

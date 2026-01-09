@@ -11,7 +11,7 @@ export function OrganizationSchema() {
     "applicationCategory": "BusinessApplication",
     "applicationSubCategory": "Referral Marketing Software",
     "operatingSystem": "Web",
-    "description": "Turn happy customers into your most powerful growth engine with automated referral tracking, rewards, and ambassador management.",
+    "description": "Turn partners, clients, creators, and advisors into your most powerful growth engine with automated referral tracking, rewards, and partner management.",
     "url": "https://referlabs.com.au",
     "image": "https://referlabs.com.au/og-image.png",
     "offers": {
@@ -220,7 +220,7 @@ export function WebsiteSchema() {
     "@type": "WebSite",
     "name": "Refer Labs",
     "url": "https://referlabs.com.au",
-    "description": "Referral marketing software that turns customers into brand ambassadors",
+    "description": "Referral marketing software that turns partners, clients, creators, and advisors into a tracked referral channel",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

@@ -138,7 +138,7 @@ export const seoConfig = {
   home: {
     title: "Refer Labs - Referrals that compound",
     description:
-      "Turn happy customers into your most powerful growth engine with automated referral tracking, rewards, and ambassador management. Referral software for modern businesses.",
+      "Turn partners, clients, creators, and advisors into your most powerful growth engine with automated referral tracking, rewards, and partner management. Referral software for modern businesses.",
     url: SITE_URL,
     keywords: [
       "referral software",
@@ -169,9 +169,9 @@ export const seoConfig = {
   },
 
   howItWorks: {
-    title: "How It Works - Turn customers into micro-influencers",
+    title: "How It Works - Turn your network into a referral channel",
     description:
-      "See how Refer Labs transforms your customer base into a powerful referral engine. Upload contacts, generate unique links, track rewards, and watch your growth compound.",
+      "See how Refer Labs transforms partners, clients, creators, and advisors into a powerful referral engine. Upload contacts, generate unique links, track rewards, and watch your growth compound.",
     url: `${SITE_URL}/how-it-works`,
     keywords: [
       "referral program process",
@@ -237,7 +237,7 @@ export const seoConfig = {
   roiCalculator: {
     title: "ROI Calculator - Calculate your referral program returns",
     description:
-      "Estimate the potential ROI of your referral program. See how much revenue you could generate by turning customers into brand ambassadors.",
+      "Estimate the potential ROI of your referral program. See how much revenue you could generate by turning your network into referral partners.",
     url: `${SITE_URL}/roi-calculator`,
     keywords: [
       "referral program ROI",
@@ -369,7 +369,7 @@ export const seoConfig = {
 
   dashboard: {
     title: "Dashboard",
-    description: "Manage your referral program, track performance, and reward ambassadors.",
+    description: "Manage your referral program, track performance, and reward referral partners.",
     url: `${SITE_URL}/dashboard`,
     noIndex: true, // Private pages should not be indexed
   },
