@@ -98,8 +98,8 @@ export function DashboardOnboardingChecklist({
   const steps = [
     {
       id: "customers",
-      label: "Import your clients list",
-      description: "Upload a CSV or add a few ambassadors manually.",
+      label: "Import your network",
+      description: "Upload a CSV or add a few partners manually.",
       icon: Users,
       done: hasCustomers,
       action: () => openTab("clients"),
@@ -109,7 +109,7 @@ export function DashboardOnboardingChecklist({
       id: "settings",
       label: "Configure program settings",
       description:
-        "Set your headline, new client reward, and ambassador reward.",
+        "Set your headline, new client reward, and partner reward.",
       icon: SettingsIcon,
       done: hasProgramSettings,
       action: () => openTab("clients"),
@@ -118,7 +118,7 @@ export function DashboardOnboardingChecklist({
     {
       id: "campaigns",
       label: "Send your first campaign",
-      description: "Launch a real SMS or email blast to your ambassadors.",
+      description: "Launch a real SMS or email blast to your partners.",
       icon: Rocket,
       done: hasCampaigns,
       action: openCampaignBuilder,

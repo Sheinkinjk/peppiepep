@@ -130,14 +130,14 @@ export function CampaignBuilder({
       });
       setAvailableCustomers(rows);
       toast({
-        title: "Ambassadors loaded",
-        description: `Loaded ${rows.length}${total ? ` of ${total}` : ""} ambassadors.`,
+        title: "Partners loaded",
+        description: `Loaded ${rows.length}${total ? ` of ${total}` : ""} referral partners.`,
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Failed to load ambassadors",
-        description: error instanceof Error ? error.message : "Unable to load ambassadors.",
+        title: "Failed to load partners",
+        description: error instanceof Error ? error.message : "Unable to load referral partners.",
       });
     } finally {
       setIsLoadingAllCustomers(false);
@@ -359,7 +359,7 @@ export function CampaignBuilder({
         return;
       }
 
-      const recipientsText = `${selectedCount} ${selectedCount === 1 ? "ambassador" : "ambassadors"}`;
+      const recipientsText = `${selectedCount} ${selectedCount === 1 ? "referral partner" : "referral partners"}`;
       const statusTitle =
         effectiveScheduleType === "later" ? "Campaign scheduled" : "✅ Campaign sent!";
 
@@ -595,7 +595,7 @@ export function CampaignBuilder({
                 Launch omnichannel campaigns
               </h2>
               <p className="text-sm text-slate-600">
-                Segment ambassadors, personalize rewards, and send premium SMS/email sequences from the unified composer.
+                Segment referral partners, personalize rewards, and send premium SMS/email sequences from the unified composer.
               </p>
             </div>
             <span
@@ -615,7 +615,7 @@ export function CampaignBuilder({
                 Email ready
               </p>
               <p className="text-2xl font-black text-slate-900">{emailEligibleCount}</p>
-              <p className="text-xs text-slate-500">Ambassadors with verified email</p>
+              <p className="text-xs text-slate-500">Partners with verified email</p>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
               <p className="text-[11px] uppercase tracking-[0.12em] text-slate-500">
@@ -729,7 +729,7 @@ export function CampaignBuilder({
                   id="campaignName"
                   value={campaignName}
                   onChange={(e) => setCampaignName(e.target.value)}
-                  placeholder="e.g., VIP Ambassador Invitation"
+                  placeholder="e.g., VIP Partner Invitation"
                 />
                 <p className="text-[11px] text-slate-500">
                   This appears as the internal name and in your campaign history.
@@ -787,7 +787,7 @@ export function CampaignBuilder({
                       maxLength={140}
                     />
                     <p className="text-[11px] text-slate-500">
-                      This is what ambassadors see in their inbox.
+                      This is what referral partners see in their inbox.
                     </p>
                   </div>
                   <div className="space-y-2">
@@ -932,7 +932,7 @@ export function CampaignBuilder({
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="client_reward_text">
-                      Client / ambassador reward <span className="text-rose-500">*</span>
+                      Referral partner reward <span className="text-rose-500">*</span>
                     </Label>
                     <Textarea
                       id="client_reward_text"
@@ -1151,7 +1151,7 @@ export function CampaignBuilder({
                   <p className="text-xs text-slate-500 mt-1">
                     {selectedCount > 0 ? (
                       <span className="font-semibold text-emerald-700">
-                        {selectedCount} {selectedCount === 1 ? "ambassador" : "ambassadors"} selected
+                        {selectedCount} {selectedCount === 1 ? "referral partner" : "referral partners"} selected
                       </span>
                     ) : (
                       <span className="text-amber-700">No recipients selected yet</span>
@@ -1188,7 +1188,7 @@ export function CampaignBuilder({
               {hasPartialCustomerList && (
                 <div className="mb-3 flex flex-col gap-2 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-xs font-semibold">
-                    Showing {availableCustomers.length} of {customersTotal} ambassadors. Load all to target everyone.
+                    Showing {availableCustomers.length} of {customersTotal} referral partners. Load all to target everyone.
                   </p>
                   <Button
                     type="button"
@@ -1198,7 +1198,7 @@ export function CampaignBuilder({
                     onClick={loadAllCustomers}
                     disabled={isLoadingAllCustomers}
                   >
-                    {isLoadingAllCustomers ? "Loading…" : "Load all ambassadors"}
+                    {isLoadingAllCustomers ? "Loading…" : "Load all partners"}
                   </Button>
                 </div>
               )}
@@ -1314,13 +1314,13 @@ export function CampaignBuilder({
                   logoUrl={settingsLogoUrl}
                   brandHighlightColor={brandHighlightColor ?? undefined}
                   brandTone={brandTone ?? undefined}
-                  campaignName={emailSubject || campaignName || "Your private ambassador invitation"}
+                  campaignName={emailSubject || campaignName || "Your private referral partner invitation"}
                   newUserReward={settingsNewUserRewardText || "Reward for friends"}
                   clientReward={
                     settingsClientRewardText ||
                     (settingsRewardType === "credit"
                       ? `$${settingsRewardAmount} credit`
-                      : "Ambassador reward")
+                      : "Partner reward")
                   }
                   rewardTerms={settingsRewardTerms}
                   rewardAmount={settingsRewardAmount}

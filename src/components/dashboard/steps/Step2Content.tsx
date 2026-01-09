@@ -123,7 +123,7 @@ export function Step2Content({
           <QuickAddCustomerForm quickAddAction={quickAddCustomer} />
           <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-5">
             <p className="text-sm font-semibold text-emerald-800">
-              Active ambassadors: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
+              Active partners: <span className="text-2xl font-black ml-2">{safeCustomers.length}</span>
             </p>
             <p className="text-xs text-emerald-700 mt-2">
               Every manual addition instantly receives their shareable link.
@@ -146,7 +146,7 @@ export function Step2Content({
                     Partner applications
                   </h3>
                   <p className="mt-1 text-sm text-slate-600">
-                    Review/approve partner applicants. Approved partners are treated the same as any customer/ambassador and will appear in the table below.
+                    Review/approve partner applicants. Approved partners will appear in the Partner Directory below.
                   </p>
                 </div>
                 <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
@@ -186,7 +186,7 @@ export function Step2Content({
             <div className="mb-4 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4">
               <Info className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-blue-900">
-                View ambassador reward analytics, credit history, and program costs in{" "}
+                View partner reward analytics, credit history, and program costs in{" "}
                 <a
                   href="#step-5"
                   className="font-semibold underline hover:text-blue-700"
@@ -231,7 +231,7 @@ export function Step2Content({
             <div className="mb-4 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4">
               <Info className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-blue-900">
-                View ambassador reward analytics, credit history, and program costs in{" "}
+                View partner reward analytics, credit history, and program costs in{" "}
                 <a
                   href="#step-5"
                   className="font-semibold underline hover:text-blue-700"

@@ -113,7 +113,7 @@ export function Step3Content({
           <div className="mt-5 rounded-2xl border border-purple-100 bg-purple-50 p-4 text-sm text-slate-700">
             <p className="font-semibold text-slate-900">What you'll set up:</p>
             <ul className="mt-2 space-y-1.5">
-              <li>• Export ambassador data with referral links</li>
+              <li>• Export referral partner data with referral links</li>
               <li>• Configure merge tags in your email tool</li>
               <li>• Test attribution tracking end-to-end</li>
             </ul>
