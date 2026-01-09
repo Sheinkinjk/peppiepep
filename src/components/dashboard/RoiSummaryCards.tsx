@@ -19,10 +19,10 @@ export function RoiSummaryCards({ allReferrals, safeCustomers }: RoiSummaryCards
   const conversionRate = allReferrals.length > 0
     ? Math.round((completedReferrals.length / allReferrals.length) * 100)
     : 0;
-  const activeAmbassadorCount = new Set(allReferrals.map((r) => r.ambassador_id).filter(Boolean)).size;
+  const activePartnerCount = new Set(allReferrals.map((r) => r.ambassador_id).filter(Boolean)).size;
 
-  // Calculate top ambassador
-  const ambassadorStats = completedReferrals
+  // Calculate top referral partner
+  const partnerStats = completedReferrals
     .filter((r) => r.ambassador_id && r.transaction_value)
     .reduce((acc, r) => {
       const id = r.ambassador_id!;
@@ -39,7 +39,7 @@ export function RoiSummaryCards({ allReferrals, safeCustomers }: RoiSummaryCards
       return acc;
     }, {} as Record<string, { ambassador_id: string; name: string; revenue: number; count: number }>);
 
-  const topAmbassador = Object.values(ambassadorStats).sort((a, b) => b.revenue - a.revenue)[0];
+  const topPartner = Object.values(partnerStats).sort((a, b) => b.revenue - a.revenue)[0];
 
   return (
     <>
@@ -82,18 +82,18 @@ export function RoiSummaryCards({ allReferrals, safeCustomers }: RoiSummaryCards
 
         <Card className="border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-white p-5">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-700">Active Ambassadors</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-700">Active Partners</p>
             <Users className="h-4 w-4 text-amber-600" />
           </div>
-          <p className="text-3xl font-black text-slate-900">{activeAmbassadorCount}</p>
+          <p className="text-3xl font-black text-slate-900">{activePartnerCount}</p>
           <p className="text-xs text-slate-600 mt-1">
-            Ambassadors with referrals
+            Partners with referrals
           </p>
         </Card>
       </div>
 
-      {/* Top Ambassador Spotlight */}
-      {topAmbassador && (
+      {/* Top Referral Partner Spotlight */}
+      {topPartner && (
         <Card className="border-2 border-slate-200 bg-gradient-to-r from-slate-50 to-white p-6">
           <div className="flex items-start gap-4">
             <div className="rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 p-3 shadow-lg">
@@ -101,22 +101,22 @@ export function RoiSummaryCards({ allReferrals, safeCustomers }: RoiSummaryCards
             </div>
             <div className="flex-1">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 mb-1">
-                🏆 Top Ambassador
+                🏆 Top Referral Partner
               </p>
-              <p className="text-xl font-black text-slate-900">{topAmbassador.name}</p>
+              <p className="text-xl font-black text-slate-900">{topPartner.name}</p>
               <div className="mt-3 flex flex-wrap gap-6 text-sm">
                 <div>
                   <p className="text-xs text-slate-500">Revenue Generated</p>
-                  <p className="text-lg font-bold text-emerald-600">${topAmbassador.revenue.toLocaleString()}</p>
+                  <p className="text-lg font-bold text-emerald-600">${topPartner.revenue.toLocaleString()}</p>
                 </div>
                 <div>
                   <p className="text-xs text-slate-500">Successful Referrals</p>
-                  <p className="text-lg font-bold text-blue-600">{topAmbassador.count}</p>
+                  <p className="text-lg font-bold text-blue-600">{topPartner.count}</p>
                 </div>
                 <div>
                   <p className="text-xs text-slate-500">Avg Deal Size</p>
                   <p className="text-lg font-bold text-purple-600">
-                    ${Math.round(topAmbassador.revenue / topAmbassador.count).toLocaleString()}
+                    ${Math.round(topPartner.revenue / topPartner.count).toLocaleString()}
                   </p>
                 </div>
               </div>

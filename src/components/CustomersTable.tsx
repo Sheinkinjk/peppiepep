@@ -303,7 +303,7 @@ export function CustomersTable({
     if (selectedRows.size === 0) return;
     const csv = buildCsv(csvColumns, Array.from(selectedRows.values()));
     downloadCsv(
-      `ambassadors-${new Date().toISOString().slice(0, 10)}.csv`,
+      `referral-partners-${new Date().toISOString().slice(0, 10)}.csv`,
       csv,
     );
   };
@@ -343,7 +343,7 @@ export function CustomersTable({
 
     toast({
       title: "Bulk delete completed",
-      description: `${successCount} ambassador${successCount === 1 ? "" : "s"} deleted successfully${errorCount > 0 ? `, ${errorCount} failed` : ""}.`,
+      description: `${successCount} referral partner${successCount === 1 ? "" : "s"} deleted successfully${errorCount > 0 ? `, ${errorCount} failed` : ""}.`,
     });
 
     // Refresh by reloading the page
@@ -377,8 +377,8 @@ export function CustomersTable({
         const result = await response.json();
 
         toast({
-          title: "Ambassadors approved!",
-          description: `${result.approvedCount} ambassador${result.approvedCount === 1 ? "" : "s"} approved. Welcome emails sent: ${result.emailsSent}.`,
+          title: "Partners approved!",
+          description: `${result.approvedCount} referral partner${result.approvedCount === 1 ? "" : "s"} approved. Welcome emails sent: ${result.emailsSent}.`,
         });
       } else {
         // For other status updates, use direct Supabase update
@@ -393,7 +393,7 @@ export function CustomersTable({
 
         toast({
           title: "Status updated",
-          description: `${selectedRows.size} ambassador${selectedRows.size === 1 ? "" : "s"} marked as ${newStatus}.`,
+          description: `${selectedRows.size} referral partner${selectedRows.size === 1 ? "" : "s"} marked as ${newStatus}.`,
         });
       }
 
@@ -425,7 +425,7 @@ export function CustomersTable({
     // This will require coordination with the CampaignBuilder component
     toast({
       title: "Campaign builder opening",
-      description: `${selectedRows.size} ambassador${selectedRows.size === 1 ? "" : "s"} pre-selected for campaign.`,
+      description: `${selectedRows.size} referral partner${selectedRows.size === 1 ? "" : "s"} pre-selected for campaign.`,
     });
 
     // Navigate to campaigns tab and open modal
@@ -514,10 +514,10 @@ export function CustomersTable({
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-sm font-semibold text-slate-900">
-            Ambassador directory
+            Partner Directory
           </p>
           <p className="text-xs text-slate-500">
-            {total > 0 ? `${total} ambassador${total === 1 ? '' : 's'} total` : 'No ambassadors yet'}
+            {total > 0 ? `${total} referral partner${total === 1 ? '' : 's'} total` : 'No referral partners yet'}
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -528,7 +528,7 @@ export function CustomersTable({
             className="h-8 w-full text-xs sm:w-56"
           />
           <select
-            aria-label="Filter ambassadors by status"
+            aria-label="Filter referral partners by status"
             className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
             value={statusFilter}
             onChange={(e) => {
@@ -543,7 +543,7 @@ export function CustomersTable({
             <option value="applicant">Applicants</option>
           </select>
           <select
-            aria-label="Sort ambassadors"
+            aria-label="Sort referral partners"
             className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
             value={sortOption}
             onChange={(e) => {
@@ -560,7 +560,7 @@ export function CustomersTable({
         <div className="flex flex-col gap-3 rounded-2xl border border-purple-200 bg-purple-50/70 p-4">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm font-semibold text-purple-900">
-              {selectedCount} ambassador{selectedCount === 1 ? "" : "s"} selected
+              {selectedCount} partner{selectedCount === 1 ? "" : "s"} selected
             </p>
             <Button
               variant="ghost"
@@ -582,7 +582,7 @@ export function CustomersTable({
             </Button>
             <Button size="sm" onClick={() => setBulkStatusDialogOpen(true)} disabled={isBulkProcessing}>
               <UserCheck className="mr-2 h-4 w-4" />
-              Approve Ambassadors
+              Approve Partners
             </Button>
             <Button
               size="sm"
@@ -610,7 +610,7 @@ export function CustomersTable({
               onCheckedChange={(value) =>
                 toggleSelectAllVisible(Boolean(value))
               }
-              aria-label="Select all ambassadors on this page"
+              aria-label="Select all referral partners on this page"
             />
           </div>
           <div>Name</div>
@@ -626,16 +626,16 @@ export function CustomersTable({
                 <p className="font-semibold text-slate-900 mb-2">Status types:</p>
                 <div className="space-y-2">
                   <div>
-                    <span className="font-semibold text-slate-800">Ambassador pending:</span> Ambassador has been added but hasn't been manually verified yet
+                    <span className="font-semibold text-slate-800">Partner pending:</span> Partner has been added but hasn't been manually verified yet
                   </div>
                   <div>
-                    <span className="font-semibold text-emerald-700">Verified ambassador:</span> Ambassador is active and approved to refer
+                    <span className="font-semibold text-emerald-700">Verified partner:</span> Partner is active and approved to refer
                   </div>
                   <div>
                     <span className="font-semibold text-amber-700">New applicant:</span> Someone applied through your referral program and is awaiting review
                   </div>
                 </div>
-                <p className="mt-2 text-slate-500 italic">Status updates automatically when you approve ambassadors or when applications are submitted</p>
+                <p className="mt-2 text-slate-500 italic">Status updates automatically when you approve partners or when applications are submitted</p>
               </div>
             </div>
           </div>
@@ -690,8 +690,8 @@ export function CustomersTable({
             {debouncedSearch || statusFilter !== "all" ? (
               <EmptyState
                 icon={Filter}
-                title="No ambassadors match your filters"
-                description="Try adjusting your search terms or filters to find what you're looking for. You can also clear all filters to see all ambassadors."
+                title="No partners match your filters"
+                description="Try adjusting your search terms or filters to find what you're looking for. You can also clear all filters to see all partners."
                 illustration="filter"
                 primaryAction={{
                   label: "Clear Filters",
@@ -705,8 +705,8 @@ export function CustomersTable({
             ) : (
               <EmptyState
                 icon={Users}
-                title="No ambassadors yet"
-                description="Start building your referral network by importing your customer list via CSV or adding ambassadors one at a time."
+                title="No referral partners yet"
+                description="Start building your referral network by importing partners, clients, or advisors via CSV or adding them one at a time."
                 primaryAction={{
                   label: "Upload CSV",
                   onClick: () => {
@@ -765,11 +765,11 @@ export function CustomersTable({
                   rawStatus === "verified" || rawStatus === "active";
                 const displayStatus =
                   rawStatus === "pending"
-                    ? "Ambassador pending"
+                    ? "Partner pending"
                     : rawStatus === "applicant"
                     ? "New applicant"
                     : isVerified
-                    ? "Verified ambassador"
+                    ? "Verified partner"
                     : rawStatus;
                 const normalizedSource = customer.source
                   ? customer.source.replace(/_/g, " ")
@@ -817,7 +817,7 @@ export function CustomersTable({
                       <Checkbox
                         checked={selectedIds.has(customer.id)}
                         onCheckedChange={() => toggleSelection(customer)}
-                        aria-label={`Select ${customer.name ?? "ambassador"}`}
+                        aria-label={`Select ${customer.name ?? "referral partner"}`}
                       />
                     </div>
                     <div>
@@ -1004,8 +1004,8 @@ export function CustomersTable({
       <div className="flex flex-col gap-3 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between">
         <p>
           {total === 0
-            ? "No ambassadors to display yet."
-            : `Showing ${firstItemIndex}-${lastItemIndex} of ${total} ambassadors`}
+            ? "No referral partners to display yet."
+            : `Showing ${firstItemIndex}-${lastItemIndex} of ${total} referral partners`}
         </p>
         <div className="flex items-center gap-2">
           <span id="rows-per-page-label">Rows per page:</span>
@@ -1064,37 +1064,37 @@ export function CustomersTable({
       <BulkActionDialog
         open={bulkDeleteDialogOpen}
         onOpenChange={setBulkDeleteDialogOpen}
-        title="Delete selected ambassadors"
-        description="This will permanently delete the selected ambassadors and anonymize their referral data. This action cannot be undone."
-        actionLabel="Delete ambassadors"
+        title="Delete selected partners"
+        description="This will permanently delete the selected partners and anonymize their referral data. This action cannot be undone."
+        actionLabel="Delete partners"
         variant="destructive"
         onConfirm={bulkDeleteAmbassadors}
         itemCount={selectedCount}
-        itemLabel="ambassador"
+        itemLabel="partner"
       />
 
       <BulkActionDialog
         open={bulkSendCampaignDialogOpen}
         onOpenChange={setBulkSendCampaignDialogOpen}
         title="Send campaign to selected"
-        description="This will open the campaign builder with the selected ambassadors pre-selected as recipients."
+        description="This will open the campaign builder with the selected referral partners pre-selected as recipients."
         actionLabel="Open campaign builder"
         variant="default"
         onConfirm={bulkSendCampaign}
         itemCount={selectedCount}
-        itemLabel="ambassador"
+        itemLabel="partner"
       />
 
       <BulkActionDialog
         open={bulkStatusDialogOpen}
         onOpenChange={setBulkStatusDialogOpen}
-        title="Approve Ambassadors"
-        description="Approve selected ambassadors and send them welcome emails with their unique referral links and discount codes. They'll be able to start sharing immediately."
+        title="Approve Partners"
+        description="Approve selected referral partners and send them welcome emails with their unique referral links and discount codes. They'll be able to start sharing immediately."
         actionLabel="Approve & Send Welcome Emails"
         variant="default"
         onConfirm={() => bulkUpdateStatus("verified")}
         itemCount={selectedCount}
-        itemLabel="ambassador"
+        itemLabel="partner"
       />
     </div>
   );
