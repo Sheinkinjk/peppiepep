@@ -19,9 +19,9 @@ export function Step1Education() {
           and troubleshooting support.
         </li>
         <li>
-          <strong>Referral Rewards (Step 1B):</strong> Configure what ambassadors earn when they
+          <strong>Referral Rewards (Step 1B):</strong> Configure what partners earn when they
           refer customers (credit, discount, upgrade, or points), plus optional sign-on bonuses
-          for new ambassadors. Set your brand colors and upload your logo for a fully customized
+          for new partners. Set your brand colors and upload your logo for a fully customized
           referral page experience.
         </li>
         <li>
@@ -34,7 +34,7 @@ export function Step1Education() {
 
       <h4>Why Complete This First</h4>
       <p>
-        Your reward structure and integrations must be locked in before ambassadors start sharing.
+        Your reward structure and integrations must be locked in before partners start sharing.
         Changing reward amounts mid-campaign breaks trust and creates confusion. Testing your
         website embed and conversion tracking now prevents attribution failures later when real
         referrals are flowing.
@@ -66,12 +66,12 @@ export function Step1Education() {
 
 export function Step2Education() {
   return (
-    <HowThisWorksSection title="What's in Add Clients & Ambassadors?">
+    <HowThisWorksSection title="What's in Add Clients & Partners?">
       <h4>Overview</h4>
       <p>
-        This section is where you build your ambassador army. Every person you add receives a
+        This section is where you build your partner army. Every person you add receives a
         unique referral link and discount code automatically. Think of this as loading ammunition
-        into your referral machine—the more quality ambassadors you have, the more referrals flow
+        into your referral machine—the more quality partners you have, the more referrals flow
         in without additional ad spend.
       </p>
 
@@ -84,36 +84,36 @@ export function Step2Education() {
           system or launching to your full list at once.
         </li>
         <li>
-          <strong>Quick Add Customer:</strong> Manually add individual ambassadors one-by-one.
+          <strong>Quick Add Customer:</strong> Manually add individual partners one-by-one.
           Ideal for testing the system with VIP customers, adding walk-in clients on the spot,
           or onboarding high-value partners who deserve white-glove treatment.
         </li>
         <li>
-          <strong>All Customers Table:</strong> View your complete ambassador roster with their
+          <strong>All Customers Table:</strong> View your complete partner roster with their
           referral codes, discount codes, total credits earned, and performance metrics. Adjust
           credits manually, copy links to share directly, or export data for external analysis.
         </li>
         <li>
           <strong>Partner Applications (Admin Only):</strong> If you're running a B2B partner
           program, approved partner applications appear here as customers. Each partner gets
-          tracked attribution and commission payouts just like regular ambassadors.
+          tracked attribution and commission payouts just like regular partners.
         </li>
       </ol>
 
       <h4>Why This Comes Second</h4>
       <p>
-        You can't send campaigns or track referrals without ambassadors in your system. But adding
+        You can't send campaigns or track referrals without partners in your system. But adding
         people before Step 1 is complete means they'd get broken links or see incorrect rewards.
-        The sequence matters: configure program → add ambassadors → launch campaigns.
+        The sequence matters: configure program → add partners → launch campaigns.
       </p>
 
       <h4>Key Actions to Take</h4>
       <ul>
         <li>Download the CSV template and map your existing customer data to our format</li>
         <li>Upload a small test batch (5-10 people) first to verify formatting works</li>
-        <li>Add yourself as a test ambassador and verify your referral link loads correctly</li>
-        <li>Export your ambassador list after importing to confirm all links generated successfully</li>
-        <li>Check the "Active ambassadors" counter to track your total ambassador count</li>
+        <li>Add yourself as a test partner and verify your referral link loads correctly</li>
+        <li>Export your partner list after importing to confirm all links generated successfully</li>
+        <li>Check the "Active partners" counter to track your total partner count</li>
       </ul>
 
       <h4>Pro Tips</h4>
@@ -141,9 +141,9 @@ export function Step3Education() {
     <HowThisWorksSection title="What's in Launch Campaigns?">
       <h4>Overview</h4>
       <p>
-        This section is your activation engine. Ambassadors won't share unless they know the
+        This section is your activation engine. Partners won't share unless they know the
         program exists and have their link handy. Campaigns deliver personalized messages (SMS
-        or email) with each ambassador's unique referral link, triggering them to spread the
+        or email) with each partner's unique referral link, triggering them to spread the
         word to their networks.
       </p>
 
@@ -155,7 +155,7 @@ export function Step3Education() {
           your entry point to launching high-converting SMS and email campaigns.
         </li>
         <li>
-          <strong>CRM Integration Tab:</strong> Export your ambassador list with merge fields
+          <strong>CRM Integration Tab:</strong> Export your partner list with merge fields
           (referral_link, discount_code, name) to import into your existing email platform
           (Klaviyo, HubSpot, Mailchimp). Includes setup guides for each major CRM, field mapping
           instructions, and testing checkpoints to verify attribution flows back correctly.
@@ -170,8 +170,8 @@ export function Step3Education() {
 
       <h4>Why This Comes Third</h4>
       <p>
-        Campaigns only work if you have ambassadors loaded (Step 2) and integrations configured
-        (Step 1). Sending a campaign before testing your referral flow means ambassadors share
+        Campaigns only work if you have partners loaded (Step 2) and integrations configured
+        (Step 1). Sending a campaign before testing your referral flow means partners share
         broken links, killing trust. Launch campaigns only after you've verified end-to-end
         attribution works.
       </p>
@@ -179,13 +179,13 @@ export function Step3Education() {
       <h4>Two Ways to Run Campaigns</h4>
       <p>
         <strong>Option 1: Use Your CRM (Recommended for established brands)</strong><br />
-        Export ambassadors → Import to Klaviyo/HubSpot → Map merge fields → Send from your
+        Export partners → Import to Klaviyo/HubSpot → Map merge fields → Send from your
         branded email domain. Pros: Full design control, existing deliverability reputation,
         integration with your marketing automation. Cons: Requires CRM setup and field mapping.
       </p>
       <p>
         <strong>Option 2: Use Refer Labs Campaign Builder (Recommended for speed)</strong><br />
-        Select ambassadors → Generate copy with AI → Send SMS or Email instantly. Pros: No
+        Select partners → Generate copy with AI → Send SMS or Email instantly. Pros: No
         external tools needed, built-in tracking, fast launch. Cons: Less design customization,
         emails come from Refer Labs domain (can hurt deliverability for cold lists).
       </p>
@@ -195,7 +195,7 @@ export function Step3Education() {
         <li>Send a test campaign to yourself first—verify the message copy sounds natural</li>
         <li>Click your own referral link to confirm it loads the correct branded page</li>
         <li>Check that personalization tokens ({'{{name}}'}, {'{{referral_link}}'}) populate correctly</li>
-        <li>If using your CRM, test one ambassador first before importing your full list</li>
+        <li>If using your CRM, test one partner first before importing your full list</li>
         <li>Monitor the Campaign History tab after sending to track delivery and open rates</li>
       </ul>
 
@@ -206,7 +206,7 @@ export function Step3Education() {
         SMS, send between 11am-7pm to avoid morning/night interruptions.
       </p>
       <p>
-        💡 <strong>Segment your first campaign.</strong> Don't blast 1,000 ambassadors at once.
+        💡 <strong>Segment your first campaign.</strong> Don't blast 1,000 partners at once.
         Send to your top 50 performers first, measure results, tweak copy based on feedback, then
         roll out to the full list. This prevents mass unsubscribes from poorly worded messages.
       </p>
@@ -252,7 +252,7 @@ export function Step4Education() {
         </li>
         <li>
           <strong>Share Assets Tab:</strong> Pre-built social media copy, email templates, and
-          shareable graphics ambassadors can use to promote your program. Includes UTM-tracked
+          shareable graphics partners can use to promote your program. Includes UTM-tracked
           links so you can attribute conversions back to specific share methods (Instagram Story
           vs Email Forward).
         </li>
@@ -311,7 +311,7 @@ export function Step5Education() {
       <h4>Overview</h4>
       <p>
         This section is your financial truth serum. Measure ROI tracks every referral from click
-        to cash, calculates your program's profitability, and identifies which ambassadors are
+        to cash, calculates your program's profitability, and identifies which partners are
         worth their weight in gold versus deadweight. Use this data to optimize rewards, cut
         underperformers, and double down on your top 20% of referrers.
       </p>
@@ -320,8 +320,8 @@ export function Step5Education() {
       <ol>
         <li>
           <strong>Referral Table:</strong> A comprehensive list of every referral (pending,
-          completed, or failed) with ambassador name, referred customer, transaction value,
-          reward amount, status, and timestamps. Filter by date, ambassador, or status to analyze
+          completed, or failed) with partner name, referred customer, transaction value,
+          reward amount, status, and timestamps. Filter by date, partner, or status to analyze
           patterns. Export to CSV for external reporting or accounting reconciliation.
         </li>
         <li>
@@ -339,7 +339,7 @@ export function Step5Education() {
         <li>
           <strong>Add Manual Referral Form:</strong> Record offline conversions that happened
           outside your digital tracking (phone bookings, in-store purchases, verbal mentions).
-          Ensures ambassadors get credit for all referrals, not just online ones, maintaining
+          Ensures partners get credit for all referrals, not just online ones, maintaining
           trust and accurate ROI calculations.
         </li>
       </ol>
@@ -348,7 +348,7 @@ export function Step5Education() {
       <p>
         ROI data only accumulates after campaigns drive referrals (Step 3 → Step 4 → Step 5).
         You need completed conversions to calculate profitability. This is your final validation
-        that the entire program—setup, ambassadors, campaigns, tracking—is generating positive
+        that the entire program—setup, partners, campaigns, tracking—is generating positive
         returns worth scaling.
       </p>
 
@@ -359,13 +359,13 @@ export function Step5Education() {
         cart emails or retargeting ads to nudge them toward conversion.
       </p>
       <p>
-        <strong>Completed Referrals:</strong> The referred customer purchased and the ambassador
+        <strong>Completed Referrals:</strong> The referred customer purchased and the partner
         received their reward. These count toward your ROI calculations. Monitor transaction values
         to ensure referrals aren't just low-value one-time buyers.
       </p>
       <p>
         <strong>Manual Referrals:</strong> Conversions you added manually (e.g., customer mentioned
-        "Sarah sent me" during checkout). Mark these complete to release rewards and keep ambassadors
+        "Sarah sent me" during checkout). Mark these complete to release rewards and keep partners
         motivated.
       </p>
 
@@ -374,9 +374,9 @@ export function Step5Education() {
         <li><strong>Total Referrals:</strong> Lifetime count of all referrals generated (target: grows monthly)</li>
         <li><strong>Conversion Rate:</strong> % of pending referrals that become paying customers (target: 15-25%)</li>
         <li><strong>Average Transaction Value:</strong> Mean purchase amount per referred customer (compare to non-referred baseline)</li>
-        <li><strong>Reward Spend:</strong> Total credits/discounts paid to ambassadors (should stay under 20% of revenue)</li>
+        <li><strong>Reward Spend:</strong> Total credits/discounts paid to partners (should stay under 20% of revenue)</li>
         <li><strong>Net ROI:</strong> (Total Revenue - Reward Spend) / Reward Spend (target: 5x minimum, 10x+ is elite)</li>
-        <li><strong>Top Ambassador Performance:</strong> Identify your top 10 referrers by revenue generated</li>
+        <li><strong>Top Partner Performance:</strong> Identify your top 10 referrers by revenue generated</li>
       </ul>
 
       <h4>Key Actions to Take</h4>
@@ -385,13 +385,13 @@ export function Step5Education() {
         <li>Add manual referrals immediately after in-store/phone transactions to keep attribution current</li>
         <li>Review the Journey Timeline for failed conversions to diagnose broken tracking</li>
         <li>Export your referral table monthly and cross-check against accounting records</li>
-        <li>Identify ambassadors with 5+ completed referrals and offer them VIP bonuses to keep them active</li>
+        <li>Identify partners with 5+ completed referrals and offer them VIP bonuses to keep them active</li>
       </ul>
 
       <h4>Pro Tips</h4>
       <p>
         💡 <strong>Focus on the top 20%.</strong> The Pareto Principle applies ruthlessly in
-        referrals—20% of ambassadors drive 80% of revenue. Identify your elite performers and
+        referrals—20% of partners drive 80% of revenue. Identify your elite performers and
         give them exclusive perks (higher rewards, early access, personal thank-yous) to keep
         them engaged.
       </p>
@@ -407,7 +407,7 @@ export function Step5Education() {
         initial transaction value—measure long-term retention to see the true impact of referrals.
       </p>
       <p>
-        💡 <strong>Use manual referrals strategically.</strong> If an ambassador brings you a
+        💡 <strong>Use manual referrals strategically.</strong> If an partner brings you a
         whale customer ($10,000+ deal) via offline intro, manually add it and give them a bonus
         on top of standard rewards. Reinforcing offline referral behavior keeps your best
         networkers engaged.

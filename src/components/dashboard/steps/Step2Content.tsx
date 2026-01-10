@@ -112,8 +112,8 @@ export function Step2Content({
               <Upload className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900">Import Customers</h2>
-              <p className="text-sm text-slate-600">Bulk upload spreadsheets to instantly generate referral links.</p>
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900">Import Your Network</h2>
+              <p className="text-sm text-slate-600">Upload partners, clients, creators, and advisors to instantly generate referral links.</p>
             </div>
           </div>
           <CSVUploadForm />
@@ -221,9 +221,9 @@ export function Step2Content({
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
               <Users className="h-8 w-8 text-slate-400" />
             </div>
-            <h3 className="mb-2 text-lg font-bold text-slate-900">No customers yet</h3>
+            <h3 className="mb-2 text-lg font-bold text-slate-900">No partners yet</h3>
             <p className="mb-6 text-sm text-slate-600 max-w-md mx-auto">
-              Add your first customer using the quick form above, or upload a CSV to get started with your referral program.
+              Add your first referral partner using the quick form above, or upload a CSV to activate your network.
             </p>
           </div>
         ) : (
