@@ -21,10 +21,10 @@ export default function About() {
       <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
 
         <div className="mx-auto max-w-3xl space-y-4 text-center">
-          <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-[2.5rem] font-bold leading-[1.15] text-slate-900 sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem]">
             We help businesses acquire new customers<br />by turning their network into a referral channel
           </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-600 mx-auto">
+          <p className="max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 mx-auto">
             We started Refer Labs because we saw businesses leaving money on the table: partners, clients, creators, and advisors willing to refer, but no structured way to track and reward them.
           </p>
         </div>

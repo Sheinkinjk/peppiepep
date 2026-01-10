@@ -494,7 +494,7 @@ function LoginContent() {
     >
       <div className="w-full max-w-5xl">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 mb-3">
+          <h1 className="text-[2.5rem] font-bold text-slate-900 mb-3 leading-[1.15] sm:text-[3rem] md:text-[3.5rem]">
             Turn Your Network Into New Customers
           </h1>
         </div>

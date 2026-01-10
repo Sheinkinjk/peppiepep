@@ -327,11 +327,11 @@ export default async function Home() {
 
           <div className="relative z-10 flex min-h-[420px] flex-col items-center justify-center gap-8 px-4 text-center sm:px-8 lg:px-16">
             <div className="space-y-5 sm:space-y-6 max-w-5xl">
-              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-[3.25rem] lg:text-[3.75rem]">
+              <h1 className="text-[2.5rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[3rem] md:text-[3.25rem] lg:text-[3.75rem]">
                 <span className="block">Turn Partners, Clients, Creators & Advisors</span>
                 <span className="block">Into a Fully Tracked Referral Channel</span>
               </h1>
-              <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-900 sm:text-2xl lg:text-[1.75rem]">
+              <p className="max-w-3xl mx-auto text-lg font-semibold leading-snug text-slate-900 sm:text-xl md:text-[1.4rem] lg:text-[1.65rem]">
                 <span className="block">Acquire New Customers by Activating Your Network</span>
                 <span className="block">With Automated Tracking, Rewards & Attribution</span>
               </p>
@@ -351,11 +351,11 @@ export default async function Home() {
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white px-6 py-10 shadow-xl sm:px-10 sm:py-12">
               <div className="relative z-10 space-y-10">
                 <div className="text-left sm:text-center">
-                  <h2 className="text-[1.9rem] font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] max-w-5xl sm:mx-auto text-balance">
+                  <h2 className="text-[1.9rem] font-bold tracking-tight text-slate-900 sm:text-[2.5rem] md:text-[2.75rem] lg:text-[3rem] max-w-5xl sm:mx-auto text-balance leading-[1.15]">
                     <span className="block">Why Your Network Is Your Best</span>
                     <span className="block">Customer Acquisition Channel</span>
                   </h2>
-                  <p className="mt-4 text-[1rem] sm:text-[1.05rem] md:text-[1.08rem] text-slate-600 max-w-[60rem] lg:max-w-[64rem] mx-0 sm:mx-auto text-balance leading-relaxed">
+                  <p className="mt-4 text-base sm:text-lg md:text-xl text-slate-600 max-w-[60rem] lg:max-w-[64rem] mx-0 sm:mx-auto text-balance leading-relaxed">
                     Your next best customers are already known by your partners, clients, creators, and advisors. Refer Labs helps you
                     turn your entire network into a structured, trackable growth engine that feels natural for them and powerful
                     for you.
@@ -410,10 +410,10 @@ export default async function Home() {
 
             {/* Section Header */}
             <div className="text-center space-y-6 px-4">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-lg">
+              <h2 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-black tracking-tight text-white drop-shadow-lg leading-[1.1]">
                 Referral Programs By The Numbers
               </h2>
-              <p className="text-xl sm:text-2xl text-purple-100 max-w-4xl mx-auto font-medium leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-purple-100 max-w-4xl mx-auto font-medium leading-relaxed">
                 Turn your existing customers into a high-performing sales team—without the overhead, training, or payroll costs
               </p>
             </div>
@@ -506,10 +506,10 @@ export default async function Home() {
 
                 <div className="relative z-10 space-y-8">
                   <div className="text-center space-y-4">
-                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
+                    <h3 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] font-black text-white leading-[1.1]">
                       Your Network Is Your Best Acquisition Channel
                     </h3>
-                    <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg sm:text-xl md:text-[1.4rem] text-purple-100 max-w-3xl mx-auto leading-relaxed">
                       Instead of pouring budget into ads that get ignored, activate your partners, clients, creators, and advisors—this is{" "}
                       <span className="text-[#5ce1e6] font-black tracking-tight drop-shadow-[0_0_18px_rgba(92,225,230,0.35)]">customer acquisition</span>{" "}
                       powered by trust and proof from real relationships.
