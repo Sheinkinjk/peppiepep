@@ -328,12 +328,12 @@ export default async function Home() {
           <div className="relative z-10 flex min-h-[420px] flex-col items-center justify-center gap-8 px-4 text-center sm:px-8 lg:px-16">
             <div className="space-y-5 sm:space-y-6 max-w-5xl">
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-[3.25rem] lg:text-[3.75rem]">
-                <span className="block">We Help Launch Successful</span>
-                <span className="block">Referral Programs</span>
+                <span className="block">Turn Partners, Clients, Creators & Advisors</span>
+                <span className="block">Into a Fully Tracked Referral Channel</span>
               </h1>
               <p className="max-w-3xl mx-auto text-xl font-semibold leading-snug text-slate-900 sm:text-2xl lg:text-[1.75rem]">
-                <span className="block">Generate Additional Revenue That Complements</span>
-                <span className="block">Your Sales and Marketing Strategies</span>
+                <span className="block">Acquire New Customers by Activating Your Network</span>
+                <span className="block">With Automated Tracking, Rewards & Attribution</span>
               </p>
             </div>
             <TrackedCTA
@@ -352,12 +352,12 @@ export default async function Home() {
               <div className="relative z-10 space-y-10">
                 <div className="text-left sm:text-center">
                   <h2 className="text-[1.9rem] font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-[2.75rem] max-w-5xl sm:mx-auto text-balance">
-                    <span className="block">Why A Referral Program Is Your Best</span>
-                    <span className="block">Resource For Growth Hacking</span>
+                    <span className="block">Why Your Network Is Your Best</span>
+                    <span className="block">Customer Acquisition Channel</span>
                   </h2>
                   <p className="mt-4 text-[1rem] sm:text-[1.05rem] md:text-[1.08rem] text-slate-600 max-w-[60rem] lg:max-w-[64rem] mx-0 sm:mx-auto text-balance leading-relaxed">
-                    Your next best customers are already in your existing customers&rsquo; network. Refer Labs helps you
-                    turn that network into a structured, trackable growth engine that feels natural for them and powerful
+                    Your next best customers are already known by your partners, clients, creators, and advisors. Refer Labs helps you
+                    turn your entire network into a structured, trackable growth engine that feels natural for them and powerful
                     for you.
                   </p>
                 </div>
@@ -384,11 +384,11 @@ export default async function Home() {
                 <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-sm font-medium text-slate-900">
-                      Ready to make referrals your highest-ROI channel?
+                      Ready to turn your network into a customer acquisition engine?
                     </p>
                     <p className="mt-1 text-xs text-slate-500">
-                      Plug Refer Labs into your existing sales and marketing stack and start activating the
-                      customers you already have.
+                      Plug Refer Labs into your existing stack and start activating your
+                      partners, clients, creators, and advisors.
                     </p>
                   </div>
                   <TrackedCTA
@@ -507,12 +507,12 @@ export default async function Home() {
                 <div className="relative z-10 space-y-8">
                   <div className="text-center space-y-4">
                     <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-                      Your Customers Are Your Best Sales Team
+                      Your Network Is Your Best Acquisition Channel
                     </h3>
                     <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
-                      Instead of pouring budget into ads that get ignored, activate the people who already love your brand—this is{" "}
-                      <span className="text-[#5ce1e6] font-black tracking-tight drop-shadow-[0_0_18px_rgba(92,225,230,0.35)]">growth hacking</span>{" "}
-                      powered by trust and proof from real customers.
+                      Instead of pouring budget into ads that get ignored, activate your partners, clients, creators, and advisors—this is{" "}
+                      <span className="text-[#5ce1e6] font-black tracking-tight drop-shadow-[0_0_18px_rgba(92,225,230,0.35)]">customer acquisition</span>{" "}
+                      powered by trust and proof from real relationships.
                     </p>
                   </div>
 

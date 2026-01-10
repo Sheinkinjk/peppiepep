@@ -495,7 +495,7 @@ function LoginContent() {
       <div className="w-full max-w-5xl">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-slate-900 mb-3">
-            Join The Referral Revolution
+            Turn Your Network Into New Customers
           </h1>
         </div>
 
@@ -511,7 +511,7 @@ function LoginContent() {
                   Speak to our Concierge Team
                 </h2>
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  Every customer gets hands-on setup assistance. No sandbox. No fake data. We configure your rewards, upload ambassadors, and QA the flow before you invite anyone.
+                  Every customer gets hands-on setup assistance. No sandbox. No fake data. We configure your rewards, upload your referral partners, and QA the flow before you invite anyone.
                 </p>
               </div>
 
@@ -531,7 +531,7 @@ function LoginContent() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong>Launch checklist</strong> — Final QA across referral links, discount capture, and payouts before ambassadors log in.
+                    <strong>Launch checklist</strong> — Final QA across referral links, discount capture, and payouts before partners log in.
                   </p>
                 </div>
               </div>

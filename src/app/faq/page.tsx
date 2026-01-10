@@ -11,12 +11,12 @@ export default function FAQPage() {
         {
           question: "What is Refer Labs and who is it built for?",
           answer:
-            "Refer Labs is a concierge-grade referral platform for growth-minded teams across industries. It stitches together celebratory hero alerts, the ROI calculator, and partner automation so happy customers turn into measurable promoters without juggling spreadsheets.",
+            "Refer Labs is a concierge-grade referral platform for growth-minded teams across industries. It helps businesses acquire new customers by turning partners, clients, creators, and advisors into a fully tracked and rewarded referral channel—without juggling spreadsheets.",
         },
         {
           question: "How does onboarding work once I create an account?",
           answer:
-            "Complete the signup form and you can start inviting ambassadors right away. Our concierge team helps you configure branding, rewards, automations, and the $250 sign-on credit you can offer new users. We assist with CSV imports, ambassador assignment, and launch-ready campaigns to get your dashboard reporting quickly.",
+            "Complete the signup form and you can start inviting referral partners right away. Our concierge team helps you configure branding, rewards, automations, and the $250 sign-on credit you can offer new customers. We assist with CSV imports, partner assignment, and launch-ready campaigns to get your dashboard reporting quickly.",
         },
         {
           question: "Do I need a developer to launch Refer Labs?",
@@ -41,15 +41,15 @@ export default function FAQPage() {
         {
           question: "What are the main tabs in the dashboard?",
           answer:
-            "Campaigns, Ambassadors, Analytics, Rewards, and Settings, plus an ROI module that mirrors the ‘Calculate your referral program ROI in 4 steps’ panel on the landing page. Campaigns manages flows, Ambassadors surfaces top referrers, Analytics tracks conversions, Rewards handles incentives, and Settings keeps branding and integrations aligned.",
+            "Campaigns, Partners, Analytics, Rewards, and Settings, plus an ROI module that mirrors the ‘Calculate your referral program ROI in 4 steps’ panel on the landing page. Campaigns manages flows, Partners surfaces top referrers, Analytics tracks conversions, Rewards handles incentives, and Settings keeps branding and integrations aligned.",
         },
         {
-          question: "How do I import or add ambassadors?",
+          question: "How do I import or add partners?",
           answer:
-            "Upload a CSV, paste a list, or invite ambassadors manually from the People panel. Each contact gets a landing page, tracking link, and share kit automatically so you can start nurturing them today—the how-it-works walkthrough highlights every step.",
+            "Upload a CSV, paste a list, or invite partners manually from the People panel. Each contact gets a landing page, tracking link, and share kit automatically so you can start nurturing them today—the how-it-works walkthrough highlights every step.",
         },
         {
-          question: "Can I customize ambassador rewards per campaign?",
+          question: "Can I customize partner rewards per campaign?",
           answer:
             "Absolutely. Choose reward types (credit, gift card, discount), set payout cadences, and build tiers or one-time boosts within the Reward builder. You can even preview the reward ledger before the campaign launches.",
         },
@@ -66,7 +66,7 @@ export default function FAQPage() {
         {
           question: "What does the Notifications area show?",
           answer:
-            "Notifications flag invite deliveries, reward approvals, compliance warnings, and automation issues. Each alert links back to the campaign, ambassador, and ROI ledger so you can resolve problems before they impact revenue.",
+            "Notifications flag invite deliveries, reward approvals, compliance warnings, and automation issues. Each alert links back to the campaign, partner, and ROI ledger so you can resolve problems before they impact revenue.",
         },
       ],
     },
@@ -76,12 +76,12 @@ export default function FAQPage() {
         {
           question: "What is a referral campaign in Refer Labs?",
           answer:
-            "A campaign bundles ambassador invites, messaging templates, reward logic, and compliance checks into one flow. It mirrors the how-it-works steps from import to reward and keeps everything tied to a single ROI ledger.",
+            "A campaign bundles partner invites, messaging templates, reward logic, and compliance checks into one flow. It mirrors the how-it-works steps from import to reward and keeps everything tied to a single ROI ledger.",
         },
         {
           question: "How are referral links generated and tracked?",
           answer:
-            "Every ambassador receives a unique URL (and QR/short code) that automatically captures clicks, purchases, and conversions. Refer Labs attributes that revenue back to both the ambassador and the campaign in real time.",
+            "Every partner receives a unique URL (and QR/short code) that automatically captures clicks, purchases, and conversions. Refer Labs attributes that revenue back to both the partner and the campaign in real time.",
         },
         {
           question: "Can I customize messaging for each channel?",
@@ -91,7 +91,7 @@ export default function FAQPage() {
         {
           question: "What happens when a referred customer converts?",
           answer:
-            "The conversion triggers a thank-you sequence, credits the ambassador, updates the analytics ledger, and can optionally sync back to your CRM via an integration.",
+            "The conversion triggers a thank-you sequence, credits the partner, updates the analytics ledger, and can optionally sync back to your CRM via an integration.",
         },
         {
           question: "How do I manage reward budgets?",
@@ -101,7 +101,7 @@ export default function FAQPage() {
         {
           question: "Is there an approval process for referrals and rewards?",
           answer:
-            "Yes. All referrals start with pending status, allowing you to review each referral before marking it as complete. You have full control over when ambassadors receive credit for their referrals, giving you time to verify legitimacy and confirm purchases.",
+            "Yes. All referrals start with pending status, allowing you to review each referral before marking it as complete. You have full control over when partners receive credit for their referrals, giving you time to verify legitimacy and confirm purchases.",
         },
         {
           question: "How does Refer Labs help prevent fraudulent referrals?",
@@ -116,7 +116,7 @@ export default function FAQPage() {
         {
           question: "How do leaderboards and performance tiers function?",
           answer:
-            "Leaderboards rank ambassadors by conversions, revenue, or custom metrics. Tiered incentives (Bronze/Silver/Gold) automatically bump rewards for your top catalysts.",
+            "Leaderboards rank partners by conversions, revenue, or custom metrics. Tiered incentives (Bronze/Silver/Gold) automatically bump rewards for your top catalysts.",
         },
         {
           question: "How does Refer Labs handle multi-brand or multi-location setups?",
@@ -129,14 +129,14 @@ export default function FAQPage() {
       title: "Advanced Insights & Best Practices",
       questions: [
         {
-          question: "What's the best way to grow my ambassador list?",
+          question: "What's the best way to grow my partner list?",
           answer:
             "Import your top customers, tag VIPs, and use automated nurture sequences to invite new advocates. Launch referral sign-up pages and celebrate their wins with the hero-style notifications showcased on the how-it-works page.",
         },
         {
           question: "How do I calculate campaign ROI?",
           answer:
-            "Use the dashboard’s ROI module or the Calculate ROI CTA on the homepage to test scenarios. Refer Labs forecasts acquisition cost, conversion lift, and recurring value per ambassador.",
+            "Use the dashboard’s ROI module or the Calculate ROI CTA on the homepage to test scenarios. Refer Labs forecasts acquisition cost, conversion lift, and recurring value per partner.",
         },
         {
           question: "Can I integrate Refer Labs with my CRM?",

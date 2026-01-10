@@ -22,10 +22,10 @@ export default function About() {
 
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            We are the referral engine to build your future<br />and monetise word-of-mouth referrals
+            We help businesses acquire new customers<br />by turning their network into a referral channel
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-600 mx-auto">
-            We started Refer Labs because we saw thousands of operators losing revenue to the same problem: broken referral systems.
+            We started Refer Labs because we saw businesses leaving money on the table: partners, clients, creators, and advisors willing to refer, but no structured way to track and reward them.
           </p>
         </div>
 
@@ -34,18 +34,18 @@ export default function About() {
             <h2 className="text-3xl font-bold text-slate-900">The Problem We Saw</h2>
             <div className="space-y-4 text-lg leading-relaxed text-slate-700">
               <p>
-                Word-of-mouth has always grown communities, but the traditional referral model is broken. Your most loyal customers—the ones who truly love your brand and genuinely vouch for your offering—have no structured way to share their enthusiasm.
+                Word-of-mouth has always grown businesses, but most companies have no structured way to activate it. Your partners, clients, creators, and advisors—the ones who truly understand your value and have the right networks—have no frictionless way to refer business to you.
               </p>
               <div className="rounded-xl bg-purple-50 p-6 border-l-4 border-purple-500">
                 <p className="italic text-slate-800">
-                  "My best clients constantly send me new customers, but I have no system to thank them properly. They're my true beacons of growth, yet I'm stuck manually tracking who referred who in spreadsheets. These loyal ambassadors deserve better—they're driving real revenue and I'm barely acknowledging it."
+                  "My best partners constantly send me new customers, but I have no system to thank them properly. They're my true beacons of growth, yet I'm stuck manually tracking who referred who in spreadsheets. These referral partners deserve better—they're driving real revenue and I'm barely acknowledging it."
                 </p>
               </div>
               <p>
-                We built Refer Labs to solve this: <strong>create an engagement system that rewards your loyal customers</strong> who are the true beacons of growth. These are the people who authentically vouch for your offering because they've experienced real value. They deserve recognition, rewards, and a frictionless way to share what they love.
+                We built Refer Labs to solve this: <strong>create an engagement system that activates your entire network</strong> as a customer acquisition channel. These are partners, clients, creators, and advisors who authentically vouch for your offering because they've experienced real value. They deserve recognition, rewards, and a frictionless way to refer.
               </p>
               <p>
-                Your loyal customers aren't just satisfied—they're advocates. But without a proper engagement system, their word-of-mouth referrals go untracked, unrewarded, and unmotivated. Refer Labs turns these passionate customers into a structured growth engine, ensuring every referral is captured and every ambassador is celebrated.
+                Your network isn't just a contact list—it's untapped acquisition potential. But without a proper engagement system, their referrals go untracked, unrewarded, and unmotivated. Refer Labs turns your entire network into a structured growth engine, ensuring every referral is captured and every partner is celebrated.
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
             <p className="text-slate-600">
-              A world where brands grow organically through happy customers, not expensive ads—and every referral is tracked, rewarded, and celebrated.
+              A world where businesses grow through their networks—partners, clients, creators, and advisors—not expensive ads. Every referral tracked, rewarded, and celebrated.
             </p>
           </div>
 

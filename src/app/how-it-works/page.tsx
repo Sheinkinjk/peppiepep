@@ -22,10 +22,10 @@ export default function HowItWorks() {
 
         <section className="max-w-3xl space-y-4">
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            How Refer Labs turns customers into micro‑influencers
+            How Refer Labs turns your network into a customer acquisition channel
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
-            From upload to reward in minutes. See how we plug referrals into your marketing campaigns so every happy customer promotes you across SMS, email, and social.
+            From upload to reward in minutes. Activate your partners, clients, creators, and advisors with tracked referral links that drive measurable new customer acquisition.
           </p>
         </section>
 
@@ -36,10 +36,10 @@ export default function HowItWorks() {
                 <span className="text-xl font-bold text-purple-700">1</span>
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Import your customers (activate your micro‑influencers)
+                Import your network (activate your referral partners)
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Upload a simple CSV (name, phone, email). Refer Labs instantly turns every customer into a trackable, campaign-connected micro‑influencer.
+                Upload a simple CSV (name, phone, email). Refer Labs instantly turns your partners, clients, creators, and advisors into trackable referral sources.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -53,7 +53,7 @@ export default function HowItWorks() {
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-slate-900">Campaign-ready links</p>
-                    <p className="text-sm text-slate-600">Every customer gets a link you can drop into SMS, email, or ads</p>
+                    <p className="text-sm text-slate-600">Every partner gets a unique link you can drop into SMS, email, or campaigns</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -92,7 +92,7 @@ export default function HowItWorks() {
                       <CheckCircle2 className="h-5 w-5 text-green-600" />
                       <p className="font-semibold text-green-900">38 links generated</p>
                     </div>
-                    <p className="text-xs text-green-700 mt-1">Ready to share with customers</p>
+                    <p className="text-xs text-green-700 mt-1">Ready to share with partners</p>
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function HowItWorks() {
                   <LinkIcon className="h-8 w-8 text-purple-600" />
                   <div>
                     <p className="text-sm text-slate-500">Step 2</p>
-                    <p className="text-lg font-semibold text-slate-900">Ambassador portal</p>
+                    <p className="text-lg font-semibold text-slate-900">Partner portal</p>
                   </div>
                 </div>
                 <div className="space-y-3">
@@ -137,16 +137,16 @@ export default function HowItWorks() {
                 <span className="text-xl font-bold text-purple-700">2</span>
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Customers become ambassadors (micro‑influencers)
+                Your network becomes active referral partners
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                Send customers their unique link via text, email, or embed it inside your campaigns. Their personal portal makes sharing to friends effortless.
+                Send partners their unique link via text, email, or embed it inside your campaigns. Their personal portal makes referring new customers effortless.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-slate-900">Personal portal for each customer</p>
+                    <p className="font-semibold text-slate-900">Personal portal for each partner</p>
                     <p className="text-sm text-slate-600">Track their referrals, credits earned, and share buttons</p>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function HowItWorks() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-slate-900">Ambassador leaderboard</p>
+                    <p className="font-semibold text-slate-900">Partner leaderboard</p>
                     <p className="text-sm text-slate-600">See your top referrers and total credits earned</p>
                   </div>
                 </div>
@@ -281,7 +281,7 @@ export default function HowItWorks() {
                 Rewards happen automatically
               </h2>
               <p className="text-lg text-slate-600 mb-6">
-                When a referred customer books or completes their first purchase, just mark it complete in your dashboard. Refer Labs instantly credits the ambassador and sends them a celebration SMS.
+                When a referred customer books or completes their first purchase, just mark it complete in your dashboard. Refer Labs instantly credits the partner and sends them a celebration SMS.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -295,14 +295,14 @@ export default function HowItWorks() {
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-slate-900">Credits applied instantly</p>
-                    <p className="text-sm text-slate-600">Ambassador's account updates in real-time</p>
+                    <p className="text-sm text-slate-600">Partner's account updates in real-time</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-slate-900">SMS notification sent</p>
-                    <p className="text-sm text-slate-600">Keeps ambassadors excited and motivated to share more</p>
+                    <p className="text-sm text-slate-600">Keeps partners excited and motivated to share more</p>
                   </div>
                 </div>
               </div>
