@@ -296,9 +296,9 @@ export default async function Home() {
 
       <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 px-4 pb-16 sm:pb-20 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
-        {/* Hero Section - Premium Polish */}
-        <div className="mx-auto w-full max-w-7xl relative py-10 sm:py-12 lg:py-20 min-h-[480px] lg:min-h-[580px]">
-          {/* Corner notification cards - Desktop only, subtle and ambient */}
+        {/* Hero Section - Mobile-First Redesign */}
+        <div className="mx-auto w-full max-w-7xl relative py-8 sm:py-10 lg:py-20 min-h-[320px] sm:min-h-[380px] lg:min-h-[520px]">
+          {/* Corner notification cards - Desktop only (1280px+) */}
           <div className="pointer-events-none absolute inset-0 hidden xl:block">
             {heroBadges.map((badge) => (
               <HeroBadge
@@ -309,34 +309,35 @@ export default async function Home() {
             ))}
           </div>
 
-          {/* Mobile: Show only top 2 cards, even more subtle */}
-          <div className="pointer-events-none absolute inset-0 xl:hidden">
-            {heroBadges.slice(0, 2).map((badge) => (
-              <HeroBadge
-                key={badge.id}
-                badge={badge}
-                className={cn(
-                  "absolute hidden sm:flex",
-                  badge.position,
-                  heroBadgeOrientation[badge.id],
-                  "opacity-40",
-                )}
-              />
-            ))}
-          </div>
-
-          <div className="relative z-10 flex min-h-[420px] flex-col items-center justify-center gap-8 px-4 text-center sm:px-8 lg:px-16">
-            <div className="space-y-5 sm:space-y-6 max-w-6xl">
-              <h1 className="text-[2.35rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[2.8rem] md:text-[3.05rem] lg:text-[3.5rem]">
-                <span className="block md:whitespace-nowrap">Turn Partners, Clients, Creators & Advisors</span>
-                <span className="block md:whitespace-nowrap">Into a Fully Tracked Referral Channel</span>
+          <div className="relative z-10 flex min-h-[280px] sm:min-h-[340px] lg:min-h-[460px] flex-col items-center justify-center gap-6 sm:gap-8 px-4 text-center sm:px-8 lg:px-16">
+            <div className="space-y-4 sm:space-y-5 max-w-6xl">
+              <h1 className="text-[2rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[2.5rem] md:text-[2.9rem] lg:text-[3.5rem]">
+                <span className="block">Turn Partners, Clients, Creators & Advisors</span>
+                <span className="block">Into a Fully Tracked Referral Channel</span>
               </h1>
+              <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto font-medium leading-relaxed px-4">
+                Launch your referral program in minutes. Track every conversion. Scale what works.
+              </p>
             </div>
-            <TrackedCTA
-              ambassadorId={ambassadorData?.id}
-              businessId={ambassadorData?.business_id}
-              referralCode={ambassadorData?.code}
-            />
+
+            {/* Dual CTA - Mobile optimized */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center justify-center w-full sm:w-auto">
+              <Link
+                href="/login"
+                className={cn(
+                  buttonVariants({ variant: "cta" }),
+                  "group rounded-xl text-base sm:text-lg font-bold px-6 sm:px-8 py-4 sm:py-6 shadow-xl hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+                )}
+              >
+                Get Started Free
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <TrackedCTA
+                ambassadorId={ambassadorData?.id}
+                businessId={ambassadorData?.business_id}
+                referralCode={ambassadorData?.code}
+              />
+            </div>
 
           </div>
         </div>

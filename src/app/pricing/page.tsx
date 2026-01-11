@@ -75,30 +75,30 @@ export default function Pricing() {
   }
 
   return (
-    <div className="aurora relative min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900">
+    <div className="aurora relative min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-b from-slate-900 via-[#024b56] to-slate-900">
       {/* Premium gradient overlays */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(168,85,247,0.15),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(236,72,153,0.15),transparent_45%),radial-gradient(circle_at_40%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(10,186,181,0.15),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(92,225,230,0.15),transparent_45%),radial-gradient(circle_at_40%_80%,rgba(0,131,143,0.1),transparent_50%)]" />
 
-      {/* Animated gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+      {/* Animated gradient orbs - Reduced on mobile */}
+      <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[#0abab5]/20 rounded-full blur-3xl animate-pulse" />
       <div
-        className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse"
+        className="absolute bottom-0 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[#5ce1e6]/20 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: "1s" }}
       />
 
       <main className="relative mx-auto flex max-w-7xl flex-col gap-12 sm:gap-16 px-4 sm:px-6 pb-16 sm:pb-24 pt-12 sm:pt-16 md:px-10 lg:px-16">
         <div className="mx-auto max-w-4xl space-y-6 sm:space-y-10 text-center">
           <h1 className="text-balance text-3xl sm:text-5xl font-black leading-tight tracking-tight lg:text-7xl">
-            <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
+            <span className="bg-gradient-to-r from-white via-[#a8e8ed] to-white bg-clip-text text-transparent drop-shadow-2xl">
               Growth Network
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5ce1e6] via-[#0abab5] to-[#5ce1e6] bg-clip-text text-transparent">
               Platform Pricing
             </span>
           </h1>
 
-          <p className="max-w-3xl text-base sm:text-xl lg:text-2xl leading-relaxed text-purple-100 mx-auto font-medium px-4">
+          <p className="max-w-3xl text-base sm:text-xl lg:text-2xl leading-relaxed text-[#d4f4f7] mx-auto font-medium px-4">
             Refer Labs are your partner in optimising the next phase of your
             marketing and sales strategy
           </p>
@@ -106,7 +106,7 @@ export default function Pricing() {
 
         {/* Premium billing toggle */}
         <div className="relative mx-auto px-4">
-          <div className="rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/80 p-1.5 shadow-2xl shadow-purple-500/20 ring-1 ring-purple-500/30 backdrop-blur-xl inline-flex flex-col sm:flex-row items-stretch sm:items-end justify-center gap-2 sm:gap-3 w-full sm:w-auto">
+          <div className="rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/80 p-1.5 shadow-2xl shadow-[#0abab5]/20 ring-1 ring-[#0abab5]/30 backdrop-blur-xl inline-flex flex-col sm:flex-row items-stretch sm:items-end justify-center gap-2 sm:gap-3 w-full sm:w-auto">
             <div className="relative">
               <button
                 type="button"
@@ -114,8 +114,8 @@ export default function Pricing() {
                 disabled={loading !== null}
                 className={`relative rounded-xl px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition-all duration-300 w-full sm:w-40 lg:w-48 disabled:opacity-50 ${
                   billingCycle === "monthly"
-                    ? "bg-gradient-to-b from-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/50 scale-105"
-                    : "text-purple-300 hover:text-white hover:bg-slate-800/50"
+                    ? "bg-gradient-to-b from-[#0abab5] to-[#024b56] text-white shadow-2xl shadow-[#0abab5]/50 scale-105"
+                    : "text-[#a8e8ed] hover:text-white hover:bg-slate-800/50"
                 }`}
               >
                 Monthly billing
@@ -129,7 +129,7 @@ export default function Pricing() {
                 className={`relative rounded-xl px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition-all duration-300 w-full sm:w-40 lg:w-48 disabled:opacity-50 ${
                   billingCycle === "annual"
                     ? "bg-gradient-to-b from-emerald-500 to-green-600 text-white shadow-2xl shadow-emerald-500/60 scale-105 ring-2 ring-emerald-400/50"
-                    : "text-purple-300 hover:text-white hover:bg-slate-800/50"
+                    : "text-[#a8e8ed] hover:text-white hover:bg-slate-800/50"
                 }`}
               >
                 <span className="absolute -top-3 -right-2 rounded-xl bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-black uppercase tracking-[0.12em] text-white shadow-2xl shadow-emerald-500/60 animate-pulse ring-2 ring-white/30">
@@ -143,11 +143,11 @@ export default function Pricing() {
 
         <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
           {/* Base Plan */}
-          <div className="group relative rounded-3xl border border-purple-500/30 bg-gradient-to-b from-slate-800/90 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-purple-900/30 ring-1 ring-purple-400/20 hover:shadow-purple-500/40 hover:ring-purple-400/40 transition-all duration-500 backdrop-blur-xl hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="group relative rounded-3xl border border-[#0abab5]/30 bg-gradient-to-b from-slate-800/90 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-[#024b56]/30 ring-1 ring-[#0abab5]/20 hover:shadow-[#0abab5]/40 hover:ring-[#0abab5]/40 transition-all duration-500 backdrop-blur-xl hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0abab5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative mb-8">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500/20 to-purple-600/20 px-4 py-2 text-sm font-bold text-purple-300 ring-1 ring-purple-400/30 shadow-lg backdrop-blur-sm">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0abab5]/20 to-[#024b56]/20 px-4 py-2 text-sm font-bold text-[#5ce1e6] ring-1 ring-[#0abab5]/30 shadow-lg backdrop-blur-sm">
                 <Zap className="h-4 w-4" />
                 Base
               </div>
@@ -156,7 +156,7 @@ export default function Pricing() {
                   ${basePrice}
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-purple-300 font-bold text-sm sm:text-base">
+                  <span className="text-[#5ce1e6] font-bold text-sm sm:text-base">
                     /{billingCycle === "monthly" ? "month" : "year"}
                   </span>
                   {billingCycle === "annual" && (
@@ -166,7 +166,7 @@ export default function Pricing() {
                   )}
                 </div>
               </div>
-              <p className="text-sm sm:text-base text-purple-200 font-medium">
+              <p className="text-sm sm:text-base text-[#a8e8ed] font-medium">
                 Launch-ready program for small teams
               </p>
             </div>
@@ -174,60 +174,60 @@ export default function Pricing() {
             <button
               onClick={() => handleSubscribe("base")}
               disabled={loading !== null}
-              className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-purple-400/50 bg-gradient-to-b from-slate-700 to-slate-800 px-8 py-4 text-base font-bold text-white shadow-xl shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400 hover:shadow-2xl hover:shadow-purple-400/40 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
+              className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-[#0abab5]/50 bg-gradient-to-b from-slate-700 to-slate-800 px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#0abab5]/20 transition-all duration-300 hover:-translate-y-1 hover:border-[#5ce1e6] hover:shadow-2xl hover:shadow-[#5ce1e6]/40 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading === "base" ? "Loading..." : "Subscribe Now"}
             </button>
-            <p className="text-center text-xs font-semibold text-purple-200">
+            <p className="text-center text-xs font-semibold text-[#a8e8ed]">
               30-day money-back guarantee
             </p>
 
             <div className="space-y-4 text-base mt-8">
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">
+                <span className="text-[#c0eff3]">
                   Up to <strong className="text-white">50 referrers</strong> enrolled
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">
+                <span className="text-[#c0eff3]">
                   <strong className="text-white">5,000 SMS/WhatsApp messages</strong> included
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Real-time tracking dashboard</span>
+                <span className="text-[#c0eff3]">Real-time tracking dashboard</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Ambassador portals</span>
+                <span className="text-[#c0eff3]">Ambassador portals</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">CSV import/export</span>
+                <span className="text-[#c0eff3]">CSV import/export</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Basic analytics & live referrals</span>
+                <span className="text-[#c0eff3]">Basic analytics & live referrals</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Email support</span>
+                <span className="text-[#c0eff3]">Email support</span>
               </div>
             </div>
           </div>
 
           {/* Scale Plan - Most Popular */}
-          <div className="group relative rounded-3xl border-2 border-purple-400 bg-gradient-to-b from-purple-600/20 via-pink-600/10 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-purple-500/50 ring-2 ring-purple-400/50 transform hover:scale-110 transition-all duration-500 backdrop-blur-xl z-10">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-8 py-2.5 text-sm font-black text-white shadow-2xl shadow-purple-500/50 ring-2 ring-white/20 backdrop-blur-sm animate-pulse">
+          <div className="group relative rounded-3xl border-2 border-[#5ce1e6] bg-gradient-to-b from-[#0abab5]/20 via-[#5ce1e6]/10 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-[#5ce1e6]/50 ring-2 ring-[#5ce1e6]/50 transform hover:scale-110 transition-all duration-500 backdrop-blur-xl z-10">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#5ce1e6] via-[#0abab5] to-[#5ce1e6] px-8 py-2.5 text-sm font-black text-white shadow-2xl shadow-[#5ce1e6]/50 ring-2 ring-white/20 backdrop-blur-sm animate-pulse">
               ⭐ MOST POPULAR
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 via-pink-500/10 to-transparent rounded-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0abab5]/10 via-[#5ce1e6]/10 to-transparent rounded-3xl" />
 
             <div className="relative mb-8 mt-4">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-400/30 to-pink-400/30 px-4 py-2 text-sm font-bold text-purple-200 ring-1 ring-purple-300/50 shadow-lg backdrop-blur-sm">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-400/30 to-pink-400/30 px-4 py-2 text-sm font-bold text-[#a8e8ed] ring-1 ring-purple-300/50 shadow-lg backdrop-blur-sm">
                 <Users className="h-4 w-4" />
                 Scale
               </div>
@@ -236,7 +236,7 @@ export default function Pricing() {
                   ${scalePrice}
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-purple-200 font-bold text-sm sm:text-base">
+                  <span className="text-[#a8e8ed] font-bold text-sm sm:text-base">
                     /{billingCycle === "monthly" ? "month" : "year"}
                   </span>
                   {billingCycle === "annual" && (
@@ -246,7 +246,7 @@ export default function Pricing() {
                   )}
                 </div>
               </div>
-              <p className="text-sm sm:text-base text-purple-100 font-medium">
+              <p className="text-sm sm:text-base text-[#c0eff3] font-medium">
                 For teams running steady campaigns
               </p>
             </div>
@@ -262,48 +262,48 @@ export default function Pricing() {
               </span>
               {loading !== "scale" && <ArrowRight className="relative h-5 w-5" />}
             </button>
-            <p className="relative text-center text-xs font-semibold text-purple-100">
+            <p className="relative text-center text-xs font-semibold text-[#c0eff3]">
               30-day money-back guarantee
             </p>
 
             <div className="relative space-y-4 text-base mt-8">
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">
+                <span className="text-[#c0eff3]">
                   Up to <strong className="text-white">125 referrers</strong>
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">
+                <span className="text-[#c0eff3]">
                   <strong className="text-white">Everything in Base</strong>, plus:
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">
+                <span className="text-[#c0eff3]">
                   <strong className="text-white">12,500 messages/month</strong> included
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Auto-reward SMS/email notifications</span>
+                <span className="text-[#c0eff3]">Auto-reward SMS/email notifications</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Advanced analytics & cohort reports</span>
+                <span className="text-[#c0eff3]">Advanced analytics & cohort reports</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Ambassador leaderboard</span>
+                <span className="text-[#c0eff3]">Ambassador leaderboard</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Custom branding, domains, UTM tracking</span>
+                <span className="text-[#c0eff3]">Custom branding, domains, UTM tracking</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-purple-100">Priority email + chat support</span>
+                <span className="text-[#c0eff3]">Priority email + chat support</span>
               </div>
             </div>
           </div>
@@ -379,60 +379,60 @@ export default function Pricing() {
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
                 Compare plans
               </h2>
-              <p className="text-purple-200 text-base sm:text-lg">Find the perfect fit for your business</p>
+              <p className="text-[#a8e8ed] text-base sm:text-lg">Find the perfect fit for your business</p>
             </div>
 
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b border-purple-500/30">
-                    <th className="pb-4 text-sm sm:text-base font-bold text-purple-200">Features</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-purple-200">Base</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-purple-200">Scale</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-purple-200">Enterprise</th>
+                    <th className="pb-4 text-sm sm:text-base font-bold text-[#a8e8ed]">Features</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Base</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Scale</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Enterprise</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm sm:text-base">
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-purple-100">Ambassadors</td>
-                    <td className="py-4 text-center text-purple-200">50</td>
-                    <td className="py-4 text-center text-purple-200">125</td>
+                    <td className="py-4 text-[#c0eff3]">Ambassadors</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">50</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">125</td>
                     <td className="py-4 text-center font-bold text-white">Unlimited</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-purple-100">SMS credits/month</td>
-                    <td className="py-4 text-center text-purple-200">5,000</td>
-                    <td className="py-4 text-center text-purple-200">12,500</td>
+                    <td className="py-4 text-[#c0eff3]">SMS credits/month</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">5,000</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">12,500</td>
                     <td className="py-4 text-center font-bold text-white">Unlimited</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-purple-100">Analytics & reporting</td>
-                    <td className="py-4 text-center text-purple-200">Basic</td>
-                    <td className="py-4 text-center text-purple-200">Advanced</td>
+                    <td className="py-4 text-[#c0eff3]">Analytics & reporting</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">Basic</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">Advanced</td>
                     <td className="py-4 text-center font-bold text-white">Advanced</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-purple-100">Custom branding</td>
+                    <td className="py-4 text-[#c0eff3]">Custom branding</td>
                     <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
                     <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                     <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-purple-100">White-label portals</td>
+                    <td className="py-4 text-[#c0eff3]">White-label portals</td>
                     <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
                     <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
                     <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-purple-100">API access</td>
+                    <td className="py-4 text-[#c0eff3]">API access</td>
                     <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
                     <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
                     <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-purple-100">Support</td>
-                    <td className="py-4 text-center text-purple-200">Email</td>
-                    <td className="py-4 text-center text-purple-200">Priority email</td>
+                    <td className="py-4 text-[#c0eff3]">Support</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">Email</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">Priority email</td>
                     <td className="py-4 text-center font-bold text-white">Phone + chat</td>
                   </tr>
                 </tbody>
@@ -452,7 +452,7 @@ export default function Pricing() {
                   What's included in the free trial?
                   <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
                   All plans include a 14-day free trial with full access to all features. No credit card required to start.
                 </p>
               </details>
@@ -462,7 +462,7 @@ export default function Pricing() {
                   How does SMS pricing work?
                   <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
                   Scale and Enterprise plans include SMS credits each month. Additional credits are $0.05/SMS. Base plan users can purchase SMS credits as needed.
                 </p>
               </details>
@@ -472,7 +472,7 @@ export default function Pricing() {
                   Can I change plans later?
                   <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
                   Yes! Upgrade or downgrade anytime. Changes take effect immediately, and we'll pro-rate your billing accordingly.
                 </p>
               </details>
@@ -482,7 +482,7 @@ export default function Pricing() {
                   What payment methods do you accept?
                   <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
                   We accept all major credit cards (Visa, Mastercard, Amex) and direct debit for annual plans.
                 </p>
               </details>
@@ -492,7 +492,7 @@ export default function Pricing() {
                   What happens if I exceed my ambassador limit?
                   <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
                 </summary>
-                <p className="mt-4 text-sm sm:text-base text-purple-200 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
                   We'll notify you when you're approaching your limit. You can upgrade anytime to add more ambassadors with no downtime.
                 </p>
               </details>
@@ -506,7 +506,7 @@ export default function Pricing() {
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-3">
                 Still not sure which plan is right?
               </h3>
-              <p className="text-base sm:text-lg lg:text-xl text-purple-200">
+              <p className="text-base sm:text-lg lg:text-xl text-[#a8e8ed]">
                 Start with a free trial or talk to our team to find the perfect fit for your business.
               </p>
             </div>

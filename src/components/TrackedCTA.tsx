@@ -73,17 +73,15 @@ export function TrackedCTA({ ambassadorId, businessId, referralCode }: TrackedCT
   }
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-      <Button
-        onClick={handleScheduleCall}
-        disabled={loading}
-        size="lg"
-        className="rounded-xl bg-[#5ce1e6] hover:bg-[#4dd4d9] text-slate-900 font-bold px-8 py-6 text-lg shadow-xl hover:-translate-y-1 transition-all duration-300"
-      >
-        <Calendar className="mr-2 h-5 w-5" />
-        Schedule a Call
-        <ArrowRight className="ml-2 h-5 w-5" />
-      </Button>
-    </div>
+    <Button
+      onClick={handleScheduleCall}
+      disabled={loading}
+      size="lg"
+      variant="outline"
+      className="rounded-xl border-2 border-slate-300 bg-white hover:bg-slate-50 text-slate-900 font-bold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+    >
+      <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+      Schedule a Call
+    </Button>
   );
 }

@@ -146,8 +146,15 @@
 }
 
 .tiffany-hero {
-  background: linear-gradient(180deg, #eefcfe 0%, #cbeff3 25%, #8bd6df 50%, #2fa3b0 75%, #01545f 100%);
+  background: linear-gradient(180deg, #f0feff 0%, #e5f9fb 30%, #d4f4f7 60%, #c0eff3 85%, #a8e8ed 100%);
   background-attachment: fixed;
+}
+
+/* Mobile: Even softer gradient to reduce visual weight */
+@media (max-width: 768px) {
+  .tiffany-hero {
+    background: linear-gradient(180deg, #f8feff 0%, #f0fcfe 40%, #e8f9fb 70%, #dff6f9 100%);
+  }
 }
 
 .hero-notification-card {
