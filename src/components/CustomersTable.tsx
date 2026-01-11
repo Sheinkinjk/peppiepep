@@ -16,12 +16,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter, Trash2, Send, UserCheck, Info } from "lucide-react";
+import { Copy, Check, Coins, Download, Loader2, Users, Upload, UserPlus, Filter, Trash2, Send, UserCheck, Info, Sparkles, TrendingUp, DollarSign } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { buildCsv, downloadCsv, type CsvColumn } from "@/lib/export-utils";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
 import { BulkActionDialog } from "@/components/BulkActionDialog";
+import { ScorePartnersButton } from "@/components/ScorePartnersButton";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 import { logger } from "@/lib/logger";
 
@@ -41,6 +42,14 @@ type Customer = {
   discount_code: string | null;
   credits: number | null;
   status: string | null;
+  // AI Scoring fields
+  ai_referral_score: number | null;
+  ai_score_explanation: string | null;
+  ai_estimated_value: number | null;
+  ai_likelihood_to_refer: number | null;
+  ai_optimal_approach: string | null;
+  ai_best_contact_time: string | null;
+  ai_scored_at: string | null;
 };
 
 type CustomersTableProps = {
@@ -64,7 +73,7 @@ type PepWindow = Window & {
 const DEFAULT_CUSTOMER_PAGE_SIZE = 50;
 
 const ROW_TEMPLATE =
-  "36px minmax(160px,1.1fr) minmax(160px,1.1fr) minmax(210px,1.35fr) minmax(220px,1.4fr) minmax(160px,1fr) minmax(150px,0.7fr) minmax(220px,1.1fr)";
+  "36px minmax(160px,1fr) minmax(160px,1fr) minmax(210px,1.2fr) minmax(100px,0.7fr) minmax(140px,0.9fr) minmax(220px,1.1fr) minmax(160px,1fr) minmax(150px,0.7fr) minmax(220px,1fr)";
 
 const csvColumns: CsvColumn<Customer>[] = [
   { header: "Name", accessor: (row) => row.name ?? "" },
@@ -100,7 +109,7 @@ export function CustomersTable({
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "verified" | "active" | "applicant">("all");
-  const [sortOption, setSortOption] = useState<"recent" | "name_asc">("recent");
+  const [sortOption, setSortOption] = useState<"recent" | "name_asc" | "score_desc" | "value_desc">("recent");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [selectedRows, setSelectedRows] = useState<Map<string, Customer>>(new Map());
   const [isLoading, setIsLoading] = useState(false);
@@ -466,6 +475,18 @@ export function CustomersTable({
           if (!nameB) return -1;
           return nameA.localeCompare(nameB);
         });
+      case "score_desc":
+        return next.sort((a, b) => {
+          const scoreA = a.ai_referral_score ?? -1;
+          const scoreB = b.ai_referral_score ?? -1;
+          return scoreB - scoreA; // Highest score first
+        });
+      case "value_desc":
+        return next.sort((a, b) => {
+          const valueA = a.ai_estimated_value ?? -1;
+          const valueB = b.ai_estimated_value ?? -1;
+          return valueB - valueA; // Highest value first
+        });
       default:
         return next;
     }
@@ -532,6 +553,10 @@ export function CustomersTable({
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <ScorePartnersButton
+            businessId={businessId}
+            onScoreComplete={refreshCurrentPage}
+          />
           <Input
             placeholder="Search name, email, phone…"
             value={searchTerm}
@@ -563,6 +588,8 @@ export function CustomersTable({
           >
             <option value="recent">Sort: Newest first</option>
             <option value="name_asc">Sort: A–Z</option>
+            <option value="score_desc">Sort: Highest AI Score</option>
+            <option value="value_desc">Sort: Highest Value</option>
           </select>
         </div>
       </div>
@@ -627,6 +654,14 @@ export function CustomersTable({
           <div>Name</div>
           <div>Contact</div>
           <div>Application context</div>
+          <div className="flex items-center gap-1.5">
+            <Sparkles className="h-3.5 w-3.5 text-purple-500" />
+            <span>AI Score</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <DollarSign className="h-3.5 w-3.5 text-emerald-500" />
+            <span>Est. Value</span>
+          </div>
           <div>Referral link</div>
           <div>Discount code</div>
           <div className="flex items-center gap-1.5">
@@ -890,6 +925,69 @@ export function CustomersTable({
                         <p className="text-[11px] text-slate-500">
                           {audienceSummary}
                         </p>
+                      )}
+                    </div>
+                    {/* AI Score Column */}
+                    <div className="flex flex-col gap-1">
+                      {customer.ai_referral_score !== null ? (
+                        <>
+                          <div className="flex items-center gap-1.5">
+                            <div className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
+                              customer.ai_referral_score >= 80
+                                ? 'bg-emerald-100 text-emerald-700'
+                                : customer.ai_referral_score >= 50
+                                ? 'bg-blue-100 text-blue-700'
+                                : 'bg-slate-100 text-slate-600'
+                            }`}>
+                              {customer.ai_referral_score}
+                            </div>
+                            <span className={`text-xs font-semibold ${
+                              customer.ai_referral_score >= 80
+                                ? 'text-emerald-700'
+                                : customer.ai_referral_score >= 50
+                                ? 'text-blue-700'
+                                : 'text-slate-600'
+                            }`}>
+                              {customer.ai_referral_score >= 80 ? 'High' : customer.ai_referral_score >= 50 ? 'Medium' : 'Low'}
+                            </span>
+                          </div>
+                          {customer.ai_optimal_approach && (
+                            <div className="relative group">
+                              <p className="text-[11px] text-slate-500 truncate cursor-help">
+                                {customer.ai_optimal_approach.length > 40 ? `${customer.ai_optimal_approach.slice(0, 40)}...` : customer.ai_optimal_approach}
+                              </p>
+                              <div className="absolute left-0 top-full mt-1 hidden group-hover:block z-50 w-64 rounded-lg border border-slate-200 bg-white p-3 shadow-lg">
+                                <p className="text-xs font-semibold text-slate-900 mb-1">AI Recommendation:</p>
+                                <p className="text-xs text-slate-700">{customer.ai_optimal_approach}</p>
+                                {customer.ai_score_explanation && (
+                                  <>
+                                    <p className="text-xs font-semibold text-slate-900 mt-2 mb-1">Reasoning:</p>
+                                    <p className="text-xs text-slate-600">{customer.ai_score_explanation}</p>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <span className="text-xs text-slate-400">Not scored</span>
+                      )}
+                    </div>
+                    {/* AI Estimated Value Column */}
+                    <div className="flex flex-col gap-1">
+                      {customer.ai_estimated_value !== null ? (
+                        <>
+                          <p className="text-sm font-bold text-emerald-700">
+                            ${customer.ai_estimated_value.toLocaleString()}
+                          </p>
+                          {customer.ai_likelihood_to_refer !== null && (
+                            <p className="text-[11px] text-slate-500">
+                              {Math.round(customer.ai_likelihood_to_refer * 100)}% likely to refer
+                            </p>
+                          )}
+                        </>
+                      ) : (
+                        <span className="text-xs text-slate-400">—</span>
                       )}
                     </div>
                     <div className="space-y-2">

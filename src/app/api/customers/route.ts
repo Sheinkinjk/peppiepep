@@ -78,7 +78,7 @@ export async function GET(request: Request) {
     let query = supabase
       .from("customers")
       .select(
-        "id, name, phone, email, referral_code, discount_code, credits, status, created_at, company, website, instagram_handle, linkedin_handle, audience_profile, source, notes",
+        "id, name, phone, email, referral_code, discount_code, credits, status, created_at, company, website, instagram_handle, linkedin_handle, audience_profile, source, notes, ai_referral_score, ai_score_explanation, ai_estimated_value, ai_likelihood_to_refer, ai_optimal_approach, ai_best_contact_time, ai_scored_at",
         { count: "exact" },
       )
       .eq("business_id", business.id)
