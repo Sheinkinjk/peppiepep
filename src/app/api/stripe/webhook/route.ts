@@ -1,12 +1,22 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import Stripe from 'stripe';
 import { stripe, requireStripe } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
 import { createApiLogger } from '@/lib/api-logger';
+import type { Json } from '@/types/supabase';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
+
+// Type-safe interfaces for webhook data
+interface StripeWebhookEvent {
+  stripe_event_id: string;
+  event_type: string;
+  object_type: string;
+  object_id: string;
+  payload: Json;
+  processed: boolean;
+}
 
 export async function POST(request: NextRequest) {
   const logger = createApiLogger('stripe-webhook');
@@ -47,16 +57,21 @@ export async function POST(request: NextRequest) {
 
   const supabase = await createServerComponentClient();
 
-  // Log the webhook event
+  // Log the webhook event with proper typing
   try {
-    await supabase.from('stripe_webhook_events').insert({
+    const eventData = event.data.object;
+    const objectId = 'id' in eventData && typeof eventData.id === 'string' ? eventData.id : 'unknown';
+
+    const webhookEvent: StripeWebhookEvent = {
       stripe_event_id: event.id,
       event_type: event.type,
-      object_type: event.data.object.object,
-      object_id: (event.data.object as any).id,
-      payload: event.data.object as any,
+      object_type: eventData.object,
+      object_id: objectId,
+      payload: JSON.parse(JSON.stringify(eventData)) as Json,
       processed: false,
-    } as any);
+    };
+
+    await supabase.from('stripe_webhook_events').insert(webhookEvent);
   } catch (logError) {
     logger.error('Failed to log webhook event to database', { error: logError });
     // Continue processing even if logging fails

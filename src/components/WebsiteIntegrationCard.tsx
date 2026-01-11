@@ -39,8 +39,8 @@ export function WebsiteIntegrationCard({
   const apiSnippet = `fetch("${siteUrl}/api/referral-stats?code=YOUR_REFERRAL_CODE&token=SIGNED_TOKEN")
   .then(res => res.json())
   .then(data => {
-    console.log("Referral stats", data);
-    // Use this to show live stats on your site
+    // Use data to show live stats on your site
+    // data.total_conversions, data.total_rewarded, etc.
   });`;
   const discountCaptureSnippet = `fetch("${siteUrl}/api/discount-codes/redeem", {
   method: "POST",

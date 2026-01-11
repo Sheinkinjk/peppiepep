@@ -23,20 +23,11 @@ export function ReferredLandingHero({
   };
 
   async function handleScheduleCall() {
-    console.log("📞 Book a Call clicked (hero section)");
-    console.log("Attribution data:", {
-      ambassadorId,
-      businessId,
-      referralCode,
-    });
-
     setLoading(true);
 
     try {
       // Track the schedule call event
-      console.log("📊 Tracking schedule_call_clicked event...");
-
-      const response = await fetch("/api/track-conversion", {
+      await fetch("/api/track-conversion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -48,18 +39,10 @@ export function ReferredLandingHero({
         }),
       });
 
-      if (response.ok) {
-        console.log("✅ Event tracked successfully");
-      } else {
-        console.warn("⚠️ Event tracking failed:", response.status);
-      }
-
       // Redirect to Calendly
-      console.log("🔗 Redirecting to Calendly...");
       openCalendly();
     } catch (error) {
-      console.error("❌ Error tracking schedule call:", error);
-      console.log("🔗 Redirecting to Calendly anyway...");
+      // Track error silently, don't block user flow
       openCalendly();
     }
   }

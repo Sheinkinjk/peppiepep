@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 export const metadata = generateSEOMetadata(seoConfig.dashboard);
 
@@ -7,5 +8,5 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <ErrorBoundary>{children}</ErrorBoundary>;
 }

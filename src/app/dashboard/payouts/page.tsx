@@ -36,33 +36,50 @@ export default function PayoutsPage() {
   const loadData = useCallback(async () => {
     if (!customerId || !userEmail) return;
 
+    const abortController = new AbortController();
+
     try {
       setLoading(true);
       setError(null);
 
       // Load Connect account status
       const status = await getConnectAccountStatus(customerId);
+      if (abortController.signal.aborted) return;
       setConnectStatus(status);
 
       // Load commission balance from API
-      const response = await fetch(`/api/commissions/balance?customer_id=${customerId}`);
+      const response = await fetch(`/api/commissions/balance?customer_id=${customerId}`, {
+        signal: abortController.signal
+      });
       const data = await response.json();
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to load balance');
       }
 
-      setBalance(data.balance);
+      if (!abortController.signal.aborted) {
+        setBalance(data.balance);
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load data");
+      if (!abortController.signal.aborted) {
+        setError(err instanceof Error ? err.message : "Failed to load data");
+      }
     } finally {
-      setLoading(false);
+      if (!abortController.signal.aborted) {
+        setLoading(false);
+      }
     }
+
+    return () => abortController.abort();
   }, [customerId, userEmail]);
 
   const initializeUser = useCallback(async () => {
+    const abortController = new AbortController();
+
     try {
       const user = await getCurrentUser();
+      if (abortController.signal.aborted) return;
+
       if (!user) {
         setError("Please log in to view payouts");
         setLoading(false);
@@ -70,32 +87,52 @@ export default function PayoutsPage() {
       }
 
       const customer = await getCurrentCustomer();
+      if (abortController.signal.aborted) return;
+
       if (!customer) {
         setError("Customer account not found");
         setLoading(false);
         return;
       }
 
-      setCustomerId(customer.id);
-      setUserEmail(user.email || "");
+      if (!abortController.signal.aborted) {
+        setCustomerId(customer.id);
+        setUserEmail(user.email || "");
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load user");
-      setLoading(false);
+      if (!abortController.signal.aborted) {
+        setError(err instanceof Error ? err.message : "Failed to load user");
+        setLoading(false);
+      }
     }
+
+    return () => abortController.abort();
   }, []);
 
   useEffect(() => {
-    initializeUser();
+    const cleanup = initializeUser();
+    return () => {
+      cleanup?.then(fn => fn?.());
+    };
   }, [initializeUser]);
 
   useEffect(() => {
+    let cleanup: (() => void) | undefined;
+
     if (customerId && userEmail) {
-      loadData();
+      const result = loadData();
+      result?.then(fn => {
+        cleanup = fn;
+      });
     }
 
     if (searchParams.get("setup") === "complete") {
       setSuccess("Payout account setup complete! You can now request payouts.");
     }
+
+    return () => {
+      cleanup?.();
+    };
   }, [customerId, userEmail, searchParams, loadData]);
 
   async function handleSetupPayout() {

@@ -311,7 +311,8 @@ async function trackConversion(discountCode, transactionValue) {
   const data = await response.json();
 
   if (data.success) {
-    console.log('Ambassador credited:', data.ambassadorName);
+    // Ambassador credited: data.ambassadorName
+    // Proceed with order confirmation
   }
 }
 

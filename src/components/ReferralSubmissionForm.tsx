@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { parsePhoneNumber } from "libphonenumber-js";
 
 type SubmissionResult = { error?: string; success?: boolean };
 
@@ -42,8 +43,19 @@ export function ReferralSubmissionForm({
     if (!formValues.name.trim()) {
       errors.name = locale === "es" ? "Ingresa tu nombre completo." : "Please enter your full name.";
     }
+
+    // Improved phone validation with libphonenumber-js
     const cleanedPhone = formValues.phone.replace(/[^\d+]/g, "");
-    if (cleanedPhone.length < 8) {
+    let isValidPhone = false;
+    try {
+      const phoneNumber = parsePhoneNumber(formValues.phone, 'AU'); // Default to AU, can be made dynamic
+      isValidPhone = phoneNumber?.isValid() ?? false;
+    } catch {
+      // If parsing fails, fall back to basic check
+      isValidPhone = cleanedPhone.length >= 8;
+    }
+
+    if (!isValidPhone) {
       errors.phone = locale === "es" ? "Ingresa un teléfono válido." : "Please enter a valid phone number.";
     }
     setFieldErrors(errors);

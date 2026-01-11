@@ -4,6 +4,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import Papa from "papaparse";
 import * as XLSX from "xlsx";
 import { z } from "zod";
+import DOMPurify from "isomorphic-dompurify";
 
 import type { Database } from "@/types/supabase";
 import { buildCustomersFromRows } from "@/lib/customer-import";
@@ -20,6 +21,9 @@ export const runtime = "nodejs";
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 const MAX_ROWS = 5000; // Maximum rows per upload
 const ALLOWED_HEADERS = ['name', 'email', 'phone', 'notes', 'tags', 'company'];
+
+// Concurrent upload protection: Track active uploads by user ID
+const activeUploads = new Map<string, boolean>();
 
 const uploadFormSchema = z.object({
   file: z.instanceof(File, { message: "Please select a CSV or Excel file to upload." }),
@@ -83,11 +87,24 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const businessId = await resolveBusinessId(
-      supabase,
-      user.id,
-      `${user.email?.split("@")[0] ?? "Your"}'s salon`,
-    );
+    // Concurrent upload protection
+    if (activeUploads.get(user.id)) {
+      logger.warn("Concurrent upload attempt detected", { userId: user.id });
+      return NextResponse.json(
+        { error: "An upload is already in progress. Please wait for it to complete." },
+        { status: 409 }
+      );
+    }
+
+    // Mark upload as active
+    activeUploads.set(user.id, true);
+
+    try {
+      const businessId = await resolveBusinessId(
+        supabase,
+        user.id,
+        `${user.email?.split("@")[0] ?? "Your"}'s salon`,
+      );
 
     const formData = await request.formData();
     const validation = validateWithSchema(uploadFormSchema, { file: formData.get("file") }, logger, {
@@ -189,8 +206,16 @@ export async function POST(request: Request) {
     const duplicates: string[] = [];
 
     parsedRows.forEach((row, index) => {
-      const email = row.email?.toLowerCase().trim();
-      const phone = row.phone?.trim();
+      // Sanitize all values to prevent XSS
+      const sanitizedRow: Record<string, string> = {};
+      Object.keys(row).forEach((key) => {
+        const value = row[key];
+        sanitizedRow[key] = typeof value === 'string' ? DOMPurify.sanitize(value.trim()) : '';
+      });
+      parsedRows[index] = sanitizedRow;
+
+      const email = sanitizedRow.email?.toLowerCase().trim();
+      const phone = sanitizedRow.phone?.trim();
 
       if (email && emailSet.has(email)) {
         duplicates.push(`Row ${index + 2}: Duplicate email "${email}"`);
@@ -265,15 +290,25 @@ export async function POST(request: Request) {
       userId: user.id,
     });
 
-    return NextResponse.json({
-      success: `Imported ${customersWithUniqueReferralCodes.length} customer${
-        customersWithUniqueReferralCodes.length === 1 ? "" : "s"
-      }. Referral links are live.`,
-    });
+      return NextResponse.json({
+        success: `Imported ${customersWithUniqueReferralCodes.length} customer${
+          customersWithUniqueReferralCodes.length === 1 ? "" : "s"
+        }. Referral links are live.`,
+      });
+    } catch (error) {
+      logger.error("Upload API error", { error });
+      return NextResponse.json(
+        { error: "An unexpected error occurred while uploading customers." },
+        { status: 500 },
+      );
+    } finally {
+      // Clean up concurrent upload tracking
+      activeUploads.delete(user.id);
+    }
   } catch (error) {
-    logger.error("Upload API error", { error });
+    logger.error("Outer upload API error", { error });
     return NextResponse.json(
-      { error: "An unexpected error occurred while uploading customers." },
+      { error: "An unexpected error occurred." },
       { status: 500 },
     );
   }

@@ -4,11 +4,23 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { checkRateLimit } from '@/lib/rate-limit';
 import { buildAdminLoginAlertEmail, sendAdminNotification } from '@/lib/email-notifications';
+import { createApiLogger } from '@/lib/api-logger';
+
+// Safe error messages that don't expose internal details
+const AUTH_ERROR_MESSAGES: Record<string, string> = {
+  'invalid_credentials': 'Invalid email or password',
+  'email_not_confirmed': 'Please verify your email address before signing in',
+  'user_not_found': 'Invalid email or password', // Same as invalid_credentials for security
+  'too_many_requests': 'Too many login attempts. Please try again later',
+};
 
 export async function POST(request: NextRequest) {
+  const logger = createApiLogger('api:auth:signin');
+
   // Rate limiting: 5 attempts per minute to prevent brute force attacks
   const rateLimitCheck = await checkRateLimit(request, 'authentication');
   if (!rateLimitCheck.success && rateLimitCheck.response) {
+    logger.warn('Rate limit exceeded for signin attempt');
     return rateLimitCheck.response;
   }
 
@@ -51,8 +63,14 @@ export async function POST(request: NextRequest) {
     });
 
     if (signInError) {
+      const safeMessage = AUTH_ERROR_MESSAGES[signInError.message] ?? 'Invalid email or password';
+      logger.error('Sign in failed', {
+        code: signInError.code,
+        message: signInError.message,
+        email: email.substring(0, 3) + '***' // Partial email for debugging
+      });
       return NextResponse.json(
-        { error: signInError.message },
+        { error: safeMessage },
         { status: 401 }
       );
     }

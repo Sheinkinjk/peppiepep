@@ -52,7 +52,7 @@ export function CookieConsent() {
     // Reload to apply cookie settings (analytics, etc.)
     if (prefs.analytics || prefs.marketing) {
       // In future, initialize analytics here based on preferences
-      console.log("Cookie preferences saved:", prefs);
+      // Preferences saved - ready for analytics initialization
     }
   };
 
