@@ -79,7 +79,7 @@ export function QuickAddCustomerForm({ quickAddAction }: QuickAddCustomerFormPro
         router.refresh();
         ok = true;
       } catch (error) {
-        console.error("Quick add failed:", error);
+        // Error already handled by toast notification
         toast({
           variant: "destructive",
           title: "Unable to add customer",

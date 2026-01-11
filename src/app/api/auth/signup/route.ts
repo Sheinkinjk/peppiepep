@@ -102,11 +102,10 @@ export async function POST(request: Request) {
         email,
         createdAt: new Date().toISOString(),
       }),
-    }).catch((err) => {
-      console.error("Failed to send admin notification for new account:", err);
+    }).catch(() => {
+      // Admin notification failed silently, don't block user signup
     });
   } catch (sendError) {
-    console.error("Resend confirmation email failed", sendError);
     return NextResponse.json(
       { error: "Unable to send the confirmation email right now. Try again in a moment." },
       { status: 500 },
