@@ -79,16 +79,11 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
       .limit(1)
       .maybeSingle();
 
-    if (emailError) {
-      console.warn("Admin role lookup by email failed:", emailError);
-    }
-
+    // Silently handle admin role lookup errors - do not expose internal details
     resolvedAdminRole = adminRoleByEmail;
   }
 
-  if (error && error.code !== "PGRST116") {
-    console.warn("Admin role lookup by user_id failed:", error);
-  }
+  // Silently handle errors - do not expose database structure or query details
 
   if (!resolvedAdminRole && rpcRole && user.email) {
     return {
