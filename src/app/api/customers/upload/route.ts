@@ -16,6 +16,11 @@ import { checkRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
+// Constants for upload validation
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const MAX_ROWS = 5000; // Maximum rows per upload
+const ALLOWED_HEADERS = ['name', 'email', 'phone', 'notes', 'tags', 'company'];
+
 const uploadFormSchema = z.object({
   file: z.instanceof(File, { message: "Please select a CSV or Excel file to upload." }),
 });
@@ -105,7 +110,7 @@ export async function POST(request: Request) {
       );
     }
 
-    if (uploadedFile.size > 5 * 1024 * 1024) {
+    if (uploadedFile.size > MAX_FILE_SIZE) {
       return NextResponse.json(
         { error: "File too large. Maximum size is 5MB." },
         { status: 400 },
@@ -163,6 +168,55 @@ export async function POST(request: Request) {
         });
         return record;
       });
+    }
+
+    // Validate row count
+    if (parsedRows.length > MAX_ROWS) {
+      logger.warn("Upload exceeded row limit", {
+        userId: user.id,
+        rowCount: parsedRows.length,
+        maxAllowed: MAX_ROWS,
+      });
+      return NextResponse.json(
+        { error: `Maximum ${MAX_ROWS.toLocaleString()} rows allowed. Your file has ${parsedRows.length.toLocaleString()} rows.` },
+        { status: 400 },
+      );
+    }
+
+    // Check for duplicates within the upload
+    const emailSet = new Set<string>();
+    const phoneSet = new Set<string>();
+    const duplicates: string[] = [];
+
+    parsedRows.forEach((row, index) => {
+      const email = row.email?.toLowerCase().trim();
+      const phone = row.phone?.trim();
+
+      if (email && emailSet.has(email)) {
+        duplicates.push(`Row ${index + 2}: Duplicate email "${email}"`);
+      } else if (email) {
+        emailSet.add(email);
+      }
+
+      if (phone && phoneSet.has(phone)) {
+        duplicates.push(`Row ${index + 2}: Duplicate phone "${phone}"`);
+      } else if (phone) {
+        phoneSet.add(phone);
+      }
+    });
+
+    if (duplicates.length > 0) {
+      logger.warn("Duplicates found in upload", {
+        userId: user.id,
+        duplicateCount: duplicates.length,
+      });
+      return NextResponse.json(
+        {
+          error: `Found ${duplicates.length} duplicate(s) in your file. Please remove duplicates and try again.`,
+          duplicates: duplicates.slice(0, 10), // Return first 10 for user reference
+        },
+        { status: 400 },
+      );
     }
 
     const customersToInsert = buildCustomersFromRows(parsedRows, { businessId });

@@ -318,7 +318,7 @@ export default function LinkedInGrowthPage() {
               <a
                 href="/pdfs/creator-partnership-playbook.pdf"
                 download
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition group-hover:scale-[1.02] mt-auto"
+                className="min-h-[48px] w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition group-hover:scale-[1.02] mt-auto"
               >
                 <Download className="h-4 w-4" />
                 Download Free Guide (PDF)
@@ -365,7 +365,7 @@ export default function LinkedInGrowthPage() {
               <a
                 href="/pdfs/linkedin-creator-economics-2025.pdf"
                 download
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-purple-500/30 transition group-hover:scale-[1.02] mt-auto"
+                className="min-h-[48px] w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-purple-500/30 transition group-hover:scale-[1.02] mt-auto"
               >
                 <Download className="h-4 w-4" />
                 Download Market Report (PDF)

@@ -93,6 +93,7 @@ export function DashboardSectionSwitcher({
       }
       const nextUrl = `${window.location.pathname}?${params.toString()}`;
       window.history.pushState({}, "", nextUrl);
+      window.localStorage.setItem("dashboard:lastSection", sectionId);
     },
     [selectedWindow],
   );
@@ -119,6 +120,17 @@ export function DashboardSectionSwitcher({
     window.addEventListener("popstate", handler);
     return () => window.removeEventListener("popstate", handler);
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (defaultSection && defaultSection !== "overview") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("section")) return;
+    const stored = window.localStorage.getItem("dashboard:lastSection");
+    if (stored && stored !== activeSection) {
+      setSection(stored);
+    }
+  }, [defaultSection, activeSection, setSection]);
 
   useEffect(() => {
     const handler = (event: Event) => {

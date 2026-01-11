@@ -122,7 +122,7 @@ export function CampaignBuilder({
   }, [customers]);
 
   const loadAllCustomers = async () => {
-    if (!hasPartialCustomerList) return;
+    if (!hasPartialCustomerList || isLoadingAllCustomers) return; // Guard against concurrent calls
     setIsLoadingAllCustomers(true);
     try {
       const { rows, total } = await fetchAllPages<Customer>("/api/customers", {

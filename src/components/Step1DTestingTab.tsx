@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   ShieldCheck,
   CheckCircle,
@@ -10,9 +10,15 @@ import {
   Check,
   Link2,
   Target,
-  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
@@ -26,6 +32,33 @@ type Step1DTestingTabProps = {
   hasProgramSettings: boolean;
 };
 
+type AttributionHealth = {
+  healthy: boolean;
+  status?: "good" | "warning" | "critical" | "no_data";
+  recommendation?: string;
+  metrics?: {
+    last7Days?: {
+      linkVisits?: number;
+      linkVisitsAttributed?: number;
+      signups?: number;
+      signupsAttributed?: number;
+      conversions?: number;
+      conversionsAttributed?: number;
+      referrals?: number;
+      referralsAttributed?: number;
+      attributionRate?: string;
+    };
+  };
+  error?: string;
+};
+
+type AttributionCookieStatus = {
+  hasAttribution: boolean;
+  reason?: string;
+  message?: string;
+  daysRemaining?: number;
+};
+
 export function Step1DTestingTab({
   businessId,
   siteUrl,
@@ -36,9 +69,19 @@ export function Step1DTestingTab({
 }: Step1DTestingTabProps) {
   const [testLandingUrl, setTestLandingUrl] = useState("");
   const [testReferralCode, setTestReferralCode] = useState("");
-  const [testingStatus, setTestingStatus] = useState<"idle" | "testing" | "success" | "error">("idle");
   const [copiedLanding, setCopiedLanding] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
+  const [qaConfirmOpen, setQaConfirmOpen] = useState(false);
+  const [qaCleanupConfirmOpen, setQaCleanupConfirmOpen] = useState(false);
+  const [qaResultsHint, setQaResultsHint] = useState(false);
+  const [qaDetectedAt, setQaDetectedAt] = useState<string | null>(null);
+  const [isQaRunning, setIsQaRunning] = useState(false);
+  const [isQaCleanupRunning, setIsQaCleanupRunning] = useState(false);
+  const [healthCheck, setHealthCheck] = useState<AttributionHealth | null>(null);
+  const [healthCheckedAt, setHealthCheckedAt] = useState<string | null>(null);
+  const [cookieCheck, setCookieCheck] = useState<AttributionCookieStatus | null>(null);
+  const [isHealthRunning, setIsHealthRunning] = useState(false);
+  const [isCookieRunning, setIsCookieRunning] = useState(false);
 
   const exampleLandingUrl = `${siteUrl}/landing`;
   const exampleReferralUrl = testReferralCode
@@ -68,37 +111,158 @@ export function Step1DTestingTab({
     }
   };
 
-  const testAttributionCookies = async () => {
-    setTestingStatus("testing");
-
+  const runHealthCheck = async () => {
+    if (isHealthRunning) return null;
+    setIsHealthRunning(true);
     try {
-      // Test if attribution endpoint is working
       const response = await fetch("/api/health/attribution");
-      const data = await response.json();
-
-      if (data.healthy) {
-        setTestingStatus("success");
-        toast({
-          title: "Attribution System Healthy",
-          description: `Attribution rate: ${data.metrics?.last7Days?.attributionRate || "N/A"}`,
-        });
-      } else {
-        setTestingStatus("error");
-        toast({
-          title: "Attribution Issues Detected",
-          description: data.recommendation || "Check your integration setup",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      setTestingStatus("error");
-      toast({
-        title: "Test Failed",
-        description: "Could not connect to attribution system",
-        variant: "destructive",
-      });
+      const data = (await response.json()) as AttributionHealth;
+      setHealthCheck(data);
+      setHealthCheckedAt(new Date().toISOString());
+      return data;
+    } catch {
+      setHealthCheck({ healthy: false, error: "Unable to load attribution health." });
+      return null;
+    } finally {
+      setIsHealthRunning(false);
     }
   };
+
+  const runCookieCheck = async () => {
+    if (isCookieRunning) return;
+    setIsCookieRunning(true);
+    try {
+      const response = await fetch("/api/verify-attribution");
+      const data = (await response.json()) as AttributionCookieStatus;
+      setCookieCheck(data);
+    } catch {
+      setCookieCheck({ hasAttribution: false, reason: "error", message: "Unable to read attribution cookie." });
+    } finally {
+      setIsCookieRunning(false);
+    }
+  };
+
+  const checkRecentQaEvents = useCallback(async () => {
+    try {
+      const response = await fetch("/api/referral-events");
+      if (!response.ok) return;
+      const payload = (await response.json()) as {
+        events?: Array<{
+          created_at?: string | null;
+          source?: string | null;
+          metadata?: Record<string, unknown> | null;
+        }>;
+      };
+      const events = payload.events ?? [];
+      const cutoff = Date.now() - 10 * 60 * 1000;
+      const recentQa = events.find((event) => {
+        const createdAt = event.created_at ? Date.parse(event.created_at) : 0;
+        const isQaSource = event.source === "integration_qa";
+        const isQaMeta = Boolean(event.metadata && event.metadata["qa_simulated"]);
+        return createdAt >= cutoff && (isQaSource || isQaMeta);
+      });
+      setQaDetectedAt(recentQa?.created_at ?? null);
+    } catch {
+      setQaDetectedAt(null);
+    }
+  }, []);
+
+  useEffect(() => {
+    checkRecentQaEvents();
+  }, [checkRecentQaEvents]);
+
+  const runIntegrationQa = async () => {
+    if (isQaRunning) return;
+    setIsQaRunning(true);
+    const events = [
+      { eventType: "link_visit", label: "Referral link opened" },
+      { eventType: "signup_submitted", label: "Form submitted" },
+      { eventType: "schedule_call_clicked", label: "Meeting booked" },
+      { eventType: "conversion_completed", label: "Order completed" },
+    ];
+
+    try {
+      for (const event of events) {
+        const response = await fetch("/api/referral-events", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            businessId,
+            eventType: event.eventType,
+            source: "integration_qa",
+            device: "dashboard",
+            metadata: {
+              qa_simulated: true,
+              qa_label: event.label,
+              qa_step: "1D",
+            },
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to log ${event.eventType}`);
+        }
+      }
+
+      toast({
+        title: "Integration QA logged",
+        description: "Test events are now visible in Measure ROI and Recent Activity.",
+      });
+      setQaResultsHint(true);
+      await checkRecentQaEvents();
+    } catch (error) {
+      console.error("Integration QA failed:", error);
+      toast({
+        variant: "destructive",
+        title: "Integration QA failed",
+        description: "We couldn't log the test events. Please try again.",
+      });
+    } finally {
+      setIsQaRunning(false);
+    }
+  };
+
+  const cleanupIntegrationQa = async () => {
+    if (isQaCleanupRunning) return;
+    setIsQaCleanupRunning(true);
+    try {
+      const response = await fetch("/api/referral-events/cleanup-qa", {
+        method: "POST",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to clean QA events");
+      }
+
+      const result = await response.json().catch(() => ({}));
+      toast({
+        title: "Integration QA cleared",
+        description: `${result.deleted ?? 0} QA events removed from Measure ROI.`,
+      });
+      setQaResultsHint(false);
+      setQaDetectedAt(null);
+    } catch (error) {
+      console.error("QA cleanup failed:", error);
+      toast({
+        variant: "destructive",
+        title: "Cleanup failed",
+        description: "We couldn't remove QA events. Please try again.",
+      });
+    } finally {
+      setIsQaCleanupRunning(false);
+    }
+  };
+
+  const handleJumpToQaResults = () => {
+    if (typeof window === "undefined") return;
+    window.dispatchEvent(
+      new CustomEvent("dashboard:navigate", {
+        detail: { section: "performance", scrollTo: "measure-roi-interaction-hub" },
+      }),
+    );
+  };
+
+  const attributionReady = healthCheck?.healthy === true;
 
   return (
     <div className="space-y-8">
@@ -121,6 +285,111 @@ export function Step1DTestingTab({
           </div>
         </div>
       </div>
+
+      <Dialog open={qaConfirmOpen} onOpenChange={setQaConfirmOpen}>
+        <DialogContent className="max-w-md md:max-w-lg max-h-[80vh] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-black text-slate-900">Run Integration QA</DialogTitle>
+            <DialogDescription className="text-sm text-slate-600">
+              This will simulate the full QA flow and log test events into Measure ROI so you can confirm attribution end-to-end.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 space-y-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4 text-sm text-emerald-900">
+            <p className="font-semibold">Events that will be logged:</p>
+            <ul className="space-y-1 text-sm text-emerald-900/90">
+              <li>• Referral link opened</li>
+              <li>• Form submitted</li>
+              <li>• Meeting booked</li>
+              <li>• Order completed</li>
+            </ul>
+          </div>
+          <div className="mt-4 space-y-2 rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
+            <p className="font-semibold text-slate-900">Where the test data should appear:</p>
+            <ul className="space-y-1">
+              <li>• Measure ROI → Interaction Hub (counts increment)</li>
+              <li>• Measure ROI → Recent Interaction Activity (source shows “integration_qa”)</li>
+              <li>• Measure ROI → Journey timeline (events listed per ambassador)</li>
+            </ul>
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
+            <Button
+              type="button"
+              variant="outline"
+              className="rounded-full"
+              onClick={() => {
+                setQaConfirmOpen(false);
+                handleJumpToQaResults();
+              }}
+            >
+              Jump to QA results
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="rounded-full"
+              onClick={() => setQaConfirmOpen(false)}
+              disabled={isQaRunning}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              className="rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
+              onClick={async () => {
+                setQaConfirmOpen(false);
+                await runIntegrationQa();
+              }}
+              disabled={isQaRunning}
+            >
+              {isQaRunning ? "Running..." : "Confirm & run QA"}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={qaCleanupConfirmOpen} onOpenChange={setQaCleanupConfirmOpen}>
+        <DialogContent className="max-w-md md:max-w-lg max-h-[80vh] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-black text-slate-900">Clear QA Events</DialogTitle>
+            <DialogDescription className="text-sm text-slate-600">
+              This removes QA test events from Measure ROI and Recent Activity so your dashboard reflects only live traffic.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 space-y-2 rounded-2xl border border-rose-200 bg-rose-50/70 p-4 text-sm text-rose-900">
+            <p className="font-semibold">This will delete QA data from:</p>
+            <ul className="space-y-1 text-rose-900/90">
+              <li>• Measure ROI → Interaction Hub counts</li>
+              <li>• Measure ROI → Recent Interaction Activity list</li>
+              <li>• Measure ROI → Journey timeline</li>
+            </ul>
+            <p className="mt-2 text-xs text-rose-900/80">
+              Only events tagged with <span className="font-semibold">source = integration_qa</span> are removed.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
+            <Button
+              type="button"
+              variant="outline"
+              className="rounded-full"
+              onClick={() => setQaCleanupConfirmOpen(false)}
+              disabled={isQaCleanupRunning}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              className="rounded-full bg-slate-900 text-white hover:bg-slate-800"
+              onClick={async () => {
+                setQaCleanupConfirmOpen(false);
+                await cleanupIntegrationQa();
+              }}
+              disabled={isQaCleanupRunning}
+            >
+              {isQaCleanupRunning ? "Clearing..." : "Confirm & clear QA"}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Connect to Landing Page */}
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -213,59 +482,163 @@ export function Step1DTestingTab({
         </div>
       </div>
 
-      {/* System QA Snapshot */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      {/* QA Readiness Checks */}
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-6 shadow-sm">
         <div className="flex items-start gap-3 mb-4">
-          <div className="rounded-lg bg-purple-100 p-2">
-            <Target className="h-5 w-5 text-purple-600" />
+          <div className="rounded-lg bg-emerald-600 p-2">
+            <Target className="h-5 w-5 text-white" />
           </div>
           <div className="flex-1">
-            <p className="text-sm font-semibold text-slate-900">System QA snapshot</p>
-            <p className="text-xs text-slate-500 mt-1">
-              Test attribution cookies and referral tracking
+            <p className="text-sm font-semibold text-emerald-900">QA readiness checks</p>
+            <p className="text-xs text-emerald-800/80 mt-1">
+              Confirm attribution health, cookie setup, and test events before inviting ambassadors.
             </p>
+            {qaDetectedAt && (
+              <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                QA verified in the last 10 minutes
+              </div>
+            )}
           </div>
         </div>
 
-        <div className="space-y-3">
+        <div className="flex flex-wrap gap-2">
           <Button
-            onClick={testAttributionCookies}
-            disabled={testingStatus === "testing"}
-            className="w-full"
-            variant={testingStatus === "success" ? "default" : "outline"}
+            type="button"
+            onClick={() => setQaConfirmOpen(true)}
+            className="rounded-full bg-emerald-700 text-white hover:bg-emerald-800"
+            disabled={isQaRunning || isQaCleanupRunning}
           >
-            {testingStatus === "testing" && <Zap className="h-4 w-4 mr-2 animate-pulse" />}
-            {testingStatus === "success" && <CheckCircle className="h-4 w-4 mr-2" />}
-            {testingStatus === "error" && <AlertTriangle className="h-4 w-4 mr-2" />}
-            {testingStatus === "idle" && "Run Attribution Test"}
-            {testingStatus === "testing" && "Testing..."}
-            {testingStatus === "success" && "Attribution Working"}
-            {testingStatus === "error" && "Test Failed - Retry"}
+            {isQaRunning ? "Running QA..." : "Run Integration QA"}
           </Button>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => setQaCleanupConfirmOpen(true)}
+            className="rounded-full"
+            disabled={isQaCleanupRunning || isQaRunning}
+          >
+            {isQaCleanupRunning ? "Clearing..." : "Clear QA Events"}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handleJumpToQaResults}
+            className="rounded-full"
+          >
+            Open Measure ROI
+          </Button>
+        </div>
 
-          {testingStatus === "success" && (
-            <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
-              <div className="flex items-center gap-2 text-emerald-800">
-                <CheckCircle className="h-4 w-4" />
-                <p className="text-xs font-semibold">Attribution system is operational</p>
-              </div>
-              <p className="text-xs text-emerald-700 mt-2">
-                Cookies are being set correctly and referral tracking is active
-              </p>
-            </div>
-          )}
+        {qaResultsHint && (
+          <div className="mt-3 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-xs text-emerald-900">
+            <span className="font-semibold">QA events logged.</span>{" "}
+            Open Measure ROI to verify Interaction Hub + Recent Activity.
+          </div>
+        )}
 
-          {testingStatus === "error" && (
-            <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-              <div className="flex items-center gap-2 text-red-800">
-                <AlertTriangle className="h-4 w-4" />
-                <p className="text-xs font-semibold">Attribution issues detected</p>
-              </div>
-              <p className="text-xs text-red-700 mt-2">
-                Check Step 1C integrations and ensure attribution tracking is configured
-              </p>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution health</p>
+              <Button
+                type="button"
+                size="sm"
+                variant="outline"
+                className="rounded-full"
+                onClick={runHealthCheck}
+                disabled={isHealthRunning}
+              >
+                {isHealthRunning ? "Running..." : "Run check"}
+              </Button>
             </div>
-          )}
+            {healthCheck ? (
+              <div className="mt-2 text-xs text-slate-700">
+                <p className="font-semibold">
+                  Status:{" "}
+                  <span className="uppercase">
+                    {healthCheck.status ?? (healthCheck.healthy ? "good" : "error")}
+                  </span>
+                </p>
+                <p>{healthCheck.recommendation ?? healthCheck.error}</p>
+                {healthCheckedAt && (
+                  <p className="text-[11px] text-slate-400">
+                    Last checked {new Date(healthCheckedAt).toLocaleString()}
+                  </p>
+                )}
+                {healthCheck.metrics?.last7Days && (
+                  <div className="mt-2 space-y-1 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 text-[11px] text-slate-700">
+                    <p>
+                      Link opens: {healthCheck.metrics.last7Days.linkVisitsAttributed ?? 0}/
+                      {healthCheck.metrics.last7Days.linkVisits ?? 0} attributed
+                    </p>
+                    <p>
+                      Form submits: {healthCheck.metrics.last7Days.signupsAttributed ?? 0}/
+                      {healthCheck.metrics.last7Days.signups ?? 0} attributed
+                    </p>
+                    <p>
+                      Orders: {healthCheck.metrics.last7Days.conversionsAttributed ?? 0}/
+                      {healthCheck.metrics.last7Days.conversions ?? 0} attributed
+                    </p>
+                    <p>
+                      Referrals: {healthCheck.metrics.last7Days.referralsAttributed ?? 0}/
+                      {healthCheck.metrics.last7Days.referrals ?? 0} attributed
+                    </p>
+                    <p className="font-semibold">
+                      Attribution rate: {healthCheck.metrics.last7Days.attributionRate ?? "N/A"}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <p className="mt-2 text-xs text-slate-600">
+                Confirms your attribution health and recent link activity.
+              </p>
+            )}
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution cookie</p>
+              <Button
+                type="button"
+                size="sm"
+                variant="outline"
+                className="rounded-full"
+                onClick={runCookieCheck}
+                disabled={isCookieRunning}
+              >
+                {isCookieRunning ? "Checking..." : "Check cookie"}
+              </Button>
+            </div>
+            {cookieCheck ? (
+              <div className="mt-2 flex items-start gap-2 text-xs text-slate-700">
+                {cookieCheck.hasAttribution ? (
+                  <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
+                ) : (
+                  <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
+                )}
+                <div>
+                  <p className="font-semibold">
+                    {cookieCheck.hasAttribution ? "Attribution active" : "No attribution cookie"}
+                  </p>
+                  <p>{cookieCheck.message ?? "Open a referral link to set the cookie."}</p>
+                </div>
+              </div>
+            ) : (
+              <p className="mt-2 text-xs text-slate-600">
+                Open a referral link, then check to confirm tracking is stored.
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs text-slate-600">
+          <p className="font-semibold text-slate-900">Where to confirm results:</p>
+          <ul className="mt-2 space-y-1">
+            <li>• Measure ROI → Interaction Hub (counts increment)</li>
+            <li>• Measure ROI → Recent Interaction Activity (source shows “integration_qa”)</li>
+            <li>• Measure ROI → Journey timeline (events listed per ambassador)</li>
+          </ul>
         </div>
       </div>
 
@@ -317,7 +690,7 @@ export function Step1DTestingTab({
           </div>
 
           <div className="flex items-start gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
-            {testingStatus === "success" ? (
+            {attributionReady ? (
               <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
             ) : (
               <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
@@ -325,9 +698,9 @@ export function Step1DTestingTab({
             <div>
               <p className="text-sm font-semibold text-slate-900">Attribution tracking tested</p>
               <p className="text-xs text-slate-500">
-                {testingStatus === "success"
+                {attributionReady
                   ? "Cookies and tracking are working correctly"
-                  : "Run attribution test above to verify"}
+                  : "Run the attribution health check above to verify"}
               </p>
             </div>
           </div>
@@ -345,7 +718,7 @@ export function Step1DTestingTab({
           )}
         </div>
 
-        {hasProgramSettings && hasCustomers && testingStatus === "success" && (
+        {hasProgramSettings && hasCustomers && attributionReady && (
           <div className="mt-4 rounded-lg border-2 border-emerald-200 bg-emerald-50 p-4">
             <div className="flex items-center gap-2 text-emerald-800">
               <CheckCircle className="h-5 w-5" />

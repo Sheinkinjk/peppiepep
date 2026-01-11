@@ -150,9 +150,20 @@ export function CustomersTable({
         if (search) params.set("q", search);
         if (status !== "all") params.set("status", status);
 
-        const response = await fetch(`/api/customers?${params.toString()}`, {
-          signal: controller.signal,
-        });
+        const fetchWithRetry = async () => {
+          const response = await fetch(`/api/customers?${params.toString()}`, {
+            signal: controller.signal,
+          });
+          if (response.status === 401 && !controller.signal.aborted) {
+            await new Promise((resolve) => setTimeout(resolve, 350));
+            return fetch(`/api/customers?${params.toString()}`, {
+              signal: controller.signal,
+            });
+          }
+          return response;
+        };
+
+        const response = await fetchWithRetry();
 
         if (!response.ok) {
           const payload = await response.json().catch(() => ({}));
@@ -1099,4 +1110,3 @@ export function CustomersTable({
     </div>
   );
 }
-

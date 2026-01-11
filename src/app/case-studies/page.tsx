@@ -179,37 +179,37 @@ function AccordionSection({ items }: { items: AccordionItem[] }) {
 export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
 
         {/* Page Title Section */}
-        <section className="mb-12 text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-black text-slate-900 leading-tight">
+        <section className="mb-10 text-center space-y-3 sm:space-y-4">
+          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 leading-tight">
             Case Studies
           </h1>
-          <p className="text-xl sm:text-2xl font-semibold text-slate-700 max-w-4xl mx-auto leading-snug">
+          <p className="text-lg sm:text-2xl font-semibold text-slate-700 max-w-4xl mx-auto leading-snug">
             Referral programs that compound trust, pipeline, and revenue
           </p>
-          <p className="text-base text-slate-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto">
             See how Refer Labs links referral codes to campaigns, CRM, and payouts so every introduction is trackable, rewardable, and repeatable — no guesswork.
           </p>
         </section>
 
         {/* Tabs Section */}
         <Tabs defaultValue="luxury" className="space-y-8">
-          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 bg-slate-100 p-2 rounded-2xl">
-            <TabsTrigger value="luxury" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+          <TabsList className="flex w-full gap-2 overflow-x-auto rounded-2xl bg-slate-100 p-2 sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:gap-2">
+            <TabsTrigger value="luxury" className="min-w-[200px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
               Luxury & Lifestyle E-commerce
             </TabsTrigger>
-            <TabsTrigger value="professional" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+            <TabsTrigger value="professional" className="min-w-[200px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
               Professional Services
             </TabsTrigger>
-            <TabsTrigger value="saas" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+            <TabsTrigger value="saas" className="min-w-[140px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
               B2B SaaS
             </TabsTrigger>
-            <TabsTrigger value="industries" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+            <TabsTrigger value="industries" className="min-w-[180px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
               Industries That Win
             </TabsTrigger>
-            <TabsTrigger value="platform" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-md">
+            <TabsTrigger value="platform" className="min-w-[140px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
               Referral OS
             </TabsTrigger>
           </TabsList>
@@ -217,7 +217,7 @@ export default function CaseStudiesPage() {
           {/* Tab 1: Luxury & Lifestyle */}
           <TabsContent value="luxury" className="space-y-8">
             <div className="text-center">
-              <p className="text-2xl font-bold text-slate-900">
+              <p className="text-lg sm:text-2xl font-bold text-slate-900">
                 Turn every unboxing, DM, and &quot;I love this&quot; moment into your next customers.
               </p>
             </div>
@@ -230,14 +230,14 @@ export default function CaseStudiesPage() {
             </div>
 
             {/* How It Worked */}
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
               <AccordionSection items={luxuryAccordion} />
             </div>
 
             {/* Proof Statement */}
-            <div className="rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 p-8">
-              <p className="text-lg text-slate-800 leading-relaxed italic">
+            <div className="rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 p-5 sm:p-8">
+              <p className="text-base sm:text-lg text-slate-800 leading-relaxed italic">
                 By unifying referral codes across Shopify, Klaviyo, packaging, and SMS, the brand finally saw which advocates, launches, and creatives actually moved revenue — then doubled down on those cohorts.
               </p>
             </div>
@@ -246,7 +246,7 @@ export default function CaseStudiesPage() {
           {/* Tab 2: Professional Services */}
           <TabsContent value="professional" className="space-y-8">
             <div className="text-center">
-              <p className="text-2xl font-bold text-slate-900">
+              <p className="text-lg sm:text-2xl font-bold text-slate-900">
                 Turn warm introductions into a predictable, compliant pipeline channel.
               </p>
             </div>
@@ -257,13 +257,13 @@ export default function CaseStudiesPage() {
               ))}
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
               <AccordionSection items={professionalAccordion} />
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-8">
-              <p className="text-lg text-slate-800 leading-relaxed italic">
+            <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-5 sm:p-8">
+              <p className="text-base sm:text-lg text-slate-800 leading-relaxed italic">
                 Instead of hoping advisers remembered to ask, the firm automated prompts, assets, approvals, and tracking. Compliance loved the audit trail. GTM loved the pipeline.
               </p>
             </div>
@@ -272,7 +272,7 @@ export default function CaseStudiesPage() {
           {/* Tab 3: B2B SaaS */}
           <TabsContent value="saas" className="space-y-8">
             <div className="text-center">
-              <p className="text-2xl font-bold text-slate-900">
+              <p className="text-lg sm:text-2xl font-bold text-slate-900">
                 Let your power users become your highest-converting outbound team.
               </p>
             </div>
@@ -283,13 +283,13 @@ export default function CaseStudiesPage() {
               ))}
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
               <AccordionSection items={saasAccordion} />
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 p-8">
-              <p className="text-lg text-slate-800 leading-relaxed italic">
+            <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 p-5 sm:p-8">
+              <p className="text-base sm:text-lg text-slate-800 leading-relaxed italic">
                 Referrals stopped being random. Product, customer success, and sales all worked from the same referral data — so forecasting, follow-ups, and rewards finally aligned.
               </p>
             </div>
@@ -327,8 +327,8 @@ export default function CaseStudiesPage() {
               ))}
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 p-8 text-center">
-              <p className="text-xl font-semibold text-slate-900">
+            <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 p-5 sm:p-8 text-center">
+              <p className="text-base sm:text-xl font-semibold text-slate-900">
                 If your customers already recommend you — Refer Labs turns that behaviour into a measurable, scalable acquisition channel.
               </p>
             </div>
@@ -336,14 +336,14 @@ export default function CaseStudiesPage() {
 
           {/* Tab 5: Platform */}
           <TabsContent value="platform" className="space-y-8">
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Platform Capabilities</h3>
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">Platform Capabilities</h3>
               <AccordionSection items={platformCapabilities} />
             </div>
 
             {/* Deployment Playbook */}
-            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Deployment Playbook</h3>
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">Deployment Playbook</h3>
               <div className="grid gap-6 md:grid-cols-3">
                 {timelineCards.map((card) => (
                   <div
@@ -377,48 +377,48 @@ export default function CaseStudiesPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b-2 border-slate-200 bg-gradient-to-r from-slate-50 to-slate-100">
-                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-[0.12em] text-slate-700">Feature</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-red-600">Manual Tracking</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-orange-600">Basic Tools</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-teal-600">Refer Labs</th>
+                    <th className="px-3 py-3 text-left text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-slate-700">Feature</th>
+                    <th className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-red-600">Manual Tracking</th>
+                    <th className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-orange-600">Basic Tools</th>
+                    <th className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-teal-600">Refer Labs</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Unique Referral Codes</td>
-                    <td className="px-6 py-4 text-center text-2xl">❌</td>
-                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
-                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Unique Referral Codes</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">⚠️</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">CRM Integration</td>
-                    <td className="px-6 py-4 text-center text-2xl">❌</td>
-                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
-                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">CRM Integration</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">⚠️</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Automated Campaigns</td>
-                    <td className="px-6 py-4 text-center text-2xl">❌</td>
-                    <td className="px-6 py-4 text-center text-2xl">❌</td>
-                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Automated Campaigns</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Revenue Attribution</td>
-                    <td className="px-6 py-4 text-center text-2xl">❌</td>
-                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
-                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Revenue Attribution</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">⚠️</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
                   </tr>
                   <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">Ambassador Dashboard</td>
-                    <td className="px-6 py-4 text-center text-2xl">❌</td>
-                    <td className="px-6 py-4 text-center text-2xl">❌</td>
-                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Ambassador Dashboard</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
+                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
                   </tr>
                   <tr className="bg-gradient-to-r from-teal-50 to-cyan-50">
-                    <td className="px-6 py-4 text-sm font-bold text-slate-900">Setup Time</td>
-                    <td className="px-6 py-4 text-center text-sm font-semibold text-red-700">Weeks</td>
-                    <td className="px-6 py-4 text-center text-sm font-semibold text-orange-700">Days</td>
-                    <td className="px-6 py-4 text-center text-sm font-semibold text-teal-700">Minutes</td>
+                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-bold text-slate-900">Setup Time</td>
+                    <td className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-semibold text-red-700">Weeks</td>
+                    <td className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-semibold text-orange-700">Days</td>
+                    <td className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-semibold text-teal-700">Minutes</td>
                   </tr>
                 </tbody>
               </table>
@@ -427,14 +427,14 @@ export default function CaseStudiesPage() {
         </section>
 
         {/* Bottom CTA */}
-        <div className="mt-12 sticky bottom-6 z-10">
-          <div className="rounded-3xl border-2 border-teal-200 bg-gradient-to-br from-white to-teal-50 p-8 shadow-2xl">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-12 sticky bottom-4 sm:bottom-6 z-10">
+          <div className="rounded-3xl border-2 border-teal-200 bg-gradient-to-br from-white to-teal-50 p-5 sm:p-8 shadow-2xl">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
               <div className="text-center sm:text-left">
-                <p className="text-2xl font-bold text-slate-900 mb-2">
+                <p className="text-lg sm:text-2xl font-bold text-slate-900 mb-2">
                   Turn your customers into a measurable growth channel.
                 </p>
-                <p className="text-sm text-slate-600">
+                <p className="text-xs sm:text-sm text-slate-600">
                   Launch your referral program in under 5 minutes.
                 </p>
               </div>
@@ -442,7 +442,7 @@ export default function CaseStudiesPage() {
                 href="/login"
                 className={cn(
                   buttonVariants({ variant: "cta" }),
-                  "text-lg font-bold px-8 py-6 shadow-xl whitespace-nowrap"
+                  "w-full sm:w-auto text-base sm:text-lg font-bold px-6 py-4 sm:px-8 sm:py-6 shadow-xl whitespace-nowrap"
                 )}
               >
                 Start Getting Referrals

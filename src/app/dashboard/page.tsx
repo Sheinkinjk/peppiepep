@@ -2096,7 +2096,7 @@ export default async function Dashboard({
               ) : (
                 <>
                   <MeasureRoiQaPanel />
-                  <div id="measure-roi-interaction-hub" className="mb-5 scroll-mt-24">
+                  <div id="measure-roi-interaction-hub" className="mb-4 scroll-mt-24">
                     <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
                       <h3 className="text-sm font-semibold text-slate-600 uppercase tracking-[0.08em]">
                         Interaction Hub
@@ -2126,8 +2126,8 @@ export default async function Dashboard({
                     </div>
                     <div className="grid gap-3 lg:grid-cols-[2fr,1fr]">
                       <div className="grid gap-3 md:grid-cols-2">
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-sky-600 flex items-center justify-center">
                               <Link2 className="h-4 w-4 text-white" />
                             </div>
@@ -2139,8 +2139,8 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-cyan-600 flex items-center justify-center">
                               <Target className="h-4 w-4 text-white" />
                             </div>
@@ -2152,8 +2152,8 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center">
                               <CalendarCheck className="h-4 w-4 text-white" />
                             </div>
@@ -2165,8 +2165,8 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center">
                               <FileText className="h-4 w-4 text-white" />
                             </div>
@@ -2191,8 +2191,8 @@ export default async function Dashboard({
                           </div>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-orange-600 flex items-center justify-center">
                               <Send className="h-4 w-4 text-white" />
                             </div>
@@ -2214,8 +2214,8 @@ export default async function Dashboard({
                           </div>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
                               <Mail className="h-4 w-4 text-white" />
                             </div>
@@ -2229,8 +2229,8 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
                               <CreditCard className="h-4 w-4 text-white" />
                             </div>
@@ -2244,8 +2244,8 @@ export default async function Dashboard({
                           </p>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
+                          <div className="flex items-center gap-3 mb-2">
                             <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center">
                               <Settings className="h-4 w-4 text-white" />
                             </div>
@@ -2260,7 +2260,7 @@ export default async function Dashboard({
                         </div>
                       </div>
 
-                      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <div className="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm">
                         <div className="flex items-center justify-between mb-3">
                           <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-[0.08em]">
                             Recent Interaction Activity

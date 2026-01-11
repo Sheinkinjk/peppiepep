@@ -296,46 +296,47 @@ export default async function Home() {
 
       <main className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 px-4 pb-16 sm:pb-20 pt-8 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
-        {/* Hero Section - Premium Minimal Design */}
-        <div className="mx-auto w-full max-w-6xl relative py-16 sm:py-20 lg:py-28">
+        {/* Hero Section - Premium Polish */}
+        <div className="mx-auto w-full max-w-7xl relative py-10 sm:py-12 lg:py-20 min-h-[480px] lg:min-h-[580px]">
+          {/* Corner notification cards - Desktop only, subtle and ambient */}
+          <div className="pointer-events-none absolute inset-0 hidden xl:block">
+            {heroBadges.map((badge) => (
+              <HeroBadge
+                key={badge.id}
+                badge={badge}
+                className={cn("absolute", badge.position, heroBadgeOrientation[badge.id])}
+              />
+            ))}
+          </div>
 
-          <div className="relative z-10 flex flex-col items-center justify-center gap-10 px-4 text-center sm:px-8 lg:px-12">
+          {/* Mobile: Show only top 2 cards, even more subtle */}
+          <div className="pointer-events-none absolute inset-0 xl:hidden">
+            {heroBadges.slice(0, 2).map((badge) => (
+              <HeroBadge
+                key={badge.id}
+                badge={badge}
+                className={cn(
+                  "absolute hidden sm:flex",
+                  badge.position,
+                  heroBadgeOrientation[badge.id],
+                  "opacity-40",
+                )}
+              />
+            ))}
+          </div>
 
-            {/* Main Headline */}
-            <div className="space-y-6 max-w-4xl">
-              <h1 className="text-[2.75rem] font-black leading-[1.08] tracking-[-0.02em] text-slate-900 sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem]">
-                Turn Your Network Into
-                <span className="block mt-2 bg-gradient-to-r from-[#0abab5] via-[#5ce1e6] to-[#4dd4d9] bg-clip-text text-transparent">
-                  New Customers
-                </span>
+          <div className="relative z-10 flex min-h-[420px] flex-col items-center justify-center gap-8 px-4 text-center sm:px-8 lg:px-16">
+            <div className="space-y-5 sm:space-y-6 max-w-6xl">
+              <h1 className="text-[2.35rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[2.8rem] md:text-[3.05rem] lg:text-[3.5rem]">
+                <span className="block md:whitespace-nowrap">Turn Partners, Clients, Creators & Advisors</span>
+                <span className="block md:whitespace-nowrap">Into a Fully Tracked Referral Channel</span>
               </h1>
-              <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-[1.35rem] text-slate-600 leading-relaxed font-medium">
-                Activate partners, clients, creators & advisors with tracked referral links, automated rewards, and full attribution.
-              </p>
             </div>
-
-            {/* CTA */}
             <TrackedCTA
               ambassadorId={ambassadorData?.id}
               businessId={ambassadorData?.business_id}
               referralCode={ambassadorData?.code}
             />
-
-            {/* Social Proof Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-600">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-slate-200/60 shadow-sm">
-                <div className="flex -space-x-2">
-                  <div className="h-6 w-6 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 ring-2 ring-white" />
-                  <div className="h-6 w-6 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 ring-2 ring-white" />
-                  <div className="h-6 w-6 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 ring-2 ring-white" />
-                </div>
-                <span className="font-semibold text-slate-700">Trusted by growth teams</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-slate-200/60 shadow-sm">
-                <span className="text-amber-400">★★★★★</span>
-                <span className="font-semibold text-slate-700">5-minute setup</span>
-              </div>
-            </div>
 
           </div>
         </div>
@@ -713,18 +714,18 @@ export default async function Home() {
                     key={`client-testimonial-${index}`}
                     className="flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/50"
                   >
-                    <div className="flex-1 space-y-4">
-                      <div className="flex items-center gap-1 text-amber-400 text-base">
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                      </div>
-                      <p className="text-sm font-medium leading-relaxed text-slate-800 sm:text-base">
+                  <div className="flex-1 space-y-4">
+                    <div className="flex items-center gap-1 text-amber-400 text-base">
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                    </div>
+                      <p className="min-h-[120px] text-sm font-medium leading-relaxed text-slate-800 sm:text-base">
                         {testimonial.quote}
                       </p>
-                    </div>
+                  </div>
                     <div className="mt-5 text-sm text-slate-600">
                       <p className="text-sm font-semibold text-slate-900">{testimonial.name}</p>
                       <p className="mt-1 text-xs text-slate-500">{testimonial.title}</p>

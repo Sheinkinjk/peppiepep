@@ -431,6 +431,37 @@ export function CRMIntegrationTab({
             </div>
           ))}
         </div>
+        <div className="mt-5 rounded-2xl border border-emerald-200 bg-white/90 p-5">
+          <div className="flex items-start gap-3">
+            <ShieldCheck className="h-5 w-5 text-emerald-600 mt-0.5" />
+            <div className="flex-1">
+              <p className="text-sm font-bold text-slate-900">CRM QA checklist</p>
+              <p className="text-xs text-slate-600 mt-1">
+                Run these checks before sending your first live campaign.
+              </p>
+              <ul className="mt-3 space-y-1.5 text-xs text-slate-700">
+                <li>• Send a test email to yourself and open the referral link.</li>
+                <li>• Confirm the referral landing page loads on your domain.</li>
+                <li>• Verify Interaction Hub + Recent Activity in Measure ROI update.</li>
+              </ul>
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof window === "undefined") return;
+                  window.dispatchEvent(
+                    new CustomEvent("dashboard:navigate", {
+                      detail: { section: "performance", scrollTo: "measure-roi-interaction-hub" },
+                    }),
+                  );
+                }}
+                className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700"
+              >
+                Open Measure ROI
+                <ArrowRight className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="mt-5 rounded-2xl border border-dashed border-emerald-300 bg-white/80 p-5">
           <div className="flex items-start gap-3">
             <Mail className="h-5 w-5 text-emerald-700 mt-0.5" />
