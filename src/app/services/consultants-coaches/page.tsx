@@ -1,4 +1,3 @@
-import { MessageSquare, Repeat2, TrendingUp, Users } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import ServiceLandingPage from "@/components/services/ServiceLandingPage";
 
@@ -18,70 +17,42 @@ const content = {
     "Visibility into referral sources, conversion, and deal value",
     "Partner updates that keep relationships warm",
   ],
-  primaryCta: { label: "Schedule a call", href: calendlyUrl },
-  secondaryCta: { label: "See the delivery plan", href: "#schedule" },
-  stats: [
-    { value: "2-3 weeks", label: "Launch timeline" },
-    { value: "High touch", label: "Partner experience" },
-    { value: "Full visibility", label: "Referral reporting" },
+  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+  whyTitle: "Why referrals feel inconsistent for consultants",
+  whySummary:
+    "Most referral growth relies on personal relationships. Without a clear intake and follow-up flow, those relationships turn into unpredictable peaks and troughs.",
+  whyPoints: [
+    "Referrals arrive without the right context for qualification.",
+    "Partners do not know what to expect after a referral.",
+    "You cannot measure which partners drive the highest-value engagements.",
   ],
-  engagement: {
-    title: "Consulting referral system buildout",
-    description:
-      "A streamlined engagement to build partner outreach, intake, and reporting that supports premium positioning.",
-    items: [
-      "Partner network mapping and outreach guidance",
-      "Referral intake and qualification workflows",
-      "Follow-up cadence and partner updates",
-      "Leadership reporting on referral revenue",
-    ],
-  },
-  pillars: [
-    {
-      title: "Partner positioning",
-      description: "Define the referral narrative that elevates your expertise.",
-      icon: Users,
-    },
-    {
-      title: "Engagement intake",
-      description: "Capture the right details for faster qualification.",
-      icon: MessageSquare,
-    },
-    {
-      title: "Consistent follow-up",
-      description: "Keep referral partners engaged with clear updates.",
-      icon: Repeat2,
-    },
-    {
-      title: "Revenue insight",
-      description: "Track referral sources, conversion, and deal value.",
-      icon: TrendingUp,
-    },
+  outcomesTitle: "What a premium consulting referral program delivers",
+  outcomes: [
+    "A polished referral experience that matches your positioning.",
+    "Faster qualification for retainers, workshops, and advisory work.",
+    "Partner updates that keep relationships warm and active.",
+    "Visibility into referral sources, conversion, and deal value.",
   ],
   process: [
     {
       step: "01",
       title: "Partner strategy",
       description: "Clarify who should refer and how to position your services.",
-      deliverable: "Partner plan",
     },
     {
       step: "02",
       title: "Intake + qualification",
       description: "Build referral intake, routing, and qualification workflows.",
-      deliverable: "Workflow setup",
     },
     {
       step: "03",
       title: "Partner activation",
       description: "Deliver outreach assets and partner onboarding materials.",
-      deliverable: "Activation kit",
     },
     {
       step: "04",
       title: "Launch + reporting",
       description: "Deliver assets, dashboards, and partner updates.",
-      deliverable: "Launch kit",
     },
   ],
   deliverables: [

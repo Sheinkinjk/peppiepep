@@ -1,4 +1,3 @@
-import { BadgeCheck, LineChart, ShieldCheck, Users } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import ServiceLandingPage from "@/components/services/ServiceLandingPage";
 
@@ -18,70 +17,42 @@ const content = {
     "Attribution from referral to bound policy and renewal",
     "Status tracking for quotes, binding, and renewals",
   ],
-  primaryCta: { label: "Schedule a call", href: calendlyUrl },
-  secondaryCta: { label: "See the rollout plan", href: "#schedule" },
-  stats: [
-    { value: "2-3 weeks", label: "Launch timeline" },
-    { value: "Policy-level", label: "Attribution" },
-    { value: "Partner ready", label: "Referral workflows" },
+  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+  whyTitle: "Why broker referrals feel hard to scale",
+  whySummary:
+    "Broker referrals span multiple lines, products, and partner types. Without structured intake and updates, partners stop sending referrals and leadership cannot see what converts.",
+  whyPoints: [
+    "Referrals arrive without line-of-business detail or urgency.",
+    "Partners rarely get status updates on quotes or renewals.",
+    "Attribution is unclear, so high-value partners are hard to prioritize.",
   ],
-  engagement: {
-    title: "Broker referral program buildout",
-    description:
-      "We design the intake, routing, and reporting so brokers can track referrals through binding and renewal.",
-    items: [
-      "Partner mapping and referral expectations",
-      "Referral intake by line of business",
-      "Attribution reporting for bound policies",
-      "Leadership dashboards for premium volume and renewals",
-    ],
-  },
-  pillars: [
-    {
-      title: "Partner trust",
-      description: "Create a premium experience that protects your brand.",
-      icon: Users,
-    },
-    {
-      title: "Compliance workflows",
-      description: "Track consent, disclosures, and policy handoffs.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Policy attribution",
-      description: "Connect referrals to bound policies and renewals.",
-      icon: BadgeCheck,
-    },
-    {
-      title: "Revenue insight",
-      description: "Report on premium volume and partner contribution.",
-      icon: LineChart,
-    },
+  outcomesTitle: "What a premium broker referral program delivers",
+  outcomes: [
+    "Referral intake by line of business with clean routing.",
+    "Status tracking across quotes, binding, and renewals.",
+    "Attribution that ties referrals to premium volume and renewals.",
+    "Partner updates that keep referral sources engaged.",
   ],
   process: [
     {
       step: "01",
       title: "Partner strategy",
       description: "Identify referral partners across industries and lines.",
-      deliverable: "Partner plan",
     },
     {
       step: "02",
       title: "Intake + routing",
       description: "Build referral intake and routing by line of business.",
-      deliverable: "Workflow setup",
     },
     {
       step: "03",
       title: "Partner activation",
       description: "Deliver partner assets, referral instructions, and update cadence.",
-      deliverable: "Activation kit",
     },
     {
       step: "04",
       title: "Launch + reporting",
       description: "Deliver partner assets and policy attribution dashboards.",
-      deliverable: "Launch kit",
     },
   ],
   deliverables: [

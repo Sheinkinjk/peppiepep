@@ -1,4 +1,3 @@
-import { Briefcase, LineChart, Target, Users } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import ServiceLandingPage from "@/components/services/ServiceLandingPage";
 
@@ -18,70 +17,42 @@ const content = {
     "Placement attribution from referral to fee",
     "Partner updates that keep high-value sources engaged",
   ],
-  primaryCta: { label: "Schedule a call", href: calendlyUrl },
-  secondaryCta: { label: "See the rollout plan", href: "#schedule" },
-  stats: [
-    { value: "2-3 weeks", label: "Launch timeline" },
-    { value: "Full attribution", label: "Placement tracking" },
-    { value: "Partner ready", label: "Referral workflows" },
+  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+  whyTitle: "Why recruiting referrals lose momentum",
+  whySummary:
+    "Recruiting referrals span candidates, hiring managers, and partner agencies. Without a consistent intake and routing flow, great referrals get delayed or lost.",
+  whyPoints: [
+    "Referrals arrive without clear role, seniority, or location context.",
+    "Teams cannot see which partners consistently deliver placements.",
+    "Partner updates are ad hoc, so relationships cool over time.",
   ],
-  engagement: {
-    title: "Recruiting referral system setup",
-    description:
-      "We create intake workflows, routing, and reporting so you know which referrals drive placements and revenue.",
-    items: [
-      "Referral intake for candidates and client leads",
-      "Routing rules by desk, industry, and geography",
-      "Placement and revenue attribution reporting",
-      "Partner performance dashboards by source",
-    ],
-  },
-  pillars: [
-    {
-      title: "Referral intake",
-      description: "Capture candidate and client referrals with the right details.",
-      icon: Users,
-    },
-    {
-      title: "Routing precision",
-      description: "Send referrals to the right recruiter fast.",
-      icon: Target,
-    },
-    {
-      title: "Placement attribution",
-      description: "Track referrals through placements and fees.",
-      icon: Briefcase,
-    },
-    {
-      title: "Performance insight",
-      description: "See which partners and candidates deliver revenue.",
-      icon: LineChart,
-    },
+  outcomesTitle: "What a premium recruiting referral program delivers",
+  outcomes: [
+    "Intake that captures the right details for roles and desks.",
+    "Routing rules that keep response times fast.",
+    "Placement attribution tied to fees and partner sources.",
+    "Partner updates that keep the referral flywheel moving.",
   ],
   process: [
     {
       step: "01",
       title: "Network strategy",
       description: "Identify the best referral sources across clients and candidates.",
-      deliverable: "Partner plan",
     },
     {
       step: "02",
       title: "Intake + routing",
       description: "Configure intake forms and routing logic by desk and industry.",
-      deliverable: "Workflow setup",
     },
     {
       step: "03",
       title: "Partner activation",
       description: "Deliver partner outreach assets and referral instructions.",
-      deliverable: "Activation kit",
     },
     {
       step: "04",
       title: "Launch + reporting",
       description: "Deliver dashboards for referral, placement, and revenue reporting.",
-      deliverable: "Launch kit",
     },
   ],
   deliverables: [

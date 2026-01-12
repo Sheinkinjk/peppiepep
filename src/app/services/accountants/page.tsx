@@ -1,4 +1,3 @@
-import { ClipboardCheck, Handshake, LineChart, Scale } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import ServiceLandingPage from "@/components/services/ServiceLandingPage";
 
@@ -18,70 +17,42 @@ const content = {
     "Client consent and engagement tracking for regulated work",
     "Revenue attribution tied to retained clients and fees",
   ],
-  primaryCta: { label: "Schedule a call", href: calendlyUrl },
-  secondaryCta: { label: "Review the approach", href: "#schedule" },
-  stats: [
-    { value: "2-3 weeks", label: "Implementation" },
-    { value: "Full traceability", label: "Referral tracking" },
-    { value: "Partner-ready", label: "Outreach assets" },
+  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+  whyTitle: "Why accounting referrals get stuck in spreadsheets",
+  whySummary:
+    "Referrals happen informally between trusted professionals, but without structure they get lost, delayed, or never attributed to the partner who sent them.",
+  whyPoints: [
+    "No consistent intake for tax vs audit vs advisory leads.",
+    "Partners are unsure what happens after they refer a client.",
+    "Leadership cannot see which relationships drive retained revenue.",
   ],
-  engagement: {
-    title: "Accounting referral program setup",
-    description:
-      "We design the partner workflow, intake, and reporting so your team knows exactly where referrals come from and how they convert.",
-    items: [
-      "Partner mapping across finance, legal, and advisory",
-      "Referral intake for tax, audit, and advisory lines",
-      "Status updates that keep partners informed",
-      "Reporting by service line and partner tier",
-    ],
-  },
-  pillars: [
-    {
-      title: "Partner segmentation",
-      description: "Define the referral partners who send the right clients.",
-      icon: Handshake,
-    },
-    {
-      title: "Workflow governance",
-      description: "Standardize referral intake, routing, and engagement stages.",
-      icon: ClipboardCheck,
-    },
-    {
-      title: "Compliance clarity",
-      description: "Track consents, disclosures, and partner arrangements.",
-      icon: Scale,
-    },
-    {
-      title: "Revenue insight",
-      description: "See referral value by service line, partner, and fee category.",
-      icon: LineChart,
-    },
+  outcomesTitle: "What a premium accounting referral program delivers",
+  outcomes: [
+    "Service-line intake that routes referrals to the right team fast.",
+    "Partner updates that keep advisors and attorneys informed.",
+    "Revenue attribution tied to retained clients and fees.",
+    "Compliance-ready records that stand up to scrutiny.",
   ],
   process: [
     {
       step: "01",
       title: "Partner strategy",
       description: "Identify partner sources and define referral expectations.",
-      deliverable: "Partner plan",
     },
     {
       step: "02",
       title: "Intake + routing",
       description: "Configure referral intake flows and routing for teams.",
-      deliverable: "Workflow setup",
     },
     {
       step: "03",
       title: "Partner activation",
       description: "Deliver outreach assets and partner onboarding materials.",
-      deliverable: "Activation kit",
     },
     {
       step: "04",
       title: "Reporting + launch",
       description: "Deliver dashboards and partner communications for rollout.",
-      deliverable: "Launch kit",
     },
   ],
   deliverables: [

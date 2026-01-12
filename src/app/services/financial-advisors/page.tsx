@@ -1,4 +1,3 @@
-import { Briefcase, LineChart, ShieldCheck, Users } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import ServiceLandingPage from "@/components/services/ServiceLandingPage";
 
@@ -8,80 +7,52 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const content = {
   heroKicker: "Financial Advisors & Planners",
-  heroTitle: "Grow referrals that respect",
-  heroHighlight: "fiduciary standards and trust.",
+  heroTitle: "Grow referrals that protect",
+  heroHighlight: "trust, compliance, and AUM.",
   heroSummary:
-    "Refer Labs helps advisory firms build a compliant, premium referral channel with partners who protect client outcomes, reputation, and recurring revenue.",
+    "Refer Labs builds a referral program that feels aligned with fiduciary standards: clear consent, clean handoffs, and reporting that leadership can defend.",
   heroBullets: [
     "Partner workflows designed for CPAs, estate attorneys, and mortgage brokers",
     "Consent capture and audit trails aligned to fiduciary standards",
     "Household-level attribution for AUM and retained revenue",
     "Advisor-ready handoff and follow-up workflows",
   ],
-  primaryCta: { label: "Schedule a call", href: calendlyUrl },
-  secondaryCta: { label: "See the rollout plan", href: "#schedule" },
-  stats: [
-    { value: "2-4 weeks", label: "Launch window" },
-    { value: "Advisor-ready", label: "Partner experience" },
-    { value: "Audit-ready", label: "Referral trails" },
+  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+  whyTitle: "Why referral programs stall in advisory firms",
+  whySummary:
+    "Most advisory referrals are relationship-driven and informal. That creates three problems: no consistent handoff, no audit trail, and no visibility into which partners actually grow AUM.",
+  whyPoints: [
+    "Partners send referrals without a repeatable intake, so follow-up quality varies by advisor.",
+    "Compliance and disclosure live in email threads instead of a defensible record.",
+    "Leadership cannot see which partners drive qualified households and revenue.",
   ],
-  engagement: {
-    title: "Advisory referral program buildout",
-    description:
-      "A focused engagement to structure partner relationships, referral intake, and reporting that leadership and compliance teams can trust.",
-    items: [
-      "Partner mapping across CPAs, estate attorneys, and lenders",
-      "Compliant referral intake with consent capture",
-      "Advisor handoff and follow-up workflows",
-      "Leadership dashboards for referral revenue and retention",
-    ],
-  },
-  pillars: [
-    {
-      title: "Trusted partner positioning",
-      description: "Define the referral promise advisors make to partner firms and shared clients.",
-      icon: Users,
-    },
-    {
-      title: "Compliance safeguards",
-      description: "Embed consent and disclosure checkpoints into every referral touchpoint.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Revenue attribution",
-      description: "Track referred households, pipeline value, and AUM impact.",
-      icon: LineChart,
-    },
-    {
-      title: "Advisor enablement",
-      description: "Equip the team with scripts, follow-up cadences, and partner updates.",
-      icon: Briefcase,
-    },
+  outcomesTitle: "What a premium advisory referral program delivers",
+  outcomes: [
+    "A structured intake flow that protects client trust and compliance.",
+    "Clear partner expectations and update cadence that strengthens relationships.",
+    "Household-level attribution tied to pipeline, AUM, and retention.",
+    "Advisor-ready handoff workflows that reduce missed opportunities.",
   ],
   process: [
     {
       step: "01",
       title: "Partner strategy",
-      description: "Align on referral partners, value proposition, and compliance criteria.",
-      deliverable: "Partner map",
+      description: "Align on referral partners, value proposition, and fiduciary guardrails.",
     },
     {
       step: "02",
       title: "Workflow design",
-      description: "Build referral intake, routing, and status updates for advisors.",
-      deliverable: "Workflow plan",
+      description: "Build intake, routing, and partner updates across advisory teams.",
     },
     {
       step: "03",
       title: "Partner activation",
-      description: "Deliver partner-facing assets, referral instructions, and outreach scripts.",
-      deliverable: "Activation kit",
+      description: "Deliver referral instructions, outreach scripts, and onboarding assets.",
     },
     {
       step: "04",
       title: "Reporting + optimization",
       description: "Deliver leadership dashboards and the first performance review.",
-      deliverable: "Insight pack",
     },
   ],
   deliverables: [

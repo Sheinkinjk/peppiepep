@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
 
@@ -54,23 +52,13 @@ export function NewsletterFooterForm() {
           placeholder="Email address"
           className="w-full rounded-full border border-[#0abab5]/30 bg-white px-4 py-2.5 text-xs font-medium text-slate-900 shadow-sm outline-none transition focus:border-[#0abab5] focus:ring-2 focus:ring-[#0abab5]/40"
         />
-        <button
-          type="submit"
-          className={cn(
-            buttonVariants({ variant: "cta" }),
-            "w-full justify-center rounded-full text-xs font-semibold shadow-[0_10px_20px_-12px_rgba(10,186,181,0.9)]",
-          )}
-          disabled={status === "loading"}
-        >
-          {status === "loading" ? "Subscribing..." : "Subscribe"}
-        </button>
+        <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">
+          Press Enter to subscribe
+        </p>
       </form>
       {message && (
         <p
-          className={cn(
-            "mt-2 text-xs font-medium",
-            status === "success" ? "text-emerald-600" : "text-rose-600",
-          )}
+          className={`mt-2 text-xs font-medium ${status === "success" ? "text-emerald-600" : "text-rose-600"}`}
           aria-live="polite"
         >
           {message}
