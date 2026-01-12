@@ -24,33 +24,36 @@ export default function Pricing() {
 
   const pricing = useMemo(
     () => ({
-      base: {
-        monthly: 499,
-        annual: 399, // 20% discount: $4,790.40/year = $399.20/month
+      starter: {
+        monthly: 99,
+        annual: 79, // 20% discount: $948/year = $79/month
       },
-      scale: {
-        monthly: 599,
-        annual: 479, // 20% discount: $5,750.40/year = $479.20/month
+      professional: {
+        monthly: 299,
+        annual: 239, // 20% discount: $2,868/year = $239/month
       },
     }),
     [],
   );
 
-  const basePrice = pricing.base[billingCycle];
-  const scalePrice = pricing.scale[billingCycle];
-  const baseSavings =
+  const starterPrice = pricing.starter[billingCycle];
+  const professionalPrice = pricing.professional[billingCycle];
+  const starterSavings =
     billingCycle === "annual"
-      ? Math.round(pricing.base.monthly * 12 - pricing.base.annual * 12)
+      ? Math.round(pricing.starter.monthly * 12 - pricing.starter.annual * 12)
       : 0;
-  const scaleSavings =
+  const professionalSavings =
     billingCycle === "annual"
-      ? Math.round(pricing.scale.monthly * 12 - pricing.scale.annual * 12)
+      ? Math.round(pricing.professional.monthly * 12 - pricing.professional.annual * 12)
       : 0;
 
-  async function handleSubscribe(plan: "base" | "scale") {
+  async function handleSubscribe(plan: "starter" | "professional") {
     try {
       setLoading(plan);
-      const priceId = PRICE_IDS[plan][billingCycle];
+      // Map new plan names to existing Stripe price IDs temporarily
+      const planMapping = { starter: "base", professional: "scale" } as const;
+      const stripePlan = planMapping[plan];
+      const priceId = PRICE_IDS[stripePlan][billingCycle];
 
       if (!priceId) {
         throw new Error(`Price ID not configured for ${plan} ${billingCycle}`);
@@ -90,17 +93,16 @@ export default function Pricing() {
         <div className="mx-auto max-w-4xl space-y-6 sm:space-y-10 text-center">
           <h1 className="text-balance text-3xl sm:text-5xl font-black leading-tight tracking-tight lg:text-7xl">
             <span className="bg-gradient-to-r from-white via-[#a8e8ed] to-white bg-clip-text text-transparent drop-shadow-2xl">
-              Growth Network
+              Professional Services
             </span>
             <br />
             <span className="bg-gradient-to-r from-[#5ce1e6] via-[#0abab5] to-[#5ce1e6] bg-clip-text text-transparent">
-              Platform Pricing
+              Referral Intelligence Pricing
             </span>
           </h1>
 
           <p className="max-w-3xl text-base sm:text-xl lg:text-2xl leading-relaxed text-[#d4f4f7] mx-auto font-medium px-4">
-            Refer Labs are your partner in optimising the next phase of your
-            marketing and sales strategy
+            Built for law firms, accounting practices, and consulting firms that rely on referrals. Scale your partner network with compliance and tracking built in.
           </p>
         </div>
 
@@ -142,18 +144,18 @@ export default function Pricing() {
         </div>
 
         <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
-          {/* Base Plan */}
+          {/* Starter Plan */}
           <div className="group relative rounded-3xl border border-[#0abab5]/30 bg-gradient-to-b from-slate-800/90 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-[#024b56]/30 ring-1 ring-[#0abab5]/20 hover:shadow-[#0abab5]/40 hover:ring-[#0abab5]/40 transition-all duration-500 backdrop-blur-xl hover:scale-105">
             <div className="absolute inset-0 bg-gradient-to-b from-[#0abab5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative mb-8">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0abab5]/20 to-[#024b56]/20 px-4 py-2 text-sm font-bold text-[#5ce1e6] ring-1 ring-[#0abab5]/30 shadow-lg backdrop-blur-sm">
                 <Zap className="h-4 w-4" />
-                Base
+                Starter
               </div>
               <div className="mb-4 flex items-baseline gap-2 sm:gap-3">
                 <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
-                  ${basePrice}
+                  ${starterPrice}
                 </span>
                 <div className="flex flex-col">
                   <span className="text-[#5ce1e6] font-bold text-sm sm:text-base">
@@ -161,55 +163,55 @@ export default function Pricing() {
                   </span>
                   {billingCycle === "annual" && (
                     <span className="text-[10px] sm:text-xs text-green-400 font-semibold">
-                      Save ${baseSavings}/year
+                      Save ${starterSavings}/year
                     </span>
                   )}
                 </div>
               </div>
               <p className="text-sm sm:text-base text-[#a8e8ed] font-medium">
-                Launch-ready program for small teams
+                For solo practitioners and small firms (1-5 people)
               </p>
             </div>
 
             <button
-              onClick={() => handleSubscribe("base")}
+              onClick={() => handleSubscribe("starter")}
               disabled={loading !== null}
               className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-[#0abab5]/50 bg-gradient-to-b from-slate-700 to-slate-800 px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#0abab5]/20 transition-all duration-300 hover:-translate-y-1 hover:border-[#5ce1e6] hover:shadow-2xl hover:shadow-[#5ce1e6]/40 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading === "base" ? "Loading..." : "Subscribe Now"}
+              {loading === "starter" ? "Loading..." : "Start Free Trial"}
             </button>
             <p className="text-center text-xs font-semibold text-[#a8e8ed]">
-              30-day money-back guarantee
+              14-day free trial • No credit card required
             </p>
 
             <div className="space-y-4 text-base mt-8">
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-[#c0eff3]">
-                  Up to <strong className="text-white">50 referrers</strong> enrolled
+                  Up to <strong className="text-white">50 active partners</strong>
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-[#c0eff3]">
-                  <strong className="text-white">5,000 SMS/WhatsApp messages</strong> included
+                  <strong className="text-white">Basic compliance tracking</strong>
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Real-time tracking dashboard</span>
+                <span className="text-[#c0eff3]">Email & SMS campaigns</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Ambassador portals</span>
+                <span className="text-[#c0eff3]">Partner portals</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <span className="text-[#c0eff3]">Revenue attribution tracking</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-[#c0eff3]">CSV import/export</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Basic analytics & live referrals</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
@@ -218,7 +220,7 @@ export default function Pricing() {
             </div>
           </div>
 
-          {/* Scale Plan - Most Popular */}
+          {/* Professional Plan - Most Popular */}
           <div className="group relative rounded-3xl border-2 border-[#5ce1e6] bg-gradient-to-b from-[#0abab5]/20 via-[#5ce1e6]/10 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-[#5ce1e6]/50 ring-2 ring-[#5ce1e6]/50 transform hover:scale-110 transition-all duration-500 backdrop-blur-xl z-10">
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#5ce1e6] via-[#0abab5] to-[#5ce1e6] px-8 py-2.5 text-sm font-black text-white shadow-2xl shadow-[#5ce1e6]/50 ring-2 ring-white/20 backdrop-blur-sm animate-pulse">
               ⭐ MOST POPULAR
@@ -229,11 +231,11 @@ export default function Pricing() {
             <div className="relative mb-8 mt-4">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-400/30 to-pink-400/30 px-4 py-2 text-sm font-bold text-[#a8e8ed] ring-1 ring-purple-300/50 shadow-lg backdrop-blur-sm">
                 <Users className="h-4 w-4" />
-                Scale
+                Professional
               </div>
               <div className="mb-4 flex items-baseline gap-2 sm:gap-3">
                 <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight drop-shadow-2xl">
-                  ${scalePrice}
+                  ${professionalPrice}
                 </span>
                 <div className="flex flex-col">
                   <span className="text-[#a8e8ed] font-bold text-sm sm:text-base">
@@ -241,65 +243,65 @@ export default function Pricing() {
                   </span>
                   {billingCycle === "annual" && (
                     <span className="text-[10px] sm:text-xs text-green-400 font-semibold">
-                      Save ${scaleSavings}/year
+                      Save ${professionalSavings}/year
                     </span>
                   )}
                 </div>
               </div>
               <p className="text-sm sm:text-base text-[#c0eff3] font-medium">
-                For teams running steady campaigns
+                For growing practices (5-20 people)
               </p>
             </div>
 
             <button
-              onClick={() => handleSubscribe("scale")}
+              onClick={() => handleSubscribe("professional")}
               disabled={loading !== null}
               className="relative mb-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-pink-500/70 overflow-hidden group/button disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 opacity-0 group-hover/button:opacity-100 transition-opacity duration-300" />
               <span className="relative">
-                {loading === "scale" ? "Loading..." : "Subscribe Now"}
+                {loading === "professional" ? "Loading..." : "Start Free Trial"}
               </span>
-              {loading !== "scale" && <ArrowRight className="relative h-5 w-5" />}
+              {loading !== "professional" && <ArrowRight className="relative h-5 w-5" />}
             </button>
             <p className="relative text-center text-xs font-semibold text-[#c0eff3]">
-              30-day money-back guarantee
+              14-day free trial • No credit card required
             </p>
 
             <div className="relative space-y-4 text-base mt-8">
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-[#c0eff3]">
-                  Up to <strong className="text-white">125 referrers</strong>
+                  Up to <strong className="text-white">200 active partners</strong>
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-[#c0eff3]">
-                  <strong className="text-white">Everything in Base</strong>, plus:
+                  <strong className="text-white">Everything in Starter</strong>, plus:
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-[#c0eff3]">
-                  <strong className="text-white">12,500 messages/month</strong> included
+                  <strong className="text-white">AI partner scoring</strong> & insights
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Auto-reward SMS/email notifications</span>
+                <span className="text-[#c0eff3]">Advanced compliance ledger</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Advanced analytics & cohort reports</span>
+                <span className="text-[#c0eff3]">Multi-user access</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Ambassador leaderboard</span>
+                <span className="text-[#c0eff3]">Partner network analytics</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Custom branding, domains, UTM tracking</span>
+                <span className="text-[#c0eff3]">Custom branding & domains</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
@@ -308,14 +310,14 @@ export default function Pricing() {
             </div>
           </div>
 
-          {/* Enterprise Plan */}
+          {/* Firm Plan */}
           <div className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 p-6 sm:p-10 shadow-2xl shadow-slate-900/50 ring-1 ring-slate-700/30 hover:ring-slate-600/50 transition-all duration-500 backdrop-blur-xl hover:scale-105">
             <div className="absolute inset-0 bg-gradient-to-b from-slate-700/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative mb-8">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-slate-700/50 to-slate-600/50 px-4 py-2 text-sm font-bold text-slate-300 backdrop-blur-sm ring-1 ring-slate-600/50 shadow-lg">
                 <Crown className="h-4 w-4 text-yellow-500" />
-                Enterprise
+                Firm
               </div>
               <div className="mb-4 flex items-baseline gap-2 sm:gap-3">
                 <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
@@ -324,50 +326,51 @@ export default function Pricing() {
                 <span className="text-slate-400 font-bold text-sm sm:text-base">/month</span>
               </div>
               <p className="text-sm sm:text-base text-slate-300 font-medium">
-                Built for large-scale campaigns
+                For established firms (20+ people)
               </p>
             </div>
 
             <Link
-              href="/login"
+              href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-white/80 bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-slate-50 hover:shadow-2xl hover:border-white"
             >
-              Talk to sales
+              Book a Demo
             </Link>
 
             <div className="relative space-y-4 text-base mt-8">
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-200">
-                  <strong className="text-white">Unlimited referrers & messages</strong> with pooled
-                  pricing
+                  <strong className="text-white">Unlimited partners</strong>
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-200">
-                  <strong className="text-white">Everything in Scale</strong>, plus:
+                  <strong className="text-white">Everything in Professional</strong>, plus:
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">Dedicated CSM and campaign strategy</span>
+                <span className="text-slate-200">White-label portal</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">SSO/SAML, audit logs, custom roles</span>
+                <span className="text-slate-200">API access</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">White-label portals & multi-brand support</span>
+                <span className="text-slate-200">Dedicated success manager</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">Advanced API limits & webhooks</span>
+                <span className="text-slate-200">Multi-location support</span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">Custom SLAs + 24/7 support</span>
+                <span className="text-slate-200">Custom SLAs & 24/7 support</span>
               </div>
             </div>
           </div>
@@ -387,26 +390,32 @@ export default function Pricing() {
                 <thead>
                   <tr className="border-b border-purple-500/30">
                     <th className="pb-4 text-sm sm:text-base font-bold text-[#a8e8ed]">Features</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Base</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Scale</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Enterprise</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Starter</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Professional</th>
+                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Firm</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm sm:text-base">
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">Ambassadors</td>
+                    <td className="py-4 text-[#c0eff3]">Active Partners</td>
                     <td className="py-4 text-center text-[#a8e8ed]">50</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">125</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">200</td>
                     <td className="py-4 text-center font-bold text-white">Unlimited</td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">SMS credits/month</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">5,000</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">12,500</td>
-                    <td className="py-4 text-center font-bold text-white">Unlimited</td>
+                    <td className="py-4 text-[#c0eff3]">AI Partner Scoring</td>
+                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
+                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
                   </tr>
                   <tr className="border-b border-slate-700/50">
                     <td className="py-4 text-[#c0eff3]">Analytics & reporting</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">Basic</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">Advanced</td>
+                    <td className="py-4 text-center font-bold text-white">Advanced</td>
+                  </tr>
+                  <tr className="border-b border-slate-700/50">
+                    <td className="py-4 text-[#c0eff3]">Compliance Tracking</td>
                     <td className="py-4 text-center text-[#a8e8ed]">Basic</td>
                     <td className="py-4 text-center text-[#a8e8ed]">Advanced</td>
                     <td className="py-4 text-center font-bold text-white">Advanced</td>
@@ -432,8 +441,8 @@ export default function Pricing() {
                   <tr className="border-b border-slate-700/50">
                     <td className="py-4 text-[#c0eff3]">Support</td>
                     <td className="py-4 text-center text-[#a8e8ed]">Email</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">Priority email</td>
-                    <td className="py-4 text-center font-bold text-white">Phone + chat</td>
+                    <td className="py-4 text-center text-[#a8e8ed]">Priority email + chat</td>
+                    <td className="py-4 text-center font-bold text-white">24/7 support</td>
                   </tr>
                 </tbody>
               </table>
