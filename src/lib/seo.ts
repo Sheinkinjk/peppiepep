@@ -367,69 +367,82 @@ export const seoConfig = {
     image: `${SITE_URL}/og-linkedin-business.png`,
   },
 
-  referralStrategyService: {
-    title: "Referral Strategy for Professional Services",
+  financialAdvisorsService: {
+    title: "Referral Program for Financial Advisors & Planners",
     description:
-      "Design a compliant referral program strategy for professional services firms. Positioning, partner personas, and launch assets built for premium referrals.",
-    url: `${SITE_URL}/services/referral-strategy`,
+      "Build a compliant referral program for financial advisors and planners. Track partners, manage intake, and report on revenue impact.",
+    url: `${SITE_URL}/services/financial-advisors`,
     keywords: [
-      "referral strategy",
-      "professional services referrals",
-      "partner positioning",
-      "referral program strategy",
-      "consulting referrals",
-    ],
-  },
-  partnerNetworkService: {
-    title: "Partner Network Buildout",
-    description:
-      "Source, qualify, and activate referral partners for professional services firms. Structured outreach, onboarding, and partner tracking.",
-    url: `${SITE_URL}/services/partner-network`,
-    keywords: [
-      "partner network",
-      "referral partners",
-      "partner outreach",
-      "professional services growth",
-      "partner onboarding",
-    ],
-  },
-  referralOpsService: {
-    title: "Referral Operations and Enablement",
-    description:
-      "Operationalize your referral workflow with intake, routing, and tracking built for professional services teams.",
-    url: `${SITE_URL}/services/referral-ops`,
-    keywords: [
-      "referral operations",
-      "referral workflow",
-      "referral routing",
-      "professional services ops",
-      "partner enablement",
-    ],
-  },
-  complianceAttributionService: {
-    title: "Compliance and Attribution for Referrals",
-    description:
-      "Build audit-ready referral compliance, consent tracking, and attribution reporting for regulated professional services.",
-    url: `${SITE_URL}/services/compliance-attribution`,
-    keywords: [
+      "financial advisor referrals",
+      "wealth management referrals",
+      "advisor partner program",
+      "fiduciary referral tracking",
       "referral compliance",
-      "referral attribution",
-      "audit trail",
-      "regulated referrals",
-      "professional services compliance",
     ],
   },
-  revenueIntelligenceService: {
-    title: "Referral Revenue Intelligence",
+  accountantsService: {
+    title: "Referral Program for Accountants & Tax Professionals",
     description:
-      "Executive dashboards, partner scorecards, and optimization insights for referral-driven revenue teams.",
-    url: `${SITE_URL}/services/revenue-intelligence`,
+      "Create a referral system for accounting firms with partner tracking, compliant intake, and revenue attribution.",
+    url: `${SITE_URL}/services/accountants`,
     keywords: [
-      "referral analytics",
-      "partner performance",
-      "referral revenue reporting",
-      "executive dashboards",
-      "referral optimization",
+      "accountant referrals",
+      "tax professional referrals",
+      "accounting partner program",
+      "referral tracking",
+      "referral attribution",
+    ],
+  },
+  lawFirmsService: {
+    title: "Referral Program for Law Firms",
+    description:
+      "Professional referral workflows for law firms with intake routing, compliance checkpoints, and matter attribution.",
+    url: `${SITE_URL}/services/law-firms`,
+    keywords: [
+      "law firm referrals",
+      "legal referral tracking",
+      "matter attribution",
+      "referral compliance",
+      "legal partner program",
+    ],
+  },
+  consultantsCoachesService: {
+    title: "Referral Program for Consultants & Coaches",
+    description:
+      "Launch a premium referral program for consultants and coaches with intake, partner updates, and conversion reporting.",
+    url: `${SITE_URL}/services/consultants-coaches`,
+    keywords: [
+      "consulting referrals",
+      "coaching referrals",
+      "partner referrals",
+      "referral workflow",
+      "referral reporting",
+    ],
+  },
+  recruitersStaffingService: {
+    title: "Referral Program for Recruiters & Staffing Firms",
+    description:
+      "Track referrals from clients, candidates, and partners with placement attribution and revenue reporting.",
+    url: `${SITE_URL}/services/recruiters-staffing`,
+    keywords: [
+      "recruiting referrals",
+      "staffing referrals",
+      "placement attribution",
+      "referral intake",
+      "recruiter partner program",
+    ],
+  },
+  insuranceBrokersService: {
+    title: "Referral Program for Insurance Brokers",
+    description:
+      "Build referral workflows for insurance brokers with policy attribution and partner reporting.",
+    url: `${SITE_URL}/services/insurance-brokers`,
+    keywords: [
+      "insurance broker referrals",
+      "policy attribution",
+      "broker partner program",
+      "referral tracking",
+      "renewal referrals",
     ],
   },
 

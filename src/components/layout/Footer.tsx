@@ -18,17 +18,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Services</p>
-            <ul className="mt-4 space-y-2">
-              <li><Link className="hover:text-slate-800" href="/services/referral-strategy">Referral Strategy</Link></li>
-              <li><Link className="hover:text-slate-800" href="/services/partner-network">Partner Network</Link></li>
-              <li><Link className="hover:text-slate-800" href="/services/referral-ops">Referral Operations</Link></li>
-              <li><Link className="hover:text-slate-800" href="/services/compliance-attribution">Compliance + Attribution</Link></li>
-              <li><Link className="hover:text-slate-800" href="/services/revenue-intelligence">Revenue Intelligence</Link></li>
-            </ul>
-          </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Platform</p>
             <ul className="mt-4 space-y-2">
@@ -53,6 +43,23 @@ export default function Footer() {
               <li><Link className="hover:text-slate-800" href="/login">Sign in</Link></li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-10 border-t border-slate-200/70 pt-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Service industries</p>
+        <div className="mt-4 flex flex-wrap gap-3 text-sm text-slate-600">
+          <Link className="hover:text-slate-800" href="/services/financial-advisors">Financial Advisors & Planners</Link>
+          <span className="text-slate-300">|</span>
+          <Link className="hover:text-slate-800" href="/services/accountants">Accountants & Tax Professionals</Link>
+          <span className="text-slate-300">|</span>
+          <Link className="hover:text-slate-800" href="/services/law-firms">Law Firms</Link>
+          <span className="text-slate-300">|</span>
+          <Link className="hover:text-slate-800" href="/services/consultants-coaches">Consultants & Coaches</Link>
+          <span className="text-slate-300">|</span>
+          <Link className="hover:text-slate-800" href="/services/recruiters-staffing">Recruiters & Staffing Firms</Link>
+          <span className="text-slate-300">|</span>
+          <Link className="hover:text-slate-800" href="/services/insurance-brokers">Insurance Brokers</Link>
         </div>
       </div>
 
