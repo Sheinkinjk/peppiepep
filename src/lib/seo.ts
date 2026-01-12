@@ -367,6 +367,72 @@ export const seoConfig = {
     image: `${SITE_URL}/og-linkedin-business.png`,
   },
 
+  referralStrategyService: {
+    title: "Referral Strategy for Professional Services",
+    description:
+      "Design a compliant referral program strategy for professional services firms. Positioning, partner personas, and launch assets built for premium referrals.",
+    url: `${SITE_URL}/services/referral-strategy`,
+    keywords: [
+      "referral strategy",
+      "professional services referrals",
+      "partner positioning",
+      "referral program strategy",
+      "consulting referrals",
+    ],
+  },
+  partnerNetworkService: {
+    title: "Partner Network Buildout",
+    description:
+      "Source, qualify, and activate referral partners for professional services firms. Structured outreach, onboarding, and partner tracking.",
+    url: `${SITE_URL}/services/partner-network`,
+    keywords: [
+      "partner network",
+      "referral partners",
+      "partner outreach",
+      "professional services growth",
+      "partner onboarding",
+    ],
+  },
+  referralOpsService: {
+    title: "Referral Operations and Enablement",
+    description:
+      "Operationalize your referral workflow with intake, routing, and tracking built for professional services teams.",
+    url: `${SITE_URL}/services/referral-ops`,
+    keywords: [
+      "referral operations",
+      "referral workflow",
+      "referral routing",
+      "professional services ops",
+      "partner enablement",
+    ],
+  },
+  complianceAttributionService: {
+    title: "Compliance and Attribution for Referrals",
+    description:
+      "Build audit-ready referral compliance, consent tracking, and attribution reporting for regulated professional services.",
+    url: `${SITE_URL}/services/compliance-attribution`,
+    keywords: [
+      "referral compliance",
+      "referral attribution",
+      "audit trail",
+      "regulated referrals",
+      "professional services compliance",
+    ],
+  },
+  revenueIntelligenceService: {
+    title: "Referral Revenue Intelligence",
+    description:
+      "Executive dashboards, partner scorecards, and optimization insights for referral-driven revenue teams.",
+    url: `${SITE_URL}/services/revenue-intelligence`,
+    keywords: [
+      "referral analytics",
+      "partner performance",
+      "referral revenue reporting",
+      "executive dashboards",
+      "referral optimization",
+    ],
+  },
+
   dashboard: {
     title: "Dashboard",
     description: "Manage your referral program, track performance, and reward referral partners.",
