@@ -10,9 +10,6 @@ export default function Footer() {
           <Link href="/" className="flex items-center group cursor-pointer" aria-label="Refer Labs home">
             <ReferLabsLogo className="h-12 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
           </Link>
-          <p className="text-base text-slate-600">
-            Refer Labs helps professional services firms build referral programs that feel premium, compliant, and easy to scale.
-          </p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
@@ -54,11 +51,13 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Platform</p>
             <ul className="mt-4 space-y-2">
+              <li><Link className="hover:text-slate-800" href="/">Home</Link></li>
               <li><Link className="hover:text-slate-800" href="/how-it-works">How it works</Link></li>
               <li><Link className="hover:text-slate-800" href="/pricing">Pricing</Link></li>
               <li><Link className="hover:text-slate-800" href="/case-studies">Case studies</Link></li>
               <li><Link className="hover:text-slate-800" href="/lead-hacking">Lead hacking</Link></li>
               <li><Link className="hover:text-slate-800" href="/roi-calculator">ROI calculator</Link></li>
+              <li><Link className="hover:text-slate-800" href="/linkedin-growth">LinkedIn Influencer</Link></li>
             </ul>
           </div>
           <div>
@@ -68,14 +67,13 @@ export default function Footer() {
               <li><Link className="hover:text-slate-800" href="/blog">Blog</Link></li>
               <li><Link className="hover:text-slate-800" href="/faq">FAQ</Link></li>
               <li><Link className="hover:text-slate-800" href="/security">Security</Link></li>
+              <li><Link className="hover:text-slate-800" href="/our-referral-program">Our Referral Program</Link></li>
+              <li><Link className="hover:text-slate-800" href="/contact">Contact</Link></li>
               <li><Link className="hover:text-slate-800" href="/login">Sign in</Link></li>
             </ul>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Stay in the loop</p>
-            <p className="mt-4 text-sm text-slate-500">
-              Monthly insights on referral growth, partner strategy, and revenue operations.
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Newsletter</p>
             <div className="mt-4">
               <NewsletterFooterForm />
             </div>

@@ -16,7 +16,6 @@ const content = {
     "Real-time referral revenue and pipeline dashboards",
     "Partner performance scoring and tiering insights",
     "Conversion and velocity reporting for leadership",
-    "Quarterly optimization recommendations",
   ],
   primaryCta: { label: "Schedule a revenue insights call", href: calendlyUrl },
   secondaryCta: { label: "Explore the dashboard scope", href: "#schedule" },
@@ -33,41 +32,8 @@ const content = {
       "Revenue attribution dashboards",
       "Partner scoring and tiering insights",
       "Pipeline velocity and conversion reporting",
-      "Executive summaries for leadership",
     ],
   },
-  audience: [
-    {
-      title: "Leadership teams",
-      description: "Need a board-ready view of referral revenue and partner performance.",
-    },
-    {
-      title: "Revenue operations",
-      description: "Want attribution and conversion insights to optimize referral channels.",
-    },
-    {
-      title: "Partner managers",
-      description: "Need clear metrics to prioritize partner time and incentives.",
-    },
-    {
-      title: "Finance teams",
-      description: "Require clean reporting tied to pipeline and closed revenue.",
-    },
-  ],
-  outcomes: [
-    {
-      title: "Executive dashboards",
-      description: "Live reporting on referral volume, conversion, and revenue contribution.",
-    },
-    {
-      title: "Partner scorecards",
-      description: "Clear ranking of partners based on quality, velocity, and revenue impact.",
-    },
-    {
-      title: "Optimization cadence",
-      description: "Monthly insights and recommendations to improve referral ROI.",
-    },
-  ],
   pillars: [
     {
       title: "Revenue attribution",
@@ -109,12 +75,6 @@ const content = {
       description: "Identify top partners, weak points, and growth leverage.",
       deliverable: "Performance report",
     },
-    {
-      step: "04",
-      title: "Optimization cadence",
-      description: "Deliver a recurring improvement plan with clear priorities.",
-      deliverable: "Growth roadmap",
-    },
   ],
   deliverables: [
     {
@@ -123,7 +83,6 @@ const content = {
         "Referral revenue overview",
         "Partner scorecards and ranking",
         "Conversion and velocity reporting",
-        "Executive summary dashboard",
       ],
     },
     {
@@ -131,37 +90,8 @@ const content = {
       items: [
         "Monthly performance review",
         "Partner tier recommendations",
-        "Growth experiment backlog",
         "Quarterly executive report",
       ],
-    },
-  ],
-  testimonials: [
-    {
-      quote:
-        "The revenue dashboards changed the way we manage partner relationships. We can finally show the board where referrals are driving revenue.",
-      name: "Managing Partner, Strategy Firm",
-      role: "Executive Leadership",
-    },
-    {
-      quote:
-        "We stopped guessing which partners mattered most. The scorecards and velocity reporting gave our team immediate focus.",
-      name: "Revenue Operations Lead, Advisory Group",
-      role: "Revenue Operations",
-    },
-  ],
-  faqs: [
-    {
-      question: "Do you integrate with our CRM data?",
-      answer: "Yes. We connect referral activity to your CRM pipeline and closed revenue data.",
-    },
-    {
-      question: "Can leadership access the dashboards directly?",
-      answer: "Yes. We provide secure dashboards tailored for executives and partner leads.",
-    },
-    {
-      question: "How often do you review performance?",
-      answer: "We typically run monthly reviews with quarterly executive summaries.",
     },
   ],
   cta: {

@@ -16,7 +16,6 @@ const content = {
     "Structured referral intake forms and qualification",
     "Routing rules that protect response times",
     "Partner and client dashboards with live status",
-    "Automated reminders and compliance checkpoints",
   ],
   primaryCta: { label: "Schedule an ops walkthrough", href: calendlyUrl },
   secondaryCta: { label: "See delivery scope", href: "#schedule" },
@@ -33,41 +32,8 @@ const content = {
       "Referral intake forms with qualification logic",
       "Routing rules for partners, teams, and locations",
       "Operational dashboards and status updates",
-      "Alerts for stuck or high-priority referrals",
     ],
   },
-  audience: [
-    {
-      title: "Operations leaders",
-      description: "Need to remove manual handoffs and keep referral response times tight.",
-    },
-    {
-      title: "Client service teams",
-      description: "Want immediate visibility into referral status and accountability.",
-    },
-    {
-      title: "Partner success teams",
-      description: "Need consistent communication and referral updates for partners.",
-    },
-    {
-      title: "Multi-location firms",
-      description: "Require routing logic and compliance audit trails across locations.",
-    },
-  ],
-  outcomes: [
-    {
-      title: "Faster referral response",
-      description: "Automated routing and reminders to keep every referral moving quickly.",
-    },
-    {
-      title: "Clean handoffs",
-      description: "Clear workflows across marketing, BD, and client services.",
-    },
-    {
-      title: "Operational reporting",
-      description: "Dashboards that show volume, conversion, and response times.",
-    },
-  ],
   pillars: [
     {
       title: "Intake design",
@@ -109,12 +75,6 @@ const content = {
       description: "Implement alerts, reminders, and partner notifications in Refer Labs.",
       deliverable: "Automation suite",
     },
-    {
-      step: "04",
-      title: "Training + reporting",
-      description: "Enable teams with playbooks and reporting cadence.",
-      deliverable: "Ops handoff",
-    },
   ],
   deliverables: [
     {
@@ -132,36 +92,7 @@ const content = {
         "Referral status definitions",
         "Response time SLAs",
         "Team playbooks and training notes",
-        "Weekly operational reporting template",
       ],
-    },
-  ],
-  testimonials: [
-    {
-      quote:
-        "Our referral intake used to be messy. Now partners know exactly what happens next, and our team never drops a lead.",
-      name: "COO, Advisory Firm",
-      role: "Operations Leadership",
-    },
-    {
-      quote:
-        "The routing logic and dashboards gave leadership the clarity we needed. We can finally see referral response times at a glance.",
-      name: "Director of Client Services, Consulting Group",
-      role: "Client Success",
-    },
-  ],
-  faqs: [
-    {
-      question: "Can this work with multiple offices?",
-      answer: "Yes. We configure routing rules based on location, practice area, or partner tier.",
-    },
-    {
-      question: "Do you build the automation inside Refer Labs?",
-      answer: "Yes. We implement the workflows and dashboards directly in Refer Labs.",
-    },
-    {
-      question: "Will you train our team?",
-      answer: "We deliver playbooks, training sessions, and a handoff guide for internal adoption.",
     },
   ],
   cta: {

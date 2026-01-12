@@ -82,13 +82,9 @@ export interface ServiceLandingContent {
   secondaryCta: { label: string; href: string };
   stats: { label: string; value: string }[];
   engagement: { title: string; description: string; items: string[] };
-  audience: { title: string; description: string }[];
-  outcomes: { title: string; description: string }[];
   pillars: { title: string; description: string; icon: LucideIcon }[];
   process: { step: string; title: string; description: string; deliverable: string }[];
   deliverables: { title: string; items: string[] }[];
-  testimonials: { quote: string; name: string; role: string }[];
-  faqs: { question: string; answer: string }[];
   cta: { title: string; description: string; note: string };
 }
 
@@ -173,44 +169,6 @@ export default function ServiceLandingPage({ accent, content }: ServiceLandingPa
           </div>
         </section>
 
-        <section className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-start">
-          <div className="space-y-4">
-            <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Who this is for</p>
-            <h2 className="text-3xl font-semibold text-slate-900">Professional services teams ready to scale referrals.</h2>
-            <p className="text-slate-600">
-              Designed for firms that need a polished, compliant, and measurable way to grow partner-driven revenue.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {content.audience.map((item, index) => (
-              <div key={item.title} className={`rounded-3xl border ${styles.cardBorder} ${styles.card} p-6 shadow-sm animate-fade-up`} style={{ animationDelay: `${index * 90}ms` }}>
-                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-20">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Outcomes</p>
-              <h2 className="text-3xl font-semibold text-slate-900">What your team leaves with.</h2>
-            </div>
-            <p className="max-w-xl text-sm text-slate-600">
-              Every engagement is built around conversion, compliance, and clarity for partners, clients, and leadership.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {content.outcomes.map((outcome, index) => (
-              <div key={outcome.title} className={`rounded-3xl border ${styles.cardBorder} ${styles.card} p-6 shadow-sm animate-fade-up`} style={{ animationDelay: `${index * 100}ms` }}>
-                <h3 className="text-lg font-semibold text-slate-900">{outcome.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{outcome.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="mt-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:items-start">
             <div>
@@ -241,10 +199,10 @@ export default function ServiceLandingPage({ accent, content }: ServiceLandingPa
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Process</p>
-              <h2 className="text-3xl font-semibold text-slate-900">A guided engagement from intake to launch.</h2>
+              <h2 className="text-3xl font-semibold text-slate-900">A simple engagement from intake to launch.</h2>
             </div>
             <p className="max-w-xl text-sm text-slate-600">
-              Clear timelines, clear ownership, and a white-glove delivery team.
+              Clear timelines, clear ownership, and a lean delivery team.
             </p>
           </div>
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
@@ -264,9 +222,9 @@ export default function ServiceLandingPage({ accent, content }: ServiceLandingPa
         <section className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:items-start">
           <div>
             <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Deliverables</p>
-            <h2 className="text-3xl font-semibold text-slate-900">Everything packaged for leadership, ops, and partner teams.</h2>
+            <h2 className="text-3xl font-semibold text-slate-900">Clear outputs your team can activate fast.</h2>
             <p className="mt-3 text-sm text-slate-600">
-              Each engagement ends with a structured rollout plan, execution assets, and the dashboards your team needs.
+              Each engagement includes the playbooks and assets your team needs to launch.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -283,46 +241,6 @@ export default function ServiceLandingPage({ accent, content }: ServiceLandingPa
                 </ul>
               </div>
             ))}
-          </div>
-        </section>
-
-        <section className="mt-20">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Proof</p>
-              <h2 className="text-3xl font-semibold text-slate-900">What partners and leadership teams say.</h2>
-            </div>
-            <p className="max-w-xl text-sm text-slate-600">
-              We design engagements to feel premium on day one and to scale with your firm.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {content.testimonials.map((testimonial, index) => (
-              <div key={testimonial.name} className={`rounded-3xl border ${styles.cardBorder} ${styles.card} p-6 shadow-sm animate-fade-up`} style={{ animationDelay: `${index * 120}ms` }}>
-                <p className="text-base font-medium text-slate-800">"{testimonial.quote}"</p>
-                <p className="mt-4 text-sm text-slate-600">{testimonial.name}</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-500">{testimonial.role}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-20">
-          <div className="rounded-3xl border border-slate-200/70 bg-white/90 p-8 shadow-xl">
-            <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-              <div>
-                <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>FAQ</p>
-                <h2 className="text-3xl font-semibold text-slate-900">Common questions from prospects.</h2>
-              </div>
-              <div className="space-y-5">
-                {content.faqs.map((faq) => (
-                  <div key={faq.question}>
-                    <p className="text-sm font-semibold text-slate-900">{faq.question}</p>
-                    <p className="mt-1 text-sm text-slate-600">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 

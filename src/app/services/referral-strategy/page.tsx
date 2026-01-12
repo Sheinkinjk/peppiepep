@@ -16,7 +16,6 @@ const content = {
     "Positioning and messaging aligned to high-trust referrals",
     "Offer structure designed for ethical, compliant incentives",
     "Partner personas and outreach playbooks your team can use",
-    "Launch map with clear handoffs across marketing and BD",
   ],
   primaryCta: { label: "Schedule a strategy call", href: calendlyUrl },
   secondaryCta: { label: "View our process", href: "#schedule" },
@@ -36,38 +35,6 @@ const content = {
       "Messaging framework for outreach and onboarding",
     ],
   },
-  audience: [
-    {
-      title: "Managing partners",
-      description: "Need a trusted referral program that reflects the caliber of your firm.",
-    },
-    {
-      title: "Business development leaders",
-      description: "Want clear partner tiers, outreach scripts, and an elegant pitch.",
-    },
-    {
-      title: "Marketing teams",
-      description: "Need messaging, positioning, and assets that feel premium and compliant.",
-    },
-    {
-      title: "Operations teams",
-      description: "Require structure so referrals are tracked, attributed, and reported cleanly.",
-    },
-  ],
-  outcomes: [
-    {
-      title: "A defensible referral story",
-      description: "Positioning that tells partners exactly why referring to you elevates their reputation.",
-    },
-    {
-      title: "Offer architecture that converts",
-      description: "A compliant incentive and engagement model that makes sense for professional services.",
-    },
-    {
-      title: "Launch-ready messaging",
-      description: "Outreach scripts, onboarding copy, and partner enablement tailored to your niche.",
-    },
-  ],
   pillars: [
     {
       title: "Partner positioning",
@@ -105,12 +72,6 @@ const content = {
     },
     {
       step: "03",
-      title: "Offer + compliance architecture",
-      description: "Design the referral offer, incentives, and safeguards for regulated industries.",
-      deliverable: "Offer blueprint",
-    },
-    {
-      step: "04",
       title: "Launch assets + handoff",
       description: "Deliver scripts, decks, and onboarding guides for immediate rollout.",
       deliverable: "Launch kit",
@@ -132,36 +93,7 @@ const content = {
         "Outreach templates and follow-up sequences",
         "Partner onboarding checklist",
         "Internal launch checklist",
-        "Leadership-ready summary deck",
       ],
-    },
-  ],
-  testimonials: [
-    {
-      quote:
-        "The strategy work clarified exactly who we should ask for referrals, how to approach them, and how to keep it compliant. It made our outreach feel premium overnight.",
-      name: "Managing Partner, Boutique Advisory Firm",
-      role: "Professional Services",
-    },
-    {
-      quote:
-        "Refer Labs delivered a strategy that our BD and marketing teams could actually execute. The partner personas and messaging were immediately usable.",
-      name: "Director of Growth, Consulting Group",
-      role: "Management Consulting",
-    },
-  ],
-  faqs: [
-    {
-      question: "Do you tailor this for regulated industries?",
-      answer: "Yes. We shape the offer and messaging around your compliance requirements and referral fee rules.",
-    },
-    {
-      question: "Will you align with our existing CRM and workflows?",
-      answer: "We map your current systems and build handoffs so the strategy fits your existing tech stack.",
-    },
-    {
-      question: "Can you help with execution after strategy?",
-      answer: "Absolutely. We can move into partner network buildout or referral operations once the strategy is approved.",
     },
   ],
   cta: {
