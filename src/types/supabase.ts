@@ -505,6 +505,42 @@ export interface Database {
         };
         Relationships: never[];
       };
+      audit_logs: {
+        Row: {
+          id: string;
+          action: string;
+          user_id: string | null;
+          target_user_id: string | null;
+          target_resource_id: string | null;
+          metadata: Json | null;
+          ip_address: string | null;
+          user_agent: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          action: string;
+          user_id?: string | null;
+          target_user_id?: string | null;
+          target_resource_id?: string | null;
+          metadata?: Json | null;
+          ip_address?: string | null;
+          user_agent?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          action?: string;
+          user_id?: string | null;
+          target_user_id?: string | null;
+          target_resource_id?: string | null;
+          metadata?: Json | null;
+          ip_address?: string | null;
+          user_agent?: string | null;
+          created_at?: string;
+        };
+        Relationships: never[];
+      };
       ambassador_commission_balances: {
         Row: {
           customer_id: string;

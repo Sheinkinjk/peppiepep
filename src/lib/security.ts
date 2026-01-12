@@ -127,13 +127,11 @@ export async function createAuditLog(params: {
   userAgent?: string;
 }): Promise<void> {
   try {
-    // TODO: Uncomment when audit_logs table is created via migration
-    // const supabase = await createServiceClient();
+    const supabase = await createServiceClient();
     const ipAddress = params.ipAddress || (await getClientIp());
     const userAgent = params.userAgent || (await getUserAgent());
 
-    // Log to console for now (will be stored in audit_logs table after migration)
-    console.log("[AUDIT]", {
+    const { error } = await supabase.from("audit_logs").insert({
       action: params.action,
       user_id: params.userId,
       target_user_id: params.targetUserId,
@@ -141,24 +139,22 @@ export async function createAuditLog(params: {
       metadata: params.metadata,
       ip_address: ipAddress,
       user_agent: userAgent,
-      created_at: new Date().toISOString(),
     });
 
-    // TODO: Uncomment when audit_logs table exists
-    // const { error } = await supabase.from("audit_logs").insert({
-    //   action: params.action,
-    //   user_id: params.userId,
-    //   target_user_id: params.targetUserId,
-    //   target_resource_id: params.targetResourceId,
-    //   metadata: params.metadata,
-    //   ip_address: ipAddress,
-    //   user_agent: userAgent,
-    //   created_at: new Date().toISOString(),
-    // });
-    //
-    // if (error) {
-    //   console.error("Failed to create audit log:", error);
-    // }
+    if (error) {
+      console.error("Failed to create audit log:", error);
+      // Fall back to console logging if DB insert fails
+      console.log("[AUDIT]", {
+        action: params.action,
+        user_id: params.userId,
+        target_user_id: params.targetUserId,
+        target_resource_id: params.targetResourceId,
+        metadata: params.metadata,
+        ip_address: ipAddress,
+        user_agent: userAgent,
+        created_at: new Date().toISOString(),
+      });
+    }
   } catch (error) {
     console.error("Error creating audit log:", error);
     // Don't throw - audit logging should not break the main flow
