@@ -16,6 +16,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
+import { Pagination } from "@/components/Pagination";
 
 interface PartnerApplication {
   id: string;
@@ -107,6 +108,10 @@ export function PartnerApplicationsManager() {
   const [actionErrors, setActionErrors] = useState<Record<string, string>>({});
   const [lastError, setLastError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | "pending" | "approved" | "rejected">("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(25);
   const hasSupabaseConfig = Boolean(
     process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   );
@@ -117,23 +122,33 @@ export function PartnerApplicationsManager() {
 
   useEffect(() => {
     fetchApplications();
-  }, []);
+  }, [currentPage, filter]);
 
   async function fetchApplications() {
     try {
-      const response = await fetch("/api/admin/partner-applications");
+      const statusParam = filter !== "all" ? `&status=${filter}` : "";
+      const response = await fetch(
+        `/api/admin/partner-applications?page=${currentPage}&limit=${itemsPerPage}${statusParam}`
+      );
       if (!response.ok) throw new Error("Failed to fetch applications");
 
       const data = await response.json();
-      setApplications(data.applications || []);
+      setApplications(data.data || []);
+      setTotalItems(data.pagination?.total || 0);
+      setTotalPages(data.pagination?.totalPages || 1);
       setIncomingFeed(
-        (data.applications || []).slice(0, 5),
+        (data.data || []).slice(0, 5),
       );
     } catch (error) {
       console.error("Error fetching applications:", error);
     } finally {
       setLoading(false);
     }
+  }
+
+  function handlePageChange(page: number) {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   useEffect(() => {
@@ -375,21 +390,30 @@ export function PartnerApplicationsManager() {
           <Button
             variant={filter === "all" ? "default" : "outline"}
             size="sm"
-            onClick={() => setFilter("all")}
+            onClick={() => {
+              setFilter("all");
+              setCurrentPage(1);
+            }}
           >
-            All ({applications.length})
+            All ({totalItems})
           </Button>
           <Button
             variant={filter === "pending" ? "default" : "outline"}
             size="sm"
-            onClick={() => setFilter("pending")}
+            onClick={() => {
+              setFilter("pending");
+              setCurrentPage(1);
+            }}
           >
             Pending ({pendingCount})
           </Button>
           <Button
             variant={filter === "approved" ? "default" : "outline"}
             size="sm"
-            onClick={() => setFilter("approved")}
+            onClick={() => {
+              setFilter("approved");
+              setCurrentPage(1);
+            }}
           >
             Approved ({approvedCount})
           </Button>
@@ -644,6 +668,19 @@ export function PartnerApplicationsManager() {
           ))
         )}
       </div>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="mt-8">
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            totalItems={totalItems}
+            itemsPerPage={itemsPerPage}
+          />
+        </div>
+      )}
     </div>
   );
 }

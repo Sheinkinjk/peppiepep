@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerComponentClient } from "@/lib/supabase";
-import { requireAdmin } from "@/lib/admin-auth";
+import { requireAdmin, getCurrentAdmin } from "@/lib/admin-auth";
+import { parsePaginationParams, createPaginatedResponse, applyPagination } from "@/lib/pagination";
+import { applyRateLimit, createAuditLog, getSecurityHeaders } from "@/lib/security";
 
 /**
  * GET /api/admin/compliance
@@ -13,14 +15,58 @@ import { requireAdmin } from "@/lib/admin-auth";
  */
 export async function GET(request: NextRequest) {
   try {
+    // Apply rate limiting
+    const rateLimitResult = await applyRateLimit("admin_api");
+    if (!rateLimitResult.allowed) {
+      return NextResponse.json(
+        { error: "Rate limit exceeded. Please try again later." },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Limit": "100",
+            "X-RateLimit-Remaining": String(rateLimitResult.remaining),
+            "X-RateLimit-Reset": String(rateLimitResult.resetAt),
+            ...getSecurityHeaders(),
+          },
+        }
+      );
+    }
+
     // Require admin authentication
-    await requireAdmin();
+    const admin = await getCurrentAdmin();
+    if (!admin) {
+      return NextResponse.json(
+        { error: "Unauthorized" },
+        { status: 401, headers: getSecurityHeaders() }
+      );
+    }
 
     const supabase = await createServerComponentClient();
     const searchParams = request.nextUrl.searchParams;
+    const { page, limit } = parsePaginationParams(searchParams);
     const businessId = searchParams.get("business_id");
     const serviceType = searchParams.get("service_type");
     const status = searchParams.get("status");
+
+    // Get total count
+    let countQuery = supabase
+      .from("customers")
+      .select("*", { count: "exact", head: true })
+      .not("status", "eq", "rejected");
+
+    if (businessId) {
+      countQuery = countQuery.eq("business_id", businessId);
+    }
+
+    const { count: total, error: countError } = await countQuery;
+
+    if (countError) {
+      console.error("Error counting partners:", countError);
+      return NextResponse.json(
+        { error: "Failed to count partners" },
+        { status: 500, headers: getSecurityHeaders() }
+      );
+    }
 
     // Build base query - using only existing columns
     let query = supabase
@@ -46,6 +92,9 @@ export async function GET(request: NextRequest) {
       query = query.eq("business_id", businessId);
     }
 
+    // Apply pagination
+    query = applyPagination(query, page, limit);
+
     const { data: partners, error } = await query;
 
     if (error) {
@@ -61,25 +110,49 @@ export async function GET(request: NextRequest) {
 
     // Calculate statistics (using placeholder data until migration runs)
     const stats = {
-      total_partners: partners?.length || 0,
+      total_partners: total || 0,
       pending_verification: 0,
-      verified: partners?.length || 0,
+      verified: total || 0,
       expired: 0,
       failed: 0,
-      by_service_type: { other: partners?.length || 0 } as Record<string, number>,
+      by_service_type: { other: total || 0 } as Record<string, number>,
       expiring_soon: 0,
     };
 
-    return NextResponse.json({
-      partners,
-      compliance_records: complianceRecords || [],
-      stats,
+    // Create audit log
+    await createAuditLog({
+      action: "admin_action",
+      userId: admin.id,
+      metadata: {
+        action: "view_compliance",
+        page,
+        limit,
+        businessId,
+        serviceType,
+        status,
+        count: partners?.length || 0,
+      },
     });
+
+    return NextResponse.json(
+      {
+        ...createPaginatedResponse(partners || [], total || 0, page, limit),
+        compliance_records: complianceRecords || [],
+        stats,
+      },
+      {
+        headers: {
+          ...getSecurityHeaders(),
+          "X-RateLimit-Limit": "100",
+          "X-RateLimit-Remaining": String(rateLimitResult.remaining),
+        },
+      }
+    );
   } catch (error) {
     console.error("Compliance API error:", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Internal server error" },
-      { status: 500 }
+      { status: 500, headers: getSecurityHeaders() }
     );
   }
 }
@@ -91,7 +164,30 @@ export async function GET(request: NextRequest) {
  */
 export async function POST(request: NextRequest) {
   try {
-    await requireAdmin();
+    // Apply rate limiting
+    const rateLimitResult = await applyRateLimit("admin_api");
+    if (!rateLimitResult.allowed) {
+      return NextResponse.json(
+        { error: "Rate limit exceeded. Please try again later." },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Limit": "100",
+            "X-RateLimit-Remaining": String(rateLimitResult.remaining),
+            "X-RateLimit-Reset": String(rateLimitResult.resetAt),
+            ...getSecurityHeaders(),
+          },
+        }
+      );
+    }
+
+    const admin = await getCurrentAdmin();
+    if (!admin) {
+      return NextResponse.json(
+        { error: "Unauthorized" },
+        { status: 401, headers: getSecurityHeaders() }
+      );
+    }
 
     const body = await request.json();
     const {
@@ -106,24 +202,46 @@ export async function POST(request: NextRequest) {
     if (!customer_id || !status) {
       return NextResponse.json(
         { error: "customer_id and status are required" },
-        { status: 400 }
+        { status: 400, headers: getSecurityHeaders() }
       );
     }
 
     const supabase = await createServerComponentClient();
 
+    // Create audit log for compliance action
+    await createAuditLog({
+      action: "compliance_verified",
+      userId: admin.id,
+      targetUserId: customer_id,
+      metadata: {
+        status,
+        verification_type,
+        verification_notes,
+        expiry_date,
+      },
+    });
+
     // TODO: Implement once migration is run
     // For now, return a success message
-    return NextResponse.json({
-      success: true,
-      message: "Compliance system will be available after database migration is applied",
-      note: "Run the migration at /supabase/migrations/20260112020000_professional_services_compliance.sql",
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Compliance system will be available after database migration is applied",
+        note: "Run the migration at /supabase/migrations/20260112020000_professional_services_compliance.sql",
+      },
+      {
+        headers: {
+          ...getSecurityHeaders(),
+          "X-RateLimit-Limit": "100",
+          "X-RateLimit-Remaining": String(rateLimitResult.remaining),
+        },
+      }
+    );
   } catch (error) {
     console.error("Compliance update error:", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Internal server error" },
-      { status: 500 }
+      { status: 500, headers: getSecurityHeaders() }
     );
   }
 }

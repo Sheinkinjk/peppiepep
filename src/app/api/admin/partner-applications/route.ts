@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
+import { parsePaginationParams, createPaginatedResponse, applyPagination } from "@/lib/pagination";
+import { applyRateLimit, createAuditLog, getSecurityHeaders } from "@/lib/security";
 
 type PartnerApplicationCustomerLite = {
   id: string;
@@ -25,6 +27,22 @@ type CommissionAmountRecord = { amount: number | null };
 
 export async function GET(request: NextRequest) {
   try {
+    // Apply rate limiting
+    const rateLimitResult = await applyRateLimit("admin_api");
+    if (!rateLimitResult.allowed) {
+      return NextResponse.json(
+        { error: "Rate limit exceeded. Please try again later." },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Limit": "100",
+            "X-RateLimit-Remaining": String(rateLimitResult.remaining),
+            "X-RateLimit-Reset": String(rateLimitResult.resetAt),
+          }
+        }
+      );
+    }
+
     // Check admin authentication
     const admin = await getCurrentAdmin();
     if (!admin) {
@@ -36,8 +54,35 @@ export async function GET(request: NextRequest) {
 
     const supabase = await createServiceClient();
 
-    // Get all partner applications with customer details
-    const { data: applications, error } = await supabase
+    // Parse pagination params
+    const { searchParams } = new URL(request.url);
+    const { page, limit } = parsePaginationParams(searchParams);
+    const statusParam = searchParams.get("status");
+    const status = statusParam && ["pending", "approved", "rejected"].includes(statusParam)
+      ? statusParam as "pending" | "approved" | "rejected"
+      : null;
+
+    // Get total count
+    let countQuery = supabase
+      .from("partner_applications")
+      .select("*", { count: "exact", head: true });
+
+    if (status) {
+      countQuery = countQuery.eq("status", status);
+    }
+
+    const { count: total, error: countError } = await countQuery;
+
+    if (countError) {
+      console.error("Error counting applications:", countError);
+      return NextResponse.json(
+        { error: "Failed to count applications" },
+        { status: 500 }
+      );
+    }
+
+    // Get paginated partner applications with customer details
+    let dataQuery = supabase
       .from("partner_applications")
       .select(`
         *,
@@ -55,6 +100,15 @@ export async function GET(request: NextRequest) {
         )
       `)
       .order("created_at", { ascending: false });
+
+    if (status) {
+      dataQuery = dataQuery.eq("status", status);
+    }
+
+    // Apply pagination
+    dataQuery = applyPagination(dataQuery, page, limit);
+
+    const { data: applications, error } = await dataQuery;
 
     if (error) {
       console.error("Error fetching partner applications:", error);
@@ -118,15 +172,40 @@ export async function GET(request: NextRequest) {
       })
     );
 
-    return NextResponse.json({
-      applications: applicationsWithStats,
-      total: applicationsWithStats.length,
+    // Create audit log for data access
+    await createAuditLog({
+      action: "admin_action",
+      userId: admin.id,
+      metadata: {
+        action: "view_partner_applications",
+        page,
+        limit,
+        status,
+        count: applicationsWithStats.length,
+      },
     });
+
+    // Return paginated response with security headers
+    return NextResponse.json(
+      createPaginatedResponse(
+        applicationsWithStats,
+        total || 0,
+        page,
+        limit
+      ),
+      {
+        headers: {
+          ...getSecurityHeaders(),
+          "X-RateLimit-Limit": "100",
+          "X-RateLimit-Remaining": String(rateLimitResult.remaining),
+        },
+      }
+    );
   } catch (error) {
     console.error("Error in partner applications API:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500, headers: getSecurityHeaders() }
     );
   }
 }
