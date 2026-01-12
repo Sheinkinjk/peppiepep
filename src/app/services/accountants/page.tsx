@@ -10,28 +10,26 @@ const content = {
   heroTitle: "Build a referral engine",
   heroHighlight: "that protects client trust.",
   heroSummary:
-    "We help accounting firms track referrals across advisors, attorneys, and business owners with clarity, compliance, and measurable ROI.",
+    "A referral program for accounting firms that keeps partners aligned and revenue attributed.",
   heroBullets: [
-    "Referral intake by service line: tax, audit, bookkeeping, CFO advisory",
-    "Partner handoffs that keep CPAs, advisors, and attorneys aligned",
-    "Client consent and engagement tracking for regulated work",
-    "Revenue attribution tied to retained clients and fees",
+    "Intake by service line: tax, audit, advisory",
+    "Partner handoffs across CPAs, advisors, and attorneys",
+    "Revenue attribution tied to retained clients",
   ],
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   whyTitle: "Why accounting referrals get stuck in spreadsheets",
   whySummary:
-    "Referrals happen informally between trusted professionals, but without structure they get lost, delayed, or never attributed to the partner who sent them.",
+    "Trusted referrals are high value, but informal tracking hides what converts.",
   whyPoints: [
-    "No consistent intake for tax vs audit vs advisory leads.",
-    "Partners are unsure what happens after they refer a client.",
-    "Leadership cannot see which relationships drive retained revenue.",
+    "Inconsistent intake across service lines.",
+    "Partners lack visibility after they refer.",
+    "Unclear attribution for retained revenue.",
   ],
   outcomesTitle: "What a premium accounting referral program delivers",
   outcomes: [
-    "Service-line intake that routes referrals to the right team fast.",
-    "Partner updates that keep advisors and attorneys informed.",
-    "Revenue attribution tied to retained clients and fees.",
-    "Compliance-ready records that stand up to scrutiny.",
+    "Service-line intake routed to the right team.",
+    "Partner updates that keep advisors informed.",
+    "Revenue attribution tied to retained clients.",
   ],
   process: [
     {
@@ -47,12 +45,7 @@ const content = {
     {
       step: "03",
       title: "Partner activation",
-      description: "Deliver outreach assets and partner onboarding materials.",
-    },
-    {
-      step: "04",
-      title: "Reporting + launch",
-      description: "Deliver dashboards and partner communications for rollout.",
+      description: "Deliver onboarding assets and reporting for launch.",
     },
   ],
   deliverables: [
@@ -61,7 +54,6 @@ const content = {
       items: [
         "Referral intake forms by service line",
         "Partner follow-up cadence",
-        "Referral status definitions",
         "Partner communication templates",
       ],
     },
@@ -71,13 +63,12 @@ const content = {
         "Referral revenue dashboard",
         "Partner performance tracking",
         "Service line conversion reporting",
-        "Quarterly optimization summary",
       ],
     },
   ],
   cta: {
     title: "Ready to scale accounting referrals with confidence?",
-    description: "Schedule a call to map your referral workflow and partner strategy.",
+    description: "Schedule a call to map your referral workflow.",
     note: "30-minute consultative call",
   },
 };

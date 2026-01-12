@@ -10,28 +10,26 @@ const content = {
   heroTitle: "Grow legal referrals with",
   heroHighlight: "audit-ready clarity.",
   heroSummary:
-    "Refer Labs helps law firms manage referral relationships, intake, and attribution with governance, ethics, and client trust at the center.",
+    "Referral workflows that protect ethics, transparency, and client trust.",
   heroBullets: [
-    "Structured intake with conflict checks and practice routing",
-    "Partner transparency with status updates and reporting",
-    "Attribution for referred matters, fees, and outcomes",
-    "Referral workflows aligned to local fee-sharing rules",
+    "Intake with conflict checks and practice routing",
+    "Partner updates for matter visibility",
+    "Matter-level attribution for fees and outcomes",
   ],
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   whyTitle: "Why legal referral programs break down",
   whySummary:
-    "Legal referrals are high trust and high risk. Without structure, firms struggle with conflict checks, partner transparency, and defensible attribution.",
+    "Legal referrals demand trust, but missing structure creates risk and friction.",
   whyPoints: [
-    "Referrals arrive in inboxes without a repeatable intake path.",
-    "Partners are left guessing on matter status and outcomes.",
-    "Leadership cannot reliably report on referral fees and impact.",
+    "Intake varies by partner and practice.",
+    "Partners lack matter status updates.",
+    "Referral attribution is hard to defend.",
   ],
   outcomesTitle: "What a premium legal referral program delivers",
   outcomes: [
-    "Intake workflows that align to practice areas and conflict checks.",
-    "Partner updates that protect relationships and reputation.",
-    "Matter-level attribution tied to fees and outcomes.",
-    "Governance and reporting that withstand internal scrutiny.",
+    "Intake workflows aligned to practice areas.",
+    "Partner updates that protect relationships.",
+    "Matter-level attribution tied to fees.",
   ],
   process: [
     {
@@ -47,12 +45,7 @@ const content = {
     {
       step: "03",
       title: "Partner activation",
-      description: "Deliver partner-facing assets and referral instructions.",
-    },
-    {
-      step: "04",
-      title: "Launch + reporting",
-      description: "Deliver partner assets and referral reporting dashboards.",
+      description: "Deliver partner assets and reporting dashboards.",
     },
   ],
   deliverables: [
@@ -62,7 +55,6 @@ const content = {
         "Practice area intake forms",
         "Conflict check handoff steps",
         "Partner update cadence",
-        "Referral status definitions",
       ],
     },
     {
@@ -71,13 +63,12 @@ const content = {
         "Referral matter dashboard",
         "Partner contribution tracking",
         "Fee and outcome reporting",
-        "Quarterly optimization review",
       ],
     },
   ],
   cta: {
     title: "Ready to professionalize legal referrals?",
-    description: "Schedule a call to map your referral intake and partner workflow.",
+    description: "Schedule a call to map your referral intake and workflow.",
     note: "30-minute consultative call",
   },
 };

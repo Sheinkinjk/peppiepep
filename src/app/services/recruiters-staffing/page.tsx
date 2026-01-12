@@ -10,28 +10,26 @@ const content = {
   heroTitle: "Track referrals from",
   heroHighlight: "clients, candidates, and partners.",
   heroSummary:
-    "Refer Labs helps recruiting teams capture referrals, track placements, and attribute revenue across client and candidate networks.",
+    "A recruiting referral program that tracks intake, placements, and revenue.",
   heroBullets: [
     "Referral intake for candidates, clients, and partner agencies",
     "Routing by role, industry, and geography",
     "Placement attribution from referral to fee",
-    "Partner updates that keep high-value sources engaged",
   ],
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   whyTitle: "Why recruiting referrals lose momentum",
   whySummary:
-    "Recruiting referrals span candidates, hiring managers, and partner agencies. Without a consistent intake and routing flow, great referrals get delayed or lost.",
+    "Recruiting referrals need fast routing and consistent partner updates.",
   whyPoints: [
-    "Referrals arrive without clear role, seniority, or location context.",
-    "Teams cannot see which partners consistently deliver placements.",
-    "Partner updates are ad hoc, so relationships cool over time.",
+    "Missing role and location context slows response.",
+    "No clear view of partner placement quality.",
+    "Updates are inconsistent across desks.",
   ],
   outcomesTitle: "What a premium recruiting referral program delivers",
   outcomes: [
-    "Intake that captures the right details for roles and desks.",
+    "Intake that captures the right role details.",
     "Routing rules that keep response times fast.",
-    "Placement attribution tied to fees and partner sources.",
-    "Partner updates that keep the referral flywheel moving.",
+    "Placement attribution tied to fees and sources.",
   ],
   process: [
     {
@@ -47,12 +45,7 @@ const content = {
     {
       step: "03",
       title: "Partner activation",
-      description: "Deliver partner outreach assets and referral instructions.",
-    },
-    {
-      step: "04",
-      title: "Launch + reporting",
-      description: "Deliver dashboards for referral, placement, and revenue reporting.",
+      description: "Deliver partner assets, dashboards, and reporting.",
     },
   ],
   deliverables: [
@@ -62,7 +55,6 @@ const content = {
         "Candidate referral intake",
         "Client lead referral intake",
         "Routing rules and ownership",
-        "Partner update cadence",
       ],
     },
     {
@@ -71,13 +63,12 @@ const content = {
         "Placement attribution dashboard",
         "Partner performance reporting",
         "Referral to placement conversion tracking",
-        "Quarterly optimization review",
       ],
     },
   ],
   cta: {
     title: "Ready to scale recruiting referrals?",
-    description: "Schedule a call to map referral sources and the placement workflow.",
+    description: "Schedule a call to map referral sources and workflow.",
     note: "30-minute consultative call",
   },
 };

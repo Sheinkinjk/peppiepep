@@ -10,28 +10,26 @@ const content = {
   heroTitle: "Build a referral channel",
   heroHighlight: "that protects renewals and trust.",
   heroSummary:
-    "We help insurance brokers manage partner referrals, track policies, and attribute revenue with a premium client experience.",
+    "A broker referral program that tracks policies and protects partner trust.",
   heroBullets: [
     "Referral intake for commercial, personal, and specialty lines",
     "Partner updates that keep referral sources engaged",
     "Attribution from referral to bound policy and renewal",
-    "Status tracking for quotes, binding, and renewals",
   ],
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   whyTitle: "Why broker referrals feel hard to scale",
   whySummary:
-    "Broker referrals span multiple lines, products, and partner types. Without structured intake and updates, partners stop sending referrals and leadership cannot see what converts.",
+    "Broker referrals span many lines, but visibility is often missing.",
   whyPoints: [
-    "Referrals arrive without line-of-business detail or urgency.",
-    "Partners rarely get status updates on quotes or renewals.",
-    "Attribution is unclear, so high-value partners are hard to prioritize.",
+    "Missing line-of-business detail slows intake.",
+    "Partners lack updates on quotes and renewals.",
+    "Attribution is unclear for premium volume.",
   ],
   outcomesTitle: "What a premium broker referral program delivers",
   outcomes: [
     "Referral intake by line of business with clean routing.",
-    "Status tracking across quotes, binding, and renewals.",
-    "Attribution that ties referrals to premium volume and renewals.",
-    "Partner updates that keep referral sources engaged.",
+    "Status tracking for quotes and renewals.",
+    "Attribution tied to premium volume.",
   ],
   process: [
     {
@@ -47,12 +45,7 @@ const content = {
     {
       step: "03",
       title: "Partner activation",
-      description: "Deliver partner assets, referral instructions, and update cadence.",
-    },
-    {
-      step: "04",
-      title: "Launch + reporting",
-      description: "Deliver partner assets and policy attribution dashboards.",
+      description: "Deliver partner assets and policy reporting.",
     },
   ],
   deliverables: [
@@ -62,7 +55,6 @@ const content = {
         "Referral intake by line of business",
         "Routing and ownership rules",
         "Partner update cadence",
-        "Referral status definitions",
       ],
     },
     {
@@ -71,13 +63,12 @@ const content = {
         "Policy attribution dashboard",
         "Partner performance reporting",
         "Referral to bind conversion tracking",
-        "Quarterly optimization review",
       ],
     },
   ],
   cta: {
     title: "Ready to scale broker referrals?",
-    description: "Schedule a call to map your referral intake and reporting strategy.",
+    description: "Schedule a call to map referral intake and reporting.",
     note: "30-minute consultative call",
   },
 };

@@ -10,28 +10,26 @@ const content = {
   heroTitle: "Grow referrals that protect",
   heroHighlight: "trust, compliance, and AUM.",
   heroSummary:
-    "Refer Labs builds a referral program that feels aligned with fiduciary standards: clear consent, clean handoffs, and reporting that leadership can defend.",
+    "A referral program aligned with fiduciary standards, clean handoffs, and leadership-ready reporting.",
   heroBullets: [
-    "Partner workflows designed for CPAs, estate attorneys, and mortgage brokers",
-    "Consent capture and audit trails aligned to fiduciary standards",
-    "Household-level attribution for AUM and retained revenue",
-    "Advisor-ready handoff and follow-up workflows",
+    "Partner workflows for CPAs, estate attorneys, and lenders",
+    "Consent capture and audit trails built in",
+    "Household-level attribution for AUM impact",
   ],
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   whyTitle: "Why referral programs stall in advisory firms",
   whySummary:
-    "Most advisory referrals are relationship-driven and informal. That creates three problems: no consistent handoff, no audit trail, and no visibility into which partners actually grow AUM.",
+    "Advisory referrals are high trust, but often untracked and inconsistent.",
   whyPoints: [
-    "Partners send referrals without a repeatable intake, so follow-up quality varies by advisor.",
-    "Compliance and disclosure live in email threads instead of a defensible record.",
-    "Leadership cannot see which partners drive qualified households and revenue.",
+    "Inconsistent intake and follow-up by advisor.",
+    "Compliance evidence buried in email threads.",
+    "No clear view of partner impact on AUM.",
   ],
   outcomesTitle: "What a premium advisory referral program delivers",
   outcomes: [
-    "A structured intake flow that protects client trust and compliance.",
-    "Clear partner expectations and update cadence that strengthens relationships.",
-    "Household-level attribution tied to pipeline, AUM, and retention.",
-    "Advisor-ready handoff workflows that reduce missed opportunities.",
+    "Structured intake that protects trust and compliance.",
+    "Partner updates that strengthen relationships.",
+    "Attribution tied to pipeline and AUM.",
   ],
   process: [
     {
@@ -42,17 +40,12 @@ const content = {
     {
       step: "02",
       title: "Workflow design",
-      description: "Build intake, routing, and partner updates across advisory teams.",
+      description: "Build intake, routing, and partner updates.",
     },
     {
       step: "03",
       title: "Partner activation",
-      description: "Deliver referral instructions, outreach scripts, and onboarding assets.",
-    },
-    {
-      step: "04",
-      title: "Reporting + optimization",
-      description: "Deliver leadership dashboards and the first performance review.",
+      description: "Deliver outreach scripts, onboarding assets, and reporting.",
     },
   ],
   deliverables: [
@@ -62,7 +55,6 @@ const content = {
         "Partner intake and qualification forms",
         "Compliance-ready referral disclosures",
         "Advisor handoff playbooks",
-        "Partner status updates",
       ],
     },
     {
@@ -71,13 +63,12 @@ const content = {
         "Referral attribution dashboard",
         "Partner performance tracking",
         "Pipeline and revenue summaries",
-        "Quarterly optimization recommendations",
       ],
     },
   ],
   cta: {
     title: "Ready to grow advisory referrals with confidence?",
-    description: "Schedule a call to map your partner strategy and compliance-ready workflow.",
+    description: "Schedule a call to map your partner strategy and workflow.",
     note: "30-minute consultative call",
   },
 };

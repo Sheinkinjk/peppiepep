@@ -121,7 +121,7 @@ export default function ServiceLandingPage({ accent, content }: ServiceLandingPa
             <div className="flex flex-wrap gap-4">
               <Link
                 href={content.primaryCta.href}
-                className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-lg transition hover:-translate-y-0.5 ${styles.primaryButton}`}
+                className={`inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold shadow-2xl transition hover:-translate-y-1 hover:shadow-2xl ${styles.primaryButton}`}
                 target={content.primaryCta.href.startsWith("http") ? "_blank" : undefined}
                 rel={content.primaryCta.href.startsWith("http") ? "noreferrer" : undefined}
               >
@@ -131,18 +131,38 @@ export default function ServiceLandingPage({ accent, content }: ServiceLandingPa
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Why referrals</p>
-            <h2 className="text-3xl font-semibold text-slate-900">{content.whyTitle}</h2>
-            <p className="text-sm text-slate-600">{content.whySummary}</p>
-            <div className="space-y-3">
-              {content.whyPoints.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className={`mt-0.5 h-4 w-4 ${styles.highlight}`} />
-                  <span className="text-sm text-slate-700">{item}</span>
+          <div className={`rounded-3xl border ${styles.cardBorder} ${styles.card} p-8 shadow-xl`}>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Referral flow</p>
+            <h2 className="mt-3 text-2xl font-semibold text-slate-900">A simple, premium journey.</h2>
+            <div className="mt-6 space-y-4">
+              {["Partner referral", "Qualified intake", "Revenue impact"].map((label) => (
+                <div key={label} className="flex items-center gap-3">
+                  <span className={`flex h-9 w-9 items-center justify-center rounded-full ${styles.badge} text-xs font-semibold`}>
+                    ✓
+                  </span>
+                  <span className="text-sm text-slate-700">{label}</span>
                 </div>
               ))}
             </div>
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              {["bg-white/70", "bg-white/60", "bg-white/50"].map((tone) => (
+                <div key={tone} className={`h-16 rounded-2xl border ${styles.cardBorder} ${tone}`} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Why referrals</p>
+          <h2 className="mt-3 text-3xl font-semibold text-slate-900">{content.whyTitle}</h2>
+          <p className="mt-3 text-sm text-slate-600">{content.whySummary}</p>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {content.whyPoints.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle2 className={`mt-0.5 h-4 w-4 ${styles.highlight}`} />
+                <span className="text-sm text-slate-700">{item}</span>
+              </div>
+            ))}
           </div>
         </section>
 
