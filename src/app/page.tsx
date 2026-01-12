@@ -13,44 +13,44 @@ import { logger } from "@/lib/logger";
 const referralPillars = [
   {
     number: "01",
-    title: "Introductions that skip cold outreach",
+    title: "Warm introductions that close faster",
     copy:
-      "Brand evangelists text concierge-quality links that do the heavy lifting. Most prospects arrive already primed with context, social proof, and urgency.",
+      "Professional services clients trust referrals 4× more than cold outreach. Track every introduction from partner to prospect to closed deal with full attribution.",
     chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "02",
-    title: "VIP incentives that feel on-brand",
+    title: "Compliance-ready revenue sharing",
     copy:
-      "Refer Labs issues wallet cards, QR lounges, and luxury-grade perks automatically so the experience feels bespoke—never like a generic promo code blast.",
+      "Built for ethical fee sharing with audit trails, disclosure tracking, and state-specific compliance templates. No more spreadsheets or compliance headaches.",
     chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "03",
-    title: "CRM imports become referral fuel",
+    title: "Partner network intelligence",
     copy:
-      "Upload spreadsheets or sync a CRM export and Refer Labs immediately assigns links, discount words, and share kits for every contact without manual ops.",
+      "AI scores your referral partners on likelihood to refer, estimated value, and optimal approach. Focus on relationships that drive revenue, not just activity.",
     chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "04",
-    title: "Automated concierge follow-ups",
+    title: "Automated partner engagement",
     copy:
-      "SMS + email journeys keep referral partners nudged at the perfect cadence with AI-drafted talking points, brand gradients, and instant proofs of reward.",
+      "Keep your referral network engaged with personalized check-ins, case study requests, and partnership opportunities — all on autopilot.",
     chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "05",
-    title: "Payouts & compliance in one ledger",
+    title: "Revenue attribution that closes the loop",
     copy:
-      "Every referral event syncs to a live ledger so finance teams see status, clawbacks, and pending credits. Approvals take minutes, not days.",
+      "See exactly which partners, introductions, and touchpoints led to closed business. Prove ROI to partners and justify reciprocal referrals.",
     chipBg: "bg-[#5ce1e6] text-white",
   },
   {
     number: "06",
-    title: "Intelligence on what to scale next",
+    title: "Scale your referral pipeline systematically",
     copy:
-      "Track who referred who, which assets drove highest AOV, and when advocates go quiet—so you know exactly where to double down for your next drop.",
+      "Identify top-performing partners, replicate what works, and build a predictable referral channel that compounds over time — just like your sales pipeline.",
     chipBg: "bg-[#5ce1e6] text-white",
   },
 ];
@@ -137,30 +137,30 @@ type HeroBadgeSpec = {
 const heroBadges: HeroBadgeSpec[] = [
   {
     id: "hero-referral",
-    title: "NEW REFERRAL",
-    text: "Jenny used a referral link",
-    colors: ["#855b4c", "#a87261"],
+    title: "NEW INTRODUCTION",
+    text: "Anderson Law referred a client",
+    colors: ["#2c3e50", "#34495e"],
     position: "top-3 left-3 lg:top-4 lg:left-6",
   },
   {
     id: "hero-vip",
-    title: "VIP BOOKING",
-    text: "David confirmed a new order",
-    colors: ["#2c5248", "#356757"],
+    title: "CASE CLOSED",
+    text: "Smith & Partners confirmed new matter",
+    colors: ["#16a085", "#1abc9c"],
     position: "top-3 right-3 lg:top-4 lg:right-6",
   },
   {
     id: "hero-leaderboard",
-    title: "LEADERBOARD",
-    text: "Jake referred 24 orders",
-    colors: ["#1f2c3b", "#3b4e5d"],
+    title: "TOP PARTNER",
+    text: "Miller CPA referred 18 clients",
+    colors: ["#27ae60", "#2ecc71"],
     position: "bottom-3 left-3 lg:bottom-6 lg:left-6",
   },
   {
     id: "hero-revenue",
-    title: "REVENUE",
-    text: "$35,500 generated",
-    colors: ["#3a3334", "#54484a"],
+    title: "REVENUE ATTRIBUTED",
+    text: "$425,000 from referrals",
+    colors: ["#2980b9", "#3498db"],
     position: "bottom-3 right-3 lg:bottom-6 lg:right-6",
   },
 ];
@@ -312,31 +312,31 @@ export default async function Home() {
           <div className="relative z-10 flex min-h-[280px] sm:min-h-[340px] lg:min-h-[460px] flex-col items-center justify-center gap-6 sm:gap-8 px-4 text-center sm:px-8 lg:px-16">
             <div className="space-y-4 sm:space-y-5 max-w-6xl">
               <h1 className="text-[2rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[2.5rem] md:text-[2.9rem] lg:text-[3.5rem]">
-                <span className="block">Turn Partners, Clients, Creators & Advisors</span>
-                <span className="block">Into a Fully Tracked Referral Channel</span>
+                <span className="block">Professional Services Firms Grow Faster</span>
+                <span className="block">With Warm Introductions</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto font-medium leading-relaxed px-4">
-                Launch your referral program in minutes. Track every conversion. Scale what works.
+                Turn your client relationships and partner network into predictable revenue. Built for law firms, accounting practices, and consultancies with compliance and tracking built in.
               </p>
             </div>
 
             {/* Dual CTA - Mobile optimized */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center justify-center w-full sm:w-auto">
-              <Link
-                href="/login"
-                className={cn(
-                  buttonVariants({ variant: "cta" }),
-                  "group rounded-xl text-base sm:text-lg font-bold px-6 sm:px-8 py-4 sm:py-6 shadow-xl hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
-                )}
-              >
-                Get Started Free
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
               <TrackedCTA
                 ambassadorId={ambassadorData?.id}
                 businessId={ambassadorData?.business_id}
                 referralCode={ambassadorData?.code}
               />
+              <Link
+                href="/login"
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "group rounded-xl text-base sm:text-lg font-semibold px-6 sm:px-8 py-4 sm:py-6 border-2 border-slate-300 hover:border-slate-400 transition-all duration-300 w-full sm:w-auto"
+                )}
+              >
+                See How It Works
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
 
           </div>
@@ -349,13 +349,11 @@ export default async function Home() {
               <div className="relative z-10 space-y-10">
                 <div className="text-left sm:text-center">
                   <h2 className="text-[1.9rem] font-bold tracking-tight text-slate-900 sm:text-[2.5rem] md:text-[2.75rem] lg:text-[3rem] max-w-5xl sm:mx-auto text-balance leading-[1.15]">
-                    <span className="block">Why Your Network Is Your Best</span>
-                    <span className="block">Customer Acquisition Channel</span>
+                    <span className="block">Why Professional Services Firms</span>
+                    <span className="block">Choose Referral Intelligence</span>
                   </h2>
                   <p className="mt-4 text-base sm:text-lg md:text-xl text-slate-600 max-w-[60rem] lg:max-w-[64rem] mx-0 sm:mx-auto text-balance leading-relaxed">
-                    Your next best customers are already known by your partners, clients, creators, and advisors. Refer Labs helps you
-                    turn your entire network into a structured, trackable growth engine that feels natural for them and powerful
-                    for you.
+                    80% of professional services business comes from referrals, but most firms track it with spreadsheets and sticky notes. Refer Labs gives you enterprise-grade tracking, compliance ledgers, and AI-powered partner insights — so you can scale your referral network like a sales pipeline.
                   </p>
                 </div>
 
