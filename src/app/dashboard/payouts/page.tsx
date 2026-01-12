@@ -200,11 +200,16 @@ export default function PayoutsPage() {
   const payoutStatusLabel = needsOnboarding ? "Setup required" : "Ready";
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
-          Commission Payouts
-        </h1>
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            Commission Payouts
+          </h1>
+          <p className="text-slate-600">
+            Manage your referral commissions and request payouts for your partner network.
+          </p>
+        </div>
 
         {/* Alerts */}
         {error && (
@@ -220,45 +225,45 @@ export default function PayoutsPage() {
         )}
 
         {/* Balance Card */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">
-            Your Commission Balance
+        <div className="bg-gradient-to-br from-white via-slate-50 to-emerald-50/30 rounded-2xl border border-slate-200 shadow-sm p-8 mb-8">
+          <h2 className="text-xl font-bold text-slate-900 mb-6">
+            Your Referral Commission Balance
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div>
-              <p className="text-sm text-gray-600 mb-1">Pending Balance</p>
-              <p className="text-3xl font-bold text-blue-600">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-slate-200/60 shadow-sm">
+              <p className="text-sm text-slate-600 mb-1">Pending Balance</p>
+              <p className="text-3xl font-bold text-[#0abab5]">
                 {formatPayoutAmount(balance?.pending_balance || 0)}
               </p>
             </div>
 
-            <div>
-              <p className="text-sm text-gray-600 mb-1">Total Paid</p>
-              <p className="text-3xl font-bold text-green-600">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-slate-200/60 shadow-sm">
+              <p className="text-sm text-slate-600 mb-1">Total Paid</p>
+              <p className="text-3xl font-bold text-emerald-600">
                 {formatPayoutAmount(balance?.paid_total || 0)}
               </p>
             </div>
 
-            <div>
-              <p className="text-sm text-gray-600 mb-1">Lifetime Earnings</p>
-              <p className="text-3xl font-bold text-gray-900">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-slate-200/60 shadow-sm">
+              <p className="text-sm text-slate-600 mb-1">Lifetime Earnings</p>
+              <p className="text-3xl font-bold text-slate-900">
                 {formatPayoutAmount(balance?.lifetime_earnings || 0)}
               </p>
             </div>
           </div>
 
-          <div className="mt-6 pt-6 border-t border-gray-200 flex items-center justify-between">
+          <div className="mt-6 pt-6 border-t border-slate-200 flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-slate-600">
                 {balance?.pending_commissions || 0} pending commission(s)
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-slate-600">
                 {balance?.paid_commissions || 0} commission(s) paid out
               </p>
             </div>
             {balance?.last_payout_date && (
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-slate-600">
                 Last payout:{" "}
                 {new Date(balance.last_payout_date).toLocaleDateString()}
               </p>
@@ -266,32 +271,32 @@ export default function PayoutsPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8 border border-gray-200">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-10 w-10 rounded-lg bg-emerald-600 flex items-center justify-center">
               <span className="text-white font-bold text-sm">QA</span>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-gray-500 font-semibold">Payout QA</p>
-              <h3 className="text-lg font-bold text-gray-900">Payout readiness</h3>
+              <p className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold">Payout QA</p>
+              <h3 className="text-lg font-bold text-slate-900">Payout Readiness</h3>
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-3 text-sm">
-            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
-              <p className="text-xs text-gray-500">Stripe status</p>
-              <p className={needsOnboarding ? "font-semibold text-yellow-700" : "font-semibold text-green-700"}>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">Stripe status</p>
+              <p className={needsOnboarding ? "font-semibold text-amber-700" : "font-semibold text-emerald-700"}>
                 {payoutStatusLabel}
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
-              <p className="text-xs text-gray-500">Minimum payout</p>
-              <p className={meetsMinimum ? "font-semibold text-green-700" : "font-semibold text-yellow-700"}>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">Minimum payout</p>
+              <p className={meetsMinimum ? "font-semibold text-emerald-700" : "font-semibold text-amber-700"}>
                 {meetsMinimum ? "Met" : `Need ${formatPayoutAmount(MINIMUM_PAYOUT)}`}
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
-              <p className="text-xs text-gray-500">Pending commissions</p>
-              <p className="font-semibold text-gray-900">
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+              <p className="text-xs text-slate-500">Pending commissions</p>
+              <p className="font-semibold text-slate-900">
                 {balance?.pending_commissions ?? 0}
               </p>
             </div>

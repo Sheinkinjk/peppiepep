@@ -55,11 +55,25 @@ const replyTemplates = [
       "Thanks for applying to the Refer Labs partner program. Could you share your ideal customer profile (industry, company size, buyer persona) so we can match you correctly?",
   },
   {
-    id: "need-budget",
-    label: "Request: Budget + timeline",
-    subject: "A few details to finalize your review",
+    id: "need-service-type",
+    label: "Request: Professional service type",
+    subject: "Clarifying your professional services focus",
     body:
-      "Thanks for applying. To complete your review, can you confirm your expected budget range and target launch timeline?",
+      "Thanks for applying. To ensure we set up your referral program correctly, can you confirm your primary professional service area (law, accounting, consulting, or other) and any specific practice areas or specializations?",
+  },
+  {
+    id: "need-compliance",
+    label: "Request: Compliance details",
+    subject: "Compliance requirements for your industry",
+    body:
+      "Thanks for your application. For professional services, we need to understand any compliance or regulatory requirements you have (e.g., bar association rules, CPA ethics, industry certifications). Could you provide details on what compliance frameworks apply to your practice?",
+  },
+  {
+    id: "need-partner-tier",
+    label: "Request: Partner tier preferences",
+    subject: "Partner program tier selection",
+    body:
+      "We'd like to understand your expected referral volume and partner tier preferences. Are you looking for a standard partner arrangement or would you prefer a strategic partnership with higher commission rates based on volume?",
   },
   {
     id: "need-audience",
@@ -74,6 +88,13 @@ const replyTemplates = [
     subject: "Update on your partner application",
     body:
       "Thanks for applying to the Refer Labs partner program. After review, we are not the right fit at this time. We will keep your details on file and reach out if a future opportunity aligns.",
+  },
+  {
+    id: "reject-compliance",
+    label: "Reject: Compliance concerns",
+    subject: "Update on your partner application",
+    body:
+      "Thank you for your interest in partnering with us. After reviewing your application, we have concerns about compliance alignment with your professional regulatory requirements. We recommend exploring this partnership at a later time when we can better support your industry's specific compliance needs.",
   },
 ];
 
@@ -138,7 +159,7 @@ export function PartnerApplicationsManager() {
   }, [supabase]);
 
   async function approveApplication(applicationId: string) {
-    if (!confirm("Approve this partner application? They will earn 25% recurring revenue for every client they refer.")) {
+    if (!confirm("Approve this professional services partner? They will join your referral network and earn commissions for qualified referrals. Ensure all compliance requirements are met before approval.")) {
       return;
     }
 
@@ -280,7 +301,7 @@ export function PartnerApplicationsManager() {
               <CheckCircle className="h-5 w-5 text-emerald-600" />
             </div>
             <div>
-              <p className="text-sm text-slate-600">Active Partners</p>
+              <p className="text-sm text-slate-600">Active Professional Partners</p>
               <p className="text-2xl font-bold text-slate-900">{approvedCount}</p>
             </div>
           </div>

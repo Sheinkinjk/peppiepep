@@ -29,7 +29,7 @@ export function DashboardHeader({
 }: DashboardHeaderProps) {
   const steps = [
     { id: 'setup-integration', number: 1, label: 'Setup' },
-    { id: 'clients-ambassadors', number: 2, label: 'Ambassadors' },
+    { id: 'clients-ambassadors', number: 2, label: 'Partners' },
     { id: 'crm-integration', number: 3, label: 'Campaigns' },
     { id: 'view-campaigns', number: 4, label: 'Track' },
     { id: 'performance', number: 5, label: 'ROI' },
@@ -69,9 +69,9 @@ export function DashboardHeader({
     <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
+          <h1 className="text-2xl font-bold text-slate-900">Partner Network Dashboard</h1>
           <p className="text-xs text-slate-600 mt-1">
-            See your status, your next step, and what to do next.
+            Manage your professional services referral network and track performance.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -315,13 +315,13 @@ export function DashboardHeader({
 
       <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-200/70 via-white to-emerald-100/70 p-1 shadow-sm">
         <div className="grid grid-cols-2 divide-y divide-slate-200/60 lg:grid-cols-4 lg:divide-y-0 lg:divide-x lg:divide-slate-200/60">
-        {/* Ambassadors */}
+        {/* Partners */}
         <StatCard
-          label="Ambassadors"
+          label="Referral Partners"
           value={ambassadorCount}
           icon={<Users className="h-4 w-4" />}
-          emptyMessage="No ambassadors yet"
-          emptySubtext="Complete Step 2 to add your first ambassador"
+          emptyMessage="No partners yet"
+          emptySubtext="Complete Step 2 to add your first partner"
         />
 
         {/* Referrals */}
