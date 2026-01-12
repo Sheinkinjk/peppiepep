@@ -1781,8 +1781,8 @@ export default async function Dashboard({
 	    {
 	      id: "clients-ambassadors",
 	      number: 2,
-	      title: "Add Clients & Ambassadors",
-	      description: "Import your customer base and generate personalized referral links",
+	      title: "Add Clients & Partners",
+	      description: "Import your partner network and generate personalized referral links",
 	      icon: <Users className="h-5 w-5" />,
 	      status: stepValidations["clients-ambassadors"].isComplete
 	        ? "complete"
@@ -2479,10 +2479,10 @@ export default async function Dashboard({
                       <div className="h-10 w-10 rounded-lg bg-purple-100 flex items-center justify-center">
                         <Users className="h-5 w-5 text-purple-700" />
                       </div>
-                      <h3 className="font-bold text-slate-900">Total Ambassadors</h3>
+                      <h3 className="font-bold text-slate-900">Total Partners</h3>
                     </div>
                     <p className="text-3xl font-black text-slate-900">{safeCustomers.length}</p>
-                    <p className="text-sm text-slate-600 mt-1">Active micro-influencers</p>
+                    <p className="text-sm text-slate-600 mt-1">Active referral partners</p>
                   </div>
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -2520,12 +2520,12 @@ export default async function Dashboard({
                       <div className="h-10 w-10 rounded-lg bg-indigo-100 flex items-center justify-center">
                         <Award className="h-5 w-5 text-indigo-700" />
                       </div>
-                      <h3 className="font-bold text-slate-900">Avg per Ambassador</h3>
+                      <h3 className="font-bold text-slate-900">Avg per Partner</h3>
                     </div>
                     <p className="text-3xl font-black text-slate-900">
                       {safeCustomers.length > 0 ? (safeReferrals.length / safeCustomers.length).toFixed(1) : 0}
                     </p>
-                    <p className="text-sm text-slate-600 mt-1">Referrals per person</p>
+                    <p className="text-sm text-slate-600 mt-1">Referrals per partner</p>
                   </div>
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -2566,7 +2566,7 @@ export default async function Dashboard({
                   </div>
                   <div>
                     <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                      Ambassador Rewards
+                      Partner Rewards
                     </h2>
                     <p className="text-sm text-slate-600">
                       Track credits issued, program costs, and reward performance
@@ -2716,7 +2716,7 @@ export default async function Dashboard({
     { id: "overview", label: "Overview" },
     { id: "setup-integration", label: "Business Setup & Integrations" },
     { id: "testing-qa", label: "Testing & QA (Step 1D)" },
-    { id: "clients-ambassadors", label: "Clients & Ambassadors" },
+    { id: "clients-ambassadors", label: "Partners" },
     { id: "crm-integration", label: "Launch Campaigns" },
     { id: "view-campaigns", label: "Track Campaigns" },
     { id: "performance", label: "Measure ROI" },
@@ -2805,7 +2805,7 @@ export default async function Dashboard({
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-purple-50 to-white px-4 py-3">
             <div className="flex items-center justify-between">
-              <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Ambassadors</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Partners</p>
               <Users className="h-4 w-4 text-purple-500" />
             </div>
             <p className="text-2xl font-black text-slate-900 mt-1">{safeCustomers.length}</p>
