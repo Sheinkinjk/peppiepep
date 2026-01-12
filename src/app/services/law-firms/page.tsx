@@ -11,13 +11,14 @@ const content = {
   heroTitle: "Grow legal referrals with",
   heroHighlight: "audit-ready clarity.",
   heroSummary:
-    "Refer Labs helps law firms manage referral relationships, intake, and attribution with governance and client trust at the center.",
+    "Refer Labs helps law firms manage referral relationships, intake, and attribution with governance, ethics, and client trust at the center.",
   heroBullets: [
-    "Structured intake with conflict checks and routing",
+    "Structured intake with conflict checks and practice routing",
     "Partner transparency with status updates and reporting",
-    "Attribution for referred matters and outcomes",
+    "Attribution for referred matters, fees, and outcomes",
+    "Referral workflows aligned to local fee-sharing rules",
   ],
-  primaryCta: { label: "Schedule a strategy call", href: calendlyUrl },
+  primaryCta: { label: "Schedule a call", href: calendlyUrl },
   secondaryCta: { label: "See the rollout plan", href: "#schedule" },
   stats: [
     { value: "2-4 weeks", label: "Launch timeline" },
@@ -32,6 +33,7 @@ const content = {
       "Referral intake with routing by practice area",
       "Conflict and compliance checkpoints",
       "Partner updates and attribution reporting",
+      "Leadership visibility into referral volume and fees",
     ],
   },
   pillars: [
@@ -71,6 +73,12 @@ const content = {
     },
     {
       step: "03",
+      title: "Partner activation",
+      description: "Deliver partner-facing assets and referral instructions.",
+      deliverable: "Activation kit",
+    },
+    {
+      step: "04",
       title: "Launch + reporting",
       description: "Deliver partner assets and referral reporting dashboards.",
       deliverable: "Launch kit",

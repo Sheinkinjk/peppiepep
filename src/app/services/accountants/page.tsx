@@ -13,11 +13,12 @@ const content = {
   heroSummary:
     "We help accounting firms track referrals across advisors, attorneys, and business owners with clarity, compliance, and measurable ROI.",
   heroBullets: [
-    "Structured referrals with engagement and consent tracking",
-    "Clear partner handoffs for tax, audit, and advisory work",
+    "Referral intake by service line: tax, audit, bookkeeping, CFO advisory",
+    "Partner handoffs that keep CPAs, advisors, and attorneys aligned",
+    "Client consent and engagement tracking for regulated work",
     "Revenue attribution tied to retained clients and fees",
   ],
-  primaryCta: { label: "Schedule a strategy call", href: calendlyUrl },
+  primaryCta: { label: "Schedule a call", href: calendlyUrl },
   secondaryCta: { label: "Review the approach", href: "#schedule" },
   stats: [
     { value: "2-3 weeks", label: "Implementation" },
@@ -32,6 +33,7 @@ const content = {
       "Partner mapping across finance, legal, and advisory",
       "Referral intake for tax, audit, and advisory lines",
       "Status updates that keep partners informed",
+      "Reporting by service line and partner tier",
     ],
   },
   pillars: [
@@ -71,6 +73,12 @@ const content = {
     },
     {
       step: "03",
+      title: "Partner activation",
+      description: "Deliver outreach assets and partner onboarding materials.",
+      deliverable: "Activation kit",
+    },
+    {
+      step: "04",
       title: "Reporting + launch",
       description: "Deliver dashboards and partner communications for rollout.",
       deliverable: "Launch kit",

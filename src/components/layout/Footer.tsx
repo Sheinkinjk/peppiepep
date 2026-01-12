@@ -11,23 +11,19 @@ export default function Footer() {
             <ReferLabsLogo className="h-12 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
           </Link>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Newsletter</p>
             <div className="mt-4">
               <NewsletterFooterForm />
             </div>
           </div>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Platform</p>
             <ul className="mt-4 space-y-2">
               <li><Link className="hover:text-slate-800" href="/">Home</Link></li>
               <li><Link className="hover:text-slate-800" href="/how-it-works">How it works</Link></li>
               <li><Link className="hover:text-slate-800" href="/pricing">Pricing</Link></li>
-              <li><Link className="hover:text-slate-800" href="/case-studies">Case studies</Link></li>
-              <li><Link className="hover:text-slate-800" href="/lead-hacking">Lead hacking</Link></li>
-              <li><Link className="hover:text-slate-800" href="/roi-calculator">ROI calculator</Link></li>
               <li><Link className="hover:text-slate-800" href="/linkedin-growth">LinkedIn Influencer</Link></li>
             </ul>
           </div>
@@ -35,12 +31,20 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Company</p>
             <ul className="mt-4 space-y-2">
               <li><Link className="hover:text-slate-800" href="/about">About</Link></li>
-              <li><Link className="hover:text-slate-800" href="/blog">Blog</Link></li>
-              <li><Link className="hover:text-slate-800" href="/faq">FAQ</Link></li>
-              <li><Link className="hover:text-slate-800" href="/security">Security</Link></li>
               <li><Link className="hover:text-slate-800" href="/our-referral-program">Our Referral Program</Link></li>
               <li><Link className="hover:text-slate-800" href="/contact">Contact</Link></li>
               <li><Link className="hover:text-slate-800" href="/login">Sign in</Link></li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Resources</p>
+            <ul className="mt-4 space-y-2">
+              <li><Link className="hover:text-slate-800" href="/case-studies">Case studies</Link></li>
+              <li><Link className="hover:text-slate-800" href="/lead-hacking">Lead hacking</Link></li>
+              <li><Link className="hover:text-slate-800" href="/roi-calculator">ROI calculator</Link></li>
+              <li><Link className="hover:text-slate-800" href="/blog">Blog</Link></li>
+              <li><Link className="hover:text-slate-800" href="/faq">FAQ</Link></li>
+              <li><Link className="hover:text-slate-800" href="/security">Security</Link></li>
             </ul>
           </div>
         </div>

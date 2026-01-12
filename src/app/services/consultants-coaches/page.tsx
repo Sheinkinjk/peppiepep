@@ -13,11 +13,12 @@ const content = {
   heroSummary:
     "We help consultants and coaches build a premium referral system that strengthens partnerships and keeps new engagements flowing.",
   heroBullets: [
-    "Partner referral workflows that feel personal and polished",
-    "Clear intake and qualification for high-fit engagements",
-    "Visibility into referral sources and conversion rates",
+    "Partner referrals that feel personal, premium, and on-brand",
+    "Intake and qualification for high-fit retainers and workshops",
+    "Visibility into referral sources, conversion, and deal value",
+    "Partner updates that keep relationships warm",
   ],
-  primaryCta: { label: "Schedule a strategy call", href: calendlyUrl },
+  primaryCta: { label: "Schedule a call", href: calendlyUrl },
   secondaryCta: { label: "See the delivery plan", href: "#schedule" },
   stats: [
     { value: "2-3 weeks", label: "Launch timeline" },
@@ -32,6 +33,7 @@ const content = {
       "Partner network mapping and outreach guidance",
       "Referral intake and qualification workflows",
       "Follow-up cadence and partner updates",
+      "Leadership reporting on referral revenue",
     ],
   },
   pillars: [
@@ -71,6 +73,12 @@ const content = {
     },
     {
       step: "03",
+      title: "Partner activation",
+      description: "Deliver outreach assets and partner onboarding materials.",
+      deliverable: "Activation kit",
+    },
+    {
+      step: "04",
       title: "Launch + reporting",
       description: "Deliver assets, dashboards, and partner updates.",
       deliverable: "Launch kit",

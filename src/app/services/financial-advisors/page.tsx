@@ -11,17 +11,18 @@ const content = {
   heroTitle: "Grow referrals that respect",
   heroHighlight: "fiduciary standards and trust.",
   heroSummary:
-    "Refer Labs helps advisory firms build a compliant, premium referral channel with partners who protect client outcomes and revenue goals.",
+    "Refer Labs helps advisory firms build a compliant, premium referral channel with partners who protect client outcomes, reputation, and recurring revenue.",
   heroBullets: [
-    "Partner referral workflows that align with compliance needs",
-    "Attribution and audit trails for every referral",
-    "Clear handoffs between advisors, accountants, and attorneys",
+    "Partner workflows designed for CPAs, estate attorneys, and mortgage brokers",
+    "Consent capture and audit trails aligned to fiduciary standards",
+    "Household-level attribution for AUM and retained revenue",
+    "Advisor-ready handoff and follow-up workflows",
   ],
-  primaryCta: { label: "Schedule a strategy call", href: calendlyUrl },
+  primaryCta: { label: "Schedule a call", href: calendlyUrl },
   secondaryCta: { label: "See the rollout plan", href: "#schedule" },
   stats: [
     { value: "2-4 weeks", label: "Launch window" },
-    { value: "3x clarity", label: "Partner visibility" },
+    { value: "Advisor-ready", label: "Partner experience" },
     { value: "Audit-ready", label: "Referral trails" },
   ],
   engagement: {
@@ -29,15 +30,16 @@ const content = {
     description:
       "A focused engagement to structure partner relationships, referral intake, and reporting that leadership and compliance teams can trust.",
     items: [
-      "Partner persona and channel mapping",
-      "Compliant referral intake and consent capture",
+      "Partner mapping across CPAs, estate attorneys, and lenders",
+      "Compliant referral intake with consent capture",
       "Advisor handoff and follow-up workflows",
+      "Leadership dashboards for referral revenue and retention",
     ],
   },
   pillars: [
     {
       title: "Trusted partner positioning",
-      description: "Define the referral promise advisors make to partner firms and clients.",
+      description: "Define the referral promise advisors make to partner firms and shared clients.",
       icon: Users,
     },
     {
@@ -47,7 +49,7 @@ const content = {
     },
     {
       title: "Revenue attribution",
-      description: "Track referred households, pipeline value, and revenue impact.",
+      description: "Track referred households, pipeline value, and AUM impact.",
       icon: LineChart,
     },
     {
@@ -71,9 +73,15 @@ const content = {
     },
     {
       step: "03",
-      title: "Launch + reporting",
-      description: "Deliver partner assets, dashboards, and leadership reporting.",
-      deliverable: "Launch kit",
+      title: "Partner activation",
+      description: "Deliver partner-facing assets, referral instructions, and outreach scripts.",
+      deliverable: "Activation kit",
+    },
+    {
+      step: "04",
+      title: "Reporting + optimization",
+      description: "Deliver leadership dashboards and the first performance review.",
+      deliverable: "Insight pack",
     },
   ],
   deliverables: [

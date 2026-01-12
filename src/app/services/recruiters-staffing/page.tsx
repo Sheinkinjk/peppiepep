@@ -13,11 +13,12 @@ const content = {
   heroSummary:
     "Refer Labs helps recruiting teams capture referrals, track placements, and attribute revenue across client and candidate networks.",
   heroBullets: [
-    "Referral intake for candidates, clients, and partners",
-    "Clear routing by role, industry, or geography",
-    "Attribution reporting from referral to placement",
+    "Referral intake for candidates, clients, and partner agencies",
+    "Routing by role, industry, and geography",
+    "Placement attribution from referral to fee",
+    "Partner updates that keep high-value sources engaged",
   ],
-  primaryCta: { label: "Schedule a strategy call", href: calendlyUrl },
+  primaryCta: { label: "Schedule a call", href: calendlyUrl },
   secondaryCta: { label: "See the rollout plan", href: "#schedule" },
   stats: [
     { value: "2-3 weeks", label: "Launch timeline" },
@@ -32,6 +33,7 @@ const content = {
       "Referral intake for candidates and client leads",
       "Routing rules by desk, industry, and geography",
       "Placement and revenue attribution reporting",
+      "Partner performance dashboards by source",
     ],
   },
   pillars: [
@@ -71,6 +73,12 @@ const content = {
     },
     {
       step: "03",
+      title: "Partner activation",
+      description: "Deliver partner outreach assets and referral instructions.",
+      deliverable: "Activation kit",
+    },
+    {
+      step: "04",
       title: "Launch + reporting",
       description: "Deliver dashboards for referral, placement, and revenue reporting.",
       deliverable: "Launch kit",

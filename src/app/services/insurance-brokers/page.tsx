@@ -13,11 +13,12 @@ const content = {
   heroSummary:
     "We help insurance brokers manage partner referrals, track policies, and attribute revenue with a premium client experience.",
   heroBullets: [
-    "Referral intake for commercial and personal lines",
+    "Referral intake for commercial, personal, and specialty lines",
     "Partner updates that keep referral sources engaged",
     "Attribution from referral to bound policy and renewal",
+    "Status tracking for quotes, binding, and renewals",
   ],
-  primaryCta: { label: "Schedule a strategy call", href: calendlyUrl },
+  primaryCta: { label: "Schedule a call", href: calendlyUrl },
   secondaryCta: { label: "See the rollout plan", href: "#schedule" },
   stats: [
     { value: "2-3 weeks", label: "Launch timeline" },
@@ -32,6 +33,7 @@ const content = {
       "Partner mapping and referral expectations",
       "Referral intake by line of business",
       "Attribution reporting for bound policies",
+      "Leadership dashboards for premium volume and renewals",
     ],
   },
   pillars: [
@@ -71,6 +73,12 @@ const content = {
     },
     {
       step: "03",
+      title: "Partner activation",
+      description: "Deliver partner assets, referral instructions, and update cadence.",
+      deliverable: "Activation kit",
+    },
+    {
+      step: "04",
       title: "Launch + reporting",
       description: "Deliver partner assets and policy attribution dashboards.",
       deliverable: "Launch kit",
