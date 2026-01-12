@@ -142,8 +142,20 @@ export async function createAuditLog(params: {
     });
 
     if (error) {
-      console.error("Failed to create audit log:", error);
-      // Fall back to console logging if DB insert fails
+      // Check if error is due to missing table
+      const isMissingTable = error.message?.includes('relation "public.audit_logs" does not exist') ||
+                            error.message?.includes('relation "audit_logs" does not exist') ||
+                            error.code === '42P01'; // PostgreSQL error code for undefined table
+
+      if (isMissingTable) {
+        console.warn(
+          "[AUDIT] Table audit_logs does not exist. Run migration: supabase/migrations/20260113000000_audit_logs.sql"
+        );
+      } else {
+        console.error("Failed to create audit log:", error);
+      }
+
+      // Always fall back to console logging if DB insert fails
       console.log("[AUDIT]", {
         action: params.action,
         user_id: params.userId,
