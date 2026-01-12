@@ -10,34 +10,15 @@ export default function Footer() {
           <Link href="/" className="flex items-center group cursor-pointer" aria-label="Refer Labs home">
             <ReferLabsLogo className="h-12 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
           </Link>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#00505B] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#013b44]"
-            >
-              Schedule a call
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50"
-            >
-              Contact us
-            </Link>
-          </div>
-          <div className="space-y-2 text-sm text-slate-500">
-            <p>Pepform Pty Ltd (trading as Refer Labs) | ABN: 32 660 008 159</p>
-            <p>
-              Email:{" "}
-              <a href="mailto:jarred@referlabs.com.au" className="underline hover:text-slate-700">
-                jarred@referlabs.com.au
-              </a>
-            </p>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Newsletter</p>
+            <div className="mt-4">
+              <NewsletterFooterForm />
+            </div>
           </div>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Services</p>
             <ul className="mt-4 space-y-2">
@@ -71,12 +52,6 @@ export default function Footer() {
               <li><Link className="hover:text-slate-800" href="/contact">Contact</Link></li>
               <li><Link className="hover:text-slate-800" href="/login">Sign in</Link></li>
             </ul>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Newsletter</p>
-            <div className="mt-4">
-              <NewsletterFooterForm />
-            </div>
           </div>
         </div>
       </div>
