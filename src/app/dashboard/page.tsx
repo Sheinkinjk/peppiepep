@@ -1182,14 +1182,31 @@ export default async function Dashboard({
     !linkedInInfluencerCustomerIds.has(c.id)
   );
 
-  // Query partner referrals separately (B2B referrals to Refer Labs partner program)
-  // Filter admin's referrals (these are likely B2B partner referrals)
+  // Query partner referrals separately (B2B referrals to Refer Labs partner program).
   const adminReferralCode = process.env.ADMIN_REFERRAL_CODE?.trim() || "Jn9wjbn2kQlO";
-  const adminCustomer = safeCustomers.find(c => c.referral_code === adminReferralCode);
+  let adminCustomerId = safeCustomers.find((c) => c.referral_code === adminReferralCode)?.id ?? null;
 
-  const safePartnerReferrals = adminCustomer
-    ? safeReferrals.filter(r => r.ambassador_id === adminCustomer.id)
-    : [];
+  if (!adminCustomerId) {
+    const { data: adminCustomerRecord } = await supabase
+      .from("customers")
+      .select("id")
+      .eq("business_id", business.id)
+      .eq("referral_code", adminReferralCode)
+      .single();
+    adminCustomerId = adminCustomerRecord?.id ?? null;
+  }
+
+  const { data: partnerReferrals = [] } = adminCustomerId
+    ? await supabase
+      .from("referrals")
+      .select("id,status,ambassador_id,referred_name,referred_email,referred_phone,created_at")
+      .eq("business_id", business.id)
+      .eq("ambassador_id", adminCustomerId)
+      .order("created_at", { ascending: false })
+      .limit(200)
+    : { data: [] };
+
+  const safePartnerReferrals = (partnerReferrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
 
   const pendingReferrals =
     safeReferrals.filter((r) => r.status === "pending").length || 0;

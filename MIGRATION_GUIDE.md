@@ -1,253 +1,373 @@
-# Complete Supabase Migration Guide
+# Professional Services Compliance Migration Guide
 
-## Current Situation
+## Overview
 
-✅ **Your application is deployed and working**
-⚠️ **Migrations cannot run automatically** due to:
-1. Supabase access token showing "Unauthorized"
-2. Direct database connection blocked by IPv6 routing issues
-3. Supabase CLI version is outdated (v2.58.5, latest is v2.67.1)
+This guide will help you apply the professional services compliance migration that adds:
+- ✅ 6 new tables for compliance tracking (service types, partner tiers, agreements, etc.)
+- ✅ Extended columns on existing tables (businesses, customers, partner_applications)
+- ✅ Full Row Level Security policies
+- ✅ Automated triggers for compliance expiry and date tracking
+- ✅ Default data for service provider types and regulatory requirements
 
-## Fixed Issues
+## Migration File Location
 
-✅ Updated `POSTGRES_URL_NON_POOLING` to use correct direct connection format:
-```bash
-# Before (WRONG):
-POSTGRES_URL_NON_POOLING="postgresql://postgres.ovpsgbstrdahrdcllswa:Sipabasepeppieper@aws-0-ap-southeast-2.pooler.supabase.com:5432/postgres"
+`supabase/migrations/20260112020000_professional_services_compliance.sql`
 
-# After (CORRECT):
-POSTGRES_URL_NON_POOLING="postgresql://postgres:Sipabasepeppieper@db.ovpsgbstrdahrdcllswa.supabase.co:5432/postgres"
-```
-
-Now you need to sync this to Vercel production.
-
-## Solutions (Choose One)
-
-### Option 1: Apply Migrations via Supabase Dashboard ⭐ RECOMMENDED
+## Quick Start: Apply Migration via Supabase Dashboard ⭐ RECOMMENDED
 
 This is the **easiest and most reliable** method:
 
 **Steps:**
 
-1. **Go to SQL Editor:**
-   - https://supabase.com/dashboard/project/ovpsgbstrdahrdcllswa/editor/sql
+1. **Open Supabase SQL Editor:**
+   - Navigate to: https://supabase.com/dashboard/project/ovpsgbstrdahrdcllswa/editor/sql
 
-2. **Check which migrations are already applied:**
+2. **Open the migration file locally:**
+   - Open `supabase/migrations/20260112020000_professional_services_compliance.sql`
+   - Select all and copy the entire SQL content
+
+3. **Run the migration:**
+   - Paste the SQL into the Supabase SQL Editor
+   - Click "Run" button
+   - Wait for confirmation (should take 5-10 seconds)
+
+4. **Verify success:**
    ```sql
-   SELECT * FROM _supabase_migrations
-   ORDER BY executed_at DESC;
+   -- Check that new tables were created
+   SELECT table_name
+   FROM information_schema.tables
+   WHERE table_schema = 'public'
+   AND table_name IN (
+     'service_provider_types',
+     'partner_tiers',
+     'partner_agreements',
+     'partner_agreement_acceptances',
+     'partner_compliance_status',
+     'regulatory_requirements'
+   );
+
+   -- Should return 6 rows
    ```
 
-3. **For each migration file in `supabase/migrations/` that's NOT in the list:**
-   - Open the file from your local directory
-   - Copy the SQL content
-   - Paste into the SQL Editor
-   - Click "Run"
-   - Verify it succeeded
+5. **Verify data was inserted:**
+   ```sql
+   -- Check default service provider types
+   SELECT name, display_name, requires_professional_license
+   FROM service_provider_types;
 
-4. **Pending migration files to check:**
+   -- Should see: law, accounting, consulting, financial_advisory, insurance, recruiting, other
    ```
-   supabase/migrations/20250306110000_business_onboarding_metadata.sql
-   supabase/migrations/20250306131500_business_sign_on_bonus.sql
-   supabase/migrations/20250306140000_partner_applications.sql
-   supabase/migrations/20250321000000_stripe_integration.sql
-   supabase/migrations/20250321000001_admin_rbac_system.sql
-   supabase/migrations/20250324000000_credit_ledger.sql
-   supabase/migrations/20250324000001_referrals_is_manual.sql
-   supabase/migrations/20260102000000_add_referral_link_column.sql
-   supabase/migrations/add_partner_approval_fields.sql
-   supabase/migrations/create_campaigns_table.sql
-   ```
-
-**Pros:**
-- ✅ Works 100% reliably
-- ✅ No CLI or network issues
-- ✅ Full control and visibility
-- ✅ Can test queries before running
-
-**Cons:**
-- Manual process (but only needed when you have new migrations)
 
 ---
 
-### Option 2: Fix Supabase CLI Authentication
+## What This Migration Enables
 
-**Steps:**
+After running the migration, the following features become fully functional:
 
-1. **Update Supabase CLI to latest version:**
-   ```bash
-   npm install -g supabase@latest
-   # Or update in your project
-   npm install --save-dev supabase@latest
-   ```
+### 1. Compliance Dashboard
+- Access at: [/src/components/ComplianceDashboard.tsx](src/components/ComplianceDashboard.tsx)
+- Admin can view all partner compliance statuses
+- One-click verify/reject actions
+- Filter by verification status
+- Track expiring compliance records
 
-2. **Generate a new access token:**
-   - Go to https://supabase.com/dashboard/account/tokens
-   - Click "Generate new token"
-   - Give it a name like "Migration Token"
-   - Copy the token (starts with `sbp_`)
+### 2. API Endpoints
+- `GET /api/admin/compliance` - Returns compliance overview with statistics
+- `POST /api/admin/compliance` - Update partner compliance status
+- Both require admin authentication
 
-3. **Update the token in `.env.local`:**
-   ```bash
-   SUPABASE_ACCESS_TOKEN="sbp_YOUR_NEW_TOKEN_HERE"
-   ```
+### 3. Database Tables Created
 
-4. **Login with the new token:**
-   ```bash
-   SUPABASE_ACCESS_TOKEN="sbp_YOUR_NEW_TOKEN" ./node_modules/.bin/supabase login
-   ```
+**service_provider_types** - Professional service categories
+- 7 default types: law, accounting, consulting, financial_advisory, insurance, recruiting, other
+- Each has compliance framework (ABA Model Rules, AICPA Code, etc.)
+- Tracks if professional license required
 
-5. **Link the project:**
-   ```bash
-   SUPABASE_ACCESS_TOKEN="sbp_YOUR_NEW_TOKEN" ./node_modules/.bin/supabase link --project-ref ovpsgbstrdahrdcllswa
-   ```
+**partner_tiers** - Partner tier system
+- Define custom tiers per business (Bronze, Silver, Gold, Platinum)
+- Set commission rates per tier
+- Set minimum requirements (referrals, revenue)
 
-6. **Test the migration:**
-   ```bash
-   ./node_modules/.bin/supabase db push
-   ```
+**partner_agreements** - Versioned partner agreements
+- Store multiple versions of terms
+- Track effective dates
+- Require partner acceptance
 
-**Pros:**
-- ✅ Automatic migrations during deployment
-- ✅ Proper CLI integration
+**partner_agreement_acceptances** - Audit trail
+- IP address logging
+- Timestamp tracking
+- Electronic signature capture
 
-**Cons:**
-- Requires token regeneration
-- May still have network/IPv6 issues
+**partner_compliance_status** - Verification tracking
+- License verification
+- Background checks
+- DPA acceptance
+- Expiry date tracking
 
----
+**regulatory_requirements** - Compliance rules
+- ABA Model Rule 1.5(e) for law firms
+- AICPA ethics for accounting
+- State-specific requirements
 
-### Option 3: Use Alternative Migration Script
+### 4. Extended Existing Tables
 
-Use the `scripts/run-migrations-manual.mjs` script that bypasses the CLI:
+**businesses table** gets:
+- service_provider_type
+- regulated_industry flag
+- compliance_framework
+- dpa_accepted_at
+- soc2_certified flag
+- data_residency_region
 
-**Steps:**
+**customers table** gets:
+- partner_tier
+- service_provider_type
+- compliance_status
+- compliance_verified_at
+- partner_since_date
+- professional_license_number
+- license_jurisdiction
+- last_compliance_check
 
-1. **Ensure you have the service role key:**
-   ```bash
-   # Already in .env.local
-   SUPABASE_SERVICE_ROLE_KEY="sb_secret_HGjUulKB9KyNgWDbiG0cBw_8Paci8sZ"
-   ```
-
-2. **Run the migration script:**
-   ```bash
-   node scripts/run-migrations-manual.mjs
-   ```
-
-**Note:** This script may need refinement to work properly with your migration files.
-
-**Pros:**
-- ✅ Bypasses CLI authentication
-- ✅ Uses API instead of direct database connection
-
-**Cons:**
-- Script is experimental and may need debugging
-- Doesn't track migration history automatically
-
----
-
-## Immediate Action Required
-
-### Update Vercel Production Environment
-
-The fixed `POSTGRES_URL_NON_POOLING` needs to be synced to Vercel:
-
-```bash
-# Remove old value
-npx vercel env rm POSTGRES_URL_NON_POOLING production
-
-# Add corrected value
-echo "postgresql://postgres:Sipabasepeppieper@db.ovpsgbstrdahrdcllswa.supabase.co:5432/postgres" | npx vercel env add POSTGRES_URL_NON_POOLING production
-```
+**partner_applications table** gets:
+- service_provider_type
+- compliance_notes
+- professional_license_number
+- approved_by
+- approved_tier
 
 ---
 
-## Understanding the Connection URLs
+## Post-Migration Setup (Optional)
 
-Your project has **THREE** types of database connections:
+### Create Default Partner Tiers for Your Business
 
-### 1. Pooled Connection (Application Runtime)
-```bash
-POSTGRES_URL="postgresql://postgres.ovpsgbstrdahrdcllswa:Sipabasepeppieper@aws-0-ap-southeast-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
-```
-- **User format:** `postgres.PROJECT_ID`
-- **Host:** `aws-0-ap-southeast-2.pooler.supabase.com`
-- **Port:** 6543 (PgBouncer)
-- **Use for:** Application queries (Next.js API routes, server actions)
+After migration, you can create standard partner tiers:
 
-### 2. Prisma Pooled Connection (Application with Connection Limit)
-```bash
-POSTGRES_PRISMA_URL="postgresql://postgres.ovpsgbstrdahrdcllswa:Sipabasepeppieper@aws-0-ap-southeast-2.pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=1"
-```
-- Same as above but with connection_limit=1 for Prisma
-- **Use for:** Prisma ORM queries
-
-### 3. Direct Connection (Migrations & Admin)
-```bash
-POSTGRES_URL_NON_POOLING="postgresql://postgres:Sipabasepeppieper@db.ovpsgbstrdahrdcllswa.supabase.co:5432/postgres"
-```
-- **User format:** `postgres` (no project ID suffix)
-- **Host:** `db.ovpsgbstrdahrdcllswa.supabase.co` (direct database)
-- **Port:** 5432 (standard PostgreSQL)
-- **Use for:** Migrations, database schema changes, admin operations
-
----
-
-## Why Migrations Are Failing
-
-1. **Access Token Issue:**
-   ```
-   Unexpected error retrieving remote project status: {"message":"Unauthorized"}
-   ```
-   - The token may be expired
-   - The token may not have management API permissions
-   - **Solution:** Generate new token with proper permissions
-
-2. **Network/IPv6 Issue:**
-   ```
-   dial tcp [2406:da14:271:9901:ded6:e11e:834c:fe8c]:5432: connect: no route to host
-   ```
-   - IPv6 connection is being blocked
-   - Direct database access may be disabled in Supabase project settings
-   - **Solution:** Use Supabase Dashboard instead of direct connection
-
----
-
-## Recommended Path Forward
-
-**For now:**
-1. ✅ Use **Option 1** (Supabase Dashboard) to apply any critical migrations manually
-2. ✅ Update `POSTGRES_URL_NON_POOLING` in Vercel production (see command above)
-3. ✅ Your deployments will continue to work fine
-
-**For long-term:**
-1. Update Supabase CLI to latest version
-2. Generate new access token
-3. Test if migrations work with updated CLI
-4. If still failing, continue using Dashboard method (perfectly fine!)
-
----
-
-## Migration Files Reference
-
-Located in: `supabase/migrations/`
-
-Check which are applied:
 ```sql
-SELECT name, executed_at FROM _supabase_migrations ORDER BY name;
+-- Replace YOUR_BUSINESS_ID with actual UUID from businesses table
+INSERT INTO partner_tiers (
+  business_id,
+  tier_name,
+  display_name,
+  commission_rate_percentage,
+  min_referrals_required,
+  min_monthly_revenue,
+  description
+) VALUES
+  (
+    'YOUR_BUSINESS_ID',
+    'bronze',
+    'Bronze Partner',
+    10.00,
+    0,
+    0,
+    'Entry-level partner tier with 10% commission'
+  ),
+  (
+    'YOUR_BUSINESS_ID',
+    'silver',
+    'Silver Partner',
+    15.00,
+    10,
+    50000,
+    'Mid-level partner tier with 15% commission (10+ referrals, $500/mo revenue)'
+  ),
+  (
+    'YOUR_BUSINESS_ID',
+    'gold',
+    'Gold Partner',
+    20.00,
+    25,
+    100000,
+    'Premium partner tier with 20% commission (25+ referrals, $1000/mo revenue)'
+  ),
+  (
+    'YOUR_BUSINESS_ID',
+    'platinum',
+    'Platinum Partner',
+    25.00,
+    50,
+    250000,
+    'Elite partner tier with 25% commission (50+ referrals, $2500/mo revenue)'
+  );
 ```
 
-Apply missing ones via Dashboard SQL Editor.
+### Set Service Type for Existing Businesses
+
+Update your business to indicate service type:
+
+```sql
+UPDATE businesses
+SET
+  service_provider_type = 'consulting', -- or 'law', 'accounting', etc.
+  regulated_industry = false, -- or true if applicable
+  data_residency_region = 'us'
+WHERE id = 'YOUR_BUSINESS_ID';
+```
+
+### Mark Existing Partners with Service Types
+
+Update existing customers who are partners:
+
+```sql
+UPDATE customers
+SET
+  service_provider_type = 'consulting',
+  compliance_status = 'verified',
+  compliance_verified_at = NOW(),
+  partner_since_date = created_at
+WHERE
+  status = 'active'
+  AND business_id = 'YOUR_BUSINESS_ID';
+```
+
+---
+
+## Alternative: Apply via Supabase CLI (If Available)
+
+If you have Supabase CLI set up, you can push the migration:
+
+```bash
+# Push all pending migrations
+supabase db push
+
+# Or apply specific migration
+supabase migration up --version 20260112020000
+```
+
+**Note:** Based on previous attempts, you may encounter authentication issues. If so, use the Dashboard method above.
+
+---
+
+## Testing After Migration
+
+Once the migration is applied, test the new functionality:
+
+### 1. Test API Endpoints
+
+```bash
+# Get compliance overview (requires admin auth)
+curl https://peppiepep.vercel.app/api/admin/compliance
+
+# Expected response:
+{
+  "partners": [...],
+  "compliance_records": [],
+  "stats": {
+    "total_partners": 0,
+    "pending_verification": 0,
+    "verified": 0,
+    "expired": 0,
+    "failed": 0,
+    "by_service_type": {},
+    "expiring_soon": 0
+  }
+}
+```
+
+### 2. Test Database Queries
+
+```sql
+-- Check service provider types are loaded
+SELECT COUNT(*) FROM service_provider_types;
+-- Should return 7
+
+-- Check regulatory requirements
+SELECT COUNT(*) FROM regulatory_requirements;
+-- Should return 2 (law and accounting rules)
+
+-- Verify RLS policies exist
+SELECT schemaname, tablename, policyname
+FROM pg_policies
+WHERE tablename IN (
+  'service_provider_types',
+  'partner_tiers',
+  'partner_compliance_status'
+);
+-- Should return multiple rows
+```
+
+### 3. Test UI Components
+
+After migration, you can integrate the ComplianceDashboard component:
+
+```typescript
+// In an admin page (e.g., /src/app/admin/compliance/page.tsx)
+import { ComplianceDashboard } from "@/components/ComplianceDashboard";
+
+export default function CompliancePage() {
+  return (
+    <div className="p-8">
+      <ComplianceDashboard />
+    </div>
+  );
+}
+```
+
+---
+
+## Rollback (If Needed)
+
+If you need to undo the migration:
+
+```sql
+-- Drop new tables (order matters due to foreign keys)
+DROP TABLE IF EXISTS public.partner_agreement_acceptances CASCADE;
+DROP TABLE IF EXISTS public.partner_agreements CASCADE;
+DROP TABLE IF EXISTS public.partner_compliance_status CASCADE;
+DROP TABLE IF EXISTS public.partner_tiers CASCADE;
+DROP TABLE IF EXISTS public.regulatory_requirements CASCADE;
+DROP TABLE IF EXISTS public.service_provider_types CASCADE;
+
+-- Remove added columns from businesses
+ALTER TABLE public.businesses
+  DROP COLUMN IF EXISTS service_provider_type,
+  DROP COLUMN IF EXISTS regulated_industry,
+  DROP COLUMN IF EXISTS compliance_framework,
+  DROP COLUMN IF EXISTS dpa_accepted_at,
+  DROP COLUMN IF EXISTS dpa_version,
+  DROP COLUMN IF EXISTS soc2_certified,
+  DROP COLUMN IF EXISTS soc2_audit_date,
+  DROP COLUMN IF EXISTS data_residency_region;
+
+-- Remove added columns from customers
+ALTER TABLE public.customers
+  DROP COLUMN IF EXISTS partner_tier_id,
+  DROP COLUMN IF EXISTS partner_tier,
+  DROP COLUMN IF EXISTS service_provider_type,
+  DROP COLUMN IF EXISTS compliance_verified_at,
+  DROP COLUMN IF EXISTS compliance_status,
+  DROP COLUMN IF EXISTS partner_since_date,
+  DROP COLUMN IF EXISTS professional_license_number,
+  DROP COLUMN IF EXISTS license_jurisdiction,
+  DROP COLUMN IF EXISTS last_compliance_check;
+
+-- Remove added columns from partner_applications
+ALTER TABLE public.partner_applications
+  DROP COLUMN IF EXISTS service_provider_type,
+  DROP COLUMN IF EXISTS compliance_notes,
+  DROP COLUMN IF EXISTS professional_license_number,
+  DROP COLUMN IF EXISTS approved_by,
+  DROP COLUMN IF EXISTS approved_tier;
+```
 
 ---
 
 ## Summary
 
 **Current Status:**
-- ✅ Application deployed and running
-- ✅ All environment variables synced
-- ✅ Deploy script won't block on migration failures
-- ⚠️ Migrations need manual application OR CLI fix
+- ✅ Professional services dashboard UI deployed and live
+- ✅ Compliance API endpoints ready (will show placeholder data until migration runs)
+- ✅ Migration file created and ready to apply
+- ⏳ Database migration needs to be applied manually via Supabase Dashboard
 
-**Next Step:**
-Choose **Option 1** (Dashboard) for immediate needs, or **Option 2** (fix CLI) for automation.
+**To Complete Setup:**
+1. Copy migration SQL from local file
+2. Paste and run in Supabase SQL Editor
+3. Verify tables created successfully
+4. Optionally create default partner tiers
+5. Test API endpoints and UI
+
+**Result:**
+Full enterprise-grade compliance tracking system for professional services partnerships.
