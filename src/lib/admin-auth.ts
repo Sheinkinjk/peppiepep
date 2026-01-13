@@ -55,10 +55,39 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
     // Ignore and fall back.
   }
 
-  // Use service client to check admin_roles table
-  const supabase = await createServiceClient();
+  const hasServiceKey = Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY,
+  );
+  if (!hasServiceKey) {
+    if (rpcRole && user.email) {
+      return {
+        id: user.id,
+        email: user.email,
+        role: rpcRole as AdminRole,
+        permissions: {},
+        is_active: true,
+      };
+    }
+    return null;
+  }
 
-  const { data: adminRole, error } = await supabase
+  let supabase: Awaited<ReturnType<typeof createServiceClient>> | null = null;
+  try {
+    supabase = await createServiceClient();
+  } catch {
+    if (rpcRole && user.email) {
+      return {
+        id: user.id,
+        email: user.email,
+        role: rpcRole as AdminRole,
+        permissions: {},
+        is_active: true,
+      };
+    }
+    return null;
+  }
+
+  const { data: adminRole } = await supabase
     .from('admin_roles')
     .select('*')
     .eq('user_id', user.id)
@@ -79,7 +108,8 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
       .limit(1)
       .maybeSingle();
 
-    // Silently handle admin role lookup errors - do not expose internal details
+    void emailError;
+
     resolvedAdminRole = adminRoleByEmail;
   }
 
