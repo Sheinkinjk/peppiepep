@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -39,6 +39,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import type { Database } from "@/types/supabase";
+import { fetchAllPages } from "@/lib/customers-api-client";
 
 type CampaignRow = Database["public"]["Tables"]["campaigns"]["Row"];
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
@@ -55,6 +56,7 @@ type CampaignEventStats = Record<
 type CampaignAnalyticsDashboardProps = {
   campaigns: CampaignRow[];
   referrals: ReferralRow[];
+  referralsTotal?: number;
   eventStats: CampaignEventStats;
 };
 
@@ -72,10 +74,19 @@ const COLORS = {
 export function CampaignAnalyticsDashboard({
   campaigns,
   referrals,
+  referralsTotal,
   eventStats,
 }: CampaignAnalyticsDashboardProps) {
   const [timeRange, setTimeRange] = useState<TimeRange>("30d");
   const [channelFilter, setChannelFilter] = useState<"all" | "sms" | "email">("all");
+  const [availableReferrals, setAvailableReferrals] = useState<ReferralRow[]>(referrals);
+  const [isLoadingReferrals, setIsLoadingReferrals] = useState(false);
+  const hasPartialReferralList =
+    typeof referralsTotal === "number" && referralsTotal > availableReferrals.length;
+
+  useEffect(() => {
+    setAvailableReferrals(referrals);
+  }, [referrals]);
 
   const filteredCampaigns = useMemo(() => {
     let filtered = campaigns;
@@ -120,7 +131,7 @@ export function CampaignAnalyticsDashboard({
     });
 
     // Calculate campaign-attributed referrals
-    const campaignReferrals = referrals.filter((ref) =>
+    const campaignReferrals = availableReferrals.filter((ref) =>
       filteredCampaigns.some((c) => c.id === ref.campaign_id)
     );
 
@@ -165,7 +176,7 @@ export function CampaignAnalyticsDashboard({
       conversionRate,
       avgRevenuePerCampaign: filteredCampaigns.length > 0 ? totalRevenue / filteredCampaigns.length : 0,
     };
-  }, [filteredCampaigns, referrals, eventStats]);
+  }, [filteredCampaigns, availableReferrals, eventStats]);
 
   // Performance over time data
   const performanceData = useMemo(() => {
@@ -194,7 +205,7 @@ export function CampaignAnalyticsDashboard({
       };
 
       const stats = eventStats[campaign.id] ?? { clicks: 0, signups: 0, conversions: 0 };
-      const campaignReferrals = referrals.filter((r) => r.campaign_id === campaign.id);
+      const campaignReferrals = availableReferrals.filter((r) => r.campaign_id === campaign.id);
       const revenue = campaignReferrals
         .filter((r) => r.status === "completed")
         .reduce((sum, r) => sum + (r.transaction_value ?? 0), 0);
@@ -213,7 +224,22 @@ export function CampaignAnalyticsDashboard({
       const dateB = new Date(b.date);
       return dateA.getTime() - dateB.getTime();
     });
-  }, [filteredCampaigns, referrals, eventStats]);
+  }, [filteredCampaigns, availableReferrals, eventStats]);
+
+  const loadAllReferrals = async () => {
+    if (!hasPartialReferralList || isLoadingReferrals) return;
+    setIsLoadingReferrals(true);
+    try {
+      const { rows } = await fetchAllPages<ReferralRow>("/api/referrals", {
+        pageSize: 150,
+      });
+      setAvailableReferrals(rows);
+    } catch (error) {
+      console.error("Failed to load referrals for analytics:", error);
+    } finally {
+      setIsLoadingReferrals(false);
+    }
+  };
 
   // Channel breakdown
   const channelData = useMemo(() => {
@@ -231,7 +257,7 @@ export function CampaignAnalyticsDashboard({
     return filteredCampaigns
       .map((campaign) => {
         const stats = eventStats[campaign.id] ?? { clicks: 0, signups: 0, conversions: 0 };
-        const campaignReferrals = referrals.filter((r) => r.campaign_id === campaign.id);
+        const campaignReferrals = availableReferrals.filter((r) => r.campaign_id === campaign.id);
         const revenue = campaignReferrals
           .filter((r) => r.status === "completed")
           .reduce((sum, r) => sum + (r.transaction_value ?? 0), 0);
@@ -245,14 +271,14 @@ export function CampaignAnalyticsDashboard({
       })
       .sort((a, b) => b.revenue - a.revenue)
       .slice(0, 5);
-  }, [filteredCampaigns, referrals, eventStats]);
+  }, [filteredCampaigns, availableReferrals, eventStats]);
 
   const exportData = () => {
     const csvContent = [
       ["Campaign", "Channel", "Sent", "Clicks", "Conversions", "Revenue", "ROI"].join(","),
       ...filteredCampaigns.map((campaign) => {
         const stats = eventStats[campaign.id] ?? { clicks: 0, signups: 0, conversions: 0 };
-        const campaignReferrals = referrals.filter((r) => r.campaign_id === campaign.id);
+        const campaignReferrals = availableReferrals.filter((r) => r.campaign_id === campaign.id);
         const revenue = campaignReferrals
           .filter((r) => r.status === "completed")
           .reduce((sum, r) => sum + (r.transaction_value ?? 0), 0);
@@ -322,6 +348,29 @@ export function CampaignAnalyticsDashboard({
           </Button>
         </div>
       </div>
+
+      {hasPartialReferralList && (
+        <Card className="border border-amber-200 bg-amber-50 p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-amber-900">
+                Partial referral data loaded
+              </p>
+              <p className="text-xs text-amber-800">
+                Load the full referral list to ensure ROI and conversion metrics are accurate.
+              </p>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={loadAllReferrals}
+              disabled={isLoadingReferrals}
+            >
+              {isLoadingReferrals ? "Loading…" : "Load full data"}
+            </Button>
+          </div>
+        </Card>
+      )}
 
       {/* Key Metrics */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

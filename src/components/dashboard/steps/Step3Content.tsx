@@ -11,7 +11,13 @@ import type { Database } from "@/types/supabase";
 type Customer = Database["public"]["Tables"]["customers"]["Row"];
 
 interface Step3ContentProps {
-  safeCustomers: Customer[];
+  customers: Customer[];
+  customersTotal: number;
+  customerCounts: {
+    emailReady: number;
+    smsReady: number;
+    uniqueCodes: number;
+  };
   siteUrl: string;
   discountCaptureSecret: string | null;
   businessName: string;
@@ -27,7 +33,9 @@ interface Step3ContentProps {
 }
 
 export function Step3Content({
-  safeCustomers,
+  customers,
+  customersTotal,
+  customerCounts,
   siteUrl,
   discountCaptureSecret,
   businessName,
@@ -131,7 +139,9 @@ export function Step3Content({
       {selectedPath === "crm" && (
         <div id="crm-campaign-guide">
           <CRMIntegrationTab
-            customers={safeCustomers}
+            customers={customers}
+            customersTotal={customersTotal}
+            customerCounts={customerCounts}
             siteUrl={siteUrl}
             discountCaptureSecret={discountCaptureSecret}
           />
@@ -140,7 +150,8 @@ export function Step3Content({
 
       {selectedPath === "refer-labs" && (
         <CampaignBuilder
-          customers={safeCustomers}
+          customers={customers}
+          customersTotal={customersTotal}
           businessName={businessName}
           siteUrl={siteUrl}
           offerText={offerText}

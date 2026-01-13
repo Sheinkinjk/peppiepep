@@ -21,10 +21,12 @@ type CampaignEventStats = Record<
 
 interface Step4ContentProps {
   campaignsData: Campaign[];
-  safeReferrals: Referral[];
+  referrals: Referral[];
+  referralsTotal: number;
   campaignEventStats: CampaignEventStats;
   safePartnerReferrals: Referral[];
-  safeCustomers: Database["public"]["Tables"]["customers"]["Row"][];
+  customers: Database["public"]["Tables"]["customers"]["Row"][];
+  customersTotal: number;
   siteUrl: string;
   businessName: string | null;
   clientRewardText: string | null;
@@ -35,10 +37,12 @@ interface Step4ContentProps {
 
 export function Step4Content({
   campaignsData,
-  safeReferrals,
+  referrals,
+  referralsTotal,
   campaignEventStats,
   safePartnerReferrals,
-  safeCustomers,
+  customers,
+  customersTotal,
   siteUrl,
   businessName,
   clientRewardText,
@@ -161,7 +165,8 @@ export function Step4Content({
           ) : (
             <CampaignAnalyticsDashboard
               campaigns={campaignsData}
-              referrals={safeReferrals}
+              referrals={referrals}
+              referralsTotal={referralsTotal}
               eventStats={campaignEventStats}
             />
           )}
@@ -203,7 +208,8 @@ export function Step4Content({
                   </TableHeader>
                   <CampaignsTable
                     campaigns={campaignsData}
-                    referrals={safeReferrals}
+                    referrals={referrals}
+                    referralsTotal={referralsTotal}
                     eventStats={campaignEventStats}
                   />
                 </Table>
@@ -218,12 +224,13 @@ export function Step4Content({
 
         <TabsContent value="share">
           <ShareReferralCard
-            customers={safeCustomers.map((customer) => ({
+            customers={customers.map((customer) => ({
               id: customer.id,
               name: customer.name,
               referral_code: customer.referral_code,
               discount_code: customer.discount_code,
             }))}
+            customersTotal={customersTotal}
             siteUrl={siteUrl}
             clientRewardText={clientRewardText}
             newUserRewardText={newUserRewardText}

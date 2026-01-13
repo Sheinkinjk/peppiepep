@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Rocket, Send } from "lucide-react";
 import type { Database } from "@/types/supabase";
 import { EmptyState } from "@/components/EmptyState";
 import { Skeleton } from "@/components/Skeleton";
+import { fetchAllPages } from "@/lib/customers-api-client";
 
 type CampaignRow = Database["public"]["Tables"]["campaigns"]["Row"];
 type ReferralRow = Database["public"]["Tables"]["referrals"]["Row"];
@@ -26,12 +27,42 @@ type CampaignEventStats = Record<
 type CampaignsTableProps = {
   campaigns: CampaignRow[];
   referrals: ReferralRow[];
+  referralsTotal?: number;
   eventStats: CampaignEventStats;
   isLoading?: boolean;
 };
 
-export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = false }: CampaignsTableProps) {
+export function CampaignsTable({
+  campaigns,
+  referrals,
+  referralsTotal,
+  eventStats,
+  isLoading = false,
+}: CampaignsTableProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [availableReferrals, setAvailableReferrals] = useState<ReferralRow[]>(referrals);
+  const [isLoadingReferrals, setIsLoadingReferrals] = useState(false);
+  const hasPartialReferralList =
+    typeof referralsTotal === "number" && referralsTotal > availableReferrals.length;
+
+  useEffect(() => {
+    setAvailableReferrals(referrals);
+  }, [referrals]);
+
+  const loadAllReferrals = async () => {
+    if (!hasPartialReferralList || isLoadingReferrals) return;
+    setIsLoadingReferrals(true);
+    try {
+      const { rows } = await fetchAllPages<ReferralRow>("/api/referrals", {
+        pageSize: 150,
+      });
+      setAvailableReferrals(rows);
+    } catch (error) {
+      console.error("Failed to load referrals for campaigns table:", error);
+    } finally {
+      setIsLoadingReferrals(false);
+    }
+  };
 
   if (isLoading && campaigns.length === 0) {
     return (
@@ -102,6 +133,23 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
 
   return (
     <TableBody>
+      {hasPartialReferralList && (
+        <TableRow>
+          <TableCell colSpan={8}>
+            <div className="flex flex-col gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900 sm:flex-row sm:items-center sm:justify-between">
+              <span>Campaign ROI is based on a partial referral list.</span>
+              <button
+                type="button"
+                onClick={loadAllReferrals}
+                className="rounded-md border border-amber-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-amber-800 hover:bg-amber-100"
+                disabled={isLoadingReferrals}
+              >
+                {isLoadingReferrals ? "Loading…" : "Load full referrals"}
+              </button>
+            </div>
+          </TableCell>
+        </TableRow>
+      )}
       {campaigns.map((campaign, index) => {
         const isExpanded = expandedId === campaign.id;
         const campaignKey = campaign.id ?? "";
@@ -137,7 +185,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
           ? new Date(nextCampaignCreatedAt).getTime()
           : null;
 
-        const fallbackReferrals = referrals.filter((referral) => {
+        const fallbackReferrals = availableReferrals.filter((referral) => {
           const baseDateRaw = referral.transaction_date || referral.created_at;
           if (!baseDateRaw || currentCreatedAt === null) return false;
 
@@ -151,7 +199,7 @@ export function CampaignsTable({ campaigns, referrals, eventStats, isLoading = f
         });
 
         const referralsByCampaignId = campaign.id
-          ? referrals.filter((referral) => referral.campaign_id === campaign.id)
+          ? availableReferrals.filter((referral) => referral.campaign_id === campaign.id)
           : [];
         const campaignReferrals =
           referralsByCampaignId.length > 0 ? referralsByCampaignId : fallbackReferrals;

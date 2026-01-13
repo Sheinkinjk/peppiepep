@@ -29,7 +29,6 @@ import { FloatingCampaignTrigger } from "@/components/FloatingCampaignTrigger";
 import { StartCampaignCTA } from "@/components/StartCampaignCTA";
 import { ManualReferralForm } from "@/components/ManualReferralForm";
 import { CampaignsTable } from "@/components/CampaignsTable";
-import { CampaignAnalyticsDashboard } from "@/components/CampaignAnalyticsDashboard";
 import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
 import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialog";
 import { ReferralsTable } from "@/components/ReferralsTable";
@@ -1155,6 +1154,14 @@ export default async function Dashboard({
     (referrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
   const safeCustomers =
     (customers ?? []) as Database["public"]["Tables"]["customers"]["Row"][];
+  const initialCustomers = safeCustomers.slice(0, INITIAL_CUSTOMER_TABLE_LIMIT);
+  const customerCounts = {
+    emailReady: safeCustomers.filter((customer) => Boolean(customer.email)).length,
+    smsReady: safeCustomers.filter((customer) => Boolean(customer.phone)).length,
+    uniqueCodes: safeCustomers.filter((customer) => Boolean(customer.referral_code)).length,
+  };
+  const initialReferrals = safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT);
+  const referralsTotal = safeReferrals.length;
 
   const isWithinWindow = (timestamp: string | null) => {
     if (!timestamp) return false;
@@ -1852,11 +1859,13 @@ export default async function Dashboard({
 	          ? "in_progress"
 	          : "incomplete",
 	      content: (
-		        <Step3Content
-		          safeCustomers={safeCustomers}
-		          siteUrl={businessWebsiteUrl}
-		          discountCaptureSecret={business.discount_capture_secret ?? null}
-		          businessName={business.name || "Your Business"}
+	        <Step3Content
+	          customers={initialCustomers}
+	          customersTotal={safeCustomers.length}
+	          customerCounts={customerCounts}
+	          siteUrl={businessWebsiteUrl}
+	          discountCaptureSecret={business.discount_capture_secret ?? null}
+	          businessName={business.name || "Your Business"}
           offerText={business.offer_text}
           newUserRewardText={business.new_user_reward_text}
           clientRewardText={business.client_reward_text}
@@ -1885,10 +1894,12 @@ export default async function Dashboard({
 	      content: (
 	        <Step4Content
 	          campaignsData={campaignsData}
-	          safeReferrals={safeReferrals}
+	          referrals={initialReferrals}
+	          referralsTotal={referralsTotal}
 	          campaignEventStats={campaignEventStats}
 	          safePartnerReferrals={safePartnerReferrals}
-	          safeCustomers={safeCustomers}
+	          customers={initialCustomers}
+	          customersTotal={safeCustomers.length}
 	          siteUrl={businessWebsiteUrl}
 	          businessName={business.name}
 	          clientRewardText={business.client_reward_text}
