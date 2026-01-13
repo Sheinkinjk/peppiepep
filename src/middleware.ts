@@ -62,15 +62,19 @@ export async function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith('/dashboard') && !user) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
-    url.searchParams.set('next', request.nextUrl.pathname)
+    const nextPath = `${request.nextUrl.pathname}${request.nextUrl.search}`
+    url.searchParams.set('next', nextPath)
     return NextResponse.redirect(url)
   }
 
   // Redirect to dashboard if already logged in and trying to access login
   if (request.nextUrl.pathname === '/login' && user) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/dashboard'
-    return NextResponse.redirect(url)
+    const nextParam = request.nextUrl.searchParams.get('next')
+    const safeNext =
+      nextParam && nextParam.startsWith('/') && !nextParam.startsWith('//')
+        ? nextParam
+        : '/dashboard'
+    return NextResponse.redirect(new URL(safeNext, request.url))
   }
 
   // IMPORTANT: You *must* return the response object as it is.
