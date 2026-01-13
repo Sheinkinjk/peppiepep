@@ -49,6 +49,15 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      // Prevent caching of dashboard routes to avoid serving stale error pages
+      {
+        source: "/dashboard/:path*",
+        headers: [
+          { key: "Cache-Control", value: "private, no-cache, no-store, must-revalidate" },
+          { key: "Pragma", value: "no-cache" },
+          { key: "Expires", value: "0" },
+        ],
+      },
       {
         source: "/pdfs/:path*",
         headers: [
