@@ -69,6 +69,10 @@ export async function middleware(request: NextRequest) {
 
   // Redirect to dashboard if already logged in and trying to access login
   if (request.nextUrl.pathname === '/login' && user) {
+    const needsOnboarding = request.nextUrl.searchParams.get('needs_onboarding') === 'true'
+    if (needsOnboarding) {
+      return response
+    }
     const nextParam = request.nextUrl.searchParams.get('next')
     const safeNext =
       nextParam && nextParam.startsWith('/') && !nextParam.startsWith('//')

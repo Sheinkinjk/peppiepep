@@ -67,7 +67,7 @@ import {
   Coins,
   Wallet,
 } from "lucide-react";
-import { createServerComponentClient } from "@/lib/supabase";
+import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
 import { BusinessOnboardingMetadata, IntegrationStatusValue, parseBusinessMetadata } from "@/types/business";
 import { calculateNextCredits, parseCreditDelta } from "@/lib/credits";
@@ -172,18 +172,47 @@ async function getBusiness(): Promise<BusinessCoreFields> {
   }
 
   if (!baseBusiness) {
+    const serviceKeyAvailable = Boolean(
+      process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY,
+    );
+    if (serviceKeyAvailable) {
+      try {
+        const serviceClient = await createServiceClient();
+        const { data: serviceBusiness } = await serviceClient
+          .from("businesses")
+          .select(selectColumns)
+          .eq("owner_id", user.id)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle<BusinessRow>();
+        if (serviceBusiness) {
+          return {
+            ...serviceBusiness,
+            onboarding_metadata: parseBusinessMetadata(serviceBusiness.onboarding_metadata ?? null),
+          } as BusinessCoreFields;
+        }
+      } catch (serviceError) {
+        logger.warn("Service lookup failed while resolving business:", serviceError);
+      }
+    }
+
     const insertPayload: Database["public"]["Tables"]["businesses"]["Insert"] = {
       owner_id: user.id,
       name: `${user.email?.split("@")[0] ?? "Your"}'s salon`,
       discount_capture_secret: nanoid(32),
     };
-    const { data: newBiz } = await supabase
+    const { data: newBiz, error: insertError } = await supabase
       .from("businesses")
       .insert([insertPayload])
       .select(
         "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret, onboarding_metadata, sign_on_bonus_enabled, sign_on_bonus_amount, sign_on_bonus_type, sign_on_bonus_description",
       )
       .single<BusinessRow>();
+
+    if (insertError || !newBiz) {
+      logger.error("Failed to create business record:", insertError);
+      redirect("/login?needs_onboarding=true");
+    }
 
     return {
       ...newBiz,
