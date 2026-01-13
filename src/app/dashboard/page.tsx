@@ -1125,11 +1125,11 @@ export default async function Dashboard({
 
   const fetchWithLog = async <T,>(
     label: string,
-    query: Promise<{ data: T | null; error: { code?: string; message?: string; details?: string; hint?: string } | null }>,
+    query: () => Promise<{ data: T | null; error: { code?: string; message?: string; details?: string; hint?: string } | null }>,
     fallback: T,
   ): Promise<T> => {
     try {
-      const { data, error } = await query;
+      const { data, error } = await query();
       if (error) {
         logger.error("Dashboard data load failed", {
           label,
@@ -1163,45 +1163,49 @@ export default async function Dashboard({
     // Load only first 50 customers (most recently added)
     fetchWithLog(
       "customers",
-      supabase
-        .from("customers")
-        .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
-        .eq("business_id", business.id)
-        .order("created_at", { ascending: false })
-        .limit(INITIAL_CUSTOMER_TABLE_LIMIT),
+      () =>
+        supabase
+          .from("customers")
+          .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
+          .eq("business_id", business.id)
+          .order("created_at", { ascending: false })
+          .limit(INITIAL_CUSTOMER_TABLE_LIMIT),
       [] as Database["public"]["Tables"]["customers"]["Row"][],
     ),
     // Load only first 25 referrals (most recent)
     fetchWithLog(
       "referrals",
-      supabase
-        .from("referrals")
-        .select(
-          "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
-        )
-        .eq("business_id", business.id)
-        .order("created_at", { ascending: false })
-        .limit(INITIAL_REFERRAL_TABLE_LIMIT),
+      () =>
+        supabase
+          .from("referrals")
+          .select(
+            "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
+          )
+          .eq("business_id", business.id)
+          .order("created_at", { ascending: false })
+          .limit(INITIAL_REFERRAL_TABLE_LIMIT),
       [] as Database["public"]["Tables"]["referrals"]["Row"][],
     ),
     fetchWithLog(
       "partner_applications",
-      supabase
-        .from("partner_applications")
-        .select("customer_id,source")
-        .eq("business_id", business.id)
-        .in("source", ["linkedin-influencer", "linkedin-influencer-business"])
-        .limit(50),
+      () =>
+        supabase
+          .from("partner_applications")
+          .select("customer_id,source")
+          .eq("business_id", business.id)
+          .in("source", ["linkedin-influencer", "linkedin-influencer-business"])
+          .limit(50),
       [] as { customer_id: string | null; source: string | null }[],
     ),
     fetchWithLog(
       "campaigns",
-      supabase
-        .from("campaigns")
-        .select("*")
-        .eq("business_id", business.id)
-        .order("created_at", { ascending: false })
-        .limit(20),
+      () =>
+        supabase
+          .from("campaigns")
+          .select("*")
+          .eq("business_id", business.id)
+          .order("created_at", { ascending: false })
+          .limit(20),
       [] as CampaignRow[],
     ),
     // Reduce credit ledger to 25 most recent entries
