@@ -1349,13 +1349,14 @@ export default async function Dashboard({
           0,
         ) / completedWithValue.length
       : 0;
-  const totalCampaignsSent = campaignsData.length;
-  const totalMessagesSent = campaignsData.reduce(
+  const safeCampaignsData = (campaignsData ?? []) as CampaignRow[];
+  const totalCampaignsSent = safeCampaignsData.length;
+  const totalMessagesSent = safeCampaignsData.reduce(
     (sum, campaign) => sum + (campaign.sent_count ?? 0),
     0,
   );
 
-  const totalEstimatedCampaignSpend = campaignsData.reduce(
+  const totalEstimatedCampaignSpend = safeCampaignsData.reduce(
     (sum, campaign) => {
       const sentCount = campaign.sent_count ?? 0;
       const channel = campaign.channel as "sms" | "email" | null;
@@ -1365,10 +1366,10 @@ export default async function Dashboard({
     0,
   );
 
-  const windowedCampaigns = campaignsData.filter((campaign) =>
+  const windowedCampaigns = safeCampaignsData.filter((campaign) =>
     isWithinWindow(campaign.created_at ?? null),
   );
-  const previousWindowedCampaigns = campaignsData.filter((campaign) =>
+  const previousWindowedCampaigns = safeCampaignsData.filter((campaign) =>
     isWithinPreviousWindow(campaign.created_at ?? null),
   );
   const windowedEstimatedCampaignSpend = windowedCampaigns.reduce(
@@ -1478,7 +1479,7 @@ export default async function Dashboard({
   const conversionTrend = buildTrendChip(conversionRateDelta, "rate");
 
   const hasCustomers = safeCustomers.length > 0;
-  const hasCampaigns = campaignsData.length > 0;
+  const hasCampaigns = safeCampaignsData.length > 0;
   const hasReferrals = safeReferrals.length > 0;
   const hasProgramSettings =
     !!business.offer_text &&
@@ -1600,7 +1601,7 @@ export default async function Dashboard({
     | "generic";
 
   const campaignNameById = new Map<string, string>();
-  campaignsData.forEach((campaign) => {
+  safeCampaignsData.forEach((campaign) => {
     if (campaign.id && campaign.name) {
       campaignNameById.set(campaign.id, campaign.name);
     }
@@ -1965,7 +1966,7 @@ export default async function Dashboard({
 	          : "incomplete",
 	      content: (
 	        <Step4Content
-	          campaignsData={campaignsData}
+	          campaignsData={safeCampaignsData}
 	          referrals={initialReferrals}
 	          referralsTotal={referralsTotal}
 	          campaignEventStats={campaignEventStats}
@@ -2930,7 +2931,7 @@ export default async function Dashboard({
             </div>
             <p className="text-2xl font-black text-slate-900 mt-1">{totalCampaignsSent}</p>
             <p className="text-xs text-slate-500 mt-1">
-              {totalMessagesSent.toLocaleString()} messages sent
+              {(totalMessagesSent ?? 0).toLocaleString()} messages sent
             </p>
           </div>
           <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-amber-50 to-white px-4 py-3">
@@ -2939,7 +2940,7 @@ export default async function Dashboard({
               <DollarSign className="h-4 w-4 text-amber-500" />
             </div>
             <p className="text-2xl font-black text-slate-900 mt-1">
-              ${Math.round(totalReferralRevenue).toLocaleString()}
+              ${Math.round(totalReferralRevenue ?? 0).toLocaleString()}
             </p>
             <p className="text-xs text-slate-500 mt-1">
               {averageTransactionValue > 0 && `$${Math.round(averageTransactionValue)} avg`}
@@ -2967,7 +2968,7 @@ export default async function Dashboard({
               </div>
               <div>
                 <p className="text-sm font-semibold text-slate-900">{manualReferralCount} manual entries</p>
-                <p className="text-xs text-slate-500">${Math.round(manualReferralValue).toLocaleString()} value</p>
+                <p className="text-xs text-slate-500">${Math.round(manualReferralValue ?? 0).toLocaleString()} value</p>
               </div>
             </div>
           )}
