@@ -1123,52 +1123,87 @@ export default async function Dashboard({
   const windowStart = Date.now() - selectedWindow * 24 * 60 * 60 * 1000;
   const previousWindowStart = windowStart - selectedWindow * 24 * 60 * 60 * 1000;
 
+  const fetchWithLog = async <T,>(
+    label: string,
+    query: Promise<{ data: T | null; error: { code?: string; message?: string; details?: string; hint?: string } | null }>,
+    fallback: T,
+  ): Promise<T> => {
+    try {
+      const { data, error } = await query;
+      if (error) {
+        logger.error("Dashboard data load failed", {
+          label,
+          code: error.code,
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+        });
+        return fallback;
+      }
+      return (data ?? fallback) as T;
+    } catch (err) {
+      logger.error("Dashboard data load exception", {
+        label,
+        error: err instanceof Error ? err.message : String(err),
+      });
+      return fallback;
+    }
+  };
+
   // PERFORMANCE OPTIMIZATION: Load only essential data for initial render
   // Other data can be loaded on-demand when tabs are accessed
   const [
-    { data: customers = [] },
-    { data: referrals = [] },
-    { data: partnerApplications = [] },
-    campaignsResult,
+    customers,
+    referrals,
+    partnerApplications,
+    campaignsData,
     creditLedgerEntries,
     creditTotals,
   ] = await Promise.all([
     // Load only first 50 customers (most recently added)
-    supabase
-      .from("customers")
-      .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
-      .eq("business_id", business.id)
-      .order("created_at", { ascending: false })
-      .limit(INITIAL_CUSTOMER_TABLE_LIMIT),
+    fetchWithLog(
+      "customers",
+      supabase
+        .from("customers")
+        .select("id,status,credits,name,phone,email,referral_code,discount_code,company,website,instagram_handle,linkedin_handle,audience_profile,source,notes")
+        .eq("business_id", business.id)
+        .order("created_at", { ascending: false })
+        .limit(INITIAL_CUSTOMER_TABLE_LIMIT),
+      [] as Database["public"]["Tables"]["customers"]["Row"][],
+    ),
     // Load only first 25 referrals (most recent)
-    supabase
-      .from("referrals")
-      .select(
-        "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
-      )
-      .eq("business_id", business.id)
-      .order("created_at", { ascending: false })
-      .limit(INITIAL_REFERRAL_TABLE_LIMIT),
-    supabase
-      .from("partner_applications")
-      .select("customer_id,source")
-      .eq("business_id", business.id)
-      .in("source", ["linkedin-influencer", "linkedin-influencer-business"])
-      .limit(50),
-    (async () => {
-      try {
-        // Load only recent campaigns (last 20)
-        return await supabase
-          .from("campaigns")
-          .select("*")
-          .eq("business_id", business.id)
-          .order("created_at", { ascending: false })
-          .limit(20);
-      } catch (campaignFetchError) {
-        logger.warn("Campaign data unavailable:", campaignFetchError);
-        return { data: [] };
-      }
-    })(),
+    fetchWithLog(
+      "referrals",
+      supabase
+        .from("referrals")
+        .select(
+          "id,status,ambassador_id,referred_name,referred_email,referred_phone,transaction_value,transaction_date,service_type,created_by,created_at",
+        )
+        .eq("business_id", business.id)
+        .order("created_at", { ascending: false })
+        .limit(INITIAL_REFERRAL_TABLE_LIMIT),
+      [] as Database["public"]["Tables"]["referrals"]["Row"][],
+    ),
+    fetchWithLog(
+      "partner_applications",
+      supabase
+        .from("partner_applications")
+        .select("customer_id,source")
+        .eq("business_id", business.id)
+        .in("source", ["linkedin-influencer", "linkedin-influencer-business"])
+        .limit(50),
+      [] as { customer_id: string | null; source: string | null }[],
+    ),
+    fetchWithLog(
+      "campaigns",
+      supabase
+        .from("campaigns")
+        .select("*")
+        .eq("business_id", business.id)
+        .order("created_at", { ascending: false })
+        .limit(20),
+      [] as CampaignRow[],
+    ),
     // Reduce credit ledger to 25 most recent entries
     fetchCreditLedger(supabase, business.id, { limit: 25 }),
     calculateCreditTotals(supabase, business.id, selectedWindow),
@@ -1305,7 +1340,6 @@ export default async function Dashboard({
           0,
         ) / completedWithValue.length
       : 0;
-  const campaignsData = (campaignsResult.data ?? []) as CampaignRow[];
   const totalCampaignsSent = campaignsData.length;
   const totalMessagesSent = campaignsData.reduce(
     (sum, campaign) => sum + (campaign.sent_count ?? 0),
