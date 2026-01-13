@@ -618,7 +618,7 @@ export function PartnerApplicationsManager() {
                       <p className="text-xs text-slate-500 mb-1">Referral Link</p>
                       {app.customer.referral_code ? (
                         <a
-                          href={`${window.location.origin}/r/${app.customer.referral_code}`}
+                          href={`/r/${app.customer.referral_code}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm text-blue-600 hover:underline font-mono flex items-center gap-1"

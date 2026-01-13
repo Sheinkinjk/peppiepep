@@ -15,8 +15,8 @@ import type { Database } from '@/types/supabase';
 const mockUpdateBusinessOnboarding = vi.fn();
 const mockUpdateSettings = vi.fn();
 const mockQuickAddCustomer = vi.fn();
-const mockAdjustCustomerCredits = vi.fn();
 const mockUploadLogo = vi.fn();
+const mockUploadRewardTerms = vi.fn();
 
 // Mock customer data
 const mockCustomers: Database['public']['Tables']['customers']['Row'][] = [
@@ -125,7 +125,6 @@ describe('Step2Content - Clients & Ambassadors', () => {
     clientRewardText: '$5 credit',
     rewardType: 'credit' as const,
     rewardAmount: 10,
-    upgradeName: 'Premium',
     rewardTerms: 'Terms apply',
     logoUrl: 'https://test.com/logo.png',
     brandHighlightColor: '#FF0000',
@@ -135,6 +134,8 @@ describe('Step2Content - Clients & Ambassadors', () => {
     signOnBonusAmount: 20,
     signOnBonusType: 'credit',
     signOnBonusDescription: 'Welcome bonus',
+    uploadLogo: mockUploadLogo,
+    uploadRewardTerms: mockUploadRewardTerms,
     safeCustomers: mockCustomers,
     currentAdmin: null,
     linkedInInfluencerCustomers: [],
@@ -142,7 +143,6 @@ describe('Step2Content - Clients & Ambassadors', () => {
     updateBusinessOnboarding: mockUpdateBusinessOnboarding,
     updateSettings: mockUpdateSettings,
     quickAddCustomer: mockQuickAddCustomer,
-    adjustCustomerCredits: mockAdjustCustomerCredits,
   };
 
   beforeEach(() => {
@@ -152,9 +152,11 @@ describe('Step2Content - Clients & Ambassadors', () => {
   it('renders customer import and quick add sections', () => {
     render(<Step2Content {...defaultProps} />);
 
-    expect(screen.getByText('Import Customers')).toBeInTheDocument();
-    expect(screen.getByText('Bulk upload spreadsheets to instantly generate referral links.')).toBeInTheDocument();
-    expect(screen.getByText(`Active ambassadors:`)).toBeInTheDocument();
+    expect(screen.getByText('Import Your Network')).toBeInTheDocument();
+    expect(
+      screen.getByText('Upload partners, clients, creators, and advisors to instantly generate referral links.'),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Active partners:')).toBeInTheDocument();
     expect(screen.getByText('2')).toBeInTheDocument();
   });
 
@@ -174,8 +176,10 @@ describe('Step2Content - Clients & Ambassadors', () => {
   it('shows empty state when no customers exist', () => {
     render(<Step2Content {...defaultProps} safeCustomers={[]} regularCustomers={[]} />);
 
-    expect(screen.getByText('No customers yet')).toBeInTheDocument();
-    expect(screen.getByText('Add your first customer using the quick form above, or upload a CSV to get started with your referral program.')).toBeInTheDocument();
+    expect(screen.getByText('No partners yet')).toBeInTheDocument();
+    expect(
+      screen.getByText('Add your first referral partner using the quick form above, or upload a CSV to activate your network.'),
+    ).toBeInTheDocument();
   });
 
   it('shows admin partner applications section when admin is logged in', () => {
@@ -213,9 +217,14 @@ describe('Step2Content - Clients & Ambassadors', () => {
 
 describe('Step3Content - Launch Campaigns', () => {
   const defaultProps = {
-    safeCustomers: mockCustomers,
+    customers: mockCustomers,
+    customersTotal: mockCustomers.length,
+    customerCounts: {
+      emailReady: mockCustomers.length,
+      smsReady: mockCustomers.length,
+      uniqueCodes: mockCustomers.length,
+    },
     siteUrl: 'https://test.com',
-    businessId: 'biz-1',
     businessName: 'Test Business',
     discountCaptureSecret: 'secret123',
     offerText: '10% off',
@@ -223,7 +232,6 @@ describe('Step3Content - Launch Campaigns', () => {
     clientRewardText: '$5 credit',
     rewardType: 'credit' as const,
     rewardAmount: 10,
-    upgradeName: 'Premium',
     rewardTerms: 'Terms apply',
     brandHighlightColor: '#FF0000',
     brandTone: 'professional',
@@ -234,45 +242,46 @@ describe('Step3Content - Launch Campaigns', () => {
     vi.clearAllMocks();
   });
 
-  it('renders premium campaigns hero section', () => {
+  it('renders campaign path selection section', () => {
     render(<Step3Content {...defaultProps} />);
 
-    expect(screen.getByText('Premium Campaigns')).toBeInTheDocument();
-    expect(screen.getByText('Launch High-Converting Campaigns')).toBeInTheDocument();
-    expect(screen.getByText('Send beautifully designed emails and SMS campaigns with personalized links and real-time tracking.')).toBeInTheDocument();
+    expect(screen.getByText('How do you want to send campaigns?')).toBeInTheDocument();
+    expect(screen.getByText('Quick Send')).toBeInTheDocument();
+    expect(screen.getByText('Use My Email Tool')).toBeInTheDocument();
   });
 
-  it('displays campaign feature highlights', () => {
+  it('displays Quick Send highlights', () => {
     render(<Step3Content {...defaultProps} />);
 
-    expect(screen.getByText('Personal Links')).toBeInTheDocument();
-    expect(screen.getByText('Live Tracking')).toBeInTheDocument();
-    expect(screen.getByText('Pro Templates')).toBeInTheDocument();
+    expect(screen.getByText('Professional branded templates ready to use')).toBeInTheDocument();
+    expect(screen.getByText('No external tools needed - send right now')).toBeInTheDocument();
+    expect(screen.getByText('Automatic attribution and ROI tracking')).toBeInTheDocument();
   });
 
-  it('renders CRM integration tab', () => {
+  it('renders CRM integration tab when selected', async () => {
     render(<Step3Content {...defaultProps} />);
 
-    // CRMIntegrationTab should be rendered
-    const container = screen.getByText('Launch High-Converting Campaigns').closest('div');
-    expect(container).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'View Integration Guide' }));
+    expect(screen.getByText('Send campaigns through your CRM')).toBeInTheDocument();
   });
 
-  it('renders campaign builder section', () => {
+  it('renders campaign builder section when Quick Send is selected', async () => {
     render(<Step3Content {...defaultProps} />);
 
-    expect(screen.getByText('Campaign Builder')).toBeInTheDocument();
-    expect(screen.getByText('Design and send personalized campaigns to your ambassadors')).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Launch Campaign' }));
+    expect(screen.getByText('Create New Campaign')).toBeInTheDocument();
   });
 });
 
 describe('Step4Content - Track Campaigns', () => {
   const defaultProps = {
     campaignsData: mockCampaigns,
-    safeReferrals: mockReferrals,
+    referrals: mockReferrals,
+    referralsTotal: mockReferrals.length,
     campaignEventStats: mockCampaignEventStats,
     safePartnerReferrals: mockPartnerReferrals,
-    safeCustomers: mockCustomers,
+    customers: mockCustomers,
+    customersTotal: mockCustomers.length,
     siteUrl: 'https://test.com',
     businessName: 'Test Business',
     clientRewardText: '$5 credit',
@@ -365,7 +374,6 @@ describe('Integration Tests - Props Consistency', () => {
       clientRewardText: 'client',
       rewardType: 'credit' as const,
       rewardAmount: 10,
-      upgradeName: 'premium',
       rewardTerms: 'terms',
       logoUrl: 'logo',
       brandHighlightColor: '#000',
@@ -375,6 +383,8 @@ describe('Integration Tests - Props Consistency', () => {
       signOnBonusAmount: 20,
       signOnBonusType: 'credit',
       signOnBonusDescription: 'bonus',
+      uploadLogo: mockUploadLogo,
+      uploadRewardTerms: mockUploadRewardTerms,
       safeCustomers: mockCustomers,
       currentAdmin: null,
       linkedInInfluencerCustomers: [],
@@ -382,7 +392,6 @@ describe('Integration Tests - Props Consistency', () => {
       updateBusinessOnboarding: mockUpdateBusinessOnboarding,
       updateSettings: mockUpdateSettings,
       quickAddCustomer: mockQuickAddCustomer,
-      adjustCustomerCredits: mockAdjustCustomerCredits,
     };
 
     expect(() => render(<Step2Content {...props} />)).not.toThrow();
@@ -390,9 +399,14 @@ describe('Integration Tests - Props Consistency', () => {
 
   it('Step3Content accepts all required props without TypeScript errors', () => {
     const props = {
-      safeCustomers: mockCustomers,
+      customers: mockCustomers,
+      customersTotal: mockCustomers.length,
+      customerCounts: {
+        emailReady: mockCustomers.length,
+        smsReady: mockCustomers.length,
+        uniqueCodes: mockCustomers.length,
+      },
       siteUrl: 'https://test.com',
-      businessId: 'biz-1',
       businessName: 'Test',
       discountCaptureSecret: 'secret',
       offerText: 'offer',
@@ -400,7 +414,6 @@ describe('Integration Tests - Props Consistency', () => {
       clientRewardText: 'client',
       rewardType: 'credit' as const,
       rewardAmount: 10,
-      upgradeName: 'premium',
       rewardTerms: 'terms',
       brandHighlightColor: '#000',
       brandTone: 'professional',
@@ -413,10 +426,12 @@ describe('Integration Tests - Props Consistency', () => {
   it('Step4Content accepts all required props without TypeScript errors', () => {
     const props = {
       campaignsData: mockCampaigns,
-      safeReferrals: mockReferrals,
+      referrals: mockReferrals,
+      referralsTotal: mockReferrals.length,
       campaignEventStats: mockCampaignEventStats,
       safePartnerReferrals: mockPartnerReferrals,
-      safeCustomers: mockCustomers,
+      customers: mockCustomers,
+      customersTotal: mockCustomers.length,
       siteUrl: 'https://test.com',
       businessName: 'Test',
       clientRewardText: 'client',
@@ -441,7 +456,6 @@ describe('Edge Cases and Error Handling', () => {
       clientRewardText: null,
       rewardType: 'credit' as const,
       rewardAmount: null,
-      upgradeName: null,
       rewardTerms: null,
       logoUrl: null,
       brandHighlightColor: null,
@@ -451,6 +465,8 @@ describe('Edge Cases and Error Handling', () => {
       signOnBonusAmount: null,
       signOnBonusType: null,
       signOnBonusDescription: null,
+      uploadLogo: mockUploadLogo,
+      uploadRewardTerms: mockUploadRewardTerms,
       safeCustomers: [],
       currentAdmin: null,
       linkedInInfluencerCustomers: [],
@@ -458,7 +474,6 @@ describe('Edge Cases and Error Handling', () => {
       updateBusinessOnboarding: mockUpdateBusinessOnboarding,
       updateSettings: mockUpdateSettings,
       quickAddCustomer: mockQuickAddCustomer,
-      adjustCustomerCredits: mockAdjustCustomerCredits,
     };
 
     expect(() => render(<Step2Content {...nullProps} />)).not.toThrow();
@@ -467,10 +482,12 @@ describe('Edge Cases and Error Handling', () => {
   it('Step4Content handles empty arrays correctly', () => {
     const emptyProps = {
       campaignsData: [],
-      safeReferrals: [],
+      referrals: [],
+      referralsTotal: 0,
       campaignEventStats: {},
       safePartnerReferrals: [],
-      safeCustomers: [],
+      customers: [],
+      customersTotal: 0,
       siteUrl: 'https://test.com',
       businessName: null,
       clientRewardText: null,
@@ -484,9 +501,14 @@ describe('Edge Cases and Error Handling', () => {
 
   it('Step3Content handles empty customer list', () => {
     const props = {
-      safeCustomers: [],
+      customers: [],
+      customersTotal: 0,
+      customerCounts: {
+        emailReady: 0,
+        smsReady: 0,
+        uniqueCodes: 0,
+      },
       siteUrl: 'https://test.com',
-      businessId: 'biz-1',
       businessName: 'Test',
       discountCaptureSecret: null,
       offerText: null,
@@ -494,7 +516,6 @@ describe('Edge Cases and Error Handling', () => {
       clientRewardText: null,
       rewardType: 'credit' as const,
       rewardAmount: null,
-      upgradeName: null,
       rewardTerms: null,
       brandHighlightColor: null,
       brandTone: null,

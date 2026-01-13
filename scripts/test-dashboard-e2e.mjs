@@ -167,8 +167,35 @@ async function run() {
     }
 
     const dashboardHtml = await dashboardResponse.text();
+    if (/\\bDashboard error\\b/i.test(dashboardHtml)) {
+      throw new Error("Dashboard error boundary rendered on initial load.");
+    }
     if (/\\bLogin\\b/i.test(dashboardHtml) && !/\\bDashboard\\b/i.test(dashboardHtml)) {
       throw new Error("Dashboard response looks like a login page (auth cookie not accepted).");
+    }
+
+    // Verify dashboard navigation tabs render for each section
+    const sections = [
+      "overview",
+      "setup-integration",
+      "testing-qa",
+      "clients-ambassadors",
+      "crm-integration",
+      "view-campaigns",
+      "performance",
+    ];
+    for (const section of sections) {
+      const sectionResponse = await fetch(`${origin}/dashboard?section=${section}`, {
+        headers: { Cookie: authCookie },
+        redirect: "manual",
+      });
+      if (sectionResponse.status !== 200) {
+        throw new Error(`Expected /dashboard?section=${section} 200, got ${sectionResponse.status}`);
+      }
+      const sectionHtml = await sectionResponse.text();
+      if (/\\bDashboard error\\b/i.test(sectionHtml)) {
+        throw new Error(`Dashboard error boundary rendered for section ${section}.`);
+      }
     }
 
     const { data: bizRow, error: bizLookupError } = await adminClient

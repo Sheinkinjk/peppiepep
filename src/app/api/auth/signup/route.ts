@@ -11,7 +11,7 @@ const bodySchema = z.object({
   password: z.string().min(8),
 });
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   const parsed = bodySchema.safeParse(await request.json().catch(() => ({})));

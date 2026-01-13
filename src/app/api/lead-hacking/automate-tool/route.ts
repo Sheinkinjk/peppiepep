@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { sendAdminNotification } from "@/lib/email-notifications";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const bodySchema = z.object({
   fullName: z.string().min(1),

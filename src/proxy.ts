@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { logger } from '@/lib/logger'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Create a response that we'll update with cookies
   const response = NextResponse.next({
     request: {
@@ -85,6 +85,8 @@ export async function middleware(request: NextRequest) {
   // This response has cookies set by Supabase's session refresh logic.
   return response
 }
+
+export default proxy
 
 export const config = {
   matcher: [

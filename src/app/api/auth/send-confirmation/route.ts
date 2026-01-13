@@ -10,7 +10,7 @@ const bodySchema = z.object({
   email: z.string().email(),
 });
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   const parsed = bodySchema.safeParse(await request.json().catch(() => ({})));

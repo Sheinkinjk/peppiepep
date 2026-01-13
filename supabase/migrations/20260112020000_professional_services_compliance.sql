@@ -222,11 +222,15 @@ ALTER TABLE public.partner_compliance_status ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.regulatory_requirements ENABLE ROW LEVEL SECURITY;
 
 -- Service Provider Types - Public read access
+DROP POLICY IF EXISTS "Service provider types are viewable by everyone"
+  ON public.service_provider_types;
 CREATE POLICY "Service provider types are viewable by everyone"
   ON public.service_provider_types FOR SELECT
   USING (TRUE);
 
 -- Partner Tiers - Business owners can manage their tiers
+DROP POLICY IF EXISTS "Business owners can view their partner tiers"
+  ON public.partner_tiers;
 CREATE POLICY "Business owners can view their partner tiers"
   ON public.partner_tiers FOR SELECT
   USING (
@@ -235,6 +239,8 @@ CREATE POLICY "Business owners can view their partner tiers"
     )
   );
 
+DROP POLICY IF EXISTS "Business owners can manage their partner tiers"
+  ON public.partner_tiers;
 CREATE POLICY "Business owners can manage their partner tiers"
   ON public.partner_tiers FOR ALL
   USING (
@@ -244,6 +250,8 @@ CREATE POLICY "Business owners can manage their partner tiers"
   );
 
 -- Partner Agreements - Business owners manage agreements
+DROP POLICY IF EXISTS "Business owners can view their partner agreements"
+  ON public.partner_agreements;
 CREATE POLICY "Business owners can view their partner agreements"
   ON public.partner_agreements FOR SELECT
   USING (
@@ -252,6 +260,8 @@ CREATE POLICY "Business owners can view their partner agreements"
     )
   );
 
+DROP POLICY IF EXISTS "Business owners can manage their partner agreements"
+  ON public.partner_agreements;
 CREATE POLICY "Business owners can manage their partner agreements"
   ON public.partner_agreements FOR ALL
   USING (
@@ -261,6 +271,8 @@ CREATE POLICY "Business owners can manage their partner agreements"
   );
 
 -- Partner Agreement Acceptances - Partners can view their own acceptances
+DROP POLICY IF EXISTS "Partners can view their own agreement acceptances"
+  ON public.partner_agreement_acceptances;
 CREATE POLICY "Partners can view their own agreement acceptances"
   ON public.partner_agreement_acceptances FOR SELECT
   USING (
@@ -271,6 +283,8 @@ CREATE POLICY "Partners can view their own agreement acceptances"
     )
   );
 
+DROP POLICY IF EXISTS "Partners can accept agreements"
+  ON public.partner_agreement_acceptances;
 CREATE POLICY "Partners can accept agreements"
   ON public.partner_agreement_acceptances FOR INSERT
   WITH CHECK (
@@ -282,6 +296,8 @@ CREATE POLICY "Partners can accept agreements"
   );
 
 -- Partner Compliance Status - Business owners can view and manage
+DROP POLICY IF EXISTS "Business owners can view partner compliance"
+  ON public.partner_compliance_status;
 CREATE POLICY "Business owners can view partner compliance"
   ON public.partner_compliance_status FOR SELECT
   USING (
@@ -290,6 +306,8 @@ CREATE POLICY "Business owners can view partner compliance"
     )
   );
 
+DROP POLICY IF EXISTS "Business owners can manage partner compliance"
+  ON public.partner_compliance_status;
 CREATE POLICY "Business owners can manage partner compliance"
   ON public.partner_compliance_status FOR ALL
   USING (
@@ -299,6 +317,8 @@ CREATE POLICY "Business owners can manage partner compliance"
   );
 
 -- Regulatory Requirements - Public read access
+DROP POLICY IF EXISTS "Regulatory requirements are viewable by everyone"
+  ON public.regulatory_requirements;
 CREATE POLICY "Regulatory requirements are viewable by everyone"
   ON public.regulatory_requirements FOR SELECT
   USING (TRUE);
@@ -315,18 +335,26 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS update_service_provider_types_updated_at
+  ON public.service_provider_types;
 CREATE TRIGGER update_service_provider_types_updated_at
   BEFORE UPDATE ON public.service_provider_types
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
+DROP TRIGGER IF EXISTS update_partner_tiers_updated_at
+  ON public.partner_tiers;
 CREATE TRIGGER update_partner_tiers_updated_at
   BEFORE UPDATE ON public.partner_tiers
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
+DROP TRIGGER IF EXISTS update_partner_compliance_status_updated_at
+  ON public.partner_compliance_status;
 CREATE TRIGGER update_partner_compliance_status_updated_at
   BEFORE UPDATE ON public.partner_compliance_status
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
+DROP TRIGGER IF EXISTS update_regulatory_requirements_updated_at
+  ON public.regulatory_requirements;
 CREATE TRIGGER update_regulatory_requirements_updated_at
   BEFORE UPDATE ON public.regulatory_requirements
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
@@ -347,6 +375,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS check_compliance_expiry_on_update
+  ON public.partner_compliance_status;
 CREATE TRIGGER check_compliance_expiry_on_update
   BEFORE UPDATE ON public.partner_compliance_status
   FOR EACH ROW EXECUTE FUNCTION check_partner_compliance_expiry();
@@ -362,6 +392,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS set_partner_since_date_trigger
+  ON public.customers;
 CREATE TRIGGER set_partner_since_date_trigger
   BEFORE UPDATE ON public.customers
   FOR EACH ROW EXECUTE FUNCTION set_partner_since_date();
