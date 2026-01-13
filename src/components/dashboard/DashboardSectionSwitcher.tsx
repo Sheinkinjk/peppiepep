@@ -99,9 +99,11 @@ export function DashboardSectionSwitcher({
   );
 
   const setSection = useCallback(
-    (sectionId: string, scrollTo?: string) => {
+    (sectionId: string, scrollTo?: string, options?: { updateUrl?: boolean }) => {
       setActiveSection(sectionId);
-      updateUrl(sectionId);
+      if (options?.updateUrl !== false) {
+        updateUrl(sectionId);
+      }
       if (scrollTo) {
         window.setTimeout(() => {
           document.getElementById(scrollTo)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -128,7 +130,7 @@ export function DashboardSectionSwitcher({
     if (params.get("section")) return;
     const stored = window.localStorage.getItem("dashboard:lastSection");
     if (stored && stored !== activeSection) {
-      setSection(stored);
+      setSection(stored, undefined, { updateUrl: false });
     }
   }, [defaultSection, activeSection, setSection]);
 

@@ -128,11 +128,16 @@ export async function GET(request: Request) {
   }
 
   const supabase = await createServiceClient();
+  const service = supabase as unknown as {
+    from: (table: string) => {
+      select: (columns: string) => { limit: (count: number) => Promise<{ error: any }> };
+    };
+  };
   const results: CheckResult[] = [];
 
   for (const [table, columns] of Object.entries(REQUIRED_TABLES)) {
     try {
-      const { error } = await supabase
+      const { error } = await service
         .from(table)
         .select(columns.join(","))
         .limit(1);
