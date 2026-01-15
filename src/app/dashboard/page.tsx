@@ -606,7 +606,8 @@ export default async function Dashboard({
 	            "Please enter a valid transaction amount (e.g. 150 or 200.50).",
 	        };
 	      }
-	      if (business.reward_type === "revenue_share" && (transactionValue === null || transactionValue <= 0)) {
+	      // revenue_share is a valid reward type added via migration but not yet in generated types
+	      if ((business.reward_type as string) === "revenue_share" && (transactionValue === null || transactionValue <= 0)) {
 	        return {
 	          error: "Revenue share rewards require a transaction value to calculate payout.",
 	        };
