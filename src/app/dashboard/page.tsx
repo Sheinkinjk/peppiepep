@@ -20,6 +20,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { GuidedStep } from "@/components/GuidedStepFlow";
 import { MeasureRoiQaPanel } from "@/components/dashboard/MeasureRoiQaPanel";
+import { MeasureRoiPartnerBreakdownPanel } from "@/components/dashboard/MeasureRoiPartnerBreakdownPanel";
 import { DashboardSectionSwitcher, SectionLink } from "@/components/dashboard/DashboardSectionSwitcher";
 import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
@@ -48,17 +49,18 @@ import { completeReferralAttribution } from "@/lib/referral-revenue";
 import { quickAddCustomerProfile } from "@/lib/customers-quick-add";
 import { tryInsertCreditLedgerEntry, fetchCreditLedger, calculateCreditTotals } from "@/lib/credits-ledger";
 import {
-  Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
-  BarChart3,
-  Award, CreditCard, Send,
-  ClipboardList,
-  AlertTriangle,
-  Settings,
-  Target,
-  Mail,
-  Link2,
-  CalendarCheck,
-  FileText,
+	Users, TrendingUp, DollarSign, Zap, Upload, MessageSquare,
+	BarChart3,
+	Award, CreditCard, Send,
+	ClipboardList,
+	AlertTriangle,
+	Settings,
+	Target,
+	Percent,
+	Mail,
+	Link2,
+	CalendarCheck,
+	FileText,
   ArrowRight,
   ArrowUpRight,
   ArrowDownRight,
@@ -75,6 +77,8 @@ import { ensureAbsoluteUrl } from "@/lib/urls";
 import { PartnerApplicationsManager } from "./components/PartnerApplicationsManager";
 import { DashboardRealtimeSync } from "./components/DashboardRealtimeSync";
 import { DashboardLoginTracker } from "@/components/DashboardLoginTracker";
+import { DashboardSectionBoundary } from "@/components/dashboard/DashboardSectionBoundary";
+import { ExternalPartnersTab } from "@/components/dashboard/external-partners/ExternalPartnersTab";
 import { Step1DTestingTab } from "@/components/Step1DTestingTab";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
@@ -330,7 +334,7 @@ export default async function Dashboard({
     };
 
     const rewardTypeValue = formData.get("reward_type");
-    const allowedRewardTypes = new Set(["credit", "upgrade", "discount", "points"]);
+    const allowedRewardTypes = new Set(["credit", "upgrade", "discount", "points", "revenue_share"]);
     const normalizedRewardType =
       typeof rewardTypeValue === "string" && allowedRewardTypes.has(rewardTypeValue)
         ? (rewardTypeValue as Database["public"]["Tables"]["businesses"]["Update"]["reward_type"])
@@ -595,13 +599,18 @@ export default async function Dashboard({
       const amount =
         business.reward_type === "credit" ? business.reward_amount ?? 0 : 0;
 
-      const transactionValue = transactionValueRaw ? Number(transactionValueRaw) : null;
-      if (transactionValueRaw && Number.isNaN(transactionValue)) {
-        return {
-          error:
-            "Please enter a valid transaction amount (e.g. 150 or 200.50).",
-        };
-      }
+	      const transactionValue = transactionValueRaw ? Number(transactionValueRaw) : null;
+	      if (transactionValueRaw && Number.isNaN(transactionValue)) {
+	        return {
+	          error:
+	            "Please enter a valid transaction amount (e.g. 150 or 200.50).",
+	        };
+	      }
+	      if (business.reward_type === "revenue_share" && (transactionValue === null || transactionValue <= 0)) {
+	        return {
+	          error: "Revenue share rewards require a transaction value to calculate payout.",
+	        };
+	      }
 
       const parsedTransactionDate = new Date(transactionDateRaw);
       if (Number.isNaN(parsedTransactionDate.getTime())) {
@@ -1313,14 +1322,14 @@ export default async function Dashboard({
     (r) => r.status === "completed" && r.transaction_value === null,
   ).length;
   const manualMissingValueCount = manualReferralsList.filter((r) => r.transaction_value === null).length;
-  const manualReferralValue =
-    manualReferralsList.reduce(
-      (sum, r) => sum + (r.transaction_value ?? 0),
-      0,
-    ) || 0;
-  const trackedReferralCount = safeReferrals.length - manualReferralCount;
-  const totalRewards =
-    safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
+	  const manualReferralValue =
+	    manualReferralsList.reduce(
+	      (sum, r) => sum + (r.transaction_value ?? 0),
+	      0,
+	    ) || 0;
+	  const trackedReferralCount = safeReferrals.length - manualReferralCount;
+	  const totalCreditsOutstanding =
+	    safeCustomers.reduce((sum, c) => sum + (c.credits ?? 0), 0) || 0;
   const totalReferralRevenue =
     safeReferrals.reduce(
       (sum, r) => sum + (r.transaction_value ?? 0),
@@ -1342,6 +1351,29 @@ export default async function Dashboard({
   const windowedCompletedWithValue = windowedReferrals.filter(
     (r) => r.status === "completed" && r.transaction_value !== null,
   );
+  const previousWindowedCompletedWithValue = previousWindowedReferrals.filter(
+    (r) => r.status === "completed" && r.transaction_value !== null,
+  );
+
+  const revenueShareRate =
+    business.reward_type === "revenue_share"
+      ? Math.max(0, (business.reward_amount ?? 0) / 100)
+      : 0;
+
+  const windowedRewardsIssued =
+    business.reward_type === "revenue_share"
+      ? windowedCompletedWithValue.reduce(
+          (sum, r) => sum + (r.transaction_value ?? 0) * revenueShareRate,
+          0,
+        )
+      : creditTotals?.totalIssued || 0;
+  const previousWindowedRewardsIssued =
+    business.reward_type === "revenue_share"
+      ? previousWindowedCompletedWithValue.reduce(
+          (sum, r) => sum + (r.transaction_value ?? 0) * revenueShareRate,
+          0,
+        )
+      : creditTotals?.totalIssued || 0;
   const averageTransactionValue =
     completedWithValue.length > 0
       ? completedWithValue.reduce(
@@ -1392,9 +1424,10 @@ export default async function Dashboard({
   );
 
   // Calculate total program cost including rewards
-  const totalProgramCost = totalEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
-  const windowedTotalProgramCost = windowedEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
-  const previousWindowedTotalProgramCost = previousWindowedEstimatedCampaignSpend + (creditTotals?.totalIssued || 0);
+  const totalProgramCost = totalEstimatedCampaignSpend + windowedRewardsIssued;
+  const windowedTotalProgramCost = windowedEstimatedCampaignSpend + windowedRewardsIssued;
+  const previousWindowedTotalProgramCost =
+    previousWindowedEstimatedCampaignSpend + previousWindowedRewardsIssued;
 
   // True ROI = Revenue / (Campaign Spend + Credits Issued)
   const roiMultiple =
@@ -1887,35 +1920,40 @@ export default async function Dashboard({
 	          ? "in_progress"
 	          : "incomplete",
 	      content: (
-	        <Step2Content
-	          siteUrl={businessWebsiteUrl}
-	          businessId={business.id}
-	          businessName={business.name || "Your Business"}
-	          discountCaptureSecret={business.discount_capture_secret ?? null}
-	          offerText={business.offer_text}
-	          newUserRewardText={business.new_user_reward_text}
-	          clientRewardText={business.client_reward_text}
-	          rewardType={business.reward_type}
-	          rewardAmount={business.reward_amount}
-	          rewardTerms={business.reward_terms}
-	          logoUrl={business.logo_url ?? null}
-	          brandHighlightColor={business.brand_highlight_color ?? null}
-	          brandTone={business.brand_tone ?? null}
-	          onboardingMetadata={business.onboarding_metadata ?? null}
-	          signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
-	          signOnBonusAmount={business.sign_on_bonus_amount}
-	          signOnBonusType={business.sign_on_bonus_type}
-	          signOnBonusDescription={business.sign_on_bonus_description}
-	          uploadLogo={uploadLogo}
-	          uploadRewardTerms={uploadRewardTerms}
-	          safeCustomers={safeCustomers}
-	          currentAdmin={currentAdmin}
-	          linkedInInfluencerCustomers={linkedInInfluencerCustomers}
-	          regularCustomers={regularCustomers}
-	          updateBusinessOnboarding={updateBusinessOnboarding}
-	          updateSettings={updateSettings}
-	          quickAddCustomer={quickAddCustomer}
-	        />
+	        <DashboardSectionBoundary
+	          title="Partners tab unavailable"
+	          message="We ran into an issue while loading your partner list. Refresh the page or try again in a moment."
+	        >
+	          <Step2Content
+	            siteUrl={businessWebsiteUrl}
+	            businessId={business.id}
+	            businessName={business.name || "Your Business"}
+	            discountCaptureSecret={business.discount_capture_secret ?? null}
+	            offerText={business.offer_text}
+	            newUserRewardText={business.new_user_reward_text}
+	            clientRewardText={business.client_reward_text}
+	            rewardType={business.reward_type}
+	            rewardAmount={business.reward_amount}
+	            rewardTerms={business.reward_terms}
+	            logoUrl={business.logo_url ?? null}
+	            brandHighlightColor={business.brand_highlight_color ?? null}
+	            brandTone={business.brand_tone ?? null}
+	            onboardingMetadata={business.onboarding_metadata ?? null}
+	            signOnBonusEnabled={business.sign_on_bonus_enabled ?? false}
+	            signOnBonusAmount={business.sign_on_bonus_amount}
+	            signOnBonusType={business.sign_on_bonus_type}
+	            signOnBonusDescription={business.sign_on_bonus_description}
+	            uploadLogo={uploadLogo}
+	            uploadRewardTerms={uploadRewardTerms}
+	            safeCustomers={safeCustomers}
+	            currentAdmin={currentAdmin}
+	            linkedInInfluencerCustomers={linkedInInfluencerCustomers}
+	            regularCustomers={regularCustomers}
+	            updateBusinessOnboarding={updateBusinessOnboarding}
+	            updateSettings={updateSettings}
+	            quickAddCustomer={quickAddCustomer}
+	          />
+	        </DashboardSectionBoundary>
 	      ),
 	      helpContent: <Step2Education />,
 	      helpText: "Upload a CSV or add customers one-by-one. Each gets a unique referral link automatically.",
@@ -2085,6 +2123,10 @@ export default async function Dashboard({
                   )}
                 </div>
 
+                <div className="mb-6">
+                  <MeasureRoiPartnerBreakdownPanel windowDays={selectedWindow} />
+                </div>
+
                 {safeReferrals.length === 0 ? (
                   <div className="py-12 text-center">
                     <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100">
@@ -2152,7 +2194,7 @@ export default async function Dashboard({
                       </div>
                     </div>
                   </div>
-                  <div data-manual-referral-form>
+                  <div id="manual-referral-form" data-manual-referral-form>
                     <ManualReferralForm
                       ambassadors={safeCustomers.map((c) => ({
                         id: c.id,
@@ -2596,10 +2638,12 @@ export default async function Dashboard({
                     <p className="text-3xl font-black text-slate-900">
                       ${averageTransactionValue > 0 ? Math.round(averageTransactionValue) : 0}
                     </p>
-                    <p className="text-sm text-slate-600 mt-1">
-                      Credits issued: ${totalRewards}
-                    </p>
-                  </div>
+	                  <p className="text-sm text-slate-600 mt-1">
+	                      {business.reward_type === "revenue_share"
+	                        ? `Rewards issued (est.): $${Math.round(windowedRewardsIssued)}`
+	                        : `Credits outstanding: $${totalCreditsOutstanding}`}
+	                    </p>
+	                  </div>
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
@@ -2665,144 +2709,219 @@ export default async function Dashboard({
                   <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
                     <Coins className="h-6 w-6 text-white" />
                   </div>
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                      Partner Rewards
-                    </h2>
-                    <p className="text-sm text-slate-600">
-                      Track credits issued, program costs, and reward performance
-                    </p>
-                  </div>
-                </div>
+	                  <div>
+	                    <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+	                      Partner Rewards
+	                    </h2>
+	                    <p className="text-sm text-slate-600">
+	                      Track rewards issued, program costs, and reward performance
+	                    </p>
+	                  </div>
+	                </div>
 
-                {/* Summary Cards */}
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                  {/* Total Credits Issued */}
-                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center">
-                        <DollarSign className="h-4 w-4 text-white" />
-                      </div>
-                      <h3 className="font-bold text-slate-900">Credits Issued</h3>
-                    </div>
-                    <p className="text-3xl font-black text-emerald-700">
-                      ${Math.round(creditTotals?.totalIssued || 0)}
-                    </p>
-                    <p className="text-sm text-slate-600 mt-1">
-                      From {windowedCompletedReferrals} completed referrals
-                    </p>
-                  </div>
+	                {/* Summary Cards */}
+	                {business.reward_type === "revenue_share" ? (
+	                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-slate-900 flex items-center justify-center">
+	                          <Percent className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Revenue Share Rate</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-slate-900">
+	                        {(revenueShareRate * 100).toFixed(0)}%
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">Applies to completed referral revenue</p>
+	                    </div>
 
-                  {/* Outstanding Credits */}
-                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-amber-50 to-white p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
-                        <Wallet className="h-4 w-4 text-white" />
-                      </div>
-                      <h3 className="font-bold text-slate-900">Outstanding</h3>
-                    </div>
-                    <p className="text-3xl font-black text-amber-700">
-                      ${Math.round(creditTotals?.outstandingBalance || 0)}
-                    </p>
-                    <p className="text-sm text-slate-600 mt-1">
-                      Credit liability
-                    </p>
-                  </div>
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center">
+	                          <DollarSign className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Rewards Issued</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-emerald-700">
+	                        ${Math.round(windowedRewardsIssued)}
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">
+	                        From {windowedCompletedWithValue.length} completed referrals with value
+	                      </p>
+	                    </div>
 
-                  {/* Credits Spent */}
-                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="h-8 w-8 rounded-lg bg-slate-600 flex items-center justify-center">
-                        <CreditCard className="h-4 w-4 text-white" />
-                      </div>
-                      <h3 className="font-bold text-slate-900">Credits Spent</h3>
-                    </div>
-                    <p className="text-3xl font-black text-slate-700">
-                      ${Math.round(creditTotals?.totalSpent || 0)}
-                    </p>
-                    <p className="text-sm text-slate-600 mt-1">
-                      Redeemed by ambassadors
-                    </p>
-                  </div>
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
+	                          <Award className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Avg per Conversion</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-blue-700">
+	                        ${windowedCompletedReferrals > 0 ? (windowedRewardsIssued / windowedCompletedReferrals).toFixed(2) : "0.00"}
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">Estimated payout per completed referral</p>
+	                    </div>
 
-                  {/* Avg Reward per Conversion */}
-                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                        <Award className="h-4 w-4 text-white" />
-                      </div>
-                      <h3 className="font-bold text-slate-900">Avg per Conversion</h3>
-                    </div>
-                    <p className="text-3xl font-black text-blue-700">
-                      ${windowedCompletedReferrals > 0 ? ((creditTotals?.totalIssued || 0) / windowedCompletedReferrals).toFixed(2) : "0.00"}
-                    </p>
-                    <p className="text-sm text-slate-600 mt-1">
-                      Based on reward settings
-                    </p>
-                  </div>
-                </div>
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-purple-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-purple-600 flex items-center justify-center">
+	                          <TrendingUp className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Attributed Revenue</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-purple-700">
+	                        ${Math.round(windowedReferralRevenue)}
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">Revenue captured in the selected window</p>
+	                    </div>
+	                  </div>
+	                ) : (
+	                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+	                    {/* Total Credits Issued */}
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center">
+	                          <DollarSign className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Credits Issued</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-emerald-700">
+	                        ${Math.round(creditTotals?.totalIssued || 0)}
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">
+	                        From {windowedCompletedReferrals} completed referrals
+	                      </p>
+	                    </div>
 
-                {/* Credit Ledger Timeline */}
-                <div className="mt-8">
-                  <h3 className="text-lg font-bold text-slate-900 mb-4">Credit History</h3>
-                  <div className="space-y-3">
-                    {creditLedgerEntries.length === 0 ? (
-                      <div className="text-center py-8 text-slate-500">
-                        <Coins className="h-12 w-12 mx-auto mb-3 text-slate-300" />
-                        <p>No credit transactions yet</p>
-                        <p className="text-sm mt-1">Credits will appear here when rewards are issued</p>
-                      </div>
-                    ) : (
-                      creditLedgerEntries.map((entry) => (
-                        <div key={entry.id} className="flex items-start gap-4 p-4 rounded-lg border border-slate-200 bg-white hover:bg-slate-50">
-                          <div className={`h-10 w-10 rounded-lg flex items-center justify-center ${
-                            entry.entry_type === "issued" ? "bg-emerald-100" :
-                            entry.entry_type === "spent" ? "bg-red-100" :
-                            entry.entry_type === "adjustment" ? "bg-amber-100" :
-                            "bg-slate-100"
-                          }`}>
-                            {entry.entry_type === "issued" && <Award className="h-5 w-5 text-emerald-700" />}
-                            {entry.entry_type === "spent" && <CreditCard className="h-5 w-5 text-red-700" />}
-                            {entry.entry_type === "adjustment" && <Settings className="h-5 w-5 text-amber-700" />}
-                            {entry.entry_type === "expired" && <AlertTriangle className="h-5 w-5 text-slate-700" />}
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between">
-                              <p className="font-semibold text-slate-900">
-                                {entry.customer?.name || "Ambassador"}
-                                {entry.customer?.referral_code && (
-                                  <span className="text-sm text-slate-500 ml-2">({entry.customer.referral_code})</span>
-                                )}
-                              </p>
-                              <p className={`font-bold ${
-                                entry.entry_type === "issued" ? "text-emerald-700" :
-                                entry.entry_type === "spent" ? "text-red-700" :
-                                "text-amber-700"
-                              }`}>
-                                {entry.entry_type === "spent" ? "-" : "+"}${Math.abs(entry.delta || 0)}
-                              </p>
-                            </div>
-                            <p className="text-sm text-slate-600 mt-1">
-                              {entry.entry_type === "issued" && "Credit issued"}
-                              {entry.entry_type === "spent" && "Credit redeemed"}
-                              {entry.entry_type === "adjustment" && "Manual adjustment"}
-                              {entry.entry_type === "expired" && "Credit expired"}
-                              {entry.referral?.referred_name && ` for ${entry.referral.referred_name}`}
-                            </p>
-                            {entry.note && (
-                              <p className="text-sm text-slate-500 mt-1 italic">{entry.note}</p>
-                            )}
-                            <p className="text-xs text-slate-400 mt-1">
-                              {new Date(entry.created_at!).toLocaleString()}
-                            </p>
-                          </div>
-                        </div>
-                      ))
-                    )}
-                  </div>
-                </div>
-              </div>
-            </Card>
+	                    {/* Outstanding Credits */}
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-amber-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-amber-600 flex items-center justify-center">
+	                          <Wallet className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Outstanding</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-amber-700">
+	                        ${Math.round(creditTotals?.outstandingBalance || 0)}
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">
+	                        Credit liability
+	                      </p>
+	                    </div>
+
+	                    {/* Credits Spent */}
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-slate-600 flex items-center justify-center">
+	                          <CreditCard className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Credits Spent</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-slate-700">
+	                        ${Math.round(creditTotals?.totalSpent || 0)}
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">
+	                        Redeemed by ambassadors
+	                      </p>
+	                    </div>
+
+	                    {/* Avg Reward per Conversion */}
+	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
+	                      <div className="flex items-center gap-3 mb-3">
+	                        <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
+	                          <Award className="h-4 w-4 text-white" />
+	                        </div>
+	                        <h3 className="font-bold text-slate-900">Avg per Conversion</h3>
+	                      </div>
+	                      <p className="text-3xl font-black text-blue-700">
+	                        ${windowedCompletedReferrals > 0 ? ((creditTotals?.totalIssued || 0) / windowedCompletedReferrals).toFixed(2) : "0.00"}
+	                      </p>
+	                      <p className="text-sm text-slate-600 mt-1">
+	                        Based on reward settings
+	                      </p>
+	                    </div>
+	                  </div>
+	                )}
+
+	                {/* Credit Ledger Timeline */}
+	                {business.reward_type !== "revenue_share" && (
+	                  <div className="mt-8">
+	                    <h3 className="text-lg font-bold text-slate-900 mb-4">Credit History</h3>
+	                    <div className="space-y-3">
+	                      {creditLedgerEntries.length === 0 ? (
+	                        <div className="text-center py-8 text-slate-500">
+	                          <Coins className="h-12 w-12 mx-auto mb-3 text-slate-300" />
+	                          <p>No credit transactions yet</p>
+	                          <p className="text-sm mt-1">Credits will appear here when rewards are issued</p>
+	                        </div>
+	                      ) : (
+	                        creditLedgerEntries.map((entry) => (
+	                          <div
+	                            key={entry.id}
+	                            className="flex items-start gap-4 p-4 rounded-lg border border-slate-200 bg-white hover:bg-slate-50"
+	                          >
+	                            <div
+	                              className={`h-10 w-10 rounded-lg flex items-center justify-center ${
+	                                entry.entry_type === "issued"
+	                                  ? "bg-emerald-100"
+	                                  : entry.entry_type === "spent"
+	                                    ? "bg-red-100"
+	                                    : entry.entry_type === "adjustment"
+	                                      ? "bg-amber-100"
+	                                      : "bg-slate-100"
+	                              }`}
+	                            >
+	                              {entry.entry_type === "issued" && <Award className="h-5 w-5 text-emerald-700" />}
+	                              {entry.entry_type === "spent" && <CreditCard className="h-5 w-5 text-red-700" />}
+	                              {entry.entry_type === "adjustment" && <Settings className="h-5 w-5 text-amber-700" />}
+	                              {entry.entry_type === "expired" && <AlertTriangle className="h-5 w-5 text-slate-700" />}
+	                            </div>
+	                            <div className="flex-1">
+	                              <div className="flex items-center justify-between">
+	                                <p className="font-semibold text-slate-900">
+	                                  {entry.customer?.name || "Ambassador"}
+	                                  {entry.customer?.referral_code && (
+	                                    <span className="text-sm text-slate-500 ml-2">
+	                                      ({entry.customer.referral_code})
+	                                    </span>
+	                                  )}
+	                                </p>
+	                                <p
+	                                  className={`font-bold ${
+	                                    entry.entry_type === "issued"
+	                                      ? "text-emerald-700"
+	                                      : entry.entry_type === "spent"
+	                                        ? "text-red-700"
+	                                        : "text-amber-700"
+	                                  }`}
+	                                >
+	                                  {entry.entry_type === "spent" ? "-" : "+"}${Math.abs(entry.delta || 0)}
+	                                </p>
+	                              </div>
+	                              <p className="text-sm text-slate-600 mt-1">
+	                                {entry.entry_type === "issued" && "Credit issued"}
+	                                {entry.entry_type === "spent" && "Credit redeemed"}
+	                                {entry.entry_type === "adjustment" && "Manual adjustment"}
+	                                {entry.entry_type === "expired" && "Credit expired"}
+	                                {entry.referral?.referred_name &&
+	                                  ` for ${entry.referral.referred_name}`}
+	                              </p>
+	                              {entry.note && (
+	                                <p className="text-sm text-slate-500 mt-1 italic">{entry.note}</p>
+	                              )}
+	                              <p className="text-xs text-slate-400 mt-1">
+	                                {new Date(entry.created_at!).toLocaleString()}
+	                              </p>
+	                            </div>
+	                          </div>
+	                        ))
+	                      )}
+	                    </div>
+		                  </div>
+		                )}
+		              </div>
+	            </Card>
           </TabsContent>
 	        </Tabs>
 	        </div>
@@ -2816,8 +2935,9 @@ export default async function Dashboard({
   const sectionItems = [
     { id: "overview", label: "Overview" },
     { id: "setup-integration", label: "Business Setup & Integrations" },
-    { id: "testing-qa", label: "Testing & QA (Step 1D)" },
+    { id: "testing-qa", label: "Testing & QA" },
     { id: "clients-ambassadors", label: "Partners" },
+    { id: "external-partners", label: "External Partners" },
     { id: "crm-integration", label: "Launch Campaigns" },
     { id: "view-campaigns", label: "Track Campaigns" },
     { id: "performance", label: "Measure ROI" },
@@ -2825,6 +2945,10 @@ export default async function Dashboard({
   const stepMap = new Map(guidedSteps.map((step) => [step.id, step]));
   const nextStep = autoExpandStep && stepMap.get(autoExpandStep);
   const showAdminLinks = Boolean(currentAdmin);
+  // External Partners is a paid add-on, but billing is handled upstream.
+  // Keep the tab interactive by default; allow an env killswitch, but never block internal admins.
+  const externalPartnersEnabled =
+    process.env.NEXT_PUBLIC_EXTERNAL_PARTNERS_ENABLED !== "0" || Boolean(currentAdmin);
 
   const qaReadinessSteps = [
     {
@@ -2871,9 +2995,9 @@ export default async function Dashboard({
       title: "Step 5 · Measure ROI",
       detail: safeReferrals.length > 0 ? "Attribution + ROI active" : "Run QA to verify attribution",
       status: safeReferrals.length > 0 ? "Live" : "Needs data",
-      actionLabel: "Open Measure ROI",
-      actionSection: "performance",
-      actionScroll: "measure-roi-interaction-hub",
+      actionLabel: null,
+      actionSection: null,
+      actionScroll: null,
       tone: safeReferrals.length > 0 ? "emerald" : "amber",
     },
   ];
@@ -2950,17 +3074,24 @@ export default async function Dashboard({
 
         {/* Quick Insights */}
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {totalRewards > 0 && (
-            <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
-              <div className="rounded-lg bg-purple-100 p-2">
-                <Award className="h-4 w-4 text-purple-600" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-slate-900">${totalRewards} in rewards</p>
-                <p className="text-xs text-slate-500">Issued to ambassadors</p>
-              </div>
-            </div>
-          )}
+	          {(business.reward_type === "revenue_share" ? windowedRewardsIssued : totalCreditsOutstanding) > 0 && (
+	            <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
+	              <div className="rounded-lg bg-purple-100 p-2">
+	                <Award className="h-4 w-4 text-purple-600" />
+	              </div>
+	              <div>
+	                <p className="text-sm font-semibold text-slate-900">
+	                  ${Math.round(business.reward_type === "revenue_share" ? windowedRewardsIssued : totalCreditsOutstanding)}{" "}
+	                  {business.reward_type === "revenue_share" ? "in rewards (est.)" : "in credits"}
+	                </p>
+	                <p className="text-xs text-slate-500">
+	                  {business.reward_type === "revenue_share"
+	                    ? `Estimated from revenue share in last ${selectedWindow} days`
+	                    : "Outstanding balance issued to ambassadors"}
+	                </p>
+	              </div>
+	            </div>
+	          )}
           {manualReferralCount > 0 && (
             <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
               <div className="rounded-lg bg-blue-100 p-2">
@@ -3011,18 +3142,11 @@ export default async function Dashboard({
               Review integrations
             </SectionLink>
             <SectionLink
-              section="setup-integration"
+              section="testing-qa"
               scrollTo="integration-qa-panel"
               className="rounded-full border border-emerald-200 bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700"
             >
               Run Integration QA
-            </SectionLink>
-            <SectionLink
-              section="performance"
-              scrollTo="measure-roi-interaction-hub"
-              className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
-            >
-              Open Measure ROI
             </SectionLink>
           </div>
         </div>
@@ -3063,16 +3187,18 @@ export default async function Dashboard({
                   {step.status}
                 </span>
               </div>
-              <div className="mt-3">
-                <SectionLink
-                  section={step.actionSection}
-                  scrollTo={step.actionScroll}
-                  className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
-                >
-                  {step.actionLabel}
-                  <ArrowRight className="h-3 w-3" />
-                </SectionLink>
-              </div>
+              {step.actionLabel && step.actionSection && (
+                <div className="mt-3">
+                  <SectionLink
+                    section={step.actionSection}
+                    scrollTo={step.actionScroll ?? undefined}
+                    className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+                  >
+                    {step.actionLabel}
+                    <ArrowRight className="h-3 w-3" />
+                  </SectionLink>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -3109,14 +3235,33 @@ export default async function Dashboard({
             </div>
           )}
 
-          <DashboardSectionSwitcher
-            sectionItems={sectionItems}
-            steps={guidedSteps}
-            overviewContent={overviewContent}
-            defaultSection={section}
-            selectedWindow={selectedWindow}
-            showAdminLinks={showAdminLinks}
-          />
+	            <DashboardSectionSwitcher
+	            sectionItems={sectionItems}
+	            steps={guidedSteps}
+	            extraSections={[
+	              {
+	                id: "external-partners",
+	                title: "External Partners",
+	                hideHeader: true,
+	                content: (
+	                  <DashboardSectionBoundary
+	                    title="External Partners tab unavailable"
+	                    message="We ran into an issue loading External Partners. Refresh the page or try again in a moment."
+	                  >
+	                    <ExternalPartnersTab
+	                      enabled={externalPartnersEnabled}
+	                      businessName={business.name || "Your Business"}
+	                      dashboardBaseUrl={businessWebsiteUrl || ""}
+	                    />
+	                  </DashboardSectionBoundary>
+	                ),
+	              },
+	            ]}
+	            overviewContent={overviewContent}
+	            defaultSection={section}
+	            selectedWindow={selectedWindow}
+	            showAdminLinks={showAdminLinks}
+	          />
         </div>
 
         <FloatingCampaignTrigger />
