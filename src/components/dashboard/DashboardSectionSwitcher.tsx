@@ -21,6 +21,13 @@ type SectionSwitcherProps = {
   sectionItems: SectionItem[];
   steps: StepItem[];
   overviewContent: React.ReactNode;
+  extraSections?: Array<{
+    id: string;
+    title: string;
+    description?: string;
+    content: React.ReactNode;
+    hideHeader?: boolean;
+  }>;
   defaultSection: string;
   selectedWindow: number;
   showAdminLinks: boolean;
@@ -68,6 +75,7 @@ export function DashboardSectionSwitcher({
   sectionItems,
   steps,
   overviewContent,
+  extraSections = [],
   defaultSection,
   selectedWindow,
   showAdminLinks,
@@ -77,6 +85,10 @@ export function DashboardSectionSwitcher({
   const stepMap = useMemo(
     () => new Map(steps.map((step) => [step.id, step])),
     [steps],
+  );
+  const extraSectionMap = useMemo(
+    () => new Map(extraSections.map((section) => [section.id, section])),
+    [extraSections],
   );
 
   const updateUrl = useCallback(
@@ -145,6 +157,7 @@ export function DashboardSectionSwitcher({
   }, [setSection]);
 
   const activeStep = stepMap.get(activeSection);
+  const activeExtra = extraSectionMap.get(activeSection);
 
   return (
     <SectionNavContext.Provider value={{ setSection, selectedWindow }}>
@@ -198,6 +211,23 @@ export function DashboardSectionSwitcher({
         <section className="space-y-6">
           {activeSection === "overview" && overviewContent}
 
+          {activeSection !== "overview" && activeExtra && (
+            <div className="space-y-6">
+              {!activeExtra.hideHeader && (
+                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    Dashboard
+                  </p>
+                  <h2 className="mt-2 text-2xl font-black text-slate-900">{activeExtra.title}</h2>
+                  {activeExtra.description && (
+                    <p className="mt-2 text-sm text-slate-600">{activeExtra.description}</p>
+                  )}
+                </div>
+              )}
+              {activeExtra.content}
+            </div>
+          )}
+
           {activeSection !== "overview" && activeStep && (
             <div className="space-y-6">
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -211,7 +241,7 @@ export function DashboardSectionSwitcher({
             </div>
           )}
 
-          {activeSection !== "overview" && !activeStep && (
+          {activeSection !== "overview" && !activeStep && !activeExtra && (
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <p className="text-sm text-slate-600">Select a section from the sidebar to begin.</p>
             </div>
