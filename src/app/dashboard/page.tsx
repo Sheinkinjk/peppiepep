@@ -1298,6 +1298,9 @@ export default async function Dashboard({
 
   const safePartnerReferrals = (partnerReferrals ?? []) as Database["public"]["Tables"]["referrals"]["Row"][];
 
+  // revenue_share is valid per DB migration but not in generated types - create typed helper
+  const isRevenueShare = (business.reward_type as string) === "revenue_share";
+
   const pendingReferrals =
     safeReferrals.filter((r) => r.status === "pending").length || 0;
   const completedReferrals =
@@ -1357,19 +1360,19 @@ export default async function Dashboard({
   );
 
   const revenueShareRate =
-    business.reward_type === "revenue_share"
+    isRevenueShare
       ? Math.max(0, (business.reward_amount ?? 0) / 100)
       : 0;
 
   const windowedRewardsIssued =
-    business.reward_type === "revenue_share"
+    isRevenueShare
       ? windowedCompletedWithValue.reduce(
           (sum, r) => sum + (r.transaction_value ?? 0) * revenueShareRate,
           0,
         )
       : creditTotals?.totalIssued || 0;
   const previousWindowedRewardsIssued =
-    business.reward_type === "revenue_share"
+    isRevenueShare
       ? previousWindowedCompletedWithValue.reduce(
           (sum, r) => sum + (r.transaction_value ?? 0) * revenueShareRate,
           0,
@@ -2640,7 +2643,7 @@ export default async function Dashboard({
                       ${averageTransactionValue > 0 ? Math.round(averageTransactionValue) : 0}
                     </p>
 	                  <p className="text-sm text-slate-600 mt-1">
-	                      {business.reward_type === "revenue_share"
+	                      {isRevenueShare
 	                        ? `Rewards issued (est.): $${Math.round(windowedRewardsIssued)}`
 	                        : `Credits outstanding: $${totalCreditsOutstanding}`}
 	                    </p>
@@ -2721,7 +2724,7 @@ export default async function Dashboard({
 	                </div>
 
 	                {/* Summary Cards */}
-	                {business.reward_type === "revenue_share" ? (
+	                {isRevenueShare ? (
 	                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 	                    <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm">
 	                      <div className="flex items-center gap-3 mb-3">
@@ -2846,7 +2849,7 @@ export default async function Dashboard({
 	                )}
 
 	                {/* Credit Ledger Timeline */}
-	                {business.reward_type !== "revenue_share" && (
+	                {!isRevenueShare && (
 	                  <div className="mt-8">
 	                    <h3 className="text-lg font-bold text-slate-900 mb-4">Credit History</h3>
 	                    <div className="space-y-3">
@@ -3075,18 +3078,18 @@ export default async function Dashboard({
 
         {/* Quick Insights */}
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-	          {(business.reward_type === "revenue_share" ? windowedRewardsIssued : totalCreditsOutstanding) > 0 && (
+	          {(isRevenueShare ? windowedRewardsIssued : totalCreditsOutstanding) > 0 && (
 	            <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
 	              <div className="rounded-lg bg-purple-100 p-2">
 	                <Award className="h-4 w-4 text-purple-600" />
 	              </div>
 	              <div>
 	                <p className="text-sm font-semibold text-slate-900">
-	                  ${Math.round(business.reward_type === "revenue_share" ? windowedRewardsIssued : totalCreditsOutstanding)}{" "}
-	                  {business.reward_type === "revenue_share" ? "in rewards (est.)" : "in credits"}
+	                  ${Math.round(isRevenueShare ? windowedRewardsIssued : totalCreditsOutstanding)}{" "}
+	                  {isRevenueShare ? "in rewards (est.)" : "in credits"}
 	                </p>
 	                <p className="text-xs text-slate-500">
-	                  {business.reward_type === "revenue_share"
+	                  {isRevenueShare
 	                    ? `Estimated from revenue share in last ${selectedWindow} days`
 	                    : "Outstanding balance issued to ambassadors"}
 	                </p>
