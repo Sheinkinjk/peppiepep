@@ -1,251 +1,205 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-
-type AccentKey = "tide" | "gold" | "slate" | "forest" | "sapphire";
-
-const accentStyles: Record<AccentKey, {
-  page: string;
-  gradientText: string;
-  badge: string;
-  primaryButton: string;
-  card: string;
-  cardBorder: string;
-  glow: string;
-  highlight: string;
-}> = {
-  tide: {
-    page: "bg-gradient-to-b from-[#f4feff] via-white to-[#ebfbff]",
-    gradientText: "from-teal-600 via-cyan-500 to-emerald-500",
-    badge: "bg-teal-100 text-teal-900",
-    primaryButton: "bg-teal-700 hover:bg-teal-800 text-white",
-    card: "bg-white/85 backdrop-blur",
-    cardBorder: "border-teal-200/60",
-    glow: "bg-teal-400/20",
-    highlight: "text-teal-700",
-  },
-  gold: {
-    page: "bg-gradient-to-b from-[#fff8ea] via-white to-[#fef6df]",
-    gradientText: "from-amber-600 via-orange-500 to-rose-500",
-    badge: "bg-amber-100 text-amber-900",
-    primaryButton: "bg-amber-600 hover:bg-amber-700 text-white",
-    card: "bg-white/85 backdrop-blur",
-    cardBorder: "border-amber-200/60",
-    glow: "bg-amber-400/20",
-    highlight: "text-amber-700",
-  },
-  slate: {
-    page: "bg-gradient-to-b from-[#f6f7fb] via-white to-[#eef1f7]",
-    gradientText: "from-slate-800 via-slate-600 to-slate-500",
-    badge: "bg-slate-200 text-slate-900",
-    primaryButton: "bg-slate-900 hover:bg-slate-950 text-white",
-    card: "bg-white/85 backdrop-blur",
-    cardBorder: "border-slate-200/70",
-    glow: "bg-slate-400/15",
-    highlight: "text-slate-800",
-  },
-  forest: {
-    page: "bg-gradient-to-b from-[#f4fff6] via-white to-[#e9f8ef]",
-    gradientText: "from-emerald-700 via-green-600 to-lime-500",
-    badge: "bg-emerald-100 text-emerald-900",
-    primaryButton: "bg-emerald-700 hover:bg-emerald-800 text-white",
-    card: "bg-white/85 backdrop-blur",
-    cardBorder: "border-emerald-200/60",
-    glow: "bg-emerald-400/20",
-    highlight: "text-emerald-700",
-  },
-  sapphire: {
-    page: "bg-gradient-to-b from-[#f3f7ff] via-white to-[#eaf1ff]",
-    gradientText: "from-blue-700 via-sky-600 to-cyan-500",
-    badge: "bg-blue-100 text-blue-900",
-    primaryButton: "bg-blue-700 hover:bg-blue-800 text-white",
-    card: "bg-white/85 backdrop-blur",
-    cardBorder: "border-blue-200/60",
-    glow: "bg-blue-400/20",
-    highlight: "text-blue-700",
-  },
-};
+import { ArrowRight, Users, Building2, Briefcase, Share2, CheckCircle2 } from "lucide-react";
 
 export interface ServiceLandingContent {
-  heroKicker: string;
+  industry: string;
   heroTitle: string;
-  heroHighlight: string;
-  heroSummary: string;
-  heroBullets: string[];
+  heroSubtitle: string;
   primaryCta: { label: string; href: string };
-  whyTitle: string;
-  whySummary: string;
-  whyPoints: string[];
-  outcomesTitle: string;
-  outcomes: string[];
-  process: { step: string; title: string; description: string }[];
-  deliverables: { title: string; items: string[] }[];
-  cta: { title: string; description: string; note: string };
+  industryBenefit: string;
+  ctaTitle: string;
+  ctaDescription: string;
 }
 
 interface ServiceLandingPageProps {
-  accent: AccentKey;
   content: ServiceLandingContent;
 }
 
-export default function ServiceLandingPage({ accent, content }: ServiceLandingPageProps) {
-  const styles = accentStyles[accent];
+const partnerSegments = [
+  {
+    icon: Users,
+    title: "LinkedIn Influencers",
+    description:
+      "Tap into industry thought leaders who reach your ideal prospects daily. They recommend, you close.",
+    metrics: "3-5x higher conversion than cold outreach",
+  },
+  {
+    icon: Building2,
+    title: "Agencies & Strategic Partners",
+    description:
+      "Build revenue-sharing relationships with agencies and complementary service providers.",
+    metrics: "40% lower customer acquisition cost",
+  },
+  {
+    icon: Briefcase,
+    title: "Consultants & Advisors",
+    description:
+      "Enable trusted advisors to recommend your services as part of their client relationships.",
+    metrics: "2x higher lifetime value",
+  },
+  {
+    icon: Share2,
+    title: "Existing Customers & Network",
+    description:
+      "Turn satisfied clients into your most powerful acquisition channel with seamless referral tracking.",
+    metrics: "65% faster sales cycle",
+  },
+];
 
+export default function ServiceLandingPage({ content }: ServiceLandingPageProps) {
   return (
-    <div className={`relative overflow-hidden ${styles.page}`}>
-      <div className={`absolute -top-32 right-0 h-80 w-80 rounded-full blur-3xl opacity-70 ${styles.glow} animate-float-slow`} />
-      <div className={`absolute bottom-10 left-0 h-96 w-96 rounded-full blur-3xl opacity-60 ${styles.glow} animate-float-slow`} style={{ animationDelay: "1.6s" }} />
+    <div className="relative min-h-screen overflow-hidden bg-slate-950">
+      {/* Ambient background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-teal-500/8 blur-[100px]" />
+      </div>
 
-      <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-14 sm:px-10 lg:px-14">
-        <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-6">
-            <span className={`inline-flex items-center gap-2 rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${styles.badge}`}>
-              {content.heroKicker}
-            </span>
-            <h1 className="text-balance text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              <span className="block">{content.heroTitle}</span>
-              <span className={`mt-2 block bg-gradient-to-r bg-clip-text text-transparent ${styles.gradientText}`}>
-                {content.heroHighlight}
+      <main className="relative">
+        {/* Hero Section - Ultra simplified */}
+        <section className="mx-auto max-w-5xl px-6 pb-20 pt-24 text-center sm:px-10 sm:pt-32 lg:pt-40">
+          <span className="inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-cyan-300">
+            {content.industry}
+          </span>
+
+          <h1 className="mt-8 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {content.heroTitle}
+          </h1>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-400 sm:text-xl">
+            {content.heroSubtitle}
+          </p>
+
+          <div className="mt-10">
+            <Link
+              href={content.primaryCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#0ABAB5] px-10 py-4 text-base font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-[#12c7c1] hover:shadow-xl hover:shadow-cyan-500/30"
+            >
+              {content.primaryCta.label}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+
+        {/* Referral Network Section */}
+        <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+              Would you like to build a{" "}
+              <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
+                Referral Network
               </span>
-            </h1>
-            <p className="text-lg text-slate-600 sm:text-xl">
-              {content.heroSummary}
+              ?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+              {content.industryBenefit}
             </p>
-            <div className="space-y-3">
-              {content.heroBullets.map((bullet) => (
-                <div key={bullet} className="flex items-start gap-3">
-                  <CheckCircle2 className={`mt-0.5 h-5 w-5 ${styles.highlight}`} />
-                  <span className="text-sm text-slate-700">{bullet}</span>
+          </div>
+
+          <div className="mt-16 grid gap-6 sm:grid-cols-2">
+            {partnerSegments.map((segment) => (
+              <div
+                key={segment.title}
+                className="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-8 transition hover:border-cyan-500/30 hover:bg-slate-900/80"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 text-cyan-400">
+                  <segment.icon className="h-6 w-6" />
                 </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-4">
+
+                <h3 className="mt-5 text-xl font-semibold text-white">
+                  {segment.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                  {segment.description}
+                </p>
+
+                <div className="mt-5 flex items-center gap-2 text-sm text-cyan-400">
+                  <CheckCircle2 className="h-4 w-4" />
+                  <span>{segment.metrics}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section className="mx-auto max-w-5xl px-6 py-20 sm:px-10">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+              How Refer Labs Works
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+              A streamlined process to launch your referral network
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                step: "01",
+                title: "Strategy Session",
+                description:
+                  "We map your ideal referral partners and design reward structures that motivate.",
+              },
+              {
+                step: "02",
+                title: "Network Launch",
+                description:
+                  "We build your referral infrastructure and onboard your first wave of partners.",
+              },
+              {
+                step: "03",
+                title: "Scale & Optimize",
+                description:
+                  "Track performance, expand your network, and maximize referral-driven revenue.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 text-lg font-semibold text-cyan-400">
+                  {item.step}
+                </div>
+                <h3 className="mt-5 text-lg font-semibold text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm text-slate-400">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="mx-auto max-w-4xl px-6 py-20 sm:px-10">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/30 p-10 text-center sm:p-14">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cyan-500/5 to-transparent" />
+
+            <h2 className="relative text-2xl font-semibold text-white sm:text-3xl">
+              {content.ctaTitle}
+            </h2>
+
+            <p className="relative mx-auto mt-4 max-w-lg text-slate-400">
+              {content.ctaDescription}
+            </p>
+
+            <div className="relative mt-8">
               <Link
                 href={content.primaryCta.href}
-                className={`inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold shadow-2xl transition hover:-translate-y-1 hover:shadow-2xl ${styles.primaryButton}`}
-                target={content.primaryCta.href.startsWith("http") ? "_blank" : undefined}
-                rel={content.primaryCta.href.startsWith("http") ? "noreferrer" : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0ABAB5] px-10 py-4 text-base font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-[#12c7c1] hover:shadow-xl hover:shadow-cyan-500/30"
               >
-                {content.primaryCta.label}
+                Schedule a Call
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-          </div>
 
-          <div className={`rounded-3xl border ${styles.cardBorder} ${styles.card} p-8 shadow-xl`}>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Referral flow</p>
-            <h2 className="mt-3 text-2xl font-semibold text-slate-900">A simple, premium journey.</h2>
-            <div className="mt-6 space-y-4">
-              {["Partner referral", "Qualified intake", "Revenue impact"].map((label) => (
-                <div key={label} className="flex items-center gap-3">
-                  <span className={`flex h-9 w-9 items-center justify-center rounded-full ${styles.badge} text-xs font-semibold`}>
-                    ✓
-                  </span>
-                  <span className="text-sm text-slate-700">{label}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 grid grid-cols-3 gap-3">
-              {["bg-white/70", "bg-white/60", "bg-white/50"].map((tone) => (
-                <div key={tone} className={`h-16 rounded-2xl border ${styles.cardBorder} ${tone}`} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-16">
-          <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Why referrals</p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-900">{content.whyTitle}</h2>
-          <p className="mt-3 text-sm text-slate-600">{content.whySummary}</p>
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
-            {content.whyPoints.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <CheckCircle2 className={`mt-0.5 h-4 w-4 ${styles.highlight}`} />
-                <span className="text-sm text-slate-700">{item}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-20">
-          <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Outcomes</p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-900">{content.outcomesTitle}</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {content.outcomes.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <CheckCircle2 className={`mt-1 h-4 w-4 ${styles.highlight}`} />
-                <p className="text-sm text-slate-700">{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-20">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Process</p>
-              <h2 className="text-3xl font-semibold text-slate-900">A simple engagement from intake to launch.</h2>
-            </div>
-            <p className="max-w-xl text-sm text-slate-600">
-              Clear timelines, clear ownership, and a lean delivery team.
+            <p className="relative mt-5 text-xs uppercase tracking-widest text-slate-500">
+              30-minute strategy session
             </p>
-          </div>
-          <div className="mt-8 space-y-6">
-            {content.process.map((step, index) => (
-              <div key={step.step} className="flex gap-4">
-                <div className={`flex h-10 w-10 items-center justify-center rounded-full ${styles.badge} text-sm font-semibold`}>
-                  {step.step}
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:items-start">
-          <div>
-            <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Deliverables</p>
-            <h2 className="text-3xl font-semibold text-slate-900">Clear outputs your team can activate fast.</h2>
-            <p className="mt-3 text-sm text-slate-600">
-              Each engagement includes the playbooks and assets your team needs to launch.
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            {content.deliverables.map((deliverable, index) => (
-              <div key={deliverable.title} className="space-y-3">
-                <h3 className="text-lg font-semibold text-slate-900">{deliverable.title}</h3>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  {deliverable.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <CheckCircle2 className={`mt-0.5 h-4 w-4 ${styles.highlight}`} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="schedule" className="mt-20">
-          <div className={`rounded-3xl border ${styles.cardBorder} ${styles.card} p-10 text-center shadow-2xl`}>
-            <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${styles.highlight}`}>Schedule a call</p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-900">{content.cta.title}</h2>
-            <p className="mt-4 text-sm text-slate-600">{content.cta.description}</p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link
-                href={content.primaryCta.href}
-                className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-lg transition hover:-translate-y-0.5 ${styles.primaryButton}`}
-                target={content.primaryCta.href.startsWith("http") ? "_blank" : undefined}
-                rel={content.primaryCta.href.startsWith("http") ? "noreferrer" : undefined}
-              >
-                {content.primaryCta.label}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <p className="mt-4 text-xs uppercase tracking-[0.2em] text-slate-500">{content.cta.note}</p>
           </div>
         </section>
       </main>

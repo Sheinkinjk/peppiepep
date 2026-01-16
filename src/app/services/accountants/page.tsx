@@ -6,73 +6,18 @@ export const metadata = generateSEOMetadata(seoConfig.accountantsService);
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const content = {
-  heroKicker: "Accountants & Tax Professionals",
-  heroTitle: "Build a referral engine",
-  heroHighlight: "that protects client trust.",
-  heroSummary:
-    "A referral program for accounting firms that keeps partners aligned and revenue attributed.",
-  heroBullets: [
-    "Intake by service line: tax, audit, advisory",
-    "Partner handoffs across CPAs, advisors, and attorneys",
-    "Revenue attribution tied to retained clients",
-  ],
+  industry: "Accountants & Tax Professionals",
+  heroTitle: "Turn Trusted Relationships Into a Referral Engine",
+  heroSubtitle:
+    "Build a network of financial advisors, attorneys, and industry partners who consistently refer clients to your firm.",
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
-  whyTitle: "Why accounting referrals get stuck in spreadsheets",
-  whySummary:
-    "Trusted referrals are high value, but informal tracking hides what converts.",
-  whyPoints: [
-    "Inconsistent intake across service lines.",
-    "Partners lack visibility after they refer.",
-    "Unclear attribution for retained revenue.",
-  ],
-  outcomesTitle: "What a premium accounting referral program delivers",
-  outcomes: [
-    "Service-line intake routed to the right team.",
-    "Partner updates that keep advisors informed.",
-    "Revenue attribution tied to retained clients.",
-  ],
-  process: [
-    {
-      step: "01",
-      title: "Partner strategy",
-      description: "Identify partner sources and define referral expectations.",
-    },
-    {
-      step: "02",
-      title: "Intake + routing",
-      description: "Configure referral intake flows and routing for teams.",
-    },
-    {
-      step: "03",
-      title: "Partner activation",
-      description: "Deliver onboarding assets and reporting for launch.",
-    },
-  ],
-  deliverables: [
-    {
-      title: "Operational playbooks",
-      items: [
-        "Referral intake forms by service line",
-        "Partner follow-up cadence",
-        "Partner communication templates",
-      ],
-    },
-    {
-      title: "Reporting suite",
-      items: [
-        "Referral revenue dashboard",
-        "Partner performance tracking",
-        "Service line conversion reporting",
-      ],
-    },
-  ],
-  cta: {
-    title: "Ready to scale accounting referrals with confidence?",
-    description: "Schedule a call to map your referral workflow.",
-    note: "30-minute consultative call",
-  },
+  industryBenefit:
+    "Accounting firms thrive on trust. We help you formalize referral relationships with partners who serve your ideal clients, tracking every referral from introduction to retained revenue.",
+  ctaTitle: "Ready to build your referral network?",
+  ctaDescription:
+    "Learn how Refer Labs can help you launch a referral program that drives consistent, high-value client acquisition.",
 };
 
 export default function AccountantsServicePage() {
-  return <ServiceLandingPage accent="gold" content={content} />;
+  return <ServiceLandingPage content={content} />;
 }
