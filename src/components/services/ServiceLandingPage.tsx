@@ -1,7 +1,19 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Users, Building2, Briefcase, Share2, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Users, Building2, Briefcase, Share2, CheckCircle2, ChevronDown, Mail } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 export interface ServiceLandingContent {
   industry: string;
@@ -48,6 +60,177 @@ const partnerSegments = [
   },
 ];
 
+const faqs = [
+  {
+    question: "What types of referral partners can I work with?",
+    answer:
+      "Refer Labs supports four main partner types: LinkedIn influencers who have audiences matching your ideal customer profile, agencies and strategic partners for revenue-sharing arrangements, consultants and advisors who serve your target market, and your existing customers and network. Each partner type has unique tracking, reward structures, and communication flows.",
+  },
+  {
+    question: "How does partner tracking and attribution work?",
+    answer:
+      "Every partner gets a unique referral link with full UTM tracking. We track the entire journey from click to conversion, including link visits, form submissions, booked meetings, and closed deals. You get complete visibility into which partners drive the most valuable leads, with real-time dashboards and exportable reports.",
+  },
+  {
+    question: "What reward models does Refer Labs support?",
+    answer:
+      "We support flexible reward structures including revenue share (percentage of deal value), fixed fee per qualified lead or booked demo, tiered bonuses based on volume or quality, and custom hybrid models. Rewards can be paid via bank transfer, PayPal, or gift cards, with automated payment processing available.",
+  },
+  {
+    question: "How long does it take to launch a referral program?",
+    answer:
+      "Most clients launch within 2-4 weeks. Our process includes a strategy session to map your ideal partners and reward structure, followed by platform setup and partner onboarding. We handle the technical infrastructure so you can focus on activating your network.",
+  },
+  {
+    question: "Can I integrate with my existing CRM and tools?",
+    answer:
+      "Yes. Refer Labs integrates with HubSpot, Salesforce, Pipedrive, and other popular CRMs. We also connect with Zapier for custom workflows, Slack for notifications, and various payment processors. API access is available for custom integrations.",
+  },
+  {
+    question: "What makes Refer Labs different from other referral platforms?",
+    answer:
+      "Refer Labs is built specifically for B2B services and professional firms. We focus on high-value, trust-based referrals rather than e-commerce or consumer programs. Our platform handles the complexity of multi-touch attribution, compliance requirements, and partner relationship management that B2B referrals demand.",
+  },
+];
+
+function ApplyDialog() {
+  const [open, setOpen] = useState(false);
+  const [company, setCompany] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [email, setEmail] = useState("");
+  const [goal, setGoal] = useState("Increase qualified leads");
+  const [partnerTypes, setPartnerTypes] = useState("LinkedIn influencers, consultants, strategic partners");
+  const [rewardModel, setRewardModel] = useState("Revenue share or fee per booked demo");
+  const [notes, setNotes] = useState("");
+
+  const mailtoHref = useMemo(() => {
+    const lines = [
+      "Referral Program Application",
+      "",
+      `Company: ${company || "—"}`,
+      `Contact: ${contactName || "—"}`,
+      `Email: ${email || "—"}`,
+      `Goals: ${goal || "—"}`,
+      `Ideal partners: ${partnerTypes || "—"}`,
+      `Reward model: ${rewardModel || "—"}`,
+      "",
+      `Notes: ${notes || "—"}`,
+    ];
+    const body = encodeURIComponent(lines.join("\n"));
+    const subject = encodeURIComponent(`Referral Program Application | ${company || "New application"}`);
+    return `mailto:jarred@referlabs.com.au?subject=${subject}&body=${body}`;
+  }, [company, contactName, email, goal, partnerTypes, rewardModel, notes]);
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="inline-flex items-center gap-2 rounded-full border-2 border-cyan-500/50 bg-transparent px-8 py-4 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:border-cyan-400 hover:bg-white/5"
+        >
+          Apply Now
+        </button>
+      </DialogTrigger>
+      <DialogContent className="max-w-xl border border-cyan-500/30 bg-slate-950 text-white">
+        <DialogHeader>
+          <DialogTitle>Apply for a Referral Program</DialogTitle>
+          <DialogDescription className="text-slate-300">
+            Share your objectives and partner preferences. Your details will be emailed directly to jarred@referlabs.com.au.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="space-y-3">
+          <Input
+            placeholder="Company"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+            className="border-slate-700 bg-slate-900/60 text-white"
+          />
+          <Input
+            placeholder="Your name"
+            value={contactName}
+            onChange={(e) => setContactName(e.target.value)}
+            className="border-slate-700 bg-slate-900/60 text-white"
+          />
+          <Input
+            type="email"
+            placeholder="Work email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="border-slate-700 bg-slate-900/60 text-white"
+          />
+          <Input
+            placeholder="Goals (e.g. more demos, revenue, exposure)"
+            value={goal}
+            onChange={(e) => setGoal(e.target.value)}
+            className="border-slate-700 bg-slate-900/60 text-white"
+          />
+          <Input
+            placeholder="Ideal partners (e.g. LinkedIn influencers, advisors)"
+            value={partnerTypes}
+            onChange={(e) => setPartnerTypes(e.target.value)}
+            className="border-slate-700 bg-slate-900/60 text-white"
+          />
+          <Input
+            placeholder="Reward model (e.g. revenue share, fee per demo)"
+            value={rewardModel}
+            onChange={(e) => setRewardModel(e.target.value)}
+            className="border-slate-700 bg-slate-900/60 text-white"
+          />
+          <Textarea
+            placeholder="Notes: audience, timelines, campaigns, compliance requirements"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            className="min-h-[120px] border-slate-700 bg-slate-900/60 text-white"
+          />
+          <div className="flex flex-wrap justify-end gap-2 pt-2">
+            <Button
+              type="button"
+              asChild
+              className="rounded-full bg-[#0ABAB5] text-slate-900 hover:bg-[#12c7c1]"
+            >
+              <a href={mailtoHref} onClick={() => setOpen(false)}>
+                Send to Refer Labs <Mail className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              className="text-slate-300 hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              Close
+            </Button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-slate-800">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between py-5 text-left"
+      >
+        <span className="text-base font-medium text-white">{question}</span>
+        <ChevronDown
+          className={`h-5 w-5 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`}
+        />
+      </button>
+      {isOpen && (
+        <div className="pb-5">
+          <p className="text-sm leading-relaxed text-slate-400">{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ServiceLandingPage({ content }: ServiceLandingPageProps) {
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950">
@@ -72,7 +255,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
             {content.heroSubtitle}
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href={content.primaryCta.href}
               target="_blank"
@@ -82,6 +265,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
               {content.primaryCta.label}
               <ArrowRight className="h-4 w-4" />
             </Link>
+            <ApplyDialog />
           </div>
         </section>
 
@@ -172,6 +356,24 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
           </div>
         </section>
 
+        {/* Common Questions Section */}
+        <section className="mx-auto max-w-3xl px-6 py-20 sm:px-10">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+              Common Questions
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+              Everything you need to know about building your referral network
+            </p>
+          </div>
+
+          <div className="mt-12">
+            {faqs.map((faq) => (
+              <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="mx-auto max-w-4xl px-6 py-20 sm:px-10">
           <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/30 p-10 text-center sm:p-14">
@@ -185,7 +387,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
               {content.ctaDescription}
             </p>
 
-            <div className="relative mt-8">
+            <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href={content.primaryCta.href}
                 target="_blank"
@@ -195,6 +397,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
                 Schedule a Call
                 <ArrowRight className="h-4 w-4" />
               </Link>
+              <ApplyDialog />
             </div>
 
             <p className="relative mt-5 text-xs uppercase tracking-widest text-slate-500">

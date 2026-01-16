@@ -9,7 +9,7 @@ const content = {
   industry: "Law Firms",
   heroTitle: "Scale Your Practice Through Strategic Referral Partners",
   heroSubtitle:
-    "Build a network of accountants, advisors, and industry partners who refer clients needing your legal expertise.",
+    "Activate a partner network of accountants, financial advisors, and industry professionals who refer clients needing corporate, litigation, or estate services.",
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   industryBenefit:
     "Legal referrals are high-trust and high-value. We help you build structured relationships with partners who serve your ideal clients, with full tracking from referral to matter close.",

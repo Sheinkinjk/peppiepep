@@ -9,7 +9,7 @@ const content = {
   industry: "Financial Advisors & Planners",
   heroTitle: "Grow Your Advisory Practice Through Referral Partners",
   heroSubtitle:
-    "Build a network of CPAs, attorneys, and industry influencers who send you pre-qualified prospects ready to invest.",
+    "Activate a partner network of CPAs, estate attorneys, and industry influencers who consistently send you pre-qualified, high-net-worth prospects.",
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   industryBenefit:
     "Financial advisors who build structured referral networks see dramatically higher AUM growth. We help you connect with the right partners and track every referral to revenue.",

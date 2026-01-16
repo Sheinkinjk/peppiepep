@@ -9,7 +9,7 @@ const content = {
   industry: "Insurance Brokers",
   heroTitle: "Grow Your Book Through Strategic Referral Partners",
   heroSubtitle:
-    "Build a network of financial advisors, accountants, and industry partners who refer clients needing coverage.",
+    "Activate a partner network that automatically delivers qualified inbound insurance clients—from commercial lines to personal coverage.",
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   industryBenefit:
     "Insurance is built on trust and relationships. We help you formalize referral partnerships that drive premium volume, tracking every referral from introduction to bound policy.",

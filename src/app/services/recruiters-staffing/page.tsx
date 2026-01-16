@@ -9,7 +9,7 @@ const content = {
   industry: "Recruiters & Staffing Firms",
   heroTitle: "Build a Referral Network That Delivers Candidates and Clients",
   heroSubtitle:
-    "Create partnerships with industry leaders, HR consultants, and satisfied clients who refer both candidates and hiring companies.",
+    "Activate a partner network of HR leaders, industry influencers, and satisfied clients who refer both top candidates and hiring companies to your firm.",
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   industryBenefit:
     "Recruiting success depends on reach. We help you build and track referral relationships across your network, attributing every placement back to its source.",

@@ -9,7 +9,7 @@ const content = {
   industry: "Accountants & Tax Professionals",
   heroTitle: "Turn Trusted Relationships Into a Referral Engine",
   heroSubtitle:
-    "Build a network of financial advisors, attorneys, and industry partners who consistently refer clients to your firm.",
+    "Activate a partner network of financial advisors, attorneys, and business consultants who refer clients needing tax, audit, and advisory services.",
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   industryBenefit:
     "Accounting firms thrive on trust. We help you formalize referral relationships with partners who serve your ideal clients, tracking every referral from introduction to retained revenue.",

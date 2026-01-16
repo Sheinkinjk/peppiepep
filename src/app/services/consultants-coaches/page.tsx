@@ -9,7 +9,7 @@ const content = {
   industry: "Consultants & Coaches",
   heroTitle: "Transform Your Network Into Predictable Revenue",
   heroSubtitle:
-    "Build a referral network of thought leaders, agencies, and past clients who consistently send you ideal engagements.",
+    "Activate a partner network of LinkedIn thought leaders, agency partners, and past clients who consistently send you high-value retainer and advisory engagements.",
   primaryCta: { label: "Schedule a Call", href: calendlyUrl },
   industryBenefit:
     "Your reputation is your greatest asset. We help you formalize referral relationships that match your positioning, turning word-of-mouth into a scalable acquisition channel.",
