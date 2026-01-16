@@ -16,7 +16,7 @@ export default function FAQPage() {
         {
           question: "How does onboarding work once I create an account?",
           answer:
-            "Complete the signup form and you can start inviting referral partners right away. Our concierge team helps you configure branding, rewards, automations, and the $250 sign-on credit you can offer new customers. We assist with CSV imports, partner assignment, and launch-ready campaigns to get your dashboard reporting quickly.",
+            "Complete the signup form and you can start inviting referral partners right away. Our concierge team helps you configure branding, rewards, and automations. We assist with CSV imports, partner assignment, and launch-ready campaigns to get your dashboard reporting quickly.",
         },
         {
           question: "Do I need a developer to launch Refer Labs?",

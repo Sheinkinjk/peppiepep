@@ -153,11 +153,11 @@ export default function ReferralProgramPage() {
     : "Get 25% of every payment from businesses you refer, month after month. Your passive income grows as they grow.";
   const newUserRewardDescription = programContext?.newUserReward
     ? `New referrals receive ${programContext.newUserReward} when they sign up.`
-    : "Every business you refer gets a $250 credit to start their referral program. Makes it easy to share the value.";
+    : "Every business you refer gets white-glove onboarding to start their referral program. Makes it easy to share the value.";
   const shareStepDescription = `Copy your personalized referral link and share it with businesses who could benefit from ${programBusinessName}.`;
   const signupStepDescription = programContext?.newUserReward
     ? `When they click your link and create an account, they receive ${programContext.newUserReward} and you get automatically attributed.`
-    : "When they click your link and create an account, they get $250 credit and you get automatically attributed.";
+    : "When they click your link and create an account, they get white-glove onboarding and you get automatically attributed.";
   const earningsStepDescription = programContext?.clientReward
     ? `Earn ${programContext.clientReward} for every completed referral. Track everything in your dashboard.`
     : "Earn 25% recurring commission on all their payments. Track everything in your dashboard.";
@@ -174,7 +174,7 @@ export default function ReferralProgramPage() {
     },
     {
       icon: Gift,
-      title: programContext?.newUserReward ? "New client reward" : "$250 Sign-On Credit",
+      title: programContext?.newUserReward ? "New client reward" : "White-Glove Onboarding",
       description: newUserRewardDescription,
       gradient: "from-purple-500 to-pink-600",
     },

@@ -579,22 +579,6 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
             </p>
           </div>
 
-          <div className="mb-12 rounded-3xl border-2 border-cyan-200 bg-white p-8 mx-auto max-w-4xl shadow-xl">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex-shrink-0">
-                <div className="inline-flex items-center justify-center bg-[#5ce1e6] rounded-2xl px-6 py-3 shadow-2xl">
-                  <span className="text-2xl font-black text-white">$250</span>
-                </div>
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-xl font-black text-slate-900 mb-2">Partner Bonus Credit</h3>
-                <p className="text-slate-600">
-                  Grant every new customer a $250 account credit, giving referrals instant value and a chance to explore Refer Labs risk-free before committing.
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-cyan-400 hover:shadow-2xl transition-all duration-300">
               <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
@@ -656,7 +640,7 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
                 1
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Apply & Get Approved</h3>
-              <p className="text-sm text-slate-600">Submit your application and receive your unique referral link + $250 bonus</p>
+              <p className="text-sm text-slate-600">Submit your application and receive your unique referral link</p>
             </div>
 
             <div className="text-center">
@@ -858,8 +842,8 @@ export default function OurReferralProgramPage({ searchParams }: ReferralProgram
                   <ul className="text-sm text-slate-300 space-y-1">
                     <li>• We&rsquo;ll review your application within 24 hours</li>
                     <li>• Upon approval, receive your unique referral link & discount code</li>
-                    <li>• $250 credit automatically applied to your account</li>
                     <li>• Access to partner resources and marketing materials</li>
+                    <li>• Start earning 25% recurring revenue on every referral</li>
                     <li>• Edit every field again inside Step 2 → Edit Program Settings</li>
                   </ul>
                   </div>
