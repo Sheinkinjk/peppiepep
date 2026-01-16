@@ -13,6 +13,8 @@ const allowedOrigins = Array.from(
     [
       // Only include localhost in development
       ...(!isProduction ? ["http://localhost:3000", "https://localhost:3000"] : []),
+      // Respect configured site URL in non-prod (useful for local dev on non-3000 ports and automated tests).
+      ...(!isProduction && process.env.NEXT_PUBLIC_SITE_URL ? [process.env.NEXT_PUBLIC_SITE_URL] : []),
       "https://referlabs.com.au",
       "https://peppiepep.vercel.app",
       deploymentOrigin,

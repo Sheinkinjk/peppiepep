@@ -6,10 +6,11 @@ import { Database } from "@/types/supabase";
 import AmbassadorPortalClient from "@/components/AmbassadorPortalClient";
 
 interface AmbassadorPortalProps {
-  params: { code: string };
+  params: Promise<{ code: string }>;
 }
 
 export default async function AmbassadorPortal({ params }: AmbassadorPortalProps) {
+  const { code } = await params;
   const supabase = await createServiceClient();
 
   const { data: customer } = await supabase
@@ -21,7 +22,7 @@ export default async function AmbassadorPortal({ params }: AmbassadorPortalProps
         referrals:referrals!ambassador_id (*)
       `,
     )
-    .eq("referral_code", params.code)
+    .eq("referral_code", code)
     .single();
 
   if (!customer) {

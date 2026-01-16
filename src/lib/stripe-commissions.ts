@@ -88,7 +88,7 @@ export async function createSignupBonusCommission(
     throw new Error(`Failed to create commission: ${error.message}`);
   }
 
-  return data;
+  return data as unknown as Commission;
 }
 
 /**
@@ -135,7 +135,7 @@ export async function createRevenueShareCommission(
     throw new Error(`Failed to create commission: ${error.message}`);
   }
 
-  return data;
+  return data as unknown as Commission;
 }
 
 // ============================================
@@ -202,7 +202,7 @@ export async function getAmbassadorCommissions(
     throw new Error(`Failed to fetch commissions: ${error.message}`);
   }
 
-  return data || [];
+  return (data as unknown as Commission[]) || [];
 }
 
 /**
@@ -264,7 +264,7 @@ export async function approveCommission(
     throw new Error(`Failed to approve commission: ${error.message}`);
   }
 
-  return data;
+  return data as unknown as Commission;
 }
 
 /**
@@ -313,7 +313,7 @@ export async function cancelCommission(
     throw new Error(`Failed to cancel commission: ${error.message}`);
   }
 
-  return data;
+  return data as unknown as Commission;
 }
 
 // ============================================

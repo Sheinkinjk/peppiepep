@@ -964,6 +964,7 @@ export function CampaignBuilder({
                       disabled={useSavedProgramSettings}
                     >
                       <option value="credit">Credit</option>
+                      <option value="revenue_share">Revenue share (%)</option>
                       <option value="upgrade">Upgrade</option>
                       <option value="discount">Discount</option>
                       <option value="points">Points</option>
@@ -974,9 +975,15 @@ export function CampaignBuilder({
                       Reward amount <span className="text-rose-500">*</span>
                     </Label>
                     <div className="relative">
-                      <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500">
-                        $
-                      </span>
+                      {settingsRewardType === "revenue_share" ? (
+                        <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500">
+                          %
+                        </span>
+                      ) : (
+                        <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500">
+                          $
+                        </span>
+                      )}
                       <Input
                         id="reward_amount"
                         type="number"
@@ -993,7 +1000,10 @@ export function CampaignBuilder({
                       />
                     </div>
                     <div className="flex flex-wrap gap-2 text-xs text-slate-500">
-                      {[25, 50, 100, 250].map((preset) => (
+                      {(settingsRewardType === "revenue_share"
+                        ? [5, 10, 15, 20]
+                        : [25, 50, 100, 250]
+                      ).map((preset) => (
                         <Button
                           key={preset}
                           type="button"
@@ -1003,12 +1013,14 @@ export function CampaignBuilder({
                           onClick={() => setSettingsRewardAmount(preset)}
                           disabled={useSavedProgramSettings}
                         >
-                          ${preset}
+                          {settingsRewardType === "revenue_share"
+                            ? `${preset}%`
+                            : `$${preset}`}
                         </Button>
                       ))}
                     </div>
                     <p className="text-[11px] text-slate-500">
-                      For credit/discount/points, enter the numeric amount.
+                      For revenue share, enter the percentage. For credit/discount/points, enter the numeric amount.
                     </p>
                   </div>
                 </div>

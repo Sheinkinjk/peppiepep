@@ -226,7 +226,8 @@ ALTER TABLE public.partner_compliance_status ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.regulatory_requirements ENABLE ROW LEVEL SECURITY;
 
 -- Drop and recreate policies to ensure idempotency
-DROP POLICY IF EXISTS "Service provider types are viewable by everyone" ON public.service_provider_types;
+DROP POLICY IF EXISTS "Service provider types are viewable by everyone"
+  ON public.service_provider_types;
 CREATE POLICY "Service provider types are viewable by everyone"
   ON public.service_provider_types FOR SELECT
   USING (TRUE);

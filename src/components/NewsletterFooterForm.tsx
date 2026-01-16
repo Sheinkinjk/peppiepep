@@ -52,9 +52,13 @@ export function NewsletterFooterForm() {
           placeholder="Email address"
           className="w-full rounded-full border border-[#0abab5]/30 bg-white px-4 py-2.5 text-xs font-medium text-slate-900 shadow-sm outline-none transition focus:border-[#0abab5] focus:ring-2 focus:ring-[#0abab5]/40"
         />
-        <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">
-          Press Enter to subscribe
-        </p>
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="inline-flex items-center justify-center rounded-full bg-[#00505B] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#003c44] disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {status === "loading" ? "Submitting..." : "Submit"}
+        </button>
       </form>
       {message && (
         <p

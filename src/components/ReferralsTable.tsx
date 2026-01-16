@@ -25,6 +25,7 @@ type ReferralRecord = ReferralRow & {
     name: string | null;
     email: string | null;
     phone: string | null;
+    source?: string | null;
   } | null;
 };
 
@@ -50,7 +51,7 @@ type PepWindow = Window & {
 
 const DEFAULT_REFERRAL_PAGE_SIZE = 25;
 const ROW_TEMPLATE =
-  "36px minmax(200px,1.2fr) minmax(200px,1.2fr) minmax(120px,0.7fr) minmax(140px,0.9fr) minmax(180px,1fr) minmax(150px,0.8fr)";
+  "36px minmax(200px,1.2fr) minmax(200px,1.2fr) minmax(140px,0.9fr) minmax(120px,0.7fr) minmax(140px,0.9fr) minmax(180px,1fr) minmax(150px,0.8fr)";
 
 const csvColumns: CsvColumn<ReferralRecord>[] = [
   { header: "Referred Name", accessor: (row) => row.referred_name ?? "" },
@@ -62,6 +63,15 @@ const csvColumns: CsvColumn<ReferralRecord>[] = [
   {
     header: "Source",
     accessor: (row) => (row.created_by ? "Manual" : "Link tracked"),
+  },
+  {
+    header: "Channel",
+    accessor: (row) => {
+      const source = (row.ambassador?.source ?? "").toLowerCase();
+      if (source === "external_partner") return "External Partners";
+      if (source.startsWith("linkedin-influencer")) return "LinkedIn Influencer";
+      return "Partners";
+    },
   },
   { header: "Ambassador", accessor: (row) => row.ambassador?.name ?? "" },
   { header: "Ambassador Email", accessor: (row) => row.ambassador?.email ?? "" },
@@ -87,6 +97,9 @@ export function ReferralsTable({
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "completed">("all");
   const [sourceFilter, setSourceFilter] = useState<"all" | "manual" | "tracked">(
+    "all",
+  );
+  const [channelFilter, setChannelFilter] = useState<"all" | "partners" | "external_partners" | "linkedin_influencer">(
     "all",
   );
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
@@ -122,12 +135,14 @@ export function ReferralsTable({
       search,
       status,
       source,
+      channel,
       limit,
     }: {
       page: number;
       search: string;
       status: typeof statusFilter;
       source: typeof sourceFilter;
+      channel: typeof channelFilter;
       limit: number;
     }) => {
       abortRef.current?.abort();
@@ -148,6 +163,7 @@ export function ReferralsTable({
         if (search) params.set("q", search);
         if (status !== "all") params.set("status", status);
         if (source !== "all") params.set("source", source);
+        if (channel !== "all") params.set("channel", channel);
 
         const response = await fetch(`/api/referrals?${params.toString()}`, {
           signal: controller.signal,
@@ -198,9 +214,10 @@ export function ReferralsTable({
       search: debouncedSearch,
       status: statusFilter,
       source: sourceFilter,
+      channel: channelFilter,
       limit: pageSize,
     });
-  }, [page, pageSize, debouncedSearch, statusFilter, sourceFilter, fetchPage]);
+  }, [page, pageSize, debouncedSearch, statusFilter, sourceFilter, channelFilter, fetchPage]);
 
   const refreshCurrentPage = useCallback(() => {
     fetchPage({
@@ -208,9 +225,10 @@ export function ReferralsTable({
       search: debouncedSearch,
       status: statusFilter,
       source: sourceFilter,
+      channel: channelFilter,
       limit: pageSize,
     });
-  }, [fetchPage, page, debouncedSearch, statusFilter, sourceFilter, pageSize]);
+  }, [fetchPage, page, debouncedSearch, statusFilter, sourceFilter, channelFilter, pageSize]);
 
   useEffect(() => {
     if (!businessId) return;
@@ -423,6 +441,20 @@ export function ReferralsTable({
             <option value="manual">Manual entries</option>
             <option value="tracked">Link tracked</option>
           </select>
+          <select
+            aria-label="Filter referrals by channel"
+            className="h-8 rounded-2xl border border-slate-200 bg-white px-2 text-xs font-medium text-slate-700"
+            value={channelFilter}
+            onChange={(e) => {
+              setChannelFilter(e.target.value as typeof channelFilter);
+              setPage(1);
+            }}
+          >
+            <option value="all">All channels</option>
+            <option value="partners">Partners</option>
+            <option value="external_partners">External Partners</option>
+            <option value="linkedin_influencer">LinkedIn Influencer</option>
+          </select>
         </div>
       </div>
 
@@ -477,6 +509,7 @@ export function ReferralsTable({
           </div>
           <div>Referred</div>
           <div>Ambassador</div>
+          <div>Channel</div>
           <div>Status</div>
           <div>Source</div>
           <div>Timeline</div>
@@ -520,7 +553,7 @@ export function ReferralsTable({
           </div>
         ) : referrals.length === 0 ? (
           <div className="p-8">
-            {debouncedSearch || statusFilter !== "all" || sourceFilter !== "all" ? (
+            {debouncedSearch || statusFilter !== "all" || sourceFilter !== "all" || channelFilter !== "all" ? (
               <EmptyState
                 icon={Filter}
                 title="No referrals match your filters"
@@ -532,44 +565,51 @@ export function ReferralsTable({
                     setSearchTerm("");
                     setStatusFilter("all");
                     setSourceFilter("all");
+                    setChannelFilter("all");
                   },
                   icon: Filter,
                 }}
               />
             ) : (
-              <EmptyState
-                icon={TrendingUp}
-                title="No referrals yet"
-                description="Referrals will appear here when your ambassadors share their links or when you manually record offline conversions. Get started by sending your first campaign or adding a manual referral."
-                primaryAction={{
-                  label: "Send Campaign",
-                  onClick: () => {
-                    const campaignsTab = document.querySelector('[data-tab-target="campaigns"]') as HTMLElement;
-                    campaignsTab?.click();
-                    setTimeout(() => {
-                      if (typeof window !== "undefined") {
-                        const win = window as PepWindow;
-                        if (typeof win.__pepOpenCampaignModal === "function") {
-                          win.__pepOpenCampaignModal();
+	              <EmptyState
+	                icon={TrendingUp}
+	                title="No referrals yet"
+	                description="Referrals will appear here when your ambassadors share their links or when you manually record offline conversions. Get started by sending your first campaign or adding a manual referral."
+	                primaryAction={{
+	                  label: "Send Campaign",
+	                  onClick: () => {
+	                    if (typeof window !== "undefined") {
+	                      window.dispatchEvent(
+	                        new CustomEvent("dashboard:navigate", {
+	                          detail: { section: "crm-integration" },
+	                        }),
+	                      );
+	                    }
+	                    setTimeout(() => {
+	                      if (typeof window !== "undefined") {
+	                        const win = window as PepWindow;
+	                        if (typeof win.__pepOpenCampaignModal === "function") {
+	                          win.__pepOpenCampaignModal();
                         }
                       }
                     }, 100);
                   },
                   icon: TrendingUp,
                 }}
-                secondaryAction={{
-                  label: "Add Manual Referral",
-                  onClick: () => {
-                    const performanceTab = document.querySelector('[data-tab-target="performance"]') as HTMLElement;
-                    performanceTab?.click();
-                    setTimeout(() => {
-                      const manualForm = document.querySelector('[data-manual-referral-form]');
-                      manualForm?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 100);
-                  },
-                  icon: UserPlus,
-                }}
-              />
+	                secondaryAction={{
+	                  label: "Add Manual Referral",
+	                  onClick: () => {
+	                    if (typeof window !== "undefined") {
+	                      window.dispatchEvent(
+	                        new CustomEvent("dashboard:navigate", {
+	                          detail: { section: "performance", scrollTo: "manual-referral-form" },
+	                        }),
+	                      );
+	                    }
+	                  },
+	                  icon: UserPlus,
+	                }}
+	              />
             )}
           </div>
         ) : (
@@ -584,6 +624,19 @@ export function ReferralsTable({
                 const ambassador = referral.ambassador;
                 const isPending = referral.status === "pending";
                 const isManual = Boolean(referral.created_by);
+                const ambassadorSource = (ambassador?.source ?? "").toLowerCase();
+                const channelLabel =
+                  ambassadorSource === "external_partner"
+                    ? "External Partners"
+                    : ambassadorSource.startsWith("linkedin-influencer")
+                      ? "LinkedIn Influencer"
+                      : "Partners";
+                const channelClass =
+                  ambassadorSource === "external_partner"
+                    ? "bg-violet-100 text-violet-800"
+                    : ambassadorSource.startsWith("linkedin-influencer")
+                      ? "bg-blue-100 text-blue-800"
+                      : "bg-slate-100 text-slate-800";
                 const createdAt = referral.created_at
                   ? new Date(referral.created_at).toLocaleDateString()
                   : null;
@@ -642,6 +695,11 @@ export function ReferralsTable({
                       <p className="text-xs text-slate-500">
                         {ambassador?.email ?? ambassador?.phone ?? "—"}
                       </p>
+                    </div>
+                    <div>
+                      <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${channelClass}`}>
+                        {channelLabel}
+                      </span>
                     </div>
                     <div>
                       <span className="capitalize text-sm text-slate-900">

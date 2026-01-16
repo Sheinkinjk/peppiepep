@@ -59,6 +59,12 @@ type AttributionCookieStatus = {
   daysRemaining?: number;
 };
 
+type QaSummary = {
+  lastDetectedAt: string | null;
+  recentCount: number;
+  eventTypes: string[];
+};
+
 export function Step1DTestingTab({
   businessId,
   siteUrl,
@@ -74,7 +80,11 @@ export function Step1DTestingTab({
   const [qaConfirmOpen, setQaConfirmOpen] = useState(false);
   const [qaCleanupConfirmOpen, setQaCleanupConfirmOpen] = useState(false);
   const [qaResultsHint, setQaResultsHint] = useState(false);
-  const [qaDetectedAt, setQaDetectedAt] = useState<string | null>(null);
+  const [qaSummary, setQaSummary] = useState<QaSummary>({
+    lastDetectedAt: null,
+    recentCount: 0,
+    eventTypes: [],
+  });
   const [isQaRunning, setIsQaRunning] = useState(false);
   const [isQaCleanupRunning, setIsQaCleanupRunning] = useState(false);
   const [healthCheck, setHealthCheck] = useState<AttributionHealth | null>(null);
@@ -149,21 +159,36 @@ export function Step1DTestingTab({
       const payload = (await response.json()) as {
         events?: Array<{
           created_at?: string | null;
+          event_type?: string | null;
           source?: string | null;
           metadata?: Record<string, unknown> | null;
         }>;
       };
       const events = payload.events ?? [];
       const cutoff = Date.now() - 10 * 60 * 1000;
-      const recentQa = events.find((event) => {
-        const createdAt = event.created_at ? Date.parse(event.created_at) : 0;
-        const isQaSource = event.source === "integration_qa";
-        const isQaMeta = Boolean(event.metadata && event.metadata["qa_simulated"]);
-        return createdAt >= cutoff && (isQaSource || isQaMeta);
+      const recentQaEvents = events
+        .filter((event) => {
+          const createdAt = event.created_at ? Date.parse(event.created_at) : 0;
+          const isQaSource = event.source === "integration_qa";
+          const isQaMeta = Boolean(event.metadata && event.metadata["qa_simulated"]);
+          return createdAt >= cutoff && (isQaSource || isQaMeta);
+        })
+        .sort((a, b) => Date.parse(b.created_at ?? "") - Date.parse(a.created_at ?? ""));
+
+      const uniqueTypes: string[] = [];
+      for (const event of recentQaEvents) {
+        const type = event.event_type?.trim();
+        if (!type) continue;
+        if (!uniqueTypes.includes(type)) uniqueTypes.push(type);
+      }
+
+      setQaSummary({
+        lastDetectedAt: recentQaEvents[0]?.created_at ?? null,
+        recentCount: recentQaEvents.length,
+        eventTypes: uniqueTypes.slice(0, 8),
       });
-      setQaDetectedAt(recentQa?.created_at ?? null);
     } catch {
-      setQaDetectedAt(null);
+      setQaSummary({ lastDetectedAt: null, recentCount: 0, eventTypes: [] });
     }
   }, []);
 
@@ -240,7 +265,7 @@ export function Step1DTestingTab({
         description: `${result.deleted ?? 0} QA events removed from Measure ROI.`,
       });
       setQaResultsHint(false);
-      setQaDetectedAt(null);
+      setQaSummary({ lastDetectedAt: null, recentCount: 0, eventTypes: [] });
     } catch (error) {
       console.error("QA cleanup failed:", error);
       toast({
@@ -274,7 +299,7 @@ export function Step1DTestingTab({
           </div>
           <div className="flex-1 space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-700">
-              Step 1D · Testing & QA
+              Testing & QA
             </p>
             <h2 className="text-2xl font-black text-slate-900 leading-tight">
               Test your referral system end-to-end
@@ -355,17 +380,19 @@ export function Step1DTestingTab({
               This removes QA test events from Measure ROI and Recent Activity so your dashboard reflects only live traffic.
             </DialogDescription>
           </DialogHeader>
-          <div className="mt-4 space-y-2 rounded-2xl border border-rose-200 bg-rose-50/70 p-4 text-sm text-rose-900">
-            <p className="font-semibold">This will delete QA data from:</p>
+	          <div className="mt-4 space-y-2 rounded-2xl border border-rose-200 bg-rose-50/70 p-4 text-sm text-rose-900">
+	            <p className="font-semibold">This will delete QA data from:</p>
             <ul className="space-y-1 text-rose-900/90">
               <li>• Measure ROI → Interaction Hub counts</li>
               <li>• Measure ROI → Recent Interaction Activity list</li>
               <li>• Measure ROI → Journey timeline</li>
             </ul>
-            <p className="mt-2 text-xs text-rose-900/80">
-              Only events tagged with <span className="font-semibold">source = integration_qa</span> are removed.
-            </p>
-          </div>
+	            <p className="mt-2 text-xs text-rose-900/80">
+	              Only events tagged as simulated QA (<span className="font-semibold">source = integration_qa</span> and{" "}
+	              <span className="font-semibold">metadata.qa_simulated = true</span>) are removed. This does not touch
+	              referrals, customers, conversions, or revenue data.
+	            </p>
+	          </div>
           <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
             <Button
               type="button"
@@ -482,8 +509,11 @@ export function Step1DTestingTab({
         </div>
       </div>
 
-      {/* QA Readiness Checks */}
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-6 shadow-sm">
+	      {/* QA Readiness Checks */}
+	      <div
+	        id="integration-qa-panel"
+	        className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-6 shadow-sm"
+	      >
         <div className="flex items-start gap-3 mb-4">
           <div className="rounded-lg bg-emerald-600 p-2">
             <Target className="h-5 w-5 text-white" />
@@ -493,10 +523,10 @@ export function Step1DTestingTab({
             <p className="text-xs text-emerald-800/80 mt-1">
               Confirm attribution health, cookie setup, and test events before inviting ambassadors.
             </p>
-            {qaDetectedAt && (
+            {qaSummary.lastDetectedAt && (
               <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                QA verified in the last 10 minutes
+                QA verified in the last 10 minutes ({qaSummary.recentCount} events)
               </div>
             )}
           </div>
@@ -520,20 +550,35 @@ export function Step1DTestingTab({
           >
             {isQaCleanupRunning ? "Clearing..." : "Clear QA Events"}
           </Button>
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleJumpToQaResults}
-            className="rounded-full"
-          >
-            Open Measure ROI
-          </Button>
         </div>
 
         {qaResultsHint && (
           <div className="mt-3 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-xs text-emerald-900">
             <span className="font-semibold">QA events logged.</span>{" "}
-            Open Measure ROI to verify Interaction Hub + Recent Activity.
+            Navigate to Measure ROI to verify Interaction Hub + Recent Activity.
+          </div>
+        )}
+
+        {qaSummary.lastDetectedAt && (
+          <div className="mt-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs text-slate-700">
+            <p className="font-semibold text-slate-900">Latest QA snapshot</p>
+            <p className="mt-1 text-[11px] text-slate-500">
+              Last event: {new Date(qaSummary.lastDetectedAt).toLocaleString()} · {qaSummary.recentCount} events in the last 10 minutes
+            </p>
+            {qaSummary.eventTypes.length > 0 && (
+              <div className="mt-2 flex flex-wrap gap-2">
+                {qaSummary.eventTypes.map((type) => (
+                  <span key={type} className="rounded-full border border-slate-200 bg-slate-50 px-2 py-1 text-[11px] font-semibold text-slate-700">
+                    {type}
+                  </span>
+                ))}
+              </div>
+            )}
+            <div className="mt-2">
+              <Button type="button" size="sm" variant="outline" className="rounded-full" onClick={handleJumpToQaResults}>
+                Jump to QA results
+              </Button>
+            </div>
           </div>
         )}
 

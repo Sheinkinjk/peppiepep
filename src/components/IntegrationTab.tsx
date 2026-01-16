@@ -608,14 +608,15 @@ export function IntegrationTab({
                     id="ps_reward_type"
                     value={settingsRewardType ?? "credit"}
                     onChange={(e) => setSettingsRewardType(e.target.value as RewardType)}
-                    className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
-                    required
-                  >
-                    <option value="credit">Credit</option>
-                    <option value="upgrade">Upgrade</option>
-                    <option value="discount">Discount</option>
-                    <option value="points">Points</option>
-                  </select>
+                  className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                  required
+                >
+                  <option value="credit">Credit</option>
+                  <option value="revenue_share">Revenue share (%)</option>
+                  <option value="upgrade">Upgrade</option>
+                  <option value="discount">Discount</option>
+                  <option value="points">Points</option>
+                </select>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="ps_reward_amount" className="text-sm font-bold text-slate-900">
@@ -631,7 +632,7 @@ export function IntegrationTab({
                     className="rounded-2xl border-2 border-slate-200"
                     required
                   />
-                  <p className="text-[11px] text-slate-500">If using upgrades, this can be $0.</p>
+                  <p className="text-[11px] text-slate-500">For revenue share, enter the percentage. For upgrades, this can be $0.</p>
                 </div>
               </div>
             </div>
@@ -986,7 +987,7 @@ export function IntegrationTab({
                   <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
                     <p className="text-xs font-semibold text-amber-900 mb-2">⚠️ Important: Test Your Landing Page</p>
                     <p className="text-xs text-amber-800">
-                      After creating your landing page, go to <strong>Step 1D → Testing & QA</strong> to test attribution cookies and verify tracking is working correctly.
+                      After creating your landing page, go to <strong>Testing & QA</strong> to test attribution cookies and verify tracking is working correctly.
                     </p>
                   </div>
                 </div>

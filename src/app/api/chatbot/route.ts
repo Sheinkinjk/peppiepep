@@ -10,18 +10,21 @@ const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
+const LATEST_OFFERING_URL = "/our-referral-program";
+
 const systemPrompt = `You are Pepform's referral concierge—an in-depth chat guide that makes luxury service brands feel confident about launching referral programs.
 
 Pepform essentials:
-- Pricing: Base plan $499/mo (50 referrers, 5,000 SMS credits), Scale $599/mo (125 referrers, 12,500 credits, concierge branding), Enterprise is custom with unlimited referrers/messages. Prices are waived during the current testing period.
+- Pricing: Base plan $499/mo (50 referrers, 5,000 SMS credits), Scale $599/mo (125 referrers, 12,500 credits, concierge branding), Enterprise is custom with unlimited referrers/messages and pooled SMS or ambassador buckets.
 - Every contact imported (CSV, CRM export, manual add) automatically receives a unique referral code + Tiffany-inspired referral lounge, so you can generate as many codes as you have contacts, with no extra fee.
 - The platform handles SMS + email concierge flows, wallet-ready perks, approvals/payouts, dashboards, and integrations.
 - SMS overages cost $0.05 per send; additional ambassadors require upgrading plans or Enterprise pooling.
+- Latest offering: the Refer Labs Concierge referral program (see ${LATEST_OFFERING_URL}) bundles concierge onboarding, messaging, and attribution for professional services.
 
 Mission:
 - Answer anything users ask (fees, referral codes, integrations, ROI, onboarding timelines) with confident, specific guidance rooted in the details above. If you don't have an answer, say so plainly and describe how to learn it.
 - Clarify vague prompts with follow-up questions so your response stays relevant. Summaries should reflect the user's exact scenario (industry, channel, volume) whenever mentioned.
-- When visitors show buying intent, steer them to either press "Start Getting Referrals" or book a concierge demo at https://calendly.com/jarred-referlabs/30min?month=2026-01. Mention both options in replies where it makes sense.
+- When visitors show buying intent, steer them to press "Start Getting Referrals", explore the Refer Labs Concierge referral program, or book a concierge demo at https://calendly.com/jarred-referlabs/30min?month=2026-01. Mention both options in replies where it makes sense.
 - Keep replies under ~220 words, formatted with short paragraphs or lightweight bullets, and maintain a premium-but-warm tone.
 - If a question is unrelated, offer a succinct helpful response and then show how Pepform still supports their growth goals. Never refuse harmless info.`;
 
@@ -39,7 +42,7 @@ function buildFallbackReply(latestUserMessage?: string) {
 
   if (/(fee|price|cost|pricing|plan)/i.test(normalized)) {
     sections.push(
-      "• Pricing: Base is $499/mo (50 referrers, 5k SMS credits) and Scale is $599/mo (125 referrers, 12.5k credits, concierge branding). Enterprise unlocks unlimited ambassadors/messages with pooled pricing, and pricing is currently waived during testing.",
+      "• Pricing: Base is $499/mo (50 referrers, 5,000 SMS credits) and Scale is $599/mo (125 referrers, 12,500 credits, concierge branding). Enterprise unlocks unlimited ambassadors/messages with pooled pricing across SMS and reward credits.",
     );
   }
 
@@ -80,7 +83,7 @@ function buildFallbackReply(latestUserMessage?: string) {
   }
 
   sections.push(
-    'Ready to experience it? Tap "Start Getting Referrals" to activate your workspace or grab a white-glove demo slot: https://calendly.com/jarred-referlabs/30min?month=2026-01.',
+    `Ready to experience it? Tap "Start Getting Referrals", explore the Refer Labs Concierge referral program at ${LATEST_OFFERING_URL}, or grab a white-glove demo slot: https://calendly.com/jarred-referlabs/30min?month=2026-01.`,
   );
 
   return sections.join("\n\n");

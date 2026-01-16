@@ -139,12 +139,14 @@ type BuildCampaignMessagesArgs = {
 export function buildCampaignSnapshot(business: BusinessSnapshotSource) {
   const snapshotRewardAmount = business.reward_amount ?? 0;
   const snapshotRewardType =
-    (business.reward_type as "credit" | "upgrade" | "discount" | "points" | null) ?? "credit";
+    (business.reward_type as "credit" | "upgrade" | "discount" | "points" | "revenue_share" | null) ?? "credit";
   const snapshotNewUserReward = business.new_user_reward_text || business.offer_text || null;
   const snapshotClientReward =
     business.client_reward_text ||
     (snapshotRewardType === "credit"
       ? `$${snapshotRewardAmount} credit`
+      : snapshotRewardType === "revenue_share"
+      ? `${snapshotRewardAmount}% revenue share`
       : snapshotRewardType === "upgrade"
       ? "a free upgrade"
       : snapshotRewardType === "discount"

@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useVirtualizer } from "@tanstack/react-virtual";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -89,19 +88,50 @@ const csvColumns: CsvColumn<Customer>[] = [
   { header: "Status", accessor: (row) => row.status ?? "pending" },
 ];
 
+type VirtualizedRowRenderArgs = {
+  index: number;
+  start: number;
+  measureRef: (node: HTMLElement) => void;
+};
+
+type SimpleGridListProps = {
+  count: number;
+  className?: string;
+  renderRow: (index: number) => ReactNode;
+};
+
+function SimpleGridList({ count, className, renderRow }: SimpleGridListProps) {
+  return (
+    <div className={className}>
+      {Array.from({ length: count }).map((_, index) => (
+        <div key={index}>{renderRow(index)}</div>
+      ))}
+    </div>
+  );
+}
+
 export function CustomersTable({
   initialCustomers = [],
   initialTotal = 0,
   siteUrl,
   businessId,
 }: CustomersTableProps) {
+  const normalizeCustomers = useCallback((rows: unknown): Customer[] => {
+    if (!Array.isArray(rows)) return [];
+    return rows.filter((row): row is Customer => {
+      if (!row || typeof row !== "object") return false;
+      const candidate = row as Record<string, unknown>;
+      return typeof candidate.id === "string" && candidate.id.length > 0;
+    });
+  }, []);
+
   const bootstrappedCustomers = useMemo(
-    () => initialCustomers.slice(0, DEFAULT_CUSTOMER_PAGE_SIZE),
-    [initialCustomers],
+    () => normalizeCustomers(initialCustomers).slice(0, DEFAULT_CUSTOMER_PAGE_SIZE),
+    [initialCustomers, normalizeCustomers],
   );
   const [customers, setCustomers] = useState<Customer[]>(bootstrappedCustomers);
   const [total, setTotal] = useState<number>(
-    initialTotal || initialCustomers.length || 0,
+    initialTotal || normalizeCustomers(initialCustomers).length || 0,
   );
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(DEFAULT_CUSTOMER_PAGE_SIZE);
@@ -119,7 +149,6 @@ export function CustomersTable({
   const [bulkSendCampaignDialogOpen, setBulkSendCampaignDialogOpen] = useState(false);
   const [isBulkProcessing, setIsBulkProcessing] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
-  const parentRef = useRef<HTMLDivElement>(null);
   const selectedIdsRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
@@ -147,9 +176,15 @@ export function CustomersTable({
       setIsLoading(true);
       setError(null);
       let ok = false;
-      if (typeof window !== "undefined") {
-        window.dispatchEvent(new CustomEvent("pep-refresh-start", { detail: { source: "customers" } }));
-      }
+      const dispatchRefreshEvent = (name: string, detail: Record<string, unknown>) => {
+        if (typeof window === "undefined") return;
+        try {
+          window.dispatchEvent(new CustomEvent(name, { detail }));
+        } catch (error) {
+          logger.warn("Failed to dispatch refresh event", { name, error });
+        }
+      };
+      dispatchRefreshEvent("pep-refresh-start", { source: "customers" });
 
       try {
         const params = new URLSearchParams({
@@ -180,17 +215,18 @@ export function CustomersTable({
         }
 
         const payload = (await response.json()) as CustomersApiResponse;
+        const normalized = normalizeCustomers(payload.data ?? []);
 
-        setCustomers(payload.data ?? []);
+        setCustomers(normalized);
         setTotal(payload.total ?? 0);
         setPage(payload.page ?? targetPage);
         ok = true;
 
-        if (payload.data) {
+        if (normalized.length > 0) {
           setSelectedRows((prev) => {
             if (selectedIdsRef.current.size === 0) return prev;
             const next = new Map(prev);
-            payload.data.forEach((row) => {
+            normalized.forEach((row) => {
               if (selectedIdsRef.current.has(row.id)) {
                 next.set(row.id, row);
               }
@@ -207,9 +243,7 @@ export function CustomersTable({
       } finally {
         if (!controller.signal.aborted) {
           setIsLoading(false);
-          if (typeof window !== "undefined") {
-            window.dispatchEvent(new CustomEvent("pep-refresh-end", { detail: { source: "customers", ok } }));
-          }
+          dispatchRefreshEvent("pep-refresh-end", { source: "customers", ok });
         }
       }
     },
@@ -240,25 +274,48 @@ export function CustomersTable({
       return;
     }
 
-    const supabase = createBrowserSupabaseClient();
-    const channel = supabase
-      .channel(`customers-${businessId}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "customers",
-          filter: `business_id=eq.${businessId}`,
-        },
-        () => {
-          refreshCurrentPage();
-        },
-      )
-      .subscribe();
+    let supabase: ReturnType<typeof createBrowserSupabaseClient> | null = null;
+    try {
+      supabase = createBrowserSupabaseClient();
+    } catch (error) {
+      logger.warn("Supabase browser client unavailable (customers realtime disabled)", { error });
+      return;
+    }
+    const maybeChannel = (supabase as unknown as { channel?: (name: string) => any }).channel;
+    if (typeof maybeChannel !== "function") {
+      logger.warn("Supabase realtime channel API unavailable (customers realtime disabled)");
+      return;
+    }
+
+    let channel: any = null;
+    try {
+      channel = maybeChannel(`customers-${businessId}`)
+        .on(
+          "postgres_changes",
+          {
+            event: "*",
+            schema: "public",
+            table: "customers",
+            filter: `business_id=eq.${businessId}`,
+          },
+          () => {
+            refreshCurrentPage();
+          },
+        )
+        .subscribe();
+    } catch (error) {
+      logger.warn("Supabase realtime subscribe failed (customers realtime disabled)", { error });
+      return;
+    }
 
     return () => {
-      void supabase.removeChannel(channel);
+      const removeChannel = (supabase as unknown as { removeChannel?: (channel: any) => Promise<void> | void }).removeChannel;
+      if (typeof removeChannel !== "function") return;
+      try {
+        void removeChannel(channel);
+      } catch (error) {
+        logger.warn("Supabase realtime cleanup failed", { error });
+      }
     };
   }, [businessId, refreshCurrentPage]);
 
@@ -438,8 +495,8 @@ export function CustomersTable({
     }
   };
 
-  const bulkSendCampaign = async () => {
-    if (selectedRows.size === 0) return;
+	  const bulkSendCampaign = async () => {
+	    if (selectedRows.size === 0) return;
 
     // Open the campaign builder with pre-selected customers
     // This will require coordination with the CampaignBuilder component
@@ -448,14 +505,19 @@ export function CustomersTable({
       description: `${selectedRows.size} referral partner${selectedRows.size === 1 ? "" : "s"} pre-selected for campaign.`,
     });
 
-    // Navigate to campaigns tab and open modal
-    const campaignsTab = document.querySelector('[data-tab-target="campaigns"]') as HTMLElement;
-    campaignsTab?.click();
-    setTimeout(() => {
-      if (typeof window !== "undefined") {
-        const win = window as PepWindow;
-        if (typeof win.__pepOpenCampaignModal === "function") {
-          win.__pepOpenCampaignModal();
+	    // Navigate to Launch Campaigns and open modal
+	    if (typeof window !== "undefined") {
+	      window.dispatchEvent(
+	        new CustomEvent("dashboard:navigate", {
+	          detail: { section: "crm-integration" },
+	        }),
+	      );
+	    }
+	    setTimeout(() => {
+	      if (typeof window !== "undefined") {
+	        const win = window as PepWindow;
+	        if (typeof win.__pepOpenCampaignModal === "function") {
+	          win.__pepOpenCampaignModal();
         }
       }
     }, 100);
@@ -492,13 +554,6 @@ export function CustomersTable({
     }
   }, [customers, sortOption]);
 
-  const rowVirtualizer = useVirtualizer({
-    count: sortedCustomers.length,
-    getScrollElement: () => parentRef.current,
-    estimateSize: () => 96,
-    overscan: 6,
-  });
-
   const visibleCustomers = sortedCustomers;
 
   const totalPages = Math.max(1, Math.ceil(total / Math.max(pageSize, 1)));
@@ -517,6 +572,326 @@ export function CustomersTable({
     : partiallySelected
     ? "indeterminate"
     : false;
+
+  const renderCustomerRow = (
+    customer: Customer,
+    index: number,
+    opts: { start?: number; measureRef?: (node: HTMLElement) => void } = {},
+  ) => {
+    const referralLink = customer?.referral_code
+      ? `${siteUrl}/r/${customer.referral_code}`
+      : null;
+    const embedTarget = referralLink
+      ? `${referralLink}${referralLink.includes("?") ? "&" : "?"}embed=1`
+      : null;
+    const embedSnippet = embedTarget
+      ? `<iframe src="${embedTarget}" title="Pepform referral" style="width:100%;min-height:600px;border:none;border-radius:24px;overflow:hidden;"></iframe>`
+      : null;
+    const isLinkCopied = copiedKey === `${customer?.id}-link`;
+    const isEmbedCopied = copiedKey === `${customer?.id}-embed`;
+    const discountCode = customer.discount_code ?? "";
+    const discountKey = `${customer.id}-discount`;
+    const isDiscountCopied = copiedKey === discountKey;
+    const rawStatus = (customer?.status || "pending").toLowerCase();
+    const isVerified = rawStatus === "verified" || rawStatus === "active";
+    const displayStatus =
+      rawStatus === "pending"
+        ? "Partner pending"
+        : rawStatus === "applicant"
+          ? "New applicant"
+          : isVerified
+            ? "Verified partner"
+            : rawStatus;
+    const normalizedSource = customer.source
+      ? customer.source.replace(/_/g, " ")
+      : null;
+    const audienceSummary = customer.audience_profile
+      ? customer.audience_profile.length > 140
+        ? `${customer.audience_profile.slice(0, 140)}…`
+        : customer.audience_profile
+      : null;
+    const instagramHandle = customer.instagram_handle
+      ? customer.instagram_handle.replace(/^@/, "")
+      : null;
+    const linkedinHandle = customer.linkedin_handle
+      ? customer.linkedin_handle.replace(/^@/, "")
+      : null;
+
+    const statusClass =
+      rawStatus === "applicant"
+        ? "bg-amber-100 text-amber-800"
+        : isVerified
+          ? "bg-emerald-100 text-emerald-800"
+          : "bg-slate-100 text-slate-800";
+
+    const zebraClass = index % 2 === 0 ? "bg-slate-50/60" : "bg-white";
+    const rowStyle: CSSProperties = {
+      gridTemplateColumns: ROW_TEMPLATE,
+    };
+    if (typeof opts.start === "number") {
+      rowStyle.position = "absolute";
+      rowStyle.top = 0;
+      rowStyle.left = 0;
+      rowStyle.width = "100%";
+      rowStyle.transform = `translateY(${opts.start}px)`;
+    }
+
+    return (
+      <div
+        key={customer.id}
+        data-index={index}
+        ref={(node) => {
+          if (node && opts.measureRef) opts.measureRef(node);
+        }}
+        className={`grid items-center gap-4 border-b border-slate-100 px-4 py-3 text-sm ${zebraClass}`}
+        style={rowStyle}
+      >
+        <div className="flex items-center">
+          <Checkbox
+            checked={selectedIds.has(customer.id)}
+            onCheckedChange={() => toggleSelection(customer)}
+            aria-label={`Select ${customer.name ?? "referral partner"}`}
+          />
+        </div>
+        <div>
+          <p className="font-semibold text-slate-900">
+            {customer.name ?? "—"}
+          </p>
+          <p className="text-xs text-slate-500">
+            ID: {customer.id.slice(0, 8)}…
+          </p>
+        </div>
+        <div className="space-y-1 text-xs text-slate-600">
+          <p>{customer.email ?? "—"}</p>
+          <p>{customer.phone ?? "—"}</p>
+        </div>
+        <div className="space-y-2 text-xs text-slate-600">
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="font-semibold text-slate-900">
+              {customer.company ?? "—"}
+            </p>
+            {normalizedSource && (
+              <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-slate-600">
+                {normalizedSource}
+              </span>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {customer.website && (
+              <a
+                href={customer.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-blue-700 hover:border-blue-400"
+              >
+                Website
+              </a>
+            )}
+            {instagramHandle && (
+              <a
+                href={`https://instagram.com/${instagramHandle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-pink-700 hover:border-pink-400"
+              >
+                @{instagramHandle}
+              </a>
+            )}
+            {linkedinHandle && (
+              <a
+                href={`https://www.linkedin.com/in/${linkedinHandle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-slate-700 hover:border-slate-400"
+              >
+                LinkedIn
+              </a>
+            )}
+          </div>
+          {audienceSummary && (
+            <p className="text-[11px] text-slate-500">
+              {audienceSummary}
+            </p>
+          )}
+        </div>
+        {/* AI Score Column */}
+        <div className="flex flex-col gap-1">
+          {typeof customer.ai_referral_score === "number" ? (
+            <>
+              <div className="flex items-center gap-1.5">
+                <div
+                  className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
+                    customer.ai_referral_score >= 80
+                      ? "bg-emerald-100 text-emerald-700"
+                      : customer.ai_referral_score >= 50
+                        ? "bg-blue-100 text-blue-700"
+                        : "bg-slate-100 text-slate-600"
+                  }`}
+                >
+                  {customer.ai_referral_score}
+                </div>
+                <span
+                  className={`text-xs font-semibold ${
+                    customer.ai_referral_score >= 80
+                      ? "text-emerald-700"
+                      : customer.ai_referral_score >= 50
+                        ? "text-blue-700"
+                        : "text-slate-600"
+                  }`}
+                >
+                  {customer.ai_referral_score >= 80
+                    ? "High"
+                    : customer.ai_referral_score >= 50
+                      ? "Medium"
+                      : "Low"}
+                </span>
+              </div>
+              {customer.ai_optimal_approach && (
+                <div className="relative group">
+                  <p className="text-[11px] text-slate-500 truncate cursor-help">
+                    {customer.ai_optimal_approach.length > 40
+                      ? `${customer.ai_optimal_approach.slice(0, 40)}...`
+                      : customer.ai_optimal_approach}
+                  </p>
+                  <div className="absolute left-0 top-full mt-1 hidden group-hover:block z-50 w-64 rounded-lg border border-slate-200 bg-white p-3 shadow-lg">
+                    <p className="text-xs font-semibold text-slate-900 mb-1">AI Recommendation:</p>
+                    <p className="text-xs text-slate-700">{customer.ai_optimal_approach}</p>
+                    {customer.ai_score_explanation && (
+                      <>
+                        <p className="text-xs font-semibold text-slate-900 mt-2 mb-1">Reasoning:</p>
+                        <p className="text-xs text-slate-600">{customer.ai_score_explanation}</p>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
+            <span className="text-xs text-slate-400">Not scored</span>
+          )}
+        </div>
+        {/* AI Estimated Value Column */}
+        <div className="flex flex-col gap-1">
+          {typeof customer.ai_estimated_value === "number" ? (
+            <>
+              <p className="text-sm font-bold text-emerald-700">
+                ${customer.ai_estimated_value.toLocaleString()}
+              </p>
+              {typeof customer.ai_likelihood_to_refer === "number" && (
+                <p className="text-[11px] text-slate-500">
+                  {Math.round(customer.ai_likelihood_to_refer * 100)}% likely to refer
+                </p>
+              )}
+            </>
+          ) : (
+            <span className="text-xs text-slate-400">—</span>
+          )}
+        </div>
+        <div className="space-y-2">
+          {referralLink ? (
+            <p className="truncate font-mono text-xs text-blue-600">
+              {referralLink}
+            </p>
+          ) : (
+            <a
+              href="#setup-integration"
+              className="text-xs text-amber-600 hover:text-amber-700 font-semibold underline"
+            >
+              Complete Step 1 to activate links
+            </a>
+          )}
+          <div className="flex flex-wrap gap-2">
+            {referralLink && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() =>
+                  copyToClipboard(referralLink, `${customer.id}-link`)
+                }
+                className="text-xs"
+              >
+                {isLinkCopied ? (
+                  <>
+                    <Check className="mr-1 h-3 w-3" />
+                    Link copied
+                  </>
+                ) : (
+                  <>
+                    <Copy className="mr-1 h-3 w-3" />
+                    Copy link
+                  </>
+                )}
+              </Button>
+            )}
+            {embedSnippet && (
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() =>
+                  copyToClipboard(
+                    embedSnippet,
+                    `${customer.id}-embed`,
+                  )
+                }
+                className="text-xs"
+              >
+                {isEmbedCopied ? (
+                  <>
+                    <Check className="mr-1 h-3 w-3" />
+                    Embed copied
+                  </>
+                ) : (
+                  <>
+                    <Copy className="mr-1 h-3 w-3" />
+                    Copy embed
+                  </>
+                )}
+              </Button>
+            )}
+          </div>
+        </div>
+        <div className="space-y-2">
+          {discountCode ? (
+            <p className="font-mono text-xs text-emerald-700">
+              {discountCode}
+            </p>
+          ) : (
+            <span className="text-xs text-slate-400">Auto-generated for new contacts</span>
+          )}
+          {discountCode && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => copyToClipboard(discountCode, discountKey)}
+              className="text-xs"
+            >
+              {isDiscountCopied ? (
+                <>
+                  <Check className="mr-1 h-3 w-3" />
+                  Code copied
+                </>
+              ) : (
+                <>
+                  <Copy className="mr-1 h-3 w-3" />
+                  Copy code
+                </>
+              )}
+            </Button>
+          )}
+        </div>
+        <div>
+          <span
+            className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium capitalize ${statusClass}`}
+          >
+            {displayStatus}
+          </span>
+        </div>
+        <div className="text-xs text-slate-500">
+          —
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="space-y-4">
@@ -748,353 +1123,48 @@ export function CustomersTable({
                   icon: Filter,
                 }}
               />
-            ) : (
-              <EmptyState
-                icon={Users}
-                title="No referral partners yet"
-                description="Start building your referral network by importing partners, clients, or advisors via CSV or adding them one at a time."
-                primaryAction={{
-                  label: "Upload CSV",
-                  onClick: () => {
-                    const clientsTab = document.querySelector('[data-tab-target="clients"]') as HTMLElement;
-                    clientsTab?.click();
-                    setTimeout(() => {
-                      const csvSection = document.querySelector('[data-csv-upload]');
-                      csvSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 100);
-                  },
-                  icon: Upload,
-                }}
-                secondaryAction={{
-                  label: "Add Manually",
-                  onClick: () => {
-                    const clientsTab = document.querySelector('[data-tab-target="clients"]') as HTMLElement;
-                    clientsTab?.click();
-                    setTimeout(() => {
-                      const quickAddSection = document.querySelector('[data-quick-add]');
-                      quickAddSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 100);
-                  },
-                  icon: UserPlus,
-                }}
-              />
-            )}
+	            ) : (
+	              <EmptyState
+	                icon={Users}
+	                title="No referral partners yet"
+	                description="Start building your referral network by importing partners, clients, or advisors via CSV or adding them one at a time."
+	                primaryAction={{
+	                  label: "Upload CSV",
+	                  onClick: () => {
+	                    if (typeof window === "undefined") return;
+	                    window.dispatchEvent(
+	                      new CustomEvent("dashboard:navigate", {
+	                        detail: { section: "clients-ambassadors", scrollTo: "partner-csv-upload" },
+	                      }),
+	                    );
+	                  },
+	                  icon: Upload,
+	                }}
+	                secondaryAction={{
+	                  label: "Add Manually",
+	                  onClick: () => {
+	                    if (typeof window === "undefined") return;
+	                    window.dispatchEvent(
+	                      new CustomEvent("dashboard:navigate", {
+	                        detail: { section: "clients-ambassadors", scrollTo: "partner-quick-add" },
+	                      }),
+	                    );
+	                  },
+	                  icon: UserPlus,
+	                }}
+	              />
+	            )}
           </div>
         ) : (
-          <div
-            ref={parentRef}
+          <SimpleGridList
+            count={sortedCustomers.length}
             className="max-h-[520px] overflow-auto"
-          >
-            <div
-              className="relative"
-              style={{ height: rowVirtualizer.getTotalSize() }}
-            >
-              {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-                const customer = sortedCustomers[virtualRow.index];
-                if (!customer) return null;
-                const referralLink = customer?.referral_code
-                  ? `${siteUrl}/r/${customer.referral_code}`
-                  : null;
-                const embedTarget = referralLink
-                  ? `${referralLink}${referralLink.includes("?") ? "&" : "?"}embed=1`
-                  : null;
-                const embedSnippet = embedTarget
-                  ? `<iframe src="${embedTarget}" title="Pepform referral" style="width:100%;min-height:600px;border:none;border-radius:24px;overflow:hidden;"></iframe>`
-                  : null;
-                const isLinkCopied = copiedKey === `${customer?.id}-link`;
-                const isEmbedCopied = copiedKey === `${customer?.id}-embed`;
-                const discountCode = customer.discount_code ?? "";
-                const discountKey = `${customer.id}-discount`;
-                const isDiscountCopied = copiedKey === discountKey;
-                const rawStatus = (customer?.status || "pending").toLowerCase();
-                const isVerified =
-                  rawStatus === "verified" || rawStatus === "active";
-                const displayStatus =
-                  rawStatus === "pending"
-                    ? "Partner pending"
-                    : rawStatus === "applicant"
-                    ? "New applicant"
-                    : isVerified
-                    ? "Verified partner"
-                    : rawStatus;
-                const normalizedSource = customer.source
-                  ? customer.source.replace(/_/g, " ")
-                  : null;
-                const audienceSummary = customer.audience_profile
-                  ? customer.audience_profile.length > 140
-                    ? `${customer.audience_profile.slice(0, 140)}…`
-                    : customer.audience_profile
-                  : null;
-                const instagramHandle = customer.instagram_handle
-                  ? customer.instagram_handle.replace(/^@/, "")
-                  : null;
-                const linkedinHandle = customer.linkedin_handle
-                  ? customer.linkedin_handle.replace(/^@/, "")
-                  : null;
-
-                const statusClass =
-                  rawStatus === "applicant"
-                    ? "bg-amber-100 text-amber-800"
-                    : isVerified
-                    ? "bg-emerald-100 text-emerald-800"
-                    : "bg-slate-100 text-slate-800";
-
-                const zebraClass =
-                  virtualRow.index % 2 === 0 ? "bg-slate-50/60" : "bg-white";
-
-                return (
-                  <div
-                    key={customer.id}
-                    data-index={virtualRow.index}
-                    ref={(node) => {
-                      if (node) rowVirtualizer.measureElement(node);
-                    }}
-                    className={`grid items-center gap-4 border-b border-slate-100 px-4 py-3 text-sm ${zebraClass}`}
-                    style={{
-                      gridTemplateColumns: ROW_TEMPLATE,
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      transform: `translateY(${virtualRow.start}px)`,
-                    }}
-                  >
-                    <div className="flex items-center">
-                      <Checkbox
-                        checked={selectedIds.has(customer.id)}
-                        onCheckedChange={() => toggleSelection(customer)}
-                        aria-label={`Select ${customer.name ?? "referral partner"}`}
-                      />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-900">
-                        {customer.name ?? "—"}
-                      </p>
-                      <p className="text-xs text-slate-500">
-                        ID: {customer.id.slice(0, 8)}…
-                      </p>
-                    </div>
-                    <div className="space-y-1 text-xs text-slate-600">
-                      <p>{customer.email ?? "—"}</p>
-                      <p>{customer.phone ?? "—"}</p>
-                    </div>
-                    <div className="space-y-2 text-xs text-slate-600">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <p className="font-semibold text-slate-900">
-                          {customer.company ?? "—"}
-                        </p>
-                        {normalizedSource && (
-                          <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-slate-600">
-                            {normalizedSource}
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {customer.website && (
-                          <a
-                            href={customer.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-blue-700 hover:border-blue-400"
-                          >
-                            Website
-                          </a>
-                        )}
-                        {instagramHandle && (
-                          <a
-                            href={`https://instagram.com/${instagramHandle}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-pink-700 hover:border-pink-400"
-                          >
-                            @{instagramHandle}
-                          </a>
-                        )}
-                        {linkedinHandle && (
-                          <a
-                            href={`https://www.linkedin.com/in/${linkedinHandle}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full border border-slate-200 px-2 py-0.5 font-medium text-[11px] text-slate-700 hover:border-slate-400"
-                          >
-                            LinkedIn
-                          </a>
-                        )}
-                      </div>
-                      {audienceSummary && (
-                        <p className="text-[11px] text-slate-500">
-                          {audienceSummary}
-                        </p>
-                      )}
-                    </div>
-                    {/* AI Score Column */}
-                    <div className="flex flex-col gap-1">
-                      {customer.ai_referral_score !== null ? (
-                        <>
-                          <div className="flex items-center gap-1.5">
-                            <div className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
-                              customer.ai_referral_score >= 80
-                                ? 'bg-emerald-100 text-emerald-700'
-                                : customer.ai_referral_score >= 50
-                                ? 'bg-blue-100 text-blue-700'
-                                : 'bg-slate-100 text-slate-600'
-                            }`}>
-                              {customer.ai_referral_score}
-                            </div>
-                            <span className={`text-xs font-semibold ${
-                              customer.ai_referral_score >= 80
-                                ? 'text-emerald-700'
-                                : customer.ai_referral_score >= 50
-                                ? 'text-blue-700'
-                                : 'text-slate-600'
-                            }`}>
-                              {customer.ai_referral_score >= 80 ? 'High' : customer.ai_referral_score >= 50 ? 'Medium' : 'Low'}
-                            </span>
-                          </div>
-                          {customer.ai_optimal_approach && (
-                            <div className="relative group">
-                              <p className="text-[11px] text-slate-500 truncate cursor-help">
-                                {customer.ai_optimal_approach.length > 40 ? `${customer.ai_optimal_approach.slice(0, 40)}...` : customer.ai_optimal_approach}
-                              </p>
-                              <div className="absolute left-0 top-full mt-1 hidden group-hover:block z-50 w-64 rounded-lg border border-slate-200 bg-white p-3 shadow-lg">
-                                <p className="text-xs font-semibold text-slate-900 mb-1">AI Recommendation:</p>
-                                <p className="text-xs text-slate-700">{customer.ai_optimal_approach}</p>
-                                {customer.ai_score_explanation && (
-                                  <>
-                                    <p className="text-xs font-semibold text-slate-900 mt-2 mb-1">Reasoning:</p>
-                                    <p className="text-xs text-slate-600">{customer.ai_score_explanation}</p>
-                                  </>
-                                )}
-                              </div>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <span className="text-xs text-slate-400">Not scored</span>
-                      )}
-                    </div>
-                    {/* AI Estimated Value Column */}
-                    <div className="flex flex-col gap-1">
-                      {customer.ai_estimated_value !== null ? (
-                        <>
-                          <p className="text-sm font-bold text-emerald-700">
-                            ${customer.ai_estimated_value.toLocaleString()}
-                          </p>
-                          {customer.ai_likelihood_to_refer !== null && (
-                            <p className="text-[11px] text-slate-500">
-                              {Math.round(customer.ai_likelihood_to_refer * 100)}% likely to refer
-                            </p>
-                          )}
-                        </>
-                      ) : (
-                        <span className="text-xs text-slate-400">—</span>
-                      )}
-                    </div>
-                    <div className="space-y-2">
-                      {referralLink ? (
-                        <p className="truncate font-mono text-xs text-blue-600">
-                          {referralLink}
-                        </p>
-                      ) : (
-                        <a
-                          href="#setup-integration"
-                          className="text-xs text-amber-600 hover:text-amber-700 font-semibold underline"
-                        >
-                          Complete Step 1 to activate links
-                        </a>
-                      )}
-                      <div className="flex flex-wrap gap-2">
-                        {referralLink && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() =>
-                              copyToClipboard(referralLink, `${customer.id}-link`)
-                            }
-                            className="text-xs"
-                          >
-                            {isLinkCopied ? (
-                              <>
-                                <Check className="mr-1 h-3 w-3" />
-                                Link copied
-                              </>
-                            ) : (
-                              <>
-                                <Copy className="mr-1 h-3 w-3" />
-                                Copy link
-                              </>
-                            )}
-                          </Button>
-                        )}
-                        {embedSnippet && (
-                          <Button
-                            variant="secondary"
-                            size="sm"
-                            onClick={() =>
-                              copyToClipboard(
-                                embedSnippet,
-                                `${customer.id}-embed`,
-                              )
-                            }
-                            className="text-xs"
-                          >
-                            {isEmbedCopied ? (
-                              <>
-                                <Check className="mr-1 h-3 w-3" />
-                                Embed copied
-                              </>
-                            ) : (
-                              <>
-                                <Copy className="mr-1 h-3 w-3" />
-                                Copy embed
-                              </>
-                            )}
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      {discountCode ? (
-                        <p className="font-mono text-xs text-emerald-700">
-                          {discountCode}
-                        </p>
-                      ) : (
-                        <span className="text-xs text-slate-400">Auto-generated for new contacts</span>
-                      )}
-                      {discountCode && (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => copyToClipboard(discountCode, discountKey)}
-                          className="text-xs"
-                        >
-                          {isDiscountCopied ? (
-                            <>
-                              <Check className="mr-1 h-3 w-3" />
-                              Code copied
-                            </>
-                          ) : (
-                            <>
-                              <Copy className="mr-1 h-3 w-3" />
-                              Copy code
-                            </>
-                          )}
-                        </Button>
-                      )}
-                    </div>
-                    <div>
-                      <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium capitalize ${statusClass}`}>
-                        {displayStatus}
-                      </span>
-                    </div>
-                    <div className="text-xs text-slate-500">
-                      —
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+            renderRow={(index) => {
+              const customer = sortedCustomers[index];
+              if (!customer) return null;
+              return renderCustomerRow(customer, index);
+            }}
+          />
         )}
           </div>
         </div>

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { ArrowRight, Gift, Sparkles, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Gift, Link2, Sparkles, TrendingUp, Users, WalletMinimal } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { cookies } from "next/headers";
@@ -121,6 +121,37 @@ const referralNumbers = [
     accentBg: "bg-[#5ce1e6]",
     source: "Refer Labs Promise",
     sourceUrl: "/how-it-works",
+  },
+];
+
+const referralFlowSteps = [
+  {
+    title: "Referral Partner",
+    summary: "Each partner receives a brief, offer, and unique link inside External Partners.",
+    start: "#0abab5",
+    end: "#57e6ff",
+    icon: Users,
+  },
+  {
+    title: "Tracked interaction or transaction",
+    summary: "Clicks, form submits, demos, and revenue events are captured in real time.",
+    start: "#57e6ff",
+    end: "#9de8ff",
+    icon: Link2,
+  },
+  {
+    title: "Attribution",
+    summary: "Partner, campaign, and link IDs flow into Measure ROI with audit-ready tracking.",
+    start: "#9de8ff",
+    end: "#c7f6ff",
+    icon: Sparkles,
+  },
+  {
+    title: "Reward / Payout",
+    summary: "Revenue share, credits, discounts, or cash-per-demo payouts settle with clear ledgers.",
+    start: "#c7f6ff",
+    end: "#ffffff",
+    icon: WalletMinimal,
   },
 ];
 
@@ -312,11 +343,10 @@ export default async function Home() {
           <div className="relative z-10 flex min-h-[280px] sm:min-h-[340px] lg:min-h-[460px] flex-col items-center justify-center gap-6 sm:gap-8 px-4 text-center sm:px-8 lg:px-16">
             <div className="space-y-4 sm:space-y-5 max-w-6xl">
               <h1 className="text-[2rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[2.5rem] md:text-[2.9rem] lg:text-[3.5rem]">
-                <span className="block">Professional Services Firms Grow Faster</span>
-                <span className="block">With Warm Introductions</span>
+                <span className="block">Launch Referral Programs For Professional Services Firms</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto font-medium leading-relaxed px-4">
-                Turn your client relationships and partner network into predictable revenue. Built for law firms, accounting practices, and consultancies with compliance and tracking built in.
+              <p className="text-sm sm:text-base md:text-lg text-slate-700 max-w-4xl mx-auto font-medium leading-relaxed px-4">
+                Turn Partners, Clients, Creators & Advisors Into a Fully Tracked Revenue Stream
               </p>
             </div>
 
@@ -327,20 +357,67 @@ export default async function Home() {
                 businessId={ambassadorData?.business_id}
                 referralCode={ambassadorData?.code}
               />
-              <Link
-                href="/login"
-                className={cn(
-                  buttonVariants({ variant: "outline" }),
-                  "group rounded-xl text-base sm:text-lg font-semibold px-6 sm:px-8 py-4 sm:py-6 border-2 border-slate-300 hover:border-slate-400 transition-all duration-300 w-full sm:w-auto"
-                )}
-              >
-                See How It Works
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
             </div>
 
           </div>
         </div>
+
+        {/* Partner → Interaction → Attribution → Reward */}
+        <section className="relative overflow-hidden rounded-4xl border border-cyan-900/30 bg-gradient-to-br from-[#0b1f2a] via-[#0c2a38] to-[#020911] px-4 py-10 sm:px-8 sm:py-14 shadow-2xl shadow-cyan-900/30">
+          {/* Glow lines */}
+          <div className="pointer-events-none absolute inset-0">
+            {/* Horizontal for md+ */}
+            <div className="hidden md:block absolute left-[5%] right-[5%] top-1/2 h-[2px] bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent blur-[2px]" />
+            <div className="hidden md:block">
+              {[12, 38, 63, 88].map((left, idx) => (
+                <div
+                  key={`h-node-${idx}`}
+                  className="absolute h-9 w-9 rounded-full bg-cyan-300/50 blur-xl"
+                  style={{ left: `${left}%`, top: "50%", transform: "translate(-50%, -50%)" }}
+                />
+              ))}
+            </div>
+            {/* Vertical for mobile */}
+            <div className="md:hidden absolute top-10 bottom-10 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-cyan-300/70 to-transparent blur-[2px]" />
+            <div className="md:hidden">
+              {[14, 40, 66, 90].map((top, idx) => (
+                <div
+                  key={`v-node-${idx}`}
+                  className="absolute h-9 w-9 rounded-full bg-cyan-300/50 blur-xl"
+                  style={{ top: `${top}%`, left: "50%", transform: "translate(-50%, -50%)" }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="relative z-10 flex flex-col gap-8">
+            <div className="text-center space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100/90">How the Referrals Flow</p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-4">
+              {referralFlowSteps.map((step, idx) => (
+                <div key={step.title} className="relative">
+                  <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 via-white/8 to-white/0 p-[1px] backdrop-blur">
+                    <div className="h-full rounded-[1.65rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-xl shadow-black/25 px-5 py-6 flex flex-col gap-3">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <div className="rounded-2xl bg-white/15 p-3 shadow-sm">
+                            <step.icon className="h-5 w-5 text-cyan-100" />
+                          </div>
+                          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100/80">
+                            Step {String(idx + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-xl font-black text-white">{step.title}</p>
+                      <p className="text-sm text-slate-100/90 leading-relaxed">{step.summary}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* How It Works Section - Premium Redesign */}
         <RevealOnScroll>
@@ -408,9 +485,6 @@ export default async function Home() {
               <h2 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-black tracking-tight text-white drop-shadow-lg leading-[1.1]">
                 Referral Programs By The Numbers
               </h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-purple-100 max-w-4xl mx-auto font-medium leading-relaxed">
-                Turn your existing customers into a high-performing sales team—without the overhead, training, or payroll costs
-              </p>
             </div>
 
             {/* Stats Grid */}

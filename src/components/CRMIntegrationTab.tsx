@@ -444,21 +444,9 @@ export function CRMIntegrationTab({
                 <li>• Confirm the referral landing page loads on your domain.</li>
                 <li>• Verify Interaction Hub + Recent Activity in Measure ROI update.</li>
               </ul>
-              <button
-                type="button"
-                onClick={() => {
-                  if (typeof window === "undefined") return;
-                  window.dispatchEvent(
-                    new CustomEvent("dashboard:navigate", {
-                      detail: { section: "performance", scrollTo: "measure-roi-interaction-hub" },
-                    }),
-                  );
-                }}
-                className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700"
-              >
-                Open Measure ROI
-                <ArrowRight className="h-3.5 w-3.5" />
-              </button>
+              <p className="mt-3 text-xs text-slate-600">
+                Use the left navigation to open <span className="font-semibold">Measure ROI</span> when you’re ready to verify the results.
+              </p>
             </div>
           </div>
         </div>

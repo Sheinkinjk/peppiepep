@@ -21,6 +21,7 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { calculateROIForecast, compareRewardScenarios, type ROIInputs } from "@/lib/ai-roi-calculator";
+import Link from "next/link";
 
 const INDUSTRY_OPTIONS = [
   { value: "beauty", label: "Beauty & Wellness", conversionRate: "18%", description: "Salons, spas, aesthetics" },
@@ -28,6 +29,29 @@ const INDUSTRY_OPTIONS = [
   { value: "retail", label: "Retail & E-commerce", conversionRate: "12%", description: "Boutiques, online stores" },
   { value: "hospitality", label: "Hospitality & Food", conversionRate: "15%", description: "Restaurants, cafes, hotels" },
   { value: "other", label: "Other Industries", conversionRate: "15%", description: "General growth teams across industries" },
+] as const;
+
+const REFERRAL_PARTNERSHIP_HIGHLIGHTS = [
+  {
+    title: "Structured partner onboarding",
+    detail: "We prep briefs, approvals, and campaigns so creators, advisors, and agencies know exactly how to represent your brand.",
+    metric: "Launch readiness in days",
+  },
+  {
+    title: "Full attribution + compliance",
+    detail: "Every CTA, landing page, and conversion carries partner, campaign, and link IDs with disclosure tracking.",
+    metric: "Audit-ready tracking",
+  },
+  {
+    title: "Performance-based rewards",
+    detail: "Revenue share, credits, discounts, upgrades, points, or cash-per-demo payouts are automated on a single ledger.",
+    metric: "Flexible payout models",
+  },
+  {
+    title: "Executive ROI reporting",
+    detail: "Measure ROI surfaces partner-level dashboards so you can defend every dollar spent with partners.",
+    metric: "Ready-made reporting",
+  },
 ] as const;
 
 export function ROICalculator() {
@@ -613,6 +637,55 @@ export function ROICalculator() {
             ))}
           </div>
         </Card>
+
+        {/* Referral Partnerships Deep Dive */}
+        <section className="space-y-6 max-w-4xl mx-auto">
+          <div className="text-center space-y-1">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-600">Expanded offering</p>
+            <h4 className="text-2xl font-black text-slate-900">Refer Labs Referral Partnerships in detail</h4>
+            <p className="text-sm text-slate-600">
+              Pair this calculator with the Refer Labs Referral Partnerships program (<Link href="/referral-partnerships" className="font-semibold text-[#00a6b4]">referlabs.com.au/referral-partnerships</Link>)
+              to unlock the full partner activation, compliance, and reporting stack.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {REFERRAL_PARTNERSHIP_HIGHLIGHTS.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-lg">
+                <div className="flex items-baseline justify-between">
+                  <p className="text-sm uppercase tracking-[0.2em] text-slate-500">{item.metric}</p>
+                  <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+                </div>
+                <h5 className="text-lg font-bold text-slate-900 mt-2">{item.title}</h5>
+                <p className="text-sm text-slate-600 mt-1 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-3xl border border-purple-200 bg-gradient-to-br from-purple-600 to-indigo-600 p-6 text-white shadow-2xl shadow-purple-200/50">
+            <div className="flex flex-col gap-3">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em]">Need a human strategy session?</p>
+              <h4 className="text-2xl font-black">See how these ROI projections feed into real partner programs</h4>
+              <p className="text-sm text-white/80">
+                Apply the calculated numbers directly to partnership briefs, reward guides, and payout ledgers that the Refer Labs team builds for your business.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/referral-partnerships"
+                  className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition hover:bg-white/20"
+                >
+                  Explore the partnership offering
+                </Link>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={() => window.location.href = "https://calendly.com/jarred-referlabs/30min?month=2026-01"}
+                  className="text-white border-white/60 hover:bg-white/10 hover:text-white"
+                >
+                  Book a concierge prep call
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA */}
         <div className="flex justify-center gap-3 pt-4">

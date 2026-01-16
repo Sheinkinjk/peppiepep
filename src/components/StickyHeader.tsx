@@ -80,6 +80,12 @@ export function StickyHeader() {
               </Link>
               <Link
                 className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
+                href="/referral-partnerships"
+              >
+                Referral Partnerships
+              </Link>
+              <Link
+                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
                 href="/pricing"
               >
                 Pricing
@@ -170,6 +176,13 @@ export function StickyHeader() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 How it works
+              </Link>
+              <Link
+                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
+                href="/referral-partnerships"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Referral Partnerships
               </Link>
               <Link
                 className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"

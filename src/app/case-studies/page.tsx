@@ -1,458 +1,341 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ChevronDown, ArrowRight, TrendingUp, Users, Briefcase, Building2, Heart } from "lucide-react";
+import { useMemo, useState } from "react";
 
-type MetricCard = {
+type CaseStudy = {
+  id: string;
   title: string;
-  metric: string;
-  caption: string;
+  headline: string;
+  challenge: string;
+  solution: string[];
+  outcomes: string[];
+  tags: string[];
+  quote: string;
+  quoteBy: string;
+  metrics: { label: string; value: string }[];
+  date: string;
 };
 
-type AccordionItem = {
-  title: string;
-  content: string;
-};
+const filters = [
+  { id: "all", label: "Show All" },
+  { id: "saaS", label: "SaaS Referral Programs" },
+  { id: "partnerships", label: "Referral Partnerships" },
+  { id: "revenue", label: "Revenue Growth" },
+  { id: "engagement", label: "Engagement Lift" },
+  { id: "efficiency", label: "Operational Efficiency" },
+] as const;
 
-type IndustryCard = {
-  industry: string;
-  whyItWins: string;
-  bestTrigger: string;
-  icon: typeof Building2;
-};
-
-const luxuryMetrics: MetricCard[] = [
-  { title: "Referral Revenue", metric: "28%", caption: "Of monthly revenue sourced from referrals" },
-  { title: "UGC Lift", metric: "4×", caption: "Increase in customer photo + reel submissions" },
-  { title: "Margin Impact", metric: "+9% AOV", caption: "Rewards protect pricing vs discounts" },
-];
-
-const luxuryAccordion: AccordionItem[] = [
-  { title: "Trigger", content: "Post-purchase SMS and packaging inserts delivered personalised referral QR codes the moment customers received their order." },
-  { title: "Share", content: "Customers shared referral links into private WhatsApp groups, Instagram stories, and DMs." },
-  { title: "Track", content: "Every purchase was attributed via referral_code synced across Shopify and Klaviyo — no broken links, no manual matching." },
-  { title: "Reward", content: "Store credits unlocked instantly inside Refer Labs dashboards and synced to CRM profiles." },
-];
-
-const professionalMetrics: MetricCard[] = [
-  { title: "Qualified Leads", metric: "+42%", caption: "Quarter-on-quarter growth" },
-  { title: "Close Rate", metric: "3.1×", caption: "Versus cold inbound leads" },
-  { title: "Advisor Adoption", metric: "93%", caption: "Prompts baked into daily workflows" },
-];
-
-const professionalAccordion: AccordionItem[] = [
-  { title: "Trigger", content: "Advisers logged \"delighted client\" moments inside Refer Labs after reviews or milestones." },
-  { title: "Share", content: "Clients received a co-branded referral page and introduce-a-friend email with zero friction." },
-  { title: "Track", content: "Referrals flowed directly into HubSpot with advisor attribution and deal stage visibility." },
-  { title: "Reward", content: "Referrers received strategy session credits with a full compliance audit trail for finance." },
-];
-
-const saasMetrics: MetricCard[] = [
-  { title: "Pipeline Lift", metric: "+37%", caption: "Net-new opportunities from referrals" },
-  { title: "Sales Cycle", metric: "−44 days", caption: "Deals arrived with internal champions" },
-  { title: "Expansion Revenue", metric: "+18%", caption: "Referrals unlocked multi-team deals" },
-];
-
-const saasAccordion: AccordionItem[] = [
-  { title: "Trigger", content: "Power users hit product success milestones (activation, NPS, feature adoption)." },
-  { title: "Share", content: "Champions selected who to introduce; Refer Labs generated a ready-to-forward brief." },
-  { title: "Track", content: "Introductions logged into Salesforce with referral_code and Slack alerts for AE + CSM." },
-  { title: "Reward", content: "Champions unlocked VIP roadmap access and credits once deals closed." },
-];
-
-const industries: IndustryCard[] = [
+const cases: CaseStudy[] = [
   {
-    industry: "Financial Advisers & Accountants",
-    whyItWins: "Trust-driven, high LTV, natural intro behaviour",
-    bestTrigger: "Review meetings, EOFY, life events",
-    icon: Briefcase,
+    id: "pro-services-revenue",
+    title: "Professional Services — +37% referral revenue",
+    headline: "Problem → Strategy → Result",
+    challenge: "Manual referrals with no attribution or payout visibility.",
+    solution: [
+      "We issued unique partner links and mapped every event into Measure ROI.",
+      "We automated reward workflows tied to revenue share and demo bookings.",
+      "We enabled partner dashboards so advisors could see performance in real time.",
+    ],
+    outcomes: [
+      "37% increase in referral-sourced revenue",
+      "3.2× lift in partner engagement scores",
+      "Zero manual reconciliation for payouts",
+    ],
+    tags: ["saaS", "revenue", "efficiency"],
+    quote: "ReferLabs turned our referral channel into a measurable revenue engine.",
+    quoteBy: "Growth Lead, Professional Services",
+    metrics: [
+      { label: "Referral revenue", value: "+37%" },
+      { label: "Engagement lift", value: "3.2×" },
+      { label: "Manual tracking", value: "-100%" },
+    ],
+    date: "2024-11-01",
   },
   {
-    industry: "Agencies & Consultants",
-    whyItWins: "Founder-led sales + network effects",
-    bestTrigger: "Project completion, wins, renewals",
-    icon: Users,
+    id: "b2b-influencers",
+    title: "B2B Influencers / LinkedIn — +28% conversion",
+    headline: "Problem → Strategy → Result",
+    challenge: "Creator-led referrals were untracked and undervalued.",
+    solution: [
+      "We onboarded LinkedIn influencers through External Partners with briefs and approvals.",
+      "We issued campaign-specific links and tagged events with partner + campaign IDs.",
+      "We aligned rewards to revenue share and cash-per-demo with audit-ready ledgers.",
+    ],
+    outcomes: [
+      "28% increase in referral conversions",
+      "Revenue attribution per influencer, per campaign",
+      "Quarterly performance reviews for creators",
+    ],
+    tags: ["partnerships", "revenue", "engagement"],
+    quote: "We finally see which creators move revenue, not just impressions.",
+    quoteBy: "Head of Demand Gen, B2B SaaS",
+    metrics: [
+      { label: "Conversion lift", value: "+28%" },
+      { label: "Influencer ROI", value: "Fully attributed" },
+      { label: "Partner reviews", value: "Quarterly" },
+    ],
+    date: "2024-10-15",
   },
   {
-    industry: "E-commerce (Premium / DTC)",
-    whyItWins: "Social proof + community sharing",
-    bestTrigger: "Unboxing, reorder, loyalty milestones",
-    icon: TrendingUp,
-  },
-  {
-    industry: "SaaS (B2B & Vertical)",
-    whyItWins: "Champion-led buying and expansion",
-    bestTrigger: "Activation, NPS, usage thresholds",
-    icon: Building2,
-  },
-  {
-    industry: "Health, Wellness & Clinics",
-    whyItWins: "Word-of-mouth already exists, just untracked",
-    bestTrigger: "Outcome milestones, reviews, follow-ups",
-    icon: Heart,
-  },
-];
-
-const platformCapabilities: AccordionItem[] = [
-  {
-    title: "Capture & Code",
-    content: "Refer Labs issues airtight referral_code and discount_code pairs per ambassador. Codes sync across CRM, campaigns, landing pages, packaging, and checkout.",
-  },
-  {
-    title: "Triggers & Asks",
-    content: "Email, SMS, in-app prompts, and CS playbooks fire the moment someone hits a success milestone — always using the same referral code.",
-  },
-  {
-    title: "A/B Test Incentives",
-    content: "Test copy, rewards, and CTAs directly inside Refer Labs. Automatically route champions into the highest-performing variant.",
-  },
-  {
-    title: "Referrer Engagement",
-    content: "Live dashboards, leaderboards, surprise rewards, and automated nudges keep advocates active without manual chasing.",
-  },
-  {
-    title: "Prospect Experience",
-    content: "Personalised referral pages, instant booking, or discount redemption — every conversion flows straight into your funnel with metadata intact.",
-  },
-  {
-    title: "Revenue & Optimisation",
-    content: "Finance sees referral-sourced revenue, payouts, and ROI. Double down on what works, pause what doesn't.",
+    id: "agencies-ops",
+    title: "Agencies & Strategic Partners — -60% ops overhead",
+    headline: "Problem → Strategy → Result",
+    challenge: "Multiple partner deals, no single source of truth for links, contracts, and payouts.",
+    solution: [
+      "We centralized partner records and links inside External Partners.",
+      "We automated payout calculations for hybrid fixed + revenue-share models.",
+      "We provided compliance-ready reporting for finance and operations.",
+    ],
+    outcomes: [
+      "60% reduction in manual ops hours",
+      "Single ledger for payouts and rewards",
+      "Improved partner satisfaction (NPS +18)",
+    ],
+    tags: ["partnerships", "efficiency", "engagement"],
+    quote: "Ops stopped chasing spreadsheets. Everything lives in one ledger now.",
+    quoteBy: "COO, Strategic Agency Collective",
+    metrics: [
+      { label: "Ops time saved", value: "-60%" },
+      { label: "Partner NPS", value: "+18" },
+      { label: "Payout errors", value: "0" },
+    ],
+    date: "2024-09-20",
   },
 ];
 
-const timelineCards = [
-  { period: "Weeks 1–2", task: "Map customer journeys, define success triggers, import ambassadors." },
-  { period: "Weeks 2–3", task: "Configure campaigns, referral pages, CRM syncs, and reward logic." },
-  { period: "Weeks 3–4", task: "Train teams, activate automation, launch across email, SMS, and product." },
-];
-
-function MetricCard({ title, metric, caption }: MetricCard) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-      <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-2">{title}</p>
-      <p className="text-4xl font-black text-teal-700 mb-1">{metric}</p>
-      <p className="text-sm text-slate-600">{caption}</p>
-    </div>
-  );
-}
-
-function AccordionSection({ items }: { items: AccordionItem[] }) {
-  const [openItems, setOpenItems] = useState<string[]>([]);
-
-  const toggleItem = (title: string) => {
-    setOpenItems(prev =>
-      prev.includes(title) ? prev.filter(t => t !== title) : [...prev, title]
-    );
-  };
-
-  return (
-    <div className="space-y-3">
-      {items.map((item) => (
-        <Collapsible
-          key={item.title}
-          open={openItems.includes(item.title)}
-          onOpenChange={() => toggleItem(item.title)}
-        >
-          <CollapsibleTrigger className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-white px-5 py-4 text-left hover:bg-slate-50 transition-colors">
-            <span className="text-base font-bold text-slate-900">{item.title}</span>
-            <ChevronDown
-              className={cn(
-                "h-5 w-5 text-slate-500 transition-transform duration-200",
-                openItems.includes(item.title) && "rotate-180"
-              )}
-            />
-          </CollapsibleTrigger>
-          <CollapsibleContent className="px-5 py-4 text-sm text-slate-600 leading-relaxed">
-            {item.content}
-          </CollapsibleContent>
-        </Collapsible>
-      ))}
-    </div>
-  );
-}
+const featured = cases[0];
 
 export default function CaseStudiesPage() {
-  return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+  const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]["id"]>("all");
 
-        {/* Page Title Section */}
-        <section className="mb-10 text-center space-y-3 sm:space-y-4">
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 leading-tight">
-            Case Studies
+  const visibleCases = useMemo(() => {
+    if (activeFilter === "all") return cases;
+    return cases.filter((c) => c.tags.includes(activeFilter));
+  }, [activeFilter]);
+
+  const jsonLd = useMemo(
+    () =>
+      JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": cases.map((c) => ({
+          "@type": "CaseStudy",
+          name: c.title,
+          headline: c.headline,
+          description: c.challenge,
+          datePublished: c.date,
+          outcome: c.outcomes,
+        })),
+      }),
+    [],
+  );
+
+  return (
+    <div className="relative min-h-screen bg-gradient-to-br from-[#07131e] via-[#0c1c29] to-[#03080f] text-slate-50">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(87,230,255,0.12),transparent_40%),radial-gradient(circle_at_85%_10%,rgba(10,186,181,0.18),transparent_45%),radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.1),transparent_55%)]" />
+      <main className="relative mx-auto flex max-w-6xl flex-col gap-14 px-6 pb-20 pt-16 sm:px-10 lg:px-16">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+
+        {/* Hero */}
+        <header className="text-center space-y-4">
+          <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white">
+            Real Results from Real Growth Programs
           </h1>
-          <p className="text-lg sm:text-2xl font-semibold text-slate-700 max-w-4xl mx-auto leading-snug">
-            Referral programs that compound trust, pipeline, and revenue
+          <p className="text-lg sm:text-xl text-slate-100/85 max-w-4xl mx-auto">
+            Explore how innovative teams are using ReferLabs to build scalable referral and partner programs that drive measurable revenue, increase engagement, and accelerate growth. Each case study highlights the challenge, key actions taken, and the outcomes that matter most to business leaders.
           </p>
-          <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto">
-            See how Refer Labs links referral codes to campaigns, CRM, and payouts so every introduction is trackable, rewardable, and repeatable — no guesswork.
-          </p>
+        </header>
+
+        {/* Featured */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-3 justify-between">
+            <h2 className="text-2xl sm:text-3xl font-black text-white">Featured Success Story</h2>
+            <Link href="#case-list" className="text-sm font-semibold text-cyan-200 hover:text-cyan-100">
+              Explore More Case Studies →
+            </Link>
+          </div>
+          <div className="relative overflow-hidden rounded-4xl border border-cyan-300/40 bg-gradient-to-br from-cyan-200/20 via-white/8 to-transparent backdrop-blur-2xl p-[1px] shadow-2xl shadow-cyan-900/40">
+            <div className="rounded-[1.6rem] bg-gradient-to-br from-white/16 via-white/10 to-white/6 border border-white/15 px-6 py-8 sm:px-8 sm:py-10 grid gap-6 md:grid-cols-[2fr_1fr]">
+              <div className="space-y-4">
+                <p className="text-sm font-semibold text-cyan-100 uppercase tracking-[0.18em]">{featured.title}</p>
+                <p className="text-xl font-black text-white">{featured.headline}</p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {featured.metrics.map((m) => (
+                    <div key={m.label} className="rounded-2xl border border-white/15 bg-white/8 px-4 py-3 shadow-sm shadow-black/20 text-center">
+                      <p className="text-2xl font-black text-white">{m.value}</p>
+                      <p className="text-xs text-slate-100/80">{m.label}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2">
+                  <p className="text-sm text-slate-100/85">
+                    <strong>Challenge:</strong> {featured.challenge}
+                  </p>
+                  <p className="text-sm text-slate-100/85">
+                    <strong>Solution:</strong> {featured.solution.join(" ")}
+                  </p>
+                  <p className="text-sm text-slate-100/85">
+                    <strong>Outcome:</strong> {featured.outcomes.join(" • ")}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3 text-sm italic text-slate-100/90">
+                  “{featured.quote}” — {featured.quoteBy}
+                </div>
+              </div>
+              <div className="flex flex-col gap-4 justify-between">
+                <div className="rounded-2xl border border-white/12 bg-white/6 px-4 py-3 shadow-sm shadow-black/20">
+                  <p className="text-sm font-semibold text-white">From manual referrals to +37% conversion</p>
+                  <p className="mt-2 text-sm text-slate-100/85">Partner dashboards, automated rewards, and Measure ROI attribution unlocked revenue visibility.</p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-cyan-300 text-slate-900 px-5 py-3 text-sm font-semibold hover:bg-cyan-200"
+                >
+                  See how we can help you
+                </Link>
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* Tabs Section */}
-        <Tabs defaultValue="luxury" className="space-y-8">
-          <TabsList className="flex w-full gap-2 overflow-x-auto rounded-2xl bg-slate-100 p-2 sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:gap-2">
-            <TabsTrigger value="luxury" className="min-w-[200px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
-              Luxury & Lifestyle E-commerce
-            </TabsTrigger>
-            <TabsTrigger value="professional" className="min-w-[200px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
-              Professional Services
-            </TabsTrigger>
-            <TabsTrigger value="saas" className="min-w-[140px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
-              B2B SaaS
-            </TabsTrigger>
-            <TabsTrigger value="industries" className="min-w-[180px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
-              Industries That Win
-            </TabsTrigger>
-            <TabsTrigger value="platform" className="min-w-[140px] flex-1 rounded-xl text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:shadow-md">
-              Referral OS
-            </TabsTrigger>
-          </TabsList>
+        {/* Filters */}
+        <section className="space-y-4">
+          <div className="flex flex-wrap gap-2">
+            {filters.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => setActiveFilter(f.id)}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                  activeFilter === f.id
+                    ? "bg-cyan-300 text-slate-900 shadow-md"
+                    : "border border-white/15 bg-white/6 text-white hover:bg-white/10"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+        </section>
 
-          {/* Tab 1: Luxury & Lifestyle */}
-          <TabsContent value="luxury" className="space-y-8">
-            <div className="text-center">
-              <p className="text-lg sm:text-2xl font-bold text-slate-900">
-                Turn every unboxing, DM, and &quot;I love this&quot; moment into your next customers.
-              </p>
-            </div>
-
-            {/* Metrics */}
-            <div className="grid gap-6 md:grid-cols-3">
-              {luxuryMetrics.map((metric) => (
-                <MetricCard key={metric.title} {...metric} />
-              ))}
-            </div>
-
-            {/* How It Worked */}
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
-              <AccordionSection items={luxuryAccordion} />
-            </div>
-
-            {/* Proof Statement */}
-            <div className="rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 p-5 sm:p-8">
-              <p className="text-base sm:text-lg text-slate-800 leading-relaxed italic">
-                By unifying referral codes across Shopify, Klaviyo, packaging, and SMS, the brand finally saw which advocates, launches, and creatives actually moved revenue — then doubled down on those cohorts.
-              </p>
-            </div>
-          </TabsContent>
-
-          {/* Tab 2: Professional Services */}
-          <TabsContent value="professional" className="space-y-8">
-            <div className="text-center">
-              <p className="text-lg sm:text-2xl font-bold text-slate-900">
-                Turn warm introductions into a predictable, compliant pipeline channel.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {professionalMetrics.map((metric) => (
-                <MetricCard key={metric.title} {...metric} />
-              ))}
-            </div>
-
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
-              <AccordionSection items={professionalAccordion} />
-            </div>
-
-            <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 p-5 sm:p-8">
-              <p className="text-base sm:text-lg text-slate-800 leading-relaxed italic">
-                Instead of hoping advisers remembered to ask, the firm automated prompts, assets, approvals, and tracking. Compliance loved the audit trail. GTM loved the pipeline.
-              </p>
-            </div>
-          </TabsContent>
-
-          {/* Tab 3: B2B SaaS */}
-          <TabsContent value="saas" className="space-y-8">
-            <div className="text-center">
-              <p className="text-lg sm:text-2xl font-bold text-slate-900">
-                Let your power users become your highest-converting outbound team.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {saasMetrics.map((metric) => (
-                <MetricCard key={metric.title} {...metric} />
-              ))}
-            </div>
-
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">How It Worked</h3>
-              <AccordionSection items={saasAccordion} />
-            </div>
-
-            <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 p-5 sm:p-8">
-              <p className="text-base sm:text-lg text-slate-800 leading-relaxed italic">
-                Referrals stopped being random. Product, customer success, and sales all worked from the same referral data — so forecasting, follow-ups, and rewards finally aligned.
-              </p>
-            </div>
-          </TabsContent>
-
-          {/* Tab 4: Industries */}
-          <TabsContent value="industries" className="space-y-8">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {industries.map((industry) => (
-                <div
-                  key={industry.industry}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                      <industry.icon className="h-6 w-6 text-teal-700" />
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900">{industry.industry}</h3>
+        {/* Case list */}
+        <section id="case-list" className="grid gap-6">
+          {visibleCases.map((c) => (
+            <article
+              key={c.id}
+              className="relative overflow-hidden rounded-4xl border border-white/12 bg-white/6 backdrop-blur-2xl p-[1px] shadow-xl shadow-black/30"
+            >
+              <div className="rounded-[1.4rem] bg-gradient-to-br from-white/12 via-white/6 to-white/4 border border-white/10 px-6 py-6 sm:px-8 sm:py-8 space-y-5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h3 className="text-2xl font-black text-white">{c.title}</h3>
+                    <p className="text-sm font-semibold text-cyan-100 uppercase tracking-[0.14em]">{c.headline}</p>
                   </div>
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-1">
-                        Why It Wins
-                      </p>
-                      <p className="text-sm text-slate-700">{industry.whyItWins}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 mb-1">
-                        Best Trigger
-                      </p>
-                      <p className="text-sm text-slate-700">{industry.bestTrigger}</p>
-                    </div>
+                  <div className="flex flex-wrap gap-2">
+                    {c.tags.map((tag) => (
+                      <span key={tag} className="rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-semibold text-white/90">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 p-5 sm:p-8 text-center">
-              <p className="text-base sm:text-xl font-semibold text-slate-900">
-                If your customers already recommend you — Refer Labs turns that behaviour into a measurable, scalable acquisition channel.
-              </p>
-            </div>
-          </TabsContent>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {c.metrics.map((m) => (
+                    <div key={m.label} className="rounded-2xl border border-white/12 bg-white/6 px-4 py-3 shadow-sm shadow-black/15">
+                      <p className="text-2xl font-black text-white">{m.value}</p>
+                      <p className="text-xs text-slate-100/80">{m.label}</p>
+                    </div>
+                  ))}
+                </div>
 
-          {/* Tab 5: Platform */}
-          <TabsContent value="platform" className="space-y-8">
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">Platform Capabilities</h3>
-              <AccordionSection items={platformCapabilities} />
-            </div>
-
-            {/* Deployment Playbook */}
-            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-lg">
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6">Deployment Playbook</h3>
-              <div className="grid gap-6 md:grid-cols-3">
-                {timelineCards.map((card) => (
-                  <div
-                    key={card.period}
-                    className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-cyan-50 p-6"
-                  >
-                    <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal-700 mb-2">
-                      {card.period}
-                    </p>
-                    <p className="text-sm text-slate-700 leading-relaxed">{card.task}</p>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3">
+                    <p className="text-sm font-semibold text-white mb-1">Challenge</p>
+                    <p className="text-sm text-slate-100/85">{c.challenge}</p>
                   </div>
-                ))}
+                  <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3">
+                    <p className="text-sm font-semibold text-white mb-1">Solution</p>
+                    <ul className="space-y-2 text-sm text-slate-100/85">
+                      {c.solution.map((s) => (
+                        <li key={s} className="flex gap-2">
+                          <span className="text-cyan-200">•</span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3">
+                    <p className="text-sm font-semibold text-white mb-1">Outcome</p>
+                    <ul className="space-y-2 text-sm text-slate-100/85">
+                      {c.outcomes.map((o) => (
+                        <li key={o} className="flex gap-2">
+                          <span className="text-cyan-200">•</span>
+                          <span>{o}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3 text-sm italic text-slate-100/90">
+                  “{c.quote}” — {c.quoteBy}
+                </div>
+
+                <div className="flex justify-end">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-full bg-cyan-300 text-slate-900 px-5 py-3 text-sm font-semibold hover:bg-cyan-200"
+                  >
+                    See how we can help you
+                  </Link>
+                </div>
               </div>
-            </div>
-          </TabsContent>
-        </Tabs>
+            </article>
+          ))}
+        </section>
 
-        {/* Comparison Table */}
-        <section className="mt-16 space-y-6">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-              Why Refer Labs Wins
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Compare traditional referral approaches vs. the Refer Labs platform
-            </p>
-          </div>
-
-          <div className="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-xl">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-slate-200 bg-gradient-to-r from-slate-50 to-slate-100">
-                    <th className="px-3 py-3 text-left text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-slate-700">Feature</th>
-                    <th className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-red-600">Manual Tracking</th>
-                    <th className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-orange-600">Basic Tools</th>
-                    <th className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-bold uppercase tracking-[0.12em] text-teal-600">Refer Labs</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200">
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Unique Referral Codes</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">⚠️</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">CRM Integration</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">⚠️</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Automated Campaigns</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Revenue Attribution</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">⚠️</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-medium text-slate-900">Ambassador Dashboard</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">❌</td>
-                    <td className="px-3 py-3 text-center text-xl sm:px-6 sm:py-4 sm:text-2xl">✅</td>
-                  </tr>
-                  <tr className="bg-gradient-to-r from-teal-50 to-cyan-50">
-                    <td className="px-3 py-3 text-xs sm:px-6 sm:py-4 sm:text-sm font-bold text-slate-900">Setup Time</td>
-                    <td className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-semibold text-red-700">Weeks</td>
-                    <td className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-semibold text-orange-700">Days</td>
-                    <td className="px-3 py-3 text-center text-xs sm:px-6 sm:py-4 sm:text-sm font-semibold text-teal-700">Minutes</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        {/* Learn more */}
+        <section className="space-y-3 text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-white">See How It Works — Explore our Platform & Partnerships</h2>
+          <p className="text-sm sm:text-base text-slate-100/85 max-w-3xl mx-auto">
+            Want to learn how ReferLabs delivers these outcomes? Check out our product overview or pricing.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center justify-center rounded-full bg-cyan-300 text-slate-900 px-6 py-3 text-sm font-semibold hover:bg-cyan-200"
+            >
+              How it Works
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-transparent text-white px-6 py-3 text-sm font-semibold hover:bg-white/10"
+            >
+              Pricing
+            </Link>
           </div>
         </section>
 
-        {/* Bottom CTA */}
-        <div className="mt-12 sticky bottom-4 sm:bottom-6 z-10">
-          <div className="rounded-3xl border-2 border-teal-200 bg-gradient-to-br from-white to-teal-50 p-5 sm:p-8 shadow-2xl">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
-              <div className="text-center sm:text-left">
-                <p className="text-lg sm:text-2xl font-bold text-slate-900 mb-2">
-                  Turn your customers into a measurable growth channel.
-                </p>
-                <p className="text-xs sm:text-sm text-slate-600">
-                  Launch your referral program in under 5 minutes.
-                </p>
-              </div>
+        {/* Final CTA */}
+        <section className="relative overflow-hidden rounded-4xl border border-white/12 bg-gradient-to-br from-white/10 via-white/6 to-white/12 px-8 py-12 sm:px-12 sm:py-14 shadow-2xl shadow-black/35 text-center">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(87,230,255,0.18),transparent_40%),radial-gradient(circle_at_75%_15%,rgba(10,186,181,0.18),transparent_45%)]" />
+          <div className="relative z-10 space-y-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">Ready to Build Your Own Referral Program?</h2>
+            <p className="text-sm sm:text-base text-slate-100/85">
+              Find out how the ReferLabs platform or our Referral Partnerships program can deliver measurable outcomes for your business.
+            </p>
+            <div className="flex justify-center">
               <Link
-                href="/login"
-                className={cn(
-                  buttonVariants({ variant: "cta" }),
-                  "w-full sm:w-auto text-base sm:text-lg font-bold px-6 py-4 sm:px-8 sm:py-6 shadow-xl whitespace-nowrap"
-                )}
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-300 text-slate-900 px-6 py-3 text-sm font-semibold hover:bg-cyan-200"
               >
-                Start Getting Referrals
-                <ArrowRight className="ml-2 h-5 w-5" />
+                Schedule a Call
               </Link>
             </div>
           </div>
-        </div>
-
-      </div>
-    </main>
+        </section>
+      </main>
+    </div>
   );
 }

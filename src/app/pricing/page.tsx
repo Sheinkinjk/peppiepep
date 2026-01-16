@@ -1,537 +1,634 @@
 "use client";
 
-/* eslint-disable react/no-unescaped-entities */
 import { useMemo, useState } from "react";
-import { ArrowRight, Check, Zap, Users, Crown } from "lucide-react";
+import type { FormEvent } from "react";
 import Link from "next/link";
-import { redirectToCheckout } from "@/lib/stripe-checkout";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
-// Stripe Price IDs from environment
-const PRICE_IDS = {
-  base: {
-    monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_BASE_MONTHLY!,
-    annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_BASE_ANNUAL!,
+const faqs = [
+  {
+    q: "How should I choose between Starter, Growth, and Enterprise?",
+    a: "Starter is ideal for lean teams building their first referral program. Growth adds automation, segmentation, and integrations for scaling marketing motions. Enterprise unlocks bespoke onboarding, account coverage, SLAs, and API/custom embed work for complex partner ecosystems.",
   },
-  scale: {
-    monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_SCALE_MONTHLY!,
-    annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_SCALE_ANNUAL!,
+  {
+    q: "Can I move between plans later?",
+    a: "Absolutely. Starter and Growth are flexible (monthly or annual). Enterprise includes a tailored kickoff and support cadence but can still scale up or down as your strategy evolves.",
   },
-};
+  {
+    q: "What does every plan share in common?",
+    a: "Every plan includes Refer Labs’ tracking fabric, partner portal, analytics, compliance guardrails, and the ability to route rewards, SMS/email, and integrations without extra configuration.",
+  },
+  {
+    q: "What makes Referral Partnerships different?",
+    a: "It’s a premium, high-touch engagement where we map partner strategy, enable the right contributors, automate tracking and payouts, and deliver executive-ready reporting with ongoing optimization.",
+  },
+  {
+    q: "Is there a minimum commitment for Referral Partnerships?",
+    a: "Referral Partnerships engagements are scoped and quoted per business; they typically start with a three-month growth sprint tied to measurable KPIs, then roll into an ongoing retainer or support cadence.",
+  },
+];
 
-export default function Pricing() {
+const partnershipFlow = [
+  {
+    title: "Discovery & Objectives",
+    detail: "We map your ideal partners, business targets, and compliance guardrails so every introduction has a measurable outcome.",
+    result: "Strategy ready in days",
+  },
+  {
+    title: "Enablement & Activation",
+    detail: "Refer Labs humanizes offers, creates partner playbooks, automates links/payments, and delivers concierge outreach.",
+    result: "Partners activated with confidence",
+  },
+  {
+    title: "Measurement & Optimization",
+    detail: "Performance dashboards, payout audits, and scheduled review sessions keep your program accountable and high-leverage.",
+    result: "ROI visibility & growth",
+  },
+];
+
+const partnershipFollowUp = [
+  {
+    title: "Prep Call",
+    detail: "We review your growth goals, partner targets, and hand you a launch plan before the call ends.",
+  },
+  {
+    title: "Strategy Delivery",
+    detail: "You receive a tailored partner playbook, compliance checklist, and rollout schedule that syncs with your team.",
+  },
+  {
+    title: "Launch Support",
+    detail: "Refer Labs manages onboarding, communications, payout workflows, and executive reporting for every referrer.",
+  },
+];
+
+export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
-  const [loading, setLoading] = useState<string | null>(null);
+  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
 
-  const pricing = useMemo(
-    () => ({
-      starter: {
-        monthly: 99,
-        annual: 79, // 20% discount: $948/year = $79/month
+  const tiers = useMemo(
+    () => [
+      {
+        name: "Starter",
+        monthly: 249,
+        annual: 199,
+        subtext: "For individuals & small teams",
+        features: [
+          "Core referral tracking",
+          "Unlimited referral links",
+          "Basic partner portal",
+          "Email support",
+          "Standard analytics dashboard",
+        ],
+        cta: "Get Started",
       },
-      professional: {
-        monthly: 299,
-        annual: 239, // 20% discount: $2,868/year = $239/month
+      {
+        name: "Growth",
+        monthly: 399,
+        annual: 319,
+        subtext: "For scaling teams & SMBs",
+        features: [
+          "Everything in Starter",
+          "Advanced partner segmentation",
+          "Automated reward workflows",
+          "Custom referral link domains",
+          "Integrations (Shopify, WordPress, Mailchimp)",
+        ],
+        cta: "Choose Growth",
+        highlight: true,
       },
-    }),
+      {
+        name: "Enterprise",
+        monthly: null,
+        annual: null,
+        subtext: "For complex, high-volume growth",
+        features: [
+          "Everything in Growth",
+          "Dedicated account support",
+          "API access & custom onboarding",
+          "SLA & priority support",
+          "Advanced security controls",
+        ],
+        cta: "Contact Sales",
+      },
+    ],
     [],
   );
 
-  const starterPrice = pricing.starter[billingCycle];
-  const professionalPrice = pricing.professional[billingCycle];
-  const starterSavings =
-    billingCycle === "annual"
-      ? Math.round(pricing.starter.monthly * 12 - pricing.starter.annual * 12)
-      : 0;
-  const professionalSavings =
-    billingCycle === "annual"
-      ? Math.round(pricing.professional.monthly * 12 - pricing.professional.annual * 12)
-      : 0;
+  const compareRows = [
+    { feature: "Core referral tracking", starter: true, growth: true, enterprise: true },
+    { feature: "Unlimited referral links", starter: true, growth: true, enterprise: true },
+    { feature: "Partner portal", starter: true, growth: true, enterprise: true },
+    { feature: "Advanced partner segmentation", starter: false, growth: true, enterprise: true },
+    { feature: "Automated reward workflows", starter: false, growth: true, enterprise: true },
+    { feature: "Custom referral link domains", starter: false, growth: true, enterprise: true },
+    { feature: "API access", starter: false, growth: false, enterprise: true },
+    { feature: "SLA & priority support", starter: false, growth: false, enterprise: true },
+    { feature: "Advanced security controls", starter: false, growth: false, enterprise: true },
+  ];
 
-  async function handleSubscribe(plan: "starter" | "professional") {
+  const referralAddOn = {
+    tagline: "Turn trusted advisors, creators, and agencies into measurable growth engines.",
+    summary:
+      "A white-glove coaching and activation engagement layered on any Refer Labs plan. We design partner programs, handle campaign assets, certify compliance, and deliver payouts/reports that finance teams can trust.",
+    pillars: [
+      {
+        title: "Strategy & Enablement",
+        detail: "We map partner archetypes, craft offers, and train stakeholders with role-based playbooks.",
+      },
+      {
+        title: "Automated payouts",
+        detail: "Custom reward structures (revenue share, credits, cash, upgrades) with audit-ready ledgers.",
+      },
+      {
+        title: "Performance intelligence",
+        detail: "Live partner dashboards, compliance tracking, and integration-ready reporting for finance.",
+      },
+      {
+        title: "Concierge support",
+        detail: "Expert onboarding, quarterly optimization workshops, and priority SLAs keep momentum.",
+      },
+    ],
+    cta: {
+      label: "Request Partnership Pricing",
+      href: "/contact",
+    },
+  };
+
+  const initialFormState = {
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    role: "",
+    currentPlan: "Starter",
+    goals: "",
+    timeline: "",
+    message: "",
+  };
+
+  const [applicationData, setApplicationData] = useState(initialFormState);
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formError, setFormError] = useState<string | null>(null);
+
+  const handleApplicationChange = (field: keyof typeof initialFormState, value: string) => {
+    setApplicationData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleApplicationSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setFormStatus("submitting");
+    setFormError(null);
+
     try {
-      setLoading(plan);
-      // Map new plan names to existing Stripe price IDs temporarily
-      const planMapping = { starter: "base", professional: "scale" } as const;
-      const stripePlan = planMapping[plan];
-      const priceId = PRICE_IDS[stripePlan][billingCycle];
+      const response = await fetch("/api/referral-partnership-application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(applicationData),
+      });
 
-      if (!priceId) {
-        throw new Error(`Price ID not configured for ${plan} ${billingCycle}`);
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || "Failed to submit application.");
       }
 
-      await redirectToCheckout({
-        priceId,
-        metadata: {
-          plan,
-          billing: billingCycle,
-        },
-      });
+      setFormStatus("success");
+      setApplicationData(initialFormState);
     } catch (error) {
-      console.error("Checkout error:", error);
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Failed to start checkout. Please try again."
-      );
-      setLoading(null);
+      setFormStatus("error");
+      setFormError(error instanceof Error ? error.message : "Something went wrong.");
     }
-  }
+  };
+
+  const openApplication = (planName: string) => {
+    setFormStatus("idle");
+    setFormError(null);
+    setApplicationData((prev) => ({
+      ...prev,
+      currentPlan: planName,
+    }));
+    setIsApplicationOpen(true);
+  };
 
   return (
-    <div className="aurora relative min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-b from-slate-900 via-[#024b56] to-slate-900">
-      {/* Premium gradient overlays */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(10,186,181,0.15),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(92,225,230,0.15),transparent_45%),radial-gradient(circle_at_40%_80%,rgba(0,131,143,0.1),transparent_50%)]" />
+    <div className="relative min-h-screen bg-gradient-to-br from-[#07131e] via-[#0c1c29] to-[#03080f] text-slate-50">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(87,230,255,0.12),transparent_40%),radial-gradient(circle_at_85%_10%,rgba(10,186,181,0.18),transparent_45%),radial-gradient(circle_at_50%_80%,rgba(255,255,255,0.1),transparent_55%)]" />
+      <main className="relative mx-auto flex max-w-6xl flex-col gap-14 px-6 pb-20 pt-16 sm:px-10 lg:px-16">
+        <Dialog open={isApplicationOpen} onOpenChange={setIsApplicationOpen}>
+          <DialogContent className="max-w-2xl border border-white/10 bg-gradient-to-br from-[#07131e] via-[#0c1c29] to-[#03080f] text-slate-50 shadow-2xl shadow-black/60">
+            <DialogHeader className="space-y-2">
+              <DialogTitle className="text-2xl font-black text-white">Referral Partnerships Application</DialogTitle>
+              <DialogDescription className="text-slate-200">
+                Share a few details and we’ll email the full submission to <span className="font-semibold text-white">jarred@referlabs.com.au</span>.
+              </DialogDescription>
+            </DialogHeader>
 
-      {/* Animated gradient orbs - Reduced on mobile */}
-      <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[#0abab5]/20 rounded-full blur-3xl animate-pulse" />
-      <div
-        className="absolute bottom-0 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[#5ce1e6]/20 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
+            <form onSubmit={handleApplicationSubmit} className="grid gap-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="block text-sm font-semibold text-slate-200">
+                  Full name
+                  <input
+                    type="text"
+                    value={applicationData.name}
+                    onChange={(event) => handleApplicationChange("name", event.target.value)}
+                    required
+                    className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                  />
+                </label>
+                <label className="block text-sm font-semibold text-slate-200">
+                  Work email
+                  <input
+                    type="email"
+                    value={applicationData.email}
+                    onChange={(event) => handleApplicationChange("email", event.target.value)}
+                    required
+                    className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                  />
+                </label>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="block text-sm font-semibold text-slate-200">
+                  Phone number
+                  <input
+                    type="text"
+                    value={applicationData.phone}
+                    onChange={(event) => handleApplicationChange("phone", event.target.value)}
+                    required
+                    className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                  />
+                </label>
+                <label className="block text-sm font-semibold text-slate-200">
+                  Company / practice
+                  <input
+                    type="text"
+                    value={applicationData.company}
+                    onChange={(event) => handleApplicationChange("company", event.target.value)}
+                    required
+                    className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                  />
+                </label>
+              </div>
+              <label className="block text-sm font-semibold text-slate-200">
+                Role / function
+                <input
+                  type="text"
+                  value={applicationData.role}
+                  onChange={(event) => handleApplicationChange("role", event.target.value)}
+                  required
+                  className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                />
+              </label>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="block text-sm font-semibold text-slate-200">
+                  Current plan
+                  <select
+                    value={applicationData.currentPlan}
+                    onChange={(event) => handleApplicationChange("currentPlan", event.target.value)}
+                    className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                  >
+                    {tiers.map((tier) => (
+                      <option key={tier.name} value={tier.name}>
+                        {tier.name}
+                      </option>
+                    ))}
+                    <option value="Not yet a customer">Not yet a customer</option>
+                    <option value="Referral Partnerships">Referral Partnerships</option>
+                  </select>
+                </label>
+                <label className="block text-sm font-semibold text-slate-200">
+                  Ideal timeline
+                  <input
+                    type="text"
+                    value={applicationData.timeline}
+                    onChange={(event) => handleApplicationChange("timeline", event.target.value)}
+                    required
+                    className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                  />
+                </label>
+              </div>
+              <label className="block text-sm font-semibold text-slate-200">
+                Key goals
+                <textarea
+                  value={applicationData.goals}
+                  onChange={(event) => handleApplicationChange("goals", event.target.value)}
+                  required
+                  rows={3}
+                  className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                />
+              </label>
+              <label className="block text-sm font-semibold text-slate-200">
+                Additional context
+                <textarea
+                  value={applicationData.message}
+                  onChange={(event) => handleApplicationChange("message", event.target.value)}
+                  rows={3}
+                  className="mt-1 w-full rounded-2xl border border-white/20 bg-slate-950/30 px-4 py-2 text-sm text-white outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40"
+                />
+              </label>
 
-      <main className="relative mx-auto flex max-w-7xl flex-col gap-12 sm:gap-16 px-4 sm:px-6 pb-16 sm:pb-24 pt-12 sm:pt-16 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-4xl space-y-6 sm:space-y-10 text-center">
-          <h1 className="text-balance text-3xl sm:text-5xl font-black leading-tight tracking-tight lg:text-7xl">
-            <span className="bg-gradient-to-r from-white via-[#a8e8ed] to-white bg-clip-text text-transparent drop-shadow-2xl">
-              Professional Services
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-[#5ce1e6] via-[#0abab5] to-[#5ce1e6] bg-clip-text text-transparent">
-              Referral Intelligence Pricing
-            </span>
+              {formError && <p className="text-xs text-rose-300">{formError}</p>}
+
+              <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <a
+                  href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200 hover:text-cyan-100"
+                >
+                  Prefer to book first? Open Calendly
+                </a>
+                <button
+                  type="submit"
+                  disabled={formStatus === "submitting"}
+                  className="inline-flex items-center justify-center rounded-2xl bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-cyan-200 disabled:opacity-60"
+                >
+                  {formStatus === "success" ? "Submitted" : formStatus === "submitting" ? "Submitting..." : "Submit Application"}
+                </button>
+              </div>
+              {formStatus === "success" && (
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-100/85">
+                  <p className="font-semibold text-white">Application received.</p>
+                  <p className="mt-1">
+                    Next step: <a className="text-cyan-200 underline" href="https://calendly.com/jarred-referlabs/30min?month=2026-01" target="_blank" rel="noreferrer">book your call</a>.
+                  </p>
+                </div>
+              )}
+            </form>
+          </DialogContent>
+        </Dialog>
+
+        {/* Hero */}
+        <header className="text-center space-y-3">
+          <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white">
+            Professional Services Referral Intelligence Pricing
           </h1>
-
-          <p className="max-w-3xl text-base sm:text-xl lg:text-2xl leading-relaxed text-[#d4f4f7] mx-auto font-medium px-4">
-            Built for law firms, accounting practices, and consulting firms that rely on referrals. Scale your partner network with compliance and tracking built in.
+          <p className="text-sm sm:text-base text-slate-200 max-w-3xl mx-auto">
+            Pricing you can read in seconds, backed by Refer Labs’ security, compliance, and partner expertise.
           </p>
-        </div>
+        </header>
 
-        {/* Premium billing toggle */}
-        <div className="relative mx-auto px-4">
-          <div className="rounded-2xl bg-gradient-to-b from-slate-800/80 to-slate-900/80 p-1.5 shadow-2xl shadow-[#0abab5]/20 ring-1 ring-[#0abab5]/30 backdrop-blur-xl inline-flex flex-col sm:flex-row items-stretch sm:items-end justify-center gap-2 sm:gap-3 w-full sm:w-auto">
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => setBillingCycle("monthly")}
-                disabled={loading !== null}
-                className={`relative rounded-xl px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition-all duration-300 w-full sm:w-40 lg:w-48 disabled:opacity-50 ${
-                  billingCycle === "monthly"
-                    ? "bg-gradient-to-b from-[#0abab5] to-[#024b56] text-white shadow-2xl shadow-[#0abab5]/50 scale-105"
-                    : "text-[#a8e8ed] hover:text-white hover:bg-slate-800/50"
-                }`}
-              >
-                Monthly billing
-              </button>
-            </div>
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => setBillingCycle("annual")}
-                disabled={loading !== null}
-                className={`relative rounded-xl px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition-all duration-300 w-full sm:w-40 lg:w-48 disabled:opacity-50 ${
-                  billingCycle === "annual"
-                    ? "bg-gradient-to-b from-emerald-500 to-green-600 text-white shadow-2xl shadow-emerald-500/60 scale-105 ring-2 ring-emerald-400/50"
-                    : "text-[#a8e8ed] hover:text-white hover:bg-slate-800/50"
-                }`}
-              >
-                <span className="absolute -top-3 -right-2 rounded-xl bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400 px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-black uppercase tracking-[0.12em] text-white shadow-2xl shadow-emerald-500/60 animate-pulse ring-2 ring-white/30">
-                  Save 20%
-                </span>
-                Annual billing
-              </button>
+        {/* Core SaaS Pricing */}
+        <section className="space-y-6">
+          <div className="flex justify-center">
+            <div className="inline-flex rounded-full border border-white/15 bg-white/10 backdrop-blur-xl p-1 shadow-lg shadow-black/20">
+              {(["monthly", "annual"] as const).map((cycle) => (
+                <button
+                  key={cycle}
+                  type="button"
+                  onClick={() => setBillingCycle(cycle)}
+                  className={`px-4 sm:px-6 py-2 rounded-full text-sm font-semibold transition ${
+                    billingCycle === cycle
+                      ? "bg-cyan-300 text-slate-900 shadow-md"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  {cycle === "monthly" ? "Monthly billing" : "Annual billing"}
+                </button>
+              ))}
             </div>
           </div>
-        </div>
 
-        <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
-          {/* Starter Plan */}
-          <div className="group relative rounded-3xl border border-[#0abab5]/30 bg-gradient-to-b from-slate-800/90 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-[#024b56]/30 ring-1 ring-[#0abab5]/20 hover:shadow-[#0abab5]/40 hover:ring-[#0abab5]/40 transition-all duration-500 backdrop-blur-xl hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0abab5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="grid gap-5 md:grid-cols-3">
+            {tiers.map((tier) => {
+              const price =
+                tier.monthly === null
+                  ? "Custom pricing"
+                  : billingCycle === "monthly"
+                    ? `$${tier.monthly} / month`
+                    : `$${tier.annual} / month (annual)`;
+              return (
+                <div
+                  key={tier.name}
+                  className={`relative overflow-hidden rounded-3xl border ${tier.highlight ? "border-cyan-300/40 shadow-cyan-900/30" : "border-white/10"} bg-white/8 backdrop-blur-2xl p-[1px] shadow-xl shadow-black/30`}
+                >
+                  <div className="rounded-[1.6rem] bg-gradient-to-br from-white/12 via-white/6 to-white/4 border border-white/10 px-6 py-6 flex flex-col gap-4 h-full">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <div>
+                        <p className="text-lg font-black text-white">{tier.name}</p>
+                        <p className="text-sm text-slate-100/80">{tier.subtext}</p>
+                      </div>
+                      <p className="text-xl font-bold text-white">{price}</p>
+                    </div>
+                    <ul className="space-y-2 text-sm text-slate-100/85">
+                      {tier.features.map((feature) => (
+                        <li key={feature} className="flex gap-2">
+                          <span className="text-cyan-200">•</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="pt-2">
+                      <button
+                        type="button"
+                        onClick={() => openApplication(tier.name)}
+                        className={`inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition ${
+                          tier.highlight
+                            ? "bg-cyan-300 text-slate-900 hover:bg-cyan-200"
+                            : "bg-white/90 text-slate-900 hover:bg-white"
+                        }`}
+                      >
+                        Apply Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
-            <div className="relative mb-8">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0abab5]/20 to-[#024b56]/20 px-4 py-2 text-sm font-bold text-[#5ce1e6] ring-1 ring-[#0abab5]/30 shadow-lg backdrop-blur-sm">
-                <Zap className="h-4 w-4" />
-                Starter
+          <section className="relative overflow-hidden rounded-4xl border border-white/10 bg-gradient-to-br from-white/10 via-white/6 to-transparent p-8 sm:p-12 shadow-2xl shadow-black/40">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(0,210,190,0.16),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(92,225,230,0.12),transparent_50%)]" />
+            <div className="relative z-10 space-y-10">
+              <div className="space-y-3 text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.4em] text-cyan-200">Referral Partnerships</p>
+                <h2 className="text-balance text-3xl sm:text-4xl font-black text-white">
+                  Set up a Call to Discuss Your Referral Partnership Goals
+                </h2>
+                <p className="text-sm sm:text-base text-slate-100/85 max-w-4xl mx-auto">
+                  A premium partnership motion for professional services teams who want more qualified introductions—without guessing, without spreadsheets, and with reporting your finance team can defend.
+                </p>
               </div>
-              <div className="mb-4 flex items-baseline gap-2 sm:gap-3">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
-                  ${starterPrice}
-                </span>
-                <div className="flex flex-col">
-                  <span className="text-[#5ce1e6] font-bold text-sm sm:text-base">
-                    /{billingCycle === "monthly" ? "month" : "year"}
-                  </span>
-                  {billingCycle === "annual" && (
-                    <span className="text-[10px] sm:text-xs text-green-400 font-semibold">
-                      Save ${starterSavings}/year
-                    </span>
-                  )}
+
+              <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row">
+                <a
+                  href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-cyan-300 px-8 py-4 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-900/40 transition hover:bg-cyan-200"
+                >
+                  Book a Call
+                </a>
+                <button
+                  type="button"
+                  onClick={() => openApplication("Referral Partnerships")}
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Apply Now
+                </button>
+              </div>
+
+              <div className="grid gap-6 lg:grid-cols-3">
+                <div className="rounded-3xl border border-white/10 bg-black/20 p-6 backdrop-blur-xl shadow-lg shadow-black/30">
+                  <h3 className="text-lg font-semibold text-white">Who It’s For</h3>
+                  <div className="mt-4 space-y-3 text-sm text-slate-100/85">
+                    <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                      <p className="font-semibold text-white">Professional services firms</p>
+                      <p className="text-xs text-slate-200">Law, accounting, advisory, insurance, and recruiters.</p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                      <p className="font-semibold text-white">Partner-led growth teams</p>
+                      <p className="text-xs text-slate-200">Need defensible attribution and repeatable partner operations.</p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                      <p className="font-semibold text-white">High-intent inbound engines</p>
+                      <p className="text-xs text-slate-200">Creators, advisors, agencies, consultants driving qualified demos.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-black/20 p-6 backdrop-blur-xl shadow-lg shadow-black/30">
+                  <h3 className="text-lg font-semibold text-white">How Refer Labs Facilitates It</h3>
+                  <div className="mt-4 space-y-3">
+                    {partnershipFlow.map((stage) => (
+                      <div key={stage.title} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">{stage.result}</p>
+                        <p className="mt-1 font-semibold text-white">{stage.title}</p>
+                        <p className="mt-1 text-xs text-slate-200 leading-relaxed">{stage.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-black/20 p-6 backdrop-blur-xl shadow-lg shadow-black/30">
+                  <h3 className="text-lg font-semibold text-white">What Happens After the Call</h3>
+                  <div className="mt-4 space-y-3">
+                    {partnershipFollowUp.map((item) => (
+                      <div key={item.title} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                        <p className="font-semibold text-white">{item.title}</p>
+                        <p className="mt-1 text-xs text-slate-200 leading-relaxed">{item.detail}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <p className="text-sm sm:text-base text-[#a8e8ed] font-medium">
-                For solo practitioners and small firms (1-5 people)
-              </p>
-            </div>
 
-            <button
-              onClick={() => handleSubscribe("starter")}
-              disabled={loading !== null}
-              className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-[#0abab5]/50 bg-gradient-to-b from-slate-700 to-slate-800 px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#0abab5]/20 transition-all duration-300 hover:-translate-y-1 hover:border-[#5ce1e6] hover:shadow-2xl hover:shadow-[#5ce1e6]/40 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading === "starter" ? "Loading..." : "Start Free Trial"}
-            </button>
-            <p className="text-center text-xs font-semibold text-[#a8e8ed]">
-              14-day free trial • No credit card required
-            </p>
-
-            <div className="space-y-4 text-base mt-8">
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">
-                  Up to <strong className="text-white">50 active partners</strong>
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">
-                  <strong className="text-white">Basic compliance tracking</strong>
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Email & SMS campaigns</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Partner portals</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Revenue attribution tracking</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">CSV import/export</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Email support</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Professional Plan - Most Popular */}
-          <div className="group relative rounded-3xl border-2 border-[#5ce1e6] bg-gradient-to-b from-[#0abab5]/20 via-[#5ce1e6]/10 to-slate-900/90 p-6 sm:p-10 shadow-2xl shadow-[#5ce1e6]/50 ring-2 ring-[#5ce1e6]/50 transform hover:scale-110 transition-all duration-500 backdrop-blur-xl z-10">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#5ce1e6] via-[#0abab5] to-[#5ce1e6] px-8 py-2.5 text-sm font-black text-white shadow-2xl shadow-[#5ce1e6]/50 ring-2 ring-white/20 backdrop-blur-sm animate-pulse">
-              ⭐ MOST POPULAR
-            </div>
-
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0abab5]/10 via-[#5ce1e6]/10 to-transparent rounded-3xl" />
-
-            <div className="relative mb-8 mt-4">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-400/30 to-pink-400/30 px-4 py-2 text-sm font-bold text-[#a8e8ed] ring-1 ring-purple-300/50 shadow-lg backdrop-blur-sm">
-                <Users className="h-4 w-4" />
-                Professional
-              </div>
-              <div className="mb-4 flex items-baseline gap-2 sm:gap-3">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight drop-shadow-2xl">
-                  ${professionalPrice}
-                </span>
-                <div className="flex flex-col">
-                  <span className="text-[#a8e8ed] font-bold text-sm sm:text-base">
-                    /{billingCycle === "monthly" ? "month" : "year"}
-                  </span>
-                  {billingCycle === "annual" && (
-                    <span className="text-[10px] sm:text-xs text-green-400 font-semibold">
-                      Save ${professionalSavings}/year
-                    </span>
-                  )}
+              <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/20">
+                <div className="grid gap-0 sm:grid-cols-3">
+                  {[
+                    {
+                      title: "At a Glance",
+                      items: ["Partner briefs + onboarding", "Offer + reward structure", "Compliance guardrails"],
+                    },
+                    {
+                      title: "Operations",
+                      items: ["Unique links + tracking", "Approvals + payouts ledger", "Partner dashboards"],
+                    },
+                    {
+                      title: "Outcomes",
+                      items: ["Qualified demos", "Clear attribution", "Defensible ROI reporting"],
+                    },
+                  ].map((col) => (
+                    <div key={col.title} className="border-t border-white/10 sm:border-t-0 sm:border-l border-white/10 p-6 first:border-l-0">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-300">{col.title}</p>
+                      <ul className="mt-4 space-y-2 text-sm text-slate-100/85">
+                        {col.items.map((item) => (
+                          <li key={item} className="flex gap-2">
+                            <span className="text-cyan-200">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <p className="text-sm sm:text-base text-[#c0eff3] font-medium">
-                For growing practices (5-20 people)
-              </p>
             </div>
+          </section>
+        </section>
 
-            <button
-              onClick={() => handleSubscribe("professional")}
-              disabled={loading !== null}
-              className="relative mb-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-purple-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-pink-500/70 overflow-hidden group/button disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 opacity-0 group-hover/button:opacity-100 transition-opacity duration-300" />
-              <span className="relative">
-                {loading === "professional" ? "Loading..." : "Start Free Trial"}
-              </span>
-              {loading !== "professional" && <ArrowRight className="relative h-5 w-5" />}
-            </button>
-            <p className="relative text-center text-xs font-semibold text-[#c0eff3]">
-              14-day free trial • No credit card required
-            </p>
-
-            <div className="relative space-y-4 text-base mt-8">
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">
-                  Up to <strong className="text-white">200 active partners</strong>
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">
-                  <strong className="text-white">Everything in Starter</strong>, plus:
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">
-                  <strong className="text-white">AI partner scoring</strong> & insights
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Advanced compliance ledger</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Multi-user access</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Partner network analytics</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Custom branding & domains</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-[#c0eff3]">Priority email + chat support</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Firm Plan */}
-          <div className="group relative rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 p-6 sm:p-10 shadow-2xl shadow-slate-900/50 ring-1 ring-slate-700/30 hover:ring-slate-600/50 transition-all duration-500 backdrop-blur-xl hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-700/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            <div className="relative mb-8">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-slate-700/50 to-slate-600/50 px-4 py-2 text-sm font-bold text-slate-300 backdrop-blur-sm ring-1 ring-slate-600/50 shadow-lg">
-                <Crown className="h-4 w-4 text-yellow-500" />
-                Firm
-              </div>
-              <div className="mb-4 flex items-baseline gap-2 sm:gap-3">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
-                  Custom
-                </span>
-                <span className="text-slate-400 font-bold text-sm sm:text-base">/month</span>
-              </div>
-              <p className="text-sm sm:text-base text-slate-300 font-medium">
-                For established firms (20+ people)
-              </p>
-            </div>
-
-            <Link
-              href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-10 inline-flex w-full items-center justify-center rounded-full border-2 border-white/80 bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-slate-50 hover:shadow-2xl hover:border-white"
-            >
-              Book a Demo
-            </Link>
-
-            <div className="relative space-y-4 text-base mt-8">
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">
-                  <strong className="text-white">Unlimited partners</strong>
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">
-                  <strong className="text-white">Everything in Professional</strong>, plus:
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">White-label portal</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">API access</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">Dedicated success manager</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">Multi-location support</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-green-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-200">Custom SLAs & 24/7 support</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <section className="rounded-3xl bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-8 sm:p-12 shadow-2xl ring-1 ring-purple-500/20 backdrop-blur-xl">
-          <div className="mx-auto max-w-3xl space-y-8">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
-                Compare plans
-              </h2>
-              <p className="text-[#a8e8ed] text-base sm:text-lg">Find the perfect fit for your business</p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-purple-500/30">
-                    <th className="pb-4 text-sm sm:text-base font-bold text-[#a8e8ed]">Features</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Starter</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Professional</th>
-                    <th className="pb-4 text-center text-sm sm:text-base font-bold text-[#a8e8ed]">Firm</th>
+        {/* Compare table */}
+        <section className="space-y-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-white text-center">Compare plans</h2>
+          <div className="overflow-x-auto rounded-3xl border border-white/10 bg-white/6 backdrop-blur-2xl shadow-lg shadow-black/25">
+            <table className="min-w-full text-left text-sm text-slate-100/90">
+              <thead>
+                <tr className="text-xs uppercase tracking-[0.14em] text-slate-200/70">
+                  <th className="px-4 py-3">Feature</th>
+                  <th className="px-4 py-3">Starter</th>
+                  <th className="px-4 py-3">Growth</th>
+                  <th className="px-4 py-3">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {compareRows.map((row, idx) => (
+                  <tr key={row.feature} className={idx % 2 === 0 ? "bg-white/4" : "bg-transparent"}>
+                    <td className="px-4 py-3 font-semibold text-white">{row.feature}</td>
+                    <td className="px-4 py-3">{row.starter ? "•" : "—"}</td>
+                    <td className="px-4 py-3">{row.growth ? "•" : "—"}</td>
+                    <td className="px-4 py-3">{row.enterprise ? "•" : "—"}</td>
                   </tr>
-                </thead>
-                <tbody className="text-sm sm:text-base">
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">Active Partners</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">50</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">200</td>
-                    <td className="py-4 text-center font-bold text-white">Unlimited</td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">AI Partner Scoring</td>
-                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
-                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
-                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">Analytics & reporting</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">Basic</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">Advanced</td>
-                    <td className="py-4 text-center font-bold text-white">Advanced</td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">Compliance Tracking</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">Basic</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">Advanced</td>
-                    <td className="py-4 text-center font-bold text-white">Advanced</td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">Custom branding</td>
-                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
-                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
-                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">White-label portals</td>
-                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
-                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
-                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">API access</td>
-                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
-                    <td className="py-4 text-center"><span className="text-slate-500">✗</span></td>
-                    <td className="py-4 text-center"><Check className="h-5 w-5 text-green-400 mx-auto" /></td>
-                  </tr>
-                  <tr className="border-b border-slate-700/50">
-                    <td className="py-4 text-[#c0eff3]">Support</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">Email</td>
-                    <td className="py-4 text-center text-[#a8e8ed]">Priority email + chat</td>
-                    <td className="py-4 text-center font-bold text-white">24/7 support</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-b from-purple-600/20 to-purple-800/20 p-8 sm:p-12 ring-1 ring-purple-400/30 backdrop-blur-xl">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl font-black text-white mb-6 sm:mb-8 text-center">
-              Frequently asked questions
-            </h2>
-            <div className="space-y-4">
-              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
-                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
-                  What's included in the free trial?
-                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
+        {/* FAQ */}
+        <section className="space-y-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-white text-center">Pricing Questions We Get Often</h2>
+          <div className="space-y-3">
+            {[
+              ...faqs,
+              {
+                q: "Do I need a long-term contract?",
+                a: "Starter and Growth are month-to-month or annual. Enterprise and Referral Partnerships are scoped engagements with agreed terms.",
+              },
+              {
+                q: "Can we add Referral Partnerships to any SaaS plan?",
+                a: "Yes. Referral Partnerships is a premium add-on layered over any SaaS plan. Pricing is custom based on objectives and partner volume.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-3xl border border-white/10 bg-white/6 backdrop-blur-2xl px-5 py-4 shadow-md shadow-black/20"
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer text-left">
+                  <h3 className="text-base sm:text-lg font-semibold text-white">{faq.q}</h3>
+                  <span className="text-cyan-100 group-open:rotate-45 transition">+</span>
                 </summary>
-                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
-                  All plans include a 14-day free trial with full access to all features. No credit card required to start.
-                </p>
+                <p className="mt-3 text-sm text-slate-100/85 leading-relaxed">{faq.a}</p>
               </details>
-
-              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
-                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
-                  How does SMS pricing work?
-                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
-                </summary>
-                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
-                  Scale and Enterprise plans include SMS credits each month. Additional credits are $0.05/SMS. Base plan users can purchase SMS credits as needed.
-                </p>
-              </details>
-
-              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
-                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
-                  Can I change plans later?
-                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
-                </summary>
-                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
-                  Yes! Upgrade or downgrade anytime. Changes take effect immediately, and we'll pro-rate your billing accordingly.
-                </p>
-              </details>
-
-              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
-                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
-                  What payment methods do you accept?
-                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
-                </summary>
-                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
-                  We accept all major credit cards (Visa, Mastercard, Amex) and direct debit for annual plans.
-                </p>
-              </details>
-
-              <details className="group rounded-2xl bg-slate-800/50 p-4 sm:p-6 shadow-xl ring-1 ring-purple-500/20 backdrop-blur-sm hover:ring-purple-400/40 transition-all">
-                <summary className="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
-                  What happens if I exceed my ambassador limit?
-                  <ArrowRight className="h-5 w-5 text-purple-400 group-open:rotate-90 transition-transform duration-300" />
-                </summary>
-                <p className="mt-4 text-sm sm:text-base text-[#a8e8ed] leading-relaxed">
-                  We'll notify you when you're approaching your limit. You can upgrade anytime to add more ambassadors with no downtime.
-                </p>
-              </details>
-            </div>
+            ))}
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 p-[2px] shadow-2xl">
-          <div className="flex flex-col gap-6 sm:gap-8 rounded-3xl bg-slate-900/95 p-8 sm:p-12 backdrop-blur-xl md:flex-row md:items-center md:justify-between">
-            <div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-3">
-                Still not sure which plan is right?
-              </h3>
-              <p className="text-base sm:text-lg lg:text-xl text-[#a8e8ed]">
-                Start with a free trial or talk to our team to find the perfect fit for your business.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+        {/* Final CTA */}
+        <section className="relative overflow-hidden rounded-4xl border border-white/12 bg-gradient-to-br from-white/10 via-white/6 to-white/12 px-8 py-12 sm:px-12 sm:py-14 shadow-2xl shadow-black/35 text-center">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(87,230,255,0.18),transparent_40%),radial-gradient(circle_at_75%_15%,rgba(10,186,181,0.18),transparent_45%)]" />
+          <div className="relative z-10 space-y-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">Ready to Build Better Partnerships and Grow Revenue?</h2>
+            <p className="text-sm sm:text-base text-slate-100/85">Need help choosing? Contact our team for a custom recommendation.</p>
+            <div className="flex flex-wrap justify-center gap-3">
               <Link
-                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#5ce1e6] hover:bg-[#4dd4d9] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-slate-900 shadow-2xl transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-300 text-slate-900 px-6 py-3 text-sm font-semibold hover:bg-cyan-200"
               >
-                Schedule a Demo <ArrowRight className="h-5 w-5" />
+                Apply for Referral Partnerships
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 bg-transparent text-white px-6 py-3 text-sm font-semibold hover:bg-white/10"
+              >
+                Choose a SaaS Plan
               </Link>
             </div>
           </div>
         </section>
-
       </main>
     </div>
   );

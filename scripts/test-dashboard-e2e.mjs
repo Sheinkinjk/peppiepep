@@ -73,6 +73,15 @@ async function expectJsonOk(response) {
   return response.json();
 }
 
+function expectApprox(actual, expected, tolerance) {
+  if (!Number.isFinite(actual)) {
+    throw new Error(`Expected numeric value, got ${actual}`);
+  }
+  if (Math.abs(actual - expected) > tolerance) {
+    throw new Error(`Expected ${actual} to be within ±${tolerance} of ${expected}`);
+  }
+}
+
 async function run() {
   const adminClient = createClient(supabaseUrl, serviceRoleKey);
   const browserClient = createClient(supabaseUrl, anonKey);
@@ -180,6 +189,7 @@ async function run() {
       "setup-integration",
       "testing-qa",
       "clients-ambassadors",
+      "external-partners",
       "crm-integration",
       "view-campaigns",
       "performance",
@@ -195,6 +205,19 @@ async function run() {
       const sectionHtml = await sectionResponse.text();
       if (/\\bDashboard error\\b/i.test(sectionHtml)) {
         throw new Error(`Dashboard error boundary rendered for section ${section}.`);
+      }
+      if (section === "clients-ambassadors") {
+        if (!/Import Your Network/i.test(sectionHtml)) {
+          throw new Error("Partners tab missing Import Your Network content.");
+        }
+        if (!/All Customers/i.test(sectionHtml)) {
+          throw new Error("Partners tab missing All Customers section.");
+        }
+      }
+      if (section === "external-partners") {
+        if (!/External Partners/i.test(sectionHtml)) {
+          throw new Error("External Partners tab did not render expected content.");
+        }
       }
     }
 
@@ -276,6 +299,21 @@ async function run() {
       throw new Error("Expected unique referral codes in customers list.");
     }
 
+    // Referral link / landing page should load (public)
+    const sampleReferralCode = referralCodes[0];
+    const referralPageResponse = await fetch(`${origin}/r/${sampleReferralCode}`, { redirect: "manual" });
+    if (referralPageResponse.status !== 200) {
+      throw new Error(`Expected /r/${sampleReferralCode} to return 200, got ${referralPageResponse.status}`);
+    }
+
+    // Partner directory QA should succeed (checks codes are generated + unique)
+    const qaPayload = await expectJsonOk(
+      await fetch(`${origin}/api/qa/clients-ambassadors`, { method: "POST", headers: { Cookie: authCookie } }),
+    );
+    if (!qaPayload.directoryOk || !qaPayload.referralLinksOk || !qaPayload.discountCodesOk) {
+      throw new Error(`Expected partner directory QA to pass, got: ${JSON.stringify(qaPayload)}`);
+    }
+
     // Search filter (should find Alice)
     const searchPayload = await expectJsonOk(
       await fetch(`${origin}/api/customers?q=Alice&page=1&pageSize=50`, { headers: { Cookie: authCookie } }),
@@ -348,6 +386,7 @@ async function run() {
 
     // Discount redemption integration (Step 1C)
     const redemptionOrderRef = `order-${Date.now()}`;
+    const redemptionAmount = 123.45;
     const redemptionBefore = await adminClient
       .from("discount_redemptions")
       .select("id", { count: "exact", head: true })
@@ -364,7 +403,7 @@ async function run() {
       body: JSON.stringify({
         discountCode: ambassadorDiscountCode,
         orderReference: redemptionOrderRef,
-        amount: 123.45,
+        amount: redemptionAmount,
         source: "shopify-checkout",
       }),
     });
@@ -384,8 +423,14 @@ async function run() {
       await fetch(`${origin}/api/referrals?status=completed&page=1&pageSize=50`, { headers: { Cookie: authCookie } }),
     );
     const completed = completedPayload.data ?? [];
-    if (!completed.some((r) => r.ambassador_id === ambassadorId && r.status === "completed")) {
+    const completedRow = completed.find((r) => r.ambassador_id === ambassadorId && r.status === "completed");
+    if (!completedRow) {
       throw new Error("Expected discount redemption to complete (or create) a referral for the ambassador.");
+    }
+    if (Number(completedRow.transaction_value ?? 0) !== redemptionAmount) {
+      throw new Error(
+        `Expected completed referral transaction_value to match redemption amount (${redemptionAmount}), got ${completedRow.transaction_value}`,
+      );
     }
 
     const eventsPayload = await expectJsonOk(
@@ -419,7 +464,7 @@ async function run() {
       body: JSON.stringify({
         discountCode: ambassadorDiscountCode,
         orderReference: redemptionOrderRef,
-        amount: 123.45,
+        amount: redemptionAmount,
         source: "shopify-checkout",
       }),
     });
@@ -446,6 +491,65 @@ async function run() {
     if (creditedCustomerAgain.credits !== creditsBefore) {
       throw new Error("Expected redemption retry to be idempotent (no double-credit).");
     }
+
+    // Revenue-share attribution: switch reward type, redeem again, and verify estimated rewards in ROI summary.
+    const revenueSharePercent = 10;
+    const { data: revenueShareConfig, error: revenueShareConfigError } = await adminClient
+      .from("businesses")
+      .update({ reward_type: "revenue_share", reward_amount: revenueSharePercent })
+      .eq("id", businessId)
+      .select("id, reward_type, reward_amount, discount_capture_secret")
+      .single();
+    if (revenueShareConfigError || !revenueShareConfig?.id) {
+      throw new Error(
+        `Failed to configure revenue share rewards: ${revenueShareConfigError?.message ?? "no row returned"}`,
+      );
+    }
+
+    const revenueOrderRef = `order-${Date.now()}-revshare`;
+    const revenueAmount = 200;
+    const redeemRevenue = await fetch(`${origin}/api/discount-codes/redeem`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-referlabs-discount-secret": revenueShareConfig.discount_capture_secret,
+      },
+      body: JSON.stringify({
+        discountCode: ambassadorDiscountCode,
+        orderReference: revenueOrderRef,
+        amount: revenueAmount,
+        source: "shopify-checkout",
+      }),
+    });
+    await expectJsonOk(redeemRevenue);
+
+    const completedAfterRevenue = await expectJsonOk(
+      await fetch(`${origin}/api/referrals?status=completed&page=1&pageSize=50`, { headers: { Cookie: authCookie } }),
+    );
+    const completed2 = completedAfterRevenue.data ?? [];
+    const revenueRow = completed2.find(
+      (r) =>
+        r.ambassador_id === ambassadorId &&
+        r.status === "completed" &&
+        Number(r.transaction_value ?? 0) === revenueAmount,
+    );
+    if (!revenueRow) {
+      throw new Error("Expected revenue-share redemption to create a completed referral row with transaction_value.");
+    }
+
+    const summary = await expectJsonOk(
+      await fetch(`${origin}/api/referrals/summary?windowDays=30`, { headers: { Cookie: authCookie } }),
+    );
+    if (summary.rewardType !== "revenue_share") {
+      throw new Error(`Expected referrals summary rewardType=revenue_share, got ${summary.rewardType}`);
+    }
+    const breakdown = summary.breakdown ?? {};
+    const rewardsEstTotal =
+      (breakdown.partners?.rewardsEst ?? 0) +
+      (breakdown.external_partners?.rewardsEst ?? 0) +
+      (breakdown.linkedin_influencer?.rewardsEst ?? 0);
+    const expectedRewardTotal = ((redemptionAmount + revenueAmount) * revenueSharePercent) / 100;
+    expectApprox(rewardsEstTotal, expectedRewardTotal, 0.01);
 
     // Campaign send (dispatch disabled; should only queue)
     const selectedCustomerIds = customers.slice(0, 2).map((c) => c.id);

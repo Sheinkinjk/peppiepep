@@ -159,7 +159,7 @@ export function Step2QaButton() {
       </Button>
 
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-3xl border border-slate-200 bg-white p-6">
+        <DialogContent className="fixed left-1/2 top-1/2 z-50 w-[calc(100%-1.5rem)] max-w-2xl max-h-[85vh] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
           <DialogHeader>
             <DialogTitle className="text-xl font-black text-slate-900">
               Step 2 QA — Clients & Ambassadors
@@ -179,6 +179,9 @@ export function Step2QaButton() {
                 <li>• Discount codes exist and are unique</li>
                 <li>• Ambassador directory is populated</li>
               </ul>
+              <p className="mt-2 text-xs text-slate-500">
+                After running, open Measure ROI → Recent Activity to confirm events show up during testing.
+              </p>
             </div>
             <Button
               type="button"
@@ -192,7 +195,18 @@ export function Step2QaButton() {
 
           {result && (
             <div className="mt-4 space-y-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4 text-sm text-emerald-900">
-              <p className="font-semibold">Results</p>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="font-semibold">Results</p>
+                <span
+                  className={`rounded-full border px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] ${
+                    result.directoryOk && result.discountCodesOk && result.referralLinksOk
+                      ? "border-emerald-200 bg-white text-emerald-800"
+                      : "border-amber-200 bg-white text-amber-800"
+                  }`}
+                >
+                  {result.directoryOk && result.discountCodesOk && result.referralLinksOk ? "Ready" : "Needs fixes"}
+                </span>
+              </div>
               <div className="grid gap-2 sm:grid-cols-2">
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-emerald-800">Ambassadors</p>

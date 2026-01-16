@@ -182,6 +182,24 @@ export const seoConfig = {
     ],
   },
 
+  referralPartnerships: {
+    title: "Referral Partnerships - Partner-driven growth infrastructure",
+    description:
+      "Activate LinkedIn influencers, creators, advisors, consultants, and strategic partners as fully tracked referral channels. Refer Labs facilitates structure, attribution, compliance guardrails, and ROI measurement (not a marketplace).",
+    url: `${SITE_URL}/referral-partnerships`,
+    keywords: [
+      "referral partnerships",
+      "partner marketing",
+      "creator partnerships",
+      "linkedin influencer partnerships",
+      "advisor referrals",
+      "consultant referral program",
+      "attribution tracking",
+      "measure referral roi",
+      "performance-based partnerships",
+    ],
+  },
+
   caseStudies: {
     title: "Case Studies - Real results from referral programs",
     description:

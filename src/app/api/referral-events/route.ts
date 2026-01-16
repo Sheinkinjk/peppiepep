@@ -57,18 +57,72 @@ export async function POST(request: Request) {
   const logger = createApiLogger("api:referral-events:post");
   try {
     const body = await request.json();
-    const { businessId, ambassadorId, referralId, eventType, source, device, metadata } = body;
+    const { businessId: requestedBusinessId, ambassadorId, referralId, eventType, source, device, metadata } = body;
 
-    if (!businessId || !eventType) {
-      logger.warn("Missing required fields", { businessId, eventType });
+    if (!eventType) {
+      logger.warn("Missing required fields", { requestedBusinessId, eventType });
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const supabase = await createServiceClient();
+    const canUseServiceClient = Boolean(
+      process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY,
+    );
+    if (canUseServiceClient) {
+      if (!requestedBusinessId) {
+        logger.warn("Missing required fields", { requestedBusinessId, eventType });
+        return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+      }
+
+      const supabase = await createServiceClient();
+      await logReferralEvent({
+        supabase,
+        businessId: requestedBusinessId,
+        ambassadorId: ambassadorId || null,
+        referralId: referralId || null,
+        eventType: eventType as ReferralEventType,
+        source: source || "referral_page",
+        device: device || "unknown",
+        metadata: metadata || null,
+      });
+
+      logger.info("Referral event logged", { businessId: requestedBusinessId, eventType });
+      return NextResponse.json({ success: true });
+    }
+
+    // Fallback mode (local/dev): require an authenticated dashboard session and infer businessId.
+    const authClient = await createServerComponentClient();
+    const {
+      data: { user },
+    } = await authClient.auth.getUser();
+
+    if (!user) {
+      logger.warn("Referral event post unauthorized (no service role key available)");
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const { data: business, error: businessError } = await authClient
+      .from("businesses")
+      .select("id")
+      .eq("owner_id", user.id)
+      .single();
+
+    if (businessError || !business?.id) {
+      logger.warn("Referral event post missing business", { userId: user.id, businessError });
+      return NextResponse.json({ error: "Business not found for this account." }, { status: 404 });
+    }
+
+    const resolvedBusinessId = business.id;
+    if (requestedBusinessId && requestedBusinessId !== resolvedBusinessId) {
+      logger.warn("Referral event post business mismatch", {
+        userId: user.id,
+        requestedBusinessId,
+        resolvedBusinessId,
+      });
+    }
 
     await logReferralEvent({
-      supabase,
-      businessId,
+      businessId: resolvedBusinessId,
+      supabase: authClient,
       ambassadorId: ambassadorId || null,
       referralId: referralId || null,
       eventType: eventType as ReferralEventType,
@@ -77,7 +131,7 @@ export async function POST(request: Request) {
       metadata: metadata || null,
     });
 
-    logger.info("Referral event logged", { businessId, eventType });
+    logger.info("Referral event logged", { businessId: resolvedBusinessId, eventType });
     return NextResponse.json({ success: true });
   } catch (error) {
     logger.error("Failed to log referral event", { error });

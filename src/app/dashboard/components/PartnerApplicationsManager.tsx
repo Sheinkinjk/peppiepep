@@ -116,7 +116,15 @@ export function PartnerApplicationsManager() {
     process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   );
   const supabase = useMemo(
-    () => (hasSupabaseConfig ? createBrowserSupabaseClient() : null),
+    () => {
+      if (!hasSupabaseConfig) return null;
+      try {
+        return createBrowserSupabaseClient();
+      } catch (error) {
+        console.warn("Supabase browser client unavailable (partner applications realtime disabled)", error);
+        return null;
+      }
+    },
     [hasSupabaseConfig],
   );
 

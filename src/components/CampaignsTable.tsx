@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Rocket, Send } from "lucide-react";
 import type { Database } from "@/types/supabase";
@@ -104,20 +104,25 @@ export function CampaignsTable({
       <TableBody>
         <TableRow>
           <TableCell colSpan={8} className="p-0">
-            <EmptyState
-              icon={Rocket}
-              title="No campaigns sent yet"
-              description="Launch your first SMS or email campaign to activate your ambassador network and start driving referrals. Your first campaign is just a few clicks away!"
-              primaryAction={{
-                label: "Create Campaign",
-                onClick: () => {
-                  const campaignsTab = document.querySelector('[data-tab-target="campaigns"]') as HTMLElement;
-                  campaignsTab?.click();
-                  setTimeout(() => {
-                    if (typeof window !== "undefined") {
-                      const win = window as CampaignWindow;
-                      if (typeof win.__pepOpenCampaignModal === "function") {
-                        win.__pepOpenCampaignModal();
+	            <EmptyState
+	              icon={Rocket}
+	              title="No campaigns sent yet"
+	              description="Launch your first SMS or email campaign to activate your ambassador network and start driving referrals. Your first campaign is just a few clicks away!"
+	              primaryAction={{
+	                label: "Create Campaign",
+	                onClick: () => {
+	                  if (typeof window !== "undefined") {
+	                    window.dispatchEvent(
+	                      new CustomEvent("dashboard:navigate", {
+	                        detail: { section: "crm-integration" },
+	                      }),
+	                    );
+	                  }
+	                  setTimeout(() => {
+	                    if (typeof window !== "undefined") {
+	                      const win = window as CampaignWindow;
+	                      if (typeof win.__pepOpenCampaignModal === "function") {
+	                        win.__pepOpenCampaignModal();
                       }
                     }
                   }, 100);
@@ -218,19 +223,28 @@ export function CampaignsTable({
           signups: 0,
           conversions: 0,
         };
-        const conversionsCount =
-          completedForCampaign > 0
-            ? completedForCampaign
-            : eventStatsForCampaign.conversions;
-        const rewardPerConversion =
-          rewardType === "credit" ? rewardAmount ?? 0 : 0;
-        const rewardSpend = conversionsCount * rewardPerConversion;
-        const totalCost = estimatedSendSpend + rewardSpend;
-        const roiMultiple =
-          totalCost > 0 ? revenueForCampaign / totalCost : null;
+	        const conversionsCount =
+	          completedForCampaign > 0
+	            ? completedForCampaign
+	            : eventStatsForCampaign.conversions;
+	        const revenueShareRate =
+	          rewardType === "revenue_share"
+	            ? Math.max(0, (rewardAmount ?? 0) / 100)
+	            : 0;
+	        const rewardPerConversion =
+	          rewardType === "credit" ? rewardAmount ?? 0 : 0;
+	        const rewardSpend =
+	          rewardType === "credit"
+	            ? conversionsCount * rewardPerConversion
+	            : rewardType === "revenue_share"
+	              ? revenueForCampaign * revenueShareRate
+	              : 0;
+	        const totalCost = estimatedSendSpend + rewardSpend;
+	        const roiMultiple =
+	          totalCost > 0 ? revenueForCampaign / totalCost : null;
 
         return (
-          <>
+          <Fragment key={campaign.id ?? `campaign-${index}`}>
             <TableRow
               key={campaign.id}
               className="cursor-pointer hover:bg-slate-50"
@@ -302,12 +316,14 @@ export function CampaignsTable({
                           Reward structure
                         </p>
                         <p className="text-slate-700">
-                          {rewardType === "credit"
-                            ? `$${rewardAmount ?? 0} credit`
-                            : rewardType === "upgrade"
-                            ? "Upgrade reward"
-                            : rewardType === "discount"
-                            ? `${rewardAmount ?? 0}% discount`
+	                          {rewardType === "credit"
+	                            ? `$${rewardAmount ?? 0} credit`
+	                            : rewardType === "revenue_share"
+	                            ? `${rewardAmount ?? 0}% revenue share`
+	                            : rewardType === "upgrade"
+	                            ? "Upgrade reward"
+	                            : rewardType === "discount"
+	                            ? `${rewardAmount ?? 0}% discount`
                             : rewardType === "points"
                             ? `${rewardAmount ?? 0} points`
                             : "Not captured"}
@@ -383,7 +399,7 @@ export function CampaignsTable({
                 </TableCell>
               </TableRow>
             )}
-          </>
+          </Fragment>
         );
       })}
     </TableBody>

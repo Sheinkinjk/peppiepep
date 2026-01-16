@@ -135,7 +135,7 @@ export async function getCurrentAdmin(): Promise<AdminUser | null> {
     email: roleRow.email,
     role: roleRow.role as AdminRole,
     permissions: normalizePermissions(roleRow.permissions),
-    is_active: roleRow.is_active,
+    is_active: roleRow.is_active ?? false,
   };
 }
 
@@ -207,7 +207,7 @@ export async function getAllAdmins(): Promise<AdminUser[]> {
     email: role.email,
     role: role.role as AdminRole,
     permissions: normalizePermissions(role.permissions),
-    is_active: role.is_active,
+    is_active: role.is_active ?? false,
   }));
 }
 

@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { createServiceClient } from "@/lib/supabase";
-import type { Database } from "@/types/supabase";
 import { verifyAmbassadorToken } from "@/lib/ambassador-auth";
 import { checkRateLimitForIdentifier } from "@/lib/rate-limit";
 import { createApiLogger } from "@/lib/api-logger";
@@ -42,12 +41,10 @@ async function handleExport(
     return NextResponse.json({ error: "Ambassador not found" }, { status: 404 });
   }
 
-  const ambassadorRow = ambassador as Database["public"]["Tables"]["customers"]["Row"];
-
   const { data: referrals, error: referralsError } = await supabase
     .from("referrals")
     .select("id, referred_name, referred_email, referred_phone, status, created_at, rewarded_at, consent_given, locale")
-    .eq("ambassador_id", ambassadorRow.id)
+    .eq("ambassador_id", ambassador.id)
     .order("created_at", { ascending: false });
 
   if (referralsError) {

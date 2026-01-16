@@ -31,7 +31,8 @@ function normalizeName(name?: string | null) {
     .map((part) => part.replace(/[^a-z0-9]/gi, ""))
     .filter(Boolean)
     .map((part) => part.slice(0, 8))
-    .join("");
+    .join("")
+    .slice(0, 8);
 }
 
 function randomDescriptor() {
@@ -45,8 +46,10 @@ function randomSuffix() {
 export function buildDiscountCode(seedName?: string | null) {
   const base = normalizeName(seedName) || randomDescriptor();
   const suffix = randomSuffix();
-  const digits = Math.floor(10 + Math.random() * 90).toString();
-  return `${base}${suffix}${digits}`.slice(0, 20);
+  // Include a high-entropy token to avoid collisions across businesses
+  // (discount_code is globally unique in production).
+  const token = nanoid(8).replace(/[_-]/g, "").slice(0, 8);
+  return `${base}${suffix}${token}`.slice(0, 20);
 }
 
 type GenerateArgs = {
@@ -58,7 +61,6 @@ type GenerateArgs = {
 
 export async function generateUniqueDiscountCode({
   supabase,
-  businessId,
   seedName,
   maxAttempts = 6,
 }: GenerateArgs): Promise<string> {
@@ -67,7 +69,6 @@ export async function generateUniqueDiscountCode({
     const { data, error } = await supabase
       .from("customers")
       .select("id")
-      .eq("business_id", businessId)
       .eq("discount_code", candidate)
       .limit(1)
       .maybeSingle();

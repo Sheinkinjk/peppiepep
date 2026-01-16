@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Bot, Loader2, MessageCircle, Send, Sparkles, X } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { logger } from "@/lib/logger";
@@ -18,7 +19,7 @@ const INITIAL_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hey! I'm the Refer Labs concierge. Curious about fees, referral code limits, or how we run VIP campaigns? Ask anything and I'll map out the plan or line up a demo for you.",
+    "Hey! I'm the Refer Labs concierge. Curious about fees, referral code limits, or how the new concierge referral experience works? Ask anything and I'll map out the plan, link you to the latest offering, or line up a demo.",
 };
 
 const SUGGESTIONS = [
@@ -26,7 +27,10 @@ const SUGGESTIONS = [
   "How many referral codes can we generate?",
   "How do approvals + payouts work?",
   "Can we book a concierge demo?",
+  "Tell me about the newest concierge referral offering",
 ];
+
+const LATEST_OFFERING_URL = "/our-referral-program";
 
 const buildId = () => {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -195,15 +199,15 @@ export function SupportChatbot() {
           aria-label="Refer Labs chatbot dialog"
         >
           <div className="flex items-center justify-between rounded-2xl bg-gradient-to-r from-[#002d32] to-[#04606b] px-4 py-3 text-white">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
-                <Bot className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">Refer Labs Concierge (Beta)</p>
-                <p className="text-xs text-white/80">Ask anything. I respond in seconds.</p>
-              </div>
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+              <Bot className="h-5 w-5" />
             </div>
+            <div>
+              <p className="text-sm font-semibold">Refer Labs Concierge</p>
+              <p className="text-xs text-white/80">Ask anything. I respond in seconds.</p>
+            </div>
+          </div>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
@@ -355,8 +359,16 @@ export function SupportChatbot() {
           )}
 
         <p className="mt-2 text-center text-xs text-slate-500">
-          I use AI to suggest strategies. For hands-on onboarding, tap “Start Getting Referrals” or book a concierge demo call.
+          I use AI to suggest strategies. For hands-on onboarding, tap “Start Getting Referrals”, explore our latest concierge referral offering, or book a concierge demo call.
         </p>
+        <div className="mt-1 text-center text-xs font-semibold">
+          <Link
+            href={LATEST_OFFERING_URL}
+            className="text-[#00a6b4] hover:text-[#008c99] transition-colors underline-offset-2 decoration-[#00d2be] hover:decoration-[#00a6b4] underline"
+          >
+            Explore our latest concierge referral program
+          </Link>
+        </div>
       </div>
     )}
   </>

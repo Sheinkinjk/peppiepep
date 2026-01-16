@@ -189,9 +189,9 @@ export async function POST(request: Request) {
         ? Number(payload.amount)
         : null;
 
-    const metadata =
+    const metadata: Database["public"]["Tables"]["discount_redemptions"]["Insert"]["metadata"] =
       payload.metadata && typeof payload.metadata === "object"
-        ? payload.metadata
+        ? (payload.metadata as any)
         : null;
 
     const redemptionPayload: Database["public"]["Tables"]["discount_redemptions"]["Insert"] = {

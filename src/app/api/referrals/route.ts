@@ -50,6 +50,7 @@ export async function GET(request: Request) {
       q: z.string().optional(),
       status: z.string().optional(),
       source: z.string().optional(),
+      channel: z.string().optional(),
       page: z.string().optional(),
       pageSize: z.string().optional(),
     });
@@ -59,6 +60,7 @@ export async function GET(request: Request) {
         q: url.searchParams.get("q") ?? undefined,
         status: url.searchParams.get("status") ?? undefined,
         source: url.searchParams.get("source") ?? undefined,
+        channel: url.searchParams.get("channel") ?? undefined,
         page: url.searchParams.get("page") ?? undefined,
         pageSize: url.searchParams.get("pageSize") ?? undefined,
       },
@@ -69,12 +71,13 @@ export async function GET(request: Request) {
       return validation.response;
     }
 
-    const { q, status: rawStatus, source: rawSource, page: rawPage, pageSize: rawSize } =
+    const { q, status: rawStatus, source: rawSource, channel: rawChannel, page: rawPage, pageSize: rawSize } =
       validation.data;
 
     const search = (q ?? "").trim();
     const status = (rawStatus ?? "all").toLowerCase();
     const source = (rawSource ?? "all").toLowerCase();
+    const channel = (rawChannel ?? "all").toLowerCase();
     const pageParam = Number(rawPage ?? "1");
     const sizeParam = Number(rawSize ?? DEFAULT_PAGE_SIZE);
     const page = Number.isNaN(pageParam) || pageParam < 1 ? 1 : pageParam;
@@ -129,7 +132,8 @@ export async function GET(request: Request) {
             id,
             name,
             email,
-            phone
+            phone,
+            source
           )
         `,
         { count: "exact" },
@@ -146,6 +150,18 @@ export async function GET(request: Request) {
       query = query.not("created_by", "is", null);
     } else if (source === "tracked") {
       query = query.is("created_by", null);
+    }
+
+    if (channel !== "all") {
+      if (channel === "external_partners") {
+        query = query.eq("ambassador.source", "external_partner");
+      } else if (channel === "linkedin_influencer") {
+        query = query.filter("ambassador.source", "ilike", "linkedin-influencer%");
+      } else if (channel === "partners") {
+        query = query
+          .not("ambassador.source", "eq", "external_partner")
+          .not("ambassador.source", "ilike", "linkedin-influencer%");
+      }
     }
 
     if (search) {

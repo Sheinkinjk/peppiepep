@@ -31,7 +31,8 @@ export async function POST() {
       .from("referral_events")
       .select("id")
       .eq("business_id", businessId)
-      .eq("source", "integration_qa");
+      .eq("source", "integration_qa")
+      .contains("metadata", { qa_simulated: true });
 
     if (qaFetchError) {
       logger.error("Failed to fetch QA events", { error: qaFetchError });

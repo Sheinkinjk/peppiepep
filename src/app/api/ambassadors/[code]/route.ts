@@ -43,7 +43,7 @@ export async function GET(
           site_url
         )
       `)
-      .ilike("referral_code", code)
+      .eq("referral_code", code)
       .single();
 
     if (error || !customer) {
@@ -80,6 +80,8 @@ export async function GET(
       business?.client_reward_text ||
       (business?.reward_type === "credit"
         ? `$${rewardAmount} credit`
+        : business?.reward_type === "revenue_share"
+        ? `${rewardAmount}% revenue share`
         : business?.reward_type === "upgrade"
         ? "a free upgrade"
         : business?.reward_type === "discount"
@@ -103,7 +105,7 @@ export async function GET(
 
     const totalReferrals = referrals?.length || 0;
     const completedReferrals =
-      referrals?.filter((r) => r.status === "complete").length || 0;
+      referrals?.filter((r) => r.status === "completed").length || 0;
 
     // Return public ambassador data
     return NextResponse.json({

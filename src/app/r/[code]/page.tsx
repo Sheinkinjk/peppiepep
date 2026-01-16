@@ -126,15 +126,17 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   const rewardAmount = customerWithBusiness.business?.reward_amount || 15;
   const newUserReward =
     customerWithBusiness.business?.new_user_reward_text || offerText;
-  const clientReward =
-    customerWithBusiness.business?.client_reward_text ||
-    (customerWithBusiness.business?.reward_type === "credit"
-      ? `$${rewardAmount} credit`
-      : customerWithBusiness.business?.reward_type === "upgrade"
-      ? "a free upgrade"
-      : customerWithBusiness.business?.reward_type === "discount"
-      ? `${rewardAmount}% discount`
-      : `${rewardAmount} points`);
+	  const clientReward =
+	    customerWithBusiness.business?.client_reward_text ||
+	    (customerWithBusiness.business?.reward_type === "credit"
+	      ? `$${rewardAmount} credit`
+	      : customerWithBusiness.business?.reward_type === "revenue_share"
+	      ? `${rewardAmount}% revenue share`
+	      : customerWithBusiness.business?.reward_type === "upgrade"
+	      ? "a free upgrade"
+	      : customerWithBusiness.business?.reward_type === "discount"
+	      ? `${rewardAmount}% discount`
+	      : `${rewardAmount} points`);
   const rewardTerms = customerWithBusiness.business?.reward_terms || null;
   const localeCopy = {
     en: {

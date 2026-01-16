@@ -186,25 +186,25 @@ export default function Terms() {
                 If payment fails or your account becomes past due, Pepform may suspend or terminate your access to the Service. You remain liable for all unpaid fees plus interest at 1.5% per month or the maximum rate permitted by law, whichever is lower.
               </p>
               <p className="text-slate-600">
-                During our beta testing period, certain fees may be waived at Pepform's discretion. Waived fees do not create any ongoing entitlement or expectation of continued free service.
+                Pepform may offer promotional discounts or credit-based allowances at its discretion. Such promotions do not create any ongoing entitlement or expectation of continued free service.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Beta Testing and Service Availability</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Service Availability and Updates</h2>
               <p className="text-slate-600 mb-2">
-                The Service is currently in beta testing. During this period:
+                We continually evolve the Service, so please review your plan documents for the most current commitments. During these adjustments:
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-2 mb-3">
                 <li>The Service is provided "AS IS" and "AS AVAILABLE" without warranties of any kind</li>
-                <li>Features, functionality, and pricing are subject to change without notice</li>
+                <li>Features, functionality, and pricing may change with notice to customers</li>
                 <li>Service availability, uptime, and performance are not guaranteed</li>
                 <li>We may collect usage data, feedback, and analytics to improve the platform</li>
-                <li>We may reset, modify, or delete test data without liability</li>
-                <li>We may invite or restrict beta access at our sole discretion</li>
+                <li>We may reset, modify, or delete experimental data at our discretion</li>
+                <li>We may invite or restrict access to specialized programs at our sole discretion</li>
               </ul>
               <p className="text-slate-600">
-                Pepform makes no guarantees regarding the transition from beta to general availability or the preservation of beta accounts and data.
+                Pepform may update, retire, or replace features as our roadmap evolves; we will communicate significant changes and any data preservation windows where feasible.
               </p>
             </div>
 

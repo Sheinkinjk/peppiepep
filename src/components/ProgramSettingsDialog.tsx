@@ -477,6 +477,7 @@ export function ProgramSettingsDialog({
                 className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
               >
                 <option value="credit">Credit</option>
+                <option value="revenue_share">Revenue share (%)</option>
                 <option value="upgrade">Upgrade</option>
                 <option value="discount">Discount</option>
                 <option value="points">Points</option>
@@ -499,7 +500,7 @@ export function ProgramSettingsDialog({
                 }
               />
               <p className="text-[11px] text-slate-500">
-                For credit/discount/points, enter the numeric amount.
+                For revenue share, enter the percentage. For credit/discount/points, enter the numeric amount.
               </p>
             </div>
           </div>

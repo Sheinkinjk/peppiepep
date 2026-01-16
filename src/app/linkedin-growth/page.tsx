@@ -176,6 +176,14 @@ export default function LinkedInGrowthPage() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.15),transparent_50%),radial-gradient(circle_at_85%_20%,rgba(124,58,237,0.12),transparent_45%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.1),transparent_50%)]" />
 
       <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
+        <div className="mb-10 flex justify-center">
+          <Link
+            href="/referral-partnerships"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 hover:bg-white/10"
+          >
+            New hub: Referral Partnerships <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
 
         {/* Hero Section - Business First */}
         <section className="space-y-10 animate-in fade-in duration-700">

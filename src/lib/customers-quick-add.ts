@@ -3,6 +3,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/supabase";
 import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import { generateUniqueReferralCode } from "@/lib/referral-codes";
+import { logger } from "@/lib/logger";
 
 export type QuickAddCustomerResult =
   | { status: "error"; error: string }
@@ -19,12 +20,18 @@ export async function quickAddCustomerProfile({
   name,
   phone,
   email,
+  source,
+  metadata,
+  status,
 }: {
   supabase: SupabaseClient<Database>;
   businessId: string;
   name: string;
   phone: string;
   email: string;
+  source?: string | null;
+  metadata?: Record<string, unknown> | null;
+  status?: Database["public"]["Tables"]["customers"]["Insert"]["status"] | null;
 }): Promise<QuickAddCustomerResult> {
   const trimmedName = name.trim();
   const normalizedEmail = email.trim().toLowerCase();
@@ -75,15 +82,17 @@ export async function quickAddCustomerProfile({
     seedName: trimmedName || normalizedEmail || normalizedPhone,
   });
 
-  const insertPayload: Database["public"]["Tables"]["customers"]["Insert"] = {
+  const insertPayload = {
     business_id: businessId,
     name: trimmedName || null,
     phone: normalizedPhone || null,
     email: normalizedEmail || null,
     referral_code: referralCode,
     discount_code: discountCode,
-    status: "pending",
-  };
+    status: status ?? "pending",
+    source: source ?? null,
+    ...(metadata ? { metadata } : {}),
+  } as any;
 
   const { data: inserted, error } = await supabase
     .from("customers")
@@ -92,10 +101,26 @@ export async function quickAddCustomerProfile({
     .single<{ id: string }>();
 
   if (error || !inserted?.id) {
-    return { status: "error", error: "Unable to add customer. Please try again." };
+    if (error) {
+      logger.error("Quick add insert failed", {
+        businessId,
+        referralCode: insertPayload.referral_code,
+        discountCode: insertPayload.discount_code,
+        message: error.message,
+        code: (error as any).code,
+        details: (error as any).details,
+        hint: (error as any).hint,
+      });
+    }
+    const isProd = process.env.NODE_ENV === "production";
+    return {
+      status: "error",
+      error: isProd
+        ? "Unable to add customer. Please try again."
+        : `Unable to add customer: ${error?.message ?? "unknown error"}`,
+    };
   }
 
   const displayLabel = trimmedName || normalizedPhone || normalizedEmail || "Customer";
   return { status: "created", customerId: inserted.id, message: `${displayLabel} added and ready to refer.` };
 }
-

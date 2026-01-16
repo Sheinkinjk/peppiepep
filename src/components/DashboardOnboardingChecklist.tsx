@@ -75,16 +75,17 @@ export function DashboardOnboardingChecklist({
     emitHiddenStoreChange();
   };
 
-  const openTab = (tab: "campaigns" | "clients" | "performance") => {
-    if (typeof document === "undefined") return;
-    const trigger = document.querySelector<HTMLElement>(
-      `[data-tab-target="${tab}"]`,
+  const navigate = (section: string, scrollTo?: string) => {
+    if (typeof window === "undefined") return;
+    window.dispatchEvent(
+      new CustomEvent("dashboard:navigate", {
+        detail: { section, scrollTo },
+      }),
     );
-    trigger?.click();
   };
 
   const openCampaignBuilder = () => {
-    openTab("campaigns");
+    navigate("crm-integration");
     if (typeof window === "undefined") return;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const win = window as any;
@@ -102,8 +103,8 @@ export function DashboardOnboardingChecklist({
       description: "Upload a CSV or add a few partners manually.",
       icon: Users,
       done: hasCustomers,
-      action: () => openTab("clients"),
-      cta: "Open Clients tab",
+      action: () => navigate("clients-ambassadors", "partner-csv-upload"),
+      cta: "Open partners",
     },
     {
       id: "settings",
@@ -112,7 +113,7 @@ export function DashboardOnboardingChecklist({
         "Set your headline, new client reward, and partner reward.",
       icon: SettingsIcon,
       done: hasProgramSettings,
-      action: () => openTab("clients"),
+      action: () => navigate("setup-integration"),
       cta: "Edit settings",
     },
     {
@@ -131,7 +132,7 @@ export function DashboardOnboardingChecklist({
         "Mark a referral as completed or add a manual conversion.",
       icon: TrendingUp,
       done: hasReferrals,
-      action: () => openTab("performance"),
+      action: () => navigate("performance", "measure-roi-interaction-hub"),
       cta: "View performance",
     },
   ];
