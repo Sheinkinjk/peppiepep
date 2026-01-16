@@ -3,14 +3,15 @@ import Link from "next/link";
 import {
   ArrowRight,
   BarChart3,
+  BookOpen,
+  Building2,
+  Calendar,
   CheckCircle2,
   ChevronDown,
-  ChevronRight,
-  Download,
-  FileText,
+  Handshake,
   Layers,
-  LineChart,
-  Megaphone,
+  Linkedin,
+  MessageSquare,
   Shield,
   Sparkles,
   Target,
@@ -23,53 +24,156 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencer);
 export const revalidate = 3600;
 
-const businessOutcomes = [
+const partnershipTypes = [
   {
-    title: "Drive Qualified Demos",
-    detail: "Creator endorsements bring warm, educated prospects who already trust the recommendation. Your sales team talks to buyers who understand the value.",
-    icon: Target,
-    gradient: "from-cyan-500/20 to-teal-500/20",
-    border: "border-cyan-400/30",
+    title: "Thought Leaders",
+    description: "Industry experts with engaged audiences of decision-makers",
+    examples: "CFOs, CTOs, CMOs, founders sharing insights daily",
+    icon: BookOpen,
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    border: "border-blue-400/30",
   },
   {
-    title: "Build Brand Authority",
-    detail: "When respected voices in your industry mention your product, it signals credibility. You're not interrupting—you're being introduced.",
-    icon: TrendingUp,
+    title: "Niche Creators",
+    description: "Specialists in specific verticals with loyal followings",
+    examples: "HR tech reviewers, SaaS evangelists, B2B marketing coaches",
+    icon: Target,
     gradient: "from-purple-500/20 to-pink-500/20",
     border: "border-purple-400/30",
   },
   {
-    title: "Scale Predictably",
-    detail: "Pay for outcomes, not impressions. Track every click, signup, and conversion. Double down on what works, cut what doesn't.",
-    icon: LineChart,
+    title: "Community Builders",
+    description: "Leaders of engaged communities and professional networks",
+    examples: "Slack/Discord admins, newsletter operators, podcast hosts",
+    icon: Users,
     gradient: "from-emerald-500/20 to-teal-500/20",
     border: "border-emerald-400/30",
+  },
+  {
+    title: "Operator-Influencers",
+    description: "Active practitioners who share real-world experience",
+    examples: "Heads of Growth, RevOps leaders, Sales directors",
+    icon: TrendingUp,
+    gradient: "from-amber-500/20 to-orange-500/20",
+    border: "border-amber-400/30",
+  },
+];
+
+const businessGoals = [
+  {
+    title: "Demo Bookings",
+    description: "Drive qualified prospects directly into your sales pipeline with warm introductions from trusted voices.",
+    metric: "Typical: 30-100+ demos/month",
+    icon: Calendar,
+  },
+  {
+    title: "Lead Generation",
+    description: "Fill your funnel with in-market buyers who already understand your value proposition.",
+    metric: "Typical: 5-15% conversion rate",
+    icon: Target,
+  },
+  {
+    title: "Brand Distribution",
+    description: "Amplify your message through established audiences without building from scratch.",
+    metric: "Typical: 10-50x organic reach",
+    icon: TrendingUp,
+  },
+  {
+    title: "Credibility & Trust",
+    description: "Third-party endorsement from respected voices signals quality to your market.",
+    metric: "Typical: 2-3x trust score",
+    icon: Shield,
+  },
+  {
+    title: "Enterprise Introductions",
+    description: "Access decision-makers at target accounts through warm referrals from their trusted network.",
+    metric: "Typical: 40%+ reply rate",
+    icon: Building2,
+  },
+  {
+    title: "Market Education",
+    description: "Let creators explain your category and position your solution as the answer.",
+    metric: "Typical: 3-5x engagement",
+    icon: MessageSquare,
+  },
+];
+
+const processSteps = [
+  {
+    step: "1",
+    title: "Discovery & Goal Setting",
+    description: "We learn your ICP, revenue goals, and competitive landscape. You tell us what success looks like—demo volume, pipeline value, close rates.",
+    activities: [
+      "Define ideal customer profile and target accounts",
+      "Set conversion goals and budget parameters",
+      "Identify messaging angles and proof points",
+      "Establish compliance requirements and brand guidelines",
+    ],
+    timeline: "Days 1-2",
+  },
+  {
+    step: "2",
+    title: "Partner Sourcing & Qualification",
+    description: "We identify LinkedIn creators whose audiences match your ICP. Each is vetted for authenticity, engagement quality, and brand alignment.",
+    activities: [
+      "Analyze follower demographics and engagement patterns",
+      "Review content history and audience sentiment",
+      "Verify influence authenticity (no fake followers)",
+      "Assess brand fit and messaging alignment",
+    ],
+    timeline: "Days 3-5",
+  },
+  {
+    step: "3",
+    title: "Offer & Structure Design",
+    description: "We build the partnership offer—what creators get, what they commit to, and how results are tracked and rewarded.",
+    activities: [
+      "Design compensation model (per-demo, revenue share, hybrid)",
+      "Create content briefs and brand guidelines",
+      "Set up tracking links and attribution parameters",
+      "Draft partnership agreements and disclosure templates",
+    ],
+    timeline: "Days 5-7",
+  },
+  {
+    step: "4",
+    title: "Creator Onboarding",
+    description: "Selected creators receive their partnership kit—tracking links, brand materials, content guidelines, and payout terms.",
+    activities: [
+      "Provision unique tracked referral links",
+      "Share brand assets and messaging playbook",
+      "Configure dashboard access for creators",
+      "Brief creators on product and value proposition",
+    ],
+    timeline: "Days 7-9",
+  },
+  {
+    step: "5",
+    title: "Campaign Launch",
+    description: "Creators draft content for your approval. Once approved, posts go live with full tracking enabled.",
+    activities: [
+      "Review and approve creator content drafts",
+      "Coordinate posting schedule for maximum impact",
+      "Enable real-time attribution tracking",
+      "Monitor initial engagement and click-through",
+    ],
+    timeline: "Day 10+",
+  },
+  {
+    step: "6",
+    title: "Optimization & Scale",
+    description: "We analyze performance weekly. Top creators get more budget. Underperformers are coached or removed. The program compounds.",
+    activities: [
+      "Weekly performance reviews and reporting",
+      "Identify top performers for scaling",
+      "Test new messaging angles and CTAs",
+      "Expand to new creators based on learnings",
+    ],
+    timeline: "Ongoing",
   },
 ];
 
 const faqData = [
-  {
-    category: "Trust & Compliance",
-    icon: Shield,
-    questions: [
-      {
-        q: "Are creator partnerships considered advertising?",
-        a: "Yes. When a LinkedIn creator promotes a brand in exchange for compensation, this is marketing. All partnerships facilitated through Refer Labs are performance-based marketing relationships that must comply with advertising regulations including FTC endorsement guidelines, ASA standards, and LinkedIn's commercial content policies. Creators are required to clearly disclose partnerships using #ad, #sponsored, or #partner hashtags."
-      },
-      {
-        q: "What are the disclosure requirements?",
-        a: "Creators must clearly and conspicuously disclose their commercial relationship with brands. This means using platform-appropriate disclosure methods (hashtags like #ad or #sponsored on LinkedIn), placing disclosures where they're easily noticed (not buried in long captions), and using clear language that audiences understand. Refer Labs provides disclosure templates, but creators and brands are ultimately responsible for compliance."
-      },
-      {
-        q: "Who is responsible for compliance?",
-        a: "Both parties share responsibility. Brands must ensure product claims are truthful and substantiated. Creators must disclose partnerships and avoid deceptive practices. Refer Labs provides tools, guidance, and templates to help maintain compliance, but we are not legal counsel. Both businesses and creators should consult with legal advisors regarding their specific obligations under FTC, ASA, and local advertising laws."
-      },
-      {
-        q: "How do you prevent fake engagement or fraud?",
-        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique referral links with server-side validation. Businesses see full attribution data—click sources, conversion rates, and customer quality—so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
-      }
-    ]
-  },
   {
     category: "How It Works",
     icon: Zap,
@@ -93,6 +197,24 @@ const faqData = [
     ]
   },
   {
+    category: "Trust & Compliance",
+    icon: Shield,
+    questions: [
+      {
+        q: "Are creator partnerships considered advertising?",
+        a: "Yes. When a LinkedIn creator promotes a brand in exchange for compensation, this is marketing. All partnerships facilitated through Refer Labs are performance-based marketing relationships that must comply with advertising regulations including FTC endorsement guidelines, ASA standards, and LinkedIn's commercial content policies. Creators are required to clearly disclose partnerships using #ad, #sponsored, or #partner hashtags."
+      },
+      {
+        q: "What are the disclosure requirements?",
+        a: "Creators must clearly and conspicuously disclose their commercial relationship with brands. This means using platform-appropriate disclosure methods (hashtags like #ad or #sponsored on LinkedIn), placing disclosures where they're easily noticed (not buried in long captions), and using clear language that audiences understand. Refer Labs provides disclosure templates, but creators and brands are ultimately responsible for compliance."
+      },
+      {
+        q: "How do you prevent fake engagement or fraud?",
+        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique referral links with server-side validation. Businesses see full attribution data—click sources, conversion rates, and customer quality—so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
+      }
+    ]
+  },
+  {
     category: "Brand Control",
     icon: Layers,
     questions: [
@@ -107,10 +229,6 @@ const faqData = [
       {
         q: "Can I see performance before committing to a creator?",
         a: "Yes. Start with a small test campaign (e.g., one post, $500 budget cap). Review click-through rates, engagement quality, and conversion rates. If performance is strong, scale up. If not, move on. You're never locked into long-term contracts or minimum spends. Performance dictates investment."
-      },
-      {
-        q: "Do I need to provide creatives or templates?",
-        a: "Optional. Some brands provide templates, graphics, or talking points. Others give creators full creative freedom with just a brief. We recommend a hybrid: share key product benefits and proof points, but let creators frame the narrative for their audience. Authenticity converts better than scripted ads."
       }
     ]
   },
@@ -120,15 +238,15 @@ const faqData = [
     questions: [
       {
         q: "What types of businesses work best?",
-        a: "SaaS companies with clear product-market fit, e-commerce brands with differentiated products, B2B tools replacing manual workflows, and any business with a defined ICP and trackable conversion goals. You need the ability to measure outcomes (demos, signups, revenue) and allocate budget based on performance. Early-stage startups and established enterprises both succeed here."
+        a: "SaaS companies with clear product-market fit, B2B tools replacing manual workflows, professional services with defined ICPs, and any business with trackable conversion goals. You need the ability to measure outcomes (demos, signups, revenue) and allocate budget based on performance. Early-stage startups and established enterprises both succeed here."
       },
       {
         q: "How long does it take to launch?",
-        a: "Most businesses launch their first creator campaign within 7-10 days. Timeline: (1) Submit partnership request and define goals (Day 1), (2) We match you with aligned creators (Days 2-4), (3) You review creator profiles and approve partnerships (Days 5-6), (4) Creators draft content for your approval (Days 7-9), (5) Content goes live and tracking begins (Day 10). Faster timelines are possible for urgent launches."
+        a: "Most businesses launch their first creator campaign within 7-10 days. Timeline: (1) Submit partnership request and define goals (Day 1), (2) We match you with aligned creators (Days 2-5), (3) You review creator profiles and approve partnerships (Days 5-7), (4) Creators draft content for your approval (Days 7-9), (5) Content goes live and tracking begins (Day 10). Faster timelines are possible for urgent launches."
       },
       {
         q: "What budget should I allocate?",
-        a: "Start with $2,000-$5,000/month to test 3-5 creators. This gives you enough data to identify what works without over-committing. High-performing programs scale to $20,000-$50,000+/month as you add more creators and expand to new audience segments. Budget scales with proven ROI—if you're generating 5x returns, increasing spend is a no-brainer."
+        a: "Start with $2,000-$5,000/month to test 3-5 creators. This gives you enough data to identify what works without over-committing. High-performing programs scale to $20,000-$50,000+/month as you add more creators and expand to new audience segments. Budget scales with proven ROI—if you're generating 5x returns, increasing spend is straightforward."
       },
       {
         q: "Do you handle creator outreach and management?",
@@ -143,7 +261,7 @@ export default function LinkedInGrowthPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "LinkedIn Creator Partnerships for B2B Growth",
-    "description": "Replace outbound sales with trusted creator distribution. Performance-based LinkedIn partnerships that drive qualified demos, signups, and revenue.",
+    "description": "Partner with LinkedIn influencers to drive qualified demos and revenue. Full-service partnership management from sourcing to payouts.",
     "url": "https://referlabs.com.au/linkedin-growth",
     "provider": {
       "@type": "Organization",
@@ -153,7 +271,7 @@ export default function LinkedInGrowthPage() {
     },
     "mainEntity": {
       "@type": "Service",
-      "serviceType": "Performance Marketing Platform",
+      "serviceType": "LinkedIn Creator Partnership Management",
       "provider": {
         "@type": "Organization",
         "name": "Refer Labs"
@@ -173,268 +291,77 @@ export default function LinkedInGrowthPage() {
       />
 
       {/* Ambient background effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.15),transparent_50%),radial-gradient(circle_at_85%_20%,rgba(124,58,237,0.12),transparent_45%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.15),transparent_50%),radial-gradient(circle_at_85%_20%,rgba(59,130,246,0.12),transparent_45%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.1),transparent_50%)]" />
 
       <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
-        <div className="mb-10 flex justify-center">
-          <Link
-            href="/referral-partnerships"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 hover:bg-white/10"
-          >
-            New hub: Referral Partnerships <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-
-        {/* Hero Section - Business First */}
+        {/* Hero Section */}
         <section className="space-y-10 animate-in fade-in duration-700">
           <div className="text-center max-w-4xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-300 text-sm font-semibold">
+              <Linkedin className="h-4 w-4" />
+              LinkedIn Creator Partnerships
+            </div>
+
             <h1 className="text-balance text-4xl font-black leading-[1.08] sm:text-5xl lg:text-6xl text-white">
-              Your Next Customer Is Already Following Someone on LinkedIn
+              Your Buyers Are Already Following
+              <br />
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                Someone on LinkedIn
+              </span>
             </h1>
 
             <p className="text-xl text-slate-200/90 leading-relaxed max-w-3xl mx-auto">
               Partner with verified LinkedIn creators to drive qualified demos and revenue.
-              No ads. No cold outreach. Just trusted voices introducing your product to engaged, in-market buyers.
+              We handle sourcing, qualification, tracking, and payouts—you focus on closing deals.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link
                 href="/linkedin-growth/business"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0ABAB5] to-cyan-400 hover:from-[#12c7c1] hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-cyan-500/40 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-400 hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-blue-500/30 transition hover:scale-[1.02]"
               >
-                Partner With Creators
+                Start a Partnership Program
                 <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link
+                href="/linkedin-growth/influencer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-bold text-white transition"
+              >
+                Apply as a Creator
               </Link>
             </div>
           </div>
         </section>
 
-        {/* CTA Split - Business Primary, Creators Secondary */}
-        <section className="mt-16 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
-          {/* Business CTA - Larger, More Prominent */}
-          <div className="rounded-3xl border border-cyan-400/40 bg-gradient-to-br from-[#0ABAB5]/20 via-slate-900/70 to-cyan-500/15 p-10 lg:p-12 backdrop-blur shadow-2xl shadow-cyan-500/20">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 mb-6">
-              <Zap className="h-4 w-4" />
-              For Businesses
-            </div>
-            <h2 className="text-3xl font-black text-white mb-4">Ready to Replace Cold Outreach?</h2>
-            <p className="text-base text-slate-200/90 leading-relaxed mb-8">
-              Tell us about your business, ICP, and growth goals. We'll match you with creators whose audiences are already looking for solutions like yours.
-            </p>
-
-            <div className="space-y-3 mb-8 text-sm text-slate-200/90">
-              {[
-                "Pay only for verified conversions (demos, signups, revenue)",
-                "Launch your first creator campaign in 7-10 days",
-                "Scale with proven ROI—no long-term contracts",
-                "Full attribution tracking and performance dashboards"
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-200 flex-shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <Link
-              href="/linkedin-growth/business"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0ABAB5] to-cyan-400 hover:from-[#12c7c1] hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
-            >
-              Start a Partnership
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-
-          {/* Creator CTA - Smaller, Supportive */}
-          <div className="rounded-3xl border border-emerald-400/30 bg-gradient-to-br from-emerald-500/10 via-slate-900/70 to-[#0ABAB5]/15 p-8 backdrop-blur">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-100 mb-6">
-              <Users className="h-4 w-4" />
-              For Creators
-            </div>
-            <h3 className="text-2xl font-black text-white mb-4">Monetize Your Audience</h3>
-            <p className="text-sm text-slate-200/90 leading-relaxed mb-6">
-              Join a curated pool of LinkedIn creators earning recurring revenue by promoting products they actually believe in.
-            </p>
-
-            <div className="space-y-2 mb-6 text-sm text-slate-200/90">
-              {[
-                "Performance-based payouts (no follower minimums)",
-                "Only promote products you'd use yourself",
-                "Transparent tracking and monthly payments"
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 text-emerald-300 flex-shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <Link
-              href="/linkedin-growth/influencer"
-              className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 px-6 py-3 text-sm font-bold text-white backdrop-blur transition"
-            >
-              Apply as a Creator
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* Premium PDF Downloads - New Section */}
-        <section className="mt-24 animate-in fade-in duration-700 delay-100">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-black text-white mb-3">Download our comprehensive guides to understand creator partnerships and build your go-to-market strategy.</h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Guide 1: The Creator Partnership Playbook */}
-            <div className="group rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-[#0ABAB5]/20 via-slate-900/50 to-blue-500/10 p-8 backdrop-blur hover:border-cyan-400/50 transition-all duration-300 flex flex-col">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 p-4 text-white shadow-lg">
-                  <FileText className="h-7 w-7" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-black text-white mb-2">The Creator Partnership Playbook</h3>
-                  <p className="text-sm text-cyan-100 font-semibold uppercase tracking-[0.08em]">For B2B Marketing & Growth Teams</p>
-                </div>
-              </div>
-
-              <div className="space-y-4 mb-6">
-                <p className="text-sm text-slate-200/90 leading-relaxed">
-                  A 24-page strategic guide covering how to identify, vet, and activate LinkedIn creators who can drive measurable business outcomes. Includes real campaign examples, payout models, and ROI frameworks.
-                </p>
-
-                <div className="space-y-2 text-sm text-slate-200/80">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-cyan-300 mt-0.5 flex-shrink-0" />
-                    <span>How to build creator partnerships that outperform paid ads</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-cyan-300 mt-0.5 flex-shrink-0" />
-                    <span>Step-by-step vetting criteria for selecting the right creators</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-cyan-300 mt-0.5 flex-shrink-0" />
-                    <span>Performance benchmarks and ROI calculation templates</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-cyan-300 mt-0.5 flex-shrink-0" />
-                    <span>Compliance checklist for FTC and LinkedIn guidelines</span>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="/pdfs/creator-partnership-playbook.pdf"
-                download
-                className="min-h-[48px] w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition group-hover:scale-[1.02] mt-auto"
-              >
-                <Download className="h-4 w-4" />
-                Download Free Guide (PDF)
-              </a>
-            </div>
-
-            {/* Guide 2: LinkedIn Creator Economics */}
-            <div className="group rounded-3xl border border-purple-400/30 bg-gradient-to-br from-purple-500/10 via-slate-900/50 to-[#0ABAB5]/15 p-8 backdrop-blur hover:border-purple-400/50 transition-all duration-300 flex flex-col">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 p-4 text-white shadow-lg">
-                  <BarChart3 className="h-7 w-7" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-black text-white mb-2">LinkedIn Creator Economics</h3>
-                  <p className="text-sm text-purple-100 font-semibold uppercase tracking-[0.08em]">Benchmarks & Market Data (2025)</p>
-                </div>
-              </div>
-
-              <div className="space-y-4 mb-6">
-                <p className="text-sm text-slate-200/90 leading-relaxed">
-                  Industry benchmarks, payout structures, and performance data from 200+ creator partnerships. Understand market rates, conversion metrics, and how to structure competitive offers that attract top creators.
-                </p>
-
-                <div className="space-y-2 text-sm text-slate-200/80">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-purple-300 mt-0.5 flex-shrink-0" />
-                    <span>2025 payout benchmarks by industry and creator tier</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-purple-300 mt-0.5 flex-shrink-0" />
-                    <span>Conversion rate data: CTR, demo show rates, close rates</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-purple-300 mt-0.5 flex-shrink-0" />
-                    <span>How to structure competitive commission models</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-purple-300 mt-0.5 flex-shrink-0" />
-                    <span>Case studies from SaaS, fintech, and e-commerce brands</span>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="/pdfs/linkedin-creator-economics-2025.pdf"
-                download
-                className="min-h-[48px] w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#0ABAB5] hover:bg-[#12c7c1] px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-purple-500/30 transition group-hover:scale-[1.02] mt-auto"
-              >
-                <Download className="h-4 w-4" />
-                Download Market Report (PDF)
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* What You Can Achieve - Business Outcomes */}
-        <section id="how-it-works" className="mt-28 animate-in fade-in duration-700 delay-150">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-white">What Creator Partnerships Can Do for Your Business</h2>
-            <p className="mt-4 text-lg text-slate-200/90 max-w-3xl mx-auto">
-              Move beyond cold outreach and paid ads. Leverage trusted voices to reach buyers who are already engaged and looking for solutions.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {businessOutcomes.map((outcome) => {
-              const Icon = outcome.icon;
-              return (
-                <div
-                  key={outcome.title}
-                  className={`rounded-3xl border ${outcome.border} bg-gradient-to-br ${outcome.gradient} backdrop-blur-sm p-8 hover:scale-[1.02] transition-transform duration-300`}
-                >
-                  <div className="rounded-2xl bg-white/10 p-4 backdrop-blur w-fit mb-6">
-                    <Icon className="h-8 w-8 text-cyan-300" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{outcome.title}</h3>
-                  <p className="text-sm text-slate-200/90 leading-relaxed">{outcome.detail}</p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Social Proof - The Market Reality with Real Stats */}
-        <section className="mt-24 rounded-3xl border border-white/10 bg-white/5 p-10 lg:p-12 backdrop-blur">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-            <div>
-              <h2 className="text-3xl font-black text-white mb-6">Trust Lives in the Feed, Not the Inbox</h2>
-
+        {/* The Value Proposition */}
+        <section className="mt-24 rounded-3xl border border-white/10 bg-white/5 p-8 lg:p-12 backdrop-blur">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-black text-white">
+                Why LinkedIn Creator Partnerships Work
+              </h2>
               <div className="space-y-4 text-base text-slate-200/90">
                 <p>
-                  Your buyers are on LinkedIn every day. They follow creators, operators, and founders who share insights, solve problems, and recommend tools.
+                  Your buyers are on LinkedIn every day. They follow creators, operators, and founders
+                  who share insights, solve problems, and recommend tools.
                 </p>
                 <p>
-                  When someone they trust mentions your product, it doesn't feel like advertising—it feels like a referral from a colleague.
+                  When someone they trust mentions your product, it doesn't feel like advertising—it
+                  feels like a referral from a colleague. <span className="text-cyan-300 font-medium">That's the difference between interrupting and being introduced.</span>
                 </p>
                 <p>
-                  That's why creator-led campaigns consistently outperform traditional outbound methods in B2B conversion rates.
+                  Creator-led campaigns consistently outperform cold outbound in B2B because trust
+                  is already established. You're not starting from zero—you're borrowing credibility.
                 </p>
               </div>
             </div>
 
             <div className="space-y-4">
               {[
-                { label: "Average email open rates in B2B cold outreach (2024)", value: "21.5%", color: "text-amber-400", source: "HubSpot 2024" },
-                { label: "B2B buyers who research independently before contacting sales", value: "87%", color: "text-emerald-400", source: "Gartner" },
-                { label: "Professionals active on LinkedIn globally", value: "1B+", color: "text-cyan-400", source: "LinkedIn 2024" },
-                { label: "B2B marketers reporting ROI from influencer partnerships", value: "89%", color: "text-purple-400", source: "TopRank Marketing 2024" }
+                { label: "B2B buyers who research independently before sales contact", value: "87%", color: "text-cyan-400", source: "Gartner" },
+                { label: "Higher conversion rate from referrals vs. cold outbound", value: "3-5x", color: "text-emerald-400", source: "Industry data" },
+                { label: "B2B marketers reporting ROI from influencer partnerships", value: "89%", color: "text-purple-400", source: "TopRank Marketing 2024" },
+                { label: "Lower CAC with performance-based partnerships", value: "40%", color: "text-amber-400", source: "Refer Labs clients" }
               ].map((stat) => (
                 <div key={stat.label} className="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
                   <div className={`text-3xl font-black ${stat.color} mb-2`}>{stat.value}</div>
@@ -446,116 +373,321 @@ export default function LinkedInGrowthPage() {
           </div>
         </section>
 
-        {/* How It Works - Process Flow */}
+        {/* Types of LinkedIn Partners */}
         <section className="mt-24">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-white">From Strategy to Scale in 10 Days</h2>
-            <p className="mt-4 text-lg text-slate-200/90 max-w-3xl mx-auto">
-              We handle creator vetting, matching, and operations. You approve partnerships, provide direction, and track results.
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              Types of LinkedIn Partners We Activate
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Different creators bring different strengths. We match you with partners whose
+              audiences align with your ideal customer profile.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "1",
-                title: "Define Your Goals",
-                detail: "Tell us your ICP, conversion goals (demos, signups, revenue), and budget. We craft your partnership brief.",
-                icon: Target
-              },
-              {
-                step: "2",
-                title: "Creator Matching",
-                detail: "We present 5-10 vetted creators whose audiences align with your ICP. You review and approve partnerships.",
-                icon: Users
-              },
-              {
-                step: "3",
-                title: "Content & Launch",
-                detail: "Creators draft posts in their voice. You review, request edits, and approve. Content goes live with tracking enabled.",
-                icon: Megaphone
-              },
-              {
-                step: "4",
-                title: "Track & Optimize",
-                detail: "Watch conversions roll in. See which creators drive results. Scale top performers, pause underperformers.",
-                icon: BarChart3
-              }
-            ].map((item) => (
-              <div key={item.step} className="relative group">
-                <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur p-6 h-full hover:border-cyan-400/30 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 text-lg font-black text-white shadow-lg">
-                      {item.step}
-                    </div>
-                    <item.icon className="h-6 w-6 text-cyan-300" />
+            {partnershipTypes.map((type) => {
+              const Icon = type.icon;
+              return (
+                <div
+                  key={type.title}
+                  className={`rounded-2xl border ${type.border} bg-gradient-to-br ${type.gradient} backdrop-blur-sm p-6 hover:scale-[1.02] transition-transform duration-300`}
+                >
+                  <div className="rounded-xl bg-white/10 p-3 backdrop-blur w-fit mb-4">
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-slate-300/80 leading-relaxed">{item.detail}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{type.title}</h3>
+                  <p className="text-sm text-slate-200/80 leading-relaxed mb-3">{type.description}</p>
+                  <p className="text-xs text-slate-400 italic">{type.examples}</p>
                 </div>
-                {item.step !== "4" && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 z-10">
-                    <ChevronRight className="h-6 w-6 text-cyan-400/60" />
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Business Goals Section */}
+        <section className="mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              What You Can Achieve
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              LinkedIn creator partnerships aren't just about awareness—they drive measurable
+              business outcomes across your entire funnel.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {businessGoals.map((goal) => {
+              const Icon = goal.icon;
+              return (
+                <div
+                  key={goal.title}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:border-cyan-400/30 transition-colors"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="rounded-xl bg-cyan-500/20 p-3">
+                      <Icon className="h-6 w-6 text-cyan-300" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white">{goal.title}</h3>
                   </div>
-                )}
+                  <p className="text-sm text-slate-300 leading-relaxed mb-4">{goal.description}</p>
+                  <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+                    {goal.metric}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* How We Work - End-to-End Process */}
+        <section className="mt-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              How We Create & Manage Partnerships End-to-End
+            </h2>
+            <p className="text-slate-300 max-w-3xl mx-auto">
+              We handle the entire partnership lifecycle—from sourcing and vetting creators to
+              tracking results and processing payouts. You approve the strategy and watch the pipeline fill.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {processSteps.map((step, idx) => (
+              <div
+                key={step.step}
+                className="rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-transparent p-6 lg:p-8"
+              >
+                <div className="grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-10">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 text-xl font-black text-white shadow-lg">
+                        {step.step}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{step.title}</h3>
+                        <span className="text-sm text-cyan-300 font-medium">{step.timeline}</span>
+                      </div>
+                    </div>
+                    <p className="text-slate-300 leading-relaxed">{step.description}</p>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {step.activities.map((activity, actIdx) => (
+                      <div key={actIdx} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-slate-200/80">{activity}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Pricing & Commission Models */}
+        {/* Payout Models */}
         <section className="mt-24">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-white">Choose the Payout Model That Matches ROI</h2>
-            <p className="mt-4 text-lg text-slate-200/90 max-w-3xl mx-auto">
-              Run creator partnerships on performance terms that fit your funnel. Start with a test model and scale what converts.
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              Flexible Payout Models
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Pay for results, not impressions. Choose the compensation model that aligns with your funnel and revenue goals.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                title: "Flat Fee per Conversion",
-                detail: "Pay a fixed amount when a qualified demo is booked or a signup is verified.",
-                example: "$75 per demo · $40 per trial",
+                title: "Per-Demo Fee",
+                detail: "Pay a fixed amount for each qualified demo booked through a creator's link.",
+                example: "$50-150 per demo",
+                best: "Best for: SaaS with sales-led motion",
                 accent: "from-cyan-500/20 to-blue-500/20",
               },
               {
                 title: "Revenue Share",
-                detail: "Reward creators with a percentage of revenue they generate over time.",
-                example: "15-25% recurring revenue",
+                detail: "Creators earn a percentage of revenue they generate, paid monthly.",
+                example: "15-25% recurring",
+                best: "Best for: Subscription businesses",
                 accent: "from-emerald-500/20 to-teal-500/20",
               },
               {
-                title: "Demo Payout + Bonus",
-                detail: "Blend a base demo payout with a performance bonus for closed deals.",
-                example: "$50 per demo + 5% close bonus",
+                title: "Hybrid Model",
+                detail: "Combine a base per-lead fee with a bonus for closed deals.",
+                example: "$30/demo + 5% close",
+                best: "Best for: High-value enterprise deals",
                 accent: "from-purple-500/20 to-pink-500/20",
               },
             ].map((item) => (
-              <div key={item.title} className={`rounded-3xl border border-white/10 bg-gradient-to-br ${item.accent} p-6 backdrop-blur`}>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+              <div key={item.title} className={`rounded-2xl border border-white/10 bg-gradient-to-br ${item.accent} p-6 backdrop-blur`}>
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
                 <p className="text-sm text-slate-200/80 leading-relaxed mb-4">{item.detail}</p>
-                <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/80">
-                  Example: {item.example}
+                <div className="space-y-2">
+                  <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/80">
+                    {item.example}
+                  </div>
+                  <p className="text-xs text-slate-400">{item.best}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
+        {/* What Refer Labs Handles vs What You Handle */}
+        <section className="mt-24">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="rounded-xl bg-cyan-500/20 p-3">
+                  <Handshake className="h-6 w-6 text-cyan-300" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">What Refer Labs Handles</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "Sourcing and vetting LinkedIn creators",
+                  "Matching creators to your ICP and goals",
+                  "Setting up unique tracking links per creator",
+                  "Managing creator onboarding and briefing",
+                  "Processing monthly payouts via Stripe",
+                  "Providing compliance templates and disclosures",
+                  "Real-time attribution dashboard and reporting",
+                  "Performance optimization and scaling recommendations",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-200">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="rounded-xl bg-white/10 p-3">
+                  <Building2 className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">What You Handle</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "Define your ideal customer profile and goals",
+                  "Approve which creators you want to work with",
+                  "Provide brand guidelines and key messaging",
+                  "Review and approve content before it goes live",
+                  "Handle demos and sales conversations",
+                  "Set budget and payout parameters",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-slate-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Dashboard Preview */}
+        <section className="mt-24">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              Full Visibility Into Every Partnership
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Track performance, manage creators, and prove ROI—all from one dashboard.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 lg:p-10">
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                    <Linkedin className="h-5 w-5 text-blue-400" />
+                  </div>
+                  <span className="font-semibold text-white">Creator Performance</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Active creators</span>
+                    <span className="font-bold text-white">12</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Total link clicks</span>
+                    <span className="font-bold text-white">8,420</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-slate-400">Avg. CTR</span>
+                    <span className="font-bold text-emerald-400">4.2%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                    <Target className="h-5 w-5 text-emerald-400" />
+                  </div>
+                  <span className="font-semibold text-white">Conversions</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Demos booked</span>
+                    <span className="font-bold text-white">127</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Deals closed</span>
+                    <span className="font-bold text-white">34</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-slate-400">Close rate</span>
+                    <span className="font-bold text-emerald-400">26.7%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                    <BarChart3 className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <span className="font-semibold text-white">ROI</span>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Revenue generated</span>
+                    <span className="font-bold text-white">$142,000</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Creator payouts</span>
+                    <span className="font-bold text-white">$28,400</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-slate-400">ROI</span>
+                    <span className="font-bold text-cyan-300">5.0x</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Comprehensive FAQ Section */}
-        <section className="mt-28">
+        <section className="mt-24">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-white mb-4">Everything You Need to Know</h2>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Common Questions</h2>
             <p className="text-lg text-slate-200/90 max-w-3xl mx-auto">
-              Transparency builds trust. Here's how creator partnerships work, how we ensure compliance, and how you maintain full control.
+              Everything you need to know about launching LinkedIn creator partnerships.
             </p>
           </div>
 
           <div className="space-y-8">
             {faqData.map((section) => (
-              <div key={section.category} className="rounded-3xl border border-white/10 bg-white/5 p-8 lg:p-10 backdrop-blur">
+              <div key={section.category} className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="rounded-xl bg-cyan-500/20 p-3">
                     <section.icon className="h-6 w-6 text-cyan-300" />
@@ -563,16 +695,16 @@ export default function LinkedInGrowthPage() {
                   <h3 className="text-2xl font-black text-white">{section.category}</h3>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {section.questions.map((faq, idx) => (
-                    <details key={idx} className="group">
-                      <summary className="flex items-start justify-between cursor-pointer list-none">
+                    <details key={idx} className="group border-b border-white/10 pb-4">
+                      <summary className="flex items-start justify-between cursor-pointer list-none py-2">
                         <div className="flex-1 pr-4">
                           <h4 className="text-base font-bold text-white group-hover:text-cyan-300 transition">{faq.q}</h4>
                         </div>
                         <ChevronDown className="h-5 w-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0 mt-0.5" />
                       </summary>
-                      <div className="mt-4 pl-0 pr-8">
+                      <div className="mt-3 pr-8">
                         <p className="text-sm text-slate-200/80 leading-relaxed">{faq.a}</p>
                       </div>
                     </details>
@@ -584,20 +716,21 @@ export default function LinkedInGrowthPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="mt-20 rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 p-12 lg:p-16 text-center backdrop-blur">
+        <section className="mt-24 rounded-3xl border border-blue-400/30 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-12 lg:p-16 text-center backdrop-blur">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-4">
-              Replace Ads With Advocacy
+            <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-4">
+              Ready to Turn LinkedIn Into Your Best Growth Channel?
             </h2>
             <p className="text-lg text-slate-200/90 mb-8">
               Join B2B companies driving measurable ROI through trusted LinkedIn creator partnerships.
+              We handle the sourcing, tracking, and payouts—you close the deals.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/linkedin-growth/business"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-400 hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-blue-500/30 transition hover:scale-[1.02]"
               >
-                Launch a Partnership
+                Start a Partnership Program
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
