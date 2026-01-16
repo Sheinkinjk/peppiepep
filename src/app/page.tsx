@@ -9,35 +9,31 @@ import {
   MessageSquare,
   Sparkles,
   Target,
-  TrendingUp,
   Users,
-  Zap,
   Building2,
 } from "lucide-react";
 import Link from "next/link";
 import { cookies } from "next/headers";
-import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { TrackedCTA } from "@/components/TrackedCTA";
 import { logger } from "@/lib/logger";
 
 /* ─────────────────────────────────────────────────────────────
    Data & Types
 ───────────────────────────────────────────────────────────── */
 
-const fourOfferings = [
+const targetedPrograms = [
   {
-    id: "platform",
-    icon: BarChart3,
-    title: "Referral Program Platform",
-    tagline: "Self-Service Infrastructure",
+    id: "customer-network",
+    icon: Users,
+    title: "Customer Network",
+    tagline: "Turn Clients Into Advocates",
     description:
-      "Launch and scale ambassador, affiliate, and partner programs with automated tracking, branded portals, and real-time attribution—no engineering required.",
+      "Activate your happiest customers with branded ambassador portals, unique tracking links, and automated reward calculations. Turn word-of-mouth into a measurable revenue channel.",
     features: [
       "Branded ambassador portals",
       "Unique tracking links & QR codes",
       "Automated reward calculations",
-      "CRM & webhook integrations",
+      "Real-time performance dashboards",
     ],
     cta: { label: "View Pricing", href: "/pricing" },
     gradient: "from-cyan-400/20 to-cyan-500/5",
@@ -45,28 +41,10 @@ const fourOfferings = [
     borderColor: "border-cyan-500/20",
   },
   {
-    id: "partnerships",
-    icon: Users,
-    title: "Referral Partnerships",
-    tagline: "White-Glove Partner Programs",
-    description:
-      "We design, launch, and manage partner programs with agencies, consultants, and strategic partners—complete with tracking, payouts, and reporting your finance team can defend.",
-    features: [
-      "Partner identification & outreach",
-      "Custom reward structures",
-      "Co-branded materials",
-      "Quarterly performance reviews",
-    ],
-    cta: { label: "Learn More", href: "/referral-partnerships" },
-    gradient: "from-purple-400/20 to-purple-500/5",
-    iconColor: "text-purple-400",
-    borderColor: "border-purple-500/20",
-  },
-  {
-    id: "linkedin",
+    id: "linkedin-influencers",
     icon: Linkedin,
-    title: "LinkedIn Growth",
-    tagline: "Influencer Activations",
+    title: "LinkedIn Influencers",
+    tagline: "B2B Thought Leader Activations",
     description:
       "Activate B2B thought leaders with matched audiences. We handle influencer sourcing, campaign tracking, and performance attribution—so you know exactly which creators drive pipeline.",
     features: [
@@ -81,22 +59,40 @@ const fourOfferings = [
     borderColor: "border-blue-500/20",
   },
   {
-    id: "done-for-you",
-    icon: Sparkles,
-    title: "Done-For-You Launch",
-    tagline: "We Build It For You",
+    id: "agencies-partners",
+    icon: Building2,
+    title: "Agencies & Strategic Partners",
+    tagline: "White-Glove Partner Programs",
     description:
-      "No bandwidth? No problem. We design your program, configure the platform, onboard your first partners, and train your team—so you launch with confidence.",
+      "We design, launch, and manage partner programs with agencies and strategic partners—complete with tracking, payouts, and reporting your finance team can defend.",
     features: [
-      "Full program design",
-      "Platform configuration",
-      "Partner onboarding",
-      "Team training & handoff",
+      "Partner identification & outreach",
+      "Custom reward structures",
+      "Co-branded materials",
+      "Quarterly performance reviews",
     ],
-    cta: { label: "Get Started", href: "/pricing" },
-    gradient: "from-amber-400/20 to-amber-500/5",
-    iconColor: "text-amber-400",
-    borderColor: "border-amber-500/20",
+    cta: { label: "Learn More", href: "/referral-partnerships" },
+    gradient: "from-purple-400/20 to-purple-500/5",
+    iconColor: "text-purple-400",
+    borderColor: "border-purple-500/20",
+  },
+  {
+    id: "consultants-advisors",
+    icon: MessageSquare,
+    title: "Consultants & Advisors",
+    tagline: "Trusted Expert Referrals",
+    description:
+      "Activate consultants and advisors who guide buying decisions. Discreet tracking, compliance disclosures, and automated payouts make it easy for trusted experts to recommend you.",
+    features: [
+      "Discreet referral tracking",
+      "Compliance disclosures built-in",
+      "Per-deal or revenue share payouts",
+      "Advisor-friendly onboarding",
+    ],
+    cta: { label: "Learn More", href: "/referral-partnerships" },
+    gradient: "from-emerald-400/20 to-emerald-500/5",
+    iconColor: "text-emerald-400",
+    borderColor: "border-emerald-500/20",
   },
 ];
 
@@ -200,6 +196,9 @@ export default async function Home() {
     }
   }
 
+  // Preserve ambassador data for potential use
+  void ambassadorData;
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
       {/* Subtle background effects */}
@@ -215,104 +214,77 @@ export default async function Home() {
         ───────────────────────────────────────────────────────── */}
         <section className="text-center space-y-8 mb-20">
           <p className="text-sm font-medium tracking-[0.3em] uppercase text-cyan-400">
-            Referral Intelligence Platform
+            Refer Labs Partnership Studio
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.08] text-white max-w-5xl mx-auto tracking-tight">
-            Turn Trusted Relationships Into{" "}
+            Turn Trusted Voices Into Your{" "}
             <span className="bg-gradient-to-r from-cyan-300 via-cyan-200 to-teal-300 bg-clip-text text-transparent">
-              Measurable Revenue
+              Most Powerful Growth Channel
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            Launch referral programs for professional services firms. Track every introduction from partner to prospect to closed deal—with compliance, attribution, and payouts your finance team can defend.
+            We help professional services firms build referral partnerships with LinkedIn influencers,
+            agencies, and consultants—with full attribution, compliance, and payouts your finance team can defend.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <TrackedCTA
-              ambassadorId={ambassadorData?.id}
-              businessId={ambassadorData?.business_id}
-              referralCode={ambassadorData?.code}
-            />
+          <div className="pt-4">
             <Link
-              href="/how-it-works"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
             >
-              See How It Works
+              Schedule a Call
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Proof Stats Bar
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-24">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {proofStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="text-center p-6 rounded-2xl border border-white/10 bg-white/[0.03]"
-              >
-                <p className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                  {stat.value}
-                </p>
-                <p className="text-white font-semibold mt-2">{stat.label}</p>
-                <p className="text-sm text-slate-400 mt-1">{stat.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────────────────
-            Our Referral Partnerships — 4 Core Offerings
+            Launch Targeted Referral Programs — 4 Categories
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
           <div className="text-center space-y-4 mb-14">
-            <p className="text-sm font-medium tracking-[0.25em] uppercase text-cyan-400">
-              Our Referral Partnerships
-            </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-3xl mx-auto">
-              Four Ways to Build Your Referral Channel
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto">
+              Launch Targeted Referral Programs
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Whether you need self-service infrastructure, white-glove partner management, LinkedIn activations, or a fully managed launch—we've got you covered.
+              Activate every corner of your network with programs built for each audience—customers, influencers, partners, and advisors.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {fourOfferings.map((offering) => {
-              const Icon = offering.icon;
+            {targetedPrograms.map((program) => {
+              const Icon = program.icon;
               return (
                 <div
-                  key={offering.id}
+                  key={program.id}
                   className={cn(
                     "relative overflow-hidden rounded-3xl border bg-gradient-to-br p-8 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/10",
-                    offering.borderColor,
-                    offering.gradient
+                    program.borderColor,
+                    program.gradient
                   )}
                 >
                   {/* Icon & Badge */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-4">
                       <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center">
-                        <Icon className={cn("h-7 w-7", offering.iconColor)} />
+                        <Icon className={cn("h-7 w-7", program.iconColor)} />
                       </div>
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
-                          {offering.tagline}
+                          {program.tagline}
                         </p>
-                        <h3 className="text-xl font-bold text-white">{offering.title}</h3>
+                        <h3 className="text-xl font-bold text-white">{program.title}</h3>
                       </div>
                     </div>
                   </div>
 
                   {/* Description */}
                   <p className="text-slate-300 leading-relaxed mb-6">
-                    {offering.description}
+                    {program.description}
                   </p>
 
                   {/* Features */}
                   <ul className="space-y-2 mb-8">
-                    {offering.features.map((feature) => (
+                    {program.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
                         <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
                         {feature}
@@ -322,10 +294,10 @@ export default async function Home() {
 
                   {/* CTA */}
                   <Link
-                    href={offering.cta.href}
+                    href={program.cta.href}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
                   >
-                    {offering.cta.label}
+                    {program.cta.label}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
@@ -456,55 +428,6 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Partner Types Preview
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-24">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Partners We Help You Activate
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Different partners bring different strengths. We help you activate each type with the right offer, tracking, and reward structure.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              { icon: Linkedin, title: "LinkedIn Influencers", desc: "B2B thought leaders with engaged audiences in your target market", color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-              { icon: Building2, title: "Agencies & Partners", desc: "Complementary businesses serving your ideal customers", color: "text-purple-400", bg: "bg-purple-500/10", border: "border-purple-500/20" },
-              { icon: MessageSquare, title: "Consultants & Advisors", desc: "Trusted experts who guide buying decisions", color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-              { icon: Users, title: "Happy Customers", desc: "Your existing clients who want to share your service", color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
-            ].map((partner) => {
-              const Icon = partner.icon;
-              return (
-                <div
-                  key={partner.title}
-                  className={cn(
-                    "rounded-2xl border p-6 transition-all hover:scale-[1.02]",
-                    partner.border,
-                    partner.bg
-                  )}
-                >
-                  <Icon className={cn("h-8 w-8 mb-4", partner.color)} />
-                  <h3 className="font-semibold text-white mb-2">{partner.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{partner.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              href="/referral-partnerships"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
-            >
-              Learn more about our partnership programs
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────────────────
             Client Testimonials
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
@@ -541,6 +464,26 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
+            Performance Metrics
+        ───────────────────────────────────────────────────────── */}
+        <section className="mb-24">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {proofStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="text-center p-6 rounded-2xl border border-white/10 bg-white/[0.03]"
+              >
+                <p className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                  {stat.value}
+                </p>
+                <p className="text-white font-semibold mt-2">{stat.label}</p>
+                <p className="text-sm text-slate-400 mt-1">{stat.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────────────────
             ROI Calculator CTA
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
@@ -558,13 +501,10 @@ export default async function Home() {
               </div>
               <Link
                 href="/roi-calculator"
-                className={cn(
-                  buttonVariants({ variant: "cta" }),
-                  "rounded-xl text-base font-bold px-8 py-4 whitespace-nowrap"
-                )}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300 whitespace-nowrap"
               >
                 Calculate ROI
-                <ArrowRight className="h-5 w-5 ml-2" />
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
           </div>
@@ -573,47 +513,31 @@ export default async function Home() {
         {/* ─────────────────────────────────────────────────────────
             Final CTA
         ───────────────────────────────────────────────────────── */}
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-black text-white">
-                Ready to Build Your Referral Channel?
-              </h2>
-              <p className="text-lg text-slate-300">
-                Launch a referral program that turns your network into your most efficient growth engine—with full attribution, compliance, and payouts that scale.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <TrackedCTA
-                  ambassadorId={ambassadorData?.id}
-                  businessId={ambassadorData?.business_id}
-                  referralCode={ambassadorData?.code}
-                />
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
-                >
-                  Schedule a Call
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+        <section>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
+            <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
+              <div className="max-w-2xl mx-auto space-y-6">
+                <h2 className="text-3xl sm:text-4xl font-black text-white">
+                  Ready to Build Your Referral Channel?
+                </h2>
+                <p className="text-lg text-slate-300">
+                  Launch a referral program that turns your network into your most efficient growth engine—with full attribution, compliance, and payouts that scale.
+                </p>
+                <div className="pt-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
+                  >
+                    Schedule a Call
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ─────────────────────────────────────────────────────────
-            Footer Links
-        ───────────────────────────────────────────────────────── */}
-        <footer className="mt-16 pt-8 border-t border-white/10">
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-400">
-            <Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link>
-            <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
-            <Link href="/referral-partnerships" className="hover:text-white transition-colors">Referral Partnerships</Link>
-            <Link href="/linkedin-growth" className="hover:text-white transition-colors">LinkedIn Growth</Link>
-            <Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link>
-            <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
-          </div>
-        </footer>
       </main>
     </div>
   );
