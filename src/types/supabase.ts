@@ -1937,6 +1937,51 @@ export type Database = {
           },
         ]
       }
+      service_applications: {
+        Row: {
+          id: string
+          company: string
+          contact_name: string
+          email: string
+          goals: string | null
+          partner_types: string | null
+          reward_model: string | null
+          notes: string | null
+          source_page: string | null
+          status: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          company: string
+          contact_name: string
+          email: string
+          goals?: string | null
+          partner_types?: string | null
+          reward_model?: string | null
+          notes?: string | null
+          source_page?: string | null
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          company?: string
+          contact_name?: string
+          email?: string
+          goals?: string | null
+          partner_types?: string | null
+          reward_model?: string | null
+          notes?: string | null
+          source_page?: string | null
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       regulatory_requirements: {
         Row: {
           created_at: string | null

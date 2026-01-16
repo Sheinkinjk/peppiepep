@@ -10,6 +10,7 @@ import { AdminDiagnosticsPanel } from "./AdminDiagnosticsPanel";
 import { ExternalPartnerDatasetDeliveryPanel } from "./ExternalPartnerDatasetDeliveryPanel";
 import { AdminBusinessExplorerPanel } from "./AdminBusinessExplorerPanel";
 import { AdminExternalPartnerRequestsPanel } from "./AdminExternalPartnerRequestsPanel";
+import { AdminServiceApplicationsPanel } from "./AdminServiceApplicationsPanel";
 
 export default async function MasterAdminDashboard() {
   const admin = await requireAdmin();
@@ -161,6 +162,8 @@ export default async function MasterAdminDashboard() {
         </div>
 
         <AdminBusinessExplorerPanel />
+
+        <AdminServiceApplicationsPanel />
 
         <AdminExternalPartnerRequestsPanel currentAdminId={admin.id} />
 

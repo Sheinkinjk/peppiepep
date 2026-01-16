@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Users, Building2, Briefcase, Share2, CheckCircle2, ChevronDown, Mail } from "lucide-react";
+import { ArrowRight, Users, Building2, Briefcase, Share2, CheckCircle2, ChevronDown, Loader2, Check } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -93,36 +93,83 @@ const faqs = [
   },
 ];
 
-function ApplyDialog() {
+function ApplyDialog({ sourcePage }: { sourcePage: string }) {
   const [open, setOpen] = useState(false);
   const [company, setCompany] = useState("");
   const [contactName, setContactName] = useState("");
   const [email, setEmail] = useState("");
-  const [goal, setGoal] = useState("Increase qualified leads");
+  const [goals, setGoals] = useState("Increase qualified leads");
   const [partnerTypes, setPartnerTypes] = useState("LinkedIn influencers, consultants, strategic partners");
   const [rewardModel, setRewardModel] = useState("Revenue share or fee per booked demo");
   const [notes, setNotes] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
 
-  const mailtoHref = useMemo(() => {
-    const lines = [
-      "Referral Program Application",
-      "",
-      `Company: ${company || "—"}`,
-      `Contact: ${contactName || "—"}`,
-      `Email: ${email || "—"}`,
-      `Goals: ${goal || "—"}`,
-      `Ideal partners: ${partnerTypes || "—"}`,
-      `Reward model: ${rewardModel || "—"}`,
-      "",
-      `Notes: ${notes || "—"}`,
-    ];
-    const body = encodeURIComponent(lines.join("\n"));
-    const subject = encodeURIComponent(`Referral Program Application | ${company || "New application"}`);
-    return `mailto:jarred@referlabs.com.au?subject=${subject}&body=${body}`;
-  }, [company, contactName, email, goal, partnerTypes, rewardModel, notes]);
+  const handleSubmit = async () => {
+    if (!company.trim() || !contactName.trim() || !email.trim()) {
+      setError("Please fill in company, name, and email");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/service-applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          company,
+          contactName,
+          email,
+          goals,
+          partnerTypes,
+          rewardModel,
+          notes,
+          sourcePage,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || "Failed to submit application");
+      }
+
+      setIsSuccess(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to submit application");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    // Reset form after closing if it was successful
+    if (isSuccess) {
+      setTimeout(() => {
+        setCompany("");
+        setContactName("");
+        setEmail("");
+        setGoals("Increase qualified leads");
+        setPartnerTypes("LinkedIn influencers, consultants, strategic partners");
+        setRewardModel("Revenue share or fee per booked demo");
+        setNotes("");
+        setIsSuccess(false);
+        setError("");
+      }, 300);
+    }
+  };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(newOpen) => {
+      if (!newOpen) {
+        handleClose();
+      } else {
+        setOpen(true);
+      }
+    }}>
       <DialogTrigger asChild>
         <button
           type="button"
@@ -132,76 +179,116 @@ function ApplyDialog() {
         </button>
       </DialogTrigger>
       <DialogContent className="max-w-xl border border-cyan-500/30 bg-slate-950 text-white">
-        <DialogHeader>
-          <DialogTitle>Apply for a Referral Program</DialogTitle>
-          <DialogDescription className="text-slate-300">
-            Share your objectives and partner preferences. Your details will be emailed directly to jarred@referlabs.com.au.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="space-y-3">
-          <Input
-            placeholder="Company"
-            value={company}
-            onChange={(e) => setCompany(e.target.value)}
-            className="border-slate-700 bg-slate-900/60 text-white"
-          />
-          <Input
-            placeholder="Your name"
-            value={contactName}
-            onChange={(e) => setContactName(e.target.value)}
-            className="border-slate-700 bg-slate-900/60 text-white"
-          />
-          <Input
-            type="email"
-            placeholder="Work email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="border-slate-700 bg-slate-900/60 text-white"
-          />
-          <Input
-            placeholder="Goals (e.g. more demos, revenue, exposure)"
-            value={goal}
-            onChange={(e) => setGoal(e.target.value)}
-            className="border-slate-700 bg-slate-900/60 text-white"
-          />
-          <Input
-            placeholder="Ideal partners (e.g. LinkedIn influencers, advisors)"
-            value={partnerTypes}
-            onChange={(e) => setPartnerTypes(e.target.value)}
-            className="border-slate-700 bg-slate-900/60 text-white"
-          />
-          <Input
-            placeholder="Reward model (e.g. revenue share, fee per demo)"
-            value={rewardModel}
-            onChange={(e) => setRewardModel(e.target.value)}
-            className="border-slate-700 bg-slate-900/60 text-white"
-          />
-          <Textarea
-            placeholder="Notes: audience, timelines, campaigns, compliance requirements"
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            className="min-h-[120px] border-slate-700 bg-slate-900/60 text-white"
-          />
-          <div className="flex flex-wrap justify-end gap-2 pt-2">
+        {isSuccess ? (
+          <div className="py-8 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-cyan-500/20">
+              <Check className="h-8 w-8 text-cyan-400" />
+            </div>
+            <DialogHeader>
+              <DialogTitle className="text-2xl">We will be in contact soon</DialogTitle>
+              <DialogDescription className="mt-2 text-slate-300">
+                Thank you for your application. Our team will review your details and reach out within 24-48 hours.
+              </DialogDescription>
+            </DialogHeader>
             <Button
               type="button"
-              asChild
-              className="rounded-full bg-[#0ABAB5] text-slate-900 hover:bg-[#12c7c1]"
-            >
-              <a href={mailtoHref} onClick={() => setOpen(false)}>
-                Send to Refer Labs <Mail className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button
-              type="button"
-              variant="ghost"
-              className="text-slate-300 hover:text-white"
-              onClick={() => setOpen(false)}
+              onClick={handleClose}
+              className="mt-6 rounded-full bg-[#0ABAB5] px-8 text-slate-900 hover:bg-[#12c7c1]"
             >
               Close
             </Button>
           </div>
-        </div>
+        ) : (
+          <>
+            <DialogHeader>
+              <DialogTitle>Apply for a Referral Program</DialogTitle>
+              <DialogDescription className="text-slate-300">
+                Share your objectives and partner preferences. Our team will be in touch soon.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-3">
+              <Input
+                placeholder="Company *"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className="border-slate-700 bg-slate-900/60 text-white"
+                disabled={isSubmitting}
+              />
+              <Input
+                placeholder="Your name *"
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
+                className="border-slate-700 bg-slate-900/60 text-white"
+                disabled={isSubmitting}
+              />
+              <Input
+                type="email"
+                placeholder="Work email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="border-slate-700 bg-slate-900/60 text-white"
+                disabled={isSubmitting}
+              />
+              <Input
+                placeholder="Goals (e.g. more demos, revenue, exposure)"
+                value={goals}
+                onChange={(e) => setGoals(e.target.value)}
+                className="border-slate-700 bg-slate-900/60 text-white"
+                disabled={isSubmitting}
+              />
+              <Input
+                placeholder="Ideal partners (e.g. LinkedIn influencers, advisors)"
+                value={partnerTypes}
+                onChange={(e) => setPartnerTypes(e.target.value)}
+                className="border-slate-700 bg-slate-900/60 text-white"
+                disabled={isSubmitting}
+              />
+              <Input
+                placeholder="Reward model (e.g. revenue share, fee per demo)"
+                value={rewardModel}
+                onChange={(e) => setRewardModel(e.target.value)}
+                className="border-slate-700 bg-slate-900/60 text-white"
+                disabled={isSubmitting}
+              />
+              <Textarea
+                placeholder="Notes: audience, timelines, campaigns, compliance requirements"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                className="min-h-[120px] border-slate-700 bg-slate-900/60 text-white"
+                disabled={isSubmitting}
+              />
+              {error && (
+                <p className="text-sm text-red-400">{error}</p>
+              )}
+              <div className="flex flex-wrap justify-end gap-2 pt-2">
+                <Button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={isSubmitting}
+                  className="rounded-full bg-[#0ABAB5] text-slate-900 hover:bg-[#12c7c1]"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    "Send to Refer Labs"
+                  )}
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  className="text-slate-300 hover:text-white"
+                  onClick={handleClose}
+                  disabled={isSubmitting}
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
       </DialogContent>
     </Dialog>
   );
@@ -265,7 +352,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
               {content.primaryCta.label}
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <ApplyDialog />
+            <ApplyDialog sourcePage={content.industry} />
           </div>
         </section>
 
@@ -397,7 +484,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
                 Schedule a Call
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <ApplyDialog />
+              <ApplyDialog sourcePage={content.industry} />
             </div>
 
             <p className="relative mt-5 text-xs uppercase tracking-widest text-slate-500">
