@@ -8,6 +8,7 @@ import type { Database } from "@/types/supabase";
 import { createServiceClient } from "@/lib/supabase";
 import { sendCampaignDeliveredSummaryOwnerEmail } from "@/lib/business-notifications";
 import { logger } from "@/lib/logger";
+import { ensureAbsoluteUrl } from "@/lib/urls";
 
 type CampaignMessageRecord = CampaignMessagePayload & { id: string };
 
@@ -33,7 +34,7 @@ export async function dispatchCampaignMessagesInline({
   supabase: SupabaseClient<Database>;
   messages: Array<CampaignMessageRecord>;
   campaign: Record<string, unknown> & { id: string; name: string | null };
-  business: Pick<Database["public"]["Tables"]["businesses"]["Row"], "name" | "logo_url" | "brand_highlight_color" | "brand_tone">;
+  business: Pick<Database["public"]["Tables"]["businesses"]["Row"], "name" | "logo_url" | "brand_highlight_color" | "brand_tone" | "website_url">;
   siteUrl: string;
 }) {
   if (messages.length === 0) {
@@ -88,6 +89,17 @@ export async function dispatchCampaignMessagesInline({
           (record.metadata?.["referral_landing_url"] as string | undefined) ||
           record.referral_link ||
           siteUrl;
+        const fallbackFooterOrigin = (() => {
+          try {
+            return referralLandingUrl ? new URL(referralLandingUrl).origin : null;
+          } catch {
+            return null;
+          }
+        })();
+        const footerUrl =
+          ensureAbsoluteUrl(business.website_url ?? null) ||
+          fallbackFooterOrigin ||
+          siteUrl;
         const emailSubject =
           (record.metadata?.["email_subject"] as string | undefined) ||
           (campaign.name as string | null) ||
@@ -106,6 +118,7 @@ export async function dispatchCampaignMessagesInline({
         const { html, text } = await buildCampaignEmail({
           businessName: business.name || "Refer Labs",
           siteUrl,
+          footerUrl,
           campaignName: emailSubject,
           textBody: record.message_body ?? "",
           referralLink: record.referral_link || "",

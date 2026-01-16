@@ -143,7 +143,8 @@ export function CRMIntegrationTab({
       icon: <Mail className="h-5 w-5 text-purple-600" />,
       qa: [
         "Preview the email on desktop and mobile to confirm spacing + CTA styling.",
-        "Click the CTA and confirm the referral landing page loads with attribution.",
+        "Click the CTA and confirm the referral landing page loads with attribution (cookie set).",
+        "After clicking, open /referred to confirm the prospect view loads with attribution intact.",
       ],
     },
     {
@@ -155,6 +156,7 @@ export function CRMIntegrationTab({
       qa: [
         "Confirm the test interaction appears in Measure ROI with the right ambassador.",
         "If using discount codes, post a test conversion through the webhook and validate the credit.",
+        "If sending through a 3rd-party CRM, verify the referral_link field is used and UTMs are preserved end-to-end.",
       ],
     },
   ];

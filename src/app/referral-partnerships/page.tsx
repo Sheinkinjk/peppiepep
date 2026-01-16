@@ -1,12 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import {
+  ArrowRight,
   BarChart3,
-  ClipboardList,
-  Gauge,
-  Link2,
-  ShieldCheck,
-  Sparkles,
-  Users,
+  Building2,
+  CheckCircle2,
+  Handshake,
+  Linkedin,
+  MessageSquare,
+  Target,
+  TrendingUp,
+  Zap,
 } from "lucide-react";
 
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
@@ -17,259 +20,497 @@ export const revalidate = 3600;
 
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
-const valuePillars = [
-  {
-    title: "Structured Partner Onboarding",
-    detail: "Briefs, offers, and approvals handled for you—so every partner starts with clarity and compliance.",
-    icon: ClipboardList,
-  },
-  {
-    title: "Full-Funnel Attribution",
-    detail: "Unique links and events tracked from click to revenue with partner, campaign, and link IDs.",
-    icon: Sparkles,
-  },
-  {
-    title: "Performance-Based Rewards",
-    detail: "Revenue share, credits, discounts, upgrades, points, or cash-per-demo—automated and auditable.",
-    icon: Gauge,
-  },
-  {
-    title: "Measure ROI With Confidence",
-    detail: "Link opens, forms, demos, conversions, and payouts roll into Measure ROI for executive-ready reporting.",
-    icon: BarChart3,
-  },
-] as const;
-
-const referralFlowSteps = [
-  {
-    title: "Referral Partner",
-    summary: "Partners receive briefs, offers, and unique links inside External Partners.",
-    icon: Users,
-  },
-  {
-    title: "Tracked interaction or transaction",
-    summary: "Clicks, form submissions, demos, and revenue events are captured in real time.",
-    icon: Link2,
-  },
-  {
-    title: "Attribution",
-    summary: "Partner, campaign, and link IDs flow into Measure ROI with audit-ready tracking.",
-    icon: Sparkles,
-  },
-  {
-    title: "Reward / Payout",
-    summary: "Revenue share, credits, discounts, upgrades, points, or cash-per-demo settle with ledgers.",
-    icon: ShieldCheck,
-  },
-] as const;
-
-const capabilities = [
-  {
-    title: "Unique Referral Attribution",
-    detail: "Partner, campaign, and link IDs stamped on every event—no duplicate credit.",
-  },
-  {
-    title: "Partner-Level Tracking",
-    detail: "Per-partner performance for opens, views, demos, conversions, and revenue.",
-  },
-  {
-    title: "Performance-Based Rewards",
-    detail: "Configure revenue share, credits, discounts, upgrades, points, or cash-per-demo payouts.",
-  },
-  {
-    title: "End-to-End ROI Visibility",
-    detail: "Executive-ready reporting inside Measure ROI with payout ledgers.",
-  },
-  {
-    title: "Compliance Guardrails",
-    detail: "Disclosures, approvals, and audit trails baked into the workflow.",
-  },
-  {
-    title: "Dataset Delivery For Admins",
-    detail: "Admins deliver curated partner datasets and update statuses in one place.",
-  },
-] as const;
-
-const faqs = [
-  {
-    question: "How are referrals tracked end-to-end?",
-    answer:
-      "Every partner gets unique links tied to landing pages and CTAs. All events—opens, views, form submissions, demos, conversions, and revenue—carry partner, campaign, and link IDs into Measure ROI.",
-  },
-  {
-    question: "How do partners get rewarded?",
-    answer:
-      "Choose from revenue share, credits, discounts, upgrades, points, or monetary rewards per booked demo. Payouts are logged with clear ledgers for finance and compliance.",
-  },
-  {
-    question: "Can this work with LinkedIn influencers and external partners?",
-    answer:
-      "Yes. We onboard LinkedIn influencers, creators, consultants, advisors, agencies, and strategic partners with briefs, approvals, and unique referral links.",
-  },
-  {
-    question: "What transparency do I get?",
-    answer:
-      "Partner-level dashboards show traffic, demos, conversions, revenue, and rewards. Admins can deliver curated datasets and status updates directly in External Partners.",
-  },
-  {
-    question: "How do we start?",
-    answer:
-      "Apply with your objectives and ideal partners. We align on offers, links, compliance guardrails, and launch with full attribution on day one.",
-  },
-] as const;
-
 export default function ReferralPartnershipsPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#07131e] via-[#0c1c29] to-[#03080f] text-slate-50">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(87,230,255,0.08),transparent_38%),radial-gradient(circle_at_85%_10%,rgba(10,186,181,0.12),transparent_45%),radial-gradient(circle_at_50%_86%,rgba(255,255,255,0.12),transparent_55%)]" />
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+      {/* Subtle background effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
+      </div>
 
-      <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16 space-y-16 sm:space-y-20">
-        {/* Hero */}
-        <section className="relative overflow-hidden rounded-4xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent px-6 py-12 sm:px-10 sm:py-16 shadow-2xl shadow-black/40">
-          <div className="relative z-10 space-y-6 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-cyan-200">Refer Labs Partnership Studio</p>
-            <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white">
-              Referral Partnerships For Professional Services Leaders
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-100/80 leading-relaxed max-w-3xl mx-auto">
-              We source, activate, and track external partners—LinkedIn influencers, creators, advisors, consultants—with airtight attribution, ROI, and reward models you can defend.
-            </p>
-            <div className="flex justify-center">
-              <ReferralPartnershipsCTA calendlyUrl={calendlyUrl} primaryLabel="Apply for Referral Partnerships" showScheduleCall={false} />
-            </div>
+      <main className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+        {/* Hero - Clean and impactful */}
+        <section className="text-center space-y-8 mb-24">
+          <p className="text-sm font-medium tracking-[0.3em] uppercase text-cyan-400">
+            Refer Labs Partnership Studio
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-white max-w-4xl mx-auto">
+            Turn Trusted Voices Into Your{" "}
+            <span className="bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
+              Most Powerful Growth Channel
+            </span>
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+            We help professional services firms build referral partnerships with LinkedIn influencers,
+            agencies, and consultants—with full attribution, compliance, and payouts your finance team can defend.
+          </p>
+          <div className="pt-4">
+            <ReferralPartnershipsCTA
+              calendlyUrl={calendlyUrl}
+              primaryLabel="Apply for Referral Partnerships"
+              showScheduleCall={true}
+            />
           </div>
         </section>
 
-        {/* Value pillars */}
-        <section className="space-y-6">
-          <div className="text-center space-y-2">
-            <h2 className="text-3xl sm:text-4xl font-black text-[#00d2be]">Built For Measurable Partner-Led Growth</h2>
+        {/* The Problem / Solution narrative */}
+        <section className="mb-24">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              Most Partner Programs Fail Because They Can't Prove ROI
+            </h2>
+            <p className="text-slate-300 leading-relaxed">
+              You know partnerships drive growth. But without proper tracking, you're left with
+              spreadsheets, guesswork, and awkward conversations with finance about "unmeasurable"
+              marketing spend. <span className="text-cyan-300 font-medium">We solve this.</span>
+            </p>
           </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {valuePillars.map((item) => (
-              <div
-                key={item.title}
-                className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl p-[1px] shadow-xl shadow-black/30"
-              >
-                <div className="relative h-full rounded-[1.6rem] bg-gradient-to-br from-white/8 via-white/4 to-white/6 border border-white/10 px-6 py-6 flex gap-4">
-                  <div className="rounded-2xl bg-white/10 p-3 h-fit">
-                    <item.icon className="h-6 w-6 text-cyan-100" />
+        </section>
+
+        {/* Partner Types - The core explainer section */}
+        <section className="mb-24 space-y-16">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              Referral Partnerships We Facilitate
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Different partners bring different strengths. We help you activate each type with
+              the right offer, tracking, and reward structure.
+            </p>
+          </div>
+
+          {/* LinkedIn Influencers */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+                <Linkedin className="h-5 w-5 text-blue-400" />
+                <span className="text-sm font-semibold text-blue-300">LinkedIn Influencers</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                B2B Thought Leaders With Engaged Audiences
+              </h3>
+              <p className="text-slate-300 leading-relaxed">
+                LinkedIn influencers have spent years building trust with decision-makers in your
+                target market. When they recommend your service, their audience listens—because
+                they've earned that credibility through consistent, valuable content.
+              </p>
+              <div className="space-y-4">
+                <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
+                  How Referral Partnerships Work With Influencers
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "We identify influencers whose audience matches your ideal client profile",
+                    "Each influencer gets a unique tracked link tied to their content and CTAs",
+                    "Their posts, carousels, and DMs drive traffic to your landing pages",
+                    "Every demo, signup, and conversion is attributed back to the specific influencer",
+                    "They earn revenue share, per-demo fees, or custom rewards based on results",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pt-2">
+                <p className="text-sm text-slate-400">
+                  <span className="text-white font-medium">Example outcome:</span>{" "}
+                  A finance SaaS worked with 12 LinkedIn creators, generating 340 qualified demos
+                  in 90 days—with clear attribution showing exactly which influencer drove each lead.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-cyan-500/10 rounded-3xl blur-3xl" />
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                    <Linkedin className="h-6 w-6 text-blue-400" />
                   </div>
-                  <div className="space-y-2">
-                    <p className="text-xl font-black text-white">{item.title}</p>
-                    <p className="text-sm text-slate-100/85 leading-relaxed">{item.detail}</p>
+                  <div>
+                    <p className="font-semibold text-white">Influencer Dashboard View</p>
+                    <p className="text-sm text-slate-400">Real-time performance tracking</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Link clicks</span>
+                    <span className="font-bold text-white">2,847</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Demo bookings</span>
+                    <span className="font-bold text-white">127</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Conversions</span>
+                    <span className="font-bold text-white">34</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-slate-400">Earnings (MTD)</span>
+                    <span className="font-bold text-cyan-300">$8,500</span>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Flow anchor */}
-        <section id="referral-flow" className="relative overflow-hidden rounded-4xl border border-cyan-900/30 bg-gradient-to-br from-[#0b1f2a] via-[#0c2a38] to-[#020911] px-4 py-10 sm:px-8 sm:py-14 shadow-2xl shadow-cyan-900/30">
-          <div className="pointer-events-none absolute inset-0">
-            {/* Horizontal for md+ */}
-            <div className="hidden md:block absolute left-[5%] right-[5%] top-1/2 h-[2px] bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent blur-[2px]" />
-            <div className="hidden md:block">
-              {[12, 38, 63, 88].map((left, idx) => (
-                <div
-                  key={`h-node-${idx}`}
-                  className="absolute h-9 w-9 rounded-full bg-cyan-300/50 blur-xl"
-                  style={{ left: `${left}%`, top: "50%", transform: "translate(-50%, -50%)" }}
-                />
-              ))}
-            </div>
-            {/* Vertical for mobile */}
-            <div className="md:hidden absolute top-10 bottom-10 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-cyan-300/70 to-transparent blur-[2px]" />
-            <div className="md:hidden">
-              {[14, 40, 66, 90].map((top, idx) => (
-                <div
-                  key={`v-node-${idx}`}
-                  className="absolute h-9 w-9 rounded-full bg-cyan-300/50 blur-xl"
-                  style={{ top: `${top}%`, left: "50%", transform: "translate(-50%, -50%)" }}
-                />
-              ))}
             </div>
           </div>
 
-          <div className="relative z-10 flex flex-col gap-8">
-            <div className="text-center space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100/90">How the Referrals Flow</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-4">
-              {referralFlowSteps.map((step, idx) => (
-                <div key={step.title} className="relative">
-                  <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/20 via-white/8 to-white/0 p-[1px] backdrop-blur">
-                    <div className="h-full rounded-[1.65rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-xl shadow-black/25 px-5 py-6 flex flex-col gap-3">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <div className="rounded-2xl bg-white/15 p-3 shadow-sm">
-                            <step.icon className="h-5 w-5 text-cyan-100" />
-                          </div>
-                          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100/80">
-                            Step {String(idx + 1).padStart(2, "0")}
-                          </span>
-                        </div>
-                      </div>
-                      <p className="text-xl font-black text-white">{step.title}</p>
-                      <p className="text-sm text-slate-100/90 leading-relaxed">{step.summary}</p>
+          {/* Agencies & Strategic Partners */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/10 rounded-3xl blur-3xl" />
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8">
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div className="h-10 w-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                      <Building2 className="h-5 w-5 text-purple-400" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white">Marketing Agency</p>
+                      <p className="text-sm text-slate-400 mt-1">
+                        Refers clients needing your complementary service. Earns 15% revenue share.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div className="h-10 w-10 rounded-lg bg-pink-500/20 flex items-center justify-center flex-shrink-0">
+                      <Handshake className="h-5 w-5 text-pink-400" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white">Tech Partner</p>
+                      <p className="text-sm text-slate-400 mt-1">
+                        Integrates with your platform. Joint customers tracked for co-marketing credit.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div className="h-10 w-10 rounded-lg bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                      <Target className="h-5 w-5 text-cyan-400" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white">Reseller Partner</p>
+                      <p className="text-sm text-slate-400 mt-1">
+                        White-labels or resells your offering. Tiered commission based on volume.
+                      </p>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 space-y-6">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
+                <Building2 className="h-5 w-5 text-purple-400" />
+                <span className="text-sm font-semibold text-purple-300">Agencies & Strategic Partners</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Complementary Businesses That Serve Your Ideal Clients
+              </h3>
+              <p className="text-slate-300 leading-relaxed">
+                Agencies and strategic partners already have relationships with your target customers.
+                They're not competing—they're complementing. When they refer a client to you,
+                everyone wins: the client gets a trusted recommendation, the partner earns rewards,
+                and you get a warm introduction.
+              </p>
+              <div className="space-y-4">
+                <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
+                  How Referral Partnerships Work With Agencies
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "We help you identify agencies serving your ideal customers",
+                    "Partners get co-branded materials and dedicated referral portals",
+                    "Each referral is tracked from introduction through to closed revenue",
+                    "Tiered reward structures incentivize higher-value and volume referrals",
+                    "Quarterly reviews optimize the partnership for both sides",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pt-2">
+                <p className="text-sm text-slate-400">
+                  <span className="text-white font-medium">Example outcome:</span>{" "}
+                  An HR tech company partnered with 8 recruitment agencies. The agencies referred
+                  clients during their existing engagements, driving $420K in new ARR with 35% lower CAC than paid ads.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Consultants & Advisors */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                <MessageSquare className="h-5 w-5 text-emerald-400" />
+                <span className="text-sm font-semibold text-emerald-300">Consultants & Advisors</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Trusted Experts Who Guide Buying Decisions
+              </h3>
+              <p className="text-slate-300 leading-relaxed">
+                Consultants and advisors are hired specifically for their expertise and recommendations.
+                When a fractional CFO suggests a financial tool, or a marketing consultant recommends
+                a platform, their clients trust that guidance implicitly. That trust is gold—and
+                it's trackable.
+              </p>
+              <div className="space-y-4">
+                <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
+                  How Referral Partnerships Work With Consultants
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "We onboard consultants with briefs explaining your value proposition",
+                    "They share unique links when recommending solutions to their clients",
+                    "Referrals are tracked discreetly—no awkward commission conversations",
+                    "Consultants earn per-deal fees or ongoing revenue share",
+                    "Compliance disclosures are built into the workflow automatically",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pt-2">
+                <p className="text-sm text-slate-400">
+                  <span className="text-white font-medium">Example outcome:</span>{" "}
+                  A legal tech startup activated 25 law firm consultants. These advisors made
+                  recommendations during existing client engagements, resulting in 89 enterprise
+                  trials with a 42% close rate.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-teal-500/10 rounded-3xl blur-3xl" />
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 space-y-6">
+                <p className="text-sm font-semibold text-emerald-300 uppercase tracking-wide">
+                  Consultant Referral Journey
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { step: "1", title: "Client asks for recommendation", desc: "During a strategy session or engagement" },
+                    { step: "2", title: "Consultant shares tracked link", desc: "Personalized URL with attribution built in" },
+                    { step: "3", title: "Client books demo or signs up", desc: "Event captured with full context" },
+                    { step: "4", title: "Deal closes, reward triggers", desc: "Automatic payout based on agreed terms" },
+                  ].map((item) => (
+                    <div key={item.step} className="flex gap-4">
+                      <div className="h-8 w-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                        <span className="text-sm font-bold text-emerald-300">{item.step}</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">{item.title}</p>
+                        <p className="text-sm text-slate-400">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Capabilities */}
-        <section className="space-y-6">
-          <div className="text-center space-y-2">
-            <h2 className="text-3xl sm:text-4xl font-black text-[#00d2be]">What Refer Labs Enables</h2>
+        {/* Why it works - flowing section, not boxes */}
+        <section className="mb-24">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Why Partner-Led Growth Outperforms
+              </h2>
+              <p className="text-slate-400">
+                The math is simple: trusted recommendations convert better and cost less.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-8 text-center">
+              <div className="space-y-3">
+                <div className="text-5xl font-black bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                  3-5x
+                </div>
+                <p className="text-white font-medium">Higher Conversion Rate</p>
+                <p className="text-sm text-slate-400">
+                  Warm referrals close at dramatically higher rates than cold outbound
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="text-5xl font-black bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                  40%
+                </div>
+                <p className="text-white font-medium">Lower CAC</p>
+                <p className="text-sm text-slate-400">
+                  Performance-based rewards mean you only pay for results
+                </p>
+              </div>
+              <div className="space-y-3">
+                <div className="text-5xl font-black bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                  2x
+                </div>
+                <p className="text-white font-medium">Better Retention</p>
+                <p className="text-sm text-slate-400">
+                  Referred customers have higher lifetime value and lower churn
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {capabilities.map((cap) => (
+        </section>
+
+        {/* How Refer Labs Makes It Work */}
+        <section className="mb-24">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              How Refer Labs Makes It Work
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              We handle the complexity so you can focus on the relationships.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                icon: Target,
+                title: "Partner Discovery & Activation",
+                desc: "We identify, vet, and onboard partners who match your ideal customer profile and can genuinely influence buying decisions.",
+              },
+              {
+                icon: Zap,
+                title: "Automated Attribution",
+                desc: "Every click, demo, signup, and conversion is tracked with partner, campaign, and link IDs. No spreadsheets, no guessing.",
+              },
+              {
+                icon: BarChart3,
+                title: "ROI Reporting",
+                desc: "Executive-ready dashboards show exactly which partners drive revenue. Defend your partner spend with real data.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Flexible Reward Models",
+                desc: "Revenue share, per-demo fees, credits, upgrades—configure the reward structure that motivates your specific partners.",
+              },
+            ].map((item) => (
               <div
-                key={cap.title}
-                className="rounded-3xl border border-white/10 bg-white/4 backdrop-blur-2xl px-5 py-5 shadow-lg shadow-black/25"
+                key={item.title}
+                className="flex gap-5 p-6 rounded-xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-colors"
               >
-                <p className="text-base font-semibold text-white">{cap.title}</p>
-                <p className="mt-2 text-sm text-slate-100/85 leading-relaxed">{cap.detail}</p>
+                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="h-6 w-6 text-cyan-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="space-y-6">
-          <div className="text-center space-y-2">
-            <h2 className="text-3xl sm:text-4xl font-black text-[#00d2be]">Referral Partnerships FAQs</h2>
+        {/* Simple process */}
+        <section className="mb-24">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Getting Started Is Simple
+              </h2>
+            </div>
+
+            <div className="relative">
+              {/* Connection line */}
+              <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-cyan-500/50 via-cyan-400/50 to-cyan-500/50" />
+
+              <div className="grid md:grid-cols-4 gap-8 relative">
+                {[
+                  { num: "1", title: "Apply", desc: "Share your goals and ideal partner profile" },
+                  { num: "2", title: "Strategy", desc: "We design your partner program and reward structure" },
+                  { num: "3", title: "Activate", desc: "Partners are onboarded with tracked links" },
+                  { num: "4", title: "Grow", desc: "Watch referrals flow into your pipeline" },
+                ].map((step) => (
+                  <div key={step.num} className="text-center">
+                    <div className="relative inline-flex items-center justify-center h-16 w-16 rounded-full bg-slate-900 border-2 border-cyan-500/50 mb-4">
+                      <span className="text-2xl font-black text-cyan-300">{step.num}</span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
+                    <p className="text-sm text-slate-400">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="space-y-3">
-            {faqs.map((faq) => (
-              <details
-                key={faq.question}
-                className="group rounded-3xl border border-white/10 bg-white/4 backdrop-blur-2xl px-5 py-4 shadow-md shadow-black/20"
-              >
-                <summary className="flex items-center justify-between gap-4 cursor-pointer text-left">
-                  <h3 className="text-base sm:text-lg font-semibold text-white">{faq.question}</h3>
-                  <span className="text-cyan-100 group-open:rotate-45 transition">+</span>
-                </summary>
-                <p className="mt-3 text-sm text-slate-100/85 leading-relaxed">{faq.answer}</p>
-              </details>
-            ))}
+        </section>
+
+        {/* FAQ - Cleaner accordion */}
+        <section className="mb-24">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center space-y-4 mb-10">
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Common Questions
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  q: "How are referrals tracked end-to-end?",
+                  a: "Every partner gets unique links tied to your landing pages and CTAs. All events—clicks, form submissions, demos, conversions, and revenue—carry partner, campaign, and link IDs into our Measure ROI dashboard.",
+                },
+                {
+                  q: "What reward structures can I offer?",
+                  a: "We support revenue share (percentage of deal value), per-demo or per-signup fees, credits toward your services, product upgrades, or custom monetary rewards. You configure what makes sense for each partner type.",
+                },
+                {
+                  q: "How do you find the right partners?",
+                  a: "We start with your ideal customer profile and work backwards. For LinkedIn influencers, we analyze audience demographics and engagement. For agencies and consultants, we look at client overlap and complementary services.",
+                },
+                {
+                  q: "What about compliance and disclosures?",
+                  a: "Compliance guardrails are built into the workflow. Partner disclosures, approval workflows, and audit trails are automatic—so your legal and finance teams can sleep easy.",
+                },
+                {
+                  q: "How long until I see results?",
+                  a: "Most programs see initial referrals within 2-4 weeks of partner activation. The exact timeline depends on your sales cycle length and how quickly partners start sharing.",
+                },
+              ].map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group border-b border-white/10 pb-4"
+                >
+                  <summary className="flex items-center justify-between gap-4 cursor-pointer py-4 text-left">
+                    <h3 className="text-lg font-medium text-white group-hover:text-cyan-300 transition-colors">
+                      {faq.q}
+                    </h3>
+                    <span className="text-cyan-400 text-2xl font-light group-open:rotate-45 transition-transform duration-200 flex-shrink-0">
+                      +
+                    </span>
+                  </summary>
+                  <p className="text-slate-400 leading-relaxed pb-2">{faq.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="relative overflow-hidden rounded-4xl border border-white/12 bg-gradient-to-br from-white/10 via-white/6 to-white/12 px-8 py-12 sm:px-12 sm:py-14 shadow-2xl shadow-black/35 text-center">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(87,230,255,0.18),transparent_40%),radial-gradient(circle_at_75%_15%,rgba(10,186,181,0.18),transparent_45%)]" />
-          <div className="relative z-10 space-y-4 max-w-3xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">Apply for Referral Partnerships</h2>
-            <p className="text-base sm:text-lg text-slate-100/85">
-              Tell us your objectives and ideal partners. We’ll launch with attribution, compliance, and payouts ready on day one.
-            </p>
-            <div className="flex justify-center">
-              <ReferralPartnershipsCTA calendlyUrl={calendlyUrl} primaryLabel="Apply for Referral Partnerships" showScheduleCall={false} />
+        <section className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
+          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
+            <div className="max-w-2xl mx-auto space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Ready to Build Your Partner Channel?
+              </h2>
+              <p className="text-lg text-slate-300">
+                Tell us about your goals and ideal partners. We'll show you exactly how
+                referral partnerships can become your most efficient growth channel.
+              </p>
+              <div className="pt-4">
+                <ReferralPartnershipsCTA
+                  calendlyUrl={calendlyUrl}
+                  primaryLabel="Apply for Referral Partnerships"
+                  showScheduleCall={true}
+                />
+              </div>
             </div>
           </div>
         </section>

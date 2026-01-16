@@ -84,6 +84,15 @@ export function Step2Content({
   const linkedInInfluencerPending = linkedInInfluencerCustomers.filter(
     (customer) => (customer.status ?? "").toLowerCase() === "applicant",
   ).length;
+  const regularActiveCount = regularCustomers.filter(
+    (customer) => (customer.status ?? "").toLowerCase() === "active",
+  ).length;
+  const regularPendingCount = regularCustomers.filter(
+    (customer) => (customer.status ?? "").toLowerCase() === "pending",
+  ).length;
+  const regularApplicantCount = regularCustomers.filter(
+    (customer) => (customer.status ?? "").toLowerCase() === "applicant",
+  ).length;
 
   return (
     <>
@@ -91,36 +100,81 @@ export function Step2Content({
         title="Partner actions unavailable"
         message="We ran into an issue while loading partner setup actions. Refresh the page or try again in a moment."
       >
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
-          <ImplementationGuideDialog
-            siteUrl={siteUrl}
-            businessName={businessName}
-            discountCaptureSecret={discountCaptureSecret}
-          />
-          <ProgramSettingsDialog
-            businessName={businessName}
-            siteUrl={siteUrl}
-            offerText={offerText}
-            newUserRewardText={newUserRewardText}
-            clientRewardText={clientRewardText}
-            rewardType={rewardType}
-            rewardAmount={rewardAmount}
-            rewardTerms={rewardTerms}
-            logoUrl={logoUrl}
-            brandHighlightColor={brandHighlightColor}
-            brandTone={brandTone}
-            uploadLogoAction={uploadLogo}
-            uploadRewardTermsAction={uploadRewardTerms}
-            onboardingMetadata={onboardingMetadata}
-            signOnBonusEnabled={signOnBonusEnabled}
-            signOnBonusAmount={signOnBonusAmount}
-            signOnBonusType={signOnBonusType}
-            signOnBonusDescription={signOnBonusDescription}
-            updateOnboardingAction={updateBusinessOnboarding}
-            updateSettingsAction={updateSettings}
-          />
-          <Step2QaButton />
-        </div>
+        <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                Partners
+              </p>
+              <h2 className="text-2xl font-black text-slate-900">
+                Partner network & program controls
+              </h2>
+              <p className="text-sm text-slate-600">
+                Program settings sync into Launch Campaigns, referral pages, and ambassador links in real time.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <ImplementationGuideDialog
+                siteUrl={siteUrl}
+                businessName={businessName}
+                discountCaptureSecret={discountCaptureSecret}
+              />
+              <ProgramSettingsDialog
+                businessName={businessName}
+                siteUrl={siteUrl}
+                offerText={offerText}
+                newUserRewardText={newUserRewardText}
+                clientRewardText={clientRewardText}
+                rewardType={rewardType}
+                rewardAmount={rewardAmount}
+                rewardTerms={rewardTerms}
+                logoUrl={logoUrl}
+                brandHighlightColor={brandHighlightColor}
+                brandTone={brandTone}
+                uploadLogoAction={uploadLogo}
+                uploadRewardTermsAction={uploadRewardTerms}
+                onboardingMetadata={onboardingMetadata}
+                signOnBonusEnabled={signOnBonusEnabled}
+                signOnBonusAmount={signOnBonusAmount}
+                signOnBonusType={signOnBonusType}
+                signOnBonusDescription={signOnBonusDescription}
+                updateOnboardingAction={updateBusinessOnboarding}
+                updateSettingsAction={updateSettings}
+              />
+              <Step2QaButton />
+            </div>
+          </div>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Total partners
+              </p>
+              <p className="mt-1 text-2xl font-black text-slate-900">{regularCustomers.length}</p>
+              <p className="text-xs text-slate-500">Referral-ready partners</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Active
+              </p>
+              <p className="mt-1 text-2xl font-black text-emerald-700">{regularActiveCount}</p>
+              <p className="text-xs text-slate-500">Live referral links</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Pending
+              </p>
+              <p className="mt-1 text-2xl font-black text-amber-700">{regularPendingCount}</p>
+              <p className="text-xs text-slate-500">Needs activation</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Applicants
+              </p>
+              <p className="mt-1 text-2xl font-black text-indigo-700">{regularApplicantCount}</p>
+              <p className="text-xs text-slate-500">Awaiting review</p>
+            </div>
+          </div>
+        </Card>
       </DashboardSectionBoundary>
 
       <DashboardSectionBoundary
@@ -251,7 +305,7 @@ export function Step2Content({
         </div>
       )}
 
-      <Card className="p-6 border border-slate-200 rounded-lg bg-white">
+      <Card className="p-6 border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
         <div className="mb-6">
           <h3 className="text-xl font-black text-slate-900 mb-2">
             All Customers ({regularCustomers.length})

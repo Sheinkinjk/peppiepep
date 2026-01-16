@@ -81,6 +81,7 @@ export function CampaignEmailPreview({
         const { html } = await buildCampaignEmail({
           businessName,
           siteUrl: normalizedSite,
+          footerUrl: normalizedSite,
           campaignName: campaignName || "Private ambassador invitation",
           textBody: previewBody,
           referralLink: safeReferralLink,

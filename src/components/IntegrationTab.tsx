@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   ClipboardList,
   ChevronDown,
   Sparkles,
   ShieldCheck,
-  AlertTriangle,
-  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -73,6 +72,7 @@ export function IntegrationTab({
   updateSettingsAction,
   updateOnboardingAction,
 }: IntegrationTabProps) {
+  const router = useRouter();
   const normalizedMetadata = onboardingMetadata ?? {};
   const normalizedSite =
     siteUrl && siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl || "https://example.com";
@@ -150,39 +150,13 @@ export function IntegrationTab({
     }
   }, [integrationsOpen]);
 
-  const buildReferralPreviewUrl = () => {
-    const raw = websiteUrl.trim();
-    if (!raw) return null;
-    const withScheme = raw.startsWith("http") ? raw : `https://${raw}`;
-    try {
-      const parsed = new URL(withScheme);
-      if (!parsed.pathname || parsed.pathname === "/") {
-        parsed.pathname = "/referral";
-      } else if (!parsed.pathname.includes("referral")) {
-        parsed.pathname = `${parsed.pathname.replace(/\/$/, "")}/referral`;
-      }
-      return parsed.toString();
-    } catch (error) {
-      console.error("Invalid website URL:", error);
-      return null;
-    }
-  };
-
-  const handlePreviewReferralPage = () => {
-    const previewUrl = buildReferralPreviewUrl();
-    if (!previewUrl) {
-      toast({
-        variant: "destructive",
-        title: "Missing website URL",
-        description: "Add your Website / booking URL (including https://) to preview the referral page.",
-      });
-      return;
-    }
-    window.open(previewUrl, "_blank", "noopener,noreferrer");
-    toast({
-      title: "Referral preview opened",
-      description: "If the page does not load, your landing page is not connected yet.",
-    });
+  const navigate = (section: string, scrollTo?: string) => {
+    if (typeof window === "undefined") return;
+    window.dispatchEvent(
+      new CustomEvent("dashboard:navigate", {
+        detail: { section, scrollTo },
+      }),
+    );
   };
 
   const handleOnboardingSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -205,6 +179,7 @@ export function IntegrationTab({
         title: "Onboarding snapshot saved",
         description: "Your business profile and integration tracker are up to date.",
       });
+      router.refresh();
     } catch (error) {
       console.error("Failed to save onboarding snapshot:", error);
       toast({
@@ -336,6 +311,7 @@ export function IntegrationTab({
         description:
           "Referral rewards and branding are locked in. You can move to client import once integration testing is complete.",
       });
+      router.refresh();
     } catch (error) {
       console.error("Failed to update program settings:", error);
       toast({
@@ -897,98 +873,54 @@ export function IntegrationTab({
                 </div>
               </div>
 
-              {/* Create Referral Landing Page Section */}
-              <div className="rounded-2xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white p-6 shadow-lg">
+              <div className="rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6 shadow-lg">
                 <div className="flex items-start gap-3 mb-4">
-                  <div className="rounded-xl bg-purple-600 p-3">
-                    <Sparkles className="h-6 w-6 text-white" />
+                  <div className="rounded-xl bg-emerald-600 p-3">
+                    <ShieldCheck className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-bold text-purple-900 mb-1">Create my Referral Landing Page</p>
+                    <p className="text-sm font-bold text-emerald-900 mb-1">Integration cross-checks</p>
                     <p className="text-sm text-slate-700">
-                      Your landing page is where ambassadors send their network. This is the most important page for conversions.
+                      Confirm Step 1A–1C data flows into campaigns, referral pages, and attribution tracking.
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="rounded-lg border border-purple-200 bg-white p-4">
-                    <p className="text-xs font-semibold text-purple-900 mb-2">Landing Page Structure</p>
-                    <div className="space-y-2 text-sm text-slate-700">
-                      <p><strong>URL Format:</strong> <code className="bg-slate-100 px-2 py-1 rounded text-xs">{siteUrl}/landing</code></p>
-                      <p><strong>With Referral Code:</strong> <code className="bg-slate-100 px-2 py-1 rounded text-xs">{siteUrl}/r/ambassador-code</code></p>
-                      <p className="text-xs text-slate-600 mt-2">
-                        When an ambassador shares their unique link, it redirects to your landing page and sets an attribution cookie to track the referral.
-                      </p>
-                    </div>
+                  <div className="rounded-lg border border-emerald-200 bg-white p-4">
+                    <p className="text-xs font-semibold text-emerald-900 mb-2">What to verify</p>
+                    <ul className="space-y-2 text-xs text-slate-700">
+                      <li>• Campaign Builder preview uses your business name, logo, rewards, and brand tone.</li>
+                      <li>• Referral landing page reflects the latest offer + reward copy after Step 1B saves.</li>
+                      <li>• Ambassador links (<code className="bg-slate-100 px-1.5 py-0.5 rounded">/r/AMBASSADOR</code>) set attribution cookies.</li>
+                      <li>• External Partner links point to the landing URL you define in External Partners.</li>
+                    </ul>
                   </div>
 
                   <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
-                    <p className="text-xs font-semibold text-blue-900 mb-2">How Attribution Works</p>
-                    <ol className="space-y-2 text-xs text-blue-800 list-decimal list-inside">
-                      <li>Ambassador shares link: <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/r/AMBASSADOR123</code></li>
-                      <li>Customer clicks link → redirected to your landing page</li>
-                      <li>Attribution cookie is set (lasts 30 days)</li>
-                      <li>Customer browses, fills form, or makes purchase</li>
-                      <li>Conversion is automatically attributed to the ambassador</li>
-                    </ol>
+                    <p className="text-xs font-semibold text-blue-900 mb-2">Quick test actions</p>
+                    <ul className="space-y-2 text-xs text-blue-800">
+                      <li>• Open Step 3 and review the live email preview (branding + reward copy).</li>
+                      <li>• Open Step 1D to test <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/landing</code> and <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/referred</code>.</li>
+                    </ul>
                   </div>
 
-                  <div className="rounded-lg border border-slate-200 bg-white p-4">
-                    <p className="text-xs font-semibold text-slate-900 mb-3">Landing Page Best Practices</p>
-                    <div className="space-y-2 text-xs text-slate-700">
-                      <div className="flex gap-2">
-                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold">Clear value proposition</p>
-                          <p className="text-slate-600">Explain what you offer and why it's valuable</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-2">
-                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold">Strong call-to-action (CTA)</p>
-                          <p className="text-slate-600">"Get Started", "Book Now", "Shop Now" buttons</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-2">
-                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold">Mobile responsive</p>
-                          <p className="text-slate-600">Most referrals come from mobile devices</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-2">
-                        <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-semibold">Trust signals</p>
-                          <p className="text-slate-600">Reviews, testimonials, or "referred by" messaging</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <button
+                  <div className="flex flex-wrap gap-2">
+                    <Button
                       type="button"
-                      onClick={handlePreviewReferralPage}
-                      className="rounded-lg border border-purple-200 bg-white px-4 py-3 text-sm font-semibold text-purple-900 hover:bg-purple-50"
+                      className="rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
+                      onClick={() => navigate("crm-integration")}
                     >
-                      Preview referral page
-                    </button>
-                    <a
-                      href="/integrations"
-                      className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                      Open Launch Campaigns
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="rounded-full"
+                      onClick={() => navigate("testing-qa", "integration-qa-panel")}
                     >
-                      Platform guides (WordPress, Shopify, etc)
-                    </a>
-                  </div>
-
-                  <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
-                    <p className="text-xs font-semibold text-amber-900 mb-2">⚠️ Important: Test Your Landing Page</p>
-                    <p className="text-xs text-amber-800">
-                      After creating your landing page, go to <strong>Testing & QA</strong> to test attribution cookies and verify tracking is working correctly.
-                    </p>
+                      Open Testing & QA
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -1003,8 +935,60 @@ export function IntegrationTab({
         )}
       </div>
 
-
-      
+      <div
+        id="step-1d-testing"
+        className="rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-md space-y-4"
+      >
+        <div className="flex items-start gap-3">
+          <div className="rounded-xl bg-blue-600 p-3">
+            <ShieldCheck className="h-6 w-6 text-white" />
+          </div>
+          <div className="flex-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Step 1D · Testing & QA</p>
+            <h3 className="text-lg font-black text-slate-900">Validate landing + handoff before launch</h3>
+            <p className="text-sm text-slate-700">
+              Open the referral landing page and handoff page, then run QA to confirm attribution.
+            </p>
+          </div>
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-xl border border-blue-200 bg-white p-4">
+            <p className="text-xs font-semibold text-blue-900">1D-1 Referral landing page</p>
+            <p className="mt-1 text-xs text-slate-700">Confirm copy + rewards reflect Step 1B.</p>
+            <Button
+              type="button"
+              variant="outline"
+              className="mt-3 w-full rounded-full"
+              onClick={() => window.open(`${normalizedSite}/landing`, "_blank", "noopener,noreferrer")}
+            >
+              Open /landing
+            </Button>
+          </div>
+          <div className="rounded-xl border border-blue-200 bg-white p-4">
+            <p className="text-xs font-semibold text-blue-900">1D-2 Ambassador handoff</p>
+            <p className="mt-1 text-xs text-slate-700">Check attribution on /referred after an ambassador link.</p>
+            <Button
+              type="button"
+              variant="outline"
+              className="mt-3 w-full rounded-full"
+              onClick={() => window.open(`${normalizedSite}/referred`, "_blank", "noopener,noreferrer")}
+            >
+              Open /referred
+            </Button>
+          </div>
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+            <p className="text-xs font-semibold text-emerald-900">Run QA</p>
+            <p className="mt-1 text-xs text-slate-700">Log test events and verify cookies + metrics.</p>
+            <Button
+              type="button"
+              className="mt-3 w-full rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
+              onClick={() => navigate("testing-qa", "integration-qa-panel")}
+            >
+              Open Testing & QA
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

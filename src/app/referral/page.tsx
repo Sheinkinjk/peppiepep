@@ -19,9 +19,20 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
+type ProgramContext = {
+  businessName: string | null;
+  offerText: string | null;
+  clientReward: string | null;
+  newUserReward: string | null;
+  rewardTerms: string | null;
+  logoUrl: string | null;
+  brandHighlightColor: string | null;
+};
+
 export default function ReferralProgramPage() {
   const searchParams = useSearchParams();
   const [tracked, setTracked] = useState(false);
+  const [programContext, setProgramContext] = useState<ProgramContext | null>(null);
 
   // Extract URL parameters
   const code = searchParams?.get("code") || process.env.NEXT_PUBLIC_ADMIN_REFERRAL_CODE || "Jn9wjbn2kQlO";
@@ -44,6 +55,28 @@ export default function ReferralProgramPage() {
   };
 
   const queryString = buildQueryString();
+
+  useEffect(() => {
+    if (!code) return;
+    fetch(`/api/ambassadors/${encodeURIComponent(code)}`)
+      .then((res) => res.ok ? res.json() : null)
+      .then((data) => {
+        if (!data || data.error) return;
+        setProgramContext({
+          businessName: data.businessName ?? null,
+          offerText: data.offerText ?? null,
+          clientReward: data.clientReward ?? null,
+          newUserReward: data.newUserReward ?? null,
+          rewardTerms: data.rewardTerms ?? null,
+          logoUrl: data.logoUrl ?? null,
+          brandHighlightColor: data.brandHighlightColor ?? null,
+        });
+      })
+      .catch((error) => {
+        console.error("Failed to load referral context:", error);
+      })
+      .finally(() => {});
+  }, [code]);
 
   // Track page view
   useEffect(() => {
@@ -105,17 +138,44 @@ export default function ReferralProgramPage() {
     }
   };
 
+  const programBusinessName = programContext?.businessName ?? "Refer Labs";
+  const heroRewardHeadline = programContext?.clientReward
+    ? `Earn ${programContext.clientReward}`
+    : "Earn 25% Recurring Revenue";
+  const heroRewardSubheadline = programContext?.businessName
+    ? `For every business you refer to ${programContext.businessName}`
+    : "For Every Business You Refer";
+  const heroDescription =
+    programContext?.offerText ||
+    `Share ${programBusinessName} with businesses and earn passive income for life. No limits on referrals, no caps on earnings.`;
+  const partnerRewardDescription = programContext?.clientReward
+    ? `Earn ${programContext.clientReward} for every qualified referral. Track everything in your dashboard.`
+    : "Get 25% of every payment from businesses you refer, month after month. Your passive income grows as they grow.";
+  const newUserRewardDescription = programContext?.newUserReward
+    ? `New referrals receive ${programContext.newUserReward} when they sign up.`
+    : "Every business you refer gets a $250 credit to start their referral program. Makes it easy to share the value.";
+  const shareStepDescription = `Copy your personalized referral link and share it with businesses who could benefit from ${programBusinessName}.`;
+  const signupStepDescription = programContext?.newUserReward
+    ? `When they click your link and create an account, they receive ${programContext.newUserReward} and you get automatically attributed.`
+    : "When they click your link and create an account, they get $250 credit and you get automatically attributed.";
+  const earningsStepDescription = programContext?.clientReward
+    ? `Earn ${programContext.clientReward} for every completed referral. Track everything in your dashboard.`
+    : "Earn 25% recurring commission on all their payments. Track everything in your dashboard.";
+  const commissionDescription = programContext?.clientReward
+    ? `Earn ${programContext.clientReward} on every qualified referral. No commission caps, no time limits. Your earnings grow as your referrals succeed.`
+    : "Earn 25% recurring commission on all payments from referred businesses. No commission caps, no time limits. Your earnings grow as your referrals succeed.";
+
   const benefits = [
     {
       icon: DollarSign,
-      title: "Earn 25% Recurring Revenue",
-      description: "Get 25% of every payment from businesses you refer, month after month. Your passive income grows as they grow.",
+      title: programContext?.clientReward ? "Partner reward" : "Earn 25% Recurring Revenue",
+      description: partnerRewardDescription,
       gradient: "from-emerald-500 to-teal-600",
     },
     {
       icon: Gift,
-      title: "$250 Sign-On Credit",
-      description: "Every business you refer gets a $250 credit to start their referral program. Makes it easy to share the value.",
+      title: programContext?.newUserReward ? "New client reward" : "$250 Sign-On Credit",
+      description: newUserRewardDescription,
       gradient: "from-purple-500 to-pink-600",
     },
     {
@@ -136,19 +196,19 @@ export default function ReferralProgramPage() {
     {
       number: "1",
       title: "Share Your Unique Link",
-      description: "Copy your personalized referral link and share it with businesses who could benefit from Refer Labs.",
+      description: shareStepDescription,
       icon: Share2,
     },
     {
       number: "2",
       title: "They Sign Up & Launch",
-      description: "When they click your link and create an account, they get $250 credit and you get automatically attributed.",
+      description: signupStepDescription,
       icon: Users,
     },
     {
       number: "3",
       title: "You Earn Forever",
-      description: "Earn 25% recurring commission on all their payments. Track everything in your dashboard.",
+      description: earningsStepDescription,
       icon: TrendingUp,
     },
   ];
@@ -177,12 +237,39 @@ export default function ReferralProgramPage() {
               <Sparkles className="h-4 w-4 animate-pulse" />
             </div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
-              Earn 25% Recurring Revenue<br />
-              <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">For Every Business You Refer</span>
+              {heroRewardHeadline}<br />
+              <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">{heroRewardSubheadline}</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-              Share Refer Labs with businesses and earn passive income for life. No limits on referrals, no caps on earnings.
+              {heroDescription}
             </p>
+            {programContext && (
+              <div className="mx-auto mb-10 max-w-3xl rounded-3xl border border-white/30 bg-white/15 px-6 py-5 text-white shadow-xl backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                  Referral offer
+                </p>
+                <h2 className="mt-2 text-2xl font-black">
+                  {programContext.businessName || "This business"} referral program
+                </h2>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2 text-sm">
+                  <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/70">New client reward</p>
+                    <p className="mt-1 text-lg font-bold">
+                      {programContext.newUserReward || "Exclusive offer"}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-white/30 bg-white/10 p-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/70">Partner reward</p>
+                    <p className="mt-1 text-lg font-bold">
+                      {programContext.clientReward || "Partner incentives"}
+                    </p>
+                  </div>
+                </div>
+                {programContext.rewardTerms && (
+                  <p className="mt-3 text-xs text-white/80">{programContext.rewardTerms}</p>
+                )}
+              </div>
+            )}
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
               <Button
                 asChild
@@ -361,7 +448,7 @@ export default function ReferralProgramPage() {
               Program Details
             </h2>
             <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed">
-              Everything you need to know about earning with Refer Labs.
+              Everything you need to know about earning with {programBusinessName}.
             </p>
           </div>
 
@@ -369,7 +456,7 @@ export default function ReferralProgramPage() {
             {[
               {
                 title: "Commission Structure",
-                description: "Earn 25% recurring commission on all payments from referred businesses. No commission caps, no time limits. Your earnings grow as your referrals succeed.",
+                description: commissionDescription,
               },
               {
                 title: "Referral Attribution",
@@ -421,7 +508,7 @@ export default function ReferralProgramPage() {
                 Ready to Start Earning?
               </h2>
               <p className="text-xl sm:text-2xl text-white/95 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
-                Join hundreds of partners already earning passive income with Refer Labs.
+                Join hundreds of partners already earning passive income with {programBusinessName}.
               </p>
               <div className="flex flex-col sm:flex-row gap-5 justify-center">
                 <Button

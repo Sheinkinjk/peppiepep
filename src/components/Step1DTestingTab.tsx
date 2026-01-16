@@ -10,6 +10,7 @@ import {
   Check,
   Link2,
   Target,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -93,10 +94,12 @@ export function Step1DTestingTab({
   const [isHealthRunning, setIsHealthRunning] = useState(false);
   const [isCookieRunning, setIsCookieRunning] = useState(false);
 
-  const exampleLandingUrl = `${siteUrl}/landing`;
+  const normalizedSite = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
+  const exampleLandingUrl = `${normalizedSite}/landing`;
   const exampleReferralUrl = testReferralCode
-    ? `${siteUrl}/r/${testReferralCode}`
-    : `${siteUrl}/r/[ambassador-code]`;
+    ? `${normalizedSite}/r/${testReferralCode}`
+    : `${normalizedSite}/r/[ambassador-code]`;
+  const referredPageUrl = `${normalizedSite}/referred`;
 
   const copyToClipboard = async (text: string, type: "landing" | "code") => {
     try {
@@ -287,25 +290,50 @@ export function Step1DTestingTab({
     );
   };
 
-  const attributionReady = healthCheck?.healthy === true;
+  const qaStatusItems = [
+    {
+      label: "Program settings saved",
+      status: hasProgramSettings ? "pass" : "fail",
+      detail: hasProgramSettings ? "Rewards + offer configured" : "Complete Step 1B settings",
+    },
+    {
+      label: "Ambassadors added",
+      status: hasCustomers ? "pass" : "fail",
+      detail: hasCustomers ? "Referral links active" : "Add ambassadors in Step 2",
+    },
+    {
+      label: "Attribution health",
+      status: healthCheck ? (healthCheck.healthy ? "pass" : "fail") : "pending",
+      detail: healthCheck?.recommendation || healthCheck?.error || "Run attribution health check",
+    },
+    {
+      label: "Attribution cookie",
+      status: cookieCheck ? (cookieCheck.hasAttribution ? "pass" : "fail") : "pending",
+      detail: cookieCheck?.message || "Open a referral link then check cookie",
+    },
+    {
+      label: "QA events logged",
+      status: qaSummary.recentCount > 0 ? "pass" : "pending",
+      detail:
+        qaSummary.recentCount > 0
+          ? `${qaSummary.recentCount} events in last 10 min`
+          : "Run Integration QA to log test events",
+    },
+  ] as const;
 
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="rounded-3xl border-2 border-blue-200 bg-white/95 p-6 sm:p-8 shadow-xl">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
-          <div className="rounded-2xl bg-blue-600 p-3 shadow-lg">
-            <ShieldCheck className="h-8 w-8 text-white" />
+      <div className="rounded-3xl border border-blue-200 bg-white p-5 shadow-sm">
+        <div className="flex items-start gap-3">
+          <div className="rounded-xl bg-blue-600 p-2">
+            <ShieldCheck className="h-6 w-6 text-white" />
           </div>
-          <div className="flex-1 space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-700">
-              Testing & QA
-            </p>
-            <h2 className="text-2xl font-black text-slate-900 leading-tight">
-              Test your referral system end-to-end
-            </h2>
-            <p className="text-sm text-slate-600">
-              Verify that landing pages, attribution cookies, and referral tracking are working correctly before going live.
+          <div className="flex-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Testing & QA</p>
+            <h2 className="text-lg font-black text-slate-900 leading-tight">Confirm referral tracking works</h2>
+            <p className="text-xs text-slate-600">
+              Run the quick checks below: open landing pages, verify cookies, and log QA events.
             </p>
           </div>
         </div>
@@ -418,6 +446,67 @@ export function Step1DTestingTab({
         </DialogContent>
       </Dialog>
 
+      {/* Step 1D-1: Landing page build */}
+      <div className="rounded-2xl border border-purple-200 bg-white p-6 shadow-sm">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="rounded-lg bg-purple-600 p-2">
+            <Sparkles className="h-5 w-5 text-white" />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-slate-900">Create my referral landing page</p>
+            <p className="text-xs text-slate-500 mt-1">
+              This is the page ambassadors share. It must load fast, show the offer clearly, and keep attribution intact.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="rounded-lg border border-purple-200 bg-purple-50/60 p-4 text-xs text-slate-700">
+            <p className="font-semibold text-purple-900 mb-2">Landing page structure</p>
+            <div className="space-y-2">
+              <p>
+                <strong>URL format:</strong>{" "}
+                <code className="bg-white px-2 py-1 rounded text-xs">{exampleLandingUrl}</code>
+              </p>
+              <p>
+                <strong>Ambassador link:</strong>{" "}
+                <code className="bg-white px-2 py-1 rounded text-xs">{exampleReferralUrl}</code>
+              </p>
+              <p className="text-slate-600">
+                Ambassador links redirect to your landing page and set the attribution cookie.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-slate-200 bg-white p-4">
+            <p className="text-xs font-semibold text-slate-900 mb-3">Landing page checklist</p>
+            <div className="space-y-2 text-xs text-slate-700">
+              <div className="flex gap-2">
+                <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Clear offer + CTA</p>
+                  <p className="text-slate-600">Use one primary CTA and highlight the referral reward.</p>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Mobile-first layout</p>
+                  <p className="text-slate-600">Most ambassador traffic comes from mobile shares.</p>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold">Attribution intact</p>
+                  <p className="text-slate-600">No stripping of UTM parameters or query strings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Connect to Landing Page */}
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="flex items-start gap-3 mb-4">
@@ -498,15 +587,58 @@ export function Step1DTestingTab({
           )}
 
           {(testLandingUrl || testReferralCode) && (
-            <Button
-              onClick={() => window.open(testLandingUrl || exampleLandingUrl, "_blank")}
-              className="w-full"
-            >
-              <ExternalLink className="h-4 w-4 mr-2" />
-              Test Landing Page
-            </Button>
+            <div className="grid gap-2 sm:grid-cols-2">
+              <Button
+                onClick={() => window.open(exampleReferralUrl, "_blank")}
+                variant="outline"
+                className="w-full"
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                Open referral link
+              </Button>
+              <Button
+                onClick={() => window.open(testLandingUrl || exampleLandingUrl, "_blank")}
+                className="w-full"
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                Test Landing Page
+              </Button>
+            </div>
           )}
         </div>
+      </div>
+
+      {/* Step 1D-2: Referred page test */}
+      <div className="rounded-2xl border border-blue-200 bg-blue-50/70 p-6 shadow-sm">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="rounded-lg bg-blue-600 p-2">
+            <ExternalLink className="h-5 w-5 text-white" />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-blue-900">Test the ambassador handoff page</p>
+            <p className="text-xs text-blue-800/80 mt-1">
+              This is the page prospects see once attribution is set (ex: <span className="font-semibold">{referredPageUrl}</span>).
+            </p>
+          </div>
+        </div>
+
+        <ol className="space-y-2 text-xs text-blue-900 list-decimal list-inside">
+          <li>Open an ambassador link (ex: <code className="bg-white px-1.5 py-0.5 rounded">{exampleReferralUrl}</code>) to set the cookie.</li>
+          <li>Confirm the landing page loads with the offer and CTA.</li>
+          <li>Open the referred page to verify attribution + form load.</li>
+        </ol>
+
+        <div className="mt-4 grid gap-2 sm:grid-cols-2">
+          <Button type="button" onClick={() => window.open(exampleReferralUrl, "_blank")} variant="outline">
+            Open ambassador link
+          </Button>
+          <Button type="button" onClick={() => window.open(referredPageUrl, "_blank")}>
+            Open /referred page
+          </Button>
+        </div>
+        <p className="mt-3 text-xs text-blue-800/80">
+          If /referred redirects to the home page, the attribution cookie is missing—open the ambassador link again.
+        </p>
       </div>
 
 	      {/* QA Readiness Checks */}
@@ -530,6 +662,34 @@ export function Step1DTestingTab({
               </div>
             )}
           </div>
+        </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {qaStatusItems.map((item) => {
+            const tone =
+              item.status === "pass"
+                ? "border-emerald-200 bg-white"
+                : item.status === "fail"
+                  ? "border-amber-200 bg-amber-50"
+                  : "border-slate-200 bg-white";
+            return (
+              <div key={item.label} className={`rounded-xl border px-4 py-3 text-xs text-slate-700 ${tone}`}>
+                <div className="flex items-start gap-2">
+                  {item.status === "pass" ? (
+                    <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
+                  ) : item.status === "fail" ? (
+                    <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
+                  ) : (
+                    <ShieldCheck className="h-4 w-4 text-slate-400 mt-0.5" />
+                  )}
+                  <div>
+                    <p className="font-semibold text-slate-900">{item.label}</p>
+                    <p className="text-[11px] text-slate-500">{item.detail}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -687,94 +847,6 @@ export function Step1DTestingTab({
         </div>
       </div>
 
-      {/* Go-Live Sanity Check */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="flex items-start gap-3 mb-4">
-          <div className="rounded-lg bg-amber-100 p-2">
-            <ShieldCheck className="h-5 w-5 text-amber-600" />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-slate-900">Go-live sanity check</p>
-            <p className="text-xs text-slate-500 mt-1">
-              Verify all systems before launching campaigns
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-3">
-          <div className="flex items-start gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
-            {hasProgramSettings ? (
-              <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-            ) : (
-              <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            )}
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Program settings configured</p>
-              <p className="text-xs text-slate-500">
-                {hasProgramSettings
-                  ? "Rewards and program details are set"
-                  : "Complete Step 2 → Edit Program Settings"}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
-            {hasCustomers ? (
-              <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-            ) : (
-              <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            )}
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Ambassadors added</p>
-              <p className="text-xs text-slate-500">
-                {hasCustomers
-                  ? "Ambassador base is ready for campaigns"
-                  : "Add ambassadors in Step 2 before launching"}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
-            {attributionReady ? (
-              <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-            ) : (
-              <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            )}
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Attribution tracking tested</p>
-              <p className="text-xs text-slate-500">
-                {attributionReady
-                  ? "Cookies and tracking are working correctly"
-                  : "Run the attribution health check above to verify"}
-              </p>
-            </div>
-          </div>
-
-          {discountCaptureSecret && (
-            <div className="flex items-start gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
-              <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-sm font-semibold text-slate-900">Discount capture configured</p>
-                <p className="text-xs text-slate-500">
-                  Secret key is set for tracking discount code usage
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {hasProgramSettings && hasCustomers && attributionReady && (
-          <div className="mt-4 rounded-lg border-2 border-emerald-200 bg-emerald-50 p-4">
-            <div className="flex items-center gap-2 text-emerald-800">
-              <CheckCircle className="h-5 w-5" />
-              <p className="text-sm font-bold">Ready to go live!</p>
-            </div>
-            <p className="text-xs text-emerald-700 mt-2">
-              All systems are configured and tested. You can proceed to Step 3 to launch your first campaign.
-            </p>
-          </div>
-        )}
-      </div>
     </div>
   );
 }

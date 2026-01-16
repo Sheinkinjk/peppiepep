@@ -53,18 +53,6 @@ export function Step3Content({
 
   return (
     <>
-      <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="flex flex-col gap-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
-            Launch Campaigns
-          </p>
-          <h2 className="text-2xl font-black text-slate-900">How do you want to send campaigns?</h2>
-          <p className="text-sm text-slate-600">
-            Choose the method that works best for you. Quick Send is recommended if you're getting started.
-          </p>
-        </div>
-      </Card>
-
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="rounded-3xl border-2 border-emerald-300 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 shadow-md relative">
           <div className="absolute top-4 right-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-sm">

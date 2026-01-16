@@ -11,6 +11,7 @@ type BrandIdentity = {
 type CampaignEmailOptions = {
   businessName: string;
   siteUrl: string;
+  footerUrl?: string;
   campaignName: string;
   textBody: string;
   referralLink: string;
@@ -561,6 +562,7 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
   const {
     businessName,
     siteUrl,
+    footerUrl,
     campaignName,
     textBody,
     referralLink,
@@ -572,6 +574,10 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
     snapshot,
   } = options;
   const landingUrl = referralLandingUrl || referralLink || siteUrl;
+  const resolvedFooterUrl = (footerUrl || siteUrl).replace(/\/$/, "");
+  const websiteLabel = resolvedFooterUrl.replace(/^https?:\/\//, "");
+  const isReferLabsFooter =
+    /referlabs/i.test(businessName) || /referlabs\.com\.au/i.test(resolvedFooterUrl);
 
   const newUserReward =
     snapshot.newUserRewardText ||
@@ -610,7 +616,6 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
 
   const logoCandidate = brand?.logoUrl ?? snapshot.logoUrl ?? null;
   const emailLogoUrl = resolveLogoUrl(logoCandidate, siteUrl);
-  const websiteLabel = siteUrl.replace(/^https?:\/\//, "");
 
   const campaignParagraphs = textBody
     ? textBody
@@ -703,7 +708,7 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td align="left">
-                    <a href="${siteUrl}" style="text-decoration: none; display: inline-flex; align-items: center; gap: 12px;">
+                    <a href="${resolvedFooterUrl}" style="text-decoration: none; display: inline-flex; align-items: center; gap: 12px;">
                       ${
                         emailLogoUrl
                           ? `<img src="${emailLogoUrl}" alt="${businessName}" style="height: 42px; width: 42px; border-radius: 12px; object-fit: cover; border: 2px solid ${hexToRgba(
@@ -826,29 +831,37 @@ export async function buildCampaignEmail(options: CampaignEmailOptions) {
                 ${businessName}
               </p>
               <p style="margin: 0 0 4px 0; color: ${tone.footerMutedText}; font-size: 12px;">
-                <a href="${siteUrl}" style="color: ${viewInBrowserColor}; text-decoration: none;">${websiteLabel}</a>
+                <a href="${resolvedFooterUrl}" style="color: ${viewInBrowserColor}; text-decoration: none;">${websiteLabel}</a>
               </p>
-              <div style="margin: 10px auto 0 auto; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; background: ${hexToRgba(
-                brandHighlight,
-                0.12,
-              )}; color: ${tone.footerTextColor}; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">
+              ${
+                isReferLabsFooter
+                  ? `<div style="margin: 10px auto 0 auto; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; background: ${hexToRgba(
+                      brandHighlight,
+                      0.12,
+                    )}; color: ${tone.footerTextColor}; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">
                 Refer Labs
-              </div>
+              </div>`
+                  : ""
+              }
               ${
                 snapshot.rewardTerms
                   ? `<p style="margin: 8px 0 0 0; color: ${tone.footerMutedText}; font-size: 11px;">${snapshot.rewardTerms}</p>`
                   : ""
               }
               <p style="margin: 12px 0 0 0; color: ${tone.footerMutedText}; font-size: 11px;">
-                <a href="${siteUrl}/contact?subject=Unsubscribe" style="color: ${tone.footerMutedText}; text-decoration: underline;">Unsubscribe</a>
+                <a href="${resolvedFooterUrl}/contact?subject=Unsubscribe" style="color: ${tone.footerMutedText}; text-decoration: underline;">Unsubscribe</a>
                 ${" | "}
-                <a href="${siteUrl}/privacy" style="color: ${tone.footerMutedText}; text-decoration: underline;">Privacy Policy</a>
+                <a href="${resolvedFooterUrl}/privacy" style="color: ${tone.footerMutedText}; text-decoration: underline;">Privacy Policy</a>
                 ${" | "}
-                <a href="${siteUrl}/terms" style="color: ${tone.footerMutedText}; text-decoration: underline;">Terms</a>
+                <a href="${resolvedFooterUrl}/terms" style="color: ${tone.footerMutedText}; text-decoration: underline;">Terms</a>
               </p>
-              <p style="margin: 6px 0 0 0; color: ${tone.footerMutedText}; font-size: 10px;">
+              ${
+                isReferLabsFooter
+                  ? `<p style="margin: 6px 0 0 0; color: ${tone.footerMutedText}; font-size: 10px;">
                 Pepform Pty Ltd (trading as Refer Labs) | ABN: 32 660 008 159
-              </p>
+              </p>`
+                  : ""
+              }
             </td>
           </tr>
         </table>

@@ -78,7 +78,7 @@ async function fetchBusiness(
 ): Promise<BusinessRow> {
   // Core columns that are guaranteed to exist
   const coreColumns =
-    "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, client_reward_text, new_user_reward_text, reward_terms";
+    "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, client_reward_text, new_user_reward_text, reward_terms, website_url";
 
   // First try with regular client (respects RLS)
   logger?.info("[fetchBusiness] Querying owner business", { ownerId });

@@ -297,16 +297,21 @@ export const seoConfig = {
   },
 
   leadHacking: {
-    title: "Lead Hacking - AI-powered lead generation tools",
+    title: "Lead Hacking - Source & Activate Referral Partnerships",
     description:
-      "Leverage AI to automate your lead generation and referral outreach. Create personalized campaigns that convert at scale.",
+      "Refer Labs designs referral programs and runs Lead Hacking to source, qualify, and activate partners—LinkedIn influencers, agencies, and advisors—with clear attribution.",
     url: `${SITE_URL}/lead-hacking`,
     keywords: [
-      "lead generation",
-      "AI lead generation",
-      "lead hacking tools",
-      "automated outreach",
-      "sales automation",
+      "referral partnerships",
+      "partner sourcing",
+      "lead hacking",
+      "LinkedIn influencers",
+      "agency partnerships",
+      "consultant referrals",
+      "referral program",
+      "partner marketing",
+      "warm introductions",
+      "attribution tracking",
     ],
   },
 

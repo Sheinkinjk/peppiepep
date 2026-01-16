@@ -206,6 +206,7 @@ export async function GET(request: Request) {
       return {
         ...partner,
         referralLink,
+        landingUrl: link?.landing_url ?? null,
         performance: performanceByPartner.get(partner.id) ?? { totalReferrals: 0, completedReferrals: 0 },
         window: {
           days: windowDays,

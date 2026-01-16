@@ -156,15 +156,16 @@ describe('Step2Content - Clients & Ambassadors', () => {
     expect(
       screen.getByText('Upload partners, clients, creators, and advisors to instantly generate referral links.'),
     ).toBeInTheDocument();
-    expect(screen.getByText('Active partners:')).toBeInTheDocument();
-    expect(screen.getByText('2')).toBeInTheDocument();
+    const activePartnersLabel = screen.getByText('Active partners:');
+    expect(activePartnersLabel).toBeInTheDocument();
+    expect(activePartnersLabel.parentElement).toHaveTextContent('2');
   });
 
   it('displays customer count correctly', () => {
     render(<Step2Content {...defaultProps} />);
 
-    const customerCount = screen.getByText('2');
-    expect(customerCount).toBeInTheDocument();
+    const totalPartnersCard = screen.getByText('Total partners').closest('div');
+    expect(totalPartnersCard).toHaveTextContent('2');
   });
 
   it('shows all customers table when customers exist', () => {
@@ -245,7 +246,6 @@ describe('Step3Content - Launch Campaigns', () => {
   it('renders campaign path selection section', () => {
     render(<Step3Content {...defaultProps} />);
 
-    expect(screen.getByText('How do you want to send campaigns?')).toBeInTheDocument();
     expect(screen.getByText('Quick Send')).toBeInTheDocument();
     expect(screen.getByText('Use My Email Tool')).toBeInTheDocument();
   });

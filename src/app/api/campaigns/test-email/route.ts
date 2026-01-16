@@ -71,6 +71,7 @@ export async function POST(request: Request) {
   const { html, text } = await buildCampaignEmail({
     businessName,
     siteUrl,
+    footerUrl: siteUrl,
     campaignName: parsed.data.subject,
     textBody: body,
     referralLink,
@@ -132,4 +133,3 @@ export async function POST(request: Request) {
 
   return NextResponse.json({ ok: true });
 }
-

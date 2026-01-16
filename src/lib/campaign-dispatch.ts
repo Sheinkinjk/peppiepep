@@ -5,6 +5,7 @@ import { logReferralEvent } from "@/lib/referral-events";
 import { buildCampaignEmail } from "@/lib/campaign-email";
 import { sendCampaignDeliveredSummaryOwnerEmail } from "@/lib/business-notifications";
 import { logger } from "@/lib/logger";
+import { ensureAbsoluteUrl } from "@/lib/urls";
 
 const DEFAULT_BATCH_SIZE = 25;
 const SITE_URL =
@@ -41,6 +42,7 @@ type CampaignMessageRecord = {
     logo_url?: string | null;
     brand_highlight_color?: string | null;
     brand_tone?: string | null;
+    website_url?: string | null;
   } | null;
   customer: {
     id: string | null;
@@ -106,7 +108,8 @@ export async function runCampaignDispatchBatch(
             name,
             logo_url,
             brand_highlight_color,
-            brand_tone
+            brand_tone,
+            website_url
           ),
           customer:customer_id (
             id,
@@ -442,6 +445,17 @@ async function sendEmailMessage(
     (record.metadata?.referral_landing_url as string | undefined) ||
     record.referral_link ||
     SITE_URL;
+  const fallbackFooterOrigin = (() => {
+    try {
+      return referralLandingUrl ? new URL(referralLandingUrl).origin : null;
+    } catch {
+      return null;
+    }
+  })();
+  const footerUrl =
+    ensureAbsoluteUrl(record.business?.website_url ?? null) ||
+    fallbackFooterOrigin ||
+    SITE_URL;
   const emailSubject =
     (record.metadata?.email_subject as string | undefined) ||
     campaignSnapshot.name ||
@@ -456,6 +470,7 @@ async function sendEmailMessage(
   const { html, text } = await buildCampaignEmail({
     businessName,
     siteUrl: SITE_URL,
+    footerUrl,
     campaignName: emailSubject,
     textBody: record.message_body ?? "",
     referralLink: record.referral_link || "",

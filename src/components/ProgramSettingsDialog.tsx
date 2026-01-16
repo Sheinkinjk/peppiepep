@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -66,6 +67,7 @@ export function ProgramSettingsDialog({
   updateOnboardingAction,
   updateSettingsAction,
 }: ProgramSettingsDialogProps) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   const normalizedMetadata = onboardingMetadata ?? {};
@@ -257,6 +259,7 @@ export function ProgramSettingsDialog({
         description:
           "Snapshot + rewards saved. Referral pages, ambassadors, and CRM exports now use the latest configuration.",
       });
+      router.refresh();
       setOpen(false);
     } catch (error) {
       console.error("Failed to update dashboard settings:", error);

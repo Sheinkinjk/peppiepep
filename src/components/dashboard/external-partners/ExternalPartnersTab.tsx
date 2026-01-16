@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -56,6 +57,7 @@ type ExternalPartnerRow = {
   status: string | null;
   metadata: Record<string, unknown> | null;
   referralLink: string;
+  landingUrl?: string | null;
   performance: { totalReferrals: number; completedReferrals: number };
   window?: {
     days: number;
@@ -106,7 +108,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
   const [partnersLoading, setPartnersLoading] = useState(false);
   const [partnerUpdating, setPartnerUpdating] = useState<string | null>(null);
   const [windowDays, setWindowDays] = useState(30);
-  const [infoOpen, setInfoOpen] = useState(false);
+  const [infoSection, setInfoSection] = useState<null | "overview" | "activation" | "requests" | "records">(null);
 
   const [requests, setRequests] = useState<PartnerRequestRow[]>([]);
   const [partners, setPartners] = useState<ExternalPartnerRow[]>([]);
@@ -164,6 +166,29 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
   const openCalendly = () => {
     if (typeof window === "undefined") return;
     window.open(calendlyUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const sectionExplainers = {
+    overview: {
+      title: "External Partners overview",
+      body:
+        "External Partners lets Refer Labs source and activate third-party partners for you. You define the brief, we handle discovery, and attribution flows back into Measure ROI.",
+    },
+    activation: {
+      title: "Partner activation requests",
+      body:
+        "Use this to nominate a specific partner and the exact offer/CTA you want them to push. We validate fit, set up tracking links, and return the relationship in the partner list below.",
+    },
+    requests: {
+      title: "Partner discovery requests",
+      body:
+        "These are the briefs you submit through the discovery wizard. Status shows where your request sits (queued, matching, delivered), and each request becomes a partner dataset once fulfilled.",
+    },
+    records: {
+      title: "Partner records + referral links",
+      body:
+        "Every external partner gets a unique tracking link + landing URL. Link activity, meetings, signups, and revenue show here and roll into Measure ROI.",
+    },
   };
 
   useEffect(() => {
@@ -376,42 +401,41 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
 
   return (
     <div className="space-y-6">
-      <Dialog open={infoOpen} onOpenChange={setInfoOpen}>
+      <Dialog
+        open={Boolean(infoSection)}
+        onOpenChange={(open) => {
+          if (!open) setInfoSection(null);
+        }}
+      >
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-black text-slate-900">External Partners (How this works)</DialogTitle>
+            <DialogTitle className="text-2xl font-black text-slate-900">
+              {infoSection ? sectionExplainers[infoSection].title : "External Partners"}
+            </DialogTitle>
             <DialogDescription className="text-sm text-slate-600">
-              External Partners is a partner discovery + referral infrastructure layer (not a marketplace).
+              {infoSection ? sectionExplainers[infoSection].body : "External Partners overview."}
             </DialogDescription>
           </DialogHeader>
-          <div className="mt-5 space-y-5 text-sm text-slate-700">
+          <div className="mt-5 space-y-4 text-sm text-slate-700">
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">What you can do</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">How it works</p>
               <ul className="mt-3 space-y-2">
-                <li>• Submit a structured partner request to Refer Labs (we source/activate partners and ensure attribution is trackable).</li>
-                <li>• Create and manage external partner records (Draft / Active / Paused).</li>
-                <li>• Generate unique referral links per external partner (landing page + goal) and track performance.</li>
+                <li>• Define the partner brief, CTA, and landing page you want to use.</li>
+                <li>• Refer Labs sources or activates partners and sets up tracked links.</li>
+                <li>• Performance shows here and in Measure ROI automatically.</li>
               </ul>
             </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution & ROI</p>
-              <p className="mt-2">
-                When an external partner uses their unique referral link, events are attributed to that partner and show up inside
-                Measure ROI alongside other referral sources.
-              </p>
-              <p className="mt-2 text-xs text-slate-500">
-                Tip: Use the “Inbound breakdown” panel in Measure ROI to see External Partners vs Partners vs LinkedIn Influencer.
-              </p>
-            </div>
-
             <div className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-4">
               <p className="font-semibold text-emerald-900">Need help planning your brief?</p>
               <p className="mt-1 text-emerald-900/90">
-                Book a quick call with Refer Labs and we’ll help structure the offer, CTA, and landing page for clean attribution.
+                Book a quick call and we’ll help structure the offer, CTA, and landing page for clean attribution.
               </p>
               <div className="mt-3">
-                <Button type="button" onClick={openCalendly} className="rounded-full bg-slate-900 text-white hover:bg-slate-800">
+                <Button
+                  type="button"
+                  onClick={openCalendly}
+                  className="rounded-full bg-emerald-600 text-white shadow-lg hover:bg-emerald-700"
+                >
                   Schedule a Call <ArrowUpRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
@@ -432,18 +456,12 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <Button
-              type="button"
-              variant="outline"
-              className="rounded-full"
-              onClick={() => setInfoOpen(true)}
-            >
-              <Info className="mr-2 h-4 w-4" />
-              What is this?
+            <Button asChild variant="outline" className="rounded-full">
+              <Link href="/referral-partnerships">View More</Link>
             </Button>
             <Button
               type="button"
-              className="rounded-full bg-slate-900 text-white hover:bg-slate-800"
+              className="rounded-full bg-emerald-600 px-5 text-white shadow-lg hover:bg-emerald-700"
               onClick={openCalendly}
             >
               Schedule a Call <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -493,15 +511,27 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
 
       <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-          <div>
+          <div className="flex items-start gap-3">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
               Request Partner Activation (Refer Labs)
             </p>
-            <h4 className="mt-1 text-lg font-black text-slate-900">Launch an external partner relationship</h4>
-            <p className="mt-1 text-sm text-slate-600">
-              Submit who you want to work with and how you want them to promote you — Refer Labs (admin) will set up the
-              partnership and ensure attribution is trackable.
-            </p>
+            <div>
+              <h4 className="mt-1 text-lg font-black text-slate-900">Launch an external partner relationship</h4>
+              <p className="mt-1 text-sm text-slate-600">
+                Submit who you want to work with and how you want them to promote you — Refer Labs (admin) will set up the
+                partnership and ensure attribution is trackable.
+              </p>
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="rounded-full"
+              onClick={() => setInfoSection("activation")}
+            >
+              <Info className="mr-2 h-3.5 w-3.5" />
+              How it works
+            </Button>
           </div>
           <Button type="button" onClick={submitActivationRequest} disabled={submitting} className="mt-3 sm:mt-0">
             {submitting ? "Submitting…" : "Submit activation request"}
@@ -900,10 +930,25 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Requests</p>
             <h4 className="text-lg font-black text-slate-900">Partner discovery requests</h4>
+            <p className="mt-1 text-sm text-slate-600">
+              These are briefs you submit for Refer Labs to source partners. Status shows where each request sits in the
+              discovery pipeline.
+            </p>
           </div>
-          <Button type="button" variant="outline" onClick={reloadRequests} disabled={requestsLoading}>
-            {requestsLoading ? "Refreshing…" : "Refresh"}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              className="rounded-full"
+              onClick={() => setInfoSection("requests")}
+            >
+              <Info className="mr-2 h-4 w-4" />
+              How it works
+            </Button>
+            <Button type="button" variant="outline" onClick={reloadRequests} disabled={requestsLoading}>
+              {requestsLoading ? "Refreshing…" : "Refresh"}
+            </Button>
+          </div>
         </div>
         <div className="mt-4 overflow-x-auto">
           <table className="min-w-full text-sm">
@@ -911,6 +956,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
               <tr>
                 <th className="py-2 text-left">Created</th>
                 <th className="py-2 text-left">Status</th>
+                <th className="py-2 text-left">Submitted by</th>
                 <th className="py-2 text-left">Type</th>
                 <th className="py-2 text-left">Summary</th>
               </tr>
@@ -927,6 +973,36 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
                   <tr key={req.id} className="border-t border-slate-100">
                     <td className="py-3">{new Date(req.created_at).toLocaleString()}</td>
                     <td className="py-3">{req.status}</td>
+                    <td className="py-3">
+                      <div className="space-y-1 text-xs">
+                        <div className="font-semibold text-slate-900">
+                          {req.payload?.partnerName || "Unknown submitter"}
+                        </div>
+                        {req.payload?.partnerCompany && (
+                          <div className="text-slate-600">{req.payload.partnerCompany}</div>
+                        )}
+                        {req.payload?.partnerProfileUrl && (
+                          <a
+                            className="text-blue-700 underline break-all"
+                            href={req.payload.partnerProfileUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Profile
+                          </a>
+                        )}
+                        {req.payload?.partnerWebsite && (
+                          <a
+                            className="text-blue-700 underline break-all"
+                            href={req.payload.partnerWebsite}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Website
+                          </a>
+                        )}
+                      </div>
+                    </td>
                     <td className="py-3">{req.payload?.requestKind ?? "partner_discovery"}</td>
                     <td className="py-3">
                       {req.payload?.requestKind === "partner_activation"
@@ -948,6 +1024,14 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
             <h4 className="text-lg font-black text-slate-900">Partner records + referral links</h4>
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setInfoSection("records")}
+            >
+              <Info className="mr-2 h-4 w-4" />
+              How it works
+            </Button>
             <Button
               type="button"
               variant="outline"
@@ -1091,6 +1175,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
                 <th className="py-2 text-left">Type</th>
                 <th className="py-2 text-left">Goal</th>
                 <th className="py-2 text-left">Status</th>
+                <th className="py-2 text-left">Landing page</th>
                 <th className="py-2 text-left">Referral link</th>
                 <th className="py-2 text-left">Last {windowDays} days</th>
               </tr>
@@ -1098,7 +1183,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
             <tbody className="text-slate-700">
               {partners.length === 0 ? (
                 <tr>
-                  <td className="py-3 text-slate-500" colSpan={6}>
+                  <td className="py-3 text-slate-500" colSpan={7}>
                     No external partners yet.
                   </td>
                 </tr>
@@ -1136,6 +1221,15 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
                             </Button>
                           </div>
                         </div>
+                      </td>
+                      <td className="py-3 text-xs">
+                        {p.landingUrl ? (
+                          <a className="text-blue-700 underline break-all" href={p.landingUrl} target="_blank" rel="noreferrer">
+                            {p.landingUrl}
+                          </a>
+                        ) : (
+                          <span className="text-slate-400">—</span>
+                        )}
                       </td>
                       <td className="py-3">
                         {p.referralLink ? (

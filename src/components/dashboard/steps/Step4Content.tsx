@@ -62,8 +62,15 @@ export function Step4Content({
   ).length;
   const zeroClickCampaigns = campaignsData.filter((campaign) => {
     const stats = campaignEventStats[campaign.id ?? ""];
-    return stats ? stats.clicks === 0 : false;
+    return !stats || stats.clicks === 0;
   }).length;
+  const campaignsWithSignals = campaignsData.filter((campaign) => {
+    const stats = campaignEventStats[campaign.id ?? ""];
+    return stats ? stats.clicks + stats.signups + stats.conversions > 0 : false;
+  }).length;
+  const campaignsWithoutSignals = Math.max(totalCampaigns - campaignsWithSignals, 0);
+  const trackingCoverage =
+    totalCampaigns > 0 ? Math.round((campaignsWithSignals / totalCampaigns) * 100) : 0;
 
   return (
     <>
@@ -108,6 +115,20 @@ export function Step4Content({
             {failedCampaigns > 0 && (
               <p>Failed campaigns detected. Review status + retry after checking email settings.</p>
             )}
+          </div>
+        )}
+        {totalCampaigns > 0 && (
+          <div
+            className={`mt-3 rounded-xl border px-3 py-2 text-xs ${
+              campaignsWithoutSignals > 0
+                ? "border-amber-200 bg-amber-50 text-amber-900"
+                : "border-emerald-200 bg-emerald-50 text-emerald-900"
+            }`}
+          >
+            {campaignsWithSignals}/{totalCampaigns} campaigns show tracked engagement signals ({trackingCoverage}%).
+            {campaignsWithoutSignals > 0
+              ? " Send a test click to verify attribution coverage."
+              : " Attribution signals are flowing across all campaigns."}
           </div>
         )}
       </Card>
