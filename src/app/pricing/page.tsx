@@ -388,10 +388,6 @@ export default function PricingPage() {
 
         {/* Hero */}
         <header className="text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm font-semibold backdrop-blur-sm">
-            <Sparkles className="h-4 w-4" />
-            Trusted by 500+ professional services firms
-          </div>
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white tracking-tight">
             Referral Intelligence
             <br />
@@ -526,7 +522,6 @@ export default function PricingPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(0,210,190,0.12),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(92,225,230,0.08),transparent_50%)]" />
           <div className="relative z-10 space-y-10">
             <div className="space-y-4 text-center max-w-3xl mx-auto">
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-cyan-300">Premium Add-On</p>
               <h2 className="text-balance text-3xl sm:text-4xl lg:text-5xl font-black text-white">
                 Referral Partnerships
               </h2>
@@ -554,69 +549,63 @@ export default function PricingPage() {
               </button>
             </div>
 
-            <div className="grid gap-6 lg:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-black/20 p-6 backdrop-blur-xl shadow-lg shadow-black/30">
-                <h3 className="text-lg font-bold text-white mb-4">Who It&apos;s For</h3>
-                <div className="space-y-3">
-                  {[
-                    { title: "Professional services firms", desc: "Law, accounting, advisory, insurance, and recruiters" },
-                    { title: "Partner-led growth teams", desc: "Need defensible attribution and repeatable partner operations" },
-                    { title: "High-intent inbound engines", desc: "Creators, advisors, agencies driving qualified demos" },
-                  ].map((item) => (
-                    <div key={item.title} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                      <p className="font-semibold text-white text-sm">{item.title}</p>
-                      <p className="text-xs text-slate-300 mt-0.5">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-black/20 p-6 backdrop-blur-xl shadow-lg shadow-black/30">
-                <h3 className="text-lg font-bold text-white mb-4">How We Help</h3>
-                <div className="space-y-3">
-                  {partnershipFlow.map((stage) => (
-                    <div key={stage.title} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">{stage.result}</p>
-                      <p className="font-semibold text-white text-sm mt-1">{stage.title}</p>
-                      <p className="text-xs text-slate-300 mt-1 leading-relaxed">{stage.detail}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-black/20 p-6 backdrop-blur-xl shadow-lg shadow-black/30">
-                <h3 className="text-lg font-bold text-white mb-4">After the Call</h3>
-                <div className="space-y-3">
-                  {partnershipFollowUp.map((item) => (
-                    <div key={item.title} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                      <p className="font-semibold text-white text-sm">{item.title}</p>
-                      <p className="text-xs text-slate-300 mt-1 leading-relaxed">{item.detail}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Quick overview */}
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
-              <div className="grid gap-0 sm:grid-cols-3">
-                {[
-                  { title: "At a Glance", items: ["Partner briefs + onboarding", "Offer + reward structure", "Compliance guardrails"] },
-                  { title: "Operations", items: ["Unique links + tracking", "Approvals + payouts ledger", "Partner dashboards"] },
-                  { title: "Outcomes", items: ["Qualified demos", "Clear attribution", "Defensible ROI reporting"] },
-                ].map((col, idx) => (
-                  <div key={col.title} className={`p-6 ${idx > 0 ? "border-t sm:border-t-0 sm:border-l border-white/10" : ""}`}>
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">{col.title}</p>
-                    <ul className="mt-4 space-y-2 text-sm text-slate-200">
-                      {col.items.map((item) => (
-                        <li key={item} className="flex gap-2 items-center">
-                          <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+            {/* Two-column layout for How We Help and After the Call */}
+            <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
+              {/* How We Help */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-400/20 to-cyan-500/10 flex items-center justify-center">
+                    <Zap className="h-5 w-5 text-cyan-300" />
                   </div>
-                ))}
+                  <h3 className="text-xl font-bold text-white">How We Help</h3>
+                </div>
+                <div className="space-y-4">
+                  {partnershipFlow.map((stage, idx) => (
+                    <div key={stage.title} className="flex gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className="h-8 w-8 rounded-full bg-cyan-400/20 flex items-center justify-center text-sm font-bold text-cyan-300">
+                          {idx + 1}
+                        </div>
+                        {idx < partnershipFlow.length - 1 && (
+                          <div className="w-px h-full bg-gradient-to-b from-cyan-400/30 to-transparent mt-2" />
+                        )}
+                      </div>
+                      <div className="pb-6">
+                        <p className="font-semibold text-white">{stage.title}</p>
+                        <p className="text-sm text-slate-300 mt-1 leading-relaxed">{stage.detail}</p>
+                        <p className="text-xs font-medium text-cyan-300 mt-2">{stage.result}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* After the Call */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-400/20 to-cyan-500/10 flex items-center justify-center">
+                    <CheckCircle2 className="h-5 w-5 text-cyan-300" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">After the Call</h3>
+                </div>
+                <div className="space-y-4">
+                  {partnershipFollowUp.map((item, idx) => (
+                    <div key={item.title} className="flex gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className="h-8 w-8 rounded-full bg-cyan-400/20 flex items-center justify-center text-sm font-bold text-cyan-300">
+                          {idx + 1}
+                        </div>
+                        {idx < partnershipFollowUp.length - 1 && (
+                          <div className="w-px h-full bg-gradient-to-b from-cyan-400/30 to-transparent mt-2" />
+                        )}
+                      </div>
+                      <div className="pb-6">
+                        <p className="font-semibold text-white">{item.title}</p>
+                        <p className="text-sm text-slate-300 mt-1 leading-relaxed">{item.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -625,10 +614,6 @@ export default function PricingPage() {
         {/* ROI Calculator Section */}
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-sm font-semibold">
-              <Calculator className="h-4 w-4" />
-              Free Tool
-            </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white">Calculate Your Referral ROI</h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
               See exactly how much revenue your referral program could generate with our AI-powered calculator.
