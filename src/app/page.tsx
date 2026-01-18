@@ -13,9 +13,93 @@ import {
   Building2,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { cookies } from "next/headers";
 import { cn } from "@/lib/utils";
 import { logger } from "@/lib/logger";
+
+/* ─────────────────────────────────────────────────────────────
+   Hero Badge Types & Data
+───────────────────────────────────────────────────────────── */
+
+type HeroBadgeSpec = {
+  id: string;
+  title: string;
+  text: string;
+  colors: [string, string];
+  position: string;
+};
+
+const heroBadges: HeroBadgeSpec[] = [
+  {
+    id: "hero-referral",
+    title: "NEW INTRODUCTION",
+    text: "Anderson Law referred a client",
+    colors: ["#2c3e50", "#34495e"],
+    position: "top-8 left-8",
+  },
+  {
+    id: "hero-vip",
+    title: "CASE CLOSED",
+    text: "Smith & Partners confirmed new matter",
+    colors: ["#16a085", "#1abc9c"],
+    position: "top-8 right-8",
+  },
+  {
+    id: "hero-leaderboard",
+    title: "TOP PARTNER",
+    text: "Miller CPA referred 18 clients",
+    colors: ["#27ae60", "#2ecc71"],
+    position: "bottom-8 left-8",
+  },
+  {
+    id: "hero-revenue",
+    title: "REVENUE ATTRIBUTED",
+    text: "$425,000 from referrals",
+    colors: ["#2980b9", "#3498db"],
+    position: "bottom-8 right-8",
+  },
+];
+
+const heroBadgeOrientation: Record<string, string> = {
+  "hero-referral": "-rotate-2 origin-top-left",
+  "hero-vip": "rotate-2 origin-top-right",
+  "hero-leaderboard": "rotate-2 origin-bottom-left",
+  "hero-revenue": "-rotate-2 origin-bottom-right",
+};
+
+const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
+  <div
+    className={cn(
+      "hero-badge pointer-events-none select-none rounded-2xl border border-white/20",
+      "flex flex-row items-center gap-2.5 w-[240px] h-[70px] px-3 py-2.5 transition-all duration-300",
+      "opacity-60 backdrop-blur-lg shadow-lg shadow-black/15",
+      className,
+    )}
+    style={{
+      background: `linear-gradient(135deg, ${badge.colors[0]}dd, ${badge.colors[1]}dd)`,
+    }}
+  >
+    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/95 shadow-md">
+      <Image
+        src="/logo.svg"
+        alt="Refer Labs"
+        width={32}
+        height={32}
+        className="h-7 w-7 object-contain"
+        priority={true}
+      />
+    </div>
+    <div className="flex-1 min-w-0 flex flex-col justify-center">
+      <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-white/90 mb-0.5 leading-tight">
+        {badge.title}
+      </p>
+      <p className="text-xs font-semibold leading-tight text-white line-clamp-2">
+        {badge.text}
+      </p>
+    </div>
+  </div>
+);
 
 /* ─────────────────────────────────────────────────────────────
    Data & Types
@@ -212,12 +296,23 @@ export default async function Home() {
         {/* ─────────────────────────────────────────────────────────
             Hero Section
         ───────────────────────────────────────────────────────── */}
-        <section className="flex flex-col items-center justify-center text-center min-h-[calc(100vh-120px)] pb-16">
-          <div className="space-y-8">
+        <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-120px)] pb-16">
+          {/* Corner notification badges - Desktop only (xl+) */}
+          <div className="pointer-events-none absolute inset-0 hidden xl:block">
+            {heroBadges.map((badge) => (
+              <HeroBadge
+                key={badge.id}
+                badge={badge}
+                className={cn("absolute", badge.position, heroBadgeOrientation[badge.id])}
+              />
+            ))}
+          </div>
+
+          <div className="relative z-10 space-y-8">
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-black leading-[1.12] text-white max-w-4xl mx-auto tracking-tight">
               Launch Referral Programs For{" "}
               <br className="hidden sm:block" />
-              <span className="text-[#0ABAB5]">Professional Services</span> Firms
+              <span className="text-cyan-400">Professional Services</span> Firms
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-slate-300 whitespace-nowrap">
               Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream.
