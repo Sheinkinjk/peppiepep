@@ -309,10 +309,10 @@ export default async function Home() {
           </div>
 
           <div className="relative z-10 space-y-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
-              Launch Successful Referral Programs
+            <h1 className="text-4xl sm:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
+              <span className="whitespace-nowrap">Launch Successful Referral Programs</span>
               <br className="hidden sm:block" />
-              For <span className="text-cyan-400">Professional Services</span> Firms
+              <span className="whitespace-nowrap">For <span className="text-cyan-400">Professional Services</span> Firms</span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-slate-300 whitespace-nowrap">
               Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream
