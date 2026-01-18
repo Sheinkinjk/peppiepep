@@ -295,7 +295,7 @@ export default async function Home() {
         {/* ─────────────────────────────────────────────────────────
             Hero Section
         ───────────────────────────────────────────────────────── */}
-        <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-120px)] pb-16">
+        <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-140px)] py-8 sm:py-12">
           {/* Corner notification badges - Desktop only (xl+) */}
           <div className="pointer-events-none absolute inset-0 hidden xl:block">
             {heroBadges.map((badge) => (
@@ -307,19 +307,19 @@ export default async function Home() {
             ))}
           </div>
 
-          <div className="relative z-10 space-y-8">
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
-              <span className="sm:whitespace-nowrap">Launch Successful Referral Programs</span>
-              <br className="hidden sm:block" />
-              <span className="sm:whitespace-nowrap">For <span className="text-cyan-400">Professional Services</span> Firms</span>
+          <div className="relative z-10 space-y-5 sm:space-y-6">
+            <h1 className="text-[1.75rem] leading-[1.15] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] xl:text-[3rem] font-black text-white max-w-4xl mx-auto tracking-tight">
+              <span className="block sm:inline">Launch Successful Referral Programs</span>
+              <span className="hidden sm:inline"> </span>
+              <span className="block sm:inline">For <span className="text-cyan-400">Professional Services</span> Firms</span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 lg:whitespace-nowrap">
               Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream
             </p>
-            <div className="pt-4">
+            <div className="pt-3 sm:pt-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 sm:px-8 py-3 sm:py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
               >
                 Schedule a Call
                 <ArrowRight className="h-4 w-4" />
