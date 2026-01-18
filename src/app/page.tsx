@@ -179,12 +179,6 @@ const targetedPrograms = [
   },
 ];
 
-const proofStats = [
-  { value: "70%", label: "Lower CAC", desc: "vs. paid acquisition channels" },
-  { value: "4×", label: "Higher Conversion", desc: "from referred leads" },
-  { value: "37%", label: "Better Retention", desc: "lifetime value increase" },
-  { value: "6×", label: "Average ROI", desc: "on referral programs" },
-];
 
 const howItWorks = [
   {
@@ -441,9 +435,6 @@ export default async function Home() {
             <div className="relative z-10">
               {/* Section Header */}
               <div className="text-center space-y-4 mb-10 sm:mb-14">
-                <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
-                  The Problem With Most Tools
-                </p>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
                   Why Most Referral Programs Fail
                 </h2>
@@ -462,7 +453,7 @@ export default async function Home() {
                     <h3 className="font-bold text-white text-sm sm:text-base">Wrong Model</h3>
                   </div>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    Coupon-code referral tools built for Shopify stores don't work when your average deal is $50,000+ and takes 6 months to close.
+                    Coupon-code referral tools built for Shopify stores don't work when your average deal is $10,000+ and takes months to close.
                   </p>
                 </div>
 
@@ -533,23 +524,23 @@ export default async function Home() {
                     <div className="h-10 w-10 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
                       <LinkedinIcon className="h-5 w-5 text-blue-400" />
                     </div>
-                    <h3 className="font-bold text-white">LinkedIn & Professional Networks</h3>
+                    <h3 className="font-bold text-white">Beyond Mass-Market Affiliate Tools</h3>
                   </div>
                   <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                    Activate LinkedIn influencers, industry advisors, and professional networks—the channels where B2B decisions actually happen.
+                    Professional referrals require discretion, not coupon codes. We built for the way B2B relationships actually work—warm introductions, not spam links.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
                       <CheckCircle2 className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>LinkedIn creator partnerships</span>
+                      <span>White-label partner portals</span>
                     </li>
                     <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
                       <CheckCircle2 className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>Advisor & consultant programs</span>
+                      <span>No public discount codes</span>
                     </li>
                     <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
                       <CheckCircle2 className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>Per-creator ROI attribution</span>
+                      <span>Relationship-first tracking</span>
                     </li>
                   </ul>
                 </div>
@@ -641,26 +632,6 @@ export default async function Home() {
                   <p className="font-semibold text-white">{testimonial.name}</p>
                   <p className="text-sm text-slate-400">{testimonial.title}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────────────────
-            Performance Metrics
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-24">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {proofStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="text-center p-6 rounded-2xl border border-white/10 bg-white/[0.03]"
-              >
-                <p className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                  {stat.value}
-                </p>
-                <p className="text-white font-semibold mt-2">{stat.label}</p>
-                <p className="text-sm text-slate-400 mt-1">{stat.desc}</p>
               </div>
             ))}
           </div>
