@@ -35,28 +35,28 @@ const heroBadges: HeroBadgeSpec[] = [
     title: "NEW INTRODUCTION",
     text: "Anderson Law referred a client",
     colors: ["#2c3e50", "#34495e"],
-    position: "top-2 left-2 sm:top-4 sm:left-4",
+    position: "top-0 left-1 sm:top-4 sm:left-4",
   },
   {
     id: "hero-vip",
     title: "CASE CLOSED",
     text: "Smith & Partners confirmed",
     colors: ["#16a085", "#1abc9c"],
-    position: "top-2 right-2 sm:top-4 sm:right-4",
+    position: "top-0 right-1 sm:top-4 sm:right-4",
   },
   {
     id: "hero-leaderboard",
     title: "TOP PARTNER",
     text: "Miller CPA referred 18 clients",
     colors: ["#27ae60", "#2ecc71"],
-    position: "bottom-2 left-2 sm:bottom-24 sm:left-4",
+    position: "bottom-0 left-1 sm:bottom-24 sm:left-4",
   },
   {
     id: "hero-revenue",
     title: "REVENUE ATTRIBUTED",
     text: "$425,000 from referrals",
     colors: ["#2980b9", "#3498db"],
-    position: "bottom-2 right-2 sm:bottom-24 sm:right-4",
+    position: "bottom-0 right-1 sm:bottom-24 sm:right-4",
   },
 ];
 
@@ -301,7 +301,7 @@ export default async function Home() {
         {/* ─────────────────────────────────────────────────────────
             Hero Section
         ───────────────────────────────────────────────────────── */}
-        <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-140px)] py-8 sm:py-12">
+        <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-200px)] sm:min-h-[calc(100vh-140px)] py-14 sm:py-12 mb-8 sm:mb-0">
           {/* Corner notification badges - Mobile (smaller, in corners) */}
           <div className="pointer-events-none absolute inset-0 block sm:hidden">
             {heroBadges.map((badge) => (
@@ -325,7 +325,7 @@ export default async function Home() {
             ))}
           </div>
 
-          <div className="relative z-10 space-y-4 sm:space-y-6 px-4 sm:px-0">
+          <div className="relative z-10 space-y-3 sm:space-y-6 px-4 sm:px-0 -mt-4 sm:mt-0">
             {/* Mobile: 4 lines, 2 words each */}
             <h1 className="font-black text-white max-w-4xl mx-auto tracking-tight">
               {/* Mobile layout - 4 lines, 2 words per line */}
@@ -345,7 +345,7 @@ export default async function Home() {
             <p className="text-[13px] sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed sm:px-0 lg:whitespace-nowrap">
               Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream
             </p>
-            <div className="pt-2 sm:pt-4">
+            <div className="pt-1 sm:pt-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 sm:px-8 py-3 sm:py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
@@ -360,7 +360,7 @@ export default async function Home() {
         {/* ─────────────────────────────────────────────────────────
             Launch Targeted Referral Programs — 4 Categories
         ───────────────────────────────────────────────────────── */}
-        <section className="mb-24">
+        <section className="mb-24 mt-16 sm:mt-0">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto">
               Launch Targeted Referral Programs
