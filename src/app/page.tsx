@@ -5,9 +5,8 @@ import {
   BarChart3,
   CheckCircle2,
   Gift,
-  Linkedin,
+  LinkedinIcon,
   MessageSquare,
-  Sparkles,
   Target,
   Users,
   Building2,
@@ -126,7 +125,7 @@ const targetedPrograms = [
   },
   {
     id: "linkedin-influencers",
-    icon: Linkedin,
+    icon: LinkedinIcon,
     title: "LinkedIn Influencers",
     tagline: "B2B Thought Leader Activations",
     description:
@@ -309,12 +308,12 @@ export default async function Home() {
           </div>
 
           <div className="relative z-10 space-y-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
-              <span className="whitespace-nowrap">Launch Successful Referral Programs</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
+              <span className="sm:whitespace-nowrap">Launch Successful Referral Programs</span>
               <br className="hidden sm:block" />
-              <span className="whitespace-nowrap">For <span className="text-cyan-400">Professional Services</span> Firms</span>
+              <span className="sm:whitespace-nowrap">For <span className="text-cyan-400">Professional Services</span> Firms</span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 whitespace-nowrap">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto">
               Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream
             </p>
             <div className="pt-4">

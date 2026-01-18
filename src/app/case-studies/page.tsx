@@ -9,9 +9,7 @@ import {
   BarChart3,
   Target,
   Sparkles,
-  Linkedin,
-  Building2,
-  MessageSquare,
+  LinkedinIcon,
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────────
@@ -103,7 +101,7 @@ const categories = [
   { key: "all", label: "All Case Studies", icon: TrendingUp },
   { key: "platform", label: "Platform", icon: BarChart3 },
   { key: "partnerships", label: "Partnerships", icon: Users },
-  { key: "linkedin", label: "LinkedIn Growth", icon: Linkedin },
+  { key: "linkedin", label: "LinkedIn Growth", icon: LinkedinIcon },
   { key: "done-for-you", label: "Done-For-You", icon: Sparkles },
 ] as const;
 
@@ -203,11 +201,11 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* Metrics */}
-                  <div className="flex gap-6">
+                  <div className="flex gap-4 sm:gap-6">
                     {study.metrics.map((m) => (
                       <div key={m.label} className="text-center">
-                        <p className="text-xl font-bold text-cyan-300">{m.value}</p>
-                        <p className="text-xs text-slate-500">{m.label}</p>
+                        <p className="text-lg sm:text-xl font-bold text-cyan-300">{m.value}</p>
+                        <p className="text-[10px] sm:text-xs text-slate-500">{m.label}</p>
                       </div>
                     ))}
                   </div>
