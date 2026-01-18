@@ -212,24 +212,25 @@ export default async function Home() {
         {/* ─────────────────────────────────────────────────────────
             Hero Section
         ───────────────────────────────────────────────────────── */}
-        <section className="text-center space-y-8 mb-20">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.08] text-white max-w-5xl mx-auto tracking-tight">
-            Launch Referral Programs For{" "}
-            <span className="bg-gradient-to-r from-cyan-300 via-cyan-200 to-teal-300 bg-clip-text text-transparent">
-              Professional Services Firms
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream.
-          </p>
-          <div className="pt-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
-            >
-              Schedule a Call
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+        <section className="flex flex-col items-center justify-center text-center min-h-[calc(100vh-120px)] pb-16">
+          <div className="space-y-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-black leading-[1.12] text-white max-w-4xl mx-auto tracking-tight">
+              Launch Referral Programs For{" "}
+              <br className="hidden sm:block" />
+              <span className="text-[#0ABAB5]">Professional Services</span> Firms
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 whitespace-nowrap">
+              Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream.
+            </p>
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
+              >
+                Schedule a Call
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
