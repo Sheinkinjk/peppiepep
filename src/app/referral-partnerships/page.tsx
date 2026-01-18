@@ -56,10 +56,6 @@ export default function ReferralPartnershipsPage() {
             <h2 className="text-3xl sm:text-4xl font-black text-white">
               Referral Partnerships We Facilitate
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Different partners bring different strengths. We help you activate each type with
-              the right offer, tracking, and reward structure.
-            </p>
           </div>
 
           {/* LinkedIn Influencers */}

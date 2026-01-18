@@ -715,10 +715,6 @@ export function ROICalculator() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold mb-4">
-            <Calculator className="h-4 w-4" />
-            Free ROI Calculator
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-4">
             Referral Program ROI Calculator
           </h1>

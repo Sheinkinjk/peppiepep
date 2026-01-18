@@ -310,10 +310,13 @@ export default async function Home() {
 
           <div className="relative z-10 space-y-8">
             <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
-              Turn <span className="text-cyan-400">Trusted Voices</span> Into{" "}
+              Launch Successful Referral Programs{" "}
               <br className="hidden sm:block" />
-              Your Most Powerful Growth Channel
+              For <span className="text-cyan-400">Professional Services</span> Firms
             </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 whitespace-nowrap">
+              Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream
+            </p>
             <div className="pt-4">
               <Link
                 href="/contact"
@@ -439,7 +442,7 @@ export default async function Home() {
             <div className="relative z-10">
               <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl sm:text-4xl font-black text-white">
-                  Why Partner-Led Growth Wins
+                  Why Referral-Led Growth Wins
                 </h2>
                 <p className="text-slate-400 max-w-2xl mx-auto">
                   The math is simple: trusted recommendations convert better and cost less.

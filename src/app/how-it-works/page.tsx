@@ -2,333 +2,281 @@
 import {
   ArrowRight,
   CheckCircle2,
-  Upload,
+  Users,
+  Linkedin,
+  Building2,
+  MessageSquare,
   Link as LinkIcon,
-  Gift,
-  Bell,
   BarChart3,
+  Gift,
+  Zap,
+  Target,
+  Shield,
 } from "lucide-react";
 import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.howItWorks);
 
+const offeringHighlights = [
+  {
+    id: "customer-network",
+    icon: Users,
+    title: "Customer Network",
+    description: "Turn satisfied clients into advocates with branded portals and unique tracking links.",
+    color: "cyan",
+  },
+  {
+    id: "linkedin-influencers",
+    icon: Linkedin,
+    title: "LinkedIn Influencers",
+    description: "Activate B2B thought leaders with campaign-specific tracking and per-creator attribution.",
+    color: "blue",
+  },
+  {
+    id: "agencies-partners",
+    icon: Building2,
+    title: "Agencies & Partners",
+    description: "Build white-glove partner programs with tiered rewards and quarterly reviews.",
+    color: "purple",
+  },
+  {
+    id: "consultants-advisors",
+    icon: MessageSquare,
+    title: "Consultants & Advisors",
+    description: "Enable trusted experts with discreet tracking and compliance-ready workflows.",
+    color: "emerald",
+  },
+];
+
+const steps = [
+  {
+    num: "01",
+    title: "Design Your Program",
+    subtitle: "Strategy tailored to your offering",
+    description:
+      "We start by understanding your goals and identifying which referral sources—customers, influencers, agencies, or advisors—fit your business. Then we design reward structures, tracking rules, and onboarding flows specific to each partner type.",
+    features: [
+      {
+        icon: Target,
+        text: "Define ideal partner profiles and targeting criteria",
+      },
+      {
+        icon: Gift,
+        text: "Configure reward models: revenue share, per-deal fees, credits, or hybrid",
+      },
+      {
+        icon: Shield,
+        text: "Set compliance guardrails and disclosure requirements",
+      },
+    ],
+    offeringNote: "For LinkedIn campaigns, we match influencer audiences. For agency programs, we design tiered structures.",
+  },
+  {
+    num: "02",
+    title: "Activate Your Partners",
+    subtitle: "Onboarding made effortless",
+    description:
+      "Each partner receives a branded portal with their unique tracking link, share buttons, and real-time performance stats. Whether it's a loyal customer, a LinkedIn creator, or a strategic agency—activation is seamless.",
+    features: [
+      {
+        icon: LinkIcon,
+        text: "Unique tracked links for every partner, campaign, and content piece",
+      },
+      {
+        icon: Users,
+        text: "Branded ambassador portals with one-tap sharing (WhatsApp, SMS, email, LinkedIn)",
+      },
+      {
+        icon: Zap,
+        text: "Instant onboarding—partners go live in minutes, not weeks",
+      },
+    ],
+    offeringNote: "Customers get simple share links. Influencers get campaign-specific UTMs. Agencies get co-branded materials.",
+  },
+  {
+    num: "03",
+    title: "Track Every Interaction",
+    subtitle: "Full-funnel attribution",
+    description:
+      "Every click, form submission, demo booking, and conversion is captured with partner, campaign, and link IDs. No spreadsheets, no guessing—just clean, audit-ready data flowing into your dashboard.",
+    features: [
+      {
+        icon: BarChart3,
+        text: "Real-time dashboards showing referral flow from click to close",
+      },
+      {
+        icon: CheckCircle2,
+        text: "Automatic status updates: pending, qualified, converted, rewarded",
+      },
+      {
+        icon: Target,
+        text: "Per-partner and per-campaign ROI breakdowns",
+      },
+    ],
+    offeringNote: "LinkedIn activations show per-creator attribution. Agency programs track deal value and close rates.",
+  },
+  {
+    num: "04",
+    title: "Reward & Scale",
+    subtitle: "Automated payouts that keep partners engaged",
+    description:
+      "When a referral converts, rewards are calculated and triggered automatically. Partners receive notifications, credits update in real-time, and your finance team gets clean ledgers for every payout.",
+    features: [
+      {
+        icon: Gift,
+        text: "Automatic reward calculations based on your configured rules",
+      },
+      {
+        icon: Zap,
+        text: "Instant SMS/email notifications keep partners motivated to share more",
+      },
+      {
+        icon: Shield,
+        text: "Audit-ready records for compliance and finance teams",
+      },
+    ],
+    offeringNote: "Customers earn credits. Influencers get revenue share. Agencies receive tiered commissions.",
+  },
+];
+
 export default function HowItWorks() {
   return (
-    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+      {/* Background Effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
+      </div>
 
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
-
-        <section className="max-w-3xl space-y-4">
-          <h1 className="text-balance text-[2.5rem] font-bold leading-[1.15] text-slate-900 sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem]">
-            How Refer Labs turns your network into a customer acquisition channel
+      <main className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+        {/* Hero Section */}
+        <header className="text-center space-y-6 mb-20">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white tracking-tight max-w-4xl mx-auto">
+            How <span className="text-cyan-400">Refer Labs</span> Works
           </h1>
-          <p className="max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-slate-600">
-            From upload to reward in minutes. Activate your partners, clients, creators, and advisors with tracked referral links that drive measurable new customer acquisition.
+          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+            One unified flow powers all four offerings—customer referrals, LinkedIn activations, agency partnerships, and advisor programs. Here's how it all comes together.
           </p>
+        </header>
+
+        {/* Four Offerings Overview */}
+        <section className="mb-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {offeringHighlights.map((offering) => {
+              const Icon = offering.icon;
+              const colorMap: Record<string, string> = {
+                cyan: "bg-cyan-400/10 text-cyan-300 border-cyan-500/20",
+                blue: "bg-blue-400/10 text-blue-300 border-blue-500/20",
+                purple: "bg-purple-400/10 text-purple-300 border-purple-500/20",
+                emerald: "bg-emerald-400/10 text-emerald-300 border-emerald-500/20",
+              };
+              return (
+                <div
+                  key={offering.id}
+                  className={`rounded-2xl border p-5 ${colorMap[offering.color]}`}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="rounded-xl bg-white/10 p-2">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="font-semibold text-white text-sm">{offering.title}</h3>
+                  </div>
+                  <p className="text-xs text-slate-400 leading-relaxed">{offering.description}</p>
+                </div>
+              );
+            })}
+          </div>
         </section>
 
-        <section className="space-y-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 mb-4">
-                <span className="text-xl font-bold text-purple-700">1</span>
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Import your network (activate your referral partners)
-              </h2>
-              <p className="text-lg text-slate-600 mb-6">
-                Upload a simple CSV (name, phone, email). Refer Labs instantly turns your partners, clients, creators, and advisors into trackable referral sources.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Instant processing</p>
-                    <p className="text-sm text-slate-600">Refer Labs reads your file and sets everything up in seconds</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Campaign-ready links</p>
-                    <p className="text-sm text-slate-600">Every partner gets a unique link you can drop into SMS, email, or campaigns</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Ready to share</p>
-                    <p className="text-sm text-slate-600">Links are live immediately—no waiting, no approval process</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="glass relative rounded-3xl p-6 shadow-xl ring-1 ring-white/60">
-                <div className="flex items-center gap-3 mb-4">
-                  <Upload className="h-8 w-8 text-purple-600" />
-                  <div>
-                    <p className="text-sm text-slate-500">Step 1</p>
-                    <p className="text-lg font-semibold text-slate-900">Upload CSV</p>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="rounded-xl border border-slate-200 bg-white p-4">
-                    <p className="text-xs font-mono text-slate-500 mb-2">customers.csv</p>
-                    <div className="space-y-1 text-xs font-mono">
-                      <p className="text-slate-700">name, phone, email</p>
-                      <p className="text-slate-500">Sarah Jones, +447..., sarah@...</p>
-                      <p className="text-slate-500">Mike Chen, +447..., mike@...</p>
-                      <p className="text-slate-500">Emma Davis, +447..., emma@...</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center py-2">
-                    <ArrowRight className="h-6 w-6 text-purple-500" />
-                  </div>
-                  <div className="rounded-xl border border-green-200 bg-green-50 p-4">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
-                      <p className="font-semibold text-green-900">38 links generated</p>
-                    </div>
-                    <p className="text-xs text-green-700 mt-1">Ready to share with partners</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Step-by-Step Flow */}
+        <section className="space-y-16">
+          {steps.map((step, idx) => (
+            <div key={step.num} className="relative">
+              {/* Connector Line */}
+              {idx < steps.length - 1 && (
+                <div className="hidden lg:block absolute left-8 top-32 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 to-transparent" />
+              )}
 
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <div className="glass relative rounded-3xl p-6 shadow-xl ring-1 ring-white/60">
-                <div className="flex items-center gap-3 mb-4">
-                  <LinkIcon className="h-8 w-8 text-purple-600" />
-                  <div>
-                    <p className="text-sm text-slate-500">Step 2</p>
-                    <p className="text-lg font-semibold text-slate-900">Partner portal</p>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="rounded-xl border border-slate-200 bg-white p-4">
-                    <p className="text-sm font-semibold text-slate-900 mb-3">Sarah's portal</p>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-600">Your link:</span>
-                      </div>
-                      <div className="rounded-lg bg-purple-50 p-2 font-mono text-xs text-purple-700 break-all">
-                        referlabs.com.au/r/abc123
-                      </div>
-                      <div className="grid grid-cols-2 gap-2 mt-3">
-                        <div className="rounded-lg bg-green-500 p-2 text-center text-xs font-semibold text-white">
-                          WhatsApp
-                        </div>
-                        <div className="rounded-lg bg-blue-500 p-2 text-center text-xs font-semibold text-white">
-                          SMS
-                        </div>
-                      </div>
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                {/* Step Number */}
+                <div className="lg:col-span-2 flex lg:flex-col items-center gap-4 lg:gap-0">
+                  <div className="relative">
+                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-cyan-400/20 to-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
+                      <span className="text-2xl font-black text-cyan-300">{step.num}</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div>
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 mb-4">
-                <span className="text-xl font-bold text-purple-700">2</span>
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Your network becomes active referral partners
-              </h2>
-              <p className="text-lg text-slate-600 mb-6">
-                Send partners their unique link via text, email, or embed it inside your campaigns. Their personal portal makes referring new customers effortless.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Personal portal for each partner</p>
-                    <p className="text-sm text-slate-600">Track their referrals, credits earned, and share buttons</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">One-tap sharing</p>
-                    <p className="text-sm text-slate-600">WhatsApp, SMS, Instagram, Facebook—all built in</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Beautiful referral pages</p>
-                    <p className="text-sm text-slate-600">When friends click the link, they see your offer and can claim it instantly</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 mb-4">
-                <span className="text-xl font-bold text-purple-700">3</span>
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Track referrals in real-time
-              </h2>
-              <p className="text-lg text-slate-600 mb-6">
-                Every click and referral shows up instantly. See who referred who, which campaign drove it, and reward them automatically—all from one dashboard.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                {/* Content */}
+                <div className="lg:col-span-10 space-y-6">
                   <div>
-                    <p className="font-semibold text-slate-900">Live referral feed</p>
-                    <p className="text-sm text-slate-600">Know exactly who's bringing you new business</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Pending vs completed</p>
-                    <p className="text-sm text-slate-600">Clear view of what needs action and what's done</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Partner leaderboard</p>
-                    <p className="text-sm text-slate-600">See your top referrers and total credits earned</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="glass relative rounded-3xl p-6 shadow-xl ring-1 ring-white/60">
-                <div className="flex items-center gap-3 mb-4">
-                  <BarChart3 className="h-8 w-8 text-purple-600" />
-                  <div>
-                    <p className="text-sm text-slate-500">Step 3</p>
-                    <p className="text-lg font-semibold text-slate-900">Dashboard view</p>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-xl border border-slate-200 bg-white p-3">
-                      <p className="text-xs text-slate-500">Pending</p>
-                      <p className="text-2xl font-bold text-orange-600">12</p>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-white p-3">
-                      <p className="text-xs text-slate-500">Completed</p>
-                      <p className="text-2xl font-bold text-green-600">38</p>
-                    </div>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-white p-3">
-                    <p className="text-xs text-slate-500 mb-2">Recent referral</p>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">Emma → Lucy</p>
-                        <p className="text-xs text-slate-500">2 minutes ago</p>
-                      </div>
-                      <span className="rounded-full bg-orange-100 px-2 py-1 text-xs font-semibold text-orange-700">
-                        Pending
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <div className="glass relative rounded-3xl p-6 shadow-xl ring-1 ring-white/60">
-                <div className="flex items-center gap-3 mb-4">
-                  <Gift className="h-8 w-8 text-purple-600" />
-                  <div>
-                    <p className="text-sm text-slate-500">Step 4</p>
-                    <p className="text-lg font-semibold text-slate-900">Auto-rewards</p>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="rounded-xl border border-green-200 bg-green-50 p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
-                      <p className="font-semibold text-green-900">Referral completed!</p>
-                    </div>
-                    <p className="text-sm text-green-700">Lucy booked an appointment</p>
-                  </div>
-                  <div className="flex items-center justify-center py-1">
-                    <ArrowRight className="h-5 w-5 text-purple-500" />
-                  </div>
-                  <div className="rounded-xl border border-blue-200 bg-blue-50 p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Bell className="h-5 w-5 text-blue-600" />
-                      <p className="font-semibold text-blue-900">Emma notified</p>
-                    </div>
-                    <p className="text-xs text-blue-700 font-mono bg-blue-100 rounded p-2">
-                      "Amazing! Your friend just booked – you've earned £10 credit! 🎉"
+                    <p className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-1">
+                      {step.subtitle}
+                    </p>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                      {step.title}
+                    </h2>
+                    <p className="text-slate-300 leading-relaxed max-w-3xl">
+                      {step.description}
                     </p>
                   </div>
+
+                  {/* Features */}
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    {step.features.map((feature, fIdx) => {
+                      const FeatureIcon = feature.icon;
+                      return (
+                        <div
+                          key={fIdx}
+                          className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10"
+                        >
+                          <FeatureIcon className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                          <p className="text-sm text-slate-300 leading-relaxed">{feature.text}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Offering-specific note */}
+                  <div className="flex items-start gap-3 px-4 py-3 rounded-xl bg-cyan-400/5 border border-cyan-500/20">
+                    <Zap className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-cyan-200/80 italic">{step.offeringNote}</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div>
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 mb-4">
-                <span className="text-xl font-bold text-purple-700">4</span>
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Rewards happen automatically
-              </h2>
-              <p className="text-lg text-slate-600 mb-6">
-                When a referred customer books or completes their first purchase, just mark it complete in your dashboard. Refer Labs instantly credits the partner and sends them a celebration SMS.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">One-click completion</p>
-                    <p className="text-sm text-slate-600">Just hit "Mark completed" in your dashboard</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">Credits applied instantly</p>
-                    <p className="text-sm text-slate-600">Partner's account updates in real-time</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-slate-900">SMS notification sent</p>
-                    <p className="text-sm text-slate-600">Keeps partners excited and motivated to share more</p>
-                  </div>
-                </div>
-              </div>
+          ))}
+        </section>
+
+        {/* Summary CTA */}
+        <section className="mt-24 relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/5 to-transparent p-8 sm:p-12 text-center">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(87,230,255,0.12),transparent_50%)]" />
+
+          <div className="relative z-10 space-y-6 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              One Platform. Four Powerful Channels.
+            </h2>
+            <p className="text-slate-300 leading-relaxed">
+              Whether you're activating customers, LinkedIn creators, strategic agencies, or trusted advisors—Refer Labs gives you the tracking, attribution, and payouts to prove ROI.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
+              >
+                Schedule a Call
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/pricing"
+                className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+              >
+                View Pricing
+              </Link>
             </div>
           </div>
         </section>
-
-        <section className="rounded-3xl bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 p-[1px] shadow-2xl">
-          <div className="flex flex-col gap-6 rounded-3xl bg-white/90 p-8 text-slate-900 backdrop-blur md:flex-row md:items-center md:justify-between">
-            <div>
-              <h3 className="text-3xl font-bold mb-2">
-                That's it. Four simple steps.
-              </h3>
-              <p className="text-lg text-slate-600">
-                No complicated setup, no integrations, no ongoing maintenance. Just upload once and watch your referral program run itself.
-              </p>
-            </div>
-            <Link
-              href="/login"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300 whitespace-nowrap"
-            >
-              Start Getting Referrals <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
       </main>
     </div>
   );
