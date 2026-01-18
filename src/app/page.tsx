@@ -36,28 +36,28 @@ const heroBadges: HeroBadgeSpec[] = [
     title: "NEW INTRODUCTION",
     text: "Anderson Law referred a client",
     colors: ["#2c3e50", "#34495e"],
-    position: "top-8 left-8",
+    position: "top-4 left-4",
   },
   {
     id: "hero-vip",
     title: "CASE CLOSED",
     text: "Smith & Partners confirmed new matter",
     colors: ["#16a085", "#1abc9c"],
-    position: "top-8 right-8",
+    position: "top-4 right-4",
   },
   {
     id: "hero-leaderboard",
     title: "TOP PARTNER",
     text: "Miller CPA referred 18 clients",
     colors: ["#27ae60", "#2ecc71"],
-    position: "bottom-8 left-8",
+    position: "bottom-24 left-4",
   },
   {
     id: "hero-revenue",
     title: "REVENUE ATTRIBUTED",
     text: "$425,000 from referrals",
     colors: ["#2980b9", "#3498db"],
-    position: "bottom-8 right-8",
+    position: "bottom-24 right-4",
   },
 ];
 
@@ -309,8 +309,8 @@ export default async function Home() {
           </div>
 
           <div className="relative z-10 space-y-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-black leading-[1.12] text-white max-w-4xl mx-auto tracking-tight">
-              Launch Referral Programs For{" "}
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
+              Launch Successful Referral Programs For{" "}
               <br className="hidden sm:block" />
               <span className="text-cyan-400">Professional Services</span> Firms
             </h1>
