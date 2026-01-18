@@ -310,7 +310,7 @@ export default async function Home() {
 
           <div className="relative z-10 space-y-8">
             <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black leading-[1.12] text-white max-w-5xl mx-auto tracking-tight">
-              Launch Successful Referral Programs{" "}
+              Launch Successful Referral Programs
               <br className="hidden sm:block" />
               For <span className="text-cyan-400">Professional Services</span> Firms
             </h1>
