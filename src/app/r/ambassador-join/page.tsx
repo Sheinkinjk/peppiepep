@@ -4,15 +4,22 @@ import AmbassadorJoinClient from "./AmbassadorJoinClient";
 import { createAmbassadorToken } from "@/lib/ambassador-auth";
 
 interface AmbassadorJoinPageProps {
-  searchParams?: { code?: string };
+  searchParams?:
+    | { code?: string }
+    | Promise<Record<string, string | string[] | undefined>>;
 }
 
 export const dynamic = "force-dynamic";
 
-export default function AmbassadorJoinPage({
+function isPromise<T>(value: unknown): value is Promise<T> {
+  return typeof value === "object" && value !== null && "then" in (value as Record<string, unknown>);
+}
+
+export default async function AmbassadorJoinPage({
   searchParams,
 }: AmbassadorJoinPageProps) {
-  const rawCode = searchParams?.code;
+  const resolvedParams = isPromise(searchParams) ? await searchParams : searchParams ?? {};
+  const rawCode = resolvedParams?.code;
   const code = typeof rawCode === "string" ? rawCode : "";
   const token = code ? createAmbassadorToken(code) : null;
 

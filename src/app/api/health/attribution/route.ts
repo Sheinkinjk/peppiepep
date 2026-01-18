@@ -1,21 +1,39 @@
 import { NextResponse } from "next/server";
-import { createServerComponentClient } from "@/lib/supabase";
+import { createClient } from "@supabase/supabase-js";
 
 export async function GET() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const businessId = process.env.HEALTH_BUSINESS_ID || process.env.PARTNER_PROGRAM_BUSINESS_ID;
+
+  if (!supabaseUrl || !serviceRoleKey || !businessId) {
+    return NextResponse.json(
+      {
+        healthy: false,
+        error: "Health check missing configuration",
+        missing: {
+          supabaseUrl: Boolean(supabaseUrl),
+          serviceRoleKey: Boolean(serviceRoleKey),
+          businessId: Boolean(businessId),
+        },
+        timestamp: new Date().toISOString(),
+      },
+      { status: 500 },
+    );
+  }
+
+  const supabase = createClient(supabaseUrl, serviceRoleKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  });
+
   try {
-    const supabase = await createServerComponentClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) {
-      return NextResponse.json({ healthy: false, error: "Unauthorized" }, { status: 401 });
-    }
-
     const { data: business, error: businessError } = await supabase
       .from("businesses")
       .select("id, name")
-      .eq("owner_id", user.id)
+      .eq("id", businessId)
       .single();
 
     if (businessError || !business) {
@@ -32,13 +50,13 @@ export async function GET() {
     const { data: recentEvents, error: eventsError } = await supabase
       .from("referral_events")
       .select("id, event_type, ambassador_id, created_at")
-      .eq("business_id", business.id)
+      .eq("business_id", businessId)
       .gte("created_at", sevenDaysAgo);
 
     const { data: recentReferrals, error: refError } = await supabase
       .from("referrals")
       .select("id, ambassador_id, created_at, status")
-      .eq("business_id", business.id)
+      .eq("business_id", businessId)
       .gte("created_at", sevenDaysAgo);
 
     const events = recentEvents ?? [];

@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 
 type SectionItem = {
@@ -81,6 +82,7 @@ export function DashboardSectionSwitcher({
   showAdminLinks,
 }: SectionSwitcherProps) {
   const [activeSection, setActiveSection] = useState(defaultSection || "overview");
+  const router = useRouter();
 
   const stepMap = useMemo(
     () => new Map(steps.map((step) => [step.id, step])),
@@ -145,6 +147,21 @@ export function DashboardSectionSwitcher({
       setSection(stored, undefined, { updateUrl: false });
     }
   }, [defaultSection, activeSection, setSection]);
+
+  useEffect(() => {
+    // Prefetch other dashboard sections so tab switches feel instantaneous.
+    const urls = sectionItems
+      .map((item) => {
+        const params = new URLSearchParams();
+        params.set("section", item.id);
+        if (selectedWindow === 7 || selectedWindow === 30) {
+          params.set("window", String(selectedWindow));
+        }
+        return `/dashboard?${params.toString()}`;
+      })
+      .filter(Boolean);
+    urls.forEach((url) => router.prefetch(url));
+  }, [router, sectionItems, selectedWindow]);
 
   useEffect(() => {
     const handler = (event: Event) => {

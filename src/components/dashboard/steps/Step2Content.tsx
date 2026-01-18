@@ -188,9 +188,9 @@ export function Step2Content({
                 <Upload className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h2 className="text-xl sm:text-2xl font-black text-slate-900">Import Your Network</h2>
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900">Sync your customer graph</h2>
                 <p className="text-sm text-slate-600">
-                  Upload partners, clients, creators, and advisors to instantly generate referral links.
+                  Upload partners, clients, creators, and advisors to instantly generate referral links and keep attribution intact.
                 </p>
               </div>
             </div>

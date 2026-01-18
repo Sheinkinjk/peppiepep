@@ -133,10 +133,20 @@ export function PartnerApplicationsManager() {
   }, [currentPage, filter]);
 
   async function fetchApplications() {
+    const baseUrl =
+      typeof window !== "undefined"
+        ? window.location.origin
+        : process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+    if (!baseUrl) {
+      setLastError("Missing site URL for partner applications.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const statusParam = filter !== "all" ? `&status=${filter}` : "";
       const response = await fetch(
-        `/api/admin/partner-applications?page=${currentPage}&limit=${itemsPerPage}${statusParam}`
+        `${baseUrl}/api/admin/partner-applications?page=${currentPage}&limit=${itemsPerPage}${statusParam}`
       );
       if (!response.ok) throw new Error("Failed to fetch applications");
 

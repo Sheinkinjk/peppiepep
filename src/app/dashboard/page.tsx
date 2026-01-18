@@ -3099,7 +3099,7 @@ export default async function Dashboard({
     { id: "setup-integration", label: "Business Setup & Integrations" },
     { id: "testing-qa", label: "Testing & QA" },
     { id: "clients-ambassadors", label: "Partners" },
-    { id: "external-partners", label: "External Partners" },
+    { id: "external-partners", label: "External Partners · Leverage" },
     { id: "crm-integration", label: "Launch Campaigns" },
     { id: "view-campaigns", label: "Track Campaigns" },
     { id: "performance", label: "Measure ROI" },
@@ -3460,19 +3460,30 @@ export default async function Dashboard({
 	            extraSections={[
 	              {
 	                id: "external-partners",
-	                title: "External Partners",
+	                title: "External Partners · Distribution leverage",
 	                hideHeader: true,
 	                content: (
-	                  <DashboardSectionBoundary
-	                    title="External Partners tab unavailable"
-	                    message="We ran into an issue loading External Partners. Refresh the page or try again in a moment."
-	                  >
-	                    <ExternalPartnersTab
-	                      enabled={externalPartnersEnabled}
-	                      businessName={business.name || "Your Business"}
-	                      dashboardBaseUrl={businessWebsiteUrl || ""}
-	                    />
-	                  </DashboardSectionBoundary>
+	                  <>
+	                    <div className="mb-4 rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 p-5 text-white shadow-sm">
+	                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
+	                        Curate your distribution
+	                      </p>
+	                      <p className="mt-1 text-lg font-bold">Source, brief, and activate external partners without losing attribution.</p>
+	                      <p className="mt-1 text-sm text-slate-200">
+	                        Define the playbook and we deliver tracked partners back into your ROI view.
+	                      </p>
+	                    </div>
+	                    <DashboardSectionBoundary
+	                      title="External Partners tab unavailable"
+	                      message="We ran into an issue loading External Partners. Refresh the page or try again in a moment."
+	                    >
+	                      <ExternalPartnersTab
+	                        enabled={externalPartnersEnabled}
+	                        businessName={business.name || "Your Business"}
+	                        dashboardBaseUrl={businessWebsiteUrl || ""}
+	                      />
+	                    </DashboardSectionBoundary>
+	                  </>
 	                ),
 	              },
 	            ]}

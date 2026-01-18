@@ -442,16 +442,23 @@ async function submitPartnerApplication(formData: FormData) {
 }
 
 type ReferralProgramPageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams?:
+    | Record<string, string | string[] | undefined>
+    | Promise<Record<string, string | string[] | undefined>>;
 };
 
-export default function OurReferralProgramPage({ searchParams }: ReferralProgramPageProps) {
-  const applied = searchParams?.applied === "1";
-  const applyError = searchParams?.applied === "0";
+function isPromise<T>(value: unknown): value is Promise<T> {
+  return typeof value === "object" && value !== null && "then" in (value as Record<string, unknown>);
+}
+
+export default async function OurReferralProgramPage({ searchParams }: ReferralProgramPageProps) {
+  const resolvedParams = isPromise(searchParams) ? await searchParams : searchParams ?? {};
+  const applied = resolvedParams.applied === "1";
+  const applyError = resolvedParams.applied === "0";
   const utmSource =
-    typeof searchParams?.utm_source === "string" ? searchParams?.utm_source : undefined;
+    typeof resolvedParams.utm_source === "string" ? resolvedParams.utm_source : undefined;
   const utmCampaign =
-    typeof searchParams?.utm_campaign === "string" ? searchParams?.utm_campaign : undefined;
+    typeof resolvedParams.utm_campaign === "string" ? resolvedParams.utm_campaign : undefined;
   const formSource = "partner_program";
   return (
     <div className="min-h-screen bg-slate-50">

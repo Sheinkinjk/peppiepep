@@ -207,8 +207,8 @@ async function run() {
         throw new Error(`Dashboard error boundary rendered for section ${section}.`);
       }
       if (section === "clients-ambassadors") {
-        if (!/Import Your Network/i.test(sectionHtml)) {
-          throw new Error("Partners tab missing Import Your Network content.");
+        if (!/(Sync your customer graph|Import Your Network)/i.test(sectionHtml)) {
+          throw new Error("Partners tab missing partner import call-to-action.");
         }
         if (!/All Customers/i.test(sectionHtml)) {
           throw new Error("Partners tab missing All Customers section.");
