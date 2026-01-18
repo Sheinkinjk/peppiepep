@@ -141,33 +141,37 @@ const faqSections: FAQSection[] = [
   {
     id: "done-for-you",
     title: "Done-For-You Strategy & Launch Support",
-    subtitle: "Hands-on build, templates, campaign execution, and QA",
+    subtitle: "End-to-end setup across all four referral program types",
     icon: Sparkles,
     iconColor: "text-amber-500",
     questions: [
       {
-        q: "What does 'done-for-you' include?",
-        a: "Our concierge team handles the complete setup: program strategy, reward structure design, branding configuration, partner list import, campaign creation, email/SMS template drafting, integration setup, and quality assurance testing. You provide direction and approvals; we execute the build."
+        q: "What does 'done-for-you' include for each offering?",
+        a: "We handle end-to-end setup across all four program types: For Customer Networks, we configure ambassador portals, tracking links, and reward automation. For LinkedIn Influencers, we source creators, set up campaign tracking, and manage content workflows. For Agencies & Partners, we design revenue-share structures and partner onboarding. For Consultants & Advisors, we build compliant referral flows with proper disclosures. You approve the strategy; we execute everything."
       },
       {
-        q: "Do you provide templates for partner outreach and campaigns?",
-        a: "Yes. We supply tested templates for partner invitation emails, referral announcements, reward notifications, and follow-up sequences. Templates are customized to your brand voice and optimized based on performance data from hundreds of campaigns across our client base."
+        q: "Can you help launch a Customer Network referral program?",
+        a: "Yes. We configure branded ambassador portals, generate unique tracking links for each client, set up reward automation (flat fees, percentage, or tiered), import your customer list, and train your team on the dashboard. Most customer referral programs launch within 5-7 days."
       },
       {
-        q: "How does campaign execution work?",
-        a: "Once your program is configured, we help you launch: scheduling partner invitations, coordinating announcement timing, monitoring initial performance, and making real-time adjustments. Our team stays engaged through your first 30 days to ensure strong adoption and early wins."
+        q: "How do you support LinkedIn Influencer activations?",
+        a: "We handle influencer sourcing based on your ICP, vet creators for audience authenticity, negotiate terms, set up per-creator tracking links, manage content review workflows, and process performance-based payouts. You approve creators and content; we manage the operations."
       },
       {
-        q: "What happens after launch?",
-        a: "Post-launch support includes weekly performance reviews, optimization recommendations, partner recruitment assistance, and ongoing campaign iterations. You can scale to fully self-service, continue with managed support, or engage our team for specific initiatives."
+        q: "What's included for Agency & Strategic Partner programs?",
+        a: "We design your partner tier structure, create co-branded materials, configure revenue-share tracking, set up partner portals with real-time deal visibility, and establish quarterly reporting workflows. We also help with initial partner outreach and onboarding."
       },
       {
-        q: "Do you help with CRM and tool integrations?",
-        a: "Yes. We configure integrations with Salesforce, HubSpot, Stripe, Shopify, and other platforms. Referral events, conversion data, and payout information sync automatically so your sales, finance, and ops teams work from the same source of truth."
+        q: "Do you support Consultant & Advisor referral programs?",
+        a: "Yes. We build referral flows tailored for trusted advisors—discreet tracking, compliance disclosures, per-deal or recurring payouts, and professional onboarding experiences. We ensure the program respects the advisor-client relationship while providing full attribution."
       },
       {
-        q: "What QA testing do you perform before launch?",
-        a: "We test the complete referral flow end-to-end: link generation, click tracking, cookie attribution, form submissions, conversion capture, reward calculation, and payout logging. Every campaign goes through a pre-launch checklist to ensure tracking accuracy and partner experience quality."
+        q: "What happens after my program launches?",
+        a: "Post-launch support includes weekly performance reviews, optimization recommendations, partner recruitment assistance, and campaign iterations. Whether you're scaling your customer network, adding new LinkedIn creators, or expanding your agency partner base—we help you grow what's working."
+      },
+      {
+        q: "Do you help with integrations across all program types?",
+        a: "Yes. We configure integrations with Salesforce, HubSpot, Stripe, Shopify, Calendly, and other platforms. Referral events, conversion data, and payout information sync automatically across all four program types—giving your team a unified view of partner-driven revenue."
       }
     ]
   },
@@ -306,15 +310,9 @@ export default function FAQPage() {
       <main className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
         {/* Hero */}
         <header className="text-center space-y-6 mb-16">
-          <p className="text-sm font-medium tracking-[0.3em] uppercase text-cyan-400">
-            Knowledge Base
-          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-white">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Everything you need to know about Refer Labs—from platform setup to compliance requirements.
-          </p>
 
           {/* Quick navigation */}
           <div className="flex flex-wrap justify-center gap-2 pt-4">
