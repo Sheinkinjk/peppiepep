@@ -213,18 +213,14 @@ export default async function Home() {
             Hero Section
         ───────────────────────────────────────────────────────── */}
         <section className="text-center space-y-8 mb-20">
-          <p className="text-sm font-medium tracking-[0.3em] uppercase text-cyan-400">
-            Refer Labs Partnership Studio
-          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.08] text-white max-w-5xl mx-auto tracking-tight">
-            Turn Trusted Voices Into Your{" "}
+            Launch Referral Programs For{" "}
             <span className="bg-gradient-to-r from-cyan-300 via-cyan-200 to-teal-300 bg-clip-text text-transparent">
-              Most Powerful Growth Channel
+              Professional Services Firms
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We help professional services firms build referral partnerships with LinkedIn influencers,
-            agencies, and consultants—with full attribution, compliance, and payouts your finance team can defend.
+            Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream.
           </p>
           <div className="pt-4">
             <Link
@@ -241,13 +237,10 @@ export default async function Home() {
             Launch Targeted Referral Programs — 4 Categories
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
-          <div className="text-center space-y-4 mb-14">
+          <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto">
               Launch Targeted Referral Programs
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Activate every corner of your network with programs built for each audience—customers, influencers, partners, and advisors.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
