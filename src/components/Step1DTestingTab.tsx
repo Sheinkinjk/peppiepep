@@ -199,6 +199,19 @@ export function Step1DTestingTab({
     checkRecentQaEvents();
   }, [checkRecentQaEvents]);
 
+  const formatRelativeTime = (iso: string | null) => {
+    if (!iso) return "No QA yet";
+    const date = new Date(iso);
+    const delta = Date.now() - date.getTime();
+    const mins = Math.floor(delta / 60000);
+    if (mins < 1) return "Just now";
+    if (mins < 60) return `${mins}m ago`;
+    const hours = Math.floor(mins / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    return `${days}d ago`;
+  };
+
   const runIntegrationQa = async () => {
     if (isQaRunning) return;
     setIsQaRunning(true);
@@ -323,6 +336,19 @@ export function Step1DTestingTab({
 
   return (
     <div className="space-y-8">
+      <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm">
+        <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">
+          QA status
+        </span>
+        <span className="font-semibold text-slate-800">
+          {qaSummary.recentCount > 0
+            ? `${qaSummary.recentCount} QA event${qaSummary.recentCount > 1 ? "s" : ""} in last 10m`
+            : "No QA events detected in last 10m"}
+        </span>
+        <span className="text-xs text-slate-500">
+          Last seen: {formatRelativeTime(qaSummary.lastDetectedAt)}
+        </span>
+      </div>
       {/* Header */}
       <div className="rounded-3xl border border-blue-200 bg-white p-5 shadow-sm">
         <div className="flex items-start gap-3">

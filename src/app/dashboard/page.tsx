@@ -10,6 +10,7 @@ import { headers } from "next/headers";
 import twilio from "twilio";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
+import dynamicImport from "next/dynamic";
 import { Card } from "@/components/ui/card";
 import {
   Table,
@@ -25,11 +26,9 @@ import { DashboardSectionSwitcher, SectionLink } from "@/components/dashboard/Da
 import { CSVUploadForm } from "@/components/CSVUploadForm";
 import { CampaignBuilder } from "@/components/CampaignBuilder";
 import { QuickAddCustomerForm } from "@/components/QuickAddCustomerForm";
-import { CustomersTable } from "@/components/CustomersTable";
 import { FloatingCampaignTrigger } from "@/components/FloatingCampaignTrigger";
 import { StartCampaignCTA } from "@/components/StartCampaignCTA";
 import { ManualReferralForm } from "@/components/ManualReferralForm";
-import { CampaignsTable } from "@/components/CampaignsTable";
 import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
 import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialog";
 import { ReferralsTable } from "@/components/ReferralsTable";
@@ -67,7 +66,7 @@ import {
   Minus,
   ShieldCheck,
   Coins,
-  Wallet,
+	Wallet,
 } from "lucide-react";
 import { createServerComponentClient, createServiceClient } from "@/lib/supabase";
 import { Database } from "@/types/supabase";
@@ -86,6 +85,42 @@ import { getCurrentAdmin } from "@/lib/admin-auth";
 import { maybeSendGoLiveOwnerEmail } from "@/lib/business-notifications";
 import { logger } from "@/lib/logger";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const CustomersTable = dynamicImport(
+  () => import("@/components/CustomersTable").then((m) => m.CustomersTable),
+  {
+    loading: () => <TableSkeleton rows={8} />,
+  },
+);
+
+const CampaignsTable = dynamicImport(
+  () => import("@/components/CampaignsTable").then((m) => m.CampaignsTable),
+  {
+    loading: () => <TableSkeleton rows={6} />,
+  },
+);
+
+function TableSkeleton({ rows = 5 }: { rows?: number }) {
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-4">
+      <div className="mb-4 flex items-center gap-3">
+        <Skeleton className="h-6 w-32" />
+        <Skeleton className="h-6 w-16" />
+      </div>
+      <div className="space-y-3">
+        {Array.from({ length: rows }).map((_, idx) => (
+          <div key={idx} className="grid grid-cols-4 gap-3">
+            <Skeleton className="h-8 w-full" />
+            <Skeleton className="h-8 w-full" />
+            <Skeleton className="h-8 w-full" />
+            <Skeleton className="h-8 w-full" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -139,6 +174,12 @@ async function getBusiness(): Promise<BusinessCoreFields> {
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/login");
+  const businessCache: Map<string, BusinessCoreFields> =
+    (globalThis as any).__businessCache ?? ((globalThis as any).__businessCache = new Map());
+  const cachedBusiness = businessCache.get(user.id);
+  if (cachedBusiness) {
+    return cachedBusiness;
+  }
   const selectColumns =
     "id, owner_id, name, offer_text, reward_type, reward_amount, upgrade_name, created_at, discount_capture_secret, onboarding_metadata, sign_on_bonus_enabled, sign_on_bonus_amount, sign_on_bonus_type, sign_on_bonus_description";
 
@@ -218,10 +259,12 @@ async function getBusiness(): Promise<BusinessCoreFields> {
       redirect("/login?needs_onboarding=true");
     }
 
-    return {
+    const created = {
       ...newBiz,
       onboarding_metadata: parseBusinessMetadata(newBiz?.onboarding_metadata ?? null),
     } as BusinessCoreFields;
+    businessCache.set(user.id, created);
+    return created;
   }
 
   // Attach optional fields like logo_url in a second, non-critical query so we
@@ -289,6 +332,7 @@ async function getBusiness(): Promise<BusinessCoreFields> {
     }
   }
 
+  businessCache.set(user.id, businessWithExtras);
   return businessWithExtras;
 }
 
@@ -315,6 +359,15 @@ export default async function Dashboard({
   const businessWebsiteUrl =
     ensureAbsoluteUrl(business.onboarding_metadata?.websiteUrl ?? null) ?? baseSiteUrl;
   const referralBaseUrl = businessWebsiteUrl;
+  let attributionHealth: { status?: string; healthy?: boolean; recommendation?: string } | null = null;
+  try {
+    const healthRes = await fetch(`${baseSiteUrl}/api/health/attribution`, { cache: "no-store" });
+    if (healthRes.ok) {
+      attributionHealth = await healthRes.json();
+    }
+  } catch (err) {
+    logger.warn("Health check fetch failed", err);
+  }
   async function updateSettings(formData: FormData) {
     "use server";
     const supabase = await createServerComponentClient();
@@ -2077,6 +2130,17 @@ export default async function Dashboard({
 	      content: (
 	        <div className="space-y-6">
 	        <RoiSummaryCards allReferrals={safeReferrals} safeCustomers={safeCustomers} />
+          <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">
+              Attribution health
+            </span>
+            <span className="text-sm font-semibold text-slate-800">
+              Rolling 30d: {attributionHealth?.status ?? "unknown"}
+            </span>
+            {attributionHealth?.recommendation && (
+              <span className="text-xs text-slate-600">{attributionHealth.recommendation}</span>
+            )}
+          </div>
 	        <Tabs defaultValue="referrals">
           <div className="border border-slate-200 bg-white p-4 rounded-2xl shadow-sm">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-3">

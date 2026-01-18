@@ -129,7 +129,8 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
     offerType: "Revenue share",
     offerNotes: "",
     approvalRequired: true,
-    additionalNotes: "",
+    additionalNotes:
+      "Playbook: 1) Influencer posts CTA to book demo; 2) Link to our landing page with UTMs; 3) We handle demos + revenue share. Target: founders in AU/NZ.",
   });
 
   const [activationForm, setActivationForm] = useState({
@@ -889,12 +890,13 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
         {step === 5 && (
           <div className="mt-5 space-y-4">
             <div>
-              <Label>Additional Notes</Label>
+              <Label>Playbook (recommended)</Label>
               <Textarea
                 value={form.additionalNotes || ""}
                 onChange={(e) => setForm((prev) => ({ ...prev, additionalNotes: e.target.value }))}
-                placeholder="Any context Refer Labs should know before matching partners…"
+                placeholder="e.g., CTA, landing URL, geo, ICP, and how the partner should promote."
               />
+              <p className="mt-2 text-xs text-slate-500">Pre-filled with a concise brief to avoid empty submissions.</p>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-700">
               By submitting, you acknowledge this is a paid partner discovery workflow and requests are immutable after submission (v1).

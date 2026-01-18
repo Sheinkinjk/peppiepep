@@ -32,14 +32,10 @@ export default function ReferralPartnershipsPage() {
       <main className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
         {/* Hero - Clean and impactful */}
         <section className="text-center space-y-8 mb-24">
-          <p className="text-sm font-medium tracking-[0.3em] uppercase text-cyan-400">
-            Refer Labs Partnership Studio
-          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-white max-w-4xl mx-auto">
-            Turn Trusted Voices Into Your{" "}
-            <span className="bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
-              Most Powerful Growth Channel
-            </span>
+            Turn <span className="text-cyan-400">Trusted Voices</span> Into{" "}
+            <br className="hidden sm:block" />
+            Your Most Powerful Growth Channel
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
             We help professional services firms build referral partnerships with LinkedIn influencers,
@@ -51,20 +47,6 @@ export default function ReferralPartnershipsPage() {
               primaryLabel="Apply for Referral Partnerships"
               showScheduleCall={true}
             />
-          </div>
-        </section>
-
-        {/* The Problem / Solution narrative */}
-        <section className="mb-24">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Most Partner Programs Fail Because They Can't Prove ROI
-            </h2>
-            <p className="text-slate-300 leading-relaxed">
-              You know partnerships drive growth. But without proper tracking, you're left with
-              spreadsheets, guesswork, and awkward conversations with finance about "unmeasurable"
-              marketing spend. <span className="text-cyan-300 font-medium">We solve this.</span>
-            </p>
           </div>
         </section>
 

@@ -125,6 +125,23 @@ export function ProgramSettingsDialog({
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
   const [isUploadingRewardTerms, setIsUploadingRewardTerms] = useState(false);
 
+  const rewardLabel = (() => {
+    switch (settingsRewardType) {
+      case "revenue_share":
+        return "Recurring revenue share (%)";
+      case "credit":
+        return "Store credit";
+      case "points":
+        return "Cash bonus / points";
+      case "upgrade":
+        return "VIP upgrade";
+      case "discount":
+        return "One-time discount";
+      default:
+        return "Reward";
+    }
+  })();
+
   const handleLogoFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!uploadLogoAction) return;
     const file = event.target.files?.[0];
@@ -298,6 +315,14 @@ export function ProgramSettingsDialog({
             . These settings power your referral pages, ambassador portal, and
             future campaigns.
           </DialogDescription>
+          <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
+            Live model: {rewardLabel}
+            {settingsRewardAmount ? (
+              <span className="ml-1 text-slate-500">
+                · {settingsRewardAmount}
+              </span>
+            ) : null}
+          </div>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-5 pt-2">
@@ -479,11 +504,11 @@ export function ProgramSettingsDialog({
                 }
                 className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
               >
-                <option value="credit">Credit</option>
-                <option value="revenue_share">Revenue share (%)</option>
-                <option value="upgrade">Upgrade</option>
-                <option value="discount">Discount</option>
-                <option value="points">Points</option>
+                <option value="credit">Store credit</option>
+                <option value="revenue_share">Recurring revenue share (%)</option>
+                <option value="upgrade">VIP upgrade</option>
+                <option value="discount">One-time discount</option>
+                <option value="points">Cash bonus / points</option>
               </select>
             </div>
             <div className="space-y-2">

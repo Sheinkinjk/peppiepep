@@ -83,6 +83,12 @@ export function CampaignBuilder({
   const [isSending, setIsSending] = useState(false);
   const [isSendingTestEmail, setIsSendingTestEmail] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const dispatchDisabled = process.env.NEXT_PUBLIC_CAMPAIGN_SCHEDULER_READY === "false";
+  const dispatchStatusLabel = dispatchDisabled ? "Sending paused" : "Sending enabled";
+  const dispatchStatusColor = dispatchDisabled ? "bg-amber-50 border-amber-200 text-amber-900" : "bg-emerald-50 border-emerald-200 text-emerald-900";
+  const dispatchStatusText = dispatchDisabled
+    ? "Campaigns will queue but not deliver until dispatch is enabled (toggle DISABLE_CAMPAIGN_DISPATCH)."
+    : "Campaigns will deliver to selected recipients.";
   const [cookieStatus, setCookieStatus] = useState<{ hasAttribution: boolean; message?: string; daysRemaining?: number } | null>(null);
   const [cookieLoading, setCookieLoading] = useState(false);
   const notifyCampaignStatus = (type: "success" | "error", text: string, title?: string) => {
@@ -560,6 +566,15 @@ export function CampaignBuilder({
 
   return (
     <>
+      {!isModalOnly && (
+        <Card className={`mb-4 border ${dispatchStatusColor}`}>
+          <div className="flex flex-col gap-1 rounded-2xl px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="text-sm font-semibold">{dispatchStatusLabel}</div>
+            <div className="text-xs text-slate-600">{dispatchStatusText}</div>
+          </div>
+        </Card>
+      )}
+
       {/* Status Message */}
       {!isModalOnly && statusMessage && (
         <Card className={`p-4 mb-6 border-2 ${
