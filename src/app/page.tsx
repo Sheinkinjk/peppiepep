@@ -35,28 +35,28 @@ const heroBadges: HeroBadgeSpec[] = [
     title: "NEW INTRODUCTION",
     text: "Anderson Law referred a client",
     colors: ["#2c3e50", "#34495e"],
-    position: "top-4 left-4",
+    position: "top-2 left-2 sm:top-4 sm:left-4",
   },
   {
     id: "hero-vip",
     title: "CASE CLOSED",
-    text: "Smith & Partners confirmed new matter",
+    text: "Smith & Partners confirmed",
     colors: ["#16a085", "#1abc9c"],
-    position: "top-4 right-4",
+    position: "top-2 right-2 sm:top-4 sm:right-4",
   },
   {
     id: "hero-leaderboard",
     title: "TOP PARTNER",
     text: "Miller CPA referred 18 clients",
     colors: ["#27ae60", "#2ecc71"],
-    position: "bottom-24 left-4",
+    position: "bottom-2 left-2 sm:bottom-24 sm:left-4",
   },
   {
     id: "hero-revenue",
     title: "REVENUE ATTRIBUTED",
     text: "$425,000 from referrals",
     colors: ["#2980b9", "#3498db"],
-    position: "bottom-24 right-4",
+    position: "bottom-2 right-2 sm:bottom-24 sm:right-4",
   },
 ];
 
@@ -67,33 +67,45 @@ const heroBadgeOrientation: Record<string, string> = {
   "hero-revenue": "-rotate-2 origin-bottom-right",
 };
 
-const HeroBadge = ({ badge, className = "" }: { badge: HeroBadgeSpec; className?: string }) => (
+const HeroBadge = ({ badge, className = "", isMobile = false }: { badge: HeroBadgeSpec; className?: string; isMobile?: boolean }) => (
   <div
     className={cn(
-      "hero-badge pointer-events-none select-none rounded-2xl border border-white/20",
-      "flex flex-row items-center gap-2.5 w-[240px] h-[70px] px-3 py-2.5 transition-all duration-300",
-      "opacity-60 backdrop-blur-lg shadow-lg shadow-black/15",
+      "hero-badge pointer-events-none select-none border border-white/20 transition-all duration-300",
+      "backdrop-blur-lg shadow-lg shadow-black/15",
+      isMobile
+        ? "rounded-lg w-[120px] h-[44px] px-2 py-1.5 gap-1.5 opacity-50"
+        : "rounded-2xl w-[240px] h-[70px] px-3 py-2.5 gap-2.5 opacity-60",
+      "flex flex-row items-center",
       className,
     )}
     style={{
       background: `linear-gradient(135deg, ${badge.colors[0]}dd, ${badge.colors[1]}dd)`,
     }}
   >
-    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/95 shadow-md">
+    <div className={cn(
+      "flex flex-shrink-0 items-center justify-center rounded-lg bg-white/95 shadow-md",
+      isMobile ? "h-6 w-6" : "h-10 w-10 rounded-xl"
+    )}>
       <Image
         src="/logo.svg"
         alt="Refer Labs"
-        width={32}
-        height={32}
-        className="h-7 w-7 object-contain"
+        width={isMobile ? 18 : 32}
+        height={isMobile ? 18 : 32}
+        className={isMobile ? "h-4 w-4 object-contain" : "h-7 w-7 object-contain"}
         priority={true}
       />
     </div>
     <div className="flex-1 min-w-0 flex flex-col justify-center">
-      <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-white/90 mb-0.5 leading-tight">
+      <p className={cn(
+        "font-bold uppercase tracking-wider text-white/90 leading-tight",
+        isMobile ? "text-[6px] tracking-[0.1em] mb-0" : "text-[9px] tracking-[0.16em] mb-0.5"
+      )}>
         {badge.title}
       </p>
-      <p className="text-xs font-semibold leading-tight text-white line-clamp-2">
+      <p className={cn(
+        "font-semibold leading-tight text-white line-clamp-1",
+        isMobile ? "text-[8px]" : "text-xs line-clamp-2"
+      )}>
         {badge.text}
       </p>
     </div>
@@ -290,7 +302,19 @@ export default async function Home() {
             Hero Section
         ───────────────────────────────────────────────────────── */}
         <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-140px)] py-8 sm:py-12">
-          {/* Corner notification badges - Desktop only (xl+) */}
+          {/* Corner notification badges - Mobile (smaller, in corners) */}
+          <div className="pointer-events-none absolute inset-0 block sm:hidden">
+            {heroBadges.map((badge) => (
+              <HeroBadge
+                key={badge.id}
+                badge={badge}
+                isMobile={true}
+                className={cn("absolute", badge.position, heroBadgeOrientation[badge.id])}
+              />
+            ))}
+          </div>
+
+          {/* Corner notification badges - Desktop (xl+) */}
           <div className="pointer-events-none absolute inset-0 hidden xl:block">
             {heroBadges.map((badge) => (
               <HeroBadge
@@ -301,16 +325,27 @@ export default async function Home() {
             ))}
           </div>
 
-          <div className="relative z-10 space-y-5 sm:space-y-6">
-            <h1 className="text-[1.75rem] leading-[1.15] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] xl:text-[3rem] font-black text-white max-w-4xl mx-auto tracking-tight">
-              <span className="block sm:inline">Launch Successful Referral Programs</span>
-              <span className="hidden sm:inline"> </span>
-              <span className="block sm:inline">For <span className="text-cyan-400">Professional Services</span> Firms</span>
+          <div className="relative z-10 space-y-4 sm:space-y-6 px-4 sm:px-0">
+            {/* Mobile: 4 lines, 2 words each */}
+            <h1 className="font-black text-white max-w-4xl mx-auto tracking-tight">
+              {/* Mobile layout - 4 lines, 2 words per line */}
+              <span className="block sm:hidden text-[1.625rem] leading-[1.2]">
+                <span className="block">Launch Successful</span>
+                <span className="block">Referral Programs</span>
+                <span className="block">For <span className="text-cyan-400">Professional</span></span>
+                <span className="block"><span className="text-cyan-400">Services</span> Firms</span>
+              </span>
+              {/* Desktop layout */}
+              <span className="hidden sm:block sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] xl:text-[3rem] leading-[1.15]">
+                <span className="inline">Launch Successful Referral Programs</span>
+                {" "}
+                <span className="inline">For <span className="text-cyan-400">Professional Services</span> Firms</span>
+              </span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 lg:whitespace-nowrap">
+            <p className="text-[13px] sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed sm:px-0 lg:whitespace-nowrap">
               Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream
             </p>
-            <div className="pt-3 sm:pt-4">
+            <div className="pt-2 sm:pt-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 sm:px-8 py-3 sm:py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
