@@ -1,11 +1,14 @@
 /**
  * Dashboard Login Notification API
- * Sends an email to admin (jarred@referlabs.com.au) whenever a user accesses the dashboard
+ * Sends an email to admin whenever a user accesses the dashboard
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import { createServerComponentClient } from "@/lib/supabase";
 import { sendAdminNotification, buildAdminLoginAlertEmail } from "@/lib/email-notifications";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:dashboard:login-notify");
 
 // Rate limiting: Track last notification per user (in-memory for simplicity)
 // Key: user_id, Value: timestamp
@@ -70,14 +73,14 @@ export async function POST(request: NextRequest) {
         message: "Login notification sent"
       });
     } else {
-      console.error("Failed to send login notification:", result.error);
+      logger.error("Failed to send login notification", { email: userEmail, error: result.error });
       return NextResponse.json(
         { error: "Failed to send notification", details: result.error },
         { status: 500 }
       );
     }
   } catch (error) {
-    console.error("Dashboard login notification error:", error);
+    logger.error("Dashboard login notification error", { error });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

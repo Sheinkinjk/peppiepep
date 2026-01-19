@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent, inferDeviceFromUserAgent } from "@/lib/referral-events";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:track-conversion");
 
 // SECURITY FIX: Add rate limiting and origin validation
 export async function POST(request: NextRequest) {
@@ -86,7 +89,7 @@ export async function POST(request: NextRequest) {
         });
 
       if (referralError) {
-        console.error("Failed to create referral record:", referralError);
+        logger.error("Failed to create referral record", { error: referralError });
       }
     }
 
@@ -96,7 +99,7 @@ export async function POST(request: NextRequest) {
       tracked: true,
     });
   } catch (error) {
-    console.error("Error tracking conversion:", error);
+    logger.error("Error tracking conversion", { error });
     return NextResponse.json(
       { error: "Failed to track conversion" },
       { status: 500 }

@@ -76,15 +76,12 @@ export async function POST(request: Request) {
   `;
 
   try {
-    const sendResult = await sendAdminNotification({
+    await sendAdminNotification({
       subject: `🧲 Lead Hacking automation brief: ${businessName} (${email})`,
       html,
     });
-    if (!sendResult.success) {
-      console.error("Lead hacking automation brief email failed:", sendResult.error);
-    }
-  } catch (error) {
-    console.error("Lead hacking automation brief notification failed:", error);
+  } catch {
+    // Non-fatal notification error
   }
 
   return NextResponse.json({ success: true });

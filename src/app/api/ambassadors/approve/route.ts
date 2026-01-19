@@ -3,6 +3,9 @@ import { createServerComponentClient } from "@/lib/supabase";
 import { Resend } from "resend";
 import type { Database } from "@/types/supabase";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:ambassadors:approve");
 
 type CustomerRow = Database["public"]["Tables"]["customers"]["Row"];
 type AmbassadorCustomer = Pick<
@@ -82,7 +85,7 @@ export async function POST(request: NextRequest) {
       .eq("status", "pending");
 
     if (fetchError) {
-      console.error("Error fetching customers:", fetchError);
+      logger.error("Error fetching customers", { error: fetchError });
       return NextResponse.json(
         { error: "Failed to fetch customers" },
         { status: 500 }
@@ -106,7 +109,7 @@ export async function POST(request: NextRequest) {
       .eq("business_id", businessId);
 
     if (updateError) {
-      console.error("Error updating customer status:", updateError);
+      logger.error("Error updating customer status", { error: updateError });
       return NextResponse.json(
         { error: "Failed to update customer status" },
         { status: 500 }
@@ -155,7 +158,7 @@ export async function POST(request: NextRequest) {
 
           emailsSent++;
         } catch (emailError) {
-          console.error(`Failed to send email to ${customer.email}:`, emailError);
+          logger.error("Failed to send welcome email", { email: customer.email, error: emailError });
           emailsFailed++;
         }
       }
@@ -177,7 +180,7 @@ export async function POST(request: NextRequest) {
           }),
         });
       } catch (emailError) {
-        console.error("Failed to send owner notification:", emailError);
+        logger.error("Failed to send owner notification", { error: emailError });
       }
     }
 
@@ -189,7 +192,7 @@ export async function POST(request: NextRequest) {
       message: `${customers.length} ambassador${customers.length === 1 ? "" : "s"} approved successfully`,
     });
   } catch (error) {
-    console.error("Error approving ambassadors:", error);
+    logger.error("Error approving ambassadors", { error });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

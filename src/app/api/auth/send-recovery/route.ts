@@ -4,6 +4,9 @@ import { Resend } from "resend";
 
 import { createServiceClient } from "@/lib/supabase";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:auth:send-recovery");
 
 const bodySchema = z.object({
   email: z.string().email(),
@@ -32,7 +35,7 @@ export async function POST(request: Request) {
   });
 
   if (error || !data?.properties) {
-    console.error("Failed to generate recovery link", error);
+    logger.error("Failed to generate recovery link", { error });
     return NextResponse.json(
       { error: "Unable to generate a recovery link right now, please try again shortly." },
       { status: 500 },
@@ -85,7 +88,7 @@ export async function POST(request: Request) {
       ...(process.env.RESEND_REPLY_TO?.trim() ? { reply_to: process.env.RESEND_REPLY_TO.trim() } : {}),
     });
   } catch (sendError) {
-    console.error("Resend recovery email failed", sendError);
+    logger.error("Resend recovery email failed", { error: sendError });
     return NextResponse.json(
       { error: "Unable to send the recovery email right now. Try again in a moment." },
       { status: 500 },

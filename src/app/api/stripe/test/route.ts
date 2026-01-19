@@ -41,8 +41,6 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Stripe test failed:', error);
-
     // Check if it's an authentication error
     const errorMessage = (error as Error).message;
     const isAuthError = errorMessage.includes('API key') || errorMessage.includes('Invalid');

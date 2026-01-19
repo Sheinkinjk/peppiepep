@@ -67,7 +67,6 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Commissions fetch error:', error);
     return NextResponse.json(
       {
         success: false,
@@ -143,7 +142,6 @@ export async function PATCH(request: NextRequest) {
       commission,
     });
   } catch (error) {
-    console.error('Commission update error:', error);
     return NextResponse.json(
       {
         success: false,

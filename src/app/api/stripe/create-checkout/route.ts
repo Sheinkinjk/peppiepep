@@ -119,7 +119,6 @@ export async function POST(request: NextRequest) {
       url: session.url,
     });
   } catch (error) {
-    console.error('Stripe checkout error:', error);
     return NextResponse.json(
       {
         success: false,

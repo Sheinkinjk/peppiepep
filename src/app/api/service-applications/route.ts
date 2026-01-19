@@ -3,6 +3,9 @@ import { z } from "zod";
 
 import { createServiceClient } from "@/lib/supabase";
 import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:service-applications");
 
 const applicationSchema = z.object({
   company: z.string().min(1, "Company is required").max(200),
@@ -183,7 +186,7 @@ export async function POST(request: Request) {
     });
 
     if (dbError) {
-      console.error("Failed to store service application:", dbError);
+      logger.error("Failed to store service application", { error: dbError });
       // Continue to send email even if DB fails
     }
 
@@ -206,13 +209,13 @@ export async function POST(request: Request) {
     });
 
     if (!notification.success) {
-      console.error("Failed to send notification email:", notification.error);
+      logger.error("Failed to send notification email", { error: notification.error });
       // Don't fail the request if email fails but DB succeeded
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Service application error:", error);
+    logger.error("Service application error", { error });
     return NextResponse.json({ error: "Failed to submit application" }, { status: 500 });
   }
 }
@@ -233,7 +236,7 @@ export async function GET() {
 
     return NextResponse.json({ data });
   } catch (error) {
-    console.error("Failed to fetch service applications:", error);
+    logger.error("Failed to fetch service applications", { error });
     return NextResponse.json({ error: "Failed to fetch applications" }, { status: 500 });
   }
 }

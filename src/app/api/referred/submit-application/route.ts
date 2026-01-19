@@ -3,8 +3,16 @@ import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent, inferDeviceFromUserAgent } from "@/lib/referral-events";
 import { Resend } from "resend";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { createApiLogger } from "@/lib/api-logger";
 
+const logger = createApiLogger("api:referred:submit-application");
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+function getAdminEmails(): string[] {
+  const raw = process.env.ADMIN_ALERT_EMAILS?.trim();
+  if (!raw) return ["jarred@referlabs.com.au"];
+  return raw.split(",").map((e) => e.trim()).filter(Boolean);
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -102,13 +110,6 @@ export async function POST(request: NextRequest) {
     const supabase = await createServiceClient();
     const device = inferDeviceFromUserAgent(request.headers.get("user-agent"));
 
-    console.log("📝 Creating referral record with:", {
-      business_id: businessId,
-      ambassador_id: ambassadorId,
-      referred_name: fullName,
-      referred_email: email,
-    });
-
     // Create a referral record for this application
     // Note: metadata is NOT a column in referrals table - we store extra data in referral_events
     const { data: referralData, error: referralError } = await supabase
@@ -127,8 +128,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (referralError) {
-      console.error("❌ Failed to create referral record:", referralError);
-      console.error("Error details:", JSON.stringify(referralError, null, 2));
+      logger.error("Failed to create referral record", { error: referralError });
       return NextResponse.json(
         {
           error: "Failed to create referral record",
@@ -138,8 +138,6 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
-
-    console.log("✅ Referral record created:", referralData?.id);
 
     // Log the application submission event with full details in metadata
     await logReferralEvent({
@@ -165,11 +163,10 @@ export async function POST(request: NextRequest) {
     });
 
     // Send notification email to admin
-    console.log("📧 Sending admin notification email to jarred@referlabs.com.au...");
     try {
       await resend.emails.send({
         from: "Refer Labs <noreply@referlabs.com.au>",
-        to: ["jarred@referlabs.com.au"],
+        to: getAdminEmails(),
         subject: `🎯 New Referred Application: ${businessName}`,
         html: `
 <!DOCTYPE html>
@@ -312,14 +309,13 @@ export async function POST(request: NextRequest) {
 </html>
         `,
       });
-      console.log("✅ Admin notification email sent successfully");
+      logger.info("Admin notification email sent", { businessName });
     } catch (emailError) {
-      console.error("❌ Failed to send admin notification email:", emailError);
+      logger.error("Failed to send admin notification email", { error: emailError });
       // Don't fail the request if email fails
     }
 
     // Send confirmation email to applicant
-    console.log(`📧 Sending confirmation email to ${email}...`);
     try {
       const applicantHtml = buildPremiumEmail({
         title: "Application received",
@@ -356,21 +352,22 @@ export async function POST(request: NextRequest) {
         subject: "Application Received - Refer Labs",
         html: applicantHtml,
       });
-      console.log("✅ Confirmation email sent successfully");
+      logger.info("Confirmation email sent", { email });
     } catch (emailError) {
-      console.error("❌ Failed to send confirmation email:", emailError);
+      logger.error("Failed to send confirmation email", { email, error: emailError });
       // Don't fail the request if email fails
     }
 
-    console.log("🎉 Application submission completed successfully!");
     return NextResponse.json({
       success: true,
       message: "Application submitted successfully",
       referralId: referralData?.id,
     });
   } catch (error) {
-    console.error("❌ Critical error submitting application:", error);
-    console.error("Error stack:", error instanceof Error ? error.stack : "No stack trace");
+    logger.error("Critical error submitting application", {
+      error,
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return NextResponse.json(
       {
         error: "Failed to submit application",

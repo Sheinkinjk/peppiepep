@@ -48,8 +48,8 @@ export async function POST(request: NextRequest) {
               cookiesToSet.forEach(({ name, value, options }) =>
                 cookieStore.set(name, value, options)
               );
-            } catch (error) {
-              console.error('Cookie setting error:', error);
+            } catch {
+              // Cookie setting may fail in certain contexts
             }
           },
         },
@@ -106,12 +106,12 @@ export async function POST(request: NextRequest) {
         userAgent,
       }),
     }).catch((notifyError) => {
-      console.error("Failed to send login alert:", notifyError);
+      logger.error("Failed to send login alert", { error: notifyError });
     });
 
     return NextResponse.json({ success: true, user: data.user });
   } catch (error) {
-    console.error('Sign in error:', error);
+    logger.error('Sign in error', { error });
     return NextResponse.json(
       { error: 'Authentication failed. Please try again.' },
       { status: 500 }

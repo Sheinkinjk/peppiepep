@@ -3,6 +3,9 @@ import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { parsePaginationParams, createPaginatedResponse, applyPagination } from "@/lib/pagination";
 import { applyRateLimit, createAuditLog, getSecurityHeaders } from "@/lib/security";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:admin:partner-applications");
 
 type PartnerApplicationCustomerLite = {
   id: string;
@@ -74,7 +77,7 @@ export async function GET(request: NextRequest) {
     const { count: total, error: countError } = await countQuery;
 
     if (countError) {
-      console.error("Error counting applications:", countError);
+      logger.error("Error counting applications", { error: countError });
       return NextResponse.json(
         { error: "Failed to count applications" },
         { status: 500 }
@@ -111,7 +114,7 @@ export async function GET(request: NextRequest) {
     const { data: applications, error } = await dataQuery;
 
     if (error) {
-      console.error("Error fetching partner applications:", error);
+      logger.error("Error fetching partner applications", { error });
       return NextResponse.json(
         { error: "Failed to fetch applications" },
         { status: 500 }
@@ -202,7 +205,7 @@ export async function GET(request: NextRequest) {
       }
     );
   } catch (error) {
-    console.error("Error in partner applications API:", error);
+    logger.error("Error in partner applications API", { error });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500, headers: getSecurityHeaders() }

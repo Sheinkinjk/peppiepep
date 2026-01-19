@@ -3,6 +3,9 @@ import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { Resend } from "resend";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:admin:partner-applications:request-info");
 
 type PartnerApplicationLite = {
   id: string;
@@ -43,7 +46,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (fetchError || !application) {
-      console.error("Partner application not found:", fetchError);
+      logger.error("Partner application not found", { applicationId, error: fetchError });
       return NextResponse.json(
         { error: "Application not found" },
         { status: 404 }
@@ -91,7 +94,7 @@ export async function POST(request: NextRequest) {
       message: "Request sent successfully",
     });
   } catch (error) {
-    console.error("Error requesting more info:", error);
+    logger.error("Error requesting more info", { error });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

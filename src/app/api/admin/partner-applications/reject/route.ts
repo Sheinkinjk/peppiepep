@@ -3,6 +3,9 @@ import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { Resend } from "resend";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:admin:partner-applications:reject");
 
 type PartnerApplicationLite = {
   id: string;
@@ -46,7 +49,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (fetchError || !application) {
-      console.error("Partner application not found:", fetchError);
+      logger.error("Partner application not found", { applicationId, error: fetchError });
       return NextResponse.json(
         { error: "Application not found" },
         { status: 404 }
@@ -72,7 +75,7 @@ export async function POST(request: NextRequest) {
       .eq("id", applicationId);
 
     if (updateError) {
-      console.error("Failed to reject application:", updateError);
+      logger.error("Failed to reject application", { applicationId, error: updateError });
       return NextResponse.json(
         { error: "Failed to update application status" },
         { status: 500 }
@@ -104,7 +107,7 @@ export async function POST(request: NextRequest) {
           html,
         });
       } catch (emailError) {
-        console.error("Failed to send rejection email:", emailError);
+        logger.error("Failed to send rejection email", { email: appData.email, error: emailError });
       }
     }
 
@@ -113,7 +116,7 @@ export async function POST(request: NextRequest) {
       message: "Partner application rejected successfully",
     });
   } catch (error) {
-    console.error("Error rejecting partner application:", error);
+    logger.error("Error rejecting partner application", { error });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

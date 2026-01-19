@@ -129,7 +129,6 @@ export async function POST(request: NextRequest) {
       exists: false,
     });
   } catch (error) {
-    console.error('Connect account creation error:', error);
     return NextResponse.json(
       {
         success: false,
@@ -212,8 +211,7 @@ export async function GET(request: NextRequest) {
           requirements: account.requirements,
         },
       });
-    } catch (stripeError) {
-      console.error('Failed to refresh account from Stripe:', stripeError);
+    } catch {
       // Return cached data if Stripe call fails
       return NextResponse.json({
         success: true,
@@ -229,7 +227,6 @@ export async function GET(request: NextRequest) {
       });
     }
   } catch (error) {
-    console.error('Connect account status error:', error);
     return NextResponse.json(
       {
         success: false,

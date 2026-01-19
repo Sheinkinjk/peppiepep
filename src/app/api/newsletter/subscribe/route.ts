@@ -45,7 +45,7 @@ export async function POST(request: Request) {
   });
 
   if (!notifyResult.success) {
-    console.warn("Newsletter subscription email failed:", notifyResult.error);
+    // Email notification failed - non-critical
   }
 
   return NextResponse.json({ success: true, status: error?.code === "23505" ? "exists" : "created" });

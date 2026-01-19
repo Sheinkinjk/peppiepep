@@ -34,8 +34,7 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Chatbot lead capture error:", error);
+  } catch {
     // Don't fail - this is non-critical
     return NextResponse.json({ success: true });
   }

@@ -5,6 +5,9 @@ import { Resend } from "resend";
 import { createServiceClient } from "@/lib/supabase";
 import { sendAdminNotification, buildNewAccountEmail } from "@/lib/email-notifications";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:auth:send-confirmation");
 
 const bodySchema = z.object({
   email: z.string().email(),
@@ -33,7 +36,7 @@ export async function POST(request: Request) {
   });
 
   if (error || !data?.properties) {
-    console.error("Failed to generate confirmation link", error);
+    logger.error("Failed to generate confirmation link", { error });
     return NextResponse.json(
       { error: "Unable to send confirmation email. Please try again shortly." },
       { status: 500 },
@@ -91,11 +94,11 @@ export async function POST(request: Request) {
         createdAt: new Date().toISOString(),
       }),
     }).catch((err) => {
-      console.error("Failed to send admin notification for new account:", err);
+      logger.error("Failed to send admin notification for new account", { error: err });
       // Don't fail the request if admin notification fails
     });
   } catch (sendError) {
-    console.error("Resend confirmation email failed", sendError);
+    logger.error("Resend confirmation email failed", { error: sendError });
     return NextResponse.json(
       { error: "Unable to send the confirmation email right now. Try again in a moment." },
       { status: 500 },

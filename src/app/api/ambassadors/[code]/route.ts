@@ -126,8 +126,7 @@ export async function GET(
       totalReferrals,
       completedReferrals,
     });
-  } catch (error) {
-    console.error("Ambassador API error:", error);
+  } catch {
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

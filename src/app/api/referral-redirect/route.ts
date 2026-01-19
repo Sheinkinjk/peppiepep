@@ -87,8 +87,8 @@ export async function GET(request: NextRequest) {
             "partner_program",
         },
       });
-    } catch (error) {
-      console.warn("Referral redirect event logging failed", error);
+    } catch {
+      // Event logging failed silently - cookie attribution will still work
     }
   }
 

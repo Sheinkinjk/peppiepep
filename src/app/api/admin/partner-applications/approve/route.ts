@@ -3,6 +3,15 @@ import { createServiceClient } from "@/lib/supabase";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { Resend } from "resend";
 import { buildPremiumEmail } from "@/lib/premium-email";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:admin:partner-applications:approve");
+
+function getAdminEmails(): string[] {
+  const raw = process.env.ADMIN_ALERT_EMAILS?.trim();
+  if (!raw) return ["jarred@referlabs.com.au"];
+  return raw.split(",").map((e) => e.trim()).filter(Boolean);
+}
 
 type PartnerApplicationCustomer = {
   id: string;
@@ -66,7 +75,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (fetchError || !application) {
-      console.error("Partner application not found:", fetchError);
+      logger.error("Partner application not found", { applicationId, error: fetchError });
       return NextResponse.json(
         { error: "Application not found" },
         { status: 404 }
@@ -99,7 +108,7 @@ export async function POST(request: NextRequest) {
       .eq("id", applicationId);
 
     if (updateAppError) {
-      console.error("Failed to approve application:", updateAppError);
+      logger.error("Failed to approve application", { applicationId, error: updateAppError });
       return NextResponse.json(
         { error: "Failed to update application status" },
         { status: 500 }
@@ -116,7 +125,7 @@ export async function POST(request: NextRequest) {
       .eq("id", appData.customer_id);
 
     if (updateCustomerError) {
-      console.error("Failed to update customer status:", updateCustomerError);
+      logger.error("Failed to update customer status", { customerId: appData.customer_id, error: updateCustomerError });
     }
 
     // Generate referral URLs
@@ -200,7 +209,7 @@ export async function POST(request: NextRequest) {
           html,
         });
       } catch (emailError) {
-        console.error("Failed to send approval email:", emailError);
+        logger.error("Failed to send approval email", { email: appData.email, error: emailError });
         // Don't fail the approval if email fails
       }
     }
@@ -211,7 +220,7 @@ export async function POST(request: NextRequest) {
         const resend = new Resend(resendApiKey);
         await resend.emails.send({
           from: fromEmail,
-          to: "jarred@referlabs.com.au",
+          to: getAdminEmails(),
           subject: `✅ Partner Approved: ${appData.name}`,
           html: `
           <div style="font-family:system-ui,-apple-system,sans-serif;max-width:600px;margin:0 auto;">
@@ -230,7 +239,7 @@ export async function POST(request: NextRequest) {
         `,
         });
       } catch (adminEmailError) {
-        console.error("Failed to send admin confirmation:", adminEmailError);
+        logger.error("Failed to send admin confirmation", { error: adminEmailError });
       }
     }
 
@@ -241,7 +250,7 @@ export async function POST(request: NextRequest) {
       ambassadorPortalLink,
     });
   } catch (error) {
-    console.error("Error approving partner application:", error);
+    logger.error("Error approving partner application", { error });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

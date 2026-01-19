@@ -209,7 +209,6 @@ export async function POST(request: NextRequest) {
       );
 
     if (updateError) {
-      console.error('Failed to update commissions:', updateError);
       // Don't fail the payout if commission update fails
     }
 
@@ -243,8 +242,8 @@ export async function POST(request: NextRequest) {
           html,
         });
       }
-    } catch (emailError) {
-      console.error('Failed to send ambassador payout email (non-fatal):', emailError);
+    } catch {
+      // Non-fatal email error
     }
 
     return NextResponse.json({
@@ -259,7 +258,6 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Payout creation error:', error);
     return NextResponse.json(
       {
         success: false,

@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerComponentClient } from "@/lib/supabase";
-import { requireAdmin, getCurrentAdmin } from "@/lib/admin-auth";
+import { getCurrentAdmin } from "@/lib/admin-auth";
 import { parsePaginationParams, createPaginatedResponse, applyPagination } from "@/lib/pagination";
 import { applyRateLimit, createAuditLog, getSecurityHeaders } from "@/lib/security";
+import { createApiLogger } from "@/lib/api-logger";
+
+const logger = createApiLogger("api:admin:compliance");
 
 /**
  * GET /api/admin/compliance
@@ -61,7 +64,7 @@ export async function GET(request: NextRequest) {
     const { count: total, error: countError } = await countQuery;
 
     if (countError) {
-      console.error("Error counting partners:", countError);
+      logger.error("Error counting partners", { error: countError });
       return NextResponse.json(
         { error: "Failed to count partners" },
         { status: 500, headers: getSecurityHeaders() }
@@ -98,7 +101,7 @@ export async function GET(request: NextRequest) {
     const { data: partners, error } = await query;
 
     if (error) {
-      console.error("Error fetching compliance data:", error);
+      logger.error("Error fetching compliance data", { error });
       return NextResponse.json(
         { error: "Failed to fetch compliance data" },
         { status: 500 }
@@ -149,7 +152,7 @@ export async function GET(request: NextRequest) {
       }
     );
   } catch (error) {
-    console.error("Compliance API error:", error);
+    logger.error("Compliance API error", { error });
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Internal server error" },
       { status: 500, headers: getSecurityHeaders() }
@@ -238,7 +241,7 @@ export async function POST(request: NextRequest) {
       }
     );
   } catch (error) {
-    console.error("Compliance update error:", error);
+    logger.error("Compliance update error", { error });
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Internal server error" },
       { status: 500, headers: getSecurityHeaders() }
