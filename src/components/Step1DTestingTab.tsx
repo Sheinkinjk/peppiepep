@@ -284,8 +284,8 @@ export function Step1DTestingTab({
 
       const result = await response.json().catch(() => ({}));
       toast({
-        title: "Integration QA cleared",
-        description: `${result.deleted ?? 0} QA events removed from Measure ROI.`,
+        title: "QA test events cleared",
+        description: result.message || `${result.deleted ?? 0} QA test events removed. Live data was not affected.`,
       });
       setQaResultsHint(false);
       setQaSummary({ lastDetectedAt: null, recentCount: 0, eventTypes: [] });
@@ -436,24 +436,33 @@ export function Step1DTestingTab({
       <Dialog open={qaCleanupConfirmOpen} onOpenChange={setQaCleanupConfirmOpen}>
         <DialogContent className="max-w-md md:max-w-lg max-h-[80vh] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
           <DialogHeader>
-            <DialogTitle className="text-xl font-black text-slate-900">Clear QA Events</DialogTitle>
+            <DialogTitle className="text-xl font-black text-slate-900">Clear QA Test Events</DialogTitle>
             <DialogDescription className="text-sm text-slate-600">
-              This removes QA test events from Measure ROI and Recent Activity so your dashboard reflects only live traffic.
+              This removes <strong>only QA test events</strong> from Measure ROI so your dashboard reflects only live traffic.
             </DialogDescription>
           </DialogHeader>
-	          <div className="mt-4 space-y-2 rounded-2xl border border-rose-200 bg-rose-50/70 p-4 text-sm text-rose-900">
-	            <p className="font-semibold">This will delete QA data from:</p>
-            <ul className="space-y-1 text-rose-900/90">
-              <li>• Measure ROI → Interaction Hub counts</li>
-              <li>• Measure ROI → Recent Interaction Activity list</li>
-              <li>• Measure ROI → Journey timeline</li>
+          <div className="mt-4 space-y-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4 text-sm text-emerald-900">
+            <p className="font-semibold flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Your live data is SAFE
+            </p>
+            <p className="text-xs text-emerald-800">
+              This action <strong>only removes test events</strong> created by "Run Integration QA". Real referrals,
+              conversions, and revenue data will NOT be affected.
+            </p>
+          </div>
+          <div className="mt-3 space-y-2 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+            <p className="font-semibold text-slate-900">QA test events that will be removed:</p>
+            <ul className="space-y-1 text-slate-600 text-xs">
+              <li>• Test events in Measure ROI → Interaction Hub</li>
+              <li>• Test entries in Recent Interaction Activity (source: "integration_qa")</li>
+              <li>• Test entries in Journey timeline</li>
             </ul>
-	            <p className="mt-2 text-xs text-rose-900/80">
-	              Only events tagged as simulated QA (<span className="font-semibold">source = integration_qa</span> and{" "}
-	              <span className="font-semibold">metadata.qa_simulated = true</span>) are removed. This does not touch
-	              referrals, customers, conversions, or revenue data.
-	            </p>
-	          </div>
+          </div>
+          <div className="mt-3 rounded-xl border border-slate-200 bg-white px-3 py-2 text-[11px] text-slate-500">
+            Technical filter: Only events with <code className="bg-slate-100 px-1 rounded">source=integration_qa</code> AND{" "}
+            <code className="bg-slate-100 px-1 rounded">metadata.qa_simulated=true</code> are deleted.
+          </div>
           <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
             <Button
               type="button"
@@ -473,7 +482,7 @@ export function Step1DTestingTab({
               }}
               disabled={isQaCleanupRunning}
             >
-              {isQaCleanupRunning ? "Clearing..." : "Confirm & clear QA"}
+              {isQaCleanupRunning ? "Clearing..." : "Clear QA Test Events"}
             </Button>
           </div>
         </DialogContent>
@@ -758,11 +767,11 @@ export function Step1DTestingTab({
                 })}
               </div>
 
-              <div className="mt-4 grid gap-2 sm:grid-cols-3">
+              <div className="mt-4 flex flex-col sm:flex-row gap-2">
                 <Button
                   type="button"
                   onClick={() => setQaConfirmOpen(true)}
-                  className="rounded-full bg-emerald-700 text-white hover:bg-emerald-800"
+                  className="rounded-full bg-emerald-700 text-white hover:bg-emerald-800 flex-1"
                   disabled={isQaRunning || isQaCleanupRunning}
                 >
                   {isQaRunning ? "Running QA..." : "Run Integration QA"}
@@ -771,16 +780,16 @@ export function Step1DTestingTab({
                   type="button"
                   variant="outline"
                   onClick={() => setQaCleanupConfirmOpen(true)}
-                  className="rounded-full"
+                  className="rounded-full flex-1"
                   disabled={isQaCleanupRunning || isQaRunning}
                 >
-                  {isQaCleanupRunning ? "Clearing..." : "Clear QA Events"}
+                  {isQaCleanupRunning ? "Clearing..." : "Clear QA Test Events"}
                 </Button>
                 <Button
                   type="button"
                   variant="outline"
                   onClick={handleJumpToQaResults}
-                  className="rounded-full"
+                  className="rounded-full flex-1"
                 >
                   Jump to QA Results
                 </Button>
