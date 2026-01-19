@@ -11,6 +11,8 @@ import {
   Link2,
   Target,
   Sparkles,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +25,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 type Step1DTestingTabProps = {
   businessId: string;
@@ -93,6 +96,10 @@ export function Step1DTestingTab({
   const [cookieCheck, setCookieCheck] = useState<AttributionCookieStatus | null>(null);
   const [isHealthRunning, setIsHealthRunning] = useState(false);
   const [isCookieRunning, setIsCookieRunning] = useState(false);
+  const [landingPageOpen, setLandingPageOpen] = useState(true);
+  const [connectPageOpen, setConnectPageOpen] = useState(true);
+  const [handoffTestOpen, setHandoffTestOpen] = useState(true);
+  const [qaChecksOpen, setQaChecksOpen] = useState(true);
 
   const normalizedSite = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
   const exampleLandingUrl = `${normalizedSite}/landing`;
@@ -473,405 +480,444 @@ export function Step1DTestingTab({
       </Dialog>
 
       {/* Step 1D-1: Landing page build */}
-      <div className="rounded-2xl border border-purple-200 bg-white p-6 shadow-sm">
-        <div className="flex items-start gap-3 mb-4">
-          <div className="rounded-lg bg-purple-600 p-2">
-            <Sparkles className="h-5 w-5 text-white" />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-slate-900">Create my referral landing page</p>
-            <p className="text-xs text-slate-500 mt-1">
-              This is the page ambassadors share. It must load fast, show the offer clearly, and keep attribution intact.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="rounded-lg border border-purple-200 bg-purple-50/60 p-4 text-xs text-slate-700">
-            <p className="font-semibold text-purple-900 mb-2">Landing page structure</p>
-            <div className="space-y-2">
-              <p>
-                <strong>URL format:</strong>{" "}
-                <code className="bg-white px-2 py-1 rounded text-xs">{exampleLandingUrl}</code>
-              </p>
-              <p>
-                <strong>Ambassador link:</strong>{" "}
-                <code className="bg-white px-2 py-1 rounded text-xs">{exampleReferralUrl}</code>
-              </p>
-              <p className="text-slate-600">
-                Ambassador links redirect to your landing page and set the attribution cookie.
+      <Collapsible open={landingPageOpen} onOpenChange={setLandingPageOpen}>
+        <div className="rounded-2xl border border-purple-200 bg-white shadow-sm overflow-hidden">
+          <CollapsibleTrigger className="w-full p-5 flex items-center gap-3 hover:bg-purple-50/50 transition-colors">
+            <div className="rounded-lg bg-purple-600 p-2">
+              <Sparkles className="h-5 w-5 text-white" />
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-sm font-semibold text-slate-900">Create my referral landing page</p>
+              <p className="text-xs text-slate-500 mt-0.5">
+                This is the page ambassadors share. It must load fast, show the offer clearly, and keep attribution intact.
               </p>
             </div>
-          </div>
+            {landingPageOpen ? (
+              <ChevronDown className="h-5 w-5 text-slate-400 flex-shrink-0" />
+            ) : (
+              <ChevronRight className="h-5 w-5 text-slate-400 flex-shrink-0" />
+            )}
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="px-5 pb-5 space-y-4">
+              <div className="rounded-lg border border-purple-200 bg-purple-50/60 p-4 text-xs text-slate-700">
+                <p className="font-semibold text-purple-900 mb-2">Landing page structure</p>
+                <div className="space-y-2">
+                  <p>
+                    <strong>URL format:</strong>{" "}
+                    <code className="bg-white px-2 py-1 rounded text-xs">{exampleLandingUrl}</code>
+                  </p>
+                  <p>
+                    <strong>Ambassador link:</strong>{" "}
+                    <code className="bg-white px-2 py-1 rounded text-xs">{exampleReferralUrl}</code>
+                  </p>
+                  <p className="text-slate-600">
+                    Ambassador links redirect to your landing page and set the attribution cookie.
+                  </p>
+                </div>
+              </div>
 
-          <div className="rounded-lg border border-slate-200 bg-white p-4">
-            <p className="text-xs font-semibold text-slate-900 mb-3">Landing page checklist</p>
-            <div className="space-y-2 text-xs text-slate-700">
-              <div className="flex gap-2">
-                <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">Clear offer + CTA</p>
-                  <p className="text-slate-600">Use one primary CTA and highlight the referral reward.</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">Mobile-first layout</p>
-                  <p className="text-slate-600">Most ambassador traffic comes from mobile shares.</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold">Attribution intact</p>
-                  <p className="text-slate-600">No stripping of UTM parameters or query strings.</p>
+              <div className="rounded-lg border border-slate-200 bg-white p-4">
+                <p className="text-xs font-semibold text-slate-900 mb-3">Landing page checklist</p>
+                <div className="space-y-2 text-xs text-slate-700">
+                  <div className="flex gap-2">
+                    <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Clear offer + CTA</p>
+                      <p className="text-slate-600">Use one primary CTA and highlight the referral reward.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Mobile-first layout</p>
+                      <p className="text-slate-600">Most ambassador traffic comes from mobile shares.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <CheckCircle className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Attribution intact</p>
+                      <p className="text-slate-600">No stripping of UTM parameters or query strings.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </CollapsibleContent>
         </div>
-      </div>
+      </Collapsible>
 
       {/* Connect to Landing Page */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="flex items-start gap-3 mb-4">
-          <div className="rounded-lg bg-emerald-100 p-2">
-            <Link2 className="h-5 w-5 text-emerald-600" />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-slate-900">Connect to your landing page</p>
-            <p className="text-xs text-slate-500 mt-1">
-              Your ambassadors will send their network to this page with their unique referral code
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div>
-            <Label htmlFor="landing-url" className="text-xs font-semibold text-slate-700">
-              Landing Page URL
-            </Label>
-            <p className="text-xs text-slate-500 mb-2">
-              This should be the page where you want referred customers to land (e.g., {exampleLandingUrl})
-            </p>
-            <div className="flex gap-2">
-              <Input
-                id="landing-url"
-                type="url"
-                placeholder={exampleLandingUrl}
-                value={testLandingUrl}
-                onChange={(e) => setTestLandingUrl(e.target.value)}
-                className="flex-1"
-              />
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => copyToClipboard(testLandingUrl || exampleLandingUrl, "landing")}
-              >
-                {copiedLanding ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-              </Button>
+      <Collapsible open={connectPageOpen} onOpenChange={setConnectPageOpen}>
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+          <CollapsibleTrigger className="w-full p-5 flex items-center gap-3 hover:bg-slate-50 transition-colors">
+            <div className="rounded-lg bg-emerald-100 p-2">
+              <Link2 className="h-5 w-5 text-emerald-600" />
             </div>
-          </div>
-
-          <div>
-            <Label htmlFor="test-code" className="text-xs font-semibold text-slate-700">
-              Test with Ambassador Code
-            </Label>
-            <p className="text-xs text-slate-500 mb-2">
-              Enter an ambassador's referral code to test the full attribution flow
-            </p>
-            <div className="flex gap-2">
-              <Input
-                id="test-code"
-                type="text"
-                placeholder="ambassador-code"
-                value={testReferralCode}
-                onChange={(e) => setTestReferralCode(e.target.value)}
-                className="flex-1"
-              />
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => copyToClipboard(exampleReferralUrl, "code")}
-              >
-                {copiedCode ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-              </Button>
-            </div>
-          </div>
-
-          {testReferralCode && (
-            <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
-              <p className="text-xs font-semibold text-blue-900 mb-2">Test URL Generated:</p>
-              <code className="text-xs text-blue-700 break-all block">
-                {exampleReferralUrl}
-              </code>
-              <p className="text-xs text-blue-600 mt-2">
-                Open this link in incognito mode to test attribution cookie setting
+            <div className="flex-1 text-left">
+              <p className="text-sm font-semibold text-slate-900">Connect to your landing page</p>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Your ambassadors will send their network to this page with their unique referral code
               </p>
             </div>
-          )}
+            {connectPageOpen ? (
+              <ChevronDown className="h-5 w-5 text-slate-400 flex-shrink-0" />
+            ) : (
+              <ChevronRight className="h-5 w-5 text-slate-400 flex-shrink-0" />
+            )}
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="px-5 pb-5 space-y-4">
+              <div>
+                <Label htmlFor="landing-url" className="text-xs font-semibold text-slate-700">
+                  Landing Page URL
+                </Label>
+                <p className="text-xs text-slate-500 mb-2">
+                  This should be the page where you want referred customers to land (e.g., {exampleLandingUrl})
+                </p>
+                <div className="flex gap-2">
+                  <Input
+                    id="landing-url"
+                    type="url"
+                    placeholder={exampleLandingUrl}
+                    value={testLandingUrl}
+                    onChange={(e) => setTestLandingUrl(e.target.value)}
+                    className="flex-1"
+                  />
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => copyToClipboard(testLandingUrl || exampleLandingUrl, "landing")}
+                  >
+                    {copiedLanding ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  </Button>
+                </div>
+              </div>
 
-          {(testLandingUrl || testReferralCode) && (
-            <div className="grid gap-2 sm:grid-cols-2">
-              <Button
-                onClick={() => window.open(exampleReferralUrl, "_blank")}
-                variant="outline"
-                className="w-full"
-              >
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Open referral link
-              </Button>
-              <Button
-                onClick={() => window.open(testLandingUrl || exampleLandingUrl, "_blank")}
-                className="w-full"
-              >
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Test Landing Page
-              </Button>
+              <div>
+                <Label htmlFor="test-code" className="text-xs font-semibold text-slate-700">
+                  Test with Ambassador Code
+                </Label>
+                <p className="text-xs text-slate-500 mb-2">
+                  Enter an ambassador's referral code to test the full attribution flow
+                </p>
+                <div className="flex gap-2">
+                  <Input
+                    id="test-code"
+                    type="text"
+                    placeholder="ambassador-code"
+                    value={testReferralCode}
+                    onChange={(e) => setTestReferralCode(e.target.value)}
+                    className="flex-1"
+                  />
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => copyToClipboard(exampleReferralUrl, "code")}
+                  >
+                    {copiedCode ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  </Button>
+                </div>
+              </div>
+
+              {testReferralCode && (
+                <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
+                  <p className="text-xs font-semibold text-blue-900 mb-2">Test URL Generated:</p>
+                  <code className="text-xs text-blue-700 break-all block">
+                    {exampleReferralUrl}
+                  </code>
+                  <p className="text-xs text-blue-600 mt-2">
+                    Open this link in incognito mode to test attribution cookie setting
+                  </p>
+                </div>
+              )}
+
+              {(testLandingUrl || testReferralCode) && (
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <Button
+                    onClick={() => window.open(exampleReferralUrl, "_blank")}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Open referral link
+                  </Button>
+                  <Button
+                    onClick={() => window.open(testLandingUrl || exampleLandingUrl, "_blank")}
+                    className="w-full"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Test Landing Page
+                  </Button>
+                </div>
+              )}
             </div>
-          )}
+          </CollapsibleContent>
         </div>
-      </div>
+      </Collapsible>
 
       {/* Step 1D-2: Referred page test */}
-      <div className="rounded-2xl border border-blue-200 bg-blue-50/70 p-6 shadow-sm">
-        <div className="flex items-start gap-3 mb-4">
-          <div className="rounded-lg bg-blue-600 p-2">
-            <ExternalLink className="h-5 w-5 text-white" />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-blue-900">Test the ambassador handoff page</p>
-            <p className="text-xs text-blue-800/80 mt-1">
-              This is the page prospects see once attribution is set (ex: <span className="font-semibold">{referredPageUrl}</span>).
-            </p>
-          </div>
-        </div>
-
-        <ol className="space-y-2 text-xs text-blue-900 list-decimal list-inside">
-          <li>Open an ambassador link (ex: <code className="bg-white px-1.5 py-0.5 rounded">{exampleReferralUrl}</code>) to set the cookie.</li>
-          <li>Confirm the landing page loads with the offer and CTA.</li>
-          <li>Open the referred page to verify attribution + form load.</li>
-        </ol>
-
-        <div className="mt-4 grid gap-2 sm:grid-cols-2">
-          <Button type="button" onClick={() => window.open(exampleReferralUrl, "_blank")} variant="outline">
-            Open ambassador link
-          </Button>
-          <Button type="button" onClick={() => window.open(referredPageUrl, "_blank")}>
-            Open /referred page
-          </Button>
-        </div>
-        <p className="mt-3 text-xs text-blue-800/80">
-          If /referred redirects to the home page, the attribution cookie is missing—open the ambassador link again.
-        </p>
-      </div>
-
-	      {/* QA Readiness Checks */}
-	      <div
-	        id="integration-qa-panel"
-	        className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-6 shadow-sm"
-	      >
-        <div className="flex items-start gap-3 mb-4">
-          <div className="rounded-lg bg-emerald-600 p-2">
-            <Target className="h-5 w-5 text-white" />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-emerald-900">QA readiness checks</p>
-            <p className="text-xs text-emerald-800/80 mt-1">
-              Confirm attribution health, cookie setup, and test events before inviting ambassadors.
-            </p>
-            {qaSummary.lastDetectedAt && (
-              <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                QA verified in the last 10 minutes ({qaSummary.recentCount} events)
-              </div>
+      <Collapsible open={handoffTestOpen} onOpenChange={setHandoffTestOpen}>
+        <div className="rounded-2xl border border-blue-200 bg-blue-50/70 shadow-sm overflow-hidden">
+          <CollapsibleTrigger className="w-full p-5 flex items-center gap-3 hover:bg-blue-100/50 transition-colors">
+            <div className="rounded-lg bg-blue-600 p-2">
+              <ExternalLink className="h-5 w-5 text-white" />
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-sm font-semibold text-blue-900">Test the ambassador handoff page</p>
+              <p className="text-xs text-blue-800/80 mt-0.5">
+                This is the page prospects see once attribution is set (ex: <span className="font-semibold">{referredPageUrl}</span>).
+              </p>
+            </div>
+            {handoffTestOpen ? (
+              <ChevronDown className="h-5 w-5 text-blue-400 flex-shrink-0" />
+            ) : (
+              <ChevronRight className="h-5 w-5 text-blue-400 flex-shrink-0" />
             )}
-          </div>
-        </div>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="px-5 pb-5">
+              <ol className="space-y-2 text-xs text-blue-900 list-decimal list-inside">
+                <li>Open an ambassador link (ex: <code className="bg-white px-1.5 py-0.5 rounded">{exampleReferralUrl}</code>) to set the cookie.</li>
+                <li>Confirm the landing page loads with the offer and CTA.</li>
+                <li>Open the referred page to verify attribution + form load.</li>
+              </ol>
 
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
-          {qaStatusItems.map((item) => {
-            const tone =
-              item.status === "pass"
-                ? "border-emerald-200 bg-white"
-                : item.status === "fail"
-                  ? "border-amber-200 bg-amber-50"
-                  : "border-slate-200 bg-white";
-            return (
-              <div key={item.label} className={`rounded-xl border px-4 py-3 text-xs text-slate-700 ${tone}`}>
-                <div className="flex items-start gap-2">
-                  {item.status === "pass" ? (
-                    <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
-                  ) : item.status === "fail" ? (
-                    <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
-                  ) : (
-                    <ShieldCheck className="h-4 w-4 text-slate-400 mt-0.5" />
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                <Button type="button" onClick={() => window.open(exampleReferralUrl, "_blank")} variant="outline">
+                  Open ambassador link
+                </Button>
+                <Button type="button" onClick={() => window.open(referredPageUrl, "_blank")}>
+                  Open /referred page
+                </Button>
+              </div>
+              <p className="mt-3 text-xs text-blue-800/80">
+                If /referred redirects to the home page, the attribution cookie is missing—open the ambassador link again.
+              </p>
+            </div>
+          </CollapsibleContent>
+        </div>
+      </Collapsible>
+
+      {/* QA Readiness Checks */}
+      <Collapsible open={qaChecksOpen} onOpenChange={setQaChecksOpen}>
+        <div
+          id="integration-qa-panel"
+          className="rounded-2xl border border-emerald-200 bg-emerald-50/70 shadow-sm overflow-hidden"
+        >
+          <CollapsibleTrigger className="w-full p-5 flex items-center gap-3 hover:bg-emerald-100/50 transition-colors">
+            <div className="rounded-lg bg-emerald-600 p-2">
+              <Target className="h-5 w-5 text-white" />
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-sm font-semibold text-emerald-900">QA readiness checks</p>
+              <p className="text-xs text-emerald-800/80 mt-0.5">
+                Confirm attribution health, cookie setup, and test events before inviting ambassadors.
+              </p>
+              {qaSummary.lastDetectedAt && (
+                <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1 text-[11px] font-semibold text-emerald-800">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                  QA verified in the last 10 minutes ({qaSummary.recentCount} events)
+                </div>
+              )}
+            </div>
+            {qaChecksOpen ? (
+              <ChevronDown className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+            ) : (
+              <ChevronRight className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+            )}
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="px-5 pb-5">
+              <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                {qaStatusItems.map((item) => {
+                  const tone =
+                    item.status === "pass"
+                      ? "border-emerald-200 bg-white"
+                      : item.status === "fail"
+                        ? "border-amber-200 bg-amber-50"
+                        : "border-slate-200 bg-white";
+                  return (
+                    <div key={item.label} className={`rounded-xl border px-4 py-3 text-xs text-slate-700 ${tone}`}>
+                      <div className="flex items-start gap-2">
+                        {item.status === "pass" ? (
+                          <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
+                        ) : item.status === "fail" ? (
+                          <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
+                        ) : (
+                          <ShieldCheck className="h-4 w-4 text-slate-400 mt-0.5" />
+                        )}
+                        <div>
+                          <p className="font-semibold text-slate-900">{item.label}</p>
+                          <p className="text-[11px] text-slate-500">{item.detail}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                <Button
+                  type="button"
+                  onClick={() => setQaConfirmOpen(true)}
+                  className="rounded-full bg-emerald-700 text-white hover:bg-emerald-800"
+                  disabled={isQaRunning || isQaCleanupRunning}
+                >
+                  {isQaRunning ? "Running QA..." : "Run Integration QA"}
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setQaCleanupConfirmOpen(true)}
+                  className="rounded-full"
+                  disabled={isQaCleanupRunning || isQaRunning}
+                >
+                  {isQaCleanupRunning ? "Clearing..." : "Clear QA Events"}
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handleJumpToQaResults}
+                  className="rounded-full"
+                >
+                  Jump to QA Results
+                </Button>
+              </div>
+
+              {qaResultsHint && (
+                <div className="mt-3 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-xs text-emerald-900">
+                  <span className="font-semibold">QA events logged.</span>{" "}
+                  Navigate to Measure ROI to verify Interaction Hub + Recent Activity.
+                </div>
+              )}
+
+              {qaSummary.lastDetectedAt && (
+                <div className="mt-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs text-slate-700">
+                  <p className="font-semibold text-slate-900">Latest QA snapshot</p>
+                  <p className="mt-1 text-[11px] text-slate-500">
+                    Last event: {new Date(qaSummary.lastDetectedAt).toLocaleString()} · {qaSummary.recentCount} events in the last 10 minutes
+                  </p>
+                  {qaSummary.eventTypes.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {qaSummary.eventTypes.map((type) => (
+                        <span key={type} className="rounded-full border border-slate-200 bg-slate-50 px-2 py-1 text-[11px] font-semibold text-slate-700">
+                          {type}
+                        </span>
+                      ))}
+                    </div>
                   )}
-                  <div>
-                    <p className="font-semibold text-slate-900">{item.label}</p>
-                    <p className="text-[11px] text-slate-500">{item.detail}</p>
+                </div>
+              )}
+
+              <div className="mt-4 grid gap-3 lg:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution health</p>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="outline"
+                      className="rounded-full"
+                      onClick={runHealthCheck}
+                      disabled={isHealthRunning}
+                    >
+                      {isHealthRunning ? "Running..." : "Run check"}
+                    </Button>
                   </div>
+                  {healthCheck ? (
+                    <div className="mt-2 text-xs text-slate-700">
+                      <p className="font-semibold">
+                        Status:{" "}
+                        <span className="uppercase">
+                          {healthCheck.status ?? (healthCheck.healthy ? "good" : "error")}
+                        </span>
+                      </p>
+                      <p>{healthCheck.recommendation ?? healthCheck.error}</p>
+                      {healthCheckedAt && (
+                        <p className="text-[11px] text-slate-400">
+                          Last checked {new Date(healthCheckedAt).toLocaleString()}
+                        </p>
+                      )}
+                      {healthCheck.metrics?.last7Days && (
+                        <div className="mt-2 space-y-1 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 text-[11px] text-slate-700">
+                          <p>
+                            Link opens: {healthCheck.metrics.last7Days.linkVisitsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.linkVisits ?? 0} attributed
+                          </p>
+                          <p>
+                            Form submits: {healthCheck.metrics.last7Days.signupsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.signups ?? 0} attributed
+                          </p>
+                          <p>
+                            Orders: {healthCheck.metrics.last7Days.conversionsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.conversions ?? 0} attributed
+                          </p>
+                          <p>
+                            Referrals: {healthCheck.metrics.last7Days.referralsAttributed ?? 0}/
+                            {healthCheck.metrics.last7Days.referrals ?? 0} attributed
+                          </p>
+                          <p className="font-semibold">
+                            Attribution rate: {healthCheck.metrics.last7Days.attributionRate ?? "N/A"}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-xs text-slate-600">
+                      Confirms your attribution health and recent link activity.
+                    </p>
+                  )}
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution cookie</p>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="outline"
+                      className="rounded-full"
+                      onClick={runCookieCheck}
+                      disabled={isCookieRunning}
+                    >
+                      {isCookieRunning ? "Checking..." : "Check cookie"}
+                    </Button>
+                  </div>
+                  {cookieCheck ? (
+                    <div className="mt-2 flex items-start gap-2 text-xs text-slate-700">
+                      {cookieCheck.hasAttribution ? (
+                        <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
+                      ) : (
+                        <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
+                      )}
+                      <div>
+                        <p className="font-semibold">
+                          {cookieCheck.hasAttribution ? "Attribution active" : "No attribution cookie"}
+                        </p>
+                        <p>{cookieCheck.message ?? "Open a referral link to set the cookie."}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-xs text-slate-600">
+                      Open a referral link, then check to confirm tracking is stored.
+                    </p>
+                  )}
                 </div>
               </div>
-            );
-          })}
-        </div>
 
-        <div className="flex flex-wrap gap-2">
-          <Button
-            type="button"
-            onClick={() => setQaConfirmOpen(true)}
-            className="rounded-full bg-emerald-700 text-white hover:bg-emerald-800"
-            disabled={isQaRunning || isQaCleanupRunning}
-          >
-            {isQaRunning ? "Running QA..." : "Run Integration QA"}
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => setQaCleanupConfirmOpen(true)}
-            className="rounded-full"
-            disabled={isQaCleanupRunning || isQaRunning}
-          >
-            {isQaCleanupRunning ? "Clearing..." : "Clear QA Events"}
-          </Button>
-        </div>
-
-        {qaResultsHint && (
-          <div className="mt-3 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-xs text-emerald-900">
-            <span className="font-semibold">QA events logged.</span>{" "}
-            Navigate to Measure ROI to verify Interaction Hub + Recent Activity.
-          </div>
-        )}
-
-        {qaSummary.lastDetectedAt && (
-          <div className="mt-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs text-slate-700">
-            <p className="font-semibold text-slate-900">Latest QA snapshot</p>
-            <p className="mt-1 text-[11px] text-slate-500">
-              Last event: {new Date(qaSummary.lastDetectedAt).toLocaleString()} · {qaSummary.recentCount} events in the last 10 minutes
-            </p>
-            {qaSummary.eventTypes.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-2">
-                {qaSummary.eventTypes.map((type) => (
-                  <span key={type} className="rounded-full border border-slate-200 bg-slate-50 px-2 py-1 text-[11px] font-semibold text-slate-700">
-                    {type}
-                  </span>
-                ))}
+              <div className="mt-4 rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs text-slate-600">
+                <p className="font-semibold text-slate-900">Where to confirm results:</p>
+                <ul className="mt-2 space-y-1">
+                  <li>• Measure ROI → Interaction Hub (counts increment)</li>
+                  <li>• Measure ROI → Recent Interaction Activity (source shows "integration_qa")</li>
+                  <li>• Measure ROI → Journey timeline (events listed per ambassador)</li>
+                </ul>
               </div>
-            )}
-            <div className="mt-2">
-              <Button type="button" size="sm" variant="outline" className="rounded-full" onClick={handleJumpToQaResults}>
-                Jump to QA results
-              </Button>
             </div>
-          </div>
-        )}
-
-        <div className="mt-4 grid gap-3 lg:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-white p-4">
-            <div className="flex items-center justify-between gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution health</p>
-              <Button
-                type="button"
-                size="sm"
-                variant="outline"
-                className="rounded-full"
-                onClick={runHealthCheck}
-                disabled={isHealthRunning}
-              >
-                {isHealthRunning ? "Running..." : "Run check"}
-              </Button>
-            </div>
-            {healthCheck ? (
-              <div className="mt-2 text-xs text-slate-700">
-                <p className="font-semibold">
-                  Status:{" "}
-                  <span className="uppercase">
-                    {healthCheck.status ?? (healthCheck.healthy ? "good" : "error")}
-                  </span>
-                </p>
-                <p>{healthCheck.recommendation ?? healthCheck.error}</p>
-                {healthCheckedAt && (
-                  <p className="text-[11px] text-slate-400">
-                    Last checked {new Date(healthCheckedAt).toLocaleString()}
-                  </p>
-                )}
-                {healthCheck.metrics?.last7Days && (
-                  <div className="mt-2 space-y-1 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 text-[11px] text-slate-700">
-                    <p>
-                      Link opens: {healthCheck.metrics.last7Days.linkVisitsAttributed ?? 0}/
-                      {healthCheck.metrics.last7Days.linkVisits ?? 0} attributed
-                    </p>
-                    <p>
-                      Form submits: {healthCheck.metrics.last7Days.signupsAttributed ?? 0}/
-                      {healthCheck.metrics.last7Days.signups ?? 0} attributed
-                    </p>
-                    <p>
-                      Orders: {healthCheck.metrics.last7Days.conversionsAttributed ?? 0}/
-                      {healthCheck.metrics.last7Days.conversions ?? 0} attributed
-                    </p>
-                    <p>
-                      Referrals: {healthCheck.metrics.last7Days.referralsAttributed ?? 0}/
-                      {healthCheck.metrics.last7Days.referrals ?? 0} attributed
-                    </p>
-                    <p className="font-semibold">
-                      Attribution rate: {healthCheck.metrics.last7Days.attributionRate ?? "N/A"}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <p className="mt-2 text-xs text-slate-600">
-                Confirms your attribution health and recent link activity.
-              </p>
-            )}
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-4">
-            <div className="flex items-center justify-between gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Attribution cookie</p>
-              <Button
-                type="button"
-                size="sm"
-                variant="outline"
-                className="rounded-full"
-                onClick={runCookieCheck}
-                disabled={isCookieRunning}
-              >
-                {isCookieRunning ? "Checking..." : "Check cookie"}
-              </Button>
-            </div>
-            {cookieCheck ? (
-              <div className="mt-2 flex items-start gap-2 text-xs text-slate-700">
-                {cookieCheck.hasAttribution ? (
-                  <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5" />
-                ) : (
-                  <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5" />
-                )}
-                <div>
-                  <p className="font-semibold">
-                    {cookieCheck.hasAttribution ? "Attribution active" : "No attribution cookie"}
-                  </p>
-                  <p>{cookieCheck.message ?? "Open a referral link to set the cookie."}</p>
-                </div>
-              </div>
-            ) : (
-              <p className="mt-2 text-xs text-slate-600">
-                Open a referral link, then check to confirm tracking is stored.
-              </p>
-            )}
-          </div>
+          </CollapsibleContent>
         </div>
-
-        <div className="mt-4 rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs text-slate-600">
-          <p className="font-semibold text-slate-900">Where to confirm results:</p>
-          <ul className="mt-2 space-y-1">
-            <li>• Measure ROI → Interaction Hub (counts increment)</li>
-            <li>• Measure ROI → Recent Interaction Activity (source shows “integration_qa”)</li>
-            <li>• Measure ROI → Journey timeline (events listed per ambassador)</li>
-          </ul>
-        </div>
-      </div>
+      </Collapsible>
 
     </div>
   );

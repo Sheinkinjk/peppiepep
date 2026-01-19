@@ -3182,6 +3182,9 @@ export default async function Dashboard({
         ? "Business profile + rewards saved"
         : "Finish business profile + rewards setup",
       status: stepValidations["setup-integration"].isComplete ? "Ready" : "Needs attention",
+      explainer: !stepValidations["setup-integration"].isComplete
+        ? "Complete your business profile and configure referral rewards in Settings. This enables partners to know what they earn for referrals."
+        : null,
       actionLabel: "Review integrations",
       actionSection: "setup-integration",
       actionScroll: "step-1c-integrations",
@@ -3201,6 +3204,9 @@ export default async function Dashboard({
           : "Run Integration QA + cookie check";
       })(),
       status: typedReferralEvents.some((event) => event.source === "integration_qa") ? "Verified" : "Not run",
+      explainer: !typedReferralEvents.some((event) => event.source === "integration_qa")
+        ? "Click 'Run QA' to simulate the full referral flow. This logs test events to confirm your attribution tracking is working before inviting real partners."
+        : null,
       actionLabel: "Run QA",
       actionSection: "testing-qa",
       actionScroll: "integration-qa-panel",
@@ -3211,6 +3217,9 @@ export default async function Dashboard({
       title: "Step 2 · Clients & ambassadors",
       detail: hasCustomers ? "Ambassadors imported + links active" : "Add your first ambassadors",
       status: hasCustomers ? "Ready" : "Needs attention",
+      explainer: !hasCustomers
+        ? "Add at least one ambassador (partner) to generate referral links. You can import clients, partners, or influencers who will refer business to you."
+        : null,
       actionLabel: "Add ambassadors",
       actionSection: "clients-ambassadors",
       tone: hasCustomers ? "emerald" : "amber",
@@ -3220,6 +3229,9 @@ export default async function Dashboard({
       title: "Step 3 · Launch campaigns",
       detail: hasCampaigns ? "Campaigns have been sent" : "Prepare email/CRM campaign flow",
       status: hasCampaigns ? "Ready" : "Pending",
+      explainer: !hasCampaigns
+        ? "Create and send your first referral campaign to notify partners about the program. This activates their referral links."
+        : null,
       actionLabel: "Review campaigns",
       actionSection: "crm-integration",
       tone: hasCampaigns ? "emerald" : "slate",
@@ -3229,6 +3241,9 @@ export default async function Dashboard({
       title: "Step 4 · Track campaigns",
       detail: totalCampaignsSent > 0 ? "Tracking campaign performance" : "Waiting on first campaign",
       status: totalCampaignsSent > 0 ? "Active" : "Waiting",
+      explainer: totalCampaignsSent === 0
+        ? "Once you send your first campaign, you'll see delivery stats and engagement metrics here."
+        : null,
       actionLabel: "Open tracking",
       actionSection: "view-campaigns",
       tone: totalCampaignsSent > 0 ? "emerald" : "slate",
@@ -3238,6 +3253,9 @@ export default async function Dashboard({
       title: "Step 5 · Measure ROI",
       detail: safeReferrals.length > 0 ? "Attribution + ROI active" : "Run QA to verify attribution",
       status: safeReferrals.length > 0 ? "Live" : "Needs data",
+      explainer: safeReferrals.length === 0
+        ? "Run the Integration QA or wait for real referral activity. Once referrals are tracked, you'll see revenue attribution and ROI metrics here."
+        : null,
       actionLabel: null,
       actionSection: null,
       actionScroll: null,
@@ -3279,21 +3297,31 @@ export default async function Dashboard({
           </div>
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+          <SectionLink
+            section="testing-qa"
+            scrollTo="integration-qa-panel"
+            className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-slate-300 hover:bg-slate-100 hover:shadow-sm cursor-pointer"
+          >
             <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Attribution signals</p>
             <p className="mt-1 text-sm font-semibold text-slate-900">{attributionStatusLabel}</p>
             <p className="mt-1 text-xs text-slate-500">
               {windowedReferralEvents.length} events in the last {selectedWindow} days
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+          </SectionLink>
+          <SectionLink
+            section="clients-ambassadors"
+            className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-slate-300 hover:bg-slate-100 hover:shadow-sm cursor-pointer"
+          >
             <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Partner link coverage</p>
             <p className="mt-1 text-sm font-semibold text-slate-900">
               {partnersWithLinks}/{safeCustomers.length} active
             </p>
             <p className="mt-1 text-xs text-slate-500">{partnerLinkCoverage}% have live referral links</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+          </SectionLink>
+          <SectionLink
+            section="view-campaigns"
+            className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-slate-300 hover:bg-slate-100 hover:shadow-sm cursor-pointer"
+          >
             <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Campaign delivery</p>
             <p className="mt-1 text-sm font-semibold text-slate-900">
               {campaignMessagesDelivered}/{campaignMessagesSent} delivered
@@ -3301,17 +3329,24 @@ export default async function Dashboard({
             <p className="mt-1 text-xs text-slate-500">
               {deliveryRate !== null ? `${deliveryRate}% delivery rate` : "No delivery data yet"}
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+          </SectionLink>
+          <SectionLink
+            section="testing-qa"
+            scrollTo="integration-qa-panel"
+            className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-all hover:border-slate-300 hover:bg-slate-100 hover:shadow-sm cursor-pointer"
+          >
             <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Open QA items</p>
             <p className="mt-1 text-sm font-semibold text-slate-900">
               {qaActionItems.length} required · {qaRecommendedItems.length} recommended
             </p>
             <p className="mt-1 text-xs text-slate-500">{overallProgress}% overall readiness</p>
-          </div>
+          </SectionLink>
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-purple-50 to-white px-4 py-3">
+          <SectionLink
+            section="clients-ambassadors"
+            className="rounded-xl border border-slate-200 bg-gradient-to-br from-purple-50 to-white px-4 py-3 text-left transition-all hover:border-purple-200 hover:shadow-sm cursor-pointer"
+          >
             <div className="flex items-center justify-between">
               <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Partners</p>
               <Users className="h-4 w-4 text-purple-500" />
@@ -3320,8 +3355,11 @@ export default async function Dashboard({
             <p className="text-xs text-slate-500 mt-1">
               {linkedInInfluencerCustomers.length > 0 && `${linkedInInfluencerCustomers.length} from LinkedIn`}
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-emerald-50 to-white px-4 py-3">
+          </SectionLink>
+          <SectionLink
+            section="performance"
+            className="rounded-xl border border-slate-200 bg-gradient-to-br from-emerald-50 to-white px-4 py-3 text-left transition-all hover:border-emerald-200 hover:shadow-sm cursor-pointer"
+          >
             <div className="flex items-center justify-between">
               <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Referrals</p>
               <TrendingUp className="h-4 w-4 text-emerald-500" />
@@ -3330,8 +3368,11 @@ export default async function Dashboard({
             <p className="text-xs text-slate-500 mt-1">
               {completedReferrals} completed • {pendingReferrals} pending
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white px-4 py-3">
+          </SectionLink>
+          <SectionLink
+            section="view-campaigns"
+            className="rounded-xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white px-4 py-3 text-left transition-all hover:border-blue-200 hover:shadow-sm cursor-pointer"
+          >
             <div className="flex items-center justify-between">
               <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Campaigns</p>
               <Send className="h-4 w-4 text-blue-500" />
@@ -3340,8 +3381,11 @@ export default async function Dashboard({
             <p className="text-xs text-slate-500 mt-1">
               {(totalMessagesSent ?? 0).toLocaleString()} messages sent
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-amber-50 to-white px-4 py-3">
+          </SectionLink>
+          <SectionLink
+            section="performance"
+            className="rounded-xl border border-slate-200 bg-gradient-to-br from-amber-50 to-white px-4 py-3 text-left transition-all hover:border-amber-200 hover:shadow-sm cursor-pointer"
+          >
             <div className="flex items-center justify-between">
               <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Revenue</p>
               <DollarSign className="h-4 w-4 text-amber-500" />
@@ -3352,7 +3396,7 @@ export default async function Dashboard({
             <p className="text-xs text-slate-500 mt-1">
               {averageTransactionValue > 0 && `$${Math.round(averageTransactionValue)} avg`}
             </p>
-          </div>
+          </SectionLink>
         </div>
 
         {/* Quick Insights */}
@@ -3445,37 +3489,52 @@ export default async function Dashboard({
             />
           </div>
         </div>
-        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+        <div className="mt-4 grid gap-3 lg:grid-cols-3">
           {qaReadinessSteps.map((step) => (
             <div
               key={step.id}
-              className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+              className={`rounded-xl border px-4 py-3 transition-all ${
+                step.tone === "emerald"
+                  ? "border-emerald-200 bg-emerald-50/50"
+                  : step.tone === "amber"
+                    ? "border-amber-200 bg-amber-50/50"
+                    : "border-slate-200 bg-slate-50"
+              }`}
             >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400 truncate">
                     {step.title}
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-slate-900">{step.detail}</p>
+                  <p className="mt-1.5 text-xs font-semibold text-slate-900 leading-snug">{step.detail}</p>
                 </div>
-                <span
-                  className={`rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] ${
-                    step.tone === "emerald"
-                      ? "border-emerald-200 bg-emerald-50 text-emerald-700"
-                      : step.tone === "amber"
-                        ? "border-amber-200 bg-amber-50 text-amber-700"
-                        : "border-slate-200 bg-white text-slate-500"
-                  }`}
-                >
-                  {step.status}
-                </span>
+                <div className="relative group flex-shrink-0">
+                  <span
+                    className={`rounded-full border px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] cursor-default ${
+                      step.tone === "emerald"
+                        ? "border-emerald-200 bg-emerald-100 text-emerald-700"
+                        : step.tone === "amber"
+                          ? "border-amber-200 bg-amber-100 text-amber-700"
+                          : "border-slate-200 bg-white text-slate-500"
+                    }`}
+                  >
+                    {step.status}
+                  </span>
+                  {step.explainer && (
+                    <div className="absolute right-0 top-full mt-1 z-50 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none">
+                      <div className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-[11px] text-slate-600 shadow-lg leading-relaxed">
+                        {step.explainer}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
               {step.actionLabel && step.actionSection && (
-                <div className="mt-3">
+                <div className="mt-2.5">
                   <SectionLink
                     section={step.actionSection}
                     scrollTo={step.actionScroll ?? undefined}
-                    className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+                    className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-semibold text-slate-700 hover:bg-slate-100"
                   >
                     {step.actionLabel}
                     <ArrowRight className="h-3 w-3" />
