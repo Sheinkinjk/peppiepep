@@ -10,6 +10,11 @@ import {
   Target,
   Users,
   Building2,
+  Sparkles,
+  TrendingUp,
+  Eye,
+  MousePointer,
+  Award,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -191,6 +196,56 @@ const targetedPrograms = [
   },
 ];
 
+const dashboardPreviews = [
+  {
+    id: "overview",
+    title: "Program Overview",
+    description: "See your entire referral program at a glance—active partners, pending referrals, and revenue attributed.",
+    icon: Eye,
+    metrics: [
+      { label: "Active Partners", value: "47" },
+      { label: "This Month", value: "$128K" },
+      { label: "Conversion", value: "34%" },
+    ],
+    color: "cyan",
+  },
+  {
+    id: "tracking",
+    title: "Real-Time Tracking",
+    description: "Every click, form fill, and meeting booked is captured with full attribution to the referring partner.",
+    icon: MousePointer,
+    metrics: [
+      { label: "Link Clicks", value: "2,847" },
+      { label: "Form Fills", value: "312" },
+      { label: "Calls Booked", value: "89" },
+    ],
+    color: "blue",
+  },
+  {
+    id: "attribution",
+    title: "Full Attribution",
+    description: "Know exactly which partner, campaign, and content piece drove each conversion—audit-ready data.",
+    icon: TrendingUp,
+    metrics: [
+      { label: "Attributed", value: "94%" },
+      { label: "Avg Deal", value: "$18.5K" },
+      { label: "ROI", value: "12.4x" },
+    ],
+    color: "emerald",
+  },
+  {
+    id: "payouts",
+    title: "Automated Rewards",
+    description: "Commissions calculate automatically. Partners get notified. Finance gets clean ledgers.",
+    icon: Award,
+    metrics: [
+      { label: "Paid Out", value: "$42K" },
+      { label: "Pending", value: "$8.2K" },
+      { label: "Partners", value: "23" },
+    ],
+    color: "purple",
+  },
+];
 
 const howItWorks = [
   {
@@ -223,38 +278,56 @@ const clientTestimonials = [
   {
     quote:
       "We went live in days and immediately had clarity on what was working. The dashboard made attribution simple—no more chasing spreadsheets.",
-    name: "Sarah N",
+    name: "Sarah Nguyen",
     title: "Head of Growth",
+    company: "Altitude Advisory",
+    avatar: "SN",
+    avatarBg: "from-cyan-500 to-teal-500",
   },
   {
     quote:
       "Refer Labs turned happy customers into a measurable acquisition channel. We can finally see which partners drive real outcomes.",
-    name: "Michael",
-    title: "Founder",
+    name: "Michael Torres",
+    title: "Founder & CEO",
+    company: "Torres Legal Group",
+    avatar: "MT",
+    avatarBg: "from-blue-500 to-indigo-500",
   },
   {
     quote:
       "The tracking is bulletproof. Every action from clicking the link to converting is captured and attributed properly.",
     name: "Priya Shah",
     title: "Revenue Operations Lead",
+    company: "Nexus Consulting",
+    avatar: "PS",
+    avatarBg: "from-purple-500 to-pink-500",
   },
   {
     quote:
       "We wanted a referral program that plugged into our existing sales process. Refer Labs gave us clean tracking and better visibility.",
     name: "James O'Connor",
     title: "Managing Director",
+    company: "O'Connor & Partners",
+    avatar: "JO",
+    avatarBg: "from-emerald-500 to-green-500",
   },
   {
     quote:
       "What surprised us most was how professional the end-to-end experience feels. The referral pages look premium and prospects convert.",
-    name: "Emily",
+    name: "Emily Chen",
     title: "Marketing Director",
+    company: "Precision Wealth",
+    avatar: "EC",
+    avatarBg: "from-amber-500 to-orange-500",
   },
   {
     quote:
       "We used to run partnerships manually and it was messy. Now we have a structured flow and can monitor performance in one place.",
-    name: "Daniel R",
+    name: "Daniel Robertson",
     title: "Partnerships Manager",
+    company: "Summit Accounting",
+    avatar: "DR",
+    avatarBg: "from-rose-500 to-red-500",
   },
 ];
 
@@ -337,9 +410,10 @@ export default async function Home() {
               </span>
               {/* Desktop layout */}
               <span className="hidden sm:block sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] xl:text-[3rem] leading-[1.15]">
-                <span className="inline">Launch Successful Referral Programs</span>
-                {" "}
-                <span className="inline">For <span className="text-cyan-400">Professional Services</span> Firms</span>
+                <span className="block whitespace-nowrap">Launch Successful Referral Programs</span>
+                <span className="block whitespace-nowrap">
+                  For <span className="text-cyan-400">Professional Services</span> Firms
+                </span>
               </span>
             </h1>
             <p className="text-[13px] sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed sm:px-0 lg:whitespace-nowrap">
@@ -358,9 +432,218 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Launch Targeted Referral Programs — 4 Categories
+            Why Refer Labs — Built for Professional Services (REPOSITIONED & REDESIGNED)
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24 mt-16 sm:mt-0">
+          {/* Premium Section Header */}
+          <div className="text-center space-y-4 mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 mb-4">
+              <Sparkles className="h-4 w-4 text-cyan-400" />
+              <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">Purpose-Built</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto leading-tight">
+              Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Professional Services</span>
+            </h2>
+            <p className="text-slate-300 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
+              Most referral tools were built for e-commerce. We built ours for law firms, accountants, consultants, and advisory practices—where growth happens through <span className="text-white font-medium">trusted introductions</span>, not discount codes.
+            </p>
+          </div>
+
+          {/* The Problem - Compact */}
+          <div className="relative mb-12">
+            <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              <div className="group relative overflow-hidden rounded-2xl bg-slate-900/80 border border-slate-700/50 p-5 hover:border-slate-600/50 transition-all">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-8 w-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-xs font-bold">01</span>
+                    </div>
+                    <h3 className="font-bold text-white text-sm">Wrong Model</h3>
+                  </div>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Coupon-code tools built for Shopify don't work when deals are $10K+ and take months to close.
+                  </p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl bg-slate-900/80 border border-slate-700/50 p-5 hover:border-slate-600/50 transition-all">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-8 w-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-xs font-bold">02</span>
+                    </div>
+                    <h3 className="font-bold text-white text-sm">No Attribution</h3>
+                  </div>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Spreadsheets and "who introduced whom" guesswork means partners don't get credited—and stop referring.
+                  </p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl bg-slate-900/80 border border-slate-700/50 p-5 hover:border-slate-600/50 transition-all">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-8 w-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-xs font-bold">03</span>
+                    </div>
+                    <h3 className="font-bold text-white text-sm">Generic UX</h3>
+                  </div>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Off-the-shelf tools feel transactional. Trusted advisors expect a professional, discreet experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* The Solution - Premium Cards */}
+          <div className="relative">
+            {/* Decorative background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent rounded-3xl" />
+
+            <div className="relative grid md:grid-cols-2 gap-6">
+              {/* Card 1: Professional Services Focus */}
+              <div className="group relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-slate-900/90 to-slate-900/50 p-8 hover:border-cyan-500/40 transition-all">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-cyan-500/10 to-transparent rounded-full blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 flex items-center justify-center">
+                      <Building2 className="h-7 w-7 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Professional Services Focus</h3>
+                      <p className="text-cyan-400/80 text-sm">Law, Accounting, Consulting, Advisory</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    Designed from the ground up for high-value, relationship-driven businesses where introductions matter and trust is everything.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                      <span>High-value, long-cycle deal tracking</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                      <span>Discreet, white-label partner experiences</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                      <span>Professional compliance built-in</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Card 2: Full Attribution */}
+              <div className="group relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-br from-slate-900/90 to-slate-900/50 p-8 hover:border-emerald-500/40 transition-all">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-full blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 border border-emerald-500/30 flex items-center justify-center">
+                      <BarChart3 className="h-7 w-7 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Attribution You Can Defend</h3>
+                      <p className="text-emerald-400/80 text-sm">Audit-Ready, Finance-Approved</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    Every click, meeting, and closed deal is tracked and attributed. Partners get clear credit, finance gets clean reports.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+                      <span>Full-funnel conversion tracking</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+                      <span>Real-time partner dashboards</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+                      <span>Automated payout calculations</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Card 3: Relationship-First */}
+              <div className="group relative overflow-hidden rounded-3xl border border-blue-500/20 bg-gradient-to-br from-slate-900/90 to-slate-900/50 p-8 hover:border-blue-500/40 transition-all">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 border border-blue-500/30 flex items-center justify-center">
+                      <LinkedinIcon className="h-7 w-7 text-blue-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Relationship-First Design</h3>
+                      <p className="text-blue-400/80 text-sm">Not Mass-Market Affiliate Tools</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    Professional referrals require discretion. We built for warm introductions and trusted recommendations—not spam links.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                      <span>White-label partner portals</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                      <span>No public discount codes</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                      <span>Trusted introduction tracking</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Card 4: Results-Based */}
+              <div className="group relative overflow-hidden rounded-3xl border border-purple-500/20 bg-gradient-to-br from-slate-900/90 to-slate-900/50 p-8 hover:border-purple-500/40 transition-all">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-full blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 flex items-center justify-center">
+                      <Target className="h-7 w-7 text-purple-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Results, Not Impressions</h3>
+                      <p className="text-purple-400/80 text-sm">Performance-Based Payouts</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    Pay for outcomes—demos booked, deals closed, revenue generated. Not vanity metrics or impression counts.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                      <span>Performance-based payouts</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                      <span>Revenue share or per-deal models</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                      <span>Clear ROI measurement</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────────────────
+            Launch Targeted Referral Programs — 4 Categories
+        ───────────────────────────────────────────────────────── */}
+        <section className="mb-24">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto">
               Launch Targeted Referral Programs
@@ -424,7 +707,7 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            How The Referral Flow Works
+            How The Referral Flow Works + Dashboard Preview
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
           <div className="text-center space-y-4 mb-12">
@@ -436,7 +719,8 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="relative">
+          {/* Flow Steps */}
+          <div className="relative mb-16">
             {/* Connection line - desktop */}
             <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-cyan-500/50 via-cyan-400/50 to-cyan-500/50" />
 
@@ -458,186 +742,76 @@ export default async function Home() {
               })}
             </div>
           </div>
-        </section>
 
-        {/* ─────────────────────────────────────────────────────────
-            Why Refer Labs — Differentiated Positioning
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-24">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-6 sm:p-10 lg:p-12">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(92,225,230,0.06),transparent_50%)]" />
+          {/* Dashboard Preview Cards */}
+          <div className="relative">
+            <div className="text-center mb-8">
+              <p className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2">See What You Get</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">Your Dashboard at a Glance</h3>
+            </div>
 
-            <div className="relative z-10">
-              {/* Section Header */}
-              <div className="text-center space-y-4 mb-10 sm:mb-14">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
-                  Why Most Referral Programs Fail
-                </h2>
-                <p className="text-slate-300 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
-                  Most partnership tools were built for e-commerce or mass-market SaaS. Professional services firms—law, accounting, consulting—operate on trust, long sales cycles, and discrete introductions. <span className="text-white font-medium">The existing tools don't understand this.</span>
-                </p>
-              </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {dashboardPreviews.map((preview) => {
+                const Icon = preview.icon;
+                const colorClasses: Record<string, { border: string; bg: string; icon: string; metric: string }> = {
+                  cyan: { border: "border-cyan-500/30", bg: "from-cyan-500/10 to-cyan-500/5", icon: "text-cyan-400", metric: "text-cyan-300" },
+                  blue: { border: "border-blue-500/30", bg: "from-blue-500/10 to-blue-500/5", icon: "text-blue-400", metric: "text-blue-300" },
+                  emerald: { border: "border-emerald-500/30", bg: "from-emerald-500/10 to-emerald-500/5", icon: "text-emerald-400", metric: "text-emerald-300" },
+                  purple: { border: "border-purple-500/30", bg: "from-purple-500/10 to-purple-500/5", icon: "text-purple-400", metric: "text-purple-300" },
+                };
+                const colors = colorClasses[preview.color];
 
-              {/* Problem Cards */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-10 sm:mb-14">
-                <div className="rounded-2xl bg-slate-900/60 border border-red-500/15 p-5 sm:p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-8 w-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-red-400 text-sm">01</span>
+                return (
+                  <div
+                    key={preview.id}
+                    className={cn(
+                      "relative overflow-hidden rounded-2xl border bg-gradient-to-br p-5 transition-all hover:scale-[1.02]",
+                      colors.border,
+                      colors.bg
+                    )}
+                  >
+                    {/* Header */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center">
+                        <Icon className={cn("h-5 w-5", colors.icon)} />
+                      </div>
+                      <h4 className="font-semibold text-white text-sm">{preview.title}</h4>
                     </div>
-                    <h3 className="font-bold text-white text-sm sm:text-base">Wrong Model</h3>
-                  </div>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    Coupon-code referral tools built for Shopify stores don't work when your average deal is $10,000+ and takes months to close.
-                  </p>
-                </div>
 
-                <div className="rounded-2xl bg-slate-900/60 border border-red-500/15 p-5 sm:p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-8 w-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-red-400 text-sm">02</span>
+                    {/* Description */}
+                    <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                      {preview.description}
+                    </p>
+
+                    {/* Mock Metrics */}
+                    <div className="grid grid-cols-3 gap-2">
+                      {preview.metrics.map((metric) => (
+                        <div key={metric.label} className="text-center">
+                          <p className={cn("text-lg font-bold", colors.metric)}>{metric.value}</p>
+                          <p className="text-[10px] text-slate-500 uppercase tracking-wide">{metric.label}</p>
+                        </div>
+                      ))}
                     </div>
-                    <h3 className="font-bold text-white text-sm sm:text-base">No Attribution</h3>
                   </div>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    Manual spreadsheets and "who introduced whom" guesswork means partners don't get credited—and stop referring.
-                  </p>
-                </div>
+                );
+              })}
+            </div>
 
-                <div className="rounded-2xl bg-slate-900/60 border border-red-500/15 p-5 sm:p-6 sm:col-span-2 lg:col-span-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-8 w-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-red-400 text-sm">03</span>
-                    </div>
-                    <h3 className="font-bold text-white text-sm sm:text-base">Generic Experience</h3>
-                  </div>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    Off-the-shelf tools feel transactional. Trusted advisors and partners expect a professional, discreet experience.
-                  </p>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div className="flex items-center gap-4 mb-10 sm:mb-14">
-                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-                <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
-                  Why Refer Labs
-                </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-              </div>
-
-              {/* Solution Cards */}
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-                <div className="rounded-2xl bg-gradient-to-br from-cyan-500/10 to-teal-500/5 border border-cyan-500/20 p-5 sm:p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-10 w-10 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                      <Building2 className="h-5 w-5 text-cyan-400" />
-                    </div>
-                    <h3 className="font-bold text-white">Built for Professional Services</h3>
-                  </div>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                    Designed for law firms, accountants, consultants, and advisory practices—where growth happens through trusted introductions, not discount codes.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span>High-value, long-cycle deal tracking</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span>Discreet partner experiences</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span>Professional compliance built-in</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl bg-gradient-to-br from-blue-500/10 to-indigo-500/5 border border-blue-500/20 p-5 sm:p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-10 w-10 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <LinkedinIcon className="h-5 w-5 text-blue-400" />
-                    </div>
-                    <h3 className="font-bold text-white">Beyond Mass-Market Affiliate Tools</h3>
-                  </div>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                    Professional referrals require discretion, not coupon codes. We built for the way B2B relationships actually work—warm introductions, not spam links.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>White-label partner portals</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>No public discount codes</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>Relationship-first tracking</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-green-500/5 border border-emerald-500/20 p-5 sm:p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-10 w-10 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
-                      <BarChart3 className="h-5 w-5 text-emerald-400" />
-                    </div>
-                    <h3 className="font-bold text-white">Attribution You Can Defend</h3>
-                  </div>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                    Every click, meeting, and closed deal is tracked and attributed. Your finance team gets audit-ready reports, partners get clear credit.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span>Full-funnel conversion tracking</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span>Real-time partner dashboards</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span>Automated payout calculations</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl bg-gradient-to-br from-purple-500/10 to-violet-500/5 border border-purple-500/20 p-5 sm:p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-10 w-10 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                      <Target className="h-5 w-5 text-purple-400" />
-                    </div>
-                    <h3 className="font-bold text-white">Results, Not Impressions</h3>
-                  </div>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                    Pay for outcomes—demos booked, deals closed, revenue generated. Not vanity metrics or impression counts.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
-                      <span>Performance-based payouts</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
-                      <span>Revenue share or per-deal models</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
-                      <span>Clear ROI measurement</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            {/* CTA */}
+            <div className="text-center mt-8">
+              <Link
+                href="/how-it-works"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
+              >
+                See the Full Playbook
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Client Testimonials
+            Client Testimonials — With Avatars
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
           <div className="text-center space-y-4 mb-12">
@@ -649,23 +823,40 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {clientTestimonials.map((testimonial, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 space-y-4"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 space-y-5 hover:border-white/20 transition-colors"
               >
+                {/* Stars */}
                 <div className="flex gap-1 text-amber-400">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
+                    <span key={i} className="text-sm">★</span>
                   ))}
                 </div>
+
+                {/* Quote */}
                 <p className="text-slate-300 leading-relaxed text-sm">
                   "{testimonial.quote}"
                 </p>
-                <div className="pt-2 border-t border-white/10">
-                  <p className="font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-sm text-slate-400">{testimonial.title}</p>
+
+                {/* Author with Avatar */}
+                <div className="flex items-center gap-4 pt-3 border-t border-white/10">
+                  {/* Avatar */}
+                  <div className={cn(
+                    "h-11 w-11 rounded-full bg-gradient-to-br flex items-center justify-center flex-shrink-0 shadow-lg",
+                    testimonial.avatarBg
+                  )}>
+                    <span className="text-white font-bold text-sm">{testimonial.avatar}</span>
+                  </div>
+
+                  {/* Name & Info */}
+                  <div className="min-w-0">
+                    <p className="font-semibold text-white truncate">{testimonial.name}</p>
+                    <p className="text-sm text-slate-400 truncate">{testimonial.title}</p>
+                    <p className="text-xs text-slate-500 truncate">{testimonial.company}</p>
+                  </div>
                 </div>
               </div>
             ))}
