@@ -152,9 +152,9 @@ describe('Step2Content - Clients & Ambassadors', () => {
   it('renders customer import and quick add sections', () => {
     render(<Step2Content {...defaultProps} />);
 
-    expect(screen.getByText('Import Your Network')).toBeInTheDocument();
+    expect(screen.getByText('Sync your customer graph')).toBeInTheDocument();
     expect(
-      screen.getByText('Upload partners, clients, creators, and advisors to instantly generate referral links.'),
+      screen.getByText('Upload partners, clients, creators, and advisors to instantly generate referral links and keep attribution intact.'),
     ).toBeInTheDocument();
     const activePartnersLabel = screen.getByText('Active partners:');
     expect(activePartnersLabel).toBeInTheDocument();
