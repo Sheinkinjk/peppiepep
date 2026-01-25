@@ -115,7 +115,7 @@ function validateStep1(checks: {
     items.push({
       kind: "recommended",
       label: "Complete the website integration checklist (mark website integration complete)",
-      where: "In Refer Labs (Step 1D)",
+      where: "In Pages (publish) + Testing & QA",
       cta: { label: "Open Step 1", stepId: "setup-integration" },
     });
   }

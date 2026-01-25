@@ -18,7 +18,7 @@ export default function Terms() {
             Terms of Service
           </h1>
           <p className="text-sm text-slate-500">
-            Last updated: January 2025
+            Last updated: January 2026
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Description of Service</h2>
               <p className="text-slate-600 mb-3">
-                Pepform provides a SaaS-based referral marketing and growth network platform that enables businesses to create, manage, track, and optimize customer referral programs through automated messaging, analytics, and campaign management tools.
+                Pepform provides a SaaS-based referral marketing and growth network platform that enables businesses to create, manage, track, and optimize customer referral programs through automated messaging, analytics, campaign management tools, hosted referral/handoff pages (/r/[code], /referral, /referred), and embeddable experiences for common CMS platforms.
               </p>
               <p className="text-slate-600">
                 The Service may include features such as SMS/WhatsApp messaging, email campaigns, customer data management, referral tracking, analytics dashboards, and integration capabilities. Pepform reserves the right to modify, suspend, or discontinue any aspect of the Service at any time without prior notice.
@@ -338,14 +338,25 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">10. Privacy and Data Protection</h2>
               <p className="text-slate-600 mb-3">
-                Your use of the Service is governed by our Privacy Policy, which is incorporated into these Terms by reference. You acknowledge that Pepform will process personal data in accordance with applicable privacy laws including GDPR, CCPA, and Australian Privacy Principles.
+                Your use of the Service is governed by our Privacy Policy, which is incorporated into these Terms by reference. You acknowledge that Pepform will process personal data in accordance with applicable privacy laws including the Australian Privacy Act 1988 (and Australian Privacy Principles), Spam Act 2003, GDPR, and CCPA.
               </p>
               <p className="text-slate-600 mb-3">
                 For EU/UK users: Pepform acts as a data processor when handling customer data you upload. You are the data controller and are responsible for ensuring you have a lawful basis for processing and transferring personal data to Pepform.
               </p>
               <p className="text-slate-600">
-                Pepform implements reasonable security measures but cannot guarantee absolute security. You are responsible for implementing appropriate security practices for your account and data.
+                Pepform implements reasonable security measures but cannot guarantee absolute security. You are responsible for implementing appropriate security practices for your account and data, including ensuring you have consent to transfer personal information overseas (e.g., to the United States) for hosting and processing.
               </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">10A. Australian Privacy, Spam, and Consumer Compliance</h2>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-3">
+                <li><strong>Privacy Act 1988 (Cth) & APPs:</strong> We handle personal information in accordance with the Australian Privacy Principles. You must only upload data you are permitted to share and must give required privacy notices to individuals.</li>
+                <li><strong>Spam Act 2003 & Do Not Call Register Act 2006:</strong> You must obtain consent before sending commercial electronic messages or calls via the Service. Include functional unsubscribe/STOP mechanisms, honour opt-outs immediately, and do not contact numbers on the Australian Do Not Call Register unless an exemption applies.</li>
+                <li><strong>Australian Consumer Law (ACL):</strong> Nothing in these Terms limits your non-excludable consumer guarantees under the ACL. Remedies under the ACL apply in addition to any limitations stated here.</li>
+                <li><strong>Overseas disclosures:</strong> Personal information may be processed outside Australia (e.g., United States). By using the Service, you consent to overseas transfers and must ensure your end customers are notified/consent where required.</li>
+              </ul>
+              <p className="text-slate-600">If you have privacy concerns, you may contact us (Section 24) or lodge a complaint with the Office of the Australian Information Commissioner (oaic.gov.au).</p>
             </div>
 
             <div>

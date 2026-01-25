@@ -18,7 +18,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p className="text-sm text-slate-500">
-            Last updated: January 2025 · Version 2.0
+            Last updated: January 2026 · Version 2.1
           </p>
         </div>
 
@@ -104,12 +104,32 @@ export default function Privacy() {
                 </div>
 
                 <div className="bg-slate-50 rounded-lg p-4">
+                  <p className="font-semibold text-slate-800 mb-1">Twilio (SMS/Voice)</p>
+                  <ul className="text-sm text-slate-600 list-disc list-inside space-y-0.5">
+                    <li><strong>Data Shared:</strong> Phone numbers, message content, delivery metadata</li>
+                    <li><strong>Purpose:</strong> Deliver SMS/WhatsApp/voice messages you send</li>
+                    <li><strong>Location:</strong> Global infrastructure (including US); messages may transit internationally</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://www.twilio.com/en-us/legal/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">twilio.com/legal/privacy</a></li>
+                  </ul>
+                </div>
+
+                <div className="bg-slate-50 rounded-lg p-4">
                   <p className="font-semibold text-slate-800 mb-1">Resend (Email Delivery)</p>
                   <ul className="text-sm text-slate-600 list-disc list-inside space-y-0.5">
                     <li><strong>Data Shared:</strong> Email addresses, message content you create</li>
                     <li><strong>Purpose:</strong> Deliver campaign emails and transactional notifications</li>
                     <li><strong>Location:</strong> United States</li>
                     <li><strong>Privacy Policy:</strong> <a href="https://resend.com/legal/privacy-policy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">resend.com/legal/privacy-policy</a></li>
+                  </ul>
+                </div>
+
+                <div className="bg-slate-50 rounded-lg p-4">
+                  <p className="font-semibold text-slate-800 mb-1">Stripe (Billing)</p>
+                  <ul className="text-sm text-slate-600 list-disc list-inside space-y-0.5">
+                    <li><strong>Data Shared:</strong> Billing contact info, payment method tokens (card data stays with Stripe)</li>
+                    <li><strong>Purpose:</strong> Subscription billing and payouts</li>
+                    <li><strong>Location:</strong> United States, global</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://stripe.com/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">stripe.com/privacy</a></li>
                   </ul>
                 </div>
 
@@ -167,6 +187,9 @@ export default function Privacy() {
                 <li>Service providers certified under privacy frameworks (Privacy Shield successor mechanisms)</li>
                 <li>Adequacy decisions from relevant data protection authorities where applicable</li>
               </ul>
+              <p className="text-slate-600 mt-2 text-sm">
+                By using the Service, you consent to the overseas transfer of personal information. You must ensure your own customers are notified and consent where required under the Australian Privacy Act 1988 (APP 5/APP 8).
+              </p>
             </div>
 
             {/* Data Retention */}
@@ -262,6 +285,20 @@ export default function Privacy() {
 
               <p className="text-slate-600 mt-4">
                 <strong>To exercise your rights:</strong> Email <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a> with "Privacy Rights Request" in the subject line. We will respond within 30 days.
+              </p>
+            </div>
+
+            {/* Direct Marketing & Australian Spam Compliance */}
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">7B. Direct Marketing & Australian Spam Compliance</h2>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li>We comply with the Australian Spam Act 2003 and Do Not Call Register Act 2006. Commercial electronic messages require your consent and must include a functional unsubscribe/STOP mechanism.</li>
+                <li>If you use our platform to message your customers, you are responsible for obtaining and recording their consent, honouring opt-outs immediately, and avoiding numbers on the Australian Do Not Call Register unless an exemption applies.</li>
+                <li>For EU/UK customers, direct marketing is based on consent or legitimate interests; you must provide opt-out options in every message.</li>
+                <li>Unsubscribe/opt-out instructions are included in our templates; removing them may result in suspension.</li>
+              </ul>
+              <p className="text-slate-600 text-sm">
+                You can withdraw your marketing consent at any time via unsubscribe links, replying STOP to SMS where available, or emailing us.
               </p>
             </div>
 

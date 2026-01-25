@@ -28,7 +28,12 @@ export function Step1Education() {
           <strong>Integrations (Step 1C):</strong> Connect your website platform (WordPress, Shopify,
           Webflow, etc.) to embed referral forms, track conversions via discount codes, and sync
           with your CRM (HubSpot, Klaviyo, Mailchimp). Each integration includes setup guides,
-          testing checklists, and verification tools.
+          testing checklists, and verification tools. Mark the status tracker as you finish each area.
+        </li>
+        <li>
+          <strong>Pages (Step 2):</strong> Publish your referral and handoff pages (/referral and /referred),
+          choose hosted vs embed vs custom domain, and grab the iframe/CNAME details. This locks the URLs
+          used for QA and referral links.
         </li>
       </ol>
 
@@ -43,10 +48,10 @@ export function Step1Education() {
       <h4>Key Actions to Take</h4>
       <ul>
         <li>Fill out all business context fields so integrations are properly configured</li>
-        <li>Preview your hosted referral page to confirm branding looks professional</li>
-        <li>Mark your website integration as "complete" after embedding the referral form</li>
-        <li>Test a full referral journey: click link → submit form → trigger conversion</li>
-        <li>Verify discount code capture works with your checkout system</li>
+        <li>Publish /referral and /referred in Pages (hosted or embed) and verify on your domain</li>
+        <li>Mark your website/CRM/QA statuses as "complete" after embedding and testing</li>
+        <li>Test a full journey: /r/[code] → /referral → CTA → /referred → conversion capture</li>
+        <li>Verify discount code capture or API conversion reporting works with your checkout</li>
       </ul>
 
       <h4>Pro Tips</h4>

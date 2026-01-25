@@ -47,7 +47,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error: isDuplicate
-          ? "An account already exists with this email. Try signing in instead."
+          ? "This email is already registered. Please log in, or reset your password."
           : "Unable to create your account right now. Please try again.",
       },
       { status: isDuplicate ? 409 : 500 },

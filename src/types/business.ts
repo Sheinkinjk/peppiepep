@@ -2,6 +2,16 @@ import type { Json } from "@/types/supabase";
 
 export type IntegrationStatusValue = "not_started" | "in_progress" | "complete";
 
+export type PageBuilderMetadata = {
+  preferredDomain?: string | null;
+  landingPath?: string | null;
+  referredPath?: string | null;
+  theme?: string | null;
+  embedType?: string | null;
+  status?: "draft" | "published" | null;
+  notes?: string | null;
+};
+
 export type BusinessOnboardingMetadata = {
   businessType?: string | null;
   primaryLocation?: string | null;
@@ -24,6 +34,7 @@ export type BusinessOnboardingMetadata = {
     goLiveConfirmedAt?: string | null;
     lastIntegrationHealthAlertAt?: string | null;
   };
+  pageBuilder?: PageBuilderMetadata | null;
 };
 
 export const parseBusinessMetadata = (value: Json | null | undefined): BusinessOnboardingMetadata | null => {
