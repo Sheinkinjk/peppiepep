@@ -13,6 +13,8 @@ import {
   Sparkles,
   ChevronDown,
   ChevronRight,
+  HelpCircle,
+  XCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +28,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import type { BusinessOnboardingMetadata } from "@/types/business";
 
 type Step1DTestingTabProps = {
   businessId: string;
@@ -34,6 +37,7 @@ type Step1DTestingTabProps = {
   discountCaptureSecret?: string | null;
   hasCustomers: boolean;
   hasProgramSettings: boolean;
+  pageBuilder?: BusinessOnboardingMetadata["pageBuilder"] | null;
 };
 
 type AttributionHealth = {
@@ -76,6 +80,7 @@ export function Step1DTestingTab({
   discountCaptureSecret,
   hasCustomers,
   hasProgramSettings,
+  pageBuilder,
 }: Step1DTestingTabProps) {
   const [testLandingUrl, setTestLandingUrl] = useState("");
   const [testReferralCode, setTestReferralCode] = useState("");
@@ -96,17 +101,28 @@ export function Step1DTestingTab({
   const [cookieCheck, setCookieCheck] = useState<AttributionCookieStatus | null>(null);
   const [isHealthRunning, setIsHealthRunning] = useState(false);
   const [isCookieRunning, setIsCookieRunning] = useState(false);
-  const [landingPageOpen, setLandingPageOpen] = useState(true);
-  const [connectPageOpen, setConnectPageOpen] = useState(true);
-  const [handoffTestOpen, setHandoffTestOpen] = useState(true);
-  const [qaChecksOpen, setQaChecksOpen] = useState(true);
+  const [landingPageOpen, setLandingPageOpen] = useState(false);
+  const [connectPageOpen, setConnectPageOpen] = useState(false);
+  const [handoffTestOpen, setHandoffTestOpen] = useState(false);
+  const [qaChecksOpen, setQaChecksOpen] = useState(false);
+  const [troubleshootingOpen, setTroubleshootingOpen] = useState(false);
+
+  const ensureLeadingSlash = (value: string | null | undefined, fallback: string) => {
+    if (!value) return fallback;
+    const trimmed = value.trim() || fallback;
+    return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+  };
 
   const normalizedSite = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
-  const exampleLandingUrl = `${normalizedSite}/landing`;
+  const preferredHost = (pageBuilder?.preferredDomain || normalizedSite).replace(/\/+$/, "");
+  const landingPath = ensureLeadingSlash(pageBuilder?.landingPath, "/referral");
+  const referredPath = ensureLeadingSlash(pageBuilder?.referredPath, "/referred");
+
+  const exampleLandingUrl = `${preferredHost}${landingPath}`;
   const exampleReferralUrl = testReferralCode
-    ? `${normalizedSite}/r/${testReferralCode}`
-    : `${normalizedSite}/r/[ambassador-code]`;
-  const referredPageUrl = `${normalizedSite}/referred`;
+    ? `${preferredHost}/r/${testReferralCode}`
+    : `${preferredHost}/r/[ambassador-code]`;
+  const referredPageUrl = `${preferredHost}${referredPath}`;
 
   const copyToClipboard = async (text: string, type: "landing" | "code") => {
     try {
@@ -366,7 +382,7 @@ export function Step1DTestingTab({
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Testing & QA</p>
             <h2 className="text-lg font-black text-slate-900 leading-tight">Confirm referral tracking works</h2>
             <p className="text-xs text-slate-600">
-              Run the quick checks below: open landing pages, verify cookies, and log QA events.
+              Run the quick checks below: open your referral page ({preferredHost}{landingPath}), verify cookies, and log QA events.
             </p>
           </div>
         </div>
@@ -922,6 +938,198 @@ export function Step1DTestingTab({
                   <li>• Measure ROI → Recent Interaction Activity (source shows "integration_qa")</li>
                   <li>• Measure ROI → Journey timeline (events listed per ambassador)</li>
                 </ul>
+              </div>
+            </div>
+          </CollapsibleContent>
+        </div>
+      </Collapsible>
+
+      {/* Success Confirmation State */}
+      {hasProgramSettings && hasCustomers && qaSummary.recentCount > 0 && healthCheck?.healthy && cookieCheck?.hasAttribution && (
+        <div className="rounded-2xl border-2 border-emerald-300 bg-gradient-to-r from-emerald-50 to-teal-50 p-5 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="rounded-full bg-emerald-500 p-2">
+              <CheckCircle className="h-6 w-6 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-emerald-900">All checks passed!</h3>
+              <p className="text-sm text-emerald-800 mt-1">
+                Your referral tracking is working correctly. You're ready to invite ambassadors and start generating referrals.
+              </p>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="flex items-center gap-2 text-xs text-emerald-700">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>Program settings saved</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-emerald-700">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>Ambassadors added</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-emerald-700">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>Attribution healthy</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-emerald-700">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>QA events logged</span>
+                </div>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Button
+                  type="button"
+                  className="rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
+                  onClick={() => {
+                    if (typeof window !== "undefined") {
+                      window.dispatchEvent(
+                        new CustomEvent("dashboard:navigate", {
+                          detail: { section: "clients-ambassadors" },
+                        }),
+                      );
+                    }
+                  }}
+                >
+                  Go to Partners
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="rounded-full border-emerald-200"
+                  onClick={handleJumpToQaResults}
+                >
+                  View QA Results
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Troubleshooting Section */}
+      <Collapsible open={troubleshootingOpen} onOpenChange={setTroubleshootingOpen}>
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+          <CollapsibleTrigger className="w-full p-5 flex items-center gap-3 hover:bg-slate-50 transition-colors">
+            <div className="rounded-lg bg-amber-100 p-2">
+              <HelpCircle className="h-5 w-5 text-amber-600" />
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-sm font-semibold text-slate-900">Troubleshooting common issues</p>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Solutions for cookie issues, DNS problems, and attribution failures
+              </p>
+            </div>
+            {troubleshootingOpen ? (
+              <ChevronDown className="h-5 w-5 text-slate-400 flex-shrink-0" />
+            ) : (
+              <ChevronRight className="h-5 w-5 text-slate-400 flex-shrink-0" />
+            )}
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <div className="px-5 pb-5 space-y-4">
+              {/* Issue 1: Cookie not set */}
+              <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+                <div className="flex items-start gap-3">
+                  <XCircle className="h-5 w-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-amber-900">Attribution cookie not being set</p>
+                    <p className="text-xs text-amber-800 mt-1">The referral link opens but no attribution is tracked.</p>
+                    <div className="mt-3 rounded-lg bg-white border border-amber-200 p-3">
+                      <p className="text-xs font-semibold text-slate-700 mb-2">Solutions:</p>
+                      <ul className="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                        <li>Open the referral link in an <strong>incognito/private window</strong> to avoid cached cookies</li>
+                        <li>Check if your browser blocks third-party cookies (Safari, Brave, Firefox with strict settings)</li>
+                        <li>Ensure the referral link format is correct: <code className="bg-slate-100 px-1 rounded">{preferredHost}/r/[code]</code></li>
+                        <li>Verify your site's <code className="bg-slate-100 px-1 rounded">SameSite</code> cookie policy allows cross-site cookies</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Issue 2: DNS not propagated */}
+              <div className="rounded-xl border border-blue-200 bg-blue-50 p-4">
+                <div className="flex items-start gap-3">
+                  <XCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-blue-900">Custom domain not resolving</p>
+                    <p className="text-xs text-blue-800 mt-1">You set up a CNAME but the pages don't load on your domain.</p>
+                    <div className="mt-3 rounded-lg bg-white border border-blue-200 p-3">
+                      <p className="text-xs font-semibold text-slate-700 mb-2">Solutions:</p>
+                      <ul className="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                        <li>DNS changes can take <strong>5-15 minutes</strong> (sometimes up to 48 hours) to propagate</li>
+                        <li>Verify CNAME is set correctly: your subdomain → <code className="bg-slate-100 px-1 rounded">pages.referlabs.com</code></li>
+                        <li>Use <a href="https://dnschecker.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">dnschecker.org</a> to verify DNS propagation</li>
+                        <li>Clear your browser cache or try a different browser/device</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Issue 3: Embed not showing */}
+              <div className="rounded-xl border border-purple-200 bg-purple-50 p-4">
+                <div className="flex items-start gap-3">
+                  <XCircle className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-purple-900">Embedded page shows blank or errors</p>
+                    <p className="text-xs text-purple-800 mt-1">The iframe embed isn't displaying the referral page content.</p>
+                    <div className="mt-3 rounded-lg bg-white border border-purple-200 p-3">
+                      <p className="text-xs font-semibold text-slate-700 mb-2">Solutions:</p>
+                      <ul className="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                        <li>Make sure you've saved the page builder settings with status "Published"</li>
+                        <li>Check the iframe src URL matches your configured landing URL</li>
+                        <li>Some CMS platforms require you to enable iframe embeds in settings</li>
+                        <li>Verify the host URL in Pages matches where you're embedding</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Issue 4: QA events not appearing */}
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+                <div className="flex items-start gap-3">
+                  <XCircle className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-emerald-900">QA events not appearing in Measure ROI</p>
+                    <p className="text-xs text-emerald-800 mt-1">You ran Integration QA but can't see the test events.</p>
+                    <div className="mt-3 rounded-lg bg-white border border-emerald-200 p-3">
+                      <p className="text-xs font-semibold text-slate-700 mb-2">Solutions:</p>
+                      <ul className="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                        <li>Refresh the page or navigate away and back to Measure ROI</li>
+                        <li>QA events are filtered to the last 10 minutes—try running QA again</li>
+                        <li>Check the browser console for any API errors</li>
+                        <li>Verify you're logged into the correct business account</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Issue 5: Attribution rate low */}
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-slate-900">Low attribution rate in health check</p>
+                    <p className="text-xs text-slate-700 mt-1">Attribution health shows warning or critical status.</p>
+                    <div className="mt-3 rounded-lg bg-white border border-slate-200 p-3">
+                      <p className="text-xs font-semibold text-slate-700 mb-2">Solutions:</p>
+                      <ul className="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                        <li>Ensure ambassadors are sharing the correct <code className="bg-slate-100 px-1 rounded">/r/[code]</code> links</li>
+                        <li>Check if users are using browsers that block tracking (Safari ITP, Firefox ETP)</li>
+                        <li>Verify your landing page isn't stripping query parameters on redirect</li>
+                        <li>Consider server-side attribution for higher accuracy</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-slate-200 bg-white p-4 text-center">
+                <p className="text-sm text-slate-600">Still having issues?</p>
+                <p className="text-xs text-slate-500 mt-1">
+                  Contact support at <a href="mailto:support@referlabs.com" className="text-blue-600 underline">support@referlabs.com</a> or check the <a href="/integrations" className="text-blue-600 underline">integration guides</a>
+                </p>
               </div>
             </div>
           </CollapsibleContent>

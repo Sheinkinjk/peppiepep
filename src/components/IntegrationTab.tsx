@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import type { Database } from "@/types/supabase";
-import type { BusinessOnboardingMetadata } from "@/types/business";
+import type { BusinessOnboardingMetadata, IntegrationStatusValue } from "@/types/business";
 
 type RewardType =
   Database["public"]["Tables"]["businesses"]["Row"]["reward_type"];
@@ -76,10 +76,25 @@ export function IntegrationTab({
   const normalizedMetadata = onboardingMetadata ?? {};
   const normalizedSite =
     siteUrl && siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl || "https://example.com";
+  const pageBuilder = onboardingMetadata?.pageBuilder ?? {};
+  const ensureLeadingSlash = (value: string | null | undefined, fallback: string) => {
+    if (!value) return fallback;
+    const trimmed = value.trim() || fallback;
+    return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+  };
+  const preferredHost = (pageBuilder.preferredDomain || normalizedSite).replace(/\/+$/, "");
+  const configuredLandingPath = ensureLeadingSlash(pageBuilder.landingPath, "/referral");
+  const configuredReferredPath = ensureLeadingSlash(pageBuilder.referredPath, "/referred");
+  const configuredLandingUrl = `${preferredHost}${configuredLandingPath}`;
+  const configuredReferredUrl = `${preferredHost}${configuredReferredPath}`;
+  const pagesHostHint =
+    pageBuilder.preferredDomain && pageBuilder.preferredDomain !== normalizedSite
+      ? `Using your Pages host (${pageBuilder.preferredDomain}).`
+      : "Using your default site host.";
 
-  const [snapshotOpen, setSnapshotOpen] = useState(true);
-  const [rewardsOpen, setRewardsOpen] = useState(true);
-  const [integrationsOpen, setIntegrationsOpen] = useState(true);
+  const [snapshotOpen, setSnapshotOpen] = useState(false);
+  const [rewardsOpen, setRewardsOpen] = useState(false);
+  const [integrationsOpen, setIntegrationsOpen] = useState(false);
   const logoFileRef = useRef<HTMLInputElement | null>(null);
   const rewardTermsFileRef = useRef<HTMLInputElement | null>(null);
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
@@ -99,6 +114,15 @@ export function IntegrationTab({
     typeof normalizedMetadata.referralGoal === "number" ? String(normalizedMetadata.referralGoal) : "",
   );
   const [integrationNotes, setIntegrationNotes] = useState(normalizedMetadata.integrationNotes ?? "");
+  const [integrationStatusWebsite, setIntegrationStatusWebsite] = useState<IntegrationStatusValue>(
+    normalizedMetadata.integrationStatus?.website ?? "not_started",
+  );
+  const [integrationStatusCrm, setIntegrationStatusCrm] = useState<IntegrationStatusValue>(
+    normalizedMetadata.integrationStatus?.crm ?? "not_started",
+  );
+  const [integrationStatusQa, setIntegrationStatusQa] = useState<IntegrationStatusValue>(
+    normalizedMetadata.integrationStatus?.qa ?? "not_started",
+  );
   const [isOnboardingSaving, setIsOnboardingSaving] = useState(false);
 
   // Program settings form state
@@ -159,8 +183,8 @@ export function IntegrationTab({
     );
   };
 
-  const handleOnboardingSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const saveOnboardingSnapshot = async () => {
+    if (isOnboardingSaving) return false;
     setIsOnboardingSaving(true);
     const formData = new FormData();
     formData.append("business_name", businessNameInput);
@@ -172,6 +196,9 @@ export function IntegrationTab({
     formData.append("avg_sale", avgSale);
     formData.append("referral_goal", referralGoal);
     formData.append("integration_notes", integrationNotes);
+    formData.append("integration_status_website", integrationStatusWebsite);
+    formData.append("integration_status_crm", integrationStatusCrm);
+    formData.append("integration_status_qa", integrationStatusQa);
 
     try {
       await updateOnboardingAction(formData);
@@ -180,6 +207,7 @@ export function IntegrationTab({
         description: "Your business profile and integration tracker are up to date.",
       });
       router.refresh();
+      return true;
     } catch (error) {
       console.error("Failed to save onboarding snapshot:", error);
       toast({
@@ -187,9 +215,15 @@ export function IntegrationTab({
         title: "Unable to save onboarding details",
         description: "Please try again or refresh the page.",
       });
+      return false;
     } finally {
       setIsOnboardingSaving(false);
     }
+  };
+
+  const handleOnboardingSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await saveOnboardingSnapshot();
   };
 
   const handleLogoFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -363,27 +397,35 @@ export function IntegrationTab({
           <form onSubmit={handleOnboardingSubmit} className="mt-6 space-y-6">
             <div className="grid gap-5 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="business_name" className="text-sm font-bold text-slate-900">Business name</Label>
+                <Label htmlFor="business_name" className="text-sm font-bold text-slate-900">
+                  Business name <span className="text-orange-500">*</span>
+                </Label>
                 <Input
                   id="business_name"
                   value={businessNameInput}
                   onChange={(e) => setBusinessNameInput(e.target.value)}
                   placeholder="Glow Atelier"
                   className="rounded-2xl border-2 border-slate-200"
+                  required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="business_type" className="text-sm font-bold text-slate-900">Business category</Label>
+                <Label htmlFor="business_type" className="text-sm font-bold text-slate-900">
+                  Business category <span className="text-orange-500">*</span>
+                </Label>
                 <Input
                   id="business_type"
                   value={businessType}
                   onChange={(e) => setBusinessType(e.target.value)}
                   placeholder="Premium salon, medspa, fitness studio, etc."
                   className="rounded-2xl border-2 border-slate-200"
+                  required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="website_url" className="text-sm font-bold text-slate-900">Website / booking URL</Label>
+                <Label htmlFor="website_url" className="text-sm font-bold text-slate-900">
+                  Website / booking URL <span className="text-orange-500">*</span>
+                </Label>
                 <Input
                   id="website_url"
                   type="url"
@@ -391,8 +433,9 @@ export function IntegrationTab({
                   onChange={(e) => setWebsiteUrl(e.target.value)}
                   placeholder="https://glowatelier.com"
                   className="rounded-2xl border-2 border-slate-200"
+                  required
                 />
-                <p className="text-xs text-slate-500">Include https:// to ensure links open correctly.</p>
+                <p className="text-xs text-slate-500">Required so we can link /r/[code] → /referral on your host. Include https://.</p>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="primary_location" className="text-sm font-bold text-slate-900">Primary location / time zone</Label>
@@ -407,12 +450,15 @@ export function IntegrationTab({
             </div>
             <div className="grid gap-5 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="website_platform" className="text-sm font-bold text-slate-900">Website platform</Label>
+                <Label htmlFor="website_platform" className="text-sm font-bold text-slate-900">
+                  Website platform <span className="text-orange-500">*</span>
+                </Label>
                 <select
                   id="website_platform"
                   value={websitePlatform}
                   onChange={(e) => setWebsitePlatform(e.target.value)}
                   className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                  required
                 >
                   <option value="">Select platform</option>
                   <option value="Shopify">Shopify</option>
@@ -438,11 +484,12 @@ export function IntegrationTab({
                   <option value="Salesforce">Salesforce</option>
                   <option value="Other">Other</option>
                 </select>
+                <p className="text-[11px] text-slate-500">Optional, but recommended so merge fields/export work correctly.</p>
               </div>
             </div>
             <div className="grid gap-5 md:grid-cols-2">
               <div className="space-y-2">
-                <Label htmlFor="avg_sale" className="text-sm font-bold text-slate-900">Average transaction value</Label>
+                <Label htmlFor="avg_sale" className="text-sm font-bold text-slate-900">Average transaction value (optional)</Label>
                 <Input
                   id="avg_sale"
                   type="number"
@@ -454,7 +501,7 @@ export function IntegrationTab({
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="referral_goal" className="text-sm font-bold text-slate-900">Monthly referral goal</Label>
+                <Label htmlFor="referral_goal" className="text-sm font-bold text-slate-900">Monthly referral goal (optional)</Label>
                 <Input
                   id="referral_goal"
                   type="number"
@@ -476,10 +523,60 @@ export function IntegrationTab({
                 className="min-h-[90px] rounded-2xl border-2 border-slate-200"
               />
             </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3 text-[11px] text-slate-600">
+              Mark each status as “Complete” after live checks pass: Website (referral + referred working on your host), CRM (merge fields/sends tested), QA (Testing & QA tab passes after publishing Pages).
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="space-y-2">
+                <Label htmlFor="integration_status_website" className="text-sm font-bold text-slate-900">Website embed status</Label>
+                <select
+                  id="integration_status_website"
+                  value={integrationStatusWebsite}
+                  onChange={(e) => setIntegrationStatusWebsite(e.target.value as IntegrationStatusValue)}
+                  name="integration_status_website"
+                  className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                >
+                  <option value="not_started">Not started</option>
+                  <option value="in_progress">In progress</option>
+                  <option value="complete">Complete</option>
+                </select>
+                <p className="text-[11px] text-slate-500">Mark complete after /referral + /referred work on your host.</p>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="integration_status_crm" className="text-sm font-bold text-slate-900">CRM / messaging status</Label>
+                <select
+                  id="integration_status_crm"
+                  value={integrationStatusCrm}
+                  onChange={(e) => setIntegrationStatusCrm(e.target.value as IntegrationStatusValue)}
+                  name="integration_status_crm"
+                  className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                >
+                  <option value="not_started">Not started</option>
+                  <option value="in_progress">In progress</option>
+                  <option value="complete">Complete</option>
+                </select>
+                <p className="text-[11px] text-slate-500">Set to complete after merge fields and sends are verified.</p>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="integration_status_qa" className="text-sm font-bold text-slate-900">QA status</Label>
+                <select
+                  id="integration_status_qa"
+                  value={integrationStatusQa}
+                  onChange={(e) => setIntegrationStatusQa(e.target.value as IntegrationStatusValue)}
+                  name="integration_status_qa"
+                  className="w-full rounded-2xl border-2 border-slate-200 p-2.5 text-sm font-semibold"
+                >
+                  <option value="not_started">Not started</option>
+                  <option value="in_progress">In progress</option>
+                  <option value="complete">Complete</option>
+                </select>
+                <p className="text-[11px] text-slate-500">Mark complete after Testing & QA passes end-to-end on your chosen host.</p>
+              </div>
+            </div>
             <div className="flex flex-col gap-4 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3 text-xs text-slate-500">
                 <Sparkles className="h-4 w-4 text-emerald-500" />
-                <span>Finish this intake before inviting ambassadors so the integration plan lives in one place.</span>
+                <span>Finish this intake, then publish pages and test to mark these statuses complete.</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 <Button
@@ -490,6 +587,28 @@ export function IntegrationTab({
                 >
                   Review website guide
                 </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="rounded-full border-slate-200 text-slate-800"
+                  onClick={async () => {
+                    const saved = await saveOnboardingSnapshot();
+                    if (saved) navigate("pages");
+                  }}
+                >
+                  Open Pages builder
+                </Button>
+                <div className="flex flex-col">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="rounded-full border-slate-200 text-slate-800"
+                    onClick={() => navigate("clients-ambassadors", "partner-csv-upload")}
+                  >
+                    Copy hosted /r/[code] links
+                  </Button>
+                  <span className="text-[10px] text-slate-500">Opens Partners tab so you can copy/share a live tracked link.</span>
+                </div>
                 <Button
                   type="submit"
                   className="rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 px-6 font-semibold text-white shadow-md"
@@ -891,8 +1010,8 @@ export function IntegrationTab({
                     <p className="text-xs font-semibold text-emerald-900 mb-2">What to verify</p>
                     <ul className="space-y-2 text-xs text-slate-700">
                       <li>• Campaign Builder preview uses your business name, logo, rewards, and brand tone.</li>
-                      <li>• Referral landing page reflects the latest offer + reward copy after Step 1B saves.</li>
-                      <li>• Ambassador links (<code className="bg-slate-100 px-1.5 py-0.5 rounded">/r/AMBASSADOR</code>) set attribution cookies.</li>
+                      <li>• Referral page (<code className="bg-slate-100 px-1.5 py-0.5 rounded">/referral</code> or your configured host/path) reflects the latest offer + reward copy after Step 1B saves.</li>
+                      <li>• Ambassador links (<code className="bg-slate-100 px-1.5 py-0.5 rounded">/r/AMBASSADOR</code>) set attribution cookies and land on your configured referral page.</li>
                       <li>• External Partner links point to the landing URL you define in External Partners.</li>
                     </ul>
                   </div>
@@ -901,7 +1020,7 @@ export function IntegrationTab({
                     <p className="text-xs font-semibold text-blue-900 mb-2">Quick test actions</p>
                     <ul className="space-y-2 text-xs text-blue-800">
                       <li>• Open Step 3 and review the live email preview (branding + reward copy).</li>
-                      <li>• Open Step 1D to test <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/landing</code> and <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/referred</code>.</li>
+                      <li>• After you publish Pages, open Testing &amp; QA to test your configured referral page (default <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/referral</code>) and <code className="bg-white px-1.5 py-0.5 rounded">{siteUrl}/referred</code>. If you set a custom host/path in Pages, use that.</li>
                     </ul>
                   </div>
 
@@ -935,57 +1054,52 @@ export function IntegrationTab({
         )}
       </div>
 
-      <div
-        id="step-1d-testing"
-        className="rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-md space-y-4"
-      >
-        <div className="flex items-start gap-3">
-          <div className="rounded-xl bg-blue-600 p-3">
-            <ShieldCheck className="h-6 w-6 text-white" />
+      <div className="rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-md space-y-4">
+          <div className="flex items-start gap-3">
+            <div className="rounded-xl bg-blue-600 p-3">
+              <ShieldCheck className="h-6 w-6 text-white" />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Testing &amp; QA lives after Pages</p>
+              <h3 className="text-lg font-black text-slate-900">Validate landing + handoff once pages are published</h3>
+              <p className="text-sm text-slate-700">
+                Publish /referral and /referred in the Pages tab (hosted, embed, or custom domain), then run Testing &amp; QA to confirm the pages load on your chosen host and log QA events. {pagesHostHint}
+              </p>
+            </div>
           </div>
-          <div className="flex-1">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">Step 1D · Testing & QA</p>
-            <h3 className="text-lg font-black text-slate-900">Validate landing + handoff before launch</h3>
-            <p className="text-sm text-slate-700">
-              Open the referral landing page and handoff page, then run QA to confirm attribution.
-            </p>
-          </div>
-        </div>
-        <div className="grid gap-3 md:grid-cols-3">
-          <div className="rounded-xl border border-blue-200 bg-white p-4">
-            <p className="text-xs font-semibold text-blue-900">1D-1 Referral landing page</p>
-            <p className="mt-1 text-xs text-slate-700">Confirm copy + rewards reflect Step 1B.</p>
-            <Button
-              type="button"
-              variant="outline"
-              className="mt-3 w-full rounded-full"
-              onClick={() => window.open(`${normalizedSite}/landing`, "_blank", "noopener,noreferrer")}
-            >
-              Open /landing
-            </Button>
-          </div>
-          <div className="rounded-xl border border-blue-200 bg-white p-4">
-            <p className="text-xs font-semibold text-blue-900">1D-2 Ambassador handoff</p>
-            <p className="mt-1 text-xs text-slate-700">Check attribution on /referred after an ambassador link.</p>
-            <Button
-              type="button"
-              variant="outline"
-              className="mt-3 w-full rounded-full"
-              onClick={() => window.open(`${normalizedSite}/referred`, "_blank", "noopener,noreferrer")}
-            >
-              Open /referred
-            </Button>
+        <div className="grid gap-3 md:grid-cols-2">
+          <div className="rounded-xl border border-blue-200 bg-white p-4 space-y-3">
+            <p className="text-xs font-semibold text-blue-900">Quick path</p>
+            <ol className="list-decimal list-inside space-y-1 text-xs text-blue-800">
+              <li>Open Pages and save your host + paths.</li>
+              <li>Go to Testing &amp; QA to open your live URLs and run the QA simulator.</li>
+            </ol>
+            <div className="flex flex-wrap gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-full border-slate-200 text-slate-800"
+                onClick={() => navigate("pages", "page-builder-panel")}
+              >
+                Open Pages
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="rounded-full border-emerald-200 text-emerald-800"
+                onClick={() => navigate("testing-qa", "integration-qa-panel")}
+              >
+                Open Testing &amp; QA
+              </Button>
+            </div>
           </div>
           <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
-            <p className="text-xs font-semibold text-emerald-900">Run QA</p>
-            <p className="mt-1 text-xs text-slate-700">Log test events and verify cookies + metrics.</p>
-            <Button
-              type="button"
-              className="mt-3 w-full rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
-              onClick={() => navigate("testing-qa", "integration-qa-panel")}
-            >
-              Open Testing & QA
-            </Button>
+            <p className="text-xs font-semibold text-emerald-900">What to confirm</p>
+            <ul className="list-disc list-inside text-xs text-emerald-900 space-y-1">
+              <li>{configuredLandingUrl} loads with your offer</li>
+              <li>{configuredReferredUrl} renders after a referral click</li>
+              <li>/r/[code] resolves to the same host and logs QA events</li>
+            </ul>
           </div>
         </div>
       </div>

@@ -58,6 +58,7 @@ import {
 	Percent,
 	Mail,
 	Link2,
+  Globe,
 	CalendarCheck,
 	FileText,
   ArrowRight,
@@ -79,6 +80,7 @@ import { DashboardLoginTracker } from "@/components/DashboardLoginTracker";
 import { DashboardSectionBoundary } from "@/components/dashboard/DashboardSectionBoundary";
 import { ExternalPartnersTab } from "@/components/dashboard/external-partners/ExternalPartnersTab";
 import { Step1DTestingTab } from "@/components/Step1DTestingTab";
+import { PageBuilderTab } from "@/components/dashboard/PageBuilderTab";
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 import { getCurrentAdmin } from "@/lib/admin-auth";
@@ -356,8 +358,11 @@ export default async function Dashboard({
     ensureAbsoluteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
     ensureAbsoluteUrl(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ??
     siteUrl;
+  const pageBuilderHost = ensureAbsoluteUrl(business.onboarding_metadata?.pageBuilder?.preferredDomain ?? null);
   const businessWebsiteUrl =
-    ensureAbsoluteUrl(business.onboarding_metadata?.websiteUrl ?? null) ?? baseSiteUrl;
+    pageBuilderHost ??
+    ensureAbsoluteUrl(business.onboarding_metadata?.websiteUrl ?? null) ??
+    baseSiteUrl;
   const referralBaseUrl = businessWebsiteUrl;
   let attributionHealth: { status?: string; healthy?: boolean; recommendation?: string } | null = null;
   try {
@@ -527,61 +532,123 @@ export default async function Dashboard({
     "use server";
     const supabase = await createServerComponentClient();
 
-    const getString = (key: string) => {
+    const getMaybeString = (key: string) => {
+      if (!formData.has(key)) return undefined;
       const raw = formData.get(key);
-      if (typeof raw !== "string") return null;
+      if (typeof raw !== "string") return undefined;
       const trimmed = raw.trim();
       return trimmed.length > 0 ? trimmed : null;
     };
 
     const parseNumberValue = (key: string) => {
-      const raw = getString(key);
-      if (!raw) return null;
-      const numeric = Number(raw);
+      if (!formData.has(key)) return undefined;
+      const raw = formData.get(key);
+      if (typeof raw !== "string") return undefined;
+      const trimmed = raw.trim();
+      if (!trimmed) return null;
+      const numeric = Number(trimmed);
       if (!Number.isFinite(numeric)) {
         return null;
       }
       return numeric;
     };
 
-    const parseStatusValue = (key: string): IntegrationStatusValue => {
-      const raw = getString(key);
+    const parseStatusValue = (key: string): IntegrationStatusValue | undefined => {
+      if (!formData.has(key)) return undefined;
+      const raw = formData.get(key);
+      if (typeof raw !== "string") return undefined;
+      const trimmed = raw.trim();
+      if (!trimmed) return undefined;
       const allowed: IntegrationStatusValue[] = [
         "not_started",
         "in_progress",
         "complete",
       ];
-      if (raw && allowed.includes(raw as IntegrationStatusValue)) {
-        return raw as IntegrationStatusValue;
+      if (allowed.includes(trimmed as IntegrationStatusValue)) {
+        return trimmed as IntegrationStatusValue;
       }
-      return "not_started";
+      return undefined;
     };
 
-    const normalizedWebsiteInput = getString("website_url");
+    const normalizePathInput = (value: string | null | undefined, fallback: string) => {
+      if (value === undefined) return undefined;
+      if (value === null) return null;
+      const trimmed = value.trim();
+      if (!trimmed) return fallback;
+      const withSlash = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+      return withSlash.replace(/\/+$/, "") || fallback;
+    };
+
+    const prevMetadata: BusinessOnboardingMetadata = (business.onboarding_metadata ?? {}) as BusinessOnboardingMetadata;
+
+    const normalizedWebsiteInput = getMaybeString("website_url");
     const normalizedWebsite = normalizedWebsiteInput
       ? ensureAbsoluteUrl(normalizedWebsiteInput) ?? normalizedWebsiteInput
-      : null;
+      : undefined;
+
+    const businessNameInput = getMaybeString("business_name");
+    const integrationStatusWebsite = parseStatusValue("integration_status_website");
+    const integrationStatusCrm = parseStatusValue("integration_status_crm");
+    const integrationStatusQa = parseStatusValue("integration_status_qa");
+
+    const businessType = getMaybeString("business_type");
+    const primaryLocation = getMaybeString("primary_location");
+    const websitePlatform = getMaybeString("website_platform");
+    const crmPlatform = getMaybeString("crm_platform");
+    const crmOwner = getMaybeString("crm_owner");
+    const techStack = getMaybeString("tech_stack");
+    const integrationNotes = getMaybeString("integration_notes");
+    const avgSaleInput = parseNumberValue("avg_sale");
+    const referralGoalInput = parseNumberValue("referral_goal");
+
+    const pagePreferredDomain = getMaybeString("page_preferred_domain");
+    const pageLandingPath = normalizePathInput(getMaybeString("page_landing_path"), "/referral");
+    const pageReferredPath = normalizePathInput(getMaybeString("page_referred_path"), "/referred");
+    const pageTheme = getMaybeString("page_theme");
+    const pageEmbedType = getMaybeString("page_embed_type");
+    const pageStatus = getMaybeString("page_status") as "draft" | "published" | null | undefined;
+    const pageNotes = getMaybeString("page_notes");
 
     const metadata: BusinessOnboardingMetadata = {
-      businessType: getString("business_type"),
-      primaryLocation: getString("primary_location"),
-      websiteUrl: normalizedWebsite,
-      websitePlatform: getString("website_platform"),
-      crmPlatform: getString("crm_platform"),
-      crmOwner: getString("crm_owner"),
-      techStack: getString("tech_stack"),
-      integrationNotes: getString("integration_notes"),
-      avgSale: parseNumberValue("avg_sale"),
-      referralGoal: parseNumberValue("referral_goal"),
+      ...prevMetadata,
+      businessType: businessType !== undefined ? businessType : prevMetadata.businessType ?? null,
+      primaryLocation: primaryLocation !== undefined ? primaryLocation : prevMetadata.primaryLocation ?? null,
+      websiteUrl: normalizedWebsite !== undefined ? normalizedWebsite : prevMetadata.websiteUrl ?? null,
+      websitePlatform: websitePlatform !== undefined ? websitePlatform : prevMetadata.websitePlatform ?? null,
+      crmPlatform: crmPlatform !== undefined ? crmPlatform : prevMetadata.crmPlatform ?? null,
+      crmOwner: crmOwner !== undefined ? crmOwner : prevMetadata.crmOwner ?? null,
+      techStack: techStack !== undefined ? techStack : prevMetadata.techStack ?? null,
+      integrationNotes: integrationNotes !== undefined ? integrationNotes : prevMetadata.integrationNotes ?? null,
+      avgSale: avgSaleInput !== undefined ? avgSaleInput : prevMetadata.avgSale ?? null,
+      referralGoal: referralGoalInput !== undefined ? referralGoalInput : prevMetadata.referralGoal ?? null,
       integrationStatus: {
-        website: parseStatusValue("integration_status_website"),
-        crm: parseStatusValue("integration_status_crm"),
-        qa: parseStatusValue("integration_status_qa"),
+        website: integrationStatusWebsite !== undefined ? integrationStatusWebsite : prevMetadata.integrationStatus?.website ?? "not_started",
+        crm: integrationStatusCrm !== undefined ? integrationStatusCrm : prevMetadata.integrationStatus?.crm ?? "not_started",
+        qa: integrationStatusQa !== undefined ? integrationStatusQa : prevMetadata.integrationStatus?.qa ?? "not_started",
+      },
+      pageBuilder: {
+        ...(prevMetadata.pageBuilder ?? {}),
+        preferredDomain:
+          pagePreferredDomain !== undefined
+            ? pagePreferredDomain
+            : prevMetadata.pageBuilder?.preferredDomain ?? normalizedWebsite ?? baseSiteUrl,
+        landingPath:
+          pageLandingPath !== undefined
+            ? pageLandingPath
+            : prevMetadata.pageBuilder?.landingPath ?? "/referral",
+        referredPath:
+          pageReferredPath !== undefined
+            ? pageReferredPath
+            : prevMetadata.pageBuilder?.referredPath ?? "/referred",
+        theme: pageTheme !== undefined ? pageTheme : prevMetadata.pageBuilder?.theme ?? "classic",
+        embedType: pageEmbedType !== undefined ? pageEmbedType : prevMetadata.pageBuilder?.embedType ?? "hosted",
+        status: pageStatus !== undefined ? pageStatus : prevMetadata.pageBuilder?.status ?? "draft",
+        notes: pageNotes !== undefined ? pageNotes : prevMetadata.pageBuilder?.notes ?? null,
       },
     };
 
     const updatePayload: Partial<Database["public"]["Tables"]["businesses"]["Update"]> = {
-      name: getString("business_name") ?? business.name ?? null,
+      name: businessNameInput ?? business.name ?? null,
       onboarding_metadata: metadata,
     };
 
@@ -1615,6 +1682,10 @@ export default async function Dashboard({
     (business.reward_type === "credit"
       ? (business.reward_amount ?? 0) > 0
       : business.reward_type !== null);
+  const pageBuilderMetadata = business.onboarding_metadata?.pageBuilder ?? null;
+  const hasPages =
+    pageBuilderMetadata?.status === "published" ||
+    Boolean(pageBuilderMetadata?.landingPath && pageBuilderMetadata?.referredPath);
 
   const typedReferralEvents = (referralEventsResult.data ?? []) as ReferralEventRow[];
   const referralJourneyEvents: ReferralJourneyEvent[] = typedReferralEvents.map(
@@ -1966,47 +2037,81 @@ export default async function Dashboard({
 	      helpContent: <Step1Education />,
 	      helpText: "Start here: lock in business details, finalize rewards, and walk through the integration plan before moving on.",
 	    },
-	    {
-	      id: "testing-qa",
-	      number: 1.5,
-	      title: "Testing & QA",
-	      description: "Test landing pages, attribution cookies, and referral tracking before going live",
-	      icon: <ShieldCheck className="h-5 w-5" />,
-	      status: (hasProgramSettings && hasCustomers) ? "complete" : "incomplete",
-	      content: (
-	        <Step1DTestingTab
-	          businessId={business.id}
-	          siteUrl={businessWebsiteUrl}
-	          businessName={business.name || "Your Business"}
-	          discountCaptureSecret={business.discount_capture_secret ?? null}
-	          hasCustomers={hasCustomers}
-	          hasProgramSettings={hasProgramSettings}
-	        />
-	      ),
-	      helpContent: (
-	        <div className="space-y-4">
-	          <h3 className="text-lg font-bold text-slate-900">Testing & QA</h3>
-	          <p className="text-sm text-slate-600">
-	            This step ensures your referral system is working correctly end-to-end before launching campaigns.
-	          </p>
-	          <div className="space-y-2">
-	            <p className="text-sm font-semibold text-slate-900">What to test:</p>
-	            <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
-	              <li>Landing page loads correctly with referral codes</li>
-	              <li>Attribution cookies are set properly</li>
-	              <li>Referral tracking captures events</li>
-	              <li>All systems are configured before go-live</li>
-	            </ul>
-	          </div>
-	        </div>
-	      ),
-	      helpText: "Test your referral system before launching to ensure attribution and tracking work correctly.",
-	    },
-	    {
-	      id: "clients-ambassadors",
-	      number: 2,
-	      title: "Add Clients & Partners",
-	      description: "Import your partner network and generate personalized referral links",
+		    {
+		      id: "pages",
+		      number: 1.7,
+		      title: "Build referral pages",
+		      description: "Generate /referral and /referred pages, pick a host, and ship without engineering",
+		      icon: <Globe className="h-5 w-5" />,
+		      status: hasPages ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
+		      content: (
+		        <PageBuilderTab
+		          businessName={business.name || "Your Business"}
+		          siteUrl={businessWebsiteUrl}
+		          offerText={business.offer_text}
+		          newUserRewardText={business.new_user_reward_text}
+		          clientRewardText={business.client_reward_text}
+		          logoUrl={business.logo_url ?? null}
+		          brandHighlightColor={business.brand_highlight_color ?? null}
+		          brandTone={business.brand_tone ?? null}
+		          onboardingMetadata={business.onboarding_metadata ?? null}
+		          updateOnboardingAction={updateBusinessOnboarding}
+		        />
+		      ),
+		      helpContent: (
+		        <div className="space-y-2 text-sm text-slate-700">
+		          <p className="font-semibold text-slate-900">What this does</p>
+		          <ul className="list-disc list-inside space-y-1">
+		            <li>Builds hosted /referral and /referred pages with your rewards + branding</li>
+		            <li>Sets a primary host (Refer Labs or your domain) and prepares an embed snippet</li>
+		            <li>Locks QA links so non-technical teams can preview before launch</li>
+		          </ul>
+		        </div>
+		      ),
+		      helpText: "Publish branded pages and wire referral links to your domain without writing code.",
+		    },
+		    {
+		      id: "testing-qa",
+		      number: 1.8,
+		      title: "Testing & QA",
+		      description: "Test landing pages, attribution cookies, and referral tracking after pages are published",
+		      icon: <ShieldCheck className="h-5 w-5" />,
+		      status: (hasProgramSettings && hasCustomers && hasPages) ? "complete" : "incomplete",
+		      content: (
+		        <Step1DTestingTab
+		          businessId={business.id}
+		          siteUrl={businessWebsiteUrl}
+		          businessName={business.name || "Your Business"}
+		          discountCaptureSecret={business.discount_capture_secret ?? null}
+		          hasCustomers={hasCustomers}
+		          hasProgramSettings={hasProgramSettings}
+		          pageBuilder={business.onboarding_metadata?.pageBuilder ?? null}
+		        />
+		      ),
+		      helpContent: (
+		        <div className="space-y-4">
+		          <h3 className="text-lg font-bold text-slate-900">Testing & QA</h3>
+		          <p className="text-sm text-slate-600">
+		            Run this after publishing /referral and /referred: verify cookies, attribution, and referral tracking end-to-end.
+		          </p>
+		          <div className="space-y-2">
+		            <p className="text-sm font-semibold text-slate-900">What to test:</p>
+		            <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
+		              <li>Referral page loads on your configured host/path</li>
+		              <li>Attribution cookies are set properly</li>
+		              <li>Referral tracking captures events</li>
+		              <li>All systems are configured before go-live</li>
+		            </ul>
+		          </div>
+		        </div>
+		      ),
+		      helpText: "Test after pages are live to ensure attribution and tracking work correctly.",
+		    },
+		    {
+		      id: "clients-ambassadors",
+		      number: 2,
+		      title: "Add Clients & Partners",
+		      description: "Import your partner network and generate personalized referral links",
 	      icon: <Users className="h-5 w-5" />,
 	      status: stepValidations["clients-ambassadors"].isComplete
 	        ? "complete"
@@ -3161,9 +3266,10 @@ export default async function Dashboard({
   const sectionItems = [
     { id: "overview", label: "Overview" },
     { id: "setup-integration", label: "Business Setup & Integrations" },
+    { id: "pages", label: "Pages" },
     { id: "testing-qa", label: "Testing & QA" },
     { id: "clients-ambassadors", label: "Partners" },
-    { id: "external-partners", label: "External Partners · Leverage" },
+    { id: "external-partners", label: "External Partners" },
     { id: "crm-integration", label: "Launch Campaigns" },
     { id: "view-campaigns", label: "Track Campaigns" },
     { id: "performance", label: "Measure ROI" },
@@ -3185,14 +3291,24 @@ export default async function Dashboard({
       explainer: !stepValidations["setup-integration"].isComplete
         ? "Complete your business profile and configure referral rewards in Settings. This enables partners to know what they earn for referrals."
         : null,
-      actionLabel: "Review integrations",
-      actionSection: "setup-integration",
-      actionScroll: "step-1c-integrations",
       tone: stepValidations["setup-integration"].isComplete ? "emerald" : "amber",
     },
     {
+      id: "pages",
+      title: "Step 2 · Publish /referral + /referred",
+      detail: hasPages ? "Pages published on your chosen host" : "Publish /referral + /referred to your host",
+      status: hasPages ? "Ready" : "Needs attention",
+      explainer: !hasPages
+        ? "Open Pages to pick a host (Refer Labs, embed, or custom domain), set your paths, then Save & publish. /r/[code] will follow the same host."
+        : null,
+      actionLabel: "Open Pages",
+      actionSection: "pages",
+      actionScroll: "page-builder-panel",
+      tone: hasPages ? "emerald" : "amber",
+    },
+    {
       id: "testing-qa",
-      title: "Step 1D · Testing & QA",
+      title: "Step 3 · Testing & QA (after Pages)",
       detail: (() => {
         const recentQaEvents = typedReferralEvents.filter((event) => {
           const created = event.created_at ? Date.parse(event.created_at) : 0;
@@ -3201,20 +3317,17 @@ export default async function Dashboard({
         });
         return recentQaEvents.length > 0
           ? `QA verified (${recentQaEvents.length} events in last 10 min)`
-          : "Run Integration QA + cookie check";
+          : "Run Integration QA + cookie check once pages are live";
       })(),
       status: typedReferralEvents.some((event) => event.source === "integration_qa") ? "Verified" : "Not run",
       explainer: !typedReferralEvents.some((event) => event.source === "integration_qa")
-        ? "Click 'Run QA' to simulate the full referral flow. This logs test events to confirm your attribution tracking is working before inviting real partners."
+        ? "After publishing /referral + /referred, open Testing & QA to simulate the full referral flow. This confirms embed/custom-domain connections, cookies, and attribution before inviting partners."
         : null,
-      actionLabel: "Run QA",
-      actionSection: "testing-qa",
-      actionScroll: "integration-qa-panel",
       tone: typedReferralEvents.some((event) => event.source === "integration_qa") ? "emerald" : "amber",
     },
     {
       id: "clients-ambassadors",
-      title: "Step 2 · Clients & ambassadors",
+      title: "Step 4 · Clients & ambassadors",
       detail: hasCustomers ? "Ambassadors imported + links active" : "Add your first ambassadors",
       status: hasCustomers ? "Ready" : "Needs attention",
       explainer: !hasCustomers
@@ -3226,7 +3339,7 @@ export default async function Dashboard({
     },
     {
       id: "crm-integration",
-      title: "Step 3 · Launch campaigns",
+      title: "Step 5 · Launch campaigns",
       detail: hasCampaigns ? "Campaigns have been sent" : "Prepare email/CRM campaign flow",
       status: hasCampaigns ? "Ready" : "Pending",
       explainer: !hasCampaigns
@@ -3238,7 +3351,7 @@ export default async function Dashboard({
     },
     {
       id: "view-campaigns",
-      title: "Step 4 · Track campaigns",
+      title: "Step 6 · Track campaigns",
       detail: totalCampaignsSent > 0 ? "Tracking campaign performance" : "Waiting on first campaign",
       status: totalCampaignsSent > 0 ? "Active" : "Waiting",
       explainer: totalCampaignsSent === 0
@@ -3250,7 +3363,7 @@ export default async function Dashboard({
     },
     {
       id: "performance",
-      title: "Step 5 · Measure ROI",
+      title: "Step 7 · Measure ROI",
       detail: safeReferrals.length > 0 ? "Attribution + ROI active" : "Run QA to verify attribution",
       status: safeReferrals.length > 0 ? "Live" : "Needs data",
       explainer: safeReferrals.length === 0
@@ -3460,22 +3573,6 @@ export default async function Dashboard({
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            <SectionLink
-              section="setup-integration"
-              scrollTo="step-1c-integrations"
-              className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100"
-            >
-              Review integrations
-            </SectionLink>
-            <SectionLink
-              section="testing-qa"
-              scrollTo="integration-qa-panel"
-              className="rounded-full border border-emerald-200 bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700"
-            >
-              Run Integration QA
-            </SectionLink>
-          </div>
         </div>
         <div className="mt-4">
           <div className="flex items-center justify-between text-xs text-slate-500">
@@ -3547,11 +3644,12 @@ export default async function Dashboard({
       </div>
 
       <DashboardOnboardingChecklist
-        hasCustomers={hasCustomers}
-        hasProgramSettings={hasProgramSettings}
-        hasCampaigns={hasCampaigns}
-        hasReferrals={hasReferrals}
-      />
+	        hasCustomers={hasCustomers}
+	        hasProgramSettings={hasProgramSettings}
+	        hasCampaigns={hasCampaigns}
+	        hasReferrals={hasReferrals}
+	        hasPages={hasPages}
+	      />
     </div>
   );
 

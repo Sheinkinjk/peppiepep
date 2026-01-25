@@ -1,9 +1,9 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Settings as SettingsIcon, Rocket, TrendingUp, CheckCircle2 } from "lucide-react";
+import { Users, Settings as SettingsIcon, Rocket, TrendingUp, CheckCircle2, Link2, ChevronDown, ChevronUp } from "lucide-react";
 
 const HIDDEN_STORAGE_KEY = "pep_dashboard_onboarding_hidden";
 type HiddenStoreListener = () => void;
@@ -53,6 +53,7 @@ type DashboardOnboardingChecklistProps = {
   hasProgramSettings: boolean;
   hasCampaigns: boolean;
   hasReferrals: boolean;
+  hasPages: boolean;
 };
 
 export function DashboardOnboardingChecklist({
@@ -60,6 +61,7 @@ export function DashboardOnboardingChecklist({
   hasProgramSettings,
   hasCampaigns,
   hasReferrals,
+  hasPages,
 }: DashboardOnboardingChecklistProps) {
   const hidden = useSyncExternalStore(
     subscribeToHiddenStore,
@@ -117,6 +119,15 @@ export function DashboardOnboardingChecklist({
       cta: "Edit settings",
     },
     {
+      id: "pages",
+      label: "Publish referral pages",
+      description: "Generate /referral and /referred + connect your domain.",
+      icon: Link2,
+      done: hasPages,
+      action: () => navigate("pages"),
+      cta: "Open page builder",
+    },
+    {
       id: "campaigns",
       label: "Send your first campaign",
       description: "Launch a real SMS or email blast to your partners.",
@@ -136,6 +147,7 @@ export function DashboardOnboardingChecklist({
       cta: "View performance",
     },
   ];
+  const [isExpanded, setIsExpanded] = useState(false);
   const completedCount = steps.filter((step) => step.done).length;
   const completionPercent = Math.round((completedCount / steps.length) * 100);
 
@@ -150,35 +162,73 @@ export function DashboardOnboardingChecklist({
 
   return (
     <Card className="mb-8 border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-4 shadow-md sm:p-5">
-      <div className="mb-4">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">
-            Getting started
-          </p>
-          <div className="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-bold text-white">
-            {completedCount}/{steps.length}
+      <button
+        type="button"
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full text-left"
+      >
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">
+                Getting started
+              </p>
+              <div className="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-bold text-white">
+                {completedCount}/{steps.length}
+              </div>
+            </div>
+            <h2 className="text-base font-bold text-slate-900 sm:text-lg">
+              Complete these {steps.length} steps to go live
+            </h2>
+            {!isExpanded && (
+              <p className="mt-1 text-xs text-slate-600">
+                Click to expand and see your progress
+              </p>
+            )}
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-2">
+              <div className="h-2 w-24 overflow-hidden rounded-full bg-emerald-200">
+                <div
+                  className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 transition-all duration-500"
+                  style={{ width: `${completionPercent}%` }}
+                />
+              </div>
+              <span className="text-xs font-bold text-emerald-700">
+                {completionPercent}%
+              </span>
+            </div>
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+              {isExpanded ? (
+                <ChevronUp className="h-4 w-4" />
+              ) : (
+                <ChevronDown className="h-4 w-4" />
+              )}
+            </div>
           </div>
         </div>
-        <h2 className="text-base font-bold text-slate-900 sm:text-lg">
-          Complete these 4 steps to go live
-        </h2>
-        <p className="mt-1 text-xs text-slate-600">
-          Each step takes less than 5 minutes. Your progress is saved automatically.
-        </p>
-        <div className="mt-3 flex items-center gap-3">
-          <div className="h-2.5 flex-1 max-w-xs overflow-hidden rounded-full bg-emerald-200">
-            <div
-              className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 transition-all duration-500"
-              style={{ width: `${completionPercent}%` }}
-            />
-          </div>
-          <span className="text-xs font-bold text-emerald-700">
-            {completionPercent}%
-          </span>
-        </div>
-      </div>
+      </button>
 
-      <div className="grid gap-3 sm:grid-cols-2">
+      {isExpanded && (
+        <>
+          <div className="mt-4 mb-4">
+            <p className="text-xs text-slate-600">
+              Each step takes less than 5 minutes. Your progress is saved automatically.
+            </p>
+            <div className="mt-3 flex sm:hidden items-center gap-3">
+              <div className="h-2.5 flex-1 max-w-xs overflow-hidden rounded-full bg-emerald-200">
+                <div
+                  className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 transition-all duration-500"
+                  style={{ width: `${completionPercent}%` }}
+                />
+              </div>
+              <span className="text-xs font-bold text-emerald-700">
+                {completionPercent}%
+              </span>
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
         {steps.map((step) => {
           const Icon = step.icon;
           const cardTone = step.done
@@ -216,7 +266,9 @@ export function DashboardOnboardingChecklist({
             </button>
           );
         })}
-      </div>
+          </div>
+        </>
+      )}
     </Card>
   );
 }
