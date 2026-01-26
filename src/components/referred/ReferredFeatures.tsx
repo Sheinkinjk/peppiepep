@@ -14,7 +14,7 @@ export function ReferredFeatures() {
     {
       icon: Zap,
       title: "Quick Integration",
-      description: "Get your referral program live in 24 hours with our done-for-you setup.",
+      description: "Get your referral program live quickly with guided setup and implementation support.",
       gradient: "from-amber-500 to-orange-500",
     },
     {

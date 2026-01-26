@@ -38,8 +38,8 @@ export default function ReferralPartnershipsPage() {
             Your Most Powerful Growth Channel
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We help professional services firms build referral partnerships with LinkedIn influencers,
-            agencies, and consultants—with full attribution, compliance, and payouts your finance team can defend.
+            We help professional services firms build referral programs across four channels: customer networks,
+            LinkedIn influencers, agency partners, and trusted consultants—with full attribution, compliance, and payouts your finance team can defend.
           </p>
           <div className="pt-4">
             <ReferralPartnershipsCTA
@@ -54,8 +54,87 @@ export default function ReferralPartnershipsPage() {
         <section className="mb-24 space-y-16">
           <div className="text-center space-y-4">
             <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Referral Partnerships We Facilitate
+              Referral Programs We Support
             </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              All four referral offerings—from turning happy customers into advocates to activating trusted experts
+            </p>
+          </div>
+
+          {/* Customer Network */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                <Target className="h-5 w-5 text-cyan-400" />
+                <span className="text-sm font-semibold text-cyan-300">Customer Network</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Turn Your Happiest Clients Into Advocates
+              </h3>
+              <p className="text-slate-300 leading-relaxed">
+                Your satisfied customers are your best marketing channel. They've experienced your service
+                firsthand, they trust you, and they know people in similar situations. Give them the
+                tools to refer with confidence—and the rewards to make it worth their while.
+              </p>
+              <div className="space-y-4">
+                <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
+                  How Customer Network Referral Programs Work
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Each customer gets a branded ambassador portal with their unique tracking link",
+                    "They share their link with colleagues, friends, and professional networks",
+                    "Every click, signup, and conversion is tracked back to the referring customer",
+                    "Rewards calculate automatically—flat fees, percentages, or tiered incentives",
+                    "Customers see their performance and earnings in real-time dashboards",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pt-2">
+                <p className="text-sm text-slate-400">
+                  <span className="text-white font-medium">Example outcome:</span>{" "}
+                  A financial advisory firm activated 47 happy clients as ambassadors. Within 6 months,
+                  they generated 68 qualified introductions with a 41% close rate—no paid ads required.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-transparent to-teal-500/10 rounded-3xl blur-3xl" />
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
+                    <Target className="h-6 w-6 text-cyan-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">Ambassador Dashboard</p>
+                    <p className="text-sm text-slate-400">Customer's real-time view</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Referrals sent</span>
+                    <span className="font-bold text-white">14</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Meetings booked</span>
+                    <span className="font-bold text-white">8</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                    <span className="text-slate-400">Clients won</span>
+                    <span className="font-bold text-white">3</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-slate-400">Rewards earned</span>
+                    <span className="font-bold text-cyan-300">$2,100</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* LinkedIn Influencers */}

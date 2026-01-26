@@ -110,6 +110,7 @@ export default function PricingPage() {
         monthly: 249,
         annual: 199,
         subtext: "For individuals & small teams",
+        idealFor: "Perfect for Customer Network programs",
         features: [
           "Core referral tracking & attribution",
           "Unlimited referral links",
@@ -126,6 +127,7 @@ export default function PricingPage() {
         monthly: 399,
         annual: 319,
         subtext: "For scaling teams & SMBs",
+        idealFor: "Supports all four offerings: Customer Network, LinkedIn Influencers, Agency Partners, Consultants & Advisors",
         features: [
           "Everything in Starter",
           "Advanced partner segmentation",
@@ -143,6 +145,7 @@ export default function PricingPage() {
         monthly: null,
         annual: null,
         subtext: "For complex, high-volume growth",
+        idealFor: "Full-scale deployment across all four offerings with white-glove support",
         features: [
           "Everything in Growth",
           "Dedicated account manager",
@@ -477,6 +480,7 @@ export default function PricingPage() {
                     <div className="mb-6">
                       <h3 className="text-xl sm:text-2xl font-black text-white">{tier.name}</h3>
                       <p className="text-sm text-slate-300 mt-1">{tier.subtext}</p>
+                      <p className="text-xs text-cyan-300/80 mt-2 italic">{tier.idealFor}</p>
                     </div>
 
                     <div className="mb-6">

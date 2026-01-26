@@ -139,39 +139,39 @@ const faqSections: FAQSection[] = [
     ]
   },
   {
-    id: "done-for-you",
-    title: "Done-For-You Strategy & Launch Support",
-    subtitle: "End-to-end setup across all four referral program types",
+    id: "implementation-support",
+    title: "Implementation & Launch Support",
+    subtitle: "Guided setup across all four referral program types",
     icon: Sparkles,
     iconColor: "text-amber-500",
     questions: [
       {
-        q: "What does 'done-for-you' include for each offering?",
-        a: "We handle end-to-end setup across all four program types: For Customer Networks, we configure ambassador portals, tracking links, and reward automation. For LinkedIn Influencers, we source creators, set up campaign tracking, and manage content workflows. For Agencies & Partners, we design revenue-share structures and partner onboarding. For Consultants & Advisors, we build compliant referral flows with proper disclosures. You approve the strategy; we execute everything."
+        q: "What implementation support is included for each offering?",
+        a: "We provide guided implementation across all four program types: For Customer Networks, we help configure ambassador portals, tracking links, and reward automation. For LinkedIn Influencers, we provide guidance on creator sourcing, campaign tracking setup, and content workflows. For Agencies & Partners, we assist with revenue-share structure design and partner onboarding. For Consultants & Advisors, we help build compliant referral flows with proper disclosures. You maintain control; we provide expert guidance."
       },
       {
-        q: "Can you help launch a Customer Network referral program?",
-        a: "Yes. We configure branded ambassador portals, generate unique tracking links for each client, set up reward automation (flat fees, percentage, or tiered), import your customer list, and train your team on the dashboard. Most customer referral programs launch within 5-7 days."
+        q: "How do I launch a Customer Network referral program?",
+        a: "The platform guides you through configuring branded ambassador portals, generating unique tracking links for each client, setting up reward automation (flat fees, percentage, or tiered), importing your customer list, and training your team on the dashboard. Most customer referral programs launch within 5-7 days with our setup documentation."
       },
       {
-        q: "How do you support LinkedIn Influencer activations?",
-        a: "We handle influencer sourcing based on your ICP, vet creators for audience authenticity, negotiate terms, set up per-creator tracking links, manage content review workflows, and process performance-based payouts. You approve creators and content; we manage the operations."
+        q: "How does LinkedIn Influencer activation work?",
+        a: "You can use the platform to activate LinkedIn thought leaders with campaign-specific tracking links. The system provides tools for creator sourcing guidance, audience vetting, term negotiation templates, per-creator tracking setup, content review workflows, and performance-based payout calculations. You maintain full control of creator relationships."
       },
       {
         q: "What's included for Agency & Strategic Partner programs?",
-        a: "We design your partner tier structure, create co-branded materials, configure revenue-share tracking, set up partner portals with real-time deal visibility, and establish quarterly reporting workflows. We also help with initial partner outreach and onboarding."
+        a: "The platform enables you to design partner tier structures, create co-branded materials, configure revenue-share tracking, provide partner portals with real-time deal visibility, and establish quarterly reporting workflows. Setup guides help with initial partner outreach and onboarding."
       },
       {
-        q: "Do you support Consultant & Advisor referral programs?",
-        a: "Yes. We build referral flows tailored for trusted advisors—discreet tracking, compliance disclosures, per-deal or recurring payouts, and professional onboarding experiences. We ensure the program respects the advisor-client relationship while providing full attribution."
+        q: "How do Consultant & Advisor referral programs work?",
+        a: "The platform provides referral flows tailored for trusted advisors—discreet tracking, compliance disclosure templates, per-deal or recurring payout configurations, and professional onboarding experiences. The system ensures the program respects the advisor-client relationship while providing full attribution."
       },
       {
-        q: "What happens after my program launches?",
-        a: "Post-launch support includes weekly performance reviews, optimization recommendations, partner recruitment assistance, and campaign iterations. Whether you're scaling your customer network, adding new LinkedIn creators, or expanding your agency partner base—we help you grow what's working."
+        q: "What support is available after launch?",
+        a: "Post-launch resources include performance analytics, optimization recommendations, partner recruitment templates, and campaign iteration guidance. Whether you're scaling your customer network, adding new LinkedIn creators, or expanding your agency partner base—the platform provides tools to grow what's working."
       },
       {
-        q: "Do you help with integrations across all program types?",
-        a: "Yes. We configure integrations with Salesforce, HubSpot, Stripe, Shopify, Calendly, and other platforms. Referral events, conversion data, and payout information sync automatically across all four program types—giving your team a unified view of partner-driven revenue."
+        q: "What integrations are available across all program types?",
+        a: "The platform integrates with Salesforce, HubSpot, Stripe, Shopify, Calendly, and other platforms. Referral events, conversion data, and payout information sync automatically across all four program types—giving your team a unified view of partner-driven revenue."
       }
     ]
   },

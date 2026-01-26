@@ -6,7 +6,6 @@ import {
   ArrowRight,
   TrendingUp,
   Users,
-  BarChart3,
   Target,
   Sparkles,
   LinkedinIcon,
@@ -18,7 +17,7 @@ import {
 
 type CaseStudy = {
   id: string;
-  category: "platform" | "partnerships" | "linkedin" | "done-for-you";
+  category: "customer-network" | "partnerships" | "linkedin" | "consultants";
   industry: string;
   headline: string;
   metrics: { value: string; label: string }[];
@@ -28,19 +27,19 @@ type CaseStudy = {
 
 const caseStudies: CaseStudy[] = [
   {
-    id: "financial-advisory-platform",
-    category: "platform",
+    id: "financial-advisory-customer-network",
+    category: "customer-network",
     industry: "Financial Advisory",
-    headline: "+41% client acquisition from referrals",
+    headline: "+41% client acquisition from customer referrals",
     metrics: [
       { value: "+41%", label: "Client Growth" },
       { value: "3.8×", label: "Referral Volume" },
       { value: "$0", label: "Manual Tracking" },
     ],
     summary:
-      "A mid-size financial advisory firm deployed branded ambassador portals with unique tracking links. Within 6 months, they saw a 41% increase in new client acquisition and eliminated manual spreadsheet tracking entirely.",
+      "A mid-size financial advisory firm turned their happiest clients into advocates with branded ambassador portals and unique tracking links. Within 6 months, they saw a 41% increase in new client acquisition and eliminated manual spreadsheet tracking entirely.",
     testimonial: {
-      quote: "We went from guessing who referred whom to having a complete picture of our referral pipeline.",
+      quote: "We went from guessing who referred whom to having a complete picture of our referral pipeline. Our clients love sharing their links.",
       attribution: "Managing Director, Financial Advisory Firm",
     },
   },
@@ -48,16 +47,16 @@ const caseStudies: CaseStudy[] = [
     id: "consulting-partnerships",
     category: "partnerships",
     industry: "Management Consulting",
-    headline: "12 new strategic partners in 90 days",
+    headline: "12 strategic agency partners in 90 days",
     metrics: [
       { value: "12", label: "New Partners" },
       { value: "34", label: "Qualified Intros" },
       { value: "60%", label: "Ops Savings" },
     ],
     summary:
-      "A boutique consulting firm formalized relationships with adjacent service providers using tiered partner programs. They onboarded 12 strategic partners and generated 34 qualified introductions while reducing partner management overhead by 60%.",
+      "A boutique consulting firm launched white-glove partner programs with technology firms and implementation agencies. They onboarded 12 strategic partners and generated 34 qualified introductions while reducing partner management overhead by 60%.",
     testimonial: {
-      quote: "Refer Labs gave us the infrastructure to build a partner ecosystem we'd been putting off for years.",
+      quote: "Refer Labs gave us the infrastructure to build a partner ecosystem we'd been putting off for years. The co-branded materials look premium.",
       attribution: "Partner, Management Consulting Firm",
     },
   },
@@ -65,33 +64,33 @@ const caseStudies: CaseStudy[] = [
     id: "saas-linkedin-growth",
     category: "linkedin",
     industry: "B2B SaaS",
-    headline: "+28% demo conversions via influencer activations",
+    headline: "+28% demo conversions via LinkedIn influencers",
     metrics: [
       { value: "+28%", label: "Demo Lift" },
       { value: "8", label: "Active Creators" },
       { value: "Full", label: "Attribution" },
     ],
     summary:
-      "A growing B2B SaaS company activated 8 niche LinkedIn creators with campaign-specific tracking links. They achieved a 28% lift in demo conversion rates and complete visibility into ROI per creator.",
+      "A growing B2B SaaS company activated 8 niche LinkedIn thought leaders with campaign-specific tracking links. They achieved a 28% lift in demo conversion rates and complete visibility into ROI per creator—no more guessing which influencers actually drive pipeline.",
     testimonial: {
-      quote: "We finally know which creators drive pipeline, not just impressions.",
+      quote: "We finally know which creators drive pipeline, not just impressions. The per-creator attribution is bulletproof.",
       attribution: "Head of Demand Generation, B2B SaaS",
     },
   },
   {
-    id: "law-firm-done-for-you",
-    category: "done-for-you",
+    id: "law-firm-consultant-referrals",
+    category: "consultants",
     industry: "Legal Services",
-    headline: "Full referral program live in 3 weeks",
+    headline: "22 trusted advisors driving 37% of new revenue",
     metrics: [
-      { value: "3 wks", label: "Time to Launch" },
-      { value: "22", label: "Active Referrers" },
+      { value: "22", label: "Active Advisors" },
       { value: "+37%", label: "Referral Revenue" },
+      { value: "Full", label: "Attribution" },
     ],
     summary:
-      "A mid-size law firm handed off their referral program build entirely. Within 3 weeks, they had a fully operational program with 22 active referrers enrolled, resulting in a 37% increase in referral-sourced revenue.",
+      "A mid-size law firm activated consultants and business advisors who guide buying decisions. With discreet tracking and compliance disclosures built-in, they enrolled 22 trusted experts who now drive 37% of the firm's new client revenue.",
     testimonial: {
-      quote: "We handed off the project and got a fully operational referral program back. The ROI was immediate.",
+      quote: "Our advisors appreciate the professional, discreet tracking. We finally have clean attribution for every introduction.",
       attribution: "Managing Partner, Law Firm",
     },
   },
@@ -99,17 +98,17 @@ const caseStudies: CaseStudy[] = [
 
 const categories = [
   { key: "all", label: "All Case Studies", icon: TrendingUp },
-  { key: "platform", label: "Platform", icon: BarChart3 },
-  { key: "partnerships", label: "Partnerships", icon: Users },
-  { key: "linkedin", label: "LinkedIn Growth", icon: LinkedinIcon },
-  { key: "done-for-you", label: "Done-For-You", icon: Sparkles },
+  { key: "customer-network", label: "Customer Network", icon: Users },
+  { key: "partnerships", label: "Agency Partners", icon: Target },
+  { key: "linkedin", label: "LinkedIn Influencers", icon: LinkedinIcon },
+  { key: "consultants", label: "Consultants & Advisors", icon: Sparkles },
 ] as const;
 
 const categoryMeta: Record<string, { icon: typeof Users; color: string; link: string }> = {
-  platform: { icon: BarChart3, color: "cyan", link: "/pricing" },
-  partnerships: { icon: Users, color: "emerald", link: "/referral-partnerships" },
-  linkedin: { icon: Target, color: "violet", link: "/linkedin-growth" },
-  "done-for-you": { icon: Sparkles, color: "amber", link: "/pricing" },
+  "customer-network": { icon: Users, color: "cyan", link: "/pricing" },
+  partnerships: { icon: Target, color: "emerald", link: "/referral-partnerships" },
+  linkedin: { icon: LinkedinIcon, color: "violet", link: "/linkedin-growth" },
+  consultants: { icon: Sparkles, color: "amber", link: "/referral-partnerships" },
 };
 
 /* ─────────────────────────────────────────────────────────────
