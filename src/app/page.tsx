@@ -432,176 +432,179 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Why Refer Labs — Built for Professional Services
+            Why Refer Labs
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24 mt-16 sm:mt-0">
-          {/* Premium Section Header - Why Refer Labs */}
+          {/* Section Header */}
           <div className="text-center space-y-5 mb-16">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 mb-2">
               <Sparkles className="h-5 w-5 text-cyan-400" />
               <span className="text-sm font-bold text-cyan-300 uppercase tracking-wide">Why Refer Labs</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto leading-tight">
-              The Only Referral Platform Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">High-Value Professional Services</span>
+              Referrals Are the Most Powerful Growth Lever for <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Professional Services</span>
             </h2>
             <p className="text-slate-300 max-w-3xl mx-auto text-lg sm:text-xl leading-relaxed font-medium">
-              Law firms, accounting practices, consultants, and advisory businesses need referral tracking that matches the sophistication of their services—not e-commerce discount tools.
+              In high-trust industries, warm introductions convert faster, close at higher rates, and retain longer than any other channel. Refer Labs gives you the infrastructure to turn that into a repeatable, measurable growth engine.
             </p>
           </div>
 
-          {/* Industry-Specific Value Props - Large Premium Cards */}
-          <div className="relative mb-12">
+          {/* Benefits Overview - General Platform Outcomes */}
+          <div className="relative mb-16">
             <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent rounded-3xl blur-2xl" />
 
-            <div className="relative grid md:grid-cols-2 gap-7">
-              {/* Card 1: Legal Practices */}
-              <div className="group relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-slate-900/95 to-slate-900/70 p-9 hover:border-cyan-400/50 transition-all hover:shadow-2xl hover:shadow-cyan-500/20">
-                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-cyan-500/15 to-transparent rounded-full blur-3xl" />
-                <div className="relative">
-                  <div className="flex items-start gap-5 mb-7">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-cyan-500/25 to-teal-500/25 border-2 border-cyan-500/40 flex items-center justify-center flex-shrink-0">
-                      <Building2 className="h-8 w-8 text-cyan-300" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-black text-white mb-2">Built for Law Firms & Legal Practices</h3>
-                      <p className="text-cyan-300 text-sm font-semibold uppercase tracking-wider">Trust-Based Referrals</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-200 leading-relaxed mb-7 text-base">
-                    Track high-value client introductions from other firms, barristers, and professional networks with full attribution—from first click to case closure. White-label portals maintain your firm's prestige.
-                  </p>
-                  <ul className="space-y-3.5">
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Multi-month deal cycles</strong> — Track cases from referral to settlement</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Discreet tracking</strong> — No public affiliate links or discount codes</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Referral fee calculations</strong> — Automated payout tracking that finance can audit</span>
-                    </li>
-                  </ul>
+            <div className="relative grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {/* Benefit 1: Trust-Based Growth */}
+              <div className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 hover:border-cyan-500/30 transition-all">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 flex items-center justify-center mb-5">
+                  <Users className="h-6 w-6 text-cyan-400" />
                 </div>
+                <h3 className="text-lg font-bold text-white mb-2">Trust-Based Growth</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Referrals carry implicit endorsement. Prospects arrive pre-sold on your expertise, reducing the need for cold outreach and lengthy qualification.
+                </p>
               </div>
 
-              {/* Card 2: Accounting & Advisory */}
-              <div className="group relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-slate-900/95 to-slate-900/70 p-9 hover:border-emerald-400/50 transition-all hover:shadow-2xl hover:shadow-emerald-500/20">
-                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-emerald-500/15 to-transparent rounded-full blur-3xl" />
-                <div className="relative">
-                  <div className="flex items-start gap-5 mb-7">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-500/25 to-green-500/25 border-2 border-emerald-500/40 flex items-center justify-center flex-shrink-0">
-                      <BarChart3 className="h-8 w-8 text-emerald-300" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-black text-white mb-2">Built for Accountants & Financial Advisors</h3>
-                      <p className="text-emerald-300 text-sm font-semibold uppercase tracking-wider">Revenue Attribution</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-200 leading-relaxed mb-7 text-base">
-                    Turn your professional network into a measurable growth channel. Track introductions from mortgage brokers, wealth managers, and business advisors with bulletproof attribution your CFO will approve.
-                  </p>
-                  <ul className="space-y-3.5">
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Full attribution reporting</strong> — Know exactly which partner drove each client</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Revenue share models</strong> — Percentage-based or per-client commission structures</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Audit-ready ledgers</strong> — Clean reports for compliance and reconciliation</span>
-                    </li>
-                  </ul>
+              {/* Benefit 2: Trackable Introductions */}
+              <div className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 hover:border-cyan-500/30 transition-all">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 border border-emerald-500/30 flex items-center justify-center mb-5">
+                  <Target className="h-6 w-6 text-emerald-400" />
                 </div>
+                <h3 className="text-lg font-bold text-white mb-2">Trackable Introductions</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Every introduction is captured and attributed—from first click to closed deal. No more guessing who deserves credit or relying on memory.
+                </p>
               </div>
 
-              {/* Card 3: Consultants & Strategic Partners */}
-              <div className="group relative overflow-hidden rounded-3xl border border-blue-500/30 bg-gradient-to-br from-slate-900/95 to-slate-900/70 p-9 hover:border-blue-400/50 transition-all hover:shadow-2xl hover:shadow-blue-500/20">
-                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-blue-500/15 to-transparent rounded-full blur-3xl" />
-                <div className="relative">
-                  <div className="flex items-start gap-5 mb-7">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500/25 to-indigo-500/25 border-2 border-blue-500/40 flex items-center justify-center flex-shrink-0">
-                      <LinkedinIcon className="h-8 w-8 text-blue-300" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-black text-white mb-2">Built for Consultants & Agencies</h3>
-                      <p className="text-blue-300 text-sm font-semibold uppercase tracking-wider">Partner Programs That Scale</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-200 leading-relaxed mb-7 text-base">
-                    Launch white-glove partner programs with technology firms, implementation partners, and complementary consultancies. Full campaign tracking, co-branded materials, and performance analytics.
-                  </p>
-                  <ul className="space-y-3.5">
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">White-label portals</strong> — Partners get branded dashboards to track their performance</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Campaign-level tracking</strong> — Measure ROI by partner, campaign, and content piece</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Custom reward structures</strong> — Per-deal, tiered, or hybrid commission models</span>
-                    </li>
-                  </ul>
+              {/* Benefit 3: Higher-Quality Leads */}
+              <div className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 hover:border-cyan-500/30 transition-all">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 border border-blue-500/30 flex items-center justify-center mb-5">
+                  <Award className="h-6 w-6 text-blue-400" />
                 </div>
+                <h3 className="text-lg font-bold text-white mb-2">Higher-Quality Leads</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Referred prospects are pre-qualified by people who understand your value. They convert at 3-5x the rate of cold leads and stay longer.
+                </p>
               </div>
 
-              {/* Card 4: The Refer Labs Edge */}
-              <div className="group relative overflow-hidden rounded-3xl border-2 border-purple-500/40 bg-gradient-to-br from-purple-900/40 to-slate-900/70 p-9 hover:border-purple-400/60 transition-all hover:shadow-2xl hover:shadow-purple-500/25">
-                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-purple-500/20 to-transparent rounded-full blur-3xl" />
-                <div className="relative">
-                  <div className="flex items-start gap-5 mb-7">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-purple-500/30 to-violet-500/30 border-2 border-purple-400/50 flex items-center justify-center flex-shrink-0">
-                      <Target className="h-8 w-8 text-purple-300" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-black text-white mb-2">The Refer Labs Edge</h3>
-                      <p className="text-purple-300 text-sm font-semibold uppercase tracking-wider">Enterprise-Grade, Relationship-First</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-200 leading-relaxed mb-7 text-base">
-                    Unlike generic affiliate tools built for e-commerce, Refer Labs is purpose-built for professional services where trust, discretion, and precision attribution are non-negotiable.
-                  </p>
-                  <ul className="space-y-3.5">
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Long sales cycles</strong> — Track deals from introduction to close over 3-12+ months</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">Professional compliance</strong> — GDPR, CCPA, Australian privacy built-in</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                      <span><strong className="text-white">No transactional feel</strong> — Sophisticated UX that matches your brand standards</span>
-                    </li>
-                  </ul>
+              {/* Benefit 4: Shorter Path to Conversion */}
+              <div className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 hover:border-cyan-500/30 transition-all">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 flex items-center justify-center mb-5">
+                  <TrendingUp className="h-6 w-6 text-purple-400" />
                 </div>
+                <h3 className="text-lg font-bold text-white mb-2">Shorter Path to Conversion</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Skip the awareness and consideration stages. Warm introductions jump straight to evaluation—cutting sales cycles by 40-60%.
+                </p>
+              </div>
+
+              {/* Benefit 5: Measurable ROI */}
+              <div className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 hover:border-cyan-500/30 transition-all">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-amber-500/30 flex items-center justify-center mb-5">
+                  <BarChart3 className="h-6 w-6 text-amber-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Measurable ROI</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  See exactly how much revenue your referral programs generate. Justify partner payouts with audit-ready reports your CFO will approve.
+                </p>
+              </div>
+
+              {/* Benefit 6: Repeatable Partner Activations */}
+              <div className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7 hover:border-cyan-500/30 transition-all">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 border border-rose-500/30 flex items-center justify-center mb-5">
+                  <Gift className="h-6 w-6 text-rose-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Repeatable Partner Activations</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Build a system that scales. Onboard new partners in minutes with branded portals, automated rewards, and real-time performance tracking.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Why Other Tools Fall Short - Compact & Subtle */}
-          <div className="relative max-w-4xl mx-auto">
-            <div className="text-center mb-6">
-              <p className="text-slate-400 text-sm uppercase tracking-wider font-semibold">Why Generic Tools Don't Work</p>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-3">
-              <div className="rounded-xl bg-slate-900/50 border border-slate-700/30 p-4 text-center">
-                <p className="text-slate-400 text-xs leading-relaxed">E-commerce tools use discount codes—useless for $15K+ consulting engagements</p>
-              </div>
-              <div className="rounded-xl bg-slate-900/50 border border-slate-700/30 p-4 text-center">
-                <p className="text-slate-400 text-xs leading-relaxed">Spreadsheet tracking loses attribution—partners don't get credit, referrals stop</p>
-              </div>
-              <div className="rounded-xl bg-slate-900/50 border border-slate-700/30 p-4 text-center">
-                <p className="text-slate-400 text-xs leading-relaxed">Generic UX feels cheap—trusted advisors expect professional, discreet experiences</p>
+          {/* Platform Differentiation */}
+          <div className="relative">
+            <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.08] via-white/[0.03] to-transparent p-8 sm:p-10">
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
+                <div className="space-y-6">
+                  <h3 className="text-2xl sm:text-3xl font-black text-white">
+                    Why Refer Labs Is Different
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed">
+                    Most referral tools were built for e-commerce—discount codes, instant transactions, low-value purchases. That model doesn't work when deals are $10K+, take months to close, and depend on professional trust.
+                  </p>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
+                      <div>
+                        <span className="text-white font-semibold">Long sales cycles supported</span>
+                        <p className="text-slate-400 text-sm mt-0.5">Track introductions that take 3-12+ months to close. No expiring cookies or lost attribution.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
+                      <div>
+                        <span className="text-white font-semibold">Discreet, professional experience</span>
+                        <p className="text-slate-400 text-sm mt-0.5">No public affiliate links or discount codes. White-label portals that match your brand standards.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
+                      <div>
+                        <span className="text-white font-semibold">Compliance built-in</span>
+                        <p className="text-slate-400 text-sm mt-0.5">GDPR, CCPA, Australian Privacy Act—handled automatically. Disclosure templates and audit trails included.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
+                      <div>
+                        <span className="text-white font-semibold">Finance-ready reporting</span>
+                        <p className="text-slate-400 text-sm mt-0.5">Payout calculations, revenue attribution, and ledger exports your finance team can audit and defend.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="relative hidden lg:block">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/10 rounded-2xl blur-2xl" />
+                  <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/50 p-6 space-y-4">
+                    <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                      <div className="h-10 w-10 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                        <TrendingUp className="h-5 w-5 text-cyan-400" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-white text-sm">Referral Program Performance</p>
+                        <p className="text-xs text-slate-500">Last 90 days</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="rounded-xl bg-white/5 p-4 text-center">
+                        <p className="text-2xl font-bold text-cyan-300">47</p>
+                        <p className="text-xs text-slate-500 mt-1">Active Partners</p>
+                      </div>
+                      <div className="rounded-xl bg-white/5 p-4 text-center">
+                        <p className="text-2xl font-bold text-emerald-300">89</p>
+                        <p className="text-xs text-slate-500 mt-1">Introductions</p>
+                      </div>
+                      <div className="rounded-xl bg-white/5 p-4 text-center">
+                        <p className="text-2xl font-bold text-purple-300">34</p>
+                        <p className="text-xs text-slate-500 mt-1">Closed Deals</p>
+                      </div>
+                      <div className="rounded-xl bg-white/5 p-4 text-center">
+                        <p className="text-2xl font-bold text-amber-300">$412K</p>
+                        <p className="text-xs text-slate-500 mt-1">Attributed Revenue</p>
+                      </div>
+                    </div>
+                    <div className="pt-2">
+                      <div className="flex justify-between text-xs text-slate-500 mb-1">
+                        <span>Conversion Rate</span>
+                        <span className="text-cyan-300 font-medium">38%</span>
+                      </div>
+                      <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                        <div className="h-full w-[38%] rounded-full bg-gradient-to-r from-cyan-400 to-teal-400" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

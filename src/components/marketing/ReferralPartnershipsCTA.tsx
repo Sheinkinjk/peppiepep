@@ -62,7 +62,7 @@ export function ReferralPartnershipsCTA({
           <Button
             type="button"
             size="lg"
-            className="rounded-full bg-[#0ABAB5] text-slate-900 hover:bg-[#12c7c1] px-10 py-4 text-lg shadow-none"
+            className="rounded-xl bg-cyan-400 text-slate-900 hover:bg-cyan-300 px-8 py-4 text-sm font-semibold shadow-none"
           >
             {primaryLabel}
           </Button>
@@ -122,7 +122,7 @@ export function ReferralPartnershipsCTA({
               <Button
                 type="button"
                 asChild
-                className="rounded-full bg-[#0ABAB5] text-slate-900 hover:bg-[#12c7c1]"
+                className="rounded-xl bg-cyan-400 text-slate-900 hover:bg-cyan-300 font-semibold"
               >
                 <a href={mailtoHref} onClick={() => setOpen(false)}>
                   Send to Refer Labs <Mail className="ml-2 h-4 w-4" />
@@ -146,7 +146,7 @@ export function ReferralPartnershipsCTA({
           asChild
           variant="outline"
           size="lg"
-          className="rounded-full border-2 border-cyan-600 bg-transparent text-cyan-50 hover:bg-white/10 px-12 py-4 text-lg shadow-none"
+          className="rounded-xl border border-cyan-400/50 bg-transparent text-white hover:bg-cyan-400/10 px-8 py-4 text-sm font-semibold shadow-none"
         >
           <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
             Schedule a Call <ArrowUpRight className="ml-2 h-4 w-4" />

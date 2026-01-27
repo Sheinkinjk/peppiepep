@@ -9,8 +9,10 @@ import {
   MessageSquare,
   Target,
   TrendingUp,
+  Users,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { ReferralPartnershipsCTA } from "@/components/marketing/ReferralPartnershipsCTA";
@@ -493,6 +495,89 @@ export default function ReferralPartnershipsPage() {
                     <p className="text-sm text-slate-400">{step.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Are You Wanting More Leads? */}
+        <section className="mb-24">
+          <div className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-white/[0.03] to-transparent p-8 sm:p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(52,211,153,0.15),transparent_50%)]" />
+
+            <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  <Target className="h-4 w-4 text-emerald-400" />
+                  <span className="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Lead Generation</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white">
+                  Are You Wanting More Leads?
+                </h2>
+                <p className="text-slate-300 leading-relaxed">
+                  Beyond helping you build referral programs, we can source relevant partners and qualified leads for your business. Our team identifies and vets prospects that match your ideal customer profile, then delivers their details directly to you.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Partner sourcing</strong> — We identify agencies, consultants, and influencers aligned with your target market</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Lead research</strong> — Vetted prospects with contact details, company info, and qualification notes</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <span><strong className="text-white">Custom pricing</strong> — Fees based on lead type, volume, and qualification requirements</span>
+                  </li>
+                </ul>
+                <div className="pt-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-emerald-400"
+                  >
+                    Discuss Lead Generation
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="relative hidden lg:block">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/10 rounded-2xl blur-2xl" />
+                <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/50 p-6 space-y-5">
+                  <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                    <div className="h-10 w-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                      <Users className="h-5 w-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white text-sm">Lead Sourcing Example</p>
+                      <p className="text-xs text-slate-500">Sample deliverable</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="rounded-lg bg-white/5 p-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium text-white">Accounting Firm Partners</span>
+                        <span className="text-xs text-emerald-400 font-medium">24 leads</span>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-1">Mid-size practices, $2M+ revenue</p>
+                    </div>
+                    <div className="rounded-lg bg-white/5 p-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium text-white">LinkedIn Creators (Finance)</span>
+                        <span className="text-xs text-emerald-400 font-medium">12 leads</span>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-1">10K+ followers, CFO audience</p>
+                    </div>
+                    <div className="rounded-lg bg-white/5 p-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium text-white">Business Consultants</span>
+                        <span className="text-xs text-emerald-400 font-medium">18 leads</span>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-1">SMB advisory focus, verified</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

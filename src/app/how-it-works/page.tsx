@@ -236,29 +236,6 @@ const steps = [
   },
 ];
 
-const successMetrics = [
-  {
-    label: "Avg Partner Activation",
-    value: "< 5 min",
-    description: "From invite to first share",
-  },
-  {
-    label: "Attribution Accuracy",
-    value: "94%+",
-    description: "Full-funnel tracking",
-  },
-  {
-    label: "Partner Engagement",
-    value: "3.2x",
-    description: "Higher than industry avg",
-  },
-  {
-    label: "Time to First Referral",
-    value: "< 7 days",
-    description: "After program launch",
-  },
-];
-
 export default function HowItWorks() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
@@ -271,15 +248,11 @@ export default function HowItWorks() {
       <main className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
         {/* Hero Section */}
         <header className="text-center space-y-6 mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 mb-4">
-            <Play className="h-4 w-4 text-cyan-400" />
-            <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">The Playbook</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white tracking-tight max-w-4xl mx-auto">
             How <span className="text-cyan-400">Refer Labs</span> Works
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            One unified flow powers all four offerings—customer referrals, LinkedIn activations, agency partnerships, and advisor programs. Here's the step-by-step playbook.
+            One unified flow powers all four offerings—customer referrals, LinkedIn activations, agency partnerships, and advisor programs.
           </p>
         </header>
 
@@ -430,31 +403,6 @@ export default function HowItWorks() {
               </div>
             );
           })}
-        </section>
-
-        {/* What Success Looks Like */}
-        <section className="mt-24 mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
-              What Success Looks Like
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Teams using Refer Labs see these results within the first 90 days.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {successMetrics.map((metric) => (
-              <div
-                key={metric.label}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center hover:border-cyan-500/30 transition-colors"
-              >
-                <p className="text-3xl font-black text-cyan-400 mb-2">{metric.value}</p>
-                <p className="font-semibold text-white text-sm mb-1">{metric.label}</p>
-                <p className="text-xs text-slate-500">{metric.description}</p>
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* Summary CTA */}

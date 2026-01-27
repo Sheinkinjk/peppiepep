@@ -24,33 +24,33 @@ import { calculateROIForecast, compareRewardScenarios, type ROIInputs } from "@/
 import Link from "next/link";
 
 const INDUSTRY_OPTIONS = [
-  { value: "beauty", label: "Beauty & Wellness", conversionRate: "18%", description: "Salons, spas, aesthetics" },
-  { value: "fitness", label: "Fitness & Health", conversionRate: "22%", description: "Gyms, studios, trainers" },
-  { value: "retail", label: "Retail & E-commerce", conversionRate: "12%", description: "Boutiques, online stores" },
-  { value: "hospitality", label: "Hospitality & Food", conversionRate: "15%", description: "Restaurants, cafes, hotels" },
-  { value: "other", label: "Other Industries", conversionRate: "15%", description: "General growth teams across industries" },
+  { value: "legal", label: "Legal Services", conversionRate: "12%", description: "Law firms, legal practices, barristers" },
+  { value: "accounting", label: "Accounting & Finance", conversionRate: "15%", description: "Accountants, financial advisors, bookkeepers" },
+  { value: "consulting", label: "Consulting & Advisory", conversionRate: "18%", description: "Management consultants, strategy advisors" },
+  { value: "technology", label: "Technology & SaaS", conversionRate: "14%", description: "B2B software, IT services, agencies" },
+  { value: "other", label: "Other Professional Services", conversionRate: "14%", description: "Any professional services business" },
 ] as const;
 
 const REFERRAL_PARTNERSHIP_HIGHLIGHTS = [
   {
-    title: "Structured partner onboarding",
-    detail: "We prep briefs, approvals, and campaigns so creators, advisors, and agencies know exactly how to represent your brand.",
-    metric: "Launch readiness in days",
+    title: "Customer advocates",
+    detail: "Turn satisfied clients into your most powerful referral source with personalized tracking links and reward programs.",
+    metric: "Customer Network",
   },
   {
-    title: "Full attribution + compliance",
-    detail: "Every CTA, landing page, and conversion carries partner, campaign, and link IDs with disclosure tracking.",
-    metric: "Audit-ready tracking",
+    title: "LinkedIn influencers",
+    detail: "Activate B2B thought leaders with structured campaigns, compliance tracking, and performance-based payouts.",
+    metric: "Influencer Activations",
   },
   {
-    title: "Performance-based rewards",
-    detail: "Revenue share, credits, discounts, upgrades, points, or cash-per-demo payouts are automated on a single ledger.",
-    metric: "Flexible payout models",
+    title: "Strategic partners & agencies",
+    detail: "Build white-glove referral programs for agencies, consultancies, and complementary service providers.",
+    metric: "Partner Programs",
   },
   {
-    title: "Executive ROI reporting",
-    detail: "Measure ROI surfaces partner-level dashboards so you can defend every dollar spent with partners.",
-    metric: "Ready-made reporting",
+    title: "Consultants & advisors",
+    detail: "Engage trusted experts with revenue share models, personalized briefs, and full attribution tracking.",
+    metric: "Expert Referrals",
   },
 ] as const;
 
@@ -59,12 +59,12 @@ export function ROICalculator() {
   const [currentStep, setCurrentStep] = useState(1);
 
   // User inputs
-  const [industry, setIndustry] = useState<"beauty" | "fitness" | "retail" | "hospitality" | "other">("beauty");
-  const [monthlyCustomers, setMonthlyCustomers] = useState<number>(50);
-  const [avgTransactionValue, setAvgTransactionValue] = useState<number>(150);
-  const [currentAmbassadors, setCurrentAmbassadors] = useState<number>(10);
-  const [rewardAmount, setRewardAmount] = useState<number>(25);
-  const [signOnBonus, setSignOnBonus] = useState<number>(45);
+  const [industry, setIndustry] = useState<"legal" | "accounting" | "consulting" | "technology" | "other">("consulting");
+  const [monthlyCustomers, setMonthlyCustomers] = useState<number>(20);
+  const [avgTransactionValue, setAvgTransactionValue] = useState<number>(2500);
+  const [currentAmbassadors, setCurrentAmbassadors] = useState<number>(5);
+  const [rewardAmount, setRewardAmount] = useState<number>(250);
+  const [signOnBonus, setSignOnBonus] = useState<number>(500);
 
   // Calculate forecasts
   const forecast = useMemo(() => {
@@ -109,9 +109,9 @@ export function ROICalculator() {
         <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600">
           <Users className="h-8 w-8 text-white" />
         </div>
-        <h3 className="text-2xl font-black text-slate-900">What industry are you in?</h3>
+        <h3 className="text-2xl font-black text-slate-900">What type of professional services do you offer?</h3>
         <p className="text-slate-600 max-w-xl mx-auto">
-          Different industries have different referral behaviors. We'll use industry benchmarks to give you accurate predictions.
+          Different professional services have different referral patterns. We'll use industry benchmarks to give you accurate predictions.
         </p>
       </div>
 
@@ -175,9 +175,9 @@ export function ROICalculator() {
           <div className="grid gap-6">
             <div>
               <Label htmlFor="monthly-customers" className="text-base font-bold text-slate-900 mb-2 block">
-                How many customers do you serve each month?
+                How many clients do you serve each month?
               </Label>
-              <p className="text-sm text-slate-600 mb-3">This includes all transactions, not just new customers.</p>
+              <p className="text-sm text-slate-600 mb-3">Include active engagements, recurring clients, and new matters.</p>
               <Input
                 id="monthly-customers"
                 type="number"
@@ -185,10 +185,10 @@ export function ROICalculator() {
                 onChange={(e) => setMonthlyCustomers(Math.max(1, Number(e.target.value) || 0))}
                 min={1}
                 className="text-lg font-semibold h-14"
-                placeholder="e.g., 50"
+                placeholder="e.g., 20"
               />
               <div className="mt-2 flex gap-2">
-                {[25, 50, 100, 200].map((preset) => (
+                {[10, 20, 50, 100].map((preset) => (
                   <button
                     key={preset}
                     onClick={() => setMonthlyCustomers(preset)}
@@ -202,9 +202,9 @@ export function ROICalculator() {
 
             <div>
               <Label htmlFor="avg-transaction" className="text-base font-bold text-slate-900 mb-2 block">
-                What's your average transaction value?
+                What's your average engagement value?
               </Label>
-              <p className="text-sm text-slate-600 mb-3">The typical amount a customer spends per visit or purchase.</p>
+              <p className="text-sm text-slate-600 mb-3">The typical value of a new client engagement or matter.</p>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg font-bold text-slate-400">$</span>
                 <Input
@@ -214,17 +214,17 @@ export function ROICalculator() {
                   onChange={(e) => setAvgTransactionValue(Math.max(1, Number(e.target.value) || 0))}
                   min={1}
                   className="text-lg font-semibold h-14 pl-8"
-                  placeholder="e.g., 150"
+                  placeholder="e.g., 2500"
                 />
               </div>
               <div className="mt-2 flex gap-2">
-                {[50, 100, 150, 250, 500].map((preset) => (
+                {[1000, 2500, 5000, 10000, 25000].map((preset) => (
                   <button
                     key={preset}
                     onClick={() => setAvgTransactionValue(preset)}
                     className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-purple-100 hover:text-purple-700 transition-colors"
                   >
-                    ${preset}
+                    ${preset.toLocaleString()}
                   </button>
                 ))}
               </div>
@@ -232,9 +232,9 @@ export function ROICalculator() {
 
             <div>
               <Label htmlFor="current-ambassadors" className="text-base font-bold text-slate-900 mb-2 block">
-                Estimated number of additional transactions generated through the referral program
+                How many referral partners do you expect to activate?
               </Label>
-              <p className="text-sm text-slate-600 mb-3">How many new customer transactions do you expect from referrals?</p>
+              <p className="text-sm text-slate-600 mb-3">Include clients, LinkedIn influencers, consultants, and strategic partners who could refer business.</p>
               <Input
                 id="current-ambassadors"
                 type="number"
@@ -242,10 +242,10 @@ export function ROICalculator() {
                 onChange={(e) => setCurrentAmbassadors(Math.max(1, Number(e.target.value) || 0))}
                 min={1}
                 className="text-lg font-semibold h-14"
-                placeholder="e.g., 10"
+                placeholder="e.g., 5"
               />
               <div className="mt-2 flex gap-2">
-                {[5, 10, 25, 50, 100].map((preset) => (
+                {[3, 5, 10, 20, 50].map((preset) => (
                   <button
                     key={preset}
                     onClick={() => setCurrentAmbassadors(preset)}
@@ -490,7 +490,7 @@ export function ROICalculator() {
           </div>
           <h3 className="text-2xl font-black text-slate-900">Your 90-Day ROI Forecast</h3>
           <p className="text-slate-600 max-w-xl mx-auto">
-            Based on {currentAmbassadors} ambassadors offering ${rewardAmount} per referral in the {INDUSTRY_OPTIONS.find(i => i.value === industry)?.label.toLowerCase()} industry.
+            Based on {currentAmbassadors} referral partners offering ${rewardAmount.toLocaleString()} per referral in {INDUSTRY_OPTIONS.find(i => i.value === industry)?.label.toLowerCase()}.
           </p>
         </div>
 
@@ -512,10 +512,10 @@ export function ROICalculator() {
               <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center">
                 <Users className="h-5 w-5 text-white" />
               </div>
-              <p className="text-sm font-semibold text-purple-700 uppercase">New Referrals</p>
+              <p className="text-sm font-semibold text-purple-700 uppercase">New Clients</p>
             </div>
             <p className="text-4xl font-black text-purple-900">{totalReferrals}</p>
-            <p className="text-sm text-purple-700 mt-1">New customers</p>
+            <p className="text-sm text-purple-700 mt-1">Referred engagements</p>
           </Card>
 
           <Card className="p-6 border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-rose-50">
@@ -641,11 +641,10 @@ export function ROICalculator() {
         {/* Referral Partnerships Deep Dive */}
         <section className="space-y-6 max-w-4xl mx-auto">
           <div className="text-center space-y-1">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-600">Expanded offering</p>
-            <h4 className="text-2xl font-black text-slate-900">Refer Labs Referral Partnerships in detail</h4>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-600">Four partner types</p>
+            <h4 className="text-2xl font-black text-slate-900">Activate the right referral partners for your business</h4>
             <p className="text-sm text-slate-600">
-              Pair this calculator with the Refer Labs Referral Partnerships program (<Link href="/referral-partnerships" className="font-semibold text-[#00a6b4]">referlabs.com.au/referral-partnerships</Link>)
-              to unlock the full partner activation, compliance, and reporting stack.
+              Refer Labs helps you build and manage referral programs across four partner types—each with full attribution, compliance tracking, and automated rewards.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -662,17 +661,17 @@ export function ROICalculator() {
           </div>
           <div className="rounded-3xl border border-purple-200 bg-gradient-to-br from-purple-600 to-indigo-600 p-6 text-white shadow-2xl shadow-purple-200/50">
             <div className="flex flex-col gap-3">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em]">Need a human strategy session?</p>
-              <h4 className="text-2xl font-black">See how these ROI projections feed into real partner programs</h4>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em]">Ready to get started?</p>
+              <h4 className="text-2xl font-black">Turn these projections into a live referral program</h4>
               <p className="text-sm text-white/80">
-                Apply the calculated numbers directly to partnership briefs, reward guides, and payout ledgers that the Refer Labs team builds for your business.
+                Refer Labs helps you design, launch, and manage referral partnerships with full tracking, compliance, and automated rewards.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/referral-partnerships"
+                  href="/how-it-works"
                   className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition hover:bg-white/20"
                 >
-                  Explore the partnership offering
+                  See how it works
                 </Link>
                 <Button
                   size="lg"
@@ -680,7 +679,7 @@ export function ROICalculator() {
                   onClick={() => window.location.href = "https://calendly.com/jarred-referlabs/30min?month=2026-01"}
                   className="text-white border-white/60 hover:bg-white/10 hover:text-white"
                 >
-                  Book a concierge prep call
+                  Schedule a call
                 </Button>
               </div>
             </div>
@@ -716,10 +715,10 @@ export function ROICalculator() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-4">
-            Referral Program ROI Calculator
+            Referral Partnership ROI Calculator
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Calculate your potential revenue and discover the perfect reward structure for your referral program in 4 simple steps.
+            Calculate your potential revenue from activating clients, LinkedIn influencers, strategic partners, and consultants as referral sources.
           </p>
         </div>
 
@@ -727,7 +726,7 @@ export function ROICalculator() {
         <div className="max-w-3xl mx-auto mb-12">
           <div className="flex items-center justify-between">
             {[
-              { num: 1, label: "Industry" },
+              { num: 1, label: "Business" },
               { num: 2, label: "Metrics" },
               { num: 3, label: "Rewards" },
               { num: 4, label: "Forecast" },
@@ -765,7 +764,7 @@ export function ROICalculator() {
 
         {/* Footer */}
         <div className="text-center mt-8 text-sm text-slate-500">
-          <p>Calculations based on industry benchmarks and AI-powered predictive models. Results may vary.</p>
+          <p>Calculations based on professional services benchmarks. Actual results depend on partner quality and activation rates.</p>
         </div>
       </div>
     </div>

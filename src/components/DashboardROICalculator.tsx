@@ -15,11 +15,11 @@ import {
 import { calculateROIForecast, compareRewardScenarios, type ROIInputs } from "@/lib/ai-roi-calculator";
 
 const INDUSTRY_OPTIONS = [
-  { value: "beauty", label: "Beauty & Wellness", conversionRate: "18%" },
-  { value: "fitness", label: "Fitness & Health", conversionRate: "22%" },
-  { value: "retail", label: "Retail & E-commerce", conversionRate: "12%" },
-  { value: "hospitality", label: "Hospitality & Food", conversionRate: "15%" },
-  { value: "other", label: "Other Services", conversionRate: "15%" },
+  { value: "legal", label: "Legal Services", conversionRate: "12%" },
+  { value: "accounting", label: "Accounting & Finance", conversionRate: "15%" },
+  { value: "consulting", label: "Consulting & Advisory", conversionRate: "18%" },
+  { value: "technology", label: "Technology & SaaS", conversionRate: "14%" },
+  { value: "other", label: "Other Professional", conversionRate: "14%" },
 ] as const;
 
 type DashboardROICalculatorProps = {
@@ -27,13 +27,13 @@ type DashboardROICalculatorProps = {
   businessName?: string;
 };
 
-export function DashboardROICalculator({ initialAmbassadors = 10 }: DashboardROICalculatorProps) {
+export function DashboardROICalculator({ initialAmbassadors = 5 }: DashboardROICalculatorProps) {
   // User inputs
-  const [industry, setIndustry] = useState<"beauty" | "fitness" | "retail" | "hospitality" | "other">("beauty");
-  const [monthlyCustomers, setMonthlyCustomers] = useState<number>(50);
-  const [avgTransactionValue, setAvgTransactionValue] = useState<number>(150);
+  const [industry, setIndustry] = useState<"legal" | "accounting" | "consulting" | "technology" | "other">("consulting");
+  const [monthlyCustomers, setMonthlyCustomers] = useState<number>(20);
+  const [avgTransactionValue, setAvgTransactionValue] = useState<number>(2500);
   const [currentAmbassadors, setCurrentAmbassadors] = useState<number>(initialAmbassadors);
-  const [rewardAmount, setRewardAmount] = useState<number>(25);
+  const [rewardAmount, setRewardAmount] = useState<number>(250);
   const [showResults, setShowResults] = useState(false);
 
   // Calculate forecasts
@@ -118,7 +118,7 @@ export function DashboardROICalculator({ initialAmbassadors = 10 }: DashboardROI
         {/* Metrics Grid */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <Label className="text-xs font-semibold text-slate-500">Monthly Customers</Label>
+            <Label className="text-xs font-semibold text-slate-500">Monthly Clients</Label>
             <Input
               type="number"
               value={monthlyCustomers}
@@ -128,7 +128,7 @@ export function DashboardROICalculator({ initialAmbassadors = 10 }: DashboardROI
             />
           </div>
           <div>
-            <Label className="text-xs font-semibold text-slate-500">Avg Transaction ($)</Label>
+            <Label className="text-xs font-semibold text-slate-500">Avg Engagement ($)</Label>
             <Input
               type="number"
               value={avgTransactionValue}
@@ -138,7 +138,7 @@ export function DashboardROICalculator({ initialAmbassadors = 10 }: DashboardROI
             />
           </div>
           <div>
-            <Label className="text-xs font-semibold text-slate-500">Ambassadors</Label>
+            <Label className="text-xs font-semibold text-slate-500">Referral Partners</Label>
             <Input
               type="number"
               value={currentAmbassadors}
@@ -202,7 +202,7 @@ export function DashboardROICalculator({ initialAmbassadors = 10 }: DashboardROI
             <div className="p-3 rounded-lg bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200">
               <p className="text-xs font-semibold text-purple-700 uppercase mb-1">Referrals</p>
               <p className="text-lg font-black text-purple-900">{totalReferrals}</p>
-              <p className="text-xs text-purple-600">New customers</p>
+              <p className="text-xs text-purple-600">New clients</p>
             </div>
             <div className="p-3 rounded-lg bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200">
               <p className="text-xs font-semibold text-pink-700 uppercase mb-1">Break Even</p>

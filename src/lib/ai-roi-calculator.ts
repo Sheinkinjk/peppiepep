@@ -6,7 +6,7 @@ export interface ROIInputs {
   avgTransactionValue: number;
   rewardAmount: number;
   monthlyCustomers: number;
-  industryType?: 'beauty' | 'fitness' | 'retail' | 'hospitality' | 'other';
+  industryType?: 'legal' | 'accounting' | 'consulting' | 'technology' | 'other';
 }
 
 export interface ROIForecast {
@@ -41,13 +41,13 @@ export interface ROIForecast {
  */
 function getConversionRate(industryType: string = 'other'): number {
   const rates = {
-    beauty: 0.18, // 18% of customers become ambassadors
-    fitness: 0.22, // 22%
-    retail: 0.12, // 12%
-    hospitality: 0.15, // 15%
-    other: 0.15, // 15% default
+    legal: 0.12, // 12% - trust-based, relationship-driven
+    accounting: 0.15, // 15% - recurring client relationships
+    consulting: 0.18, // 18% - network-driven, high-touch
+    technology: 0.14, // 14% - B2B referrals
+    other: 0.14, // 14% default for professional services
   };
-  return rates[industryType as keyof typeof rates] || 0.15;
+  return rates[industryType as keyof typeof rates] || 0.14;
 }
 
 /**
