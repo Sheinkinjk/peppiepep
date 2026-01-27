@@ -7,15 +7,15 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const content = {
   industry: "Insurance Brokers",
-  heroTitle: "Grow Your Book Through Strategic Referral Partners",
+  heroTitle: "Stop Buying Leads. Start Receiving Warm Introductions.",
   heroSubtitle:
-    "Activate a partner network that automatically delivers qualified inbound insurance clients—from commercial lines to personal coverage.",
-  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+    "Your best policies came from trusted referrals. Refer Labs helps you systematically activate accountants, financial planners, and satisfied policyholders to send you qualified prospects—automatically.",
+  primaryCta: { label: "Book Your Strategy Call", href: calendlyUrl },
   industryBenefit:
-    "Insurance is built on trust and relationships. We help you formalize referral partnerships that drive premium volume, tracking every referral from introduction to bound policy.",
-  ctaTitle: "Ready to build your referral network?",
+    "Insurance is sold on trust. A referral from a CPA or existing client closes faster and sticks longer than any cold lead. We give you the system to track, reward, and scale those introductions—so your pipeline fills itself.",
+  ctaTitle: "Ready to grow your book with referrals that close?",
   ctaDescription:
-    "Learn how Refer Labs can help you launch a referral program that delivers a steady flow of qualified insurance prospects.",
+    "Book a free 30-minute call. We'll map your ideal referral partners, recommend a reward structure, and show you how to launch a program that pays for itself.",
 };
 
 export default function InsuranceBrokersServicePage() {

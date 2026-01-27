@@ -6,16 +6,16 @@ export const metadata = generateSEOMetadata(seoConfig.recruitersStaffingService)
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const content = {
-  industry: "Recruiters & Staffing Firms",
-  heroTitle: "Build a Referral Network That Delivers Candidates and Clients",
+  industry: "Recruiters & Staffing",
+  heroTitle: "Double Your Placements. Cut Your Sourcing Time in Half.",
   heroSubtitle:
-    "Activate a partner network of HR leaders, industry influencers, and satisfied clients who refer both top candidates and hiring companies to your firm.",
-  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+    "Your best candidates and clients came from referrals. Refer Labs helps you systematically activate HR leaders, hiring managers, and placed candidates to send you qualified opportunities—on both sides of the desk.",
+  primaryCta: { label: "Book Your Strategy Call", href: calendlyUrl },
   industryBenefit:
-    "Recruiting success depends on reach. We help you build and track referral relationships across your network, attributing every placement back to its source.",
-  ctaTitle: "Ready to build your referral network?",
+    "Recruiting is a relationship business. Referred candidates are higher quality, and referred clients have bigger budgets. We give you the system to track, reward, and scale those introductions—so you fill more roles, faster.",
+  ctaTitle: "Ready to build a referral pipeline that delivers?",
   ctaDescription:
-    "Learn how Refer Labs can help you launch a referral program that drives candidate flow and client acquisition.",
+    "Book a free 30-minute call. We'll show you how to activate your network, set up tracking, and launch a referral program that drives both candidate flow and new client acquisition.",
 };
 
 export default function RecruitersStaffingServicePage() {

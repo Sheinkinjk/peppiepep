@@ -6,16 +6,16 @@ export const metadata = generateSEOMetadata(seoConfig.financialAdvisorsService);
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const content = {
-  industry: "Financial Advisors & Planners",
-  heroTitle: "Grow Your Advisory Practice Through Referral Partners",
+  industry: "Financial Advisors",
+  heroTitle: "Stop Chasing Leads. Start Receiving Referrals.",
   heroSubtitle:
-    "Activate a partner network of CPAs, estate attorneys, and industry influencers who consistently send you pre-qualified, high-net-worth prospects.",
-  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+    "Your best clients came from introductions. Refer Labs helps you systematically activate CPAs, estate planners, and satisfied clients to send you pre-qualified, high-net-worth prospects—on autopilot.",
+  primaryCta: { label: "Book Your Strategy Call", href: calendlyUrl },
   industryBenefit:
-    "Financial advisors who build structured referral networks see dramatically higher AUM growth. We help you connect with the right partners and track every referral to revenue.",
-  ctaTitle: "Ready to build your referral network?",
+    "Financial advisory is built on trust. When a CPA or existing client vouches for you, that prospect arrives pre-sold. We give you the infrastructure to track, reward, and scale those introductions—turning word-of-mouth into your #1 growth channel.",
+  ctaTitle: "Ready to fill your pipeline with warm referrals?",
   ctaDescription:
-    "Learn how Refer Labs can help you launch a referral program that attracts high-net-worth clients through trusted partners.",
+    "Book a free 30-minute call. We'll map your ideal referral partners, recommend a reward structure, and show you exactly how to launch.",
 };
 
 export default function FinancialAdvisorsServicePage() {

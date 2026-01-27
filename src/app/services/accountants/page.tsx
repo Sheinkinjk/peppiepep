@@ -7,15 +7,15 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const content = {
   industry: "Accountants & Tax Professionals",
-  heroTitle: "Turn Trusted Relationships Into a Referral Engine",
+  heroTitle: "Your Clients Trust You. Now Turn That Into Growth.",
   heroSubtitle:
-    "Activate a partner network of financial advisors, attorneys, and business consultants who refer clients needing tax, audit, and advisory services.",
-  primaryCta: { label: "Schedule a Call", href: calendlyUrl },
+    "Happy clients, financial advisors, and business consultants are already talking about you. Refer Labs gives you the system to capture those referrals, reward your partners, and track every new client back to its source.",
+  primaryCta: { label: "Book Your Strategy Call", href: calendlyUrl },
   industryBenefit:
-    "Accounting firms thrive on trust. We help you formalize referral relationships with partners who serve your ideal clients, tracking every referral from introduction to retained revenue.",
-  ctaTitle: "Ready to build your referral network?",
+    "Accounting is a trust-based business—and referrals convert faster than any other channel. We help you formalize those informal introductions into a predictable growth engine with full attribution from handshake to signed engagement.",
+  ctaTitle: "Ready to turn referrals into your #1 growth channel?",
   ctaDescription:
-    "Learn how Refer Labs can help you launch a referral program that drives consistent, high-value client acquisition.",
+    "Book a free 30-minute call. We'll show you how to activate your network, set up tracking, and launch a referral program that pays for itself in the first month.",
 };
 
 export default function AccountantsServicePage() {

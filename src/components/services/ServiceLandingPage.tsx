@@ -31,65 +31,60 @@ interface ServiceLandingPageProps {
 
 const partnerSegments = [
   {
+    icon: Share2,
+    title: "Your Happy Clients",
+    description:
+      "Your clients already trust you. Give them a reason to refer—and track every introduction to closed revenue.",
+    metrics: "65% faster close rate vs cold leads",
+  },
+  {
     icon: Users,
     title: "LinkedIn Influencers",
     description:
-      "Tap into industry thought leaders who reach your ideal prospects daily. They recommend, you close.",
-    metrics: "3-5x higher conversion than cold outreach",
+      "Activate thought leaders who reach thousands of your ideal prospects daily. Full attribution on every referral.",
+    metrics: "3-5x conversion vs paid ads",
   },
   {
     icon: Building2,
-    title: "Agencies & Strategic Partners",
+    title: "Strategic Partners",
     description:
-      "Build revenue-sharing relationships with agencies and complementary service providers.",
-    metrics: "40% lower customer acquisition cost",
+      "Complementary service providers who serve your market. Formal rev-share programs with automated tracking.",
+    metrics: "40% lower acquisition cost",
   },
   {
     icon: Briefcase,
-    title: "Consultants & Advisors",
+    title: "Trusted Advisors",
     description:
-      "Enable trusted advisors to recommend your services as part of their client relationships.",
+      "Accountants, consultants, and advisors who guide buying decisions. Discreet, professional referral programs.",
     metrics: "2x higher lifetime value",
-  },
-  {
-    icon: Share2,
-    title: "Existing Customers & Network",
-    description:
-      "Turn satisfied clients into your most powerful acquisition channel with seamless referral tracking.",
-    metrics: "65% faster sales cycle",
   },
 ];
 
 const faqs = [
   {
-    question: "What types of referral partners can I work with?",
+    question: "How quickly can I launch?",
     answer:
-      "Refer Labs supports four main partner types: LinkedIn influencers who have audiences matching your ideal customer profile, agencies and strategic partners for revenue-sharing arrangements, consultants and advisors who serve your target market, and your existing customers and network. Each partner type has unique tracking, reward structures, and communication flows.",
+      "Most clients are live within 2-3 weeks. We handle the technical setup—you focus on activating partners.",
   },
   {
-    question: "How does partner tracking and attribution work?",
+    question: "What partners can I work with?",
     answer:
-      "Every partner gets a unique referral link with full UTM tracking. We track the entire journey from click to conversion, including link visits, form submissions, booked meetings, and closed deals. You get complete visibility into which partners drive the most valuable leads, with real-time dashboards and exportable reports.",
+      "Four types: existing clients, LinkedIn influencers, strategic partners (agencies, complementary services), and trusted advisors (accountants, consultants). Each gets unique tracking and tailored reward structures.",
   },
   {
-    question: "What reward models does Refer Labs support?",
+    question: "How do you track referrals?",
     answer:
-      "We support flexible reward structures including revenue share (percentage of deal value), fixed fee per qualified lead or booked demo, tiered bonuses based on volume or quality, and custom hybrid models. Rewards can be paid via bank transfer, PayPal, or gift cards, with automated payment processing available.",
+      "Unique links with full attribution—from click to closed deal. Real-time dashboards show exactly which partners drive revenue.",
   },
   {
-    question: "How long does it take to launch a referral program?",
+    question: "What reward models work best?",
     answer:
-      "Most clients launch within 2-4 weeks. Our process includes a strategy session to map your ideal partners and reward structure, followed by platform setup and partner onboarding. We handle the technical infrastructure so you can focus on activating your network.",
+      "Revenue share, fixed fee per lead, or tiered bonuses. We'll recommend the structure that motivates your specific partner types during your strategy call.",
   },
   {
-    question: "Can I integrate with my existing CRM and tools?",
+    question: "Do you integrate with my CRM?",
     answer:
-      "Yes. Refer Labs integrates with HubSpot, Salesforce, Pipedrive, and other popular CRMs. We also connect with Zapier for custom workflows, Slack for notifications, and various payment processors. API access is available for custom integrations.",
-  },
-  {
-    question: "What makes Refer Labs different from other referral platforms?",
-    answer:
-      "Refer Labs is built specifically for B2B services and professional firms. We focus on high-value, trust-based referrals rather than e-commerce or consumer programs. Our platform handles the complexity of multi-touch attribution, compliance requirements, and partner relationship management that B2B referrals demand.",
+      "Yes—HubSpot, Salesforce, Pipedrive, and Zapier for custom workflows. Full API available.",
   },
 ];
 
@@ -328,17 +323,17 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
       </div>
 
       <main className="relative">
-        {/* Hero Section - Ultra simplified */}
-        <section className="mx-auto max-w-5xl px-6 pb-20 pt-24 text-center sm:px-10 sm:pt-32 lg:pt-40">
+        {/* Hero Section - Sales-led */}
+        <section className="mx-auto max-w-5xl px-6 pb-16 pt-24 text-center sm:px-10 sm:pt-32 lg:pt-36">
           <span className="inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-cyan-300">
             {content.industry}
           </span>
 
-          <h1 className="mt-8 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-8 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             {content.heroTitle}
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-400 sm:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300 sm:text-xl font-medium">
             {content.heroSubtitle}
           </p>
 
@@ -347,26 +342,29 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
               href={content.primaryCta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#0ABAB5] px-10 py-4 text-base font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-[#12c7c1] hover:shadow-xl hover:shadow-cyan-500/30"
+              className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-10 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/25 transition hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-xl hover:shadow-cyan-500/35"
             >
               {content.primaryCta.label}
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-5 w-5" />
             </Link>
             <ApplyDialog sourcePage={content.industry} />
           </div>
+
+          <p className="mt-6 text-sm text-slate-500">
+            Free 30-minute strategy call · No commitment required
+          </p>
         </section>
 
         {/* Referral Network Section */}
-        <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
+        <section className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-              Would you like to build a{" "}
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              Four Ways to{" "}
               <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
-                Referral Network
+                Drive Referrals
               </span>
-              ?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+            <p className="mx-auto mt-4 max-w-2xl text-slate-300 text-lg">
               {content.industryBenefit}
             </p>
           </div>
@@ -399,62 +397,71 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
         </section>
 
         {/* How It Works Section */}
-        <section className="mx-auto max-w-5xl px-6 py-20 sm:px-10">
+        <section className="mx-auto max-w-5xl px-6 py-16 sm:px-10">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-              How Refer Labs Works
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              Launch in Weeks, Not Months
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-              A streamlined process to launch your referral network
+            <p className="mx-auto mt-4 max-w-2xl text-slate-300">
+              Most clients see their first referral-driven leads within 30 days
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               {
-                step: "01",
-                title: "Strategy Session",
+                step: "1",
+                title: "Strategy Call",
                 description:
-                  "We map your ideal referral partners and design reward structures that motivate.",
+                  "30 minutes to map your ideal partners and reward structure. We do the heavy lifting.",
               },
               {
-                step: "02",
-                title: "Network Launch",
+                step: "2",
+                title: "We Build It",
                 description:
-                  "We build your referral infrastructure and onboard your first wave of partners.",
+                  "Tracking infrastructure, partner portals, and onboarding materials—ready in days.",
               },
               {
-                step: "03",
-                title: "Scale & Optimize",
+                step: "3",
+                title: "Start Growing",
                 description:
-                  "Track performance, expand your network, and maximize referral-driven revenue.",
+                  "Activate partners, track every referral, and watch your pipeline fill with warm leads.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 text-lg font-semibold text-cyan-400">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500/20 text-xl font-bold text-cyan-400">
                   {item.step}
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-white">
+                <h3 className="mt-4 text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm text-slate-400">{item.description}</p>
+                <p className="mt-2 text-sm text-slate-400">{item.description}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href={content.primaryCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-8 py-3 text-sm font-bold text-slate-900 transition hover:-translate-y-0.5 hover:bg-cyan-300"
+            >
+              Book Your Strategy Call
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </section>
 
         {/* Common Questions Section */}
-        <section className="mx-auto max-w-3xl px-6 py-20 sm:px-10">
+        <section className="mx-auto max-w-3xl px-6 py-16 sm:px-10">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-              Common Questions
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+              Quick Answers
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-              Everything you need to know about building your referral network
-            </p>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-8">
             {faqs.map((faq) => (
               <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
             ))}
@@ -462,15 +469,15 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
         </section>
 
         {/* CTA Section */}
-        <section className="mx-auto max-w-4xl px-6 py-20 sm:px-10">
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/30 p-10 text-center sm:p-14">
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cyan-500/5 to-transparent" />
+        <section className="mx-auto max-w-4xl px-6 py-16 sm:px-10">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/40 p-10 text-center sm:p-12">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent" />
 
-            <h2 className="relative text-2xl font-semibold text-white sm:text-3xl">
+            <h2 className="relative text-2xl font-black text-white sm:text-3xl">
               {content.ctaTitle}
             </h2>
 
-            <p className="relative mx-auto mt-4 max-w-lg text-slate-400">
+            <p className="relative mx-auto mt-4 max-w-lg text-slate-300 text-lg">
               {content.ctaDescription}
             </p>
 
@@ -479,16 +486,16 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
                 href={content.primaryCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0ABAB5] px-10 py-4 text-base font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-[#12c7c1] hover:shadow-xl hover:shadow-cyan-500/30"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-10 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-xl hover:shadow-cyan-500/40"
               >
-                Schedule a Call
-                <ArrowRight className="h-4 w-4" />
+                Schedule Your Free Call
+                <ArrowRight className="h-5 w-5" />
               </Link>
               <ApplyDialog sourcePage={content.industry} />
             </div>
 
-            <p className="relative mt-5 text-xs uppercase tracking-widest text-slate-500">
-              30-minute strategy session
+            <p className="relative mt-5 text-sm text-slate-400">
+              No commitment · No sales pitch · Just strategy
             </p>
           </div>
         </section>
