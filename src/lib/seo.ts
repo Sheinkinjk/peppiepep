@@ -416,19 +416,6 @@ export const seoConfig = {
       "referral attribution",
     ],
   },
-  lawFirmsService: {
-    title: "Referral Program for Law Firms",
-    description:
-      "Professional referral workflows for law firms with intake routing, compliance checkpoints, and matter attribution.",
-    url: `${SITE_URL}/services/law-firms`,
-    keywords: [
-      "law firm referrals",
-      "legal referral tracking",
-      "matter attribution",
-      "referral compliance",
-      "legal partner program",
-    ],
-  },
   consultantsCoachesService: {
     title: "Referral Program for Consultants & Coaches",
     description:

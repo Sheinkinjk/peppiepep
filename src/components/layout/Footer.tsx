@@ -44,12 +44,11 @@ export default function Footer() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Service industries</p>
           <ul className="mt-4 space-y-2">
-            <li><Link className="hover:text-slate-800" href="/services/financial-advisors">Financial Advisors & Planners</Link></li>
+            <li><Link className="hover:text-slate-800" href="/services/financial-advisors">Financial Advisors</Link></li>
             <li><Link className="hover:text-slate-800" href="/services/accountants">Accountants & Tax Professionals</Link></li>
-            <li><Link className="hover:text-slate-800" href="/services/law-firms">Law Firms</Link></li>
-            <li><Link className="hover:text-slate-800" href="/services/consultants-coaches">Consultants & Coaches</Link></li>
-            <li><Link className="hover:text-slate-800" href="/services/recruiters-staffing">Recruiters & Staffing Firms</Link></li>
             <li><Link className="hover:text-slate-800" href="/services/insurance-brokers">Insurance Brokers</Link></li>
+            <li><Link className="hover:text-slate-800" href="/services/consultants-coaches">Consultants & Coaches</Link></li>
+            <li><Link className="hover:text-slate-800" href="/services/recruiters-staffing">Recruiters & Staffing</Link></li>
           </ul>
         </div>
 

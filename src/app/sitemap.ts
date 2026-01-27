@@ -59,12 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/services/law-firms`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/services/consultants-coaches`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
