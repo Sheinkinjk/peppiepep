@@ -442,10 +442,10 @@ export default async function Home() {
               <span className="text-sm font-bold text-cyan-300 uppercase tracking-wide">Why Refer Labs</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto leading-tight">
-              Referrals Are the Most Powerful Growth Lever for <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Professional Services</span>
+              Create a <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Snowball Effect</span> of Growth
             </h2>
             <p className="text-slate-300 max-w-3xl mx-auto text-lg sm:text-xl leading-relaxed font-medium">
-              In high-trust industries, warm introductions convert faster, close at higher rates, and retain longer than any other channel. Refer Labs gives you the infrastructure to turn that into a repeatable, measurable growth engine.
+              One happy client tells two colleagues. Those colleagues tell their networks. Before long, your referral pipeline grows faster than any ad campaign could deliver—with higher-quality leads that close faster and stay longer.
             </p>
           </div>
 
@@ -531,35 +531,35 @@ export default async function Home() {
                     Why Refer Labs Is Different
                   </h3>
                   <p className="text-slate-300 leading-relaxed">
-                    Most referral tools were built for e-commerce—discount codes, instant transactions, low-value purchases. That model doesn't work when deals are $10K+, take months to close, and depend on professional trust.
+                    Trusted recommendations are the foundation of professional services growth. When someone stakes their reputation on your work, that introduction carries weight no ad can match. Refer Labs helps you systematically activate four powerful referral channels.
                   </p>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
                       <div>
-                        <span className="text-white font-semibold">Long sales cycles supported</span>
-                        <p className="text-slate-400 text-sm mt-0.5">Track introductions that take 3-12+ months to close. No expiring cookies or lost attribution.</p>
+                        <span className="text-white font-semibold">Your Customer Network</span>
+                        <p className="text-slate-400 text-sm mt-0.5">Turn satisfied clients into advocates with trackable links and automated rewards. They already trust you—make it easy for them to share.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
                       <div>
-                        <span className="text-white font-semibold">Discreet, professional experience</span>
-                        <p className="text-slate-400 text-sm mt-0.5">No public affiliate links or discount codes. White-label portals that match your brand standards.</p>
+                        <span className="text-white font-semibold">LinkedIn Influencers</span>
+                        <p className="text-slate-400 text-sm mt-0.5">Activate B2B thought leaders who reach your ideal buyers daily. Full attribution so you know exactly which creators drive pipeline.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
                       <div>
-                        <span className="text-white font-semibold">Compliance built-in</span>
-                        <p className="text-slate-400 text-sm mt-0.5">GDPR, CCPA, Australian Privacy Act—handled automatically. Disclosure templates and audit trails included.</p>
+                        <span className="text-white font-semibold">Agencies & Strategic Partners</span>
+                        <p className="text-slate-400 text-sm mt-0.5">Build white-glove partner programs with complementary service providers. Co-branded materials and professional onboarding included.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
                       <div>
-                        <span className="text-white font-semibold">Finance-ready reporting</span>
-                        <p className="text-slate-400 text-sm mt-0.5">Payout calculations, revenue attribution, and ledger exports your finance team can audit and defend.</p>
+                        <span className="text-white font-semibold">Consultants & Advisors</span>
+                        <p className="text-slate-400 text-sm mt-0.5">Engage trusted experts who guide buying decisions. Discreet tracking and revenue share models that respect professional relationships.</p>
                       </div>
                     </li>
                   </ul>
