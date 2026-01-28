@@ -1,5 +1,4 @@
 import { Mail, Calendar, ArrowRight, MapPin, Clock, Sparkles } from "lucide-react";
-import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.contact);
@@ -18,7 +17,7 @@ export default function Contact() {
         <header className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 mb-2">
             <Sparkles className="h-4 w-4 text-cyan-400" />
-            <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">Get in Touch</span>
+            <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">Contact Us</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white tracking-tight max-w-3xl mx-auto">
             Let's Build Your <span className="text-cyan-400">Referral Program</span>
@@ -121,32 +120,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-            <h3 className="text-lg font-semibold text-white mb-6 text-center">Explore Before You Reach Out</h3>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <Link
-                href="/how-it-works"
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/10 bg-white/[0.03] text-sm font-medium text-slate-300 hover:border-cyan-500/30 hover:text-white transition-all"
-              >
-                How It Works
-              </Link>
-              <Link
-                href="/pricing"
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/10 bg-white/[0.03] text-sm font-medium text-slate-300 hover:border-cyan-500/30 hover:text-white transition-all"
-              >
-                View Pricing
-              </Link>
-              <Link
-                href="/case-studies"
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/10 bg-white/[0.03] text-sm font-medium text-slate-300 hover:border-cyan-500/30 hover:text-white transition-all"
-              >
-                Case Studies
-              </Link>
-            </div>
-          </div>
-        </div>
       </main>
     </div>
   );

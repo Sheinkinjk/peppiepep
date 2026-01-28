@@ -46,7 +46,7 @@ const offeringHighlights = [
     id: "agencies-partners",
     icon: Building2,
     title: "Agencies & Partners",
-    description: "Build white-glove partner programs with tiered rewards and quarterly reviews.",
+    description: "Build white-glove partner programs with custom rewards and quarterly reviews.",
     color: "purple",
   },
   {
@@ -62,11 +62,11 @@ const dashboardPreviews = [
   {
     step: "01",
     title: "Program Setup Dashboard",
-    description: "Configure your reward rules, partner tiers, and compliance settings in one place.",
+    description: "Configure your reward rules, partner types, and compliance settings in one place.",
     icon: FileText,
     metrics: [
       { label: "Reward Rules", value: "3" },
-      { label: "Partner Tiers", value: "Gold/Silver" },
+      { label: "Partner Types", value: "4 Active" },
       { label: "Active", value: "Yes" },
     ],
     color: "cyan",
@@ -130,7 +130,7 @@ const steps = [
         text: "Set compliance guardrails and disclosure requirements",
       },
     ],
-    offeringNote: "For LinkedIn campaigns, we match influencer audiences. For agency programs, we design tiered structures.",
+    offeringNote: "For LinkedIn campaigns, we match influencer audiences. For agency programs, we design custom reward structures.",
     playbook: {
       title: "Example: Law Firm Setup",
       steps: [
@@ -223,7 +223,7 @@ const steps = [
         text: "Audit-ready records for compliance and finance teams",
       },
     ],
-    offeringNote: "Customers earn credits. Influencers get revenue share. Agencies receive tiered commissions.",
+    offeringNote: "Customers earn credits. Influencers get revenue share. Agencies receive performance-based commissions.",
     playbook: {
       title: "Example: Payout Scenario",
       steps: [

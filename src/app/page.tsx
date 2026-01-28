@@ -274,62 +274,6 @@ const howItWorks = [
   },
 ];
 
-const clientTestimonials = [
-  {
-    quote:
-      "We went live in days and immediately had clarity on what was working. The dashboard made attribution simple—no more chasing spreadsheets.",
-    name: "Sarah Nguyen",
-    title: "Head of Growth",
-    company: "Altitude Advisory",
-    avatar: "SN",
-    avatarBg: "from-cyan-500 to-teal-500",
-  },
-  {
-    quote:
-      "Refer Labs turned happy customers into a measurable acquisition channel. We can finally see which partners drive real outcomes.",
-    name: "Michael Torres",
-    title: "Founder & CEO",
-    company: "Torres Legal Group",
-    avatar: "MT",
-    avatarBg: "from-blue-500 to-indigo-500",
-  },
-  {
-    quote:
-      "The tracking is bulletproof. Every action from clicking the link to converting is captured and attributed properly.",
-    name: "Priya Shah",
-    title: "Revenue Operations Lead",
-    company: "Nexus Consulting",
-    avatar: "PS",
-    avatarBg: "from-purple-500 to-pink-500",
-  },
-  {
-    quote:
-      "We wanted a referral program that plugged into our existing sales process. Refer Labs gave us clean tracking and better visibility.",
-    name: "James O'Connor",
-    title: "Managing Director",
-    company: "O'Connor & Partners",
-    avatar: "JO",
-    avatarBg: "from-emerald-500 to-green-500",
-  },
-  {
-    quote:
-      "What surprised us most was how professional the end-to-end experience feels. The referral pages look premium and prospects convert.",
-    name: "Emily Chen",
-    title: "Marketing Director",
-    company: "Precision Wealth",
-    avatar: "EC",
-    avatarBg: "from-amber-500 to-orange-500",
-  },
-  {
-    quote:
-      "We used to run partnerships manually and it was messy. Now we have a structured flow and can monitor performance in one place.",
-    name: "Daniel Robertson",
-    title: "Partnerships Manager",
-    company: "Summit Accounting",
-    avatar: "DR",
-    avatarBg: "from-rose-500 to-red-500",
-  },
-];
 
 /* ─────────────────────────────────────────────────────────────
    Page Component
@@ -437,15 +381,11 @@ export default async function Home() {
         <section className="mb-24 mt-16 sm:mt-0">
           {/* Section Header */}
           <div className="text-center space-y-5 mb-16">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 mb-2">
-              <Sparkles className="h-5 w-5 text-cyan-400" />
-              <span className="text-sm font-bold text-cyan-300 uppercase tracking-wide">Why Refer Labs</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto leading-tight">
-              Create a <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Snowball Effect</span> of Growth
+              Why <span className="text-cyan-400">Refer Labs</span>
             </h2>
             <p className="text-slate-300 max-w-3xl mx-auto text-lg sm:text-xl leading-relaxed font-medium">
-              One happy client tells two colleagues. Those colleagues tell their networks. Before long, your referral pipeline grows faster than any ad campaign could deliver—with higher-quality leads that close faster and stay longer.
+              Referrals are the most powerful growth lever for professional services. When someone stakes their reputation on your work, prospects arrive pre-sold—ready to buy, not browse.
             </p>
           </div>
 
@@ -459,7 +399,7 @@ export default async function Home() {
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 flex items-center justify-center mb-5">
                   <Users className="h-6 w-6 text-cyan-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Trust-Based Growth</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">Trust-Based Growth</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Referrals carry implicit endorsement. Prospects arrive pre-sold on your expertise, reducing the need for cold outreach and lengthy qualification.
                 </p>
@@ -470,7 +410,7 @@ export default async function Home() {
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 border border-emerald-500/30 flex items-center justify-center mb-5">
                   <Target className="h-6 w-6 text-emerald-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Trackable Introductions</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">Trackable Introductions</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Every introduction is captured and attributed—from first click to closed deal. No more guessing who deserves credit or relying on memory.
                 </p>
@@ -481,7 +421,7 @@ export default async function Home() {
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 border border-blue-500/30 flex items-center justify-center mb-5">
                   <Award className="h-6 w-6 text-blue-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Higher-Quality Leads</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">Higher-Quality Leads</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Referred prospects are pre-qualified by people who understand your value. They convert at 3-5x the rate of cold leads and stay longer.
                 </p>
@@ -492,7 +432,7 @@ export default async function Home() {
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 flex items-center justify-center mb-5">
                   <TrendingUp className="h-6 w-6 text-purple-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Shorter Path to Conversion</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">Shorter Path to Conversion</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Skip the awareness and consideration stages. Warm introductions jump straight to evaluation—cutting sales cycles by 40-60%.
                 </p>
@@ -503,7 +443,7 @@ export default async function Home() {
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-amber-500/30 flex items-center justify-center mb-5">
                   <BarChart3 className="h-6 w-6 text-amber-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Measurable ROI</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">Measurable ROI</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   See exactly how much revenue your referral programs generate. Justify partner payouts with audit-ready reports your CFO will approve.
                 </p>
@@ -514,7 +454,7 @@ export default async function Home() {
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 border border-rose-500/30 flex items-center justify-center mb-5">
                   <Gift className="h-6 w-6 text-rose-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Repeatable Partner Activations</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">Repeatable Partner Activations</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   Build a system that scales. Onboard new partners in minutes with branded portals, automated rewards, and real-time performance tracking.
                 </p>
@@ -522,157 +462,71 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* Platform Differentiation */}
+          {/* Four Referral Channels - Expanded Cards */}
           <div className="relative">
-            <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.08] via-white/[0.03] to-transparent p-8 sm:p-10">
-              <div className="grid lg:grid-cols-2 gap-10 items-center">
-                <div className="space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-black text-white">
-                    Why Refer Labs Is Different
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed">
-                    Trusted recommendations are the foundation of professional services growth. When someone stakes their reputation on your work, that introduction carries weight no ad can match. Refer Labs helps you systematically activate four powerful referral channels.
-                  </p>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
-                      <div>
-                        <span className="text-white font-semibold">Your Customer Network</span>
-                        <p className="text-slate-400 text-sm mt-0.5">Turn satisfied clients into advocates with trackable links and automated rewards. They already trust you—make it easy for them to share.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
-                      <div>
-                        <span className="text-white font-semibold">LinkedIn Influencers</span>
-                        <p className="text-slate-400 text-sm mt-0.5">Activate B2B thought leaders who reach your ideal buyers daily. Full attribution so you know exactly which creators drive pipeline.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
-                      <div>
-                        <span className="text-white font-semibold">Agencies & Strategic Partners</span>
-                        <p className="text-slate-400 text-sm mt-0.5">Build white-glove partner programs with complementary service providers. Co-branded materials and professional onboarding included.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-1" />
-                      <div>
-                        <span className="text-white font-semibold">Consultants & Advisors</span>
-                        <p className="text-slate-400 text-sm mt-0.5">Engage trusted experts who guide buying decisions. Discreet tracking and revenue share models that respect professional relationships.</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div className="relative hidden lg:block">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/10 rounded-2xl blur-2xl" />
-                  <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/50 p-6 space-y-4">
-                    <div className="flex items-center gap-3 pb-4 border-b border-white/10">
-                      <div className="h-10 w-10 rounded-xl bg-cyan-500/20 flex items-center justify-center">
-                        <TrendingUp className="h-5 w-5 text-cyan-400" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-white text-sm">Referral Program Performance</p>
-                        <p className="text-xs text-slate-500">Last 90 days</p>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="rounded-xl bg-white/5 p-4 text-center">
-                        <p className="text-2xl font-bold text-cyan-300">47</p>
-                        <p className="text-xs text-slate-500 mt-1">Active Partners</p>
-                      </div>
-                      <div className="rounded-xl bg-white/5 p-4 text-center">
-                        <p className="text-2xl font-bold text-emerald-300">89</p>
-                        <p className="text-xs text-slate-500 mt-1">Introductions</p>
-                      </div>
-                      <div className="rounded-xl bg-white/5 p-4 text-center">
-                        <p className="text-2xl font-bold text-purple-300">34</p>
-                        <p className="text-xs text-slate-500 mt-1">Closed Deals</p>
-                      </div>
-                      <div className="rounded-xl bg-white/5 p-4 text-center">
-                        <p className="text-2xl font-bold text-amber-300">$412K</p>
-                        <p className="text-xs text-slate-500 mt-1">Attributed Revenue</p>
-                      </div>
-                    </div>
-                    <div className="pt-2">
-                      <div className="flex justify-between text-xs text-slate-500 mb-1">
-                        <span>Conversion Rate</span>
-                        <span className="text-cyan-300 font-medium">38%</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-white/10 overflow-hidden">
-                        <div className="h-full w-[38%] rounded-full bg-gradient-to-r from-cyan-400 to-teal-400" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="text-center mb-10">
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
+                Four Ways to <span className="text-cyan-400">Activate Growth</span>
+              </h3>
+              <p className="text-slate-400 max-w-2xl mx-auto">
+                Refer Labs helps you systematically activate four powerful referral channels—each with full tracking, attribution, and automated rewards.
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* ─────────────────────────────────────────────────────────
-            Launch Targeted Referral Programs — 4 Categories
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-24">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white max-w-4xl mx-auto">
-              Launch Targeted Referral Programs
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {targetedPrograms.map((program) => {
-              const Icon = program.icon;
-              return (
-                <div
-                  key={program.id}
-                  className={cn(
-                    "relative overflow-hidden rounded-3xl border bg-gradient-to-br p-8 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/10",
-                    program.borderColor,
-                    program.gradient
-                  )}
-                >
-                  {/* Icon & Badge */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center gap-4">
-                      <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center">
-                        <Icon className={cn("h-7 w-7", program.iconColor)} />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
-                          {program.tagline}
-                        </p>
-                        <h3 className="text-xl font-bold text-white">{program.title}</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {targetedPrograms.map((program) => {
+                const Icon = program.icon;
+                return (
+                  <div
+                    key={program.id}
+                    className={cn(
+                      "relative overflow-hidden rounded-3xl border bg-gradient-to-br p-8 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/10",
+                      program.borderColor,
+                      program.gradient
+                    )}
+                  >
+                    {/* Icon & Badge */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center">
+                          <Icon className={cn("h-7 w-7", program.iconColor)} />
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
+                            {program.tagline}
+                          </p>
+                          <h3 className="text-xl font-bold text-cyan-400">{program.title}</h3>
+                        </div>
                       </div>
                     </div>
+
+                    {/* Description */}
+                    <p className="text-slate-300 leading-relaxed mb-6">
+                      {program.description}
+                    </p>
+
+                    {/* Features */}
+                    <ul className="space-y-2 mb-8">
+                      {program.features.map((feature) => (
+                        <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
+                          <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA */}
+                    <Link
+                      href={program.cta.href}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
+                    >
+                      {program.cta.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
-
-                  {/* Description */}
-                  <p className="text-slate-300 leading-relaxed mb-6">
-                    {program.description}
-                  </p>
-
-                  {/* Features */}
-                  <ul className="space-y-2 mb-8">
-                    {program.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <Link
-                    href={program.cta.href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
-                  >
-                    {program.cta.label}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
@@ -777,59 +631,6 @@ export default async function Home() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────────────────
-            Client Testimonials — With Avatars
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-24">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Trusted by Growth Teams
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Teams use Refer Labs to launch referral programs, track attribution, and measure ROI—without adding complexity.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {clientTestimonials.map((testimonial, idx) => (
-              <div
-                key={idx}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 space-y-5 hover:border-white/20 transition-colors"
-              >
-                {/* Stars */}
-                <div className="flex gap-1 text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-sm">★</span>
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <p className="text-slate-300 leading-relaxed text-sm">
-                  "{testimonial.quote}"
-                </p>
-
-                {/* Author with Avatar */}
-                <div className="flex items-center gap-4 pt-3 border-t border-white/10">
-                  {/* Avatar */}
-                  <div className={cn(
-                    "h-11 w-11 rounded-full bg-gradient-to-br flex items-center justify-center flex-shrink-0 shadow-lg",
-                    testimonial.avatarBg
-                  )}>
-                    <span className="text-white font-bold text-sm">{testimonial.avatar}</span>
-                  </div>
-
-                  {/* Name & Info */}
-                  <div className="min-w-0">
-                    <p className="font-semibold text-white truncate">{testimonial.name}</p>
-                    <p className="text-sm text-slate-400 truncate">{testimonial.title}</p>
-                    <p className="text-xs text-slate-500 truncate">{testimonial.company}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 
