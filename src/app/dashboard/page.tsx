@@ -31,7 +31,7 @@ import { StartCampaignCTA } from "@/components/StartCampaignCTA";
 import { ManualReferralForm } from "@/components/ManualReferralForm";
 import { ProgramSettingsDialog } from "@/components/ProgramSettingsDialog";
 import { ImplementationGuideDialog } from "@/components/ImplementationGuideDialog";
-import { ReferralsTable } from "@/components/ReferralsTable";
+// ReferralsTable imported dynamically as ReferralsTableDynamic
 import { DashboardOnboardingChecklist } from "@/components/DashboardOnboardingChecklist";
 import { Step1Education, Step2Education, Step3Education, Step4Education, Step5Education } from "@/components/dashboard/StepEducation";
 import { Step2Content } from "@/components/dashboard/steps/Step2Content";
@@ -39,8 +39,8 @@ import { Step3Content } from "@/components/dashboard/steps/Step3Content";
 import { Step4Content } from "@/components/dashboard/steps/Step4Content";
 import { RoiSummaryCards } from "@/components/dashboard/RoiSummaryCards";
 import { ShareReferralCard } from "@/components/ShareReferralCard";
-import { IntegrationTab } from "@/components/IntegrationTab";
-import { CRMIntegrationTab } from "@/components/CRMIntegrationTab";
+// IntegrationTab imported dynamically as IntegrationTabDynamic
+// CRMIntegrationTab imported dynamically as CRMIntegrationTabDynamic
 import { ReferralJourneyReport, type ReferralJourneyEvent } from "@/components/ReferralJourneyReport";
 import { PartnerReferralsTab } from "@/components/PartnerReferralsTab";
 import { logReferralEvent } from "@/lib/referral-events";
@@ -80,20 +80,25 @@ import { DashboardLoginTracker } from "@/components/DashboardLoginTracker";
 import { DashboardSectionBoundary } from "@/components/dashboard/DashboardSectionBoundary";
 import { ExternalPartnersTab } from "@/components/dashboard/external-partners/ExternalPartnersTab";
 import { CollapsibleQAReadiness } from "@/components/dashboard/CollapsibleQAReadiness";
-import { Step1DTestingTab } from "@/components/Step1DTestingTab";
-import { PageBuilderTab } from "@/components/dashboard/PageBuilderTab";
+// Step1DTestingTab imported dynamically as Step1DTestingTabDynamic
+// PageBuilderTab imported dynamically as PageBuilderTabDynamic
 import { validateSteps, getNextIncompleteStep, calculateOverallProgress } from "@/lib/step-validation";
 import { sendAdminNotification, buildOnboardingSnapshotEmail } from "@/lib/email-notifications";
 import { getCurrentAdmin } from "@/lib/admin-auth";
 import { maybeSendGoLiveOwnerEmail } from "@/lib/business-notifications";
 import { logger } from "@/lib/logger";
 import { buildPremiumEmail } from "@/lib/premium-email";
-import { Skeleton } from "@/components/ui/skeleton";
+import {
+  TableSkeleton,
+  StepContentSkeleton,
+  FormSkeleton,
+  PartnerListSkeleton,
+} from "@/components/dashboard/DashboardSkeletons";
 
 const CustomersTable = dynamicImport(
   () => import("@/components/CustomersTable").then((m) => m.CustomersTable),
   {
-    loading: () => <TableSkeleton rows={8} />,
+    loading: () => <PartnerListSkeleton items={8} />,
   },
 );
 
@@ -104,26 +109,40 @@ const CampaignsTable = dynamicImport(
   },
 );
 
-function TableSkeleton({ rows = 5 }: { rows?: number }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-4">
-      <div className="mb-4 flex items-center gap-3">
-        <Skeleton className="h-6 w-32" />
-        <Skeleton className="h-6 w-16" />
-      </div>
-      <div className="space-y-3">
-        {Array.from({ length: rows }).map((_, idx) => (
-          <div key={idx} className="grid grid-cols-4 gap-3">
-            <Skeleton className="h-8 w-full" />
-            <Skeleton className="h-8 w-full" />
-            <Skeleton className="h-8 w-full" />
-            <Skeleton className="h-8 w-full" />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+const ReferralsTableDynamic = dynamicImport(
+  () => import("@/components/ReferralsTable").then((m) => m.ReferralsTable),
+  {
+    loading: () => <TableSkeleton rows={8} />,
+  },
+);
+
+const IntegrationTabDynamic = dynamicImport(
+  () => import("@/components/IntegrationTab").then((m) => m.IntegrationTab),
+  {
+    loading: () => <FormSkeleton fields={6} />,
+  },
+);
+
+const CRMIntegrationTabDynamic = dynamicImport(
+  () => import("@/components/CRMIntegrationTab").then((m) => m.CRMIntegrationTab),
+  {
+    loading: () => <StepContentSkeleton sections={2} />,
+  },
+);
+
+const Step1DTestingTabDynamic = dynamicImport(
+  () => import("@/components/Step1DTestingTab").then((m) => m.Step1DTestingTab),
+  {
+    loading: () => <StepContentSkeleton sections={3} />,
+  },
+);
+
+const PageBuilderTabDynamic = dynamicImport(
+  () => import("@/components/dashboard/PageBuilderTab").then((m) => m.PageBuilderTab),
+  {
+    loading: () => <FormSkeleton fields={8} />,
+  },
+);
 
 const INITIAL_CUSTOMER_TABLE_LIMIT = 50;
 const INITIAL_REFERRAL_TABLE_LIMIT = 25;
@@ -2008,7 +2027,7 @@ export default async function Dashboard({
 	      icon: <Settings className="h-5 w-5" />,
 	      status: stepValidations["setup-integration"].isComplete ? "complete" : "in_progress",
 	      content: (
-	        <IntegrationTab
+	        <IntegrationTabDynamic
 	          businessId={business.id}
 	          siteUrl={businessWebsiteUrl}
 	          businessName={business.name || "Your Business"}
@@ -2046,7 +2065,7 @@ export default async function Dashboard({
 		      icon: <Globe className="h-5 w-5" />,
 		      status: hasPages ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
 		      content: (
-		        <PageBuilderTab
+		        <PageBuilderTabDynamic
 		          businessName={business.name || "Your Business"}
 		          siteUrl={businessWebsiteUrl}
 		          offerText={business.offer_text}
@@ -2079,7 +2098,7 @@ export default async function Dashboard({
 		      icon: <ShieldCheck className="h-5 w-5" />,
 		      status: (hasProgramSettings && hasCustomers && hasPages) ? "complete" : "incomplete",
 		      content: (
-		        <Step1DTestingTab
+		        <Step1DTestingTabDynamic
 		          businessId={business.id}
 		          siteUrl={businessWebsiteUrl}
 		          businessName={business.name || "Your Business"}
@@ -2352,7 +2371,7 @@ export default async function Dashboard({
                     </div>
                   </div>
                 ) : (
-                  <ReferralsTable
+                  <ReferralsTableDynamic
                     initialReferrals={safeReferrals.slice(0, INITIAL_REFERRAL_TABLE_LIMIT)}
                     initialTotal={safeReferrals.length}
                     businessId={business.id}
