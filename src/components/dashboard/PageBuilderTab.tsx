@@ -40,22 +40,22 @@ const themes = [
 
 const embedOptions: EmbedOption[] = [
   {
-    id: "hosted",
-    label: "Host on Refer Labs (fastest)",
-    note: "We host /referral + /referred and /r/[code] is ready to share instantly.",
-    detail: "No setup needed. Copy referral links from Partners → Copy link and share in email/SMS/ads immediately.",
+    id: "custom-domain",
+    label: "Connect my website (Recommended)",
+    note: "Point your domain to Refer Labs pages via DNS CNAME.",
+    detail: "Best for: Users who want referral pages on their own domain. Add a CNAME record, set your domain above, and your pages will load from your URL.",
   },
   {
     id: "embed",
-    label: "Embed in my website",
-    note: "Use an iframe on an existing CMS page (WordPress/Webflow/Squarespace/Wix).",
-    detail: "Select this if you already have a page to host referrals. Copy the iframe below, paste into a Code/Embed block on that page, then publish.",
+    label: "Embed in existing page",
+    note: "Add an iframe to your CMS (WordPress, Webflow, Squarespace, Wix).",
+    detail: "Best for: Users who already have a referral page and want to drop in our forms. Copy the embed snippet and paste it into a Code block on your site.",
   },
   {
-    id: "custom-domain",
-    label: "Point a custom domain",
-    note: "Map pages to your own URL using a CNAME.",
-    detail: "Add a CNAME in DNS: host = your.subdomain, value = pages.referlabs.com. Then set that exact host above so /r/[code], /referral, and /referred resolve on your domain.",
+    id: "hosted",
+    label: "Use Refer Labs hosting",
+    note: "We host everything at referlabs.com.au/r/[code]—no setup needed.",
+    detail: "Best for: Quick start or testing. Your referral links will point to pages on our domain.",
   },
 ];
 
@@ -575,6 +575,129 @@ export function PageBuilderTab({
           <input type="hidden" name="page_notes" value={notes} />
         </form>
       </Card>
+
+      {/* Connection Test Guide - Shows for custom-domain and embed modes */}
+      {(embedType === "custom-domain" || embedType === "embed") && status === "published" && (
+        <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="h-12 w-12 rounded-xl bg-blue-600 text-white flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="h-6 w-6" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-black text-slate-900 mb-1">Test Your Website Connection</h3>
+              <p className="text-sm text-slate-600 mb-4">
+                Follow these steps to confirm your pages are loading correctly on your domain.
+              </p>
+
+              <div className="space-y-3">
+                {embedType === "custom-domain" && (
+                  <>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white border border-blue-200">
+                      <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">Verify DNS propagation</p>
+                        <p className="text-xs text-slate-600 mt-0.5">Wait 5-15 minutes after adding the CNAME, then check if it resolves.</p>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          className="mt-2 text-xs"
+                          onClick={() => window.open(`https://dnschecker.org/#CNAME/${host.replace(/^https?:\/\//, '')}`, '_blank')}
+                        >
+                          Check DNS Status →
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white border border-blue-200">
+                      <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">Test your landing page</p>
+                        <p className="text-xs text-slate-600 mt-0.5">Open your landing page in an incognito window to verify it loads.</p>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          className="mt-2 text-xs"
+                          onClick={() => window.open(landingUrl, '_blank')}
+                        >
+                          Open {landingUrl} →
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white border border-blue-200">
+                      <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">Test your referred page</p>
+                        <p className="text-xs text-slate-600 mt-0.5">Confirm the handoff page loads on the same domain.</p>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          className="mt-2 text-xs"
+                          onClick={() => window.open(referredUrl, '_blank')}
+                        >
+                          Open {referredUrl} →
+                        </Button>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {embedType === "embed" && (
+                  <>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white border border-blue-200">
+                      <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">Add embed to your page</p>
+                        <p className="text-xs text-slate-600 mt-0.5">Copy the iframe snippet and paste it into a Code/Embed block on your CMS.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white border border-blue-200">
+                      <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900">Test your embedded page</p>
+                        <p className="text-xs text-slate-600 mt-0.5">Open the page where you pasted the embed to verify it loads.</p>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          className="mt-2 text-xs"
+                          onClick={() => window.open(landingUrl, '_blank')}
+                        >
+                          Open {landingUrl} →
+                        </Button>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                <div className="flex items-start gap-3 p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+                  <div className="h-6 w-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold flex-shrink-0">✓</div>
+                  <div>
+                    <p className="text-sm font-semibold text-emerald-900">Run full QA test</p>
+                    <p className="text-xs text-emerald-700 mt-0.5">Once pages load correctly, run Testing & QA to verify attribution and cookies work.</p>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="mt-2 text-xs border-emerald-300 text-emerald-800 hover:bg-emerald-100"
+                      onClick={() =>
+                        window.dispatchEvent(
+                          new CustomEvent("dashboard:navigate", {
+                            detail: { section: "testing-qa", scrollTo: "integration-qa-panel" },
+                          }),
+                        )
+                      }
+                    >
+                      Go to Testing & QA →
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      )}
 
       {/* Embed / DNS Section - Collapsible */}
       <div className="rounded-xl border border-slate-200 bg-white">

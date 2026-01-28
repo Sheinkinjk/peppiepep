@@ -44,6 +44,8 @@ interface Step2ContentProps {
   updateBusinessOnboarding: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
   updateSettings: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
   quickAddCustomer: (formData: FormData) => Promise<{ error?: string; success?: string } | void>;
+  pagesPublished?: boolean;
+  hostConfigured?: boolean;
 }
 
 export function Step2Content({
@@ -74,6 +76,8 @@ export function Step2Content({
   updateBusinessOnboarding,
   updateSettings,
   quickAddCustomer,
+  pagesPublished = true,
+  hostConfigured = true,
 }: Step2ContentProps) {
   const linkedInInfluencerCreators = linkedInInfluencerCustomers.filter(
     (customer) => (customer.source ?? "").toLowerCase() === "linkedin-influencer",
@@ -194,7 +198,7 @@ export function Step2Content({
                 </p>
               </div>
             </div>
-            <CSVUploadForm />
+            <CSVUploadForm pagesPublished={pagesPublished} hostConfigured={hostConfigured} />
           </Card>
 
           <Card id="partner-quick-add" className="p-6 border border-slate-200 rounded-lg bg-white" data-quick-add>
