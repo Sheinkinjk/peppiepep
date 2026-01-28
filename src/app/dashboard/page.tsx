@@ -2027,6 +2027,11 @@ export default async function Dashboard({
 	      icon: <Settings className="h-5 w-5" />,
 	      status: stepValidations["setup-integration"].isComplete ? "complete" : "in_progress",
 	      content: (
+        <DashboardSectionBoundary
+          title="Business Setup unavailable"
+          message="We ran into an issue loading Business Setup. Please refresh the page or try again."
+          sectionId="setup-integration"
+        >
 	        <IntegrationTabDynamic
 	          businessId={business.id}
 	          siteUrl={businessWebsiteUrl}
@@ -2053,6 +2058,7 @@ export default async function Dashboard({
 	          updateSettingsAction={updateSettings}
 	          updateOnboardingAction={updateBusinessOnboarding}
 	        />
+        </DashboardSectionBoundary>
 	      ),
 	      helpContent: <Step1Education />,
 	      helpText: "Start here: lock in business details, finalize rewards, and walk through the integration plan before moving on.",
@@ -2065,6 +2071,11 @@ export default async function Dashboard({
 		      icon: <Globe className="h-5 w-5" />,
 		      status: hasPages ? "complete" : hasProgramSettings ? "in_progress" : "incomplete",
 		      content: (
+        <DashboardSectionBoundary
+          title="Pages tab unavailable"
+          message="We ran into an issue loading the Page Builder. Please refresh the page or try again."
+          sectionId="pages"
+        >
 		        <PageBuilderTabDynamic
 		          businessName={business.name || "Your Business"}
 		          siteUrl={businessWebsiteUrl}
@@ -2077,6 +2088,7 @@ export default async function Dashboard({
 		          onboardingMetadata={business.onboarding_metadata ?? null}
 		          updateOnboardingAction={updateBusinessOnboarding}
 		        />
+        </DashboardSectionBoundary>
 		      ),
 		      helpContent: (
 		        <div className="space-y-2 text-sm text-slate-700">
@@ -2098,6 +2110,11 @@ export default async function Dashboard({
 		      icon: <ShieldCheck className="h-5 w-5" />,
 		      status: (hasProgramSettings && hasCustomers && hasPages) ? "complete" : "incomplete",
 		      content: (
+        <DashboardSectionBoundary
+          title="Testing & QA unavailable"
+          message="We ran into an issue loading Testing & QA. Please refresh the page or try again."
+          sectionId="testing-qa"
+        >
 		        <Step1DTestingTabDynamic
 		          businessId={business.id}
 		          siteUrl={businessWebsiteUrl}
@@ -2107,6 +2124,7 @@ export default async function Dashboard({
 		          hasProgramSettings={hasProgramSettings}
 		          pageBuilder={business.onboarding_metadata?.pageBuilder ?? null}
 		        />
+        </DashboardSectionBoundary>
 		      ),
 		      helpContent: (
 		        <div className="space-y-4">
@@ -2142,6 +2160,7 @@ export default async function Dashboard({
 	        <DashboardSectionBoundary
 	          title="Partners tab unavailable"
 	          message="We ran into an issue while loading your partner list. Refresh the page or try again in a moment."
+	          sectionId="clients-ambassadors"
 	        >
 	          <Step2Content
 	            siteUrl={businessWebsiteUrl}
@@ -2191,6 +2210,11 @@ export default async function Dashboard({
 	          ? "in_progress"
 	          : "incomplete",
 	      content: (
+        <DashboardSectionBoundary
+          title="Launch Campaigns unavailable"
+          message="We ran into an issue loading the campaign builder. Please refresh the page or try again."
+          sectionId="crm-integration"
+        >
 	        <Step3Content
 	          customers={initialCustomers}
 	          customersTotal={safeCustomers.length}
@@ -2208,6 +2232,7 @@ export default async function Dashboard({
           brandTone={business.brand_tone ?? null}
           uploadLogo={uploadLogo}
 		        />
+        </DashboardSectionBoundary>
 		      ),
 	      helpContent: <Step3Education />,
 	      helpText: "Launch your first campaign! Send personalized referral links via SMS or email.",
@@ -2224,6 +2249,11 @@ export default async function Dashboard({
 	          ? "in_progress"
 	          : "incomplete",
 	      content: (
+        <DashboardSectionBoundary
+          title="Track Campaigns unavailable"
+          message="We ran into an issue loading campaign tracking. Please refresh the page or try again."
+          sectionId="view-campaigns"
+        >
 	        <Step4Content
 	          campaignsData={safeCampaignsData}
 	          referrals={initialReferrals}
@@ -2239,6 +2269,7 @@ export default async function Dashboard({
 	          rewardAmount={business.reward_amount}
 	          offerText={business.offer_text}
 	        />
+        </DashboardSectionBoundary>
 	      ),
 	      helpContent: <Step4Education />,
 	      helpText: "Review campaign performance and see which ambassadors are driving the most referrals.",
@@ -2255,6 +2286,11 @@ export default async function Dashboard({
 	          ? "in_progress"
 	          : "incomplete",
 	      content: (
+        <DashboardSectionBoundary
+          title="Measure ROI unavailable"
+          message="We ran into an issue loading ROI metrics. Please refresh the page or try again."
+          sectionId="performance"
+        >
 	        <div className="space-y-6">
 	        <RoiSummaryCards allReferrals={safeReferrals} safeCustomers={safeCustomers} />
           <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
@@ -3278,6 +3314,7 @@ export default async function Dashboard({
           </TabsContent>
 	        </Tabs>
 	        </div>
+        </DashboardSectionBoundary>
 	      ),
 	      helpContent: <Step5Education />,
 	      helpText: "Track every referral, monitor ambassador performance, and measure your program's ROI.",
@@ -3656,6 +3693,7 @@ export default async function Dashboard({
 	                    <DashboardSectionBoundary
 	                      title="External Partners tab unavailable"
 	                      message="We ran into an issue loading External Partners. Refresh the page or try again in a moment."
+	                      sectionId="external-partners"
 	                    >
 	                      <ExternalPartnersTab
 	                        enabled={externalPartnersEnabled}
