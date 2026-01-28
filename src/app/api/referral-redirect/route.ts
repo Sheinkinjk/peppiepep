@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { logReferralEvent, inferDeviceFromUserAgent } from "@/lib/referral-events";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 function safeResolveRedirectTo(params: {
   requestUrl: URL;
@@ -36,6 +37,12 @@ function safeResolveRedirectTo(params: {
 }
 
 export async function GET(request: NextRequest) {
+  // Rate limiting for public redirect endpoint
+  const rateLimitResult = await checkRateLimit(request, "referralRedirect");
+  if (!rateLimitResult.success && rateLimitResult.response) {
+    return rateLimitResult.response;
+  }
+
   const searchParams = request.nextUrl.searchParams;
   const code = searchParams.get("code");
   const ambassadorId = searchParams.get("ambassador_id");

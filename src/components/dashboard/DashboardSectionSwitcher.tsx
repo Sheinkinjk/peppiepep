@@ -179,27 +179,56 @@ export function DashboardSectionSwitcher({
   return (
     <SectionNavContext.Provider value={{ setSection, selectedWindow }}>
       <div className="grid gap-6 lg:grid-cols-[240px_1fr]">
-        <aside className="h-fit rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <aside
+          className="h-fit rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+          aria-label="Dashboard navigation"
+        >
           <div className="mb-4">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
               Dashboard
             </p>
-            <p className="text-lg font-black text-slate-900">Navigation</p>
+            <p id="nav-heading" className="text-lg font-black text-slate-900">Navigation</p>
           </div>
-          <nav className="space-y-1">
-            {sectionItems.map((item) => (
+          <nav
+            className="space-y-1"
+            role="navigation"
+            aria-labelledby="nav-heading"
+          >
+            {sectionItems.map((item, index) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => setSection(item.id)}
-                className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-semibold transition ${
+                onKeyDown={(e) => {
+                  // Arrow key navigation
+                  if (e.key === "ArrowDown" && index < sectionItems.length - 1) {
+                    e.preventDefault();
+                    const nextButton = e.currentTarget.nextElementSibling as HTMLButtonElement;
+                    nextButton?.focus();
+                  } else if (e.key === "ArrowUp" && index > 0) {
+                    e.preventDefault();
+                    const prevButton = e.currentTarget.previousElementSibling as HTMLButtonElement;
+                    prevButton?.focus();
+                  } else if (e.key === "Home") {
+                    e.preventDefault();
+                    const firstButton = e.currentTarget.parentElement?.firstElementChild as HTMLButtonElement;
+                    firstButton?.focus();
+                  } else if (e.key === "End") {
+                    e.preventDefault();
+                    const lastButton = e.currentTarget.parentElement?.lastElementChild as HTMLButtonElement;
+                    lastButton?.focus();
+                  }
+                }}
+                aria-current={activeSection === item.id ? "page" : undefined}
+                aria-label={`Navigate to ${item.label} section`}
+                className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 ${
                   activeSection === item.id
                     ? "bg-slate-900 text-white"
                     : "text-slate-600 hover:bg-slate-100"
                 }`}
               >
                 <span>{item.label}</span>
-                {activeSection === item.id && <ArrowRight className="h-4 w-4" />}
+                {activeSection === item.id && <ArrowRight className="h-4 w-4" aria-hidden="true" />}
               </button>
             ))}
           </nav>
@@ -225,7 +254,13 @@ export function DashboardSectionSwitcher({
           )}
         </aside>
 
-        <section className="space-y-6">
+        <section
+          id="main-content"
+          className="space-y-6"
+          role="region"
+          aria-label={`${activeSection === "overview" ? "Overview" : activeStep?.title || activeExtra?.title || "Dashboard"} content`}
+          aria-live="polite"
+        >
           {activeSection === "overview" && overviewContent}
 
           {activeSection !== "overview" && activeExtra && (

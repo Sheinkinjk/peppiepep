@@ -3,6 +3,7 @@ import { z } from "zod";
 
 import { createServiceClient } from "@/lib/supabase";
 import { sendAdminNotification, buildNewsletterSubscriptionEmail } from "@/lib/email-notifications";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const bodySchema = z.object({
   email: z.string().email(),
@@ -10,6 +11,12 @@ const bodySchema = z.object({
 });
 
 export async function POST(request: Request) {
+  // Rate limiting for newsletter subscription
+  const rateLimitResult = await checkRateLimit(request, "newsletterSubscribe");
+  if (!rateLimitResult.success && rateLimitResult.response) {
+    return rateLimitResult.response;
+  }
+
   const parsed = bodySchema.safeParse(await request.json().catch(() => ({})));
   if (!parsed.success) {
     return NextResponse.json(

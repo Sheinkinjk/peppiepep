@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const applicationSchema = z.object({
   name: z.string().min(1),
@@ -16,6 +17,12 @@ const applicationSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  // Rate limiting for public form submission
+  const rateLimitResult = await checkRateLimit(request, "publicFormSubmission");
+  if (!rateLimitResult.success && rateLimitResult.response) {
+    return rateLimitResult.response;
+  }
+
   const payload = await request.json().catch(() => null);
   const result = applicationSchema.safeParse(payload);
 

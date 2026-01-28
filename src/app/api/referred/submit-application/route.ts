@@ -4,6 +4,7 @@ import { logReferralEvent, inferDeviceFromUserAgent } from "@/lib/referral-event
 import { Resend } from "resend";
 import { buildPremiumEmail } from "@/lib/premium-email";
 import { createApiLogger } from "@/lib/api-logger";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const logger = createApiLogger("api:referred:submit-application");
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -15,6 +16,12 @@ function getAdminEmails(): string[] {
 }
 
 export async function POST(request: NextRequest) {
+  // Rate limiting for public form submission
+  const rateLimitResult = await checkRateLimit(request, "publicFormSubmission");
+  if (!rateLimitResult.success && rateLimitResult.response) {
+    return rateLimitResult.response;
+  }
+
   try {
     const body = await request.json();
     const {

@@ -268,6 +268,37 @@ const rateLimiters = {
     windowMs: 60 * 1000,
     maxSize: 2000,
   }),
+  // Public endpoint rate limiters
+  referralRedirect: new RateLimiter({
+    name: "referralRedirect",
+    limit: 60,
+    windowMs: 60 * 1000,
+    maxSize: 5000,
+  }),
+  publicFormSubmission: new RateLimiter({
+    name: "publicFormSubmission",
+    limit: 10,
+    windowMs: 60 * 1000,
+    maxSize: 2000,
+  }),
+  newsletterSubscribe: new RateLimiter({
+    name: "newsletterSubscribe",
+    limit: 5,
+    windowMs: 60 * 1000,
+    maxSize: 1000,
+  }),
+  trackConversion: new RateLimiter({
+    name: "trackConversion",
+    limit: 30,
+    windowMs: 60 * 1000,
+    maxSize: 3000,
+  }),
+  referralEvents: new RateLimiter({
+    name: "referralEvents",
+    limit: 30,
+    windowMs: 60 * 1000,
+    maxSize: 3000,
+  }),
 };
 
 export const rateLimitPresets = rateLimiters;
