@@ -106,6 +106,7 @@ export function Step1DTestingTab({
   const [handoffTestOpen, setHandoffTestOpen] = useState(false);
   const [qaChecksOpen, setQaChecksOpen] = useState(false);
   const [troubleshootingOpen, setTroubleshootingOpen] = useState(false);
+  const [qaVerificationPersisted, setQaVerificationPersisted] = useState(false);
 
   const ensureLeadingSlash = (value: string | null | undefined, fallback: string) => {
     if (!value) return fallback;
@@ -221,6 +222,29 @@ export function Step1DTestingTab({
   useEffect(() => {
     checkRecentQaEvents();
   }, [checkRecentQaEvents]);
+
+  // Persist QA verification when all checks pass
+  useEffect(() => {
+    const allChecksPassed =
+      hasProgramSettings &&
+      hasCustomers &&
+      qaSummary.recentCount > 0 &&
+      healthCheck?.healthy &&
+      cookieCheck?.hasAttribution;
+
+    if (allChecksPassed && !qaVerificationPersisted) {
+      // Persist the verification
+      fetch("/api/qa/verify", { method: "POST" })
+        .then((res) => {
+          if (res.ok) {
+            setQaVerificationPersisted(true);
+          }
+        })
+        .catch(() => {
+          // Silent fail - verification will be retried on next success
+        });
+    }
+  }, [hasProgramSettings, hasCustomers, qaSummary.recentCount, healthCheck?.healthy, cookieCheck?.hasAttribution, qaVerificationPersisted]);
 
   const formatRelativeTime = (iso: string | null) => {
     if (!iso) return "No QA yet";

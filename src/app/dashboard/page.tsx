@@ -3313,20 +3313,37 @@ export default async function Dashboard({
       id: "testing-qa",
       title: "Step 3 · Testing & QA (after Pages)",
       detail: (() => {
+        const qaVerifiedAt = business.onboarding_metadata?.notifications?.qaVerifiedAt;
         const recentQaEvents = typedReferralEvents.filter((event) => {
           const created = event.created_at ? Date.parse(event.created_at) : 0;
           const isQa = event.source === "integration_qa" || Boolean(event.metadata?.["qa_simulated"]);
           return created >= Date.now() - 10 * 60 * 1000 && isQa;
         });
-        return recentQaEvents.length > 0
-          ? `QA verified (${recentQaEvents.length} events in last 10 min)`
-          : "Run Integration QA + cookie check once pages are live";
+        if (recentQaEvents.length > 0) {
+          return `QA verified (${recentQaEvents.length} events in last 10 min)`;
+        }
+        if (qaVerifiedAt) {
+          return `QA verified on ${new Date(qaVerifiedAt).toLocaleDateString()}`;
+        }
+        return "Run Integration QA + cookie check once pages are live";
       })(),
-      status: typedReferralEvents.some((event) => event.source === "integration_qa") ? "Verified" : "Not run",
-      explainer: !typedReferralEvents.some((event) => event.source === "integration_qa")
-        ? "After publishing /referral + /referred, open Testing & QA to simulate the full referral flow. This confirms embed/custom-domain connections, cookies, and attribution before inviting partners."
-        : null,
-      tone: typedReferralEvents.some((event) => event.source === "integration_qa") ? "emerald" : "amber",
+      status: (() => {
+        const qaVerifiedAt = business.onboarding_metadata?.notifications?.qaVerifiedAt;
+        const hasQaEvents = typedReferralEvents.some((event) => event.source === "integration_qa");
+        return (hasQaEvents || qaVerifiedAt) ? "Verified" : "Not run";
+      })(),
+      explainer: (() => {
+        const qaVerifiedAt = business.onboarding_metadata?.notifications?.qaVerifiedAt;
+        const hasQaEvents = typedReferralEvents.some((event) => event.source === "integration_qa");
+        return !(hasQaEvents || qaVerifiedAt)
+          ? "After publishing /referral + /referred, open Testing & QA to simulate the full referral flow. This confirms embed/custom-domain connections, cookies, and attribution before inviting partners."
+          : null;
+      })(),
+      tone: (() => {
+        const qaVerifiedAt = business.onboarding_metadata?.notifications?.qaVerifiedAt;
+        const hasQaEvents = typedReferralEvents.some((event) => event.source === "integration_qa");
+        return (hasQaEvents || qaVerifiedAt) ? "emerald" : "amber";
+      })(),
     },
     {
       id: "clients-ambassadors",

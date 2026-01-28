@@ -33,6 +33,7 @@ export type BusinessOnboardingMetadata = {
     firstConversionCapturedAt?: string | null;
     goLiveConfirmedAt?: string | null;
     lastIntegrationHealthAlertAt?: string | null;
+    qaVerifiedAt?: string | null;
   };
   pageBuilder?: PageBuilderMetadata | null;
 };

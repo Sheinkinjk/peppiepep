@@ -23,7 +23,7 @@ type ReferralSummaryRow = Pick<
 };
 
 const PAGE_SIZE = 1000;
-const MAX_ROWS = 20000;
+const MAX_ROWS = 50000; // Increased to support larger accounts
 
 function channelForAmbassadorSource(source: string | null): "partners" | "external_partners" | "linkedin_influencer" {
   const normalized = (source ?? "").toLowerCase();
