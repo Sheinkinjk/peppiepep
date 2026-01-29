@@ -92,10 +92,10 @@ const partnershipFollowUp = [
 ];
 
 const trustBadges = [
-  { icon: Shield, label: "Bank-grade security", detail: "SOC 2 compliant infrastructure" },
-  { icon: Users, label: "10,000+ partners", detail: "Active on our platform" },
-  { icon: BarChart3, label: "$2M+ tracked", detail: "In referral revenue monthly" },
-  { icon: Zap, label: "99.9% uptime", detail: "Enterprise reliability" },
+  { icon: Shield, label: "Secure infrastructure", detail: "Enterprise-grade data protection" },
+  { icon: Users, label: "Partner-first design", detail: "Built for referral programs" },
+  { icon: BarChart3, label: "Full attribution", detail: "Track every referral end-to-end" },
+  { icon: Zap, label: "Real-time tracking", detail: "Instant visibility into performance" },
 ];
 
 export default function PricingPage() {
@@ -620,7 +620,7 @@ export default function PricingPage() {
           <div className="text-center space-y-4">
             <h2 className="text-3xl sm:text-4xl font-black text-white">Calculate Your Referral ROI</h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              See exactly how much revenue your referral program could generate with our AI-powered calculator.
+              See exactly how much revenue your referral program could generate with our ROI calculator.
             </p>
           </div>
 

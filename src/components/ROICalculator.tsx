@@ -624,8 +624,8 @@ export function ROICalculator() {
               <Sparkles className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h4 className="text-xl font-black text-purple-900 mb-1">AI-Powered Insights</h4>
-              <p className="text-sm text-purple-700">Recommendations based on your specific business metrics</p>
+              <h4 className="text-xl font-black text-purple-900 mb-1">Program Insights</h4>
+              <p className="text-sm text-purple-700">Recommendations based on your business metrics and industry benchmarks</p>
             </div>
           </div>
           <div className="space-y-3">

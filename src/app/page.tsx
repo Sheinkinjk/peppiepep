@@ -348,7 +348,7 @@ export default async function Home() {
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-1">Full Attribution</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">Track from first click to closed deal. Partners get credited accurately.</p>
-                      <p className="text-emerald-400 text-sm font-semibold mt-2">100% attribution accuracy</p>
+                      <p className="text-emerald-400 text-sm font-semibold mt-2">End-to-end tracking</p>
                     </div>
                   </div>
 
@@ -384,7 +384,7 @@ export default async function Home() {
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-1">Measurable ROI</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">Every dollar attributed to its source. Prove returns to stakeholders.</p>
-                      <p className="text-amber-400 text-sm font-semibold mt-2">6× average ROI</p>
+                      <p className="text-amber-400 text-sm font-semibold mt-2">Clear revenue attribution</p>
                     </div>
                   </div>
 
@@ -468,7 +468,7 @@ export default async function Home() {
                     </div>
                   </div>
                   <p className="text-slate-300 leading-relaxed">
-                    Build white-glove partner programs with complementary service providers. Co-branded materials and professional onboarding included.
+                    Build structured partner programs with complementary service providers. Dedicated portals and custom reward structures for each partner tier.
                   </p>
                 </div>
               </div>
@@ -553,125 +553,6 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Your Dashboard at a Glance
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6">
-              Your Dashboard at a <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Glance</span>
-            </h2>
-            <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              Real-time tracking, attribution, and performance metrics in one view
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-            {/* Card 1 - Program Overview */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-cyan-500/30 transition-all duration-300">
-                <h4 className="text-xl font-bold text-white mb-3">Program Overview</h4>
-                <p className="text-slate-400 mb-6">See your entire referral program at a glance—active partners, pending referrals, and revenue attributed.</p>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-cyan-400">47</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Active Partners</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-white">$128K</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">This Month</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-emerald-400">34%</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Conversion</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 - Real-Time Tracking */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-blue-500/30 transition-all duration-300">
-                <h4 className="text-xl font-bold text-white mb-3">Real-Time Tracking</h4>
-                <p className="text-slate-400 mb-6">Every click, form fill, and meeting booked is captured with full attribution to the referring partner.</p>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-blue-400">2,847</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Link Clicks</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-white">312</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Form Fills</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-white">89</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Calls Booked</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 - Full Attribution */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-purple-500/30 transition-all duration-300">
-                <h4 className="text-xl font-bold text-white mb-3">Full Attribution</h4>
-                <p className="text-slate-400 mb-6">Know exactly which partner, campaign, and content piece drove each conversion—audit-ready data.</p>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-purple-400">94%</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Attributed</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-white">$18.5K</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Avg Deal</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-emerald-400">12.4x</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">ROI</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 - Automated Rewards */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-emerald-500/30 transition-all duration-300">
-                <h4 className="text-xl font-bold text-white mb-3">Automated Rewards</h4>
-                <p className="text-slate-400 mb-6">Commissions calculate automatically. Partners get notified. Finance gets clean ledgers.</p>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-emerald-400">$42K</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Paid Out</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-amber-400">$8.2K</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Pending</p>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    <p className="text-3xl font-black text-white">23</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Partners</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* See the Full Playbook Link */}
-          <div className="text-center mt-12">
-            <Link
-              href="/how-it-works"
-              className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold transition-colors"
-            >
-              See the Full Playbook
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────────────────
             ROI Calculator CTA
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
@@ -684,7 +565,7 @@ export default async function Home() {
                   Calculate Your Referral Program ROI
                 </h2>
                 <p className="text-slate-300 max-w-xl">
-                  Get AI-powered revenue forecasts and discover the perfect reward structure for your business in 4 simple steps.
+                  Model your referral revenue potential and find the right reward structure for your business in 4 simple steps.
                 </p>
               </div>
               <Link

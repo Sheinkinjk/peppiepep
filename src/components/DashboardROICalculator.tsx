@@ -84,12 +84,12 @@ export function DashboardROICalculator({ initialAmbassadors = 5 }: DashboardROIC
         <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center">
           <PieChart className="h-6 w-6 text-white" />
         </div>
-        <span className="px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold">AI-Powered</span>
+        <span className="px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold">Calculator</span>
       </div>
 
       <h3 className="text-lg font-bold text-slate-900 mb-2">ROI Calculator</h3>
       <p className="text-sm text-slate-600 mb-4">
-        Get AI-powered 90-day revenue forecasts and discover the perfect reward structure for your referral program.
+        Model your 90-day revenue potential and find the right reward structure for your referral program.
       </p>
 
       {/* Inputs */}
