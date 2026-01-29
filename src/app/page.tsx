@@ -9,14 +9,6 @@ import {
   Users,
   Building2,
   TrendingUp,
-  Share2,
-  MousePointer,
-  FileText,
-  DollarSign,
-  Award,
-  Settings,
-  PieChart,
-  Bell,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -512,79 +504,49 @@ export default async function Home() {
               How Referrals Flow Through the <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Platform</span>
             </h2>
             <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              From partner link share to payout—every step tracked, attributed, and automated.
+              From partner onboarding to automated payouts—every step is tracked and attributable.
             </p>
           </div>
 
-          {/* Flow Steps */}
-          <div className="relative">
-            {/* Connection Line - Desktop */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500/0 via-cyan-500/30 to-cyan-500/0 -translate-y-1/2" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
-              {/* Step 1 */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 text-center hover:border-cyan-500/30 transition-all duration-300">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-cyan-500 text-slate-900 text-xs font-bold flex items-center justify-center">1</div>
-                  <div className="h-14 w-14 mx-auto rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/20 flex items-center justify-center mb-4">
-                    <Share2 className="h-7 w-7 text-cyan-400" />
-                  </div>
-                  <h4 className="text-white font-semibold mb-2">Partner Shares Link</h4>
-                  <p className="text-slate-400 text-sm">Unique tracking URL shared via email, social, or direct message</p>
-                </div>
+          {/* Flow Steps - 4 Steps */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 01 - Partner Onboarding */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-cyan-500/30 transition-all duration-300">
+                <div className="text-5xl font-black text-cyan-500/20 mb-4">01</div>
+                <h4 className="text-xl font-bold text-white mb-3">Partner Onboarding</h4>
+                <p className="text-slate-400 leading-relaxed">Partners receive unique tracked links and a branded portal to monitor their performance.</p>
               </div>
+            </div>
 
-              {/* Step 2 */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 text-center hover:border-blue-500/30 transition-all duration-300">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-blue-500 text-white text-xs font-bold flex items-center justify-center">2</div>
-                  <div className="h-14 w-14 mx-auto rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/20 flex items-center justify-center mb-4">
-                    <MousePointer className="h-7 w-7 text-blue-400" />
-                  </div>
-                  <h4 className="text-white font-semibold mb-2">Lead Clicks & Visits</h4>
-                  <p className="text-slate-400 text-sm">30-day attribution cookie captures the referral source</p>
-                </div>
+            {/* Step 02 - Tracked Interactions */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-blue-500/30 transition-all duration-300">
+                <div className="text-5xl font-black text-blue-500/20 mb-4">02</div>
+                <h4 className="text-xl font-bold text-white mb-3">Tracked Interactions</h4>
+                <p className="text-slate-400 leading-relaxed">Every click, form submission, demo booking, and conversion is captured in real time.</p>
               </div>
+            </div>
 
-              {/* Step 3 */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 text-center hover:border-purple-500/30 transition-all duration-300">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-purple-500 text-white text-xs font-bold flex items-center justify-center">3</div>
-                  <div className="h-14 w-14 mx-auto rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/20 flex items-center justify-center mb-4">
-                    <FileText className="h-7 w-7 text-purple-400" />
-                  </div>
-                  <h4 className="text-white font-semibold mb-2">Lead Converts</h4>
-                  <p className="text-slate-400 text-sm">Form submission or purchase automatically attributed</p>
-                </div>
+            {/* Step 03 - Full Attribution */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-purple-500/30 transition-all duration-300">
+                <div className="text-5xl font-black text-purple-500/20 mb-4">03</div>
+                <h4 className="text-xl font-bold text-white mb-3">Full Attribution</h4>
+                <p className="text-slate-400 leading-relaxed">Partner, campaign, and link IDs flow into dashboards with audit-ready tracking.</p>
               </div>
+            </div>
 
-              {/* Step 4 */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 text-center hover:border-emerald-500/30 transition-all duration-300">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center">4</div>
-                  <div className="h-14 w-14 mx-auto rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/20 flex items-center justify-center mb-4">
-                    <DollarSign className="h-7 w-7 text-emerald-400" />
-                  </div>
-                  <h4 className="text-white font-semibold mb-2">Deal Closes</h4>
-                  <p className="text-slate-400 text-sm">Revenue recorded, commission calculated automatically</p>
-                </div>
-              </div>
-
-              {/* Step 5 */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 text-center hover:border-amber-500/30 transition-all duration-300">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-amber-500 text-slate-900 text-xs font-bold flex items-center justify-center">5</div>
-                  <div className="h-14 w-14 mx-auto rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/20 flex items-center justify-center mb-4">
-                    <Award className="h-7 w-7 text-amber-400" />
-                  </div>
-                  <h4 className="text-white font-semibold mb-2">Partner Gets Paid</h4>
-                  <p className="text-slate-400 text-sm">Stripe payouts or custom rewards delivered seamlessly</p>
-                </div>
+            {/* Step 04 - Automated Rewards */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-emerald-500/30 transition-all duration-300">
+                <div className="text-5xl font-black text-emerald-500/20 mb-4">04</div>
+                <h4 className="text-xl font-bold text-white mb-3">Automated Rewards</h4>
+                <p className="text-slate-400 leading-relaxed">Revenue share, credits, or cash payouts settle automatically with clear ledgers.</p>
               </div>
             </div>
           </div>
@@ -599,82 +561,113 @@ export default async function Home() {
               Your Dashboard at a <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Glance</span>
             </h2>
             <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              Everything you need to manage partners, track revenue, and scale your referral program.
+              Real-time tracking, attribution, and performance metrics in one view
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Feature 1 */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Card 1 - Program Overview */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
               <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-cyan-500/30 transition-all duration-300">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/20 flex items-center justify-center mb-5">
-                  <BarChart3 className="h-6 w-6 text-cyan-400" />
+                <h4 className="text-xl font-bold text-white mb-3">Program Overview</h4>
+                <p className="text-slate-400 mb-6">See your entire referral program at a glance—active partners, pending referrals, and revenue attributed.</p>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-cyan-400">47</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Active Partners</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-white">$128K</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">This Month</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-emerald-400">34%</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Conversion</p>
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-3">Real-Time Analytics</h4>
-                <p className="text-slate-400 leading-relaxed">Track clicks, conversions, and revenue as they happen. See which partners and channels drive the most value.</p>
               </div>
             </div>
 
-            {/* Feature 2 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-emerald-500/30 transition-all duration-300">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/20 flex items-center justify-center mb-5">
-                  <Users className="h-6 w-6 text-emerald-400" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Partner Management</h4>
-                <p className="text-slate-400 leading-relaxed">Onboard, approve, and manage partners from one central hub. Track performance and engagement levels.</p>
-              </div>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-purple-500/30 transition-all duration-300">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/20 flex items-center justify-center mb-5">
-                  <DollarSign className="h-6 w-6 text-purple-400" />
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Automated Payouts</h4>
-                <p className="text-slate-400 leading-relaxed">Stripe-powered payouts calculated and processed automatically. Set thresholds and approval rules.</p>
-              </div>
-            </div>
-
-            {/* Feature 4 */}
+            {/* Card 2 - Real-Time Tracking */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
               <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-blue-500/30 transition-all duration-300">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/20 flex items-center justify-center mb-5">
-                  <PieChart className="h-6 w-6 text-blue-400" />
+                <h4 className="text-xl font-bold text-white mb-3">Real-Time Tracking</h4>
+                <p className="text-slate-400 mb-6">Every click, form fill, and meeting booked is captured with full attribution to the referring partner.</p>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-blue-400">2,847</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Link Clicks</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-white">312</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Form Fills</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-white">89</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Calls Booked</p>
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-3">Attribution Reports</h4>
-                <p className="text-slate-400 leading-relaxed">Full-funnel attribution from first touch to closed deal. Export reports for stakeholders and compliance.</p>
               </div>
             </div>
 
-            {/* Feature 5 */}
+            {/* Card 3 - Full Attribution */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-amber-500/30 transition-all duration-300">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/20 flex items-center justify-center mb-5">
-                  <Bell className="h-6 w-6 text-amber-400" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-purple-500/30 transition-all duration-300">
+                <h4 className="text-xl font-bold text-white mb-3">Full Attribution</h4>
+                <p className="text-slate-400 mb-6">Know exactly which partner, campaign, and content piece drove each conversion—audit-ready data.</p>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-purple-400">94%</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Attributed</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-white">$18.5K</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Avg Deal</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-emerald-400">12.4x</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">ROI</p>
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-3">Smart Notifications</h4>
-                <p className="text-slate-400 leading-relaxed">Get alerted when new referrals arrive, deals close, or partners need attention. Email and in-app alerts.</p>
               </div>
             </div>
 
-            {/* Feature 6 */}
+            {/* Card 4 - Automated Rewards */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-rose-500/30 transition-all duration-300">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-rose-500/20 to-rose-500/5 border border-rose-500/20 flex items-center justify-center mb-5">
-                  <Settings className="h-6 w-6 text-rose-400" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-emerald-500/30 transition-all duration-300">
+                <h4 className="text-xl font-bold text-white mb-3">Automated Rewards</h4>
+                <p className="text-slate-400 mb-6">Commissions calculate automatically. Partners get notified. Finance gets clean ledgers.</p>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-emerald-400">$42K</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Paid Out</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-amber-400">$8.2K</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Pending</p>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-3xl font-black text-white">23</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider mt-1">Partners</p>
+                  </div>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-3">Custom Configuration</h4>
-                <p className="text-slate-400 leading-relaxed">Set reward tiers, commission rates, and approval workflows. White-label options for enterprise partners.</p>
               </div>
             </div>
+          </div>
+
+          {/* See the Full Playbook Link */}
+          <div className="text-center mt-12">
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold transition-colors"
+            >
+              See the Full Playbook
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </section>
 
