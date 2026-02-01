@@ -266,7 +266,7 @@ export default async function Home() {
                     </div>
 
                     {/* Metrics Row */}
-                    <div className="grid grid-cols-4 gap-4 mb-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
                       <div className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.05]">
                         <p className="text-2xl sm:text-3xl font-black text-white">47</p>
                         <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Partners</p>
