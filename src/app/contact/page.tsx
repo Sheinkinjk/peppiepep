@@ -20,10 +20,10 @@ export default function Contact() {
             <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">Contact Us</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white tracking-tight max-w-3xl mx-auto">
-            Let's Build Your <span className="text-cyan-400">Referral Program</span>
+            Stop Losing <span className="text-cyan-400">Referral Revenue</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Whether you're exploring options or ready to launch, we're here to help you turn your network into your most powerful growth channel.
+            We guarantee you never lose attribution on a referral again. Book a call to see how we track every partner, every deal, and every dollar.
           </p>
         </header>
 

@@ -190,21 +190,21 @@ export default async function Home() {
             <h1 className="font-black text-white max-w-4xl mx-auto tracking-tight">
               {/* Mobile layout - 4 lines, 2 words per line */}
               <span className="block sm:hidden text-[1.625rem] leading-[1.2]">
-                <span className="block">Launch Successful</span>
-                <span className="block">Referral Programs</span>
-                <span className="block">For <span className="text-cyan-400">Professional</span></span>
-                <span className="block"><span className="text-cyan-400">Services</span> Firms</span>
+                <span className="block">Stop Losing</span>
+                <span className="block">Referral Revenue</span>
+                <span className="block">Due to <span className="text-cyan-400">Attribution</span></span>
+                <span className="block"><span className="text-cyan-400">Gaps</span></span>
               </span>
               {/* Desktop layout */}
               <span className="hidden sm:block sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] xl:text-[3rem] leading-[1.15]">
-                <span className="block whitespace-nowrap">Launch Successful Referral Programs</span>
-                <span className="block whitespace-nowrap">
-                  For <span className="text-cyan-400">Professional Services</span> Firms
+                <span className="block">Stop Losing Referral Revenue</span>
+                <span className="block">
+                  Due to <span className="text-cyan-400">Attribution Gaps</span>
                 </span>
               </span>
             </h1>
-            <p className="text-[13px] sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed sm:px-0 lg:whitespace-nowrap">
-              Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Revenue Stream
+            <p className="text-[13px] sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed sm:px-0">
+              The only referral platform built for professional services. We guarantee you never lose attribution on a referral again.
             </p>
             <div className="pt-1 sm:pt-4">
               <Link
@@ -225,10 +225,10 @@ export default async function Home() {
           {/* Section Header */}
           <div className="text-center mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-black text-white leading-[1.1] mb-6">
-              Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-400">Refer Labs</span> Is Different
+              The Only Referral Platform <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-400">Built for Professional Services</span>
             </h2>
             <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              Trusted recommendations are the foundation of professional services growth. When someone stakes their reputation on your work, that introduction carries weight no ad can match.
+              Trusted recommendations are the foundation of professional services growth. But without proper attribution, you're leaving revenue on the table every single month.
             </p>
           </div>
 
@@ -334,9 +334,9 @@ export default async function Home() {
                       <CheckCircle2 className="h-4 w-4 text-cyan-400" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Trust-Based Growth</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Referrals carry implicit endorsement. Prospects arrive pre-sold on your credibility.</p>
-                      <p className="text-cyan-400 text-sm font-semibold mt-2">3-5× higher conversion rates</p>
+                      <h4 className="text-lg font-semibold text-white mb-1">Never Lose Attribution Again</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
+                      <p className="text-cyan-400 text-sm font-semibold mt-2">30-day attribution cookies</p>
                     </div>
                   </div>
 
@@ -346,9 +346,9 @@ export default async function Home() {
                       <CheckCircle2 className="h-4 w-4 text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Full Attribution</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Track from first click to closed deal. Partners get credited accurately.</p>
-                      <p className="text-emerald-400 text-sm font-semibold mt-2">End-to-end tracking</p>
+                      <h4 className="text-lg font-semibold text-white mb-1">Real-Time Revenue Visibility</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
+                      <p className="text-emerald-400 text-sm font-semibold mt-2">Live dashboards</p>
                     </div>
                   </div>
 
@@ -358,9 +358,9 @@ export default async function Home() {
                       <CheckCircle2 className="h-4 w-4 text-blue-400" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Higher-Quality Leads</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Pre-qualified by people who know your ideal client. More serious buyers.</p>
-                      <p className="text-blue-400 text-sm font-semibold mt-2">Higher average deal size</p>
+                      <h4 className="text-lg font-semibold text-white mb-1">Automated Partner Payouts</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Stripe-powered payouts settle automatically when deals close. Clean ledgers for finance review.</p>
+                      <p className="text-blue-400 text-sm font-semibold mt-2">Set thresholds and rules</p>
                     </div>
                   </div>
 
@@ -370,9 +370,9 @@ export default async function Home() {
                       <CheckCircle2 className="h-4 w-4 text-purple-400" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Shorter Sales Cycles</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Trust is pre-established. Skip awareness and move to decision.</p>
-                      <p className="text-purple-400 text-sm font-semibold mt-2">40-60% shorter cycles</p>
+                      <h4 className="text-lg font-semibold text-white mb-1">Built for Complex Sales Cycles</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Professional services deals take months. We track attribution across your entire sales cycle.</p>
+                      <p className="text-purple-400 text-sm font-semibold mt-2">6-18 month tracking</p>
                     </div>
                   </div>
 
@@ -382,9 +382,9 @@ export default async function Home() {
                       <CheckCircle2 className="h-4 w-4 text-amber-400" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Measurable ROI</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Every dollar attributed to its source. Prove returns to stakeholders.</p>
-                      <p className="text-amber-400 text-sm font-semibold mt-2">Clear revenue attribution</p>
+                      <h4 className="text-lg font-semibold text-white mb-1">Audit-Ready Attribution Records</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
+                      <p className="text-amber-400 text-sm font-semibold mt-2">Exportable audit trails</p>
                     </div>
                   </div>
 
@@ -394,9 +394,9 @@ export default async function Home() {
                       <CheckCircle2 className="h-4 w-4 text-rose-400" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Repeatable System</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Automated tracking, rewards, and reporting. Partners stay engaged.</p>
-                      <p className="text-rose-400 text-sm font-semibold mt-2">Partner onboarding in minutes</p>
+                      <h4 className="text-lg font-semibold text-white mb-1">Partner Portals That Scale</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
+                      <p className="text-rose-400 text-sm font-semibold mt-2">Unlimited partners</p>
                     </div>
                   </div>
                 </div>
@@ -553,6 +553,167 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
+            What Happens If You Do Nothing?
+        ───────────────────────────────────────────────────────── */}
+        <section className="mb-32">
+          <div className="relative overflow-hidden rounded-3xl border border-red-500/20 bg-gradient-to-br from-red-500/10 via-white/[0.03] to-transparent p-8 sm:p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(239,68,68,0.1),transparent_50%)]" />
+
+            <div className="relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6">
+                  What Happens If You Do <span className="text-red-400">Nothing?</span>
+                </h2>
+                <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+                  Informal referral systems create a hard revenue ceiling you can't break through.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                {/* Problem 1 */}
+                <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-xl font-black">$</span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white">Lost Attribution = Lost Revenue</h4>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed">
+                    Partners who don't see credit for their referrals stop referring. Without attribution, you're guessing at rewards—and your best sources dry up.
+                  </p>
+                </div>
+
+                {/* Problem 2 */}
+                <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-xl font-black">⚠</span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white">Spreadsheets Don't Scale</h4>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed">
+                    Manual tracking breaks when you hit 10+ partners. Missed attribution, delayed payouts, and partner disputes become operational overhead.
+                  </p>
+                </div>
+
+                {/* Problem 3 */}
+                <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-xl font-black">📉</span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white">You Can't Optimize What You Don't Track</h4>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed">
+                    Without data on which partners and campaigns drive revenue, you're blind to your highest-ROI growth channel.
+                  </p>
+                </div>
+
+                {/* Problem 4 */}
+                <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-xl font-black">🚫</span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white">The Revenue Ceiling Is Real</h4>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed">
+                    Informal referrals cap out at a fraction of what's possible. Systemized referrals with attribution scale infinitely.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-10 text-center">
+                <p className="text-slate-300 text-lg font-semibold max-w-3xl mx-auto">
+                  Every month without attribution is a month of lost referral revenue you can't recover.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────────────────
+            Why Now?
+        ───────────────────────────────────────────────────────── */}
+        <section className="mb-32">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6">
+              Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Now?</span>
+            </h2>
+            <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+              Professional services growth is shifting to low-friction, scalable referral transactions. Firms that systemize now capture the opportunity.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            {/* Reason 1 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-cyan-500/30 transition-all duration-300">
+                <div className="mb-6">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/20 flex items-center justify-center mb-4">
+                    <TrendingUp className="h-6 w-6 text-cyan-400" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Modern Buyers Expect Frictionless Transactions</h4>
+                </div>
+                <p className="text-slate-400 leading-relaxed">
+                  Today's buyers research, compare, and transact online. Referrals that require manual handoffs lose momentum. Tracked links convert faster.
+                </p>
+              </div>
+            </div>
+
+            {/* Reason 2 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-purple-500/30 transition-all duration-300">
+                <div className="mb-6">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/20 flex items-center justify-center mb-4">
+                    <BarChart3 className="h-6 w-6 text-purple-400" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Attribution Technology Is Finally Here</h4>
+                </div>
+                <p className="text-slate-400 leading-relaxed">
+                  Professional services have historically relied on "trust me" attribution. Now you can track end-to-end with the same precision as e-commerce.
+                </p>
+              </div>
+            </div>
+
+            {/* Reason 3 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-emerald-500/30 transition-all duration-300">
+                <div className="mb-6">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/20 flex items-center justify-center mb-4">
+                    <Users className="h-6 w-6 text-emerald-400" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Your Network Is Your Moat</h4>
+                </div>
+                <p className="text-slate-400 leading-relaxed">
+                  The firms that build systematic referral engines now create compounding advantages competitors can't replicate.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-3 rounded-2xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 px-8 py-5">
+              <CheckCircle2 className="h-6 w-6 text-cyan-400 flex-shrink-0" />
+              <p className="text-white text-lg font-semibold">
+                We guarantee you never lose attribution on a referral again
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────────────────
             ROI Calculator CTA
         ───────────────────────────────────────────────────────── */}
         <section className="mb-24">
@@ -562,17 +723,17 @@ export default async function Home() {
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
-                  Calculate Your Referral Program ROI
+                  Model Your Referral Revenue Potential
                 </h2>
                 <p className="text-slate-300 max-w-xl">
-                  Model your referral revenue potential and find the right reward structure for your business in 4 simple steps.
+                  Calculate how much revenue you're losing to attribution gaps and what systematic referrals could generate in 90 days.
                 </p>
               </div>
               <Link
                 href="/roi-calculator"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300 whitespace-nowrap"
               >
-                Calculate ROI
+                Run the Numbers
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
@@ -588,10 +749,10 @@ export default async function Home() {
             <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
               <div className="max-w-2xl mx-auto space-y-6">
                 <h2 className="text-3xl sm:text-4xl font-black text-white">
-                  Ready to Build Your Referral Channel?
+                  Stop Losing Referral Revenue to Attribution Gaps
                 </h2>
                 <p className="text-lg text-slate-300">
-                  Launch a referral program that turns your network into your most efficient growth engine—with full attribution, compliance, and payouts that scale.
+                  We guarantee you never lose attribution on a referral again. Every partner credited. Every deal tracked. Every dollar attributed.
                 </p>
                 <div className="pt-4">
                   <Link

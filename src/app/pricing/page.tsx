@@ -392,14 +392,14 @@ export default function PricingPage() {
         {/* Hero */}
         <header className="text-center space-y-6">
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white tracking-tight">
-            Referral Intelligence
+            The Only Referral Platform
             <br />
             <span className="bg-gradient-to-r from-cyan-300 via-cyan-200 to-teal-300 bg-clip-text text-transparent">
-              Built for Growth
+              Built for Professional Services
             </span>
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Transform your referral network into a measurable growth engine. Clear pricing, enterprise security, and partner expertise included.
+            We guarantee you never lose attribution on a referral again. Choose the plan that matches where you are today.
           </p>
         </header>
 
@@ -618,9 +618,9 @@ export default function PricingPage() {
         {/* ROI Calculator Section */}
         <section className="space-y-6">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Calculate Your Referral ROI</h2>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">How Much Revenue Are You Losing?</h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              See exactly how much revenue your referral program could generate with our ROI calculator.
+              Model your current attribution gap and calculate what systematic referrals could generate in 90 days.
             </p>
           </div>
 
@@ -705,10 +705,10 @@ export default function PricingPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(87,230,255,0.12),transparent_40%),radial-gradient(circle_at_75%_15%,rgba(10,186,181,0.12),transparent_45%)]" />
           <div className="relative z-10 space-y-6 max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-              Ready to Transform Your Referral Network?
+              Stop Losing Referral Revenue to Attribution Gaps
             </h2>
             <p className="text-base sm:text-lg text-slate-200">
-              Join 500+ professional services firms already growing with Refer Labs.
+              We guarantee you never lose attribution on a referral again. Every partner credited. Every deal tracked. Every dollar attributed.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <button

@@ -661,10 +661,10 @@ export function ROICalculator() {
           </div>
           <div className="rounded-3xl border border-purple-200 bg-gradient-to-br from-purple-600 to-indigo-600 p-6 text-white shadow-2xl shadow-purple-200/50">
             <div className="flex flex-col gap-3">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em]">Ready to get started?</p>
-              <h4 className="text-2xl font-black">Turn these projections into a live referral program</h4>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em]">Stop losing this revenue</p>
+              <h4 className="text-2xl font-black">We guarantee you never lose attribution on a referral again</h4>
               <p className="text-sm text-white/80">
-                Refer Labs helps you design, launch, and manage referral partnerships with full tracking, compliance, and automated rewards.
+                Every partner credited. Every deal tracked. Every dollar attributed. Turn this forecast into real revenue with the only referral platform built for professional services.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -698,10 +698,10 @@ export function ROICalculator() {
           </Button>
           <Button
             size="lg"
-            onClick={() => window.location.href = "/login"}
+            onClick={() => window.location.href = "/contact"}
             className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-6 text-base font-bold"
           >
-            Launch My Program
+            Get Started
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
@@ -715,10 +715,10 @@ export function ROICalculator() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-4">
-            Referral Partnership ROI Calculator
+            Are You Losing Referral Revenue?
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Calculate your potential revenue from activating clients, LinkedIn influencers, strategic partners, and consultants as referral sources.
+            Calculate how much revenue you're losing to attribution gaps—and what you could generate in 90 days with guaranteed attribution tracking.
           </p>
         </div>
 
