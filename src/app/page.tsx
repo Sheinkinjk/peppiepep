@@ -631,11 +631,6 @@ export default async function Home() {
                 </div>
               </div>
 
-              <div className="mt-10 text-center">
-                <p className="text-slate-300 text-lg font-semibold max-w-3xl mx-auto">
-                  Every month without attribution is a month of lost referral revenue you can't recover.
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -653,7 +648,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Reason 1 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
@@ -701,14 +696,21 @@ export default async function Home() {
                 </p>
               </div>
             </div>
-          </div>
 
-          <div className="mt-12 text-center">
-            <div className="inline-flex items-center gap-3 rounded-2xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 px-8 py-5">
-              <CheckCircle2 className="h-6 w-6 text-cyan-400 flex-shrink-0" />
-              <p className="text-white text-lg font-semibold">
-                We guarantee you never lose attribution on a referral again
-              </p>
+            {/* Reason 4 - Referral Partnerships */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-amber-500/30 transition-all duration-300">
+                <div className="mb-6">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <Building2 className="h-6 w-6 text-amber-400" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Referral Partnerships Unlock New Revenue Streams</h4>
+                </div>
+                <p className="text-slate-400 leading-relaxed">
+                  Strategic partners, LinkedIn influencers, and consultants can become consistent revenue sources when you give them the infrastructure to refer at scale.
+                </p>
+              </div>
             </div>
           </div>
         </section>

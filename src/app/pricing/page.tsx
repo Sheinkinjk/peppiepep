@@ -522,16 +522,34 @@ export default function PricingPage() {
         </section>
 
         {/* Referral Partnerships Section */}
-        <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/8 via-white/4 to-transparent p-6 sm:p-10 lg:p-14 shadow-2xl shadow-black/40">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(0,210,190,0.12),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(92,225,230,0.08),transparent_50%)]" />
+        <section className="relative overflow-hidden rounded-[2rem] border-2 border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 via-white/8 to-white/4 p-6 sm:p-10 lg:p-14 shadow-2xl shadow-cyan-500/20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(0,210,190,0.15),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(92,225,230,0.12),transparent_50%)]" />
           <div className="relative z-10 space-y-10">
             <div className="space-y-4 text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-teal-500/20 border border-cyan-400/30 mb-2">
+                <Sparkles className="h-4 w-4 text-cyan-300" />
+                <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">Premium Offering</span>
+              </div>
               <h2 className="text-balance text-3xl sm:text-4xl lg:text-5xl font-black text-white">
                 Referral Partnerships
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                A white-glove partnership motion for professional services teams who want more qualified introductions—without guessing, without spreadsheets, and with reporting your finance team can defend.
+              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-medium">
+                Go beyond software. Get a dedicated team that sources partners, designs campaigns, manages outreach, and delivers executive-ready ROI reporting.
               </p>
+              <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-4">
+                <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
+                  <p className="text-2xl font-black text-cyan-400 mb-1">10-25</p>
+                  <p className="text-xs text-slate-300">Active partners sourced & activated</p>
+                </div>
+                <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
+                  <p className="text-2xl font-black text-cyan-400 mb-1">Full-Service</p>
+                  <p className="text-xs text-slate-300">Strategy, execution & reporting</p>
+                </div>
+                <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
+                  <p className="text-2xl font-black text-cyan-400 mb-1">90-Day</p>
+                  <p className="text-xs text-slate-300">Sprint to first revenue</p>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
