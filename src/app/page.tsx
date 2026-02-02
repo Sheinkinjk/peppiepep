@@ -402,138 +402,76 @@ export default async function Home() {
               </div>
             </div>
 
-            {/* Benefits Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Premium Tick-Led Benefits - Horizontal Flow */}
+            <div className="space-y-6">
               {/* Benefit 1 */}
-              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-cyan-500/30 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400" />
-                    </div>
-                    <h4 className="text-lg font-bold text-white">Never Lose Attribution Again</h4>
+              <div className="group relative flex items-start gap-6 p-6 sm:p-8 rounded-2xl border border-white/[0.06] bg-gradient-to-r from-white/[0.03] via-white/[0.02] to-transparent hover:border-cyan-500/20 hover:from-cyan-500/[0.04] transition-all duration-300">
+                <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/30 flex items-center justify-center group-hover:from-cyan-500/30 group-hover:to-cyan-500/10 transition-all">
+                  <CheckCircle2 className="h-6 w-6 text-cyan-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                    <h4 className="text-xl font-bold text-white">Never Lose Attribution Again</h4>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-wide whitespace-nowrap">30-day attribution cookies</span>
                   </div>
-                  <p className="text-slate-400 leading-relaxed mb-3">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
-                  <p className="text-cyan-400 text-sm font-semibold">30-day attribution cookies</p>
+                  <p className="text-slate-400 leading-relaxed">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
                 </div>
               </div>
 
               {/* Benefit 2 */}
-              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-emerald-500/30 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center group-hover:bg-emerald-500/30 transition-colors">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                    </div>
-                    <h4 className="text-lg font-bold text-white">Real-Time Revenue Visibility</h4>
+              <div className="group relative flex items-start gap-6 p-6 sm:p-8 rounded-2xl border border-white/[0.06] bg-gradient-to-r from-white/[0.03] via-white/[0.02] to-transparent hover:border-emerald-500/20 hover:from-emerald-500/[0.04] transition-all duration-300">
+                <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/30 flex items-center justify-center group-hover:from-emerald-500/30 group-hover:to-emerald-500/10 transition-all">
+                  <CheckCircle2 className="h-6 w-6 text-emerald-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                    <h4 className="text-xl font-bold text-white">Real-Time Revenue Visibility</h4>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold tracking-wide whitespace-nowrap">Live dashboards</span>
                   </div>
-                  <p className="text-slate-400 leading-relaxed mb-3">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
-                  <p className="text-emerald-400 text-sm font-semibold">Live dashboards</p>
+                  <p className="text-slate-400 leading-relaxed">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
                 </div>
               </div>
 
               {/* Benefit 3 */}
-              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-purple-500/30 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
-                      <CheckCircle2 className="h-5 w-5 text-purple-400" />
-                    </div>
-                    <h4 className="text-lg font-bold text-white">Built for Complex Sales Cycles</h4>
+              <div className="group relative flex items-start gap-6 p-6 sm:p-8 rounded-2xl border border-white/[0.06] bg-gradient-to-r from-white/[0.03] via-white/[0.02] to-transparent hover:border-purple-500/20 hover:from-purple-500/[0.04] transition-all duration-300">
+                <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-purple-500/10 transition-all">
+                  <CheckCircle2 className="h-6 w-6 text-purple-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                    <h4 className="text-xl font-bold text-white">Built for Complex Sales Cycles</h4>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide whitespace-nowrap">6-18 month tracking</span>
                   </div>
-                  <p className="text-slate-400 leading-relaxed mb-3">Professional services deals take months. We track attribution across your entire sales cycle.</p>
-                  <p className="text-purple-400 text-sm font-semibold">6-18 month tracking</p>
+                  <p className="text-slate-400 leading-relaxed">Professional services deals take months. We track attribution across your entire sales cycle.</p>
                 </div>
               </div>
 
               {/* Benefit 4 */}
-              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-amber-500/30 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/30 transition-colors">
-                      <CheckCircle2 className="h-5 w-5 text-amber-400" />
-                    </div>
-                    <h4 className="text-lg font-bold text-white">Audit-Ready Attribution Records</h4>
+              <div className="group relative flex items-start gap-6 p-6 sm:p-8 rounded-2xl border border-white/[0.06] bg-gradient-to-r from-white/[0.03] via-white/[0.02] to-transparent hover:border-amber-500/20 hover:from-amber-500/[0.04] transition-all duration-300">
+                <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/30 flex items-center justify-center group-hover:from-amber-500/30 group-hover:to-amber-500/10 transition-all">
+                  <CheckCircle2 className="h-6 w-6 text-amber-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                    <h4 className="text-xl font-bold text-white">Audit-Ready Attribution Records</h4>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wide whitespace-nowrap">Exportable audit trails</span>
                   </div>
-                  <p className="text-slate-400 leading-relaxed mb-3">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
-                  <p className="text-amber-400 text-sm font-semibold">Exportable audit trails</p>
+                  <p className="text-slate-400 leading-relaxed">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
                 </div>
               </div>
 
-              {/* Benefit 5 - Spans 2 columns on tablet, centered on desktop */}
-              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-rose-500/30 transition-all duration-300 md:col-span-2 lg:col-span-1 lg:col-start-2">
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-rose-500/20 border border-rose-500/30 flex items-center justify-center group-hover:bg-rose-500/30 transition-colors">
-                      <CheckCircle2 className="h-5 w-5 text-rose-400" />
-                    </div>
-                    <h4 className="text-lg font-bold text-white">Partner Portals That Scale</h4>
-                  </div>
-                  <p className="text-slate-400 leading-relaxed mb-3">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
-                  <p className="text-rose-400 text-sm font-semibold">Unlimited partners</p>
+              {/* Benefit 5 */}
+              <div className="group relative flex items-start gap-6 p-6 sm:p-8 rounded-2xl border border-white/[0.06] bg-gradient-to-r from-white/[0.03] via-white/[0.02] to-transparent hover:border-rose-500/20 hover:from-rose-500/[0.04] transition-all duration-300">
+                <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-500/5 border border-rose-500/30 flex items-center justify-center group-hover:from-rose-500/30 group-hover:to-rose-500/10 transition-all">
+                  <CheckCircle2 className="h-6 w-6 text-rose-400" />
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────────────────
-            How Referrals Flow Through the Platform
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6">
-              How Referrals Flow Through the <span className="text-cyan-400">Platform</span>
-            </h2>
-            <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              From partner onboarding to automated payouts—every step is tracked and attributable.
-            </p>
-          </div>
-
-          {/* Flow Steps - 4 Steps */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Step 01 - Partner Onboarding */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-cyan-500/30 transition-all duration-300">
-                <div className="text-5xl font-black text-cyan-500/20 mb-4">01</div>
-                <h4 className="text-xl font-bold text-white mb-3">Partner Onboarding</h4>
-                <p className="text-slate-400 leading-relaxed">Partners receive unique tracked links and a branded portal to monitor their performance.</p>
-              </div>
-            </div>
-
-            {/* Step 02 - Tracked Interactions */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-blue-500/30 transition-all duration-300">
-                <div className="text-5xl font-black text-blue-500/20 mb-4">02</div>
-                <h4 className="text-xl font-bold text-white mb-3">Tracked Interactions</h4>
-                <p className="text-slate-400 leading-relaxed">Every click, form submission, demo booking, and conversion is captured in real time.</p>
-              </div>
-            </div>
-
-            {/* Step 03 - Full Attribution */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-purple-500/30 transition-all duration-300">
-                <div className="text-5xl font-black text-purple-500/20 mb-4">03</div>
-                <h4 className="text-xl font-bold text-white mb-3">Full Attribution</h4>
-                <p className="text-slate-400 leading-relaxed">Partner, campaign, and link IDs flow into dashboards with audit-ready tracking.</p>
-              </div>
-            </div>
-
-            {/* Step 04 - Automated Rewards */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-              <div className="relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 hover:border-emerald-500/30 transition-all duration-300">
-                <div className="text-5xl font-black text-emerald-500/20 mb-4">04</div>
-                <h4 className="text-xl font-bold text-white mb-3">Automated Rewards</h4>
-                <p className="text-slate-400 leading-relaxed">Revenue share, credits, or cash payouts settle automatically with clear ledgers.</p>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                    <h4 className="text-xl font-bold text-white">Partner Portals That Scale</h4>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-semibold tracking-wide whitespace-nowrap">Unlimited partners</span>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
+                </div>
               </div>
             </div>
           </div>
