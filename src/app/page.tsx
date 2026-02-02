@@ -170,25 +170,19 @@ export default async function Home() {
                   Start Earning
                 </span>
                 <span className="block text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem] leading-[1.1]">
-                  Additional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Referral Revenue</span>
+                  Additional <span className="text-cyan-400">Referral Revenue</span>
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
                 Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Growth Stream
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300 shadow-lg shadow-cyan-500/20"
                 >
                   Schedule a Call
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
-                >
-                  View Pricing
                 </Link>
               </div>
             </div>
@@ -279,144 +273,13 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Why Refer Labs Is Different — Ultra Premium Section with Corner Badges
-        ───────────────────────────────────────────────────────── */}
-        <section className="mb-32">
-          {/* Section Container with Corner Badges */}
-          <div className="relative">
-            {/* Corner notification badges - positioned around the section */}
-            <div className="pointer-events-none absolute inset-0 hidden lg:block">
-              {/* Top Left */}
-              <HeroBadge
-                badge={heroBadges[0]}
-                className="absolute -top-6 -left-4 xl:-left-8 -rotate-3"
-              />
-              {/* Top Right */}
-              <HeroBadge
-                badge={heroBadges[1]}
-                className="absolute -top-6 -right-4 xl:-right-8 rotate-3"
-              />
-              {/* Bottom Left */}
-              <HeroBadge
-                badge={heroBadges[2]}
-                className="absolute -bottom-6 -left-4 xl:-left-8 rotate-2"
-              />
-              {/* Bottom Right */}
-              <HeroBadge
-                badge={heroBadges[3]}
-                className="absolute -bottom-6 -right-4 xl:-right-8 -rotate-2"
-              />
-            </div>
-
-            {/* Mobile badges - smaller, inside section */}
-            <div className="pointer-events-none absolute inset-0 block lg:hidden overflow-hidden">
-              <HeroBadge
-                badge={heroBadges[0]}
-                isMobile={true}
-                className="absolute top-2 left-2 -rotate-2 opacity-40"
-              />
-              <HeroBadge
-                badge={heroBadges[3]}
-                isMobile={true}
-                className="absolute top-2 right-2 rotate-2 opacity-40"
-              />
-            </div>
-
-            {/* Section Header */}
-            <div className="text-center mb-16 lg:mb-20 pt-8 lg:pt-0">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-black text-white leading-[1.1] mb-6">
-                The Only Referral Platform <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-400">Built for Professional Services</span>
-              </h2>
-              <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-                Trusted recommendations are the foundation of professional services growth. But without proper attribution, you're leaving revenue on the table every single month.
-              </p>
-            </div>
-
-            {/* Benefits Grid */}
-            <div className="relative">
-              {/* Background ambience */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-radial from-cyan-500/[0.06] via-cyan-500/[0.02] to-transparent rounded-full blur-3xl" />
-              </div>
-
-              <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {/* Benefit 1 */}
-                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-cyan-500/30 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-4">
-                      <CheckCircle2 className="h-6 w-6 text-cyan-400" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-2">Never Lose Attribution Again</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
-                    <p className="text-cyan-400 text-sm font-semibold">30-day attribution cookies</p>
-                  </div>
-                </div>
-
-                {/* Benefit 2 */}
-                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-emerald-500/30 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-4">
-                      <BarChart3 className="h-6 w-6 text-emerald-400" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-2">Real-Time Revenue Visibility</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-3">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
-                    <p className="text-emerald-400 text-sm font-semibold">Live dashboards</p>
-                  </div>
-                </div>
-
-                {/* Benefit 3 - Complex Sales Cycles (moved up, removing Automated Payouts) */}
-                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-purple-500/30 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center mb-4">
-                      <TrendingUp className="h-6 w-6 text-purple-400" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-2">Built for Complex Sales Cycles</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Professional services deals take months. We track attribution across your entire sales cycle.</p>
-                    <p className="text-purple-400 text-sm font-semibold">6-18 month tracking</p>
-                  </div>
-                </div>
-
-                {/* Benefit 4 - Audit-Ready Records */}
-                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-amber-500/30 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center mb-4">
-                      <CheckCircle2 className="h-6 w-6 text-amber-400" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-2">Audit-Ready Attribution Records</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
-                    <p className="text-amber-400 text-sm font-semibold">Exportable audit trails</p>
-                  </div>
-                </div>
-
-                {/* Benefit 5 - Partner Portals */}
-                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-rose-500/30 transition-all duration-300 md:col-span-2 lg:col-span-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-rose-500/20 border border-rose-500/30 flex items-center justify-center mb-4">
-                      <Users className="h-6 w-6 text-rose-400" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-2">Partner Portals That Scale</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
-                    <p className="text-rose-400 text-sm font-semibold">Unlimited partners</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────────────────
-            Four Channels Section
+            How We Activate a Recommendation System (MOVED UP)
         ───────────────────────────────────────────────────────── */}
         <section className="mb-32">
           <div className="relative">
             <div className="text-center mb-12">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
-                How We Activate a <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Recommendation System</span>
+                How We Activate a <span className="text-cyan-400">Recommendation System</span>
               </h3>
               <p className="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg">
                 Refer Labs helps you systematically activate four powerful referral channels.
@@ -504,12 +367,131 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
+            The Only Referral Platform — Ultra Premium Tick-List Design
+        ───────────────────────────────────────────────────────── */}
+        <section className="mb-32">
+          <div className="relative">
+            {/* Background ambience */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-radial from-cyan-500/[0.04] via-cyan-500/[0.01] to-transparent rounded-full blur-3xl" />
+            </div>
+
+            {/* Section Header */}
+            <div className="text-center mb-16 lg:mb-20">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-black text-white leading-[1.1] mb-6">
+                The Only Referral Platform <span className="text-cyan-400">Built for Professional Services</span>
+              </h2>
+              <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+                Trusted recommendations are the foundation of professional services growth. But without proper attribution, you're leaving revenue on the table every single month.
+              </p>
+            </div>
+
+            {/* Two-Column Layout: Benefits + Visual */}
+            <div className="relative grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+              {/* Left Column: Premium Tick List */}
+              <div className="relative">
+                <div className="space-y-8">
+                  {/* Benefit 1 */}
+                  <div className="flex items-start gap-5 group">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center mt-0.5 group-hover:bg-cyan-500/30 transition-colors">
+                      <CheckCircle2 className="h-5 w-5 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Never Lose Attribution Again</h4>
+                      <p className="text-slate-400 leading-relaxed">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
+                      <p className="text-cyan-400 text-sm font-semibold mt-3">30-day attribution cookies</p>
+                    </div>
+                  </div>
+
+                  {/* Benefit 2 */}
+                  <div className="flex items-start gap-5 group">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center mt-0.5 group-hover:bg-emerald-500/30 transition-colors">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Real-Time Revenue Visibility</h4>
+                      <p className="text-slate-400 leading-relaxed">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
+                      <p className="text-emerald-400 text-sm font-semibold mt-3">Live dashboards</p>
+                    </div>
+                  </div>
+
+                  {/* Benefit 3 */}
+                  <div className="flex items-start gap-5 group">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center mt-0.5 group-hover:bg-purple-500/30 transition-colors">
+                      <CheckCircle2 className="h-5 w-5 text-purple-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Built for Complex Sales Cycles</h4>
+                      <p className="text-slate-400 leading-relaxed">Professional services deals take months. We track attribution across your entire sales cycle.</p>
+                      <p className="text-purple-400 text-sm font-semibold mt-3">6-18 month tracking</p>
+                    </div>
+                  </div>
+
+                  {/* Benefit 4 */}
+                  <div className="flex items-start gap-5 group">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center mt-0.5 group-hover:bg-amber-500/30 transition-colors">
+                      <CheckCircle2 className="h-5 w-5 text-amber-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Audit-Ready Attribution Records</h4>
+                      <p className="text-slate-400 leading-relaxed">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
+                      <p className="text-amber-400 text-sm font-semibold mt-3">Exportable audit trails</p>
+                    </div>
+                  </div>
+
+                  {/* Benefit 5 */}
+                  <div className="flex items-start gap-5 group">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center mt-0.5 group-hover:bg-rose-500/30 transition-colors">
+                      <CheckCircle2 className="h-5 w-5 text-rose-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-white mb-2">Partner Portals That Scale</h4>
+                      <p className="text-slate-400 leading-relaxed">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
+                      <p className="text-rose-400 text-sm font-semibold mt-3">Unlimited partners</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Floating Notification Badges */}
+              <div className="relative hidden lg:block min-h-[500px]">
+                {/* Badge Container with staggered positions */}
+                <div className="relative h-full">
+                  {/* Badge 1 - Top */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2">
+                    <HeroBadge badge={heroBadges[0]} className="-rotate-1" />
+                  </div>
+                  {/* Badge 2 - Upper Right */}
+                  <div className="absolute top-24 right-0">
+                    <HeroBadge badge={heroBadges[1]} className="rotate-2" />
+                  </div>
+                  {/* Badge 3 - Middle Left */}
+                  <div className="absolute top-52 left-0">
+                    <HeroBadge badge={heroBadges[2]} className="-rotate-2" />
+                  </div>
+                  {/* Badge 4 - Bottom Center */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+                    <HeroBadge badge={heroBadges[3]} className="rotate-1" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile: Show badges in a row */}
+              <div className="flex flex-wrap justify-center gap-4 lg:hidden">
+                <HeroBadge badge={heroBadges[0]} isMobile={true} className="-rotate-1" />
+                <HeroBadge badge={heroBadges[3]} isMobile={true} className="rotate-1" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────────────────
             How Referrals Flow Through the Platform
         ───────────────────────────────────────────────────────── */}
         <section className="mb-32">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6">
-              How Referrals Flow Through the <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Platform</span>
+              How Referrals Flow Through the <span className="text-cyan-400">Platform</span>
             </h2>
             <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
               From partner onboarding to automated payouts—every step is tracked and attributable.
@@ -649,7 +631,7 @@ export default async function Home() {
         <section className="mb-32">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6">
-              Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Now?</span>
+              Why <span className="text-cyan-400">Now?</span>
             </h2>
             <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
               Professional services growth is shifting to low-friction, scalable referral transactions. Firms that systemize now capture the opportunity.
