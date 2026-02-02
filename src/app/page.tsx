@@ -367,17 +367,17 @@ export default async function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            The Only Referral Platform — Ultra Premium Tick-List Design
+            The Only Referral Platform — Ultra Premium Design
         ───────────────────────────────────────────────────────── */}
         <section className="mb-32">
           <div className="relative">
             {/* Background ambience */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-radial from-cyan-500/[0.04] via-cyan-500/[0.01] to-transparent rounded-full blur-3xl" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] bg-gradient-radial from-cyan-500/[0.03] via-cyan-500/[0.01] to-transparent rounded-full blur-3xl" />
             </div>
 
             {/* Section Header */}
-            <div className="text-center mb-16 lg:mb-20">
+            <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-black text-white leading-[1.1] mb-6">
                 The Only Referral Platform <span className="text-cyan-400">Built for Professional Services</span>
               </h2>
@@ -386,100 +386,97 @@ export default async function Home() {
               </p>
             </div>
 
-            {/* Two-Column Layout: Benefits + Visual */}
-            <div className="relative grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-              {/* Left Column: Premium Tick List */}
-              <div className="relative">
-                <div className="space-y-8">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start gap-5 group">
-                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center mt-0.5 group-hover:bg-cyan-500/30 transition-colors">
+            {/* Four Notification Badges - Evenly Spaced Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 lg:mb-20 max-w-5xl mx-auto">
+              <div className="flex justify-center">
+                <HeroBadge badge={heroBadges[0]} className="-rotate-1" />
+              </div>
+              <div className="flex justify-center">
+                <HeroBadge badge={heroBadges[1]} className="rotate-1" />
+              </div>
+              <div className="flex justify-center">
+                <HeroBadge badge={heroBadges[2]} className="-rotate-1" />
+              </div>
+              <div className="flex justify-center">
+                <HeroBadge badge={heroBadges[3]} className="rotate-1" />
+              </div>
+            </div>
+
+            {/* Benefits Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {/* Benefit 1 */}
+              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-cyan-500/30 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
                       <CheckCircle2 className="h-5 w-5 text-cyan-400" />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-white mb-2">Never Lose Attribution Again</h4>
-                      <p className="text-slate-400 leading-relaxed">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
-                      <p className="text-cyan-400 text-sm font-semibold mt-3">30-day attribution cookies</p>
-                    </div>
+                    <h4 className="text-lg font-bold text-white">Never Lose Attribution Again</h4>
                   </div>
+                  <p className="text-slate-400 leading-relaxed mb-3">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
+                  <p className="text-cyan-400 text-sm font-semibold">30-day attribution cookies</p>
+                </div>
+              </div>
 
-                  {/* Benefit 2 */}
-                  <div className="flex items-start gap-5 group">
-                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center mt-0.5 group-hover:bg-emerald-500/30 transition-colors">
+              {/* Benefit 2 */}
+              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-emerald-500/30 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center group-hover:bg-emerald-500/30 transition-colors">
                       <CheckCircle2 className="h-5 w-5 text-emerald-400" />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-white mb-2">Real-Time Revenue Visibility</h4>
-                      <p className="text-slate-400 leading-relaxed">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
-                      <p className="text-emerald-400 text-sm font-semibold mt-3">Live dashboards</p>
-                    </div>
+                    <h4 className="text-lg font-bold text-white">Real-Time Revenue Visibility</h4>
                   </div>
+                  <p className="text-slate-400 leading-relaxed mb-3">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
+                  <p className="text-emerald-400 text-sm font-semibold">Live dashboards</p>
+                </div>
+              </div>
 
-                  {/* Benefit 3 */}
-                  <div className="flex items-start gap-5 group">
-                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center mt-0.5 group-hover:bg-purple-500/30 transition-colors">
+              {/* Benefit 3 */}
+              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-purple-500/30 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
                       <CheckCircle2 className="h-5 w-5 text-purple-400" />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-white mb-2">Built for Complex Sales Cycles</h4>
-                      <p className="text-slate-400 leading-relaxed">Professional services deals take months. We track attribution across your entire sales cycle.</p>
-                      <p className="text-purple-400 text-sm font-semibold mt-3">6-18 month tracking</p>
-                    </div>
+                    <h4 className="text-lg font-bold text-white">Built for Complex Sales Cycles</h4>
                   </div>
+                  <p className="text-slate-400 leading-relaxed mb-3">Professional services deals take months. We track attribution across your entire sales cycle.</p>
+                  <p className="text-purple-400 text-sm font-semibold">6-18 month tracking</p>
+                </div>
+              </div>
 
-                  {/* Benefit 4 */}
-                  <div className="flex items-start gap-5 group">
-                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center mt-0.5 group-hover:bg-amber-500/30 transition-colors">
+              {/* Benefit 4 */}
+              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-amber-500/30 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/30 transition-colors">
                       <CheckCircle2 className="h-5 w-5 text-amber-400" />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-white mb-2">Audit-Ready Attribution Records</h4>
-                      <p className="text-slate-400 leading-relaxed">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
-                      <p className="text-amber-400 text-sm font-semibold mt-3">Exportable audit trails</p>
-                    </div>
+                    <h4 className="text-lg font-bold text-white">Audit-Ready Attribution Records</h4>
                   </div>
+                  <p className="text-slate-400 leading-relaxed mb-3">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
+                  <p className="text-amber-400 text-sm font-semibold">Exportable audit trails</p>
+                </div>
+              </div>
 
-                  {/* Benefit 5 */}
-                  <div className="flex items-start gap-5 group">
-                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center mt-0.5 group-hover:bg-rose-500/30 transition-colors">
+              {/* Benefit 5 - Spans 2 columns on tablet, centered on desktop */}
+              <div className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 sm:p-8 hover:border-rose-500/30 transition-all duration-300 md:col-span-2 lg:col-span-1 lg:col-start-2">
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-rose-500/20 border border-rose-500/30 flex items-center justify-center group-hover:bg-rose-500/30 transition-colors">
                       <CheckCircle2 className="h-5 w-5 text-rose-400" />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-white mb-2">Partner Portals That Scale</h4>
-                      <p className="text-slate-400 leading-relaxed">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
-                      <p className="text-rose-400 text-sm font-semibold mt-3">Unlimited partners</p>
-                    </div>
+                    <h4 className="text-lg font-bold text-white">Partner Portals That Scale</h4>
                   </div>
+                  <p className="text-slate-400 leading-relaxed mb-3">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
+                  <p className="text-rose-400 text-sm font-semibold">Unlimited partners</p>
                 </div>
-              </div>
-
-              {/* Right Column: Floating Notification Badges */}
-              <div className="relative hidden lg:block min-h-[500px]">
-                {/* Badge Container with staggered positions */}
-                <div className="relative h-full">
-                  {/* Badge 1 - Top */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2">
-                    <HeroBadge badge={heroBadges[0]} className="-rotate-1" />
-                  </div>
-                  {/* Badge 2 - Upper Right */}
-                  <div className="absolute top-24 right-0">
-                    <HeroBadge badge={heroBadges[1]} className="rotate-2" />
-                  </div>
-                  {/* Badge 3 - Middle Left */}
-                  <div className="absolute top-52 left-0">
-                    <HeroBadge badge={heroBadges[2]} className="-rotate-2" />
-                  </div>
-                  {/* Badge 4 - Bottom Center */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-                    <HeroBadge badge={heroBadges[3]} className="rotate-1" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile: Show badges in a row */}
-              <div className="flex flex-wrap justify-center gap-4 lg:hidden">
-                <HeroBadge badge={heroBadges[0]} isMobile={true} className="-rotate-1" />
-                <HeroBadge badge={heroBadges[3]} isMobile={true} className="rotate-1" />
               </div>
             </div>
           </div>
