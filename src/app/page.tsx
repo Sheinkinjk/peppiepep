@@ -159,252 +159,260 @@ export default async function Home() {
       <main className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
 
         {/* ─────────────────────────────────────────────────────────
-            Hero Section
+            Hero Section — 2-Column Layout
         ───────────────────────────────────────────────────────── */}
-        <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-200px)] sm:min-h-[calc(100vh-140px)] py-14 sm:py-12 mb-8 sm:mb-0">
-          {/* Corner notification badges - Mobile (smaller, in corners) */}
-          <div className="pointer-events-none absolute inset-0 block sm:hidden">
-            {heroBadges.map((badge) => (
-              <HeroBadge
-                key={badge.id}
-                badge={badge}
-                isMobile={true}
-                className={cn("absolute", badge.position, heroBadgeOrientation[badge.id])}
-              />
-            ))}
-          </div>
-
-          {/* Corner notification badges - Desktop (xl+) */}
-          <div className="pointer-events-none absolute inset-0 hidden xl:block">
-            {heroBadges.map((badge) => (
-              <HeroBadge
-                key={badge.id}
-                badge={badge}
-                className={cn("absolute", badge.position, heroBadgeOrientation[badge.id])}
-              />
-            ))}
-          </div>
-
-          <div className="relative z-10 space-y-3 sm:space-y-6 px-4 sm:px-0 -mt-4 sm:mt-0">
-            {/* Mobile: 4 lines, 2 words each */}
-            <h1 className="font-black text-white max-w-4xl mx-auto tracking-tight">
-              {/* Mobile layout - 4 lines, 2 words per line */}
-              <span className="block sm:hidden text-[1.625rem] leading-[1.2]">
-                <span className="block">Stop Losing</span>
-                <span className="block">Referral Revenue</span>
-                <span className="block">Due to <span className="text-cyan-400">Attribution</span></span>
-                <span className="block"><span className="text-cyan-400">Gaps</span></span>
-              </span>
-              {/* Desktop layout */}
-              <span className="hidden sm:block sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] xl:text-[3rem] leading-[1.15]">
-                <span className="block">Stop Losing Referral Revenue</span>
-                <span className="block">
-                  Due to <span className="text-cyan-400">Attribution Gaps</span>
+        <section className="relative py-12 sm:py-16 lg:py-20 mb-16 sm:mb-24">
+          <div className="relative grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left Column: Text + CTA */}
+            <div className="relative z-10 text-center lg:text-left">
+              <h1 className="font-black text-white tracking-tight mb-6">
+                <span className="block text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem] leading-[1.1]">
+                  Start Earning
                 </span>
-              </span>
-            </h1>
-            <p className="text-[13px] sm:text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-3xl mx-auto leading-relaxed sm:px-0">
-              The only referral platform built for professional services. We guarantee you never lose attribution on a referral again.
-            </p>
-            <div className="pt-1 sm:pt-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 sm:px-8 py-3 sm:py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
-              >
-                Schedule a Call
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+                <span className="block text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem] leading-[1.1]">
+                  Additional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Referral Revenue</span>
+                </span>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                Turn Clients, Partners, Creators & LinkedIn Influencers Into a Fully Tracked Growth Stream
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300 shadow-lg shadow-cyan-500/20"
+                >
+                  Schedule a Call
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+                >
+                  View Pricing
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Dashboard Mockup */}
+            <div className="relative">
+              {/* Glow effect behind dashboard */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/20 via-cyan-500/5 to-transparent rounded-3xl blur-2xl" />
+
+              {/* Dashboard Container */}
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-800/80 p-5 sm:p-6 shadow-2xl shadow-black/40 overflow-hidden">
+                {/* Dashboard Header */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-3">
+                    <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-cyan-500/30 to-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                      <BarChart3 className="h-4 w-4 text-cyan-400" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">Referral Dashboard</p>
+                      <p className="text-slate-500 text-xs">Last 90 days</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="h-2 w-2 rounded-full bg-emerald-400"></div>
+                    <span className="text-emerald-400 text-xs font-medium">Live</span>
+                  </div>
+                </div>
+
+                {/* Metrics Row */}
+                <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-5">
+                  <div className="text-center p-2 sm:p-3 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-xl sm:text-2xl font-black text-white">47</p>
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">Partners</p>
+                  </div>
+                  <div className="text-center p-2 sm:p-3 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-xl sm:text-2xl font-black text-white">89</p>
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">Intros</p>
+                  </div>
+                  <div className="text-center p-2 sm:p-3 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                    <p className="text-xl sm:text-2xl font-black text-white">34</p>
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">Deals</p>
+                  </div>
+                  <div className="text-center p-2 sm:p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+                    <p className="text-xl sm:text-2xl font-black text-cyan-400">38%</p>
+                    <p className="text-[9px] text-cyan-400/70 uppercase tracking-wider mt-0.5">Conv.</p>
+                  </div>
+                </div>
+
+                {/* Revenue Highlight */}
+                <div className="rounded-xl bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 border border-cyan-500/20 p-4 mb-5">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Attributed Revenue</p>
+                      <p className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">$412,000</p>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                      <TrendingUp className="h-3 w-3 text-emerald-400" />
+                      <span className="text-emerald-400 text-xs font-semibold">+24%</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Recent Activity */}
+                <div className="space-y-2">
+                  <p className="text-slate-500 text-xs uppercase tracking-wider">Recent Activity</p>
+                  <div className="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+                    <div className="h-7 w-7 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white text-sm font-medium truncate">Deal closed: $18,500</p>
+                      <p className="text-slate-500 text-xs">Referred by Anderson Law</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+                    <div className="h-7 w-7 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                      <Users className="h-3.5 w-3.5 text-blue-400" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white text-sm font-medium truncate">New introduction received</p>
+                      <p className="text-slate-500 text-xs">From Miller CPA Partners</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ─────────────────────────────────────────────────────────
-            Why Refer Labs Is Different — Ultra Premium Section
+            Why Refer Labs Is Different — Ultra Premium Section with Corner Badges
         ───────────────────────────────────────────────────────── */}
-        <section className="mb-32 mt-16 sm:mt-0">
-          {/* Section Header */}
-          <div className="text-center mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-black text-white leading-[1.1] mb-6">
-              The Only Referral Platform <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-400">Built for Professional Services</span>
-            </h2>
-            <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              Trusted recommendations are the foundation of professional services growth. But without proper attribution, you're leaving revenue on the table every single month.
-            </p>
-          </div>
-
-          {/* Main Feature Block: Dashboard Visual + Benefits */}
-          <div className="relative mb-20">
-            {/* Background ambience */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-radial from-cyan-500/[0.06] via-cyan-500/[0.02] to-transparent rounded-full blur-3xl" />
+        <section className="mb-32">
+          {/* Section Container with Corner Badges */}
+          <div className="relative">
+            {/* Corner notification badges - positioned around the section */}
+            <div className="pointer-events-none absolute inset-0 hidden lg:block">
+              {/* Top Left */}
+              <HeroBadge
+                badge={heroBadges[0]}
+                className="absolute -top-6 -left-4 xl:-left-8 -rotate-3"
+              />
+              {/* Top Right */}
+              <HeroBadge
+                badge={heroBadges[1]}
+                className="absolute -top-6 -right-4 xl:-right-8 rotate-3"
+              />
+              {/* Bottom Left */}
+              <HeroBadge
+                badge={heroBadges[2]}
+                className="absolute -bottom-6 -left-4 xl:-left-8 rotate-2"
+              />
+              {/* Bottom Right */}
+              <HeroBadge
+                badge={heroBadges[3]}
+                className="absolute -bottom-6 -right-4 xl:-right-8 -rotate-2"
+              />
             </div>
 
-            <div className="relative grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              {/* Left: Dashboard Mockup Visual */}
-              <div className="relative order-2 lg:order-1">
-                <div className="relative">
-                  {/* Glow effect behind dashboard */}
-                  <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/20 via-cyan-500/5 to-transparent rounded-3xl blur-2xl" />
+            {/* Mobile badges - smaller, inside section */}
+            <div className="pointer-events-none absolute inset-0 block lg:hidden overflow-hidden">
+              <HeroBadge
+                badge={heroBadges[0]}
+                isMobile={true}
+                className="absolute top-2 left-2 -rotate-2 opacity-40"
+              />
+              <HeroBadge
+                badge={heroBadges[3]}
+                isMobile={true}
+                className="absolute top-2 right-2 rotate-2 opacity-40"
+              />
+            </div>
 
-                  {/* Dashboard Container */}
-                  <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-800/80 p-6 sm:p-8 shadow-2xl shadow-black/40 overflow-hidden">
-                    {/* Dashboard Header */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500/30 to-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                          <BarChart3 className="h-5 w-5 text-cyan-400" />
-                        </div>
-                        <div>
-                          <p className="text-white font-semibold text-sm">Referral Dashboard</p>
-                          <p className="text-slate-500 text-xs">Last 90 days</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <div className="h-2.5 w-2.5 rounded-full bg-emerald-400"></div>
-                        <span className="text-emerald-400 text-xs font-medium">Live</span>
-                      </div>
-                    </div>
+            {/* Section Header */}
+            <div className="text-center mb-16 lg:mb-20 pt-8 lg:pt-0">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-black text-white leading-[1.1] mb-6">
+                The Only Referral Platform <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-400">Built for Professional Services</span>
+              </h2>
+              <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
+                Trusted recommendations are the foundation of professional services growth. But without proper attribution, you're leaving revenue on the table every single month.
+              </p>
+            </div>
 
-                    {/* Metrics Row */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
-                      <div className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                        <p className="text-2xl sm:text-3xl font-black text-white">47</p>
-                        <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Partners</p>
-                      </div>
-                      <div className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                        <p className="text-2xl sm:text-3xl font-black text-white">89</p>
-                        <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Intros</p>
-                      </div>
-                      <div className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                        <p className="text-2xl sm:text-3xl font-black text-white">34</p>
-                        <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Deals</p>
-                      </div>
-                      <div className="text-center p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
-                        <p className="text-2xl sm:text-3xl font-black text-cyan-400">38%</p>
-                        <p className="text-[10px] text-cyan-400/70 uppercase tracking-wider mt-1">Conv.</p>
-                      </div>
-                    </div>
-
-                    {/* Revenue Highlight */}
-                    <div className="rounded-xl bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 border border-cyan-500/20 p-5 mb-6">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Attributed Revenue</p>
-                          <p className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">$412,000</p>
-                        </div>
-                        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-                          <TrendingUp className="h-3.5 w-3.5 text-emerald-400" />
-                          <span className="text-emerald-400 text-xs font-semibold">+24%</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Recent Activity */}
-                    <div className="space-y-3">
-                      <p className="text-slate-500 text-xs uppercase tracking-wider">Recent Activity</p>
-                      <div className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
-                        <div className="h-8 w-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                          <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-white text-sm font-medium truncate">Deal closed: $18,500</p>
-                          <p className="text-slate-500 text-xs">Referred by Anderson Law</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
-                        <div className="h-8 w-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                          <Users className="h-4 w-4 text-blue-400" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-white text-sm font-medium truncate">New introduction received</p>
-                          <p className="text-slate-500 text-xs">From Miller CPA Partners</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            {/* Benefits Grid */}
+            <div className="relative">
+              {/* Background ambience */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-radial from-cyan-500/[0.06] via-cyan-500/[0.02] to-transparent rounded-full blur-3xl" />
               </div>
 
-              {/* Right: Benefits with Ticks */}
-              <div className="order-1 lg:order-2">
-                <div className="space-y-6">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mt-0.5">
-                      <CheckCircle2 className="h-4 w-4 text-cyan-400" />
+              <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {/* Benefit 1 */}
+                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-cyan-500/30 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-4">
+                      <CheckCircle2 className="h-6 w-6 text-cyan-400" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Never Lose Attribution Again</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
-                      <p className="text-cyan-400 text-sm font-semibold mt-2">30-day attribution cookies</p>
-                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2">Never Lose Attribution Again</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Every referral tracked from first click to closed deal. Partners get credited accurately, every single time.</p>
+                    <p className="text-cyan-400 text-sm font-semibold">30-day attribution cookies</p>
                   </div>
+                </div>
 
-                  {/* Benefit 2 */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mt-0.5">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                {/* Benefit 2 */}
+                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-emerald-500/30 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-4">
+                      <BarChart3 className="h-6 w-6 text-emerald-400" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Real-Time Revenue Visibility</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
-                      <p className="text-emerald-400 text-sm font-semibold mt-2">Live dashboards</p>
-                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2">Real-Time Revenue Visibility</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-3">See which partners, campaigns, and channels drive revenue—not just clicks. Attribution data flows into dashboards instantly.</p>
+                    <p className="text-emerald-400 text-sm font-semibold">Live dashboards</p>
                   </div>
+                </div>
 
-                  {/* Benefit 3 */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center mt-0.5">
-                      <CheckCircle2 className="h-4 w-4 text-blue-400" />
+                {/* Benefit 3 - Complex Sales Cycles (moved up, removing Automated Payouts) */}
+                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-purple-500/30 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center mb-4">
+                      <TrendingUp className="h-6 w-6 text-purple-400" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Automated Partner Payouts</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Stripe-powered payouts settle automatically when deals close. Clean ledgers for finance review.</p>
-                      <p className="text-blue-400 text-sm font-semibold mt-2">Set thresholds and rules</p>
-                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2">Built for Complex Sales Cycles</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Professional services deals take months. We track attribution across your entire sales cycle.</p>
+                    <p className="text-purple-400 text-sm font-semibold">6-18 month tracking</p>
                   </div>
+                </div>
 
-                  {/* Benefit 4 */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center mt-0.5">
-                      <CheckCircle2 className="h-4 w-4 text-purple-400" />
+                {/* Benefit 4 - Audit-Ready Records */}
+                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-amber-500/30 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center mb-4">
+                      <CheckCircle2 className="h-6 w-6 text-amber-400" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Built for Complex Sales Cycles</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Professional services deals take months. We track attribution across your entire sales cycle.</p>
-                      <p className="text-purple-400 text-sm font-semibold mt-2">6-18 month tracking</p>
-                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2">Audit-Ready Attribution Records</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
+                    <p className="text-amber-400 text-sm font-semibold">Exportable audit trails</p>
                   </div>
+                </div>
 
-                  {/* Benefit 5 */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center mt-0.5">
-                      <CheckCircle2 className="h-4 w-4 text-amber-400" />
+                {/* Benefit 5 - Partner Portals */}
+                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 lg:p-8 hover:border-rose-500/30 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-rose-500/20 border border-rose-500/30 flex items-center justify-center mb-4">
+                      <Users className="h-6 w-6 text-rose-400" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Audit-Ready Attribution Records</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Complete attribution logs for every referral. Finance and compliance teams get clean records they can verify.</p>
-                      <p className="text-amber-400 text-sm font-semibold mt-2">Exportable audit trails</p>
-                    </div>
-                  </div>
-
-                  {/* Benefit 6 */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-rose-500/20 border border-rose-500/30 flex items-center justify-center mt-0.5">
-                      <CheckCircle2 className="h-4 w-4 text-rose-400" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-1">Partner Portals That Scale</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
-                      <p className="text-rose-400 text-sm font-semibold mt-2">Unlimited partners</p>
-                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2">Partner Portals That Scale</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-3">Every partner gets a branded portal with their unique link, performance stats, and reward tracking.</p>
+                    <p className="text-rose-400 text-sm font-semibold">Unlimited partners</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Four Channels Section */}
+        {/* ─────────────────────────────────────────────────────────
+            Four Channels Section
+        ───────────────────────────────────────────────────────── */}
+        <section className="mb-32">
           <div className="relative">
             <div className="text-center mb-12">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
