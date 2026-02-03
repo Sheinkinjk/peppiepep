@@ -3,7 +3,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.leadHacking);
 
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
 
 function ScheduleCallCTA({ className = "" }: { className?: string }) {
   return (
@@ -29,11 +29,11 @@ const partnerTypes = [
     subtitle: "Creators with trust + attention in your niche",
     description:
       "We build performance-based partnerships with creators who already influence the exact people you want to sell to. The goal isn’t impressions—it’s tracked introductions, booked calls, and revenue you can attribute.",
-    referralProgram: {
-      heading: "How the referral program works",
+    affiliateProgram: {
+      heading: "How the affiliate program works",
       bullets: [
-        "Creator gets a unique tracking link + referral code (plus approved messaging + offer positioning).",
-        "Content drives intent to a dedicated handoff flow (landing page, booking link, or referral capture).",
+        "Creator gets a unique tracking link + affiliate code (plus approved messaging + offer positioning).",
+        "Content drives intent to a dedicated handoff flow (landing page, booking link, or affiliate capture).",
         "You see every conversion (call booked, demo requested, signup, purchase) and double down on what performs.",
       ],
     },
@@ -41,7 +41,7 @@ const partnerTypes = [
       heading: "How Lead Hacking supports it",
       bullets: [
         "Audience/ICP matching + creator scoring so you only pay for aligned reach.",
-        "Structured referral offer + brief + creator pack with approved messaging and referral terms.",
+        "Structured affiliate offer + brief + creator pack with approved messaging and affiliate terms.",
         "Deal setup + tracking links so every click, booking, and conversion is attributed.",
       ],
     },
@@ -51,20 +51,20 @@ const partnerTypes = [
     title: "Agencies & Strategic Partners",
     subtitle: "Service providers who already serve your ICP",
     description:
-      "Agencies and ecosystem partners can become your most consistent source of qualified referrals because they sit upstream of buying decisions. We help you turn that proximity into a structured referral motion.",
-    referralProgram: {
-      heading: "How the referral program works",
+      "Agencies and ecosystem partners can become your most consistent source of qualified affiliates because they sit upstream of buying decisions. We help you turn that proximity into a structured affiliate motion.",
+    affiliateProgram: {
+      heading: "How the affiliate program works",
       bullets: [
         "Partner receives a simple partner kit: who to refer, qualifying signals, how to introduce, and what they earn.",
-        "Referrals are captured with partner-specific links/codes so attribution is clean and payouts are simple.",
+        "Affiliates are captured with partner-specific links/codes so attribution is clean and payouts are simple.",
         "You create a reliable co-selling lane: warm intros → fast qualification → booked calls → closed-loop updates back to partners.",
       ],
     },
     leadHacking: {
       heading: "How Lead Hacking supports it",
       bullets: [
-        "Map agencies with overlapping clients + clear referral upside, not just logos.",
-        "Run targeted outreach with a referral-first value prop, offer, and payout structure.",
+        "Map agencies with overlapping clients + clear affiliate upside, not just logos.",
+        "Run targeted outreach with a affiliate-first value prop, offer, and payout structure.",
         "Onboard with a partner kit (intro scripts, offers, tracking links) and measure activations week by week.",
       ],
     },
@@ -75,10 +75,10 @@ const partnerTypes = [
     subtitle: "Trusted operators who influence buying decisions",
     description:
       "Consultants and advisors (fractional leaders, specialists, operators) are often the most credible referrers. We help you earn long-term trust-based distribution with clear incentives and low-friction handoffs.",
-    referralProgram: {
-      heading: "How the referral program works",
+    affiliateProgram: {
+      heading: "How the affiliate program works",
       bullets: [
-        "Advisor receives an easy way to introduce you (intro script + referral link/code + qualification checklist).",
+        "Advisor receives an easy way to introduce you (intro script + affiliate link/code + qualification checklist).",
         "You keep the advisor in the loop: status updates, outcome reporting, and a predictable payout process.",
         "Because trust is everything, the program is designed to feel helpful—not salesy—with clear rules and transparency.",
       ],
@@ -87,7 +87,7 @@ const partnerTypes = [
       heading: "How Lead Hacking supports it",
       bullets: [
         "Map advisor ecosystems by influence + proof, not titles; prioritize those who steer buying decisions.",
-        "Respect-first outreach that secures a warm intro path and sets referral rules up front.",
+        "Respect-first outreach that secures a warm intro path and sets affiliate rules up front.",
         "Handoff flows + attribution + reporting so advisors keep referring (and trust the process).",
       ],
     },
@@ -99,7 +99,7 @@ const leadHackingLoop = [
     icon: Target,
     title: "Define the ICP + partner fit",
     description:
-      "We align on who you want (ICP), what triggers a good referral, and which partner type is most likely to deliver it (creator, agency, advisor).",
+      "We align on who you want (ICP), what triggers a good affiliate, and which partner type is most likely to deliver it (creator, agency, advisor).",
     deliverable: "ICP + partner profile + qualification rules",
   },
   {
@@ -113,7 +113,7 @@ const leadHackingLoop = [
     icon: Megaphone,
     title: "Outreach + deal structuring",
     description:
-      "We open the conversation with clear value, define referral mechanics, and remove ambiguity so partners know exactly what to do and what they earn.",
+      "We open the conversation with clear value, define affiliate mechanics, and remove ambiguity so partners know exactly what to do and what they earn.",
     deliverable: "Outreach sequences + partner offer + terms",
   },
   {
@@ -132,7 +132,7 @@ const leadHackingLoop = [
   },
 ];
 
-const referralProgramBlueprint = [
+const affiliateProgramBlueprint = [
   {
     title: "Clear partner promise",
     details:
@@ -141,7 +141,7 @@ const referralProgramBlueprint = [
   {
     title: "Low-friction handoff",
     details:
-      "A referral should take seconds: intro script, referral link/code, and a capture flow that qualifies without feeling like a form-funnel.",
+      "A affiliate should take seconds: intro script, affiliate link/code, and a capture flow that qualifies without feeling like a form-funnel.",
   },
   {
     title: "Attribution you can trust",
@@ -173,19 +173,19 @@ export default function LeadHackingPage() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/80 backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-[#0ABAB5]" />
-              Lead Hacking + Referral Partnerships
+              Lead Hacking + Affiliate Partnerships
             </div>
 
             <h1 className="text-balance text-4xl font-black leading-[1.06] sm:text-5xl lg:text-6xl">
               Source The Right{" "}
               <span className="bg-gradient-to-r from-[#0ABAB5] via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
-                Referral Partners
+                Affiliate Partners
               </span>{" "}
               And Turn Them Into Revenue
             </h1>
 
             <p className="text-xl leading-relaxed text-slate-200/90">
-              Refer Labs builds referral programs and then runs Lead Hacking to source, qualify, and activate the partners that fit your ICP—so you get warm introductions and booked conversations without “spray and pray” outreach.
+              Refer Labs builds affiliate programs and then runs Lead Hacking to source, qualify, and activate the partners that fit your ICP—so you get warm introductions and booked conversations without “spray and pray” outreach.
             </p>
 
             <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/8 to-white/[0.04] p-6 backdrop-blur">
@@ -198,7 +198,7 @@ export default function LeadHackingPage() {
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {[
                   { label: "Partner-sourced deals", detail: "Warm intros from trusted people" },
-                  { label: "Higher close rates", detail: "Referrals arrive pre-qualified" },
+                  { label: "Higher close rates", detail: "Affiliates arrive pre-qualified" },
                   { label: "Repeatable pipeline", detail: "A channel you can scale" },
                   { label: "Clear attribution", detail: "Know what partners convert" },
                 ].map((item) => (
@@ -213,7 +213,7 @@ export default function LeadHackingPage() {
             <div className="flex flex-wrap items-center gap-4">
               <ScheduleCallCTA />
               <p className="text-sm text-slate-400">
-                30 minutes. We’ll map the best partner type for your ICP and the referral program mechanics to activate it.
+                30 minutes. We’ll map the best partner type for your ICP and the affiliate program mechanics to activate it.
               </p>
             </div>
           </div>
@@ -231,12 +231,12 @@ export default function LeadHackingPage() {
               </div>
 
               <p className="mb-6 text-slate-300">
-                Referral partnerships only work when the program is clear and the partner list is targeted. Lead Hacking is how we source the right partners and activate them with tracking, assets, and a repeatable process.
+                Affiliate partnerships only work when the program is clear and the partner list is targeted. Lead Hacking is how we source the right partners and activate them with tracking, assets, and a repeatable process.
               </p>
 
               <div className="grid gap-3">
                 {[
-                  "Referral program design (rules, incentives, handoffs)",
+                  "Affiliate program design (rules, incentives, handoffs)",
                   "Partner sourcing + qualification (fit first, volume second)",
                   "Partner onboarding + enablement assets",
                   "Attribution + reporting so you can scale winners",
@@ -262,11 +262,11 @@ export default function LeadHackingPage() {
         <section className="mb-20">
           <div className="mb-10">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">
-              Referral Partnerships We Provide
+              Affiliate Partnerships We Provide
             </p>
-            <h2 className="text-4xl font-black text-white sm:text-5xl">Three Partner Lanes, One Referral Engine</h2>
+            <h2 className="text-4xl font-black text-white sm:text-5xl">Three Partner Lanes, One Affiliate Engine</h2>
             <p className="mt-4 max-w-3xl text-lg text-slate-200/90">
-              Each lane has its own referral motion. We design the referral program (links, rewards, handoffs) and Lead Hacking sources and activates the right partners so you see booked calls and tracked revenue—not just “reach”.
+              Each lane has its own affiliate motion. We design the affiliate program (links, rewards, handoffs) and Lead Hacking sources and activates the right partners so you see booked calls and tracked revenue—not just “reach”.
             </p>
           </div>
 
@@ -293,9 +293,9 @@ export default function LeadHackingPage() {
                   <p className="text-sm leading-relaxed text-slate-200/95">{partner.description}</p>
 
                   <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                    <p className="text-xs font-black uppercase tracking-[0.2em] text-[#7DE7E3]">{partner.referralProgram.heading}</p>
+                    <p className="text-xs font-black uppercase tracking-[0.2em] text-[#7DE7E3]">{partner.affiliateProgram.heading}</p>
                     <div className="mt-3 space-y-2">
-                      {partner.referralProgram.bullets.map((bullet) => (
+                      {partner.affiliateProgram.bullets.map((bullet) => (
                         <div key={bullet} className="flex gap-3">
                           <div className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#0ABAB5]" />
                           <p className="text-sm text-slate-200">{bullet}</p>
@@ -325,7 +325,7 @@ export default function LeadHackingPage() {
               <div className="max-w-3xl">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">Not sure which lane is best?</p>
                 <p className="mt-2 text-lg text-slate-200/90">
-                  We’ll recommend the highest-leverage partner type for your offer and ICP, then design the referral program mechanics and sourcing plan around it.
+                  We’ll recommend the highest-leverage partner type for your offer and ICP, then design the affiliate program mechanics and sourcing plan around it.
                 </p>
               </div>
               <ScheduleCallCTA className="w-full md:w-auto" />
@@ -339,7 +339,7 @@ export default function LeadHackingPage() {
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">How Lead Hacking Works</p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">Sourcing, Activation, Optimisation</h2>
             <p className="mt-4 max-w-3xl text-lg text-slate-300">
-              “Lead Hacking” isn’t a channel. It’s the operating system that finds the right partners, turns interest into referrals, and gives you the data to scale what performs.
+              “Lead Hacking” isn’t a channel. It’s the operating system that finds the right partners, turns interest into affiliates, and gives you the data to scale what performs.
             </p>
           </div>
 
@@ -374,7 +374,7 @@ export default function LeadHackingPage() {
         {/* Blueprint */}
         <section className="mb-20">
           <div className="mb-10 text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">Referral Program Blueprint</p>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">Affiliate Program Blueprint</p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">What Makes Partnerships Actually Work</h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
               Partners don’t refer because you asked—they refer because the program is easy, the offer is credible, and the attribution is transparent. Lead Hacking connects the blueprint to the right partner list.
@@ -382,7 +382,7 @@ export default function LeadHackingPage() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {referralProgramBlueprint.map((item) => (
+            {affiliateProgramBlueprint.map((item) => (
               <div key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur">
                 <p className="text-lg font-black text-white">{item.title}</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.details}</p>
@@ -398,7 +398,7 @@ export default function LeadHackingPage() {
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">Design System</p>
               <h2 className="text-4xl font-black text-white sm:text-5xl">Why More Tiffany Blue?</h2>
               <p className="mt-4 text-lg text-slate-200/90">
-                Referral partnerships are built on trust and recognition. We use Tiffany blue as the “partner signal” across your referral assets—so the same visual cue shows up in creator posts, partner decks, and enablement docs. The goal is consistency: partners instantly recognise the program, and prospects experience a coherent handoff.
+                Affiliate partnerships are built on trust and recognition. We use Tiffany blue as the “partner signal” across your affiliate assets—so the same visual cue shows up in creator posts, partner decks, and enablement docs. The goal is consistency: partners instantly recognise the program, and prospects experience a coherent handoff.
               </p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-slate-950/35 p-8">
@@ -407,7 +407,7 @@ export default function LeadHackingPage() {
                 {[
                   "Partner kit + co-branded one-pagers",
                   "Creator campaign brief + tracking pages",
-                  "Referral capture + booking flow styling",
+                  "Affiliate capture + booking flow styling",
                   "Dashboards and performance reporting highlights",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -428,9 +428,9 @@ export default function LeadHackingPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#0ABAB5] to-cyan-400">
             <Users className="h-8 w-8 text-slate-950" />
           </div>
-          <h2 className="mb-4 text-4xl font-black text-white sm:text-5xl">Want referral partners that actually convert?</h2>
+          <h2 className="mb-4 text-4xl font-black text-white sm:text-5xl">Want affiliate partners that actually convert?</h2>
           <p className="mx-auto mb-8 max-w-3xl text-lg text-slate-300">
-            We’ll map your best partner lane, design the referral program mechanics, and show you what Lead Hacking looks like to source and activate partners consistently—with clear attribution.
+            We’ll map your best partner lane, design the affiliate program mechanics, and show you what Lead Hacking looks like to source and activate partners consistently—with clear attribution.
           </p>
           <div className="flex justify-center">
             <ScheduleCallCTA />

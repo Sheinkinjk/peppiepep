@@ -7,7 +7,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = generateSEOMetadata({
   title: "Go-live Checklist | Refer Labs",
   description:
-    "Production go-live checklist to ensure referral links, cookies, webhooks, and dashboard updates work reliably across client sites.",
+    "Production go-live checklist to ensure affiliate links, cookies, webhooks, and dashboard updates work reliably across client sites.",
   url: `${SITE_URL}/go-live`,
 });
 
@@ -45,10 +45,10 @@ export default function GoLiveChecklistPage() {
               <h2 className="text-lg font-bold text-slate-900">Critical path (must pass)</h2>
               <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-700">
                 <li>
-                  <span className="font-semibold">Referral link loads:</span> open a real <code className="font-mono">/r/AMBCODE</code> link in incognito.
+                  <span className="font-semibold">Affiliate link loads:</span> open a real <code className="font-mono">/r/AMBCODE</code> link in incognito.
                 </li>
                 <li>
-                  <span className="font-semibold">Signup captured:</span> submit the referral form and confirm it appears in the dashboard Journey timeline.
+                  <span className="font-semibold">Signup captured:</span> submit the affiliate form and confirm it appears in the dashboard Journey timeline.
                 </li>
                 <li>
                   <span className="font-semibold">Conversion captured:</span> complete a real checkout/payment/booking using the ambassador discount code.

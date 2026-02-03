@@ -18,7 +18,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p className="text-sm text-slate-500">
-            Last updated: January 2026 · Version 2.1
+            Last updated: 2 February 2026 · Version 2.2
           </p>
         </div>
 
@@ -47,9 +47,9 @@ export default function Privacy() {
               <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">1.1 Information You Provide</h3>
               <ul className="list-disc list-inside text-slate-600 space-y-1">
                 <li><strong>Account Data:</strong> Email address, name, business name, password (encrypted)</li>
-                <li><strong>Business Profile:</strong> Website URL, referral program settings, reward amounts</li>
-                <li><strong>Customer Data:</strong> Names, email addresses, phone numbers you upload for your referral program</li>
-                <li><strong>Referral Data:</strong> Referral codes, referral events, conversion tracking</li>
+                <li><strong>Business Profile:</strong> Website URL, affiliate program settings, reward amounts</li>
+                <li><strong>Customer Data:</strong> Names, email addresses, phone numbers you upload for your affiliate program</li>
+                <li><strong>Affiliate Data:</strong> Affiliate codes, affiliate events, conversion tracking</li>
                 <li><strong>Payment Data:</strong> Processed by Stripe (we do not store credit card details)</li>
               </ul>
 
@@ -58,13 +58,13 @@ export default function Privacy() {
                 <li><strong>Usage Data:</strong> Pages visited, features used, time spent</li>
                 <li><strong>Device Data:</strong> Browser type, IP address, device type</li>
                 <li><strong>Cookies:</strong> Authentication tokens, session identifiers (see Section 9)</li>
-                <li><strong>Referral Attribution:</strong> UTM parameters, referral source tracking</li>
+                <li><strong>Affiliate Attribution:</strong> UTM parameters, affiliate source tracking</li>
               </ul>
 
               <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">1.3 Legal Basis for Processing</h3>
               <p className="text-slate-600">We process your data based on:</p>
               <ul className="list-disc list-inside text-slate-600 space-y-1">
-                <li><strong>Contract:</strong> To provide our referral platform services</li>
+                <li><strong>Contract:</strong> To provide our affiliate platform services</li>
                 <li><strong>Legitimate Interest:</strong> To improve our service, prevent fraud, and ensure security</li>
                 <li><strong>Consent:</strong> For SMS notifications and marketing communications (where required)</li>
                 <li><strong>Legal Obligation:</strong> To comply with tax, accounting, and legal requirements</li>
@@ -76,8 +76,8 @@ export default function Privacy() {
               <h2 className="text-2xl font-bold text-slate-900 mb-4">2. How We Use Your Information</h2>
               <p className="text-slate-600 mb-2">We use collected information for:</p>
               <ul className="list-disc list-inside text-slate-600 space-y-1">
-                <li><strong>Service Delivery:</strong> Provide referral tracking, campaign management, and analytics</li>
-                <li><strong>Communications:</strong> Send transactional emails, referral notifications, and service updates</li>
+                <li><strong>Service Delivery:</strong> Provide affiliate tracking, campaign management, and analytics</li>
+                <li><strong>Communications:</strong> Send transactional emails, affiliate notifications, and service updates</li>
                 <li><strong>Customer Support:</strong> Respond to inquiries and troubleshoot issues</li>
                 <li><strong>Improvements:</strong> Analyze usage patterns to enhance features and user experience</li>
                 <li><strong>Security:</strong> Detect and prevent fraud, abuse, and security incidents</li>
@@ -178,6 +178,8 @@ export default function Privacy() {
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-1">
                 <li><strong>United States:</strong> AWS (via Supabase), Resend, OpenAI, Vercel</li>
+                <li><strong>European Union/United Kingdom:</strong> CDN points of presence for Vercel and email delivery</li>
+                <li><strong>Asia-Pacific:</strong> CDN points of presence for latency and redundancy</li>
               </ul>
               <p className="text-slate-600 mt-2">
                 We ensure appropriate safeguards are in place through:
@@ -188,7 +190,7 @@ export default function Privacy() {
                 <li>Adequacy decisions from relevant data protection authorities where applicable</li>
               </ul>
               <p className="text-slate-600 mt-2 text-sm">
-                By using the Service, you consent to the overseas transfer of personal information. You must ensure your own customers are notified and consent where required under the Australian Privacy Act 1988 (APP 5/APP 8).
+                By using the Service, you consent to the overseas transfer of personal information. We take reasonable steps under APP 8 to ensure overseas recipients do not breach the Australian Privacy Principles, and you must ensure your own customers are notified and consent where required under the Privacy Act 1988 (APP 5/APP 8).
               </p>
             </div>
 
@@ -202,8 +204,9 @@ export default function Privacy() {
                 <li><strong>Active Accounts:</strong> Retained while your account is active</li>
                 <li><strong>Deleted Accounts:</strong> 30 days grace period, then permanently deleted</li>
                 <li><strong>Customer Data:</strong> Deleted when you delete it or 30 days after account deletion</li>
-                <li><strong>Referral Data:</strong> Retained for 7 years for tax/accounting compliance</li>
+                <li><strong>Affiliate Data:</strong> Retained for 7 years for tax/accounting compliance</li>
                 <li><strong>Payment Records:</strong> Retained for 7 years for legal/tax requirements</li>
+                <li><strong>Marketing Contacts:</strong> Deleted or suppressed within 5 business days after you or a recipient withdraws consent</li>
                 <li><strong>Logs and Analytics:</strong> Retained for 90 days, then anonymized or deleted</li>
               </ul>
               <p className="text-slate-600 mt-2">
@@ -225,6 +228,20 @@ export default function Privacy() {
               </ul>
               <p className="text-slate-600 mt-2 text-sm">
                 <strong>Important:</strong> No security system is perfect. While we strive to protect your data, we cannot guarantee absolute security.
+              </p>
+            </div>
+
+            {/* Notifiable Data Breaches (Australia) */}
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">6A. Notifiable Data Breaches (Australia)</h2>
+              <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
+                <li>We will promptly assess suspected eligible data breaches and aim to complete assessments within 30 days, as required by the Privacy Act 1988 (Cth).</li>
+                <li>If an eligible data breach is likely to result in serious harm, we will notify affected individuals and the Office of the Australian Information Commissioner (OAIC) as soon as practicable.</li>
+                <li>Notifications will include the nature of the breach, the kinds of information involved, recommended steps for individuals, and our contact details.</li>
+                <li>You must promptly inform us of any suspected breach involving data you control and cooperate with our investigation and notifications.</li>
+              </ul>
+              <p className="text-slate-600 text-sm">
+                Report incidents or concerns to <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a> using the subject line "Data Breach – Urgent".
               </p>
             </div>
 
@@ -292,8 +309,9 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">7B. Direct Marketing & Australian Spam Compliance</h2>
               <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
-                <li>We comply with the Australian Spam Act 2003 and Do Not Call Register Act 2006. Commercial electronic messages require your consent and must include a functional unsubscribe/STOP mechanism.</li>
-                <li>If you use our platform to message your customers, you are responsible for obtaining and recording their consent, honouring opt-outs immediately, and avoiding numbers on the Australian Do Not Call Register unless an exemption applies.</li>
+                <li>We comply with the Australian Spam Act 2003 and Do Not Call Register Act 2006. Commercial electronic messages require consent and must include a functional unsubscribe/STOP mechanism.</li>
+                <li>Unsubscribes must remain functional for at least 30 days and be actioned within 5 working days. We enforce this SLA in our systems.</li>
+                <li>If you use our platform to message your customers, you are responsible for obtaining and recording their consent, honouring opt-outs immediately (no later than 5 working days), and avoiding numbers on the Australian Do Not Call Register unless an exemption applies.</li>
                 <li>For EU/UK customers, direct marketing is based on consent or legitimate interests; you must provide opt-out options in every message.</li>
                 <li>Unsubscribe/opt-out instructions are included in our templates; removing them may result in suspension.</li>
               </ul>
@@ -333,7 +351,7 @@ export default function Privacy() {
               <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
                 <li><strong>Identifiers:</strong> Name, email address, IP address, unique identifiers</li>
                 <li><strong>Commercial Information:</strong> Purchase history, subscription records, commission earnings</li>
-                <li><strong>Internet Activity:</strong> Website interactions, usage patterns, referral link clicks</li>
+                <li><strong>Internet Activity:</strong> Website interactions, usage patterns, affiliate link clicks</li>
                 <li><strong>Professional Information:</strong> Business name, industry, job title (for B2B purposes)</li>
               </ul>
 
@@ -341,7 +359,7 @@ export default function Privacy() {
               <p className="text-slate-600 mb-2">We use personal information for the following business purposes:</p>
               <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
                 <li>Providing and maintaining the Service</li>
-                <li>Processing transactions and managing referral programs</li>
+                <li>Processing transactions and managing affiliate programs</li>
                 <li>Communicating with you about your account and services</li>
                 <li>Detecting, preventing, and responding to security incidents and fraud</li>
                 <li>Debugging and repairing errors</li>
@@ -415,7 +433,7 @@ export default function Privacy() {
               <p className="text-slate-600 mb-2">These cookies are necessary for the website to function and cannot be disabled:</p>
               <ul className="list-disc list-inside text-slate-600 space-y-1 mb-3">
                 <li><strong>Authentication (sb-*-auth-token):</strong> Session management and user authentication - 30 days</li>
-                <li><strong>Referral Attribution (ref_ambassador):</strong> Tracks referral source for commission attribution - 30 days</li>
+                <li><strong>Affiliate Attribution (ref_ambassador):</strong> Tracks referral source for commission attribution - 30 days</li>
                 <li><strong>Cookie Consent (referlabs_cookie_consent):</strong> Stores your cookie preferences - Persistent</li>
               </ul>
 
@@ -432,6 +450,9 @@ export default function Privacy() {
               <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.4 Marketing Cookies (Optional)</h3>
               <p className="text-slate-600 mb-3">
                 We currently do <strong>not</strong> use marketing or advertising cookies. Any future use will require your consent and will be clearly disclosed.
+              </p>
+              <p className="text-slate-600 mb-3 text-sm">
+                Where consent is legally required for non-essential cookies/local storage, we will obtain it before activation and update this policy and the banner accordingly.
               </p>
 
               <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">9.5 Managing Cookies</h3>

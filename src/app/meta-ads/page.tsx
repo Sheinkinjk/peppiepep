@@ -7,7 +7,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = generateSEOMetadata({
   title: "Meta Ads (Pixel/CAPI) | Refer Labs",
   description:
-    "Set up Meta Pixel (and optionally CAPI) without breaking referral attribution. Includes testing checkpoints to confirm dashboard attribution stays accurate.",
+    "Set up Meta Pixel (and optionally CAPI) without breaking affiliate attribution. Includes testing checkpoints to confirm dashboard attribution stays accurate.",
   url: `${SITE_URL}/meta-ads`,
 });
 
@@ -30,7 +30,7 @@ export default function MetaAdsGuidePage() {
           </div>
           <h1 className="mt-4 text-3xl font-black text-slate-900">Meta Ads (Pixel + optional CAPI)</h1>
           <p className="mt-2 text-slate-600">
-            Track marketing performance in Meta while keeping Refer Labs referral attribution accurate and server-verified.
+            Track marketing performance in Meta while keeping Refer Labs affiliate attribution accurate and server-verified.
           </p>
         </div>
 
@@ -113,8 +113,8 @@ Body:
         <Card className="p-6 rounded-2xl border border-slate-200 bg-white">
           <h2 className="text-lg font-bold text-slate-900">Testing checkpoints (do these in order)</h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-700">
-            <li>Click a real referral link in incognito and confirm the referral page loads.</li>
-            <li>Submit the referral form and confirm the signup appears in the dashboard Journey timeline.</li>
+            <li>Click a real affiliate link in incognito and confirm the affiliate page loads.</li>
+            <li>Submit the affiliate form and confirm the signup appears in the dashboard Journey timeline.</li>
             <li>Complete a test conversion using the ambassador discount code (payment/booking).</li>
             <li>Confirm the conversion appears in the dashboard attributed to the correct ambassador.</li>
             <li>Optionally confirm Meta events fire (Pixel Helper) without impacting Refer Labs attribution.</li>

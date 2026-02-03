@@ -14,19 +14,19 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-type ReferralPartnershipsCTAProps = {
+type AffiliatePartnershipsCTAProps = {
   calendlyUrl: string;
   className?: string;
   primaryLabel?: string;
   showScheduleCall?: boolean;
 };
 
-export function ReferralPartnershipsCTA({
+export function AffiliatePartnershipsCTA({
   calendlyUrl,
   className,
   primaryLabel = "Apply",
   showScheduleCall = true,
-}: ReferralPartnershipsCTAProps) {
+}: AffiliatePartnershipsCTAProps) {
   const [open, setOpen] = useState(false);
   const [company, setCompany] = useState("");
   const [contactName, setContactName] = useState("");
@@ -38,7 +38,7 @@ export function ReferralPartnershipsCTA({
 
   const mailtoHref = useMemo(() => {
     const lines = [
-      "Referral Partnerships Application",
+      "Affiliate Partnerships Application",
       "",
       `Company: ${company || "—"}`,
       `Contact: ${contactName || "—"}`,
@@ -50,7 +50,7 @@ export function ReferralPartnershipsCTA({
       `Notes: ${notes || "—"}`,
     ];
     const body = encodeURIComponent(lines.join("\n"));
-    const subject = encodeURIComponent(`Referral Partnerships | ${company || "New application"}`);
+    const subject = encodeURIComponent(`Affiliate Partnerships | ${company || "New application"}`);
     return `mailto:jarred@referlabs.com.au?subject=${subject}&body=${body}`;
   }, [company, contactName, email, goal, partnerTypes, rewardModel, notes]);
 
@@ -69,7 +69,7 @@ export function ReferralPartnershipsCTA({
         </DialogTrigger>
         <DialogContent className="max-w-xl bg-slate-950 text-white border border-cyan-500/30">
           <DialogHeader>
-            <DialogTitle>Apply for Referral Partnerships</DialogTitle>
+            <DialogTitle>Apply for Affiliate Partnerships</DialogTitle>
             <DialogDescription className="text-slate-300">
               Share your objectives and partner preferences. Your details will be emailed directly to jarred@referlabs.com.au.
             </DialogDescription>

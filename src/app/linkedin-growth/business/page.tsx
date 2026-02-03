@@ -433,7 +433,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
 
             <div className="flex flex-wrap justify-center gap-4 pt-2">
               <a
-                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                href="https://calendly.com/jarred-referlabs/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-7 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:bg-cyan-300"

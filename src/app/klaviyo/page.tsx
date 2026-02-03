@@ -76,7 +76,7 @@ export default function KlaviyoGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Add the referral link to templates</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 — Add the affiliate link to templates</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Use the ambassador’s unique link as your primary CTA. Refer Labs tracks clicks automatically via UTM tags.
               </p>
@@ -156,8 +156,8 @@ Body:
           <li>
             Send yourself a test email where the CTA uses <code className="font-mono">{"{{ person.referral_link }}"}</code>.
           </li>
-          <li>Click the link in an incognito window and confirm the referral page loads.</li>
-          <li>Submit the referral form and confirm the signup appears in the dashboard (Journey timeline).</li>
+          <li>Click the link in an incognito window and confirm the affiliate page loads.</li>
+          <li>Submit the affiliate form and confirm the signup appears in the dashboard (Journey timeline).</li>
           <li>Trigger a test conversion (discount code redemption) and confirm it attributes to the correct ambassador.</li>
         </ol>
       </Card>

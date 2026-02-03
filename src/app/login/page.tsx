@@ -419,7 +419,7 @@ function LoginContent() {
                   Set up your business
                 </h1>
                 <p className="text-sm text-slate-600">
-                  You&rsquo;re moments away from the dashboard—this info keeps your referral portal compliant and on-brand.
+                  You&rsquo;re moments away from the dashboard—this info keeps your affiliate portal compliant and on-brand.
                 </p>
               </div>
             </div>
@@ -460,7 +460,7 @@ function LoginContent() {
                   className="mt-1"
                 />
                 <p className="text-xs text-slate-500 mt-1">
-                  We use this to personalize your referral portal, contracts, and payouts.
+                  We use this to personalize your affiliate portal, contracts, and payouts.
                 </p>
               </div>
 
@@ -511,7 +511,7 @@ function LoginContent() {
                   Speak to our Concierge Team
                 </h2>
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  Every customer gets hands-on setup assistance. No sandbox. No fake data. We configure your rewards, upload your referral partners, and QA the flow before you invite anyone.
+                  Every customer gets hands-on setup assistance. No sandbox. No fake data. We configure your rewards, upload your affiliate partners, and QA the flow before you invite anyone.
                 </p>
               </div>
 
@@ -525,13 +525,13 @@ function LoginContent() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong>Full implementation</strong> — We import contacts, configure branding, and verify referral tracking.
+                    <strong>Full implementation</strong> — We import contacts, configure branding, and verify affiliate tracking.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong>Launch checklist</strong> — Final QA across referral links, discount capture, and payouts before partners log in.
+                    <strong>Launch checklist</strong> — Final QA across affiliate links, discount capture, and payouts before partners log in.
                   </p>
                 </div>
               </div>
@@ -541,7 +541,7 @@ function LoginContent() {
                 variant="outline"
                 className="w-full border-purple-200 text-purple-800 font-semibold bg-white hover:bg-purple-50"
               >
-                <Link href="https://calendly.com/jarred-referlabs/30min?month=2026-01" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                <Link href="https://calendly.com/jarred-referlabs/30min" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   Schedule a Call
                   <ArrowRight className="h-4 w-4" />
                 </Link>

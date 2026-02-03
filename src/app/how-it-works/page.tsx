@@ -79,7 +79,7 @@ const dashboardPreviews = [
     metrics: [
       { label: "Share Link", value: "Active" },
       { label: "QR Code", value: "Ready" },
-      { label: "Referrals", value: "12" },
+      { label: "Affiliates", value: "12" },
     ],
     color: "blue",
   },
@@ -115,7 +115,7 @@ const steps = [
     title: "Design Your Program",
     subtitle: "Strategy tailored to your offering",
     description:
-      "We start by understanding your goals and identifying which referral sources—customers, influencers, agencies, or advisors—fit your business. Then we design reward structures, tracking rules, and onboarding flows specific to each partner type.",
+      "We start by understanding your goals and identifying which affiliate sources—customers, influencers, agencies, or advisors—fit your business. Then we design reward structures, tracking rules, and onboarding flows specific to each partner type.",
     features: [
       {
         icon: Target,
@@ -134,9 +134,9 @@ const steps = [
     playbook: {
       title: "Example: Law Firm Setup",
       steps: [
-        "Identify 20 past clients who've sent informal referrals",
+        "Identify 20 past clients who've sent informal affiliates",
         "Set 10% revenue share on closed deals",
-        "Create branded landing page for referred prospects",
+        "Create branded landing page for affiliate prospects",
         "Configure 30-day attribution window",
       ],
     },
@@ -166,7 +166,7 @@ const steps = [
       title: "Example: Partner Activation",
       steps: [
         "Send invite email with personalized portal link",
-        "Partner logs in and sees their unique referral URL",
+        "Partner logs in and sees their unique affiliate URL",
         "One-tap share to LinkedIn, email, or WhatsApp",
         "Partner sees real-time stats in their dashboard",
       ],
@@ -181,7 +181,7 @@ const steps = [
     features: [
       {
         icon: BarChart3,
-        text: "Real-time dashboards showing referral flow from click to close",
+        text: "Real-time dashboards showing affiliate flow from click to close",
       },
       {
         icon: CheckCircle2,
@@ -196,10 +196,10 @@ const steps = [
     playbook: {
       title: "Example: Tracking Flow",
       steps: [
-        "Prospect clicks partner's referral link",
+        "Prospect clicks partner's affiliate link",
         "Cookie + UTM params captured automatically",
         "Form submission logged with full attribution",
-        "Sales team sees referral source in CRM",
+        "Sales team sees affiliate source in CRM",
       ],
     },
   },
@@ -208,7 +208,7 @@ const steps = [
     title: "Reward & Scale",
     subtitle: "Automated payouts that keep partners engaged",
     description:
-      "When a referral converts, rewards are calculated and triggered automatically. Partners receive notifications, credits update in real-time, and your finance team gets clean ledgers for every payout.",
+      "When a affiliate converts, rewards are calculated and triggered automatically. Partners receive notifications, credits update in real-time, and your finance team gets clean ledgers for every payout.",
     features: [
       {
         icon: Gift,
@@ -252,7 +252,7 @@ export default function HowItWorks() {
             How <span className="text-cyan-400">Refer Labs</span> Works
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            One unified flow powers all four offerings—customer referrals, LinkedIn activations, agency partnerships, and advisor programs.
+            One unified flow powers all four offerings—customer affiliates, LinkedIn activations, agency partnerships, and advisor programs.
           </p>
         </header>
 

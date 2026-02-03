@@ -26,7 +26,7 @@ const ROICalculator = dynamic(() => import("@/components/ROICalculator").then(mo
 const faqs = [
   {
     q: "How should I choose between Starter, Growth, and Enterprise?",
-    a: "Starter is ideal for lean teams building their first referral program. Growth adds automation, segmentation, and integrations for scaling marketing motions. Enterprise unlocks bespoke onboarding, account coverage, SLAs, and API/custom embed work for complex partner ecosystems.",
+    a: "Starter is ideal for lean teams building their first affiliate program. Growth adds automation, segmentation, and integrations for scaling marketing motions. Enterprise unlocks bespoke onboarding, account coverage, SLAs, and API/custom embed work for complex partner ecosystems.",
   },
   {
     q: "Can I move between plans later?",
@@ -37,20 +37,20 @@ const faqs = [
     a: "Every plan includes Refer Labs' tracking fabric, partner portal, analytics, compliance guardrails, and the ability to route rewards, SMS/email, and integrations without extra configuration.",
   },
   {
-    q: "What makes Referral Partnerships different?",
+    q: "What makes Affiliate Partnerships different?",
     a: "It's a premium, high-touch engagement where we map partner strategy, enable the right contributors, automate tracking and payouts, and deliver executive-ready reporting with ongoing optimization.",
   },
   {
-    q: "Is there a minimum commitment for Referral Partnerships?",
-    a: "Referral Partnerships engagements are scoped and quoted per business; they typically start with a three-month growth sprint tied to measurable KPIs, then roll into an ongoing retainer or support cadence.",
+    q: "Is there a minimum commitment for Affiliate Partnerships?",
+    a: "Affiliate Partnerships engagements are scoped and quoted per business; they typically start with a three-month growth sprint tied to measurable KPIs, then roll into an ongoing retainer or support cadence.",
   },
   {
     q: "Do I need a long-term contract?",
-    a: "Starter and Growth are month-to-month or annual. Enterprise and Referral Partnerships are scoped engagements with agreed terms.",
+    a: "Starter and Growth are month-to-month or annual. Enterprise and Affiliate Partnerships are scoped engagements with agreed terms.",
   },
   {
-    q: "Can we add Referral Partnerships to any SaaS plan?",
-    a: "Yes. Referral Partnerships is a premium add-on layered over any SaaS plan. Pricing is custom based on objectives and partner volume.",
+    q: "Can we add Affiliate Partnerships to any SaaS plan?",
+    a: "Yes. Affiliate Partnerships is a premium add-on layered over any SaaS plan. Pricing is custom based on objectives and partner volume.",
   },
   {
     q: "What integrations are included?",
@@ -93,8 +93,8 @@ const partnershipFollowUp = [
 
 const trustBadges = [
   { icon: Shield, label: "Secure infrastructure", detail: "Enterprise-grade data protection" },
-  { icon: Users, label: "Partner-first design", detail: "Built for referral programs" },
-  { icon: BarChart3, label: "Full attribution", detail: "Track every referral end-to-end" },
+  { icon: Users, label: "Partner-first design", detail: "Built for affiliate programs" },
+  { icon: BarChart3, label: "Full attribution", detail: "Track every affiliate end-to-end" },
   { icon: Zap, label: "Real-time tracking", detail: "Instant visibility into performance" },
 ];
 
@@ -112,8 +112,8 @@ export default function PricingPage() {
         subtext: "For individuals & small teams",
         idealFor: "Perfect for Customer Network programs",
         features: [
-          "Core referral tracking & attribution",
-          "Unlimited referral links",
+          "Core affiliate tracking & attribution",
+          "Unlimited affiliate links",
           "Basic partner portal",
           "Email & chat support",
           "Standard analytics dashboard",
@@ -132,7 +132,7 @@ export default function PricingPage() {
           "Everything in Starter",
           "Advanced partner segmentation",
           "Automated reward workflows",
-          "Custom referral link domains",
+          "Custom affiliate link domains",
           "CRM & marketing integrations",
           "Priority email support",
           "A/B testing for campaigns",
@@ -163,13 +163,13 @@ export default function PricingPage() {
   );
 
   const compareRows = [
-    { feature: "Core referral tracking", starter: true, growth: true, enterprise: true },
-    { feature: "Unlimited referral links", starter: true, growth: true, enterprise: true },
+    { feature: "Core affiliate tracking", starter: true, growth: true, enterprise: true },
+    { feature: "Unlimited affiliate links", starter: true, growth: true, enterprise: true },
     { feature: "Partner portal", starter: true, growth: true, enterprise: true },
     { feature: "Analytics dashboard", starter: true, growth: true, enterprise: true },
     { feature: "Advanced partner segmentation", starter: false, growth: true, enterprise: true },
     { feature: "Automated reward workflows", starter: false, growth: true, enterprise: true },
-    { feature: "Custom referral link domains", starter: false, growth: true, enterprise: true },
+    { feature: "Custom affiliate link domains", starter: false, growth: true, enterprise: true },
     { feature: "CRM integrations", starter: false, growth: true, enterprise: true },
     { feature: "A/B testing", starter: false, growth: true, enterprise: true },
     { feature: "Full API access", starter: false, growth: false, enterprise: true },
@@ -205,7 +205,7 @@ export default function PricingPage() {
     setFormError(null);
 
     try {
-      const response = await fetch("/api/referral-partnership-application", {
+      const response = await fetch("/api/affiliate-partnership-application", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(applicationData),
@@ -249,7 +249,7 @@ export default function PricingPage() {
         <Dialog open={isApplicationOpen} onOpenChange={setIsApplicationOpen}>
           <DialogContent className="max-w-2xl border border-white/10 bg-gradient-to-br from-[#07131e] via-[#0c1c29] to-[#03080f] text-slate-50 shadow-2xl shadow-black/60 max-h-[90vh] overflow-y-auto">
             <DialogHeader className="space-y-2">
-              <DialogTitle className="text-2xl font-black text-white">Referral Partnerships Application</DialogTitle>
+              <DialogTitle className="text-2xl font-black text-white">Affiliate Partnerships Application</DialogTitle>
               <DialogDescription className="text-slate-200">
                 Share a few details and we&apos;ll email the full submission to <span className="font-semibold text-white">jarred@referlabs.com.au</span>.
               </DialogDescription>
@@ -324,7 +324,7 @@ export default function PricingPage() {
                       </option>
                     ))}
                     <option value="Not yet a customer">Not yet a customer</option>
-                    <option value="Referral Partnerships">Referral Partnerships</option>
+                    <option value="Affiliate Partnerships">Affiliate Partnerships</option>
                   </select>
                 </label>
                 <label className="block text-sm font-semibold text-slate-200">
@@ -362,7 +362,7 @@ export default function PricingPage() {
 
               <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <a
-                  href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                  href="https://calendly.com/jarred-referlabs/30min"
                   target="_blank"
                   rel="noreferrer"
                   className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200 hover:text-cyan-100 transition-colors"
@@ -381,7 +381,7 @@ export default function PricingPage() {
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-100/85">
                   <p className="font-semibold text-white">Application received.</p>
                   <p className="mt-1">
-                    Next step: <a className="text-cyan-200 underline" href="https://calendly.com/jarred-referlabs/30min?month=2026-01" target="_blank" rel="noreferrer">book your call</a>.
+                    Next step: <a className="text-cyan-200 underline" href="https://calendly.com/jarred-referlabs/30min" target="_blank" rel="noreferrer">book your call</a>.
                   </p>
                 </div>
               )}
@@ -392,14 +392,14 @@ export default function PricingPage() {
         {/* Hero */}
         <header className="text-center space-y-6">
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white tracking-tight">
-            The Only Referral Platform
+            The Only Affiliate Platform
             <br />
             <span className="bg-gradient-to-r from-cyan-300 via-cyan-200 to-teal-300 bg-clip-text text-transparent">
               Built for Professional Services
             </span>
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            We guarantee you never lose attribution on a referral again. Choose the plan that matches where you are today.
+            We guarantee you never lose attribution on a affiliate again. Choose the plan that matches where you are today.
           </p>
         </header>
 
@@ -521,7 +521,7 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Referral Partnerships Section */}
+        {/* Affiliate Partnerships Section */}
         <section className="relative overflow-hidden rounded-[2rem] border-2 border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 via-white/8 to-white/4 p-6 sm:p-10 lg:p-14 shadow-2xl shadow-cyan-500/20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(0,210,190,0.15),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(92,225,230,0.12),transparent_50%)]" />
           <div className="relative z-10 space-y-10">
@@ -531,7 +531,7 @@ export default function PricingPage() {
                 <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">Premium Offering</span>
               </div>
               <h2 className="text-balance text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-                Referral Partnerships
+                Affiliate Partnerships
               </h2>
               <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-medium">
                 Go beyond software. Get a dedicated team that sources partners, designs campaigns, manages outreach, and delivers executive-ready ROI reporting.
@@ -554,7 +554,7 @@ export default function PricingPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                href="https://calendly.com/jarred-referlabs/30min"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 px-8 py-4 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition-all hover:from-cyan-300 hover:to-cyan-200 gap-2"
@@ -564,7 +564,7 @@ export default function PricingPage() {
               </a>
               <button
                 type="button"
-                onClick={() => openApplication("Referral Partnerships")}
+                onClick={() => openApplication("Affiliate Partnerships")}
                 className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
               >
                 Apply Now
@@ -638,7 +638,7 @@ export default function PricingPage() {
           <div className="text-center space-y-4">
             <h2 className="text-3xl sm:text-4xl font-black text-white">How Much Revenue Are You Losing?</h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              Model your current attribution gap and calculate what systematic referrals could generate in 90 days.
+              Model your current attribution gap and calculate what systematic affiliates could generate in 90 days.
             </p>
           </div>
 
@@ -723,14 +723,14 @@ export default function PricingPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(87,230,255,0.12),transparent_40%),radial-gradient(circle_at_75%_15%,rgba(10,186,181,0.12),transparent_45%)]" />
           <div className="relative z-10 space-y-6 max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-              Stop Losing Referral Revenue to Attribution Gaps
+              Stop Losing Affiliate Revenue to Attribution Gaps
             </h2>
             <p className="text-base sm:text-lg text-slate-200">
-              We guarantee you never lose attribution on a referral again. Every partner credited. Every deal tracked. Every dollar attributed.
+              We guarantee you never lose attribution on a affiliate again. Every partner credited. Every deal tracked. Every dollar attributed.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <button
-                onClick={() => openApplication("Referral Partnerships")}
+                onClick={() => openApplication("Affiliate Partnerships")}
                 className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 text-slate-900 px-8 py-4 text-sm font-semibold hover:from-cyan-300 hover:to-cyan-200 transition-all shadow-lg shadow-cyan-500/20 gap-2"
               >
                 Start Your Application

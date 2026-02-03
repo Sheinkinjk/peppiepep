@@ -15,14 +15,14 @@ import {
 import Link from "next/link";
 
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
-import { ReferralPartnershipsCTA } from "@/components/marketing/ReferralPartnershipsCTA";
+import { AffiliatePartnershipsCTA } from "@/components/marketing/AffiliatePartnershipsCTA";
 
-export const metadata = generateSEOMetadata(seoConfig.referralPartnerships);
+export const metadata = generateSEOMetadata(seoConfig.affiliatePartnerships);
 export const revalidate = 3600;
 
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
 
-export default function ReferralPartnershipsPage() {
+export default function AffiliatePartnershipsPage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
       {/* Subtle background effects */}
@@ -40,13 +40,13 @@ export default function ReferralPartnershipsPage() {
             Your Most Powerful Growth Channel
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We help professional services firms build referral programs across four channels: customer networks,
+            We help professional services firms build affiliate programs across four channels: customer networks,
             LinkedIn influencers, agency partners, and trusted consultants—with full attribution, compliance, and payouts your finance team can defend.
           </p>
           <div className="pt-4">
-            <ReferralPartnershipsCTA
+            <AffiliatePartnershipsCTA
               calendlyUrl={calendlyUrl}
-              primaryLabel="Apply for Referral Partnerships"
+              primaryLabel="Apply for Affiliate Partnerships"
               showScheduleCall={true}
             />
           </div>
@@ -56,10 +56,10 @@ export default function ReferralPartnershipsPage() {
         <section className="mb-24 space-y-16">
           <div className="text-center space-y-4">
             <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Referral Programs We Support
+              Affiliate Programs We Support
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              All four referral offerings—from turning happy customers into advocates to activating trusted experts
+              All four affiliate offerings—from turning happy customers into advocates to activating trusted experts
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export default function ReferralPartnershipsPage() {
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
-                  How Customer Network Referral Programs Work
+                  How Customer Network Affiliate Programs Work
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -119,7 +119,7 @@ export default function ReferralPartnershipsPage() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-slate-400">Referrals sent</span>
+                    <span className="text-slate-400">Affiliates sent</span>
                     <span className="font-bold text-white">14</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-white/10">
@@ -156,7 +156,7 @@ export default function ReferralPartnershipsPage() {
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
-                  How Referral Partnerships Work With Influencers
+                  How Affiliate Partnerships Work With Influencers
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -268,19 +268,19 @@ export default function ReferralPartnershipsPage() {
               <p className="text-slate-300 leading-relaxed">
                 Agencies and strategic partners already have relationships with your target customers.
                 They're not competing—they're complementing. When they refer a client to you,
-                everyone wins: the client gets a trusted recommendation, the partner earns rewards,
+                everyone wins: the client gets a trusted affiliate, the partner earns rewards,
                 and you get a warm introduction.
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
-                  How Referral Partnerships Work With Agencies
+                  How Affiliate Partnerships Work With Agencies
                 </p>
                 <ul className="space-y-3">
                   {[
                     "We help you identify agencies serving your ideal customers",
-                    "Partners get co-branded materials and dedicated referral portals",
-                    "Each referral is tracked from introduction through to closed revenue",
-                    "Tiered reward structures incentivize higher-value and volume referrals",
+                    "Partners get co-branded materials and dedicated affiliate portals",
+                    "Each affiliate is tracked from introduction through to closed revenue",
+                    "Tiered reward structures incentivize higher-value and volume affiliates",
                     "Quarterly reviews optimize the partnership for both sides",
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-slate-300">
@@ -311,20 +311,20 @@ export default function ReferralPartnershipsPage() {
                 Trusted Experts Who Guide Buying Decisions
               </h3>
               <p className="text-slate-300 leading-relaxed">
-                Consultants and advisors are hired specifically for their expertise and recommendations.
+                Consultants and advisors are hired specifically for their expertise and affiliates.
                 When a fractional CFO suggests a financial tool, or a marketing consultant recommends
                 a platform, their clients trust that guidance implicitly. That trust is gold—and
                 it's trackable.
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
-                  How Referral Partnerships Work With Consultants
+                  How Affiliate Partnerships Work With Consultants
                 </p>
                 <ul className="space-y-3">
                   {[
                     "We onboard consultants with briefs explaining your value proposition",
                     "They share unique links when recommending solutions to their clients",
-                    "Referrals are tracked discreetly—no awkward commission conversations",
+                    "Affiliates are tracked discreetly—no awkward commission conversations",
                     "Consultants earn per-deal fees or ongoing revenue share",
                     "Compliance disclosures are built into the workflow automatically",
                   ].map((item, idx) => (
@@ -339,7 +339,7 @@ export default function ReferralPartnershipsPage() {
                 <p className="text-sm text-slate-400">
                   <span className="text-white font-medium">Example outcome:</span>{" "}
                   A legal tech startup activated 25 law firm consultants. These advisors made
-                  recommendations during existing client engagements, resulting in 89 enterprise
+                  affiliates during existing client engagements, resulting in 89 enterprise
                   trials with a 42% close rate.
                 </p>
               </div>
@@ -348,11 +348,11 @@ export default function ReferralPartnershipsPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-teal-500/10 rounded-3xl blur-3xl" />
               <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 space-y-6">
                 <p className="text-sm font-semibold text-emerald-300 uppercase tracking-wide">
-                  Consultant Referral Journey
+                  Consultant Affiliate Journey
                 </p>
                 <div className="space-y-4">
                   {[
-                    { step: "1", title: "Client asks for recommendation", desc: "During a strategy session or engagement" },
+                    { step: "1", title: "Client asks for affiliate", desc: "During a strategy session or engagement" },
                     { step: "2", title: "Consultant shares tracked link", desc: "Personalized URL with attribution built in" },
                     { step: "3", title: "Client books demo or signs up", desc: "Event captured with full context" },
                     { step: "4", title: "Deal closes, reward triggers", desc: "Automatic payout based on agreed terms" },
@@ -381,7 +381,7 @@ export default function ReferralPartnershipsPage() {
                 Why Partner-Led Growth Outperforms
               </h2>
               <p className="text-slate-400">
-                The math is simple: trusted recommendations convert better and cost less.
+                The math is simple: trusted affiliates convert better and cost less.
               </p>
             </div>
 
@@ -392,7 +392,7 @@ export default function ReferralPartnershipsPage() {
                 </div>
                 <p className="text-white font-medium">Higher Conversion Rate</p>
                 <p className="text-sm text-slate-400">
-                  Warm referrals close at dramatically higher rates than cold outbound
+                  Warm affiliates close at dramatically higher rates than cold outbound
                 </p>
               </div>
               <div className="space-y-3">
@@ -485,7 +485,7 @@ export default function ReferralPartnershipsPage() {
                   { num: "1", title: "Apply", desc: "Share your goals and ideal partner profile" },
                   { num: "2", title: "Strategy", desc: "We design your partner program and reward structure" },
                   { num: "3", title: "Activate", desc: "Partners are onboarded with tracked links" },
-                  { num: "4", title: "Grow", desc: "Watch referrals flow into your pipeline" },
+                  { num: "4", title: "Grow", desc: "Watch affiliates flow into your pipeline" },
                 ].map((step) => (
                   <div key={step.num} className="text-center">
                     <div className="relative inline-flex items-center justify-center h-16 w-16 rounded-full bg-slate-900 border-2 border-cyan-500/50 mb-4">
@@ -515,7 +515,7 @@ export default function ReferralPartnershipsPage() {
                   Are You Wanting More Leads?
                 </h2>
                 <p className="text-slate-300 leading-relaxed">
-                  Beyond helping you build referral programs, we can source relevant partners and qualified leads for your business. Our team identifies and vets prospects that match your ideal customer profile, then delivers their details directly to you.
+                  Beyond helping you build affiliate programs, we can source relevant partners and qualified leads for your business. Our team identifies and vets prospects that match your ideal customer profile, then delivers their details directly to you.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-slate-300">
@@ -595,7 +595,7 @@ export default function ReferralPartnershipsPage() {
             <div className="space-y-4">
               {[
                 {
-                  q: "How are referrals tracked end-to-end?",
+                  q: "How are affiliates tracked end-to-end?",
                   a: "Every partner gets unique links tied to your landing pages and CTAs. All events—clicks, form submissions, demos, conversions, and revenue—carry partner, campaign, and link IDs into our Measure ROI dashboard.",
                 },
                 {
@@ -612,7 +612,7 @@ export default function ReferralPartnershipsPage() {
                 },
                 {
                   q: "How long until I see results?",
-                  a: "Most programs see initial referrals within 2-4 weeks of partner activation. The exact timeline depends on your sales cycle length and how quickly partners start sharing.",
+                  a: "Most programs see initial affiliates within 2-4 weeks of partner activation. The exact timeline depends on your sales cycle length and how quickly partners start sharing.",
                 },
               ].map((faq) => (
                 <details
@@ -644,12 +644,12 @@ export default function ReferralPartnershipsPage() {
               </h2>
               <p className="text-lg text-slate-300">
                 Tell us about your goals and ideal partners. We'll show you exactly how
-                referral partnerships can become your most efficient growth channel.
+                affiliate partnerships can become your most efficient growth channel.
               </p>
               <div className="pt-4">
-                <ReferralPartnershipsCTA
+                <AffiliatePartnershipsCTA
                   calendlyUrl={calendlyUrl}
-                  primaryLabel="Apply for Referral Partnerships"
+                  primaryLabel="Apply for Affiliate Partnerships"
                   showScheduleCall={true}
                 />
               </div>

@@ -25,22 +25,22 @@ type FAQSection = {
 const faqSections: FAQSection[] = [
   {
     id: "platform",
-    title: "Referral Program Platform",
+    title: "Affiliate Program Platform",
     subtitle: "Setup, links, attribution, rewards, and ambassador management",
     icon: Settings,
     iconColor: "text-cyan-500",
     questions: [
       {
         q: "What is Refer Labs and who is it designed for?",
-        a: "Refer Labs is a referral intelligence platform built for growth-focused businesses across professional services, SaaS, and B2B sectors. It transforms your existing relationships—clients, partners, creators, and advisors—into a fully tracked, rewarded referral channel. Every referral is attributed, every conversion is measured, and every payout is defensible."
+        a: "Refer Labs is a affiliate intelligence platform built for growth-focused businesses across professional services, SaaS, and B2B sectors. It transforms your existing relationships—clients, partners, creators, and advisors—into a fully tracked, rewarded affiliate channel. Every affiliate is attributed, every conversion is measured, and every payout is defensible."
       },
       {
-        q: "How quickly can I launch a referral program?",
-        a: "Most businesses are live within 48-72 hours. Complete the signup flow, configure your branding and reward structure, import your initial partner list, and start generating tracked referral links immediately. Our concierge team handles the technical setup so you can focus on strategy."
+        q: "How quickly can I launch a affiliate program?",
+        a: "Most businesses are live within 48-72 hours. Complete the signup flow, configure your branding and reward structure, import your initial partner list, and start generating tracked affiliate links immediately. Our concierge team handles the technical setup so you can focus on strategy."
       },
       {
-        q: "How are referral links generated and tracked?",
-        a: "Each ambassador or partner receives a unique referral URL with embedded tracking parameters. When someone clicks that link, we capture the source, set a 30-day attribution cookie, and track their journey through signup, demo booking, or purchase. All events are logged in real-time with full audit trails."
+        q: "How are affiliate links generated and tracked?",
+        a: "Each ambassador or partner receives a unique affiliate URL with embedded tracking parameters. When someone clicks that link, we capture the source, set a 30-day attribution cookie, and track their journey through signup, demo booking, or purchase. All events are logged in real-time with full audit trails."
       },
       {
         q: "What reward structures are supported?",
@@ -55,8 +55,8 @@ const faqSections: FAQSection[] = [
         a: "The Partners panel lets you import contacts via CSV, manual entry, or CRM sync. Tag ambassadors by tier (VIP, standard, new), assign them to specific campaigns, and set individual reward overrides. Each partner gets their own dashboard showing clicks, conversions, and earnings."
       },
       {
-        q: "Is there an approval workflow for referrals?",
-        a: "Yes. All referrals enter a pending state by default. You review each submission, verify legitimacy, confirm the purchase or conversion occurred, then approve or reject. Partners only receive credit for verified, approved referrals—giving you full control over payout accuracy."
+        q: "Is there an approval workflow for affiliates?",
+        a: "Yes. All affiliates enter a pending state by default. You review each submission, verify legitimacy, confirm the purchase or conversion occurred, then approve or reject. Partners only receive credit for verified, approved affiliates—giving you full control over payout accuracy."
       },
       {
         q: "How are payouts processed?",
@@ -66,13 +66,13 @@ const faqSections: FAQSection[] = [
   },
   {
     id: "partnerships",
-    title: "Referral Partnerships",
+    title: "Affiliate Partnerships",
     subtitle: "Creators, advisors, LinkedIn influencers, and managed partnerships",
     icon: Handshake,
     iconColor: "text-purple-500",
     questions: [
       {
-        q: "What types of referral partners does Refer Labs support?",
+        q: "What types of affiliate partners does Refer Labs support?",
         a: "We facilitate partnerships across four categories: LinkedIn influencers and thought leaders, agencies and strategic partners, consultants and fractional executives, and existing customers or clients. Each partner type has different motivations and audiences—we help you structure the right offer for each."
       },
       {
@@ -110,7 +110,7 @@ const faqSections: FAQSection[] = [
     questions: [
       {
         q: "How do LinkedIn creator partnerships work?",
-        a: "We identify LinkedIn creators whose audiences match your ideal customer profile. Each creator receives a tracked referral link and creates content (posts, carousels, videos) that authentically introduces your product to their followers. Every click, demo, and conversion is attributed back to the specific creator."
+        a: "We identify LinkedIn creators whose audiences match your ideal customer profile. Each creator receives a tracked affiliate link and creates content (posts, carousels, videos) that authentically introduces your product to their followers. Every click, demo, and conversion is attributed back to the specific creator."
       },
       {
         q: "What types of LinkedIn partners do you activate?",
@@ -141,17 +141,17 @@ const faqSections: FAQSection[] = [
   {
     id: "implementation-support",
     title: "Implementation & Launch Support",
-    subtitle: "Guided setup across all four referral program types",
+    subtitle: "Guided setup across all four affiliate program types",
     icon: Sparkles,
     iconColor: "text-amber-500",
     questions: [
       {
         q: "What implementation support is included for each offering?",
-        a: "We provide guided implementation across all four program types: For Customer Networks, we help configure ambassador portals, tracking links, and reward automation. For LinkedIn Influencers, we provide guidance on creator sourcing, campaign tracking setup, and content workflows. For Agencies & Partners, we assist with revenue-share structure design and partner onboarding. For Consultants & Advisors, we help build compliant referral flows with proper disclosures. You maintain control; we provide expert guidance."
+        a: "We provide guided implementation across all four program types: For Customer Networks, we help configure ambassador portals, tracking links, and reward automation. For LinkedIn Influencers, we provide guidance on creator sourcing, campaign tracking setup, and content workflows. For Agencies & Partners, we assist with revenue-share structure design and partner onboarding. For Consultants & Advisors, we help build compliant affiliate flows with proper disclosures. You maintain control; we provide expert guidance."
       },
       {
-        q: "How do I launch a Customer Network referral program?",
-        a: "The platform guides you through configuring branded ambassador portals, generating unique tracking links for each client, setting up reward automation (flat fees, percentage, or tiered), importing your customer list, and training your team on the dashboard. Most customer referral programs launch within 5-7 days with our setup documentation."
+        q: "How do I launch a Customer Network affiliate program?",
+        a: "The platform guides you through configuring branded ambassador portals, generating unique tracking links for each client, setting up reward automation (flat fees, percentage, or tiered), importing your customer list, and training your team on the dashboard. Most customer affiliate programs launch within 5-7 days with our setup documentation."
       },
       {
         q: "How does LinkedIn Influencer activation work?",
@@ -162,8 +162,8 @@ const faqSections: FAQSection[] = [
         a: "The platform enables you to design partner tier structures, create co-branded materials, configure revenue-share tracking, provide partner portals with real-time deal visibility, and establish quarterly reporting workflows. Setup guides help with initial partner outreach and onboarding."
       },
       {
-        q: "How do Consultant & Advisor referral programs work?",
-        a: "The platform provides referral flows tailored for trusted advisors—discreet tracking, compliance disclosure templates, per-deal or recurring payout configurations, and professional onboarding experiences. The system ensures the program respects the advisor-client relationship while providing full attribution."
+        q: "How do Consultant & Advisor affiliate programs work?",
+        a: "The platform provides affiliate flows tailored for trusted advisors—discreet tracking, compliance disclosure templates, per-deal or recurring payout configurations, and professional onboarding experiences. The system ensures the program respects the advisor-client relationship while providing full attribution."
       },
       {
         q: "What support is available after launch?",
@@ -171,7 +171,7 @@ const faqSections: FAQSection[] = [
       },
       {
         q: "What integrations are available across all program types?",
-        a: "The platform integrates with Salesforce, HubSpot, Stripe, Shopify, Calendly, and other platforms. Referral events, conversion data, and payout information sync automatically across all four program types—giving your team a unified view of partner-driven revenue."
+        a: "The platform integrates with Salesforce, HubSpot, Stripe, Shopify, Calendly, and other platforms. Affiliate events, conversion data, and payout information sync automatically across all four program types—giving your team a unified view of partner-driven revenue."
       }
     ]
   },
@@ -183,7 +183,7 @@ const faqSections: FAQSection[] = [
     iconColor: "text-rose-500",
     questions: [
       {
-        q: "Are referral partnerships considered advertising?",
+        q: "Are affiliate partnerships considered advertising?",
         a: "Yes. When someone promotes a product in exchange for compensation—whether cash, credits, or other rewards—that constitutes commercial endorsement. All partnerships facilitated through Refer Labs are performance-based marketing relationships subject to advertising regulations including FTC guidelines, ASA standards, and platform-specific policies."
       },
       {
@@ -208,15 +208,15 @@ const faqSections: FAQSection[] = [
       },
       {
         q: "What anti-fraud measures are in place?",
-        a: "We implement duplicate detection for emails and phone numbers, IP-based click validation, conversion verification workflows, and anomaly detection for suspicious patterns. All referrals require manual approval before payouts, giving you the final say on legitimacy."
+        a: "We implement duplicate detection for emails and phone numbers, IP-based click validation, conversion verification workflows, and anomaly detection for suspicious patterns. All affiliates require manual approval before payouts, giving you the final say on legitimacy."
       },
       {
         q: "Are there restrictions on what can be promoted through Refer Labs?",
         a: "Yes. We prohibit promotion of illegal products or services, misleading health claims, unregistered securities, gambling (where prohibited), and content that violates platform terms of service. Partnerships involving regulated industries (financial services, healthcare, etc.) require additional compliance review."
       },
       {
-        q: "How should referral rewards be treated for tax purposes?",
-        a: "Referral rewards and commissions are generally taxable income for recipients. Partners are responsible for reporting earnings to relevant tax authorities. For US partners earning over $600 annually, businesses may need to issue 1099 forms. Consult with a tax professional for guidance specific to your situation."
+        q: "How should affiliate rewards be treated for tax purposes?",
+        a: "Affiliate rewards and commissions are generally taxable income for recipients. Partners are responsible for reporting earnings to relevant tax authorities. For US partners earning over $600 annually, businesses may need to issue 1099 forms. Consult with a tax professional for guidance specific to your situation."
       }
     ]
   },
@@ -229,11 +229,11 @@ const faqSections: FAQSection[] = [
     questions: [
       {
         q: "What data is tracked in the Refer Labs dashboard?",
-        a: "The dashboard tracks the complete referral lifecycle: link clicks, page views, form submissions, demo bookings, meeting attendance, purchases, subscription activations, and revenue generated. Each event is timestamped, attributed to the source partner, and logged with full context (device, location, UTM parameters)."
+        a: "The dashboard tracks the complete affiliate lifecycle: link clicks, page views, form submissions, demo bookings, meeting attendance, purchases, subscription activations, and revenue generated. Each event is timestamped, attributed to the source partner, and logged with full context (device, location, UTM parameters)."
       },
       {
         q: "How does attribution logic work?",
-        a: "Attribution uses a 30-day cookie window by default (configurable). When someone clicks a referral link, we set a first-party cookie and store the partner ID. All subsequent conversions within the attribution window are credited to that partner. Last-click attribution is standard; multi-touch models are available for enterprise accounts."
+        a: "Attribution uses a 30-day cookie window by default (configurable). When someone clicks a affiliate link, we set a first-party cookie and store the partner ID. All subsequent conversions within the attribution window are credited to that partner. Last-click attribution is standard; multi-touch models are available for enterprise accounts."
       },
       {
         q: "What conversion events can be tracked?",
@@ -245,11 +245,11 @@ const faqSections: FAQSection[] = [
       },
       {
         q: "What does the reward and payout workflow look like?",
-        a: "When a conversion occurs, the system calculates the reward based on campaign rules and logs it to the partner's pending balance. You review and approve (or reject) the referral. Approved rewards move to the partner's available balance. Payouts are processed on your defined schedule—monthly is typical—with a configurable hold period."
+        a: "When a conversion occurs, the system calculates the reward based on campaign rules and logs it to the partner's pending balance. You review and approve (or reject) the affiliate. Approved rewards move to the partner's available balance. Payouts are processed on your defined schedule—monthly is typical—with a configurable hold period."
       },
       {
         q: "What reporting and export options are available?",
-        a: "Export referral data, conversion logs, partner performance, and payout ledgers to CSV or Excel. Scheduled summary emails deliver KPI snapshots to stakeholders automatically. The ROI module calculates acquisition cost, partner contribution, and revenue impact for executive reporting."
+        a: "Export affiliate data, conversion logs, partner performance, and payout ledgers to CSV or Excel. Scheduled summary emails deliver KPI snapshots to stakeholders automatically. The ROI module calculates acquisition cost, partner contribution, and revenue impact for executive reporting."
       },
       {
         q: "What admin controls are available?",
@@ -261,7 +261,7 @@ const faqSections: FAQSection[] = [
       },
       {
         q: "How does Refer Labs integrate with my existing analytics stack?",
-        a: "We integrate with Google Analytics, Segment, Mixpanel, and other analytics platforms via webhooks and APIs. Referral source data can be passed as UTM parameters or custom properties, allowing you to see partner-attributed traffic alongside your other acquisition channels."
+        a: "We integrate with Google Analytics, Segment, Mixpanel, and other analytics platforms via webhooks and APIs. Affiliate source data can be passed as UTM parameters or custom properties, allowing you to see partner-attributed traffic alongside your other acquisition channels."
       }
     ]
   }
@@ -467,7 +467,7 @@ export default function FAQPage() {
               <h3 className="font-semibold text-white mb-3">Product</h3>
               <ul className="space-y-2 text-slate-400">
                 <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
-                <li><Link href="/referral-partnerships" className="hover:text-white transition-colors">Referral Partnerships</Link></li>
+                <li><Link href="/affiliate-partnerships" className="hover:text-white transition-colors">Affiliate Partnerships</Link></li>
                 <li><Link href="/linkedin-growth" className="hover:text-white transition-colors">LinkedIn Growth</Link></li>
               </ul>
             </div>
@@ -475,7 +475,7 @@ export default function FAQPage() {
               <h3 className="font-semibold text-white mb-3">Resources</h3>
               <ul className="space-y-2 text-slate-400">
                 <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
-                <li><Link href="/our-referral-program" className="hover:text-white transition-colors">Ambassador Program</Link></li>
+                <li><Link href="/our-affiliate-program" className="hover:text-white transition-colors">Ambassador Program</Link></li>
                 <li><Link href="/api-guide" className="hover:text-white transition-colors">API Guide</Link></li>
               </ul>
             </div>

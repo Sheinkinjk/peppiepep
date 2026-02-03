@@ -9,7 +9,7 @@ export default function Header() {
         <div>
           <p className="text-base font-semibold text-slate-900">Refer Labs</p>
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-purple-700">
-            Referrals OS
+            Affiliates OS
           </p>
         </div>
       </Link>

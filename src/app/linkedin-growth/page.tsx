@@ -86,7 +86,7 @@ const businessGoals = [
   },
   {
     title: "Enterprise Introductions",
-    description: "Access decision-makers at target accounts through warm referrals from their trusted network.",
+    description: "Access decision-makers at target accounts through warm affiliates from their trusted network.",
     metric: "Typical: 40%+ reply rate",
     icon: Building2,
   },
@@ -140,7 +140,7 @@ const processSteps = [
     title: "Creator Onboarding",
     description: "Selected creators receive their partnership kit—tracking links, brand materials, content guidelines, and payout terms.",
     activities: [
-      "Provision unique tracked referral links",
+      "Provision unique tracked affiliate links",
       "Share brand assets and messaging playbook",
       "Configure dashboard access for creators",
       "Brief creators on product and value proposition",
@@ -180,7 +180,7 @@ const faqData = [
     questions: [
       {
         q: "How does attribution and tracking work?",
-        a: "Every creator gets a unique referral link. When someone clicks that link, we set a 30-day attribution cookie. If they sign up, book a demo, or make a purchase within that window, the conversion is automatically credited to the creator. You see real-time analytics: click-through rates, conversion rates, revenue per creator, and ROI. All tracking is transparent and auditable in your dashboard."
+        a: "Every creator gets a unique affiliate link. When someone clicks that link, we set a 30-day attribution cookie. If they sign up, book a demo, or make a purchase within that window, the conversion is automatically credited to the creator. You see real-time analytics: click-through rates, conversion rates, revenue per creator, and ROI. All tracking is transparent and auditable in your dashboard."
       },
       {
         q: "What counts as a conversion?",
@@ -210,7 +210,7 @@ const faqData = [
       },
       {
         q: "How do you prevent fake engagement or fraud?",
-        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique referral links with server-side validation. Businesses see full attribution data—click sources, conversion rates, and customer quality—so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
+        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique affiliate links with server-side validation. Businesses see full attribution data—click sources, conversion rates, and customer quality—so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
       }
     ]
   },
@@ -347,7 +347,7 @@ export default function LinkedInGrowthPage() {
                 </p>
                 <p>
                   When someone they trust mentions your product, it doesn't feel like advertising—it
-                  feels like a referral from a colleague. <span className="text-cyan-300 font-medium">That's the difference between interrupting and being introduced.</span>
+                  feels like an affiliate from a colleague. <span className="text-cyan-300 font-medium">That's the difference between interrupting and being introduced.</span>
                 </p>
                 <p>
                   Creator-led campaigns consistently outperform cold outbound in B2B because trust
@@ -359,7 +359,7 @@ export default function LinkedInGrowthPage() {
             <div className="space-y-4">
               {[
                 { label: "B2B buyers who research independently before sales contact", value: "87%", color: "text-cyan-400", source: "Gartner" },
-                { label: "Higher conversion rate from referrals vs. cold outbound", value: "3-5x", color: "text-emerald-400", source: "Industry data" },
+                { label: "Higher conversion rate from affiliates vs. cold outbound", value: "3-5x", color: "text-emerald-400", source: "Industry data" },
                 { label: "B2B marketers reporting ROI from influencer partnerships", value: "89%", color: "text-purple-400", source: "TopRank Marketing 2024" },
                 { label: "Lower CAC with performance-based partnerships", value: "40%", color: "text-amber-400", source: "Refer Labs clients" }
               ].map((stat) => (

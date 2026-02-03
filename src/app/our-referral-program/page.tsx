@@ -349,9 +349,9 @@ async function submitPartnerApplication(formData: FormData) {
                     <p style="margin:0 0 8px;font-weight:600;color:#065f46;">✅ What's Next?</p>
                     <ul style="margin:0;padding-left:20px;color:#065f46;font-size:14px;line-height:1.8;">
                       <li>We'll review your application details</li>
-                      <li>If approved, you'll receive your unique referral link</li>
+                      <li>If approved, you'll receive your unique affiliate link</li>
                       <li>You'll get access to partner marketing resources</li>
-                      <li>Start earning 25% recurring revenue on every referral</li>
+                      <li>Start earning 25% recurring revenue on every affiliate</li>
                     </ul>
                   </div>
 
@@ -387,7 +387,7 @@ async function submitPartnerApplication(formData: FormData) {
           body: JSON.stringify({
             from: "Refer Labs Partner Program <jarred@referlabs.com.au>",
             to: ["jarred@referlabs.com.au"],
-            subject: `New referral program applicant: ${fallbackName}`,
+            subject: `New affiliate program applicant: ${fallbackName}`,
             html: `
             <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
               <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
@@ -475,7 +475,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
               <span className="text-[#0a4b53]">For Every Client You Refer</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Join our partner program and earn passive income by introducing businesses to the world&rsquo;s most elegant referral platform.
+              Join our partner program and earn passive income by introducing businesses to the world&rsquo;s most elegant affiliate platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="#apply">
@@ -497,7 +497,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
               Partner Program Benefits
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The most generous partner program in the referral marketing industry
+              The most generous partner program in the affiliate marketing industry
             </p>
           </div>
 
@@ -582,7 +582,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
               What You&apos;ll Be Promoting
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The world&rsquo;s most elegant referral marketing platform for premium businesses
+              The world&rsquo;s most elegant affiliate marketing platform for premium businesses
             </p>
           </div>
 
@@ -595,7 +595,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Automated Ambassador Programs</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Businesses turn their best customers into brand ambassadors with personalized referral links, discount codes, and automated tracking.
+                  Businesses turn their best customers into brand ambassadors with personalized affiliate links, discount codes, and automated tracking.
                 </p>
               </div>
             </Card>
@@ -621,7 +621,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">White-Glove Onboarding</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Every client gets personalized setup, custom integrations, and ongoing support - making your referrals sticky and profitable.
+                  Every client gets personalized setup, custom integrations, and ongoing support - making your affiliates sticky and profitable.
                 </p>
               </div>
             </Card>
@@ -647,7 +647,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
                 1
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Apply & Get Approved</h3>
-              <p className="text-sm text-slate-600">Submit your application and receive your unique referral link</p>
+              <p className="text-sm text-slate-600">Submit your application and receive your unique affiliate link</p>
             </div>
 
             <div className="text-center">
@@ -655,7 +655,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
                 2
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Share Your Link</h3>
-              <p className="text-sm text-slate-600">Introduce businesses to Refer Labs using your personalized referral link</p>
+              <p className="text-sm text-slate-600">Introduce businesses to Refer Labs using your personalized affiliate link</p>
             </div>
 
             <div className="text-center">
@@ -663,7 +663,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
                 3
               </div>
               <h3 className="font-bold text-slate-900 mb-2">They Sign Up</h3>
-              <p className="text-sm text-slate-600">Your referral becomes a paying customer with our white-glove onboarding</p>
+              <p className="text-sm text-slate-600">Your affiliate becomes a paying customer with our white-glove onboarding</p>
             </div>
 
             <div className="text-center">
@@ -848,9 +848,9 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
                     <p className="font-semibold text-white mb-1">What happens after you apply:</p>
                   <ul className="text-sm text-slate-300 space-y-1">
                     <li>• We&rsquo;ll review your application within 24 hours</li>
-                    <li>• Upon approval, receive your unique referral link & discount code</li>
+                    <li>• Upon approval, receive your unique affiliate link & discount code</li>
                     <li>• Access to partner resources and marketing materials</li>
-                    <li>• Start earning 25% recurring revenue on every referral</li>
+                    <li>• Start earning 25% recurring revenue on every affiliate</li>
                     <li>• Edit every field again inside Step 2 → Edit Program Settings</li>
                   </ul>
                   </div>

@@ -34,14 +34,14 @@ const partnerSegments = [
     icon: Share2,
     title: "Your Happy Clients",
     description:
-      "Your clients already trust you. Give them a reason to refer—and track every introduction to closed revenue.",
+      "Your clients already trust you. Give them a reason to refer—and track every affiliate to closed revenue.",
     metrics: "65% faster close rate vs cold leads",
   },
   {
     icon: Users,
     title: "LinkedIn Influencers",
     description:
-      "Activate thought leaders who reach thousands of your ideal prospects daily. Full attribution on every referral.",
+      "Activate thought leaders who reach thousands of your ideal prospects daily. Full attribution on every affiliate.",
     metrics: "3-5x conversion vs paid ads",
   },
   {
@@ -55,7 +55,7 @@ const partnerSegments = [
     icon: Briefcase,
     title: "Trusted Advisors",
     description:
-      "Accountants, consultants, and advisors who guide buying decisions. Discreet, professional referral programs.",
+      "Accountants, consultants, and advisors who guide buying decisions. Discreet, professional affiliate programs.",
     metrics: "2x higher lifetime value",
   },
 ];
@@ -72,7 +72,7 @@ const faqs = [
       "Four types: existing clients, LinkedIn influencers, strategic partners (agencies, complementary services), and trusted advisors (accountants, consultants). Each gets unique tracking and tailored reward structures.",
   },
   {
-    question: "How do you track referrals?",
+    question: "How do you track affiliates?",
     answer:
       "Unique links with full attribution—from click to closed deal. Real-time dashboards show exactly which partners drive revenue.",
   },
@@ -196,7 +196,7 @@ function ApplyDialog({ sourcePage }: { sourcePage: string }) {
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle>Apply for a Referral Program</DialogTitle>
+              <DialogTitle>Apply for an Affiliate Program</DialogTitle>
               <DialogDescription className="text-slate-300">
                 Share your objectives and partner preferences. Our team will be in touch soon.
               </DialogDescription>
@@ -361,7 +361,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Four Ways to{" "}
               <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
-                Drive Referrals
+                Drive Affiliates
               </span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-300 text-lg">
@@ -403,7 +403,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
               Launch in Weeks, Not Months
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-300">
-              Most clients see their first referral-driven leads within 30 days
+              Most clients see their first affiliate-driven leads within 30 days
             </p>
           </div>
 
@@ -425,7 +425,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
                 step: "3",
                 title: "Start Growing",
                 description:
-                  "Activate partners, track every referral, and watch your pipeline fill with warm leads.",
+                  "Activate partners, track every affiliate, and watch your pipeline fill with warm leads.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center">

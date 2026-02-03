@@ -22,7 +22,7 @@ export default function About() {
 
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <h1 className="text-balance text-[2.5rem] font-bold leading-[1.15] text-slate-900 sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem]">
-            We help businesses acquire new customers<br />by turning their network into a referral channel
+            We help businesses acquire new customers<br />by turning their network into a affiliate channel
           </h1>
           <p className="max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 mx-auto">
             We started Refer Labs because we saw businesses leaving money on the table: partners, clients, creators, and advisors willing to refer, but no structured way to track and reward them.
@@ -38,14 +38,14 @@ export default function About() {
               </p>
               <div className="rounded-xl bg-purple-50 p-6 border-l-4 border-purple-500">
                 <p className="italic text-slate-800">
-                  "My best partners constantly send me new customers, but I have no system to thank them properly. They're my true beacons of growth, yet I'm stuck manually tracking who referred who in spreadsheets. These referral partners deserve better—they're driving real revenue and I'm barely acknowledging it."
+                  "My best partners constantly send me new customers, but I have no system to thank them properly. They're my true beacons of growth, yet I'm stuck manually tracking who referred who in spreadsheets. These affiliate partners deserve better—they're driving real revenue and I'm barely acknowledging it."
                 </p>
               </div>
               <p>
                 We built Refer Labs to solve this: <strong>create an engagement system that activates your entire network</strong> as a customer acquisition channel. These are partners, clients, creators, and advisors who authentically vouch for your offering because they've experienced real value. They deserve recognition, rewards, and a frictionless way to refer.
               </p>
               <p>
-                Your network isn't just a contact list—it's untapped acquisition potential. But without a proper engagement system, their referrals go untracked, unrewarded, and unmotivated. Refer Labs turns your entire network into a structured growth engine, ensuring every referral is captured and every partner is celebrated.
+                Your network isn't just a contact list—it's untapped acquisition potential. But without a proper engagement system, their affiliates go untracked, unrewarded, and unmotivated. Refer Labs turns your entire network into a structured growth engine, ensuring every affiliate is captured and every partner is celebrated.
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-2">Our Mission</h3>
             <p className="text-slate-600">
-              Make referral revenue accessible to every team—regardless of size, budget, or technical skill.
+              Make affiliate revenue accessible to every team—regardless of size, budget, or technical skill.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
             <p className="text-slate-600">
-              A world where businesses grow through their networks—partners, clients, creators, and advisors—not expensive ads. Every referral tracked, rewarded, and celebrated.
+              A world where businesses grow through their networks—partners, clients, creators, and advisors—not expensive ads. Every affiliate tracked, rewarded, and celebrated.
             </p>
           </div>
 
@@ -148,15 +148,15 @@ export default function About() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 mb-1">🎯 Track Everything</p>
-                  <p className="text-sm text-slate-600">Full dashboard to see all your referrals and commissions</p>
+                  <p className="text-sm text-slate-600">Full dashboard to see all your affiliates and commissions</p>
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 mb-1">🚀 Grow Together</p>
-                  <p className="text-sm text-slate-600">Help businesses unlock referral revenue while building yours</p>
+                  <p className="text-sm text-slate-600">Help businesses unlock affiliate revenue while building yours</p>
                 </div>
               </div>
               <Link
-                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                href="https://calendly.com/jarred-referlabs/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-slate-800 to-slate-900 px-8 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
@@ -164,7 +164,7 @@ export default function About() {
                 Schedule a Call <ArrowRight className="h-5 w-5" />
               </Link>
               <p className="text-sm text-slate-600">
-                Learn more about our <Link href="/our-referral-program" className="underline font-semibold text-slate-900 hover:text-purple-600">partner program</Link>
+                Learn more about our <Link href="/our-affiliate-program" className="underline font-semibold text-slate-900 hover:text-purple-600">partner program</Link>
               </p>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function About() {
                 Join us on the journey
               </h3>
               <p className="text-lg text-slate-600">
-                We're just getting started. Help us build the referral engine every modern growth team deserves.
+                We're just getting started. Help us build the affiliate engine every modern growth team deserves.
               </p>
             </div>
             <a

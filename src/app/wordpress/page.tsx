@@ -8,7 +8,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = generateSEOMetadata({
   title: "WordPress Shortcode (Plugin) | Refer Labs",
   description:
-    "Install the Refer Labs WordPress plugin and embed referral pages with a shortcode. Includes WooCommerce conversion capture.",
+    "Install the Refer Labs WordPress plugin and embed affiliate pages with a shortcode. Includes WooCommerce conversion capture.",
   url: `${SITE_URL}/wordpress`,
 });
 
@@ -25,7 +25,7 @@ export default function WordPressGuidePage() {
             WordPress shortcode plugin
           </h1>
           <p className="mt-2 text-slate-600">
-            One-click install a minimal plugin, then embed referral pages anywhere with a shortcode.
+            One-click install a minimal plugin, then embed affiliate pages anywhere with a shortcode.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function WordPressGuidePage() {
       <Card className="mt-6 p-6 rounded-2xl border border-slate-200 bg-white">
         <h2 className="text-lg font-bold text-slate-900">Preview</h2>
         <p className="mt-2 text-sm text-slate-600">
-          This is what the embed looks like inside a page. The referral page loads in an iframe.
+          This is what the embed looks like inside a page. The affiliate page loads in an iframe.
         </p>
         <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
           <Image
@@ -148,8 +148,8 @@ export default function WordPressGuidePage() {
             <code className="font-mono">[referlabs_referral code=&quot;AMBCODE&quot;]</code>{" "}
             using a real ambassador code from your dashboard.
           </li>
-          <li>Open the page in an incognito window and confirm the embedded referral page loads.</li>
-          <li>Submit the referral form and confirm the signup appears in the dashboard (Journey timeline).</li>
+          <li>Open the page in an incognito window and confirm the embedded affiliate page loads.</li>
+          <li>Submit the affiliate form and confirm the signup appears in the dashboard (Journey timeline).</li>
           <li>If using WooCommerce conversion capture, place a test order using a coupon/discount code and confirm it appears in the dashboard.</li>
           <li>If anything doesn’t appear, run the <Link href="/status" className="underline font-semibold text-slate-700 hover:text-slate-900">Status page</Link> checks.</li>
         </ol>

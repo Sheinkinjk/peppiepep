@@ -11,7 +11,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2">
             <li><Link className="hover:text-slate-800" href="/">Home</Link></li>
             <li><Link className="hover:text-slate-800" href="/how-it-works">How it works</Link></li>
-            <li><Link className="hover:text-slate-800" href="/referral-partnerships">Referral Partnerships</Link></li>
+            <li><Link className="hover:text-slate-800" href="/affiliate-partnerships">Affiliate Partnerships</Link></li>
             <li><Link className="hover:text-slate-800" href="/pricing">Pricing</Link></li>
             <li><Link className="hover:text-slate-800" href="/linkedin-growth">LinkedIn Influencer</Link></li>
             <li><Link className="hover:text-slate-800" href="/login">Sign in</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Company</p>
           <ul className="mt-4 space-y-2">
             <li><Link className="hover:text-slate-800" href="/about">About</Link></li>
-            <li><Link className="hover:text-slate-800" href="/our-referral-program">Our Referral Program</Link></li>
+            <li><Link className="hover:text-slate-800" href="/our-affiliate-program">Our Affiliate Program</Link></li>
             <li><Link className="hover:text-slate-800" href="/contact">Contact</Link></li>
             <li><Link className="hover:text-slate-800" href="/privacy">Privacy</Link></li>
             <li><Link className="hover:text-slate-800" href="/terms">Terms</Link></li>
@@ -67,7 +67,7 @@ export default function Footer() {
             <span>|</span>
             <Link className="hover:text-slate-700" href="/contact">Contact</Link>
             <span>|</span>
-            <Link className="hover:text-slate-700" href="/our-referral-program">Our referral program</Link>
+            <Link className="hover:text-slate-700" href="/our-affiliate-program">Our affiliate program</Link>
           </div>
         </div>
 

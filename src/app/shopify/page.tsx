@@ -8,7 +8,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = generateSEOMetadata({
   title: "Shopify Integration | Refer Labs",
   description:
-    "Embed Refer Labs referral pages on Shopify and capture conversions with discount code tracking. Includes testing checkpoints.",
+    "Embed Refer Labs affiliate pages on Shopify and capture conversions with discount code tracking. Includes testing checkpoints.",
   url: `${SITE_URL}/shopify`,
 });
 
@@ -33,7 +33,7 @@ export default function ShopifyGuidePage() {
             Shopify integration (embed + conversion capture)
           </h1>
           <p className="mt-2 text-slate-600">
-            Add your referral page to Shopify and verify tracking step-by-step as you onboard.
+            Add your affiliate page to Shopify and verify tracking step-by-step as you onboard.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function ShopifyGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Embed the referral page</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 — Embed the affiliate page</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Add a dedicated page (recommended) or embed in an existing landing page.
               </p>
@@ -74,7 +74,7 @@ export default function ShopifyGuidePage() {
   style="width:100%;min-height:720px;border:none;border-radius:24px;overflow:hidden;"
 ></iframe>`}</CodeBlock>
             <p className="text-xs text-slate-500">
-              Replace <code className="font-mono">AMBCODE</code> with a real ambassador referral code to test, then automate how you render each customer’s code.
+              Replace <code className="font-mono">AMBCODE</code> with a real ambassador affiliate code to test, then automate how you render each customer’s code.
             </p>
           </div>
         </Card>
@@ -152,9 +152,9 @@ Body:
       <Card className="mt-6 p-6 rounded-2xl border border-slate-200 bg-white">
         <h2 className="text-lg font-bold text-slate-900">Testing checkpoints (do these in order)</h2>
         <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-700">
-          <li>Create a test ambassador in the dashboard (Quick Add) and copy their referral code + discount code.</li>
+          <li>Create a test ambassador in the dashboard (Quick Add) and copy their affiliate code + discount code.</li>
           <li>Open your Shopify page in an incognito window using <code className="font-mono">/r/AMBCODE</code> and confirm the page loads.</li>
-          <li>Submit the referral form and confirm the signup appears in the dashboard (Journey timeline).</li>
+          <li>Submit the affiliate form and confirm the signup appears in the dashboard (Journey timeline).</li>
           <li>Place a test order using the discount code and confirm the redemption appears in the dashboard (with the correct ambassador attribution).</li>
           <li>Re-run the <Link href="/status" className="underline font-semibold text-slate-700 hover:text-slate-900">Status page</Link> checks if anything doesn’t appear.</li>
         </ol>
@@ -163,7 +163,7 @@ Body:
       <Card className="mt-6 p-6 rounded-2xl border border-slate-200 bg-white">
         <h2 className="text-lg font-bold text-slate-900">Preview</h2>
         <p className="mt-2 text-sm text-slate-600">
-          Example of embedding the referral iframe inside Shopify’s theme editor.
+          Example of embedding the affiliate iframe inside Shopify’s theme editor.
         </p>
         <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
           <Image

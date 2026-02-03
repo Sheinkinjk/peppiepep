@@ -18,7 +18,7 @@ export default function Terms() {
             Terms of Service
           </h1>
           <p className="text-sm text-slate-500">
-            Last updated: January 2026
+            Last updated: 2 February 2026
           </p>
         </div>
 
@@ -41,10 +41,10 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Description of Service</h2>
               <p className="text-slate-600 mb-3">
-                Pepform provides a SaaS-based referral marketing and growth network platform that enables businesses to create, manage, track, and optimize customer referral programs through automated messaging, analytics, campaign management tools, hosted referral/handoff pages (/r/[code], /referral, /referred), and embeddable experiences for common CMS platforms.
+                Pepform provides a SaaS-based affiliate marketing and growth network platform that enables businesses to create, manage, track, and optimize customer affiliate programs through automated messaging, analytics, campaign management tools, hosted affiliate/handoff pages (/r/[code], /referral, /referred), and embeddable experiences for common CMS platforms.
               </p>
               <p className="text-slate-600">
-                The Service may include features such as SMS/WhatsApp messaging, email campaigns, customer data management, referral tracking, analytics dashboards, and integration capabilities. Pepform reserves the right to modify, suspend, or discontinue any aspect of the Service at any time without prior notice.
+                The Service may include features such as SMS/WhatsApp messaging, email campaigns, customer data management, affiliate tracking, analytics dashboards, and integration capabilities. Pepform reserves the right to modify, suspend, or discontinue any aspect of the Service at any time without prior notice.
               </p>
             </div>
 
@@ -128,6 +128,11 @@ export default function Terms() {
                 <li>Have had previous accounts terminated for Terms violations</li>
               </ul>
 
+              <h3 className="text-lg font-bold text-slate-900 mb-2">4.5 Doxxing and Targeted Harms</h3>
+              <p className="text-slate-600 mb-2">
+                You must not use the Service to publish or distribute personal information with the intent to intimidate, menace, harass, or facilitate doxxing. We may suspend or terminate accounts and preserve evidence where we reasonably suspect doxxing or related misuse, and we may cooperate with law enforcement.
+              </p>
+
               <p className="text-slate-600 font-semibold">
                 Violation of this section will result in immediate account termination, forfeiture of all fees paid, and potential legal action. Pepform reserves the right to report violations to law enforcement authorities.
               </p>
@@ -157,11 +162,11 @@ export default function Terms() {
                 By using our messaging features, you agree to:
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-2 mb-3">
-                <li>Comply with all applicable laws including TCPA, CAN-SPAM Act, GDPR, and carrier guidelines</li>
-                <li>Obtain prior express written consent before sending marketing messages</li>
-                <li>Provide clear opt-out mechanisms in every message (e.g., "Reply STOP to unsubscribe")</li>
-                <li>Honor opt-out requests immediately and maintain suppression lists</li>
-                <li>Not send messages to numbers on Do Not Call registries without proper exemption</li>
+                <li>Comply with all applicable laws including Spam Act 2003 (Cth), Do Not Call Register Act 2006 (Cth), TCPA, CAN-SPAM Act, GDPR, and carrier guidelines</li>
+                <li>Obtain prior express consent (or express written consent where required) before sending marketing messages</li>
+                <li>Provide clear opt-out mechanisms in every message (e.g., "Reply STOP to unsubscribe") that remain functional for at least 30 days</li>
+                <li>Honor opt-out requests immediately and no later than 5 working days; maintain accurate suppression lists</li>
+                <li>Not send messages to numbers on Do Not Call registries without proper exemption or consent</li>
                 <li>Accurately identify yourself as the sender in all messages</li>
                 <li>Not use shared short codes or spoofed sender IDs</li>
                 <li>Maintain records of consent for a minimum of 4 years</li>
@@ -209,14 +214,14 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">8A. Referral Program and Commission Structure</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">8A. Affiliate Program and Commission Structure</h2>
               <p className="text-slate-600 mb-3">
-                Refer Labs operates a referral partner program that allows ambassadors to earn commissions by referring new partners and clients to the platform. By participating as an ambassador, you agree to the following commission terms:
+                Refer Labs operates a affiliate partner program that allows ambassadors to earn commissions by referring new partners and clients to the platform. By participating as an ambassador, you agree to the following commission terms:
               </p>
 
               <h3 className="text-lg font-bold text-slate-900 mb-2">8A.1 Commission Schedule</h3>
               <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
-                <li><strong>Partner Signup Bonus:</strong> $100 AUD per new partner who completes registration through your unique referral link and is verified by Refer Labs</li>
+                <li><strong>Partner Signup Bonus:</strong> $100 AUD per new partner who completes registration through your unique affiliate link and is verified by Refer Labs</li>
                 <li><strong>Revenue Share:</strong> 10% commission on all subscription payments made by partners you refer, calculated on the gross payment amount (excluding taxes and fees)</li>
                 <li><strong>Payout Threshold:</strong> Minimum balance of $500 AUD required to request a payout</li>
                 <li><strong>Payment Terms:</strong> Payouts processed within 14 business days of approved payout requests</li>
@@ -231,7 +236,7 @@ export default function Terms() {
                 <li>Commissions are initially marked as "pending" upon the qualifying event (signup or payment)</li>
                 <li>Refer Labs reviews and approves commissions within 3 business days</li>
                 <li>Approved commissions become available for payout once they reach the minimum threshold</li>
-                <li>Refer Labs reserves the right to withhold, reduce, or cancel commissions for suspected fraud, violation of terms, chargebacks, refunds, or invalid referrals</li>
+                <li>Refer Labs reserves the right to withhold, reduce, or cancel commissions for suspected fraud, violation of terms, chargebacks, refunds, or invalid affiliates</li>
                 <li>Commission disputes must be submitted in writing within 30 days of the commission event</li>
               </ul>
 
@@ -241,8 +246,8 @@ export default function Terms() {
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
                 <li>Promote Refer Labs in good faith and comply with all applicable laws and regulations</li>
-                <li>Not engage in fraudulent referrals, self-referrals, or artificial inflation of commissions</li>
-                <li>Not misrepresent the Service, pricing, or commission structure to potential referrals</li>
+                <li>Not engage in fraudulent affiliates, self-referrals, or artificial inflation of commissions</li>
+                <li>Not misrepresent the Service, pricing, or commission structure to potential affiliates</li>
                 <li>Maintain accurate tax information and be responsible for all tax obligations on commission earnings</li>
                 <li>Comply with advertising standards and obtain proper disclosures for sponsored content where required</li>
               </ul>
@@ -277,7 +282,7 @@ export default function Terms() {
               <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
                 <li>Your subscription will remain active until the end of the current billing period</li>
                 <li>You will retain access to the Service until the end of the paid period</li>
-                <li>No refunds will be provided for the unused portion of the current billing period</li>
+                <li>No refunds will be provided for the unused portion of the current billing period unless required by law</li>
                 <li>Recurring billing will be stopped and no further charges will be made</li>
                 <li>Your account and data may be deleted 30 days after the subscription ends unless otherwise requested</li>
               </ul>
@@ -291,6 +296,7 @@ export default function Terms() {
                 <li><strong>Billing Errors:</strong> If you were incorrectly charged due to a billing system error, the erroneous charge will be refunded in full</li>
                 <li><strong>Duplicate Charges:</strong> If you were charged multiple times for the same billing period, duplicate charges will be refunded</li>
                 <li><strong>Unauthorized Charges:</strong> If unauthorized charges were made to your account due to fraud or unauthorized access, charges will be refunded upon verification</li>
+                <li><strong>Major Failures under Australian Consumer Law (ACL):</strong> If the Service fails to meet a consumer guarantee and the failure is major, you may cancel and obtain a refund for the unused portion or compensation for the reduction in value</li>
                 <li><strong>Legal Requirements:</strong> Where required by applicable consumer protection laws (such as Australian Consumer Law)</li>
               </ul>
 
@@ -360,6 +366,18 @@ export default function Terms() {
             </div>
 
             <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">10B. Data Processing & Security Commitments</h2>
+              <ul className="list-disc list-inside text-slate-600 space-y-2 mb-3">
+                <li><strong>Role allocation:</strong> For customer or end-recipient data you upload, you are the data controller; Pepform acts as data processor/service provider.</li>
+                <li><strong>Lawful basis and notices:</strong> You must provide required notices under APP 5 and ensure a lawful basis/consent for processing and for overseas transfers under APP 8.</li>
+                <li><strong>Security measures:</strong> We maintain reasonable technical and organisational measures (encryption in transit/at rest, RLS, backups, access controls) and review them periodically.</li>
+                <li><strong>Breach handling:</strong> We will assess suspected eligible data breaches and, where required, notify affected users and the OAIC as soon as practicable, consistent with the Notifiable Data Breaches scheme.</li>
+                <li><strong>Subprocessors:</strong> We use vetted subprocessors (e.g., Supabase, Twilio, Resend, Vercel, OpenAI) bound by written terms that limit use to providing the Service.</li>
+                <li><strong>Data subject/consumer requests:</strong> We will reasonably assist you in responding to privacy rights requests where the data relates to your end users.</li>
+              </ul>
+            </div>
+
+            <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">11. Third-Party Services and Integrations</h2>
               <p className="text-slate-600 mb-3">
                 The Service may integrate with or rely on third-party services including Twilio (SMS), Resend (email), Supabase (database), and Vercel (hosting). Your use of these third-party services may be subject to their respective terms of service.
@@ -411,7 +429,7 @@ export default function Terms() {
                 <li>WARRANTIES REGARDING THE RESULTS OBTAINED FROM USING THE SERVICE</li>
               </ul>
               <p className="text-slate-600">
-                No advice or information obtained from Pepform shall create any warranty not expressly stated in these Terms. Some jurisdictions do not allow the exclusion of implied warranties, so some of the above exclusions may not apply to you.
+                No advice or information obtained from Pepform shall create any warranty not expressly stated in these Terms. Some jurisdictions do not allow the exclusion of implied warranties, so some of the above exclusions may not apply to you. Nothing in this section limits any non-excludable consumer guarantees under the ACL.
               </p>
             </div>
 
@@ -428,10 +446,10 @@ export default function Terms() {
                 <li>DAMAGES ARISING FROM THIRD-PARTY CLAIMS OR ACTIONS</li>
               </ul>
               <p className="text-slate-600 mb-3 font-bold">
-                IN NO EVENT SHALL PEPFORM'S TOTAL AGGREGATE LIABILITY EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID TO PEPFORM IN THE 12 MONTHS PRECEDING THE CLAIM, OR (B) $100 AUD.
+                SUBJECT TO ANY NON-EXCLUDABLE RIGHTS (INCLUDING UNDER THE ACL), PEPFORM'S TOTAL AGGREGATE LIABILITY IS CAPPED AT THE GREATER OF (A) THE AMOUNT YOU PAID TO PEPFORM IN THE 12 MONTHS PRECEDING THE CLAIM, OR (B) $100 AUD.
               </p>
               <p className="text-slate-600">
-                This limitation applies regardless of the legal theory (contract, tort, negligence, strict liability, or otherwise) and even if Pepform has been advised of the possibility of such damages. Some jurisdictions do not allow limitations on liability, so some of the above may not apply to you.
+                This limitation applies regardless of the legal theory (contract, tort, negligence, strict liability, or otherwise) and even if Pepform has been advised of the possibility of such damages. Some jurisdictions do not allow limitations on liability, so some of the above may not apply to you. To the extent permitted by law, this limitation does not apply to liability that cannot be limited under the ACL (including guarantees for services) or to losses caused by our gross negligence, fraud, or wilful misconduct. Where the ACL applies and permits limitation, our liability is limited to resupplying the services or paying the cost of resupply.
               </p>
             </div>
 
@@ -471,7 +489,7 @@ export default function Terms() {
                 <li>Displaying a notification within the Service</li>
               </ul>
               <p className="text-slate-600 mb-3">
-                Your continued use of the Service after modifications become effective constitutes your acceptance of the revised Terms. If you do not agree to the modifications, you must stop using the Service and terminate your account.
+                Your continued use of the Service after modifications become effective constitutes your acceptance of the revised Terms. If you do not agree to the modifications, you must stop using the Service and terminate your account. Where required by law, material changes will give you a reasonable opportunity to terminate without penalty.
               </p>
               <p className="text-slate-600">
                 Pepform may also modify, suspend, or discontinue any aspect of the Service at any time without liability. We are not obligated to provide any specific features or maintain backwards compatibility.
@@ -493,7 +511,7 @@ export default function Terms() {
 
               <h3 className="text-lg font-bold text-slate-900 mb-2">18.3 Jurisdiction and Venue</h3>
               <p className="text-slate-600 mb-4">
-                If informal resolution fails, any dispute arising from these Terms or the Service shall be resolved exclusively in the courts located in Sydney, New South Wales, Australia. You irrevocably submit to the exclusive jurisdiction of those courts and waive any objection to venue or inconvenient forum.
+                If informal resolution fails, any dispute arising from these Terms or the Service shall be resolved exclusively in the courts located in Sydney, New South Wales, Australia. You irrevocably submit to the exclusive jurisdiction of those courts and waive any objection to venue or inconvenient forum. Service of notices may be effected by email to jarred@referlabs.com.au; a postal address for formal service is available on request.
               </p>
 
               <h3 className="text-lg font-bold text-slate-900 mb-2">18.4 Time Limit for Claims</h3>

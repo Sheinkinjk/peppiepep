@@ -7,7 +7,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 export const metadata = generateSEOMetadata({
   title: "HubSpot Integration | Refer Labs",
   description:
-    "Create HubSpot contact properties for referral fields, import ambassadors, and (optionally) post conversion events back to Refer Labs with a secure webhook.",
+    "Create HubSpot contact properties for affiliate fields, import ambassadors, and (optionally) post conversion events back to Refer Labs with a secure webhook.",
   url: `${SITE_URL}/hubspot`,
 });
 
@@ -52,7 +52,7 @@ export default function HubSpotGuidePage() {
             <div>
               <h2 className="text-lg font-bold text-slate-900">Step 1 — Create contact properties</h2>
               <p className="mt-2 text-sm text-slate-600">
-                Create custom properties so HubSpot can store each ambassador’s unique referral data.
+                Create custom properties so HubSpot can store each ambassador’s unique affiliate data.
               </p>
               <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-700">
                 <li>HubSpot → Settings → Data Management → Properties.</li>
@@ -150,8 +150,8 @@ Body:
         <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-700">
           <li>Create the three properties and import ambassadors so the fields populate on contacts.</li>
           <li>Create a test email/workflow that uses <code className="font-mono">referral_link</code> as your CTA.</li>
-          <li>Click the link in an incognito window and confirm the referral page loads.</li>
-          <li>Submit the referral form and confirm the signup appears in Refer Labs (Journey timeline).</li>
+          <li>Click the link in an incognito window and confirm the affiliate page loads.</li>
+          <li>Submit the affiliate form and confirm the signup appears in Refer Labs (Journey timeline).</li>
           <li>Trigger a test conversion and confirm it attributes correctly in the dashboard.</li>
         </ol>
       </Card>

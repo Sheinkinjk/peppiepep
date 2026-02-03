@@ -136,131 +136,131 @@ export function generateMetadata(config: SEOConfig): Metadata {
  */
 export const seoConfig = {
   home: {
-    title: "Refer Labs - Referrals that compound",
+    title: "Refer Labs - Affiliates that compound",
     description:
-      "Turn partners, clients, creators, and advisors into your most powerful growth engine with automated referral tracking, rewards, and partner management. Referral software for modern businesses.",
+      "Turn partners, clients, creators, and advisors into your most powerful growth engine with automated affiliate tracking, rewards, and partner management. Affiliate software for modern businesses.",
     url: SITE_URL,
     keywords: [
-      "referral software",
-      "referral program",
-      "customer referrals",
+      "affiliate software",
+      "affiliate program",
+      "customer affiliates",
       "ambassador program",
-      "referral marketing",
+      "affiliate marketing",
       "word of mouth marketing",
       "customer acquisition",
-      "referral tracking",
-      "referral rewards",
+      "affiliate tracking",
+      "affiliate rewards",
       "growth marketing",
     ],
   },
 
   pricing: {
-    title: "Pricing - Simple, transparent referral software",
+    title: "Pricing - Simple, transparent affiliate software",
     description:
-      "Choose the perfect plan for your referral program. From $399/month with all features included. No hidden fees, cancel anytime. Start growing through referrals today.",
+      "Choose the perfect plan for your affiliate program. From $399/month with all features included. No hidden fees, cancel anytime. Start growing through affiliates today.",
     url: `${SITE_URL}/pricing`,
     keywords: [
-      "referral software pricing",
-      "referral program cost",
+      "affiliate software pricing",
+      "affiliate program cost",
       "ambassador software pricing",
-      "referral marketing pricing",
-      "affordable referral platform",
+      "affiliate marketing pricing",
+      "affordable affiliate platform",
     ],
   },
 
   howItWorks: {
-    title: "How It Works - Turn your network into a referral channel",
+    title: "How It Works - Turn your network into a affiliate channel",
     description:
-      "See how Refer Labs transforms partners, clients, creators, and advisors into a powerful referral engine. Upload contacts, generate unique links, track rewards, and watch your growth compound.",
+      "See how Refer Labs transforms partners, clients, creators, and advisors into a powerful affiliate engine. Upload contacts, generate unique links, track rewards, and watch your growth compound.",
     url: `${SITE_URL}/how-it-works`,
     keywords: [
-      "referral program process",
-      "how referral marketing works",
-      "customer referral system",
-      "referral tracking",
+      "affiliate program process",
+      "how affiliate marketing works",
+      "customer affiliate system",
+      "affiliate tracking",
       "ambassador marketing",
     ],
   },
 
-  referralPartnerships: {
-    title: "Referral Partnerships - Partner-driven growth infrastructure",
+  affiliatePartnerships: {
+    title: "Affiliate Partnerships - Partner-driven growth infrastructure",
     description:
-      "Activate LinkedIn influencers, creators, advisors, consultants, and strategic partners as fully tracked referral channels. Refer Labs facilitates structure, attribution, compliance guardrails, and ROI measurement (not a marketplace).",
-    url: `${SITE_URL}/referral-partnerships`,
+      "Activate LinkedIn influencers, creators, advisors, consultants, and strategic partners as fully tracked affiliate channels. Refer Labs facilitates structure, attribution, compliance guardrails, and ROI measurement (not a marketplace).",
+    url: `${SITE_URL}/affiliate-partnerships`,
     keywords: [
-      "referral partnerships",
+      "affiliate partnerships",
       "partner marketing",
       "creator partnerships",
       "linkedin influencer partnerships",
-      "advisor referrals",
-      "consultant referral program",
+      "advisor affiliates",
+      "consultant affiliate program",
       "attribution tracking",
-      "measure referral roi",
+      "measure affiliate roi",
       "performance-based partnerships",
     ],
   },
 
   caseStudies: {
-    title: "Case Studies - Real results from referral programs",
+    title: "Case Studies - Real results from affiliate programs",
     description:
-      "See how businesses use Refer Labs to drive growth through customer referrals. Real case studies, metrics, and strategies from successful referral programs.",
+      "See how businesses use Refer Labs to drive growth through customer affiliates. Real case studies, metrics, and strategies from successful affiliate programs.",
     url: `${SITE_URL}/case-studies`,
     keywords: [
-      "referral program case studies",
-      "referral marketing results",
-      "customer referral success stories",
-      "referral ROI",
-      "referral program examples",
+      "affiliate program case studies",
+      "affiliate marketing results",
+      "customer affiliate success stories",
+      "affiliate ROI",
+      "affiliate program examples",
     ],
   },
 
   about: {
-    title: "About - Helping businesses grow through referrals",
+    title: "About - Helping businesses grow through affiliates",
     description:
-      "Learn about Refer Labs and our mission to make referral marketing accessible, automated, and effective for businesses of all sizes.",
+      "Learn about Refer Labs and our mission to make affiliate marketing accessible, automated, and effective for businesses of all sizes.",
     url: `${SITE_URL}/about`,
     keywords: [
       "about refer labs",
-      "referral software company",
-      "referral marketing platform",
+      "affiliate software company",
+      "affiliate marketing platform",
     ],
   },
 
   contact: {
-    title: "Contact Us - Get help with your referral program",
+    title: "Contact Us - Get help with your affiliate program",
     description:
       "Have questions about Refer Labs? Get in touch with our team for support, sales inquiries, or partnership opportunities. We're here to help.",
     url: `${SITE_URL}/contact`,
     keywords: [
       "contact refer labs",
-      "referral software support",
+      "affiliate software support",
       "sales inquiry",
       "customer support",
     ],
   },
 
   faq: {
-    title: "FAQ - Common questions about referral programs",
+    title: "FAQ - Common questions about affiliate programs",
     description:
-      "Find answers to frequently asked questions about Refer Labs, referral programs, pricing, integrations, and getting started.",
+      "Find answers to frequently asked questions about Refer Labs, affiliate programs, pricing, integrations, and getting started.",
     url: `${SITE_URL}/faq`,
     keywords: [
-      "referral program faq",
-      "referral software questions",
-      "referral marketing help",
+      "affiliate program faq",
+      "affiliate software questions",
+      "affiliate marketing help",
       "refer labs support",
     ],
   },
 
   roiCalculator: {
-    title: "ROI Calculator - Calculate your referral program returns",
+    title: "ROI Calculator - Calculate your affiliate program returns",
     description:
-      "Estimate the potential ROI of your referral program. See how much revenue you could generate by turning your network into referral partners.",
+      "Estimate the potential ROI of your affiliate program. See how much revenue you could generate by turning your network into affiliate partners.",
     url: `${SITE_URL}/roi-calculator`,
     keywords: [
-      "referral program ROI",
-      "referral calculator",
-      "referral program calculator",
+      "affiliate program ROI",
+      "affiliate calculator",
+      "affiliate program calculator",
       "marketing ROI calculator",
       "customer lifetime value",
     ],
@@ -272,7 +272,7 @@ export const seoConfig = {
       "Learn about our security practices, data protection, GDPR compliance, and how we keep your customer data safe and private.",
     url: `${SITE_URL}/security`,
     keywords: [
-      "referral software security",
+      "affiliate software security",
       "data protection",
       "GDPR compliance",
       "SOC 2",
@@ -297,18 +297,18 @@ export const seoConfig = {
   },
 
   leadHacking: {
-    title: "Lead Hacking - Source & Activate Referral Partnerships",
+    title: "Lead Hacking - Source & Activate Affiliate Partnerships",
     description:
-      "Refer Labs designs referral programs and runs Lead Hacking to source, qualify, and activate partners—LinkedIn influencers, agencies, and advisors—with clear attribution.",
+      "Refer Labs designs affiliate programs and runs Lead Hacking to source, qualify, and activate partners—LinkedIn influencers, agencies, and advisors—with clear attribution.",
     url: `${SITE_URL}/lead-hacking`,
     keywords: [
-      "referral partnerships",
+      "affiliate partnerships",
       "partner sourcing",
       "lead hacking",
       "LinkedIn influencers",
       "agency partnerships",
-      "consultant referrals",
-      "referral program",
+      "consultant affiliates",
+      "affiliate program",
       "partner marketing",
       "warm introductions",
       "attribution tracking",
@@ -318,12 +318,12 @@ export const seoConfig = {
   partnerProgram: {
     title: "Partner Program - Become a Refer Labs partner",
     description:
-      "Join the Refer Labs partner program and earn recurring revenue by referring businesses to our referral marketing platform.",
-    url: `${SITE_URL}/our-referral-program`,
+      "Join the Refer Labs partner program and earn recurring revenue by referring businesses to our affiliate marketing platform.",
+    url: `${SITE_URL}/our-affiliate-program`,
     keywords: [
       "partner program",
       "affiliate program",
-      "referral partnership",
+      "affiliate partnership",
       "earn commission",
       "recurring revenue",
     ],
@@ -331,7 +331,7 @@ export const seoConfig = {
   linkedinInfluencer: {
     title: "LinkedIn Influencer Marketplace - Performance-Based B2B Creator Partnerships",
     description:
-      "Connect verified LinkedIn creators with SaaS & e-commerce brands. Drive qualified demos and revenue through performance-based referral partnerships. No SDRs, no ads - just authentic, trusted distribution.",
+      "Connect verified LinkedIn creators with SaaS & e-commerce brands. Drive qualified demos and revenue through performance-based affiliate partnerships. No SDRs, no ads - just authentic, trusted distribution.",
     keywords: [
       "LinkedIn influencer marketplace",
       "B2B creator partnerships",
@@ -339,7 +339,7 @@ export const seoConfig = {
       "LinkedIn creator network",
       "SaaS influencer marketing",
       "B2B demand generation",
-      "creator referral program",
+      "creator affiliate program",
       "LinkedIn lead generation",
       "performance-based partnerships",
       "influencer affiliate program",
@@ -391,81 +391,81 @@ export const seoConfig = {
   },
 
   financialAdvisorsService: {
-    title: "Referral Program for Financial Advisors & Planners",
+    title: "Affiliate Program for Financial Advisors & Planners",
     description:
-      "Build a compliant referral program for financial advisors and planners. Track partners, manage intake, and report on revenue impact.",
+      "Build a compliant affiliate program for financial advisors and planners. Track partners, manage intake, and report on revenue impact.",
     url: `${SITE_URL}/services/financial-advisors`,
     keywords: [
-      "financial advisor referrals",
-      "wealth management referrals",
+      "financial advisor affiliates",
+      "wealth management affiliates",
       "advisor partner program",
-      "fiduciary referral tracking",
-      "referral compliance",
+      "fiduciary affiliate tracking",
+      "affiliate compliance",
     ],
   },
   accountantsService: {
-    title: "Referral Program for Accountants & Tax Professionals",
+    title: "Affiliate Program for Accountants & Tax Professionals",
     description:
-      "Create a referral system for accounting firms with partner tracking, compliant intake, and revenue attribution.",
+      "Create a affiliate system for accounting firms with partner tracking, compliant intake, and revenue attribution.",
     url: `${SITE_URL}/services/accountants`,
     keywords: [
-      "accountant referrals",
-      "tax professional referrals",
+      "accountant affiliates",
+      "tax professional affiliates",
       "accounting partner program",
-      "referral tracking",
-      "referral attribution",
+      "affiliate tracking",
+      "affiliate attribution",
     ],
   },
   consultantsCoachesService: {
-    title: "Referral Program for Consultants & Coaches",
+    title: "Affiliate Program for Consultants & Coaches",
     description:
-      "Launch a premium referral program for consultants and coaches with intake, partner updates, and conversion reporting.",
+      "Launch a premium affiliate program for consultants and coaches with intake, partner updates, and conversion reporting.",
     url: `${SITE_URL}/services/consultants-coaches`,
     keywords: [
-      "consulting referrals",
-      "coaching referrals",
-      "partner referrals",
-      "referral workflow",
-      "referral reporting",
+      "consulting affiliates",
+      "coaching affiliates",
+      "partner affiliates",
+      "affiliate workflow",
+      "affiliate reporting",
     ],
   },
   recruitersStaffingService: {
-    title: "Referral Program for Recruiters & Staffing Firms",
+    title: "Affiliate Program for Recruiters & Staffing Firms",
     description:
-      "Track referrals from clients, candidates, and partners with placement attribution and revenue reporting.",
+      "Track affiliates from clients, candidates, and partners with placement attribution and revenue reporting.",
     url: `${SITE_URL}/services/recruiters-staffing`,
     keywords: [
-      "recruiting referrals",
-      "staffing referrals",
+      "recruiting affiliates",
+      "staffing affiliates",
       "placement attribution",
-      "referral intake",
+      "affiliate intake",
       "recruiter partner program",
     ],
   },
   insuranceBrokersService: {
-    title: "Referral Program for Insurance Brokers",
+    title: "Affiliate Program for Insurance Brokers",
     description:
-      "Build referral workflows for insurance brokers with policy attribution and partner reporting.",
+      "Build affiliate workflows for insurance brokers with policy attribution and partner reporting.",
     url: `${SITE_URL}/services/insurance-brokers`,
     keywords: [
-      "insurance broker referrals",
+      "insurance broker affiliates",
       "policy attribution",
       "broker partner program",
-      "referral tracking",
-      "renewal referrals",
+      "affiliate tracking",
+      "renewal affiliates",
     ],
   },
 
   dashboard: {
     title: "Dashboard",
-    description: "Manage your referral program, track performance, and reward referral partners.",
+    description: "Manage your affiliate program, track performance, and reward affiliate partners.",
     url: `${SITE_URL}/dashboard`,
     noIndex: true, // Private pages should not be indexed
   },
 
   login: {
-    title: "Login - Access your referral dashboard",
-    description: "Log in to your Refer Labs account to manage your referral program and track growth.",
+    title: "Login - Access your affiliate dashboard",
+    description: "Log in to your Refer Labs account to manage your affiliate program and track growth.",
     url: `${SITE_URL}/login`,
     noIndex: true,
   },

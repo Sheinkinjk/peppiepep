@@ -108,7 +108,7 @@ export default function IntegrationsHubPage() {
         <IntegrationCard
           href="/mailchimp"
           title="Mailchimp"
-          description="Audience field mapping + merge tags for referral links + testing checkpoints."
+          description="Audience field mapping + merge tags for affiliate links + testing checkpoints."
           icon={<Mail className="h-5 w-5 text-white" />}
         />
         <IntegrationCard
@@ -138,7 +138,7 @@ export default function IntegrationsHubPage() {
         <IntegrationCard
           href="/webflow"
           title="Webflow"
-          description="Embed referral pages with an Embed block + end-to-end testing checkpoints."
+          description="Embed affiliate pages with an Embed block + end-to-end testing checkpoints."
           icon={<LayoutTemplate className="h-5 w-5 text-white" />}
         />
         <IntegrationCard
@@ -160,7 +160,7 @@ export default function IntegrationsHubPage() {
           icon={<Store className="h-5 w-5 text-white" />}
         />
         <IntegrationCard
-          href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+          href="https://calendly.com/jarred-referlabs/30min"
           title="Calendly"
           description="Capture bookings as conversions by collecting codes and posting on confirmation."
           icon={<Calendar className="h-5 w-5 text-white" />}
@@ -174,7 +174,7 @@ export default function IntegrationsHubPage() {
         <IntegrationCard
           href="/gtm"
           title="Google Tag Manager (GTM)"
-          description="Standardize analytics + verify referral tracking end-to-end."
+          description="Standardize analytics + verify affiliate tracking end-to-end."
           icon={<Tag className="h-5 w-5 text-white" />}
         />
         <IntegrationCard
@@ -192,7 +192,7 @@ export default function IntegrationsHubPage() {
         <IntegrationCard
           href="/meta-ads"
           title="Meta Ads"
-          description="Pixel/CAPI setup guidance that keeps referral attribution accurate."
+          description="Pixel/CAPI setup guidance that keeps affiliate attribution accurate."
           icon={<Tag className="h-5 w-5 text-white" />}
         />
         <IntegrationCard

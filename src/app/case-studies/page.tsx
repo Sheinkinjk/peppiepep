@@ -30,16 +30,16 @@ const caseStudies: CaseStudy[] = [
     id: "financial-advisory-customer-network",
     category: "customer-network",
     industry: "Financial Advisory",
-    headline: "+41% client acquisition from customer referrals",
+    headline: "+41% client acquisition from customer affiliates",
     metrics: [
       { value: "+41%", label: "Client Growth" },
-      { value: "3.8×", label: "Referral Volume" },
+      { value: "3.8×", label: "Affiliate Volume" },
       { value: "$0", label: "Manual Tracking" },
     ],
     summary:
       "A mid-size financial advisory firm turned their happiest clients into advocates with branded ambassador portals and unique tracking links. Within 6 months, they saw a 41% increase in new client acquisition and eliminated manual spreadsheet tracking entirely.",
     testimonial: {
-      quote: "We went from guessing who referred whom to having a complete picture of our referral pipeline. Our clients love sharing their links.",
+      quote: "We went from guessing who referred whom to having a complete picture of our affiliate pipeline. Our clients love sharing their links.",
       attribution: "Managing Director, Financial Advisory Firm",
     },
   },
@@ -84,7 +84,7 @@ const caseStudies: CaseStudy[] = [
     headline: "22 trusted advisors driving 37% of new revenue",
     metrics: [
       { value: "22", label: "Active Advisors" },
-      { value: "+37%", label: "Referral Revenue" },
+      { value: "+37%", label: "Affiliate Revenue" },
       { value: "Full", label: "Attribution" },
     ],
     summary:
@@ -106,9 +106,9 @@ const categories = [
 
 const categoryMeta: Record<string, { icon: typeof Users; color: string; link: string }> = {
   "customer-network": { icon: Users, color: "cyan", link: "/pricing" },
-  partnerships: { icon: Target, color: "emerald", link: "/referral-partnerships" },
+  partnerships: { icon: Target, color: "emerald", link: "/affiliate-partnerships" },
   linkedin: { icon: LinkedinIcon, color: "violet", link: "/linkedin-growth" },
-  consultants: { icon: Sparkles, color: "amber", link: "/referral-partnerships" },
+  consultants: { icon: Sparkles, color: "amber", link: "/affiliate-partnerships" },
 };
 
 /* ─────────────────────────────────────────────────────────────

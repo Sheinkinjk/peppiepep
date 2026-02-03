@@ -30,9 +30,9 @@ type HeroBadgeSpec = {
 
 const heroBadges: HeroBadgeSpec[] = [
   {
-    id: "hero-referral",
+    id: "hero-affiliate",
     title: "NEW INTRODUCTION",
-    text: "Anderson Law referred a client",
+    text: "Anderson Law sent a client",
     colors: ["#2c3e50", "#34495e"],
     position: "top-0 left-1 sm:top-4 sm:left-4",
   },
@@ -46,21 +46,21 @@ const heroBadges: HeroBadgeSpec[] = [
   {
     id: "hero-leaderboard",
     title: "TOP PARTNER",
-    text: "Miller CPA referred 18 clients",
+    text: "Miller CPA sent 18 clients",
     colors: ["#27ae60", "#2ecc71"],
     position: "bottom-0 left-1 sm:bottom-24 sm:left-4",
   },
   {
     id: "hero-revenue",
     title: "REVENUE ATTRIBUTED",
-    text: "$425,000 from referrals",
+    text: "$425,000 from affiliates",
     colors: ["#2980b9", "#3498db"],
     position: "bottom-0 right-1 sm:bottom-24 sm:right-4",
   },
 ];
 
 const heroBadgeOrientation: Record<string, string> = {
-  "hero-referral": "-rotate-2 origin-top-left",
+  "hero-affiliate": "-rotate-2 origin-top-left",
   "hero-vip": "rotate-2 origin-top-right",
   "hero-leaderboard": "rotate-2 origin-bottom-left",
   "hero-revenue": "-rotate-2 origin-bottom-right",
@@ -170,7 +170,7 @@ export default async function Home() {
                   Start Earning
                 </span>
                 <span className="block text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3rem] xl:text-[3.5rem] leading-[1.1]">
-                  Additional <span className="text-cyan-400">Referral Revenue</span>
+                  Additional <span className="text-cyan-400">Affiliate Revenue</span>
                 </span>
               </h1>
               <p className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-5 sm:mb-8">
@@ -201,7 +201,7 @@ export default async function Home() {
                       <BarChart3 className="h-4 w-4 text-cyan-400" />
                     </div>
                     <div>
-                      <p className="text-white font-semibold text-sm">Referral Dashboard</p>
+                      <p className="text-white font-semibold text-sm">Affiliate Dashboard</p>
                       <p className="text-slate-500 text-xs">Last 90 days</p>
                     </div>
                   </div>
@@ -254,7 +254,7 @@ export default async function Home() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-white text-xs sm:text-sm font-medium truncate">Deal closed: $18,500</p>
-                      <p className="text-slate-500 text-[10px] sm:text-xs">Referred by Anderson Law</p>
+                      <p className="text-slate-500 text-[10px] sm:text-xs">Sent by Anderson Law</p>
                     </div>
                   </div>
                   <div className="hidden sm:flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.04]">
@@ -279,10 +279,10 @@ export default async function Home() {
           <div className="relative">
             <div className="text-center mb-6 sm:mb-12">
               <h3 className="text-xl sm:text-3xl lg:text-4xl font-black text-white mb-2 sm:mb-4">
-                How We Activate a <span className="text-cyan-400">Recommendation System</span>
+                How We Activate an <span className="text-cyan-400">Affiliate System</span>
               </h3>
               <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-lg">
-                Refer Labs helps you systematically activate four powerful referral channels.
+                Refer Labs helps you systematically activate four powerful affiliate channels.
               </p>
             </div>
 
@@ -379,10 +379,10 @@ export default async function Home() {
             {/* Section Header */}
             <div className="text-center mb-6 sm:mb-12 lg:mb-16">
               <h2 className="text-xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] font-black text-white leading-[1.1] mb-3 sm:mb-6">
-                The Only Referral Platform <span className="text-cyan-400">Built for Professional Services</span>
+                The Only Affiliate Platform <span className="text-cyan-400">Built for Professional Services</span>
               </h2>
               <p className="text-slate-300 text-sm sm:text-xl leading-relaxed max-w-3xl mx-auto">
-                Trusted recommendations are the foundation of professional services growth. But without proper attribution, you're leaving revenue on the table every single month.
+                Trusted affiliates are the foundation of professional services growth. But without proper attribution, you're leaving revenue on the table every single month.
               </p>
             </div>
 
@@ -414,7 +414,7 @@ export default async function Home() {
                     <h4 className="text-sm sm:text-xl font-bold text-white">Never Lose Attribution Again</h4>
                     <span className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] sm:text-xs font-semibold tracking-wide whitespace-nowrap w-fit">30-day cookies</span>
                   </div>
-                  <p className="text-slate-400 text-xs sm:text-base leading-relaxed">Every referral tracked from first click to closed deal. Partners get credited accurately.</p>
+                  <p className="text-slate-400 text-xs sm:text-base leading-relaxed">Every affiliate tracked from first click to closed deal. Partners get credited accurately.</p>
                 </div>
               </div>
 
@@ -456,7 +456,7 @@ export default async function Home() {
                     <h4 className="text-sm sm:text-xl font-bold text-white">Audit-Ready Attribution Records</h4>
                     <span className="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] sm:text-xs font-semibold tracking-wide whitespace-nowrap w-fit">Exportable trails</span>
                   </div>
-                  <p className="text-slate-400 text-xs sm:text-base leading-relaxed">Complete logs for every referral. Finance gets clean records.</p>
+                  <p className="text-slate-400 text-xs sm:text-base leading-relaxed">Complete logs for every affiliate. Finance gets clean records.</p>
                 </div>
               </div>
 
@@ -490,7 +490,7 @@ export default async function Home() {
                   What Happens If You Do <span className="text-red-400">Nothing?</span>
                 </h2>
                 <p className="text-slate-300 text-sm sm:text-xl leading-relaxed max-w-3xl mx-auto">
-                  Informal referral systems create a hard revenue ceiling you can't break through.
+                  Informal affiliate systems create a hard revenue ceiling you can't break through.
                 </p>
               </div>
 
@@ -504,7 +504,7 @@ export default async function Home() {
                     <h4 className="text-xs sm:text-lg font-bold text-white">Lost Attribution = Lost Revenue</h4>
                   </div>
                   <p className="text-slate-400 text-[11px] sm:text-base leading-relaxed hidden sm:block">
-                    Partners who don't see credit for their referrals stop referring.
+                    Partners who don't see credit for their affiliates stop sending.
                   </p>
                 </div>
 
@@ -543,7 +543,7 @@ export default async function Home() {
                     <h4 className="text-xs sm:text-lg font-bold text-white">The Revenue Ceiling Is Real</h4>
                   </div>
                   <p className="text-slate-400 text-[11px] sm:text-base leading-relaxed hidden sm:block">
-                    Informal referrals cap out at a fraction of what's possible.
+                    Informal affiliates cap out at a fraction of what's possible.
                   </p>
                 </div>
               </div>
@@ -561,7 +561,7 @@ export default async function Home() {
               Why <span className="text-cyan-400">Now?</span>
             </h2>
             <p className="text-slate-300 text-sm sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              Professional services growth is shifting to low-friction, scalable referral transactions.
+              Professional services growth is shifting to low-friction, scalable affiliate transactions.
             </p>
           </div>
 
@@ -642,7 +642,7 @@ export default async function Home() {
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-8">
               <div className="text-center lg:text-left">
                 <h2 className="text-lg sm:text-3xl font-black text-white mb-2 sm:mb-3">
-                  Model Your Referral Revenue Potential
+                  Model Your Affiliate Revenue Potential
                 </h2>
                 <p className="text-slate-300 text-xs sm:text-base max-w-xl hidden sm:block">
                   Calculate how much revenue you're losing to attribution gaps.
@@ -668,7 +668,7 @@ export default async function Home() {
             <div className="relative rounded-2xl sm:rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-5 py-10 sm:px-12 sm:py-16 text-center">
               <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
                 <h2 className="text-xl sm:text-4xl font-black text-white">
-                  Stop Losing Referral Revenue
+                  Stop Losing Affiliate Revenue
                 </h2>
                 <p className="text-sm sm:text-lg text-slate-300">
                   Every partner credited. Every deal tracked. Every dollar attributed.
