@@ -7,6 +7,7 @@ import {
   BookOpen,
   ChevronDown,
   Handshake,
+  HelpCircle,
   Linkedin,
   Scale,
   Settings,
@@ -23,6 +24,43 @@ type FAQSection = {
 };
 
 const faqSections: FAQSection[] = [
+  {
+    id: "is-refer-labs-for-me",
+    title: "Is Refer Labs for Me?",
+    subtitle: "Find out if Refer Labs is the right fit for your business",
+    icon: HelpCircle,
+    iconColor: "text-teal-500",
+    questions: [
+      {
+        q: "Is Refer Labs only for businesses that already get referrals?",
+        a: "Yes—but that's most relationship-driven businesses. If clients occasionally introduce colleagues, partners mention you in passing, or people recommend you informally, you already have the raw material. Refer Labs helps you turn those untracked moments into a measurable, repeatable channel. We're not creating referral behaviour from scratch—we're giving structure to what's already happening."
+      },
+      {
+        q: "What types of businesses get the most value from Refer Labs?",
+        a: "Professional services (accountants, lawyers, consultants), B2B SaaS, financial advisors, insurance brokers, recruiters, and founder-led companies where trust and reputation drive growth. If your buyers research independently, talk to peers, and value credibility over price—affiliate-driven acquisition typically outperforms cold outreach and paid ads."
+      },
+      {
+        q: "Is Refer Labs suitable if we don't run ads or outbound sales?",
+        a: "Absolutely. Many of our clients grow primarily through relationships and word of mouth. Refer Labs formalises that channel without forcing you into aggressive marketing tactics. You can run a quiet, professional affiliate program alongside your existing business development—no need to change how you sell."
+      },
+      {
+        q: "Is Refer Labs a good fit for small teams or early-stage companies?",
+        a: "Yes. We built the platform for teams who don't have dedicated partnership managers or marketing departments. The interface is simple, the setup is guided, and ongoing maintenance is minimal. If you can send a few emails and check a dashboard once a week, you can run an effective affiliate program."
+      },
+      {
+        q: "When is Refer Labs not a good fit?",
+        a: "If your business is purely transactional with no relationship component (low-ticket e-commerce, high-volume commodity sales), affiliates probably aren't your highest-leverage channel. Similarly, if you've never received a single organic referral or introduction, there may be product-market fit issues to address first. We're also not an influencer marketplace or coupon aggregator—our focus is professional, relationship-driven growth."
+      },
+      {
+        q: "Do we need existing partners or affiliates to get started?",
+        a: "No. You can start with your existing client base (even just 10-20 happy customers), a handful of professional contacts, or by activating LinkedIn creators through our managed partnerships. We'll help you identify who in your network could become your first ambassadors."
+      },
+      {
+        q: "Will Refer Labs change how we sell or interact with clients?",
+        a: "No. The goal is to make affiliates feel natural, not transactional. Clients share because they genuinely want to help their network—we just make it easy to track and reward that behaviour. Most businesses find that formalising their affiliate channel actually strengthens client relationships by acknowledging and appreciating advocacy."
+      }
+    ]
+  },
   {
     id: "platform",
     title: "Affiliate Program Platform",
@@ -352,25 +390,39 @@ export default function FAQPage() {
           {faqSections.map(section => {
             const Icon = section.icon;
             const isSectionExpanded = expandedSections.includes(section.id);
+            const isQualificationSection = section.id === "is-refer-labs-for-me";
 
             return (
               <section
                 key={section.id}
                 id={section.id}
-                className="scroll-mt-24"
+                className={`scroll-mt-24 ${isQualificationSection ? "mb-4" : ""}`}
               >
+                {/* Qualification section intro */}
+                {isQualificationSection && (
+                  <div className="mb-6 text-center">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-500/30 text-sm font-semibold text-teal-300">
+                      <HelpCircle className="h-4 w-4" />
+                      Start here
+                    </span>
+                  </div>
+                )}
                 {/* Section Header */}
                 <button
                   onClick={() => toggleSection(section.id)}
                   className="w-full text-left"
                 >
-                  <div className="flex items-center justify-between gap-4 p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors">
+                  <div className={`flex items-center justify-between gap-4 p-6 rounded-2xl border transition-colors ${
+                    isQualificationSection
+                      ? "border-teal-500/30 bg-gradient-to-br from-teal-500/10 to-cyan-500/5 hover:from-teal-500/15 hover:to-cyan-500/10"
+                      : "border-white/10 bg-white/[0.03] hover:bg-white/[0.05]"
+                  }`}>
                     <div className="flex items-center gap-4">
-                      <div className={`rounded-xl bg-white/5 p-3 ${section.iconColor}`}>
-                        <Icon className="h-6 w-6" />
+                      <div className={`rounded-xl p-3 ${isQualificationSection ? "bg-teal-500/20" : "bg-white/5"} ${section.iconColor}`}>
+                        <Icon className={isQualificationSection ? "h-7 w-7" : "h-6 w-6"} />
                       </div>
                       <div>
-                        <h2 className="text-xl font-bold text-white">{section.title}</h2>
+                        <h2 className={`font-bold text-white ${isQualificationSection ? "text-2xl" : "text-xl"}`}>{section.title}</h2>
                         <p className="text-sm text-slate-400 mt-0.5">{section.subtitle}</p>
                       </div>
                     </div>
