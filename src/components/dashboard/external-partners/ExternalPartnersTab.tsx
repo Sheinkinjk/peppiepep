@@ -458,7 +458,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
           </div>
           <div className="flex flex-wrap gap-2">
             <Button asChild variant="outline" className="rounded-full">
-              <Link href="/referral-partnerships">View More</Link>
+              <Link href="/affiliate-partnerships">View More</Link>
             </Button>
             <Button
               type="button"

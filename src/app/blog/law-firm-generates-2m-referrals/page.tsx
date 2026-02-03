@@ -607,10 +607,10 @@ export default function LawFirmGenerates2MReferralsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/pricing"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white text-amber-600 px-6 py-3 rounded-full font-bold hover:bg-amber-50 transition-colors"
               >
-                View Pricing
+                Get Started
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a

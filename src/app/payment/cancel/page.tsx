@@ -153,10 +153,10 @@ export default async function PaymentCancelPage({ searchParams }: PageProps) {
         {/* Action Buttons */}
         <div className="space-y-3">
           <Link
-            href="/pricing"
+            href="/contact"
             className="inline-block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40"
           >
-            Try Again
+            Contact Support
           </Link>
 
           <Link

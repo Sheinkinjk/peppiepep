@@ -425,10 +425,10 @@ export default function HowItWorks() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/pricing"
+                href="/case-studies"
                 className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
               >
-                View Pricing
+                Case Studies
               </Link>
             </div>
           </div>

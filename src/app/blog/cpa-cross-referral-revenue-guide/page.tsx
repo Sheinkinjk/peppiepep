@@ -403,10 +403,10 @@ export default function BlogPost() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/pricing"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-emerald-600 hover:bg-emerald-50 transition-colors"
               >
-                See Pricing
+                Get Started
                 <ArrowLeft className="h-4 w-4 rotate-180" />
               </Link>
               <Link

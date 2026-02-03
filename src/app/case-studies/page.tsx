@@ -105,7 +105,7 @@ const categories = [
 ] as const;
 
 const categoryMeta: Record<string, { icon: typeof Users; color: string; link: string }> = {
-  "customer-network": { icon: Users, color: "cyan", link: "/pricing" },
+  "customer-network": { icon: Users, color: "cyan", link: "/affiliate-partnerships" },
   partnerships: { icon: Target, color: "emerald", link: "/affiliate-partnerships" },
   linkedin: { icon: LinkedinIcon, color: "violet", link: "/linkedin-growth" },
   consultants: { icon: Sparkles, color: "amber", link: "/affiliate-partnerships" },

@@ -193,7 +193,7 @@ export function ProductSchema({
       "price": price,
       "priceCurrency": currency,
       "availability": "https://schema.org/InStock",
-      "url": "https://referlabs.com.au/pricing",
+      "url": "https://referlabs.com.au/contact",
       "seller": {
         "@type": "Organization",
         "name": "Refer Labs"

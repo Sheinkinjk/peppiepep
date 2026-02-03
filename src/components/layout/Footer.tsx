@@ -12,7 +12,6 @@ export default function Footer() {
             <li><Link className="hover:text-slate-800" href="/">Home</Link></li>
             <li><Link className="hover:text-slate-800" href="/how-it-works">How it works</Link></li>
             <li><Link className="hover:text-slate-800" href="/affiliate-partnerships">Affiliate Partnerships</Link></li>
-            <li><Link className="hover:text-slate-800" href="/pricing">Pricing</Link></li>
             <li><Link className="hover:text-slate-800" href="/linkedin-growth">LinkedIn Influencer</Link></li>
             <li><Link className="hover:text-slate-800" href="/login">Sign in</Link></li>
           </ul>

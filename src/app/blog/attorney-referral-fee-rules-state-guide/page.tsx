@@ -709,10 +709,10 @@ export default function AttorneyReferralFeeRulesStatePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/pricing"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-full font-bold hover:bg-slate-100 transition-colors"
               >
-                View Pricing
+                Get Started
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a

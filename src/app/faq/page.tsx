@@ -503,10 +503,10 @@ export default function FAQPage() {
                 Contact Support
               </Link>
               <Link
-                href="/pricing"
+                href="/how-it-works"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                View Pricing
+                How It Works
               </Link>
             </div>
           </div>
@@ -518,7 +518,6 @@ export default function FAQPage() {
             <div>
               <h3 className="font-semibold text-white mb-3">Product</h3>
               <ul className="space-y-2 text-slate-400">
-                <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
                 <li><Link href="/affiliate-partnerships" className="hover:text-white transition-colors">Affiliate Partnerships</Link></li>
                 <li><Link href="/linkedin-growth" className="hover:text-white transition-colors">LinkedIn Growth</Link></li>
               </ul>
