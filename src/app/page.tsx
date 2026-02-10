@@ -9,6 +9,10 @@ import {
   TrendingUp,
   CheckCircle2,
   Calendar,
+  Globe,
+  Zap,
+  Shield,
+  Clock,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -19,96 +23,154 @@ export default function Home() {
     <div className="relative min-h-screen overflow-hidden text-slate-900">
 
       {/* ── Hero ── */}
-      <section className="relative bg-gradient-to-b from-[#e8f9fb] via-[#f0fcfd] to-white">
+      <section className="relative bg-gradient-to-b from-[#024b56] via-[#03616e] to-[#047a87] overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,167,181,0.14),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(0,131,143,0.08),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(10,167,181,0.3),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_100%,rgba(34,192,205,0.15),transparent_50%)]" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-8 lg:px-12 pt-10 sm:pt-20 pb-16 sm:pb-28">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-8 lg:px-12 pt-16 sm:pt-24 pb-24 sm:pb-36">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column */}
             <div className="relative z-10 text-center lg:text-left">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-4">
-                Australia expansion partner
-              </p>
-              <h1 className="font-black text-[#0b2a34] tracking-tight mb-4 sm:mb-6">
-                <span className="block text-[1.9rem] sm:text-[2.5rem] md:text-[2.9rem] lg:text-[3.2rem] xl:text-[3.4rem] leading-[1.05]">
-                  Your Australian Sales &amp;
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 mb-6 backdrop-blur-sm">
+                <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-semibold text-white/90 tracking-wide">Accepting new pilot clients</span>
+              </div>
+              <h1 className="font-black tracking-tight mb-6">
+                <span className="block text-[1.8rem] sm:text-[2.4rem] md:text-[2.8rem] lg:text-[3rem] xl:text-[3.4rem] leading-[1.08] text-white">
+                  Your Australian
                 </span>
-                <span className="block text-[1.9rem] sm:text-[2.5rem] md:text-[2.9rem] lg:text-[3.2rem] xl:text-[3.4rem] leading-[1.05] text-[#0AA7B5]">
-                  Partnerships Arm
-                </span>
-                <span className="block text-lg sm:text-xl md:text-2xl text-slate-600 font-semibold mt-3">
-                  Without hiring locally
+                <span className="block text-[1.8rem] sm:text-[2.4rem] md:text-[2.8rem] lg:text-[3rem] xl:text-[3.4rem] leading-[1.08] text-[#57E6FF]">
+                  Sales &amp; Partnerships Arm
                 </span>
               </h1>
-              <p className="text-sm sm:text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-6 sm:mb-8">
-                We help overseas companies enter Australia by sourcing customers, forming distribution partnerships, and running local GTM - on a pilot retainer + success basis.
+              <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                We help overseas companies enter Australia through direct sales, partnerships, and affiliate channels — on a pilot retainer + success basis. No local hire needed.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                 <a
                   href={calendlyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#00838F] hover:shadow-lg shadow-lg shadow-[#0AA7B5]/30"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
                 >
                   <Calendar className="h-4 w-4" />
                   Book a 15-min Expansion Call
                 </a>
                 <Link
                   href="/how-it-works"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-white hover:shadow-md"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
                 >
                   See How It Works
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
+
+              {/* Trust indicators */}
+              <div className="mt-10 flex flex-wrap gap-6 justify-center lg:justify-start">
+                {[
+                  { icon: Globe, text: "Serving US, UK & EU companies" },
+                  { icon: Clock, text: "90-day structured pilot" },
+                  { icon: Shield, text: "No lock-in contracts" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-2">
+                    <item.icon className="h-3.5 w-3.5 text-[#57E6FF]" />
+                    <span className="text-xs text-white/60 font-medium">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Right Column: Pipeline Visual */}
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-[#0AA7B5]/20 via-cyan-400/10 to-transparent rounded-3xl blur-3xl" />
-              <div className="relative rounded-3xl border border-cyan-200 bg-white p-5 sm:p-8 shadow-[0_30px_120px_rgba(10,167,181,0.18)] backdrop-blur-xl">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/25 flex items-center justify-center">
-                    <MapPin className="h-4 w-4 text-[#0AA7B5]" />
+            {/* Right Column: Stats Dashboard */}
+            <div className="relative hidden lg:block">
+              <div className="absolute -inset-8 bg-gradient-to-br from-[#0AA7B5]/20 via-transparent to-[#22C0CD]/10 rounded-[2rem] blur-3xl" />
+              <div className="relative">
+                {/* Main card */}
+                <div className="rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-xl p-8 shadow-2xl">
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-xl bg-[#0AA7B5]/20 flex items-center justify-center">
+                        <MapPin className="h-5 w-5 text-[#57E6FF]" />
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold text-sm">Australia GTM Dashboard</p>
+                        <p className="text-white/50 text-xs">90-day pilot overview</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <div className="h-2 w-2 rounded-full bg-emerald-400" />
+                      <span className="text-xs text-emerald-300 font-medium">Active</span>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-slate-900 font-semibold text-sm">Australia GTM Playbook</p>
-                    <p className="text-slate-500 text-xs">Your expansion at a glance</p>
-                  </div>
-                </div>
 
-                <div className="grid grid-cols-2 gap-3 mb-5">
-                  <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-cyan-50 to-white border border-cyan-200/60">
-                    <Users className="h-5 w-5 text-[#0AA7B5] mx-auto mb-1.5" />
-                    <p className="text-[10px] text-slate-500 uppercase tracking-wider">Customers</p>
-                    <p className="text-lg font-bold text-slate-900 mt-0.5">Direct</p>
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Target className="h-4 w-4 text-[#57E6FF]" />
+                        <span className="text-[10px] uppercase tracking-widest text-white/50">Outbound</span>
+                      </div>
+                      <p className="text-2xl font-black text-white">10-20</p>
+                      <p className="text-xs text-white/40 mt-0.5">qualified conversations</p>
+                    </div>
+                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Handshake className="h-4 w-4 text-[#57E6FF]" />
+                        <span className="text-[10px] uppercase tracking-widest text-white/50">Partners</span>
+                      </div>
+                      <p className="text-2xl font-black text-white">3-8</p>
+                      <p className="text-xs text-white/40 mt-0.5">distribution partners</p>
+                    </div>
+                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Share2 className="h-4 w-4 text-[#57E6FF]" />
+                        <span className="text-[10px] uppercase tracking-widest text-white/50">Referrals</span>
+                      </div>
+                      <p className="text-2xl font-black text-white">5-15</p>
+                      <p className="text-xs text-white/40 mt-0.5">referral-driven leads</p>
+                    </div>
+                    <div className="rounded-xl bg-[#0AA7B5]/15 border border-[#0AA7B5]/25 p-4">
+                      <div className="flex items-center gap-2 mb-3">
+                        <BarChart3 className="h-4 w-4 text-[#57E6FF]" />
+                        <span className="text-[10px] uppercase tracking-widest text-[#57E6FF]/70">Reporting</span>
+                      </div>
+                      <p className="text-2xl font-black text-[#57E6FF]">Weekly</p>
+                      <p className="text-xs text-white/40 mt-0.5">pipeline updates</p>
+                    </div>
                   </div>
-                  <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-teal-50 to-white border border-teal-200/60">
-                    <Handshake className="h-5 w-5 text-teal-600 mx-auto mb-1.5" />
-                    <p className="text-[10px] text-slate-500 uppercase tracking-wider">Partners</p>
-                    <p className="text-lg font-bold text-slate-900 mt-0.5">Distribution</p>
-                  </div>
-                  <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-cyan-50 to-white border border-cyan-200/60">
-                    <Share2 className="h-5 w-5 text-[#0AA7B5] mx-auto mb-1.5" />
-                    <p className="text-[10px] text-slate-500 uppercase tracking-wider">Affiliates</p>
-                    <p className="text-lg font-bold text-slate-900 mt-0.5">Referral</p>
-                  </div>
-                  <div className="text-center p-4 rounded-2xl bg-[#0AA7B5]/8 border border-[#0AA7B5]/20">
-                    <BarChart3 className="h-5 w-5 text-[#0AA7B5] mx-auto mb-1.5" />
-                    <p className="text-[10px] text-[#0AA7B5]/80 uppercase tracking-wider">Reporting</p>
-                    <p className="text-lg font-bold text-[#00838F] mt-0.5">Weekly</p>
-                  </div>
-                </div>
 
-                <div className="rounded-2xl bg-gradient-to-r from-[#0AA7B5]/8 to-cyan-50 border border-[#0AA7B5]/15 p-5">
-                  <p className="text-[#00838F] text-xs uppercase tracking-wider mb-1 font-medium">90-Day Pilot</p>
-                  <p className="text-slate-900 font-semibold text-sm">Pipeline, partners, and revenue signals - before you commit headcount.</p>
+                  <div className="rounded-xl bg-gradient-to-r from-[#0AA7B5]/15 to-transparent border border-[#0AA7B5]/15 p-4">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-[#57E6FF] text-xs font-semibold uppercase tracking-wider">Pilot Status</p>
+                        <p className="text-white/80 text-sm mt-0.5">Pipeline, partners, and revenue signals delivered</p>
+                      </div>
+                      <Zap className="h-5 w-5 text-[#57E6FF]" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Social Proof Bar ── */}
+      <section className="relative bg-white py-8 sm:py-10 border-b border-slate-100">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+            {[
+              { value: "B2B SaaS", sub: "Fintech & Marketplaces" },
+              { value: "US, UK & EU", sub: "Companies Served" },
+              { value: "90 Days", sub: "Structured Pilot" },
+              { value: "3 Channels", sub: "Sales, Partners & Affiliates" },
+            ].map((item) => (
+              <div key={item.value} className="text-center">
+                <p className="text-lg sm:text-xl font-black text-[#0b2a34]">{item.value}</p>
+                <p className="text-xs text-slate-500">{item.sub}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -116,242 +178,192 @@ export default function Home() {
       {/* ── Three Channels ── */}
       <section className="relative bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-10 sm:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Our approach</p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0b2a34] mb-3 sm:mb-4">
-              We Build Revenue in Australia Through Three Channels
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Three revenue channels</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-4">
+              How We Build Your Australian Revenue
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-lg">
-              Each channel is managed end-to-end by our team. You get pipeline, partners, and revenue signals without building a local operation.
+            <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
+              Each channel is managed end-to-end. You get pipeline, partners, and revenue signals without building a local team.
             </p>
           </div>
 
-          <div className="space-y-5">
-            {/* Channel 1 */}
-            <div className="group relative overflow-hidden rounded-2xl border border-cyan-200/80 bg-gradient-to-r from-cyan-50/60 via-white to-white transition-all duration-300 hover:shadow-xl hover:shadow-[#0AA7B5]/10 hover:border-[#0AA7B5]/30">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#0AA7B5]" />
-              <div className="grid lg:grid-cols-[1fr_280px] gap-0">
-                <div className="p-6 sm:p-10 pl-8 sm:pl-12">
-                  <div className="flex items-start gap-4 mb-5">
-                    <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
-                      <Target className="h-6 w-6 text-[#0AA7B5]" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#0AA7B5] mb-1">Channel 1</p>
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Direct Customer Acquisition</h3>
-                    </div>
+          <div className="grid lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Target,
+                num: "01",
+                title: "Direct Customer Acquisition",
+                desc: "We act as your on-the-ground sales arm. Outbound prospecting, warm introductions, pipeline creation, and closing support.",
+                items: ["Outbound prospecting to your ICP", "Warm intros via our network", "Pipeline creation & deal support", "Weekly conversion reporting"],
+                stat: "10-20",
+                statLabel: "qualified conversations",
+              },
+              {
+                icon: Handshake,
+                num: "02",
+                title: "Partnership Distribution",
+                desc: "We source and activate agencies, platforms, and strategic partners who can distribute your product across Australia.",
+                items: ["Partner identification & outreach", "Agency & platform activation", "Partner terms & structure", "Ongoing relationship management"],
+                stat: "3-8",
+                statLabel: "distribution partners",
+              },
+              {
+                icon: Share2,
+                num: "03",
+                title: "Referral & Affiliate Activation",
+                desc: "We recruit high-trust referral partners, set up attribution tracking, and manage performance monthly.",
+                items: ["Affiliate & referral recruitment", "Attribution & tracking setup", "Commission structure management", "Monthly channel optimisation"],
+                stat: "5-15",
+                statLabel: "referral-driven leads",
+              },
+            ].map((channel) => (
+              <div
+                key={channel.num}
+                className="group relative rounded-2xl border border-slate-200/80 bg-white p-8 transition-all duration-300 hover:border-[#0AA7B5]/30 hover:shadow-xl hover:shadow-[#0AA7B5]/8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#0AA7B5] to-[#00838F] flex items-center justify-center shadow-lg shadow-[#0AA7B5]/20">
+                    <channel.icon className="h-6 w-6 text-white" />
                   </div>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                    We act as your on-the-ground sales arm in Australia. From outbound prospecting to warm introductions and closing support, we build your customer pipeline so you can focus on product and strategy.
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {["Outbound prospecting to your ICP", "Warm introductions via our network", "Pipeline creation and deal support", "Weekly conversion reporting"].map((item) => (
-                      <div key={item} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="h-4 w-4 text-[#0AA7B5] flex-shrink-0 mt-0.5" />
-                        <p className="text-slate-700 text-sm">{item}</p>
-                      </div>
-                    ))}
-                  </div>
+                  <span className="text-xs font-black text-[#0AA7B5]/40 tracking-widest">{channel.num}</span>
                 </div>
-                <div className="hidden lg:flex items-center justify-center bg-gradient-to-br from-[#0AA7B5]/8 to-cyan-50/50 border-l border-cyan-200/40 p-8">
-                  <div className="text-center">
-                    <p className="text-4xl font-black text-[#0AA7B5] mb-1">10-20</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider">Qualified conversations</p>
-                    <p className="text-xs text-slate-400 mt-0.5">in 90 days</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Channel 2 */}
-            <div className="group relative overflow-hidden rounded-2xl border border-teal-200/80 bg-gradient-to-r from-teal-50/60 via-white to-white transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/10 hover:border-teal-400/30">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-teal-500" />
-              <div className="grid lg:grid-cols-[1fr_280px] gap-0">
-                <div className="p-6 sm:p-10 pl-8 sm:pl-12">
-                  <div className="flex items-start gap-4 mb-5">
-                    <div className="h-12 w-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center flex-shrink-0">
-                      <Handshake className="h-6 w-6 text-teal-600" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-teal-600 mb-1">Channel 2</p>
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Partnership Distribution</h3>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                    We source, pitch, and activate agencies, platforms, communities, and strategic partners who can distribute your product across Australia. We manage the relationships so partners keep performing.
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {["Partner identification and outreach", "Agency and platform activation", "Partner terms and structure design", "Ongoing relationship management"].map((item) => (
-                      <div key={item} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="h-4 w-4 text-teal-600 flex-shrink-0 mt-0.5" />
-                        <p className="text-slate-700 text-sm">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="hidden lg:flex items-center justify-center bg-gradient-to-br from-teal-500/8 to-teal-50/50 border-l border-teal-200/40 p-8">
-                  <div className="text-center">
-                    <p className="text-4xl font-black text-teal-600 mb-1">3-8</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider">Distribution partners</p>
-                    <p className="text-xs text-slate-400 mt-0.5">activated per pilot</p>
-                  </div>
+                <h3 className="text-xl font-bold text-[#0b2a34] mb-3">{channel.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">{channel.desc}</p>
+                <ul className="space-y-2.5 mb-8">
+                  {channel.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="h-4 w-4 text-[#0AA7B5] flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-6 border-t border-slate-100">
+                  <p className="text-3xl font-black text-[#0AA7B5]">{channel.stat}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{channel.statLabel} per pilot</p>
                 </div>
               </div>
-            </div>
-
-            {/* Channel 3 */}
-            <div className="group relative overflow-hidden rounded-2xl border border-cyan-200/80 bg-gradient-to-r from-cyan-50/60 via-white to-white transition-all duration-300 hover:shadow-xl hover:shadow-[#0AA7B5]/10 hover:border-[#0AA7B5]/30">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#0AA7B5]" />
-              <div className="grid lg:grid-cols-[1fr_280px] gap-0">
-                <div className="p-6 sm:p-10 pl-8 sm:pl-12">
-                  <div className="flex items-start gap-4 mb-5">
-                    <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
-                      <Share2 className="h-6 w-6 text-[#0AA7B5]" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#0AA7B5] mb-1">Channel 3</p>
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Referral &amp; Affiliate Activation</h3>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                    We recruit high-trust referral partners and affiliates, set up attribution tracking, and manage performance monthly. You get a scalable, performance-based distribution channel in Australia.
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {["Affiliate and referral recruitment", "Attribution and performance tracking", "Commission structure management", "Monthly channel optimisation"].map((item) => (
-                      <div key={item} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="h-4 w-4 text-[#0AA7B5] flex-shrink-0 mt-0.5" />
-                        <p className="text-slate-700 text-sm">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="hidden lg:flex items-center justify-center bg-gradient-to-br from-[#0AA7B5]/8 to-cyan-50/50 border-l border-cyan-200/40 p-8">
-                  <div className="text-center">
-                    <p className="text-4xl font-black text-[#0AA7B5] mb-1">5-15</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider">Sales conversations</p>
-                    <p className="text-xs text-slate-400 mt-0.5">from referral channels</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Why This Exists (Dark Tiffany Section) ── */}
+      {/* ── Why This Exists ── */}
       <section className="relative bg-[#024b56] py-16 sm:py-24 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(10,167,181,0.2),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(34,192,205,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(87,230,255,0.08),transparent_50%)]" />
         </div>
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-10 sm:mb-14">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-[1.1] mb-4">
-              Why Overseas Expansion Into Australia Breaks Without Local Ownership
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {[
-              "Market entry stalls without local relationships and follow-through.",
-              "Partnerships require ongoing activation, not one-off intros.",
-              "Hiring locally too early is expensive and slow.",
-              "You need revenue signals before you commit headcount.",
-            ].map((text, i) => (
-              <div key={i} className="flex items-start gap-5 p-5 sm:p-6 rounded-2xl bg-white/[0.06] border border-white/10 backdrop-blur-sm">
-                <div className="flex-shrink-0 h-9 w-9 rounded-full bg-[#0AA7B5]/20 border border-[#0AA7B5]/30 flex items-center justify-center">
-                  <span className="text-[#57D3DE] text-sm font-bold">{i + 1}</span>
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#57E6FF] mb-4">The problem</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-white leading-[1.1] mb-6">
+                Why Australia Expansion Breaks Without Local Ownership
+              </h2>
+              <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+                Most overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales and partnerships.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {[
+                { num: "01", text: "Market entry stalls without local relationships and follow-through." },
+                { num: "02", text: "Partnerships require ongoing activation, not one-off introductions." },
+                { num: "03", text: "Hiring locally too early is expensive and slow to ramp." },
+                { num: "04", text: "You need revenue signals before you commit headcount." },
+              ].map((item) => (
+                <div key={item.num} className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/10">
+                  <span className="text-[#57E6FF] text-sm font-black flex-shrink-0 mt-0.5">{item.num}</span>
+                  <p className="text-white/85 text-sm leading-relaxed">{item.text}</p>
                 </div>
-                <p className="text-white/90 text-sm sm:text-base leading-relaxed">{text}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── How It Works ── */}
-      <section className="relative bg-gradient-to-b from-[#f0fcfd] to-white py-16 sm:py-24">
+      <section className="relative bg-gradient-to-b from-white via-[#f8fefe] to-white py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-8 sm:mb-14">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0b2a34] mb-2 sm:mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">90-day pilot</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-4">
               How It Works
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-lg">
-              A clear, structured approach to building your Australia revenue.
+            <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
+              A structured approach to building your Australia pipeline.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-0">
-            {[
-              { step: "01", title: "Short Pilot Scope", desc: "90-day engagement with clear deliverables. Align on ICP, messaging, and success metrics." },
-              { step: "02", title: "Target List Build", desc: "Partner + customer target list built around your ideal profile and Australia market specifics." },
-              { step: "03", title: "Outreach + Closing", desc: "We run outreach, book introductions, and provide closing support on key opportunities." },
-              { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, conversion, and next actions - reported weekly so you always know the score." },
-            ].map((item, i) => (
-              <div key={item.step} className={`relative p-6 sm:p-8 ${i < 3 ? "lg:border-r lg:border-[#0AA7B5]/15" : ""}`}>
-                <div className="h-12 w-12 rounded-full flex items-center justify-center mb-5 bg-[#0AA7B5] text-white shadow-lg shadow-[#0AA7B5]/25">
-                  <span className="text-sm font-black">{item.step}</span>
+          <div className="relative">
+            {/* Connecting line */}
+            <div className="hidden lg:block absolute top-16 left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-0.5 bg-gradient-to-r from-[#0AA7B5] via-[#22C0CD] to-[#0AA7B5]" />
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { step: "01", title: "Pilot Scoping", desc: "Align on your ICP, messaging, pricing, and success metrics for Australia." },
+                { step: "02", title: "Target List Build", desc: "Customer and partner target lists built around your ideal profile and market specifics." },
+                { step: "03", title: "Outreach & Closing", desc: "We run outreach, book intros, and provide closing support on key opportunities." },
+                { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, conversion, and next actions - reported weekly." },
+              ].map((item) => (
+                <div key={item.step} className="relative text-center">
+                  <div className="relative z-10 h-14 w-14 rounded-full flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#0AA7B5] to-[#00838F] text-white shadow-lg shadow-[#0AA7B5]/25 ring-4 ring-white">
+                    <span className="text-sm font-black">{item.step}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-[#0b2a34] mb-2">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#0AA7B5]/30 bg-[#0AA7B5]/5 px-8 py-3.5 text-sm font-semibold text-[#0AA7B5] transition-all hover:bg-[#0AA7B5]/10 hover:border-[#0AA7B5]/50"
+            >
+              See Full Pilot Breakdown
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ── Who It's For ── */}
-      <section className="relative bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0b2a34] mb-2 sm:mb-4">
-              Built for Overseas Teams That Need Australian Traction Fast
+      <section className="relative bg-[#f6fdfe] py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Who we work with</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
+              Built for Overseas Teams Entering Australia
             </h2>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Users, label: "Founder-led growth teams" },
-              { icon: Handshake, label: "Heads of Partnerships / Growth" },
-              { icon: TrendingUp, label: "Seed to Series B companies testing new markets" },
-              { icon: CheckCircle2, label: "Brands with proven product-market fit elsewhere" },
+              { icon: Users, label: "Founder-led growth teams", desc: "Testing a new market with limited resources" },
+              { icon: Handshake, label: "Heads of Partnerships", desc: "Need local channel expertise and execution" },
+              { icon: TrendingUp, label: "Seed to Series B", desc: "Ready to expand but not to hire locally yet" },
+              { icon: CheckCircle2, label: "Proven PMF elsewhere", desc: "Product works — need distribution in Australia" },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-5 p-5 rounded-xl hover:bg-cyan-50/50 transition-colors">
-                <div className="h-11 w-11 rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
+              <div key={item.label} className="group p-6 rounded-2xl bg-white border border-slate-200/60 transition-all duration-300 hover:border-[#0AA7B5]/30 hover:shadow-lg hover:shadow-[#0AA7B5]/5">
+                <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 flex items-center justify-center mb-4 group-hover:bg-[#0AA7B5]/15 transition-colors">
                   <item.icon className="h-5 w-5 text-[#0AA7B5]" />
                 </div>
-                <p className="text-slate-800 font-medium text-base">{item.label}</p>
+                <p className="text-[#0b2a34] font-bold text-sm mb-1">{item.label}</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ── 90 Days (Tiffany Tinted) ── */}
-      <section className="relative bg-gradient-to-b from-[#e8f9fb] via-[#f0fcfd] to-white py-16 sm:py-24 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(10,167,181,0.08),transparent_55%)]" />
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0b2a34] mb-2 sm:mb-4">
-              What a Successful First 90 Days Looks Like
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
-              Typical targets we aim to deliver during a pilot engagement.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              { value: "10-20", label: "Partner conversations" },
-              { value: "3-8", label: "Qualified distribution opportunities" },
-              { value: "5-15", label: "Sales conversations" },
-              { value: "Clear", label: "Revenue signal + repeatable channel" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center p-5 sm:p-6 rounded-2xl bg-white border border-cyan-200/60 shadow-sm">
-                <p className="text-2xl sm:text-3xl font-black text-[#0AA7B5]">{stat.value}</p>
-                <p className="text-xs text-slate-500 mt-1.5 leading-snug">{stat.label}</p>
-              </div>
-            ))}
+          <div className="text-center mt-8">
+            <Link
+              href="/who-its-for"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#0AA7B5] hover:text-[#00838F] transition-colors"
+            >
+              See all company profiles we work with
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -359,19 +371,20 @@ export default function Home() {
       {/* ── Pricing Teaser ── */}
       <section className="relative bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="relative overflow-hidden rounded-2xl border border-cyan-200/60 bg-gradient-to-r from-[#f0fcfd] via-white to-[#f0fcfd] p-6 sm:p-10">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-8">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#024b56] to-[#036572] p-8 sm:p-12">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(87,230,255,0.15),transparent_50%)]" />
+            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="text-center lg:text-left">
-                <h2 className="text-lg sm:text-2xl font-black text-[#0b2a34] mb-2">
-                  Choose a Pilot or Retainer Model
+                <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
+                  Pilot or Retainer — You Choose
                 </h2>
-                <p className="text-slate-600 text-sm max-w-xl">
-                  Transparent, services-led pricing. No hidden fees. Start with a 90-day pilot.
+                <p className="text-white/65 text-sm sm:text-base max-w-xl">
+                  Transparent, services-led pricing. Start with a 90-day pilot, scale into a retainer.
                 </p>
               </div>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-6 sm:px-8 py-3 sm:py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#00838F] hover:shadow-lg shadow-lg shadow-[#0AA7B5]/25 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20 whitespace-nowrap"
               >
                 View Pricing
                 <ArrowRight className="h-4 w-4" />
@@ -381,27 +394,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Footer CTA (Dark Tiffany) ── */}
-      <section className="relative bg-[#024b56] py-16 sm:py-24 overflow-hidden">
+      {/* ── Footer CTA ── */}
+      <section className="relative bg-gradient-to-b from-[#024b56] via-[#03606d] to-[#024b56] py-20 sm:py-28 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(10,167,181,0.15),transparent_45%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(87,230,255,0.08),transparent_45%)]" />
         </div>
         <div className="relative mx-auto max-w-3xl px-4 sm:px-8 lg:px-12 text-center">
-          <h2 className="text-2xl sm:text-4xl font-black text-white mb-4 sm:mb-6">
-            Want Australia Revenue Without Hiring Locally?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+            Ready to Build Australian Revenue?
           </h2>
-          <p className="text-sm sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-xl mx-auto">
-            We bring customers, partners, and distribution in Australia - so you don&apos;t have to hire before you have revenue.
+          <p className="text-base sm:text-lg text-white/70 mb-8 max-w-xl mx-auto">
+            Book a 15-minute call. We&apos;ll discuss your product, your goals in Australia, and whether a pilot makes sense.
           </p>
-          <a
-            href={calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] hover:shadow-lg shadow-lg shadow-[#0AA7B5]/40"
-          >
-            <Calendar className="h-4 w-4" />
-            Book Call
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+            >
+              <Calendar className="h-4 w-4" />
+              Book a 15-min Expansion Call
+            </a>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
+            >
+              View Our Services
+            </Link>
+          </div>
         </div>
       </section>
 
