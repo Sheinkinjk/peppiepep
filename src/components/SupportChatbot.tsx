@@ -263,7 +263,7 @@ export function SupportChatbot() {
                 <button
                   type="submit"
                   disabled={isSubmittingLead}
-                  className="w-full rounded-full bg-[#008b8b] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-[#00a6b4]/30 transition hover:translate-y-[-1px] hover:bg-[#00767a] disabled:opacity-60"
+                  className="w-full rounded-full bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:translate-y-[-1px] hover:bg-[#00838F] disabled:opacity-60"
                 >
                   {isSubmittingLead ? (
                     <span className="flex items-center justify-center gap-2">
@@ -287,7 +287,7 @@ export function SupportChatbot() {
                         className={cn(
                           "max-w-[85%] rounded-2xl px-4 py-3 shadow-sm",
                           message.role === "user"
-                            ? "bg-[#008b8b] text-white"
+                            ? "bg-[#0AA7B5] text-white"
                             : "bg-white text-slate-900 border border-white/60",
                         )}
                       >
@@ -348,7 +348,7 @@ export function SupportChatbot() {
                 <button
                   type="submit"
                   disabled={isSending || !input.trim()}
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#008b8b] text-white shadow-lg shadow-[#00a6b4]/30 transition hover:translate-y-[-2px] hover:bg-[#00767a] disabled:opacity-60"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#0AA7B5] text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:translate-y-[-2px] hover:bg-[#00838F] disabled:opacity-60"
                   aria-label="Send message"
                 >
                   {isSending ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}

@@ -200,7 +200,7 @@ export default function ServicesPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-[#00767a]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/25"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call

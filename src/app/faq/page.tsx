@@ -186,7 +186,7 @@ export default function FAQPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#008b8b] text-sm font-semibold text-white transition-colors hover:bg-[#00767a]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0AA7B5] text-sm font-semibold text-white transition-colors hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call

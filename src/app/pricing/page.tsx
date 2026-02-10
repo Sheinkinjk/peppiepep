@@ -160,7 +160,7 @@ export default function PricingPage() {
                   rel="noopener noreferrer"
                   className={`w-full py-4 px-6 rounded-full font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
                     plan.recommended
-                      ? "bg-[#008b8b] text-white hover:bg-[#00767a] shadow-lg shadow-[#008b8b]/25"
+                      ? "bg-[#0AA7B5] text-white hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
                   }`}
                 >
@@ -206,7 +206,7 @@ export default function PricingPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-[#008b8b] text-white px-8 py-4 text-sm font-semibold hover:bg-[#00767a] transition-all shadow-lg shadow-[#008b8b]/25 gap-2"
+                className="inline-flex items-center justify-center rounded-full bg-[#0AA7B5] text-white px-8 py-4 text-sm font-semibold hover:bg-[#00838F] transition-all shadow-lg shadow-[#0AA7B5]/30 gap-2"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call

@@ -169,7 +169,7 @@ export default function CaseStudiesPage() {
               href={calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#008b8b] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#00767a] shadow-lg shadow-[#008b8b]/25"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
             >
               <Calendar className="h-4 w-4" />
               Book Call

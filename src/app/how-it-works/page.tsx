@@ -52,7 +52,7 @@ export default function HowItWorks() {
             {/* Week 1 */}
             <div className="rounded-2xl border border-cyan-200/80 bg-gradient-to-r from-white via-cyan-50 to-white p-6 sm:p-8 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center flex-shrink-0">
+                <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-cyan-700 font-black text-sm">W1</span>
                 </div>
                 <div>
@@ -82,7 +82,7 @@ export default function HowItWorks() {
             {/* Week 4-12 */}
             <div className="rounded-2xl border border-cyan-200/80 bg-gradient-to-r from-white via-cyan-50 to-white p-6 sm:p-8 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center flex-shrink-0">
+                <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-cyan-700 font-black text-sm">W4-12</span>
                 </div>
                 <div>
@@ -128,7 +128,7 @@ export default function HowItWorks() {
               { icon: ClipboardList, label: "Next-step playbook", detail: "What to do after the pilot ends" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4 p-5 rounded-xl border border-slate-200/80 bg-white/85 shadow-sm">
-                <div className="h-10 w-10 rounded-xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center flex-shrink-0">
+                <div className="h-10 w-10 rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
                   <item.icon className="h-5 w-5 text-cyan-700" />
                 </div>
                 <div>
@@ -220,7 +220,7 @@ export default function HowItWorks() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#00767a] hover:shadow-lg shadow-cyan-500/30"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#00838F] hover:shadow-lg shadow-lg shadow-[#0AA7B5]/30"
               >
                 <Calendar className="h-4 w-4" />
                 Book a 15-min Expansion Call
