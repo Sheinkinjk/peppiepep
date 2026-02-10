@@ -7,6 +7,17 @@ import { ArrowRight, Calendar, Menu, X } from "lucide-react";
 import { ReferLabsLogo } from "./ReferLabsLogo";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+
+const navLinks = [
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/services", label: "Services" },
+  { href: "/who-its-for", label: "Who It's For" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/faq", label: "FAQ" },
+];
+
 export function StickyHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,7 +47,6 @@ export function StickyHeader() {
       }
     };
     void checkAuth();
-    // Optionally, you could subscribe to auth changes here if you want live updates.
     return () => {
       isMounted = false;
     };
@@ -72,52 +82,31 @@ export function StickyHeader() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-2">
-              <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
-                href="/how-it-works"
-              >
-                How it works
-              </Link>
-              <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
-                href="/affiliate-partnerships"
-              >
-                Affiliate Partnerships
-              </Link>
-              <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
-                href="/about"
-              >
-                About
-              </Link>
-              <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
-                href="/case-studies"
-              >
-                Case Studies
-              </Link>
-              <Link
-                className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
-                href="/contact"
-              >
-                Contact
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  className="rounded-full px-3 py-2 text-sm font-semibold text-[#00505B] hover:bg-[#E6FBFE] transition-all duration-200 cursor-pointer"
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <a
-                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF] cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
               >
                 <Calendar className="h-4 w-4" />
-                Schedule Call
+                Book Call
               </a>
-              {isAuthenticated ? (
+              {isAuthenticated && (
                 <>
                   <Link
                     href="/dashboard"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-sm font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF] cursor-pointer"
                   >
-                    View Dashboard <ArrowRight className="h-4 w-4" />
+                    Dashboard <ArrowRight className="h-4 w-4" />
                   </Link>
                   <button
                     type="button"
@@ -126,21 +115,6 @@ export function StickyHeader() {
                   >
                     Log out
                   </button>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/login"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#00838F] px-3 py-2 text-xs font-bold text-[#00838F] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E3FAFF] cursor-pointer"
-                  >
-                    Log in
-                  </Link>
-                  <Link
-                    href="/login"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#00838F] px-5 py-2 text-sm font-bold text-white shadow-lg shadow-[#A0DBE4]/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
-                  >
-                    Sign Up <ArrowRight className="h-4 w-4" />
-                  </Link>
                 </>
               )}
             </nav>
@@ -164,59 +138,34 @@ export function StickyHeader() {
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-[#D6EFF4] mt-3 bg-white text-[#00505B]">
             <nav className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-2">
-              <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
-                href="/how-it-works"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                How it works
-              </Link>
-              <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
-                href="/affiliate-partnerships"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Affiliate Partnerships
-              </Link>
-              <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
-                href="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
-                href="/case-studies"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Case Studies
-              </Link>
-              <Link
-                className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-[#E6FBFE] transition-all duration-200"
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <a
-                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#00838F] px-4 py-3 text-sm font-bold text-[#00838F] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Calendar className="h-4 w-4" />
-                Schedule Call
+                Book Call
               </a>
-              {isAuthenticated ? (
+              {isAuthenticated && (
                 <>
                   <Link
                     href="/dashboard"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#00838F] px-4 py-3 text-sm font-bold text-[#00838F] transition-all duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    View Dashboard <ArrowRight className="h-4 w-4" />
+                    Dashboard <ArrowRight className="h-4 w-4" />
                   </Link>
                   <button
                     type="button"
@@ -228,23 +177,6 @@ export function StickyHeader() {
                   >
                     Log out
                   </button>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/login"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#00838F] px-4 py-3 text-sm font-bold text-[#00838F] transition-all duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Log in
-                  </Link>
-                  <Link
-                    href="/login"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00838F] px-4 py-3 text-sm font-bold text-white shadow-md transition-all duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Sign Up <ArrowRight className="h-4 w-4" />
-                  </Link>
                 </>
               )}
             </nav>

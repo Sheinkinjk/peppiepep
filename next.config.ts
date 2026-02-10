@@ -47,6 +47,11 @@ const nextConfig: NextConfig = {
         destination: '/linkedin-growth/influencer',
         permanent: true,
       },
+      {
+        source: '/affiliate-partnerships',
+        destination: '/services',
+        permanent: true,
+      },
     ];
   },
   async headers() {

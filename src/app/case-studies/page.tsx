@@ -1,242 +1,154 @@
-"use client";
-
-import Link from "next/link";
-import { useMemo, useState } from "react";
 import {
   ArrowRight,
-  TrendingUp,
-  Users,
+  Calendar,
+  Cloud,
+  CreditCard,
+  Handshake,
+  Share2,
   Target,
-  Sparkles,
-  LinkedinIcon,
 } from "lucide-react";
+import Link from "next/link";
+import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
-/* ─────────────────────────────────────────────────────────────
-   Case Study Data
-───────────────────────────────────────────────────────────── */
+export const metadata = generateSEOMetadata(seoConfig.caseStudies);
 
-type CaseStudy = {
-  id: string;
-  category: "customer-network" | "partnerships" | "linkedin" | "consultants";
-  industry: string;
-  headline: string;
-  metrics: { value: string; label: string }[];
-  summary: string;
-  testimonial: { quote: string; attribution: string };
-};
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
-const caseStudies: CaseStudy[] = [
+const playbooks = [
   {
-    id: "financial-advisory-customer-network",
-    category: "customer-network",
-    industry: "Financial Advisory",
-    headline: "+41% client acquisition from customer affiliates",
-    metrics: [
-      { value: "+41%", label: "Client Growth" },
-      { value: "3.8×", label: "Affiliate Volume" },
-      { value: "$0", label: "Manual Tracking" },
+    id: "us-saas-australia",
+    icon: Cloud,
+    color: "cyan",
+    title: "How We Enter Australia for a US SaaS Company",
+    subtitle: "Example playbook",
+    steps: [
+      { phase: "Week 1", action: "ICP alignment and Australia-specific positioning review" },
+      { phase: "Week 2-3", action: "Build target list of 50 Australian prospects and 15 potential agency partners" },
+      { phase: "Week 4-6", action: "Launch outbound sequences; begin partner outreach with tailored pitch decks" },
+      { phase: "Week 7-10", action: "Book and attend introductory meetings; refine messaging based on early feedback" },
+      { phase: "Week 11-12", action: "Pipeline review; partner terms negotiation; next-step playbook delivered" },
     ],
-    summary:
-      "A mid-size financial advisory firm turned their happiest clients into advocates with branded ambassador portals and unique tracking links. Within 6 months, they saw a 41% increase in new client acquisition and eliminated manual spreadsheet tracking entirely.",
-    testimonial: {
-      quote: "We went from guessing who referred whom to having a complete picture of our affiliate pipeline. Our clients love sharing their links.",
-      attribution: "Managing Director, Financial Advisory Firm",
-    },
+    typicalOutcomes: [
+      "10-20 qualified prospect conversations",
+      "3-5 agency or platform partner discussions",
+      "Clear signal on product-market fit in Australia",
+      "Repeatable outreach sequences for continued use",
+    ],
   },
   {
-    id: "consulting-partnerships",
-    category: "partnerships",
-    industry: "Management Consulting",
-    headline: "12 strategic agency partners in 90 days",
-    metrics: [
-      { value: "12", label: "New Partners" },
-      { value: "34", label: "Qualified Intros" },
-      { value: "60%", label: "Ops Savings" },
+    id: "agency-partner-channel",
+    icon: Handshake,
+    color: "emerald",
+    title: "How We Build an Agency Partner Channel",
+    subtitle: "Example playbook",
+    steps: [
+      { phase: "Week 1", action: "Map the Australian agency landscape relevant to the client's product category" },
+      { phase: "Week 2-3", action: "Shortlist 20 agencies; draft partner value proposition and terms framework" },
+      { phase: "Week 4-8", action: "Outreach to agency decision-makers; present partnership opportunity" },
+      { phase: "Week 9-10", action: "Onboard first partners; set up tracking and reporting" },
+      { phase: "Week 11-12", action: "First partner-sourced leads entering pipeline; optimise partner enablement materials" },
     ],
-    summary:
-      "A boutique consulting firm launched white-glove partner programs with technology firms and implementation agencies. They onboarded 12 strategic partners and generated 34 qualified introductions while reducing partner management overhead by 60%.",
-    testimonial: {
-      quote: "Refer Labs gave us the infrastructure to build a partner ecosystem we'd been putting off for years. The co-branded materials look premium.",
-      attribution: "Partner, Management Consulting Firm",
-    },
+    typicalOutcomes: [
+      "15-20 agency conversations",
+      "3-8 signed or in-progress partner agreements",
+      "Partner enablement kit ready for scale",
+      "First partner-sourced pipeline within 90 days",
+    ],
   },
   {
-    id: "saas-linkedin-growth",
-    category: "linkedin",
-    industry: "B2B SaaS",
-    headline: "+28% demo conversions via LinkedIn influencers",
-    metrics: [
-      { value: "+28%", label: "Demo Lift" },
-      { value: "8", label: "Active Creators" },
-      { value: "Full", label: "Attribution" },
+    id: "affiliate-activation",
+    icon: Share2,
+    color: "purple",
+    title: "How We Activate Affiliates in Australia",
+    subtitle: "Example playbook",
+    steps: [
+      { phase: "Week 1", action: "Define affiliate partner profile and commission structure" },
+      { phase: "Week 2-3", action: "Identify 30+ potential affiliates — advisors, communities, creators, niche platforms" },
+      { phase: "Week 4-8", action: "Recruit and onboard first cohort; set up attribution tracking" },
+      { phase: "Week 9-10", action: "First referrals flowing; monitor conversion and partner engagement" },
+      { phase: "Week 11-12", action: "Optimise commission structure; expand to second cohort of affiliates" },
     ],
-    summary:
-      "A growing B2B SaaS company activated 8 niche LinkedIn thought leaders with campaign-specific tracking links. They achieved a 28% lift in demo conversion rates and complete visibility into ROI per creator—no more guessing which influencers actually drive pipeline.",
-    testimonial: {
-      quote: "We finally know which creators drive pipeline, not just impressions. The per-creator attribution is bulletproof.",
-      attribution: "Head of Demand Generation, B2B SaaS",
-    },
-  },
-  {
-    id: "law-firm-consultant-referrals",
-    category: "consultants",
-    industry: "Legal Services",
-    headline: "22 trusted advisors driving 37% of new revenue",
-    metrics: [
-      { value: "22", label: "Active Advisors" },
-      { value: "+37%", label: "Affiliate Revenue" },
-      { value: "Full", label: "Attribution" },
+    typicalOutcomes: [
+      "10-15 active affiliate partners",
+      "First referred customers within 60 days",
+      "Attribution and reporting framework operational",
+      "Scalable affiliate recruitment playbook",
     ],
-    summary:
-      "A mid-size law firm activated consultants and business advisors who guide buying decisions. With discreet tracking and compliance disclosures built-in, they enrolled 22 trusted experts who now drive 37% of the firm's new client revenue.",
-    testimonial: {
-      quote: "Our advisors appreciate the professional, discreet tracking. We finally have clean attribution for every introduction.",
-      attribution: "Managing Partner, Law Firm",
-    },
   },
 ];
 
-const categories = [
-  { key: "all", label: "All Case Studies", icon: TrendingUp },
-  { key: "customer-network", label: "Customer Network", icon: Users },
-  { key: "partnerships", label: "Agency Partners", icon: Target },
-  { key: "linkedin", label: "LinkedIn Influencers", icon: LinkedinIcon },
-  { key: "consultants", label: "Consultants & Advisors", icon: Sparkles },
-] as const;
-
-const categoryMeta: Record<string, { icon: typeof Users; color: string; link: string }> = {
-  "customer-network": { icon: Users, color: "cyan", link: "/affiliate-partnerships" },
-  partnerships: { icon: Target, color: "emerald", link: "/affiliate-partnerships" },
-  linkedin: { icon: LinkedinIcon, color: "violet", link: "/linkedin-growth" },
-  consultants: { icon: Sparkles, color: "amber", link: "/affiliate-partnerships" },
+const colorMap: Record<string, { border: string; icon: string; bg: string; text: string }> = {
+  cyan: { border: "border-cyan-500/20", icon: "text-cyan-400", bg: "from-cyan-500/10", text: "text-cyan-300" },
+  emerald: { border: "border-emerald-500/20", icon: "text-emerald-400", bg: "from-emerald-500/10", text: "text-emerald-300" },
+  purple: { border: "border-purple-500/20", icon: "text-purple-400", bg: "from-purple-500/10", text: "text-purple-300" },
 };
 
-/* ─────────────────────────────────────────────────────────────
-   Page Component
-───────────────────────────────────────────────────────────── */
-
 export default function CaseStudiesPage() {
-  const [activeFilter, setActiveFilter] = useState<string>("all");
-
-  const filteredStudies = useMemo(() => {
-    if (activeFilter === "all") return caseStudies;
-    return caseStudies.filter((s) => s.category === activeFilter);
-  }, [activeFilter]);
-
-  const jsonLd = useMemo(
-    () =>
-      JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": caseStudies.map((c) => ({
-          "@type": "CaseStudy",
-          name: `${c.industry} — ${c.headline}`,
-          description: c.summary,
-        })),
-      }),
-    []
-  );
-
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#07131e] via-[#0c1c29] to-[#03080f] text-slate-50">
-      {/* Background */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(87,230,255,0.06),transparent_40%)]" />
 
       <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-20 sm:px-10">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
-
         {/* Hero */}
-        <header className="text-center space-y-4 mb-12">
+        <header className="text-center space-y-4 mb-16">
           <h1 className="text-4xl sm:text-5xl font-black leading-tight text-white tracking-tight">
-            Case Studies
+            Playbooks
           </h1>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-            Real results from professional services firms using Refer Labs.
+            Example scenarios showing how we approach Australia market entry, partner channels, and affiliate activation.
+          </p>
+          <p className="text-sm text-slate-500 italic">
+            These are illustrative playbooks, not fabricated case studies. Each engagement is scoped to your specific situation.
           </p>
         </header>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((cat) => {
-            const Icon = cat.icon;
-            const isActive = activeFilter === cat.key;
-            return (
-              <button
-                key={cat.key}
-                onClick={() => setActiveFilter(cat.key)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  isActive
-                    ? "bg-cyan-400 text-slate-900"
-                    : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
-                }`}
-              >
-                <Icon className="h-4 w-4" />
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Case Study Cards */}
-        <div className="space-y-6">
-          {filteredStudies.map((study) => {
-            const meta = categoryMeta[study.category];
-            const CategoryIcon = meta.icon;
+        {/* Playbook Cards */}
+        <div className="space-y-8">
+          {playbooks.map((playbook) => {
+            const Icon = playbook.icon;
+            const colors = colorMap[playbook.color];
 
             return (
               <article
-                key={study.id}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:border-white/20 transition-colors"
+                key={playbook.id}
+                className={`rounded-2xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-white/[0.02] overflow-hidden`}
               >
-                {/* Header Row */}
-                <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-4 border-b border-white/10 bg-white/[0.02]">
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-lg bg-cyan-400/10 p-2">
-                      <CategoryIcon className="h-4 w-4 text-cyan-300" />
+                {/* Header */}
+                <div className="px-6 sm:px-8 py-6 border-b border-white/5">
+                  <div className="flex items-start gap-4">
+                    <div className={`h-12 w-12 rounded-xl bg-white/10 border ${colors.border} flex items-center justify-center flex-shrink-0`}>
+                      <Icon className={`h-6 w-6 ${colors.icon}`} />
                     </div>
                     <div>
-                      <p className="text-xs text-slate-500 uppercase tracking-wide">{study.industry}</p>
-                      <h2 className="font-semibold text-white">{study.headline}</h2>
+                      <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">{playbook.subtitle}</p>
+                      <h2 className="text-lg sm:text-xl font-bold text-white">{playbook.title}</h2>
                     </div>
                   </div>
+                </div>
 
-                  {/* Metrics */}
-                  <div className="flex gap-4 sm:gap-6">
-                    {study.metrics.map((m) => (
-                      <div key={m.label} className="text-center">
-                        <p className="text-lg sm:text-xl font-bold text-cyan-300">{m.value}</p>
-                        <p className="text-[10px] sm:text-xs text-slate-500">{m.label}</p>
+                {/* Steps */}
+                <div className="px-6 sm:px-8 py-6">
+                  <p className="text-xs uppercase tracking-wider text-slate-400 mb-4 font-semibold">Approach</p>
+                  <div className="space-y-3">
+                    {playbook.steps.map((step) => (
+                      <div key={step.phase} className="flex items-start gap-3">
+                        <span className={`text-xs font-bold ${colors.text} w-16 flex-shrink-0 mt-0.5`}>{step.phase}</span>
+                        <p className="text-sm text-slate-300">{step.action}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Body */}
-                <div className="px-6 py-5 space-y-4">
-                  <p className="text-slate-300 text-sm leading-relaxed">{study.summary}</p>
-
-                  {/* Testimonial */}
-                  <blockquote className="border-l-2 border-cyan-500/50 pl-4 text-sm italic text-slate-400">
-                    &ldquo;{study.testimonial.quote}&rdquo;
-                    <span className="block mt-1 text-xs not-italic text-slate-500">
-                      — {study.testimonial.attribution}
-                    </span>
-                  </blockquote>
-
-                  {/* CTA */}
-                  <div className="flex items-center gap-4 pt-2">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
-                    >
-                      Get Similar Results
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                    <Link
-                      href={meta.link}
-                      className="text-sm text-slate-500 hover:text-white transition-colors"
-                    >
-                      Learn More →
-                    </Link>
+                {/* Typical Outcomes */}
+                <div className="px-6 sm:px-8 py-6 border-t border-white/5 bg-white/[0.02]">
+                  <p className="text-xs uppercase tracking-wider text-slate-400 mb-3 font-semibold">Typical Targets</p>
+                  <div className="grid sm:grid-cols-2 gap-2">
+                    {playbook.typicalOutcomes.map((outcome) => (
+                      <div key={outcome} className="flex items-start gap-2 text-sm text-slate-300">
+                        <Target className={`h-4 w-4 ${colors.icon} flex-shrink-0 mt-0.5`} />
+                        {outcome}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </article>
@@ -247,18 +159,29 @@ export default function CaseStudiesPage() {
         {/* Bottom CTA */}
         <section className="mt-16 rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/[0.02] to-transparent p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-3">
-            Ready to Build Your Success Story?
+            Want a Playbook Built for Your Business?
           </h2>
           <p className="text-slate-400 mb-6 max-w-lg mx-auto">
-            Schedule a call to discuss how Refer Labs can help you achieve similar results.
+            Book a call and we will map out an Australia entry approach specific to your product and market.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
-          >
-            Schedule a Call
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
+            >
+              <Calendar className="h-4 w-4" />
+              Book Call
+            </a>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
+            >
+              View Services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </section>
       </main>
     </div>
