@@ -263,7 +263,7 @@ export function SupportChatbot() {
                 <button
                   type="submit"
                   disabled={isSubmittingLead}
-                  className="w-full rounded-full bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:translate-y-[-1px] hover:bg-[#00838F] disabled:opacity-60"
+                  className="w-full rounded-xl bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:translate-y-[-1px] hover:bg-[#00838F] disabled:opacity-60"
                 >
                   {isSubmittingLead ? (
                     <span className="flex items-center justify-center gap-2">

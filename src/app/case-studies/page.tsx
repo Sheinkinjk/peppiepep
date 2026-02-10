@@ -169,14 +169,14 @@ export default function CaseStudiesPage() {
               href={calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
             >
               <Calendar className="h-4 w-4" />
               Book Call
             </a>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               View Services
               <ArrowRight className="h-4 w-4" />

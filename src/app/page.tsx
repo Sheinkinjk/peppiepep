@@ -5,7 +5,6 @@ import {
   Share2,
   Target,
   BarChart3,
-  MapPin,
   TrendingUp,
   CheckCircle2,
   Calendar,
@@ -34,39 +33,30 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column */}
             <div className="relative z-10 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 mb-6 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 mb-6 backdrop-blur-sm">
                 <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="text-xs font-semibold text-white/90 tracking-wide">Accepting new pilot clients</span>
               </div>
               <h1 className="font-black tracking-tight mb-6">
-                <span className="block text-[1.8rem] sm:text-[2.4rem] md:text-[2.8rem] lg:text-[3rem] xl:text-[3.4rem] leading-[1.08] text-white">
-                  Your Australian
+                <span className="block text-[2rem] sm:text-[2.6rem] md:text-[3rem] lg:text-[3.2rem] xl:text-[3.6rem] leading-[1.08] text-white">
+                  Your Australian Sales
                 </span>
-                <span className="block text-[1.8rem] sm:text-[2.4rem] md:text-[2.8rem] lg:text-[3rem] xl:text-[3.4rem] leading-[1.08] text-[#57E6FF]">
-                  Sales &amp; Partnerships Arm
+                <span className="block text-[2rem] sm:text-[2.6rem] md:text-[3rem] lg:text-[3.2rem] xl:text-[3.6rem] leading-[1.08] text-[#57E6FF]">
+                  &amp; Partnerships Arm
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                We help overseas companies enter Australia through direct sales, partnerships, and affiliate channels — on a pilot retainer + success basis. No local hire needed.
+                We help overseas companies enter Australia by sourcing customers, forming distribution partnerships, and running local GTM.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <a
-                  href={calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
-                >
-                  <Calendar className="h-4 w-4" />
-                  Book a 15-min Expansion Call
-                </a>
-                <Link
-                  href="/how-it-works"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
-                >
-                  See How It Works
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
+              <a
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+              >
+                <Calendar className="h-4 w-4" />
+                Schedule A Call
+              </a>
 
               {/* Trust indicators */}
               <div className="mt-10 flex flex-wrap gap-6 justify-center lg:justify-start">
@@ -83,70 +73,66 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: Stats Dashboard */}
+            {/* Right Column: Pilot Pipeline Visual */}
             <div className="relative hidden lg:block">
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#0AA7B5]/20 via-transparent to-[#22C0CD]/10 rounded-[2rem] blur-3xl" />
+              <div className="absolute -inset-8 bg-gradient-to-br from-[#0AA7B5]/20 via-transparent to-[#22C0CD]/10 rounded-2xl blur-3xl" />
               <div className="relative">
-                {/* Main card */}
-                <div className="rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-xl p-8 shadow-2xl">
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-xl bg-[#0AA7B5]/20 flex items-center justify-center">
-                        <MapPin className="h-5 w-5 text-[#57E6FF]" />
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold text-sm">Australia GTM Dashboard</p>
-                        <p className="text-white/50 text-xs">90-day pilot overview</p>
-                      </div>
+                <div className="rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-xl p-7 shadow-2xl">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-6 pb-5 border-b border-white/10">
+                    <div>
+                      <p className="text-white font-bold text-base">Pilot Pipeline</p>
+                      <p className="text-white/45 text-xs mt-0.5">Typical 90-day engagement results</p>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="h-2 w-2 rounded-full bg-emerald-400" />
-                      <span className="text-xs text-emerald-300 font-medium">Active</span>
+                    <div className="flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-400/25 rounded-lg px-3 py-1">
+                      <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="text-xs text-emerald-300 font-semibold">Live</span>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Target className="h-4 w-4 text-[#57E6FF]" />
-                        <span className="text-[10px] uppercase tracking-widest text-white/50">Outbound</span>
-                      </div>
+                  {/* Metrics row */}
+                  <div className="grid grid-cols-3 gap-3 mb-5">
+                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
                       <p className="text-2xl font-black text-white">10-20</p>
-                      <p className="text-xs text-white/40 mt-0.5">qualified conversations</p>
+                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Conversations</p>
                     </div>
-                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Handshake className="h-4 w-4 text-[#57E6FF]" />
-                        <span className="text-[10px] uppercase tracking-widest text-white/50">Partners</span>
-                      </div>
+                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
                       <p className="text-2xl font-black text-white">3-8</p>
-                      <p className="text-xs text-white/40 mt-0.5">distribution partners</p>
+                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Partners</p>
                     </div>
-                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Share2 className="h-4 w-4 text-[#57E6FF]" />
-                        <span className="text-[10px] uppercase tracking-widest text-white/50">Referrals</span>
-                      </div>
+                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
                       <p className="text-2xl font-black text-white">5-15</p>
-                      <p className="text-xs text-white/40 mt-0.5">referral-driven leads</p>
-                    </div>
-                    <div className="rounded-xl bg-[#0AA7B5]/15 border border-[#0AA7B5]/25 p-4">
-                      <div className="flex items-center gap-2 mb-3">
-                        <BarChart3 className="h-4 w-4 text-[#57E6FF]" />
-                        <span className="text-[10px] uppercase tracking-widest text-[#57E6FF]/70">Reporting</span>
-                      </div>
-                      <p className="text-2xl font-black text-[#57E6FF]">Weekly</p>
-                      <p className="text-xs text-white/40 mt-0.5">pipeline updates</p>
+                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Referral Leads</p>
                     </div>
                   </div>
 
-                  <div className="rounded-xl bg-gradient-to-r from-[#0AA7B5]/15 to-transparent border border-[#0AA7B5]/15 p-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-[#57E6FF] text-xs font-semibold uppercase tracking-wider">Pilot Status</p>
-                        <p className="text-white/80 text-sm mt-0.5">Pipeline, partners, and revenue signals delivered</p>
+                  {/* Channel breakdown */}
+                  <div className="space-y-3 mb-5">
+                    {[
+                      { icon: Target, label: "Direct Sales", progress: 75, color: "bg-[#0AA7B5]" },
+                      { icon: Handshake, label: "Partnerships", progress: 55, color: "bg-[#22C0CD]" },
+                      { icon: Share2, label: "Referral & Affiliate", progress: 40, color: "bg-[#57E6FF]" },
+                    ].map((ch) => (
+                      <div key={ch.label} className="flex items-center gap-3">
+                        <ch.icon className="h-4 w-4 text-white/50 flex-shrink-0" />
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-xs text-white/70 font-medium">{ch.label}</span>
+                          </div>
+                          <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
+                            <div className={`h-full rounded-full ${ch.color}`} style={{ width: `${ch.progress}%` }} />
+                          </div>
+                        </div>
                       </div>
-                      <Zap className="h-5 w-5 text-[#57E6FF]" />
+                    ))}
+                  </div>
+
+                  {/* Footer */}
+                  <div className="rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 p-4 flex items-center gap-3">
+                    <BarChart3 className="h-5 w-5 text-[#57E6FF] flex-shrink-0" />
+                    <div>
+                      <p className="text-white/90 text-sm font-semibold">Weekly reporting included</p>
+                      <p className="text-white/45 text-xs">Pipeline, conversion, and partner updates</p>
                     </div>
                   </div>
                 </div>
@@ -304,10 +290,10 @@ export default function Home() {
                 { step: "01", title: "Pilot Scoping", desc: "Align on your ICP, messaging, pricing, and success metrics for Australia." },
                 { step: "02", title: "Target List Build", desc: "Customer and partner target lists built around your ideal profile and market specifics." },
                 { step: "03", title: "Outreach & Closing", desc: "We run outreach, book intros, and provide closing support on key opportunities." },
-                { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, conversion, and next actions - reported weekly." },
+                { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, conversion, and next actions — reported weekly." },
               ].map((item) => (
                 <div key={item.step} className="relative text-center">
-                  <div className="relative z-10 h-14 w-14 rounded-full flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#0AA7B5] to-[#00838F] text-white shadow-lg shadow-[#0AA7B5]/25 ring-4 ring-white">
+                  <div className="relative z-10 h-14 w-14 rounded-xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#0AA7B5] to-[#00838F] text-white shadow-lg shadow-[#0AA7B5]/25 ring-4 ring-white">
                     <span className="text-sm font-black">{item.step}</span>
                   </div>
                   <h3 className="text-lg font-bold text-[#0b2a34] mb-2">{item.title}</h3>
@@ -320,7 +306,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/how-it-works"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#0AA7B5]/30 bg-[#0AA7B5]/5 px-8 py-3.5 text-sm font-semibold text-[#0AA7B5] transition-all hover:bg-[#0AA7B5]/10 hover:border-[#0AA7B5]/50"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#0AA7B5]/30 bg-[#0AA7B5]/5 px-8 py-3.5 text-sm font-semibold text-[#0AA7B5] transition-all hover:bg-[#0AA7B5]/10 hover:border-[#0AA7B5]/50"
             >
               See Full Pilot Breakdown
               <ArrowRight className="h-4 w-4" />
@@ -384,7 +370,7 @@ export default function Home() {
               </div>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20 whitespace-nowrap"
               >
                 View Pricing
                 <ArrowRight className="h-4 w-4" />
@@ -407,23 +393,15 @@ export default function Home() {
           <p className="text-base sm:text-lg text-white/70 mb-8 max-w-xl mx-auto">
             Book a 15-minute call. We&apos;ll discuss your product, your goals in Australia, and whether a pilot makes sense.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
-            >
-              <Calendar className="h-4 w-4" />
-              Book a 15-min Expansion Call
-            </a>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
-            >
-              View Our Services
-            </Link>
-          </div>
+          <a
+            href={calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+          >
+            <Calendar className="h-4 w-4" />
+            Schedule A Call
+          </a>
         </div>
       </section>
 

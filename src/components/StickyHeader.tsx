@@ -85,7 +85,7 @@ export function StickyHeader() {
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
-                  className="rounded-full px-3.5 py-2 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50 transition-all duration-200 cursor-pointer"
+                  className="rounded-xl px-3.5 py-2 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50 transition-all duration-200 cursor-pointer"
                   href={link.href}
                 >
                   {link.label}
@@ -95,7 +95,7 @@ export function StickyHeader() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 transition-all duration-200 hover:bg-[#00838F] hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 transition-all duration-200 hover:bg-[#00838F] hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call
@@ -104,14 +104,14 @@ export function StickyHeader() {
                 <>
                   <Link
                     href="/dashboard"
-                    className="inline-flex items-center gap-2 rounded-full border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-50 cursor-pointer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-50 cursor-pointer"
                   >
                     Dashboard <ArrowRight className="h-4 w-4" />
                   </Link>
                   <button
                     type="button"
                     onClick={handleLogout}
-                    className="inline-flex items-center gap-2 rounded-full border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-50 cursor-pointer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-50 cursor-pointer"
                   >
                     Log out
                   </button>
@@ -122,7 +122,7 @@ export function StickyHeader() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-full hover:bg-[#E3FAFF] transition-colors"
+              className="lg:hidden p-2 rounded-xl hover:bg-[#E3FAFF] transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -152,7 +152,7 @@ export function StickyHeader() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/25 transition-all duration-200 hover:bg-[#00838F]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/25 transition-all duration-200 hover:bg-[#00838F]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Calendar className="h-4 w-4" />

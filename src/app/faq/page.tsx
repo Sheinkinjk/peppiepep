@@ -186,14 +186,14 @@ export default function FAQPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0AA7B5] text-sm font-semibold text-white transition-colors hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0AA7B5] text-sm font-semibold text-white transition-colors hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call
               </a>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
                 How It Works
               </Link>
