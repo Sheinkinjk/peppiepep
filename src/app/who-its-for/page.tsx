@@ -2,15 +2,17 @@ import {
   ArrowRight,
   Calendar,
   CheckCircle2,
-  Cloud,
+  Building2,
   CreditCard,
   Globe,
   Heart,
-  Layers,
-  Rocket,
   ShoppingBag,
+  Briefcase,
   Users,
   Zap,
+  TrendingUp,
+  DollarSign,
+  Target,
 } from "lucide-react";
 import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
@@ -21,59 +23,61 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const profiles = [
   {
-    icon: Cloud,
-    title: "B2B SaaS Entering Australia",
+    icon: Building2,
+    title: "B2B SaaS",
     description:
-      "You have product-market fit in your home market and want to test Australia before committing headcount. We run outbound, book demos, and source local partners who can distribute your product.",
-    example: "US-based project management SaaS testing ANZ demand through partner-led distribution.",
-    services: ["Direct sales outreach", "Partner distribution", "Weekly pipeline reporting"],
+      "You have product-market fit in your home market and want to test Australia before committing headcount. We run outbound sales, book demos, source local partners, and negotiate distribution deals to validate demand.",
+    example: "US-based project management SaaS testing ANZ demand through partner-led distribution and direct sales.",
+    services: ["Sales representation", "Partner development", "Enterprise introductions"],
   },
   {
     icon: CreditCard,
-    title: "Fintech Wanting Broker & Affiliate Distribution",
+    title: "Fintech",
     description:
-      "You need brokers, advisors, and affiliate partners to distribute your fintech product in Australia. We identify the right channels and activate them with tracked attribution.",
-    example: "UK lending platform building an Australian broker and advisor partner network.",
-    services: ["Affiliate recruitment", "Broker channel activation", "Attribution tracking"],
-  },
-  {
-    icon: Layers,
-    title: "Marketplace Building Supply & Demand",
-    description:
-      "You need both supply-side and demand-side partnerships to get your marketplace off the ground in Australia. We source partners on both sides and help you build local liquidity.",
-    example: "European services marketplace launching in Sydney and Melbourne via agency partnerships.",
-    services: ["Dual-sided partnerships", "Agency outreach", "Community entry"],
+      "You need brokers, advisors, and strategic partners to distribute your fintech product in Australia. We identify the right channels, structure white-label and reseller deals, and activate distribution partners with tracked attribution.",
+    example: "UK lending platform building an Australian broker network and white-label distribution channel.",
+    services: ["Distribution deals", "Broker activation", "Reseller agreements"],
   },
   {
     icon: Heart,
-    title: "Subscription & Wellness Brands",
+    title: "Healthtech",
     description:
-      "You want to reach Australian consumers through communities, creators, and health professionals. We connect you with distribution partners who have the audience you need.",
-    example: "US wellness subscription brand activating Australian health and fitness communities.",
-    services: ["Community partnerships", "Creator activations", "Referral channels"],
+      "You have a digital health platform and need provider partnerships, payer relationships, and enterprise distribution in the Australian healthcare system. We make introductions and structure deals with established health networks.",
+    example: "US telehealth platform partnering with Australian health networks and private hospital groups.",
+    services: ["Provider partnerships", "Enterprise introductions", "Payer relationships"],
+  },
+  {
+    icon: Zap,
+    title: "Creator Economy Tools",
+    description:
+      "You build tools for creators and want to reach the Australian creator market through communities, agencies, and platform partnerships. We connect you with distribution partners who have the audience you need.",
+    example: "European creator monetisation platform expanding into the Australian influencer and content creator market.",
+    services: ["Community partnerships", "Agency distribution", "Platform integrations"],
   },
   {
     icon: ShoppingBag,
-    title: "E-commerce & DTC Brands",
+    title: "E-commerce Tech",
     description:
-      "You sell direct-to-consumer and want to test Australian demand through local influencers, affiliates, and retail partnerships without setting up local operations.",
-    example: "US DTC skincare brand entering Australia through affiliate and micro-influencer channels.",
-    services: ["Affiliate channel setup", "Influencer partnerships", "Local market testing"],
+      "You sell commerce infrastructure or DTC products and want to test Australian demand through local partners, affiliates, and retail distribution — without setting up local operations.",
+    example: "US e-commerce infrastructure company entering Australia through agency and retailer partnerships.",
+    services: ["Retail distribution", "Agency partnerships", "Affiliate channel setup"],
   },
   {
-    icon: Rocket,
-    title: "Developer Tools & API Products",
+    icon: Briefcase,
+    title: "Professional Services Software",
     description:
-      "You have a technical product and need to build awareness and distribution through Australian agencies, consultancies, and developer communities.",
-    example: "European API-first payments company partnering with Australian development agencies.",
-    services: ["Agency partnerships", "Developer community entry", "Technical partner enablement"],
+      "You build software for legal, accounting, or consulting firms and need to break into Australian professional services verticals. We source partners and enterprise clients in established professional networks.",
+    example: "Canadian legal tech company partnering with Australian law firms and industry associations.",
+    services: ["Vertical partnerships", "Enterprise sales", "Industry network entry"],
   },
 ];
 
 const qualifiers = [
+  { icon: DollarSign, text: "$1M–$50M in annual revenue" },
   { icon: Globe, text: "Based outside Australia (US, UK, EU, Asia)" },
-  { icon: CheckCircle2, text: "Product-market fit proven in at least one market" },
-  { icon: Zap, text: "Ready to invest in a 90-day structured pilot" },
+  { icon: CheckCircle2, text: "Strong product-market fit in at least one market" },
+  { icon: TrendingUp, text: "Ready for a 90-day structured pilot" },
+  { icon: Target, text: "High LTV product with partnership potential" },
   { icon: Users, text: "A founder or growth lead who can join key calls" },
 ];
 
@@ -96,7 +100,7 @@ export default function WhoItsForPage() {
             Built for Companies <span className="text-[#57E6FF]">Entering Australia</span>
           </h1>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
-            We work with founders, growth leads, and partnerships teams at companies with proven product-market fit who need Australian traction without a local hire.
+            We work with $1M–$50M revenue companies that have strong product-market fit overseas and need Australian clients, partnerships, and distribution — without hiring locally.
           </p>
         </div>
       </section>
@@ -104,7 +108,7 @@ export default function WhoItsForPage() {
       {/* ── Qualifiers ── */}
       <section className="relative bg-white py-10 sm:py-12 border-b border-slate-100">
         <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             {qualifiers.map((q) => (
               <div key={q.text} className="flex items-center gap-2.5">
                 <q.icon className="h-4 w-4 text-[#0AA7B5] flex-shrink-0" />
@@ -124,7 +128,7 @@ export default function WhoItsForPage() {
               Who We Work With
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-              We&apos;ve structured our services around the company types that get the most value from local Australian execution.
+              We&apos;ve structured our services around the company types and verticals that get the most value from local Australian sales, partnerships, and distribution.
             </p>
           </div>
 
@@ -174,7 +178,7 @@ export default function WhoItsForPage() {
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-black text-white mb-3">Already Have a Local Team?</h3>
               <p className="text-white/65 text-sm sm:text-base leading-relaxed max-w-2xl">
-                If you already have a salesperson or small team in Australia, we can complement them with partner distribution, affiliate activation, and channel management — so your team focuses on direct sales while we build the partnership layer.
+                If you already have a salesperson or small team in Australia, we complement them with partnership development, distribution deal structuring, and channel management — so your team focuses on direct sales while we build the partnership and distribution layer.
               </p>
             </div>
           </div>
@@ -188,7 +192,7 @@ export default function WhoItsForPage() {
             Sound Like You?
           </h2>
           <p className="text-slate-600 leading-relaxed mb-8 max-w-xl mx-auto">
-            Book a 15-minute call and tell us about your product, your market, and your Australia goals.
+            Book a 15-minute call and tell us about your product, your market, and your Australia goals. We&apos;ll tell you if we&apos;re the right fit.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

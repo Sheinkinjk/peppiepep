@@ -5,7 +5,7 @@ import {
   Globe,
   Handshake,
   Megaphone,
-  Share2,
+  FileSignature,
   Target,
   Users,
   Zap,
@@ -21,13 +21,14 @@ const coreServices = [
   {
     icon: Target,
     num: "01",
-    title: "Australia Sales Rep",
-    subtitle: "Customer Acquisition",
+    title: "Sales Representation",
+    subtitle: "Client Acquisition",
     description:
-      "We act as your on-the-ground sales arm in Australia. Outbound prospecting, warm introductions, pipeline creation, and deal support — all managed by us.",
+      "We act as your on-the-ground sales arm in Australia. From outbound prospecting and warm introductions to demo bookings, pipeline creation, and closing support — we generate revenue conversations on your behalf.",
     deliverables: [
-      "Outbound prospecting to your ICP in Australia",
-      "Warm introductions via our network",
+      "Outbound prospecting to your Australian ICP",
+      "Warm introductions via our local network",
+      "Demo booking and meeting coordination",
       "Pipeline creation and CRM updates",
       "Closing support on key opportunities",
       "Weekly pipeline and conversion reporting",
@@ -36,31 +37,33 @@ const coreServices = [
   {
     icon: Handshake,
     num: "02",
-    title: "Partnerships & Distribution",
-    subtitle: "Channel Growth",
+    title: "Partnership Development",
+    subtitle: "Strategic Alliances",
     description:
-      "We source and activate agencies, platforms, communities, and strategic partners who can distribute your product across Australia.",
+      "We source and activate agencies, consultancies, platforms, and strategic partners who can resell, co-sell, or refer your product across Australia. From identification to enablement and ongoing management.",
     deliverables: [
-      "Partner identification and outreach",
-      "Agency and platform partnership activation",
-      "Channel partner onboarding and enablement",
+      "Partner identification and qualification",
+      "Strategic alliance development",
+      "Agency and consultancy activation",
+      "Partner enablement and onboarding",
       "Partner terms and structure design",
       "Ongoing partner relationship management",
     ],
   },
   {
-    icon: Share2,
+    icon: FileSignature,
     num: "03",
-    title: "Referral & Affiliate Channel Management",
-    subtitle: "Performance Distribution",
+    title: "Distribution Deals",
+    subtitle: "Revenue-Share & Licensing",
     description:
-      "We recruit and manage high-trust referral and affiliate partners, track performance with attribution, and optimise the channel monthly.",
+      "We structure and negotiate white-label deals, reseller agreements, and enterprise distribution contracts that embed your product into established Australian channels and customer bases.",
     deliverables: [
-      "Affiliate and referral partner recruitment",
-      "Partner enablement and onboarding",
-      "Attribution and performance tracking",
-      "Monthly channel optimisation",
-      "Commission structure management",
+      "White-label deal structuring",
+      "Reseller agreement negotiation",
+      "Enterprise introductions and pitching",
+      "Revenue-share and licensing terms",
+      "Contract support and deal closing",
+      "Distribution channel optimisation",
     ],
   },
 ];
@@ -69,12 +72,12 @@ const addOns = [
   {
     icon: Globe,
     title: "Landing Page Localisation",
-    description: "Copy tweaks and localisation for the Australian market.",
+    description: "Copy, pricing, and positioning adapted for the Australian market.",
   },
   {
     icon: Users,
     title: "Partner Program Design",
-    description: "Terms, commissions, structure, and partner playbook creation.",
+    description: "Terms, commissions, tiering, and partner playbook creation.",
   },
   {
     icon: Megaphone,
@@ -107,7 +110,7 @@ export default function ServicesPage() {
             Services Built to <span className="text-[#57E6FF]">Drive Australian Revenue</span>
           </h1>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
-            Three core services, each designed to give you traction in Australia without building a local team. Delivered as managed engagements, not software.
+            Sales representation, partnership development, and distribution deals — each delivered as a managed engagement on a retainer + commission basis.
           </p>
         </div>
       </section>

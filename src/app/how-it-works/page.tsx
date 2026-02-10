@@ -5,6 +5,7 @@ import {
   ClipboardList,
   FileText,
   Handshake,
+  FileSignature,
   MessageSquare,
   Target,
   Users,
@@ -38,7 +39,7 @@ export default function HowItWorks() {
             How <span className="text-[#57E6FF]">Refer Labs</span> Works
           </h1>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto mb-8">
-            A structured 90-day pilot that takes you from market alignment to Australian revenue signals, with weekly reporting every step of the way.
+            A structured 90-day pilot that takes you from market alignment to Australian revenue signals — with sales, partnerships, and distribution running in parallel.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -70,7 +71,7 @@ export default function HowItWorks() {
               90 Days, Four Phases
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-              Each phase builds on the last. You get weekly updates throughout.
+              Each phase builds on the last. Sales, partnership, and distribution workstreams run in parallel with weekly updates throughout.
             </p>
           </div>
 
@@ -83,25 +84,25 @@ export default function HowItWorks() {
                 {
                   week: "Week 1",
                   title: "Market & Messaging Alignment",
-                  desc: "We align on your ICP, value proposition, pricing, and Australia-specific positioning. You share what works in your home market — we adapt it for Australia.",
+                  desc: "We align on your ICP, value proposition, pricing, and Australia-specific positioning. You share what works in your home market — we adapt it for the Australian buyer.",
                   color: "from-[#0AA7B5] to-[#00838F]",
                 },
                 {
                   week: "Week 2-3",
                   title: "Build Target Lists & Partner Angles",
-                  desc: "We build your customer target list and identify partnership angles — agencies, platforms, communities, and affiliates that could distribute your product in Australia.",
+                  desc: "We build your customer target list, identify partnership opportunities, and map potential distribution deals — agencies, platforms, resellers, and enterprise accounts.",
                   color: "from-[#00838F] to-[#036572]",
                 },
                 {
                   week: "Week 4-12",
-                  title: "Outreach, Meetings & Closing Support",
-                  desc: "Active outreach to customers and partners. We book meetings, make introductions, and provide closing support on key opportunities. You join the calls that matter.",
+                  title: "Outreach, Meetings & Deal Structuring",
+                  desc: "Active outreach to clients and partners. We book meetings, make introductions, negotiate partnership terms, structure distribution deals, and provide closing support. You join the calls that matter.",
                   color: "from-[#036572] to-[#024b56]",
                 },
                 {
                   week: "Ongoing",
                   title: "Weekly Reporting Cadence",
-                  desc: "Every week you receive a report covering pipeline status, partners contacted, conversion metrics, and next actions. Full transparency, no surprises.",
+                  desc: "Every week you receive a report covering pipeline status, partner conversations, distribution deal progress, conversion metrics, and next actions. Full transparency.",
                   color: "from-[#0AA7B5] to-[#22C0CD]",
                   icon: BarChart3,
                 },
@@ -160,12 +161,12 @@ export default function HowItWorks() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: Target, label: "Target list", detail: "Customers + partners mapped to your ICP" },
-              { icon: MessageSquare, label: "Outreach sequences", detail: "Tested messaging for the Australian market" },
-              { icon: Handshake, label: "Partner pitch angles", detail: "Custom pitches for each partner type" },
-              { icon: FileText, label: "Pipeline report", detail: "Full record of every conversation and meeting" },
-              { icon: ClipboardList, label: "Next-step playbook", detail: "What to do after the pilot ends" },
-              { icon: BarChart3, label: "Weekly reports", detail: "Pipeline, conversion, and partner status updates" },
+              { icon: Target, label: "Target list", detail: "Customers, partners, and distribution targets mapped to your ICP" },
+              { icon: MessageSquare, label: "Outreach sequences", detail: "Tested messaging for the Australian market across all channels" },
+              { icon: Handshake, label: "Partner pitch angles", detail: "Custom pitches for each partner and distribution opportunity" },
+              { icon: FileSignature, label: "Deal terms", detail: "Structured terms for white-label, reseller, and partnership deals" },
+              { icon: ClipboardList, label: "Next-step playbook", detail: "Repeatable playbook for scaling what works after the pilot" },
+              { icon: BarChart3, label: "Weekly reports", detail: "Pipeline, conversion, partner status, and distribution deal progress" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/10">
                 <div className="h-10 w-10 rounded-xl bg-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
@@ -190,7 +191,7 @@ export default function HowItWorks() {
               What You Provide
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-              We handle the heavy lifting, but we need a few things from your side.
+              We handle the heavy lifting, but we need a few things from your side to move fast.
             </p>
           </div>
 
@@ -199,7 +200,7 @@ export default function HowItWorks() {
               "Clear ICP and target customer profile",
               "Your offer, pricing, and positioning",
               "Someone to join key calls and meetings",
-              "Ability to move fast on partner terms",
+              "Ability to move fast on partnership and distribution terms",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3 p-5 rounded-xl border border-slate-200/80 bg-white">
                 <CheckCircle2 className="h-5 w-5 text-[#0AA7B5] flex-shrink-0" />
@@ -232,12 +233,12 @@ export default function HowItWorks() {
               <tbody className="divide-y divide-slate-50">
                 {[
                   { area: "Market research & target lists", us: "Build and maintain", you: "Review and approve" },
-                  { area: "Outreach & prospecting", us: "Execute all outreach", you: "Provide messaging input" },
-                  { area: "Partner sourcing", us: "Identify and pitch partners", you: "Approve partner fits" },
+                  { area: "Sales outreach & prospecting", us: "Execute all outreach", you: "Provide messaging input" },
+                  { area: "Partner sourcing & activation", us: "Identify, pitch, and activate partners", you: "Approve partner fits" },
+                  { area: "Distribution deal structuring", us: "Negotiate terms and structure deals", you: "Approve and sign agreements" },
                   { area: "Meetings & introductions", us: "Book and coordinate", you: "Join key calls" },
                   { area: "Closing support", us: "Support deal progression", you: "Lead final negotiations" },
-                  { area: "Reporting", us: "Weekly pipeline reports", you: "Review and act on insights" },
-                  { area: "Partner terms", us: "Draft structures", you: "Approve and sign" },
+                  { area: "Reporting", us: "Weekly pipeline and deal reports", you: "Review and act on insights" },
                 ].map((row) => (
                   <tr key={row.area} className="hover:bg-[#f6fdfe] transition-colors">
                     <td className="px-6 py-3.5 text-slate-900 font-medium">{row.area}</td>
@@ -262,7 +263,7 @@ export default function HowItWorks() {
             Ready to Enter Australia?
           </h2>
           <p className="text-base sm:text-lg text-white/70 mb-8 max-w-xl mx-auto">
-            Book a 15-minute call and we&apos;ll walk you through how we can build your Australian pipeline.
+            Book a 15-minute call and we&apos;ll walk you through how we can build your Australian pipeline, partnerships, and distribution.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

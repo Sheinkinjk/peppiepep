@@ -11,46 +11,54 @@ type FAQ = { q: string; a: string };
 const qualificationFAQs: FAQ[] = [
   {
     q: "Do you only work with overseas companies?",
-    a: "Our primary focus is overseas companies entering Australia. However, we also work with Australia-based companies that want partner-driven growth and distribution channel management. The site prioritises overseas expansion because that is where we deliver the most differentiated value.",
+    a: "Our primary focus is overseas companies ($1M–$50M revenue) entering Australia. However, we also work with Australia-based companies that want partner-driven growth and distribution channel management. The site prioritises overseas expansion because that is where we deliver the most differentiated value.",
   },
   {
     q: "What industries do you focus on?",
-    a: "B2B SaaS, fintech, marketplace and subscription businesses. We are open to other industries where partner distribution and local GTM make sense, but those four are where we have the deepest playbooks.",
+    a: "B2B SaaS, fintech, healthtech, creator economy tools, e-commerce tech, and professional services software. We are open to other industries where partner distribution and local GTM make sense, but those six are where we have the deepest playbooks.",
+  },
+  {
+    q: "What does the ideal client look like?",
+    a: "$1M–$50M in annual revenue, strong product-market fit in at least one overseas market, high LTV product with partnership potential, and no existing Australian presence. A founder or growth lead who can join key calls is essential.",
   },
   {
     q: "How fast can we see traction?",
-    a: "During a 90-day pilot, we aim to deliver 10-20 partner conversations, 3-8 qualified distribution opportunities, and 5-15 sales conversations. Revenue signals typically emerge within the first 60-90 days depending on your sales cycle length.",
+    a: "During a 90-day pilot, we aim to deliver 10-20 client conversations, 3-8 strategic partnerships, and 1-3 distribution deals. Revenue signals typically emerge within the first 60-90 days depending on your sales cycle length.",
   },
 ];
 
 const serviceFAQs: FAQ[] = [
   {
+    q: "What are your three core offerings?",
+    a: "Sales Representation (outbound prospecting, demo booking, pipeline creation, closing support), Partnership Development (sourcing and activating agencies, consultancies, and strategic partners), and Distribution Deals (structuring white-label, reseller, and enterprise distribution agreements).",
+  },
+  {
     q: "Do you close deals or just book meetings?",
-    a: "We do both. We book meetings, make introductions, and provide closing support on key opportunities. You join the calls that matter and lead final negotiations - we handle the pipeline work to get you there.",
+    a: "We do both. We book meetings, make introductions, negotiate partnership terms, structure distribution deals, and provide closing support on key opportunities. You join the calls that matter and lead final negotiations.",
   },
   {
     q: "What is the client involvement required?",
-    a: "We need four things from you: a clear ICP, your offer and pricing, someone to join key calls, and the ability to move fast on partner terms. Beyond that, we handle the day-to-day execution.",
+    a: "We need four things from you: a clear ICP, your offer and pricing, someone to join key calls, and the ability to move fast on partnership and distribution terms. Beyond that, we handle the day-to-day execution.",
   },
   {
     q: "How do you track partners and attribution?",
-    a: "We use tracking and reporting tools to attribute every partner introduction, customer conversation, and revenue outcome. You receive weekly reports covering pipeline, partners, conversion, and next actions.",
+    a: "We use tracking and reporting tools to attribute every partner introduction, customer conversation, distribution deal, and revenue outcome. You receive weekly reports covering pipeline, partners, deal progress, and next actions.",
   },
   {
-    q: "Can you run affiliates and referral partners too?",
-    a: "Yes. Referral and affiliate activation is one of our three core services. We recruit partners, manage onboarding, track performance with attribution, and optimise the channel monthly.",
+    q: "What is your pricing model?",
+    a: "Retainer + commission. Standard: $3K–$7.5K/mo + 10–20% commission. Performance-Heavy: low or no retainer + 20–30% commission. Enterprise: $10K–$20K/mo + 5–10% commission. We earn when you earn.",
   },
   {
     q: "What if we already have a salesperson in Australia?",
     a: "We complement your existing team. Your salesperson focuses on direct sales while we build the partnership and distribution layer. We scope the engagement to avoid overlap and maximise coverage.",
   },
   {
-    q: "Do you take exclusivity?",
-    a: "No. We do not require exclusivity. You are free to run other GTM motions in Australia alongside our engagement.",
+    q: "Do you take equity or exclusivity?",
+    a: "No. We work on a retainer + commission basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
   },
   {
     q: "What does a 90-day pilot include?",
-    a: "Week 1: market and messaging alignment. Weeks 2-3: customer and partner target list build. Weeks 4-12: outreach, introductions, meetings, and closing support. Throughout: weekly reporting on pipeline, partners, and conversion metrics. At the end: a playbook with next steps and repeatable channel analysis.",
+    a: "Week 1: market and messaging alignment. Weeks 2-3: customer, partner, and distribution target list build. Weeks 4-12: outreach, introductions, meetings, deal structuring, and closing support. Throughout: weekly reporting on pipeline, partners, and conversion metrics. At the end: a playbook with next steps and repeatable channel analysis.",
   },
 ];
 
@@ -82,7 +90,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Common questions about our Australia GTM services, pricing, and pilot structure.
+            Common questions about our Australia expansion services, pricing, and pilot structure.
           </p>
 
           <div className="flex justify-center gap-4 pt-2">

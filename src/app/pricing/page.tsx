@@ -13,74 +13,76 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const plans = [
   {
-    name: "90-Day Pilot",
+    name: "Standard",
     recommended: true,
-    description: "Test Australia with a structured pilot before committing long-term.",
-    pricing: "Fixed monthly fee + success fee on closed revenue or partner wins",
+    description: "The most common engagement model. Balanced retainer with performance upside for both sides.",
+    pricing: "$3K–$7.5K/mo retainer + 10–20% commission on closed revenue",
     scope: [
-      "Market and messaging alignment (Week 1)",
-      "Customer + partner target list build",
-      "Outbound outreach and introductions",
-      "Closing support on key opportunities",
+      "Full 90-day pilot structure",
+      "Sales representation & outbound prospecting",
+      "Partnership development & activation",
+      "Distribution deal sourcing & structuring",
       "Weekly pipeline and conversion reporting",
       "End-of-pilot playbook with next steps",
     ],
     cta: "Book a Pilot Scoping Call",
   },
   {
-    name: "Ongoing Retainer",
+    name: "Performance-Heavy",
     recommended: false,
-    description: "For companies ready to invest in sustained Australian growth after a successful pilot.",
-    pricing: "Monthly retainer + lower success fee. 6-month minimum.",
+    description: "Lower upfront cost, higher success fee. Best for companies wanting to minimise risk during market testing.",
+    pricing: "Low or no retainer + 20–30% commission on closed revenue",
     scope: [
-      "Everything in the Pilot, plus:",
-      "Expanded partner management and activation",
-      "Ongoing customer pipeline development",
-      "Partner program design and optimisation",
-      "Monthly strategy reviews",
-      "Dedicated partnership operations",
+      "Same deliverables as Standard",
+      "Higher commission on all revenue generated",
+      "Ideal for cash-conscious early testing",
+      "Aligned incentives — we earn when you earn",
+      "Weekly reporting included",
+      "Flexible engagement terms",
     ],
-    cta: "Discuss a Retainer",
+    cta: "Discuss Performance Model",
   },
   {
-    name: "Intro-Only",
+    name: "Enterprise",
     recommended: false,
-    description: "A lighter-touch entry point. We make the introductions, you take it from there.",
-    pricing: "Fixed fee per introduction or light monthly retainer",
+    description: "For larger companies ready to invest in sustained Australian growth with dedicated resources.",
+    pricing: "$10K–$20K/mo retainer + 5–10% commission",
     scope: [
-      "Partner and customer introductions",
-      "Target list and angle recommendations",
-      "No ongoing management or closing support",
-      "Ideal for teams with some local capacity",
+      "Everything in Standard, plus:",
+      "Expanded multi-channel execution",
+      "Dedicated partnership operations",
+      "Enterprise distribution deal management",
+      "Monthly strategy reviews",
+      "6-month minimum engagement",
     ],
-    cta: "Learn More",
+    cta: "Discuss Enterprise",
   },
 ];
 
 const faqs = [
   {
     q: "What does the 90-day pilot cost?",
-    a: "Pricing depends on scope, target market size, and the number of channels you want to activate. We will scope and quote during the initial call. Expect a fixed monthly retainer plus a success fee component.",
+    a: "Pricing depends on scope, target market size, and the number of channels you want to activate. Most pilots fall in the Standard range ($3K–$7.5K/mo + 10–20% commission). We scope and quote during the initial call.",
   },
   {
-    q: "What counts as a 'success fee' event?",
-    a: "We agree on this upfront during scoping. Common triggers include closed revenue, signed partner agreements, or qualified pipeline milestones. Everything is defined before the engagement starts.",
+    q: "What counts as a 'commission' event?",
+    a: "We agree on this upfront during scoping. Common triggers include closed revenue, signed partnership agreements, distribution deals, or qualified pipeline milestones. Everything is defined before the engagement starts.",
   },
   {
-    q: "Can we start with Intro-Only and upgrade?",
-    a: "Yes. Many clients start with introductions to test the waters, then move to a full pilot or retainer once they see early traction.",
+    q: "Can we start with Performance-Heavy and switch to Standard?",
+    a: "Yes. Many clients start with the performance-heavy model to test the waters, then move to a standard retainer once they see early traction and want to scale.",
   },
   {
     q: "Is there a minimum commitment?",
-    a: "The Pilot is a 90-day engagement. The Retainer has a 6-month minimum. Intro-Only is flexible and can be month-to-month.",
+    a: "Standard and Performance-Heavy pilots are 90-day engagements. Enterprise has a 6-month minimum. All engagement terms are agreed upfront.",
   },
   {
     q: "Do you take equity or exclusivity?",
-    a: "No. We work on a fee + success basis. No equity, no exclusivity clauses.",
+    a: "No. We work on a retainer + commission basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
   },
   {
     q: "What if we already have a team in Australia?",
-    a: "We can complement your existing team with partner distribution and affiliate channel management. We will scope the engagement to avoid overlap.",
+    a: "We complement your existing team with partnership development, distribution deal structuring, and channel management. We scope the engagement to avoid overlap and maximise coverage.",
   },
 ];
 
@@ -96,14 +98,14 @@ export default function PricingPage() {
         {/* Hero */}
         <header className="text-center space-y-6">
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight">
-            Simple, Services-Led
+            Retainer + Commission
             <br />
             <span className="text-cyan-300">
-              Pricing
+              Aligned Incentives
             </span>
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Choose the engagement model that matches where you are. Start with a pilot, scale into a retainer, or begin with introductions only.
+            We earn when you earn. Choose the engagement model that matches your risk appetite and growth stage.
           </p>
         </header>
 
@@ -131,7 +133,7 @@ export default function PricingPage() {
                 {plan.recommended && (
                   <div className="inline-flex self-start items-center gap-1.5 px-3 py-1 mb-4 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-semibold">
                     <Sparkles className="h-3 w-3" />
-                    Recommended
+                    Most Popular
                   </div>
                 )}
 
@@ -199,7 +201,7 @@ export default function PricingPage() {
               Ready to Build Australian Revenue?
             </h2>
             <p className="text-base sm:text-lg text-slate-200">
-              Book a 15-minute call. We will discuss your goals, recommend a plan, and scope the engagement.
+              Book a 15-minute call. We&apos;ll discuss your goals, recommend an engagement model, and scope the pilot.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <a

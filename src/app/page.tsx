@@ -2,7 +2,7 @@ import {
   ArrowRight,
   Users,
   Handshake,
-  Share2,
+  FileSignature,
   Target,
   BarChart3,
   TrendingUp,
@@ -12,6 +12,12 @@ import {
   Zap,
   Shield,
   Clock,
+  Building2,
+  Heart,
+  ShoppingBag,
+  Code,
+  Briefcase,
+  CreditCard,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -46,7 +52,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                We help overseas companies enter Australia by sourcing customers, forming distribution partnerships, and running local GTM.
+                Your local commercial arm in Australia — generating clients, building strategic partnerships, and structuring distribution deals. All on a retainer + commission model.
               </p>
               <a
                 href={calendlyUrl}
@@ -61,9 +67,9 @@ export default function Home() {
               {/* Trust indicators */}
               <div className="mt-10 flex flex-wrap gap-6 justify-center lg:justify-start">
                 {[
-                  { icon: Globe, text: "Serving US, UK & EU companies" },
-                  { icon: Clock, text: "90-day structured pilot" },
-                  { icon: Shield, text: "No lock-in contracts" },
+                  { icon: Globe, text: "For US, UK & EU companies" },
+                  { icon: Shield, text: "Retainer + commission model" },
+                  { icon: Clock, text: "No equity, no exclusivity" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-2">
                     <item.icon className="h-3.5 w-3.5 text-[#57E6FF]" />
@@ -73,7 +79,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: Pilot Pipeline Visual */}
+            {/* Right Column: Expansion Pipeline Visual */}
             <div className="relative hidden lg:block">
               <div className="absolute -inset-8 bg-gradient-to-br from-[#0AA7B5]/20 via-transparent to-[#22C0CD]/10 rounded-2xl blur-3xl" />
               <div className="relative">
@@ -81,8 +87,8 @@ export default function Home() {
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6 pb-5 border-b border-white/10">
                     <div>
-                      <p className="text-white font-bold text-base">Pilot Pipeline</p>
-                      <p className="text-white/45 text-xs mt-0.5">Typical 90-day engagement results</p>
+                      <p className="text-white font-bold text-base">Expansion Pipeline</p>
+                      <p className="text-white/45 text-xs mt-0.5">Typical 90-day pilot results</p>
                     </div>
                     <div className="flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-400/25 rounded-lg px-3 py-1">
                       <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -94,24 +100,24 @@ export default function Home() {
                   <div className="grid grid-cols-3 gap-3 mb-5">
                     <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
                       <p className="text-2xl font-black text-white">10-20</p>
-                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Conversations</p>
+                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Client Leads</p>
                     </div>
                     <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
                       <p className="text-2xl font-black text-white">3-8</p>
                       <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Partners</p>
                     </div>
                     <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
-                      <p className="text-2xl font-black text-white">5-15</p>
-                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Referral Leads</p>
+                      <p className="text-2xl font-black text-white">1-3</p>
+                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Distribution Deals</p>
                     </div>
                   </div>
 
                   {/* Channel breakdown */}
                   <div className="space-y-3 mb-5">
                     {[
-                      { icon: Target, label: "Direct Sales", progress: 75, color: "bg-[#0AA7B5]" },
-                      { icon: Handshake, label: "Partnerships", progress: 55, color: "bg-[#22C0CD]" },
-                      { icon: Share2, label: "Referral & Affiliate", progress: 40, color: "bg-[#57E6FF]" },
+                      { icon: Target, label: "Sales Representation", progress: 75, color: "bg-[#0AA7B5]" },
+                      { icon: Handshake, label: "Partnership Development", progress: 60, color: "bg-[#22C0CD]" },
+                      { icon: FileSignature, label: "Distribution Deals", progress: 45, color: "bg-[#57E6FF]" },
                     ].map((ch) => (
                       <div key={ch.label} className="flex items-center gap-3">
                         <ch.icon className="h-4 w-4 text-white/50 flex-shrink-0" />
@@ -147,10 +153,10 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
             {[
-              { value: "B2B SaaS", sub: "Fintech & Marketplaces" },
-              { value: "US, UK & EU", sub: "Companies Served" },
+              { value: "$1M–$50M", sub: "Client Revenue Range" },
               { value: "90 Days", sub: "Structured Pilot" },
-              { value: "3 Channels", sub: "Sales, Partners & Affiliates" },
+              { value: "Retainer + %", sub: "Commission Model" },
+              { value: "6 Verticals", sub: "SaaS · Fintech · Health · More" },
             ].map((item) => (
               <div key={item.value} className="text-center">
                 <p className="text-lg sm:text-xl font-black text-[#0b2a34]">{item.value}</p>
@@ -161,16 +167,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Three Channels ── */}
+      {/* ── Three Core Offerings ── */}
       <section className="relative bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
           <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Three revenue channels</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Core offerings</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-4">
-              How We Build Your Australian Revenue
+              Three Ways We Drive Revenue in Australia
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
-              Each channel is managed end-to-end. You get pipeline, partners, and revenue signals without building a local team.
+              Each offering is managed end-to-end. You get clients, partners, and distribution — without building a local team.
             </p>
           </div>
 
@@ -179,29 +185,29 @@ export default function Home() {
               {
                 icon: Target,
                 num: "01",
-                title: "Direct Customer Acquisition",
-                desc: "We act as your on-the-ground sales arm. Outbound prospecting, warm introductions, pipeline creation, and closing support.",
-                items: ["Outbound prospecting to your ICP", "Warm intros via our network", "Pipeline creation & deal support", "Weekly conversion reporting"],
+                title: "Sales Representation",
+                desc: "We act as your on-the-ground sales arm in Australia. Outbound prospecting, warm introductions, demo bookings, pipeline creation, and closing support.",
+                items: ["Outbound prospecting to your ICP", "Warm introductions via our network", "Demo booking & pipeline creation", "Closing support on key deals"],
                 stat: "10-20",
-                statLabel: "qualified conversations",
+                statLabel: "qualified client conversations",
               },
               {
                 icon: Handshake,
                 num: "02",
-                title: "Partnership Distribution",
-                desc: "We source and activate agencies, platforms, and strategic partners who can distribute your product across Australia.",
-                items: ["Partner identification & outreach", "Agency & platform activation", "Partner terms & structure", "Ongoing relationship management"],
+                title: "Partnership Development",
+                desc: "We source and activate agencies, consultancies, platforms, and strategic partners who can resell, co-sell, or distribute your product across Australia.",
+                items: ["Partner identification & outreach", "Strategic alliance development", "Partner enablement & onboarding", "Ongoing relationship management"],
                 stat: "3-8",
-                statLabel: "distribution partners",
+                statLabel: "strategic partnerships",
               },
               {
-                icon: Share2,
+                icon: FileSignature,
                 num: "03",
-                title: "Referral & Affiliate Activation",
-                desc: "We recruit high-trust referral partners, set up attribution tracking, and manage performance monthly.",
-                items: ["Affiliate & referral recruitment", "Attribution & tracking setup", "Commission structure management", "Monthly channel optimisation"],
-                stat: "5-15",
-                statLabel: "referral-driven leads",
+                title: "Distribution Deals",
+                desc: "We structure and negotiate white-label deals, reseller agreements, and enterprise distribution contracts that embed your product into local channels.",
+                items: ["White-label deal structuring", "Reseller agreement negotiation", "Enterprise introductions", "Revenue-share & licensing terms"],
+                stat: "1-3",
+                statLabel: "distribution deals per pilot",
               },
             ].map((channel) => (
               <div
@@ -226,7 +232,7 @@ export default function Home() {
                 </ul>
                 <div className="mt-auto pt-6 border-t border-slate-100">
                   <p className="text-3xl font-black text-[#0AA7B5]">{channel.stat}</p>
-                  <p className="text-xs text-slate-500 mt-0.5">{channel.statLabel} per pilot</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{channel.statLabel}</p>
                 </div>
               </div>
             ))}
@@ -245,18 +251,18 @@ export default function Home() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#57E6FF] mb-4">The problem</p>
               <h2 className="text-3xl sm:text-4xl font-black text-white leading-[1.1] mb-6">
-                Why Australia Expansion Breaks Without Local Ownership
+                Most Australia Expansions Fail in the First Year
               </h2>
               <p className="text-white/60 text-sm sm:text-base leading-relaxed">
-                Most overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales and partnerships.
+                Overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, and distribution.
               </p>
             </div>
             <div className="space-y-4">
               {[
-                { num: "01", text: "Market entry stalls without local relationships and follow-through." },
-                { num: "02", text: "Partnerships require ongoing activation, not one-off introductions." },
-                { num: "03", text: "Hiring locally too early is expensive and slow to ramp." },
-                { num: "04", text: "You need revenue signals before you commit headcount." },
+                { num: "01", text: "Remote sales without local presence leads to zero trust and low conversion." },
+                { num: "02", text: "Partnerships require ongoing activation, not one-off introductions at events." },
+                { num: "03", text: "Hiring a full-time local rep too early is expensive and slow to ramp." },
+                { num: "04", text: "You need revenue signals and validated channels before committing headcount." },
               ].map((item) => (
                 <div key={item.num} className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/10">
                   <span className="text-[#57E6FF] text-sm font-black flex-shrink-0 mt-0.5">{item.num}</span>
@@ -277,7 +283,7 @@ export default function Home() {
               How It Works
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
-              A structured approach to building your Australia pipeline.
+              A structured approach to building your Australian pipeline and distribution.
             </p>
           </div>
 
@@ -287,10 +293,10 @@ export default function Home() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { step: "01", title: "Pilot Scoping", desc: "Align on your ICP, messaging, pricing, and success metrics for Australia." },
-                { step: "02", title: "Target List Build", desc: "Customer and partner target lists built around your ideal profile and market specifics." },
-                { step: "03", title: "Outreach & Closing", desc: "We run outreach, book intros, and provide closing support on key opportunities." },
-                { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, conversion, and next actions — reported weekly." },
+                { step: "01", title: "Pilot Scoping", desc: "Align on your ICP, messaging, pricing, and success metrics for the Australian market." },
+                { step: "02", title: "Target List Build", desc: "Customer, partner, and distribution targets built around your ideal profile and market." },
+                { step: "03", title: "Outreach & Deals", desc: "We run outreach, book meetings, negotiate partnerships, and support deal closing." },
+                { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, distribution progress, and next actions — reported weekly." },
               ].map((item) => (
                 <div key={item.step} className="relative text-center">
                   <div className="relative z-10 h-14 w-14 rounded-xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#0AA7B5] to-[#00838F] text-white shadow-lg shadow-[#0AA7B5]/25 ring-4 ring-white">
@@ -321,16 +327,21 @@ export default function Home() {
           <div className="text-center mb-12">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Who we work with</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
-              Built for Overseas Teams Entering Australia
+              Built for Overseas Companies Entering Australia
             </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+              $1M–$50M in revenue, strong product-market fit overseas, and ready to test Australian distribution.
+            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: Users, label: "Founder-led growth teams", desc: "Testing a new market with limited resources" },
-              { icon: Handshake, label: "Heads of Partnerships", desc: "Need local channel expertise and execution" },
-              { icon: TrendingUp, label: "Seed to Series B", desc: "Ready to expand but not to hire locally yet" },
-              { icon: CheckCircle2, label: "Proven PMF elsewhere", desc: "Product works — need distribution in Australia" },
+              { icon: Building2, label: "B2B SaaS", desc: "Enterprise and mid-market software companies entering the ANZ market" },
+              { icon: CreditCard, label: "Fintech", desc: "Payments, lending, and financial infrastructure seeking local distribution" },
+              { icon: Heart, label: "Healthtech", desc: "Digital health platforms looking for provider and payer partnerships" },
+              { icon: Zap, label: "Creator Economy", desc: "Creator tools and platforms expanding into the Australian creator market" },
+              { icon: ShoppingBag, label: "E-commerce Tech", desc: "Commerce infrastructure and DTC brands testing Australian demand" },
+              { icon: Briefcase, label: "Professional Services Software", desc: "Legal, accounting, and consulting tech entering Australian verticals" },
             ].map((item) => (
               <div key={item.label} className="group p-6 rounded-2xl bg-white border border-slate-200/60 transition-all duration-300 hover:border-[#0AA7B5]/30 hover:shadow-lg hover:shadow-[#0AA7B5]/5">
                 <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 flex items-center justify-center mb-4 group-hover:bg-[#0AA7B5]/15 transition-colors">
@@ -362,10 +373,10 @@ export default function Home() {
             <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
-                  Pilot or Retainer — You Choose
+                  Retainer + Commission — Aligned Incentives
                 </h2>
                 <p className="text-white/65 text-sm sm:text-base max-w-xl">
-                  Transparent, services-led pricing. Start with a 90-day pilot, scale into a retainer.
+                  We earn when you earn. Choose from Standard, Performance-Heavy, or Enterprise engagement models.
                 </p>
               </div>
               <Link
@@ -388,10 +399,10 @@ export default function Home() {
         </div>
         <div className="relative mx-auto max-w-3xl px-4 sm:px-8 lg:px-12 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-            Ready to Build Australian Revenue?
+            Ready to Enter the Australian Market?
           </h2>
           <p className="text-base sm:text-lg text-white/70 mb-8 max-w-xl mx-auto">
-            Book a 15-minute call. We&apos;ll discuss your product, your goals in Australia, and whether a pilot makes sense.
+            Book a 15-minute call. We&apos;ll discuss your product, your goals in Australia, and scope a 90-day pilot.
           </p>
           <a
             href={calendlyUrl}
