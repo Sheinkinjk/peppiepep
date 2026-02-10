@@ -24,8 +24,8 @@ function createMockStorage() {
   };
 }
 
-let mockSessionStorage = createMockStorage();
-let mockLocalStorage = createMockStorage();
+const mockSessionStorage = createMockStorage();
+const mockLocalStorage = createMockStorage();
 
 // Set up global mocks
 vi.stubGlobal("sessionStorage", mockSessionStorage);

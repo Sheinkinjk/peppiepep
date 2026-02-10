@@ -149,7 +149,7 @@ export function ROICalculator() {
         <Button
           size="lg"
           onClick={() => setCurrentStep(2)}
-          className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-6 text-base font-bold"
+          className="bg-[#008b8b] hover:bg-[#00767a] px-8 py-6 text-base font-bold"
         >
           Continue
           <ArrowRight className="ml-2 h-5 w-5" />
@@ -166,7 +166,7 @@ export function ROICalculator() {
         </div>
         <h3 className="text-2xl font-black text-slate-900">Tell us about your business metrics</h3>
         <p className="text-slate-600 max-w-xl mx-auto">
-          These numbers help us calculate accurate ROI forecasts. Don't worry about being exact—estimates work great.
+          These numbers help us calculate accurate ROI forecasts. Don't worry about being exact-estimates work great.
         </p>
       </div>
 
@@ -272,7 +272,7 @@ export function ROICalculator() {
         <Button
           size="lg"
           onClick={() => setCurrentStep(3)}
-          className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 px-8 py-6 text-base font-bold"
+          className="bg-[#008b8b] hover:bg-[#00767a] px-8 py-6 text-base font-bold"
         >
           Continue
           <ArrowRight className="ml-2 h-5 w-5" />
@@ -467,7 +467,7 @@ export function ROICalculator() {
         <Button
           size="lg"
           onClick={() => setCurrentStep(4)}
-          className="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 px-8 py-6 text-base font-bold"
+          className="bg-[#008b8b] hover:bg-[#00767a] px-8 py-6 text-base font-bold"
         >
           See My ROI Forecast
           <Sparkles className="ml-2 h-5 w-5" />
@@ -617,7 +617,7 @@ export function ROICalculator() {
           </div>
         </Card>
 
-        {/* AI Insights */}
+        {/* Insights */}
         <Card className="p-8 max-w-4xl mx-auto border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50">
           <div className="flex items-start gap-4 mb-6">
             <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0">
@@ -644,7 +644,7 @@ export function ROICalculator() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-purple-600">Four partner types</p>
             <h4 className="text-2xl font-black text-slate-900">Activate the right referral partners for your business</h4>
             <p className="text-sm text-slate-600">
-              Refer Labs helps you build and manage referral programs across four partner types—each with full attribution, compliance tracking, and automated rewards.
+              Refer Labs helps you build and manage referral programs across four partner types-each with full attribution, compliance tracking, and automated rewards.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -699,7 +699,7 @@ export function ROICalculator() {
           <Button
             size="lg"
             onClick={() => window.location.href = "/contact"}
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-6 text-base font-bold"
+            className="bg-[#008b8b] hover:bg-[#00767a] px-8 py-6 text-base font-bold"
           >
             Get Started
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -718,7 +718,7 @@ export function ROICalculator() {
             Are You Losing Referral Revenue?
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Calculate how much revenue you're losing to attribution gaps—and what you could generate in 90 days with guaranteed attribution tracking.
+            Calculate how much revenue you're losing to attribution gaps-and what you could generate in 90 days with guaranteed attribution tracking.
           </p>
         </div>
 

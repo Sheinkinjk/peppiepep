@@ -287,7 +287,7 @@ export function CampaignAnalyticsDashboard({
 
         return [
           campaign.name || "Untitled",
-          campaign.channel || "—",
+          campaign.channel || "-",
           campaign.sent_count ?? 0,
           stats.clicks,
           stats.conversions,

@@ -50,7 +50,7 @@ export default function TikTokAdsGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Install TikTok Pixel via GTM</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Install TikTok Pixel via GTM</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Install the pixel through GTM to standardize across websites and reduce implementation drift.
               </p>
@@ -73,7 +73,7 @@ export default function TikTokAdsGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Keep referral conversion capture server-side</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Keep referral conversion capture server-side</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Pixels can be blocked; Refer Labs conversion capture should remain server-side so attribution is consistent.
               </p>

@@ -50,7 +50,7 @@ export default function KlaviyoGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Import ambassadors</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Import ambassadors</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Export ambassadors from Refer Labs and import them into Klaviyo with the right custom properties.
               </p>
@@ -76,7 +76,7 @@ export default function KlaviyoGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Add the affiliate link to templates</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Add the affiliate link to templates</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Use the ambassador’s unique link as your primary CTA. Refer Labs tracks clicks automatically via UTM tags.
               </p>
@@ -99,7 +99,7 @@ Or use it as your button URL:
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <Card className="p-6 rounded-2xl border border-slate-200 bg-white">
-          <h2 className="text-lg font-bold text-slate-900">Optional — Post conversions from Klaviyo workflows</h2>
+          <h2 className="text-lg font-bold text-slate-900">Optional - Post conversions from Klaviyo workflows</h2>
           <p className="mt-2 text-sm text-slate-600">
             If your conversion event happens outside Shopify/Stripe and you want to report it directly, use a webhook action
             from a Klaviyo flow (server-to-server) and include the discount capture secret in headers.

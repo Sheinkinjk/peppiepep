@@ -123,7 +123,7 @@ export default function WordPressGuidePage() {
               <h2 className="text-lg font-bold text-slate-900">Common troubleshooting</h2>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
                 <li><span className="font-semibold">Blank iframe:</span> confirm your site is HTTPS and your theme/security plugin isn’t blocking iframes.</li>
-                <li><span className="font-semibold">Looks squashed:</span> increase <code className="font-mono">height</code> (e.g. 720–900).</li>
+                <li><span className="font-semibold">Looks squashed:</span> increase <code className="font-mono">height</code> (e.g. 720-900).</li>
                 <li><span className="font-semibold">No conversions showing:</span> confirm the secret is correct and the checkout actually provides a discount code.</li>
                 <li><span className="font-semibold">Caching:</span> purge cache/CDN after activating the plugin or changing settings.</li>
               </ul>

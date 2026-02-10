@@ -28,7 +28,7 @@ const partnerTypes = [
     title: "LinkedIn Influencers",
     subtitle: "Creators with trust + attention in your niche",
     description:
-      "We build performance-based partnerships with creators who already influence the exact people you want to sell to. The goal isn’t impressions—it’s tracked introductions, booked calls, and revenue you can attribute.",
+      "We build performance-based partnerships with creators who already influence the exact people you want to sell to. The goal isn’t impressions-it’s tracked introductions, booked calls, and revenue you can attribute.",
     affiliateProgram: {
       heading: "How the affiliate program works",
       bullets: [
@@ -80,7 +80,7 @@ const partnerTypes = [
       bullets: [
         "Advisor receives an easy way to introduce you (intro script + affiliate link/code + qualification checklist).",
         "You keep the advisor in the loop: status updates, outcome reporting, and a predictable payout process.",
-        "Because trust is everything, the program is designed to feel helpful—not salesy—with clear rules and transparency.",
+        "Because trust is everything, the program is designed to feel helpful-not salesy-with clear rules and transparency.",
       ],
     },
     leadHacking: {
@@ -120,7 +120,7 @@ const leadHackingLoop = [
     icon: BadgeCheck,
     title: "Onboard + enable partners",
     description:
-      "Partners get the assets and clarity they need: intros, messaging angles, proof points, FAQs, and tracking links—so you can activate quickly.",
+      "Partners get the assets and clarity they need: intros, messaging angles, proof points, FAQs, and tracking links-so you can activate quickly.",
     deliverable: "Partner kit + tracking setup + activation plan",
   },
   {
@@ -185,7 +185,7 @@ export default function LeadHackingPage() {
             </h1>
 
             <p className="text-xl leading-relaxed text-slate-200/90">
-              Refer Labs builds affiliate programs and then runs Lead Hacking to source, qualify, and activate the partners that fit your ICP—so you get warm introductions and booked conversations without “spray and pray” outreach.
+              Refer Labs builds affiliate programs and then runs Lead Hacking to source, qualify, and activate the partners that fit your ICP-so you get warm introductions and booked conversations without “spray and pray” outreach.
             </p>
 
             <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/8 to-white/[0.04] p-6 backdrop-blur">
@@ -193,7 +193,7 @@ export default function LeadHackingPage() {
                 The upside
               </p>
               <p className="mt-2 text-slate-200/90">
-                Instead of building a pipeline one cold message at a time, you build distribution through partners that already have trust, access, and context—then you track performance like a channel.
+                Instead of building a pipeline one cold message at a time, you build distribution through partners that already have trust, access, and context-then you track performance like a channel.
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {[
@@ -266,7 +266,7 @@ export default function LeadHackingPage() {
             </p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">Three Partner Lanes, One Affiliate Engine</h2>
             <p className="mt-4 max-w-3xl text-lg text-slate-200/90">
-              Each lane has its own affiliate motion. We design the affiliate program (links, rewards, handoffs) and Lead Hacking sources and activates the right partners so you see booked calls and tracked revenue—not just “reach”.
+              Each lane has its own affiliate motion. We design the affiliate program (links, rewards, handoffs) and Lead Hacking sources and activates the right partners so you see booked calls and tracked revenue-not just “reach”.
             </p>
           </div>
 
@@ -377,7 +377,7 @@ export default function LeadHackingPage() {
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">Affiliate Program Blueprint</p>
             <h2 className="text-4xl font-black text-white sm:text-5xl">What Makes Partnerships Actually Work</h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
-              Partners don’t refer because you asked—they refer because the program is easy, the offer is credible, and the attribution is transparent. Lead Hacking connects the blueprint to the right partner list.
+              Partners don’t refer because you asked-they refer because the program is easy, the offer is credible, and the attribution is transparent. Lead Hacking connects the blueprint to the right partner list.
             </p>
           </div>
 
@@ -398,7 +398,7 @@ export default function LeadHackingPage() {
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#7DE7E3]">Design System</p>
               <h2 className="text-4xl font-black text-white sm:text-5xl">Why More Tiffany Blue?</h2>
               <p className="mt-4 text-lg text-slate-200/90">
-                Affiliate partnerships are built on trust and recognition. We use Tiffany blue as the “partner signal” across your affiliate assets—so the same visual cue shows up in creator posts, partner decks, and enablement docs. The goal is consistency: partners instantly recognise the program, and prospects experience a coherent handoff.
+                Affiliate partnerships are built on trust and recognition. We use Tiffany blue as the “partner signal” across your affiliate assets-so the same visual cue shows up in creator posts, partner decks, and enablement docs. The goal is consistency: partners instantly recognise the program, and prospects experience a coherent handoff.
               </p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-slate-950/35 p-8">
@@ -430,7 +430,7 @@ export default function LeadHackingPage() {
           </div>
           <h2 className="mb-4 text-4xl font-black text-white sm:text-5xl">Want affiliate partners that actually convert?</h2>
           <p className="mx-auto mb-8 max-w-3xl text-lg text-slate-300">
-            We’ll map your best partner lane, design the affiliate program mechanics, and show you what Lead Hacking looks like to source and activate partners consistently—with clear attribution.
+            We’ll map your best partner lane, design the affiliate program mechanics, and show you what Lead Hacking looks like to source and activate partners consistently-with clear attribution.
           </p>
           <div className="flex justify-center">
             <ScheduleCallCTA />

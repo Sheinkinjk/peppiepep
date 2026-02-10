@@ -54,7 +54,7 @@ export default function BlogPost() {
         {/* Content */}
         <div className="prose prose-lg prose-slate max-w-none">
           <p className="lead">
-            <strong>80% of law firm business comes from referrals</strong>, yet most firms track them with spreadsheets, sticky notes, or worse—not at all. This creates compliance risks, missed revenue opportunities, and strained partner relationships.
+            <strong>80% of law firm business comes from referrals</strong>, yet most firms track them with spreadsheets, sticky notes, or worse-not at all. This creates compliance risks, missed revenue opportunities, and strained partner relationships.
           </p>
 
           <p>

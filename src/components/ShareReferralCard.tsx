@@ -305,7 +305,7 @@ export function ShareReferralCard({
         status: "scheduled",
       },
     ]);
-    setScheduleStatus("Share scheduled — we'll remind you right on time.");
+    setScheduleStatus("Share scheduled - we'll remind you right on time.");
 
     const timer = window.setTimeout(() => {
       triggerShareChannel(scheduleChannel);

@@ -50,7 +50,7 @@ export default function AnalyticsGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Confirm UTM visibility</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Confirm UTM visibility</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Refer Labs referral links include UTM parameters for analytics. Make sure your analytics setup captures them.
               </p>
@@ -76,7 +76,7 @@ export default function AnalyticsGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Keep conversions server-side for attribution</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Keep conversions server-side for attribution</h2>
               <p className="mt-2 text-sm text-slate-600">
                 GA4/Ads tracking is for marketing reporting. Refer Labs conversion attribution is based on discount code redemption posting.
               </p>

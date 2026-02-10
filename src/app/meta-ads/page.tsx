@@ -50,7 +50,7 @@ export default function MetaAdsGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Install Pixel via GTM (recommended)</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Install Pixel via GTM (recommended)</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Install Meta Pixel through Google Tag Manager so you can manage tags consistently across client sites.
               </p>
@@ -73,7 +73,7 @@ export default function MetaAdsGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Keep Refer Labs attribution server-side</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Keep Refer Labs attribution server-side</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Pixels can be blocked by ad blockers/consent. Refer Labs attribution is based on discount code redemption posting.
               </p>

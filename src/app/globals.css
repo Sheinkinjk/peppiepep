@@ -12,32 +12,40 @@
 
 @layer base {
   :root {
+    /* Tiffany blue-led palette */
     --background: 187 80% 98%;
-    --foreground: 196 60% 15%;
+    --foreground: 196 55% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 196 55% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
-    --primary: 187 100% 28%;
+    --popover-foreground: 196 55% 16%;
+    --primary: 187 100% 30%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 187 70% 58%;
-    --secondary-foreground: 0 0% 20%;
-    --muted: 0 0% 74%;
-    --muted-foreground: 0 0% 35%;
-    --accent: 187 70% 80%;
-    --accent-foreground: 187 100% 20%;
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 187 78% 44%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 187 26% 90%;
+    --muted-foreground: 195 20% 37%;
+    --accent: 187 84% 92%;
+    --accent-foreground: 187 90% 24%;
+    --destructive: 1 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 187 35% 90%;
-    --input: 187 35% 90%;
-    --ring: 187 100% 32%;
-    --heading-color: #024B56;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --border: 187 35% 86%;
+    --input: 187 35% 86%;
+    --ring: 187 100% 30%;
+    --heading-color: #024b56;
+    --chart-1: 187 82% 42%;
+    --chart-2: 183 72% 36%;
+    --chart-3: 191 62% 30%;
+    --chart-4: 44 72% 56%;
+    --chart-5: 24 82% 58%;
+    --radius: 0.85rem;
+
+    /* Premium surface tokens */
+    --surface-card: rgba(255, 255, 255, 0.9);
+    --surface-veil: rgba(255, 255, 255, 0.55);
+    --surface-ink: rgba(5, 11, 18, 0.7);
+    --shadow-soft: 0 18px 64px rgba(2, 67, 82, 0.12);
+    --shadow-strong: 0 30px 110px rgba(3, 60, 73, 0.17);
   }
   .dark {
     --background: 195 45% 7%;
@@ -46,24 +54,24 @@
     --card-foreground: 0 0% 98%;
     --popover: 195 45% 9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 187 70% 58%;
+    --primary: 187 78% 58%;
     --primary-foreground: 0 0% 8%;
     --secondary: 195 45% 18%;
     --secondary-foreground: 0 0% 98%;
     --muted: 195 35% 20%;
     --muted-foreground: 0 0% 75%;
     --accent: 187 70% 40%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 70% 46%;
     --destructive-foreground: 0 0% 98%;
     --border: 195 35% 20%;
     --input: 195 35% 20%;
-    --ring: 187 100% 45%;
+    --ring: 187 78% 58%;
     --chart-1: 187 70% 55%;
     --chart-2: 195 50% 50%;
     --chart-3: 187 50% 35%;
     --chart-4: 195 55% 65%;
-    --chart-5: 15 70% 60%;
+    --chart-5: 18 72% 58%;
   }
 }
 
@@ -75,10 +83,14 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
-      sans-serif;
+    font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
     font-size: 16px;
     line-height: 1.6;
+    background-image:
+      radial-gradient(circle at 8% 2%, rgba(0, 166, 180, 0.08), transparent 28%),
+      radial-gradient(circle at 92% 8%, rgba(0, 135, 150, 0.1), transparent 34%);
+    background-attachment: fixed;
+    overflow-x: hidden;
   }
 
   p,
@@ -102,6 +114,18 @@
   h4 {
     color: var(--heading-color);
   }
+
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  code {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 }
 
 @layer components {
@@ -116,6 +140,90 @@
   .stack {
     @apply space-y-4 sm:space-y-6;
   }
+}
+
+/* Premium surface helpers */
+.elevated-card {
+  background: linear-gradient(145deg, var(--surface-card), rgba(255, 255, 255, 0.82));
+  border: 1px solid rgba(9, 35, 52, 0.06);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(8px);
+}
+
+.elevated-section {
+  background: radial-gradient(circle at 15% 20%, rgba(0, 139, 149, 0.12), transparent 32%),
+    radial-gradient(circle at 80% 0%, rgba(0, 153, 170, 0.14), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.82));
+  border: 1px solid rgba(8, 24, 40, 0.04);
+  box-shadow: var(--shadow-strong);
+}
+
+  .soft-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(12, 31, 48, 0.08), transparent);
+  }
+
+/* Site-wide interaction rhythm */
+@keyframes section-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main > section,
+  main > header {
+    animation: section-rise 0.7s ease both;
+  }
+
+  :where(main) :is(.rounded-xl, .rounded-2xl, .rounded-3xl).border {
+    transition-property: box-shadow, transform, border-color, background-color;
+    transition-duration: 260ms;
+    transition-timing-function: ease;
+  }
+
+  :where(main) :is(.rounded-xl, .rounded-2xl, .rounded-3xl).border:hover {
+    border-color: rgba(0, 131, 143, 0.28);
+    box-shadow: 0 18px 42px rgba(1, 85, 98, 0.12);
+    transform: translateY(-2px);
+  }
+
+  a,
+  button {
+    transition-property: background-color, border-color, color, transform, box-shadow, opacity;
+    transition-duration: 180ms;
+    transition-timing-function: ease;
+  }
+
+  a:hover,
+  button:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Remove CTA gradients globally and keep a consistent premium button style */
+:where(a, button, [role="button"])[class*="bg-gradient"][class*="inline-flex"] {
+  background-image: none !important;
+  background-color: #008b8b !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(0, 106, 112, 0.45) !important;
+  box-shadow: 0 12px 28px rgba(0, 112, 121, 0.24) !important;
+}
+
+:where(a, button, [role="button"])[class*="bg-gradient"][class*="inline-flex"]:hover {
+  background-color: #00767a !important;
+  box-shadow: 0 16px 30px rgba(0, 112, 121, 0.3) !important;
+}
+
+:where(a, button, [role="button"]):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 131, 143, 0.28);
 }
 
 /* Decorative utility helpers */

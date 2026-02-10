@@ -40,7 +40,7 @@ export default function ConsultingFirmsTrackPartnerReferralsPage() {
           {/* Introduction */}
           <div className="text-lg text-slate-700 leading-relaxed space-y-4 mb-12">
             <p>
-              Most consulting firms treat partner referrals as a "nice to have" rather than a predictable revenue channel. They track every lead in their CRM, forecast sales pipeline to the dollar, and measure conversion rates obsessively—but referral partners? Usually managed through scattered spreadsheets, email threads, and good intentions.
+              Most consulting firms treat partner referrals as a "nice to have" rather than a predictable revenue channel. They track every lead in their CRM, forecast sales pipeline to the dollar, and measure conversion rates obsessively-but referral partners? Usually managed through scattered spreadsheets, email threads, and good intentions.
             </p>
             <p>
               This is leaving massive revenue on the table.
@@ -60,7 +60,7 @@ export default function ConsultingFirmsTrackPartnerReferralsPage() {
               <div>
                 <h3 className="text-lg font-bold text-purple-900 mb-2">The Referral Revenue Gap</h3>
                 <p className="text-purple-800 text-base mb-0">
-                  According to our 2025 Professional Services Referral Study, consulting firms that systematically track referral partners generate 3.2x more referral revenue than firms that don't. The difference isn't relationship quality—it's relationship management.
+                  According to our 2025 Professional Services Referral Study, consulting firms that systematically track referral partners generate 3.2x more referral revenue than firms that don't. The difference isn't relationship quality-it's relationship management.
                 </p>
               </div>
             </div>
@@ -428,7 +428,7 @@ export default function ConsultingFirmsTrackPartnerReferralsPage() {
           <h2 className="text-3xl font-black text-slate-900 mt-12 mb-6">The Bottom Line</h2>
 
           <p className="text-slate-700 mb-6">
-            Your sales pipeline is predictable because you've systematized it. Your referral network can be just as predictable—but only if you apply the same rigor.
+            Your sales pipeline is predictable because you've systematized it. Your referral network can be just as predictable-but only if you apply the same rigor.
           </p>
 
           <p className="text-slate-700 mb-6">

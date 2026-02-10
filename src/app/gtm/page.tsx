@@ -50,7 +50,7 @@ export default function GtmGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Install GTM</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Install GTM</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Add your GTM container to the website you’re integrating. This doesn’t replace Refer Labs tracking; it helps you standardize
                 client-side analytics.
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Verify referral traffic + conversion flow</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Verify referral traffic + conversion flow</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Use a real ambassador referral link and verify the end-to-end journey: click → referral page → signup → conversion.
               </p>

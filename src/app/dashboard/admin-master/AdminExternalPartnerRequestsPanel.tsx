@@ -131,13 +131,13 @@ export function AdminExternalPartnerRequestsPanel({ currentAdminId }: { currentA
   const summary = useMemo(() => {
     if (!selected) return "";
     if (requestKind === "partner_activation") {
-      const partnerName = selected.payload?.partnerName || "—";
-      const partnerType = selected.payload?.partnerType || "—";
-      const landingUrl = selected.payload?.landingUrl || "—";
+      const partnerName = selected.payload?.partnerName || "-";
+      const partnerType = selected.payload?.partnerType || "-";
+      const landingUrl = selected.payload?.landingUrl || "-";
       return `Activation · ${partnerType} · ${partnerName} · ${landingUrl}`;
     }
-    const goal = selected.payload?.primaryGoal || "—";
-    const types = Array.isArray(selected.payload?.partnerTypes) ? selected.payload.partnerTypes.join(", ") : "—";
+    const goal = selected.payload?.primaryGoal || "-";
+    const types = Array.isArray(selected.payload?.partnerTypes) ? selected.payload.partnerTypes.join(", ") : "-";
     return `Discovery · ${goal} · ${types}`;
   }, [selected, requestKind]);
 
@@ -219,11 +219,11 @@ export function AdminExternalPartnerRequestsPanel({ currentAdminId }: { currentA
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Selected request</p>
-                <h3 className="mt-1 text-lg font-black text-slate-900">{selected?.businesses?.name || "—"}</h3>
+                <h3 className="mt-1 text-lg font-black text-slate-900">{selected?.businesses?.name || "-"}</h3>
                 <p className="mt-1 text-sm text-slate-600">{summary}</p>
                 <p className="mt-1 text-xs text-slate-500">
-                  Status: <span className="font-semibold text-slate-700">{selected?.status || "—"}</span> · Assigned:{" "}
-                  <span className="font-semibold text-slate-700">{selected?.assigned_to || "—"}</span>
+                  Status: <span className="font-semibold text-slate-700">{selected?.status || "-"}</span> · Assigned:{" "}
+                  <span className="font-semibold text-slate-700">{selected?.assigned_to || "-"}</span>
                 </p>
               </div>
               {selected && (
@@ -249,11 +249,11 @@ export function AdminExternalPartnerRequestsPanel({ currentAdminId }: { currentA
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                 <p className="text-xs text-slate-500">Business ID</p>
-                <p className="mt-1 font-mono text-xs text-slate-900 break-all">{selected?.business_id || "—"}</p>
+                <p className="mt-1 font-mono text-xs text-slate-900 break-all">{selected?.business_id || "-"}</p>
               </div>
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                 <p className="text-xs text-slate-500">Request ID</p>
-                <p className="mt-1 font-mono text-xs text-slate-900 break-all">{selected?.id || "—"}</p>
+                <p className="mt-1 font-mono text-xs text-slate-900 break-all">{selected?.id || "-"}</p>
               </div>
             </div>
 

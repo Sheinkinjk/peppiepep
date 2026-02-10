@@ -136,16 +136,16 @@ export function ScorePartnersButton({ businessId, onScoreComplete, className }: 
         variant="outline"
         size="sm"
       >
-        <Sparkles className="mr-2 h-4 w-4 text-purple-500" />
-        Score with AI
+        <Sparkles className="mr-2 h-4 w-4 text-cyan-600" />
+        Score Partners
       </Button>
 
       <Dialog open={isOpen} onOpenChange={handleClose}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5 text-purple-500" />
-              AI Referral Scoring
+              <Sparkles className="h-5 w-5 text-cyan-600" />
+              Partner Scoring
             </DialogTitle>
             <DialogDescription>
               Analyze your referral partners to identify high-value contacts and get personalized outreach recommendations.
@@ -159,23 +159,23 @@ export function ScorePartnersButton({ businessId, onScoreComplete, className }: 
                   <p className="text-sm font-semibold text-slate-900 mb-2">What gets analyzed:</p>
                   <ul className="space-y-1 text-sm text-slate-600">
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-cyan-600">•</span>
                       <span>Network size & quality (30%)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-cyan-600">•</span>
                       <span>Influence & authority (25%)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-cyan-600">•</span>
                       <span>Engagement likelihood (20%)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-cyan-600">•</span>
                       <span>Conversion potential (15%)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-cyan-600">•</span>
                       <span>Historical performance (10%)</span>
                     </li>
                   </ul>
@@ -191,7 +191,7 @@ export function ScorePartnersButton({ businessId, onScoreComplete, className }: 
 
             {status === "scoring" && (
               <div className="flex flex-col items-center justify-center py-8">
-                <Loader2 className="h-12 w-12 animate-spin text-purple-500 mb-4" />
+                <Loader2 className="h-12 w-12 animate-spin text-cyan-600 mb-4" />
                 <p className="text-sm font-semibold text-slate-900">Analyzing partners...</p>
                 <p className="text-xs text-slate-500 mt-1">This may take 10-30 seconds</p>
               </div>
@@ -207,7 +207,7 @@ export function ScorePartnersButton({ businessId, onScoreComplete, className }: 
                   {scoredCount} partner{scoredCount === 1 ? "" : "s"} analyzed successfully
                 </p>
                 <p className="text-xs text-slate-500 mt-3">
-                  Refresh the table to see AI scores and recommendations
+                  Refresh the table to see updated scores and recommendations
                 </p>
               </div>
             )}
@@ -233,7 +233,7 @@ export function ScorePartnersButton({ businessId, onScoreComplete, className }: 
                 </Button>
                 <Button onClick={triggerScoring} disabled={isScoring}>
                   <Sparkles className="mr-2 h-4 w-4" />
-                  Start AI Scoring
+                  Start Scoring
                 </Button>
               </>
             )}

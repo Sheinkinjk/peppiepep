@@ -34,7 +34,7 @@ const businessOutcomes = [
   },
   {
     title: "Build Brand Authority",
-    detail: "When respected voices in your industry mention your product, it signals credibility. You're not interrupting—you're being introduced.",
+    detail: "When respected voices in your industry mention your product, it signals credibility. You're not interrupting-you're being introduced.",
     icon: TrendingUp,
     gradient: "from-purple-500/20 to-pink-500/20",
     border: "border-purple-400/30",
@@ -67,7 +67,7 @@ const faqData = [
       },
       {
         q: "How do you prevent fake engagement or fraud?",
-        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique referral links with server-side validation. Businesses see full attribution data—click sources, conversion rates, and customer quality—so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
+        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique referral links with server-side validation. Businesses see full attribution data-click sources, conversion rates, and customer quality-so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
       }
     ]
   },
@@ -85,7 +85,7 @@ const faqData = [
       },
       {
         q: "How do payouts work?",
-        a: "You set the payout structure upfront (flat fee per conversion, percentage of revenue, tiered commissions, etc.). When a tracked conversion occurs, the creator's earnings are logged in their dashboard. Payouts are processed monthly via Stripe, with a 30-day hold to account for refunds or cancellations. Businesses only pay for verified, completed conversions—not clicks or impressions."
+        a: "You set the payout structure upfront (flat fee per conversion, percentage of revenue, tiered commissions, etc.). When a tracked conversion occurs, the creator's earnings are logged in their dashboard. Payouts are processed monthly via Stripe, with a 30-day hold to account for refunds or cancellations. Businesses only pay for verified, completed conversions-not clicks or impressions."
       },
       {
         q: "Can I work with multiple creators at once?",
@@ -103,7 +103,7 @@ const faqData = [
       },
       {
         q: "What if a creator posts something off-brand or inaccurate?",
-        a: "All content goes through your approval process before publishing. If something slips through, you can request immediate removal or correction. Repeated violations result in creator removal from your program. You also control which creators you work with—vet their past content, audience fit, and brand alignment before approving partnerships."
+        a: "All content goes through your approval process before publishing. If something slips through, you can request immediate removal or correction. Repeated violations result in creator removal from your program. You also control which creators you work with-vet their past content, audience fit, and brand alignment before approving partnerships."
       },
       {
         q: "Can I see performance before committing to a creator?",
@@ -129,11 +129,11 @@ const faqData = [
       },
       {
         q: "What budget should I allocate?",
-        a: "Start with $2,000-$5,000/month to test 3-5 creators. This gives you enough data to identify what works without over-committing. High-performing programs scale to $20,000-$50,000+/month as you add more creators and expand to new audience segments. Budget scales with proven ROI—if you're generating 5x returns, increasing spend is a no-brainer."
+        a: "Start with $2,000-$5,000/month to test 3-5 creators. This gives you enough data to identify what works without over-committing. High-performing programs scale to $20,000-$50,000+/month as you add more creators and expand to new audience segments. Budget scales with proven ROI-if you're generating 5x returns, increasing spend is a no-brainer."
       },
       {
         q: "Do you handle creator outreach and management?",
-        a: "Yes. We handle creator vetting, onboarding, and matching. You approve partnerships, provide briefs, and review content. We manage logistics (contracts, tracking setup, payout processing). Think of us as your creator partnership infrastructure—you focus on strategy and approvals, we handle operations."
+        a: "Yes. We handle creator vetting, onboarding, and matching. You approve partnerships, provide briefs, and review content. We manage logistics (contracts, tracking setup, payout processing). Think of us as your creator partnership infrastructure-you focus on strategy and approvals, we handle operations."
       }
     ]
   }
@@ -198,7 +198,7 @@ export default function LinkedInInfluencerPage() {
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link
                 href="/linkedin-influencer/business"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-cyan-500/40 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-base font-bold text-white shadow-2xl shadow-cyan-500/30 transition hover:scale-[1.02] hover:bg-[#00767a]"
               >
                 Partner With Creators
                 <ArrowRight className="h-5 w-5" />
@@ -361,7 +361,7 @@ export default function LinkedInInfluencerPage() {
                   Your buyers are on LinkedIn every day. They follow creators, operators, and founders who share insights, solve problems, and recommend tools.
                 </p>
                 <p>
-                  When someone they trust mentions your product, it doesn't feel like advertising—it feels like a referral from a colleague.
+                  When someone they trust mentions your product, it doesn't feel like advertising-it feels like a referral from a colleague.
                 </p>
                 <p>
                   That's why creator-led campaigns outperform cold email by 12x and paid ads by 5x in conversion rates.
@@ -459,7 +459,7 @@ export default function LinkedInInfluencerPage() {
               {[
                 "Pay only for verified conversions (demos, signups, revenue)",
                 "Launch your first creator campaign in 7-10 days",
-                "Scale with proven ROI—no long-term contracts",
+                "Scale with proven ROI-no long-term contracts",
                 "Full attribution tracking and performance dashboards"
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
@@ -471,7 +471,7 @@ export default function LinkedInInfluencerPage() {
 
             <Link
               href="/linkedin-influencer/business"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-base font-bold text-white shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02] hover:bg-[#00767a]"
             >
               Start a Partnership
               <ArrowRight className="h-5 w-5" />
@@ -563,7 +563,7 @@ export default function LinkedInInfluencerPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/linkedin-influencer/business"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-base font-bold text-white shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02] hover:bg-[#00767a]"
               >
                 Launch a Partnership
                 <ArrowRight className="h-5 w-5" />

@@ -41,7 +41,7 @@ export default function AffiliatePartnershipsPage() {
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
             We help professional services firms build affiliate programs across four channels: customer networks,
-            LinkedIn influencers, agency partners, and trusted consultants—with full attribution, compliance, and payouts your finance team can defend.
+            LinkedIn influencers, agency partners, and trusted consultants-with full attribution, compliance, and payouts your finance team can defend.
           </p>
           <div className="pt-4">
             <AffiliatePartnershipsCTA
@@ -59,7 +59,7 @@ export default function AffiliatePartnershipsPage() {
               Affiliate Programs We Support
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              All four affiliate offerings—from turning happy customers into advocates to activating trusted experts
+              All four affiliate offerings-from turning happy customers into advocates to activating trusted experts
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export default function AffiliatePartnershipsPage() {
               <p className="text-slate-300 leading-relaxed">
                 Your satisfied customers are your best marketing channel. They've experienced your service
                 firsthand, they trust you, and they know people in similar situations. Give them the
-                tools to refer with confidence—and the rewards to make it worth their while.
+                tools to refer with confidence-and the rewards to make it worth their while.
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
@@ -87,7 +87,7 @@ export default function AffiliatePartnershipsPage() {
                     "Each customer gets a branded ambassador portal with their unique tracking link",
                     "They share their link with colleagues, friends, and professional networks",
                     "Every click, signup, and conversion is tracked back to the referring customer",
-                    "Rewards calculate automatically—flat fees, percentages, or tiered incentives",
+                    "Rewards calculate automatically-flat fees, percentages, or tiered incentives",
                     "Customers see their performance and earnings in real-time dashboards",
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-slate-300">
@@ -101,7 +101,7 @@ export default function AffiliatePartnershipsPage() {
                 <p className="text-sm text-slate-400">
                   <span className="text-white font-medium">Example outcome:</span>{" "}
                   A financial advisory firm activated 47 happy clients as ambassadors. Within 6 months,
-                  they generated 68 qualified introductions with a 41% close rate—no paid ads required.
+                  they generated 68 qualified introductions with a 41% close rate-no paid ads required.
                 </p>
               </div>
             </div>
@@ -151,7 +151,7 @@ export default function AffiliatePartnershipsPage() {
               </h3>
               <p className="text-slate-300 leading-relaxed">
                 LinkedIn influencers have spent years building trust with decision-makers in your
-                target market. When they recommend your service, their audience listens—because
+                target market. When they recommend your service, their audience listens-because
                 they've earned that credibility through consistent, valuable content.
               </p>
               <div className="space-y-4">
@@ -177,7 +177,7 @@ export default function AffiliatePartnershipsPage() {
                 <p className="text-sm text-slate-400">
                   <span className="text-white font-medium">Example outcome:</span>{" "}
                   A finance SaaS worked with 12 LinkedIn creators, generating 340 qualified demos
-                  in 90 days—with clear attribution showing exactly which influencer drove each lead.
+                  in 90 days-with clear attribution showing exactly which influencer drove each lead.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function AffiliatePartnershipsPage() {
               </h3>
               <p className="text-slate-300 leading-relaxed">
                 Agencies and strategic partners already have relationships with your target customers.
-                They're not competing—they're complementing. When they refer a client to you,
+                They're not competing-they're complementing. When they refer a client to you,
                 everyone wins: the client gets a trusted affiliate, the partner earns rewards,
                 and you get a warm introduction.
               </p>
@@ -313,7 +313,7 @@ export default function AffiliatePartnershipsPage() {
               <p className="text-slate-300 leading-relaxed">
                 Consultants and advisors are hired specifically for their expertise and affiliates.
                 When a fractional CFO suggests a financial tool, or a marketing consultant recommends
-                a platform, their clients trust that guidance implicitly. That trust is gold—and
+                a platform, their clients trust that guidance implicitly. That trust is gold-and
                 it's trackable.
               </p>
               <div className="space-y-4">
@@ -324,7 +324,7 @@ export default function AffiliatePartnershipsPage() {
                   {[
                     "We onboard consultants with briefs explaining your value proposition",
                     "They share unique links when recommending solutions to their clients",
-                    "Affiliates are tracked discreetly—no awkward commission conversations",
+                    "Affiliates are tracked discreetly-no awkward commission conversations",
                     "Consultants earn per-deal fees or ongoing revenue share",
                     "Compliance disclosures are built into the workflow automatically",
                   ].map((item, idx) => (
@@ -448,7 +448,7 @@ export default function AffiliatePartnershipsPage() {
               {
                 icon: TrendingUp,
                 title: "Flexible Reward Models",
-                desc: "Revenue share, per-demo fees, credits, upgrades—configure the reward structure that motivates your specific partners.",
+                desc: "Revenue share, per-demo fees, credits, upgrades-configure the reward structure that motivates your specific partners.",
               },
             ].map((item) => (
               <div
@@ -520,15 +520,15 @@ export default function AffiliatePartnershipsPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-white">Partner sourcing</strong> — We identify agencies, consultants, and influencers aligned with your target market</span>
+                    <span><strong className="text-white">Partner sourcing</strong> - We identify agencies, consultants, and influencers aligned with your target market</span>
                   </li>
                   <li className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-white">Lead research</strong> — Vetted prospects with contact details, company info, and qualification notes</span>
+                    <span><strong className="text-white">Lead research</strong> - Vetted prospects with contact details, company info, and qualification notes</span>
                   </li>
                   <li className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                    <span><strong className="text-white">Custom pricing</strong> — Fees based on lead type, volume, and qualification requirements</span>
+                    <span><strong className="text-white">Custom pricing</strong> - Fees based on lead type, volume, and qualification requirements</span>
                   </li>
                 </ul>
                 <div className="pt-4">
@@ -596,7 +596,7 @@ export default function AffiliatePartnershipsPage() {
               {[
                 {
                   q: "How are affiliates tracked end-to-end?",
-                  a: "Every partner gets unique links tied to your landing pages and CTAs. All events—clicks, form submissions, demos, conversions, and revenue—carry partner, campaign, and link IDs into our Measure ROI dashboard.",
+                  a: "Every partner gets unique links tied to your landing pages and CTAs. All events-clicks, form submissions, demos, conversions, and revenue-carry partner, campaign, and link IDs into our Measure ROI dashboard.",
                 },
                 {
                   q: "What reward structures can I offer?",
@@ -608,7 +608,7 @@ export default function AffiliatePartnershipsPage() {
                 },
                 {
                   q: "What about compliance and disclosures?",
-                  a: "Compliance guardrails are built into the workflow. Partner disclosures, approval workflows, and audit trails are automatic—so your legal and finance teams can sleep easy.",
+                  a: "Compliance guardrails are built into the workflow. Partner disclosures, approval workflows, and audit trails are automatic-so your legal and finance teams can sleep easy.",
                 },
                 {
                   q: "How long until I see results?",

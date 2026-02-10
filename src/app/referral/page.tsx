@@ -35,13 +35,16 @@ export default function ReferralProgramPage() {
   const [programContext, setProgramContext] = useState<ProgramContext | null>(null);
 
   // Extract URL parameters
-  const code = searchParams?.get("code") || process.env.NEXT_PUBLIC_ADMIN_REFERRAL_CODE || "Jn9wjbn2kQlO";
+  const code =
+    searchParams?.get("code") || process.env.NEXT_PUBLIC_ADMIN_REFERRAL_CODE || null;
   const project = searchParams?.get("project");
   const utmCampaign = searchParams?.get("utm_campaign");
   const utmMedium = searchParams?.get("utm_medium");
   const utmSource = searchParams?.get("utm_source");
 
-  const referralLink = `https://referlabs.com.au/r/${code}`;
+  const referralLink = code
+    ? `https://referlabs.com.au/r/${code}`
+    : "https://referlabs.com.au/our-referral-program";
 
   // Build query params for attribution
   const buildQueryString = () => {
@@ -411,7 +414,7 @@ export default function ReferralProgramPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackButtonClick("Visit Referral Link", referralLink)}
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-gradient-to-r from-[#0abab5] to-[#24d9e2] px-6 py-3.5 text-sm font-black text-white shadow-lg transition-all hover:from-[#099a95] hover:to-[#1fc8d1] hover:scale-105"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#008b8b] px-6 py-3.5 text-sm font-black text-white shadow-lg transition-all hover:scale-105 hover:bg-[#00767a]"
                 >
                   Visit Link
                   <ArrowRight className="ml-2 h-4 w-4" />

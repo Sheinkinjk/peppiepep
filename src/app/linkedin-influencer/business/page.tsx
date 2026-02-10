@@ -51,7 +51,7 @@ function escapeHtml(value: string) {
 }
 
 function field(label: string, value: string) {
-  const safe = escapeHtml(value || "—");
+  const safe = escapeHtml(value || "-");
   return `
     <tr>
       <td style="padding:10px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-weight:600;color:#0f172a;width:220px;">${escapeHtml(
@@ -276,7 +276,7 @@ async function submitBusinessPartner(formData: FormData) {
         Next steps: we'll email creator profiles within 2-3 business days. If you have questions, reply to this email.
       </p>
     `,
-    footerNote: "Refer Labs — premium creator matches with attribution.",
+    footerNote: "Refer Labs - premium creator matches with attribution.",
     brandName: "Refer Labs",
     logoUrl: `${process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au"}/logo.svg`,
   });

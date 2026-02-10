@@ -50,7 +50,7 @@ export default function ZapierGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Pick your conversion trigger</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Pick your conversion trigger</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Your Zap should fire when you are confident a conversion happened (payment succeeded, booking confirmed, deal won).
               </p>
@@ -74,7 +74,7 @@ export default function ZapierGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Post the conversion to Refer Labs</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Post the conversion to Refer Labs</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Add an action: <span className="font-semibold">Webhooks by Zapier → Custom Request</span>.
               </p>

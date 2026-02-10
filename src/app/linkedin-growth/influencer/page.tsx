@@ -52,7 +52,7 @@ function escapeHtml(value: string) {
 }
 
 function field(label: string, value: string) {
-  const safe = escapeHtml(value || "—");
+  const safe = escapeHtml(value || "-");
   return `
     <tr>
       <td style="padding:10px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-weight:600;color:#0f172a;width:220px;">${escapeHtml(
@@ -306,7 +306,7 @@ async function submitInfluencerApplication(formData: FormData) {
         If you have any updates, reply to this email and we'll keep your profile current.
       </p>
     `,
-    footerNote: "Refer Labs — premium creator matches with attribution.",
+    footerNote: "Refer Labs - premium creator matches with attribution.",
     brandName: "Refer Labs",
     logoUrl: `${process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://referlabs.com.au"}/logo.svg`,
   });
@@ -744,7 +744,7 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 px-7 py-3.5 text-sm font-bold text-slate-900 shadow-lg shadow-emerald-500/30 transition-all hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/30 transition-all hover:scale-[1.02] hover:bg-[#00767a]"
               >
                 Submit Application
                 <ArrowRight className="h-4 w-4" />

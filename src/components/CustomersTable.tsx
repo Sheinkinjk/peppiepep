@@ -41,7 +41,7 @@ type Customer = {
   discount_code: string | null;
   credits: number | null;
   status: string | null;
-  // AI Scoring fields
+  // Partner scoring fields
   ai_referral_score: number | null;
   ai_score_explanation: string | null;
   ai_estimated_value: number | null;
@@ -655,20 +655,20 @@ export function CustomersTable({
         </div>
         <div>
           <p className="font-semibold text-slate-900">
-            {customer.name ?? "—"}
+            {customer.name ?? "-"}
           </p>
           <p className="text-xs text-slate-500">
             ID: {customer.id.slice(0, 8)}…
           </p>
         </div>
         <div className="space-y-1 text-xs text-slate-600">
-          <p>{customer.email ?? "—"}</p>
-          <p>{customer.phone ?? "—"}</p>
+          <p>{customer.email ?? "-"}</p>
+          <p>{customer.phone ?? "-"}</p>
         </div>
         <div className="space-y-2 text-xs text-slate-600">
           <div className="flex flex-wrap items-center gap-2">
             <p className="font-semibold text-slate-900">
-              {customer.company ?? "—"}
+              {customer.company ?? "-"}
             </p>
             {normalizedSource && (
               <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-slate-600">
@@ -714,7 +714,7 @@ export function CustomersTable({
             </p>
           )}
         </div>
-        {/* AI Score Column */}
+        {/* Priority Score Column */}
         <div className="flex flex-col gap-1">
           {typeof customer.ai_referral_score === "number" ? (
             <>
@@ -754,7 +754,7 @@ export function CustomersTable({
                       : customer.ai_optimal_approach}
                   </p>
                   <div className="absolute left-0 top-full mt-1 hidden group-hover:block z-50 w-64 rounded-lg border border-slate-200 bg-white p-3 shadow-lg">
-                    <p className="text-xs font-semibold text-slate-900 mb-1">AI Recommendation:</p>
+                    <p className="text-xs font-semibold text-slate-900 mb-1">Recommended approach:</p>
                     <p className="text-xs text-slate-700">{customer.ai_optimal_approach}</p>
                     {customer.ai_score_explanation && (
                       <>
@@ -770,7 +770,7 @@ export function CustomersTable({
             <span className="text-xs text-slate-400">Not scored</span>
           )}
         </div>
-        {/* AI Estimated Value Column */}
+        {/* Estimated Value Column */}
         <div className="flex flex-col gap-1">
           {typeof customer.ai_estimated_value === "number" ? (
             <>
@@ -784,7 +784,7 @@ export function CustomersTable({
               )}
             </>
           ) : (
-            <span className="text-xs text-slate-400">—</span>
+            <span className="text-xs text-slate-400">-</span>
           )}
         </div>
         <div className="space-y-2">
@@ -887,7 +887,7 @@ export function CustomersTable({
           </span>
         </div>
         <div className="text-xs text-slate-500">
-          —
+          -
         </div>
       </div>
     );
@@ -962,8 +962,8 @@ export function CustomersTable({
             }}
           >
             <option value="recent">Sort: Newest first</option>
-            <option value="name_asc">Sort: A–Z</option>
-            <option value="score_desc">Sort: Highest AI Score</option>
+            <option value="name_asc">Sort: A-Z</option>
+            <option value="score_desc">Sort: Highest Score</option>
             <option value="value_desc">Sort: Highest Value</option>
           </select>
         </div>
@@ -1030,8 +1030,8 @@ export function CustomersTable({
           <div>Contact</div>
           <div>Application context</div>
           <div className="flex items-center gap-1.5">
-            <Sparkles className="h-3.5 w-3.5 text-purple-500" />
-            <span>AI Score</span>
+            <Sparkles className="h-3.5 w-3.5 text-cyan-600" />
+            <span>Partner Score</span>
           </div>
           <div className="flex items-center gap-1.5">
             <DollarSign className="h-3.5 w-3.5 text-emerald-500" />

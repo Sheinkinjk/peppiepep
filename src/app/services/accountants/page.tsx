@@ -12,7 +12,7 @@ const content = {
     "Happy clients, financial advisors, and business consultants are already talking about you. Refer Labs gives you the system to capture those affiliates, reward your partners, and track every new client back to its source.",
   primaryCta: { label: "Book Your Strategy Call", href: calendlyUrl },
   industryBenefit:
-    "Accounting is a trust-based business—and affiliates convert faster than any other channel. We help you formalize those informal introductions into a predictable growth engine with full attribution from handshake to signed engagement.",
+    "Accounting is a trust-based business-and affiliates convert faster than any other channel. We help you formalize those informal introductions into a predictable growth engine with full attribution from handshake to signed engagement.",
   ctaTitle: "Ready to turn affiliates into your #1 growth channel?",
   ctaDescription:
     "Book a free 30-minute call. We'll show you how to activate your network, set up tracking, and launch a affiliate program that pays for itself in the first month.",

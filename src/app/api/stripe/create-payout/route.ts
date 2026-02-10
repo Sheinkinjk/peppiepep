@@ -238,7 +238,7 @@ export async function POST(request: NextRequest) {
         });
         await sendTransactionalEmail({
           to: ambassadorEmail,
-          subject: `Payout initiated — $${amountAud} AUD`,
+          subject: `Payout initiated - $${amountAud} AUD`,
           html,
         });
       }

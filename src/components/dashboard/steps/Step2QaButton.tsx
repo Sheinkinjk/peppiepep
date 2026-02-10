@@ -162,7 +162,7 @@ export function Step2QaButton() {
         <DialogContent className="fixed left-1/2 top-1/2 z-50 w-[calc(100%-1.5rem)] max-w-2xl max-h-[85vh] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-slate-200 bg-white p-6">
           <DialogHeader>
             <DialogTitle className="text-xl font-black text-slate-900">
-              Step 2 QA — Clients & Ambassadors
+              Step 2 QA - Clients & Ambassadors
             </DialogTitle>
             <DialogDescription className="text-sm text-slate-600">
               This verifies referral links, discount codes, and your ambassador directory are

@@ -50,7 +50,7 @@ export default function MakeGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Choose the right trigger</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Choose the right trigger</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Fire the scenario at the moment you consider a conversion final (paid, confirmed, completed).
               </p>
@@ -69,7 +69,7 @@ export default function MakeGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Add an HTTP module</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Add an HTTP module</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Use <span className="font-semibold">HTTP → Make a request</span> and send the conversion to Refer Labs.
               </p>

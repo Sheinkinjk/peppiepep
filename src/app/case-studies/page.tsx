@@ -38,7 +38,7 @@ const playbooks = [
   {
     id: "agency-partner-channel",
     icon: Handshake,
-    color: "emerald",
+    color: "teal",
     title: "How We Build an Agency Partner Channel",
     subtitle: "Example playbook",
     steps: [
@@ -58,12 +58,12 @@ const playbooks = [
   {
     id: "affiliate-activation",
     icon: Share2,
-    color: "purple",
+    color: "cyanSoft",
     title: "How We Activate Affiliates in Australia",
     subtitle: "Example playbook",
     steps: [
       { phase: "Week 1", action: "Define affiliate partner profile and commission structure" },
-      { phase: "Week 2-3", action: "Identify 30+ potential affiliates — advisors, communities, creators, niche platforms" },
+      { phase: "Week 2-3", action: "Identify 30+ potential affiliates - advisors, communities, creators, niche platforms" },
       { phase: "Week 4-8", action: "Recruit and onboard first cohort; set up attribution tracking" },
       { phase: "Week 9-10", action: "First referrals flowing; monitor conversion and partner engagement" },
       { phase: "Week 11-12", action: "Optimise commission structure; expand to second cohort of affiliates" },
@@ -78,9 +78,9 @@ const playbooks = [
 ];
 
 const colorMap: Record<string, { border: string; icon: string; bg: string; text: string }> = {
-  cyan: { border: "border-cyan-500/20", icon: "text-cyan-400", bg: "from-cyan-500/10", text: "text-cyan-300" },
-  emerald: { border: "border-emerald-500/20", icon: "text-emerald-400", bg: "from-emerald-500/10", text: "text-emerald-300" },
-  purple: { border: "border-purple-500/20", icon: "text-purple-400", bg: "from-purple-500/10", text: "text-purple-300" },
+  cyan: { border: "border-cyan-500/20", icon: "text-cyan-300", bg: "from-cyan-500/12", text: "text-cyan-300" },
+  teal: { border: "border-teal-500/20", icon: "text-teal-300", bg: "from-teal-500/12", text: "text-teal-300" },
+  cyanSoft: { border: "border-cyan-400/20", icon: "text-cyan-200", bg: "from-cyan-400/12", text: "text-cyan-200" },
 };
 
 export default function CaseStudiesPage() {
@@ -169,14 +169,14 @@ export default function CaseStudiesPage() {
               href={calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
             >
               <Calendar className="h-4 w-4" />
               Book Call
             </a>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               View Services
               <ArrowRight className="h-4 w-4" />

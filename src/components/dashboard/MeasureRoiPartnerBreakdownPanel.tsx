@@ -120,7 +120,7 @@ export function MeasureRoiPartnerBreakdownPanel({ windowDays }: { windowDays: nu
         <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
           <p className="text-xs text-slate-500">Rewards (est.)</p>
           <p className="mt-1 text-2xl font-black text-slate-900">
-            {summary?.rewardType === "revenue_share" ? formatCurrency(totals.rewardsEst) : "—"}
+            {summary?.rewardType === "revenue_share" ? formatCurrency(totals.rewardsEst) : "-"}
           </p>
           <p className="mt-1 text-[11px] text-slate-500">
             {summary?.rewardType === "revenue_share" ? "Based on revenue share %" : "Shown for revenue share only"}
@@ -187,7 +187,7 @@ export function MeasureRoiPartnerBreakdownPanel({ windowDays }: { windowDays: nu
                     <td className="py-3">{partner.completed}</td>
                     <td className="py-3">{formatCurrency(partner.revenue)}</td>
                     <td className="py-3">
-                      {summary.rewardType === "revenue_share" ? formatCurrency(partner.rewardsEst) : "—"}
+                      {summary.rewardType === "revenue_share" ? formatCurrency(partner.rewardsEst) : "-"}
                     </td>
                   </tr>
                 ))

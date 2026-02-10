@@ -116,10 +116,10 @@ export function AdminServiceApplicationsPanel() {
                     <div className="text-xs text-slate-500">{app.email}</div>
                   </td>
                   <td className="py-3 text-xs">
-                    {app.source_page || "—"}
+                    {app.source_page || "-"}
                   </td>
                   <td className="max-w-[200px] truncate py-3 text-xs text-slate-500">
-                    {app.goals || "—"}
+                    {app.goals || "-"}
                   </td>
                   <td className="py-3">
                     <span

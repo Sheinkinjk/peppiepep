@@ -45,7 +45,7 @@ export function ReferralShareCard({
       }
     }
     await handleCopy(shareMessage, setMessageCopied);
-    setShareFallback("Sharing not supported—message copied instead.");
+    setShareFallback("Sharing not supported-message copied instead.");
   };
 
   return (
@@ -77,7 +77,7 @@ export function ReferralShareCard({
       <div>
         <p className="text-sm font-semibold text-slate-900">Share this message</p>
         <p className="text-xs text-slate-500">
-          Paste anywhere—text, WhatsApp, Instagram DMs, or email.
+          Paste anywhere-text, WhatsApp, Instagram DMs, or email.
         </p>
       </div>
       <div

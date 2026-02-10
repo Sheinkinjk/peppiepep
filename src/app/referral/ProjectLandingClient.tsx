@@ -107,7 +107,7 @@ export function ProjectLandingClient({
         discountCode ? ` and mention ${discountCode}` : ""
       } so their concierge locks it in for you.`
     : `We're launching private referrals at ${businessName}. Add ambassadors inside the dashboard to generate shareable links.`;
-  const fallbackDiscountInstructions = `No code yet—mention your ambassador when booking so the concierge tags the reward.`;
+  const fallbackDiscountInstructions = `No code yet-mention your ambassador when booking so the concierge tags the reward.`;
 
   return (
     <main

@@ -252,7 +252,7 @@ export default async function ReferralPage({ params, searchParams }: ReferralPag
   const shareMessage = `I can get you ${newUserReward} at ${businessName}. Tap ${resolvedReferralUrl}${
     discountCode ? ` and mention ${discountCode}` : ""
   } so their concierge locks it in for you.`;
-  const fallbackDiscountInstructions = `No discount word needed — just mention ${ambassadorName} when you book so the concierge attaches your reward.`;
+  const fallbackDiscountInstructions = `No discount word needed - just mention ${ambassadorName} when you book so the concierge attaches your reward.`;
   const howItWorks = [
     {
       title: "Reserve your perk",

@@ -102,7 +102,7 @@ export function SupportChatbot() {
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (apiError) {
       logger.error("Failed to send chat message:", apiError);
-      setError("We couldn't reach the AI concierge. Please try again in a few seconds.");
+      setError("We couldn't reach the concierge. Please try again in a few seconds.");
     } finally {
       setIsSending(false);
     }
@@ -198,7 +198,7 @@ export function SupportChatbot() {
           role="dialog"
           aria-label="Refer Labs chatbot dialog"
         >
-          <div className="flex items-center justify-between rounded-2xl bg-gradient-to-r from-[#002d32] to-[#04606b] px-4 py-3 text-white">
+          <div className="flex items-center justify-between rounded-2xl bg-[#015864] px-4 py-3 text-white">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
               <Bot className="h-5 w-5" />
@@ -264,7 +264,7 @@ export function SupportChatbot() {
                 <button
                   type="submit"
                   disabled={isSubmittingLead}
-                  className="w-full rounded-xl bg-gradient-to-r from-[#00a6b4] to-[#00d2be] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-[#00a6b4]/30 transition hover:translate-y-[-1px] disabled:opacity-60"
+                  className="w-full rounded-full bg-[#008b8b] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-[#00a6b4]/30 transition hover:translate-y-[-1px] hover:bg-[#00767a] disabled:opacity-60"
                 >
                   {isSubmittingLead ? (
                     <span className="flex items-center justify-center gap-2">
@@ -288,7 +288,7 @@ export function SupportChatbot() {
                         className={cn(
                           "max-w-[85%] rounded-2xl px-4 py-3 shadow-sm",
                           message.role === "user"
-                            ? "bg-gradient-to-r from-[#00a6b4] to-[#19d3c5] text-white"
+                            ? "bg-[#008b8b] text-white"
                             : "bg-white text-slate-900 border border-white/60",
                         )}
                       >
@@ -349,7 +349,7 @@ export function SupportChatbot() {
                 <button
                   type="submit"
                   disabled={isSending || !input.trim()}
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#00a6b4] to-[#00d2be] text-white shadow-lg shadow-[#00a6b4]/30 transition hover:translate-y-[-2px] disabled:opacity-60"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#008b8b] text-white shadow-lg shadow-[#00a6b4]/30 transition hover:translate-y-[-2px] hover:bg-[#00767a] disabled:opacity-60"
                   aria-label="Send message"
                 >
                   {isSending ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
@@ -359,7 +359,7 @@ export function SupportChatbot() {
           )}
 
         <p className="mt-2 text-center text-xs text-slate-500">
-          I use AI to suggest strategies. For hands-on onboarding, tap “Start Getting Referrals”, explore our latest concierge referral offering, or book a concierge demo call.
+          I share practical strategies in real time. For hands-on onboarding, tap "Start Getting Referrals", explore our latest concierge referral offering, or book a concierge demo call.
         </p>
         <div className="mt-1 text-center text-xs font-semibold">
           <Link

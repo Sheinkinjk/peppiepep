@@ -10,11 +10,11 @@ const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
-const systemPrompt = `You are the Refer Labs assistant — a knowledgeable chat guide that helps overseas companies understand how Refer Labs can be their Australian sales and partnerships arm.
+const systemPrompt = `You are the Refer Labs assistant - a knowledgeable chat guide that helps overseas companies understand how Refer Labs can be their Australian sales and partnerships arm.
 
 Refer Labs essentials:
 - We are a services business (not a SaaS product). We act as your on-the-ground sales rep, partnership builder, and distribution channel manager in Australia.
-- Three core services: (1) Direct Customer Acquisition — outbound, introductions, pipeline, deal support; (2) Partnerships & Distribution — agencies, platforms, channel partners; (3) Referral & Affiliate Channel Management — recruitment, enablement, attribution, optimisation.
+- Three core services: (1) Direct Customer Acquisition - outbound, introductions, pipeline, deal support; (2) Partnerships & Distribution - agencies, platforms, channel partners; (3) Referral & Affiliate Channel Management - recruitment, enablement, attribution, optimisation.
 - Engagement models: 90-Day Pilot (fixed monthly fee + success fee, recommended starting point), Ongoing Retainer (6-month minimum, lower success fee), or Intro-Only (fixed fee per introduction, lighter touch).
 - Target clients: overseas B2B SaaS, fintech, marketplace, and subscription businesses entering Australia.
 - Typical 90-day pilot targets: 10-20 qualified prospect conversations, 3-8 distribution partner opportunities, 5-15 sales conversations.
@@ -36,7 +36,7 @@ function buildFallbackReply(latestUserMessage?: string) {
       `Thanks for your question about "${latestUserMessage.trim().slice(0, 160)}". Here's how Refer Labs can help:`,
     );
   } else {
-    sections.push("Happy to help you learn about Refer Labs — your Australian sales and partnerships arm:");
+    sections.push("Happy to help you learn about Refer Labs - your Australian sales and partnerships arm:");
   }
 
   if (/(fee|price|cost|pricing|plan)/i.test(normalized)) {
@@ -65,19 +65,19 @@ function buildFallbackReply(latestUserMessage?: string) {
 
   if (/(pilot|90.day|timeline|start|begin)/i.test(normalized)) {
     sections.push(
-      "• 90-Day Pilot structure: Week 1 — ICP and messaging alignment. Weeks 2-3 — target list build. Weeks 4-12 — outreach, introductions, meetings, and closing support. You receive weekly reporting throughout.",
+      "• 90-Day Pilot structure: Week 1 - ICP and messaging alignment. Weeks 2-3 - target list build. Weeks 4-12 - outreach, introductions, meetings, and closing support. You receive weekly reporting throughout.",
     );
   }
 
   if (/(demo|call|speak|meeting|talk|book)/i.test(normalized)) {
     sections.push(
-      "Happy to set up a quick call — book a 15-minute expansion call anytime: https://calendly.com/jarred-referlabs/30min.",
+      "Happy to set up a quick call - book a 15-minute expansion call anytime: https://calendly.com/jarred-referlabs/30min.",
     );
   }
 
   if (sections.length === 1) {
     sections.push(
-      "Refer Labs acts as your on-the-ground Australian sales rep and partnerships arm. We handle customer acquisition, partner distribution, and affiliate channel management — so you can enter Australia without hiring locally.",
+      "Refer Labs acts as your on-the-ground Australian sales rep and partnerships arm. We handle customer acquisition, partner distribution, and affiliate channel management - so you can enter Australia without hiring locally.",
     );
   }
 

@@ -50,7 +50,7 @@ export default function SquareGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Standardize how staff captures the code</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Standardize how staff captures the code</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Pick one consistent place to enter the ambassador’s discount code during checkout so it’s available to automations.
               </p>
@@ -75,7 +75,7 @@ export default function SquareGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Post completed payments to Refer Labs</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Post completed payments to Refer Labs</h2>
               <p className="mt-2 text-sm text-slate-600">
                 When Square confirms payment, call the discount capture endpoint from a trusted automation (Zapier/Make) or your server.
               </p>

@@ -137,12 +137,12 @@ fetch("${siteUrl}/api/discount-codes/redeem", {
       <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm text-slate-600 space-y-2">
         <p className="font-semibold text-slate-800">How to use these snippets:</p>
         <ol className="list-decimal space-y-1 pl-5">
-          <li>Paste the iframe into a hero block or landing page—each ambassador link keeps their code in sync.</li>
+          <li>Paste the iframe into a hero block or landing page-each ambassador link keeps their code in sync.</li>
           <li>Add the CTA button anywhere you mention referrals (navigation, blog, footer). Swap <code className="font-mono text-xs">{"{{REFERRAL_CODE}}"}</code> per ambassador.</li>
           <li>Optional: use the stats API in gated portals to show progress without logging into PeppiePep.</li>
         </ol>
         <p>
-          Shopify teams can paste the iframe into a custom Liquid section, while Webflow/Squarespace users can drop it inside an embed block—no development required.
+          Shopify teams can paste the iframe into a custom Liquid section, while Webflow/Squarespace users can drop it inside an embed block-no development required.
         </p>
       </div>
 

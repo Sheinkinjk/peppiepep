@@ -419,7 +419,7 @@ function LoginContent() {
                   Set up your business
                 </h1>
                 <p className="text-sm text-slate-600">
-                  You&rsquo;re moments away from the dashboard—this info keeps your affiliate portal compliant and on-brand.
+                  You&rsquo;re moments away from the dashboard-this info keeps your affiliate portal compliant and on-brand.
                 </p>
               </div>
             </div>
@@ -519,19 +519,19 @@ function LoginContent() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong>Kickoff session</strong> — Map your rewards, tone, and payout workflows with our team.
+                    <strong>Kickoff session</strong> - Map your rewards, tone, and payout workflows with our team.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong>Full implementation</strong> — We import contacts, configure branding, and verify affiliate tracking.
+                    <strong>Full implementation</strong> - We import contacts, configure branding, and verify affiliate tracking.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700 leading-relaxed">
-                    <strong>Launch checklist</strong> — Final QA across affiliate links, discount capture, and payouts before partners log in.
+                    <strong>Launch checklist</strong> - Final QA across affiliate links, discount capture, and payouts before partners log in.
                   </p>
                 </div>
               </div>

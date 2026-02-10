@@ -2,16 +2,45 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 const tiffanyPalette = {
-  50: "#E0F7FA",
-  100: "#B2EBF2",
-  200: "#80DEEA",
-  300: "#4DD0E1",
-  400: "#26C6DA",
-  500: "#00BCD4",
-  600: "#00A5C0",
+  50: "#F1FCFD",
+  100: "#DDF8FA",
+  200: "#BDEFF3",
+  300: "#8DE3EA",
+  400: "#57D3DE",
+  500: "#22C0CD",
+  600: "#0AA7B5",
   700: "#00838F",
-  800: "#006064",
-  900: "#004D40",
+  800: "#006C76",
+  900: "#055965",
+  950: "#033C45",
+};
+
+const tiffanyTealPalette = {
+  50: "#F2FBFB",
+  100: "#DEF7F6",
+  200: "#BFEDEA",
+  300: "#95DFDB",
+  400: "#64CBC6",
+  500: "#35B3AD",
+  600: "#1B9893",
+  700: "#0B7B78",
+  800: "#0B6464",
+  900: "#0D5354",
+  950: "#062F31",
+};
+
+const tiffanyNeutralPalette = {
+  50: "#F5F9F9",
+  100: "#EAF1F2",
+  200: "#D5E2E3",
+  300: "#B2C6C9",
+  400: "#8CA6AA",
+  500: "#6C888E",
+  600: "#546F75",
+  700: "#41595F",
+  800: "#2E4247",
+  900: "#1C2E33",
+  950: "#0C191D",
 };
 
 const config = {
@@ -35,8 +64,16 @@ const config = {
           grey: "#616161",
           lightGrey: "#BDBDBD",
         },
+        blue: tiffanyPalette,
+        cyan: tiffanyPalette,
+        sky: tiffanyPalette,
+        indigo: tiffanyTealPalette,
+        teal: tiffanyTealPalette,
         purple: tiffanyPalette,
         pink: tiffanyPalette,
+        slate: tiffanyNeutralPalette,
+        gray: tiffanyNeutralPalette,
+        zinc: tiffanyNeutralPalette,
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

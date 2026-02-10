@@ -50,7 +50,7 @@ export default function HubSpotGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Create contact properties</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Create contact properties</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Create custom properties so HubSpot can store each ambassador’s unique affiliate data.
               </p>
@@ -75,7 +75,7 @@ export default function HubSpotGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Import ambassadors + use tokens</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Import ambassadors + use tokens</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Import the ambassador CSV and use personalization tokens in email templates/buttons.
               </p>
@@ -100,7 +100,7 @@ Share your link: {{ contact.referral_link }}`}</CodeBlock>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <Card className="p-6 rounded-2xl border border-slate-200 bg-white">
-          <h2 className="text-lg font-bold text-slate-900">Optional — Post conversions from workflows</h2>
+          <h2 className="text-lg font-bold text-slate-900">Optional - Post conversions from workflows</h2>
           <p className="mt-2 text-sm text-slate-600">
             If you have HubSpot workflows that represent a conversion (e.g. deal stage changes, payments, bookings), use a webhook
             action (available on certain HubSpot plans) to report the conversion to Refer Labs.

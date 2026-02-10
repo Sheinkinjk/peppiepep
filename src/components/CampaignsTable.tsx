@@ -256,7 +256,7 @@ export function CampaignsTable({
                 {campaign.name ?? "Untitled campaign"}
               </TableCell>
               <TableCell className="capitalize">
-                {campaign.channel ?? "—"}
+                {campaign.channel ?? "-"}
               </TableCell>
               <TableCell className="capitalize">
                 <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ${statusClass}`}>
@@ -276,7 +276,7 @@ export function CampaignsTable({
                 ${rewardSpend.toFixed(0)}
               </TableCell>
               <TableCell className="text-right text-sm">
-                {roiMultiple ? `${roiMultiple.toFixed(1)}×` : "—"}
+                {roiMultiple ? `${roiMultiple.toFixed(1)}×` : "-"}
               </TableCell>
             </TableRow>
             {isExpanded && (
@@ -350,10 +350,10 @@ export function CampaignsTable({
                               ? new Date(
                                   campaign.created_at,
                                 ).toLocaleDateString()
-                              : "—"}
+                              : "-"}
                           </p>
                           <p className="text-[11px] text-slate-500">
-                            Channel: {campaign.channel ?? "—"}
+                            Channel: {campaign.channel ?? "-"}
                           </p>
                         </div>
                         <div>
@@ -377,7 +377,7 @@ export function CampaignsTable({
                             {eventStatsForCampaign.signups} signups
                           </p>
                           <p className="text-[11px] text-slate-500">
-                            {campaign.channel ?? "—"} channel
+                            {campaign.channel ?? "-"} channel
                           </p>
                         </div>
                         <div>

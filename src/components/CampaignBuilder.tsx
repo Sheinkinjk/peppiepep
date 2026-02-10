@@ -651,7 +651,7 @@ export function CampaignBuilder({
                   Automatic Conversion Tracking
                 </p>
                 <p className="text-xs text-emerald-800">
-                  Every campaign email includes unique trackable referral links. When recipients share their links and friends convert, you&apos;ll see the attribution in your Analytics dashboard automatically—no manual tracking required.
+                  Every campaign email includes unique trackable referral links. When recipients share their links and friends convert, you&apos;ll see the attribution in your Analytics dashboard automatically-no manual tracking required.
                 </p>
               </div>
             </div>
@@ -798,7 +798,7 @@ export function CampaignBuilder({
                       id="emailSubject"
                       value={emailSubject}
                       onChange={(e) => setEmailSubject(e.target.value)}
-                      placeholder="e.g., Your VIP link is ready — earn rewards when friends book"
+                      placeholder="e.g., Your VIP link is ready - earn rewards when friends book"
                       maxLength={140}
                     />
                     <p className="text-[11px] text-slate-500">

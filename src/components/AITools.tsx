@@ -103,33 +103,33 @@ export function AITools({ customers, referrals, businessName, offerText }: AIToo
 
   return (
     <div className="space-y-6">
-      {/* AI Tools Header */}
-      <div className="rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
+      {/* Growth Tools Header */}
+      <div className="rounded-xl bg-gradient-to-r from-cyan-700 via-teal-700 to-cyan-600 p-8 text-white">
         <div className="flex items-start gap-4 mb-4">
           <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center flex-shrink-0">
             <Sparkles className="h-8 w-8 text-white" />
           </div>
           <div className="flex-1">
-            <h2 className="text-3xl font-black mb-2">AI-Powered Growth Tools</h2>
-            <p className="text-purple-100 text-lg">
-              Leverage artificial intelligence to optimize your referral program, predict performance, and craft perfect messages.
+            <h2 className="text-3xl font-black mb-2">Growth Intelligence Tools</h2>
+            <p className="text-cyan-100 text-lg">
+              Use practical scoring and message workflows to optimize your referral program and improve performance.
             </p>
           </div>
         </div>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6">
-        {/* AI Message Generator */}
-        <Card className="p-6 border-2 border-indigo-200 hover:border-indigo-400 transition-colors">
+        {/* Message Generator */}
+        <Card className="p-6 border-2 border-cyan-200 hover:border-cyan-400 transition-colors">
           <div className="flex items-start justify-between mb-4">
-            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
+            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-700 to-teal-700 flex items-center justify-center">
               <MessageSquare className="h-6 w-6 text-white" />
             </div>
-            <span className="px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-semibold">GPT-4 Powered</span>
+            <span className="px-2.5 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-semibold">Premium templates</span>
           </div>
           <h3 className="text-lg font-bold text-slate-900 mb-2">Generate Smart Messages</h3>
           <p className="text-sm text-slate-600 mb-4">
-            Create personalized, high-converting referral messages using advanced AI trained on thousands of successful campaigns.
+            Create personalized, high-converting referral messages using proven referral campaign patterns.
           </p>
           <div className="space-y-3">
             <Textarea
@@ -142,7 +142,7 @@ export function AITools({ customers, referrals, businessName, offerText }: AIToo
             <Button
               onClick={handleGenerateMessage}
               disabled={isGeneratingMessage}
-              className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"
+              className="w-full bg-gradient-to-r from-cyan-700 to-teal-700 hover:from-cyan-800 hover:to-teal-800"
             >
               {isGeneratingMessage ? (
                 <>
@@ -157,9 +157,9 @@ export function AITools({ customers, referrals, businessName, offerText }: AIToo
               )}
             </Button>
             {aiGeneratedMessage && (
-              <div className="p-4 rounded-lg bg-indigo-50 border border-indigo-200">
-                <p className="text-sm font-semibold text-indigo-900 mb-2">✨ AI Generated:</p>
-                <p className="text-sm text-indigo-800">{aiGeneratedMessage}</p>
+              <div className="p-4 rounded-lg bg-cyan-50 border border-cyan-200">
+                <p className="text-sm font-semibold text-cyan-900 mb-2">Generated draft:</p>
+                <p className="text-sm text-cyan-800">{aiGeneratedMessage}</p>
                 <Button
                   size="sm"
                   variant="outline"
@@ -176,33 +176,33 @@ export function AITools({ customers, referrals, businessName, offerText }: AIToo
           </div>
         </Card>
 
-        {/* AI Ambassador Scoring */}
-        <Card className="p-6 border-2 border-purple-200 hover:border-purple-400 transition-colors">
+        {/* Ambassador Scoring */}
+        <Card className="p-6 border-2 border-teal-200 hover:border-teal-400 transition-colors">
           <div className="flex items-start justify-between mb-4">
-            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center">
+            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-teal-700 to-cyan-700 flex items-center justify-center">
               <Award className="h-6 w-6 text-white" />
             </div>
-            <span className="px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold">AI-Powered</span>
+            <span className="px-2.5 py-1 rounded-full bg-teal-100 text-teal-700 text-xs font-semibold">Data-driven</span>
           </div>
           <h3 className="text-lg font-bold text-slate-900 mb-2">Ambassador Scoring</h3>
           <p className="text-sm text-slate-600 mb-4">
-            AI analyzes customer behavior to predict which ambassadors will be your top performers. Get actionable insights instantly.
+            This model analyzes partner behavior to predict which ambassadors will be your top performers. Get actionable insights instantly.
           </p>
           <Button
             onClick={handleCalculateScores}
             disabled={customers.length === 0}
-            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+            className="w-full bg-gradient-to-r from-teal-700 to-cyan-700 hover:from-teal-800 hover:to-cyan-800"
           >
             <Sparkles className="mr-2 h-4 w-4" />
             Rank My Ambassadors
           </Button>
           {scoredCustomers.length > 0 && (
             <div className="mt-4 space-y-2 max-h-64 overflow-y-auto">
-              <p className="text-sm font-semibold text-purple-900">🏆 Top Performers:</p>
+              <p className="text-sm font-semibold text-teal-900">Top Performers:</p>
               {scoredCustomers.slice(0, 5).map((customer, index) => (
-                <div key={customer.id} className="p-3 rounded-lg bg-purple-50 border border-purple-200 flex items-center justify-between">
+                <div key={customer.id} className="p-3 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="text-lg font-black text-purple-600">#{index + 1}</span>
+                    <span className="text-lg font-black text-teal-700">#{index + 1}</span>
                     <div>
                       <p className="font-semibold text-slate-900">{customer.name}</p>
                       <p className="text-xs text-slate-600">Score: {customer.aiScore}/100</p>
@@ -218,18 +218,18 @@ export function AITools({ customers, referrals, businessName, offerText }: AIToo
           )}
         </Card>
 
-        {/* AI ROI Calculator */}
+        {/* ROI Calculator */}
         <DashboardROICalculator initialAmbassadors={customers.length || 10} />
       </div>
 
-      {/* AI Tools Info Banner */}
-      <div className="p-6 rounded-xl bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-2 border-indigo-200">
+      {/* Tools Info Banner */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-cyan-50 via-teal-50 to-cyan-50 border-2 border-cyan-200">
         <div className="flex items-start gap-3">
-          <Sparkles className="h-6 w-6 text-indigo-600 flex-shrink-0 mt-1" />
+          <Sparkles className="h-6 w-6 text-cyan-700 flex-shrink-0 mt-1" />
           <div>
-            <p className="font-bold text-indigo-900 mb-1">Powered by Advanced AI</p>
-            <p className="text-sm text-indigo-700">
-              All AI tools use state-of-the-art machine learning models trained on successful referral campaigns.
+            <p className="font-bold text-cyan-900 mb-1">Built on referral performance patterns</p>
+            <p className="text-sm text-cyan-700">
+              These tools use proven scoring frameworks from successful referral programs.
               Results improve as you collect more data and engagement patterns emerge.
             </p>
           </div>

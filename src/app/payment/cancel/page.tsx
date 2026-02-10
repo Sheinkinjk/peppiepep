@@ -154,7 +154,7 @@ export default async function PaymentCancelPage({ searchParams }: PageProps) {
         <div className="space-y-3">
           <Link
             href="/contact"
-            className="inline-block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40"
+            className="inline-block w-full bg-[#008b8b] text-white font-semibold py-3.5 px-6 rounded-full transition-all shadow-lg shadow-cyan-500/30 hover:bg-[#00767a] hover:shadow-xl hover:shadow-cyan-500/40"
           >
             Contact Support
           </Link>

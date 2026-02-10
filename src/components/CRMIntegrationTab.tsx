@@ -650,8 +650,8 @@ export function CRMIntegrationTab({
                 return (
                   <TableRow key={ambassador.id}>
                     <TableCell className="font-semibold">{ambassador.name || "Unnamed contact"}</TableCell>
-                    <TableCell>{ambassador.email || "—"}</TableCell>
-                    <TableCell>{ambassador.phone || "—"}</TableCell>
+                    <TableCell>{ambassador.email || "-"}</TableCell>
+                    <TableCell>{ambassador.phone || "-"}</TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-xs">{ambassador.referral_code || "Pending"}</span>

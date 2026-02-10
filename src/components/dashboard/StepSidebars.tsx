@@ -120,7 +120,7 @@ export function Step3Sidebar() {
           items: [
             "Use Your CRM: Download CSV with personalized links",
             "Use Our System: Send SMS or Email directly",
-            "AI-powered message generation available",
+            "Message templates available",
             "Track opens, clicks, and conversions",
           ],
         },

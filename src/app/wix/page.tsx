@@ -50,7 +50,7 @@ export default function WixGuidePage() {
               <Globe className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Embed the referral page</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Embed the referral page</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Add an HTML iframe embed to a Wix page (recommended: a dedicated “Referrals” page).
               </p>
@@ -78,7 +78,7 @@ export default function WixGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Capture conversions (recommended: server-side)</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Capture conversions (recommended: server-side)</h2>
               <p className="mt-2 text-sm text-slate-600">
                 When an order is paid/confirmed, post the discount code redemption to Refer Labs from a trusted server context.
               </p>

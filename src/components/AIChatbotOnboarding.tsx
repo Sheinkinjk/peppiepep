@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Bot, Send, Sparkles, X } from 'lucide-react';
 
 interface Message {
-  role: 'ai' | 'user';
+  role: 'assistant' | 'user';
   content: string;
 }
 
@@ -27,8 +27,8 @@ interface AIChatbotOnboardingProps {
 export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOnboardingProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
-      role: 'ai',
-      content: "G'day! I'm your AI assistant. I'll help you set up your referral program in just a few minutes. What's your business name?",
+      role: 'assistant',
+      content: "G'day! I'm your setup assistant. I'll help you configure your referral program in just a few minutes. What's your business name?",
     },
   ]);
   const [currentInput, setCurrentInput] = useState('');
@@ -40,7 +40,7 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
   const steps = [
     {
       field: 'businessName',
-      question: "G'day! I'm your AI assistant. I'll help you set up your referral program in just a few minutes. What's your business name?",
+      question: "G'day! I'm your setup assistant. I'll help you configure your referral program in just a few minutes. What's your business name?",
       validate: (value: string) => value.length > 0,
     },
     {
@@ -67,10 +67,10 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
     },
   ];
 
-  const addAIMessage = (content: string) => {
+  const addAssistantMessage = (content: string) => {
     setIsTyping(true);
     setTimeout(() => {
-      setMessages((prev) => [...prev, { role: 'ai', content }]);
+      setMessages((prev) => [...prev, { role: 'assistant', content }]);
       setIsTyping(false);
     }, 500);
   };
@@ -80,7 +80,7 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
 
     const currentStep = steps[step];
     if (!currentStep.validate(currentInput)) {
-      addAIMessage("Hmm, that doesn't look quite right. Can you try again?");
+      addAssistantMessage("Hmm, that doesn't look quite right. Can you try again?");
       return;
     }
 
@@ -101,11 +101,11 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
         /{(\w+)}/g,
         (_, key) => String((updatedData as Record<string, string | number | undefined>)[key] || '')
       );
-      addAIMessage(questionWithData);
+      addAssistantMessage(questionWithData);
       setStep(step + 1);
     } else {
       // Complete onboarding
-      addAIMessage(
+      addAssistantMessage(
         `🎉 Perfect! I've set up your referral program for ${updatedData.businessName}!\n\n` +
           `Here's what we configured:\n` +
           `• Business: ${updatedData.businessName} (${updatedData.businessType})\n` +
@@ -133,16 +133,16 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <Card className="w-full max-w-2xl h-[600px] flex flex-col shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b bg-gradient-to-r from-purple-600 to-pink-600">
+        <div className="flex items-center justify-between p-4 border-b bg-[#016874]">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center">
               <Bot className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h3 className="font-bold text-white">AI Setup Assistant</h3>
+              <h3 className="font-bold text-white">Setup Assistant</h3>
               <p className="text-xs text-white/80 flex items-center gap-1">
                 <Sparkles className="h-3 w-3" />
-                Powered by GPT-4
+                Guided workflow
               </p>
             </div>
           </div>
@@ -163,14 +163,14 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
               <div
                 className={`max-w-[80%] rounded-2xl px-4 py-3 ${
                   message.role === 'user'
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                    ? 'bg-[#008b8b] text-white'
                     : 'bg-white border border-slate-200 text-slate-900'
                 }`}
               >
-                {message.role === 'ai' && (
+                {message.role === 'assistant' && (
                   <div className="flex items-center gap-2 mb-1">
-                    <Bot className="h-4 w-4 text-purple-600" />
-                    <span className="text-xs font-semibold text-purple-600">AI Assistant</span>
+                    <Bot className="h-4 w-4 text-cyan-700" />
+                    <span className="text-xs font-semibold text-cyan-700">Setup Assistant</span>
                   </div>
                 )}
                 <p className="text-sm whitespace-pre-line leading-relaxed">{message.content}</p>
@@ -182,11 +182,11 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
             <div className="flex justify-start">
               <div className="bg-white border border-slate-200 rounded-2xl px-4 py-3">
                 <div className="flex items-center gap-2">
-                  <Bot className="h-4 w-4 text-purple-600" />
+                  <Bot className="h-4 w-4 text-cyan-700" />
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    <div className="w-2 h-2 bg-cyan-700 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <div className="w-2 h-2 bg-cyan-700 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <div className="w-2 h-2 bg-cyan-700 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                 </div>
               </div>
@@ -208,7 +208,7 @@ export default function AIChatbotOnboarding({ onComplete, onClose }: AIChatbotOn
             <Button
               onClick={handleSend}
               disabled={isTyping || step >= steps.length || !currentInput.trim()}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+              className="bg-[#008b8b] hover:bg-[#00767a]"
             >
               <Send className="h-4 w-4" />
             </Button>

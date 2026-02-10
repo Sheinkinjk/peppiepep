@@ -9,10 +9,10 @@ const content = {
   industry: "Insurance Brokers",
   heroTitle: "Stop Buying Leads. Start Receiving Warm Introductions.",
   heroSubtitle:
-    "Your best policies came from trusted affiliates. Refer Labs helps you systematically activate accountants, financial planners, and satisfied policyholders to send you qualified prospects—automatically.",
+    "Your best policies came from trusted affiliates. Refer Labs helps you systematically activate accountants, financial planners, and satisfied policyholders to send you qualified prospects-automatically.",
   primaryCta: { label: "Book Your Strategy Call", href: calendlyUrl },
   industryBenefit:
-    "Insurance is sold on trust. A affiliate from a CPA or existing client closes faster and sticks longer than any cold lead. We give you the system to track, reward, and scale those introductions—so your pipeline fills itself.",
+    "Insurance is sold on trust. A affiliate from a CPA or existing client closes faster and sticks longer than any cold lead. We give you the system to track, reward, and scale those introductions-so your pipeline fills itself.",
   ctaTitle: "Ready to grow your book with affiliates that close?",
   ctaDescription:
     "Book a free 30-minute call. We'll map your ideal affiliate partners, recommend a reward structure, and show you how to launch a program that pays for itself.",

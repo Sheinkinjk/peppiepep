@@ -742,7 +742,7 @@ export function Step1DTestingTab({
                 </Button>
               </div>
               <p className="mt-3 text-xs text-blue-800/80">
-                If /referred redirects to the home page, the attribution cookie is missing—open the ambassador link again.
+                If /referred redirects to the home page, the attribution cookie is missing-open the ambassador link again.
               </p>
             </div>
           </CollapsibleContent>
@@ -1120,7 +1120,7 @@ export function Step1DTestingTab({
                       <p className="text-xs font-semibold text-slate-700 mb-2">Solutions:</p>
                       <ul className="text-xs text-slate-600 space-y-1 list-disc list-inside">
                         <li>Refresh the page or navigate away and back to Measure ROI</li>
-                        <li>QA events are filtered to the last 10 minutes—try running QA again</li>
+                        <li>QA events are filtered to the last 10 minutes-try running QA again</li>
                         <li>Check the browser console for any API errors</li>
                         <li>Verify you're logged into the correct business account</li>
                       </ul>

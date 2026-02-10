@@ -54,7 +54,7 @@ const embedOptions: EmbedOption[] = [
   {
     id: "hosted",
     label: "Use Refer Labs hosting",
-    note: "We host everything at referlabs.com.au/r/[code]—no setup needed.",
+    note: "We host everything at referlabs.com.au/r/[code]-no setup needed.",
     detail: "Best for: Quick start or testing. Your referral links will point to pages on our domain.",
   },
 ];
@@ -172,7 +172,7 @@ export function PageBuilderTab({
           "In DNS, create CNAME your.subdomain → pages.referlabs.com (copy/paste that value exactly).",
           "Set the host field above to https://your.subdomain (the same name you CNAME).",
           "Save & publish pages here so /r/[code], /referral, and /referred all use that host.",
-          "Wait 5–15 minutes for DNS to propagate before testing live URLs.",
+          "Wait 5-15 minutes for DNS to propagate before testing live URLs.",
         ],
         validation: [
           `After DNS propagates, open ${landingUrl} and ${referredUrl} to confirm they resolve on your domain.`,
@@ -507,7 +507,7 @@ export function PageBuilderTab({
                     <ul className="mt-1 space-y-1">
                       <li>• URLs are locked to your chosen host for testing</li>
                       <li>• /r/[code] links will resolve to these pages</li>
-                      <li>• <strong>Important:</strong> This doesn't deploy to your domain automatically — you still need to embed or set up DNS if using those modes</li>
+                      <li>• <strong>Important:</strong> This doesn't deploy to your domain automatically - you still need to embed or set up DNS if using those modes</li>
                     </ul>
                   )}
                 </div>

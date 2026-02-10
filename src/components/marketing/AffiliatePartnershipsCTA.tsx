@@ -40,14 +40,14 @@ export function AffiliatePartnershipsCTA({
     const lines = [
       "Affiliate Partnerships Application",
       "",
-      `Company: ${company || "—"}`,
-      `Contact: ${contactName || "—"}`,
-      `Email: ${email || "—"}`,
-      `Goals: ${goal || "—"}`,
-      `Ideal partners: ${partnerTypes || "—"}`,
-      `Reward model: ${rewardModel || "—"}`,
+      `Company: ${company || "-"}`,
+      `Contact: ${contactName || "-"}`,
+      `Email: ${email || "-"}`,
+      `Goals: ${goal || "-"}`,
+      `Ideal partners: ${partnerTypes || "-"}`,
+      `Reward model: ${rewardModel || "-"}`,
       "",
-      `Notes: ${notes || "—"}`,
+      `Notes: ${notes || "-"}`,
     ];
     const body = encodeURIComponent(lines.join("\n"));
     const subject = encodeURIComponent(`Affiliate Partnerships | ${company || "New application"}`);

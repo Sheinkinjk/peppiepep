@@ -67,11 +67,11 @@ export default function Contact() {
           {/* Email Us */}
           <a
             href="mailto:jarred@referlabs.com.au"
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 transition-all hover:border-white/20 hover:shadow-xl"
+            className="group relative overflow-hidden rounded-3xl border border-teal-500/25 bg-gradient-to-br from-teal-500/10 via-white/[0.05] to-transparent p-8 transition-all hover:border-teal-400/45 hover:shadow-xl hover:shadow-teal-500/15"
           >
             <div className="relative">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/25 to-violet-500/25 border border-purple-500/30 mb-6">
-                <Mail className="h-7 w-7 text-purple-400" />
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500/25 to-cyan-500/25 border border-teal-500/30 mb-6">
+                <Mail className="h-7 w-7 text-teal-300" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-3">Email Us</h2>
               <p className="text-slate-300 leading-relaxed mb-6">
@@ -80,7 +80,7 @@ export default function Contact() {
               <div className="text-sm text-slate-400 mb-6">
                 jarred@referlabs.com.au
               </div>
-              <div className="inline-flex items-center gap-2 text-purple-300 font-semibold group-hover:text-purple-200 transition-colors">
+              <div className="inline-flex items-center gap-2 text-teal-300 font-semibold group-hover:text-teal-200 transition-colors">
                 Send Email
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </div>

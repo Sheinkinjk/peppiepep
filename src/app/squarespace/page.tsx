@@ -50,7 +50,7 @@ export default function SquarespaceGuidePage() {
               <Globe className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Embed the referral page</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Embed the referral page</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Create a “Referrals” page and embed the iframe using a Code block (or Code Injection on a page section).
               </p>
@@ -78,7 +78,7 @@ export default function SquarespaceGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Decide how conversions are captured</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Decide how conversions are captured</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Refer Labs attributes conversions when discount code redemptions are posted from your checkout/payment system.
               </p>

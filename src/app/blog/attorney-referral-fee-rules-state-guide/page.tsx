@@ -40,7 +40,7 @@ export default function AttorneyReferralFeeRulesStatePage() {
           {/* Introduction */}
           <div className="text-lg text-slate-700 leading-relaxed space-y-4 mb-12">
             <p>
-              Referral fees between attorneys are legal in every U.S. state—but the rules vary dramatically. What's allowed in California could get you disciplined in New York. A compliant arrangement in Texas might violate ethics rules in Pennsylvania.
+              Referral fees between attorneys are legal in every U.S. state-but the rules vary dramatically. What's allowed in California could get you disciplined in New York. A compliant arrangement in Texas might violate ethics rules in Pennsylvania.
             </p>
             <p>
               This guide provides a comprehensive breakdown of attorney referral fee rules across all 50 states, updated for 2026. We cover fee-splitting percentages, disclosure requirements, proportionality rules, and special restrictions.
@@ -56,7 +56,7 @@ export default function AttorneyReferralFeeRulesStatePage() {
               <div>
                 <h3 className="text-lg font-bold text-amber-900 mb-2">Updated for 2026</h3>
                 <p className="text-amber-800 text-base mb-0">
-                  This guide reflects ethics rules and state bar regulations as of January 2026. Rules change—always verify current requirements with your state bar before entering referral arrangements.
+                  This guide reflects ethics rules and state bar regulations as of January 2026. Rules change-always verify current requirements with your state bar before entering referral arrangements.
                 </p>
               </div>
             </div>
@@ -600,7 +600,7 @@ export default function AttorneyReferralFeeRulesStatePage() {
               <div>
                 <p className="font-bold text-red-800 mb-1">1. No written client consent</p>
                 <p className="text-sm text-red-700">
-                  Client discovers fee-sharing arrangement after the fact. Even a verbal "heads up" isn't enough—must be in writing.
+                  Client discovers fee-sharing arrangement after the fact. Even a verbal "heads up" isn't enough-must be in writing.
                 </p>
               </div>
               <div>
@@ -624,7 +624,7 @@ export default function AttorneyReferralFeeRulesStatePage() {
               <div>
                 <p className="font-bold text-red-800 mb-1">5. Failing to assume joint responsibility (where required)</p>
                 <p className="text-sm text-red-700">
-                  In states allowing non-proportional fees if joint responsibility is assumed, referring attorney must actually be legally responsible for the representation—not just in name only.
+                  In states allowing non-proportional fees if joint responsibility is assumed, referring attorney must actually be legally responsible for the representation-not just in name only.
                 </p>
               </div>
               <div>
@@ -680,7 +680,7 @@ export default function AttorneyReferralFeeRulesStatePage() {
           <h2 className="text-3xl font-black text-slate-900 mt-12 mb-6">The Bottom Line</h2>
 
           <p className="text-slate-700 mb-6">
-            Attorney referral fees are legal and common—but rules vary significantly by state. The key compliance factors are:
+            Attorney referral fees are legal and common-but rules vary significantly by state. The key compliance factors are:
           </p>
 
           <ul className="text-slate-700 space-y-2 mb-8">
@@ -692,7 +692,7 @@ export default function AttorneyReferralFeeRulesStatePage() {
           </ul>
 
           <p className="text-slate-700 mb-8">
-            Referral networks are a powerful growth channel for law firms—but only if managed compliantly. When done right, referral fees create win-win-win arrangements: clients get specialized expertise, referring attorneys serve clients better, and receiving attorneys grow their practice.
+            Referral networks are a powerful growth channel for law firms-but only if managed compliantly. When done right, referral fees create win-win-win arrangements: clients get specialized expertise, referring attorneys serve clients better, and receiving attorneys grow their practice.
           </p>
 
           <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg">

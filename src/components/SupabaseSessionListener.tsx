@@ -20,7 +20,9 @@ export function SupabaseSessionListener() {
         credentials: "same-origin",
         body: JSON.stringify({ event, session }),
       }).catch((error) => {
-        console.error("Failed to sync auth session", error);
+        if (process.env.NODE_ENV === "development") {
+          console.warn("Failed to sync auth session", error);
+        }
       });
     });
 

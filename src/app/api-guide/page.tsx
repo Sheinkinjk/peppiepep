@@ -50,7 +50,7 @@ export default function ApiGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Store your secret securely</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Store your secret securely</h2>
               <p className="mt-2 text-sm text-slate-600">
                 You’ll use the Discount Capture Secret to authenticate conversion posts. Keep it in server-side env vars only.
               </p>
@@ -73,7 +73,7 @@ export default function ApiGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Post conversions server-to-server</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Post conversions server-to-server</h2>
               <p className="mt-2 text-sm text-slate-600">
                 When a transaction is confirmed (paid/complete), call the discount capture endpoint from your backend.
               </p>

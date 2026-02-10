@@ -374,7 +374,7 @@ export function IntegrationTab({
             </p>
             {hasCustomers ? (
               <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900 space-y-1">
-                <p>Ambassadors already exist in your workspace — keep this plan updated so integrations stay aligned with live campaigns.</p>
+                <p>Ambassadors already exist in your workspace - keep this plan updated so integrations stay aligned with live campaigns.</p>
                 <p>You can also revisit every field inside <span className="font-semibold">Step 2 → Edit Program Settings</span> later on.</p>
               </div>
             ) : (
@@ -1000,7 +1000,7 @@ export function IntegrationTab({
                   <div className="flex-1">
                     <p className="text-sm font-bold text-emerald-900 mb-1">Integration cross-checks</p>
                     <p className="text-sm text-slate-700">
-                      Confirm Step 1A–1C data flows into campaigns, referral pages, and attribution tracking.
+                      Confirm Step 1A-1C data flows into campaigns, referral pages, and attribution tracking.
                     </p>
                   </div>
                 </div>

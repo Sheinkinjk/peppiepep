@@ -27,7 +27,7 @@ function escapeHtml(value: string) {
 }
 
 function field(label: string, value: string) {
-  const safe = escapeHtml(value || "—");
+  const safe = escapeHtml(value || "-");
   return `
     <tr>
       <td style="padding:10px 12px;border:1px solid #e2e8f0;background:#f8fafc;font-weight:600;color:#0f172a;width:220px;">${escapeHtml(

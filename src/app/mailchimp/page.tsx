@@ -50,7 +50,7 @@ export default function MailchimpGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Import ambassadors + create fields</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Import ambassadors + create fields</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Import your ambassador CSV and create custom audience fields for referral tracking.
               </p>
@@ -79,7 +79,7 @@ export default function MailchimpGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Add merge tags to emails</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Add merge tags to emails</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Put the referral link field in your primary CTA button (URL). Refer Labs logs visits and ties conversions back to the ambassador.
               </p>
@@ -101,7 +101,7 @@ Button URL:
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <Card className="p-6 rounded-2xl border border-slate-200 bg-white">
-          <h2 className="text-lg font-bold text-slate-900">Optional — Post conversions via webhook</h2>
+          <h2 className="text-lg font-bold text-slate-900">Optional - Post conversions via webhook</h2>
           <p className="mt-2 text-sm text-slate-600">
             If you redeem discount codes in a system that isn’t Shopify/Stripe, post the conversion to Refer Labs from your server/automation tool.
           </p>

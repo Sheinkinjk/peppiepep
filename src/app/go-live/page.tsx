@@ -104,7 +104,7 @@ export default function GoLiveChecklistPage() {
                   <span className="font-semibold">Email campaigns:</span> CRM merge fields contain <code className="font-mono">referral_link</code> and resolve correctly.
                 </li>
                 <li>
-                  <span className="font-semibold">Analytics:</span> UTMs are visible in GA4 (optional) — see <Link href="/analytics" className="underline font-semibold text-slate-700 hover:text-slate-900">/analytics</Link>.
+                  <span className="font-semibold">Analytics:</span> UTMs are visible in GA4 (optional) - see <Link href="/analytics" className="underline font-semibold text-slate-700 hover:text-slate-900">/analytics</Link>.
                 </li>
               </ul>
               <p className="text-xs text-slate-500">

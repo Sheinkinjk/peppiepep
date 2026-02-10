@@ -16,13 +16,13 @@ export const metadata = generateSEOMetadata(seoConfig.security);
 
 export default function Security() {
   return (
-    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
+    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-[#eefbfd] via-white to-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(8,131,143,0.09),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(34,192,205,0.11),transparent_35%)]" />
 
       <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
 
         <div className="mx-auto max-w-3xl space-y-4 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-cyan-700 shadow-sm ring-1 ring-cyan-200">
             Security & Privacy
           </div>
           <h1 className="text-balance text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
@@ -34,25 +34,25 @@ export default function Security() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-4">
-          <div className="rounded-2xl border border-green-200 bg-green-50 p-6 text-center">
-            <Shield className="h-8 w-8 text-green-600 mx-auto mb-3" />
-            <p className="text-3xl font-bold text-green-900 mb-1">256-bit</p>
-            <p className="text-sm text-green-700">SSL Encryption</p>
+          <div className="rounded-2xl border border-teal-200 bg-teal-50 p-6 text-center">
+            <Shield className="h-8 w-8 text-teal-700 mx-auto mb-3" />
+            <p className="text-3xl font-bold text-teal-900 mb-1">256-bit</p>
+            <p className="text-sm text-teal-700">SSL Encryption</p>
           </div>
-          <div className="rounded-2xl border border-blue-200 bg-blue-50 p-6 text-center">
-            <Lock className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-            <p className="text-3xl font-bold text-blue-900 mb-1">GDPR</p>
-            <p className="text-sm text-blue-700">Compliant</p>
+          <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-6 text-center">
+            <Lock className="h-8 w-8 text-cyan-700 mx-auto mb-3" />
+            <p className="text-3xl font-bold text-cyan-900 mb-1">GDPR</p>
+            <p className="text-sm text-cyan-700">Compliant</p>
           </div>
-          <div className="rounded-2xl border border-purple-200 bg-purple-50 p-6 text-center">
-            <Server className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-            <p className="text-3xl font-bold text-purple-900 mb-1">99.9%</p>
-            <p className="text-sm text-purple-700">Uptime SLA</p>
+          <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-6 text-center">
+            <Server className="h-8 w-8 text-cyan-700 mx-auto mb-3" />
+            <p className="text-3xl font-bold text-cyan-900 mb-1">99.9%</p>
+            <p className="text-sm text-cyan-700">Uptime SLA</p>
           </div>
-          <div className="rounded-2xl border border-orange-200 bg-orange-50 p-6 text-center">
-            <Clock className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-            <p className="text-3xl font-bold text-orange-900 mb-1">Daily</p>
-            <p className="text-sm text-orange-700">Backups</p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center">
+            <Clock className="h-8 w-8 text-slate-700 mx-auto mb-3" />
+            <p className="text-3xl font-bold text-slate-900 mb-1">Daily</p>
+            <p className="text-sm text-slate-700">Backups</p>
           </div>
         </div>
 
@@ -63,8 +63,8 @@ export default function Security() {
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Lock className="h-5 w-5 text-green-600" />
+                  <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center">
+                    <Lock className="h-5 w-5 text-teal-700" />
                   </div>
                 </div>
                 <div>
@@ -77,8 +77,8 @@ export default function Security() {
 
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Eye className="h-5 w-5 text-blue-600" />
+                  <div className="h-10 w-10 rounded-full bg-cyan-100 flex items-center justify-center">
+                    <Eye className="h-5 w-5 text-cyan-700" />
                   </div>
                 </div>
                 <div>
@@ -91,8 +91,8 @@ export default function Security() {
 
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-                    <Server className="h-5 w-5 text-purple-600" />
+                  <div className="h-10 w-10 rounded-full bg-cyan-100 flex items-center justify-center">
+                    <Server className="h-5 w-5 text-cyan-700" />
                   </div>
                 </div>
                 <div>
@@ -105,8 +105,8 @@ export default function Security() {
 
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="h-10 w-10 rounded-full bg-orange-100 flex items-center justify-center">
-                    <FileCheck className="h-5 w-5 text-orange-600" />
+                  <div className="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center">
+                    <FileCheck className="h-5 w-5 text-slate-700" />
                   </div>
                 </div>
                 <div>
@@ -166,8 +166,8 @@ export default function Security() {
             <div className="grid gap-4 md:grid-cols-2">
               <div className="rounded-xl border border-slate-200 p-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="h-8 w-8 rounded bg-green-100 flex items-center justify-center">
-                    <Shield className="h-4 w-4 text-green-600" />
+                  <div className="h-8 w-8 rounded bg-teal-100 flex items-center justify-center">
+                    <Shield className="h-4 w-4 text-teal-700" />
                   </div>
                   <p className="font-semibold text-slate-900">GDPR Compliant</p>
                 </div>
@@ -178,32 +178,32 @@ export default function Security() {
 
               <div className="rounded-xl border border-slate-200 p-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="h-8 w-8 rounded bg-blue-100 flex items-center justify-center">
-                    <Lock className="h-4 w-4 text-blue-600" />
+                  <div className="h-8 w-8 rounded bg-cyan-100 flex items-center justify-center">
+                    <Lock className="h-4 w-4 text-cyan-700" />
                   </div>
                   <p className="font-semibold text-slate-900">ISO 27001</p>
                 </div>
                 <p className="text-sm text-slate-600">
-                  <span className="text-orange-600 font-medium">Roadmap 2025</span> - Information security management
-                </p>
+                    <span className="text-cyan-700 font-medium">Roadmap 2025</span> - Information security management
+                  </p>
               </div>
 
               <div className="rounded-xl border border-slate-200 p-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="h-8 w-8 rounded bg-purple-100 flex items-center justify-center">
-                    <FileCheck className="h-4 w-4 text-purple-600" />
+                  <div className="h-8 w-8 rounded bg-cyan-100 flex items-center justify-center">
+                    <FileCheck className="h-4 w-4 text-cyan-700" />
                   </div>
                   <p className="font-semibold text-slate-900">SOC 2 Type II</p>
                 </div>
                 <p className="text-sm text-slate-600">
-                  <span className="text-orange-600 font-medium">Roadmap 2025</span> - Security, availability, confidentiality
-                </p>
+                    <span className="text-cyan-700 font-medium">Roadmap 2025</span> - Security, availability, confidentiality
+                  </p>
               </div>
 
               <div className="rounded-xl border border-slate-200 p-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="h-8 w-8 rounded bg-orange-100 flex items-center justify-center">
-                    <Server className="h-4 w-4 text-orange-600" />
+                  <div className="h-8 w-8 rounded bg-slate-100 flex items-center justify-center">
+                    <Server className="h-4 w-4 text-slate-700" />
                   </div>
                   <p className="font-semibold text-slate-900">PCI DSS</p>
                 </div>
@@ -272,7 +272,7 @@ export default function Security() {
           </div>
         </section>
 
-        <section className="rounded-3xl bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 p-[1px] shadow-2xl">
+        <section className="rounded-3xl bg-gradient-to-r from-cyan-700 via-teal-700 to-cyan-600 p-[1px] shadow-2xl">
           <div className="flex flex-col gap-6 rounded-3xl bg-white/90 p-8 text-slate-900 backdrop-blur md:flex-row md:items-center md:justify-between">
             <div>
               <h3 className="text-2xl font-bold mb-2">
@@ -284,7 +284,7 @@ export default function Security() {
             </div>
             <Link
               href="mailto:security@referlabs.com.au"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-200 transition hover:-translate-y-0.5 hover:shadow-purple-300 whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-200 transition hover:-translate-y-0.5 hover:shadow-cyan-300 whitespace-nowrap"
             >
               Contact security team
             </Link>

@@ -121,6 +121,7 @@ export default function AmbassadorJoinClient({
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-950 to-black flex items-center justify-center">
+        <h1 className="sr-only">Ambassador invitation</h1>
         <div className="text-white text-xl">
           Preparing your ambassador invitation...
         </div>
@@ -131,6 +132,7 @@ export default function AmbassadorJoinClient({
   if (error) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-950 to-black flex items-center justify-center px-4 text-center text-white">
+        <h1 className="sr-only">Ambassador invitation</h1>
         <div className="max-w-lg rounded-2xl border border-red-400/40 bg-red-500/10 p-8 shadow-2xl space-y-4">
           <h2 className="text-2xl font-black">Access needed</h2>
           <p className="text-sm text-red-100/90">{error}</p>
@@ -146,6 +148,7 @@ export default function AmbassadorJoinClient({
   if (!customer) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-950 to-black text-white flex items-center justify-center px-4 text-center">
+        <h1 className="sr-only">Ambassador invitation</h1>
         <div className="max-w-lg rounded-2xl border border-white/20 bg-white/5 p-8 shadow-2xl space-y-4">
           <h2 className="text-2xl font-black">Code not found</h2>
           <p className="text-sm text-slate-200/80">
@@ -161,6 +164,7 @@ export default function AmbassadorJoinClient({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-950 to-black text-white overflow-hidden relative">
+      <h1 className="sr-only">Ambassador invitation</h1>
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-16 right-10 h-96 w-96 rounded-full bg-gradient-to-br from-purple-600/25 to-pink-600/25 blur-3xl" />

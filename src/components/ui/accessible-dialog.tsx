@@ -36,7 +36,6 @@ export function AccessibleDialog({
   showCloseButton = true,
   initialFocusRef,
 }: AccessibleDialogProps) {
-  const dialogRef = useRef<HTMLDivElement>(null);
   const focusTrapRef = useFocusTrap(isOpen);
   const titleId = `dialog-title-${title.replace(/\s+/g, "-").toLowerCase()}`;
   const descriptionId = description
@@ -90,13 +89,7 @@ export function AccessibleDialog({
 
       {/* Dialog */}
       <div
-        ref={(node) => {
-          // Combine refs
-          if (node) {
-            (dialogRef as any).current = node;
-            (focusTrapRef as any).current = node;
-          }
-        }}
+        ref={focusTrapRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}

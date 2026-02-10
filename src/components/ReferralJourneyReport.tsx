@@ -138,7 +138,7 @@ const EVENT_META: Record<ReferralEventType, { label: string; description: string
 };
 
 function formatTimestamp(timestamp: string | null) {
-  if (!timestamp) return "—";
+  if (!timestamp) return "-";
   try {
     const date = new Date(timestamp);
     return `${date.toLocaleDateString()} ${date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
@@ -184,7 +184,7 @@ export function ReferralJourneyReport({ events }: { events: ReferralJourneyEvent
       <div className="space-y-6">
         {Object.entries(grouped).map(([ambassadorId, ambassadorEvents]) => {
           const ambassadorName = ambassadorEvents[0]?.ambassador?.name || "Unknown ambassador";
-          const referralCode = ambassadorEvents[0]?.ambassador?.referral_code || "—";
+          const referralCode = ambassadorEvents[0]?.ambassador?.referral_code || "-";
           const sorted = [...ambassadorEvents].sort((a, b) => {
             const aTime = a.created_at ? new Date(a.created_at).getTime() : 0;
             const bTime = b.created_at ? new Date(b.created_at).getTime() : 0;

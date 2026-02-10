@@ -26,7 +26,7 @@ const qualificationFAQs: FAQ[] = [
 const serviceFAQs: FAQ[] = [
   {
     q: "Do you close deals or just book meetings?",
-    a: "We do both. We book meetings, make introductions, and provide closing support on key opportunities. You join the calls that matter and lead final negotiations — we handle the pipeline work to get you there.",
+    a: "We do both. We book meetings, make introductions, and provide closing support on key opportunities. You join the calls that matter and lead final negotiations - we handle the pipeline work to get you there.",
   },
   {
     q: "What is the client involvement required?",
@@ -192,7 +192,7 @@ export default function FAQPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 text-sm font-semibold text-slate-900 hover:from-cyan-400 hover:to-teal-400 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#008b8b] text-sm font-semibold text-white transition-colors hover:bg-[#00767a]"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call

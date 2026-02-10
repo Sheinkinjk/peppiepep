@@ -282,11 +282,11 @@ export function DashboardROICalculator({ initialAmbassadors = 5 }: DashboardROIC
             </div>
           )}
 
-          {/* AI Insights */}
+          {/* Insights */}
           <div className="p-4 rounded-lg bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200">
             <div className="flex items-center gap-2 mb-3">
               <Sparkles className="h-4 w-4 text-purple-600" />
-              <p className="text-sm font-bold text-purple-900">AI Insights</p>
+              <p className="text-sm font-bold text-purple-900">Insights</p>
             </div>
             <div className="space-y-2">
               {forecast.insights.slice(0, 3).map((insight, index) => (

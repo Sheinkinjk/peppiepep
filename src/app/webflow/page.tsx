@@ -50,7 +50,7 @@ export default function WebflowGuidePage() {
               <Globe className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Embed the referral page</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Embed the referral page</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Create a dedicated “Referrals” page in Webflow and drop the iframe into an Embed block.
               </p>
@@ -78,7 +78,7 @@ export default function WebflowGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Confirm conversion capture strategy</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Confirm conversion capture strategy</h2>
               <p className="mt-2 text-sm text-slate-600">
                 The referral page handles clicks + signups. Conversions are credited when your checkout reports discount code redemption.
               </p>
@@ -122,7 +122,7 @@ export default function WebflowGuidePage() {
           <h2 className="text-lg font-bold text-slate-900">Common troubleshooting</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
             <li>
-              <span className="font-semibold">Embed looks cut off:</span> increase iframe height (e.g. 720–900) and ensure the parent section has no fixed height.
+              <span className="font-semibold">Embed looks cut off:</span> increase iframe height (e.g. 720-900) and ensure the parent section has no fixed height.
             </li>
             <li>
               <span className="font-semibold">Blank embed:</span> confirm the page is published on HTTPS and no embed restrictions are applied.

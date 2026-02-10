@@ -50,7 +50,7 @@ export default function GoogleAdsGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Install the Google tag</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Install the Google tag</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Install via GTM whenever possible so you can reuse a consistent container across websites.
               </p>
@@ -73,7 +73,7 @@ export default function GoogleAdsGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Ensure referral conversion capture is reliable</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Ensure referral conversion capture is reliable</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Ads tracking helps marketing optimization; Refer Labs attribution requires server-side discount code redemption capture.
               </p>

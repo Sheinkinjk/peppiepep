@@ -134,9 +134,9 @@ export default function Privacy() {
                 </div>
 
                 <div className="bg-slate-50 rounded-lg p-4">
-                  <p className="font-semibold text-slate-800 mb-1">OpenAI (AI Features)</p>
+                  <p className="font-semibold text-slate-800 mb-1">OpenAI (Message Features)</p>
                   <ul className="text-sm text-slate-600 list-disc list-inside space-y-0.5">
-                    <li><strong>Data Shared:</strong> Message content for AI generation (anonymized)</li>
+                    <li><strong>Data Shared:</strong> Message content for response generation (anonymized)</li>
                     <li><strong>Purpose:</strong> Generate campaign message suggestions</li>
                     <li><strong>Location:</strong> United States</li>
                     <li><strong>Note:</strong> No customer PII is sent; only anonymized prompts</li>
@@ -241,7 +241,7 @@ export default function Privacy() {
                 <li>You must promptly inform us of any suspected breach involving data you control and cooperate with our investigation and notifications.</li>
               </ul>
               <p className="text-slate-600 text-sm">
-                Report incidents or concerns to <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a> using the subject line "Data Breach – Urgent".
+                Report incidents or concerns to <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a> using the subject line "Data Breach - Urgent".
               </p>
             </div>
 

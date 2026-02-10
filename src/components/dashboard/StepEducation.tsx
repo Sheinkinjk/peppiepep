@@ -76,7 +76,7 @@ export function Step2Education() {
       <p>
         This section is where you build your partner army. Every person you add receives a
         unique referral link and discount code automatically. Think of this as loading ammunition
-        into your referral machine—the more quality partners you have, the more referrals flow
+        into your referral machine-the more quality partners you have, the more referrals flow
         in without additional ad spend.
       </p>
 
@@ -167,7 +167,7 @@ export function Step3Education() {
         </li>
         <li>
           <strong>Campaign Builder:</strong> Send campaigns directly through Refer Labs without
-          needing external tools. Choose SMS or Email, select recipients, generate AI-powered
+          needing external tools. Choose SMS or Email, select recipients, generate high-converting
           copy, and launch with one click. Tracks delivery, opens, clicks, and conversions in
           real-time so you can measure campaign performance instantly.
         </li>
@@ -190,14 +190,14 @@ export function Step3Education() {
       </p>
       <p>
         <strong>Option 2: Use Refer Labs Campaign Builder (Recommended for speed)</strong><br />
-        Select partners → Generate copy with AI → Send SMS or Email instantly. Pros: No
+        Select partners → Generate copy with templates → Send SMS or Email instantly. Pros: No
         external tools needed, built-in tracking, fast launch. Cons: Less design customization,
         emails come from Refer Labs domain (can hurt deliverability for cold lists).
       </p>
 
       <h4>Key Actions to Take</h4>
       <ul>
-        <li>Send a test campaign to yourself first—verify the message copy sounds natural</li>
+        <li>Send a test campaign to yourself first-verify the message copy sounds natural</li>
         <li>Click your own referral link to confirm it loads the correct branded page</li>
         <li>Check that personalization tokens ({'{{name}}'}, {'{{referral_link}}'}) populate correctly</li>
         <li>If using your CRM, test one partner first before importing your full list</li>
@@ -285,7 +285,7 @@ export function Step4Education() {
       <ul>
         <li>Check analytics 24-48 hours after sending to gauge initial performance</li>
         <li>Identify your top 3 performing campaigns and analyze what made them successful</li>
-        <li>Look for campaigns with high clicks but low conversions—indicates a broken checkout flow</li>
+        <li>Look for campaigns with high clicks but low conversions-indicates a broken checkout flow</li>
         <li>Compare SMS vs Email performance to allocate budget toward the winning channel</li>
         <li>Export campaign data monthly to track long-term trends and seasonal patterns</li>
       </ul>
@@ -298,7 +298,7 @@ export function Step4Education() {
       </p>
       <p>
         💡 <strong>Watch for attribution lag.</strong> Referrals often convert 3-7 days after
-        clicking the link. Don't judge a campaign's success in the first 24 hours—wait a week
+        clicking the link. Don't judge a campaign's success in the first 24 hours-wait a week
         before making conclusions about performance.
       </p>
       <p>
@@ -353,7 +353,7 @@ export function Step5Education() {
       <p>
         ROI data only accumulates after campaigns drive referrals (Step 3 → Step 4 → Step 5).
         You need completed conversions to calculate profitability. This is your final validation
-        that the entire program—setup, partners, campaigns, tracking—is generating positive
+        that the entire program-setup, partners, campaigns, tracking-is generating positive
         returns worth scaling.
       </p>
 
@@ -396,7 +396,7 @@ export function Step5Education() {
       <h4>Pro Tips</h4>
       <p>
         💡 <strong>Focus on the top 20%.</strong> The Pareto Principle applies ruthlessly in
-        referrals—20% of partners drive 80% of revenue. Identify your elite performers and
+        referrals-20% of partners drive 80% of revenue. Identify your elite performers and
         give them exclusive perks (higher rewards, early access, personal thank-yous) to keep
         them engaged.
       </p>
@@ -404,12 +404,12 @@ export function Step5Education() {
         💡 <strong>Target 5x+ ROI minimum.</strong> If your program is returning less than 5x
         (e.g., spending $1,000 in rewards to earn $4,000 in revenue), either cut reward amounts
         or increase average order values through upsells. Below 3x ROI means the program is
-        bleeding money—pause and fix before scaling.
+        bleeding money-pause and fix before scaling.
       </p>
       <p>
         💡 <strong>Track lifetime value, not just first purchase.</strong> A referred customer
         might spend $50 on their first order but $500 over 12 months. Don't judge ROI purely on
-        initial transaction value—measure long-term retention to see the true impact of referrals.
+        initial transaction value-measure long-term retention to see the true impact of referrals.
       </p>
       <p>
         💡 <strong>Use manual referrals strategically.</strong> If an partner brings you a

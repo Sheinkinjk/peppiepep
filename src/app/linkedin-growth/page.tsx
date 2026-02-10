@@ -102,7 +102,7 @@ const processSteps = [
   {
     step: "1",
     title: "Discovery & Goal Setting",
-    description: "We learn your ICP, revenue goals, and competitive landscape. You tell us what success looks like—demo volume, pipeline value, close rates.",
+    description: "We learn your ICP, revenue goals, and competitive landscape. You tell us what success looks like-demo volume, pipeline value, close rates.",
     activities: [
       "Define ideal customer profile and target accounts",
       "Set conversion goals and budget parameters",
@@ -126,7 +126,7 @@ const processSteps = [
   {
     step: "3",
     title: "Offer & Structure Design",
-    description: "We build the partnership offer—what creators get, what they commit to, and how results are tracked and rewarded.",
+    description: "We build the partnership offer-what creators get, what they commit to, and how results are tracked and rewarded.",
     activities: [
       "Design compensation model (per-demo, revenue share, hybrid)",
       "Create content briefs and brand guidelines",
@@ -138,7 +138,7 @@ const processSteps = [
   {
     step: "4",
     title: "Creator Onboarding",
-    description: "Selected creators receive their partnership kit—tracking links, brand materials, content guidelines, and payout terms.",
+    description: "Selected creators receive their partnership kit-tracking links, brand materials, content guidelines, and payout terms.",
     activities: [
       "Provision unique tracked affiliate links",
       "Share brand assets and messaging playbook",
@@ -188,7 +188,7 @@ const faqData = [
       },
       {
         q: "How do payouts work?",
-        a: "You set the payout structure upfront (flat fee per conversion, percentage of revenue, tiered commissions, etc.). When a tracked conversion occurs, the creator's earnings are logged in their dashboard. Payouts are processed monthly via Stripe, with a 30-day hold to account for refunds or cancellations. Businesses only pay for verified, completed conversions—not clicks or impressions."
+        a: "You set the payout structure upfront (flat fee per conversion, percentage of revenue, tiered commissions, etc.). When a tracked conversion occurs, the creator's earnings are logged in their dashboard. Payouts are processed monthly via Stripe, with a 30-day hold to account for refunds or cancellations. Businesses only pay for verified, completed conversions-not clicks or impressions."
       },
       {
         q: "Can I work with multiple creators at once?",
@@ -210,7 +210,7 @@ const faqData = [
       },
       {
         q: "How do you prevent fake engagement or fraud?",
-        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique affiliate links with server-side validation. Businesses see full attribution data—click sources, conversion rates, and customer quality—so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
+        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique affiliate links with server-side validation. Businesses see full attribution data-click sources, conversion rates, and customer quality-so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
       }
     ]
   },
@@ -224,7 +224,7 @@ const faqData = [
       },
       {
         q: "What if a creator posts something off-brand or inaccurate?",
-        a: "All content goes through your approval process before publishing. If something slips through, you can request immediate removal or correction. Repeated violations result in creator removal from your program. You also control which creators you work with—vet their past content, audience fit, and brand alignment before approving partnerships."
+        a: "All content goes through your approval process before publishing. If something slips through, you can request immediate removal or correction. Repeated violations result in creator removal from your program. You also control which creators you work with-vet their past content, audience fit, and brand alignment before approving partnerships."
       },
       {
         q: "Can I see performance before committing to a creator?",
@@ -246,11 +246,11 @@ const faqData = [
       },
       {
         q: "What budget should I allocate?",
-        a: "Start with $2,000-$5,000/month to test 3-5 creators. This gives you enough data to identify what works without over-committing. High-performing programs scale to $20,000-$50,000+/month as you add more creators and expand to new audience segments. Budget scales with proven ROI—if you're generating 5x returns, increasing spend is straightforward."
+        a: "Start with $2,000-$5,000/month to test 3-5 creators. This gives you enough data to identify what works without over-committing. High-performing programs scale to $20,000-$50,000+/month as you add more creators and expand to new audience segments. Budget scales with proven ROI-if you're generating 5x returns, increasing spend is straightforward."
       },
       {
         q: "Do you handle creator outreach and management?",
-        a: "Yes. We handle creator vetting, onboarding, and matching. You approve partnerships, provide briefs, and review content. We manage logistics (contracts, tracking setup, payout processing). Think of us as your creator partnership infrastructure—you focus on strategy and approvals, we handle operations."
+        a: "Yes. We handle creator vetting, onboarding, and matching. You approve partnerships, provide briefs, and review content. We manage logistics (contracts, tracking setup, payout processing). Think of us as your creator partnership infrastructure-you focus on strategy and approvals, we handle operations."
       }
     ]
   }
@@ -312,13 +312,13 @@ export default function LinkedInGrowthPage() {
 
             <p className="text-xl text-slate-200/90 leading-relaxed max-w-3xl mx-auto">
               Partner with verified LinkedIn creators to drive qualified demos and revenue.
-              We handle sourcing, qualification, tracking, and payouts—you focus on closing deals.
+              We handle sourcing, qualification, tracking, and payouts-you focus on closing deals.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link
                 href="/linkedin-growth/business"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-400 hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-blue-500/30 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-base font-bold text-white shadow-2xl shadow-cyan-500/30 transition hover:scale-[1.02] hover:bg-[#00767a]"
               >
                 Start a Partnership Program
                 <ArrowRight className="h-5 w-5" />
@@ -346,12 +346,12 @@ export default function LinkedInGrowthPage() {
                   who share insights, solve problems, and recommend tools.
                 </p>
                 <p>
-                  When someone they trust mentions your product, it doesn't feel like advertising—it
+                  When someone they trust mentions your product, it doesn't feel like advertising-it
                   feels like an affiliate from a colleague. <span className="text-cyan-300 font-medium">That's the difference between interrupting and being introduced.</span>
                 </p>
                 <p>
                   Creator-led campaigns consistently outperform cold outbound in B2B because trust
-                  is already established. You're not starting from zero—you're borrowing credibility.
+                  is already established. You're not starting from zero-you're borrowing credibility.
                 </p>
               </div>
             </div>
@@ -412,7 +412,7 @@ export default function LinkedInGrowthPage() {
               What You Can Achieve
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              LinkedIn creator partnerships aren't just about awareness—they drive measurable
+              LinkedIn creator partnerships aren't just about awareness-they drive measurable
               business outcomes across your entire funnel.
             </p>
           </div>
@@ -448,7 +448,7 @@ export default function LinkedInGrowthPage() {
               How We Create & Manage Partnerships End-to-End
             </h2>
             <p className="text-slate-300 max-w-3xl mx-auto">
-              We handle the entire partnership lifecycle—from sourcing and vetting creators to
+              We handle the entire partnership lifecycle-from sourcing and vetting creators to
               tracking results and processing payouts. You approve the strategy and watch the pipeline fill.
             </p>
           </div>
@@ -598,7 +598,7 @@ export default function LinkedInGrowthPage() {
               Full Visibility Into Every Partnership
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              Track performance, manage creators, and prove ROI—all from one dashboard.
+              Track performance, manage creators, and prove ROI-all from one dashboard.
             </p>
           </div>
 
@@ -723,12 +723,12 @@ export default function LinkedInGrowthPage() {
             </h2>
             <p className="text-lg text-slate-200/90 mb-8">
               Join B2B companies driving measurable ROI through trusted LinkedIn creator partnerships.
-              We handle the sourcing, tracking, and payouts—you close the deals.
+              We handle the sourcing, tracking, and payouts-you close the deals.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/linkedin-growth/business"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-400 hover:to-cyan-300 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-blue-500/30 transition hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-base font-bold text-white shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02] hover:bg-[#00767a]"
               >
                 Start a Partnership Program
                 <ArrowRight className="h-5 w-5" />

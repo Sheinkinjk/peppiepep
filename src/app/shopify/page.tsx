@@ -53,7 +53,7 @@ export default function ShopifyGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Embed the affiliate page</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Embed the affiliate page</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Add a dedicated page (recommended) or embed in an existing landing page.
               </p>
@@ -85,7 +85,7 @@ export default function ShopifyGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Capture conversions</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Capture conversions</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Conversions appear in your dashboard when you report discount code usage to Refer Labs.
               </p>
@@ -103,7 +103,7 @@ export default function ShopifyGuidePage() {
           </div>
 
           <div className="mt-4 space-y-2">
-            <p className="text-sm font-semibold text-slate-800">Option A — Order status page script (legacy)</p>
+            <p className="text-sm font-semibold text-slate-800">Option A - Order status page script (legacy)</p>
             <p className="text-xs text-slate-600">
               Works on stores that still allow additional scripts. If your store uses Checkout Extensibility, use Option B.
             </p>
@@ -130,7 +130,7 @@ fetch("https://referlabs.com.au/api/discount-codes/redeem", {
           </div>
 
           <div className="mt-4 space-y-2">
-            <p className="text-sm font-semibold text-slate-800">Option B — Shopify webhooks (recommended)</p>
+            <p className="text-sm font-semibold text-slate-800">Option B - Shopify webhooks (recommended)</p>
             <p className="text-xs text-slate-600">
               Trigger a webhook on “Order paid/fulfilled” to your server, then call the same Refer Labs endpoint from your server using the secret.
             </p>

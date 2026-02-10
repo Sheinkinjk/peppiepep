@@ -60,7 +60,7 @@ export default async function AmbassadorPortal({ params }: AmbassadorPortalProps
   const businessName = customerWithRelations.business?.name || "our business";
 
   const shareText = encodeURIComponent(
-    `Hey! ${customerWithRelations.name || "A friend"} hooked you up – get ${offerText} at ${businessName} 👇`,
+    `Hey! ${customerWithRelations.name || "A friend"} hooked you up - get ${offerText} at ${businessName} 👇`,
   );
   const whatsappUrl = `https://wa.me/?text=${shareText}%20${encodeURIComponent(fullReferralLink)}`;
   const smsUrl = `sms:?body=${shareText}%20${encodeURIComponent(fullReferralLink)}`;

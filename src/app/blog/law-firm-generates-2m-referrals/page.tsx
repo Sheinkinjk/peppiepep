@@ -43,7 +43,7 @@ export default function LawFirmGenerates2MReferralsPage() {
               Most law firm case studies are heavy on strategy and light on numbers. This one is different.
             </p>
             <p>
-              We're sharing the complete referral playbook from <strong>Morgan & Associates</strong> (name changed for confidentiality), a 15-attorney personal injury firm in the Midwest that generated <strong>$2.1M in revenue from referrals</strong> in 2025—representing 38% of their total revenue.
+              We're sharing the complete referral playbook from <strong>Morgan & Associates</strong> (name changed for confidentiality), a 15-attorney personal injury firm in the Midwest that generated <strong>$2.1M in revenue from referrals</strong> in 2025-representing 38% of their total revenue.
             </p>
             <p>
               This isn't a story about a charismatic rainmaker or decades-old relationships. It's about a <strong>systematic approach</strong> to partner network management that any mid-size firm can replicate.
@@ -88,14 +88,14 @@ export default function LawFirmGenerates2MReferralsPage() {
           <h2 className="text-3xl font-black text-slate-900 mt-12 mb-6">The Starting Point (2022)</h2>
 
           <p className="text-slate-700 mb-6">
-            Three years ago, Morgan & Associates was getting referrals—but it was completely ad hoc. Managing Partner Sarah Morgan describes the situation:
+            Three years ago, Morgan & Associates was getting referrals-but it was completely ad hoc. Managing Partner Sarah Morgan describes the situation:
           </p>
 
           <div className="bg-slate-50 border-l-4 border-slate-400 p-6 my-8 rounded-r-lg italic">
             <p className="text-slate-700 mb-0">
-              "We'd get referrals from other attorneys, chiropractors, friends of clients—but we had no idea who was actually sending us business. Our 'partner list' was a 4-year-old Excel sheet with 200 names. We didn't know which relationships mattered or where to invest our time. It was pure chaos."
+              "We'd get referrals from other attorneys, chiropractors, friends of clients-but we had no idea who was actually sending us business. Our 'partner list' was a 4-year-old Excel sheet with 200 names. We didn't know which relationships mattered or where to invest our time. It was pure chaos."
             </p>
-            <p className="text-slate-600 text-sm mt-3">— Sarah Morgan, Managing Partner</p>
+            <p className="text-slate-600 text-sm mt-3">- Sarah Morgan, Managing Partner</p>
           </div>
 
           <h3 className="text-2xl font-bold text-slate-900 mt-8 mb-4">2022 Baseline Metrics</h3>
@@ -307,7 +307,7 @@ export default function LawFirmGenerates2MReferralsPage() {
             <p className="text-slate-700 mb-0">
               "The closed-loop system was game-changing. Before, attorneys would refer a case and never hear what happened. Now they get updates throughout. One chiropractor told us, 'You're the only firm that's ever followed up.' That partner went from 2 referrals/year to 14 referrals/year."
             </p>
-            <p className="text-slate-600 text-sm mt-3">— Jessica Chen, Partner Relations Coordinator</p>
+            <p className="text-slate-600 text-sm mt-3">- Jessica Chen, Partner Relations Coordinator</p>
           </div>
 
           <h3 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Step 4: Strategic Partner Recruitment</h3>
@@ -529,7 +529,7 @@ export default function LawFirmGenerates2MReferralsPage() {
                 Lesson 1: Segment ruthlessly
               </h3>
               <p className="text-slate-700 text-sm">
-                "The biggest mistake firms make is treating all partners equally. Your top 10% of partners will drive 60-70% of referral revenue. Give them 60-70% of your time." — Sarah Morgan
+                "The biggest mistake firms make is treating all partners equally. Your top 10% of partners will drive 60-70% of referral revenue. Give them 60-70% of your time." - Sarah Morgan
               </p>
             </div>
 
@@ -539,7 +539,7 @@ export default function LawFirmGenerates2MReferralsPage() {
                 Lesson 2: Close the loop religiously
               </h3>
               <p className="text-slate-700 text-sm">
-                "We went from ghosting partners after they referred to 5-touch follow-up. That single change drove a 3x increase in repeat referrals from the same partners." — Jessica Chen
+                "We went from ghosting partners after they referred to 5-touch follow-up. That single change drove a 3x increase in repeat referrals from the same partners." - Jessica Chen
               </p>
             </div>
 
@@ -549,7 +549,7 @@ export default function LawFirmGenerates2MReferralsPage() {
                 Lesson 3: Hire someone to own it
               </h3>
               <p className="text-slate-700 text-sm">
-                "Attorneys are terrible at consistent partner outreach—we're always busy with client work. Hiring Jessica (even part-time) was the unlock. Someone has to own the system or it doesn't happen." — Sarah Morgan
+                "Attorneys are terrible at consistent partner outreach-we're always busy with client work. Hiring Jessica (even part-time) was the unlock. Someone has to own the system or it doesn't happen." - Sarah Morgan
               </p>
             </div>
 
@@ -559,7 +559,7 @@ export default function LawFirmGenerates2MReferralsPage() {
                 Lesson 4: Recruit strategically, not randomly
               </h3>
               <p className="text-slate-700 text-sm">
-                "We used to hope for referrals. Now we proactively identify which attorneys, doctors, and professionals see our ideal clients before we do—and we build relationships with them intentionally." — Sarah Morgan
+                "We used to hope for referrals. Now we proactively identify which attorneys, doctors, and professionals see our ideal clients before we do-and we build relationships with them intentionally." - Sarah Morgan
               </p>
             </div>
 
@@ -569,7 +569,7 @@ export default function LawFirmGenerates2MReferralsPage() {
                 Lesson 5: Track everything
               </h3>
               <p className="text-slate-700 text-sm">
-                "You can't optimize what you don't measure. Once we started tracking referral source, conversion rate, and attributed revenue, we could make data-driven decisions about where to invest our time." — Jessica Chen
+                "You can't optimize what you don't measure. Once we started tracking referral source, conversion rate, and attributed revenue, we could make data-driven decisions about where to invest our time." - Jessica Chen
               </p>
             </div>
           </div>
@@ -595,7 +595,7 @@ export default function LawFirmGenerates2MReferralsPage() {
 
           <div className="bg-slate-100 border border-slate-300 rounded-xl p-6 my-8">
             <p className="text-slate-700 mb-0">
-              <strong>Sarah's final advice</strong>: "Start small. Pick your top 10 referral sources and implement the closed-loop system with just those 10. Once that's running smoothly, expand. Don't try to boil the ocean—systematic growth beats chaotic hustle every time."
+              <strong>Sarah's final advice</strong>: "Start small. Pick your top 10 referral sources and implement the closed-loop system with just those 10. Once that's running smoothly, expand. Don't try to boil the ocean-systematic growth beats chaotic hustle every time."
             </p>
           </div>
 

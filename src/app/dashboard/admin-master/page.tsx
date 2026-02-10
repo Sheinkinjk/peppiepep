@@ -172,7 +172,7 @@ export default async function MasterAdminDashboard() {
             id: req.id,
             created_at: req.created_at,
             status: req.status,
-            businessName: req.businesses?.name ?? "—",
+            businessName: req.businesses?.name ?? "-",
           }))}
         />
 
@@ -209,12 +209,12 @@ export default async function MasterAdminDashboard() {
                   recentEvents.map((event) => (
                     <tr key={event.id} className="border-t border-slate-100">
                       <td className="py-3 whitespace-nowrap">{new Date(event.created_at).toLocaleString()}</td>
-                      <td className="py-3">{event.business?.name ?? "—"}</td>
+                      <td className="py-3">{event.business?.name ?? "-"}</td>
                       <td className="py-3">
-                        {event.ambassador?.name ?? event.ambassador?.email ?? event.ambassador?.referral_code ?? "—"}
+                        {event.ambassador?.name ?? event.ambassador?.email ?? event.ambassador?.referral_code ?? "-"}
                       </td>
                       <td className="py-3 font-mono text-xs">{event.event_type}</td>
-                      <td className="py-3">{event.source ?? "—"}</td>
+                      <td className="py-3">{event.source ?? "-"}</td>
                     </tr>
                   ))
                 )}

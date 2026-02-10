@@ -123,7 +123,7 @@ Body:
               </li>
               <li>
                 If you prefer unique referral links, both the link and discount word map to the same
-                ambassador profile—use whichever is easier for your checkout.
+                ambassador profile-use whichever is easier for your checkout.
               </li>
             </ul>
           </section>

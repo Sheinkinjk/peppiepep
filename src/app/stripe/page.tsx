@@ -80,7 +80,7 @@ export default function StripeGuidePage() {
               </p>
               <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Webhook URL</p>
-                <p className="mt-1 font-mono text-sm text-slate-900">https://referlabs.com.au/api/stripe/webhook</p>
+                <p className="mt-1 break-all font-mono text-sm text-slate-900">https://referlabs.com.au/api/stripe/webhook</p>
               </div>
             </div>
           </div>

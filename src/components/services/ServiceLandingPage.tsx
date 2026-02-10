@@ -34,7 +34,7 @@ const partnerSegments = [
     icon: Share2,
     title: "Your Happy Clients",
     description:
-      "Your clients already trust you. Give them a reason to refer—and track every affiliate to closed revenue.",
+      "Your clients already trust you. Give them a reason to refer-and track every affiliate to closed revenue.",
     metrics: "65% faster close rate vs cold leads",
   },
   {
@@ -64,7 +64,7 @@ const faqs = [
   {
     question: "How quickly can I launch?",
     answer:
-      "Most clients are live within 2-3 weeks. We handle the technical setup—you focus on activating partners.",
+      "Most clients are live within 2-3 weeks. We handle the technical setup-you focus on activating partners.",
   },
   {
     question: "What partners can I work with?",
@@ -74,7 +74,7 @@ const faqs = [
   {
     question: "How do you track affiliates?",
     answer:
-      "Unique links with full attribution—from click to closed deal. Real-time dashboards show exactly which partners drive revenue.",
+      "Unique links with full attribution-from click to closed deal. Real-time dashboards show exactly which partners drive revenue.",
   },
   {
     question: "What reward models work best?",
@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "Do you integrate with my CRM?",
     answer:
-      "Yes—HubSpot, Salesforce, Pipedrive, and Zapier for custom workflows. Full API available.",
+      "Yes-HubSpot, Salesforce, Pipedrive, and Zapier for custom workflows. Full API available.",
   },
 ];
 
@@ -419,7 +419,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
                 step: "2",
                 title: "We Build It",
                 description:
-                  "Tracking infrastructure, partner portals, and onboarding materials—ready in days.",
+                  "Tracking infrastructure, partner portals, and onboarding materials-ready in days.",
               },
               {
                 step: "3",

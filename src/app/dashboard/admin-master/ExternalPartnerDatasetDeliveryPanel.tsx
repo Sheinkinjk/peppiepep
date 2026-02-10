@@ -131,7 +131,7 @@ export function ExternalPartnerDatasetDeliveryPanel({
               requests.slice(0, 12).map((req) => (
                 <tr key={req.id} className="border-t border-slate-100">
                   <td className="py-3">{new Date(req.created_at).toLocaleString()}</td>
-                  <td className="py-3">{req.businessName || "—"}</td>
+                  <td className="py-3">{req.businessName || "-"}</td>
                   <td className="py-3">{req.status}</td>
                   <td className="py-3 font-mono text-xs">{req.id}</td>
                 </tr>

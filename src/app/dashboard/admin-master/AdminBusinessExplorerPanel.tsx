@@ -248,9 +248,9 @@ export function AdminBusinessExplorerPanel() {
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Selected business</p>
-                <h3 className="mt-1 text-lg font-black text-slate-900">{selectedBusiness?.name || "—"}</h3>
+                <h3 className="mt-1 text-lg font-black text-slate-900">{selectedBusiness?.name || "-"}</h3>
                 <p className="mt-1 text-sm text-slate-600">
-                  Owner: <span className="font-semibold">{selectedBusiness?.owner?.email || "—"}</span>
+                  Owner: <span className="font-semibold">{selectedBusiness?.owner?.email || "-"}</span>
                 </p>
               </div>
               {selectedBusiness && (
@@ -306,10 +306,10 @@ export function AdminBusinessExplorerPanel() {
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                 <p className="text-xs text-slate-500">Program setup</p>
                 <p className="mt-1 text-sm font-semibold text-slate-900">
-                  Reward: {stats?.business.reward_type || "—"} {stats?.business.reward_amount ?? ""}
+                  Reward: {stats?.business.reward_type || "-"} {stats?.business.reward_amount ?? ""}
                 </p>
                 <p className="mt-1 text-xs text-slate-500">
-                  Upgrade: {stats?.business.upgrade_name || "—"}
+                  Upgrade: {stats?.business.upgrade_name || "-"}
                 </p>
               </div>
             </div>

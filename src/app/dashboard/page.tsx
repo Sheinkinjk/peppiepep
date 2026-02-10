@@ -873,7 +873,7 @@ export default async function Dashboard({
             : "";
 
           await client.messages.create({
-            body: `Amazing! Your friend just booked – you've earned $${amount} credit at ${business.name}! Your link: ${referralLink}`,
+            body: `Amazing! Your friend just booked - you've earned $${amount} credit at ${business.name}! Your link: ${referralLink}`,
             from,
             to: ambassadorPhone,
           });
@@ -2759,7 +2759,7 @@ export default async function Dashboard({
                                       <p className="text-xs text-slate-400">
                                         {item.timestamp
                                           ? new Date(item.timestamp).toLocaleString()
-                                          : "—"}
+                                          : "-"}
                                       </p>
                                       </div>
                                       <span className={`mt-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] ${item.sourceMeta.className}`}>
@@ -2838,7 +2838,7 @@ export default async function Dashboard({
                       <p className="text-4xl font-black text-slate-900 leading-none">
                         {windowedRoiMultiple && windowedRoiMultiple > 0
                           ? `${windowedRoiMultiple.toFixed(1)}×`
-                          : "—"}
+                          : "-"}
                       </p>
                     </div>
                     <p className="text-sm text-slate-600 mt-2">

@@ -50,7 +50,7 @@ export default function CalendlyGuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Add a booking question for the code</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Add a booking question for the code</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Add a required question like “Referral / discount code” so the customer can enter the ambassador’s code.
               </p>
@@ -72,7 +72,7 @@ export default function CalendlyGuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Post confirmed bookings as conversions</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Post confirmed bookings as conversions</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Use Zapier/Make to trigger on “Invitee Created” and then POST to Refer Labs with the collected code.
               </p>

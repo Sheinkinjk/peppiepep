@@ -148,15 +148,15 @@ export async function POST(request: Request) {
           ${
             validation.data.requestKind === "partner_activation"
               ? `
-                <p style="margin:0 0 8px 0;"><strong>Partner name:</strong> ${safePartnerName || "—"}</p>
-                <p style="margin:0 0 8px 0;"><strong>Company:</strong> ${safePartnerCompany || "—"}</p>
-                <p style="margin:0 0 8px 0;"><strong>Profile:</strong> ${safePartnerProfileUrl ? `<a href="${safePartnerProfileUrl}">${safePartnerProfileUrl}</a>` : "—"}</p>
-                <p style="margin:0 0 8px 0;"><strong>Website:</strong> ${safePartnerWebsite ? `<a href="${safePartnerWebsite}">${safePartnerWebsite}</a>` : "—"}</p>
-                <p style="margin:0 0 8px 0;"><strong>Landing URL:</strong> ${safeLandingUrl ? `<a href="${safeLandingUrl}">${safeLandingUrl}</a>` : "—"}</p>
+                <p style="margin:0 0 8px 0;"><strong>Partner name:</strong> ${safePartnerName || "-"}</p>
+                <p style="margin:0 0 8px 0;"><strong>Company:</strong> ${safePartnerCompany || "-"}</p>
+                <p style="margin:0 0 8px 0;"><strong>Profile:</strong> ${safePartnerProfileUrl ? `<a href="${safePartnerProfileUrl}">${safePartnerProfileUrl}</a>` : "-"}</p>
+                <p style="margin:0 0 8px 0;"><strong>Website:</strong> ${safePartnerWebsite ? `<a href="${safePartnerWebsite}">${safePartnerWebsite}</a>` : "-"}</p>
+                <p style="margin:0 0 8px 0;"><strong>Landing URL:</strong> ${safeLandingUrl ? `<a href="${safeLandingUrl}">${safeLandingUrl}</a>` : "-"}</p>
               `
               : `
                 <p style="margin:0 0 8px 0;"><strong>Primary goal:</strong> ${safeGoal}</p>
-                <p style="margin:0 0 8px 0;"><strong>Partner types:</strong> ${safePartnerTypes || "—"}</p>
+                <p style="margin:0 0 8px 0;"><strong>Partner types:</strong> ${safePartnerTypes || "-"}</p>
               `
           }
           <p style="margin:12px 0 0 0;">

@@ -476,7 +476,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
           <h3 className="text-xl font-black text-slate-900">External Partners is a paid add-on</h3>
           <p className="mt-2 text-sm text-slate-600">
             This is your partner discovery + referral infrastructure layer (not a marketplace). Billing is handled
-            upstream — you can still draft partner briefs and set up referral links here.
+            upstream - you can still draft partner briefs and set up referral links here.
           </p>
         </Card>
       )}
@@ -519,7 +519,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
             <div>
               <h4 className="mt-1 text-lg font-black text-slate-900">Launch an external partner relationship</h4>
               <p className="mt-1 text-sm text-slate-600">
-                Submit who you want to work with and how you want them to promote you — Refer Labs (admin) will set up the
+                Submit who you want to work with and how you want them to promote you - Refer Labs (admin) will set up the
                 partnership and ensure attribution is trackable.
               </p>
             </div>
@@ -1197,8 +1197,8 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
                   return (
                     <tr key={p.id} className="border-t border-slate-100 align-top">
                       <td className="py-3 font-semibold text-slate-900">{p.name || "Unnamed"}</td>
-                      <td className="py-3">{meta.external_partner?.partnerType ?? "—"}</td>
-                      <td className="py-3">{meta.external_partner?.campaignGoal ?? "—"}</td>
+                      <td className="py-3">{meta.external_partner?.partnerType ?? "-"}</td>
+                      <td className="py-3">{meta.external_partner?.campaignGoal ?? "-"}</td>
                       <td className="py-3">
                         <div className="flex flex-col gap-2">
                           <span className="text-sm font-semibold text-slate-900">{status}</span>
@@ -1230,7 +1230,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
                             {p.landingUrl}
                           </a>
                         ) : (
-                          <span className="text-slate-400">—</span>
+                          <span className="text-slate-400">-</span>
                         )}
                       </td>
                       <td className="py-3">
@@ -1253,7 +1253,7 @@ export function ExternalPartnersTab({ enabled, businessName, dashboardBaseUrl }:
                             </div>
                           </div>
                         ) : (
-                          <span className="text-slate-400">—</span>
+                          <span className="text-slate-400">-</span>
                         )}
                       </td>
                     </tr>

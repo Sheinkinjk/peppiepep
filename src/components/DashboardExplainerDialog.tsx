@@ -121,7 +121,7 @@ const TAB_DETAILS = [
     steps: [
       {
         title: "Monitor All Referrals",
-        description: "View every referral in the Referrals Table—both link-tracked and manually recorded. Mark referrals as complete to trigger credit payouts.",
+        description: "View every referral in the Referrals Table-both link-tracked and manually recorded. Mark referrals as complete to trigger credit payouts.",
       },
       {
         title: "Track Referral Journey",

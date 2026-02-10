@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
     if (data?.user && !data.user.email_confirmed_at) {
       await supabase.auth.signOut();
       return NextResponse.json(
-        { error: 'Confirm your email before signing in – the verification link just hit your inbox.' },
+        { error: 'Confirm your email before signing in - the verification link just hit your inbox.' },
         { status: 403 }
       );
     }

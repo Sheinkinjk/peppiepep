@@ -677,7 +677,7 @@ export function ReferralsTable({
                       <p className="text-xs text-slate-500">
                         {referral.referred_email ??
                           referral.referred_phone ??
-                          "—"}
+                          "-"}
                       </p>
                       {referral.transaction_value !== null && (
                         <p className="text-xs font-semibold text-emerald-700">
@@ -693,7 +693,7 @@ export function ReferralsTable({
                         {ambassador?.name ?? "Unknown"}
                       </p>
                       <p className="text-xs text-slate-500">
-                        {ambassador?.email ?? ambassador?.phone ?? "—"}
+                        {ambassador?.email ?? ambassador?.phone ?? "-"}
                       </p>
                     </div>
                     <div>
@@ -703,7 +703,7 @@ export function ReferralsTable({
                     </div>
                     <div>
                       <span className="capitalize text-sm text-slate-900">
-                        {referral.status ?? "—"}
+                        {referral.status ?? "-"}
                       </span>
                     </div>
                     <div>
@@ -718,8 +718,8 @@ export function ReferralsTable({
                       </span>
                     </div>
                     <div className="text-xs text-slate-600">
-                      <p>Created: {createdAt ?? "—"}</p>
-                      <p>Transaction: {effectiveDate ?? "—"}</p>
+                      <p>Created: {createdAt ?? "-"}</p>
+                      <p>Transaction: {effectiveDate ?? "-"}</p>
                     </div>
                     <div className="text-right">
                       {isPending ? (

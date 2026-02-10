@@ -39,11 +39,11 @@ export default function RootLayout({
         <WebsiteSchema />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-teal-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-full focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
         >
           Skip to main content
         </a>
@@ -54,7 +54,7 @@ export default function RootLayout({
           <main id="main-content" className="flex-1">
             {children}
           </main>
-          <div className="bg-white/90">
+          <div className="bg-white/88">
             <div className="mx-auto max-w-6xl px-6 pb-10 md:px-10 lg:px-16">
               <Footer />
             </div>

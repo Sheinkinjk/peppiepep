@@ -50,7 +50,7 @@ export default function ServiceM8GuidePage() {
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 1 — Store the code on each job</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 1 - Store the code on each job</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Add a consistent place for staff to record the ambassador code (custom field, job note, or invoice reference).
               </p>
@@ -75,7 +75,7 @@ export default function ServiceM8GuidePage() {
               <Wrench className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Step 2 — Post completed jobs/invoices to Refer Labs</h2>
+              <h2 className="text-lg font-bold text-slate-900">Step 2 - Post completed jobs/invoices to Refer Labs</h2>
               <p className="mt-2 text-sm text-slate-600">
                 Use Zapier/Make (or your backend) to trigger on job completion or invoice paid, then POST to Refer Labs.
               </p>

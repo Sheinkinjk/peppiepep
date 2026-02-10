@@ -48,7 +48,7 @@ function buildSmsTemplate({
   friendReward?: string | null;
   referralLink: string;
 }) {
-  return `I have a ${friendReward || "VIP reward"} for you — claim it here: ${referralLink}`;
+  return `I have a ${friendReward || "VIP reward"} for you - claim it here: ${referralLink}`;
 }
 
 function buildSocialCaption({

@@ -107,31 +107,6 @@ export function EmptyState({
   const displayTitle = title ?? config.title;
   const displayDescription = description ?? config.description;
 
-  const ActionButton = () => {
-    if (!actionLabel) return null;
-
-    const buttonClasses = cn(
-      "inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all",
-      "bg-slate-900 text-white hover:bg-slate-800 shadow-sm"
-    );
-
-    if (actionHref) {
-      return (
-        <a href={actionHref} className={buttonClasses}>
-          {actionLabel}
-          <ArrowRight className="h-4 w-4" />
-        </a>
-      );
-    }
-
-    return (
-      <button onClick={onAction} className={buttonClasses}>
-        {actionLabel}
-        <ArrowRight className="h-4 w-4" />
-      </button>
-    );
-  };
-
   if (compact) {
     return (
       <div className="flex items-center gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
@@ -142,7 +117,13 @@ export function EmptyState({
           <p className="text-sm font-semibold text-slate-900">{displayTitle}</p>
           <p className="text-xs text-slate-600">{displayDescription}</p>
         </div>
-        {actionLabel && <ActionButton />}
+        {actionLabel && (
+          <ActionButton
+            actionLabel={actionLabel}
+            actionHref={actionHref}
+            onAction={onAction}
+          />
+        )}
       </div>
     );
   }
@@ -160,7 +141,11 @@ export function EmptyState({
 
         {(actionLabel || secondaryActionLabel) && (
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <ActionButton />
+            <ActionButton
+              actionLabel={actionLabel}
+              actionHref={actionHref}
+              onAction={onAction}
+            />
             {secondaryActionLabel && onSecondaryAction && (
               <button
                 onClick={onSecondaryAction}
@@ -173,6 +158,39 @@ export function EmptyState({
         )}
       </div>
     </div>
+  );
+}
+
+function ActionButton({
+  actionLabel,
+  actionHref,
+  onAction,
+}: {
+  actionLabel?: string;
+  actionHref?: string;
+  onAction?: () => void;
+}) {
+  if (!actionLabel) return null;
+
+  const buttonClasses = cn(
+    "inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all",
+    "bg-slate-900 text-white hover:bg-slate-800 shadow-sm"
+  );
+
+  if (actionHref) {
+    return (
+      <a href={actionHref} className={buttonClasses}>
+        {actionLabel}
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    );
+  }
+
+  return (
+    <button onClick={onAction} className={buttonClasses}>
+      {actionLabel}
+      <ArrowRight className="h-4 w-4" />
+    </button>
   );
 }
 
