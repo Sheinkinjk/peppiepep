@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Calendar, ChevronDown, HelpCircle } from "lucide-react";
+import { Calendar, ChevronDown } from "lucide-react";
 
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
@@ -104,12 +104,6 @@ export default function FAQPage() {
 
         {/* Is This For Me? Section */}
         <section className="mb-10">
-          <div className="mb-6 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-500/30 text-sm font-semibold text-teal-300">
-              <HelpCircle className="h-4 w-4" />
-              Start here
-            </span>
-          </div>
           <h2 className="text-2xl font-bold text-white mb-4 text-center">Is This For Me?</h2>
           <div className="space-y-3">
             {qualificationFAQs.map((faq, rawIdx) => {

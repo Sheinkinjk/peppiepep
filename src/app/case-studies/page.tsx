@@ -85,7 +85,7 @@ const colorMap: Record<string, { border: string; icon: string; bg: string; text:
 
 export default function CaseStudiesPage() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#07131e] via-[#0c1c29] to-[#03080f] text-slate-50">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(87,230,255,0.06),transparent_40%)]" />
 
       <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-20 sm:px-10">
@@ -169,7 +169,7 @@ export default function CaseStudiesPage() {
               href={calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 transition-all hover:bg-cyan-300"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#008b8b] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#00767a] shadow-lg shadow-[#008b8b]/25"
             >
               <Calendar className="h-4 w-4" />
               Book Call

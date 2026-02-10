@@ -98,7 +98,7 @@ export default function PricingPage() {
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight">
             Simple, Services-Led
             <br />
-            <span className="bg-gradient-to-r from-cyan-300 via-cyan-200 to-teal-300 bg-clip-text text-transparent">
+            <span className="text-cyan-300">
               Pricing
             </span>
           </h1>
@@ -119,7 +119,7 @@ export default function PricingPage() {
               }`}
             >
               {plan.recommended && (
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-cyan-300 to-teal-400" />
+                <div className="absolute top-0 inset-x-0 h-1 bg-cyan-400" />
               )}
               <div
                 className={`h-full p-6 sm:p-8 flex flex-col ${
@@ -160,7 +160,7 @@ export default function PricingPage() {
                   rel="noopener noreferrer"
                   className={`w-full py-4 px-6 rounded-full font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
                     plan.recommended
-                      ? "bg-[#008b8b] text-white hover:bg-[#00767a] shadow-lg shadow-cyan-500/20"
+                      ? "bg-[#008b8b] text-white hover:bg-[#00767a] shadow-lg shadow-[#008b8b]/25"
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
                   }`}
                 >
@@ -206,7 +206,7 @@ export default function PricingPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-[#008b8b] text-white px-8 py-4 text-sm font-semibold hover:bg-[#00767a] transition-all shadow-lg shadow-cyan-500/20 gap-2"
+                className="inline-flex items-center justify-center rounded-full bg-[#008b8b] text-white px-8 py-4 text-sm font-semibold hover:bg-[#00767a] transition-all shadow-lg shadow-[#008b8b]/25 gap-2"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call

@@ -207,7 +207,7 @@ export default function ServicesPage() {
               </a>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300 bg-white px-8 py-4 text-sm font-semibold text-cyan-800 transition-all hover:bg-cyan-50"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-white hover:shadow-md"
               >
                 View Pricing
                 <ArrowRight className="h-4 w-4" />

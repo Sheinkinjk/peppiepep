@@ -19,18 +19,17 @@ const INITIAL_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hey! I'm the Refer Labs concierge. Curious about fees, referral code limits, or how the new concierge referral experience works? Ask anything and I'll map out the plan, link you to the latest offering, or line up a demo.",
+    "Hey! I'm the Refer Labs assistant. Curious about our Australia expansion services, pilot structure, or how we build partner channels? Ask anything and I'll point you in the right direction.",
 };
 
 const SUGGESTIONS = [
-  "What are your fees and SMS costs?",
-  "How many referral codes can we generate?",
-  "How do approvals + payouts work?",
-  "Can we book a concierge demo?",
-  "Tell me about the newest concierge referral offering",
+  "What does the 90-day pilot include?",
+  "How do you source partners in Australia?",
+  "What types of companies do you work with?",
+  "Can we book a call to discuss our goals?",
 ];
 
-const LATEST_OFFERING_URL = "/our-referral-program";
+const LATEST_OFFERING_URL = "/services";
 
 const buildId = () => {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -102,7 +101,7 @@ export function SupportChatbot() {
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (apiError) {
       logger.error("Failed to send chat message:", apiError);
-      setError("We couldn't reach the concierge. Please try again in a few seconds.");
+      setError("We couldn't connect right now. Please try again in a few seconds.");
     } finally {
       setIsSending(false);
     }
@@ -184,7 +183,7 @@ export function SupportChatbot() {
         )}
         aria-expanded={isOpen}
         aria-controls="referlabs-chatbot-panel"
-        aria-label={isOpen ? "Hide Refer Labs concierge chat" : "Open Refer Labs concierge chat"}
+        aria-label={isOpen ? "Hide Refer Labs chat" : "Open Refer Labs chat"}
       >
         <MessageCircle className="h-5 w-5 text-[#013136]" />
         <span className="hidden sm:inline font-bold">Speak with us</span>
@@ -204,7 +203,7 @@ export function SupportChatbot() {
               <Bot className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-sm font-semibold">Refer Labs Concierge</p>
+              <p className="text-sm font-semibold">Refer Labs</p>
               <p className="text-xs text-white/80">Ask anything. I respond in seconds.</p>
             </div>
           </div>
@@ -295,7 +294,7 @@ export function SupportChatbot() {
                         {message.role === "assistant" && (
                           <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#00a6b4]">
                             <Sparkles className="h-3.5 w-3.5" />
-                            Concierge
+                            Refer Labs
                           </div>
                         )}
                         <p className="whitespace-pre-line leading-relaxed">{message.content}</p>
@@ -342,7 +341,7 @@ export function SupportChatbot() {
                 <textarea
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
-                  placeholder="e.g., Can you walk me through rewards + payouts?"
+                  placeholder="e.g., How does the 90-day pilot work?"
                   className="h-16 flex-1 resize-none rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-900 shadow-inner focus:border-[#00a6b4] focus:outline-none focus:ring-2 focus:ring-[#00a6b4]/40"
                   disabled={isSending}
                 />
@@ -359,14 +358,14 @@ export function SupportChatbot() {
           )}
 
         <p className="mt-2 text-center text-xs text-slate-500">
-          I share practical strategies in real time. For hands-on onboarding, tap "Start Getting Referrals", explore our latest concierge referral offering, or book a concierge demo call.
+          Learn how we help overseas companies enter Australia through sales, partnerships, and affiliate channels.
         </p>
         <div className="mt-1 text-center text-xs font-semibold">
           <Link
             href={LATEST_OFFERING_URL}
             className="text-[#00a6b4] hover:text-[#008c99] transition-colors underline-offset-2 decoration-[#00d2be] hover:decoration-[#00a6b4] underline"
           >
-            Explore our latest concierge referral program
+            View our services
           </Link>
         </div>
       </div>

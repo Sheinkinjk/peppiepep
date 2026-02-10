@@ -29,14 +29,14 @@ export default function HowItWorks() {
       <main className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
         {/* Hero */}
         <header className="text-center space-y-6 mb-20">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700 shadow-sm ring-1 ring-white/60">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">
             90-day pilot
-          </div>
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-[#0b2a34] tracking-tight max-w-4xl mx-auto">
-            How <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-700 via-teal-700 to-slate-900">Refer Labs</span> Works
+            How <span className="text-cyan-700">Refer Labs</span> Works
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            A structured 90-day pilot that takes you from market alignment to Australian revenue signals - with weekly reporting every step of the way.
+            A structured 90-day pilot that takes you from market alignment to Australian revenue signals, with weekly reporting every step of the way.
           </p>
         </header>
 
@@ -227,7 +227,7 @@ export default function HowItWorks() {
               </a>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-cyan-900/10 bg-white/80 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-white"
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/80 px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-white hover:shadow-md"
               >
                 View Services
               </Link>

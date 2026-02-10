@@ -1,4 +1,4 @@
-import { Mail, Calendar, ArrowRight, MapPin, Clock, Sparkles } from "lucide-react";
+import { Mail, Calendar, ArrowRight, MapPin, Clock } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.contact);
@@ -17,10 +17,6 @@ export default function Contact() {
       <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-8 lg:px-12">
         {/* Header */}
         <header className="text-center space-y-6 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 mb-2">
-            <Sparkles className="h-4 w-4 text-cyan-400" />
-            <span className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">Get In Touch</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white tracking-tight max-w-3xl mx-auto">
             Book a 15-min <span className="text-cyan-400">Australia Expansion Call</span>
           </h1>
@@ -40,7 +36,7 @@ export default function Contact() {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-cyan-500/15 to-transparent rounded-full blur-3xl" />
             <div className="relative">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/25 to-teal-500/25 border border-cyan-500/30 mb-6">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/15 border border-cyan-500/25 mb-6">
                 <Calendar className="h-7 w-7 text-cyan-400" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-3">Book a Call</h2>
@@ -70,7 +66,7 @@ export default function Contact() {
             className="group relative overflow-hidden rounded-3xl border border-teal-500/25 bg-gradient-to-br from-teal-500/10 via-white/[0.05] to-transparent p-8 transition-all hover:border-teal-400/45 hover:shadow-xl hover:shadow-teal-500/15"
           >
             <div className="relative">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500/25 to-cyan-500/25 border border-teal-500/30 mb-6">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500/15 border border-teal-500/25 mb-6">
                 <Mail className="h-7 w-7 text-teal-300" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-3">Email Us</h2>

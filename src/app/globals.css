@@ -206,25 +206,19 @@
   }
 }
 
-/* Remove CTA gradients globally and keep a consistent premium button style */
-:where(a, button, [role="button"])[class*="bg-gradient"][class*="inline-flex"] {
-  background-image: none !important;
-  background-color: #008b8b !important;
-  color: #ffffff !important;
-  border-radius: 9999px !important;
-  border: 1px solid rgba(0, 106, 112, 0.45) !important;
-  box-shadow: 0 12px 28px rgba(0, 112, 121, 0.24) !important;
-}
-
-:where(a, button, [role="button"])[class*="bg-gradient"][class*="inline-flex"]:hover {
-  background-color: #00767a !important;
-  box-shadow: 0 16px 30px rgba(0, 112, 121, 0.3) !important;
-}
-
 :where(a, button, [role="button"]):focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 131, 143, 0.28);
 }
+
+/* Staggered section entrance for visual rhythm */
+main > section:nth-child(2) { animation-delay: 0.08s; }
+main > section:nth-child(3) { animation-delay: 0.16s; }
+main > section:nth-child(4) { animation-delay: 0.24s; }
+main > section:nth-child(5) { animation-delay: 0.32s; }
+main > section:nth-child(6) { animation-delay: 0.40s; }
+main > section:nth-child(7) { animation-delay: 0.48s; }
+main > section:nth-child(8) { animation-delay: 0.56s; }
 
 /* Decorative utility helpers */
 .aurora {

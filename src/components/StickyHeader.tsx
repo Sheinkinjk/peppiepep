@@ -95,7 +95,7 @@ export function StickyHeader() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-cyan-500/30 transition-all duration-200 hover:bg-[#00767a] hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#008b8b]/25 transition-all duration-200 hover:bg-[#00767a] hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
               >
                 <Calendar className="h-4 w-4" />
                 Book Call
