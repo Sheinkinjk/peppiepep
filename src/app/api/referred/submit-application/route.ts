@@ -191,7 +191,7 @@ export async function POST(request: NextRequest) {
         🎯 New Referred Application
       </h1>
       <p style="margin: 8px 0 0; color: rgba(255, 255, 255, 0.9); font-size: 16px;">
-        A new business wants to join Refer Labs!
+        A new business has been referred to Refer Labs!
       </p>
     </div>
 
@@ -338,7 +338,7 @@ export async function POST(request: NextRequest) {
             <ul style="margin:0;padding-left:18px;color:#475569;font-size:13px;line-height:1.7;">
               <li>We review your business details and growth goals.</li>
               <li>A specialist reaches out within 24 hours to schedule a strategy call.</li>
-              <li>We prepare a custom referral program plan for ${businessName}.</li>
+              <li>We prepare a tailored engagement plan for ${businessName}.</li>
             </ul>
           </div>
           <p style="margin:16px 0 0;color:#475569;font-size:13px;">
@@ -347,7 +347,7 @@ export async function POST(request: NextRequest) {
         `,
         cta: {
           label: "Book a call",
-          url: "https://calendly.com/jarred-referlabs/30min?month=2026-01",
+          url: "https://calendly.com/jarred-referlabs/30min",
         },
         footerNote: "Questions? Reply to this email and we’ll assist.",
         brandName: "Refer Labs",

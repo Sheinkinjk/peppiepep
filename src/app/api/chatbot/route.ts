@@ -10,23 +10,22 @@ const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
-const LATEST_OFFERING_URL = "/our-referral-program";
+const systemPrompt = `You are the Refer Labs assistant — a knowledgeable chat guide that helps overseas companies understand how Refer Labs can be their Australian sales and partnerships arm.
 
-const systemPrompt = `You are Pepform's referral concierge—an in-depth chat guide that makes luxury service brands feel confident about launching referral programs.
-
-Pepform essentials:
-- Pricing: Base plan $499/mo (50 referrers, 5,000 SMS credits), Scale $599/mo (125 referrers, 12,500 credits, concierge branding), Enterprise is custom with unlimited referrers/messages and pooled SMS or ambassador buckets.
-- Every contact imported (CSV, CRM export, manual add) automatically receives a unique referral code + Tiffany-inspired referral lounge, so you can generate as many codes as you have contacts, with no extra fee.
-- The platform handles SMS + email concierge flows, wallet-ready perks, approvals/payouts, dashboards, and integrations.
-- SMS overages cost $0.05 per send; additional ambassadors require upgrading plans or Enterprise pooling.
-- Latest offering: the Refer Labs Concierge referral program (see ${LATEST_OFFERING_URL}) bundles concierge onboarding, messaging, and attribution for professional services.
+Refer Labs essentials:
+- We are a services business (not a SaaS product). We act as your on-the-ground sales rep, partnership builder, and distribution channel manager in Australia.
+- Three core services: (1) Direct Customer Acquisition — outbound, introductions, pipeline, deal support; (2) Partnerships & Distribution — agencies, platforms, channel partners; (3) Referral & Affiliate Channel Management — recruitment, enablement, attribution, optimisation.
+- Engagement models: 90-Day Pilot (fixed monthly fee + success fee, recommended starting point), Ongoing Retainer (6-month minimum, lower success fee), or Intro-Only (fixed fee per introduction, lighter touch).
+- Target clients: overseas B2B SaaS, fintech, marketplace, and subscription businesses entering Australia.
+- Typical 90-day pilot targets: 10-20 qualified prospect conversations, 3-8 distribution partner opportunities, 5-15 sales conversations.
+- We do not require exclusivity or equity.
 
 Mission:
-- Answer anything users ask (fees, referral codes, integrations, ROI, onboarding timelines) with confident, specific guidance rooted in the details above. If you don't have an answer, say so plainly and describe how to learn it.
-- Clarify vague prompts with follow-up questions so your response stays relevant. Summaries should reflect the user's exact scenario (industry, channel, volume) whenever mentioned.
-- When visitors show buying intent, steer them to press "Start Getting Referrals", explore the Refer Labs Concierge referral program, or book a concierge demo at https://calendly.com/jarred-referlabs/30min?month=2026-01. Mention both options in replies where it makes sense.
+- Answer questions about our services, pricing structure, engagement models, timelines, and how we work with confidence and specificity.
+- Clarify vague prompts with follow-up questions so your response stays relevant to the visitor's situation.
+- When visitors show buying intent, guide them to book a 15-minute expansion call at https://calendly.com/jarred-referlabs/30min.
 - Keep replies under ~220 words, formatted with short paragraphs or lightweight bullets, and maintain a premium-but-warm tone.
-- If a question is unrelated, offer a succinct helpful response and then show how Pepform still supports their growth goals. Never refuse harmless info.`;
+- If a question is unrelated, offer a succinct helpful response and then explain how Refer Labs can support their Australia growth goals. Never refuse harmless info.`;
 
 function buildFallbackReply(latestUserMessage?: string) {
   const normalized = latestUserMessage?.toLowerCase() ?? "";
@@ -34,56 +33,56 @@ function buildFallbackReply(latestUserMessage?: string) {
 
   if (latestUserMessage?.trim()) {
     sections.push(
-      `Thanks for the question about "${latestUserMessage.trim().slice(0, 160)}". Here’s how Pepform approaches it:`,
+      `Thanks for your question about "${latestUserMessage.trim().slice(0, 160)}". Here's how Refer Labs can help:`,
     );
   } else {
-    sections.push("Happy to help you map out Pepform's concierge referral engine:");
+    sections.push("Happy to help you learn about Refer Labs — your Australian sales and partnerships arm:");
   }
 
   if (/(fee|price|cost|pricing|plan)/i.test(normalized)) {
     sections.push(
-      "• Pricing: Base is $499/mo (50 referrers, 5,000 SMS credits) and Scale is $599/mo (125 referrers, 12,500 credits, concierge branding). Enterprise unlocks unlimited ambassadors/messages with pooled pricing across SMS and reward credits.",
+      "• Engagement models: We offer a 90-Day Pilot (fixed monthly fee + success fee on closed revenue or partner wins), an Ongoing Retainer (6-month minimum with lower success fee), or an Intro-Only option (fixed fee per introduction). Pricing is scoped during our initial call based on your target market and channels.",
     );
   }
 
-  if (/(code|referral code|link)/i.test(normalized)) {
+  if (/(partner|channel|distribution|agency)/i.test(normalized)) {
     sections.push(
-      "• Referral codes: every contact you import—CSV, CRM export, or manual add—automatically receives a unique referral code plus a Tiffany-inspired referral lounge. There’s no ceiling, so you can issue as many codes as your CRM holds.",
+      "• Partnerships & Distribution: We identify, recruit, and manage agency partners, platform integrations, and channel partners across Australia. Our 90-day pilot typically delivers 3-8 qualified distribution partner opportunities.",
     );
   }
 
-  if (/(sms|text|message|whatsapp|credits)/i.test(normalized)) {
+  if (/(affiliate|referral|commission)/i.test(normalized)) {
     sections.push(
-      "• Messaging: Base includes 5,000 SMS/WhatsApp credits monthly, Scale bumps that to 12,500, and additional sends are $0.05. Automated concierge flows handle launches, reminders, and perk unlocks.",
+      "• Affiliate & Referral Channels: We recruit affiliate partners, manage onboarding, set up attribution tracking, and optimise performance monthly. Expect 10-15 active affiliate partners within the first 90 days.",
     );
   }
 
-  if (/(payout|reward|approval|credit ledger|payments)/i.test(normalized)) {
+  if (/(sales|customer|outbound|pipeline|prospect)/i.test(normalized)) {
     sections.push(
-      "• Approvals & payouts: conversions sync into the dashboard so you can approve rewards, reload credits, and trigger ambassador notifications in minutes—no spreadsheets required.",
+      "• Customer Acquisition: We run outbound sequences, book and attend introductory meetings, and provide closing support on key opportunities. Typical pilot targets: 10-20 qualified prospect conversations and 5-15 sales conversations.",
     );
   }
 
-  if (/(integration|crm|import|sync)/i.test(normalized)) {
+  if (/(pilot|90.day|timeline|start|begin)/i.test(normalized)) {
     sections.push(
-      "• Integrations: upload spreadsheets, sync CRM exports, or use our API/webhooks. Pepform issues links, discount words, and wallet-ready perks automatically on import.",
+      "• 90-Day Pilot structure: Week 1 — ICP and messaging alignment. Weeks 2-3 — target list build. Weeks 4-12 — outreach, introductions, meetings, and closing support. You receive weekly reporting throughout.",
     );
   }
 
-  if (/(demo|call|speak|meeting|talk)/i.test(normalized)) {
+  if (/(demo|call|speak|meeting|talk|book)/i.test(normalized)) {
     sections.push(
-      "Happy to line up a concierge walkthrough—book a slot anytime: https://calendly.com/jarred-referlabs/30min?month=2026-01.",
+      "Happy to set up a quick call — book a 15-minute expansion call anytime: https://calendly.com/jarred-referlabs/30min.",
     );
   }
 
   if (sections.length === 1) {
     sections.push(
-      "Pepform automates concierge-level referral journeys end-to-end: ambassador onboarding, campaign messaging, Tiffany-inspired lounges, analytics, and payouts live in one workspace.",
+      "Refer Labs acts as your on-the-ground Australian sales rep and partnerships arm. We handle customer acquisition, partner distribution, and affiliate channel management — so you can enter Australia without hiring locally.",
     );
   }
 
   sections.push(
-    `Ready to experience it? Tap "Start Getting Referrals", explore the Refer Labs Concierge referral program at ${LATEST_OFFERING_URL}, or grab a white-glove demo slot: https://calendly.com/jarred-referlabs/30min?month=2026-01.`,
+    "Ready to explore Australia? Book a 15-minute expansion call: https://calendly.com/jarred-referlabs/30min.",
   );
 
   return sections.join("\n\n");
