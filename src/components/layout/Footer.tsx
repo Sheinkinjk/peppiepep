@@ -1,71 +1,90 @@
 import Link from "next/link";
 import { ReferLabsLogo } from "../ReferLabsLogo";
-import { NewsletterFooterForm } from "@/components/NewsletterFooterForm";
 
 export default function Footer() {
-  const linkClass =
-    "inline-flex min-h-[44px] items-center rounded-lg px-3 py-2.5 text-base text-slate-600 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0AA7B5]";
-
   return (
-    <footer className="mt-12 rounded-3xl bg-white/80 px-6 py-10 shadow-[0_30px_120px_rgba(6,16,32,0.08)] ring-1 ring-slate-900/5 backdrop-blur-xl">
-      <div className="grid w-full gap-10 lg:grid-cols-[repeat(3,minmax(0,1fr))_1.2fr]">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Company</p>
-          <ul className="mt-4 space-y-2">
-            <li><Link className={linkClass} href="/">Home</Link></li>
-            <li><Link className={linkClass} href="/how-it-works">How It Works</Link></li>
-            <li><Link className={linkClass} href="/services">Services</Link></li>
-            <li><Link className={linkClass} href="/who-its-for">Who It&apos;s For</Link></li>
-            <li><Link className={linkClass} href="/pricing">Pricing</Link></li>
-            <li><Link className={linkClass} href="/about">About</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Resources</p>
-          <ul className="mt-4 space-y-2">
-            <li><Link className={linkClass} href="/case-studies">Case Studies</Link></li>
-            <li><Link className={linkClass} href="/referral-partnerships">Referral Partnerships</Link></li>
-            <li><Link className={linkClass} href="/roi-calculator">Expansion Estimator</Link></li>
-            <li><Link className={linkClass} href="/linkedin-growth">Creator Partnerships</Link></li>
-            <li><Link className={linkClass} href="/lead-hacking">Partner Sourcing</Link></li>
-            <li><Link className={linkClass} href="/faq">FAQ</Link></li>
-            <li><Link className={linkClass} href="/contact">Contact</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Legal</p>
-          <ul className="mt-4 space-y-2">
-            <li><Link className={linkClass} href="/privacy">Privacy</Link></li>
-            <li><Link className={linkClass} href="/terms">Terms</Link></li>
-          </ul>
-        </div>
-
-        <div className="lg:justify-self-end">
-          <NewsletterFooterForm />
-        </div>
-      </div>
-
-      <div className="mt-10 flex w-full flex-col gap-4 border-t border-slate-200/80 pt-6 text-xs text-slate-500">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div className="space-y-1">
-            <p className="text-slate-700">Copyright 2026 Refer Labs. All rights reserved.</p>
-            <p className="text-slate-500">Your Australian sales &amp; partnerships arm.</p>
+    <footer className="border-t border-white/[0.08] bg-[#030d14]">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 py-12 sm:py-14">
+        {/* Top: Logo + Nav Columns */}
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
+          {/* Brand */}
+          <div className="max-w-xs space-y-4">
+            <Link href="/" className="inline-block" aria-label="Refer Labs home">
+              <ReferLabsLogo className="h-8 w-auto text-white/90" />
+            </Link>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Your Australian sales & partnerships arm. We help overseas companies enter Australia through local sales, partnerships, and distribution.
+            </p>
           </div>
-          <div className="flex flex-wrap gap-3 text-slate-500">
-            <Link className={linkClass} href="/terms">Terms</Link>
-            <span className="text-slate-300">|</span>
-            <Link className={linkClass} href="/privacy">Privacy</Link>
-            <span className="text-slate-300">|</span>
-            <Link className={linkClass} href="/contact">Contact</Link>
+
+          {/* Link Columns */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-14">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Company</p>
+              <ul className="space-y-2.5">
+                {[
+                  { href: "/how-it-works", label: "How It Works" },
+                  { href: "/services", label: "Services" },
+                  { href: "/who-its-for", label: "Who It's For" },
+                  { href: "/about", label: "About" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Resources</p>
+              <ul className="space-y-2.5">
+                {[
+                  { href: "/case-studies", label: "Case Studies" },
+                  { href: "/pricing", label: "Pricing" },
+                  { href: "/faq", label: "FAQ" },
+                  { href: "/contact", label: "Contact" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Legal</p>
+              <ul className="space-y-2.5">
+                {[
+                  { href: "/privacy", label: "Privacy" },
+                  { href: "/terms", label: "Terms" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="pt-1">
-          <Link href="/" className="flex items-center justify-center group cursor-pointer" aria-label="Refer Labs home">
-            <ReferLabsLogo className="h-10 w-auto text-[#0b2a34] transition-transform duration-200 group-hover:scale-105" />
-          </Link>
+        {/* Bottom Bar */}
+        <div className="mt-10 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="text-xs text-slate-500">
+            &copy; 2026 Refer Labs. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4 text-xs text-slate-500">
+            <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms</Link>
+            <span className="text-slate-700">|</span>
+            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
+            <span className="text-slate-700">|</span>
+            <a href="mailto:jarred@referlabs.com.au" className="hover:text-slate-300 transition-colors">jarred@referlabs.com.au</a>
+          </div>
         </div>
       </div>
     </footer>

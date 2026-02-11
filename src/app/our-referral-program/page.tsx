@@ -2,23 +2,16 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import {
   Users,
   TrendingUp,
-  CheckCircle,
+  CheckCircle2,
   ArrowRight,
-  Mail,
-  Phone,
-  User,
   Shield,
   Zap,
   Target,
-  Building2,
   Globe,
-  Share2,
+  Handshake,
+  DollarSign,
+  Calendar,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { createServiceClient } from "@/lib/supabase";
 import { redirect } from "next/navigation";
 import { nanoid } from "nanoid";
@@ -26,8 +19,11 @@ import { generateUniqueDiscountCode } from "@/lib/discount-codes";
 import { ensureAbsoluteUrl } from "@/lib/urls";
 import { PartnerApplicationSuccessModal } from "@/components/PartnerApplicationSuccessModal";
 import { logReferralEvent } from "@/lib/referral-events";
+import { PartnerSteppedForm } from "@/components/PartnerSteppedForm";
 
 export const metadata = generateSEOMetadata(seoConfig.partnerProgram);
+
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 async function submitPartnerApplication(formData: FormData) {
   "use server";
@@ -39,7 +35,6 @@ async function submitPartnerApplication(formData: FormData) {
   }
   const businessId = resolvedBusinessId;
 
-  // Check for attribution cookie from admin referral link
   const { cookies } = await import("next/headers");
   const cookieStore = await cookies();
   const refAmbassadorCookie = cookieStore.get("ref_ambassador");
@@ -50,7 +45,6 @@ async function submitPartnerApplication(formData: FormData) {
   if (refAmbassadorCookie?.value) {
     try {
       const ambassadorData = JSON.parse(refAmbassadorCookie.value);
-      // Check if cookie is still within 30-day window
       const cookieAge = Date.now() - (ambassadorData.timestamp || 0);
       const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
       if (cookieAge < thirtyDaysMs) {
@@ -221,7 +215,6 @@ async function submitPartnerApplication(formData: FormData) {
       },
     ]);
 
-    // Create referral record if attributed to an ambassador (e.g., admin's referral link)
     if (attributedAmbassadorId && attributedBusinessId) {
       try {
         const { data: referralData } = await supabase.from("referrals").insert([
@@ -233,7 +226,7 @@ async function submitPartnerApplication(formData: FormData) {
             referred_email: email,
             status: "pending",
             campaign_id: null,
-            consent_given: true, // Partner application implies consent
+            consent_given: true,
             locale: "en",
             metadata: {
               company,
@@ -244,7 +237,6 @@ async function submitPartnerApplication(formData: FormData) {
           },
         ]).select().single();
 
-        // Create signup bonus commission for the ambassador
         if (referralData) {
           try {
             await supabase.from("stripe_commissions").insert([
@@ -252,10 +244,10 @@ async function submitPartnerApplication(formData: FormData) {
                 business_id: attributedBusinessId,
                 ambassador_id: attributedAmbassadorId,
                 referral_id: referralData.id,
-                amount: 10000, // $100 AUD signup bonus
+                amount: 10000,
                 currency: "aud",
                 commission_type: "signup_bonus",
-                status: "approved", // Auto-approve signup bonuses
+                status: "approved",
                 approved_at: new Date().toISOString(),
                 metadata: {
                   rule: "Partner signup bonus",
@@ -267,11 +259,9 @@ async function submitPartnerApplication(formData: FormData) {
             ]);
           } catch (commissionError) {
             console.error("Failed to create commission:", commissionError);
-            // Don't fail application if commission creation fails
           }
         }
 
-        // Log the referral signup event
         await logReferralEvent({
           supabase,
           businessId: attributedBusinessId,
@@ -290,7 +280,6 @@ async function submitPartnerApplication(formData: FormData) {
         });
       } catch (refError) {
         console.error("Failed to create referral record:", refError);
-        // Don't fail the entire application if referral tracking fails
       }
     } else {
       try {
@@ -320,7 +309,6 @@ async function submitPartnerApplication(formData: FormData) {
     const referralLink = referralCode ? `${siteOrigin}/r/${referralCode}` : null;
 
     if (process.env.RESEND_API_KEY) {
-      // Send confirmation email to applicant
       if (email) {
         try {
           await fetch("https://api.resend.com/emails", {
@@ -332,33 +320,30 @@ async function submitPartnerApplication(formData: FormData) {
             body: JSON.stringify({
               from: "Refer Labs Partner Program <jarred@referlabs.com.au>",
               to: [email],
-              subject: "Your Partner Program Application - Refer Labs",
+              subject: "Your Referral Partner Application - Refer Labs",
               html: `
               <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
                 <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
-                  <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">Partner Program</p>
+                  <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">Referral Partner Program</p>
                   <h1 style="margin:8px 0 0;font-size:28px;font-weight:800;">Application Received!</h1>
                   <p style="margin:4px 0 0;font-size:16px;opacity:0.9;">Thank you for your interest, ${fullName || fallbackName}</p>
                 </div>
                 <div style="padding:32px;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 24px 24px;background:white;">
                   <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#0f172a;">
-                    We've received your application to join the Refer Labs Partner Program. Our team will review your submission and get back to you <strong>within 2 business days</strong>.
+                    We've received your application to join the Refer Labs Referral Partner Program. Our team will review your submission and get back to you <strong>within 2 business days</strong>.
                   </p>
-
                   <div style="margin:24px 0;padding:16px;border-radius:16px;background:#ecfdf5;border:1px solid #bbf7d0;">
-                    <p style="margin:0 0 8px;font-weight:600;color:#065f46;">✅ What's Next?</p>
+                    <p style="margin:0 0 8px;font-weight:600;color:#065f46;">What's Next?</p>
                     <ul style="margin:0;padding-left:20px;color:#065f46;font-size:14px;line-height:1.8;">
-                      <li>We'll review your application details</li>
-                      <li>If approved, you'll receive your unique affiliate link</li>
-                      <li>You'll get access to partner marketing resources</li>
-                      <li>Start earning 25% recurring revenue on every affiliate</li>
+                      <li>We'll review your application and network</li>
+                      <li>If approved, you'll receive onboarding details</li>
+                      <li>Start referring overseas companies to Refer Labs</li>
+                      <li>Earn commission on every deal we close from your introductions</li>
                     </ul>
                   </div>
-
                   <p style="margin:24px 0 0;font-size:14px;color:#475569;">
                     If you have any questions in the meantime, feel free to reply to this email.
                   </p>
-
                   <div style="margin-top:32px;padding-top:24px;border-top:1px solid #e2e8f0;">
                     <p style="margin:0;font-size:12px;color:#94a3b8;">
                       Best regards,<br/>
@@ -372,11 +357,9 @@ async function submitPartnerApplication(formData: FormData) {
           });
         } catch (emailError) {
           console.error("Failed to send applicant confirmation email", emailError);
-          // Non-fatal - don't block application
         }
       }
 
-      // Send notification email to admin
       try {
         await fetch("https://api.resend.com/emails", {
           method: "POST",
@@ -387,11 +370,11 @@ async function submitPartnerApplication(formData: FormData) {
           body: JSON.stringify({
             from: "Refer Labs Partner Program <jarred@referlabs.com.au>",
             to: ["jarred@referlabs.com.au"],
-            subject: `New affiliate program applicant: ${fallbackName}`,
+            subject: `New referral partner applicant: ${fallbackName}`,
             html: `
             <div style="font-family:Inter,system-ui,-apple-system,sans-serif;margin:0 auto;max-width:640px;">
               <div style="padding:32px;border-radius:24px 24px 0 0;background:linear-gradient(135deg,#0abab5,#24d9e2);color:white;">
-                <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">New applicant</p>
+                <p style="margin:0;text-transform:uppercase;letter-spacing:0.3em;font-size:12px;">New Referral Partner</p>
                 <h1 style="margin:8px 0 0;font-size:28px;font-weight:800;">${fallbackName}</h1>
                 ${company ? `<p style="margin:4px 0 0;font-size:16px;">${company}</p>` : ""}
               </div>
@@ -404,8 +387,8 @@ async function submitPartnerApplication(formData: FormData) {
                   ${instagram_handle ? `<li style="margin:6px 0;"><strong>Instagram:</strong> @${instagram_handle}</li>` : ""}
                   ${linkedin_handle ? `<li style="margin:6px 0;"><strong>LinkedIn:</strong> ${linkedin_handle}</li>` : ""}
                 </ul>
-                ${audience_profile ? `<div style="margin-top:16px;"><strong>Audience:</strong><p style="margin:6px 0;color:#475569;">${audience_profile}</p></div>` : ""}
-                ${notes ? `<div style="margin-top:16px;"><strong>Launch plan:</strong><p style="margin:6px 0;color:#475569;">${notes}</p></div>` : ""}
+                ${audience_profile ? `<div style="margin-top:16px;"><strong>Network:</strong><p style="margin:6px 0;color:#475569;">${audience_profile}</p></div>` : ""}
+                ${notes ? `<div style="margin-top:16px;"><strong>Notes:</strong><p style="margin:6px 0;color:#475569;">${notes}</p></div>` : ""}
                 ${
                   referralLink
                     ? `<div style="margin-top:24px;padding:16px;border-radius:16px;background:#ecfdf5;border:1px solid #bbf7d0;">
@@ -418,8 +401,8 @@ async function submitPartnerApplication(formData: FormData) {
                 ${
                   attributedAmbassadorCode
                     ? `<div style="margin-top:16px;padding:16px;border-radius:16px;background:#fef3c7;border:1px solid #fcd34d;">
-                        <p style="margin:0 0 4px;font-weight:600;color:#92400e;">🎯 Referred by Ambassador</p>
-                        <p style="margin:0;font-size:14px;color:#78350f;">This application was attributed to referral code: <strong>${attributedAmbassadorCode}</strong></p>
+                        <p style="margin:0 0 4px;font-weight:600;color:#92400e;">Referred by Ambassador</p>
+                        <p style="margin:0;font-size:14px;color:#78350f;">Attributed to referral code: <strong>${attributedAmbassadorCode}</strong></p>
                         <p style="margin:4px 0 0;font-size:12px;color:#92400e;">A referral record has been created in the dashboard.</p>
                       </div>`
                     : ""
@@ -460,420 +443,292 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
   const utmCampaign =
     typeof resolvedParams.utm_campaign === "string" ? resolvedParams.utm_campaign : undefined;
   const formSource = "partner_program";
+
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* Success Modal */}
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
+      </div>
+
       <PartnerApplicationSuccessModal />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#5ce1e6] py-20 sm:py-32">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              Earn 25% Recurring Revenue<br />
-              <span className="text-[#0a4b53]">For Every Client You Refer</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Join our partner program and earn passive income by introducing businesses to the world&rsquo;s most elegant affiliate platform.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="#apply">
-                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-50 text-lg px-8 py-6 rounded-2xl shadow-2xl">
-                  Apply Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-    </section>
+      <main id="main-content" className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
 
-      {/* Rewards Section */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
-              Partner Program Benefits
+        {/* Hero */}
+        <section className="text-center space-y-8 mb-24">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 px-4 py-1.5 backdrop-blur-sm">
+            <Handshake className="h-3.5 w-3.5 text-cyan-400" />
+            <span className="text-xs font-semibold text-white/80 tracking-wide">Referral Partner Program</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
+            Earn Commission by Referring{" "}
+            <span className="text-cyan-400">Companies to Refer Labs</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+            Know an overseas company looking to enter the Australian market? Introduce them to Refer Labs and earn a commission on every deal we close from your referral.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+            <a
+              href="#apply"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+            >
+              Apply Now
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+            >
+              <Calendar className="h-4 w-4" />
+              Schedule a Call
+            </a>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="mb-24">
+          <div className="text-center space-y-4 mb-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">How it works</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              Simple, Transparent, Rewarding
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The most generous partner program in the affiliate marketing industry
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-emerald-200 bg-white shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
-              <div className="relative">
-                <div className="inline-flex items-center gap-3 mb-6">
-                  <div className="rounded-2xl bg-[#5ce1e6] p-4 shadow-lg">
-                    <TrendingUp className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-black text-slate-900">25% Recurring Revenue</h3>
-                    <p className="text-slate-600 text-sm">For the lifetime of every client</p>
-                  </div>
-                </div>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-slate-700 text-sm">Earn 25% of monthly subscription fees forever</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-slate-700 text-sm">No cap on earnings - refer unlimited clients</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-slate-700 text-sm">Monthly payouts via direct deposit or credit</p>
-                  </div>
-                </div>
-                <div className="p-4 bg-emerald-100 rounded-2xl border border-emerald-300/50">
-                  <p className="text-sm font-bold text-emerald-900">
-                    💰 Example: Refer 10 clients at $200/mo = $500/mo recurring
-                  </p>
-                </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                num: "01",
+                title: "Apply",
+                desc: "Submit a quick application telling us about your network and how you connect with overseas companies.",
+              },
+              {
+                num: "02",
+                title: "Get Approved",
+                desc: "We review your application and onboard you as a referral partner within 2 business days.",
+              },
+              {
+                num: "03",
+                title: "Make Introductions",
+                desc: "Introduce overseas companies looking to enter Australia. We handle the sales conversation from there.",
+              },
+              {
+                num: "04",
+                title: "Earn Commission",
+                desc: "Receive a commission on every deal we close from your referral. Paid monthly, no cap on earnings.",
+              },
+            ].map((step) => (
+              <div key={step.num} className="rounded-2xl bg-white/[0.03] border border-white/[0.08] p-6 hover:border-white/15 transition-colors">
+                <span className="text-cyan-400 text-xs font-black tracking-wider">{step.num}</span>
+                <h3 className="text-white font-bold mt-3 mb-2">{step.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
               </div>
-            </Card>
-
-            <Card className="relative overflow-hidden p-8 rounded-3xl border-2 border-cyan-200 bg-white shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02]">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl"></div>
-              <div className="relative">
-                <div className="inline-flex items-center gap-3 mb-6">
-                  <div className="rounded-2xl bg-[#5ce1e6] p-4 shadow-lg">
-                    <Shield className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-black text-slate-900">Partner Support</h3>
-                    <p className="text-slate-600 text-sm">Everything you need to succeed</p>
-                  </div>
-                </div>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-slate-700 text-sm">Dedicated partner success manager</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-slate-700 text-sm">Custom marketing materials and resources</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-cyan-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-slate-700 text-sm">Real-time dashboard to track your earnings</p>
-                  </div>
-                </div>
-                <div className="p-4 bg-cyan-100 rounded-2xl border border-cyan-300/50">
-                  <p className="text-sm font-bold text-cyan-900">
-                    🎯 We help you close deals and maximize your income
-                  </p>
-                </div>
-              </div>
-            </Card>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* What You'll Be Promoting */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(14,165,233,0.08),transparent_50%)]"></div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
-              What You&apos;ll Be Promoting
+        {/* What You Earn */}
+        <section className="mb-24">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Commission Card */}
+            <div className="relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.08] to-transparent p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(10,167,181,0.12),transparent_50%)]" />
+              <div className="relative">
+                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5">
+                  <DollarSign className="h-6 w-6 text-cyan-400" />
+                </div>
+                <h3 className="text-2xl font-black text-white mb-2">Referral Commission</h3>
+                <p className="text-slate-400 text-sm mb-5">For every company that becomes a client</p>
+                <div className="space-y-3">
+                  {[
+                    "Commission paid on closed retainer deals",
+                    "No cap on number of referrals",
+                    "Monthly payouts via direct deposit",
+                    "Transparent tracking of all your referrals",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3">
+                      <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                      <p className="text-slate-300 text-sm">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Support Card */}
+            <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8">
+              <div className="relative">
+                <div className="h-12 w-12 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center mb-5">
+                  <Shield className="h-6 w-6 text-cyan-400" />
+                </div>
+                <h3 className="text-2xl font-black text-white mb-2">Partner Support</h3>
+                <p className="text-slate-400 text-sm mb-5">Everything you need to refer with confidence</p>
+                <div className="space-y-3">
+                  {[
+                    "Dedicated partner manager for your referrals",
+                    "Collateral and pitch materials to share",
+                    "Real-time updates on referral status",
+                    "We handle the entire sales process end-to-end",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3">
+                      <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                      <p className="text-slate-300 text-sm">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ideal Referral Partners */}
+        <section className="mb-24">
+          <div className="text-center space-y-4 mb-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Who should apply</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              Ideal Referral Partners
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The world&rsquo;s most elegant affiliate marketing platform for premium businesses
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              You do not need to be in sales. If you have relationships with overseas companies considering Australia, you are a great fit.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-cyan-400 hover:shadow-2xl transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
-              <div className="relative">
-                <div className="rounded-2xl bg-[#5ce1e6] p-3 w-fit mb-4 shadow-lg">
-                  <Users className="h-6 w-6 text-white" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                icon: Globe,
+                title: "Consultants & Advisors",
+                desc: "Business consultants, market entry advisors, and go-to-market strategists who work with companies expanding internationally.",
+              },
+              {
+                icon: Users,
+                title: "Investors & VCs",
+                desc: "Angel investors, VCs, and fund managers with portfolio companies looking to enter the Australian or APAC market.",
+              },
+              {
+                icon: Handshake,
+                title: "Agency Founders",
+                desc: "Digital agencies, PR firms, and marketing agencies with overseas clients who want Australian customers.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Accelerator Alumni",
+                desc: "Founders and mentors connected to startup ecosystems with companies looking for APAC distribution.",
+              },
+              {
+                icon: Zap,
+                title: "Industry Connectors",
+                desc: "People with strong networks across SaaS, fintech, healthtech, or e-commerce who frequently make introductions.",
+              },
+              {
+                icon: Target,
+                title: "Former Executives",
+                desc: "Ex-founders or executives with international networks and relationships with companies at the $1M-$50M revenue stage.",
+              },
+            ].map((profile) => (
+              <div key={profile.title} className="rounded-2xl bg-white/[0.03] border border-white/5 p-6 hover:border-white/10 transition-colors">
+                <div className="h-10 w-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                  <profile.icon className="h-5 w-5 text-cyan-400" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Automated Ambassador Programs</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Businesses turn their best customers into brand ambassadors with personalized affiliate links, discount codes, and automated tracking.
-                </p>
+                <h3 className="text-white font-bold mb-2">{profile.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{profile.desc}</p>
               </div>
-            </Card>
-
-            <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-purple-400 hover:shadow-2xl transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
-              <div className="relative">
-                <div className="rounded-2xl bg-[#5ce1e6] p-3 w-fit mb-4 shadow-lg">
-                  <Zap className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Campaign Management</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Send SMS and email campaigns to ambassadors, track performance in real-time, and measure ROI with precision analytics.
-                </p>
-              </div>
-            </Card>
-
-            <Card className="relative overflow-hidden group p-6 rounded-3xl border-2 border-slate-200 bg-white hover:border-emerald-400 hover:shadow-2xl transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
-              <div className="relative">
-                <div className="rounded-2xl bg-[#5ce1e6] p-3 w-fit mb-4 shadow-lg">
-                  <Target className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">White-Glove Onboarding</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Every client gets personalized setup, custom integrations, and ongoing support - making your affiliates sticky and profitable.
-                </p>
-              </div>
-            </Card>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* How It Works */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
-              How Partner Earnings Work
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Simple, transparent, and highly profitable
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
-                1
+        {/* What We Do With Your Referrals */}
+        <section className="mb-24">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(10,167,181,0.1),transparent_50%)]" />
+            <div className="relative">
+              <div className="text-center mb-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-3">Your referral is in good hands</p>
+                <h2 className="text-3xl sm:text-4xl font-black text-white">
+                  What Happens After You Refer
+                </h2>
               </div>
-              <h3 className="font-bold text-slate-900 mb-2">Apply & Get Approved</h3>
-              <p className="text-sm text-slate-600">Submit your application and receive your unique affiliate link</p>
-            </div>
 
-            <div className="text-center">
-              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
-                2
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                {[
+                  "We reach out within 24 hours of your introduction",
+                  "Full scoping call to understand their product and goals",
+                  "Tailored 90-day pilot proposal for Australian market entry",
+                  "Sales, partnerships, and distribution executed in parallel",
+                  "Weekly reporting so you stay informed on progress",
+                  "Commission paid when the deal closes",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+                    <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                    <p className="text-slate-300 text-sm font-medium">{item}</p>
+                  </div>
+                ))}
               </div>
-              <h3 className="font-bold text-slate-900 mb-2">Share Your Link</h3>
-              <p className="text-sm text-slate-600">Introduce businesses to Refer Labs using your personalized affiliate link</p>
-            </div>
-
-            <div className="text-center">
-              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
-                3
-              </div>
-              <h3 className="font-bold text-slate-900 mb-2">They Sign Up</h3>
-              <p className="text-sm text-slate-600">Your affiliate becomes a paying customer with our white-glove onboarding</p>
-            </div>
-
-            <div className="text-center">
-              <div className="rounded-full bg-[#5ce1e6] w-16 h-16 flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black">
-                4
-              </div>
-              <h3 className="font-bold text-slate-900 mb-2">Earn Forever</h3>
-              <p className="text-sm text-slate-600">Receive 25% of their subscription every month for the lifetime of the client</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Application Form */}
-      <section id="apply" className="py-20 bg-slate-900">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 mb-6">
-              <Shield className="h-4 w-4 text-emerald-400" />
-              <span className="text-sm font-semibold text-white">Limited Partner Slots Available</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white mb-4">
-              Apply to Become a Partner
-            </h2>
-            <p className="text-xl text-slate-300">
-              Start earning passive income today
-            </p>
-          </div>
-
-            <Card className="p-8 sm:p-10 rounded-3xl border-2 border-slate-700 bg-slate-800 shadow-2xl">
-              {applied && (
-                <div className="mb-6 rounded-2xl border border-emerald-400/40 bg-emerald-900/30 p-4 text-sm text-emerald-100">
-                  ✅ Application received. We also created your ambassador profile so you can edit everything under{" "}
-                  <span className="font-semibold text-white">Step 2 → Edit Program Settings</span> once you log in.
-                </div>
-              )}
-              {applyError && (
-                <div className="mb-6 rounded-2xl border border-red-400/40 bg-red-900/30 p-4 text-sm text-red-100">
-                  We couldn&apos;t record your application automatically. Please try again or email <a href="mailto:jarred@referlabs.com.au" className="underline">jarred@referlabs.com.au</a>.
-                </div>
-              )}
-            <form action={submitPartnerApplication} className="space-y-6">
-              <input type="hidden" name="source" value={formSource} />
-              <input type="hidden" name="utm_source" value={utmSource ?? "direct"} />
-              <input type="hidden" name="utm_campaign" value={utmCampaign ?? "direct"} />
-                <input type="hidden" name="source" value="our-referral-program" />
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <Label htmlFor="name" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                      <User className="h-4 w-4" />
-                      Full Name *
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      placeholder="John Smith"
-                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                      <Phone className="h-4 w-4" />
-                      Phone Number
-                    </Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+61 4 123 456"
-                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <Label htmlFor="email" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                      <Mail className="h-4 w-4" />
-                      Email Address *
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="john@example.com"
-                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="company" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                      <Building2 className="h-4 w-4" />
-                      Business Name *
-                    </Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      type="text"
-                      required
-                      placeholder="Refer Labs"
-                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <Label htmlFor="website" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                      <Globe className="h-4 w-4" />
-                      Website / Primary URL *
-                    </Label>
-                    <Input
-                      id="website"
-                      name="website"
-                      type="url"
-                      required
-                      placeholder="https://referlabs.com.au"
-                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="instagram_handle" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                      <Share2 className="h-4 w-4" />
-                      Instagram Handle
-                    </Label>
-                    <Input
-                      id="instagram_handle"
-                      name="instagram_handle"
-                      type="text"
-                      placeholder="@referlabs"
-                      className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="linkedin_handle" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                    <Share2 className="h-4 w-4 rotate-45" />
-                    LinkedIn Profile / URL
-                  </Label>
-                  <Input
-                    id="linkedin_handle"
-                    name="linkedin_handle"
-                    type="text"
-                    placeholder="linkedin.com/in/referlabs"
-                    className="rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 h-12 text-base focus:border-[#0abab5]"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="audience_profile" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                    <Users className="h-4 w-4" />
-                    Who do you typically sell to?
-                  </Label>
-                  <Textarea
-                    id="audience_profile"
-                    name="audience_profile"
-                    placeholder="Beauty clinics in Sydney, boutique fitness studios, luxury eCommerce merchants, etc."
-                    className="min-h-[120px] rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 focus:border-[#0abab5]"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="notes" className="text-white text-base font-semibold flex items-center gap-2 mb-2">
-                    <Target className="h-4 w-4" />
-                    How will you promote Refer Labs?
-                  </Label>
-                  <Textarea
-                    id="notes"
-                    name="notes"
-                    placeholder="Share any launch ideas, warm accounts, or channels where you plan to promote Refer Labs."
-                    className="min-h-[120px] rounded-2xl border-2 border-slate-600 bg-slate-700 text-white placeholder:text-slate-400 focus:border-[#0abab5]"
-                  />
-                </div>
-
-              <div className="p-6 bg-emerald-900/20 border-2 border-emerald-500/30 rounded-2xl">
-                <div className="flex items-start gap-3 mb-4">
-                  <CheckCircle className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-white mb-1">What happens after you apply:</p>
-                  <ul className="text-sm text-slate-300 space-y-1">
-                    <li>• We&rsquo;ll review your application within 24 hours</li>
-                    <li>• Upon approval, receive your unique affiliate link & discount code</li>
-                    <li>• Access to partner resources and marketing materials</li>
-                    <li>• Start earning 25% recurring revenue on every affiliate</li>
-                    <li>• Edit every field again inside Step 2 → Edit Program Settings</li>
-                  </ul>
-                  </div>
-                </div>
-              </div>
-
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-[#5ce1e6] hover:bg-[#4dd4d9] text-slate-900 text-lg font-bold py-6 rounded-2xl shadow-2xl"
-              >
-                Submit Application
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-
-              <p className="text-center text-xs text-slate-400">
-                By applying, you agree to our partner terms and conditions
+        {/* Application Form */}
+        <section id="apply" className="mb-24 scroll-mt-24">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 sm:p-12">
+            <div className="text-center mb-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-3">Apply now</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
+                Become a Referral Partner
+              </h2>
+              <p className="text-slate-400 max-w-xl mx-auto">
+                Tell us about yourself and your network. Applications are reviewed within 2 business days.
               </p>
-            </form>
-          </Card>
-        </div>
-      </section>
+            </div>
 
+            <div className="max-w-2xl mx-auto">
+              <PartnerSteppedForm
+                formAction={submitPartnerApplication}
+                formSource={formSource}
+                utmSource={utmSource}
+                utmCampaign={utmCampaign}
+                applied={applied}
+                applyError={applyError}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
+          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
+            <div className="max-w-2xl mx-auto space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Have Questions About the Program?
+              </h2>
+              <p className="text-lg text-slate-300">
+                Book a quick call and we will walk you through how the referral partner program works and whether it is the right fit.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Schedule a Call
+                </a>
+                <a
+                  href="#apply"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+                >
+                  Apply Now
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
