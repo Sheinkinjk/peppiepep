@@ -21,6 +21,9 @@ export default function Footer() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Resources</p>
           <ul className="mt-4 space-y-2 text-sm text-slate-600">
             <li><Link className="hover:text-slate-900" href="/case-studies">Case Studies</Link></li>
+            <li><Link className="hover:text-slate-900" href="/roi-calculator">Expansion Estimator</Link></li>
+            <li><Link className="hover:text-slate-900" href="/linkedin-growth">Creator Partnerships</Link></li>
+            <li><Link className="hover:text-slate-900" href="/lead-hacking">Partner Sourcing</Link></li>
             <li><Link className="hover:text-slate-900" href="/faq">FAQ</Link></li>
             <li><Link className="hover:text-slate-900" href="/contact">Contact</Link></li>
           </ul>

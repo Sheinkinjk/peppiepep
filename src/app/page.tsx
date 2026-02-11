@@ -35,10 +35,10 @@ export default function Home() {
             {/* Left Column */}
             <div className="relative z-10 text-center lg:text-left">
               <h1 className="font-black tracking-tight mb-6">
-                <span className="block text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-white">
+                <span className="block text-[1.75rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-white">
                   Your Australian Sales
                 </span>
-                <span className="block text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-[#57E6FF]">
+                <span className="block text-[1.75rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-[#57E6FF]">
                   &amp; Partnerships Arm
                 </span>
               </h1>
