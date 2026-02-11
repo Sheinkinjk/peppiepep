@@ -15,7 +15,7 @@ const navLinks = [
   { href: "/who-its-for", label: "Who It's For" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/about", label: "About" },
 ];
 
 export function StickyHeader() {

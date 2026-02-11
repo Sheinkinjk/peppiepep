@@ -8,6 +8,9 @@ import {
   Target,
   Users,
   Zap,
+  BarChart3,
+  FileSignature,
+  Shield,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -17,38 +20,38 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 export default function About() {
   return (
-    <div className="relative min-h-screen overflow-hidden text-slate-900">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
+      </div>
 
-      {/* Hero (Dark) */}
-      <section className="relative bg-gradient-to-b from-[#024b56] via-[#036572] to-[#047a87] overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_0%,rgba(87,230,255,0.12),transparent_50%)]" />
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 pt-16 sm:pt-24 pb-20 sm:pb-28 text-center">
-          <div className="inline-flex items-center gap-2 rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 mb-6 backdrop-blur-sm">
-            <Globe className="h-3.5 w-3.5 text-[#57E6FF]" />
-            <span className="text-xs font-semibold text-white/90 tracking-wide">About Refer Labs</span>
+      <main id="main-content" className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+
+        {/* Hero */}
+        <section className="text-center space-y-8 mb-28">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 px-4 py-1.5 backdrop-blur-sm">
+            <Globe className="h-3.5 w-3.5 text-cyan-400" />
+            <span className="text-xs font-semibold text-white/80 tracking-wide">About Refer Labs</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight mb-6">
-            Your Australian <span className="text-[#57E6FF]">Sales &amp; Partnerships Arm</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
+            Your Australian{" "}
+            <span className="text-cyan-400">Sales &amp; Partnerships Arm</span>
           </h1>
-          <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
-            We help overseas companies enter Australia by sourcing customers, building strategic partnerships, and structuring distribution deals - all on a retainer + commission model.
+          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+            We help overseas companies enter Australia and APAC by sourcing customers, building strategic partnerships, and structuring distribution deals - all on a retainer + commission model.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* The Problem We Solve */}
-      <section className="relative bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">The problem</p>
-              <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] leading-[1.1] mb-6">
+        {/* The Story */}
+        <section className="mb-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="space-y-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Why we exist</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-white leading-[1.1]">
                 Expanding Into Australia Is Harder Than It Looks
               </h2>
-              <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
                 <p>
                   Overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, and distribution.
                 </p>
@@ -67,33 +70,28 @@ export default function About() {
                 { num: "03", text: "Hiring a full-time local rep too early is expensive and slow to ramp." },
                 { num: "04", text: "You need revenue signals and validated channels before committing headcount." },
               ].map((item) => (
-                <div key={item.num} className="flex items-start gap-4 p-5 rounded-xl border border-slate-200/80 bg-white">
-                  <span className="text-[#0AA7B5] text-sm font-black flex-shrink-0 mt-0.5">{item.num}</span>
-                  <p className="text-slate-700 text-sm leading-relaxed">{item.text}</p>
+                <div key={item.num} className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
+                  <span className="text-cyan-400 text-sm font-black flex-shrink-0 mt-0.5">{item.num}</span>
+                  <p className="text-slate-300 text-sm leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* What We Do */}
-      <section className="relative bg-[#024b56] py-16 sm:py-24 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(10,167,181,0.15),transparent_50%)]" />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#57E6FF] mb-3">What we do</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+        {/* Three Core Services */}
+        <section className="mb-28">
+          <div className="text-center space-y-4 mb-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">What we do</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
               Three Core Services, One Commercial Arm
             </h2>
-            <p className="text-white/60 text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
               Each service is managed end-to-end. You get clients, partners, and distribution - without building a local team.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-5">
             {[
               {
                 icon: Target,
@@ -106,124 +104,117 @@ export default function About() {
                 desc: "Source and activate agencies, consultancies, platforms, and strategic partners who can resell or distribute your product.",
               },
               {
-                icon: Zap,
+                icon: FileSignature,
                 title: "Distribution Deals",
                 desc: "Structure and negotiate white-label deals, reseller agreements, and enterprise distribution contracts.",
               },
             ].map((service) => (
-              <div key={service.title} className="flex items-start gap-4 p-6 rounded-xl bg-white/[0.06] border border-white/10">
-                <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/20 flex items-center justify-center flex-shrink-0">
-                  <service.icon className="h-6 w-6 text-[#57E6FF]" />
+              <div key={service.title} className="rounded-2xl bg-white/[0.03] border border-white/5 p-7 hover:border-white/10 transition-colors">
+                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5">
+                  <service.icon className="h-6 w-6 text-cyan-400" />
                 </div>
-                <div>
-                  <h3 className="text-white font-bold text-sm mb-1">{service.title}</h3>
-                  <p className="text-white/55 text-xs leading-relaxed">{service.desc}</p>
-                </div>
+                <h3 className="text-white font-bold mb-2">{service.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{service.desc}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Mission, Vision, Values */}
-      <section className="relative bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
+        {/* Mission, Vision, Values */}
+        <section className="mb-28">
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-7">
-              <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 flex items-center justify-center mb-5">
-                <Target className="h-5 w-5 text-[#0AA7B5]" />
-              </div>
-              <h3 className="text-lg font-bold text-[#0b2a34] mb-2">Our Mission</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Make Australian market entry achievable for any overseas company with a proven product - without hiring locally or guessing at the market.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-7">
-              <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 flex items-center justify-center mb-5">
-                <Globe className="h-5 w-5 text-[#0AA7B5]" />
-              </div>
-              <h3 className="text-lg font-bold text-[#0b2a34] mb-2">Our Vision</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Be the default way overseas companies enter the Australian market - through local sales execution, strategic partnerships, and structured distribution.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-7">
-              <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 flex items-center justify-center mb-5">
-                <Users className="h-5 w-5 text-[#0AA7B5]" />
-              </div>
-              <h3 className="text-lg font-bold text-[#0b2a34] mb-2">Our Values</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Execution over theory. Transparency over vanity metrics. Aligned incentives over upfront fees. We succeed when our clients generate Australian revenue.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How We Work */}
-      <section className="relative bg-[#f6fdfe] py-16 sm:py-24">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">How we work</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
-              The Refer Labs Approach
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {[
-              "Retainer + commission model - we earn when you earn",
-              "90-day structured pilots with weekly reporting",
-              "Sales, partnerships, and distribution running in parallel",
-              "No equity, no exclusivity clauses",
-              "We join your CRM and report like an internal team",
-              "Target: $1M-$50M revenue companies entering Australia",
+              {
+                icon: Target,
+                title: "Our Mission",
+                desc: "Make Australian market entry achievable for any overseas company with a proven product - without hiring locally or guessing at the market.",
+              },
+              {
+                icon: Globe,
+                title: "Our Vision",
+                desc: "Be the default way overseas companies enter the Australian and APAC markets - through local sales execution, strategic partnerships, and structured distribution.",
+              },
+              {
+                icon: Shield,
+                title: "Our Values",
+                desc: "Execution over theory. Transparency over vanity metrics. Aligned incentives over upfront fees. We succeed when our clients generate Australian revenue.",
+              },
             ].map((item) => (
-              <div key={item} className="flex items-center gap-3 p-5 rounded-xl border border-slate-200/80 bg-white">
-                <CheckCircle2 className="h-5 w-5 text-[#0AA7B5] flex-shrink-0" />
-                <p className="text-slate-700 text-sm font-medium">{item}</p>
+              <div key={item.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7">
+                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5">
+                  <item.icon className="h-5 w-5 text-cyan-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="relative bg-gradient-to-b from-[#024b56] via-[#03606d] to-[#024b56] py-20 sm:py-28 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(10,167,181,0.15),transparent_45%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(87,230,255,0.08),transparent_45%)]" />
-        </div>
-        <div className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-            Ready to Enter the Australian Market?
-          </h2>
-          <p className="text-base sm:text-lg text-white/70 mb-8 max-w-xl mx-auto">
-            Book a 15-minute call and we will discuss your product, your goals in Australia, and scope a 90-day pilot.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
-            >
-              <Calendar className="h-4 w-4" />
-              Book a 15-min Expansion Call
-            </a>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
-            >
-              View Services
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+        {/* How We Work */}
+        <section className="mb-28">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(10,167,181,0.1),transparent_50%)]" />
+            <div className="relative">
+              <div className="text-center mb-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-3">How we work</p>
+                <h2 className="text-3xl sm:text-4xl font-black text-white">
+                  The Refer Labs Approach
+                </h2>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                {[
+                  "Retainer + commission model - we earn when you earn",
+                  "90-day structured pilots with weekly reporting",
+                  "Sales, partnerships, and distribution running in parallel",
+                  "No equity, no exclusivity clauses",
+                  "We join your CRM and report like an internal team",
+                  "Target: $1M-$50M revenue companies entering Australia",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+                    <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                    <p className="text-slate-300 text-sm font-medium">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
+        {/* Final CTA */}
+        <section className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
+          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
+            <div className="max-w-2xl mx-auto space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Ready to Enter the Australian Market?
+              </h2>
+              <p className="text-lg text-slate-300">
+                Book a 15-minute call and we will discuss your product, your goals in Australia, and scope a 90-day pilot.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Schedule a Call
+                </a>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+                >
+                  View Services
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

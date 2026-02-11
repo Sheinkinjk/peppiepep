@@ -29,106 +29,128 @@ const profiles = [
       "You have product-market fit in your home market and want to test Australia before committing headcount. We run outbound sales, book demos, source local partners, and negotiate distribution deals to validate demand.",
     example: "US-based project management SaaS testing ANZ demand through partner-led distribution and direct sales.",
     services: ["Sales representation", "Partner development", "Enterprise introductions"],
+    color: "from-cyan-500/20 to-teal-500/10",
   },
   {
     icon: CreditCard,
     title: "Fintech",
     description:
-      "You need brokers, advisors, and strategic partners to distribute your fintech product in Australia. We identify the right channels, structure white-label and reseller deals, and activate distribution partners with tracked attribution.",
+      "You need brokers, advisors, and strategic partners to distribute your fintech product in Australia. We identify the right channels, structure white-label and reseller deals, and activate distribution partners.",
     example: "UK lending platform building an Australian broker network and white-label distribution channel.",
     services: ["Distribution deals", "Broker activation", "Reseller agreements"],
+    color: "from-purple-500/20 to-pink-500/10",
   },
   {
     icon: Heart,
     title: "Healthtech",
     description:
-      "You have a digital health platform and need provider partnerships, payer relationships, and enterprise distribution in the Australian healthcare system. We make introductions and structure deals with established health networks.",
+      "You have a digital health platform and need provider partnerships, payer relationships, and enterprise distribution in the Australian healthcare system.",
     example: "US telehealth platform partnering with Australian health networks and private hospital groups.",
     services: ["Provider partnerships", "Enterprise introductions", "Payer relationships"],
+    color: "from-rose-500/20 to-orange-500/10",
   },
   {
     icon: Zap,
     title: "Creator Economy Tools",
     description:
-      "You build tools for creators and want to reach the Australian creator market through communities, agencies, and platform partnerships. We connect you with distribution partners who have the audience you need.",
+      "You build tools for creators and want to reach the Australian creator market through communities, agencies, and platform partnerships.",
     example: "European creator monetisation platform expanding into the Australian influencer and content creator market.",
     services: ["Community partnerships", "Agency distribution", "Platform integrations"],
+    color: "from-amber-500/20 to-yellow-500/10",
   },
   {
     icon: ShoppingBag,
     title: "E-commerce Tech",
     description:
-      "You sell commerce infrastructure or DTC products and want to test Australian demand through local partners, affiliates, and retail distribution - without setting up local operations.",
+      "You sell commerce infrastructure or DTC products and want to test Australian demand through local partners, affiliates, and retail distribution.",
     example: "US e-commerce infrastructure company entering Australia through agency and retailer partnerships.",
     services: ["Retail distribution", "Agency partnerships", "Affiliate channel setup"],
+    color: "from-emerald-500/20 to-teal-500/10",
   },
   {
     icon: Briefcase,
     title: "Professional Services Software",
     description:
-      "You build software for legal, accounting, or consulting firms and need to break into Australian professional services verticals. We source partners and enterprise clients in established professional networks.",
+      "You build software for legal, accounting, or consulting firms and need to break into Australian professional services verticals.",
     example: "Canadian legal tech company partnering with Australian law firms and industry associations.",
     services: ["Vertical partnerships", "Enterprise sales", "Industry network entry"],
+    color: "from-blue-500/20 to-indigo-500/10",
   },
-];
-
-const qualifiers = [
-  { icon: DollarSign, text: "$1M-$50M in annual revenue" },
-  { icon: Globe, text: "Based outside Australia (US, UK, EU, Asia)" },
-  { icon: CheckCircle2, text: "Strong product-market fit in at least one market" },
-  { icon: TrendingUp, text: "Ready for a 90-day structured pilot" },
-  { icon: Target, text: "High LTV product with partnership potential" },
-  { icon: Users, text: "A founder or growth lead who can join key calls" },
 ];
 
 export default function WhoItsForPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden text-slate-900">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
+      </div>
 
-      {/* ── Hero (Dark) ── */}
-      <section className="relative bg-gradient-to-b from-[#024b56] via-[#036572] to-[#047a87] overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_0%,rgba(87,230,255,0.12),transparent_50%)]" />
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 pt-16 sm:pt-24 pb-20 sm:pb-28 text-center">
-          <div className="inline-flex items-center gap-2 rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 mb-6 backdrop-blur-sm">
-            <Globe className="h-3.5 w-3.5 text-[#57E6FF]" />
-            <span className="text-xs font-semibold text-white/90 tracking-wide">For overseas companies</span>
+      <main id="main-content" className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+
+        {/* Hero */}
+        <section className="text-center space-y-8 mb-20">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 px-4 py-1.5 backdrop-blur-sm">
+            <Globe className="h-3.5 w-3.5 text-cyan-400" />
+            <span className="text-xs font-semibold text-white/80 tracking-wide">For overseas companies</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight mb-6">
-            Built for Companies <span className="text-[#57E6FF]">Entering Australia</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
+            Built for Companies{" "}
+            <span className="text-cyan-400">Entering Australia</span>
           </h1>
-          <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
             We work with $1M-$50M revenue companies that have strong product-market fit overseas and need Australian clients, partnerships, and distribution - without hiring locally.
           </p>
-        </div>
-      </section>
-
-      {/* ── Qualifiers ── */}
-      <section className="relative bg-white py-10 sm:py-12 border-b border-slate-100">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
-            {qualifiers.map((q) => (
-              <div key={q.text} className="flex items-center gap-2.5">
-                <q.icon className="h-4 w-4 text-[#0AA7B5] flex-shrink-0" />
-                <span className="text-sm text-slate-700 font-medium">{q.text}</span>
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+            >
+              <Calendar className="h-4 w-4" />
+              Schedule a Call
+            </a>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+            >
+              View Services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── Profile Cards ── */}
-      <section className="relative bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Company profiles</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
+        {/* Qualifiers */}
+        <section className="mb-20">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 sm:p-10">
+            <h2 className="text-lg font-bold text-white mb-6 text-center">Ideal Client Profile</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { icon: DollarSign, text: "$1M-$50M in annual revenue" },
+                { icon: Globe, text: "Based outside Australia (US, UK, EU, Asia)" },
+                { icon: CheckCircle2, text: "Strong product-market fit in at least one market" },
+                { icon: TrendingUp, text: "Ready for a 90-day structured pilot" },
+                { icon: Target, text: "High LTV product with partnership potential" },
+                { icon: Users, text: "A founder or growth lead who can join key calls" },
+              ].map((q) => (
+                <div key={q.text} className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                  <q.icon className="h-4 w-4 text-cyan-400 flex-shrink-0" />
+                  <span className="text-sm text-slate-300 font-medium">{q.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Profile Cards */}
+        <section className="mb-28">
+          <div className="text-center space-y-4 mb-14">
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
               Who We Work With
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-              We&apos;ve structured our services around the company types and verticals that get the most value from local Australian sales, partnerships, and distribution.
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              We have structured our services around the company types and verticals that get the most value from local Australian sales, partnerships, and distribution.
             </p>
           </div>
 
@@ -138,83 +160,85 @@ export default function WhoItsForPage() {
               return (
                 <div
                   key={profile.title}
-                  className="group rounded-2xl border border-slate-200/80 bg-white p-7 transition-all duration-300 hover:border-[#0AA7B5]/25 hover:shadow-xl hover:shadow-[#0AA7B5]/5"
+                  className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-7 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.04] overflow-hidden"
                 >
-                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-[#0AA7B5] to-[#00838F] flex items-center justify-center shadow-lg shadow-[#0AA7B5]/20 mb-5">
-                    <Icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-[#0b2a34] mb-3">{profile.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{profile.description}</p>
+                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${profile.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`} />
+                  <div className="relative">
+                    <div className="h-12 w-12 rounded-2xl bg-white/[0.06] border border-white/10 flex items-center justify-center mb-5 group-hover:bg-white/10 transition-colors">
+                      <Icon className="h-5 w-5 text-cyan-400" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-3">{profile.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-5">{profile.description}</p>
 
-                  {/* Services tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {profile.services.map((s) => (
-                      <span key={s} className="text-[10px] font-semibold uppercase tracking-wider text-[#0AA7B5] bg-[#0AA7B5]/8 px-2.5 py-1 rounded-full">
-                        {s}
-                      </span>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {profile.services.map((s) => (
+                        <span key={s} className="text-[10px] font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
 
-                  <p className="text-xs text-slate-400 italic leading-relaxed">
-                    Example: {profile.example}
-                  </p>
+                    <p className="text-xs text-slate-500 italic leading-relaxed">
+                      Example: {profile.example}
+                    </p>
+                  </div>
                 </div>
               );
             })}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── Already Have a Team? (Dark Section) ── */}
-      <section className="relative bg-[#024b56] py-16 sm:py-20 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(10,167,181,0.15),transparent_50%)]" />
-        </div>
-        <div className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12">
-          <div className="grid md:grid-cols-[auto_1fr] gap-8 items-center">
-            <div className="h-16 w-16 rounded-2xl bg-[#0AA7B5]/20 flex items-center justify-center mx-auto md:mx-0">
-              <Users className="h-7 w-7 text-[#57E6FF]" />
+        {/* Already Have a Team? */}
+        <section className="mb-28">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(10,167,181,0.12),transparent_50%)]" />
+            <div className="relative grid md:grid-cols-[auto_1fr] gap-8 items-center">
+              <div className="h-16 w-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mx-auto md:mx-0">
+                <Users className="h-7 w-7 text-cyan-400" />
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-2xl font-black text-white mb-3">Already Have a Local Team?</h3>
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                  If you already have a salesperson or small team in Australia, we complement them with partnership development, distribution deal structuring, and channel management - so your team focuses on direct sales while we build the partnership and distribution layer.
+                </p>
+              </div>
             </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-black text-white mb-3">Already Have a Local Team?</h3>
-              <p className="text-white/65 text-sm sm:text-base leading-relaxed max-w-2xl">
-                If you already have a salesperson or small team in Australia, we complement them with partnership development, distribution deal structuring, and channel management - so your team focuses on direct sales while we build the partnership and distribution layer.
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
+          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
+            <div className="max-w-2xl mx-auto space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Sound Like You?
+              </h2>
+              <p className="text-lg text-slate-300">
+                Book a 15-minute call and tell us about your product, your market, and your Australia goals. We will tell you if we are the right fit.
               </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Schedule a Call
+                </a>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+                >
+                  View Services
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="relative bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
-            Sound Like You?
-          </h2>
-          <p className="text-slate-600 leading-relaxed mb-8 max-w-xl mx-auto">
-            Book a 15-minute call and tell us about your product, your market, and your Australia goals. We&apos;ll tell you if we&apos;re the right fit.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/25"
-            >
-              <Calendar className="h-4 w-4" />
-              Book a 15-min Expansion Call
-            </a>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-8 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-slate-50 hover:shadow-md"
-            >
-              View Services
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
+        </section>
+      </main>
     </div>
   );
 }

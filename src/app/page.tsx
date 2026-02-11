@@ -13,6 +13,8 @@ import {
   ShoppingBag,
   Briefcase,
   CreditCard,
+  Globe,
+  TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -30,18 +32,25 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-8 lg:px-12 pt-16 sm:pt-24 pb-24 sm:pb-36">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 sm:pt-28 pb-28 sm:pb-40">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
             {/* Left Column */}
             <div className="relative z-10 text-center lg:text-left">
-              <h1 className="text-[2rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] xl:text-[4.25rem] font-black tracking-tight leading-[1.1] mb-6 text-white">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 mb-8 backdrop-blur-sm">
+                <Globe className="h-3.5 w-3.5 text-[#57E6FF]" />
+                <span className="text-xs font-semibold text-white/90 tracking-wide">Australia &amp; APAC Market Entry</span>
+              </div>
+
+              <h1 className="text-[2.25rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-black tracking-tight leading-[1.06] mb-6 text-white text-balance">
                 Your Australian Sales{" "}
                 <span className="text-[#57E6FF]">&amp; Partnerships Arm</span>
               </h1>
-              <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-                Your local commercial arm in Australia - generating clients, building strategic partnerships, and structuring distribution deals. All on a retainer + commission model.
+
+              <p className="text-base sm:text-lg text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+                We help overseas companies enter Australia and APAC by generating clients, building strategic partnerships, and structuring distribution deals - all on a retainer + commission model.
               </p>
-              <div className="flex justify-center lg:justify-start">
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-12">
                 <a
                   href={calendlyUrl}
                   target="_blank"
@@ -49,17 +58,37 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
                 >
                   <Calendar className="h-4 w-4" />
-                  Schedule A Call
+                  Schedule a Call
                 </a>
+                <Link
+                  href="/how-it-works"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
+                >
+                  How It Works
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+
+              {/* Hero proof points */}
+              <div className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+                {[
+                  { value: "90 Days", label: "Structured Pilot" },
+                  { value: "3 Channels", label: "Sales + Partners + Distro" },
+                  { value: "Weekly", label: "Pipeline Reporting" },
+                ].map((item) => (
+                  <div key={item.value}>
+                    <p className="text-lg sm:text-xl font-black text-white">{item.value}</p>
+                    <p className="text-[10px] sm:text-xs text-white/45 uppercase tracking-wider">{item.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Right Column: Expansion Pipeline Visual */}
             <div className="relative hidden lg:block">
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#0AA7B5]/20 via-transparent to-[#22C0CD]/10 rounded-2xl blur-3xl" />
+              <div className="absolute -inset-8 bg-gradient-to-br from-[#0AA7B5]/20 via-transparent to-[#22C0CD]/10 rounded-3xl blur-3xl" />
               <div className="relative">
-                <div className="rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-xl p-7 shadow-2xl">
-                  {/* Header */}
+                <div className="rounded-3xl border border-white/15 bg-white/[0.07] backdrop-blur-xl p-8 shadow-2xl">
                   <div className="flex items-center justify-between mb-6 pb-5 border-b border-white/10">
                     <div>
                       <p className="text-white font-bold text-base">Expansion Pipeline</p>
@@ -71,24 +100,20 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Metrics row */}
-                  <div className="grid grid-cols-3 gap-3 mb-5">
-                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
-                      <p className="text-2xl font-black text-white">10-20</p>
-                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Client Leads</p>
-                    </div>
-                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
-                      <p className="text-2xl font-black text-white">3-8</p>
-                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Partners</p>
-                    </div>
-                    <div className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
-                      <p className="text-2xl font-black text-white">1-3</p>
-                      <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">Distribution Deals</p>
-                    </div>
+                  <div className="grid grid-cols-3 gap-3 mb-6">
+                    {[
+                      { value: "10-20", label: "Client Leads" },
+                      { value: "3-8", label: "Partners" },
+                      { value: "1-3", label: "Distribution Deals" },
+                    ].map((m) => (
+                      <div key={m.label} className="rounded-xl bg-white/[0.06] border border-white/10 p-4 text-center">
+                        <p className="text-2xl font-black text-white">{m.value}</p>
+                        <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">{m.label}</p>
+                      </div>
+                    ))}
                   </div>
 
-                  {/* Channel breakdown */}
-                  <div className="space-y-3 mb-5">
+                  <div className="space-y-3 mb-6">
                     {[
                       { icon: Target, label: "Sales Representation", progress: 75, color: "bg-[#0AA7B5]" },
                       { icon: Handshake, label: "Partnership Development", progress: 60, color: "bg-[#22C0CD]" },
@@ -108,7 +133,6 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* Footer */}
                   <div className="rounded-xl bg-[#0AA7B5]/10 border border-[#0AA7B5]/20 p-4 flex items-center gap-3">
                     <BarChart3 className="h-5 w-5 text-[#57E6FF] flex-shrink-0" />
                     <div>
@@ -125,13 +149,13 @@ export default function Home() {
 
       {/* ── Social Proof Bar ── */}
       <section className="relative bg-white py-8 sm:py-10 border-b border-slate-100">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
             {[
               { value: "$1M-$50M", sub: "Client Revenue Range" },
-              { value: "90 Days", sub: "Structured Pilot" },
               { value: "Retainer + %", sub: "Commission Model" },
-              { value: "6 Verticals", sub: "SaaS · Fintech · Health · More" },
+              { value: "6 Verticals", sub: "SaaS, Fintech, Health & More" },
+              { value: "Australia & APAC", sub: "Market Coverage" },
             ].map((item) => (
               <div key={item.value} className="text-center">
                 <p className="text-lg sm:text-xl font-black text-[#0b2a34]">{item.value}</p>
@@ -143,14 +167,15 @@ export default function Home() {
       </section>
 
       {/* ── Three Core Offerings ── */}
-      <section className="relative bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-4">
-              How Refer Labs Drives Revenue
+      <section className="relative bg-white py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-14 sm:mb-20">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">What we do</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-5">
+              Three Services. One Commercial Arm.
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
-              Each offering is managed end-to-end. You get clients, partners, and distribution - without building a local team.
+            <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              Each service is managed end-to-end. You get clients, partners, and distribution channels in Australia - without building a local team.
             </p>
           </div>
 
@@ -186,7 +211,7 @@ export default function Home() {
             ].map((channel) => (
               <div
                 key={channel.num}
-                className="group relative rounded-2xl border border-slate-200/80 bg-white p-8 transition-all duration-300 hover:border-[#0AA7B5]/30 hover:shadow-xl hover:shadow-[#0AA7B5]/8"
+                className="group relative rounded-3xl border border-slate-200/80 bg-white p-8 transition-all duration-300 hover:border-[#0AA7B5]/30 hover:shadow-xl hover:shadow-[#0AA7B5]/8"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#0AA7B5] to-[#00838F] flex items-center justify-center shadow-lg shadow-[#0AA7B5]/20">
@@ -211,25 +236,44 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#0AA7B5] hover:text-[#00838F] transition-colors"
+            >
+              Explore all services in detail
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ── Why This Exists ── */}
-      <section className="relative bg-[#024b56] py-16 sm:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] py-20 sm:py-28 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(10,167,181,0.2),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(87,230,255,0.08),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(10,167,181,0.12),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(87,230,255,0.06),transparent_50%)]" />
         </div>
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#57E6FF] mb-4">The problem</p>
-              <h2 className="text-3xl sm:text-4xl font-black text-white leading-[1.1] mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.08] mb-6">
                 Most Australia Expansions Fail in the First Year
               </h2>
-              <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+              <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-8">
                 Overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, and distribution.
               </p>
+              <a
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#57E6FF] hover:text-white transition-colors"
+              >
+                Talk to us about your expansion
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
             <div className="space-y-4">
               {[
@@ -238,9 +282,9 @@ export default function Home() {
                 { num: "03", text: "Hiring a full-time local rep too early is expensive and slow to ramp." },
                 { num: "04", text: "You need revenue signals and validated channels before committing headcount." },
               ].map((item) => (
-                <div key={item.num} className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.06] border border-white/10">
+                <div key={item.num} className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
                   <span className="text-[#57E6FF] text-sm font-black flex-shrink-0 mt-0.5">{item.num}</span>
-                  <p className="text-white/85 text-sm leading-relaxed">{item.text}</p>
+                  <p className="text-white/80 text-sm leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -249,20 +293,19 @@ export default function Home() {
       </section>
 
       {/* ── How It Works ── */}
-      <section className="relative bg-gradient-to-b from-white via-[#f8fefe] to-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-12 sm:mb-16">
+      <section className="relative bg-white py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-14 sm:mb-20">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">90-day pilot</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-5">
               How It Works
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
-              A structured approach to building your Australian pipeline and distribution.
+              A structured approach to building your Australian pipeline, partnerships, and distribution.
             </p>
           </div>
 
           <div className="relative">
-            {/* Connecting line */}
             <div className="hidden lg:block absolute top-16 left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-0.5 bg-gradient-to-r from-[#0AA7B5] via-[#22C0CD] to-[#0AA7B5]" />
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -273,7 +316,7 @@ export default function Home() {
                 { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, distribution progress, and next actions - reported weekly." },
               ].map((item) => (
                 <div key={item.step} className="relative text-center">
-                  <div className="relative z-10 h-14 w-14 rounded-xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#0AA7B5] to-[#00838F] text-white shadow-lg shadow-[#0AA7B5]/25 ring-4 ring-white">
+                  <div className="relative z-10 h-14 w-14 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#0AA7B5] to-[#00838F] text-white shadow-lg shadow-[#0AA7B5]/25 ring-4 ring-white">
                     <span className="text-sm font-black">{item.step}</span>
                   </div>
                   <h3 className="text-lg font-bold text-[#0b2a34] mb-2">{item.title}</h3>
@@ -296,9 +339,9 @@ export default function Home() {
       </section>
 
       {/* ── Who It's For ── */}
-      <section className="relative bg-[#f6fdfe] py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
-          <div className="text-center mb-12">
+      <section className="relative bg-[#f6fdfe] py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
+          <div className="text-center mb-14">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Who we work with</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
               Built for Overseas Companies Entering Australia
@@ -308,7 +351,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { icon: Building2, label: "B2B SaaS", desc: "Enterprise and mid-market software companies entering the ANZ market" },
               { icon: CreditCard, label: "Fintech", desc: "Payments, lending, and financial infrastructure seeking local distribution" },
@@ -327,7 +370,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-10">
             <Link
               href="/who-its-for"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#0AA7B5] hover:text-[#00838F] transition-colors"
@@ -340,16 +383,16 @@ export default function Home() {
       </section>
 
       {/* ── Pricing Teaser ── */}
-      <section className="relative bg-white py-12 sm:py-16">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#024b56] to-[#036572] p-8 sm:p-12">
+      <section className="relative bg-white py-14 sm:py-20">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#024b56] to-[#036572] p-10 sm:p-14">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(87,230,255,0.15),transparent_50%)]" />
-            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="text-center lg:text-left">
-                <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
-                  Retainer + Commission - Aligned Incentives
+                <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
+                  Retainer + Commission. Aligned Incentives.
                 </h2>
-                <p className="text-white/65 text-sm sm:text-base max-w-xl">
+                <p className="text-white/60 text-sm sm:text-base max-w-xl">
                   We earn when you earn. Choose from Standard, Performance-Heavy, or Enterprise engagement models.
                 </p>
               </div>
@@ -366,27 +409,36 @@ export default function Home() {
       </section>
 
       {/* ── Footer CTA ── */}
-      <section className="relative bg-gradient-to-b from-[#024b56] via-[#03606d] to-[#024b56] py-20 sm:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-[#024b56] via-[#03606d] to-[#024b56] py-24 sm:py-32 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(10,167,181,0.15),transparent_45%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(87,230,255,0.08),transparent_45%)]" />
         </div>
-        <div className="relative mx-auto max-w-3xl px-4 sm:px-8 lg:px-12 text-center">
+        <div className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
             Ready to Enter the Australian Market?
           </h2>
-          <p className="text-base sm:text-lg text-white/70 mb-8 max-w-xl mx-auto">
-            Book a 15-minute call. We&apos;ll discuss your product, your goals in Australia, and scope a 90-day pilot.
+          <p className="text-base sm:text-lg text-white/65 mb-10 max-w-xl mx-auto">
+            Book a 15-minute call. We will discuss your product, your goals in Australia, and scope a 90-day pilot.
           </p>
-          <a
-            href={calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
-          >
-            <Calendar className="h-4 w-4" />
-            Schedule A Call
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+            >
+              <Calendar className="h-4 w-4" />
+              Schedule a Call
+            </a>
+            <Link
+              href="/how-it-works"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
+            >
+              How It Works
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
