@@ -391,10 +391,10 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
             For LinkedIn Creators
           </div>
           <h1 className="text-4xl sm:text-5xl font-black leading-tight text-white max-w-4xl">
-            Turn Your Audience Into Recurring Revenue
+            Help Overseas Companies Enter Australia - And Get Paid For It
           </h1>
           <p className="mt-6 text-xl text-slate-200/90 leading-relaxed max-w-3xl">
-            Partner with vetted B2B brands to promote products your audience already needs. Earn performance-based commissions on every demo, signup, and subscription you drive.
+            Partner with vetted overseas B2B brands expanding into Australia. Earn performance-based commissions by introducing them to your Australian audience through tracked content and referrals.
           </p>
         </section>
 
@@ -403,14 +403,14 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
             {
               icon: DollarSign,
               title: "Performance-Based Payouts",
-              detail: "Get paid for demos, signups, and conversions. No fluff, just trackable outcomes.",
+              detail: "Get paid for demos, signups, and conversions you drive for overseas brands entering Australia.",
               color: "from-emerald-500/20 to-teal-500/20",
               border: "border-emerald-400/30"
             },
             {
               icon: BadgeCheck,
               title: "Only Promote What Fits",
-              detail: "We match you with brands aligned with your niche. No random offers, no awkward asks.",
+              detail: "We match you with overseas brands entering Australia that align with your niche and audience.",
               color: "from-cyan-500/20 to-blue-500/20",
               border: "border-cyan-400/30"
             },
@@ -442,17 +442,17 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
             </div>
             <div className="flex-1">
               <h2 className="text-2xl font-black text-white mb-2">Who This Is For</h2>
-              <p className="text-sm text-slate-200/80">We're building a curated pool of trusted LinkedIn creators with engaged, high-intent audiences.</p>
+              <p className="text-sm text-slate-200/80">We are building a curated pool of Australian LinkedIn creators who can help overseas companies enter the market.</p>
             </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {[
-              "Operators, founders, or subject-matter experts with clear niche authority",
+              "Australian operators, founders, or subject-matter experts with clear niche authority",
               "Consistent posting cadence (2-5x per week)",
-              "Evidence of genuine engagement (comments, shares, DMs)",
+              "Evidence of genuine engagement (comments, shares, DMs) from Australian professionals",
               "Open to performance-based partnerships with transparent tracking",
-              "Comfortable with FTC disclosure requirements",
-              "Audience of buyers (not just job seekers or passive scrollers)"
+              "Comfortable with advertising disclosure requirements",
+              "Audience of Australian buyers and decision-makers"
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200/90">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-300 flex-shrink-0" />
@@ -544,9 +544,9 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
         </section>
 
         <section className="mb-16 rounded-3xl border border-emerald-400/40 bg-gradient-to-br from-emerald-500/15 via-slate-900/70 to-cyan-500/15 p-10 backdrop-blur shadow-2xl shadow-emerald-500/20">
-          <h2 className="text-2xl font-black text-white mb-2">Apply to Join the Early Creator Pool</h2>
+          <h2 className="text-2xl font-black text-white mb-2">Apply to Join the Australian Creator Pool</h2>
           <p className="text-sm text-slate-200/80 mb-8">
-            We're building a curated marketplace. Applications are reviewed manually to ensure quality and fit.
+            We are building a curated network of Australian LinkedIn creators. Applications are reviewed manually to ensure quality and fit.
           </p>
 
           {submitted && (
@@ -567,13 +567,13 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
                 <div className="flex gap-3">
                   <Link
                     href="/linkedin-growth/influencer"
-                    className="inline-flex items-center gap-2 rounded-full bg-emerald-400 hover:bg-emerald-300 px-6 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-emerald-500/30 transition"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] hover:bg-[#00838F] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition"
                   >
                     Got It
                   </Link>
                   <Link
                     href="/linkedin-growth"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/20 hover:border-white/40 px-6 py-3 text-sm font-semibold text-white/80 hover:text-white transition"
+                    className="inline-flex items-center gap-2 rounded-xl border border-white/20 hover:border-white/40 px-6 py-3 text-sm font-semibold text-white/80 hover:text-white transition"
                   >
                     Back to Overview
                   </Link>
@@ -744,7 +744,7 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/30 transition-all hover:scale-[1.02] hover:bg-[#00767a]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition-all hover:bg-[#00838F]"
               >
                 Submit Application
                 <ArrowRight className="h-4 w-4" />

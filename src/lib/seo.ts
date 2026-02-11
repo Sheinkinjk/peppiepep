@@ -288,17 +288,29 @@ export const seoConfig = {
     keywords: ["terms of service", "legal terms", "user agreement"],
   },
 
-  // Legacy pages - kept for build compatibility
+  // Secondary pages
   roiCalculator: {
-    title: "ROI Calculator",
-    description: "Estimate the potential ROI of your partner program.",
+    title: "Australia Expansion Estimator - ROI Calculator",
+    description: "Estimate the ROI of entering Australia with Refer Labs. Model your 90-day pilot returns by industry, deal size, and engagement scope.",
     url: `${SITE_URL}/roi-calculator`,
+    keywords: [
+      "Australia expansion ROI",
+      "market entry calculator",
+      "Australia GTM ROI",
+      "expansion cost estimator",
+    ],
   },
 
   leadHacking: {
-    title: "Lead Hacking - Source & Activate Partnerships",
-    description: "Source, qualify, and activate partners with clear attribution.",
+    title: "Partner Sourcing & Activation for Australia",
+    description: "We systematically source, qualify, and activate Australian partners - agencies, LinkedIn creators, and advisors - to build your distribution channel.",
     url: `${SITE_URL}/lead-hacking`,
+    keywords: [
+      "Australia partner sourcing",
+      "Australian agency partners",
+      "partner activation Australia",
+      "distribution partner sourcing",
+    ],
   },
 
   partnerProgram: {
@@ -308,21 +320,37 @@ export const seoConfig = {
   },
 
   linkedinInfluencer: {
-    title: "LinkedIn Influencer - Performance-Based Creator Partnerships",
-    description: "Connect LinkedIn creators with brands for performance-based partnerships.",
+    title: "LinkedIn Creator Partnerships for Australia Market Entry",
+    description: "Partner with verified Australian LinkedIn creators to build credibility, generate leads, and accelerate your market entry. Full-service partnership management.",
     url: `${SITE_URL}/linkedin-growth`,
+    keywords: [
+      "LinkedIn creator partnerships Australia",
+      "Australian LinkedIn influencers",
+      "B2B creator marketing Australia",
+      "LinkedIn market entry Australia",
+    ],
   },
 
   linkedinInfluencerCreator: {
-    title: "Join as LinkedIn Creator",
-    description: "Monetize your LinkedIn audience with performance-based partnerships.",
+    title: "Join as an Australian LinkedIn Creator",
+    description: "Help overseas companies enter Australia and earn performance-based commissions. Join our curated pool of Australian LinkedIn creators.",
     url: `${SITE_URL}/linkedin-growth/influencer`,
+    keywords: [
+      "LinkedIn creator program Australia",
+      "Australian creator partnerships",
+      "earn from LinkedIn Australia",
+    ],
   },
 
   linkedinInfluencerBusiness: {
-    title: "Partner with LinkedIn Creators",
-    description: "Scale your business with LinkedIn creator partnerships.",
+    title: "Launch Australian Creator Campaigns for Market Entry",
+    description: "Launch performance-based LinkedIn creator campaigns to build awareness and generate leads in the Australian market.",
     url: `${SITE_URL}/linkedin-growth/business`,
+    keywords: [
+      "Australian creator campaigns",
+      "LinkedIn marketing Australia",
+      "creator partnerships market entry",
+    ],
   },
 
   financialAdvisorsService: {

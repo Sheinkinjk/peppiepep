@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import {
   ArrowRight,
@@ -9,11 +8,8 @@ import {
   CheckCircle2,
   ChevronDown,
   Handshake,
-  Layers,
   Linkedin,
-  MessageSquare,
   Shield,
-  Sparkles,
   Target,
   TrendingUp,
   Users,
@@ -24,35 +20,37 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencer);
 export const revalidate = 3600;
 
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
+
 const partnershipTypes = [
   {
     title: "Thought Leaders",
-    description: "Industry experts with engaged audiences of decision-makers",
-    examples: "CFOs, CTOs, CMOs, founders sharing insights daily",
+    description: "Australian industry experts with engaged audiences of decision-makers in your target market",
+    examples: "CFOs, CTOs, CMOs, founders sharing insights about the Australian market",
     icon: BookOpen,
     gradient: "from-blue-500/20 to-cyan-500/20",
     border: "border-blue-400/30",
   },
   {
     title: "Niche Creators",
-    description: "Specialists in specific verticals with loyal followings",
-    examples: "HR tech reviewers, SaaS evangelists, B2B marketing coaches",
+    description: "Specialists in specific Australian verticals with loyal, high-intent followings",
+    examples: "SaaS reviewers, fintech commentators, B2B marketing coaches in Australia",
     icon: Target,
     gradient: "from-purple-500/20 to-pink-500/20",
     border: "border-purple-400/30",
   },
   {
     title: "Community Builders",
-    description: "Leaders of engaged communities and professional networks",
-    examples: "Slack/Discord admins, newsletter operators, podcast hosts",
+    description: "Leaders of engaged Australian professional communities and networks",
+    examples: "Slack/Discord admins, newsletter operators, podcast hosts with Australian audiences",
     icon: Users,
     gradient: "from-emerald-500/20 to-teal-500/20",
     border: "border-emerald-400/30",
   },
   {
     title: "Operator-Influencers",
-    description: "Active practitioners who share real-world experience",
-    examples: "Heads of Growth, RevOps leaders, Sales directors",
+    description: "Active Australian practitioners who share real-world experience and recommend tools",
+    examples: "Heads of Growth, RevOps leaders, Sales directors at Australian companies",
     icon: TrendingUp,
     gradient: "from-amber-500/20 to-orange-500/20",
     border: "border-amber-400/30",
@@ -61,40 +59,40 @@ const partnershipTypes = [
 
 const businessGoals = [
   {
-    title: "Demo Bookings",
-    description: "Drive qualified prospects directly into your sales pipeline with warm introductions from trusted voices.",
-    metric: "Typical: 30-100+ demos/month",
-    icon: Calendar,
-  },
-  {
     title: "Lead Generation",
-    description: "Fill your funnel with in-market buyers who already understand your value proposition.",
+    description: "Fill your Australian pipeline with in-market buyers who already understand your value proposition through trusted creator endorsements.",
     metric: "Typical: 5-15% conversion rate",
     icon: Target,
   },
   {
-    title: "Brand Distribution",
-    description: "Amplify your message through established audiences without building from scratch.",
+    title: "Demo Bookings",
+    description: "Drive qualified Australian prospects directly into your sales pipeline with warm introductions from creators they follow.",
+    metric: "Typical: 30-100+ demos/quarter",
+    icon: Calendar,
+  },
+  {
+    title: "Brand Awareness",
+    description: "Build credibility in the Australian market through established voices without starting from scratch.",
     metric: "Typical: 10-50x organic reach",
     icon: TrendingUp,
   },
   {
-    title: "Credibility & Trust",
-    description: "Third-party endorsement from respected voices signals quality to your market.",
-    metric: "Typical: 2-3x trust score",
+    title: "Market Credibility",
+    description: "Third-party endorsement from respected Australian voices signals quality and local relevance to your target market.",
+    metric: "Accelerates trust building",
     icon: Shield,
   },
   {
     title: "Enterprise Introductions",
-    description: "Access decision-makers at target accounts through warm affiliates from their trusted network.",
+    description: "Access decision-makers at target Australian accounts through warm introductions from their trusted network.",
     metric: "Typical: 40%+ reply rate",
     icon: Building2,
   },
   {
     title: "Market Education",
-    description: "Let creators explain your category and position your solution as the answer.",
+    description: "Let Australian creators explain your category and position your solution as the answer for their local market.",
     metric: "Typical: 3-5x engagement",
-    icon: MessageSquare,
+    icon: Linkedin,
   },
 ];
 
@@ -102,31 +100,31 @@ const processSteps = [
   {
     step: "1",
     title: "Discovery & Goal Setting",
-    description: "We learn your ICP, revenue goals, and competitive landscape. You tell us what success looks like-demo volume, pipeline value, close rates.",
+    description: "We learn your ICP, Australia goals, and competitive landscape. You tell us what success looks like - demo volume, pipeline value, close rates.",
     activities: [
-      "Define ideal customer profile and target accounts",
+      "Define ideal Australian customer profile and target accounts",
       "Set conversion goals and budget parameters",
-      "Identify messaging angles and proof points",
+      "Identify messaging angles and proof points for the Australian market",
       "Establish compliance requirements and brand guidelines",
     ],
     timeline: "Days 1-2",
   },
   {
     step: "2",
-    title: "Partner Sourcing & Qualification",
-    description: "We identify LinkedIn creators whose audiences match your ICP. Each is vetted for authenticity, engagement quality, and brand alignment.",
+    title: "Creator Sourcing & Qualification",
+    description: "We identify Australian LinkedIn creators whose audiences match your ICP. Each is vetted for authenticity, engagement quality, and brand alignment.",
     activities: [
-      "Analyze follower demographics and engagement patterns",
+      "Analyse follower demographics and engagement patterns",
       "Review content history and audience sentiment",
       "Verify influence authenticity (no fake followers)",
-      "Assess brand fit and messaging alignment",
+      "Assess brand fit and messaging alignment for your product",
     ],
     timeline: "Days 3-5",
   },
   {
     step: "3",
     title: "Offer & Structure Design",
-    description: "We build the partnership offer-what creators get, what they commit to, and how results are tracked and rewarded.",
+    description: "We build the partnership offer - what creators get, what they commit to, and how results are tracked and rewarded.",
     activities: [
       "Design compensation model (per-demo, revenue share, hybrid)",
       "Create content briefs and brand guidelines",
@@ -138,7 +136,7 @@ const processSteps = [
   {
     step: "4",
     title: "Creator Onboarding",
-    description: "Selected creators receive their partnership kit-tracking links, brand materials, content guidelines, and payout terms.",
+    description: "Selected creators receive their partnership kit - tracking links, brand materials, content guidelines, and payout terms.",
     activities: [
       "Provision unique tracked affiliate links",
       "Share brand assets and messaging playbook",
@@ -150,7 +148,7 @@ const processSteps = [
   {
     step: "5",
     title: "Campaign Launch",
-    description: "Creators draft content for your approval. Once approved, posts go live with full tracking enabled.",
+    description: "Creators draft content for your approval. Once approved, posts go live with full tracking enabled across the Australian market.",
     activities: [
       "Review and approve creator content drafts",
       "Coordinate posting schedule for maximum impact",
@@ -161,8 +159,8 @@ const processSteps = [
   },
   {
     step: "6",
-    title: "Optimization & Scale",
-    description: "We analyze performance weekly. Top creators get more budget. Underperformers are coached or removed. The program compounds.",
+    title: "Optimisation & Scale",
+    description: "We analyse performance weekly. Top creators get more budget. Underperformers are coached or removed. The program compounds.",
     activities: [
       "Weekly performance reviews and reporting",
       "Identify top performers for scaling",
@@ -179,20 +177,20 @@ const faqData = [
     icon: Zap,
     questions: [
       {
+        q: "How does this help overseas companies enter Australia?",
+        a: "Australian LinkedIn creators already have the trust and audience you need. When they recommend your product, it feels like a warm introduction - not advertising. This accelerates your market entry by borrowing their credibility and established reach in the Australian market."
+      },
+      {
         q: "How does attribution and tracking work?",
-        a: "Every creator gets a unique affiliate link. When someone clicks that link, we set a 30-day attribution cookie. If they sign up, book a demo, or make a purchase within that window, the conversion is automatically credited to the creator. You see real-time analytics: click-through rates, conversion rates, revenue per creator, and ROI. All tracking is transparent and auditable in your dashboard."
+        a: "Every creator gets a unique tracking link. When someone clicks that link, we set a 30-day attribution cookie. If they sign up, book a demo, or make a purchase within that window, the conversion is automatically credited to the creator. You see real-time analytics: click-through rates, conversion rates, revenue per creator, and ROI."
       },
       {
         q: "What counts as a conversion?",
-        a: "You define your conversion goal when launching a partnership: demo bookings, free trial signups, paid subscriptions, or revenue milestones. Creators are compensated based on the outcome you specify. For example, you might pay $50 per qualified demo booked, or 20% recurring commission on subscription revenue. The model is flexible to match your business goals."
+        a: "You define your conversion goal when launching a partnership: demo bookings, free trial signups, paid subscriptions, or revenue milestones. Creators are compensated based on the outcome you specify. For example, you might pay $50 per qualified demo booked, or 20% recurring commission on subscription revenue."
       },
       {
         q: "How do payouts work?",
-        a: "You set the payout structure upfront (flat fee per conversion, percentage of revenue, tiered commissions, etc.). When a tracked conversion occurs, the creator's earnings are logged in their dashboard. Payouts are processed monthly via Stripe, with a 30-day hold to account for refunds or cancellations. Businesses only pay for verified, completed conversions-not clicks or impressions."
-      },
-      {
-        q: "Can I work with multiple creators at once?",
-        a: "Absolutely. Most businesses launch with 3-5 creators to test different audience segments and messaging angles. You can run campaigns with 50+ creators simultaneously. Each creator has their own tracking link, so you can compare performance, identify top performers, and allocate budget accordingly. Scale what works, pause what doesn't."
+        a: "You set the payout structure upfront (flat fee per conversion, percentage of revenue, tiered commissions, etc.). When a tracked conversion occurs, the creator's earnings are logged in their dashboard. Payouts are processed monthly via Stripe, with a 30-day hold to account for refunds or cancellations."
       }
     ]
   },
@@ -202,55 +200,29 @@ const faqData = [
     questions: [
       {
         q: "Are creator partnerships considered advertising?",
-        a: "Yes. When a LinkedIn creator promotes a brand in exchange for compensation, this is marketing. All partnerships facilitated through Refer Labs are performance-based marketing relationships that must comply with advertising regulations including FTC endorsement guidelines, ASA standards, and LinkedIn's commercial content policies. Creators are required to clearly disclose partnerships using #ad, #sponsored, or #partner hashtags."
-      },
-      {
-        q: "What are the disclosure requirements?",
-        a: "Creators must clearly and conspicuously disclose their commercial relationship with brands. This means using platform-appropriate disclosure methods (hashtags like #ad or #sponsored on LinkedIn), placing disclosures where they're easily noticed (not buried in long captions), and using clear language that audiences understand. Refer Labs provides disclosure templates, but creators and brands are ultimately responsible for compliance."
+        a: "Yes. When a LinkedIn creator promotes a brand in exchange for compensation, this is marketing. All partnerships must comply with advertising regulations including ACCC guidelines in Australia, FTC endorsement guidelines, and LinkedIn's commercial content policies. Creators are required to clearly disclose partnerships."
       },
       {
         q: "How do you prevent fake engagement or fraud?",
-        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique affiliate links with server-side validation. Businesses see full attribution data-click sources, conversion rates, and customer quality-so you know exactly what you're paying for. Suspicious activity triggers review and potential removal from the platform."
-      }
-    ]
-  },
-  {
-    category: "Brand Control",
-    icon: Layers,
-    questions: [
-      {
-        q: "How much control do I have over creator messaging?",
-        a: "You provide brand guidelines, key messaging points, and approval workflows. Creators craft content in their own voice (authenticity is why this works), but you review posts before they go live. You can request edits, approve final drafts, or reject content that doesn't align. Think of it as collaborative: you guide the narrative, creators make it resonate with their audience."
-      },
-      {
-        q: "What if a creator posts something off-brand or inaccurate?",
-        a: "All content goes through your approval process before publishing. If something slips through, you can request immediate removal or correction. Repeated violations result in creator removal from your program. You also control which creators you work with-vet their past content, audience fit, and brand alignment before approving partnerships."
-      },
-      {
-        q: "Can I see performance before committing to a creator?",
-        a: "Yes. Start with a small test campaign (e.g., one post, $500 budget cap). Review click-through rates, engagement quality, and conversion rates. If performance is strong, scale up. If not, move on. You're never locked into long-term contracts or minimum spends. Performance dictates investment."
+        a: "We vet creators before approval, tracking follower authenticity, engagement patterns, and audience quality. All conversions are tracked through unique links with server-side validation. You see full attribution data so you know exactly what you're paying for. Suspicious activity triggers review and potential removal."
       }
     ]
   },
   {
     category: "Getting Started",
-    icon: Sparkles,
+    icon: Handshake,
     questions: [
       {
         q: "What types of businesses work best?",
-        a: "SaaS companies with clear product-market fit, B2B tools replacing manual workflows, professional services with defined ICPs, and any business with trackable conversion goals. You need the ability to measure outcomes (demos, signups, revenue) and allocate budget based on performance. Early-stage startups and established enterprises both succeed here."
+        a: "SaaS companies with clear product-market fit, B2B tools replacing manual workflows, fintech platforms, and any business with trackable conversion goals entering Australia. You need the ability to measure outcomes (demos, signups, revenue) and allocate budget based on performance."
       },
       {
         q: "How long does it take to launch?",
-        a: "Most businesses launch their first creator campaign within 7-10 days. Timeline: (1) Submit partnership request and define goals (Day 1), (2) We match you with aligned creators (Days 2-5), (3) You review creator profiles and approve partnerships (Days 5-7), (4) Creators draft content for your approval (Days 7-9), (5) Content goes live and tracking begins (Day 10). Faster timelines are possible for urgent launches."
+        a: "Most businesses launch their first creator campaign within 7-10 days. We match you with aligned creators (Days 2-5), you review and approve partnerships (Days 5-7), creators draft content (Days 7-9), and content goes live (Day 10). Faster timelines are possible for urgent launches."
       },
       {
-        q: "What budget should I allocate?",
-        a: "Start with $2,000-$5,000/month to test 3-5 creators. This gives you enough data to identify what works without over-committing. High-performing programs scale to $20,000-$50,000+/month as you add more creators and expand to new audience segments. Budget scales with proven ROI-if you're generating 5x returns, increasing spend is straightforward."
-      },
-      {
-        q: "Do you handle creator outreach and management?",
-        a: "Yes. We handle creator vetting, onboarding, and matching. You approve partnerships, provide briefs, and review content. We manage logistics (contracts, tracking setup, payout processing). Think of us as your creator partnership infrastructure-you focus on strategy and approvals, we handle operations."
+        q: "Can this run alongside other Refer Labs services?",
+        a: "Absolutely. LinkedIn creator partnerships complement our direct Sales Representation and Partnership Development services. Many clients use creators for top-of-funnel awareness while we run direct outbound and partner sourcing in parallel."
       }
     ]
   }
@@ -260,14 +232,13 @@ export default function LinkedInGrowthPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "LinkedIn Creator Partnerships for B2B Growth",
-    "description": "Partner with LinkedIn influencers to drive qualified demos and revenue. Full-service partnership management from sourcing to payouts.",
+    "name": "LinkedIn Creator Partnerships for Australia Market Entry",
+    "description": "Partner with Australian LinkedIn creators to drive qualified demos and revenue as part of your Australia expansion strategy.",
     "url": "https://referlabs.com.au/linkedin-growth",
     "provider": {
       "@type": "Organization",
       "name": "Refer Labs",
       "url": "https://referlabs.com.au",
-      "logo": "https://referlabs.com.au/logo.png"
     },
     "mainEntity": {
       "@type": "Service",
@@ -278,32 +249,34 @@ export default function LinkedInGrowthPage() {
       },
       "areaServed": {
         "@type": "Place",
-        "name": "Global"
+        "name": "Australia"
       }
     }
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#070b12] via-[#0b121b] to-[#05070b] text-white">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Ambient background effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.15),transparent_50%),radial-gradient(circle_at_85%_20%,rgba(59,130,246,0.12),transparent_45%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.1),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
+      </div>
 
       <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
         {/* Hero Section */}
-        <section className="space-y-10 animate-in fade-in duration-700">
+        <section className="space-y-10">
           <div className="text-center max-w-4xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-300 text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-blue-400/30 bg-blue-500/10 text-blue-300 text-sm font-semibold">
               <Linkedin className="h-4 w-4" />
               LinkedIn Creator Partnerships
             </div>
 
-            <h1 className="text-balance text-4xl font-black leading-[1.08] sm:text-5xl lg:text-6xl text-white">
-              Your Buyers Are Already Following
+            <h1 className="text-4xl font-black leading-[1.08] sm:text-5xl lg:text-6xl text-white">
+              Your Australian Buyers Are Already Following
               <br />
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                 Someone on LinkedIn
@@ -311,21 +284,21 @@ export default function LinkedInGrowthPage() {
             </h1>
 
             <p className="text-xl text-slate-200/90 leading-relaxed max-w-3xl mx-auto">
-              Partner with verified LinkedIn creators to drive qualified demos and revenue.
-              We handle sourcing, qualification, tracking, and payouts-you focus on closing deals.
+              Partner with verified Australian LinkedIn creators to build credibility, generate leads, and accelerate your market entry.
+              We handle sourcing, qualification, tracking, and payouts - you focus on closing deals.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link
                 href="/linkedin-growth/business"
-                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-base font-bold text-white shadow-2xl shadow-cyan-500/30 transition hover:scale-[1.02] hover:bg-[#00767a]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:bg-[#00838F]"
               >
                 Start a Partnership Program
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/linkedin-growth/influencer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-bold text-white transition"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-4 text-base font-bold text-white transition"
               >
                 Apply as a Creator
               </Link>
@@ -333,40 +306,39 @@ export default function LinkedInGrowthPage() {
           </div>
         </section>
 
-        {/* The Value Proposition */}
-        <section className="mt-24 rounded-3xl border border-white/10 bg-white/5 p-8 lg:p-12 backdrop-blur">
+        {/* Why This Works for Australia Entry */}
+        <section className="mt-24 rounded-2xl border border-white/10 bg-white/5 p-8 lg:p-12">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6">
               <h2 className="text-3xl font-black text-white">
-                Why LinkedIn Creator Partnerships Work
+                Why LinkedIn Creator Partnerships Accelerate Australia Entry
               </h2>
               <div className="space-y-4 text-base text-slate-200/90">
                 <p>
-                  Your buyers are on LinkedIn every day. They follow creators, operators, and founders
-                  who share insights, solve problems, and recommend tools.
+                  Entering Australia without local credibility is the biggest barrier for overseas companies.
+                  Australian buyers follow local creators, operators, and founders who share insights and recommend tools.
                 </p>
                 <p>
-                  When someone they trust mentions your product, it doesn't feel like advertising-it
-                  feels like an affiliate from a colleague. <span className="text-cyan-300 font-medium">That's the difference between interrupting and being introduced.</span>
+                  When someone they trust mentions your product, it bypasses the usual scepticism about
+                  unknown international brands. <span className="text-cyan-300 font-medium">You are not starting from zero - you are borrowing credibility.</span>
                 </p>
                 <p>
-                  Creator-led campaigns consistently outperform cold outbound in B2B because trust
-                  is already established. You're not starting from zero-you're borrowing credibility.
+                  Creator-led campaigns consistently outperform cold outbound in the Australian B2B market because
+                  trust is already established. This is the fastest path to local awareness and pipeline.
                 </p>
               </div>
             </div>
 
             <div className="space-y-4">
               {[
-                { label: "B2B buyers who research independently before sales contact", value: "87%", color: "text-cyan-400", source: "Gartner" },
-                { label: "Higher conversion rate from affiliates vs. cold outbound", value: "3-5x", color: "text-emerald-400", source: "Industry data" },
-                { label: "B2B marketers reporting ROI from influencer partnerships", value: "89%", color: "text-purple-400", source: "TopRank Marketing 2024" },
-                { label: "Lower CAC with performance-based partnerships", value: "40%", color: "text-amber-400", source: "Refer Labs clients" }
+                { label: "B2B buyers who research independently before contacting sales", value: "87%", color: "text-cyan-400" },
+                { label: "Higher conversion rate from warm introductions vs cold outbound", value: "3-5x", color: "text-emerald-400" },
+                { label: "Lower customer acquisition cost with performance-based partnerships", value: "40%", color: "text-purple-400" },
+                { label: "Faster market entry timeline vs building local presence from scratch", value: "3-5x", color: "text-amber-400" }
               ].map((stat) => (
                 <div key={stat.label} className="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
                   <div className={`text-3xl font-black ${stat.color} mb-2`}>{stat.value}</div>
-                  <div className="text-sm text-slate-200/80 mb-1">{stat.label}</div>
-                  <div className="text-xs text-slate-400">Source: {stat.source}</div>
+                  <div className="text-sm text-slate-200/80">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -377,11 +349,11 @@ export default function LinkedInGrowthPage() {
         <section className="mt-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-              Types of LinkedIn Partners We Activate
+              Types of Australian LinkedIn Partners We Activate
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
               Different creators bring different strengths. We match you with partners whose
-              audiences align with your ideal customer profile.
+              audiences align with your ideal Australian customer profile.
             </p>
           </div>
 
@@ -391,9 +363,9 @@ export default function LinkedInGrowthPage() {
               return (
                 <div
                   key={type.title}
-                  className={`rounded-2xl border ${type.border} bg-gradient-to-br ${type.gradient} backdrop-blur-sm p-6 hover:scale-[1.02] transition-transform duration-300`}
+                  className={`rounded-2xl border ${type.border} bg-gradient-to-br ${type.gradient} p-6 hover:scale-[1.02] transition-transform duration-300`}
                 >
-                  <div className="rounded-xl bg-white/10 p-3 backdrop-blur w-fit mb-4">
+                  <div className="rounded-xl bg-white/10 p-3 w-fit mb-4">
                     <Icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{type.title}</h3>
@@ -409,11 +381,11 @@ export default function LinkedInGrowthPage() {
         <section className="mt-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-              What You Can Achieve
+              What You Can Achieve in Australia
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              LinkedIn creator partnerships aren't just about awareness-they drive measurable
-              business outcomes across your entire funnel.
+              LinkedIn creator partnerships drive measurable business outcomes
+              across your entire Australian market entry funnel.
             </p>
           </div>
 
@@ -423,7 +395,7 @@ export default function LinkedInGrowthPage() {
               return (
                 <div
                   key={goal.title}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:border-cyan-400/30 transition-colors"
+                  className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-cyan-400/30 transition-colors"
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className="rounded-xl bg-cyan-500/20 p-3">
@@ -432,7 +404,7 @@ export default function LinkedInGrowthPage() {
                     <h3 className="text-lg font-bold text-white">{goal.title}</h3>
                   </div>
                   <p className="text-sm text-slate-300 leading-relaxed mb-4">{goal.description}</p>
-                  <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+                  <div className="inline-flex items-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
                     {goal.metric}
                   </div>
                 </div>
@@ -441,20 +413,20 @@ export default function LinkedInGrowthPage() {
           </div>
         </section>
 
-        {/* How We Work - End-to-End Process */}
+        {/* How We Work */}
         <section className="mt-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-              How We Create & Manage Partnerships End-to-End
+              How We Manage Partnerships End-to-End
             </h2>
             <p className="text-slate-300 max-w-3xl mx-auto">
-              We handle the entire partnership lifecycle-from sourcing and vetting creators to
+              We handle the entire partnership lifecycle - from sourcing and vetting Australian creators to
               tracking results and processing payouts. You approve the strategy and watch the pipeline fill.
             </p>
           </div>
 
           <div className="space-y-6">
-            {processSteps.map((step, idx) => (
+            {processSteps.map((step) => (
               <div
                 key={step.step}
                 className="rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-transparent p-6 lg:p-8"
@@ -462,7 +434,7 @@ export default function LinkedInGrowthPage() {
                 <div className="grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-10">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 text-xl font-black text-white shadow-lg">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 text-xl font-black text-white shadow-lg">
                         {step.step}
                       </div>
                       <div>
@@ -522,11 +494,11 @@ export default function LinkedInGrowthPage() {
                 accent: "from-purple-500/20 to-pink-500/20",
               },
             ].map((item) => (
-              <div key={item.title} className={`rounded-2xl border border-white/10 bg-gradient-to-br ${item.accent} p-6 backdrop-blur`}>
+              <div key={item.title} className={`rounded-2xl border border-white/10 bg-gradient-to-br ${item.accent} p-6`}>
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
                 <p className="text-sm text-slate-200/80 leading-relaxed mb-4">{item.detail}</p>
                 <div className="space-y-2">
-                  <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/80">
+                  <div className="inline-flex items-center rounded-xl border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/80">
                     {item.example}
                   </div>
                   <p className="text-xs text-slate-400">{item.best}</p>
@@ -536,7 +508,7 @@ export default function LinkedInGrowthPage() {
           </div>
         </section>
 
-        {/* What Refer Labs Handles vs What You Handle */}
+        {/* What We Handle vs What You Handle */}
         <section className="mt-24">
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-8">
@@ -548,14 +520,14 @@ export default function LinkedInGrowthPage() {
               </div>
               <ul className="space-y-4">
                 {[
-                  "Sourcing and vetting LinkedIn creators",
-                  "Matching creators to your ICP and goals",
+                  "Sourcing and vetting Australian LinkedIn creators",
+                  "Matching creators to your ICP and Australia goals",
                   "Setting up unique tracking links per creator",
                   "Managing creator onboarding and briefing",
                   "Processing monthly payouts via Stripe",
                   "Providing compliance templates and disclosures",
                   "Real-time attribution dashboard and reporting",
-                  "Performance optimization and scaling recommendations",
+                  "Performance optimisation and scaling recommendations",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -574,7 +546,7 @@ export default function LinkedInGrowthPage() {
               </div>
               <ul className="space-y-4">
                 {[
-                  "Define your ideal customer profile and goals",
+                  "Define your ideal Australian customer profile and goals",
                   "Approve which creators you want to work with",
                   "Provide brand guidelines and key messaging",
                   "Review and approve content before it goes live",
@@ -598,7 +570,7 @@ export default function LinkedInGrowthPage() {
               Full Visibility Into Every Partnership
             </h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              Track performance, manage creators, and prove ROI-all from one dashboard.
+              Track performance, manage creators, and prove ROI - all from one dashboard.
             </p>
           </div>
 
@@ -676,18 +648,18 @@ export default function LinkedInGrowthPage() {
           </div>
         </section>
 
-        {/* Comprehensive FAQ Section */}
+        {/* FAQ */}
         <section className="mt-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Common Questions</h2>
             <p className="text-lg text-slate-200/90 max-w-3xl mx-auto">
-              Everything you need to know about launching LinkedIn creator partnerships.
+              Everything you need to know about launching LinkedIn creator partnerships in Australia.
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 max-w-4xl mx-auto">
             {faqData.map((section) => (
-              <div key={section.category} className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <div key={section.category} className="rounded-2xl border border-white/10 bg-white/5 p-8">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="rounded-xl bg-cyan-500/20 p-3">
                     <section.icon className="h-6 w-6 text-cyan-300" />
@@ -716,33 +688,34 @@ export default function LinkedInGrowthPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="mt-24 rounded-3xl border border-blue-400/30 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-12 lg:p-16 text-center backdrop-blur">
+        <section className="mt-24 rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/[0.02] to-transparent p-12 lg:p-16 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-4">
-              Ready to Turn LinkedIn Into Your Best Growth Channel?
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight mb-4">
+              Ready to Use LinkedIn Creators for Your Australia Entry?
             </h2>
             <p className="text-lg text-slate-200/90 mb-8">
-              Join B2B companies driving measurable ROI through trusted LinkedIn creator partnerships.
-              We handle the sourcing, tracking, and payouts-you close the deals.
+              Join overseas companies driving measurable ROI through trusted Australian LinkedIn creator partnerships.
+              We handle the sourcing, tracking, and payouts - you close the deals.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/linkedin-growth/business"
-                className="inline-flex items-center gap-2 rounded-full bg-[#008b8b] px-8 py-4 text-base font-bold text-white shadow-lg shadow-cyan-500/30 transition hover:scale-[1.02] hover:bg-[#00767a]"
+              <a
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:bg-[#00838F]"
               >
-                Start a Partnership Program
-                <ArrowRight className="h-5 w-5" />
-              </Link>
+                <Calendar className="h-5 w-5" />
+                Book a Call
+              </a>
               <Link
                 href="/linkedin-growth/influencer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/5 px-8 py-4 text-base font-bold text-white backdrop-blur hover:border-white/50 hover:bg-white/10 transition"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-base font-bold text-white hover:bg-white/10 transition"
               >
                 Apply as a Creator
               </Link>
             </div>
           </div>
         </section>
-
       </main>
     </div>
   );

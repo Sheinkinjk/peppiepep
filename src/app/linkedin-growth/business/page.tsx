@@ -423,12 +423,12 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
         <section className="mb-16 animate-in fade-in duration-700">
           <div className="text-center max-w-3xl mx-auto space-y-6">
             <h1 className="text-4xl sm:text-5xl font-black leading-tight text-white">
-              Launch A Campaign With Verified And Vetted Creators
+              Launch Australian Creator Campaigns For Your Market Entry
             </h1>
 
             <p className="text-lg text-slate-200/90 leading-relaxed">
-              We match you with vetted LinkedIn creators whose audiences align with your ICP.
-              You approve partnerships, creators promote your product, and you track every conversion.
+              We match you with vetted Australian LinkedIn creators whose audiences align with your ICP.
+              Build credibility and generate leads in the Australian market through trusted creator partnerships.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-2">
@@ -436,14 +436,14 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
                 href="https://calendly.com/jarred-referlabs/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-7 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:bg-cyan-300"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:bg-[#00838F]"
               >
-                Schedule A Call
+                Book a Call
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#partnership-form"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/10"
               >
                 Start a Partnership
               </a>
@@ -457,14 +457,14 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
             {
               icon: Target,
               title: "Pay for Outcomes",
-              detail: "Demos booked, signups completed, revenue generated. You define the goal, we track the results.",
+              detail: "Australian demos booked, signups completed, revenue generated. You define the goal, we track the results.",
               color: "from-cyan-500/20 to-teal-500/20",
               border: "border-cyan-400/30"
             },
             {
               icon: Users,
-              title: "Vetted Creator Pool",
-              detail: "We match you with 5-10 creators whose audiences are already looking for solutions like yours.",
+              title: "Vetted Australian Creators",
+              detail: "We match you with 5-10 Australian creators whose audiences are already looking for solutions like yours.",
               color: "from-purple-500/20 to-pink-500/20",
               border: "border-purple-400/30",
               badge: "Verified creators",
@@ -504,13 +504,13 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
 
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-base font-bold text-white mb-4">You're a Great Fit If:</h3>
+              <h3 className="text-base font-bold text-white mb-4">You are a Great Fit If:</h3>
               <div className="space-y-3 text-sm text-slate-200/90">
                 {[
-                  "You have product-market fit and a defined ICP",
+                  "You have product-market fit overseas and want to enter Australia",
                   "You can track conversions (demos, signups, purchases)",
-                  "You have budget allocated for performance marketing",
-                  "You're open to testing 3-5 creators to start"
+                  "You have budget allocated for Australia market entry",
+                  "You are open to testing 3-5 Australian creators to start"
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 text-cyan-300 flex-shrink-0" />
@@ -523,7 +523,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
             <div>
               <h3 className="text-base font-bold text-white mb-4">Industries That Excel:</h3>
               <div className="grid grid-cols-2 gap-3 text-sm text-slate-200/90">
-                {["SaaS (B2B)", "Fintech", "E-commerce", "MarTech", "HR Tech", "Data Tools"].map((industry) => (
+                {["B2B SaaS", "Fintech", "Healthtech", "E-commerce Tech", "Creator Economy", "Professional Services"].map((industry) => (
                   <div key={industry} className="rounded-xl border border-white/10 bg-slate-900/40 px-4 py-2.5 text-center font-semibold">
                     {industry}
                   </div>
@@ -535,14 +535,14 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
 
         {/* How It Works */}
         <section className="mb-16 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
-          <h2 className="text-2xl font-black text-white mb-8 text-center">From Application to First Conversions</h2>
+          <h2 className="text-2xl font-black text-white mb-8 text-center">From Application to First Australian Conversions</h2>
 
           <div className="grid gap-6 md:grid-cols-4">
             {[
-              { step: "1", title: "Submit Request", detail: "Tell us your ICP, goals, and budget. Takes 5 minutes." },
-              { step: "2", title: "Review Creators", detail: "We present 5-10 vetted creators within 2-3 days." },
-              { step: "3", title: "Approve & Launch", detail: "Creators draft content for your approval, then post." },
-              { step: "4", title: "Track & Scale", detail: "Watch conversions roll in. Scale what works." }
+              { step: "1", title: "Submit Request", detail: "Tell us your Australian ICP, goals, and budget. Takes 5 minutes." },
+              { step: "2", title: "Review Creators", detail: "We present 5-10 vetted Australian creators within 2-3 days." },
+              { step: "3", title: "Approve & Launch", detail: "Creators draft Australia-focused content for your approval." },
+              { step: "4", title: "Track & Scale", detail: "Watch Australian conversions roll in. Scale what works." }
             ].map((item, idx) => (
               <div key={item.step} className="relative">
                 <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 h-full">
@@ -628,9 +628,9 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
         {/* Application Form */}
         <section className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/70 to-blue-500/10 p-10 lg:p-12 backdrop-blur shadow-2xl shadow-cyan-500/10">
           <div className="mb-8">
-            <h2 className="text-3xl font-black text-white mb-3">Ready to Launch?</h2>
+            <h2 className="text-3xl font-black text-white mb-3">Ready to Launch in Australia?</h2>
             <p className="text-base text-slate-200/90">
-              Fill out the form below and we'll match you with creators whose audiences are already looking for solutions in your space.
+              Fill out the form below and we will match you with Australian creators whose audiences align with your product.
             </p>
           </div>
 
@@ -685,13 +685,13 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
                 <div className="flex gap-3">
                   <Link
                     href="/linkedin-growth/business"
-                    className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-900 hover:bg-cyan-300 transition"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-6 py-3 text-sm font-bold text-white hover:bg-[#00838F] transition"
                   >
                     Got it
                   </Link>
                   <Link
                     href="/linkedin-growth"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/80 hover:bg-white/5 transition"
+                    className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-white/80 hover:bg-white/5 transition"
                   >
                     Back to Overview
                   </Link>
@@ -889,7 +889,7 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:bg-cyan-300"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#0AA7B5]/30 transition hover:bg-[#00838F]"
               >
                 Submit Partnership Request
                 <ArrowRight className="h-5 w-5" />
