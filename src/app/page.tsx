@@ -34,13 +34,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column */}
             <div className="relative z-10 text-center lg:text-left">
-              <h1 className="font-black tracking-tight mb-6">
-                <span className="block text-[1.75rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-white">
-                  Your Australian Sales
-                </span>
-                <span className="block text-[1.75rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-[#57E6FF]">
-                  &amp; Partnerships Arm
-                </span>
+              <h1 className="text-[2rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] xl:text-[4.25rem] font-black tracking-tight leading-[1.1] mb-6 text-white">
+                Your Australian Sales{" "}
+                <span className="text-[#57E6FF]">&amp; Partnerships Arm</span>
               </h1>
               <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
                 Your local commercial arm in Australia - generating clients, building strategic partnerships, and structuring distribution deals. All on a retainer + commission model.

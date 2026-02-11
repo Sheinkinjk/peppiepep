@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ArrowRight, Calendar, Menu, X } from "lucide-react";
 import { ReferLabsLogo } from "./ReferLabsLogo";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
@@ -23,6 +23,7 @@ export function StickyHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,36 +83,47 @@ export function StickyHeader() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1.5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  className="rounded-xl px-3.5 py-2 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50 transition-all duration-200 cursor-pointer"
-                  href={link.href}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname?.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    className={`rounded-2xl px-3.5 py-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                      isActive
+                        ? "bg-[#E3FAFF] text-[#00505B] border border-[#B4EEF7]"
+                        : "text-[#0b2a34] hover:bg-cyan-50"
+                    }`}
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <a
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 transition-all duration-200 hover:bg-[#00838F] hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 transition-all duration-200 hover:bg-[#00838F] hover:shadow-xl cursor-pointer"
               >
                 <Calendar className="h-4 w-4" />
-                Book Call
+                Schedule a Call
               </a>
               {isAuthenticated && (
                 <>
                   <Link
                     href="/dashboard"
-                    className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-50 cursor-pointer"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:bg-cyan-50 cursor-pointer"
                   >
                     Dashboard <ArrowRight className="h-4 w-4" />
                   </Link>
                   <button
                     type="button"
                     onClick={handleLogout}
-                    className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:-translate-y-0.5 hover:bg-cyan-50 cursor-pointer"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-cyan-500/50 px-3.5 py-2 text-sm font-bold text-cyan-700 transition-all duration-200 hover:bg-cyan-50 cursor-pointer"
                   >
                     Log out
                   </button>
@@ -138,25 +150,36 @@ export function StickyHeader() {
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-white/60 mt-3 bg-white/90 backdrop-blur-xl text-[#0b2a34] shadow-lg shadow-cyan-900/5">
             <nav className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-cyan-50 transition-all duration-200"
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname?.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    className={`rounded-2xl px-4 py-3 text-sm font-semibold transition-all duration-200 ${
+                      isActive
+                        ? "bg-[#E3FAFF] text-[#00505B] border border-[#B4EEF7]"
+                        : "hover:bg-cyan-50"
+                    }`}
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <a
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/25 transition-all duration-200 hover:bg-[#00838F]"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/25 transition-all duration-200 hover:bg-[#00838F]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Calendar className="h-4 w-4" />
-                Book Call
+                Schedule a Call
               </a>
               {isAuthenticated && (
                 <>

@@ -88,119 +88,128 @@ const faqs = [
 
 export default function PricingPage() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#f5fbfc] via-white to-[#e8f6f8] text-slate-900 overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(87,230,255,0.08),transparent_35%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(10,186,181,0.12),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,167,181,0.08),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(12,58,69,0.06),transparent_45%)]" />
       </div>
 
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-8 pb-24 pt-20">
+      <main
+        id="main-content"
+        className="relative mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-8 pb-24 pt-20"
+      >
         {/* Hero */}
-        <header className="text-center space-y-6">
-          <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-white tracking-tight">
+        <header className="text-center space-y-5">
+          <p className="mx-auto inline-flex items-center gap-2 rounded-full bg-white shadow-sm px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#0b2a34]">
+            Simple Pricing
+            <Sparkles className="h-3 w-3 text-[#0AA7B5]" />
+          </p>
+          <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-[#0b2a34] tracking-tight">
             Retainer + Commission
             <br />
-            <span className="text-cyan-300">
-              Aligned Incentives
-            </span>
+            <span className="text-[#0AA7B5]">Aligned Incentives</span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             We earn when you earn. Choose the engagement model that matches your risk appetite and growth stage.
           </p>
         </header>
 
         {/* Pricing Cards */}
-        <section className="grid gap-6 lg:grid-cols-3 max-w-6xl mx-auto w-full">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative overflow-hidden rounded-3xl transition-all duration-300 ${
-                plan.recommended
-                  ? "border-2 border-cyan-400/50 shadow-2xl shadow-cyan-500/20"
-                  : "border border-white/10"
-              }`}
-            >
-              {plan.recommended && (
-                <div className="absolute top-0 inset-x-0 h-1 bg-cyan-400" />
-              )}
+        <section className="space-y-6 max-w-6xl mx-auto w-full">
+          <h2 className="sr-only">Engagement models</h2>
+          <div className="grid gap-6 lg:grid-cols-3 w-full">
+            {plans.map((plan) => (
               <div
-                className={`h-full p-6 sm:p-8 flex flex-col ${
+                key={plan.name}
+                className={`relative overflow-hidden rounded-3xl border bg-white shadow-sm transition-all duration-300 ${
                   plan.recommended
-                    ? "bg-gradient-to-br from-white/12 via-white/8 to-white/4"
-                    : "bg-gradient-to-br from-white/8 via-white/4 to-white/2"
+                    ? "border-[#0AA7B5]/50 shadow-lg shadow-[#0AA7B5]/10"
+                    : "border-slate-200"
                 }`}
               >
                 {plan.recommended && (
-                  <div className="inline-flex self-start items-center gap-1.5 px-3 py-1 mb-4 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-semibold">
-                    <Sparkles className="h-3 w-3" />
-                    Most Popular
-                  </div>
+                  <div className="absolute top-0 inset-x-0 h-1 bg-[#0AA7B5]" />
                 )}
+                <div className="h-full p-6 sm:p-8 flex flex-col gap-6">
+                  {plan.recommended && (
+                    <div className="inline-flex self-start items-center gap-1.5 px-3 py-1 rounded-full bg-[#E3FAFF] text-[#0b2a34] text-xs font-semibold">
+                      <Sparkles className="h-3 w-3 text-[#0AA7B5]" />
+                      Most Popular
+                    </div>
+                  )}
 
-                <div className="mb-6">
-                  <h3 className="text-xl sm:text-2xl font-black text-white">{plan.name}</h3>
-                  <p className="text-sm text-slate-300 mt-2">{plan.description}</p>
+                  <div className="space-y-2">
+                    <h3 className="text-xl sm:text-2xl font-black text-[#0b2a34]">{plan.name}</h3>
+                    <p className="text-sm text-slate-600">{plan.description}</p>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-[#f3fbfc] border border-[#d7f2f5]">
+                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Pricing</p>
+                    <p className="text-sm text-[#0b2a34] font-semibold">{plan.pricing}</p>
+                  </div>
+
+                  <ul className="space-y-3 flex-1">
+                    {plan.scope.map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
+                        <CheckCircle2 className="h-5 w-5 text-[#0AA7B5] flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href={calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full py-4 px-6 rounded-2xl font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-sm ${
+                      plan.recommended
+                        ? "bg-[#0AA7B5] text-white hover:bg-[#088c98]"
+                        : "bg-white text-[#0b2a34] border border-slate-200 hover:border-[#0AA7B5]/40"
+                    }`}
+                    data-lift="true"
+                  >
+                    {plan.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
                 </div>
-
-                <div className="mb-6 p-4 rounded-xl bg-white/[0.05] border border-white/[0.08]">
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mb-1">Pricing</p>
-                  <p className="text-sm text-cyan-300 font-medium">{plan.pricing}</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {plan.scope.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-slate-200">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full py-4 px-6 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
-                    plan.recommended
-                      ? "bg-[#0AA7B5] text-white hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
-                      : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
-                  }`}
-                >
-                  {plan.cta}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
 
         {/* FAQ */}
         <section className="space-y-6 max-w-4xl mx-auto w-full">
-          <h2 className="text-3xl sm:text-4xl font-black text-white text-center">Common Questions</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] text-center">
+            Common Questions
+          </h2>
           <div className="space-y-3">
             {faqs.map((faq) => (
               <details
                 key={faq.q}
-                className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-6 py-5 shadow-md shadow-black/20 transition-all hover:bg-white/[0.07]"
+                className="group rounded-2xl border border-slate-200 bg-white/90 px-6 py-5 shadow-sm transition-all hover:border-[#0AA7B5]/40"
               >
                 <summary className="flex items-center justify-between gap-4 cursor-pointer text-left list-none">
-                  <h3 className="text-base sm:text-lg font-semibold text-white pr-4">{faq.q}</h3>
-                  <span className="text-cyan-300 text-xl font-light group-open:rotate-45 transition-transform duration-200 flex-shrink-0">+</span>
+                  <h3 className="text-base sm:text-lg font-semibold text-[#0b2a34] pr-4">
+                    {faq.q}
+                  </h3>
+                  <span className="text-[#0AA7B5] text-xl font-light group-open:rotate-45 transition-transform duration-200 flex-shrink-0">
+                    +
+                  </span>
                 </summary>
-                <p className="mt-4 text-sm text-slate-300 leading-relaxed">{faq.a}</p>
+                <p className="mt-4 text-sm text-slate-600 leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-gradient-to-br from-white/10 via-white/6 to-white/10 px-6 sm:px-10 py-12 sm:py-16 shadow-2xl shadow-black/35 text-center">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(87,230,255,0.12),transparent_40%)]" />
-          <div className="relative z-10 space-y-6 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+        <section className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white px-6 sm:px-10 py-12 sm:py-16 shadow-sm">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,167,181,0.08),transparent_45%)]" />
+          <div className="relative z-10 space-y-6 max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] leading-tight">
               Ready to Build Australian Revenue?
             </h2>
-            <p className="text-base sm:text-lg text-slate-200">
+            <p className="text-base sm:text-lg text-slate-600">
               Book a 15-minute call. We&apos;ll discuss your goals, recommend an engagement model, and scope the pilot.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
@@ -208,14 +217,15 @@ export default function PricingPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-[#0AA7B5] text-white px-8 py-4 text-sm font-semibold hover:bg-[#00838F] transition-all shadow-lg shadow-[#0AA7B5]/30 gap-2"
+                className="inline-flex items-center justify-center rounded-2xl bg-[#0AA7B5] text-white px-8 py-4 text-sm font-semibold hover:bg-[#088c98] transition-all shadow-md shadow-[#0AA7B5]/25 gap-2"
+                data-lift="true"
               >
                 <Calendar className="h-4 w-4" />
-                Book Call
+                Schedule a Call
               </a>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/5 text-white px-8 py-4 text-sm font-semibold hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-[#0b2a34] px-8 py-4 text-sm font-semibold hover:border-[#0AA7B5]/40 transition-all"
               >
                 How It Works
               </Link>

@@ -3,37 +3,42 @@ import { ReferLabsLogo } from "../ReferLabsLogo";
 import { NewsletterFooterForm } from "@/components/NewsletterFooterForm";
 
 export default function Footer() {
+  const linkClass =
+    "inline-flex min-h-[44px] items-center rounded-lg px-3 py-2.5 text-base text-slate-600 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0AA7B5]";
+
   return (
     <footer className="mt-12 rounded-3xl bg-white/80 px-6 py-10 shadow-[0_30px_120px_rgba(6,16,32,0.08)] ring-1 ring-slate-900/5 backdrop-blur-xl">
       <div className="grid w-full gap-10 lg:grid-cols-[repeat(3,minmax(0,1fr))_1.2fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Company</p>
-          <ul className="mt-4 space-y-2 text-sm text-slate-600">
-            <li><Link className="hover:text-slate-900" href="/">Home</Link></li>
-            <li><Link className="hover:text-slate-900" href="/how-it-works">How It Works</Link></li>
-            <li><Link className="hover:text-slate-900" href="/services">Services</Link></li>
-            <li><Link className="hover:text-slate-900" href="/who-its-for">Who It&apos;s For</Link></li>
-            <li><Link className="hover:text-slate-900" href="/pricing">Pricing</Link></li>
+          <ul className="mt-4 space-y-2">
+            <li><Link className={linkClass} href="/">Home</Link></li>
+            <li><Link className={linkClass} href="/how-it-works">How It Works</Link></li>
+            <li><Link className={linkClass} href="/services">Services</Link></li>
+            <li><Link className={linkClass} href="/who-its-for">Who It&apos;s For</Link></li>
+            <li><Link className={linkClass} href="/pricing">Pricing</Link></li>
+            <li><Link className={linkClass} href="/about">About</Link></li>
           </ul>
         </div>
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Resources</p>
-          <ul className="mt-4 space-y-2 text-sm text-slate-600">
-            <li><Link className="hover:text-slate-900" href="/case-studies">Case Studies</Link></li>
-            <li><Link className="hover:text-slate-900" href="/roi-calculator">Expansion Estimator</Link></li>
-            <li><Link className="hover:text-slate-900" href="/linkedin-growth">Creator Partnerships</Link></li>
-            <li><Link className="hover:text-slate-900" href="/lead-hacking">Partner Sourcing</Link></li>
-            <li><Link className="hover:text-slate-900" href="/faq">FAQ</Link></li>
-            <li><Link className="hover:text-slate-900" href="/contact">Contact</Link></li>
+          <ul className="mt-4 space-y-2">
+            <li><Link className={linkClass} href="/case-studies">Case Studies</Link></li>
+            <li><Link className={linkClass} href="/referral-partnerships">Referral Partnerships</Link></li>
+            <li><Link className={linkClass} href="/roi-calculator">Expansion Estimator</Link></li>
+            <li><Link className={linkClass} href="/linkedin-growth">Creator Partnerships</Link></li>
+            <li><Link className={linkClass} href="/lead-hacking">Partner Sourcing</Link></li>
+            <li><Link className={linkClass} href="/faq">FAQ</Link></li>
+            <li><Link className={linkClass} href="/contact">Contact</Link></li>
           </ul>
         </div>
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Legal</p>
-          <ul className="mt-4 space-y-2 text-sm text-slate-600">
-            <li><Link className="hover:text-slate-900" href="/privacy">Privacy</Link></li>
-            <li><Link className="hover:text-slate-900" href="/terms">Terms</Link></li>
+          <ul className="mt-4 space-y-2">
+            <li><Link className={linkClass} href="/privacy">Privacy</Link></li>
+            <li><Link className={linkClass} href="/terms">Terms</Link></li>
           </ul>
         </div>
 
@@ -49,11 +54,11 @@ export default function Footer() {
             <p className="text-slate-500">Your Australian sales &amp; partnerships arm.</p>
           </div>
           <div className="flex flex-wrap gap-3 text-slate-500">
-            <Link className="hover:text-slate-800" href="/terms">Terms</Link>
+            <Link className={linkClass} href="/terms">Terms</Link>
             <span className="text-slate-300">|</span>
-            <Link className="hover:text-slate-800" href="/privacy">Privacy</Link>
+            <Link className={linkClass} href="/privacy">Privacy</Link>
             <span className="text-slate-300">|</span>
-            <Link className="hover:text-slate-800" href="/contact">Contact</Link>
+            <Link className={linkClass} href="/contact">Contact</Link>
           </div>
         </div>
 

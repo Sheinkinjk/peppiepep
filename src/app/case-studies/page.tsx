@@ -87,7 +87,10 @@ export default function CaseStudiesPage() {
     <div className="relative min-h-screen bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(87,230,255,0.06),transparent_40%)]" />
 
-      <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-20 sm:px-10">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-5xl px-6 pb-24 pt-20 sm:px-10"
+      >
         {/* Hero */}
         <header className="text-center space-y-4 mb-16">
           <h1 className="text-4xl sm:text-5xl font-black leading-tight text-white tracking-tight">
@@ -171,7 +174,7 @@ export default function CaseStudiesPage() {
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
             >
               <Calendar className="h-4 w-4" />
-              Book Call
+              Schedule a Call
             </a>
             <Link
               href="/services"

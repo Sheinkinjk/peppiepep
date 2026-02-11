@@ -383,6 +383,20 @@ export const seoConfig = {
     url: `${SITE_URL}/services/insurance-brokers`,
   },
 
+  referralPartnerships: {
+    title: "Referral & Affiliate Partnerships - Build Your Australian Partner Channel",
+    description:
+      "We source, activate, and manage referral and affiliate partners across Australia. Agencies, consultants, creators, and strategic allies - all tracked and managed end-to-end.",
+    url: `${SITE_URL}/referral-partnerships`,
+    keywords: [
+      "referral partnerships Australia",
+      "affiliate channel Australia",
+      "partner program management",
+      "Australian referral partners",
+      "affiliate activation Australia",
+    ],
+  },
+
   affiliatePartnerships: {
     title: "Services - Sales Representation, Partnerships & Distribution Deals",
     description:

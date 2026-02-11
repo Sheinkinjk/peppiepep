@@ -83,7 +83,10 @@ export default function FAQPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
       </div>
 
-      <main className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 pb-24 pt-16"
+      >
         {/* Hero */}
         <header className="text-center space-y-6 mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-white">
@@ -197,7 +200,7 @@ export default function FAQPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0AA7B5] text-sm font-semibold text-white transition-colors hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
               >
                 <Calendar className="h-4 w-4" />
-                Book Call
+                Schedule a Call
               </a>
               <Link
                 href="/how-it-works"
