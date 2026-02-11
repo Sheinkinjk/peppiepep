@@ -136,7 +136,7 @@ export const seoConfig = {
   home: {
     title: "Refer Labs - Your Australian Sales & Partnerships Arm",
     description:
-      "We help overseas companies enter Australia by sourcing customers, forming distribution partnerships, and running local GTM. Pilot retainer + success basis.",
+      "We help overseas companies enter Australia by sourcing customers, building strategic partnerships, and structuring distribution deals. Retainer + commission model.",
     url: SITE_URL,
     keywords: [
       "Australia GTM",
@@ -153,9 +153,9 @@ export const seoConfig = {
   },
 
   pricing: {
-    title: "Pricing - Pilot, Retainer & Intro-Only Plans",
+    title: "Pricing - Standard, Performance-Heavy & Enterprise Plans",
     description:
-      "Choose the right engagement model for your Australia expansion. 90-day pilot, ongoing retainer, or intro-only. Fixed fees + success-based pricing.",
+      "Choose the right engagement model for your Australia expansion. Retainer + commission pricing aligned to your growth stage. 90-day pilot structure.",
     url: `${SITE_URL}/pricing`,
     keywords: [
       "Australia sales rep pricing",
@@ -181,9 +181,9 @@ export const seoConfig = {
   },
 
   services: {
-    title: "Services - Customer Acquisition, Partnerships & Distribution",
+    title: "Services - Sales Representation, Partnerships & Distribution Deals",
     description:
-      "Three core services: Australia Sales Rep for customer acquisition, Partnerships & Distribution for channel growth, and Referral & Affiliate Channel Management.",
+      "Three core services: Sales Representation for client acquisition, Partnership Development for strategic alliances, and Distribution Deals for white-label and reseller agreements.",
     url: `${SITE_URL}/services`,
     keywords: [
       "Australia sales services",
@@ -191,20 +191,20 @@ export const seoConfig = {
       "customer acquisition Australia",
       "distribution partnerships Australia",
       "channel partner management",
-      "affiliate management Australia",
+      "white-label distribution Australia",
     ],
   },
 
   whoItsFor: {
     title: "Who It's For - Overseas Companies Entering Australia",
     description:
-      "Built for B2B SaaS, fintech, marketplace, and subscription businesses expanding into Australia. From Seed to Series B and beyond.",
+      "Built for B2B SaaS, fintech, healthtech, creator economy, e-commerce tech, and professional services software companies expanding into Australia.",
     url: `${SITE_URL}/who-its-for`,
     keywords: [
       "SaaS Australia expansion",
       "fintech Australia market entry",
       "overseas companies Australia",
-      "Australia expansion for startups",
+      "healthtech Australia expansion",
       "B2B market entry Australia",
     ],
   },
@@ -288,7 +288,7 @@ export const seoConfig = {
     keywords: ["terms of service", "legal terms", "user agreement"],
   },
 
-  // Legacy pages — kept for build compatibility
+  // Legacy pages - kept for build compatibility
   roiCalculator: {
     title: "ROI Calculator",
     description: "Estimate the potential ROI of your partner program.",
@@ -356,9 +356,9 @@ export const seoConfig = {
   },
 
   affiliatePartnerships: {
-    title: "Services - Customer Acquisition, Partnerships & Distribution",
+    title: "Services - Sales Representation, Partnerships & Distribution Deals",
     description:
-      "Three core services: Australia Sales Rep for customer acquisition, Partnerships & Distribution for channel growth, and Referral & Affiliate Channel Management.",
+      "Three core services: Sales Representation, Partnership Development, and Distribution Deals for overseas companies entering Australia.",
     url: `${SITE_URL}/services`,
     keywords: [
       "Australia sales services",
