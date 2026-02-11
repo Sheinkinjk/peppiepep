@@ -24,7 +24,7 @@ const coreServices = [
     title: "Sales Representation",
     subtitle: "Client Acquisition",
     description:
-      "We act as your on-the-ground sales arm in Australia. From outbound prospecting and warm introductions to demo bookings, pipeline creation, and closing support — we generate revenue conversations on your behalf.",
+      "We act as your on-the-ground sales arm in Australia. From outbound prospecting and warm introductions to demo bookings, pipeline creation, and closing support - we generate revenue conversations on your behalf.",
     deliverables: [
       "Outbound prospecting to your Australian ICP",
       "Warm introductions via our local network",
@@ -87,7 +87,7 @@ const addOns = [
   {
     icon: Handshake,
     title: "Intro-Only Mode",
-    description: "Lighter touch — we make the introductions, you take it from there.",
+    description: "Lighter touch - we make the introductions, you take it from there.",
   },
 ];
 
@@ -110,7 +110,7 @@ export default function ServicesPage() {
             Services Built to <span className="text-[#57E6FF]">Drive Australian Revenue</span>
           </h1>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
-            Sales representation, partnership development, and distribution deals — each delivered as a managed engagement on a retainer + commission basis.
+            Sales representation, partnership development, and distribution deals - each delivered as a managed engagement on a retainer + commission basis.
           </p>
         </div>
       </section>

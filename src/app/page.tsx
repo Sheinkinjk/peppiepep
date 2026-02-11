@@ -5,17 +5,12 @@ import {
   FileSignature,
   Target,
   BarChart3,
-  TrendingUp,
   CheckCircle2,
   Calendar,
-  Globe,
   Zap,
-  Shield,
-  Clock,
   Building2,
   Heart,
   ShoppingBag,
-  Code,
   Briefcase,
   CreditCard,
 } from "lucide-react";
@@ -39,43 +34,27 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column */}
             <div className="relative z-10 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-white/10 border border-white/20 px-4 py-1.5 mb-6 backdrop-blur-sm">
-                <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs font-semibold text-white/90 tracking-wide">Accepting new pilot clients</span>
-              </div>
               <h1 className="font-black tracking-tight mb-6">
-                <span className="block text-[2rem] sm:text-[2.6rem] md:text-[3rem] lg:text-[3.2rem] xl:text-[3.6rem] leading-[1.08] text-white">
+                <span className="block text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-white">
                   Your Australian Sales
                 </span>
-                <span className="block text-[2rem] sm:text-[2.6rem] md:text-[3rem] lg:text-[3.2rem] xl:text-[3.6rem] leading-[1.08] text-[#57E6FF]">
+                <span className="block text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[4rem] leading-[1.08] text-[#57E6FF]">
                   &amp; Partnerships Arm
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                Your local commercial arm in Australia — generating clients, building strategic partnerships, and structuring distribution deals. All on a retainer + commission model.
+              <p className="text-base sm:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+                Your local commercial arm in Australia - generating clients, building strategic partnerships, and structuring distribution deals. All on a retainer + commission model.
               </p>
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
-              >
-                <Calendar className="h-4 w-4" />
-                Schedule A Call
-              </a>
-
-              {/* Trust indicators */}
-              <div className="mt-10 flex flex-wrap gap-6 justify-center lg:justify-start">
-                {[
-                  { icon: Globe, text: "For US, UK & EU companies" },
-                  { icon: Shield, text: "Retainer + commission model" },
-                  { icon: Clock, text: "No equity, no exclusivity" },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-2">
-                    <item.icon className="h-3.5 w-3.5 text-[#57E6FF]" />
-                    <span className="text-xs text-white/60 font-medium">{item.text}</span>
-                  </div>
-                ))}
+              <div className="flex justify-center lg:justify-start">
+                <a
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Schedule A Call
+                </a>
               </div>
             </div>
 
@@ -153,7 +132,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-4 sm:px-8 lg:px-12">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
             {[
-              { value: "$1M–$50M", sub: "Client Revenue Range" },
+              { value: "$1M-$50M", sub: "Client Revenue Range" },
               { value: "90 Days", sub: "Structured Pilot" },
               { value: "Retainer + %", sub: "Commission Model" },
               { value: "6 Verticals", sub: "SaaS · Fintech · Health · More" },
@@ -171,12 +150,11 @@ export default function Home() {
       <section className="relative bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
           <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Core offerings</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-4">
-              Three Ways We Drive Revenue in Australia
+              How Refer Labs Drives Revenue
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
-              Each offering is managed end-to-end. You get clients, partners, and distribution — without building a local team.
+              Each offering is managed end-to-end. You get clients, partners, and distribution - without building a local team.
             </p>
           </div>
 
@@ -296,7 +274,7 @@ export default function Home() {
                 { step: "01", title: "Pilot Scoping", desc: "Align on your ICP, messaging, pricing, and success metrics for the Australian market." },
                 { step: "02", title: "Target List Build", desc: "Customer, partner, and distribution targets built around your ideal profile and market." },
                 { step: "03", title: "Outreach & Deals", desc: "We run outreach, book meetings, negotiate partnerships, and support deal closing." },
-                { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, distribution progress, and next actions — reported weekly." },
+                { step: "04", title: "Weekly Reporting", desc: "Pipeline, partners, distribution progress, and next actions - reported weekly." },
               ].map((item) => (
                 <div key={item.step} className="relative text-center">
                   <div className="relative z-10 h-14 w-14 rounded-xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#0AA7B5] to-[#00838F] text-white shadow-lg shadow-[#0AA7B5]/25 ring-4 ring-white">
@@ -330,7 +308,7 @@ export default function Home() {
               Built for Overseas Companies Entering Australia
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-              $1M–$50M in revenue, strong product-market fit overseas, and ready to test Australian distribution.
+              $1M-$50M in revenue, strong product-market fit overseas, and ready to test Australian distribution.
             </p>
           </div>
 
@@ -373,7 +351,7 @@ export default function Home() {
             <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
-                  Retainer + Commission — Aligned Incentives
+                  Retainer + Commission - Aligned Incentives
                 </h2>
                 <p className="text-white/65 text-sm sm:text-base max-w-xl">
                   We earn when you earn. Choose from Standard, Performance-Heavy, or Enterprise engagement models.

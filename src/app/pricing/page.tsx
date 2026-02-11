@@ -16,7 +16,7 @@ const plans = [
     name: "Standard",
     recommended: true,
     description: "The most common engagement model. Balanced retainer with performance upside for both sides.",
-    pricing: "$3K–$7.5K/mo retainer + 10–20% commission on closed revenue",
+    pricing: "$3K-$7.5K/mo retainer + 10-20% commission on closed revenue",
     scope: [
       "Full 90-day pilot structure",
       "Sales representation & outbound prospecting",
@@ -31,12 +31,12 @@ const plans = [
     name: "Performance-Heavy",
     recommended: false,
     description: "Lower upfront cost, higher success fee. Best for companies wanting to minimise risk during market testing.",
-    pricing: "Low or no retainer + 20–30% commission on closed revenue",
+    pricing: "Low or no retainer + 20-30% commission on closed revenue",
     scope: [
       "Same deliverables as Standard",
       "Higher commission on all revenue generated",
       "Ideal for cash-conscious early testing",
-      "Aligned incentives — we earn when you earn",
+      "Aligned incentives - we earn when you earn",
       "Weekly reporting included",
       "Flexible engagement terms",
     ],
@@ -46,7 +46,7 @@ const plans = [
     name: "Enterprise",
     recommended: false,
     description: "For larger companies ready to invest in sustained Australian growth with dedicated resources.",
-    pricing: "$10K–$20K/mo retainer + 5–10% commission",
+    pricing: "$10K-$20K/mo retainer + 5-10% commission",
     scope: [
       "Everything in Standard, plus:",
       "Expanded multi-channel execution",
@@ -62,7 +62,7 @@ const plans = [
 const faqs = [
   {
     q: "What does the 90-day pilot cost?",
-    a: "Pricing depends on scope, target market size, and the number of channels you want to activate. Most pilots fall in the Standard range ($3K–$7.5K/mo + 10–20% commission). We scope and quote during the initial call.",
+    a: "Pricing depends on scope, target market size, and the number of channels you want to activate. Most pilots fall in the Standard range ($3K-$7.5K/mo + 10-20% commission). We scope and quote during the initial call.",
   },
   {
     q: "What counts as a 'commission' event?",

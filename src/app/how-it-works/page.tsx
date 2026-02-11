@@ -39,7 +39,7 @@ export default function HowItWorks() {
             How <span className="text-[#57E6FF]">Refer Labs</span> Works
           </h1>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto mb-8">
-            A structured 90-day pilot that takes you from market alignment to Australian revenue signals — with sales, partnerships, and distribution running in parallel.
+            A structured 90-day pilot that takes you from market alignment to Australian revenue signals - with sales, partnerships, and distribution running in parallel.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -84,13 +84,13 @@ export default function HowItWorks() {
                 {
                   week: "Week 1",
                   title: "Market & Messaging Alignment",
-                  desc: "We align on your ICP, value proposition, pricing, and Australia-specific positioning. You share what works in your home market — we adapt it for the Australian buyer.",
+                  desc: "We align on your ICP, value proposition, pricing, and Australia-specific positioning. You share what works in your home market - we adapt it for the Australian buyer.",
                   color: "from-[#0AA7B5] to-[#00838F]",
                 },
                 {
                   week: "Week 2-3",
                   title: "Build Target Lists & Partner Angles",
-                  desc: "We build your customer target list, identify partnership opportunities, and map potential distribution deals — agencies, platforms, resellers, and enterprise accounts.",
+                  desc: "We build your customer target list, identify partnership opportunities, and map potential distribution deals - agencies, platforms, resellers, and enterprise accounts.",
                   color: "from-[#00838F] to-[#036572]",
                 },
                 {

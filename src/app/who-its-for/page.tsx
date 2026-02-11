@@ -58,7 +58,7 @@ const profiles = [
     icon: ShoppingBag,
     title: "E-commerce Tech",
     description:
-      "You sell commerce infrastructure or DTC products and want to test Australian demand through local partners, affiliates, and retail distribution — without setting up local operations.",
+      "You sell commerce infrastructure or DTC products and want to test Australian demand through local partners, affiliates, and retail distribution - without setting up local operations.",
     example: "US e-commerce infrastructure company entering Australia through agency and retailer partnerships.",
     services: ["Retail distribution", "Agency partnerships", "Affiliate channel setup"],
   },
@@ -73,7 +73,7 @@ const profiles = [
 ];
 
 const qualifiers = [
-  { icon: DollarSign, text: "$1M–$50M in annual revenue" },
+  { icon: DollarSign, text: "$1M-$50M in annual revenue" },
   { icon: Globe, text: "Based outside Australia (US, UK, EU, Asia)" },
   { icon: CheckCircle2, text: "Strong product-market fit in at least one market" },
   { icon: TrendingUp, text: "Ready for a 90-day structured pilot" },
@@ -100,7 +100,7 @@ export default function WhoItsForPage() {
             Built for Companies <span className="text-[#57E6FF]">Entering Australia</span>
           </h1>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
-            We work with $1M–$50M revenue companies that have strong product-market fit overseas and need Australian clients, partnerships, and distribution — without hiring locally.
+            We work with $1M-$50M revenue companies that have strong product-market fit overseas and need Australian clients, partnerships, and distribution - without hiring locally.
           </p>
         </div>
       </section>
@@ -178,7 +178,7 @@ export default function WhoItsForPage() {
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-black text-white mb-3">Already Have a Local Team?</h3>
               <p className="text-white/65 text-sm sm:text-base leading-relaxed max-w-2xl">
-                If you already have a salesperson or small team in Australia, we complement them with partnership development, distribution deal structuring, and channel management — so your team focuses on direct sales while we build the partnership and distribution layer.
+                If you already have a salesperson or small team in Australia, we complement them with partnership development, distribution deal structuring, and channel management - so your team focuses on direct sales while we build the partnership and distribution layer.
               </p>
             </div>
           </div>

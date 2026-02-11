@@ -11,7 +11,7 @@ type FAQ = { q: string; a: string };
 const qualificationFAQs: FAQ[] = [
   {
     q: "Do you only work with overseas companies?",
-    a: "Our primary focus is overseas companies ($1M–$50M revenue) entering Australia. However, we also work with Australia-based companies that want partner-driven growth and distribution channel management. The site prioritises overseas expansion because that is where we deliver the most differentiated value.",
+    a: "Our primary focus is overseas companies ($1M-$50M revenue) entering Australia. However, we also work with Australia-based companies that want partner-driven growth and distribution channel management. The site prioritises overseas expansion because that is where we deliver the most differentiated value.",
   },
   {
     q: "What industries do you focus on?",
@@ -19,7 +19,7 @@ const qualificationFAQs: FAQ[] = [
   },
   {
     q: "What does the ideal client look like?",
-    a: "$1M–$50M in annual revenue, strong product-market fit in at least one overseas market, high LTV product with partnership potential, and no existing Australian presence. A founder or growth lead who can join key calls is essential.",
+    a: "$1M-$50M in annual revenue, strong product-market fit in at least one overseas market, high LTV product with partnership potential, and no existing Australian presence. A founder or growth lead who can join key calls is essential.",
   },
   {
     q: "How fast can we see traction?",
@@ -46,7 +46,7 @@ const serviceFAQs: FAQ[] = [
   },
   {
     q: "What is your pricing model?",
-    a: "Retainer + commission. Standard: $3K–$7.5K/mo + 10–20% commission. Performance-Heavy: low or no retainer + 20–30% commission. Enterprise: $10K–$20K/mo + 5–10% commission. We earn when you earn.",
+    a: "Retainer + commission. Standard: $3K-$7.5K/mo + 10-20% commission. Performance-Heavy: low or no retainer + 20-30% commission. Enterprise: $10K-$20K/mo + 5-10% commission. We earn when you earn.",
   },
   {
     q: "What if we already have a salesperson in Australia?",
