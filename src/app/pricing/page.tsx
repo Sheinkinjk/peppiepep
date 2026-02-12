@@ -87,10 +87,6 @@ export default function PricingPage() {
       >
         {/* Hero */}
         <header className="text-center space-y-5">
-          <p className="mx-auto inline-flex items-center gap-2 rounded-full bg-white shadow-sm px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#0b2a34]">
-            Engagement Options
-            <Sparkles className="h-3 w-3 text-[#0AA7B5]" />
-          </p>
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-[#0b2a34] tracking-tight">
             Retainer + Success Fee
             <br />

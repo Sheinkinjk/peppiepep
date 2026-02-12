@@ -6,16 +6,38 @@ export const metadata = generateSEOMetadata(seoConfig.insuranceBrokersService);
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
 
 const content = {
-  industry: "Insurance Brokers",
-  heroTitle: "Stop Buying Leads. Start Receiving Warm Introductions.",
+  industry: "Insurance & Insurtech",
+  heroTitle: "Enter Australia's Insurance Market",
   heroSubtitle:
-    "Your best policies came from trusted affiliates. Refer Labs helps you systematically activate accountants, financial planners, and satisfied policyholders to send you qualified prospects-automatically.",
-  primaryCta: { label: "Book Your Strategy Call", href: calendlyUrl },
-  industryBenefit:
-    "Insurance is sold on trust. A affiliate from a CPA or existing client closes faster and sticks longer than any cold lead. We give you the system to track, reward, and scale those introductions-so your pipeline fills itself.",
-  ctaTitle: "Ready to grow your book with affiliates that close?",
+    "We help overseas insurtech, underwriting platforms, and insurance software companies generate clients, broker partnerships, and distribution deals in Australia - without hiring locally.",
+  primaryCta: { label: "Book a Market Entry Call", href: calendlyUrl },
+  whyAustralia:
+    "Australia's insurance market is mature but undergoing significant digital transformation. Brokers handle a large share of commercial insurance, creating a concentrated distribution channel. Regulatory modernisation and increasing demand for digital-first solutions mean overseas insurtech companies have a clear window to enter with the right local partnerships and compliance setup.",
+  opportunities: [
+    { title: "Broker Distribution", desc: "Australian insurance brokers are the primary channel for commercial insurance and are actively seeking technology partners." },
+    { title: "Underwriter Partnerships", desc: "Local underwriters and MGAs are looking for innovative platforms to modernise their operations." },
+    { title: "Regulatory Tailwinds", desc: "APRA and ASIC modernisation creates demand for compliance-ready technology solutions." },
+    { title: "Claims & Operations", desc: "Insurers are investing in claims automation, pricing engines, and customer experience platforms." },
+  ],
+  approach: [
+    "Map the Australian insurance technology landscape and key stakeholders",
+    "Build target list of brokers, underwriters, MGAs, and enterprise insurers",
+    "Adapt product positioning for Australian regulatory and market requirements",
+    "Launch outbound sales sequences to qualified insurance buyers",
+    "Pitch and activate broker network and underwriter partnerships",
+    "Structure distribution, licensing, and white-label deals",
+    "Handle regulatory introductions, GST, and contract localisation",
+    "Weekly pipeline and partner reporting throughout",
+  ],
+  outcomes: [
+    { value: "10-15", label: "Qualified conversations" },
+    { value: "3-6", label: "Broker/partner discussions" },
+    { value: "1-2", label: "Distribution deals" },
+    { value: "100%", label: "Market-ready setup" },
+  ],
+  ctaTitle: "Ready to Enter Australia's Insurance Market?",
   ctaDescription:
-    "Book a free 30-minute call. We'll map your ideal affiliate partners, recommend a reward structure, and show you how to launch a program that pays for itself.",
+    "Book a 15-minute call. We will discuss your product, the Australian insurance landscape, and scope a 90-day pilot.",
 };
 
 export default function InsuranceBrokersServicePage() {

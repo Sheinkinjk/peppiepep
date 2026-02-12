@@ -13,7 +13,6 @@ import {
   ShoppingBag,
   Briefcase,
   CreditCard,
-  Globe,
   TrendingUp,
   Shield,
   Settings,
@@ -38,21 +37,15 @@ export default function Home() {
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
             {/* Left Column */}
             <div className="relative z-10 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 mb-8 backdrop-blur-sm">
-                <Globe className="h-3.5 w-3.5 text-[#57E6FF]" />
-                <span className="text-xs font-semibold text-white/90 tracking-wide">Australia &amp; APAC Market Entry</span>
-              </div>
-
               <h1 className="text-[2.25rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-black tracking-tight leading-[1.06] mb-6 text-white text-balance">
-                Your Australian{" "}
-                <span className="text-[#57E6FF]">Commercial Arm</span>
+                We Are Your <span className="text-[#57E6FF]">APAC Expansion Partner.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
                 We help overseas companies generate clients, partnerships, and distribution in Australia - without building a local team.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-12">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                 <a
                   href={calendlyUrl}
                   target="_blank"
@@ -62,27 +55,6 @@ export default function Home() {
                   <Calendar className="h-4 w-4" />
                   Book a Market Entry Call
                 </a>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
-                >
-                  Explore Services
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-
-              {/* Hero proof points */}
-              <div className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
-                {[
-                  { value: "90 Days", label: "Structured Pilot" },
-                  { value: "4 Services", label: "One Commercial Arm" },
-                  { value: "Weekly", label: "Pipeline Reporting" },
-                ].map((item) => (
-                  <div key={item.value}>
-                    <p className="text-lg sm:text-xl font-black text-white">{item.value}</p>
-                    <p className="text-[10px] sm:text-xs text-white/45 uppercase tracking-wider">{item.label}</p>
-                  </div>
-                ))}
               </div>
             </div>
 
@@ -175,7 +147,7 @@ export default function Home() {
           <div className="text-center mb-14 sm:mb-20">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">What we do</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] mb-5">
-              Four Services. One Commercial Arm.
+              Why Refer Labs
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               We handle the sales, partnerships, compliance, and day-to-day operations required to win in Australia - without you hiring a local team.

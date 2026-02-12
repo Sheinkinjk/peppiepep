@@ -33,10 +33,6 @@ export default function ServicesPage() {
 
         {/* Hero */}
         <section className="text-center space-y-8 mb-28">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 px-4 py-1.5 backdrop-blur-sm">
-            <Zap className="h-3.5 w-3.5 text-cyan-400" />
-            <span className="text-xs font-semibold text-white/80 tracking-wide">Four managed services</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
             Your Australian{" "}
             <span className="text-cyan-400">Commercial Arm</span>
