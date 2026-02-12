@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Calendar, ArrowRight } from "lucide-react";
 import { ReferLabsLogo } from "../ReferLabsLogo";
 
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 export default function Footer() {
   return (

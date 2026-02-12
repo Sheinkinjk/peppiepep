@@ -19,12 +19,12 @@ const INITIAL_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hey! I'm the Refer Labs assistant. Curious about our Australia expansion services, pilot structure, or how we build partner channels? Ask anything and I'll point you in the right direction.",
+    "Hey! I'm the Refer Labs assistant. Curious about our market expansion services, pilot structure, or how we build partner channels? Ask anything and I'll point you in the right direction.",
 };
 
 const SUGGESTIONS = [
   "What does the 90-day pilot include?",
-  "How do you source partners in Australia?",
+  "How do you source partners in new markets?",
   "What types of companies do you work with?",
   "Can we book a call to discuss our goals?",
 ];
@@ -358,7 +358,7 @@ export function SupportChatbot() {
           )}
 
         <p className="mt-2 text-center text-xs text-slate-500">
-          Learn how we help overseas companies enter Australia through sales, partnerships, and affiliate channels.
+          Learn how we help global B2B companies enter new markets through sales, partnerships, and distribution channels.
         </p>
         <div className="mt-1 text-center text-xs font-semibold">
           <Link

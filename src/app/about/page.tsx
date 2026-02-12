@@ -144,7 +144,7 @@ export default function About() {
               {
                 icon: Shield,
                 title: "Our Values",
-                desc: "Execution over theory. Transparency over vanity metrics. Aligned incentives over upfront fees. We succeed when our clients generate Australian revenue.",
+                desc: "Execution over theory. Transparency over vanity metrics. Aligned incentives over upfront fees. We succeed when our clients generate in-region revenue.",
               },
             ].map((item) => (
               <div key={item.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7">

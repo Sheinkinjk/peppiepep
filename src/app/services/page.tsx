@@ -243,7 +243,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          {/* Service 4: Australian Operations Management */}
+          {/* Service 4: Regional Operations Management */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="order-2 lg:order-1 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-transparent to-orange-500/10 rounded-3xl blur-3xl" />

@@ -15,7 +15,7 @@ const plans = [
   {
     name: "Australia Launch",
     recommended: true,
-    description: "Best for first-time market entry. A structured 90-day pilot that delivers your first Australian customers, partners, and compliance setup.",
+    description: "Best for first-time market entry. A structured 90-day pilot that delivers your first in-region customers, partners, and compliance setup.",
     pricing: "Fixed monthly retainer + success fee on closed revenue",
     scope: [
       "Sales Representation",
@@ -25,18 +25,18 @@ const plans = [
       "Weekly pipeline and conversion reporting",
       "End-of-pilot playbook with next steps",
     ],
-    goal: "First customers and partners in Australia",
+    goal: "First customers and partners in-region",
     cta: "Book a Market Entry Call",
   },
   {
     name: "Australia Growth",
     recommended: false,
-    description: "Best for companies scaling in Australia. Ongoing retainer engagement with full commercial operations management.",
+    description: "Best for companies scaling in-region. Ongoing retainer engagement with full commercial operations management.",
     pricing: "Monthly retainer + lower success fee on closed revenue",
     scope: [
       "Sales Representation",
       "Partnership & Distribution Development",
-      "Australian Operations Management",
+      "Regional Operations Management",
       "Ongoing deal support and coordination",
       "Monthly strategy reviews and reporting",
       "Market expansion planning",
@@ -65,10 +65,10 @@ const faqs = [
   },
   {
     q: "Do you take equity or exclusivity?",
-    a: "No. We work on a retainer + success fee basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
+    a: "No. We work on a retainer + success fee basis. No equity, no exclusivity clauses. You are free to run other GTM motions alongside our engagement.",
   },
   {
-    q: "What if we already have a team in Australia?",
+    q: "What if we already have a team in-region?",
     a: "We complement your existing team with partnership development, distribution deal structuring, compliance support, and operations management. We scope the engagement to avoid overlap and maximise coverage.",
   },
 ];

@@ -26,8 +26,8 @@ const profiles = [
     icon: Building2,
     title: "B2B SaaS",
     description:
-      "You have product-market fit in your home market and want to test Australia before committing headcount. We run outbound sales, book demos, source local partners, and negotiate distribution deals to validate demand.",
-    example: "US-based project management SaaS testing regional demand through partner-led distribution and direct sales.",
+      "You have product-market fit in your home market and want to test a new region before committing headcount. We run outbound sales, book demos, source local partners, and negotiate distribution deals to validate demand.",
+    example: "US-based project management SaaS testing APAC demand through partner-led distribution and direct sales.",
     services: ["Sales representation", "Partner development", "Enterprise introductions"],
     color: "from-cyan-500/20 to-teal-500/10",
     href: null,
@@ -36,8 +36,8 @@ const profiles = [
     icon: CreditCard,
     title: "Fintech",
     description:
-      "You need brokers, advisors, and strategic partners to distribute your fintech product in Australia. We identify the right channels, structure white-label and reseller deals, and activate distribution partners.",
-    example: "UK lending platform building an Australian broker network and white-label distribution channel.",
+      "You need brokers, advisors, and strategic partners to distribute your fintech product in new markets. We identify the right channels, structure white-label and reseller deals, and activate distribution partners.",
+    example: "UK lending platform building a local broker network and white-label distribution channel in APAC.",
     services: ["Distribution deals", "Broker activation", "Reseller agreements"],
     color: "from-purple-500/20 to-pink-500/10",
     href: "/services/financial-advisors",
@@ -46,8 +46,8 @@ const profiles = [
     icon: Heart,
     title: "Healthtech",
     description:
-      "You have a digital health platform and need provider partnerships, payer relationships, and enterprise distribution in the Australian healthcare system.",
-    example: "US telehealth platform partnering with Australian health networks and private hospital groups.",
+      "You have a digital health platform and need provider partnerships, payer relationships, and enterprise distribution in new markets.",
+    example: "US telehealth platform partnering with local health networks and private hospital groups in APAC.",
     services: ["Provider partnerships", "Enterprise introductions", "Payer relationships"],
     color: "from-rose-500/20 to-orange-500/10",
     href: "/services/insurance-brokers",
@@ -56,8 +56,8 @@ const profiles = [
     icon: Zap,
     title: "Creator Economy Tools",
     description:
-      "You build tools for creators and want to reach the Australian creator market through communities, agencies, and platform partnerships.",
-    example: "European creator monetisation platform expanding into the Australian influencer and content creator market.",
+      "You build tools for creators and want to reach new creator markets through communities, agencies, and platform partnerships.",
+    example: "European creator monetisation platform expanding into APAC through local influencer and content creator partnerships.",
     services: ["Community partnerships", "Agency distribution", "Platform integrations"],
     color: "from-amber-500/20 to-yellow-500/10",
     href: null,
@@ -66,8 +66,8 @@ const profiles = [
     icon: ShoppingBag,
     title: "E-commerce Tech",
     description:
-      "You sell commerce infrastructure or DTC products and want to test Australian demand through local partners, affiliates, and retail distribution.",
-    example: "US e-commerce infrastructure company entering Australia through agency and retailer partnerships.",
+      "You sell commerce infrastructure or DTC products and want to test regional demand through local partners, affiliates, and retail distribution.",
+    example: "US e-commerce infrastructure company entering APAC through agency and retailer partnerships.",
     services: ["Retail distribution", "Agency partnerships", "Affiliate channel setup"],
     color: "from-emerald-500/20 to-teal-500/10",
     href: null,
@@ -76,8 +76,8 @@ const profiles = [
     icon: Briefcase,
     title: "Professional Services Software",
     description:
-      "You build software for legal, accounting, or consulting firms and need to break into Australian professional services verticals.",
-    example: "Canadian legal tech company partnering with Australian law firms and industry associations.",
+      "You build software for legal, accounting, or consulting firms and need to break into professional services verticals in new markets.",
+    example: "Canadian legal tech company partnering with local law firms and industry associations in APAC.",
     services: ["Vertical partnerships", "Enterprise sales", "Industry network entry"],
     color: "from-blue-500/20 to-indigo-500/10",
     href: "/services/consultants-coaches",
@@ -207,7 +207,7 @@ export default function WhoItsForPage() {
               Explore by Industry
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-sm">
-              We have built market entry playbooks for these Australian verticals. Each page covers the opportunity, our approach, and what to expect in 90 days.
+              We have built market entry playbooks for key verticals. Each page covers the opportunity, our approach, and what to expect in 90 days.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -241,7 +241,7 @@ export default function WhoItsForPage() {
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-black text-white mb-3">Already Have a Local Team?</h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                  If you already have a salesperson or small team in Australia, we complement them with partnership development, distribution deal structuring, and channel management - so your team focuses on direct sales while we build the partnership and distribution layer.
+                  If you already have a salesperson or small team in-region, we complement them with partnership development, distribution deal structuring, and channel management - so your team focuses on direct sales while we build the partnership and distribution layer.
                 </p>
               </div>
             </div>

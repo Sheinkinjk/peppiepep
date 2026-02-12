@@ -58,7 +58,7 @@ const playbooks = [
     id: "distribution-deals",
     icon: FileSignature,
     color: "cyanSoft",
-    title: "How We Structure Distribution Deals in Australia",
+    title: "How We Structure Distribution Deals in a New Market",
     subtitle: "Example playbook",
     steps: [
       { phase: "Week 1", action: "Define ideal distribution partner profile and deal structure preferences (white-label, reseller, licensing)" },
