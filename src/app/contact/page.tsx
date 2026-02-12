@@ -20,10 +20,10 @@ export default function Contact() {
         {/* Header */}
         <header className="text-center space-y-6 mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-[#0b2a34] tracking-tight max-w-3xl mx-auto">
-            Book a 15-min <span className="text-[#0AA7B5]">Australia Expansion Call</span>
+            Book a 15-min <span className="text-[#0AA7B5]">Market Expansion Call</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Tell us about your company and your goals in Australia. We will recommend an approach and scope the right engagement.
+            Tell us about your company and your expansion goals. We will recommend an approach and scope the right engagement.
           </p>
         </header>
 
@@ -44,7 +44,7 @@ export default function Contact() {
               </div>
               <h2 className="text-2xl font-bold text-[#0b2a34] mb-3">Book a Call</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                15-minute call to discuss your Australia expansion goals, product, and timeline. We will recommend an approach on the call.
+                15-minute call to discuss your market expansion goals, product, and timeline. We will recommend an approach on the call.
               </p>
               <div className="flex items-center gap-4 text-sm text-slate-600 mb-6">
                 <span className="flex items-center gap-2">
@@ -75,7 +75,7 @@ export default function Contact() {
               </div>
               <h2 className="text-2xl font-bold text-[#0b2a34] mb-3">Email Us</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Prefer email? Tell us about your company, what you sell, and your Australia goals. We will respond within 24 hours.
+                Prefer email? Tell us about your company, what you sell, and your expansion goals. We will respond within 24 hours.
               </p>
               <div className="text-sm text-[#0b2a34] mb-6 font-semibold">
                 jarred@referlabs.com.au
@@ -101,7 +101,7 @@ export default function Contact() {
               "Your website",
               "Where you are based",
               "What you sell",
-              "Your goal in Australia",
+              "Your expansion goal",
               "Your timeline",
             ].map((item) => (
               <div key={item} className="text-center p-5 rounded-2xl border border-slate-200 bg-white shadow-xs">
@@ -119,7 +119,7 @@ export default function Contact() {
 
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { title: "Expansion Call", copy: "We learn about your product, market, and Australia goals" },
+              { title: "Expansion Call", copy: "We learn about your product, market, and expansion goals" },
               { title: "Market Entry Plan", copy: "We recommend the right services, target list approach, and pilot scope" },
               { title: "Kick Off", copy: "If it is a fit, we start your 90-day pilot and begin building pipeline" },
             ].map((item, idx) => (

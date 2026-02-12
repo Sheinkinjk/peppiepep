@@ -134,128 +134,128 @@ export function generateMetadata(config: SEOConfig): Metadata {
  */
 export const seoConfig = {
   home: {
-    title: "Refer Labs - Your Australian Sales & Partnerships Arm",
+    title: "Refer Labs - Your APAC & EMEA Expansion Partner",
     description:
-      "We help overseas companies enter Australia by sourcing customers, building strategic partnerships, and structuring distribution deals. Retainer + commission model.",
+      "We help global B2B companies enter APAC and EMEA by outsourcing sales, partnerships, compliance, and operational setup. Retainer + commission model.",
     url: SITE_URL,
     keywords: [
-      "Australia GTM",
-      "Australian sales rep",
-      "market entry Australia",
-      "partnerships arm Australia",
-      "overseas expansion Australia",
-      "Australian distribution partner",
-      "partner distribution Australia",
-      "B2B sales Australia",
-      "Australia market entry",
-      "local GTM Australia",
+      "APAC EMEA market entry",
+      "in-region sales rep",
+      "market entry services",
+      "partnerships arm",
+      "international expansion",
+      "distribution partner",
+      "B2B market entry",
+      "outsourced sales team",
+      "APAC GTM",
+      "EMEA GTM",
     ],
   },
 
   pricing: {
-    title: "Pricing - Standard, Performance-Heavy & Enterprise Plans",
+    title: "Pricing - Market Entry Engagement Models",
     description:
-      "Choose the right engagement model for your Australia expansion. Retainer + commission pricing aligned to your growth stage. 90-day pilot structure.",
+      "Choose the right engagement model for your APAC or EMEA expansion. Retainer + commission pricing aligned to your growth stage. 90-day pilot structure.",
     url: `${SITE_URL}/pricing`,
     keywords: [
-      "Australia sales rep pricing",
       "market entry pricing",
       "GTM services pricing",
-      "Australia expansion cost",
+      "expansion engagement cost",
       "partnership services pricing",
+      "outsourced sales pricing",
     ],
   },
 
   howItWorks: {
-    title: "How It Works - Your 90-Day Australia Market Entry Pilot",
+    title: "How It Works - Your 90-Day Market Entry Pilot",
     description:
-      "See how Refer Labs takes you from zero to Australian revenue. 90-day pilot with weekly reporting, partner sourcing, customer outreach, and closing support.",
+      "See how Refer Labs takes you from zero to in-market revenue. 90-day pilot with weekly reporting, partner sourcing, customer outreach, and closing support.",
     url: `${SITE_URL}/how-it-works`,
     keywords: [
-      "Australia market entry process",
-      "90 day pilot Australia",
-      "how to enter Australian market",
-      "Australia GTM process",
-      "Australian sales process",
+      "market entry process",
+      "90 day expansion pilot",
+      "how to enter new markets",
+      "GTM pilot process",
+      "international sales process",
     ],
   },
 
   services: {
-    title: "Services - Sales Representation, Partnerships & Distribution Deals",
+    title: "Services - Sales, Partnerships, Compliance, Operations & Team Building",
     description:
-      "Three core services: Sales Representation for client acquisition, Partnership Development for strategic alliances, and Distribution Deals for white-label and reseller agreements.",
+      "Five core services: Sales Representation, Partnership Development, Compliance & Market Setup, Operations Management, and Team Formation & Recruitment.",
     url: `${SITE_URL}/services`,
     keywords: [
-      "Australia sales services",
-      "Australian partnership services",
-      "customer acquisition Australia",
-      "distribution partnerships Australia",
+      "outsourced sales services",
+      "partnership development services",
+      "market entry compliance",
+      "distribution partnerships",
       "channel partner management",
-      "white-label distribution Australia",
+      "in-region team recruitment",
     ],
   },
 
   whoItsFor: {
-    title: "Who It's For - Overseas Companies Entering Australia",
+    title: "Who It's For - Global B2B Companies Entering New Markets",
     description:
-      "Built for B2B SaaS, fintech, healthtech, creator economy, e-commerce tech, and professional services software companies expanding into Australia.",
+      "Built for B2B SaaS, fintech, healthtech, creator economy, e-commerce tech, and professional services software companies expanding into APAC and EMEA.",
     url: `${SITE_URL}/who-its-for`,
     keywords: [
-      "SaaS Australia expansion",
-      "fintech Australia market entry",
-      "overseas companies Australia",
-      "healthtech Australia expansion",
-      "B2B market entry Australia",
+      "SaaS international expansion",
+      "fintech market entry",
+      "B2B APAC expansion",
+      "healthtech EMEA expansion",
+      "B2B market entry services",
     ],
   },
 
   caseStudies: {
-    title: "Playbooks - Australia Market Entry Examples",
+    title: "Playbooks - Market Entry Examples",
     description:
-      "Example playbooks showing how we enter Australia for SaaS companies, build agency partner channels, and activate distribution channels.",
+      "Example playbooks showing how we enter new markets for B2B companies, build agency partner channels, and activate distribution channels.",
     url: `${SITE_URL}/case-studies`,
     keywords: [
-      "Australia market entry examples",
+      "market entry examples",
       "SaaS expansion playbook",
       "partner channel playbook",
-      "distribution activation Australia",
+      "distribution activation",
     ],
   },
 
   about: {
-    title: "About - Australian Sales & Partnerships for Overseas Companies",
+    title: "About - Your On-the-Ground Commercial Arm for APAC & EMEA",
     description:
-      "Learn about Refer Labs and our mission to be the Australian sales and partnerships arm for overseas companies entering the market.",
+      "Learn about Refer Labs and our mission to be the on-the-ground commercial arm for global B2B companies entering APAC and EMEA markets.",
     url: `${SITE_URL}/about`,
     keywords: [
       "about refer labs",
-      "Australian GTM partner",
-      "overseas expansion partner",
+      "APAC EMEA GTM partner",
+      "international expansion partner",
     ],
   },
 
   contact: {
-    title: "Contact Us - Book a 15-min Australia Expansion Call",
+    title: "Contact Us - Book a 15-min Market Expansion Call",
     description:
-      "Book a call to discuss your Australia market entry. Tell us about your company, what you sell, and your goals in Australia.",
+      "Book a call to discuss your market expansion. Tell us about your company, what you sell, and your goals in APAC or EMEA.",
     url: `${SITE_URL}/contact`,
     keywords: [
       "contact refer labs",
-      "Australia expansion call",
+      "market expansion call",
       "market entry consultation",
-      "Australian sales partner",
+      "APAC EMEA sales partner",
     ],
   },
 
   faq: {
-    title: "FAQ - Australia Market Entry Questions Answered",
+    title: "FAQ - Market Entry Questions Answered",
     description:
-      "Find answers to common questions about our Australia GTM services, pricing, pilot structure, and how we help overseas companies enter the Australian market.",
+      "Find answers to common questions about our APAC and EMEA market entry services, pricing, pilot structure, and how we help global B2B companies expand.",
     url: `${SITE_URL}/faq`,
     keywords: [
-      "Australia market entry FAQ",
+      "market entry FAQ",
       "GTM services questions",
-      "Australia expansion FAQ",
+      "APAC expansion FAQ",
       "partnership services FAQ",
     ],
   },

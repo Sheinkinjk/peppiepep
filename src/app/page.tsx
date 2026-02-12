@@ -16,6 +16,7 @@ import {
   TrendingUp,
   Shield,
   Settings,
+  UserPlus,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -42,7 +43,7 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-                We help overseas companies generate clients, partnerships, and distribution in Australia - without building a local team.
+                We help global B2B companies enter the APAC and EMEA regions by outsourcing their sales, partnerships, compliance, and operational setup.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -130,7 +131,7 @@ export default function Home() {
               { value: "$1M-$50M", sub: "Client Revenue Range" },
               { value: "Retainer + %", sub: "Commission Model" },
               { value: "6 Verticals", sub: "SaaS, Fintech, Health & More" },
-              { value: "Australia & APAC", sub: "Market Coverage" },
+              { value: "APAC & EMEA", sub: "Market Coverage" },
             ].map((item) => (
               <div key={item.value} className="text-center">
                 <p className="text-lg sm:text-xl font-black text-[#0b2a34]">{item.value}</p>
@@ -150,17 +151,17 @@ export default function Home() {
               Why Refer Labs
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-              We handle the sales, partnerships, compliance, and day-to-day operations required to win in Australia - without you hiring a local team.
+              We handle the sales, partnerships, compliance, and operations required to enter and win in new markets - without you hiring a local team.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {[
               {
                 icon: Target,
                 num: "01",
                 title: "Sales Representation",
-                desc: "We act as your on-the-ground sales arm in Australia.",
+                desc: "We act as your on-the-ground sales arm in-region.",
                 items: ["Outbound prospecting to your ICP", "Warm introductions via our network", "Demo booking & pipeline creation", "Closing support on priority deals"],
                 stat: "10-20",
                 statLabel: "qualified conversations",
@@ -178,8 +179,8 @@ export default function Home() {
                 icon: Shield,
                 num: "03",
                 title: "Compliance & Market Setup",
-                desc: "We handle the legal and operational steps to sell in Australia.",
-                items: ["Market entry structure guidance", "Local contract adjustments", "GST & pricing guidance", "Legal & accounting intros"],
+                desc: "We handle the legal and operational steps to sell in new markets.",
+                items: ["Market entry structure guidance", "Local contract adjustments", "Tax & regulatory compliance", "Legal & accounting intros"],
                 stat: "100%",
                 statLabel: "market-ready setup",
               },
@@ -187,10 +188,19 @@ export default function Home() {
                 icon: Settings,
                 num: "04",
                 title: "Operations Management",
-                desc: "We manage your ongoing commercial activities locally.",
+                desc: "We manage your ongoing commercial activities in-region.",
                 items: ["Deal coordination & execution", "Partner & client management", "Local onboarding coordination", "Monthly pipeline & revenue reporting"],
                 stat: "Ongoing",
                 statLabel: "commercial operation",
+              },
+              {
+                icon: UserPlus,
+                num: "05",
+                title: "Team Formation & Recruitment",
+                desc: "As the market grows, we help build your in-region team.",
+                items: ["Role scoping & candidate sourcing", "Local hiring & onboarding support", "Transition from outsourced to owned", "Ongoing advisory during handover"],
+                stat: "Scale",
+                statLabel: "from outsourced to owned",
               },
             ].map((channel) => (
               <div
@@ -238,7 +248,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-10">
             <h3 className="text-2xl sm:text-3xl font-black text-[#0b2a34] mb-3">
-              Built for Overseas B2B Companies Entering Australia
+              Built for Global B2B Companies Entering New Markets
             </h3>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -268,10 +278,10 @@ export default function Home() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#57E6FF] mb-4">The problem</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.08] mb-6">
-                Most Australia Expansions Fail in the First Year
+                Most International Expansions Fail in the First Year
               </h2>
               <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-8">
-                Overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, compliance, and operations.
+                Companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, compliance, and operations.
               </p>
               <a
                 href={calendlyUrl}
@@ -309,7 +319,7 @@ export default function Home() {
               How It Works
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
-              A structured approach to building your Australian pipeline, partnerships, compliance, and operations.
+              A structured approach to building your in-region pipeline, partnerships, compliance, and operations.
             </p>
           </div>
 
@@ -352,21 +362,21 @@ export default function Home() {
           <div className="text-center mb-14">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Who we work with</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
-              Built for Overseas Companies Entering Australia
+              Built for Global B2B Companies Entering New Markets
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-              $1M-$50M in revenue, strong product-market fit overseas, and ready to test Australian distribution.
+              $1M-$50M in revenue, strong product-market fit in at least one market, and ready to expand into APAC or EMEA.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: Building2, label: "B2B SaaS", desc: "Enterprise and mid-market software companies entering the ANZ market" },
+              { icon: Building2, label: "B2B SaaS", desc: "Enterprise and mid-market software companies entering new regions" },
               { icon: CreditCard, label: "Fintech", desc: "Payments, lending, and financial infrastructure seeking local distribution" },
               { icon: Heart, label: "Healthtech", desc: "Digital health platforms looking for provider and payer partnerships" },
-              { icon: Zap, label: "Creator Economy", desc: "Creator tools and platforms expanding into the Australian creator market" },
-              { icon: ShoppingBag, label: "E-commerce Tech", desc: "Commerce infrastructure and DTC brands testing Australian demand" },
-              { icon: Briefcase, label: "Professional Services Software", desc: "Legal, accounting, and consulting tech entering Australian verticals" },
+              { icon: Zap, label: "Creator Economy", desc: "Creator tools and platforms expanding into new markets" },
+              { icon: ShoppingBag, label: "E-commerce Tech", desc: "Commerce infrastructure and DTC brands testing regional demand" },
+              { icon: Briefcase, label: "Professional Services Software", desc: "Legal, accounting, and consulting tech entering new verticals" },
             ].map((item) => (
               <div key={item.label} className="group p-6 rounded-2xl bg-white border border-slate-200/60 transition-all duration-300 hover:border-[#0AA7B5]/30 hover:shadow-lg hover:shadow-[#0AA7B5]/5">
                 <div className="h-12 w-12 rounded-xl bg-[#0AA7B5]/10 flex items-center justify-center mb-4 group-hover:bg-[#0AA7B5]/15 transition-colors">
@@ -424,10 +434,10 @@ export default function Home() {
         </div>
         <div className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-            Ready to Enter the Australian Market?
+            Ready to Enter a New Market?
           </h2>
           <p className="text-base sm:text-lg text-white/65 mb-10 max-w-xl mx-auto">
-            Book a 15-minute call. We will discuss your product, your goals in Australia, and scope a 90-day pilot.
+            Book a 15-minute call. We will discuss your product, your expansion goals, and scope a 90-day pilot.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

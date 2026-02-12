@@ -18,11 +18,11 @@ const playbooks = [
     id: "us-saas-australia",
     icon: Cloud,
     color: "cyan",
-    title: "How We Enter Australia for a US SaaS Company",
+    title: "How We Enter a New Market for a B2B SaaS Company",
     subtitle: "Example playbook",
     steps: [
-      { phase: "Week 1", action: "ICP alignment and Australia-specific positioning review" },
-      { phase: "Week 2-3", action: "Build target list of 50 Australian prospects and 15 potential agency partners" },
+      { phase: "Week 1", action: "ICP alignment and region-specific positioning review" },
+      { phase: "Week 2-3", action: "Build target list of 50 local prospects and 15 potential agency partners" },
       { phase: "Week 4-6", action: "Launch outbound sequences; begin partner outreach with tailored pitch decks" },
       { phase: "Week 7-10", action: "Book and attend introductory meetings; refine messaging based on early feedback" },
       { phase: "Week 11-12", action: "Pipeline review; partner terms negotiation; next-step playbook delivered" },
@@ -30,7 +30,7 @@ const playbooks = [
     typicalOutcomes: [
       "10-20 qualified prospect conversations",
       "3-5 agency or platform partner discussions",
-      "Clear signal on product-market fit in Australia",
+      "Clear signal on product-market fit in the region",
       "Repeatable outreach sequences for continued use",
     ],
   },
@@ -41,7 +41,7 @@ const playbooks = [
     title: "How We Build an Agency Partner Channel",
     subtitle: "Example playbook",
     steps: [
-      { phase: "Week 1", action: "Map the Australian agency landscape relevant to the client's product category" },
+      { phase: "Week 1", action: "Map the local agency landscape relevant to the client's product category" },
       { phase: "Week 2-3", action: "Shortlist 20 agencies; draft partner value proposition and terms framework" },
       { phase: "Week 4-8", action: "Outreach to agency decision-makers; present partnership opportunity" },
       { phase: "Week 9-10", action: "Onboard first partners; set up tracking and reporting" },
@@ -97,7 +97,7 @@ export default function CaseStudiesPage() {
             Playbooks
           </h1>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-            Example scenarios showing how we approach Australia market entry, partner channels, and distribution deals.
+            Example scenarios showing how we approach market entry, partner channels, and distribution deals.
           </p>
           <p className="text-sm text-slate-500 italic">
             These are illustrative playbooks, not fabricated case studies. Each engagement is scoped to your specific situation.
@@ -164,7 +164,7 @@ export default function CaseStudiesPage() {
             Want a Playbook Built for Your Business?
           </h2>
           <p className="text-slate-400 mb-6 max-w-lg mx-auto">
-            Book a call and we will map out an Australia entry approach specific to your product and market.
+            Book a call and we will map out a market entry approach specific to your product and region.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h3 className="text-2xl sm:text-3xl font-black text-white mb-2">
-                Ready to enter the Australian market?
+                Ready to enter a new market?
               </h3>
               <p className="text-sm text-white/70 max-w-md">
                 Book a 15-minute call and we will scope your 90-day pilot.
@@ -50,7 +50,7 @@ export default function Footer() {
                 <ReferLabsLogo className="h-8 w-auto text-white/90" />
               </Link>
               <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-                Your Australian sales, partnerships, compliance, and operations arm. We help overseas companies generate revenue in Australia without hiring locally.
+                Your on-the-ground sales, partnerships, compliance, and operations arm. We help global B2B companies enter APAC and EMEA without hiring locally.
               </p>
               <a
                 href="mailto:jarred@referlabs.com.au"

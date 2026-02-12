@@ -27,7 +27,7 @@ const profiles = [
     title: "B2B SaaS",
     description:
       "You have product-market fit in your home market and want to test Australia before committing headcount. We run outbound sales, book demos, source local partners, and negotiate distribution deals to validate demand.",
-    example: "US-based project management SaaS testing ANZ demand through partner-led distribution and direct sales.",
+    example: "US-based project management SaaS testing regional demand through partner-led distribution and direct sales.",
     services: ["Sales representation", "Partner development", "Enterprise introductions"],
     color: "from-cyan-500/20 to-teal-500/10",
     href: null,
@@ -97,11 +97,11 @@ export default function WhoItsForPage() {
         {/* Hero */}
         <section className="text-center space-y-8 mb-20">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
-            Built for Companies{" "}
-            <span className="text-cyan-400">Entering Australia</span>
+            Built for Global B2B Companies{" "}
+            <span className="text-cyan-400">Entering New Markets</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We work with $1M-$50M revenue companies that have strong product-market fit overseas and need Australian clients, partnerships, and distribution - without hiring locally.
+            We work with $1M-$50M revenue companies that have strong product-market fit and need in-region clients, partnerships, and distribution across APAC and EMEA - without hiring locally.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a
@@ -130,7 +130,7 @@ export default function WhoItsForPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 { icon: DollarSign, text: "$1M-$50M in annual revenue" },
-                { icon: Globe, text: "Based outside Australia (US, UK, EU, Asia)" },
+                { icon: Globe, text: "Headquartered in US, UK, EU, or Asia-Pacific" },
                 { icon: CheckCircle2, text: "Strong product-market fit in at least one market" },
                 { icon: TrendingUp, text: "Ready for a 90-day structured pilot" },
                 { icon: Target, text: "High LTV product with partnership potential" },
@@ -152,7 +152,7 @@ export default function WhoItsForPage() {
               Who We Work With
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              We have structured our services around the company types and verticals that get the most value from local Australian sales, partnerships, and distribution.
+              We have structured our services around the company types and verticals that get the most value from local sales, partnerships, and distribution in new markets.
             </p>
           </div>
 
@@ -257,7 +257,7 @@ export default function WhoItsForPage() {
                 Sound Like You?
               </h2>
               <p className="text-lg text-slate-300">
-                Book a 15-minute call and tell us about your product, your market, and your Australia goals. We will tell you if we are the right fit.
+                Book a 15-minute call and tell us about your product, your market, and your expansion goals. We will tell you if we are the right fit.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
                 <a

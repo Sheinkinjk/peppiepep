@@ -107,7 +107,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
             {[
               { icon: Target, title: "Sales Representation", desc: "Outbound prospecting, warm introductions, demo bookings, and pipeline creation." },
               { icon: Handshake, title: "Partnership & Distribution", desc: "Source and activate partners, resellers, and distribution channels." },
-              { icon: Shield, title: "Compliance & Setup", desc: "Market entry structure, local contracts, GST guidance, and professional intros." },
+              { icon: Shield, title: "Compliance & Setup", desc: "Market entry structure, local contracts, tax & regulatory guidance, and professional intros." },
               { icon: Settings, title: "Operations Management", desc: "Deal coordination, partner management, onboarding, and pipeline reporting." },
             ].map((service) => (
               <div key={service.title} className="rounded-2xl bg-white/[0.03] border border-white/5 p-7 hover:border-white/10 transition-colors">

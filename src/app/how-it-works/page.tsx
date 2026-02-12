@@ -33,7 +33,7 @@ export default function HowItWorks() {
             How <span className="text-cyan-400">Refer Labs</span> Works
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            A structured 90-day pilot that takes you from market alignment to Australian revenue signals - with sales, partnerships, compliance, and operations running in parallel.
+            A structured 90-day pilot that takes you from market alignment to in-market revenue signals - with sales, partnerships, compliance, and operations running in parallel.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a
@@ -76,11 +76,11 @@ export default function HowItWorks() {
                 Market &amp; Messaging Alignment
               </h3>
               <p className="text-slate-300 leading-relaxed">
-                We align on your ICP, value proposition, pricing, and Australia-specific positioning. You share what works in your home market - we adapt it for the Australian buyer. This sets the foundation for everything that follows.
+                We align on your ICP, value proposition, pricing, and region-specific positioning. You share what works in your home market - we adapt it for the local buyer. This sets the foundation for everything that follows.
               </p>
               <ul className="space-y-3">
                 {[
-                  "ICP and target market definition for Australia",
+                  "ICP and target market definition for your region",
                   "Value proposition adaptation for local buyers",
                   "Pricing and packaging alignment",
                   "Success metrics and pilot KPIs agreed",
@@ -273,7 +273,7 @@ export default function HowItWorks() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { icon: Target, label: "Target list", detail: "Customers, partners, and distribution targets mapped to your ICP" },
-              { icon: MessageSquare, label: "Outreach sequences", detail: "Tested messaging for the Australian market across all channels" },
+              { icon: MessageSquare, label: "Outreach sequences", detail: "Tested messaging for the local market across all channels" },
               { icon: Handshake, label: "Partner pitch angles", detail: "Custom pitches for each partner and distribution opportunity" },
               { icon: FileSignature, label: "Deal terms", detail: "Structured terms for white-label, reseller, and partnership deals" },
               { icon: ClipboardList, label: "Next-step playbook", detail: "Repeatable playbook for scaling what works after the pilot" },
@@ -339,7 +339,7 @@ export default function HowItWorks() {
                 Ready to Start Your 90-Day Pilot?
               </h2>
               <p className="text-lg text-slate-300">
-                Book a 15-minute call and we will walk you through how we can build your Australian pipeline, partnerships, and distribution.
+                Book a 15-minute call and we will walk you through how we can build your in-region pipeline, partnerships, and distribution.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
                 <a

@@ -93,7 +93,7 @@ export default function PricingPage() {
             <span className="text-[#0AA7B5]">Aligned Incentives</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            We earn when you earn. Choose the engagement model that matches your stage and goals in Australia.
+            We earn when you earn. Choose the engagement model that matches your stage and expansion goals. Starting with Australia, expanding across APAC and EMEA.
           </p>
         </header>
 
@@ -194,7 +194,7 @@ export default function PricingPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,167,181,0.08),transparent_45%)]" />
           <div className="relative z-10 space-y-6 max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] leading-tight">
-              Ready to Enter the Australian Market?
+              Ready to Enter a New Market?
             </h2>
             <p className="text-base sm:text-lg text-slate-600">
               Book a 15-minute call. We will discuss your goals, recommend an engagement model, and scope the pilot.

@@ -13,6 +13,7 @@ import {
   TrendingUp,
   Shield,
   Settings,
+  UserPlus,
 } from "lucide-react";
 import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
@@ -34,11 +35,11 @@ export default function ServicesPage() {
         {/* Hero */}
         <section className="text-center space-y-8 mb-28">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
-            Your Australian{" "}
+            Your On-the-Ground{" "}
             <span className="text-cyan-400">Commercial Arm</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            Four services that cover everything required to enter and operate in the Australian market.
+            Five services that cover everything required to enter, operate, and scale in APAC and EMEA markets.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a
@@ -69,10 +70,10 @@ export default function ServicesPage() {
                 <span className="text-sm font-semibold text-cyan-300">01 - Sales Representation</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Your On-the-Ground Sales Arm in Australia
+                Your On-the-Ground Sales Arm
               </h2>
               <p className="text-slate-300 leading-relaxed">
-                We act as your on-the-ground sales arm in Australia. Outbound prospecting, warm introductions, demo bookings, pipeline creation, and closing support on priority deals.
+                We act as your on-the-ground sales arm in-region. Outbound prospecting, warm introductions, demo bookings, pipeline creation, and closing support on priority deals.
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
@@ -135,7 +136,7 @@ export default function ServicesPage() {
                   {[
                     { icon: Building2, color: "bg-purple-500/20", iconColor: "text-purple-400", title: "Agency Partners", desc: "Refer, co-sell, and white-label your product to their clients" },
                     { icon: Users, color: "bg-pink-500/20", iconColor: "text-pink-400", title: "Reseller Partners", desc: "License and distribute through local reseller networks" },
-                    { icon: Handshake, color: "bg-cyan-500/20", iconColor: "text-cyan-400", title: "Platform Partners", desc: "Integrate and distribute through established Australian platforms" },
+                    { icon: Handshake, color: "bg-cyan-500/20", iconColor: "text-cyan-400", title: "Platform Partners", desc: "Integrate and distribute through established local platforms" },
                   ].map((partner) => (
                     <div key={partner.title} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
                       <div className={`h-10 w-10 rounded-lg ${partner.color} flex items-center justify-center flex-shrink-0`}>
@@ -159,7 +160,7 @@ export default function ServicesPage() {
                 Build Partner, Reseller &amp; Distribution Relationships
               </h2>
               <p className="text-slate-300 leading-relaxed">
-                We build partner, reseller, and distribution relationships that embed your product into the Australian market. From identification to activation to revenue-share negotiations.
+                We build partner, reseller, and distribution relationships that embed your product into the local market. From identification to activation to revenue-share negotiations.
               </p>
               <ul className="space-y-3">
                 {[
@@ -190,16 +191,16 @@ export default function ServicesPage() {
                 <span className="text-sm font-semibold text-emerald-300">03 - Compliance &amp; Market Setup</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Handle the Legal and Operational Steps to Sell in Australia
+                Handle the Legal and Operational Steps to Sell in New Markets
               </h2>
               <p className="text-slate-300 leading-relaxed">
-                We handle the legal, structural, and operational steps required to sell into Australia. From market entry structure to GST guidance to local contract adjustments.
+                We handle the legal, structural, and operational steps required to sell into new markets. From market entry structure to tax and regulatory compliance to local contract adjustments.
               </p>
               <ul className="space-y-3">
                 {[
                   "Market entry structure guidance",
                   "Local contract and commercial term adjustments",
-                  "GST and pricing guidance",
+                  "Tax, regulatory, and pricing guidance",
                   "Introductions to legal, tax, and accounting partners",
                   "Compliance checklist for your business model",
                 ].map((item, idx) => (
@@ -223,8 +224,8 @@ export default function ServicesPage() {
                 <div className="space-y-4">
                   {[
                     { step: "1", title: "Market entry structure", desc: "Entity, branch, or partner-led entry" },
-                    { step: "2", title: "Contract localisation", desc: "Terms, pricing, and SLAs for Australian market" },
-                    { step: "3", title: "Tax & GST setup", desc: "Registration, pricing adjustments, compliance" },
+                    { step: "2", title: "Contract localisation", desc: "Terms, pricing, and SLAs for local market" },
+                    { step: "3", title: "Tax & regulatory setup", desc: "Registration, pricing adjustments, compliance" },
                     { step: "4", title: "Professional network", desc: "Legal, tax, and accounting partner intros" },
                   ].map((item) => (
                     <div key={item.step} className="flex gap-4">
@@ -276,13 +277,13 @@ export default function ServicesPage() {
             <div className="order-1 lg:order-2 space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20">
                 <Settings className="h-5 w-5 text-amber-400" />
-                <span className="text-sm font-semibold text-amber-300">04 - Australian Operations Management</span>
+                <span className="text-sm font-semibold text-amber-300">04 - Regional Operations Management</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
                 Manage Your Ongoing Commercial Activities Locally
               </h2>
               <p className="text-slate-300 leading-relaxed">
-                We manage your ongoing commercial activities in Australia as your local team. Deal coordination, partner management, client onboarding, and monthly reporting.
+                We manage your ongoing commercial activities in-region as your local team. Deal coordination, partner management, client onboarding, and monthly reporting.
               </p>
               <ul className="space-y-3">
                 {[
@@ -300,7 +301,66 @@ export default function ServicesPage() {
               </ul>
               <div className="pt-2">
                 <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Outcome</p>
-                <p className="text-lg font-bold text-amber-400">A functioning Australian commercial operation</p>
+                <p className="text-lg font-bold text-amber-400">A functioning in-region commercial operation</p>
+              </div>
+            </div>
+          </div>
+          {/* Service 5: Team Formation & Recruitment */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+                <UserPlus className="h-5 w-5 text-blue-400" />
+                <span className="text-sm font-semibold text-blue-300">05 - Team Formation &amp; Recruitment</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Build Your In-Region Team as the Market Grows
+              </h2>
+              <p className="text-slate-300 leading-relaxed">
+                As your market matures, we help you transition from outsourced to owned. We source, recruit, and onboard in-region hires so you can scale with confidence.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Role scoping and candidate sourcing",
+                  "Local hiring and onboarding support",
+                  "Knowledge transfer and handover planning",
+                  "Ongoing advisory during transition",
+                  "Complementary team structuring",
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-2">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Outcome</p>
+                <p className="text-lg font-bold text-blue-400">Smooth transition from outsourced to in-house</p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-indigo-500/10 rounded-3xl blur-3xl" />
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 space-y-6">
+                <p className="text-sm font-semibold text-blue-300 uppercase tracking-wide">
+                  Team Growth Phases
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { step: "1", title: "Outsourced execution", desc: "Refer Labs runs all commercial activity in-region" },
+                    { step: "2", title: "Role scoping", desc: "Define which roles to hire first based on traction" },
+                    { step: "3", title: "Recruit & onboard", desc: "Source, interview, and onboard local team members" },
+                    { step: "4", title: "Handover & advisory", desc: "Transfer playbooks, relationships, and ongoing support" },
+                  ].map((item) => (
+                    <div key={item.step} className="flex gap-4">
+                      <div className="h-8 w-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <span className="text-sm font-bold text-blue-300">{item.step}</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">{item.title}</p>
+                        <p className="text-sm text-slate-400">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -314,7 +374,7 @@ export default function ServicesPage() {
                 Why This Approach Works
               </h2>
               <p className="text-slate-400">
-                Four services running in parallel produce compounding results.
+                Five services running in parallel produce compounding results.
               </p>
             </div>
 
@@ -349,9 +409,9 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Globe, title: "Landing Page Localisation", desc: "Copy, pricing, and positioning adapted for the Australian and APAC market." },
+              { icon: Globe, title: "Landing Page Localisation", desc: "Copy, pricing, and positioning adapted for the target market." },
               { icon: Users, title: "Partner Program Design", desc: "Terms, commissions, tiering, and partner playbook creation." },
-              { icon: TrendingUp, title: "Event & Community Entry", desc: "Introductions to relevant Australian events, communities, and industry groups." },
+              { icon: TrendingUp, title: "Event & Community Entry", desc: "Introductions to relevant local events, communities, and industry groups." },
               { icon: Handshake, title: "Intro-Only Mode", desc: "Lighter touch - we make the introductions, you take it from there." },
             ].map((addon) => (
               <div
@@ -376,7 +436,7 @@ export default function ServicesPage() {
           <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
             <div className="max-w-2xl mx-auto space-y-6">
               <h2 className="text-3xl sm:text-4xl font-black text-white">
-                Ready to Build Australian Revenue?
+                Ready to Build In-Region Revenue?
               </h2>
               <p className="text-lg text-slate-300">
                 Tell us what you sell and where you are today. We will recommend the right service mix and scope your 90-day pilot.

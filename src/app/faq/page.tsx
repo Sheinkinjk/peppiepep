@@ -11,11 +11,11 @@ type FAQ = { q: string; a: string };
 const positioningFAQs: FAQ[] = [
   {
     q: "Is this just outsourced sales?",
-    a: "No. Sales is only one part of the model. We act as your Australian commercial arm, covering sales, partnerships, compliance, and day-to-day operations.",
+    a: "No. Sales is only one part of the model. We act as your on-the-ground commercial arm, covering sales, partnerships, compliance, operations, and eventually team recruitment.",
   },
   {
     q: "Do we need to hire anyone locally?",
-    a: "No. The goal is to give you a functioning Australian presence without building a local team. We handle sales, partnerships, compliance, and operations on your behalf.",
+    a: "No. The goal is to give you a functioning in-region presence without building a local team. We handle sales, partnerships, compliance, and operations on your behalf - and when you are ready, we help recruit your first in-region hires.",
   },
   {
     q: "What happens in the first 90 days?",
@@ -23,14 +23,18 @@ const positioningFAQs: FAQ[] = [
   },
   {
     q: "What types of companies is this best for?",
-    a: "Overseas B2B SaaS, platforms, fintech, healthtech, and tech-enabled services looking to generate revenue in Australia. Typically $1M-$50M in annual revenue with strong product-market fit in at least one market.",
+    a: "Global B2B SaaS, platforms, fintech, healthtech, and tech-enabled services looking to generate revenue in APAC and EMEA. Typically $1M-$50M in annual revenue with strong product-market fit in at least one market.",
   },
 ];
 
 const qualificationFAQs: FAQ[] = [
   {
-    q: "Do you only work with overseas companies?",
-    a: "Our primary focus is overseas companies ($1M-$50M revenue) entering Australia. However, we also work with Australia-based companies that want partner-driven growth and distribution channel management.",
+    q: "Which regions do you cover?",
+    a: "We currently operate across APAC (starting with Australia) and are expanding into EMEA. Our model is designed to scale region by region - each engagement starts with one market and can expand as you see traction.",
+  },
+  {
+    q: "Do you only work with companies expanding internationally?",
+    a: "We work with global B2B companies ($1M-$50M revenue) entering APAC and EMEA markets. We currently operate across APAC (starting with Australia) and are expanding into EMEA. Our model is designed to scale region by region.",
   },
   {
     q: "What industries do you focus on?",
@@ -38,7 +42,7 @@ const qualificationFAQs: FAQ[] = [
   },
   {
     q: "What does the ideal client look like?",
-    a: "$1M-$50M in annual revenue, strong product-market fit in at least one overseas market, high LTV product with partnership potential, and no existing Australian presence. A founder or growth lead who can join key calls is essential.",
+    a: "$1M-$50M in annual revenue, strong product-market fit in at least one market, high LTV product with partnership potential, and no existing in-region presence. A founder or growth lead who can join key calls is essential.",
   },
   {
     q: "How fast can we see traction?",
@@ -48,8 +52,8 @@ const qualificationFAQs: FAQ[] = [
 
 const serviceFAQs: FAQ[] = [
   {
-    q: "What are your four core services?",
-    a: "Sales Representation (outbound prospecting, pipeline creation, closing support), Partnership & Distribution Development (sourcing and activating partners, resellers, and distribution channels), Compliance & Market Setup (legal, GST, contracts, and local structure), and Australian Operations Management (ongoing deal coordination, partner management, and reporting).",
+    q: "What are your five core services?",
+    a: "Sales Representation (outbound prospecting, pipeline creation, closing support), Partnership & Distribution Development (sourcing and activating partners, resellers, and distribution channels), Compliance & Market Setup (legal, tax, contracts, and local structure), Regional Operations Management (ongoing deal coordination, partner management, and reporting), and Team Formation & Recruitment (sourcing, recruiting, and onboarding in-region hires as the market grows).",
   },
   {
     q: "Do you close deals or just book meetings?",
@@ -68,12 +72,16 @@ const serviceFAQs: FAQ[] = [
     a: "Retainer + success fee. Australia Launch (90-day pilot) includes sales, partnerships, and compliance setup with a fixed monthly retainer plus success fee. Australia Growth (ongoing) adds operations management with a monthly retainer plus lower success fee. We earn when you earn.",
   },
   {
-    q: "What if we already have a salesperson in Australia?",
+    q: "What if we already have someone in-region?",
     a: "We complement your existing team. Your salesperson focuses on direct sales while we build the partnership, distribution, compliance, and operations layer. We scope the engagement to avoid overlap and maximise coverage.",
   },
   {
     q: "Do you take equity or exclusivity?",
-    a: "No. We work on a retainer + success fee basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
+    a: "No. We work on a retainer + success fee basis. No equity, no exclusivity clauses. You are free to run other GTM motions alongside our engagement.",
+  },
+  {
+    q: "How does team recruitment work?",
+    a: "As your market matures and you see traction, we help you transition from outsourced to owned. We scope roles, source candidates, support interviewing and onboarding, and manage the handover of relationships, playbooks, and processes to your new in-region team.",
   },
   {
     q: "What does a 90-day pilot include?",
@@ -149,7 +157,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Common questions about our Australian commercial arm services, engagement models, and pilot structure.
+            Common questions about our commercial arm services, engagement models, and pilot structure.
           </p>
 
           <div className="flex justify-center gap-4 pt-2">
