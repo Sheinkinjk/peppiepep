@@ -13,76 +13,63 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const plans = [
   {
-    name: "Standard",
+    name: "Australia Launch",
     recommended: true,
-    description: "The most common engagement model. Balanced retainer with performance upside for both sides.",
-    pricing: "$3K-$7.5K/mo retainer + 10-20% commission on closed revenue",
+    description: "Best for first-time market entry. A structured 90-day pilot that delivers your first Australian customers, partners, and compliance setup.",
+    pricing: "Fixed monthly retainer + success fee on closed revenue",
     scope: [
-      "Full 90-day pilot structure",
-      "Sales representation & outbound prospecting",
-      "Partnership development & activation",
-      "Distribution deal sourcing & structuring",
+      "Sales Representation",
+      "Partnership & Distribution Development",
+      "Compliance & Market Setup",
+      "Initial operational coordination",
       "Weekly pipeline and conversion reporting",
       "End-of-pilot playbook with next steps",
     ],
-    cta: "Book a Pilot Scoping Call",
+    goal: "First customers and partners in Australia",
+    cta: "Book a Market Entry Call",
   },
   {
-    name: "Performance-Heavy",
+    name: "Australia Growth",
     recommended: false,
-    description: "Lower upfront cost, higher success fee. Best for companies wanting to minimise risk during market testing.",
-    pricing: "Low or no retainer + 20-30% commission on closed revenue",
+    description: "Best for companies scaling in Australia. Ongoing retainer engagement with full commercial operations management.",
+    pricing: "Monthly retainer + lower success fee on closed revenue",
     scope: [
-      "Same deliverables as Standard",
-      "Higher commission on all revenue generated",
-      "Ideal for cash-conscious early testing",
-      "Aligned incentives - we earn when you earn",
-      "Weekly reporting included",
-      "Flexible engagement terms",
+      "Sales Representation",
+      "Partnership & Distribution Development",
+      "Australian Operations Management",
+      "Ongoing deal support and coordination",
+      "Monthly strategy reviews and reporting",
+      "Market expansion planning",
     ],
-    cta: "Discuss Performance Model",
-  },
-  {
-    name: "Enterprise",
-    recommended: false,
-    description: "For larger companies ready to invest in sustained Australian growth with dedicated resources.",
-    pricing: "$10K-$20K/mo retainer + 5-10% commission",
-    scope: [
-      "Everything in Standard, plus:",
-      "Expanded multi-channel execution",
-      "Dedicated partnership operations",
-      "Enterprise distribution deal management",
-      "Monthly strategy reviews",
-      "6-month minimum engagement",
-    ],
-    cta: "Discuss Enterprise",
+    goal: "Consistent pipeline and channel growth",
+    cta: "Discuss Growth Engagement",
   },
 ];
 
 const faqs = [
   {
     q: "What does the 90-day pilot cost?",
-    a: "Pricing depends on scope, target market size, and the number of channels you want to activate. Most pilots fall in the Standard range ($3K-$7.5K/mo + 10-20% commission). We scope and quote during the initial call.",
+    a: "Pricing depends on scope, target market size, and the number of services you want to activate. We scope and quote during the initial call based on your specific goals and market.",
   },
   {
-    q: "What counts as a 'commission' event?",
+    q: "What counts as a 'success fee' event?",
     a: "We agree on this upfront during scoping. Common triggers include closed revenue, signed partnership agreements, distribution deals, or qualified pipeline milestones. Everything is defined before the engagement starts.",
   },
   {
-    q: "Can we start with Performance-Heavy and switch to Standard?",
-    a: "Yes. Many clients start with the performance-heavy model to test the waters, then move to a standard retainer once they see early traction and want to scale.",
+    q: "Can we start with Launch and move to Growth?",
+    a: "Yes. Most clients start with the Australia Launch pilot to validate the market, then transition to the Growth engagement once they see early traction and want to scale.",
   },
   {
     q: "Is there a minimum commitment?",
-    a: "Standard and Performance-Heavy pilots are 90-day engagements. Enterprise has a 6-month minimum. All engagement terms are agreed upfront.",
+    a: "Australia Launch is a 90-day engagement. Australia Growth is a 6-month minimum. All engagement terms are agreed upfront.",
   },
   {
     q: "Do you take equity or exclusivity?",
-    a: "No. We work on a retainer + commission basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
+    a: "No. We work on a retainer + success fee basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
   },
   {
     q: "What if we already have a team in Australia?",
-    a: "We complement your existing team with partnership development, distribution deal structuring, and channel management. We scope the engagement to avoid overlap and maximise coverage.",
+    a: "We complement your existing team with partnership development, distribution deal structuring, compliance support, and operations management. We scope the engagement to avoid overlap and maximise coverage.",
   },
 ];
 
@@ -101,23 +88,23 @@ export default function PricingPage() {
         {/* Hero */}
         <header className="text-center space-y-5">
           <p className="mx-auto inline-flex items-center gap-2 rounded-full bg-white shadow-sm px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#0b2a34]">
-            Simple Pricing
+            Engagement Options
             <Sparkles className="h-3 w-3 text-[#0AA7B5]" />
           </p>
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-[#0b2a34] tracking-tight">
-            Retainer + Commission
+            Retainer + Success Fee
             <br />
             <span className="text-[#0AA7B5]">Aligned Incentives</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            We earn when you earn. Choose the engagement model that matches your risk appetite and growth stage.
+            We earn when you earn. Choose the engagement model that matches your stage and goals in Australia.
           </p>
         </header>
 
         {/* Pricing Cards */}
-        <section className="space-y-6 max-w-6xl mx-auto w-full">
+        <section className="space-y-6 max-w-4xl mx-auto w-full">
           <h2 className="sr-only">Engagement models</h2>
-          <div className="grid gap-6 lg:grid-cols-3 w-full">
+          <div className="grid gap-6 lg:grid-cols-2 w-full">
             {plans.map((plan) => (
               <div
                 key={plan.name}
@@ -134,7 +121,7 @@ export default function PricingPage() {
                   {plan.recommended && (
                     <div className="inline-flex self-start items-center gap-1.5 px-3 py-1 rounded-full bg-[#E3FAFF] text-[#0b2a34] text-xs font-semibold">
                       <Sparkles className="h-3 w-3 text-[#0AA7B5]" />
-                      Most Popular
+                      Recommended
                     </div>
                   )}
 
@@ -157,6 +144,11 @@ export default function PricingPage() {
                     ))}
                   </ul>
 
+                  <div className="p-3 rounded-xl bg-[#E3FAFF] border border-[#B4EEF7]">
+                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Goal</p>
+                    <p className="text-sm text-[#0b2a34] font-semibold">{plan.goal}</p>
+                  </div>
+
                   <a
                     href={calendlyUrl}
                     target="_blank"
@@ -166,7 +158,6 @@ export default function PricingPage() {
                         ? "bg-[#0AA7B5] text-white hover:bg-[#088c98]"
                         : "bg-white text-[#0b2a34] border border-slate-200 hover:border-[#0AA7B5]/40"
                     }`}
-                    data-lift="true"
                   >
                     {plan.cta}
                     <ArrowRight className="h-4 w-4" />
@@ -207,10 +198,10 @@ export default function PricingPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,167,181,0.08),transparent_45%)]" />
           <div className="relative z-10 space-y-6 max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] leading-tight">
-              Ready to Build Australian Revenue?
+              Ready to Enter the Australian Market?
             </h2>
             <p className="text-base sm:text-lg text-slate-600">
-              Book a 15-minute call. We&apos;ll discuss your goals, recommend an engagement model, and scope the pilot.
+              Book a 15-minute call. We will discuss your goals, recommend an engagement model, and scope the pilot.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <a
@@ -218,16 +209,16 @@ export default function PricingPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-2xl bg-[#0AA7B5] text-white px-8 py-4 text-sm font-semibold hover:bg-[#088c98] transition-all shadow-md shadow-[#0AA7B5]/25 gap-2"
-                data-lift="true"
               >
                 <Calendar className="h-4 w-4" />
-                Schedule a Call
+                Book a Market Entry Call
               </a>
               <Link
-                href="/how-it-works"
-                className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-[#0b2a34] px-8 py-4 text-sm font-semibold hover:border-[#0AA7B5]/40 transition-all"
+                href="/services"
+                className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-[#0b2a34] px-8 py-4 text-sm font-semibold hover:border-[#0AA7B5]/40 transition-all gap-2"
               >
-                How It Works
+                Explore Services
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

@@ -110,7 +110,7 @@ export function StickyHeader() {
                 className="inline-flex items-center gap-2 rounded-2xl bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 transition-all duration-200 hover:bg-[#00838F] hover:shadow-xl cursor-pointer"
               >
                 <Calendar className="h-4 w-4" />
-                Schedule a Call
+                Book a Market Entry Call
               </a>
               {isAuthenticated && (
                 <>
@@ -179,7 +179,7 @@ export function StickyHeader() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Calendar className="h-4 w-4" />
-                Schedule a Call
+                Book a Market Entry Call
               </a>
               {isAuthenticated && (
                 <>

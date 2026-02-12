@@ -36,10 +36,10 @@ export default function About() {
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
             Your Australian{" "}
-            <span className="text-cyan-400">Sales &amp; Partnerships Arm</span>
+            <span className="text-cyan-400">Commercial Arm</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We help overseas companies enter Australia and APAC by sourcing customers, building strategic partnerships, and structuring distribution deals - all on a retainer + commission model.
+            We help overseas companies enter and operate in Australia by handling sales, partnerships, compliance, and commercial operations - all on a retainer + success fee model.
           </p>
         </section>
 
@@ -53,13 +53,13 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
                 <p>
-                  Overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, and distribution.
+                  Overseas companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, compliance, and operations.
                 </p>
                 <p>
                   We started Refer Labs because we saw the same pattern: great products, proven markets overseas, but zero traction in Australia. The gap was not product-market fit - it was local commercial execution.
                 </p>
                 <p>
-                  Most companies need revenue signals and validated channels before committing to local headcount. That is exactly what we provide - a structured 90-day pilot that delivers pipeline, partnerships, and distribution deals.
+                  Most companies need revenue signals and validated channels before committing to local headcount. That is exactly what we provide - a structured 90-day pilot that delivers pipeline, partnerships, compliance setup, and a functioning commercial operation.
                 </p>
               </div>
             </div>
@@ -79,19 +79,19 @@ export default function About() {
           </div>
         </section>
 
-        {/* Three Core Services */}
+        {/* Four Core Services */}
         <section className="mb-28">
           <div className="text-center space-y-4 mb-12">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">What we do</p>
             <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Three Core Services, One Commercial Arm
+              Four Services. One Commercial Arm.
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-              Each service is managed end-to-end. You get clients, partners, and distribution - without building a local team.
+              We handle the sales, partnerships, compliance, and operations required to win in Australia - without you hiring a local team.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
                 icon: Target,
@@ -100,13 +100,18 @@ export default function About() {
               },
               {
                 icon: Handshake,
-                title: "Partnership Development",
-                desc: "Source and activate agencies, consultancies, platforms, and strategic partners who can resell or distribute your product.",
+                title: "Partnership & Distribution",
+                desc: "Source and activate partners, resellers, and distribution channels that embed your product locally.",
               },
               {
-                icon: FileSignature,
-                title: "Distribution Deals",
-                desc: "Structure and negotiate white-label deals, reseller agreements, and enterprise distribution contracts.",
+                icon: Shield,
+                title: "Compliance & Setup",
+                desc: "Market entry structure, local contracts, GST guidance, and professional partner introductions.",
+              },
+              {
+                icon: Globe,
+                title: "Operations Management",
+                desc: "Deal coordination, partner management, local onboarding, and monthly pipeline reporting.",
               },
             ].map((service) => (
               <div key={service.title} className="rounded-2xl bg-white/[0.03] border border-white/5 p-7 hover:border-white/10 transition-colors">
@@ -167,7 +172,7 @@ export default function About() {
                 {[
                   "Retainer + commission model - we earn when you earn",
                   "90-day structured pilots with weekly reporting",
-                  "Sales, partnerships, and distribution running in parallel",
+                  "Sales, partnerships, compliance, and operations running in parallel",
                   "No equity, no exclusivity clauses",
                   "We join your CRM and report like an internal team",
                   "Target: $1M-$50M revenue companies entering Australia",
@@ -201,13 +206,13 @@ export default function About() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
                 >
                   <Calendar className="h-4 w-4" />
-                  Schedule a Call
+                  Book a Market Entry Call
                 </a>
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
                 >
-                  View Services
+                  Explore Services
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

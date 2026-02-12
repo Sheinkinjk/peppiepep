@@ -4,7 +4,6 @@ import {
   CheckCircle2,
   Globe,
   Handshake,
-  Megaphone,
   FileSignature,
   Target,
   Users,
@@ -12,6 +11,8 @@ import {
   BarChart3,
   Building2,
   TrendingUp,
+  Shield,
+  Settings,
 } from "lucide-react";
 import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
@@ -34,14 +35,14 @@ export default function ServicesPage() {
         <section className="text-center space-y-8 mb-28">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 px-4 py-1.5 backdrop-blur-sm">
             <Zap className="h-3.5 w-3.5 text-cyan-400" />
-            <span className="text-xs font-semibold text-white/80 tracking-wide">Three managed services</span>
+            <span className="text-xs font-semibold text-white/80 tracking-wide">Four managed services</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
-            Services Built to Drive{" "}
-            <span className="text-cyan-400">Australian &amp; APAC Revenue</span>
+            Your Australian{" "}
+            <span className="text-cyan-400">Commercial Arm</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            Sales representation, partnership development, and distribution deals - each delivered as a managed engagement with full reporting and attribution.
+            Four services that cover everything required to enter and operate in the Australian market.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a
@@ -51,7 +52,7 @@ export default function ServicesPage() {
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
             >
               <Calendar className="h-4 w-4" />
-              Schedule a Call
+              Book a Market Entry Call
             </a>
             <Link
               href="/pricing"
@@ -75,7 +76,7 @@ export default function ServicesPage() {
                 Your On-the-Ground Sales Arm in Australia
               </h2>
               <p className="text-slate-300 leading-relaxed">
-                We run outbound prospecting, make warm introductions, book demos, build pipeline, and provide closing support - acting as your dedicated Australian sales team from day one.
+                We act as your on-the-ground sales arm in Australia. Outbound prospecting, warm introductions, demo bookings, pipeline creation, and closing support on priority deals.
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
@@ -83,12 +84,10 @@ export default function ServicesPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Outbound prospecting to your Australian ICP",
-                    "Warm introductions via our local network",
-                    "Demo booking and meeting coordination",
-                    "Pipeline creation with weekly CRM updates",
-                    "Closing support on key opportunities",
-                    "Weekly pipeline and conversion reporting",
+                    "Outbound prospecting to your ICP",
+                    "Warm introductions via our network",
+                    "Demo booking and pipeline creation",
+                    "Closing support on priority deals",
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-slate-300">
                       <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -96,6 +95,10 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="pt-2">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Pilot outcome</p>
+                <p className="text-lg font-bold text-cyan-400">10-20 qualified client conversations</p>
               </div>
             </div>
             <div className="relative">
@@ -127,7 +130,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          {/* Service 2: Partnership Development */}
+          {/* Service 2: Partnership & Distribution Development */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="order-2 lg:order-1 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/10 rounded-3xl blur-3xl" />
@@ -135,7 +138,7 @@ export default function ServicesPage() {
                 <div className="space-y-5">
                   {[
                     { icon: Building2, color: "bg-purple-500/20", iconColor: "text-purple-400", title: "Agency Partners", desc: "Refer, co-sell, and white-label your product to their clients" },
-                    { icon: Users, color: "bg-pink-500/20", iconColor: "text-pink-400", title: "Consultancy Partners", desc: "Recommend your solution during advisory engagements" },
+                    { icon: Users, color: "bg-pink-500/20", iconColor: "text-pink-400", title: "Reseller Partners", desc: "License and distribute through local reseller networks" },
                     { icon: Handshake, color: "bg-cyan-500/20", iconColor: "text-cyan-400", title: "Platform Partners", desc: "Integrate and distribute through established Australian platforms" },
                   ].map((partner) => (
                     <div key={partner.title} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
@@ -154,22 +157,21 @@ export default function ServicesPage() {
             <div className="order-1 lg:order-2 space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
                 <Handshake className="h-5 w-5 text-purple-400" />
-                <span className="text-sm font-semibold text-purple-300">02 - Partnership Development</span>
+                <span className="text-sm font-semibold text-purple-300">02 - Partnership &amp; Distribution Development</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Source &amp; Activate Strategic Australian Partners
+                Build Partner, Reseller &amp; Distribution Relationships
               </h2>
               <p className="text-slate-300 leading-relaxed">
-                We identify, pitch, onboard, and manage agencies, consultancies, platforms, and strategic partners who can resell, co-sell, or refer your product across Australia and APAC.
+                We build partner, reseller, and distribution relationships that embed your product into the Australian market. From identification to activation to revenue-share negotiations.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Partner identification and qualification",
-                  "Strategic alliance development and activation",
-                  "Partner enablement materials and onboarding",
-                  "Partner terms, structure, and revenue share design",
-                  "Ongoing partner relationship management",
-                  "Quarterly partner reviews and optimisation",
+                  "Partner identification and outreach",
+                  "Strategic alliance development",
+                  "Reseller and referral partner activation",
+                  "White-label and distribution deal structuring",
+                  "Revenue-share and licensing negotiations",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -177,30 +179,33 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
+              <div className="pt-2">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Pilot outcome</p>
+                <p className="text-lg font-bold text-purple-400">3-8 strategic partners or distribution channels</p>
+              </div>
             </div>
           </div>
 
-          {/* Service 3: Distribution Deals */}
+          {/* Service 3: Compliance & Market Setup */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-                <FileSignature className="h-5 w-5 text-emerald-400" />
-                <span className="text-sm font-semibold text-emerald-300">03 - Distribution Deals</span>
+                <Shield className="h-5 w-5 text-emerald-400" />
+                <span className="text-sm font-semibold text-emerald-300">03 - Compliance &amp; Market Setup</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Structure Deals That Embed Your Product Into Local Channels
+                Handle the Legal and Operational Steps to Sell in Australia
               </h2>
               <p className="text-slate-300 leading-relaxed">
-                We negotiate white-label deals, reseller agreements, and enterprise distribution contracts that embed your product into established Australian channels and customer bases.
+                We handle the legal, structural, and operational steps required to sell into Australia. From market entry structure to GST guidance to local contract adjustments.
               </p>
               <ul className="space-y-3">
                 {[
-                  "White-label deal structuring and negotiation",
-                  "Reseller agreement terms and activation",
-                  "Enterprise introductions and pitching",
-                  "Revenue-share and licensing terms",
-                  "Contract support and deal closing",
-                  "Distribution channel tracking and optimisation",
+                  "Market entry structure guidance",
+                  "Local contract and commercial term adjustments",
+                  "GST and pricing guidance",
+                  "Introductions to legal, tax, and accounting partners",
+                  "Compliance checklist for your business model",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -208,19 +213,23 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
+              <div className="pt-2">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Outcome</p>
+                <p className="text-lg font-bold text-emerald-400">Fully compliant, market-ready setup</p>
+              </div>
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-teal-500/10 rounded-3xl blur-3xl" />
               <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 space-y-6">
                 <p className="text-sm font-semibold text-emerald-300 uppercase tracking-wide">
-                  Distribution Deal Flow
+                  Compliance Checklist
                 </p>
                 <div className="space-y-4">
                   {[
-                    { step: "1", title: "Identify distribution partners", desc: "Map resellers, platforms, and enterprise accounts" },
-                    { step: "2", title: "Pitch and negotiate terms", desc: "White-label, reseller, or licensing structure" },
-                    { step: "3", title: "Activate and launch", desc: "Partner onboarding, materials, and go-live" },
-                    { step: "4", title: "Track and optimise", desc: "Revenue attribution and channel performance" },
+                    { step: "1", title: "Market entry structure", desc: "Entity, branch, or partner-led entry" },
+                    { step: "2", title: "Contract localisation", desc: "Terms, pricing, and SLAs for Australian market" },
+                    { step: "3", title: "Tax & GST setup", desc: "Registration, pricing adjustments, compliance" },
+                    { step: "4", title: "Professional network", desc: "Legal, tax, and accounting partner intros" },
                   ].map((item) => (
                     <div key={item.step} className="flex gap-4">
                       <div className="h-8 w-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
@@ -236,6 +245,69 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
+
+          {/* Service 4: Australian Operations Management */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <div className="order-2 lg:order-1 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-transparent to-orange-500/10 rounded-3xl blur-3xl" />
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8 space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 rounded-full bg-amber-500/20 flex items-center justify-center">
+                    <Settings className="h-6 w-6 text-amber-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">Operations Dashboard</p>
+                    <p className="text-sm text-slate-400">Ongoing commercial management</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: "Deal coordination", status: "Active" },
+                    { label: "Partner management", status: "Active" },
+                    { label: "Client onboarding", status: "Active" },
+                    { label: "Monthly reporting", status: "Scheduled" },
+                  ].map((row) => (
+                    <div key={row.label} className="flex justify-between items-center py-3 border-b border-white/10 last:border-0">
+                      <span className="text-slate-400">{row.label}</span>
+                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${row.status === "Active" ? "bg-emerald-500/15 text-emerald-400" : "bg-amber-500/15 text-amber-400"}`}>
+                        {row.status}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 space-y-6">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20">
+                <Settings className="h-5 w-5 text-amber-400" />
+                <span className="text-sm font-semibold text-amber-300">04 - Australian Operations Management</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Manage Your Ongoing Commercial Activities Locally
+              </h2>
+              <p className="text-slate-300 leading-relaxed">
+                We manage your ongoing commercial activities in Australia as your local team. Deal coordination, partner management, client onboarding, and monthly reporting.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Deal coordination and execution",
+                  "Partner and client relationship management",
+                  "Local onboarding coordination",
+                  "Monthly pipeline and revenue reporting",
+                  "Market expansion planning",
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-2">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Outcome</p>
+                <p className="text-lg font-bold text-amber-400">A functioning Australian commercial operation</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Stats */}
@@ -246,7 +318,7 @@ export default function ServicesPage() {
                 Why This Approach Works
               </h2>
               <p className="text-slate-400">
-                Three channels running in parallel produce compounding results.
+                Four services running in parallel produce compounding results.
               </p>
             </div>
 
@@ -283,7 +355,7 @@ export default function ServicesPage() {
             {[
               { icon: Globe, title: "Landing Page Localisation", desc: "Copy, pricing, and positioning adapted for the Australian and APAC market." },
               { icon: Users, title: "Partner Program Design", desc: "Terms, commissions, tiering, and partner playbook creation." },
-              { icon: Megaphone, title: "Event & Community Entry", desc: "Introductions to relevant Australian events, communities, and industry groups." },
+              { icon: TrendingUp, title: "Event & Community Entry", desc: "Introductions to relevant Australian events, communities, and industry groups." },
               { icon: Handshake, title: "Intro-Only Mode", desc: "Lighter touch - we make the introductions, you take it from there." },
             ].map((addon) => (
               <div
@@ -321,7 +393,7 @@ export default function ServicesPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
                 >
                   <Calendar className="h-4 w-4" />
-                  Schedule a Call
+                  Book a Market Entry Call
                 </a>
                 <Link
                   href="/pricing"

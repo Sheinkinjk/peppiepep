@@ -38,7 +38,7 @@ export default function HowItWorks() {
             How <span className="text-cyan-400">Refer Labs</span> Works
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            A structured 90-day pilot that takes you from market alignment to Australian revenue signals - with sales, partnerships, and distribution running in parallel.
+            A structured 90-day pilot that takes you from market alignment to Australian revenue signals - with sales, partnerships, compliance, and operations running in parallel.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a
@@ -48,13 +48,13 @@ export default function HowItWorks() {
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
             >
               <Calendar className="h-4 w-4" />
-              Schedule a Call
+              Book a Market Entry Call
             </a>
             <Link
               href="/services"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
-              View Services
+              Explore Services
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -67,7 +67,7 @@ export default function HowItWorks() {
               90 Days. Four Phases. Real Pipeline.
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Each phase builds on the last. Sales, partnership, and distribution workstreams run in parallel with weekly updates throughout.
+              Each phase builds on the last. Sales, partnerships, compliance, and operations workstreams run in parallel with weekly updates throughout.
             </p>
           </div>
 
@@ -354,13 +354,13 @@ export default function HowItWorks() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
                 >
                   <Calendar className="h-4 w-4" />
-                  Schedule a Call
+                  Book a Market Entry Call
                 </a>
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
                 >
-                  View Services
+                  Explore Services
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

@@ -8,14 +8,33 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 type FAQ = { q: string; a: string };
 
+const positioningFAQs: FAQ[] = [
+  {
+    q: "Is this just outsourced sales?",
+    a: "No. Sales is only one part of the model. We act as your Australian commercial arm, covering sales, partnerships, compliance, and day-to-day operations.",
+  },
+  {
+    q: "Do we need to hire anyone locally?",
+    a: "No. The goal is to give you a functioning Australian presence without building a local team. We handle sales, partnerships, compliance, and operations on your behalf.",
+  },
+  {
+    q: "What happens in the first 90 days?",
+    a: "We establish your sales pipeline, activate partners, handle compliance setup, and begin coordinating deals locally. You receive weekly reporting on pipeline, partners, and conversion metrics throughout.",
+  },
+  {
+    q: "What types of companies is this best for?",
+    a: "Overseas B2B SaaS, platforms, fintech, healthtech, and tech-enabled services looking to generate revenue in Australia. Typically $1M-$50M in annual revenue with strong product-market fit in at least one market.",
+  },
+];
+
 const qualificationFAQs: FAQ[] = [
   {
     q: "Do you only work with overseas companies?",
-    a: "Our primary focus is overseas companies ($1M-$50M revenue) entering Australia. However, we also work with Australia-based companies that want partner-driven growth and distribution channel management. The site prioritises overseas expansion because that is where we deliver the most differentiated value.",
+    a: "Our primary focus is overseas companies ($1M-$50M revenue) entering Australia. However, we also work with Australia-based companies that want partner-driven growth and distribution channel management.",
   },
   {
     q: "What industries do you focus on?",
-    a: "B2B SaaS, fintech, healthtech, creator economy tools, e-commerce tech, and professional services software. We are open to other industries where partner distribution and local GTM make sense, but those six are where we have the deepest playbooks.",
+    a: "B2B SaaS, fintech, healthtech, creator economy tools, e-commerce tech, and professional services software. We are open to other industries where partner distribution and local GTM make sense.",
   },
   {
     q: "What does the ideal client look like?",
@@ -23,14 +42,14 @@ const qualificationFAQs: FAQ[] = [
   },
   {
     q: "How fast can we see traction?",
-    a: "During a 90-day pilot, we aim to deliver 10-20 client conversations, 3-8 strategic partnerships, and 1-3 distribution deals. Revenue signals typically emerge within the first 60-90 days depending on your sales cycle length.",
+    a: "During a 90-day pilot, we aim to deliver 10-20 client conversations, 3-8 strategic partnerships, and a fully compliant market setup. Revenue signals typically emerge within the first 60-90 days depending on your sales cycle length.",
   },
 ];
 
 const serviceFAQs: FAQ[] = [
   {
-    q: "What are your three core offerings?",
-    a: "Sales Representation (outbound prospecting, demo booking, pipeline creation, closing support), Partnership Development (sourcing and activating agencies, consultancies, and strategic partners), and Distribution Deals (structuring white-label, reseller, and enterprise distribution agreements).",
+    q: "What are your four core services?",
+    a: "Sales Representation (outbound prospecting, pipeline creation, closing support), Partnership & Distribution Development (sourcing and activating partners, resellers, and distribution channels), Compliance & Market Setup (legal, GST, contracts, and local structure), and Australian Operations Management (ongoing deal coordination, partner management, and reporting).",
   },
   {
     q: "Do you close deals or just book meetings?",
@@ -46,23 +65,23 @@ const serviceFAQs: FAQ[] = [
   },
   {
     q: "What is your pricing model?",
-    a: "Retainer + commission. Standard: $3K-$7.5K/mo + 10-20% commission. Performance-Heavy: low or no retainer + 20-30% commission. Enterprise: $10K-$20K/mo + 5-10% commission. We earn when you earn.",
+    a: "Retainer + success fee. Australia Launch (90-day pilot) includes sales, partnerships, and compliance setup with a fixed monthly retainer plus success fee. Australia Growth (ongoing) adds operations management with a monthly retainer plus lower success fee. We earn when you earn.",
   },
   {
     q: "What if we already have a salesperson in Australia?",
-    a: "We complement your existing team. Your salesperson focuses on direct sales while we build the partnership and distribution layer. We scope the engagement to avoid overlap and maximise coverage.",
+    a: "We complement your existing team. Your salesperson focuses on direct sales while we build the partnership, distribution, compliance, and operations layer. We scope the engagement to avoid overlap and maximise coverage.",
   },
   {
     q: "Do you take equity or exclusivity?",
-    a: "No. We work on a retainer + commission basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
+    a: "No. We work on a retainer + success fee basis. No equity, no exclusivity clauses. You are free to run other GTM motions in Australia alongside our engagement.",
   },
   {
     q: "What does a 90-day pilot include?",
-    a: "Week 1: market and messaging alignment. Weeks 2-3: customer, partner, and distribution target list build. Weeks 4-12: outreach, introductions, meetings, deal structuring, and closing support. Throughout: weekly reporting on pipeline, partners, and conversion metrics. At the end: a playbook with next steps and repeatable channel analysis.",
+    a: "Week 1: market and messaging alignment plus compliance scoping. Weeks 2-3: customer, partner, and distribution target list build. Weeks 4-12: outreach, introductions, meetings, deal structuring, compliance setup, and closing support. Throughout: weekly reporting on pipeline, partners, and conversion metrics. At the end: a playbook with next steps and repeatable channel analysis.",
   },
 ];
 
-const allFAQs = [...qualificationFAQs, ...serviceFAQs];
+const allFAQs = [...positioningFAQs, ...qualificationFAQs, ...serviceFAQs];
 
 export default function FAQPage() {
   const [expandedQuestions, setExpandedQuestions] = useState<number[]>([]);
@@ -75,6 +94,43 @@ export default function FAQPage() {
 
   const expandAll = () => setExpandedQuestions(allFAQs.map((_, i) => i));
   const collapseAll = () => setExpandedQuestions([]);
+
+  const renderFAQSection = (title: string, faqs: FAQ[], offset: number, borderClass: string) => (
+    <section className="mb-10">
+      <h2 className="text-2xl font-bold text-white mb-4 text-center">{title}</h2>
+      <div className="space-y-3">
+        {faqs.map((faq, rawIdx) => {
+          const idx = rawIdx + offset;
+          const isExpanded = expandedQuestions.includes(idx);
+          return (
+            <div
+              key={idx}
+              className={`rounded-xl border ${borderClass} overflow-hidden`}
+            >
+              <button
+                onClick={() => toggleQuestion(idx)}
+                className="w-full text-left px-6 py-4 flex items-start justify-between gap-4"
+              >
+                <h3 className="text-base font-medium text-white leading-relaxed pr-2">{faq.q}</h3>
+                <ChevronDown
+                  className={`h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5 transition-transform duration-200 ${
+                    isExpanded ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`px-6 overflow-hidden transition-all duration-200 ease-in-out ${
+                  isExpanded ? "pb-5 max-h-[500px]" : "max-h-0"
+                }`}
+              >
+                <p className="text-sm text-slate-400 leading-relaxed">{faq.a}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-white">
@@ -93,7 +149,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Common questions about our Australia expansion services, pricing, and pilot structure.
+            Common questions about our Australian commercial arm services, engagement models, and pilot structure.
           </p>
 
           <div className="flex justify-center gap-4 pt-2">
@@ -113,77 +169,26 @@ export default function FAQPage() {
           </div>
         </header>
 
-        {/* Is This For Me? Section */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-white mb-4 text-center">Is This For Me?</h2>
-          <div className="space-y-3">
-            {qualificationFAQs.map((faq, rawIdx) => {
-              const idx = rawIdx;
-              const isExpanded = expandedQuestions.includes(idx);
-              return (
-                <div
-                  key={idx}
-                  className="rounded-xl border border-teal-500/20 bg-gradient-to-br from-teal-500/5 to-transparent overflow-hidden"
-                >
-                  <button
-                    onClick={() => toggleQuestion(idx)}
-                    className="w-full text-left px-6 py-4 flex items-start justify-between gap-4"
-                  >
-                    <h3 className="text-base font-medium text-white leading-relaxed pr-2">{faq.q}</h3>
-                    <ChevronDown
-                      className={`h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5 transition-transform duration-200 ${
-                        isExpanded ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className={`px-6 overflow-hidden transition-all duration-200 ease-in-out ${
-                      isExpanded ? "pb-5 max-h-[500px]" : "max-h-0"
-                    }`}
-                  >
-                    <p className="text-sm text-slate-400 leading-relaxed">{faq.a}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        {renderFAQSection(
+          "About the Model",
+          positioningFAQs,
+          0,
+          "border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent"
+        )}
 
-        {/* Service & Engagement FAQs */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-4 text-center">Service &amp; Engagement</h2>
-          <div className="space-y-3">
-            {serviceFAQs.map((faq, rawIdx) => {
-              const idx = rawIdx + qualificationFAQs.length;
-              const isExpanded = expandedQuestions.includes(idx);
-              return (
-                <div
-                  key={idx}
-                  className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden"
-                >
-                  <button
-                    onClick={() => toggleQuestion(idx)}
-                    className="w-full text-left px-6 py-4 flex items-start justify-between gap-4"
-                  >
-                    <h3 className="text-base font-medium text-white leading-relaxed pr-2">{faq.q}</h3>
-                    <ChevronDown
-                      className={`h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5 transition-transform duration-200 ${
-                        isExpanded ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className={`px-6 overflow-hidden transition-all duration-200 ease-in-out ${
-                      isExpanded ? "pb-5 max-h-[500px]" : "max-h-0"
-                    }`}
-                  >
-                    <p className="text-sm text-slate-400 leading-relaxed">{faq.a}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        {renderFAQSection(
+          "Is This For Me?",
+          qualificationFAQs,
+          positioningFAQs.length,
+          "border-teal-500/20 bg-gradient-to-br from-teal-500/5 to-transparent"
+        )}
+
+        {renderFAQSection(
+          "Service & Engagement",
+          serviceFAQs,
+          positioningFAQs.length + qualificationFAQs.length,
+          "border-white/5 bg-white/[0.02]"
+        )}
 
         {/* Bottom CTA */}
         <section className="text-center">
@@ -200,13 +205,13 @@ export default function FAQPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0AA7B5] text-sm font-semibold text-white transition-colors hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
               >
                 <Calendar className="h-4 w-4" />
-                Schedule a Call
+                Book a Market Entry Call
               </a>
               <Link
-                href="/how-it-works"
+                href="/services"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                How It Works
+                Explore Services
               </Link>
             </div>
           </div>

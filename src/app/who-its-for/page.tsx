@@ -109,13 +109,13 @@ export default function WhoItsForPage() {
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
             >
               <Calendar className="h-4 w-4" />
-              Schedule a Call
+              Book a Market Entry Call
             </a>
             <Link
               href="/services"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
-              View Services
+              Explore Services
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -225,13 +225,13 @@ export default function WhoItsForPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
                 >
                   <Calendar className="h-4 w-4" />
-                  Schedule a Call
+                  Book a Market Entry Call
                 </a>
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
                 >
-                  View Services
+                  Explore Services
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
