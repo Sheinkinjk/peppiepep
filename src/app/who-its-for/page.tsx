@@ -101,7 +101,7 @@ export default function WhoItsForPage() {
             <span className="text-cyan-400">Entering New Markets</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We work with $1M-$50M revenue companies that have strong product-market fit and need in-region clients, partnerships, and distribution across APAC and EMEA - without hiring locally.
+            We work with $1M-$50M revenue companies that have strong product-market fit and need in-region clients, partnerships, and distribution across APAC - without hiring locally.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a

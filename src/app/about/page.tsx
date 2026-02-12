@@ -36,7 +36,7 @@ export default function About() {
             <span className="text-cyan-400">Commercial Arm</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We help global B2B companies enter and operate in APAC and EMEA by handling sales, partnerships, compliance, and commercial operations - all on a retainer + success fee model.
+            We help global B2B companies enter and operate in the APAC region by handling sales, partnerships, compliance, and commercial operations - all on a retainer + success fee model.
           </p>
         </section>
 
@@ -134,12 +134,12 @@ export default function About() {
               {
                 icon: Target,
                 title: "Our Mission",
-                desc: "Make APAC and EMEA market entry achievable for any global B2B company with a proven product - without hiring locally or guessing at the market.",
+                desc: "Make APAC market entry achievable for any global B2B company with a proven product - without hiring locally or guessing at the market.",
               },
               {
                 icon: Globe,
                 title: "Our Vision",
-                desc: "Be the default way global B2B companies enter APAC and EMEA markets - through local sales execution, strategic partnerships, and structured distribution.",
+                desc: "Be the default way global B2B companies enter APAC markets - through local sales execution, strategic partnerships, and structured distribution.",
               },
               {
                 icon: Shield,
@@ -177,7 +177,7 @@ export default function About() {
                   "Sales, partnerships, compliance, and operations running in parallel",
                   "No equity, no exclusivity clauses",
                   "We join your CRM and report like an internal team",
-                  "Target: $1M-$50M revenue companies entering APAC and EMEA",
+                  "Target: $1M-$50M revenue companies entering APAC",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.06]">
                     <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />

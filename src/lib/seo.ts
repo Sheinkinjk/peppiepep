@@ -134,12 +134,12 @@ export function generateMetadata(config: SEOConfig): Metadata {
  */
 export const seoConfig = {
   home: {
-    title: "Refer Labs - Your APAC & EMEA Expansion Partner",
+    title: "Refer Labs - Your APAC Expansion Partner",
     description:
-      "We help global B2B companies enter APAC and EMEA by outsourcing sales, partnerships, compliance, and operational setup. Retainer + commission model.",
+      "We help global B2B companies enter the APAC region by outsourcing sales, partnerships, compliance, and operational setup. Retainer + commission model.",
     url: SITE_URL,
     keywords: [
-      "APAC EMEA market entry",
+      "APAC market entry",
       "in-region sales rep",
       "market entry services",
       "partnerships arm",
@@ -148,14 +148,13 @@ export const seoConfig = {
       "B2B market entry",
       "outsourced sales team",
       "APAC GTM",
-      "EMEA GTM",
     ],
   },
 
   pricing: {
     title: "Pricing - Market Entry Engagement Models",
     description:
-      "Choose the right engagement model for your APAC or EMEA expansion. Retainer + commission pricing aligned to your growth stage. 90-day pilot structure.",
+      "Choose the right engagement model for your APAC expansion. Retainer + commission pricing aligned to your growth stage. 90-day pilot structure.",
     url: `${SITE_URL}/pricing`,
     keywords: [
       "market entry pricing",
@@ -198,13 +197,13 @@ export const seoConfig = {
   whoItsFor: {
     title: "Who It's For - Global B2B Companies Entering New Markets",
     description:
-      "Built for B2B SaaS, fintech, healthtech, creator economy, e-commerce tech, and professional services software companies expanding into APAC and EMEA.",
+      "Built for B2B SaaS, fintech, healthtech, creator economy, e-commerce tech, and professional services software companies expanding into APAC.",
     url: `${SITE_URL}/who-its-for`,
     keywords: [
       "SaaS international expansion",
       "fintech market entry",
       "B2B APAC expansion",
-      "healthtech EMEA expansion",
+      "healthtech APAC expansion",
       "B2B market entry services",
     ],
   },
@@ -223,13 +222,13 @@ export const seoConfig = {
   },
 
   about: {
-    title: "About - Your On-the-Ground Commercial Arm for APAC & EMEA",
+    title: "About - Your On-the-Ground Commercial Arm for APAC",
     description:
-      "Learn about Refer Labs and our mission to be the on-the-ground commercial arm for global B2B companies entering APAC and EMEA markets.",
+      "Learn about Refer Labs and our mission to be the on-the-ground commercial arm for global B2B companies entering APAC markets.",
     url: `${SITE_URL}/about`,
     keywords: [
       "about refer labs",
-      "APAC EMEA GTM partner",
+      "APAC GTM partner",
       "international expansion partner",
     ],
   },
@@ -237,20 +236,20 @@ export const seoConfig = {
   contact: {
     title: "Contact Us - Book a 15-min Market Expansion Call",
     description:
-      "Book a call to discuss your market expansion. Tell us about your company, what you sell, and your goals in APAC or EMEA.",
+      "Book a call to discuss your market expansion. Tell us about your company, what you sell, and your APAC expansion goals.",
     url: `${SITE_URL}/contact`,
     keywords: [
       "contact refer labs",
       "market expansion call",
       "market entry consultation",
-      "APAC EMEA sales partner",
+      "APAC sales partner",
     ],
   },
 
   faq: {
     title: "FAQ - Market Entry Questions Answered",
     description:
-      "Find answers to common questions about our APAC and EMEA market entry services, pricing, pilot structure, and how we help global B2B companies expand.",
+      "Find answers to common questions about our APAC market entry services, pricing, pilot structure, and how we help global B2B companies expand.",
     url: `${SITE_URL}/faq`,
     keywords: [
       "market entry FAQ",

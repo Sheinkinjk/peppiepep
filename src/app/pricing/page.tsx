@@ -93,7 +93,7 @@ export default function PricingPage() {
             <span className="text-[#0AA7B5]">Aligned Incentives</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            We earn when you earn. Choose the engagement model that matches your stage and expansion goals. Starting with Australia, expanding across APAC and EMEA.
+            We earn when you earn. Choose the engagement model that matches your stage and expansion goals.
           </p>
         </header>
 

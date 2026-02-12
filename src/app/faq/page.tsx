@@ -23,18 +23,18 @@ const positioningFAQs: FAQ[] = [
   },
   {
     q: "What types of companies is this best for?",
-    a: "Global B2B SaaS, platforms, fintech, healthtech, and tech-enabled services looking to generate revenue in APAC and EMEA. Typically $1M-$50M in annual revenue with strong product-market fit in at least one market.",
+    a: "Global B2B SaaS, platforms, fintech, healthtech, and tech-enabled services looking to generate revenue in APAC. Typically $1M-$50M in annual revenue with strong product-market fit in at least one market.",
   },
 ];
 
 const qualificationFAQs: FAQ[] = [
   {
     q: "Which regions do you cover?",
-    a: "We currently operate across APAC (starting with Australia) and are expanding into EMEA. Our model is designed to scale region by region - each engagement starts with one market and can expand as you see traction.",
+    a: "We currently operate across APAC, starting with Australia. Our model is designed to scale region by region - each engagement starts with one market and can expand as you see traction.",
   },
   {
     q: "Do you only work with companies expanding internationally?",
-    a: "We work with global B2B companies ($1M-$50M revenue) entering APAC and EMEA markets. We currently operate across APAC (starting with Australia) and are expanding into EMEA. Our model is designed to scale region by region.",
+    a: "We work with global B2B companies ($1M-$50M revenue) entering the APAC region. We currently operate across APAC, starting with Australia. Our model is designed to scale region by region.",
   },
   {
     q: "What industries do you focus on?",

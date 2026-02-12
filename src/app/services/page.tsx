@@ -39,7 +39,7 @@ export default function ServicesPage() {
             <span className="text-cyan-400">Commercial Arm</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            Five services that cover everything required to enter, operate, and scale in APAC and EMEA markets.
+            Five services that cover everything required to enter, operate, and scale in the APAC region.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a

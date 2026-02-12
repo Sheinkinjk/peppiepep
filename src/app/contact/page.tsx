@@ -1,4 +1,4 @@
-import { Mail, Calendar, ArrowRight, MapPin, Clock } from "lucide-react";
+import { Mail, Calendar, ArrowRight, MapPin, Clock, Phone } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.contact);
@@ -28,7 +28,7 @@ export default function Contact() {
         </header>
 
         {/* Contact Options */}
-        <section className="grid md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto" aria-label="Contact options">
+        <section className="grid md:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto" aria-label="Contact options">
           {/* Schedule a Call - Primary */}
           <a
             href={calendlyUrl}
@@ -82,6 +82,30 @@ export default function Contact() {
               </div>
               <div className="inline-flex items-center gap-2 text-[#0AA7B5] font-semibold group-hover:text-[#088c98] transition-colors">
                 Send email
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </a>
+
+          {/* Call Us */}
+          <a
+            href="tel:+61451149569"
+            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/35"
+            data-lift="true"
+          >
+            <div className="relative">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 border border-slate-200 mb-6">
+                <Phone className="h-7 w-7 text-[#0b2a34]" />
+              </div>
+              <h2 className="text-2xl font-bold text-[#0b2a34] mb-3">Call Us</h2>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Want to talk now? Give us a call directly and we will discuss your expansion goals.
+              </p>
+              <div className="text-sm text-[#0b2a34] mb-6 font-semibold">
+                +61 451 149 569
+              </div>
+              <div className="inline-flex items-center gap-2 text-[#0AA7B5] font-semibold group-hover:text-[#088c98] transition-colors">
+                Call now
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

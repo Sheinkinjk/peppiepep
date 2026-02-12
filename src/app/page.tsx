@@ -43,7 +43,7 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-                We help global B2B companies enter the APAC and EMEA regions by outsourcing their sales, partnerships, compliance, and operational setup.
+                We help global B2B companies enter the APAC region by outsourcing their sales, partnerships, compliance, and operational setup.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -131,7 +131,7 @@ export default function Home() {
               { value: "$1M-$50M", sub: "Client Revenue Range" },
               { value: "Retainer + %", sub: "Commission Model" },
               { value: "6 Verticals", sub: "SaaS, Fintech, Health & More" },
-              { value: "APAC & EMEA", sub: "Market Coverage" },
+              { value: "APAC", sub: "Market Coverage" },
             ].map((item) => (
               <div key={item.value} className="text-center">
                 <p className="text-lg sm:text-xl font-black text-[#0b2a34]">{item.value}</p>
@@ -365,7 +365,7 @@ export default function Home() {
               Built for Global B2B Companies Entering New Markets
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-              $1M-$50M in revenue, strong product-market fit in at least one market, and ready to expand into APAC or EMEA.
+              $1M-$50M in revenue, strong product-market fit in at least one market, and ready to expand into APAC.
             </p>
           </div>
 
