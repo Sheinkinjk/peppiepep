@@ -63,6 +63,7 @@ export default function Footer() {
                   { href: "/who-its-for", label: "Who It's For" },
                   { href: "/about", label: "About" },
                   { href: "/pricing", label: "Pricing" },
+                  { href: "/our-referral-program", label: "Our Referral Program" },
                 ].map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">
@@ -101,6 +102,7 @@ export default function Footer() {
                   { href: "/case-studies", label: "Playbooks" },
                   { href: "/faq", label: "FAQ" },
                   { href: "/contact", label: "Contact" },
+                  { href: "/application", label: "Apply to Work With Us" },
                 ].map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">

@@ -259,6 +259,19 @@ export const seoConfig = {
     ],
   },
 
+  application: {
+    title: "Apply to Work With Us - Market Entry Application",
+    description:
+      "Submit your market entry application. Tell us about your company, product, and APAC expansion goals. We review every application and respond within 1-2 business days.",
+    url: `${SITE_URL}/application`,
+    keywords: [
+      "market entry application",
+      "APAC expansion application",
+      "B2B market entry",
+      "apply refer labs",
+    ],
+  },
+
   security: {
     title: "Security - Enterprise-grade data protection",
     description:
