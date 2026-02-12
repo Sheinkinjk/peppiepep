@@ -84,7 +84,7 @@ export default function About() {
               Why Refer Labs
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-              We handle the sales, partnerships, compliance, and operations required to win in new markets - without you hiring a local team.
+              We leverage our local network of LinkedIn creators, agency partners, advisors, and enterprise contacts to open doors cold outbound never will.
             </p>
           </div>
 
@@ -93,12 +93,12 @@ export default function About() {
               {
                 icon: Target,
                 title: "Sales Representation",
-                desc: "Outbound prospecting, warm introductions, demo bookings, pipeline creation, and closing support.",
+                desc: "Warm introductions through our advisor and creator network, targeted outbound, and closing support.",
               },
               {
                 icon: Handshake,
                 title: "Partnership & Distribution",
-                desc: "Source and activate partners, resellers, and distribution channels that embed your product locally.",
+                desc: "Activate agencies, LinkedIn creators, advisors, and resellers who already reach your customer.",
               },
               {
                 icon: Shield,

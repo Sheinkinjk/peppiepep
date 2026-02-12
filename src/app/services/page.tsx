@@ -7,13 +7,14 @@ import {
   FileSignature,
   Target,
   Users,
-  Zap,
   BarChart3,
   Building2,
   TrendingUp,
   Shield,
   Settings,
   UserPlus,
+  Megaphone,
+  MessageSquare,
 } from "lucide-react";
 import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
@@ -39,7 +40,7 @@ export default function ServicesPage() {
             <span className="text-cyan-400">Commercial Arm</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            Five services that cover everything required to enter, operate, and scale in the APAC region.
+            We do not just run outreach from a spreadsheet. We leverage our local network of industry contacts, LinkedIn creators, agency partners, and advisors to open doors that cold outbound never will.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <a
@@ -61,30 +62,107 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Service 1: Sales Representation */}
+        {/* The Network — Why We're Different */}
+        <section className="mb-28">
+          <div className="text-center space-y-4 mb-14">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Our unfair advantage</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              A Network You Cannot Build Overnight
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Every engagement is powered by relationships we have spent years building across APAC. This is the infrastructure behind every introduction, partnership, and deal we close on your behalf.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                icon: Megaphone,
+                title: "LinkedIn Creators & Industry Voices",
+                desc: "A curated network of local LinkedIn creators, industry commentators, and thought leaders who amplify your brand, warm up your ICP, and make introductions that convert.",
+                stat: "Credibility from day one",
+                color: "from-cyan-500/20 to-teal-500/10",
+                border: "border-cyan-500/20",
+              },
+              {
+                icon: Building2,
+                title: "Agency & Consultant Partners",
+                desc: "Pre-existing relationships with agencies, consultancies, and advisory firms who already serve your target customer. They co-sell, refer, and white-label your product.",
+                stat: "Embedded distribution",
+                color: "from-purple-500/20 to-pink-500/10",
+                border: "border-purple-500/20",
+              },
+              {
+                icon: Users,
+                title: "Advisor & Referral Network",
+                desc: "Financial advisors, brokers, accountants, and professional service providers who recommend solutions to their clients. We activate these referral channels for you.",
+                stat: "Warm introductions at scale",
+                color: "from-amber-500/20 to-orange-500/10",
+                border: "border-amber-500/20",
+              },
+              {
+                icon: Globe,
+                title: "Platform & Enterprise Contacts",
+                desc: "Direct relationships with enterprise buyers, platform operators, and procurement teams. We know who makes purchasing decisions in the verticals that matter to you.",
+                stat: "Shorter sales cycles",
+                color: "from-emerald-500/20 to-teal-500/10",
+                border: "border-emerald-500/20",
+              },
+            ].map((channel) => (
+              <div
+                key={channel.title}
+                className={`group relative rounded-2xl border ${channel.border} bg-white/[0.02] p-7 transition-all duration-300 hover:bg-white/[0.04] overflow-hidden`}
+              >
+                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${channel.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`} />
+                <div className="relative">
+                  <div className="h-12 w-12 rounded-2xl bg-white/[0.06] border border-white/10 flex items-center justify-center mb-5 group-hover:bg-white/10 transition-colors">
+                    <channel.icon className="h-5 w-5 text-cyan-400" />
+                  </div>
+                  <h3 className="text-base font-bold text-white mb-3">{channel.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-5">{channel.desc}</p>
+                  <p className="text-xs font-semibold text-cyan-400 uppercase tracking-wider">{channel.stat}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 5 Core Services */}
         <section className="mb-28 space-y-16">
+          <div className="text-center space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Five core services</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">
+              Everything You Need to Enter and Win
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Each service is built on our local network. We do not outsource — we use the relationships, channels, and market knowledge we have built to deliver real commercial outcomes.
+            </p>
+          </div>
+
+          {/* Service 1: Sales Representation */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20">
                 <Target className="h-5 w-5 text-cyan-400" />
-                <span className="text-sm font-semibold text-cyan-300">01 - Sales Representation</span>
+                <span className="text-sm font-semibold text-cyan-300">01 — Sales Representation</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Your On-the-Ground Sales Arm
-              </h2>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Warm Introductions, Not Cold Spray-and-Pray
+              </h3>
               <p className="text-slate-300 leading-relaxed">
-                We act as your on-the-ground sales arm in-region. Outbound prospecting, warm introductions, demo bookings, pipeline creation, and closing support on priority deals.
+                We combine targeted outbound with warm introductions through our network of LinkedIn creators, industry advisors, and local contacts. Your prospects hear about you from people they already trust — before we ever reach out directly.
               </p>
               <div className="space-y-4">
                 <p className="text-sm font-semibold text-cyan-300 uppercase tracking-wide">
-                  What We Deliver
+                  How We Create Pipeline
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Outbound prospecting to your ICP",
-                    "Warm introductions via our network",
-                    "Demo booking and pipeline creation",
-                    "Closing support on priority deals",
+                    "Warm introductions through our advisor and consultant network",
+                    "LinkedIn creators amplify your brand to your exact ICP",
+                    "Targeted outbound to enterprise and mid-market buyers",
+                    "Demo booking, pipeline management, and closing support",
+                    "You join the calls that matter — we handle the rest",
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-slate-300">
                       <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -106,13 +184,14 @@ export default function ServicesPage() {
                     <Target className="h-6 w-6 text-cyan-400" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">Sales Pipeline Dashboard</p>
+                    <p className="font-semibold text-white">Sales Pipeline</p>
                     <p className="text-sm text-slate-400">Typical 90-day pilot outcomes</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   {[
                     { label: "Prospects contacted", value: "150-300" },
+                    { label: "Warm intros made", value: "30-60" },
                     { label: "Meetings booked", value: "10-20" },
                     { label: "Qualified pipeline", value: "5-12" },
                     { label: "Deals supported", value: "2-5" },
@@ -132,11 +211,15 @@ export default function ServicesPage() {
             <div className="order-2 lg:order-1 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/10 rounded-3xl blur-3xl" />
               <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-8">
+                <p className="text-sm font-semibold text-purple-300 uppercase tracking-wide mb-5">
+                  Partner Channel Types
+                </p>
                 <div className="space-y-5">
                   {[
-                    { icon: Building2, color: "bg-purple-500/20", iconColor: "text-purple-400", title: "Agency Partners", desc: "Refer, co-sell, and white-label your product to their clients" },
-                    { icon: Users, color: "bg-pink-500/20", iconColor: "text-pink-400", title: "Reseller Partners", desc: "License and distribute through local reseller networks" },
-                    { icon: Handshake, color: "bg-cyan-500/20", iconColor: "text-cyan-400", title: "Platform Partners", desc: "Integrate and distribute through established local platforms" },
+                    { icon: Building2, color: "bg-purple-500/20", iconColor: "text-purple-400", title: "Agency Partners", desc: "Agencies who co-sell, white-label, and bundle your product for their clients" },
+                    { icon: Megaphone, color: "bg-pink-500/20", iconColor: "text-pink-400", title: "LinkedIn Creators & Influencers", desc: "Industry voices who introduce your brand to engaged, high-intent audiences" },
+                    { icon: Users, color: "bg-amber-500/20", iconColor: "text-amber-400", title: "Advisor & Consultant Referrers", desc: "Professionals who recommend solutions to their client base — accountants, brokers, advisors" },
+                    { icon: Handshake, color: "bg-cyan-500/20", iconColor: "text-cyan-400", title: "Platform & Reseller Partners", desc: "Integrate into platforms, marketplaces, and reseller networks for scale distribution" },
                   ].map((partner) => (
                     <div key={partner.title} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
                       <div className={`h-10 w-10 rounded-lg ${partner.color} flex items-center justify-center flex-shrink-0`}>
@@ -154,21 +237,21 @@ export default function ServicesPage() {
             <div className="order-1 lg:order-2 space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
                 <Handshake className="h-5 w-5 text-purple-400" />
-                <span className="text-sm font-semibold text-purple-300">02 - Partnership &amp; Distribution Development</span>
+                <span className="text-sm font-semibold text-purple-300">02 — Partnership & Distribution</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Build Partner, Reseller &amp; Distribution Relationships
-              </h2>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Activate the Channels That Already Reach Your Customer
+              </h3>
               <p className="text-slate-300 leading-relaxed">
-                We build partner, reseller, and distribution relationships that embed your product into the local market. From identification to activation to revenue-share negotiations.
+                The fastest path to revenue in a new market is through people who already have your customer&apos;s trust. We identify, pitch, and activate the right partners — agencies, LinkedIn creators, advisors, resellers, and platforms — and structure the commercial terms so everyone is aligned.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Partner identification and outreach",
-                  "Strategic alliance development",
-                  "Reseller and referral partner activation",
-                  "White-label and distribution deal structuring",
-                  "Revenue-share and licensing negotiations",
+                  "Identify partners who already serve your target customer",
+                  "LinkedIn creators who build credibility and generate demand",
+                  "Agency co-selling and white-label deal structuring",
+                  "Advisor and consultant referral program activation",
+                  "Revenue-share, licensing, and distribution negotiations",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -178,7 +261,7 @@ export default function ServicesPage() {
               </ul>
               <div className="pt-2">
                 <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Pilot outcome</p>
-                <p className="text-lg font-bold text-purple-400">3-8 strategic partners or distribution channels</p>
+                <p className="text-lg font-bold text-purple-400">3-8 active partners or distribution channels</p>
               </div>
             </div>
           </div>
@@ -188,21 +271,21 @@ export default function ServicesPage() {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20">
                 <Shield className="h-5 w-5 text-emerald-400" />
-                <span className="text-sm font-semibold text-emerald-300">03 - Compliance &amp; Market Setup</span>
+                <span className="text-sm font-semibold text-emerald-300">03 — Compliance & Market Setup</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Handle the Legal and Operational Steps to Sell in New Markets
-              </h2>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Sell Legally on Day One, Not Day Ninety
+              </h3>
               <p className="text-slate-300 leading-relaxed">
-                We handle the legal, structural, and operational steps required to sell into new markets. From market entry structure to tax and regulatory compliance to local contract adjustments.
+                Most companies lose months navigating entity structures, tax registration, local contracts, and regulatory requirements. We handle it all in parallel with your sales and partnership workstreams — using our network of local legal, tax, and accounting professionals.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Market entry structure guidance",
+                  "Market entry structure guidance (entity, branch, or partner-led)",
                   "Local contract and commercial term adjustments",
-                  "Tax, regulatory, and pricing guidance",
-                  "Introductions to legal, tax, and accounting partners",
-                  "Compliance checklist for your business model",
+                  "Tax, regulatory, and pricing compliance",
+                  "Introductions to vetted legal, tax, and accounting partners",
+                  "Compliance checklist specific to your business model",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -226,7 +309,7 @@ export default function ServicesPage() {
                     { step: "1", title: "Market entry structure", desc: "Entity, branch, or partner-led entry" },
                     { step: "2", title: "Contract localisation", desc: "Terms, pricing, and SLAs for local market" },
                     { step: "3", title: "Tax & regulatory setup", desc: "Registration, pricing adjustments, compliance" },
-                    { step: "4", title: "Professional network", desc: "Legal, tax, and accounting partner intros" },
+                    { step: "4", title: "Professional network", desc: "Vetted legal, tax, and accounting partner intros" },
                   ].map((item) => (
                     <div key={item.step} className="flex gap-4">
                       <div className="h-8 w-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
@@ -262,7 +345,8 @@ export default function ServicesPage() {
                     { label: "Deal coordination", status: "Active" },
                     { label: "Partner management", status: "Active" },
                     { label: "Client onboarding", status: "Active" },
-                    { label: "Monthly reporting", status: "Scheduled" },
+                    { label: "Revenue reporting", status: "Active" },
+                    { label: "Strategy reviews", status: "Monthly" },
                   ].map((row) => (
                     <div key={row.label} className="flex justify-between items-center py-3 border-b border-white/10 last:border-0">
                       <span className="text-slate-400">{row.label}</span>
@@ -277,21 +361,21 @@ export default function ServicesPage() {
             <div className="order-1 lg:order-2 space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20">
                 <Settings className="h-5 w-5 text-amber-400" />
-                <span className="text-sm font-semibold text-amber-300">04 - Regional Operations Management</span>
+                <span className="text-sm font-semibold text-amber-300">04 — Regional Operations Management</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Manage Your Ongoing Commercial Activities Locally
-              </h2>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Run a Local Commercial Operation Without the Overhead
+              </h3>
               <p className="text-slate-300 leading-relaxed">
-                We manage your ongoing commercial activities in-region as your local team. Deal coordination, partner management, client onboarding, and monthly reporting.
+                After the pilot, we continue managing your in-region commercial activity. Deal coordination, partner management, customer onboarding, and revenue reporting — like an internal team, without the fixed cost of building one.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Deal coordination and execution",
-                  "Partner and client relationship management",
-                  "Local onboarding coordination",
-                  "Monthly pipeline and revenue reporting",
-                  "Market expansion planning",
+                  "Ongoing deal coordination and execution support",
+                  "Partner and channel relationship management",
+                  "Customer onboarding and success coordination",
+                  "Monthly pipeline, revenue, and partner reporting",
+                  "Market expansion planning and strategy reviews",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -305,26 +389,27 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
+
           {/* Service 5: Team Formation & Recruitment */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
                 <UserPlus className="h-5 w-5 text-blue-400" />
-                <span className="text-sm font-semibold text-blue-300">05 - Team Formation &amp; Recruitment</span>
+                <span className="text-sm font-semibold text-blue-300">05 — Team Formation & Recruitment</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Build Your In-Region Team as the Market Grows
-              </h2>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Transition From Outsourced to Owned — When You Are Ready
+              </h3>
               <p className="text-slate-300 leading-relaxed">
-                As your market matures, we help you transition from outsourced to owned. We source, recruit, and onboard in-region hires so you can scale with confidence.
+                Once you have validated the market and see real traction, we help you build your own in-region team. We scope the roles, source candidates, support onboarding, and hand over all relationships, playbooks, and processes we have built.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Role scoping and candidate sourcing",
-                  "Local hiring and onboarding support",
-                  "Knowledge transfer and handover planning",
-                  "Ongoing advisory during transition",
-                  "Complementary team structuring",
+                  "Role scoping based on market traction data",
+                  "Local candidate sourcing and interview support",
+                  "Onboarding coordination and knowledge transfer",
+                  "Handover of partner relationships and playbooks",
+                  "Ongoing advisory during the transition period",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300">
                     <CheckCircle2 className="h-5 w-5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -346,7 +431,7 @@ export default function ServicesPage() {
                 <div className="space-y-4">
                   {[
                     { step: "1", title: "Outsourced execution", desc: "Refer Labs runs all commercial activity in-region" },
-                    { step: "2", title: "Role scoping", desc: "Define which roles to hire first based on traction" },
+                    { step: "2", title: "Role scoping", desc: "Define which roles to hire first based on real traction" },
                     { step: "3", title: "Recruit & onboard", desc: "Source, interview, and onboard local team members" },
                     { step: "4", title: "Handover & advisory", desc: "Transfer playbooks, relationships, and ongoing support" },
                   ].map((item) => (
@@ -366,23 +451,59 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Stats */}
+        {/* What You Get — Concrete Outcomes */}
+        <section className="mb-28">
+          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(10,167,181,0.1),transparent_50%)]" />
+            <div className="relative">
+              <div className="text-center mb-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-3">90-day pilot deliverables</p>
+                <h2 className="text-3xl sm:text-4xl font-black text-white">
+                  What You Walk Away With
+                </h2>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                {[
+                  { icon: Target, label: "10-20 qualified client conversations", desc: "Warm introductions and outbound pipeline from real market activity" },
+                  { icon: Handshake, label: "3-8 active partner channels", desc: "Agencies, advisors, creators, and resellers pitching and referring your product" },
+                  { icon: Shield, label: "Fully compliant market setup", desc: "Entity, contracts, tax, and regulatory setup handled" },
+                  { icon: BarChart3, label: "Weekly pipeline reports", desc: "Full transparency on outreach, meetings, deals, and partner status" },
+                  { icon: FileSignature, label: "Structured deal terms", desc: "White-label, reseller, and partnership agreements ready to sign" },
+                  { icon: MessageSquare, label: "Repeatable playbook", desc: "Tested messaging, partner angles, and channel analysis you can scale" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+                    <div className="h-10 w-10 rounded-xl bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="h-5 w-5 text-cyan-400" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">{item.label}</p>
+                      <p className="text-slate-500 text-xs mt-1">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why This Approach Works — Stats */}
         <section className="mb-28">
           <div className="max-w-4xl mx-auto">
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-3xl sm:text-4xl font-black text-white">
-                Why This Approach Works
+                Why This Works
               </h2>
-              <p className="text-slate-400">
-                Five services running in parallel produce compounding results.
+              <p className="text-slate-400 max-w-2xl mx-auto">
+                Cold outbound alone converts at 1-2%. Warm introductions through trusted channels convert at 10-30%. That is the difference between a failed expansion and a profitable one.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-3 gap-8 text-center">
               {[
-                { value: "3-5x", label: "Higher Conversion", desc: "Warm introductions and partner referrals convert at dramatically higher rates" },
-                { value: "40%", label: "Lower CAC", desc: "Performance-based model means you only pay for results" },
-                { value: "90 Days", label: "To Revenue Signals", desc: "Structured pilot delivers pipeline, partners, and deals in 12 weeks" },
+                { value: "10-30%", label: "Warm Intro Conversion", desc: "Introductions through our network convert at dramatically higher rates than cold outbound" },
+                { value: "90 Days", label: "To Revenue Signals", desc: "Structured pilot delivers pipeline, partners, and distribution deals in 12 weeks" },
+                { value: "Zero", label: "Local Hires Required", desc: "Full commercial operation without a single local employee on your payroll" },
               ].map((stat) => (
                 <div key={stat.value} className="space-y-3">
                   <div className="text-5xl font-black bg-gradient-to-r from-cyan-300 to-teal-300 bg-clip-text text-transparent">
@@ -403,16 +524,16 @@ export default function ServicesPage() {
               Optional Add-ons
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Layer these on top of any core service for a more comprehensive engagement.
+              Layer these on top of any core service for deeper market penetration.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Globe, title: "Landing Page Localisation", desc: "Copy, pricing, and positioning adapted for the target market." },
-              { icon: Users, title: "Partner Program Design", desc: "Terms, commissions, tiering, and partner playbook creation." },
-              { icon: TrendingUp, title: "Event & Community Entry", desc: "Introductions to relevant local events, communities, and industry groups." },
-              { icon: Handshake, title: "Intro-Only Mode", desc: "Lighter touch - we make the introductions, you take it from there." },
+              { icon: Globe, title: "Landing Page & Positioning Localisation", desc: "Website copy, case studies, and pricing adapted for the local market and buyer psychology." },
+              { icon: Megaphone, title: "LinkedIn Creator Campaign", desc: "Dedicated content campaigns with local creators to build brand awareness and generate inbound leads." },
+              { icon: TrendingUp, title: "Event & Community Entry", desc: "Introductions to relevant local events, industry associations, and communities for in-person credibility." },
+              { icon: Handshake, title: "Intro-Only Mode", desc: "Lighter engagement — we make the introductions through our network, you take it from there." },
             ].map((addon) => (
               <div
                 key={addon.title}
@@ -439,7 +560,7 @@ export default function ServicesPage() {
                 Ready to Build In-Region Revenue?
               </h2>
               <p className="text-lg text-slate-300">
-                Tell us what you sell and where you are today. We will recommend the right service mix and scope your 90-day pilot.
+                Tell us what you sell, who you sell to, and where you want to go. We will tell you exactly how our network can open the market for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
                 <a

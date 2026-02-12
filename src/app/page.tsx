@@ -151,7 +151,7 @@ export default function Home() {
               Why Refer Labs
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-              We handle the sales, partnerships, compliance, and operations required to enter and win in new markets - without you hiring a local team.
+              We leverage our local network of LinkedIn creators, agency partners, advisors, and enterprise contacts to create real pipeline — not just cold outbound.
             </p>
           </div>
 
@@ -161,8 +161,8 @@ export default function Home() {
                 icon: Target,
                 num: "01",
                 title: "Sales Representation",
-                desc: "We act as your on-the-ground sales arm in-region.",
-                items: ["Outbound prospecting to your ICP", "Warm introductions via our network", "Demo booking & pipeline creation", "Closing support on priority deals"],
+                desc: "Warm intros through our advisor and creator network — not just cold outbound.",
+                items: ["Warm intros via advisors & LinkedIn creators", "Targeted outbound to your ICP", "Demo booking & pipeline creation", "Closing support on priority deals"],
                 stat: "10-20",
                 statLabel: "qualified conversations",
               },
@@ -170,10 +170,10 @@ export default function Home() {
                 icon: Handshake,
                 num: "02",
                 title: "Partnership & Distribution",
-                desc: "We build partner, reseller, and distribution relationships.",
-                items: ["Partner identification & outreach", "Strategic alliance development", "Reseller & referral partner activation", "Revenue-share & licensing negotiations"],
+                desc: "We activate agencies, creators, advisors, and resellers who already reach your customer.",
+                items: ["Agency co-selling & white-label deals", "LinkedIn creator demand generation", "Advisor & consultant referral programs", "Revenue-share & licensing negotiations"],
                 stat: "3-8",
-                statLabel: "partners or channels",
+                statLabel: "active partner channels",
               },
               {
                 icon: Shield,

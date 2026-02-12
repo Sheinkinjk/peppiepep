@@ -152,13 +152,13 @@ export default function HowItWorks() {
                 Build Target Lists &amp; Partner Angles
               </h3>
               <p className="text-slate-300 leading-relaxed">
-                We build your customer target list, identify partnership opportunities, and map potential distribution deals - agencies, platforms, resellers, and enterprise accounts tailored to your ICP.
+                We build your customer target list and map every channel that can reach them — LinkedIn creators in your vertical, agency partners, advisor referral networks, resellers, and enterprise accounts.
               </p>
               <ul className="space-y-3">
                 {[
                   "Customer prospect list mapped to your ICP",
-                  "Partnership opportunities identified and prioritised",
-                  "Distribution deal targets researched",
+                  "LinkedIn creators and industry voices identified for demand generation",
+                  "Agency, advisor, and reseller partner targets researched",
                   "Outreach sequences and pitch angles prepared",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm">
@@ -180,15 +180,15 @@ export default function HowItWorks() {
                 Outreach, Meetings &amp; Deal Structuring
               </h3>
               <p className="text-slate-300 leading-relaxed">
-                This is where execution happens. Active outreach to clients and partners, meetings booked and run, partnerships negotiated, distribution deals structured, and closing support provided. You join the calls that matter.
+                This is where execution happens. Warm introductions via our network, outbound to customer targets, LinkedIn creator campaigns live, agency and advisor partnerships activated, distribution deals structured, and closing support provided. You join the calls that matter.
               </p>
               <ul className="space-y-3">
                 {[
+                  "Warm introductions through advisors, creators, and our network",
                   "Active outbound to customer targets",
-                  "Partner pitches and onboarding conversations",
+                  "Agency and advisor partnership activation",
                   "Distribution deal negotiation and structuring",
-                  "Meeting coordination - you join key calls",
-                  "Closing support on priority opportunities",
+                  "Closing support - you join key calls",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
