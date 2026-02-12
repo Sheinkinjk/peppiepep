@@ -30,6 +30,7 @@ const profiles = [
     example: "US-based project management SaaS testing ANZ demand through partner-led distribution and direct sales.",
     services: ["Sales representation", "Partner development", "Enterprise introductions"],
     color: "from-cyan-500/20 to-teal-500/10",
+    href: null,
   },
   {
     icon: CreditCard,
@@ -39,6 +40,7 @@ const profiles = [
     example: "UK lending platform building an Australian broker network and white-label distribution channel.",
     services: ["Distribution deals", "Broker activation", "Reseller agreements"],
     color: "from-purple-500/20 to-pink-500/10",
+    href: "/services/financial-advisors",
   },
   {
     icon: Heart,
@@ -48,6 +50,7 @@ const profiles = [
     example: "US telehealth platform partnering with Australian health networks and private hospital groups.",
     services: ["Provider partnerships", "Enterprise introductions", "Payer relationships"],
     color: "from-rose-500/20 to-orange-500/10",
+    href: "/services/insurance-brokers",
   },
   {
     icon: Zap,
@@ -57,6 +60,7 @@ const profiles = [
     example: "European creator monetisation platform expanding into the Australian influencer and content creator market.",
     services: ["Community partnerships", "Agency distribution", "Platform integrations"],
     color: "from-amber-500/20 to-yellow-500/10",
+    href: null,
   },
   {
     icon: ShoppingBag,
@@ -66,6 +70,7 @@ const profiles = [
     example: "US e-commerce infrastructure company entering Australia through agency and retailer partnerships.",
     services: ["Retail distribution", "Agency partnerships", "Affiliate channel setup"],
     color: "from-emerald-500/20 to-teal-500/10",
+    href: null,
   },
   {
     icon: Briefcase,
@@ -75,6 +80,7 @@ const profiles = [
     example: "Canadian legal tech company partnering with Australian law firms and industry associations.",
     services: ["Vertical partnerships", "Enterprise sales", "Industry network entry"],
     color: "from-blue-500/20 to-indigo-500/10",
+    href: "/services/consultants-coaches",
   },
 ];
 
@@ -174,13 +180,53 @@ export default function WhoItsForPage() {
                       ))}
                     </div>
 
-                    <p className="text-xs text-slate-500 italic leading-relaxed">
+                    <p className="text-xs text-slate-500 italic leading-relaxed mb-4">
                       Example: {profile.example}
                     </p>
+
+                    {profile.href && (
+                      <Link
+                        href={profile.href}
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                      >
+                        See market entry playbook
+                        <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* Explore by Industry */}
+        <section className="mb-28">
+          <div className="text-center space-y-4 mb-10">
+            <h2 className="text-2xl sm:text-3xl font-black text-white">
+              Explore by Industry
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-sm">
+              We have built market entry playbooks for these Australian verticals. Each page covers the opportunity, our approach, and what to expect in 90 days.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { label: "Financial Services & Fintech", href: "/services/financial-advisors" },
+              { label: "Accounting & Tax Technology", href: "/services/accountants" },
+              { label: "Insurance & Insurtech", href: "/services/insurance-brokers" },
+              { label: "HR & Recruitment Technology", href: "/services/recruiters-staffing" },
+              { label: "Professional Services Software", href: "/services/consultants-coaches" },
+            ].map((v) => (
+              <Link
+                key={v.href}
+                href={v.href}
+                className="flex items-center justify-between gap-3 p-5 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-white/15 hover:bg-white/[0.06] transition-all group"
+              >
+                <span className="text-sm font-semibold text-white">{v.label}</span>
+                <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-cyan-400 transition-colors flex-shrink-0" />
+              </Link>
+            ))}
           </div>
         </section>
 

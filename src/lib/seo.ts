@@ -212,13 +212,13 @@ export const seoConfig = {
   caseStudies: {
     title: "Playbooks - Australia Market Entry Examples",
     description:
-      "Example playbooks showing how we enter Australia for SaaS companies, build agency partner channels, and activate affiliate distribution.",
+      "Example playbooks showing how we enter Australia for SaaS companies, build agency partner channels, and activate distribution channels.",
     url: `${SITE_URL}/case-studies`,
     keywords: [
       "Australia market entry examples",
       "SaaS expansion playbook",
       "partner channel playbook",
-      "affiliate activation Australia",
+      "distribution activation Australia",
     ],
   },
 
@@ -393,7 +393,7 @@ export const seoConfig = {
       "affiliate channel Australia",
       "partner program management",
       "Australian referral partners",
-      "affiliate activation Australia",
+      "distribution activation Australia",
     ],
   },
 

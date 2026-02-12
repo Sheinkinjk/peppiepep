@@ -5,13 +5,16 @@ export const metadata = generateSEOMetadata(seoConfig.privacy);
 
 export default function Privacy() {
   return (
-    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
+    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-[#f5fbfc] via-white to-[#e8f6f8]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(0,167,181,0.09),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(12,58,69,0.08),transparent_35%)]" />
 
-      <main className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10">
+      <main
+        id="main-content"
+        className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10"
+      >
 
         <div className="max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#0AA7B5] shadow-sm ring-1 ring-[#B4EEF7]">
             Legal · GDPR Compliant
           </div>
           <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
@@ -34,7 +37,7 @@ export default function Privacy() {
               <ul className="list-none text-slate-600 space-y-1 pl-0">
                 <li><strong>Entity:</strong> Pepform Pty Ltd (trading as Refer Labs)</li>
                 <li><strong>ABN:</strong> 32 660 008 159</li>
-                <li><strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a></li>
+                <li><strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-[#0AA7B5] hover:underline">jarred@referlabs.com.au</a></li>
                 <li><strong>Location:</strong> Australia</li>
                 <li><strong>Privacy Officer:</strong> Available upon request via email</li>
               </ul>
@@ -64,7 +67,7 @@ export default function Privacy() {
               <h3 className="text-lg font-semibold text-slate-800 mt-4 mb-2">1.3 Legal Basis for Processing</h3>
               <p className="text-slate-600">We process your data based on:</p>
               <ul className="list-disc list-inside text-slate-600 space-y-1">
-                <li><strong>Contract:</strong> To provide our affiliate platform services</li>
+                <li><strong>Contract:</strong> To provide our market entry and commercial services</li>
                 <li><strong>Legitimate Interest:</strong> To improve our service, prevent fraud, and ensure security</li>
                 <li><strong>Consent:</strong> For SMS notifications and marketing communications (where required)</li>
                 <li><strong>Legal Obligation:</strong> To comply with tax, accounting, and legal requirements</li>
@@ -99,7 +102,7 @@ export default function Privacy() {
                     <li><strong>Data Shared:</strong> All user and customer data</li>
                     <li><strong>Purpose:</strong> Database hosting, user authentication</li>
                     <li><strong>Location:</strong> United States (AWS US-East-1)</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://supabase.com/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">supabase.com/privacy</a></li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://supabase.com/privacy" className="text-[#0AA7B5] hover:underline" target="_blank" rel="noopener">supabase.com/privacy</a></li>
                   </ul>
                 </div>
 
@@ -109,7 +112,7 @@ export default function Privacy() {
                     <li><strong>Data Shared:</strong> Phone numbers, message content, delivery metadata</li>
                     <li><strong>Purpose:</strong> Deliver SMS/WhatsApp/voice messages you send</li>
                     <li><strong>Location:</strong> Global infrastructure (including US); messages may transit internationally</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://www.twilio.com/en-us/legal/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">twilio.com/legal/privacy</a></li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://www.twilio.com/en-us/legal/privacy" className="text-[#0AA7B5] hover:underline" target="_blank" rel="noopener">twilio.com/legal/privacy</a></li>
                   </ul>
                 </div>
 
@@ -119,7 +122,7 @@ export default function Privacy() {
                     <li><strong>Data Shared:</strong> Email addresses, message content you create</li>
                     <li><strong>Purpose:</strong> Deliver campaign emails and transactional notifications</li>
                     <li><strong>Location:</strong> United States</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://resend.com/legal/privacy-policy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">resend.com/legal/privacy-policy</a></li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://resend.com/legal/privacy-policy" className="text-[#0AA7B5] hover:underline" target="_blank" rel="noopener">resend.com/legal/privacy-policy</a></li>
                   </ul>
                 </div>
 
@@ -129,7 +132,7 @@ export default function Privacy() {
                     <li><strong>Data Shared:</strong> Billing contact info, payment method tokens (card data stays with Stripe)</li>
                     <li><strong>Purpose:</strong> Subscription billing and payouts</li>
                     <li><strong>Location:</strong> United States, global</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://stripe.com/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">stripe.com/privacy</a></li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://stripe.com/privacy" className="text-[#0AA7B5] hover:underline" target="_blank" rel="noopener">stripe.com/privacy</a></li>
                   </ul>
                 </div>
 
@@ -140,7 +143,7 @@ export default function Privacy() {
                     <li><strong>Purpose:</strong> Generate campaign message suggestions</li>
                     <li><strong>Location:</strong> United States</li>
                     <li><strong>Note:</strong> No customer PII is sent; only anonymized prompts</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://openai.com/privacy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">openai.com/privacy</a></li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://openai.com/privacy" className="text-[#0AA7B5] hover:underline" target="_blank" rel="noopener">openai.com/privacy</a></li>
                   </ul>
                 </div>
 
@@ -150,7 +153,7 @@ export default function Privacy() {
                     <li><strong>Data Shared:</strong> Request logs, IP addresses</li>
                     <li><strong>Purpose:</strong> Application hosting and delivery</li>
                     <li><strong>Location:</strong> Global CDN (including US, EU, Asia-Pacific)</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://vercel.com/legal/privacy-policy" className="text-purple-700 hover:underline" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://vercel.com/legal/privacy-policy" className="text-[#0AA7B5] hover:underline" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a></li>
                   </ul>
                 </div>
               </div>
@@ -241,7 +244,7 @@ export default function Privacy() {
                 <li>You must promptly inform us of any suspected breach involving data you control and cooperate with our investigation and notifications.</li>
               </ul>
               <p className="text-slate-600 text-sm">
-                Report incidents or concerns to <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a> using the subject line "Data Breach - Urgent".
+                Report incidents or concerns to <a href="mailto:jarred@referlabs.com.au" className="text-[#0AA7B5] hover:underline">jarred@referlabs.com.au</a> using the subject line "Data Breach - Urgent".
               </p>
             </div>
 
@@ -301,7 +304,7 @@ export default function Privacy() {
               </div>
 
               <p className="text-slate-600 mt-4">
-                <strong>To exercise your rights:</strong> Email <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a> with "Privacy Rights Request" in the subject line. We will respond within 30 days.
+                <strong>To exercise your rights:</strong> Email <a href="mailto:jarred@referlabs.com.au" className="text-[#0AA7B5] hover:underline">jarred@referlabs.com.au</a> with "Privacy Rights Request" in the subject line. We will respond within 30 days.
               </p>
             </div>
 
@@ -373,7 +376,7 @@ export default function Privacy() {
               </p>
               <div className="bg-amber-50 rounded-lg p-4 border border-amber-200 mb-3">
                 <p className="text-slate-700">
-                  <strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a>
+                  <strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-[#0AA7B5] hover:underline">jarred@referlabs.com.au</a>
                   <br />
                   <strong>Subject Line:</strong> "CCPA Privacy Rights Request"
                   <br />
@@ -499,9 +502,9 @@ export default function Privacy() {
               <p className="text-slate-600 mb-2">
                 For questions, concerns, or to exercise your privacy rights, contact us at:
               </p>
-              <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+              <div className="bg-[#E3FAFF] rounded-lg p-4 border border-[#B4EEF7]">
                 <p className="text-slate-700">
-                  <strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a>
+                  <strong>Email:</strong> <a href="mailto:jarred@referlabs.com.au" className="text-[#0AA7B5] hover:underline">jarred@referlabs.com.au</a>
                   <br />
                   <strong>Subject Line:</strong> Include "Privacy" for general questions or "Privacy Rights Request" for rights requests
                   <br />

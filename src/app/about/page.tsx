@@ -80,7 +80,7 @@ export default function About() {
           <div className="text-center space-y-4 mb-12">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">What we do</p>
             <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Four Services. One Commercial Arm.
+              Why Refer Labs
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
               We handle the sales, partnerships, compliance, and operations required to win in Australia - without you hiring a local team.

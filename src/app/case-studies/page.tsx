@@ -97,7 +97,7 @@ export default function CaseStudiesPage() {
             Playbooks
           </h1>
           <p className="text-lg text-slate-400 max-w-xl mx-auto">
-            Example scenarios showing how we approach Australia market entry, partner channels, and affiliate activation.
+            Example scenarios showing how we approach Australia market entry, partner channels, and distribution deals.
           </p>
           <p className="text-sm text-slate-500 italic">
             These are illustrative playbooks, not fabricated case studies. Each engagement is scoped to your specific situation.
