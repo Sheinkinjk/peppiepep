@@ -106,6 +106,7 @@ export default function ResetPasswordPage() {
 
   return (
     <main
+      id="main-content"
       className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
       aria-label="Refer Labs password reset"
     >

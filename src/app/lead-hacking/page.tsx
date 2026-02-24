@@ -146,13 +146,16 @@ const partnershipBlueprint = [
 
 export default function LeadHackingPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-white">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.08),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
       </div>
 
-      <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16"
+      >
         {/* Hero */}
         <section className="mb-24 grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="space-y-8">
@@ -170,9 +173,6 @@ export default function LeadHackingPage() {
             </p>
 
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
-              <p className="text-sm font-bold uppercase tracking-wider text-cyan-300 mb-3">
-                The upside
-              </p>
               <p className="text-slate-200/90 mb-5">
                 Instead of building a pipeline one cold message at a time, you build distribution through partners
                 that already have trust, access, and context in the Australian market.
@@ -215,7 +215,6 @@ export default function LeadHackingPage() {
                   <Users className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-wider text-slate-400">What we actually do</p>
                   <p className="text-2xl font-black text-white">Partner Channel Engineering</p>
                 </div>
               </div>
@@ -266,16 +265,12 @@ export default function LeadHackingPage() {
                     </div>
                     <div>
                       <h3 className="text-xl font-black text-white">{partner.title}</h3>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-slate-400">
-                        {partner.subtitle}
-                      </p>
                     </div>
                   </div>
 
                   <p className="text-sm leading-relaxed text-slate-200/95">{partner.description}</p>
 
                   <div className="mt-6 rounded-xl border border-white/10 bg-slate-950/30 p-5">
-                    <p className="text-xs font-bold uppercase tracking-wider text-cyan-300">{partner.how.heading}</p>
                     <div className="mt-3 space-y-2">
                       {partner.how.bullets.map((bullet) => (
                         <div key={bullet} className="flex gap-3">
@@ -287,7 +282,6 @@ export default function LeadHackingPage() {
                   </div>
 
                   <div className="mt-4 rounded-xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-xs font-bold uppercase tracking-wider text-cyan-300">{partner.outcome.heading}</p>
                     <div className="mt-3 space-y-2">
                       {partner.outcome.bullets.map((bullet) => (
                         <div key={bullet} className="flex gap-3">
@@ -305,7 +299,6 @@ export default function LeadHackingPage() {
           <div className="mt-10 rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-white/[0.02] to-transparent p-8">
             <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
               <div className="max-w-3xl">
-                <p className="text-sm font-bold uppercase tracking-wider text-cyan-300">Not sure which lane is best?</p>
                 <p className="mt-2 text-lg text-slate-200/90">
                   We will recommend the highest-leverage partner type for your product and ICP in Australia,
                   then design the partnership mechanics and sourcing plan around it.
@@ -352,7 +345,6 @@ export default function LeadHackingPage() {
                     </div>
                     <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.description}</p>
                     <div className="mt-5 rounded-xl border border-white/10 bg-slate-950/30 px-4 py-3">
-                      <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Deliverable</p>
                       <p className="mt-1 text-sm text-slate-200">{item.deliverable}</p>
                     </div>
                   </div>

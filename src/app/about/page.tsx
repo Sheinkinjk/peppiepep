@@ -1,226 +1,133 @@
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
-import {
-  ArrowRight,
-  Calendar,
-  CheckCircle2,
-  Globe,
-  Handshake,
-  Target,
-  Users,
-  Zap,
-  BarChart3,
-  FileSignature,
-  Shield,
-  UserPlus,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = generateSEOMetadata(seoConfig.about);
 
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
 
 export default function About() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+    <div className="relative min-h-screen bg-[#060f15] text-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(10,167,181,0.07),transparent_50%)]" />
       </div>
 
-      <main id="main-content" className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+      <main id="main-content" className="relative mx-auto max-w-5xl px-6 sm:px-8 lg:px-12 pb-24 pt-16 sm:pt-20">
 
         {/* Hero */}
-        <section className="text-center space-y-8 mb-28">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
-            Your On-the-Ground{" "}
-            <span className="text-cyan-400">Commercial Arm</span>
+        <div className="mb-20 sm:mb-24 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] text-white mb-7 tracking-tight">
+            We Are a Growth & Distribution Engine.
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We help global B2B companies enter and operate in the APAC region by handling sales, partnerships, compliance, and commercial operations - all on a retainer + success fee model.
+          <p className="text-white/55 text-base sm:text-lg leading-relaxed">
+            Refer Labs builds and activates distribution systems for operators, brands, and businesses that understand growth is not a channel strategy. It is a structural advantage.
           </p>
-        </section>
+        </div>
 
-        {/* The Story */}
-        <section className="mb-28">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div className="space-y-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Why we exist</p>
-              <h2 className="text-3xl sm:text-4xl font-black text-white leading-[1.1]">
-                Expanding Into New Markets Is Harder Than It Looks
+        {/* What We Do */}
+        <section className="border-t border-white/[0.07] py-14 sm:py-16 mb-4">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white mb-5 leading-tight">
+                What Refer Labs Does
               </h2>
-              <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                <p>
-                  Companies try remote outreach, attend a conference, or hire one person too early. None of it works without sustained local execution across sales, partnerships, compliance, and operations.
-                </p>
-                <p>
-                  We started Refer Labs because we saw the same pattern: great products, proven markets overseas, but zero traction in new regions. The gap was not product-market fit - it was local commercial execution.
-                </p>
-                <p>
-                  Most companies need revenue signals and validated channels before committing to local headcount. That is exactly what we provide - a structured 90-day pilot that delivers pipeline, partnerships, compliance setup, and a functioning commercial operation.
-                </p>
-              </div>
+              <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-5">
+                We build and activate scalable distribution systems across five core growth engines: referral program design, affiliate distribution, influencer and network activation, APAC market expansion, and product creation with end-to-end distribution.
+              </p>
+              <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+                Every engagement is structured, commercial, and built to compound. We do not run one-off campaigns. We build systems that continue generating leverage after we have done our work.
+              </p>
             </div>
             <div className="space-y-4">
               {[
-                { num: "01", text: "Remote sales without local presence leads to zero trust and low conversion." },
-                { num: "02", text: "Partnerships require ongoing activation, not one-off introductions at events." },
-                { num: "03", text: "Hiring a full-time local rep too early is expensive and slow to ramp." },
-                { num: "04", text: "You need revenue signals and validated channels before committing headcount." },
+                "We design systems, not campaigns",
+                "We work with operators ready to scale distribution",
+                "We operate across referral, affiliate, influencer, APAC, and product channels",
+                "We align incentives with client outcomes",
+                "We own selected products internally and are open to collaboration",
               ].map((item) => (
-                <div key={item.num} className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
-                  <span className="text-cyan-400 text-sm font-black flex-shrink-0 mt-0.5">{item.num}</span>
-                  <p className="text-slate-300 text-sm leading-relaxed">{item.text}</p>
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="h-4 w-4 text-[#0AA7B5] flex-shrink-0 mt-0.5" />
+                  <p className="text-white/60 text-sm">{item}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Four Core Services */}
-        <section className="mb-28">
-          <div className="text-center space-y-4 mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">What we do</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Why Refer Labs
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-              We leverage our local network of LinkedIn creators, agency partners, advisors, and enterprise contacts to open doors cold outbound never will.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-            {[
-              {
-                icon: Target,
-                title: "Sales Representation",
-                desc: "Warm introductions through our advisor and creator network, targeted outbound, and closing support.",
-              },
-              {
-                icon: Handshake,
-                title: "Partnership & Distribution",
-                desc: "Activate agencies, LinkedIn creators, advisors, and resellers who already reach your customer.",
-              },
-              {
-                icon: Shield,
-                title: "Compliance & Setup",
-                desc: "Market entry structure, local contracts, tax and regulatory guidance, and professional partner introductions.",
-              },
-              {
-                icon: Globe,
-                title: "Operations Management",
-                desc: "Deal coordination, partner management, local onboarding, and monthly pipeline reporting.",
-              },
-              {
-                icon: UserPlus,
-                title: "Team Formation",
-                desc: "Source, recruit, and onboard in-region hires as the market grows — transition from outsourced to owned.",
-              },
-            ].map((service) => (
-              <div key={service.title} className="rounded-2xl bg-white/[0.03] border border-white/5 p-7 hover:border-white/10 transition-colors">
-                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5">
-                  <service.icon className="h-6 w-6 text-cyan-400" />
-                </div>
-                <h3 className="text-white font-bold mb-2">{service.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Mission, Vision, Values */}
-        <section className="mb-28">
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Target,
-                title: "Our Mission",
-                desc: "Make APAC market entry achievable for any global B2B company with a proven product - without hiring locally or guessing at the market.",
-              },
-              {
-                icon: Globe,
-                title: "Our Vision",
-                desc: "Be the default way global B2B companies enter APAC markets - through local sales execution, strategic partnerships, and structured distribution.",
-              },
-              {
-                icon: Shield,
-                title: "Our Values",
-                desc: "Execution over theory. Transparency over vanity metrics. Aligned incentives over upfront fees. We succeed when our clients generate in-region revenue.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-7">
-                <div className="h-12 w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5">
-                  <item.icon className="h-5 w-5 text-cyan-400" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* How We Work */}
-        <section className="mb-28">
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(10,167,181,0.1),transparent_50%)]" />
-            <div className="relative">
-              <div className="text-center mb-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-3">How we work</p>
-                <h2 className="text-3xl sm:text-4xl font-black text-white">
-                  The Refer Labs Approach
-                </h2>
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                {[
-                  "Retainer + commission model - we earn when you earn",
-                  "90-day structured pilots with weekly reporting",
-                  "Sales, partnerships, compliance, and operations running in parallel",
-                  "No equity, no exclusivity clauses",
-                  "We join your CRM and report like an internal team",
-                  "Target: $1M-$50M revenue companies entering APAC",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.06]">
-                    <CheckCircle2 className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                    <p className="text-slate-300 text-sm font-medium">{item}</p>
-                  </div>
-                ))}
-              </div>
+        {/* Philosophy */}
+        <section className="border-t border-white/[0.07] py-14 sm:py-16 mb-4">
+          <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
+            <div>
+              <h2 className="text-xl font-black text-white">Our Approach</h2>
             </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-black text-white">
-                Ready to Enter a New Market?
-              </h2>
-              <p className="text-lg text-slate-300">
-                Book a 15-minute call and we will discuss your product, your expansion goals, and scope a 90-day pilot.
+            <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p>
+                Most growth problems are distribution problems. Companies with strong products fail to scale because they lack the systems to get those products in front of the right people, through the right channels, at the right time.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
-                <a
-                  href={calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
-                >
-                  <Calendar className="h-4 w-4" />
-                  Book a Market Entry Call
-                </a>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
-                >
-                  Explore Services
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
+              <p>
+                We built Refer Labs to solve that. We identify where the leverage is, structure the distribution engine, activate the channels, and optimise until the system compounds.
+              </p>
+              <p>
+                Whether that means designing a referral program, distributing an affiliate offer, activating an influencer network, entering APAC, or building and distributing a digital product, the underlying logic is the same: distribution is leverage.
+              </p>
             </div>
           </div>
         </section>
+
+        {/* Values */}
+        <section className="border-t border-white/[0.07] py-14 sm:py-16 mb-4">
+          <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
+            <div>
+              <h2 className="text-xl font-black text-white">What We Stand For</h2>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6 max-w-2xl">
+              {[
+                { label: "Execution over theory", desc: "We build and activate. Strategy without execution is noise." },
+                { label: "Aligned incentives", desc: "We structure engagements so our success is tied to yours." },
+                { label: "Clarity over complexity", desc: "Simple systems compound. Complicated ones collapse." },
+              ].map((v) => (
+                <div key={v.label}>
+                  <p className="text-white font-semibold text-sm mb-2">{v.label}</p>
+                  <p className="text-white/45 text-xs leading-relaxed">{v.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section className="border-t border-white/[0.07] pt-14 sm:pt-16">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-black text-white mb-2">
+                Ready to talk distribution?
+              </h2>
+              <p className="text-white/45 text-sm">
+                jarred@referlabs.com.au
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-lg shadow-[#0AA7B5]/20"
+              >
+                Partner With Us
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white/80 transition-all hover:bg-white/[0.07] hover:text-white"
+              >
+                Send a Message
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
   );

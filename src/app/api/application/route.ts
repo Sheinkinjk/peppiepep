@@ -155,6 +155,7 @@ export async function POST(request: Request) {
     const notification = await sendAdminNotification({
       subject: `Market Entry Application: ${data.companyName} (${data.industry})`,
       html,
+      to: "jarred@referlabs.com.au",
     });
 
     if (!notification.success) {

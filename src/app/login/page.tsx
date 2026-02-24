@@ -292,6 +292,7 @@ function LoginContent() {
   if (view === "forgot-password") {
     return (
       <main
+        id="main-content"
         className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
         aria-label="Refer Labs password reset"
       >
@@ -391,6 +392,7 @@ function LoginContent() {
   if (view === "onboarding") {
     return (
       <main
+        id="main-content"
         className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
         aria-label="Refer Labs onboarding form"
       >
@@ -489,6 +491,7 @@ function LoginContent() {
 
   return (
     <main
+      id="main-content"
       className="aurora flex min-h-screen items-center justify-center bg-gradient-to-b from-purple-50 via-white to-white px-4 py-12"
       aria-label="Refer Labs account access"
     >

@@ -445,7 +445,7 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
   const formSource = "partner_program";
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-slate-50">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
@@ -491,7 +491,6 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
         {/* How It Works */}
         <section className="mb-24">
           <div className="text-center space-y-4 mb-14">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">How it works</p>
             <h2 className="text-3xl sm:text-4xl font-black text-white">
               Simple, Transparent, Rewarding
             </h2>
@@ -586,7 +585,6 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
         {/* Ideal Referral Partners */}
         <section className="mb-24">
           <div className="text-center space-y-4 mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Who should apply</p>
             <h2 className="text-3xl sm:text-4xl font-black text-white">
               Ideal Referral Partners
             </h2>
@@ -645,7 +643,6 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(10,167,181,0.1),transparent_50%)]" />
             <div className="relative">
               <div className="text-center mb-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-3">Your referral is in good hands</p>
                 <h2 className="text-3xl sm:text-4xl font-black text-white">
                   What Happens After You Refer
                 </h2>
@@ -674,7 +671,6 @@ export default async function OurReferralProgramPage({ searchParams }: ReferralP
         <section id="apply" className="mb-24 scroll-mt-24">
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 sm:p-12">
             <div className="text-center mb-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-3">Apply now</p>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
                 Become a Referral Partner
               </h2>

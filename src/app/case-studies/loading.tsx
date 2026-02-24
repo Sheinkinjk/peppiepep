@@ -5,6 +5,7 @@ import { Skeleton } from "@/components/Skeleton";
 export default function CaseStudiesLoading() {
   return (
     <main
+      id="main-content"
       className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100"
       aria-busy="true"
       aria-labelledby="case-studies-loading-heading"

@@ -86,7 +86,7 @@ const profiles = [
 
 export default function WhoItsForPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-slate-50">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
@@ -95,7 +95,7 @@ export default function WhoItsForPage() {
       <main id="main-content" className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
 
         {/* Hero */}
-        <section className="text-center space-y-8 mb-20">
+        <section className="premium-section-dark text-center space-y-8 mb-20 px-6 py-12 sm:px-10 sm:py-14">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
             Built for Global B2B Companies{" "}
             <span className="text-cyan-400">Entering New Markets</span>
@@ -114,10 +114,10 @@ export default function WhoItsForPage() {
               Book a Market Entry Call
             </a>
             <Link
-              href="/services"
+              href="/application"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
-              Explore Services
+              Apply Now
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -125,7 +125,7 @@ export default function WhoItsForPage() {
 
         {/* Qualifiers */}
         <section className="mb-20">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 sm:p-10">
+          <div className="premium-section-dark rounded-2xl border border-white/10 bg-white/[0.03] p-8 sm:p-10">
             <h2 className="text-lg font-bold text-white mb-6 text-center">Ideal Client Profile</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
@@ -162,7 +162,7 @@ export default function WhoItsForPage() {
               return (
                 <div
                   key={profile.title}
-                  className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-7 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.04] overflow-hidden"
+                  className="premium-section-dark group relative rounded-2xl border border-white/5 bg-white/[0.02] p-7 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.04] overflow-hidden"
                 >
                   <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${profile.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`} />
                   <div className="relative">
@@ -217,6 +217,10 @@ export default function WhoItsForPage() {
               { label: "Insurance & Insurtech", href: "/services/insurance-brokers" },
               { label: "HR & Recruitment Technology", href: "/services/recruiters-staffing" },
               { label: "Professional Services Software", href: "/services/consultants-coaches" },
+              { label: "Niche Opportunities", href: "/who-its-for/niche-opportunities" },
+              { label: "Global Investments", href: "/who-its-for/global-investments" },
+              { label: "Financial Tools", href: "/who-its-for/financial-tools" },
+              { label: "Access to Capital", href: "/who-its-for/access-to-capital" },
             ].map((v) => (
               <Link
                 key={v.href}
@@ -232,7 +236,7 @@ export default function WhoItsForPage() {
 
         {/* Already Have a Team? */}
         <section className="mb-28">
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
+          <div className="premium-section-dark relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(10,167,181,0.12),transparent_50%)]" />
             <div className="relative grid md:grid-cols-[auto_1fr] gap-8 items-center">
               <div className="h-16 w-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mx-auto md:mx-0">
@@ -251,7 +255,7 @@ export default function WhoItsForPage() {
         {/* Final CTA */}
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
+          <div className="premium-section-dark relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
             <div className="max-w-2xl mx-auto space-y-6">
               <h2 className="text-3xl sm:text-4xl font-black text-white">
                 Sound Like You?
@@ -270,10 +274,10 @@ export default function WhoItsForPage() {
                   Book a Market Entry Call
                 </a>
                 <Link
-                  href="/services"
+                  href="/application"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
                 >
-                  Explore Services
+                  Apply Now
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

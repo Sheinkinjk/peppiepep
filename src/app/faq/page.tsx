@@ -141,7 +141,7 @@ export default function FAQPage() {
   );
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-white">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
@@ -216,10 +216,10 @@ export default function FAQPage() {
                 Book a Market Entry Call
               </a>
               <Link
-                href="/services"
+                href="/application"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                Explore Services
+                Apply Now
               </Link>
             </div>
           </div>

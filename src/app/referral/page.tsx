@@ -37,6 +37,7 @@ export default function ReferralProgramPage() {
   // Extract URL parameters
   const code =
     searchParams?.get("code") || process.env.NEXT_PUBLIC_ADMIN_REFERRAL_CODE || null;
+  const hasPersonalCode = Boolean(code);
   const project = searchParams?.get("project");
   const utmCampaign = searchParams?.get("utm_campaign");
   const utmMedium = searchParams?.get("utm_medium");
@@ -45,6 +46,7 @@ export default function ReferralProgramPage() {
   const referralLink = code
     ? `https://referlabs.com.au/r/${code}`
     : "https://referlabs.com.au/our-referral-program";
+  const primaryCtaLabel = hasPersonalCode ? "Get Your Referral Link" : "View Program Overview";
 
   // Build query params for attribution
   const buildQueryString = () => {
@@ -150,17 +152,23 @@ export default function ReferralProgramPage() {
     : "For Every Business You Refer";
   const heroDescription =
     programContext?.offerText ||
-    `Share ${programBusinessName} with businesses and earn passive income for life. No limits on referrals, no caps on earnings.`;
+    (hasPersonalCode
+      ? `Share ${programBusinessName} with businesses and earn passive income for life. No limits on referrals, no caps on earnings.`
+      : `Share ${programBusinessName} with businesses that should level up their referrals. We’ll issue your personal link after you apply-earnings grow as they do.`);
   const partnerRewardDescription = programContext?.clientReward
     ? `Earn ${programContext.clientReward} for every qualified referral. Track everything in your dashboard.`
     : "Get 25% of every payment from businesses you refer, month after month. Your passive income grows as they grow.";
   const newUserRewardDescription = programContext?.newUserReward
     ? `New referrals receive ${programContext.newUserReward} when they sign up.`
     : "Every business you refer gets white-glove onboarding to start their referral program. Makes it easy to share the value.";
-  const shareStepDescription = `Copy your personalized referral link and share it with businesses who could benefit from ${programBusinessName}.`;
-  const signupStepDescription = programContext?.newUserReward
-    ? `When they click your link and create an account, they receive ${programContext.newUserReward} and you get automatically attributed.`
-    : "When they click your link and create an account, they get white-glove onboarding and you get automatically attributed.";
+  const shareStepDescription = hasPersonalCode
+    ? `Copy your personal referral link and share it with businesses who could benefit from ${programBusinessName}.`
+    : `Share the program overview with businesses that fit ${programBusinessName}. Once approved, you'll receive your personal link for attribution.`;
+  const signupStepDescription = hasPersonalCode
+    ? programContext?.newUserReward
+      ? `When they click your link and create an account, they receive ${programContext.newUserReward} and you get automatically attributed.`
+      : "When they click your link and create an account, they get white-glove onboarding and you get automatically attributed."
+    : "When they book or sign up through this page, our team attributes the lead to you and issues your personal link for future referrals.";
   const earningsStepDescription = programContext?.clientReward
     ? `Earn ${programContext.clientReward} for every completed referral. Track everything in your dashboard.`
     : "Earn 25% recurring commission on all their payments. Track everything in your dashboard.";
@@ -173,25 +181,25 @@ export default function ReferralProgramPage() {
       icon: DollarSign,
       title: programContext?.clientReward ? "Partner reward" : "Earn 25% Recurring Revenue",
       description: partnerRewardDescription,
-      gradient: "from-emerald-500 to-teal-600",
+      gradient: "from-[#0AA7B5] to-[#0b7c86]",
     },
     {
       icon: Gift,
       title: programContext?.newUserReward ? "New client reward" : "White-Glove Onboarding",
       description: newUserRewardDescription,
-      gradient: "from-purple-500 to-pink-600",
+      gradient: "from-[#0AA7B5] to-[#0a8e9c]",
     },
     {
       icon: BarChart3,
       title: "Real-Time Analytics",
       description: "Track every referral, monitor conversions, and watch your earnings grow with our comprehensive dashboard.",
-      gradient: "from-blue-500 to-cyan-600",
+      gradient: "from-[#0b6f7a] to-[#0AA7B5]",
     },
     {
       icon: Zap,
       title: "Instant Attribution",
       description: "Automatic tracking from click to conversion. Never miss credit for a referral you sent our way.",
-      gradient: "from-amber-500 to-orange-600",
+      gradient: "from-[#0AA7B5] to-[#0b6069]",
     },
   ];
 
@@ -224,24 +232,24 @@ export default function ReferralProgramPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#f5fbfc] via-white to-[#e8f6f8]">
       {/* Hero Section - Premium Upgrade */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0abab5] via-[#1cc9cf] to-[#24d9e2] py-24 sm:py-36">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0AA7B5] via-[#0a99a6] to-[#0a7c86] py-24 sm:py-36 text-white">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
         {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-16 left-10 w-96 h-96 bg-white/12 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-16 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-5 py-2.5 text-sm font-bold text-white mb-8 shadow-lg border border-white/20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm px-5 py-2.5 text-sm font-bold text-white mb-8 shadow-lg border border-white/20">
               <Sparkles className="h-4 w-4 animate-pulse" />
               Exclusive Referral Program
               <Sparkles className="h-4 w-4 animate-pulse" />
             </div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight tracking-tight">
               {heroRewardHeadline}<br />
-              <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">{heroRewardSubheadline}</span>
+              <span className="text-[#05333a]">{heroRewardSubheadline}</span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
               {heroDescription}
@@ -277,11 +285,12 @@ export default function ReferralProgramPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-[#0abab5] hover:bg-white/90 hover:scale-105 text-lg px-10 py-7 rounded-2xl font-black shadow-2xl transition-all duration-300"
-                onClick={() => trackButtonClick("Get Your Referral Link", referralLink)}
+                data-lift="true"
+                className="bg-white text-[#0AA7B5] hover:bg-[#f5fbfc] text-lg px-10 py-7 rounded-2xl font-black shadow-xl transition-all duration-300"
+                onClick={() => trackButtonClick(primaryCtaLabel, referralLink)}
               >
                 <Link href={`${referralLink}${queryString}`}>
-                  Get Your Referral Link
+                  {primaryCtaLabel}
                   <ArrowRight className="ml-2 h-6 w-6" />
                 </Link>
               </Button>
@@ -289,7 +298,8 @@ export default function ReferralProgramPage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/40 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:scale-105 text-lg px-10 py-7 rounded-2xl font-black transition-all duration-300"
+                data-lift="true"
+                className="border-2 border-white/70 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 text-lg px-10 py-7 rounded-2xl font-black transition-all duration-300"
                 onClick={() => trackButtonClick("Access Dashboard", "/login")}
               >
                 <Link href={`/login${queryString}`}>

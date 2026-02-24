@@ -81,14 +81,18 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
     font-size: 16px;
     line-height: 1.6;
     background-image:
-      radial-gradient(circle at 8% 2%, rgba(0, 166, 180, 0.08), transparent 28%),
-      radial-gradient(circle at 92% 8%, rgba(0, 135, 150, 0.1), transparent 34%);
+      radial-gradient(circle at 8% 2%, rgba(0, 166, 180, 0.09), transparent 28%),
+      radial-gradient(circle at 92% 8%, rgba(0, 135, 150, 0.1), transparent 34%),
+      linear-gradient(180deg, rgba(245, 252, 253, 0.85), rgba(236, 248, 250, 0.78));
     background-attachment: fixed;
     overflow-x: hidden;
   }
@@ -105,6 +109,7 @@
   h5,
   h6 {
     @apply tracking-tight;
+    font-family: var(--font-display), var(--font-geist-sans), "Segoe UI", sans-serif;
     line-height: 1.15;
   }
 
@@ -142,6 +147,68 @@
   }
 }
 
+/* Global atmosphere layers */
+.site-atmosphere {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(0, 166, 180, 0.18), transparent 36%),
+    radial-gradient(circle at 84% 8%, rgba(8, 77, 93, 0.14), transparent 34%),
+    radial-gradient(circle at 50% 102%, rgba(0, 148, 168, 0.12), transparent 40%);
+}
+
+.site-atmosphere-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(54px);
+  opacity: 0.34;
+  animation: atmosphere-drift 20s ease-in-out infinite;
+}
+
+.site-atmosphere-orb--one {
+  height: 420px;
+  width: 420px;
+  left: -120px;
+  top: -90px;
+  background: radial-gradient(circle, rgba(0, 170, 185, 0.7), rgba(0, 170, 185, 0));
+}
+
+.site-atmosphere-orb--two {
+  height: 500px;
+  width: 500px;
+  right: -170px;
+  top: 12%;
+  background: radial-gradient(circle, rgba(3, 84, 103, 0.54), rgba(3, 84, 103, 0));
+  animation-delay: 4s;
+}
+
+.site-atmosphere-orb--three {
+  height: 460px;
+  width: 460px;
+  left: 34%;
+  bottom: -210px;
+  background: radial-gradient(circle, rgba(6, 140, 155, 0.45), rgba(6, 140, 155, 0));
+  animation-delay: 8s;
+}
+
+.site-atmosphere-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(3, 76, 88, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 76, 88, 0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 78%);
+  opacity: 0.38;
+}
+
+.site-atmosphere-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(rgba(2, 28, 36, 0.55) 0.7px, transparent 0.7px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+}
+
 /* Premium surface helpers */
 .elevated-card {
   background: linear-gradient(145deg, var(--surface-card), rgba(255, 255, 255, 0.82));
@@ -158,12 +225,54 @@
   box-shadow: var(--shadow-strong);
 }
 
-  .soft-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(12, 31, 48, 0.08), transparent);
-  }
+.premium-section-light {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(9, 48, 62, 0.1);
+  background:
+    radial-gradient(circle at 22% 12%, rgba(0, 174, 190, 0.12), transparent 44%),
+    radial-gradient(circle at 84% 88%, rgba(3, 86, 102, 0.1), transparent 36%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(250, 255, 255, 0.85));
+  box-shadow: 0 28px 75px rgba(7, 57, 70, 0.13);
+  backdrop-filter: blur(10px);
+}
+
+.premium-section-dark {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(120, 224, 237, 0.2);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(18, 195, 209, 0.14), transparent 44%),
+    radial-gradient(circle at 82% 90%, rgba(8, 95, 112, 0.14), transparent 42%),
+    linear-gradient(145deg, rgba(4, 24, 34, 0.82), rgba(2, 14, 22, 0.74));
+  box-shadow: 0 32px 90px rgba(0, 6, 12, 0.34);
+  backdrop-filter: blur(10px);
+}
+
+.premium-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(10, 98, 109, 0.28), transparent);
+}
+
+.soft-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(12, 31, 48, 0.08), transparent);
+}
 
 /* Site-wide interaction rhythm */
+@keyframes atmosphere-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(22px, -18px, 0) scale(1.03);
+  }
+  66% {
+    transform: translate3d(-20px, 14px, 0) scale(0.98);
+  }
+}
+
 @keyframes section-rise {
   from {
     opacity: 0;
@@ -195,15 +304,33 @@
 
   a,
   button {
+    transition-property: background-color, border-color, color, box-shadow, opacity;
+    transition-duration: 180ms;
+    transition-timing-function: ease;
+  }
+
+  [data-lift="true"],
+  .lift {
     transition-property: background-color, border-color, color, transform, box-shadow, opacity;
     transition-duration: 180ms;
     transition-timing-function: ease;
   }
 
-  a:hover,
-  button:hover {
+  [data-lift="true"]:hover,
+  .lift:hover {
     transform: translateY(-1px);
   }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.reveal-in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 :where(a, button, [role="button"]):focus-visible {
@@ -256,6 +383,16 @@ main > section:nth-child(8) { animation-delay: 0.56s; }
 @media (max-width: 768px) {
   .tiffany-hero {
     background: linear-gradient(180deg, #f8feff 0%, #f0fcfe 40%, #e8f9fb 70%, #dff6f9 100%);
+  }
+
+  .site-atmosphere-orb {
+    opacity: 0.24;
+    filter: blur(46px);
+  }
+
+  .site-atmosphere-grid {
+    opacity: 0.2;
+    background-size: 40px 40px;
   }
 }
 
@@ -535,6 +672,10 @@ main > section:nth-child(8) { animation-delay: 0.56s; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-atmosphere-orb {
+    animation: none;
+  }
+
   .animate-fade-up,
   .animate-float-slow {
     animation: none;

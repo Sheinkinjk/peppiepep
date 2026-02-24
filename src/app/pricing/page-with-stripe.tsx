@@ -84,7 +84,10 @@ export default function Pricing() {
         style={{ animationDelay: "1s" }}
       />
 
-      <main className="relative mx-auto flex max-w-7xl flex-col gap-12 sm:gap-16 px-4 sm:px-6 pb-16 sm:pb-24 pt-12 sm:pt-16 md:px-10 lg:px-16">
+      <main
+        id="main-content"
+        className="relative mx-auto flex max-w-7xl flex-col gap-12 sm:gap-16 px-4 sm:px-6 pb-16 sm:pb-24 pt-12 sm:pt-16 md:px-10 lg:px-16"
+      >
         <div className="mx-auto max-w-4xl space-y-6 sm:space-y-10 text-center">
           <h1 className="text-balance text-3xl sm:text-5xl font-black leading-tight tracking-tight lg:text-7xl">
             <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">

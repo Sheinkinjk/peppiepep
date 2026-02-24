@@ -5,20 +5,23 @@ export const metadata = generateSEOMetadata(seoConfig.terms);
 
 export default function Terms() {
   return (
-    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white">
+    <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-[#f5fbfc] via-white to-[#e8f6f8]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(236,72,153,0.1),transparent_35%)]" />
 
-      <main className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10">
+      <main
+        id="main-content"
+        className="relative mx-auto flex max-w-4xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10"
+      >
 
         <div className="max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-purple-700 shadow-sm ring-1 ring-purple-200">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#0AA7B5] shadow-sm ring-1 ring-[#B4EEF7]">
             Legal
           </div>
           <h1 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
             Terms of Service
           </h1>
           <p className="text-sm text-slate-500">
-            Last updated: 2 February 2026
+            Last updated: 12 February 2026
           </p>
         </div>
 
@@ -574,11 +577,11 @@ export default function Terms() {
               <p className="text-slate-600 mb-3">
                 For questions, concerns, or notices regarding these Terms, please contact us at:
               </p>
-              <div className="bg-purple-50 p-4 rounded-lg">
+              <div className="bg-[#E3FAFF] p-4 rounded-lg">
                 <p className="text-slate-700 font-semibold">Pepform Pty Ltd (trading as Refer Labs)</p>
                 <p className="text-slate-700">ABN: 32 660 008 159</p>
-                <p className="text-slate-700">Email: <a href="mailto:jarred@referlabs.com.au" className="text-purple-700 hover:underline">jarred@referlabs.com.au</a></p>
-                <p className="text-slate-700">Website: <a href="https://referlabs.com.au" className="text-purple-700 hover:underline">referlabs.com.au</a></p>
+                <p className="text-slate-700">Email: <a href="mailto:jarred@referlabs.com.au" className="text-[#0AA7B5] hover:underline">jarred@referlabs.com.au</a></p>
+                <p className="text-slate-700">Website: <a href="https://referlabs.com.au" className="text-[#0AA7B5] hover:underline">referlabs.com.au</a></p>
               </div>
             </div>
 

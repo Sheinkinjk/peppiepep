@@ -83,13 +83,16 @@ export default function ROICalculatorPage() {
   const netReturn12 = expectedRevenue12 - totalCost12;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-white">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.08),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
       </div>
 
-      <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-10">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-10"
+      >
         {/* Hero */}
         <header className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 text-sm font-semibold">
@@ -303,10 +306,10 @@ export default function ROICalculatorPage() {
               Book a Call
             </a>
             <Link
-              href="/pricing"
+              href="/application"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
-              View Pricing
+              Apply Now
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

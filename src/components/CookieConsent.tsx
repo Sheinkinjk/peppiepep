@@ -112,7 +112,7 @@ export function CookieConsent() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#0AA7B5] to-[#036572] flex items-center justify-center">
                       <span className="text-white text-xl">🍪</span>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ export function CookieConsent() {
                     </p>
                     <p className="text-xs text-slate-500">
                       By clicking "Accept All", you agree to the storing of cookies on your device. See our{" "}
-                      <a href="/privacy" className="text-purple-700 hover:underline font-medium">
+                      <a href="/privacy" className="text-[#036572] hover:underline font-medium">
                         Privacy Policy
                       </a>{" "}
                       for more information.
@@ -136,7 +136,7 @@ export function CookieConsent() {
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <button
                     onClick={acceptAll}
-                    className="flex-1 sm:flex-none rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all hover:scale-105"
+                    className="flex-1 sm:flex-none rounded-xl bg-gradient-to-r from-[#0AA7B5] to-[#036572] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0AA7B5]/30 hover:shadow-[#0AA7B5]/50 transition-all hover:scale-105"
                   >
                     Accept All
                   </button>
@@ -148,7 +148,7 @@ export function CookieConsent() {
                   </button>
                   <button
                     onClick={() => setShowPreferences(true)}
-                    className="flex-1 sm:flex-none rounded-xl border-2 border-purple-200 px-6 py-3 text-sm font-semibold text-purple-700 hover:bg-purple-50 transition-colors"
+                    className="flex-1 sm:flex-none rounded-xl border-2 border-cyan-200 px-6 py-3 text-sm font-semibold text-[#036572] hover:bg-cyan-50 transition-colors"
                   >
                     Customize
                   </button>
@@ -184,12 +184,12 @@ export function CookieConsent() {
                       </p>
                     </div>
                     <div className="flex-shrink-0">
-                      <div className="h-6 w-11 bg-purple-600 rounded-full cursor-not-allowed opacity-50"></div>
+                      <div className="h-6 w-11 bg-[#0AA7B5] rounded-full cursor-not-allowed opacity-50"></div>
                     </div>
                   </div>
 
                   {/* Analytics Cookies */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-200 hover:border-purple-200 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-200 hover:border-cyan-200 transition-colors">
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-1">Analytics Cookies</h4>
                       <p className="text-sm text-slate-600">
@@ -203,7 +203,7 @@ export function CookieConsent() {
                       <button
                         onClick={() => setPreferences({ ...preferences, analytics: !preferences.analytics })}
                         className={`h-6 w-11 rounded-full transition-colors ${
-                          preferences.analytics ? "bg-purple-600" : "bg-slate-300"
+                          preferences.analytics ? "bg-[#0AA7B5]" : "bg-slate-300"
                         }`}
                         aria-label="Toggle analytics cookies"
                       >
@@ -217,7 +217,7 @@ export function CookieConsent() {
                   </div>
 
                   {/* Marketing Cookies */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-200 hover:border-purple-200 transition-colors">
+                  <div className="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-200 hover:border-cyan-200 transition-colors">
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-900 mb-1">Marketing Cookies</h4>
                       <p className="text-sm text-slate-600">
@@ -231,7 +231,7 @@ export function CookieConsent() {
                       <button
                         onClick={() => setPreferences({ ...preferences, marketing: !preferences.marketing })}
                         className={`h-6 w-11 rounded-full transition-colors ${
-                          preferences.marketing ? "bg-purple-600" : "bg-slate-300"
+                          preferences.marketing ? "bg-[#0AA7B5]" : "bg-slate-300"
                         }`}
                         aria-label="Toggle marketing cookies"
                       >
@@ -248,7 +248,7 @@ export function CookieConsent() {
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <button
                     onClick={saveCustomPreferences}
-                    className="flex-1 sm:flex-none rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all hover:scale-105"
+                    className="flex-1 sm:flex-none rounded-xl bg-gradient-to-r from-[#0AA7B5] to-[#036572] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0AA7B5]/30 hover:shadow-[#0AA7B5]/50 transition-all hover:scale-105"
                   >
                     Save Preferences
                   </button>
@@ -262,11 +262,11 @@ export function CookieConsent() {
 
                 <p className="text-xs text-slate-500 text-center">
                   Read our{" "}
-                  <a href="/privacy" className="text-purple-700 hover:underline font-medium">
+                  <a href="/privacy" className="text-[#036572] hover:underline font-medium">
                     Privacy Policy
                   </a>{" "}
                   and{" "}
-                  <a href="/terms" className="text-purple-700 hover:underline font-medium">
+                  <a href="/terms" className="text-[#036572] hover:underline font-medium">
                     Terms of Service
                   </a>
                 </p>

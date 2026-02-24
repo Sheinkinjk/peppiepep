@@ -1,4 +1,5 @@
-import { Mail, Calendar, ArrowRight, MapPin, Clock, Phone } from "lucide-react";
+import { Mail, Calendar, ArrowRight, MapPin, Clock, Phone, FileCheck2 } from "lucide-react";
+import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.contact);
@@ -18,23 +19,41 @@ export default function Contact() {
         className="relative mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-8 lg:px-12"
       >
         {/* Header */}
-        <header className="text-center space-y-6 mb-16">
+        <header className="premium-section-light text-center space-y-6 mb-16 rounded-[2rem] px-6 py-12 sm:px-10 sm:py-14">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-[#0b2a34] tracking-tight max-w-3xl mx-auto">
             Book a 15-min <span className="text-[#0AA7B5]">Market Expansion Call</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
             Tell us about your company and your expansion goals. We will recommend an approach and scope the right engagement.
           </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#088c98]"
+            >
+              <Calendar className="h-4 w-4" />
+              Book a Market Entry Call
+            </a>
+            <Link
+              href="/application"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-[#0b2a34] hover:border-[#0AA7B5]/40"
+            >
+              Apply Now
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </header>
 
         {/* Contact Options */}
-        <section className="grid md:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto" aria-label="Contact options">
+        <section className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16 max-w-6xl mx-auto" aria-label="Contact options">
           {/* Schedule a Call - Primary */}
           <a
             href={calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden rounded-3xl border border-[#0AA7B5]/25 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/45"
+            className="premium-section-light group relative overflow-hidden rounded-3xl border border-[#0AA7B5]/25 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/45"
             data-lift="true"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#E3FAFF] rounded-full blur-3xl" />
@@ -63,10 +82,31 @@ export default function Contact() {
             </div>
           </a>
 
+          {/* Apply */}
+          <Link
+            href="/application"
+            className="premium-section-light group relative overflow-hidden rounded-3xl border border-[#0AA7B5]/25 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/45"
+            data-lift="true"
+          >
+            <div className="relative">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E3FAFF] border border-[#B4EEF7] mb-6">
+                <FileCheck2 className="h-7 w-7 text-[#0AA7B5]" />
+              </div>
+              <h2 className="text-2xl font-bold text-[#0b2a34] mb-3">Apply</h2>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Submit your company profile and expansion goals. We review every application and respond in 1-2 business days.
+              </p>
+              <div className="inline-flex items-center gap-2 text-[#0AA7B5] font-semibold group-hover:text-[#088c98] transition-colors">
+                Open application
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </Link>
+
           {/* Email Us */}
           <a
             href="mailto:jarred@referlabs.com.au"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/35"
+            className="premium-section-light group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/35"
             data-lift="true"
           >
             <div className="relative">
@@ -90,7 +130,7 @@ export default function Contact() {
           {/* Call Us */}
           <a
             href="tel:+61451149569"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/35"
+            className="premium-section-light group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-[#0AA7B5]/35"
             data-lift="true"
           >
             <div className="relative">
@@ -128,7 +168,7 @@ export default function Contact() {
               "Your expansion goal",
               "Your timeline",
             ].map((item) => (
-              <div key={item} className="text-center p-5 rounded-2xl border border-slate-200 bg-white shadow-xs">
+              <div key={item} className="premium-section-light text-center p-5 rounded-2xl border border-slate-200 bg-white shadow-xs">
                 <p className="text-sm text-[#0b2a34] font-medium">{item}</p>
               </div>
             ))}
@@ -147,7 +187,7 @@ export default function Contact() {
               { title: "Market Entry Plan", copy: "We recommend the right services, target list approach, and pilot scope" },
               { title: "Kick Off", copy: "If it is a fit, we start your 90-day pilot and begin building pipeline" },
             ].map((item, idx) => (
-              <div key={item.title} className="text-center p-6 rounded-2xl border border-slate-200 bg-white shadow-xs">
+              <div key={item.title} className="premium-section-light text-center p-6 rounded-2xl border border-slate-200 bg-white shadow-xs">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#E3FAFF] border border-[#B4EEF7] mb-4">
                   <span className="text-xl font-bold text-[#0AA7B5]">{idx + 1}</span>
                 </div>

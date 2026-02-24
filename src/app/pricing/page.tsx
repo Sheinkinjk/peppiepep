@@ -86,7 +86,7 @@ export default function PricingPage() {
         className="relative mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-8 pb-24 pt-20"
       >
         {/* Hero */}
-        <header className="text-center space-y-5">
+        <header className="premium-section-light text-center space-y-5 rounded-[2rem] px-6 py-12 sm:px-10 sm:py-14">
           <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-[#0b2a34] tracking-tight">
             Retainer + Success Fee
             <br />
@@ -104,7 +104,7 @@ export default function PricingPage() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative overflow-hidden rounded-3xl border bg-white shadow-sm transition-all duration-300 ${
+                className={`premium-section-light relative overflow-hidden rounded-3xl border bg-white shadow-sm transition-all duration-300 ${
                   plan.recommended
                     ? "border-[#0AA7B5]/50 shadow-lg shadow-[#0AA7B5]/10"
                     : "border-slate-200"
@@ -127,7 +127,6 @@ export default function PricingPage() {
                   </div>
 
                   <div className="p-4 rounded-2xl bg-[#f3fbfc] border border-[#d7f2f5]">
-                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Pricing</p>
                     <p className="text-sm text-[#0b2a34] font-semibold">{plan.pricing}</p>
                   </div>
 
@@ -141,7 +140,6 @@ export default function PricingPage() {
                   </ul>
 
                   <div className="p-3 rounded-xl bg-[#E3FAFF] border border-[#B4EEF7]">
-                    <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Goal</p>
                     <p className="text-sm text-[#0b2a34] font-semibold">{plan.goal}</p>
                   </div>
 
@@ -173,7 +171,7 @@ export default function PricingPage() {
             {faqs.map((faq) => (
               <details
                 key={faq.q}
-                className="group rounded-2xl border border-slate-200 bg-white/90 px-6 py-5 shadow-sm transition-all hover:border-[#0AA7B5]/40"
+                className="premium-section-light group rounded-2xl border border-slate-200 bg-white/90 px-6 py-5 shadow-sm transition-all hover:border-[#0AA7B5]/40"
               >
                 <summary className="flex items-center justify-between gap-4 cursor-pointer text-left list-none">
                   <h3 className="text-base sm:text-lg font-semibold text-[#0b2a34] pr-4">
@@ -190,7 +188,7 @@ export default function PricingPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white px-6 sm:px-10 py-12 sm:py-16 shadow-sm">
+        <section className="premium-section-light relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white px-6 sm:px-10 py-12 sm:py-16 shadow-sm">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,167,181,0.08),transparent_45%)]" />
           <div className="relative z-10 space-y-6 max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2a34] leading-tight">
@@ -210,10 +208,10 @@ export default function PricingPage() {
                 Book a Market Entry Call
               </a>
               <Link
-                href="/services"
+                href="/application"
                 className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-[#0b2a34] px-8 py-4 text-sm font-semibold hover:border-[#0AA7B5]/40 transition-all gap-2"
               >
-                Explore Services
+                Apply Now
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

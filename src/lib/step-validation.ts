@@ -160,7 +160,7 @@ function validateStep2(checks: {
   if (checks.hasProgramSettings && !checks.hasCustomers) {
     items.push({
       kind: "recommended",
-      label: "Start with 10–20 loyal clients first (then scale with CSV)",
+      label: "Start with 10-20 loyal clients first (then scale with CSV)",
       where: "In Refer Labs (Step 2)",
       cta: { label: "Open Step 2", stepId: "clients-ambassadors" },
     });
@@ -279,7 +279,7 @@ function validateStep5(checks: {
   } else if (!checks.hasReferrals) {
     items.push({
       kind: "recommended",
-      label: "No referrals tracked yet — give it time or add a manual referral",
+      label: "No referrals tracked yet - give it time or add a manual referral",
       where: "In Refer Labs (Step 5)",
       cta: { label: "Open Step 5", stepId: "performance" },
     });

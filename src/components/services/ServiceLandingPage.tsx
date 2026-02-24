@@ -30,7 +30,7 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
 
 export default function ServiceLandingPage({ content }: ServiceLandingPageProps) {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-slate-50">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.08),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
@@ -59,10 +59,10 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
               Book a Market Entry Call
             </a>
             <Link
-              href="/services"
+              href="/application"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
-              Explore Services
+              Apply Now
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -190,10 +190,10 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
                   Book a Market Entry Call
                 </a>
                 <Link
-                  href="/services"
+                  href="/application"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
                 >
-                  Explore Services
+                  Apply Now
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

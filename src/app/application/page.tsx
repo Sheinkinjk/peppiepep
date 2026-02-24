@@ -11,6 +11,11 @@ import {
   CheckCircle2,
   ArrowRight,
   Loader2,
+  ClipboardList,
+  FileCheck2,
+  Clock3,
+  ShieldCheck,
+  Calendar,
 } from "lucide-react";
 
 const industryOptions = [
@@ -28,20 +33,20 @@ const industryOptions = [
 
 const revenueOptions = [
   "Pre-revenue / Under $500K",
-  "$500K – $1M",
-  "$1M – $5M",
-  "$5M – $10M",
-  "$10M – $25M",
-  "$25M – $50M",
+  "$500K - $1M",
+  "$1M - $5M",
+  "$5M - $10M",
+  "$10M - $25M",
+  "$25M - $50M",
   "$50M+",
 ];
 
 const teamSizeOptions = [
-  "1 – 5",
-  "6 – 20",
-  "21 – 50",
-  "51 – 100",
-  "101 – 250",
+  "1 - 5",
+  "6 - 20",
+  "21 - 50",
+  "51 - 100",
+  "101 - 250",
   "250+",
 ];
 
@@ -65,10 +70,10 @@ const targetRegionOptions = [
 ];
 
 const timelineOptions = [
-  "Immediately – within 30 days",
-  "1 – 3 months",
-  "3 – 6 months",
-  "6 – 12 months",
+  "Immediately - within 30 days",
+  "1 - 3 months",
+  "3 - 6 months",
+  "6 - 12 months",
   "Just exploring",
 ];
 
@@ -389,7 +394,7 @@ export default function ApplicationPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,167,181,0.08),transparent_40%)]" />
         </div>
         <main className="relative mx-auto max-w-2xl px-5 sm:px-8 pb-24 pt-24 text-center">
-          <div className="rounded-3xl border border-slate-200 bg-white p-10 sm:p-14 shadow-sm">
+          <div className="premium-section-light rounded-3xl border border-slate-200 bg-white p-10 sm:p-14 shadow-sm">
             <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 border border-emerald-200 mb-6">
               <CheckCircle2 className="h-8 w-8 text-emerald-600" />
             </div>
@@ -427,25 +432,107 @@ export default function ApplicationPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(12,58,69,0.06),transparent_45%)]" />
       </div>
 
-      <main id="main-content" className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 pb-24 pt-20">
+      <main id="main-content" className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-20">
         {/* Hero */}
-        <header className="text-center space-y-5 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E3FAFF] border border-[#B4EEF7] text-xs font-semibold text-[#0b2a34]">
-            <Send className="h-3 w-3 text-[#0AA7B5]" />
-            Market Entry Application
+        <header className="premium-section-light mb-10 rounded-[2rem] px-6 py-10 sm:px-10 sm:py-12">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.08fr_0.92fr]">
+            <div className="text-center lg:text-left space-y-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E3FAFF] border border-[#B4EEF7] text-xs font-semibold text-[#0b2a34]">
+                <Send className="h-3 w-3 text-[#0AA7B5]" />
+                Expansion Program Application
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-[#0b2a34] tracking-tight">
+                Apply for Your
+                <span className="block text-[#0AA7B5]">APAC Expansion Build</span>
+              </h1>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+                This application helps us scope your go-to-market path, partner model, and launch sequence. Every submission is reviewed by our team before we recommend a pilot.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <a
+                  href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#088c98]"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Book a Market Entry Call
+                </a>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-[#0b2a34] hover:border-[#0AA7B5]/40"
+                >
+                  Explore Services
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-[#caedf1] bg-white/85 p-5 sm:p-6 shadow-[0_16px_44px_rgba(3,58,69,0.12)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0AA7B5] mb-4">Application Flow</p>
+              <div className="space-y-3">
+                {[
+                  { icon: ClipboardList, title: "Submit Your Business Context", copy: "Product, goals, timeline, and target market." },
+                  { icon: FileCheck2, title: "Fit & Strategy Review", copy: "We evaluate channel-fit and go-live readiness." },
+                  { icon: Clock3, title: "Response in 1-2 Business Days", copy: "You get clear next steps or a call invite." },
+                  { icon: ShieldCheck, title: "Pilot Scope Recommendation", copy: "Defined execution plan, success metrics, and cadence." },
+                ].map((step) => (
+                  <div key={step.title} className="relative rounded-2xl border border-slate-200/80 bg-white p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="h-9 w-9 rounded-xl bg-[#E3FAFF] border border-[#B4EEF7] flex items-center justify-center">
+                        <step.icon className="h-4 w-4 text-[#0AA7B5]" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-bold text-[#0b2a34]">{step.title}</p>
+                        <p className="text-xs text-slate-500 mt-1">{step.copy}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] text-[#0b2a34] tracking-tight">
-            Apply to Work <span className="text-[#0AA7B5]">With Us</span>
-          </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Tell us about your company and expansion goals. We review every application personally and respond within 1-2 business days.
-          </p>
         </header>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-12">
+        <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
+          <aside className="space-y-6 lg:sticky lg:top-28 self-start">
+            <div className="premium-section-light rounded-3xl border border-[#d8eef1] bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0AA7B5] mb-3">What We Prioritize</p>
+              <div className="space-y-3">
+                {[
+                  "Clear expansion objective and timeline",
+                  "Defined ideal customer profile",
+                  "Service alignment across sales, partners, and operations",
+                  "Ownership from a decision-maker in your team",
+                ].map((item) => (
+                  <p key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                    <CheckCircle2 className="h-4 w-4 text-[#0AA7B5] mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="premium-section-light rounded-3xl border border-[#d8eef1] bg-white p-5 shadow-sm">
+              <p className="text-sm font-bold text-[#0b2a34] mb-2">Need help before submitting?</p>
+              <p className="text-xs text-slate-500 leading-relaxed mb-4">
+                If you are unsure how to answer, book a quick call and we will map your entry options first.
+              </p>
+              <a
+                href="https://calendly.com/jarred-referlabs/30min?month=2026-01"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-4 py-2.5 text-xs font-bold text-white hover:bg-[#088c98]"
+              >
+                <Calendar className="h-3.5 w-3.5" />
+                Book a Quick Call
+              </a>
+            </div>
+          </aside>
+
+          <form onSubmit={handleSubmit} className="space-y-12">
           {/* Section 1: Company Information */}
-          <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+          <section className="premium-section-light rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
             <SectionHeader
               icon={Building2}
               title="Company Information"
@@ -487,7 +574,7 @@ export default function ApplicationPage() {
           </section>
 
           {/* Section 2: Business Details */}
-          <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+          <section className="premium-section-light rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
             <SectionHeader
               icon={Globe}
               title="Business Details"
@@ -525,7 +612,7 @@ export default function ApplicationPage() {
                   required
                   maxLength={1000}
                   rows={3}
-                  placeholder="Describe your ideal customer profile — industry, company size, role of the buyer, typical deal size."
+                  placeholder="Describe your ideal customer profile - industry, company size, role of the buyer, typical deal size."
                 />
               </div>
               <div>
@@ -542,7 +629,7 @@ export default function ApplicationPage() {
           </section>
 
           {/* Section 3: Expansion Goals */}
-          <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+          <section className="premium-section-light rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
             <SectionHeader
               icon={Target}
               title="Expansion Goals"
@@ -601,7 +688,7 @@ export default function ApplicationPage() {
           </section>
 
           {/* Section 4: Contact */}
-          <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+          <section className="premium-section-light rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
             <SectionHeader
               icon={Users}
               title="Primary Contact"
@@ -682,7 +769,8 @@ export default function ApplicationPage() {
               . We will never share your information with third parties.
             </p>
           </div>
-        </form>
+          </form>
+        </div>
       </main>
     </div>
   );

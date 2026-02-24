@@ -99,7 +99,7 @@ function buildOwnerEmailShell({ title, subtitle, bodyHtml }: { title: string; su
   return buildPremiumEmail({
     title,
     subtitle,
-    preheader: `${title} — Refer Labs`,
+    preheader: `${title} - Refer Labs`,
     bodyHtml,
     brandName: "Refer Labs",
     logoUrl: `${siteUrl}/logo.svg`,
@@ -143,7 +143,7 @@ export async function maybeSendFirstReferralReceivedOwnerEmail({
 
   const sendResult = await sendTransactionalEmail({
     to: ctx.ownerEmail,
-    subject: `First referral received — ${ctx.businessName}`,
+    subject: `First referral received - ${ctx.businessName}`,
     html,
   });
 
@@ -195,7 +195,7 @@ export async function maybeSendFirstConversionCapturedOwnerEmail({
 
   const sendResult = await sendTransactionalEmail({
     to: ctx.ownerEmail,
-    subject: `First conversion captured — ${ctx.businessName}`,
+    subject: `First conversion captured - ${ctx.businessName}`,
     html,
   });
 
@@ -233,7 +233,7 @@ export async function maybeSendGoLiveOwnerEmail({
 
   const html = buildOwnerEmailShell({
     title: "You’re live",
-    subtitle: "Go-live is confirmed — tracking + attribution are active.",
+    subtitle: "Go-live is confirmed - tracking + attribution are active.",
     bodyHtml: `
       <p style="margin:0 0 12px;">You marked Step 1C as complete and we’ve captured a successful conversion.</p>
       <ul style="margin:0;padding-left:18px;color:#334155;">
@@ -252,7 +252,7 @@ export async function maybeSendGoLiveOwnerEmail({
 
   const sendResult = await sendTransactionalEmail({
     to: ctx.ownerEmail,
-    subject: `You’re live — ${ctx.businessName}`,
+    subject: `You’re live - ${ctx.businessName}`,
     html,
   });
 
@@ -337,13 +337,13 @@ export async function sendCampaignDeliveredSummaryOwnerEmail({
   const topHtml = top.length
     ? `<p style="margin:14px 0 6px;font-weight:800;">Top click drivers</p>
        <ol style="margin:0;padding-left:18px;color:#334155;">
-         ${top.map((t) => `<li>${t.name} — <strong>${t.clicks}</strong> clicks</li>`).join("")}
+         ${top.map((t) => `<li>${t.name} - <strong>${t.clicks}</strong> clicks</li>`).join("")}
        </ol>`
     : "";
 
   const html = buildOwnerEmailShell({
     title: "Campaign delivery summary",
-    subtitle: `${campaignName} — delivery results so far`,
+    subtitle: `${campaignName} - delivery results so far`,
     bodyHtml: `
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px;">
         <div style="padding:10px 12px;border:1px solid #e2e8f0;border-radius:14px;background:#f8fafc;"><strong>Sent</strong><div style="font-size:18px;font-weight:900;">${sentCount}</div></div>
@@ -364,7 +364,7 @@ export async function sendCampaignDeliveredSummaryOwnerEmail({
 
   await sendTransactionalEmail({
     to: ctx.ownerEmail,
-    subject: `Campaign summary — ${campaignName}`,
+    subject: `Campaign summary - ${campaignName}`,
     html,
   });
 }
@@ -402,7 +402,7 @@ export async function sendIntegrationHealthAlert({
 
   await sendTransactionalEmail({
     to: includeAdmin ? [ctx.ownerEmail, ...adminAlertEmails()] : ctx.ownerEmail,
-    subject: `${title} — ${ctx.businessName}`,
+    subject: `${title} - ${ctx.businessName}`,
     html,
   });
 }

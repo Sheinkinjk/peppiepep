@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, Calendar, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { ReferLabsLogo } from "./ReferLabsLogo";
 import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
@@ -13,9 +13,9 @@ const navLinks = [
   { href: "/how-it-works", label: "How It Works" },
   { href: "/services", label: "Services" },
   { href: "/who-its-for", label: "Who It's For" },
-  { href: "/case-studies", label: "Playbooks" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export function StickyHeader() {
@@ -69,14 +69,16 @@ export function StickyHeader() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/85 shadow-lg shadow-cyan-900/5 border-b border-white/70 py-3'
-            : 'bg-white/90 py-4'
+            ? 'bg-[linear-gradient(180deg,#f8fdff_0%,#eef8fb_100%)] shadow-[0_20px_55px_rgba(4,51,61,0.12)] border-b border-[#d9edf2] py-3'
+            : 'bg-[linear-gradient(180deg,#fbfeff_0%,#f3fbfd_100%)] border-b border-[#e1f0f4] py-4'
         }`}
       >
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0AA7B5]/70 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16 text-[#0b2a34]">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group" aria-label="Refer Labs home">
+            <Link href="/" className="group relative flex items-center gap-3 rounded-2xl px-1.5 py-1" aria-label="Refer Labs home">
+              <span className="pointer-events-none absolute -inset-2 rounded-3xl bg-gradient-to-r from-[#0AA7B5]/10 via-[#22C0CD]/5 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
               <ReferLabsLogo className="h-10 w-auto text-[#00505B] transition-transform duration-200 group-hover:scale-105" />
               <span className="sr-only">Refer Labs home</span>
             </Link>
@@ -93,8 +95,8 @@ export function StickyHeader() {
                     key={link.href}
                     className={`rounded-2xl px-3.5 py-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       isActive
-                        ? "bg-[#E3FAFF] text-[#00505B] border border-[#B4EEF7]"
-                        : "text-[#0b2a34] hover:bg-cyan-50"
+                        ? "bg-[#E3FAFF]/90 text-[#00505B] border border-[#B4EEF7] shadow-[0_8px_20px_rgba(8,147,160,0.16)]"
+                        : "text-[#0b2a34] hover:bg-cyan-50/80 hover:text-[#044a57]"
                     }`}
                     href={link.href}
                     aria-current={isActive ? "page" : undefined}
@@ -107,11 +109,17 @@ export function StickyHeader() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 transition-all duration-200 hover:bg-[#00838F] hover:shadow-xl cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 ring-1 ring-[#57E6FF]/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#00838F] hover:shadow-xl cursor-pointer"
               >
-                <Calendar className="h-4 w-4" />
-                Book a Market Entry Call
+                Partner With Us
               </a>
+              <Link
+                href="/application"
+                className="inline-flex items-center gap-2 rounded-2xl border border-[#0AA7B5]/35 bg-[#E3FAFF] px-4 py-2.5 text-sm font-bold text-[#00505B] transition-all duration-200 hover:border-[#0AA7B5]/60 hover:bg-[#d5f6ff] cursor-pointer"
+              >
+                Apply Now
+                <ArrowRight className="h-4 w-4" />
+              </Link>
               {isAuthenticated && (
                 <>
                   <Link
@@ -134,8 +142,10 @@ export function StickyHeader() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl hover:bg-[#E3FAFF] transition-colors"
+              className="lg:hidden rounded-xl border border-white/70 bg-white/70 p-2 shadow-sm backdrop-blur hover:bg-[#E3FAFF] transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="site-mobile-nav"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6 text-[#00505B]" />
@@ -148,7 +158,10 @@ export function StickyHeader() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-white/60 mt-3 bg-white/90 backdrop-blur-xl text-[#0b2a34] shadow-lg shadow-cyan-900/5">
+          <div
+            id="site-mobile-nav"
+            className="lg:hidden mt-3 border-t border-[#dceef2] bg-[linear-gradient(180deg,#fbfeff_0%,#f0fafc_100%)] text-[#0b2a34] shadow-[0_28px_55px_rgba(4,53,67,0.12)]"
+          >
             <nav className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-2">
               {navLinks.map((link) => {
                 const isActive =
@@ -178,9 +191,16 @@ export function StickyHeader() {
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/25 transition-all duration-200 hover:bg-[#00838F]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Calendar className="h-4 w-4" />
-                Book a Market Entry Call
+                Partner With Us
               </a>
+              <Link
+                href="/application"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#0AA7B5]/35 bg-[#E3FAFF] px-4 py-3 text-sm font-bold text-[#00505B] transition-all duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Apply Now
+                <ArrowRight className="h-4 w-4" />
+              </Link>
               {isAuthenticated && (
                 <>
                   <Link

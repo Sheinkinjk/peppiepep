@@ -19,7 +19,10 @@ export default function Security() {
     <div className="aurora relative min-h-screen overflow-hidden bg-gradient-to-b from-[#eefbfd] via-white to-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(8,131,143,0.09),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(34,192,205,0.11),transparent_35%)]" />
 
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16">
+      <main
+        id="main-content"
+        className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-8 md:px-10 lg:px-16"
+      >
 
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-cyan-700 shadow-sm ring-1 ring-cyan-200">

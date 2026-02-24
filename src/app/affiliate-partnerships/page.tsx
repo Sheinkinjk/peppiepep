@@ -24,14 +24,17 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
 
 export default function AffiliatePartnershipsPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-slate-50">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-slate-50">
       {/* Subtle background effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.08),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
       </div>
 
-      <main className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16"
+      >
         {/* Hero - Clean and impactful */}
         <section className="text-center space-y-8 mb-24">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-white max-w-4xl mx-auto">

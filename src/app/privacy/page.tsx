@@ -21,7 +21,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p className="text-sm text-slate-500">
-            Last updated: 2 February 2026 · Version 2.2
+            Last updated: 12 February 2026 · Version 2.3
           </p>
         </div>
 

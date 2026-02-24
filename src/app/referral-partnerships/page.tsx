@@ -65,7 +65,6 @@ export default function ReferralPartnershipsPage() {
       <section className="relative bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">What we do</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
               End-to-End Partner Channel Management
             </h2>
@@ -156,7 +155,6 @@ export default function ReferralPartnershipsPage() {
         </div>
         <div className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#57E6FF] mb-3">Partner types</p>
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
               Four Partner Channels We Build
             </h2>
@@ -226,7 +224,6 @@ export default function ReferralPartnershipsPage() {
       <section className="relative bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Deliverables</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
               What You Get
             </h2>
@@ -262,7 +259,6 @@ export default function ReferralPartnershipsPage() {
       <section className="relative bg-[#f6fdfe] py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0AA7B5] mb-3">Why it works</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0b2a34] mb-4">
               Why Partner-Led Growth Outperforms
             </h2>

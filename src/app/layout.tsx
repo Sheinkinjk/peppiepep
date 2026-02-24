@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { StickyHeader } from "@/components/StickyHeader";
 import Footer from "@/components/layout/Footer";
@@ -25,6 +25,13 @@ const geistMono = Geist_Mono({
   preload: true,
 });
 
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
+
 export const metadata: Metadata = generateSEOMetadata(seoConfig.home);
 
 export default function RootLayout({
@@ -39,7 +46,7 @@ export default function RootLayout({
         <WebsiteSchema />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <a
           href="#main-content"
@@ -47,17 +54,20 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden site-atmosphere" aria-hidden="true">
+          <div className="site-atmosphere-orb site-atmosphere-orb--one" />
+          <div className="site-atmosphere-orb site-atmosphere-orb--two" />
+          <div className="site-atmosphere-orb site-atmosphere-orb--three" />
+          <div className="site-atmosphere-grid" />
+          <div className="site-atmosphere-grain" />
+        </div>
         <GoogleAnalytics />
         <GoogleTagManager />
-        <div className="flex min-h-screen flex-col">
+        <div className="relative z-10 flex min-h-screen flex-col">
           <StickyHeader />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <div className="bg-white/88">
-            <div className="mx-auto max-w-6xl px-6 pb-10 md:px-10 lg:px-16">
-              <Footer />
-            </div>
+          <div className="flex-1">{children}</div>
+          <div className="relative z-10">
+            <Footer />
           </div>
         </div>
         <SupportChatbot />

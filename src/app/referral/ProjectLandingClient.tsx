@@ -111,6 +111,7 @@ export function ProjectLandingClient({
 
   return (
     <main
+      id="main-content"
       className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100"
       aria-label={`${businessName} referral invitation`}
     >
