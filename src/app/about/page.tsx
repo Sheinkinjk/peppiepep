@@ -10,15 +10,19 @@ export default function About() {
   return (
     <div className="relative min-h-screen bg-[#060f15] text-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(10,167,181,0.07),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(10,167,181,0.10),transparent_50%)]" />
       </div>
 
       <main id="main-content" className="relative mx-auto max-w-5xl px-6 sm:px-8 lg:px-12 pb-24 pt-16 sm:pt-20">
 
         {/* Hero */}
         <div className="mb-20 sm:mb-24 max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-4">
+            About Refer Labs
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] text-white mb-7 tracking-tight">
-            We Are a Growth & Distribution Engine.
+            We Are a Growth &{" "}
+            <span className="text-[#22C0CD]">Distribution Engine.</span>
           </h1>
           <p className="text-white/55 text-base sm:text-lg leading-relaxed">
             Refer Labs builds and activates distribution systems for operators, brands, and businesses that understand growth is not a channel strategy. It is a structural advantage.
@@ -26,9 +30,10 @@ export default function About() {
         </div>
 
         {/* What We Do */}
-        <section className="border-t border-white/[0.07] py-14 sm:py-16 mb-4">
+        <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-3">What We Do</p>
               <h2 className="text-2xl sm:text-3xl font-black text-white mb-5 leading-tight">
                 What Refer Labs Does
               </h2>
@@ -57,9 +62,10 @@ export default function About() {
         </section>
 
         {/* Philosophy */}
-        <section className="border-t border-white/[0.07] py-14 sm:py-16 mb-4">
+        <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
           <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
             <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-2">Philosophy</p>
               <h2 className="text-xl font-black text-white">Our Approach</h2>
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
@@ -77,9 +83,10 @@ export default function About() {
         </section>
 
         {/* Values */}
-        <section className="border-t border-white/[0.07] py-14 sm:py-16 mb-4">
+        <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
           <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
             <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-2">Values</p>
               <h2 className="text-xl font-black text-white">What We Stand For</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-6 max-w-2xl">
@@ -98,7 +105,7 @@ export default function About() {
         </section>
 
         {/* Contact */}
-        <section className="border-t border-white/[0.07] pt-14 sm:pt-16">
+        <section className="border-t border-[#0AA7B5]/10 pt-14 sm:pt-16">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div>
               <h2 className="text-2xl font-black text-white mb-2">

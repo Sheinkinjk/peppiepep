@@ -72,8 +72,12 @@ export default function HowItWorks() {
 
         {/* Header */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-4">
+            Our Process
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] text-white mb-6 tracking-tight">
-            Simple. Structured. Commercial.
+            Simple. Structured.{" "}
+            <span className="text-[#22C0CD]">Commercial.</span>
           </h1>
           <p className="text-white/55 text-base sm:text-lg leading-relaxed">
             Every Refer Labs engagement follows the same four-stage process. We identify the leverage, structure the system, activate the channels, and optimise until the distribution compounds.
@@ -85,10 +89,10 @@ export default function HowItWorks() {
           {phases.map((phase) => (
             <div
               key={phase.num}
-              className="border-t border-white/[0.07] py-12 sm:py-14 grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16"
+              className="border-t border-[#0AA7B5]/10 py-12 sm:py-14 grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16"
             >
               <div className="lg:pt-0.5">
-                <span className="block text-5xl font-black text-white/[0.07] leading-none mb-3 select-none">
+                <span className="block text-5xl font-black text-[#0AA7B5]/25 leading-none mb-3 select-none">
                   {phase.num}
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
@@ -114,9 +118,10 @@ export default function HowItWorks() {
         </div>
 
         {/* How We Operate */}
-        <section className="border-t border-white/[0.07] py-14 sm:py-16 mb-4">
+        <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
           <div className="grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16">
             <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-2">Principles</p>
               <h2 className="text-xl font-black text-white">How We Operate</h2>
             </div>
             <div className="space-y-3">
@@ -131,7 +136,7 @@ export default function HowItWorks() {
         </section>
 
         {/* CTA */}
-        <section className="border-t border-white/[0.07] pt-14 sm:pt-16 text-center">
+        <section className="border-t border-[#0AA7B5]/10 pt-14 sm:pt-16 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-5">
             Ready to build your distribution engine?
           </h2>
