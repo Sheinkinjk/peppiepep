@@ -7,6 +7,9 @@ export const butternutConfig: AffiliatePageConfig = {
   badgeText: "AI Website Builder",
   affiliateUrl: BUTTERNUT_URL,
 
+  quickAnswer:
+    "Butternut AI generates a full, multi-page website from a single text prompt in about 20 seconds, and is free to try with no account. It is best for small businesses wanting a complete site draft instantly. Access it via the link on this page.",
+
   banner: {
     heading: "Butternut AI — Free Trial & AI Website Generation",
     body: "Click below to go directly to Butternut AI via our referral link. Generate a site in 20 seconds, no account required.",

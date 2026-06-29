@@ -36,6 +36,13 @@ export interface AffiliatePageConfig {
   /** Full affiliate destination URL */
   affiliateUrl: string;
 
+  /**
+   * Answer-first summary (2-3 sentences) that directly answers the page's core
+   * query. Rendered prominently near the top for AI answer engines (GEO),
+   * featured snippets, and voice. Lead with the answer, not context.
+   */
+  quickAnswer?: string;
+
   hero: {
     /** Full H1 text before the highlighted span */
     h1Prefix: string;

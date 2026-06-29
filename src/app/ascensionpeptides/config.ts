@@ -7,6 +7,9 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
   badgeText: "Research Peptides",
   affiliateUrl: ASCENSION_URL,
 
+  quickAnswer:
+    "Ascension Peptides is a research peptide supplier focused on high-purity compounds. The current discount is applied automatically through the referral link on this page — no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
+
   banner: {
     heading: "Ascension Peptides — Research Peptides Sale",
     body: "Click below to go directly to Ascension Peptides via our referral link. Offer applied at the URL level.",

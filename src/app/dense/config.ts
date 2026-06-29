@@ -8,6 +8,9 @@ export const denseConfig: AffiliatePageConfig = {
   badgeText: "Australia",
   affiliateUrl: DENSE_URL,
 
+  quickAnswer:
+    "Dense Hair Experts is an Australian brand of topical, non-prescription hair-density products — shampoos, conditioners, serums, and scalp treatments. There isn't always a public discount code; the current offer is applied automatically through the referral link on this page. For prescription hair-loss treatment such as finasteride or minoxidil, a telehealth provider is the appropriate starting point.",
+
   banner: {
     heading: "Dense Hair Experts — Current Offer",
     body: "Click below to go directly to the Dense Hair Experts store via our referral link.",

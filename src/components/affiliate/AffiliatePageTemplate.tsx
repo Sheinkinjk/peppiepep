@@ -134,6 +134,20 @@ export default function AffiliatePageTemplate({ config }: { config: AffiliatePag
           </div>
         </section>
 
+        {/* ── Quick Answer (answer-first, GEO) ── */}
+        {config.quickAnswer && (
+          <section className="pb-4">
+            <div className="rounded-2xl border border-[#0AA7B5]/25 bg-[#0AA7B5]/[0.06] px-6 py-6 sm:px-8 sm:py-7">
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#22C0CD] mb-2.5">
+                Quick Answer
+              </p>
+              <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+                {config.quickAnswer}
+              </p>
+            </div>
+          </section>
+        )}
+
         {/* ── Content Sections ── */}
         {config.sections.map((section, i) => (
           <section key={i} className="border-t border-[#0AA7B5]/10 py-12 sm:py-14">

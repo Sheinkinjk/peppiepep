@@ -7,6 +7,9 @@ export const incomeLabConfig: AffiliatePageConfig = {
   badgeText: "AI Income",
   affiliateUrl: INCOME_LAB_URL,
 
+  quickAnswer:
+    "IncomeLab provides AI side-hustle ideas and structured frameworks for making money with AI tools in 2026 — covering tools, business models, and automated income approaches. It is best for people starting an online income stream with AI. Access it via the link on this page.",
+
   banner: {
     heading: "Income Lab — AI Side Hustle & Income Frameworks",
     body: "Click below to go directly to the Income Lab onboarding page via our referral link.",

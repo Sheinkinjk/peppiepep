@@ -11,8 +11,11 @@ export function OrganizationSchema() {
     "url": "https://referlabs.com.au",
     "logo": "https://referlabs.com.au/logo.svg",
     "image": "https://referlabs.com.au/og-image.png",
-    "description": "Refer Labs publishes the Referral Growth Blueprint — a 250+ affiliate and referral program database, personalised strategy brief written for your niche, SEO page concepts, distribution playbooks, and niche selection brief. One-time $799 AUD, delivered within 48 hours.",
+    "description": "Refer Labs is an Australian growth and distribution engine and independent comparison publisher. It publishes researched, independent comparison guides and brand reviews across Australian health and telehealth, research peptides, website builders, and newsletter platforms, and sells the Referral Growth Blueprint — a 250+ affiliate and referral program database with a personalised strategy brief. One-time $799 AUD, delivered within 48 hours.",
+    "slogan": "Growth & Distribution Engine",
     "email": "jarred@referlabs.com.au",
+    "foundingLocation": { "@type": "Country", "name": "Australia" },
+    "founder": { "@type": "Person", "name": "Jarred Krowitz" },
     "areaServed": [
       { "@type": "Country", "name": "Australia" },
       { "@type": "Country", "name": "United States" },
@@ -23,7 +26,15 @@ export function OrganizationSchema() {
       "Referral Marketing",
       "Affiliate Program Database",
       "SEO for Affiliate Marketing",
-      "Distribution Strategy"
+      "Generative Engine Optimization",
+      "Distribution Strategy",
+      "Product Comparison and Reviews",
+      "Weight Loss Telehealth Australia",
+      "Hair Loss Treatment Australia",
+      "GLP-1 and Semaglutide Telehealth",
+      "Research Peptide Suppliers",
+      "Website Builders",
+      "Newsletter Platforms"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -31,6 +42,7 @@ export function OrganizationSchema() {
       "email": "jarred@referlabs.com.au",
       "availableLanguage": ["English"]
     },
+    "publishingPrinciples": "https://referlabs.com.au/guides",
     "sameAs": [
       "https://www.linkedin.com/company/referlabs"
     ]

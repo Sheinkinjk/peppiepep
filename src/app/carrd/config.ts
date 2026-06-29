@@ -7,6 +7,9 @@ export const carrdConfig: AffiliatePageConfig = {
   badgeText: "Website Builder",
   affiliateUrl: CARRD_URL,
 
+  quickAnswer:
+    "Carrd is a one-page website builder with a free plan forever and Pro plans from $9/year. It is best for portfolios, link-in-bio pages, simple landing pages, and personal sites. You can start free with no credit card via the link on this page.",
+
   banner: {
     heading: "Carrd — Free Plan & Pro Pricing",
     body: "Click below to go directly to Carrd via our referral link. Free plan available, no credit card required.",

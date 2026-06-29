@@ -7,6 +7,9 @@ export const durableAiConfig: AffiliatePageConfig = {
   badgeText: "AI Website Builder",
   affiliateUrl: DURABLE_URL,
 
+  quickAnswer:
+    "Durable AI generates a complete business website in about 30 seconds and includes a built-in CRM, invoicing, and Google Business integration. It is best for service businesses and solo operators who want a working site fast. You can try it free with no account via the link on this page.",
+
   banner: {
     heading: "Durable AI — Build a Business Website in 30 Seconds",
     body: "Click below to go directly to Durable AI via our referral link. Generate a site free, no account required.",

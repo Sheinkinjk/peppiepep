@@ -7,6 +7,9 @@ export const swipePagesConfig: AffiliatePageConfig = {
   badgeText: "Landing Page Builder",
   affiliateUrl: SWIPE_PAGES_URL,
 
+  quickAnswer:
+    "Swipe Pages is a landing page builder that creates AMP pages loading in under one second, with A/B testing and dynamic text replacement. It is best for paid-ads campaigns where load speed drives conversions. It offers a 14-day free trial with no credit card via the link on this page.",
+
   banner: {
     heading: "Swipe Pages — 14-Day Free Trial, No Credit Card",
     body: "Click below to go directly to Swipe Pages via our referral link and claim the current free trial.",

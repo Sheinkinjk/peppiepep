@@ -8,6 +8,9 @@ export const moshHairConfig: AffiliatePageConfig = {
   badgeText: "Australia",
   affiliateUrl: MOSH_HAIR_URL,
 
+  quickAnswer:
+    "Mosh does not publish a public, checkout-style discount code. The current offer applies automatically through a referral link — there is no code to enter. Mosh is an Australian men's hair-loss telehealth platform that can prescribe finasteride and minoxidil after an online consultation and registered-practitioner review. Cost is subscription-based and confirmed during the consultation. Prescription treatments are subject to individual clinical assessment.",
+
   banner: {
     heading: "Mosh Hair Loss — Referral Link & Current Offer",
     body: "Click below to go directly to Mosh via our referral link. Partner offer applied automatically.",

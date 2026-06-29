@@ -7,6 +7,9 @@ export const beehiivConfig: AffiliatePageConfig = {
   badgeText: "Newsletter Platform",
   affiliateUrl: BEEHIIV_URL,
 
+  quickAnswer:
+    "beehiiv is a newsletter platform that is free up to 2,500 subscribers and includes a built-in ad network, referral program, website, and paid subscriptions. It is best for creators and operators focused on growing and monetising an email audience. You can start free, or trial paid features, via the link on this page.",
+
   banner: {
     heading: "beehiiv — Claim the 14-Day Free Trial",
     body: "Click below to go directly to beehiiv via our referral link. The 14-day trial is applied automatically on sign-up.",

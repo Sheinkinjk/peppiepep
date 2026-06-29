@@ -8,6 +8,9 @@ export const moshyConfig: AffiliatePageConfig = {
   badgeText: "Australia 2026",
   affiliateUrl: MOSHY_URL,
 
+  quickAnswer:
+    "Moshy does not publish a public, checkout-style discount code. The current offer is accessed through a referral link that applies automatically — there is no code to enter. Moshy is an Australian men's weight-management telehealth platform that assesses GLP-1 and semaglutide eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. GLP-1 medications are prescription-only in Australia and access depends on individual clinical assessment.",
+
   banner: {
     heading: "Moshy - Current Referral Offer (Australia)",
     body: "Click below to go directly to the Moshy eligibility page via our referral link. No code required.",
