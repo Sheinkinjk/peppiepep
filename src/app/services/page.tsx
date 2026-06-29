@@ -24,7 +24,7 @@ const services = [
     title: "Elite Affiliate Program Distribution",
     copy: "We partner with B2B and B2C affiliate programs and systematically distribute them across high-intent digital communities. This is not limited to business audiences — we drive exposure for consumer products, subscription services, financial tools, and more. Community placement is targeted, structured, and built to convert.",
     bullets: [
-      "Community-based exposure across Reddit, forums, and groups",
+      "Community-based exposure across online communities, niche forums, and groups",
       "Channel testing and performance optimisation",
       "Structured content positioning",
       "Automation systems for scale",
@@ -81,9 +81,6 @@ export default function ServicesPage() {
 
         {/* Header */}
         <div className="mb-16 sm:mb-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-4">
-            Our Services
-          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] text-white mb-6 tracking-tight">
             Five Growth Engines.<br />
             <span className="text-[#22C0CD]">One Commercial Partner.</span>
@@ -148,9 +145,6 @@ export default function ServicesPage() {
 
         {/* Final CTA */}
         <div className="border-t border-[#0AA7B5]/10 pt-16 sm:pt-20 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-4">
-            The Principle
-          </p>
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
             Distribution Is{" "}
             <span className="text-[#22C0CD]">Leverage.</span>

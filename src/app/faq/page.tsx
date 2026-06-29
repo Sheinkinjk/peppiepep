@@ -8,88 +8,72 @@ const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 type FAQ = { q: string; a: string };
 
-const positioningFAQs: FAQ[] = [
+const aboutFAQs: FAQ[] = [
   {
-    q: "Is this just outsourced sales?",
-    a: "No. Sales is only one part of the model. We act as your on-the-ground commercial arm, covering sales, partnerships, compliance, operations, and eventually team recruitment.",
+    q: "What exactly does Refer Labs do?",
+    a: "We design, build, and activate distribution systems for B2B and B2C businesses. Our five core services are: launching and optimising referral programs, elite affiliate program distribution, influencer and network activation, APAC market expansion, and product creation and end-to-end distribution.",
   },
   {
-    q: "Do we need to hire anyone locally?",
-    a: "No. The goal is to give you a functioning in-region presence without building a local team. We handle sales, partnerships, compliance, and operations on your behalf - and when you are ready, we help recruit your first in-region hires.",
+    q: "Who do you work with?",
+    a: "We work with SMBs and eCommerce brands launching referral programs, B2B and B2C affiliate programs seeking distribution scale, global businesses entering APAC markets, influencers and creators seeking structured brand partnerships, and operators looking to collaborate on distribution-led products.",
   },
   {
-    q: "What happens in the first 90 days?",
-    a: "We establish your sales pipeline, activate partners, handle compliance setup, and begin coordinating deals locally. You receive weekly reporting on pipeline, partners, and conversion metrics throughout.",
+    q: "What makes Refer Labs different from a marketing agency?",
+    a: "We build distribution systems, not campaigns. Every engagement has clear commercial terms, performance tracking, and aligned incentives. We do not sell retainers for activity — we structure growth engines designed to compound over time.",
   },
   {
-    q: "What types of companies is this best for?",
-    a: "Global B2B SaaS, platforms, fintech, healthtech, and tech-enabled services looking to generate revenue in APAC. Typically $1M-$50M in annual revenue with strong product-market fit in at least one market.",
-  },
-];
-
-const qualificationFAQs: FAQ[] = [
-  {
-    q: "Which regions do you cover?",
-    a: "We currently operate across APAC, starting with Australia. Our model is designed to scale region by region - each engagement starts with one market and can expand as you see traction.",
-  },
-  {
-    q: "Do you only work with companies expanding internationally?",
-    a: "We work with global B2B companies ($1M-$50M revenue) entering the APAC region. We currently operate across APAC, starting with Australia. Our model is designed to scale region by region.",
-  },
-  {
-    q: "What industries do you focus on?",
-    a: "B2B SaaS, fintech, healthtech, creator economy tools, e-commerce tech, and professional services software. We are open to other industries where partner distribution and local GTM make sense.",
-  },
-  {
-    q: "What does the ideal client look like?",
-    a: "$1M-$50M in annual revenue, strong product-market fit in at least one market, high LTV product with partnership potential, and no existing in-region presence. A founder or growth lead who can join key calls is essential.",
-  },
-  {
-    q: "How fast can we see traction?",
-    a: "During a 90-day pilot, we aim to deliver 10-20 client conversations, 3-8 strategic partnerships, and a fully compliant market setup. Revenue signals typically emerge within the first 60-90 days depending on your sales cycle length.",
+    q: "Do you work with B2C businesses?",
+    a: "Yes. Several of our services — particularly elite affiliate distribution, referral program launch, and influencer activation — are built for consumer-facing brands, eCommerce businesses, subscription services, and DTC companies.",
   },
 ];
 
-const serviceFAQs: FAQ[] = [
+const servicesFAQs: FAQ[] = [
   {
-    q: "What are your five core services?",
-    a: "Sales Representation (outbound prospecting, pipeline creation, closing support), Partnership & Distribution Development (sourcing and activating partners, resellers, and distribution channels), Compliance & Market Setup (legal, tax, contracts, and local structure), Regional Operations Management (ongoing deal coordination, partner management, and reporting), and Team Formation & Recruitment (sourcing, recruiting, and onboarding in-region hires as the market grows).",
+    q: "Can we engage for just one service?",
+    a: "Yes. We scope each engagement based on your specific goals. Some clients engage us for a single growth engine — for example, referral program launch only. Others engage across multiple services. We scope and quote based on what is actually needed.",
   },
   {
-    q: "Do you close deals or just book meetings?",
-    a: "We do both. We book meetings, make introductions, negotiate partnership terms, structure distribution deals, and provide closing support on key opportunities. You join the calls that matter and lead final negotiations.",
+    q: "How does the process work?",
+    a: "Every engagement follows four stages: identify growth leverage, structure the distribution engine, activate channels, then optimise and scale. We identify where the real opportunity is before we start building anything.",
   },
   {
-    q: "What is the client involvement required?",
-    a: "We need four things from you: a clear ICP, your offer and pricing, someone to join key calls, and the ability to move fast on partnership and distribution terms. Beyond that, we handle the day-to-day execution.",
+    q: "What involvement is required from us?",
+    a: "We need a clear brief on your product and audience, someone available to join key calls and sign off on commercial terms, and the ability to move on opportunities when they arise. We handle the day-to-day execution.",
   },
   {
-    q: "How do you track partners and attribution?",
-    a: "We use tracking and reporting tools to attribute every partner introduction, customer conversation, distribution deal, and revenue outcome. You receive weekly reports covering pipeline, partners, deal progress, and next actions.",
+    q: "Do you work across both B2B and B2C affiliate programs?",
+    a: "Yes. We partner with both B2B and B2C affiliate programs and distribute them across high-intent digital communities including Reddit, niche forums, and engaged online groups. The channel strategy is tailored to your audience.",
   },
   {
-    q: "What is your pricing model?",
-    a: "Retainer + success fee. Australia Launch (90-day pilot) includes sales, partnerships, and compliance setup with a fixed monthly retainer plus success fee. Australia Growth (ongoing) adds operations management with a monthly retainer plus lower success fee. We earn when you earn.",
+    q: "How do you find and activate influencers and partners?",
+    a: "We identify aligned operators, creators, consultants, and influencers based on your specific audience. We structure partnerships with clear commercial terms — not just gifting or one-off posts. Every activation is tracked and optimised.",
   },
   {
-    q: "What if we already have someone in-region?",
-    a: "We complement your existing team. Your salesperson focuses on direct sales while we build the partnership, distribution, compliance, and operations layer. We scope the engagement to avoid overlap and maximise coverage.",
+    q: "What does APAC expansion involve?",
+    a: "We act as your on-the-ground commercial partner in Australia and the APAC region. This covers sales representation, partnership and distribution development, compliance and market setup, and ongoing operations management. You get a functioning in-region presence without building a local team.",
+  },
+];
+
+const pricingFAQs: FAQ[] = [
+  {
+    q: "How do you charge?",
+    a: "We work on a retainer plus success fee model. The retainer covers the execution work. The success fee is tied to agreed commercial outcomes — closed revenue, signed partnerships, distribution deals, or qualified pipeline milestones. We earn when you earn.",
+  },
+  {
+    q: "What triggers a success fee?",
+    a: "We agree on this upfront during scoping. Common triggers include closed revenue, signed partnership agreements, distribution deals, or qualified pipeline milestones. Everything is defined before the engagement starts.",
   },
   {
     q: "Do you take equity or exclusivity?",
-    a: "No. We work on a retainer + success fee basis. No equity, no exclusivity clauses. You are free to run other GTM motions alongside our engagement.",
+    a: "No. We work on a retainer plus success fee basis only. No equity, no exclusivity clauses. You are free to run other GTM motions alongside our engagement.",
   },
   {
-    q: "How does team recruitment work?",
-    a: "As your market matures and you see traction, we help you transition from outsourced to owned. We scope roles, source candidates, support interviewing and onboarding, and manage the handover of relationships, playbooks, and processes to your new in-region team.",
-  },
-  {
-    q: "What does a 90-day pilot include?",
-    a: "Week 1: market and messaging alignment plus compliance scoping. Weeks 2-3: customer, partner, and distribution target list build. Weeks 4-12: outreach, introductions, meetings, deal structuring, compliance setup, and closing support. Throughout: weekly reporting on pipeline, partners, and conversion metrics. At the end: a playbook with next steps and repeatable channel analysis.",
+    q: "What if we already have a team or partner in-region?",
+    a: "We complement existing teams and partners. We scope the engagement to avoid overlap and maximise coverage — typically covering the partnership, distribution, and operations layer that in-house salespeople do not have capacity for.",
   },
 ];
 
-const allFAQs = [...positioningFAQs, ...qualificationFAQs, ...serviceFAQs];
+const allFAQs = [...aboutFAQs, ...servicesFAQs, ...pricingFAQs];
 
 export default function FAQPage() {
   const [expandedQuestions, setExpandedQuestions] = useState<number[]>([]);
@@ -157,7 +141,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Common questions about our commercial arm services, engagement models, and pilot structure.
+            Common questions about our services, engagement models, and how we work.
           </p>
 
           <div className="flex justify-center gap-4 pt-2">
@@ -178,23 +162,23 @@ export default function FAQPage() {
         </header>
 
         {renderFAQSection(
-          "About the Model",
-          positioningFAQs,
+          "About Refer Labs",
+          aboutFAQs,
           0,
           "border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent"
         )}
 
         {renderFAQSection(
-          "Is This For Me?",
-          qualificationFAQs,
-          positioningFAQs.length,
+          "Services & Engagement",
+          servicesFAQs,
+          aboutFAQs.length,
           "border-teal-500/20 bg-gradient-to-br from-teal-500/5 to-transparent"
         )}
 
         {renderFAQSection(
-          "Service & Engagement",
-          serviceFAQs,
-          positioningFAQs.length + qualificationFAQs.length,
+          "Pricing & Model",
+          pricingFAQs,
+          aboutFAQs.length + servicesFAQs.length,
           "border-white/5 bg-white/[0.02]"
         )}
 
@@ -213,7 +197,7 @@ export default function FAQPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0AA7B5] text-sm font-semibold text-white transition-colors hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
               >
                 <Calendar className="h-4 w-4" />
-                Book a Market Entry Call
+                Partner With Us
               </a>
               <Link
                 href="/application"

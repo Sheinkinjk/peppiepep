@@ -10,7 +10,7 @@ const content = {
   heroTitle: "Enter Australia's Professional Services Market",
   heroSubtitle:
     "We help overseas consulting platforms, legal tech, project management, and professional services software companies generate clients, firm partnerships, and distribution deals in Australia - without hiring locally.",
-  primaryCta: { label: "Book a Market Entry Call", href: calendlyUrl },
+  primaryCta: { label: "Partner With Us", href: calendlyUrl },
   whyAustralia:
     "Australia has a large and growing professional services sector across legal, management consulting, engineering, and advisory. Firms are actively investing in technology to improve operations, client delivery, and business development. The market rewards trusted local relationships and industry-specific positioning, making it difficult to penetrate from overseas without on-the-ground execution.",
   opportunities: [
@@ -37,7 +37,7 @@ const content = {
   ],
   ctaTitle: "Ready to Enter Australia's Professional Services Market?",
   ctaDescription:
-    "Book a 15-minute call. We will discuss your product, the Australian professional services landscape, and scope a 90-day pilot.",
+    "Book a 15-minute call. We will discuss your product, the Australian professional services landscape, and scope the engagement.",
 };
 
 export default function ConsultantsCoachesServicePage() {

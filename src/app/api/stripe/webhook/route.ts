@@ -3,10 +3,13 @@ import { headers } from 'next/headers';
 import Stripe from 'stripe';
 import { stripe, requireStripe } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
+import { createBlueprintClient } from '@/lib/supabase-blueprint';
 import { createApiLogger } from '@/lib/api-logger';
+import { sendAdminNotification, buildBlueprintBuyerConfirmationEmail } from '@/lib/email-notifications';
 import type { Json } from '@/types/supabase';
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
+// Defensive trim — protects against trailing whitespace from how the env var was set (e.g. via `echo "..." | vercel env add`)
+const webhookSecret = (process.env.STRIPE_WEBHOOK_SECRET || '').trim();
 
 // Type-safe interfaces for webhook data
 interface StripeWebhookEvent {
@@ -57,25 +60,21 @@ export async function POST(request: NextRequest) {
 
   const supabase = await createServerComponentClient();
 
-  // Log the webhook event with proper typing
-  try {
-    const eventData = event.data.object;
-    const objectId = 'id' in eventData && typeof eventData.id === 'string' ? eventData.id : 'unknown';
-
-    const webhookEvent: StripeWebhookEvent = {
-      stripe_event_id: event.id,
-      event_type: event.type,
-      object_type: eventData.object,
-      object_id: objectId,
-      payload: JSON.parse(JSON.stringify(eventData)) as Json,
-      processed: false,
-    };
-
-    await supabase.from('stripe_webhook_events').insert(webhookEvent);
-  } catch (logError) {
-    logger.error('Failed to log webhook event to database', { error: logError });
-    // Continue processing even if logging fails
-  }
+  // Log the webhook event — fire-and-forget so DB errors never cause a 500 to Stripe
+  const eventData = event.data.object;
+  const objectId = 'id' in eventData && typeof eventData.id === 'string' ? eventData.id : 'unknown';
+  const webhookEvent: StripeWebhookEvent = {
+    stripe_event_id: event.id,
+    event_type: event.type,
+    object_type: eventData.object,
+    object_id: objectId,
+    payload: JSON.parse(JSON.stringify(eventData)) as Json,
+    processed: false,
+  };
+  void supabase.from('stripe_webhook_events').insert(webhookEvent).then(
+    () => {},
+    (logError: unknown) => { logger.error('Failed to log webhook event to database', { error: logError }); }
+  );
 
   // Process the event
   try {
@@ -104,30 +103,27 @@ export async function POST(request: NextRequest) {
         logger.info('Unhandled event type received', { eventType: event.type });
     }
 
-    // Mark event as processed
-    await supabase
+    // Mark event as processed — fire-and-forget so DB errors never cause a 500 to Stripe
+    void supabase
       .from('stripe_webhook_events')
       .update({ processed: true, processed_at: new Date().toISOString() })
-      .eq('stripe_event_id', event.id);
+      .eq('stripe_event_id', event.id)
+      .then(() => {}, () => {});
 
     logger.info('Webhook processed successfully', { eventType: event.type, eventId: event.id });
     return NextResponse.json({ received: true });
   } catch (error) {
     logger.error('Webhook handler error', { error, eventType: event.type, eventId: event.id });
 
-    // Update error in webhook log
-    await supabase
+    // Log error — fire-and-forget, never block the 200 response to Stripe
+    void supabase
       .from('stripe_webhook_events')
-      .update({
-        processing_error: (error as Error).message,
-        retry_count: 1,
-      })
-      .eq('stripe_event_id', event.id);
+      .update({ processing_error: (error as Error).message, retry_count: 1 })
+      .eq('stripe_event_id', event.id)
+      .then(() => {}, () => {});
 
-    return NextResponse.json(
-      { error: 'Webhook handler failed' },
-      { status: 500 }
-    );
+    // Still return 200 for unhandled event types — only return 500 for signature failures (handled above)
+    return NextResponse.json({ received: true });
   }
 }
 
@@ -137,8 +133,63 @@ export async function POST(request: NextRequest) {
 async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session, logger: ReturnType<typeof createApiLogger>) {
   logger.info('Processing checkout session completed', { sessionId: session.id, customerId: session.customer });
 
-  // Payment is already recorded in payment_intent.succeeded
-  // This event is mainly for subscription setups or additional metadata
+  const isBlueprint =
+    session.metadata?.product === 'referral_growth_blueprint' ||
+    session.metadata?.source === 'referral-blueprint';
+
+  if (!isBlueprint) return;
+
+  const buyerEmail = session.customer_email || (session.customer_details?.email ?? '');
+  const buyerName  = session.metadata?.buyer_name || session.customer_details?.name || 'there';
+
+  if (!buyerEmail) {
+    logger.warn('Blueprint purchase missing buyer email', { sessionId: session.id });
+    return;
+  }
+
+  // Generate access token and save purchase record to the dedicated blueprint Supabase project
+  const accessToken = crypto.randomUUID();
+  const SITE_URL    = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
+  const portalUrl   = `${SITE_URL}/blueprint-access?token=${accessToken}`;
+
+  const blueprintDb = createBlueprintClient();
+  const { error: dbError } = await blueprintDb.from('blueprint_purchases').insert({
+    email:             buyerEmail,
+    name:              buyerName,
+    access_token:      accessToken,
+    stripe_session_id: session.id,
+    industry:          session.metadata?.industry || '',
+    primary_goal:      session.metadata?.primary_goal || '',
+    experience_level:  session.metadata?.experience_level || '',
+    purchased_at:      new Date(session.created * 1000).toISOString(),
+    status:            'preparing',
+  });
+
+  if (dbError) {
+    logger.error('Failed to save blueprint purchase record', { error: dbError, buyerEmail });
+    // Continue — still send the email, just without a portal link
+  } else {
+    logger.info('Blueprint purchase record created', { buyerEmail, accessToken });
+  }
+
+  // Send buyer confirmation email (with portal link if DB write succeeded)
+  sendAdminNotification({
+    to: buyerEmail,
+    subject: 'Your Referral Growth Blueprint — confirmed',
+    html: buildBlueprintBuyerConfirmationEmail({
+      name:            buyerName,
+      email:           buyerEmail,
+      industry:        session.metadata?.industry || '',
+      primaryGoal:     session.metadata?.primary_goal || '',
+      experienceLevel: session.metadata?.experience_level || '',
+      purchasedAt:     new Date(session.created * 1000).toISOString(),
+      portalUrl:       dbError ? undefined : portalUrl,
+    }),
+  }).catch((err) => {
+    logger.error('Failed to send blueprint buyer confirmation email', { error: err, buyerEmail });
+  });
+
+  logger.info('Blueprint purchase handled', { buyerEmail, portalUrl });
 }
 
 /**

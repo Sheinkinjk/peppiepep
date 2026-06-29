@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { StickyHeader } from "@/components/StickyHeader";
@@ -9,7 +9,7 @@ import { SupabaseSessionListener } from "@/components/SupabaseSessionListener";
 import { CookieConsent } from "@/components/CookieConsent";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
-import { GoogleAnalytics, GoogleTagManager } from "@/components/Analytics";
+import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@/components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,13 +34,19 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = generateSEOMetadata(seoConfig.home);
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#060f15",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <head>
         <OrganizationSchema />
         <WebsiteSchema />
@@ -63,6 +69,8 @@ export default function RootLayout({
         </div>
         <GoogleAnalytics />
         <GoogleTagManager />
+        <MetaPixel />
+        <LinkedInInsight />
         <div className="relative z-10 flex min-h-screen flex-col">
           <StickyHeader />
           <div className="flex-1">{children}</div>

@@ -10,7 +10,7 @@ const content = {
   heroTitle: "Enter Australia's Financial Services Market",
   heroSubtitle:
     "We help overseas fintech, lending, payments, and financial software companies generate clients, broker partnerships, and distribution deals in Australia - without hiring locally.",
-  primaryCta: { label: "Book a Market Entry Call", href: calendlyUrl },
+  primaryCta: { label: "Partner With Us", href: calendlyUrl },
   whyAustralia:
     "Australia's financial services market is one of the largest in the Asia-Pacific region. Strong regulatory frameworks, high digital adoption, and a sophisticated advisor and broker network create significant opportunities for overseas financial technology companies. However, breaking in requires local relationships, compliance knowledge, and distribution partnerships that are difficult to build remotely.",
   opportunities: [
@@ -37,7 +37,7 @@ const content = {
   ],
   ctaTitle: "Ready to Enter Australia's Financial Services Market?",
   ctaDescription:
-    "Book a 15-minute call. We will discuss your product, your goals in the Australian financial services market, and scope a 90-day pilot.",
+    "Book a 15-minute call. We will discuss your product, your goals in the Australian financial services market, and scope the engagement.",
 };
 
 export default function FinancialAdvisorsServicePage() {

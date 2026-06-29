@@ -342,7 +342,10 @@ export default async function LinkedInInfluencerBusinessPage({ searchParams }: P
       {/* Ambient background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(14,165,233,0.16),transparent_50%),radial-gradient(circle_at_85%_15%,rgba(124,58,237,0.14),transparent_50%)]" />
 
-      <main className="relative mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-10 lg:px-16"
+      >
 
         {/* Breadcrumb */}
         <div className="mb-8">

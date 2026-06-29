@@ -10,7 +10,7 @@ const content = {
   heroTitle: "Enter Australia's Insurance Market",
   heroSubtitle:
     "We help overseas insurtech, underwriting platforms, and insurance software companies generate clients, broker partnerships, and distribution deals in Australia - without hiring locally.",
-  primaryCta: { label: "Book a Market Entry Call", href: calendlyUrl },
+  primaryCta: { label: "Partner With Us", href: calendlyUrl },
   whyAustralia:
     "Australia's insurance market is mature but undergoing significant digital transformation. Brokers handle a large share of commercial insurance, creating a concentrated distribution channel. Regulatory modernisation and increasing demand for digital-first solutions mean overseas insurtech companies have a clear window to enter with the right local partnerships and compliance setup.",
   opportunities: [
@@ -37,7 +37,7 @@ const content = {
   ],
   ctaTitle: "Ready to Enter Australia's Insurance Market?",
   ctaDescription:
-    "Book a 15-minute call. We will discuss your product, the Australian insurance landscape, and scope a 90-day pilot.",
+    "Book a 15-minute call. We will discuss your product, the Australian insurance landscape, and scope the engagement.",
 };
 
 export default function InsuranceBrokersServicePage() {

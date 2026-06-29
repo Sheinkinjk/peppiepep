@@ -10,8 +10,11 @@ if (!isStripeConfigured && process.env.NODE_ENV === 'production') {
 
 // Initialize Stripe with latest API version - use placeholder in dev if not configured
 export const stripe = new Stripe(STRIPE_SECRET_KEY || 'sk_test_placeholder_not_configured', {
-  apiVersion: '2025-12-15.clover',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  apiVersion: '2024-12-18.acacia' as any,
   typescript: true,
+  // Use Node.js HTTP client — avoids Next.js fetch patching which breaks the SDK in serverless
+  httpClient: Stripe.createNodeHttpClient(),
   appInfo: {
     name: 'Refer Labs',
     version: '1.0.0',

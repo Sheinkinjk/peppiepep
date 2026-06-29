@@ -52,6 +52,76 @@ const nextConfig: NextConfig = {
         destination: '/services',
         permanent: true,
       },
+      {
+        source: '/pricing',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/services/influencer-activation',
+        destination: '/services/partner-activation',
+        permanent: true,
+      },
+      {
+        source: '/r/moshy',
+        destination: 'https://www.getmoshy.com.au/start/eligibility-check-moshy',
+        permanent: false,
+      },
+      {
+        source: '/r/dense',
+        destination: 'https://densehairexperts.myshopify.com?sca_ref=10755034.xwTupm6fuv&utm_source=affiliate-jarred-krowitz&utm_medium=affiliate-jarred-krowitz&utm_campaign=affiliate',
+        permanent: false,
+      },
+      {
+        source: '/r/moshhair',
+        destination: 'https://www.getmosh.com.au/start/referlabs',
+        permanent: false,
+      },
+      {
+        source: '/r/incomelab',
+        destination: 'https://incomelab.me/welcome',
+        permanent: false,
+      },
+      {
+        source: '/r/carrd',
+        destination: 'https://try.carrd.co/6ph4m1bj',
+        permanent: false,
+      },
+      {
+        source: '/r/durableai',
+        destination: 'https://durableai.link/referlabs',
+        permanent: false,
+      },
+      {
+        source: '/r/beehiiv',
+        destination: 'https://www.beehiiv.com/?via=14daytrial',
+        permanent: false,
+      },
+      {
+        source: '/r/butternut',
+        destination: 'https://www.butternut.ai/?ref=jarred65',
+        permanent: false,
+      },
+      {
+        source: '/r/swipepages',
+        destination: 'https://swipepages.com/?fpr=jarred74',
+        permanent: false,
+      },
+      {
+        source: '/r/apollopeptides',
+        destination: 'https://apollopeptidesciences.com/?rfsn=9019392.2de9e6',
+        permanent: false,
+      },
+      {
+        source: '/r/ascensionpeptides',
+        destination: 'https://ascensionpeptides.com/ref/referlabs/',
+        permanent: false,
+      },
+      {
+        source: '/r/biopeptitech',
+        destination: 'https://biopeptitech.com?sca_ref=10803823.hKusHK7NAR',
+        permanent: false,
+      },
     ];
   },
   async headers() {
@@ -60,89 +130,61 @@ const nextConfig: NextConfig = {
       {
         source: "/",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/application",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/how-it-works",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/services/:path*",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/who-its-for/:path*",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/about",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
-        ],
-      },
-      {
-        source: "/pricing",
-        headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/contact",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/faq",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/playbooks",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       {
         source: "/roi-calculator",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
-          { key: "Pragma", value: "no-cache" },
-          { key: "Expires", value: "0" },
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
       // Prevent caching of dashboard routes to avoid serving stale error pages

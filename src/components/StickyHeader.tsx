@@ -10,12 +10,19 @@ import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const navLinks = [
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/services", label: "Services" },
-  { href: "/who-its-for", label: "Who It's For" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/referral-blueprint", label: "Blueprint" },
+  { href: "/how-it-works",       label: "How It Works" },
+  { href: "/guides",             label: "Guides" },
+  { href: "/become-an-affiliate", label: "Affiliates" },
+  { href: "/faq",                label: "FAQ" },
+];
+
+const industryLinks = [
+  { href: "/referral-blueprint-for-agencies",   label: "For Agencies",  emoji: "🏢" },
+  { href: "/referral-blueprint-for-saas",       label: "For SaaS",      emoji: "💻" },
+  { href: "/referral-blueprint-for-ecommerce",  label: "For E-commerce", emoji: "🛍️" },
+  { href: "/referral-blueprint-for-coaches",    label: "For Coaches",   emoji: "🎯" },
+  { href: "/referral-blueprint-for-creators",   label: "For Creators",  emoji: "✨" },
 ];
 
 export function StickyHeader() {
@@ -105,19 +112,27 @@ export function StickyHeader() {
                   </Link>
                 );
               })}
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[#0AA7B5] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/30 ring-1 ring-[#57E6FF]/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#00838F] hover:shadow-xl cursor-pointer"
-              >
-                Partner With Us
-              </a>
+              {/* Industries dropdown */}
+              <div className="relative group">
+                <button className="rounded-2xl px-3.5 py-2 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50/80 hover:text-[#044a57] transition-all flex items-center gap-1">
+                  Industries
+                  <svg className="h-3 w-3 mt-0.5" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </button>
+                <div className="absolute top-full left-0 mt-1 w-52 rounded-2xl bg-white shadow-xl border border-[#B4EEF7]/40 p-1.5 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all z-50">
+                  {industryLinks.map((l) => (
+                    <Link key={l.href} href={l.href}
+                      className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50/80 transition-colors">
+                      <span>{l.emoji}</span>{l.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <Link
-                href="/application"
-                className="inline-flex items-center gap-2 rounded-2xl border border-[#0AA7B5]/35 bg-[#E3FAFF] px-4 py-2.5 text-sm font-bold text-[#00505B] transition-all duration-200 hover:border-[#0AA7B5]/60 hover:bg-[#d5f6ff] cursor-pointer"
+                href="/referral-blueprint"
+                className="inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-bold shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
+                style={{ background: "#F59E0B", color: "#060f15", boxShadow: "0 4px 16px rgba(245,158,11,0.35)" }}
               >
-                Apply Now
+                Get Blueprint — $799
                 <ArrowRight className="h-4 w-4" />
               </Link>
               {isAuthenticated && (
@@ -184,21 +199,23 @@ export function StickyHeader() {
                   </Link>
                 );
               })}
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0AA7B5] px-4 py-3 text-sm font-bold text-white shadow-md shadow-[#0AA7B5]/25 transition-all duration-200 hover:bg-[#00838F]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Partner With Us
-              </a>
+              <div className="border-t border-cyan-100 my-1 pt-2 mt-1">
+                <p className="px-4 text-[10px] font-bold uppercase tracking-widest text-[#0b2a34]/40 mb-1">Industries</p>
+                {industryLinks.map((l) => (
+                  <Link key={l.href} href={l.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50 transition-colors">
+                    <span>{l.emoji}</span>{l.label}
+                  </Link>
+                ))}
+              </div>
               <Link
-                href="/application"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#0AA7B5]/35 bg-[#E3FAFF] px-4 py-3 text-sm font-bold text-[#00505B] transition-all duration-200"
+                href="/referral-blueprint"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-bold transition-all duration-200"
+                style={{ background: "#F59E0B", color: "#060f15" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Apply Now
+                Get Blueprint — $799
                 <ArrowRight className="h-4 w-4" />
               </Link>
               {isAuthenticated && (

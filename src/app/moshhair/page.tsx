@@ -1,0 +1,105 @@
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import AffiliatePageTemplate from "@/components/affiliate/AffiliatePageTemplate";
+import { moshHairConfig } from "./config";
+
+export const metadata = generateSEOMetadata(seoConfig.moshHair);
+
+// ─── JSON-LD Schemas ──────────────────────────────────────────────────────────
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: moshHairConfig.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}/guides` },
+    { "@type": "ListItem", position: 3, name: "Mosh Hair Loss Discount Code Australia", item: `${SITE_URL}/moshhair` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoConfig.moshHair.title,
+  description: seoConfig.moshHair.description,
+  url: seoConfig.moshHair.url,
+  inLanguage: "en-AU",
+  datePublished: "2026-01-01",
+  dateModified: "2026-03-16",
+  about: [
+    { "@type": "Thing", name: "Mosh hair loss treatment Australia" },
+    { "@type": "Thing", name: "Mosh discount code" },
+    { "@type": "Thing", name: "Mosh promo code Australia" },
+    { "@type": "Thing", name: "Mosh hair loss review" },
+    { "@type": "Thing", name: "Australian telehealth hair loss" },
+    { "@type": "Thing", name: "Mosh Reddit" },
+    { "@type": "Thing", name: "Mosh hair loss cost Australia" },
+    { "@type": "Thing", name: "how much does Mosh cost" },
+    { "@type": "Thing", name: "Mosh finasteride Australia" },
+    { "@type": "Thing", name: "Mosh minoxidil Australia" },
+    { "@type": "Thing", name: "Mosh vs Dense Hair Experts" },
+    { "@type": "Thing", name: "Mosh hair loss results" },
+  ],
+  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Mosh",
+  url: "https://www.getmosh.com.au",
+  description: "Australian telehealth platform for men's health, including clinically supervised hair loss treatment. Online consultation, practitioner review, and subscription delivery.",
+  areaServed: { "@type": "Country", name: "Australia" },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.4",
+    bestRating: "5",
+    worstRating: "1",
+    ratingCount: "3120",
+  },
+};
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  itemReviewed: {
+    "@type": "Organization",
+    name: "Mosh",
+    url: "https://www.getmosh.com.au",
+  },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "4.4",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  datePublished: "2026-03-11",
+  reviewBody:
+    "Mosh is one of Australia's established men's health telehealth platforms, covering hair loss treatment with a practitioner-reviewed, subscription-based model. The online consultation process is straightforward and does not require an in-person GP visit. Suitable for Australian men researching clinically supervised hair loss treatment options. Pricing and treatment availability depend on individual eligibility.",
+};
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
+export default function MoshHairPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
+      <AffiliatePageTemplate config={moshHairConfig} />
+    </>
+  );
+}

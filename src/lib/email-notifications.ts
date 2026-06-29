@@ -406,6 +406,178 @@ export function buildOnboardingSnapshotEmail(snapshotData: {
 }
 
 /**
+ * Buyer confirmation email for Referral Growth Blueprint purchase
+ * Fires automatically via Stripe webhook on checkout.session.completed
+ */
+export function buildBlueprintBuyerConfirmationEmail(buyer: {
+  name: string;
+  email: string;
+  industry: string;
+  primaryGoal: string;
+  experienceLevel: string;
+  purchasedAt: string;
+  portalUrl?: string;
+}): string {
+  const safeName = escapeHtml(buyer.name);
+  const safePortalUrl = buyer.portalUrl ? escapeHtml(buyer.portalUrl) : null;
+  const firstName = safeName.split(" ")[0] || safeName;
+  const safeIndustry = escapeHtml(buyer.industry || "Not specified");
+  const safeGoal = escapeHtml(buyer.primaryGoal || "Not specified");
+  const safeLevel = escapeHtml(buyer.experienceLevel || "Not specified");
+  const formattedTime = new Date(buyer.purchasedAt).toLocaleString("en-AU", {
+    timeZone: "Australia/Sydney",
+    dateStyle: "long",
+    timeStyle: "short",
+  });
+
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Referral Growth Blueprint — Refer Labs</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f0f4f5;font-family:Georgia,'Times New Roman',serif;">
+
+  <div style="max-width:600px;margin:0 auto;padding:32px 16px;">
+
+    <!-- Header -->
+    <div style="text-align:center;padding:32px 0 24px;">
+      <p style="margin:0;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#0AA7B5;">Refer Labs</p>
+    </div>
+
+    <!-- Card -->
+    <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:4px;overflow:hidden;">
+
+      <!-- Top accent line -->
+      <div style="height:3px;background:linear-gradient(90deg,#0AA7B5,#22C0CD);"></div>
+
+      <!-- Body -->
+      <div style="padding:48px 40px;">
+
+        <p style="margin:0 0 32px;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#94a3b8;">Purchase Confirmed · ${formattedTime}</p>
+
+        <h1 style="margin:0 0 24px;font-size:26px;font-weight:400;line-height:1.3;color:#0f172a;font-family:Georgia,'Times New Roman',serif;">
+          ${firstName}, your Blueprint is being prepared.
+        </h1>
+
+        <p style="margin:0 0 20px;font-size:15px;line-height:1.75;color:#475569;font-family:Inter,system-ui,sans-serif;">
+          Thank you for your purchase. I personally review every intake submission before assembling the deliverables — it is how the strategy brief stays specific to you rather than generic. Everything will be in your inbox within 48 hours.
+        </p>
+
+        <p style="margin:0 0 32px;font-size:15px;line-height:1.75;color:#475569;font-family:Inter,system-ui,sans-serif;">
+          Here is exactly what we are building for you.
+        </p>
+
+        <!-- Deliverables -->
+        <div style="border:1px solid #e2e8f0;border-radius:4px;overflow:hidden;margin-bottom:32px;">
+          <div style="padding:16px 20px;background:#f8fafc;border-bottom:1px solid #e2e8f0;">
+            <p style="margin:0;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#64748b;">What arrives in your inbox</p>
+          </div>
+          ${[
+            ["01", "250+ affiliate and referral programs", "Structured Excel file. Company, program link, commission structure, and a suggested marketing angle per entry. Sorted by industry category."],
+            ["02", "Personalised strategy brief", "A one-page plan written for your situation — your niche, your goals, your starting point. Written after reading your intake answers."],
+            ["03", "Niche selection recommendation", "3–5 niches matched to your goals, preferred channels, and earning potential. With rationale for each."],
+            ["04", "10+ SEO page concepts", "High-intent keyword targets for review pages, comparison pages, and deal directories you can realistically rank for. Each with a structural brief."],
+            ["05", "Distribution playbooks", "Step-by-step execution guides for the channels you indicated — SEO, email, communities, directories, or comparison pages."],
+            ["06", "Recommended tool stack", "The specific software to build, track, and automate your referral business. With notes on why each tool is included."],
+          ].map(([num, title, desc]) => `
+          <div style="padding:16px 20px;border-bottom:1px solid #f1f5f9;display:flex;gap:16px;align-items:flex-start;">
+            <span style="flex-shrink:0;font-family:'Courier New',monospace;font-size:11px;color:#cbd5e1;padding-top:2px;">${num}</span>
+            <div>
+              <p style="margin:0 0 4px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;color:#0f172a;">${title}</p>
+              <p style="margin:0;font-family:Inter,system-ui,sans-serif;font-size:12px;line-height:1.6;color:#64748b;">${desc}</p>
+            </div>
+          </div>`).join("")}
+          <div style="padding:14px 20px;background:#f8fafc;">
+            <p style="margin:0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#94a3b8;">All six deliverables sent as a single email within 48 hours.</p>
+          </div>
+        </div>
+
+        <!-- What we noted from their intake -->
+        <div style="border-left:3px solid #0AA7B5;padding:16px 20px;background:#f0fdfe;border-radius:0 4px 4px 0;margin-bottom:32px;">
+          <p style="margin:0 0 12px;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#0AA7B5;">What we noted from your intake</p>
+          <table style="width:100%;border-collapse:collapse;">
+            <tr>
+              <td style="padding:4px 0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#64748b;width:120px;vertical-align:top;">Industry</td>
+              <td style="padding:4px 0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#0f172a;font-weight:500;">${safeIndustry}</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#64748b;vertical-align:top;">Primary goal</td>
+              <td style="padding:4px 0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#0f172a;font-weight:500;">${safeGoal}</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#64748b;vertical-align:top;">Experience level</td>
+              <td style="padding:4px 0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#0f172a;font-weight:500;">${safeLevel}</td>
+            </tr>
+          </table>
+          <p style="margin:12px 0 0;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#475569;line-height:1.6;">Your strategy brief and niche recommendations will be tailored to these inputs.</p>
+        </div>
+
+        <!-- Timeline -->
+        <div style="margin-bottom:32px;">
+          <p style="margin:0 0 16px;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#94a3b8;">What happens next</p>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            ${[
+              ["Now", "Your intake form and payment are confirmed. You will receive this email as your receipt."],
+              ["Within 12 hours", "I review your intake answers and begin assembling your strategy brief and niche recommendations."],
+              ["Within 48 hours", "Your complete blueprint — all six deliverables — is emailed to ${buyer.email}. If anything requires clarification, I will reach out directly."],
+            ].map(([time, desc], i, arr) => `
+            <div style="display:flex;gap:16px;padding:12px 0;${i < arr.length - 1 ? 'border-bottom:1px solid #f1f5f9;' : ''}">
+              <div style="flex-shrink:0;width:110px;">
+                <p style="margin:0;font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:600;color:#0AA7B5;">${time}</p>
+              </div>
+              <p style="margin:0;font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.6;color:#475569;">${desc.replace("${buyer.email}", escapeHtml(buyer.email))}</p>
+            </div>`).join("")}
+          </div>
+        </div>
+
+        ${safePortalUrl ? `
+        <!-- Portal access button -->
+        <div style="margin-bottom:32px;padding:20px;border:1px solid #e2e8f0;border-radius:4px;background:#f8fafc;text-align:center;">
+          <p style="margin:0 0 6px;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#94a3b8;">Your Blueprint Portal</p>
+          <p style="margin:0 0 16px;font-family:Inter,system-ui,sans-serif;font-size:13px;color:#475569;">Track your order status and access resources while your blueprint is being prepared.</p>
+          <a href="${safePortalUrl}" style="display:inline-block;background:#0AA7B5;color:#ffffff;text-decoration:none;padding:12px 28px;border-radius:4px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.02em;">Open Your Portal</a>
+          <p style="margin:12px 0 0;font-family:Inter,system-ui,sans-serif;font-size:11px;color:#94a3b8;">Bookmark this link — it is your permanent access point. No password required.</p>
+        </div>
+        ` : ''}
+
+        <!-- Personal sign-off -->
+        <p style="margin:0 0 8px;font-size:15px;line-height:1.75;color:#475569;font-family:Inter,system-ui,sans-serif;">
+          If you have any questions before delivery, reply directly to this email. I check it daily.
+        </p>
+        <p style="margin:0 0 32px;font-size:15px;line-height:1.75;color:#475569;font-family:Inter,system-ui,sans-serif;">
+          Looking forward to working through this with you.
+        </p>
+
+        <div style="border-top:1px solid #e2e8f0;padding-top:24px;">
+          <p style="margin:0 0 2px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;color:#0f172a;">Jarred Krowitz</p>
+          <p style="margin:0 0 2px;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#64748b;">Director, Refer Labs</p>
+          <a href="mailto:jarred@referlabs.com.au" style="font-family:Inter,system-ui,sans-serif;font-size:12px;color:#0AA7B5;text-decoration:none;">jarred@referlabs.com.au</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:24px 0;text-align:center;">
+      <p style="margin:0 0 4px;font-family:Inter,system-ui,sans-serif;font-size:11px;color:#94a3b8;">
+        Pepform Pty Ltd (trading as Refer Labs) · ABN 32 660 008 159
+      </p>
+      <p style="margin:0;font-family:Inter,system-ui,sans-serif;font-size:11px;color:#cbd5e1;">
+        <a href="https://referlabs.com.au" style="color:#94a3b8;text-decoration:none;">referlabs.com.au</a>
+        &nbsp;·&nbsp;
+        <a href="https://referlabs.com.au/privacy" style="color:#94a3b8;text-decoration:none;">Privacy</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
+  `;
+}
+
+/**
  * Email template for admin login alert
  */
 export function buildAdminLoginAlertEmail(loginData: {

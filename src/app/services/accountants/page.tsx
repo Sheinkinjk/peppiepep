@@ -10,7 +10,7 @@ const content = {
   heroTitle: "Enter Australia's Accounting & Tax Market",
   heroSubtitle:
     "We help overseas accounting software, tax technology, and practice management companies generate clients, firm partnerships, and distribution deals in Australia - without hiring locally.",
-  primaryCta: { label: "Book a Market Entry Call", href: calendlyUrl },
+  primaryCta: { label: "Partner With Us", href: calendlyUrl },
   whyAustralia:
     "Australia has over 40,000 accounting practices and a highly digitised tax system with mandatory electronic lodgement. The market is dominated by a few key players, but mid-market firms are actively seeking modern alternatives. Strong partnerships with accounting associations, practice networks, and technology integrators are the fastest path to distribution.",
   opportunities: [
@@ -37,7 +37,7 @@ const content = {
   ],
   ctaTitle: "Ready to Enter Australia's Accounting Market?",
   ctaDescription:
-    "Book a 15-minute call. We will discuss your product, the Australian accounting technology landscape, and scope a 90-day pilot.",
+    "Book a 15-minute call. We will discuss your product, the Australian accounting technology landscape, and scope the engagement.",
 };
 
 export default function AccountantsServicePage() {

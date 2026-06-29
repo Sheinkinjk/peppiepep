@@ -6,67 +6,34 @@
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "Organization",
     "name": "Refer Labs",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Referral Marketing Software",
-    "operatingSystem": "Web",
-    "description": "Turn partners, clients, creators, and advisors into your most powerful growth engine with automated referral tracking, rewards, and partner management.",
     "url": "https://referlabs.com.au",
+    "logo": "https://referlabs.com.au/logo.svg",
     "image": "https://referlabs.com.au/og-image.png",
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "USD",
-      "lowPrice": "399",
-      "highPrice": "599",
-      "offerCount": "2",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Base Plan",
-          "price": "399",
-          "priceCurrency": "USD",
-          "billingIncrement": "P1M",
-          "description": "Perfect for growing businesses"
-        },
-        {
-          "@type": "Offer",
-          "name": "Scale Plan",
-          "price": "599",
-          "priceCurrency": "USD",
-          "billingIncrement": "P1M",
-          "description": "For established brands with high volume"
-        }
-      ]
+    "description": "Refer Labs publishes the Referral Growth Blueprint — a 250+ affiliate and referral program database, personalised strategy brief written for your niche, SEO page concepts, distribution playbooks, and niche selection brief. One-time $799 AUD, delivered within 48 hours.",
+    "email": "jarred@referlabs.com.au",
+    "areaServed": [
+      { "@type": "Country", "name": "Australia" },
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "United Kingdom" }
+    ],
+    "knowsAbout": [
+      "Affiliate Marketing",
+      "Referral Marketing",
+      "Affiliate Program Database",
+      "SEO for Affiliate Marketing",
+      "Distribution Strategy"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Business Enquiries",
+      "email": "jarred@referlabs.com.au",
+      "availableLanguage": ["English"]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "47",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Refer Labs",
-      "url": "https://referlabs.com.au"
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "Refer Labs",
-      "url": "https://referlabs.com.au",
-      "logo": "https://referlabs.com.au/logo.svg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Support",
-        "email": "jarred@referlabs.com.au",
-        "availableLanguage": ["English"]
-      },
-      "sameAs": [
-        "https://twitter.com/referlabs",
-        "https://www.linkedin.com/company/referlabs"
-      ]
-    }
+    "sameAs": [
+      "https://www.linkedin.com/company/referlabs"
+    ]
   };
 
   return (
@@ -220,7 +187,7 @@ export function WebsiteSchema() {
     "@type": "WebSite",
     "name": "Refer Labs",
     "url": "https://referlabs.com.au",
-    "description": "Referral marketing software that turns partners, clients, creators, and advisors into a tracked referral channel",
+    "description": "Refer Labs — 250+ affiliate and referral programs database, personalised strategy brief, SEO page concepts, and distribution playbooks. The Referral Growth Blueprint. $799 AUD one-time.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

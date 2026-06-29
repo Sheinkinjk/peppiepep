@@ -19,7 +19,7 @@ export default function NicheOpportunitiesPage() {
           {[
             { icon: Lightbulb, title: "Signal Hunting", copy: "We scan emerging categories, competitor absences, and buyer intent signals to isolate the entry point." },
             { icon: Target, title: "Precise ICP Lists", copy: "Custom prospect and partner lists matched to the niche, with messaging that reflects the category novelty." },
-            { icon: TrendingUp, title: "Pilot to Proof", copy: "90-day pilots that measure conversion, pricing tolerance, and partner pull before you scale." },
+            { icon: TrendingUp, title: "Measure and Prove", copy: "Structured engagements that measure conversion, pricing tolerance, and partner pull before you scale." },
           ].map((item) => (
             <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <item.icon className="h-5 w-5 text-[#0AA7B5]" />

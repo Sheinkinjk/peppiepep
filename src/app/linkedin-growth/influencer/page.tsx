@@ -375,7 +375,10 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
         className="absolute bottom-0 left-16 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-400/25 to-transparent blur-3xl animate-pulse"
         style={{ animationDelay: "1.1s" }}
       />
-      <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-14 sm:px-10 lg:px-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-6xl px-6 pb-24 pt-14 sm:px-10 lg:px-16"
+      >
         <div className="mb-8">
           <Link
             href="/linkedin-growth"

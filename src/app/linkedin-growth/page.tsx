@@ -255,7 +255,7 @@ export default function LinkedInGrowthPage() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#04101a] via-[#081820] to-[#020508] text-white">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -266,7 +266,10 @@ export default function LinkedInGrowthPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.06),transparent_50%)]" />
       </div>
 
-      <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16"
+      >
         {/* Hero Section */}
         <section className="space-y-10">
           <div className="text-center max-w-4xl mx-auto space-y-6">

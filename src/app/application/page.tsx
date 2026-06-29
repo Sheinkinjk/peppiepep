@@ -446,7 +446,7 @@ export default function ApplicationPage() {
                 <span className="block text-[#0AA7B5]">APAC Expansion Build</span>
               </h1>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-                This application helps us scope your go-to-market path, partner model, and launch sequence. Every submission is reviewed by our team before we recommend a pilot.
+                This application helps us scope your go-to-market path, partner model, and engagement structure. Every submission is reviewed by our team before we recommend an approach.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                 <a
@@ -456,7 +456,7 @@ export default function ApplicationPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#088c98]"
                 >
                   <Calendar className="h-4 w-4" />
-                  Book a Market Entry Call
+                  Partner With Us
                 </a>
                 <Link
                   href="/services"

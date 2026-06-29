@@ -17,15 +17,12 @@ export default function About() {
 
         {/* Hero */}
         <div className="mb-20 sm:mb-24 max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-4">
-            About Refer Labs
-          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] text-white mb-7 tracking-tight">
-            We Are a Growth &{" "}
-            <span className="text-[#22C0CD]">Distribution Engine.</span>
+            We Are Your Referral &{" "}
+            <span className="text-[#22C0CD]">Distribution Partner.</span>
           </h1>
           <p className="text-white/55 text-base sm:text-lg leading-relaxed">
-            Refer Labs builds and activates distribution systems for operators, brands, and businesses that understand growth is not a channel strategy. It is a structural advantage.
+            Refer Labs builds referral programs, activates distribution channels, and creates systems that turn networks and audiences into revenue — for operators, brands, and businesses that understand distribution is a structural advantage.
           </p>
         </div>
 
@@ -33,12 +30,11 @@ export default function About() {
         <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-3">What We Do</p>
               <h2 className="text-2xl sm:text-3xl font-black text-white mb-5 leading-tight">
                 What Refer Labs Does
               </h2>
               <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-5">
-                We build and activate scalable distribution systems across five core growth engines: referral program design, affiliate distribution, influencer and network activation, APAC market expansion, and product creation with end-to-end distribution.
+                We design and launch referral programs, distribute affiliate offers, activate influencer and network partnerships, support APAC market expansion, and build distribution-driven products from concept to revenue.
               </p>
               <p className="text-white/55 text-sm sm:text-base leading-relaxed">
                 Every engagement is structured, commercial, and built to compound. We do not run one-off campaigns. We build systems that continue generating leverage after we have done our work.
@@ -65,7 +61,6 @@ export default function About() {
         <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
           <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-2">Philosophy</p>
               <h2 className="text-xl font-black text-white">Our Approach</h2>
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
@@ -86,7 +81,6 @@ export default function About() {
         <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
           <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0AA7B5] mb-2">Values</p>
               <h2 className="text-xl font-black text-white">What We Stand For</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-6 max-w-2xl">

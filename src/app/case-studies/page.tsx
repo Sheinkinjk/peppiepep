@@ -149,13 +149,13 @@ export default function CaseStudiesPage() {
             Ready to see your version of these outcomes?
           </h3>
           <p className="text-slate-600 max-w-2xl mx-auto mb-6">
-            We tailor the playbook to your product, ICP, and internal resourcing. Let’s outline the first 90 days.
+            We tailor the approach to your product, audience, and growth goals. Let’s map the system.
           </p>
           <Link
             href="/how-it-works"
             className="inline-flex items-center gap-2 rounded-2xl bg-[#0AA7B5] px-7 py-3 text-sm font-bold text-white shadow-md hover:bg-[#00838F] transition-all"
           >
-            View the 90-day pilot
+            How It Works
             <ArrowRight className="h-4 w-4" />
           </Link>
         </section>

@@ -1,289 +1,205 @@
-import {
-  ArrowRight,
-  Calendar,
-  CheckCircle2,
-  Building2,
-  CreditCard,
-  Globe,
-  Heart,
-  ShoppingBag,
-  Briefcase,
-  Users,
-  Zap,
-  TrendingUp,
-  DollarSign,
-  Target,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.whoItsFor);
 
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
 
-const profiles = [
+const engines = [
   {
-    icon: Building2,
-    title: "B2B SaaS",
-    description:
-      "You have product-market fit in your home market and want to test a new region before committing headcount. We run outbound sales, book demos, source local partners, and negotiate distribution deals to validate demand.",
-    example: "US-based project management SaaS testing APAC demand through partner-led distribution and direct sales.",
-    services: ["Sales representation", "Partner development", "Enterprise introductions"],
-    color: "from-cyan-500/20 to-teal-500/10",
-    href: null,
+    num: "01",
+    title: "Referral Program Launch",
+    who: "SMBs, eCommerce brands, and subscription businesses that want to convert their existing customer base into a growth channel.",
+    fits: [
+      "You have an existing customer base but no structured referral program",
+      "You sell a product where satisfied customers naturally recommend you",
+      "You want a repeatable acquisition system that reduces paid ad dependency",
+      "You are an eCommerce, SaaS, or service business with referral potential",
+      "You need incentive design, tracking infrastructure, and rollout support",
+    ],
+    notFit: "Pre-revenue businesses with no existing customer base.",
+    cta: "Launch a Referral Program",
   },
   {
-    icon: CreditCard,
-    title: "Fintech",
-    description:
-      "You need brokers, advisors, and strategic partners to distribute your fintech product in new markets. We identify the right channels, structure white-label and reseller deals, and activate distribution partners.",
-    example: "UK lending platform building a local broker network and white-label distribution channel in APAC.",
-    services: ["Distribution deals", "Broker activation", "Reseller agreements"],
-    color: "from-purple-500/20 to-pink-500/10",
-    href: "/services/financial-advisors",
+    num: "02",
+    title: "Elite Affiliate Program Distribution",
+    who: "B2B and B2C businesses with established affiliate programs that need systematic distribution across high-intent digital communities at scale.",
+    fits: [
+      "You run an affiliate program that is not generating consistent volume",
+      "You sell a consumer product, financial tool, subscription service, or digital product",
+      "You want exposure across Reddit, niche forums, and engaged online communities",
+      "You need structured content positioning, not just link drops",
+      "You want automation and optimisation built in from day one",
+    ],
+    notFit: "Businesses that do not yet have a live affiliate program or trackable offer.",
+    cta: "Scale Affiliate Distribution",
   },
   {
-    icon: Heart,
-    title: "Healthtech",
-    description:
-      "You have a digital health platform and need provider partnerships, payer relationships, and enterprise distribution in new markets.",
-    example: "US telehealth platform partnering with local health networks and private hospital groups in APAC.",
-    services: ["Provider partnerships", "Enterprise introductions", "Payer relationships"],
-    color: "from-rose-500/20 to-orange-500/10",
-    href: "/services/insurance-brokers",
+    num: "03",
+    title: "Influencer & Network Activation",
+    who: "Consumer brands, B2B companies, and eCommerce operators that want authentic representation through aligned creators, consultants, and industry voices.",
+    fits: [
+      "You want to reach audiences through trusted voices rather than paid ads",
+      "Your product suits LinkedIn creators, newsletter operators, or niche bloggers",
+      "You are a consumer brand looking for ambassador and creator partnerships",
+      "You are a B2B business wanting consultant or advisor-led distribution",
+      "You want structured deals with clear commercial terms, not ad hoc arrangements",
+    ],
+    notFit: "Businesses with no defined target audience or brand positioning.",
+    cta: "Activate Influencer Channels",
   },
   {
-    icon: Zap,
-    title: "Creator Economy Tools",
-    description:
-      "You build tools for creators and want to reach new creator markets through communities, agencies, and platform partnerships.",
-    example: "European creator monetisation platform expanding into APAC through local influencer and content creator partnerships.",
-    services: ["Community partnerships", "Agency distribution", "Platform integrations"],
-    color: "from-amber-500/20 to-yellow-500/10",
-    href: null,
+    num: "04",
+    title: "APAC Market Expansion",
+    who: "Global businesses that want to enter and grow in the APAC region without committing to local headcount before validating demand.",
+    fits: [
+      "You have product-market fit in your home market and want to test a new region",
+      "You are headquartered in the US, UK, Europe, or another APAC market",
+      "You want strategic partnership sourcing and referral-led entry",
+      "You need commercial representation without the cost of a local hire",
+      "You want to validate demand before committing to a permanent regional team",
+    ],
+    notFit: "Businesses with no existing revenue or product-market fit in any market.",
+    cta: "Expand Into APAC",
   },
   {
-    icon: ShoppingBag,
-    title: "E-commerce Tech",
-    description:
-      "You sell commerce infrastructure or DTC products and want to test regional demand through local partners, affiliates, and retail distribution.",
-    example: "US e-commerce infrastructure company entering APAC through agency and retailer partnerships.",
-    services: ["Retail distribution", "Agency partnerships", "Affiliate channel setup"],
-    color: "from-emerald-500/20 to-teal-500/10",
-    href: null,
-  },
-  {
-    icon: Briefcase,
-    title: "Professional Services Software",
-    description:
-      "You build software for legal, accounting, or consulting firms and need to break into professional services verticals in new markets.",
-    example: "Canadian legal tech company partnering with local law firms and industry associations in APAC.",
-    services: ["Vertical partnerships", "Enterprise sales", "Industry network entry"],
-    color: "from-blue-500/20 to-indigo-500/10",
-    href: "/services/consultants-coaches",
+    num: "05",
+    title: "Product Creation & Distribution",
+    who: "Operators, consultants, and entrepreneurs who want to build distribution-first digital products and take them to market through owned and partner channels.",
+    fits: [
+      "You have knowledge, systems, or IP that can be packaged into a sellable product",
+      "You want to build a digital product, template, or guide with a distribution plan built in",
+      "You are open to a collaborative model where Refer Labs co-builds and co-distributes",
+      "You want multi-channel exposure across communities, affiliates, and partners",
+      "You are interested in the Refer Labs internal product portfolio collaboration model",
+    ],
+    notFit: "Businesses without a clear subject matter or audience in mind.",
+    cta: "Discuss Product Collaboration",
+    external: false,
+    ctaHref: "/contact",
   },
 ];
 
 export default function WhoItsForPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-slate-50">
+    <div className="relative min-h-screen bg-[#060f15] text-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(10,167,181,0.10),transparent_50%)]" />
       </div>
 
-      <main id="main-content" className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pb-24 pt-16">
+      <main id="main-content" className="relative mx-auto max-w-5xl px-6 sm:px-8 lg:px-12 pb-24 pt-16 sm:pt-20">
 
-        {/* Hero */}
-        <section className="premium-section-dark text-center space-y-8 mb-20 px-6 py-12 sm:px-10 sm:py-14">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-white max-w-4xl mx-auto tracking-tight">
-            Built for Global B2B Companies{" "}
-            <span className="text-cyan-400">Entering New Markets</span>
+        {/* Header */}
+        <div className="mb-16 sm:mb-20 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] text-white mb-6 tracking-tight">
+            Built for Operators, Brands &{" "}
+            <span className="text-[#22C0CD]">Growth-Focused Businesses</span>
           </h1>
-          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            We work with $1M-$50M revenue companies that have strong product-market fit and need in-region clients, partnerships, and distribution across APAC - without hiring locally.
+          <p className="text-white/55 text-base sm:text-lg leading-relaxed">
+            Refer Labs works with businesses across five specific growth scenarios. Below is a breakdown of each engagement type, who it suits, and whether it is the right fit for you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+        </div>
+
+        {/* Engine Profiles */}
+        <div className="mb-0">
+          {engines.map((engine) => (
+            <div
+              key={engine.num}
+              className="border-t border-[#0AA7B5]/10 py-12 sm:py-16 grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16"
             >
-              <Calendar className="h-4 w-4" />
-              Book a Market Entry Call
-            </a>
-            <Link
-              href="/application"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
-            >
-              Apply Now
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* Qualifiers */}
-        <section className="mb-20">
-          <div className="premium-section-dark rounded-2xl border border-white/10 bg-white/[0.03] p-8 sm:p-10">
-            <h2 className="text-lg font-bold text-white mb-6 text-center">Ideal Client Profile</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { icon: DollarSign, text: "$1M-$50M in annual revenue" },
-                { icon: Globe, text: "Headquartered in US, UK, EU, or Asia-Pacific" },
-                { icon: CheckCircle2, text: "Strong product-market fit in at least one market" },
-                { icon: TrendingUp, text: "Ready for a 90-day structured pilot" },
-                { icon: Target, text: "High LTV product with partnership potential" },
-                { icon: Users, text: "A founder or growth lead who can join key calls" },
-              ].map((q) => (
-                <div key={q.text} className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5">
-                  <q.icon className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                  <span className="text-sm text-slate-300 font-medium">{q.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Profile Cards */}
-        <section className="mb-28">
-          <div className="text-center space-y-4 mb-14">
-            <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Who We Work With
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              We have structured our services around the company types and verticals that get the most value from local sales, partnerships, and distribution in new markets.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {profiles.map((profile) => {
-              const Icon = profile.icon;
-              return (
-                <div
-                  key={profile.title}
-                  className="premium-section-dark group relative rounded-2xl border border-white/5 bg-white/[0.02] p-7 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.04] overflow-hidden"
-                >
-                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${profile.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`} />
-                  <div className="relative">
-                    <div className="h-12 w-12 rounded-2xl bg-white/[0.06] border border-white/10 flex items-center justify-center mb-5 group-hover:bg-white/10 transition-colors">
-                      <Icon className="h-5 w-5 text-cyan-400" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-3">{profile.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-5">{profile.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {profile.services.map((s) => (
-                        <span key={s} className="text-[10px] font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-
-                    <p className="text-xs text-slate-500 italic leading-relaxed mb-4">
-                      Example: {profile.example}
-                    </p>
-
-                    {profile.href && (
-                      <Link
-                        href={profile.href}
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
-                      >
-                        See market entry playbook
-                        <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Explore by Industry */}
-        <section className="mb-28">
-          <div className="text-center space-y-4 mb-10">
-            <h2 className="text-2xl sm:text-3xl font-black text-white">
-              Explore by Industry
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-sm">
-              We have built market entry playbooks for key verticals. Each page covers the opportunity, our approach, and what to expect in 90 days.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { label: "Financial Services & Fintech", href: "/services/financial-advisors" },
-              { label: "Accounting & Tax Technology", href: "/services/accountants" },
-              { label: "Insurance & Insurtech", href: "/services/insurance-brokers" },
-              { label: "HR & Recruitment Technology", href: "/services/recruiters-staffing" },
-              { label: "Professional Services Software", href: "/services/consultants-coaches" },
-              { label: "Niche Opportunities", href: "/who-its-for/niche-opportunities" },
-              { label: "Global Investments", href: "/who-its-for/global-investments" },
-              { label: "Financial Tools", href: "/who-its-for/financial-tools" },
-              { label: "Access to Capital", href: "/who-its-for/access-to-capital" },
-            ].map((v) => (
-              <Link
-                key={v.href}
-                href={v.href}
-                className="flex items-center justify-between gap-3 p-5 rounded-2xl border border-white/5 bg-white/[0.03] hover:border-white/15 hover:bg-white/[0.06] transition-all group"
-              >
-                <span className="text-sm font-semibold text-white">{v.label}</span>
-                <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-cyan-400 transition-colors flex-shrink-0" />
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Already Have a Team? */}
-        <section className="mb-28">
-          <div className="premium-section-dark relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-white/[0.02] to-transparent p-8 sm:p-12">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(10,167,181,0.12),transparent_50%)]" />
-            <div className="relative grid md:grid-cols-[auto_1fr] gap-8 items-center">
-              <div className="h-16 w-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mx-auto md:mx-0">
-                <Users className="h-7 w-7 text-cyan-400" />
+              {/* Left */}
+              <div className="lg:pt-0.5">
+                <span className="block text-5xl font-black text-[#0AA7B5]/20 leading-none mb-3 select-none">
+                  {engine.num}
+                </span>
+                <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+                  {engine.title}
+                </h2>
               </div>
-              <div className="text-center md:text-left">
-                <h3 className="text-2xl font-black text-white mb-3">Already Have a Local Team?</h3>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                  If you already have a salesperson or small team in-region, we complement them with partnership development, distribution deal structuring, and channel management - so your team focuses on direct sales while we build the partnership and distribution layer.
+
+              {/* Right */}
+              <div>
+                <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-7 font-medium">
+                  {engine.who}
                 </p>
+
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0AA7B5] mb-3">
+                  This is for you if
+                </p>
+                <ul className="space-y-2.5 mb-7">
+                  {engine.fits.map((f) => (
+                    <li key={f} className="flex items-start gap-3 text-sm text-white/60">
+                      <CheckCircle2 className="h-4 w-4 text-[#22C0CD] flex-shrink-0 mt-0.5" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="border-l-2 border-[#0AA7B5]/20 pl-4 mb-7">
+                  <p className="text-xs text-white/35 italic">
+                    Not the right fit: {engine.notFit}
+                  </p>
+                </div>
+
+                {engine.external === false ? (
+                  <Link
+                    href={engine.ctaHref!}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#22C0CD] hover:text-[#57E6FF] transition-colors"
+                  >
+                    {engine.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ) : (
+                  <a
+                    href={calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#22C0CD] hover:text-[#57E6FF] transition-colors"
+                  >
+                    {engine.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
 
-        {/* Final CTA */}
-        <section className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-cyan-500/10 rounded-3xl blur-3xl" />
-          <div className="premium-section-dark relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] px-8 py-16 sm:px-12 text-center">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-black text-white">
-                Sound Like You?
-              </h2>
-              <p className="text-lg text-slate-300">
-                Book a 15-minute call and tell us about your product, your market, and your expansion goals. We will tell you if we are the right fit.
+        {/* Not sure section */}
+        <div className="border-t border-[#0AA7B5]/10 pt-14 sm:pt-16 mb-0">
+          <div className="grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16">
+            <div className="lg:pt-1">
+              <h2 className="text-xl font-black text-white">Not sure which fits?</h2>
+            </div>
+            <div>
+              <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-7">
+                Most businesses we work with sit across two or more of these growth engines. A referral program pairs naturally with affiliate distribution. APAC expansion often involves influencer activation. Product creation spans all five.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+              <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-8">
+                Book a call and we will map the highest-leverage entry point for your business specifically.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href={calendlyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-xl shadow-black/20"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-lg shadow-[#0AA7B5]/20"
                 >
-                  <Calendar className="h-4 w-4" />
-                  Book a Market Entry Call
+                  Partner With Us
                 </a>
                 <Link
-                  href="/application"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+                  href="/services"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#0AA7B5]/25 bg-[#0AA7B5]/[0.05] px-7 py-3.5 text-sm font-semibold text-white/80 transition-all hover:bg-[#0AA7B5]/10 hover:text-white"
                 >
-                  Apply Now
+                  Explore All Growth Engines
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+
       </main>
     </div>
   );

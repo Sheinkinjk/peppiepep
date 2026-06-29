@@ -22,7 +22,9 @@ import {
 } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
-export const metadata = generateSEOMetadata(seoConfig.linkedinInfluencer);
+// This route has a 301 redirect to /linkedin-growth defined in next.config.ts.
+// noIndex prevents "Alternative page with proper canonical tag" in Search Console.
+export const metadata = { ...generateSEOMetadata(seoConfig.linkedinInfluencer), robots: { index: false, follow: false } };
 
 const businessOutcomes = [
   {
@@ -176,7 +178,10 @@ export default function LinkedInInfluencerPage() {
       {/* Ambient background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.15),transparent_50%),radial-gradient(circle_at_85%_20%,rgba(124,58,237,0.12),transparent_45%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.1),transparent_50%)]" />
 
-      <main className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-10 lg:px-16"
+      >
 
         {/* Hero Section - Business First */}
         <section className="space-y-10 animate-in fade-in duration-700">

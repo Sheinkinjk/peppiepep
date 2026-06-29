@@ -21,10 +21,10 @@ export default function Contact() {
         {/* Header */}
         <header className="premium-section-light text-center space-y-6 mb-16 rounded-[2rem] px-6 py-12 sm:px-10 sm:py-14">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-[#0b2a34] tracking-tight max-w-3xl mx-auto">
-            Book a 15-min <span className="text-[#0AA7B5]">Market Expansion Call</span>
+            Book a 15-min <span className="text-[#0AA7B5]">Discovery Call</span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Tell us about your company and your expansion goals. We will recommend an approach and scope the right engagement.
+            Tell us about your company and your growth goals. We will recommend an approach and scope the right engagement.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -34,7 +34,7 @@ export default function Contact() {
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#088c98]"
             >
               <Calendar className="h-4 w-4" />
-              Book a Market Entry Call
+              Partner With Us
             </a>
             <Link
               href="/application"
@@ -63,7 +63,7 @@ export default function Contact() {
               </div>
               <h2 className="text-2xl font-bold text-[#0b2a34] mb-3">Book a Call</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                15-minute call to discuss your market expansion goals, product, and timeline. We will recommend an approach on the call.
+                15-minute call to discuss your growth goals, product, and timeline. We will recommend the right engagement on the call.
               </p>
               <div className="flex items-center gap-4 text-sm text-slate-600 mb-6">
                 <span className="flex items-center gap-2">
@@ -115,7 +115,7 @@ export default function Contact() {
               </div>
               <h2 className="text-2xl font-bold text-[#0b2a34] mb-3">Email Us</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Prefer email? Tell us about your company, what you sell, and your expansion goals. We will respond within 24 hours.
+                Prefer email? Tell us about your company, what you sell, and your growth goals. We will respond within 24 hours.
               </p>
               <div className="text-sm text-[#0b2a34] mb-6 font-semibold">
                 jarred@referlabs.com.au
@@ -139,7 +139,7 @@ export default function Contact() {
               </div>
               <h2 className="text-2xl font-bold text-[#0b2a34] mb-3">Call Us</h2>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Want to talk now? Give us a call directly and we will discuss your expansion goals.
+                Want to talk now? Give us a call directly and we will discuss your growth goals.
               </p>
               <div className="text-sm text-[#0b2a34] mb-6 font-semibold">
                 +61 451 149 569
@@ -165,7 +165,7 @@ export default function Contact() {
               "Your website",
               "Where you are based",
               "What you sell",
-              "Your expansion goal",
+              "Your growth goal",
               "Your timeline",
             ].map((item) => (
               <div key={item} className="premium-section-light text-center p-5 rounded-2xl border border-slate-200 bg-white shadow-xs">
@@ -183,9 +183,9 @@ export default function Contact() {
 
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { title: "Expansion Call", copy: "We learn about your product, market, and expansion goals" },
-              { title: "Market Entry Plan", copy: "We recommend the right services, target list approach, and pilot scope" },
-              { title: "Kick Off", copy: "If it is a fit, we start your 90-day pilot and begin building pipeline" },
+              { title: "Discovery Call", copy: "We learn about your product, market, and growth goals" },
+              { title: "Engagement Plan", copy: "We recommend the right services, channel approach, and engagement scope" },
+              { title: "Kick Off", copy: "If it is a fit, we finalise commercial terms and begin building your distribution system" },
             ].map((item, idx) => (
               <div key={item.title} className="premium-section-light text-center p-6 rounded-2xl border border-slate-200 bg-white shadow-xs">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#E3FAFF] border border-[#B4EEF7] mb-4">

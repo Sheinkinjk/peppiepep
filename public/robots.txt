@@ -1,77 +1,27 @@
 # Refer Labs Robots.txt
-# Allow all crawlers access to public pages
 
 User-agent: *
 Allow: /
 
-# Disallow private/authenticated pages
+# Private / authenticated
 Disallow: /dashboard/
-Disallow: /dashboard/*
+Disallow: /dashboard-test/
 Disallow: /api/
-Disallow: /api/*
-
-# Disallow dynamic referral pages (personalized content)
-Disallow: /r/*/
-Disallow: /me/*/
-
-# Disallow payment pages (temporary, session-based)
-Disallow: /payment/
-Disallow: /payment/*
-
-# Disallow auth pages
 Disallow: /auth/
-Disallow: /auth/*
 Disallow: /login
 
-# Allow specific marketing pages
-Allow: /pricing
-Allow: /how-it-works
-Allow: /case-studies
-Allow: /about
-Allow: /contact
-Allow: /faq
-Allow: /roi-calculator
-Allow: /security
-Allow: /privacy
-Allow: /terms
-Allow: /lead-hacking
-Allow: /our-referral-program
-Allow: /integrations
-Allow: /api-guide
-Allow: /analytics
-Allow: /calendly
-Allow: /go-live
-Allow: /google-ads
-Allow: /gtm
-Allow: /hubspot
-Allow: /klaviyo
-Allow: /linkedin-growth
-Allow: /linkedin-growth/business
-Allow: /linkedin-growth/influencer
-Allow: /linkedin-influencer
-Allow: /linkedin-influencer/business
-Allow: /linkedin-influencer/influencer
-Allow: /mailchimp
-Allow: /make
-Allow: /meta-ads
-Allow: /referral
-Allow: /referred
-Allow: /servicem8
-Allow: /shopify
-Allow: /shopify/checkout-extensibility
-Allow: /square
-Allow: /squarespace
-Allow: /status
-Allow: /stripe
-Allow: /tiktok-ads
-Allow: /webflow
-Allow: /wix
-Allow: /wordpress
-Allow: /zapier
+# Customer portal — token-gated, no public SEO value
+Disallow: /blueprint-access
 
-# Sitemap location
+# Post-purchase success page
+Disallow: /referral-blueprint/success
+
+# Personalised referral links
+Disallow: /r/
+Disallow: /me/
+
+# Payment flows
+Disallow: /payment/
+Disallow: /referred/
+
 Sitemap: https://referlabs.com.au/sitemap.xml
-
-# Crawl-delay for respectful crawling (optional)
-# User-agent: *
-# Crawl-delay: 1

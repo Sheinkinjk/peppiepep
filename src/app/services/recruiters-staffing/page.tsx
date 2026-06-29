@@ -10,7 +10,7 @@ const content = {
   heroTitle: "Enter Australia's HR & Recruitment Market",
   heroSubtitle:
     "We help overseas HR technology, ATS, payroll, and workforce management companies generate clients, agency partnerships, and distribution deals in Australia - without hiring locally.",
-  primaryCta: { label: "Book a Market Entry Call", href: calendlyUrl },
+  primaryCta: { label: "Partner With Us", href: calendlyUrl },
   whyAustralia:
     "Australia's HR and recruitment market is characterised by a strong agency sector, complex employment legislation (Fair Work Act, Modern Awards), and growing demand for workforce technology. Mid-market and enterprise companies are actively upgrading their HR tech stacks, and recruitment agencies are seeking tools that give them a competitive edge. Local compliance knowledge is essential for product positioning.",
   opportunities: [
@@ -37,7 +37,7 @@ const content = {
   ],
   ctaTitle: "Ready to Enter Australia's HR & Recruitment Market?",
   ctaDescription:
-    "Book a 15-minute call. We will discuss your product, the Australian HR technology landscape, and scope a 90-day pilot.",
+    "Book a 15-minute call. We will discuss your product, the Australian HR technology landscape, and scope the engagement.",
 };
 
 export default function RecruitersStaffingServicePage() {
