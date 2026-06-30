@@ -147,6 +147,12 @@ const sections = [
         desc: "250+ researched affiliate programs, personalised strategy brief, SEO page concepts, and distribution playbooks. $799 AUD, delivered in 48 hours.",
         tags: ["Blueprint", "Affiliate"],
       },
+      {
+        href: "/blog/best-affiliate-programs-australia-2026",
+        label: "Best Affiliate Programs Australia 2026",
+        desc: "High-commission and recurring affiliate programs for Australians — health, SaaS, fintech, and creator niches compared.",
+        tags: ["Affiliate", "Australia"],
+      },
     ],
   },
 ];
