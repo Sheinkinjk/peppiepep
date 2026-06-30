@@ -372,7 +372,6 @@ export default function MoshyLanding() {
               </p>
             </div>
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-              <a href="/moshy-vs-juniper" className="text-[#46524C] hover:text-[#0E7C66]">Moshy vs Juniper</a>
               <a href="/best-weight-loss-telehealth-australia" className="text-[#46524C] hover:text-[#0E7C66]">
                 Weight-loss telehealth
               </a>
