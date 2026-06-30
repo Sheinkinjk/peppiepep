@@ -145,10 +145,6 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "Simply click any button on this page. You will be taken directly to the Moshy eligibility page where you can complete the online questionnaire. No code needs to be entered manually - the referral is tracked through the link itself.",
     },
     {
-      q: "How much does Moshy cost in Australia?",
-      a: "Moshy operates on a subscription model and pricing depends on the treatment plan determined through the clinical consultation. Pricing is not publicly listed in full before completing the eligibility process. The most accurate current pricing is available through the Moshy eligibility flow itself. Reddit communities focused on Australian telehealth and GLP-1 treatments contain recent firsthand cost discussions.",
-    },
-    {
       q: "Does Moshy offer semaglutide or GLP-1 medications in Australia?",
       a: "Moshy can facilitate access to a clinical assessment with an Australian-registered practitioner who may, if clinically appropriate, prescribe GLP-1 medications. GLP-1 medications are prescription-only in Australia and access depends entirely on individual clinical suitability. Moshy does not advertise which specific medications are available prior to the consultation. This page does not constitute medical advice.",
     },
@@ -159,18 +155,6 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       q: "Is Moshy legit?",
       a: "Moshy is an Australian telehealth company that operates under Australian health service regulations and uses Australian-registered practitioners to review each eligibility submission. As with any health service, reviewing the Moshy website, their clinical process, and terms of service before proceeding is recommended. This page does not provide medical advice.",
-    },
-    {
-      q: "Is Moshy worth it?",
-      a: "Whether Moshy is worth the cost depends on individual eligibility, treatment outcomes, and value relative to alternatives. Community discussions in Australian Reddit communities reflect a range of experiences - outcomes vary significantly depending on clinical suitability and programme adherence. Completing the eligibility process is the most accurate way to assess whether Moshy's offering suits your situation.",
-    },
-    {
-      q: "Moshy vs Juniper - which is better?",
-      a: "Moshy is designed for men. Juniper is designed for women. Both are Australian GLP-1 telehealth platforms using a similar online eligibility and practitioner consultation model. Moshy focuses on the clinical treatment pathway; Juniper combines medication with a structured coaching programme. Suitability depends on individual health factors and which platform matches your profile - this is not a comparison that can be resolved at a general level.",
-    },
-    {
-      q: "What does Reddit say about Moshy?",
-      a: "Moshy is discussed in Australian Reddit communities including subreddits focused on weight management, telehealth, and GLP-1 treatments. The pattern in community discussions reflects what you would expect from any health intervention: experiences vary between individuals. Searching 'Moshy Reddit' or 'Moshy weight loss Reddit' will surface recent firsthand accounts from Australian users who have completed the eligibility process.",
     },
     {
       q: "What is Moshy's weight loss programme?",

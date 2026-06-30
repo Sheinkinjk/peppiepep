@@ -87,9 +87,9 @@ export default function MoshyLanding() {
               <span className="italic text-[#0E7C66]">explained properly</span> before you start.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#46524C]">
-              A clear, independent look at how Moshy actually works in Australia — the eligibility process, GLP-1 and
-              semaglutide access, what it costs, how it compares to Juniper, and what people say on Reddit. No hype, no
-              expired discount codes.
+              A clear, independent look at how Moshy actually works in Australia — what the service is, how the online
+              eligibility process runs, and how prescription GLP-1 access is handled. Information only, no hype, no expired
+              discount codes.
             </p>
 
             {/* Byline */}
@@ -168,8 +168,16 @@ export default function MoshyLanding() {
           ))}
         </section>
 
+        {/* ── Compliance notice ── */}
+        <p className="mt-8 rounded-xl border border-black/[0.07] bg-white px-5 py-4 text-xs leading-relaxed text-[#6B756F]">
+          <span className="font-semibold text-[#46524C]">Information only.</span> This page describes Moshy as a service
+          and is not medical advice. It does not recommend any treatment or imply suitability for any individual.
+          Prescription medicines in Australia are available only after assessment by a registered practitioner. Always
+          consult a qualified health professional before making any health decision.
+        </p>
+
         {/* ── Body grid: TOC + article ── */}
-        <div className="mt-16 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
+        <div className="mt-12 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
@@ -178,10 +186,6 @@ export default function MoshyLanding() {
                 {[
                   ["what", "What Moshy actually is"],
                   ["glp1", "GLP-1 & semaglutide"],
-                  ["cost", "What Moshy costs"],
-                  ["falls-short", "Where Moshy falls short"],
-                  ["juniper", "Moshy vs Juniper"],
-                  ["reddit", "Reviews & Reddit"],
                   ["start", "How to start"],
                   ["verdict", "The verdict"],
                   ["faq", "FAQ"],
@@ -229,21 +233,20 @@ export default function MoshyLanding() {
             {/* GLP-1 */}
             <section id="glp1" className="mt-12 scroll-mt-24">
               <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                GLP-1 &amp; semaglutide, honestly
+                GLP-1 &amp; semaglutide, the facts
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
                 <p>
-                  Most people land on Moshy because of GLP-1 medications — the class that includes semaglutide (the active
-                  ingredient in Ozempic and Wegovy), which regulates appetite and has produced clinically significant
-                  weight-loss results in trials.
+                  A lot of people reach Moshy while researching GLP-1 medications, the class that includes semaglutide. The
+                  most important fact to understand up front is a regulatory one, not a sales pitch.
                 </p>
                 <p>
-                  Here&apos;s the part the spammier pages skip: in Australia these are{" "}
-                  <strong className="font-semibold text-[#2B352F]">prescription-only</strong>. Moshy can connect you with a
-                  registered practitioner who may prescribe one <em>if</em> they judge it clinically appropriate after your
-                  assessment. No platform can promise you a specific medication before that consult, and you should be
-                  sceptical of any that implies otherwise. Searching &ldquo;Moshy semaglutide&rdquo; or &ldquo;Moshy
-                  Ozempic Australia&rdquo;? The honest starting point is the eligibility check.
+                  In Australia these medications are{" "}
+                  <strong className="font-semibold text-[#2B352F]">prescription-only</strong>. A platform like Moshy can
+                  connect you with a registered practitioner who may prescribe one <em>only if</em> they judge it clinically
+                  appropriate after assessing you individually. No platform can promise you a specific medication before that
+                  consultation — be cautious of any that implies otherwise. This is information, not medical advice or a
+                  recommendation to use any medicine.
                 </p>
               </div>
               <div className="mt-6 rounded-xl border border-[#0E7C66]/20 bg-[#0E7C66]/[0.05] p-5">
@@ -253,106 +256,6 @@ export default function MoshyLanding() {
                 <div className="mt-4">
                   <MoshyCTA label="Start the Moshy eligibility check" />
                 </div>
-              </div>
-            </section>
-
-            {/* Cost */}
-            <section id="cost" className="mt-12 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                What Moshy costs
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
-                <p>
-                  Moshy is a subscription, and there isn&apos;t one sticker price — the cost depends on the treatment plan
-                  your consult arrives at. The subscription typically covers practitioner oversight, ongoing check-ins, and
-                  delivery of any prescribed treatment.
-                </p>
-                <p>
-                  The only accurate way to see current pricing is to go through the eligibility flow, where costs are shown
-                  before you commit to anything. If you want a sanity check first, Australian Reddit threads on weight-loss
-                  telehealth are a good source of recent, real-world figures from people who&apos;ve just been through it.
-                </p>
-              </div>
-            </section>
-
-            {/* Where it falls short (honesty → legitimacy) */}
-            <section id="falls-short" className="mt-12 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                Where Moshy falls short
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
-                <p>
-                  It&apos;s a subscription, and the cost is ongoing — fair if you value the convenience and the practitioner
-                  follow-up, less so if you&apos;re comfortable managing a GP script and pharmacy refills yourself, which can
-                  work out cheaper over a year.
-                </p>
-                <p>
-                  It&apos;s also built for the straightforward case. An online questionnaire is the wrong front door for
-                  anything unusual or urgent about your health — that&apos;s a doctor, in person. And like most
-                  subscriptions, leaving takes a few steps rather than one click. None of this makes Moshy a bad service;
-                  it makes it a convenience-and-supervision play that&apos;s worth paying for only if you genuinely want those
-                  two things. We&apos;d rather you know that up front than find out after you subscribe.
-                </p>
-              </div>
-            </section>
-
-            {/* Juniper */}
-            <section id="juniper" className="mt-12 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                Moshy vs Juniper
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
-                <p>
-                  These are Australia&apos;s two most-compared weight-loss telehealth platforms, and the cleanest way to
-                  split them is: <strong className="font-semibold text-[#2B352F]">Moshy is for men, Juniper is for women</strong>.
-                  Beyond that, Moshy keeps things lean and clinical; Juniper wraps medication inside a structured coaching
-                  and community program.
-                </p>
-              </div>
-              <div className="mt-5 overflow-hidden rounded-xl border border-black/[0.08]">
-                <table className="w-full text-sm">
-                  <tbody>
-                    {[
-                      ["Designed for", "Men", "Women"],
-                      ["Style", "Lean, clinical pathway", "Medication + coaching"],
-                      ["GLP-1 access", "If eligible", "If eligible"],
-                    ].map(([k, m, j], i) => (
-                      <tr key={k} className={i === 0 ? "" : "border-t border-black/[0.06]"}>
-                        <td className="bg-black/[0.02] px-4 py-3 font-medium text-[#6B756F]">{k}</td>
-                        <td className="px-4 py-3 font-semibold text-[#16201C]">{m}</td>
-                        <td className="px-4 py-3 text-[#46524C]">{j}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-4 text-sm">
-                <a
-                  href="/moshy-vs-juniper"
-                  className="font-semibold text-[#0E7C66] underline decoration-[#0E7C66]/30 underline-offset-4 hover:decoration-[#0E7C66]"
-                >
-                  Read the full Moshy vs Juniper breakdown →
-                </a>
-              </p>
-            </section>
-
-            {/* Reddit */}
-            <section id="reddit" className="mt-12 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                Reviews &amp; what Reddit says
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
-                <p>
-                  Wanting firsthand accounts before handing over card details to a health service is the right instinct.
-                  Moshy comes up across Australian subreddits on weight loss, GLP-1, and telehealth, and the pattern is what
-                  you&apos;d expect: experiences vary with clinical suitability and how consistently people stick with the
-                  program.
-                </p>
-                <p>
-                  Positive reviews tend to praise the convenience and the quality of practitioner communication. Critical
-                  ones usually centre on subscription cost relative to results, or being screened out at eligibility.
-                  Reading a few current threads before you commit is a sensible step — and one we&apos;d encourage.
-                </p>
               </div>
             </section>
 
@@ -391,12 +294,10 @@ export default function MoshyLanding() {
                   The verdict
                 </h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#46524C]">
-                  For Australian men who want a credible, low-friction way to start a clinically-supervised weight
-                  program, Moshy is a legitimate front door. The online process is genuinely fast, the practitioner review
-                  is real, and the transparency around eligibility and prescription-only medication is reassuring rather
-                  than salesy. The honest caveats are the same as any subscription health service: cost depends on your
-                  plan, and results depend on you. If that fits, the eligibility check is the place to find out where you
-                  stand.
+                  As a service, Moshy is a credible, well-run option: the online process is genuinely fast, the
+                  practitioner review is real, and it is transparent that any prescription medication is prescription-only
+                  and assessed individually. Whether it is appropriate for you is a decision for you and a registered
+                  practitioner — this page is information about the service, not medical advice.
                 </p>
                 <ul className="mt-5 space-y-2">
                   {[
