@@ -398,6 +398,18 @@ export default function BestWebsiteBuilderPage() {
             </nav>
           </section>
 
+          {/* ── Quick Verdict (answer-first, GEO) ─────────────────────────────── */}
+          <section className="pb-2">
+            <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
+                Quick Verdict
+              </p>
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl">
+                For a fast, permanent site at the lowest cost, Carrd is the pick — free forever and live within an hour. For an AI-built business website, Durable AI (with built-in CRM and invoicing) or Butternut AI (a full multi-page site in about 20 seconds) lead. Swipe Pages is a different category: AMP landing pages built for paid-ad campaigns, not a general website builder.
+              </p>
+            </div>
+          </section>
+
           {/* ── Quick picks table ─────────────────────────────────────────────── */}
           <section className="border-t border-white/[0.06] py-8">
             <div className="overflow-x-auto -mx-2 px-2">

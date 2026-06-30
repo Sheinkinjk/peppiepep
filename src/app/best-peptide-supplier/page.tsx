@@ -371,6 +371,18 @@ export default function BestPeptideSupplierPage() {
             </nav>
           </section>
 
+          {/* ── Quick Verdict (answer-first, GEO) ─────────────────────────────── */}
+          <section className="pb-2">
+            <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
+                Quick Verdict
+              </p>
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl">
+                Apollo Peptide Sciences has the broadest catalogue, Ascension Peptides is cited most consistently for purity and COA documentation, and BioPeptiTech runs the most frequent sale events. All three are for laboratory research use only and are not approved for human or veterinary use.
+              </p>
+            </div>
+          </section>
+
           {/* ── Quick picks table ─────────────────────────────────────────────── */}
           <section className="border-t border-white/[0.06] py-8">
             <div className="overflow-x-auto -mx-2 px-2">

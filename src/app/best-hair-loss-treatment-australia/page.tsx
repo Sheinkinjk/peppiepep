@@ -271,6 +271,16 @@ export default function BestHairLossTreatmentAustraliaPage() {
           </div>
         </div>
 
+        {/* Quick Verdict (answer-first, GEO) */}
+        <div className="mb-16 sm:mb-20 max-w-3xl rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
+            Quick Verdict
+          </p>
+          <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+            For prescription hair-loss treatment in Australia (finasteride and minoxidil), Mosh is the most accessible telehealth option — online consultation, practitioner review, and delivery. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
+          </p>
+        </div>
+
         {/* Overview */}
         <section id="comparison" className="border-t border-[#0AA7B5]/10 py-12 sm:py-14">
           <h2 className="text-xl sm:text-2xl font-black text-white mb-5">The Landscape: Clinical vs Topical</h2>

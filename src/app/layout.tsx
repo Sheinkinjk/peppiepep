@@ -10,6 +10,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
 import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@/components/Analytics";
+import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,6 +72,7 @@ export default function RootLayout({
         <GoogleTagManager />
         <MetaPixel />
         <LinkedInInsight />
+        <AffiliateClickTracker />
         <div className="relative z-10 flex min-h-screen flex-col">
           <StickyHeader />
           <div className="flex-1">{children}</div>

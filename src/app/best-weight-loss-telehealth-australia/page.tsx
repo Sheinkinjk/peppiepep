@@ -380,6 +380,18 @@ export default function BestWeightLossTelehealthPage() {
             </nav>
           </section>
 
+          {/* ── Quick Verdict (answer-first, GEO) ─────────────────────────────── */}
+          <section className="pb-2">
+            <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
+                Quick Verdict
+              </p>
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl">
+                Moshy (men only) and Juniper (women only) are Australia&apos;s leading GLP-1 weight-management telehealth platforms; Better Being suits people of either gender who want a more holistic, lifestyle-first program. Eligibility and suitability are assessed individually by each platform&apos;s clinical team — this page does not constitute medical advice.
+              </p>
+            </div>
+          </section>
+
           {/* ── Quick comparison table ─────────────────────────────────────────── */}
           <section className="border-t border-white/[0.06] py-8">
             <div className="overflow-x-auto -mx-2 px-2">
