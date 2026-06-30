@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import AffiliatePageTemplate from "@/components/affiliate/AffiliatePageTemplate";
+import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import { beehiivConfig } from "./config";
 
 export const metadata = generateSEOMetadata(seoConfig.beehiiv);
@@ -103,7 +103,7 @@ export default function BeehiivPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
-      <AffiliatePageTemplate config={beehiivConfig} />
+      <PremiumAffiliateLanding config={beehiivConfig} />
     </>
   );
 }

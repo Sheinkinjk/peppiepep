@@ -17,6 +17,24 @@ export const butternutConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Butternut AI",
   },
 
+  eyebrow: "AI website builder · 2026",
+  rating: "4.4",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "AI website generator" },
+    { k: "Best for", v: "Instant full-site first drafts" },
+    { k: "Speed", v: "Full multi-page site in ~20 seconds" },
+    { k: "Start", v: "Free to try, no account" },
+  ],
+  trustStrip: [
+    "Full site in ~20 seconds",
+    "Generated from one prompt",
+    "Free to try, no account",
+    "Strong first-draft engine",
+  ],
+  verdict:
+    "Butternut AI is the fastest way to a complete multi-page first draft from a single prompt. Treat it as a strong starting point you then edit, rather than a finished, ready-to-ship site.",
+
   hero: {
     h1Prefix: "Butternut AI Review & Free Trial:",
     h1Highlight: "Build a Website in 20 Seconds With AI",

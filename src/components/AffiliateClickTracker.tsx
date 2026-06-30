@@ -33,6 +33,9 @@ export function AffiliateClickTracker() {
         destination_url: link.href,
         destination_host: destinationHost,
         link_text: (link.textContent || "").trim().slice(0, 80),
+        // Placement of the CTA that was clicked (data-cta), e.g. "hero",
+        // "verdict", "mobile-sticky" — lets you see which positions convert.
+        cta_location: link.getAttribute("data-cta") || "inline",
         page_path: window.location.pathname,
         // GA4 recommended ecommerce-style fields for easier reporting
         event_category: "affiliate",

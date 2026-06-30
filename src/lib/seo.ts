@@ -887,6 +887,25 @@ export const seoConfig = {
     ],
   },
 
+  carrdVsDurable: {
+    title: "Carrd vs Durable AI 2026: Which Website Builder Should You Use? | Refer Labs",
+    description:
+      "Carrd vs Durable AI compared for 2026 — Carrd is the cheapest one-page builder; Durable AI generates a full business site with CRM in 30 seconds. Pricing, AI, free plans, and which to pick.",
+    url: `${SITE_URL}/carrd-vs-durable`,
+    keywords: [
+      "carrd vs durable",
+      "carrd vs durable ai",
+      "carrd vs durable 2026",
+      "durable vs carrd",
+      "best cheap website builder 2026",
+      "ai website builder vs carrd",
+      "carrd alternative",
+      "durable ai alternative",
+      "one page website builder vs ai website builder",
+      "cheapest website builder 2026",
+    ],
+  },
+
   comparisonWebsite: {
     title: "Australia's Curated Health & Performance Comparison Platform | Refer Labs",
     description:

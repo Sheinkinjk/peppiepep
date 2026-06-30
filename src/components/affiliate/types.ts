@@ -49,6 +49,24 @@ export interface AffiliatePageConfig {
    */
   lastReviewed?: string;
 
+  // ── Optional fields used by the premium standalone landing template ──────────
+  /** Small eyebrow above the H1, e.g. "Weight-loss telehealth · Australia · 2026" */
+  eyebrow?: string;
+  /** Editorial rating shown in the at-a-glance card and verdict, e.g. "4.4" */
+  rating?: string;
+  /** Read-time label, e.g. "6 min read" */
+  readTime?: string;
+  /** Scannable "at a glance" facts shown in the hero sidebar card */
+  atAGlance?: { k: string; v: string }[];
+  /** Trust-strip items shown under the hero */
+  trustStrip?: string[];
+  /** Editorial verdict paragraph (the "bottom line") */
+  verdict?: string;
+  /** Verdict supporting bullets */
+  verdictPoints?: string[];
+  /** Optional pull-quote rendered in the body */
+  pullQuote?: string;
+
   hero: {
     /** Full H1 text before the highlighted span */
     h1Prefix: string;

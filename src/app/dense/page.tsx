@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import AffiliatePageTemplate from "@/components/affiliate/AffiliatePageTemplate";
+import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import { denseConfig } from "./config";
 
 export const metadata = generateSEOMetadata(seoConfig.dense);
@@ -119,7 +119,7 @@ export default function DensePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
-      <AffiliatePageTemplate config={denseConfig} />
+      <PremiumAffiliateLanding config={denseConfig} />
     </>
   );
 }

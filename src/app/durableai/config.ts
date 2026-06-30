@@ -17,6 +17,24 @@ export const durableAiConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Durable AI",
   },
 
+  eyebrow: "AI website builder · 2026",
+  rating: "4.5",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "AI website builder" },
+    { k: "Best for", v: "Service businesses, solo operators" },
+    { k: "Extras", v: "CRM, invoicing, Google Business" },
+    { k: "Start", v: "Free to try, no account" },
+  ],
+  trustStrip: [
+    "Website in ~30 seconds",
+    "Built-in CRM & invoicing",
+    "Free to try, no account",
+    "Built for service businesses",
+  ],
+  verdict:
+    "Durable AI is the strongest pick for service businesses that want a working site plus light back-office tools fast. The 30-second generation is real; you will still want to refine the copy and branding afterwards.",
+
   hero: {
     h1Prefix: "Durable AI Review:",
     h1Highlight: "Build a Business Website With AI in 30 Seconds",

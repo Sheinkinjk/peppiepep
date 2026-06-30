@@ -17,6 +17,24 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
     buttonLabel: "View BioPeptiTech Peptides Sale",
   },
 
+  eyebrow: "Research peptides · For research use only",
+  rating: "4.4",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "Research peptide supplier" },
+    { k: "Focus", v: "Lab-grade compounds" },
+    { k: "Offers", v: "Frequent sale events" },
+    { k: "Discount", v: "Applied automatically via the link" },
+  ],
+  trustStrip: [
+    "Lab-grade compounds",
+    "Frequent sale events",
+    "Discount via referral link",
+    "For research use only",
+  ],
+  verdict:
+    "BioPeptiTech runs the most frequent sales of the suppliers we track, so it is worth checking for a current offer. Strictly for laboratory research use only; not for human or veterinary use.",
+
   hero: {
     h1Prefix: "BioPeptiTech",
     h1Highlight: "Peptides Sale & Research Peptide Discounts",

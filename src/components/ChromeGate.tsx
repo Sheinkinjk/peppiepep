@@ -8,7 +8,20 @@ import { usePathname } from "next/navigation";
  *
  * Add a path here to make it a chrome-free, standalone page.
  */
-const STANDALONE_ROUTES = ["/moshy"];
+const STANDALONE_ROUTES = [
+  "/moshy",
+  "/moshhair",
+  "/dense",
+  "/apollopeptides",
+  "/ascensionpeptides",
+  "/biopeptitech",
+  "/carrd",
+  "/durableai",
+  "/butternut",
+  "/swipepages",
+  "/beehiiv",
+  "/incomelab",
+];
 
 export function ChromeGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || "/";

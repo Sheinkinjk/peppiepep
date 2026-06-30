@@ -17,6 +17,24 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
     buttonLabel: "View Ascension Peptides Sale",
   },
 
+  eyebrow: "Research peptides · For research use only",
+  rating: "4.5",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "Research peptide supplier" },
+    { k: "Focus", v: "High-purity compounds" },
+    { k: "Use", v: "Laboratory research only" },
+    { k: "Discount", v: "Applied automatically via the link" },
+  ],
+  trustStrip: [
+    "High-purity focus",
+    "COA documentation",
+    "Discount via referral link",
+    "For research use only",
+  ],
+  verdict:
+    "Ascension Peptides is cited most consistently for purity and COA documentation. Strictly for laboratory research use only; not for human or veterinary use.",
+
   hero: {
     h1Prefix: "Ascension Peptides",
     h1Highlight: "Research Peptides Sale & Current Discount Access",

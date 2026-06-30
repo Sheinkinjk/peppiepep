@@ -17,6 +17,24 @@ export const swipePagesConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Swipe Pages",
   },
 
+  eyebrow: "Landing page builder · 2026",
+  rating: "4.5",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "AMP landing page builder" },
+    { k: "Best for", v: "Paid-ad campaigns" },
+    { k: "Speed", v: "Sub-1-second AMP pages" },
+    { k: "Trial", v: "14 days, no credit card" },
+  ],
+  trustStrip: [
+    "AMP pages load under 1s",
+    "A/B testing built in",
+    "14-day free trial, no card",
+    "Built for paid ads",
+  ],
+  verdict:
+    "Swipe Pages is a specialist tool: if you run paid ads and care about load speed and conversion, its AMP pages are a genuine edge. It is not meant to be a general-purpose website builder.",
+
   hero: {
     h1Prefix: "Swipe Pages Review & Free Trial:",
     h1Highlight: "The Fastest Landing Page Builder for Paid Ads",

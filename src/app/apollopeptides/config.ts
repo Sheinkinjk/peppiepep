@@ -17,6 +17,24 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     buttonLabel: "View Apollo Peptide Sciences Sale",
   },
 
+  eyebrow: "Research peptides · For research use only",
+  rating: "4.6",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "Research peptide supplier" },
+    { k: "Catalogue", v: "Broad — incl. semaglutide, CJC-1295, GHK-Cu" },
+    { k: "Use", v: "Laboratory research only" },
+    { k: "Discount", v: "Applied automatically via the link" },
+  ],
+  trustStrip: [
+    "Broad research catalogue",
+    "COA documentation",
+    "Discount via referral link",
+    "For research use only",
+  ],
+  verdict:
+    "Apollo Peptide Sciences stands out for catalogue breadth and is a common starting point for researchers. All products are strictly for laboratory research use only and are not for human or veterinary use.",
+
   hero: {
     h1Prefix: "Apollo Peptide Sciences",
     h1Highlight: "Current Peptides Sale & Discount Access",

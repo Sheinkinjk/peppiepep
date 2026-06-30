@@ -17,6 +17,24 @@ export const carrdConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Carrd",
   },
 
+  eyebrow: "Website builder · 2026",
+  rating: "4.7",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "One-page website builder" },
+    { k: "Best for", v: "Portfolios, link-in-bio, simple sites" },
+    { k: "Price", v: "Free; Pro from $9/year" },
+    { k: "Start", v: "Free, no credit card" },
+  ],
+  trustStrip: [
+    "Free plan forever",
+    "Pro from $9/year",
+    "Live in under an hour",
+    "No credit card to start",
+  ],
+  verdict:
+    "Carrd is the best value in simple websites — genuinely free to start and cheap to upgrade. It is the right pick for a one-page site, portfolio, or link-in-bio, but not for a large multi-page business site.",
+
   hero: {
     h1Prefix: "Carrd Review & Free Trial:",
     h1Highlight: "The Simple Website Builder That Actually Works",

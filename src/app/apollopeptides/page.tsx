@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import AffiliatePageTemplate from "@/components/affiliate/AffiliatePageTemplate";
+import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import { apolloPeptidesConfig } from "./config";
 import Link from "next/link";
 
@@ -96,7 +96,7 @@ export default function ApolloPeptidesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
-      <AffiliatePageTemplate config={apolloPeptidesConfig} />
+      <PremiumAffiliateLanding config={apolloPeptidesConfig} />
       <div className="bg-[#060f15] border-t border-white/[0.06] py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           <p className="text-white/25 text-xs mb-1.5">Compare research peptide suppliers</p>

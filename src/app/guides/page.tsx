@@ -129,6 +129,12 @@ const sections = [
         desc: "Swipe Pages review 2026. AMP landing pages under 1 second load time. 14-day free trial.",
         tags: ["Landing Pages"],
       },
+      {
+        href: "/carrd-vs-durable",
+        label: "Carrd vs Durable AI — Head to Head",
+        desc: "Cheapest one-page builder vs AI-built business site with CRM. Pricing, AI, and which to pick.",
+        tags: ["Website Builders"],
+      },
     ],
   },
   {

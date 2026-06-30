@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import AffiliatePageTemplate from "@/components/affiliate/AffiliatePageTemplate";
+import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import { moshHairConfig } from "./config";
 
 export const metadata = generateSEOMetadata(seoConfig.moshHair);
@@ -99,7 +99,7 @@ export default function MoshHairPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
-      <AffiliatePageTemplate config={moshHairConfig} />
+      <PremiumAffiliateLanding config={moshHairConfig} />
     </>
   );
 }

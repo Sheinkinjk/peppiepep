@@ -17,6 +17,33 @@ export const moshHairConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Mosh",
   },
 
+  eyebrow: "Hair-loss telehealth · Australia · 2026",
+  rating: "4.4",
+  readTime: "6 min read",
+  atAGlance: [
+    { k: "What it is", v: "Australian men's hair-loss telehealth" },
+    { k: "For", v: "Men with thinning or male-pattern hair loss" },
+    { k: "Treatments", v: "Finasteride & minoxidil, if eligible" },
+    { k: "Format", v: "Online consult → practitioner review → delivery" },
+    { k: "Pricing", v: "Subscription, confirmed in the consult" },
+    { k: "Discount code", v: "None needed — referral via the link" },
+  ],
+  trustStrip: [
+    "AHPRA-registered practitioners",
+    "Online consult — no GP visit to start",
+    "Subscription with home delivery",
+    "No code — referral via the link",
+  ],
+  pullQuote:
+    "Hair-loss treatment works best early and consistently — the real value of telehealth is removing the friction that delays men for years.",
+  verdict:
+    "For Australian men who want a credible, low-friction route to clinically-supervised hair-loss treatment, Mosh is a legitimate starting point. The online consult is fast, finasteride and minoxidil are prescribed only after a genuine practitioner review, and pricing is clear before you commit. As with any subscription health service, results and value come down to consistency and your individual case.",
+  verdictPoints: [
+    "Fast online consult — no in-person GP appointment to begin",
+    "Access to finasteride and minoxidil, the most evidence-backed treatments",
+    "Practitioner-reviewed; eligibility is assessed individually",
+  ],
+
   hero: {
     h1Prefix: "Mosh Hair Loss Australia:",
     h1Highlight: "Access the Current Offer",

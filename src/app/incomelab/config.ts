@@ -17,6 +17,24 @@ export const incomeLabConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Income Lab",
   },
 
+  eyebrow: "AI income · 2026",
+  rating: "4.5",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "AI side-hustle platform" },
+    { k: "Best for", v: "Starting an AI income stream" },
+    { k: "Approach", v: "Frameworks + tool selection" },
+    { k: "Access", v: "Via referral link" },
+  ],
+  trustStrip: [
+    "Framework-first approach",
+    "Covers tools & offers",
+    "For AI income beginners",
+    "Access via referral link",
+  ],
+  verdict:
+    "IncomeLab suits people who want a structured path from 'AI curiosity' to an actual income stream, rather than scattered tutorials. As with anything in this space, results depend on the effort you put in.",
+
   hero: {
     h1Prefix: "AI Side Hustle Ideas:",
     h1Highlight: "How to Make Money With AI in 2026",

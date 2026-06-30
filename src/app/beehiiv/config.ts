@@ -17,6 +17,24 @@ export const beehiivConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to beehiiv",
   },
 
+  eyebrow: "Newsletter platform · 2026",
+  rating: "4.8",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "Newsletter platform" },
+    { k: "Best for", v: "Growing & monetising an audience" },
+    { k: "Free", v: "Up to 2,500 subscribers" },
+    { k: "Extras", v: "Ad network, referrals, paid subs" },
+  ],
+  trustStrip: [
+    "Free up to 2,500 subscribers",
+    "Built-in ad network",
+    "Referral program included",
+    "14-day trial of paid features",
+  ],
+  verdict:
+    "beehiiv is the strongest platform for creators serious about growing and monetising a newsletter. The ad network, referral engine, and paid subscriptions are built in, not bolt-ons. Substack is fine to start, but beehiiv pulls ahead at scale.",
+
   hero: {
     h1Prefix: "beehiiv Review & 14-Day Trial:",
     h1Highlight: "The Newsletter Platform Built for Growth",

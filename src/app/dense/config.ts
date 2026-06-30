@@ -17,6 +17,24 @@ export const denseConfig: AffiliatePageConfig = {
     buttonLabel: "Shop Dense Hair Experts",
   },
 
+  eyebrow: "Hair care · Australia",
+  rating: "4.2",
+  readTime: "5 min read",
+  atAGlance: [
+    { k: "What it is", v: "Australian topical hair-density products" },
+    { k: "For", v: "Early thinning, density & scalp health" },
+    { k: "Type", v: "Non-prescription topical range" },
+    { k: "Discount code", v: "None needed — referral via the link" },
+  ],
+  trustStrip: [
+    "Australian-formulated",
+    "Non-prescription topical",
+    "Shop online, delivered",
+    "No code — referral via the link",
+  ],
+  verdict:
+    "Dense Hair Experts is a reasonable non-prescription option for men focused on density and scalp health, used consistently as part of a routine. For active or progressive hair loss, a telehealth provider that can prescribe finasteride or minoxidil is the stronger first step.",
+
   hero: {
     h1Prefix: "Dense Discount Code Australia:",
     h1Highlight: "Access the Current Offer",
