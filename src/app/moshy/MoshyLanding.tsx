@@ -179,6 +179,7 @@ export default function MoshyLanding() {
                   ["what", "What Moshy actually is"],
                   ["glp1", "GLP-1 & semaglutide"],
                   ["cost", "What Moshy costs"],
+                  ["falls-short", "Where Moshy falls short"],
                   ["juniper", "Moshy vs Juniper"],
                   ["reddit", "Reviews & Reddit"],
                   ["start", "How to start"],
@@ -270,6 +271,27 @@ export default function MoshyLanding() {
                   The only accurate way to see current pricing is to go through the eligibility flow, where costs are shown
                   before you commit to anything. If you want a sanity check first, Australian Reddit threads on weight-loss
                   telehealth are a good source of recent, real-world figures from people who&apos;ve just been through it.
+                </p>
+              </div>
+            </section>
+
+            {/* Where it falls short (honesty → legitimacy) */}
+            <section id="falls-short" className="mt-12 scroll-mt-24">
+              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
+                Where Moshy falls short
+              </h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
+                <p>
+                  It&apos;s a subscription, and the cost is ongoing — fair if you value the convenience and the practitioner
+                  follow-up, less so if you&apos;re comfortable managing a GP script and pharmacy refills yourself, which can
+                  work out cheaper over a year.
+                </p>
+                <p>
+                  It&apos;s also built for the straightforward case. An online questionnaire is the wrong front door for
+                  anything unusual or urgent about your health — that&apos;s a doctor, in person. And like most
+                  subscriptions, leaving takes a few steps rather than one click. None of this makes Moshy a bad service;
+                  it makes it a convenience-and-supervision play that&apos;s worth paying for only if you genuinely want those
+                  two things. We&apos;d rather you know that up front than find out after you subscribe.
                 </p>
               </div>
             </section>

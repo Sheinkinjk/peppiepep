@@ -45,16 +45,16 @@ export const moshHairConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "Mosh Hair Loss Australia:",
-    h1Highlight: "Access the Current Offer",
+    h1Prefix: "Mosh hair loss in Australia,",
+    h1Highlight: "honestly reviewed",
     subheading:
-      "Looking for a Mosh hair discount code, promo code, or the current Mosh sale? This page covers Mosh cost and pricing, finasteride and minoxidil access, Mosh vs Dense, reviews, and takes you directly to the official Mosh sign-up page via our referral link.",
+      "If you're searching for a Mosh discount code or weighing up whether Mosh is worth it, here's the part most pages skip: what Mosh actually prescribes, what it really costs, how it compares to a GP and to topical brands like Dense, and where it falls short — before you hand over any details.",
     trustBullets: [
-      "Access the current Mosh referral link - no code required",
-      "Covers Mosh cost, pricing, and subscription model",
-      "Finasteride and minoxidil access explained",
-      "Online consultation - no in-person visit required",
-      "Practitioner-reviewed treatment options",
+      "What Mosh prescribes — finasteride and minoxidil, explained",
+      "Real talk on cost and the subscription model",
+      "Where Mosh falls short (yes, we say it)",
+      "Online consult, reviewed by a registered practitioner",
+      "No code needed — the referral applies through the link",
     ],
   },
 
@@ -69,57 +69,53 @@ export const moshHairConfig: AffiliatePageConfig = {
       ctaText: "Access the Mosh Referral Link",
     },
     {
-      heading: "What Is Mosh?",
+      heading: "What Mosh actually is",
       paragraphs: [
-        "Mosh is an Australian online telehealth platform focused on men's health, including hair loss treatment. The platform is designed for men who want to explore clinically supervised treatment options from home, without needing an in-person GP appointment to get started.",
-        "The process begins with an online consultation where users answer questions about their hair loss history, health background, and goals. Mosh's practitioners then review each case individually and, where appropriate, can discuss treatment options suited to that person.",
-        "Mosh operates as a subscription-based service, meaning treatments are managed and delivered on an ongoing basis. Pricing, available treatments, and subscription terms are detailed on the Mosh website.",
+        "Mosh is an Australian men's-health telehealth service, and hair loss is one of its core categories. You fill in a questionnaire and upload a couple of photos, a registered Australian practitioner reviews your case, and — if it's appropriate — you're put on a subscription with treatment posted to your door. No waiting room, no GP appointment to get started.",
+        "What makes it more than a vending machine is the review step. Not everyone who applies gets a script; the practitioner can decline or redirect you, which is exactly what you'd want a prescriber to do. The trade-off is that it's built for the common case — straightforward male-pattern thinning — rather than complex or unusual hair loss, where an in-person specialist is the better call.",
       ],
       disclaimer:
-        "This page does not constitute medical advice. Hair loss treatments vary in suitability depending on the individual. Speak with a qualified health professional before starting any treatment. Review all information provided on the Mosh platform before proceeding.",
+        "This page is informational and not medical advice. Hair-loss treatment suitability depends on the individual — speak with a qualified health professional before starting anything.",
     },
     {
-      heading: "Mosh Hair Loss Treatments",
+      heading: "What Mosh prescribes: finasteride & minoxidil",
       paragraphs: [
-        "Mosh focuses on clinically supervised hair loss treatments for men in Australia. Their platform is commonly associated with evidence-based options for androgenetic alopecia (male pattern hair loss), which is the most common form of hair loss in men.",
-        "The treatments available through Mosh are determined by their practitioners on a case-by-case basis following the online consultation. Not every person who completes the process will be prescribed or recommended a treatment - eligibility depends on the individual's health profile and medical history.",
-        "For Australians researching hair loss treatment options, Mosh offers a convenient starting point - completing the online consultation takes only a few minutes and does not require leaving the house.",
-      ],
-    },
-    {
-      heading: "Finasteride & Minoxidil",
-      paragraphs: [
-        "The two most evidence-backed treatments for male pattern hair loss (androgenetic alopecia) are finasteride and minoxidil. Finasteride is an oral prescription medicine that reduces DHT, the hormone most associated with hereditary hair loss. Minoxidil is available as a topical solution or, increasingly, as a low-dose oral treatment, and works by extending the growth phase of the hair follicle. Both are commonly searched alongside Mosh by Australians researching online hair loss treatment.",
-        "In Australia, finasteride is prescription-only and oral minoxidil requires a prescription, while topical minoxidil is available over the counter. Telehealth platforms like Mosh let you complete an online consultation and photo assessment that is reviewed by a registered Australian practitioner, who can prescribe finasteride or minoxidil where clinically appropriate. Many users are prescribed a combination, as the two treatments target hair loss through different mechanisms.",
-        "If you are searching for 'finasteride Australia online', 'minoxidil Australia', or 'Mosh finasteride' - the starting point is the Mosh online consultation. Treatment is determined individually following practitioner review; nothing is prescribed automatically.",
+        "Two treatments do most of the heavy lifting for male-pattern hair loss, and Mosh is built around both. Finasteride is an oral medicine that lowers DHT, the hormone that shrinks follicles in hereditary hair loss — it's the one that slows and often halts the loss. Minoxidil (topical, or increasingly low-dose oral) works on a different lever, extending the growth phase of the follicle, which is why a lot of men end up on the two together.",
+        "The regulatory reality in Australia: finasteride and oral minoxidil are prescription-only; topical minoxidil you can buy over the counter. Mosh's value is that the online consult and photo review can lead to a finasteride or minoxidil script without an in-person visit — when the practitioner judges it appropriate. Nothing is dispensed automatically, and that's the point.",
+        "If you've been Googling 'finasteride Australia online' or 'Mosh finasteride', the honest answer is that the consult is the only way to know what you'd be offered. It's a few minutes and commits you to nothing.",
       ],
       hasCta: true,
-      ctaText: "Start the Mosh Consultation",
+      ctaText: "Start the Mosh consultation",
       disclaimer:
-        "Finasteride and oral minoxidil are prescription-only in Australia. Access depends on individual clinical assessment by a registered Australian practitioner. This page does not constitute medical advice.",
+        "Finasteride and oral minoxidil are prescription-only in Australia and depend on assessment by a registered practitioner. Not medical advice.",
     },
     {
-      heading: "Mosh Cost & Pricing",
+      heading: "What Mosh really costs",
       paragraphs: [
-        "Mosh operates on a subscription model, so the cost of a Mosh hair loss programme depends on the specific treatment plan determined through the online consultation. Pricing typically covers practitioner oversight, the prescribed treatment itself, and ongoing home delivery, billed on a recurring basis.",
-        "Because the treatment pathway varies by individual - finasteride only, minoxidil only, or a combination - there is no single fixed price. The most accurate way to see current Mosh pricing is to complete the online consultation, where costs are presented transparently before any subscription commitment is made.",
-        "Australians searching 'how much does Mosh cost', 'Mosh hair loss price', or 'Mosh subscription cost' will also find recent firsthand figures in Australian Reddit communities focused on hair loss and telehealth. These threads are a useful sense-check alongside the pricing shown in the Mosh consultation flow.",
+        "There's no single Mosh price, and any page quoting you one exact figure is guessing. It's a subscription, and what you pay tracks the plan your consult lands on — finasteride alone is cheaper than a finasteride-plus-minoxidil combination, and the fee bundles the medication, the practitioner oversight, and delivery.",
+        "The useful way to think about it: it's priced like an ongoing treatment, not a one-off purchase, because that's what hair-loss treatment is — stop and the benefit fades. You'll see the actual numbers in the consult before you commit to anything, and Australian hair-loss threads on Reddit are a good reality-check on what men are paying month to month right now.",
       ],
     },
     {
-      heading: "Mosh vs Other Hair Loss Options",
+      heading: "Where Mosh falls short",
       paragraphs: [
-        "Mosh is one of several Australian telehealth and hair care options. Compared with topical-only brands such as Dense Hair Experts, Mosh's key difference is prescription access - it can facilitate finasteride and minoxidil through a registered practitioner, which addresses the underlying hormonal driver of male pattern baldness rather than only supporting scalp and hair condition.",
-        "Compared with booking a regular GP for a hair loss script, Mosh offers a faster, fully online pathway - questionnaire, photo assessment, practitioner review, and delivery to your door, without an in-person appointment. Some people prefer the convenience of telehealth; others prefer the continuity of a regular GP. Both are valid.",
-        "For a full side-by-side of the Australian hair loss landscape - clinical telehealth versus topical products, pricing, and the community verdict - see our Best Hair Loss Treatment Australia comparison, linked at the foot of this page.",
+        "It's a subscription, so the cost is ongoing and it adds up — fair if you value the convenience and follow-up, less so if you're disciplined enough to manage a GP script and generic pharmacy refills yourself, which can be cheaper over a year.",
+        "It's also built for the typical case. If your hair loss is patchy, sudden, or doesn't fit male-pattern baldness, an online questionnaire is the wrong front door — see a doctor in person. And like any subscription, the friction is on the way out: cancelling takes a few steps rather than one click. None of this makes Mosh a bad service; it makes it a convenience-and-supervision play, which is worth paying for only if you actually value those two things.",
       ],
     },
     {
-      heading: "Mosh Reviews & Reddit",
+      heading: "Mosh vs a GP vs topical brands",
       paragraphs: [
-        'Many Australians searching for "Mosh Reddit", "Mosh hair loss review", or "Mosh review Australia" are looking for honest user experiences before committing to the platform. This is a reasonable approach - reading community discussions and third-party perspectives is a sensible step before starting any health treatment.',
-        "Mosh has been discussed across Australian Reddit communities, particularly in threads related to men's hair loss, minoxidil use, and telehealth services. Experiences vary between users, as they do with any health platform, and results from hair loss treatments depend on many individual factors.",
-        "This page links directly to the Mosh sign-up page so you can explore the platform and its consultation process for yourself. Reviewing the Mosh website, their FAQs, and any applicable terms before starting is recommended.",
+        "Against a topical-only brand like Dense Hair Experts, the difference is category, not quality: Dense is non-prescription scalp and density care, while Mosh can prescribe the medicines that act on the cause of the loss. Early or mild thinning can do well on topicals; active, progressing loss usually needs the prescription route.",
+        "Against your own GP, Mosh trades continuity for speed. A GP knows your history and may be cheaper; Mosh is faster, fully online, and removes the awkwardness that keeps a lot of men from ever booking the appointment — which, given hair loss rewards starting early, is the real argument for it.",
+        "For the full landscape — clinical telehealth versus topical products, side by side with pricing and the community verdict — see our Best Hair Loss Treatment Australia comparison linked below.",
+      ],
+    },
+    {
+      heading: "What the reviews and Reddit say",
+      paragraphs: [
+        "Wanting real accounts before you subscribe to a health service is the right instinct. On Australian Reddit — the men's hair-loss, finasteride and telehealth threads — Mosh shows up regularly, and the pattern is predictable: people like the convenience and the practitioner communication, and the gripes are about cost versus results and the occasional eligibility knock-back.",
+        "Read a couple of current threads before you commit; they'll tell you more about month-to-month reality than any single review. Then make your own call — the consult is free to start and the link below applies the referral automatically.",
       ],
     },
     {
@@ -240,15 +236,15 @@ export const moshHairConfig: AffiliatePageConfig = {
   ],
 
   ctas: {
-    primary: "Get Started with Mosh",
+    primary: "Check your eligibility on Mosh",
     secondary: "Continue to Mosh",
     midHeading: "Ready to Explore Mosh Hair Treatment?",
     midBody:
       "Click below to be taken directly to the Mosh sign-up page via our referral link. The partner offer is applied automatically.",
     midButton: "Start the Mosh Consultation",
-    bottomHeading: "Access the Current Mosh Offer",
+    bottomHeading: "See whether Mosh can help with your hair loss",
     bottomBody:
-      "Click below to go to the official Mosh hair treatment platform. Our referral link applies the offer automatically - no code required.",
+      "A few minutes online, reviewed by a registered Australian practitioner, and no code to enter — the referral applies automatically through the link.",
     bottomButton: "Continue to Mosh",
   },
 
