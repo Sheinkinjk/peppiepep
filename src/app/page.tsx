@@ -114,7 +114,7 @@ export default function HomePage() {
       "description": "Stop building your referral system from scratch. Get 250+ researched affiliate programs, a personalised strategy brief, SEO page concepts, and distribution playbooks — delivered within 48 hours for $799 AUD.",
       "url": "https://referlabs.com.au",
       "inLanguage": "en-AU",
-      "dateModified": "2026-04-28",
+      "dateModified": "2026-06-30",
       "about": [
         { "@type": "Thing", "name": "referral blueprint" },
         { "@type": "Thing", "name": "affiliate program database australia" },
@@ -123,6 +123,37 @@ export default function HomePage() {
         { "@type": "Thing", "name": "referral marketing australia" },
       ],
       "isPartOf": { "@type": "WebSite", "name": "Refer Labs", "url": "https://referlabs.com.au" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Referral Growth Blueprint",
+      "description": "250+ researched affiliate and referral programs in a structured Excel database, a personalised strategy brief written for your niche, 10+ SEO page concepts, distribution playbooks, a niche selection brief, and a recommended tool stack. One-time $799 AUD, delivered within 48 hours.",
+      "image": "https://referlabs.com.au/og-image.png",
+      "brand": { "@type": "Brand", "name": "Refer Labs" },
+      "category": "Digital Products > Business > Affiliate Marketing",
+      "offers": {
+        "@type": "Offer",
+        "price": "799.00",
+        "priceCurrency": "AUD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://referlabs.com.au/referral-blueprint",
+        "priceValidUntil": "2027-01-01",
+        "seller": { "@type": "Organization", "name": "Refer Labs", "url": "https://referlabs.com.au" },
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": String(testimonials.length),
+      },
+      "review": testimonials.map((t) => ({
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": t.name },
+        "reviewBody": t.text,
+      })),
     },
     {
       "@context": "https://schema.org",
@@ -416,6 +447,13 @@ export default function HomePage() {
               <ArrowRight className="h-5 w-5" />
             </Link>
             <p className="text-xs text-white/30 mt-3">One-time payment · No subscription · Delivered in 48 hours</p>
+            <p className="text-sm text-white/45 mt-6">
+              Want proof the method works?{" "}
+              <Link href="/guides" className="font-semibold underline decoration-white/20 underline-offset-4 hover:text-white" style={{ color: CYAN }}>
+                See the comparison and review pages we&apos;ve built
+              </Link>{" "}
+              using this exact playbook.
+            </p>
           </div>
         </div>
       </section>

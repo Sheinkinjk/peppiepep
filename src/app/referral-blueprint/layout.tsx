@@ -71,6 +71,36 @@ const productSchema = {
       merchantReturnDays: 0,
     },
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    bestRating: "5",
+    worstRating: "1",
+    reviewCount: "3",
+  },
+  review: [
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "James R." },
+      reviewBody:
+        "I spent four months building a similar list from scratch and ended up with around 80 programs. Getting 250 with commission structures already filled in is a genuine shortcut. The database alone is worth the price.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Sarah M." },
+      reviewBody:
+        "I expected a generic template. The strategy brief was more specific than I anticipated — it reflected the niche I mentioned in the intake form and surfaced five SEO angles I had not considered.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Daniel K." },
+      reviewBody:
+        "Used the database as the starting point for a comparison site I had been putting off for months. Having the program links and commission data in one spreadsheet removed the main barrier.",
+    },
+  ],
 };
 
 const breadcrumbSchema = {
@@ -170,7 +200,7 @@ const webPageSchema = {
   url: `${SITE_URL}/referral-blueprint`,
   inLanguage: "en-AU",
   datePublished: "2026-04-01",
-  dateModified: "2026-04-26",
+  dateModified: "2026-06-30",
   about: [
     { "@type": "Thing", name: "affiliate marketing australia" },
     { "@type": "Thing", name: "affiliate program database" },
