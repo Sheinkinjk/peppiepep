@@ -464,7 +464,7 @@ export default function ReferralBlueprintPage() {
     },
     {
       q: "Is there a refund policy?",
-      a: "Given the personalised strategy brief and digital delivery format, this product is non-refundable once delivered. If you have questions before purchasing, email jarred@referlabs.com.au - we will answer them before you commit.",
+      a: "Given the personalised strategy brief and digital delivery format, this product is non-refundable once delivered. But satisfaction is the point: if the brief misses the mark for your situation, reply and we will revise it until it fits - the goal is a brief you can act on, not a refund you have to chase. If you have questions before purchasing, email jarred@referlabs.com.au and we will answer them before you commit.",
     },
     {
       q: "Is this relevant for affiliate marketing in Australia specifically?",

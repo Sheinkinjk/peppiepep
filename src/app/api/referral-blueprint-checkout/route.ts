@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
+import { scheduleAbandonedCheckoutEmail } from "@/lib/abandoned-checkout";
 import { createApiLogger } from "@/lib/api-logger";
 
 const logger = createApiLogger("api:referral-blueprint-checkout");
@@ -123,6 +124,10 @@ export async function POST(request: NextRequest) {
       logger.error("Failed to send blueprint admin notification", { error: err });
     });
 
+    // Schedule an abandoned-checkout recovery email (cancelled on the success
+    // page if they complete payment). Non-blocking — never breaks checkout.
+    const recoveryEmailId = await scheduleAbandonedCheckoutEmail(email, name).catch(() => null);
+
     // Use raw fetch to create checkout session — Stripe SDK has fetch compatibility issues in this serverless environment
     const params = new URLSearchParams({
       mode: "payment",
@@ -146,6 +151,11 @@ export async function POST(request: NextRequest) {
       "payment_intent_data[description]": "Referral Growth Blueprint - Refer Labs",
       billing_address_collection: "auto",
     });
+
+    // Carry the recovery email id so the success page can cancel it on payment.
+    if (recoveryEmailId) {
+      params.set("metadata[recovery_email_id]", recoveryEmailId);
+    }
 
     const sessionRes = await fetch("https://api.stripe.com/v1/checkout/sessions", {
       method: "POST",

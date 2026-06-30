@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Mail, Clock, FileSpreadsheet } from "lucide-react";
 import type { Metadata } from "next";
 import PurchaseTracker from "./PurchaseTracker";
+import { cancelScheduledEmail } from "@/lib/abandoned-checkout";
 
 export const metadata: Metadata = {
   title: "Purchase Confirmed — Referral Growth Blueprint | Refer Labs",
@@ -9,7 +10,33 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function ReferralBlueprintSuccessPage() {
+// This page renders only after a completed payment, so it's the signal to
+// cancel the abandoned-checkout recovery email scheduled at checkout time.
+async function cancelRecoveryEmailForSession(sessionId: string) {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) return;
+  try {
+    const res = await fetch(
+      `https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sessionId)}`,
+      { headers: { Authorization: `Bearer ${key}` }, cache: "no-store" },
+    );
+    if (!res.ok) return;
+    const session = (await res.json()) as { metadata?: { recovery_email_id?: string } };
+    const id = session.metadata?.recovery_email_id;
+    if (id) await cancelScheduledEmail(id);
+  } catch {
+    /* best-effort — never block the confirmation page */
+  }
+}
+
+export default async function ReferralBlueprintSuccessPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ session_id?: string }>;
+}) {
+  const { session_id } = await searchParams;
+  if (session_id) await cancelRecoveryEmailForSession(session_id);
+
   return (
     <main className="min-h-screen bg-[#060f15] text-white">
       <PurchaseTracker />

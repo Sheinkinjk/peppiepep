@@ -90,6 +90,7 @@ const faqs = [
   { q: "Do I need a website or existing audience?", a: "No. The SEO page concepts, distribution playbooks, and tool stack are designed for people starting from scratch. You receive a complete setup guide including which tools to use and how to set up tracking from day one." },
   { q: "Is this just a spreadsheet?",               a: "No. The database is one of six deliverables. The core value is the combination: researched database + personalised strategy brief + SEO concepts + distribution playbooks. The database without the strategy is just a list." },
   { q: "What happens after I pay?",                 a: "You receive a confirmation email immediately with a link to your member portal. Jarred reviews your intake and delivers all six files to your inbox within 48 hours." },
+  { q: "What if the strategy brief misses the mark?", a: "Your satisfaction is the point. If the brief doesn't fit your situation, reply to the delivery email and we'll revise it until it does. Because it's personalised and delivered digitally it isn't refundable once sent — but we'd far rather fix the brief than leave you with something you can't act on." },
 ];
 
 export default function HomePage() {
@@ -705,6 +706,12 @@ export default function HomePage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <p className="text-center text-xs text-white/30 mt-3">Secure checkout via Stripe</p>
+                <div className="mt-4 flex items-start gap-2 rounded-lg border border-white/10 bg-white/[0.02] px-3 py-2.5">
+                  <CheckCircle2 className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" style={{ color: CYAN }} />
+                  <p className="text-[11px] text-white/45 leading-relaxed">
+                    <span className="text-white/70 font-semibold">Our promise:</span> if the strategy brief misses the mark, we revise it until it fits.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

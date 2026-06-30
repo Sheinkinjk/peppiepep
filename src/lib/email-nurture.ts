@@ -118,6 +118,7 @@ export function buildNurtureSequence(email: string): NurtureEmail[] {
         </ol>
         <p>I read every intake personally. If your answers raise a question, I email before delivering. Nothing auto-generated.</p>
         <p>Delivered within 48 hours of payment. One-time, $799 AUD. No subscription.</p>
+        <p style="font-size:13px;color:#94a3b8;">Want proof the method works? The comparison and review pages at <a href="${SITE}/guides" style="color:#0AA7B5;">referlabs.com.au/guides</a> were built using exactly this playbook.</p>
         `,
         "Get the Full Blueprint — $799",
         `${SITE}/referral-blueprint?utm_source=nurture&utm_medium=email&utm_campaign=day5`
@@ -135,7 +136,7 @@ export function buildNurtureSequence(email: string): NurtureEmail[] {
         <p>I won't keep emailing about the blueprint — this is the last one in this short sequence.</p>
         <p>Quick note: if you're sitting on the fence because of the $799, here's the genuine math.</p>
         <p>The database has 250+ programs. Average commission across them is ~$50-$200 per referral. A single referral from a single program covers the purchase. Most buyers earn the price back inside 6-8 weeks.</p>
-        <p>And if any of the deliverables aren't what you expected, reply to this email and we'll fix it.</p>
+        <p>And the promise that matters: if the strategy brief misses the mark for your situation, reply and I'll revise it until it fits. You're not gambling $799 on a generic template.</p>
         <p>If now isn't the right time, no problem. The link below stays live.</p>
         <p>Cheers,<br>Jarred</p>
         `,
