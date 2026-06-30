@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/how-it-works`,       lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/faq`,                lastModified: NOW, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/guides`,             lastModified: NOW, changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/how-we-research`,    lastModified: NOW, changeFrequency: 'monthly', priority: 0.55 },
     { url: `${BASE}/about`,              lastModified: NOW, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${BASE}/contact`,            lastModified: NOW, changeFrequency: 'monthly', priority: 0.6 },
 
@@ -55,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/best-peptide-supplier`,                 lastModified: NOW, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/best-weight-loss-telehealth-australia`, lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/best-hair-loss-treatment-australia`,    lastModified: NOW, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/moshy-vs-juniper`,                      lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/comparison-website`,                    lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Blog ───────────────────────────────────────────────────────────

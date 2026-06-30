@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { ASCENSION_URL } from "@/lib/affiliate-links";
 
-export const ASCENSION_URL = "https://ascensionpeptides.com/ref/referlabs/";
+export { ASCENSION_URL };
 
 export const ascensionPeptidesConfig: AffiliatePageConfig = {
   brand: "Ascension Peptides",

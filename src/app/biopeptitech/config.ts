@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { BIOPEPTITECH_URL } from "@/lib/affiliate-links";
 
-export const BIOPEPTITECH_URL = "https://biopeptitech.com?sca_ref=10803823.hKusHK7NAR";
+export { BIOPEPTITECH_URL };
 
 export const bioPeptiTechConfig: AffiliatePageConfig = {
   brand: "BioPeptiTech",

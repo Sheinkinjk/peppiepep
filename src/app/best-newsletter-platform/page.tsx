@@ -6,7 +6,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestNewsletterPlatform);
 
 // ─── Affiliate URLs ───────────────────────────────────────────────────────────
 
-const BEEHIIV_URL = "https://www.beehiiv.com?via=refer-labs";
+import { BEEHIIV_URL } from "@/lib/affiliate-links";
 
 const aff = (url: string) => ({
   href: url,

@@ -114,8 +114,16 @@ export default function AffiliatePageTemplate({ config }: { config: AffiliatePag
               <span className="text-[#22C0CD]">{config.hero.h1Highlight}</span>
             </h1>
 
-            <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
               {config.hero.subheading}
+            </p>
+
+            {/* ── Editorial byline (E-E-A-T) ── */}
+            <p className="text-white/40 text-xs mb-8">
+              By the Refer Labs editorial team · Last reviewed {config.lastReviewed ?? "June 2026"} ·{" "}
+              <Link href="/how-we-research" className="underline decoration-white/20 underline-offset-2 hover:text-white/70">
+                How we research
+              </Link>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">

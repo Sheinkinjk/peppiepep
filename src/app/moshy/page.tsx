@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import AffiliatePageTemplate from "@/components/affiliate/AffiliatePageTemplate";
+import MoshyLanding from "./MoshyLanding";
 import { moshyConfig } from "./config";
 
 export const metadata = generateSEOMetadata(seoConfig.moshy);
@@ -34,7 +34,7 @@ const webPageSchema = {
   url: seoConfig.moshy.url,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
-  dateModified: "2026-04-14",
+  dateModified: "2026-06-30",
   about: [
     { "@type": "Thing", name: "Moshy discount code Australia" },
     { "@type": "Thing", name: "Moshy weight loss Australia" },
@@ -100,7 +100,7 @@ export default function MoshyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
-      <AffiliatePageTemplate config={moshyConfig} />
+      <MoshyLanding />
     </>
   );
 }

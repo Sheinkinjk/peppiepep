@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { SWIPE_PAGES_URL } from "@/lib/affiliate-links";
 
-export const SWIPE_PAGES_URL = "https://swipepages.com/?fpr=jarred74";
+export { SWIPE_PAGES_URL };
 
 export const swipePagesConfig: AffiliatePageConfig = {
   brand: "Swipe Pages",

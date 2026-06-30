@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { BEEHIIV_URL } from "@/lib/affiliate-links";
 
-export const BEEHIIV_URL = "https://www.beehiiv.com/?via=14daytrial";
+export { BEEHIIV_URL };
 
 export const beehiivConfig: AffiliatePageConfig = {
   brand: "beehiiv",

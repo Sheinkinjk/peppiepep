@@ -6,10 +6,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestWebsiteBuilder);
 
 // ─── Affiliate URLs ───────────────────────────────────────────────────────────
 
-const CARRD_URL     = "https://try.carrd.co/6ph4m1bj";
-const DURABLE_URL   = "https://durableai.link/referlabs";
-const BUTTERNUT_URL = "https://www.butternut.ai/?ref=jarred65";
-const SWIPE_URL     = "https://swipepages.com?fpr=jarred74";
+import { CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL as SWIPE_URL } from "@/lib/affiliate-links";
 
 const aff = (url: string) => ({
   href: url,

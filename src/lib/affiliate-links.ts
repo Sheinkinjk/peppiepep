@@ -23,3 +23,20 @@ export const DENSE_URL =
 // ── Weight-loss comparison competitors (non-affiliate reference links) ───────
 export const JUNIPER_URL = "https://www.myjuniper.com.au/";
 export const BETTERBEING_URL = "https://www.betterbeinghealth.com.au/";
+
+// ── Research peptides (research use only) ────────────────────────────────────
+export const APOLLO_URL = "https://apollopeptidesciences.com/?rfsn=9019392.2de9e6";
+export const ASCENSION_URL = "https://ascensionpeptides.com/ref/referlabs/";
+export const BIOPEPTITECH_URL = "https://biopeptitech.com?sca_ref=10803823.hKusHK7NAR";
+
+// ── Website builders / landing pages ─────────────────────────────────────────
+export const CARRD_URL = "https://try.carrd.co/6ph4m1bj";
+export const DURABLE_URL = "https://durableai.link/referlabs";
+export const BUTTERNUT_URL = "https://www.butternut.ai/?ref=jarred65";
+export const SWIPE_PAGES_URL = "https://swipepages.com/?fpr=jarred74";
+
+// ── Newsletter / creator tools ───────────────────────────────────────────────
+// Canonical beehiiv code is via=refer-labs (confirmed). The /beehiiv brand page
+// previously used a different code (via=14daytrial) that was not crediting us.
+export const BEEHIIV_URL = "https://www.beehiiv.com?via=refer-labs";
+export const INCOME_LAB_URL = "https://incomelab.me/welcome";

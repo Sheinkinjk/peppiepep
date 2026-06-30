@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { BUTTERNUT_URL } from "@/lib/affiliate-links";
 
-export const BUTTERNUT_URL = "https://www.butternut.ai/?ref=jarred65";
+export { BUTTERNUT_URL };
 
 export const butternutConfig: AffiliatePageConfig = {
   brand: "Butternut AI",

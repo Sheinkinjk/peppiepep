@@ -11,6 +11,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
 import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@/components/Analytics";
 import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
+import { ChromeGate } from "@/components/ChromeGate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,26 +62,34 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden site-atmosphere" aria-hidden="true">
-          <div className="site-atmosphere-orb site-atmosphere-orb--one" />
-          <div className="site-atmosphere-orb site-atmosphere-orb--two" />
-          <div className="site-atmosphere-orb site-atmosphere-orb--three" />
-          <div className="site-atmosphere-grid" />
-          <div className="site-atmosphere-grain" />
-        </div>
+        <ChromeGate>
+          <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden site-atmosphere" aria-hidden="true">
+            <div className="site-atmosphere-orb site-atmosphere-orb--one" />
+            <div className="site-atmosphere-orb site-atmosphere-orb--two" />
+            <div className="site-atmosphere-orb site-atmosphere-orb--three" />
+            <div className="site-atmosphere-grid" />
+            <div className="site-atmosphere-grain" />
+          </div>
+        </ChromeGate>
         <GoogleAnalytics />
         <GoogleTagManager />
         <MetaPixel />
         <LinkedInInsight />
         <AffiliateClickTracker />
         <div className="relative z-10 flex min-h-screen flex-col">
-          <StickyHeader />
+          <ChromeGate>
+            <StickyHeader />
+          </ChromeGate>
           <div className="flex-1">{children}</div>
-          <div className="relative z-10">
-            <Footer />
-          </div>
+          <ChromeGate>
+            <div className="relative z-10">
+              <Footer />
+            </div>
+          </ChromeGate>
         </div>
-        <SupportChatbot />
+        <ChromeGate>
+          <SupportChatbot />
+        </ChromeGate>
         <Toaster />
         <SupabaseSessionListener />
         <CookieConsent />

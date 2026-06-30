@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { DURABLE_URL } from "@/lib/affiliate-links";
 
-export const DURABLE_URL = "https://durableai.link/referlabs";
+export { DURABLE_URL };
 
 export const durableAiConfig: AffiliatePageConfig = {
   brand: "Durable AI",

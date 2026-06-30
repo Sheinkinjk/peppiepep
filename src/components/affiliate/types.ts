@@ -43,6 +43,12 @@ export interface AffiliatePageConfig {
    */
   quickAnswer?: string;
 
+  /**
+   * Human-readable "last reviewed" date (e.g. "June 2026") shown in the byline.
+   * Signals freshness and editorial ownership (E-E-A-T). Defaults site-wide.
+   */
+  lastReviewed?: string;
+
   hero: {
     /** Full H1 text before the highlighted span */
     h1Prefix: string;

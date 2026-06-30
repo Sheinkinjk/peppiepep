@@ -863,6 +863,30 @@ export const seoConfig = {
     ],
   },
 
+  moshyVsJuniper: {
+    title: "Moshy vs Juniper 2026: Which Weight Loss Telehealth Is Right for You? | Refer Labs",
+    description:
+      "Moshy vs Juniper compared for 2026 — Moshy is for men, Juniper is for women. GLP-1 access, eligibility, cost model, coaching, and the Reddit verdict. Find which Australian weight-loss telehealth fits you.",
+    url: `${SITE_URL}/moshy-vs-juniper`,
+    keywords: [
+      "moshy vs juniper",
+      "moshy vs juniper 2026",
+      "moshy vs juniper australia",
+      "moshy vs juniper reddit",
+      "moshy or juniper",
+      "juniper vs moshy weight loss",
+      "moshy weight loss australia",
+      "juniper weight loss australia",
+      "best glp-1 telehealth australia",
+      "semaglutide telehealth australia",
+      "weight loss telehealth australia 2026",
+      "moshy review",
+      "juniper review",
+      "moshy men weight loss",
+      "juniper women weight loss",
+    ],
+  },
+
   comparisonWebsite: {
     title: "Australia's Curated Health & Performance Comparison Platform | Refer Labs",
     description:

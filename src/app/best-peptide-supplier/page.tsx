@@ -6,9 +6,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestPeptideSupplier);
 
 // ─── Affiliate URLs ───────────────────────────────────────────────────────────
 
-const APOLLO_URL    = "https://apollopeptidesciences.com/?rfsn=9019392.2de9e6";
-const ASCENSION_URL = "https://ascensionpeptides.com/ref/referlabs/";
-const BPT_URL       = "https://biopeptitech.com?sca_ref=10803823.hKusHK7NAR";
+import { APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL as BPT_URL } from "@/lib/affiliate-links";
 
 const aff = (url: string) => ({
   href: url,

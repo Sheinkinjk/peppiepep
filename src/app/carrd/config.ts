@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { CARRD_URL } from "@/lib/affiliate-links";
 
-export const CARRD_URL = "https://try.carrd.co/6ph4m1bj";
+export { CARRD_URL };
 
 export const carrdConfig: AffiliatePageConfig = {
   brand: "Carrd",

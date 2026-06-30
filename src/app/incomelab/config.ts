@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { INCOME_LAB_URL } from "@/lib/affiliate-links";
 
-export const INCOME_LAB_URL = "https://incomelab.me/welcome";
+export { INCOME_LAB_URL };
 
 export const incomeLabConfig: AffiliatePageConfig = {
   brand: "Income Lab",

@@ -70,6 +70,12 @@ const sections = [
         tags: ["Australia", "Weight Loss"],
       },
       {
+        href: "/moshy-vs-juniper",
+        label: "Moshy vs Juniper — Head to Head",
+        desc: "Australia's two most-compared weight-loss telehealth platforms. Men vs women, coaching vs clinical, cost, and the Reddit verdict.",
+        tags: ["Australia", "Weight Loss"],
+      },
+      {
         href: "/dense",
         label: "Dense Hair Experts — Current Offer",
         desc: "Direct access to the Dense Hair Experts affiliate link. No code required.",

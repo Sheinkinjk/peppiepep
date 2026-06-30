@@ -1,6 +1,7 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
+import { APOLLO_URL } from "@/lib/affiliate-links";
 
-export const APOLLO_URL = "https://apollopeptidesciences.com/?rfsn=9019392.2de9e6";
+export { APOLLO_URL };
 
 export const apolloPeptidesConfig: AffiliatePageConfig = {
   brand: "Apollo Peptide Sciences",
