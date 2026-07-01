@@ -54,9 +54,9 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       heading: "GLP-1 & Semaglutide",
       paragraphs: [
-        "Moshy is one of the most searched Australian telehealth platforms in connection with GLP-1 receptor agonists - a class of medications that have driven significant growth in online weight management services globally. GLP-1 medications, including semaglutide (the active ingredient in Ozempic and Wegovy), work by regulating appetite and blood sugar, and have demonstrated clinically significant weight loss outcomes in trials.",
-        "In Australia, GLP-1 medications are prescription-only. Telehealth platforms like Moshy can facilitate access to an assessment with a registered Australian practitioner who, if they determine it is clinically appropriate, can prescribe these medications. Moshy does not advertise which specific medications are available on their platform - this is discussed as part of the clinical consultation process after eligibility is assessed.",
-        "If you are searching for 'Moshy semaglutide', 'Moshy GLP-1 Australia', or 'Moshy Ozempic Australia' - the starting point is completing the Moshy eligibility quiz. The platform does not guarantee access to any specific medication prior to the clinical consultation. Suitability is assessed individually.",
+        "Moshy is one of the most searched Australian telehealth platforms in connection with GLP-1 medications used in weight management. The most important thing to understand up front is a regulatory fact, not a sales pitch.",
+        "In Australia, GLP-1 medications are prescription-only. A telehealth platform like Moshy can facilitate access to an assessment with a registered Australian practitioner who, if they determine it is clinically appropriate, may prescribe. Moshy does not advertise which specific medications are available - this is discussed only as part of the clinical consultation after eligibility is assessed.",
+        "No platform can guarantee access to any specific medication before the consultation, and suitability is assessed individually. This is information about the service, not medical advice or a recommendation to use any medicine.",
       ],
       hasCta: true,
       ctaText: "Start the Moshy Eligibility Quiz",

@@ -716,7 +716,6 @@ export const seoConfig = {
       "moshy cost australia",
       "how much does moshy cost",
       "moshy subscription cost",
-      "moshy ozempic australia",
       "getmoshy discount",
       "getmoshy referral",
       "moshy review 2026",

@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/product-distribution`,   lastModified: STABLE, changeFrequency: 'monthly', priority: 0.68 },
 
     // ── Health affiliate pages (redesigned this release) ───────────────
-    { url: `${BASE}/moshy`,             lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE}/moshy`,             lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.92 },
     { url: `${BASE}/moshhair`,          lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.78 },
     { url: `${BASE}/dense`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/apollopeptides`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
