@@ -334,8 +334,16 @@ export default function BestPeptideSupplierPage() {
       <main className="bg-[#060f15] text-white min-h-screen">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
 
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-white/40">
+            <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+            <span>/</span>
+            <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+            <span>/</span>
+            <span className="text-white/60">Best Peptide Supplier</span>
+          </nav>
+
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
-          <section className="pt-16 pb-8 sm:pt-20">
+          <section className="pt-10 pb-8 sm:pt-12">
             <p className="text-white/25 text-xs mb-6">Updated March 2026 &middot; For laboratory research use only</p>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-white mb-4 max-w-3xl">

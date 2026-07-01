@@ -186,7 +186,6 @@ export default function MoshyLanding() {
                 {[
                   ["what", "What Moshy actually is"],
                   ["glp1", "GLP-1 & semaglutide"],
-                  ["is-legit", "Is Moshy legit?"],
                   ["start", "How to start"],
                   ["verdict", "The verdict"],
                   ["faq", "FAQ"],
@@ -257,26 +256,6 @@ export default function MoshyLanding() {
                 <div className="mt-4">
                   <MoshyCTA label="Start the Moshy eligibility check" />
                 </div>
-              </div>
-            </section>
-
-            {/* Is Moshy legit (trust — compliant, service-focused) */}
-            <section id="is-legit" className="mt-12 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                Is Moshy legit?
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
-                <p>
-                  Yes — Moshy is a registered Australian telehealth provider, not an overseas storefront. It operates under
-                  Australian health-service regulations, and every eligibility submission is reviewed by an AHPRA-registered
-                  practitioner before anything moves forward.
-                </p>
-                <p>
-                  The clearest signal is that it turns people away: not everyone who applies is approved. A service that
-                  screens people out is behaving like a clinical provider, not a checkout. As with any health service, it is
-                  worth reading Moshy&apos;s own terms and clinical process before you start — this page describes the
-                  service, it does not assess your suitability for it.
-                </p>
               </div>
             </section>
 

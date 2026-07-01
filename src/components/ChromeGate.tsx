@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
  * Add a path here to make it a chrome-free, standalone page.
  */
 const STANDALONE_ROUTES = [
+  // Brand / affiliate review pages
   "/moshy",
   "/moshhair",
   "/dense",
@@ -21,6 +22,18 @@ const STANDALONE_ROUTES = [
   "/swipepages",
   "/beehiiv",
   "/incomelab",
+  // Comparison roundups + head-to-heads (not core business)
+  "/moshy-vs-juniper",
+  "/carrd-vs-durable",
+  "/best-weight-loss-telehealth-australia",
+  "/best-hair-loss-treatment-australia",
+  "/best-peptide-supplier",
+  "/best-website-builder",
+  "/best-newsletter-platform",
+  "/comparison-website",
+  // Affiliate content hub + editorial standards
+  "/guides",
+  "/how-we-research",
 ];
 
 export function ChromeGate({ children }: { children: React.ReactNode }) {
