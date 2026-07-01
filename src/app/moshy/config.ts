@@ -153,10 +153,6 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "Moshy is an Australian telehealth platform that operates nationally. The eligibility process is completed online and treatments are delivered directly to your home address. Availability of specific treatment options may vary depending on state-level regulations.",
     },
     {
-      q: "Is Moshy legit?",
-      a: "Moshy is an Australian telehealth company that operates under Australian health service regulations and uses Australian-registered practitioners to review each eligibility submission. As with any health service, reviewing the Moshy website, their clinical process, and terms of service before proceeding is recommended. This page does not provide medical advice.",
-    },
-    {
       q: "What is Moshy's weight loss programme?",
       a: "Moshy offers a clinically supervised weight management programme for eligible Australian men. Users complete an online eligibility questionnaire and, if suitable, are connected with a practitioner who reviews their case and discusses appropriate treatment options. The programme is subscription-based with home delivery. Specific treatments and pricing are detailed on the Moshy platform after completing the eligibility flow. This page does not constitute medical advice.",
     },
