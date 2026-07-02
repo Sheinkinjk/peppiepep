@@ -10,8 +10,9 @@ import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 const navLinks = [
+  { href: "/",                   label: "Compare" },
+  { href: "/for-business",       label: "For Business" },
   { href: "/referral-blueprint", label: "Blueprint" },
-  { href: "/how-it-works",       label: "How It Works" },
   { href: "/guides",             label: "Guides" },
   { href: "/become-an-affiliate", label: "Affiliates" },
   { href: "/faq",                label: "FAQ" },

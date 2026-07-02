@@ -2,6 +2,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/
 import { MOSHY_URL, JUNIPER_URL, BETTERBEING_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
@@ -96,14 +97,14 @@ const webPageSchema = {
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
-const CYAN    = "#0AA7B5";
-const CYAN_LT = "#22C0CD";
+const CYAN    = "#0E7C66";
+const CYAN_LT = "#0E7C66";
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function Pro({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-white/60 leading-snug">
+    <li className="flex items-start gap-2 text-sm text-[#46524C] leading-snug">
       <CheckCircle2 className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
       {text}
     </li>
@@ -112,8 +113,8 @@ function Pro({ text }: { text: string }) {
 
 function Con({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-white/30 leading-snug">
-      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-white/15" />
+    <li className="flex items-start gap-2 text-sm text-[#8A938E] leading-snug">
+      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#8A938E]" />
       {text}
     </li>
   );
@@ -122,7 +123,7 @@ function Con({ text }: { text: string }) {
 function TableCheck({ yes }: { yes: boolean }) {
   return yes
     ? <CheckCircle2 className="h-4 w-4 mx-auto" style={{ color: CYAN_LT }} />
-    : <span className="block text-center text-white/15 text-xs">—</span>;
+    : <span className="block text-center text-[#8A938E] text-xs">—</span>;
 }
 
 // ─── Platform card ────────────────────────────────────────────────────────────
@@ -154,7 +155,7 @@ function PlatformCard({
   return (
     <section
       id={id}
-      className="border-t border-white/[0.06] py-10 sm:py-12 scroll-mt-24"
+      className="border-t border-black/[0.08] py-10 sm:py-12 scroll-mt-24"
     >
       <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-12">
 
@@ -162,27 +163,27 @@ function PlatformCard({
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div
-              className="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-black text-white/70 flex-shrink-0"
+              className="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-black text-[#46524C] flex-shrink-0"
               style={{ background: `${CYAN}1A`, border: `1px solid ${CYAN}30` }}
             >
               {index}
             </div>
-            <h2 className="text-xl font-black text-white leading-none">{name}</h2>
+            <h2 className="text-xl font-black text-[#16201C] leading-none">{name}</h2>
           </div>
 
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-5 max-w-lg">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed mb-5 max-w-lg">
             {tagline}
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-white/20 mb-2.5">Strengths</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#8A938E] mb-2.5">Strengths</p>
               <ul className="space-y-2">
                 {pros.map((p) => <Pro key={p} text={p} />)}
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-white/20 mb-2.5">Limitations</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#8A938E] mb-2.5">Limitations</p>
               <ul className="space-y-2">
                 {cons.map((c) => <Con key={c} text={c} />)}
               </ul>
@@ -199,8 +200,8 @@ function PlatformCard({
             <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
               Current access
             </p>
-            <p className="text-white font-black text-base leading-snug mb-1">{deal}</p>
-            <p className="text-white/40 text-xs leading-snug">{dealNote}</p>
+            <p className="text-[#16201C] font-black text-base leading-snug mb-1">{deal}</p>
+            <p className="text-[#6B756F] text-xs leading-snug">{dealNote}</p>
           </div>
 
           <a
@@ -301,38 +302,38 @@ const platforms: PlatformCardProps[] = [
 
 export default function BestWeightLossTelehealthPage() {
   return (
-    <>
+    <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="bg-[#060f15] text-white min-h-screen">
+      <main className="text-[#16201C]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
 
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-white/40">
-            <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6B756F]">
+            <Link href="/" className="hover:text-[#46524C] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+            <Link href="/guides" className="hover:text-[#46524C] transition-colors">Guides</Link>
             <span>/</span>
-            <span className="text-white/60">Best Weight Loss Telehealth</span>
+            <span className="text-[#46524C]">Best Weight Loss Telehealth</span>
           </nav>
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="text-white/25 text-xs mb-6">
+            <p className="text-[#8A938E] text-xs mb-6">
               Updated March 2026 &middot; Australia only &middot; Not medical advice
             </p>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-white mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#16201C] mb-4 max-w-3xl">
               Best Weight Loss Telehealth Australia 2026:{" "}
               <span style={{ color: CYAN_LT }}>Moshy vs Juniper vs Better Being</span>
             </h1>
 
-            <p className="text-white/45 text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
+            <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Juniper dominate GLP-1-based weight management in Australia — but they serve different demographics. Moshy is men-only. Juniper is women-only. Better Being takes a more holistic, lifestyle-first approach and serves both.
             </p>
-            <p className="text-white/45 text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
+            <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice — suitability is assessed individually by each platform&apos;s clinical team.
             </p>
 
@@ -361,23 +362,23 @@ export default function BestWeightLossTelehealthPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
                 Quick Verdict
               </p>
-              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-[#46524C] text-sm sm:text-base leading-relaxed max-w-2xl">
                 Moshy (men only) and Juniper (women only) are Australia&apos;s leading GLP-1 weight-management telehealth platforms; Better Being suits people of either gender who want a more holistic, lifestyle-first program. Eligibility and suitability are assessed individually by each platform&apos;s clinical team — this page does not constitute medical advice.
               </p>
             </div>
           </section>
 
           {/* ── Quick comparison table ─────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-8">
+          <section className="border-t border-black/[0.08] py-8">
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[540px] text-sm">
                 <thead>
-                  <tr className="border-b border-white/[0.07]">
-                    <th className="text-left pb-3 pr-4 text-white/20 font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
-                    <th className="pb-3 px-3 text-left text-white/20 font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
-                    <th className="pb-3 px-3 text-left text-white/20 font-semibold text-[11px] uppercase tracking-wider">Approach</th>
-                    <th className="pb-3 px-3 text-left text-white/20 font-semibold text-[11px] uppercase tracking-wider">GLP-1 access</th>
-                    <th className="pb-3 pl-3 text-right text-white/20 font-semibold text-[11px] uppercase tracking-wider"></th>
+                  <tr className="border-b border-black/[0.08]">
+                    <th className="text-left pb-3 pr-4 text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
+                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
+                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">Approach</th>
+                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">GLP-1 access</th>
+                    <th className="pb-3 pl-3 text-right text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -386,12 +387,12 @@ export default function BestWeightLossTelehealthPage() {
                     { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medication",      glp1: "Yes (subject to eligibility)", href: "#juniper",     url: JUNIPER_URL,  cta: "Visit Juniper",      isAff: false },
                     { name: "Better Being", audience: "Men & Women (Australia)",  approach: "Lifestyle + practitioner",   glp1: "Limited", href: "#betterbeing", url: BETTERBEING_URL, cta: "Visit site",  isAff: false },
                   ].map((row) => (
-                    <tr key={row.name} className="border-b border-white/[0.04] hover:bg-white/[0.015] transition-colors">
+                    <tr key={row.name} className="border-b border-black/[0.08] hover:bg-white transition-colors">
                       <td className="py-3 pr-4">
-                        <a href={row.href} className="text-white font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
+                        <a href={row.href} className="text-[#16201C] font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
                       </td>
-                      <td className="py-3 px-3 text-white/40 text-xs">{row.audience}</td>
-                      <td className="py-3 px-3 text-white/40 text-xs">{row.approach}</td>
+                      <td className="py-3 px-3 text-[#6B756F] text-xs">{row.audience}</td>
+                      <td className="py-3 px-3 text-[#6B756F] text-xs">{row.approach}</td>
                       <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.glp1}</td>
                       <td className="py-3 pl-3 text-right">
                         <a
@@ -407,7 +408,7 @@ export default function BestWeightLossTelehealthPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-white/20 text-[10px] mt-3">
+            <p className="text-[#8A938E] text-[10px] mt-3">
               GLP-1 medication access is subject to individual clinical assessment by each platform&apos;s practitioners. This comparison does not constitute medical advice.
             </p>
           </section>
@@ -418,18 +419,18 @@ export default function BestWeightLossTelehealthPage() {
           ))}
 
           {/* ── Feature breakdown ─────────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-6">
+          <section className="border-t border-black/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-6">
               Platform Comparison: Key Criteria
             </h2>
 
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[520px] text-sm">
                 <thead>
-                  <tr className="border-b border-white/[0.07]">
-                    <th className="text-left pb-4 pr-4 text-white/20 font-semibold text-[11px] uppercase tracking-wider w-44">Criteria</th>
+                  <tr className="border-b border-black/[0.08]">
+                    <th className="text-left pb-4 pr-4 text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider w-44">Criteria</th>
                     {["Moshy", "Juniper", "Better Being"].map((h) => (
-                      <th key={h} className="pb-4 px-3 text-center font-bold text-white/50 text-xs">{h}</th>
+                      <th key={h} className="pb-4 px-3 text-center font-bold text-[#6B756F] text-xs">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -446,10 +447,10 @@ export default function BestWeightLossTelehealthPage() {
                     { label: "Lifestyle programme",            vals: [false, true,  true]  },
                     { label: "Community discussion",           vals: [true,  true,  false] },
                   ].map((row, i) => (
-                    <tr key={i} className="border-b border-white/[0.04] hover:bg-white/[0.015] transition-colors">
-                      <td className="py-3 pr-4 text-white/40 text-xs font-medium leading-snug">
+                    <tr key={i} className="border-b border-black/[0.08] hover:bg-white transition-colors">
+                      <td className="py-3 pr-4 text-[#6B756F] text-xs font-medium leading-snug">
                         {row.label}
-                        {row.note && <span className="block text-white/20 text-[10px] mt-0.5">{row.note}</span>}
+                        {row.note && <span className="block text-[#8A938E] text-[10px] mt-0.5">{row.note}</span>}
                       </td>
                       {row.vals.map((v, j) => (
                         <td key={j} className="py-3 px-3"><TableCheck yes={v} /></td>
@@ -460,14 +461,14 @@ export default function BestWeightLossTelehealthPage() {
               </table>
             </div>
 
-            <p className="text-white/20 text-[10px] mt-4">
+            <p className="text-[#8A938E] text-[10px] mt-4">
               Feature availability is based on publicly available information at time of publication and may change. This page does not constitute medical advice.
             </p>
           </section>
 
           {/* ── Verdict ──────────────────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-6">
+          <section className="border-t border-black/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-6">
               The Verdict
             </h2>
             <div className="space-y-4 max-w-2xl">
@@ -476,17 +477,17 @@ export default function BestWeightLossTelehealthPage() {
                 { label: "Choose Juniper if:", body: "You are a woman in Australia looking for a weight management programme that combines GLP-1 medication access with structured health coaching and practitioner support. Juniper's programme is more coaching-intensive than Moshy's and is designed for women exclusively." },
                 { label: "Choose Better Being if:", body: "You want a broader lifestyle and behavioural approach to weight management that is not primarily medication-focused. Better Being is available to both men and women in Australia and includes nutrition and lifestyle coaching alongside practitioner support. A stronger fit for people who prefer or are not suited to GLP-1 medication programmes." },
               ].map(({ label, body }) => (
-                <div key={label} className="border-b border-white/[0.05] pb-4">
-                  <p className="text-sm font-bold text-white mb-1">{label}</p>
-                  <p className="text-sm text-white/45 leading-relaxed">{body}</p>
+                <div key={label} className="border-b border-black/[0.08] pb-4">
+                  <p className="text-sm font-bold text-[#16201C] mb-1">{label}</p>
+                  <p className="text-sm text-[#6B756F] leading-relaxed">{body}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-8">
+          <section className="border-t border-black/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-8">
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
@@ -508,17 +509,17 @@ export default function BestWeightLossTelehealthPage() {
                   a: "Moshy, Juniper, and Better Being are all Australian platforms operating nationally. Availability may vary by state for certain services. Check each platform's website for current service coverage.",
                 },
               ].map(({ q, a }, i) => (
-                <div key={i} className="border-b border-white/[0.05] pb-6">
-                  <h3 className="text-sm font-bold text-white mb-2">{q}</h3>
-                  <p className="text-sm text-white/45 leading-relaxed">{a}</p>
+                <div key={i} className="border-b border-black/[0.08] pb-6">
+                  <h3 className="text-sm font-bold text-[#16201C] mb-2">{q}</h3>
+                  <p className="text-sm text-[#6B756F] leading-relaxed">{a}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-8 pb-16">
-            <p className="text-white/20 text-xs leading-relaxed max-w-2xl">
+          <section className="border-t border-black/[0.08] py-8 pb-16">
+            <p className="text-[#8A938E] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains an affiliate referral link to Moshy. Juniper and Better Being are linked without affiliate arrangements. All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -533,6 +534,6 @@ export default function BestWeightLossTelehealthPage() {
 
         </div>
       </main>
-    </>
+    </ConsumerShell>
   );
 }

@@ -122,6 +122,16 @@ const nextConfig: NextConfig = {
         destination: 'https://biopeptitech.com?sca_ref=10803823.hKusHK7NAR',
         permanent: false,
       },
+      // ── Legacy "Growth & Distribution Engine" pages → consolidate under /for-business ──
+      { source: '/how-it-works', destination: '/for-business', permanent: false },
+      { source: '/who-its-for', destination: '/for-business', permanent: false },
+      { source: '/who-its-for/:path*', destination: '/for-business', permanent: false },
+      { source: '/case-studies', destination: '/for-business', permanent: false },
+      { source: '/playbooks', destination: '/guides', permanent: false },
+      { source: '/roi-calculator', destination: '/for-business', permanent: false },
+      { source: '/lead-hacking', destination: '/for-business', permanent: false },
+      { source: '/linkedin-growth', destination: '/for-business', permanent: false },
+      { source: '/linkedin-growth/:path*', destination: '/for-business', permanent: false },
     ];
   },
   async headers() {
