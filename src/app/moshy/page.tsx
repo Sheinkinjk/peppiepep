@@ -56,34 +56,6 @@ const organizationSchema = {
   url: "https://www.getmoshy.com.au",
   description: "Australian online telehealth platform offering clinically supervised weight management programmes. Online eligibility questionnaire, practitioner review, and subscription delivery to Australian residents.",
   areaServed: { "@type": "Country", name: "Australia" },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.3",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "1870",
-  },
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "Organization",
-    name: "Moshy",
-    url: "https://www.getmoshy.com.au",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.3",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-11",
-  reviewBody:
-    "Moshy is an Australian telehealth platform for weight management, using an online eligibility process and practitioner-led consultation model. The platform is designed for Australians who want a structured, clinically supervised approach to weight loss without requiring an in-person GP appointment. Subscription-based with home delivery. Suitability depends on individual health assessment.",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -95,7 +67,6 @@ export default function MoshyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <MoshyLanding />
     </>
   );

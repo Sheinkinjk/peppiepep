@@ -2,13 +2,11 @@ import { Fraunces } from "next/font/google";
 import { moshyConfig, MOSHY_URL } from "./config";
 import {
   ArrowRight,
-  ArrowUpRight,
   Check,
   ShieldCheck,
   Stethoscope,
   Truck,
   ClipboardList,
-  Star,
 } from "lucide-react";
 
 // Editorial serif scoped to this standalone page only.
@@ -21,7 +19,6 @@ const fraunces = Fraunces({
 });
 
 const LAST_REVIEWED = "June 2026";
-const RATING = "4.3";
 
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 function MoshyCTA({
@@ -92,44 +89,21 @@ export default function MoshyLanding() {
               discount codes.
             </p>
 
-            {/* Byline */}
-            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#6B756F]">
-              <span className="flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0E7C66]/12 text-[11px] font-bold text-[#0E7C66]">
-                  RL
-                </span>
-                <span className="text-[#46524C]">Refer Labs Editorial</span>
-              </span>
-              <span>Last reviewed {LAST_REVIEWED}</span>
-              <span>7 min read</span>
-              <a href="/how-we-research" className="underline decoration-[#0E7C66]/40 underline-offset-4 hover:text-[#16201C]">
-                How we research
-              </a>
-            </div>
-
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <MoshyCTA label="Check your eligibility on Moshy" size="lg" />
-              <a href="#verdict" className="text-sm font-semibold text-[#16201C] underline decoration-black/15 underline-offset-4 hover:decoration-[#0E7C66]">
-                Skip to the verdict
-              </a>
             </div>
 
             <p className="mt-4 text-xs text-[#8A938E]">
-              Independent review · contains an affiliate link · not medical advice
+              Independent page · contains an affiliate link · not medical advice
             </p>
           </div>
 
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
             <div className="rounded-2xl border border-black/[0.07] bg-white p-6 shadow-[0_2px_24px_-12px_rgba(0,0,0,0.18)]">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6B756F]">
-                  At a glance
-                </span>
-                <span className="flex items-center gap-1 rounded-full bg-[#0E7C66]/10 px-2.5 py-1 text-xs font-bold text-[#0E7C66]">
-                  <Star className="h-3 w-3 fill-[#0E7C66]" /> {RATING}/5
-                </span>
-              </div>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6B756F]">
+                At a glance
+              </span>
               <dl className="mt-4 divide-y divide-black/[0.06] text-sm">
                 {[
                   ["What it is", "Australian men's weight-management telehealth"],
@@ -282,15 +256,7 @@ export default function MoshyLanding() {
             {/* Verdict */}
             <section id="verdict" className="mt-14 scroll-mt-24">
               <div className="rounded-2xl border border-black/[0.08] bg-white p-7 shadow-[0_2px_24px_-12px_rgba(0,0,0,0.18)] sm:p-8">
-                <div className="flex items-center gap-3">
-                  <span className="flex items-center gap-1.5 rounded-full bg-[#0E7C66]/10 px-3 py-1.5 text-sm font-bold text-[#0E7C66]">
-                    <Star className="h-3.5 w-3.5 fill-[#0E7C66]" /> {RATING}/5
-                  </span>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">
-                    Refer Labs editorial assessment
-                  </span>
-                </div>
-                <h2 className="mt-5 font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
+                <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
                   The verdict
                 </h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#46524C]">
@@ -372,10 +338,11 @@ export default function MoshyLanding() {
               </p>
             </div>
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+              <a href="/moshy-review" className="text-[#46524C] hover:text-[#0E7C66]">Full Moshy review</a>
+              <a href="/moshy-eligibility" className="text-[#46524C] hover:text-[#0E7C66]">The eligibility check</a>
               <a href="/best-weight-loss-telehealth-australia" className="text-[#46524C] hover:text-[#0E7C66]">
                 Weight-loss telehealth
               </a>
-              <a href="/how-we-research" className="text-[#46524C] hover:text-[#0E7C66]">How we research</a>
               <a href="/guides" className="text-[#46524C] hover:text-[#0E7C66]">All guides</a>
             </div>
           </div>

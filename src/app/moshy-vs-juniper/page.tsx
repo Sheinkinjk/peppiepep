@@ -91,11 +91,6 @@ export default function MoshyVsJuniperPage() {
           people. The short version: <strong className="text-white/80">Moshy is for men, Juniper is for women</strong> — and the
           difference goes deeper than that.
         </p>
-        <p className="text-white/40 text-xs mb-6">
-          By the Refer Labs editorial team · Last reviewed June 2026 ·{" "}
-          <Link href="/how-we-research" className="underline decoration-white/20 underline-offset-2 hover:text-white/70">How we research</Link>
-        </p>
-
         <p className="mb-8 rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 text-xs leading-relaxed text-white/45">
           <span className="font-semibold text-white/70">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or medication or imply suitability for any individual. Prescription medicines in Australia are available only after assessment by a registered practitioner.
         </p>

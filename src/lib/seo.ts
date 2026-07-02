@@ -886,6 +886,144 @@ export const seoConfig = {
     ],
   },
 
+  moshyReview: {
+    title: "Moshy Review Australia 2026: How the Service Actually Works | Refer Labs",
+    description:
+      "An independent Moshy review for Australians. What the men's weight-loss telehealth service is, how the sign-up runs in practice, what the subscription involves, and who it suits. Information only, not medical advice.",
+    url: `${SITE_URL}/moshy-review`,
+    keywords: [
+      "moshy review",
+      "moshy review australia",
+      "moshy reviews",
+      "moshy review 2026",
+      "is moshy any good",
+      "moshy weight loss review",
+      "moshy telehealth review",
+      "how does moshy work",
+      "moshy experience",
+      "moshy honest review",
+    ],
+  },
+
+  moshyEligibility: {
+    title: "Moshy Eligibility Check Explained: What the Quiz Asks & What Happens Next | Refer Labs",
+    description:
+      "What the Moshy eligibility check actually involves. The questions the online quiz asks, how long it takes, what the practitioner review looks at, and why some applications are declined. Information only.",
+    url: `${SITE_URL}/moshy-eligibility`,
+    keywords: [
+      "moshy eligibility",
+      "moshy eligibility check",
+      "moshy eligibility quiz",
+      "moshy questionnaire",
+      "moshy quiz",
+      "moshy sign up process",
+      "how to join moshy",
+      "moshy application",
+      "moshy eligibility criteria",
+    ],
+  },
+
+  getMoshy: {
+    title: "getmoshy.com.au: Is It the Official Moshy Site & the Fastest Way to Start | Refer Labs",
+    description:
+      "getmoshy.com.au is the official website of Moshy, the Australian men's telehealth service. What the site is, how the referral link works, and where the eligibility check lives.",
+    url: `${SITE_URL}/getmoshy`,
+    keywords: [
+      "getmoshy",
+      "get moshy",
+      "getmoshy com au",
+      "getmoshy.com.au",
+      "getmoshy australia",
+      "getmoshy eligibility",
+      "moshy official website",
+      "moshy website",
+      "getmoshy legit",
+    ],
+  },
+
+  weightLossTelehealthMen: {
+    title: "Weight Loss Telehealth for Men in Australia 2026 | Refer Labs",
+    description:
+      "How men's weight-loss telehealth works in Australia. Why men-only services exist, what to check before signing up with any provider, and where Moshy fits. Information only, not medical advice.",
+    url: `${SITE_URL}/weight-loss-telehealth-men-australia`,
+    keywords: [
+      "weight loss telehealth men australia",
+      "mens weight loss program online australia",
+      "male weight loss telehealth",
+      "online weight loss for men australia",
+      "mens weight loss clinic online",
+      "weight loss program for men australia",
+      "male weight loss program online",
+      "telehealth weight loss men",
+    ],
+  },
+
+  onlineWeightLossPrograms: {
+    title: "Online Weight Loss Programs Australia 2026: Medical Telehealth vs Coaching Apps | Refer Labs",
+    description:
+      "The three types of online weight loss programs available in Australia, how medical telehealth differs from coaching apps and meal plans, and how the main providers split up. Information only, not medical advice.",
+    url: `${SITE_URL}/online-weight-loss-programs-australia`,
+    keywords: [
+      "online weight loss programs australia",
+      "online weight loss clinic australia",
+      "weight loss program online",
+      "medical weight loss online australia",
+      "telehealth weight loss program australia",
+      "best online weight loss program australia",
+      "digital weight loss program",
+      "weight loss subscription australia",
+    ],
+  },
+
+  moshyVsGp: {
+    title: "Moshy vs Your GP for Weight Management: A Practical Comparison | Refer Labs",
+    description:
+      "Moshy and a regular GP are two doors to the same kind of care. How each pathway runs, where telehealth saves time, where a GP is clearly the right call, and why both are valid. Information only, not medical advice.",
+    url: `${SITE_URL}/moshy-vs-gp`,
+    keywords: [
+      "moshy vs gp",
+      "moshy or gp",
+      "telehealth vs gp weight loss",
+      "online clinic vs gp australia",
+      "gp weight loss australia",
+      "telehealth or doctor weight loss",
+      "weight loss doctor online vs in person",
+    ],
+  },
+
+  mensHealthTelehealth: {
+    title: "Men's Health Telehealth in Australia 2026: How Online Clinics Work | Refer Labs",
+    description:
+      "How men's health telehealth works in Australia, what online clinics can and cannot do, how prescriptions are handled, and the main providers including Moshy and Mosh. Information only, not medical advice.",
+    url: `${SITE_URL}/mens-health-telehealth-australia`,
+    keywords: [
+      "mens health telehealth australia",
+      "online mens health clinic australia",
+      "mens telehealth",
+      "mens health online australia",
+      "telehealth for men",
+      "moshy mens health",
+      "mosh mens health",
+      "online doctor for men australia",
+    ],
+  },
+
+  moshyAlternatives: {
+    title: "Moshy Alternatives in Australia 2026: Who Else Does This? | Refer Labs",
+    description:
+      "The realistic alternatives to Moshy in Australia: Juniper for women, Better Being for a lifestyle-first approach, and your own GP. What each pathway offers and how they differ. Information only, not medical advice.",
+    url: `${SITE_URL}/moshy-alternatives`,
+    keywords: [
+      "moshy alternatives",
+      "alternatives to moshy",
+      "apps like moshy",
+      "moshy competitors",
+      "services like moshy australia",
+      "juniper alternative for men",
+      "weight loss telehealth alternatives australia",
+    ],
+  },
+
   carrdVsDurable: {
     title: "Carrd vs Durable AI 2026: Which Website Builder Should You Use? | Refer Labs",
     description:

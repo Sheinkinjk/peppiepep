@@ -22,6 +22,15 @@ const STANDALONE_ROUTES = [
   "/swipepages",
   "/beehiiv",
   "/incomelab",
+  // Moshy funnel pages
+  "/moshy-review",
+  "/moshy-eligibility",
+  "/getmoshy",
+  "/moshy-vs-gp",
+  "/moshy-alternatives",
+  "/weight-loss-telehealth-men-australia",
+  "/online-weight-loss-programs-australia",
+  "/mens-health-telehealth-australia",
   // Comparison roundups + head-to-heads (not core business)
   "/moshy-vs-juniper",
   "/carrd-vs-durable",

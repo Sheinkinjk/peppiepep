@@ -94,36 +94,6 @@ const webPageSchema = {
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
 };
 
-const reviewsSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "Organization", name: "Moshy", url: "https://www.getmoshy.com.au" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.3", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-16",
-    reviewBody: "Australian telehealth weight management platform for men. Online eligibility questionnaire followed by practitioner review. GLP-1 medication options available subject to clinical assessment. Subscription with home delivery. Suitability assessed individually.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "Organization", name: "Juniper", url: "https://www.myjuniper.com.au" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.4", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-16",
-    reviewBody: "Australian weight management programme for women. Combines GLP-1 medication (subject to eligibility) with structured health coaching and ongoing practitioner support. Premium subscription model. Suitability assessed individually.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "Organization", name: "Better Being", url: "https://www.betterbeinghealth.com.au" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.2", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-16",
-    reviewBody: "Australian digital health platform offering weight management support through a lifestyle and behavioural approach. Practitioner-supported programmes with nutrition and lifestyle components. Broader approach than medication-first platforms.",
-  },
-];
-
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
 const CYAN    = "#0AA7B5";
@@ -336,9 +306,6 @@ export default function BestWeightLossTelehealthPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
-      {reviewsSchema.map((r, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }} />
-      ))}
 
       <main className="bg-[#060f15] text-white min-h-screen">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">

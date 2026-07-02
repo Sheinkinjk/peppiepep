@@ -76,6 +76,24 @@ const sections = [
         tags: ["Australia", "Weight Loss"],
       },
       {
+        href: "/moshy-review",
+        label: "Moshy Review — How the Service Actually Works",
+        desc: "What happens when you apply, what the subscription involves, and who the men's telehealth service suits.",
+        tags: ["Australia", "Weight Loss"],
+      },
+      {
+        href: "/moshy-alternatives",
+        label: "Moshy Alternatives — The Honest Shortlist",
+        desc: "Your GP, Juniper for women, Better Being for lifestyle-first. What each pathway offers and how they differ.",
+        tags: ["Australia", "Weight Loss"],
+      },
+      {
+        href: "/mens-health-telehealth-australia",
+        label: "Men's Health Telehealth in Australia",
+        desc: "How online clinics work, what they can and cannot do, and the main providers including Moshy and Mosh.",
+        tags: ["Australia", "Men's Health"],
+      },
+      {
         href: "/dense",
         label: "Dense Hair Experts — Current Offer",
         desc: "Direct access to the Dense Hair Experts affiliate link. No code required.",
