@@ -12,7 +12,9 @@ const STANDALONE_ROUTES = [
   // Consumer platform surfaces (own light-editorial shell)
   "/",
   "/weight-loss",
+  "/hair-loss",
   "/for-business",
+  "/about",
   // Brand / affiliate review pages
   "/moshy",
   "/moshhair",

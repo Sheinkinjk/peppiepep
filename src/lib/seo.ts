@@ -260,15 +260,30 @@ export const seoConfig = {
   },
 
   about: {
-    title: "About Refer Labs — Growth & Distribution Engine",
+    title: "About Refer Labs — Australia's Independent Comparison Platform",
     description:
-      "Refer Labs is a growth and distribution engine. We build referral programs, activate affiliate and influencer channels, expand businesses into APAC, and create distribution-driven products.",
+      "Refer Labs helps Australians choose between health services, software and tools through independent, disclosed comparisons, and helps businesses reach qualified buyers. Rankings are never sold.",
     url: `${SITE_URL}/about`,
     keywords: [
       "about refer labs",
-      "growth distribution agency",
-      "referral marketing partner",
-      "affiliate distribution agency Australia",
+      "independent comparison platform australia",
+      "refer labs review site",
+      "comparison site australia",
+    ],
+  },
+
+  hairLossHub: {
+    title: "Hair Loss in Australia 2026: Compare Treatments & Your Options | Refer Labs",
+    description:
+      "The hair loss decision, organised. Compare Australia's clinical telehealth and topical products, with independent guides to Mosh, Dense and more. Information only, not medical advice.",
+    url: `${SITE_URL}/hair-loss`,
+    keywords: [
+      "hair loss australia",
+      "hair loss treatment australia",
+      "hair loss options australia",
+      "compare hair loss treatments australia",
+      "hair loss telehealth australia",
+      "how to treat hair loss australia",
     ],
   },
 

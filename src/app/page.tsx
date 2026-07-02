@@ -14,7 +14,7 @@ const categories = [
     featured: true,
   },
   {
-    href: "/best-hair-loss-treatment-australia",
+    href: "/hair-loss",
     tag: "Health",
     title: "Hair loss treatment",
     blurb: "Clinical telehealth versus topical products, and when each makes sense.",

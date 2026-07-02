@@ -1,6 +1,7 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.guides);
 
@@ -13,248 +14,124 @@ const breadcrumbSchema = {
   ],
 };
 
-const CYAN    = "#0AA7B5";
-const CYAN_LT = "#22C0CD";
+const hubs = [
+  { href: "/weight-loss", label: "Weight loss", desc: "Telehealth, programs and the GP pathway, compared." },
+  { href: "/hair-loss", label: "Hair loss", desc: "Clinical prescription treatment versus topical products." },
+];
 
 const sections = [
   {
-    label: "Comparison Roundups",
-    description: "Head-to-head comparisons across categories — independent and not pay-to-rank.",
+    label: "Comparison roundups",
+    description: "Head-to-head comparisons across categories. Independent, and never pay-to-rank.",
     guides: [
-      {
-        href: "/best-website-builder",
-        label: "Best Website Builder 2026",
-        desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages. Free plans, AI generation, and pricing compared.",
-        tags: ["Website Builders", "AI Tools"],
-      },
-      {
-        href: "/best-newsletter-platform",
-        label: "Best Newsletter Platform 2026",
-        desc: "beehiiv vs Substack vs ConvertKit. Free plans, revenue share, growth tools, and Reddit verdict.",
-        tags: ["Newsletters", "Creator Tools"],
-      },
-      {
-        href: "/best-peptide-supplier",
-        label: "Best Peptide Supplier 2026",
-        desc: "Apollo Peptide Sciences vs Ascension Peptides vs BioPeptiTech. Purity, catalogue, and current discount codes.",
-        tags: ["Research Peptides"],
-      },
-      {
-        href: "/best-weight-loss-telehealth-australia",
-        label: "Best Weight Loss Telehealth Australia 2026",
-        desc: "Moshy vs Juniper vs Better Being. GLP-1 access, eligibility, pricing, and community verdict.",
-        tags: ["Australia", "Health"],
-      },
-      {
-        href: "/best-hair-loss-treatment-australia",
-        label: "Best Hair Loss Treatment Australia 2026",
-        desc: "Mosh vs Dense Hair Experts vs telehealth options. Clinical vs topical approach explained.",
-        tags: ["Australia", "Health"],
-      },
+      { href: "/best-website-builder", label: "Best website builder 2026", desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages." },
+      { href: "/best-newsletter-platform", label: "Best newsletter platform 2026", desc: "beehiiv vs Substack vs ConvertKit." },
+      { href: "/best-weight-loss-telehealth-australia", label: "Best weight loss telehealth", desc: "Moshy vs Juniper vs Better Being." },
+      { href: "/best-hair-loss-treatment-australia", label: "Best hair loss treatment", desc: "Clinical telehealth vs topical products." },
+      { href: "/best-peptide-supplier", label: "Best peptide supplier 2026", desc: "Apollo vs Ascension vs BioPeptiTech. Research use only." },
     ],
   },
   {
-    label: "Health & Wellness",
-    description: "Australian health providers, telehealth platforms, and wellness products — assessed independently.",
+    label: "Weight loss & telehealth",
+    description: "How Australia's online weight-loss services work, and which suits whom.",
     guides: [
-      {
-        href: "/moshhair",
-        label: "Mosh Hair Loss — Discount Code & Review",
-        desc: "Access the current Mosh Hair referral offer. Covers treatment options, process, and what the community says.",
-        tags: ["Australia", "Hair Loss"],
-      },
-      {
-        href: "/moshy",
-        label: "Moshy Weight Loss — Discount Code & Review",
-        desc: "Current Moshy referral offer. Covers the GLP-1 eligibility process, Moshy vs Juniper, and community reviews.",
-        tags: ["Australia", "Weight Loss"],
-      },
-      {
-        href: "/moshy-vs-juniper",
-        label: "Moshy vs Juniper — Head to Head",
-        desc: "Australia's two most-compared weight-loss telehealth platforms. Men vs women, coaching vs clinical, cost, and the Reddit verdict.",
-        tags: ["Australia", "Weight Loss"],
-      },
-      {
-        href: "/moshy-review",
-        label: "Moshy Review — How the Service Actually Works",
-        desc: "What happens when you apply, what the subscription involves, and who the men's telehealth service suits.",
-        tags: ["Australia", "Weight Loss"],
-      },
-      {
-        href: "/moshy-alternatives",
-        label: "Moshy Alternatives — The Honest Shortlist",
-        desc: "Your GP, Juniper for women, Better Being for lifestyle-first. What each pathway offers and how they differ.",
-        tags: ["Australia", "Weight Loss"],
-      },
-      {
-        href: "/mens-health-telehealth-australia",
-        label: "Men's Health Telehealth in Australia",
-        desc: "How online clinics work, what they can and cannot do, and the main providers including Moshy and Mosh.",
-        tags: ["Australia", "Men's Health"],
-      },
-      {
-        href: "/dense",
-        label: "Dense Hair Experts — Current Offer",
-        desc: "Direct access to the Dense Hair Experts affiliate link. No code required.",
-        tags: ["Australia", "Hair Care"],
-      },
-      {
-        href: "/apollopeptides",
-        label: "Apollo Peptide Sciences — Discount Code",
-        desc: "Current Apollo Peptide Sciences offer via affiliate link. Research peptides sale.",
-        tags: ["Research Peptides"],
-      },
-      {
-        href: "/ascensionpeptides",
-        label: "Ascension Peptides — Discount Code",
-        desc: "Current Ascension Peptides offer via affiliate link. High-purity research compounds.",
-        tags: ["Research Peptides"],
-      },
-      {
-        href: "/biopeptitech",
-        label: "BioPeptiTech — Discount Code",
-        desc: "Current BioPeptiTech offer via affiliate link. Lab-grade research peptides.",
-        tags: ["Research Peptides"],
-      },
+      { href: "/moshy", label: "Moshy — offer & referral link", desc: "The current referral offer. No code required." },
+      { href: "/moshy-review", label: "Moshy review", desc: "How the men's service actually runs, application to subscription." },
+      { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The men's and women's platforms, split properly." },
+      { href: "/moshy-vs-gp", label: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
+      { href: "/moshy-alternatives", label: "Moshy alternatives", desc: "The honest shortlist, including the option nobody markets." },
+      { href: "/mens-health-telehealth-australia", label: "Men's health telehealth", desc: "The wider category and its limits." },
     ],
   },
   {
-    label: "Website Builders & Tools",
-    description: "Reviews and access pages for AI website builders, landing page tools, and digital business software.",
+    label: "Hair loss & hair care",
+    description: "Prescription telehealth and topical products for hair loss in Australia.",
     guides: [
-      {
-        href: "/carrd",
-        label: "Carrd — Free Website Builder Review",
-        desc: "Carrd review 2026. Free plan forever, Pro from $9/year. Best for portfolios, link-in-bio, and simple sites.",
-        tags: ["Website Builder"],
-      },
-      {
-        href: "/durableai",
-        label: "Durable AI — AI Website Builder Review",
-        desc: "Durable AI review 2026. Generate a business website in 30 seconds. Covers pricing, free trial, and comparisons.",
-        tags: ["AI Website Builder"],
-      },
-      {
-        href: "/butternut",
-        label: "Butternut AI — AI Website Generator Review",
-        desc: "Butternut AI review 2026. Full website generated from a prompt in 20 seconds. Free to try.",
-        tags: ["AI Website Builder"],
-      },
-      {
-        href: "/swipepages",
-        label: "Swipe Pages — Landing Page Builder Review",
-        desc: "Swipe Pages review 2026. AMP landing pages under 1 second load time. 14-day free trial.",
-        tags: ["Landing Pages"],
-      },
-      {
-        href: "/carrd-vs-durable",
-        label: "Carrd vs Durable AI — Head to Head",
-        desc: "Cheapest one-page builder vs AI-built business site with CRM. Pricing, AI, and which to pick.",
-        tags: ["Website Builders"],
-      },
+      { href: "/moshhair", label: "Mosh — review & offer", desc: "Men's hair-loss telehealth. Process, options, current offer." },
+      { href: "/dense", label: "Dense Hair Experts", desc: "Topical, non-prescription density and scalp products." },
     ],
   },
   {
-    label: "Creator & Business Tools",
-    description: "Newsletter platforms, AI tools, and side hustle resources for online creators and operators.",
+    label: "Website builders & tools",
+    description: "AI website builders, landing-page tools and digital business software, tested.",
     guides: [
-      {
-        href: "/beehiiv",
-        label: "beehiiv — Newsletter Platform Review",
-        desc: "beehiiv review 2026. Free up to 2,500 subscribers, 14-day trial of paid features. Compare vs Substack.",
-        tags: ["Newsletter", "Creator Tools"],
-      },
-      {
-        href: "/incomelab",
-        label: "IncomeLab — AI Side Hustle Platform",
-        desc: "AI side hustle ideas and structured frameworks for making money with AI tools in 2026.",
-        tags: ["AI Tools", "Side Hustle"],
-      },
-      {
-        href: "/referral-blueprint",
-        label: "Referral Growth Blueprint",
-        desc: "250+ researched affiliate programs, personalised strategy brief, SEO page concepts, and distribution playbooks. $799 AUD, delivered in 48 hours.",
-        tags: ["Blueprint", "Affiliate"],
-      },
-      {
-        href: "/blog/best-affiliate-programs-australia-2026",
-        label: "Best Affiliate Programs Australia 2026",
-        desc: "High-commission and recurring affiliate programs for Australians — health, SaaS, fintech, and creator niches compared.",
-        tags: ["Affiliate", "Australia"],
-      },
+      { href: "/carrd", label: "Carrd review", desc: "Free plan forever, Pro from $9/year. Best for simple sites." },
+      { href: "/durableai", label: "Durable AI review", desc: "Generate a business website in 30 seconds, with CRM." },
+      { href: "/butternut", label: "Butternut AI review", desc: "Full site from a prompt in 20 seconds. Free to try." },
+      { href: "/swipepages", label: "Swipe Pages review", desc: "AMP landing pages under 1 second. 14-day free trial." },
+      { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
+    ],
+  },
+  {
+    label: "Creator & business tools",
+    description: "Newsletter platforms and tools for online creators and operators.",
+    guides: [
+      { href: "/beehiiv", label: "beehiiv review", desc: "Free up to 2,500 subscribers. Compare vs Substack." },
+      { href: "/incomelab", label: "IncomeLab", desc: "AI side-hustle ideas and frameworks for 2026." },
+    ],
+  },
+  {
+    label: "Research peptides",
+    description: "For laboratory research use only. Purity, catalogue and current offers.",
+    guides: [
+      { href: "/apollopeptides", label: "Apollo Peptide Sciences", desc: "Broad catalogue. Current offer via referral link." },
+      { href: "/ascensionpeptides", label: "Ascension Peptides", desc: "High-purity focus. Current offer via referral link." },
+      { href: "/biopeptitech", label: "BioPeptiTech", desc: "Lab-grade compounds. Frequent sale events." },
     ],
   },
 ];
 
 export default function GuidesPage() {
   return (
-    <div className="relative min-h-screen bg-[#060f15] text-white">
+    <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(10,167,181,0.10),transparent_55%)]" />
-      </div>
-
-      <main id="main-content" className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12 pb-24 pt-14 sm:pt-18">
-
-        {/* Breadcrumb */}
-        <nav className="mb-10 flex items-center gap-2 text-sm text-white/40">
-          <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+      <main id="main-content" className="mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
+        <nav className="mb-7 flex items-center gap-2 text-sm text-[#8A938E]">
+          <Link href="/" className="hover:text-[#0E7C66]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-white/60">Guides & Comparisons</span>
+          <span className="text-[#46524C]">Guides</span>
         </nav>
 
-        {/* Hero */}
-        <div className="mb-16 sm:mb-20 max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#0AA7B5]/30 bg-[#0AA7B5]/[0.07] px-3.5 py-1.5 mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#22C0CD]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#22C0CD]">Independent Comparisons</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-white mb-5 tracking-tight">
-            Guides &{" "}
-            <span style={{ color: CYAN_LT }}>Comparisons</span>
+        <div className="max-w-2xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E7C66]">Independent comparisons</p>
+          <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#16201C] sm:text-5xl">
+            Every guide, in one place
           </h1>
-          <p className="text-white/55 text-base sm:text-lg leading-relaxed max-w-2xl">
-            Honest comparison guides covering health providers, website builders, newsletter platforms, peptide suppliers, and business tools. Not a pay-to-rank directory.
+          <p className="mt-5 text-lg leading-relaxed text-[#46524C]">
+            Comparisons and reviews across health, software and business tools. Researched by people, disclosed on
+            every page, and never sold to the highest bidder.
           </p>
         </div>
 
+        {/* Category hubs */}
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {hubs.map((h) => (
+            <Link key={h.href} href={h.href} className="group rounded-2xl border border-[#0E7C66]/25 bg-white p-6 transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-16px_rgba(0,0,0,0.25)]">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0E7C66]">Category hub</span>
+                <ArrowRight className="h-4 w-4 text-[#0E7C66] transition-transform group-hover:translate-x-0.5" />
+              </div>
+              <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#16201C] group-hover:text-[#0E7C66]">{h.label}</h2>
+              <p className="mt-1.5 text-sm leading-relaxed text-[#6B756F]">{h.desc}</p>
+            </Link>
+          ))}
+        </div>
+
         {/* Sections */}
-        <div className="space-y-0">
+        <div className="mt-6 space-y-0">
           {sections.map((section) => (
-            <section key={section.label} className="border-t border-[#0AA7B5]/10 py-12 sm:py-14">
-              <div className="grid lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
+            <section key={section.label} className="border-t border-black/[0.08] py-12">
+              <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
                 <div className="lg:pt-1">
-                  <h2 className="text-base font-black text-white mb-2">{section.label}</h2>
-                  <p className="text-white/35 text-xs leading-relaxed">{section.description}</p>
+                  <h2 className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#16201C]">{section.label}</h2>
+                  <p className="mt-2 text-[13px] leading-relaxed text-[#8A938E]">{section.description}</p>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid gap-4 sm:grid-cols-2">
                   {section.guides.map((guide) => (
-                    <Link
-                      key={guide.href}
-                      href={guide.href}
-                      className="group rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition-all hover:border-[#0AA7B5]/30 hover:bg-[#0AA7B5]/[0.04]"
-                    >
-                      <div className="flex flex-wrap gap-1.5 mb-3">
-                        {guide.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-widest"
-                            style={{ color: CYAN, background: `${CYAN}12`, border: `1px solid ${CYAN}25` }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="text-sm font-bold text-white mb-2 group-hover:text-[#22C0CD] transition-colors">
-                        {guide.label}
-                      </h3>
-                      <p className="text-xs text-white/40 leading-relaxed mb-3">{guide.desc}</p>
-                      <span className="inline-flex items-center gap-1 text-xs font-semibold transition-colors" style={{ color: CYAN }}>
-                        Read guide
-                        <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
-                      </span>
+                    <Link key={guide.href} href={guide.href} className="group rounded-xl border border-black/[0.07] bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-[#0E7C66]/40">
+                      <h3 className="text-[15px] font-bold text-[#16201C] group-hover:text-[#0E7C66]">{guide.label}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-[#6B756F]">{guide.desc}</p>
                     </Link>
                   ))}
                 </div>
@@ -263,14 +140,14 @@ export default function GuidesPage() {
           ))}
         </div>
 
-        {/* Bottom note */}
-        <div className="border-t border-[#0AA7B5]/10 pt-12 text-center">
-          <p className="text-white/30 text-xs max-w-lg mx-auto leading-relaxed">
-            Some pages on this site contain affiliate links. We earn a commission if you purchase through them, at no extra cost to you. Our assessments are independent and not influenced by commercial arrangements with the brands featured.
+        <div className="border-t border-black/[0.08] pt-10">
+          <p className="max-w-2xl text-sm leading-relaxed text-[#6B756F]">
+            Some pages contain affiliate links, disclosed on the page. We may earn a commission if you buy through them,
+            at no extra cost to you, and it never changes a conclusion. See{" "}
+            <Link href="/how-we-research" className="font-semibold text-[#0E7C66] underline decoration-[#0E7C66]/30 underline-offset-4">how we research</Link>.
           </p>
         </div>
-
       </main>
-    </div>
+    </ConsumerShell>
   );
 }

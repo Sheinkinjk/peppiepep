@@ -1,135 +1,111 @@
-import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.about);
 
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min";
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
+  ],
+};
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <div className="relative min-h-screen bg-[#060f15] text-white">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(10,167,181,0.10),transparent_50%)]" />
-      </div>
+    <ConsumerShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <main id="main-content" className="relative mx-auto max-w-5xl px-6 sm:px-8 lg:px-12 pb-24 pt-16 sm:pt-20">
+      <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#8A938E]">
+          <Link href="/" className="hover:text-[#0E7C66]">Refer Labs</Link>
+          <span>/</span>
+          <span className="text-[#46524C]">About</span>
+        </nav>
 
-        {/* Hero */}
-        <div className="mb-20 sm:mb-24 max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] text-white mb-7 tracking-tight">
-            We Are Your Referral &{" "}
-            <span className="text-[#22C0CD]">Distribution Partner.</span>
-          </h1>
-          <p className="text-white/55 text-base sm:text-lg leading-relaxed">
-            Refer Labs builds referral programs, activates distribution channels, and creates systems that turn networks and audiences into revenue — for operators, brands, and businesses that understand distribution is a structural advantage.
-          </p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E7C66]">About Refer Labs</p>
+        <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.07] tracking-[-0.01em] text-[#16201C] sm:text-5xl">
+          A better way to decide
+        </h1>
+        <p className="mt-5 text-lg leading-relaxed text-[#46524C]">
+          Refer Labs is an Australian comparison platform. We help people choose between health services, software and
+          tools, and we help good businesses reach those people at the moment they are ready to buy.
+        </p>
+
+        <div className="mt-12 space-y-10">
+          <section>
+            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C]">
+              Why we exist
+            </h2>
+            <p className="mt-3 text-[15.5px] leading-relaxed text-[#46524C]">
+              Every category worth spending money on has been buried under content designed to rank, not to help. Search
+              &ldquo;best weight loss telehealth&rdquo; or &ldquo;which website builder&rdquo; and you get pages that
+              recommend whoever pays the most, dressed up as advice. We are building the opposite: a place where the
+              research is done honestly, the recommendation would survive the brand reading it, and the funding model is
+              disclosed rather than disguised.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C]">
+              How it works, in one line
+            </h2>
+            <p className="mt-3 text-[15.5px] leading-relaxed text-[#46524C]">
+              Consumers read our comparisons for free. Some links earn us a commission, disclosed on the page.
+              Businesses partner with us to reach qualified buyers. The one thing that is never for sale is the ranking,
+              because the moment it is, the audience stops trusting the page and the whole thing collapses. That
+              constraint is the business model, not a compromise on it.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C]">
+              Where we started, where we are going
+            </h2>
+            <p className="mt-3 text-[15.5px] leading-relaxed text-[#46524C]">
+              We began by researching affiliate and referral programs for businesses, work that still runs through our
+              For Business arm. That taught us where the good offers were and how customers actually find them. The
+              natural next step was to build the destination those customers arrive at. We are covering categories one
+              at a time, going deep before going wide, until Refer Labs is the first place Australians check before a
+              purchase decision.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C]">
+              Who runs it
+            </h2>
+            <p className="mt-3 text-[15.5px] leading-relaxed text-[#46524C]">
+              Refer Labs is founded and run by Jarred Krowitz, based in Australia. If you have found an error, want to
+              partner, or just want to argue with a conclusion, the door is open at{" "}
+              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0E7C66] underline decoration-[#0E7C66]/40 underline-offset-4">
+                jarred@referlabs.com.au
+              </a>
+              .
+            </p>
+          </section>
         </div>
 
-        {/* What We Do */}
-        <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          <Link href="/guides" className="group flex items-center justify-between rounded-2xl border border-black/[0.07] bg-white p-6 transition-all hover:border-[#0E7C66]/40">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-black text-white mb-5 leading-tight">
-                What Refer Labs Does
-              </h2>
-              <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-5">
-                We design and launch referral programs, distribute affiliate offers, activate influencer and network partnerships, support APAC market expansion, and build distribution-driven products from concept to revenue.
-              </p>
-              <p className="text-white/55 text-sm sm:text-base leading-relaxed">
-                Every engagement is structured, commercial, and built to compound. We do not run one-off campaigns. We build systems that continue generating leverage after we have done our work.
-              </p>
+              <p className="text-[15px] font-bold text-[#16201C] group-hover:text-[#0E7C66]">Browse the guides</p>
+              <p className="mt-1 text-sm text-[#6B756F]">Every comparison in one place.</p>
             </div>
-            <div className="space-y-4">
-              {[
-                "We design systems, not campaigns",
-                "We work with operators ready to scale distribution",
-                "We operate across referral, affiliate, influencer, APAC, and product channels",
-                "We align incentives with client outcomes",
-                "We own selected products internally and are open to collaboration",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-4 w-4 text-[#0AA7B5] flex-shrink-0 mt-0.5" />
-                  <p className="text-white/60 text-sm">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Philosophy */}
-        <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
-          <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
+            <ArrowRight className="h-4 w-4 text-[#0E7C66] transition-transform group-hover:translate-x-0.5" />
+          </Link>
+          <Link href="/for-business" className="group flex items-center justify-between rounded-2xl border border-black/[0.07] bg-white p-6 transition-all hover:border-[#0E7C66]/40">
             <div>
-              <h2 className="text-xl font-black text-white">Our Approach</h2>
+              <p className="text-[15px] font-bold text-[#16201C] group-hover:text-[#0E7C66]">For business</p>
+              <p className="mt-1 text-sm text-[#6B756F]">Partnerships, growth services, the Blueprint.</p>
             </div>
-            <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
-              <p>
-                Most growth problems are distribution problems. Companies with strong products fail to scale because they lack the systems to get those products in front of the right people, through the right channels, at the right time.
-              </p>
-              <p>
-                We built Refer Labs to solve that. We identify where the leverage is, structure the distribution engine, activate the channels, and optimise until the system compounds.
-              </p>
-              <p>
-                Whether that means designing a referral program, distributing an affiliate offer, activating an influencer network, entering APAC, or building and distributing a digital product, the underlying logic is the same: distribution is leverage.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Values */}
-        <section className="border-t border-[#0AA7B5]/10 py-14 sm:py-16 mb-4">
-          <div className="grid lg:grid-cols-[200px_1fr] gap-8 lg:gap-16">
-            <div>
-              <h2 className="text-xl font-black text-white">What We Stand For</h2>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-6 max-w-2xl">
-              {[
-                { label: "Execution over theory", desc: "We build and activate. Strategy without execution is noise." },
-                { label: "Aligned incentives", desc: "We structure engagements so our success is tied to yours." },
-                { label: "Clarity over complexity", desc: "Simple systems compound. Complicated ones collapse." },
-              ].map((v) => (
-                <div key={v.label}>
-                  <p className="text-white font-semibold text-sm mb-2">{v.label}</p>
-                  <p className="text-white/45 text-xs leading-relaxed">{v.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section className="border-t border-[#0AA7B5]/10 pt-14 sm:pt-16">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-            <div>
-              <h2 className="text-2xl font-black text-white mb-2">
-                Ready to talk distribution?
-              </h2>
-              <p className="text-white/45 text-sm">
-                jarred@referlabs.com.au
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0AA7B5] px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#22C0CD] shadow-lg shadow-[#0AA7B5]/20"
-              >
-                Partner With Us
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white/80 transition-all hover:bg-white/[0.07] hover:text-white"
-              >
-                Send a Message
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
+            <ArrowRight className="h-4 w-4 text-[#0E7C66] transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
       </main>
-    </div>
+    </ConsumerShell>
   );
 }

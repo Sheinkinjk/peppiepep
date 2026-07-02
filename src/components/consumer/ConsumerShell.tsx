@@ -12,7 +12,7 @@ const fraunces = Fraunces({
 
 const NAV = [
   { href: "/weight-loss", label: "Weight loss" },
-  { href: "/best-hair-loss-treatment-australia", label: "Hair loss" },
+  { href: "/hair-loss", label: "Hair loss" },
   { href: "/best-website-builder", label: "Website builders" },
   { href: "/best-newsletter-platform", label: "Newsletters" },
   { href: "/guides", label: "All guides" },
@@ -77,7 +77,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">Compare</p>
               <ul className="space-y-2.5 text-sm text-[#46524C]">
                 <li><Link href="/weight-loss" className="hover:text-[#0E7C66]">Weight loss &amp; telehealth</Link></li>
-                <li><Link href="/best-hair-loss-treatment-australia" className="hover:text-[#0E7C66]">Hair loss treatment</Link></li>
+                <li><Link href="/hair-loss" className="hover:text-[#0E7C66]">Hair loss treatment</Link></li>
                 <li><Link href="/best-website-builder" className="hover:text-[#0E7C66]">Website builders</Link></li>
                 <li><Link href="/best-newsletter-platform" className="hover:text-[#0E7C66]">Newsletter platforms</Link></li>
                 <li><Link href="/guides" className="hover:text-[#0E7C66]">All guides</Link></li>
