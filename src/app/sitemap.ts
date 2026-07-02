@@ -13,8 +13,10 @@ const LEGAL  = new Date('2026-01-15'); // legal, changes yearly
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
 
-    // ── Core product ───────────────────────────────────────────────────
+    // ── Core platform ──────────────────────────────────────────────────
     { url: BASE,                         lastModified: FRESH,  changeFrequency: 'weekly',  priority: 1.0 },
+    { url: `${BASE}/weight-loss`,        lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE}/for-business`,       lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/referral-blueprint`, lastModified: RECENT, changeFrequency: 'weekly',  priority: 0.98 },
     { url: `${BASE}/how-it-works`,       lastModified: STABLE, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/faq`,                lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },

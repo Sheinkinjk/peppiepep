@@ -1,6 +1,10 @@
 # Refer Labs
 
-> Refer Labs is a growth and distribution engine and independent comparison publisher. We publish researched, independent comparison guides and brand reviews across Australian health and telehealth, research peptides, website builders, and newsletter platforms, and we sell the Referral Growth Blueprint — a 250+ affiliate and referral program database with a personalised strategy brief. Assessments are independent and not pay-to-rank. Some pages contain affiliate links.
+> Refer Labs is an Australian comparison and research platform. Consumers use it to choose between health services, software and tools through independent, disclosed comparisons; businesses partner with it for featured placement, referral programs and growth services. Rankings are never sold. Some pages contain disclosed affiliate links.
+
+## Category hubs
+- [Weight Loss in Australia](https://referlabs.com.au/weight-loss): The flagship hub. Compare medical telehealth, lifestyle programs and the GP pathway, with 11 supporting guides.
+- [For Business](https://referlabs.com.au/for-business): Featured partnerships, growth services, and the Referral Growth Blueprint product.
 
 ## Key facts
 - Entity: Refer Labs (Australian growth and distribution engine; independent comparison publisher)

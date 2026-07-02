@@ -142,23 +142,50 @@ export function generateMetadata(config: SEOConfig): Metadata {
  */
 export const seoConfig = {
   home: {
-    title: "Referral Growth Blueprint — $799 AUD | Refer Labs",
+    title: "Refer Labs: Compare Health Services, Software & Tools in Australia",
     description:
-      "250+ researched affiliate programs, a personalised strategy brief, SEO page concepts and distribution playbooks. Delivered in 48 hours. $799 AUD.",
+      "Independent comparisons for Australians. Weight loss telehealth, hair loss treatment, website builders, newsletter platforms and more, researched properly so you can choose with confidence.",
     url: SITE_URL,
     keywords: [
-      "referral blueprint",
-      "affiliate program database australia",
-      "best affiliate programs australia 2026",
-      "how to start affiliate marketing australia",
-      "referral system for business",
-      "referral marketing australia",
-      "affiliate marketing blueprint",
-      "referral growth blueprint",
-      "affiliate income blueprint",
-      "passive income affiliate programs australia",
-      "referral program setup",
-      "affiliate marketing side hustle australia",
+      "comparison site australia",
+      "compare telehealth australia",
+      "weight loss telehealth comparison",
+      "compare website builders australia",
+      "independent product comparisons australia",
+      "best providers australia",
+      "compare services australia",
+      "refer labs",
+    ],
+  },
+
+  weightLossHub: {
+    title: "Weight Loss in Australia 2026: Compare Telehealth, Programs & Your Options | Refer Labs",
+    description:
+      "The weight loss decision, organised. Compare Australia's medical telehealth services, lifestyle programs and the GP pathway, with independent guides to Moshy, Juniper and more. Information only, not medical advice.",
+    url: `${SITE_URL}/weight-loss`,
+    keywords: [
+      "weight loss australia",
+      "weight loss options australia",
+      "compare weight loss programs australia",
+      "weight loss telehealth australia",
+      "weight loss services australia",
+      "online weight loss australia",
+      "weight loss comparison australia",
+      "how to choose a weight loss program",
+    ],
+  },
+
+  forBusiness: {
+    title: "For Business — Partner With Refer Labs",
+    description:
+      "Get your product featured in Refer Labs comparisons, or work with our team on referral programs, affiliate distribution and Australian market entry. Partnerships disclosed, rankings never sold.",
+    url: `${SITE_URL}/for-business`,
+    keywords: [
+      "partner with refer labs",
+      "get featured comparison site australia",
+      "referral program agency australia",
+      "affiliate distribution service",
+      "customer acquisition australia",
     ],
   },
 

@@ -11,8 +11,8 @@ export function OrganizationSchema() {
     "url": "https://referlabs.com.au",
     "logo": "https://referlabs.com.au/logo.svg",
     "image": "https://referlabs.com.au/og-image.png",
-    "description": "Refer Labs is an Australian growth and distribution engine and independent comparison publisher. It publishes researched, independent comparison guides and brand reviews across Australian health and telehealth, research peptides, website builders, and newsletter platforms, and sells the Referral Growth Blueprint — a 250+ affiliate and referral program database with a personalised strategy brief. One-time $799 AUD, delivered within 48 hours.",
-    "slogan": "Growth & Distribution Engine",
+    "description": "Refer Labs is an Australian comparison and research platform. It helps consumers choose between health services, software and tools through independent, disclosed comparisons, and helps businesses acquire customers through featured partnerships, referral programs and growth services.",
+    "slogan": "Compare properly. Choose with confidence.",
     "email": "jarred@referlabs.com.au",
     "foundingLocation": { "@type": "Country", "name": "Australia" },
     "founder": { "@type": "Person", "name": "Jarred Krowitz" },
@@ -199,7 +199,7 @@ export function WebsiteSchema() {
     "@type": "WebSite",
     "name": "Refer Labs",
     "url": "https://referlabs.com.au",
-    "description": "Refer Labs — 250+ affiliate and referral programs database, personalised strategy brief, SEO page concepts, and distribution playbooks. The Referral Growth Blueprint. $799 AUD one-time.",
+    "description": "Independent comparisons for Australians choosing health services, software and tools. Researched by people, disclosed on every page, rankings never sold.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

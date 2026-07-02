@@ -9,6 +9,10 @@ import { usePathname } from "next/navigation";
  * Add a path here to make it a chrome-free, standalone page.
  */
 const STANDALONE_ROUTES = [
+  // Consumer platform surfaces (own light-editorial shell)
+  "/",
+  "/weight-loss",
+  "/for-business",
   // Brand / affiliate review pages
   "/moshy",
   "/moshhair",
@@ -47,8 +51,8 @@ const STANDALONE_ROUTES = [
 
 export function ChromeGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || "/";
-  const isStandalone = STANDALONE_ROUTES.some(
-    (route) => pathname === route || pathname.startsWith(`${route}/`),
+  const isStandalone = STANDALONE_ROUTES.some((route) =>
+    route === "/" ? pathname === "/" : pathname === route || pathname.startsWith(`${route}/`),
   );
   if (isStandalone) return null;
   return <>{children}</>;
