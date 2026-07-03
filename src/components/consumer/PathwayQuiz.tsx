@@ -7,7 +7,7 @@ import { MOSHY_URL, JUNIPER_URL, BETTERBEING_URL } from "@/lib/affiliate-links";
 
 /**
  * "Which weight-loss pathway fits you?" — a two-question decision tool that ends
- * in a tailored recommendation. Men leaning clinical land on Moshy (the money
+ * in a tailored recommendation. Anyone leaning clinical lands on Moshy (the money
  * link, tracked). Engagement asset + funnel, not medical advice.
  */
 
@@ -40,23 +40,15 @@ function resolve(gender: Gender, priority: Priority): Result {
     }
     return {
       title: "A lifestyle-first program suits you",
-      body: "You want coaching and habits at the centre, not medication first. Better Being takes that approach and is open to anyone. If you later want the clinical route, Moshy is the men's option.",
+      body: "You want coaching and habits at the centre, not medication first. Better Being takes that approach and is open to anyone. If you later want the clinical route, Moshy runs that pathway online.",
       cta: { label: "Visit Better Being", href: BETTERBEING_URL, sponsored: false, loc: "quiz-betterbeing" },
       secondary: { label: "See all weight-loss options", href: "/weight-loss" },
     };
   }
-  // clinical
-  if (gender === "woman") {
-    return {
-      title: "Juniper is the women's clinical option",
-      body: "You want a focused, practitioner-led pathway, and Juniper runs that model for women. Eligibility and suitability are assessed individually by registered practitioners.",
-      cta: { label: "Visit Juniper", href: JUNIPER_URL, sponsored: false, loc: "quiz-juniper-clinical" },
-      secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
-    };
-  }
+  // clinical — Moshy is the clinical pathway, open to anyone eligible
   return {
     title: "Moshy is the natural starting point",
-    body: "You want a fast, clinically-led pathway done online, and Moshy is the dedicated men's service for exactly that. The eligibility check takes about ten minutes and commits you to nothing.",
+    body: "You want a fast, clinically-led pathway done online, and Moshy runs exactly that, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing.",
     cta: { label: "Check your eligibility on Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
   };

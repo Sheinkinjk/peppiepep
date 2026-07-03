@@ -80,7 +80,7 @@ export default function MoshyLanding() {
             <h1
               className="mt-5 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#16201C] sm:text-5xl lg:text-[3.4rem]"
             >
-              Moshy, reviewed: the men&apos;s weight-loss telehealth service,{" "}
+              Moshy, reviewed: the clinically-led weight-loss telehealth service,{" "}
               <span className="italic text-[#0E7C66]">explained properly</span> before you start.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#46524C]">
@@ -106,8 +106,8 @@ export default function MoshyLanding() {
               </span>
               <dl className="mt-4 divide-y divide-black/[0.06] text-sm">
                 {[
-                  ["What it is", "Australian men's weight-management telehealth"],
-                  ["For", "Men seeking a clinically-supervised program"],
+                  ["What it is", "Australian weight-management telehealth"],
+                  ["For", "Anyone eligible seeking a clinically-supervised program"],
                   ["Format", "Online eligibility → practitioner review → delivery"],
                   ["Medication", "GLP-1 access if clinically appropriate"],
                   ["Pricing", "Subscription, confirmed in the consult"],
@@ -183,15 +183,15 @@ export default function MoshyLanding() {
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
                 <p>
-                  Moshy is an Australian telehealth service for men, best known for its weight-management program. You
-                  complete a health questionnaire online, a registered Australian practitioner reviews your case, and —
-                  if it&apos;s appropriate — you continue on a subscription with treatment delivered to your door. There&apos;s
-                  no in-person GP appointment to book to get started.
+                  Moshy is a clinically-led Australian telehealth service, best known for its weight-management program
+                  and open to anyone eligible. You complete a health questionnaire online, a registered Australian
+                  practitioner reviews your case, and if it&apos;s appropriate, you continue on a subscription with treatment
+                  delivered to your door. There&apos;s no in-person GP appointment to book to get started.
                 </p>
                 <p>
-                  It exists because a lot of men simply won&apos;t make a GP appointment for weight. The online flow removes
+                  It exists because a lot of people simply won&apos;t make a GP appointment for weight. The online flow removes
                   that friction without removing the clinician: every submission is assessed individually, and not everyone
-                  is approved. That last part matters — a service that screens people out is behaving like a clinical
+                  is approved. That last part matters. A service that screens people out is behaving like a clinical
                   provider, not a vending machine.
                 </p>
               </div>

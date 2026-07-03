@@ -20,7 +20,7 @@ const categories = [
 
 // A richer "top picks" strip so a real category reads as authoritative.
 const topPicks = [
-  { name: "Moshy", cat: "Weight loss", note: "Best for men who want a clinical pathway done online.", href: "/moshy-review" },
+  { name: "Moshy", cat: "Weight loss", note: "Best for anyone who wants a clinical pathway done online.", href: "/moshy-review" },
   { name: "beehiiv", cat: "Newsletters", note: "Best for creators serious about growing an audience.", href: "/best-newsletter-platform" },
   { name: "Carrd", cat: "Website builders", note: "Best for a fast, genuinely cheap one-page site.", href: "/carrd-vs-durable" },
 ];

@@ -13,12 +13,12 @@ const ext = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofo
 
 const faqs = [
   {
-    q: "What is the closest alternative to Moshy for men?",
-    a: "For a men-only, practitioner-led weight-management telehealth service in Australia, Moshy has no like-for-like twin. The realistic alternatives are your GP, who can manage the same pathway in person, or a lifestyle-first program such as Better Being.",
+    q: "What is the closest alternative to Moshy?",
+    a: "For a lean, practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, a coaching-led program such as Juniper, or a lifestyle-first program such as Better Being.",
   },
   {
-    q: "Can men just use Juniper instead?",
-    a: "Juniper is designed and marketed for women, with clinical content and coaching built for women. Men searching for the Juniper equivalent are effectively searching for Moshy.",
+    q: "How is Juniper different from Moshy?",
+    a: "Juniper wraps medication access inside a broader coaching and community program and markets primarily to women. Moshy keeps the experience focused on the clinical pathway, open to anyone eligible. Which suits you depends on how much coaching support you want alongside the clinical side.",
   },
   {
     q: "Is going through my GP a real alternative?",
@@ -90,7 +90,7 @@ export default function MoshyAlternativesPage() {
           <h2 className="text-xl font-black">1. Your GP</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             The alternative nobody markets. A GP can manage a weight pathway in person, sees your whole health picture,
-            and Medicare offsets part of the cost. What you give up is convenience and, for some men, the willingness to
+            and Medicare offsets part of the cost. What you give up is convenience and, for some people, the willingness to
             start at all. If you would genuinely book the appointment, this is a strong option. We compared the two
             routes properly in{" "}
             <Link href="/moshy-vs-gp" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
@@ -100,10 +100,10 @@ export default function MoshyAlternativesPage() {
         </section>
 
         <section className="space-y-4 mb-8">
-          <h2 className="text-xl font-black">2. Juniper, if you are a woman</h2>
+          <h2 className="text-xl font-black">2. Juniper, if you want coaching built in</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Juniper runs the closest model to Moshy but is built for women, with a coaching and community layer on top
-            of the clinical pathway. Men landing on Juniper get pointed back the other way. If that is you,{" "}
+            Juniper runs a close model to Moshy but adds a coaching and community layer on top of the clinical pathway,
+            and markets primarily to women. If that structure is what you want,{" "}
             <a {...ext(JUNIPER_URL)} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Juniper is here
             </a>.
@@ -122,11 +122,12 @@ export default function MoshyAlternativesPage() {
         </section>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">And for men wanting the dedicated service</h2>
+          <h2 className="text-xl font-black">And for the focused clinical pathway itself</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            After the shortlist, the conclusion writes itself: for a men-only, practitioner-led telehealth program in
-            Australia, Moshy is the category. That is not hype; the checklist of registered practitioners, genuine
-            screening, and Australian regulation simply has one dedicated men&apos;s entrant right now.
+            After the shortlist, the conclusion writes itself: for a lean, practitioner-led telehealth program in
+            Australia that is open to anyone eligible, Moshy is the reference point. That is not hype; the checklist of
+            registered practitioners, genuine screening, and Australian regulation filters the field down to very few
+            services that run this pathway properly.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-4" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">

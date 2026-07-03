@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Are Moshy and Mosh the same company?",
-    a: "They are sister brands in the same Australian men's health family. Moshy at getmoshy.com.au covers weight management, and Mosh at getmosh.com.au is best known for hair loss.",
+    a: "They are sister brands in the same Australian telehealth family. Moshy at getmoshy.com.au covers weight management and is open to anyone eligible, while Mosh at getmosh.com.au is a men's service best known for hair loss.",
   },
   {
     q: "Do these services replace having a GP?",
@@ -108,8 +108,8 @@ export default function MensHealthTelehealthPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Weight management</p>
               <h3 className="text-lg font-bold mb-2">Moshy</h3>
               <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
-                The men&apos;s weight-management telehealth service. Eligibility check online, practitioner review,
-                subscription with delivery if approved.
+                A clinically-led weight-management telehealth service, open to anyone eligible. Eligibility check online,
+                practitioner review, subscription with delivery if approved.
               </p>
               <a
                 {...aff(MOSHY_URL)}

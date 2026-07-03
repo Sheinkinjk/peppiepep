@@ -26,11 +26,11 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "Is Moshy or Juniper better for weight loss?",
-    a: "Neither is universally better — they are built for different people. Moshy is a men-only weight-management telehealth service; Juniper is women-only and pairs medication access with a structured coaching and habit program. The right choice is the one matched to your gender and how much coaching support you want. Both can facilitate GLP-1 access through Australian-registered practitioners where clinically appropriate.",
+    a: "Neither is universally better, they take different approaches. Moshy runs a lean, clinically-led telehealth pathway open to anyone eligible; Juniper pairs medication access with a structured coaching and habit program and markets primarily to women. The right choice depends on how much coaching support you want alongside the clinical side. Both can facilitate GLP-1 access through Australian-registered practitioners where clinically appropriate.",
   },
   {
-    q: "Can men use Juniper or women use Moshy?",
-    a: "Juniper's program is designed and marketed for women, and Moshy's for men. Their clinical content and coaching are tailored accordingly, so most people start with the platform built for them. If neither fits your situation, a GP is always a valid starting point. This is general information, not medical advice.",
+    q: "How do I choose between Moshy and Juniper?",
+    a: "Think about the kind of support you want. Moshy keeps the experience focused on the clinical pathway: eligibility check, practitioner review, and delivery if appropriate. Juniper wraps medication access inside a broader coaching and community program, which it designs and markets for women. If neither fits your situation, a GP is always a valid starting point. This is general information, not medical advice.",
   },
   {
     q: "Do Moshy and Juniper both offer GLP-1 medications like semaglutide?",
@@ -53,7 +53,7 @@ const faqSchema = {
 };
 
 const rows: { label: string; moshy: string; juniper: string }[] = [
-  { label: "Designed for", moshy: "Men", juniper: "Women" },
+  { label: "Approach", moshy: "Clinical pathway, open to anyone eligible", juniper: "Coaching-led, marketed for women" },
   { label: "Model", moshy: "Clinical, practitioner-led pathway", juniper: "Medication + structured coaching & community" },
   { label: "GLP-1 access", moshy: "Via registered practitioner, if eligible", juniper: "Via registered practitioner, if eligible" },
   { label: "Process", moshy: "Online eligibility → practitioner review → delivery", juniper: "Online eligibility → practitioner review → program + delivery" },
@@ -84,9 +84,9 @@ export default function MoshyVsJuniperPage() {
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem for different
-          people. The short version: <strong className="text-[#2b362f]">Moshy is for men, Juniper is for women</strong> — and the
-          difference goes deeper than that.
+          Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem in different
+          ways. The short version: <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps
+          medication in a coaching program</strong>, and the difference goes deeper than that.
         </p>
         <p className="mb-8 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or medication or imply suitability for any individual. Prescription medicines in Australia are available only after assessment by a registered practitioner.
@@ -96,9 +96,10 @@ export default function MoshyVsJuniperPage() {
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
-            If you are a man, Moshy is the natural starting point — a focused, clinically-led pathway with a fast online
-            eligibility check. If you are a woman who wants coaching and accountability alongside medication, Juniper is
-            purpose-built for that. Both assess suitability individually through registered Australian practitioners.
+            If you want a focused, clinically-led pathway with a fast online eligibility check, Moshy is a natural
+            starting point and is open to anyone eligible. If you want coaching and accountability wrapped around
+            medication, Juniper is built for that and markets primarily to women. Both assess suitability individually
+            through registered Australian practitioners.
           </p>
           <div className="mt-5">
             <a
@@ -106,7 +107,7 @@ export default function MoshyVsJuniperPage() {
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
               style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
             >
-              Check Moshy Eligibility (Men)
+              Check Moshy Eligibility
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -139,10 +140,10 @@ export default function MoshyVsJuniperPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The real difference</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Gender targeting is the headline, but the more useful distinction is philosophy. Moshy keeps the experience
-            deliberately lean: complete the eligibility questionnaire, have a practitioner review your case, and — if
-            appropriate — proceed with a treatment plan delivered to your door. For a lot of men who simply want to get
-            started without friction, that focus is the appeal.
+            The most useful distinction is philosophy. Moshy keeps the experience deliberately lean: complete the
+            eligibility questionnaire, have a practitioner review your case, and if appropriate, proceed with a treatment
+            plan delivered to your door. For a lot of people who simply want to get started without friction, that focus
+            is the appeal.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Juniper wraps medication access inside a broader program — coaching, habit tracking, and a community — and
@@ -158,7 +159,7 @@ export default function MoshyVsJuniperPage() {
         {/* Dual CTA */}
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>For men</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
             <h3 className="text-lg font-bold mb-2">Start with Moshy</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
               Fast online eligibility check, practitioner-reviewed, delivered. No code needed — the referral applies automatically.

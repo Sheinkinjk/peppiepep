@@ -28,8 +28,8 @@ const faqs = [
     a: "Roughly ten minutes, and honest answers about your health history and current situation. Accurate answers matter because a practitioner makes a real decision based on them.",
   },
   {
-    q: "Can women complete the Moshy eligibility check?",
-    a: "Moshy is built for men. Women looking at the same category are generally pointed to Juniper, which runs a comparable eligibility model designed for women.",
+    q: "Who can complete the Moshy eligibility check?",
+    a: "Moshy's eligibility check is open to anyone considering the clinical pathway. It gathers your health history so an Australian-registered practitioner can assess suitability individually. If you would rather have coaching wrapped around medication, Juniper runs a comparable eligibility model with that focus.",
   },
 ];
 

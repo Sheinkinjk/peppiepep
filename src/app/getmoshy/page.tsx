@@ -13,7 +13,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "Is getmoshy.com.au the official Moshy website?",
-    a: "Yes. getmoshy.com.au is the official domain of Moshy, the Australian men's telehealth service. If you have seen the name written as 'get moshy' or 'getmoshy', they all point to the same company.",
+    a: "Yes. getmoshy.com.au is the official domain of Moshy, the Australian telehealth weight-management service. If you have seen the name written as 'get moshy' or 'getmoshy', they all point to the same company.",
   },
   {
     q: "Is getmoshy legit?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Is Moshy the same company as Mosh?",
-    a: "They are sister brands in the same Australian men's health family. Mosh at getmosh.com.au is best known for hair loss telehealth, while Moshy at getmoshy.com.au focuses on weight management.",
+    a: "They are sister brands in the same Australian telehealth family. Mosh at getmosh.com.au is a men's service best known for hair loss telehealth, while Moshy at getmoshy.com.au focuses on weight management and is open to anyone eligible.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function GetMoshyPage() {
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">
             <strong className="text-[#10251b]">Yes, it is the official site.</strong> getmoshy.com.au is the real domain of
-            Moshy, an Australian men&apos;s telehealth provider. The button below takes you straight to their eligibility
+            Moshy, an Australian telehealth weight-management provider. The button below takes you straight to their eligibility
             check, with our referral applied automatically.
           </p>
           <a
@@ -99,8 +99,8 @@ export default function GetMoshyPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">What Moshy does</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Moshy runs telehealth programs for Australian men, and the weight-management program is its best-known
-            offering. The model is simple: an online questionnaire, an individual review by a registered Australian
+            Moshy runs telehealth weight-management programs for Australians, open to anyone eligible, and that program
+            is its best-known offering. The model is simple: an online questionnaire, an individual review by a registered Australian
             practitioner, and if approved, a subscription with delivery to your door. Not every applicant is approved,
             because the practitioner review is a genuine assessment rather than a rubber stamp.
           </p>

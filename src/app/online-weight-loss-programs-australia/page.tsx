@@ -21,8 +21,8 @@ const faqs = [
     a: "A registered practitioner assesses you individually before anything starts, some applicants are declined, and prescription pathways are possible where clinically appropriate. Coaching apps skip all three, which is why they are cheaper and also why they are not comparable.",
   },
   {
-    q: "Which provider covers men and which covers women?",
-    a: "Moshy is built for men and Juniper for women. Better Being takes a lifestyle-first approach and is not gender-specific. Suitability for any of them is assessed individually.",
+    q: "How do these providers differ?",
+    a: "Moshy runs a lean, clinically-led pathway that is open to anyone eligible. Juniper wraps medication in a coaching program and markets primarily to women. Better Being takes a lifestyle-first approach. Suitability for any of them is assessed individually.",
   },
   {
     q: "Are these programs regulated?",
@@ -152,7 +152,7 @@ export default function OnlineWeightLossProgramsPage() {
 
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>For men</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
             <h3 className="text-lg font-bold mb-2">Start with Moshy</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
               Online eligibility check, individual practitioner review, delivery if approved. Referral applies through

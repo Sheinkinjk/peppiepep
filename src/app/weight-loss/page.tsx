@@ -11,8 +11,8 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const guides = [
-  { href: "/moshy-review", title: "Moshy review", desc: "How the men's service actually runs, from application to subscription." },
-  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "The men's and women's platforms, split properly." },
+  { href: "/moshy-review", title: "Moshy review", desc: "How the service actually runs, from application to subscription." },
+  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy, Juniper and Better Being side by side." },
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
   { href: "/moshy-eligibility", title: "The eligibility check, explained", desc: "What the quiz asks and why some people are declined." },
@@ -130,8 +130,8 @@ export default function WeightLossHubPage() {
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
                 A registered practitioner assesses you individually before anything starts, and some applicants are
-                declined. Moshy serves men, Juniper serves women. The most structured pathway, priced as a
-                subscription.
+                declined. Moshy runs a lean clinical pathway open to anyone eligible, Juniper adds coaching and markets
+                to women. The most structured route, priced as a subscription.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#0a7c42] hover:underline">Compare the providers →</Link></p>
@@ -172,7 +172,7 @@ export default function WeightLossHubPage() {
           {/* Flagship CTA */}
           <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#0a7c42]/20 bg-[#0a7c42]/[0.05] px-7 py-6 sm:flex-row sm:items-center">
             <p className="max-w-xl text-[15px] leading-relaxed text-[#10251b]">
-              For men leaning toward the telehealth pathway, Moshy&apos;s eligibility check is the usual starting
+              If you are leaning toward the telehealth pathway, Moshy&apos;s eligibility check is the usual starting
               point. About ten minutes, no commitment, and the referral applies automatically through our link.
             </p>
             <a

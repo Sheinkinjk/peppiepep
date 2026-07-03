@@ -907,7 +907,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Which Weight Loss Telehealth Is Right for You? | Refer Labs",
     description:
-      "Moshy vs Juniper compared for 2026 — Moshy is for men, Juniper is for women. GLP-1 access, eligibility, cost model, coaching, and the Reddit verdict. Find which Australian weight-loss telehealth fits you.",
+      "Moshy vs Juniper compared for 2026. Moshy runs a lean clinical pathway open to anyone eligible, Juniper wraps coaching around medication and markets to women. GLP-1 access, eligibility, cost model, coaching, and the Reddit verdict. Find which Australian weight-loss telehealth fits you.",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -931,7 +931,7 @@ export const seoConfig = {
   moshyReview: {
     title: "Moshy Review Australia 2026: How the Service Actually Works | Refer Labs",
     description:
-      "An independent Moshy review for Australians. What the men's weight-loss telehealth service is, how the sign-up runs in practice, what the subscription involves, and who it suits. Information only, not medical advice.",
+      "An independent Moshy review for Australians. What the clinically-led weight-loss telehealth service is, how the sign-up runs in practice, what the subscription involves, and who it suits. Information only, not medical advice.",
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",
@@ -968,7 +968,7 @@ export const seoConfig = {
   getMoshy: {
     title: "getmoshy.com.au: Is It the Official Moshy Site & the Fastest Way to Start | Refer Labs",
     description:
-      "getmoshy.com.au is the official website of Moshy, the Australian men's telehealth service. What the site is, how the referral link works, and where the eligibility check lives.",
+      "getmoshy.com.au is the official website of Moshy, the Australian telehealth weight-management service. What the site is, how the referral link works, and where the eligibility check lives.",
     url: `${SITE_URL}/getmoshy`,
     keywords: [
       "getmoshy",
@@ -986,7 +986,7 @@ export const seoConfig = {
   weightLossTelehealthMen: {
     title: "Weight Loss Telehealth for Men in Australia 2026 | Refer Labs",
     description:
-      "How men's weight-loss telehealth works in Australia. Why men-only services exist, what to check before signing up with any provider, and where Moshy fits. Information only, not medical advice.",
+      "How weight-loss telehealth works for men in Australia. Why some services market to men, what to check before signing up with any provider, and where Moshy fits as a clinical pathway open to anyone eligible. Information only, not medical advice.",
     url: `${SITE_URL}/weight-loss-telehealth-men-australia`,
     keywords: [
       "weight loss telehealth men australia",

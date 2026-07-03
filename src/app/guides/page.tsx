@@ -39,8 +39,8 @@ const sections = [
     description: "How Australia's online weight-loss services work, and which suits whom.",
     guides: [
       { href: "/moshy", label: "Moshy — offer & referral link", desc: "The current referral offer. No code required." },
-      { href: "/moshy-review", label: "Moshy review", desc: "How the men's service actually runs, application to subscription." },
-      { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The men's and women's platforms, split properly." },
+      { href: "/moshy-review", label: "Moshy review", desc: "How the service actually runs, application to subscription." },
+      { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
       { href: "/moshy-vs-gp", label: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
       { href: "/moshy-alternatives", label: "Moshy alternatives", desc: "The honest shortlist, including the option nobody markets." },
       { href: "/mens-health-telehealth-australia", label: "Men's health telehealth", desc: "The wider category and its limits." },

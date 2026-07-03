@@ -36,7 +36,7 @@ const itemListSchema = {
   description: "In-depth comparison of Australian weight loss telehealth platforms — Moshy, Juniper, and Better Being. GLP-1 access, eligibility process, pricing, and who each platform suits.",
   numberOfItems: 3,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian telehealth weight management platform for men. Online eligibility questionnaire, practitioner review, GLP-1 medication access. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, GLP-1 medication access. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
     { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines GLP-1 medication with health coaching and ongoing practitioner support. Premium subscription model.", url: JUNIPER_URL },
     { "@type": "ListItem", position: 3, name: "Better Being", description: "Australian digital health platform with a holistic weight management approach. Practitioner support, nutrition, and lifestyle programs.", url: BETTERBEING_URL },
   ],
@@ -49,12 +49,12 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What is the best weight loss telehealth platform in Australia in 2026?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper are the most widely used GLP-1 telehealth weight loss platforms in Australia in 2026. Moshy is primarily designed for men seeking clinically supervised weight management including medication options. Juniper is designed for women and combines GLP-1 medication with a coached program. Better Being takes a broader lifestyle approach. Suitability depends on individual health factors — consult a qualified health professional before starting any weight management programme." }
+      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper are the most widely used GLP-1 telehealth weight loss platforms in Australia in 2026. Moshy runs a clinically supervised weight management pathway, open to anyone eligible, including medication options. Juniper markets primarily to women and combines GLP-1 medication with a coached program. Better Being takes a broader lifestyle approach. Suitability depends on individual health factors. Consult a qualified health professional before starting any weight management programme." }
     },
     {
       "@type": "Question",
       name: "Is Moshy or Juniper better for weight loss in Australia?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper serve different demographics. Moshy is targeted at Australian men. Juniper is designed for Australian women and includes health coaching as part of its programme. Both use an online eligibility questionnaire and practitioner-led review process. Neither is right for everyone — suitability is assessed individually by each platform's clinical team. This page does not constitute medical advice." }
+      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds structured health coaching to its programme and markets primarily to Australian women. Both use an online eligibility questionnaire and practitioner-led review process. Neither is right for everyone. Suitability is assessed individually by each platform's clinical team. This page does not constitute medical advice." }
     },
     {
       "@type": "Question",
@@ -235,17 +235,17 @@ const platforms: PlatformCardProps[] = [
     id: "moshy",
     index: "01",
     name: "Moshy",
-    tagline: "Australian telehealth weight management for men. Moshy's online eligibility questionnaire is reviewed by Australian-registered practitioners. GLP-1 medication options are available subject to individual clinical assessment. Subscription with home delivery.",
-    deal: "Online eligibility — referral link",
+    tagline: "Australian clinically-led telehealth weight management, open to anyone eligible. Moshy's online eligibility questionnaire is reviewed by Australian-registered practitioners. GLP-1 medication options are available subject to individual clinical assessment. Subscription with home delivery.",
+    deal: "Online eligibility, referral link",
     dealNote: "Our referral link takes you directly to the Moshy eligibility page. No code required. The offer is applied at the link level.",
     pros: [
-      "Purpose-built for Australian men",
+      "Clinically-led pathway, open to anyone eligible",
       "GLP-1 medication access (subject to eligibility)",
-      "Online-only process — no in-person GP visit required",
+      "Online-only process, no in-person GP visit required",
       "Subscription home delivery",
     ],
     cons: [
-      "Men only — not available for women",
+      "Lean clinical focus, no built-in coaching program",
       "Not all applicants are eligible for medication",
     ],
     affUrl: MOSHY_URL,
@@ -331,10 +331,10 @@ export default function BestWeightLossTelehealthPage() {
             </h1>
 
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Moshy and Juniper dominate GLP-1-based weight management in Australia — but they serve different demographics. Moshy is men-only. Juniper is women-only. Better Being takes a more holistic, lifestyle-first approach and serves both.
+              Moshy and Juniper dominate GLP-1-based weight management in Australia, but they take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper wraps medication in a coaching program and markets primarily to women. Better Being takes a more holistic, lifestyle-first approach.
             </p>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
-              Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice — suitability is assessed individually by each platform&apos;s clinical team.
+              Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>
 
             {/* Jump nav */}
@@ -363,7 +363,7 @@ export default function BestWeightLossTelehealthPage() {
                 Quick Verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Moshy (men only) and Juniper (women only) are Australia&apos;s leading GLP-1 weight-management telehealth platforms; Better Being suits people of either gender who want a more holistic, lifestyle-first program. Eligibility and suitability are assessed individually by each platform&apos;s clinical team — this page does not constitute medical advice.
+                Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are Australia&apos;s leading GLP-1 weight-management telehealth platforms; Better Being suits people who want a more holistic, lifestyle-first program. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
               </p>
             </div>
           </section>
@@ -383,7 +383,7 @@ export default function BestWeightLossTelehealthPage() {
                 </thead>
                 <tbody>
                   {[
-                    { name: "Moshy",        audience: "Men (Australia)",         approach: "Telehealth + medication",    glp1: "Yes (subject to eligibility)", href: "#moshy",       url: MOSHY_URL,    cta: "Check eligibility",  isAff: true },
+                    { name: "Moshy",        audience: "Anyone eligible (Australia)", approach: "Telehealth + medication",    glp1: "Yes (subject to eligibility)", href: "#moshy",       url: MOSHY_URL,    cta: "Check eligibility",  isAff: true },
                     { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medication",      glp1: "Yes (subject to eligibility)", href: "#juniper",     url: JUNIPER_URL,  cta: "Visit Juniper",      isAff: false },
                     { name: "Better Being", audience: "Men & Women (Australia)",  approach: "Lifestyle + practitioner",   glp1: "Limited", href: "#betterbeing", url: BETTERBEING_URL, cta: "Visit site",  isAff: false },
                   ].map((row) => (
@@ -473,7 +473,7 @@ export default function BestWeightLossTelehealthPage() {
             </h2>
             <div className="space-y-4 max-w-2xl">
               {[
-                { label: "Choose Moshy if:", body: "You are a man in Australia seeking a clinically supervised weight management programme with access to GLP-1 medication options. Moshy's online-only process means no in-person GP appointment is required to start. Eligibility is assessed individually. Use our referral link for the current Moshy offer." },
+                { label: "Choose Moshy if:", body: "You want a clinically supervised weight management programme with access to GLP-1 medication options, done online. Moshy is open to anyone eligible, and its online-only process means no in-person GP appointment is required to start. Eligibility is assessed individually. Use our referral link for the current Moshy offer." },
                 { label: "Choose Juniper if:", body: "You are a woman in Australia looking for a weight management programme that combines GLP-1 medication access with structured health coaching and practitioner support. Juniper's programme is more coaching-intensive than Moshy's and is designed for women exclusively." },
                 { label: "Choose Better Being if:", body: "You want a broader lifestyle and behavioural approach to weight management that is not primarily medication-focused. Better Being is available to both men and women in Australia and includes nutrition and lifestyle coaching alongside practitioner support. A stronger fit for people who prefer or are not suited to GLP-1 medication programmes." },
               ].map(({ label, body }) => (
@@ -494,11 +494,11 @@ export default function BestWeightLossTelehealthPage() {
               {[
                 {
                   q: "What is the best weight loss telehealth platform in Australia?",
-                  a: "Moshy (men) and Juniper (women) are the most widely used GLP-1 telehealth weight loss platforms in Australia. Better Being offers a broader lifestyle-based programme. The best platform depends on your gender, health profile, and whether you are seeking a medication-based or lifestyle-based approach. Suitability is assessed by each platform's practitioners individually.",
+                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are the most widely used GLP-1 telehealth weight loss platforms in Australia. Better Being offers a broader lifestyle-based programme. The best platform depends on your health profile and whether you want a medication-focused clinical pathway, a coaching-heavy program, or a lifestyle-based approach. Suitability is assessed by each platform's practitioners individually.",
                 },
                 {
                   q: "Is Moshy or Juniper better?",
-                  a: "Moshy and Juniper serve different demographics. Moshy is designed for Australian men. Juniper is designed for Australian women and includes health coaching as part of the programme. If you are a man, Moshy is the relevant option. If you are a woman, Juniper or Better Being are the relevant options. Both require individual clinical eligibility assessment.",
+                  a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside medication, Juniper or Better Being are worth a look. Both require individual clinical eligibility assessment.",
                 },
                 {
                   q: "Do Australian weight loss telehealth platforms provide Semaglutide?",

@@ -12,8 +12,8 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 
 const faqs = [
   {
-    q: "Why are men's weight loss services separate from women's?",
-    a: "Partly clinical tailoring and partly candour. Providers found men engage more readily with a service built and worded for them, so the market split. In Australia, Moshy serves men and Juniper serves women, both using an eligibility-then-practitioner-review model.",
+    q: "Why do some weight loss services market to men and others to women?",
+    a: "Partly clinical tailoring and partly candour. Providers found some men engage more readily with a service worded for them, so the marketing split. In Australia, Moshy runs a clinical pathway that is open to anyone eligible, while Juniper wraps coaching around medication and markets primarily to women. Both use an eligibility-then-practitioner-review model.",
   },
   {
     q: "Do I need to see a doctor in person first?",
@@ -122,10 +122,10 @@ export default function WeightLossTelehealthMenPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Where Moshy fits</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Moshy is the dedicated men&apos;s option in Australia and passes the checklist above: AHPRA-registered
-            practitioners, an eligibility step that genuinely screens, pricing disclosed inside the platform before any
-            commitment, and Australian regulation. The equivalent service for women is Juniper, and we cover the wider
-            field in our{" "}
+            Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, and it passes the checklist
+            above: AHPRA-registered practitioners, an eligibility step that genuinely screens, pricing disclosed inside
+            the platform before any commitment, and Australian regulation. If you would rather have coaching wrapped
+            around medication, Juniper markets primarily to women, and we cover the wider field in our{" "}
             <Link href="/online-weight-loss-programs-australia" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               online weight loss programs guide
             </Link>.

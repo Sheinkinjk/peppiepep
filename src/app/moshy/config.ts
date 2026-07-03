@@ -9,7 +9,7 @@ export const moshyConfig: AffiliatePageConfig = {
   affiliateUrl: MOSHY_URL,
 
   quickAnswer:
-    "Moshy does not publish a public, checkout-style discount code. The current offer is accessed through a referral link that applies automatically — there is no code to enter. Moshy is an Australian men's weight-management telehealth platform that assesses GLP-1 and semaglutide eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. GLP-1 medications are prescription-only in Australia and access depends on individual clinical assessment.",
+    "Moshy does not publish a public, checkout-style discount code. The current offer is accessed through a referral link that applies automatically, there is no code to enter. Moshy is an Australian clinically-led weight-management telehealth platform, open to anyone eligible, that assesses GLP-1 and semaglutide eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. GLP-1 medications are prescription-only in Australia and access depends on individual clinical assessment.",
 
   banner: {
     heading: "Moshy - Current Referral Offer (Australia)",
@@ -44,8 +44,8 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       heading: "What Is Moshy?",
       paragraphs: [
-        "Moshy is an Australian online telehealth platform focused on men's health, with its most widely discussed offering being a clinically supervised weight management programme. Users complete an online eligibility questionnaire from home, after which Moshy's clinical team reviews each submission individually before any treatment discussion takes place.",
-        "The Moshy platform is designed around the reality that many Australian men are reluctant to book an in-person GP appointment for weight-related concerns. The online process is straightforward - a health questionnaire, practitioner review, and if eligible, a subscription-based programme with home delivery. Moshy operates under Australian health service regulations and uses only Australian-registered practitioners.",
+        "Moshy is an Australian online telehealth platform, open to anyone eligible, with its most widely discussed offering being a clinically supervised weight management programme. Users complete an online eligibility questionnaire from home, after which Moshy's clinical team reviews each submission individually before any treatment discussion takes place.",
+        "The Moshy platform is designed around the reality that many Australians are reluctant to book an in-person GP appointment for weight-related concerns. The online process is straightforward, a health questionnaire, practitioner review, and if eligible, a subscription-based programme with home delivery. Moshy operates under Australian health service regulations and uses only Australian-registered practitioners.",
         "Not everyone who completes the eligibility quiz will be approved. Moshy's clinical team assesses each submission based on the information provided, and some individuals will be referred to alternative care pathways. The platform is transparent about this.",
       ],
       disclaimer:
@@ -74,9 +74,9 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       heading: "Moshy vs Juniper",
       paragraphs: [
-        "Moshy and Juniper are Australia's two most commonly compared online weight management telehealth platforms. The most significant structural difference is that Moshy is designed for men, while Juniper is designed for women. Both platforms use an online eligibility and consultation model and can facilitate access to GLP-1 medications through Australian-registered practitioners.",
-        "The differences between the two platforms go beyond gender targeting. Juniper combines medication access with a structured coaching and community programme, positioning itself as a holistic weight management system rather than purely a telehealth prescribing service. Moshy's approach is more clinical - the focus is on the practitioner-led treatment pathway rather than ongoing lifestyle coaching.",
-        "In terms of which platform is 'better' for weight loss - this is not a meaningful comparison at a general level. Outcomes from weight management programmes depend on the individual, adherence, clinical suitability for specific treatments, and lifestyle factors. Both platforms have positive and negative reviews in Australian Reddit communities. The right starting point is completing the eligibility process with whichever platform is appropriate for your gender and health profile.",
+        "Moshy and Juniper are Australia's two most commonly compared online weight management telehealth platforms. The most significant structural difference is approach: Moshy runs a lean, practitioner-led clinical pathway that is open to anyone eligible, while Juniper wraps medication in a structured coaching programme and markets primarily to women. Both platforms use an online eligibility and consultation model and can facilitate access to GLP-1 medications through Australian-registered practitioners.",
+        "The differences between the two platforms come down to how much support wraps around the medication. Juniper combines medication access with a structured coaching and community programme, positioning itself as a holistic weight management system rather than purely a telehealth prescribing service. Moshy's approach is more clinical, the focus is on the practitioner-led treatment pathway rather than ongoing lifestyle coaching.",
+        "In terms of which platform is 'better' for weight loss, this is not a meaningful comparison at a general level. Outcomes from weight management programmes depend on the individual, adherence, clinical suitability for specific treatments, and lifestyle factors. Both platforms have positive and negative reviews in Australian Reddit communities. The right starting point is completing the eligibility process with whichever platform matches the kind of support you want and your health profile.",
       ],
       hasCta: true,
       ctaText: "Check Eligibility with Moshy",
@@ -154,7 +154,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "What is Moshy's weight loss programme?",
-      a: "Moshy offers a clinically supervised weight management programme for eligible Australian men. Users complete an online eligibility questionnaire and, if suitable, are connected with a practitioner who reviews their case and discusses appropriate treatment options. The programme is subscription-based with home delivery. Specific treatments and pricing are detailed on the Moshy platform after completing the eligibility flow. This page does not constitute medical advice.",
+      a: "Moshy offers a clinically supervised weight management programme for eligible Australians. Users complete an online eligibility questionnaire and, if suitable, are connected with a practitioner who reviews their case and discusses appropriate treatment options. The programme is subscription-based with home delivery. Specific treatments and pricing are detailed on the Moshy platform after completing the eligibility flow. This page does not constitute medical advice.",
     },
     {
       q: "How does Moshy compare to a GP for weight loss?",
