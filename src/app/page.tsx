@@ -78,14 +78,14 @@ export default function HomePage() {
               <h1 className="max-w-xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] text-[#10251b] sm:text-[3.35rem]">
                 Make every big decision with confidence.
               </h1>
-              <p className="nw-rise nw-rise-2 mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
+              <p className="mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
                 We do the slow research on Australian health services, software and tools, so you can compare the real
                 options and choose without second-guessing.
               </p>
-              <div className="nw-rise nw-rise-2 mt-8">
+              <div className="mt-8">
                 <SiteSearch variant="hero" />
               </div>
-              <div className="nw-rise nw-rise-3 mt-5 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-[13px] text-[#6e7b74]">
+              <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-[13px] text-[#6e7b74]">
                 <span className="font-medium text-[#3d4b44]">Popular:</span>
                 {[
                   { l: "Weight loss", h: "/weight-loss" },
@@ -102,7 +102,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: live comparison card — proof, above the fold */}
-            <div className="nw-rise nw-rise-3 relative">
+            <div className="relative">
               <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(closest-side,rgba(18,160,91,0.14),transparent)] blur-2xl" aria-hidden="true" />
               <div className="nw-card rounded-2xl p-5 shadow-[0_24px_60px_-30px_rgba(16,37,27,0.4)] sm:p-6">
                 <div className="flex items-center justify-between border-b border-[#eef1ef] pb-3">

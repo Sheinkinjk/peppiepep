@@ -27,7 +27,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
   return (
     <div className={`${geist.variable} nw-root min-h-screen`}>
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-[#e5e9e7] bg-white/85 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#e5e9e7] bg-white">
         <div className="mx-auto flex max-w-6xl items-center gap-5 px-5 py-3 sm:px-8">
           <Link href="/" className="flex shrink-0 items-center" aria-label="Refer Labs home">
             <ReferLabsLogo className="h-9 w-auto" />
