@@ -2,16 +2,21 @@ import { Geist } from "next/font/google";
 import Link from "next/link";
 import NewsletterSignup from "./NewsletterSignup";
 import SiteSearch from "./SiteSearch";
+import HeaderNav from "./HeaderNav";
 import { ReferLabsLogo } from "../ReferLabsLogo";
 
 const geist = Geist({ subsets: ["latin"], display: "swap", variable: "--font-pd" });
 
+// Mobile shortcut row (desktop uses the grouped HeaderNav dropdowns).
 const NAV = [
   { href: "/weight-loss", label: "Weight loss" },
   { href: "/hair-loss", label: "Hair loss" },
+  { href: "/mens-health-telehealth-australia", label: "Men's health" },
+  { href: "/best-peptide-supplier", label: "Peptides" },
   { href: "/compare/website-builders", label: "Website builders" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
   { href: "/guides", label: "All guides" },
+  { href: "/how-we-research", label: "How we research" },
 ];
 
 /**
@@ -27,13 +32,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
           <Link href="/" className="flex shrink-0 items-center" aria-label="Refer Labs home">
             <ReferLabsLogo className="h-9 w-auto" />
           </Link>
-          <nav className="hidden items-center gap-6 text-[14px] font-medium text-[#3d4b44] lg:flex">
-            {NAV.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-colors hover:text-[#0a7c42]">
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <HeaderNav />
           <div className="ml-auto hidden md:block">
             <SiteSearch variant="header" />
           </div>

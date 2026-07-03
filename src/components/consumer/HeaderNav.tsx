@@ -1,0 +1,95 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
+
+type Item = { href: string; label: string; note?: string };
+type Group = { label: string; items: Item[] };
+
+/** Grouped dropdown shortcuts + direct links for the consumer header. */
+const GROUPS: Group[] = [
+  {
+    label: "Health",
+    items: [
+      { href: "/weight-loss", label: "Weight loss & telehealth", note: "Online weight-management services" },
+      { href: "/hair-loss", label: "Hair loss treatment", note: "Clinical vs topical, compared" },
+      { href: "/mens-health-telehealth-australia", label: "Men's health telehealth", note: "Online men's health clinics" },
+      { href: "/best-peptide-supplier", label: "Research peptides", note: "Suppliers, compared" },
+    ],
+  },
+  {
+    label: "Software & tools",
+    items: [
+      { href: "/compare/website-builders", label: "Website builders", note: "AI, one-page and landing tools" },
+      { href: "/compare/newsletter-platforms", label: "Newsletter platforms", note: "Where to build an email audience" },
+    ],
+  },
+];
+
+const DIRECT: Item[] = [
+  { href: "/guides", label: "All guides" },
+  { href: "/how-we-research", label: "How we research" },
+];
+
+export default function HeaderNav() {
+  const [open, setOpen] = useState<string | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onDoc(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(null);
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(null);
+    }
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  return (
+    <nav ref={ref} className="hidden items-center gap-1 text-[14px] font-medium text-[#3d4b44] lg:flex">
+      {GROUPS.map((g) => {
+        const isOpen = open === g.label;
+        return (
+          <div key={g.label} className="relative" onMouseEnter={() => setOpen(g.label)} onMouseLeave={() => setOpen(null)}>
+            <button
+              onClick={() => setOpen(isOpen ? null : g.label)}
+              aria-expanded={isOpen}
+              className={`flex items-center gap-1 rounded-lg px-3 py-2 transition-colors hover:text-[#0a7c42] ${isOpen ? "text-[#0a7c42]" : ""}`}
+            >
+              {g.label}
+              <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+            </button>
+            {isOpen && (
+              <div className="absolute left-0 top-full w-72 pt-2">
+                <div className="overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white p-1.5 shadow-[0_20px_50px_-20px_rgba(16,37,27,0.35)]">
+                  {g.items.map((it) => (
+                    <Link
+                      key={it.href}
+                      href={it.href}
+                      onClick={() => setOpen(null)}
+                      className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-[#f2f4ee]"
+                    >
+                      <span className="block text-[14px] font-semibold text-[#10251b]">{it.label}</span>
+                      {it.note && <span className="mt-0.5 block text-[12.5px] text-[#6e7b74]">{it.note}</span>}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+      {DIRECT.map((it) => (
+        <Link key={it.href} href={it.href} className="rounded-lg px-3 py-2 transition-colors hover:text-[#0a7c42]">
+          {it.label}
+        </Link>
+      ))}
+    </nav>
+  );
+}

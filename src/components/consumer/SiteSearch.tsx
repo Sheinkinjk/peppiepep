@@ -81,7 +81,12 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
             </ul>
           ) : (
             <div className="px-4 py-3">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#9aa39c]">Popular</p>
+              {q.trim() && (
+                <p className="mb-2 text-sm text-[#3d4b44]">
+                  No matches for <span className="font-semibold text-[#10251b]">&ldquo;{q.trim()}&rdquo;</span>. Try:
+                </p>
+              )}
+              {!q.trim() && <p className="text-xs font-semibold uppercase tracking-wide text-[#9aa39c]">Popular</p>}
               <div className="mt-2 flex flex-wrap gap-2">
                 {POPULAR.map((p) => (
                   <button key={p} onClick={() => { setQ(p); setActive(0); }} className="rounded-full border border-[#e5e9e7] bg-white px-3 py-1.5 text-[13px] font-medium text-[#3d4b44] hover:border-[#bfe0cf] hover:bg-[#e8f5ee]">
