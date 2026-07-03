@@ -858,10 +858,11 @@ main > section:nth-child(8) { animation-delay: 0.56s; }
   --nw-green: #0a7c42;
   --nw-green-hover: #086536;
   --nw-green-bright: #12a05b;
-  --nw-tint: #e8f5ee;
-  --nw-border: #e5e9e7;
-  --nw-alt: #f5f8f6;
-  background: #ffffff;
+  --nw-tint: #e6f3ec;
+  --nw-border: #e3e7e2;
+  --nw-alt: #eef1ec;
+  --nw-page: #f2f4ee;
+  background: var(--nw-page);
   color: var(--nw-ink);
   font-family: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
 }
@@ -944,11 +945,12 @@ main > section:nth-child(8) { animation-delay: 0.56s; }
 .nw-link { color: var(--nw-green); font-weight: 600; }
 .nw-link:hover { color: var(--nw-green-hover); text-decoration: underline; text-underline-offset: 3px; }
 
-/* Hero soft radial wash */
+/* Hero soft radial wash — layered green so the top of the page reads warm, not blank white */
 .nw-hero-wash {
   background:
-    radial-gradient(40rem 26rem at 82% -10%, rgba(10, 124, 66, 0.08), transparent 60%),
-    radial-gradient(34rem 24rem at 4% 2%, rgba(18, 160, 91, 0.06), transparent 58%);
+    radial-gradient(48rem 30rem at 84% -12%, rgba(18, 160, 91, 0.16), transparent 60%),
+    radial-gradient(40rem 28rem at 2% 0%, rgba(10, 124, 66, 0.10), transparent 58%),
+    linear-gradient(180deg, #e9f2ec 0%, #f2f4ee 72%);
 }
 
 /* Subtle entrance */

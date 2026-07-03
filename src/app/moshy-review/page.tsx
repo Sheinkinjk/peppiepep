@@ -13,7 +13,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "Is Moshy a real Australian company?",
-    a: "Yes. Moshy is an Australian telehealth provider operating under Australian health service regulations, and eligibility submissions are reviewed by registered Australian practitioners. It is the men's brand in the same family as Mosh.",
+    a: "Yes. Moshy is an Australian telehealth provider operating under Australian health service regulations, and eligibility submissions are reviewed by registered Australian practitioners. It sits in the same family of Australian telehealth brands as Mosh.",
   },
   {
     q: "How long does the Moshy sign-up take?",
@@ -93,8 +93,8 @@ export default function MoshyReviewPage() {
           Moshy review: <span style={{ color: CYAN_LT }}>what the service is actually like</span>
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Most write-ups of Moshy either sell it or ignore it. This one just walks through the service: what happens
-          when you apply, what the subscription involves, and where it does and does not fit.
+          A plain walkthrough of how Moshy works: what you get, what happens when you apply, and how to start the free
+          eligibility check.
         </p>
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
@@ -106,74 +106,58 @@ export default function MoshyReviewPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The short version</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Moshy is an Australian telehealth service for men, and its weight-management program is the part most people
-            come looking for. You complete a questionnaire online, a registered practitioner looks at your answers, and
-            if they consider it appropriate you continue on a subscription with anything prescribed delivered to your
-            door. No waiting room, no referral letter, no phone queue.
+            Moshy is an Australian telehealth service, and its weight-management program is the part most people come
+            looking for. You complete a questionnaire online, a registered Australian practitioner reviews your answers,
+            and if they consider it appropriate you continue on a subscription, with anything prescribed delivered to
+            your door. No waiting room, no referral letter, no phone queue.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            The whole pitch rests on one idea: a lot of men put this conversation off for years because booking a GP
-            appointment about weight feels like a big step. Moshy shrinks that first step to about ten minutes on a
-            phone.
+            The starting point is a free eligibility check that takes about ten minutes and commits you to nothing.
+            That is the fastest way to see what Moshy would offer you.
           </p>
           <div className="pt-1">
-            <Cta label="Check your eligibility on Moshy" loc="short-version" />
+            <Cta label="Start your free eligibility check" loc="short-version" />
+          </div>
+        </section>
+
+        <section className="space-y-5 mb-10">
+          <h2 className="text-xl font-black">What you get</h2>
+          <ul className="space-y-3">
+            {[
+              ["Done entirely from home", "The questionnaire, the review, the plan and the deliveries all happen online. Nothing needs to be booked in person."],
+              ["Reviewed by a registered practitioner", "A certified Australian practitioner assesses each submission individually. It is a clinical review, not an automatic checkout."],
+              ["Pricing shown before you commit", "If you are approved, the treatment options and the subscription pricing are laid out inside the platform first. You are never charged for something you have not seen."],
+              ["Delivered and managed on subscription", "Anything prescribed is sent to your door, with check-ins and questions handled through the platform rather than a generic support inbox."],
+            ].map(([t, d]) => (
+              <li key={t} className="flex gap-3">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: CYAN }} />
+                <span className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+                  <span className="font-semibold text-[#10251b]">{t}.</span> {d}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div className="pt-1">
+            <Cta label="See what Moshy offers you" loc="what-you-get" />
           </div>
         </section>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">What happens when you apply</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            The eligibility check is a structured health questionnaire. It covers the basics you would expect a doctor
-            to ask about: your history, your goals, and your current situation. It is not a formality. Real people
-            review the submissions, and some applicants are declined or redirected to other care.
+            The eligibility check is a structured health questionnaire covering your history, your goals and your
+            current situation. Real practitioners review the submissions, and some applicants are declined or redirected
+            to other care, so approval is not guaranteed.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            That last point is worth sitting with, because it is the strongest trust signal the service has. A platform
-            that waves everyone through is a checkout. A platform that turns people away is behaving like a clinic.
-          </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            If the practitioner approves you, the treatment options, the plan, and the pricing are laid out inside the
-            platform before you commit to anything. You are never charged for a subscription you have not seen.
-          </p>
-        </section>
-
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">Living with the subscription</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Day to day, Moshy runs like any well-built subscription service. Deliveries arrive on schedule, check-ins
-            happen through the platform, and questions go to the clinical team rather than a generic support inbox.
-            Because everything is online, the quality of your experience depends partly on how comfortable you are
-            managing health admin through an app and email.
-          </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            It is a men-only service. Women looking for the equivalent are usually pointed to Juniper, which runs a
-            similar model with a coaching layer added. We compare the wider field in our{" "}
-            <Link href="/online-weight-loss-programs-australia" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
-              guide to online weight loss programs in Australia
-            </Link>.
-          </p>
-        </section>
-
-        <section className="space-y-4 mb-12">
-          <h2 className="text-xl font-black">Who it suits, who it does not</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Moshy suits men who want a structured, supervised program and value the convenience of doing the whole
-            thing from home. It is a poor fit if your situation is complicated or urgent, because an online
-            questionnaire is the wrong front door for that. Anything unusual belongs with a doctor in person, and
-            Moshy itself will screen those cases out.
-          </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            If you are weighing it against simply seeing your own GP, both routes are legitimate. We wrote up the
-            practical differences in{" "}
-            <Link href="/moshy-vs-gp" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
-              Moshy vs your GP
-            </Link>.
+            If a practitioner approves you, the treatment options, the plan and the pricing are presented inside the
+            platform before anything is charged. The referral on this page applies automatically when you click through,
+            so there is no code to enter.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">
-              The eligibility check takes a few minutes and commits you to nothing. The referral applies automatically
-              through the link, so there is no code to hunt for.
+              The eligibility check is free, takes a few minutes, and commits you to nothing. It is the quickest way to
+              find out where you stand.
             </p>
             <Cta label="Start the Moshy eligibility check" loc="mid-cta" />
           </div>
@@ -193,6 +177,17 @@ export default function MoshyReviewPage() {
             ))}
           </div>
         </section>
+
+        <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
+          <h2 className="text-lg sm:text-xl font-black text-[#10251b]">Ready to see where you stand?</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#3d4b44]">
+            The eligibility check is free and takes about ten minutes. You will see exactly what Moshy can offer you
+            before committing to anything.
+          </p>
+          <div className="mt-5 flex justify-center">
+            <Cta label="Start your free eligibility check" loc="closing-cta" />
+          </div>
+        </div>
 
         <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy referral link &amp; offer →</Link>

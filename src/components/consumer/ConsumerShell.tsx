@@ -57,7 +57,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
       {children}
 
       {/* Footer */}
-      <footer className="border-t border-[#e5e9e7] bg-[#f5f8f6]">
+      <footer className="border-t border-[#e3e7e2] bg-white">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr]">
             <div className="max-w-sm">
