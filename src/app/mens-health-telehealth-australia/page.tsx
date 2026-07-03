@@ -6,8 +6,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.mensHealthTelehealth);
 
-const CYAN = "#0891b2";
-const CYAN_LT = "#22d3ee";
+const CYAN = "#0a7c42";
+const CYAN_LT = "#0a7c42";
 const aff = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow sponsored" as const });
 
 const faqs = [
@@ -63,38 +63,38 @@ export default function MensHealthTelehealthPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/55">
-          <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#3d4b44]">
+          <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#2b362f] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-white/70">Men&apos;s Health Telehealth</span>
+          <span className="text-[#2b362f]">Men&apos;s Health Telehealth</span>
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Men&apos;s health telehealth in Australia: <span style={{ color: CYAN_LT }}>what online clinics actually do</span>
         </h1>
-        <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           A wave of Australian services now handle specific men&apos;s health pathways entirely online. Here is how the
           model works, what it can and cannot do, and who the main providers are.
         </p>
 
-        <p className="mb-10 rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-xs leading-relaxed text-white/55">
-          <span className="font-semibold text-white/70">Information only.</span> This page describes a category of
+        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
+          <span className="font-semibold text-[#2b362f]">Information only.</span> This page describes a category of
           services and is not medical advice. Prescription medicines in Australia require individual assessment by a
           registered practitioner. Contains affiliate links.
         </p>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The model, in one paragraph</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Every credible men&apos;s telehealth service in Australia runs the same loop. You answer a structured
             questionnaire online. A registered practitioner reviews your answers individually, and either approves a
             plan, asks follow-ups, or declines and points you elsewhere. If approved, the program runs as a
             subscription with anything prescribed delivered to your door. The paperwork moved online; the clinical
             gatekeeping stayed exactly where Australian regulation requires it to be.
           </p>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             The categories that work well in this format are the specific, common, screenable ones. Weight management
             and hair loss lead the list, which is why the two best-known Australian brands are built around exactly
             those.
@@ -104,10 +104,10 @@ export default function MensHealthTelehealthPage() {
         <section className="mb-12">
           <h2 className="text-xl font-black mb-4">The two main doors</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6">
+            <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Weight management</p>
               <h3 className="text-lg font-bold mb-2">Moshy</h3>
-              <p className="text-white/55 text-sm leading-relaxed mb-4">
+              <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
                 The men&apos;s weight-management telehealth service. Eligibility check online, practitioner review,
                 subscription with delivery if approved.
               </p>
@@ -121,15 +121,15 @@ export default function MensHealthTelehealthPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <p className="mt-3">
-                <Link href="/moshy-review" className="text-xs text-white/55 underline decoration-white/20 underline-offset-2 hover:text-white/70">
+                <Link href="/moshy-review" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
                   Read our Moshy review →
                 </Link>
               </p>
             </div>
-            <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6">
+            <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Hair loss</p>
               <h3 className="text-lg font-bold mb-2">Mosh</h3>
-              <p className="text-white/55 text-sm leading-relaxed mb-4">
+              <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
                 The sister brand for hair loss. Online consultation with photo review, then practitioner-determined
                 options if eligible.
               </p>
@@ -143,7 +143,7 @@ export default function MensHealthTelehealthPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <p className="mt-3">
-                <Link href="/moshhair" className="text-xs text-white/55 underline decoration-white/20 underline-offset-2 hover:text-white/70">
+                <Link href="/moshhair" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
                   Read our Mosh page →
                 </Link>
               </p>
@@ -153,7 +153,7 @@ export default function MensHealthTelehealthPage() {
 
         <section className="space-y-4 mb-12">
           <h2 className="text-xl font-black">What to be wary of</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             The category has attracted imitators, so apply a simple filter. A legitimate Australian service names its
             regulatory footing, uses registered practitioners, shows pricing before you commit, and declines unsuitable
             applicants. Anything that guarantees a specific medicine before anyone has assessed you is advertising a
@@ -165,29 +165,29 @@ export default function MensHealthTelehealthPage() {
           <h2 className="text-xl font-black mb-5">Common questions</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-white text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-white/40 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-white/55 text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="border-t border-white/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/weight-loss-telehealth-men-australia" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s weight loss telehealth →</Link>
           <Link href="/best-hair-loss-treatment-australia" style={{ color: CYAN }} className="hover:opacity-80">Hair loss options compared →</Link>
           <Link href="/moshy-vs-gp" style={{ color: CYAN }} className="hover:opacity-80">Telehealth vs your GP →</Link>
         </div>
 
-        <p className="text-white/40 text-xs mt-8 leading-relaxed">
+        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains affiliate referral links. We may earn a commission if you
           sign up through them, at no extra cost to you. Nothing here is medical advice. Always consult a qualified
           health professional about your own circumstances.
         </p>
-        <p className="text-white/40 text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-white/55">All guides</Link></p>
+        <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>
     </ConsumerShell>
   );

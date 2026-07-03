@@ -6,8 +6,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyAlternatives);
 
-const CYAN = "#0891b2";
-const CYAN_LT = "#22d3ee";
+const CYAN = "#0a7c42";
+const CYAN_LT = "#0a7c42";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 const ext = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow" as const });
 
@@ -64,36 +64,36 @@ export default function MoshyAlternativesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/55">
-          <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#3d4b44]">
+          <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#2b362f] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-white/70">Moshy Alternatives</span>
+          <span className="text-[#2b362f]">Moshy Alternatives</span>
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy alternatives in Australia: <span style={{ color: CYAN_LT }}>the honest shortlist</span>
         </h1>
-        <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
           the right fit. The shortlist is genuinely short, and here it is without padding.
         </p>
 
-        <p className="mb-10 rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-xs leading-relaxed text-white/55">
-          <span className="font-semibold text-white/70">Information only.</span> This page compares services and is not
+        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
+          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares services and is not
           medical advice. Suitability for any provider is assessed individually by registered practitioners. Contains an
           affiliate link.
         </p>
 
         <section className="space-y-4 mb-8">
           <h2 className="text-xl font-black">1. Your GP</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             The alternative nobody markets. A GP can manage a weight pathway in person, sees your whole health picture,
             and Medicare offsets part of the cost. What you give up is convenience and, for some men, the willingness to
             start at all. If you would genuinely book the appointment, this is a strong option. We compared the two
             routes properly in{" "}
-            <Link href="/moshy-vs-gp" className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
+            <Link href="/moshy-vs-gp" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Moshy vs your GP
             </Link>.
           </p>
@@ -101,10 +101,10 @@ export default function MoshyAlternativesPage() {
 
         <section className="space-y-4 mb-8">
           <h2 className="text-xl font-black">2. Juniper, if you are a woman</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Juniper runs the closest model to Moshy but is built for women, with a coaching and community layer on top
             of the clinical pathway. Men landing on Juniper get pointed back the other way. If that is you,{" "}
-            <a {...ext(JUNIPER_URL)} className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
+            <a {...ext(JUNIPER_URL)} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Juniper is here
             </a>.
           </p>
@@ -112,8 +112,8 @@ export default function MoshyAlternativesPage() {
 
         <section className="space-y-4 mb-8">
           <h2 className="text-xl font-black">3. Better Being, for a lifestyle-first program</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
-            <a {...ext(BETTERBEING_URL)} className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            <a {...ext(BETTERBEING_URL)} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Better Being
             </a>{" "}
             approaches weight through habits, nutrition, and behavioural support rather than a medication-first
@@ -123,13 +123,13 @@ export default function MoshyAlternativesPage() {
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">And for men wanting the dedicated service</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             After the shortlist, the conclusion writes itself: for a men-only, practitioner-led telehealth program in
             Australia, Moshy is the category. That is not hype; the checklist of registered practitioners, genuine
             screening, and Australian regulation simply has one dedicated men&apos;s entrant right now.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-4" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">
               The eligibility check takes about ten minutes and commits you to nothing. Referral applied automatically.
             </p>
             <a
@@ -148,29 +148,29 @@ export default function MoshyAlternativesPage() {
           <h2 className="text-xl font-black mb-5">Common questions</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-white text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-white/40 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-white/55 text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="border-t border-white/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Full provider comparison →</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/online-weight-loss-programs-australia" style={{ color: CYAN }} className="hover:opacity-80">Online programs, untangled →</Link>
         </div>
 
-        <p className="text-white/40 text-xs mt-8 leading-relaxed">
+        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
           sign up through it, at no extra cost to you. Nothing here is medical advice. Always consult a qualified health
           professional about your own circumstances.
         </p>
-        <p className="text-white/40 text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-white/55">All guides</Link></p>
+        <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>
     </ConsumerShell>
   );
