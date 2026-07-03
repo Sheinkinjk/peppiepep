@@ -75,7 +75,7 @@ export default function HomePage() {
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:px-8 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-20">
             {/* Left: headline + search */}
             <div>
-              <h1 className="nw-rise nw-rise-1 max-w-xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] text-[#10251b] sm:text-[3.35rem]">
+              <h1 className="max-w-xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] text-[#10251b] sm:text-[3.35rem]">
                 Make every big decision with confidence.
               </h1>
               <p className="nw-rise nw-rise-2 mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
