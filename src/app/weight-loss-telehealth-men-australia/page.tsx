@@ -2,11 +2,12 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthMen);
 
-const CYAN = "#0AA7B5";
-const CYAN_LT = "#22C0CD";
+const CYAN = "#0E7C66";
+const CYAN_LT = "#0E7C66";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const faqs = [
@@ -56,48 +57,44 @@ const webPageSchema = {
 
 export default function WeightLossTelehealthMenPage() {
   return (
-    <div className="relative min-h-screen bg-[#060f15] text-white">
+    <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(10,167,181,0.10),transparent_55%)]" />
-      </div>
-
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/40">
-          <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#6B756F]">
+          <Link href="/" className="hover:text-[#46524C] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#46524C] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-white/60">Weight Loss Telehealth for Men</span>
+          <span className="text-[#46524C]">Weight Loss Telehealth for Men</span>
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Weight loss telehealth for men in Australia: <span style={{ color: CYAN_LT }}>how it works and what to check</span>
         </h1>
-        <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#6B756F] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Men are famously bad at booking the appointment. Telehealth exists to remove that excuse. This page covers
           how the men&apos;s services operate, the checklist worth running before you sign up with anyone, and where the
           main Australian provider fits.
         </p>
 
-        <p className="mb-10 rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 text-xs leading-relaxed text-white/45">
-          <span className="font-semibold text-white/70">Information only.</span> This page describes a category of
+        <p className="mb-10 rounded-lg border border-black/[0.08] bg-white px-4 py-3 text-xs leading-relaxed text-[#6B756F]">
+          <span className="font-semibold text-[#46524C]">Information only.</span> This page describes a category of
           services. It is not medical advice and does not recommend any treatment. Prescription medicines in Australia
           require individual assessment by a registered practitioner. Contains an affiliate link.
         </p>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Why this category exists</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
             The uncomfortable statistic behind men&apos;s telehealth is that men see doctors less often, and later, than
             women. Weight sits high on the list of topics men avoid raising. Moving the first step online, into a
             questionnaire you can fill in on the couch, removed the part most men were actually avoiding: the
             face-to-face conversation that starts it.
           </p>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
             What it did not remove is the clinician. In Australia, every legitimate service in this category still puts
             a registered practitioner between your questionnaire and any treatment. The format changed. The gatekeeping
             did not.
@@ -114,7 +111,7 @@ export default function WeightLossTelehealthMenPage() {
               "An Australian entity operating under Australian health regulations",
               "A clear path to human support once you are a subscriber",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-white/60 leading-relaxed">
+              <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-[#46524C] leading-relaxed">
                 <Check className="h-4 w-4 shrink-0 mt-1" style={{ color: CYAN_LT }} />
                 {item}
               </li>
@@ -124,17 +121,17 @@ export default function WeightLossTelehealthMenPage() {
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Where Moshy fits</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
             Moshy is the dedicated men&apos;s option in Australia and passes the checklist above: AHPRA-registered
             practitioners, an eligibility step that genuinely screens, pricing disclosed inside the platform before any
             commitment, and Australian regulation. The equivalent service for women is Juniper, and we cover the wider
             field in our{" "}
-            <Link href="/online-weight-loss-programs-australia" className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
+            <Link href="/online-weight-loss-programs-australia" className="underline decoration-black/20 underline-offset-2 hover:text-[#16201C]" style={{ color: CYAN }}>
               online weight loss programs guide
             </Link>.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-[#46524C] text-sm sm:text-base leading-relaxed mb-4">
               The Moshy eligibility check takes about ten minutes and commits you to nothing. Our referral applies
               automatically through the link.
             </p>
@@ -154,30 +151,30 @@ export default function WeightLossTelehealthMenPage() {
           <h2 className="text-xl font-black mb-5">Common questions</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-white/[0.08] bg-white/[0.02] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-white text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-black/[0.08] bg-white px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-[#16201C] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-white/30 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#8A938E] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-white/55 text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-[#6B756F] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="border-t border-white/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <div className="border-t border-black/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/moshy-vs-gp" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs your GP →</Link>
           <Link href="/mens-health-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s health telehealth →</Link>
         </div>
 
-        <p className="text-white/25 text-xs mt-8 leading-relaxed">
+        <p className="text-[#8A938E] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
           sign up through it, at no extra cost to you. Nothing here is medical advice. Always consult a qualified health
           professional before making health decisions.
         </p>
-        <p className="text-white/20 text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-white/50">All guides</Link></p>
+        <p className="text-[#8A938E] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#6B756F]">All guides</Link></p>
       </main>
-    </div>
+    </ConsumerShell>
   );
 }

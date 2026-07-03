@@ -1,6 +1,7 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWebsiteBuilder);
 
@@ -111,14 +112,14 @@ const reviewsSchema = [
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
-const CYAN    = "#0AA7B5";
-const CYAN_LT = "#22C0CD";
+const CYAN    = "#0E7C66";
+const CYAN_LT = "#0E7C66";
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function Pro({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-white/60 leading-snug">
+    <li className="flex items-start gap-2 text-sm text-[#46524C] leading-snug">
       <CheckCircle2 className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
       {text}
     </li>
@@ -127,8 +128,8 @@ function Pro({ text }: { text: string }) {
 
 function Con({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-white/30 leading-snug">
-      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-white/15" />
+    <li className="flex items-start gap-2 text-sm text-[#8A938E] leading-snug">
+      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#8A938E]" />
       {text}
     </li>
   );
@@ -137,7 +138,7 @@ function Con({ text }: { text: string }) {
 function TableCheck({ yes }: { yes: boolean }) {
   return yes
     ? <CheckCircle2 className="h-4 w-4 mx-auto" style={{ color: CYAN_LT }} />
-    : <span className="block text-center text-white/15 text-xs">—</span>;
+    : <span className="block text-center text-[#8A938E] text-xs">—</span>;
 }
 
 // ─── Platform card ────────────────────────────────────────────────────────────
@@ -165,7 +166,7 @@ function PlatformCard({
   return (
     <section
       id={id}
-      className="border-t border-white/[0.06] py-10 sm:py-12 scroll-mt-24"
+      className="border-t border-black/[0.08] py-10 sm:py-12 scroll-mt-24"
     >
       <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-12">
 
@@ -174,29 +175,29 @@ function PlatformCard({
           {/* Header */}
           <div className="flex items-center gap-3 mb-4">
             <div
-              className="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-black text-white/70 flex-shrink-0"
+              className="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-black text-[#46524C] flex-shrink-0"
               style={{ background: `${CYAN}1A`, border: `1px solid ${CYAN}30` }}
             >
               {index}
             </div>
-            <h2 className="text-xl font-black text-white leading-none">{name}</h2>
+            <h2 className="text-xl font-black text-[#16201C] leading-none">{name}</h2>
           </div>
 
           {/* Tagline */}
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-5 max-w-lg">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed mb-5 max-w-lg">
             {tagline}
           </p>
 
           {/* Pros / Cons */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-white/20 mb-2.5">Strengths</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#8A938E] mb-2.5">Strengths</p>
               <ul className="space-y-2">
                 {pros.map((p) => <Pro key={p} text={p} />)}
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-white/20 mb-2.5">Limitations</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#8A938E] mb-2.5">Limitations</p>
               <ul className="space-y-2">
                 {cons.map((c) => <Con key={c} text={c} />)}
               </ul>
@@ -214,11 +215,11 @@ function PlatformCard({
             <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
               Current offer
             </p>
-            <p className="text-white font-black text-base leading-snug mb-1">{deal}</p>
-            <p className="text-white/40 text-xs leading-snug">{dealNote}</p>
-            <div className="mt-3 pt-3 border-t border-white/[0.07]">
-              <p className="text-[11px] text-white/30">
-                <span className="text-white/50 font-medium">Pricing: </span>{pricing}
+            <p className="text-[#16201C] font-black text-base leading-snug mb-1">{deal}</p>
+            <p className="text-[#6B756F] text-xs leading-snug">{dealNote}</p>
+            <div className="mt-3 pt-3 border-t border-black/[0.08]">
+              <p className="text-[11px] text-[#8A938E]">
+                <span className="text-[#6B756F] font-medium">Pricing: </span>{pricing}
               </p>
             </div>
           </div>
@@ -347,7 +348,7 @@ const platforms: PlatformCardProps[] = [
 
 export default function BestWebsiteBuilderPage() {
   return (
-    <>
+    <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -356,30 +357,30 @@ export default function BestWebsiteBuilderPage() {
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }} />
       ))}
 
-      <main className="bg-[#060f15] text-white min-h-screen">
+      <main className="text-[#16201C]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
 
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-white/40">
-            <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6B756F]">
+            <Link href="/" className="hover:text-[#46524C] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+            <Link href="/guides" className="hover:text-[#46524C] transition-colors">Guides</Link>
             <span>/</span>
-            <span className="text-white/60">Best Website Builder</span>
+            <span className="text-[#46524C]">Best Website Builder</span>
           </nav>
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="text-white/25 text-xs mb-6">Updated March 2026</p>
+            <p className="text-[#8A938E] text-xs mb-6">Updated March 2026</p>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-white mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#16201C] mb-4 max-w-3xl">
               Best Website Builder 2026:{" "}
               <span style={{ color: CYAN_LT }}>Four Platforms. One Clear Answer.</span>
             </h1>
 
-            <p className="text-white/45 text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
+            <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Most people need Carrd (free, permanent, live in an hour) or one of the AI builders. Swipe Pages sits in a different category entirely — it is a conversion tool for paid ad campaigns, not a general website solution.
             </p>
-            <p className="text-white/45 text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
+            <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
               Below: what each platform is actually built for, current pricing, current offers, and a direct link to get started. No affiliate fluff — each verdict is based on what the product does well and who it will fail.
             </p>
 
@@ -409,23 +410,23 @@ export default function BestWebsiteBuilderPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
                 Quick Verdict
               </p>
-              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-[#46524C] text-sm sm:text-base leading-relaxed max-w-2xl">
                 For a fast, permanent site at the lowest cost, Carrd is the pick — free forever and live within an hour. For an AI-built business website, Durable AI (with built-in CRM and invoicing) or Butternut AI (a full multi-page site in about 20 seconds) lead. Swipe Pages is a different category: AMP landing pages built for paid-ad campaigns, not a general website builder.
               </p>
             </div>
           </section>
 
           {/* ── Quick picks table ─────────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-8">
+          <section className="border-t border-black/[0.08] py-8">
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[540px] text-sm">
                 <thead>
-                  <tr className="border-b border-white/[0.07]">
-                    <th className="text-left pb-3 pr-4 text-white/20 font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
-                    <th className="pb-3 px-3 text-left text-white/20 font-semibold text-[11px] uppercase tracking-wider">Best for</th>
-                    <th className="pb-3 px-3 text-left text-white/20 font-semibold text-[11px] uppercase tracking-wider">Offer / Trial</th>
-                    <th className="pb-3 px-3 text-left text-white/20 font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
-                    <th className="pb-3 pl-3 text-right text-white/20 font-semibold text-[11px] uppercase tracking-wider"></th>
+                  <tr className="border-b border-black/[0.08]">
+                    <th className="text-left pb-3 pr-4 text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
+                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">Best for</th>
+                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">Offer / Trial</th>
+                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
+                    <th className="pb-3 pl-3 text-right text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -435,13 +436,13 @@ export default function BestWebsiteBuilderPage() {
                     { name: "Butternut AI", bestFor: "Startups, SMBs, personal brand", offer: "Generate free, no account",  price: "Free gen / paid pub", href: "#butternut",  affUrl: BUTTERNUT_URL, cta: "Try free" },
                     { name: "Swipe Pages",  bestFor: "Paid ad campaigns",            offer: "14-day trial, no credit card", price: "From $29/mo",         href: "#swipepages", affUrl: SWIPE_URL,     cta: "Start trial" },
                   ].map((row) => (
-                    <tr key={row.name} className="border-b border-white/[0.04] hover:bg-white/[0.015] transition-colors">
+                    <tr key={row.name} className="border-b border-black/[0.08] hover:bg-white transition-colors">
                       <td className="py-3 pr-4">
-                        <a href={row.href} className="text-white font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
+                        <a href={row.href} className="text-[#16201C] font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
                       </td>
-                      <td className="py-3 px-3 text-white/40 text-xs">{row.bestFor}</td>
+                      <td className="py-3 px-3 text-[#6B756F] text-xs">{row.bestFor}</td>
                       <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.offer}</td>
-                      <td className="py-3 px-3 text-white/35 text-xs">{row.price}</td>
+                      <td className="py-3 px-3 text-[#8A938E] text-xs">{row.price}</td>
                       <td className="py-3 pl-3 text-right">
                         <a
                           {...aff(row.affUrl)}
@@ -464,8 +465,8 @@ export default function BestWebsiteBuilderPage() {
           ))}
 
           {/* ── Verdict ──────────────────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-6">
+          <section className="border-t border-black/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-6">
               The Verdict
             </h2>
             <div className="space-y-4 max-w-2xl">
@@ -475,27 +476,27 @@ export default function BestWebsiteBuilderPage() {
                 { label: "Use Butternut AI if:", body: "You want the fastest AI-generated multi-page website with the strongest copy quality out of the box. No account required to generate and preview. Better than Durable for content-heavy sites; lacks the CRM and invoicing Durable includes." },
                 { label: "Use Swipe Pages if:", body: "You spend money on Google Ads or Meta Ads and your landing pages are costing you conversions due to slow mobile load times. AMP pages load in under one second. A/B testing and dynamic text replacement built in. Not a website solution — a dedicated conversion tool for paid traffic." },
               ].map(({ label, body }) => (
-                <div key={label} className="border-b border-white/[0.05] pb-4">
-                  <p className="text-sm font-bold text-white mb-1">{label}</p>
-                  <p className="text-sm text-white/45 leading-relaxed">{body}</p>
+                <div key={label} className="border-b border-black/[0.08] pb-4">
+                  <p className="text-sm font-bold text-[#16201C] mb-1">{label}</p>
+                  <p className="text-sm text-[#6B756F] leading-relaxed">{body}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* ── Full feature breakdown ────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-6">
+          <section className="border-t border-black/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-6">
               Full Feature Breakdown
             </h2>
 
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[580px] text-sm">
                 <thead>
-                  <tr className="border-b border-white/[0.07]">
-                    <th className="text-left pb-4 pr-4 text-white/20 font-semibold text-[11px] uppercase tracking-wider w-40">Feature</th>
+                  <tr className="border-b border-black/[0.08]">
+                    <th className="text-left pb-4 pr-4 text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider w-40">Feature</th>
                     {["Carrd", "Durable AI", "Butternut AI", "Swipe Pages"].map((h) => (
-                      <th key={h} className="pb-4 px-3 text-center font-bold text-white/50 text-xs">{h}</th>
+                      <th key={h} className="pb-4 px-3 text-center font-bold text-[#6B756F] text-xs">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -512,18 +513,18 @@ export default function BestWebsiteBuilderPage() {
                     { label: "No-code editor",      vals: [true,  true,  true,  true]  },
                     { label: "Agency workspaces",   vals: [false, false, false, true]  },
                   ].map((row, i) => (
-                    <tr key={i} className="border-b border-white/[0.04] hover:bg-white/[0.015] transition-colors">
-                      <td className="py-3 pr-4 text-white/40 text-xs font-medium leading-snug">
+                    <tr key={i} className="border-b border-black/[0.08] hover:bg-white transition-colors">
+                      <td className="py-3 pr-4 text-[#6B756F] text-xs font-medium leading-snug">
                         {row.label}
-                        {row.note && <span className="block text-white/20 text-[10px] mt-0.5">{row.note}</span>}
+                        {row.note && <span className="block text-[#8A938E] text-[10px] mt-0.5">{row.note}</span>}
                       </td>
                       {row.vals.map((v, j) => (
                         <td key={j} className="py-3 px-3"><TableCheck yes={v} /></td>
                       ))}
                     </tr>
                   ))}
-                  <tr className="border-t border-white/[0.07]">
-                    <td className="py-3.5 pr-4 text-white/40 text-xs font-semibold">Starting price</td>
+                  <tr className="border-t border-black/[0.08]">
+                    <td className="py-3.5 pr-4 text-[#6B756F] text-xs font-semibold">Starting price</td>
                     {[
                       "Free / $9/yr",
                       "Free gen",
@@ -541,8 +542,8 @@ export default function BestWebsiteBuilderPage() {
           </section>
 
           {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-8">
+          <section className="border-t border-black/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-8">
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
@@ -564,17 +565,17 @@ export default function BestWebsiteBuilderPage() {
                   a: "Swipe Pages is the strongest choice for paid ad landing pages. Its AMP technology delivers mobile pages in under one second, with built-in A/B testing and dynamic text replacement for campaign personalisation. It is not a general website builder — it is a dedicated conversion tool for paid traffic.",
                 },
               ].map(({ q, a }, i) => (
-                <div key={i} className="border-b border-white/[0.05] pb-6">
-                  <h3 className="text-sm font-bold text-white mb-2">{q}</h3>
-                  <p className="text-sm text-white/45 leading-relaxed">{a}</p>
+                <div key={i} className="border-b border-black/[0.08] pb-6">
+                  <h3 className="text-sm font-bold text-[#16201C] mb-2">{q}</h3>
+                  <p className="text-sm text-[#6B756F] leading-relaxed">{a}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
-          <section className="border-t border-white/[0.06] py-8 pb-16">
-            <p className="text-white/20 text-xs leading-relaxed max-w-2xl">
+          <section className="border-t border-black/[0.08] py-8 pb-16">
+            <p className="text-[#8A938E] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains affiliate referral links to Carrd, Durable AI, Butternut AI, and Swipe Pages. Comparisons are based on publicly available information at time of publication and may change.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -595,6 +596,6 @@ export default function BestWebsiteBuilderPage() {
 
         </div>
       </main>
-    </>
+    </ConsumerShell>
   );
 }

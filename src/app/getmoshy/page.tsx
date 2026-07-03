@@ -2,11 +2,12 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.getMoshy);
 
-const CYAN = "#0AA7B5";
-const CYAN_LT = "#22C0CD";
+const CYAN = "#0E7C66";
+const CYAN_LT = "#0E7C66";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const faqs = [
@@ -56,35 +57,31 @@ const webPageSchema = {
 
 export default function GetMoshyPage() {
   return (
-    <div className="relative min-h-screen bg-[#060f15] text-white">
+    <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(10,167,181,0.10),transparent_55%)]" />
-      </div>
-
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/40">
-          <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#6B756F]">
+          <Link href="/" className="hover:text-[#46524C] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#46524C] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-white/60">getmoshy.com.au</span>
+          <span className="text-[#46524C]">getmoshy.com.au</span>
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           getmoshy.com.au: <span style={{ color: CYAN_LT }}>what it is and the fastest way in</span>
         </h1>
-        <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+        <p className="text-[#6B756F] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
           Searching &ldquo;getmoshy&rdquo; usually means one of two things: you want to confirm the site is real, or you
           want the quickest route to the eligibility check. Both answers are below.
         </p>
 
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-          <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-4">
-            <strong className="text-white">Yes, it is the official site.</strong> getmoshy.com.au is the real domain of
+          <p className="text-[#46524C] text-sm sm:text-base leading-relaxed mb-4">
+            <strong className="text-[#16201C]">Yes, it is the official site.</strong> getmoshy.com.au is the real domain of
             Moshy, an Australian men&apos;s telehealth provider. The button below takes you straight to their eligibility
             check, with our referral applied automatically.
           </p>
@@ -101,19 +98,19 @@ export default function GetMoshyPage() {
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">What Moshy does</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
             Moshy runs telehealth programs for Australian men, and the weight-management program is its best-known
             offering. The model is simple: an online questionnaire, an individual review by a registered Australian
             practitioner, and if approved, a subscription with delivery to your door. Not every applicant is approved,
             because the practitioner review is a genuine assessment rather than a rubber stamp.
           </p>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
             If you want the longer walk-through of how the service runs in practice, read{" "}
-            <Link href="/moshy-review" className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
+            <Link href="/moshy-review" className="underline decoration-black/20 underline-offset-2 hover:text-[#16201C]" style={{ color: CYAN }}>
               our full Moshy review
             </Link>{" "}
             or the{" "}
-            <Link href="/moshy-eligibility" className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
+            <Link href="/moshy-eligibility" className="underline decoration-black/20 underline-offset-2 hover:text-[#16201C]" style={{ color: CYAN }}>
               breakdown of the eligibility check
             </Link>.
           </p>
@@ -123,30 +120,30 @@ export default function GetMoshyPage() {
           <h2 className="text-xl font-black mb-5">Quick answers</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-white/[0.08] bg-white/[0.02] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-white text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-black/[0.08] bg-white px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-[#16201C] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-white/30 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#8A938E] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-white/55 text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-[#6B756F] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="border-t border-white/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <div className="border-t border-black/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy referral link &amp; offer →</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/mens-health-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s health telehealth in Australia →</Link>
         </div>
 
-        <p className="text-white/25 text-xs mt-8 leading-relaxed">
+        <p className="text-[#8A938E] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs, is not the official Moshy website, and contains an affiliate referral
           link. We may earn a commission if you sign up through it, at no extra cost to you. Nothing here is medical
           advice.
         </p>
-        <p className="text-white/20 text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-white/50">All guides</Link></p>
+        <p className="text-[#8A938E] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#6B756F]">All guides</Link></p>
       </main>
-    </div>
+    </ConsumerShell>
   );
 }

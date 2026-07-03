@@ -1,6 +1,7 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.bestNewsletterPlatform);
 
@@ -98,8 +99,8 @@ const webPageSchema = {
 
 // ─── Comparison data ──────────────────────────────────────────────────────────
 
-const CYAN    = "#0AA7B5";
-const CYAN_LT = "#22C0CD";
+const CYAN    = "#0E7C66";
+const CYAN_LT = "#0E7C66";
 
 const platforms = [
   {
@@ -190,7 +191,7 @@ const features = [
 
 export default function BestNewsletterPlatformPage() {
   return (
-    <div className="relative min-h-screen bg-[#060f15] text-white">
+    <ConsumerShell>
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
@@ -206,12 +207,12 @@ export default function BestNewsletterPlatformPage() {
       <main id="main-content" className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12 pb-24 pt-14 sm:pt-18">
 
         {/* Breadcrumb */}
-        <nav className="mb-10 flex items-center gap-2 text-sm text-white/40">
-          <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
+        <nav className="mb-10 flex items-center gap-2 text-sm text-[#6B756F]">
+          <Link href="/" className="hover:text-[#46524C] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#46524C] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-white/60">Best Newsletter Platform 2026</span>
+          <span className="text-[#46524C]">Best Newsletter Platform 2026</span>
         </nav>
 
         {/* Jump Nav */}
@@ -233,21 +234,21 @@ export default function BestNewsletterPlatformPage() {
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#0AA7B5]/30 bg-[#0AA7B5]/[0.07] px-3.5 py-1.5 mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#22C0CD]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#22C0CD]">Comparison Guide 2026</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#0E7C66]/30 bg-[#0E7C66]/[0.07] px-3.5 py-1.5 mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0E7C66]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0E7C66]">Comparison Guide 2026</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-white mb-5 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#16201C] mb-5 tracking-tight">
             Best Newsletter Platform 2026:{" "}
             <span style={{ color: CYAN_LT }}>beehiiv vs Substack vs ConvertKit</span>
           </h1>
-          <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+          <p className="text-[#6B756F] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             We compared the three leading newsletter platforms on free plans, monetisation, growth tools, and what the community actually recommends. Our verdict is below.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
             {["3 platforms compared", "Free plan breakdown", "No sponsored rankings"].map((tag) => (
-              <span key={tag} className="flex items-center gap-2 text-sm text-[#0AA7B5]/80">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#22C0CD] flex-shrink-0" />
+              <span key={tag} className="flex items-center gap-2 text-sm text-[#0E7C66]/80">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0E7C66] flex-shrink-0" />
                 {tag}
               </span>
             ))}
@@ -263,12 +264,12 @@ export default function BestNewsletterPlatformPage() {
         </div>
 
         {/* Our Pick */}
-        <section id="comparison" className="border-t border-[#0AA7B5]/10 py-12 sm:py-14">
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">Our Pick: beehiiv</h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
+        <section id="comparison" className="border-t border-[#0E7C66]/10 py-12 sm:py-14">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#16201C] mb-3">Our Pick: beehiiv</h2>
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
             For newsletter creators focused on growing an audience and monetising without giving up revenue, beehiiv is the strongest platform available in 2026. The built-in referral program, ad network, and 0% revenue share on paid subscriptions put it well ahead of alternatives once you are past the earliest stage.
           </p>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
+          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
             Substack is a legitimate starting point for its discovery network and zero monthly fee, but the 10% revenue cut becomes a real cost at scale. ConvertKit is better for product businesses with complex email sequences than for newsletter-first creators.
           </p>
           <a
@@ -282,17 +283,17 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
         {/* Platform Cards */}
-        <section className="border-t border-[#0AA7B5]/10 py-12 sm:py-14 space-y-8">
+        <section className="border-t border-[#0E7C66]/10 py-12 sm:py-14 space-y-8">
           {platforms.map((p) => (
             <div
               key={p.name}
               id={p.name.toLowerCase().replace(/[^a-z]/g, "")}
-              className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-7 sm:p-8"
+              className="rounded-2xl border border-black/[0.08] bg-white p-7 sm:p-8"
             >
               <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                 <div>
                   <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-xl font-black text-white">{p.name}</h3>
+                    <h3 className="text-xl font-black text-[#16201C]">{p.name}</h3>
                     <span
                       className="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest"
                       style={{ color: p.badgeColor, background: `${p.badgeColor}15`, border: `1px solid ${p.badgeColor}30` }}
@@ -300,7 +301,7 @@ export default function BestNewsletterPlatformPage() {
                       {p.badge}
                     </span>
                   </div>
-                  <p className="text-white/45 text-sm">{p.tagline}</p>
+                  <p className="text-[#6B756F] text-sm">{p.tagline}</p>
                 </div>
                 {p.internalHref ? (
                   <Link
@@ -314,7 +315,7 @@ export default function BestNewsletterPlatformPage() {
                 ) : (
                   <a
                     {...aff(p.href)}
-                    className="inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-xs font-semibold text-white/70 transition-all hover:text-white"
+                    className="inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-xs font-semibold text-[#46524C] transition-all hover:text-[#16201C]"
                     style={{ borderColor: `${CYAN}30` }}
                   >
                     Visit {p.name}
@@ -324,17 +325,17 @@ export default function BestNewsletterPlatformPage() {
               </div>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-6 text-sm">
-                <div className="rounded-xl bg-white/[0.03] border border-white/[0.05] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-1">Free Plan</p>
-                  <p className="text-white/75 font-medium">{p.free}</p>
+                <div className="rounded-xl bg-white border border-black/[0.08] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#8A938E] mb-1">Free Plan</p>
+                  <p className="text-[#46524C] font-medium">{p.free}</p>
                 </div>
-                <div className="rounded-xl bg-white/[0.03] border border-white/[0.05] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-1">Paid From</p>
-                  <p className="text-white/75 font-medium">{p.paid}</p>
+                <div className="rounded-xl bg-white border border-black/[0.08] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#8A938E] mb-1">Paid From</p>
+                  <p className="text-[#46524C] font-medium">{p.paid}</p>
                 </div>
-                <div className="rounded-xl bg-white/[0.03] border border-white/[0.05] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-1">Revenue Share</p>
-                  <p className="text-white/75 font-medium">{p.revenueShare}</p>
+                <div className="rounded-xl bg-white border border-black/[0.08] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#8A938E] mb-1">Revenue Share</p>
+                  <p className="text-[#46524C] font-medium">{p.revenueShare}</p>
                 </div>
               </div>
 
@@ -343,7 +344,7 @@ export default function BestNewsletterPlatformPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: CYAN_LT }}>Pros</p>
                   <ul className="space-y-2">
                     {p.pros.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#46524C]">
                         <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
                         {item}
                       </li>
@@ -354,7 +355,7 @@ export default function BestNewsletterPlatformPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest text-red-400/70 mb-3">Cons</p>
                   <ul className="space-y-2">
                     {p.cons.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-white/60">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#46524C]">
                         <XCircle className="h-4 w-4 flex-shrink-0 mt-0.5 text-red-400/50" />
                         {item}
                       </li>
@@ -367,13 +368,13 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
         {/* Feature Table */}
-        <section id="feature-table" className="border-t border-[#0AA7B5]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-white mb-8">Side-by-Side Comparison</h2>
+        <section id="feature-table" className="border-t border-[#0E7C66]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#16201C] mb-8">Side-by-Side Comparison</h2>
           <div className="overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0">
             <table className="w-full min-w-[560px] text-sm border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-white/30">Feature</th>
+                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#8A938E]">Feature</th>
                   {["beehiiv", "Substack", "ConvertKit"].map((col) => (
                     <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "beehiiv" ? CYAN_LT : "rgba(255,255,255,0.3)" }}>
                       {col}
@@ -383,11 +384,11 @@ export default function BestNewsletterPlatformPage() {
               </thead>
               <tbody>
                 {features.map((row, i) => (
-                  <tr key={row.label} className={i % 2 === 0 ? "bg-white/[0.015]" : ""}>
-                    <td className="py-3 pr-4 text-white/40 font-medium">{row.label}</td>
-                    <td className="py-3 pr-4 text-white/70 font-medium">{row.beehiiv}</td>
-                    <td className="py-3 pr-4 text-white/55">{row.substack}</td>
-                    <td className="py-3 pr-4 text-white/55">{row.convertkit}</td>
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-white" : ""}>
+                    <td className="py-3 pr-4 text-[#6B756F] font-medium">{row.label}</td>
+                    <td className="py-3 pr-4 text-[#46524C] font-medium">{row.beehiiv}</td>
+                    <td className="py-3 pr-4 text-[#6B756F]">{row.substack}</td>
+                    <td className="py-3 pr-4 text-[#6B756F]">{row.convertkit}</td>
                   </tr>
                 ))}
               </tbody>
@@ -396,9 +397,9 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
         {/* Reddit Verdict */}
-        <section className="border-t border-[#0AA7B5]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-white mb-5">What Reddit Says</h2>
-          <div className="space-y-4 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
+        <section className="border-t border-[#0E7C66]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#16201C] mb-5">What Reddit Says</h2>
+          <div className="space-y-4 text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl">
             <p>
               Reddit discussions about newsletter platforms — primarily in r/Newsletters, r/Entrepreneur, r/SideProject, and r/blogging — consistently point to beehiiv as the preferred platform for creators who are serious about growing and monetising.
             </p>
@@ -412,8 +413,8 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="border-t border-[#0AA7B5]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-white mb-8">Frequently Asked Questions</h2>
+        <section id="faq" className="border-t border-[#0E7C66]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#16201C] mb-8">Frequently Asked Questions</h2>
           <div className="space-y-6 max-w-2xl">
             {[
               {
@@ -437,21 +438,21 @@ export default function BestNewsletterPlatformPage() {
                 a: "beehiiv offers the most generous free plan for newsletter creators — free up to 2,500 subscribers with access to core publishing features, analytics, and custom domains. Substack is free with no subscriber cap but takes 10% of paid revenue. ConvertKit is free up to 1,000 subscribers.",
               },
             ].map(({ q, a }, i) => (
-              <div key={i} className="border-b border-white/[0.05] pb-6">
-                <h3 className="text-sm font-bold text-white mb-2">{q}</h3>
-                <p className="text-sm text-white/45 leading-relaxed">{a}</p>
+              <div key={i} className="border-b border-black/[0.08] pb-6">
+                <h3 className="text-sm font-bold text-[#16201C] mb-2">{q}</h3>
+                <p className="text-sm text-[#6B756F] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="border-t border-[#0AA7B5]/10 pt-14 sm:pt-16 text-center">
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
+        <section className="border-t border-[#0E7C66]/10 pt-14 sm:pt-16 text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#16201C] mb-3">
             Ready to Start Your Newsletter?{" "}
             <span style={{ color: CYAN_LT }}>Try beehiiv Free.</span>
           </h2>
-          <p className="text-white/50 text-sm max-w-md mx-auto mb-7 leading-relaxed">
+          <p className="text-[#6B756F] text-sm max-w-md mx-auto mb-7 leading-relaxed">
             Free up to 2,500 subscribers. 14-day trial of paid features. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -465,7 +466,7 @@ export default function BestNewsletterPlatformPage() {
             </a>
             <Link
               href="/beehiiv"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-white/70 transition-all hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#46524C] transition-all hover:text-[#16201C]"
               style={{ borderColor: `${CYAN}30` }}
             >
               Full beehiiv Review
@@ -474,7 +475,7 @@ export default function BestNewsletterPlatformPage() {
 
           {/* Related guides */}
           <div className="mt-14 text-left max-w-2xl mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/25 mb-5">Related Guides</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8A938E] mb-5">Related Guides</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { href: "/best-website-builder", label: "Best Website Builder 2026" },
@@ -485,7 +486,7 @@ export default function BestNewsletterPlatformPage() {
                 <Link
                   key={href}
                   href={href}
-                  className="flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors"
+                  className="flex items-center gap-2 text-sm text-[#6B756F] hover:text-[#46524C] transition-colors"
                 >
                   <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" style={{ color: CYAN }} />
                   {label}
@@ -496,6 +497,6 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
       </main>
-    </div>
+    </ConsumerShell>
   );
 }
