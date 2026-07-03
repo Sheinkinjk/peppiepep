@@ -683,3 +683,165 @@ main > section:nth-child(8) { animation-delay: 0.56s; }
     transform: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PREMIUM DARK CONSUMER SYSTEM  (Linear/Vercel craft × NerdWallet trust)
+   Base: #08090C. Accent: cyan. Depth via glow, glass, grain, gradients.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.pd-root {
+  --pd-bg: #08090c;
+  --pd-surface: rgba(255, 255, 255, 0.028);
+  --pd-border: rgba(255, 255, 255, 0.08);
+  --pd-cyan: #22d3ee;
+  --pd-cyan-deep: #0891b2;
+  background: var(--pd-bg);
+  color: #f4f6f8;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Ambient mesh + grain, fixed behind content */
+.pd-atmos {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.pd-atmos::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(48rem 34rem at 78% -8%, rgba(34, 211, 238, 0.16), transparent 60%),
+    radial-gradient(40rem 32rem at 8% 8%, rgba(14, 124, 178, 0.12), transparent 58%),
+    radial-gradient(46rem 40rem at 50% 118%, rgba(34, 211, 238, 0.08), transparent 60%);
+  animation: pd-drift 26s ease-in-out infinite alternate;
+}
+.pd-atmos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+}
+@keyframes pd-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-2%, 1.5%, 0) scale(1.06); }
+}
+
+/* Fine grid line texture for hero/section backdrops */
+.pd-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(60% 60% at 50% 30%, #000 0%, transparent 75%);
+}
+
+/* Glass panel / card */
+.pd-glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--pd-border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 24px 48px -28px rgba(0, 0, 0, 0.9);
+}
+.pd-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
+  border: 1px solid var(--pd-border);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s, box-shadow 0.35s;
+}
+.pd-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 30px 60px -30px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(34, 211, 238, 0.12), 0 0 40px -10px rgba(34, 211, 238, 0.25);
+}
+
+/* Cyan gradient text */
+.pd-grad {
+  background: linear-gradient(120deg, #e9fbff 0%, #7fe6f7 42%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Micro label (replaces amateur pills) */
+.pd-eyebrow {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Primary button: cyan gradient with glow */
+.pd-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 15px;
+  color: #04141a;
+  background: linear-gradient(180deg, #4fe3f7, #22d3ee 60%, #12b6d6);
+  box-shadow: 0 8px 30px -8px rgba(34, 211, 238, 0.6), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, filter 0.25s;
+}
+.pd-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 14px 40px -8px rgba(34, 211, 238, 0.7), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+}
+.pd-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.4rem;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+.pd-btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(34, 211, 238, 0.06);
+}
+
+/* Hairline divider with fade */
+.pd-hr {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+}
+
+/* Entrance animation */
+@keyframes pd-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+.pd-rise { animation: pd-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.pd-rise-1 { animation-delay: 0.06s; }
+.pd-rise-2 { animation-delay: 0.12s; }
+.pd-rise-3 { animation-delay: 0.18s; }
+.pd-rise-4 { animation-delay: 0.24s; }
+
+/* Slow shimmer for the product visual */
+@keyframes pd-shimmer {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.pd-shimmer { animation: pd-shimmer 4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pd-atmos::before, .pd-rise, .pd-shimmer { animation: none; }
+  .pd-rise { opacity: 1; transform: none; }
+}

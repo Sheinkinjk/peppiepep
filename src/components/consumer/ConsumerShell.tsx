@@ -1,15 +1,9 @@
-import { Fraunces } from "next/font/google";
+import { Geist } from "next/font/google";
 import Link from "next/link";
 import NewsletterSignup from "./NewsletterSignup";
+import { ReferLabsLogo } from "../ReferLabsLogo";
 
-// Editorial serif for the consumer design system (shared with /moshy).
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-fraunces",
-});
+const geist = Geist({ subsets: ["latin"], display: "swap", variable: "--font-pd" });
 
 const NAV = [
   { href: "/weight-loss", label: "Weight loss" },
@@ -20,86 +14,85 @@ const NAV = [
 ];
 
 /**
- * Light editorial shell for consumer-facing surfaces (homepage, category hubs).
- * These routes are chrome-free in ChromeGate; this provides their header/footer.
+ * Premium dark shell for the consumer platform. Linear/Vercel craft:
+ * ambient mesh, glass header, real logo, refined typography, cyan accent.
  */
 export default function ConsumerShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${fraunces.variable} min-h-screen bg-[#F6F5F1] text-[#1B2420] selection:bg-[#0E7C66]/15`}>
+    <div className={`${geist.variable} pd-root min-h-screen`}>
+      <div className="pd-atmos" aria-hidden="true" />
+
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-[#F6F5F1]/85 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
+      <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#08090c]/72 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8">
           <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Refer Labs home">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#0E7C66]" />
-            <span className="text-[15px] font-bold tracking-tight">Refer Labs</span>
+            <ReferLabsLogo className="h-8 w-auto drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)]" />
+            <span className="hidden text-[15px] font-semibold tracking-tight text-white sm:inline">Refer Labs</span>
           </Link>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-[#46524C] md:flex">
+          <nav className="hidden items-center gap-7 text-[13.5px] font-medium text-white/55 lg:flex">
             {NAV.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-colors hover:text-[#0E7C66]">
+              <Link key={item.href} href={item.href} className="transition-colors hover:text-white">
                 {item.label}
               </Link>
             ))}
           </nav>
-          <Link
-            href="/for-business"
-            className="shrink-0 rounded-full border border-[#0E7C66]/30 bg-[#0E7C66]/[0.06] px-4 py-2 text-sm font-semibold text-[#0E7C66] transition-colors hover:bg-[#0E7C66]/10"
-          >
+          <Link href="/for-business" className="pd-btn-ghost shrink-0 !py-2 !text-[13px]">
             For business
           </Link>
         </div>
         {/* Mobile category row */}
-        <nav className="flex gap-5 overflow-x-auto border-t border-black/[0.05] px-5 py-2.5 text-sm font-medium text-[#46524C] md:hidden">
+        <nav className="flex gap-5 overflow-x-auto border-t border-white/[0.05] px-5 py-2.5 text-[13px] font-medium text-white/55 lg:hidden">
           {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="whitespace-nowrap transition-colors hover:text-[#0E7C66]">
+            <Link key={item.href} href={item.href} className="whitespace-nowrap transition-colors hover:text-white">
               {item.label}
             </Link>
           ))}
         </nav>
       </header>
 
-      {children}
+      <div className="relative z-10">{children}</div>
 
       {/* Footer */}
-      <footer className="border-t border-black/[0.07] bg-[#EFEDE7]">
-        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-          <div className="grid gap-10 sm:grid-cols-[1.3fr_1fr_1fr]">
+      <footer className="relative z-10 border-t border-white/[0.07] bg-[#0a0b0e]">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr]">
             <div className="max-w-sm">
               <div className="flex items-center gap-2.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#0E7C66]" />
-                <span className="text-[15px] font-bold tracking-tight">Refer Labs</span>
+                <ReferLabsLogo className="h-8 w-auto" />
+                <span className="text-[15px] font-semibold tracking-tight text-white">Refer Labs</span>
               </div>
-              <p className="mt-3 text-[13px] leading-relaxed text-[#6B756F]">
-                Independent comparisons and research for Australians choosing health services, software and tools.
-                Rankings are never sold. Some pages contain disclosed affiliate links, which fund the research at no
-                cost to you.
+              <p className="mt-4 text-[13px] leading-relaxed text-white/45">
+                Independent comparisons for Australians choosing health services, software and tools. Rankings are never
+                sold. Some pages carry disclosed affiliate links that fund the research, at no cost to you.
               </p>
-              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">The newsletter</p>
+              <p className="mt-5 pd-eyebrow">The newsletter</p>
               <NewsletterSignup variant="footer" source="footer" />
             </div>
             <div>
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">Compare</p>
-              <ul className="space-y-2.5 text-sm text-[#46524C]">
-                <li><Link href="/weight-loss" className="hover:text-[#0E7C66]">Weight loss &amp; telehealth</Link></li>
-                <li><Link href="/hair-loss" className="hover:text-[#0E7C66]">Hair loss treatment</Link></li>
-                <li><Link href="/best-website-builder" className="hover:text-[#0E7C66]">Website builders</Link></li>
-                <li><Link href="/best-newsletter-platform" className="hover:text-[#0E7C66]">Newsletter platforms</Link></li>
-                <li><Link href="/guides" className="hover:text-[#0E7C66]">All guides</Link></li>
+              <p className="mb-4 pd-eyebrow">Compare</p>
+              <ul className="space-y-2.5 text-sm text-white/55">
+                <li><Link href="/weight-loss" className="transition-colors hover:text-white">Weight loss &amp; telehealth</Link></li>
+                <li><Link href="/hair-loss" className="transition-colors hover:text-white">Hair loss treatment</Link></li>
+                <li><Link href="/compare/website-builders" className="transition-colors hover:text-white">Website builders</Link></li>
+                <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-white">Newsletter platforms</Link></li>
+                <li><Link href="/guides" className="transition-colors hover:text-white">All guides</Link></li>
               </ul>
             </div>
             <div>
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">Company</p>
-              <ul className="space-y-2.5 text-sm text-[#46524C]">
-                <li><Link href="/how-we-research" className="hover:text-[#0E7C66]">How we research</Link></li>
-                <li><Link href="/for-business" className="hover:text-[#0E7C66]">For business</Link></li>
-                <li><Link href="/about" className="hover:text-[#0E7C66]">About</Link></li>
-                <li><Link href="/contact" className="hover:text-[#0E7C66]">Contact</Link></li>
-                <li><Link href="/privacy" className="hover:text-[#0E7C66]">Privacy</Link> · <Link href="/terms" className="hover:text-[#0E7C66]">Terms</Link></li>
+              <p className="mb-4 pd-eyebrow">Company</p>
+              <ul className="space-y-2.5 text-sm text-white/55">
+                <li><Link href="/how-we-research" className="transition-colors hover:text-white">How we research</Link></li>
+                <li><Link href="/for-business" className="transition-colors hover:text-white">For business</Link></li>
+                <li><Link href="/about" className="transition-colors hover:text-white">About</Link></li>
+                <li><Link href="/contact" className="transition-colors hover:text-white">Contact</Link></li>
+                <li><Link href="/privacy" className="transition-colors hover:text-white">Privacy</Link> · <Link href="/terms" className="transition-colors hover:text-white">Terms</Link></li>
               </ul>
             </div>
           </div>
-          <p className="mt-10 border-t border-black/[0.06] pt-6 text-xs text-[#A6ADA8]">
-            © 2026 Refer Labs · Australia. Health content on this site is general information only, not medical advice.
-            Prescription medicines require assessment by a registered practitioner.
+          <div className="pd-hr mt-12" />
+          <p className="mt-6 text-xs text-white/35">
+            © 2026 Refer Labs · Australia. Health content is general information only, not medical advice. Prescription
+            medicines require assessment by a registered practitioner.
           </p>
         </div>
       </footer>

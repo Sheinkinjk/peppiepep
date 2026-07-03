@@ -124,14 +124,14 @@ const reviewsSchema = [
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
-const CYAN    = "#0E7C66";
-const CYAN_LT = "#0E7C66";
+const CYAN    = "#0891b2";
+const CYAN_LT = "#22d3ee";
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function Pro({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-[#46524C] leading-snug">
+    <li className="flex items-start gap-2 text-sm text-white/70 leading-snug">
       <CheckCircle2 className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
       {text}
     </li>
@@ -140,8 +140,8 @@ function Pro({ text }: { text: string }) {
 
 function Con({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-[#8A938E] leading-snug">
-      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#8A938E]" />
+    <li className="flex items-start gap-2 text-sm text-white/40 leading-snug">
+      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-white/40" />
       {text}
     </li>
   );
@@ -150,7 +150,7 @@ function Con({ text }: { text: string }) {
 function TableCheck({ yes }: { yes: boolean }) {
   return yes
     ? <CheckCircle2 className="h-4 w-4 mx-auto" style={{ color: CYAN_LT }} />
-    : <span className="block text-center text-[#8A938E] text-xs">—</span>;
+    : <span className="block text-center text-white/40 text-xs">—</span>;
 }
 
 // ─── Supplier card ────────────────────────────────────────────────────────────
@@ -177,7 +177,7 @@ function SupplierCard({
   return (
     <section
       id={id}
-      className="border-t border-black/[0.08] py-10 sm:py-12 scroll-mt-24"
+      className="border-t border-white/[0.08] py-10 sm:py-12 scroll-mt-24"
     >
       <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-12">
 
@@ -185,27 +185,27 @@ function SupplierCard({
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div
-              className="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-black text-[#46524C] flex-shrink-0"
+              className="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-black text-white/70 flex-shrink-0"
               style={{ background: `${CYAN}1A`, border: `1px solid ${CYAN}30` }}
             >
               {index}
             </div>
-            <h2 className="text-xl font-black text-[#16201C] leading-none">{name}</h2>
+            <h2 className="text-xl font-black text-white leading-none">{name}</h2>
           </div>
 
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed mb-5 max-w-lg">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed mb-5 max-w-lg">
             {tagline}
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-[#8A938E] mb-2.5">Strengths</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-white/40 mb-2.5">Strengths</p>
               <ul className="space-y-2">
                 {strengths.map((p) => <Pro key={p} text={p} />)}
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-[#8A938E] mb-2.5">Limitations</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-white/40 mb-2.5">Limitations</p>
               <ul className="space-y-2">
                 {limitations.map((c) => <Con key={c} text={c} />)}
               </ul>
@@ -222,8 +222,8 @@ function SupplierCard({
             <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
               Current offer
             </p>
-            <p className="text-[#16201C] font-black text-base leading-snug mb-1">{deal}</p>
-            <p className="text-[#6B756F] text-xs leading-snug">{dealNote}</p>
+            <p className="text-white font-black text-base leading-snug mb-1">{deal}</p>
+            <p className="text-white/55 text-xs leading-snug">{dealNote}</p>
           </div>
 
           <a
@@ -332,30 +332,30 @@ export default function BestPeptideSupplierPage() {
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }} />
       ))}
 
-      <main className="text-[#16201C]">
+      <main className="text-white">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
 
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6B756F]">
-            <Link href="/" className="hover:text-[#46524C] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-white/55">
+            <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/guides" className="hover:text-[#46524C] transition-colors">Guides</Link>
+            <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
             <span>/</span>
-            <span className="text-[#46524C]">Best Peptide Supplier</span>
+            <span className="text-white/70">Best Peptide Supplier</span>
           </nav>
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="text-[#8A938E] text-xs mb-6">Updated March 2026 &middot; For laboratory research use only</p>
+            <p className="text-white/40 text-xs mb-6">Updated March 2026 &middot; For laboratory research use only</p>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#16201C] mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-white mb-4 max-w-3xl">
               Best Peptide Supplier 2026:{" "}
               <span style={{ color: CYAN_LT }}>Three Suppliers. Clear Differences.</span>
             </h1>
 
-            <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
+            <p className="text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Apollo Peptide Sciences has the broadest catalogue — including Semaglutide, CJC-1295, GHK-Cu, and Retatrutide. Ascension Peptides is cited most consistently for purity documentation and COA quality. BioPeptiTech runs the most frequent peptides sale events.
             </p>
-            <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
+            <p className="text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
               Below: catalogue differences, current discount access, and a direct link to each supplier. All products are for laboratory research use only and are not approved for human or veterinary use.
             </p>
 
@@ -384,22 +384,22 @@ export default function BestPeptideSupplierPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
                 Quick Verdict
               </p>
-              <p className="text-[#46524C] text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl">
                 Apollo Peptide Sciences has the broadest catalogue, Ascension Peptides is cited most consistently for purity and COA documentation, and BioPeptiTech runs the most frequent sale events. All three are for laboratory research use only and are not approved for human or veterinary use.
               </p>
             </div>
           </section>
 
           {/* ── Quick picks table ─────────────────────────────────────────────── */}
-          <section className="border-t border-black/[0.08] py-8">
+          <section className="border-t border-white/[0.08] py-8">
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[560px] text-sm">
                 <thead>
-                  <tr className="border-b border-black/[0.08]">
-                    <th className="text-left pb-3 pr-4 text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider w-44">Supplier</th>
-                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">Best for</th>
-                    <th className="pb-3 px-3 text-left text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider">Discount / Offer</th>
-                    <th className="pb-3 pl-3 text-right text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider"></th>
+                  <tr className="border-b border-white/[0.08]">
+                    <th className="text-left pb-3 pr-4 text-white/40 font-semibold text-[11px] uppercase tracking-wider w-44">Supplier</th>
+                    <th className="pb-3 px-3 text-left text-white/40 font-semibold text-[11px] uppercase tracking-wider">Best for</th>
+                    <th className="pb-3 px-3 text-left text-white/40 font-semibold text-[11px] uppercase tracking-wider">Discount / Offer</th>
+                    <th className="pb-3 pl-3 text-right text-white/40 font-semibold text-[11px] uppercase tracking-wider"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -429,11 +429,11 @@ export default function BestPeptideSupplierPage() {
                       cta: "Access sale",
                     },
                   ].map((row) => (
-                    <tr key={row.name} className="border-b border-black/[0.08] hover:bg-white transition-colors">
+                    <tr key={row.name} className="border-b border-white/[0.08] hover:bg-white/[0.03] transition-colors">
                       <td className="py-3 pr-4">
-                        <a href={row.href} className="text-[#16201C] font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
+                        <a href={row.href} className="text-white font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
                       </td>
-                      <td className="py-3 px-3 text-[#6B756F] text-xs">{row.bestFor}</td>
+                      <td className="py-3 px-3 text-white/55 text-xs">{row.bestFor}</td>
                       <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.offer}</td>
                       <td className="py-3 pl-3 text-right">
                         <a
@@ -449,7 +449,7 @@ export default function BestPeptideSupplierPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[#8A938E] text-[10px] mt-3">
+            <p className="text-white/40 text-[10px] mt-3">
               All products are intended strictly for laboratory research purposes only and are not approved for human or veterinary use.
             </p>
           </section>
@@ -460,18 +460,18 @@ export default function BestPeptideSupplierPage() {
           ))}
 
           {/* ── Feature breakdown table ───────────────────────────────────────── */}
-          <section className="border-t border-black/[0.08] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-6">
+          <section className="border-t border-white/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-6">
               Supplier Comparison: Research Peptide Criteria
             </h2>
 
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[520px] text-sm">
                 <thead>
-                  <tr className="border-b border-black/[0.08]">
-                    <th className="text-left pb-4 pr-4 text-[#8A938E] font-semibold text-[11px] uppercase tracking-wider w-44">Criteria</th>
+                  <tr className="border-b border-white/[0.08]">
+                    <th className="text-left pb-4 pr-4 text-white/40 font-semibold text-[11px] uppercase tracking-wider w-44">Criteria</th>
                     {["Apollo Peptide Sciences", "Ascension Peptides", "BioPeptiTech"].map((h) => (
-                      <th key={h} className="pb-4 px-3 text-center font-bold text-[#6B756F] text-xs">{h}</th>
+                      <th key={h} className="pb-4 px-3 text-center font-bold text-white/55 text-xs">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -490,8 +490,8 @@ export default function BestPeptideSupplierPage() {
                     { label: "Referral link discount",            vals: [true,  true,  true]  },
                     { label: "Community reputation",             vals: [true,  true,  false] },
                   ].map((row, i) => (
-                    <tr key={i} className="border-b border-black/[0.08] hover:bg-white transition-colors">
-                      <td className="py-3 pr-4 text-[#6B756F] text-xs font-medium leading-snug">
+                    <tr key={i} className="border-b border-white/[0.08] hover:bg-white/[0.03] transition-colors">
+                      <td className="py-3 pr-4 text-white/55 text-xs font-medium leading-snug">
                         {row.label}
                       </td>
                       {row.vals.map((v, j) => (
@@ -499,8 +499,8 @@ export default function BestPeptideSupplierPage() {
                       ))}
                     </tr>
                   ))}
-                  <tr className="border-t border-black/[0.08]">
-                    <td className="py-3.5 pr-4 text-[#6B756F] text-xs font-semibold">Current deal</td>
+                  <tr className="border-t border-white/[0.08]">
+                    <td className="py-3.5 pr-4 text-white/55 text-xs font-semibold">Current deal</td>
                     {[
                       "Referral link",
                       "Referral link",
@@ -515,14 +515,14 @@ export default function BestPeptideSupplierPage() {
               </table>
             </div>
 
-            <p className="text-[#8A938E] text-[10px] mt-4">
+            <p className="text-white/40 text-[10px] mt-4">
               Feature availability is based on publicly available catalogue information at time of publication and may change. All compounds are for laboratory research purposes only.
             </p>
           </section>
 
           {/* ── Verdict ──────────────────────────────────────────────────────── */}
-          <section className="border-t border-black/[0.08] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-6">
+          <section className="border-t border-white/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-6">
               The Verdict
             </h2>
             <div className="space-y-4 max-w-2xl">
@@ -531,17 +531,17 @@ export default function BestPeptideSupplierPage() {
                 { label: "Choose Ascension Peptides if:", body: "Purity documentation and supplier consistency are your primary criteria. Ascension is cited most frequently in researcher communities for COA quality and reliable fulfilment. Covers hormone signalling, metabolic, and anti-aging research compounds. Referral link applies current offer." },
                 { label: "Choose BioPeptiTech if:", body: "You want the best price and are willing to time purchases around sale events. BioPeptiTech runs the most frequent peptides sale promotions of the three. Smaller community footprint than Apollo. Use the affiliate link to see current sale pricing on arrival." },
               ].map(({ label, body }) => (
-                <div key={label} className="border-b border-black/[0.08] pb-4">
-                  <p className="text-sm font-bold text-[#16201C] mb-1">{label}</p>
-                  <p className="text-sm text-[#6B756F] leading-relaxed">{body}</p>
+                <div key={label} className="border-b border-white/[0.08] pb-4">
+                  <p className="text-sm font-bold text-white mb-1">{label}</p>
+                  <p className="text-sm text-white/55 leading-relaxed">{body}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-          <section className="border-t border-black/[0.08] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#16201C] mb-8">
+          <section className="border-t border-white/[0.08] py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-8">
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
@@ -563,17 +563,17 @@ export default function BestPeptideSupplierPage() {
                   a: "BioPeptiTech is noted for running the most frequent peptides sale promotions across their catalogue. Apollo Peptide Sciences and Ascension Peptides offer current discounts accessible via referral links on this page.",
                 },
               ].map(({ q, a }, i) => (
-                <div key={i} className="border-b border-black/[0.08] pb-6">
-                  <h3 className="text-sm font-bold text-[#16201C] mb-2">{q}</h3>
-                  <p className="text-sm text-[#6B756F] leading-relaxed">{a}</p>
+                <div key={i} className="border-b border-white/[0.08] pb-6">
+                  <h3 className="text-sm font-bold text-white mb-2">{q}</h3>
+                  <p className="text-sm text-white/55 leading-relaxed">{a}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* ── Disclaimer ───────────────────────────────────────────────────── */}
-          <section className="border-t border-black/[0.08] py-8 pb-16">
-            <p className="text-[#8A938E] text-xs leading-relaxed max-w-2xl">
+          <section className="border-t border-white/[0.08] py-8 pb-16">
+            <p className="text-white/40 text-xs leading-relaxed max-w-2xl">
               All products referenced on this page — including those supplied by Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech — are intended strictly for laboratory and in-vitro research purposes only. They are not approved for human or veterinary use and should not be construed as medical advice. This page is operated by Refer Labs and contains affiliate referral links.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">

@@ -89,11 +89,11 @@ export default function PathwayQuiz() {
   }
 
   return (
-    <div className="rounded-2xl border border-black/[0.08] bg-white p-7 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)] sm:p-9">
+    <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-7 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)] sm:p-9">
       <div className="flex items-center justify-between gap-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0E7C66]">Find your fit · 30 seconds</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#22d3ee]">Find your fit · 30 seconds</p>
         {step > 0 && (
-          <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#8A938E] hover:text-[#0E7C66]">
+          <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-white/40 hover:text-[#22d3ee]">
             <RotateCcw className="h-3 w-3" /> Restart
           </button>
         )}
@@ -101,16 +101,16 @@ export default function PathwayQuiz() {
 
       {step === 0 && (
         <div className="mt-4">
-          <h3 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-[#16201C]">
+          <h3 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-white">
             Which weight-loss pathway fits you?
           </h3>
-          <p className="mt-2 text-[15px] text-[#6B756F]">First, who is this for?</p>
+          <p className="mt-2 text-[15px] text-white/55">First, who is this for?</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {Q1.map((o) => (
               <button
                 key={o.key}
                 onClick={() => setGender(o.key)}
-                className="rounded-xl border border-black/[0.1] bg-white px-5 py-4 text-left text-[15px] font-semibold text-[#16201C] transition-all hover:-translate-y-0.5 hover:border-[#0E7C66] hover:bg-[#0E7C66]/[0.04]"
+                className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 text-left text-[15px] font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-[#22d3ee] hover:bg-[#0e7490]/[0.04]"
               >
                 {o.label}
               </button>
@@ -121,7 +121,7 @@ export default function PathwayQuiz() {
 
       {step === 1 && (
         <div className="mt-4">
-          <h3 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-[#16201C]">
+          <h3 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-white">
             What matters most to you?
           </h3>
           <div className="mt-5 grid gap-3">
@@ -129,13 +129,13 @@ export default function PathwayQuiz() {
               <button
                 key={o.key}
                 onClick={() => setPriority(o.key)}
-                className="group flex items-center justify-between gap-4 rounded-xl border border-black/[0.1] bg-white px-5 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-[#0E7C66] hover:bg-[#0E7C66]/[0.04]"
+                className="group flex items-center justify-between gap-4 rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-[#22d3ee] hover:bg-[#0e7490]/[0.04]"
               >
                 <span>
-                  <span className="block text-[15px] font-semibold text-[#16201C]">{o.label}</span>
-                  <span className="block text-[13px] text-[#6B756F]">{o.note}</span>
+                  <span className="block text-[15px] font-semibold text-white">{o.label}</span>
+                  <span className="block text-[13px] text-white/55">{o.note}</span>
                 </span>
-                <ArrowRight className="h-4 w-4 shrink-0 text-[#8A938E] transition-transform group-hover:translate-x-0.5 group-hover:text-[#0E7C66]" />
+                <ArrowRight className="h-4 w-4 shrink-0 text-white/40 transition-transform group-hover:translate-x-0.5 group-hover:text-[#22d3ee]" />
               </button>
             ))}
           </div>
@@ -144,9 +144,9 @@ export default function PathwayQuiz() {
 
       {step === 2 && result && (
         <div className="mt-4">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">Your result</p>
-          <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-[#16201C]">{result.title}</h3>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#46524C]">{result.body}</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/40">Your result</p>
+          <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-2xl font-semibold text-white">{result.title}</h3>
+          <p className="mt-3 text-[15px] leading-relaxed text-white/70">{result.body}</p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             {result.cta && (
               <a
@@ -155,19 +155,19 @@ export default function PathwayQuiz() {
                 rel={result.cta.sponsored ? "nofollow sponsored" : "nofollow"}
                 data-cta={result.cta.loc}
                 onClick={() => track(result.cta!.loc, result.cta!.href)}
-                className="group inline-flex items-center gap-2 rounded-full bg-[#0E7C66] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0b6353]"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#0e7490] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0891b2]"
               >
                 {result.cta.label}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
             )}
             {result.secondary && (
-              <Link href={result.secondary.href} className="text-sm font-semibold text-[#16201C] underline decoration-black/15 underline-offset-4 hover:decoration-[#0E7C66]">
+              <Link href={result.secondary.href} className="text-sm font-semibold text-white underline decoration-white/20 underline-offset-4 hover:decoration-[#22d3ee]">
                 {result.secondary.label}
               </Link>
             )}
           </div>
-          <p className="mt-5 text-xs leading-relaxed text-[#8A938E]">
+          <p className="mt-5 text-xs leading-relaxed text-white/40">
             This is general information to help you narrow the field, not medical advice. Suitability for any program is
             assessed individually by registered practitioners.
           </p>

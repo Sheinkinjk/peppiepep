@@ -6,8 +6,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
-const CYAN = "#0E7C66";
-const CYAN_LT = "#0E7C66";
+const CYAN = "#0891b2";
+const CYAN_LT = "#22d3ee";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const faqs = [
@@ -81,37 +81,37 @@ export default function MoshyReviewPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#6B756F]">
-          <Link href="/" className="hover:text-[#46524C] transition-colors">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/55">
+          <Link href="/" className="hover:text-white/70 transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-[#46524C] transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-white/70 transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-[#46524C]">Moshy Review</span>
+          <span className="text-white/70">Moshy Review</span>
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy review: <span style={{ color: CYAN_LT }}>what the service is actually like</span>
         </h1>
-        <p className="text-[#6B756F] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Most write-ups of Moshy either sell it or ignore it. This one just walks through the service: what happens
           when you apply, what the subscription involves, and where it does and does not fit.
         </p>
 
-        <p className="mb-10 rounded-lg border border-black/[0.08] bg-white px-4 py-3 text-xs leading-relaxed text-[#6B756F]">
-          <span className="font-semibold text-[#46524C]">Information only.</span> This page describes a telehealth service.
+        <p className="mb-10 rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-xs leading-relaxed text-white/55">
+          <span className="font-semibold text-white/70">Information only.</span> This page describes a telehealth service.
           It is not medical advice, does not recommend any treatment, and does not imply suitability for any individual.
           This page contains an affiliate referral link.
         </p>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The short version</h2>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             Moshy is an Australian telehealth service for men, and its weight-management program is the part most people
             come looking for. You complete a questionnaire online, a registered practitioner looks at your answers, and
             if they consider it appropriate you continue on a subscription with anything prescribed delivered to your
             door. No waiting room, no referral letter, no phone queue.
           </p>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             The whole pitch rests on one idea: a lot of men put this conversation off for years because booking a GP
             appointment about weight feels like a big step. Moshy shrinks that first step to about ten minutes on a
             phone.
@@ -123,16 +123,16 @@ export default function MoshyReviewPage() {
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">What happens when you apply</h2>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             The eligibility check is a structured health questionnaire. It covers the basics you would expect a doctor
             to ask about: your history, your goals, and your current situation. It is not a formality. Real people
             review the submissions, and some applicants are declined or redirected to other care.
           </p>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             That last point is worth sitting with, because it is the strongest trust signal the service has. A platform
             that waves everyone through is a checkout. A platform that turns people away is behaving like a clinic.
           </p>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             If the practitioner approves you, the treatment options, the plan, and the pricing are laid out inside the
             platform before you commit to anything. You are never charged for a subscription you have not seen.
           </p>
@@ -140,16 +140,16 @@ export default function MoshyReviewPage() {
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Living with the subscription</h2>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             Day to day, Moshy runs like any well-built subscription service. Deliveries arrive on schedule, check-ins
             happen through the platform, and questions go to the clinical team rather than a generic support inbox.
             Because everything is online, the quality of your experience depends partly on how comfortable you are
             managing health admin through an app and email.
           </p>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             It is a men-only service. Women looking for the equivalent are usually pointed to Juniper, which runs a
             similar model with a coaching layer added. We compare the wider field in our{" "}
-            <Link href="/online-weight-loss-programs-australia" className="underline decoration-black/20 underline-offset-2 hover:text-[#16201C]" style={{ color: CYAN }}>
+            <Link href="/online-weight-loss-programs-australia" className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
               guide to online weight loss programs in Australia
             </Link>.
           </p>
@@ -157,21 +157,21 @@ export default function MoshyReviewPage() {
 
         <section className="space-y-4 mb-12">
           <h2 className="text-xl font-black">Who it suits, who it does not</h2>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             Moshy suits men who want a structured, supervised program and value the convenience of doing the whole
             thing from home. It is a poor fit if your situation is complicated or urgent, because an online
             questionnaire is the wrong front door for that. Anything unusual belongs with a doctor in person, and
             Moshy itself will screen those cases out.
           </p>
-          <p className="text-[#6B756F] text-sm sm:text-base leading-relaxed">
+          <p className="text-white/55 text-sm sm:text-base leading-relaxed">
             If you are weighing it against simply seeing your own GP, both routes are legitimate. We wrote up the
             practical differences in{" "}
-            <Link href="/moshy-vs-gp" className="underline decoration-black/20 underline-offset-2 hover:text-[#16201C]" style={{ color: CYAN }}>
+            <Link href="/moshy-vs-gp" className="underline decoration-white/20 underline-offset-2 hover:text-white" style={{ color: CYAN }}>
               Moshy vs your GP
             </Link>.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-            <p className="text-[#46524C] text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-4">
               The eligibility check takes a few minutes and commits you to nothing. The referral applies automatically
               through the link, so there is no code to hunt for.
             </p>
@@ -183,29 +183,29 @@ export default function MoshyReviewPage() {
           <h2 className="text-xl font-black mb-5">Common questions</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-black/[0.08] bg-white px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-[#16201C] text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-white text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#8A938E] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-white/40 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-[#6B756F] text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-white/55 text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="border-t border-black/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <div className="border-t border-white/[0.08] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy referral link &amp; offer →</Link>
           <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">The eligibility check, explained →</Link>
           <Link href="/moshy-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Moshy alternatives →</Link>
         </div>
 
-        <p className="text-[#8A938E] text-xs mt-8 leading-relaxed">
+        <p className="text-white/40 text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
           sign up through it, at no extra cost to you. Nothing on this page is medical advice. Prescription medicines in
           Australia are available only after assessment by a registered practitioner.
         </p>
-        <p className="text-[#8A938E] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#6B756F]">All guides</Link></p>
+        <p className="text-white/40 text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-white/55">All guides</Link></p>
       </main>
     </ConsumerShell>
   );

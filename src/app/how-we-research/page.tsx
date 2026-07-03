@@ -63,39 +63,39 @@ export default function HowWeResearchPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#8A938E]">
-          <Link href="/" className="hover:text-[#0E7C66]">Refer Labs</Link>
+        <nav className="mb-8 flex items-center gap-2 text-sm text-white/40">
+          <Link href="/" className="hover:text-[#22d3ee]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#46524C]">How we research</span>
+          <span className="text-white/70">How we research</span>
         </nav>
 
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E7C66]">Editorial standards</p>
-        <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.07] tracking-[-0.01em] text-[#16201C] sm:text-5xl">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#22d3ee]">Editorial standards</p>
+        <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.07] tracking-[-0.01em] text-white sm:text-5xl">
           How we research
         </h1>
-        <p className="mt-5 text-lg leading-relaxed text-[#46524C]">
+        <p className="mt-5 text-lg leading-relaxed text-white/70">
           Refer Labs publishes comparisons across health, software and business tools. This page explains how that work
           is done, who does it, how it is funded, and how to tell us when we get something wrong.
         </p>
 
         <div className="mt-12 space-y-0">
           {principles.map((item, i) => (
-            <section key={item.h} className="border-t border-black/[0.08] py-8">
+            <section key={item.h} className="border-t border-white/[0.08] py-8">
               <div className="grid gap-4 sm:grid-cols-[2.5rem_1fr]">
-                <div className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#0E7C66]">
+                <div className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#22d3ee]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-[#16201C]">{item.h}</h2>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[#46524C]">{item.p}</p>
+                  <h2 className="text-lg font-bold text-white">{item.h}</h2>
+                  <p className="mt-2 text-[15px] leading-relaxed text-white/70">{item.p}</p>
                 </div>
               </div>
             </section>
           ))}
 
-          <section className="border-t border-black/[0.08] py-8">
-            <h2 className="text-lg font-bold text-[#16201C]">Health content is information, not medical advice</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#46524C]">
+          <section className="border-t border-white/[0.08] py-8">
+            <h2 className="text-lg font-bold text-white">Health content is information, not medical advice</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-white/70">
               Some guides cover telehealth services and health products. These pages describe how a service works and
               what its published process involves. They are not medical advice and do not establish that any treatment
               is suitable for you. Prescription medicines in Australia are available only after assessment by a
@@ -104,19 +104,19 @@ export default function HowWeResearchPage() {
             </p>
           </section>
 
-          <section className="border-t border-black/[0.08] py-8">
-            <h2 className="text-lg font-bold text-[#16201C]">Who writes this</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#46524C]">
+          <section className="border-t border-white/[0.08] py-8">
+            <h2 className="text-lg font-bold text-white">Who writes this</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-white/70">
               Refer Labs is an Australian company founded by Jarred Krowitz. Comparisons are produced and maintained by
               the Refer Labs team. We are not the manufacturer or provider of the products we review.
             </p>
           </section>
 
-          <section className="border-t border-black/[0.08] py-8">
-            <h2 className="text-lg font-bold text-[#16201C]">Corrections</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#46524C]">
+          <section className="border-t border-white/[0.08] py-8">
+            <h2 className="text-lg font-bold text-white">Corrections</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-white/70">
               Found a price that has changed, an offer that has expired, or a claim you think is wrong? Email{" "}
-              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0E7C66] underline decoration-[#0E7C66]/40 underline-offset-4">
+              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#22d3ee] underline decoration-[#22d3ee]/40 underline-offset-4">
                 jarred@referlabs.com.au
               </a>{" "}
               and we will review and update the page. Accuracy is the product.
@@ -124,8 +124,8 @@ export default function HowWeResearchPage() {
           </section>
         </div>
 
-        <div className="mt-10 border-t border-black/[0.08] pt-8">
-          <Link href="/guides" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0E7C66]">
+        <div className="mt-10 border-t border-white/[0.08] pt-8">
+          <Link href="/guides" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#22d3ee]">
             Browse all guides &amp; comparisons →
           </Link>
         </div>

@@ -74,72 +74,72 @@ export default function HairLossHubPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#8A938E]">
-            <Link href="/" className="hover:text-[#0E7C66]">Refer Labs</Link>
+          <nav className="mb-7 flex items-center gap-2 text-sm text-white/40">
+            <Link href="/" className="hover:text-[#22d3ee]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#46524C]">Hair loss</span>
+            <span className="text-white/70">Hair loss</span>
           </nav>
           <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E7C66]">Category hub · Australia</p>
-            <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#16201C] sm:text-5xl">
-              Hair loss in Australia: <span className="italic text-[#0E7C66]">the options, compared properly</span>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#22d3ee]">Category hub · Australia</p>
+            <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-white sm:text-5xl">
+              Hair loss in Australia: <span className="italic text-[#22d3ee]">the options, compared properly</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#46524C]">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
               Prescription telehealth, topical products, and everything marketed in between. This hub separates the
               clinical route from the cosmetic one so you know which you are actually looking at.
             </p>
           </div>
-          <p className="mt-8 max-w-3xl rounded-xl border border-black/[0.07] bg-white px-5 py-4 text-xs leading-relaxed text-[#6B756F]">
-            <span className="font-semibold text-[#46524C]">Information only.</span> Nothing here is medical advice or a
+          <p className="mt-8 max-w-3xl rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-4 text-xs leading-relaxed text-white/55">
+            <span className="font-semibold text-white/70">Information only.</span> Nothing here is medical advice or a
             recommendation of any treatment. Prescription medicines in Australia are available only after individual
             assessment by a registered practitioner. Some links are disclosed affiliate links.
           </p>
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
+          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-white sm:text-3xl">
             First, which route are you on?
           </h2>
           <div className="mt-7 grid gap-4 lg:grid-cols-2">
-            <div className="rounded-2xl border border-[#0E7C66]/30 bg-white p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0E7C66]">Clinical</p>
-              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#16201C]">
+            <div className="rounded-2xl border border-[#22d3ee]/30 bg-white/[0.03] p-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#22d3ee]">Clinical</p>
+              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-white">
                 Telehealth &amp; prescription
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#6B756F]">
+              <p className="mt-2.5 text-sm leading-relaxed text-white/55">
                 A registered practitioner assesses you and, where appropriate, prescribes the treatments that act on the
                 cause of hair loss. Mosh is the main Australian men&apos;s service. This is the route for active or
                 progressing loss.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
-                <p><Link href="/best-hair-loss-treatment-australia" className="text-[#0E7C66] hover:underline">Compare treatments →</Link></p>
-                <p><Link href="/moshhair" className="text-[#0E7C66] hover:underline">Read the Mosh guide →</Link></p>
+                <p><Link href="/best-hair-loss-treatment-australia" className="text-[#22d3ee] hover:underline">Compare treatments →</Link></p>
+                <p><Link href="/moshhair" className="text-[#22d3ee] hover:underline">Read the Mosh guide →</Link></p>
               </div>
             </div>
-            <div className="rounded-2xl border border-black/[0.07] bg-white p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">Cosmetic</p>
-              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#16201C]">
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/40">Cosmetic</p>
+              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-white">
                 Topical products
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#6B756F]">
+              <p className="mt-2.5 text-sm leading-relaxed text-white/55">
                 Non-prescription shampoos, serums and scalp treatments for density and condition. Dense Hair Experts is
                 the main Australian name. Best as a routine, and best paired with realistic expectations.
               </p>
               <p className="mt-5 text-sm font-semibold">
-                <Link href="/dense" className="text-[#0E7C66] hover:underline">See the Dense guide →</Link>
+                <Link href="/dense" className="text-[#22d3ee] hover:underline">See the Dense guide →</Link>
               </p>
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#0E7C66]/20 bg-[#0E7C66]/[0.05] px-7 py-6 sm:flex-row sm:items-center">
-            <p className="max-w-xl text-[15px] leading-relaxed text-[#2B352F]">
+          <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#22d3ee]/20 bg-[#0e7490]/[0.05] px-7 py-6 sm:flex-row sm:items-center">
+            <p className="max-w-xl text-[15px] leading-relaxed text-white/80">
               For men leaning toward the clinical route, Mosh&apos;s online consultation is the usual starting point.
               The referral applies automatically through our link.
             </p>
             <a
               {...aff}
               data-cta="hub-hair-loss"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0E7C66] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0b6353]"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0e7490] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0891b2]"
             >
               Start the Mosh consultation
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -147,16 +147,16 @@ export default function HairLossHubPage() {
           </div>
         </section>
 
-        <section className="border-y border-black/[0.06] bg-white/60">
+        <section className="border-y border-white/[0.08] bg-white/[0.03]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
+            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-white sm:text-3xl">
               Every guide in this hub
             </h2>
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
               {guides.map((g) => (
-                <Link key={g.href} href={g.href} className="group rounded-xl border border-black/[0.07] bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-[#0E7C66]/40">
-                  <h3 className="text-[15px] font-bold text-[#16201C] group-hover:text-[#0E7C66]">{g.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#6B756F]">{g.desc}</p>
+                <Link key={g.href} href={g.href} className="group rounded-xl border border-white/[0.08] bg-white/[0.03] p-5 transition-all hover:-translate-y-0.5 hover:border-[#22d3ee]/40">
+                  <h3 className="text-[15px] font-bold text-white group-hover:text-[#22d3ee]">{g.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/55">{g.desc}</p>
                 </Link>
               ))}
             </div>
@@ -168,23 +168,23 @@ export default function HairLossHubPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
+          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-white sm:text-3xl">
             Before you dive in
           </h2>
-          <div className="mt-6 max-w-3xl divide-y divide-black/[0.08] border-y border-black/[0.08]">
+          <div className="mt-6 max-w-3xl divide-y divide-white/[0.08] border-y border-white/[0.08]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#16201C]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-white">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0E7C66] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#22d3ee] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#46524C]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-white/70">{f.a}</p>
               </details>
             ))}
           </div>
-          <p className="mt-8 text-sm text-[#6B756F]">
+          <p className="mt-8 text-sm text-white/55">
             How this hub is funded and researched:{" "}
-            <Link href="/how-we-research" className="font-semibold text-[#0E7C66] underline decoration-[#0E7C66]/30 underline-offset-4">
+            <Link href="/how-we-research" className="font-semibold text-[#22d3ee] underline decoration-[#22d3ee]/30 underline-offset-4">
               our editorial standards
             </Link>
             .
