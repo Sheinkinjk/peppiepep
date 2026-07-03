@@ -2,6 +2,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
 export const metadata = generateSEOMetadata(seoConfig.guides);
 
@@ -141,7 +142,8 @@ export default function GuidesPage() {
         </div>
 
         <div className="border-t border-black/[0.08] pt-10">
-          <p className="max-w-2xl text-sm leading-relaxed text-[#6B756F]">
+          <NewsletterSignup variant="band" source="guides" />
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#6B756F]">
             Some pages contain affiliate links, disclosed on the page. We may earn a commission if you buy through them,
             at no extra cost to you, and it never changes a conclusion. See{" "}
             <Link href="/how-we-research" className="font-semibold text-[#0E7C66] underline decoration-[#0E7C66]/30 underline-offset-4">how we research</Link>.

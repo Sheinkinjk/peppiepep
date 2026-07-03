@@ -1,5 +1,6 @@
 import { Fraunces } from "next/font/google";
 import Link from "next/link";
+import NewsletterSignup from "./NewsletterSignup";
 
 // Editorial serif for the consumer design system (shared with /moshy).
 const fraunces = Fraunces({
@@ -72,6 +73,8 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 Rankings are never sold. Some pages contain disclosed affiliate links, which fund the research at no
                 cost to you.
               </p>
+              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">The newsletter</p>
+              <NewsletterSignup variant="footer" source="footer" />
             </div>
             <div>
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">Compare</p>

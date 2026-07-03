@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 
@@ -198,6 +199,16 @@ export default function WeightLossHubPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Newsletter */}
+        <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
+          <NewsletterSignup
+            variant="band"
+            source="weight-loss-hub"
+            heading="New weight-loss services launch constantly"
+            sub="We track them so you don't have to. Get the important updates and honest comparisons, no spam."
+          />
         </section>
 
         {/* FAQ */}

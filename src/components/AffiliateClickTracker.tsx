@@ -15,6 +15,29 @@ import { useEffect } from "react";
  *
  * (window.gtag / window.dataLayer are declared globally in Analytics.tsx.)
  */
+
+// Rough estimated commission value (AUD) per partner, keyed by destination host.
+// This is a planning estimate so GA can weight clicks by likely revenue and
+// surface "revenue per page" — it is NOT actual commission. Refine as real
+// payout data comes in. Unknown partners default to a nominal value.
+const PARTNER_VALUE: Record<string, number> = {
+  "getmoshy.com.au": 80,
+  "getmosh.com.au": 70,
+  "densehairexperts.myshopify.com": 25,
+  "myjuniper.com.au": 0,
+  "betterbeinghealth.com.au": 0,
+  "beehiiv.com": 40,
+  "try.carrd.co": 6,
+  "durableai.link": 20,
+  "butternut.ai": 15,
+  "swipepages.com": 25,
+  "incomelab.me": 20,
+  "apollopeptidesciences.com": 30,
+  "ascensionpeptides.com": 30,
+  "biopeptitech.com": 30,
+};
+const DEFAULT_VALUE = 10;
+
 export function AffiliateClickTracker() {
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -37,6 +60,9 @@ export function AffiliateClickTracker() {
         // "verdict", "mobile-sticky" — lets you see which positions convert.
         cta_location: link.getAttribute("data-cta") || "inline",
         page_path: window.location.pathname,
+        // Estimated commission value so GA can rank pages by likely revenue.
+        value: PARTNER_VALUE[destinationHost] ?? DEFAULT_VALUE,
+        currency: "AUD",
         // GA4 recommended ecommerce-style fields for easier reporting
         event_category: "affiliate",
         event_label: destinationHost,

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 
@@ -160,6 +161,10 @@ export default function HairLossHubPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
+          <NewsletterSignup variant="band" source="hair-loss-hub" />
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">

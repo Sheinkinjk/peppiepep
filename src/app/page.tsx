@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, PenLine, Eye, MailQuestion } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { SITE_URL } from "@/lib/seo";
 
 const categories = [
@@ -115,6 +116,14 @@ export default function HomePage() {
                 Browse every guide
               </Link>
             </div>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] font-medium text-[#6B756F]">
+              {["Independent", "Rankings never sold", "Researched by people", "Disclosed on every page"].map((t) => (
+                <span key={t} className="flex items-center gap-1.5">
+                  <span className="h-1 w-1 rounded-full bg-[#0E7C66]" />
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -203,6 +212,11 @@ export default function HomePage() {
             </Link>
             .
           </p>
+        </section>
+
+        {/* Newsletter */}
+        <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
+          <NewsletterSignup variant="band" source="homepage" />
         </section>
 
         {/* For business */}
