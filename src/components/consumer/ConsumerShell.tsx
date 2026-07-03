@@ -24,9 +24,8 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-[#e5e9e7] bg-white/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center gap-5 px-5 py-3 sm:px-8">
-          <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Refer Labs home">
-            <ReferLabsLogo className="h-8 w-auto" />
-            <span className="hidden text-[15px] font-bold tracking-tight text-[#10251b] sm:inline">Refer Labs</span>
+          <Link href="/" className="flex shrink-0 items-center" aria-label="Refer Labs home">
+            <ReferLabsLogo className="h-9 w-auto" />
           </Link>
           <nav className="hidden items-center gap-6 text-[14px] font-medium text-[#3d4b44] lg:flex">
             {NAV.map((item) => (
@@ -62,10 +61,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr]">
             <div className="max-w-sm">
-              <div className="flex items-center gap-2.5">
-                <ReferLabsLogo className="h-8 w-auto" />
-                <span className="text-[15px] font-bold tracking-tight text-[#10251b]">Refer Labs</span>
-              </div>
+              <ReferLabsLogo className="h-9 w-auto" />
               <p className="mt-4 text-[13px] leading-relaxed text-[#6e7b74]">
                 Independent comparisons for Australians choosing health services, software and tools. Rankings are never
                 sold. Some pages carry disclosed affiliate links that fund the research, at no cost to you.
