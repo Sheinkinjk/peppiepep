@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, PenLine, Eye, Heart, Scissors, Globe, Mail, TrendingUp } from "lucide-react";
+import { ArrowRight, ShieldCheck, PenLine, Eye, Heart, Scissors, Globe, Mail, TrendingUp, Check, Star } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
@@ -20,9 +20,26 @@ const categories = [
 
 // A richer "top picks" strip so a real category reads as authoritative.
 const topPicks = [
-  { name: "Moshy", cat: "Weight loss", note: "Best for men starting out", href: "/moshy-review" },
-  { name: "beehiiv", cat: "Newsletters", note: "Best for growing an audience", href: "/best-newsletter-platform" },
-  { name: "Carrd", cat: "Website builders", note: "Best for a simple one-pager", href: "/carrd-vs-durable" },
+  { name: "Moshy", cat: "Weight loss", note: "Best for men who want a clinical pathway done online.", href: "/moshy-review" },
+  { name: "beehiiv", cat: "Newsletters", note: "Best for creators serious about growing an audience.", href: "/best-newsletter-platform" },
+  { name: "Carrd", cat: "Website builders", note: "Best for a fast, genuinely cheap one-page site.", href: "/carrd-vs-durable" },
+];
+
+// Featured comparison — software only, so no numeric "rating" of a health service.
+const featured = {
+  href: "/compare/website-builders",
+  rows: [
+    { name: "Carrd", best: "Simple one-pagers", score: 92, top: true },
+    { name: "Durable AI", best: "AI-built in minutes", score: 86 },
+    { name: "Butternut AI", best: "Full AI websites", score: 80 },
+  ],
+};
+
+const stats = [
+  { n: "20+", l: "services reviewed" },
+  { n: "6", l: "categories" },
+  { n: "Monthly", l: "re-checked for changes" },
+  { n: "0", l: "rankings ever sold" },
 ];
 
 const popular = [
@@ -83,6 +100,18 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── Credibility stats ── */}
+        <section className="border-b border-[#e5e9e7] bg-white">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-[#eef1ef] sm:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.l} className="px-5 py-6 text-center sm:py-7">
+                <p className="text-2xl font-extrabold tracking-[-0.02em] text-[#0a7c42] sm:text-[1.75rem]">{s.n}</p>
+                <p className="mt-1 text-[12px] font-medium leading-tight text-[#6e7b74] sm:text-[13px]">{s.l}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* ── Categories ── */}
         <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
           <div className="mb-8 flex items-end justify-between gap-4">
@@ -111,8 +140,61 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── Featured comparison ── */}
+        <section className="border-t border-[#e5e9e7] bg-[#f5f8f6]">
+          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+            <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+              <div>
+                <p className="nw-kicker">Featured comparison</p>
+                <h2 className="mt-2 text-2xl font-bold tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Website builders, ranked for 2026</h2>
+                <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+                  We ran the leading AI and drag-and-drop builders through the same checks: how fast you get live, what
+                  the free plan really allows, and where each one quietly charges you later.
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[#6e7b74]">
+                  Scored on setup speed, value, flexibility and support. No brand can pay to move up.
+                </p>
+                <Link href={featured.href} className="nw-btn group mt-7">
+                  See the full comparison
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </div>
+
+              <div className="nw-card rounded-2xl p-5 sm:p-6">
+                <div className="flex items-center justify-between border-b border-[#eef1ef] pb-3">
+                  <span className="text-sm font-bold text-[#10251b]">Our ranking</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39c]">AU · 2026</span>
+                </div>
+                <div className="mt-4 space-y-3">
+                  {featured.rows.map((r, i) => (
+                    <div key={r.name} className={`flex items-center gap-4 rounded-xl border px-4 py-3.5 ${r.top ? "border-[#cfe6da] bg-[#e8f5ee]" : "border-[#eef1ef] bg-white"}`}>
+                      <span className="w-4 shrink-0 text-center text-sm font-bold text-[#9aa39c]">{i + 1}</span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-[15px] font-bold text-[#10251b]">{r.name}</span>
+                          {r.top && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-[#0a7c42] px-2 py-0.5 text-[10px] font-bold text-white">
+                              <Star className="h-2.5 w-2.5 fill-white" /> Top pick
+                            </span>
+                          )}
+                          <span className="text-[12px] text-[#6e7b74]">· {r.best}</span>
+                        </div>
+                        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#eef1ef]">
+                          <div className="h-full rounded-full bg-gradient-to-r from-[#12a05b] to-[#0a7c42]" style={{ width: `${r.score}%` }} />
+                        </div>
+                      </div>
+                      <span className="shrink-0 text-sm font-extrabold text-[#0a7c42]">{r.score}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-4 text-[11px] leading-relaxed text-[#9aa39c]">Scores reflect our own testing against a fixed set of criteria, updated as the products change.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── Top picks strip ── */}
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#e5e9e7] bg-white">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
             <div className="mb-8 max-w-2xl">
               <p className="nw-kicker">Our current top picks</p>
@@ -121,15 +203,18 @@ export default function HomePage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {topPicks.map((p) => (
-                <Link key={p.href} href={p.href} className="nw-card nw-card-hover group rounded-2xl p-6">
-                  <span className="nw-kicker !text-[11px]">{p.cat}</span>
-                  <div className="mt-3 flex items-center gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#10251b] text-[15px] font-bold text-white">{p.name[0]}</span>
-                    <span className="text-lg font-bold tracking-[-0.01em] text-[#10251b]">{p.name}</span>
+                <Link key={p.href} href={p.href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="nw-kicker !text-[11px]">{p.cat}</span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f5ee] px-2.5 py-1 text-[11px] font-bold text-[#0a7c42]">
+                      <Check className="h-3 w-3" strokeWidth={3} /> Our pick
+                    </span>
                   </div>
-                  <p className="mt-3 text-sm font-medium text-[#3d4b44]">{p.note}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
-                    Read why <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  <h3 className="mt-4 text-xl font-extrabold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{p.name}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#3d4b44]">{p.note}</p>
+                  <span className="mt-5 flex items-center justify-between border-t border-[#eef1ef] pt-3.5">
+                    <span className="text-sm font-semibold text-[#0a7c42]">Read why</span>
+                    <ArrowRight className="h-4 w-4 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </Link>
               ))}
