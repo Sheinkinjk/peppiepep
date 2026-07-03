@@ -16,7 +16,10 @@ import { ChromeGate } from "@/components/ChromeGate";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
+  // "optional" keeps the metric-matched system fallback when the font is not
+  // ready within the block window, so the LCP text is not repainted late on
+  // slow connections. Cached / fast visitors still get Geist.
+  display: "optional",
   preload: true,
 });
 
