@@ -20,18 +20,20 @@ const geistSans = Geist({
   preload: true,
 });
 
+// Not preloaded: mono is rarely on-screen and the display face is legacy-theme
+// only. Preloading them competed with the primary Geist for the LCP text.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 export const metadata: Metadata = generateSEOMetadata(seoConfig.home);

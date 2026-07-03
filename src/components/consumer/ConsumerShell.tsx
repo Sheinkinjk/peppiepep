@@ -1,11 +1,8 @@
-import { Geist } from "next/font/google";
 import Link from "next/link";
 import NewsletterSignup from "./NewsletterSignup";
 import SiteSearch from "./SiteSearch";
 import HeaderNav from "./HeaderNav";
 import { ReferLabsLogo } from "../ReferLabsLogo";
-
-const geist = Geist({ subsets: ["latin"], display: "swap", variable: "--font-pd" });
 
 // Mobile shortcut row (desktop uses the grouped HeaderNav dropdowns).
 const NAV = [
@@ -25,7 +22,7 @@ const NAV = [
  */
 export default function ConsumerShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${geist.variable} nw-root min-h-screen`}>
+    <div className="nw-root min-h-screen">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-[#e5e9e7] bg-white">
         <div className="mx-auto flex max-w-6xl items-center gap-5 px-5 py-3 sm:px-8">
