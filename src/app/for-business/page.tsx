@@ -127,7 +127,14 @@ export default function ForBusinessPage() {
             ))}
           </div>
 
-          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-[#6B756F]">
+          <p className="mt-10 text-sm">
+            <Link href="/blog" className="font-semibold text-[#0E7C66] underline decoration-[#0E7C66]/30 underline-offset-4">
+              Read our business insights →
+            </Link>{" "}
+            <span className="text-[#8A938E]">Referral and affiliate strategy for founders and marketers.</span>
+          </p>
+
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#6B756F]">
             One thing we will not sell: a ranking. Editorial conclusions on Refer Labs are never part of a commercial
             deal, and every partnership is disclosed to readers. That separation is what makes the audience worth
             reaching. The full policy is at{" "}

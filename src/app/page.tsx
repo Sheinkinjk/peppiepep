@@ -22,18 +22,18 @@ const categories = [
     count: "4 guides",
   },
   {
-    href: "/best-website-builder",
+    href: "/compare/website-builders",
     tag: "Software",
     title: "Website builders",
     blurb: "AI builders, one-page tools and landing-page specialists, tested against real use.",
-    count: "6 guides",
+    count: "5 tools",
   },
   {
-    href: "/best-newsletter-platform",
-    tag: "Software",
+    href: "/compare/newsletter-platforms",
+    tag: "Creator tools",
     title: "Newsletter platforms",
     blurb: "Where to build an email audience, and what each platform takes in return.",
-    count: "3 guides",
+    count: "3 tools",
   },
 ];
 

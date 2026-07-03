@@ -14,8 +14,8 @@ const fraunces = Fraunces({
 const NAV = [
   { href: "/weight-loss", label: "Weight loss" },
   { href: "/hair-loss", label: "Hair loss" },
-  { href: "/best-website-builder", label: "Website builders" },
-  { href: "/best-newsletter-platform", label: "Newsletters" },
+  { href: "/compare/website-builders", label: "Website builders" },
+  { href: "/compare/newsletter-platforms", label: "Newsletters" },
   { href: "/guides", label: "All guides" },
 ];
 

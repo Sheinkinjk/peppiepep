@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { CATALOG } from '@/lib/catalog/catalog';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
@@ -18,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss`,        lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE}/hair-loss`,          lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/for-business`,       lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.7 },
+    // Programmatic category hubs (auto-generated from the catalog)
+    ...CATALOG.map((v) => ({
+      url: `${BASE}/compare/${v.slug}`,
+      lastModified: FRESH,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    })),
     { url: `${BASE}/referral-blueprint`, lastModified: RECENT, changeFrequency: 'weekly',  priority: 0.98 },
     { url: `${BASE}/faq`,                lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/guides`,             lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },

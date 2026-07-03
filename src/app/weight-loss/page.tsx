@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
+import PathwayQuiz from "@/components/consumer/PathwayQuiz";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 
@@ -111,10 +112,15 @@ export default function WeightLossHubPage() {
           </p>
         </section>
 
+        {/* Quiz */}
+        <section className="mx-auto max-w-3xl px-5 pt-6 sm:px-8">
+          <PathwayQuiz />
+        </section>
+
         {/* Three pathways */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-            First, pick your pathway
+            Or explore the pathways yourself
           </h2>
           <div className="mt-7 grid gap-4 lg:grid-cols-3">
             <div className="rounded-2xl border border-[#0E7C66]/30 bg-white p-7">
