@@ -2,6 +2,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.bestNewsletterPlatform);
 
@@ -494,6 +495,7 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
       </main>
+      <StickyCta href={BEEHIIV_URL} product="beehiiv · newsletter platform" label="Try free" />
     </ConsumerShell>
   );
 }

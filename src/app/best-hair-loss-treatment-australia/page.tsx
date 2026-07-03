@@ -3,6 +3,7 @@ import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
@@ -498,6 +499,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
         </section>
 
       </main>
+      <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss treatment" label="Get started" />
     </ConsumerShell>
   );
 }

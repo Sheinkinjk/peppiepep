@@ -3,6 +3,7 @@ import { MOSHY_URL, JUNIPER_URL, BETTERBEING_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
@@ -397,8 +398,7 @@ export default function BestWeightLossTelehealthPage() {
                       <td className="py-3 pl-3 text-right">
                         <a
                           {...(row.isAff ? aff(row.url) : ext(row.url))}
-                          className="inline-flex items-center gap-1 text-xs font-bold transition-all hover:opacity-80"
-                          style={{ color: CYAN_LT }}
+                          className="inline-flex items-center gap-1 rounded-full bg-[#0a7c42] px-3 py-1.5 text-[11px] font-bold text-white whitespace-nowrap transition-all hover:-translate-y-0.5 hover:bg-[#086536]"
                         >
                           {row.cta} <ArrowRight className="h-3 w-3" />
                         </a>
@@ -534,6 +534,7 @@ export default function BestWeightLossTelehealthPage() {
 
         </div>
       </main>
+      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>
   );
 }
