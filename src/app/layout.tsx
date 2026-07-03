@@ -39,7 +39,7 @@ export const metadata: Metadata = generateSEOMetadata(seoConfig.home);
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F6F5F1",
+  themeColor: "#08090c",
 };
 
 export default function RootLayout({
