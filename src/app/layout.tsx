@@ -96,7 +96,11 @@ export default function RootLayout({
           <SupportChatbot />
         </ChromeGate>
         <Toaster />
-        <SupabaseSessionListener />
+        {/* Supabase auth only matters on the app/business chrome, not on the
+            consumer/SEO pages — gating it keeps supabase-js off their main thread. */}
+        <ChromeGate>
+          <SupabaseSessionListener />
+        </ChromeGate>
         <CookieConsent />
       </body>
     </html>
