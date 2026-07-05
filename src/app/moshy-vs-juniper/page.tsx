@@ -3,6 +3,7 @@ import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -225,6 +226,7 @@ export default function MoshyVsJuniperPage() {
           registered Australian practitioner. Consult a qualified health professional before making health decisions.
         </p>
       </main>
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>
   );
 }

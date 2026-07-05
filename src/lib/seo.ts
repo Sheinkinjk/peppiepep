@@ -1066,6 +1066,80 @@ export const seoConfig = {
     ],
   },
 
+  weightLossInjections: {
+    title: "Weight Loss Injections Australia 2026: How They Work & How to Access Online | Refer Labs",
+    description:
+      "A plain-English guide to weight-loss injections in Australia. What GLP-1 weight-loss injections are as a category, why they are prescription-only, and how online telehealth assessment and access works. Information only, not medical advice.",
+    url: `${SITE_URL}/weight-loss-injections-australia`,
+    keywords: [
+      "weight loss injections australia",
+      "weight loss injection australia",
+      "weight loss injections online australia",
+      "prescription weight loss injections australia",
+      "glp-1 injections australia",
+      "weight loss injection cost australia",
+      "how to get weight loss injections australia",
+      "weight loss injections telehealth australia",
+      "online weight loss injections australia",
+    ],
+  },
+
+  glp1WeightLoss: {
+    title: "GLP-1 Weight Loss Australia 2026: What GLP-1 Medications Are & How Access Works | Refer Labs",
+    description:
+      "An independent, factual guide to GLP-1 weight-loss medications in Australia. What the GLP-1 class is, why it is prescription-only, how telehealth assessment works, and why eligibility is decided by a practitioner. Information only, not medical advice.",
+    url: `${SITE_URL}/glp-1-weight-loss-australia`,
+    keywords: [
+      "glp-1 weight loss australia",
+      "glp-1 australia",
+      "glp1 weight loss australia",
+      "glp-1 medication australia",
+      "glp-1 telehealth australia",
+      "glp-1 weight loss telehealth",
+      "semaglutide australia",
+      "tirzepatide australia",
+      "glp-1 eligibility australia",
+      "how to get glp-1 australia",
+    ],
+  },
+
+  weightLossTelehealthCost: {
+    title: "Weight Loss Telehealth Cost Australia 2026: How Online Program Pricing Works | Refer Labs",
+    description:
+      "How much does weight-loss telehealth cost in Australia? A clear breakdown of consult fees, subscription models, and why medication is usually billed separately. What drives the price and how to check the current figure. Information only, not medical advice.",
+    url: `${SITE_URL}/weight-loss-telehealth-cost-australia`,
+    keywords: [
+      "weight loss telehealth cost australia",
+      "how much does weight loss telehealth cost",
+      "moshy cost",
+      "moshy cost australia",
+      "how much does moshy cost",
+      "weight loss program cost australia",
+      "online weight loss cost australia",
+      "weight loss injection cost australia",
+      "glp-1 cost australia",
+      "weight loss telehealth pricing australia",
+    ],
+  },
+
+  onlineWeightLossDoctor: {
+    title: "Online Weight Loss Doctor Australia 2026: How a Telehealth Consult Works | Refer Labs",
+    description:
+      "How seeing a weight-loss doctor online works in Australia. The eligibility questionnaire model, what a registered practitioner reviews, and how a weight-loss prescription online is handled. Information only, not medical advice.",
+    url: `${SITE_URL}/online-weight-loss-doctor-australia`,
+    keywords: [
+      "online weight loss doctor australia",
+      "weight loss prescription online australia",
+      "weight loss doctor online australia",
+      "online doctor weight loss australia",
+      "weight loss practitioner online australia",
+      "telehealth weight loss doctor australia",
+      "online weight loss consultation australia",
+      "weight loss prescription australia online",
+      "get weight loss prescription online australia",
+    ],
+  },
+
   carrdVsDurable: {
     title: "Carrd vs Durable AI 2026: Which Website Builder Should You Use? | Refer Labs",
     description:
