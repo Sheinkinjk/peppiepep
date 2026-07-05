@@ -62,36 +62,8 @@ const softwareSchema = {
     description: "14-day free trial on all paid plans. No credit card required.",
     availability: "https://schema.org/InStock",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.6",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "730",
-  },
   url: "https://swipepages.com",
   sameAs: ["https://swipepages.com"],
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "SoftwareApplication",
-    name: "Swipe Pages",
-    url: "https://swipepages.com",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.6",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-11",
-  reviewBody:
-    "Swipe Pages is the strongest landing page builder for paid ad campaigns in 2026. Its AMP technology produces mobile pages that load in under one second — a measurable conversion advantage when running Google Ads or Meta Ads. Includes A/B testing, dynamic text replacement, and agency workspaces. 14-day free trial with no credit card required. Not a general website builder — purpose-built for performance marketing teams.",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -103,17 +75,15 @@ export default function SwipePagesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <PremiumAffiliateLanding config={swipePagesConfig} />
-      <div className="bg-[#060f15] border-t border-white/[0.06] py-6">
+      <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-white/25 text-xs mb-1.5">Compare landing page and website builders</p>
+          <p className="text-[#9aa39c] text-xs mb-1.5">Compare landing page and website builders</p>
           <Link
             href="/best-website-builder"
-            className="text-sm font-medium hover:opacity-75 transition-opacity"
-            style={{ color: "#22C0CD" }}
+            className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors"
           >
-            See how Swipe Pages compares to Carrd, Durable AI, and Butternut AI — 2026 comparison &rarr;
+            See how Swipe Pages compares to Carrd, Durable AI, and Butternut AI in the 2026 comparison &rarr;
           </Link>
         </div>
       </div>

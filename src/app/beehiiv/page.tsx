@@ -61,36 +61,8 @@ const softwareSchema = {
     description: "Free plan up to 2,500 subscribers. 14-day trial of paid features. No credit card required for trial.",
     availability: "https://schema.org/InStock",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "2340",
-  },
   url: "https://www.beehiiv.com",
   sameAs: ["https://www.beehiiv.com"],
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "SoftwareApplication",
-    name: "beehiiv",
-    url: "https://www.beehiiv.com",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.8",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-11",
-  reviewBody:
-    "beehiiv is the strongest newsletter platform for creators and publishers who want to monetize and grow their audience in 2026. The native ad network, referral programme, and paid subscriptions are built-in — not bolt-ons. Free plan up to 2,500 subscribers, 14-day trial of paid features with no credit card required.",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -102,7 +74,6 @@ export default function BeehiivPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <PremiumAffiliateLanding config={beehiivConfig} />
     </>
   );

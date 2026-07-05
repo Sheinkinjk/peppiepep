@@ -64,27 +64,6 @@ const softwareSchema = {
   sameAs: ["https://incomelab.me"],
 };
 
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "SoftwareApplication",
-    name: "Income Lab",
-    url: "https://incomelab.me",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.5",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-11",
-  reviewBody:
-    "Income Lab is a structured platform for people who want to build real income using AI tools in 2026. Unlike scattered YouTube tutorials or Reddit threads, it provides a framework-first approach covering which AI tools to use, how to build an offer, and how to automate income streams over time. Best for people who want a structured path from AI curiosity to AI-assisted earnings.",
-};
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function IncomeLabPage() {
@@ -94,7 +73,6 @@ export default function IncomeLabPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <PremiumAffiliateLanding config={incomeLabConfig} />
     </>
   );

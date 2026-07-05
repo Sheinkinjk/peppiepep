@@ -62,36 +62,8 @@ const softwareSchema = {
     description: "Free AI website generation with no account required. Paid plans required to publish with a custom domain.",
     availability: "https://schema.org/InStock",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.6",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "980",
-  },
   url: "https://www.butternut.ai",
   sameAs: ["https://www.butternut.ai"],
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "SoftwareApplication",
-    name: "Butternut AI",
-    url: "https://www.butternut.ai",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.6",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-11",
-  reviewBody:
-    "Butternut AI is the fastest AI website builder available in 2026. It generates a full multi-page website from a short text description in approximately 20 seconds, with high-quality copy and layout. Free to generate with no account required. Includes SEO tools and blog publishing — features Durable AI does not offer. Best for startups, SMBs, and personal brands wanting a polished website fast.",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -103,17 +75,15 @@ export default function ButternutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <PremiumAffiliateLanding config={butternutConfig} />
-      <div className="bg-[#060f15] border-t border-white/[0.06] py-6">
+      <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-white/25 text-xs mb-1.5">Compare website builders</p>
+          <p className="text-[#9aa39c] text-xs mb-1.5">Compare website builders</p>
           <Link
             href="/best-website-builder"
-            className="text-sm font-medium hover:opacity-75 transition-opacity"
-            style={{ color: "#22C0CD" }}
+            className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors"
           >
-            See how Butternut AI compares to Carrd, Durable AI, and Swipe Pages — 2026 comparison &rarr;
+            See how Butternut AI compares to Carrd, Durable AI, and Swipe Pages in the 2026 comparison &rarr;
           </Link>
         </div>
       </div>

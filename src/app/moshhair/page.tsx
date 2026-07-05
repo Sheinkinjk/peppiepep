@@ -59,34 +59,6 @@ const organizationSchema = {
   url: "https://www.getmosh.com.au",
   description: "Australian telehealth platform for men's health, including clinically supervised hair loss treatment. Online consultation, practitioner review, and subscription delivery.",
   areaServed: { "@type": "Country", name: "Australia" },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.4",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "3120",
-  },
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "Organization",
-    name: "Mosh",
-    url: "https://www.getmosh.com.au",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.4",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-11",
-  reviewBody:
-    "Mosh is one of Australia's established men's health telehealth platforms, covering hair loss treatment with a practitioner-reviewed, subscription-based model. The online consultation process is straightforward and does not require an in-person GP visit. Suitable for Australian men researching clinically supervised hair loss treatment options. Pricing and treatment availability depend on individual eligibility.",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -98,7 +70,6 @@ export default function MoshHairPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <PremiumAffiliateLanding config={moshHairConfig} />
     </>
   );

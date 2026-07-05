@@ -62,36 +62,8 @@ const softwareSchema = {
     description: "Free AI website generation with no account required. Paid plans required to publish with a custom domain.",
     availability: "https://schema.org/InStock",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.5",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "1260",
-  },
   url: "https://durable.co",
   sameAs: ["https://durable.co"],
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "SoftwareApplication",
-    name: "Durable AI",
-    url: "https://durable.co",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.5",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-11",
-  reviewBody:
-    "Durable AI is the best AI website builder for local service businesses. It generates a full website in 30 seconds with no account required, and bundles CRM and invoicing tools alongside the site. Best for tradies, coaches, consultants, and small service teams who want an all-in-one platform without multiple subscriptions.",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -103,17 +75,15 @@ export default function DurableAiPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <PremiumAffiliateLanding config={durableAiConfig} />
-      <div className="bg-[#060f15] border-t border-white/[0.06] py-6">
+      <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-white/25 text-xs mb-1.5">Compare website builders</p>
+          <p className="text-[#9aa39c] text-xs mb-1.5">Compare website builders</p>
           <Link
             href="/best-website-builder"
-            className="text-sm font-medium hover:opacity-75 transition-opacity"
-            style={{ color: "#22C0CD" }}
+            className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors"
           >
-            See how Durable AI compares to Carrd, Butternut AI, and Swipe Pages — 2026 comparison &rarr;
+            See how Durable AI compares to Carrd, Butternut AI, and Swipe Pages in the 2026 comparison &rarr;
           </Link>
         </div>
       </div>

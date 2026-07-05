@@ -56,34 +56,6 @@ const organizationSchema = {
   url: "https://apollopeptidesciences.com",
   description:
     "Research peptide supplier providing high-purity laboratory compounds for scientific research. Catalogue includes metabolic, longevity, tissue repair, and hormone signalling peptides. For laboratory research use only.",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.6",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "840",
-  },
-};
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "Organization",
-    name: "Apollo Peptide Sciences",
-    url: "https://apollopeptidesciences.com",
-  },
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: "4.6",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  datePublished: "2026-03-13",
-  reviewBody:
-    "Apollo Peptide Sciences is one of the most referenced research peptide suppliers, known for high-purity compounds and third-party testing documentation. Catalogue includes Semaglutide, CJC-1295, Ipamorelin, GHK-Cu, and Retatrutide research peptides. All compounds are for laboratory research use only. Regularly runs peptides sale promotions. Access via referral link for current offer.",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -95,15 +67,13 @@ export default function ApolloPeptidesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <PremiumAffiliateLanding config={apolloPeptidesConfig} />
-      <div className="bg-[#060f15] border-t border-white/[0.06] py-6">
+      <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-white/25 text-xs mb-1.5">Compare research peptide suppliers</p>
+          <p className="text-[#9aa39c] text-xs mb-1.5">Compare research peptide suppliers</p>
           <Link
             href="/best-peptide-supplier"
-            className="text-sm font-medium hover:opacity-75 transition-opacity"
-            style={{ color: "#22C0CD" }}
+            className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors"
           >
             See how Apollo Peptide Sciences compares to Ascension Peptides and BioPeptiTech &rarr;
           </Link>
