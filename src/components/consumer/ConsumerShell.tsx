@@ -56,7 +56,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
       {/* Footer */}
       <footer className="border-t border-[#e3e7e2] bg-white">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr]">
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
             <div className="max-w-sm">
               <ReferLabsLogo className="h-9 w-auto" />
               <p className="mt-4 text-[13px] leading-relaxed text-[#6e7b74]">
@@ -67,13 +67,24 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
               <NewsletterSignup variant="footer" source="footer" />
             </div>
             <div>
-              <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">Compare</p>
+              <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">By category</p>
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
                 <li><Link href="/weight-loss" className="transition-colors hover:text-[#0a7c42]">Weight loss &amp; telehealth</Link></li>
                 <li><Link href="/hair-loss" className="transition-colors hover:text-[#0a7c42]">Hair loss treatment</Link></li>
+                <li><Link href="/mens-health-telehealth-australia" className="transition-colors hover:text-[#0a7c42]">Men&apos;s health telehealth</Link></li>
                 <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website builders</Link></li>
                 <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter platforms</Link></li>
                 <li><Link href="/guides" className="transition-colors hover:text-[#0a7c42]">All guides</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">Top comparisons</p>
+              <ul className="space-y-2.5 text-sm text-[#3d4b44]">
+                <li><Link href="/best-weight-loss-telehealth-australia" className="transition-colors hover:text-[#0a7c42]">Best weight-loss telehealth</Link></li>
+                <li><Link href="/best-hair-loss-treatment-australia" className="transition-colors hover:text-[#0a7c42]">Best hair-loss treatment</Link></li>
+                <li><Link href="/best-website-builder" className="transition-colors hover:text-[#0a7c42]">Best website builder</Link></li>
+                <li><Link href="/best-newsletter-platform" className="transition-colors hover:text-[#0a7c42]">Best newsletter platform</Link></li>
+                <li><Link href="/best-peptide-supplier" className="transition-colors hover:text-[#0a7c42]">Best peptide supplier</Link></li>
               </ul>
             </div>
             <div>
@@ -81,6 +92,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
                 <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How we research</Link></li>
                 <li><Link href="/for-business" className="transition-colors hover:text-[#0a7c42]">For business</Link></li>
+                <li><Link href="/referral-blueprint" className="transition-colors hover:text-[#0a7c42]">Referral Blueprint</Link></li>
                 <li><Link href="/about" className="transition-colors hover:text-[#0a7c42]">About</Link></li>
                 <li><Link href="/contact" className="transition-colors hover:text-[#0a7c42]">Contact</Link></li>
                 <li><Link href="/privacy" className="transition-colors hover:text-[#0a7c42]">Privacy</Link> · <Link href="/terms" className="transition-colors hover:text-[#0a7c42]">Terms</Link></li>
