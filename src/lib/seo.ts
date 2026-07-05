@@ -725,9 +725,9 @@ export const seoConfig = {
   },
 
   moshy: {
-    title: "Moshy Discount Code Australia 2026 — Referral Link | Refer Labs",
+    title: "Moshy Weight Loss Australia 2026: Referral Link, Cost & How It Works | Refer Labs",
     description:
-      "Current Moshy referral link — no code required. An independent look at how the Moshy weight-loss telehealth service works, the online eligibility process, and prescription GLP-1 access in Australia. Information only — not medical advice.",
+      "The current Moshy referral link, no code required. An independent look at how the Moshy weight-loss telehealth service works in Australia: the online eligibility check, what it costs, and how prescription GLP-1 access is handled. Information only, not medical advice.",
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",

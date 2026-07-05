@@ -8,8 +8,13 @@
  * If a partner changes their tracking link, update it once here.
  */
 
-// ── Health: weight-loss telehealth ──────────────────────────────────────────
-// Moshy tracks attribution via the funnel path itself (no query param needed).
+// ── Health: weight-loss telehealth (BIGGEST EARNER) ─────────────────────────
+// ⚠️ ATTRIBUTION UNVERIFIED. Unlike the Mosh hair link below, this path has no
+// "referlabs" partner slug (getmoshy.com.au/start/referlabs 404s). It resolves
+// to a live, gender-neutral weight-loss funnel, but whether it credits Refer
+// Labs can only be confirmed in the Moshy / Commission Factory affiliate
+// dashboard. If clicks are not being attributed, paste the correct tracked link
+// here — it is the single source of truth used by every Moshy CTA site-wide.
 export const MOSHY_URL = "https://www.getmoshy.com.au/start/eligibility-check-moshy";
 
 // ── Health: hair-loss telehealth ────────────────────────────────────────────
