@@ -1,34 +1,19 @@
-import { Fraunces } from "next/font/google";
 import { moshyConfig, MOSHY_URL } from "./config";
-import {
-  ArrowRight,
-  Check,
-  ShieldCheck,
-  Stethoscope,
-  Truck,
-  ClipboardList,
-} from "lucide-react";
-
-// Editorial serif scoped to this standalone page only.
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-fraunces",
-});
-
-const LAST_REVIEWED = "June 2026";
+import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 function MoshyCTA({
   label = "Continue to Moshy",
   size = "md",
   block = false,
+  loc,
 }: {
   label?: string;
   size?: "sm" | "md" | "lg";
   block?: boolean;
+  loc?: string;
 }) {
   const sizes = {
     sm: "px-5 py-2.5 text-sm",
@@ -40,7 +25,8 @@ function MoshyCTA({
       href={MOSHY_URL}
       target="_blank"
       rel="nofollow sponsored"
-      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-[#0E7C66] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0b6353] ${sizes[size]} ${block ? "w-full" : ""}`}
+      data-cta={loc}
+      className={`nw-btn justify-center ${sizes[size]} ${block ? "w-full" : ""}`}
     >
       {label}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -48,63 +34,38 @@ function MoshyCTA({
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E7C66]">
-      <span className="h-1.5 w-1.5 rounded-full bg-[#0E7C66]" />
-      {children}
-    </span>
-  );
-}
-
 export default function MoshyLanding() {
   return (
-    <div className={`${fraunces.variable} min-h-screen bg-[#F6F5F1] text-[#1B2420] selection:bg-[#0E7C66]/15`}>
-      {/* ── Sticky page bar (own nav — persistent money CTA) ── */}
-      <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-[#F6F5F1]/85 backdrop-blur-md">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
-          <div className="flex items-center gap-2.5">
-            <span className="h-2 w-2 rounded-full bg-[#0E7C66]" />
-            <span className="text-sm font-bold tracking-tight">Refer Labs</span>
-            <span className="hidden text-[11px] font-medium text-[#6B756F] sm:inline">· Independent review</span>
-          </div>
-          <MoshyCTA size="sm" />
-        </div>
-      </header>
-
+    <ConsumerShell>
       <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8">
         {/* ── Hero ── */}
-        <section className="grid gap-10 pt-12 sm:pt-16 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
+        <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div>
-            <Eyebrow>Weight-loss telehealth · Australia · 2026</Eyebrow>
-            <h1
-              className="mt-5 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#16201C] sm:text-5xl lg:text-[3.4rem]"
-            >
-              Moshy, reviewed: the clinically-led weight-loss telehealth service,{" "}
-              <span className="italic text-[#0E7C66]">explained properly</span> before you start.
+            <p className="nw-kicker">Weight-loss telehealth · Australia · 2026</p>
+            <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.3rem]">
+              Moshy, explained: the clinically-led weight-loss telehealth service,{" "}
+              <span className="text-[#0a7c42]">before you start.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#46524C]">
-              A clear, independent look at how Moshy actually works in Australia — what the service is, how the online
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
+              A clear, independent look at how Moshy actually works in Australia: what the service is, how the online
               eligibility process runs, and how prescription GLP-1 access is handled. Information only, no hype, no expired
               discount codes.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <MoshyCTA label="Check your eligibility on Moshy" size="lg" />
+            <div className="mt-8">
+              <MoshyCTA label="Check your eligibility on Moshy" size="lg" loc="hero" />
             </div>
 
-            <p className="mt-4 text-xs text-[#8A938E]">
-              Independent page · contains an affiliate link · not medical advice
+            <p className="mt-4 text-xs text-[#9aa39c]">
+              Information only · contains a disclosed affiliate link · not medical advice
             </p>
           </div>
 
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
-            <div className="rounded-2xl border border-black/[0.07] bg-white p-6 shadow-[0_2px_24px_-12px_rgba(0,0,0,0.18)]">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6B756F]">
-                At a glance
-              </span>
-              <dl className="mt-4 divide-y divide-black/[0.06] text-sm">
+            <div className="nw-card rounded-2xl p-6">
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
+              <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
                 {[
                   ["What it is", "Australian weight-management telehealth"],
                   ["For", "Anyone eligible seeking a clinically-supervised program"],
@@ -114,37 +75,37 @@ export default function MoshyLanding() {
                   ["Discount code", "None needed — referral applies via the link"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
-                    <dt className="w-24 shrink-0 text-[#8A938E]">{k}</dt>
-                    <dd className="text-[#2B352F]">{v}</dd>
+                    <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
+                    <dd className="text-[#2b362f]">{v}</dd>
                   </div>
                 ))}
               </dl>
               <div className="mt-5">
-                <MoshyCTA block />
+                <MoshyCTA block loc="glance-card" />
               </div>
-              <p className="mt-3 text-center text-[11px] text-[#8A938E]">Opens getmoshy.com.au · AU only</p>
+              <p className="mt-3 text-center text-[11px] text-[#9aa39c]">Opens getmoshy.com.au · AU only</p>
             </div>
           </aside>
         </section>
 
         {/* ── Trust strip ── */}
-        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/[0.07] bg-black/[0.06] sm:grid-cols-4">
+        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] sm:grid-cols-4">
           {[
             { icon: Stethoscope, label: "AHPRA-registered practitioners" },
             { icon: ClipboardList, label: "Online eligibility in ~5 minutes" },
             { icon: Truck, label: "Subscription with home delivery" },
             { icon: ShieldCheck, label: "No code — referral via the link" },
           ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3 bg-[#F6F5F1] px-5 py-5">
-              <Icon className="h-5 w-5 shrink-0 text-[#0E7C66]" strokeWidth={1.6} />
-              <span className="text-[13px] font-medium leading-snug text-[#46524C]">{label}</span>
+            <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
+              <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} />
+              <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
             </div>
           ))}
         </section>
 
         {/* ── Compliance notice ── */}
-        <p className="mt-8 rounded-xl border border-black/[0.07] bg-white px-5 py-4 text-xs leading-relaxed text-[#6B756F]">
-          <span className="font-semibold text-[#46524C]">Information only.</span> This page describes Moshy as a service
+        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#6e7b74]">
+          <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes Moshy as a service
           and is not medical advice. It does not recommend any treatment or imply suitability for any individual.
           Prescription medicines in Australia are available only after assessment by a registered practitioner. Always
           consult a qualified health professional before making any health decision.
@@ -155,17 +116,17 @@ export default function MoshyLanding() {
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A938E]">On this page</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {[
                   ["what", "What Moshy actually is"],
                   ["glp1", "GLP-1 & semaglutide"],
                   ["start", "How to start"],
-                  ["verdict", "The verdict"],
+                  ["bottom-line", "The bottom line"],
                   ["faq", "FAQ"],
                 ].map(([id, label]) => (
                   <li key={id}>
-                    <a href={`#${id}`} className="text-[#6B756F] transition-colors hover:text-[#0E7C66]">
+                    <a href={`#${id}`} className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">
                       {label}
                     </a>
                   </li>
@@ -178,10 +139,8 @@ export default function MoshyLanding() {
           <article className="max-w-2xl">
             {/* What */}
             <section id="what" className="scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                What Moshy actually is
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Moshy actually is</h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
                   Moshy is a clinically-led Australian telehealth service, best known for its weight-management program
                   and open to anyone eligible. You complete a health questionnaire online, a registered Australian
@@ -196,9 +155,9 @@ export default function MoshyLanding() {
                 </p>
               </div>
 
-              <figure className="my-7 border-l-2 border-[#0E7C66] pl-5">
-                <blockquote className="font-[family-name:var(--font-fraunces)] text-xl italic leading-snug text-[#2B352F]">
-                  &ldquo;The convenience is the point — but the practitioner review is what makes it worth taking
+              <figure className="my-7 border-l-2 border-[#0a7c42] pl-5">
+                <blockquote className="text-xl font-semibold italic leading-snug text-[#2b362f]">
+                  &ldquo;The convenience is the point, but the practitioner review is what makes it worth taking
                   seriously.&rdquo;
                 </blockquote>
               </figure>
@@ -206,99 +165,94 @@ export default function MoshyLanding() {
 
             {/* GLP-1 */}
             <section id="glp1" className="mt-12 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
                 GLP-1 &amp; semaglutide, the facts
               </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#46524C]">
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
                   A lot of people reach Moshy while researching GLP-1 medications, the class that includes semaglutide. The
                   most important fact to understand up front is a regulatory one, not a sales pitch.
                 </p>
                 <p>
                   In Australia these medications are{" "}
-                  <strong className="font-semibold text-[#2B352F]">prescription-only</strong>. A platform like Moshy can
+                  <strong className="font-semibold text-[#2b362f]">prescription-only</strong>. A platform like Moshy can
                   connect you with a registered practitioner who may prescribe one <em>only if</em> they judge it clinically
                   appropriate after assessing you individually. No platform can promise you a specific medication before that
-                  consultation — be cautious of any that implies otherwise. This is information, not medical advice or a
+                  consultation, so be cautious of any that implies otherwise. This is information, not medical advice or a
                   recommendation to use any medicine.
                 </p>
               </div>
-              <div className="mt-6 rounded-xl border border-[#0E7C66]/20 bg-[#0E7C66]/[0.05] p-5">
-                <p className="text-sm leading-relaxed text-[#2B352F]">
+              <div className="mt-6 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] p-5">
+                <p className="text-sm leading-relaxed text-[#2b362f]">
                   Ready to see whether you&apos;re eligible? It takes a few minutes and commits you to nothing.
                 </p>
                 <div className="mt-4">
-                  <MoshyCTA label="Start the Moshy eligibility check" />
+                  <MoshyCTA label="Start the Moshy eligibility check" loc="glp1" />
                 </div>
               </div>
             </section>
 
             {/* How to start (steps from config) */}
             <section id="start" className="mt-12 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                How to start with Moshy
-              </h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">How to start with Moshy</h2>
               <ol className="mt-6 space-y-5">
                 {moshyConfig.steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0E7C66]/10 text-sm font-bold text-[#0E7C66]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-sm font-bold text-[#0a7c42]">
                       {s.num}
                     </span>
                     <div>
-                      <p className="font-semibold text-[#16201C]">{s.heading}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-[#46524C]">{s.body}</p>
+                      <p className="font-bold text-[#10251b]">{s.heading}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{s.body}</p>
                     </div>
                   </li>
                 ))}
               </ol>
             </section>
 
-            {/* Verdict */}
-            <section id="verdict" className="mt-14 scroll-mt-24">
-              <div className="rounded-2xl border border-black/[0.08] bg-white p-7 shadow-[0_2px_24px_-12px_rgba(0,0,0,0.18)] sm:p-8">
-                <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
-                  The verdict
-                </h2>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-[#46524C]">
+            {/* Bottom line */}
+            <section id="bottom-line" className="mt-14 scroll-mt-24">
+              <div className="nw-card rounded-2xl p-7 sm:p-8">
+                <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Our take</span>
+                <h2 className="mt-3 text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
+                <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                   As a service, Moshy is a credible, well-run option: the online process is genuinely fast, the
                   practitioner review is real, and it is transparent that any prescription medication is prescription-only
                   and assessed individually. Whether it is appropriate for you is a decision for you and a registered
-                  practitioner — this page is information about the service, not medical advice.
+                  practitioner. This page is information about the service, not medical advice.
                 </p>
                 <ul className="mt-5 space-y-2">
                   {[
-                    "Fast, fully online eligibility — no GP appointment to start",
+                    "Fast, fully online eligibility, no GP appointment to start",
                     "Real practitioner review; not everyone is approved",
                     "Clear that GLP-1 medication is prescription-only and assessed individually",
                   ].map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#2B352F]">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0E7C66]" />
+                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" />
                       {point}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <MoshyCTA label="Continue to Moshy" size="lg" />
-                  <span className="text-xs text-[#8A938E]">Opens getmoshy.com.au · referral applied automatically</span>
+                  <MoshyCTA label="Continue to Moshy" size="lg" loc="bottom-line" />
+                  <span className="text-xs text-[#9aa39c]">Opens getmoshy.com.au · referral applied automatically</span>
                 </div>
               </div>
             </section>
 
             {/* FAQ */}
             <section id="faq" className="mt-14 scroll-mt-24">
-              <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#16201C] sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
                 Frequently asked questions
               </h2>
-              <div className="mt-6 divide-y divide-black/[0.08] border-y border-black/[0.08]">
+              <div className="mt-6 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
                 {moshyConfig.faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#16201C]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0E7C66] transition-transform group-open:rotate-45">
-                        +
-                      </span>
+                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#46524C]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -307,48 +261,28 @@ export default function MoshyLanding() {
         </div>
 
         {/* ── Final CTA band ── */}
-        <section className="mt-20 rounded-3xl bg-[#16201C] px-7 py-12 text-center sm:px-12 sm:py-16">
-          <h2 className="mx-auto max-w-xl font-[family-name:var(--font-fraunces)] text-3xl font-semibold leading-tight text-white sm:text-4xl">
+        <section className="mt-20 overflow-hidden rounded-3xl bg-[#10251b] px-7 py-12 text-center sm:px-12 sm:py-16">
+          <h2 className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
             See where you stand with Moshy
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/65">
+          <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
             A few minutes, no obligation, and no code to enter. The referral is applied automatically through the link.
           </p>
           <div className="mt-8 flex justify-center">
-            <MoshyCTA label="Continue to Moshy" size="lg" />
+            <a href={MOSHY_URL} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#0a7c42] px-8 py-4 text-base hover:!bg-[#e8f5ee]">
+              Continue to Moshy
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
-          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/40">
+          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/45">
             You&apos;ll be taken to getmoshy.com.au. This page is operated by Refer Labs and contains an affiliate
-            referral link. It does not constitute medical advice — consult a qualified health professional before making
+            referral link. It does not constitute medical advice; consult a qualified health professional before making
             any health decision.
           </p>
         </section>
-
-        {/* ── Page footer (standalone) ── */}
-        <footer className="mt-14 border-t border-black/[0.08] pt-8">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div className="max-w-sm">
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-[#0E7C66]" />
-                <span className="text-sm font-bold">Refer Labs</span>
-              </div>
-              <p className="mt-3 text-xs leading-relaxed text-[#8A938E]">
-                Independent comparison guides and reviews. Some pages contain affiliate links; we may earn a commission at
-                no extra cost to you. Editorial assessments are independent.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-              <a href="/moshy-review" className="text-[#46524C] hover:text-[#0E7C66]">Full Moshy review</a>
-              <a href="/moshy-eligibility" className="text-[#46524C] hover:text-[#0E7C66]">The eligibility check</a>
-              <a href="/best-weight-loss-telehealth-australia" className="text-[#46524C] hover:text-[#0E7C66]">
-                Weight-loss telehealth
-              </a>
-              <a href="/guides" className="text-[#46524C] hover:text-[#0E7C66]">All guides</a>
-            </div>
-          </div>
-          <p className="mt-8 text-xs text-[#A6ADA8]">© {LAST_REVIEWED.split(" ")[1]} Refer Labs. Australia.</p>
-        </footer>
       </main>
-    </div>
+
+      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />
+    </ConsumerShell>
   );
 }

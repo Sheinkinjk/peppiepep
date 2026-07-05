@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        // Consolidate the duplicate $799 Blueprint funnel onto the canonical page.
+        source: '/referral-business-program',
+        destination: '/referral-blueprint',
+        permanent: true,
+      },
+      {
         source: '/linkedin-influencer',
         destination: '/linkedin-growth',
         permanent: true,
