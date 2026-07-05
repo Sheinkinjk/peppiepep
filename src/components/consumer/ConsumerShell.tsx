@@ -13,6 +13,7 @@ const NAV = [
   { href: "/compare/website-builders", label: "Website builders" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
   { href: "/guides", label: "All guides" },
+  { href: "/referral-blueprint", label: "For business" },
   { href: "/how-we-research", label: "How we research" },
 ];
 

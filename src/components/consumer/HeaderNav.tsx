@@ -13,6 +13,7 @@ const GROUPS: Group[] = [
     label: "Health",
     items: [
       { href: "/weight-loss", label: "Weight loss & telehealth", note: "Online weight-management services" },
+      { href: "/best-weight-loss-telehealth-australia", label: "Best weight-loss telehealth", note: "Providers ranked for 2026" },
       { href: "/hair-loss", label: "Hair loss treatment", note: "Clinical vs topical, compared" },
       { href: "/mens-health-telehealth-australia", label: "Men's health telehealth", note: "Online men's health clinics" },
       { href: "/best-peptide-supplier", label: "Research peptides", note: "Suppliers, compared" },
@@ -22,7 +23,18 @@ const GROUPS: Group[] = [
     label: "Software & tools",
     items: [
       { href: "/compare/website-builders", label: "Website builders", note: "AI, one-page and landing tools" },
+      { href: "/best-website-builder", label: "Best website builder", note: "Our 2026 pick" },
       { href: "/compare/newsletter-platforms", label: "Newsletter platforms", note: "Where to build an email audience" },
+      { href: "/best-newsletter-platform", label: "Best newsletter platform", note: "beehiiv vs Substack vs Kit" },
+    ],
+  },
+  {
+    label: "For business",
+    items: [
+      { href: "/referral-blueprint", label: "Referral Growth Blueprint", note: "Our $799 in-house growth playbook" },
+      { href: "/for-business", label: "For business overview", note: "How brands grow with Refer Labs" },
+      { href: "/services", label: "Growth services", note: "Done-with-you distribution" },
+      { href: "/comparison-website", label: "Get featured", note: "Partner on a comparison" },
     ],
   },
 ];

@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
 import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
 import { createApiLogger } from "@/lib/api-logger";
 
@@ -121,38 +120,55 @@ export async function POST(request: NextRequest) {
       logger.error("Failed to send blueprint admin notification", { error: err });
     });
 
-    // Create Stripe one-time checkout session
-    const session = await stripe.checkout.sessions.create({
+    // Create the Stripe checkout session via raw fetch. The Stripe Node SDK has
+    // fetch-compatibility issues in this serverless environment (connection
+    // errors), so we hit the REST API directly — same pattern as the primary
+    // /api/referral-blueprint-checkout route.
+    const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+    if (!stripeSecretKey) {
+      logger.error("Missing STRIPE_SECRET_KEY");
+      return NextResponse.json({ error: "Stripe is not configured" }, { status: 500 });
+    }
+
+    const params = new URLSearchParams({
       mode: "payment",
-      line_items: [
-        {
-          price_data: {
-            currency: "aud",
-            unit_amount: 79900, // $799.00 AUD
-            product_data: {
-              name: "Referral Growth Blueprint",
-              description:
-                "250+ curated affiliate & referral opportunities, strategic positioning guide, niche selection strategy, SEO page ideas, and distribution playbooks — delivered in Excel format.",
-            },
-          },
-          quantity: 1,
-        },
-      ],
+      "payment_method_types[0]": "card",
+      "line_items[0][price_data][currency]": "aud",
+      "line_items[0][price_data][unit_amount]": "79900",
+      "line_items[0][price_data][product_data][name]": "Referral Growth Blueprint",
+      "line_items[0][price_data][product_data][description]":
+        "250+ curated affiliate & referral opportunities, strategic positioning guide, niche selection strategy, SEO page ideas, and distribution playbooks - delivered in Excel format.",
+      "line_items[0][quantity]": "1",
       customer_email: email,
       success_url: `${SITE_URL}/referral-business-program/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE_URL}/referral-business-program?cancelled=1`,
-      metadata: {
-        product: "referral_growth_blueprint",
-        buyer_name: name,
-        buyer_email: email,
-        industry: industry || "",
-        primary_goal: primaryGoal || "",
-        experience_level: experienceLevel || "",
-      },
-      payment_intent_data: {
-        description: "Referral Growth Blueprint — Refer Labs",
-      },
+      "metadata[product]": "referral_growth_blueprint",
+      "metadata[buyer_name]": name,
+      "metadata[buyer_email]": email,
+      "metadata[industry]": (industry || "").substring(0, 499),
+      "metadata[primary_goal]": (primaryGoal || "").substring(0, 499),
+      "metadata[experience_level]": experienceLevel || "",
+      "metadata[source]": "referral-business-program",
+      "payment_intent_data[description]": "Referral Growth Blueprint - Refer Labs",
+      billing_address_collection: "auto",
     });
+
+    const sessionRes = await fetch("https://api.stripe.com/v1/checkout/sessions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${stripeSecretKey}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Stripe-Version": "2024-12-18.acacia",
+      },
+      body: params.toString(),
+      cache: "no-store",
+    });
+
+    const session = (await sessionRes.json()) as { url?: string; error?: { message: string } };
+    if (!sessionRes.ok || !session.url) {
+      logger.error("Stripe session creation failed", { status: sessionRes.status, error: session.error });
+      return NextResponse.json({ error: session.error?.message || "Failed to create checkout session" }, { status: 500 });
+    }
 
     return NextResponse.json({ success: true, url: session.url });
   } catch (error) {
