@@ -85,6 +85,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/comparison-website`,                    lastModified: RECENT, changeFrequency: 'monthly', priority: 0.7 },
 
+    // ── Affiliate programs cluster (hub + 3 spokes) ────────────────────
+    { url: `${BASE}/affiliate-programs-australia`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/high-paying-affiliate-programs`,           lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/recurring-affiliate-programs`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/how-to-start-affiliate-marketing-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+
     // ── Blog ───────────────────────────────────────────────────────────
     { url: `${BASE}/blog`,                                            lastModified: RECENT, changeFrequency: 'weekly',  priority: 0.7 },
     { url: `${BASE}/blog/attorney-referral-fee-rules-state-guide`,    lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },

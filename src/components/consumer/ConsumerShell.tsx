@@ -93,6 +93,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How we research</Link></li>
                 <li><Link href="/for-business" className="transition-colors hover:text-[#0a7c42]">For business</Link></li>
                 <li><Link href="/referral-blueprint" className="transition-colors hover:text-[#0a7c42]">Referral Blueprint</Link></li>
+                <li><Link href="/affiliate-programs-australia" className="transition-colors hover:text-[#0a7c42]">Affiliate programs AU</Link></li>
                 <li><Link href="/about" className="transition-colors hover:text-[#0a7c42]">About</Link></li>
                 <li><Link href="/contact" className="transition-colors hover:text-[#0a7c42]">Contact</Link></li>
                 <li><Link href="/privacy" className="transition-colors hover:text-[#0a7c42]">Privacy</Link> · <Link href="/terms" className="transition-colors hover:text-[#0a7c42]">Terms</Link></li>

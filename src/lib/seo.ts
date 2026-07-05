@@ -1318,6 +1318,81 @@ export const seoConfig = {
     ],
   },
 
+  affiliateProgramsAustralia: {
+    title: "Best Affiliate Programs in Australia (2026)",
+    description:
+      "A practical roundup of the best affiliate programs for Australians in 2026, across SaaS, web hosting, finance, health, creator tools, retail and courses. Commission structures, cookie windows, and the networks that run them, plus how to join.",
+    url: `${SITE_URL}/affiliate-programs-australia`,
+    keywords: [
+      "affiliate programs australia",
+      "best affiliate programs australia",
+      "best affiliate programs australia 2026",
+      "affiliate programs australia 2026",
+      "affiliate marketing programs australia",
+      "commission factory programs",
+      "australian affiliate networks",
+      "saas affiliate programs australia",
+      "high paying affiliate programs australia",
+      "how to join affiliate programs australia",
+      "affiliate program list australia",
+    ],
+  },
+
+  highPayingAffiliatePrograms: {
+    title: "Highest Paying Affiliate Programs 2026 (High-Commission Niches)",
+    description:
+      "The highest paying affiliate programs in 2026, focused on high-commission niches, SaaS, web hosting, finance and online courses. Twelve high-payout programs with typical commission structures and the networks that run them.",
+    url: `${SITE_URL}/high-paying-affiliate-programs`,
+    keywords: [
+      "highest paying affiliate programs 2026",
+      "high paying affiliate programs",
+      "high commission affiliate programs",
+      "highest paying affiliate programs",
+      "best high ticket affiliate programs 2026",
+      "high paying affiliate programs australia",
+      "saas affiliate programs high commission",
+      "web hosting affiliate programs high payout",
+      "finance affiliate programs",
+      "online course affiliate programs",
+    ],
+  },
+
+  recurringAffiliatePrograms: {
+    title: "Best Recurring Commission Affiliate Programs 2026",
+    description:
+      "The best recurring commission affiliate programs for 2026, subscription and SaaS programs that pay you every month a customer stays. Twelve recurring-revenue programs with typical commission structures and how they pay.",
+    url: `${SITE_URL}/recurring-affiliate-programs`,
+    keywords: [
+      "best recurring commission affiliate programs",
+      "recurring affiliate programs",
+      "recurring commission affiliate programs 2026",
+      "monthly recurring affiliate programs",
+      "subscription affiliate programs",
+      "saas recurring affiliate programs",
+      "lifetime recurring affiliate programs",
+      "passive income affiliate programs",
+      "recurring affiliate programs australia",
+    ],
+  },
+
+  howToStartAffiliateMarketingAustralia: {
+    title: "How to Start Affiliate Marketing in Australia (2026 Beginner Guide)",
+    description:
+      "A step-by-step beginner guide to starting affiliate marketing in Australia in 2026. Choose a niche, pick programs, build a platform, disclose properly, keep the ATO in mind, and drive traffic. General information, not financial or tax advice.",
+    url: `${SITE_URL}/how-to-start-affiliate-marketing-australia`,
+    keywords: [
+      "how to start affiliate marketing australia",
+      "affiliate marketing australia for beginners",
+      "start affiliate marketing australia 2026",
+      "affiliate marketing beginners guide australia",
+      "how to become an affiliate marketer australia",
+      "affiliate marketing side hustle australia",
+      "affiliate marketing tax australia",
+      "affiliate marketing niche selection",
+      "make money affiliate marketing australia",
+    ],
+  },
+
   dashboard: {
     title: "Dashboard",
     description: "Manage your program, track performance, and view reporting.",
