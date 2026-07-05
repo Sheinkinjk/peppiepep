@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search, ArrowRight } from "lucide-react";
 import { searchEntries, type SearchEntry } from "@/lib/search-index";
 
-const POPULAR = ["Weight loss", "Website builders", "Moshy review", "Newsletters"];
+const POPULAR = ["Weight loss", "Website builders", "Hair loss", "Newsletters"];
 
 /**
  * NerdWallet-style site search. variant "hero" is large and prominent;

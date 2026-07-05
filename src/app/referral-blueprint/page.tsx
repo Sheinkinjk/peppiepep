@@ -514,17 +514,17 @@ export default function ReferralBlueprintPage() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: CYAN, background: `${CYAN}12`, border: `1px solid ${CYAN}25` }}>
                 <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: CYAN }} />
-                Australia 2026
+                By Refer Labs · Australia 2026
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-[58px] font-black tracking-tight leading-[0.96] mb-6 text-white">
-                Your personalised<br />
-                Referral Growth Blueprint.<br />
-                <span style={{ color: AMBER }}>Delivered in 48 hours.</span>
+                The Referral Growth Blueprint.<br />
+                Refer Labs&apos; own affiliate playbook,<br />
+                <span style={{ color: AMBER }}>built for your niche in 48 hours.</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl mb-8">
-                250+ researched affiliate programs. Industry-specific strategy written by Jarred. Not a template. Not automated.
+                Our own in-house product, not a third-party course. A 250+ affiliate program list plus a referral growth strategy Jarred writes for your specific niche. Not a template, not automated.
               </p>
 
               <div className="space-y-2.5 mb-10">
@@ -1467,9 +1467,9 @@ export default function ReferralBlueprintPage() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <div className="grid lg:grid-cols-3 gap-10">
             <div>
-              <h2 className="text-base font-black text-white mb-3">Affiliate marketing Australia 2026</h2>
+              <h2 className="text-base font-black text-white mb-3">A referral marketing blueprint built in-house</h2>
               <p className="text-sm text-white/50 leading-relaxed">
-                The Referral Growth Blueprint is built for Australians looking to start or scale affiliate income in 2026. It covers the best affiliate programs in Australia across health telehealth (Moshy, Juniper), fintech (Stake, Pearler, Wise), SaaS platforms, AI tools, and startup tools. Every program includes a direct link, commission structure, and a marketing angle specific to the Australian market.
+                The Referral Growth Blueprint is our own in-house referral marketing blueprint, built by Refer Labs for Australians looking to start or scale affiliate income in 2026. It pairs an affiliate program list for Australia with a referral growth strategy across health telehealth (Moshy, Juniper), fintech (Stake, Pearler, Wise), SaaS platforms, AI tools, and startup tools. Every program includes a direct link, commission structure, and a marketing angle specific to the Australian market.
               </p>
             </div>
             <div>

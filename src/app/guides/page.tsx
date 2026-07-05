@@ -39,7 +39,7 @@ const sections = [
     description: "How Australia's online weight-loss services work, and which suits whom.",
     guides: [
       { href: "/moshy", label: "Moshy — offer & referral link", desc: "The current referral offer. No code required." },
-      { href: "/moshy-review", label: "Moshy review", desc: "How the service actually runs, application to subscription." },
+      { href: "/moshy-review", label: "Moshy, explained", desc: "How the service actually runs, application to subscription." },
       { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
       { href: "/moshy-vs-gp", label: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
       { href: "/moshy-alternatives", label: "Moshy alternatives", desc: "The honest shortlist, including the option nobody markets." },
@@ -50,7 +50,7 @@ const sections = [
     label: "Hair loss & hair care",
     description: "Prescription telehealth and topical products for hair loss in Australia.",
     guides: [
-      { href: "/moshhair", label: "Mosh — review & offer", desc: "Men's hair-loss telehealth. Process, options, current offer." },
+      { href: "/moshhair", label: "Mosh hair: what to know", desc: "Men's hair-loss telehealth. Process, options, current offer." },
       { href: "/dense", label: "Dense Hair Experts", desc: "Topical, non-prescription density and scalp products." },
     ],
   },
@@ -58,10 +58,10 @@ const sections = [
     label: "Website builders & tools",
     description: "AI website builders, landing-page tools and digital business software, tested.",
     guides: [
-      { href: "/carrd", label: "Carrd review", desc: "Free plan forever, Pro from $9/year. Best for simple sites." },
-      { href: "/durableai", label: "Durable AI review", desc: "Generate a business website in 30 seconds, with CRM." },
-      { href: "/butternut", label: "Butternut AI review", desc: "Full site from a prompt in 20 seconds. Free to try." },
-      { href: "/swipepages", label: "Swipe Pages review", desc: "AMP landing pages under 1 second. 14-day free trial." },
+      { href: "/carrd", label: "Carrd, explained", desc: "Free plan forever, Pro from $9/year. Best for simple sites." },
+      { href: "/durableai", label: "Durable AI, explained", desc: "Generate a business website in 30 seconds, with CRM." },
+      { href: "/butternut", label: "Butternut AI, explained", desc: "Full site from a prompt in 20 seconds. Free to try." },
+      { href: "/swipepages", label: "Swipe Pages, explained", desc: "AMP landing pages under 1 second. 14-day free trial." },
       { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
     ],
   },
@@ -69,7 +69,7 @@ const sections = [
     label: "Creator & business tools",
     description: "Newsletter platforms and tools for online creators and operators.",
     guides: [
-      { href: "/beehiiv", label: "beehiiv review", desc: "Free up to 2,500 subscribers. Compare vs Substack." },
+      { href: "/beehiiv", label: "beehiiv, explained", desc: "Free up to 2,500 subscribers. Compare vs Substack." },
       { href: "/incomelab", label: "IncomeLab", desc: "AI side-hustle ideas and frameworks for 2026." },
     ],
   },
@@ -102,7 +102,7 @@ export default function GuidesPage() {
             Every guide, in one place
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
-            Comparisons and reviews across health, software and business tools. Researched by people, disclosed on
+            Comparisons and guides across health, software and business tools. Researched by people, disclosed on
             every page, and never sold to the highest bidder.
           </p>
         </div>

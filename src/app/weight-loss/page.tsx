@@ -26,8 +26,28 @@ const guides = [
 
 const faqs = [
   {
+    q: "How does online weight loss telehealth work in Australia?",
+    a: "You complete a health questionnaire online, a registered Australian practitioner reviews your answers, and if you are suitable they discuss an appropriate plan with you. Everything happens remotely through a secure portal or app. Some applicants are declined at the review stage, which is a sign the screening is doing its job rather than a fault in the service.",
+  },
+  {
+    q: "What are the best online weight loss programs in Australia?",
+    a: "There is no single best program, because the right fit depends on whether you want a clinical pathway, a coaching program, or in-person care with your GP. Our comparison of the main telehealth providers lines up Moshy, Juniper and Better Being side by side so you can weigh them on eligibility, cost model and what is included. We never sell rankings.",
+  },
+  {
+    q: "How much do online weight loss programs cost in Australia?",
+    a: "Most medical telehealth services run as a subscription, and any medication is usually billed separately on top. Coaching programs tend to charge a flat or monthly fee, and a GP visit is partly offset by Medicare. Pricing changes often, so check the current figure on each provider before you commit. Our individual guides note the cost model for each pathway.",
+  },
+  {
+    q: "Can you get weight loss medication online in Australia?",
+    a: "Prescription weight-management medicines are available in Australia only after an individual assessment by a registered practitioner, and a legitimate telehealth service will not promise a specific medicine before that assessment happens. Suitability is decided case by case. This hub is information only and does not recommend any treatment.",
+  },
+  {
+    q: "Is a weight loss telehealth service the same as a weight loss clinic?",
+    a: "The care is similar, the format differs. An online clinic runs the assessment and follow-up remotely, while a traditional clinic sees you in person. Both use registered practitioners. Telehealth tends to be faster to start and more flexible; in-person care adds a physical exam and whole-of-health context. Our telehealth vs GP guide covers the trade properly.",
+  },
+  {
     q: "Where should I start if I'm comparing weight loss options in Australia?",
-    a: "Start by working out which of the three pathways fits you: medical telehealth with practitioner oversight, a lifestyle and coaching program, or self-serve tools. They are different products at different price points. Our guide to online weight loss programs walks through the split, and the telehealth comparison covers the main providers.",
+    a: "Start by working out which of the three pathways fits you: medical telehealth with practitioner oversight, a lifestyle and coaching program, or your GP. They are different products at different price points. Our guide to online weight loss programs walks through the split, and the telehealth comparison covers the main providers.",
   },
   {
     q: "Are online weight loss services in Australia legitimate?",
@@ -35,11 +55,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn money from these pages?",
-    a: "Some links are disclosed affiliate links, and Moshy's referral link is one of them. Commissions never change a comparison or a conclusion, and every page that contains one says so. Our full standards are at how we research.",
-  },
-  {
-    q: "Is any of this medical advice?",
-    a: "No. Everything in this hub is general information about services and how they work. Suitability for any program or treatment is assessed individually by registered practitioners. Talk to a qualified health professional about your own circumstances.",
+    a: "Some links are disclosed affiliate links, and Moshy's referral link is one of them. Commissions never change a comparison or a conclusion, and every page that contains one says so. Everything here is general information, not medical advice, and our full standards are at how we research.",
   },
 ];
 
@@ -55,9 +71,9 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Weight Loss in Australia: Compare Your Options",
+  name: "Weight Loss Telehealth Australia: Compare Online Programs & Clinics",
   description:
-    "Refer Labs' weight loss hub for Australians. Compare medical telehealth, lifestyle programs and self-serve tools, with independent guides to the main providers.",
+    "Refer Labs' weight loss telehealth hub for Australians. Compare online weight loss programs, medical telehealth clinics, lifestyle coaching and the GP pathway, with independent guides to Moshy, Juniper and more.",
   url: `${SITE_URL}/weight-loss`,
   inLanguage: "en-AU",
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
@@ -98,11 +114,13 @@ export default function WeightLossHubPage() {
               Category hub · Australia
             </p>
             <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Weight loss in Australia: <span className="italic text-[#0a7c42]">the options, compared properly</span>
+              Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Telehealth services, coaching programs, apps and everything in between now compete for the same
-              decision. This hub sorts them into three honest pathways and gives you the research for each.
+              Online weight loss telehealth has changed how Australians start. Instead of waiting weeks for an
+              appointment, you complete an assessment online, a registered practitioner reviews it, and a plan follows
+              if you are suitable. This hub compares the online weight loss programs and clinics available in Australia
+              and sorts them into three honest pathways, with independent research for each.
             </p>
           </div>
           <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
@@ -183,6 +201,53 @@ export default function WeightLossHubPage() {
               Check eligibility on Moshy
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
+          </div>
+        </section>
+
+        {/* Editorial: how it works */}
+        <section className="mx-auto max-w-3xl px-5 pb-4 sm:px-8">
+          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            How online weight loss telehealth works in Australia
+          </h2>
+          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            <p>
+              A weight loss telehealth service is an online clinic. The assessment, the practitioner review and the
+              follow-ups all happen remotely, usually through a secure portal or app rather than a waiting room. For a
+              lot of Australians that is the appeal: you can start in your own time, and the friction of booking a
+              first appointment disappears. The care itself is still delivered by registered practitioners working
+              under Australian health regulations.
+            </p>
+            <p>
+              The typical path through an online weight loss program looks the same across the reputable providers. You
+              answer a detailed health questionnaire, a registered practitioner reviews your answers, and only if you
+              are considered suitable does a plan get discussed. Suitability is assessed individually, and some
+              applicants are declined. That screening step is the single most useful thing to look for. A service that
+              promises a specific medicine before anyone has looked at your history is the kind to walk away from.
+            </p>
+            <h3 className="pt-2 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+              Telehealth, coaching and your GP: the practical difference
+            </h3>
+            <p>
+              The three pathways above are genuinely different products. Medical telehealth is the most structured
+              clinical route and is usually priced as a subscription. Coaching and lifestyle programs put habits and
+              nutrition first, with practitioner support in the background, and suit people who want accountability more
+              than a clinical pathway. Your GP is the option nobody markets: in-person, whole-of-health context, part
+              of the cost offset by Medicare, but slower to get moving. None of these is automatically the right
+              answer. The right one is the one that fits how you actually want to be supported, and what you are
+              comfortable paying.
+            </p>
+            <h3 className="pt-2 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+              What to check before you sign up to any provider
+            </h3>
+            <p>
+              Whichever way you lean, a few checks separate a serious weight loss clinic online from a storefront.
+              Confirm that a registered Australian practitioner reviews your case and that some people are declined.
+              Read the cost model in full, including whether any medication is billed separately from the subscription.
+              Check what ongoing support and cancellation look like before you commit, not after. And treat any promise
+              of a guaranteed outcome as a red flag. Everything on this page is general information to help you compare
+              services. It is not medical advice, and suitability for any treatment is decided individually by a
+              qualified health professional.
+            </p>
           </div>
         </section>
 

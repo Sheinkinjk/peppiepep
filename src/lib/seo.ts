@@ -159,18 +159,18 @@ export const seoConfig = {
   },
 
   weightLossHub: {
-    title: "Weight Loss in Australia 2026: Compare Telehealth, Programs & Your Options | Refer Labs",
+    title: "Weight Loss Telehealth Australia 2026: Compare Online Programs & Clinics | Refer Labs",
     description:
-      "The weight loss decision, organised. Compare Australia's medical telehealth services, lifestyle programs and the GP pathway, with independent guides to Moshy, Juniper and more. Information only, not medical advice.",
+      "Compare online weight loss telehealth in Australia. How medical telehealth clinics, coaching programs and the GP pathway differ, plus independent guides to Moshy, Juniper and more. Information only, not medical advice.",
     url: `${SITE_URL}/weight-loss`,
     keywords: [
-      "weight loss australia",
-      "weight loss options australia",
-      "compare weight loss programs australia",
       "weight loss telehealth australia",
-      "weight loss services australia",
+      "online weight loss programs australia",
+      "weight loss clinic online australia",
       "online weight loss australia",
-      "weight loss comparison australia",
+      "weight loss australia",
+      "compare weight loss programs australia",
+      "weight loss services australia",
       "how to choose a weight loss program",
     ],
   },
@@ -1286,11 +1286,14 @@ export const seoConfig = {
   },
 
   referralBlueprint: {
-    title: "250+ Affiliate Programs Database — $799 | Refer Labs",
+    title: "Referral Growth Blueprint: Affiliate Program List & Strategy Australia | Refer Labs",
     description:
-      "250+ vetted affiliate programs in Excel + personalised strategy brief, SEO concepts, distribution playbooks, niche brief. $799 AUD, 48hr delivery.",
+      "Refer Labs' in-house referral marketing blueprint: a 250+ affiliate program list for Australia plus a personalised referral growth strategy written by Jarred. $799 AUD, delivered in 48 hours.",
     url: `${SITE_URL}/referral-blueprint`,
     keywords: [
+      "referral marketing blueprint",
+      "affiliate program list australia",
+      "referral growth strategy",
       "affiliate program database australia",
       "best affiliate programs australia 2026",
       "affiliate marketing blueprint australia",

@@ -41,7 +41,7 @@ const stats = [
 ];
 
 const popular = [
-  { href: "/moshy-review", label: "Moshy review: how the service actually works", cat: "Weight loss" },
+  { href: "/moshy-review", label: "Moshy, explained: how the service works", cat: "Weight loss" },
   { href: "/best-website-builder", label: "Best website builder in 2026, without the fluff", cat: "Software" },
   { href: "/moshy-vs-juniper", label: "Moshy vs Juniper: which is built for you?", cat: "Weight loss" },
   { href: "/best-newsletter-platform", label: "beehiiv vs Substack vs ConvertKit", cat: "Creator tools" },
