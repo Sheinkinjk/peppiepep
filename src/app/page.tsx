@@ -1,28 +1,26 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, PenLine, Eye, Heart, Scissors, Globe, Mail, TrendingUp, Check, Star } from "lucide-react";
+import { ArrowRight, ShieldCheck, PenLine, Eye, Heart, Scissors, Globe, Mail, TrendingUp, Check, Star, Stethoscope, FlaskConical } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import { SITE_URL } from "@/lib/seo";
 
+// Each category carries its own vivid gradient so the grid reads like a
+// premium, multi-colour icon system rather than a monochrome template.
 const categories = [
-  {
-    href: "/weight-loss",
-    icon: Heart,
-    title: "Weight loss & telehealth",
-    blurb: "Australia's online weight-loss services, sorted into honest pathways.",
-    count: "11 guides",
-  },
-  { href: "/hair-loss", icon: Scissors, title: "Hair loss treatment", blurb: "Clinical telehealth versus topical products, and when each fits.", count: "4 guides" },
-  { href: "/compare/website-builders", icon: Globe, title: "Website builders", blurb: "AI builders, one-page tools and landing-page specialists, tested.", count: "5 tools" },
-  { href: "/compare/newsletter-platforms", icon: Mail, title: "Newsletter platforms", blurb: "Where to build an email audience, and what each platform takes.", count: "3 tools" },
+  { href: "/weight-loss", icon: Heart, title: "Weight loss & telehealth", blurb: "Australia's online weight-loss services, sorted into honest pathways.", count: "11 guides", grad: "from-[#12b981] to-[#0a7c42]" },
+  { href: "/hair-loss", icon: Scissors, title: "Hair loss treatment", blurb: "Clinical telehealth versus topical products, and when each fits.", count: "4 guides", grad: "from-[#f6a821] to-[#e0770c]" },
+  { href: "/mens-health-telehealth-australia", icon: Stethoscope, title: "Men's health telehealth", blurb: "Online men's clinics for weight, hair and everyday health.", count: "3 guides", grad: "from-[#06b6d4] to-[#0e7490]" },
+  { href: "/best-peptide-supplier", icon: FlaskConical, title: "Research peptides", blurb: "Australian and global suppliers, compared on trust and quality.", count: "4 reviews", grad: "from-[#f43f5e] to-[#be123c]" },
+  { href: "/compare/website-builders", icon: Globe, title: "Website builders", blurb: "AI builders, one-page tools and landing-page specialists, tested.", count: "5 tools", grad: "from-[#6366f1] to-[#4338ca]" },
+  { href: "/compare/newsletter-platforms", icon: Mail, title: "Newsletter platforms", blurb: "Where to build an email audience, and what each platform takes.", count: "3 tools", grad: "from-[#a855f7] to-[#7c3aed]" },
 ];
 
 // A richer "top picks" strip so a real category reads as authoritative.
 const topPicks = [
-  { name: "Moshy", cat: "Weight loss", note: "Best for anyone who wants a clinical pathway done online.", href: "/moshy-review" },
-  { name: "beehiiv", cat: "Newsletters", note: "Best for creators serious about growing an audience.", href: "/best-newsletter-platform" },
-  { name: "Carrd", cat: "Website builders", note: "Best for a fast, genuinely cheap one-page site.", href: "/carrd-vs-durable" },
+  { name: "Moshy", cat: "Weight loss", note: "Best for anyone who wants a clinical pathway done online.", href: "/moshy-review", grad: "from-[#12b981] to-[#0a7c42]" },
+  { name: "beehiiv", cat: "Newsletters", note: "Best for creators serious about growing an audience.", href: "/best-newsletter-platform", grad: "from-[#a855f7] to-[#7c3aed]" },
+  { name: "Carrd", cat: "Website builders", note: "Best for a fast, genuinely cheap one-page site.", href: "/carrd-vs-durable", grad: "from-[#6366f1] to-[#4338ca]" },
 ];
 
 // Featured comparison — software only, so no numeric "rating" of a health service.
@@ -52,9 +50,9 @@ const popular = [
 ];
 
 const principles = [
-  { icon: ShieldCheck, title: "Rankings are never sold", body: "A brand cannot pay to rank higher, join a list, or soften a criticism. Commercial deals never touch the call." },
-  { icon: PenLine, title: "Researched by people", body: "Every guide is written and edited by someone who read the fine print, not generated to fill a page." },
-  { icon: Eye, title: "Disclosed on every page", body: "Where a link earns us a commission, the page says so plainly. That funding keeps the research free." },
+  { icon: ShieldCheck, title: "Rankings are never sold", body: "A brand cannot pay to rank higher, join a list, or soften a criticism. Commercial deals never touch the call.", grad: "from-[#12b981] to-[#0a7c42]" },
+  { icon: PenLine, title: "Researched by people", body: "Every guide is written and edited by someone who read the fine print, not generated to fill a page.", grad: "from-[#6366f1] to-[#4338ca]" },
+  { icon: Eye, title: "Disclosed on every page", body: "Where a link earns us a commission, the page says so plainly. That funding keeps the research free.", grad: "from-[#f6a821] to-[#e0770c]" },
 ];
 
 const itemListSchema = {
@@ -167,11 +165,11 @@ export default function HomePage() {
               All guides <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map(({ href, icon: Icon, title, blurb, count }) => (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map(({ href, icon: Icon, title, blurb, count, grad }) => (
               <Link key={href} href={href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8f5ee] text-[#0a7c42]">
-                  <Icon className="h-5 w-5" strokeWidth={1.9} />
+                <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${grad} text-white shadow-[0_10px_22px_-10px_rgba(16,37,27,0.55)] ring-1 ring-inset ring-white/20`}>
+                  <Icon className="h-6 w-6" strokeWidth={2} />
                 </span>
                 <h3 className="mt-4 text-[17px] font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-[#6e7b74]">{blurb}</p>
@@ -195,13 +193,16 @@ export default function HomePage() {
             <div className="grid gap-4 sm:grid-cols-3">
               {topPicks.map((p) => (
                 <Link key={p.href} href={p.href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="nw-kicker !text-[11px]">{p.cat}</span>
+                  <div className="flex items-start justify-between gap-2">
+                    <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${p.grad} text-[17px] font-black text-white shadow-[0_10px_22px_-10px_rgba(16,37,27,0.55)] ring-1 ring-inset ring-white/20`}>
+                      {p.name[0]}
+                    </span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f5ee] px-2.5 py-1 text-[11px] font-bold text-[#0a7c42]">
                       <Check className="h-3 w-3" strokeWidth={3} /> Our pick
                     </span>
                   </div>
-                  <h3 className="mt-4 text-xl font-extrabold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{p.name}</h3>
+                  <span className="nw-kicker mt-4 !text-[11px]">{p.cat}</span>
+                  <h3 className="mt-1 text-xl font-extrabold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{p.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-[#3d4b44]">{p.note}</p>
                   <span className="mt-5 flex items-center justify-between border-t border-[#eef1ef] pt-3.5">
                     <span className="text-sm font-semibold text-[#0a7c42]">Read why</span>
@@ -243,10 +244,10 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {principles.map(({ icon: Icon, title, body }) => (
+              {principles.map(({ icon: Icon, title, body, grad }) => (
                 <div key={title} className="nw-card rounded-2xl p-6">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#e8f5ee]">
-                    <Icon className="h-5 w-5 text-[#0a7c42]" strokeWidth={1.7} />
+                  <span className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br ${grad} text-white shadow-[0_10px_22px_-10px_rgba(16,37,27,0.55)] ring-1 ring-inset ring-white/20`}>
+                    <Icon className="h-5 w-5" strokeWidth={2} />
                   </span>
                   <h3 className="mt-4 text-[15px] font-bold text-[#10251b]">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#6e7b74]">{body}</p>
