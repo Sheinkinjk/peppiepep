@@ -62,7 +62,7 @@ export default function ForBusinessPage() {
           </nav>
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">For business</p>
-            <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Customers who have already <span className="italic text-[#0a7c42]">done the research</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
@@ -95,7 +95,7 @@ export default function ForBusinessPage() {
             {offers.map((o) => (
               <div key={o.title} className="flex flex-col rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)]">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">{o.tag}</p>
-                <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-2xl">
+                <h2 className="mt-3 text-xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-2xl">
                   {o.title}
                 </h2>
                 <p className="mt-2.5 flex-1 text-sm leading-relaxed text-[#3d4b44] sm:text-[15px]">{o.body}</p>

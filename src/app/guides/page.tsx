@@ -98,7 +98,7 @@ export default function GuidesPage() {
 
         <div className="max-w-2xl">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Independent comparisons</p>
-          <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
             Every guide, in one place
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
@@ -115,7 +115,7 @@ export default function GuidesPage() {
                 <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Category hub</span>
                 <ArrowRight className="h-4 w-4 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" />
               </div>
-              <h2 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b] group-hover:text-[#0a7c42]">{h.label}</h2>
+              <h2 className="mt-3 text-xl font-bold text-[#10251b] group-hover:text-[#0a7c42]">{h.label}</h2>
               <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{h.desc}</p>
             </Link>
           ))}
@@ -127,7 +127,7 @@ export default function GuidesPage() {
             <section key={section.label} className="border-t border-[#e5e9e7] py-12">
               <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
                 <div className="lg:pt-1">
-                  <h2 className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">{section.label}</h2>
+                  <h2 className="text-xl font-bold text-[#10251b]">{section.label}</h2>
                   <p className="mt-2 text-[13px] leading-relaxed text-[#9aa39c]">{section.description}</p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">

@@ -34,9 +34,6 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
           <div className="ml-auto hidden md:block">
             <SiteSearch variant="header" />
           </div>
-          <Link href="/for-business" className="nw-btn-ghost shrink-0 !py-2 !px-4 !text-[13px]">
-            For business
-          </Link>
         </div>
         {/* Below lg: category shortcut row (search only below md, since the header search covers md+) */}
         <div className="border-t border-[#eef1ef] px-5 py-2.5 lg:hidden">

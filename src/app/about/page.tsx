@@ -27,7 +27,7 @@ export default function AboutPage() {
         </nav>
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">About Refer Labs</p>
-        <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
           A better way to decide
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
@@ -37,7 +37,7 @@ export default function AboutPage() {
 
         <div className="mt-12 space-y-10">
           <section>
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
               Why we exist
             </h2>
             <p className="mt-3 text-[15.5px] leading-relaxed text-[#2b362f]">
@@ -50,7 +50,7 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
               How it works, in one line
             </h2>
             <p className="mt-3 text-[15.5px] leading-relaxed text-[#2b362f]">
@@ -62,7 +62,7 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
               Where we started, where we are going
             </h2>
             <p className="mt-3 text-[15.5px] leading-relaxed text-[#2b362f]">
@@ -75,7 +75,7 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
               Who runs it
             </h2>
             <p className="mt-3 text-[15.5px] leading-relaxed text-[#2b362f]">

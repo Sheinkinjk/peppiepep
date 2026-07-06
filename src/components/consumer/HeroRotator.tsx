@@ -114,7 +114,6 @@ export default function HeroRotator() {
           ))}
         </div>
       </div>
-      <p className="mt-3 px-1 text-center text-[11px] text-[#9aa39c]">A live look at the comparisons across every category below.</p>
     </div>
   );
 }

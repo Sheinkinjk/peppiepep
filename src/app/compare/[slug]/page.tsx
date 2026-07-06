@@ -32,12 +32,12 @@ function ProviderCard({ p }: { p: Provider }) {
   return (
     <div className={`flex flex-col rounded-2xl border bg-[#f5f8f6] p-6 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)] ${p.featured ? "border-[#0a7c42]/30" : "border-[#e5e9e7]"}`}>
       <div className="flex items-center justify-between gap-3">
-        <h3 className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">{p.name}</h3>
+        <h3 className="text-xl font-bold text-[#10251b]">{p.name}</h3>
         {p.featured && <span className="rounded-full bg-[#0a7c42]/10 px-2.5 py-1 text-[11px] font-bold text-[#0a7c42]">Top pick</span>}
       </div>
       <p className="mt-1 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#0a7c42]">{p.bestFor}</p>
       <p className="mt-2.5 flex-1 text-sm leading-relaxed text-[#3d4b44]">{p.blurb}</p>
-      <dl className="mt-4 divide-y divide-white/[0.08] text-sm">
+      <dl className="mt-4 divide-y divide-[#e5e9e7] text-sm">
         {p.facts.map((f) => (
           <div key={f.label} className="flex gap-3 py-2">
             <dt className="w-20 shrink-0 text-[#9aa39c]">{f.label}</dt>
@@ -116,7 +116,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
           </nav>
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">{v.eyebrow}</p>
-            <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               {v.h1Lead} <span className="italic text-[#0a7c42]">{v.h1Accent}</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">{v.intro}</p>
@@ -148,10 +148,10 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             Common questions
           </h2>
-          <div className="mt-6 max-w-3xl divide-y divide-white/[0.08] border-y border-[#e5e9e7]">
+          <div className="mt-6 max-w-3xl divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
             {v.faqs.map((f) => (
               <details key={f.q} className="group py-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">

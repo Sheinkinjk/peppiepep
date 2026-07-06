@@ -70,7 +70,7 @@ export default function HowWeResearchPage() {
         </nav>
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Editorial standards</p>
-        <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
           How we research
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
@@ -82,7 +82,7 @@ export default function HowWeResearchPage() {
           {principles.map((item, i) => (
             <section key={item.h} className="border-t border-[#e5e9e7] py-8">
               <div className="grid gap-4 sm:grid-cols-[2.5rem_1fr]">
-                <div className="font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#0a7c42]">
+                <div className="text-xl font-bold text-[#0a7c42]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>

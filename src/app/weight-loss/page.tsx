@@ -119,7 +119,7 @@ export default function WeightLossHubPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">
               Category hub · Australia
             </p>
-            <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
@@ -143,13 +143,13 @@ export default function WeightLossHubPage() {
 
         {/* Three pathways */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             Or explore the pathways yourself
           </h2>
           <div className="mt-7 grid gap-4 lg:grid-cols-3">
             <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Pathway one</p>
-              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Medical telehealth
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
@@ -164,7 +164,7 @@ export default function WeightLossHubPage() {
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9aa39c]">Pathway two</p>
-              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Lifestyle programs
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
@@ -180,7 +180,7 @@ export default function WeightLossHubPage() {
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9aa39c]">Pathway three</p>
-              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Your GP
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
@@ -212,7 +212,7 @@ export default function WeightLossHubPage() {
 
         {/* Editorial: how it works */}
         <section className="mx-auto max-w-3xl px-5 pb-4 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             How online weight loss telehealth works in Australia
           </h2>
           <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
@@ -230,7 +230,7 @@ export default function WeightLossHubPage() {
               applicants are declined. That screening step is the single most useful thing to look for. A service that
               promises a specific medicine before anyone has looked at your history is the kind to walk away from.
             </p>
-            <h3 className="pt-2 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+            <h3 className="pt-2 text-xl font-bold text-[#10251b]">
               Telehealth, coaching and your GP: the practical difference
             </h3>
             <p>
@@ -242,7 +242,7 @@ export default function WeightLossHubPage() {
               answer. The right one is the one that fits how you actually want to be supported, and what you are
               comfortable paying.
             </p>
-            <h3 className="pt-2 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+            <h3 className="pt-2 text-xl font-bold text-[#10251b]">
               What to check before you sign up to any provider
             </h3>
             <p>
@@ -260,7 +260,7 @@ export default function WeightLossHubPage() {
         {/* All guides */}
         <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
               Every guide in this hub
             </h2>
             <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -290,10 +290,10 @@ export default function WeightLossHubPage() {
 
         {/* FAQ */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-            Before you dive in
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            Common questions
           </h2>
-          <div className="mt-6 max-w-3xl divide-y divide-white/[0.08] border-y border-[#e5e9e7]">
+          <div className="mt-6 max-w-3xl divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">

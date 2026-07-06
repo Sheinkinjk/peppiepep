@@ -141,7 +141,7 @@ export default function HomePage() {
             <div className="mb-8 max-w-2xl">
               <p className="nw-kicker">Our current top picks</p>
               <h2 className="mt-2 text-2xl font-bold tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Editors&apos; choices across categories</h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#6e7b74]">A snapshot of what we&apos;d pick right now. Every choice is explained in full, including who it isn&apos;t for.</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-[#6e7b74]">What we&apos;d pick right now, and who each one actually suits.</p>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {topPicks.map((p) => (

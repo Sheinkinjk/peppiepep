@@ -81,7 +81,7 @@ export default function HairLossHubPage() {
           </nav>
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Category hub · Australia</p>
-            <h1 className="mt-4 font-[family-name:var(--font-fraunces)] text-4xl font-semibold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Hair loss in Australia: <span className="italic text-[#0a7c42]">the options, compared properly</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
@@ -97,13 +97,13 @@ export default function HairLossHubPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             First, which route are you on?
           </h2>
           <div className="mt-7 grid gap-4 lg:grid-cols-2">
             <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Clinical</p>
-              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Telehealth &amp; prescription
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
@@ -118,7 +118,7 @@ export default function HairLossHubPage() {
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9aa39c]">Cosmetic</p>
-              <h3 className="mt-3 font-[family-name:var(--font-fraunces)] text-xl font-semibold text-[#10251b]">
+              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Topical products
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
@@ -149,7 +149,7 @@ export default function HairLossHubPage() {
 
         <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
               Every guide in this hub
             </h2>
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -168,10 +168,10 @@ export default function HairLossHubPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl font-semibold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             Before you dive in
           </h2>
-          <div className="mt-6 max-w-3xl divide-y divide-white/[0.08] border-y border-[#e5e9e7]">
+          <div className="mt-6 max-w-3xl divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
