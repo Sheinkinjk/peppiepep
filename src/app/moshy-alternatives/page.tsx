@@ -50,6 +50,8 @@ const faqSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  datePublished: "2026-07-05",
+  dateModified: "2026-07-06",
   name: seoConfig.moshyAlternatives.title,
   description: seoConfig.moshyAlternatives.description,
   url: seoConfig.moshyAlternatives.url,

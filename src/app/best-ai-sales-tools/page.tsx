@@ -84,6 +84,8 @@ const faqSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  datePublished: "2026-07-05",
+  dateModified: "2026-07-06",
   name: seoConfig.bestAiSalesTools.title,
   description: seoConfig.bestAiSalesTools.description,
   url: `${SITE_URL}/best-ai-sales-tools`,
