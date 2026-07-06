@@ -33,6 +33,20 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        // Canonicalise www -> non-www (both were serving 200, splitting SEO signals).
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.referlabs.com.au' }],
+        destination: 'https://referlabs.com.au/:path*',
+        permanent: true,
+      },
+      {
+        // Consolidate the legacy affiliate blog post onto the strategic hub page
+        // (both ranked for the same intent; the hub is the canonical asset).
+        source: '/blog/best-affiliate-programs-australia-2026',
+        destination: '/affiliate-programs-australia',
+        permanent: true,
+      },
+      {
         // Consolidate the duplicate $799 Blueprint funnel onto the canonical page.
         source: '/referral-business-program',
         destination: '/referral-blueprint',

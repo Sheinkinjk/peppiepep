@@ -642,7 +642,7 @@ export const seoConfig = {
   },
 
   incomeLab: {
-    title: "AI Side Hustle Ideas 2026 | How to Make Money With AI | Refer Labs",
+    title: "How to Make Money With AI in 2026: Real Side Hustles That Work",
     description:
       "Looking for the best AI side hustle ideas in 2026, AI passive income strategies, or what Reddit says about making money with AI? This page covers AI tools, business ideas, and automated income models — and takes you directly to Income Lab.",
     url: `${SITE_URL}/incomelab`,
@@ -880,7 +880,7 @@ export const seoConfig = {
   bestWeightLossTelehealth: {
     title: "Best Weight Loss Telehealth Australia 2026: Moshy vs Juniper vs Better Being | Refer Labs",
     description:
-      "Compare the best weight loss telehealth platforms in Australia 2026 — Moshy, Juniper, and Better Being. GLP-1 access, eligibility process, pricing, and Reddit verdict. Find the right online weight management program for you.",
+      "The best weight loss telehealth in Australia for 2026, compared: Moshy, Juniper and Better Being. How eligibility works, what each program costs, and how to pick the right online option for you.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1352,9 +1352,9 @@ export const seoConfig = {
   },
 
   bestNewsletterPlatform: {
-    title: "Best Newsletter Platform 2026: beehiiv vs Substack",
+    title: "beehiiv vs Substack vs ConvertKit 2026: Best Newsletter Platform",
     description:
-      "Best newsletter platforms 2026 — beehiiv vs Substack vs ConvertKit. Free plans, monetisation, growth tools, and Reddit verdict for each.",
+      "beehiiv vs Substack vs ConvertKit (Kit) for 2026: free plans, monetisation, growth tools and pricing compared side by side, plus a clear pick for creators, writers and businesses.",
     url: `${SITE_URL}/best-newsletter-platform`,
     keywords: [
       "best newsletter platform 2026",
@@ -1473,7 +1473,7 @@ export const seoConfig = {
   bestHairLossTreatmentAustralia: {
     title: "Best Hair Loss Treatment Australia 2026: Mosh vs Dense vs Telehealth Options | Refer Labs",
     description:
-      "Compare the best hair loss treatments in Australia 2026 — Mosh, Dense Hair Experts, and telehealth options. Clinical vs topical approaches, pricing, and what Reddit says about Australian hair loss solutions.",
+      "The best hair loss treatments in Australia for 2026, compared: Mosh, Dense Hair Experts and online telehealth. Finasteride and minoxidil vs topical options, real pricing, and how to actually start.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",
