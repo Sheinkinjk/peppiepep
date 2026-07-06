@@ -594,6 +594,9 @@ export default function BestWebsiteBuilderPage() {
               <Link href="/durable-vs-butternut" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
                 Durable AI vs Butternut AI
               </Link>
+              <Link href="/carrd-vs-butternut" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
+                Carrd vs Butternut AI
+              </Link>
             </div>
           </section>
 

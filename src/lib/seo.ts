@@ -176,7 +176,7 @@ export const seoConfig = {
   },
 
   forBusiness: {
-    title: "For Business — Partner With Refer Labs",
+    title: "For Business: Partner With Refer Labs",
     description:
       "Get your product featured in Refer Labs comparisons, or work with our team on referral programs, affiliate distribution and Australian market entry. Partnerships disclosed, rankings never sold.",
     url: `${SITE_URL}/for-business`,
@@ -204,7 +204,7 @@ export const seoConfig = {
   },
 
   howItWorks: {
-    title: "How It Works — Refer Labs Growth & Distribution Engine",
+    title: "How It Works: Refer Labs Growth & Distribution Engine",
     description:
       "See how Refer Labs builds and activates your growth engine — referral programs, affiliate distribution, influencer channels, APAC expansion, and digital products end to end.",
     url: `${SITE_URL}/how-it-works`,
@@ -218,7 +218,7 @@ export const seoConfig = {
   },
 
   services: {
-    title: "Services — Five Growth Engines | Refer Labs",
+    title: "Services: Five Growth Engines | Refer Labs",
     description:
       "Five growth engines: Referral Program Launch, Elite Affiliate Distribution, Influencer & Network Activation, APAC Market Expansion, and Product Creation & Distribution.",
     url: `${SITE_URL}/services`,
@@ -233,7 +233,7 @@ export const seoConfig = {
   },
 
   whoItsFor: {
-    title: "Who It's For — B2B & B2C Businesses Ready to Scale | Refer Labs",
+    title: "Who It's For: B2B & B2C Businesses Ready to Scale | Refer Labs",
     description:
       "Refer Labs works with SMBs, eCommerce brands, SaaS companies, and global operators who want to build referral programs, activate distribution channels, and scale through structured growth.",
     url: `${SITE_URL}/who-its-for`,
@@ -247,7 +247,7 @@ export const seoConfig = {
   },
 
   caseStudies: {
-    title: "Playbooks — Growth & Distribution Examples | Refer Labs",
+    title: "Playbooks: Growth & Distribution Examples | Refer Labs",
     description:
       "Example playbooks showing how we launch referral programs, activate affiliate and influencer channels, distribute digital products, and expand into APAC.",
     url: `${SITE_URL}/case-studies`,
@@ -260,7 +260,7 @@ export const seoConfig = {
   },
 
   about: {
-    title: "About Refer Labs — Australia's Independent Comparison Platform",
+    title: "About Refer Labs: Australia's Independent Comparison Platform",
     description:
       "Refer Labs helps Australians choose between health services, software and tools through independent, disclosed comparisons, and helps businesses reach qualified buyers. Rankings are never sold.",
     url: `${SITE_URL}/about`,
@@ -288,7 +288,7 @@ export const seoConfig = {
   },
 
   contact: {
-    title: "Contact Refer Labs — Partner With Us",
+    title: "Contact Refer Labs: Partner With Us",
     description:
       "Get in touch with Refer Labs. Book a call to discuss referral programs, affiliate distribution, influencer activation, APAC expansion, or product distribution.",
     url: `${SITE_URL}/contact`,
@@ -301,7 +301,7 @@ export const seoConfig = {
   },
 
   faq: {
-    title: "FAQ — Refer Labs Growth & Distribution Services",
+    title: "FAQ: Refer Labs Growth & Distribution Services",
     description:
       "Find answers to common questions about our referral programs, affiliate distribution, influencer activation, APAC expansion, and product distribution services.",
     url: `${SITE_URL}/faq`,
@@ -414,7 +414,7 @@ export const seoConfig = {
   },
 
   influencerActivation: {
-    title: "Partner Activation — Consultants & Strategic Partners | Refer Labs",
+    title: "Partner Activation: Consultants & Strategic Partners | Refer Labs",
     description:
       "We find and activate consultants, strategic advisors, and relevant creators as ongoing distribution channels. Commercial terms, tracked performance, compounding reach.",
     url: `${SITE_URL}/services/partner-activation`,
@@ -422,7 +422,7 @@ export const seoConfig = {
   },
 
   partnerActivation: {
-    title: "Partner Activation — Consultants & Strategic Partners | Refer Labs",
+    title: "Partner Activation: Consultants & Strategic Partners | Refer Labs",
     description:
       "We find and activate consultants, advisors, operators, and relevant creators as ongoing distribution channels. Structured commercial terms, attribution tracking, and compounding partner reach.",
     url: `${SITE_URL}/services/partner-activation`,
@@ -430,7 +430,7 @@ export const seoConfig = {
   },
 
   apacExpansion: {
-    title: "Australia Market Entry Partner — Refer Labs",
+    title: "Australia Market Entry Partner: Refer Labs",
     description:
       "We partner with businesses to run and grow Australian operations. Local distribution networks, partner relationships, embedded commercial capability.",
     url: `${SITE_URL}/services/apac-expansion`,
@@ -467,7 +467,7 @@ export const seoConfig = {
   },
 
   bestWebsiteBuilder: {
-    title: "Best Website Builder 2026 — AI, Free & Fast Compared",
+    title: "Best Website Builder 2026: AI, Free & Fast Compared",
     description:
       "Best website builders 2026 — Carrd (free), Durable AI (30s build), Butternut, Swipe Pages. Honest reviews, pricing, free trials, Reddit verdict.",
     url: `${SITE_URL}/best-website-builder`,
@@ -555,7 +555,7 @@ export const seoConfig = {
   },
 
   carrd: {
-    title: "Carrd Review 2026 — Free Website Builder | Refer Labs",
+    title: "Carrd Review 2026: Free Website Builder | Refer Labs",
     description:
       "Carrd review 2026 — free plan forever, Pro from $9/year. The simplest one-page website builder for portfolios, link-in-bio, and landing pages.",
     url: `${SITE_URL}/carrd`,
@@ -613,7 +613,7 @@ export const seoConfig = {
   },
 
   beehiiv: {
-    title: "beehiiv Review 2026 — vs Substack | Refer Labs",
+    title: "beehiiv Review 2026: vs Substack | Refer Labs",
     description:
       "beehiiv review 2026 — newsletter platform free up to 2,500 subscribers. Built-in ad network, referral program, paid subscriptions. Compare vs Substack.",
     url: `${SITE_URL}/beehiiv`,
@@ -1248,6 +1248,69 @@ export const seoConfig = {
     ],
   },
 
+  carrdVsButternut: {
+    title: "Carrd vs Butternut AI 2026: Simple Builder or AI Site Generator? | Refer Labs",
+    description:
+      "Carrd vs Butternut AI compared for 2026. Carrd is a simple one-page website builder with a free plan and Pro from $9/year; Butternut AI generates a full multi-page site from one prompt in about 20 seconds. Free tiers, what you get, pricing, and which to pick.",
+    url: `${SITE_URL}/carrd-vs-butternut`,
+    keywords: [
+      "carrd vs butternut",
+      "carrd vs butternut ai",
+      "carrd vs butternut 2026",
+      "butternut vs carrd",
+      "butternut ai vs carrd",
+      "one page website builder vs ai website builder",
+      "carrd review",
+      "butternut ai review",
+      "carrd alternative",
+      "butternut ai alternative",
+      "cheapest website builder 2026",
+      "best ai website builder 2026",
+    ],
+  },
+
+  apolloVsBioPeptiTech: {
+    title: "Apollo Peptides vs BioPeptiTech (2026): Research Supplier Comparison | Refer Labs",
+    description:
+      "Apollo Peptides vs BioPeptiTech compared for 2026 on the supplier dimensions that matter: catalogue range, third-party testing and COA documentation, sale frequency, and community trust. Products are for laboratory research use only and not for human consumption. Information only.",
+    url: `${SITE_URL}/apollo-vs-biopeptitech`,
+    keywords: [
+      "apollo vs biopeptitech",
+      "apollo peptides vs biopeptitech",
+      "biopeptitech vs apollo peptides",
+      "apollo peptide sciences vs biopeptitech",
+      "research peptide supplier comparison",
+      "best research peptide supplier",
+      "apollo peptides review",
+      "biopeptitech review",
+      "peptide supplier comparison 2026",
+      "research peptides australia",
+      "compare peptide suppliers",
+      "cheapest research peptide supplier",
+    ],
+  },
+
+  ascensionVsBioPeptiTech: {
+    title: "Ascension Peptides vs BioPeptiTech (2026): Research Supplier Comparison | Refer Labs",
+    description:
+      "Ascension Peptides vs BioPeptiTech compared for 2026 on the supplier dimensions that matter: purity and COA documentation, catalogue range, sale frequency, and community trust. Products are for laboratory research use only and not for human consumption. Information only.",
+    url: `${SITE_URL}/ascension-vs-biopeptitech`,
+    keywords: [
+      "ascension vs biopeptitech",
+      "ascension peptides vs biopeptitech",
+      "biopeptitech vs ascension peptides",
+      "research peptide supplier comparison",
+      "best research peptide supplier",
+      "ascension peptides review",
+      "biopeptitech review",
+      "peptide supplier comparison 2026",
+      "research peptides australia",
+      "compare peptide suppliers",
+      "high purity research peptides",
+      "cheapest research peptide supplier",
+    ],
+  },
+
   moshVsDense: {
     title: "Mosh vs Dense: Hair Loss Treatment Compared (2026) | Refer Labs",
     description:
@@ -1289,7 +1352,7 @@ export const seoConfig = {
   },
 
   bestNewsletterPlatform: {
-    title: "Best Newsletter Platform 2026 — beehiiv vs Substack",
+    title: "Best Newsletter Platform 2026: beehiiv vs Substack",
     description:
       "Best newsletter platforms 2026 — beehiiv vs Substack vs ConvertKit. Free plans, monetisation, growth tools, and Reddit verdict for each.",
     url: `${SITE_URL}/best-newsletter-platform`,

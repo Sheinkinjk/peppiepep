@@ -91,6 +91,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/apollo-vs-ascension`,                   lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/apollo-vs-biopeptitech`,                lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/ascension-vs-biopeptitech`,             lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-dense`,                         lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/comparison-website`,                    lastModified: RECENT, changeFrequency: 'monthly', priority: 0.7 },
 
