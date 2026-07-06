@@ -9,6 +9,14 @@ Disallow: /dashboard-test/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /login
+# Internal / utility pages (dev checklists, tools, redirects - no public SEO value)
+Disallow: /go-live
+Disallow: /status
+Disallow: /analytics
+Disallow: /application
+Disallow: /calendly
+Disallow: /leave-a-review
+Disallow: /roi-calculator
 # Customer portal — token-gated, no public SEO value
 Disallow: /blueprint-access
 # Post-purchase success page
