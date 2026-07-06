@@ -89,6 +89,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/moshy-vs-pilot`,                        lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/cheapest-weight-loss-telehealth-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
+    { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/apollo-vs-ascension`,                   lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/mosh-vs-dense`,                         lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/comparison-website`,                    lastModified: RECENT, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Affiliate programs cluster (hub + 3 spokes) ────────────────────

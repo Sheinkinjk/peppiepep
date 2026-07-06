@@ -1206,6 +1206,69 @@ export const seoConfig = {
     ],
   },
 
+  durableVsButternut: {
+    title: "Durable AI vs Butternut AI (2026): Which AI Website Builder Wins? | Refer Labs",
+    description:
+      "Durable AI vs Butternut AI compared for 2026. Durable generates a business site in 30 seconds with a built-in CRM and invoicing; Butternut builds a full multi-page site from one prompt in about 20 seconds. Setup speed, free tiers, what you get, pricing, and which to pick.",
+    url: `${SITE_URL}/durable-vs-butternut`,
+    keywords: [
+      "durable vs butternut",
+      "durable ai vs butternut ai",
+      "durable vs butternut 2026",
+      "butternut vs durable",
+      "butternut ai vs durable ai",
+      "best ai website builder 2026",
+      "durable ai review",
+      "butternut ai review",
+      "ai website builder comparison",
+      "durable ai alternative",
+      "butternut ai alternative",
+      "ai website generator comparison",
+    ],
+  },
+
+  apolloVsAscension: {
+    title: "Apollo Peptides vs Ascension Peptides (2026): Research Supplier Comparison | Refer Labs",
+    description:
+      "Apollo Peptides vs Ascension Peptides compared for 2026 on the supplier dimensions that matter: catalogue range, third-party testing and COA documentation, shipping, and community trust. Products are for laboratory research use only and not for human consumption. Information only.",
+    url: `${SITE_URL}/apollo-vs-ascension`,
+    keywords: [
+      "apollo vs ascension",
+      "apollo peptides vs ascension peptides",
+      "apollo vs ascension peptides",
+      "ascension vs apollo peptides",
+      "apollo peptide sciences vs ascension peptides",
+      "research peptide supplier comparison",
+      "best research peptide supplier",
+      "apollo peptides review",
+      "ascension peptides review",
+      "peptide supplier comparison 2026",
+      "research peptides australia",
+      "compare peptide suppliers",
+    ],
+  },
+
+  moshVsDense: {
+    title: "Mosh vs Dense: Hair Loss Treatment Compared (2026) | Refer Labs",
+    description:
+      "Mosh vs Dense compared for 2026. Mosh is Australian prescription telehealth that can prescribe finasteride and minoxidil after a practitioner review; Dense is a non-prescription topical hair-care range. They serve different needs, clinical versus topical. Information only, not medical advice.",
+    url: `${SITE_URL}/mosh-vs-dense`,
+    keywords: [
+      "mosh vs dense",
+      "mosh vs dense hair",
+      "mosh vs dense 2026",
+      "dense vs mosh",
+      "mosh hair vs dense hair experts",
+      "hair loss treatment australia comparison",
+      "prescription vs topical hair loss treatment",
+      "mosh hair review",
+      "dense hair experts review",
+      "best hair loss treatment australia",
+      "finasteride telehealth australia",
+      "topical hair loss products australia",
+    ],
+  },
+
   comparisonWebsite: {
     title: "Australia's Curated Health & Performance Comparison Platform | Refer Labs",
     description:

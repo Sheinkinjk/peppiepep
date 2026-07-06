@@ -591,6 +591,9 @@ export default function BestWebsiteBuilderPage() {
               <Link href="/swipepages" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
                 Full Swipe Pages review
               </Link>
+              <Link href="/durable-vs-butternut" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
+                Durable AI vs Butternut AI
+              </Link>
             </div>
           </section>
 

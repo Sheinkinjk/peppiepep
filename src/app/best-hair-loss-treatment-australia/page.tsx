@@ -480,6 +480,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9aa39c] mb-5">Related Guides</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
+                { href: "/mosh-vs-dense", label: "Mosh vs Dense: Hair Loss Compared" },
                 { href: "/moshhair", label: "Mosh Hair Discount Code & Review" },
                 { href: "/dense", label: "Dense Hair Experts Offer" },
                 { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth Australia" },

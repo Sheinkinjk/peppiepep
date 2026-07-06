@@ -586,6 +586,9 @@ export default function BestPeptideSupplierPage() {
               <Link href="/biopeptitech" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
                 BioPeptiTech review
               </Link>
+              <Link href="/apollo-vs-ascension" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
+                Apollo vs Ascension Peptides
+              </Link>
             </div>
           </section>
 
