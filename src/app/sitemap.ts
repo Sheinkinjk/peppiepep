@@ -45,7 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/affiliate-distribution`, lastModified: STABLE, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/services/referral-programs`,      lastModified: STABLE, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/services/apac-expansion`,         lastModified: STABLE, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/services/influencer-activation`,  lastModified: STABLE, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/services/partner-activation`,     lastModified: STABLE, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/services/product-distribution`,   lastModified: STABLE, changeFrequency: 'monthly', priority: 0.68 },
 
