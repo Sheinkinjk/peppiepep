@@ -122,7 +122,7 @@ export default function HighPayingAffiliateProgramsPage() {
             <span>/</span>
             <span className="text-[#2b362f]">Highest paying</span>
           </nav>
-          <p className="nw-kicker">Guide · Updated June 2026</p>
+          <p className="nw-kicker">Guide</p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
             Highest paying affiliate programs <span className="italic text-[#0a7c42]">2026</span>
           </h1>

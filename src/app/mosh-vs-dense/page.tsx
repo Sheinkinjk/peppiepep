@@ -133,7 +133,7 @@ export default function MoshVsDensePage() {
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="nw-kicker mb-5">Comparison · Hair loss · Australia · Updated July 2026</p>
+            <p className="nw-kicker mb-5">Comparison · Hair loss · Australia</p>
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Mosh vs Dense: hair loss treatment compared (2026)
             </h1>

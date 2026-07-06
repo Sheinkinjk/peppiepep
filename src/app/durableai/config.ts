@@ -18,7 +18,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Durable AI",
   },
 
-  eyebrow: "AI website builder · 2026",
+  eyebrow: "AI website builder",
   rating: "4.5",
   readTime: "5 min read",
   atAGlance: [

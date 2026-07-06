@@ -18,7 +18,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to beehiiv",
   },
 
-  eyebrow: "Newsletter platform · 2026",
+  eyebrow: "Newsletter platform",
   rating: "4.8",
   readTime: "5 min read",
   atAGlance: [

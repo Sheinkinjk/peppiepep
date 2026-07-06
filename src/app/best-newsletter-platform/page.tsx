@@ -237,7 +237,7 @@ export default function BestNewsletterPlatformPage() {
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
-          <p className="nw-kicker mb-4">Comparison Guide 2026</p>
+          <p className="nw-kicker mb-4">Comparison guide</p>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
             Best Newsletter Platform 2026:{" "}
             <span style={{ color: CYAN_LT }}>beehiiv vs Substack vs ConvertKit</span>

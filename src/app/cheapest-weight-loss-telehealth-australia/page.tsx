@@ -146,7 +146,7 @@ export default function CheapestWeightLossTelehealthPage() {
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="nw-kicker mb-5">Price comparison · Australia · Updated July 2026</p>
+            <p className="nw-kicker mb-5">Price comparison · Australia</p>
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>

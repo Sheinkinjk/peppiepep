@@ -514,7 +514,7 @@ export default function ReferralBlueprintPage() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: CYAN, background: `${CYAN}12`, border: `1px solid ${CYAN}25` }}>
                 <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: CYAN }} />
-                By Refer Labs · Australia 2026
+                By Refer Labs · Australia
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-[58px] font-black tracking-tight leading-[0.96] mb-6 text-white">

@@ -18,7 +18,7 @@ export const carrdConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Carrd",
   },
 
-  eyebrow: "Website builder · 2026",
+  eyebrow: "Website builder",
   rating: "4.7",
   readTime: "5 min read",
   atAGlance: [

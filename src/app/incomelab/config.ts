@@ -17,7 +17,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Income Lab",
   },
 
-  eyebrow: "AI income · 2026",
+  eyebrow: "AI income",
   rating: "4.5",
   readTime: "5 min read",
   atAGlance: [

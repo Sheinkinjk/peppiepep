@@ -207,7 +207,7 @@ export default function BestAiSalesToolsPage() {
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
-          <p className="nw-kicker mb-4">AI Sales & Automation · 2026</p>
+          <p className="nw-kicker mb-4">AI Sales & Automation</p>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
             Best AI Sales Tools in 2026:{" "}
             <span style={{ color: CYAN_LT }}>GoHighLevel vs AiSDR</span>

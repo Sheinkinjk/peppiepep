@@ -17,7 +17,7 @@ export const butternutConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Butternut AI",
   },
 
-  eyebrow: "AI website builder · 2026",
+  eyebrow: "AI website builder",
   rating: "4.4",
   readTime: "5 min read",
   atAGlance: [

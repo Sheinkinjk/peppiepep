@@ -18,7 +18,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to AiSDR",
   },
 
-  eyebrow: "AI sales & automation · 2026",
+  eyebrow: "AI sales & automation",
   readTime: "7 min read",
   atAGlance: [
     { k: "What it is", v: "AI sales development rep for B2B outbound" },

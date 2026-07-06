@@ -5,7 +5,7 @@ export { MOSHY_URL };
 
 export const moshyConfig: AffiliatePageConfig = {
   brand: "Moshy",
-  badgeText: "Australia 2026",
+  badgeText: "Australia",
   affiliateUrl: MOSHY_URL,
 
   quickAnswer:

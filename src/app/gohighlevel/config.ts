@@ -18,7 +18,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to GoHighLevel",
   },
 
-  eyebrow: "AI sales & automation · 2026",
+  eyebrow: "AI sales & automation",
   readTime: "7 min read",
   atAGlance: [
     { k: "What it is", v: "All-in-one CRM, marketing and sales platform" },

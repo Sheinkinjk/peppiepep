@@ -79,7 +79,7 @@ export default function MoshyVsJuniperPage() {
         </nav>
 
         {/* Hero */}
-        <p className="text-[#9aa39c] text-xs mb-5">Updated June 2026 · Australia · Not medical advice</p>
+        <p className="text-[#9aa39c] text-xs mb-5">Australia · Not medical advice</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>

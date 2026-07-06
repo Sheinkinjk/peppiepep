@@ -18,7 +18,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Swipe Pages",
   },
 
-  eyebrow: "Landing page builder · 2026",
+  eyebrow: "Landing page builder",
   rating: "4.5",
   readTime: "5 min read",
   atAGlance: [

@@ -122,7 +122,7 @@ export default function RecurringAffiliateProgramsPage() {
             <span>/</span>
             <span className="text-[#2b362f]">Recurring commission</span>
           </nav>
-          <p className="nw-kicker">Guide · Updated June 2026</p>
+          <p className="nw-kicker">Guide</p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
             Best recurring commission <span className="italic text-[#0a7c42]">affiliate programs</span>
           </h1>

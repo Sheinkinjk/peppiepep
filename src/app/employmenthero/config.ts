@@ -18,7 +18,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Employment Hero",
   },
 
-  eyebrow: "HR & payroll · Australia · 2026",
+  eyebrow: "HR & payroll · Australia",
   readTime: "7 min read",
   atAGlance: [
     { k: "What it is", v: "All-in-one HR, payroll and employment platform" },

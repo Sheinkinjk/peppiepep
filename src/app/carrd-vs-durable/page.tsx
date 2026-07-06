@@ -69,7 +69,7 @@ export default function CarrdVsDurablePage() {
           <span className="text-[#2b362f]">Carrd vs Durable AI</span>
         </nav>
 
-        <p className="text-[#9aa39c] text-xs mb-5">Updated June 2026</p>
+        <p className="text-[#9aa39c] text-xs mb-5">Comparison · Website builders</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Carrd vs Durable AI:{" "}
           <span style={{ color: CYAN_LT }}>cheap-and-simple vs AI-built business site</span>
