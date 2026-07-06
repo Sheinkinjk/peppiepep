@@ -1,49 +1,41 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, PenLine, Eye, Heart, Scissors, Globe, Mail, TrendingUp, Check, Stethoscope, FlaskConical } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
-import HeroRotator from "@/components/consumer/HeroRotator";
 import { SITE_URL } from "@/lib/seo";
 
-// Each category carries its own vivid gradient so the grid reads like a
-// premium, multi-colour icon system rather than a monochrome template.
+// Editors' picks lead with the real brand logo — the single biggest thing that
+// makes a comparison site read as a real publication rather than a template.
+const picks = [
+  { logo: "moshy", name: "Moshy", cat: "Weight loss", verdict: "Best-value weight-loss telehealth: a clinically-led program from around $249/month with no lock-in.", href: "/moshy-review" },
+  { logo: "beehiiv", name: "beehiiv", cat: "Newsletters", verdict: "Built for creators serious about growth, with a genuinely useful free plan and no revenue cut.", href: "/best-newsletter-platform" },
+  { logo: "carrd", name: "Carrd", cat: "Website builders", verdict: "The simplest, cheapest way to put a sharp one-page site online, free to start.", href: "/carrd-vs-durable" },
+];
+
 const categories = [
-  { href: "/weight-loss", icon: Heart, title: "Weight loss & telehealth", blurb: "Australia's online weight-loss services, sorted into honest pathways.", count: "11 guides", grad: "from-[#12b981] to-[#0a7c42]" },
-  { href: "/hair-loss", icon: Scissors, title: "Hair loss treatment", blurb: "Clinical telehealth versus topical products, and when each fits.", count: "4 guides", grad: "from-[#f6a821] to-[#e0770c]" },
-  { href: "/mens-health-telehealth-australia", icon: Stethoscope, title: "Men's health telehealth", blurb: "Online men's clinics for weight, hair and everyday health.", count: "3 guides", grad: "from-[#06b6d4] to-[#0e7490]" },
-  { href: "/best-peptide-supplier", icon: FlaskConical, title: "Research peptides", blurb: "Australian and global suppliers, compared on trust and quality.", count: "4 reviews", grad: "from-[#f43f5e] to-[#be123c]" },
-  { href: "/compare/website-builders", icon: Globe, title: "Website builders", blurb: "AI builders, one-page tools and landing-page specialists, tested.", count: "5 tools", grad: "from-[#6366f1] to-[#4338ca]" },
-  { href: "/compare/newsletter-platforms", icon: Mail, title: "Newsletter platforms", blurb: "Where to build an email audience, and what each platform takes.", count: "3 tools", grad: "from-[#a855f7] to-[#7c3aed]" },
+  { href: "/weight-loss", title: "Weight loss & telehealth", desc: "Online weight-management, sorted into honest pathways.", brands: "Moshy · Juniper · Pilot", count: "11 guides" },
+  { href: "/hair-loss", title: "Hair loss treatment", desc: "Clinical telehealth versus topical products, compared.", brands: "Mosh · Dense", count: "4 guides" },
+  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "Online clinics for weight, hair and everyday health.", brands: "Mosh · Moshy", count: "3 guides" },
+  { href: "/best-peptide-supplier", title: "Research peptides", desc: "Australian and global suppliers, on trust and quality.", brands: "Apollo · Ascension", count: "4 reviews" },
+  { href: "/compare/website-builders", title: "Website builders", desc: "AI builders, one-page tools and landing specialists.", brands: "Carrd · Durable · Swipe Pages", count: "5 tools" },
+  { href: "/compare/newsletter-platforms", title: "Newsletter platforms", desc: "Where to build an email audience, and the fine print.", brands: "beehiiv · Substack · Kit", count: "3 tools" },
 ];
 
-// A richer "top picks" strip so a real category reads as authoritative.
-const topPicks = [
-  { name: "Moshy", cat: "Weight loss", note: "Best for anyone who wants a clinical pathway done online.", href: "/moshy-review", grad: "from-[#12b981] to-[#0a7c42]" },
-  { name: "beehiiv", cat: "Newsletters", note: "Best for creators serious about growing an audience.", href: "/best-newsletter-platform", grad: "from-[#a855f7] to-[#7c3aed]" },
-  { name: "Carrd", cat: "Website builders", note: "Best for a fast, genuinely cheap one-page site.", href: "/carrd-vs-durable", grad: "from-[#6366f1] to-[#4338ca]" },
-];
-
-const stats = [
-  { n: "20+", l: "services reviewed" },
-  { n: "6", l: "categories" },
-  { n: "Monthly", l: "re-checked for changes" },
-  { n: "0", l: "rankings ever sold" },
-];
-
-const popular = [
-  { href: "/moshy-review", label: "Moshy, explained: how the service works", cat: "Weight loss" },
-  { href: "/best-website-builder", label: "Best website builder in 2026, without the fluff", cat: "Software" },
-  { href: "/moshy-vs-juniper", label: "Moshy vs Juniper: which is built for you?", cat: "Weight loss" },
-  { href: "/best-newsletter-platform", label: "beehiiv vs Substack vs ConvertKit", cat: "Creator tools" },
-  { href: "/moshy-vs-gp", label: "Telehealth or your GP? A practical comparison", cat: "Weight loss" },
-  { href: "/carrd-vs-durable", label: "Carrd vs Durable AI: cheap or AI-built", cat: "Software" },
+const guides = [
+  { href: "/moshy-vs-juniper", cat: "Weight loss", title: "Moshy vs Juniper: which is built for you?" },
+  { href: "/cheapest-weight-loss-telehealth-australia", cat: "Weight loss", title: "The cheapest weight-loss telehealth in Australia" },
+  { href: "/best-website-builder", cat: "Software", title: "The best website builder in 2026, without the fluff" },
+  { href: "/best-newsletter-platform", cat: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly" },
+  { href: "/moshy-vs-gp", cat: "Weight loss", title: "Telehealth or your GP? A practical comparison" },
+  { href: "/best-hair-loss-treatment-australia", cat: "Hair loss", title: "The best hair-loss treatment in Australia" },
 ];
 
 const principles = [
-  { icon: ShieldCheck, title: "Rankings are never sold", body: "A brand cannot pay to rank higher, join a list, or soften a criticism. Commercial deals never touch the call.", grad: "from-[#12b981] to-[#0a7c42]" },
-  { icon: PenLine, title: "Researched by people", body: "Every guide is written and edited by someone who read the fine print, not generated to fill a page.", grad: "from-[#6366f1] to-[#4338ca]" },
-  { icon: Eye, title: "Disclosed on every page", body: "Where a link earns us a commission, the page says so plainly. That funding keeps the research free.", grad: "from-[#f6a821] to-[#e0770c]" },
+  "A brand cannot pay to rank higher, join a list, or soften a criticism.",
+  "Every guide is written and edited by a person who read the fine print.",
+  "Where a link earns a commission, the page says so plainly.",
 ];
 
 const itemListSchema = {
@@ -59,17 +51,16 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
 
       <main id="main-content">
-        {/* ── Hero ── */}
-        <section className="nw-hero-wash relative overflow-hidden border-b border-[#e3e7e2]">
-          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-14 sm:px-8 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-20">
-            {/* Left: headline + search */}
+        {/* ── Masthead hero ── */}
+        <section className="border-b border-[#e3e7e2]">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
             <div>
-              <h1 className="max-w-xl text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.03em] text-[#10251b] sm:text-[3.35rem]">
-                Make every big decision with confidence.
+              <h1 className="max-w-xl text-[2.6rem] font-black leading-[1.02] tracking-[-0.035em] text-[#10251b] sm:text-[3.6rem]">
+                Big decisions,<br />properly researched.
               </h1>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
-                We do the slow research on Australian health services, software and tools, so you can compare the real
-                options and choose without second-guessing.
+                Independent comparisons of Australian health services, software and tools. We read the fine print so you
+                can choose without second-guessing.
               </p>
               <div className="mt-8">
                 <SiteSearch variant="hero" />
@@ -90,76 +81,63 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: live, rotating comparison card — engaging proof above the fold */}
-            <HeroRotator />
-          </div>
-        </section>
-
-        {/* ── Credibility stats ── */}
-        <section className="border-b border-[#e5e9e7] bg-white">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-[#eef1ef] sm:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.l} className="px-5 py-6 text-center sm:py-7">
-                <p className="text-2xl font-extrabold tracking-[-0.02em] text-[#0a7c42] sm:text-[1.75rem]">{s.n}</p>
-                <p className="mt-1 text-[12px] font-medium leading-tight text-[#6e7b74] sm:text-[13px]">{s.l}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Categories ── */}
-        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
-              <p className="nw-kicker">Browse by category</p>
-              <h2 className="mt-2 text-2xl font-bold tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Where do you want to make a smart call?</h2>
-            </div>
-            <Link href="/guides" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
-              All guides <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map(({ href, icon: Icon, title, blurb, count, grad }) => (
-              <Link key={href} href={href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
-                <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${grad} text-white shadow-[0_10px_22px_-10px_rgba(16,37,27,0.55)] ring-1 ring-inset ring-white/20`}>
-                  <Icon className="h-6 w-6" strokeWidth={2} />
-                </span>
-                <h3 className="mt-4 text-[17px] font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-[#6e7b74]">{blurb}</p>
-                <span className="mt-4 flex items-center justify-between border-t border-[#eef1ef] pt-3">
-                  <span className="text-xs font-semibold uppercase tracking-wide text-[#9aa39c]">{count}</span>
-                  <ArrowRight className="h-4 w-4 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" />
+            {/* Featured pick — real logo, editorial "cover story" */}
+            <div className="lg:pl-6">
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Editors&apos; pick · Weight loss</p>
+              <Link href="/moshy-review" className="group mt-4 block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
+                <div className="flex items-center gap-4">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
+                    <Image src="/logos/moshy.png" alt="Moshy logo" width={48} height={48} className="h-11 w-11 object-contain" />
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Moshy</span>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-[#0a7c42] px-2 py-0.5 text-[10px] font-bold text-white">
+                        <Check className="h-2.5 w-2.5" strokeWidth={3} /> Our pick
+                      </span>
+                    </div>
+                    <p className="text-[13px] text-[#6e7b74]">Weight-loss telehealth · Australia</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
+                  A clinically-led, fully-online weight-management program, open to anyone eligible, from around
+                  <span className="font-semibold text-[#10251b]"> $249/month</span> with no lock-in.
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
+                  Read our full guide
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
-            ))}
+              <p className="mt-3 text-[12px] leading-relaxed text-[#9aa39c]">
+                Independent. Rankings are never sold. Some links are disclosed affiliate links that fund the research.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* ── Top picks strip ── */}
-        <section className="border-y border-[#e5e9e7] bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-            <div className="mb-8 max-w-2xl">
-              <p className="nw-kicker">Our current top picks</p>
-              <h2 className="mt-2 text-2xl font-bold tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Editors&apos; choices across categories</h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#6e7b74]">What we&apos;d pick right now, and who each one actually suits.</p>
+        {/* ── This month's top picks (real logos) ── */}
+        <section className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
+          <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">This month&apos;s top picks</h2>
+              <Link href="/guides" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
+                All guides <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {topPicks.map((p) => (
-                <Link key={p.href} href={p.href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
-                  <div className="flex items-start justify-between gap-2">
-                    <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${p.grad} text-[17px] font-black text-white shadow-[0_10px_22px_-10px_rgba(16,37,27,0.55)] ring-1 ring-inset ring-white/20`}>
-                      {p.name[0]}
+            <div className="grid gap-5 sm:grid-cols-3">
+              {picks.map((p) => (
+                <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_20px_44px_-24px_rgba(16,37,27,0.3)]">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
+                      <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
                     </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f5ee] px-2.5 py-1 text-[11px] font-bold text-[#0a7c42]">
-                      <Check className="h-3 w-3" strokeWidth={3} /> Our pick
-                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">{p.cat}</span>
                   </div>
-                  <span className="nw-kicker mt-4 !text-[11px]">{p.cat}</span>
-                  <h3 className="mt-1 text-xl font-extrabold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{p.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#3d4b44]">{p.note}</p>
-                  <span className="mt-5 flex items-center justify-between border-t border-[#eef1ef] pt-3.5">
-                    <span className="text-sm font-semibold text-[#0a7c42]">Read why</span>
-                    <ArrowRight className="h-4 w-4 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" />
+                  <h3 className="mt-4 text-xl font-extrabold tracking-[-0.01em] text-[#10251b] group-hover:text-[#0a7c42]">{p.name}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#3d4b44]">{p.verdict}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
+                    Read the guide
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </Link>
               ))}
@@ -167,66 +145,77 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Popular guides ── */}
+        {/* ── Browse by category (editorial list, no icon tiles) ── */}
         <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">What people are reading this week</h2>
-          <div className="mt-8 grid gap-x-12 sm:grid-cols-2">
-            {popular.map((g) => (
-              <Link key={g.href} href={g.href} className="group flex items-center justify-between gap-5 border-b border-[#eef1ef] py-4">
-                <span className="flex items-center gap-3">
-                  <span className="hidden w-24 shrink-0 text-[11px] font-semibold uppercase tracking-wider text-[#9aa39c] sm:inline">{g.cat}</span>
-                  <span className="text-[15px] font-medium text-[#3d4b44] transition-colors group-hover:text-[#10251b]">{g.label}</span>
-                </span>
-                <ArrowRight className="h-4 w-4 shrink-0 text-[#cdd5cf] transition-all group-hover:translate-x-0.5 group-hover:text-[#0a7c42]" />
+          <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Browse by category</h2>
+          <div className="mt-8 grid gap-x-14 gap-y-1 sm:grid-cols-2">
+            {categories.map((c) => (
+              <Link key={c.href} href={c.href} className="group flex items-start justify-between gap-6 border-t border-[#e5e9e7] py-5 first:border-t-0 sm:[&:nth-child(2)]:border-t-0">
+                <div>
+                  <h3 className="text-[17px] font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{c.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-[#6e7b74]">{c.desc}</p>
+                  <p className="mt-2 text-[12.5px] font-medium text-[#9aa39c]">{c.brands}</p>
+                </div>
+                <div className="flex shrink-0 flex-col items-end gap-2 pt-0.5">
+                  <span className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39c]">{c.count}</span>
+                  <ArrowUpRight className="h-5 w-5 text-[#cdd5cf] transition-colors group-hover:text-[#0a7c42]" />
+                </div>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* ── Why trust us ── */}
-        <section className="border-t border-[#e5e9e7] bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-            <div className="max-w-2xl">
-              <p className="nw-kicker">Why trust us</p>
-              <h2 className="mt-2 text-2xl font-bold tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">
-                Why trust a site that earns commissions?
-              </h2>
+        {/* ── Latest guides (article index) ── */}
+        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Latest guides</h2>
+            <div className="mt-8 grid gap-x-14 sm:grid-cols-2">
+              {guides.map((g) => (
+                <Link key={g.href} href={g.href} className="group border-t border-[#e5e9e7] py-5 first:border-t-0 sm:[&:nth-child(2)]:border-t-0">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">{g.cat}</p>
+                  <h3 className="mt-1.5 text-[17px] font-bold leading-snug tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{g.title}</h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Why trust us (editorial) ── */}
+        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div>
+              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Why trust a site that earns commissions?</h2>
               <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 Fair question. Some links here pay us if you sign up. That model only works long-term if the
                 recommendations stay honest, so these rules aren&apos;t a legal formality, they&apos;re the business model.
               </p>
+              <p className="mt-4 text-sm text-[#6e7b74]">
+                The full standards live at <Link href="/how-we-research" className="nw-link">how we research</Link>.
+              </p>
             </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {principles.map(({ icon: Icon, title, body, grad }) => (
-                <div key={title} className="nw-card rounded-2xl p-6">
-                  <span className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br ${grad} text-white shadow-[0_10px_22px_-10px_rgba(16,37,27,0.55)] ring-1 ring-inset ring-white/20`}>
-                    <Icon className="h-5 w-5" strokeWidth={2} />
-                  </span>
-                  <h3 className="mt-4 text-[15px] font-bold text-[#10251b]">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6e7b74]">{body}</p>
-                </div>
+            <ul className="space-y-5">
+              {principles.map((p, i) => (
+                <li key={i} className="flex gap-4 border-t border-[#e5e9e7] pt-5 first:border-t-0 first:pt-0">
+                  <span className="text-[15px] font-black text-[#0a7c42]">{String(i + 1).padStart(2, "0")}</span>
+                  <p className="text-[15.5px] leading-relaxed text-[#2b362f]">{p}</p>
+                </li>
               ))}
-            </div>
-            <p className="mt-6 text-sm text-[#6e7b74]">
-              The full standards live at{" "}
-              <Link href="/how-we-research" className="nw-link">how we research</Link>.
-            </p>
+            </ul>
           </div>
         </section>
 
         {/* ── Newsletter ── */}
-        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
           <NewsletterSignup variant="band" source="homepage" />
         </section>
 
         {/* ── For business ── */}
         <section className="mx-auto max-w-6xl px-5 pb-24 sm:px-8">
           <div className="relative overflow-hidden rounded-3xl bg-[#10251b] px-7 py-11 sm:px-12 sm:py-14">
-            <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(18,160,91,0.35),transparent)] blur-2xl" aria-hidden="true" />
             <div className="relative flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
               <div className="max-w-xl">
-                <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.06em] text-[#5fd39a]"><TrendingUp className="h-3.5 w-3.5" /> For business</p>
-                <h2 className="mt-3 text-2xl font-bold leading-snug tracking-[-0.01em] text-white sm:text-3xl">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#5fd39a]">For business</p>
+                <h2 className="mt-3 text-2xl font-black leading-snug tracking-[-0.01em] text-white sm:text-3xl">
                   Reach people who have already done the research.
                 </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-white/70">
