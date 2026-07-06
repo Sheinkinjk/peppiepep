@@ -79,6 +79,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/beehiiv`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/incomelab`,  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.68 },
 
+    // ── AI sales & automation tools (new this release) ─────────────────
+    { url: `${BASE}/gohighlevel`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/aisdr`,              lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/employmenthero`,     lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/best-ai-sales-tools`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+
     // ── Comparison roundups ────────────────────────────────────────────
     { url: `${BASE}/best-website-builder`,                  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/best-newsletter-platform`,              lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.82 },

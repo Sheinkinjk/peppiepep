@@ -49,6 +49,14 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "beehiiv review", href: "/beehiiv", category: "Creator tools", kind: "Guide", keywords: "newsletter email platform grow audience" },
   { title: "IncomeLab", href: "/incomelab", category: "Creator tools", kind: "Guide", keywords: "make money ai income side hustle" },
 
+  // AI & sales
+  { title: "Best AI sales tools 2026", href: "/best-ai-sales-tools", category: "AI & sales", kind: "Guide", keywords: "ai sales automation gohighlevel aisdr crm outbound sdr compare top" },
+  { title: "GoHighLevel review", href: "/gohighlevel", category: "AI & sales", kind: "Guide", keywords: "gohighlevel all in one crm marketing automation funnels agency ai" },
+  { title: "AiSDR review", href: "/aisdr", category: "AI & sales", kind: "Guide", keywords: "aisdr ai sdr sales development rep outbound prospecting book meetings" },
+
+  // Business software
+  { title: "Employment Hero review", href: "/employmenthero", category: "Business software", kind: "Guide", keywords: "employment hero hr payroll software australia single touch payroll stp fair work" },
+
   // Peptides
   { title: "Best peptide supplier 2026", href: "/best-peptide-supplier", category: "Research peptides", kind: "Guide", keywords: "research chemicals peptides supplier top" },
   { title: "Apollo Peptide Sciences", href: "/apollopeptides", category: "Research peptides", kind: "Guide", keywords: "apollo peptides research" },

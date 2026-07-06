@@ -21,6 +21,7 @@ const categories = [
   { href: "/best-peptide-supplier", title: "Research peptides", desc: "Australian and global suppliers, on trust and quality.", brands: "Apollo · Ascension", count: "4 reviews" },
   { href: "/compare/website-builders", title: "Website builders", desc: "AI builders, one-page tools and landing specialists.", brands: "Carrd · Durable · Swipe Pages", count: "5 tools" },
   { href: "/compare/newsletter-platforms", title: "Newsletter platforms", desc: "Where to build an email audience, and the fine print.", brands: "beehiiv · Substack · Kit", count: "3 tools" },
+  { href: "/best-ai-sales-tools", title: "AI sales & automation", desc: "AI CRMs and outbound tools that do the selling for you.", brands: "GoHighLevel · AiSDR", count: "3 tools" },
 ];
 
 const guides = [

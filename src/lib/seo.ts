@@ -1375,6 +1375,101 @@ export const seoConfig = {
     ],
   },
 
+  goHighLevel: {
+    title: "GoHighLevel Review 2026: All-in-One CRM & Marketing Platform | Refer Labs",
+    description:
+      "GoHighLevel review 2026: the AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From around $97/month at the time of writing, 14-day free trial. Verify current pricing on the provider.",
+    url: `${SITE_URL}/gohighlevel`,
+    keywords: [
+      "gohighlevel review 2026",
+      "gohighlevel review",
+      "gohighlevel australia",
+      "gohighlevel pricing 2026",
+      "gohighlevel free trial",
+      "gohighlevel for agencies",
+      "gohighlevel crm",
+      "gohighlevel vs competitors",
+      "all in one marketing platform 2026",
+      "ai crm platform 2026",
+      "marketing automation software 2026",
+      "gohighlevel reddit",
+      "gohighlevel alternatives 2026",
+      "best crm for agencies 2026",
+      "gohighlevel starter unlimited plan",
+    ],
+  },
+
+  aisdr: {
+    title: "AiSDR Review 2026: The AI Sales Development Rep for B2B Outbound | Refer Labs",
+    description:
+      "AiSDR review: the AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $900/month billed quarterly at the time of writing. Verify current pricing.",
+    url: `${SITE_URL}/aisdr`,
+    keywords: [
+      "aisdr review",
+      "aisdr review 2026",
+      "ai sdr tool",
+      "ai sales development rep",
+      "aisdr pricing",
+      "aisdr vs competitors",
+      "ai outbound sales tool 2026",
+      "b2b outbound automation 2026",
+      "ai sales rep software",
+      "automate cold outreach ai",
+      "ai sdr hubspot salesforce",
+      "aisdr reddit",
+      "best ai sdr 2026",
+      "book meetings with ai",
+      "ai prospecting tool 2026",
+    ],
+  },
+
+  employmentHero: {
+    title: "Employment Hero Review Australia 2026: HR & Payroll Software | Refer Labs",
+    description:
+      "Employment Hero review Australia: the Australian-built all-in-one HR, payroll and employment platform. ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment, employee benefits and an employee app. Fair Work compliant. Pricing is quoted per business, not published publicly.",
+    url: `${SITE_URL}/employmenthero`,
+    keywords: [
+      "employment hero review australia",
+      "employment hero review",
+      "hr software australia",
+      "payroll software australia",
+      "employment hero pricing",
+      "employment hero australia",
+      "single touch payroll software australia",
+      "stp phase 2 software",
+      "hr and payroll platform australia",
+      "best hr software australia 2026",
+      "small business payroll australia",
+      "fair work compliant hr software",
+      "employment hero reddit",
+      "employment hero alternatives",
+      "all in one hr payroll australia",
+    ],
+  },
+
+  bestAiSalesTools: {
+    title: "Best AI Sales Tools in 2026: GoHighLevel vs AiSDR | Refer Labs",
+    description:
+      "The best AI sales and automation tools in 2026 compared: GoHighLevel (all-in-one CRM, marketing and sales) and AiSDR (AI outbound SDR). What each is best for, pricing at the time of writing, and how to choose.",
+    url: `${SITE_URL}/best-ai-sales-tools`,
+    keywords: [
+      "best ai sales tools 2026",
+      "best ai sales tools",
+      "ai sales automation tools 2026",
+      "gohighlevel vs aisdr",
+      "ai sales tools comparison 2026",
+      "best ai crm 2026",
+      "ai outbound sales tools",
+      "ai sdr tools 2026",
+      "sales automation software 2026",
+      "ai tools for sales teams",
+      "best ai tools for sales 2026",
+      "ai lead generation tools 2026",
+      "ai sales tools reddit",
+      "ai sales stack 2026",
+    ],
+  },
+
   bestHairLossTreatmentAustralia: {
     title: "Best Hair Loss Treatment Australia 2026: Mosh vs Dense vs Telehealth Options | Refer Labs",
     description:

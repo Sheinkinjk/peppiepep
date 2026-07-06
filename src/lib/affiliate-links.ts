@@ -45,3 +45,13 @@ export const SWIPE_PAGES_URL = "https://swipepages.com/?fpr=jarred74";
 // previously used a different code (via=14daytrial) that was not crediting us.
 export const BEEHIIV_URL = "https://www.beehiiv.com?via=refer-labs";
 export const INCOME_LAB_URL = "https://incomelab.me/welcome";
+
+// ── AI sales & automation tools ──────────────────────────────────────────────
+// AI SDR: AI sales development rep / automated outbound.
+export const AISDR_URL = "https://partner.aisdr.com/referlabs";
+// GoHighLevel: all-in-one CRM, marketing and sales automation (agencies).
+export const GOHIGHLEVEL_URL = "https://www.gohighlevel.com/?fp_ref=jarred79";
+
+// ── HR & payroll (Australia) ─────────────────────────────────────────────────
+// Employment Hero: Australian HR, payroll and employment platform.
+export const EMPLOYMENT_HERO_URL = "https://try.employmenthero.com/65q9xczaxste";
