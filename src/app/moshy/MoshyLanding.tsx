@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { moshyConfig, MOSHY_URL } from "./config";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -41,6 +42,9 @@ export default function MoshyLanding() {
         {/* ── Hero ── */}
         <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div>
+            <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
+              <Image src="/logos/moshy.png" alt="Moshy logo" width={52} height={52} className="h-12 w-12 object-contain" />
+            </span>
             <p className="nw-kicker">Weight-loss telehealth · Australia · 2026</p>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.3rem]">
               Moshy, explained: the clinically-led weight-loss telehealth service,{" "}

@@ -30,6 +30,9 @@ export interface AffiliatePageConfig {
   /** Display brand name, e.g. "Dense Hair Experts" */
   brand: string;
 
+  /** Real brand logo basename in /public/logos (e.g. "carrd"). Optional. */
+  logo?: string;
+
   /** Small badge label shown in hero, e.g. "Australia" or "Hair Care" */
   badgeText: string;
 

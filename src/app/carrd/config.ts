@@ -5,6 +5,7 @@ export { CARRD_URL };
 
 export const carrdConfig: AffiliatePageConfig = {
   brand: "Carrd",
+  logo: "carrd",
   badgeText: "Website Builder",
   affiliateUrl: CARRD_URL,
 

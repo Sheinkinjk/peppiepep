@@ -5,6 +5,7 @@ export { SWIPE_PAGES_URL };
 
 export const swipePagesConfig: AffiliatePageConfig = {
   brand: "Swipe Pages",
+  logo: "swipepages",
   badgeText: "Landing Page Builder",
   affiliateUrl: SWIPE_PAGES_URL,
 

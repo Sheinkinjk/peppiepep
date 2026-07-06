@@ -5,6 +5,7 @@ export { BEEHIIV_URL };
 
 export const beehiivConfig: AffiliatePageConfig = {
   brand: "beehiiv",
+  logo: "beehiiv",
   badgeText: "Newsletter Platform",
   affiliateUrl: BEEHIIV_URL,
 

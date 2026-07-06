@@ -5,6 +5,7 @@ export { DURABLE_URL };
 
 export const durableAiConfig: AffiliatePageConfig = {
   brand: "Durable AI",
+  logo: "durable",
   badgeText: "AI Website Builder",
   affiliateUrl: DURABLE_URL,
 

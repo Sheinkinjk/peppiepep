@@ -5,6 +5,7 @@ export { MOSH_HAIR_URL };
 
 export const moshHairConfig: AffiliatePageConfig = {
   brand: "Mosh",
+  logo: "mosh",
   badgeText: "Australia",
   affiliateUrl: MOSH_HAIR_URL,
 
