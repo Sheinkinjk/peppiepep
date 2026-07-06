@@ -14,7 +14,7 @@ const NAV = [
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
   { href: "/guides", label: "All guides" },
   { href: "/referral-blueprint", label: "For business" },
-  { href: "/how-we-research", label: "How we research" },
+  { href: "/how-we-research", label: "How we work" },
 ];
 
 /**
@@ -60,7 +60,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
               <ReferLabsLogo className="h-9 w-auto" />
               <p className="mt-4 text-[13px] leading-relaxed text-[#6e7b74]">
                 Independent comparisons for Australians choosing health services, software and tools. Rankings are never
-                sold. Some pages carry disclosed affiliate links that fund the research, at no cost to you.
+                sold. Some pages carry disclosed affiliate links, at no cost to you.
               </p>
               <p className="mt-5 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">The newsletter</p>
               <NewsletterSignup variant="footer" source="footer" />
@@ -89,7 +89,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
             <div>
               <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">Company</p>
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
-                <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How we research</Link></li>
+                <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How we work</Link></li>
                 <li><Link href="/for-business" className="transition-colors hover:text-[#0a7c42]">For business</Link></li>
                 <li><Link href="/referral-blueprint" className="transition-colors hover:text-[#0a7c42]">Referral Blueprint</Link></li>
                 <li><Link href="/affiliate-programs-australia" className="transition-colors hover:text-[#0a7c42]">Affiliate programs AU</Link></li>

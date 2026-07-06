@@ -23,7 +23,7 @@ const GROUPS: Group[] = [
     label: "Software & tools",
     items: [
       { href: "/compare/website-builders", label: "Website builders", note: "AI, one-page and landing tools" },
-      { href: "/best-website-builder", label: "Best website builder", note: "Our 2026 pick" },
+      { href: "/best-website-builder", label: "Best website builder", note: "Most popular for 2026" },
       { href: "/compare/newsletter-platforms", label: "Newsletter platforms", note: "Where to build an email audience" },
       { href: "/best-newsletter-platform", label: "Best newsletter platform", note: "beehiiv vs Substack vs Kit" },
     ],
@@ -42,7 +42,7 @@ const GROUPS: Group[] = [
 
 const DIRECT: Item[] = [
   { href: "/guides", label: "All guides" },
-  { href: "/how-we-research", label: "How we research" },
+  { href: "/how-we-research", label: "How we work" },
 ];
 
 export default function HeaderNav() {

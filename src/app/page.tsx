@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
@@ -56,11 +56,11 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
             <div>
               <h1 className="max-w-xl text-[2.6rem] font-black leading-[1.02] tracking-[-0.035em] text-[#10251b] sm:text-[3.6rem]">
-                Big decisions,<br />properly researched.
+                Big decisions,<br />compared properly.
               </h1>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
-                Independent comparisons of Australian health services, software and tools. We read the fine print so you
-                can choose without second-guessing.
+                Independent comparisons of Australian health services, software and tools, so you can choose the right
+                one with confidence.
               </p>
               <div className="mt-8">
                 <SiteSearch variant="hero" />
@@ -83,8 +83,7 @@ export default function HomePage() {
 
             {/* Featured pick — real logo, editorial "cover story" */}
             <div className="lg:pl-6">
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Editors&apos; pick · Weight loss</p>
-              <Link href="/moshy-review" className="group mt-4 block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
+              <Link href="/moshy-review" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
                 <div className="flex items-center gap-4">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
                     <Image src="/logos/moshy.png" alt="Moshy logo" width={48} height={48} className="h-11 w-11 object-contain" />
@@ -92,8 +91,8 @@ export default function HomePage() {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Moshy</span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-[#0a7c42] px-2 py-0.5 text-[10px] font-bold text-white">
-                        <Check className="h-2.5 w-2.5" strokeWidth={3} /> Our pick
+                      <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f5ee] px-2.5 py-0.5 text-[10px] font-bold text-[#0a7c42]">
+                        Most popular
                       </span>
                     </div>
                     <p className="text-[13px] text-[#6e7b74]">Weight-loss telehealth · Australia</p>
@@ -104,12 +103,12 @@ export default function HomePage() {
                   <span className="font-semibold text-[#10251b]"> $249/month</span> with no lock-in.
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
-                  Read our full guide
+                  See how Moshy works
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
               <p className="mt-3 text-[12px] leading-relaxed text-[#9aa39c]">
-                Independent. Rankings are never sold. Some links are disclosed affiliate links that fund the research.
+                Independent. Rankings are never sold. Some links are disclosed affiliate links, at no cost to you.
               </p>
             </div>
           </div>
