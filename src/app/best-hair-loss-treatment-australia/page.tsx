@@ -29,12 +29,12 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Hair Loss Treatments Australia 2026",
-  description: "Comparison of the best hair loss treatments and providers in Australia — Mosh, Dense Hair Experts, and telehealth options.",
+  description: "Comparison of the best hair loss treatments and providers in Australia, Mosh, Dense Hair Experts, and telehealth options.",
   numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Mosh Hair Loss Treatment", description: "Australian telehealth platform offering clinically supervised hair loss treatment including finasteride and minoxidil with online consultation.", url: `${SITE_URL}/moshhair` },
-    { "@type": "ListItem", position: 2, name: "Dense Hair Experts", description: "Australian hair care brand specialising in density and thickness products — shampoos, conditioners, serums, and scalp treatments.", url: `${SITE_URL}/dense` },
-    { "@type": "ListItem", position: 3, name: "Telehealth Hair Loss Options", description: "Online clinical consultation for prescription hair loss treatments in Australia — finasteride, minoxidil, and combination approaches.", url: `${SITE_URL}/best-hair-loss-treatment-australia` },
+    { "@type": "ListItem", position: 2, name: "Dense Hair Experts", description: "Australian hair care brand specialising in density and thickness products, shampoos, conditioners, serums, and scalp treatments.", url: `${SITE_URL}/dense` },
+    { "@type": "ListItem", position: 3, name: "Telehealth Hair Loss Options", description: "Online clinical consultation for prescription hair loss treatments in Australia, finasteride, minoxidil, and combination approaches.", url: `${SITE_URL}/best-hair-loss-treatment-australia` },
   ],
 };
 
@@ -47,7 +47,7 @@ const faqSchema = {
       name: "What is the best hair loss treatment in Australia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The most clinically effective hair loss treatments available in Australia are finasteride (oral) and minoxidil (topical or oral), used alone or in combination. Both are prescription medicines in Australia and require a consultation with a doctor or telehealth provider. Mosh offers online consultation and prescription for both. For non-prescription topical support, Dense Hair Experts provides Australian-formulated products targeting hair density and scalp health. The right approach depends on the type and stage of hair loss — a clinical assessment is the recommended starting point.",
+        text: "The most clinically effective hair loss treatments available in Australia are finasteride (oral) and minoxidil (topical or oral), used alone or in combination. Both are prescription medicines in Australia and require a consultation with a doctor or telehealth provider. Mosh offers online consultation and prescription for both. For non-prescription topical support, Dense Hair Experts provides Australian-formulated products targeting hair density and scalp health. The right approach depends on the type and stage of hair loss, a clinical assessment is the recommended starting point.",
       },
     },
     {
@@ -55,7 +55,7 @@ const faqSchema = {
       name: "What does Reddit say about hair loss treatments in Australia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Australian Reddit communities covering hair loss — including r/HairLoss, r/tressless, and r/AustralianMen — consistently discuss finasteride and minoxidil as the most evidence-backed options for male pattern baldness. Mosh is mentioned as one of the more accessible telehealth platforms for getting a prescription in Australia without visiting a GP in person. Dense Hair Experts comes up in discussions about topical support products. Searching 'hair loss treatment Australia Reddit' or 'finasteride Australia Reddit' surfaces detailed community threads.",
+        text: "Australian Reddit communities covering hair loss, including r/HairLoss, r/tressless, and r/AustralianMen, consistently discuss finasteride and minoxidil as the most evidence-backed options for male pattern baldness. Mosh is mentioned as one of the more accessible telehealth platforms for getting a prescription in Australia without visiting a GP in person. Dense Hair Experts comes up in discussions about topical support products. Searching 'hair loss treatment Australia Reddit' or 'finasteride Australia Reddit' surfaces detailed community threads.",
       },
     },
     {
@@ -63,7 +63,7 @@ const faqSchema = {
       name: "Is Mosh good for hair loss Australia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Mosh is a legitimate Australian telehealth platform offering online consultation and prescription for hair loss treatments including finasteride and minoxidil. It provides a structured clinical process — photo assessment, questionnaire, and doctor review — and ships treatment directly to your door. Reviews generally acknowledge it as a convenient and properly supervised option for men dealing with hair loss who want to avoid a GP appointment.",
+        text: "Mosh is a legitimate Australian telehealth platform offering online consultation and prescription for hair loss treatments including finasteride and minoxidil. It provides a structured clinical process, photo assessment, questionnaire, and doctor review, and ships treatment directly to your door. Reviews generally acknowledge it as a convenient and properly supervised option for men dealing with hair loss who want to avoid a GP appointment.",
       },
     },
     {
@@ -76,10 +76,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Mosh vs Dense Hair Experts — which should I use?",
+      name: "Mosh vs Dense Hair Experts, which should I use?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The two serve different purposes and are not direct alternatives. Mosh provides clinically supervised treatment — finasteride and minoxidil — which address the underlying cause of androgenetic alopecia (male pattern baldness). Dense Hair Experts provides topical hair care products focused on density and scalp health without prescription ingredients. If you are experiencing noticeable hair loss, Mosh or another telehealth provider with prescription access is the appropriate starting point. Dense products can be used as a complementary part of a hair care routine.",
+        text: "The two serve different purposes and are not direct alternatives. Mosh provides clinically supervised treatment, finasteride and minoxidil, which address the underlying cause of androgenetic alopecia (male pattern baldness). Dense Hair Experts provides topical hair care products focused on density and scalp health without prescription ingredients. If you are experiencing noticeable hair loss, Mosh or another telehealth provider with prescription access is the appropriate starting point. Dense products can be used as a complementary part of a hair care routine.",
       },
     },
     {
@@ -87,7 +87,7 @@ const faqSchema = {
       name: "Is finasteride available online in Australia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Finasteride is a prescription medicine in Australia but can be prescribed through online telehealth consultations. Platforms like Mosh allow you to complete a questionnaire and photo assessment, which is reviewed by a registered Australian doctor. If suitable, a prescription is issued and treatment is delivered directly. A GP consultation — whether in person or online — is required before starting finasteride.",
+        text: "Yes. Finasteride is a prescription medicine in Australia but can be prescribed through online telehealth consultations. Platforms like Mosh allow you to complete a questionnaire and photo assessment, which is reviewed by a registered Australian doctor. If suitable, a prescription is issued and treatment is delivered directly. A GP consultation, whether in person or online, is required before starting finasteride.",
       },
     },
   ],
@@ -118,18 +118,18 @@ const options = [
     href: MOSH_HAIR_URL,
     internalHref: "/moshhair",
     category: "Telehealth / Prescription",
-    tagline: "Online consultation and prescription — finasteride and minoxidil delivered to your door",
+    tagline: "Online consultation and prescription, finasteride and minoxidil delivered to your door",
     pros: [
-      "Clinically supervised — proper doctor review",
+      "Clinically supervised, proper doctor review",
       "Access to finasteride and minoxidil (most evidence-backed treatments)",
-      "No GP appointment needed — online questionnaire and photo assessment",
+      "No GP appointment needed, online questionnaire and photo assessment",
       "Shipped directly to your door across Australia",
       "Structured follow-up and ongoing clinical support",
       "Can combine treatments based on your hair loss profile",
     ],
     cons: [
-      "Requires ongoing prescription — not a one-off purchase",
-      "Finasteride is not suitable for everyone — medical review required",
+      "Requires ongoing prescription, not a one-off purchase",
+      "Finasteride is not suitable for everyone, medical review required",
       "Results take 6-12 months to fully assess",
     ],
   },
@@ -142,14 +142,14 @@ const options = [
     category: "Topical Hair Care",
     tagline: "Australian hair care products for density, thickness, and scalp health",
     pros: [
-      "No prescription required — order directly online",
+      "No prescription required, order directly online",
       "Australian brand focused on hair density and scalp health",
       "Products designed for consistent daily use",
       "Covers shampoos, conditioners, serums, and treatments",
       "Ships within Australia",
     ],
     cons: [
-      "Topical products only — does not address underlying hair loss cause",
+      "Topical products only, does not address underlying hair loss cause",
       "Less clinical evidence than finasteride or minoxidil",
       "Best as complementary support, not a standalone solution for significant hair loss",
     ],
@@ -163,7 +163,7 @@ const options = [
     category: "In-Person or Telehealth GP",
     tagline: "Full clinical assessment including blood work and specialist referral",
     pros: [
-      "Most comprehensive assessment — blood work, scalp check, full history",
+      "Most comprehensive assessment, blood work, scalp check, full history",
       "Can refer to dermatologist or trichologist for complex cases",
       "PRP, hair transplant surgery referrals available",
       "Access to full range of prescription treatments",
@@ -178,11 +178,11 @@ const options = [
 
 const features = [
   { label: "Treatment type",          mosh: "Prescription medicine",      dense: "Topical products",           gp: "Full clinical" },
-  { label: "Requires prescription",   mosh: "Yes — via telehealth",        dense: "No",                         gp: "Yes — issued after consult" },
+  { label: "Requires prescription",   mosh: "Yes, via telehealth",        dense: "No",                         gp: "Yes, issued after consult" },
   { label: "Clinical oversight",      mosh: "Doctor-reviewed online",      dense: "None",                       gp: "Full GP or specialist" },
   { label: "Finasteride access",      mosh: "Yes",                         dense: "No",                         gp: "Yes" },
   { label: "Minoxidil access",        mosh: "Yes (topical & oral)",        dense: "No",                         gp: "Yes" },
-  { label: "No appointment needed",   mosh: "Yes — fully online",          dense: "Yes — order direct",         gp: "No" },
+  { label: "No appointment needed",   mosh: "Yes, fully online",          dense: "Yes, order direct",         gp: "No" },
   { label: "Ships to Australia",      mosh: "Yes",                         dense: "Yes",                        gp: "N/A" },
   { label: "Best for",                mosh: "Pattern baldness treatment",  dense: "Thinning / early volume loss",gp: "Complex or uncertain cases" },
 ];
@@ -240,7 +240,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             <span style={{ color: CYAN_LT }}>Mosh vs Dense vs Telehealth</span>
           </h1>
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            A practical comparison of the most accessible hair loss options for Australians — prescription telehealth, topical products, and when to see a specialist.
+            A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
             {["Australian providers", "Clinical vs topical breakdown", "Reddit verdict included"].map((tag) => (
@@ -251,7 +251,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             ))}
           </div>
           <p className="text-[#9aa39c] text-xs mb-8">
-            This page contains affiliate links. We may earn a commission if you purchase through them. This does not constitute medical advice — consult a registered healthcare professional before starting any hair loss treatment.
+            This page contains affiliate links. We may earn a commission if you purchase through them. This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -278,7 +278,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             Quick Verdict
           </p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
-            For prescription hair-loss treatment in Australia (finasteride and minoxidil), Mosh is the most accessible telehealth option — online consultation, practitioner review, and delivery. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
+            For prescription hair-loss treatment in Australia (finasteride and minoxidil), Mosh is the most accessible telehealth option, online consultation, practitioner review, and delivery. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
           </p>
         </div>
 
@@ -293,7 +293,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
               Finasteride and minoxidil are the most clinically evidence-backed treatments for androgenetic alopecia (male pattern baldness). Both require prescriptions in Australia and are now accessible via online telehealth without a GP appointment. Mosh is one of the main platforms offering this.
             </p>
             <p>
-              Dense Hair Experts offers topical products — shampoos, serums, conditioners — formulated for hair density and scalp health. These are non-prescription and designed for daily use. They work best as a complementary part of a routine or for people with mild thinning who are not ready for prescription treatment.
+              Dense Hair Experts offers topical products, shampoos, serums, conditioners, formulated for hair density and scalp health. These are non-prescription and designed for daily use. They work best as a complementary part of a routine or for people with mild thinning who are not ready for prescription treatment.
             </p>
           </div>
         </section>
@@ -393,13 +393,13 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">What Reddit Says About Hair Loss in Australia</h2>
           <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
             <p>
-              Australian Reddit communities discussing hair loss — including r/tressless, r/HairLoss, r/AskAustralia, and r/AustralianMen — consistently point to finasteride and minoxidil as the starting point for anyone dealing with male pattern baldness. The community consensus is that topical products alone are unlikely to stop progression.
+              Australian Reddit communities discussing hair loss, including r/tressless, r/HairLoss, r/AskAustralia, and r/AustralianMen, consistently point to finasteride and minoxidil as the starting point for anyone dealing with male pattern baldness. The community consensus is that topical products alone are unlikely to stop progression.
             </p>
             <p>
               Mosh comes up regularly as one of the more convenient telehealth options for getting a finasteride prescription in Australia without booking a GP in person. The main community discussion points are: the clinical process being straightforward, shipping reliability, and cost compared to a private GP consult.
             </p>
             <p>
-              Dense Hair Experts is mentioned in threads about topical support — primarily for people looking to improve density and scalp health as a complement to medical treatment, or for those not yet at the point of wanting prescription treatment.
+              Dense Hair Experts is mentioned in threads about topical support, primarily for people looking to improve density and scalp health as a complement to medical treatment, or for those not yet at the point of wanting prescription treatment.
             </p>
             <p>
               Searching "finasteride Australia Reddit", "hair loss treatment Australia Reddit", or "Mosh hair Reddit" surfaces detailed community threads with firsthand experience from Australian users.
@@ -434,12 +434,12 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 a: "Mosh is a legitimate Australian telehealth platform offering online consultation and prescription for hair loss treatments including finasteride and minoxidil. Reviews acknowledge it as a convenient, properly supervised option for men who want to avoid a GP appointment.",
               },
               {
-                q: "Mosh vs Dense Hair Experts — which should I use?",
+                q: "Mosh vs Dense Hair Experts, which should I use?",
                 a: "They serve different purposes. Mosh provides prescription treatment addressing the underlying cause of androgenetic alopecia. Dense provides topical hair care products focused on density and scalp health without prescription ingredients. For noticeable hair loss, clinical treatment is the appropriate starting point. Dense can be used as a complementary part of a hair care routine.",
               },
               {
                 q: "Is finasteride available online in Australia?",
-                a: "Yes. Finasteride is a prescription medicine but can be prescribed through online telehealth consultations. Platforms like Mosh allow you to complete a questionnaire and photo assessment reviewed by a registered Australian doctor. A consultation — in person or online — is required before starting finasteride.",
+                a: "Yes. Finasteride is a prescription medicine but can be prescribed through online telehealth consultations. Platforms like Mosh allow you to complete a questionnaire and photo assessment reviewed by a registered Australian doctor. A consultation, in person or online, is required before starting finasteride.",
               },
             ].map(({ q, a }, i) => (
               <div key={i} className="border-b border-[#e5e9e7] pb-6">

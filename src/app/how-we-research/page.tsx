@@ -3,7 +3,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import Link from "next/link";
 
 export const metadata = generateSEOMetadata({
-  title: "How We Research — Editorial Standards & Affiliate Disclosure | Refer Labs",
+  title: "How We Research, Editorial Standards & Affiliate Disclosure | Refer Labs",
   description:
     "How Refer Labs researches its comparisons: our sources, our independence, our affiliate disclosure, and how we handle health content. Rankings are never sold. Corrections welcome.",
   url: `${SITE_URL}/how-we-research`,
@@ -27,7 +27,7 @@ const breadcrumbSchema = {
 const aboutSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  name: "How We Research — Editorial Standards",
+  name: "How We Research, Editorial Standards",
   url: `${SITE_URL}/how-we-research`,
   publisher: {
     "@type": "Organization",

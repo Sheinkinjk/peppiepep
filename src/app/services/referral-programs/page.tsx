@@ -13,7 +13,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Referral Program Design, Launch and Distribution",
   description:
-    "Refer Labs designs, launches, and actively distributes referral programs for B2B and B2C businesses. Incentive structure design, tracking setup, channel activation, referrer seeding, and compounding growth — fully managed.",
+    "Refer Labs designs, launches, and actively distributes referral programs for B2B and B2C businesses. Incentive structure design, tracking setup, channel activation, referrer seeding, and compounding growth, fully managed.",
   provider: {
     "@type": "Organization",
     name: "Refer Labs",
@@ -59,7 +59,7 @@ const faqSchema = {
       name: "Why do most referral programs fail to scale?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most referral programs stagnate after launch because the structure is built but not distributed. The incentive is set, a landing page goes live, and then nothing — because launching the program is not the same as getting it in front of the right people. Scaling requires active distribution: identifying your highest-value referrers, getting the program in front of them directly, and embedding referral prompts at the right points in the customer journey.",
+        text: "Most referral programs stagnate after launch because the structure is built but not distributed. The incentive is set, a landing page goes live, and then nothing, because launching the program is not the same as getting it in front of the right people. Scaling requires active distribution: identifying your highest-value referrers, getting the program in front of them directly, and embedding referral prompts at the right points in the customer journey.",
       },
     },
     {
@@ -75,7 +75,7 @@ const faqSchema = {
       name: "What is the difference between a referral program and an affiliate program?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A referral program incentivises existing customers to refer new customers — typically word-of-mouth driven with bilateral rewards. An affiliate program recruits external promoters (affiliates) who earn commissions for driving new customers. Both are distribution channels. Refer Labs designs, launches, and distributes both, with the approach tailored to the business model and buyer acquisition dynamics.",
+        text: "A referral program incentivises existing customers to refer new customers, typically word-of-mouth driven with bilateral rewards. An affiliate program recruits external promoters (affiliates) who earn commissions for driving new customers. Both are distribution channels. Refer Labs designs, launches, and distributes both, with the approach tailored to the business model and buyer acquisition dynamics.",
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: "Can you help if we already have a referral program that is not working?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Refer Labs works with businesses that have existing but underperforming referral programs. We diagnose the specific failure point — incentive design, distribution gaps, funnel drop-off, or wrong referrer targeting — and rebuild from there. We do not always need to start from scratch.",
+        text: "Yes. Refer Labs works with businesses that have existing but underperforming referral programs. We diagnose the specific failure point, incentive design, distribution gaps, funnel drop-off, or wrong referrer targeting, and rebuild from there. We do not always need to start from scratch.",
       },
     },
     {
@@ -102,7 +102,7 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Referral Program Design, Launch & Distribution Service | Refer Labs Australia",
   description:
-    "Refer Labs designs, launches, and actively distributes referral programs for B2B and B2C businesses in Australia. Incentive design, tracking, channel activation, and compounding growth — end to end.",
+    "Refer Labs designs, launches, and actively distributes referral programs for B2B and B2C businesses in Australia. Incentive design, tracking, channel activation, and compounding growth, end to end.",
   url: `${SITE_URL}/services/referral-programs`,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
@@ -153,7 +153,7 @@ export default function ReferralProgramsPage() {
             <span className="text-[#22C0CD]">Referral Program</span>
           </h1>
           <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            We design the incentive structure, build the infrastructure, activate the distribution channels, and manage ongoing growth until referrals compound on their own. From incentive design to first 100 referrals — we own the execution.
+            We design the incentive structure, build the infrastructure, activate the distribution channels, and manage ongoing growth until referrals compound on their own. From incentive design to first 100 referrals, we own the execution.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
             {["Full program launch and distribution", "Active referrer seeding", "Compounding growth strategy"].map((tag) => (
@@ -190,7 +190,7 @@ export default function ReferralProgramsPage() {
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
               <p>
-                Most businesses that launch referral programs see an initial spike and then stagnation. The incentive gets set, a landing page goes live, and then nothing — because launching the structure is not the same as distributing it. The program exists but nobody knows it is there.
+                Most businesses that launch referral programs see an initial spike and then stagnation. The incentive gets set, a landing page goes live, and then nothing, because launching the structure is not the same as distributing it. The program exists but nobody knows it is there.
               </p>
               <p>
                 Scaling a referral program requires active distribution: identifying your highest-value referrers and getting the program in front of them directly, integrating referral prompts at the right points in the customer journey, and building the program into your outreach, follow-up, and partner conversations.
@@ -213,7 +213,7 @@ export default function ReferralProgramsPage() {
                 {
                   num: "1",
                   title: "Diagnose and Design the Incentive Model",
-                  copy: "We audit your existing word-of-mouth, identify your highest-value referral sources, and map the natural sharing moments in your customer journey. We design the incentive structure — what triggers a reward, how it pays out, and what mechanics drive repeat referrals — modelled against your unit economics so the program is profitable from day one.",
+                  copy: "We audit your existing word-of-mouth, identify your highest-value referral sources, and map the natural sharing moments in your customer journey. We design the incentive structure, what triggers a reward, how it pays out, and what mechanics drive repeat referrals, modelled against your unit economics so the program is profitable from day one.",
                 },
                 {
                   num: "2",
@@ -223,12 +223,12 @@ export default function ReferralProgramsPage() {
                 {
                   num: "3",
                   title: "Distribute the Program Actively",
-                  copy: "Distribution is where most programs stop and where we start. We build a distribution plan that maps every channel where your referral program should be visible — existing customers, high-value accounts, strategic partners, community channels, and your outbound sequences. We execute the outreach, make the introductions, and seed the program into the right hands.",
+                  copy: "Distribution is where most programs stop and where we start. We build a distribution plan that maps every channel where your referral program should be visible, existing customers, high-value accounts, strategic partners, community channels, and your outbound sequences. We execute the outreach, make the introductions, and seed the program into the right hands.",
                 },
                 {
                   num: "4",
                   title: "Optimise and Scale to Compound",
-                  copy: "Once the program is live and distributed, we monitor conversion at every stage of the referral funnel. We run tests on incentive structures, timing, and messaging. We identify the highest-performing referrer segments and build tiered structures to reward and scale them. The goal is a program that generates referrals consistently — a growth channel that compounds on its own.",
+                  copy: "Once the program is live and distributed, we monitor conversion at every stage of the referral funnel. We run tests on incentive structures, timing, and messaging. We identify the highest-performing referrer segments and build tiered structures to reward and scale them. The goal is a program that generates referrals consistently, a growth channel that compounds on its own.",
                 },
               ].map((step) => (
                 <div key={step.num} className="grid grid-cols-[40px_1fr] gap-5">
@@ -254,7 +254,7 @@ export default function ReferralProgramsPage() {
                 "Incentive and commission structure design with unit economics modelling",
                 "Tracking system setup and platform integration (CRM, eCommerce, SaaS)",
                 "Partner portal configuration and referrer onboarding flow",
-                "Program launch communications — emails, in-app prompts, partner outreach",
+                "Program launch communications, emails, in-app prompts, partner outreach",
                 "Full launch coordination and go-live execution",
                 "Distribution strategy: existing customers, strategic partners, outbound sequences",
                 "Active referrer seeding and outreach across target segments",
@@ -284,8 +284,8 @@ export default function ReferralProgramsPage() {
                 <ul className="space-y-3">
                   {[
                     "You have an existing customer base but no structured, actively distributed referral program",
-                    "You launched a referral program but it stagnated — referrals are not consistently coming in",
-                    "You want someone to own the launch, distribution, and ongoing scaling — not just hand you a template",
+                    "You launched a referral program but it stagnated, referrals are not consistently coming in",
+                    "You want someone to own the launch, distribution, and ongoing scaling, not just hand you a template",
                     "You run an eCommerce, SaaS, subscription, professional service, or B2B business",
                     "You understand referrals are a channel, not a feature, and want it treated that way",
                   ].map((item) => (
@@ -314,11 +314,11 @@ export default function ReferralProgramsPage() {
               {[
                 {
                   q: "What is the difference between a referral program and an affiliate program?",
-                  a: "A referral program incentivises existing customers to refer new customers — typically word-of-mouth driven with bilateral rewards. An affiliate program recruits external promoters who earn commissions for driving new customers. Both are distribution channels. Refer Labs designs, launches, and distributes both, with the approach tailored to your business model.",
+                  a: "A referral program incentivises existing customers to refer new customers, typically word-of-mouth driven with bilateral rewards. An affiliate program recruits external promoters who earn commissions for driving new customers. Both are distribution channels. Refer Labs designs, launches, and distributes both, with the approach tailored to your business model.",
                 },
                 {
                   q: "Can you help if we already have a referral program that is not working?",
-                  a: "Yes. We work with businesses that have existing but underperforming referral programs. We diagnose the specific failure point — incentive design, distribution gaps, funnel drop-off, or wrong referrer targeting — and rebuild from there. We do not always need to start from scratch.",
+                  a: "Yes. We work with businesses that have existing but underperforming referral programs. We diagnose the specific failure point, incentive design, distribution gaps, funnel drop-off, or wrong referrer targeting, and rebuild from there. We do not always need to start from scratch.",
                 },
                 {
                   q: "What platforms do you integrate referral tracking with?",

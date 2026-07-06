@@ -7,7 +7,7 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import { CATALOG, getVertical, type Provider } from "@/lib/catalog/catalog";
 
-// Only catalog slugs are valid — anything else is a real 404, not a soft-404.
+// Only catalog slugs are valid, anything else is a real 404, not a soft-404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

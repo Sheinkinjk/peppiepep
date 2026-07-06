@@ -48,7 +48,7 @@ const faqSchema = {
       name: "What does affiliate program distribution mean?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Affiliate program distribution means actively placing your affiliate offer into the communities, forums, newsletters, and channels where your ideal buyers already research and make decisions — rather than simply listing the program and waiting for affiliates to find it. Refer Labs handles the full execution: channel identification, community-native content, contextual placement, and conversion tracking.",
+        text: "Affiliate program distribution means actively placing your affiliate offer into the communities, forums, newsletters, and channels where your ideal buyers already research and make decisions, rather than simply listing the program and waiting for affiliates to find it. Refer Labs handles the full execution: channel identification, community-native content, contextual placement, and conversion tracking.",
       },
     },
     {
@@ -56,7 +56,7 @@ const faqSchema = {
       name: "How does Refer Labs distribute affiliate programs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We start by mapping your buyer profile and identifying the highest-intent channels — subreddits, industry forums, newsletters, and niche communities where your buyers research purchases. Our in-house team then places your offer contextually in those channels, builds credibility over time, and tracks conversion at the source level. We cut low-performing channels and scale what converts.",
+        text: "We start by mapping your buyer profile and identifying the highest-intent channels, subreddits, industry forums, newsletters, and niche communities where your buyers research purchases. Our in-house team then places your offer contextually in those channels, builds credibility over time, and tracks conversion at the source level. We cut low-performing channels and scale what converts.",
       },
     },
     {
@@ -64,7 +64,7 @@ const faqSchema = {
       name: "What sectors does Refer Labs work with for affiliate distribution?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Refer Labs works across SaaS, health and wellness, fintech, AI tools, professional services, and eCommerce. We work with one business per sector — if we are already distributing a competing offer in your category, we will let you know. Applications are reviewed within two business days.",
+        text: "Refer Labs works across SaaS, health and wellness, fintech, AI tools, professional services, and eCommerce. We work with one business per sector, if we are already distributing a competing offer in your category, we will let you know. Applications are reviewed within two business days.",
       },
     },
     {
@@ -72,7 +72,7 @@ const faqSchema = {
       name: "How is this different from a typical affiliate marketing agency?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most affiliate agencies recruit affiliates and manage commissions. Refer Labs does not recruit — we distribute. Our in-house team actively places your offer in communities and channels using community-native content. We are not a marketplace or network. We are a distribution team that treats your affiliate program as an active growth channel, not a passive listing.",
+        text: "Most affiliate agencies recruit affiliates and manage commissions. Refer Labs does not recruit, we distribute. Our in-house team actively places your offer in communities and channels using community-native content. We are not a marketplace or network. We are a distribution team that treats your affiliate program as an active growth channel, not a passive listing.",
       },
     },
     {
@@ -88,7 +88,7 @@ const faqSchema = {
       name: "What does sector-exclusive representation mean?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sector-exclusive means we work with one business per category. If we are distributing an affiliate program for a SaaS product in your space, we do not take on a competing offer. Our distribution team's credibility in each community depends on not promoting two competing products simultaneously. This exclusivity works in your favour — you get our full focus in your sector without a competitor benefiting from the same team.",
+        text: "Sector-exclusive means we work with one business per category. If we are distributing an affiliate program for a SaaS product in your space, we do not take on a competing offer. Our distribution team's credibility in each community depends on not promoting two competing products simultaneously. This exclusivity works in your favour, you get our full focus in your sector without a competitor benefiting from the same team.",
       },
     },
   ],
@@ -97,7 +97,7 @@ const faqSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Affiliate Program Distribution Service — Managed Affiliate Marketing | Refer Labs",
+  name: "Affiliate Program Distribution Service, Managed Affiliate Marketing | Refer Labs",
   description:
     "Refer Labs distributes your affiliate offer into high-intent communities and channels with an in-house team. Sector-exclusive representation, source-level attribution, ongoing optimisation.",
   url: `${SITE_URL}/services/affiliate-distribution`,
@@ -150,7 +150,7 @@ export default function AffiliateDistributionPage() {
             <span className="text-[#22C0CD]">Into the Right Channels</span>
           </h1>
           <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            We place your affiliate offer into high-intent communities, forums, and channels where your buyers already make decisions — using an in-house team, not outsourced affiliates. Sector-exclusive. One business per category. Application required.
+            We place your affiliate offer into high-intent communities, forums, and channels where your buyers already make decisions, using an in-house team, not outsourced affiliates. Sector-exclusive. One business per category. Application required.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
             {["Sector-exclusive representation", "In-house distribution team", "Source-level attribution tracking"].map((tag) => (
@@ -187,13 +187,13 @@ export default function AffiliateDistributionPage() {
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
               <p>
-                Most affiliate distribution services hand you a list of channels and leave the execution to you. We do the opposite. Our team takes your affiliate offer and actively distributes it — into niche communities, high-intent forums, industry groups, and digital channels where your buyers already spend time and make decisions.
+                Most affiliate distribution services hand you a list of channels and leave the execution to you. We do the opposite. Our team takes your affiliate offer and actively distributes it, into niche communities, high-intent forums, industry groups, and digital channels where your buyers already spend time and make decisions.
               </p>
               <p>
                 The distinction matters. Anyone can list a Reddit subreddit or an industry forum. Placing content that resonates there, building credibility over time, and converting passive readers into active buyers requires an in-house team that understands the nuances of each channel. That is what we do.
               </p>
               <p>
-                We focus entirely on relevant traffic. We are not interested in volume metrics — we are interested in driving buyers who are already in-market, actively searching for, discussing, or comparing options in your category. Every channel we activate is mapped to buyer intent, not audience size.
+                We focus entirely on relevant traffic. We are not interested in volume metrics, we are interested in driving buyers who are already in-market, actively searching for, discussing, or comparing options in your category. Every channel we activate is mapped to buyer intent, not audience size.
               </p>
             </div>
           </div>
@@ -207,10 +207,10 @@ export default function AffiliateDistributionPage() {
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
               <p>
-                We work with one business per sector. If we are distributing an affiliate program for a SaaS product in your category, we do not take on a competing offer. Our distribution team&apos;s positioning in each community depends on their credibility — and that credibility is undermined the moment we are seen promoting two competing products in the same space.
+                We work with one business per sector. If we are distributing an affiliate program for a SaaS product in your category, we do not take on a competing offer. Our distribution team&apos;s positioning in each community depends on their credibility, and that credibility is undermined the moment we are seen promoting two competing products in the same space.
               </p>
               <p>
-                This means our capacity is limited and our onboarding is selective. Businesses apply to work with us. We review the offer, assess the category fit, confirm there is no sector conflict, and accept or decline. If we accept your application, you get our full distribution focus in your space — without a competitor benefiting from the same team and channels.
+                This means our capacity is limited and our onboarding is selective. Businesses apply to work with us. We review the offer, assess the category fit, confirm there is no sector conflict, and accept or decline. If we accept your application, you get our full distribution focus in your space, without a competitor benefiting from the same team and channels.
               </p>
               <p className="text-[#0AA7B5]/70 text-sm font-medium">
                 If you are in a sector we are already working in, we will let you know. Applications are reviewed within two business days.
@@ -230,17 +230,17 @@ export default function AffiliateDistributionPage() {
                 {
                   num: "1",
                   title: "Offer and Audience Assessment",
-                  copy: "We review your affiliate offer structure, commission model, and conversion data. We map the profile of your ideal buyer — what they read, where they ask questions, and how they make purchase decisions. This assessment tells us exactly where to place your offer and how to frame it for each channel.",
+                  copy: "We review your affiliate offer structure, commission model, and conversion data. We map the profile of your ideal buyer, what they read, where they ask questions, and how they make purchase decisions. This assessment tells us exactly where to place your offer and how to frame it for each channel.",
                 },
                 {
                   num: "2",
                   title: "Channel Identification and Scoring",
-                  copy: "Our team maps the relevant communities, forums, subreddits, newsletters, groups, and digital channels where your buyer profile is most concentrated. We score each by buyer intent, engagement quality, and distribution fit — not raw audience size.",
+                  copy: "Our team maps the relevant communities, forums, subreddits, newsletters, groups, and digital channels where your buyer profile is most concentrated. We score each by buyer intent, engagement quality, and distribution fit, not raw audience size.",
                 },
                 {
                   num: "3",
                   title: "Active Distribution by Our Team",
-                  copy: "We place your offer across the target channels — writing community-native content, contributing to relevant discussions, and positioning your affiliate program contextually. We do not spam or broadcast. We build credibility in each space and let the offer land with authority.",
+                  copy: "We place your offer across the target channels, writing community-native content, contributing to relevant discussions, and positioning your affiliate program contextually. We do not spam or broadcast. We build credibility in each space and let the offer land with authority.",
                 },
                 {
                   num: "4",
@@ -271,13 +271,13 @@ export default function AffiliateDistributionPage() {
                 "Offer and commission structure review",
                 "Buyer profile and intent mapping",
                 "Channel identification and scoring (Reddit, forums, newsletters, communities)",
-                "In-house execution by our distribution team — not outsourced",
+                "In-house execution by our distribution team, not outsourced",
                 "Community-native content creation and contextual placement",
                 "Conversion tracking with source-level attribution",
                 "Channel testing and ongoing optimisation",
                 "Scale playbook for high-performing channels",
                 "Monthly performance reporting",
-                "Sector-exclusive representation — no competing offers in your category",
+                "Sector-exclusive representation, no competing offers in your category",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-white/65">
                   <CheckCircle2 className="h-4 w-4 text-[#22C0CD] flex-shrink-0 mt-0.5" />
@@ -300,7 +300,7 @@ export default function AffiliateDistributionPage() {
                 <ul className="space-y-3">
                   {[
                     "You have an affiliate program with a proven offer and competitive commission",
-                    "You are not getting enough distribution — the program exists but traffic is inconsistent",
+                    "You are not getting enough distribution, the program exists but traffic is inconsistent",
                     "You want in-house team execution, not a list of channels to work yourself",
                     "Your buyers research purchases in online communities before deciding",
                     "You understand we work with one business per sector and want that exclusivity working for you",
@@ -330,11 +330,11 @@ export default function AffiliateDistributionPage() {
               {[
                 {
                   q: "What does affiliate program distribution mean?",
-                  a: "Affiliate program distribution means actively placing your offer into communities and channels where your buyers already research and make decisions — rather than listing the program and waiting for affiliates to find it. Refer Labs handles the full execution: channel identification, community-native content, contextual placement, and conversion tracking.",
+                  a: "Affiliate program distribution means actively placing your offer into communities and channels where your buyers already research and make decisions, rather than listing the program and waiting for affiliates to find it. Refer Labs handles the full execution: channel identification, community-native content, contextual placement, and conversion tracking.",
                 },
                 {
                   q: "How is this different from a typical affiliate marketing agency?",
-                  a: "Most affiliate agencies recruit affiliates and manage commissions. Refer Labs distributes. Our in-house team places your offer in communities using community-native content. We are not a marketplace or network — we are a distribution team that treats your affiliate program as an active growth channel.",
+                  a: "Most affiliate agencies recruit affiliates and manage commissions. Refer Labs distributes. Our in-house team places your offer in communities using community-native content. We are not a marketplace or network, we are a distribution team that treats your affiliate program as an active growth channel.",
                 },
                 {
                   q: "What does sector-exclusive representation mean?",

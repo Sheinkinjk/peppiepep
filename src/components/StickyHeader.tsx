@@ -133,7 +133,7 @@ export function StickyHeader() {
                 className="inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-bold shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
                 style={{ background: "#F59E0B", color: "#060f15", boxShadow: "0 4px 16px rgba(245,158,11,0.35)" }}
               >
-                Get Blueprint — $799
+                Get Blueprint, $799
                 <ArrowRight className="h-4 w-4" />
               </Link>
               {isAuthenticated && (
@@ -216,7 +216,7 @@ export function StickyHeader() {
                 style={{ background: "#F59E0B", color: "#060f15" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get Blueprint — $799
+                Get Blueprint, $799
                 <ArrowRight className="h-4 w-4" />
               </Link>
               {isAuthenticated && (

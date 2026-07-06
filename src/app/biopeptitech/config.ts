@@ -9,10 +9,10 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
   affiliateUrl: BIOPEPTITECH_URL,
 
   quickAnswer:
-    "BioPeptiTech is a research peptide supplier offering lab-grade compounds. The current discount is applied automatically through the referral link on this page — no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
+    "BioPeptiTech is a research peptide supplier offering lab-grade compounds. The current discount is applied automatically through the referral link on this page, no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
 
   banner: {
-    heading: "BioPeptiTech — Current Peptides Sale",
+    heading: "BioPeptiTech, Current Peptides Sale",
     body: "Click below to go directly to BioPeptiTech via our affiliate link. Active sale pricing visible on arrival.",
     buttonLabel: "View BioPeptiTech Peptides Sale",
   },
@@ -39,13 +39,13 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
     h1Prefix: "BioPeptiTech",
     h1Highlight: "Peptides Sale & Research Peptide Discounts",
     subheading:
-      "BioPeptiTech runs the most frequent peptides sale events of the major research peptide suppliers — making it the best entry point for researchers who want competitive pricing. This page takes you directly to their current sale via our affiliate link. No code required. For laboratory research use only.",
+      "BioPeptiTech runs the most frequent peptides sale events of the major research peptide suppliers, making it the best entry point for researchers who want competitive pricing. This page takes you directly to their current sale via our affiliate link. No code required. For laboratory research use only.",
     trustBullets: [
       "Direct access to the current BioPeptiTech peptides sale",
       "Laboratory-grade research peptides and compounds",
-      "No code required — discount applied via our referral link",
+      "No code required, discount applied via our referral link",
       "Covers longevity, metabolic, and hormone signalling research compounds",
-      "Instant click-through — no details required on this page",
+      "Instant click-through, no details required on this page",
     ],
   },
 
@@ -158,7 +158,7 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
     },
     {
       q: "How do I access the BioPeptiTech peptides sale?",
-      a: "Click any button on this page. You will be taken directly to biopeptitech.com via our affiliate link. Any active peptides sale pricing will be visible on the site — no manual code entry required.",
+      a: "Click any button on this page. You will be taken directly to biopeptitech.com via our affiliate link. Any active peptides sale pricing will be visible on the site, no manual code entry required.",
     },
   ],
 
@@ -172,16 +172,16 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
     {
       href: "/best-peptide-supplier",
       label: "Best Peptide Supplier 2026",
-      desc: "Apollo vs Ascension vs BioPeptiTech — purity standards, catalogue coverage, and current discount codes.",
+      desc: "Apollo vs Ascension vs BioPeptiTech, purity standards, catalogue coverage, and current discount codes.",
     },
     {
       href: "/apollopeptides",
-      label: "Apollo Peptide Sciences — Discount Code",
+      label: "Apollo Peptide Sciences, Discount Code",
       desc: "Current Apollo Peptide Sciences offer via referral link. Research peptides sale.",
     },
     {
       href: "/ascensionpeptides",
-      label: "Ascension Peptides — Discount Code",
+      label: "Ascension Peptides, Discount Code",
       desc: "Current Ascension Peptides offer via referral link. High-purity research compounds.",
     },
     {

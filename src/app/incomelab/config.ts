@@ -9,10 +9,10 @@ export const incomeLabConfig: AffiliatePageConfig = {
   affiliateUrl: INCOME_LAB_URL,
 
   quickAnswer:
-    "IncomeLab provides AI side-hustle ideas and structured frameworks for making money with AI tools in 2026 — covering tools, business models, and automated income approaches. It is best for people starting an online income stream with AI. Access it via the link on this page.",
+    "IncomeLab provides AI side-hustle ideas and structured frameworks for making money with AI tools in 2026, covering tools, business models, and automated income approaches. It is best for people starting an online income stream with AI. Access it via the link on this page.",
 
   banner: {
-    heading: "Income Lab — AI Side Hustle & Income Frameworks",
+    heading: "Income Lab, AI Side Hustle & Income Frameworks",
     body: "Click below to go directly to the Income Lab onboarding page via our referral link.",
     buttonLabel: "Continue to Income Lab",
   },
@@ -45,7 +45,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
       "Covers the top AI side hustle ideas for 2026",
       "Includes AI tools you can use to generate income today",
       "Addresses Reddit communities discussing AI income strategies",
-      "No signup required on this page — click through instantly",
+      "No signup required on this page, click through instantly",
     ],
   },
 
@@ -53,7 +53,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
     {
       heading: "Access Income Lab",
       paragraphs: [
-        "This page is built for people searching for AI side hustle ideas, how to make money with AI, or what communities like Reddit are saying about AI online income. Rather than digging through forums or scattered tutorials, this page gives you a concise overview of the topic and then takes you directly to Income Lab — a platform built around building income streams using AI tools and automation.",
+        "This page is built for people searching for AI side hustle ideas, how to make money with AI, or what communities like Reddit are saying about AI online income. Rather than digging through forums or scattered tutorials, this page gives you a concise overview of the topic and then takes you directly to Income Lab, a platform built around building income streams using AI tools and automation.",
         "Click any button on this page to be taken directly to the Income Lab onboarding page. No information is required here before you arrive.",
       ],
       hasCta: true,
@@ -62,7 +62,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
     {
       heading: "What Is Income Lab?",
       paragraphs: [
-        "Income Lab is a platform and community focused on helping people build real income streams using AI tools, automation, and modern online business methods. It is designed for people who want to move beyond casual interest in AI and actually apply it to generating money — whether as a primary income or as a side hustle alongside existing work.",
+        "Income Lab is a platform and community focused on helping people build real income streams using AI tools, automation, and modern online business methods. It is designed for people who want to move beyond casual interest in AI and actually apply it to generating money, whether as a primary income or as a side hustle alongside existing work.",
         "The platform covers practical approaches to AI income generation, including which tools to use, how to structure AI-assisted services, how to find clients or customers, and how to build systems that produce income more consistently over time.",
         "Income Lab is relevant whether you are starting from zero or already have skills you want to combine with AI to create new income streams. The platform is designed to be actionable rather than theoretical.",
       ],
@@ -79,7 +79,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
       heading: "AI Tools to Make Money",
       paragraphs: [
         'The phrase "AI tools to make money" covers a wide range of software. The most useful ones for generating income fall into a few categories: content generation tools (large language models for writing, video scripts, and email copy), image and design tools (AI image generators used for branding, product creation, and social content), automation platforms (no-code tools that connect apps and automate repetitive workflows), and research tools (AI systems that compress hours of research into minutes).',
-        "The tools themselves do not generate income. Income comes from packaging what these tools help you produce into something a specific buyer wants. This is where most people get stuck — they learn the tools but do not have a clear offer or customer. Platforms like Income Lab address this directly by focusing on the business model, not just the technology.",
+        "The tools themselves do not generate income. Income comes from packaging what these tools help you produce into something a specific buyer wants. This is where most people get stuck, they learn the tools but do not have a clear offer or customer. Platforms like Income Lab address this directly by focusing on the business model, not just the technology.",
         "For Australians looking at how to make money with AI, the fundamentals are the same as anywhere else, but the local business landscape, buyer types, and platform availability shape which opportunities are most accessible.",
       ],
     },
@@ -87,7 +87,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
       heading: "AI Passive Income and Automation",
       paragraphs: [
         "AI passive income is one of the most searched topics in this space, and it is worth being precise about what it means in practice. Very few income streams are truly passive from day one. Most require upfront effort to build a system, create an offer, or establish an audience before they run with minimal ongoing input.",
-        "Where AI changes the equation is in the effort-to-output ratio. Tasks that previously required constant manual time — content publishing, customer communication, research, product creation — can now be partially or fully automated using AI tools and workflows. This allows a single person to maintain income streams that previously required a team or significant ongoing labour.",
+        "Where AI changes the equation is in the effort-to-output ratio. Tasks that previously required constant manual time, content publishing, customer communication, research, product creation, can now be partially or fully automated using AI tools and workflows. This allows a single person to maintain income streams that previously required a team or significant ongoing labour.",
         "Common AI-assisted income models that move toward passive over time include digital product sales, niche content sites monetised through advertising or affiliate links, automated email sequences, and AI-powered service delivery that is systematised enough to run without continuous input. Automate income with AI is a realistic goal, but it is better framed as reducing the ongoing time cost of an income stream rather than eliminating work entirely.",
       ],
     },
@@ -95,7 +95,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
       heading: "What Reddit Says About AI Side Hustles",
       paragraphs: [
         'Searching "Reddit side hustle", "Reddit AI side hustle", or "Reddit learn AI" returns a large volume of community discussion ranging from beginner questions to detailed case studies from people generating significant income using AI tools. Reddit communities like r/SideHustle, r/ArtificialIntelligence, r/Entrepreneur, and various AI-specific subreddits are among the most active places where these conversations happen.',
-        "The general pattern in high-quality Reddit threads on this topic is that successful AI side hustles involve combining AI tools with a specific skill, audience, or distribution advantage — not just using AI in isolation. People who report the most consistent results tend to have identified a niche buyer and a repeatable offer, rather than experimenting broadly with AI tools without a clear direction.",
+        "The general pattern in high-quality Reddit threads on this topic is that successful AI side hustles involve combining AI tools with a specific skill, audience, or distribution advantage, not just using AI in isolation. People who report the most consistent results tend to have identified a niche buyer and a repeatable offer, rather than experimenting broadly with AI tools without a clear direction.",
         "Reading Reddit discussions about AI income is a useful research step, but the challenge is sorting signal from noise. Platforms like Income Lab are designed to compress that research and give you a structured path based on what is actually working, rather than requiring you to piece it together from forum threads.",
       ],
     },
@@ -140,7 +140,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
     },
     {
       q: "How do I make money with AI?",
-      a: "Making money with AI requires combining AI tools with a specific offer for a specific buyer. The tools themselves do not generate income — they reduce the time and skill required to produce valuable outputs. The most common approaches involve using AI to deliver services faster, create digital products at scale, automate existing workflows for small businesses, or build content and information products. Income Lab provides structured frameworks for each of these.",
+      a: "Making money with AI requires combining AI tools with a specific offer for a specific buyer. The tools themselves do not generate income, they reduce the time and skill required to produce valuable outputs. The most common approaches involve using AI to deliver services faster, create digital products at scale, automate existing workflows for small businesses, or build content and information products. Income Lab provides structured frameworks for each of these.",
     },
     {
       q: "What AI tools can I use to make money?",
@@ -160,7 +160,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
     },
     {
       q: "What is Income Lab?",
-      a: "Income Lab is a platform and community built around helping people generate real income using AI tools, automation, and modern online business methods. It focuses on practical application — helping people go from learning about AI to actually earning from it. This page links directly to the Income Lab onboarding page. Click any button to continue.",
+      a: "Income Lab is a platform and community built around helping people generate real income using AI tools, automation, and modern online business methods. It focuses on practical application, helping people go from learning about AI to actually earning from it. This page links directly to the Income Lab onboarding page. Click any button to continue.",
     },
     {
       q: "How do I get to Income Lab from this page?",
@@ -177,12 +177,12 @@ export const incomeLabConfig: AffiliatePageConfig = {
   relatedLinks: [
     {
       href: "/referral-blueprint",
-      label: "Referral Growth Blueprint — $799",
+      label: "Referral Growth Blueprint, $799",
       desc: "250+ researched affiliate programs, a personalised strategy brief, and distribution playbooks.",
     },
     {
       href: "/beehiiv",
-      label: "beehiiv — Newsletter Platform Review",
+      label: "beehiiv, Newsletter Platform Review",
       desc: "Free up to 2,500 subscribers. Build an audience and monetise it.",
     },
     {

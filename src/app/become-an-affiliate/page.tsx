@@ -12,9 +12,9 @@ const AMBER = "#F59E0B";
 
 const benefits = [
   { icon: <DollarSign className="h-5 w-5" />, label: "30% commission",        body: "$239.70 per sale you refer. Highest commission in the AU affiliate marketing tools category." },
-  { icon: <TrendingUp className="h-5 w-5" />, label: "60-day cookie window", body: "Generous attribution. Subscriber clicks today, buys in 8 weeks — you still earn." },
+  { icon: <TrendingUp className="h-5 w-5" />, label: "60-day cookie window", body: "Generous attribution. Subscriber clicks today, buys in 8 weeks, you still earn." },
   { icon: <Zap className="h-5 w-5" />,        label: "Monthly payouts",      body: "Stripe Connect direct to your bank account on the 1st of each month, $50 minimum." },
-  { icon: <Users className="h-5 w-5" />,      label: "Real product, premium price", body: "$799 product with 80% margin. We're not racing to the bottom — your audience gets a high-quality product." },
+  { icon: <Users className="h-5 w-5" />,      label: "Real product, premium price", body: "$799 product with 80% margin. We're not racing to the bottom, your audience gets a high-quality product." },
 ];
 
 const idealFit = [
@@ -27,8 +27,8 @@ const idealFit = [
 ];
 
 const swipeAngles = [
-  { angle: "Direct review", example: '"Refer Labs Blueprint review — what you actually get for $799"' },
-  { angle: "Comparison",    example: '"Refer Labs vs free affiliate program lists — is the $799 worth it?"' },
+  { angle: "Direct review", example: '"Refer Labs Blueprint review, what you actually get for $799"' },
+  { angle: "Comparison",    example: '"Refer Labs vs free affiliate program lists, is the $799 worth it?"' },
   { angle: "Use case",      example: '"How I picked my affiliate marketing niche using the Refer Labs blueprint"' },
   { angle: "Newsletter",    example: 'Soft mention in a roundup: "If you want a researched starting database, Refer Labs ($799) skips months of work."' },
 ];
@@ -137,7 +137,7 @@ export default function AffiliateProgramPage() {
             <div>
               <h2 className="text-3xl font-black tracking-tight text-white mb-3">Who we accept.</h2>
               <p className="text-white/55 mb-8">
-                We approve roughly 1 in 4 applicants. We&apos;re looking for affiliates who can genuinely reach our buyer profile — not anyone with a link.
+                We approve roughly 1 in 4 applicants. We&apos;re looking for affiliates who can genuinely reach our buyer profile, not anyone with a link.
               </p>
               <ul className="space-y-3">
                 {idealFit.map((f) => (
@@ -188,7 +188,7 @@ export default function AffiliateProgramPage() {
             {[
               { n: "01", t: "Apply", body: "Tell us about your platform and audience. Takes 2 minutes." },
               { n: "02", t: "Approval (within 3 business days)", body: "We review every application. If you fit the audience, you get a unique tracking link + swipe copy." },
-              { n: "03", t: "Promote",  body: "Use the swipe content angles above. Drop the link in your content — newsletter, blog, video description, social bio." },
+              { n: "03", t: "Promote",  body: "Use the swipe content angles above. Drop the link in your content, newsletter, blog, video description, social bio." },
               { n: "04", t: "Earn",     body: "30% commission on every $799 sale = $239.70 per conversion. 60-day cookie window. Tracked via Rewardful (or comparable platform on launch)." },
               { n: "05", t: "Get paid", body: "Stripe Connect direct deposit on the 1st of each month, $50 minimum payout." },
             ].map(({ n, t, body }) => (

@@ -31,7 +31,7 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Website Builders 2026",
-  description: "In-depth comparison of the best website builders including AI-powered options — Carrd, Durable AI, Butternut AI, and Swipe Pages.",
+  description: "In-depth comparison of the best website builders including AI-powered options, Carrd, Durable AI, Butternut AI, and Swipe Pages.",
   numberOfItems: 4,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Carrd", description: "Simplest and most affordable one-page website builder. Free plan available. Pro from $9/year.", url: `${SITE_URL}/carrd` },
@@ -45,7 +45,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "What is the best website builder for beginners?", acceptedAnswer: { "@type": "Answer", text: "Carrd is the easiest starting point for beginners — a free plan, a simple editor, and most users are live within an hour. For zero-effort setup, Butternut AI and Durable AI generate a complete website from a text description in under 30 seconds with no design skill required." } },
+    { "@type": "Question", name: "What is the best website builder for beginners?", acceptedAnswer: { "@type": "Answer", text: "Carrd is the easiest starting point for beginners, a free plan, a simple editor, and most users are live within an hour. For zero-effort setup, Butternut AI and Durable AI generate a complete website from a text description in under 30 seconds with no design skill required." } },
     { "@type": "Question", name: "What is the best AI website builder in 2026?", acceptedAnswer: { "@type": "Answer", text: "Butternut AI and Durable AI are the strongest AI website builders available in 2026. Butternut generates a full multi-page site in 20 seconds with strong copy quality. Durable generates in 30 seconds and adds a CRM and invoicing for service businesses. Both offer free generation before you subscribe." } },
     { "@type": "Question", name: "What is the cheapest website builder?", acceptedAnswer: { "@type": "Answer", text: "Carrd is the most affordable option with a genuine free plan and Pro plans from $9 per year. Butternut AI and Durable AI both allow free website generation before you commit to a paid publishing plan." } },
     { "@type": "Question", name: "Which website builder is best for Google Ads?", acceptedAnswer: { "@type": "Answer", text: "Swipe Pages is the strongest choice for Google Ads landing pages. Its AMP technology delivers mobile pages in under one second, with built-in A/B testing and dynamic text replacement for campaign personalisation." } },
@@ -98,7 +98,7 @@ const reviewsSchema = [
     reviewRating: { "@type": "Rating", ratingValue: "4.6", bestRating: "5", worstRating: "1" },
     author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
     datePublished: "2026-03-11",
-    reviewBody: "Fastest AI website builder — full multi-page site in 20 seconds with high-quality copy. Includes SEO tools and blog publishing. Free to generate with no account.",
+    reviewBody: "Fastest AI website builder, full multi-page site in 20 seconds with high-quality copy. Includes SEO tools and blog publishing. Free to generate with no account.",
   },
   {
     "@context": "https://schema.org",
@@ -171,7 +171,7 @@ function PlatformCard({
     >
       <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-12">
 
-        {/* Left — identity + content */}
+        {/* Left, identity + content */}
         <div>
           {/* Header */}
           <div className="flex items-center gap-3 mb-4">
@@ -206,7 +206,7 @@ function PlatformCard({
           </div>
         </div>
 
-        {/* Right — deal + CTA */}
+        {/* Right, deal + CTA */}
         <div className="flex flex-col gap-4">
           {/* Deal highlight */}
           <div
@@ -255,18 +255,18 @@ const platforms: PlatformCardProps[] = [
     id: "carrd",
     index: "01",
     name: "Carrd",
-    tagline: "The fastest, cheapest way to get a clean professional site live. Free plan available permanently — no credit card, no trial expiry.",
+    tagline: "The fastest, cheapest way to get a clean professional site live. Free plan available permanently, no credit card, no trial expiry.",
     deal: "Free plan forever",
-    dealNote: "Publish up to 3 sites at no cost. Pro plans start at $9/year — the lowest annual price in the category.",
+    dealNote: "Publish up to 3 sites at no cost. Pro plans start at $9/year, the lowest annual price in the category.",
     pricing: "Free / Pro from $9/year",
     pros: [
-      "Permanent free plan — no expiry",
+      "Permanent free plan, no expiry",
       "Pro plans from $9/year",
       "Zero learning curve, live within the hour",
       "Trusted by a large indie and creator community",
     ],
     cons: [
-      "Single-page only — no multi-page support",
+      "Single-page only, no multi-page support",
       "No AI generation or blog tools",
     ],
     affUrl: CARRD_URL,
@@ -278,8 +278,8 @@ const platforms: PlatformCardProps[] = [
     id: "durable",
     index: "02",
     name: "Durable AI",
-    tagline: "AI generates a complete business website in 30 seconds — plus a built-in CRM and invoicing. No account needed to try it.",
-    deal: "Generate free — no account needed",
+    tagline: "AI generates a complete business website in 30 seconds, plus a built-in CRM and invoicing. No account needed to try it.",
+    deal: "Generate free, no account needed",
     dealNote: "Preview your full AI-generated website before signing up. Subscribe only when you're ready to publish.",
     pricing: "Free to generate / paid to publish",
     pros: [
@@ -301,8 +301,8 @@ const platforms: PlatformCardProps[] = [
     id: "butternut",
     index: "03",
     name: "Butternut AI",
-    tagline: "Describe your business and get a full multi-page website in 20 seconds — the fastest AI generation available, with built-in SEO and blog tools.",
-    deal: "Generate free — no account needed",
+    tagline: "Describe your business and get a full multi-page website in 20 seconds, the fastest AI generation available, with built-in SEO and blog tools.",
+    deal: "Generate free, no account needed",
     dealNote: "See your complete AI-generated site before committing. Custom domain publishing on paid plans.",
     pricing: "Free to generate / paid to publish",
     pros: [
@@ -324,18 +324,18 @@ const platforms: PlatformCardProps[] = [
     id: "swipepages",
     index: "04",
     name: "Swipe Pages",
-    tagline: "Landing pages that load in under one second via AMP technology. Built for paid ad campaigns — with A/B testing and dynamic text replacement included.",
+    tagline: "Landing pages that load in under one second via AMP technology. Built for paid ad campaigns, with A/B testing and dynamic text replacement included.",
     deal: "14-day free trial",
     dealNote: "No credit card required. Full access to all features including AMP pages, A/B testing, and agency workspaces.",
     pricing: "Startup to Agency plans",
     pros: [
-      "AMP pages — sub-second mobile load",
+      "AMP pages, sub-second mobile load",
       "A/B testing built in",
       "Dynamic text replacement for ad campaigns",
       "No credit card for trial",
     ],
     cons: [
-      "Landing pages only — not a full website solution",
+      "Landing pages only, not a full website solution",
       "Higher entry price than general builders",
     ],
     affUrl: SWIPE_URL,
@@ -379,19 +379,19 @@ export default function BestWebsiteBuilderPage() {
             </h1>
 
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Most people need Carrd (free, permanent, live in an hour) or one of the AI builders. Swipe Pages sits in a different category entirely — it is a conversion tool for paid ad campaigns, not a general website solution.
+              Most people need Carrd (free, permanent, live in an hour) or one of the AI builders. Swipe Pages sits in a different category entirely, it is a conversion tool for paid ad campaigns, not a general website solution.
             </p>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
-              Below: what each platform is actually built for, current pricing, current offers, and a direct link to get started. No affiliate fluff — each verdict is based on what the product does well and who it will fail.
+              Below: what each platform is actually built for, current pricing, current offers, and a direct link to get started. No affiliate fluff, each verdict is based on what the product does well and who it will fail.
             </p>
 
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
               {[
-                { href: "#carrd",      label: "01 — Carrd" },
-                { href: "#durable",    label: "02 — Durable AI" },
-                { href: "#butternut",  label: "03 — Butternut AI" },
-                { href: "#swipepages", label: "04 — Swipe Pages" },
+                { href: "#carrd",      label: "01, Carrd" },
+                { href: "#durable",    label: "02, Durable AI" },
+                { href: "#butternut",  label: "03, Butternut AI" },
+                { href: "#swipepages", label: "04, Swipe Pages" },
               ].map(({ href, label }) => (
                 <a
                   key={href}
@@ -412,7 +412,7 @@ export default function BestWebsiteBuilderPage() {
                 Quick Verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                For a fast, permanent site at the lowest cost, Carrd is the pick — free forever and live within an hour. For an AI-built business website, Durable AI (with built-in CRM and invoicing) or Butternut AI (a full multi-page site in about 20 seconds) lead. Swipe Pages is a different category: AMP landing pages built for paid-ad campaigns, not a general website builder.
+                For a fast, permanent site at the lowest cost, Carrd is the pick, free forever and live within an hour. For an AI-built business website, Durable AI (with built-in CRM and invoicing) or Butternut AI (a full multi-page site in about 20 seconds) lead. Swipe Pages is a different category: AMP landing pages built for paid-ad campaigns, not a general website builder.
               </p>
             </div>
           </section>
@@ -471,10 +471,10 @@ export default function BestWebsiteBuilderPage() {
             </h2>
             <div className="space-y-4 max-w-2xl">
               {[
-                { label: "Use Carrd if:", body: "You need a clean one-page site — portfolio, landing page, link-in-bio, or personal brand — and want the lowest cost option on the market. Free forever. Pro from $9/year. Nothing else comes close on price-to-quality for single-page use cases." },
-                { label: "Use Durable AI if:", body: "You are a local service business — trades, consultants, coaches, therapists — and want a website, a CRM to track leads, and invoicing in one platform, generated in 30 seconds from your business name and location. Not for e-commerce or content sites." },
+                { label: "Use Carrd if:", body: "You need a clean one-page site, portfolio, landing page, link-in-bio, or personal brand, and want the lowest cost option on the market. Free forever. Pro from $9/year. Nothing else comes close on price-to-quality for single-page use cases." },
+                { label: "Use Durable AI if:", body: "You are a local service business, trades, consultants, coaches, therapists, and want a website, a CRM to track leads, and invoicing in one platform, generated in 30 seconds from your business name and location. Not for e-commerce or content sites." },
                 { label: "Use Butternut AI if:", body: "You want the fastest AI-generated multi-page website with the strongest copy quality out of the box. No account required to generate and preview. Better than Durable for content-heavy sites; lacks the CRM and invoicing Durable includes." },
-                { label: "Use Swipe Pages if:", body: "You spend money on Google Ads or Meta Ads and your landing pages are costing you conversions due to slow mobile load times. AMP pages load in under one second. A/B testing and dynamic text replacement built in. Not a website solution — a dedicated conversion tool for paid traffic." },
+                { label: "Use Swipe Pages if:", body: "You spend money on Google Ads or Meta Ads and your landing pages are costing you conversions due to slow mobile load times. AMP pages load in under one second. A/B testing and dynamic text replacement built in. Not a website solution, a dedicated conversion tool for paid traffic." },
               ].map(({ label, body }) => (
                 <div key={label} className="border-b border-[#e5e9e7] pb-4">
                   <p className="text-sm font-bold text-[#10251b] mb-1">{label}</p>
@@ -550,7 +550,7 @@ export default function BestWebsiteBuilderPage() {
               {[
                 {
                   q: "What is the best website builder for beginners?",
-                  a: "Carrd is the easiest starting point for beginners — a free plan, a simple editor, and most users are live within an hour. For zero-effort setup, Butternut AI and Durable AI generate a complete website from a text description in under 30 seconds with no design skill required.",
+                  a: "Carrd is the easiest starting point for beginners, a free plan, a simple editor, and most users are live within an hour. For zero-effort setup, Butternut AI and Durable AI generate a complete website from a text description in under 30 seconds with no design skill required.",
                 },
                 {
                   q: "What is the best AI website builder in 2026?",
@@ -562,7 +562,7 @@ export default function BestWebsiteBuilderPage() {
                 },
                 {
                   q: "Which website builder is best for Google Ads?",
-                  a: "Swipe Pages is the strongest choice for paid ad landing pages. Its AMP technology delivers mobile pages in under one second, with built-in A/B testing and dynamic text replacement for campaign personalisation. It is not a general website builder — it is a dedicated conversion tool for paid traffic.",
+                  a: "Swipe Pages is the strongest choice for paid ad landing pages. Its AMP technology delivers mobile pages in under one second, with built-in A/B testing and dynamic text replacement for campaign personalisation. It is not a general website builder, it is a dedicated conversion tool for paid traffic.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="border-b border-[#e5e9e7] pb-6">

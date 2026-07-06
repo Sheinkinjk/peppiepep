@@ -4,9 +4,9 @@ import { ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Best Affiliate Programs Australia 2026 — 25+ Top Picks",
+  title: "Best Affiliate Programs Australia 2026, 25+ Top Picks",
   description:
-    "The best affiliate programs in Australia for 2026 — health telehealth, fintech, SaaS, and AI tools. Commission rates, cookie windows, and how to start. Updated April 2026.",
+    "The best affiliate programs in Australia for 2026, health telehealth, fintech, SaaS, and AI tools. Commission rates, cookie windows, and how to start. Updated April 2026.",
   alternates: { canonical: `${SITE_URL}/blog/best-affiliate-programs-australia-2026` },
   keywords: [
     "best affiliate programs australia 2026",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "affiliate marketing australia 2026",
   ],
   openGraph: {
-    title: "Best Affiliate Programs Australia 2026 — 25+ Top Picks",
+    title: "Best Affiliate Programs Australia 2026, 25+ Top Picks",
     description:
       "The best affiliate programs in Australia for 2026 across health, fintech, SaaS, and AI. Commission rates, cookie windows, and how to start.",
     url: `${SITE_URL}/blog/best-affiliate-programs-australia-2026`,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Affiliate Programs Australia 2026 — 25+ Top Picks",
+  headline: "Best Affiliate Programs Australia 2026, 25+ Top Picks",
   description:
     "The best affiliate programs in Australia for 2026 across health, fintech, SaaS, and AI. Commission rates, cookie windows, and how to start.",
   url: `${SITE_URL}/blog/best-affiliate-programs-australia-2026`,
@@ -65,14 +65,14 @@ const programs = {
     { name: "Better Being", commission: "$75/sale",    type: "CPA",       cookie: "21d", note: "Online telehealth for women.",                            href: null },
   ],
   fintech: [
-    { name: "Wise",         commission: "$30 flat",    type: "CPA",       cookie: "30d", note: "International transfers — strong AU expat market.",       href: null },
+    { name: "Wise",         commission: "$30 flat",    type: "CPA",       cookie: "30d", note: "International transfers, strong AU expat market.",       href: null },
     { name: "Stake",        commission: "$50 flat",    type: "CPA",       cookie: "30d", note: "Commission-free US share trading. AU-focused.",           href: null },
     { name: "Pearler",      commission: "$30-$80",     type: "CPA",       cookie: "30d", note: "Long-term ETF investing for Australians.",                href: null },
     { name: "Hatch",        commission: "$40 flat",    type: "CPA",       cookie: "30d", note: "International investing platform.",                       href: null },
     { name: "Up Bank",      commission: "Variable",    type: "CPA",       cookie: "30d", note: "Mobile-first banking. Strong product-market fit AU.",     href: null },
   ],
   saas: [
-    { name: "beehiiv",      commission: "30% recurring", type: "Recurring", cookie: "30d", note: "Newsletter platform — strong creator economy growth.", href: "/beehiiv" },
+    { name: "beehiiv",      commission: "30% recurring", type: "Recurring", cookie: "30d", note: "Newsletter platform, strong creator economy growth.", href: "/beehiiv" },
     { name: "Notion",       commission: "50% first year", type: "Recurring", cookie: "90d", note: "Productivity SaaS. Massive search demand.",            href: null },
     { name: "Webflow",      commission: "50% recurring", type: "Recurring", cookie: "90d", note: "No-code website builder. High AOV.",                    href: "/webflow" },
     { name: "Zapier",       commission: "30% recurring", type: "Recurring", cookie: "60d", note: "Workflow automation. B2B audiences.",                   href: null },
@@ -119,20 +119,20 @@ export default function BlogPost() {
             Best Affiliate Programs Australia 2026
           </h1>
           <p className="text-lg text-white/60 leading-relaxed">
-            {allCount} of the highest-converting affiliate programs available to Australians in 2026 — across health telehealth, fintech, SaaS, AI tools, and startup software. Commission rates, cookie windows, and a clear-eyed take on which ones are actually worth promoting.
+            {allCount} of the highest-converting affiliate programs available to Australians in 2026, across health telehealth, fintech, SaaS, AI tools, and startup software. Commission rates, cookie windows, and a clear-eyed take on which ones are actually worth promoting.
           </p>
         </div>
 
         {/* Intro */}
         <Section>
           <p>
-            If you&apos;re building affiliate income from Australia, you&apos;re working in a strange position. Most affiliate marketing content online assumes a US audience. Most program databases are US-focused. The genuinely good Australian programs — Moshy, Stake, Pearler, beehiiv — get buried in lists dominated by Amazon Associates and overseas SaaS that pay in USD with mediocre conversion for AU buyers.
+            If you&apos;re building affiliate income from Australia, you&apos;re working in a strange position. Most affiliate marketing content online assumes a US audience. Most program databases are US-focused. The genuinely good Australian programs, Moshy, Stake, Pearler, beehiiv, get buried in lists dominated by Amazon Associates and overseas SaaS that pay in USD with mediocre conversion for AU buyers.
           </p>
           <p>
-            This guide is the opposite. The {allCount} programs below are the ones we&apos;ve actually analysed — direct commission data sourced from each program&apos;s public terms or affiliate dashboard, not estimated. Every entry has been categorised by intent, commission structure, and the realistic earning potential for an Australian affiliate.
+            This guide is the opposite. The {allCount} programs below are the ones we&apos;ve actually analysed, direct commission data sourced from each program&apos;s public terms or affiliate dashboard, not estimated. Every entry has been categorised by intent, commission structure, and the realistic earning potential for an Australian affiliate.
           </p>
           <p>
-            All of these are pulled from the <Link href="/referral-blueprint" className="underline" style={{ color: CYAN }}>Referral Growth Blueprint</Link> — the full database of 250+ programs we&apos;ve compiled. This blog post is the public sample. The full version includes 230+ more programs plus a personalised strategy brief written for your specific niche.
+            All of these are pulled from the <Link href="/referral-blueprint" className="underline" style={{ color: CYAN }}>Referral Growth Blueprint</Link>, the full database of 250+ programs we&apos;ve compiled. This blog post is the public sample. The full version includes 230+ more programs plus a personalised strategy brief written for your specific niche.
           </p>
         </Section>
 
@@ -164,7 +164,7 @@ export default function BlogPost() {
         <h2 id="health" className="text-2xl font-black text-white mb-3 mt-12">Health & telehealth (AU-focused)</h2>
         <Section>
           <p>
-            Health telehealth is the strongest affiliate category in Australia right now. The combination of high-intent search, large average order value, and ongoing demand creates programs that actually pay out meaningful commissions — typically $50-$150 per signup with 14-30 day cookie windows.
+            Health telehealth is the strongest affiliate category in Australia right now. The combination of high-intent search, large average order value, and ongoing demand creates programs that actually pay out meaningful commissions, typically $50-$150 per signup with 14-30 day cookie windows.
           </p>
           <p>
             The reason: Australian consumers are still adjusting to online prescriptions and weight management programmes. Search volume for terms like &ldquo;moshy review&rdquo;, &ldquo;juniper australia&rdquo;, and &ldquo;weight loss telehealth australia&rdquo; has grown 3-4x year-over-year. Affiliate marketers who got into this category 12 months ago are seeing recurring monthly income from a handful of evergreen review pages.
@@ -188,7 +188,7 @@ export default function BlogPost() {
         <h2 id="saas" className="text-2xl font-black text-white mb-3 mt-12">SaaS platforms (recurring commissions)</h2>
         <Section>
           <p>
-            SaaS recurring commissions are the holy grail of affiliate marketing — once you sign someone up, you keep earning every month they remain a customer. beehiiv (30% recurring) and Webflow (50% recurring) are the two highest-leverage SaaS programs available globally right now.
+            SaaS recurring commissions are the holy grail of affiliate marketing, once you sign someone up, you keep earning every month they remain a customer. beehiiv (30% recurring) and Webflow (50% recurring) are the two highest-leverage SaaS programs available globally right now.
           </p>
           <p>
             Notion deserves a special mention: 50% commission on the first year (capped) plus a massive search volume base for terms like &ldquo;notion templates&rdquo;, &ldquo;notion vs obsidian&rdquo;, and &ldquo;productivity systems&rdquo;. Even at the capped commission, the conversion rate makes it worth the effort.
@@ -200,7 +200,7 @@ export default function BlogPost() {
         <h2 id="ai" className="text-2xl font-black text-white mb-3 mt-12">AI tools (highest growth category)</h2>
         <Section>
           <p>
-            AI tools are the highest-growth category in 2026, but also the most saturated for affiliate content. Differentiation matters more here than in other categories — &ldquo;Jasper review&rdquo; SERPs are crowded with generic content. The winners are creators who actually use the tools and produce specific, opinionated comparisons.
+            AI tools are the highest-growth category in 2026, but also the most saturated for affiliate content. Differentiation matters more here than in other categories, &ldquo;Jasper review&rdquo; SERPs are crowded with generic content. The winners are creators who actually use the tools and produce specific, opinionated comparisons.
           </p>
           <p>
             Underpriced opportunities: AI website builders like <Link href="/durableai" className="underline" style={{ color: CYAN }}>Durable AI</Link> and Butternut have lower competition than Jasper or Copy.ai but pay similar commissions. Same for AI video tools like Synthesia and Pictory.
@@ -212,10 +212,10 @@ export default function BlogPost() {
         <h2 id="startup" className="text-2xl font-black text-white mb-3 mt-12">Startup tools</h2>
         <Section>
           <p>
-            <Link href="/carrd" className="underline" style={{ color: CYAN }}>Carrd</Link> is the cleanest sleeper hit in this category — 30% one-time commission on a $9-49/year product, but the conversion rate is enormous because the free tier is genuinely useful. Pair it with content like &ldquo;cheapest way to build a portfolio site&rdquo; or &ldquo;link in bio alternatives&rdquo;.
+            <Link href="/carrd" className="underline" style={{ color: CYAN }}>Carrd</Link> is the cleanest sleeper hit in this category, 30% one-time commission on a $9-49/year product, but the conversion rate is enormous because the free tier is genuinely useful. Pair it with content like &ldquo;cheapest way to build a portfolio site&rdquo; or &ldquo;link in bio alternatives&rdquo;.
           </p>
           <p>
-            Lemon Squeezy and Gumroad are the two leading creator commerce platforms. Both pay recurring commissions and have growing AU and global creator audiences. The audience is sophisticated — focus on technical comparisons rather than surface-level reviews.
+            Lemon Squeezy and Gumroad are the two leading creator commerce platforms. Both pay recurring commissions and have growing AU and global creator audiences. The audience is sophisticated, focus on technical comparisons rather than surface-level reviews.
           </p>
         </Section>
         <ProgramTable rows={programs.startup} />
@@ -256,7 +256,7 @@ export default function BlogPost() {
             <li><strong>Comparison directories:</strong> Build once, monetise repeatedly. The Refer Labs <Link href="/guides" className="underline" style={{ color: CYAN }}>guides section</Link> is an example of this approach.</li>
           </ul>
           <p>
-            The blueprint we sell includes a niche selection brief specifically because picking the wrong niche is the fastest way to waste 6 months of work. We match niches to your stated distribution capability — not to what scores highest on some general &ldquo;profitability&rdquo; metric.
+            The blueprint we sell includes a niche selection brief specifically because picking the wrong niche is the fastest way to waste 6 months of work. We match niches to your stated distribution capability, not to what scores highest on some general &ldquo;profitability&rdquo; metric.
           </p>
         </Section>
 
@@ -272,11 +272,11 @@ export default function BlogPost() {
         </FAQ>
 
         <FAQ q="How long until I see income from affiliate marketing in Australia?">
-          Realistic timelines: 3-6 months to first commission via SEO (assuming 2-3 published pages targeting low-competition keywords). 1-2 months via Reddit / community distribution if you genuinely participate. Faster via paid traffic but requires capital. Most people quit before month 3 — survival is half the game.
+          Realistic timelines: 3-6 months to first commission via SEO (assuming 2-3 published pages targeting low-competition keywords). 1-2 months via Reddit / community distribution if you genuinely participate. Faster via paid traffic but requires capital. Most people quit before month 3, survival is half the game.
         </FAQ>
 
         <FAQ q="Can I promote affiliate programs without disclosing them in Australia?">
-          No. The ACCC and TGA require disclosure. Always include a clear affiliate disclaimer on pages that contain affiliate links. The Refer Labs site uses small disclaimers on every guide page — same approach is standard practice.
+          No. The ACCC and TGA require disclosure. Always include a clear affiliate disclaimer on pages that contain affiliate links. The Refer Labs site uses small disclaimers on every guide page, same approach is standard practice.
         </FAQ>
 
         <FAQ q="Do I need a registered business to run affiliate marketing in Australia?">
@@ -288,11 +288,11 @@ export default function BlogPost() {
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: AMBER }}>The full database</p>
           <h3 className="text-xl font-black text-white mb-3">Get all 250+ programs + a strategy brief written for your niche.</h3>
           <p className="text-sm text-white/60 leading-relaxed mb-5">
-            This guide showed {allCount} programs. The full Referral Growth Blueprint includes 250+ across all 5 categories, plus a personalised strategy brief, SEO page concepts, distribution playbooks, and recommended tool stack — written specifically for your niche and channels.
+            This guide showed {allCount} programs. The full Referral Growth Blueprint includes 250+ across all 5 categories, plus a personalised strategy brief, SEO page concepts, distribution playbooks, and recommended tool stack, written specifically for your niche and channels.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/referral-blueprint" className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-black text-[#060f15] hover:opacity-90 transition-all" style={{ background: AMBER }}>
-              Get the Blueprint — $799
+              Get the Blueprint, $799
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/blog" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-bold text-white/65 hover:border-white/35 hover:text-white transition-all">
@@ -303,7 +303,7 @@ export default function BlogPost() {
 
         {/* Disclosure */}
         <p className="text-xs text-white/30 mt-12 leading-relaxed">
-          <strong className="text-white/45">Affiliate disclosure:</strong> This page contains affiliate links to programs we recommend. We earn a commission if you sign up through our links, at no extra cost to you. Our analysis is independent — we recommend programs based on commission quality and audience fit, not the size of the commission paid to us.
+          <strong className="text-white/45">Affiliate disclosure:</strong> This page contains affiliate links to programs we recommend. We earn a commission if you sign up through our links, at no extra cost to you. Our analysis is independent, we recommend programs based on commission quality and audience fit, not the size of the commission paid to us.
         </p>
 
       </article>

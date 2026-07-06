@@ -31,7 +31,7 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Research Peptide Suppliers 2026",
-  description: "In-depth comparison of the best research peptide suppliers — Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech. Covers discount codes, current peptides sale offers, purity standards, and catalogue depth.",
+  description: "In-depth comparison of the best research peptide suppliers, Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech. Covers discount codes, current peptides sale offers, purity standards, and catalogue depth.",
   numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Apollo Peptide Sciences", description: "Broadest research peptide catalogue. Includes Semaglutide, CJC-1295, GHK-Cu, Ipamorelin, and Retatrutide. Third-party tested. For research use only.", url: `${SITE_URL}/apollopeptides` },
@@ -52,7 +52,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How do I get a research peptide discount code in 2026?",
-      acceptedAnswer: { "@type": "Answer", text: "The most reliable route to a current research peptide discount is through an affiliate referral link rather than searching for a manual promo code that may have expired. This page provides direct referral links to Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech — each link applies any active offer automatically." }
+      acceptedAnswer: { "@type": "Answer", text: "The most reliable route to a current research peptide discount is through an affiliate referral link rather than searching for a manual promo code that may have expired. This page provides direct referral links to Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech, each link applies any active offer automatically." }
     },
     {
       "@type": "Question",
@@ -182,7 +182,7 @@ function SupplierCard({
     >
       <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-12">
 
-        {/* Left — identity + content */}
+        {/* Left, identity + content */}
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div
@@ -214,7 +214,7 @@ function SupplierCard({
           </div>
         </div>
 
-        {/* Right — deal + CTA */}
+        {/* Right, deal + CTA */}
         <div className="flex flex-col gap-4">
           <div
             className="rounded-xl p-5"
@@ -256,7 +256,7 @@ const suppliers: SupplierCardProps[] = [
     id: "apollo",
     index: "01",
     name: "Apollo Peptide Sciences",
-    tagline: "The broadest research peptide catalogue of the three suppliers — includes Semaglutide, CJC-1295, Ipamorelin, GHK-Cu, and Retatrutide. Third-party tested with COA documentation. Access via referral link for the current discount.",
+    tagline: "The broadest research peptide catalogue of the three suppliers, includes Semaglutide, CJC-1295, Ipamorelin, GHK-Cu, and Retatrutide. Third-party tested with COA documentation. Access via referral link for the current discount.",
     deal: "Current discount via referral link",
     dealNote: "Our affiliate link applies the current Apollo Peptide Sciences offer at the URL level. No promo code entry required.",
     strengths: [
@@ -266,7 +266,7 @@ const suppliers: SupplierCardProps[] = [
       "Strong community reputation in research forums",
     ],
     limitations: [
-      "No publicly listed discount code — use referral link",
+      "No publicly listed discount code, use referral link",
       "Pricing varies by compound and lot",
     ],
     affUrl: APOLLO_URL,
@@ -280,7 +280,7 @@ const suppliers: SupplierCardProps[] = [
     name: "Ascension Peptides",
     tagline: "High-purity lab-grade research peptides across hormone signalling, metabolic, anti-aging, and tissue repair research areas. Frequently cited in researcher communities for documentation quality and consistent supply.",
     deal: "Peptides sale via referral link",
-    dealNote: "Access the current Ascension Peptides sale through our referral link. The offer is applied at the link level — no discount code required.",
+    dealNote: "Access the current Ascension Peptides sale through our referral link. The offer is applied at the link level, no discount code required.",
     strengths: [
       "High-purity lab-grade compounds",
       "Covers hormone signalling, metabolic, and anti-aging areas",
@@ -289,7 +289,7 @@ const suppliers: SupplierCardProps[] = [
     ],
     limitations: [
       "Narrower catalogue than Apollo Peptide Sciences",
-      "No publicly listed promo code — use referral link",
+      "No publicly listed promo code, use referral link",
     ],
     affUrl: ASCENSION_URL,
     ctaLabel: "Access Ascension Peptides Sale",
@@ -300,8 +300,8 @@ const suppliers: SupplierCardProps[] = [
     id: "biopeptitech",
     index: "03",
     name: "BioPeptiTech",
-    tagline: "Frequently runs peptides sale promotions — a strong option for researchers looking for discounted access to lab-grade compounds. Covers longevity, metabolic, and hormone signalling research areas.",
-    deal: "Frequent peptides sale — check current offer",
+    tagline: "Frequently runs peptides sale promotions, a strong option for researchers looking for discounted access to lab-grade compounds. Covers longevity, metabolic, and hormone signalling research areas.",
+    deal: "Frequent peptides sale, check current offer",
     dealNote: "BioPeptiTech regularly runs limited-time peptides sale events. Our referral link takes you directly to their store with any active sale pricing visible.",
     strengths: [
       "Frequently runs peptides sale promotions",
@@ -354,7 +354,7 @@ export default function BestPeptideSupplierPage() {
             </h1>
 
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Apollo Peptide Sciences has the broadest catalogue — including Semaglutide, CJC-1295, GHK-Cu, and Retatrutide. Ascension Peptides is cited most consistently for purity documentation and COA quality. BioPeptiTech runs the most frequent peptides sale events.
+              Apollo Peptide Sciences has the broadest catalogue, including Semaglutide, CJC-1295, GHK-Cu, and Retatrutide. Ascension Peptides is cited most consistently for purity documentation and COA quality. BioPeptiTech runs the most frequent peptides sale events.
             </p>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
               Below: catalogue differences, current discount access, and a direct link to each supplier. All products are for laboratory research use only and are not approved for human or veterinary use.
@@ -363,9 +363,9 @@ export default function BestPeptideSupplierPage() {
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
               {[
-                { href: "#apollo",       label: "01 — Apollo Peptide Sciences" },
-                { href: "#ascension",    label: "02 — Ascension Peptides" },
-                { href: "#biopeptitech", label: "03 — BioPeptiTech" },
+                { href: "#apollo",       label: "01, Apollo Peptide Sciences" },
+                { href: "#ascension",    label: "02, Ascension Peptides" },
+                { href: "#biopeptitech", label: "03, BioPeptiTech" },
               ].map(({ href, label }) => (
                 <a
                   key={href}
@@ -423,7 +423,7 @@ export default function BestPeptideSupplierPage() {
                     },
                     {
                       name: "BioPeptiTech",
-                      bestFor: "Longevity & metabolic research — frequent sales",
+                      bestFor: "Longevity & metabolic research, frequent sales",
                       offer: "Frequent peptides sale",
                       href: "#biopeptitech",
                       affUrl: BPT_URL,
@@ -574,7 +574,7 @@ export default function BestPeptideSupplierPage() {
           {/* ── Disclaimer ───────────────────────────────────────────────────── */}
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
-              All products referenced on this page — including those supplied by Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech — are intended strictly for laboratory and in-vitro research purposes only. They are not approved for human or veterinary use and should not be construed as medical advice. This page is operated by Refer Labs and contains affiliate referral links.
+              All products referenced on this page, including those supplied by Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech, are intended strictly for laboratory and in-vitro research purposes only. They are not approved for human or veterinary use and should not be construed as medical advice. This page is operated by Refer Labs and contains affiliate referral links.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href="/apollopeptides" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>

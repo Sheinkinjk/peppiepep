@@ -76,7 +76,7 @@ export default function MoshyLanding() {
                   ["Format", "Online eligibility → practitioner review → delivery"],
                   ["Medication", "GLP-1 access if clinically appropriate"],
                   ["Pricing", "Subscription, confirmed in the consult"],
-                  ["Discount code", "None needed — referral applies via the link"],
+                  ["Discount code", "None needed, referral applies via the link"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
                     <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
@@ -98,7 +98,7 @@ export default function MoshyLanding() {
             { icon: Stethoscope, label: "AHPRA-registered practitioners" },
             { icon: ClipboardList, label: "Online eligibility in ~5 minutes" },
             { icon: Truck, label: "Subscription with home delivery" },
-            { icon: ShieldCheck, label: "No code — referral via the link" },
+            { icon: ShieldCheck, label: "No code, referral via the link" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
               <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} />

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ArrowRight, CheckCircle2, BarChart3, Target, Zap, Mail, ExternalLink, Globe, DollarSign, Users, Layers } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Partner Brief — Refer Labs",
+  title: "Partner Brief, Refer Labs",
   description: "Refer Labs partner brief: business model, product, target audience, traction, and the marketing infrastructure ready to plug into.",
   robots: { index: false, follow: false },
 };
@@ -48,10 +48,10 @@ export default function PartnersPage() {
         {/* The product */}
         <Section icon={<Layers />} title="The product">
           <p>
-            <strong className="text-white">Referral Growth Blueprint</strong> — a $799 AUD digital product. Customer fills an intake form (niche, channels, goal, experience), pays via Stripe, and receives 6 deliverables within 48 hours: a 250+ affiliate program database (Excel), a personalised strategy brief written by Jarred, a niche selection brief, 10+ SEO page concepts, distribution playbooks, and a recommended tool stack.
+            <strong className="text-white">Referral Growth Blueprint</strong>, a $799 AUD digital product. Customer fills an intake form (niche, channels, goal, experience), pays via Stripe, and receives 6 deliverables within 48 hours: a 250+ affiliate program database (Excel), a personalised strategy brief written by Jarred, a niche selection brief, 10+ SEO page concepts, distribution playbooks, and a recommended tool stack.
           </p>
           <p>
-            The personalised layer is what justifies the price — Jarred reads every intake and writes the brief from scratch. The database is consistent across orders.
+            The personalised layer is what justifies the price, Jarred reads every intake and writes the brief from scratch. The database is consistent across orders.
           </p>
           <p>
             <Link href="/referral-blueprint" className="inline-flex items-center gap-1 hover:underline" style={{ color: CYAN }}>
@@ -70,22 +70,22 @@ export default function PartnersPage() {
             <Li>Affiliate marketers who want a researched starting point vs. months of manual work</Li>
             <Li>Coaches / course creators monetising audiences through affiliate stacks</Li>
           </ul>
-          <p className="text-sm text-white/45 mt-3"><strong className="text-white/65">Geo split:</strong> Australia is primary (AU-specific health, fintech programs in DB). US / UK / Canada are strong secondary — global SaaS and AI programs work everywhere.</p>
+          <p className="text-sm text-white/45 mt-3"><strong className="text-white/65">Geo split:</strong> Australia is primary (AU-specific health, fintech programs in DB). US / UK / Canada are strong secondary, global SaaS and AI programs work everywhere.</p>
         </Section>
 
         {/* Marketing infrastructure */}
         <Section icon={<Zap />} title="Marketing infrastructure (ready to plug into)">
           <ul className="space-y-2.5">
-            <Li><strong className="text-white">Google Analytics 4</strong> — tracking page views and conversion events</Li>
-            <Li><strong className="text-white">Google Tag Manager</strong> — installed for flexible event configuration</Li>
-            <Li><strong className="text-white">Meta Pixel</strong> — wired in, ready for Pixel ID via Vercel env var</Li>
-            <Li><strong className="text-white">LinkedIn Insight Tag</strong> — wired in, ready for Partner ID</Li>
-            <Li><strong className="text-white">Conversion events</strong> — fires on intake started, checkout initiated, purchase completed (cross-platform GA4 + Meta + LinkedIn)</Li>
-            <Li><strong className="text-white">Lead capture form</strong> — homepage email capture for free database preview, stores to Supabase</Li>
-            <Li><strong className="text-white">Newsletter API</strong> — `/api/newsletter/subscribe` for mailing list growth</Li>
-            <Li><strong className="text-white">Stripe webhook</strong> — automatic email delivery + portal access on purchase</Li>
-            <Li><strong className="text-white">Member portal</strong> — order tracking, status updates, prep checklist for buyers</Li>
-            <Li><strong className="text-white">UTM-ready</strong> — all CTAs respect URL params for source attribution</Li>
+            <Li><strong className="text-white">Google Analytics 4</strong>, tracking page views and conversion events</Li>
+            <Li><strong className="text-white">Google Tag Manager</strong>, installed for flexible event configuration</Li>
+            <Li><strong className="text-white">Meta Pixel</strong>, wired in, ready for Pixel ID via Vercel env var</Li>
+            <Li><strong className="text-white">LinkedIn Insight Tag</strong>, wired in, ready for Partner ID</Li>
+            <Li><strong className="text-white">Conversion events</strong>, fires on intake started, checkout initiated, purchase completed (cross-platform GA4 + Meta + LinkedIn)</Li>
+            <Li><strong className="text-white">Lead capture form</strong>, homepage email capture for free database preview, stores to Supabase</Li>
+            <Li><strong className="text-white">Newsletter API</strong>, `/api/newsletter/subscribe` for mailing list growth</Li>
+            <Li><strong className="text-white">Stripe webhook</strong>, automatic email delivery + portal access on purchase</Li>
+            <Li><strong className="text-white">Member portal</strong>, order tracking, status updates, prep checklist for buyers</Li>
+            <Li><strong className="text-white">UTM-ready</strong>, all CTAs respect URL params for source attribution</Li>
           </ul>
         </Section>
 
@@ -107,7 +107,7 @@ export default function PartnersPage() {
         <Section icon={<BarChart3 />} title="Tech stack">
           <ul className="space-y-2">
             <Li><strong className="text-white">Frontend:</strong> Next.js 16 (App Router) on Vercel</Li>
-            <Li><strong className="text-white">Database:</strong> Supabase (Postgres) — main project + dedicated blueprint project</Li>
+            <Li><strong className="text-white">Database:</strong> Supabase (Postgres), main project + dedicated blueprint project</Li>
             <Li><strong className="text-white">Payments:</strong> Stripe (live, Refer Labs entity, AUD)</Li>
             <Li><strong className="text-white">Email:</strong> Resend (transactional)</Li>
             <Li><strong className="text-white">Domain:</strong> referlabs.com.au (Australia)</Li>
@@ -118,11 +118,11 @@ export default function PartnersPage() {
         {/* What we're looking for */}
         <Section icon={<Users />} title="What we want from a partner">
           <ul className="space-y-2">
-            <Li>Drive paid acquisition (Google Ads, Meta Ads, LinkedIn Ads) at a profitable CPA — target $200-$400 per $799 sale</Li>
-            <Li>Build organic distribution — content partnerships, influencer outreach, community presence</Li>
-            <Li>Run conversion experiments — landing page A/B, offer angles, audience tests</Li>
-            <Li>Manage email nurture — convert lead capture subscribers into paying customers</Li>
-            <Li>Report weekly — pipeline, CAC, LTV, channel performance</Li>
+            <Li>Drive paid acquisition (Google Ads, Meta Ads, LinkedIn Ads) at a profitable CPA, target $200-$400 per $799 sale</Li>
+            <Li>Build organic distribution, content partnerships, influencer outreach, community presence</Li>
+            <Li>Run conversion experiments, landing page A/B, offer angles, audience tests</Li>
+            <Li>Manage email nurture, convert lead capture subscribers into paying customers</Li>
+            <Li>Report weekly, pipeline, CAC, LTV, channel performance</Li>
           </ul>
         </Section>
 

@@ -4,9 +4,9 @@ export const contentType = "image/png";
 export const size = { width: 1200, height: 630 };
 
 // Brand font (Geist) served from /public/fonts as WOFF (satori supports
-// ttf/otf/woff — not woff2). Fetched from the request origin at runtime, which
+// ttf/otf/woff, not woff2). Fetched from the request origin at runtime, which
 // works reliably on Vercel's serverless runtime (unlike import.meta.url file
-// URLs). Wrapped so a font failure never 500s the card — it just falls back to
+// URLs). Wrapped so a font failure never 500s the card, it just falls back to
 // the default sans.
 type FontEntry = { name: string; data: ArrayBuffer; weight: 600 | 800; style: "normal" };
 

@@ -9,10 +9,10 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
   affiliateUrl: APOLLO_URL,
 
   quickAnswer:
-    "Apollo Peptide Sciences is a research peptide supplier. The current discount is applied automatically through the referral link on this page — no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
+    "Apollo Peptide Sciences is a research peptide supplier. The current discount is applied automatically through the referral link on this page, no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
 
   banner: {
-    heading: "Apollo Peptide Sciences — Current Sale & Discount",
+    heading: "Apollo Peptide Sciences, Current Sale & Discount",
     body: "Click below to go directly to Apollo Peptide Sciences via our referral link. Offer applied at the URL level.",
     buttonLabel: "View Apollo Peptide Sciences Sale",
   },
@@ -22,7 +22,7 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
   readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "Research peptide supplier" },
-    { k: "Catalogue", v: "Broad — incl. semaglutide, CJC-1295, GHK-Cu" },
+    { k: "Catalogue", v: "Broad, incl. semaglutide, CJC-1295, GHK-Cu" },
     { k: "Use", v: "Laboratory research only" },
     { k: "Discount", v: "Applied automatically via the link" },
   ],
@@ -39,13 +39,13 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     h1Prefix: "Apollo Peptide Sciences",
     h1Highlight: "Current Peptides Sale & Discount Access",
     subheading:
-      "Apollo Peptide Sciences has the broadest research peptide catalogue of any supplier in this category — including Semaglutide, CJC-1295, GHK-Cu, Ipamorelin, and Retatrutide. This page gives you direct access to their current sale via our affiliate referral link. No code required. For laboratory research use only.",
+      "Apollo Peptide Sciences has the broadest research peptide catalogue of any supplier in this category, including Semaglutide, CJC-1295, GHK-Cu, Ipamorelin, and Retatrutide. This page gives you direct access to their current sale via our affiliate referral link. No code required. For laboratory research use only.",
     trustBullets: [
       "Direct access to the current Apollo Peptide Sciences sale",
       "High-purity research peptides from a leading supplier",
-      "No code required — discount applied via our referral link",
+      "No code required, discount applied via our referral link",
       "Covers popular compounds including Semaglutide, CJC-1295, and GHK-Cu",
-      "Instant click-through — no details required on this page",
+      "Instant click-through, no details required on this page",
     ],
   },
 
@@ -62,8 +62,8 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     {
       heading: "About Apollo Peptide Sciences",
       paragraphs: [
-        "Apollo Peptide Sciences is a research peptide supplier focused on high-purity compounds, third-party testing, and documented COAs. They supply laboratory-grade peptides used in scientific and analytical research — including compounds in the metabolic, longevity, tissue repair, cellular biology, and hormone signalling categories.",
-        "Their catalogue is the broadest of the three suppliers compared on this site — the only one carrying Semaglutide, Retatrutide, and GHK-Cu alongside CJC-1295 and Ipamorelin. For researchers who need a single supplier across multiple research areas, Apollo Peptide Sciences covers the most ground.",
+        "Apollo Peptide Sciences is a research peptide supplier focused on high-purity compounds, third-party testing, and documented COAs. They supply laboratory-grade peptides used in scientific and analytical research, including compounds in the metabolic, longevity, tissue repair, cellular biology, and hormone signalling categories.",
+        "Their catalogue is the broadest of the three suppliers compared on this site, the only one carrying Semaglutide, Retatrutide, and GHK-Cu alongside CJC-1295 and Ipamorelin. For researchers who need a single supplier across multiple research areas, Apollo Peptide Sciences covers the most ground.",
         "All compounds are for laboratory research use only. Not approved for human or veterinary use.",
       ],
     },
@@ -71,7 +71,7 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
       heading: "Apollo Peptide Sciences Research Peptide Catalogue",
       paragraphs: [
         "Researchers frequently search for specific compounds when looking for peptide supplier discounts and research peptide sales. Apollo Peptide Sciences' catalogue commonly includes compounds that appear in research contexts involving the following areas:",
-        "Semaglutide research peptides — studied in the context of metabolic and weight-related biological pathways. CJC-1295 research peptides — frequently referenced in growth hormone axis research. Ipamorelin research peptides — studied in combination with CJC-1295 in various research models. GHK-Cu peptide research compounds — referenced in skin biology and wound healing research. Retatrutide research peptides — emerging compound in metabolic pathway studies.",
+        "Semaglutide research peptides, studied in the context of metabolic and weight-related biological pathways. CJC-1295 research peptides, frequently referenced in growth hormone axis research. Ipamorelin research peptides, studied in combination with CJC-1295 in various research models. GHK-Cu peptide research compounds, referenced in skin biology and wound healing research. Retatrutide research peptides, emerging compound in metabolic pathway studies.",
         "All compounds supplied by Apollo Peptide Sciences are intended strictly for laboratory research use only. The use of these compounds is not approved for human or veterinary use.",
       ],
       disclaimer:
@@ -88,7 +88,7 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
       heading: "Apollo Peptides Discount Code: How to Access the Best Deal",
       paragraphs: [
         'Searches for "Apollo Peptide Sciences discount code", "Apollo peptides promo code", and "peptides sale online" reflect the number of researchers who want to access quality research compounds at the best available price. Apollo Peptide Sciences does not always publish a traditional discount code that is publicly listed.',
-        "The most reliable way to access a current Apollo Peptide Sciences offer or reduced pricing is through an affiliate or partner link — which is exactly what this page provides. Our referral link takes you directly to the Apollo Peptide Sciences store with the offer applied at the link level. No manual code entry required.",
+        "The most reliable way to access a current Apollo Peptide Sciences offer or reduced pricing is through an affiliate or partner link, which is exactly what this page provides. Our referral link takes you directly to the Apollo Peptide Sciences store with the offer applied at the link level. No manual code entry required.",
       ],
     },
   ],
@@ -156,7 +156,7 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     },
     {
       q: "How do I access the current Apollo Peptide Sciences sale?",
-      a: "Click any button on this page. You will be taken directly to apollopeptidesciences.com via our referral link. The discount is applied at the URL level — no manual code entry required.",
+      a: "Click any button on this page. You will be taken directly to apollopeptidesciences.com via our referral link. The discount is applied at the URL level, no manual code entry required.",
     },
   ],
 
@@ -170,16 +170,16 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     {
       href: "/best-peptide-supplier",
       label: "Best Peptide Supplier 2026",
-      desc: "Apollo vs Ascension vs BioPeptiTech — purity standards, catalogue coverage, and current discount codes.",
+      desc: "Apollo vs Ascension vs BioPeptiTech, purity standards, catalogue coverage, and current discount codes.",
     },
     {
       href: "/ascensionpeptides",
-      label: "Ascension Peptides — Discount Code",
+      label: "Ascension Peptides, Discount Code",
       desc: "Current Ascension Peptides offer via referral link. High-purity research compounds.",
     },
     {
       href: "/biopeptitech",
-      label: "BioPeptiTech — Discount Code",
+      label: "BioPeptiTech, Discount Code",
       desc: "Current BioPeptiTech offer via referral link. Lab-grade research peptides.",
     },
     {
@@ -194,7 +194,7 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     secondary: "Continue to Apollo Peptide Sciences",
     midHeading: "Ready to Access the Current Apollo Peptide Sciences Sale?",
     midBody:
-      "Click below to go directly to Apollo Peptide Sciences via our referral link. The offer is applied automatically — no discount code required.",
+      "Click below to go directly to Apollo Peptide Sciences via our referral link. The offer is applied automatically, no discount code required.",
     midButton: "View Apollo Peptide Sciences Sale",
     bottomHeading: "Access the Apollo Peptide Sciences Peptides Sale",
     bottomBody:

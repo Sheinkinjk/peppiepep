@@ -5,7 +5,7 @@ import PurchaseTracker from "./PurchaseTracker";
 import { cancelScheduledEmail } from "@/lib/abandoned-checkout";
 
 export const metadata: Metadata = {
-  title: "Purchase Confirmed — Referral Growth Blueprint | Refer Labs",
+  title: "Purchase Confirmed, Referral Growth Blueprint | Refer Labs",
   description: "Your Referral Growth Blueprint purchase is confirmed. Blueprint delivery within 48 hours.",
   robots: { index: false, follow: false },
 };
@@ -25,7 +25,7 @@ async function cancelRecoveryEmailForSession(sessionId: string) {
     const id = session.metadata?.recovery_email_id;
     if (id) await cancelScheduledEmail(id);
   } catch {
-    /* best-effort — never block the confirmation page */
+    /* best-effort, never block the confirmation page */
   }
 }
 
@@ -71,7 +71,7 @@ export default async function ReferralBlueprintSuccessPage({
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0AA7B5] mb-2">Your next step</p>
           <p className="text-sm font-black text-white mb-1">Check your inbox for your portal access link.</p>
           <p className="text-sm text-white/55 leading-relaxed mb-3">
-            A confirmation email has been sent from <span className="text-white/80 font-medium">jarred@referlabs.com.au</span>. It includes an <strong className="text-white">&ldquo;Open Your Portal&rdquo;</strong> button — click it to track your order status while your blueprint is being prepared.
+            A confirmation email has been sent from <span className="text-white/80 font-medium">jarred@referlabs.com.au</span>. It includes an <strong className="text-white">&ldquo;Open Your Portal&rdquo;</strong> button, click it to track your order status while your blueprint is being prepared.
           </p>
           <p className="text-xs text-white/35">Check spam / promotions if you don&apos;t see it. Email jarred@referlabs.com.au with any issues.</p>
         </div>
@@ -92,7 +92,7 @@ export default async function ReferralBlueprintSuccessPage({
             {
               icon: <FileSpreadsheet className="h-5 w-5 text-[#0AA7B5]" />,
               title: "3. Blueprint delivered",
-              body: "Six files within 48 hours — database, strategy brief, SEO concepts, playbooks, niche brief, tool stack.",
+              body: "Six files within 48 hours, database, strategy brief, SEO concepts, playbooks, niche brief, tool stack.",
             },
           ].map((item) => (
             <div key={item.title} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-5">
@@ -113,7 +113,7 @@ export default async function ReferralBlueprintSuccessPage({
               "250+ affiliate & referral programs (Excel)",
               "Commission structures for every entry",
               "Suggested marketing angles",
-              "Niche selection brief (3–5 matches)",
+              "Niche selection brief (3-5 matches)",
               "10+ SEO page concepts",
               "Distribution playbooks",
               "Recommended tool stack",

@@ -9,10 +9,10 @@ export const denseConfig: AffiliatePageConfig = {
   affiliateUrl: DENSE_URL,
 
   quickAnswer:
-    "Dense Hair Experts is an Australian brand of topical, non-prescription hair-density products — shampoos, conditioners, serums, and scalp treatments. There isn't always a public discount code; the current offer is applied automatically through the referral link on this page. For prescription hair-loss treatment such as finasteride or minoxidil, a telehealth provider is the appropriate starting point.",
+    "Dense Hair Experts is an Australian brand of topical, non-prescription hair-density products, shampoos, conditioners, serums, and scalp treatments. There isn't always a public discount code; the current offer is applied automatically through the referral link on this page. For prescription hair-loss treatment such as finasteride or minoxidil, a telehealth provider is the appropriate starting point.",
 
   banner: {
-    heading: "Dense Hair Experts — Current Offer",
+    heading: "Dense Hair Experts, Current Offer",
     body: "Click below to go directly to the Dense Hair Experts store via our referral link.",
     buttonLabel: "Shop Dense Hair Experts",
   },
@@ -24,13 +24,13 @@ export const denseConfig: AffiliatePageConfig = {
     { k: "What it is", v: "Australian topical hair-density products" },
     { k: "For", v: "Early thinning, density & scalp health" },
     { k: "Type", v: "Non-prescription topical range" },
-    { k: "Discount code", v: "None needed — referral via the link" },
+    { k: "Discount code", v: "None needed, referral via the link" },
   ],
   trustStrip: [
     "Australian-formulated",
     "Non-prescription topical",
     "Shop online, delivered",
-    "No code — referral via the link",
+    "No code, referral via the link",
   ],
   verdict:
     "Dense Hair Experts is a reasonable non-prescription option for men focused on density and scalp health, used consistently as part of a routine. For active or progressive hair loss, a telehealth provider that can prescribe finasteride or minoxidil is the stronger first step.",
@@ -133,7 +133,7 @@ export const denseConfig: AffiliatePageConfig = {
     },
     {
       q: "How do I access the Dense Hair Experts offer?",
-      a: "Click any button on this page. You will be taken directly to the Dense Hair Experts store via our referral link. No code entry required — the offer is tracked at the URL level.",
+      a: "Click any button on this page. You will be taken directly to the Dense Hair Experts store via our referral link. No code entry required, the offer is tracked at the URL level.",
     },
     {
       q: "Where can I find the latest Dense coupon or sale?",
@@ -155,12 +155,12 @@ export const denseConfig: AffiliatePageConfig = {
     {
       href: "/best-hair-loss-treatment-australia",
       label: "Best Hair Loss Treatment Australia 2026",
-      desc: "Mosh vs Dense Hair Experts vs telehealth options — clinical vs topical, pricing, and Reddit verdict.",
+      desc: "Mosh vs Dense Hair Experts vs telehealth options, clinical vs topical, pricing, and Reddit verdict.",
     },
     {
       href: "/moshhair",
-      label: "Mosh Hair Loss — Discount Code & Review",
-      desc: "Australian telehealth for hair loss — finasteride and minoxidil via online consultation.",
+      label: "Mosh Hair Loss, Discount Code & Review",
+      desc: "Australian telehealth for hair loss, finasteride and minoxidil via online consultation.",
     },
     {
       href: "/guides",

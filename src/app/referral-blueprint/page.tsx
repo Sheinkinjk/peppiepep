@@ -53,7 +53,7 @@ const deliverables = [
     outcome: "Start building in hours, not months",
     mock: "spreadsheet",
     whatItIs: "A structured Excel file with 250+ affiliate and referral programs across 5 categories. Every row: company name, direct affiliate program link, commission rate, payout type, cookie window, minimum payout, and suggested marketing angle.",
-    whyItMatters: "Saves 6-8 weeks of manual research. Every link manually verified. Commission data sourced from each program's official terms — not estimated. The starting database most people never finish building.",
+    whyItMatters: "Saves 6-8 weeks of manual research. Every link manually verified. Commission data sourced from each program's official terms, not estimated. The starting database most people never finish building.",
     howUsed: "Open in Excel or Google Sheets. Filter by category (AI / SaaS / Health / Fintech / Startup), commission type (recurring / CPA / flat), or commission floor. Cross-reference with the strategy brief for your top 5-10 priorities.",
     valueReplaces: "~$1,000-$6,000 of research time at typical hourly rates",
     bullets: [
@@ -70,7 +70,7 @@ const deliverables = [
     headline: "Personalised Strategy Brief",
     outcome: "Your specific starting point, written by a human",
     mock: "doc",
-    whatItIs: "An 8+ page PDF strategy brief written specifically for your niche, channels, goals, and experience level — based on the answers you give in the intake form.",
+    whatItIs: "An 8+ page PDF strategy brief written specifically for your niche, channels, goals, and experience level, based on the answers you give in the intake form.",
     whyItMatters: "Generic affiliate marketing advice is everywhere and worth nothing. Your situation (your niche, your channels, your distribution capability) is unique. The brief is written for it specifically.",
     howUsed: "Read top to bottom on day one. The brief tells you which 5-10 programs from the database to prioritise, which distribution channel to lead with, week-by-week starting sequence, and the specific mistakes to avoid for your stated channels.",
     valueReplaces: "$500-$2,000 strategy consultation fee",
@@ -124,7 +124,7 @@ const deliverables = [
     headline: "Niche Selection Brief",
     outcome: "3-5 vetted niches matched to your goals",
     mock: "niches",
-    whatItIs: "A PDF with 3-5 niche recommendations matched to your stated goals, channels, and distribution capability — with reasoning for each match.",
+    whatItIs: "A PDF with 3-5 niche recommendations matched to your stated goals, channels, and distribution capability, with reasoning for each match.",
     whyItMatters: "Picking a niche based on what sounds profitable rather than what you can distribute is the #1 reason new affiliates fail. The brief assesses fit between you and the niche, not just the niche's profit potential.",
     howUsed: "Pick the strongest match. The brief lists 5-10 priority programs within each recommended niche, estimated commission range, and what makes each niche defensible vs. oversaturated. Lets you commit with conviction.",
     valueReplaces: "$300-$500 of niche selection consulting",
@@ -254,7 +254,7 @@ function DocMock() {
         </div>
         <div className="h-px bg-white/[0.07] my-2" />
         <div className="text-white/60 font-bold mb-1">WEEK 1-2: Foundation</div>
-        {["Register for Jasper, Durable AI, Notion, beehiiv (priority list attached)", "Set up Pretty Links for tracking — installation guide in tool stack PDF", "Build first comparison page: Durable AI vs Wix (full brief in SEO concepts)"].map((t) => (
+        {["Register for Jasper, Durable AI, Notion, beehiiv (priority list attached)", "Set up Pretty Links for tracking, installation guide in tool stack PDF", "Build first comparison page: Durable AI vs Wix (full brief in SEO concepts)"].map((t) => (
           <div key={t} className="flex gap-1.5 text-white/45">
             <span style={{ color: CYAN }}>✓</span>
             <span>{t}</span>
@@ -283,7 +283,7 @@ function SeoMock() {
   ];
   return (
     <div className="rounded-xl border border-white/10 bg-[#0a1520] p-4 text-[10px] font-mono space-y-2.5">
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Page Concepts — Sample</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Page Concepts, Sample</div>
       {keywords.map((k) => (
         <div key={k.kw} className="space-y-1">
           <div className="flex items-center justify-between gap-2">
@@ -306,7 +306,7 @@ function ChecklistMock() {
   const steps = ["Install Pretty Links plugin on your WordPress site", "Create tracking link for your top 3 programs", 'Write pillar post: "Best [niche] tools for [audience]"', "Submit to 3 relevant subreddits with link in bio only", "Build email drip: 5-email affiliate intro sequence"];
   return (
     <div className="rounded-xl border border-white/10 bg-[#0a1520] p-4 text-[10px] font-mono space-y-2">
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Distribution Playbook — Step 1 of 6</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Distribution Playbook, Step 1 of 6</div>
       {steps.map((s, i) => (
         <div key={s} className="flex gap-2 items-start">
           <div className="h-4 w-4 rounded border flex items-center justify-center flex-shrink-0 mt-0.5" style={{ borderColor: i < 2 ? CYAN : "rgba(255,255,255,0.15)", background: i < 2 ? `${CYAN}20` : "transparent" }}>
@@ -327,7 +327,7 @@ function NichesMock() {
   ];
   return (
     <div className="rounded-xl border border-white/10 bg-[#0a1520] p-4 text-[10px] font-mono space-y-2.5">
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>Niche Selection — Your Top 3</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>Niche Selection, Your Top 3</div>
       {niches.map((n) => (
         <div key={n.name} className="flex items-center gap-3 rounded-lg p-2" style={{ background: n.rank === 1 ? `${CYAN}10` : "rgba(255,255,255,0.02)", border: `1px solid ${n.rank === 1 ? `${CYAN}30` : "rgba(255,255,255,0.06)"}` }}>
           <div className="h-5 w-5 rounded-full flex items-center justify-center text-[8px] font-black flex-shrink-0" style={{ background: n.rank === 1 ? CYAN : "rgba(255,255,255,0.1)", color: n.rank === 1 ? "#060f15" : "rgba(255,255,255,0.5)" }}>
@@ -355,7 +355,7 @@ function ToolsMock() {
   ];
   return (
     <div className="rounded-xl border border-white/10 bg-[#0a1520] p-4 text-[10px] font-mono">
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-3" style={{ color: CYAN }}>Recommended Tool Stack — Intermediate</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-3" style={{ color: CYAN }}>Recommended Tool Stack, Intermediate</div>
       <div className="grid grid-cols-3 gap-1.5">
         {tools.map((t) => (
           <div key={t.name} className="rounded-lg border border-white/10 bg-white/[0.03] px-2 py-1.5 text-center">
@@ -544,7 +544,7 @@ export default function ReferralBlueprintPage() {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-3">
                 <a href="#register" className="inline-flex items-center gap-2.5 rounded-xl px-8 py-4 text-base font-black text-[#060f15] hover:-translate-y-0.5 transition-all shadow-xl" style={{ background: AMBER, boxShadow: `0 12px 40px ${AMBER}40` }}>
-                  Get Your Blueprint — $799 AUD
+                  Get Your Blueprint, $799 AUD
                   <ArrowRight className="h-5 w-5" />
                 </a>
                 <a href="/#free-preview" className="inline-flex items-center gap-2 rounded-xl px-6 py-4 text-sm font-bold text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-all">
@@ -800,7 +800,7 @@ export default function ReferralBlueprintPage() {
                 </div>
                 <div>
                   <p className="text-xs font-black text-white">Affiliate Program Database</p>
-                  <p className="text-[10px] text-white/40">Sample extract — 10 of 250+ rows shown</p>
+                  <p className="text-[10px] text-white/40">Sample extract, 10 of 250+ rows shown</p>
                 </div>
               </div>
               <SpreadsheetMock rows={10} />
@@ -1071,11 +1071,11 @@ export default function ReferralBlueprintPage() {
             {[
               {
                 q: "What if I don't have a business or website yet?",
-                a: "That's fine — and common. The strategy brief and niche selection brief are designed to help you decide what to build first. The tool stack PDF includes recommendations for setting up your first affiliate site from scratch. Many people buy the blueprint specifically to skip the months of indecision before they commit to a niche.",
+                a: "That's fine, and common. The strategy brief and niche selection brief are designed to help you decide what to build first. The tool stack PDF includes recommendations for setting up your first affiliate site from scratch. Many people buy the blueprint specifically to skip the months of indecision before they commit to a niche.",
               },
               {
                 q: "What's the difference between this and a generic affiliate program list?",
-                a: "Personalisation. A $99 affiliate database is the same file for everyone — no strategy, no execution layer, no help with your specific niche. The Refer Labs Blueprint is a 250+ program database PLUS a strategy brief written by Jarred for YOUR niche, channels, and experience. That's why it takes 48 hours to deliver and costs $799, not $99.",
+                a: "Personalisation. A $99 affiliate database is the same file for everyone, no strategy, no execution layer, no help with your specific niche. The Refer Labs Blueprint is a 250+ program database PLUS a strategy brief written by Jarred for YOUR niche, channels, and experience. That's why it takes 48 hours to deliver and costs $799, not $99.",
               },
               {
                 q: "Is $799 worth it for a digital product?",
@@ -1087,11 +1087,11 @@ export default function ReferralBlueprintPage() {
               },
               {
                 q: "How is this different from buying an online course?",
-                a: "Courses teach you general principles. The blueprint gives you specific, ready-to-execute deliverables for your situation — no theory videos, no waiting for next week's module unlock. You get six files in 48 hours and start building on day three. It's a working asset, not a learning experience.",
+                a: "Courses teach you general principles. The blueprint gives you specific, ready-to-execute deliverables for your situation, no theory videos, no waiting for next week's module unlock. You get six files in 48 hours and start building on day three. It's a working asset, not a learning experience.",
               },
               {
                 q: "Could I build this myself?",
-                a: "Yes — in 3-6 months of research plus a strategy consultation. At $100/hr for your time that's $6,000-$12,000 of effort. Most people start that process and never finish. This eliminates the research entirely and adds the strategic layer on top.",
+                a: "Yes, in 3-6 months of research plus a strategy consultation. At $100/hr for your time that's $6,000-$12,000 of effort. Most people start that process and never finish. This eliminates the research entirely and adds the strategic layer on top.",
               },
             ].map(({ q, a }) => (
               <div key={q} className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
@@ -1146,10 +1146,10 @@ export default function ReferralBlueprintPage() {
               </h2>
               <div className="space-y-5 text-white/60 leading-relaxed">
                 <p>
-                  Generative AI can write a generic affiliate marketing strategy in 30 seconds. It would be polished. It would also be wrong for you — because the model has no idea what your specific niche, channels, or audience look like, and it would invent reasonable-sounding advice rather than analyse your actual situation.
+                  Generative AI can write a generic affiliate marketing strategy in 30 seconds. It would be polished. It would also be wrong for you, because the model has no idea what your specific niche, channels, or audience look like, and it would invent reasonable-sounding advice rather than analyse your actual situation.
                 </p>
                 <p>
-                  The strategy brief, niche selection, SEO concepts, and distribution playbooks are written from scratch for each customer. Jarred reads your intake form. If your answers raise a question — an ambiguous niche, a missing detail — he emails you before writing anything.
+                  The strategy brief, niche selection, SEO concepts, and distribution playbooks are written from scratch for each customer. Jarred reads your intake form. If your answers raise a question, an ambiguous niche, a missing detail, he emails you before writing anything.
                 </p>
                 <p>
                   The database is the same for everyone (250+ programs, all manually verified). The strategy layer is fresh per order. That&apos;s the difference between a $99 generic database and a $799 personalised blueprint, and why it takes 48 hours rather than 30 seconds.

@@ -8,7 +8,7 @@ import { useEffect } from "react";
  * Every affiliate CTA is marked rel="... sponsored". This attaches a single
  * delegated listener that fires a GA4 `affiliate_click` event whenever one is
  * clicked, capturing the destination, the page it happened on, and the link
- * text — so revenue can be attributed to specific pages and partners.
+ * text, so revenue can be attributed to specific pages and partners.
  *
  * No per-link wiring required; it works for the affiliate template, the
  * comparison roundups, and any future sponsored link.
@@ -18,7 +18,7 @@ import { useEffect } from "react";
 
 // Rough estimated commission value (AUD) per partner, keyed by destination host.
 // This is a planning estimate so GA can weight clicks by likely revenue and
-// surface "revenue per page" — it is NOT actual commission. Refine as real
+// surface "revenue per page", it is NOT actual commission. Refine as real
 // payout data comes in. Unknown partners default to a nominal value.
 const PARTNER_VALUE: Record<string, number> = {
   "getmoshy.com.au": 80,
@@ -57,7 +57,7 @@ export function AffiliateClickTracker() {
         destination_host: destinationHost,
         link_text: (link.textContent || "").trim().slice(0, 80),
         // Placement of the CTA that was clicked (data-cta), e.g. "hero",
-        // "verdict", "mobile-sticky" — lets you see which positions convert.
+        // "verdict", "mobile-sticky", lets you see which positions convert.
         cta_location: link.getAttribute("data-cta") || "inline",
         page_path: window.location.pathname,
         // Estimated commission value so GA can rank pages by likely revenue.

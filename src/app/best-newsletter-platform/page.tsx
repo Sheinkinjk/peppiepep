@@ -32,7 +32,7 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Newsletter Platforms 2026",
-  description: "In-depth comparison of the best newsletter platforms — beehiiv, Substack, and ConvertKit.",
+  description: "In-depth comparison of the best newsletter platforms, beehiiv, Substack, and ConvertKit.",
   numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "beehiiv", description: "Newsletter platform built for growth. Free up to 2,500 subscribers, 14-day trial of paid features. Built-in ad network, referral program, paid subscriptions.", url: `${SITE_URL}/beehiiv` },
@@ -50,12 +50,12 @@ const faqSchema = {
       name: "What is the best newsletter platform in 2026?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "beehiiv is the strongest newsletter platform for creators focused on growth and monetisation in 2026. It offers a free plan up to 2,500 subscribers, a 14-day trial of paid features, and built-in tools including an ad network, referral program, and paid subscription support — all without taking a revenue cut on paid newsletters.",
+        text: "beehiiv is the strongest newsletter platform for creators focused on growth and monetisation in 2026. It offers a free plan up to 2,500 subscribers, a 14-day trial of paid features, and built-in tools including an ad network, referral program, and paid subscription support, all without taking a revenue cut on paid newsletters.",
       },
     },
     {
       "@type": "Question",
-      name: "beehiiv vs Substack — which is better?",
+      name: "beehiiv vs Substack, which is better?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "For creators who want to grow fast and monetise without platform fees, beehiiv is the stronger choice. It offers more growth tools, better analytics, and does not take a percentage of paid subscription revenue. Substack is simpler to start on and has a built-in discovery network, making it a reasonable starting point for beginners, but beehiiv is the preferred platform once you are serious about building a newsletter business.",
@@ -63,7 +63,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "beehiiv vs ConvertKit — what is the difference?",
+      name: "beehiiv vs ConvertKit, what is the difference?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "ConvertKit (now Kit) is a full email marketing platform with advanced automation, tagging, and segmentation built for complex email sequences and sales funnels. beehiiv is focused specifically on newsletter publishing with a strong reader experience and built-in growth tools like referral programs and ad networks. If your primary goal is newsletter publishing and audience growth, beehiiv is better suited. If you need complex automation for a product funnel, ConvertKit is stronger.",
@@ -82,7 +82,7 @@ const faqSchema = {
       name: "Which newsletter platform has the best free plan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "beehiiv offers the most generous free plan for newsletter creators — free up to 2,500 subscribers with access to core publishing features, analytics, and custom domains. Substack is also free with no subscriber cap, but takes a 10% cut of paid subscription revenue. ConvertKit is free up to 1,000 subscribers. For most newsletter creators getting started, beehiiv's free plan is the best starting point.",
+        text: "beehiiv offers the most generous free plan for newsletter creators, free up to 2,500 subscribers with access to core publishing features, analytics, and custom domains. Substack is also free with no subscriber cap, but takes a 10% cut of paid subscription revenue. ConvertKit is free up to 1,000 subscribers. For most newsletter creators getting started, beehiiv's free plan is the best starting point.",
       },
     },
   ],
@@ -115,7 +115,7 @@ const platforms = [
     tagline: "The newsletter platform built for growth",
     free: "Free up to 2,500 subs",
     paid: "From ~$39/mo (Scale plan)",
-    revenueShare: "0% — you keep all revenue",
+    revenueShare: "0%, you keep all revenue",
     pros: [
       "Built-in referral program for subscriber growth",
       "Native ad network to monetise from day one",
@@ -137,13 +137,13 @@ const platforms = [
     href: "https://substack.com",
     internalHref: null,
     tagline: "Simplest path to a paid newsletter",
-    free: "Free — no subscriber cap",
+    free: "Free, no subscriber cap",
     paid: "0% platform fee on free newsletters",
     revenueShare: "10% of paid subscription revenue",
     pros: [
       "Largest built-in discovery and recommendation network",
-      "Extremely simple setup — live in minutes",
-      "No monthly fee — only pay when you earn",
+      "Extremely simple setup, live in minutes",
+      "No monthly fee, only pay when you earn",
       "Strong brand trust with readers",
     ],
     cons: [
@@ -162,7 +162,7 @@ const platforms = [
     tagline: "Advanced email marketing for product businesses",
     free: "Free up to 1,000 subscribers",
     paid: "From $29/mo (Creator plan)",
-    revenueShare: "0% — commerce tools available",
+    revenueShare: "0%, commerce tools available",
     pros: [
       "Powerful automation sequences and tagging",
       "Strong segmentation for complex email funnels",
@@ -170,7 +170,7 @@ const platforms = [
       "Established platform with large creator community",
     ],
     cons: [
-      "Not newsletter-first — reader experience is basic",
+      "Not newsletter-first, reader experience is basic",
       "No built-in ad network or referral growth tools",
       "More complex than needed for newsletter-only creators",
       "Free plan is limited at 1,000 subscribers",
@@ -182,8 +182,8 @@ const features = [
   { label: "Free plan",         beehiiv: "Up to 2,500 subs",   substack: "Unlimited",         convertkit: "Up to 1,000 subs" },
   { label: "Revenue cut",       beehiiv: "0%",                  substack: "10% on paid",       convertkit: "0%" },
   { label: "Referral program",  beehiiv: "Built in",            substack: "No",                convertkit: "No" },
-  { label: "Ad network",        beehiiv: "Yes — native",        substack: "No",                convertkit: "No" },
-  { label: "Paid subscriptions",beehiiv: "Yes — no rev share",  substack: "Yes — 10% cut",     convertkit: "Yes (via commerce)" },
+  { label: "Ad network",        beehiiv: "Yes, native",        substack: "No",                convertkit: "No" },
+  { label: "Paid subscriptions",beehiiv: "Yes, no rev share",  substack: "Yes, 10% cut",     convertkit: "Yes (via commerce)" },
   { label: "Discovery network", beehiiv: "Growing",             substack: "Large",             convertkit: "Limited" },
   { label: "Automation",        beehiiv: "Basic",               substack: "Minimal",           convertkit: "Advanced" },
   { label: "Analytics",         beehiiv: "Best in class",       substack: "Basic",             convertkit: "Good" },
@@ -258,7 +258,7 @@ export default function BestNewsletterPlatformPage() {
             className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
             style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
           >
-            Try beehiiv Free — 14-Day Trial
+            Try beehiiv Free, 14-Day Trial
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -401,7 +401,7 @@ export default function BestNewsletterPlatformPage() {
           <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">What Reddit Says</h2>
           <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
             <p>
-              Reddit discussions about newsletter platforms — primarily in r/Newsletters, r/Entrepreneur, r/SideProject, and r/blogging — consistently point to beehiiv as the preferred platform for creators who are serious about growing and monetising.
+              Reddit discussions about newsletter platforms, primarily in r/Newsletters, r/Entrepreneur, r/SideProject, and r/blogging, consistently point to beehiiv as the preferred platform for creators who are serious about growing and monetising.
             </p>
             <p>
               The most common community feedback: beehiiv's referral program and ad network are genuinely useful tools that most platforms don't offer. Substack's discovery network is acknowledged as a real advantage in the early days, and the zero monthly fee makes it a low-risk start. ConvertKit gets recommended for product businesses with complex sequences but rarely for newsletter-first creators.
@@ -419,14 +419,14 @@ export default function BestNewsletterPlatformPage() {
             {[
               {
                 q: "What is the best newsletter platform in 2026?",
-                a: "beehiiv is the strongest newsletter platform for creators focused on growth and monetisation in 2026. It offers a free plan up to 2,500 subscribers, a 14-day trial of paid features, and built-in tools including an ad network, referral program, and paid subscription support — all without taking a revenue cut on paid newsletters.",
+                a: "beehiiv is the strongest newsletter platform for creators focused on growth and monetisation in 2026. It offers a free plan up to 2,500 subscribers, a 14-day trial of paid features, and built-in tools including an ad network, referral program, and paid subscription support, all without taking a revenue cut on paid newsletters.",
               },
               {
-                q: "beehiiv vs Substack — which is better?",
+                q: "beehiiv vs Substack, which is better?",
                 a: "For creators who want to grow fast and monetise without platform fees, beehiiv is the stronger choice. Substack is simpler to start on and has a built-in discovery network, making it a reasonable starting point, but beehiiv is the preferred platform once you are serious about building a newsletter business.",
               },
               {
-                q: "beehiiv vs ConvertKit — what is the difference?",
+                q: "beehiiv vs ConvertKit, what is the difference?",
                 a: "ConvertKit (now Kit) is a full email marketing platform with advanced automation and segmentation built for complex funnels. beehiiv is newsletter-first with strong growth tools like referral programs and ad networks. For newsletter publishing and audience growth, beehiiv is better suited.",
               },
               {
@@ -435,7 +435,7 @@ export default function BestNewsletterPlatformPage() {
               },
               {
                 q: "Which newsletter platform has the best free plan?",
-                a: "beehiiv offers the most generous free plan for newsletter creators — free up to 2,500 subscribers with access to core publishing features, analytics, and custom domains. Substack is free with no subscriber cap but takes 10% of paid revenue. ConvertKit is free up to 1,000 subscribers.",
+                a: "beehiiv offers the most generous free plan for newsletter creators, free up to 2,500 subscribers with access to core publishing features, analytics, and custom domains. Substack is free with no subscriber cap but takes 10% of paid revenue. ConvertKit is free up to 1,000 subscribers.",
               },
             ].map(({ q, a }, i) => (
               <div key={i} className="border-b border-[#e5e9e7] pb-6">

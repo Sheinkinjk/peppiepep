@@ -6,7 +6,7 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import { SITE_URL } from "@/lib/seo";
 
-// Editors' picks lead with the real brand logo — the single biggest thing that
+// Editors' picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
   { logo: "moshy", name: "Moshy", cat: "Weight loss", verdict: "A clinically-led, fully-online weight-loss telehealth program, open to anyone eligible. New customers can get $120 off their first treatment.", href: "/moshy-review" },
@@ -82,7 +82,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Featured pick — real logo, editorial "cover story" */}
+            {/* Featured pick, real logo, editorial "cover story" */}
             <div className="lg:pl-6">
               <Link href="/moshy-review" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
                 <div className="flex items-center gap-4">

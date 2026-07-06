@@ -61,7 +61,7 @@ export default function IndustryPageTemplate({ data }: { data: IndustryPageData 
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
                 <Link href={`/referral-blueprint${utm}`} className="inline-flex items-center gap-2.5 rounded-xl px-8 py-4 text-base font-black text-[#060f15] hover:-translate-y-0.5 transition-all shadow-xl" style={{ background: AMBER, boxShadow: `0 12px 40px ${AMBER}40` }}>
-                  Get the {data.industry} Blueprint — $799
+                  Get the {data.industry} Blueprint, $799
                   <ArrowRight className="h-5 w-5" />
                 </Link>
                 <span className="text-xs text-white/35">48-hour delivery · Personalised to your business</span>
@@ -192,10 +192,10 @@ export default function IndustryPageTemplate({ data }: { data: IndustryPageData 
             $799 once. That&apos;s it.
           </h2>
           <p className="text-white/55 max-w-md mx-auto mb-8">
-            Personalised strategy brief written by Jarred for your {data.industryLower.replace(/s$/, "")}. Database, SEO concepts, distribution playbooks — all in your inbox within 48 hours.
+            Personalised strategy brief written by Jarred for your {data.industryLower.replace(/s$/, "")}. Database, SEO concepts, distribution playbooks, all in your inbox within 48 hours.
           </p>
           <Link href={`/referral-blueprint${utm}`} className="inline-flex items-center gap-2 rounded-xl px-9 py-4 text-base font-black text-[#060f15] hover:-translate-y-0.5 transition-all shadow-xl" style={{ background: AMBER, boxShadow: `0 12px 40px ${AMBER}35` }}>
-            Get the {data.industry} Blueprint — $799
+            Get the {data.industry} Blueprint, $799
             <ArrowRight className="h-5 w-5" />
           </Link>
           <div className="flex items-center justify-center gap-1.5 mt-4">
@@ -231,7 +231,7 @@ export default function IndustryPageTemplate({ data }: { data: IndustryPageData 
             Fill the intake form, pay $799, and receive your personalised {data.industry} blueprint within 48 hours.
           </p>
           <Link href={`/referral-blueprint${utm}`} className="inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-black text-[#060f15] hover:opacity-90 transition-all" style={{ background: AMBER }}>
-            Get the {data.industry} Blueprint — $799
+            Get the {data.industry} Blueprint, $799
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

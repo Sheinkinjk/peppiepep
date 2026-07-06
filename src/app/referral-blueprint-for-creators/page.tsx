@@ -6,8 +6,8 @@ import { CREATORS } from "@/components/blueprint/industries";
 const data = CREATORS;
 
 export const metadata: Metadata = {
-  title: "Referral Blueprint for Creators — $799 | Refer Labs",
-  description: "Referral Growth Blueprint for creators — 250+ programs, personalised strategy brief, SEO concepts, distribution playbooks. $799 AUD, 48hr delivery.",
+  title: "Referral Blueprint for Creators, $799 | Refer Labs",
+  description: "Referral Growth Blueprint for creators, 250+ programs, personalised strategy brief, SEO concepts, distribution playbooks. $799 AUD, 48hr delivery.",
   alternates: { canonical: `${SITE_URL}/referral-blueprint-for-creators` },
   keywords: [
     "referral blueprint for creators",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "best affiliate programs creators",
   ],
   openGraph: {
-    title: "Referral Blueprint for Creators — 250+ Programs + Strategy",
+    title: "Referral Blueprint for Creators, 250+ Programs + Strategy",
     description: "Personalised strategy brief, 250+ affiliate programs, SEO concepts and distribution playbooks built for creators. $799, 48hr delivery.",
     url: `${SITE_URL}/referral-blueprint-for-creators`,
     type: "website",

@@ -4,7 +4,7 @@ const SITE_URL = "https://referlabs.com.au";
 const PAGE_URL = `${SITE_URL}/referral-business-program`;
 
 export const metadata: Metadata = {
-  title: "Affiliate Marketing Business Blueprint — 250+ Programs, Strategy & SEO Plan | Refer Labs",
+  title: "Affiliate Marketing Business Blueprint, 250+ Programs, Strategy & SEO Plan | Refer Labs",
   description:
     "Start an affiliate marketing business with a curated database of 250+ programs, a personalised niche strategy, 10+ SEO page ideas, distribution playbooks, and a recommended tool stack. $799 one-time. Delivered in 48 hours.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "health affiliate programs australia",
   ].join(", "),
   openGraph: {
-    title: "Affiliate Marketing Business Blueprint — 250+ Programs + Strategy | Refer Labs",
+    title: "Affiliate Marketing Business Blueprint, 250+ Programs + Strategy | Refer Labs",
     description:
       "250+ curated affiliate programs, personalised niche strategy, 10+ SEO page concepts, distribution playbooks, and a recommended tool stack. $799 one-time. Delivered in 48 hours.",
     url: PAGE_URL,
@@ -77,7 +77,7 @@ const productSchema = {
   "@type": "Product",
   name: "Referral Growth Blueprint",
   description:
-    "A curated database of 250+ affiliate and referral programs, a personalised niche strategy, 10+ SEO page ideas, distribution playbooks for email, SEO, and online communities, and a recommended tool stack — delivered as an Excel database plus written strategy brief.",
+    "A curated database of 250+ affiliate and referral programs, a personalised niche strategy, 10+ SEO page ideas, distribution playbooks for email, SEO, and online communities, and a recommended tool stack, delivered as an Excel database plus written strategy brief.",
   brand: {
     "@type": "Brand",
     name: "Refer Labs",
@@ -123,7 +123,7 @@ const faqSchema = {
       name: "What affiliate program niches are covered in the database?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The database covers five main categories: (1) AI Tools — 20–40% recurring commissions from tools like Jasper, Durable AI, Synthesia, and others. (2) SaaS Platforms — 15–30% recurring from beehiiv, Webflow, Zapier, Airtable, and others. (3) Health Programs — $50–$150 per sale from telehealth and wellness programs including Moshy, Juniper, and Mosh Hair. (4) Startup Tools — 25–50% one-time from Carrd, Swipe Pages, Lemon Squeezy, and others. (5) Fintech Offers — $30–$200 per referral from Wise, Revolut, Stake, Pearler, and similar. Each category includes 40–60 individual programs.",
+        text: "The database covers five main categories: (1) AI Tools, 20-40% recurring commissions from tools like Jasper, Durable AI, Synthesia, and others. (2) SaaS Platforms, 15-30% recurring from beehiiv, Webflow, Zapier, Airtable, and others. (3) Health Programs, $50-$150 per sale from telehealth and wellness programs including Moshy, Juniper, and Mosh Hair. (4) Startup Tools, 25-50% one-time from Carrd, Swipe Pages, Lemon Squeezy, and others. (5) Fintech Offers, $30-$200 per referral from Wise, Revolut, Stake, Pearler, and similar. Each category includes 40-60 individual programs.",
       },
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       name: "How is this different from a free affiliate marketing guide online?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Free guides explain how affiliate marketing works. This blueprint tells you which programs to promote, how to position them, which SEO pages to build, and how to distribute across channels — with your niche and goals already factored in. The database alone covers research that typically takes 3–6 months to compile. You are not learning concepts — you are getting a specific plan and a ready-to-use program list.",
+        text: "Free guides explain how affiliate marketing works. This blueprint tells you which programs to promote, how to position them, which SEO pages to build, and how to distribute across channels, with your niche and goals already factored in. The database alone covers research that typically takes 3-6 months to compile. You are not learning concepts, you are getting a specific plan and a ready-to-use program list.",
       },
     },
     {
@@ -155,7 +155,7 @@ const faqSchema = {
       name: "What affiliate programs pay the highest commissions?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The highest-paying programs in the database fall into three groups: (1) Recurring SaaS commissions — typically 20–40% of the customer's monthly subscription, compounding over time. beehiiv, for example, pays 30% recurring. (2) Health and telehealth programs — flat fees of $50–$150 per new customer sign-up, often with high conversion rates from targeted SEO placements. (3) Fintech referral bonuses — typically $30–$200 per verified referral. The full database includes commission structures for every entry.",
+        text: "The highest-paying programs in the database fall into three groups: (1) Recurring SaaS commissions, typically 20-40% of the customer's monthly subscription, compounding over time. beehiiv, for example, pays 30% recurring. (2) Health and telehealth programs, flat fees of $50-$150 per new customer sign-up, often with high conversion rates from targeted SEO placements. (3) Fintech referral bonuses, typically $30-$200 per verified referral. The full database includes commission structures for every entry.",
       },
     },
   ],
@@ -189,7 +189,7 @@ const breadcrumbSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Affiliate Marketing Business Blueprint — 250+ Programs, Strategy & SEO Plan",
+  name: "Affiliate Marketing Business Blueprint, 250+ Programs, Strategy & SEO Plan",
   description:
     "Start an affiliate marketing business with 250+ curated programs, personalised niche strategy, SEO page ideas, and distribution playbooks.",
   url: PAGE_URL,

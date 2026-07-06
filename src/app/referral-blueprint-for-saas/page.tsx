@@ -6,8 +6,8 @@ import { SAAS } from "@/components/blueprint/industries";
 const data = SAAS;
 
 export const metadata: Metadata = {
-  title: "Referral Blueprint for SaaS — $799 | Refer Labs",
-  description: "Referral Growth Blueprint for SaaS founders — 250+ programs, personalised strategy brief, SEO concepts, distribution playbooks. $799 AUD, 48hr delivery.",
+  title: "Referral Blueprint for SaaS, $799 | Refer Labs",
+  description: "Referral Growth Blueprint for SaaS founders, 250+ programs, personalised strategy brief, SEO concepts, distribution playbooks. $799 AUD, 48hr delivery.",
   alternates: { canonical: `${SITE_URL}/referral-blueprint-for-saas` },
   keywords: [
     "referral blueprint for saas",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "best affiliate programs saas",
   ],
   openGraph: {
-    title: "Referral Blueprint for SaaS — 250+ Programs + Strategy",
+    title: "Referral Blueprint for SaaS, 250+ Programs + Strategy",
     description: "Personalised strategy brief, 250+ affiliate programs, SEO concepts and distribution playbooks built for SaaS founders. $799, 48hr delivery.",
     url: `${SITE_URL}/referral-blueprint-for-saas`,
     type: "website",

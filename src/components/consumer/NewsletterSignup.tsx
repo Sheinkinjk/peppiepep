@@ -72,7 +72,7 @@ export default function NewsletterSignup({
         <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{sub}</p>
         {done ? (
           <p className={`mt-6 flex items-center gap-2 text-sm font-semibold text-[#0a7c42] ${isBand ? "justify-center" : ""}`}>
-            <Check className="h-4 w-4" /> You&apos;re subscribed — check your inbox.
+            <Check className="h-4 w-4" /> You&apos;re subscribed, check your inbox.
           </p>
         ) : (
           <form onSubmit={submit} className={`mt-6 flex flex-col gap-2.5 sm:flex-row ${isBand ? "sm:justify-center" : ""}`}>

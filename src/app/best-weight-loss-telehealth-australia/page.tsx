@@ -34,7 +34,7 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Weight Loss Telehealth Platforms Australia 2026",
-  description: "In-depth comparison of Australian weight loss telehealth platforms — Moshy, Juniper, and Better Being. GLP-1 access, eligibility process, pricing, and who each platform suits.",
+  description: "In-depth comparison of Australian weight loss telehealth platforms, Moshy, Juniper, and Better Being. GLP-1 access, eligibility process, pricing, and who each platform suits.",
   numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, GLP-1 medication access. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
@@ -160,7 +160,7 @@ function PlatformCard({
     >
       <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-12">
 
-        {/* Left — identity + content */}
+        {/* Left, identity + content */}
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div
@@ -192,7 +192,7 @@ function PlatformCard({
           </div>
         </div>
 
-        {/* Right — deal + CTA */}
+        {/* Right, deal + CTA */}
         <div className="flex flex-col gap-4">
           <div
             className="rounded-xl p-5"
@@ -266,10 +266,10 @@ const platforms: PlatformCardProps[] = [
       "Purpose-built for Australian women",
       "GLP-1 medication access (subject to eligibility)",
       "Health coaching included in programme",
-      "Online process — no in-person GP visit required",
+      "Online process, no in-person GP visit required",
     ],
     cons: [
-      "Women only — not available for men",
+      "Women only, not available for men",
       "More premium pricing than some alternatives",
     ],
     extUrl: JUNIPER_URL,
@@ -280,7 +280,7 @@ const platforms: PlatformCardProps[] = [
     id: "betterbeing",
     index: "03",
     name: "Better Being",
-    tagline: "Australian digital health platform offering a broader lifestyle-based approach to weight management. Better Being's programme includes practitioner support, nutrition guidance, and behavioural coaching — with less emphasis on medication than Moshy or Juniper.",
+    tagline: "Australian digital health platform offering a broader lifestyle-based approach to weight management. Better Being's programme includes practitioner support, nutrition guidance, and behavioural coaching, with less emphasis on medication than Moshy or Juniper.",
     deal: "Holistic weight management programme",
     dealNote: "Better Being supports clients through nutrition, lifestyle, and practitioner-led approaches. Access via their website.",
     pros: [
@@ -341,9 +341,9 @@ export default function BestWeightLossTelehealthPage() {
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
               {[
-                { href: "#moshy",       label: "01 — Moshy" },
-                { href: "#juniper",     label: "02 — Juniper" },
-                { href: "#betterbeing", label: "03 — Better Being" },
+                { href: "#moshy",       label: "01, Moshy" },
+                { href: "#juniper",     label: "02, Juniper" },
+                { href: "#betterbeing", label: "03, Better Being" },
               ].map(({ href, label }) => (
                 <a
                   key={href}

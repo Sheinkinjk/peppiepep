@@ -112,7 +112,7 @@ export default function ComparisonWebsitePage() {
             <span className="text-[#22C0CD]">Health & Performance</span>
           </h1>
           <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            A properly researched comparison platform across five health and performance categories. We assess providers against clinical standards, transparency, and real-world quality — not ad spend.
+            A properly researched comparison platform across five health and performance categories. We assess providers against clinical standards, transparency, and real-world quality, not ad spend.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
             {["5 curated categories", "Australian providers only", "Not a pay-to-rank directory"].map((tag) => (

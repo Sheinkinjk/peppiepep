@@ -79,7 +79,7 @@ export function DocMock({ compact = false }: { compact?: boolean }) {
         <span className="ml-1 text-white/30">strategy-brief.pdf</span>
       </div>
       <div className="space-y-1.5">
-        <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>Referral Growth Blueprint — Strategy Brief</div>
+        <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>Referral Growth Blueprint, Strategy Brief</div>
         <div className="flex flex-wrap gap-3 text-white/50 mb-2">
           <span>Niche: <span className="text-white/80 font-semibold">AI Tools</span></span>
           <span>Channel: <span className="text-white/80 font-semibold">SEO</span></span>
@@ -87,7 +87,7 @@ export function DocMock({ compact = false }: { compact?: boolean }) {
         </div>
         <div className="h-px bg-white/[0.07] my-2" />
         <div className="text-white/60 font-bold mb-1">WEEK 1-2: Foundation</div>
-        {["Register Jasper, Durable AI, Notion, beehiiv (priority list attached)", "Set up Pretty Links — installation guide in tool stack PDF", "Build comparison page: Durable AI vs Wix (full brief in SEO concepts)"].map((t) => (
+        {["Register Jasper, Durable AI, Notion, beehiiv (priority list attached)", "Set up Pretty Links, installation guide in tool stack PDF", "Build comparison page: Durable AI vs Wix (full brief in SEO concepts)"].map((t) => (
           <div key={t} className="flex gap-1.5 text-white/45">
             <span style={{ color: CYAN }}>✓</span>
             <span className="leading-relaxed">{t}</span>
@@ -95,7 +95,7 @@ export function DocMock({ compact = false }: { compact?: boolean }) {
         ))}
         <div className="h-px bg-white/[0.07] my-2" />
         <div className="text-white/60 font-bold mb-1">WEEK 3-4: Content</div>
-        {['Target: "best AI website builder 2026" — 3,200 searches/mo', "Build: 2 review pages + 1 comparison page", "Monetise: Durable AI (20%) + Carrd (30%) per page"].map((t) => (
+        {['Target: "best AI website builder 2026", 3,200 searches/mo', "Build: 2 review pages + 1 comparison page", "Monetise: Durable AI (20%) + Carrd (30%) per page"].map((t) => (
           <div key={t} className="flex gap-1.5 text-white/45">
             <span className="text-white/30">→</span>
             <span className="leading-relaxed">{t}</span>
@@ -118,7 +118,7 @@ export function SeoMock({ compact = false }: { compact?: boolean }) {
   ];
   return (
     <div className={`rounded-xl border border-white/10 bg-[#0a1520] font-mono space-y-2.5 ${compact ? "p-3 text-[9px]" : "p-4 text-[10px]"}`}>
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Page Concepts — Sample</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Page Concepts, Sample</div>
       {keywords.map((k) => (
         <div key={k.kw} className="space-y-1">
           <div className="flex items-center justify-between gap-2">
@@ -149,7 +149,7 @@ export function ChecklistMock({ compact = false }: { compact?: boolean }) {
   ];
   return (
     <div className={`rounded-xl border border-white/10 bg-[#0a1520] font-mono space-y-2 ${compact ? "p-3 text-[9px]" : "p-4 text-[10px]"}`}>
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Distribution Playbook — Step 1 of 6</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>SEO Distribution Playbook, Step 1 of 6</div>
       {steps.map((s, i) => (
         <div key={s} className="flex gap-2 items-start">
           <div className="h-4 w-4 rounded border flex items-center justify-center flex-shrink-0 mt-0.5" style={{ borderColor: i < 2 ? CYAN : "rgba(255,255,255,0.15)", background: i < 2 ? `${CYAN}20` : "transparent" }}>
@@ -172,7 +172,7 @@ export function NichesMock({ compact = false }: { compact?: boolean }) {
   ];
   return (
     <div className={`rounded-xl border border-white/10 bg-[#0a1520] font-mono space-y-2.5 ${compact ? "p-3 text-[9px]" : "p-4 text-[10px]"}`}>
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>Niche Selection — Your Top 3</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-2" style={{ color: CYAN }}>Niche Selection, Your Top 3</div>
       {niches.map((n) => (
         <div key={n.name} className="flex items-center gap-3 rounded-lg p-2"
           style={{ background: n.rank === 1 ? `${CYAN}10` : "rgba(255,255,255,0.02)", border: `1px solid ${n.rank === 1 ? `${CYAN}30` : "rgba(255,255,255,0.06)"}` }}>
@@ -207,7 +207,7 @@ export function ToolsMock({ compact = false }: { compact?: boolean }) {
   ];
   return (
     <div className={`rounded-xl border border-white/10 bg-[#0a1520] font-mono ${compact ? "p-3 text-[9px]" : "p-4 text-[10px]"}`}>
-      <div className="text-[9px] font-bold uppercase tracking-widest mb-3" style={{ color: CYAN }}>Recommended Tool Stack — Intermediate</div>
+      <div className="text-[9px] font-bold uppercase tracking-widest mb-3" style={{ color: CYAN }}>Recommended Tool Stack, Intermediate</div>
       <div className="grid grid-cols-3 gap-1.5">
         {tools.map((t) => (
           <div key={t.name} className="rounded-lg border border-white/10 bg-white/[0.03] px-2 py-1.5 text-center">
@@ -240,7 +240,7 @@ export function EmailPreviewMock() {
       {/* Email header */}
       <div className="px-4 py-3 border-b border-white/[0.07] space-y-1">
         <div className="flex items-center justify-between">
-          <span className="font-bold text-white/70">Your Referral Growth Blueprint — delivered</span>
+          <span className="font-bold text-white/70">Your Referral Growth Blueprint, delivered</span>
           <span className="text-white/25 text-[9px]">just now</span>
         </div>
         <div className="text-white/35 text-[9px]">From: Jarred Krowitz &lt;jarred@referlabs.com.au&gt;</div>
@@ -249,7 +249,7 @@ export function EmailPreviewMock() {
       <div className="px-4 py-3 space-y-2">
         <div className="text-white/65 leading-relaxed">Hi Sarah,</div>
         <div className="text-white/50 leading-relaxed">
-          Your blueprint is attached — six files as promised. Start with the Excel database, filter by your niche, and cross-reference the strategy brief for your week 1 priorities.
+          Your blueprint is attached, six files as promised. Start with the Excel database, filter by your niche, and cross-reference the strategy brief for your week 1 priorities.
         </div>
         <div className="mt-2 rounded border border-white/[0.07] bg-white/[0.02] p-2.5 space-y-1.5">
           {[
@@ -273,7 +273,7 @@ export function EmailPreviewMock() {
           ))}
         </div>
         <div className="text-white/35 leading-relaxed text-[9px] pt-1">
-          Questions on any of these — reply here. Looking forward to hearing how it goes.
+          Questions on any of these, reply here. Looking forward to hearing how it goes.
         </div>
         <div className="text-white/45 font-semibold">Jarred</div>
       </div>
@@ -291,7 +291,7 @@ export function DeliveryMock() {
         <div className="h-2.5 w-2.5 rounded-full bg-red-500/50" />
         <div className="h-2.5 w-2.5 rounded-full bg-amber-500/50" />
         <div className="h-2.5 w-2.5 rounded-full bg-green-500/50" />
-        <span className="ml-2 text-[9px] text-white/25 font-mono">Inbox — 1 new message</span>
+        <span className="ml-2 text-[9px] text-white/25 font-mono">Inbox, 1 new message</span>
       </div>
       <div className="p-4">
         <EmailPreviewMock />

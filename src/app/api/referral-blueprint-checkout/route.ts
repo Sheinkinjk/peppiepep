@@ -66,7 +66,7 @@ function buildAdminEmail(data: {
             </table>
           </div>
           <div style="margin-top:24px;padding:20px;border-radius:16px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #86efac;">
-            <strong style="font-size:16px;color:#065f46;">Pending Payment — $799 AUD</strong>
+            <strong style="font-size:16px;color:#065f46;">Pending Payment, $799 AUD</strong>
             <p style="margin:8px 0 0;font-size:14px;color:#047857;">Buyer redirected to Stripe checkout. Blueprint delivery triggered on payment success.</p>
           </div>
           <div style="margin-top:24px;padding-top:24px;border-top:1px solid #e2e8f0;text-align:center;">
@@ -125,10 +125,10 @@ export async function POST(request: NextRequest) {
     });
 
     // Schedule an abandoned-checkout recovery email (cancelled on the success
-    // page if they complete payment). Non-blocking — never breaks checkout.
+    // page if they complete payment). Non-blocking, never breaks checkout.
     const recoveryEmailId = await scheduleAbandonedCheckoutEmail(email, name).catch(() => null);
 
-    // Use raw fetch to create checkout session — Stripe SDK has fetch compatibility issues in this serverless environment
+    // Use raw fetch to create checkout session, Stripe SDK has fetch compatibility issues in this serverless environment
     const params = new URLSearchParams({
       mode: "payment",
       "payment_method_types[0]": "card",

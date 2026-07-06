@@ -6,7 +6,7 @@ import { ArrowRight, RotateCcw } from "lucide-react";
 import { MOSHY_URL, JUNIPER_URL, BETTERBEING_URL } from "@/lib/affiliate-links";
 
 /**
- * "Which weight-loss pathway fits you?" — a two-question decision tool that ends
+ * "Which weight-loss pathway fits you?", a two-question decision tool that ends
  * in a tailored recommendation. Anyone leaning clinical lands on Moshy (the money
  * link, tracked). Engagement asset + funnel, not medical advice.
  */
@@ -45,7 +45,7 @@ function resolve(gender: Gender, priority: Priority): Result {
       secondary: { label: "See all weight-loss options", href: "/weight-loss" },
     };
   }
-  // clinical — Moshy is the clinical pathway, open to anyone eligible
+  // clinical, Moshy is the clinical pathway, open to anyone eligible
   return {
     title: "Moshy is the natural starting point",
     body: "You want a fast, clinically-led pathway done online, and Moshy runs exactly that, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing.",

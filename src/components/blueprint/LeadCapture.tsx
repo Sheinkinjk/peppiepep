@@ -56,7 +56,7 @@ export default function LeadCapture() {
                 Get a free preview of 20 affiliate programs from the database.
               </h2>
               <p className="text-white/60 text-base leading-relaxed mb-6 max-w-xl">
-                See exactly what the full database looks like — 20 programs with commission rates, direct links, and marketing angles. Sample from across all 5 categories.
+                See exactly what the full database looks like, 20 programs with commission rates, direct links, and marketing angles. Sample from across all 5 categories.
               </p>
               <ul className="space-y-2.5">
                 {[

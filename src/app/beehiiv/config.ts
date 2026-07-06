@@ -13,7 +13,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     "beehiiv is a newsletter platform that is free up to 2,500 subscribers and includes a built-in ad network, referral program, website, and paid subscriptions. It is best for creators and operators focused on growing and monetising an email audience. You can start free, or trial paid features, via the link on this page.",
 
   banner: {
-    heading: "beehiiv — Claim the 14-Day Free Trial",
+    heading: "beehiiv, Claim the 14-Day Free Trial",
     body: "Click below to go directly to beehiiv via our referral link. The 14-day trial is applied automatically on sign-up.",
     buttonLabel: "Continue to beehiiv",
   },
@@ -46,7 +46,7 @@ export const beehiivConfig: AffiliatePageConfig = {
       "Covers beehiiv pricing, free plan, and paid tiers",
       "Honest beehiiv vs Substack and beehiiv vs ConvertKit comparison",
       "Covers beehiiv monetization, ad network, and referral tools",
-      "Click through instantly — no details required on this page",
+      "Click through instantly, no details required on this page",
     ],
   },
 
@@ -63,16 +63,16 @@ export const beehiivConfig: AffiliatePageConfig = {
     {
       heading: "What Is beehiiv?",
       paragraphs: [
-        "beehiiv is a newsletter platform built specifically for growth. It was founded by members of the team behind Morning Brew — one of the most successful newsletter businesses in the world — and the platform reflects what they learned from building a newsletter to millions of subscribers.",
-        "Unlike general email marketing tools, beehiiv is designed around the newsletter creator economy. The core product covers publishing, subscriber management, and analytics, but what distinguishes it is the built-in monetization infrastructure: a native ad network where advertisers pay beehiiv newsletters directly, a referral programme for growing subscriber counts through reader sharing, paid subscriptions for premium content, and boosts — a way to get paid for recommending other newsletters to your audience.",
+        "beehiiv is a newsletter platform built specifically for growth. It was founded by members of the team behind Morning Brew, one of the most successful newsletter businesses in the world, and the platform reflects what they learned from building a newsletter to millions of subscribers.",
+        "Unlike general email marketing tools, beehiiv is designed around the newsletter creator economy. The core product covers publishing, subscriber management, and analytics, but what distinguishes it is the built-in monetization infrastructure: a native ad network where advertisers pay beehiiv newsletters directly, a referral programme for growing subscriber counts through reader sharing, paid subscriptions for premium content, and boosts, a way to get paid for recommending other newsletters to your audience.",
         "beehiiv is used by independent newsletter creators, media companies, content businesses, and brands running editorial newsletters. It is relevant at every stage from zero subscribers to hundreds of thousands.",
       ],
     },
     {
       heading: "beehiiv Pricing and Free Trial",
       paragraphs: [
-        "beehiiv offers a free plan that supports up to 2,500 subscribers with unlimited sends. This is a genuine free tier — not a free trial that expires. It gives you full access to the publishing interface, basic analytics, and the ability to grow your list to 2,500 before needing to upgrade.",
-        "Paid plans — Scale and Max — unlock the full monetization suite: the beehiiv ad network, referral programmes, paid subscriptions, boosts, advanced analytics, custom domains, and API access. These plans are priced monthly or annually.",
+        "beehiiv offers a free plan that supports up to 2,500 subscribers with unlimited sends. This is a genuine free tier, not a free trial that expires. It gives you full access to the publishing interface, basic analytics, and the ability to grow your list to 2,500 before needing to upgrade.",
+        "Paid plans, Scale and Max, unlock the full monetization suite: the beehiiv ad network, referral programmes, paid subscriptions, boosts, advanced analytics, custom domains, and API access. These plans are priced monthly or annually.",
         "Our referral link applies the 14-day free trial of paid plan features, giving you access to the full beehiiv platform before committing. If you have been searching for a beehiiv promo code, discount code, or the best current beehiiv offer, this link is the most consistent way to access it.",
       ],
     },
@@ -94,8 +94,8 @@ export const beehiivConfig: AffiliatePageConfig = {
     {
       heading: "beehiiv Monetization",
       paragraphs: [
-        "beehiiv's monetization tools are the primary reason it has become the platform of choice for newsletter businesses rather than a general email list. The main revenue mechanisms available through beehiiv are: the beehiiv Ad Network (advertisers bid to place ads in newsletters across the network — you set a minimum price and accept or decline placements), paid subscriptions (charge readers a recurring monthly or annual fee for premium content), boosts (earn money by recommending other newsletters to your readers), and custom sponsorship management for direct advertiser relationships.",
-        "The combination of these tools means a newsletter running on beehiiv can generate revenue from multiple sources simultaneously — advertising, reader subscriptions, and cross-promotion. This is the infrastructure that makes beehiiv relevant beyond just being a publishing tool.",
+        "beehiiv's monetization tools are the primary reason it has become the platform of choice for newsletter businesses rather than a general email list. The main revenue mechanisms available through beehiiv are: the beehiiv Ad Network (advertisers bid to place ads in newsletters across the network, you set a minimum price and accept or decline placements), paid subscriptions (charge readers a recurring monthly or annual fee for premium content), boosts (earn money by recommending other newsletters to your readers), and custom sponsorship management for direct advertiser relationships.",
+        "The combination of these tools means a newsletter running on beehiiv can generate revenue from multiple sources simultaneously, advertising, reader subscriptions, and cross-promotion. This is the infrastructure that makes beehiiv relevant beyond just being a publishing tool.",
       ],
     },
   ],
@@ -143,7 +143,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     },
     {
       q: "Is beehiiv free?",
-      a: "Yes. beehiiv has a free plan that supports up to 2,500 subscribers with unlimited sends. You can publish, grow your list, and use the core platform at no cost up to that limit. Paid plans — Scale and Max — unlock the monetization tools, advanced analytics, custom domains, and full API access.",
+      a: "Yes. beehiiv has a free plan that supports up to 2,500 subscribers with unlimited sends. You can publish, grow your list, and use the core platform at no cost up to that limit. Paid plans, Scale and Max, unlock the monetization tools, advanced analytics, custom domains, and full API access.",
     },
     {
       q: "Is beehiiv better than Substack?",
@@ -177,11 +177,11 @@ export const beehiivConfig: AffiliatePageConfig = {
     {
       href: "/best-newsletter-platform",
       label: "Best Newsletter Platform 2026",
-      desc: "beehiiv vs Substack vs ConvertKit — free plans, monetisation, growth tools, and Reddit verdict.",
+      desc: "beehiiv vs Substack vs ConvertKit, free plans, monetisation, growth tools, and Reddit verdict.",
     },
     {
       href: "/incomelab",
-      label: "IncomeLab — AI Side Hustle Platform",
+      label: "IncomeLab, AI Side Hustle Platform",
       desc: "AI side hustle ideas and frameworks for making money with AI tools in 2026.",
     },
     {
@@ -200,7 +200,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     midButton: "Claim the beehiiv Trial",
     bottomHeading: "Start Your Newsletter on beehiiv Today",
     bottomBody:
-      "Click below to be taken to beehiiv with the 14-day trial offer applied. Explore the full platform — ad network, referral programme, paid subscriptions — before committing.",
+      "Click below to be taken to beehiiv with the 14-day trial offer applied. Explore the full platform, ad network, referral programme, paid subscriptions, before committing.",
     bottomButton: "Continue to beehiiv",
   },
 

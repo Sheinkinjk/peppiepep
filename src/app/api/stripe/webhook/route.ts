@@ -8,7 +8,7 @@ import { createApiLogger } from '@/lib/api-logger';
 import { sendAdminNotification, buildBlueprintBuyerConfirmationEmail } from '@/lib/email-notifications';
 import type { Json } from '@/types/supabase';
 
-// Defensive trim — protects against trailing whitespace from how the env var was set (e.g. via `echo "..." | vercel env add`)
+// Defensive trim, protects against trailing whitespace from how the env var was set (e.g. via `echo "..." | vercel env add`)
 const webhookSecret = (process.env.STRIPE_WEBHOOK_SECRET || '').trim();
 
 // Type-safe interfaces for webhook data
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
 
   const supabase = await createServerComponentClient();
 
-  // Log the webhook event — fire-and-forget so DB errors never cause a 500 to Stripe
+  // Log the webhook event, fire-and-forget so DB errors never cause a 500 to Stripe
   const eventData = event.data.object;
   const objectId = 'id' in eventData && typeof eventData.id === 'string' ? eventData.id : 'unknown';
   const webhookEvent: StripeWebhookEvent = {
@@ -103,7 +103,7 @@ export async function POST(request: NextRequest) {
         logger.info('Unhandled event type received', { eventType: event.type });
     }
 
-    // Mark event as processed — fire-and-forget so DB errors never cause a 500 to Stripe
+    // Mark event as processed, fire-and-forget so DB errors never cause a 500 to Stripe
     void supabase
       .from('stripe_webhook_events')
       .update({ processed: true, processed_at: new Date().toISOString() })
@@ -115,14 +115,14 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     logger.error('Webhook handler error', { error, eventType: event.type, eventId: event.id });
 
-    // Log error — fire-and-forget, never block the 200 response to Stripe
+    // Log error, fire-and-forget, never block the 200 response to Stripe
     void supabase
       .from('stripe_webhook_events')
       .update({ processing_error: (error as Error).message, retry_count: 1 })
       .eq('stripe_event_id', event.id)
       .then(() => {}, () => {});
 
-    // Still return 200 for unhandled event types — only return 500 for signature failures (handled above)
+    // Still return 200 for unhandled event types, only return 500 for signature failures (handled above)
     return NextResponse.json({ received: true });
   }
 }
@@ -167,7 +167,7 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session, 
 
   if (dbError) {
     logger.error('Failed to save blueprint purchase record', { error: dbError, buyerEmail });
-    // Continue — still send the email, just without a portal link
+    // Continue, still send the email, just without a portal link
   } else {
     logger.info('Blueprint purchase record created', { buyerEmail, accessToken });
   }
@@ -175,7 +175,7 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session, 
   // Send buyer confirmation email (with portal link if DB write succeeded)
   sendAdminNotification({
     to: buyerEmail,
-    subject: 'Your Referral Growth Blueprint — confirmed',
+    subject: 'Your Referral Growth Blueprint, confirmed',
     html: buildBlueprintBuyerConfirmationEmail({
       name:            buyerName,
       email:           buyerEmail,

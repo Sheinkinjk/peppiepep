@@ -36,17 +36,17 @@ const PREP_STEPS = [
   { id: "niche",     label: "Write down your top 3 niche options", detail: "Think about what you already know, what you enjoy, and where you spend time online. This feeds directly into your niche brief." },
   { id: "channels",  label: "List which channels you actively use", detail: "Reddit? Email list? Facebook groups? TikTok? Being honest here helps Jarred write distribution playbooks that actually apply to you." },
   { id: "domain",    label: "Register a domain name (if you need one)", detail: "Namecheap or Cloudflare. ~$10-15 AUD. You will need this for your first SEO page or comparison site. Do this now while you wait." },
-  { id: "tracking",  label: "Create a free Pretty Links account", detail: "prettylinksplugin.com — free tier is fine to start. This is how you track which affiliate links convert. Set it up now." },
+  { id: "tracking",  label: "Create a free Pretty Links account", detail: "prettylinksplugin.com, free tier is fine to start. This is how you track which affiliate links convert. Set it up now." },
   { id: "spreadsheet", label: "Open a fresh Google Sheet", detail: "When your database arrives, you will filter it immediately. Having a working spreadsheet environment open saves time on day one." },
 ];
 
 const QUICK_LINKS = [
-  { label: "Namecheap — domain registration",       href: "https://www.namecheap.com",         note: "~$10 AUD/year" },
-  { label: "Pretty Links — affiliate link tracking", href: "https://prettylinks.com",            note: "Free to start" },
+  { label: "Namecheap, domain registration",       href: "https://www.namecheap.com",         note: "~$10 AUD/year" },
+  { label: "Pretty Links, affiliate link tracking", href: "https://prettylinks.com",            note: "Free to start" },
   { label: "Ahrefs Webmaster Tools",                 href: "https://ahrefs.com/webmaster-tools", note: "Free SEO tool" },
   { label: "Google Search Console",                  href: "https://search.google.com/search-console", note: "Free indexing" },
-  { label: "beehiiv — newsletter platform",          href: `${SITE_URL}/beehiiv`,                note: "30% recurring commissions" },
-  { label: "Moshy — health telehealth AU",           href: `${SITE_URL}/moshy`,                  note: "$50-$150 per referral" },
+  { label: "beehiiv, newsletter platform",          href: `${SITE_URL}/beehiiv`,                note: "30% recurring commissions" },
+  { label: "Moshy, health telehealth AU",           href: `${SITE_URL}/moshy`,                  note: "$50-$150 per referral" },
 ];
 
 function BlueprintPortal() {
@@ -132,7 +132,7 @@ function BlueprintPortal() {
           </div>
           <h1 className="text-2xl font-black text-white mb-3">No access link found</h1>
           <p className="text-white/55 text-sm leading-relaxed mb-8">
-            Your portal access link was included in your purchase confirmation email. Check your inbox for an email from Refer Labs with the subject line &ldquo;Your Referral Growth Blueprint — confirmed&rdquo;.
+            Your portal access link was included in your purchase confirmation email. Check your inbox for an email from Refer Labs with the subject line &ldquo;Your Referral Growth Blueprint, confirmed&rdquo;.
           </p>
           <div className="space-y-3">
             <a href="mailto:jarred@referlabs.com.au?subject=Blueprint%20portal%20access"
@@ -393,7 +393,7 @@ function BlueprintPortal() {
             {/* Lost your link? */}
             <div className="rounded-xl border border-white/[0.07] p-4">
               <p className="text-[10px] text-white/30 leading-relaxed">
-                <strong className="text-white/45">Bookmark this page.</strong> Your portal link is permanent — no login required. If you lose it, email Jarred with your purchase email and he will resend it.
+                <strong className="text-white/45">Bookmark this page.</strong> Your portal link is permanent, no login required. If you lose it, email Jarred with your purchase email and he will resend it.
               </p>
             </div>
 

@@ -25,7 +25,7 @@ export default function Footer() {
               href="/referral-blueprint"
               className="inline-flex items-center justify-center rounded-xl border border-amber-400/30 bg-amber-400/8 px-4 py-2 text-xs font-semibold text-amber-300 hover:border-amber-300/50 hover:bg-amber-400/12 transition-colors"
             >
-              Get the Blueprint — $799
+              Get the Blueprint, $799
             </Link>
           </div>
 

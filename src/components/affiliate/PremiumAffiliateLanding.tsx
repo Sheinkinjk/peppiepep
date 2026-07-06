@@ -10,7 +10,7 @@ function slugify(s: string) {
 }
 
 // Sections that are purely about the affiliate mechanics read as spam in a
-// premium layout — surfaced instead via the at-a-glance card + CTAs.
+// premium layout, surfaced instead via the at-a-glance card + CTAs.
 function isOfferSection(heading: string) {
   return /current offer|codes?\s*&|how they work|codes & how/i.test(heading);
 }

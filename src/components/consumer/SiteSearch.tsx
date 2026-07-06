@@ -53,7 +53,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
           onChange={(e) => { setQ(e.target.value); setOpen(true); setActive(0); }}
           onFocus={() => setOpen(true)}
           onKeyDown={onKey}
-          placeholder={big ? "Search — try 'weight loss' or 'website builder'" : "Search comparisons"}
+          placeholder={big ? "Search, try 'weight loss' or 'website builder'" : "Search comparisons"}
           aria-label="Search comparisons"
           className={big ? "!text-[15px]" : "!text-sm"}
         />

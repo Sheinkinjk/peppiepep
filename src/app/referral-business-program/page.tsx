@@ -35,7 +35,7 @@ const included = [
   {
     headline: "Niche selection recommendation",
     detail:
-      "We read your intake form and recommend the 3–5 niches where your goals, channels, and earning potential actually align. Not a guess. A match.",
+      "We read your intake form and recommend the 3-5 niches where your goals, channels, and earning potential actually align. Not a guess. A match.",
   },
   {
     headline: "10+ SEO page concepts",
@@ -45,7 +45,7 @@ const included = [
   {
     headline: "Distribution playbooks",
     detail:
-      "Step-by-step execution for email, SEO, online communities, directories, and comparison pages — written for the channels you told us you want to use.",
+      "Step-by-step execution for email, SEO, online communities, directories, and comparison pages, written for the channels you told us you want to use.",
   },
   {
     headline: "Recommended tool stack",
@@ -55,16 +55,16 @@ const included = [
   {
     headline: "Personalised strategy brief",
     detail:
-      "A one-page plan written for your situation — your niche, your goal, your starting point. Not a template. Specific to you.",
+      "A one-page plan written for your situation, your niche, your goal, your starting point. Not a template. Specific to you.",
   },
 ];
 
 const categories = [
-  { label: "AI Tools", examples: "Jasper, Durable AI, Synthesia, Midjourney", commission: "20–40% recurring" },
-  { label: "SaaS Platforms", examples: "beehiiv, Notion, Webflow, Zapier, Airtable", commission: "15–30% recurring" },
-  { label: "Health Programs", examples: "Moshy, Juniper, Better Being, Mosh Hair", commission: "$50–$150 per sale" },
-  { label: "Startup Tools", examples: "Carrd, Swipe Pages, Lemon Squeezy, Gumroad", commission: "25–50% one-time" },
-  { label: "Fintech Offers", examples: "Wise, Revolut, Stake, Pearler, Hatch", commission: "$30–$200 per referral" },
+  { label: "AI Tools", examples: "Jasper, Durable AI, Synthesia, Midjourney", commission: "20-40% recurring" },
+  { label: "SaaS Platforms", examples: "beehiiv, Notion, Webflow, Zapier, Airtable", commission: "15-30% recurring" },
+  { label: "Health Programs", examples: "Moshy, Juniper, Better Being, Mosh Hair", commission: "$50-$150 per sale" },
+  { label: "Startup Tools", examples: "Carrd, Swipe Pages, Lemon Squeezy, Gumroad", commission: "25-50% one-time" },
+  { label: "Fintech Offers", examples: "Wise, Revolut, Stake, Pearler, Hatch", commission: "$30-$200 per referral" },
 ];
 
 const whoItsFor = [
@@ -80,7 +80,7 @@ const steps = [
   {
     step: "1",
     title: "Fill out the intake form",
-    body: "Tell us your niche, primary goal, preferred channels, and experience level. This is what makes the blueprint specific to you — not a generic document.",
+    body: "Tell us your niche, primary goal, preferred channels, and experience level. This is what makes the blueprint specific to you, not a generic document.",
   },
   {
     step: "2",
@@ -90,15 +90,15 @@ const steps = [
   {
     step: "3",
     title: "Receive everything within 48 hours",
-    body: "The full Excel database, your personalised strategy brief, SEO page ideas, distribution playbooks, and recommended tool stack — delivered to your inbox.",
+    body: "The full Excel database, your personalised strategy brief, SEO page ideas, distribution playbooks, and recommended tool stack, delivered to your inbox.",
   },
 ];
 
 const pricingChecklist = [
-  "250+ programs — Excel, categorised",
+  "250+ programs, Excel, categorised",
   "Commission structures per entry",
   "Marketing angle per entry",
-  "Niche selection brief (3–5 matches)",
+  "Niche selection brief (3-5 matches)",
   "10+ SEO page concepts",
   "Distribution playbooks",
   "Recommended tool stack",
@@ -108,11 +108,11 @@ const pricingChecklist = [
 const faqs = [
   {
     q: "What exactly is in the 250+ program database?",
-    a: "A structured Excel file with 250+ affiliate and referral programs sorted by industry category. Every row includes the company name, affiliate or referral program link, commission or reward structure, and a suggested marketing angle you can use in SEO content or email. The categories are AI tools, SaaS platforms, health programs, startup tools, and fintech offers — with 40–60 programs per category.",
+    a: "A structured Excel file with 250+ affiliate and referral programs sorted by industry category. Every row includes the company name, affiliate or referral program link, commission or reward structure, and a suggested marketing angle you can use in SEO content or email. The categories are AI tools, SaaS platforms, health programs, startup tools, and fintech offers, with 40-60 programs per category.",
   },
   {
     q: "How is this different from a free affiliate marketing guide online?",
-    a: "Free guides explain how affiliate marketing works conceptually. This blueprint tells you which specific programs to promote, how to position each one, which SEO pages to build around them, and which channels to distribute through — with your niche and goals already factored in. The database alone represents 3–6 months of research most people never finish. You are not getting theory. You are getting a specific plan and a ready-to-use program list.",
+    a: "Free guides explain how affiliate marketing works conceptually. This blueprint tells you which specific programs to promote, how to position each one, which SEO pages to build around them, and which channels to distribute through, with your niche and goals already factored in. The database alone represents 3-6 months of research most people never finish. You are not getting theory. You are getting a specific plan and a ready-to-use program list.",
   },
   {
     q: "Do I need an existing website or audience?",
@@ -120,11 +120,11 @@ const faqs = [
   },
   {
     q: "How is the blueprint personalised to me?",
-    a: "Before purchasing, you complete an intake form with your niche of interest, primary goal, preferred channels, and experience level. We use those answers to select your niche recommendations (3–5 matched to your goals and earning potential), write your one-page strategy brief, and tailor the distribution playbooks to the channels you told us you want to use. The Excel database is the same for everyone. The strategy brief is specific to you.",
+    a: "Before purchasing, you complete an intake form with your niche of interest, primary goal, preferred channels, and experience level. We use those answers to select your niche recommendations (3-5 matched to your goals and earning potential), write your one-page strategy brief, and tailor the distribution playbooks to the channels you told us you want to use. The Excel database is the same for everyone. The strategy brief is specific to you.",
   },
   {
     q: "What affiliate programs pay the highest commissions?",
-    a: "Inside the database, the highest earners fall into three groups: recurring SaaS commissions (typically 20–40% of the customer's monthly subscription, compounding over time), health and telehealth flat fees ($50–$150 per new customer sign-up with high conversion from targeted SEO placements), and fintech referral bonuses ($30–$200 per verified referral). The full commission structure is listed for every entry.",
+    a: "Inside the database, the highest earners fall into three groups: recurring SaaS commissions (typically 20-40% of the customer's monthly subscription, compounding over time), health and telehealth flat fees ($50-$150 per new customer sign-up with high conversion from targeted SEO placements), and fintech referral bonuses ($30-$200 per verified referral). The full commission structure is listed for every entry.",
   },
   {
     q: "What happens after I pay?",
@@ -210,7 +210,7 @@ export default function ReferralBusinessProgramPage() {
       <section className="pt-32 pb-24 sm:pt-40 sm:pb-32 border-b border-white/[0.06]">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#F59E0B] mb-10">
-            Refer Labs — Referral Growth Blueprint
+            Refer Labs, Referral Growth Blueprint
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-[72px] font-black tracking-tight leading-[0.95] mb-8 max-w-4xl">
             We built the database.
@@ -221,14 +221,14 @@ export default function ReferralBusinessProgramPage() {
             250+ affiliate and referral programs, categorised, with commission structures and marketing angles. Plus a personalised strategy built for your niche.
           </p>
           <p className="text-base text-white/35 max-w-xl mb-12">
-            Most people spend 3–6 months researching programs, testing angles, and figuring out where to start. This skips that entirely.
+            Most people spend 3-6 months researching programs, testing angles, and figuring out where to start. This skips that entirely.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <a
               href="#register"
               className="inline-flex items-center gap-2.5 bg-[#F59E0B] text-[#09080A] px-8 py-4 rounded-xl text-sm font-black hover:bg-[#FBBF24] transition-colors"
             >
-              Get the Blueprint — $799
+              Get the Blueprint, $799
               <ArrowRight className="h-4 w-4" />
             </a>
             <p className="text-sm text-white/30">One-time payment. Delivered within 48 hours.</p>
@@ -248,7 +248,7 @@ export default function ReferralBusinessProgramPage() {
             </h2>
             <div className="space-y-5 text-white/50 leading-relaxed">
               <p className="text-lg">
-                There are thousands of affiliate and referral programs online. Most pay poorly, convert worse, and have been written about by everyone. The programs that actually make money — the ones with high commissions, real audiences, and underused marketing angles — take months to find.
+                There are thousands of affiliate and referral programs online. Most pay poorly, convert worse, and have been written about by everyone. The programs that actually make money, the ones with high commissions, real audiences, and underused marketing angles, take months to find.
               </p>
               <p className="text-lg">
                 And once you have a list, you still need a strategy. Which niche do you target? Which channels do you use? What pages do you build? What does an SEO play actually look like in this space?
@@ -467,7 +467,7 @@ export default function ReferralBusinessProgramPage() {
 
               <div>
                 <label className="block text-[10px] font-bold uppercase tracking-widest text-black/40 mb-2">
-                  Website <span className="text-black/20 font-normal normal-case tracking-normal ml-1">— optional</span>
+                  Website <span className="text-black/20 font-normal normal-case tracking-normal ml-1">(optional)</span>
                 </label>
                 <input
                   type="url"
@@ -516,7 +516,7 @@ export default function ReferralBusinessProgramPage() {
               <div>
                 <label className="block text-[10px] font-bold uppercase tracking-widest text-black/40 mb-3">
                   Preferred channels{" "}
-                  <span className="text-black/20 font-normal normal-case tracking-normal ml-1">— select all that apply</span>
+                  <span className="text-black/20 font-normal normal-case tracking-normal ml-1">(select all that apply)</span>
                 </label>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {channelOptions.map((ch) => {
@@ -586,7 +586,7 @@ export default function ReferralBusinessProgramPage() {
                   </>
                 ) : (
                   <>
-                    Continue to Payment — $799 AUD
+                    Continue to Payment, $799 AUD
                     <ArrowRight className="h-4 w-4" />
                   </>
                 )}

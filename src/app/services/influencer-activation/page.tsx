@@ -34,10 +34,10 @@ export default function InfluencerActivationPage() {
             <span className="text-[#22C0CD]">Trusted Voices</span>
           </h1>
           <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            One-off sponsored posts do not compound. We identify operators, creators, and consultants who genuinely align with your product, structure commercial partnerships with clear terms, and build a network of active distribution channels — for B2B and B2C brands alike.
+            One-off sponsored posts do not compound. We identify operators, creators, and consultants who genuinely align with your product, structure commercial partnerships with clear terms, and build a network of active distribution channels, for B2B and B2C brands alike.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
-            {["Operators, creators & consultants", "Commercial terms — not just mentions", "LinkedIn, newsletters & beyond"].map((tag) => (
+            {["Operators, creators & consultants", "Commercial terms, not just mentions", "LinkedIn, newsletters & beyond"].map((tag) => (
               <span key={tag} className="flex items-center gap-2 text-sm text-[#0AA7B5]/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#22C0CD] flex-shrink-0" />
                 {tag}
@@ -74,7 +74,7 @@ export default function InfluencerActivationPage() {
                 Most influencer campaigns optimise for reach and impressions. But reach without commercial structure rarely converts into customers. A post gets published, engagement spikes for 48 hours, and then nothing. No tracking. No follow-up. No compounding.
               </p>
               <p>
-                We approach influencer activation differently. We look for operators, consultants, newsletter writers, LinkedIn creators, and niche bloggers whose audiences genuinely overlap with your ideal customer — and we structure partnerships that create ongoing distribution, not one-off exposure.
+                We approach influencer activation differently. We look for operators, consultants, newsletter writers, LinkedIn creators, and niche bloggers whose audiences genuinely overlap with your ideal customer, and we structure partnerships that create ongoing distribution, not one-off exposure.
               </p>
               <p>
                 Every partnership has clear commercial terms, defined deliverables, and tracked performance. We manage the outreach, negotiation, content brief, activation, and reporting. You get a distribution channel, not a mention.
@@ -94,7 +94,7 @@ export default function InfluencerActivationPage() {
                 {
                   num: "1",
                   title: "Research and Shortlist",
-                  copy: "We identify aligned creators, operators, consultants, and influencers across LinkedIn, newsletters, podcasts, blogs, and niche communities. We score them by audience alignment, engagement quality, and commercial fit — not follower count.",
+                  copy: "We identify aligned creators, operators, consultants, and influencers across LinkedIn, newsletters, podcasts, blogs, and niche communities. We score them by audience alignment, engagement quality, and commercial fit, not follower count.",
                 },
                 {
                   num: "2",
@@ -104,7 +104,7 @@ export default function InfluencerActivationPage() {
                 {
                   num: "3",
                   title: "Activate and Integrate",
-                  copy: "We brief each partner, review content before publication, and manage the integration across their platform — whether that is a LinkedIn post series, newsletter feature, podcast mention, blog review, or ambassador program onboarding.",
+                  copy: "We brief each partner, review content before publication, and manage the integration across their platform, whether that is a LinkedIn post series, newsletter feature, podcast mention, blog review, or ambassador program onboarding.",
                 },
                 {
                   num: "4",

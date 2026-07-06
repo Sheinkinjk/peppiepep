@@ -13,7 +13,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     "Durable AI generates a complete business website in about 30 seconds and includes a built-in CRM, invoicing, and Google Business integration. It is best for service businesses and solo operators who want a working site fast. You can try it free with no account via the link on this page.",
 
   banner: {
-    heading: "Durable AI — Build a Business Website in 30 Seconds",
+    heading: "Durable AI, Build a Business Website in 30 Seconds",
     body: "Click below to go directly to Durable AI via our referral link. Generate a site free, no account required.",
     buttonLabel: "Continue to Durable AI",
   },
@@ -63,9 +63,9 @@ export const durableAiConfig: AffiliatePageConfig = {
     {
       heading: "What Is Durable AI?",
       paragraphs: [
-        "Durable is an AI-powered website builder designed for small businesses. It is best known for its ability to generate a complete, professional-looking website in approximately 30 seconds — you enter your business type and location, and Durable's AI produces a full site with copy, images, and layout ready to publish.",
+        "Durable is an AI-powered website builder designed for small businesses. It is best known for its ability to generate a complete, professional-looking website in approximately 30 seconds, you enter your business type and location, and Durable's AI produces a full site with copy, images, and layout ready to publish.",
         "Beyond the initial generation, Durable includes tools for ongoing business management: a CRM for tracking client leads, an AI assistant for regenerating or editing website content, invoicing features, and Google Business Profile integration. It is designed to be an all-in-one platform for small business owners who want a professional online presence without hiring a designer or developer.",
-        "Durable is aimed specifically at service-based small businesses — trades, local services, consultants, freelancers, and similar. It is less suited to e-commerce, content publishing, or large organisations with complex requirements.",
+        "Durable is aimed specifically at service-based small businesses, trades, local services, consultants, freelancers, and similar. It is less suited to e-commerce, content publishing, or large organisations with complex requirements.",
       ],
     },
     {
@@ -73,13 +73,13 @@ export const durableAiConfig: AffiliatePageConfig = {
       paragraphs: [
         "Durable offers a free tier that lets you generate a website and explore the platform before purchasing a subscription. The AI generation feature can be used without an account, making it one of the lowest-friction ways to test an AI website builder. You enter your business type, generate a site, and decide whether to publish and subscribe.",
         "Paid Durable plans are billed monthly or annually and include custom domain connection, full publishing, CRM access, and ongoing AI assistance. Annual billing offers a lower effective monthly rate. If you are looking for a Durable AI discount code or promo, our referral link gives you direct access to the Durable sign-up page and any current offer.",
-        "Durable's pricing model positions it as a replacement for the combination of a basic website, a booking tool, and a CRM for small businesses — rather than a direct comparison to pure website builders like Carrd or Squarespace.",
+        "Durable's pricing model positions it as a replacement for the combination of a basic website, a booking tool, and a CRM for small businesses, rather than a direct comparison to pure website builders like Carrd or Squarespace.",
       ],
     },
     {
       heading: "Durable AI vs Other Website Builders",
       paragraphs: [
-        "Durable AI vs Wix: Wix is a traditional drag-and-drop website builder with more flexibility and a large template library. Durable's advantage is speed — you have a complete site in 30 seconds rather than spending hours customising. Wix gives you more control and is better for complex sites; Durable is better if you want a functional business site online fast.",
+        "Durable AI vs Wix: Wix is a traditional drag-and-drop website builder with more flexibility and a large template library. Durable's advantage is speed, you have a complete site in 30 seconds rather than spending hours customising. Wix gives you more control and is better for complex sites; Durable is better if you want a functional business site online fast.",
         "Durable AI vs Squarespace: Squarespace is known for high design quality and is popular with creatives and e-commerce businesses. Durable focuses on small service businesses and includes CRM and invoicing tools Squarespace does not offer. If your priority is design quality, Squarespace has the edge. If your priority is speed and built-in business tools, Durable is stronger.",
         "Durable AI vs other AI website builders: Other AI website builders including Framer AI, Hocoos, and B12 occupy similar territory. Durable differentiates itself with the combination of website generation, CRM, invoicing, and the 30-second generation claim. For straightforward small business sites, Durable is among the most established options in the AI website builder category.",
       ],
@@ -87,7 +87,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     {
       heading: "Durable AI Reviews",
       paragraphs: [
-        "Durable AI has attracted attention from small business owners, solopreneurs, and people interested in AI tools since launching publicly. Reviews generally acknowledge the speed of the initial generation as genuinely impressive — the 30-second website claim is accurate for a first draft. The quality of the generated copy and layout varies by industry but is typically a solid starting point.",
+        "Durable AI has attracted attention from small business owners, solopreneurs, and people interested in AI tools since launching publicly. Reviews generally acknowledge the speed of the initial generation as genuinely impressive, the 30-second website claim is accurate for a first draft. The quality of the generated copy and layout varies by industry but is typically a solid starting point.",
         "Common feedback in Durable AI reviews covers: the AI generation being fast and useful for getting a first version online, the built-in CRM being a practical addition for service businesses, the editing tools being functional without requiring design skill, and the overall positioning making sense for solo operators and small teams who do not want to manage multiple software subscriptions.",
         "Critical reviews tend to focus on the limited design flexibility compared to Webflow or Squarespace, and the pricing relative to basic website builders for users who only need a simple site without CRM features. Whether Durable is good value depends heavily on whether you use the business tools, not just the website.",
       ],
@@ -130,7 +130,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     "Honest comparison with Wix, Squarespace, and other AI builders",
     "Covers real review sentiment without overpromising",
     "Explains exactly who Durable AI is and is not suited for",
-    "Immediate click-through to Durable — no steps required here",
+    "Immediate click-through to Durable, no steps required here",
   ],
 
   faqs: [
@@ -182,16 +182,16 @@ export const durableAiConfig: AffiliatePageConfig = {
     {
       href: "/best-website-builder",
       label: "Best Website Builder 2026",
-      desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages — free plans, AI generation, and pricing compared.",
+      desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages, free plans, AI generation, and pricing compared.",
     },
     {
       href: "/butternut",
-      label: "Butternut AI — Review",
+      label: "Butternut AI, Review",
       desc: "Full website generated from a prompt in 20 seconds. Free to try.",
     },
     {
       href: "/carrd",
-      label: "Carrd — Free Website Builder",
+      label: "Carrd, Free Website Builder",
       desc: "Free plan forever, Pro from $9/year. Best for portfolios, link-in-bio, and simple sites.",
     },
     {
@@ -210,7 +210,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     midButton: "Generate My Website",
     bottomHeading: "Build a Business Website in 30 Seconds",
     bottomBody:
-      "Click below to be taken to Durable AI. Try the generation feature for free — no account required to see what Durable can build for your business.",
+      "Click below to be taken to Durable AI. Try the generation feature for free, no account required to see what Durable can build for your business.",
     bottomButton: "Continue to Durable AI",
   },
 

@@ -74,10 +74,10 @@ export default function PartnerActivationPage() {
                 Most businesses default to influencer marketing when they think about partner-driven distribution. But for most B2B and professional services companies, a consultant with 500 relevant clients is worth more than a creator with 500,000 followers. The consultant has trust, context, and buying authority embedded in their relationships. A mention from them is a warm introduction. A post from a creator is an ad.
               </p>
               <p>
-                We focus first on strategic partners — consultants, accountants, advisors, operators, and industry specialists who already serve your ideal customer professionally. These are the people whose recommendation carries weight because they have a real relationship and are trusted as subject matter experts, not paid promoters.
+                We focus first on strategic partners, consultants, accountants, advisors, operators, and industry specialists who already serve your ideal customer professionally. These are the people whose recommendation carries weight because they have a real relationship and are trusted as subject matter experts, not paid promoters.
               </p>
               <p>
-                Where influencers and creators are genuinely relevant — LinkedIn voices, newsletter writers, niche content producers with engaged, aligned audiences — we activate them as well. But always with the same standard: commercial terms, defined deliverables, tracked performance, and ongoing distribution rather than one-off placements.
+                Where influencers and creators are genuinely relevant, LinkedIn voices, newsletter writers, niche content producers with engaged, aligned audiences, we activate them as well. But always with the same standard: commercial terms, defined deliverables, tracked performance, and ongoing distribution rather than one-off placements.
               </p>
             </div>
           </div>
@@ -94,22 +94,22 @@ export default function PartnerActivationPage() {
                 {
                   num: "1",
                   title: "Partner Profile and Target Mapping",
-                  copy: "We define the profile of your ideal strategic partner — who already serves your customer, which professional communities they operate in, and what commercial arrangement would make sense for them. We then build a target list of consultants, advisors, operators, and relevant content creators across your category.",
+                  copy: "We define the profile of your ideal strategic partner, who already serves your customer, which professional communities they operate in, and what commercial arrangement would make sense for them. We then build a target list of consultants, advisors, operators, and relevant content creators across your category.",
                 },
                 {
                   num: "2",
                   title: "Outreach, Vetting, and Qualification",
-                  copy: "We handle outreach and qualify partners against your target profile. We assess audience alignment, professional credibility, and genuine fit with your product — not follower counts or reach metrics. A partner who sends you five ideal clients per month is worth more than one who sends 500 unqualified leads.",
+                  copy: "We handle outreach and qualify partners against your target profile. We assess audience alignment, professional credibility, and genuine fit with your product, not follower counts or reach metrics. A partner who sends you five ideal clients per month is worth more than one who sends 500 unqualified leads.",
                 },
                 {
                   num: "3",
                   title: "Commercial Structure and Agreement",
-                  copy: "We negotiate commercial terms for every partner relationship — revenue share, referral fee, flat commission, or hybrid arrangements. Every partnership is structured with defined deliverables, clear timelines, and performance expectations. Nothing is left informal or dependent on good intentions.",
+                  copy: "We negotiate commercial terms for every partner relationship, revenue share, referral fee, flat commission, or hybrid arrangements. Every partnership is structured with defined deliverables, clear timelines, and performance expectations. Nothing is left informal or dependent on good intentions.",
                 },
                 {
                   num: "4",
                   title: "Activation, Tracking, and Compounding",
-                  copy: "We brief each partner, manage the integration across their channels — LinkedIn, newsletters, client conversations, workshops, or community content — and track referrals with attributed links. High-performing partners are developed into long-term relationships. We build the portfolio over time so distribution compounds.",
+                  copy: "We brief each partner, manage the integration across their channels, LinkedIn, newsletters, client conversations, workshops, or community content, and track referrals with attributed links. High-performing partners are developed into long-term relationships. We build the portfolio over time so distribution compounds.",
                 },
               ].map((step) => (
                 <div key={step.num} className="grid grid-cols-[40px_1fr] gap-5">
@@ -138,7 +138,7 @@ export default function PartnerActivationPage() {
                 },
                 {
                   title: "Strategic Operators",
-                  desc: "Business owners and operators with adjacent audiences — agencies, service firms, and complementary businesses who touch your buyer regularly.",
+                  desc: "Business owners and operators with adjacent audiences, agencies, service firms, and complementary businesses who touch your buyer regularly.",
                 },
                 {
                   title: "LinkedIn Creators",
@@ -146,7 +146,7 @@ export default function PartnerActivationPage() {
                 },
                 {
                   title: "Newsletter Writers",
-                  desc: "Niche newsletter authors with loyal, topic-specific readerships. Positioned for ongoing features and commercial placements — not just ad slots.",
+                  desc: "Niche newsletter authors with loyal, topic-specific readerships. Positioned for ongoing features and commercial placements, not just ad slots.",
                 },
                 {
                   title: "Industry Specialists",
@@ -206,7 +206,7 @@ export default function PartnerActivationPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0AA7B5] mb-4">This is for you if</p>
                 <ul className="space-y-3">
                   {[
-                    "Your product is recommended and trusted — personal endorsement influences the buying decision",
+                    "Your product is recommended and trusted, personal endorsement influences the buying decision",
                     "You want structured distribution through strategic partners and consultants, not one-off campaigns",
                     "You have a clearly defined B2B or professional audience with identifiable partner channels",
                     "You need someone to handle outreach, commercial terms, activation, and ongoing management end-to-end",

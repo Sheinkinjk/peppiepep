@@ -34,14 +34,14 @@ const steps = [
   {
     num: "02", day: "Day 0",
     title: "Complete checkout via Stripe",
-    copy: "You are redirected to a secure Stripe checkout page. The payment is one-time — $799 AUD. No subscription, no recurring fee, no upsell after purchase. You receive a confirmation email immediately after payment.",
+    copy: "You are redirected to a secure Stripe checkout page. The payment is one-time, $799 AUD. No subscription, no recurring fee, no upsell after purchase. You receive a confirmation email immediately after payment.",
     detail: "The confirmation email includes a link to your member portal, where you can track the status of your order and access resources while your blueprint is being prepared.",
   },
   {
     num: "03", day: "Day 1-2",
     title: "Jarred reviews your intake and builds your blueprint",
     copy: "Jarred reads your intake answers personally. He uses them to write your strategy brief, select your niche recommendations, and tailor the distribution playbooks to your stated channels. Nothing is auto-generated.",
-    detail: "If your intake answers raise a question — an ambiguous niche choice, a missing detail — he emails before delivering. The brief is not sent until it reflects your actual situation. This is the part that takes 24-48 hours and cannot be automated.",
+    detail: "If your intake answers raise a question, an ambiguous niche choice, a missing detail, he emails before delivering. The brief is not sent until it reflects your actual situation. This is the part that takes 24-48 hours and cannot be automated.",
   },
   {
     num: "04", day: "Day 2",
@@ -53,7 +53,7 @@ const steps = [
     num: "05", day: "Day 3+",
     title: "Start building with the database and brief",
     copy: "Open the Excel database, filter by your niche category, and cross-reference your strategy brief for the week-one priorities Jarred identified. Follow the distribution playbook for your primary channel.",
-    detail: "The strategy brief includes a week-by-week starting sequence — it tells you exactly which programs to register for first, which page to build first, and which channel to lead with. There is no ambiguity about where to start.",
+    detail: "The strategy brief includes a week-by-week starting sequence, it tells you exactly which programs to register for first, which page to build first, and which channel to lead with. There is no ambiguity about where to start.",
   },
 ];
 
@@ -95,10 +95,10 @@ export default function HowItWorksPage() {
             <span style={{ color: AMBER }}>in 48 hours.</span>
           </h1>
           <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            The Referral Growth Blueprint is a done-for-you research package — 250+ affiliate programs verified and formatted, plus a personalised strategy brief written for your niche. Here is exactly how the process works from payment to delivery.
+            The Referral Growth Blueprint is a done-for-you research package, 250+ affiliate programs verified and formatted, plus a personalised strategy brief written for your niche. Here is exactly how the process works from payment to delivery.
           </p>
           <Link href="/referral-blueprint" className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-[#060f15] hover:opacity-90 transition-all" style={{ background: AMBER }}>
-            Get the Blueprint — $799
+            Get the Blueprint, $799
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -176,7 +176,7 @@ export default function HowItWorksPage() {
                 },
                 {
                   q: "Is the 250+ program database the same for everyone?",
-                  a: "The database is consistent — every buyer gets all 250+ programs. The personalised layer (strategy brief, niche selection, SEO concepts, playbooks) is written fresh for each order based on your intake.",
+                  a: "The database is consistent, every buyer gets all 250+ programs. The personalised layer (strategy brief, niche selection, SEO concepts, playbooks) is written fresh for each order based on your intake.",
                 },
               ].map(({ q, a }) => (
                 <div key={q}>
@@ -221,7 +221,7 @@ export default function HowItWorksPage() {
             Fill the intake form, pay once, receive everything within 48 hours.
           </p>
           <Link href="/referral-blueprint" className="inline-flex items-center gap-2 rounded-xl px-8 py-4 text-sm font-bold text-[#060f15] hover:-translate-y-0.5 transition-all shadow-xl" style={{ background: AMBER, boxShadow: `0 12px 40px ${AMBER}35` }}>
-            Get the Blueprint — $799 AUD
+            Get the Blueprint, $799 AUD
             <ArrowRight className="h-4 w-4" />
           </Link>
           <p className="text-xs text-white/30 mt-4">One-time payment · No subscription · 48-hour delivery</p>

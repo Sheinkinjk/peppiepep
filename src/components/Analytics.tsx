@@ -98,7 +98,7 @@ export function GoogleTagManager() {
 }
 
 /**
- * Meta (Facebook) Pixel — for retargeting on Facebook & Instagram
+ * Meta (Facebook) Pixel, for retargeting on Facebook & Instagram
  * Set NEXT_PUBLIC_META_PIXEL_ID in Vercel for the marketing partner to enable
  */
 export function MetaPixel() {
@@ -117,7 +117,7 @@ export function MetaPixel() {
 }
 
 /**
- * LinkedIn Insight Tag — for retargeting on LinkedIn (high B2B intent)
+ * LinkedIn Insight Tag, for retargeting on LinkedIn (high B2B intent)
  * Set NEXT_PUBLIC_LINKEDIN_PARTNER_ID in Vercel
  */
 export function LinkedInInsight() {

@@ -3,7 +3,7 @@ import { CheckCircle2, ArrowRight, Mail, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Payment Successful — Referral Growth Blueprint | Refer Labs",
+  title: "Payment Successful, Referral Growth Blueprint | Refer Labs",
   description: "Your purchase is confirmed. Your Referral Growth Blueprint will be delivered within 48 hours.",
   robots: { index: false, follow: false },
 };
@@ -32,7 +32,7 @@ export default function BlueprintSuccessPage() {
           </h1>
 
           <p className="text-white/55 leading-relaxed mb-10 max-w-sm mx-auto">
-            Thank you for your purchase. Your Referral Growth Blueprint — including the 250+ program database and personalised strategy brief — will be delivered to your inbox within 48 hours.
+            Thank you for your purchase. Your Referral Growth Blueprint, including the 250+ program database and personalised strategy brief, will be delivered to your inbox within 48 hours.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4 mb-12 text-left">

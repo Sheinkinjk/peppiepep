@@ -147,7 +147,7 @@ export default function MoshyVsJuniperPage() {
             is the appeal.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Juniper wraps medication access inside a broader program — coaching, habit tracking, and a community — and
+            Juniper wraps medication access inside a broader program, coaching, habit tracking, and a community, and
             positions weight management as a longer behavioural project rather than a prescription alone. If accountability
             and structure are what tend to make or break your results, that is a meaningful advantage.
           </p>
@@ -163,7 +163,7 @@ export default function MoshyVsJuniperPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
             <h3 className="text-lg font-bold mb-2">Start with Moshy</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
-              Fast online eligibility check, practitioner-reviewed, delivered. No code needed — the referral applies automatically.
+              Fast online eligibility check, practitioner-reviewed, delivered. No code needed, the referral applies automatically.
             </p>
             <a
               {...aff(MOSHY_URL)}
@@ -197,7 +197,7 @@ export default function MoshyVsJuniperPage() {
 
         {/* FAQ */}
         <section>
-          <h2 className="text-xl font-black mb-5">Moshy vs Juniper — FAQ</h2>
+          <h2 className="text-xl font-black mb-5">Moshy vs Juniper, FAQ</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">

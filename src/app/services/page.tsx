@@ -10,7 +10,7 @@ const services = [
   {
     num: "01",
     title: "Launch & Optimise Referral Programs",
-    copy: "We design, structure, and deploy referral programs for SMBs, eCommerce brands, and growing businesses. From incentive modelling to partner onboarding and tracking systems, we build referral ecosystems that convert customers and networks into revenue channels — for both consumer and business-facing products.",
+    copy: "We design, structure, and deploy referral programs for SMBs, eCommerce brands, and growing businesses. From incentive modelling to partner onboarding and tracking systems, we build referral ecosystems that convert customers and networks into revenue channels, for both consumer and business-facing products.",
     bullets: [
       "Incentive and commission structure design",
       "Tracking system setup and integration",
@@ -22,7 +22,7 @@ const services = [
   {
     num: "02",
     title: "Elite Affiliate Program Distribution",
-    copy: "We partner with B2B and B2C affiliate programs and systematically distribute them across high-intent digital communities. This is not limited to business audiences — we drive exposure for consumer products, subscription services, financial tools, and more. Community placement is targeted, structured, and built to convert.",
+    copy: "We partner with B2B and B2C affiliate programs and systematically distribute them across high-intent digital communities. This is not limited to business audiences, we drive exposure for consumer products, subscription services, financial tools, and more. Community placement is targeted, structured, and built to convert.",
     bullets: [
       "Community-based exposure across online communities, niche forums, and groups",
       "Channel testing and performance optimisation",
@@ -34,7 +34,7 @@ const services = [
   {
     num: "03",
     title: "Influencer & Network Activation",
-    copy: "We identify aligned operators, creators, consultants, and influencers who can represent your brand authentically — whether your audience is businesses or consumers. We structure partnerships that turn audiences into distribution channels with clear commercial terms.",
+    copy: "We identify aligned operators, creators, consultants, and influencers who can represent your brand authentically, whether your audience is businesses or consumers. We structure partnerships that turn audiences into distribution channels with clear commercial terms.",
     bullets: [
       "LinkedIn and newsletter collaborations",
       "Blog and content integrations",

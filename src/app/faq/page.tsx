@@ -19,18 +19,18 @@ const aboutFAQs: FAQ[] = [
   },
   {
     q: "What makes Refer Labs different from a marketing agency?",
-    a: "We build distribution systems, not campaigns. Every engagement has clear commercial terms, performance tracking, and aligned incentives. We do not sell retainers for activity — we structure growth engines designed to compound over time.",
+    a: "We build distribution systems, not campaigns. Every engagement has clear commercial terms, performance tracking, and aligned incentives. We do not sell retainers for activity, we structure growth engines designed to compound over time.",
   },
   {
     q: "Do you work with B2C businesses?",
-    a: "Yes. Several of our services — particularly elite affiliate distribution, referral program launch, and influencer activation — are built for consumer-facing brands, eCommerce businesses, subscription services, and DTC companies.",
+    a: "Yes. Several of our services, particularly elite affiliate distribution, referral program launch, and influencer activation, are built for consumer-facing brands, eCommerce businesses, subscription services, and DTC companies.",
   },
 ];
 
 const servicesFAQs: FAQ[] = [
   {
     q: "Can we engage for just one service?",
-    a: "Yes. We scope each engagement based on your specific goals. Some clients engage us for a single growth engine — for example, referral program launch only. Others engage across multiple services. We scope and quote based on what is actually needed.",
+    a: "Yes. We scope each engagement based on your specific goals. Some clients engage us for a single growth engine, for example, referral program launch only. Others engage across multiple services. We scope and quote based on what is actually needed.",
   },
   {
     q: "How does the process work?",
@@ -46,7 +46,7 @@ const servicesFAQs: FAQ[] = [
   },
   {
     q: "How do you find and activate influencers and partners?",
-    a: "We identify aligned operators, creators, consultants, and influencers based on your specific audience. We structure partnerships with clear commercial terms — not just gifting or one-off posts. Every activation is tracked and optimised.",
+    a: "We identify aligned operators, creators, consultants, and influencers based on your specific audience. We structure partnerships with clear commercial terms, not just gifting or one-off posts. Every activation is tracked and optimised.",
   },
   {
     q: "What does APAC expansion involve?",
@@ -57,7 +57,7 @@ const servicesFAQs: FAQ[] = [
 const pricingFAQs: FAQ[] = [
   {
     q: "How do you charge?",
-    a: "We work on a retainer plus success fee model. The retainer covers the execution work. The success fee is tied to agreed commercial outcomes — closed revenue, signed partnerships, distribution deals, or qualified pipeline milestones. We earn when you earn.",
+    a: "We work on a retainer plus success fee model. The retainer covers the execution work. The success fee is tied to agreed commercial outcomes, closed revenue, signed partnerships, distribution deals, or qualified pipeline milestones. We earn when you earn.",
   },
   {
     q: "What triggers a success fee?",
@@ -69,7 +69,7 @@ const pricingFAQs: FAQ[] = [
   },
   {
     q: "What if we already have a team or partner in-region?",
-    a: "We complement existing teams and partners. We scope the engagement to avoid overlap and maximise coverage — typically covering the partnership, distribution, and operations layer that in-house salespeople do not have capacity for.",
+    a: "We complement existing teams and partners. We scope the engagement to avoid overlap and maximise coverage, typically covering the partnership, distribution, and operations layer that in-house salespeople do not have capacity for.",
   },
 ];
 

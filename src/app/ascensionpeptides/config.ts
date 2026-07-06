@@ -9,10 +9,10 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
   affiliateUrl: ASCENSION_URL,
 
   quickAnswer:
-    "Ascension Peptides is a research peptide supplier focused on high-purity compounds. The current discount is applied automatically through the referral link on this page — no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
+    "Ascension Peptides is a research peptide supplier focused on high-purity compounds. The current discount is applied automatically through the referral link on this page, no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
 
   banner: {
-    heading: "Ascension Peptides — Research Peptides Sale",
+    heading: "Ascension Peptides, Research Peptides Sale",
     body: "Click below to go directly to Ascension Peptides via our referral link. Offer applied at the URL level.",
     buttonLabel: "View Ascension Peptides Sale",
   },
@@ -39,13 +39,13 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
     h1Prefix: "Ascension Peptides",
     h1Highlight: "Research Peptides Sale & Current Discount Access",
     subheading:
-      "Ascension Peptides is cited consistently in researcher communities for COA quality and purity documentation — the criteria that matter most when sourcing lab-grade compounds. This page gives you direct access to their current sale via our referral link. No code required. For laboratory research use only.",
+      "Ascension Peptides is cited consistently in researcher communities for COA quality and purity documentation, the criteria that matter most when sourcing lab-grade compounds. This page gives you direct access to their current sale via our referral link. No code required. For laboratory research use only.",
     trustBullets: [
       "Direct access to the current Ascension Peptides sale",
       "High-purity lab-grade research peptides",
-      "No code required — offer applied via our referral link",
+      "No code required, offer applied via our referral link",
       "Covers hormone signalling, metabolic, and anti-aging research compounds",
-      "Instant click-through — no details required on this page",
+      "Instant click-through, no details required on this page",
     ],
   },
 
@@ -64,7 +64,7 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
       paragraphs: [
         "Ascension Peptides is a supplier of high-quality, lab-grade peptide compounds designed for research and analytical applications. The company focuses on providing researchers with access to highly purified peptides used in biochemical and biological studies.",
         "Ascension Peptides has become a recognised name in researcher communities that discuss peptide supplier comparisons, peptide research compounds, and research peptides deals. Their platform is commonly referenced alongside other specialist peptide suppliers when researchers are evaluating where to buy peptides online.",
-        "The supplier maintains a focus on purity, documentation, and reliable fulfilment for research orders — criteria that researcher communities consistently cite as priorities when selecting a peptide supplier.",
+        "The supplier maintains a focus on purity, documentation, and reliable fulfilment for research orders, criteria that researcher communities consistently cite as priorities when selecting a peptide supplier.",
       ],
     },
     {
@@ -94,7 +94,7 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
       heading: "How to Access the Ascension Peptides Promo Code or Best Deal",
       paragraphs: [
         'The volume of searches for "Ascension Peptides discount code", "Ascension Peptides promo code", and "research peptides sale" reflects the number of researchers who want access to high-purity research peptides at the best available price. Ascension Peptides does not always list a traditional publicly available coupon code.',
-        "The most consistent route to a current Ascension Peptides offer is through a referral link — which is what this page provides. Our link applies the offer at the URL level, meaning no manual code entry is required when you arrive at the store.",
+        "The most consistent route to a current Ascension Peptides offer is through a referral link, which is what this page provides. Our link applies the offer at the URL level, meaning no manual code entry is required when you arrive at the store.",
       ],
     },
   ],
@@ -158,7 +158,7 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
     },
     {
       q: "How do I access the current Ascension Peptides sale?",
-      a: "Click any button on this page. You will be taken directly to ascensionpeptides.com via our referral link. The offer is applied at the URL level — no manual code entry required.",
+      a: "Click any button on this page. You will be taken directly to ascensionpeptides.com via our referral link. The offer is applied at the URL level, no manual code entry required.",
     },
   ],
 
@@ -172,16 +172,16 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
     {
       href: "/best-peptide-supplier",
       label: "Best Peptide Supplier 2026",
-      desc: "Apollo vs Ascension vs BioPeptiTech — purity standards, catalogue coverage, and current discount codes.",
+      desc: "Apollo vs Ascension vs BioPeptiTech, purity standards, catalogue coverage, and current discount codes.",
     },
     {
       href: "/apollopeptides",
-      label: "Apollo Peptide Sciences — Discount Code",
+      label: "Apollo Peptide Sciences, Discount Code",
       desc: "Current Apollo Peptide Sciences offer via referral link. Research peptides sale.",
     },
     {
       href: "/biopeptitech",
-      label: "BioPeptiTech — Discount Code",
+      label: "BioPeptiTech, Discount Code",
       desc: "Current BioPeptiTech offer via referral link. Lab-grade research peptides.",
     },
     {
@@ -196,7 +196,7 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
     secondary: "Continue to Ascension Peptides",
     midHeading: "Ready to Access the Ascension Peptides Sale?",
     midBody:
-      "Click below to go directly to Ascension Peptides via our referral link. The offer is applied automatically — no discount code required.",
+      "Click below to go directly to Ascension Peptides via our referral link. The offer is applied automatically, no discount code required.",
     midButton: "View Ascension Peptides Sale",
     bottomHeading: "Access the Ascension Peptides Research Peptides Sale",
     bottomBody:

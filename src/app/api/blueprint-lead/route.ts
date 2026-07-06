@@ -16,13 +16,13 @@ export async function POST(request: NextRequest) {
 
     const supabase = createBlueprintClient();
 
-    // Insert into blueprint_leads — graceful upsert on duplicate email
+    // Insert into blueprint_leads, graceful upsert on duplicate email
     const { error } = await supabase
       .from("blueprint_leads")
       .upsert({ email, source, created_at: created }, { onConflict: "email" });
 
     if (error) {
-      // Log but don't fail — still send the notification email so we capture the lead
+      // Log but don't fail, still send the notification email so we capture the lead
       console.error("Blueprint lead insert failed:", error);
     }
 
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
       html: `<p>New lead from <strong>${source}</strong></p><p>Email: ${email}</p><p>Timestamp: ${created}</p>`,
     }).catch(() => {});
 
-    // Schedule the 4-email nurture sequence (fire-and-forget — never block the response)
+    // Schedule the 4-email nurture sequence (fire-and-forget, never block the response)
     scheduleNurtureSequence(email).then((r) => {
       if (r.errors.length) console.error("Nurture sequence errors:", r.errors);
       else console.log(`Scheduled ${r.scheduled} nurture emails for ${email}`);

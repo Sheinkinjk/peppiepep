@@ -34,7 +34,7 @@ export default function ProductDistributionPage() {
             <span className="text-[#22C0CD]">Grow Through Distribution</span>
           </h1>
           <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            We co-found businesses where affiliates and strategic partners are the primary growth channel — designed in from the start, not added after launch. Multiple successful ventures built this way. If you have the idea but need the GTM, we want to hear from you.
+            We co-found businesses where affiliates and strategic partners are the primary growth channel, designed in from the start, not added after launch. Multiple successful ventures built this way. If you have the idea but need the GTM, we want to hear from you.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
             {["Co-founding model", "Affiliates & partners as the growth channel", "Multiple successful launches"].map((tag) => (
@@ -71,13 +71,13 @@ export default function ProductDistributionPage() {
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
               <p>
-                Most businesses are built first and then the question of how to get customers is addressed after launch. The product is finished. The website is live. And then the founders start thinking about marketing. This sequence is why most products fail — distribution was never part of the design.
+                Most businesses are built first and then the question of how to get customers is addressed after launch. The product is finished. The website is live. And then the founders start thinking about marketing. This sequence is why most products fail, distribution was never part of the design.
               </p>
               <p>
-                We co-found businesses where the distribution model is decided before the product is built. The affiliate program, the strategic partner network, and the referral architecture are designed into the business from the beginning — not retrofitted after the fact. The growth channel is a structural feature of the business, not a strategy layered on top of it.
+                We co-found businesses where the distribution model is decided before the product is built. The affiliate program, the strategic partner network, and the referral architecture are designed into the business from the beginning, not retrofitted after the fact. The growth channel is a structural feature of the business, not a strategy layered on top of it.
               </p>
               <p>
-                We have done this successfully across multiple ventures. The businesses we co-found are built to grow through affiliates and strategic partners as the primary channel, with paid and organic marketing as supplementary. This approach creates compounding distribution — partners who have skin in the game, incentive structures that align with business growth, and a channel that scales without proportional increases in ad spend.
+                We have done this successfully across multiple ventures. The businesses we co-found are built to grow through affiliates and strategic partners as the primary channel, with paid and organic marketing as supplementary. This approach creates compounding distribution, partners who have skin in the game, incentive structures that align with business growth, and a channel that scales without proportional increases in ad spend.
               </p>
             </div>
           </div>
@@ -91,13 +91,13 @@ export default function ProductDistributionPage() {
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
               <p>
-                We have co-founded and launched multiple businesses using this model. Each was built with a distribution-first approach — affiliate programs and strategic partner networks as the primary growth channels, with the commercial infrastructure designed from the start to support that growth model.
+                We have co-founded and launched multiple businesses using this model. Each was built with a distribution-first approach, affiliate programs and strategic partner networks as the primary growth channels, with the commercial infrastructure designed from the start to support that growth model.
               </p>
               <p>
                 This experience means we know what works and what does not. We understand the mistakes that kill distribution-led businesses before they scale: misaligned incentive structures, partner programs that are launched too late, affiliate offers that do not convert, and GTM strategies that depend on channels the founders have not built relationships in.
               </p>
               <p>
-                We bring that knowledge into every co-founding engagement — so the business we build together is structured to grow from day one, not to figure out growth after the product is live.
+                We bring that knowledge into every co-founding engagement, so the business we build together is structured to grow from day one, not to figure out growth after the product is live.
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function ProductDistributionPage() {
             </div>
             <div className="space-y-5 text-white/55 text-sm sm:text-base leading-relaxed max-w-2xl">
               <p>
-                If you have a business idea — a product, a service model, or a concept that relies on getting distribution right — but you do not have the GTM execution capability, we want to hear from you.
+                If you have a business idea, a product, a service model, or a concept that relies on getting distribution right, but you do not have the GTM execution capability, we want to hear from you.
               </p>
               <p>
                 We look for ideas where affiliates and strategic partners are a natural fit for distribution. That means products or services where recommendation carries weight, where there are identifiable partner channels already serving the target customer, and where the economics of affiliate distribution can generate a compelling return for partners.
@@ -139,7 +139,7 @@ export default function ProductDistributionPage() {
                 {
                   num: "2",
                   title: "Distribution Architecture Before Build",
-                  copy: "We design the full distribution model before the product is built — the affiliate program structure, the strategic partner network, the incentive framework, and the channels we will activate. The product build and the distribution infrastructure are developed in parallel.",
+                  copy: "We design the full distribution model before the product is built, the affiliate program structure, the strategic partner network, the incentive framework, and the channels we will activate. The product build and the distribution infrastructure are developed in parallel.",
                 },
                 {
                   num: "3",
@@ -149,7 +149,7 @@ export default function ProductDistributionPage() {
                 {
                   num: "4",
                   title: "Grow the Distribution Channel",
-                  copy: "We manage the ongoing growth of the distribution channel — expanding the affiliate network, adding new strategic partners, optimising incentive structures, and tracking performance by channel. The business grows through distribution, and we grow the distribution.",
+                  copy: "We manage the ongoing growth of the distribution channel, expanding the affiliate network, adding new strategic partners, optimising incentive structures, and tracking performance by channel. The business grows through distribution, and we grow the distribution.",
                 },
               ].map((step) => (
                 <div key={step.num} className="grid grid-cols-[40px_1fr] gap-5">
@@ -179,7 +179,7 @@ export default function ProductDistributionPage() {
                     "You have the idea and domain knowledge but need an operator to design and execute the GTM strategy",
                     "You want a co-founder who brings distribution expertise, not just capital or general advice",
                     "You understand that distribution-first means the partner program is designed before the product is finished",
-                    "You are open to a structured commercial partnership with shared upside — not a service engagement",
+                    "You are open to a structured commercial partnership with shared upside, not a service engagement",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-white/65">
                       <CheckCircle2 className="h-4 w-4 text-[#0AA7B5] flex-shrink-0 mt-0.5" />

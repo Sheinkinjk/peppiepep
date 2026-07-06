@@ -65,7 +65,7 @@ function buildAdminEmail(data: {
             </table>
           </div>
           <div style="margin-top:24px;padding:20px;border-radius:16px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #86efac;">
-            <strong style="font-size:16px;color:#065f46;">Pending Payment — $799 AUD</strong>
+            <strong style="font-size:16px;color:#065f46;">Pending Payment, $799 AUD</strong>
             <p style="margin:8px 0 0;font-size:14px;color:#047857;">Buyer redirected to Stripe checkout. Blueprint delivery triggered on payment success webhook.</p>
           </div>
           <div style="margin-top:24px;padding-top:24px;border-top:1px solid #e2e8f0;text-align:center;">
@@ -122,7 +122,7 @@ export async function POST(request: NextRequest) {
 
     // Create the Stripe checkout session via raw fetch. The Stripe Node SDK has
     // fetch-compatibility issues in this serverless environment (connection
-    // errors), so we hit the REST API directly — same pattern as the primary
+    // errors), so we hit the REST API directly, same pattern as the primary
     // /api/referral-blueprint-checkout route.
     const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
     if (!stripeSecretKey) {

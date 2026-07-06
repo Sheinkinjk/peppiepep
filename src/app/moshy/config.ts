@@ -172,17 +172,17 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       href: "/best-weight-loss-telehealth-australia",
       label: "Best Weight Loss Telehealth Australia 2026",
-      desc: "Moshy vs Juniper vs Better Being compared — GLP-1 access, eligibility, pricing, and the community verdict.",
+      desc: "Moshy vs Juniper vs Better Being compared, GLP-1 access, eligibility, pricing, and the community verdict.",
     },
     {
       href: "/moshhair",
-      label: "Mosh Hair Loss — Discount Code & Review",
+      label: "Mosh Hair Loss, Discount Code & Review",
       desc: "Mosh is Moshy's men's health sister brand for hair loss. Access the current Mosh referral offer.",
     },
     {
       href: "/best-peptide-supplier",
       label: "Best Peptide Supplier 2026",
-      desc: "Research peptide suppliers compared — purity, catalogue, and current discount codes.",
+      desc: "Research peptide suppliers compared, purity, catalogue, and current discount codes.",
     },
     {
       href: "/guides",
