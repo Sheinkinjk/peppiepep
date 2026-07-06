@@ -1,59 +1,79 @@
 # Refer Labs
 
-> Refer Labs is an Australian comparison and research platform. Consumers use it to choose between health services, software and tools through independent, disclosed comparisons; businesses partner with it for featured placement, referral programs and growth services. Rankings are never sold. Some pages contain disclosed affiliate links.
-
-## Category hubs
-- [Weight Loss in Australia](https://referlabs.com.au/weight-loss): The flagship hub. Compare medical telehealth, lifestyle programs and the GP pathway, with 11 supporting guides.
-- [Hair Loss in Australia](https://referlabs.com.au/hair-loss): Compare clinical telehealth (prescription) and topical products, with guides to Mosh and Dense.
-- [For Business](https://referlabs.com.au/for-business): Featured partnerships, growth services, and the Referral Growth Blueprint product.
+> Refer Labs is an independent Australian comparison platform. Consumers use it to compare health services, software and tools and choose with confidence through disclosed, independent comparisons; businesses partner with it for featured placement, referral programs and growth services. Rankings are never sold. Some pages contain disclosed affiliate links, at no extra cost to the reader.
 
 ## Key facts
-- Entity: Refer Labs (Australian growth and distribution engine; independent comparison publisher)
-- Primary market: Australia (en-AU); also serves US and UK
+- Entity: Refer Labs (independent Australian comparison publisher; operated by Pepform Pty Ltd)
+- Primary market: Australia (en-AU)
 - Contact: jarred@referlabs.com.au
-- Flagship product: Referral Growth Blueprint — 250+ vetted affiliate/referral programs, personalised strategy brief, SEO page concepts, distribution playbooks. $799 AUD, delivered within 48 hours.
-- Disclosure: Some comparison and review pages contain affiliate referral links. Refer Labs may earn a commission at no extra cost to the reader. Editorial assessments are independent.
+- Flagship in-house product: Referral Growth Blueprint, a curated database of 250+ vetted affiliate/referral programs with a personalised strategy brief and distribution playbooks. $799 AUD, delivered within 48 hours.
+- Disclosure: some comparison and guide pages contain affiliate referral links. Refer Labs may earn a commission at no extra cost to the reader. Rankings and editorial assessments are independent and never sold.
+- Health note: health content is general information only, not medical advice. Prescription medicines in Australia require individual assessment by a registered practitioner.
 
-## Comparison guides (independent, not pay-to-rank)
-- [Best Weight Loss Telehealth Australia 2026](https://referlabs.com.au/best-weight-loss-telehealth-australia): Moshy vs Juniper vs Better Being — GLP-1 access, eligibility process, pricing, and community verdict.
-- [Best Hair Loss Treatment Australia 2026](https://referlabs.com.au/best-hair-loss-treatment-australia): Mosh vs Dense Hair Experts vs telehealth — finasteride and minoxidil access, clinical vs topical, pricing.
-- [Best Peptide Supplier 2026](https://referlabs.com.au/best-peptide-supplier): Apollo Peptide Sciences vs Ascension Peptides vs BioPeptiTech — purity standards, catalogue, discount codes. Research use only.
-- [Best Website Builder 2026](https://referlabs.com.au/best-website-builder): Carrd vs Durable AI vs Butternut AI vs Swipe Pages — free plans, AI generation, pricing.
-- [Best Newsletter Platform 2026](https://referlabs.com.au/best-newsletter-platform): beehiiv vs Substack vs ConvertKit — free plans, monetisation, growth tools.
-- [Australia Health & Performance Comparison Platform](https://referlabs.com.au/comparison-website): Curated comparisons across ED, weight loss, hair loss, testosterone, and supplements.
-- [All Guides & Comparisons](https://referlabs.com.au/guides): Full index of comparison guides and brand reviews.
+## Category hubs
+- [Weight loss telehealth](https://referlabs.com.au/weight-loss): Compare online weight-management in Australia: medical telehealth, coaching programs and the GP pathway.
+- [Hair loss treatment](https://referlabs.com.au/hair-loss): Clinical telehealth (prescription) vs topical products, compared.
+- [AI sales & automation tools](https://referlabs.com.au/best-ai-sales-tools): The best AI CRM, marketing automation and AI outbound tools, compared.
+- [For business](https://referlabs.com.au/for-business): Featured partnerships, growth services, and the Referral Growth Blueprint.
+- [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
-## Health & telehealth (Australia)
-- [Moshy Weight Loss — Review, Cost & Eligibility](https://referlabs.com.au/moshy): Australian men's weight-management telehealth. GLP-1/semaglutide eligibility, cost, Moshy vs Juniper, reviews. GLP-1 medications are prescription-only and subject to individual clinical assessment.
-- [Moshy Review](https://referlabs.com.au/moshy-review): Independent walk-through of how the Moshy service runs in practice, from application to subscription.
-- [Moshy Eligibility Check Explained](https://referlabs.com.au/moshy-eligibility): What the online quiz asks, what happens after submitting, and why some applications are declined.
-- [Moshy Alternatives](https://referlabs.com.au/moshy-alternatives): The realistic alternatives in Australia: a GP, Juniper for women, Better Being for lifestyle-first.
-- [Weight Loss Telehealth for Men in Australia](https://referlabs.com.au/weight-loss-telehealth-men-australia): How men's services work and the checklist before signing up with any provider.
-- [Online Weight Loss Programs Australia](https://referlabs.com.au/online-weight-loss-programs-australia): Medical telehealth vs lifestyle programs vs self-serve apps, untangled.
-- [Men's Health Telehealth Australia](https://referlabs.com.au/mens-health-telehealth-australia): How online men's clinics work, with Moshy (weight) and Mosh (hair) as the main doors.
-- [Mosh Hair Loss — Review, Cost & Treatments](https://referlabs.com.au/moshhair): Australian men's hair-loss telehealth. Finasteride and minoxidil access, cost/pricing, Mosh vs Dense, reviews. Prescription treatments subject to clinical assessment.
-- [Dense Hair Experts — Review & Offer](https://referlabs.com.au/dense): Australian topical hair-density products (non-prescription).
+## Weight loss & telehealth (Australia)
+- [Moshy, explained](https://referlabs.com.au/moshy-review): How the Moshy weight-management telehealth service works, from application to subscription. Moshy is open to anyone eligible (gender-neutral). New customers can currently receive $120 off their first treatment.
+- [Moshy offer & referral link](https://referlabs.com.au/moshy): The current Moshy offer and how the service works.
+- [Moshy eligibility check explained](https://referlabs.com.au/moshy-eligibility): What the online quiz asks and what happens after submitting.
+- [Moshy alternatives](https://referlabs.com.au/moshy-alternatives): The realistic alternatives in Australia.
+- [Moshy vs Juniper](https://referlabs.com.au/moshy-vs-juniper): Clinical pathway vs coaching-led program.
+- [Moshy vs your GP](https://referlabs.com.au/moshy-vs-gp): Telehealth vs seeing your own doctor.
+- [Moshy vs Pilot](https://referlabs.com.au/moshy-vs-pilot): Two Australian weight-management telehealth services, compared on model and fit.
+- [Best weight loss telehealth Australia](https://referlabs.com.au/best-weight-loss-telehealth-australia): The leading online weight-management providers, compared.
+- [Cheapest weight loss telehealth Australia](https://referlabs.com.au/cheapest-weight-loss-telehealth-australia): How pricing models differ (subscription vs pay-as-you-go) and what drives cost.
+- [Weight loss injections Australia](https://referlabs.com.au/weight-loss-injections-australia): How prescription weight-loss injections (the GLP-1 class) are accessed online in Australia.
+- [GLP-1 weight loss Australia](https://referlabs.com.au/glp-1-weight-loss-australia): How GLP-1 medication access works via telehealth, information only.
+- [Weight loss telehealth cost Australia](https://referlabs.com.au/weight-loss-telehealth-cost-australia): How online weight-loss pricing typically works.
+- [Online weight loss doctor Australia](https://referlabs.com.au/online-weight-loss-doctor-australia): How an online weight-loss practitioner assessment works.
+- [Online weight loss programs Australia](https://referlabs.com.au/online-weight-loss-programs-australia): Medical telehealth vs lifestyle programs vs apps.
+- [Weight loss telehealth for men](https://referlabs.com.au/weight-loss-telehealth-men-australia): How the services work for men.
+- [Men's health telehealth Australia](https://referlabs.com.au/mens-health-telehealth-australia): How online men's clinics work.
 
-## Research peptides (research use only)
-- [Apollo Peptide Sciences — Review & Discount](https://referlabs.com.au/apollopeptides)
-- [Ascension Peptides — Review & Discount](https://referlabs.com.au/ascensionpeptides)
-- [BioPeptiTech — Review & Discount](https://referlabs.com.au/biopeptitech)
+## Hair loss (Australia)
+- [Mosh hair: what to know](https://referlabs.com.au/moshhair): Australian men's hair-loss telehealth. Finasteride and minoxidil access, subject to clinical assessment.
+- [Dense Hair Experts](https://referlabs.com.au/dense): Australian topical hair-density products (non-prescription).
+- [Best hair loss treatment Australia](https://referlabs.com.au/best-hair-loss-treatment-australia): Clinical vs topical, compared.
+- [Mosh vs Dense](https://referlabs.com.au/mosh-vs-dense): Prescription telehealth vs topical hair care.
 
-## Website builders & tools
-- [Carrd — Free Website Builder Review](https://referlabs.com.au/carrd): Free plan forever, Pro from $9/year. Best for one-page sites, portfolios, link-in-bio.
-- [Durable AI — AI Website Builder Review](https://referlabs.com.au/durableai): Generate a business website in ~30 seconds; includes CRM and invoicing.
-- [Butternut AI — AI Website Generator Review](https://referlabs.com.au/butternut): Full website from a prompt in ~20 seconds.
-- [Swipe Pages — Landing Page Builder Review](https://referlabs.com.au/swipepages): AMP landing pages with sub-1s load; 14-day free trial.
+## AI sales & automation tools
+- [Best AI sales tools](https://referlabs.com.au/best-ai-sales-tools): GoHighLevel vs AiSDR and more, compared.
+- [GoHighLevel](https://referlabs.com.au/gohighlevel): All-in-one AI CRM, marketing automation, funnels and sales platform for agencies and SMBs. Pricing varies; verify current pricing.
+- [AiSDR](https://referlabs.com.au/aisdr): AI sales development rep that automates B2B outbound prospecting, personalised outreach and meeting booking.
 
-## Creator & business
-- [beehiiv — Newsletter Platform Review](https://referlabs.com.au/beehiiv): Free up to 2,500 subscribers; built-in ad network and referral program. Compare vs Substack.
-- [IncomeLab — AI Side Hustle Platform](https://referlabs.com.au/incomelab): AI side-hustle ideas and frameworks.
-- [Referral Growth Blueprint — $799](https://referlabs.com.au/referral-blueprint): 250+ researched affiliate/referral programs, personalised strategy brief, distribution playbooks.
-- [Best Affiliate Programs Australia 2026](https://referlabs.com.au/blog/best-affiliate-programs-australia-2026): Guide to high-commission and recurring affiliate programs for Australians.
+## Business software (Australia)
+- [Employment Hero](https://referlabs.com.au/employmenthero): Australian all-in-one HR, payroll (ATO-certified Single Touch Payroll) and employment platform for SMEs.
+
+## Website builders & landing pages
+- [Best website builder](https://referlabs.com.au/best-website-builder): Carrd, Durable AI, Butternut AI and Swipe Pages, compared.
+- [Carrd](https://referlabs.com.au/carrd): Simple one-page website builder. Free plan; Pro from around $9/year.
+- [Durable AI](https://referlabs.com.au/durableai): AI website builder with CRM and invoicing.
+- [Butternut AI](https://referlabs.com.au/butternut): AI full-site generator from a prompt.
+- [Swipe Pages](https://referlabs.com.au/swipepages): AMP landing-page builder.
+- [Carrd vs Durable AI](https://referlabs.com.au/carrd-vs-durable), [Durable AI vs Butternut AI](https://referlabs.com.au/durable-vs-butternut), [Carrd vs Butternut AI](https://referlabs.com.au/carrd-vs-butternut).
+
+## Newsletter & creator tools
+- [Best newsletter platform](https://referlabs.com.au/best-newsletter-platform): beehiiv vs Substack vs Kit.
+- [beehiiv](https://referlabs.com.au/beehiiv): Newsletter platform built for growth.
+- [IncomeLab](https://referlabs.com.au/incomelab): AI income and side-hustle frameworks.
+
+## Research peptides (research use only, not for human consumption)
+- [Best peptide supplier](https://referlabs.com.au/best-peptide-supplier): Apollo, Ascension and BioPeptiTech, compared.
+- Individual suppliers: [Apollo Peptide Sciences](https://referlabs.com.au/apollopeptides), [Ascension Peptides](https://referlabs.com.au/ascensionpeptides), [BioPeptiTech](https://referlabs.com.au/biopeptitech).
+- Comparisons: [Apollo vs Ascension](https://referlabs.com.au/apollo-vs-ascension), [Apollo vs BioPeptiTech](https://referlabs.com.au/apollo-vs-biopeptitech), [Ascension vs BioPeptiTech](https://referlabs.com.au/ascension-vs-biopeptitech).
+
+## For business & affiliate marketing
+- [Referral Growth Blueprint ($799)](https://referlabs.com.au/referral-blueprint): Refer Labs' in-house product: 250+ curated affiliate/referral programs, a personalised strategy brief and distribution playbooks.
+- [Best affiliate programs Australia](https://referlabs.com.au/affiliate-programs-australia): The best affiliate programs for Australians, by category.
+- [Highest-paying affiliate programs](https://referlabs.com.au/high-paying-affiliate-programs), [Best recurring affiliate programs](https://referlabs.com.au/recurring-affiliate-programs), [How to start affiliate marketing in Australia](https://referlabs.com.au/how-to-start-affiliate-marketing-australia).
+- [Growth services](https://referlabs.com.au/services).
 
 ## Company
 - [About Refer Labs](https://referlabs.com.au/about)
-- [How It Works](https://referlabs.com.au/how-it-works)
-- [Services](https://referlabs.com.au/services)
-- [FAQ](https://referlabs.com.au/faq)
+- [How we work](https://referlabs.com.au/how-we-research)
 - [Contact](https://referlabs.com.au/contact)
