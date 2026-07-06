@@ -14,7 +14,7 @@ const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service actually runs, from application to subscription." },
   { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy, Juniper and Better Being side by side." },
-  { href: "/moshy-vs-pilot", title: "Moshy vs Pilot", desc: "The lower-cost, no-lock-in option against Eucalyptus's men's service." },
+  { href: "/moshy-vs-pilot", title: "Moshy vs Pilot", desc: "The gender-neutral option against Eucalyptus's men's service." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest really means." },
   { href: "/weight-loss-injections-australia", title: "Weight loss injections, explained", desc: "What the injection category is and how online access works." },
   { href: "/glp-1-weight-loss-australia", title: "GLP-1 weight loss in Australia", desc: "The medication class, factually, and how prescription access works." },

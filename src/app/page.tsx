@@ -9,7 +9,7 @@ import { SITE_URL } from "@/lib/seo";
 // Editors' picks lead with the real brand logo — the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
-  { logo: "moshy", name: "Moshy", cat: "Weight loss", verdict: "Best-value weight-loss telehealth: a clinically-led program from around $249/month with no lock-in.", href: "/moshy-review" },
+  { logo: "moshy", name: "Moshy", cat: "Weight loss", verdict: "A clinically-led, fully-online weight-loss telehealth program, open to anyone eligible. New customers can get $120 off their first treatment.", href: "/moshy-review" },
   { logo: "beehiiv", name: "beehiiv", cat: "Newsletters", verdict: "Built for creators serious about growth, with a genuinely useful free plan and no revenue cut.", href: "/best-newsletter-platform" },
   { logo: "carrd", name: "Carrd", cat: "Website builders", verdict: "The simplest, cheapest way to put a sharp one-page site online, free to start.", href: "/carrd-vs-durable" },
 ];
@@ -99,8 +99,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
-                  A clinically-led, fully-online weight-management program, open to anyone eligible, from around
-                  <span className="font-semibold text-[#10251b]"> $249/month</span> with no lock-in.
+                  A clinically-led, fully-online weight-management program, open to anyone eligible.
+                  <span className="font-semibold text-[#10251b]"> New customers can now receive $120 off their first treatment.</span>
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
                   See how Moshy works

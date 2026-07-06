@@ -29,7 +29,7 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Moshy vs Pilot: Weight Loss Telehealth Australia 2026",
   description:
-    "A side-by-side comparison of Moshy and Pilot, two Australian weight-management telehealth services, on price, lock-in, who each is built for, the online process, what is included, and GLP-1 access.",
+    "A side-by-side comparison of Moshy and Pilot, two Australian weight-management telehealth services, on how their pricing models differ, who each is built for, the online process, what is included, and GLP-1 access.",
   numberOfItems: 2,
   itemListElement: [
     {
@@ -37,7 +37,7 @@ const itemListSchema = {
       position: 1,
       name: "Moshy",
       description:
-        "Australian telehealth weight-management program, gender-neutral and open to anyone eligible. Lower entry price and no lock-in contract. Online eligibility check, practitioner review, GLP-1 access where clinically appropriate.",
+        "Australian telehealth weight-management program, gender-neutral and open to anyone eligible. Runs on a subscription model; new customers can currently receive $120 off their first treatment. Online eligibility check, practitioner review, GLP-1 access where clinically appropriate.",
       url: `${SITE_URL}/moshy-review`,
     },
     {
@@ -54,11 +54,11 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Moshy or Pilot better for weight loss in Australia?",
-    a: "Neither is universally better, they suit different people. On price, Moshy tends to sit lower, from around $249 per month on offer at the time of writing versus roughly $349 per month for Pilot, and Moshy has no lock-in contract. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both facilitate GLP-1 access only where an Australian-registered practitioner assesses it as clinically appropriate. This is general information, not medical advice.",
+    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both facilitate GLP-1 access only where an Australian-registered practitioner assesses it as clinically appropriate. This is general information, not medical advice.",
   },
   {
     q: "How much do Moshy and Pilot cost?",
-    a: "Pricing changes often, so treat these as approximate and check the current figure on each provider before you commit. At the time of writing Moshy advertises a subscription from around $249 per month on offer, with a regular price closer to $349 per month, and no lock-in contract. Pilot's weight program sits in a broadly similar subscription range to its sibling service Juniper, around $349 per month. Any medication, if prescribed, may be billed within or on top of the subscription depending on the plan.",
+    a: "We do not quote fixed figures here, because pricing is confirmed inside the consult and can change. Both Moshy and Pilot run on a subscription model, so the honest comparison is how the models work rather than a number on a single day. One concrete note: Moshy currently advertises $120 off your first treatment for new customers. Any medication, if prescribed, may be billed within or on top of the subscription depending on the plan. Check the current pricing directly on each provider before you commit.",
   },
   {
     q: "Who is Pilot built for?",
@@ -69,8 +69,8 @@ const faqs = [
     a: "Both are associated with GLP-1 weight-management pathways. GLP-1 medications are prescription-only in Australia and access depends entirely on an individual clinical assessment by a registered Australian practitioner. Suitability is decided case by case and is never guaranteed before that assessment. Not everyone who completes an eligibility check will be prescribed medication. This page is not medical advice.",
   },
   {
-    q: "Does Moshy have a lock-in contract?",
-    a: "At the time of writing Moshy advertises no lock-in contract, so it operates on a rolling subscription you can manage without a fixed-term commitment. Always confirm the current cancellation and billing terms directly on the provider before signing up, as these can change.",
+    q: "How does Moshy's billing work?",
+    a: "Moshy runs on a subscription model. We do not state specific contract or cancellation terms here because they are set by the provider and can change. Always confirm the current billing cycle, what is included, and how cancellation works directly on Moshy before signing up.",
   },
   {
     q: "Is the sign-up process online for both?",
@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: "Can I switch from Pilot to Moshy or the other way around?",
-    a: "There is nothing stopping you comparing both and starting with whichever fits, then reassessing later. Because Moshy advertises no lock-in, moving away is straightforward, though you should always check the current cancellation terms on each service. Any change to a medication plan is a clinical decision made with a registered practitioner, not something to manage on price alone.",
+    a: "There is nothing stopping you comparing both and starting with whichever fits, then reassessing later. Cancellation and switching terms are set by each provider and can change, so always check the current terms on each service before you move. Any change to a medication plan is a clinical decision made with a registered practitioner, not something to manage on price alone.",
   },
 ];
 
@@ -102,8 +102,8 @@ const webPageSchema = {
 
 // ── Comparison rows ──────────────────────────────────────────────────────────
 const rows: { label: string; moshy: string; pilot: string; highlightMoshy?: boolean }[] = [
-  { label: "Entry price (approx, at time of writing)", moshy: "From around $249/mo on offer (regular around $349/mo)", pilot: "Around $349/mo range", highlightMoshy: true },
-  { label: "Lock-in contract", moshy: "No lock-in advertised", pilot: "Subscription program, check current terms", highlightMoshy: true },
+  { label: "Pricing model", moshy: "Subscription, confirmed in the consult ($120 off first treatment for new customers)", pilot: "Subscription, confirmed in the consult" },
+  { label: "Billing terms", moshy: "Set by provider, check current terms", pilot: "Set by provider, check current terms" },
   { label: "Who it is built for", moshy: "Gender-neutral, anyone eligible", pilot: "Men-focused (Eucalyptus men's brand)" },
   { label: "Parent company", moshy: "Moshy (Australian telehealth)", pilot: "Eucalyptus (also runs Juniper)" },
   { label: "Scope", moshy: "Weight management focus", pilot: "Broader men's health plus weight" },
@@ -141,10 +141,10 @@ export default function MoshyVsPilotPage() {
             </h1>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Pilot are two Australian telehealth routes into weight management, but they are built differently.
-              Moshy is gender-neutral, open to anyone eligible, and at the time of writing advertises a lower entry price
-              with no lock-in. Pilot is Eucalyptus&apos;s men-focused service, wrapping weight support inside a broader
-              men&apos;s health offering. Below we line them up on price, lock-in, who each suits, the online process,
-              what is included, and how GLP-1 access is handled.
+              Moshy is gender-neutral and open to anyone eligible, and new customers can currently receive $120 off their
+              first treatment. Pilot is Eucalyptus&apos;s men-focused service, wrapping weight support inside a broader
+              men&apos;s health offering. Both run on a subscription model. Below we line them up on how their pricing
+              models differ, who each suits, the online process, what is included, and how GLP-1 access is handled.
             </p>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
@@ -178,8 +178,8 @@ export default function MoshyVsPilotPage() {
                 Quick verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Moshy is the lower-cost, no-lock-in option, and because it is gender-neutral it is open to anyone eligible.
-                Pilot suits someone who specifically wants the Eucalyptus men&apos;s health ecosystem, with weight
+                Moshy is gender-neutral, so it is open to anyone eligible, and it keeps the experience focused on the
+                weight-management pathway. Pilot suits someone who specifically wants the Eucalyptus men&apos;s health ecosystem, with weight
                 management as one part of a wider service. Both run fully online and both facilitate GLP-1 access only
                 where a registered Australian practitioner assesses it as clinically appropriate. Suitability is
                 practitioner-decided and never guaranteed.
@@ -222,22 +222,20 @@ export default function MoshyVsPilotPage() {
           {/* Prose: price */}
           <section className="border-t border-[#e5e9e7] py-10">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              Price and lock-in: where Moshy is the leaner option
+              How the pricing models compare
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
-                On the numbers, Moshy is the lower entry point. At the time of writing it advertises a subscription from
-                around $249 per month on offer, against a regular price closer to $349 per month, and it markets no
-                lock-in contract. Pilot&apos;s weight program sits in a broadly similar subscription range to its
-                Eucalyptus sibling Juniper, around $349 per month. That gap is the clearest practical difference between
-                the two on cost.
+                Both Moshy and Pilot run on a subscription model rather than pay-as-you-go, so the useful comparison is
+                how each subscription is structured, not a single dollar figure. Pricing is confirmed inside the consult
+                and can change, so check the current pricing directly on each provider before you commit. One concrete,
+                current note on Moshy: new customers can receive $120 off their first treatment.
               </p>
               <p>
-                Two caveats matter. First, prices move constantly in this category, so treat every figure here as
-                approximate and confirm the current number on each provider before you commit. Second, medication, if it
-                is prescribed at all, may be billed within or on top of the subscription depending on the plan, so the
-                headline monthly figure is not always the full cost. The honest comparison is the pricing model, not a
-                single advertised number on a single day.
+                One caveat matters most. Medication, if it is prescribed at all, may be billed within or on top of the
+                subscription depending on the plan, so the service fee is not always the full cost. That is why we point
+                you to each provider&apos;s own pricing rather than quoting a number here, and why the pricing model is
+                the honest comparison, not an advertised figure on a single day.
               </p>
             </div>
           </section>
@@ -257,8 +255,8 @@ export default function MoshyVsPilotPage() {
               <p>
                 Moshy takes the opposite tack on audience. It is gender-neutral and open to anyone eligible, and it keeps
                 the experience focused on the weight-management pathway rather than a broader health suite. If you want a
-                lean, single-purpose program at a lower entry price with no lock-in, Moshy is the more direct fit. If you
-                are a man who values the surrounding Eucalyptus services, Pilot is the one to look at.
+                lean, single-purpose program, Moshy is the more direct fit. If you are a man who values the surrounding
+                Eucalyptus services, Pilot is the one to look at.
               </p>
             </div>
           </section>
@@ -286,7 +284,7 @@ export default function MoshyVsPilotPage() {
             </div>
             <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl border px-6 py-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
               <p className="max-w-lg text-sm leading-relaxed text-[#10251b]">
-                Leaning toward the lower-cost, no-lock-in option? Moshy&apos;s eligibility check is the usual starting
+                Leaning toward the focused, single-purpose option? Moshy&apos;s eligibility check is the usual starting
                 point. About ten minutes, no commitment, and the referral applies automatically through our link.
               </p>
               <a

@@ -37,7 +37,7 @@ const itemListSchema = {
       position: 1,
       name: "Moshy",
       description:
-        "Lower-cost subscription telehealth, from around $249 per month on offer at the time of writing, no lock-in advertised. Gender-neutral, open to anyone eligible.",
+        "Subscription telehealth, gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pricing is confirmed in the consult and can change.",
       url: `${SITE_URL}/moshy-review`,
     },
     {
@@ -45,7 +45,7 @@ const itemListSchema = {
       position: 2,
       name: "Juniper",
       description:
-        "Women-focused subscription program from Eucalyptus, around $349 per month, medication plus coaching and unlimited consults.",
+        "Women-focused subscription program from Eucalyptus, bundling medication with coaching and unlimited consults. Pricing is confirmed in the consult.",
       url: JUNIPER_URL,
     },
     {
@@ -53,7 +53,7 @@ const itemListSchema = {
       position: 3,
       name: "Pilot",
       description:
-        "Men-focused telehealth from Eucalyptus, subscription in a broadly similar range to Juniper, around $349 per month.",
+        "Men-focused telehealth from Eucalyptus, a subscription program within a broader men's health service. Pricing is confirmed in the consult.",
       url: PILOT_URL,
     },
     {
@@ -61,7 +61,7 @@ const itemListSchema = {
       position: 4,
       name: "Doctors for Weight Loss",
       description:
-        "Pay-as-you-go alternative with no subscription. Initial consult around $89.99, reviews around $59.99, so you pay per appointment rather than monthly.",
+        "Pay-as-you-go alternative with no subscription, so you pay per appointment rather than monthly. Pricing is confirmed with the provider.",
       url: DFWL_URL,
     },
   ],
@@ -70,7 +70,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. Among the subscription services, Moshy tends to have the lowest entry price, from around $249 per month on offer at the time of writing, versus roughly $349 per month for Juniper and Pilot, and Moshy advertises no lock-in. A pay-as-you-go service like Doctors for Weight Loss can look cheaper up front, with an initial consult around $89.99 and reviews around $59.99, because you pay per appointment rather than monthly. The true total depends on whether medication is prescribed and how often you need reviews. Prices change, so check current pricing on each provider. Information only, not medical advice.",
+    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. We do not quote specific figures here because pricing is confirmed inside the consult and can change; check the current pricing directly on each provider. The true total also depends on whether medication is prescribed and how often you need reviews. One concrete note: Moshy currently advertises $120 off your first treatment for new customers. Information only, not medical advice.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper for weight loss telehealth?",
@@ -81,8 +81,8 @@ const faqs = [
     a: "No. Cheapest is a useful filter, not a verdict. The lowest monthly figure can still be the wrong fit if the model does not match how you want to be supported, if the coaching you need is not included, or if medication is billed separately on top. The honest way to compare is to look at the pricing model, what is included, and whether a registered practitioner assesses you individually, then weigh price against fit. Suitability for any program is decided by a practitioner, not by price.",
   },
   {
-    q: "How much does Moshy cost compared to Juniper and Pilot?",
-    a: "At the time of writing Moshy advertises a subscription from around $249 per month on offer, with a regular price closer to $349 per month, and no lock-in contract. Juniper, the women-focused Eucalyptus program, sits around $349 per month and includes coaching and unlimited consults. Pilot, the men-focused Eucalyptus service, is in a broadly similar subscription range to Juniper. These figures are approximate and change often, so confirm the current pricing on each provider before you decide.",
+    q: "How does Moshy's pricing compare to Juniper and Pilot?",
+    a: "All three run on a subscription model, so the useful comparison is how each subscription is structured rather than a headline figure. We do not quote specific prices here because they are confirmed inside the consult and can change. Juniper, the women-focused Eucalyptus program, bundles coaching and unlimited consults; Pilot is the men-focused Eucalyptus service within a broader men's health offering; Moshy is gender-neutral and open to anyone eligible, and new customers can currently receive $120 off their first treatment. Confirm the current pricing directly on each provider before you decide.",
   },
   {
     q: "Is medication included in the subscription price?",
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "What is a pay-as-you-go weight loss telehealth option?",
-    a: "A pay-as-you-go service charges per appointment instead of a monthly subscription. Doctors for Weight Loss is one example, with an initial consult around $89.99 and reviews around $59.99 at the time of writing. This model can suit people who want clinical input without a recurring subscription, though it typically comes without the bundled ongoing support that subscription programs include. Prices are approximate, so check the current figures.",
+    a: "A pay-as-you-go service charges per appointment instead of a monthly subscription. Doctors for Weight Loss is one example, where you pay for the initial consult and each review separately rather than a monthly fee. This model can suit people who want clinical input without a recurring subscription, though it typically comes without the bundled ongoing support that subscription programs include. Pricing is confirmed with the provider and can change, so check the current figures directly.",
   },
   {
     q: "Are cheaper weight loss telehealth services still legitimate?",
@@ -118,10 +118,10 @@ const webPageSchema = {
 
 // ── Price table ──────────────────────────────────────────────────────────────
 const priceRows: { name: string; model: string; price: string; who: string; highlight?: boolean }[] = [
-  { name: "Moshy", model: "Subscription", price: "From around $249/mo on offer (regular around $349/mo), no lock-in", who: "Anyone eligible", highlight: true },
-  { name: "Juniper", model: "Subscription", price: "Around $349/mo, medication plus coaching, unlimited consults", who: "Women" },
-  { name: "Pilot", model: "Subscription", price: "Around $349/mo range", who: "Men" },
-  { name: "Doctors for Weight Loss", model: "Pay-as-you-go", price: "Initial consult around $89.99, reviews around $59.99", who: "Anyone eligible" },
+  { name: "Moshy", model: "Subscription", price: "Confirmed in the consult ($120 off first treatment for new customers)", who: "Anyone eligible" },
+  { name: "Juniper", model: "Subscription", price: "Confirmed in the consult; bundles medication, coaching, unlimited consults", who: "Women" },
+  { name: "Pilot", model: "Subscription", price: "Confirmed in the consult", who: "Men" },
+  { name: "Doctors for Weight Loss", model: "Pay-as-you-go", price: "Per appointment, confirmed with the provider", who: "Anyone eligible" },
 ];
 
 export default function CheapestWeightLossTelehealthPage() {
@@ -154,8 +154,8 @@ export default function CheapestWeightLossTelehealthPage() {
               &ldquo;Cheapest&rdquo; is a slippery word in weight-loss telehealth, because services bill in different
               ways. Subscription programs charge a flat monthly fee. Pay-as-you-go services charge per consult. And
               medication, when it is prescribed, is often billed separately on top. This page compares the pricing models
-              side by side, from Moshy at around $249 per month to pay-per-appointment alternatives, and explains what
-              cheapest really means once you factor in the whole cost.
+              side by side, from subscription programs to pay-per-appointment alternatives, and explains what cheapest
+              really means once you factor in the whole cost.
             </p>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
@@ -180,11 +180,12 @@ export default function CheapestWeightLossTelehealthPage() {
                 The short answer
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Among subscription services, Moshy has the lowest advertised entry price, from around $249 per month on
-                offer with no lock-in, versus roughly $349 per month for Juniper and Pilot. A pay-as-you-go service like
-                Doctors for Weight Loss can look cheaper up front because you only pay per consult. The genuinely cheapest
-                option depends on how much ongoing support you want and whether medication is prescribed, since that is
-                often billed separately. Cheapest is not the same as best fit, and suitability is always practitioner-decided.
+                There is no single cheapest service, because they bill differently. Subscription programs like Moshy,
+                Juniper and Pilot fold consults and support into a monthly fee, while a pay-as-you-go service like
+                Doctors for Weight Loss charges per consult and can look lower up front. The genuinely cheapest option for
+                you depends on how much ongoing support you want and whether medication is prescribed, since that is often
+                billed separately. Pricing is confirmed in the consult and can change, so check each provider directly.
+                Cheapest is not the same as best fit, and suitability is always practitioner-decided.
               </p>
             </div>
           </section>
@@ -200,7 +201,7 @@ export default function CheapestWeightLossTelehealthPage() {
                   <tr className="border-b border-[#e5e9e7]">
                     <th className="text-left pb-3 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-44">Service</th>
                     <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Model</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Approx price (at time of writing)</th>
+                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
                     <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Who</th>
                   </tr>
                 </thead>
@@ -239,10 +240,10 @@ export default function CheapestWeightLossTelehealthPage() {
               <p>
                 The two pricing models split the cost differently. A subscription, like Moshy, Juniper or Pilot, folds
                 consults and ongoing support into one predictable monthly fee. Pay-as-you-go, like Doctors for Weight
-                Loss, charges per appointment: an initial consult around $89.99 and reviews around $59.99 at the time of
-                writing, with no monthly commitment. If you want frequent contact and structure, the subscription can
-                work out better value. If you want occasional clinical input without a recurring charge, pay-as-you-go
-                can be cheaper to run. Neither wins on price alone.
+                Loss, charges per appointment with no monthly commitment. If you want frequent contact and structure, the
+                subscription model can suit you better. If you want occasional clinical input without a recurring charge,
+                pay-as-you-go can cost less to run. Neither model wins on price alone, and the actual figures are confirmed
+                in the consult and can change.
               </p>
             </div>
           </section>
@@ -250,26 +251,27 @@ export default function CheapestWeightLossTelehealthPage() {
           {/* Prose: Moshy as low-cost subscription */}
           <section className="border-t border-[#e5e9e7] py-10">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              Moshy: the lower-cost subscription option
+              Moshy: a gender-neutral subscription option
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
-                If you want the subscription model but at a lower entry price, Moshy is the one that stands out on cost.
-                At the time of writing it advertises a subscription from around $249 per month on offer, against roughly
-                $349 per month for the Eucalyptus programs Juniper and Pilot, and it markets no lock-in contract. It is
-                also gender-neutral and open to anyone eligible, rather than aimed at one audience. That combination,
-                lower entry price, no lock-in, fast fully-online eligibility, is its genuine advantage on the cost side.
+                If you want the subscription model, Moshy is one to look at. It is gender-neutral and open to anyone
+                eligible, rather than aimed at one audience, and it keeps the experience focused on the weight-management
+                pathway with a fast, fully-online eligibility check. On price, we do not quote a figure here because it is
+                confirmed inside the consult and can change; one concrete, current note is that new customers can receive
+                $120 off their first treatment. Check the current pricing directly on Moshy before you commit.
               </p>
               <p>
-                To be clear about what that does and does not mean: a lower price is a factual advantage on cost, not a
-                claim that Moshy is medically better or that it will produce any particular result. Whether any program
-                suits you, and whether medication is appropriate, is decided by a registered Australian practitioner
-                after an individual assessment. Price is one input into that decision, not the decision itself.
+                To be clear about what that does and does not mean: an introductory offer is a factual note on cost, not a
+                claim that Moshy is cheaper overall, medically better, or that it will produce any particular result.
+                Whether any program suits you, and whether medication is appropriate, is decided by a registered
+                Australian practitioner after an individual assessment. Price is one input into that decision, not the
+                decision itself.
               </p>
             </div>
             <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl border px-6 py-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
               <p className="max-w-lg text-sm leading-relaxed text-[#10251b]">
-                Want to see if the lower-cost subscription route is open to you? Moshy&apos;s eligibility check takes
+                Want to see if the subscription route is open to you? Moshy&apos;s eligibility check takes
                 about ten minutes, with no commitment, and the referral applies automatically through our link.
               </p>
               <a
@@ -292,10 +294,10 @@ export default function CheapestWeightLossTelehealthPage() {
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
                 Chasing the lowest number can backfire. If you specifically want coaching and unlimited consults, a
-                program that bundles them, like Juniper, may be better value at a higher monthly price than a leaner
+                program that bundles them, like Juniper, may suit you better even at a higher monthly price than a leaner
                 service you end up supplementing elsewhere. If you want weight support inside a broader men&apos;s health
-                service, Pilot&apos;s ecosystem may matter more to you than the price gap. And if you only want
-                occasional clinical input, a pay-as-you-go consult may beat any subscription.
+                service, Pilot&apos;s ecosystem may matter more to you than price. And if you only want occasional
+                clinical input, a pay-as-you-go consult may work out better than any subscription.
               </p>
               <p>
                 The honest approach is to shortlist on price, then decide on fit: the pricing model, what is included,

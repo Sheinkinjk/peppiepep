@@ -931,7 +931,7 @@ export const seoConfig = {
   moshyVsPilot: {
     title: "Moshy vs Pilot 2026: Weight Loss Telehealth Compared (Price & Model) | Refer Labs",
     description:
-      "Moshy vs Pilot compared for 2026. Moshy is the lower-cost, no-lock-in option open to anyone eligible; Pilot is Eucalyptus's men-focused telehealth in a broader health ecosystem. Price, lock-in, who each suits, the online process, what's included, and GLP-1 access. Information only, not medical advice.",
+      "Moshy vs Pilot compared for 2026. Moshy is gender-neutral and open to anyone eligible; Pilot is Eucalyptus's men-focused telehealth in a broader health ecosystem. How the pricing models differ, who each suits, the online process, what's included, and GLP-1 access. Information only, not medical advice.",
     url: `${SITE_URL}/moshy-vs-pilot`,
     keywords: [
       "moshy vs pilot",
@@ -955,7 +955,7 @@ export const seoConfig = {
   cheapestWeightLossTelehealth: {
     title: "Cheapest Weight Loss Telehealth Australia 2026: Affordable Options Compared | Refer Labs",
     description:
-      "What the cheapest weight loss telehealth in Australia really means. Subscription vs pay-as-you-go compared: Moshy from around $249/month, Juniper and Pilot around $349/month, and pay-per-consult alternatives. Why the lowest price is not always the best fit. Information only, not medical advice.",
+      "What the cheapest weight loss telehealth in Australia really means. How subscription and pay-as-you-go pricing models differ across Moshy, Juniper, Pilot and pay-per-consult alternatives, with pricing confirmed in the consult rather than fixed figures. Why cheapest is not always the best fit. Information only, not medical advice.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
     keywords: [
       "cheapest weight loss telehealth australia",
