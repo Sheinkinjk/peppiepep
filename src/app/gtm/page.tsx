@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Google Tag Manager (GTM) | Refer Labs",
   description:
     "Add GTM to your website and verify referral tracking end-to-end. Includes recommended events, testing checkpoints, and troubleshooting.",

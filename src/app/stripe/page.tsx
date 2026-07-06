@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Stripe Integration | Refer Labs",
   description:
     "Stripe setup guide: webhooks, testing, and common troubleshooting so payments and conversions reflect in the dashboard reliably.",

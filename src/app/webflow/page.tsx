@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Webflow Integration | Refer Labs",
   description:
     "Embed Refer Labs referral pages in Webflow and validate attribution step-by-step. Includes recommended testing checkpoints and troubleshooting.",

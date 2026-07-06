@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "TikTok Ads (Pixel/Events API) | Refer Labs",
   description:
     "Set up TikTok Pixel (and optionally Events API) while keeping Refer Labs referral attribution reliable via server-side conversion capture.",

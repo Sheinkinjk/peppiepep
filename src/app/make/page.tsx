@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Make (Integromat) Integration | Refer Labs",
   description:
     "Report conversions and referral events to Refer Labs using Make webhooks/HTTP modules. Includes field mapping and an end-to-end test checklist.",

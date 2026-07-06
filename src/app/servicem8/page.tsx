@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "ServiceM8 Integration | Refer Labs",
   description:
     "Capture job conversions from ServiceM8 by collecting the ambassador discount code and posting completed jobs/invoices to Refer Labs for attribution.",

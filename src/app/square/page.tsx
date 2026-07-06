@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Square POS Integration | Refer Labs",
   description:
     "Capture in-person and invoice conversions from Square and post discount code redemptions to Refer Labs for reliable ambassador attribution.",

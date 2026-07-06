@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "HubSpot Integration | Refer Labs",
   description:
     "Create HubSpot contact properties for affiliate fields, import ambassadors, and (optionally) post conversion events back to Refer Labs with a secure webhook.",

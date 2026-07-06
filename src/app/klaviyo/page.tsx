@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Klaviyo Integration | Refer Labs",
   description:
     "Sync ambassadors into Klaviyo, map merge fields, and (optionally) post conversions back to Refer Labs with a secure webhook.",

@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Squarespace Integration | Refer Labs",
   description:
     "Embed Refer Labs referral pages in Squarespace using a Code block. Includes a step-by-step testing checklist and conversion capture options.",

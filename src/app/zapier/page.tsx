@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Zapier Integration | Refer Labs",
   description:
     "Send conversions and referral events into Refer Labs using Zapier Webhooks. Includes a step-by-step testing checklist and troubleshooting.",

@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Shopify Integration | Refer Labs",
   description:
     "Embed Refer Labs affiliate pages on Shopify and capture conversions with discount code tracking. Includes testing checkpoints.",

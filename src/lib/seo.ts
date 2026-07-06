@@ -1521,6 +1521,7 @@ export const seoConfig = {
   },
 
   leadHacking: {
+    noIndex: true,
     title: "Partner Sourcing & Activation for Australia",
     description: "We systematically source, qualify, and activate Australian partners - agencies, LinkedIn creators, and advisors - to build your distribution channel.",
     url: `${SITE_URL}/lead-hacking`,
@@ -1539,6 +1540,7 @@ export const seoConfig = {
   },
 
   linkedinInfluencer: {
+    noIndex: true,
     title: "LinkedIn Creator Partnerships for Australia Market Entry",
     description: "Partner with verified Australian LinkedIn creators to build credibility, generate leads, and accelerate your market entry. Full-service partnership management.",
     url: `${SITE_URL}/linkedin-growth`,

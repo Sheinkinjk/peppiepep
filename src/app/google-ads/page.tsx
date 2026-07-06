@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Google Ads (Tag + Conversions) | Refer Labs",
   description:
     "Set up Google Ads conversion tracking (via GTM or gtag) while keeping Refer Labs attribution accurate. Includes an end-to-end testing checklist.",

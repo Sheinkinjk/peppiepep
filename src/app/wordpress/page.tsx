@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "WordPress Shortcode (Plugin) | Refer Labs",
   description:
     "Install the Refer Labs WordPress plugin and embed affiliate pages with a shortcode. Includes WooCommerce conversion capture.",

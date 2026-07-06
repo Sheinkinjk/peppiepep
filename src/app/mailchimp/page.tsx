@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Mailchimp Integration | Refer Labs",
   description:
     "Import ambassadors into Mailchimp, map merge tags for referral links, and verify click + conversion attribution in your Refer Labs dashboard.",

@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Meta Ads (Pixel/CAPI) | Refer Labs",
   description:
     "Set up Meta Pixel (and optionally CAPI) without breaking affiliate attribution. Includes testing checkpoints to confirm dashboard attribution stays accurate.",

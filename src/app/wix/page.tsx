@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Wix Integration | Refer Labs",
   description:
     "Embed Refer Labs referral pages on Wix and capture conversions via server-side automation (Velo, Zapier/Make, or your backend). Includes testing checkpoints.",
