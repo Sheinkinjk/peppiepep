@@ -38,10 +38,12 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
             For business
           </Link>
         </div>
-        {/* Mobile: category row + search */}
-        <div className="border-t border-[#eef1ef] px-5 py-2.5 md:hidden">
-          <SiteSearch variant="header" />
-          <nav className="mt-2.5 flex gap-5 overflow-x-auto text-[13px] font-medium text-[#3d4b44]">
+        {/* Below lg: category shortcut row (search only below md, since the header search covers md+) */}
+        <div className="border-t border-[#eef1ef] px-5 py-2.5 lg:hidden">
+          <div className="mb-2.5 md:hidden">
+            <SiteSearch variant="header" />
+          </div>
+          <nav className="flex gap-5 overflow-x-auto text-[13px] font-medium text-[#3d4b44]">
             {NAV.map((item) => (
               <Link key={item.href} href={item.href} className="whitespace-nowrap transition-colors hover:text-[#0a7c42]">
                 {item.label}

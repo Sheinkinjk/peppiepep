@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, PenLine, Eye, Heart, Scissors, Globe, Mail, TrendingUp, Check, Star, Stethoscope, FlaskConical } from "lucide-react";
+import { ArrowRight, ShieldCheck, PenLine, Eye, Heart, Scissors, Globe, Mail, TrendingUp, Check, Stethoscope, FlaskConical } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
+import HeroRotator from "@/components/consumer/HeroRotator";
 import { SITE_URL } from "@/lib/seo";
 
 // Each category carries its own vivid gradient so the grid reads like a
@@ -22,16 +23,6 @@ const topPicks = [
   { name: "beehiiv", cat: "Newsletters", note: "Best for creators serious about growing an audience.", href: "/best-newsletter-platform", grad: "from-[#a855f7] to-[#7c3aed]" },
   { name: "Carrd", cat: "Website builders", note: "Best for a fast, genuinely cheap one-page site.", href: "/carrd-vs-durable", grad: "from-[#6366f1] to-[#4338ca]" },
 ];
-
-// Featured comparison — software only, so no numeric "rating" of a health service.
-const featured = {
-  href: "/compare/website-builders",
-  rows: [
-    { name: "Carrd", best: "Simple one-pagers", score: 92, top: true },
-    { name: "Durable AI", best: "AI-built in minutes", score: 86 },
-    { name: "Butternut AI", best: "Full AI websites", score: 80 },
-  ],
-};
 
 const stats = [
   { n: "20+", l: "services reviewed" },
@@ -99,46 +90,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: live comparison card — proof, above the fold */}
-            <div className="relative">
-              <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(closest-side,rgba(18,160,91,0.14),transparent)] blur-2xl" aria-hidden="true" />
-              <div className="nw-card rounded-2xl p-5 shadow-[0_24px_60px_-30px_rgba(16,37,27,0.4)] sm:p-6">
-                <div className="flex items-center justify-between border-b border-[#eef1ef] pb-3">
-                  <div>
-                    <p className="nw-kicker !text-[11px]">A look at how we compare</p>
-                    <p className="mt-1 text-[15px] font-bold text-[#10251b]">Website builders, ranked</p>
-                  </div>
-                  <span className="rounded-full border border-[#e3e7e2] bg-[#f2f4ee] px-2.5 py-1 text-[11px] font-semibold text-[#6e7b74]">AU · 2026</span>
-                </div>
-                <div className="mt-4 space-y-2.5">
-                  {featured.rows.map((r, i) => (
-                    <div key={r.name} className={`flex items-center gap-3.5 rounded-xl border px-3.5 py-3 ${r.top ? "border-[#cfe6da] bg-[#e8f5ee]" : "border-[#eef1ef] bg-white"}`}>
-                      <span className="w-3 shrink-0 text-center text-[13px] font-bold text-[#9aa39c]">{i + 1}</span>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                          <span className="text-[14px] font-bold text-[#10251b]">{r.name}</span>
-                          {r.top && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-[#0a7c42] px-2 py-0.5 text-[10px] font-bold text-white">
-                              <Star className="h-2.5 w-2.5 fill-white" /> Top pick
-                            </span>
-                          )}
-                          <span className="text-[11.5px] text-[#6e7b74]">· {r.best}</span>
-                        </div>
-                        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#eef1ef]">
-                          <div className="h-full rounded-full bg-gradient-to-r from-[#12a05b] to-[#0a7c42]" style={{ width: `${r.score}%` }} />
-                        </div>
-                      </div>
-                      <span className="shrink-0 text-[13px] font-extrabold text-[#0a7c42]">{r.score}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link href={featured.href} className="mt-4 flex items-center justify-between border-t border-[#eef1ef] pt-3.5 text-[13px] font-semibold text-[#0a7c42]">
-                  See the full website builder comparison
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-              <p className="mt-3 px-1 text-center text-[11px] text-[#9aa39c]">One example of the comparisons across every category below.</p>
-            </div>
+            {/* Right: live, rotating comparison card — engaging proof above the fold */}
+            <HeroRotator />
           </div>
         </section>
 
