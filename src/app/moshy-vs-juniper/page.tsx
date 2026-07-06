@@ -216,12 +216,13 @@ export default function MoshyVsJuniperPage() {
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">
             Best Weight Loss Telehealth Australia →
           </Link>
+          <Link href="/juniper-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Juniper alternatives →</Link>
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy full review →</Link>
           <Link href="/guides" style={{ color: CYAN }} className="hover:opacity-80">All guides →</Link>
         </div>
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This page contains affiliate links — we may earn a commission if you sign up through them, at no extra cost to
+          This page contains affiliate links, so we may earn a commission if you sign up through them, at no extra cost to
           you. It does not constitute medical advice. GLP-1 and other prescription treatments require assessment by a
           registered Australian practitioner. Consult a qualified health professional before making health decisions.
         </p>

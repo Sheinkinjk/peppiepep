@@ -354,6 +354,8 @@ export default function MoshVsDensePage() {
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/moshhair" className="nw-link text-sm">Mosh review</Link>
               <span className="text-[#9aa39c]">·</span>
+              <Link href="/mosh-vs-pilot" className="nw-link text-sm">Mosh vs Pilot</Link>
+              <span className="text-[#9aa39c]">·</span>
               <Link href="/dense" className="nw-link text-sm">Dense review</Link>
               <span className="text-[#9aa39c]">·</span>
               <Link href="/best-hair-loss-treatment-australia" className="nw-link text-sm">Best hair loss treatment Australia</Link>

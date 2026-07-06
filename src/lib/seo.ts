@@ -1332,6 +1332,48 @@ export const seoConfig = {
     ],
   },
 
+  moshVsPilot: {
+    title: "Mosh vs Pilot 2026: Hair Loss & Men's Health Telehealth Compared",
+    description:
+      "Mosh vs Pilot compared for 2026. Both are Australian men's telehealth brands that can prescribe finasteride and minoxidil for hair loss after a practitioner review. How they differ on model, range and process, who each suits, and how to start. Information only, not medical advice.",
+    url: `${SITE_URL}/mosh-vs-pilot`,
+    keywords: [
+      "mosh vs pilot",
+      "mosh vs pilot hair loss",
+      "pilot vs mosh",
+      "mosh vs pilot 2026",
+      "mosh or pilot hair loss",
+      "mosh vs pilot finasteride",
+      "mens hair loss telehealth australia",
+      "finasteride minoxidil telehealth australia",
+      "best hair loss treatment australia",
+      "mosh hair review",
+      "pilot hair loss australia",
+      "online hair loss treatment australia",
+    ],
+  },
+
+  juniperAlternatives: {
+    title: "Juniper Alternatives 2026: Weight Loss Telehealth Options in Australia",
+    description:
+      "The realistic Juniper alternatives in Australia for 2026. Juniper is a coaching-led weight program that markets to women; if you want a gender-neutral option, a leaner clinical pathway, or a different price model, here are the alternatives and who each suits. Information only, not medical advice.",
+    url: `${SITE_URL}/juniper-alternatives`,
+    keywords: [
+      "juniper alternatives",
+      "juniper alternatives australia",
+      "alternatives to juniper weight loss",
+      "is juniper only for women",
+      "juniper for men",
+      "juniper vs moshy",
+      "moshy vs juniper",
+      "youly vs juniper",
+      "weight loss telehealth australia",
+      "gender neutral weight loss telehealth australia",
+      "juniper weight loss review",
+      "best weight loss telehealth australia",
+    ],
+  },
+
   comparisonWebsite: {
     title: "Australia's Curated Health & Performance Comparison Platform | Refer Labs",
     description:

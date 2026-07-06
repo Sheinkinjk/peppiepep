@@ -9,11 +9,11 @@ export const moshyConfig: AffiliatePageConfig = {
   affiliateUrl: MOSHY_URL,
 
   quickAnswer:
-    "Moshy does not publish a public, checkout-style discount code. The current offer is accessed through a referral link that applies automatically, there is no code to enter. Moshy is an Australian clinically-led weight-management telehealth platform, open to anyone eligible, that assesses GLP-1 and semaglutide eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. GLP-1 medications are prescription-only in Australia and access depends on individual clinical assessment.",
+    "Moshy does not publish a public, checkout-style discount code, but there is a real offer: new customers can currently receive $120 off their first treatment, applied automatically through the referral link with no code to enter. Moshy is an Australian clinically-led weight-management telehealth platform, open to anyone eligible, that assesses GLP-1 and semaglutide eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. GLP-1 medications are prescription-only in Australia and access depends on individual clinical assessment.",
 
   banner: {
     heading: "Moshy - Current Referral Offer (Australia)",
-    body: "Click below to go directly to the Moshy eligibility page via our referral link. No code required.",
+    body: "New customers can currently receive $120 off their first treatment. Click below to go directly to the Moshy eligibility page via our referral link. The offer applies automatically, no code required.",
     buttonLabel: "Continue to Moshy",
   },
 
@@ -134,7 +134,7 @@ export const moshyConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Moshy discount code?",
-      a: "Moshy does not always publish a traditional discount code that is publicly available. The most reliable way to access a current Moshy offer is through a personalised referral link. Every button on this page takes you directly to the Moshy eligibility flow via our referral link - no code entry required.",
+      a: "Moshy does not always publish a traditional checkout discount code, but there is a live offer: new customers can currently receive $120 off their first treatment. It is applied automatically through the referral link, so there is no code to enter. Every button on this page takes you directly to the Moshy eligibility flow via that link.",
     },
     {
       q: "Does Moshy have a referral code?",
