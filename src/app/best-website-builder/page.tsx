@@ -60,7 +60,7 @@ const webPageSchema = {
   url: seoConfig.bestWebsiteBuilder.url,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
-  dateModified: "2026-03-16",
+  dateModified: "2026-07-07",
   about: [
     { "@type": "Thing", name: "website builder comparison 2026" },
     { "@type": "Thing", name: "AI website builder 2026" },
@@ -388,10 +388,10 @@ export default function BestWebsiteBuilderPage() {
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
               {[
-                { href: "#carrd",      label: "01, Carrd" },
-                { href: "#durable",    label: "02, Durable AI" },
-                { href: "#butternut",  label: "03, Butternut AI" },
-                { href: "#swipepages", label: "04, Swipe Pages" },
+                { href: "#carrd",      label: "Carrd" },
+                { href: "#durable",    label: "Durable AI" },
+                { href: "#butternut",  label: "Butternut AI" },
+                { href: "#swipepages", label: "Swipe Pages" },
               ].map(({ href, label }) => (
                 <a
                   key={href}

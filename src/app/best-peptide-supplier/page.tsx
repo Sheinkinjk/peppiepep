@@ -80,7 +80,7 @@ const webPageSchema = {
   url: seoConfig.bestPeptideSupplier.url,
   inLanguage: "en-AU",
   datePublished: "2026-03-13",
-  dateModified: "2026-03-16",
+  dateModified: "2026-07-07",
   about: [
     { "@type": "Thing", name: "best peptide supplier 2026" },
     { "@type": "Thing", name: "research peptides comparison" },
@@ -363,9 +363,9 @@ export default function BestPeptideSupplierPage() {
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
               {[
-                { href: "#apollo",       label: "01, Apollo Peptide Sciences" },
-                { href: "#ascension",    label: "02, Ascension Peptides" },
-                { href: "#biopeptitech", label: "03, BioPeptiTech" },
+                { href: "#apollo",       label: "Apollo Peptide Sciences" },
+                { href: "#ascension",    label: "Ascension Peptides" },
+                { href: "#biopeptitech", label: "BioPeptiTech" },
               ].map(({ href, label }) => (
                 <a
                   key={href}

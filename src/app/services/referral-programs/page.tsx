@@ -106,7 +106,7 @@ const webPageSchema = {
   url: `${SITE_URL}/services/referral-programs`,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
-  dateModified: "2026-04-22",
+  dateModified: "2026-07-07",
   about: [
     { "@type": "Thing", name: "referral program launch" },
     { "@type": "Thing", name: "referral program design" },

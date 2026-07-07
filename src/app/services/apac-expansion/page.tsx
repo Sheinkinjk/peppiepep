@@ -106,7 +106,7 @@ const webPageSchema = {
   url: `${SITE_URL}/services/apac-expansion`,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
-  dateModified: "2026-04-22",
+  dateModified: "2026-07-07",
   about: [
     { "@type": "Thing", name: "Australia market entry" },
     { "@type": "Thing", name: "APAC expansion partner" },

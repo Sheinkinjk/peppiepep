@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
+import VerifiedStamp from "@/components/consumer/VerifiedStamp";
+import { MOSHY_OFFER } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
@@ -96,10 +98,13 @@ export default function MoshyReviewPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy review: <span style={{ color: CYAN_LT }}>what the service is actually like</span>
         </h1>
-        <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           A plain walkthrough of how Moshy works: what you get, what happens when you apply, and how to start the free
           eligibility check.
         </p>
+        <div className="mb-6">
+          <VerifiedStamp date={MOSHY_OFFER.verified} label={`${MOSHY_OFFER.amount} for new customers · verified`} />
+        </div>
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page describes a telehealth service.

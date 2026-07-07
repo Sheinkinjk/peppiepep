@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
+import VerifiedStamp from "@/components/consumer/VerifiedStamp";
+import { MOSHY_OFFER } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
@@ -84,7 +86,7 @@ const webPageSchema = {
   url: seoConfig.bestWeightLossTelehealth.url,
   inLanguage: "en-AU",
   datePublished: "2026-03-16",
-  dateModified: "2026-03-16",
+  dateModified: "2026-07-07",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
     { "@type": "Thing", name: "Moshy vs Juniper Australia" },
@@ -335,16 +337,20 @@ export default function BestWeightLossTelehealthPage() {
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Juniper dominate GLP-1-based weight management in Australia, but they take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper wraps medication in a coaching program and markets primarily to women. Better Being takes a more holistic, lifestyle-first approach.
             </p>
-            <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
+            <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5">
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>
+
+            <div className="mb-7">
+              <VerifiedStamp date={MOSHY_OFFER.verified} label={`Moshy: ${MOSHY_OFFER.amount} for new customers · verified`} />
+            </div>
 
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
               {[
-                { href: "#moshy",       label: "01, Moshy" },
-                { href: "#juniper",     label: "02, Juniper" },
-                { href: "#betterbeing", label: "03, Better Being" },
+                { href: "#moshy",       label: "Moshy" },
+                { href: "#juniper",     label: "Juniper" },
+                { href: "#betterbeing", label: "Better Being" },
               ].map(({ href, label }) => (
                 <a
                   key={href}

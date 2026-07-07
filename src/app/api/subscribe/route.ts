@@ -3,7 +3,10 @@ import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
 import { createApiLogger } from "@/lib/api-logger";
 
 const logger = createApiLogger("api:subscribe");
-const FROM = "Refer Labs <jarred@referlabs.com.au>";
+// Respect the configured sender/reply-to (RESEND_FROM_EMAIL / RESEND_REPLY_TO),
+// consistent with the rest of the app; fall back to the branded default.
+const FROM = process.env.RESEND_FROM_EMAIL?.trim() || "Refer Labs <jarred@referlabs.com.au>";
+const REPLY_TO = process.env.RESEND_REPLY_TO?.trim() || "jarred@referlabs.com.au";
 
 function welcomeHtml(): string {
   return `<!DOCTYPE html>
@@ -65,7 +68,7 @@ export async function POST(request: NextRequest) {
       fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ from: FROM, to: [email], reply_to: "jarred@referlabs.com.au", subject: "Welcome to Refer Labs", html: welcomeHtml() }),
+        body: JSON.stringify({ from: FROM, to: [email], reply_to: REPLY_TO, subject: "Welcome to Refer Labs", html: welcomeHtml() }),
       }).catch((err) => logger.error("welcome email failed", { error: err }));
 
       // Fallback capture so a lead is never lost even without an Audience configured.
