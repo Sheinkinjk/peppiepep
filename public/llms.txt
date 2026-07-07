@@ -15,6 +15,8 @@
 - [Hair loss treatment](https://referlabs.com.au/hair-loss): Clinical telehealth (prescription) vs topical products, compared.
 - [AI sales & automation tools](https://referlabs.com.au/best-ai-sales-tools): The best AI CRM, marketing automation and AI outbound tools, compared.
 - [For business](https://referlabs.com.au/for-business): Featured partnerships, growth services, and the Referral Growth Blueprint.
+- [AI sales tools compared](https://referlabs.com.au/compare/ai-sales-tools): Category hub sorting AI sales tools by role in the stack (data, outreach, AI SDR, all-in-one).
+- [Research peptide suppliers compared](https://referlabs.com.au/compare/research-peptides): Category hub comparing suppliers on purity and catalogue. Research use only.
 - [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
 ## Weight loss & telehealth (Australia)

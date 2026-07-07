@@ -1,4 +1,8 @@
-import { CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL, BEEHIIV_URL } from "@/lib/affiliate-links";
+import {
+  CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL, BEEHIIV_URL,
+  GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL,
+  APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL,
+} from "@/lib/affiliate-links";
 
 /**
  * Programmatic category catalog.
@@ -203,6 +207,164 @@ export const CATALOG: Vertical[] = [
       {
         q: "beehiiv vs Substack — which should I choose?",
         a: "beehiiv if you are serious about growing and keeping all your revenue. Substack if you want the simplest possible start and value its discovery network, accepting the 10% cut on paid subscriptions.",
+      },
+    ],
+  },
+  {
+    slug: "ai-sales-tools",
+    eyebrow: "Category hub · AI & sales",
+    h1Lead: "AI sales tools:",
+    h1Accent: "matched to your stack",
+    intro:
+      "These tools sit at different points in the sales stack, data, outreach, an AI rep, and an all-in-one platform. This hub sorts them by the job you actually need doing, so you buy the right layer, not the loudest one.",
+    metaTitle: "AI Sales Tools Compared 2026: Data, Outreach, AI SDR & CRM | Refer Labs",
+    metaDescription:
+      "Compare AI sales tools by role for 2026: FullEnrich for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, GoHighLevel for all-in-one CRM. Independent, no pay-to-rank.",
+    keywords: [
+      "ai sales tools comparison",
+      "best ai sales tools 2026",
+      "compare ai sdr tools",
+      "sales engagement platform comparison",
+      "b2b sales tools australia",
+    ],
+    roundupHref: { href: "/best-ai-sales-tools", label: "Read the full AI sales tools roundup" },
+    relatedCategory: "AI & sales",
+    providers: [
+      {
+        name: "FullEnrich",
+        bestFor: "Contact data (email + mobile)",
+        blurb: "Waterfall enrichment that queries 15+ sources to find verified emails and mobile numbers. The data layer that feeds every other outbound tool.",
+        facts: [
+          { label: "Role", value: "Contact data" },
+          { label: "Pricing", value: "Credit-based, free credits (verify)" },
+          { label: "Best for", value: "Fixing bad data" },
+        ],
+        affiliateUrl: FULLENRICH_URL,
+        reviewHref: "/fullenrich",
+        ctaLabel: "See FullEnrich",
+        featured: true,
+      },
+      {
+        name: "Reply.io",
+        bestFor: "Multichannel outreach you run",
+        blurb: "An AI-first sales engagement platform for running your own sequences across email, LinkedIn, calls and SMS, with AI SDR agents and deliverability tools built in.",
+        facts: [
+          { label: "Role", value: "Sales engagement" },
+          { label: "Pricing", value: "Per-user, free trial (verify)" },
+          { label: "Best for", value: "Hands-on teams" },
+        ],
+        affiliateUrl: REPLY_IO_URL,
+        reviewHref: "/replyio",
+        ctaLabel: "See Reply.io",
+      },
+      {
+        name: "AiSDR",
+        bestFor: "A done-for-you AI rep",
+        blurb: "An AI sales development rep that prospects, personalises outreach across channels and books meetings, so you build pipeline without hiring SDRs.",
+        facts: [
+          { label: "Role", value: "AI SDR" },
+          { label: "Pricing", value: "From ~$900/mo quarterly (verify)" },
+          { label: "Best for", value: "Pipeline without hiring" },
+        ],
+        affiliateUrl: AISDR_URL,
+        reviewHref: "/aisdr",
+        ctaLabel: "See AiSDR",
+      },
+      {
+        name: "GoHighLevel",
+        bestFor: "All-in-one CRM & marketing",
+        blurb: "One platform for CRM, marketing automation, funnels and follow-up, best for agencies and SMBs consolidating a stack of tools.",
+        facts: [
+          { label: "Role", value: "All-in-one platform" },
+          { label: "Pricing", value: "From ~$97/mo, 14-day trial (verify)" },
+          { label: "Best for", value: "Agencies & SMBs" },
+        ],
+        affiliateUrl: GOHIGHLEVEL_URL,
+        reviewHref: "/gohighlevel",
+        ctaLabel: "Try GoHighLevel",
+      },
+    ],
+    faqs: [
+      {
+        q: "What are the best AI sales tools in 2026?",
+        a: "It depends on the job. FullEnrich supplies verified contact data, Reply.io runs your own multichannel outreach, AiSDR is a done-for-you AI rep, and GoHighLevel is an all-in-one CRM and marketing platform. Many teams stack more than one.",
+      },
+      {
+        q: "Which AI sales tool should I start with?",
+        a: "Start with your bottleneck. Bad contact data points to FullEnrich; not enough conversations points to Reply.io or AiSDR; scattered tools and follow-up point to GoHighLevel. Pricing is indicative, verify current figures on each provider.",
+      },
+    ],
+  },
+  {
+    slug: "research-peptides",
+    eyebrow: "Category hub · Research use only",
+    h1Lead: "Research peptide suppliers:",
+    h1Accent: "purity and catalogue, compared",
+    intro:
+      "For laboratory research use only. This hub compares suppliers on testing documentation, catalogue depth and current offers, so researchers can source the right compound from a reputable vendor.",
+    note: "All compounds referenced are for laboratory research purposes only and are not for human or veterinary use. Nothing here is medical advice.",
+    metaTitle: "Research Peptide Suppliers Compared 2026: Purity & Catalogue | Refer Labs",
+    metaDescription:
+      "Compare research peptide suppliers for 2026 — Apollo Peptide Sciences, Ascension Peptides and BioPeptiTech, on third-party testing, catalogue depth and current offers. Research use only.",
+    keywords: [
+      "research peptide suppliers comparison",
+      "best peptide supplier 2026",
+      "compare peptide vendors",
+      "apollo vs ascension peptides",
+      "research peptides australia",
+    ],
+    roundupHref: { href: "/best-peptide-supplier", label: "Read the full supplier comparison" },
+    relatedCategory: "Research peptides",
+    providers: [
+      {
+        name: "Apollo Peptide Sciences",
+        bestFor: "Broadest catalogue",
+        blurb: "The widest research peptide catalogue of the three, with third-party testing documentation. A strong default when you need range. For research use only.",
+        facts: [
+          { label: "Catalogue", value: "Broadest" },
+          { label: "Testing", value: "Third-party" },
+          { label: "Offer", value: "Via referral link" },
+        ],
+        affiliateUrl: APOLLO_URL,
+        reviewHref: "/apollopeptides",
+        ctaLabel: "See Apollo",
+        featured: true,
+      },
+      {
+        name: "Ascension Peptides",
+        bestFor: "Purity focus",
+        blurb: "High-purity, lab-grade compounds frequently referenced in researcher communities for documentation quality. For research use only.",
+        facts: [
+          { label: "Focus", value: "High purity" },
+          { label: "Testing", value: "Documented" },
+          { label: "Offer", value: "Via referral link" },
+        ],
+        affiliateUrl: ASCENSION_URL,
+        reviewHref: "/ascensionpeptides",
+        ctaLabel: "See Ascension",
+      },
+      {
+        name: "BioPeptiTech",
+        bestFor: "Frequent sales",
+        blurb: "Lab-grade compounds with regular promotions, a lower-cost entry point for longevity, metabolic and hormone-signalling research. For research use only.",
+        facts: [
+          { label: "Value", value: "Frequent sales" },
+          { label: "Coverage", value: "Longevity, metabolic" },
+          { label: "Offer", value: "Regular promotions" },
+        ],
+        affiliateUrl: BIOPEPTITECH_URL,
+        reviewHref: "/biopeptitech",
+        ctaLabel: "See BioPeptiTech",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the best research peptide supplier in 2026?",
+        a: "Apollo Peptide Sciences has the broadest catalogue, Ascension Peptides is cited for purity documentation, and BioPeptiTech runs frequent sales. The right choice depends on the compound and documentation you need. All products are for laboratory research use only.",
+      },
+      {
+        q: "How do I get a research peptide discount?",
+        a: "The most reliable route is an affiliate referral link, which applies any active offer automatically, rather than hunting for a promo code that may have expired. This hub links directly to each supplier. Research use only.",
       },
     ],
   },

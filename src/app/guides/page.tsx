@@ -20,6 +20,8 @@ const hubs = [
   { href: "/hair-loss", label: "Hair loss", desc: "Clinical prescription treatment versus topical products." },
   { href: "/compare/website-builders", label: "Website builders", desc: "Free, AI-built and landing-page tools, sorted by job." },
   { href: "/compare/newsletter-platforms", label: "Newsletter platforms", desc: "Where to build an email audience, and what each takes." },
+  { href: "/compare/ai-sales-tools", label: "AI sales tools", desc: "Data, outreach, AI reps and CRMs, sorted by the job you need done." },
+  { href: "/compare/research-peptides", label: "Research peptides", desc: "Suppliers compared on purity and catalogue. Research use only." },
 ];
 
 const sections = [

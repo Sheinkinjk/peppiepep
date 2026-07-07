@@ -54,6 +54,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // AI & sales
   { title: "Best AI sales tools 2026", href: "/best-ai-sales-tools", category: "AI & sales", kind: "Guide", keywords: "ai sales automation gohighlevel aisdr crm outbound sdr compare top" },
+  { title: "AI sales tools compared", href: "/compare/ai-sales-tools", category: "AI & sales", kind: "Guide", keywords: "compare ai sales tools by job stack data outreach ai sdr crm hub" },
   { title: "GoHighLevel review", href: "/gohighlevel", category: "AI & sales", kind: "Guide", keywords: "gohighlevel all in one crm marketing automation funnels agency ai" },
   { title: "AiSDR review", href: "/aisdr", category: "AI & sales", kind: "Guide", keywords: "aisdr ai sdr sales development rep outbound prospecting book meetings" },
   { title: "Reply.io review", href: "/replyio", category: "AI & sales", kind: "Guide", keywords: "reply.io reply io sales engagement multichannel email linkedin sequences ai sdr outreach cold email" },
@@ -79,6 +80,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // Peptides
   { title: "Best peptide supplier 2026", href: "/best-peptide-supplier", category: "Research peptides", kind: "Guide", keywords: "research chemicals peptides supplier top" },
+  { title: "Research peptide suppliers compared", href: "/compare/research-peptides", category: "Research peptides", kind: "Guide", keywords: "compare peptide suppliers purity catalogue vendors research use hub" },
   { title: "Apollo Peptide Sciences", href: "/apollopeptides", category: "Research peptides", kind: "Guide", keywords: "apollo peptides research" },
   { title: "Ascension Peptides", href: "/ascensionpeptides", category: "Research peptides", kind: "Guide", keywords: "ascension peptides research" },
   { title: "BioPeptiTech", href: "/biopeptitech", category: "Research peptides", kind: "Guide", keywords: "biopeptitech peptides research" },
