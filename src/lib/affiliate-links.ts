@@ -51,6 +51,12 @@ export const INCOME_LAB_URL = "https://incomelab.me/welcome";
 export const AISDR_URL = "https://partner.aisdr.com/referlabs";
 // GoHighLevel: all-in-one CRM, marketing and sales automation (agencies).
 export const GOHIGHLEVEL_URL = "https://www.gohighlevel.com/?fp_ref=jarred79";
+// Reply.io: AI-first multichannel sales engagement / outbound platform.
+export const REPLY_IO_URL = "https://get.reply.io/ob73cbdov4e9";
+
+// ── B2B sales data & enrichment ──────────────────────────────────────────────
+// FullEnrich: waterfall B2B contact enrichment (email + mobile numbers).
+export const FULLENRICH_URL = "https://fullenrich.partnerlinks.io/4o7xslzqzvdw";
 
 // ── HR & payroll (Australia) ─────────────────────────────────────────────────
 // Employment Hero: Australian HR, payroll and employment platform.

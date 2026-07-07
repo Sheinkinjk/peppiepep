@@ -82,6 +82,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── AI sales & automation tools (new this release) ─────────────────
     { url: `${BASE}/gohighlevel`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/aisdr`,              lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/replyio`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/fullenrich`,         lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/employmenthero`,     lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/best-ai-sales-tools`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
 

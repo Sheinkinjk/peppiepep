@@ -1468,6 +1468,54 @@ export const seoConfig = {
     ],
   },
 
+  replyio: {
+    title: "Reply.io Review 2026: AI Sales Engagement & Multichannel Outreach | Refer Labs",
+    description:
+      "Reply.io review: the AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial. Verify current pricing.",
+    url: `${SITE_URL}/replyio`,
+    keywords: [
+      "reply.io review",
+      "reply.io review 2026",
+      "reply io sales engagement",
+      "reply.io pricing",
+      "multichannel sales outreach tool",
+      "ai sales engagement platform 2026",
+      "email sequence software 2026",
+      "reply.io vs aisdr",
+      "reply.io alternatives",
+      "cold email automation tool",
+      "ai sdr agent software",
+      "reply.io hubspot salesforce pipedrive",
+      "reply.io reddit",
+      "best sales engagement platform 2026",
+      "linkedin email outreach automation",
+    ],
+  },
+
+  fullenrich: {
+    title: "FullEnrich Review 2026: Waterfall B2B Contact Enrichment (Email & Mobile) | Refer Labs",
+    description:
+      "FullEnrich review: waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start. Verify current pricing.",
+    url: `${SITE_URL}/fullenrich`,
+    keywords: [
+      "fullenrich review",
+      "fullenrich review 2026",
+      "waterfall enrichment",
+      "fullenrich pricing",
+      "b2b contact enrichment tool",
+      "email and phone number finder 2026",
+      "find mobile numbers b2b",
+      "fullenrich vs clay",
+      "fullenrich alternatives",
+      "lead enrichment software 2026",
+      "waterfall enrichment tool",
+      "fullenrich hubspot clay integration",
+      "b2b data enrichment 2026",
+      "best contact enrichment tool 2026",
+      "sales prospecting data tool",
+    ],
+  },
+
   employmentHero: {
     title: "Employment Hero Review Australia 2026: HR & Payroll Software | Refer Labs",
     description:
@@ -1493,9 +1541,9 @@ export const seoConfig = {
   },
 
   bestAiSalesTools: {
-    title: "Best AI Sales Tools in 2026: GoHighLevel vs AiSDR | Refer Labs",
+    title: "Best AI Sales Tools 2026: GoHighLevel, AiSDR, Reply.io & FullEnrich | Refer Labs",
     description:
-      "The best AI sales and automation tools in 2026 compared: GoHighLevel (all-in-one CRM, marketing and sales) and AiSDR (AI outbound SDR). What each is best for, pricing at the time of writing, and how to choose.",
+      "The best AI sales and automation tools in 2026 compared: GoHighLevel (all-in-one CRM), AiSDR (AI outbound SDR), Reply.io (multichannel sales engagement) and FullEnrich (waterfall contact enrichment). What each is best for, pricing at the time of writing, and how to choose.",
     url: `${SITE_URL}/best-ai-sales-tools`,
     keywords: [
       "best ai sales tools 2026",

@@ -55,6 +55,8 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Best AI sales tools 2026", href: "/best-ai-sales-tools", category: "AI & sales", kind: "Guide", keywords: "ai sales automation gohighlevel aisdr crm outbound sdr compare top" },
   { title: "GoHighLevel review", href: "/gohighlevel", category: "AI & sales", kind: "Guide", keywords: "gohighlevel all in one crm marketing automation funnels agency ai" },
   { title: "AiSDR review", href: "/aisdr", category: "AI & sales", kind: "Guide", keywords: "aisdr ai sdr sales development rep outbound prospecting book meetings" },
+  { title: "Reply.io review", href: "/replyio", category: "AI & sales", kind: "Guide", keywords: "reply.io reply io sales engagement multichannel email linkedin sequences ai sdr outreach cold email" },
+  { title: "FullEnrich review", href: "/fullenrich", category: "AI & sales", kind: "Guide", keywords: "fullenrich waterfall enrichment b2b contact data email mobile phone number finder clay prospecting" },
 
   // Business software
   { title: "Employment Hero review", href: "/employmenthero", category: "Business software", kind: "Guide", keywords: "employment hero hr payroll software australia single touch payroll stp fair work" },

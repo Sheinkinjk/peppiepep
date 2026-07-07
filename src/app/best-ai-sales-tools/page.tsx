@@ -9,7 +9,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestAiSalesTools);
 
 // ─── Affiliate URLs ───────────────────────────────────────────────────────────
 
-import { GOHIGHLEVEL_URL, AISDR_URL } from "@/lib/affiliate-links";
+import { GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL } from "@/lib/affiliate-links";
 
 const aff = (url: string) => ({
   href: url,
@@ -34,11 +34,13 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best AI Sales Tools 2026",
-  description: "A comparison of the best AI sales and automation tools in 2026: GoHighLevel and AiSDR.",
-  numberOfItems: 2,
+  description: "A comparison of the best AI sales and automation tools in 2026: GoHighLevel, AiSDR, Reply.io and FullEnrich.",
+  numberOfItems: 4,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "GoHighLevel", description: "AI-powered all-in-one platform combining CRM, marketing automation, sales pipelines, funnels and reputation management. Best for agencies and SMBs. From around $97/month at the time of writing, with a 14-day free trial.", url: `${SITE_URL}/gohighlevel` },
     { "@type": "ListItem", position: 2, name: "AiSDR", description: "AI sales development rep that automates B2B outbound: finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. From around $900/month billed quarterly at the time of writing.", url: `${SITE_URL}/aisdr` },
+    { "@type": "ListItem", position: 3, name: "Reply.io", description: "AI-first sales engagement platform for multichannel outbound: sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data and inbox warm-up. Per-user plans with a free trial. Best for teams that want hands-on control of their outreach.", url: `${SITE_URL}/replyio` },
+    { "@type": "ListItem", position: 4, name: "FullEnrich", description: "Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Credit-based with free credits to start. Best for sales and RevOps teams whose outbound stalls on bad contact data.", url: `${SITE_URL}/fullenrich` },
   ],
 };
 
@@ -51,7 +53,7 @@ const faqSchema = {
       name: "What are the best AI sales tools in 2026?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Two of the strongest AI sales and automation tools in 2026 are GoHighLevel and AiSDR, and they solve different problems. GoHighLevel is an AI-powered all-in-one platform combining CRM, marketing automation, sales pipelines and funnels, best for agencies and SMBs that want to replace a stack of tools. AiSDR is an AI sales development rep that automates B2B outbound, best for revenue teams that want more pipeline without hiring SDRs.",
+        text: "Four of the strongest AI sales and automation tools in 2026 are GoHighLevel, AiSDR, Reply.io and FullEnrich, and they sit at different points in the sales stack. FullEnrich is a waterfall enrichment tool that finds verified emails and mobile numbers. Reply.io is an AI sales engagement platform for running your own multichannel outbound. AiSDR is a done-for-you AI sales development rep that prospects and books meetings. GoHighLevel is an all-in-one CRM, marketing automation and sales platform, best for agencies and SMBs replacing a stack of tools.",
       },
     },
     {
@@ -147,6 +149,52 @@ const tools = [
       "Needs a clear ideal customer profile to perform well",
     ],
   },
+  {
+    name: "Reply.io",
+    logo: "replyio",
+    badge: "Best Sales Engagement Platform",
+    badgeColor: "#0EA5E9",
+    href: REPLY_IO_URL,
+    internalHref: "/replyio",
+    tagline: "Run your own multichannel outbound, powered by AI",
+    bestFor: "SMB and mid-market teams that want hands-on control of outreach",
+    price: "Per-user plans with a free trial (verify current pricing)",
+    trial: "Free trial to start",
+    pros: [
+      "Sequences across email, LinkedIn, calls and SMS",
+      "AI SDR agents draft and personalise messages",
+      "Built-in B2B data and email finder",
+      "Inbox warm-up and verification for deliverability",
+      "Integrates with HubSpot, Salesforce and Pipedrive",
+    ],
+    cons: [
+      "A self-serve platform you build and tune yourself",
+      "Results depend on your list quality and sequences",
+    ],
+  },
+  {
+    name: "FullEnrich",
+    logo: "fullenrich",
+    badge: "Best for Contact Data",
+    badgeColor: "#F59E0B",
+    href: FULLENRICH_URL,
+    internalHref: "/fullenrich",
+    tagline: "Waterfall enrichment for verified emails and mobile numbers",
+    bestFor: "Sales and RevOps teams whose outbound stalls on bad data",
+    price: "Credit-based, free credits to start (verify current pricing)",
+    trial: "Free credits to start",
+    pros: [
+      "Waterfall enrichment across 15+ data sources",
+      "Strong at finding mobile numbers, not just emails",
+      "Bulk enrichment from CSV or your CRM",
+      "Integrates with HubSpot, Clay, Zapier and LinkedIn",
+      "Credits mean you mostly pay for results found",
+    ],
+    cons: [
+      "A data layer, not a sending tool: feeds your stack",
+      "Coverage varies by contact and region",
+    ],
+  },
 ];
 
 const features = [
@@ -210,13 +258,13 @@ export default function BestAiSalesToolsPage() {
           <p className="nw-kicker mb-4">AI Sales & Automation</p>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
             Best AI Sales Tools in 2026:{" "}
-            <span style={{ color: CYAN_LT }}>GoHighLevel vs AiSDR</span>
+            <span style={{ color: CYAN_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            We compared two of the strongest AI sales and automation tools on what they actually do, who they suit, and what they cost. They solve different problems, so the right pick depends on your bottleneck. Our verdict is below.
+            We compared four of the strongest AI sales and automation tools on what they actually do, who they suit, and what they cost. Each sits at a different point in the sales stack, so the right pick depends on your bottleneck. Our verdict is below.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
-            {["2 tools compared", "Pricing at time of writing", "Disclosed affiliate links"].map((tag) => (
+            {["4 tools compared", "Pricing at time of writing", "Disclosed affiliate links"].map((tag) => (
               <span key={tag} className="flex items-center gap-2 text-sm text-[#0a7c42]/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0a7c42] flex-shrink-0" />
                 {tag}
@@ -235,12 +283,12 @@ export default function BestAiSalesToolsPage() {
 
         {/* Our Picks */}
         <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">Our Two Picks</h2>
+          <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">Our Four Picks</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
-            These tools sit at different points in the sales stack. GoHighLevel is the all-in-one platform to run and automate your CRM, marketing and follow-up. AiSDR is the AI rep that generates new outbound conversations and books meetings. Plenty of teams use one, and some use both for different jobs.
+            These tools sit at different points in the sales stack. FullEnrich is the data layer that finds verified emails and mobile numbers. Reply.io is the sales engagement platform your team drives to run multichannel outbound. AiSDR is the done-for-you AI rep that generates conversations and books meetings. GoHighLevel is the all-in-one platform to run and automate your CRM, marketing and follow-up. Plenty of teams use more than one for different jobs.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
-            Pricing below is indicative and correct at the time of writing. Both providers can change their plans, so verify the current figures before you commit.
+            Pricing below is indicative and correct at the time of writing. Providers can change their plans, so verify the current figures before you commit.
           </p>
           <a
             {...aff(GOHIGHLEVEL_URL)}
@@ -386,7 +434,10 @@ export default function BestAiSalesToolsPage() {
               If the problem is that you simply do not have enough qualified conversations, AiSDR is the pick: an AI sales development rep that prospects, personalises outreach across email, LinkedIn and phone, and books meetings, without you hiring and ramping a team. It performs best when you already know exactly who you sell to.
             </p>
             <p>
-              The two are not mutually exclusive. A common setup is AiSDR generating new conversations at the top of the funnel and a platform like GoHighLevel managing and nurturing everything that follows. Whichever you choose, verify the current pricing on the provider before you commit, since the figures on this page are indicative at the time of writing.
+              If the problem is upstream of all of that, bad or missing contact data, start with FullEnrich: its waterfall enrichment finds verified emails and mobile numbers so your outreach reaches real people. And if you want to run outbound yourself rather than outsource it to an AI rep, Reply.io gives your team the multichannel sequencing, AI writing and deliverability tools in one platform.
+            </p>
+            <p>
+              These are not mutually exclusive; they stack. A common setup is FullEnrich supplying clean data, Reply.io or AiSDR running the outreach, and GoHighLevel managing and nurturing everything that converts. Whichever you choose, verify the current pricing on the provider before you commit, since the figures on this page are indicative at the time of writing.
             </p>
           </div>
         </section>
@@ -398,7 +449,7 @@ export default function BestAiSalesToolsPage() {
             {[
               {
                 q: "What are the best AI sales tools in 2026?",
-                a: "Two of the strongest AI sales and automation tools in 2026 are GoHighLevel and AiSDR, and they solve different problems. GoHighLevel is an AI-powered all-in-one platform combining CRM, marketing automation, sales pipelines and funnels, best for agencies and SMBs. AiSDR is an AI sales development rep that automates B2B outbound, best for revenue teams that want more pipeline without hiring SDRs.",
+                a: "Four of the strongest AI sales and automation tools in 2026 are GoHighLevel, AiSDR, Reply.io and FullEnrich, and they sit at different points in the sales stack. FullEnrich is a waterfall enrichment tool that finds verified emails and mobile numbers. Reply.io is an AI sales engagement platform for running your own multichannel outbound. AiSDR is a done-for-you AI sales development rep that prospects and books meetings. GoHighLevel is an all-in-one CRM, marketing and sales platform, best for agencies and SMBs.",
               },
               {
                 q: "GoHighLevel vs AiSDR: which should I choose?",
@@ -428,7 +479,7 @@ export default function BestAiSalesToolsPage() {
             <span style={{ color: CYAN_LT }}>Start with GoHighLevel.</span>
           </h2>
           <p className="text-[#3d4b44] text-sm max-w-md mx-auto mb-7 leading-relaxed">
-            14-day free trial, no credit card. Or read the full reviews to compare GoHighLevel and AiSDR in detail.
+            14-day free trial, no credit card. Or read the full reviews to compare GoHighLevel, AiSDR, Reply.io and FullEnrich in detail.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -455,6 +506,8 @@ export default function BestAiSalesToolsPage() {
               {[
                 { href: "/gohighlevel", label: "GoHighLevel Review 2026" },
                 { href: "/aisdr", label: "AiSDR Review" },
+                { href: "/replyio", label: "Reply.io Review" },
+                { href: "/fullenrich", label: "FullEnrich Review" },
                 { href: "/for-business", label: "For Business: Partner With Refer Labs" },
                 { href: "/guides", label: "All Comparison Guides" },
               ].map(({ href, label }) => (

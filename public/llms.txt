@@ -44,9 +44,11 @@
 - [Mosh vs Pilot](https://referlabs.com.au/mosh-vs-pilot): Two Australian men's telehealth brands compared for hair loss; both can prescribe finasteride and minoxidil after a practitioner review.
 
 ## AI sales & automation tools
-- [Best AI sales tools](https://referlabs.com.au/best-ai-sales-tools): GoHighLevel vs AiSDR and more, compared.
+- [Best AI sales tools](https://referlabs.com.au/best-ai-sales-tools): GoHighLevel, AiSDR, Reply.io and FullEnrich compared, by role in the sales stack.
 - [GoHighLevel](https://referlabs.com.au/gohighlevel): All-in-one AI CRM, marketing automation, funnels and sales platform for agencies and SMBs. Pricing varies; verify current pricing.
 - [AiSDR](https://referlabs.com.au/aisdr): AI sales development rep that automates B2B outbound prospecting, personalised outreach and meeting booking.
+- [Reply.io](https://referlabs.com.au/replyio): AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS, with AI SDR agents, built-in B2B data and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user pricing; verify current pricing.
+- [FullEnrich](https://referlabs.com.au/fullenrich): Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing; verify current pricing.
 
 ## Business software (Australia)
 - [Employment Hero](https://referlabs.com.au/employmenthero): Australian all-in-one HR, payroll (ATO-certified Single Touch Payroll) and employment platform for SMEs.

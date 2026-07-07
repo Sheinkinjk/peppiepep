@@ -31,9 +31,11 @@ const GROUPS: Group[] = [
   {
     label: "AI & business",
     items: [
-      { href: "/best-ai-sales-tools", label: "Best AI sales tools", note: "GoHighLevel, AiSDR and more" },
+      { href: "/best-ai-sales-tools", label: "Best AI sales tools", note: "GoHighLevel, AiSDR, Reply.io and more" },
       { href: "/gohighlevel", label: "GoHighLevel", note: "All-in-one CRM and marketing automation" },
       { href: "/aisdr", label: "AiSDR", note: "AI sales development rep" },
+      { href: "/replyio", label: "Reply.io", note: "Multichannel sales engagement platform" },
+      { href: "/fullenrich", label: "FullEnrich", note: "Waterfall B2B contact enrichment" },
       { href: "/employmenthero", label: "Employment Hero", note: "HR and payroll software, Australia" },
     ],
   },
