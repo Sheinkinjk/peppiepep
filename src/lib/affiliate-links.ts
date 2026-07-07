@@ -61,3 +61,8 @@ export const FULLENRICH_URL = "https://fullenrich.partnerlinks.io/4o7xslzqzvdw";
 // ── HR & payroll (Australia) ─────────────────────────────────────────────────
 // Employment Hero: Australian HR, payroll and employment platform.
 export const EMPLOYMENT_HERO_URL = "https://try.employmenthero.com/65q9xczaxste";
+
+// ── Prediction markets ───────────────────────────────────────────────────────
+// Polymarket: prediction-market referral link. Single source of truth; the
+// UTM helper lives in src/lib/polymarket.ts (polymarketRef).
+export const POLYMARKET_REF_URL = "https://polymarket.com/?r=JKRJ";

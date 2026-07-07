@@ -53,6 +53,12 @@
 ## Business software (Australia)
 - [Employment Hero](https://referlabs.com.au/employmenthero): Australian all-in-one HR, payroll (ATO-certified Single Touch Payroll) and employment platform for SMEs.
 
+## Prediction markets (Polymarket guides)
+- [Polymarket markets explained](https://referlabs.com.au/polymarket/markets-explained): Pillar guide. How prediction markets work: shares priced $0-$1 as implied probability, Yes/No and multi-outcome markets, the CLOB order book, maker/taker fees, and UMA optimistic-oracle resolution.
+- [How to register on Polymarket](https://referlabs.com.au/polymarket/how-to-register): Sign-up guide for Polymarket US (CFTC-regulated, USD, KYC) and Polymarket International (crypto-native, USDC on Polygon, wallet connect). Eligibility, funding, custody and referral attribution. Terms change; verify on official docs.
+- [Build a Polymarket trading bot](https://referlabs.com.au/polymarket/trading-bots): Developer guide to automating trades via the CLOB API (py-clob-client / clob-client), order signing, a market-making loop, hosting, monitoring and risk controls.
+- [Finding edge on Polymarket](https://referlabs.com.au/polymarket/optimising-edge): Where a real trading advantage comes from (research, maker rewards, arbitrage), plus fees, markout analysis and bankroll sizing. Honest about most strategies having no durable edge after costs.
+
 ## Website builders & landing pages
 - [Best website builder](https://referlabs.com.au/best-website-builder): Carrd, Durable AI, Butternut AI and Swipe Pages, compared.
 - [Carrd](https://referlabs.com.au/carrd): Simple one-page website builder. Free plan; Pro from around $9/year.

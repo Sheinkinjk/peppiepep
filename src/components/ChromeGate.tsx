@@ -47,6 +47,36 @@ const STANDALONE_ROUTES = [
   "/best-website-builder",
   "/best-newsletter-platform",
   "/comparison-website",
+  // AI sales & automation + HR (affiliate review pages)
+  "/aisdr",
+  "/gohighlevel",
+  "/employmenthero",
+  "/replyio",
+  "/fullenrich",
+  "/best-ai-sales-tools",
+  // Weight-loss cluster (own light shell)
+  "/glp-1-weight-loss-australia",
+  "/weight-loss-injections-australia",
+  "/weight-loss-telehealth-cost-australia",
+  "/online-weight-loss-doctor-australia",
+  "/cheapest-weight-loss-telehealth-australia",
+  "/moshy-vs-pilot",
+  "/mosh-vs-pilot",
+  "/mosh-vs-dense",
+  "/juniper-alternatives",
+  // Website-builder + peptide head-to-heads
+  "/carrd-vs-butternut",
+  "/durable-vs-butternut",
+  "/apollo-vs-ascension",
+  "/apollo-vs-biopeptitech",
+  "/ascension-vs-biopeptitech",
+  // Affiliate-marketing guides
+  "/affiliate-programs-australia",
+  "/high-paying-affiliate-programs",
+  "/recurring-affiliate-programs",
+  "/how-to-start-affiliate-marketing-australia",
+  // Polymarket guide cluster (prefix covers all /polymarket/* pages)
+  "/polymarket",
   // Affiliate content hub + editorial standards
   "/guides",
   "/how-we-research",

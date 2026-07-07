@@ -1377,6 +1377,86 @@ export const seoConfig = {
     ],
   },
 
+  polymarketMarkets: {
+    title: "Polymarket Markets Explained: How Prediction Markets Work",
+    description:
+      "How Polymarket works: shares priced $0 to $1 as implied probability, Yes/No and multi-outcome markets, the CLOB order book, fees, and UMA oracle resolution.",
+    url: `${SITE_URL}/polymarket/markets-explained`,
+    type: "article" as const,
+    keywords: [
+      "polymarket markets explained",
+      "how does polymarket work",
+      "what is a prediction market",
+      "polymarket order book clob",
+      "polymarket fees",
+      "polymarket uma oracle resolution",
+      "yes no shares prediction market",
+      "polymarket categorical markets",
+      "prediction market implied probability",
+      "polymarket 2026",
+    ],
+  },
+
+  polymarketRegister: {
+    title: "How to Register on Polymarket: Accounts, Wallets & Requirements",
+    description:
+      "How to sign up for Polymarket US (KYC, USD) or International (crypto wallet, USDC). Eligibility, deposit methods, custody, and referral attribution explained.",
+    url: `${SITE_URL}/polymarket/how-to-register`,
+    type: "article" as const,
+    keywords: [
+      "how to register on polymarket",
+      "polymarket sign up",
+      "polymarket us kyc",
+      "polymarket wallet setup",
+      "polymarket usdc deposit",
+      "is polymarket available in my state",
+      "polymarket international vs us",
+      "how to fund polymarket",
+      "polymarket account requirements",
+      "do i need crypto for polymarket",
+    ],
+  },
+
+  polymarketBots: {
+    title: "How to Build a Trading Bot for Polymarket (2026 Guide)",
+    description:
+      "Build a Polymarket trading bot: the CLOB API, py-clob-client, order signing, a market-making loop, hosting, monitoring, and the risk controls you need.",
+    url: `${SITE_URL}/polymarket/trading-bots`,
+    type: "article" as const,
+    keywords: [
+      "polymarket trading bot",
+      "polymarket api",
+      "py-clob-client",
+      "clob-client polymarket",
+      "polymarket market making bot",
+      "polymarket arbitrage bot",
+      "how to automate polymarket trading",
+      "polymarket clob api tutorial",
+      "prediction market trading bot 2026",
+      "polymarket liquidity rewards bot",
+    ],
+  },
+
+  polymarketEdge: {
+    title: "How to Find and Measure Edge on Polymarket",
+    description:
+      "Where edge on Polymarket really comes from: research, maker rebates and liquidity rewards, arbitrage, plus fees, markout analysis and bankroll sizing.",
+    url: `${SITE_URL}/polymarket/optimising-edge`,
+    type: "article" as const,
+    keywords: [
+      "polymarket edge",
+      "how to be profitable on polymarket",
+      "prediction market trading strategy",
+      "polymarket maker rebates liquidity rewards",
+      "polymarket arbitrage kalshi",
+      "polymarket taker fee",
+      "markout analysis prediction markets",
+      "kelly criterion prediction markets",
+      "polymarket trading edge 2026",
+      "measuring trading edge",
+    ],
+  },
+
   comparisonWebsite: {
     title: "Australia's Curated Health & Performance Comparison Platform | Refer Labs",
     description:
