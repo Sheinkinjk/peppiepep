@@ -288,6 +288,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             <section>
               <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
+                <li><Link href="/weight-loss-cost-calculator" className="nw-link">Try the cost planner: find your pathway in three questions</Link></li>
                 <li><Link href="/moshy-review" className="nw-link">Our independent Moshy review</Link></li>
                 <li><Link href="/weight-loss-injections-australia" className="nw-link">Weight-loss injections in Australia, explained</Link></li>
                 <li><Link href="/glp-1-weight-loss-australia" className="nw-link">GLP-1 weight loss in Australia</Link></li>

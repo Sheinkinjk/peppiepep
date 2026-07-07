@@ -1377,6 +1377,23 @@ export const seoConfig = {
     ],
   },
 
+  weightLossCostCalculator: {
+    title: "Weight Loss Telehealth Cost Calculator Australia: Find Your Pathway",
+    description:
+      "Work out what weight-loss telehealth will cost you in Australia: compare subscription, coaching and GP pathways, what you actually pay for, and where your exact price is shown before you commit.",
+    url: `${SITE_URL}/weight-loss-cost-calculator`,
+    keywords: [
+      "weight loss telehealth cost calculator",
+      "weight loss cost calculator australia",
+      "how much does weight loss telehealth cost",
+      "moshy cost",
+      "weight loss program cost australia",
+      "weight loss subscription vs gp cost",
+      "telehealth weight loss price australia",
+      "weight loss pathway comparison australia",
+    ],
+  },
+
   polymarketHub: {
     title: "Polymarket: How to Sign Up & Trade Prediction Markets (2026)",
     description:
