@@ -35,8 +35,36 @@ const PARTNER_VALUE: Record<string, number> = {
   "apollopeptidesciences.com": 30,
   "ascensionpeptides.com": 30,
   "biopeptitech.com": 30,
+  // AI sales & automation (recurring programs weighted by expected LTV)
+  "gohighlevel.com": 100,
+  "partner.aisdr.com": 120,
+  "get.reply.io": 40,
+  "fullenrich.partnerlinks.io": 30,
+  // HR & payroll
+  "try.employmenthero.com": 80,
+  // Prediction markets (share of first-30-day trading fees)
+  "polymarket.com": 15,
 };
 const DEFAULT_VALUE = 10;
+
+// Networks that support per-click sub-ID reporting via a query param appended
+// to the outbound link at click time. PartnerStack (sid1) surfaces the value
+// against referred customers in the partner dashboard, which upgrades
+// "clicks per page" into "revenue per page" for these programs.
+// Hosts NOT listed here are left untouched — notably Moshy, whose attribution
+// mechanism is unverified; never decorate the biggest earner until the tracked
+// link is confirmed in the affiliate dashboard.
+const SUBID_PARAM: Record<string, string> = {
+  "fullenrich.partnerlinks.io": "sid1", // PartnerStack
+  "try.employmenthero.com": "sid1",     // PartnerStack
+  "get.reply.io": "sid1",               // PartnerStack
+};
+
+/** Page path -> compact subid slug, e.g. "/polymarket/trading-bots" -> "polymarket-trading-bots". */
+function pageSlug(pathname: string): string {
+  const slug = pathname.replace(/^\/+|\/+$/g, "").replace(/\//g, "-");
+  return (slug || "home").slice(0, 60);
+}
 
 export function AffiliateClickTracker() {
   useEffect(() => {
@@ -52,6 +80,22 @@ export function AffiliateClickTracker() {
         destinationHost = link.href;
       }
 
+      // Per-page sub-ID decoration for networks that report it (runs before
+      // navigation, so the outbound URL carries the source page).
+      const subidParam = SUBID_PARAM[destinationHost];
+      const subid = pageSlug(window.location.pathname);
+      if (subidParam) {
+        try {
+          const url = new URL(link.href);
+          if (!url.searchParams.has(subidParam)) {
+            url.searchParams.set(subidParam, subid);
+            link.href = url.toString();
+          }
+        } catch {
+          // leave the link untouched if it cannot be parsed
+        }
+      }
+
       const payload = {
         destination_url: link.href,
         destination_host: destinationHost,
@@ -60,6 +104,9 @@ export function AffiliateClickTracker() {
         // "verdict", "mobile-sticky", lets you see which positions convert.
         cta_location: link.getAttribute("data-cta") || "inline",
         page_path: window.location.pathname,
+        // The sub-ID sent to networks that support it; also logged here so
+        // GA4 and partner-dashboard reports join on the same key.
+        subid,
         // Estimated commission value so GA can rank pages by likely revenue.
         value: PARTNER_VALUE[destinationHost] ?? DEFAULT_VALUE,
         currency: "AUD",

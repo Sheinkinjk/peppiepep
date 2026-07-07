@@ -1,0 +1,9 @@
+week,page,program,clicks (GA4),revenue AUD (dashboard),EPC = revenue/clicks,sessions (GA4),revenue per 1k sessions,notes
+2026-07-13,/moshy,Moshy,,,=E2/D2,,=1000*E2/G2,allocated from program total by click share
+2026-07-13,/best-weight-loss-telehealth-australia,Moshy,,,=E3/D3,,=1000*E3/G3,
+2026-07-13,/replyio,Reply.io,,,=E4/D4,,=1000*E4/G4,exact via PartnerStack sid1
+2026-07-13,/fullenrich,FullEnrich,,,=E5/D5,,=1000*E5/G5,exact via PartnerStack sid1
+2026-07-13,/employmenthero,Employment Hero,,,=E6/D6,,=1000*E6/G6,exact via PartnerStack sid1
+2026-07-13,/gohighlevel,GoHighLevel,,,=E7/D7,,=1000*E7/G7,
+2026-07-13,/polymarket,Polymarket,,,=E8/D8,,=1000*E8/G8,
+2026-07-13,/polymarket/how-to-register,Polymarket,,,=E9/D9,,=1000*E9/G9,
