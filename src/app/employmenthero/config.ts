@@ -192,7 +192,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     midHeading: "Ready to Handle HR and Payroll in One Place?",
     midBody:
       "Click below to go directly to Employment Hero via our affiliate link. See how the Australian-built platform covers HR, payroll, hiring and compliance, then request a quote for your business.",
-    midButton: "Try Employment Hero",
+    midButton: "Book an Employment Hero demo",
     bottomHeading: "See Employment Hero for Your Business",
     bottomBody:
       "Click below to be taken to Employment Hero. Explore the platform and request pricing scoped to your headcount and the modules you need.",

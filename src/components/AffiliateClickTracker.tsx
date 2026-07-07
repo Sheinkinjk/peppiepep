@@ -58,6 +58,7 @@ const SUBID_PARAM: Record<string, string> = {
   "fullenrich.partnerlinks.io": "sid1", // PartnerStack
   "try.employmenthero.com": "sid1",     // PartnerStack
   "get.reply.io": "sid1",               // PartnerStack
+  "partner.aisdr.com": "sid1",          // PartnerStack (verified: redirects with ps_partner_key)
 };
 
 /** Page path -> compact subid slug, e.g. "/polymarket/trading-bots" -> "polymarket-trading-bots". */
