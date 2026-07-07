@@ -62,6 +62,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Business software
   { title: "Employment Hero review", href: "/employmenthero", category: "Business software", kind: "Guide", keywords: "employment hero hr payroll software australia single touch payroll stp fair work" },
 
+  // Affiliate marketing
+  { title: "Affiliate earnings calculator", href: "/affiliate-earnings-calculator", category: "Affiliate marketing", kind: "Guide", keywords: "affiliate earnings income calculator how much make commission estimate tool" },
+
   // Prediction markets
   { title: "Polymarket: sign up & trade", href: "/polymarket", category: "Prediction markets", kind: "Guide", keywords: "polymarket what is how to use sign up prediction markets us international hub start" },
   { title: "Polymarket markets explained", href: "/polymarket/markets-explained", category: "Prediction markets", kind: "Guide", keywords: "polymarket how prediction markets work order book clob shares probability uma oracle fees" },

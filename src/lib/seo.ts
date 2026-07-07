@@ -1377,6 +1377,23 @@ export const seoConfig = {
     ],
   },
 
+  affiliateEarningsCalculator: {
+    title: "Affiliate Marketing Earnings Calculator: What Could You Make?",
+    description:
+      "Estimate what your audience could earn from affiliate marketing. Set audience size, channel and niche, see an honest range with every assumption shown, then find programs that fit.",
+    url: `${SITE_URL}/affiliate-earnings-calculator`,
+    keywords: [
+      "affiliate marketing earnings calculator",
+      "affiliate income calculator",
+      "how much can you make affiliate marketing",
+      "affiliate marketing calculator australia",
+      "affiliate commission calculator",
+      "affiliate revenue estimate",
+      "how much do affiliates earn",
+      "affiliate marketing income australia",
+    ],
+  },
+
   weightLossCostCalculator: {
     title: "Weight Loss Telehealth Cost Calculator Australia: Find Your Pathway",
     description:

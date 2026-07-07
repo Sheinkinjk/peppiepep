@@ -362,7 +362,10 @@ export default function AffiliateProgramsAustraliaPage() {
               often out-earns a big percentage of a cheap one.
             </p>
             <p>
-              If you are working out which programs match your niche before you commit time to any of them, that is
+              Want a feel for the numbers first? Our{" "}
+              <Link href="/affiliate-earnings-calculator" className="nw-link">affiliate earnings calculator</Link>{" "}
+              turns audience size, channel and niche into an honest range, with every assumption on show. And if
+              you are working out which programs match your niche before you commit time to any of them, that is
               exactly the gap the{" "}
               <Link href="/referral-blueprint" className="nw-link">Referral Growth Blueprint</Link> fills.
             </p>
