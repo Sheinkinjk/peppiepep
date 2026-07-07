@@ -62,10 +62,12 @@
 - [How to register on Polymarket](https://referlabs.com.au/polymarket/how-to-register): Sign-up guide for Polymarket US (CFTC-regulated, USD, KYC) and Polymarket International (crypto-native, USDC on Polygon, wallet connect). Eligibility, funding, custody and referral attribution. Terms change; verify on official docs.
 - [Build a Polymarket trading bot](https://referlabs.com.au/polymarket/trading-bots): Developer guide to automating trades via the CLOB API (py-clob-client / clob-client), order signing, a market-making loop, hosting, monitoring and risk controls.
 - [Profitable Polymarket bot strategies](https://referlabs.com.au/polymarket/profitable-trading-bots): Four strategies where a bot can earn, with the honest catch on each: sports edge (models and speed), politics edge (correlation and news), market making (spread plus liquidity rewards), and mispricing arbitrage (internal, cross-venue and post-news gaps).
+- [Polymarket profit calculator](https://referlabs.com.au/polymarket/profit-calculator): Interactive tool. Enter a stake and share price to see payout if it wins, max loss, return, implied probability, and edge vs your own estimate. Does not estimate fees. Not financial advice.
 - [Finding edge on Polymarket](https://referlabs.com.au/polymarket/optimising-edge): Where a real trading advantage comes from (research, maker rewards, arbitrage), plus fees, markout analysis and bankroll sizing. Honest about most strategies having no durable edge after costs.
 
 ## Website builders & landing pages
 - [Best website builder](https://referlabs.com.au/best-website-builder): Carrd, Durable AI, Butternut AI and Swipe Pages, compared.
+- [Which website builder quiz](https://referlabs.com.au/website-builder-quiz): Three-question recommender that matches you to Carrd, Durable AI, Butternut AI or Swipe Pages.
 - [Carrd](https://referlabs.com.au/carrd): Simple one-page website builder. Free plan; Pro from around $9/year.
 - [Durable AI](https://referlabs.com.au/durableai): AI website builder with CRM and invoicing.
 - [Butternut AI](https://referlabs.com.au/butternut): AI full-site generator from a prompt.

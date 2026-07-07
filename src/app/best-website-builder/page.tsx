@@ -336,8 +336,13 @@ export default function BestWebsiteBuilderPage() {
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Most people need Carrd (free, permanent, live in an hour) or one of the AI builders. Swipe Pages sits in a different category entirely, it is a conversion tool for paid ad campaigns, not a general website solution.
             </p>
-            <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
+            <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-4">
               Below: what each platform is actually built for, current pricing, current offers, and a direct link to get started. No affiliate fluff, each verdict is based on what the product does well and who it will fail.
+            </p>
+            <p className="mb-7 text-sm">
+              <Link href="/website-builder-quiz" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4 hover:text-[#086536]">
+                Not sure which fits? Take the 60-second quiz →
+              </Link>
             </p>
 
             {/* Jump nav */}

@@ -76,6 +76,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "How to register on Polymarket", href: "/polymarket/how-to-register", category: "Prediction markets", kind: "Guide", keywords: "polymarket sign up register account wallet usdc kyc us international deposit states" },
   { title: "Build a Polymarket trading bot", href: "/polymarket/trading-bots", category: "Prediction markets", kind: "Guide", keywords: "polymarket trading bot clob api py-clob-client market making arbitrage automate" },
   { title: "Profitable Polymarket bot strategies", href: "/polymarket/profitable-trading-bots", category: "Prediction markets", kind: "Guide", keywords: "profitable polymarket bots strategy sports politics market making arbitrage mispriced edge make money" },
+  { title: "Polymarket profit calculator", href: "/polymarket/profit-calculator", category: "Prediction markets", kind: "Guide", keywords: "polymarket profit payout return calculator odds probability edge tool" },
   { title: "Finding edge on Polymarket", href: "/polymarket/optimising-edge", category: "Prediction markets", kind: "Guide", keywords: "polymarket edge profitable strategy maker rewards arbitrage markout kelly sizing fees" },
 
   // Peptides
@@ -102,6 +103,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Software head-to-heads
   { title: "Carrd vs Butternut", href: "/carrd-vs-butternut", category: "Software", kind: "Guide", keywords: "carrd vs butternut website builder compare" },
   { title: "Durable vs Butternut", href: "/durable-vs-butternut", category: "Software", kind: "Guide", keywords: "durable vs butternut ai website builder compare" },
+  { title: "Which website builder quiz", href: "/website-builder-quiz", category: "Software", kind: "Guide", keywords: "which website builder should i use quiz recommend carrd durable butternut swipe pages" },
 ];
 
 export function searchEntries(query: string, limit = 7): SearchEntry[] {

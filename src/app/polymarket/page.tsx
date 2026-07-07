@@ -19,6 +19,7 @@ const guides = [
   { href: "/polymarket/optimising-edge", label: "Finding your edge", desc: "Where a real trading advantage comes from, and how to measure whether you have one." },
   { href: "/polymarket/trading-bots", label: "Building a trading bot", desc: "Automate market making and arbitrage through the CLOB API, with the risk controls that matter." },
   { href: "/polymarket/profitable-trading-bots", label: "Profitable bot strategies", desc: "Four strategies where a bot can earn, sports, politics, market making and arbitrage, and the catch on each." },
+  { href: "/polymarket/profit-calculator", label: "Profit calculator", desc: "Enter a stake and price to see payout, return, max loss and your edge before you trade." },
 ];
 
 const steps = [

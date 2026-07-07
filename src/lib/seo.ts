@@ -1470,6 +1470,39 @@ export const seoConfig = {
     ],
   },
 
+  polymarketProfitCalculator: {
+    title: "Polymarket Profit Calculator: Payout, Return & Edge (2026)",
+    description:
+      "Work out Polymarket profit before you trade: enter a stake and share price to see payout if it wins, max loss, return, implied probability, and your edge vs the market.",
+    url: `${SITE_URL}/polymarket/profit-calculator`,
+    type: "article" as const,
+    keywords: [
+      "polymarket profit calculator",
+      "polymarket calculator",
+      "polymarket payout calculator",
+      "prediction market profit calculator",
+      "polymarket return calculator",
+      "polymarket odds to probability",
+      "how to calculate polymarket profit",
+      "polymarket edge calculator",
+    ],
+  },
+
+  websiteBuilderQuiz: {
+    title: "Which Website Builder Is Right for You? 60-Second Quiz",
+    description:
+      "Answer three quick questions and get the website builder that fits your project, Carrd, Durable AI, Butternut AI or Swipe Pages, with an honest reason why.",
+    url: `${SITE_URL}/website-builder-quiz`,
+    keywords: [
+      "which website builder should i use",
+      "website builder quiz",
+      "best website builder for me",
+      "carrd vs durable vs butternut",
+      "website builder recommendation",
+      "how to choose a website builder",
+    ],
+  },
+
   polymarketProfitableBots: {
     title: "Profitable Polymarket Trading Bots: 4 Strategies That Work",
     description:
