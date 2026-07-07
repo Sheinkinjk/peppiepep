@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
@@ -190,6 +191,16 @@ export default function MoshyReviewPage() {
           <div className="mt-5 flex justify-center">
             <Cta label="Start your free eligibility check" loc="closing-cta" />
           </div>
+        </div>
+
+        <div className="mb-10">
+          <NewsletterSignup
+            variant="alert"
+            source="deal-alert-moshy-review"
+            interest="Moshy offer"
+            heading="Not ready today? Get told when the Moshy offer changes."
+            sub="New customers can currently get $120 off. We'll email you if that changes, and nothing else."
+          />
         </div>
 
         <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">

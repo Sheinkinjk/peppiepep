@@ -4,6 +4,7 @@ import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
@@ -515,6 +516,17 @@ export default function BestWeightLossTelehealthPage() {
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* ── Deal alert ────────────────────────────────────────────────────── */}
+          <section className="border-t border-[#e5e9e7] py-8">
+            <NewsletterSignup
+              variant="alert"
+              source="deal-alert-best-weight-loss"
+              interest="Weight-loss telehealth offers"
+              heading="Get told when a weight-loss offer changes"
+              sub="Moshy new customers can currently get $120 off. We'll email you if the offers on this page change, and nothing else."
+            />
           </section>
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}

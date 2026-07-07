@@ -13,7 +13,7 @@ function welcomeHtml(): string {
     <p style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#0E7C66;font-weight:700;margin:0 0 18px;">Refer Labs</p>
     <h1 style="font-size:24px;line-height:1.25;margin:0 0 16px;">You're in.</h1>
     <p style="font-size:16px;line-height:1.6;color:#3a4742;margin:0 0 16px;">
-      Thanks for subscribing. You'll get our best independent comparisons and genuinely useful deals for Australians, no spam, no pay-to-rank recommendations, unsubscribe any time.
+      Thanks for subscribing. We'll email you when there's a genuinely good, verified offer worth knowing about across Australian health, tools and software, no spam, no pay-to-rank recommendations, unsubscribe any time.
     </p>
     <p style="font-size:16px;line-height:1.6;color:#3a4742;margin:0 0 24px;">
       While you're here, our most-read guides right now are weight-loss telehealth and website builders.
@@ -47,6 +47,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json().catch(() => null);
     const email = (body?.email || "").toString().trim().toLowerCase();
     const source = (body?.source || "").toString().slice(0, 60);
+    // Optional: what the subscriber asked to hear about, e.g. "Moshy offer".
+    // Used for deal-alert capture so a change to that offer can be re-fired to
+    // the people who asked. Best-effort; never required.
+    const interest = (body?.interest || "").toString().slice(0, 80);
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "A valid email is required" }, { status: 400 });
@@ -67,8 +71,8 @@ export async function POST(request: NextRequest) {
       // Fallback capture so a lead is never lost even without an Audience configured.
       if (!added) {
         sendAdminNotification({
-          subject: `New subscriber: ${email}`,
-          html: `<p>New newsletter subscriber</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Source:</strong> ${escapeHtml(source) || "unknown"}</p><p>Note: RESEND_AUDIENCE_ID is not set, so add this contact to your list manually or configure an Audience.</p>`,
+          subject: interest ? `New deal-alert signup: ${interest}` : `New subscriber: ${email}`,
+          html: `<p>New ${interest ? "deal-alert" : "newsletter"} subscriber</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Source:</strong> ${escapeHtml(source) || "unknown"}</p>${interest ? `<p><strong>Wants alerts about:</strong> ${escapeHtml(interest)}</p>` : ""}<p>Note: RESEND_AUDIENCE_ID is not set, so add this contact to your list manually or configure an Audience.</p>`,
         }).catch((err) => logger.error("admin notify failed", { error: err }));
       }
     } else {
