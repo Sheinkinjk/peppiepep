@@ -94,35 +94,6 @@ const webPageSchema = {
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
 };
 
-const reviewsSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "Organization", name: "Apollo Peptide Sciences", url: "https://apollopeptidesciences.com" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.6", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-13",
-    reviewBody: "Broadest research peptide catalogue. Semaglutide, CJC-1295, GHK-Cu, Ipamorelin, and Retatrutide all available. Strong third-party testing documentation. Current discount via referral link. For laboratory research use only.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "Organization", name: "Ascension Peptides", url: "https://ascensionpeptides.com" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.5", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-13",
-    reviewBody: "High-purity lab-grade research peptides. Frequently referenced in researcher communities for documentation quality and reliable sourcing. Covers hormone signalling, metabolic, and anti-aging research. For laboratory research use only.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "Organization", name: "BioPeptiTech", url: "https://biopeptitech.com" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.5", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-13",
-    reviewBody: "Regularly runs peptides sale promotions. Good entry point for researchers looking for discounted research compound access. Covers longevity, metabolic, and hormone signalling areas. For laboratory research use only.",
-  },
-];
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
@@ -325,9 +296,6 @@ export default function BestPeptideSupplierPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
-      {reviewsSchema.map((r, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }} />
-      ))}
 
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">

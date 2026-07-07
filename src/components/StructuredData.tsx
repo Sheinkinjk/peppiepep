@@ -177,11 +177,6 @@ export function ProductSchema({
         "@type": "Organization",
         "name": "Refer Labs"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "47"
     }
   };
 

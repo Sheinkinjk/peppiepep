@@ -73,44 +73,6 @@ const webPageSchema = {
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
 };
 
-const reviewsSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "SoftwareApplication", name: "Carrd", url: "https://carrd.co" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.7", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-11",
-    reviewBody: "The simplest and cheapest website builder. Free plan forever, Pro from $9/year. Best for portfolios, landing pages, and link-in-bio pages.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "SoftwareApplication", name: "Durable AI", url: "https://durable.co" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.5", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-11",
-    reviewBody: "Best AI website builder for service businesses. Generates a full site in 30 seconds with CRM and invoicing included. Free to try with no account required.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "SoftwareApplication", name: "Butternut AI", url: "https://www.butternut.ai" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.6", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-11",
-    reviewBody: "Fastest AI website builder, full multi-page site in 20 seconds with high-quality copy. Includes SEO tools and blog publishing. Free to generate with no account.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: { "@type": "SoftwareApplication", name: "Swipe Pages", url: "https://swipepages.com" },
-    reviewRating: { "@type": "Rating", ratingValue: "4.6", bestRating: "5", worstRating: "1" },
-    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-    datePublished: "2026-03-11",
-    reviewBody: "Best landing page builder for paid ad campaigns. AMP pages load in under 1 second, with A/B testing and dynamic text replacement. 14-day free trial, no credit card.",
-  },
-];
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
@@ -350,9 +312,6 @@ export default function BestWebsiteBuilderPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
-      {reviewsSchema.map((r, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }} />
-      ))}
 
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
