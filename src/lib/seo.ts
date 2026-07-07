@@ -1436,6 +1436,26 @@ export const seoConfig = {
     ],
   },
 
+  polymarketProfitableBots: {
+    title: "Profitable Polymarket Trading Bots: 4 Strategies That Work",
+    description:
+      "Four Polymarket bot strategies where a real edge can exist: sports models, politics and correlation, market making for spread and rewards, and mispricing arbitrage.",
+    url: `${SITE_URL}/polymarket/profitable-trading-bots`,
+    type: "article" as const,
+    keywords: [
+      "profitable polymarket bots",
+      "polymarket trading bot strategy",
+      "polymarket market making bot",
+      "polymarket arbitrage bot",
+      "polymarket sports trading bot",
+      "polymarket politics trading",
+      "best polymarket bot strategy 2026",
+      "how to make money polymarket bot",
+      "automated polymarket trading strategy",
+      "polymarket liquidity rewards bot",
+    ],
+  },
+
   polymarketBots: {
     title: "How to Build a Trading Bot for Polymarket (2026 Guide)",
     description:

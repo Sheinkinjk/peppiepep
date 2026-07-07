@@ -66,6 +66,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Polymarket markets explained", href: "/polymarket/markets-explained", category: "Prediction markets", kind: "Guide", keywords: "polymarket how prediction markets work order book clob shares probability uma oracle fees" },
   { title: "How to register on Polymarket", href: "/polymarket/how-to-register", category: "Prediction markets", kind: "Guide", keywords: "polymarket sign up register account wallet usdc kyc us international deposit states" },
   { title: "Build a Polymarket trading bot", href: "/polymarket/trading-bots", category: "Prediction markets", kind: "Guide", keywords: "polymarket trading bot clob api py-clob-client market making arbitrage automate" },
+  { title: "Profitable Polymarket bot strategies", href: "/polymarket/profitable-trading-bots", category: "Prediction markets", kind: "Guide", keywords: "profitable polymarket bots strategy sports politics market making arbitrage mispriced edge make money" },
   { title: "Finding edge on Polymarket", href: "/polymarket/optimising-edge", category: "Prediction markets", kind: "Guide", keywords: "polymarket edge profitable strategy maker rewards arbitrage markout kelly sizing fees" },
 
   // Peptides

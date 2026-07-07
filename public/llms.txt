@@ -58,6 +58,7 @@
 - [Polymarket markets explained](https://referlabs.com.au/polymarket/markets-explained): Pillar guide. How prediction markets work: shares priced $0-$1 as implied probability, Yes/No and multi-outcome markets, the CLOB order book, maker/taker fees, and UMA optimistic-oracle resolution.
 - [How to register on Polymarket](https://referlabs.com.au/polymarket/how-to-register): Sign-up guide for Polymarket US (CFTC-regulated, USD, KYC) and Polymarket International (crypto-native, USDC on Polygon, wallet connect). Eligibility, funding, custody and referral attribution. Terms change; verify on official docs.
 - [Build a Polymarket trading bot](https://referlabs.com.au/polymarket/trading-bots): Developer guide to automating trades via the CLOB API (py-clob-client / clob-client), order signing, a market-making loop, hosting, monitoring and risk controls.
+- [Profitable Polymarket bot strategies](https://referlabs.com.au/polymarket/profitable-trading-bots): Four strategies where a bot can earn, with the honest catch on each: sports edge (models and speed), politics edge (correlation and news), market making (spread plus liquidity rewards), and mispricing arbitrage (internal, cross-venue and post-news gaps).
 - [Finding edge on Polymarket](https://referlabs.com.au/polymarket/optimising-edge): Where a real trading advantage comes from (research, maker rewards, arbitrage), plus fees, markout analysis and bankroll sizing. Honest about most strategies having no durable edge after costs.
 
 ## Website builders & landing pages

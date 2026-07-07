@@ -92,6 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/polymarket/markets-explained`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/polymarket/how-to-register`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/polymarket/trading-bots`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/polymarket/profitable-trading-bots`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/polymarket/optimising-edge`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
 
     // ── Comparison roundups ────────────────────────────────────────────

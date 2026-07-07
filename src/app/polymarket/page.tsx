@@ -18,6 +18,7 @@ const guides = [
   { href: "/polymarket/how-to-register", label: "How to register", desc: "The US and international sign-up paths, wallets, funding and requirements, step by step." },
   { href: "/polymarket/optimising-edge", label: "Finding your edge", desc: "Where a real trading advantage comes from, and how to measure whether you have one." },
   { href: "/polymarket/trading-bots", label: "Building a trading bot", desc: "Automate market making and arbitrage through the CLOB API, with the risk controls that matter." },
+  { href: "/polymarket/profitable-trading-bots", label: "Profitable bot strategies", desc: "Four strategies where a bot can earn, sports, politics, market making and arbitrage, and the catch on each." },
 ];
 
 const steps = [

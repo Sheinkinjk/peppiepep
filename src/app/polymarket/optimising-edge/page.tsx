@@ -162,7 +162,7 @@ const faqs: GuideFaq[] = [
 
 const related: GuideRelated[] = [
   { href: "/polymarket/trading-bots", label: "Building a trading bot", desc: "Automate maker strategies and arbitrage, with logging to measure edge." },
-  { href: "/polymarket/markets-explained", label: "Markets explained", desc: "The pricing, order book and fees your edge is measured against." },
+  { href: "/polymarket/profitable-trading-bots", label: "Profitable bot strategies", desc: "The four strategies where a bot edge tends to show up, and the catch on each." },
   { href: "/polymarket/how-to-register", label: "Getting registered", desc: "Set up and fund the account you'll put your edge to work on." },
 ];
 

@@ -93,6 +93,7 @@ const sections = [
       { href: "/polymarket/how-to-register", label: "How to register", desc: "The US and international paths, wallets and requirements." },
       { href: "/polymarket/optimising-edge", label: "Finding your edge", desc: "Where a real advantage comes from, and how to measure it." },
       { href: "/polymarket/trading-bots", label: "Building a trading bot", desc: "Automate through the CLOB API, with the risk controls that matter." },
+      { href: "/polymarket/profitable-trading-bots", label: "Profitable bot strategies", desc: "Sports, politics, market making and arbitrage, and the catch on each." },
     ],
   },
   {

@@ -220,9 +220,9 @@ const faqs: GuideFaq[] = [
 ];
 
 const related: GuideRelated[] = [
+  { href: "/polymarket/profitable-trading-bots", label: "Profitable bot strategies", desc: "Four strategies a bot can earn on: sports, politics, market making and arbitrage." },
   { href: "/polymarket/optimising-edge", label: "Finding your edge", desc: "Whether a strategy has a real advantage after fees, and how to prove it." },
   { href: "/polymarket/how-to-register", label: "Getting registered", desc: "Set up and fund the account and wallet your bot will trade through." },
-  { href: "/polymarket/markets-explained", label: "Markets explained", desc: "The order book, maker vs taker and fees your bot is built around." },
 ];
 
 export default function TradingBotsPage() {
