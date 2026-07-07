@@ -5,7 +5,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
-const FRESH  = new Date('2026-06-30'); // redesigned / new this release
+const FRESH  = new Date('2026-07-07'); // redesigned / new this release
 const RECENT = new Date('2026-05-20'); // updated within the last few weeks
 const STABLE = new Date('2026-03-10'); // company/service pages, rarely change
 const BLOG   = new Date('2026-01-12'); // evergreen B2B posts
