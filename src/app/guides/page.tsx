@@ -32,6 +32,7 @@ const sections = [
       { href: "/best-weight-loss-telehealth-australia", label: "Best weight loss telehealth", desc: "Moshy vs Juniper vs Better Being." },
       { href: "/best-hair-loss-treatment-australia", label: "Best hair loss treatment", desc: "Clinical telehealth vs topical products." },
       { href: "/best-peptide-supplier", label: "Best peptide supplier 2026", desc: "Apollo vs Ascension vs BioPeptiTech. Research use only." },
+      { href: "/best-ai-sales-tools", label: "Best AI sales tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
     ],
   },
   {
@@ -71,6 +72,27 @@ const sections = [
     guides: [
       { href: "/beehiiv", label: "beehiiv, explained", desc: "Free up to 2,500 subscribers. Compare vs Substack." },
       { href: "/incomelab", label: "IncomeLab", desc: "AI side-hustle ideas and frameworks for 2026." },
+    ],
+  },
+  {
+    label: "AI sales & automation",
+    description: "The tools that find leads, run outreach and close, sorted by where they sit in the sales stack.",
+    guides: [
+      { href: "/gohighlevel", label: "GoHighLevel, explained", desc: "All-in-one CRM, marketing automation and funnels." },
+      { href: "/aisdr", label: "AiSDR, explained", desc: "A done-for-you AI rep that prospects and books meetings." },
+      { href: "/replyio", label: "Reply.io, explained", desc: "Run your own multichannel outbound across email and LinkedIn." },
+      { href: "/fullenrich", label: "FullEnrich, explained", desc: "Waterfall enrichment for verified emails and mobile numbers." },
+      { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
+    ],
+  },
+  {
+    label: "Prediction markets",
+    description: "How Polymarket works, how to get on it, and how people actually trade it.",
+    guides: [
+      { href: "/polymarket/markets-explained", label: "Markets explained", desc: "Shares, the order book, fees and how markets resolve." },
+      { href: "/polymarket/how-to-register", label: "How to register", desc: "The US and international paths, wallets and requirements." },
+      { href: "/polymarket/optimising-edge", label: "Finding your edge", desc: "Where a real advantage comes from, and how to measure it." },
+      { href: "/polymarket/trading-bots", label: "Building a trading bot", desc: "Automate through the CLOB API, with the risk controls that matter." },
     ],
   },
   {

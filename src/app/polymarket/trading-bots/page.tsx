@@ -46,10 +46,10 @@ const sections: GuideSection[] = [
           could by hand. On Polymarket, most bots fall into four archetypes:
         </p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Market making</strong> — quote both sides of a market to earn the spread, plus a share of the platform&apos;s liquidity rewards.</li>
-          <li><strong>Cross-market / cross-venue arbitrage</strong> — capture price gaps between correlated markets, or between Polymarket and another venue such as Kalshi.</li>
-          <li><strong>Event-driven / news reaction</strong> — react to a result or headline faster than the book reprices.</li>
-          <li><strong>Inventory / hedging</strong> — manage and offset exposure you have taken on elsewhere.</li>
+          <li><strong>Market making</strong>: quote both sides of a market to earn the spread, plus a share of the platform&apos;s liquidity rewards.</li>
+          <li><strong>Cross-market / cross-venue arbitrage</strong>: capture price gaps between correlated markets, or between Polymarket and another venue such as Kalshi.</li>
+          <li><strong>Event-driven / news reaction</strong>: react to a result or headline faster than the book reprices.</li>
+          <li><strong>Inventory / hedging</strong>: manage and offset exposure you have taken on elsewhere.</li>
         </ul>
         <p>
           All four sit on the same foundation: programmatic access to the order book. If the terms{" "}
@@ -96,11 +96,11 @@ const sections: GuideSection[] = [
         </p>
         <p>The order lifecycle is straightforward once you see it end to end:</p>
         <ol className="list-decimal pl-5 space-y-2">
-          <li><strong>Read the book</strong> — pull current bids and asks for the market&apos;s token id.</li>
-          <li><strong>Build an order</strong> — outcome token, side, price and size.</li>
-          <li><strong>Sign it</strong> — your wallet signs the order (Polymarket uses a proxy-wallet model, so the signing wallet authorises trades against your funded balance).</li>
-          <li><strong>Post it</strong> — submit as a resting limit order (<strong>maker</strong>) or one that fills immediately (<strong>taker</strong>).</li>
-          <li><strong>Handle fills</strong> — listen for fills, update your inventory, and requote or hedge.</li>
+          <li><strong>Read the book</strong>: pull current bids and asks for the market&apos;s token id.</li>
+          <li><strong>Build an order</strong>: outcome token, side, price and size.</li>
+          <li><strong>Sign it</strong>: your wallet signs the order (Polymarket uses a proxy-wallet model, so the signing wallet authorises trades against your funded balance).</li>
+          <li><strong>Post it</strong>: submit as a resting limit order (<strong>maker</strong>) or one that fills immediately (<strong>taker</strong>).</li>
+          <li><strong>Handle fills</strong>: listen for fills, update your inventory, and requote or hedge.</li>
         </ol>
         <p>
           The maker/taker choice is the crux of bot economics: makers generally pay no fee and can earn
@@ -108,7 +108,7 @@ const sections: GuideSection[] = [
           side.
         </p>
         <div className="not-prose my-6">
-          <PolymarketCta label="You need a live account to build this — create your Polymarket account" campaign={CAMPAIGN} location="mid-architecture" />
+          <PolymarketCta label="You need a live account to build this, then create your Polymarket account" campaign={CAMPAIGN} location="mid-architecture" />
         </div>
       </>
     ),
@@ -121,8 +121,8 @@ const sections: GuideSection[] = [
         <p>
           The simplest useful bot quotes both sides around the mid-price, then adjusts as it accumulates
           inventory. The sketch below is <strong>illustrative pseudo-code</strong> to show the shape of the
-          loop, not production code, real bots add error handling, rate-limit backoff, partial-fill logic and
-          the risk controls further down this page.
+          loop. Real bots add error handling, rate-limit backoff, partial-fill logic and the risk controls
+          further down this page.
         </p>
         <div className="not-prose overflow-x-auto rounded-xl border border-[#e5e9e7] bg-[#0e1512] p-4 my-2">
           <pre className="text-[12.5px] leading-relaxed text-[#c6d4cc] font-mono whitespace-pre"><code>{MM_LOOP}</code></pre>
@@ -142,11 +142,11 @@ const sections: GuideSection[] = [
       <>
         <p>A bot that only runs while your laptop is open is a liability. A minimal reliable setup:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Hosting</strong> — a small always-on server such as an AWS EC2 instance, close to the API for low latency.</li>
-          <li><strong>Process management</strong> — a supervisor (systemd, pm2 or similar) that restarts the bot if it crashes.</li>
-          <li><strong>Monitoring and alerts</strong> — push key events and errors to a channel you actually watch, for example a Telegram bot, so you know within seconds if something breaks.</li>
-          <li><strong>Logging</strong> — record every order, fill and cancel so you can reconstruct what happened and measure performance.</li>
-          <li><strong>Secrets handling</strong> — keep API keys and the signing key out of your code, in environment variables or a secrets manager, never committed to a repo.</li>
+          <li><strong>Hosting</strong>: a small always-on server such as an AWS EC2 instance, close to the API for low latency.</li>
+          <li><strong>Process management</strong>: a supervisor (systemd, pm2 or similar) that restarts the bot if it crashes.</li>
+          <li><strong>Monitoring and alerts</strong>: push key events and errors to a channel you actually watch, for example a Telegram bot, so you know within seconds if something breaks.</li>
+          <li><strong>Logging</strong>: record every order, fill and cancel so you can reconstruct what happened and measure performance.</li>
+          <li><strong>Secrets handling</strong>: keep API keys and the signing key out of your code, in environment variables or a secrets manager, never committed to a repo.</li>
         </ul>
       </>
     ),
@@ -163,8 +163,8 @@ const sections: GuideSection[] = [
         <ul className="list-disc pl-5 space-y-2">
           <li><strong>Max position</strong> per market and overall, enforced before every order.</li>
           <li><strong>Inventory caps</strong> that stop the bot quoting the side that would breach them.</li>
-          <li><strong>Max drawdown</strong> — a daily or total loss limit that halts trading when hit.</li>
-          <li><strong>Circuit breaker / kill switch</strong> — an automatic stop on abnormal conditions (stale data, wild spreads, repeated errors) and a manual one you can trigger instantly.</li>
+          <li><strong>Max drawdown</strong>: a daily or total loss limit that halts trading when hit.</li>
+          <li><strong>Circuit breaker / kill switch</strong>: an automatic stop on abnormal conditions (stale data, wild spreads, repeated errors) and a manual one you can trigger instantly.</li>
         </ul>
         <p>
           Treat these as the parts you build first and test hardest. A strategy that is merely mediocre
@@ -235,7 +235,7 @@ export default function TradingBotsPage() {
       kicker="Guide · Automation"
       h1="How to build a trading bot for Polymarket (2026 guide)"
       description={seoConfig.polymarketBots.description}
-      heroCtaLabel="You need a live account to run this — create your Polymarket account"
+      heroCtaLabel="You need a live account to run this, then create your Polymarket account"
       intro={
         <>
           <p>

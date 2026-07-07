@@ -125,17 +125,19 @@ export default function GuideLayout({
 
           {/* Table of contents */}
           <nav aria-label="On this page" className="border-t border-[#e5e9e7] py-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c] mb-3">On this page</p>
-            <ol className="grid gap-x-6 gap-y-2 sm:grid-cols-2 text-sm">
-              {sections.map((s, i) => (
+            <p className="text-[13px] font-semibold text-[#2b362f] mb-3">In this guide</p>
+            <ul className="grid gap-x-8 gap-y-2 sm:grid-cols-2 text-sm">
+              {sections.map((s) => (
                 <li key={s.id}>
-                  <a href={`#${s.id}`} className="text-[#3d4b44] hover:text-[#0a7c42] transition-colors">
-                    <span className="text-[#9aa39c] tabular-nums mr-2">{String(i + 1).padStart(2, "0")}</span>
+                  <a
+                    href={`#${s.id}`}
+                    className="text-[#3d4b44] underline decoration-[#cdd5cf] decoration-1 underline-offset-4 hover:text-[#0a7c42] hover:decoration-[#0a7c42] transition-colors"
+                  >
                     {s.h2}
                   </a>
                 </li>
               ))}
-            </ol>
+            </ul>
           </nav>
 
           {/* Sections */}

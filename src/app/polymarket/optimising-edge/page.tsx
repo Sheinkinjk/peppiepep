@@ -36,11 +36,11 @@ const sections: GuideSection[] = [
       <>
         <p>There are a handful of genuine, repeatable sources of edge:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Information / research edge</strong> — you know a domain (a sport, a region, a data series) well enough to price specific markets better than the crowd.</li>
-          <li><strong>Speed</strong> — you react to a result or headline before the book fully reprices.</li>
-          <li><strong>Maker rebates and liquidity rewards</strong> — a <em>subsidised</em> edge: makers generally pay no fee and can earn a share of daily reward pools, which can turn a break-even quoting strategy into a positive one.</li>
-          <li><strong>Cross-market and cross-venue arbitrage</strong> — price gaps between correlated markets, or between Polymarket and another venue such as Kalshi, where the same event is priced differently.</li>
-          <li><strong>Correlation and hedging</strong> — combining related positions to lock in a mispricing or reduce variance.</li>
+          <li><strong>Information / research edge</strong>: you know a domain (a sport, a region, a data series) well enough to price specific markets better than the crowd.</li>
+          <li><strong>Speed</strong>: you react to a result or headline before the book fully reprices.</li>
+          <li><strong>Maker rebates and liquidity rewards</strong>: a <em>subsidised</em> edge: makers generally pay no fee and can earn a share of daily reward pools, which can turn a break-even quoting strategy into a positive one.</li>
+          <li><strong>Cross-market and cross-venue arbitrage</strong>: price gaps between correlated markets, or between Polymarket and another venue such as Kalshi, where the same event is priced differently.</li>
+          <li><strong>Correlation and hedging</strong>: combining related positions to lock in a mispricing or reduce variance.</li>
         </ul>
         <p>
           The reward-driven and arbitrage sources are the most systematic, which is exactly why traders{" "}
