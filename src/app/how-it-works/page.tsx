@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "How the Referral Growth Blueprint Works | Refer Labs",
   description: "How it works: intake form, personalised strategy brief, 250+ programs, SEO concepts and playbooks. Delivered in 48 hours. $799 AUD one-time.",
   alternates: { canonical: `${SITE_URL}/how-it-works` },
+  robots: { index: false, follow: true },
   keywords: [
     "how referral blueprint works",
     "affiliate program database how to use",

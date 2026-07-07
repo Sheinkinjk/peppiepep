@@ -233,6 +233,7 @@ export const seoConfig = {
   },
 
   whoItsFor: {
+    noIndex: true,
     title: "Who It's For: B2B & B2C Businesses Ready to Scale | Refer Labs",
     description:
       "Refer Labs works with SMBs, eCommerce brands, SaaS companies, and global operators who want to build referral programs, activate distribution channels, and scale through structured growth.",
@@ -247,6 +248,7 @@ export const seoConfig = {
   },
 
   caseStudies: {
+    noIndex: true,
     title: "Playbooks: Growth & Distribution Examples | Refer Labs",
     description:
       "Example playbooks showing how we launch referral programs, activate affiliate and influencer channels, distribute digital products, and expand into APAC.",
@@ -414,6 +416,7 @@ export const seoConfig = {
   },
 
   influencerActivation: {
+    noIndex: true,
     title: "Partner Activation: Consultants & Strategic Partners | Refer Labs",
     description:
       "We find and activate consultants, strategic advisors, and relevant creators as ongoing distribution channels. Commercial terms, tracked performance, compounding reach.",
@@ -1576,6 +1579,7 @@ export const seoConfig = {
   },
 
   partnerProgram: {
+    noIndex: true,
     title: "Partner Program - Become a Refer Labs partner",
     description: "Join the Refer Labs partner program and earn recurring revenue.",
     url: `${SITE_URL}/our-affiliate-program`,
@@ -1617,36 +1621,42 @@ export const seoConfig = {
   },
 
   financialAdvisorsService: {
+    noIndex: true,
     title: "Services for Financial Advisors",
     description: "Partner programs for financial advisors and planners.",
     url: `${SITE_URL}/services/financial-advisors`,
   },
 
   accountantsService: {
+    noIndex: true,
     title: "Services for Accountants",
     description: "Partner programs for accounting firms.",
     url: `${SITE_URL}/services/accountants`,
   },
 
   consultantsCoachesService: {
+    noIndex: true,
     title: "Services for Consultants & Coaches",
     description: "Partner programs for consultants and coaches.",
     url: `${SITE_URL}/services/consultants-coaches`,
   },
 
   recruitersStaffingService: {
+    noIndex: true,
     title: "Services for Recruiters & Staffing",
     description: "Partner programs for recruiters and staffing firms.",
     url: `${SITE_URL}/services/recruiters-staffing`,
   },
 
   insuranceBrokersService: {
+    noIndex: true,
     title: "Services for Insurance Brokers",
     description: "Partner programs for insurance brokers.",
     url: `${SITE_URL}/services/insurance-brokers`,
   },
 
   referralPartnerships: {
+    noIndex: true,
     title: "Referral & Affiliate Partnerships - Build Your Australian Partner Channel",
     description:
       "We source, activate, and manage referral and affiliate partners across Australia. Agencies, consultants, creators, and strategic allies - all tracked and managed end-to-end.",
@@ -1661,6 +1671,7 @@ export const seoConfig = {
   },
 
   affiliatePartnerships: {
+    noIndex: true,
     title: "Services - Sales Representation, Partnerships & Distribution Deals",
     description:
       "Three core services: Sales Representation, Partnership Development, and Distribution Deals for overseas companies entering Australia.",
