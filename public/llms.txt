@@ -54,6 +54,7 @@
 - [Employment Hero](https://referlabs.com.au/employmenthero): Australian all-in-one HR, payroll (ATO-certified Single Touch Payroll) and employment platform for SMEs.
 
 ## Prediction markets (Polymarket guides)
+- [Polymarket hub: how to sign up & trade](https://referlabs.com.au/polymarket): Main Polymarket page. What it is, how to sign up on the US (regulated, USD) or international (crypto, USDC) platform in three steps, what you can trade, and links to the full guides.
 - [Polymarket markets explained](https://referlabs.com.au/polymarket/markets-explained): Pillar guide. How prediction markets work: shares priced $0-$1 as implied probability, Yes/No and multi-outcome markets, the CLOB order book, maker/taker fees, and UMA optimistic-oracle resolution.
 - [How to register on Polymarket](https://referlabs.com.au/polymarket/how-to-register): Sign-up guide for Polymarket US (CFTC-regulated, USD, KYC) and Polymarket International (crypto-native, USDC on Polygon, wallet connect). Eligibility, funding, custody and referral attribution. Terms change; verify on official docs.
 - [Build a Polymarket trading bot](https://referlabs.com.au/polymarket/trading-bots): Developer guide to automating trades via the CLOB API (py-clob-client / clob-client), order signing, a market-making loop, hosting, monitoring and risk controls.

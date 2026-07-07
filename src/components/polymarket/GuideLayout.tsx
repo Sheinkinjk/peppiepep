@@ -9,7 +9,7 @@ import { polymarketRef } from "@/lib/polymarket";
 import { SITE_URL } from "@/lib/seo";
 
 const GREEN = "#0a7c42";
-const PILLAR = "/polymarket/markets-explained";
+const PILLAR = "/polymarket";
 
 export type GuideSection = { id: string; h2: string; body: ReactNode };
 export type GuideFaq = { q: string; a: string };

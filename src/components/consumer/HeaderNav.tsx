@@ -40,6 +40,16 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    label: "Prediction markets",
+    items: [
+      { href: "/polymarket", label: "Polymarket", note: "How to sign up and trade" },
+      { href: "/polymarket/markets-explained", label: "Markets explained", note: "How prediction markets work" },
+      { href: "/polymarket/how-to-register", label: "How to register", note: "US and international sign-up paths" },
+      { href: "/polymarket/optimising-edge", label: "Finding your edge", note: "Where an advantage comes from" },
+      { href: "/polymarket/trading-bots", label: "Trading bots", note: "Automate via the CLOB API" },
+    ],
+  },
+  {
     label: "For business",
     items: [
       { href: "/referral-blueprint", label: "Referral Growth Blueprint", note: "Our $799 in-house growth playbook" },

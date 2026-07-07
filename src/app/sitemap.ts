@@ -88,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/best-ai-sales-tools`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
 
     // ── Polymarket guides (prediction markets cluster) ─────────────────
+    { url: `${BASE}/polymarket`,                    lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/polymarket/markets-explained`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/polymarket/how-to-register`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/polymarket/trading-bots`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },

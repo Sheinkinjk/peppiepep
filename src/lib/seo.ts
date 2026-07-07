@@ -1377,6 +1377,25 @@ export const seoConfig = {
     ],
   },
 
+  polymarketHub: {
+    title: "Polymarket: How to Sign Up & Trade Prediction Markets (2026)",
+    description:
+      "Your starting point for Polymarket: what it is, how to sign up on the US or international platform, how prediction markets work, fees, and guides to trading and bots.",
+    url: `${SITE_URL}/polymarket`,
+    keywords: [
+      "polymarket",
+      "polymarket 2026",
+      "how to use polymarket",
+      "polymarket sign up",
+      "what is polymarket",
+      "polymarket prediction markets",
+      "polymarket guide",
+      "is polymarket legit",
+      "polymarket us vs international",
+      "how does polymarket work",
+    ],
+  },
+
   polymarketMarkets: {
     title: "Polymarket Markets Explained: How Prediction Markets Work",
     description:

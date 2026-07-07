@@ -62,6 +62,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Employment Hero review", href: "/employmenthero", category: "Business software", kind: "Guide", keywords: "employment hero hr payroll software australia single touch payroll stp fair work" },
 
   // Prediction markets
+  { title: "Polymarket: sign up & trade", href: "/polymarket", category: "Prediction markets", kind: "Guide", keywords: "polymarket what is how to use sign up prediction markets us international hub start" },
   { title: "Polymarket markets explained", href: "/polymarket/markets-explained", category: "Prediction markets", kind: "Guide", keywords: "polymarket how prediction markets work order book clob shares probability uma oracle fees" },
   { title: "How to register on Polymarket", href: "/polymarket/how-to-register", category: "Prediction markets", kind: "Guide", keywords: "polymarket sign up register account wallet usdc kyc us international deposit states" },
   { title: "Build a Polymarket trading bot", href: "/polymarket/trading-bots", category: "Prediction markets", kind: "Guide", keywords: "polymarket trading bot clob api py-clob-client market making arbitrage automate" },
