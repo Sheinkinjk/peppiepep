@@ -51,7 +51,7 @@ const DEFAULT_VALUE = 10;
 // to the outbound link at click time. PartnerStack (sid1) surfaces the value
 // against referred customers in the partner dashboard, which upgrades
 // "clicks per page" into "revenue per page" for these programs.
-// Hosts NOT listed here are left untouched — notably Moshy, whose attribution
+// Hosts NOT listed here are left untouched, notably Moshy, whose attribution
 // mechanism is unverified; never decorate the biggest earner until the tracked
 // link is confirmed in the affiliate dashboard.
 const SUBID_PARAM: Record<string, string> = {
