@@ -3,6 +3,7 @@ import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FeatureMatrix from "@/components/consumer/FeatureMatrix";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWebsiteBuilder);
 
@@ -136,11 +137,6 @@ function Con({ text }: { text: string }) {
   );
 }
 
-function TableCheck({ yes }: { yes: boolean }) {
-  return yes
-    ? <CheckCircle2 className="h-4 w-4 mx-auto" style={{ color: CYAN_LT }} />
-    : <span className="block text-center text-[#9aa39c] text-xs">—</span>;
-}
 
 // ─── Platform card ────────────────────────────────────────────────────────────
 
@@ -490,55 +486,28 @@ export default function BestWebsiteBuilderPage() {
               Full Feature Breakdown
             </h2>
 
-            <div className="overflow-x-auto -mx-2 px-2">
-              <table className="w-full min-w-[580px] text-sm">
-                <thead>
-                  <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-4 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-40">Feature</th>
-                    {["Carrd", "Durable AI", "Butternut AI", "Swipe Pages"].map((h) => (
-                      <th key={h} className="pb-4 px-3 text-center font-bold text-[#3d4b44] text-xs">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { label: "Free plan / trial",  vals: [true,  true,  true,  false], note: "Swipe Pages: 14-day trial" },
-                    { label: "AI generation",       vals: [false, true,  true,  false] },
-                    { label: "Multi-page sites",    vals: [false, true,  true,  true]  },
-                    { label: "Custom domain",       vals: [true,  true,  true,  true]  },
-                    { label: "AMP mobile pages",    vals: [false, false, false, true]  },
-                    { label: "A/B testing",         vals: [false, false, false, true]  },
-                    { label: "Built-in CRM",        vals: [false, true,  false, false] },
-                    { label: "Blog / SEO tools",    vals: [false, false, true,  false] },
-                    { label: "No-code editor",      vals: [true,  true,  true,  true]  },
-                    { label: "Agency workspaces",   vals: [false, false, false, true]  },
-                  ].map((row, i) => (
-                    <tr key={i} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors">
-                      <td className="py-3 pr-4 text-[#3d4b44] text-xs font-medium leading-snug">
-                        {row.label}
-                        {row.note && <span className="block text-[#9aa39c] text-[10px] mt-0.5">{row.note}</span>}
-                      </td>
-                      {row.vals.map((v, j) => (
-                        <td key={j} className="py-3 px-3"><TableCheck yes={v} /></td>
-                      ))}
-                    </tr>
-                  ))}
-                  <tr className="border-t border-[#e5e9e7]">
-                    <td className="py-3.5 pr-4 text-[#3d4b44] text-xs font-semibold">Starting price</td>
-                    {[
-                      "Free / $9/yr",
-                      "Free gen",
-                      "Free gen",
-                      "14-day trial",
-                    ].map((label, j) => (
-                      <td key={j} className="py-3.5 px-3 text-center text-xs font-bold" style={{ color: CYAN_LT }}>
-                        {label}
-                      </td>
-                    ))}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <FeatureMatrix
+              firstColLabel="Feature"
+              columns={[
+                { name: "Carrd" },
+                { name: "Durable AI" },
+                { name: "Butternut AI" },
+                { name: "Swipe Pages" },
+              ]}
+              rows={[
+                { label: "Free plan / trial", vals: [true,  true,  true,  false], note: "Swipe Pages: 14-day trial" },
+                { label: "AI generation",     vals: [false, true,  true,  false] },
+                { label: "Multi-page sites",  vals: [false, true,  true,  true]  },
+                { label: "Custom domain",     vals: [true,  true,  true,  true]  },
+                { label: "AMP mobile pages",  vals: [false, false, false, true]  },
+                { label: "A/B testing",       vals: [false, false, false, true]  },
+                { label: "Built-in CRM",      vals: [false, true,  false, false] },
+                { label: "Blog / SEO tools",  vals: [false, false, true,  false] },
+                { label: "No-code editor",    vals: [true,  true,  true,  true]  },
+                { label: "Agency workspaces", vals: [false, false, false, true]  },
+                { label: "Starting price",    vals: ["Free / $9/yr", "Free gen", "Free gen", "14-day trial"] },
+              ]}
+            />
           </section>
 
           {/* ── FAQ ──────────────────────────────────────────────────────────── */}

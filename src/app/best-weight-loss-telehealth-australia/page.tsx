@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
+import FeatureMatrix from "@/components/consumer/FeatureMatrix";
 import { MOSHY_OFFER } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
@@ -124,11 +125,6 @@ function Con({ text }: { text: string }) {
   );
 }
 
-function TableCheck({ yes }: { yes: boolean }) {
-  return yes
-    ? <CheckCircle2 className="h-4 w-4 mx-auto" style={{ color: CYAN_LT }} />
-    : <span className="block text-center text-[#9aa39c] text-xs">—</span>;
-}
 
 // ─── Platform card ────────────────────────────────────────────────────────────
 
@@ -431,46 +427,27 @@ export default function BestWeightLossTelehealthPage() {
               Platform Comparison: Key Criteria
             </h2>
 
-            <div className="overflow-x-auto -mx-2 px-2">
-              <table className="w-full min-w-[520px] text-sm">
-                <thead>
-                  <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-4 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-44">Criteria</th>
-                    {["Moshy", "Juniper", "Better Being"].map((h) => (
-                      <th key={h} className="pb-4 px-3 text-center font-bold text-[#3d4b44] text-xs">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { label: "Available in Australia",         vals: [true,  true,  true]  },
-                    { label: "Men's programme",           vals: [true,  false, true]  },
-                    { label: "Women's programme",         vals: [false, true,  true]  },
-                    { label: "GLP-1 medication access",        vals: [true,  true,  false], note: "Subject to individual clinical eligibility" },
-                    { label: "Online eligibility process",     vals: [true,  true,  true]  },
-                    { label: "No in-person GP required",       vals: [true,  true,  true]  },
-                    { label: "Health coaching included",       vals: [false, true,  true]  },
-                    { label: "Home delivery",                  vals: [true,  true,  false] },
-                    { label: "Lifestyle programme",            vals: [false, true,  true]  },
-                    { label: "Community discussion",           vals: [true,  true,  false] },
-                  ].map((row, i) => (
-                    <tr key={i} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors">
-                      <td className="py-3 pr-4 text-[#3d4b44] text-xs font-medium leading-snug">
-                        {row.label}
-                        {row.note && <span className="block text-[#9aa39c] text-[10px] mt-0.5">{row.note}</span>}
-                      </td>
-                      {row.vals.map((v, j) => (
-                        <td key={j} className="py-3 px-3"><TableCheck yes={v} /></td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <p className="text-[#9aa39c] text-[10px] mt-4">
-              Feature availability is based on publicly available information at time of publication and may change. This page does not constitute medical advice.
-            </p>
+            <FeatureMatrix
+              firstColLabel="Criteria"
+              columns={[
+                { name: "Moshy", highlight: true, badge: "Most popular" },
+                { name: "Juniper" },
+                { name: "Better Being" },
+              ]}
+              rows={[
+                { label: "Available in Australia",     vals: [true,  true,  true]  },
+                { label: "Men's programme",            vals: [true,  false, true]  },
+                { label: "Women's programme",          vals: [false, true,  true]  },
+                { label: "GLP-1 medication access",    vals: [true,  true,  false], note: "Subject to individual clinical eligibility" },
+                { label: "Online eligibility process", vals: [true,  true,  true]  },
+                { label: "No in-person GP required",   vals: [true,  true,  true]  },
+                { label: "Health coaching included",   vals: [false, true,  true]  },
+                { label: "Home delivery",              vals: [true,  true,  false] },
+                { label: "Lifestyle programme",        vals: [false, true,  true]  },
+                { label: "Community discussion",       vals: [true,  true,  false] },
+              ]}
+              footnote="Feature availability is based on publicly available information at time of publication and may change. This page does not constitute medical advice."
+            />
           </section>
 
           {/* ── Verdict ──────────────────────────────────────────────────────── */}

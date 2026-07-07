@@ -3,6 +3,7 @@ import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FeatureMatrix from "@/components/consumer/FeatureMatrix";
 
 export const metadata = generateSEOMetadata(seoConfig.bestPeptideSupplier);
 
@@ -148,11 +149,6 @@ function Con({ text }: { text: string }) {
   );
 }
 
-function TableCheck({ yes }: { yes: boolean }) {
-  return yes
-    ? <CheckCircle2 className="h-4 w-4 mx-auto" style={{ color: CYAN_LT }} />
-    : <span className="block text-center text-[#9aa39c] text-xs">—</span>;
-}
 
 // ─── Supplier card ────────────────────────────────────────────────────────────
 
@@ -465,55 +461,29 @@ export default function BestPeptideSupplierPage() {
               Supplier Comparison: Research Peptide Criteria
             </h2>
 
-            <div className="overflow-x-auto -mx-2 px-2">
-              <table className="w-full min-w-[520px] text-sm">
-                <thead>
-                  <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-4 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-44">Criteria</th>
-                    {["Apollo Peptide Sciences", "Ascension Peptides", "BioPeptiTech"].map((h) => (
-                      <th key={h} className="pb-4 px-3 text-center font-bold text-[#3d4b44] text-xs">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { label: "Certificate of Analysis",           vals: [true,  true,  true]  },
-                    { label: "Third-party testing",               vals: [true,  true,  false] },
-                    { label: "Semaglutide available",             vals: [true,  false, false] },
-                    { label: "CJC-1295 available",                vals: [true,  true,  false] },
-                    { label: "GHK-Cu peptide",                    vals: [true,  false, false] },
-                    { label: "Retatrutide available",             vals: [true,  false, false] },
-                    { label: "Anti-aging / longevity compounds",  vals: [true,  true,  true]  },
-                    { label: "Metabolic research peptides",       vals: [true,  true,  true]  },
-                    { label: "Hormone signalling peptides",       vals: [true,  true,  true]  },
-                    { label: "Frequent peptides sales",           vals: [false, false, true]  },
-                    { label: "Referral link discount",            vals: [true,  true,  true]  },
-                    { label: "Community reputation",             vals: [true,  true,  false] },
-                  ].map((row, i) => (
-                    <tr key={i} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors">
-                      <td className="py-3 pr-4 text-[#3d4b44] text-xs font-medium leading-snug">
-                        {row.label}
-                      </td>
-                      {row.vals.map((v, j) => (
-                        <td key={j} className="py-3 px-3"><TableCheck yes={v} /></td>
-                      ))}
-                    </tr>
-                  ))}
-                  <tr className="border-t border-[#e5e9e7]">
-                    <td className="py-3.5 pr-4 text-[#3d4b44] text-xs font-semibold">Current deal</td>
-                    {[
-                      "Referral link",
-                      "Referral link",
-                      "Frequent sale",
-                    ].map((label, j) => (
-                      <td key={j} className="py-3.5 px-3 text-center text-xs font-bold" style={{ color: CYAN_LT }}>
-                        {label}
-                      </td>
-                    ))}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <FeatureMatrix
+              firstColLabel="Criteria"
+              columns={[
+                { name: "Apollo Peptide Sciences" },
+                { name: "Ascension Peptides" },
+                { name: "BioPeptiTech" },
+              ]}
+              rows={[
+                { label: "Certificate of Analysis",          vals: [true,  true,  true]  },
+                { label: "Third-party testing",              vals: [true,  true,  false] },
+                { label: "Semaglutide available",            vals: [true,  false, false] },
+                { label: "CJC-1295 available",               vals: [true,  true,  false] },
+                { label: "GHK-Cu peptide",                   vals: [true,  false, false] },
+                { label: "Retatrutide available",            vals: [true,  false, false] },
+                { label: "Anti-aging / longevity compounds", vals: [true,  true,  true]  },
+                { label: "Metabolic research peptides",      vals: [true,  true,  true]  },
+                { label: "Hormone signalling peptides",      vals: [true,  true,  true]  },
+                { label: "Frequent peptides sales",          vals: [false, false, true]  },
+                { label: "Referral link discount",           vals: [true,  true,  true]  },
+                { label: "Community reputation",             vals: [true,  true,  false] },
+                { label: "Current deal",                     vals: ["Referral link", "Referral link", "Frequent sale"] },
+              ]}
+            />
 
             <p className="text-[#9aa39c] text-[10px] mt-4">
               Feature availability is based on publicly available catalogue information at time of publication and may change. All compounds are for laboratory research purposes only.
