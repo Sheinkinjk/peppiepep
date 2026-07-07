@@ -64,6 +64,10 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // Affiliate marketing
   { title: "Affiliate earnings calculator", href: "/affiliate-earnings-calculator", category: "Affiliate marketing", kind: "Guide", keywords: "affiliate earnings income calculator how much make commission estimate tool" },
+  { title: "Best affiliate programs in Australia", href: "/affiliate-programs-australia", category: "Affiliate marketing", kind: "Guide", keywords: "best affiliate programs australia by category highest paying recurring" },
+  { title: "Highest-paying affiliate programs", href: "/high-paying-affiliate-programs", category: "Affiliate marketing", kind: "Guide", keywords: "highest paying high commission affiliate programs big payout" },
+  { title: "Best recurring affiliate programs", href: "/recurring-affiliate-programs", category: "Affiliate marketing", kind: "Guide", keywords: "recurring commission monthly affiliate programs saas subscription passive" },
+  { title: "How to start affiliate marketing in Australia", href: "/how-to-start-affiliate-marketing-australia", category: "Affiliate marketing", kind: "Guide", keywords: "how to start affiliate marketing australia beginner guide from zero" },
 
   // Prediction markets
   { title: "Polymarket: sign up & trade", href: "/polymarket", category: "Prediction markets", kind: "Guide", keywords: "polymarket what is how to use sign up prediction markets us international hub start" },
@@ -78,6 +82,24 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Apollo Peptide Sciences", href: "/apollopeptides", category: "Research peptides", kind: "Guide", keywords: "apollo peptides research" },
   { title: "Ascension Peptides", href: "/ascensionpeptides", category: "Research peptides", kind: "Guide", keywords: "ascension peptides research" },
   { title: "BioPeptiTech", href: "/biopeptitech", category: "Research peptides", kind: "Guide", keywords: "biopeptitech peptides research" },
+  { title: "Apollo vs Ascension", href: "/apollo-vs-ascension", category: "Research peptides", kind: "Guide", keywords: "apollo vs ascension peptides compare" },
+  { title: "Apollo vs BioPeptiTech", href: "/apollo-vs-biopeptitech", category: "Research peptides", kind: "Guide", keywords: "apollo vs biopeptitech peptides compare" },
+  { title: "Ascension vs BioPeptiTech", href: "/ascension-vs-biopeptitech", category: "Research peptides", kind: "Guide", keywords: "ascension vs biopeptitech peptides compare" },
+
+  // Weight loss (guides + head-to-heads not yet indexed)
+  { title: "Weight-loss telehealth cost, explained", href: "/weight-loss-telehealth-cost-australia", category: "Weight loss", kind: "Guide", keywords: "cost price how much weight loss telehealth australia subscription" },
+  { title: "Cheapest weight-loss telehealth", href: "/cheapest-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "cheapest affordable low cost weight loss telehealth australia" },
+  { title: "Weight-loss injections in Australia", href: "/weight-loss-injections-australia", category: "Weight loss", kind: "Guide", keywords: "weight loss injections glp-1 telehealth australia how to access" },
+  { title: "GLP-1 weight loss in Australia", href: "/glp-1-weight-loss-australia", category: "Weight loss", kind: "Guide", keywords: "glp-1 weight loss australia telehealth access information" },
+  { title: "Online weight-loss doctor in Australia", href: "/online-weight-loss-doctor-australia", category: "Weight loss", kind: "Guide", keywords: "online weight loss doctor practitioner assessment australia" },
+  { title: "Moshy vs Pilot", href: "/moshy-vs-pilot", category: "Weight loss", kind: "Guide", keywords: "moshy vs pilot weight loss telehealth compare price model" },
+
+  // Hair loss head-to-head
+  { title: "Mosh vs Dense", href: "/mosh-vs-dense", category: "Hair loss", kind: "Guide", keywords: "mosh vs dense hair loss prescription topical compare" },
+
+  // Software head-to-heads
+  { title: "Carrd vs Butternut", href: "/carrd-vs-butternut", category: "Software", kind: "Guide", keywords: "carrd vs butternut website builder compare" },
+  { title: "Durable vs Butternut", href: "/durable-vs-butternut", category: "Software", kind: "Guide", keywords: "durable vs butternut ai website builder compare" },
 ];
 
 export function searchEntries(query: string, limit = 7): SearchEntry[] {

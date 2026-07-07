@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
+import RelatedGuides from "@/components/consumer/RelatedGuides";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import { CATALOG, getVertical, type Provider } from "@/lib/catalog/catalog";
 
@@ -167,6 +168,12 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
             <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">how we research</Link>.
           </p>
         </section>
+
+        {v.relatedCategory && (
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <RelatedGuides category={v.relatedCategory} currentHref={`/compare/${v.slug}`} limit={6} />
+          </div>
+        )}
       </main>
     </ConsumerShell>
   );

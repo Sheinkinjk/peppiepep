@@ -39,6 +39,8 @@ export type Vertical = {
   /** Optional info/compliance note shown near the top. */
   note?: string;
   roundupHref?: { href: string; label: string };
+  /** search-index category for the auto-generated related-guides block. */
+  relatedCategory?: string;
   providers: Provider[];
   faqs: { q: string; a: string }[];
 };
@@ -63,6 +65,7 @@ export const CATALOG: Vertical[] = [
       "compare website builders",
     ],
     roundupHref: { href: "/best-website-builder", label: "Read the full head-to-head comparison" },
+    relatedCategory: "Software",
     providers: [
       {
         name: "Carrd",
@@ -151,6 +154,7 @@ export const CATALOG: Vertical[] = [
       "substack alternative",
     ],
     roundupHref: { href: "/best-newsletter-platform", label: "Read the full beehiiv vs Substack vs ConvertKit comparison" },
+    relatedCategory: "Creator tools",
     providers: [
       {
         name: "beehiiv",
