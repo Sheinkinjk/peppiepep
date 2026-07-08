@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
@@ -33,10 +33,25 @@ const guides = [
   { href: "/best-hair-loss-treatment-australia", cat: "Hair loss", title: "The best hair-loss treatment in Australia" },
 ];
 
-const principles = [
-  "A brand cannot pay to rank higher, join a list, or soften a criticism.",
-  "Every guide is written and edited by a person who read the fine print.",
-  "Where a link earns a commission, the page says so plainly.",
+// A sample of the brands we've reviewed, shown as coverage (not "partners"):
+// breadth of what we cover, with the commission disclosed on each page.
+const servicesLogos = [
+  { logo: "moshy", name: "Moshy" },
+  { logo: "mosh", name: "Mosh" },
+  { logo: "beehiiv", name: "beehiiv" },
+  { logo: "carrd", name: "Carrd" },
+  { logo: "durable", name: "Durable" },
+  { logo: "swipepages", name: "Swipe Pages" },
+  { logo: "gohighlevel", name: "GoHighLevel" },
+  { logo: "aisdr", name: "AiSDR" },
+  { logo: "replyio", name: "Reply.io" },
+  { logo: "fullenrich", name: "FullEnrich" },
+  { logo: "leadpages", name: "Leadpages" },
+  { logo: "brevo", name: "Brevo" },
+  { logo: "kit", name: "Kit" },
+  { logo: "employmenthero", name: "Employment Hero" },
+  { logo: "superfiliate", name: "Superfiliate" },
+  { logo: "alidrop", name: "AliDrop" },
 ];
 
 const itemListSchema = {
@@ -193,27 +208,24 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Why trust us (editorial) ── */}
-        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <div>
-              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Why trust a site that earns commissions?</h2>
-              <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
-                Fair question. Some links here pay us if you sign up. That model only works long-term if the
-                recommendations stay honest, so these rules aren&apos;t a legal formality, they&apos;re the business model.
-              </p>
-              <p className="mt-4 text-sm text-[#6e7b74]">
-                The full standards live at <Link href="/how-we-research" className="nw-link">how we research</Link>.
-              </p>
-            </div>
-            <ul className="space-y-5">
-              {principles.map((p, i) => (
-                <li key={i} className="flex gap-4 border-t border-[#e5e9e7] pt-5 first:border-t-0 first:pt-0">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#0a7c42]" aria-hidden="true" />
-                  <p className="text-[15.5px] leading-relaxed text-[#2b362f]">{p}</p>
-                </li>
+        {/* ── The services we compare ── */}
+        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+          <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
+            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">The services we compare</h2>
+            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#6e7b74]">
+              A sample of the health services, software and tools we&apos;ve reviewed. We cover them independently, and
+              disclose any commission on the page.
+            </p>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {servicesLogos.map((s) => (
+                <span key={s.logo} className="flex items-center gap-3 rounded-xl border border-[#e5e9e7] bg-white px-3.5 py-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
+                    <Image src={`/logos/${s.logo}.png`} alt="" width={22} height={22} className="h-5 w-5 object-contain" />
+                  </span>
+                  <span className="truncate text-[13px] font-semibold text-[#3d4b44]">{s.name}</span>
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 

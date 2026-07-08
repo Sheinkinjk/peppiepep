@@ -98,6 +98,5 @@
 - [Growth services](https://referlabs.com.au/services).
 
 ## Company
-- [About Refer Labs](https://referlabs.com.au/about)
 - [How we work](https://referlabs.com.au/how-we-research)
 - [Contact](https://referlabs.com.au/contact)

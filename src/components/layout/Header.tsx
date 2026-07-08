@@ -25,9 +25,6 @@ export default function Header() {
         <Link className="rounded-full px-3 py-1.5 hover:bg-cyan-50 hover:text-slate-900" href="/roi-calculator">
           ROI Calculator
         </Link>
-        <Link className="rounded-full px-3 py-1.5 hover:bg-cyan-50 hover:text-slate-900" href="/about">
-          About
-        </Link>
         <Link
           href="/login"
           className="inline-flex items-center gap-2 rounded-full bg-[#0AA7B5] px-4 py-2 text-sm font-semibold text-white shadow-md shadow-[#0AA7B5]/30 transition hover:-translate-y-0.5 hover:bg-[#00838F]"

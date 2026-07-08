@@ -14,7 +14,6 @@ const STANDALONE_ROUTES = [
   "/weight-loss",
   "/hair-loss",
   "/for-business",
-  "/about",
   "/compare",
   // Brand / affiliate review pages
   "/moshy",
