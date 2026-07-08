@@ -4,6 +4,8 @@ import { ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
+import VerifiedStamp from "@/components/consumer/VerifiedStamp";
+import { MOSHY_OFFER } from "@/lib/offers";
 import { SITE_URL } from "@/lib/seo";
 
 // Editors' picks lead with the real brand logo, the single biggest thing that
@@ -15,13 +17,13 @@ const picks = [
 ];
 
 const categories = [
-  { href: "/weight-loss", title: "Weight loss & telehealth", desc: "Online weight-management, sorted into honest pathways.", brands: "Moshy · Juniper · Pilot", count: "11 guides" },
-  { href: "/hair-loss", title: "Hair loss treatment", desc: "Clinical telehealth versus topical products, compared.", brands: "Mosh · Dense", count: "4 guides" },
-  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "Online clinics for weight, hair and everyday health.", brands: "Mosh · Moshy", count: "3 guides" },
-  { href: "/best-peptide-supplier", title: "Research peptides", desc: "Australian and global suppliers, on trust and quality.", brands: "Apollo · Ascension", count: "4 reviews" },
-  { href: "/compare/website-builders", title: "Website builders", desc: "AI builders, one-page tools and landing specialists.", brands: "Carrd · Durable · Swipe Pages", count: "5 tools" },
-  { href: "/compare/newsletter-platforms", title: "Newsletter platforms", desc: "Where to build an email audience, and the fine print.", brands: "beehiiv · Substack · Kit", count: "3 tools" },
-  { href: "/best-ai-sales-tools", title: "AI sales & automation", desc: "AI CRMs and outbound tools that do the selling for you.", brands: "GoHighLevel · AiSDR", count: "3 tools" },
+  { href: "/weight-loss", title: "Weight loss & telehealth", desc: "Online weight-management, sorted into honest pathways.", brands: "Moshy, Juniper & Pilot", logos: ["moshy", "pilot"], count: "11 guides" },
+  { href: "/hair-loss", title: "Hair loss treatment", desc: "Clinical telehealth versus topical products, compared.", brands: "Mosh & Dense", logos: ["mosh"], count: "4 guides" },
+  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "Online clinics for weight, hair and everyday health.", brands: "Mosh & Moshy", logos: ["mosh", "moshy"], count: "3 guides" },
+  { href: "/best-peptide-supplier", title: "Research peptides", desc: "Australian and global suppliers, on trust and quality.", brands: "Apollo & Ascension", logos: [], count: "4 reviews" },
+  { href: "/compare/website-builders", title: "Website builders", desc: "AI builders, one-page tools and landing specialists.", brands: "Carrd, Durable & Swipe Pages", logos: ["carrd", "durable", "swipepages"], count: "5 tools" },
+  { href: "/compare/newsletter-platforms", title: "Newsletter platforms", desc: "Where to build an email audience, and the fine print.", brands: "beehiiv, Substack & Kit", logos: ["beehiiv", "kit"], count: "3 tools" },
+  { href: "/best-ai-sales-tools", title: "AI sales & automation", desc: "AI CRMs and outbound tools that do the selling for you.", brands: "GoHighLevel & AiSDR", logos: ["gohighlevel", "aisdr"], count: "3 tools" },
 ];
 
 const guides = [
@@ -60,6 +62,9 @@ export default function HomePage() {
         <section className="relative overflow-hidden border-b border-[#e3e7e2] bg-[radial-gradient(115%_130%_at_88%_-15%,#e9f4ed_0%,rgba(233,244,237,0.35)_34%,transparent_56%)]">
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
             <div>
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#e3e7e2] bg-white px-3.5 py-1.5 text-[12px] font-semibold text-[#3d4b44] shadow-[0_2px_10px_-6px_rgba(16,37,27,0.25)]">
+                <ShieldCheck className="h-3.5 w-3.5 text-[#0a7c42]" aria-hidden="true" /> Independent comparisons for Australians
+              </div>
               <h1 className="max-w-xl text-[2.6rem] font-black leading-[1.02] tracking-[-0.035em] text-[#10251b] sm:text-[3.6rem]">
                 Big decisions,<br />compared properly.
               </h1>
@@ -89,17 +94,16 @@ export default function HomePage() {
             {/* Featured pick, real logo, editorial "cover story" */}
             <div className="lg:pl-6">
               <Link href="/moshy-review" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Editor&apos;s pick</span>
+                  <VerifiedStamp date={MOSHY_OFFER.verified} label="Offer verified" />
+                </div>
                 <div className="flex items-center gap-4">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
                     <Image src="/logos/moshy.png" alt="Moshy logo" width={48} height={48} className="h-11 w-11 object-contain" />
                   </span>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Moshy</span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f5ee] px-2.5 py-0.5 text-[10px] font-bold text-[#0a7c42]">
-                        Most popular
-                      </span>
-                    </div>
+                    <span className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Moshy</span>
                     <p className="text-[13px] text-[#6e7b74]">Weight-loss telehealth</p>
                   </div>
                 </div>
@@ -171,20 +175,43 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Browse by category (editorial list, no icon tiles) ── */}
+        {/* ── Browse by category (premium cards with brand-logo clusters) ── */}
         <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Browse by category</h2>
-          <div className="mt-8 grid gap-x-14 gap-y-1 sm:grid-cols-2">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Explore</p>
+              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Browse by category</h2>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c) => (
-              <Link key={c.href} href={c.href} className="group flex items-start justify-between gap-6 border-t border-[#e5e9e7] py-5 first:border-t-0 sm:[&:nth-child(2)]:border-t-0">
-                <div>
-                  <h3 className="text-[17px] font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{c.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-[#6e7b74]">{c.desc}</p>
-                  <p className="mt-2 text-[12.5px] font-medium text-[#9aa39c]">{c.brands}</p>
-                </div>
-                <div className="flex shrink-0 flex-col items-end gap-2 pt-0.5">
+              <Link
+                key={c.href}
+                href={c.href}
+                className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_20px_44px_-24px_rgba(16,37,27,0.3)]"
+              >
+                <div className="flex items-center justify-between">
+                  {c.logos.length > 0 ? (
+                    <div className="flex -space-x-2">
+                      {c.logos.map((l) => (
+                        <span
+                          key={l}
+                          className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white ring-2 ring-white"
+                        >
+                          <Image src={`/logos/${l}.png`} alt="" width={22} height={22} className="h-5 w-5 object-contain" />
+                        </span>
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="h-9" />
+                  )}
                   <span className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39c]">{c.count}</span>
-                  <ArrowUpRight className="h-5 w-5 text-[#cdd5cf] transition-colors group-hover:text-[#0a7c42]" />
+                </div>
+                <h3 className="mt-4 text-[17px] font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{c.title}</h3>
+                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-[#6e7b74]">{c.desc}</p>
+                <div className="mt-4 flex items-center justify-between border-t border-[#eef1ef] pt-3.5">
+                  <span className="text-[12.5px] font-medium text-[#9aa39c]">{c.brands}</span>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#cdd5cf] transition-colors group-hover:text-[#0a7c42]" />
                 </div>
               </Link>
             ))}
