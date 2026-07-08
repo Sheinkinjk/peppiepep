@@ -4,11 +4,9 @@ import { ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
-import VerifiedStamp from "@/components/consumer/VerifiedStamp";
-import { MOSHY_OFFER } from "@/lib/offers";
 import { SITE_URL } from "@/lib/seo";
 
-// Editors' picks lead with the real brand logo, the single biggest thing that
+// Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
   { logo: "moshy", name: "Moshy", cat: "Weight loss", verdict: "A clinically-led, fully-online weight-loss telehealth program, open to anyone eligible. New customers can get $120 off their first treatment.", href: "/moshy-review" },
@@ -41,10 +39,6 @@ const principles = [
   "Where a link earns a commission, the page says so plainly.",
 ];
 
-// Real brands we've reviewed, shown as an authority strip under the hero. Using
-// the actual logos is the single biggest thing that reads "real publication".
-const trustLogos = ["moshy", "beehiiv", "carrd", "gohighlevel", "leadpages", "aisdr", "brevo", "superfiliate"];
-
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -62,9 +56,6 @@ export default function HomePage() {
         <section className="relative overflow-hidden border-b border-[#e3e7e2] bg-[radial-gradient(115%_130%_at_88%_-15%,#e9f4ed_0%,rgba(233,244,237,0.35)_34%,transparent_56%)]">
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
             <div>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#e3e7e2] bg-white px-3.5 py-1.5 text-[12px] font-semibold text-[#3d4b44] shadow-[0_2px_10px_-6px_rgba(16,37,27,0.25)]">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#0a7c42]" aria-hidden="true" /> Independent comparisons for Australians
-              </div>
               <h1 className="max-w-xl text-[2.6rem] font-black leading-[1.02] tracking-[-0.035em] text-[#10251b] sm:text-[3.6rem]">
                 Big decisions,<br />compared properly.
               </h1>
@@ -94,10 +85,6 @@ export default function HomePage() {
             {/* Featured pick, real logo, editorial "cover story" */}
             <div className="lg:pl-6">
               <Link href="/moshy-review" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Editor&apos;s pick</span>
-                  <VerifiedStamp date={MOSHY_OFFER.verified} label="Offer verified" />
-                </div>
                 <div className="flex items-center gap-4">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
                     <Image src="/logos/moshy.png" alt="Moshy logo" width={48} height={48} className="h-11 w-11 object-contain" />
@@ -123,33 +110,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Authority strip: real brands we compare ── */}
-        <section className="border-b border-[#e5e9e7] bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-9 sm:px-8 sm:py-10">
-            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9aa39c]">
-              Independently reviewing the services and tools Australians use
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
-              {trustLogos.map((l) => (
-                <span
-                  key={l}
-                  className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white shadow-[0_2px_10px_-6px_rgba(16,37,27,0.25)] sm:h-[52px] sm:w-[52px]"
-                >
-                  <Image src={`/logos/${l}.png`} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── This month's top picks (real logos) ── */}
         <section className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
             <div className="mb-8 flex items-end justify-between gap-4">
-              <div>
-                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Editors&apos; picks</p>
-                <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">What we&apos;d choose this month</h2>
-              </div>
+              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">This month&apos;s top picks</h2>
               <Link href="/guides" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
                 All guides <ArrowRight className="h-3.5 w-3.5" />
               </Link>
@@ -177,12 +142,7 @@ export default function HomePage() {
 
         {/* ── Browse by category (premium cards with brand-logo clusters) ── */}
         <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
-              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Explore</p>
-              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Browse by category</h2>
-            </div>
-          </div>
+          <h2 className="mb-8 text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Browse by category</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c) => (
               <Link
