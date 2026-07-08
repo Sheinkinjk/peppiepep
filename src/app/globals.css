@@ -960,3 +960,9 @@ main > section:nth-child(8) { animation-delay: 0.56s; }
 .nw-rise-2 { animation-delay: 0.1s; }
 .nw-rise-3 { animation-delay: 0.15s; }
 @media (prefers-reduced-motion: reduce) { .nw-rise { animation: none; opacity: 1; transform: none; } }
+
+/* ── Logo marquee (right-to-left, seamless via duplicated track) ── */
+@keyframes nw-marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+.animate-marquee { animation: nw-marquee 38s linear infinite; will-change: transform; }
+.marquee-row:hover .animate-marquee { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .animate-marquee { animation: none; } }

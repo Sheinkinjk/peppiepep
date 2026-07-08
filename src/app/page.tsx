@@ -136,7 +136,7 @@ export default function HomePage() {
             </div>
             <div className="grid gap-5 sm:grid-cols-3">
               {picks.map((p) => (
-                <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_20px_44px_-24px_rgba(16,37,27,0.3)]">
+                <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-26px_rgba(14,124,66,0.45)]">
                   <div className="flex items-center justify-between">
                     <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
                       <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
@@ -155,41 +155,77 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Browse by category (premium cards with brand-logo clusters) ── */}
+        {/* ── The services we compare (right-to-left logo marquee) ── */}
+        <section className="border-b border-[#e5e9e7] bg-white py-7 sm:py-8">
+          <p className="mb-5 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9aa39c]">
+            The services we compare
+          </p>
+          <div className="marquee-row relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_7%,#000_93%,transparent)]">
+            {[0, 1].map((dup) => (
+              <div key={dup} aria-hidden={dup === 1} className="flex shrink-0 animate-marquee items-center gap-12 pr-12">
+                {servicesLogos.map((s) => (
+                  <Image
+                    key={s.logo}
+                    src={`/logos/${s.logo}.png`}
+                    alt={dup === 0 ? s.name : ""}
+                    width={26}
+                    height={26}
+                    className="h-6 w-6 shrink-0 object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Browse by category (bento layout, featured cards glow) ── */}
         <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
           <h2 className="mb-8 text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Browse by category</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((c) => (
-              <Link
-                key={c.href}
-                href={c.href}
-                className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_20px_44px_-24px_rgba(16,37,27,0.3)]"
-              >
-                <div className="flex items-center justify-between">
-                  {c.logos.length > 0 ? (
-                    <div className="flex -space-x-2">
-                      {c.logos.map((l) => (
-                        <span
-                          key={l}
-                          className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white ring-2 ring-white"
-                        >
-                          <Image src={`/logos/${l}.png`} alt="" width={22} height={22} className="h-5 w-5 object-contain" />
-                        </span>
-                      ))}
-                    </div>
-                  ) : (
-                    <span className="h-9" />
-                  )}
-                  <span className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39c]">{c.count}</span>
-                </div>
-                <h3 className="mt-4 text-[17px] font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{c.title}</h3>
-                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-[#6e7b74]">{c.desc}</p>
-                <div className="mt-4 flex items-center justify-between border-t border-[#eef1ef] pt-3.5">
-                  <span className="text-[12.5px] font-medium text-[#9aa39c]">{c.brands}</span>
-                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#cdd5cf] transition-colors group-hover:text-[#0a7c42]" />
-                </div>
-              </Link>
-            ))}
+            {categories.map((c, i) => {
+              const featured = i === 0 || i === categories.length - 1;
+              return (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className={`group relative flex flex-col overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_24px_60px_-28px_rgba(14,124,66,0.5)] ${
+                    featured
+                      ? "bg-[radial-gradient(130%_120%_at_100%_0%,#e9f4ed_0%,transparent_58%)] lg:col-span-2"
+                      : ""
+                  }`}
+                >
+                  <div className="relative flex items-center justify-between">
+                    {c.logos.length > 0 ? (
+                      <div className="flex -space-x-2">
+                        {c.logos.map((l) => (
+                          <span
+                            key={l}
+                            className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white ring-2 ring-white"
+                          >
+                            <Image src={`/logos/${l}.png`} alt="" width={22} height={22} className="h-5 w-5 object-contain" />
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <span className="h-9" />
+                    )}
+                    <span className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39c]">{c.count}</span>
+                  </div>
+                  <h3
+                    className={`relative mt-4 font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42] ${
+                      featured ? "text-xl sm:text-2xl" : "text-[17px]"
+                    }`}
+                  >
+                    {c.title}
+                  </h3>
+                  <p className="relative mt-1.5 flex-1 text-sm leading-relaxed text-[#6e7b74]">{c.desc}</p>
+                  <div className="relative mt-4 flex items-center justify-between border-t border-[#eef1ef] pt-3.5">
+                    <span className="text-[12.5px] font-medium text-[#9aa39c]">{c.brands}</span>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-[#cdd5cf] transition-colors group-hover:text-[#0a7c42]" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
 
@@ -208,27 +244,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── The services we compare ── */}
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
-          <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
-            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">The services we compare</h2>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#6e7b74]">
-              A sample of the health services, software and tools we&apos;ve reviewed. We cover them independently, and
-              disclose any commission on the page.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {servicesLogos.map((s) => (
-                <span key={s.logo} className="flex items-center gap-3 rounded-xl border border-[#e5e9e7] bg-white px-3.5 py-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
-                    <Image src={`/logos/${s.logo}.png`} alt="" width={22} height={22} className="h-5 w-5 object-contain" />
-                  </span>
-                  <span className="truncate text-[13px] font-semibold text-[#3d4b44]">{s.name}</span>
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── Newsletter ── */}
         <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
           <NewsletterSignup variant="band" source="homepage" />
@@ -237,6 +252,8 @@ export default function HomePage() {
         {/* ── For business ── */}
         <section className="mx-auto max-w-6xl px-5 pb-24 sm:px-8">
           <div className="relative overflow-hidden rounded-3xl bg-[#10251b] px-7 py-11 sm:px-12 sm:py-14">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#0a7c42] opacity-30 blur-[90px]" />
+            <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-16 h-64 w-64 rounded-full bg-[#0a7c42] opacity-20 blur-[100px]" />
             <div className="relative flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
               <div className="max-w-xl">
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#5fd39a]">For business</p>
