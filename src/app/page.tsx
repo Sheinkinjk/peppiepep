@@ -174,15 +174,18 @@ export default function HomePage() {
                     data-cta={`home-marquee-${s.logo}`}
                     tabIndex={dup === 1 ? -1 : undefined}
                     aria-label={dup === 0 ? `${s.name} (opens in a new tab)` : undefined}
-                    className="shrink-0"
+                    className="group/logo flex shrink-0 flex-col items-center gap-2"
                   >
                     <Image
                       src={`/logos/${s.logo}.png`}
-                      alt={dup === 0 ? s.name : ""}
-                      width={26}
-                      height={26}
-                      className="h-6 w-6 shrink-0 object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="h-7 w-7 object-contain opacity-80 transition duration-300 group-hover/logo:opacity-100"
                     />
+                    <span className="whitespace-nowrap text-[11px] font-semibold text-[#9aa39c] transition-colors group-hover/logo:text-[#10251b]">
+                      {s.name}
+                    </span>
                   </a>
                 ))}
               </div>
