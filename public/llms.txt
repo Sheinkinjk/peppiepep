@@ -17,6 +17,11 @@
 - [For business](https://referlabs.com.au/for-business): Featured partnerships, growth services, and the Referral Growth Blueprint.
 - [AI sales tools compared](https://referlabs.com.au/compare/ai-sales-tools): Category hub sorting AI sales tools by role in the stack (data, outreach, AI SDR, all-in-one).
 - [Research peptide suppliers compared](https://referlabs.com.au/compare/research-peptides): Category hub comparing suppliers on purity and catalogue. Research use only.
+- [Website builders compared](https://referlabs.com.au/compare/website-builders): Category hub for AI builders, one-page tools and landing-page specialists.
+- [Newsletter platforms compared](https://referlabs.com.au/compare/newsletter-platforms): Category hub comparing beehiiv, Substack and Kit by what each is for.
+- [HR & payroll software compared](https://referlabs.com.au/compare/hr-payroll): Employment Hero for Australian/NZ teams vs Gusto for US teams. Availability flagged by region.
+- [Sales & outreach tools compared](https://referlabs.com.au/compare/sales-outreach): Snov.io for budget prospecting + email vs Reply.io for AI multichannel sequences.
+- [Payments & finance tools compared](https://referlabs.com.au/compare/payments): Payoneer for cross-border payments and multi-currency business accounts.
 - [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
 ## Weight loss & telehealth (Australia)
