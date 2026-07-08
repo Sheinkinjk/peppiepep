@@ -39,6 +39,10 @@ const principles = [
   "Where a link earns a commission, the page says so plainly.",
 ];
 
+// Real brands we've reviewed, shown as an authority strip under the hero. Using
+// the actual logos is the single biggest thing that reads "real publication".
+const trustLogos = ["moshy", "beehiiv", "carrd", "gohighlevel", "leadpages", "aisdr", "brevo", "superfiliate"];
+
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -115,11 +119,33 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── Authority strip: real brands we compare ── */}
+        <section className="border-b border-[#e5e9e7] bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-9 sm:px-8 sm:py-10">
+            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9aa39c]">
+              Independently reviewing the services and tools Australians use
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+              {trustLogos.map((l) => (
+                <span
+                  key={l}
+                  className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white shadow-[0_2px_10px_-6px_rgba(16,37,27,0.25)] sm:h-[52px] sm:w-[52px]"
+                >
+                  <Image src={`/logos/${l}.png`} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── This month's top picks (real logos) ── */}
         <section className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
             <div className="mb-8 flex items-end justify-between gap-4">
-              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">This month&apos;s top picks</h2>
+              <div>
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Editors&apos; picks</p>
+                <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">What we&apos;d choose this month</h2>
+              </div>
               <Link href="/guides" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
                 All guides <ArrowRight className="h-3.5 w-3.5" />
               </Link>
