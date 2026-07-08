@@ -88,6 +88,8 @@ const STANDALONE_ROUTES = [
   // Affiliate content hub + editorial standards
   "/guides",
   "/how-we-research",
+  // $799 Blueprint (migrated to the light ConsumerShell theme)
+  "/referral-blueprint",
 ];
 
 export function ChromeGate({ children }: { children: React.ReactNode }) {

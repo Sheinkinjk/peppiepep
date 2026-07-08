@@ -17,6 +17,7 @@ import {
   ToolsMock as SharedToolsMock,
 } from "@/components/blueprint/Mocks";
 import { analytics } from "@/components/Analytics";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 const CYAN  = "#0a7c42";
 const AMBER = "#0a7c42";
@@ -492,6 +493,7 @@ export default function ReferralBlueprintPage() {
   ];
 
   return (
+    <ConsumerShell>
     <div className="relative bg-white text-[#10251b]">
 
       {/* ── STICKY BOTTOM BAR ─────────────────────────────────────────────── */}
@@ -508,7 +510,7 @@ export default function ReferralBlueprintPage() {
       </div>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden border-b border-[#e5e9e7]">
+      <section ref={heroRef} className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 overflow-hidden border-b border-[#e5e9e7]">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(10,124,66,0.06),transparent_55%)]" />
         </div>
@@ -1578,5 +1580,6 @@ export default function ReferralBlueprintPage() {
 
       <div className="h-20 sm:h-0" />
     </div>
+    </ConsumerShell>
   );
 }
