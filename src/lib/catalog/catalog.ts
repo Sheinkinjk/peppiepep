@@ -1,6 +1,6 @@
 import {
   CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL, BEEHIIV_URL,
-  GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL,
+  GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, SNOV_URL,
   APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL,
 } from "@/lib/affiliate-links";
 
@@ -52,7 +52,7 @@ export type Vertical = {
 export const CATALOG: Vertical[] = [
   {
     slug: "website-builders",
-    eyebrow: "Category hub · Software",
+    eyebrow: "Software",
     h1Lead: "Website builders in Australia:",
     h1Accent: "the honest shortlist",
     intro:
@@ -142,7 +142,7 @@ export const CATALOG: Vertical[] = [
   },
   {
     slug: "newsletter-platforms",
-    eyebrow: "Category hub · Creator tools",
+    eyebrow: "Creator tools",
     h1Lead: "Newsletter platforms:",
     h1Accent: "where to build your audience",
     intro:
@@ -212,7 +212,7 @@ export const CATALOG: Vertical[] = [
   },
   {
     slug: "ai-sales-tools",
-    eyebrow: "Category hub · AI & sales",
+    eyebrow: "AI & sales",
     h1Lead: "AI sales tools:",
     h1Accent: "matched to your stack",
     intro:
@@ -283,6 +283,18 @@ export const CATALOG: Vertical[] = [
         reviewHref: "/gohighlevel",
         ctaLabel: "Try GoHighLevel",
       },
+      {
+        name: "Snov.io",
+        bestFor: "Prospecting + outreach on a budget",
+        blurb: "An all-in-one prospecting platform: email finder and verifier, drip email campaigns and a light CRM. A budget-friendly way to combine finding leads and reaching them in one tool.",
+        facts: [
+          { label: "Role", value: "Prospecting + outreach" },
+          { label: "Pricing", value: "Credit-based, free plan (verify)" },
+          { label: "Best for", value: "Solo & small teams" },
+        ],
+        affiliateUrl: SNOV_URL,
+        ctaLabel: "See Snov.io",
+      },
     ],
     faqs: [
       {
@@ -297,7 +309,7 @@ export const CATALOG: Vertical[] = [
   },
   {
     slug: "research-peptides",
-    eyebrow: "Category hub · Research use only",
+    eyebrow: "Research use only",
     h1Lead: "Research peptide suppliers:",
     h1Accent: "purity and catalogue, compared",
     intro:

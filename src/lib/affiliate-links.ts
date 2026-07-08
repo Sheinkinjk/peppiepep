@@ -53,14 +53,18 @@ export const AISDR_URL = "https://partner.aisdr.com/referlabs";
 export const GOHIGHLEVEL_URL = "https://www.gohighlevel.com/?fp_ref=jarred79";
 // Reply.io: AI-first multichannel sales engagement / outbound platform.
 export const REPLY_IO_URL = "https://get.reply.io/ob73cbdov4e9";
+// Snov.io: sales prospecting, email finder and multichannel drip campaigns.
+export const SNOV_URL = "https://snov.io?fp_ref=jarred16";
 
 // ── B2B sales data & enrichment ──────────────────────────────────────────────
 // FullEnrich: waterfall B2B contact enrichment (email + mobile numbers).
 export const FULLENRICH_URL = "https://fullenrich.partnerlinks.io/4o7xslzqzvdw";
 
-// ── HR & payroll (Australia) ─────────────────────────────────────────────────
+// ── HR & payroll ─────────────────────────────────────────────────────────────
 // Employment Hero: Australian HR, payroll and employment platform.
 export const EMPLOYMENT_HERO_URL = "https://try.employmenthero.com/65q9xczaxste";
+// Gusto: US payroll, benefits and HR platform (for US-based teams).
+export const GUSTO_URL = "https://get.gusto.com/6mikl6g7ycs1";
 
 // ── Prediction markets ───────────────────────────────────────────────────────
 // Polymarket: prediction-market referral link. Single source of truth; the
@@ -82,3 +86,7 @@ export const LEADPAGES_URL = "https://try.leadpages.com/sdb15x9a4i98";
 // ── Affiliate / referral software (for brands) ───────────────────────────────
 // Superfiliate: affiliate, referral and creator-program platform for brands (PartnerStack).
 export const SUPERFILIATE_URL = "https://ps.superfiliate.com/tu04vbefl5kh";
+
+// ── Payments / fintech ───────────────────────────────────────────────────────
+// Payoneer: global cross-border payments and business accounts for freelancers/SMBs.
+export const PAYONEER_URL = "https://payoneer557.partnerlinks.io/3qmtzfpag28u";
