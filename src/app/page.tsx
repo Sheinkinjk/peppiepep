@@ -96,7 +96,7 @@ export default function HomePage() {
                         Most popular
                       </span>
                     </div>
-                    <p className="text-[13px] text-[#6e7b74]">Weight-loss telehealth · Australia</p>
+                    <p className="text-[13px] text-[#6e7b74]">Weight-loss telehealth</p>
                   </div>
                 </div>
                 <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
