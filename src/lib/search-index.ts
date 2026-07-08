@@ -14,6 +14,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning finasteride minoxidil scalp" },
   { title: "Website builders", href: "/compare/website-builders", category: "Software", kind: "Category", keywords: "no-code landing page ai website site builder web design maker" },
   { title: "Newsletter platforms", href: "/compare/newsletter-platforms", category: "Creator tools", kind: "Category", keywords: "email marketing email list substack convertkit creator audience" },
+  { title: "HR & payroll software", href: "/compare/hr-payroll", category: "Software", kind: "Category", keywords: "hr payroll employment hero gusto software compare team pay onboarding benefits" },
+  { title: "Sales & outreach tools", href: "/compare/sales-outreach", category: "AI & sales", kind: "Category", keywords: "sales outreach cold email snov.io reply.io prospecting sequences lead generation" },
+  { title: "Payments & finance tools", href: "/compare/payments", category: "Software", kind: "Category", keywords: "payments payoneer cross border get paid freelancer global business account fintech" },
   { title: "All guides & comparisons", href: "/guides", category: "Browse", kind: "Category", keywords: "articles reviews compare everything index" },
 
   // Weight loss

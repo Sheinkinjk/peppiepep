@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, HeartPulse, Sparkles, Stethoscope, FlaskConical, LayoutTemplate, Mail, Bot, Briefcase, Wallet, Send } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/seo";
 import {
   MOSHY_URL, MOSH_HAIR_URL, BEEHIIV_URL, CARRD_URL, DURABLE_URL, SWIPE_PAGES_URL,
   GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, LEADPAGES_URL, BREVO_URL,
-  EMPLOYMENT_HERO_URL, SUPERFILIATE_URL, ALIDROP_URL,
+  EMPLOYMENT_HERO_URL, SUPERFILIATE_URL, ALIDROP_URL, SNOV_URL, GUSTO_URL, PAYONEER_URL,
 } from "@/lib/affiliate-links";
 
 // Top picks lead with the real brand logo, the single biggest thing that
@@ -20,13 +20,16 @@ const picks = [
 ];
 
 const categories = [
-  { href: "/weight-loss", title: "Weight loss & telehealth", desc: "Online weight-management, sorted into honest pathways.", brands: "Moshy, Juniper & Pilot", logos: ["moshy", "pilot"], count: "11 guides" },
-  { href: "/hair-loss", title: "Hair loss treatment", desc: "Clinical telehealth versus topical products, compared.", brands: "Mosh & Dense", logos: ["mosh"], count: "4 guides" },
-  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "Online clinics for weight, hair and everyday health.", brands: "Mosh & Moshy", logos: ["mosh", "moshy"], count: "3 guides" },
-  { href: "/best-peptide-supplier", title: "Research peptides", desc: "Australian and global suppliers, on trust and quality.", brands: "Apollo & Ascension", logos: [], count: "4 reviews" },
-  { href: "/compare/website-builders", title: "Website builders", desc: "AI builders, one-page tools and landing specialists.", brands: "Carrd, Durable & Swipe Pages", logos: ["carrd", "durable", "swipepages"], count: "5 tools" },
-  { href: "/compare/newsletter-platforms", title: "Newsletter platforms", desc: "Where to build an email audience, and the fine print.", brands: "beehiiv, Substack & Kit", logos: ["beehiiv", "kit"], count: "3 tools" },
-  { href: "/best-ai-sales-tools", title: "AI sales & automation", desc: "AI CRMs and outbound tools that do the selling for you.", brands: "GoHighLevel & AiSDR", logos: ["gohighlevel", "aisdr"], count: "3 tools" },
+  { href: "/weight-loss", title: "Weight loss & telehealth", desc: "Online weight-management, sorted into honest pathways.", brands: "Moshy, Juniper & Pilot", icon: HeartPulse, accent: { bg: "#e8f5ee", fg: "#0a7c42" }, count: "11 guides" },
+  { href: "/hair-loss", title: "Hair loss treatment", desc: "Clinical telehealth versus topical products, compared.", brands: "Mosh & Dense", icon: Sparkles, accent: { bg: "#e5f1ef", fg: "#0f766e" }, count: "4 guides" },
+  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "Online clinics for weight, hair and everyday health.", brands: "Mosh & Moshy", icon: Stethoscope, accent: { bg: "#ebeff3", fg: "#4a6274" }, count: "3 guides" },
+  { href: "/best-peptide-supplier", title: "Research peptides", desc: "Australian and global suppliers, on trust and quality.", brands: "Apollo & Ascension", icon: FlaskConical, accent: { bg: "#f1ede6", fg: "#87694a" }, count: "4 reviews" },
+  { href: "/compare/website-builders", title: "Website builders", desc: "AI builders, one-page tools and landing specialists.", brands: "Carrd, Durable & Swipe Pages", icon: LayoutTemplate, accent: { bg: "#eaf0ee", fg: "#3f6b57" }, count: "5 tools" },
+  { href: "/compare/newsletter-platforms", title: "Newsletter platforms", desc: "Where to build an email audience, and the fine print.", brands: "beehiiv, Substack & Kit", icon: Mail, accent: { bg: "#f2eee7", fg: "#8a6d3b" }, count: "3 tools" },
+  { href: "/best-ai-sales-tools", title: "AI sales & automation", desc: "AI reps and all-in-one CRMs that do the selling for you.", brands: "GoHighLevel & AiSDR", icon: Bot, accent: { bg: "#eceef0", fg: "#3d4b52" }, count: "3 tools" },
+  { href: "/compare/hr-payroll", title: "HR & payroll", desc: "Run pay, hiring and people admin from one platform.", brands: "Employment Hero & Gusto", icon: Briefcase, accent: { bg: "#e9f0ec", fg: "#2f6b4e" }, count: "2 tools" },
+  { href: "/compare/sales-outreach", title: "Sales & outreach", desc: "Find leads and reach them across email and channels.", brands: "Snov.io & Reply.io", icon: Send, accent: { bg: "#eef1ec", fg: "#5a6b3f" }, count: "2 tools" },
+  { href: "/compare/payments", title: "Payments & finance", desc: "Get paid and move money across borders.", brands: "Payoneer", icon: Wallet, accent: { bg: "#e6f2ee", fg: "#0e7c66" }, count: "1 tool" },
 ];
 
 const guides = [
@@ -57,6 +60,10 @@ const servicesLogos = [
   { logo: "employmenthero", name: "Employment Hero", url: EMPLOYMENT_HERO_URL },
   { logo: "superfiliate", name: "Superfiliate", url: SUPERFILIATE_URL },
   { logo: "alidrop", name: "AliDrop", url: ALIDROP_URL },
+  // No logo file yet → the marquee renders a monogram fallback (see below).
+  { logo: null, name: "Snov.io", url: SNOV_URL },
+  { logo: null, name: "Gusto", url: GUSTO_URL },
+  { logo: null, name: "Payoneer", url: PAYONEER_URL },
 ];
 
 const itemListSchema = {
@@ -176,13 +183,19 @@ export default function HomePage() {
                     aria-label={dup === 0 ? `${s.name} (opens in a new tab)` : undefined}
                     className="group/logo flex shrink-0 flex-col items-center gap-2"
                   >
-                    <Image
-                      src={`/logos/${s.logo}.png`}
-                      alt=""
-                      width={28}
-                      height={28}
-                      className="h-7 w-7 object-contain opacity-80 transition duration-300 group-hover/logo:opacity-100"
-                    />
+                    {s.logo ? (
+                      <Image
+                        src={`/logos/${s.logo}.png`}
+                        alt=""
+                        width={28}
+                        height={28}
+                        className="h-7 w-7 object-contain opacity-80 transition duration-300 group-hover/logo:opacity-100"
+                      />
+                    ) : (
+                      <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[#10251b] text-[12px] font-bold text-white opacity-80 transition duration-300 group-hover/logo:opacity-100">
+                        {s.name.charAt(0)}
+                      </span>
+                    )}
                     <span className="whitespace-nowrap text-[11px] font-semibold text-[#9aa39c] transition-colors group-hover/logo:text-[#10251b]">
                       {s.name}
                     </span>
@@ -202,6 +215,7 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c, i) => {
               const featured = i === 0 || i === categories.length - 1;
+              const Icon = c.icon;
               return (
                 <Link
                   key={c.href}
@@ -213,20 +227,12 @@ export default function HomePage() {
                   }`}
                 >
                   <div className="relative flex items-center justify-between">
-                    {c.logos.length > 0 ? (
-                      <div className="flex -space-x-2">
-                        {c.logos.map((l) => (
-                          <span
-                            key={l}
-                            className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white ring-2 ring-white"
-                          >
-                            <Image src={`/logos/${l}.png`} alt="" width={22} height={22} className="h-5 w-5 object-contain" />
-                          </span>
-                        ))}
-                      </div>
-                    ) : (
-                      <span className="h-9" />
-                    )}
+                    <span
+                      className="flex h-11 w-11 items-center justify-center rounded-xl"
+                      style={{ background: c.accent.bg, color: c.accent.fg }}
+                    >
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
                     <span className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39c]">{c.count}</span>
                   </div>
                   <h3

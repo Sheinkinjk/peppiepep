@@ -2,6 +2,7 @@ import {
   CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL, BEEHIIV_URL,
   GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, SNOV_URL,
   APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL,
+  EMPLOYMENT_HERO_URL, GUSTO_URL, PAYONEER_URL,
 } from "@/lib/affiliate-links";
 
 /**
@@ -377,6 +378,165 @@ export const CATALOG: Vertical[] = [
       {
         q: "How do I get a research peptide discount?",
         a: "The most reliable route is an affiliate referral link, which applies any active offer automatically, rather than hunting for a promo code that may have expired. This hub links directly to each supplier. Research use only.",
+      },
+    ],
+  },
+  {
+    slug: "hr-payroll",
+    eyebrow: "HR & payroll",
+    h1Lead: "HR & payroll platforms:",
+    h1Accent: "pay and manage your team",
+    intro:
+      "Software that runs payroll, onboarding and people admin in one place. This hub compares the main platforms by who they suit and where they operate, so you pick one built for your team, not the loudest brand.",
+    metaTitle: "HR & Payroll Software Compared 2026: Employment Hero vs Gusto | Refer Labs",
+    metaDescription:
+      "Compare HR and payroll platforms for 2026: Employment Hero for Australian and NZ teams, Gusto for US teams. Independent comparison, no pay-to-rank.",
+    keywords: [
+      "hr payroll software comparison",
+      "employment hero vs gusto",
+      "best payroll software 2026",
+      "hr software small business",
+      "online payroll platform",
+    ],
+    relatedCategory: "Software",
+    providers: [
+      {
+        name: "Employment Hero",
+        bestFor: "All-in-one for AU & NZ teams",
+        blurb: "Australian HR, payroll and employment platform covering onboarding, payroll, benefits and compliance in one system. A common default for Australian small and mid-sized businesses.",
+        facts: [
+          { label: "Role", value: "HR + payroll" },
+          { label: "Best for", value: "AU & NZ teams" },
+          { label: "Pricing", value: "Tiered per employee (verify)" },
+        ],
+        affiliateUrl: EMPLOYMENT_HERO_URL,
+        reviewHref: "/employmenthero",
+        ctaLabel: "See Employment Hero",
+        featured: true,
+      },
+      {
+        name: "Gusto",
+        bestFor: "Payroll & benefits for US teams",
+        blurb: "US payroll, benefits and HR platform known for straightforward full-service payroll, automatic tax filing and benefits administration for small businesses. US-based teams only.",
+        facts: [
+          { label: "Role", value: "Payroll + benefits" },
+          { label: "Availability", value: "US only" },
+          { label: "Pricing", value: "Base fee + per person (verify)" },
+        ],
+        affiliateUrl: GUSTO_URL,
+        ctaLabel: "See Gusto",
+      },
+    ],
+    faqs: [
+      {
+        q: "Employment Hero or Gusto, which should I use?",
+        a: "It comes down to where your team is. Employment Hero is built for Australian and New Zealand businesses and handles local payroll and compliance. Gusto is a US-only platform, strong at US payroll, tax filing and benefits. Choose by your team's country rather than features alone.",
+      },
+      {
+        q: "Is Gusto available in Australia?",
+        a: "No. Gusto is a US-focused payroll and HR platform and is not built for Australian payroll or compliance. Australian businesses are better served by a local platform such as Employment Hero. We flag availability so you don't sign up for the wrong region.",
+      },
+    ],
+  },
+  {
+    slug: "sales-outreach",
+    eyebrow: "Sales & outreach",
+    h1Lead: "Sales outreach tools:",
+    h1Accent: "find leads and reach them",
+    intro:
+      "Tools for building a prospect list and running outreach across email and other channels. This is the outreach layer, distinct from a full CRM, so this hub sorts them by how hands-on you want to be and what you can spend.",
+    metaTitle: "Sales Outreach Tools Compared 2026: Snov.io vs Reply.io | Refer Labs",
+    metaDescription:
+      "Compare sales outreach tools for 2026: Snov.io for budget prospecting plus email, Reply.io for AI-first multichannel sequences. Independent, no pay-to-rank.",
+    keywords: [
+      "sales outreach tools",
+      "snov.io vs reply.io",
+      "cold email software comparison",
+      "email outreach platform",
+      "sales sequence tool 2026",
+    ],
+    relatedCategory: "AI & sales",
+    providers: [
+      {
+        name: "Snov.io",
+        bestFor: "Prospecting + email on a budget",
+        blurb: "An all-in-one prospecting platform: email finder and verifier, drip email campaigns and a light CRM. A budget-friendly way to find leads and reach them in one tool.",
+        facts: [
+          { label: "Role", value: "Prospecting + outreach" },
+          { label: "Best for", value: "Solo & small teams" },
+          { label: "Pricing", value: "Credit-based, free plan (verify)" },
+        ],
+        affiliateUrl: SNOV_URL,
+        ctaLabel: "See Snov.io",
+        featured: true,
+      },
+      {
+        name: "Reply.io",
+        bestFor: "AI multichannel sequences",
+        blurb: "An AI-first sales engagement platform for running multichannel sequences across email, LinkedIn, calls and SMS, with AI SDR agents and deliverability tools built in.",
+        facts: [
+          { label: "Role", value: "Sales engagement" },
+          { label: "Best for", value: "Hands-on teams" },
+          { label: "Pricing", value: "Per-user, free trial (verify)" },
+        ],
+        affiliateUrl: REPLY_IO_URL,
+        reviewHref: "/replyio",
+        ctaLabel: "See Reply.io",
+      },
+    ],
+    faqs: [
+      {
+        q: "Snov.io or Reply.io, which fits me?",
+        a: "Snov.io is the budget all-rounder that combines finding leads and emailing them, best for solo operators and small teams. Reply.io is stronger for multichannel sequences and AI agents, and suits teams running serious outbound. Start with Snov if cost matters most; move to Reply as volume grows.",
+      },
+      {
+        q: "Do I also need a separate contact-data tool?",
+        a: "If your list is thin or your data is stale, pair an outreach tool with a dedicated enrichment tool. Our AI sales tools hub covers the data layer, such as FullEnrich, that feeds these outreach platforms.",
+      },
+    ],
+  },
+  {
+    slug: "payments",
+    eyebrow: "Payments & finance",
+    h1Lead: "Payments & finance:",
+    h1Accent: "get paid across borders",
+    intro:
+      "Tools for receiving payments and moving money internationally, useful for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
+    metaTitle: "Payments & Finance Tools Compared 2026: Payoneer | Refer Labs",
+    metaDescription:
+      "Payments and finance tools for getting paid across borders. Payoneer offers multi-currency business accounts and cross-border payouts. Independent, no pay-to-rank.",
+    keywords: [
+      "payoneer review",
+      "cross border payment tools",
+      "get paid internationally freelancer",
+      "global business account",
+      "payoneer australia",
+    ],
+    note: "We're building this category out. Payoneer is our first covered provider; more will be added as we review them.",
+    relatedCategory: "Software",
+    providers: [
+      {
+        name: "Payoneer",
+        bestFor: "Cross-border payments & payouts",
+        blurb: "A global payments platform with multi-currency business accounts, cross-border payouts, and the ability to get paid by international marketplaces and clients. Widely used by freelancers, affiliates and e-commerce sellers.",
+        facts: [
+          { label: "Role", value: "Global payments" },
+          { label: "Best for", value: "Freelancers & online business" },
+          { label: "Pricing", value: "Free account, per-transaction fees (verify)" },
+        ],
+        affiliateUrl: PAYONEER_URL,
+        ctaLabel: "See Payoneer",
+        featured: true,
+      },
+    ],
+    faqs: [
+      {
+        q: "What is Payoneer used for?",
+        a: "Receiving international payments, holding balances in multiple currencies, and paying contractors or suppliers abroad. It is popular with freelancers, affiliate marketers and online sellers who get paid by overseas platforms and programs.",
+      },
+      {
+        q: "Is Payoneer available in Australia?",
+        a: "Yes. Payoneer operates globally, including Australia, and is commonly used to get paid in USD, EUR or GBP by international marketplaces and affiliate programs, then withdraw to a local account.",
       },
     ],
   },
