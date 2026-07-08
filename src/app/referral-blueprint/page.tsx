@@ -385,10 +385,12 @@ export default function ReferralBlueprintPage() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-  const [stickyVisible, setStickyVisible] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const [formInView, setFormInView] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [openDeliverable, setOpenDeliverable] = useState<number | null>(0);
   const heroRef = useRef<HTMLDivElement>(null);
+  const registerRef = useRef<HTMLElement>(null);
 
   const set = (k: keyof FormData, v: string) => setForm((p) => ({ ...p, [k]: v }));
   const toggleChannel = (ch: string) =>
@@ -400,13 +402,26 @@ export default function ReferralBlueprintPage() {
     }));
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setStickyVisible(!entry.isIntersecting),
+    // Show the sticky bottom bar once past the hero, but HIDE it while the
+    // order form is on screen, so it never overlaps the submit button (which
+    // made checkout impossible to tap on mobile).
+    const heroObs = new IntersectionObserver(
+      ([entry]) => setPastHero(!entry.isIntersecting),
       { threshold: 0 }
     );
-    if (heroRef.current) observer.observe(heroRef.current);
-    return () => observer.disconnect();
+    const formObs = new IntersectionObserver(
+      ([entry]) => setFormInView(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (heroRef.current) heroObs.observe(heroRef.current);
+    if (registerRef.current) formObs.observe(registerRef.current);
+    return () => {
+      heroObs.disconnect();
+      formObs.disconnect();
+    };
   }, []);
+
+  const stickyVisible = pastHero && !formInView;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -547,8 +562,8 @@ export default function ReferralBlueprintPage() {
                   Get Your Blueprint, $799 AUD
                   <ArrowRight className="h-5 w-5" />
                 </a>
-                <a href="/#free-preview" className="inline-flex items-center gap-2 rounded-xl px-6 py-4 text-sm font-bold text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-all">
-                  See free preview first
+                <a href="#whats-inside" className="inline-flex items-center gap-2 rounded-xl px-6 py-4 text-sm font-bold text-white/80 hover:text-white border border-white/20 hover:border-white/40 transition-all">
+                  See what&apos;s inside first
                 </a>
               </div>
               <div className="text-xs text-white/45 leading-relaxed">
@@ -681,7 +696,7 @@ export default function ReferralBlueprintPage() {
       </section>
 
       {/* ── SIX DELIVERABLES (VISUAL CARDS) ───────────────────────────────── */}
-      <section className="py-24 sm:py-32 border-b border-white/10">
+      <section id="whats-inside" className="py-24 sm:py-32 border-b border-white/10 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
             <div>
@@ -1300,7 +1315,7 @@ export default function ReferralBlueprintPage() {
       </section>
 
       {/* ── INTAKE FORM ───────────────────────────────────────────────────── */}
-      <section id="register" className="bg-white">
+      <section id="register" ref={registerRef} className="bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-8 py-24 sm:py-32">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
 
