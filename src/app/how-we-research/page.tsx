@@ -82,8 +82,8 @@ export default function HowWeResearchPage() {
           {principles.map((item, i) => (
             <section key={item.h} className="border-t border-[#e5e9e7] py-8">
               <div className="grid gap-4 sm:grid-cols-[2.5rem_1fr]">
-                <div className="text-xl font-bold text-[#0a7c42]">
-                  {String(i + 1).padStart(2, "0")}
+                <div className="text-xl font-bold text-[#0a7c42] tabular-nums">
+                  {i + 1}
                 </div>
                 <div>
                   <h2 className="text-lg font-bold text-[#10251b]">{item.h}</h2>

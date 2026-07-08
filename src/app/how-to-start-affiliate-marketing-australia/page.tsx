@@ -265,8 +265,8 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
             {steps.map((s) => (
               <article key={s.n} className="border-t border-[#e5e9e7] pt-8">
                 <div className="flex items-baseline gap-4">
-                  <span className="text-3xl font-bold text-[#0a7c42]">
-                    {String(s.n).padStart(2, "0")}
+                  <span className="text-3xl font-bold text-[#0a7c42] tabular-nums">
+                    {s.n}
                   </span>
                   <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
                     {s.title}

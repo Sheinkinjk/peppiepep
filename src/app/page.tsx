@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
@@ -53,8 +53,8 @@ export default function HomePage() {
 
       <main id="main-content">
         {/* ── Masthead hero ── */}
-        <section className="border-b border-[#e3e7e2]">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
+        <section className="relative overflow-hidden border-b border-[#e3e7e2] bg-[radial-gradient(115%_130%_at_88%_-15%,#e9f4ed_0%,rgba(233,244,237,0.35)_34%,transparent_56%)]">
+          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
             <div>
               <h1 className="max-w-xl text-[2.6rem] font-black leading-[1.02] tracking-[-0.035em] text-[#10251b] sm:text-[3.6rem]">
                 Big decisions,<br />compared properly.
@@ -196,7 +196,7 @@ export default function HomePage() {
             <ul className="space-y-5">
               {principles.map((p, i) => (
                 <li key={i} className="flex gap-4 border-t border-[#e5e9e7] pt-5 first:border-t-0 first:pt-0">
-                  <span className="text-[15px] font-black text-[#0a7c42]">{String(i + 1).padStart(2, "0")}</span>
+                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#0a7c42]" aria-hidden="true" />
                   <p className="text-[15.5px] leading-relaxed text-[#2b362f]">{p}</p>
                 </li>
               ))}
