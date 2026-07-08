@@ -1488,6 +1488,21 @@ export const seoConfig = {
     ],
   },
 
+  weightLossQuiz: {
+    title: "Which Weight-Loss Option Fits You? 60-Second Match | Refer Labs",
+    description:
+      "Answer two quick questions and see which weight-loss route fits you, an online telehealth program or an in-person GP, with an honest reason why. Information only, not medical advice.",
+    url: `${SITE_URL}/weight-loss-quiz`,
+    keywords: [
+      "which weight loss program is right for me",
+      "weight loss telehealth or gp",
+      "best weight loss option australia",
+      "online weight loss program quiz",
+      "how to choose a weight loss program",
+      "moshy eligibility",
+    ],
+  },
+
   websiteBuilderQuiz: {
     title: "Which Website Builder Is Right for You? 60-Second Quiz",
     description:

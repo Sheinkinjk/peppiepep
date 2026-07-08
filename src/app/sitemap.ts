@@ -63,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/glp-1-weight-loss-australia`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-cost-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },
     { url: `${BASE}/online-weight-loss-doctor-australia`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshhair`,          lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.78 },
     { url: `${BASE}/dense`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },

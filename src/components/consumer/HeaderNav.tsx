@@ -55,10 +55,9 @@ const GROUPS: Group[] = [
   {
     label: "For business",
     items: [
-      { href: "/referral-blueprint", label: "Referral Growth Blueprint", note: "Our $799 in-house growth playbook" },
+      { href: "/for-business", label: "For business overview", note: "How brands grow with Refer Labs" },
       { href: "/affiliate-programs-australia", label: "Affiliate programs Australia", note: "The best programs, compared for 2026" },
       { href: "/superfiliate", label: "Superfiliate", note: "Run affiliate & creator programs for your brand" },
-      { href: "/for-business", label: "For business overview", note: "How brands grow with Refer Labs" },
       { href: "/services", label: "Growth services", note: "Done-with-you distribution" },
       { href: "/comparison-website", label: "Get featured", note: "Partner on a comparison" },
     ],

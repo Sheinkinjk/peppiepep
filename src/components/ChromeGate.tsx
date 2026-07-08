@@ -83,6 +83,7 @@ const STANDALONE_ROUTES = [
   "/how-to-start-affiliate-marketing-australia",
   "/affiliate-earnings-calculator",
   "/website-builder-quiz",
+  "/weight-loss-quiz",
   // Polymarket guide cluster (prefix covers all /polymarket/* pages)
   "/polymarket",
   // Affiliate content hub + editorial standards
