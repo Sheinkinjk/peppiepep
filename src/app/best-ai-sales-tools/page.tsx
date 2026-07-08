@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 export const metadata = generateSEOMetadata(seoConfig.bestAiSalesTools);
 
@@ -130,7 +131,7 @@ const tools = [
     name: "AiSDR",
     logo: "aisdr",
     badge: "Best AI Outbound SDR",
-    badgeColor: "#8B5CF6",
+    badgeColor: "#0a7c42",
     href: AISDR_URL,
     internalHref: "/aisdr",
     tagline: "An AI sales rep that builds pipeline without hiring",
@@ -153,7 +154,7 @@ const tools = [
     name: "Reply.io",
     logo: "replyio",
     badge: "Best Sales Engagement Platform",
-    badgeColor: "#0EA5E9",
+    badgeColor: "#0a7c42",
     href: REPLY_IO_URL,
     internalHref: "/replyio",
     tagline: "Run your own multichannel outbound, powered by AI",
@@ -176,7 +177,7 @@ const tools = [
     name: "FullEnrich",
     logo: "fullenrich",
     badge: "Best for Contact Data",
-    badgeColor: "#F59E0B",
+    badgeColor: "#0a7c42",
     href: FULLENRICH_URL,
     internalHref: "/fullenrich",
     tagline: "Waterfall enrichment for verified emails and mobile numbers",
@@ -441,6 +442,14 @@ export default function BestAiSalesToolsPage() {
             </p>
           </div>
         </section>
+
+        <MatchPrompt
+          href="/ai-sales-tools-quiz"
+          title="Not sure which tool you need?"
+          sub="Answer one or two quick questions and get the AI sales tool that fixes your actual bottleneck, with an honest reason why. About 30 seconds."
+          cta="Take the 30-second match"
+          dataCta="ai-match-prompt"
+        />
 
         {/* FAQ */}
         <section id="faq" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">

@@ -127,6 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/affiliate-programs-australia`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/affiliate-earnings-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/website-builder-quiz`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/ai-sales-tools-quiz`,              lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/high-paying-affiliate-programs`,           lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/recurring-affiliate-programs`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/how-to-start-affiliate-marketing-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },

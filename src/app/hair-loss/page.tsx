@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
+import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossHub);
 
@@ -124,8 +124,11 @@ export default function HairLossHubPage() {
                 Non-prescription shampoos, serums and scalp treatments for density and condition. Dense Hair Experts is
                 the main Australian name. Best as a routine, and best paired with realistic expectations.
               </p>
-              <p className="mt-5 text-sm font-semibold">
-                <Link href="/dense" className="text-[#0a7c42] hover:underline">See the Dense guide →</Link>
+              <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold">
+                <a href={DENSE_URL} target="_blank" rel="nofollow sponsored" data-cta="hair-hub-dense" className="inline-flex items-center gap-1.5 text-[#0a7c42] hover:underline">
+                  Visit Dense Hair Experts <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
+                <Link href="/dense" className="font-medium text-[#6e7b74] hover:text-[#0a7c42] hover:underline">Read our review</Link>
               </p>
             </div>
           </div>
@@ -168,7 +171,7 @@ export default function HairLossHubPage() {
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-            Before you dive in
+            Before you start
           </h2>
           <div className="mt-6 max-w-3xl divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
             {faqs.map((f) => (

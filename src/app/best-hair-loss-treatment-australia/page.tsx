@@ -136,7 +136,7 @@ const options = [
   {
     name: "Dense Hair Experts",
     badge: "Topical Support",
-    badgeColor: "#F59E0B",
+    badgeColor: "#0a7c42",
     href: DENSE_URL,
     internalHref: "/dense",
     category: "Topical Hair Care",
@@ -157,7 +157,7 @@ const options = [
   {
     name: "GP / Specialist Referral",
     badge: "Full Clinical",
-    badgeColor: "#8B5CF6",
+    badgeColor: "#0a7c42",
     href: "#faq",
     internalHref: null,
     category: "In-Person or Telehealth GP",

@@ -191,7 +191,7 @@ export default function ProfitableTradingBotsPage() {
       campaign={CAMPAIGN}
       articleType="TechArticle"
       breadcrumbLabel="Profitable bot strategies"
-      kicker="Guide · Bot strategy"
+      kicker="Bot strategy guide"
       h1="Polymarket trading bots that are profitable: 4 strategies"
       description={seoConfig.polymarketProfitableBots.description}
       heroCtaLabel="Sign up now to run a strategy"

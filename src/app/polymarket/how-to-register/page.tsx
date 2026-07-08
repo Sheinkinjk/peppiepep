@@ -217,7 +217,7 @@ export default function HowToRegisterPage() {
       campaign={CAMPAIGN}
       articleType="Article"
       breadcrumbLabel="How to register"
-      kicker="Guide · Getting started"
+      kicker="Getting started guide"
       h1="How to register on Polymarket: accounts, wallets & requirements"
       description={seoConfig.polymarketRegister.description}
       heroCtaLabel="Create your Polymarket account in minutes"

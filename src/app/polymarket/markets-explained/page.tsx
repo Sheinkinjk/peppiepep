@@ -217,7 +217,7 @@ export default function MarketsExplainedPage() {
       campaign={CAMPAIGN}
       articleType="Article"
       breadcrumbLabel="Markets explained"
-      kicker="Guide · Prediction markets"
+      kicker="Prediction markets guide"
       h1="Polymarket markets explained: how prediction markets work"
       description={seoConfig.polymarketMarkets.description}
       heroCtaLabel="Explore live markets on Polymarket"

@@ -322,7 +322,7 @@ export default function BestWeightLossTelehealthPage() {
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section className="pt-10 pb-8 sm:pt-12">
             <p className="text-[#9aa39c] text-xs mb-6">
-              Updated March 2026 &middot; Australia only &middot; Not medical advice
+              Australia only &middot; Not medical advice
             </p>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">

@@ -232,7 +232,7 @@ export default function TradingBotsPage() {
       campaign={CAMPAIGN}
       articleType="TechArticle"
       breadcrumbLabel="Trading bots"
-      kicker="Guide · Automation"
+      kicker="Automation guide"
       h1="How to build a trading bot for Polymarket (2026 guide)"
       description={seoConfig.polymarketBots.description}
       heroCtaLabel="You need a live account to run this, then create your Polymarket account"

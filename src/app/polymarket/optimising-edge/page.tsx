@@ -173,7 +173,7 @@ export default function OptimisingEdgePage() {
       campaign={CAMPAIGN}
       articleType="Article"
       breadcrumbLabel="Optimising edge"
-      kicker="Guide · Strategy"
+      kicker="Strategy guide"
       h1="How to find and measure edge on Polymarket"
       description={seoConfig.polymarketEdge.description}
       heroCtaLabel="Put your edge to work, open a Polymarket account"

@@ -46,7 +46,6 @@ const STANDALONE_ROUTES = [
   "/best-peptide-supplier",
   "/best-website-builder",
   "/best-newsletter-platform",
-  "/comparison-website",
   // AI sales & automation + HR (affiliate review pages)
   "/aisdr",
   "/gohighlevel",
@@ -84,6 +83,7 @@ const STANDALONE_ROUTES = [
   "/affiliate-earnings-calculator",
   "/website-builder-quiz",
   "/weight-loss-quiz",
+  "/ai-sales-tools-quiz",
   // Polymarket guide cluster (prefix covers all /polymarket/* pages)
   "/polymarket",
   // Affiliate content hub + editorial standards

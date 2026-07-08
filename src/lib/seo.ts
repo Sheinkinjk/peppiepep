@@ -1488,6 +1488,21 @@ export const seoConfig = {
     ],
   },
 
+  aiSalesToolsQuiz: {
+    title: "Which AI Sales Tool Do You Need? 60-Second Match | Refer Labs",
+    description:
+      "Answer one or two quick questions and see which AI sales tool fits your bottleneck, FullEnrich, Reply.io, AiSDR or GoHighLevel, with an honest reason why.",
+    url: `${SITE_URL}/ai-sales-tools-quiz`,
+    keywords: [
+      "which ai sales tool should i use",
+      "best ai sales tool for me",
+      "aisdr vs reply.io",
+      "ai sdr vs sales engagement",
+      "gohighlevel vs reply",
+      "ai sales tool recommendation",
+    ],
+  },
+
   weightLossQuiz: {
     title: "Which Weight-Loss Option Fits You? 60-Second Match | Refer Labs",
     description:

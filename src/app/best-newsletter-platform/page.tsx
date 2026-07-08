@@ -133,7 +133,7 @@ const platforms = [
   {
     name: "Substack",
     badge: "Best for Discovery",
-    badgeColor: "#F59E0B",
+    badgeColor: "#0a7c42",
     href: "https://substack.com",
     internalHref: null,
     tagline: "Simplest path to a paid newsletter",
@@ -156,7 +156,7 @@ const platforms = [
   {
     name: "ConvertKit (Kit)",
     badge: "Best for Automation",
-    badgeColor: "#8B5CF6",
+    badgeColor: "#0a7c42",
     href: "https://kit.com",
     internalHref: null,
     tagline: "Advanced email marketing for product businesses",
