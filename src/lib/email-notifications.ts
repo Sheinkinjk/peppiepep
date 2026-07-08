@@ -552,8 +552,8 @@ export function buildBlueprintBuyerConfirmationEmail(buyer: {
         </p>
 
         <div style="border-top:1px solid #e2e8f0;padding-top:24px;">
-          <p style="margin:0 0 2px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;color:#0f172a;">Jarred Krowitz</p>
-          <p style="margin:0 0 2px;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#64748b;">Director, Refer Labs</p>
+          <p style="margin:0 0 2px;font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:600;color:#0f172a;">The Refer Labs team</p>
+          <p style="margin:0 0 2px;font-family:Inter,system-ui,sans-serif;font-size:12px;color:#64748b;">Refer Labs</p>
           <a href="mailto:jarred@referlabs.com.au" style="font-family:Inter,system-ui,sans-serif;font-size:12px;color:#0AA7B5;text-decoration:none;">jarred@referlabs.com.au</a>
         </div>
       </div>

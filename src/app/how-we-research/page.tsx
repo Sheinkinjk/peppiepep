@@ -33,7 +33,6 @@ const aboutSchema = {
     "@type": "Organization",
     name: "Refer Labs",
     url: SITE_URL,
-    founder: { "@type": "Person", name: "Jarred Krowitz" },
   },
 };
 
@@ -107,8 +106,8 @@ export default function HowWeResearchPage() {
           <section className="border-t border-[#e5e9e7] py-8">
             <h2 className="text-lg font-bold text-[#10251b]">Who writes this</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
-              Refer Labs is an Australian company founded by Jarred Krowitz. Comparisons are produced and maintained by
-              the Refer Labs team. We are not the manufacturer or provider of the products we review.
+              Refer Labs is an independent Australian company. Comparisons are produced and maintained by the Refer Labs
+              team. We are not the manufacturer or provider of the products we review.
             </p>
           </section>
 

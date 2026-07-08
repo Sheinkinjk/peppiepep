@@ -15,7 +15,6 @@ export function OrganizationSchema() {
     "slogan": "Compare properly. Choose with confidence.",
     "email": "jarred@referlabs.com.au",
     "foundingLocation": { "@type": "Country", "name": "Australia" },
-    "founder": { "@type": "Person", "name": "Jarred Krowitz" },
     "areaServed": [
       { "@type": "Country", "name": "Australia" },
       { "@type": "Country", "name": "United States" },

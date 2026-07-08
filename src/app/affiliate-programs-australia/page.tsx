@@ -1,7 +1,25 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+
+// Programs we've reviewed in depth, linked to our own pages (which carry the
+// tracked offers). Turns the reference tables below into a clickable, on-brand hub.
+const reviewed = [
+  { name: "beehiiv", logo: "beehiiv", cat: "Newsletters", href: "/beehiiv" },
+  { name: "Brevo", logo: "brevo", cat: "Email marketing", href: "/brevo" },
+  { name: "GoHighLevel", logo: "gohighlevel", cat: "AI sales & CRM", href: "/gohighlevel" },
+  { name: "AiSDR", logo: "aisdr", cat: "AI sales", href: "/aisdr" },
+  { name: "Reply.io", logo: "replyio", cat: "Sales engagement", href: "/replyio" },
+  { name: "FullEnrich", logo: "fullenrich", cat: "B2B data", href: "/fullenrich" },
+  { name: "Leadpages", logo: "leadpages", cat: "Landing pages", href: "/leadpages" },
+  { name: "Carrd", logo: "carrd", cat: "Website builder", href: "/carrd" },
+  { name: "Durable AI", logo: "durable", cat: "AI website builder", href: "/durableai" },
+  { name: "Employment Hero", logo: "employmenthero", cat: "HR & payroll", href: "/employmenthero" },
+  { name: "Superfiliate", logo: "superfiliate", cat: "For brands", href: "/superfiliate" },
+  { name: "AliDrop", logo: "alidrop", cat: "Dropshipping", href: "/alidrop" },
+];
 
 export const metadata = generateSEOMetadata(seoConfig.affiliateProgramsAustralia);
 
@@ -236,6 +254,38 @@ export default function AffiliateProgramsAustraliaPage() {
             published, general structure to help you compare, not a live quote. Always confirm current terms with the
             program before you rely on a figure. This is business and marketing education, not financial or tax advice.
           </p>
+        </section>
+
+        {/* Programs we've reviewed — our own coverage, clickable, on-brand */}
+        <section className="mx-auto max-w-4xl px-5 pt-12 sm:px-8">
+          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Reviewed by us</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Programs we&rsquo;ve looked at closely</h2>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#6e7b74]">
+              These are the tools and services we&rsquo;ve tested and written up ourselves. Each links to our independent
+              review with how it works, who it suits, and the current offer.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {reviewed.map((r) => (
+                <Link
+                  key={r.href}
+                  href={r.href}
+                  className="group flex items-center gap-3 rounded-xl border border-[#e5e9e7] bg-[#fbfcfb] p-3.5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40 hover:bg-white"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
+                    <Image src={`/logos/${r.logo}.png`} alt={`${r.name} logo`} width={32} height={32} className="h-7 w-7 object-contain" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-bold text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{r.name}</p>
+                    <p className="truncate text-[11px] text-[#9aa39c]">{r.cat}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <p className="mt-5 text-xs leading-relaxed text-[#9aa39c]">
+              The broader reference tables below cover well-known programs across every category, whether or not we&rsquo;ve reviewed them yet.
+            </p>
+          </div>
         </section>
 
         {/* Category jump nav */}

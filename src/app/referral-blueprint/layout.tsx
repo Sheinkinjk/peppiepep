@@ -91,7 +91,7 @@ const faqSchema = {
       name: "What is in the Referral Growth Blueprint?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Six deliverables: a 250+ affiliate and referral program Excel database, a personalised strategy brief written by Jarred Krowitz, 10+ SEO page concepts matched to your niche, distribution playbooks for your stated channels, a niche selection brief (3-5 matches), and a recommended tool stack. All delivered to your inbox within 48 hours.",
+        text: "Six deliverables: a 250+ affiliate and referral program Excel database, a personalised strategy brief written by a Refer Labs editor, 10+ SEO page concepts matched to your niche, distribution playbooks for your stated channels, a niche selection brief (3-5 matches), and a recommended tool stack. All delivered to your inbox within 48 hours.",
       },
     },
     {
@@ -107,7 +107,7 @@ const faqSchema = {
       name: "How is the Referral Growth Blueprint personalised?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Before checkout you complete a short intake form covering your niche, primary goal, preferred marketing channels, and experience level. Jarred reads your answers and uses them to write the strategy brief, select niche recommendations, and tailor the distribution playbooks to your stated channels.",
+        text: "Before checkout you complete a short intake form covering your niche, primary goal, preferred marketing channels, and experience level. Our editor reads your answers and uses them to write the strategy brief, select niche recommendations, and tailor the distribution playbooks to your stated channels.",
       },
     },
     {

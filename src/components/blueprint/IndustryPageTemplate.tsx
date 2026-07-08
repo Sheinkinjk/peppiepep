@@ -192,7 +192,7 @@ export default function IndustryPageTemplate({ data }: { data: IndustryPageData 
             $799 once. That&apos;s it.
           </h2>
           <p className="text-white/55 max-w-md mx-auto mb-8">
-            Personalised strategy brief written by Jarred for your {data.industryLower.replace(/s$/, "")}. Database, SEO concepts, distribution playbooks, all in your inbox within 48 hours.
+            Personalised strategy brief written by our editor for your {data.industryLower.replace(/s$/, "")}. Database, SEO concepts, distribution playbooks, all in your inbox within 48 hours.
           </p>
           <Link href={`/referral-blueprint${utm}`} className="inline-flex items-center gap-2 rounded-xl px-9 py-4 text-base font-black text-[#060f15] hover:-translate-y-0.5 transition-all shadow-xl" style={{ background: AMBER, boxShadow: `0 12px 40px ${AMBER}35` }}>
             Get the {data.industry} Blueprint, $799

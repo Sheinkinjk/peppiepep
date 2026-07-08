@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createBlueprintClient } from "@/lib/supabase-blueprint";
 
-// Jarred visits: /api/blueprint-access/mark-delivered?token=CUSTOMER_TOKEN&key=ADMIN_KEY
+// Admin visits: /api/blueprint-access/mark-delivered?token=CUSTOMER_TOKEN&key=ADMIN_KEY
 export async function GET(request: NextRequest) {
   const token = request.nextUrl.searchParams.get("token");
   const key   = request.nextUrl.searchParams.get("key");

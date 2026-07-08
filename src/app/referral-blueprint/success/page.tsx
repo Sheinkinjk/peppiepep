@@ -86,7 +86,7 @@ export default async function ReferralBlueprintSuccessPage({
             },
             {
               icon: <Clock className="h-5 w-5 text-[#0AA7B5]" />,
-              title: "2. Jarred reviews your intake",
+              title: "2. We review your intake",
               body: "Your niche, channels, and goals are read personally. Your strategy brief is written from scratch.",
             },
             {

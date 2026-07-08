@@ -1995,7 +1995,7 @@ export const seoConfig = {
   referralBlueprint: {
     title: "Referral Growth Blueprint: Affiliate Program List & Strategy Australia | Refer Labs",
     description:
-      "Refer Labs' in-house referral marketing blueprint: a 250+ affiliate program list for Australia plus a personalised referral growth strategy written by Jarred. $799 AUD, delivered in 48 hours.",
+      "Refer Labs' in-house referral marketing blueprint: a 250+ affiliate program list for Australia plus a personalised referral growth strategy written by our team. $799 AUD, delivered in 48 hours.",
     url: `${SITE_URL}/referral-blueprint`,
     keywords: [
       "referral marketing blueprint",

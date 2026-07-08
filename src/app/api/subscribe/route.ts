@@ -24,7 +24,7 @@ function welcomeHtml(): string {
     <p style="margin:0 0 28px;">
       <a href="https://referlabs.com.au/guides" style="display:inline-block;background:#0E7C66;color:#fff;text-decoration:none;font-family:Arial,sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:999px;">Browse the guides →</a>
     </p>
-    <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0;">Jarred, Refer Labs</p>
+    <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0;">Refer Labs</p>
   </div>
 </body></html>`;
 }

@@ -6,7 +6,7 @@
  *   Day 0  (instant): Welcome + free affiliate program preview
  *   Day 2  (~48h):    "The biggest mistake new affiliate marketers make"
  *   Day 5  (~120h):   "What's actually inside the $799 blueprint"
- *   Day 10 (~240h):   "Last reminder + personal note from Jarred"
+ *   Day 10 (~240h):   "Last reminder + personal note from the team"
  *
  * Uses Resend's `scheduled_at` parameter — no cron needed.
  */
@@ -35,8 +35,8 @@ const wrapper = (heading: string, body: string, ctaLabel?: string, ctaHref?: str
           <a href="${ctaHref}" style="display:inline-block;background:#F59E0B;color:#060f15;text-decoration:none;padding:14px 32px;border-radius:6px;font-family:Inter,sans-serif;font-size:14px;font-weight:700;">${ctaLabel}</a>
         </div>` : ""}
         <div style="border-top:1px solid #e2e8f0;padding-top:20px;margin-top:32px;">
-          <p style="margin:0 0 2px;font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#0f172a;">Jarred Krowitz</p>
-          <p style="margin:0;font-family:Inter,sans-serif;font-size:12px;color:#64748b;">Director, Refer Labs</p>
+          <p style="margin:0 0 2px;font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#0f172a;">The Refer Labs team</p>
+          <p style="margin:0;font-family:Inter,sans-serif;font-size:12px;color:#64748b;">Refer Labs</p>
         </div>
       </div>
     </div>
@@ -127,7 +127,7 @@ export function buildNurtureSequence(email: string): NurtureEmail[] {
 
     // ── Day 10: Final reminder ────────────────────────────────────────────
     {
-      subject: "Quick personal note — Jarred",
+      subject: "A quick note before you go",
       delayHours: 240,
       html: wrapper(
         "If you have any questions, reply to this email.",
@@ -138,7 +138,7 @@ export function buildNurtureSequence(email: string): NurtureEmail[] {
         <p>The database has 250+ programs. Average commission across them is ~$50-$200 per referral. A single referral from a single program covers the purchase. Most buyers earn the price back inside 6-8 weeks.</p>
         <p>And the promise that matters: if the strategy brief misses the mark for your situation, reply and I'll revise it until it fits. You're not gambling $799 on a generic template.</p>
         <p>If now isn't the right time, no problem. The link below stays live.</p>
-        <p>Cheers,<br>Jarred</p>
+        <p>Cheers,<br>The Refer Labs team</p>
         `,
         "I'm Ready — Get the Blueprint",
         `${SITE}/referral-blueprint?utm_source=nurture&utm_medium=email&utm_campaign=day10`

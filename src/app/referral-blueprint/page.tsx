@@ -82,7 +82,7 @@ const deliverables = [
       "Week-by-week starting sequence",
       "Common mistakes to avoid for your stated channels",
     ],
-    provides: "Jarred reads your intake form and writes this personally. Not AI-generated, not templated. If your answers raise questions, we email before delivering.",
+    provides: "A Refer Labs editor reads your intake and writes this personally. Not AI-generated, not templated. If your answers raise questions, we email before delivering.",
   },
   {
     num: "03", icon: <Search className="h-5 w-5" />,
@@ -464,7 +464,7 @@ export default function ReferralBlueprintPage() {
     },
     {
       q: "How is the blueprint personalised to me?",
-      a: "You complete an intake form before checkout covering your niche, primary goal, preferred channels, and experience level. Jarred reads your answers and writes the strategy brief, selects niche recommendations, and tailors distribution playbooks to your stated channels. If anything is unclear, we email before delivering.",
+      a: "You complete an intake form before checkout covering your niche, primary goal, preferred channels, and experience level. Our editor reads your answers and writes the strategy brief, selects niche recommendations, and tailors distribution playbooks to your stated channels. If anything is unclear, we email before delivering.",
     },
     {
       q: "Do I need an existing website or audience?",
@@ -476,7 +476,7 @@ export default function ReferralBlueprintPage() {
     },
     {
       q: "What happens after I pay?",
-      a: "You receive a confirmation email immediately. Jarred reviews your intake form and delivers the full package - database, strategy brief, SEO concepts, distribution playbooks, niche brief, and tool stack - within 48 hours. No subscription, no additional charges, no upsell.",
+      a: "You receive a confirmation email immediately. We review your intake form and delivers the full package - database, strategy brief, SEO concepts, distribution playbooks, niche brief, and tool stack - within 48 hours. No subscription, no additional charges, no upsell.",
     },
     {
       q: "Is there a refund policy?",
@@ -541,13 +541,13 @@ export default function ReferralBlueprintPage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-[#3d4b44] leading-relaxed max-w-xl mb-8">
-                Our own in-house product, not a third-party course. A 250+ affiliate program list plus a referral growth strategy Jarred writes for your specific niche. Not a template, not automated.
+                Our own in-house product, not a third-party course. A 250+ affiliate program list plus a referral growth strategy our editor writes for your specific niche. Not a template, not automated.
               </p>
 
               <div className="space-y-2.5 mb-10">
                 {[
                   { icon: <Database className="h-4 w-4" />, text: "250+ programs - commission rate, link, and marketing angle per entry" },
-                  { icon: <Brain className="h-4 w-4" />,    text: "Strategy brief written by Jarred for your specific niche and channels" },
+                  { icon: <Brain className="h-4 w-4" />,    text: "Strategy brief written by our editor for your specific niche and channels" },
                   { icon: <Clock className="h-4 w-4" />,    text: "Delivered to your inbox within 48 hours of purchase" },
                 ].map(({ icon, text }) => (
                   <div key={text} className="flex items-start gap-3">
@@ -978,7 +978,7 @@ export default function ReferralBlueprintPage() {
                 <div className="h-12 w-12 rounded-full border-2 flex items-center justify-center mx-auto mb-3" style={{ borderColor: `${CYAN}40`, background: `${CYAN}10` }}>
                   <Brain className="h-6 w-6" style={{ color: CYAN }} />
                 </div>
-                <p className="text-sm font-black text-[#10251b]">Jarred reviews</p>
+                <p className="text-sm font-black text-[#10251b]">We review</p>
                 <p className="text-xs text-[#9aa39c] mt-1 max-w-[160px] mx-auto">Every intake form read personally. Not automated.</p>
               </div>
               <div className="flex items-center gap-2">
@@ -1030,7 +1030,7 @@ export default function ReferralBlueprintPage() {
             {[
               { day: "Day 0",   label: "Fill intake form",    desc: "Your niche, goal, channels, experience. Under 3 minutes.", color: CYAN,  done: true },
               { day: "Day 0",   label: "Complete checkout",   desc: "One-time $799 via Stripe. Confirmation immediate.",       color: CYAN,  done: true },
-              { day: "Day 1-2", label: "Jarred builds yours", desc: "Strategy brief, SEO concepts, and playbooks written.",    color: AMBER, done: false },
+              { day: "Day 1-2", label: "We build yours", desc: "Strategy brief, SEO concepts, and playbooks written.",    color: AMBER, done: false },
               { day: "Day 2",   label: "Everything delivered",desc: "Six files to your inbox. Start building the same day.",  color: AMBER, done: false },
             ].map(({ day, label, desc, color, done }) => (
               <div key={label} className="flex flex-col items-center text-center relative px-4">
@@ -1092,7 +1092,7 @@ export default function ReferralBlueprintPage() {
               },
               {
                 q: "What's the difference between this and a generic affiliate program list?",
-                a: "Personalisation. A $99 affiliate database is the same file for everyone, no strategy, no execution layer, no help with your specific niche. The Refer Labs Blueprint is a 250+ program database PLUS a strategy brief written by Jarred for YOUR niche, channels, and experience. That's why it takes 48 hours to deliver and costs $799, not $99.",
+                a: "Personalisation. A $99 affiliate database is the same file for everyone, no strategy, no execution layer, no help with your specific niche. The Refer Labs Blueprint is a 250+ program database PLUS a strategy brief written by our editor for YOUR niche, channels, and experience. That's why it takes 48 hours to deliver and costs $799, not $99.",
               },
               {
                 q: "Is $799 worth it for a digital product?",
@@ -1100,7 +1100,7 @@ export default function ReferralBlueprintPage() {
               },
               {
                 q: "What if the programs don't fit my audience?",
-                a: "The strategy brief recommends programs based on the audience and niche you specify in the intake form. If your niche is unusual, Jarred emails you before delivering to confirm the fit. The 250+ program database covers 5 broad categories so most niches find strong matches, but the personalised strategy is what does the matching for you.",
+                a: "The strategy brief recommends programs based on the audience and niche you specify in the intake form. If your niche is unusual, we email you before delivering to confirm the fit. The 250+ program database covers 5 broad categories so most niches find strong matches, but the personalised strategy is what does the matching for you.",
               },
               {
                 q: "How is this different from buying an online course?",
@@ -1123,16 +1123,16 @@ export default function ReferralBlueprintPage() {
         </div>
       </section>
 
-      {/* ── WHY JARRED WRITES IT, NOT AI ──────────────────────────────────── */}
+      {/* ── WHY A PERSON WRITES IT, NOT AI ────────────────────────────────── */}
       <section className="py-24 sm:py-32 border-b border-[#e5e9e7] bg-[#f5f8f6]">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <div className="grid lg:grid-cols-[280px_1fr] gap-12 lg:gap-16 items-start">
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-              <div className="h-16 w-16 rounded-2xl flex items-center justify-center text-2xl font-black text-[#10251b] mb-4" style={{ background: `linear-gradient(135deg, ${CYAN}, #0a7c42)` }}>
-                JK
+              <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-4" style={{ background: `linear-gradient(135deg, ${CYAN}, #0a7c42)` }}>
+                <Brain className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-base font-black text-[#10251b] mb-0.5">Jarred Krowitz</h3>
-              <p className="text-xs text-[#9aa39c] mb-4">Director, Refer Labs · Melbourne, AU</p>
+              <h3 className="text-base font-black text-[#10251b] mb-0.5">Written by a person</h3>
+              <p className="text-xs text-[#9aa39c] mb-4">Refer Labs editorial · Australia</p>
               <div className="space-y-2 text-xs text-[#6e7b74]">
                 <div className="flex items-start gap-2">
                   <Check className="h-3 w-3 flex-shrink-0 mt-0.5" style={{ color: CYAN }} />
@@ -1159,14 +1159,14 @@ export default function ReferralBlueprintPage() {
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3" style={{ color: AMBER }}>Why this isn&apos;t AI-generated</p>
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#10251b] mb-5 leading-tight">
-                Why Jarred writes it, not an AI.
+                Why a person writes it, not an AI.
               </h2>
               <div className="space-y-5 text-[#3d4b44] leading-relaxed">
                 <p>
                   Generative AI can write a generic affiliate marketing strategy in 30 seconds. It would be polished. It would also be wrong for you, because the model has no idea what your specific niche, channels, or audience look like, and it would invent reasonable-sounding advice rather than analyse your actual situation.
                 </p>
                 <p>
-                  The strategy brief, niche selection, SEO concepts, and distribution playbooks are written from scratch for each customer. Jarred reads your intake form. If your answers raise a question, an ambiguous niche, a missing detail, he emails you before writing anything.
+                  The strategy brief, niche selection, SEO concepts, and distribution playbooks are written from scratch for each customer. We read your intake form. If your answers raise a question, an ambiguous niche or a missing detail, we email you before writing anything.
                 </p>
                 <p>
                   The database is the same for everyone (250+ programs, all manually verified). The strategy layer is fresh per order. That&apos;s the difference between a $99 generic database and a $799 personalised blueprint, and why it takes 48 hours rather than 30 seconds.
@@ -1175,7 +1175,7 @@ export default function ReferralBlueprintPage() {
 
               <div className="mt-8 grid sm:grid-cols-2 gap-3">
                 {[
-                  { no: "AI-generated strategy brief",         yes: "Written by Jarred after reading your intake" },
+                  { no: "AI-generated strategy brief",         yes: "Written by a person after reading your intake" },
                   { no: "Generic niche advice for everyone",   yes: "3-5 niches matched to your specific goals + channels" },
                   { no: "Every playbook included regardless",  yes: "Only playbooks for the channels YOU selected" },
                   { no: "Same tool stack for all levels",      yes: "Tool stack matched to your budget + experience" },
@@ -1281,7 +1281,7 @@ export default function ReferralBlueprintPage() {
                 <ul className="space-y-3 mb-8">
                   {[
                     "250+ programs - Excel, categorised, commission data filled",
-                    "Personalised strategy brief written by Jarred",
+                    "Personalised strategy brief written by our editor",
                     "Niche selection brief (3-5 matches with reasoning)",
                     "10+ SEO page concepts with structural briefs",
                     "Distribution playbooks for your stated channels",

@@ -34,7 +34,7 @@ const DELIVERABLES = [
 
 const PREP_STEPS = [
   { id: "niche",     label: "Write down your top 3 niche options", detail: "Think about what you already know, what you enjoy, and where you spend time online. This feeds directly into your niche brief." },
-  { id: "channels",  label: "List which channels you actively use", detail: "Reddit? Email list? Facebook groups? TikTok? Being honest here helps Jarred write distribution playbooks that actually apply to you." },
+  { id: "channels",  label: "List which channels you actively use", detail: "Reddit? Email list? Facebook groups? TikTok? Being honest here helps us write distribution playbooks that actually apply to you." },
   { id: "domain",    label: "Register a domain name (if you need one)", detail: "Namecheap or Cloudflare. ~$10-15 AUD. You will need this for your first SEO page or comparison site. Do this now while you wait." },
   { id: "tracking",  label: "Create a free Pretty Links account", detail: "prettylinksplugin.com, free tier is fine to start. This is how you track which affiliate links convert. Set it up now." },
   { id: "spreadsheet", label: "Open a fresh Google Sheet", detail: "When your database arrives, you will filter it immediately. Having a working spreadsheet environment open saves time on day one." },
@@ -139,7 +139,7 @@ function BlueprintPortal() {
               className="flex items-center justify-center gap-2 w-full rounded-xl py-3.5 text-sm font-bold text-[#060f15] hover:opacity-90 transition-all"
               style={{ background: AMBER }}>
               <Mail className="h-4 w-4" />
-              Email Jarred for help
+              Email us for help
             </a>
             <Link href="/referral-blueprint" className="flex items-center justify-center gap-2 w-full rounded-xl border border-white/15 py-3.5 text-sm text-white/60 hover:text-white hover:border-white/30 transition-all">
               Back to the blueprint page
@@ -176,7 +176,7 @@ function BlueprintPortal() {
             className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-[#060f15] hover:opacity-90 transition-all"
             style={{ background: AMBER }}>
             <Mail className="h-4 w-4" />
-            Contact Jarred
+            Contact us
           </a>
         </div>
       </div>
@@ -232,7 +232,7 @@ function BlueprintPortal() {
                         {hoursLeft > 0 && <span className="ml-2 text-xs font-semibold rounded-full px-2.5 py-0.5" style={{ background: `${CYAN}20`, color: CYAN }}>Est. {hoursLeft}h remaining</span>}
                       </h2>
                       <p className="text-sm text-white/60 leading-relaxed">
-                        Jarred is reviewing your intake answers and writing your personalised strategy brief and niche recommendations. All six deliverables will be sent to <strong className="text-white">{purchase.email}</strong> within 48 hours of purchase.
+                        We are reviewing your intake answers and writing your personalised strategy brief and niche recommendations. All six deliverables will be sent to <strong className="text-white">{purchase.email}</strong> within 48 hours of purchase.
                       </p>
                     </>
                   )}
@@ -246,7 +246,7 @@ function BlueprintPortal() {
               <div className="space-y-0">
                 {[
                   { label: "Payment received",    desc: "Your intake answers captured. Purchase confirmed.",                              done: true  },
-                  { label: "Intake reviewed",      desc: "Jarred reads your niche, goals, channels, and experience level.",              done: !isDelivered ? hoursLeft < 36 : true },
+                  { label: "Intake reviewed",      desc: "We read your niche, goals, channels, and experience level.",              done: !isDelivered ? hoursLeft < 36 : true },
                   { label: "Blueprint assembled",  desc: "Strategy brief written. Database filtered. SEO concepts and playbooks built.", done: !isDelivered ? hoursLeft < 12 : true  },
                   { label: "Files delivered",      desc: "Six deliverables emailed to you. Check your inbox.",                          done: isDelivered },
                 ].map(({ label, desc, done }, i, arr) => (
@@ -379,7 +379,7 @@ function BlueprintPortal() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
               <h2 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">Questions?</h2>
               <p className="text-xs text-white/50 leading-relaxed mb-4">
-                Reply to your confirmation email or email Jarred directly. All queries answered same day.
+                Reply to your confirmation email or email us directly. All queries answered same day.
               </p>
               <a
                 href={`mailto:jarred@referlabs.com.au?subject=Blueprint%20question%20%E2%80%94%20${encodeURIComponent(purchase.email)}`}
@@ -393,7 +393,7 @@ function BlueprintPortal() {
             {/* Lost your link? */}
             <div className="rounded-xl border border-white/[0.07] p-4">
               <p className="text-[10px] text-white/30 leading-relaxed">
-                <strong className="text-white/45">Bookmark this page.</strong> Your portal link is permanent, no login required. If you lose it, email Jarred with your purchase email and he will resend it.
+                <strong className="text-white/45">Bookmark this page.</strong> Your portal link is permanent, no login required. If you lose it, email us with your purchase email and we will resend it.
               </p>
             </div>
 

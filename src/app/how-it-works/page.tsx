@@ -40,20 +40,20 @@ const steps = [
   },
   {
     num: "03", day: "Day 1-2",
-    title: "Jarred reviews your intake and builds your blueprint",
-    copy: "Jarred reads your intake answers personally. He uses them to write your strategy brief, select your niche recommendations, and tailor the distribution playbooks to your stated channels. Nothing is auto-generated.",
-    detail: "If your intake answers raise a question, an ambiguous niche choice, a missing detail, he emails before delivering. The brief is not sent until it reflects your actual situation. This is the part that takes 24-48 hours and cannot be automated.",
+    title: "We review your intake and build your blueprint",
+    copy: "We read your intake answers personally. We use them to write your strategy brief, select your niche recommendations, and tailor the distribution playbooks to your stated channels. Nothing is auto-generated.",
+    detail: "If your intake answers raise a question, an ambiguous niche choice, a missing detail, we email before delivering. The brief is not sent until it reflects your actual situation. This is the part that takes 24-48 hours and cannot be automated.",
   },
   {
     num: "04", day: "Day 2",
     title: "Six files delivered to your inbox",
     copy: "All six deliverables arrive in a single email to your registered address. No login required, no course platform, no drip schedule. Everything at once, within 48 hours of payment.",
-    detail: "If for any reason there is a delay beyond 48 hours, Jarred will email you directly with an updated timeline. This has not happened, but the commitment is explicit.",
+    detail: "If for any reason there is a delay beyond 48 hours, we will email you directly with an updated timeline. This has not happened, but the commitment is explicit.",
   },
   {
     num: "05", day: "Day 3+",
     title: "Start building with the database and brief",
-    copy: "Open the Excel database, filter by your niche category, and cross-reference your strategy brief for the week-one priorities Jarred identified. Follow the distribution playbook for your primary channel.",
+    copy: "Open the Excel database, filter by your niche category, and cross-reference your strategy brief for the week-one priorities we identified. Follow the distribution playbook for your primary channel.",
     detail: "The strategy brief includes a week-by-week starting sequence, it tells you exactly which programs to register for first, which page to build first, and which channel to lead with. There is no ambiguity about where to start.",
   },
 ];
@@ -173,7 +173,7 @@ export default function HowItWorksPage() {
                 },
                 {
                   q: "Does the strategy brief change if I have a very niche industry?",
-                  a: "Yes. Jarred reads your intake before writing. If your niche is very specific, the brief is more specific. If your answers raise a question about fit, he emails before delivering.",
+                  a: "Yes. We read your intake before writing. If your niche is very specific, the brief is more specific. If your answers raise a question about fit, we email before delivering.",
                 },
                 {
                   q: "Is the 250+ program database the same for everyone?",
@@ -199,7 +199,7 @@ export default function HowItWorksPage() {
               <div className="rounded-2xl border border-white/10 overflow-hidden">
                 {[
                   { time: "Immediately",       event: "Checkout confirmation email received. Portal access link included." },
-                  { time: "Within 12 hours",   event: "Jarred reads your intake and begins writing your strategy brief." },
+                  { time: "Within 12 hours",   event: "We read your intake and begins writing your strategy brief." },
                   { time: "Within 48 hours",   event: "All six files delivered to your inbox. Order marked as delivered in your portal." },
                   { time: "Day 3+",            event: "Start with the database and brief. Filter programs, follow week 1 priorities." },
                 ].map(({ time, event }, i, arr) => (

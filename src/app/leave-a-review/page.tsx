@@ -43,7 +43,7 @@ export default function LeaveReview() {
           <CheckCircle2 className="h-12 w-12 mx-auto mb-5" style={{ color: CYAN }} />
           <h1 className="text-2xl font-black text-white mb-3">Thank you.</h1>
           <p className="text-white/55 text-sm leading-relaxed mb-6">
-            Your review has been received. Jarred reads every one personally and will reach out if anything stands out.
+            Your review has been received. We read every one personally and will reach out if anything stands out.
           </p>
           <Link href="/" className="text-sm font-semibold hover:text-white transition-colors" style={{ color: CYAN }}>
             ← Back to Refer Labs

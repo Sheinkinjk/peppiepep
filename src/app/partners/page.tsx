@@ -48,10 +48,10 @@ export default function PartnersPage() {
         {/* The product */}
         <Section icon={<Layers />} title="The product">
           <p>
-            <strong className="text-white">Referral Growth Blueprint</strong>, a $799 AUD digital product. Customer fills an intake form (niche, channels, goal, experience), pays via Stripe, and receives 6 deliverables within 48 hours: a 250+ affiliate program database (Excel), a personalised strategy brief written by Jarred, a niche selection brief, 10+ SEO page concepts, distribution playbooks, and a recommended tool stack.
+            <strong className="text-white">Referral Growth Blueprint</strong>, a $799 AUD digital product. Customer fills an intake form (niche, channels, goal, experience), pays via Stripe, and receives 6 deliverables within 48 hours: a 250+ affiliate program database (Excel), a personalised strategy brief written by a Refer Labs editor, a niche selection brief, 10+ SEO page concepts, distribution playbooks, and a recommended tool stack.
           </p>
           <p>
-            The personalised layer is what justifies the price, Jarred reads every intake and writes the brief from scratch. The database is consistent across orders.
+            The personalised layer is what justifies the price, We read every intake and writes the brief from scratch. The database is consistent across orders.
           </p>
           <p>
             <Link href="/referral-blueprint" className="inline-flex items-center gap-1 hover:underline" style={{ color: CYAN }}>
@@ -140,7 +140,7 @@ export default function PartnersPage() {
         {/* Contact */}
         <div className="mt-14 rounded-2xl border-2 p-8" style={{ borderColor: `${AMBER}50`, background: `${AMBER}06` }}>
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: AMBER }}>Next step</p>
-          <h2 className="text-2xl font-black text-white mb-3">Direct contact with Jarred.</h2>
+          <h2 className="text-2xl font-black text-white mb-3">Direct contact with our team.</h2>
           <p className="text-white/60 text-sm mb-6">Email or book a 30-min call. Same-day response.</p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a

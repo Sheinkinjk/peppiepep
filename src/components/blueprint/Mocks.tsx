@@ -243,7 +243,7 @@ export function EmailPreviewMock() {
           <span className="font-bold text-white/70">Your Referral Growth Blueprint, delivered</span>
           <span className="text-white/25 text-[9px]">just now</span>
         </div>
-        <div className="text-white/35 text-[9px]">From: Jarred Krowitz &lt;jarred@referlabs.com.au&gt;</div>
+        <div className="text-white/35 text-[9px]">From: Refer Labs &lt;jarred@referlabs.com.au&gt;</div>
       </div>
       {/* Email body preview */}
       <div className="px-4 py-3 space-y-2">
@@ -275,7 +275,7 @@ export function EmailPreviewMock() {
         <div className="text-white/35 leading-relaxed text-[9px] pt-1">
           Questions on any of these, reply here. Looking forward to hearing how it goes.
         </div>
-        <div className="text-white/45 font-semibold">Jarred</div>
+        <div className="text-white/45 font-semibold">Refer Labs</div>
       </div>
     </div>
   );

@@ -71,7 +71,7 @@ export default function GuideLayout({
     dateModified,
     inLanguage: "en-AU",
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    author: { "@type": "Person", "@id": `${SITE_URL}/about#jarred-krowitz`, name: "Jarred Krowitz", url: `${SITE_URL}/about` },
+    author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
     publisher: {
       "@type": "Organization",
       name: "Refer Labs",

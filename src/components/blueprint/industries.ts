@@ -17,7 +17,7 @@ export const AGENCIES: IndustryPageData = {
   ],
   whatYouGet: [
     "250+ affiliate programs database, including the SaaS tools your agency already uses (Webflow, Notion, beehiiv, Zapier, all 30-50% recurring)",
-    "Personalised strategy brief for your agency niche, written by Jarred after reading your intake",
+    "Personalised strategy brief for your agency niche, written by our editor after reading your intake",
     "10+ SEO page concepts for agency-relevant keywords ('best agency Slack templates', 'best CRM for agencies')",
     "Distribution playbooks for partner outreach, client referral activation, and white-label resale",
     "Niche selection brief, which 3-5 verticals to focus partner activation on",
