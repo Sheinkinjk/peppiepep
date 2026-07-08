@@ -436,6 +436,14 @@ export const CATALOG: Vertical[] = [
         q: "Is Gusto available in Australia?",
         a: "No. Gusto is a US-focused payroll and HR platform and is not built for Australian payroll or compliance. Australian businesses are better served by a local platform such as Employment Hero. We flag availability so you don't sign up for the wrong region.",
       },
+      {
+        q: "How much does payroll software cost in Australia?",
+        a: "Most platforms charge a base fee plus a per-employee monthly rate, so the total scales with headcount and the modules you switch on (payroll only, or HR, benefits and rostering as well). Because plans and add-ons change, check the current per-employee price on the provider before you commit rather than relying on a headline figure.",
+      },
+      {
+        q: "Can I switch payroll providers part-way through a year?",
+        a: "Yes, though it is easiest at the start of a financial year or a pay cycle. You will need to migrate year-to-date pay data, employee records and any leave balances so reporting stays correct. Most platforms offer onboarding help for this; plan the cutover around a pay run so nobody is paid late.",
+      },
     ],
   },
   {
@@ -493,6 +501,14 @@ export const CATALOG: Vertical[] = [
         q: "Do I also need a separate contact-data tool?",
         a: "If your list is thin or your data is stale, pair an outreach tool with a dedicated enrichment tool. Our AI sales tools hub covers the data layer, such as FullEnrich, that feeds these outreach platforms.",
       },
+      {
+        q: "Is cold email legal in Australia?",
+        a: "Commercial email in Australia is governed by the Spam Act 2003. In practice that means you need consent (express or reasonably inferred from an existing business relationship), you must clearly identify who you are, and every message must include a working unsubscribe. B2B outreach to a relevant business address can qualify, but blanket unsolicited emailing does not. Reputable outreach tools include unsubscribe handling and deliverability controls to help you stay compliant, but the legal responsibility is yours.",
+      },
+      {
+        q: "How much do sales outreach tools cost?",
+        a: "Most price either per user per month or on credits for finding and verifying contacts, and several offer a free tier to start. Budget tools like Snov.io are usually the cheapest entry point; team platforms like Reply.io cost more per seat as you add channels and AI features. Check the current plan on each provider, since limits and pricing change often.",
+      },
     ],
   },
   {
@@ -537,6 +553,14 @@ export const CATALOG: Vertical[] = [
       {
         q: "Is Payoneer available in Australia?",
         a: "Yes. Payoneer operates globally, including Australia, and is commonly used to get paid in USD, EUR or GBP by international marketplaces and affiliate programs, then withdraw to a local account.",
+      },
+      {
+        q: "Is Payoneer safe to use?",
+        a: "Payoneer is a regulated payments provider used by millions of businesses and freelancers worldwide, with standard protections like two-factor authentication. As with any financial account, the usual care applies: enable 2FA, watch for phishing, and read the fee schedule so transfer and currency-conversion costs don't surprise you.",
+      },
+      {
+        q: "Payoneer vs PayPal or Wise, what's the difference?",
+        a: "All three move money across borders, but they lean different ways. Payoneer is strong for getting paid by international marketplaces and running a multi-currency business account; Wise is known for low-cost currency conversion on transfers; PayPal is the most widely accepted for one-off consumer payments. The best fit depends on who is paying you and in which currencies. We'll add hands-on comparisons as we expand this category.",
       },
     ],
   },
