@@ -5,6 +5,11 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import { SITE_URL } from "@/lib/seo";
+import {
+  MOSHY_URL, MOSH_HAIR_URL, BEEHIIV_URL, CARRD_URL, DURABLE_URL, SWIPE_PAGES_URL,
+  GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, LEADPAGES_URL, BREVO_URL,
+  EMPLOYMENT_HERO_URL, SUPERFILIATE_URL, ALIDROP_URL,
+} from "@/lib/affiliate-links";
 
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
@@ -33,25 +38,25 @@ const guides = [
   { href: "/best-hair-loss-treatment-australia", cat: "Hair loss", title: "The best hair-loss treatment in Australia" },
 ];
 
-// A sample of the brands we've reviewed, shown as coverage (not "partners"):
-// breadth of what we cover, with the commission disclosed on each page.
+// Brands we've reviewed, shown as a marquee. Each logo links to its tracked
+// referral link (rel="nofollow sponsored" + data-cta). Only brands we actually
+// have an affiliate link for appear here — Kit, which we don't, is excluded.
 const servicesLogos = [
-  { logo: "moshy", name: "Moshy" },
-  { logo: "mosh", name: "Mosh" },
-  { logo: "beehiiv", name: "beehiiv" },
-  { logo: "carrd", name: "Carrd" },
-  { logo: "durable", name: "Durable" },
-  { logo: "swipepages", name: "Swipe Pages" },
-  { logo: "gohighlevel", name: "GoHighLevel" },
-  { logo: "aisdr", name: "AiSDR" },
-  { logo: "replyio", name: "Reply.io" },
-  { logo: "fullenrich", name: "FullEnrich" },
-  { logo: "leadpages", name: "Leadpages" },
-  { logo: "brevo", name: "Brevo" },
-  { logo: "kit", name: "Kit" },
-  { logo: "employmenthero", name: "Employment Hero" },
-  { logo: "superfiliate", name: "Superfiliate" },
-  { logo: "alidrop", name: "AliDrop" },
+  { logo: "moshy", name: "Moshy", url: MOSHY_URL },
+  { logo: "mosh", name: "Mosh", url: MOSH_HAIR_URL },
+  { logo: "beehiiv", name: "beehiiv", url: BEEHIIV_URL },
+  { logo: "carrd", name: "Carrd", url: CARRD_URL },
+  { logo: "durable", name: "Durable", url: DURABLE_URL },
+  { logo: "swipepages", name: "Swipe Pages", url: SWIPE_PAGES_URL },
+  { logo: "gohighlevel", name: "GoHighLevel", url: GOHIGHLEVEL_URL },
+  { logo: "aisdr", name: "AiSDR", url: AISDR_URL },
+  { logo: "replyio", name: "Reply.io", url: REPLY_IO_URL },
+  { logo: "fullenrich", name: "FullEnrich", url: FULLENRICH_URL },
+  { logo: "leadpages", name: "Leadpages", url: LEADPAGES_URL },
+  { logo: "brevo", name: "Brevo", url: BREVO_URL },
+  { logo: "employmenthero", name: "Employment Hero", url: EMPLOYMENT_HERO_URL },
+  { logo: "superfiliate", name: "Superfiliate", url: SUPERFILIATE_URL },
+  { logo: "alidrop", name: "AliDrop", url: ALIDROP_URL },
 ];
 
 const itemListSchema = {
@@ -118,9 +123,6 @@ export default function HomePage() {
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
-              <p className="mt-3 text-[12px] leading-relaxed text-[#9aa39c]">
-                Independent. Rankings are never sold. Some links are disclosed affiliate links, at no cost to you.
-              </p>
             </div>
           </div>
         </section>
@@ -164,18 +166,31 @@ export default function HomePage() {
             {[0, 1].map((dup) => (
               <div key={dup} aria-hidden={dup === 1} className="flex shrink-0 animate-marquee items-center gap-12 pr-12">
                 {servicesLogos.map((s) => (
-                  <Image
+                  <a
                     key={s.logo}
-                    src={`/logos/${s.logo}.png`}
-                    alt={dup === 0 ? s.name : ""}
-                    width={26}
-                    height={26}
-                    className="h-6 w-6 shrink-0 object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-                  />
+                    href={s.url}
+                    target="_blank"
+                    rel="nofollow sponsored"
+                    data-cta={`home-marquee-${s.logo}`}
+                    tabIndex={dup === 1 ? -1 : undefined}
+                    aria-label={dup === 0 ? `${s.name} (opens in a new tab)` : undefined}
+                    className="shrink-0"
+                  >
+                    <Image
+                      src={`/logos/${s.logo}.png`}
+                      alt={dup === 0 ? s.name : ""}
+                      width={26}
+                      height={26}
+                      className="h-6 w-6 shrink-0 object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                    />
+                  </a>
                 ))}
               </div>
             ))}
           </div>
+          <p className="mt-5 px-5 text-center text-[11px] leading-relaxed text-[#9aa39c]">
+            Some are affiliate links; we may earn a commission at no cost to you, and it never changes a ranking.
+          </p>
         </section>
 
         {/* ── Browse by category (bento layout, featured cards glow) ── */}
