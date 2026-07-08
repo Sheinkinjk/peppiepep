@@ -18,7 +18,7 @@ export const alidropConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to AliDrop",
   },
 
-  eyebrow: "E-commerce · dropshipping",
+  eyebrow: "Dropshipping",
   atAGlance: [
     { k: "What it is", v: "AliExpress/Temu dropshipping & fulfilment tool" },
     { k: "Best for", v: "People building a dropshipping store" },

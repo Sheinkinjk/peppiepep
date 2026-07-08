@@ -17,7 +17,7 @@ export const denseConfig: AffiliatePageConfig = {
     buttonLabel: "Shop Dense Hair Experts",
   },
 
-  eyebrow: "Hair care · Australia",
+  eyebrow: "Hair care",
   rating: "4.2",
   readTime: "5 min read",
   atAGlance: [

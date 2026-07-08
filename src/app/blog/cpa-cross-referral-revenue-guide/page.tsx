@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock, Tag, CheckCircle, AlertTriangle, DollarSign, Users, FileText } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, CheckCircle, AlertTriangle, DollarSign, Users, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "The CPA's Guide to Cross-Referral Revenue (Without Ethics Violations) | Refer Labs",
@@ -34,10 +34,6 @@ export default function BlogPost() {
           <div className="flex items-center gap-1">
             <Calendar className="h-4 w-4" />
             <span>January 11, 2026</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Clock className="h-4 w-4" />
-            <span>10 min read</span>
           </div>
         </div>
 

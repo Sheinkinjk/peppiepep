@@ -75,7 +75,6 @@ export default function AffiliateEarningsCalculatorPage() {
           </nav>
 
           <section className="pt-9 pb-7 sm:pt-11">
-            <p className="nw-kicker mb-5">Interactive tool · Affiliate marketing</p>
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Affiliate earnings calculator: what could your audience make?
             </h1>

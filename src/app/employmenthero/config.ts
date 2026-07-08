@@ -6,7 +6,7 @@ export { EMPLOYMENT_HERO_URL };
 export const employmentHeroConfig: AffiliatePageConfig = {
   brand: "Employment Hero",
   logo: "employmenthero",
-  badgeText: "HR & Payroll · Australia",
+  badgeText: "HR & payroll",
   affiliateUrl: EMPLOYMENT_HERO_URL,
 
   quickAnswer:
@@ -18,7 +18,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Employment Hero",
   },
 
-  eyebrow: "HR & payroll · Australia",
+  eyebrow: "HR & payroll",
   readTime: "7 min read",
   atAGlance: [
     { k: "What it is", v: "All-in-one HR, payroll and employment platform" },

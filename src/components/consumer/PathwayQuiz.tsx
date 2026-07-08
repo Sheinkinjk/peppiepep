@@ -83,7 +83,7 @@ export default function PathwayQuiz() {
   return (
     <div className="nw-card rounded-2xl p-7 sm:p-9">
       <div className="flex items-center justify-between gap-4">
-        <p className="nw-kicker">Find your fit · 30 seconds</p>
+        <p className="nw-kicker">Find your fit in 30 seconds</p>
         {step > 0 && (
           <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#9aa39c] hover:text-[#0a7c42]">
             <RotateCcw className="h-3 w-3" /> Restart

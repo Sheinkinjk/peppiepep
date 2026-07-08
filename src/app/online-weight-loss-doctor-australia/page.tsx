@@ -3,6 +3,7 @@ import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 export const metadata = generateSEOMetadata(seoConfig.onlineWeightLossDoctor);
 
@@ -103,7 +104,6 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <p className="nw-kicker">Weight loss · Australia</p>
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               Online weight-loss doctor in Australia: how a telehealth consult really works
             </h1>
@@ -262,6 +262,8 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                 Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
               </a>
             </section>
+
+            <MatchPrompt />
 
             {/* FAQ */}
             <section>

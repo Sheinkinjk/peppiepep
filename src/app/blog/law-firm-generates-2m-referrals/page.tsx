@@ -26,8 +26,6 @@ export default function LawFirmGenerates2MReferralsPage() {
           <div className="flex items-center gap-4 text-amber-200 text-sm">
             <span>January 9, 2026</span>
             <span>•</span>
-            <span>15 min read</span>
-            <span>•</span>
             <span>By Refer Labs Team</span>
           </div>
         </div>

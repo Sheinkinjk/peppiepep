@@ -26,8 +26,6 @@ export default function AttorneyReferralFeeRulesStatePage() {
           <div className="flex items-center gap-4 text-slate-300 text-sm">
             <span>January 8, 2026</span>
             <span>•</span>
-            <span>20 min read</span>
-            <span>•</span>
             <span>By Refer Labs Team</span>
           </div>
         </div>

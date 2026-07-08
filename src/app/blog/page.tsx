@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
+import { ArrowRight, Calendar, Tag } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog | Refer Labs - Professional Services Referral Intelligence",
@@ -13,7 +13,6 @@ const blogPosts = [
     title: "How to Build a Compliant Referral Network for Your Law Firm",
     excerpt: "Navigate state bar ethics rules, track referral fees properly, and scale your law firm's partner network without compliance headaches. A complete guide to ethical referral programs.",
     date: "January 12, 2026",
-    readTime: "12 min read",
     category: "Law Firms",
     categoryColor: "bg-blue-100 text-blue-700",
     image: "/images/blog/law-firm-referrals.jpg",
@@ -23,7 +22,6 @@ const blogPosts = [
     title: "The CPA's Guide to Cross-Referral Revenue (Without Ethics Violations)",
     excerpt: "Learn how accounting firms can generate revenue through compliant cross-referrals with attorneys, financial advisors, and other CPAs while maintaining AICPA ethics standards.",
     date: "January 11, 2026",
-    readTime: "10 min read",
     category: "Accounting",
     categoryColor: "bg-emerald-100 text-emerald-700",
     image: "/images/blog/cpa-referrals.jpg",
@@ -33,7 +31,6 @@ const blogPosts = [
     title: "Why Consulting Firms Should Track Partner Referrals Like Sales Pipeline",
     excerpt: "Discover how to systematize your consulting firm's referral network using CRM-style tracking, partner scoring, and revenue attribution to predictably grow through partnerships.",
     date: "January 10, 2026",
-    readTime: "8 min read",
     category: "Consulting",
     categoryColor: "bg-purple-100 text-purple-700",
     image: "/images/blog/consulting-referrals.jpg",
@@ -43,7 +40,6 @@ const blogPosts = [
     title: "Case Study: How a Mid-Size Law Firm Generates $2M/Year from Referrals",
     excerpt: "Real numbers, strategies, and systems from a 15-attorney personal injury firm that built a $2M referral channel through systematic partner network management.",
     date: "January 9, 2026",
-    readTime: "15 min read",
     category: "Case Studies",
     categoryColor: "bg-amber-100 text-amber-700",
     image: "/images/blog/case-study-law.jpg",
@@ -53,7 +49,6 @@ const blogPosts = [
     title: "Attorney Referral Fee Rules: State-by-State Compliance Guide 2026",
     excerpt: "Complete breakdown of referral fee regulations across all 50 states, including fee splitting percentages, disclosure requirements, and what you need to stay compliant.",
     date: "January 8, 2026",
-    readTime: "20 min read",
     category: "Compliance",
     categoryColor: "bg-slate-100 text-slate-700",
     image: "/images/blog/state-compliance.jpg",
@@ -109,10 +104,6 @@ export default function BlogPage() {
                 <div className="flex items-center gap-1">
                   <Calendar className="h-3.5 w-3.5" />
                   <span>{post.date}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Clock className="h-3.5 w-3.5" />
-                  <span>{post.readTime}</span>
                 </div>
               </div>
 

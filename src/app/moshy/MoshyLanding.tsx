@@ -45,7 +45,6 @@ export default function MoshyLanding() {
             <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
               <Image src="/logos/moshy.png" alt="Moshy logo" width={52} height={52} className="h-12 w-12 object-contain" />
             </span>
-            <p className="nw-kicker">Weight-loss telehealth · Australia</p>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.3rem]">
               Moshy, explained: the clinically-led weight-loss telehealth service,{" "}
               <span className="text-[#0a7c42]">before you start.</span>

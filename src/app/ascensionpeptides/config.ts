@@ -17,7 +17,7 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
     buttonLabel: "View Ascension Peptides Sale",
   },
 
-  eyebrow: "Research peptides · For research use only",
+  eyebrow: "For research use only",
   rating: "4.5",
   readTime: "5 min read",
   atAGlance: [

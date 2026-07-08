@@ -17,7 +17,7 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
     buttonLabel: "View BioPeptiTech Peptides Sale",
   },
 
-  eyebrow: "Research peptides · For research use only",
+  eyebrow: "For research use only",
   rating: "4.4",
   readTime: "5 min read",
   atAGlance: [

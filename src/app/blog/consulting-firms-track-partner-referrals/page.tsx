@@ -26,8 +26,6 @@ export default function ConsultingFirmsTrackPartnerReferralsPage() {
           <div className="flex items-center gap-4 text-purple-200 text-sm">
             <span>January 10, 2026</span>
             <span>•</span>
-            <span>8 min read</span>
-            <span>•</span>
             <span>By Refer Labs Team</span>
           </div>
         </div>

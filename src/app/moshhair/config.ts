@@ -18,7 +18,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Mosh",
   },
 
-  eyebrow: "Hair-loss telehealth · Australia",
+  eyebrow: "Hair-loss telehealth",
   rating: "4.4",
   readTime: "6 min read",
   atAGlance: [

@@ -234,7 +234,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
-          <p className="nw-kicker mb-4">Hair loss · Australia</p>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
             Best Hair Loss Treatment Australia 2026:{" "}
             <span style={{ color: CYAN_LT }}>Mosh vs Dense vs Telehealth</span>

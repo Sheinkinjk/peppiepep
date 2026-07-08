@@ -18,7 +18,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Superfiliate",
   },
 
-  eyebrow: "Affiliate & creator programs · for brands",
+  eyebrow: "For brands",
   atAGlance: [
     { k: "What it is", v: "Affiliate, referral & creator program platform" },
     { k: "Who it's for", v: "E-commerce and DTC brands (not affiliates)" },

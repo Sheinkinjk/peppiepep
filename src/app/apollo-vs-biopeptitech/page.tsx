@@ -129,7 +129,7 @@ export default function ApolloVsBioPeptiTechPage() {
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="nw-kicker mb-5">Comparison · Research peptides · For research use only</p>
+            <p className="nw-kicker mb-5">For research use only</p>
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Apollo Peptides vs BioPeptiTech (2026)
             </h1>

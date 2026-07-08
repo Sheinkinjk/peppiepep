@@ -80,7 +80,6 @@ export default function HairLossHubPage() {
             <span className="text-[#2b362f]">Hair loss</span>
           </nav>
           <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Category hub · Australia</p>
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Hair loss in Australia: <span className="italic text-[#0a7c42]">the options, compared properly</span>
             </h1>

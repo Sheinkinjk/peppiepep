@@ -18,7 +18,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
     buttonLabel: "Continue to Leadpages",
   },
 
-  eyebrow: "Landing pages · lead generation",
+  eyebrow: "Landing pages",
   atAGlance: [
     { k: "What it is", v: "Landing-page builder for lead generation" },
     { k: "Best for", v: "Marketers and small businesses capturing leads" },

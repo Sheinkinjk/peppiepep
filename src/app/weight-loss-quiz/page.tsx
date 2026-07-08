@@ -70,7 +70,6 @@ export default function WeightLossQuizPage() {
           </nav>
 
           <section className="pt-9 pb-7 sm:pt-11">
-            <p className="nw-kicker mb-5">Interactive tool · Health</p>
             <h1 className="mb-4 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl lg:text-[2.6rem]">
               Which weight-loss option fits you?
             </h1>

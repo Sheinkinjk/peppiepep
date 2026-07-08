@@ -114,7 +114,6 @@ export default function BlogPost() {
 
         {/* Header */}
         <div className="mb-12">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-4" style={{ color: CYAN }}>Australia · 2026 Edition · Updated May 2026</p>
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-5 leading-[1.05]">
             Best Affiliate Programs Australia 2026
           </h1>

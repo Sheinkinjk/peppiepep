@@ -135,7 +135,6 @@ export default function MoshyVsPilotPage() {
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="nw-kicker mb-5">Comparison · Australia</p>
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Moshy vs Pilot: weight loss telehealth compared for 2026
             </h1>

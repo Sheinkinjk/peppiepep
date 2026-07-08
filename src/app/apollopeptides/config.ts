@@ -17,7 +17,7 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     buttonLabel: "View Apollo Peptide Sciences Sale",
   },
 
-  eyebrow: "Research peptides · For research use only",
+  eyebrow: "For research use only",
   rating: "4.6",
   readTime: "5 min read",
   atAGlance: [
