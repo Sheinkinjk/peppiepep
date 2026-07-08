@@ -11,10 +11,11 @@ import { MOSHY_OFFER } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
-const aff = (url: string) => ({
+const aff = (url: string, loc = "best-wl-telehealth") => ({
   href: url,
   target: "_blank" as const,
   rel: "nofollow sponsored" as const,
+  "data-cta": loc,
 });
 
 const ext = (url: string) => ({

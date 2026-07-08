@@ -11,10 +11,11 @@ export const metadata = generateSEOMetadata(seoConfig.bestPeptideSupplier);
 
 import { APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL as BPT_URL } from "@/lib/affiliate-links";
 
-const aff = (url: string) => ({
+const aff = (url: string, loc = "best-peptide") => ({
   href: url,
   target: "_blank" as const,
   rel: "nofollow sponsored" as const,
+  "data-cta": loc,
 });
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────

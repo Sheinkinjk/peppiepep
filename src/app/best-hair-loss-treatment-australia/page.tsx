@@ -7,10 +7,11 @@ import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
-const aff = (url: string) => ({
+const aff = (url: string, loc = "best-hair-loss") => ({
   href: url,
   target: "_blank" as const,
   rel: "nofollow sponsored" as const,
+  "data-cta": loc,
 });
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────

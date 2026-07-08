@@ -11,10 +11,11 @@ export const metadata = generateSEOMetadata(seoConfig.bestWebsiteBuilder);
 
 import { CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL as SWIPE_URL } from "@/lib/affiliate-links";
 
-const aff = (url: string) => ({
+const aff = (url: string, loc = "best-website-builder") => ({
   href: url,
   target: "_blank" as const,
   rel: "nofollow sponsored" as const,
+  "data-cta": loc,
 });
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────

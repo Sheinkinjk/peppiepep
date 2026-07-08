@@ -1488,6 +1488,34 @@ export const seoConfig = {
     ],
   },
 
+  hairLossQuiz: {
+    title: "Which Hair-Loss Option Fits You? 60-Second Match | Refer Labs",
+    description:
+      "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, with an honest reason why. Information only, not medical advice.",
+    url: `${SITE_URL}/hair-loss-quiz`,
+    keywords: [
+      "which hair loss treatment is right for me",
+      "hair loss telehealth or topical",
+      "best hair loss option australia",
+      "mosh or dense",
+      "how to choose hair loss treatment",
+    ],
+  },
+
+  newsletterPlatformQuiz: {
+    title: "Which Newsletter Platform Should You Use? 60-Second Match | Refer Labs",
+    description:
+      "Answer one quick question and see which newsletter platform fits your goal, beehiiv, Substack or Kit, with an honest reason why.",
+    url: `${SITE_URL}/newsletter-platform-quiz`,
+    keywords: [
+      "which newsletter platform should i use",
+      "beehiiv vs substack vs kit",
+      "best newsletter platform for me",
+      "newsletter platform quiz",
+      "how to choose a newsletter platform",
+    ],
+  },
+
   aiSalesToolsQuiz: {
     title: "Which AI Sales Tool Do You Need? 60-Second Match | Refer Labs",
     description:

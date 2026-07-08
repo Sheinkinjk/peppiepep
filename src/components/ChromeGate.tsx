@@ -84,6 +84,8 @@ const STANDALONE_ROUTES = [
   "/website-builder-quiz",
   "/weight-loss-quiz",
   "/ai-sales-tools-quiz",
+  "/hair-loss-quiz",
+  "/newsletter-platform-quiz",
   // Polymarket guide cluster (prefix covers all /polymarket/* pages)
   "/polymarket",
   // Affiliate content hub + editorial standards

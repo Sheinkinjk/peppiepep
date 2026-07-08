@@ -151,9 +151,11 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
   return (
     <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 sm:p-8">
       <fieldset>
-        <legend className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">
-          Step {stepNumber} of {visible.length}
-        </legend>
+        {visible.length > 1 && (
+          <legend className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">
+            Step {stepNumber} of {visible.length}
+          </legend>
+        )}
         <p className="mb-4 text-base font-bold text-[#10251b] sm:text-lg">{current!.legend}</p>
         <div className="grid gap-3">
           {current!.options.map((o) => (

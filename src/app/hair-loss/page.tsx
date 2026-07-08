@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import MatchPrompt from "@/components/consumer/MatchPrompt";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
@@ -166,6 +167,14 @@ export default function HairLossHubPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
+          <MatchPrompt
+            href="/hair-loss-quiz"
+            title="Not sure which hair-loss route fits you?"
+            sub="Answer one or two quick questions and get the option that fits, clinical, topical, or your GP, with an honest reason why."
+            cta="Take the 30-second match"
+            dataCta="hair-match-prompt"
+          />
+
           <NewsletterSignup variant="band" source="hair-loss-hub" />
         </section>
 
