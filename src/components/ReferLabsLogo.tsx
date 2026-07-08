@@ -1,67 +1,38 @@
+/**
+ * Refer Labs signature lockup: the compare-bars mark (three ranked bars, top
+ * pick green + ticked = independent, ranked, verified comparison) beside the
+ * wordmark, "Refer" in ink and "Labs" in green. Editorial serif with a Georgia
+ * fallback so it renders reliably even before the webfont loads. Used in the
+ * consumer header (always on a white ground).
+ */
 export function ReferLabsLogo({ className = "" }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 360 260"
+      viewBox="0 0 214 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      role="img"
+      aria-label="Refer Labs"
     >
-      <defs>
-        <linearGradient id="frame-gradient" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#00b7d4" />
-          <stop offset="70%" stopColor="#0088a6" />
-          <stop offset="100%" stopColor="#003647" />
-        </linearGradient>
-        <linearGradient id="block-gradient" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#0cb3d1" />
-          <stop offset="100%" stopColor="#008f9d" />
-        </linearGradient>
-      </defs>
+      {/* compare-bars tile */}
+      <rect x="2" y="2" width="48" height="48" rx="12" fill="#10251b" />
+      <rect x="13" y="15.5" width="26" height="5.4" rx="2.7" fill="#0a7c42" />
+      <circle cx="42" cy="18.2" r="2.4" fill="#0a7c42" />
+      <rect x="13" y="23.8" width="19" height="5.4" rx="2.7" fill="#ffffff" opacity="0.5" />
+      <rect x="13" y="32.1" width="12.5" height="5.4" rx="2.7" fill="#ffffff" opacity="0.28" />
 
-      <rect
-        x="9"
-        y="9"
-        width="342"
-        height="242"
-        rx="18"
-        stroke="url(#frame-gradient)"
-        strokeWidth="18"
-        fill="white"
-      />
-
+      {/* wordmark */}
       <text
-        x="180"
-        y="110"
-        textAnchor="middle"
-        fontFamily="'Inter', 'Segoe UI', system-ui, sans-serif"
-        fontWeight="700"
-        fontSize="64"
-        letterSpacing="2"
-        fill="#003d4b"
+        x="64"
+        y="35"
+        fontFamily="'Fraunces', Georgia, 'Times New Roman', serif"
+        fontWeight="600"
+        fontSize="30"
+        letterSpacing="-0.5"
       >
-        REFER
-      </text>
-
-      <rect
-        x="60"
-        y="128"
-        width="240"
-        height="72"
-        rx="10"
-        fill="url(#block-gradient)"
-      />
-
-      <text
-        x="180"
-        y="179"
-        textAnchor="middle"
-        fontFamily="'Inter', 'Segoe UI', system-ui, sans-serif"
-        fontWeight="800"
-        fontSize="52"
-        letterSpacing="3"
-        fill="white"
-      >
-        LABS
+        <tspan fill="#10251b">Refer </tspan>
+        <tspan fill="#0a7c42">Labs</tspan>
       </text>
     </svg>
   );
