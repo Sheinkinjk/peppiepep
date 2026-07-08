@@ -14,10 +14,29 @@ const breadcrumbSchema = {
   ],
 };
 
+// The author/editor entity (E-E-A-T). Referenced as `author` on guide Article
+// schema across the site via this stable @id. Only verified facts here; add a
+// LinkedIn/X URL to `sameAs` when available to strengthen the entity.
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/about#jarred-krowitz`,
+  name: "Jarred Krowitz",
+  jobTitle: "Founder and Editor",
+  worksFor: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  url: `${SITE_URL}/about`,
+  email: "jarred@referlabs.com.au",
+  nationality: "Australian",
+  description:
+    "Founder and editor of Refer Labs, an independent Australian comparison platform. Researches and edits the site's comparisons across health services, software and business tools.",
+  // sameAs: ["https://www.linkedin.com/in/..."]  // add profile URLs when available
+};
+
 export default function AboutPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
         <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
@@ -79,8 +98,10 @@ export default function AboutPage() {
               Who runs it
             </h2>
             <p className="mt-3 text-[15.5px] leading-relaxed text-[#2b362f]">
-              Refer Labs is founded and run by Jarred Krowitz, based in Australia. If you have found an error, want to
-              partner, or just want to argue with a conclusion, the door is open at{" "}
+              Refer Labs is founded and run by Jarred Krowitz, based in Australia, who personally researches and edits
+              the comparisons published here. Every guide is written and reviewed by a person who read the fine print,
+              not generated and left unchecked. If you have found an error, want to partner, or just want to argue with a
+              conclusion, the door is open at{" "}
               <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/40 underline-offset-4">
                 jarred@referlabs.com.au
               </a>

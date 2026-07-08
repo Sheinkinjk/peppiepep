@@ -142,7 +142,7 @@ export function generateMetadata(config: SEOConfig): Metadata {
  */
 export const seoConfig = {
   home: {
-    title: "Refer Labs: Compare Health Services, Software & Tools in Australia",
+    title: "Refer Labs: Independent Health, Software & Tool Comparisons, Australia",
     description:
       "Independent comparisons for Australians. Weight loss telehealth, hair loss treatment, website builders, newsletter platforms and more, researched properly so you can choose with confidence.",
     url: SITE_URL,
