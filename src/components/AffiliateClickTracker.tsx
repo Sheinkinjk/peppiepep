@@ -44,6 +44,11 @@ const PARTNER_VALUE: Record<string, number> = {
   "try.employmenthero.com": 80,
   // Prediction markets (share of first-30-day trading fees)
   "polymarket.com": 15,
+  // Email marketing / e-commerce / landing pages / affiliate software (PartnerStack)
+  "get.brevo.com": 40,
+  "get.alidrop.co": 30,
+  "try.leadpages.com": 60,
+  "ps.superfiliate.com": 100,
 };
 const DEFAULT_VALUE = 10;
 
@@ -59,6 +64,10 @@ const SUBID_PARAM: Record<string, string> = {
   "try.employmenthero.com": "sid1",     // PartnerStack
   "get.reply.io": "sid1",               // PartnerStack
   "partner.aisdr.com": "sid1",          // PartnerStack (verified: redirects with ps_partner_key)
+  "get.brevo.com": "sid1",              // PartnerStack
+  "get.alidrop.co": "sid1",             // PartnerStack
+  "try.leadpages.com": "sid1",          // PartnerStack
+  "ps.superfiliate.com": "sid1",        // PartnerStack
 };
 
 /** Page path -> compact subid slug, e.g. "/polymarket/trading-bots" -> "polymarket-trading-bots". */

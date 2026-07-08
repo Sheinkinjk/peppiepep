@@ -24,8 +24,11 @@ const GROUPS: Group[] = [
     items: [
       { href: "/compare/website-builders", label: "Website builders", note: "AI, one-page and landing tools" },
       { href: "/best-website-builder", label: "Best website builder", note: "Most popular for 2026" },
+      { href: "/leadpages", label: "Leadpages", note: "Landing pages built for lead generation" },
       { href: "/compare/newsletter-platforms", label: "Newsletter platforms", note: "Where to build an email audience" },
       { href: "/best-newsletter-platform", label: "Best newsletter platform", note: "beehiiv vs Substack vs Kit" },
+      { href: "/brevo", label: "Brevo", note: "Email, SMS, automation and CRM in one" },
+      { href: "/alidrop", label: "AliDrop", note: "AliExpress and Temu dropshipping tool" },
     ],
   },
   {
@@ -54,6 +57,7 @@ const GROUPS: Group[] = [
     items: [
       { href: "/referral-blueprint", label: "Referral Growth Blueprint", note: "Our $799 in-house growth playbook" },
       { href: "/affiliate-programs-australia", label: "Affiliate programs Australia", note: "The best programs, compared for 2026" },
+      { href: "/superfiliate", label: "Superfiliate", note: "Run affiliate & creator programs for your brand" },
       { href: "/for-business", label: "For business overview", note: "How brands grow with Refer Labs" },
       { href: "/services", label: "Growth services", note: "Done-with-you distribution" },
       { href: "/comparison-website", label: "Get featured", note: "Partner on a comparison" },

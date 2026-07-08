@@ -51,6 +51,13 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Best newsletter platform 2026", href: "/best-newsletter-platform", category: "Creator tools", kind: "Guide", keywords: "email marketing substack convertkit beehiiv top" },
   { title: "beehiiv review", href: "/beehiiv", category: "Creator tools", kind: "Guide", keywords: "newsletter email platform grow audience" },
   { title: "IncomeLab", href: "/incomelab", category: "Creator tools", kind: "Guide", keywords: "make money ai income side hustle" },
+  { title: "Brevo review", href: "/brevo", category: "Creator tools", kind: "Guide", keywords: "brevo sendinblue email marketing sms automation crm all in one platform" },
+
+  // Software / landing pages
+  { title: "Leadpages review", href: "/leadpages", category: "Software", kind: "Guide", keywords: "leadpages landing page builder lead generation ab testing conversion" },
+
+  // E-commerce
+  { title: "AliDrop review", href: "/alidrop", category: "E-commerce", kind: "Guide", keywords: "alidrop dropshipping aliexpress temu alibaba shopify fulfilment sourcing" },
 
   // AI & sales
   { title: "Best AI sales tools 2026", href: "/best-ai-sales-tools", category: "AI & sales", kind: "Guide", keywords: "ai sales automation gohighlevel aisdr crm outbound sdr compare top" },
@@ -65,6 +72,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // Affiliate marketing
   { title: "Affiliate earnings calculator", href: "/affiliate-earnings-calculator", category: "Affiliate marketing", kind: "Guide", keywords: "affiliate earnings income calculator how much make commission estimate tool" },
+  { title: "Superfiliate review (for brands)", href: "/superfiliate", category: "Affiliate marketing", kind: "Guide", keywords: "superfiliate affiliate referral creator program platform brands ecommerce shopify" },
   { title: "Best affiliate programs in Australia", href: "/affiliate-programs-australia", category: "Affiliate marketing", kind: "Guide", keywords: "best affiliate programs australia by category highest paying recurring" },
   { title: "Highest-paying affiliate programs", href: "/high-paying-affiliate-programs", category: "Affiliate marketing", kind: "Guide", keywords: "highest paying high commission affiliate programs big payout" },
   { title: "Best recurring affiliate programs", href: "/recurring-affiliate-programs", category: "Affiliate marketing", kind: "Guide", keywords: "recurring commission monthly affiliate programs saas subscription passive" },

@@ -1702,6 +1702,82 @@ export const seoConfig = {
     ],
   },
 
+  brevo: {
+    title: "Brevo Review 2026: All-in-One Email Marketing, SMS & CRM",
+    description:
+      "Brevo review: the all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works. Verify current pricing.",
+    url: `${SITE_URL}/brevo`,
+    keywords: [
+      "brevo review",
+      "brevo review 2026",
+      "brevo email marketing",
+      "sendinblue brevo",
+      "brevo pricing",
+      "brevo vs mailchimp",
+      "all in one email marketing platform",
+      "email sms crm platform",
+      "brevo free plan",
+      "email marketing automation tool 2026",
+    ],
+  },
+
+  alidrop: {
+    title: "AliDrop Review 2026: AliExpress & Temu Dropshipping Tool",
+    description:
+      "AliDrop review: the dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. What it does, who it suits, and an honest take on dropshipping.",
+    url: `${SITE_URL}/alidrop`,
+    keywords: [
+      "alidrop review",
+      "alidrop review 2026",
+      "alidrop dropshipping",
+      "aliexpress dropshipping tool",
+      "temu dropshipping",
+      "alidrop pricing",
+      "shopify dropshipping app",
+      "best dropshipping tool 2026",
+      "alidrop vs dsers",
+      "dropshipping fulfilment automation",
+    ],
+  },
+
+  leadpages: {
+    title: "Leadpages Review 2026: Landing Page Builder for Lead Gen",
+    description:
+      "Leadpages review: a landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder. Verify current pricing.",
+    url: `${SITE_URL}/leadpages`,
+    keywords: [
+      "leadpages review",
+      "leadpages review 2026",
+      "leadpages pricing",
+      "landing page builder lead generation",
+      "leadpages vs clickfunnels",
+      "leadpages vs swipe pages",
+      "best landing page builder 2026",
+      "ab testing landing pages",
+      "lead capture page builder",
+      "conversion landing page tool",
+    ],
+  },
+
+  superfiliate: {
+    title: "Superfiliate Review 2026: Affiliate & Creator Platform for Brands",
+    description:
+      "Superfiliate review: a creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates. Pricing quoted per brand.",
+    url: `${SITE_URL}/superfiliate`,
+    keywords: [
+      "superfiliate review",
+      "superfiliate review 2026",
+      "superfiliate pricing",
+      "affiliate program platform for brands",
+      "creator affiliate platform",
+      "referral program software ecommerce",
+      "shopify affiliate program app",
+      "creator led growth platform",
+      "superfiliate vs refersion",
+      "brand affiliate software 2026",
+    ],
+  },
+
   employmentHero: {
     title: "Employment Hero Review Australia 2026: HR & Payroll Software | Refer Labs",
     description:

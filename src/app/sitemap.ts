@@ -88,6 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/employmenthero`,     lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/best-ai-sales-tools`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
 
+    // ── Email / e-commerce / landing pages / affiliate software ────────
+    { url: `${BASE}/brevo`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/alidrop`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/leadpages`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/superfiliate`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+
     // ── Polymarket guides (prediction markets cluster) ─────────────────
     { url: `${BASE}/polymarket`,                    lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/polymarket/markets-explained`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },

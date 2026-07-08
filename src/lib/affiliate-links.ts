@@ -66,3 +66,19 @@ export const EMPLOYMENT_HERO_URL = "https://try.employmenthero.com/65q9xczaxste"
 // Polymarket: prediction-market referral link. Single source of truth; the
 // UTM helper lives in src/lib/polymarket.ts (polymarketRef).
 export const POLYMARKET_REF_URL = "https://polymarket.com/?r=JKRJ";
+
+// ── Email marketing ──────────────────────────────────────────────────────────
+// Brevo: all-in-one email marketing, SMS, automation and CRM (PartnerStack).
+export const BREVO_URL = "https://get.brevo.com/kcslzesr2rid";
+
+// ── E-commerce / dropshipping ────────────────────────────────────────────────
+// AliDrop: AliExpress/Alibaba/Temu dropshipping sourcing + fulfilment (PartnerStack).
+export const ALIDROP_URL = "https://get.alidrop.co/v33ywxmnny7c";
+
+// ── Landing pages / lead generation ──────────────────────────────────────────
+// Leadpages: AI landing-page builder with A/B testing and CRO (PartnerStack).
+export const LEADPAGES_URL = "https://try.leadpages.com/sdb15x9a4i98";
+
+// ── Affiliate / referral software (for brands) ───────────────────────────────
+// Superfiliate: affiliate, referral and creator-program platform for brands (PartnerStack).
+export const SUPERFILIATE_URL = "https://ps.superfiliate.com/tu04vbefl5kh";

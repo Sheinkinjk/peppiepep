@@ -54,6 +54,11 @@ const STANDALONE_ROUTES = [
   "/replyio",
   "/fullenrich",
   "/best-ai-sales-tools",
+  // Email / e-commerce / landing pages / affiliate software (new this release)
+  "/brevo",
+  "/alidrop",
+  "/leadpages",
+  "/superfiliate",
   // Weight-loss cluster (own light shell)
   "/glp-1-weight-loss-australia",
   "/weight-loss-injections-australia",

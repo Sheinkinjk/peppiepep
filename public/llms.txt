@@ -72,12 +72,17 @@
 - [Durable AI](https://referlabs.com.au/durableai): AI website builder with CRM and invoicing.
 - [Butternut AI](https://referlabs.com.au/butternut): AI full-site generator from a prompt.
 - [Swipe Pages](https://referlabs.com.au/swipepages): AMP landing-page builder.
+- [Leadpages](https://referlabs.com.au/leadpages): Landing-page builder focused on lead generation, with a large template library, built-in A/B testing and lead capture. Free trial; verify current pricing.
 - [Carrd vs Durable AI](https://referlabs.com.au/carrd-vs-durable), [Durable AI vs Butternut AI](https://referlabs.com.au/durable-vs-butternut), [Carrd vs Butternut AI](https://referlabs.com.au/carrd-vs-butternut).
 
 ## Newsletter & creator tools
 - [Best newsletter platform](https://referlabs.com.au/best-newsletter-platform): beehiiv vs Substack vs Kit.
 - [beehiiv](https://referlabs.com.au/beehiiv): Newsletter platform built for growth.
+- [Brevo](https://referlabs.com.au/brevo): All-in-one email marketing, SMS, automation and CRM platform (formerly Sendinblue). Priced by emails sent, not list size. Free plan; verify current pricing.
 - [IncomeLab](https://referlabs.com.au/incomelab): AI income and side-hustle frameworks.
+
+## E-commerce
+- [AliDrop](https://referlabs.com.au/alidrop): Dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. Free plan; verify current pricing. Dropshipping carries costs and risk; not an income guarantee.
 
 ## Research peptides (research use only, not for human consumption)
 - [Best peptide supplier](https://referlabs.com.au/best-peptide-supplier): Apollo, Ascension and BioPeptiTech, compared.
@@ -87,6 +92,7 @@
 ## For business & affiliate marketing
 - [Referral Growth Blueprint ($799)](https://referlabs.com.au/referral-blueprint): Refer Labs' in-house product: 250+ curated affiliate/referral programs, a personalised strategy brief and distribution playbooks.
 - [Best affiliate programs Australia](https://referlabs.com.au/affiliate-programs-australia): The best affiliate programs for Australians, by category.
+- [Superfiliate](https://referlabs.com.au/superfiliate): Creator-led growth platform for brands to run affiliate, referral and creator programs (personalised pages per partner). A tool for brands, not for individual affiliates. Pricing quoted per brand.
 - [Affiliate earnings calculator](https://referlabs.com.au/affiliate-earnings-calculator): Interactive estimator (audience size x channel x niche) producing an illustrative earnings range with all assumptions shown. Estimates only, never a promise of income.
 - [Highest-paying affiliate programs](https://referlabs.com.au/high-paying-affiliate-programs), [Best recurring affiliate programs](https://referlabs.com.au/recurring-affiliate-programs), [How to start affiliate marketing in Australia](https://referlabs.com.au/how-to-start-affiliate-marketing-australia).
 - [Growth services](https://referlabs.com.au/services).
