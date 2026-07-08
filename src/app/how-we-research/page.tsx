@@ -2,18 +2,23 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import Link from "next/link";
 
-export const metadata = generateSEOMetadata({
-  title: "How We Research, Editorial Standards & Affiliate Disclosure | Refer Labs",
-  description:
-    "How Refer Labs researches its comparisons: our sources, our independence, our affiliate disclosure, and how we handle health content. Rankings are never sold. Corrections welcome.",
-  url: `${SITE_URL}/how-we-research`,
-  keywords: [
-    "refer labs editorial standards",
-    "how refer labs reviews products",
-    "affiliate disclosure refer labs",
-    "independent comparison methodology",
-  ],
-});
+export const metadata = {
+  ...generateSEOMetadata({
+    title: "How We Research, Editorial Standards & Affiliate Disclosure | Refer Labs",
+    description:
+      "How Refer Labs researches its comparisons: our sources, our independence, our affiliate disclosure, and how we handle health content. Rankings are never sold. Corrections welcome.",
+    url: `${SITE_URL}/how-we-research`,
+    keywords: [
+      "refer labs editorial standards",
+      "how refer labs reviews products",
+      "affiliate disclosure refer labs",
+      "independent comparison methodology",
+    ],
+  }),
+  // Hidden: removed from nav, footer, sitemap, llms and schema, and de-indexed.
+  // Page kept live only so the affiliate-disclosure links across the site don't 404.
+  robots: { index: false, follow: true },
+};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

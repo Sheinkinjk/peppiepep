@@ -41,7 +41,6 @@ export function OrganizationSchema() {
       "email": "jarred@referlabs.com.au",
       "availableLanguage": ["English"]
     },
-    "publishingPrinciples": "https://referlabs.com.au/how-we-research",
     "sameAs": [
       "https://www.linkedin.com/company/referlabs"
     ]

@@ -66,7 +66,6 @@ const GROUPS: Group[] = [
 
 const DIRECT: Item[] = [
   { href: "/guides", label: "All guides" },
-  { href: "/how-we-research", label: "How we work" },
 ];
 
 export default function HeaderNav() {

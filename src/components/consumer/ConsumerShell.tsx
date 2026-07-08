@@ -15,7 +15,6 @@ const NAV = [
   { href: "/best-ai-sales-tools", label: "AI sales tools" },
   { href: "/guides", label: "All guides" },
   { href: "/for-business", label: "For business" },
-  { href: "/how-we-research", label: "How we work" },
 ];
 
 /**
@@ -92,7 +91,6 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
             <div>
               <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">Company</p>
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
-                <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How we work</Link></li>
                 <li><Link href="/for-business" className="transition-colors hover:text-[#0a7c42]">For business</Link></li>
                 <li><Link href="/affiliate-programs-australia" className="transition-colors hover:text-[#0a7c42]">Affiliate programs AU</Link></li>
                 <li><Link href="/contact" className="transition-colors hover:text-[#0a7c42]">Contact</Link></li>
