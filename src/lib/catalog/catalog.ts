@@ -76,9 +76,9 @@ export const CATALOG: Vertical[] = [
       {
         name: "Carrd",
         bestFor: "Cheapest one-page sites",
-        blurb: "The best value in simple websites. Free to start, Pro from about $9/year. Ideal for a portfolio, link-in-bio, or a single landing page.",
+        blurb: "The best value in simple websites. Free to start, Pro from about $19/year. Ideal for a portfolio, link-in-bio, or a single landing page.",
         facts: [
-          { label: "Price", value: "Free; Pro from ~$9/year" },
+          { label: "Price", value: "Free; Pro from ~$19/year" },
           { label: "Best for", value: "One-page sites" },
           { label: "AI build", value: "No" },
         ],
@@ -134,7 +134,7 @@ export const CATALOG: Vertical[] = [
       },
       {
         q: "What is the cheapest website builder?",
-        a: "Carrd, comfortably. It has a genuine free plan and Pro tiers from around $9 per year. The AI builders let you generate a site free before committing to a paid publishing plan.",
+        a: "Carrd, comfortably. It has a genuine free plan and Pro tiers from around $19 per year. The AI builders let you generate a site free before committing to a paid publishing plan.",
       },
       {
         q: "Which builder is best for a business website?",
@@ -265,7 +265,7 @@ export const CATALOG: Vertical[] = [
         blurb: "An AI sales development rep that prospects, personalises outreach across channels and books meetings, so you build pipeline without hiring SDRs.",
         facts: [
           { label: "Role", value: "AI SDR" },
-          { label: "Pricing", value: "From ~$900/mo quarterly (verify)" },
+          { label: "Pricing", value: "From ~$250/mo; popular ~$900/mo quarterly (verify)" },
           { label: "Best for", value: "Pipeline without hiring" },
         ],
         affiliateUrl: AISDR_URL,

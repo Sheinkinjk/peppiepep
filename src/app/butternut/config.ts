@@ -193,7 +193,7 @@ export const butternutConfig: AffiliatePageConfig = {
     {
       href: "/carrd",
       label: "Carrd, Free Website Builder",
-      desc: "Free plan forever, Pro from $9/year. Best for portfolios, link-in-bio, and simple sites.",
+      desc: "Free plan forever, Pro from $19/year. Best for portfolios, link-in-bio, and simple sites.",
     },
     {
       href: "/guides",

@@ -619,7 +619,7 @@ export const seoConfig = {
   carrd: {
     title: "Carrd Review 2026: Free Website Builder | Refer Labs",
     description:
-      "Carrd review 2026 — free plan forever, Pro from $9/year. The simplest one-page website builder for portfolios, link-in-bio, and landing pages.",
+      "Carrd review 2026 — free plan forever, Pro from $19/year. The simplest one-page website builder for portfolios, link-in-bio, and landing pages.",
     url: `${SITE_URL}/carrd`,
     keywords: [
       "carrd review 2026",
@@ -1313,7 +1313,7 @@ export const seoConfig = {
   carrdVsButternut: {
     title: "Carrd vs Butternut AI 2026: Simple Builder or AI Site Generator? | Refer Labs",
     description:
-      "Carrd vs Butternut AI compared for 2026. Carrd is a simple one-page website builder with a free plan and Pro from $9/year; Butternut AI generates a full multi-page site from one prompt in about 20 seconds. Free tiers, what you get, pricing, and which to pick.",
+      "Carrd vs Butternut AI compared for 2026. Carrd is a simple one-page website builder with a free plan and Pro from $19/year; Butternut AI generates a full multi-page site from one prompt in about 20 seconds. Free tiers, what you get, pricing, and which to pick.",
     url: `${SITE_URL}/carrd-vs-butternut`,
     keywords: [
       "carrd vs butternut",
@@ -1754,7 +1754,7 @@ export const seoConfig = {
   aisdr: {
     title: "AiSDR Discount Code & Referral Link 2026: AI Sales Rep | Refer Labs",
     description:
-      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $900/month billed quarterly at the time of writing. Verify current pricing.",
+      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $250/month (Solo); the popular quarterly plan is around $900/month at the time of writing. Verify current pricing.",
     url: `${SITE_URL}/aisdr`,
     keywords: [
       "aisdr discount code",

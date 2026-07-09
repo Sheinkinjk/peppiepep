@@ -216,22 +216,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <span className="text-[#2b362f]">Best Hair Loss Treatment Australia 2026</span>
         </nav>
 
-        {/* Jump Nav */}
-        <div className="mb-10 flex flex-wrap gap-2">
-          {["#comparison", "#feature-table", "#reddit-verdict", "#faq"].map((href) => {
-            const label = href.slice(1).replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-            return (
-              <a
-                key={href}
-                href={href}
-                className="rounded-full px-3 py-1 text-xs font-medium transition-all hover:opacity-80"
-                style={{ color: CYAN_LT, border: `1px solid ${CYAN}40`, background: `${CYAN}08` }}
-              >
-                {label}
-              </a>
-            );
-          })}
-        </div>
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
@@ -309,12 +293,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <h3 className="text-xl font-black text-[#10251b]">{opt.name}</h3>
-                    <span
-                      className="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest"
-                      style={{ color: opt.badgeColor, background: `${opt.badgeColor}15`, border: `1px solid ${opt.badgeColor}30` }}
-                    >
-                      {opt.badge}
-                    </span>
                   </div>
                   <p className="text-[#9aa39c] text-xs mb-1">{opt.category}</p>
                   <p className="text-[#3d4b44] text-sm">{opt.tagline}</p>
