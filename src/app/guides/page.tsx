@@ -21,6 +21,11 @@ const hubs = [
   { href: "/compare/website-builders", label: "Website builders", desc: "Free, AI-built and landing-page tools, sorted by job." },
   { href: "/compare/newsletter-platforms", label: "Newsletter platforms", desc: "Where to build an email audience, and what each takes." },
   { href: "/compare/ai-sales-tools", label: "AI sales tools", desc: "Data, outreach, AI reps and CRMs, sorted by the job you need done." },
+  { href: "/compare/sales-outreach", label: "Sales & outreach", desc: "Find leads and reach them across email and channels." },
+  { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants and voice, sorted by what they actually do." },
+  { href: "/compare/hr-payroll", label: "HR & payroll", desc: "Run pay, hiring, training and people admin from one place." },
+  { href: "/compare/business-phone", label: "Business phone", desc: "Cloud calling and virtual numbers for teams." },
+  { href: "/compare/payments", label: "Payments & finance", desc: "Get paid across borders, plus bookkeeping automation." },
   { href: "/compare/research-peptides", label: "Research peptides", desc: "Suppliers compared on purity and catalogue. Research use only." },
 ];
 

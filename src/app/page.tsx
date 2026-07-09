@@ -32,6 +32,8 @@ const categories = [
   { href: "/compare/hr-payroll", title: "HR & payroll" },
   { href: "/compare/sales-outreach", title: "Sales & outreach" },
   { href: "/compare/payments", title: "Payments & finance" },
+  { href: "/compare/business-phone", title: "Business phone" },
+  { href: "/compare/ai-tools", title: "AI tools" },
 ];
 
 const guides = [
