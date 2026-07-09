@@ -60,8 +60,16 @@
 - [Reply.io](https://referlabs.com.au/replyio): AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS, with AI SDR agents, built-in B2B data and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user pricing; verify current pricing.
 - [FullEnrich](https://referlabs.com.au/fullenrich): Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing; verify current pricing.
 
-## Business software (Australia)
+## Business, phone, finance & AI tools
 - [Employment Hero](https://referlabs.com.au/employmenthero): Australian all-in-one HR, payroll (ATO-certified Single Touch Payroll) and employment platform for SMEs.
+- [Trainual](https://referlabs.com.au/trainual): Employee training, onboarding and SOP documentation platform. Verify current pricing.
+- [CloudTalk](https://referlabs.com.au/cloudtalk): AI-powered call-centre and business phone system for sales and support; 14-day free trial. Verify current pricing.
+- [KrispCall](https://referlabs.com.au/krispcall): Cloud phone system with virtual numbers and a shared team inbox for remote teams. Verify current pricing.
+- [Dext](https://referlabs.com.au/dext): Bookkeeping automation that captures receipts and invoices and syncs to Xero, QuickBooks and Sage; 14-day free trial. Verify current pricing.
+- [Lindy](https://referlabs.com.au/lindy): AI work assistant that automates inbox, scheduling and CRM tasks; 7-day free trial, from about US$49.99/month. Verify current pricing.
+- [ElevenLabs](https://referlabs.com.au/elevenlabs): AI voice and text-to-speech platform with voice cloning and dubbing; free plan available. Verify current limits.
+- [Wing Assistant](https://referlabs.com.au/wing-assistant): Managed virtual-assistant service with dedicated assistants across many roles; free consultation. Verify current pricing.
+- [Survicate](https://referlabs.com.au/survicate): Customer-feedback and survey platform across website, email and app with AI analysis; free plan available. Verify current limits.
 
 ## Prediction markets (Polymarket guides)
 - [Polymarket hub: how to sign up & trade](https://referlabs.com.au/polymarket): Main Polymarket page. What it is, how to sign up on the US (regulated, USD) or international (crypto, USDC) platform in three steps, what you can trade, and links to the full guides.
