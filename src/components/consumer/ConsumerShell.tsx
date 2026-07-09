@@ -5,6 +5,9 @@ import HeaderNav from "./HeaderNav";
 import { ReferLabsLogo } from "../ReferLabsLogo";
 
 // Mobile shortcut row (desktop uses the grouped HeaderNav dropdowns).
+// The full category set surfaced directly in the header (mobile row + used as the
+// canonical category list). "Other" is the catch-all for anything not yet in a
+// named category.
 const NAV = [
   { href: "/weight-loss", label: "Weight loss" },
   { href: "/hair-loss", label: "Hair loss" },
@@ -12,9 +15,12 @@ const NAV = [
   { href: "/best-peptide-supplier", label: "Peptides" },
   { href: "/compare/website-builders", label: "Website builders" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
-  { href: "/best-ai-sales-tools", label: "AI sales tools" },
-  { href: "/guides", label: "All guides" },
+  { href: "/best-ai-sales-tools", label: "AI sales" },
+  { href: "/compare/sales-outreach", label: "Sales & outreach" },
+  { href: "/compare/hr-payroll", label: "HR & payroll" },
+  { href: "/compare/payments", label: "Payments" },
   { href: "/for-business", label: "For business" },
+  { href: "/guides", label: "Other" },
 ];
 
 /**

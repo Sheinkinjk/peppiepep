@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, HeartPulse, Sparkles, Stethoscope, FlaskConical, LayoutTemplate, Mail, Bot, Briefcase, Wallet, Send } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
@@ -19,17 +19,18 @@ const picks = [
   { logo: "carrd", name: "Carrd", cat: "Website builders", verdict: "The simplest, cheapest way to put a sharp one-page site online, free to start.", href: "/carrd-vs-durable" },
 ];
 
+// Category hubs live in the header nav now; kept here only for the ItemList schema.
 const categories = [
-  { href: "/weight-loss", title: "Weight loss & telehealth", desc: "Online weight-management, sorted into honest pathways.", brands: "Moshy, Juniper & Pilot", icon: HeartPulse, accent: { bg: "#e8f5ee", fg: "#0a7c42" }, count: "11 guides" },
-  { href: "/hair-loss", title: "Hair loss treatment", desc: "Clinical telehealth versus topical products, compared.", brands: "Mosh & Dense", icon: Sparkles, accent: { bg: "#e5f1ef", fg: "#0f766e" }, count: "4 guides" },
-  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "Online clinics for weight, hair and everyday health.", brands: "Mosh & Moshy", icon: Stethoscope, accent: { bg: "#ebeff3", fg: "#4a6274" }, count: "3 guides" },
-  { href: "/best-peptide-supplier", title: "Research peptides", desc: "Australian and global suppliers, on trust and quality.", brands: "Apollo & Ascension", icon: FlaskConical, accent: { bg: "#f1ede6", fg: "#87694a" }, count: "4 reviews" },
-  { href: "/compare/website-builders", title: "Website builders", desc: "AI builders, one-page tools and landing specialists.", brands: "Carrd, Durable & Swipe Pages", icon: LayoutTemplate, accent: { bg: "#eaf0ee", fg: "#3f6b57" }, count: "5 tools" },
-  { href: "/compare/newsletter-platforms", title: "Newsletter platforms", desc: "Where to build an email audience, and the fine print.", brands: "beehiiv, Substack & Kit", icon: Mail, accent: { bg: "#f2eee7", fg: "#8a6d3b" }, count: "3 tools" },
-  { href: "/best-ai-sales-tools", title: "AI sales & automation", desc: "AI reps and all-in-one CRMs that do the selling for you.", brands: "GoHighLevel & AiSDR", icon: Bot, accent: { bg: "#eceef0", fg: "#3d4b52" }, count: "3 tools" },
-  { href: "/compare/hr-payroll", title: "HR & payroll", desc: "Run pay, hiring and people admin from one platform.", brands: "Employment Hero & Gusto", icon: Briefcase, accent: { bg: "#e9f0ec", fg: "#2f6b4e" }, count: "2 tools" },
-  { href: "/compare/sales-outreach", title: "Sales & outreach", desc: "Find leads and reach them across email and channels.", brands: "Snov.io & Reply.io", icon: Send, accent: { bg: "#eef1ec", fg: "#5a6b3f" }, count: "2 tools" },
-  { href: "/compare/payments", title: "Payments & finance", desc: "Get paid and move money across borders.", brands: "Payoneer", icon: Wallet, accent: { bg: "#e6f2ee", fg: "#0e7c66" }, count: "1 tool" },
+  { href: "/weight-loss", title: "Weight loss & telehealth" },
+  { href: "/hair-loss", title: "Hair loss treatment" },
+  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth" },
+  { href: "/best-peptide-supplier", title: "Research peptides" },
+  { href: "/compare/website-builders", title: "Website builders" },
+  { href: "/compare/newsletter-platforms", title: "Newsletter platforms" },
+  { href: "/best-ai-sales-tools", title: "AI sales & automation" },
+  { href: "/compare/hr-payroll", title: "HR & payroll" },
+  { href: "/compare/sales-outreach", title: "Sales & outreach" },
+  { href: "/compare/payments", title: "Payments & finance" },
 ];
 
 const guides = [
@@ -207,50 +208,6 @@ export default function HomePage() {
           <p className="mt-5 px-5 text-center text-[11px] leading-relaxed text-[#9aa39c]">
             Some are affiliate links; we may earn a commission at no cost to you, and it never changes a ranking.
           </p>
-        </section>
-
-        {/* ── Browse by category (bento layout, featured cards glow) ── */}
-        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <h2 className="mb-8 text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Browse by category</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((c, i) => {
-              const featured = i === 0 || i === categories.length - 1;
-              const Icon = c.icon;
-              return (
-                <Link
-                  key={c.href}
-                  href={c.href}
-                  className={`group relative flex flex-col overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_24px_60px_-28px_rgba(14,124,66,0.5)] ${
-                    featured
-                      ? "bg-[radial-gradient(130%_120%_at_100%_0%,#e9f4ed_0%,transparent_58%)] lg:col-span-2"
-                      : ""
-                  }`}
-                >
-                  <div className="relative flex items-center justify-between">
-                    <span
-                      className="flex h-11 w-11 items-center justify-center rounded-xl"
-                      style={{ background: c.accent.bg, color: c.accent.fg }}
-                    >
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </span>
-                    <span className="text-[11px] font-semibold uppercase tracking-wide text-[#9aa39c]">{c.count}</span>
-                  </div>
-                  <h3
-                    className={`relative mt-4 font-bold tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42] ${
-                      featured ? "text-xl sm:text-2xl" : "text-[17px]"
-                    }`}
-                  >
-                    {c.title}
-                  </h3>
-                  <p className="relative mt-1.5 flex-1 text-sm leading-relaxed text-[#6e7b74]">{c.desc}</p>
-                  <div className="relative mt-4 flex items-center justify-between border-t border-[#eef1ef] pt-3.5">
-                    <span className="text-[12.5px] font-medium text-[#9aa39c]">{c.brands}</span>
-                    <ArrowUpRight className="h-4 w-4 shrink-0 text-[#cdd5cf] transition-colors group-hover:text-[#0a7c42]" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
         </section>
 
         {/* ── Latest guides (article index) ── */}
