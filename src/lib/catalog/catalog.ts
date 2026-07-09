@@ -562,6 +562,14 @@ export const CATALOG: Vertical[] = [
         q: "Payoneer vs PayPal or Wise, what's the difference?",
         a: "All three move money across borders, but they lean different ways. Payoneer is strong for getting paid by international marketplaces and running a multi-currency business account; Wise is known for low-cost currency conversion on transfers; PayPal is the most widely accepted for one-off consumer payments. The best fit depends on who is paying you and in which currencies. We'll add hands-on comparisons as we expand this category.",
       },
+    {
+        q: "What should you look for in a cross-border payment tool?",
+        a: "Five things matter most: the total cost (transfer fees plus the currency-conversion margin, which is often the bigger cost), the currencies and countries supported, how fast payouts actually land, whether you can hold a multi-currency balance, and the provider's regulation and security. Compare the all-in cost on a real transfer amount, not just the headline fee, because conversion spreads vary a lot between providers.",
+      },
+      {
+        q: "How long do international payments take?",
+        a: "It depends on the method and route. Transfers within a provider's own network or to a local account can be near-instant to a couple of business days; traditional bank wires and less common currency corridors can take longer. Always check the provider's stated timeframe for your specific currency and destination, and note that weekends and public holidays can add delay.",
+      },
     ],
   },
 ];

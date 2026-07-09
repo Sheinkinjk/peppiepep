@@ -509,7 +509,7 @@ export default async function LinkedInInfluencerJoinPage({ searchParams }: PageP
 
         <section className="mb-16 rounded-3xl border border-white/10 bg-white/5 p-10 shadow-xl backdrop-blur">
           <h2 className="text-2xl font-black text-white mb-2">What You'll Get Access To</h2>
-          <p className="text-sm text-slate-200/80 mb-8">The tools and support to make creator partnerships seamless.</p>
+          <p className="text-sm text-slate-200/80 mb-8">The tools and support to make creator partnerships simple.</p>
           <div className="grid gap-5 md:grid-cols-2">
             {[
               {
