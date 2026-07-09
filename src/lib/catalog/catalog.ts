@@ -650,6 +650,14 @@ export const CATALOG: Vertical[] = [
         q: "Do I need a business phone system or just a mobile?",
         a: "A dedicated system is worth it once more than one person handles calls, you want a shared inbox and records, or you need numbers in more than one region. For a single person making occasional calls, a mobile or a basic plan is usually enough.",
       },
+      {
+        q: "How does a cloud phone system work?",
+        a: "Instead of desk phones and on-site hardware, calls run over the internet through an app on your computer or mobile. You buy virtual numbers, set up routing and voicemail in a dashboard, and your team makes and takes calls from anywhere. Because it is software, adding a user or a number is a settings change rather than new equipment.",
+      },
+      {
+        q: "Can I keep my existing phone number?",
+        a: "In most cases yes. Cloud phone systems generally support number porting, moving your existing business number across to the new provider. It can take a few business days and availability depends on the number type and country, so confirm porting support and timeframes with the provider first, and keep the old service active until the port completes.",
+      },
     ],
   },
   {
@@ -701,6 +709,14 @@ export const CATALOG: Vertical[] = [
       {
         q: "Are these AI tools free to try?",
         a: "Both offer a low-risk way to start: ElevenLabs has a free plan, and Lindy offers a free trial. Free tiers and trials change, so confirm the current limits on each provider before you rely on them.",
+      },
+      {
+        q: "AI assistant vs AI voice, what's the difference?",
+        a: "An AI assistant like Lindy does work for you, automating tasks across your apps such as email, scheduling and CRM updates. An AI voice tool like ElevenLabs generates audio, turning text into natural speech, cloning voices or dubbing video. One saves you time on admin; the other produces content. Pick based on whether you need work done or audio made.",
+      },
+      {
+        q: "Is my data safe with AI tools?",
+        a: "It depends on the provider. Reputable AI tools publish how they store and use your data and whether inputs are used to train models. Before connecting sensitive accounts or uploading confidential material, read the provider's data and security terms, and prefer plans or settings that exclude your data from training where that matters to you.",
       },
     ],
   },
