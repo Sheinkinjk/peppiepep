@@ -332,6 +332,13 @@ export const seoConfig = {
     url: `${SITE_URL}/survicate`,
     keywords: ["survicate discount code", "survicate promo code", "survicate coupon", "survicate referral link", "survicate review", "survicate pricing", "customer feedback software", "survey tool"],
   },
+  nutshell: {
+    title: "Nutshell Discount Code & Referral Link 2026: Easy Sales CRM | Refer Labs",
+    description:
+      "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in. Here's the current offer, a 14-day free trial, no card, via our link.",
+    url: `${SITE_URL}/nutshell`,
+    keywords: ["nutshell discount code", "nutshell promo code", "nutshell coupon", "nutshell crm referral link", "nutshell crm review", "nutshell pricing", "easy sales crm", "small business crm"],
+  },
 
   hairLossHub: {
     title: "Hair Loss in Australia 2026: Compare Treatments & Your Options | Refer Labs",

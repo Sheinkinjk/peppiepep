@@ -70,6 +70,7 @@
 - [ElevenLabs](https://referlabs.com.au/elevenlabs): AI voice and text-to-speech platform with voice cloning and dubbing; free plan available. Verify current limits.
 - [Wing Assistant](https://referlabs.com.au/wing-assistant): Managed virtual-assistant service with dedicated assistants across many roles; free consultation. Verify current pricing.
 - [Survicate](https://referlabs.com.au/survicate): Customer-feedback and survey platform across website, email and app with AI analysis; free plan available. Verify current limits.
+- [Nutshell](https://referlabs.com.au/nutshell): Easy sales CRM with built-in email marketing for SMB teams; 14-day free trial, no card, from about US$13/user/month.
 
 ## Prediction markets (Polymarket guides)
 - [Polymarket hub: how to sign up & trade](https://referlabs.com.au/polymarket): Main Polymarket page. What it is, how to sign up on the US (regulated, USD) or international (crypto, USDC) platform in three steps, what you can trade, and links to the full guides.

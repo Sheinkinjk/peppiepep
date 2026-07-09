@@ -88,6 +88,9 @@ export const SUPERFILIATE_URL = "https://ps.superfiliate.com/tu04vbefl5kh";
 // Payoneer: global cross-border payments and business accounts for freelancers/SMBs.
 export const PAYONEER_URL = "https://payoneer557.partnerlinks.io/3qmtzfpag28u";
 
+// Nutshell: easy sales CRM with built-in email marketing for SMB teams.
+export const NUTSHELL_URL = "https://try.nutshell.com/pf9ozajrlkjn";
+
 // ── Business phone / calling (PartnerStack) ──────────────────────────────────
 // CloudTalk: AI-powered call-centre / business phone system for sales & support.
 export const CLOUDTALK_URL = "https://get.cloudtalk.io/9mxppdbxerja";

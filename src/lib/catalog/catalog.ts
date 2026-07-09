@@ -1,6 +1,6 @@
 import {
   CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL, BEEHIIV_URL,
-  GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, SNOV_URL,
+  GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, SNOV_URL, NUTSHELL_URL,
   APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL,
   EMPLOYMENT_HERO_URL, GUSTO_URL, PAYONEER_URL,
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
@@ -218,10 +218,10 @@ export const CATALOG: Vertical[] = [
     h1Lead: "AI sales tools:",
     h1Accent: "matched to your stack",
     intro:
-      "These tools sit at different points in the sales stack, data, outreach, an AI rep, and an all-in-one platform. This hub sorts them by the job you actually need doing, so you buy the right layer, not the loudest one.",
+      "These tools sit at different points in the sales stack, data, outreach, an AI rep, an all-in-one platform, and an easy CRM. This hub sorts them by the job you actually need doing, so you buy the right layer, not the loudest one.",
     metaTitle: "AI Sales Tools Compared 2026: Data, Outreach, AI SDR & CRM | Refer Labs",
     metaDescription:
-      "Compare AI sales tools by role for 2026: FullEnrich for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, GoHighLevel for all-in-one CRM. Independent, no pay-to-rank.",
+      "Compare AI sales tools by role for 2026: FullEnrich for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, GoHighLevel for all-in-one, Nutshell for an easy CRM. Independent, no pay-to-rank.",
     keywords: [
       "ai sales tools comparison",
       "best ai sales tools 2026",
@@ -284,6 +284,19 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: GOHIGHLEVEL_URL,
         reviewHref: "/gohighlevel",
         ctaLabel: "Try GoHighLevel",
+      },
+      {
+        name: "Nutshell",
+        bestFor: "An easy CRM with marketing built in",
+        blurb: "A straightforward sales CRM that bundles pipeline management, email sequences, web forms and reporting, so smaller teams get a CRM and basic marketing in one without enterprise complexity.",
+        facts: [
+          { label: "Role", value: "Sales CRM + marketing" },
+          { label: "Pricing", value: "No free plan; from US$13/user/mo" },
+          { label: "Best for", value: "SMB sales teams" },
+        ],
+        affiliateUrl: NUTSHELL_URL,
+        reviewHref: "/nutshell",
+        ctaLabel: "See Nutshell",
       },
       {
         name: "Snov.io",
