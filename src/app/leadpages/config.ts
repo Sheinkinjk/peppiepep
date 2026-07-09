@@ -8,9 +8,10 @@ export const leadpagesConfig: AffiliatePageConfig = {
   logo: "leadpages",
   badgeText: "Landing pages",
   affiliateUrl: LEADPAGES_URL,
+  offer: "7-day free trial, no card",
 
   quickAnswer:
-    "Leadpages is a landing-page and lead-generation builder with built-in A/B testing and conversion tools. You build pages from a large template library, add lead-capture forms, pop-ups and alert bars, connect your email and CRM tools, and test variants to lift conversion. It suits marketers, coaches and small businesses whose main goal is capturing leads, not just publishing a website. Leadpages offers a free trial and paid plans; verify current pricing on the provider.",
+    "Leadpages is a landing-page and lead-generation builder with built-in A/B testing and conversion tools. You build pages from a large template library, add lead-capture forms, pop-ups and alert bars, connect your email and CRM tools, and test variants to lift conversion. It suits marketers, coaches and small businesses whose main goal is capturing leads, not just publishing a website. Leadpages offers a 7-day free trial, with paid plans from around US$49 the first month, then US$99/month.",
 
   banner: {
     heading: "Leadpages: Landing Pages Built to Convert",
@@ -23,7 +24,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
     { k: "What it is", v: "Landing-page builder for lead generation" },
     { k: "Best for", v: "Marketers and small businesses capturing leads" },
     { k: "Stand-out", v: "A/B testing, big template library, pop-ups" },
-    { k: "Price", v: "Free trial; paid plans (verify current pricing)" },
+    { k: "Price", v: "From US$49 first month, then US$99/mo" },
   ],
   trustStrip: [
     "Large library of conversion-focused templates",

@@ -7,12 +7,12 @@ export const lindyConfig: AffiliatePageConfig = {
   eyebrow: "AI tools",
   affiliateUrl: LINDY_URL,
   quickAnswer:
-    "Lindy is an AI work assistant that automates repetitive admin, inbox triage, meeting scheduling, follow-ups and CRM updates, by connecting to the apps you already use. New accounts get a 7-day free trial with no credit card; paid plans start at about US$49.99/month (verify current pricing).",
+    "Lindy is an AI work assistant that automates repetitive admin, inbox triage, meeting scheduling, follow-ups and CRM updates, by connecting to the apps you already use. New accounts get a 7-day free trial with no credit card; paid plans start at about US$49.99/month.",
+  offer: "7-day free trial, no card required",
   atAGlance: [
     { k: "Type", v: "AI work assistant / automation" },
     { k: "Best for", v: "Automating repetitive admin" },
-    { k: "Offer", v: "7-day free trial, no card" },
-    { k: "Pricing", v: "From ~US$49.99/mo (verify)" },
+    { k: "Pricing", v: "No free tier; from US$49.99/mo" },
   ],
   hero: {
     h1Prefix: "Lindy:",

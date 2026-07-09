@@ -8,9 +8,10 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   logo: "gohighlevel",
   badgeText: "AI Sales & Automation",
   affiliateUrl: GOHIGHLEVEL_URL,
+  offer: "14-day free trial, no card required",
 
   quickAnswer:
-    "GoHighLevel is an AI-powered all-in-one business platform that combines a CRM, marketing automation, sales pipelines, funnels and landing pages, reputation management and AI tools in one place. It is built mainly for digital marketing agencies and SMBs that want to replace a stack of separate tools. Pricing starts from around $97/month at the time of writing, with a 14-day free trial and no credit card required. Verify current pricing on the provider before you commit.",
+    "GoHighLevel is an AI-powered all-in-one business platform that combines a CRM, marketing automation, sales pipelines, funnels and landing pages, reputation management and AI tools in one place. It is built mainly for digital marketing agencies and SMBs that want to replace a stack of separate tools. Pricing starts from around $97/month at the time of writing, with a 14-day free trial and no credit card required.",
 
   banner: {
     heading: "GoHighLevel: 14-Day Free Trial",
@@ -23,7 +24,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "All-in-one CRM, marketing and sales platform" },
     { k: "Best for", v: "Marketing agencies and SMBs" },
-    { k: "Price", v: "From around $97/month (verify current pricing)" },
+    { k: "Price", v: "From US$97/mo; Unlimited US$297/mo" },
     { k: "Start", v: "14-day free trial, no credit card" },
   ],
   trustStrip: [

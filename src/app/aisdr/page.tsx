@@ -57,9 +57,9 @@ const softwareSchema = {
     "AI sales development rep that automates B2B outbound: finds in-market prospects via intent signals, researches each one, writes personalised messages, runs multi-channel sequences across email, LinkedIn and phone, qualifies replies and books meetings. Integrates with HubSpot and Salesforce.",
   offers: {
     "@type": "Offer",
-    price: "900",
+    price: "250",
     priceCurrency: "USD",
-    description: "Standard from around $900/month billed quarterly at the time of writing, with unlimited seats and no long-term contract. Verify current pricing on the provider.",
+    description: "From around $250/month on the Solo plan; the popular Explore plan is around $900/month billed quarterly, with unlimited seats and no long-term contract.",
     availability: "https://schema.org/InStock",
   },
   url: "https://aisdr.com",

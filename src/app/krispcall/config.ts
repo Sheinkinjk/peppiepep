@@ -11,8 +11,7 @@ export const krispcallConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Cloud phone / virtual numbers" },
     { k: "Best for", v: "Remote & distributed teams" },
-    { k: "Offer", v: "Sign up via the link (verify plan)" },
-    { k: "Pricing", v: "Per-user/month (verify)" },
+    { k: "Pricing", v: "No free plan; from US$12/user/mo (annual)" },
   ],
   hero: {
     h1Prefix: "KrispCall:",

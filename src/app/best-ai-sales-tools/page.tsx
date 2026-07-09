@@ -39,9 +39,9 @@ const itemListSchema = {
   numberOfItems: 4,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "GoHighLevel", description: "AI-powered all-in-one platform combining CRM, marketing automation, sales pipelines, funnels and reputation management. Best for agencies and SMBs. From around $97/month at the time of writing, with a 14-day free trial.", url: `${SITE_URL}/gohighlevel` },
-    { "@type": "ListItem", position: 2, name: "AiSDR", description: "AI sales development rep that automates B2B outbound: finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. From around $900/month billed quarterly at the time of writing.", url: `${SITE_URL}/aisdr` },
-    { "@type": "ListItem", position: 3, name: "Reply.io", description: "AI-first sales engagement platform for multichannel outbound: sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data and inbox warm-up. Per-user plans with a free trial. Best for teams that want hands-on control of their outreach.", url: `${SITE_URL}/replyio` },
-    { "@type": "ListItem", position: 4, name: "FullEnrich", description: "Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Credit-based with free credits to start. Best for sales and RevOps teams whose outbound stalls on bad contact data.", url: `${SITE_URL}/fullenrich` },
+    { "@type": "ListItem", position: 2, name: "AiSDR", description: "AI sales development rep that automates B2B outbound: finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. From around $250/month on the Solo plan, with the popular Explore plan around $900/month billed quarterly, at the time of writing.", url: `${SITE_URL}/aisdr` },
+    { "@type": "ListItem", position: 3, name: "Reply.io", description: "AI-first sales engagement platform for multichannel outbound: sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data and inbox warm-up. No free plan; paid from around $49/user/month with a 14-day free trial. Best for teams that want hands-on control of their outreach.", url: `${SITE_URL}/replyio` },
+    { "@type": "ListItem", position: 4, name: "FullEnrich", description: "Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Credit-based, with a free 50-credit trial and paid plans from around $29/month. Best for sales and RevOps teams whose outbound stalls on bad contact data.", url: `${SITE_URL}/fullenrich` },
   ],
 };
 
@@ -70,7 +70,7 @@ const faqSchema = {
       name: "How much do AI sales tools cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "At the time of writing, GoHighLevel starts from around $97/month with a 14-day free trial and no credit card, while AiSDR starts from around $900/month billed quarterly with unlimited seats and no long-term contract. Pricing can change, so verify the current figures on each provider before you commit.",
+        text: "At the time of writing, GoHighLevel starts from around $97/month with a 14-day free trial and no credit card, while AiSDR starts from around $250/month on its Solo plan (its popular Explore plan is around $900/month billed quarterly) with unlimited seats and no long-term contract. Pricing can change, so check the current figures on each provider before you commit.",
       },
     },
     {
@@ -113,7 +113,7 @@ const tools = [
     internalHref: "/gohighlevel",
     tagline: "AI-powered CRM, marketing and sales in one platform",
     bestFor: "Marketing agencies and SMBs replacing a stack of tools",
-    price: "From around $97/mo (verify current pricing)",
+    price: "From US$97/mo; Unlimited US$297/mo",
     trial: "14-day free trial, no credit card",
     pros: [
       "CRM, email and SMS automation, funnels and pipelines in one login",
@@ -136,7 +136,7 @@ const tools = [
     internalHref: "/aisdr",
     tagline: "An AI sales rep that builds pipeline without hiring",
     bestFor: "Revenue teams and founders who want pipeline without hiring SDRs",
-    price: "From around $900/mo billed quarterly (verify current pricing)",
+    price: "From US$250/mo (Solo); US$900/mo Explore",
     trial: "Unlimited seats, no long-term contract",
     pros: [
       "Finds in-market prospects using intent signals",
@@ -159,8 +159,8 @@ const tools = [
     internalHref: "/replyio",
     tagline: "Run your own multichannel outbound, powered by AI",
     bestFor: "SMB and mid-market teams that want hands-on control of outreach",
-    price: "Per-user plans with a free trial (verify current pricing)",
-    trial: "Free trial to start",
+    price: "No free plan; from US$49/user/mo",
+    trial: "14-day free trial to start",
     pros: [
       "Sequences across email, LinkedIn, calls and SMS",
       "AI SDR agents draft and personalise messages",
@@ -182,8 +182,8 @@ const tools = [
     internalHref: "/fullenrich",
     tagline: "Waterfall enrichment for verified emails and mobile numbers",
     bestFor: "Sales and RevOps teams whose outbound stalls on bad data",
-    price: "Credit-based, free credits to start (verify current pricing)",
-    trial: "Free credits to start",
+    price: "Free trial (50 credits); from ~US$29/mo",
+    trial: "50 free credits to start",
     pros: [
       "Waterfall enrichment across 15+ data sources",
       "Strong at finding mobile numbers, not just emails",

@@ -8,11 +8,11 @@ export const cloudtalkConfig: AffiliatePageConfig = {
   affiliateUrl: CLOUDTALK_URL,
   quickAnswer:
     "CloudTalk is an AI-powered business phone and call-centre platform for sales and support teams, with call routing, recording, analytics and AI voice agents. New accounts get a 14-day free trial (no card) plus free minutes to test the AI voice agents.",
+  offer: "14-day free trial, no card required",
   atAGlance: [
     { k: "Type", v: "Cloud phone / call centre" },
     { k: "Best for", v: "Sales & support teams" },
-    { k: "Offer", v: "14-day free trial, no card" },
-    { k: "Pricing", v: "Per-user/month (verify)" },
+    { k: "Pricing", v: "No free plan; from €19/user/mo" },
   ],
   hero: {
     h1Prefix: "CloudTalk:",

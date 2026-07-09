@@ -52,6 +52,14 @@ export interface AffiliatePageConfig {
    */
   lastReviewed?: string;
 
+  /**
+   * The current sign-up incentive the referral link grants, surfaced as a
+   * prominent callout above the hero CTA and as the first at-a-glance row.
+   * Keep it short and honest — e.g. "$120 off your first order" or
+   * "14-day free trial, no card". Omit when there is genuinely no offer.
+   */
+  offer?: string;
+
   // ── Optional fields used by the premium standalone landing template ──────────
   /** Small eyebrow above the H1, e.g. "Weight-loss telehealth · Australia · 2026" */
   eyebrow?: string;

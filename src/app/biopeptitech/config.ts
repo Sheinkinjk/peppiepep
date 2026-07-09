@@ -9,7 +9,7 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
   affiliateUrl: BIOPEPTITECH_URL,
 
   quickAnswer:
-    "BioPeptiTech is a research peptide supplier offering lab-grade compounds. The current discount is applied automatically through the referral link on this page, no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
+    "BioPeptiTech is a research peptide supplier offering lab-grade compounds. Current sale pricing shows automatically when you visit through the referral link on this page, no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
 
   banner: {
     heading: "BioPeptiTech, Current Peptides Sale",

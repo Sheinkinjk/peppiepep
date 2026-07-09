@@ -8,11 +8,12 @@ export const survicateConfig: AffiliatePageConfig = {
   affiliateUrl: SURVICATE_URL,
   quickAnswer:
     "Survicate is a customer-feedback platform for running surveys across your website, email, app and chat, then analysing the responses (with AI) and pushing insights into your other tools. You can start on a free plan; check the current free-tier limits before you rely on it.",
+  offer: "Free plan to start",
   atAGlance: [
     { k: "Type", v: "Surveys / customer feedback" },
     { k: "Best for", v: "Product, marketing & CX teams" },
-    { k: "Offer", v: "Free plan to start (verify limits)" },
-    { k: "Integrations", v: "50+ tools (verify)" },
+    { k: "Pricing", v: "Free plan; paid from US$114/mo" },
+    { k: "Integrations", v: "50+ tools" },
   ],
   hero: {
     h1Prefix: "Survicate:",

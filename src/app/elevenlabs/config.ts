@@ -8,11 +8,12 @@ export const elevenlabsConfig: AffiliatePageConfig = {
   affiliateUrl: ELEVENLABS_URL,
   quickAnswer:
     "ElevenLabs is an AI audio platform for realistic text-to-speech, voice cloning, dubbing and voice agents, with thousands of voices across many languages and an API for developers. You can start on a free plan; check the current free-tier limits before you rely on it.",
+  offer: "Free plan (10,000 credits/month)",
   atAGlance: [
     { k: "Type", v: "AI voice / text-to-speech" },
     { k: "Best for", v: "Creators, developers & teams" },
-    { k: "Offer", v: "Free plan to start (verify limits)" },
-    { k: "Languages", v: "70+ (verify)" },
+    { k: "Pricing", v: "Free plan; paid from US$5/mo" },
+    { k: "Languages", v: "70+" },
   ],
   hero: {
     h1Prefix: "ElevenLabs:",

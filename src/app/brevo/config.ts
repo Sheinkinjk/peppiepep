@@ -8,9 +8,10 @@ export const brevoConfig: AffiliatePageConfig = {
   logo: "brevo",
   badgeText: "Email marketing",
   affiliateUrl: BREVO_URL,
+  offer: "Free plan forever, no card",
 
   quickAnswer:
-    "Brevo (formerly Sendinblue) is an all-in-one marketing platform: email marketing, SMS and WhatsApp campaigns, marketing automation, a built-in sales CRM and transactional email, in one tool. It suits small and mid-sized businesses that want to run email and automation without stitching several apps together. Brevo offers a free plan with a daily send limit, and paid tiers priced by monthly email volume rather than list size. Verify current pricing and limits on the provider.",
+    "Brevo (formerly Sendinblue) is an all-in-one marketing platform: email marketing, SMS and WhatsApp campaigns, marketing automation, a built-in sales CRM and transactional email, in one tool. It suits small and mid-sized businesses that want to run email and automation without stitching several apps together. Brevo offers a free plan with a daily send limit, and paid tiers priced by monthly email volume rather than list size.",
 
   banner: {
     heading: "Brevo: All-in-One Marketing Platform",
@@ -22,7 +23,7 @@ export const brevoConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "All-in-one email, SMS, automation & CRM" },
     { k: "Best for", v: "Small and mid-sized businesses" },
-    { k: "Price", v: "Free plan; paid tiers by email volume (verify)" },
+    { k: "Price", v: "Free plan (300 emails/day); from US$9/mo" },
     { k: "Priced on", v: "Emails sent, not list size" },
   ],
   trustStrip: [

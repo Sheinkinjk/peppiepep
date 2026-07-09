@@ -8,9 +8,10 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   logo: "employmenthero",
   badgeText: "HR & payroll",
   affiliateUrl: EMPLOYMENT_HERO_URL,
+  offer: "Free demo",
 
   quickAnswer:
-    "Employment Hero is an Australian-built, all-in-one HR, payroll and employment platform. It combines HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. It is Fair Work and ATO compliant, and is aimed at Australian small and medium businesses. Employment Hero does not publish standard pricing publicly; plans vary by business size and enterprise pricing is available on request, so request a quote for your business.",
+    "Employment Hero is an Australian-built, all-in-one HR, payroll and employment platform. It combines HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. It is Fair Work and ATO compliant, and is aimed at Australian small and medium businesses. Entry HR and payroll plans start around A$10 per employee per month, with higher tiers and enterprise pricing available on request.",
 
   banner: {
     heading: "Employment Hero: HR, Payroll & Compliance",
@@ -24,7 +25,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     { k: "What it is", v: "All-in-one HR, payroll and employment platform" },
     { k: "Best for", v: "Australian small and medium businesses" },
     { k: "Compliance", v: "Fair Work and ATO compliant, STP Phase 2 certified" },
-    { k: "Pricing", v: "Not published publicly; varies by business size, quote on request" },
+    { k: "Pricing", v: "From A$10/employee/mo; enterprise on request" },
   ],
   trustStrip: [
     "Australian-built for Australian employers",
@@ -33,7 +34,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     "Fair Work compliant",
   ],
   verdict:
-    "Employment Hero is a strong fit for Australian SMEs that want HR, payroll and compliance handled in one Australian-built platform rather than stitched together. The ATO-certified payroll, Fair Work alignment and employee app cover the core obligations of employing people locally. Because pricing is not published and depends on business size, the sensible next step is to request a quote scoped to your headcount.",
+    "Employment Hero is a strong fit for Australian SMEs that want HR, payroll and compliance handled in one Australian-built platform rather than stitched together. The ATO-certified payroll, Fair Work alignment and employee app cover the core obligations of employing people locally. Core plans start around A$10 per employee per month, with higher tiers quoted by headcount, so the sensible next step is a quick demo scoped to your business.",
   verdictPoints: [
     "Australian-built and aligned to Fair Work and ATO requirements",
     "ATO-certified Single Touch Payroll (STP Phase 2) built in",

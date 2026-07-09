@@ -44,7 +44,7 @@ const softwareSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    description: "Free plan with paid tiers as you scale at the time of writing. Verify current pricing on the provider.",
+    description: "A $1 seven-day trial, then paid plans from around $39/month.",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.alidrop.co",

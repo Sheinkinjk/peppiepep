@@ -8,9 +8,10 @@ export const carrdConfig: AffiliatePageConfig = {
   logo: "carrd",
   badgeText: "Website Builder",
   affiliateUrl: CARRD_URL,
+  offer: "Free plan forever; Pro from US$9/yr",
 
   quickAnswer:
-    "Carrd is a one-page website builder with a free plan forever and Pro plans from $19/year. It is best for portfolios, link-in-bio pages, simple landing pages, and personal sites. You can start free with no credit card via the link on this page.",
+    "Carrd is a one-page website builder with a free plan forever and Pro plans from $9/year. It is best for portfolios, link-in-bio pages, simple landing pages, and personal sites. You can start free with no credit card via the link on this page.",
 
   banner: {
     heading: "Carrd, Free Plan & Pro Pricing",
@@ -24,7 +25,7 @@ export const carrdConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "One-page website builder" },
     { k: "Best for", v: "Portfolios, link-in-bio, simple sites" },
-    { k: "Price", v: "Free; Pro from $19/year" },
+    { k: "Price", v: "Free plan; Pro from US$9/yr" },
     { k: "Start", v: "Free, no credit card" },
   ],
   trustStrip: [

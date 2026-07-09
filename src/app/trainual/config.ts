@@ -8,11 +8,11 @@ export const trainualConfig: AffiliatePageConfig = {
   affiliateUrl: TRAINUAL_URL,
   quickAnswer:
     "Trainual is an all-in-one training and operations platform: document how your business runs, build onboarding and role-based training, and keep SOPs searchable in one place. Plans are demo-led, so check the current pricing and any trial on Trainual before you commit.",
+  offer: "7-day free trial",
   atAGlance: [
     { k: "Type", v: "Training / onboarding / SOPs" },
     { k: "Best for", v: "Growing teams & franchises" },
-    { k: "Offer", v: "Demo-led; verify plan/trial" },
-    { k: "Pricing", v: "Subscription (verify)" },
+    { k: "Pricing", v: "Custom pricing — book a demo" },
   ],
   hero: {
     h1Prefix: "Trainual:",

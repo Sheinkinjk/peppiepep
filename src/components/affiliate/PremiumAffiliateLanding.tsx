@@ -81,6 +81,13 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
               <Link href="/how-we-research" className="nw-link !text-sm">How we research</Link>
             </div>
 
+            {config.offer && (
+              <div className="mt-7 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.06] px-4 py-3">
+                <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">Current offer</span>
+                <span className="text-sm font-semibold text-[#10251b]">{config.offer}</span>
+              </div>
+            )}
+
             <div className="mt-8">{cta(config.ctas.primary, "hero", "lg")}</div>
             <p className="mt-4 text-xs text-[#9aa39c]">Information only · contains a disclosed affiliate link</p>
           </div>
@@ -90,6 +97,12 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             <div className="nw-card rounded-2xl p-6">
               <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
+                {config.offer && (
+                  <div className="flex gap-3 py-2.5">
+                    <dt className="w-24 shrink-0 text-[#0a7c42] font-semibold">Offer</dt>
+                    <dd className="font-semibold text-[#10251b]">{config.offer}</dd>
+                  </div>
+                )}
                 {(config.atAGlance ?? [{ k: "What it is", v: config.hero.h1Prefix }]).map((row) => (
                   <div key={row.k} className="flex gap-3 py-2.5">
                     <dt className="w-24 shrink-0 text-[#9aa39c]">{row.k}</dt>

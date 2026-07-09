@@ -44,7 +44,7 @@ const softwareSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    description: "Free plan with a daily send limit; paid tiers priced by monthly email volume at the time of writing. Verify current pricing on the provider.",
+    description: "Free plan with a daily send limit; paid tiers from around $9/month, priced by monthly email volume.",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.brevo.com",

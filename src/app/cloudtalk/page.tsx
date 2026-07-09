@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "AI-powered business phone and call-centre platform: call routing, recording, analytics, SMS/WhatsApp and AI voice agents, with CRM integrations.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "14-day free trial; per-user paid plans. Verify current pricing.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "14-day free trial; per-user paid plans from around €19/user/month.", availability: "https://schema.org/InStock" },
   url: "https://www.cloudtalk.io",
   sameAs: ["https://www.cloudtalk.io"],
 };

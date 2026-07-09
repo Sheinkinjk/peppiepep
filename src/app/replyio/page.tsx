@@ -58,7 +58,7 @@ const softwareSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    description: "Per-user paid plans with a free trial at the time of writing. Verify current pricing on the provider.",
+    description: "No free plan; paid from around $49/user/month with a 14-day free trial.",
     availability: "https://schema.org/InStock",
   },
   url: "https://reply.io",

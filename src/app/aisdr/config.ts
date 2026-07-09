@@ -10,7 +10,7 @@ export const aisdrConfig: AffiliatePageConfig = {
   affiliateUrl: AISDR_URL,
 
   quickAnswer:
-    "AiSDR is an AI sales development rep that automates B2B outbound. It finds in-market prospects using intent signals, researches each one, writes personalised messages, runs multi-channel sequences across email, LinkedIn and phone, qualifies replies and books meetings. It integrates with HubSpot and Salesforce. Pricing starts from around $250/month for the Solo plan, with the popular Explore plan around $900/month billed quarterly, unlimited seats and no long-term contract, at the time of writing. Verify current pricing on the provider before you commit.",
+    "AiSDR is an AI sales development rep that automates B2B outbound. It finds in-market prospects using intent signals, researches each one, writes personalised messages, runs multi-channel sequences across email, LinkedIn and phone, qualifies replies and books meetings. It integrates with HubSpot and Salesforce. Pricing starts from around $250/month for the Solo plan, with the popular Explore plan around $900/month billed quarterly, unlimited seats and no long-term contract, at the time of writing.",
 
   banner: {
     heading: "AiSDR: AI Sales Development Rep",
@@ -23,7 +23,7 @@ export const aisdrConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "AI sales development rep for B2B outbound" },
     { k: "Best for", v: "Revenue teams and founders building pipeline" },
-    { k: "Price", v: "From ~$250/month; popular plan ~$900/month quarterly (verify)" },
+    { k: "Price", v: "From US$250/mo (Solo); Explore US$900/mo" },
     { k: "Integrations", v: "HubSpot and Salesforce" },
   ],
   trustStrip: [

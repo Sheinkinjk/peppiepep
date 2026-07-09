@@ -279,56 +279,56 @@ export const seoConfig = {
   cloudtalk: {
     title: "CloudTalk Discount Code & Referral Link 2026: AI Business Phone | Refer Labs",
     description:
-      "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system. Here's the current offer, a 14-day free trial plus free AI-voice test minutes, via our link. Verify current pricing.",
+      "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system. Here's the current offer, a 14-day free trial plus free AI-voice test minutes, via our link.",
     url: `${SITE_URL}/cloudtalk`,
     keywords: ["cloudtalk discount code", "cloudtalk promo code", "cloudtalk coupon", "cloudtalk referral link", "cloudtalk review", "cloudtalk pricing", "cloudtalk free trial", "business phone system"],
   },
   krispcall: {
     title: "KrispCall Discount Code & Referral Link 2026: Cloud Phone System | Refer Labs",
     description:
-      "Looking for a KrispCall discount code, promo code or referral link? KrispCall is a cloud phone system with virtual numbers and a shared team inbox. See the current plan and start via our link. Verify current pricing.",
+      "Looking for a KrispCall discount code, promo code or referral link? KrispCall is a cloud phone system with virtual numbers and a shared team inbox. See the current plan and start via our link.",
     url: `${SITE_URL}/krispcall`,
     keywords: ["krispcall discount code", "krispcall promo code", "krispcall coupon", "krispcall referral link", "krispcall review", "krispcall pricing", "virtual phone number", "cloud phone system"],
   },
   dext: {
     title: "Dext Discount Code & Referral Link 2026: Bookkeeping Automation | Refer Labs",
     description:
-      "Looking for a Dext discount code, promo code or referral link? Dext automates bookkeeping, capturing receipts and invoices and syncing to Xero, QuickBooks and Sage. Here's the current offer, a 14-day free trial, via our link. Verify current pricing.",
+      "Looking for a Dext discount code, promo code or referral link? Dext automates bookkeeping, capturing receipts and invoices and syncing to Xero, QuickBooks and Sage. Here's the current offer, a 14-day free trial, via our link.",
     url: `${SITE_URL}/dext`,
     keywords: ["dext discount code", "dext promo code", "dext coupon", "dext referral link", "dext review", "dext pricing", "receiptbank dext", "bookkeeping automation software"],
   },
   trainual: {
     title: "Trainual Discount Code & Referral Link 2026: Training & SOPs | Refer Labs",
     description:
-      "Looking for a Trainual discount code, promo code or referral link? Trainual documents processes, onboarding and SOPs in one place. See the current plan and start via our link. Verify current pricing.",
+      "Looking for a Trainual discount code, promo code or referral link? Trainual documents processes, onboarding and SOPs in one place. See the current plan and start via our link.",
     url: `${SITE_URL}/trainual`,
     keywords: ["trainual discount code", "trainual promo code", "trainual coupon", "trainual referral link", "trainual review", "trainual pricing", "employee onboarding software", "sop software"],
   },
   lindy: {
     title: "Lindy Discount Code & Referral Link 2026: AI Work Assistant | Refer Labs",
     description:
-      "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work. Here's the current offer, a 7-day free trial, via our link. Verify current pricing.",
+      "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work. Here's the current offer, a 7-day free trial, via our link.",
     url: `${SITE_URL}/lindy`,
     keywords: ["lindy discount code", "lindy ai promo code", "lindy coupon", "lindy referral link", "lindy ai review", "lindy pricing", "ai work assistant", "ai automation tool"],
   },
   elevenlabs: {
     title: "ElevenLabs Discount Code & Referral Link 2026: AI Voice & TTS | Refer Labs",
     description:
-      "Looking for an ElevenLabs discount code, promo code or referral link? ElevenLabs is an AI voice and text-to-speech platform with voice cloning and dubbing. Start on the free plan via our link. Verify current limits.",
+      "Looking for an ElevenLabs discount code, promo code or referral link? ElevenLabs is an AI voice and text-to-speech platform with voice cloning and dubbing. Start on the free plan via our link.",
     url: `${SITE_URL}/elevenlabs`,
     keywords: ["elevenlabs discount code", "elevenlabs promo code", "elevenlabs coupon", "elevenlabs referral link", "elevenlabs review", "elevenlabs pricing", "ai voice generator", "text to speech ai"],
   },
   wingAssistant: {
     title: "Wing Assistant Discount Code & Referral Link 2026: Virtual Assistants | Refer Labs",
     description:
-      "Looking for a Wing Assistant discount code, promo code or referral link? Wing is a managed virtual-assistant service with dedicated assistants across many roles. Book a free consultation via our link. Verify current pricing.",
+      "Looking for a Wing Assistant discount code, promo code or referral link? Wing is a managed virtual-assistant service with dedicated assistants across many roles. Book a free consultation via our link.",
     url: `${SITE_URL}/wing-assistant`,
     keywords: ["wing assistant discount code", "wing assistant promo code", "wing assistant referral link", "wing assistant review", "wing assistant pricing", "managed virtual assistant", "virtual assistant service"],
   },
   survicate: {
     title: "Survicate Discount Code & Referral Link 2026: Surveys & Feedback | Refer Labs",
     description:
-      "Looking for a Survicate discount code, promo code or referral link? Survicate runs customer-feedback surveys across web, email and app with AI analysis. Start on the free plan via our link. Verify current limits.",
+      "Looking for a Survicate discount code, promo code or referral link? Survicate runs customer-feedback surveys across web, email and app with AI analysis. Start on the free plan via our link.",
     url: `${SITE_URL}/survicate`,
     keywords: ["survicate discount code", "survicate promo code", "survicate coupon", "survicate referral link", "survicate review", "survicate pricing", "customer feedback software", "survey tool"],
   },
@@ -1726,7 +1726,7 @@ export const seoConfig = {
   goHighLevel: {
     title: "GoHighLevel Discount Code & Referral Link 2026: CRM Free Trial | Refer Labs",
     description:
-      "Looking for a GoHighLevel discount code, promo code or referral link? Here's the honest answer plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From around $97/month at the time of writing, 14-day free trial. Verify current pricing on the provider.",
+      "Looking for a GoHighLevel discount code, promo code or referral link? Here's the honest answer plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From around $97/month at the time of writing, 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
     keywords: [
       "gohighlevel discount code",
@@ -1754,7 +1754,7 @@ export const seoConfig = {
   aisdr: {
     title: "AiSDR Discount Code & Referral Link 2026: AI Sales Rep | Refer Labs",
     description:
-      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $250/month (Solo); the popular quarterly plan is around $900/month at the time of writing. Verify current pricing.",
+      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $250/month (Solo); the popular quarterly plan is around $900/month at the time of writing.",
     url: `${SITE_URL}/aisdr`,
     keywords: [
       "aisdr discount code",
@@ -1782,7 +1782,7 @@ export const seoConfig = {
   replyio: {
     title: "Reply.io Discount Code & Referral Link 2026: Sales Outreach | Refer Labs",
     description:
-      "Looking for a Reply.io discount code, promo code or referral link? Here's the current offer. The AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial. Verify current pricing.",
+      "Looking for a Reply.io discount code, promo code or referral link? Here's the current offer. The AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial.",
     url: `${SITE_URL}/replyio`,
     keywords: [
       "reply.io discount code",
@@ -1810,7 +1810,7 @@ export const seoConfig = {
   fullenrich: {
     title: "FullEnrich Discount Code & Referral Link 2026: B2B Contact Data | Refer Labs",
     description:
-      "Looking for a FullEnrich discount code, promo code or referral link? Here's the current offer. Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start. Verify current pricing.",
+      "Looking for a FullEnrich discount code, promo code or referral link? Here's the current offer. Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start.",
     url: `${SITE_URL}/fullenrich`,
     keywords: [
       "fullenrich discount code",
@@ -1838,7 +1838,7 @@ export const seoConfig = {
   brevo: {
     title: "Brevo Discount Code & Referral Link 2026: Email, SMS & CRM | Refer Labs",
     description:
-      "Looking for a Brevo discount code, promo code or referral link? Here's the current offer. The all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works. Verify current pricing.",
+      "Looking for a Brevo discount code, promo code or referral link? Here's the current offer. The all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works.",
     url: `${SITE_URL}/brevo`,
     keywords: [
       "brevo discount code",
@@ -1884,7 +1884,7 @@ export const seoConfig = {
   leadpages: {
     title: "Leadpages Discount Code & Referral Link 2026: Landing Page Builder | Refer Labs",
     description:
-      "Looking for a Leadpages discount code, promo code or referral link? Here's the current offer. A landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder. Verify current pricing.",
+      "Looking for a Leadpages discount code, promo code or referral link? Here's the current offer. A landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder.",
     url: `${SITE_URL}/leadpages`,
     keywords: [
       "leadpages discount code",

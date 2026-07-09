@@ -58,7 +58,7 @@ const softwareSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    description: "Credit-based pricing with free credits to start at the time of writing. Verify current pricing on the provider.",
+    description: "Credit-based pricing with a free 50-credit trial; paid plans from around $29/month.",
     availability: "https://schema.org/InStock",
   },
   url: "https://fullenrich.com",

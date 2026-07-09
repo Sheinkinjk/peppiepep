@@ -8,9 +8,10 @@ export const fullenrichConfig: AffiliatePageConfig = {
   logo: "fullenrich",
   badgeText: "B2B Sales Data",
   affiliateUrl: FULLENRICH_URL,
+  offer: "Free trial, 50 credits, no card",
 
   quickAnswer:
-    "FullEnrich is a B2B contact enrichment tool that uses waterfall enrichment: instead of relying on one data provider, it queries 15 or more sources in sequence to find a verified email address and, importantly, a mobile phone number for each contact. It handles bulk enrichment from a CSV or your CRM, integrates with tools like HubSpot, Clay, Zapier and LinkedIn, and runs on credit-based pricing with free credits to start. Verify current pricing and coverage on the provider before you commit.",
+    "FullEnrich is a B2B contact enrichment tool that uses waterfall enrichment: instead of relying on one data provider, it queries 15 or more sources in sequence to find a verified email address and, importantly, a mobile phone number for each contact. It handles bulk enrichment from a CSV or your CRM, integrates with tools like HubSpot, Clay, Zapier and LinkedIn, and runs on credit-based pricing with a free 50-credit trial, then paid plans from around US$29/month.",
 
   banner: {
     heading: "FullEnrich: Waterfall B2B Enrichment",
@@ -22,7 +23,7 @@ export const fullenrichConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "Waterfall B2B contact enrichment (email + mobile)" },
     { k: "Best for", v: "Sales, RevOps and lead-gen teams feeding outbound" },
-    { k: "Price", v: "Credit-based with free credits to start (verify current pricing)" },
+    { k: "Price", v: "Free trial (50 credits); paid from ~US$29/mo" },
     { k: "Integrations", v: "HubSpot, Clay, Zapier, LinkedIn and more" },
   ],
   trustStrip: [

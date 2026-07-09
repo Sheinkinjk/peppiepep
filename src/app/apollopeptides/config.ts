@@ -9,11 +9,11 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
   affiliateUrl: APOLLO_URL,
 
   quickAnswer:
-    "Apollo Peptide Sciences is a research peptide supplier. The current discount is applied automatically through the referral link on this page, no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
+    "Apollo Peptide Sciences is a research peptide supplier. Current sale pricing shows automatically when you visit through the referral link on this page, no code is required. Products are sold strictly for laboratory and research use only and are not for human consumption.",
 
   banner: {
-    heading: "Apollo Peptide Sciences, Current Sale & Discount",
-    body: "Click below to go directly to Apollo Peptide Sciences via our referral link. Offer applied at the URL level.",
+    heading: "Apollo Peptide Sciences, Current Sale",
+    body: "Click below to go directly to Apollo Peptide Sciences via our referral link. Current sale pricing is visible on arrival.",
     buttonLabel: "View Apollo Peptide Sciences Sale",
   },
 

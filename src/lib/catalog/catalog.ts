@@ -238,7 +238,7 @@ export const CATALOG: Vertical[] = [
         blurb: "Waterfall enrichment that queries 15+ sources to find verified emails and mobile numbers. The data layer that feeds every other outbound tool.",
         facts: [
           { label: "Role", value: "Contact data" },
-          { label: "Pricing", value: "Credit-based, free credits (verify)" },
+          { label: "Pricing", value: "Free trial (50 credits); from ~US$29/mo" },
           { label: "Best for", value: "Fixing bad data" },
         ],
         affiliateUrl: FULLENRICH_URL,
@@ -252,7 +252,7 @@ export const CATALOG: Vertical[] = [
         blurb: "An AI-first sales engagement platform for running your own sequences across email, LinkedIn, calls and SMS, with AI SDR agents and deliverability tools built in.",
         facts: [
           { label: "Role", value: "Sales engagement" },
-          { label: "Pricing", value: "Per-user, free trial (verify)" },
+          { label: "Pricing", value: "No free plan; from US$49/user/mo" },
           { label: "Best for", value: "Hands-on teams" },
         ],
         affiliateUrl: REPLY_IO_URL,
@@ -265,7 +265,7 @@ export const CATALOG: Vertical[] = [
         blurb: "An AI sales development rep that prospects, personalises outreach across channels and books meetings, so you build pipeline without hiring SDRs.",
         facts: [
           { label: "Role", value: "AI SDR" },
-          { label: "Pricing", value: "From ~$250/mo; popular ~$900/mo quarterly (verify)" },
+          { label: "Pricing", value: "From US$250/mo (Solo); US$900/mo Explore" },
           { label: "Best for", value: "Pipeline without hiring" },
         ],
         affiliateUrl: AISDR_URL,
@@ -278,7 +278,7 @@ export const CATALOG: Vertical[] = [
         blurb: "One platform for CRM, marketing automation, funnels and follow-up, best for agencies and SMBs consolidating a stack of tools.",
         facts: [
           { label: "Role", value: "All-in-one platform" },
-          { label: "Pricing", value: "From ~$97/mo, 14-day trial (verify)" },
+          { label: "Pricing", value: "From US$97/mo; Unlimited US$297/mo" },
           { label: "Best for", value: "Agencies & SMBs" },
         ],
         affiliateUrl: GOHIGHLEVEL_URL,
@@ -291,7 +291,7 @@ export const CATALOG: Vertical[] = [
         blurb: "An all-in-one prospecting platform: email finder and verifier, drip email campaigns and a light CRM. A budget-friendly way to combine finding leads and reaching them in one tool.",
         facts: [
           { label: "Role", value: "Prospecting + outreach" },
-          { label: "Pricing", value: "Credit-based, free plan (verify)" },
+          { label: "Pricing", value: "Free trial; from US$39/mo" },
           { label: "Best for", value: "Solo & small teams" },
         ],
         affiliateUrl: SNOV_URL,
@@ -408,7 +408,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "HR + payroll" },
           { label: "Best for", value: "AU & NZ teams" },
-          { label: "Pricing", value: "Tiered per employee (verify)" },
+          { label: "Pricing", value: "From A$10/employee/mo; enterprise on request" },
         ],
         affiliateUrl: EMPLOYMENT_HERO_URL,
         reviewHref: "/employmenthero",
@@ -422,7 +422,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Payroll + benefits" },
           { label: "Availability", value: "US only" },
-          { label: "Pricing", value: "Base fee + per person (verify)" },
+          { label: "Pricing", value: "From US$49/mo + US$6/person" },
         ],
         affiliateUrl: GUSTO_URL,
         ctaLabel: "See Gusto",
@@ -434,7 +434,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Training + SOPs" },
           { label: "Best for", value: "Growing & multi-site teams" },
-          { label: "Pricing", value: "Subscription, demo-led (verify)" },
+          { label: "Pricing", value: "Custom pricing — book a demo" },
         ],
         affiliateUrl: TRAINUAL_URL,
         reviewHref: "/trainual",
@@ -486,7 +486,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Prospecting + outreach" },
           { label: "Best for", value: "Solo & small teams" },
-          { label: "Pricing", value: "Credit-based, free plan (verify)" },
+          { label: "Pricing", value: "Free trial; from US$39/mo" },
         ],
         affiliateUrl: SNOV_URL,
         ctaLabel: "See Snov.io",
@@ -499,7 +499,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Sales engagement" },
           { label: "Best for", value: "Hands-on teams" },
-          { label: "Pricing", value: "Per-user, free trial (verify)" },
+          { label: "Pricing", value: "No free plan; from US$49/user/mo" },
         ],
         affiliateUrl: REPLY_IO_URL,
         reviewHref: "/replyio",
@@ -553,7 +553,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Global payments" },
           { label: "Best for", value: "Freelancers & online business" },
-          { label: "Pricing", value: "Free account, per-transaction fees (verify)" },
+          { label: "Pricing", value: "Free to open; per-transaction fees apply" },
         ],
         affiliateUrl: PAYONEER_URL,
         ctaLabel: "See Payoneer",
@@ -566,7 +566,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Bookkeeping automation" },
           { label: "Best for", value: "Accountants & small business" },
-          { label: "Pricing", value: "By users/documents, 14-day trial (verify)" },
+          { label: "Pricing", value: "No free plan; from US$25/mo (annual)" },
         ],
         affiliateUrl: DEXT_URL,
         reviewHref: "/dext",
@@ -620,7 +620,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Cloud call centre" },
           { label: "Best for", value: "Sales & support teams" },
-          { label: "Pricing", value: "Per-user/mo, 14-day trial (verify)" },
+          { label: "Pricing", value: "No free plan; from €19/user/mo" },
         ],
         affiliateUrl: CLOUDTALK_URL,
         reviewHref: "/cloudtalk",
@@ -634,7 +634,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Cloud phone / numbers" },
           { label: "Best for", value: "Remote & distributed teams" },
-          { label: "Pricing", value: "Per-user/mo (verify)" },
+          { label: "Pricing", value: "No free plan; from US$12/user/mo (annual)" },
         ],
         affiliateUrl: KRISPCALL_URL,
         reviewHref: "/krispcall",
@@ -680,7 +680,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "AI work assistant" },
           { label: "Best for", value: "Automating admin" },
-          { label: "Pricing", value: "From ~$49.99/mo, 7-day trial (verify)" },
+          { label: "Pricing", value: "No free tier; from US$49.99/mo" },
         ],
         affiliateUrl: LINDY_URL,
         reviewHref: "/lindy",
@@ -694,7 +694,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "AI voice / TTS" },
           { label: "Best for", value: "Creators & developers" },
-          { label: "Pricing", value: "Free plan, usage-based (verify)" },
+          { label: "Pricing", value: "Free plan; paid from US$5/mo" },
         ],
         affiliateUrl: ELEVENLABS_URL,
         reviewHref: "/elevenlabs",

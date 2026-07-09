@@ -8,11 +8,11 @@ export const wingAssistantConfig: AffiliatePageConfig = {
   affiliateUrl: WING_ASSISTANT_URL,
   quickAnswer:
     "Wing Assistant is a managed virtual-assistant service: you get a dedicated assistant for admin, sales, marketing, support or other roles, and Wing handles hiring, management and accountability, so it's not a freelancer marketplace. Pricing is quoted per plan; you can book a free consultation to scope it.",
+  offer: "Free 15-minute consultation",
   atAGlance: [
     { k: "Type", v: "Managed virtual assistants" },
     { k: "Best for", v: "Delegating recurring work" },
-    { k: "Offer", v: "Free 15-min consultation" },
-    { k: "Pricing", v: "Per plan (verify)" },
+    { k: "Pricing", v: "From ~US$699/mo (part-time VA)" },
   ],
   hero: {
     h1Prefix: "Wing Assistant:",

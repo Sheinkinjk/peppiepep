@@ -8,10 +8,11 @@ export const dextConfig: AffiliatePageConfig = {
   affiliateUrl: DEXT_URL,
   quickAnswer:
     "Dext is bookkeeping-automation software that captures receipts, invoices and bills, extracts the data automatically, and syncs it to accounting software like Xero, QuickBooks and Sage. New accounts get a 14-day free trial with no credit card.",
+  offer: "14-day free trial, no card required",
   atAGlance: [
     { k: "Type", v: "Bookkeeping automation" },
     { k: "Best for", v: "Bookkeepers, accountants & SMBs" },
-    { k: "Offer", v: "14-day free trial, no card" },
+    { k: "Pricing", v: "No free plan; from US$25/mo (annual)" },
     { k: "Syncs with", v: "Xero, QuickBooks, Sage" },
   ],
   hero: {
