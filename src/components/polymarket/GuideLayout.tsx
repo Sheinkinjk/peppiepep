@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import PolymarketCta from "./PolymarketCta";
-import AffiliateDisclosure from "./AffiliateDisclosure";
 import RiskDisclaimer from "./RiskDisclaimer";
 import { polymarketRef } from "@/lib/polymarket";
 import { SITE_URL } from "@/lib/seo";
@@ -117,7 +116,6 @@ export default function GuideLayout({
             <div className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5 space-y-3">
               {intro}
             </div>
-            <AffiliateDisclosure />
             <div className="mt-6">
               <PolymarketCta label={heroCtaLabel} campaign={campaign} location="hero" />
             </div>

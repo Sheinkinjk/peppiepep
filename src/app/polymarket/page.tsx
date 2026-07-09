@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import PolymarketCta from "@/components/polymarket/PolymarketCta";
-import AffiliateDisclosure from "@/components/polymarket/AffiliateDisclosure";
 import RiskDisclaimer from "@/components/polymarket/RiskDisclaimer";
 import { polymarketRef } from "@/lib/polymarket";
 
@@ -133,7 +132,6 @@ export default function PolymarketHubPage() {
                 it. You can sign up in minutes, and browsing the markets is free before you commit a cent.
               </p>
             </div>
-            <AffiliateDisclosure />
             <div className="mt-6">
               <PolymarketCta label="Sign up now" campaign={CAMPAIGN} location="hero" />
             </div>

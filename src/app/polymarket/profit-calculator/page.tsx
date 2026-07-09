@@ -3,7 +3,6 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import RelatedGuides from "@/components/consumer/RelatedGuides";
-import AffiliateDisclosure from "@/components/polymarket/AffiliateDisclosure";
 import RiskDisclaimer from "@/components/polymarket/RiskDisclaimer";
 import PolymarketCta from "@/components/polymarket/PolymarketCta";
 import { polymarketRef } from "@/lib/polymarket";
@@ -89,7 +88,6 @@ export default function ProfitCalculatorPage() {
                 does not, and, if you add your own probability estimate, whether you have any edge over the market.
               </p>
             </div>
-            <AffiliateDisclosure />
           </section>
 
           <section className="pb-4">
