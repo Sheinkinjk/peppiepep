@@ -1665,11 +1665,15 @@ export const seoConfig = {
   },
 
   goHighLevel: {
-    title: "GoHighLevel Review 2026: All-in-One CRM & Marketing Platform | Refer Labs",
+    title: "GoHighLevel Discount Code & Referral Link 2026: CRM Free Trial | Refer Labs",
     description:
-      "GoHighLevel review 2026: the AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From around $97/month at the time of writing, 14-day free trial. Verify current pricing on the provider.",
+      "Looking for a GoHighLevel discount code, promo code or referral link? Here's the honest answer plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From around $97/month at the time of writing, 14-day free trial. Verify current pricing on the provider.",
     url: `${SITE_URL}/gohighlevel`,
     keywords: [
+      "gohighlevel discount code",
+      "gohighlevel promo code",
+      "gohighlevel coupon code",
+      "gohighlevel referral link",
       "gohighlevel review 2026",
       "gohighlevel review",
       "gohighlevel australia",
@@ -1689,11 +1693,15 @@ export const seoConfig = {
   },
 
   aisdr: {
-    title: "AiSDR Review 2026: The AI Sales Development Rep for B2B Outbound | Refer Labs",
+    title: "AiSDR Discount Code & Referral Link 2026: AI Sales Rep | Refer Labs",
     description:
-      "AiSDR review: the AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $900/month billed quarterly at the time of writing. Verify current pricing.",
+      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $900/month billed quarterly at the time of writing. Verify current pricing.",
     url: `${SITE_URL}/aisdr`,
     keywords: [
+      "aisdr discount code",
+      "aisdr promo code",
+      "aisdr coupon code",
+      "aisdr referral link",
       "aisdr review",
       "aisdr review 2026",
       "ai sdr tool",
@@ -1713,11 +1721,15 @@ export const seoConfig = {
   },
 
   replyio: {
-    title: "Reply.io Review 2026: AI Sales Engagement & Multichannel Outreach | Refer Labs",
+    title: "Reply.io Discount Code & Referral Link 2026: Sales Outreach | Refer Labs",
     description:
-      "Reply.io review: the AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial. Verify current pricing.",
+      "Looking for a Reply.io discount code, promo code or referral link? Here's the current offer. The AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial. Verify current pricing.",
     url: `${SITE_URL}/replyio`,
     keywords: [
+      "reply.io discount code",
+      "reply.io promo code",
+      "reply.io coupon code",
+      "reply.io referral link",
       "reply.io review",
       "reply.io review 2026",
       "reply io sales engagement",
@@ -1737,11 +1749,15 @@ export const seoConfig = {
   },
 
   fullenrich: {
-    title: "FullEnrich Review 2026: Waterfall B2B Contact Enrichment (Email & Mobile) | Refer Labs",
+    title: "FullEnrich Discount Code & Referral Link 2026: B2B Contact Data | Refer Labs",
     description:
-      "FullEnrich review: waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start. Verify current pricing.",
+      "Looking for a FullEnrich discount code, promo code or referral link? Here's the current offer. Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start. Verify current pricing.",
     url: `${SITE_URL}/fullenrich`,
     keywords: [
+      "fullenrich discount code",
+      "fullenrich promo code",
+      "fullenrich coupon code",
+      "fullenrich referral link",
       "fullenrich review",
       "fullenrich review 2026",
       "waterfall enrichment",
@@ -1761,11 +1777,15 @@ export const seoConfig = {
   },
 
   brevo: {
-    title: "Brevo Review 2026: All-in-One Email Marketing, SMS & CRM",
+    title: "Brevo Discount Code & Referral Link 2026: Email, SMS & CRM | Refer Labs",
     description:
-      "Brevo review: the all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works. Verify current pricing.",
+      "Looking for a Brevo discount code, promo code or referral link? Here's the current offer. The all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works. Verify current pricing.",
     url: `${SITE_URL}/brevo`,
     keywords: [
+      "brevo discount code",
+      "brevo promo code",
+      "brevo coupon code",
+      "brevo referral link",
       "brevo review",
       "brevo review 2026",
       "brevo email marketing",
@@ -1780,11 +1800,15 @@ export const seoConfig = {
   },
 
   alidrop: {
-    title: "AliDrop Review 2026: AliExpress & Temu Dropshipping Tool",
+    title: "AliDrop Discount Code & Referral Link 2026: Dropshipping Tool | Refer Labs",
     description:
-      "AliDrop review: the dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. What it does, who it suits, and an honest take on dropshipping.",
+      "Looking for an AliDrop discount code, promo code or referral link? Here's the current offer. The dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. What it does, who it suits, and an honest take on dropshipping.",
     url: `${SITE_URL}/alidrop`,
     keywords: [
+      "alidrop discount code",
+      "alidrop promo code",
+      "alidrop coupon code",
+      "alidrop referral link",
       "alidrop review",
       "alidrop review 2026",
       "alidrop dropshipping",
@@ -1799,11 +1823,15 @@ export const seoConfig = {
   },
 
   leadpages: {
-    title: "Leadpages Review 2026: Landing Page Builder for Lead Gen",
+    title: "Leadpages Discount Code & Referral Link 2026: Landing Page Builder | Refer Labs",
     description:
-      "Leadpages review: a landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder. Verify current pricing.",
+      "Looking for a Leadpages discount code, promo code or referral link? Here's the current offer. A landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder. Verify current pricing.",
     url: `${SITE_URL}/leadpages`,
     keywords: [
+      "leadpages discount code",
+      "leadpages promo code",
+      "leadpages coupon code",
+      "leadpages referral link",
       "leadpages review",
       "leadpages review 2026",
       "leadpages pricing",
@@ -1818,11 +1846,15 @@ export const seoConfig = {
   },
 
   superfiliate: {
-    title: "Superfiliate Review 2026: Affiliate & Creator Platform for Brands",
+    title: "Superfiliate Discount Code & Referral Link 2026: For Brands | Refer Labs",
     description:
-      "Superfiliate review: a creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates. Pricing quoted per brand.",
+      "Looking for a Superfiliate discount code, promo code or referral link? Here's the current offer. A creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates. Pricing quoted per brand.",
     url: `${SITE_URL}/superfiliate`,
     keywords: [
+      "superfiliate discount code",
+      "superfiliate promo code",
+      "superfiliate coupon code",
+      "superfiliate referral link",
       "superfiliate review",
       "superfiliate review 2026",
       "superfiliate pricing",
@@ -1837,11 +1869,15 @@ export const seoConfig = {
   },
 
   employmentHero: {
-    title: "Employment Hero Review Australia 2026: HR & Payroll Software | Refer Labs",
+    title: "Employment Hero Discount Code Australia 2026: Referral Link, HR & Payroll | Refer Labs",
     description:
-      "Employment Hero review Australia: the Australian-built all-in-one HR, payroll and employment platform. ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment, employee benefits and an employee app. Fair Work compliant. Pricing is quoted per business, not published publicly.",
+      "Looking for an Employment Hero discount code, promo code or referral link? Here's the current offer. The Australian-built all-in-one HR, payroll and employment platform. ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment, employee benefits and an employee app. Fair Work compliant. Pricing is quoted per business, not published publicly.",
     url: `${SITE_URL}/employmenthero`,
     keywords: [
+      "employment hero discount code",
+      "employment hero promo code",
+      "employment hero coupon code",
+      "employment hero referral link",
       "employment hero review australia",
       "employment hero review",
       "hr software australia",
