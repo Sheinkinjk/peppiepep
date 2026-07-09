@@ -54,9 +54,19 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         {/* Hero */}
         <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div>
-            {config.logo && (
+            {config.logo ? (
               <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
                 <Image src={`/logos/${config.logo}.png`} alt={`${config.brand} logo`} width={52} height={52} className="h-12 w-12 object-contain" />
+              </span>
+            ) : (
+              // Monogram fallback when we don't have the brand's logo file yet, so
+              // the hero reads finished rather than blank. Drop a real PNG in
+              // /public/logos and set `logo` in the config to replace it.
+              <span
+                aria-hidden="true"
+                className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[#10251b] text-2xl font-bold text-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.45)]"
+              >
+                {config.brand.charAt(0)}
               </span>
             )}
             <p className="nw-kicker">{config.eyebrow ?? config.badgeText}</p>
