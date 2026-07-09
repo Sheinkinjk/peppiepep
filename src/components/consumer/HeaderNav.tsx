@@ -20,7 +20,7 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    label: "Software & tools",
+    label: "Websites & content",
     items: [
       { href: "/compare/website-builders", label: "Website builders", note: "AI, one-page and landing tools" },
       { href: "/best-website-builder", label: "Best website builder", note: "Most popular for 2026" },
@@ -28,31 +28,27 @@ const GROUPS: Group[] = [
       { href: "/compare/newsletter-platforms", label: "Newsletter platforms", note: "Where to build an email audience" },
       { href: "/best-newsletter-platform", label: "Best newsletter platform", note: "beehiiv vs Substack vs Kit" },
       { href: "/brevo", label: "Brevo", note: "Email, SMS, automation and CRM in one" },
-      { href: "/alidrop", label: "AliDrop", note: "AliExpress and Temu dropshipping tool" },
     ],
   },
   {
-    label: "AI, sales & business",
+    label: "Business software",
     items: [
-      { href: "/best-ai-sales-tools", label: "AI sales tools", note: "GoHighLevel, AiSDR, Reply.io and more" },
+      { href: "/best-ai-sales-tools", label: "Sales & CRM tools", note: "GoHighLevel, AiSDR, Nutshell and more" },
+      { href: "/nutshell", label: "Nutshell", note: "Easy sales CRM with marketing built in" },
       { href: "/compare/sales-outreach", label: "Sales & outreach", note: "Snov.io and Reply.io, compared" },
       { href: "/compare/hr-payroll", label: "HR & payroll", note: "Employment Hero and Gusto" },
       { href: "/compare/payments", label: "Payments & finance", note: "Payments and accounting" },
       { href: "/compare/business-phone", label: "Business phone", note: "CloudTalk vs KrispCall" },
       { href: "/compare/ai-tools", label: "AI tools", note: "Lindy, ElevenLabs and more" },
-      { href: "/gohighlevel", label: "GoHighLevel", note: "All-in-one CRM and marketing automation" },
-      { href: "/aisdr", label: "AiSDR", note: "AI sales development rep" },
-      { href: "/fullenrich", label: "FullEnrich", note: "Waterfall B2B contact enrichment" },
     ],
   },
   {
-    label: "Prediction markets",
+    label: "Money & side income",
     items: [
       { href: "/polymarket", label: "Polymarket", note: "How to sign up and trade" },
       { href: "/polymarket/markets-explained", label: "Markets explained", note: "How prediction markets work" },
       { href: "/polymarket/how-to-register", label: "How to register", note: "US and international sign-up paths" },
-      { href: "/polymarket/optimising-edge", label: "Finding your edge", note: "Where an advantage comes from" },
-      { href: "/polymarket/trading-bots", label: "Trading bots", note: "Automate via the CLOB API" },
+      { href: "/alidrop", label: "AliDrop", note: "AliExpress and Temu dropshipping tool" },
     ],
   },
   {

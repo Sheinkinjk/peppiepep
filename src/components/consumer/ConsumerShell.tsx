@@ -5,24 +5,18 @@ import HeaderNav from "./HeaderNav";
 import { ReferLabsLogo } from "../ReferLabsLogo";
 
 // Mobile shortcut row (desktop uses the grouped HeaderNav dropdowns).
-// The full category set surfaced directly in the header (mobile row + used as the
-// canonical category list). "Other" is the catch-all for anything not yet in a
-// named category.
+// Deliberately short: the consumer verticals up front, then one "Business tools"
+// door (the /guides index) that holds the software hubs, so the row reads as a
+// few clear worlds rather than a long list of unrelated tools.
 const NAV = [
   { href: "/weight-loss", label: "Weight loss" },
   { href: "/hair-loss", label: "Hair loss" },
-  { href: "/mens-health-telehealth-australia", label: "Men's health" },
   { href: "/best-peptide-supplier", label: "Peptides" },
-  { href: "/compare/website-builders", label: "Website builders" },
+  { href: "/compare/website-builders", label: "Websites" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
-  { href: "/best-ai-sales-tools", label: "AI sales" },
-  { href: "/compare/sales-outreach", label: "Sales & outreach" },
-  { href: "/compare/hr-payroll", label: "HR & payroll" },
-  { href: "/compare/payments", label: "Payments" },
-  { href: "/compare/business-phone", label: "Business phone" },
-  { href: "/compare/ai-tools", label: "AI tools" },
+  { href: "/guides", label: "Business tools" },
+  { href: "/polymarket", label: "Polymarket" },
   { href: "/for-business", label: "For business" },
-  { href: "/guides", label: "Other" },
 ];
 
 /**
