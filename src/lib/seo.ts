@@ -43,7 +43,9 @@ export function generateMetadata(config: SEOConfig): Metadata {
     metadataBase: new URL(SITE_URL),
     title: fullTitle,
     description,
-    keywords: keywords.length > 0 ? keywords.join(", ") : undefined,
+    // Meta keywords are ignored by Google/Bing and long lists read as low-effort
+    // SEO; intentionally not emitted. Keyword arrays are kept in configs for our
+    // own reference only.
 
     // Robots
     robots: noIndex

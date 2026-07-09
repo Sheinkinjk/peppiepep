@@ -101,6 +101,8 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
             <div>
               <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">Company</p>
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
+                <li><Link href="/about" className="transition-colors hover:text-[#0a7c42]">About</Link></li>
+                <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How we research</Link></li>
                 <li><Link href="/for-business" className="transition-colors hover:text-[#0a7c42]">For business</Link></li>
                 <li><Link href="/affiliate-programs-australia" className="transition-colors hover:text-[#0a7c42]">Affiliate programs AU</Link></li>
                 <li><Link href="/contact" className="transition-colors hover:text-[#0a7c42]">Contact</Link></li>

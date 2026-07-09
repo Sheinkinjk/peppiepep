@@ -90,6 +90,7 @@ const STANDALONE_ROUTES = [
   // Affiliate content hub + editorial standards
   "/guides",
   "/how-we-research",
+  "/about",
   // $799 Blueprint (migrated to the light ConsumerShell theme)
   "/referral-blueprint",
 ];

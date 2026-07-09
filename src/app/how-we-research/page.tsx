@@ -15,9 +15,6 @@ export const metadata = {
       "independent comparison methodology",
     ],
   }),
-  // Hidden: removed from nav, footer, sitemap, llms and schema, and de-indexed.
-  // Page kept live only so the affiliate-disclosure links across the site don't 404.
-  robots: { index: false, follow: true },
 };
 
 const breadcrumbSchema = {
