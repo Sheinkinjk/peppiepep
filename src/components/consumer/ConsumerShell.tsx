@@ -19,6 +19,8 @@ const NAV = [
   { href: "/compare/sales-outreach", label: "Sales & outreach" },
   { href: "/compare/hr-payroll", label: "HR & payroll" },
   { href: "/compare/payments", label: "Payments" },
+  { href: "/compare/business-phone", label: "Business phone" },
+  { href: "/compare/ai-tools", label: "AI tools" },
   { href: "/for-business", label: "For business" },
   { href: "/guides", label: "Other" },
 ];

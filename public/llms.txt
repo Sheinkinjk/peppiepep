@@ -22,6 +22,8 @@
 - [HR & payroll software compared](https://referlabs.com.au/compare/hr-payroll): Employment Hero for Australian/NZ teams vs Gusto for US teams. Availability flagged by region.
 - [Sales & outreach tools compared](https://referlabs.com.au/compare/sales-outreach): Snov.io for budget prospecting + email vs Reply.io for AI multichannel sequences.
 - [Payments & finance tools compared](https://referlabs.com.au/compare/payments): Payoneer for cross-border payments and multi-currency business accounts.
+- [Business phone systems compared](https://referlabs.com.au/compare/business-phone): CloudTalk for AI call-centre features vs KrispCall for virtual numbers.
+- [AI tools compared](https://referlabs.com.au/compare/ai-tools): Lindy for automating admin vs ElevenLabs for AI voice.
 - [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
 ## Weight loss & telehealth (Australia)

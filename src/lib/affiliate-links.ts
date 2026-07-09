@@ -87,3 +87,29 @@ export const SUPERFILIATE_URL = "https://ps.superfiliate.com/tu04vbefl5kh";
 // ── Payments / fintech ───────────────────────────────────────────────────────
 // Payoneer: global cross-border payments and business accounts for freelancers/SMBs.
 export const PAYONEER_URL = "https://payoneer557.partnerlinks.io/3qmtzfpag28u";
+
+// ── Business phone / calling (PartnerStack) ──────────────────────────────────
+// CloudTalk: AI-powered call-centre / business phone system for sales & support.
+export const CLOUDTALK_URL = "https://get.cloudtalk.io/9mxppdbxerja";
+// KrispCall: cloud telephony / virtual phone numbers for teams.
+export const KRISPCALL_URL = "https://try.krispcall.com/1sakfwhvptb1";
+
+// ── Accounting / finance (PartnerStack) ──────────────────────────────────────
+// Dext: bookkeeping automation, receipt & invoice capture that syncs to accounting software.
+export const DEXT_URL = "https://join.dext.com/rktouuh9xjzy";
+
+// ── HR / training (PartnerStack) ─────────────────────────────────────────────
+// Trainual: employee training, onboarding and SOP documentation.
+export const TRAINUAL_URL = "https://start.trainual.com/pivunnejc2nz";
+
+// ── AI tools (PartnerStack) ──────────────────────────────────────────────────
+// Lindy: AI work assistant that automates inbox, meetings, CRM and admin tasks.
+export const LINDY_URL = "https://try.lindy.ai/n9jgcq08hvbt";
+// ElevenLabs: AI voice / text-to-speech, voice cloning and dubbing.
+export const ELEVENLABS_URL = "https://try.elevenlabs.io/m4o3m4lmfm4o";
+
+// ── Business support / other (PartnerStack) ──────────────────────────────────
+// Wing Assistant: managed virtual assistant service across many roles.
+export const WING_ASSISTANT_URL = "https://affiliate.wingassistant.com/ou3ezdy0b2id";
+// Survicate: customer feedback and survey platform.
+export const SURVICATE_URL = "https://try.survicate.com/oga31khowbqv";

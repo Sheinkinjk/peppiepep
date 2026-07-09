@@ -9,6 +9,7 @@ import {
   MOSHY_URL, MOSH_HAIR_URL, BEEHIIV_URL, CARRD_URL, DURABLE_URL, SWIPE_PAGES_URL,
   GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, LEADPAGES_URL, BREVO_URL,
   EMPLOYMENT_HERO_URL, SUPERFILIATE_URL, ALIDROP_URL, SNOV_URL, GUSTO_URL, PAYONEER_URL,
+  CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL, WING_ASSISTANT_URL, SURVICATE_URL,
 } from "@/lib/affiliate-links";
 
 // Top picks lead with the real brand logo, the single biggest thing that
@@ -65,6 +66,14 @@ const servicesLogos = [
   { logo: null, name: "Snov.io", url: SNOV_URL },
   { logo: null, name: "Gusto", url: GUSTO_URL },
   { logo: null, name: "Payoneer", url: PAYONEER_URL },
+  { logo: null, name: "CloudTalk", url: CLOUDTALK_URL },
+  { logo: null, name: "KrispCall", url: KRISPCALL_URL },
+  { logo: null, name: "Dext", url: DEXT_URL },
+  { logo: null, name: "Trainual", url: TRAINUAL_URL },
+  { logo: null, name: "Lindy", url: LINDY_URL },
+  { logo: null, name: "ElevenLabs", url: ELEVENLABS_URL },
+  { logo: null, name: "Wing Assistant", url: WING_ASSISTANT_URL },
+  { logo: null, name: "Survicate", url: SURVICATE_URL },
 ];
 
 const itemListSchema = {

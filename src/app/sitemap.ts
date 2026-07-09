@@ -93,6 +93,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/brevo`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/alidrop`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/leadpages`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/cloudtalk`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/krispcall`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/dext`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/trainual`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/lindy`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/elevenlabs`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/wing-assistant`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/survicate`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/superfiliate`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
 
     // ── Polymarket guides (prediction markets cluster) ─────────────────

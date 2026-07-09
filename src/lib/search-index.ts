@@ -59,6 +59,16 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // Software / landing pages
   { title: "Leadpages review", href: "/leadpages", category: "Software", kind: "Guide", keywords: "leadpages landing page builder lead generation ab testing conversion" },
+  { title: "CloudTalk review", href: "/cloudtalk", category: "Software", kind: "Guide", keywords: "cloudtalk business phone call centre voip ai voice agents sales support discount code" },
+  { title: "KrispCall review", href: "/krispcall", category: "Software", kind: "Guide", keywords: "krispcall cloud phone virtual number shared inbox remote team voip discount code" },
+  { title: "Dext review", href: "/dext", category: "Software", kind: "Guide", keywords: "dext bookkeeping automation receipt invoice capture xero quickbooks accounting discount code" },
+  { title: "Trainual review", href: "/trainual", category: "Software", kind: "Guide", keywords: "trainual training onboarding sop documentation hr process discount code" },
+  { title: "Lindy review", href: "/lindy", category: "AI & sales", kind: "Guide", keywords: "lindy ai work assistant automation inbox scheduling crm agent discount code" },
+  { title: "ElevenLabs review", href: "/elevenlabs", category: "AI & sales", kind: "Guide", keywords: "elevenlabs ai voice text to speech tts voice cloning dubbing discount code" },
+  { title: "Wing Assistant review", href: "/wing-assistant", category: "Software", kind: "Guide", keywords: "wing assistant managed virtual assistant va outsourcing admin support discount code" },
+  { title: "Survicate review", href: "/survicate", category: "Software", kind: "Guide", keywords: "survicate survey customer feedback nps csat forms discount code" },
+  { title: "Business phone systems", href: "/compare/business-phone", category: "Software", kind: "Guide", keywords: "compare business phone voip cloudtalk krispcall cloud calling numbers hub" },
+  { title: "AI tools compared", href: "/compare/ai-tools", category: "AI & sales", kind: "Guide", keywords: "compare ai tools lindy elevenlabs assistant voice automation hub" },
 
   // E-commerce
   { title: "AliDrop review", href: "/alidrop", category: "E-commerce", kind: "Guide", keywords: "alidrop dropshipping aliexpress temu alibaba shopify fulfilment sourcing" },

@@ -3,6 +3,7 @@ import {
   GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, SNOV_URL,
   APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL,
   EMPLOYMENT_HERO_URL, GUSTO_URL, PAYONEER_URL,
+  CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
 } from "@/lib/affiliate-links";
 
 /**
@@ -426,6 +427,19 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: GUSTO_URL,
         ctaLabel: "See Gusto",
       },
+      {
+        name: "Trainual",
+        bestFor: "Onboarding, training & SOPs",
+        blurb: "Documents how your business runs, builds role-based onboarding and training, and keeps standard operating procedures searchable. Sits alongside payroll on the people-and-process side.",
+        facts: [
+          { label: "Role", value: "Training + SOPs" },
+          { label: "Best for", value: "Growing & multi-site teams" },
+          { label: "Pricing", value: "Subscription, demo-led (verify)" },
+        ],
+        affiliateUrl: TRAINUAL_URL,
+        reviewHref: "/trainual",
+        ctaLabel: "See Trainual",
+      },
     ],
     faqs: [
       {
@@ -544,6 +558,19 @@ export const CATALOG: Vertical[] = [
         ctaLabel: "See Payoneer",
         featured: true,
       },
+      {
+        name: "Dext",
+        bestFor: "Bookkeeping automation",
+        blurb: "Captures receipts, invoices and bills, extracts the data automatically and syncs it into accounting software like Xero, QuickBooks and Sage. The finance-admin layer next to payments.",
+        facts: [
+          { label: "Role", value: "Bookkeeping automation" },
+          { label: "Best for", value: "Accountants & small business" },
+          { label: "Pricing", value: "By users/documents, 14-day trial (verify)" },
+        ],
+        affiliateUrl: DEXT_URL,
+        reviewHref: "/dext",
+        ctaLabel: "See Dext",
+      },
     ],
     faqs: [
       {
@@ -569,6 +596,110 @@ export const CATALOG: Vertical[] = [
       {
         q: "How long do international payments take?",
         a: "It depends on the method and route. Transfers within a provider's own network or to a local account can be near-instant to a couple of business days; traditional bank wires and less common currency corridors can take longer. Always check the provider's stated timeframe for your specific currency and destination, and note that weekends and public holidays can add delay.",
+      },
+    ],
+  },
+  {
+    slug: "business-phone",
+    eyebrow: "Business phone",
+    h1Lead: "Business phone systems:",
+    h1Accent: "calls, texts and numbers in one place",
+    intro:
+      "Cloud phone systems let a team make and take calls from the browser and mobile, with virtual numbers instead of hardware. This hub compares the main options by who they suit, from lean remote teams to busier sales and support floors.",
+    metaTitle: "Business Phone Systems Compared 2026: CloudTalk vs KrispCall | Refer Labs",
+    metaDescription:
+      "Compare cloud business phone systems for 2026: CloudTalk for AI call-centre features and analytics, KrispCall for virtual numbers and a shared team inbox. Independent, no pay-to-rank.",
+    keywords: ["business phone system comparison", "cloudtalk vs krispcall", "best voip for business 2026", "cloud phone system", "virtual phone number for teams"],
+    relatedCategory: "Software",
+    providers: [
+      {
+        name: "CloudTalk",
+        bestFor: "AI call centre for sales & support",
+        blurb: "A cloud call-centre platform with smart routing, recording, analytics, SMS/WhatsApp and AI voice agents. Strongest where call volume and reporting matter.",
+        facts: [
+          { label: "Role", value: "Cloud call centre" },
+          { label: "Best for", value: "Sales & support teams" },
+          { label: "Pricing", value: "Per-user/mo, 14-day trial (verify)" },
+        ],
+        affiliateUrl: CLOUDTALK_URL,
+        reviewHref: "/cloudtalk",
+        ctaLabel: "See CloudTalk",
+        featured: true,
+      },
+      {
+        name: "KrispCall",
+        bestFor: "Virtual numbers & shared inbox",
+        blurb: "A cloud phone system focused on getting virtual local and international numbers and running a shared team inbox. Leaner and good for remote and distributed teams.",
+        facts: [
+          { label: "Role", value: "Cloud phone / numbers" },
+          { label: "Best for", value: "Remote & distributed teams" },
+          { label: "Pricing", value: "Per-user/mo (verify)" },
+        ],
+        affiliateUrl: KRISPCALL_URL,
+        reviewHref: "/krispcall",
+        ctaLabel: "See KrispCall",
+      },
+    ],
+    faqs: [
+      {
+        q: "CloudTalk or KrispCall, which should I choose?",
+        a: "CloudTalk leans toward call-centre features and analytics for busier sales and support teams; KrispCall leans toward simple virtual numbers and a shared inbox for smaller and remote teams. Choose by call volume and how much reporting you need. Both run in the browser and mobile with a free trial to test.",
+      },
+      {
+        q: "Do I need a business phone system or just a mobile?",
+        a: "A dedicated system is worth it once more than one person handles calls, you want a shared inbox and records, or you need numbers in more than one region. For a single person making occasional calls, a mobile or a basic plan is usually enough.",
+      },
+    ],
+  },
+  {
+    slug: "ai-tools",
+    eyebrow: "AI tools",
+    h1Lead: "AI tools:",
+    h1Accent: "assistants, voice and automation",
+    intro:
+      "AI tools now cover very different jobs, from automating your admin to generating lifelike voice. This hub sorts a growing set by what they actually do, so you pick the one that fits the task rather than the loudest launch.",
+    metaTitle: "Best AI Tools Compared 2026: Lindy vs ElevenLabs & More | Refer Labs",
+    metaDescription:
+      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice and text-to-speech. Independent, no pay-to-rank.",
+    keywords: ["best ai tools 2026", "lindy ai review", "elevenlabs review", "ai automation tools", "ai voice generator"],
+    relatedCategory: "AI & sales",
+    providers: [
+      {
+        name: "Lindy",
+        bestFor: "Automating repetitive admin",
+        blurb: "An AI work assistant that connects to your apps and takes over inbox triage, scheduling, follow-ups and CRM updates. Best where you have a lot of repeatable admin.",
+        facts: [
+          { label: "Role", value: "AI work assistant" },
+          { label: "Best for", value: "Automating admin" },
+          { label: "Pricing", value: "From ~$49.99/mo, 7-day trial (verify)" },
+        ],
+        affiliateUrl: LINDY_URL,
+        reviewHref: "/lindy",
+        ctaLabel: "See Lindy",
+        featured: true,
+      },
+      {
+        name: "ElevenLabs",
+        bestFor: "AI voice & text-to-speech",
+        blurb: "An AI audio platform for realistic text-to-speech, voice cloning, dubbing and voice agents, with an API for developers. Start free, scale on paid plans.",
+        facts: [
+          { label: "Role", value: "AI voice / TTS" },
+          { label: "Best for", value: "Creators & developers" },
+          { label: "Pricing", value: "Free plan, usage-based (verify)" },
+        ],
+        affiliateUrl: ELEVENLABS_URL,
+        reviewHref: "/elevenlabs",
+        ctaLabel: "See ElevenLabs",
+      },
+    ],
+    faqs: [
+      {
+        q: "Which AI tool do I actually need?",
+        a: "Start from the job. If you want to automate repetitive admin like inbox, scheduling and CRM updates, an AI assistant like Lindy fits. If you need voiceover, narration or dubbing, an AI voice tool like ElevenLabs fits. They solve different problems, so match the tool to the task.",
+      },
+      {
+        q: "Are these AI tools free to try?",
+        a: "Both offer a low-risk way to start: ElevenLabs has a free plan, and Lindy offers a free trial. Free tiers and trials change, so confirm the current limits on each provider before you rely on them.",
       },
     ],
   },

@@ -91,6 +91,14 @@ const STANDALONE_ROUTES = [
   "/guides",
   "/how-we-research",
   "/about",
+  "/cloudtalk",
+  "/krispcall",
+  "/dext",
+  "/trainual",
+  "/lindy",
+  "/elevenlabs",
+  "/wing-assistant",
+  "/survicate",
   // $799 Blueprint (migrated to the light ConsumerShell theme)
   "/referral-blueprint",
 ];
