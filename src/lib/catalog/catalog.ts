@@ -529,17 +529,18 @@ export const CATALOG: Vertical[] = [
     slug: "payments",
     eyebrow: "Payments & finance",
     h1Lead: "Payments & finance:",
-    h1Accent: "get paid across borders",
+    h1Accent: "get paid, and keep the books straight",
     intro:
-      "Tools for receiving payments and moving money internationally, useful for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
-    metaTitle: "Payments & Finance Tools Compared 2026: Payoneer | Refer Labs",
+      "Tools for receiving payments and moving money internationally, plus the bookkeeping that keeps the finances tidy. Useful for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
+    metaTitle: "Payments & Finance Tools Compared 2026: Payoneer & Dext | Refer Labs",
     metaDescription:
-      "Payments and finance tools for getting paid across borders. Payoneer offers multi-currency business accounts and cross-border payouts. Independent, no pay-to-rank.",
+      "Payments and finance tools for 2026: Payoneer for cross-border payments and multi-currency accounts, Dext for bookkeeping automation. Independent, no pay-to-rank.",
     keywords: [
       "payoneer review",
       "cross border payment tools",
       "get paid internationally freelancer",
-      "global business account",
+      "bookkeeping automation software",
+      "dext review",
       "payoneer australia",
     ],
     note: "We're building this category out. Payoneer is our first covered provider; more will be added as we review them.",

@@ -144,10 +144,6 @@ export default function CarrdVsButternutPage() {
               seconds, which you then edit. Below we line them up on approach, setup, the free tier, what you actually get,
               pricing, and who each one suits.
             </p>
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
-              This page contains disclosed affiliate links to both Carrd and Butternut AI. We may earn a commission if you
-              sign up through them, at no extra cost to you. Both are Refer Labs partners.
-            </p>
 
             <div className="flex flex-wrap gap-3">
               <a
