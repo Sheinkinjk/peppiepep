@@ -17,7 +17,7 @@ export default function NewsletterSignup({
   variant = "band",
   source = "site",
   heading = "Know about the good offers first",
-  sub = "The current best deals we've verified for Australians, across health, tools and software. Only when there's something genuinely worth it. No spam, no pay-to-rank picks.",
+  sub = "The best deals we've verified for Australians across health, tools and software, sent only when something's genuinely worth it. No spam, no pay-to-rank picks.",
   interest,
 }: {
   variant?: Variant;
@@ -108,25 +108,31 @@ export default function NewsletterSignup({
   const isBand = variant === "band";
 
   return (
-    <div className={isBand ? "relative overflow-hidden rounded-3xl border border-[#cfe6da] bg-[#e8f5ee] px-7 py-11 text-center sm:px-12 sm:py-14" : "nw-card rounded-2xl px-6 py-6"}>
-      {isBand && <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(closest-side,rgba(10,124,66,0.12),transparent)] blur-2xl" aria-hidden="true" />}
-      <div className={`relative ${isBand ? "mx-auto max-w-xl" : ""}`}>
-        <h2 className={`font-bold leading-snug tracking-[-0.01em] text-[#10251b] ${isBand ? "text-2xl sm:text-3xl" : "text-xl"}`}>{heading}</h2>
-        <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{sub}</p>
+    <div className={isBand ? "relative overflow-hidden rounded-3xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-12 text-center sm:px-12 sm:py-14" : "nw-card rounded-2xl px-6 py-6"}>
+      {isBand && <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(closest-side,rgba(10,124,66,0.14),transparent)] blur-2xl" aria-hidden="true" />}
+      <div className={`relative ${isBand ? "mx-auto flex max-w-lg flex-col items-center" : ""}`}>
+        {isBand && (
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0a7c42]/20 bg-white/70 px-3.5 py-1.5 text-[12px] font-semibold text-[#0a7c42]">
+            <BellRing className="h-3.5 w-3.5" /> The good-offers list
+          </span>
+        )}
+        <h2 className={`font-bold leading-snug tracking-[-0.01em] text-[#10251b] ${isBand ? "text-2xl sm:text-[1.9rem]" : "text-xl"}`}>{heading}</h2>
+        <p className={`mt-3 text-[15px] leading-relaxed text-[#3d4b44] ${isBand ? "max-w-md" : ""}`}>{sub}</p>
         {done ? (
-          <p className={`mt-6 flex items-center gap-2 text-sm font-semibold text-[#0a7c42] ${isBand ? "justify-center" : ""}`}>
+          <p className={`mt-7 flex items-center gap-2 text-sm font-semibold text-[#0a7c42] ${isBand ? "justify-center" : ""}`}>
             <Check className="h-4 w-4" /> You&apos;re subscribed, check your inbox.
           </p>
         ) : (
-          <form onSubmit={submit} className={`mt-6 flex flex-col gap-2.5 sm:flex-row ${isBand ? "sm:justify-center" : ""}`}>
-            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" aria-label="Email address" className={`${input} sm:max-w-xs`} />
-            <button type="submit" disabled={state === "loading"} className="nw-btn group justify-center">
+          <form onSubmit={submit} className={`mt-7 flex flex-col gap-2.5 sm:flex-row sm:items-center ${isBand ? "w-full max-w-md" : ""}`}>
+            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" aria-label="Email address" className={input} />
+            <button type="submit" disabled={state === "loading"} className="nw-btn group shrink-0 justify-center">
               {state === "loading" ? "Subscribing…" : "Subscribe"}
               {state !== "loading" && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />}
             </button>
           </form>
         )}
-        {state === "error" && <p className="mt-2 text-xs text-red-600">Something went wrong. Try again.</p>}
+        {state === "error" && <p className={`mt-2 text-xs text-red-600 ${isBand ? "text-center" : ""}`}>Something went wrong. Try again.</p>}
+        {isBand && !done && <p className="mt-3 text-[12px] text-[#8a938c]">No spam. Unsubscribe anytime.</p>}
       </div>
     </div>
   );

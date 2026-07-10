@@ -16,7 +16,7 @@ import {
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
-  { logo: "moshy", name: "Moshy", cat: "Weight loss", verdict: "A clinically-led, fully-online weight-loss telehealth program, open to anyone eligible. New customers can get $120 off their first treatment.", href: "/moshy-review" },
+  { logo: "mosh", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: finasteride and minoxidil after a practitioner review, with a current referral offer applied via our link.", href: "/moshhair" },
   { logo: "beehiiv", name: "beehiiv", cat: "Newsletters", verdict: "Built for creators serious about growth, with a genuinely useful free plan and no revenue cut.", href: "/best-newsletter-platform" },
   { logo: "carrd", name: "Carrd", cat: "Website builders", verdict: "The simplest, cheapest way to put a sharp one-page site online, free to start.", href: "/carrd-vs-durable" },
 ];
