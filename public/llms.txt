@@ -55,21 +55,21 @@
 
 ## AI sales & automation tools
 - [Best AI sales tools](https://referlabs.com.au/best-ai-sales-tools): GoHighLevel, AiSDR, Reply.io and FullEnrich compared, by role in the sales stack.
-- [GoHighLevel](https://referlabs.com.au/gohighlevel): All-in-one AI CRM, marketing automation, funnels and sales platform for agencies and SMBs. Pricing varies; verify current pricing.
+- [GoHighLevel](https://referlabs.com.au/gohighlevel): All-in-one AI CRM, marketing automation, funnels and sales platform for agencies and SMBs. From US$97/mo; Unlimited US$297/mo, 14-day free trial.
 - [AiSDR](https://referlabs.com.au/aisdr): AI sales development rep that automates B2B outbound prospecting, personalised outreach and meeting booking.
-- [Reply.io](https://referlabs.com.au/replyio): AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS, with AI SDR agents, built-in B2B data and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user pricing; verify current pricing.
-- [FullEnrich](https://referlabs.com.au/fullenrich): Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing; verify current pricing.
+- [Reply.io](https://referlabs.com.au/replyio): AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS, with AI SDR agents, built-in B2B data and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. No free plan; from US$49/user/mo with a 14-day free trial.
+- [FullEnrich](https://referlabs.com.au/fullenrich): Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment, integrates with HubSpot, Clay, Zapier and LinkedIn. Free 50-credit trial; paid from ~US$29/mo.
 
 ## Business, phone, finance & AI tools
 - [Employment Hero](https://referlabs.com.au/employmenthero): Australian all-in-one HR, payroll (ATO-certified Single Touch Payroll) and employment platform for SMEs.
-- [Trainual](https://referlabs.com.au/trainual): Employee training, onboarding and SOP documentation platform. Verify current pricing.
-- [CloudTalk](https://referlabs.com.au/cloudtalk): AI-powered call-centre and business phone system for sales and support; 14-day free trial. Verify current pricing.
-- [KrispCall](https://referlabs.com.au/krispcall): Cloud phone system with virtual numbers and a shared team inbox for remote teams. Verify current pricing.
-- [Dext](https://referlabs.com.au/dext): Bookkeeping automation that captures receipts and invoices and syncs to Xero, QuickBooks and Sage; 14-day free trial. Verify current pricing.
-- [Lindy](https://referlabs.com.au/lindy): AI work assistant that automates inbox, scheduling and CRM tasks; 7-day free trial, from about US$49.99/month. Verify current pricing.
-- [ElevenLabs](https://referlabs.com.au/elevenlabs): AI voice and text-to-speech platform with voice cloning and dubbing; free plan available. Verify current limits.
-- [Wing Assistant](https://referlabs.com.au/wing-assistant): Managed virtual-assistant service with dedicated assistants across many roles; free consultation. Verify current pricing.
-- [Survicate](https://referlabs.com.au/survicate): Customer-feedback and survey platform across website, email and app with AI analysis; free plan available. Verify current limits.
+- [Trainual](https://referlabs.com.au/trainual): Employee training, onboarding and SOP documentation platform.
+- [CloudTalk](https://referlabs.com.au/cloudtalk): AI-powered call-centre and business phone system for sales and support; 14-day free trial.
+- [KrispCall](https://referlabs.com.au/krispcall): Cloud phone system with virtual numbers and a shared team inbox for remote teams.
+- [Dext](https://referlabs.com.au/dext): Bookkeeping automation that captures receipts and invoices and syncs to Xero, QuickBooks and Sage; 14-day free trial.
+- [Lindy](https://referlabs.com.au/lindy): AI work assistant that automates inbox, scheduling and CRM tasks; 7-day free trial, from about US$49.99/month.
+- [ElevenLabs](https://referlabs.com.au/elevenlabs): AI voice and text-to-speech platform with voice cloning and dubbing; free plan available.
+- [Wing Assistant](https://referlabs.com.au/wing-assistant): Managed virtual-assistant service with dedicated assistants across many roles; free consultation.
+- [Survicate](https://referlabs.com.au/survicate): Customer-feedback and survey platform across website, email and app with AI analysis; free plan available.
 - [Nutshell](https://referlabs.com.au/nutshell): Easy sales CRM with built-in email marketing for SMB teams; 14-day free trial, no card, from about US$13/user/month.
 
 ## Prediction markets (Polymarket guides)
@@ -88,17 +88,17 @@
 - [Durable AI](https://referlabs.com.au/durableai): AI website builder with CRM and invoicing.
 - [Butternut AI](https://referlabs.com.au/butternut): AI full-site generator from a prompt.
 - [Swipe Pages](https://referlabs.com.au/swipepages): AMP landing-page builder.
-- [Leadpages](https://referlabs.com.au/leadpages): Landing-page builder focused on lead generation, with a large template library, built-in A/B testing and lead capture. Free trial; verify current pricing.
+- [Leadpages](https://referlabs.com.au/leadpages): Landing-page builder focused on lead generation, with a large template library, built-in A/B testing and lead capture. 7-day free trial; from US$49 the first month, then US$99/mo.
 - [Carrd vs Durable AI](https://referlabs.com.au/carrd-vs-durable), [Durable AI vs Butternut AI](https://referlabs.com.au/durable-vs-butternut), [Carrd vs Butternut AI](https://referlabs.com.au/carrd-vs-butternut).
 
 ## Newsletter & creator tools
 - [Best newsletter platform](https://referlabs.com.au/best-newsletter-platform): beehiiv vs Substack vs Kit.
 - [beehiiv](https://referlabs.com.au/beehiiv): Newsletter platform built for growth.
-- [Brevo](https://referlabs.com.au/brevo): All-in-one email marketing, SMS, automation and CRM platform (formerly Sendinblue). Priced by emails sent, not list size. Free plan; verify current pricing.
+- [Brevo](https://referlabs.com.au/brevo): All-in-one email marketing, SMS, automation and CRM platform (formerly Sendinblue). Priced by emails sent, not list size. Free plan; paid from US$9/mo.
 - [IncomeLab](https://referlabs.com.au/incomelab): AI income and side-hustle frameworks.
 
 ## E-commerce
-- [AliDrop](https://referlabs.com.au/alidrop): Dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. Free plan; verify current pricing. Dropshipping carries costs and risk; not an income guarantee.
+- [AliDrop](https://referlabs.com.au/alidrop): Dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. US$1 7-day trial, then from US$39/mo. Dropshipping carries costs and risk; not an income guarantee.
 
 ## Research peptides (research use only, not for human consumption)
 - [Best peptide supplier](https://referlabs.com.au/best-peptide-supplier): Apollo, Ascension and BioPeptiTech, compared.

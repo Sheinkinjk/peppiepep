@@ -190,7 +190,7 @@ export default function HomePage() {
               <div key={dup} aria-hidden={dup === 1} className="flex shrink-0 animate-marquee items-center gap-12 pr-12">
                 {servicesLogos.map((s) => (
                   <a
-                    key={s.logo}
+                    key={s.name}
                     href={s.url}
                     target="_blank"
                     rel="nofollow sponsored"
@@ -200,15 +200,17 @@ export default function HomePage() {
                     className="group/logo flex shrink-0 flex-col items-center gap-2"
                   >
                     {s.logo ? (
-                      <Image
-                        src={`/logos/${s.logo}.png`}
-                        alt=""
-                        width={28}
-                        height={28}
-                        className="h-7 w-7 object-contain opacity-80 transition duration-300 group-hover/logo:opacity-100"
-                      />
+                      <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[#e5e9e7] bg-white p-1.5 transition duration-300 group-hover/logo:border-[#c9d2cc] group-hover/logo:shadow-[0_6px_16px_-10px_rgba(16,37,27,0.4)]">
+                        <Image
+                          src={`/logos/${s.logo}.png`}
+                          alt=""
+                          width={32}
+                          height={32}
+                          className="max-h-full max-w-full object-contain"
+                        />
+                      </span>
                     ) : (
-                      <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[#10251b] text-[12px] font-bold text-white opacity-80 transition duration-300 group-hover/logo:opacity-100">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#10251b] text-sm font-bold text-white transition duration-300 group-hover/logo:shadow-[0_6px_16px_-10px_rgba(16,37,27,0.5)]">
                         {s.name.charAt(0)}
                       </span>
                     )}
