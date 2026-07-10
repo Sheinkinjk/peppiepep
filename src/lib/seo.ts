@@ -339,6 +339,13 @@ export const seoConfig = {
     url: `${SITE_URL}/nutshell`,
     keywords: ["nutshell discount code", "nutshell promo code", "nutshell coupon", "nutshell crm referral link", "nutshell crm review", "nutshell pricing", "easy sales crm", "small business crm"],
   },
+  businessSoftware: {
+    title: "Business Software Compared 2026: Sales, CRM, Phone, HR & AI Tools | Refer Labs",
+    description:
+      "Independent comparisons of the business software Australian teams actually use: sales and CRM, business phone, HR and payroll, payments, bookkeeping and AI tools. No pay-to-rank.",
+    url: `${SITE_URL}/business-software`,
+    keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
+  },
 
   hairLossHub: {
     title: "Hair Loss in Australia 2026: Compare Treatments & Your Options | Refer Labs",

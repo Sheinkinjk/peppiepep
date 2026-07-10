@@ -14,7 +14,7 @@ const NAV = [
   { href: "/best-peptide-supplier", label: "Peptides" },
   { href: "/compare/website-builders", label: "Websites" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
-  { href: "/guides", label: "Business tools" },
+  { href: "/business-software", label: "Business tools" },
   { href: "/polymarket", label: "Polymarket" },
   { href: "/for-business", label: "For business" },
 ];

@@ -33,6 +33,7 @@ const GROUPS: Group[] = [
   {
     label: "Business software",
     items: [
+      { href: "/business-software", label: "All business software", note: "Every category, in one place" },
       { href: "/best-ai-sales-tools", label: "Sales & CRM tools", note: "GoHighLevel, AiSDR, Nutshell and more" },
       { href: "/nutshell", label: "Nutshell", note: "Easy sales CRM with marketing built in" },
       { href: "/compare/sales-outreach", label: "Sales & outreach", note: "Snov.io and Reply.io, compared" },

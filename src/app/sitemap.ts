@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/referral-blueprint`, lastModified: RECENT, changeFrequency: 'weekly',  priority: 0.98 },
     { url: `${BASE}/faq`,                lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/guides`,             lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/business-software`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/about`,              lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/how-we-research`,    lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
@@ -101,6 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/elevenlabs`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/wing-assistant`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/survicate`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/nutshell`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/superfiliate`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
 
     // ── Polymarket guides (prediction markets cluster) ─────────────────

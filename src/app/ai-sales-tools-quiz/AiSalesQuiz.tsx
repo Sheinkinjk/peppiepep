@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import MatchQuiz, { type MatchConfig, type MatchResult, type MatchAnswers } from "@/components/consumer/MatchQuiz";
-import { FULLENRICH_URL, REPLY_IO_URL, AISDR_URL, GOHIGHLEVEL_URL } from "@/lib/affiliate-links";
+import { FULLENRICH_URL, REPLY_IO_URL, AISDR_URL, GOHIGHLEVEL_URL, NUTSHELL_URL } from "@/lib/affiliate-links";
 
 /**
  * AI sales-tools matcher. Maps the reader's actual bottleneck to the right tool,
@@ -39,9 +39,17 @@ const GOHIGHLEVEL: MatchResult = {
   primaryCta: { label: "Try GoHighLevel", href: GOHIGHLEVEL_URL, dataCta: "ai-quiz-gohighlevel" },
   secondary: { label: "Read our full review", href: "/gohighlevel" },
 };
+const NUTSHELL: MatchResult = {
+  key: "nutshell",
+  name: "Nutshell",
+  why: "You just need a CRM your team will actually use. Nutshell keeps your pipeline, contacts and follow-up in one easy tool, with email sequences and web forms built in, without enterprise cost or complexity.",
+  primaryCta: { label: "Try Nutshell", href: NUTSHELL_URL, dataCta: "ai-quiz-nutshell" },
+  secondary: { label: "Read our full review", href: "/nutshell" },
+};
 
 function resolve(a: MatchAnswers): MatchResult {
   if (a.bottleneck === "data") return FULLENRICH;
+  if (a.bottleneck === "crm") return NUTSHELL;
   if (a.bottleneck === "system") return GOHIGHLEVEL;
   // bottleneck === "doing"
   return a.hands === "done" ? AISDR : REPLY;
@@ -56,7 +64,8 @@ const config: MatchConfig = {
       options: [
         { value: "data", title: "I don't have good contact details", note: "Missing verified emails and mobile numbers" },
         { value: "doing", title: "I have leads, but no one to run the outreach", note: "Nobody sending the sequences" },
-        { value: "system", title: "My tools and CRM are a tangled mess", note: "Too many disconnected apps" },
+        { value: "crm", title: "I just need a simple CRM to track deals", note: "Somewhere to keep contacts and follow-up" },
+        { value: "system", title: "My whole stack is a tangled mess", note: "Replace several disconnected apps at once" },
       ],
     },
     {
@@ -75,7 +84,7 @@ const config: MatchConfig = {
   newsletterSub: "We'll send your pick plus any genuinely good AI sales-tool offers we verify. No spam.",
   footnote: (
     <>
-      A recommendation based on your answer, not the only option. Compare all four in the{" "}
+      A recommendation based on your answer, not the only option. Compare them all in the{" "}
       <Link href="/best-ai-sales-tools" className="underline underline-offset-2">
         full roundup
       </Link>
