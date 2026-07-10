@@ -229,11 +229,16 @@ export default function HomePage() {
 
         {/* ── Latest guides (article index) ── */}
         <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Latest guides</h2>
-            <div className="mt-8 grid gap-x-14 sm:grid-cols-2">
+          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+            <div className="mb-9 flex items-end justify-between gap-4">
+              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Latest guides</h2>
+              <Link href="/guides" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
+                All guides <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+            <div className="grid gap-x-16 sm:grid-cols-2">
               {guides.map((g) => (
-                <Link key={g.href} href={g.href} className="group border-t border-[#e5e9e7] py-5 first:border-t-0 sm:[&:nth-child(2)]:border-t-0">
+                <Link key={g.href} href={g.href} className="group border-t border-[#e5e9e7] py-6 first:border-t-0 sm:[&:nth-child(2)]:border-t-0">
                   <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">{g.cat}</p>
                   <h3 className="mt-1.5 text-[17px] font-bold leading-snug tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{g.title}</h3>
                 </Link>

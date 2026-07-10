@@ -111,11 +111,6 @@ export default function NewsletterSignup({
     <div className={isBand ? "relative overflow-hidden rounded-3xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-12 text-center sm:px-12 sm:py-14" : "nw-card rounded-2xl px-6 py-6"}>
       {isBand && <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(closest-side,rgba(10,124,66,0.14),transparent)] blur-2xl" aria-hidden="true" />}
       <div className={`relative ${isBand ? "mx-auto flex max-w-lg flex-col items-center" : ""}`}>
-        {isBand && (
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0a7c42]/20 bg-white/70 px-3.5 py-1.5 text-[12px] font-semibold text-[#0a7c42]">
-            <BellRing className="h-3.5 w-3.5" /> The good-offers list
-          </span>
-        )}
         <h2 className={`font-bold leading-snug tracking-[-0.01em] text-[#10251b] ${isBand ? "text-2xl sm:text-[1.9rem]" : "text-xl"}`}>{heading}</h2>
         <p className={`mt-3 text-[15px] leading-relaxed text-[#3d4b44] ${isBand ? "max-w-md" : ""}`}>{sub}</p>
         {done ? (
