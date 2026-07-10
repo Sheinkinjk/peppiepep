@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, ShieldCheck, Gift } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import type { AffiliatePageConfig } from "./types";
@@ -82,9 +82,12 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             </div>
 
             {config.offer && (
-              <div className="mt-7 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.06] px-4 py-3">
-                <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">Current offer</span>
-                <span className="text-sm font-semibold text-[#10251b]">{config.offer}</span>
+              <div className="mt-7 flex items-start gap-3 rounded-2xl border border-[#0a7c42]/30 bg-[#0a7c42]/[0.08] px-5 py-4">
+                <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.9} />
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Current offer via our link</p>
+                  <p className="mt-1 text-[15px] font-bold leading-snug text-[#10251b]">{config.offer}</p>
+                </div>
               </div>
             )}
 

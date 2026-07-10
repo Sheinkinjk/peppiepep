@@ -743,7 +743,7 @@ export const seoConfig = {
   moshHair: {
     title: "Mosh Hair Loss Discount Code Australia 2026 | Mosh Promo Code, Cost & Review | Refer Labs",
     description:
-      "Mosh hair loss discount code Australia 2026 — access the current Mosh referral offer, no code required. Covers Mosh cost and pricing, finasteride and minoxidil access, Mosh vs Dense, reviews, and what Reddit says about Mosh Australia.",
+      "Mosh hair loss discount code Australia 2026 — get 55% off your first order with code REFERAL55 via our referral link. Covers Mosh cost and pricing, finasteride and minoxidil access, Mosh vs Dense, reviews, and what Reddit says about Mosh Australia.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1921,7 +1921,7 @@ export const seoConfig = {
   superfiliate: {
     title: "Superfiliate Discount Code & Referral Link 2026: For Brands | Refer Labs",
     description:
-      "Looking for a Superfiliate discount code, promo code or referral link? Here's the current offer. A creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates. Pricing quoted per brand.",
+      "Looking for a Superfiliate discount code, promo code or referral link? Here's the current offer: 15% off your monthly Superfiliate fee for new subscribers via our link. A creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates.",
     url: `${SITE_URL}/superfiliate`,
     keywords: [
       "superfiliate discount code",

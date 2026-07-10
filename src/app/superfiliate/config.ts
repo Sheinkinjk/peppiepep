@@ -8,14 +8,15 @@ export const superfiliateConfig: AffiliatePageConfig = {
   logo: "superfiliate",
   badgeText: "For brands",
   affiliateUrl: SUPERFILIATE_URL,
+  offer: "15% off your monthly Superfiliate fee",
 
   quickAnswer:
-    "Superfiliate is a creator-led growth platform that helps e-commerce and DTC brands run affiliate, referral and creator programs in one place. Each affiliate or creator gets a personalised landing page and custom links, with rewards, tracking and integrations into your store. It is a tool for brands running programs, not for individual affiliates. Superfiliate does not list public pricing, it is quoted per brand, so book a demo or check current terms with the provider.",
+    "Through the link on this page, new subscribers get an exclusive 15% off their monthly Superfiliate fee. Superfiliate is a creator-led growth platform that helps e-commerce and DTC brands run affiliate, referral and creator programs in one place. Each affiliate or creator gets a personalised landing page and custom links, with rewards, tracking and integrations into your store. It is a tool for brands running programs, not for individual affiliates. Pricing is otherwise quoted per brand, so book a demo to scope it.",
 
   banner: {
-    heading: "Superfiliate: Creator-Led Growth for Brands",
-    body: "Click below to go directly to Superfiliate via our affiliate link and see how brands run affiliate and creator programs.",
-    buttonLabel: "Continue to Superfiliate",
+    heading: "Superfiliate: 15% Off Your Monthly Fee",
+    body: "Click below to claim the current exclusive offer, 15% off your monthly Superfiliate fee for new subscribers, via our link.",
+    buttonLabel: "Claim 15% off Superfiliate",
   },
 
   eyebrow: "For brands",

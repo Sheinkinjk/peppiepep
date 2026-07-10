@@ -8,14 +8,15 @@ export const moshHairConfig: AffiliatePageConfig = {
   logo: "mosh",
   badgeText: "Australia",
   affiliateUrl: MOSH_HAIR_URL,
+  offer: "55% off your first order (code REFERAL55)",
 
   quickAnswer:
-    "Mosh does not publish a public, checkout-style discount code. The current offer applies automatically through a referral link, there is no code to enter. Mosh is an Australian men's hair-loss telehealth platform that can prescribe finasteride and minoxidil after an online consultation and registered-practitioner review. Cost is subscription-based and confirmed during the consultation. Prescription treatments are subject to individual clinical assessment.",
+    "New customers can get 55% off their first Mosh order with the code REFERAL55, available through the link on this page. Mosh is an Australian men's hair-loss telehealth platform that can prescribe finasteride and minoxidil after an online consultation and registered-practitioner review. Cost is subscription-based and confirmed during the consultation. Prescription treatments are subject to individual clinical assessment.",
 
   banner: {
-    heading: "Mosh Hair Loss, Referral Link & Current Offer",
-    body: "Click below to go directly to Mosh via our referral link. Partner offer applied automatically.",
-    buttonLabel: "Continue to Mosh",
+    heading: "Mosh: 55% Off Your First Order",
+    body: "Click below to claim 55% off your first order with code REFERAL55, via our referral link.",
+    buttonLabel: "Claim 55% off Mosh",
   },
 
   eyebrow: "Hair-loss telehealth",
