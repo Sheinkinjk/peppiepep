@@ -5,6 +5,7 @@ export { BUTTERNUT_URL };
 
 export const butternutConfig: AffiliatePageConfig = {
   brand: "Butternut AI",
+  logo: "butternut",
   badgeText: "AI Website Builder",
   affiliateUrl: BUTTERNUT_URL,
 

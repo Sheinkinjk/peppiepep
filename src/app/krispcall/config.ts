@@ -3,6 +3,7 @@ import { KRISPCALL_URL } from "@/lib/affiliate-links";
 
 export const krispcallConfig: AffiliatePageConfig = {
   brand: "KrispCall",
+  logo: "krispcall",
   badgeText: "Business phone",
   eyebrow: "Business phone & calling",
   affiliateUrl: KRISPCALL_URL,

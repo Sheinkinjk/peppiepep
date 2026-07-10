@@ -3,6 +3,7 @@ import { LINDY_URL } from "@/lib/affiliate-links";
 
 export const lindyConfig: AffiliatePageConfig = {
   brand: "Lindy",
+  logo: "lindy",
   badgeText: "AI assistant",
   eyebrow: "AI tools",
   affiliateUrl: LINDY_URL,

@@ -3,6 +3,7 @@ import { DEXT_URL } from "@/lib/affiliate-links";
 
 export const dextConfig: AffiliatePageConfig = {
   brand: "Dext",
+  logo: "dext",
   badgeText: "Accounting",
   eyebrow: "Accounting & finance",
   affiliateUrl: DEXT_URL,

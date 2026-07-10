@@ -3,6 +3,7 @@ import { ELEVENLABS_URL } from "@/lib/affiliate-links";
 
 export const elevenlabsConfig: AffiliatePageConfig = {
   brand: "ElevenLabs",
+  logo: "elevenlabs",
   badgeText: "AI voice",
   eyebrow: "AI tools",
   affiliateUrl: ELEVENLABS_URL,

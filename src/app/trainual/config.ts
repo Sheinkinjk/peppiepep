@@ -3,6 +3,7 @@ import { TRAINUAL_URL } from "@/lib/affiliate-links";
 
 export const trainualConfig: AffiliatePageConfig = {
   brand: "Trainual",
+  logo: "trainual",
   badgeText: "Training & SOPs",
   eyebrow: "HR, onboarding & training",
   affiliateUrl: TRAINUAL_URL,

@@ -3,6 +3,7 @@ import { NUTSHELL_URL } from "@/lib/affiliate-links";
 
 export const nutshellConfig: AffiliatePageConfig = {
   brand: "Nutshell",
+  logo: "nutshell",
   badgeText: "Sales CRM",
   eyebrow: "CRM & sales",
   affiliateUrl: NUTSHELL_URL,

@@ -3,6 +3,7 @@ import { CLOUDTALK_URL } from "@/lib/affiliate-links";
 
 export const cloudtalkConfig: AffiliatePageConfig = {
   brand: "CloudTalk",
+  logo: "cloudtalk",
   badgeText: "Business phone",
   eyebrow: "Business phone & calling",
   affiliateUrl: CLOUDTALK_URL,

@@ -3,6 +3,7 @@ import { SURVICATE_URL } from "@/lib/affiliate-links";
 
 export const survicateConfig: AffiliatePageConfig = {
   brand: "Survicate",
+  logo: "survicate",
   badgeText: "Surveys & feedback",
   eyebrow: "Surveys & customer feedback",
   affiliateUrl: SURVICATE_URL,

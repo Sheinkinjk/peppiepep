@@ -3,6 +3,7 @@ import { WING_ASSISTANT_URL } from "@/lib/affiliate-links";
 
 export const wingAssistantConfig: AffiliatePageConfig = {
   brand: "Wing Assistant",
+  logo: "wing",
   badgeText: "Virtual assistants",
   eyebrow: "Virtual assistants",
   affiliateUrl: WING_ASSISTANT_URL,
