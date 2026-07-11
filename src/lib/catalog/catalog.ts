@@ -223,7 +223,7 @@ export const CATALOG: Vertical[] = [
       "These tools sit at different points in the sales stack, data, outreach, an AI rep, an all-in-one platform, and an easy CRM. This hub sorts them by the job you actually need doing, so you buy the right layer, not the loudest one.",
     metaTitle: "AI Sales Tools Compared 2026: Data, Outreach, AI SDR & CRM | Refer Labs",
     metaDescription:
-      "Compare AI sales tools by role for 2026: FullEnrich for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, GoHighLevel for all-in-one, Nutshell for an easy CRM. Independent, no pay-to-rank.",
+      "Compare AI sales tools by role for 2026: FullEnrich and ZoomInfo for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, and CRMs like Pipedrive, Nutshell and GoHighLevel. Independent, no pay-to-rank.",
     keywords: [
       "ai sales tools comparison",
       "best ai sales tools 2026",
@@ -355,7 +355,7 @@ export const CATALOG: Vertical[] = [
     faqs: [
       {
         q: "What are the best AI sales tools in 2026?",
-        a: "It depends on the job. FullEnrich supplies verified contact data, Reply.io runs your own multichannel outreach, AiSDR is a done-for-you AI rep, and GoHighLevel is an all-in-one CRM and marketing platform. Many teams stack more than one.",
+        a: "It depends on the job. FullEnrich and ZoomInfo supply contact data, Reply.io runs your own multichannel outreach, AiSDR is a done-for-you AI rep, and CRMs like Pipedrive, Nutshell and GoHighLevel manage the pipeline and follow-up. Many teams stack more than one.",
       },
       {
         q: "Which AI sales tool should I start with?",
@@ -585,10 +585,10 @@ export const CATALOG: Vertical[] = [
     h1Lead: "Payments & finance:",
     h1Accent: "get paid, and keep the books straight",
     intro:
-      "Tools for receiving payments and moving money internationally, plus the bookkeeping that keeps the finances tidy. Useful for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
-    metaTitle: "Payments & Finance Tools Compared 2026: Payoneer & Dext | Refer Labs",
+      "Tools for receiving payments, paying vendors and moving money internationally, plus the bookkeeping that keeps the finances tidy. Useful for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
+    metaTitle: "Payments & Finance Tools Compared 2026: Payoneer, Dext & Melio | Refer Labs",
     metaDescription:
-      "Payments and finance tools for 2026: Payoneer for cross-border payments and multi-currency accounts, Dext for bookkeeping automation. Independent, no pay-to-rank.",
+      "Payments and finance tools for 2026: Payoneer for cross-border payments and multi-currency accounts, Dext for bookkeeping automation, and Melio for US business bill pay. Independent, no pay-to-rank.",
     keywords: [
       "payoneer review",
       "cross border payment tools",
@@ -731,12 +731,12 @@ export const CATALOG: Vertical[] = [
     slug: "ai-tools",
     eyebrow: "AI tools",
     h1Lead: "AI tools:",
-    h1Accent: "assistants, voice and automation",
+    h1Accent: "assistants, voice and AI branding",
     intro:
-      "AI tools now cover very different jobs, from automating your admin to generating lifelike voice. This hub sorts a growing set by what they actually do, so you pick the one that fits the task rather than the loudest launch.",
-    metaTitle: "Best AI Tools Compared 2026: Lindy vs ElevenLabs & More | Refer Labs",
+      "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or a whole brand identity. This hub sorts a growing set by what they actually do, so you pick the one that fits the task rather than the loudest launch.",
+    metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & Logome | Refer Labs",
     metaDescription:
-      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice and text-to-speech. Independent, no pay-to-rank.",
+      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice and text-to-speech, Logome for AI logos and branding. Independent, no pay-to-rank.",
     keywords: ["best ai tools 2026", "lindy ai review", "elevenlabs review", "ai automation tools", "ai voice generator"],
     relatedCategory: "AI & sales",
     providers: [
