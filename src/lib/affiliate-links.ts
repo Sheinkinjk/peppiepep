@@ -116,3 +116,29 @@ export const ELEVENLABS_URL = "https://try.elevenlabs.io/m4o3m4lmfm4o";
 export const WING_ASSISTANT_URL = "https://affiliate.wingassistant.com/ou3ezdy0b2id";
 // Survicate: customer feedback and survey platform.
 export const SURVICATE_URL = "https://try.survicate.com/oga31khowbqv";
+
+// ── Lead generation / conversion (PartnerStack) ──────────────────────────────
+// Hello Bar: website popups and notification bars for email capture.
+export const HELLOBAR_URL = "https://try.hellobar.com/epwenas0ezvh";
+// Outgrow: interactive content — quizzes, calculators and forms for lead gen.
+export const OUTGROW_URL = "https://share.outgrow.biz/s6fk26puoy4k";
+// FlexiQuiz: online quiz, test and assessment maker.
+export const FLEXIQUIZ_URL = "https://try.flexiquiz.com/yeoy5ho7a2fs";
+
+// ── Sales, CRM & data (PartnerStack) ─────────────────────────────────────────
+// Pipedrive: sales CRM and pipeline management.
+export const PIPEDRIVE_URL = "https://aff.trypipedrive.com/wp69xv7vwcuj";
+// ZoomInfo: enterprise B2B sales intelligence and contact database.
+export const ZOOMINFO_URL = "https://try.zoominfo.com/bbw8emez3al4";
+// ActiveCampaign: email marketing, automation and CRM.
+export const ACTIVECAMPAIGN_URL = "https://try.activecampaign.com/3zahcmecmili";
+
+// ── Payments (PartnerStack) ──────────────────────────────────────────────────
+// Melio: B2B bill pay / accounts payable (US businesses only).
+export const MELIO_URL = "https://affiliates.meliopayments.com/1tbr2oxvyh6l";
+
+// ── AI & document tools (PartnerStack) ───────────────────────────────────────
+// Logome.ai: AI logo and brand-kit generator.
+export const LOGOME_URL = "https://logomeai.partnerlinks.io/6p4oylwrsagk";
+// Alohi: Sign.Plus e-signatures and Fax.Plus online fax.
+export const ALOHI_URL = "https://ref.alohi.com/0jjps4u4di4n";

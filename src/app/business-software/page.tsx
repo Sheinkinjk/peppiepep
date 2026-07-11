@@ -22,7 +22,8 @@ const hubs = [
   { href: "/compare/business-phone", label: "Business phone", desc: "Cloud calling and virtual numbers for sales and support teams." },
   { href: "/compare/hr-payroll", label: "HR & payroll", desc: "Run pay, hiring, training and people admin from one place." },
   { href: "/compare/payments", label: "Payments & bookkeeping", desc: "Get paid across borders, and keep the books straight." },
-  { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants and voice, sorted by what they actually do." },
+  { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants, voice and branding, sorted by what they do." },
+  { href: "/compare/lead-generation", label: "Lead generation", desc: "Landing pages, popups and interactive quizzes that capture leads." },
 ];
 
 const tools = [
@@ -32,6 +33,9 @@ const tools = [
   { href: "/dext", label: "Dext", desc: "Bookkeeping automation that syncs to Xero and QuickBooks." },
   { href: "/lindy", label: "Lindy", desc: "AI assistant that automates inbox, scheduling and CRM." },
   { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
+  { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
+  { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with powerful automation and a CRM." },
+  { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
 ];
 
 const itemListSchema = {

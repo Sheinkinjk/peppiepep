@@ -346,6 +346,69 @@ export const seoConfig = {
     url: `${SITE_URL}/business-software`,
     keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
   },
+  pipedrive: {
+    title: "Pipedrive Discount Code & Referral Link 2026: Visual Sales CRM | Refer Labs",
+    description:
+      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM. Here's the current offer, a 14-day free trial with no card, via our link. From US$14/seat/mo.",
+    url: `${SITE_URL}/pipedrive`,
+    keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
+  },
+  zoomInfo: {
+    title: "ZoomInfo Referral Link & Pricing 2026: B2B Sales Data | Refer Labs",
+    description:
+      "Looking for ZoomInfo pricing or a referral link? ZoomInfo is an enterprise B2B sales-intelligence platform with a large contact database and buyer-intent signals. Quote-only, annual contracts. Start via our link.",
+    url: `${SITE_URL}/zoominfo`,
+    keywords: ["zoominfo pricing", "zoominfo referral link", "zoominfo review", "zoominfo cost", "b2b sales intelligence", "b2b contact database", "buyer intent data"],
+  },
+  activeCampaign: {
+    title: "ActiveCampaign Discount Code & Referral Link 2026: Email Automation | Refer Labs",
+    description:
+      "Looking for an ActiveCampaign discount code, promo code or referral link? Email marketing plus a powerful automation builder and CRM. Here's the current offer, a 14-day free trial, via our link. From US$15/mo.",
+    url: `${SITE_URL}/activecampaign`,
+    keywords: ["activecampaign discount code", "activecampaign promo code", "activecampaign coupon", "activecampaign referral link", "activecampaign review", "activecampaign pricing", "email marketing automation", "marketing automation crm"],
+  },
+  melio: {
+    title: "Melio Referral Link & Pricing 2026: B2B Bill Pay (US) | Refer Labs",
+    description:
+      "Looking for Melio pricing or a referral link? Melio is B2B bill pay and accounts payable for US businesses, pay vendors by bank, card or check. Free plan; from US$25/mo. US business and bank required.",
+    url: `${SITE_URL}/melio`,
+    keywords: ["melio pricing", "melio referral link", "melio review", "melio payments", "b2b bill pay", "accounts payable software", "pay vendors by card"],
+  },
+  logome: {
+    title: "Logome.ai Discount Code & Referral Link 2026: AI Logo Maker | Refer Labs",
+    description:
+      "Looking for a Logome.ai discount code or referral link? Logome is an AI logo and brand-kit generator. Design and preview free, download from US$19/mo. Start via our link.",
+    url: `${SITE_URL}/logome`,
+    keywords: ["logome discount code", "logome ai review", "logome referral link", "logome pricing", "ai logo generator", "ai logo maker", "brand kit generator"],
+  },
+  alohi: {
+    title: "Alohi Referral Link 2026: Sign.Plus E-Signatures & Fax.Plus | Refer Labs",
+    description:
+      "Looking for an Alohi, Sign.Plus or Fax.Plus referral link? Legally-binding e-signatures (Sign.Plus) and secure online fax (Fax.Plus), both with free plans. From US$6.99–14.99/mo. Start via our link.",
+    url: `${SITE_URL}/alohi`,
+    keywords: ["alohi referral link", "sign.plus review", "sign plus pricing", "fax.plus review", "electronic signature software", "online fax service", "esignature australia"],
+  },
+  helloBar: {
+    title: "Hello Bar Discount Code & Referral Link 2026: Popups & Lead Capture | Refer Labs",
+    description:
+      "Looking for a Hello Bar discount code or referral link? Hello Bar adds no-code popups and bars to capture emails and lift conversions. Free plan; paid from US$29/mo. Start via our link.",
+    url: `${SITE_URL}/hellobar`,
+    keywords: ["hello bar discount code", "hellobar referral link", "hello bar review", "hello bar pricing", "website popup tool", "email capture popup", "notification bar"],
+  },
+  outgrow: {
+    title: "Outgrow Discount Code & Referral Link 2026: Quizzes & Calculators | Refer Labs",
+    description:
+      "Looking for an Outgrow discount code or referral link? Outgrow builds no-code calculators, quizzes and assessments that capture qualified leads. Free plan plus a 7-day trial. From US$14/mo, via our link.",
+    url: `${SITE_URL}/outgrow`,
+    keywords: ["outgrow discount code", "outgrow referral link", "outgrow review", "outgrow pricing", "interactive content tool", "quiz funnel builder", "lead generation calculator"],
+  },
+  flexiQuiz: {
+    title: "FlexiQuiz Discount Code & Referral Link 2026: Quiz & Test Maker | Refer Labs",
+    description:
+      "Looking for a FlexiQuiz discount code or referral link? FlexiQuiz builds online quizzes, tests and assessments with auto-marking and certificates. Free plan; paid from US$17/mo. Start via our link.",
+    url: `${SITE_URL}/flexiquiz`,
+    keywords: ["flexiquiz discount code", "flexiquiz referral link", "flexiquiz review", "flexiquiz pricing", "online quiz maker", "online test maker", "assessment software"],
+  },
 
   hairLossHub: {
     title: "Hair Loss in Australia 2026: Compare Treatments & Your Options | Refer Labs",

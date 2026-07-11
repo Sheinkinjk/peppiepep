@@ -11,6 +11,7 @@ import {
   EMPLOYMENT_HERO_URL, SUPERFILIATE_URL, ALIDROP_URL, SNOV_URL, GUSTO_URL, PAYONEER_URL,
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL, WING_ASSISTANT_URL, SURVICATE_URL,
   BUTTERNUT_URL, DENSE_URL, INCOME_LAB_URL, NUTSHELL_URL,
+  PIPEDRIVE_URL, ACTIVECAMPAIGN_URL, ZOOMINFO_URL, MELIO_URL, LOGOME_URL, ALOHI_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
 } from "@/lib/affiliate-links";
 
 // Top picks lead with the real brand logo, the single biggest thing that
@@ -80,6 +81,15 @@ const servicesLogos = [
   { logo: "butternut", name: "Butternut AI", url: BUTTERNUT_URL },
   { logo: "dense", name: "Dense", url: DENSE_URL },
   { logo: "incomelab", name: "Income Lab", url: INCOME_LAB_URL },
+  { logo: null, name: "Pipedrive", url: PIPEDRIVE_URL },
+  { logo: null, name: "ActiveCampaign", url: ACTIVECAMPAIGN_URL },
+  { logo: null, name: "ZoomInfo", url: ZOOMINFO_URL },
+  { logo: null, name: "Melio", url: MELIO_URL },
+  { logo: null, name: "Logome.ai", url: LOGOME_URL },
+  { logo: null, name: "Alohi", url: ALOHI_URL },
+  { logo: null, name: "Hello Bar", url: HELLOBAR_URL },
+  { logo: null, name: "Outgrow", url: OUTGROW_URL },
+  { logo: null, name: "FlexiQuiz", url: FLEXIQUIZ_URL },
 ];
 
 const itemListSchema = {

@@ -4,6 +4,8 @@ import {
   APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL,
   EMPLOYMENT_HERO_URL, GUSTO_URL, PAYONEER_URL,
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
+  LEADPAGES_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
+  PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL, MELIO_URL, LOGOME_URL,
 } from "@/lib/affiliate-links";
 
 /**
@@ -299,6 +301,45 @@ export const CATALOG: Vertical[] = [
         ctaLabel: "See Nutshell",
       },
       {
+        name: "Pipedrive",
+        bestFor: "A visual pipeline CRM",
+        blurb: "A deal-first sales CRM built around a visual pipeline you drag deals through, with activity reminders, automation and reporting. Best for teams that want a CRM reps actually keep updated.",
+        facts: [
+          { label: "Role", value: "Sales CRM / pipeline" },
+          { label: "Best for", value: "SMB sales teams" },
+          { label: "Pricing", value: "No free plan; from US$14/seat/mo" },
+        ],
+        affiliateUrl: PIPEDRIVE_URL,
+        reviewHref: "/pipedrive",
+        ctaLabel: "See Pipedrive",
+      },
+      {
+        name: "ActiveCampaign",
+        bestFor: "Email + automation + CRM",
+        blurb: "Email marketing with a powerful automation builder and a light CRM, so follow-up reacts to what each contact does. Best once you have outgrown basic send-and-hope email.",
+        facts: [
+          { label: "Role", value: "Email / automation" },
+          { label: "Best for", value: "SMBs wanting automation" },
+          { label: "Pricing", value: "No free plan; from US$15/mo" },
+        ],
+        affiliateUrl: ACTIVECAMPAIGN_URL,
+        reviewHref: "/activecampaign",
+        ctaLabel: "See ActiveCampaign",
+      },
+      {
+        name: "ZoomInfo",
+        bestFor: "Enterprise B2B data",
+        blurb: "An enterprise sales-intelligence platform with a large contact database, direct dials and buyer-intent signals. Best for scaled teams running outbound at volume; quote-only pricing.",
+        facts: [
+          { label: "Role", value: "B2B data & intent" },
+          { label: "Best for", value: "Enterprise sales teams" },
+          { label: "Pricing", value: "Quote-only; enterprise annual" },
+        ],
+        affiliateUrl: ZOOMINFO_URL,
+        reviewHref: "/zoominfo",
+        ctaLabel: "See ZoomInfo",
+      },
+      {
         name: "Snov.io",
         bestFor: "Prospecting + outreach on a budget",
         blurb: "An all-in-one prospecting platform: email finder and verifier, drip email campaigns and a light CRM. A budget-friendly way to combine finding leads and reaching them in one tool.",
@@ -585,6 +626,19 @@ export const CATALOG: Vertical[] = [
         reviewHref: "/dext",
         ctaLabel: "See Dext",
       },
+      {
+        name: "Melio",
+        bestFor: "Paying vendors (US businesses)",
+        blurb: "B2B bill pay for US businesses: pay vendors by bank transfer, card or check and sync to QuickBooks or Xero. Free plan to start; requires a US business and US bank account to send.",
+        facts: [
+          { label: "Role", value: "Bill pay / accounts payable" },
+          { label: "Availability", value: "US-only for senders" },
+          { label: "Pricing", value: "Free plan; paid from US$25/mo" },
+        ],
+        affiliateUrl: MELIO_URL,
+        reviewHref: "/melio",
+        ctaLabel: "See Melio",
+      },
     ],
     faqs: [
       {
@@ -713,6 +767,19 @@ export const CATALOG: Vertical[] = [
         reviewHref: "/elevenlabs",
         ctaLabel: "See ElevenLabs",
       },
+      {
+        name: "Logome.ai",
+        bestFor: "AI logo & brand kit",
+        blurb: "An AI generator that turns a business description into logos plus a full brand kit, colours, fonts and templates. Free to design and preview; pay only to download.",
+        facts: [
+          { label: "Role", value: "AI logo / branding" },
+          { label: "Best for", value: "Startups & founders" },
+          { label: "Pricing", value: "Free to design; downloads from US$19/mo" },
+        ],
+        affiliateUrl: LOGOME_URL,
+        reviewHref: "/logome",
+        ctaLabel: "See Logome",
+      },
     ],
     faqs: [
       {
@@ -730,6 +797,88 @@ export const CATALOG: Vertical[] = [
       {
         q: "Is my data safe with AI tools?",
         a: "It depends on the provider. Reputable AI tools publish how they store and use your data and whether inputs are used to train models. Before connecting sensitive accounts or uploading confidential material, read the provider's data and security terms, and prefer plans or settings that exclude your data from training where that matters to you.",
+      },
+    ],
+  },
+  {
+    slug: "lead-generation",
+    eyebrow: "Lead generation",
+    h1Lead: "Lead-generation tools:",
+    h1Accent: "capture and convert more visitors",
+    intro:
+      "Traffic is wasted if visitors leave without a trace. These tools capture and convert, landing pages, on-site popups, and interactive quizzes and calculators, sorted by how you want to turn attention into leads.",
+    metaTitle: "Best Lead-Generation Tools 2026: Landing Pages, Popups & Quizzes | Refer Labs",
+    metaDescription:
+      "Compare lead-generation tools for 2026: Leadpages for landing pages, Hello Bar for popups, Outgrow for interactive quizzes and calculators, FlexiQuiz for tests and assessments. Independent, no pay-to-rank.",
+    keywords: ["lead generation tools", "best landing page builder", "website popup tool", "interactive content tool", "quiz maker for lead gen"],
+    relatedCategory: "Software",
+    providers: [
+      {
+        name: "Leadpages",
+        bestFor: "Landing pages that convert",
+        blurb: "A landing-page and lead-capture builder with a big template library, built-in A/B testing, pop-ups and alert bars. Best when your main goal is capturing leads, not just publishing a site.",
+        facts: [
+          { label: "Role", value: "Landing pages / lead capture" },
+          { label: "Best for", value: "Marketers & small business" },
+          { label: "Pricing", value: "7-day trial; from US$49 first month" },
+        ],
+        affiliateUrl: LEADPAGES_URL,
+        reviewHref: "/leadpages",
+        ctaLabel: "See Leadpages",
+        featured: true,
+      },
+      {
+        name: "Hello Bar",
+        bestFor: "On-site popups & bars",
+        blurb: "Adds no-code popups, sticky bars and overlays to any website to capture emails and drive clicks, with targeting and A/B testing. A quick conversion win for sites that already get traffic.",
+        facts: [
+          { label: "Role", value: "Popups & notification bars" },
+          { label: "Best for", value: "Growing an email list" },
+          { label: "Pricing", value: "Free plan; paid from US$29/mo" },
+        ],
+        affiliateUrl: HELLOBAR_URL,
+        reviewHref: "/hellobar",
+        ctaLabel: "See Hello Bar",
+      },
+      {
+        name: "Outgrow",
+        bestFor: "Interactive quizzes & calculators",
+        blurb: "Builds no-code calculators, quizzes, assessments and polls that engage visitors and capture better-qualified leads. Best when you want people to interact and self-qualify.",
+        facts: [
+          { label: "Role", value: "Interactive content" },
+          { label: "Best for", value: "Engagement & lead quality" },
+          { label: "Pricing", value: "Free plan; paid from US$14/mo" },
+        ],
+        affiliateUrl: OUTGROW_URL,
+        reviewHref: "/outgrow",
+        ctaLabel: "See Outgrow",
+      },
+      {
+        name: "FlexiQuiz",
+        bestFor: "Tests & assessments",
+        blurb: "An online quiz, test and assessment maker with automatic marking, certificates and reporting. Best when you need real assessments for training or hiring, not just a marketing quiz.",
+        facts: [
+          { label: "Role", value: "Quiz & test maker" },
+          { label: "Best for", value: "Trainers & assessments" },
+          { label: "Pricing", value: "Free plan; paid from US$17/mo" },
+        ],
+        affiliateUrl: FLEXIQUIZ_URL,
+        reviewHref: "/flexiquiz",
+        ctaLabel: "See FlexiQuiz",
+      },
+    ],
+    faqs: [
+      {
+        q: "Which lead-generation tool do I need?",
+        a: "Match it to how you capture. For dedicated landing pages, Leadpages fits. For popups and bars on your existing site, Hello Bar. For interactive quizzes and calculators that qualify leads, Outgrow. For real tests and assessments with grading, FlexiQuiz. Many sites use more than one.",
+      },
+      {
+        q: "Are these lead-generation tools free to try?",
+        a: "Mostly yes: Hello Bar, Outgrow and FlexiQuiz all have free plans, and Leadpages offers a free trial. Free tiers and trials change, so confirm the current limits on each provider before you rely on them.",
+      },
+      {
+        q: "Landing page or popup, which lifts conversions more?",
+        a: "They do different jobs. A landing page is a dedicated, distraction-free page for a single offer, best for paid traffic and campaigns. A popup or bar captures visitors on your existing pages before they leave. Used together they cover both.",
       },
     ],
   },

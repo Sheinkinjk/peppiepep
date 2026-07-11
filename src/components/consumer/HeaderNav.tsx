@@ -40,7 +40,8 @@ const GROUPS: Group[] = [
       { href: "/compare/hr-payroll", label: "HR & payroll", note: "Employment Hero and Gusto" },
       { href: "/compare/payments", label: "Payments & finance", note: "Payments and accounting" },
       { href: "/compare/business-phone", label: "Business phone", note: "CloudTalk vs KrispCall" },
-      { href: "/compare/ai-tools", label: "AI tools", note: "Lindy, ElevenLabs and more" },
+      { href: "/compare/ai-tools", label: "AI tools", note: "Lindy, ElevenLabs, Logome and more" },
+      { href: "/compare/lead-generation", label: "Lead generation", note: "Landing pages, popups, quizzes" },
     ],
   },
   {

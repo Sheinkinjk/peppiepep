@@ -23,7 +23,8 @@
 - [Sales & outreach tools compared](https://referlabs.com.au/compare/sales-outreach): Snov.io for budget prospecting + email vs Reply.io for AI multichannel sequences.
 - [Payments & finance tools compared](https://referlabs.com.au/compare/payments): Payoneer for cross-border payments and multi-currency business accounts.
 - [Business phone systems compared](https://referlabs.com.au/compare/business-phone): CloudTalk for AI call-centre features vs KrispCall for virtual numbers.
-- [AI tools compared](https://referlabs.com.au/compare/ai-tools): Lindy for automating admin vs ElevenLabs for AI voice.
+- [AI tools compared](https://referlabs.com.au/compare/ai-tools): Lindy for automating admin vs ElevenLabs for AI voice vs Logome for AI logos.
+- [Lead-generation tools compared](https://referlabs.com.au/compare/lead-generation): Landing pages (Leadpages), popups (Hello Bar), interactive quizzes and calculators (Outgrow) and assessments (FlexiQuiz).
 - [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
 ## Weight loss & telehealth (Australia)
@@ -71,6 +72,15 @@
 - [Wing Assistant](https://referlabs.com.au/wing-assistant): Managed virtual-assistant service with dedicated assistants across many roles; free consultation.
 - [Survicate](https://referlabs.com.au/survicate): Customer-feedback and survey platform across website, email and app with AI analysis; free plan available.
 - [Nutshell](https://referlabs.com.au/nutshell): Easy sales CRM with built-in email marketing for SMB teams; 14-day free trial, no card, from about US$13/user/month.
+- [Pipedrive](https://referlabs.com.au/pipedrive): Visual sales CRM with pipeline, automation and reporting; 14-day free trial, from US$14/seat/month.
+- [ActiveCampaign](https://referlabs.com.au/activecampaign): Email marketing with a powerful automation builder and CRM; 14-day free trial, from US$15/month.
+- [ZoomInfo](https://referlabs.com.au/zoominfo): Enterprise B2B sales intelligence and contact database with buyer-intent signals; quote-only, annual contracts.
+- [Melio](https://referlabs.com.au/melio): B2B bill pay for US businesses, pay vendors by bank, card or check; free plan (requires a US business and bank account).
+- [Logome.ai](https://referlabs.com.au/logome): AI logo and brand-kit generator; free to design and preview, downloads from US$19/month.
+- [Alohi](https://referlabs.com.au/alohi): Sign.Plus e-signatures and Fax.Plus online fax; free plans, from US$6.99-14.99/month.
+- [Hello Bar](https://referlabs.com.au/hellobar): No-code website popups and bars for email capture; free plan, from US$29/month.
+- [Outgrow](https://referlabs.com.au/outgrow): No-code interactive calculators, quizzes and assessments for lead gen; free plan, from US$14/month.
+- [FlexiQuiz](https://referlabs.com.au/flexiquiz): Online quiz, test and assessment maker with auto-marking and certificates; free plan, from US$17/month.
 
 ## Prediction markets (Polymarket guides)
 - [Polymarket hub: how to sign up & trade](https://referlabs.com.au/polymarket): Main Polymarket page. What it is, how to sign up on the US (regulated, USD) or international (crypto, USDC) platform in three steps, what you can trade, and links to the full guides.
