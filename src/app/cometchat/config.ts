@@ -55,6 +55,10 @@ export const cometchatConfig: AffiliatePageConfig = {
     { q: "What can I build with CometChat?", a: "In-app text chat, voice and video calling, and AI-agent messaging, inside your own web or mobile product. It is commonly used for marketplaces, communities, telehealth, education, gaming and SaaS apps that need users to communicate." },
     { q: "Is CometChat a team chat tool like Slack?", a: "No. CometChat is developer infrastructure for adding messaging to your own app, not a ready-made team-chat product. If you want internal team messaging, a tool like Slack fits; if you are building chat into a product you ship, CometChat is the right layer." },
   ],
+  relatedLinks: [
+    { href: "/business-software", label: "Business software", desc: "Browse more tools for running a business." },
+    { href: "/compare/business-phone", label: "Business phone tools", desc: "Compare calling and communication tools." },
+  ],
   ctas: {
     primary: "See CometChat",
     secondary: "Continue to CometChat",

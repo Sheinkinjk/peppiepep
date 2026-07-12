@@ -55,6 +55,11 @@ export const flexiQuizConfig: AffiliatePageConfig = {
     { q: "Can FlexiQuiz mark quizzes automatically and issue certificates?", a: "Yes. It marks supported question types automatically, applies passing scores, and can issue custom certificates to those who pass, with detailed reporting on results. That makes it well suited to training and assessments." },
     { q: "FlexiQuiz vs a marketing quiz tool, which do I need?", a: "FlexiQuiz is built for real tests and assessments: grading, certificates and reporting. A marketing-quiz or interactive-content tool is built for engagement and lead capture. Choose FlexiQuiz when the goal is to test and record knowledge, not just generate leads." },
   ],
+  relatedLinks: [
+    { href: "/compare/lead-generation", label: "Compare lead-gen tools", desc: "See FlexiQuiz next to quizzes, popups and landing pages." },
+    { href: "/outgrow", label: "Outgrow", desc: "Interactive quizzes and calculators for marketing." },
+    { href: "/survicate", label: "Survicate", desc: "Run customer-feedback surveys across your site." },
+  ],
   ctas: {
     primary: "See FlexiQuiz",
     secondary: "Continue to FlexiQuiz",

@@ -55,6 +55,11 @@ export const outgrowConfig: AffiliatePageConfig = {
     { q: "What can I build with Outgrow?", a: "Interactive calculators, quizzes, assessments, polls, surveys, chatbots and forms, all without code. Common uses are pricing or ROI calculators, product-match quizzes and readiness assessments, each with a lead-capture step." },
     { q: "Why use interactive content instead of a form?", a: "Static forms ask people to give without getting anything back. Interactive content gives a result, a score, a recommendation, a number, in exchange for answers, so more people engage and the leads you capture are better qualified because they have told you what they want." },
   ],
+  relatedLinks: [
+    { href: "/compare/lead-generation", label: "Compare lead-gen tools", desc: "See Outgrow next to popups, landing pages and quizzes." },
+    { href: "/flexiquiz", label: "FlexiQuiz", desc: "Build quizzes and tests with automatic marking." },
+    { href: "/hellobar", label: "Hello Bar", desc: "Capture emails with on-site popups and bars." },
+  ],
   ctas: {
     primary: "See Outgrow",
     secondary: "Continue to Outgrow",

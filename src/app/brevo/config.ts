@@ -134,6 +134,7 @@ export const brevoConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with deeper automation." },
     { href: "/best-newsletter-platform", label: "Best Newsletter Platform 2026", desc: "beehiiv vs Substack vs ConvertKit, the creator-first newsletter platforms compared." },
     { href: "/beehiiv", label: "beehiiv Review", desc: "The newsletter platform built for creator growth and monetisation." },
     { href: "/compare/newsletter-platforms", label: "Newsletter platforms hub", desc: "Where to build an email audience, sorted by what each is for." },

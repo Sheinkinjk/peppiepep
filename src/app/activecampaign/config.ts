@@ -55,6 +55,11 @@ export const activeCampaignConfig: AffiliatePageConfig = {
     { q: "Does ActiveCampaign have a free plan?", a: "No, there is no permanent free plan; it offers a 14-day free trial instead. If you only need a simple free newsletter tool, a freemium email platform may suit better, but the trial lets you test the automation first." },
     { q: "ActiveCampaign vs a basic email tool, what's the difference?", a: "Basic tools send broadcasts to a list. ActiveCampaign adds an automation engine that reacts to each contact's behaviour, plus segmentation and a CRM, so follow-up is personalised and hands-off. It is the step up when send-and-hope email stops being enough." },
   ],
+  relatedLinks: [
+    { href: "/compare/ai-sales-tools", label: "Compare sales & CRM tools", desc: "See ActiveCampaign next to CRMs and outreach tools." },
+    { href: "/brevo", label: "Brevo", desc: "An all-in-one email, SMS and CRM alternative." },
+    { href: "/nutshell", label: "Nutshell", desc: "A sales CRM with email marketing built in." },
+  ],
   ctas: {
     primary: "See ActiveCampaign",
     secondary: "Continue to ActiveCampaign",

@@ -55,6 +55,11 @@ export const landingiConfig: AffiliatePageConfig = {
     { q: "Landingi vs a website builder, which do I need?", a: "A website builder is for your whole site. Landingi is for standalone landing pages built to convert a specific campaign or offer, with A/B testing and lead capture front and centre. If your goal is capturing leads from ads or campaigns, a landing-page tool usually outperforms a general site builder." },
     { q: "Do I need to code to use Landingi?", a: "No. You build and edit pages in a drag-and-drop editor and publish them without touching code. Templates give you a head start, and integrations connect the page to your email and marketing tools." },
   ],
+  relatedLinks: [
+    { href: "/compare/lead-generation", label: "Compare lead-gen tools", desc: "See Landingi next to the other lead tools." },
+    { href: "/leadpages", label: "Leadpages", desc: "A close alternative for landing pages and lead capture." },
+    { href: "/hellobar", label: "Hello Bar", desc: "Add popups and bars to capture more visitors." },
+  ],
   ctas: {
     primary: "See Landingi",
     secondary: "Continue to Landingi",

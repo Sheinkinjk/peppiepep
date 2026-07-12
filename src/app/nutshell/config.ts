@@ -72,6 +72,9 @@ export const nutshellConfig: AffiliatePageConfig = {
       a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team actually keeps it up to date, while still offering the automation and reporting to run a pipeline properly.",
     },
   ],
+  relatedLinks: [
+    { href: "/pipedrive", label: "Pipedrive", desc: "A visual, pipeline-first CRM alternative." },
+  ],
   ctas: {
     primary: "See Nutshell",
     secondary: "Continue to Nutshell",

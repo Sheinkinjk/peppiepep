@@ -56,6 +56,10 @@ export const meetgeekConfig: AffiliatePageConfig = {
     { q: "Which meeting apps does MeetGeek support?", a: "MeetGeek works with the major video platforms, Zoom, Google Meet and Microsoft Teams, auto-joining calls from your connected calendar to record, transcribe and summarise them." },
     { q: "Is it okay to record meetings with MeetGeek?", a: "MeetGeek makes recording and transcribing easy, but consent matters. Let participants know a notetaker is present and follow the recording rules for your organisation and jurisdiction. Used openly, automated notes save time and keep everyone on the same page." },
   ],
+  relatedLinks: [
+    { href: "/compare/ai-tools", label: "Compare AI tools", desc: "See MeetGeek next to the other AI tools." },
+    { href: "/lindy", label: "Lindy", desc: "An AI assistant that automates admin across your apps." },
+  ],
   ctas: {
     primary: "See MeetGeek",
     secondary: "Continue to MeetGeek",

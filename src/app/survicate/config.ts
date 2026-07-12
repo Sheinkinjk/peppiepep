@@ -73,6 +73,9 @@ export const survicateConfig: AffiliatePageConfig = {
       a: "Survicate integrates with 50-plus tools including common CRMs, help desks and analytics platforms. Confirm your specific stack is supported on their integrations page.",
     },
   ],
+  relatedLinks: [
+    { href: "/flexiquiz", label: "FlexiQuiz", desc: "Build quizzes, tests and assessments." },
+  ],
   ctas: {
     primary: "See Survicate",
     secondary: "Continue to Survicate",

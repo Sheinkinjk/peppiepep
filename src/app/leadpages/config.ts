@@ -123,6 +123,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/landingi", label: "Landingi", desc: "Another landing-page builder, with A/B testing." },
     { href: "/best-website-builder", label: "Best Website Builder 2026", desc: "Carrd, Durable AI, Butternut AI and Swipe Pages, compared." },
     { href: "/swipepages", label: "Swipe Pages Review", desc: "AMP landing pages for paid-ad campaigns, another conversion-focused builder." },
     { href: "/website-builder-quiz", label: "Which builder quiz", desc: "Three questions to find the builder that fits your project." },

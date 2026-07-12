@@ -55,6 +55,11 @@ export const pipedriveConfig: AffiliatePageConfig = {
     { q: "Does Pipedrive have a free plan?", a: "No, Pipedrive does not offer a permanent free plan; it offers a 14-day free trial instead. If you specifically need a free-forever CRM tier, a tool like a freemium CRM may suit better, but Pipedrive's trial lets you test everything first." },
     { q: "Is Pipedrive good for a small team?", a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team keeps it current, while still offering automation and reporting to run a pipeline properly." },
   ],
+  relatedLinks: [
+    { href: "/compare/ai-sales-tools", label: "Compare sales & CRM tools", desc: "See Pipedrive next to the other CRMs and sales tools." },
+    { href: "/nutshell", label: "Nutshell", desc: "Another easy CRM with email marketing built in." },
+    { href: "/gohighlevel", label: "GoHighLevel", desc: "An all-in-one CRM and marketing platform." },
+  ],
   ctas: {
     primary: "See Pipedrive",
     secondary: "Continue to Pipedrive",

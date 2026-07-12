@@ -56,6 +56,10 @@ export const melioConfig: AffiliatePageConfig = {
     { q: "How much does Melio cost?", a: "The Go plan is free with a limited number of bank payments a month; paid plans (Core from about US$25/month, then higher tiers) add more free payments and features. Card payments carry a percentage fee and some payment types have per-transaction costs. Confirm the current fees before committing." },
     { q: "Does Melio work with my accounting software?", a: "Yes, Melio syncs with QuickBooks and Xero so your bills and payments stay reconciled automatically. Confirm your specific setup is supported when you connect your account." },
   ],
+  relatedLinks: [
+    { href: "/compare/payments", label: "Compare payment tools", desc: "See Melio next to Payoneer and bookkeeping tools." },
+    { href: "/dext", label: "Dext", desc: "Automate the bookkeeping side of your finances." },
+  ],
   ctas: {
     primary: "See Melio",
     secondary: "Continue to Melio",

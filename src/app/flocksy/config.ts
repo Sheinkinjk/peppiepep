@@ -56,6 +56,10 @@ export const flocksyConfig: AffiliatePageConfig = {
     { q: "What can Flocksy design for me?", a: "Across 140+ services: graphic design, logos and branding, video editing, motion graphics, web design, illustration, copywriting and more. You submit requests to your queue and a dedicated team works through them with unlimited revisions." },
     { q: "Flocksy vs hiring a freelancer or designer?", a: "A freelancer suits occasional, one-off work. Flocksy suits a constant stream: a flat monthly fee, a team that learns your brand, unlimited requests and revisions, and no recruiting. If you are regularly paying for design, the subscription can work out cheaper and more predictable; if not, per-project is fine." },
   ],
+  relatedLinks: [
+    { href: "/business-software", label: "Business software", desc: "Browse more tools for running a business." },
+    { href: "/logome", label: "Logome.ai", desc: "Generate a logo and brand kit with AI instead." },
+  ],
   ctas: {
     primary: "See Flocksy",
     secondary: "Continue to Flocksy",

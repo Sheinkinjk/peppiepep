@@ -55,6 +55,11 @@ export const zoomInfoConfig: AffiliatePageConfig = {
     { q: "Is ZoomInfo worth it for a small business?", a: "For most small businesses it is likely overkill and over budget. The value shows when you run outbound at scale and can act on the data and intent signals. Smaller teams often prefer a lighter, credit-based enrichment tool." },
     { q: "Does ZoomInfo work for Australian teams?", a: "Yes, ZoomInfo is sold globally including to Australian teams, though data depth varies by region. Confirm coverage for your target market during the demo before committing to an annual contract." },
   ],
+  relatedLinks: [
+    { href: "/compare/ai-sales-tools", label: "Compare sales & CRM tools", desc: "See ZoomInfo next to lighter data and outreach tools." },
+    { href: "/fullenrich", label: "FullEnrich", desc: "A lighter, credit-based contact-data tool." },
+    { href: "/aisdr", label: "AiSDR", desc: "A done-for-you AI sales rep for outbound." },
+  ],
   ctas: {
     primary: "See ZoomInfo",
     secondary: "Continue to ZoomInfo",

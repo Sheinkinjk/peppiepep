@@ -72,6 +72,9 @@ export const lindyConfig: AffiliatePageConfig = {
       a: "It depends on how much repetitive admin you have. If a meaningful part of your day is inbox and coordination work, automating it can pay for itself; if your work is mostly one-off and creative, the benefit is smaller. The free trial is the low-risk way to find out.",
     },
   ],
+  relatedLinks: [
+    { href: "/meetgeek", label: "MeetGeek", desc: "AI notes and summaries for your meetings." },
+  ],
   ctas: {
     primary: "See Lindy",
     secondary: "Continue to Lindy",

@@ -165,6 +165,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/pipedrive", label: "Pipedrive", desc: "A simpler, pipeline-first CRM." },
     {
       href: "/best-ai-sales-tools",
       label: "Best AI Sales Tools 2026",

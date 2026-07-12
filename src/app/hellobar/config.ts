@@ -55,6 +55,11 @@ export const helloBarConfig: AffiliatePageConfig = {
     { q: "Do I need to know how to code to use Hello Bar?", a: "No. You add a small snippet or a plugin once, then build and edit popups and bars in Hello Bar's editor without touching code. It works on most website platforms." },
     { q: "Will popups hurt my site or SEO?", a: "Used well, targeted popups grow your list without harming experience; used badly, intrusive popups can annoy visitors. Hello Bar's targeting and timing rules let you show them at sensible moments, which is the key to keeping conversions up without frustrating people." },
   ],
+  relatedLinks: [
+    { href: "/compare/lead-generation", label: "Compare lead-gen tools", desc: "See Hello Bar next to landing pages and quizzes." },
+    { href: "/leadpages", label: "Leadpages", desc: "Build dedicated landing pages that convert." },
+    { href: "/outgrow", label: "Outgrow", desc: "Capture leads with interactive quizzes and calculators." },
+  ],
   ctas: {
     primary: "See Hello Bar",
     secondary: "Continue to Hello Bar",

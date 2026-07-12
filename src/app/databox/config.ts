@@ -56,6 +56,10 @@ export const databoxConfig: AffiliatePageConfig = {
     { q: "What can Databox connect to?", a: "Databox integrates with 130+ sources, including Google Analytics, ad platforms, CRMs, email tools, spreadsheets and SQL databases. That breadth is the point: it lets you combine metrics from across your stack into single dashboards." },
     { q: "Databox vs building my own spreadsheet, why bother?", a: "A spreadsheet needs rebuilding every reporting cycle and breaks when data changes. Databox connects to your tools once and keeps dashboards and reports updating automatically, with alerts on changes, so you spend time acting on the numbers rather than assembling them." },
   ],
+  relatedLinks: [
+    { href: "/business-software", label: "Business software", desc: "Browse more tools for running a business." },
+    { href: "/pipedrive", label: "Pipedrive", desc: "A CRM whose data you can pull into Databox." },
+  ],
   ctas: {
     primary: "See Databox",
     secondary: "Continue to Databox",

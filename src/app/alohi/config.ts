@@ -55,6 +55,10 @@ export const alohiConfig: AffiliatePageConfig = {
     { q: "Are Sign.Plus e-signatures legally valid?", a: "Sign.Plus is built to produce legally-binding electronic signatures with an audit trail, and follows major e-signature standards. As always, confirm it meets the specific legal requirements for your document type and jurisdiction." },
     { q: "Does Alohi work in Australia?", a: "Yes, both Sign.Plus and Fax.Plus are available worldwide, including Australia. Pricing is shown in your local currency where supported; confirm any region-specific details on the provider's site." },
   ],
+  relatedLinks: [
+    { href: "/business-software", label: "Business software", desc: "Browse more tools for running a business." },
+    { href: "/dext", label: "Dext", desc: "Automate receipts and paperwork for your books." },
+  ],
   ctas: {
     primary: "See Alohi",
     secondary: "Continue to Alohi",

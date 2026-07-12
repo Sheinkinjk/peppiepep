@@ -55,6 +55,11 @@ export const logomeConfig: AffiliatePageConfig = {
     { q: "Do I own the logo I create?", a: "Paid plans grant download files with usage rights for your logo. Confirm the exact ownership and licensing terms on Logome's current plan page for the tier you choose before using it commercially." },
     { q: "Is an AI logo good enough for a real business?", a: "For most startups and small businesses, yes, especially because Logome outputs a coordinated brand kit, not just a mark. Established brands needing bespoke, hand-crafted design will still want a human designer, but as a fast, affordable starting identity it works well." },
   ],
+  relatedLinks: [
+    { href: "/compare/ai-tools", label: "Compare AI tools", desc: "See Logome next to the other AI tools." },
+    { href: "/best-website-builder", label: "Best website builder", desc: "Put your new brand online with a website builder." },
+    { href: "/carrd", label: "Carrd", desc: "A simple, cheap way to publish a one-page site." },
+  ],
   ctas: {
     primary: "See Logome.ai",
     secondary: "Continue to Logome.ai",

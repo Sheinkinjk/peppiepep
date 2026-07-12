@@ -73,6 +73,9 @@ export const dextConfig: AffiliatePageConfig = {
       a: "Both. Accounting and bookkeeping practices use it to standardise how clients submit paperwork, and business owners use it to capture receipts and bills as they go. It is most worthwhile once you have a steady flow of transactions.",
     },
   ],
+  relatedLinks: [
+    { href: "/melio", label: "Melio", desc: "Pay vendors and bills, for US businesses." },
+  ],
   ctas: {
     primary: "See Dext",
     secondary: "Continue to Dext",
