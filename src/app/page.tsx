@@ -12,6 +12,7 @@ import {
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL, WING_ASSISTANT_URL, SURVICATE_URL,
   BUTTERNUT_URL, DENSE_URL, INCOME_LAB_URL, NUTSHELL_URL,
   PIPEDRIVE_URL, ACTIVECAMPAIGN_URL, ZOOMINFO_URL, MELIO_URL, LOGOME_URL, ALOHI_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
+  LANDINGI_URL, DATABOX_URL, MEETGEEK_URL, COMETCHAT_URL, FLOCKSY_URL,
 } from "@/lib/affiliate-links";
 
 // Top picks lead with the real brand logo, the single biggest thing that
@@ -90,6 +91,11 @@ const servicesLogos = [
   { logo: null, name: "Hello Bar", url: HELLOBAR_URL },
   { logo: null, name: "Outgrow", url: OUTGROW_URL },
   { logo: null, name: "FlexiQuiz", url: FLEXIQUIZ_URL },
+  { logo: null, name: "Landingi", url: LANDINGI_URL },
+  { logo: null, name: "Databox", url: DATABOX_URL },
+  { logo: null, name: "MeetGeek", url: MEETGEEK_URL },
+  { logo: null, name: "CometChat", url: COMETCHAT_URL },
+  { logo: null, name: "Flocksy", url: FLOCKSY_URL },
 ];
 
 const itemListSchema = {

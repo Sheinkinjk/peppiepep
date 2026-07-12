@@ -6,6 +6,7 @@ import {
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
   LEADPAGES_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
   PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL, MELIO_URL, LOGOME_URL,
+  LANDINGI_URL, MEETGEEK_URL,
 } from "@/lib/affiliate-links";
 
 /**
@@ -736,7 +737,7 @@ export const CATALOG: Vertical[] = [
       "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or a whole brand identity. This hub sorts a growing set by what they actually do, so you pick the one that fits the task rather than the loudest launch.",
     metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & Logome | Refer Labs",
     metaDescription:
-      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice and text-to-speech, Logome for AI logos and branding. Independent, no pay-to-rank.",
+      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice, Logome for AI logos and branding, MeetGeek for AI meeting notes. Independent, no pay-to-rank.",
     keywords: ["best ai tools 2026", "lindy ai review", "elevenlabs review", "ai automation tools", "ai voice generator"],
     relatedCategory: "AI & sales",
     providers: [
@@ -780,6 +781,19 @@ export const CATALOG: Vertical[] = [
         reviewHref: "/logome",
         ctaLabel: "See Logome",
       },
+      {
+        name: "MeetGeek",
+        bestFor: "AI meeting notes",
+        blurb: "An AI meeting assistant that auto-joins Zoom, Meet and Teams calls to record, transcribe and summarise them with action items. Best for teams that live in meetings.",
+        facts: [
+          { label: "Role", value: "AI meeting assistant" },
+          { label: "Best for", value: "Teams in lots of calls" },
+          { label: "Pricing", value: "Free plan; from US$9.99/user/mo" },
+        ],
+        affiliateUrl: MEETGEEK_URL,
+        reviewHref: "/meetgeek",
+        ctaLabel: "See MeetGeek",
+      },
     ],
     faqs: [
       {
@@ -809,7 +823,7 @@ export const CATALOG: Vertical[] = [
       "Traffic is wasted if visitors leave without a trace. These tools capture and convert, landing pages, on-site popups, and interactive quizzes and calculators, sorted by how you want to turn attention into leads.",
     metaTitle: "Best Lead-Generation Tools 2026: Landing Pages, Popups & Quizzes | Refer Labs",
     metaDescription:
-      "Compare lead-generation tools for 2026: Leadpages for landing pages, Hello Bar for popups, Outgrow for interactive quizzes and calculators, FlexiQuiz for tests and assessments. Independent, no pay-to-rank.",
+      "Compare lead-generation tools for 2026: Leadpages and Landingi for landing pages, Hello Bar for popups, Outgrow for interactive quizzes and calculators, FlexiQuiz for tests and assessments. Independent, no pay-to-rank.",
     keywords: ["lead generation tools", "best landing page builder", "website popup tool", "interactive content tool", "quiz maker for lead gen"],
     relatedCategory: "Software",
     providers: [
@@ -826,6 +840,19 @@ export const CATALOG: Vertical[] = [
         reviewHref: "/leadpages",
         ctaLabel: "See Leadpages",
         featured: true,
+      },
+      {
+        name: "Landingi",
+        bestFor: "Landing pages with A/B testing",
+        blurb: "A no-code landing-page builder with a large template library, A/B testing and lead capture. A strong alternative to Leadpages for marketers running campaigns.",
+        facts: [
+          { label: "Role", value: "Landing pages / conversion" },
+          { label: "Best for", value: "Marketers & agencies" },
+          { label: "Pricing", value: "No free plan; from US$24/mo" },
+        ],
+        affiliateUrl: LANDINGI_URL,
+        reviewHref: "/landingi",
+        ctaLabel: "See Landingi",
       },
       {
         name: "Hello Bar",

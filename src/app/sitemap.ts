@@ -112,6 +112,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/hellobar`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/outgrow`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/flexiquiz`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/landingi`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/databox`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/meetgeek`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/cometchat`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/flocksy`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/superfiliate`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
 
     // ── Polymarket guides (prediction markets cluster) ─────────────────

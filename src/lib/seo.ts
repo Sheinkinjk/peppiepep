@@ -409,6 +409,41 @@ export const seoConfig = {
     url: `${SITE_URL}/flexiquiz`,
     keywords: ["flexiquiz discount code", "flexiquiz referral link", "flexiquiz review", "flexiquiz pricing", "online quiz maker", "online test maker", "assessment software"],
   },
+  landingi: {
+    title: "Landingi Discount Code & Referral Link 2026: Landing Page Builder | Refer Labs",
+    description:
+      "Looking for a Landingi discount code or referral link? Landingi is a no-code landing-page builder with A/B testing. Here's the current offer, a 14-day free trial, via our link. From US$24/mo.",
+    url: `${SITE_URL}/landingi`,
+    keywords: ["landingi discount code", "landingi referral link", "landingi review", "landingi pricing", "landing page builder", "no-code landing page", "ab testing landing page"],
+  },
+  databox: {
+    title: "Databox Discount Code & Referral Link 2026: KPI Dashboards | Refer Labs",
+    description:
+      "Looking for a Databox discount code or referral link? Databox pulls 130+ data sources into KPI dashboards and automated reports. Free plan; 14-day trial, no card. From US$64/mo, via our link.",
+    url: `${SITE_URL}/databox`,
+    keywords: ["databox discount code", "databox referral link", "databox review", "databox pricing", "kpi dashboard software", "analytics dashboard", "marketing reporting tool"],
+  },
+  meetgeek: {
+    title: "MeetGeek Discount Code & Referral Link 2026: AI Meeting Notes | Refer Labs",
+    description:
+      "Looking for a MeetGeek discount code or referral link? MeetGeek records, transcribes and summarises your Zoom, Meet and Teams calls. Free plan; from US$9.99/user/mo. Start via our link.",
+    url: `${SITE_URL}/meetgeek`,
+    keywords: ["meetgeek discount code", "meetgeek referral link", "meetgeek review", "meetgeek pricing", "ai meeting notes", "meeting transcription", "ai notetaker"],
+  },
+  cometchat: {
+    title: "CometChat Referral Link & Pricing 2026: In-App Chat SDK | Refer Labs",
+    description:
+      "Looking for CometChat pricing or a referral link? CometChat adds in-app chat, voice and video to your app via SDKs and UI kits. Free Build plan (100 users); paid from ~US$299/mo, via our link.",
+    url: `${SITE_URL}/cometchat`,
+    keywords: ["cometchat pricing", "cometchat referral link", "cometchat review", "in-app chat sdk", "chat api", "messaging sdk", "add chat to app"],
+  },
+  flocksy: {
+    title: "Flocksy Referral Link & Pricing 2026: Unlimited Design Service | Refer Labs",
+    description:
+      "Looking for Flocksy pricing or a referral link? Flocksy is unlimited graphic design and creative from a dedicated team, one flat monthly fee. 14-day money-back guarantee. From US$1,199/mo, via our link.",
+    url: `${SITE_URL}/flocksy`,
+    keywords: ["flocksy pricing", "flocksy referral link", "flocksy review", "unlimited graphic design", "unlimited design service", "design subscription", "creative subscription"],
+  },
 
   hairLossHub: {
     title: "Hair Loss in Australia 2026: Compare Treatments & Your Options | Refer Labs",

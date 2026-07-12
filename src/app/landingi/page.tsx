@@ -1,0 +1,63 @@
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
+import Link from "next/link";
+import { landingiConfig } from "./config";
+
+export const metadata = generateSEOMetadata(seoConfig.landingi);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: landingiConfig.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Lead generation", item: `${SITE_URL}/compare/lead-generation` },
+    { "@type": "ListItem", position: 3, name: "Landingi", item: `${SITE_URL}/landingi` },
+  ],
+};
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoConfig.landingi.title,
+  description: seoConfig.landingi.description,
+  url: seoConfig.landingi.url,
+  inLanguage: "en-AU",
+  datePublished: "2026-07-12",
+  dateModified: "2026-07-12",
+  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+};
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Landingi",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description: "No-code landing-page builder for marketers, with a large template library, A/B testing, lead-capture forms and integrations.",
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "14-day free trial; paid plans from around US$24/month.", availability: "https://schema.org/InStock" },
+  url: "https://landingi.com",
+  sameAs: ["https://landingi.com"],
+};
+
+export default function LandingiPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+      <PremiumAffiliateLanding config={landingiConfig} />
+      <div className="border-t border-[#e5e9e7] bg-white py-6">
+        <div className="mx-auto max-w-3xl px-6 sm:px-8">
+          <p className="text-[#9aa39c] text-xs mb-1.5">Compare lead-generation tools</p>
+          <Link href="/compare/lead-generation" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
+            See Landingi next to the other lead tools &rarr;
+          </Link>
+        </div>
+      </div>
+    </>
+  );
+}

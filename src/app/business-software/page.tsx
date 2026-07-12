@@ -36,6 +36,10 @@ const tools = [
   { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
   { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with powerful automation and a CRM." },
   { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
+  { href: "/databox", label: "Databox", desc: "KPI dashboards that pull 130+ data sources into one view." },
+  { href: "/meetgeek", label: "MeetGeek", desc: "AI meeting notes for Zoom, Meet and Teams calls." },
+  { href: "/cometchat", label: "CometChat", desc: "Developer SDKs to add in-app chat, voice and video." },
+  { href: "/flocksy", label: "Flocksy", desc: "Unlimited graphic design from a dedicated team, flat fee." },
 ];
 
 const itemListSchema = {

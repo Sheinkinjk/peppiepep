@@ -24,7 +24,7 @@
 - [Payments & finance tools compared](https://referlabs.com.au/compare/payments): Payoneer for cross-border payments and multi-currency business accounts.
 - [Business phone systems compared](https://referlabs.com.au/compare/business-phone): CloudTalk for AI call-centre features vs KrispCall for virtual numbers.
 - [AI tools compared](https://referlabs.com.au/compare/ai-tools): Lindy for automating admin vs ElevenLabs for AI voice vs Logome for AI logos.
-- [Lead-generation tools compared](https://referlabs.com.au/compare/lead-generation): Landing pages (Leadpages), popups (Hello Bar), interactive quizzes and calculators (Outgrow) and assessments (FlexiQuiz).
+- [Lead-generation tools compared](https://referlabs.com.au/compare/lead-generation): Landing pages (Leadpages, Landingi), popups (Hello Bar), interactive quizzes and calculators (Outgrow) and assessments (FlexiQuiz).
 - [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
 ## Weight loss & telehealth (Australia)
@@ -81,6 +81,11 @@
 - [Hello Bar](https://referlabs.com.au/hellobar): No-code website popups and bars for email capture; free plan, from US$29/month.
 - [Outgrow](https://referlabs.com.au/outgrow): No-code interactive calculators, quizzes and assessments for lead gen; free plan, from US$14/month.
 - [FlexiQuiz](https://referlabs.com.au/flexiquiz): Online quiz, test and assessment maker with auto-marking and certificates; free plan, from US$17/month.
+- [Landingi](https://referlabs.com.au/landingi): No-code landing-page builder with A/B testing for marketers; 14-day free trial, from US$24/month.
+- [Databox](https://referlabs.com.au/databox): KPI dashboards that pull 130+ data sources into automated reports; free plan, from US$64/month.
+- [MeetGeek](https://referlabs.com.au/meetgeek): AI meeting assistant that records, transcribes and summarises Zoom, Meet and Teams calls; free plan, from US$9.99/user/month.
+- [CometChat](https://referlabs.com.au/cometchat): Developer SDKs and APIs to add in-app chat, voice and video to your app; free Build plan, paid from about US$299/month.
+- [Flocksy](https://referlabs.com.au/flocksy): Unlimited graphic design and creative from a dedicated team for a flat monthly fee; 14-day money-back, from US$1,199/month.
 
 ## Prediction markets (Polymarket guides)
 - [Polymarket hub: how to sign up & trade](https://referlabs.com.au/polymarket): Main Polymarket page. What it is, how to sign up on the US (regulated, USD) or international (crypto, USDC) platform in three steps, what you can trade, and links to the full guides.

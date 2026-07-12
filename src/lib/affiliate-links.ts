@@ -142,3 +142,15 @@ export const MELIO_URL = "https://affiliates.meliopayments.com/1tbr2oxvyh6l";
 export const LOGOME_URL = "https://logomeai.partnerlinks.io/6p4oylwrsagk";
 // Alohi: Sign.Plus e-signatures and Fax.Plus online fax.
 export const ALOHI_URL = "https://ref.alohi.com/0jjps4u4di4n";
+
+// ── Batch 3 additions (PartnerStack) ─────────────────────────────────────────
+// Landingi: no-code landing-page builder for marketers.
+export const LANDINGI_URL = "https://try.landingi.com/n2az1ocvmgui";
+// Databox: KPI dashboards that pull data from many sources.
+export const DATABOX_URL = "https://join.databox.com/1bkedv8rrirv";
+// CometChat: in-app chat, voice and video SDK/API for developers.
+export const COMETCHAT_URL = "https://try.cometchat.com/cmy1z1n1y5go";
+// MeetGeek: AI meeting assistant that records, transcribes and summarises meetings.
+export const MEETGEEK_URL = "https://get.meetgeek.ai/ybh05mzi9v1e";
+// Flocksy: unlimited creative and graphic-design subscription (human designers).
+export const FLOCKSY_URL = "https://join.flocksy.com/saseqeg74ylm";
