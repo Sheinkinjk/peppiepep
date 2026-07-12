@@ -91,7 +91,7 @@ export const replyioConfig: AffiliatePageConfig = {
     {
       heading: "Reply.io pricing and plans",
       paragraphs: [
-        "Reply.io is priced per user, with several plan tiers and a free trial to start, so you can test it against your own outreach before paying. Higher tiers unlock more channels, AI usage and data, and pricing can change, so treat any figure as a guide and verify the current pricing on the provider before you commit.",
+        "Reply.io is priced per user, with several plan tiers and a free trial to start, so you can test it against your own outreach before paying. Higher tiers unlock more channels, AI usage and data, and pricing can change, so treat any figure as a guide and check the current pricing on the provider before you commit.",
         "The way to judge value is against what your team spends today on separate tools for sequencing, data, an email finder and deliverability, since Reply.io bundles those into one platform. For a team actively running outbound, consolidating that stack can be the main saving.",
         "Because there is a free trial, the lowest-risk approach is to run a small real campaign through it and see whether the deliverability, data quality and reply rates justify the plan you would need.",
       ],
@@ -200,5 +200,5 @@ export const replyioConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Reply.io site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; verify current pricing on the provider.",
+    "You will be taken to the Reply.io site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider.",
 };

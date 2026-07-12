@@ -69,7 +69,7 @@ export const alidropConfig: AffiliatePageConfig = {
       paragraphs: [
         "AliDrop is a dropshipping tool. It lets you find products from marketplaces including AliExpress, Alibaba and Temu, import them into your online store, and then automate the fulfilment step, so when a customer orders, the order is placed with the supplier and shipped to them without you handling stock.",
         "On top of the core sourcing and fulfilment, it offers product research to help spot items with demand, access to private suppliers, and branding options for a more professional store. It is built to work with Shopify and other common store platforms.",
-        "There is a free plan to set things up, with paid tiers that unlock more as you scale. Plans and limits change, so verify the current pricing on the provider.",
+        "There is a free plan to set things up, with paid tiers that unlock more as you scale. Plans and limits change, so check the current pricing on the provider.",
       ],
     },
     {
@@ -104,7 +104,7 @@ export const alidropConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does AliDrop cost?",
-      a: "AliDrop offers a free plan to get started, with paid tiers that unlock more as you scale. Plans and limits change, so verify the current pricing on the provider before committing.",
+      a: "AliDrop offers a free plan to get started, with paid tiers that unlock more as you scale. Plans and limits change, so check the current pricing on the provider before committing.",
     },
     {
       q: "Does AliDrop work with Shopify?",
@@ -141,5 +141,5 @@ export const alidropConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the AliDrop site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; verify current pricing on the provider. Dropshipping involves risk and costs, and results vary; nothing here is a guarantee of income or financial advice.",
+    "You will be taken to the AliDrop site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider. Dropshipping involves risk and costs, and results vary; nothing here is a guarantee of income or financial advice.",
 };

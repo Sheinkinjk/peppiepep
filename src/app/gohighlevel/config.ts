@@ -84,7 +84,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     {
       heading: "GoHighLevel pricing and free trial",
       paragraphs: [
-        "At the time of writing, GoHighLevel offers a Starter plan from around $97/month, which includes up to three sub-accounts, and an Unlimited plan from around $297/month, which adds unlimited sub-accounts and API access. These figures can change, so treat them as a guide and verify the current pricing on the provider before you commit.",
+        "At the time of writing, GoHighLevel offers a Starter plan from around $97/month, which includes up to three sub-accounts, and an Unlimited plan from around $297/month, which adds unlimited sub-accounts and API access. These figures can change, so treat them as a guide and check the current pricing on the provider before you commit.",
         "There is a 14-day free trial and no credit card is required to start, which makes it straightforward to explore the platform and decide whether the all-in-one approach fits how you work.",
         "The way to judge value is to add up what you currently spend across your existing tools. If GoHighLevel replaces several of them, the monthly fee often compares well. If it would only replace one, the maths is less compelling.",
       ],
@@ -202,5 +202,5 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to gohighlevel.com. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; verify current pricing on the provider.",
+    "You will be taken to gohighlevel.com. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider.",
 };

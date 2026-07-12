@@ -83,7 +83,7 @@ export const brevoConfig: AffiliatePageConfig = {
       heading: "Brevo pricing, in plain terms",
       paragraphs: [
         "Brevo offers a free plan capped by a daily email limit, then paid tiers (commonly a Starter and a Business plan) priced by monthly email volume, with higher tiers unlocking more automation, reporting and removal of Brevo branding. Add-ons and enterprise pricing exist on top.",
-        "These plans and limits change, so treat any figure as a guide and verify the current pricing on the provider before you commit. The practical way to judge value is to estimate your monthly send volume and match it to the tier, then compare against what you would pay a list-size-priced tool for the same list.",
+        "These plans and limits change, so treat any figure as a guide and check the current pricing on the provider before you commit. The practical way to judge value is to estimate your monthly send volume and match it to the tier, then compare against what you would pay a list-size-priced tool for the same list.",
       ],
     },
   ],
@@ -153,5 +153,5 @@ export const brevoConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Brevo site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing and plan limits are indicative and correct to the best of our knowledge at the time of writing; verify current pricing on the provider.",
+    "You will be taken to the Brevo site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing and plan limits are indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider.",
 };

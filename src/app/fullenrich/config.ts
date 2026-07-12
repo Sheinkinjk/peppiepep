@@ -91,7 +91,7 @@ export const fullenrichConfig: AffiliatePageConfig = {
     {
       heading: "FullEnrich pricing and credits",
       paragraphs: [
-        "FullEnrich runs on credit-based pricing, and it offers free credits so you can test coverage on your own list before paying. Plans scale with the volume of contacts you enrich, and pricing can change, so treat any figure as a guide and verify the current pricing on the provider before you commit.",
+        "FullEnrich runs on credit-based pricing, and it offers free credits so you can test coverage on your own list before paying. Plans scale with the volume of contacts you enrich, and pricing can change, so treat any figure as a guide and check the current pricing on the provider before you commit.",
         "The way to judge value is on hit rate for your specific market: run a sample of your real list through the free credits and measure how many valid emails and mobile numbers come back, then compare the cost per usable contact against whatever single-provider tool you use now.",
         "Because the waterfall only needs to win where your current source loses, teams often use FullEnrich alongside an existing data tool to top up the gaps, rather than replacing everything at once.",
       ],

@@ -69,7 +69,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
       paragraphs: [
         "Leadpages is a landing-page builder built specifically for lead generation. You start from a large library of conversion-focused templates, then add lead-capture forms, pop-ups and alert bars, and publish pages for campaigns, offers or sign-ups.",
         "Its stand-out features are the conversion tools: built-in A/B testing to compare variants, plus guidance and analytics aimed at lifting conversion rates. It connects to the email marketing and CRM tools you already use, so captured leads flow into your existing stack.",
-        "There is a free trial to build and test before you subscribe, then paid plans that unlock more pages, integrations and features. Plans change, so verify the current pricing on the provider.",
+        "There is a free trial to build and test before you subscribe, then paid plans that unlock more pages, integrations and features. Plans change, so check the current pricing on the provider.",
       ],
     },
     {
@@ -142,5 +142,5 @@ export const leadpagesConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Leadpages site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; verify current pricing on the provider.",
+    "You will be taken to the Leadpages site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider.",
 };
