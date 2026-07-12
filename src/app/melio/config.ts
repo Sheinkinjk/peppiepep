@@ -58,11 +58,11 @@ export const melioConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See Melio",
     secondary: "Continue to Melio",
-    midHeading: "Ready to get started with Melio?",
-    midBody: "Open Melio through our referral link and try it today.",
+    midHeading: "Tired of paying bills by hand?",
+    midBody: "Set up Melio through our link, connect QuickBooks or Xero, and schedule your first vendor payment. A US business and bank account are required.",
     midButton: "Get started",
-    bottomHeading: "See what Melio can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Pay vendors without the admin",
+    bottomBody: "Schedule payments by bank transfer, card or check, and keep everything reconciled automatically.",
     bottomButton: "Continue to Melio",
   },
   disclaimer:

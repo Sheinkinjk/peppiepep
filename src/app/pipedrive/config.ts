@@ -57,11 +57,11 @@ export const pipedriveConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See Pipedrive",
     secondary: "Continue to Pipedrive",
-    midHeading: "Ready to get started with Pipedrive?",
-    midBody: "Open Pipedrive through our referral link and try it today.",
+    midHeading: "Ready to see your whole pipeline at a glance?",
+    midBody: "Start the 14-day free trial through our link, import your deals, and watch them move through your stages.",
     midButton: "Get started",
-    bottomHeading: "See what Pipedrive can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Run your sales in one place",
+    bottomBody: "Set up your pipeline, switch on the follow-up reminders, and see what is actually closing.",
     bottomButton: "Continue to Pipedrive",
   },
   disclaimer:

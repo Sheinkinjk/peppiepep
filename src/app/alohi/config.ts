@@ -57,11 +57,11 @@ export const alohiConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See Alohi",
     secondary: "Continue to Alohi",
-    midHeading: "Ready to get started with Alohi?",
-    midBody: "Open Alohi through our referral link and try it today.",
+    midHeading: "Need documents signed or faxed?",
+    midBody: "Start free through our link with Sign.Plus for e-signatures or Fax.Plus for online faxing.",
     midButton: "Get started",
-    bottomHeading: "See what Alohi can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Sign and send, without the paperwork",
+    bottomBody: "Send your first document for signature, or send a fax, straight from your browser.",
     bottomButton: "Continue to Alohi",
   },
   disclaimer:

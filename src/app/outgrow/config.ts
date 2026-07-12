@@ -57,11 +57,11 @@ export const outgrowConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See Outgrow",
     secondary: "Continue to Outgrow",
-    midHeading: "Ready to get started with Outgrow?",
-    midBody: "Open Outgrow through our referral link and try it today.",
+    midHeading: "Want visitors to interact, not just browse?",
+    midBody: "Build a calculator or quiz through our link, embed it, and start capturing qualified leads.",
     midButton: "Get started",
-    bottomHeading: "See what Outgrow can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Turn browsing into a conversation",
+    bottomBody: "Launch an interactive calculator, quiz or assessment and let people self-qualify as they go.",
     bottomButton: "Continue to Outgrow",
   },
   disclaimer:

@@ -57,11 +57,11 @@ export const logomeConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See Logome.ai",
     secondary: "Continue to Logome.ai",
-    midHeading: "Ready to get started with Logome.ai?",
-    midBody: "Open Logome.ai through our referral link and try it today.",
+    midHeading: "Need a brand that looks the part?",
+    midBody: "Describe your business through our link and generate a logo and full brand kit, free to preview.",
     midButton: "Get started",
-    bottomHeading: "See what Logome.ai can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Design your identity in minutes",
+    bottomBody: "Generate logo options and a matching brand kit, then download the files when you are happy.",
     bottomButton: "Continue to Logome.ai",
   },
   disclaimer:

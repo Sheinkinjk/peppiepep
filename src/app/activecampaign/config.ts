@@ -57,11 +57,11 @@ export const activeCampaignConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See ActiveCampaign",
     secondary: "Continue to ActiveCampaign",
-    midHeading: "Ready to get started with ActiveCampaign?",
-    midBody: "Open ActiveCampaign through our referral link and try it today.",
+    midHeading: "Ready to make your email do the work?",
+    midBody: "Start the 14-day free trial through our link, import a list, and build your first automation.",
     midButton: "Get started",
-    bottomHeading: "See what ActiveCampaign can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Turn a list into automated follow-up",
+    bottomBody: "Send a campaign, then let an automation handle the follow-up based on what each contact does.",
     bottomButton: "Continue to ActiveCampaign",
   },
   disclaimer:

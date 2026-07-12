@@ -57,11 +57,11 @@ export const flexiQuizConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See FlexiQuiz",
     secondary: "Continue to FlexiQuiz",
-    midHeading: "Ready to get started with FlexiQuiz?",
-    midBody: "Open FlexiQuiz through our referral link and try it today.",
+    midHeading: "Need to test knowledge, not just collect emails?",
+    midBody: "Build a quiz or test through our link, set automatic marking, and share it with a single link.",
     midButton: "Get started",
-    bottomHeading: "See what FlexiQuiz can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Run assessments that mark themselves",
+    bottomBody: "Create your questions, add a certificate for those who pass, and review the results in detail.",
     bottomButton: "Continue to FlexiQuiz",
   },
   disclaimer:

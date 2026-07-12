@@ -57,11 +57,11 @@ export const zoomInfoConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See ZoomInfo",
     secondary: "Continue to ZoomInfo",
-    midHeading: "Ready to get started with ZoomInfo?",
-    midBody: "Open ZoomInfo through our referral link and try it today.",
+    midHeading: "Building outbound at scale?",
+    midBody: "Explore the data and intent platform through our link, then get pricing scoped to your team.",
     midButton: "Get started",
-    bottomHeading: "See what ZoomInfo can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "See the data behind better outbound",
+    bottomBody: "Book a demo to check coverage for your target market before committing to a contract.",
     bottomButton: "Continue to ZoomInfo",
   },
   disclaimer:

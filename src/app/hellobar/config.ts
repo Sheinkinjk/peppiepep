@@ -57,11 +57,11 @@ export const helloBarConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See Hello Bar",
     secondary: "Continue to Hello Bar",
-    midHeading: "Ready to get started with Hello Bar?",
-    midBody: "Open Hello Bar through our referral link and try it today.",
+    midHeading: "Getting traffic but not enough signups?",
+    midBody: "Add Hello Bar through our link, launch a popup or bar, and start turning visitors into subscribers.",
     midButton: "Get started",
-    bottomHeading: "See what Hello Bar can do",
-    bottomBody: "Start through our link and explore it for yourself.",
+    bottomHeading: "Convert the visitors you already have",
+    bottomBody: "Add a targeted popup or bar, connect your email tool, and A/B test your way to more signups.",
     bottomButton: "Continue to Hello Bar",
   },
   disclaimer:
