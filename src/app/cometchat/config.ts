@@ -3,6 +3,7 @@ import { COMETCHAT_URL } from "@/lib/affiliate-links";
 
 export const cometchatConfig: AffiliatePageConfig = {
   brand: "CometChat",
+  logo: "cometchat",
   badgeText: "In-app chat SDK",
   eyebrow: "Developer & communication tools",
   affiliateUrl: COMETCHAT_URL,

@@ -3,6 +3,7 @@ import { FLOCKSY_URL } from "@/lib/affiliate-links";
 
 export const flocksyConfig: AffiliatePageConfig = {
   brand: "Flocksy",
+  logo: "flocksy",
   badgeText: "Unlimited design",
   eyebrow: "Design & creative services",
   affiliateUrl: FLOCKSY_URL,

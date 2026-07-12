@@ -3,6 +3,7 @@ import { PIPEDRIVE_URL } from "@/lib/affiliate-links";
 
 export const pipedriveConfig: AffiliatePageConfig = {
   brand: "Pipedrive",
+  logo: "pipedrive",
   badgeText: "Sales CRM",
   eyebrow: "CRM & sales",
   affiliateUrl: PIPEDRIVE_URL,

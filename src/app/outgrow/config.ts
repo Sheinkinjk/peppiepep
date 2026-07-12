@@ -3,6 +3,7 @@ import { OUTGROW_URL } from "@/lib/affiliate-links";
 
 export const outgrowConfig: AffiliatePageConfig = {
   brand: "Outgrow",
+  logo: "outgrow",
   badgeText: "Interactive content",
   eyebrow: "Lead generation & conversion",
   affiliateUrl: OUTGROW_URL,

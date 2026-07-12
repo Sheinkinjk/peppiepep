@@ -3,6 +3,7 @@ import { HELLOBAR_URL } from "@/lib/affiliate-links";
 
 export const helloBarConfig: AffiliatePageConfig = {
   brand: "Hello Bar",
+  logo: "hellobar",
   badgeText: "Lead capture",
   eyebrow: "Lead generation & conversion",
   affiliateUrl: HELLOBAR_URL,

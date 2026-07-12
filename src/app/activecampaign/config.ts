@@ -3,6 +3,7 @@ import { ACTIVECAMPAIGN_URL } from "@/lib/affiliate-links";
 
 export const activeCampaignConfig: AffiliatePageConfig = {
   brand: "ActiveCampaign",
+  logo: "activecampaign",
   badgeText: "Email & automation",
   eyebrow: "Email marketing & automation",
   affiliateUrl: ACTIVECAMPAIGN_URL,

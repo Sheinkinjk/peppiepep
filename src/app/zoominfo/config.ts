@@ -3,6 +3,7 @@ import { ZOOMINFO_URL } from "@/lib/affiliate-links";
 
 export const zoomInfoConfig: AffiliatePageConfig = {
   brand: "ZoomInfo",
+  logo: "zoominfo",
   badgeText: "B2B sales data",
   eyebrow: "Sales intelligence & data",
   affiliateUrl: ZOOMINFO_URL,

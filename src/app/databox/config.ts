@@ -3,6 +3,7 @@ import { DATABOX_URL } from "@/lib/affiliate-links";
 
 export const databoxConfig: AffiliatePageConfig = {
   brand: "Databox",
+  logo: "databox",
   badgeText: "Analytics dashboards",
   eyebrow: "Analytics & dashboards",
   affiliateUrl: DATABOX_URL,

@@ -3,6 +3,7 @@ import { ALOHI_URL } from "@/lib/affiliate-links";
 
 export const alohiConfig: AffiliatePageConfig = {
   brand: "Alohi",
+  logo: "alohi",
   badgeText: "E-sign & fax",
   eyebrow: "Documents & e-signature",
   affiliateUrl: ALOHI_URL,

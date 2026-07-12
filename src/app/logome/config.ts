@@ -3,6 +3,7 @@ import { LOGOME_URL } from "@/lib/affiliate-links";
 
 export const logomeConfig: AffiliatePageConfig = {
   brand: "Logome.ai",
+  logo: "logome",
   badgeText: "AI branding",
   eyebrow: "AI tools",
   affiliateUrl: LOGOME_URL,

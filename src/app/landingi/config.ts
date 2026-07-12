@@ -3,6 +3,7 @@ import { LANDINGI_URL } from "@/lib/affiliate-links";
 
 export const landingiConfig: AffiliatePageConfig = {
   brand: "Landingi",
+  logo: "landingi",
   badgeText: "Landing pages",
   eyebrow: "Lead generation & conversion",
   affiliateUrl: LANDINGI_URL,

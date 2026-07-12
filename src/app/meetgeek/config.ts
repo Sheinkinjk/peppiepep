@@ -3,6 +3,7 @@ import { MEETGEEK_URL } from "@/lib/affiliate-links";
 
 export const meetgeekConfig: AffiliatePageConfig = {
   brand: "MeetGeek",
+  logo: "meetgeek",
   badgeText: "AI meeting notes",
   eyebrow: "AI tools",
   affiliateUrl: MEETGEEK_URL,

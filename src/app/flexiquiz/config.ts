@@ -3,6 +3,7 @@ import { FLEXIQUIZ_URL } from "@/lib/affiliate-links";
 
 export const flexiQuizConfig: AffiliatePageConfig = {
   brand: "FlexiQuiz",
+  logo: "flexiquiz",
   badgeText: "Quiz & test maker",
   eyebrow: "Quizzes, tests & assessments",
   affiliateUrl: FLEXIQUIZ_URL,

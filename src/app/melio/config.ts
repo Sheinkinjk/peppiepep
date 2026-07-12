@@ -3,6 +3,7 @@ import { MELIO_URL } from "@/lib/affiliate-links";
 
 export const melioConfig: AffiliatePageConfig = {
   brand: "Melio",
+  logo: "melio",
   badgeText: "Bill pay (US)",
   eyebrow: "Payments & bill pay",
   affiliateUrl: MELIO_URL,
