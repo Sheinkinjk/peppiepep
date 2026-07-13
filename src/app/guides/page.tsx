@@ -64,33 +64,84 @@ const sections = [
     ],
   },
   {
-    label: "Website builders & tools",
-    description: "AI website builders, landing-page tools and digital business software, tested.",
+    label: "Website builders & landing pages",
+    description: "AI website builders, one-page sites and landing-page tools built to convert.",
     guides: [
-      { href: "/carrd", label: "Carrd, explained", desc: "Free plan forever, Pro from $9/year. Best for simple sites." },
-      { href: "/durableai", label: "Durable AI, explained", desc: "Generate a business website in 30 seconds, with CRM." },
-      { href: "/butternut", label: "Butternut AI, explained", desc: "Full site from a prompt in 20 seconds. Free to try." },
-      { href: "/swipepages", label: "Swipe Pages, explained", desc: "AMP landing pages under 1 second. 14-day free trial." },
+      { href: "/carrd", label: "Carrd", desc: "Free plan forever, Pro from $9/year. Best for simple sites." },
+      { href: "/durableai", label: "Durable AI", desc: "Generate a business website in 30 seconds, with a CRM." },
+      { href: "/butternut", label: "Butternut AI", desc: "A full site from a prompt in seconds. Free to try." },
+      { href: "/swipepages", label: "Swipe Pages", desc: "Fast AMP landing pages. 14-day free trial." },
+      { href: "/leadpages", label: "Leadpages", desc: "Landing pages built for lead capture, with A/B testing." },
+      { href: "/landingi", label: "Landingi", desc: "No-code landing-page builder for marketers." },
       { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
     ],
   },
   {
-    label: "Creator & business tools",
-    description: "Newsletter platforms and tools for online creators and operators.",
+    label: "Lead generation & conversion",
+    description: "Turn visitors into leads with popups, interactive content and surveys.",
     guides: [
-      { href: "/beehiiv", label: "beehiiv, explained", desc: "Free up to 2,500 subscribers. Compare vs Substack." },
-      { href: "/incomelab", label: "IncomeLab", desc: "AI side-hustle ideas and frameworks for 2026." },
+      { href: "/hellobar", label: "Hello Bar", desc: "No-code popups and bars for on-site email capture." },
+      { href: "/outgrow", label: "Outgrow", desc: "Interactive calculators and quizzes that capture leads." },
+      { href: "/flexiquiz", label: "FlexiQuiz", desc: "Online quizzes, tests and assessments with auto-marking." },
+      { href: "/survicate", label: "Survicate", desc: "Customer-feedback surveys across web, email and app." },
     ],
   },
   {
-    label: "AI sales & automation",
-    description: "The tools that find leads, run outreach and close, sorted by where they sit in the sales stack.",
+    label: "Newsletters & email marketing",
+    description: "Build an audience and run email, from creator newsletters to automation.",
     guides: [
-      { href: "/gohighlevel", label: "GoHighLevel, explained", desc: "All-in-one CRM, marketing automation and funnels." },
-      { href: "/aisdr", label: "AiSDR, explained", desc: "A done-for-you AI rep that prospects and books meetings." },
-      { href: "/replyio", label: "Reply.io, explained", desc: "Run your own multichannel outbound across email and LinkedIn." },
-      { href: "/fullenrich", label: "FullEnrich, explained", desc: "Waterfall enrichment for verified emails and mobile numbers." },
+      { href: "/beehiiv", label: "beehiiv", desc: "Newsletter platform built for growth. Free to start." },
+      { href: "/brevo", label: "Brevo", desc: "Email, SMS, automation and a CRM in one tool." },
+      { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with a powerful automation builder." },
+    ],
+  },
+  {
+    label: "Sales, CRM & data",
+    description: "Find leads, run outreach and manage the pipeline, sorted by the job.",
+    guides: [
+      { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
+      { href: "/nutshell", label: "Nutshell", desc: "An easy sales CRM with email marketing built in." },
+      { href: "/pipedrive", label: "Pipedrive", desc: "A visual, pipeline-first sales CRM." },
+      { href: "/aisdr", label: "AiSDR", desc: "A done-for-you AI rep that prospects and books meetings." },
+      { href: "/replyio", label: "Reply.io", desc: "Run your own multichannel outbound across channels." },
+      { href: "/fullenrich", label: "FullEnrich", desc: "Waterfall enrichment for verified emails and mobiles." },
+      { href: "/zoominfo", label: "ZoomInfo", desc: "Enterprise B2B data and buyer-intent signals." },
+    ],
+  },
+  {
+    label: "AI tools",
+    description: "AI assistants, voice, branding and meeting notes, sorted by what they do.",
+    guides: [
+      { href: "/lindy", label: "Lindy", desc: "An AI assistant that automates inbox, scheduling and CRM." },
+      { href: "/elevenlabs", label: "ElevenLabs", desc: "AI voice and text-to-speech with voice cloning." },
+      { href: "/logome", label: "Logome.ai", desc: "Generate a logo and full brand kit with AI." },
+      { href: "/meetgeek", label: "MeetGeek", desc: "AI meeting notes for Zoom, Meet and Teams." },
+    ],
+  },
+  {
+    label: "Business phone, HR & finance",
+    description: "The tools that run the back office: calling, people and money.",
+    guides: [
+      { href: "/cloudtalk", label: "CloudTalk", desc: "AI call-centre and business phone for sales and support." },
+      { href: "/krispcall", label: "KrispCall", desc: "Cloud phone with virtual numbers and a shared inbox." },
       { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
+      { href: "/trainual", label: "Trainual", desc: "Document processes, onboarding and SOPs in one place." },
+      { href: "/dext", label: "Dext", desc: "Bookkeeping automation that syncs to Xero and QuickBooks." },
+      { href: "/melio", label: "Melio", desc: "B2B bill pay for US businesses." },
+    ],
+  },
+  {
+    label: "More business & creative tools",
+    description: "Analytics, virtual assistants, e-signatures, design and more.",
+    guides: [
+      { href: "/databox", label: "Databox", desc: "KPI dashboards that pull 130+ data sources into one view." },
+      { href: "/wing-assistant", label: "Wing Assistant", desc: "Managed virtual assistants across many roles." },
+      { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
+      { href: "/cometchat", label: "CometChat", desc: "Developer SDKs to add in-app chat, voice and video." },
+      { href: "/flocksy", label: "Flocksy", desc: "Unlimited graphic design from a dedicated team." },
+      { href: "/alidrop", label: "AliDrop", desc: "Dropshipping tool for AliExpress, Alibaba and Temu." },
+      { href: "/superfiliate", label: "Superfiliate", desc: "Run affiliate and creator programs for your brand." },
+      { href: "/incomelab", label: "IncomeLab", desc: "AI side-hustle ideas and frameworks." },
     ],
   },
   {
@@ -115,10 +166,30 @@ const sections = [
   },
 ];
 
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: seoConfig.guides.title,
+  description: seoConfig.guides.description,
+  url: `${SITE_URL}/guides`,
+  inLanguage: "en-AU",
+  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: hubs.map((h, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: h.label,
+      url: `${SITE_URL}${h.href}`,
+    })),
+  },
+};
+
 export default function GuidesPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
         <nav className="mb-7 flex items-center gap-2 text-sm text-[#9aa39c]">

@@ -2114,9 +2114,9 @@ export const seoConfig = {
   },
 
   guides: {
-    title: "Guides & Comparisons | Refer Labs",
+    title: "Guides & Comparisons 2026: Software, Tools & Health | Refer Labs",
     description:
-      "Honest comparison guides covering health providers, website builders, newsletter platforms, peptide suppliers, and business tools — Australia and global.",
+      "Every independent comparison and review on Refer Labs in one place: website builders, CRMs, AI tools, email marketing, payments, plus weight-loss and hair-loss telehealth. Never pay-to-rank.",
     url: `${SITE_URL}/guides`,
     keywords: [
       "comparison guides australia",
