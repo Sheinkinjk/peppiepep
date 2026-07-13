@@ -19,8 +19,6 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "For research use only",
-  rating: "4.4",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "Research peptide supplier" },
     { k: "Focus", v: "Lab-grade compounds" },

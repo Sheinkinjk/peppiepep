@@ -20,8 +20,6 @@ export const carrdConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "Website builder",
-  rating: "4.7",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "One-page website builder" },
     { k: "Best for", v: "Portfolios, link-in-bio, simple sites" },
@@ -30,7 +28,7 @@ export const carrdConfig: AffiliatePageConfig = {
   ],
   trustStrip: [
     "Free plan forever",
-    "Pro from $19/year",
+    "Pro from $9/year",
     "Live in under an hour",
     "No credit card to start",
   ],
@@ -55,8 +53,8 @@ export const carrdConfig: AffiliatePageConfig = {
     {
       heading: "Access Carrd",
       paragraphs: [
-        "This page is built for people searching for a Carrd discount code, Carrd Pro pricing, or how Carrd compares to alternatives before signing up. Rather than hunting across review sites, this page covers the essentials and takes you directly to Carrd so you can explore the platform for yourself.",
-        "Click any button on this page to be taken to Carrd. No details are required here before you arrive.",
+        "This page is built for people searching for a Carrd discount code, Carrd Pro pricing, or how Carrd compares to alternatives before signing up. Instead of comparing a dozen review pages, it covers what matters and takes you directly to Carrd to explore for yourself.",
+        "Each button here opens Carrd directly; there is nothing to fill in before you arrive.",
       ],
       hasCta: true,
       ctaText: "Try Carrd",
@@ -184,12 +182,12 @@ export const carrdConfig: AffiliatePageConfig = {
     },
     {
       href: "/durableai",
-      label: "Durable AI, Review",
+      label: "Durable AI",
       desc: "Generate a full business website in 30 seconds. Free trial, no account required.",
     },
     {
       href: "/butternut",
-      label: "Butternut AI, Review",
+      label: "Butternut AI",
       desc: "Full website generated from a prompt in 20 seconds. Free to try.",
     },
     {

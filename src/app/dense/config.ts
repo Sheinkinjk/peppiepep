@@ -20,8 +20,6 @@ export const denseConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "Hair care",
-  rating: "4.2",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "Australian topical hair-density products" },
     { k: "For", v: "Early thinning, density & scalp health" },
@@ -55,7 +53,7 @@ export const denseConfig: AffiliatePageConfig = {
     {
       heading: "Current Offer",
       paragraphs: [
-        "This page is built for people searching for a Dense discount code, Dense promo code, Dense Hair Experts code, or a Dense coupon in Australia. Rather than hunting for a generic code that may have already expired, our affiliate link gives you direct access to the Dense Hair Experts store with the current offer applied through our referral path.",
+        "This page is built for people searching for a Dense discount code, Dense promo code, Dense Hair Experts code, or a Dense coupon in Australia. Instead of chasing a generic code that has often already expired, our affiliate link takes you straight to the Dense Hair Experts store with the current offer applied through our referral path.",
         "The button below takes you directly to the Dense Hair Experts website. No code needs to be entered on this page and no additional steps are required before you land on their store.",
       ],
       hasCta: true,

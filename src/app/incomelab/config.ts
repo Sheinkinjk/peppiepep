@@ -18,8 +18,6 @@ export const incomeLabConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "AI income",
-  rating: "4.5",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "AI side-hustle platform" },
     { k: "Best for", v: "Starting an AI income stream" },

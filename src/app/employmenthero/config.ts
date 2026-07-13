@@ -20,7 +20,6 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "HR & payroll",
-  readTime: "7 min read",
   atAGlance: [
     { k: "What it is", v: "All-in-one HR, payroll and employment platform" },
     { k: "Best for", v: "Australian small and medium businesses" },
@@ -59,8 +58,8 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     {
       heading: "Access Employment Hero",
       paragraphs: [
-        "This page is built for Australian business owners and HR leads weighing up Employment Hero: what it covers, how the payroll and compliance side works, and why pricing is quoted rather than listed. Rather than piecing it together across review sites, this page covers the essentials and takes you straight to Employment Hero so you can explore it yourself.",
-        "Click any button on this page to be taken to Employment Hero. No details are required here before you arrive.",
+        "This page is built for Australian business owners and HR leads weighing up Employment Hero: what it covers, how the payroll and compliance side works, and why pricing is quoted rather than listed. Instead of collecting the details from a run of review sites, it sets out the essentials and links straight through to Employment Hero to explore yourself.",
+        "Any button on the page takes you to Employment Hero directly, with no details needed here beforehand.",
       ],
       hasCta: true,
       ctaText: "See Employment Hero",

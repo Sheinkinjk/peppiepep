@@ -13,7 +13,7 @@ export const trainualConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Training / onboarding / SOPs" },
     { k: "Best for", v: "Growing teams & franchises" },
-    { k: "Pricing", v: "Custom pricing — book a demo" },
+    { k: "Pricing", v: "Custom pricing; book a demo" },
   ],
   hero: {
     h1Prefix: "Trainual:",

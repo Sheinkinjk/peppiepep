@@ -20,7 +20,6 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "AI sales & automation",
-  readTime: "7 min read",
   atAGlance: [
     { k: "What it is", v: "All-in-one CRM, marketing and sales platform" },
     { k: "Best for", v: "Marketing agencies and SMBs" },
@@ -59,8 +58,8 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     {
       heading: "Access GoHighLevel",
       paragraphs: [
-        "This page is built for people weighing up GoHighLevel before signing up: what it actually replaces, whether it fits an agency or a single business, and how the free trial works. Rather than piecing it together across review sites, this page covers the essentials and takes you straight to GoHighLevel so you can explore the platform yourself.",
-        "Click any button on this page to be taken to GoHighLevel. No details are required here before you arrive.",
+        "This page is built for people weighing up GoHighLevel before signing up: what it actually replaces, whether it fits an agency or a single business, and how the free trial works. Instead of pulling the picture together from scattered reviews, it covers what matters and takes you straight to GoHighLevel to explore for yourself.",
+        "Every button here opens GoHighLevel directly; there is nothing to complete on this page first.",
       ],
       hasCta: true,
       ctaText: "Start the GoHighLevel free trial",

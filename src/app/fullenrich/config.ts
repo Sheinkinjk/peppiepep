@@ -58,8 +58,8 @@ export const fullenrichConfig: AffiliatePageConfig = {
     {
       heading: "Access FullEnrich",
       paragraphs: [
-        "This page is built for sales, RevOps and lead-gen teams weighing up a contact-data tool before committing: what FullEnrich does, how waterfall enrichment finds emails and mobile numbers, and how it fits a HubSpot, Clay or CSV workflow. Rather than piecing it together across review sites, this page covers the essentials and takes you straight to FullEnrich so you can see it yourself.",
-        "Click any button on this page to be taken to FullEnrich. No details are required here before you arrive.",
+        "This page is built for sales, RevOps and lead-gen teams weighing up a contact-data tool before committing: what FullEnrich does, how waterfall enrichment finds emails and mobile numbers, and how it fits a HubSpot, Clay or CSV workflow. Rather than hunting the specifics across review roundups, it covers the essentials and takes you straight to FullEnrich to try it yourself.",
+        "Any button opens FullEnrich directly, with nothing to complete on this page first.",
       ],
       hasCta: true,
       ctaText: "See FullEnrich",

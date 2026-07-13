@@ -21,8 +21,6 @@ export const moshHairConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "Hair-loss telehealth",
-  rating: "4.4",
-  readTime: "6 min read",
   atAGlance: [
     { k: "What it is", v: "Australian men's hair-loss telehealth" },
     { k: "For", v: "Men with thinning or male-pattern hair loss" },

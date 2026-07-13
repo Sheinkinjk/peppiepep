@@ -19,8 +19,6 @@ export const butternutConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "AI website builder",
-  rating: "4.4",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "AI website generator" },
     { k: "Best for", v: "Instant full-site first drafts" },

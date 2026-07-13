@@ -19,8 +19,6 @@ export const swipePagesConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "Landing page builder",
-  rating: "4.5",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "AMP landing page builder" },
     { k: "Best for", v: "Paid-ad campaigns" },

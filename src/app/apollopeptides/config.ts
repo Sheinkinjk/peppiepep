@@ -19,8 +19,6 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "For research use only",
-  rating: "4.6",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "Research peptide supplier" },
     { k: "Catalogue", v: "Broad, incl. semaglutide, CJC-1295, GHK-Cu" },
@@ -54,7 +52,7 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     {
       heading: "Current Apollo Peptide Sciences Discount Code & Sale",
       paragraphs: [
-        "This page is built for researchers and buyers searching for an Apollo Peptide Sciences discount code, a peptides sale, or the best research peptide deals currently available. Rather than hunting for a promo code that may have expired, our affiliate link gives you direct access to the Apollo Peptide Sciences platform with any active offer applied automatically.",
+        "This page is built for researchers and buyers searching for an Apollo Peptide Sciences discount code, a peptides sale, or the best research peptide deals currently available. Chasing a promo code that may already be dead wastes time; our affiliate link takes you straight to Apollo Peptide Sciences with any live offer applied automatically.",
         "Click any button on this page to be taken directly to apollopeptidesciences.com. No code needs to be entered manually. The referral is tracked through the link itself.",
       ],
       hasCta: true,

@@ -19,8 +19,6 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "For research use only",
-  rating: "4.5",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "Research peptide supplier" },
     { k: "Focus", v: "High-purity compounds" },

@@ -19,8 +19,6 @@ export const beehiivConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "Newsletter platform",
-  rating: "4.8",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "Newsletter platform" },
     { k: "Best for", v: "Growing & monetising an audience" },

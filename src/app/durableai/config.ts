@@ -19,8 +19,6 @@ export const durableAiConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "AI website builder",
-  rating: "4.5",
-  readTime: "5 min read",
   atAGlance: [
     { k: "What it is", v: "AI website builder" },
     { k: "Best for", v: "Service businesses, solo operators" },

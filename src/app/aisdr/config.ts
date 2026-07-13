@@ -19,7 +19,6 @@ export const aisdrConfig: AffiliatePageConfig = {
   },
 
   eyebrow: "AI sales & automation",
-  readTime: "7 min read",
   atAGlance: [
     { k: "What it is", v: "AI sales development rep for B2B outbound" },
     { k: "Best for", v: "Revenue teams and founders building pipeline" },
@@ -58,8 +57,8 @@ export const aisdrConfig: AffiliatePageConfig = {
     {
       heading: "Access AiSDR",
       paragraphs: [
-        "This page is built for revenue teams and founders weighing up an AI SDR before committing: what AiSDR automates, how the multi-channel outreach works, and how it fits a HubSpot or Salesforce setup. Rather than piecing it together across review sites, this page covers the essentials and takes you straight to AiSDR so you can see the platform yourself.",
-        "Click any button on this page to be taken to AiSDR. No details are required here before you arrive.",
+        "This page is built for revenue teams and founders weighing up an AI SDR before committing: what AiSDR automates, how the multi-channel outreach works, and how it fits a HubSpot or Salesforce setup. Rather than trawling review sites for the details, it sets out what matters and sends you straight to AiSDR to see the platform yourself.",
+        "Use any button here to reach AiSDR directly; you do not need to enter anything on this page first.",
       ],
       hasCta: true,
       ctaText: "See AiSDR",
