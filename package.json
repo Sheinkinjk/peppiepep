@@ -8,6 +8,7 @@
     "dev:env": "set -a && source .env.local && npm run dev",
     "build": "next build",
     "start": "next start",
+    "indexnow": "node scripts/indexnow.mjs",
     "lint": "eslint",
     "test": "vitest run",
     "test:ux-viewports": "node scripts/test-ux-viewports.mjs",
