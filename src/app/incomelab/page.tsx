@@ -41,7 +41,6 @@ const webPageSchema = {
     { "@type": "Thing", name: "AI passive income" },
     { "@type": "Thing", name: "AI business ideas 2026" },
     { "@type": "Thing", name: "automate income with AI" },
-    { "@type": "Thing", name: "AI side hustle Reddit 2026" },
     { "@type": "Thing", name: "Income Lab review" },
   ],
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },

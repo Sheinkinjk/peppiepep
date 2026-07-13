@@ -39,11 +39,7 @@ const faqs = [
   },
   {
     q: "How much do Moshy and Juniper cost?",
-    a: "Both run subscription models, and the cost depends on the treatment plan determined during the clinical consultation rather than a single fixed price. Each platform shows current pricing during its eligibility flow before any commitment. Australian Reddit communities are a useful place to find recent firsthand cost figures.",
-  },
-  {
-    q: "What does Reddit say about Moshy vs Juniper?",
-    a: "Both appear regularly in Australian weight-loss, GLP-1, and telehealth subreddits, and experiences vary by individual. Common themes: people value the convenience of the online process, and Juniper users often mention the coaching/community element while Moshy users focus on the clinical pathway. Read recent threads before deciding.",
+    a: "Both run subscription models, and the cost depends on the treatment plan determined during the clinical consultation rather than a single fixed price. Each platform shows current pricing during its eligibility flow before any commitment, so you see the exact figure for your plan before signing up.",
   },
 ];
 

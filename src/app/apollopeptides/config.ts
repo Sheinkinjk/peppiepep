@@ -142,10 +142,6 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
       a: "Apollo Peptide Sciences is commonly evaluated alongside other research peptide suppliers on criteria including purity standards, third-party testing, certificate of analysis availability, shipping speed, pricing, and catalogue breadth. Researcher communities that discuss peptide suppliers frequently cite Apollo Peptide Sciences as one of the better-documented suppliers in the space.",
     },
     {
-      q: "Where can I find Apollo Peptide Sciences reviews or Reddit discussions?",
-      a: 'Apollo Peptide Sciences is discussed in researcher forums and communities including Reddit threads focused on peptide research, laboratory supply, and peptide supplier comparisons. Searching "Apollo Peptide Sciences Reddit" or "Apollo Peptide Sciences review" will surface community discussions from researchers who have ordered and used their compounds.',
-    },
-    {
       q: "How do I get the best peptides sale price from Apollo Peptide Sciences?",
       a: "The best way to access current Apollo Peptide Sciences pricing and any active peptides sale is to use our affiliate referral link, which takes you directly to their store. Our link applies any active offer at the URL level. Click any button on this page to continue.",
     },

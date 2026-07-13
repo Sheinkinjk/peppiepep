@@ -53,14 +53,6 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "What does Reddit say about hair loss treatments in Australia?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Australian Reddit communities covering hair loss, including r/HairLoss, r/tressless, and r/AustralianMen, consistently discuss finasteride and minoxidil as the most evidence-backed options for male pattern baldness. Mosh is mentioned as one of the more accessible telehealth platforms for getting a prescription in Australia without visiting a GP in person. Dense Hair Experts comes up in discussions about topical support products. Searching 'hair loss treatment Australia Reddit' or 'finasteride Australia Reddit' surfaces detailed community threads.",
-      },
-    },
-    {
-      "@type": "Question",
       name: "Is Mosh good for hair loss Australia?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -227,7 +219,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
-            {["Australian providers", "Clinical vs topical breakdown", "Reddit verdict included"].map((tag) => (
+            {["Australian providers", "Clinical vs topical breakdown", "Pricing & access compared"].map((tag) => (
               <span key={tag} className="flex items-center gap-2 text-sm text-[#0a7c42]/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0a7c42] flex-shrink-0" />
                 {tag}
@@ -366,25 +358,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
           </div>
         </section>
 
-        {/* Reddit Verdict */}
-        <section id="reddit-verdict" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">What Reddit Says About Hair Loss in Australia</h2>
-          <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
-            <p>
-              Australian Reddit communities discussing hair loss, including r/tressless, r/HairLoss, r/AskAustralia, and r/AustralianMen, consistently point to finasteride and minoxidil as the starting point for anyone dealing with male pattern baldness. The community consensus is that topical products alone are unlikely to stop progression.
-            </p>
-            <p>
-              Mosh comes up regularly as one of the more convenient telehealth options for getting a finasteride prescription in Australia without booking a GP in person. The main community discussion points are: the clinical process being straightforward, shipping reliability, and cost compared to a private GP consult.
-            </p>
-            <p>
-              Dense Hair Experts is mentioned in threads about topical support, primarily for people looking to improve density and scalp health as a complement to medical treatment, or for those not yet at the point of wanting prescription treatment.
-            </p>
-            <p>
-              Searching "finasteride Australia Reddit", "hair loss treatment Australia Reddit", or "Mosh hair Reddit" surfaces detailed community threads with firsthand experience from Australian users.
-            </p>
-          </div>
-        </section>
-
         {/* Disclaimer */}
         <section className="border-t border-[#0a7c42]/10 py-10">
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 max-w-2xl">
@@ -402,10 +375,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
               {
                 q: "What is the best hair loss treatment in Australia?",
                 a: "The most clinically effective treatments are finasteride and minoxidil, both available via telehealth prescription. Mosh offers online consultation and prescription. Dense Hair Experts provides topical support products for density and scalp health without prescription. The right approach depends on the type and stage of hair loss.",
-              },
-              {
-                q: "What does Reddit say about hair loss treatments in Australia?",
-                a: "Australian Reddit communities consistently discuss finasteride and minoxidil as the most evidence-backed options for male pattern baldness. Mosh is mentioned as a convenient telehealth platform. Dense Hair Experts comes up in discussions about topical support. Searching 'hair loss treatment Australia Reddit' surfaces detailed community threads.",
               },
               {
                 q: "Is Mosh good for hair loss Australia?",

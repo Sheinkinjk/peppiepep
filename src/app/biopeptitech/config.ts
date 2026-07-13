@@ -152,10 +152,6 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
       a: "BioPeptiTech is evaluated alongside other research peptide suppliers on criteria including purity, documentation, compound availability, pricing, and shipping. The best way to compare is to review their catalogue directly. Our link takes you there.",
     },
     {
-      q: "Where can I find BioPeptiTech reviews or Reddit discussions?",
-      a: 'BioPeptiTech is discussed in research forums and communities that cover peptide supplier comparisons and research compound sourcing. Searching "BioPeptiTech review" or "BioPeptiTech Reddit" will surface community discussions from researchers who have ordered from the supplier.',
-    },
-    {
       q: "How do I access the BioPeptiTech peptides sale?",
       a: "Click any button on this page. You will be taken directly to biopeptitech.com via our affiliate link. Any active peptides sale pricing will be visible on the site, no manual code entry required.",
     },

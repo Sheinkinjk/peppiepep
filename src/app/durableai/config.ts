@@ -164,10 +164,6 @@ export const durableAiConfig: AffiliatePageConfig = {
       q: "How do I get to Durable AI from this page?",
       a: "Click any button on this page. You will be taken directly to durable.co via our referral link. You can generate a website immediately on arrival without creating an account.",
     },
-    {
-      q: "What does Reddit say about Durable AI?",
-      a: "Durable AI comes up in Reddit communities covering AI tools, small business software, and website builders. Common discussion themes include the speed of the 30-second generation feature, how the built-in CRM compares to standalone tools, and whether the pricing makes sense compared to separate website and CRM subscriptions. Searching 'Durable AI Reddit' surfaces threads from small business owners and solopreneurs who have tested the platform firsthand.",
-    },
   ],
 
   breadcrumb: [

@@ -44,7 +44,6 @@ export const carrdConfig: AffiliatePageConfig = {
       "Direct access to the Carrd sign-up page",
       "Covers Carrd pricing, free plan, and Pro tiers",
       "Honest comparison with Squarespace, Webflow, and Wix",
-      "Addresses Reddit and community discussions about Carrd",
       "Click through instantly, no steps required on this page",
     ],
   },
@@ -85,14 +84,6 @@ export const carrdConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Carrd Reviews and Community",
-      paragraphs: [
-        'Carrd has a strong reputation across communities including Reddit, Indie Hackers, Product Hunt, and Twitter. Searching "Carrd Reddit" or "Carrd review" surfaces consistent praise for the product\'s simplicity, pricing, and reliability. AJ\'s transparent solo-founder approach and responsive support also contribute to unusually positive community sentiment for a software product.',
-        "Common themes in Carrd reviews include: the editor being fast and easy to use, the free plan being genuinely capable, the Pro pricing being exceptional value, and the template library covering most use cases well. Criticism tends to focus on the limitation to single-page sites, which is simply a deliberate product choice rather than a flaw.",
-        "Reddit discussions about Carrd frequently appear in r/Entrepreneur, r/web_design, r/indiegames, r/freelance, and startup-focused communities. It is consistently recommended as a first step for anyone who needs a professional online presence without the complexity or cost of a full website builder.",
-      ],
-    },
-    {
       heading: "What Carrd Is Best For",
       paragraphs: [
         "Carrd is the strongest choice for: personal portfolios, freelancer landing pages, startup coming-soon pages, link-in-bio pages for social media, one-page business sites, event pages, simple product launch pages, and any situation where you need a clean, professional web presence quickly.",
@@ -128,7 +119,6 @@ export const carrdConfig: AffiliatePageConfig = {
     "Direct access to Carrd via our referral link",
     "Covers Carrd pricing, free plan, and Pro tiers honestly",
     "Compares Carrd vs Squarespace, Webflow, Wix, and Linktree",
-    "Addresses Reddit reviews and community sentiment",
     "Explains exactly what Carrd is and is not suited for",
     "Click any button on this page to go straight to Carrd",
   ],
@@ -157,10 +147,6 @@ export const carrdConfig: AffiliatePageConfig = {
     {
       q: "How does Carrd compare to Webflow?",
       a: "Webflow is a professional design tool with advanced layout control and a steep learning curve. Carrd is simple, fast, and accessible to anyone. Carrd is the better choice if speed and simplicity matter more than design flexibility. Webflow is better for complex, custom-designed multi-page sites.",
-    },
-    {
-      q: "What does Reddit say about Carrd?",
-      a: "Reddit communities including r/Entrepreneur, r/web_design, r/indiegames, and startup subreddits consistently recommend Carrd for portfolio and landing page use cases. The most common praise centres on simplicity, pricing, and reliability. Searching 'Carrd Reddit' will surface detailed community discussions from users who have built and published sites on the platform.",
     },
     {
       q: "How do I get to Carrd from this page?",

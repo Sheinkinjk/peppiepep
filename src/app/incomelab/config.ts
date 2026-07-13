@@ -37,12 +37,11 @@ export const incomeLabConfig: AffiliatePageConfig = {
     h1Prefix: "AI Side Hustle Ideas:",
     h1Highlight: "How to Make Money With AI in 2026",
     subheading:
-      "Searching for the best AI side hustles, AI passive income strategies, or what Reddit is saying about making money with AI? This page covers the most useful frameworks and takes you directly to the Income Lab onboarding page.",
+      "Searching for the best AI side hustles, AI passive income strategies, or a clear-eyed take on making money with AI? This page covers the most useful frameworks and takes you directly to the Income Lab onboarding page.",
     trustBullets: [
       "Direct access to the Income Lab welcome page",
       "Covers the top AI side hustle ideas for 2026",
       "Includes AI tools you can use to generate income today",
-      "Addresses Reddit communities discussing AI income strategies",
       "No signup required on this page, click through instantly",
     ],
   },
@@ -51,7 +50,7 @@ export const incomeLabConfig: AffiliatePageConfig = {
     {
       heading: "Access Income Lab",
       paragraphs: [
-        "This page is built for people searching for AI side hustle ideas, how to make money with AI, or what communities like Reddit are saying about AI online income. Rather than digging through forums or scattered tutorials, this page gives you a concise overview of the topic and then takes you directly to Income Lab, a platform built around building income streams using AI tools and automation.",
+        "This page is built for people searching for AI side hustle ideas, how to make money with AI, or a straight overview of AI online income. Rather than digging through scattered tutorials and threads, this page gives you a concise overview of the topic and then takes you directly to Income Lab, a platform built around building income streams using AI tools and automation.",
         "Click any button on this page to be taken directly to the Income Lab onboarding page. No information is required here before you arrive.",
       ],
       hasCta: true,
@@ -118,7 +117,6 @@ export const incomeLabConfig: AffiliatePageConfig = {
     "Direct access to the Income Lab onboarding page via our referral link",
     "Covers the top AI side hustle ideas and strategies for 2026",
     "Explains AI tools to make money without overpromising results",
-    "Addresses Reddit search intent with honest context on community discussions",
     "Covers AI passive income and automation in practical terms",
     "Click any button on this page to go directly to Income Lab",
   ],
@@ -139,10 +137,6 @@ export const incomeLabConfig: AffiliatePageConfig = {
     {
       q: "Is AI passive income real?",
       a: "AI passive income is achievable but requires upfront work to build. Most AI-assisted income streams start as active work that becomes progressively more automated over time. Digital product sales, niche content sites, automated email sequences, and systematised service delivery are examples where AI tools reduce the ongoing time cost significantly. Income Lab addresses this distinction clearly and focuses on realistic income models rather than passive income myths.",
-    },
-    {
-      q: "What does Reddit say about AI side hustles?",
-      a: 'Reddit communities including r/SideHustle, r/Entrepreneur, and various AI subreddits contain extensive discussion about AI income strategies. The common thread in credible threads is that successful AI side hustles combine tools with a specific niche and offer, rather than relying on AI alone. Searching "Reddit AI side hustle" or "Reddit learn AI" will surface current community discussions. Income Lab provides a more structured alternative to piecing together advice from forum threads.',
     },
     {
       q: "How do I automate income with AI?",

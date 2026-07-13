@@ -94,7 +94,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       heading: "What Mosh really costs",
       paragraphs: [
         "There's no single Mosh price, and any page quoting you one exact figure is guessing. It's a subscription, and what you pay tracks the plan your consult lands on, finasteride alone is cheaper than a finasteride-plus-minoxidil combination, and the fee bundles the medication, the practitioner oversight, and delivery.",
-        "The useful way to think about it: it's priced like an ongoing treatment, not a one-off purchase, because that's what hair-loss treatment is, stop and the benefit fades. You'll see the actual numbers in the consult before you commit to anything, and Australian hair-loss threads on Reddit are a good reality-check on what men are paying month to month right now.",
+        "The useful way to think about it: it's priced like an ongoing treatment, not a one-off purchase, because that's what hair-loss treatment is, stop and the benefit fades. You'll see the actual numbers in the consult before you commit to anything, so you know exactly what you'd pay month to month before signing up.",
       ],
     },
     {
@@ -142,7 +142,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     "Quick access to the current Mosh referral link for Australian users",
     "No need to search for a Mosh promo code that may have expired",
     "Contextual overview of the Mosh platform before clicking through",
-    "Addresses common search intent including reviews, Reddit, and discount codes",
+    "Addresses common search intent including cost, access, and discount codes",
     "Direct link to the official Mosh sign-up page",
   ],
 
@@ -164,16 +164,12 @@ export const moshHairConfig: AffiliatePageConfig = {
       a: "Mosh offers clinically supervised hair loss treatment options for men, reviewed on a case-by-case basis by their practitioners following an online consultation. The specific treatments available to each user depend on their health profile. Full details are available on the Mosh website. This page does not provide medical advice.",
     },
     {
-      q: "What do Mosh reviews say? Is Mosh legit?",
-      a: "Mosh is a registered Australian telehealth business. User experiences shared on platforms like Reddit and review sites vary, as they do with any health service. We recommend reading the Mosh website, their FAQs, and available community discussions before making a decision. This page links directly to the Mosh sign-up page so you can assess the platform yourself.",
-    },
-    {
-      q: "Is Mosh discussed on Reddit?",
-      a: 'Yes. Mosh has been discussed in Australian Reddit communities, particularly in threads about men\'s hair loss, minoxidil, finasteride, and online telehealth services. Searching "Mosh Reddit" or "Mosh hair Reddit" will surface relevant community discussions from Australian users who have used the platform.',
+      q: "Is Mosh legit?",
+      a: "Mosh is a registered Australian telehealth business with prescribing overseen by registered Australian practitioners. As with any health service, individual experiences vary. We recommend reading the Mosh website, their FAQs, and independent sources before making a decision. This page links directly to the Mosh sign-up page so you can assess the platform yourself.",
     },
     {
       q: "How much does Mosh cost for hair loss in Australia?",
-      a: "Mosh runs on a subscription model and the cost depends on the treatment plan determined through your online consultation - finasteride only, minoxidil only, or a combination. Pricing covers the treatment, practitioner oversight, and home delivery, and is shown transparently in the consultation flow before you commit. For recent firsthand figures, Australian Reddit hair loss and telehealth communities are a useful sense-check. This page does not provide medical advice.",
+      a: "Mosh runs on a subscription model and the cost depends on the treatment plan determined through your online consultation - finasteride only, minoxidil only, or a combination. Pricing covers the treatment, practitioner oversight, and home delivery, and is shown transparently in the consultation flow before you commit. This page does not provide medical advice.",
     },
     {
       q: "Does Mosh prescribe finasteride and minoxidil?",
@@ -203,7 +199,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       href: "/best-hair-loss-treatment-australia",
       label: "Best Hair Loss Treatment Australia 2026",
-      desc: "Mosh vs Dense Hair Experts vs telehealth options, clinical vs topical, pricing, and Reddit verdict.",
+      desc: "Mosh vs Dense Hair Experts vs telehealth options, clinical vs topical, and pricing compared.",
     },
     {
       href: "/dense",

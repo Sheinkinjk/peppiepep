@@ -148,10 +148,6 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
       a: "Ascension Peptides is evaluated by researchers on purity standards, documentation quality, compound availability, pricing, and shipping reliability. The supplier is referenced in research communities discussing peptide supplier comparisons alongside other well-regarded research peptide companies. The best assessment is to review their catalogue and documentation directly.",
     },
     {
-      q: "Where can I find Ascension Peptides reviews?",
-      a: 'Ascension Peptides is discussed in researcher forums and communities including Reddit threads focused on laboratory supply, research peptides, and peptide supplier comparisons. Searching "Ascension Peptides review" or "Ascension Peptides Reddit" will surface community discussions.',
-    },
-    {
       q: "What is the best way to find Ascension Peptides sale pricing?",
       a: "The best way to access current Ascension Peptides pricing and any active sale is to use our referral link, which takes you directly to their store. The affiliate offer is applied at the URL level. Click any button on this page to continue.",
     },

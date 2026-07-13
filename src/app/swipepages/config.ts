@@ -129,7 +129,6 @@ export const swipePagesConfig: AffiliatePageConfig = {
     "Covers Swipe Pages pricing, AMP capabilities, and A/B testing clearly",
     "Detailed comparison with Unbounce, Leadpages, Instapage, and ClickFunnels",
     "Explains AMP landing pages and why page speed matters for ad campaign ROI",
-    "Addresses Reddit and real practitioner review sentiment honestly",
     "Click any button on this page to go straight to Swipe Pages",
   ],
 
@@ -161,10 +160,6 @@ export const swipePagesConfig: AffiliatePageConfig = {
     {
       q: "What is dynamic text replacement in Swipe Pages?",
       a: "Dynamic text replacement lets you show different headline or body text on a landing page based on the search term or ad that brought a visitor to the page. For example, someone who clicks an ad for 'email marketing software' sees that phrase in the landing page headline, while someone who clicks an ad for 'newsletter tool' sees a different headline, same URL, different content. This improves message match between ad and landing page, which increases conversion rates and Google Ads Quality Scores.",
-    },
-    {
-      q: "What do Swipe Pages reviews say on Reddit?",
-      a: "Swipe Pages is discussed in digital marketing and paid advertising communities on Reddit. Common themes include the AMP speed advantage being genuinely measurable in campaign performance, the A/B testing being practical, and the pricing being a significant advantage over Unbounce and Instapage. Searching 'Swipe Pages Reddit' or 'Swipe Pages review' will surface relevant practitioner discussions.",
     },
     {
       q: "How do I start the Swipe Pages free trial?",

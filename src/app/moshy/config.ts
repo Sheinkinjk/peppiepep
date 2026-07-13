@@ -21,7 +21,7 @@ export const moshyConfig: AffiliatePageConfig = {
     h1Prefix: "Moshy Discount Code Australia 2026:",
     h1Highlight: "Referral Link, Review & Eligibility Guide",
     subheading:
-      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, GLP-1 options, Moshy vs Juniper, and what the Reddit community says.",
+      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, GLP-1 options, and how Moshy compares to Juniper.",
     trustBullets: [
       "Current Moshy referral link - no code required",
       "Covers Moshy weight loss cost and subscription pricing",
@@ -68,7 +68,7 @@ export const moshyConfig: AffiliatePageConfig = {
       paragraphs: [
         "Moshy operates on a subscription model. Pricing is not publicly listed on the Moshy website in full before the eligibility process is completed - the cost of a Moshy programme depends on the treatment plan determined through the clinical consultation, which varies by individual.",
         "Based on publicly available information and community discussions, Moshy weight management programmes in Australia typically involve a monthly subscription that covers practitioner oversight, ongoing check-ins, and home delivery of any prescribed treatments. Pricing can range significantly depending on the specific treatment pathway.",
-        "The most accurate way to get current Moshy pricing is to complete the eligibility flow and proceed through the consultation process. Moshy is transparent about costs before any subscription commitment is made. Searching 'how much does Moshy cost' or 'Moshy subscription cost Australia' in Reddit communities will surface current firsthand accounts from users who have been through the process recently.",
+        "The most accurate way to get current Moshy pricing is to complete the eligibility flow and proceed through the consultation process. Moshy is transparent about costs before any subscription commitment is made, so you see the exact figure for your plan before committing to anything.",
       ],
     },
     {
@@ -76,18 +76,10 @@ export const moshyConfig: AffiliatePageConfig = {
       paragraphs: [
         "Moshy and Juniper are Australia's two most commonly compared online weight management telehealth platforms. The most significant structural difference is approach: Moshy runs a lean, practitioner-led clinical pathway that is open to anyone eligible, while Juniper wraps medication in a structured coaching programme and markets primarily to women. Both platforms use an online eligibility and consultation model and can facilitate access to GLP-1 medications through Australian-registered practitioners.",
         "The differences between the two platforms come down to how much support wraps around the medication. Juniper combines medication access with a structured coaching and community programme, positioning itself as a holistic weight management system rather than purely a telehealth prescribing service. Moshy's approach is more clinical, the focus is on the practitioner-led treatment pathway rather than ongoing lifestyle coaching.",
-        "In terms of which platform is 'better' for weight loss, this is not a meaningful comparison at a general level. Outcomes from weight management programmes depend on the individual, adherence, clinical suitability for specific treatments, and lifestyle factors. Both platforms have positive and negative reviews in Australian Reddit communities. The right starting point is completing the eligibility process with whichever platform matches the kind of support you want and your health profile.",
+        "In terms of which platform is 'better' for weight loss, this is not a meaningful comparison at a general level. Outcomes from weight management programmes depend on the individual, adherence, clinical suitability for specific treatments, and lifestyle factors. The right starting point is completing the eligibility process with whichever platform matches the kind of support you want and your health profile.",
       ],
       hasCta: true,
       ctaText: "Check Eligibility with Moshy",
-    },
-    {
-      heading: "Moshy Reviews & Reddit",
-      paragraphs: [
-        'Australians searching for "Moshy review", "Moshy Reddit", "is Moshy legit", "is Moshy worth it", or "Moshy weight loss review" are typically looking for firsthand accounts before committing to a subscription health service. This is a sound approach for any telehealth platform.',
-        "Moshy is discussed across several Australian Reddit communities including r/AusLegal, r/australia, r/loseit, and subreddits focused on GLP-1 treatments and telehealth. The general pattern in community discussions reflects what you would expect from any health intervention: results and experiences vary significantly between individuals, with outcomes depending on clinical suitability, programme adherence, and the specific treatment pathway assigned.",
-        "Positive reviews tend to highlight the convenience of the online process, the quality of practitioner communication, and the effectiveness of the weight management approach for those who are eligible for prescription treatments. Critical reviews tend to focus on subscription cost relative to outcomes and the initial eligibility screening process. Reading current threads in relevant subreddits before committing is a reasonable step.",
-      ],
     },
     {
       heading: "Moshy Codes & How They Work",
@@ -126,7 +118,6 @@ export const moshyConfig: AffiliatePageConfig = {
     "Direct access to the current Moshy referral link - no outdated or expired codes",
     "Covers Moshy pricing, GLP-1 access, and what to expect from the eligibility process",
     "Moshy vs Juniper comparison in plain terms",
-    "Reddit community verdict included - what real users say",
     "Built for Australian users - links to the AU Moshy platform only",
     "Medical disclaimers throughout - no misleading health claims",
   ],

@@ -43,7 +43,6 @@ export const butternutConfig: AffiliatePageConfig = {
       "Direct access to Butternut AI via our referral link",
       "Covers Butternut AI pricing, free plan, and paid tiers",
       "Honest comparison with Durable AI, Wix, Squarespace, and Framer",
-      "Addresses Reddit reviews and real user feedback",
       "Click through instantly, generate your site in 20 seconds",
     ],
   },
@@ -120,7 +119,6 @@ export const butternutConfig: AffiliatePageConfig = {
     "Direct access to Butternut AI via our referral link",
     "Covers Butternut AI pricing, free generation, and paid plans clearly",
     "Detailed Butternut AI vs Durable, Wix, Squarespace, and Framer comparison",
-    "Addresses real Reddit and review community discussions honestly",
     "Explains exactly who Butternut AI is and is not suited for",
     "Click any button on this page to go straight to Butternut AI",
   ],
@@ -149,10 +147,6 @@ export const butternutConfig: AffiliatePageConfig = {
     {
       q: "How does Butternut AI compare to Squarespace?",
       a: "Squarespace is known for high design quality and is the preferred choice for creatives, photographers, and design-led e-commerce. It requires significant time investment to set up correctly. Butternut launches faster but offers less design control. For high-design or e-commerce use cases, Squarespace leads. For speed and simplicity, Butternut is the stronger choice.",
-    },
-    {
-      q: "What do Butternut AI reviews say?",
-      a: "Reviews consistently highlight the generation speed as accurate and impressive, the quality of AI-generated copy as a useful starting point, and the editing experience as accessible to non-technical users. Searching 'Butternut AI Reddit' or 'Butternut AI review' surfaces community discussions comparing the platform to Durable, Wix, and other builders, with generally positive sentiment for its target use case.",
     },
     {
       q: "Is Butternut AI good for small business?",

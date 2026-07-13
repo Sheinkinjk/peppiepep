@@ -73,14 +73,6 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "What does Reddit say about newsletter platforms?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Reddit discussions about newsletter platforms in r/Newsletters, r/Entrepreneur, and r/SideProject consistently recommend beehiiv for creators who are serious about growing and monetising. The most common themes are that beehiiv's growth tools (referral programs, recommendations, ad network) are genuinely useful, that Substack's discovery network helps in the early days, and that ConvertKit is better for product-based businesses than newsletter-first creators. Searching 'beehiiv vs Substack Reddit' surfaces detailed community comparisons.",
-      },
-    },
-    {
-      "@type": "Question",
       name: "Which newsletter platform has the best free plan?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -376,22 +368,6 @@ export default function BestNewsletterPlatformPage() {
           </div>
         </section>
 
-        {/* Reddit Verdict */}
-        <section className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">What Reddit Says</h2>
-          <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
-            <p>
-              Reddit discussions about newsletter platforms, primarily in r/Newsletters, r/Entrepreneur, r/SideProject, and r/blogging, consistently point to beehiiv as the preferred platform for creators who are serious about growing and monetising.
-            </p>
-            <p>
-              The most common community feedback: beehiiv's referral program and ad network are genuinely useful tools that most platforms don't offer. Substack's discovery network is acknowledged as a real advantage in the early days, and the zero monthly fee makes it a low-risk start. ConvertKit gets recommended for product businesses with complex sequences but rarely for newsletter-first creators.
-            </p>
-            <p>
-              The 10% revenue cut on Substack paid subscriptions comes up regularly as a reason creators migrate to beehiiv once their subscriber count grows. Searching "beehiiv vs Substack Reddit" surfaces multiple detailed community threads with firsthand comparisons.
-            </p>
-          </div>
-        </section>
-
         <MatchPrompt
           href="/newsletter-platform-quiz"
           title="Not sure which platform to pick?"
@@ -416,10 +392,6 @@ export default function BestNewsletterPlatformPage() {
               {
                 q: "beehiiv vs ConvertKit, what is the difference?",
                 a: "ConvertKit (now Kit) is a full email marketing platform with advanced automation and segmentation built for complex funnels. beehiiv is newsletter-first with strong growth tools like referral programs and ad networks. For newsletter publishing and audience growth, beehiiv is better suited.",
-              },
-              {
-                q: "What does Reddit say about newsletter platforms?",
-                a: "Reddit communities consistently recommend beehiiv for serious newsletter creators. Common themes: beehiiv's growth tools are genuinely useful, Substack's discovery helps early on, and ConvertKit is better for product businesses than newsletter-first creators. Searching 'beehiiv vs Substack Reddit' surfaces detailed community comparisons.",
               },
               {
                 q: "Which newsletter platform has the best free plan?",

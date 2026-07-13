@@ -126,7 +126,6 @@ export const beehiivConfig: AffiliatePageConfig = {
     "Covers beehiiv pricing, free plan, and paid tiers clearly",
     "Detailed beehiiv vs Substack and beehiiv vs ConvertKit comparison",
     "Covers beehiiv monetization including the ad network and boosts",
-    "Addresses Reddit discussions and real review sentiment",
     "Click any button on this page to go directly to beehiiv",
   ],
 
@@ -156,10 +155,6 @@ export const beehiivConfig: AffiliatePageConfig = {
       a: "ConvertKit (Kit) is a broader creator marketing platform covering automation, landing pages, and digital product sales. beehiiv is focused specifically on newsletter publishing, growth, and monetization. If your primary business is a newsletter, beehiiv's purpose-built tools are more powerful. If you need complex email automation or need to sell digital products alongside a newsletter, ConvertKit is more flexible.",
     },
     {
-      q: "What do beehiiv reviews say on Reddit?",
-      a: "beehiiv is discussed positively in Reddit communities covering newsletters, creator businesses, and email marketing. Common themes include: the ad network being a practical revenue source for mid-sized newsletters, the platform being well-designed compared to alternatives, the referral programme being effective for growing subscriber counts, and the migration from Substack or ConvertKit being straightforward. Searching 'beehiiv Reddit' will surface current community threads.",
-    },
-    {
       q: "How do I claim the beehiiv 14-day trial?",
       a: "Click any button on this page. You will be taken directly to beehiiv.com via our referral link. The 14-day trial of paid plan features is applied automatically when you sign up.",
     },
@@ -175,7 +170,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     {
       href: "/best-newsletter-platform",
       label: "Best Newsletter Platform 2026",
-      desc: "beehiiv vs Substack vs ConvertKit, free plans, monetisation, growth tools, and Reddit verdict.",
+      desc: "beehiiv vs Substack vs ConvertKit, free plans, monetisation, and growth tools compared.",
     },
     {
       href: "/incomelab",

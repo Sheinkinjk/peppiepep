@@ -139,10 +139,6 @@ export const denseConfig: AffiliatePageConfig = {
       q: "Where can I find the latest Dense coupon or sale?",
       a: "Affiliate links are the most consistent access point for current Dense offers rather than searching for a coupon code that may be expired. This page provides an up-to-date Dense affiliate link. Click any button to be taken directly to the Dense Hair Experts store.",
     },
-    {
-      q: "What does Reddit say about Dense Hair Experts?",
-      a: "Dense Hair Experts is discussed in Australian Reddit communities covering hair loss, hair care, and personal grooming. Common themes include product effectiveness for thinning hair, how Dense compares to pharmacy-brand shampoos, and whether the science-backed formulation claims hold up. Searching 'Dense Hair Experts Reddit' surfaces community threads from Australian users who have tested the products as part of a consistent hair care routine.",
-    },
   ],
 
   breadcrumb: [
@@ -155,7 +151,7 @@ export const denseConfig: AffiliatePageConfig = {
     {
       href: "/best-hair-loss-treatment-australia",
       label: "Best Hair Loss Treatment Australia 2026",
-      desc: "Mosh vs Dense Hair Experts vs telehealth options, clinical vs topical, pricing, and Reddit verdict.",
+      desc: "Mosh vs Dense Hair Experts vs telehealth options, clinical vs topical, and pricing compared.",
     },
     {
       href: "/moshhair",
