@@ -208,7 +208,7 @@ export const seoConfig = {
   howItWorks: {
     title: "How It Works: Refer Labs Growth & Distribution Engine",
     description:
-      "See how Refer Labs builds and activates your growth engine — referral programs, affiliate distribution, influencer channels, APAC expansion, and digital products end to end.",
+      "See how Refer Labs builds and activates your growth engine: referral programs, affiliate distribution, influencer channels, APAC expansion, and digital products end to end.",
     url: `${SITE_URL}/how-it-works`,
     keywords: [
       "how referral programs work",
@@ -643,7 +643,7 @@ export const seoConfig = {
   bestWebsiteBuilder: {
     title: "Best Website Builder 2026: AI, Free & Fast Compared",
     description:
-      "Best website builders 2026 — Carrd (free), Durable AI (30s build), Butternut, Swipe Pages. Honest reviews, pricing, free trials, Reddit verdict.",
+      "Best website builders 2026: Carrd (free), Durable AI (30s build), Butternut, Swipe Pages. Honest reviews, pricing, free trials, Reddit verdict.",
     url: `${SITE_URL}/best-website-builder`,
     keywords: [
       "best website builder 2026",
@@ -674,7 +674,7 @@ export const seoConfig = {
   swipePages: {
     title: "Swipe Pages Review 2026: 14-Day Free Trial, AMP Landing Pages | Refer Labs",
     description:
-      "Swipe Pages review 2026 — AMP landing pages that load in under 1 second, A/B testing, dynamic text replacement. 14-day free trial, no credit card. Compare vs Unbounce, Leadpages, and Instapage.",
+      "Swipe Pages review 2026: AMP landing pages that load in under 1 second, A/B testing, dynamic text replacement. 14-day free trial, no credit card. Compare vs Unbounce, Leadpages, and Instapage.",
     url: `${SITE_URL}/swipepages`,
     keywords: [
       "swipe pages review 2026",
@@ -703,7 +703,7 @@ export const seoConfig = {
   butternut: {
     title: "Butternut AI Review 2026: Generate a Website Free in 20 Seconds | Refer Labs",
     description:
-      "Butternut AI review 2026 — full website generated from a prompt in 20 seconds, free to try with no account. Compare Butternut AI vs Durable AI, Wix, Squarespace. Pricing, discount, and free trial link inside.",
+      "Butternut AI review 2026: full website generated from a prompt in 20 seconds, free to try with no account. Compare Butternut AI vs Durable AI, Wix, Squarespace. Pricing, discount, and free trial link inside.",
     url: `${SITE_URL}/butternut`,
     keywords: [
       "butternut ai review 2026",
@@ -731,7 +731,7 @@ export const seoConfig = {
   carrd: {
     title: "Carrd Review 2026: Free Website Builder | Refer Labs",
     description:
-      "Carrd review 2026 — free plan forever, Pro from $19/year. The simplest one-page website builder for portfolios, link-in-bio, and landing pages.",
+      "Carrd review 2026: free plan forever, Pro from $9/year. The simplest one-page website builder for portfolios, link-in-bio, and landing pages.",
     url: `${SITE_URL}/carrd`,
     keywords: [
       "carrd review 2026",
@@ -760,7 +760,7 @@ export const seoConfig = {
   durableAi: {
     title: "Durable AI Review 2026: AI Website Builder Free Trial for Small Business | Refer Labs",
     description:
-      "Durable AI review 2026 — generate a complete business website in 30 seconds, free with no account. Includes CRM, invoicing, and Google Business integration. Compare Durable AI vs Wix, Squarespace, and Butternut AI.",
+      "Durable AI review 2026: generate a complete business website in 30 seconds, free with no account. Includes CRM, invoicing, and Google Business integration. Compare Durable AI vs Wix, Squarespace, and Butternut AI.",
     url: `${SITE_URL}/durableai`,
     keywords: [
       "durable ai review 2026",
@@ -789,7 +789,7 @@ export const seoConfig = {
   beehiiv: {
     title: "beehiiv Review 2026: vs Substack | Refer Labs",
     description:
-      "beehiiv review 2026 — newsletter platform free up to 2,500 subscribers. Built-in ad network, referral program, paid subscriptions. Compare vs Substack.",
+      "beehiiv review 2026: newsletter platform free up to 2,500 subscribers. Built-in ad network, referral program, paid subscriptions. Compare vs Substack.",
     url: `${SITE_URL}/beehiiv`,
     keywords: [
       "beehiiv review 2026",
@@ -818,7 +818,7 @@ export const seoConfig = {
   incomeLab: {
     title: "How to Make Money With AI in 2026: Real Side Hustles That Work",
     description:
-      "Looking for the best AI side hustle ideas in 2026, AI passive income strategies, or what Reddit says about making money with AI? This page covers AI tools, business ideas, and automated income models — and takes you directly to Income Lab.",
+      "Looking for the best AI side hustle ideas in 2026, AI passive income strategies, or what Reddit says about making money with AI? This page covers AI tools, business ideas, and automated income models, and takes you directly to Income Lab.",
     url: `${SITE_URL}/incomelab`,
     keywords: [
       "AI side hustle",
@@ -841,7 +841,7 @@ export const seoConfig = {
   moshHair: {
     title: "Mosh Hair Loss Discount Code Australia 2026 | Mosh Promo Code, Cost & Review | Refer Labs",
     description:
-      "Mosh hair loss discount code Australia 2026 — get 55% off your first order with code REFERAL55 via our referral link. Covers Mosh cost and pricing, finasteride and minoxidil access, Mosh vs Dense, reviews, and what Reddit says about Mosh Australia.",
+      "Mosh hair loss discount code Australia 2026: get 55% off your first order with code REFERAL55 via our referral link. Covers Mosh cost and pricing, finasteride and minoxidil access, Mosh vs Dense, reviews, and what Reddit says about Mosh Australia.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -943,7 +943,7 @@ export const seoConfig = {
   apolloPeptides: {
     title: "Apollo Peptide Sciences Discount Code | Peptides Sale & Research Peptides Deals | Refer Labs",
     description:
-      "Looking for an Apollo Peptide Sciences discount code? Discover the latest peptides sale and research peptide deals. Save on high-quality lab peptides — Semaglutide, CJC-1295, GHK-Cu, Ipamorelin, and Retatrutide research compounds.",
+      "Looking for an Apollo Peptide Sciences discount code? Discover the latest peptides sale and research peptide deals. Save on high-quality lab peptides: Semaglutide, CJC-1295, GHK-Cu, Ipamorelin, and Retatrutide research compounds.",
     url: `${SITE_URL}/apollopeptides`,
     keywords: [
       "apollo peptide sciences discount code",
@@ -1025,7 +1025,7 @@ export const seoConfig = {
   bestPeptideSupplier: {
     title: "Best Peptide Supplier 2026: Apollo, Ascension & BioPeptiTech Compared | Refer Labs",
     description:
-      "Compare the best research peptide suppliers in 2026 — Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech. Current discount codes, peptides sale offers, purity standards, and catalogue coverage. For research use only.",
+      "Compare the best research peptide suppliers in 2026: Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech. Current discount codes, peptides sale offers, purity standards, and catalogue coverage. For research use only.",
     url: `${SITE_URL}/best-peptide-supplier`,
     keywords: [
       "best peptide supplier 2026",
@@ -1364,7 +1364,7 @@ export const seoConfig = {
   carrdVsDurable: {
     title: "Carrd vs Durable AI 2026: Which Website Builder Should You Use? | Refer Labs",
     description:
-      "Carrd vs Durable AI compared for 2026 — Carrd is the cheapest one-page builder; Durable AI generates a full business site with CRM in 30 seconds. Pricing, AI, free plans, and which to pick.",
+      "Carrd vs Durable AI compared for 2026: Carrd is the cheapest one-page builder; Durable AI generates a full business site with CRM in 30 seconds. Pricing, AI, free plans, and which to pick.",
     url: `${SITE_URL}/carrd-vs-durable`,
     keywords: [
       "carrd vs durable",
@@ -1795,7 +1795,7 @@ export const seoConfig = {
   comparisonWebsite: {
     title: "Australia's Curated Health & Performance Comparison Platform | Refer Labs",
     description:
-      "A properly researched comparison platform across five health and performance categories in Australia — ED, weight loss, hair loss, testosterone, and supplements. Not a pay-to-rank directory.",
+      "A properly researched comparison platform across five health and performance categories in Australia: ED, weight loss, hair loss, testosterone, and supplements. Not a pay-to-rank directory.",
     url: `${SITE_URL}/comparison-website`,
     keywords: [
       "best ED clinics Australia",
