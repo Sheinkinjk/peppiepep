@@ -145,6 +145,10 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "Simply click any button on this page. You will be taken directly to the Moshy eligibility page where you can complete the online questionnaire. No code needs to be entered manually - the referral is tracked through the link itself.",
     },
     {
+      q: "What's the cheapest way to start Moshy?",
+      a: "The lowest-cost way in is the current new-customer offer: $120 off your first treatment, applied automatically when you start through the link on this page, with nothing to type. The ongoing subscription then depends on the plan your consultation lands on, and Moshy shows you the price before you commit to anything. We don't quote a fixed figure here because it is confirmed during the consultation, but beginning with the $120 offer is the most affordable way to start.",
+    },
+    {
       q: "Does Moshy offer semaglutide or GLP-1 medications in Australia?",
       a: "Moshy can facilitate access to a clinical assessment with an Australian-registered practitioner who may, if clinically appropriate, prescribe GLP-1 medications. GLP-1 medications are prescription-only in Australia and access depends entirely on individual clinical suitability. Moshy does not advertise which specific medications are available prior to the consultation. This page does not constitute medical advice.",
     },
