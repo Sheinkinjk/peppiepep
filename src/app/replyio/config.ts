@@ -41,7 +41,7 @@ export const replyioConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "Reply.io review:",
+    h1Prefix: "Reply.io:",
     h1Highlight: "the AI sales engagement platform for multichannel outbound",
     subheading:
       "Weighing up Reply.io for sales outreach and want to know what it actually does, who it suits, and how it compares before you start? This page covers the essentials and takes you directly to Reply.io to see it for yourself.",

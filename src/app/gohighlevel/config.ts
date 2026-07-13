@@ -42,7 +42,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "GoHighLevel review 2026:",
+    h1Prefix: "GoHighLevel:",
     h1Highlight: "the all-in-one platform agencies use to replace their stack",
     subheading:
       "Looking at GoHighLevel for your agency or business and want to know what it does, who it suits, and what it costs before you start the free trial? This page covers the essentials and takes you directly to GoHighLevel to try it for yourself.",

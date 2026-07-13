@@ -41,7 +41,7 @@ export const brevoConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "Brevo review:",
+    h1Prefix: "Brevo:",
     h1Highlight: "the all-in-one email, automation and CRM platform",
     subheading:
       "Weighing up Brevo for email marketing and want to know what it actually includes, who it suits, and how its pricing works before you start? This page covers the essentials and takes you directly to Brevo to see it yourself.",

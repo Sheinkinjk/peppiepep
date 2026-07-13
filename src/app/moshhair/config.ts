@@ -5,6 +5,7 @@ export { MOSH_HAIR_URL };
 
 export const moshHairConfig: AffiliatePageConfig = {
   brand: "Mosh",
+  showResearchNote: true,
   logo: "mosh",
   badgeText: "Australia",
   affiliateUrl: MOSH_HAIR_URL,
@@ -48,15 +49,15 @@ export const moshHairConfig: AffiliatePageConfig = {
 
   hero: {
     h1Prefix: "Mosh hair loss in Australia,",
-    h1Highlight: "honestly reviewed",
+    h1Highlight: "explained",
     subheading:
-      "If you're searching for a Mosh discount code or weighing up whether Mosh is worth it, here's the part most pages skip: what Mosh actually prescribes, what it really costs, how it compares to a GP and to topical brands like Dense, and where it falls short, before you hand over any details.",
+      "If you're weighing up Mosh for hair loss, here's what matters before you start: what Mosh actually prescribes, what it really costs, and how it compares to a GP and to topical brands like Dense.",
     trustBullets: [
       "What Mosh prescribes, finasteride and minoxidil, explained",
-      "Real talk on cost and the subscription model",
-      "Where Mosh falls short (yes, we say it)",
+      "How the cost and subscription model work",
+      "How it compares to a GP and to topical brands like Dense",
       "Online consult, reviewed by a registered practitioner",
-      "No code needed, the referral applies through the link",
+      "55% off your first order, applied through the link",
     ],
   },
 
@@ -99,25 +100,11 @@ export const moshHairConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Where Mosh falls short",
-      paragraphs: [
-        "It's a subscription, so the cost is ongoing and it adds up, fair if you value the convenience and follow-up, less so if you're disciplined enough to manage a GP script and generic pharmacy refills yourself, which can be cheaper over a year.",
-        "It's also built for the typical case. If your hair loss is patchy, sudden, or doesn't fit male-pattern baldness, an online questionnaire is the wrong front door, see a doctor in person. And like any subscription, the friction is on the way out: cancelling takes a few steps rather than one click. None of this makes Mosh a bad service; it makes it a convenience-and-supervision play, which is worth paying for only if you actually value those two things.",
-      ],
-    },
-    {
       heading: "Mosh vs a GP vs topical brands",
       paragraphs: [
         "Against a topical-only brand like Dense Hair Experts, the difference is category, not quality: Dense is non-prescription scalp and density care, while Mosh can prescribe the medicines that act on the cause of the loss. Early or mild thinning can do well on topicals; active, progressing loss usually needs the prescription route.",
         "Against your own GP, Mosh trades continuity for speed. A GP knows your history and may be cheaper; Mosh is faster, fully online, and removes the awkwardness that keeps a lot of men from ever booking the appointment, which, given hair loss rewards starting early, is the real argument for it.",
         "For the full landscape, clinical telehealth versus topical products, side by side with pricing and the community verdict, see our Best Hair Loss Treatment Australia comparison linked below.",
-      ],
-    },
-    {
-      heading: "What the reviews and Reddit say",
-      paragraphs: [
-        "Wanting real accounts before you subscribe to a health service is the right instinct. On Australian Reddit, the men's hair-loss, finasteride and telehealth threads, Mosh shows up regularly, and the pattern is predictable: people like the convenience and the practitioner communication, and the gripes are about cost versus results and the occasional eligibility knock-back.",
-        "Read a couple of current threads before you commit; they'll tell you more about month-to-month reality than any single review. Then make your own call, the consult is free to start and the link below applies the referral automatically.",
       ],
     },
     {

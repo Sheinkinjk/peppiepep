@@ -37,7 +37,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     "beehiiv is the strongest platform for creators serious about growing and monetising a newsletter. The ad network, referral engine, and paid subscriptions are built in, not bolt-ons. Substack is fine to start, but beehiiv pulls ahead at scale.",
 
   hero: {
-    h1Prefix: "beehiiv Review & 14-Day Trial:",
+    h1Prefix: "beehiiv:",
     h1Highlight: "The Newsletter Platform Built for Growth",
     subheading:
       "Looking for a beehiiv discount, beehiiv vs Substack comparison, or the current beehiiv free trial offer? This page covers everything and takes you directly to beehiiv to claim the 14-day trial.",

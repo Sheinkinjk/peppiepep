@@ -60,6 +60,13 @@ export interface AffiliatePageConfig {
    */
   offer?: string;
 
+  /**
+   * Show the "Independent guide · How we research" trust line under the hero.
+   * Kept ON only for health/YMYL pages (where Google + AI scrutinise trust
+   * hardest); off elsewhere for a cleaner, more conversion-focused layout.
+   */
+  showResearchNote?: boolean;
+
   // ── Optional fields used by the premium standalone landing template ──────────
   /** Small eyebrow above the H1, e.g. "Weight-loss telehealth · Australia · 2026" */
   eyebrow?: string;

@@ -37,7 +37,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     "Durable AI is the strongest pick for service businesses that want a working site plus light back-office tools fast. The 30-second generation is real; you will still want to refine the copy and branding afterwards.",
 
   hero: {
-    h1Prefix: "Durable AI Review:",
+    h1Prefix: "Durable AI:",
     h1Highlight: "Build a Business Website With AI in 30 Seconds",
     subheading:
       "Looking for a Durable AI discount, Durable AI review, or how Durable compares to Wix, Squarespace, or other AI website builders? This page covers everything and takes you directly to the Durable platform.",

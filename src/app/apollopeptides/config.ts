@@ -5,6 +5,7 @@ export { APOLLO_URL };
 
 export const apolloPeptidesConfig: AffiliatePageConfig = {
   brand: "Apollo Peptide Sciences",
+  showResearchNote: true,
   badgeText: "Research Peptides",
   affiliateUrl: APOLLO_URL,
 

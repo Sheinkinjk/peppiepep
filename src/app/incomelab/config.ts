@@ -91,14 +91,6 @@ export const incomeLabConfig: AffiliatePageConfig = {
         "Common AI-assisted income models that move toward passive over time include digital product sales, niche content sites monetised through advertising or affiliate links, automated email sequences, and AI-powered service delivery that is systematised enough to run without continuous input. Automate income with AI is a realistic goal, but it is better framed as reducing the ongoing time cost of an income stream rather than eliminating work entirely.",
       ],
     },
-    {
-      heading: "What Reddit Says About AI Side Hustles",
-      paragraphs: [
-        'Searching "Reddit side hustle", "Reddit AI side hustle", or "Reddit learn AI" returns a large volume of community discussion ranging from beginner questions to detailed case studies from people generating significant income using AI tools. Reddit communities like r/SideHustle, r/ArtificialIntelligence, r/Entrepreneur, and various AI-specific subreddits are among the most active places where these conversations happen.',
-        "The general pattern in high-quality Reddit threads on this topic is that successful AI side hustles involve combining AI tools with a specific skill, audience, or distribution advantage, not just using AI in isolation. People who report the most consistent results tend to have identified a niche buyer and a repeatable offer, rather than experimenting broadly with AI tools without a clear direction.",
-        "Reading Reddit discussions about AI income is a useful research step, but the challenge is sorting signal from noise. Platforms like Income Lab are designed to compress that research and give you a structured path based on what is actually working, rather than requiring you to piece it together from forum threads.",
-      ],
-    },
   ],
 
   steps: [

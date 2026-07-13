@@ -5,6 +5,7 @@ export { ASCENSION_URL };
 
 export const ascensionPeptidesConfig: AffiliatePageConfig = {
   brand: "Ascension Peptides",
+  showResearchNote: true,
   badgeText: "Research Peptides",
   affiliateUrl: ASCENSION_URL,
 

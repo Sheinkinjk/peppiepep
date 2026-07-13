@@ -75,11 +75,13 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">{config.hero.subheading}</p>
 
-            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#6e7b74]">
-              <span className="font-semibold text-[#3d4b44]">Independent guide</span>
-              <span className="text-[#cdd5cf]">·</span>
-              <Link href="/how-we-research" className="nw-link !text-sm">How we research</Link>
-            </div>
+            {config.showResearchNote && (
+              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#6e7b74]">
+                <span className="font-semibold text-[#3d4b44]">Independent guide</span>
+                <span className="text-[#cdd5cf]">·</span>
+                <Link href="/how-we-research" className="nw-link !text-sm">How we research</Link>
+              </div>
+            )}
 
             {config.offer && (
               <div className="mt-7 flex items-start gap-3 rounded-2xl border border-[#0a7c42]/30 bg-[#0a7c42]/[0.08] px-5 py-4">

@@ -37,7 +37,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
     "Swipe Pages is a specialist tool: if you run paid ads and care about load speed and conversion, its AMP pages are a genuine edge. It is not meant to be a general-purpose website builder.",
 
   hero: {
-    h1Prefix: "Swipe Pages Review & Free Trial:",
+    h1Prefix: "Swipe Pages:",
     h1Highlight: "The Fastest Landing Page Builder for Paid Ads",
     subheading:
       "Looking for a Swipe Pages discount code, Swipe Pages review, or how Swipe Pages compares to Unbounce, Leadpages, or Instapage? This page covers Swipe Pages pricing, features, and alternatives, and takes you directly to the platform.",
@@ -91,14 +91,6 @@ export const swipePagesConfig: AffiliatePageConfig = {
         "The most distinctive feature of Swipe Pages is its AMP landing page capability. AMP (Accelerated Mobile Pages) is a technology standard that enables mobile web pages to load in under one second by pre-rendering them on Google's servers. For landing pages receiving traffic from Google Ads, this means users arrive on a page that is already loaded before they interact with it.",
         "The conversion impact of page load time is well-documented. A one-second delay in mobile page load time reduces conversions by approximately 20 percent. For businesses spending on paid advertising, landing page speed is not an aesthetic preference, it directly determines how much revenue a given ad budget generates. Swipe Pages builds AMP landing pages as a first-class feature, not an afterthought, which is why the platform is particularly popular among performance marketing agencies and in-house teams running high-volume Google Ads campaigns.",
         "Beyond AMP, Swipe Pages supports dynamic text replacement, the ability to show different headline text based on the search term or ad that brought a visitor to the page. This is a standard technique in professional paid search management that improves message match between ad and landing page, which increases quality score and conversion rates simultaneously.",
-      ],
-    },
-    {
-      heading: "Swipe Pages Reviews and Reddit",
-      paragraphs: [
-        'Swipe Pages is discussed in communities focused on digital marketing, paid advertising, and conversion rate optimisation. Searching "Swipe Pages Reddit", "Swipe Pages review", or "Swipe Pages vs Unbounce" surfaces discussions from marketing practitioners who have tested the platform in real ad campaign contexts.',
-        "Common themes in Swipe Pages reviews include: the AMP speed advantage being real and measurable in campaign performance, the template library covering the most common landing page use cases well, the A/B testing implementation being practical and straightforward, and the pricing being a significant advantage over Unbounce and Instapage at comparable functionality levels.",
-        "Critical feedback in Swipe Pages reviews typically focuses on the template library being smaller than Unbounce, the platform being less intuitive for users who are not primarily performance marketers, and some integration limitations compared to the most established tools. For agencies and performance marketers, the positive feedback consistently outweighs these points.",
       ],
     },
     {

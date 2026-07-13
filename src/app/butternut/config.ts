@@ -37,7 +37,7 @@ export const butternutConfig: AffiliatePageConfig = {
     "Butternut AI is the fastest way to a complete multi-page first draft from a single prompt. Treat it as a strong starting point you then edit, rather than a finished, ready-to-ship site.",
 
   hero: {
-    h1Prefix: "Butternut AI Review & Free Trial:",
+    h1Prefix: "Butternut AI:",
     h1Highlight: "Build a Website in 20 Seconds With AI",
     subheading:
       "Looking for a Butternut AI discount code, Butternut AI review, or how Butternut compares to Durable, Wix, or Squarespace? This page covers Butternut AI pricing, features, and alternatives, and takes you directly to the platform.",
@@ -83,14 +83,6 @@ export const butternutConfig: AffiliatePageConfig = {
         "Butternut AI vs Wix: Wix is a traditional drag-and-drop builder with a large template library, extensive app marketplace, and full e-commerce capabilities. Wix gives you more control and flexibility. Butternut gives you a complete website in seconds without needing to understand website construction at all. Wix is better for complex, customised sites with specific feature requirements. Butternut is better if you want to go from idea to live site in the shortest possible time.",
         "Butternut AI vs Squarespace: Squarespace is known for premium design quality and is the preferred choice for creatives, photographers, and e-commerce brands who want polished aesthetics. Squarespace requires meaningful time investment to configure and customise. Butternut is faster to launch but offers less design control. For high-design use cases or online stores, Squarespace leads. For speed and simplicity, Butternut is the stronger option.",
         "Butternut AI vs Framer: Framer is an advanced AI website builder with a strong design tool background and is popular with designers and product teams. Framer's AI features are powerful but the platform has a steeper learning curve. Butternut is more accessible to non-technical users. Framer is better if design control and animation quality are priorities. Butternut is better if ease of use and generation speed matter more.",
-      ],
-    },
-    {
-      heading: "Butternut AI Reviews and Reddit",
-      paragraphs: [
-        'Butternut AI has attracted attention in communities discussing AI tools, website builders, and solopreneur resources. Searching "Butternut AI Reddit", "Butternut AI review", or "Butternut AI vs Durable" surfaces relevant discussions from people who have tested the platform alongside alternatives.',
-        "Common themes in Butternut AI reviews include: the generation speed being genuinely impressive, the quality of AI-generated copy being useful as a starting point, the editing experience being straightforward, and the overall output requiring less cleanup than some competing generators. The platform is generally well-regarded for the use case it targets, getting a professional website live quickly without design or development skills.",
-        "Critical feedback in Butternut AI reviews tends to focus on limitations compared to full-featured builders for complex use cases, which is a deliberate product positioning choice rather than a flaw. For the audience it serves, small businesses and individuals who need a site online fast, Butternut reviews are consistently positive.",
       ],
     },
     {

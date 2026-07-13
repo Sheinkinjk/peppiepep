@@ -41,7 +41,7 @@ export const alidropConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "AliDrop review:",
+    h1Prefix: "AliDrop:",
     h1Highlight: "the AliExpress and Temu dropshipping tool, explained",
     subheading:
       "Considering AliDrop for a dropshipping store and want to know what it does, who it suits, and how pricing works before you start? This page covers the essentials and takes you directly to AliDrop.",

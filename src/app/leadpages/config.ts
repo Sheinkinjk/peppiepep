@@ -41,7 +41,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "Leadpages review:",
+    h1Prefix: "Leadpages:",
     h1Highlight: "the landing-page builder focused on capturing leads",
     subheading:
       "Considering Leadpages for landing pages and lead generation and want to know what it does, who it suits, and how pricing works before you start? This page covers the essentials and takes you directly to Leadpages.",

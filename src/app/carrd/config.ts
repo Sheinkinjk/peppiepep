@@ -38,7 +38,7 @@ export const carrdConfig: AffiliatePageConfig = {
     "Carrd is the best value in simple websites, genuinely free to start and cheap to upgrade. It is the right pick for a one-page site, portfolio, or link-in-bio, but not for a large multi-page business site.",
 
   hero: {
-    h1Prefix: "Carrd Review & Free Trial:",
+    h1Prefix: "Carrd:",
     h1Highlight: "The Simple Website Builder That Actually Works",
     subheading:
       "Looking for a Carrd discount code, Carrd Pro review, or how Carrd compares to alternatives like Squarespace or Webflow? This page covers everything and takes you directly to Carrd to get started.",

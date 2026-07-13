@@ -42,7 +42,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "Employment Hero review (Australia):",
+    h1Prefix: "Employment Hero (Australia):",
     h1Highlight: "all-in-one HR, payroll and compliance for Australian SMEs",
     subheading:
       "Looking at HR software or payroll software for your Australian business and want to know what Employment Hero does, who it suits, and how pricing works before you enquire? This page covers the essentials and takes you directly to Employment Hero.",

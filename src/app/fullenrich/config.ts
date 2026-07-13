@@ -41,7 +41,7 @@ export const fullenrichConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "FullEnrich review:",
+    h1Prefix: "FullEnrich:",
     h1Highlight: "waterfall enrichment for verified emails and mobile numbers",
     subheading:
       "Considering FullEnrich to fix patchy contact data and want to know how waterfall enrichment works, who it suits, and what it costs before you start? This page covers the essentials and takes you directly to FullEnrich to see it for yourself.",

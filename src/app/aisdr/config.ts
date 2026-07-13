@@ -41,7 +41,7 @@ export const aisdrConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "AiSDR review:",
+    h1Prefix: "AiSDR:",
     h1Highlight: "the AI sales rep that builds pipeline without hiring SDRs",
     subheading:
       "Considering an AI SDR tool to automate B2B outbound and want to know what AiSDR actually does, who it suits, and what it costs before you start? This page covers the essentials and takes you directly to AiSDR to see it for yourself.",

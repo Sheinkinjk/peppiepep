@@ -5,6 +5,7 @@ export { DENSE_URL };
 
 export const denseConfig: AffiliatePageConfig = {
   brand: "Dense Hair Experts",
+  showResearchNote: true,
   logo: "dense",
   badgeText: "Australia",
   affiliateUrl: DENSE_URL,

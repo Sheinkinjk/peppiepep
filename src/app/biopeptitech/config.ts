@@ -5,6 +5,7 @@ export { BIOPEPTITECH_URL };
 
 export const bioPeptiTechConfig: AffiliatePageConfig = {
   brand: "BioPeptiTech",
+  showResearchNote: true,
   badgeText: "Research Peptides",
   affiliateUrl: BIOPEPTITECH_URL,
 
