@@ -190,6 +190,21 @@ export const incomeLabConfig: AffiliatePageConfig = {
       label: "All Guides & Comparisons",
       desc: "Independent comparison guides across creator tools, health, and business categories.",
     },
+    {
+      href: "https://incomelab.me/ai-side-hustles",
+      label: "IncomeLab: 30 AI side hustle playbooks",
+      desc: "The full library of AI income streams with steps, tools, and realistic income ranges.",
+    },
+    {
+      href: "https://incomelab.me/guides/complete-guide-to-ai-income-2026",
+      label: "The complete guide to AI income in 2026",
+      desc: "Every viable AI income model ranked, plus the 30-day path from zero to first income.",
+    },
+    {
+      href: "https://incomelab.me/make-money-online",
+      label: "How to make money online with AI",
+      desc: "Practical, current methods for earning online with AI tools.",
+    },
   ],
 
   ctas: {
