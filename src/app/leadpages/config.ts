@@ -58,7 +58,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
     {
       heading: "Access Leadpages",
       paragraphs: [
-        "This page is for marketers and small businesses weighing up Leadpages before committing: what it does, how the templates and A/B testing work, and how pricing is structured. Instead of reading through a stack of review sites, it lays out what matters and takes you straight to Leadpages.",
+        "Most people land here deciding between Leadpages and a handful of alternatives. The essentials in plain terms: what it does, how the templates and A/B testing work, and how the pricing is structured. Instead of reading through a stack of review sites, it lays out what matters and takes you straight to Leadpages.",
         "Each button here opens Leadpages directly; there is no form to fill in before you go.",
       ],
       hasCta: true,

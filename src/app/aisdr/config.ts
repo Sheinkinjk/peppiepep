@@ -57,7 +57,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     {
       heading: "Access AiSDR",
       paragraphs: [
-        "This page is built for revenue teams and founders weighing up an AI SDR before committing: what AiSDR automates, how the multi-channel outreach works, and how it fits a HubSpot or Salesforce setup. Rather than trawling review sites for the details, it sets out what matters and sends you straight to AiSDR to see the platform yourself.",
+        "If you're a founder or revenue lead sizing up an AI SDR, three things decide it: what AiSDR actually automates, how its multi-channel outreach runs, and whether it slots into your HubSpot or Salesforce setup. Rather than trawling review sites for the details, it sets out what matters and sends you straight to AiSDR to see the platform yourself.",
         "Use any button here to reach AiSDR directly; you do not need to enter anything on this page first.",
       ],
       hasCta: true,

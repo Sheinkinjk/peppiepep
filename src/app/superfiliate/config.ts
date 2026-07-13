@@ -58,7 +58,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
     {
       heading: "Access Superfiliate",
       paragraphs: [
-        "This page is for brand and marketing teams weighing up Superfiliate to run their affiliate, referral and creator programs: what it does, how the creator-led model works, and how to get pricing. Rather than gathering the details from scattered reviews, it sets out the essentials and links straight through to Superfiliate.",
+        "If your brand is looking at Superfiliate to run its affiliate, referral and creator programs, here's what actually matters: what it does, how the creator-led model works, and how to get pricing. Rather than gathering the details from scattered reviews, it sets out the essentials and links straight through to Superfiliate.",
         "Any button on the page takes you straight to Superfiliate, with no details needed here first.",
       ],
       hasCta: true,

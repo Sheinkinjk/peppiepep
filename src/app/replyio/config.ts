@@ -58,7 +58,7 @@ export const replyioConfig: AffiliatePageConfig = {
     {
       heading: "Access Reply.io",
       paragraphs: [
-        "This page is built for sales teams and founders weighing up a sales engagement platform before committing: what Reply.io automates, how the multichannel sequences and AI SDR agents work, and how it fits a HubSpot, Salesforce or Pipedrive setup. Instead of digging through review sites for the details, it covers what counts and sends you straight to Reply.io to see it for yourself.",
+        "Sales teams comparing engagement platforms tend to ask the same things, so here they are for Reply.io: what it automates, how the multichannel sequences and AI SDR agents work, and how it fits a HubSpot, Salesforce or Pipedrive setup. Instead of digging through review sites for the details, it covers what counts and sends you straight to Reply.io to see it for yourself.",
         "Use any button to reach Reply.io directly; nothing needs entering on this page beforehand.",
       ],
       hasCta: true,

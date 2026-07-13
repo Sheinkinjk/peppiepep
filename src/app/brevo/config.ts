@@ -58,7 +58,7 @@ export const brevoConfig: AffiliatePageConfig = {
     {
       heading: "Access Brevo",
       paragraphs: [
-        "This page is for businesses and marketers weighing up Brevo before committing: what the platform includes, how the email-volume pricing works, and who it suits. Instead of assembling the answer from a dozen review sites, it covers what counts and links straight through to Brevo.",
+        "Brevo comes up a lot when marketers compare email platforms, and the practical questions are always the same: what's included, how the send-volume pricing works, and who it genuinely suits. Instead of assembling the answer from a dozen review sites, it covers what counts and links straight through to Brevo.",
         "Every button on the page goes straight to Brevo; nothing needs completing here beforehand.",
       ],
       hasCta: true,

@@ -58,7 +58,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     {
       heading: "Access Employment Hero",
       paragraphs: [
-        "This page is built for Australian business owners and HR leads weighing up Employment Hero: what it covers, how the payroll and compliance side works, and why pricing is quoted rather than listed. Instead of collecting the details from a run of review sites, it sets out the essentials and links straight through to Employment Hero to explore yourself.",
+        "For an Australian employer comparing Employment Hero with the alternatives, a few things matter most: what the platform covers, how the payroll and compliance side holds up, and why the pricing is quoted per business rather than published. Instead of collecting the details from a run of review sites, it sets out the essentials and links straight through to Employment Hero to explore yourself.",
         "Any button on the page takes you to Employment Hero directly, with no details needed here beforehand.",
       ],
       hasCta: true,
