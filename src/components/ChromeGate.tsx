@@ -101,6 +101,10 @@ const STANDALONE_ROUTES = [
   "/survicate",
   // $799 Blueprint (migrated to the light ConsumerShell theme)
   "/referral-blueprint",
+  // Legal + contact (migrated to the consumer shell so the footer doesn't jump themes)
+  "/privacy",
+  "/terms",
+  "/contact",
 ];
 
 export function ChromeGate({ children }: { children: React.ReactNode }) {
