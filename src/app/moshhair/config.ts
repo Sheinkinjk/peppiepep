@@ -109,7 +109,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       heading: "Mosh Codes & Offers",
       paragraphs: [
         'Searches for "Mosh hair discount code", "Mosh promo code", "Mosh coupon", and "Mosh sale" reflect the number of Australians who want to access Mosh at the best available price before committing to a subscription.',
-        "Mosh does not always maintain a publicly listed promotional code. The most consistent way to access a current Mosh offer is through a referral or partner link - which is exactly what this page provides. Our link applies the referral at the URL level, meaning no manual code entry is required.",
+        "Mosh does not always maintain a publicly listed promotional code. The most consistent way to access a current Mosh offer is through a referral or partner link, which is exactly what this page provides. Our link applies the referral at the URL level, meaning no manual code entry is required.",
         "If you have been searching for a Mosh hair discount, a Mosh discount Australia, or the best way to get started with Mosh, clicking through this page is the straightforward path.",
       ],
     },
@@ -169,19 +169,19 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Mosh cost for hair loss in Australia?",
-      a: "Mosh runs on a subscription model and the cost depends on the treatment plan determined through your online consultation - finasteride only, minoxidil only, or a combination. Pricing covers the treatment, practitioner oversight, and home delivery, and is shown transparently in the consultation flow before you commit. This page does not provide medical advice.",
+      a: "Mosh runs on a subscription model and the cost depends on the treatment plan determined through your online consultation: finasteride only, minoxidil only, or a combination. Pricing covers the treatment, practitioner oversight, and home delivery, and is shown transparently in the consultation flow before you commit. This page does not provide medical advice.",
     },
     {
       q: "Does Mosh prescribe finasteride and minoxidil?",
-      a: "Mosh can facilitate access to finasteride and minoxidil where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Finasteride and oral minoxidil are prescription-only in Australia; topical minoxidil is available over the counter. Treatment is decided individually - nothing is prescribed automatically. This page does not constitute medical advice.",
+      a: "Mosh can facilitate access to finasteride and minoxidil where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Finasteride and oral minoxidil are prescription-only in Australia; topical minoxidil is available over the counter. Treatment is decided individually; nothing is prescribed automatically. This page does not constitute medical advice.",
     },
     {
       q: "How long does Mosh take to work for hair loss?",
       a: "Results from evidence-based hair loss treatments such as finasteride and minoxidil typically take several months to become noticeable, with most clinical guidance pointing to 3-6 months for early signs and up to 12 months for fuller results. Outcomes vary by individual and depend on consistency, the stage of hair loss, and the specific treatment. Mosh provides structured follow-up as part of its programme. This page does not provide medical advice.",
     },
     {
-      q: "Mosh vs Dense Hair Experts - which is better for hair loss?",
-      a: "They serve different purposes. Mosh is a telehealth platform that can prescribe finasteride and minoxidil - treatments that target the underlying cause of male pattern baldness. Dense Hair Experts is a topical hair care brand focused on density and scalp health, without prescription ingredients. For noticeable or progressive hair loss, a telehealth provider like Mosh is the stronger starting point; topical products can complement a routine. See our Best Hair Loss Treatment Australia comparison for a full breakdown.",
+      q: "Mosh vs Dense Hair Experts: which is better for hair loss?",
+      a: "They serve different purposes. Mosh is a telehealth platform that can prescribe finasteride and minoxidil, treatments that target the underlying cause of male pattern baldness. Dense Hair Experts is a topical hair care brand focused on density and scalp health, without prescription ingredients. For noticeable or progressive hair loss, a telehealth provider like Mosh is the stronger starting point; topical products can complement a routine. See our Best Hair Loss Treatment Australia comparison for a full breakdown.",
     },
     {
       q: "How do I access the Mosh referral link?",

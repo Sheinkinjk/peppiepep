@@ -95,7 +95,7 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       num: "01",
       heading: "Click through to Moshy",
-      body: "Use any link or button on this page to reach the official Moshy eligibility page at getmoshy.com.au. The referral is applied automatically - no code required.",
+      body: "Use any link or button on this page to reach the official Moshy eligibility page at getmoshy.com.au. The referral is applied automatically, no code required.",
     },
     {
       num: "02",
@@ -105,7 +105,7 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       num: "03",
       heading: "Practitioner review",
-      body: "Moshy's clinical team reviews your submission individually. Not all submissions proceed - eligibility depends on each person's health profile and what the practitioners determine is appropriate.",
+      body: "Moshy's clinical team reviews your submission individually. Not all submissions proceed; eligibility depends on each person's health profile and what the practitioners determine is appropriate.",
     },
     {
       num: "04",
@@ -129,11 +129,11 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "Does Moshy have a referral code?",
-      a: "Yes, Moshy operates through referral links that give users direct access to their eligibility flow and any associated offer. This page provides a personalised Moshy referral link. Click any button on this page to use it - the referral is tracked through the link automatically.",
+      a: "Yes, Moshy operates through referral links that give users direct access to their eligibility flow and any associated offer. This page provides a personalised Moshy referral link. Click any button on this page to use it, and the referral is tracked through the link automatically.",
     },
     {
       q: "How do I use a Moshy referral link?",
-      a: "Simply click any button on this page. You will be taken directly to the Moshy eligibility page where you can complete the online questionnaire. No code needs to be entered manually - the referral is tracked through the link itself.",
+      a: "Simply click any button on this page. You will be taken directly to the Moshy eligibility page where you can complete the online questionnaire. No code needs to be entered manually; the referral is tracked through the link itself.",
     },
     {
       q: "What's the cheapest way to start Moshy?",
@@ -153,7 +153,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "How does Moshy compare to a GP for weight loss?",
-      a: "Moshy offers an online alternative to booking an in-person GP appointment for weight management. The clinical process is similar - health assessment, practitioner review, and treatment plan if appropriate - but is conducted entirely online. Some people prefer the convenience of online telehealth; others may prefer the ongoing relationship of a regular GP. Both pathways are valid and the right choice depends on individual circumstances.",
+      a: "Moshy offers an online alternative to booking an in-person GP appointment for weight management. The clinical process is similar (health assessment, practitioner review, and treatment plan if appropriate) but is conducted entirely online. Some people prefer the convenience of online telehealth; others may prefer the ongoing relationship of a regular GP. Both pathways are valid and the right choice depends on individual circumstances.",
     },
   ],
 
