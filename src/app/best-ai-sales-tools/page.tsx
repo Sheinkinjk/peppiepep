@@ -98,8 +98,8 @@ const webPageSchema = {
 
 // ─── Palette ──────────────────────────────────────────────────────────────────
 
-const CYAN    = "#0a7c42";
-const CYAN_LT = "#0a7c42";
+const ACCENT    = "#0a7c42";
+const ACCENT_LT = "#0a7c42";
 
 // ─── Comparison data ──────────────────────────────────────────────────────────
 
@@ -108,7 +108,7 @@ const tools = [
     name: "GoHighLevel",
     logo: "gohighlevel",
     badge: "Best All-in-One Platform",
-    badgeColor: CYAN_LT,
+    badgeColor: ACCENT_LT,
     href: GOHIGHLEVEL_URL,
     internalHref: "/gohighlevel",
     tagline: "AI-powered CRM, marketing and sales in one platform",
@@ -243,7 +243,7 @@ export default function BestAiSalesToolsPage() {
           <p className="nw-kicker mb-4">AI Sales & Automation</p>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
             Best AI Sales Tools in 2026:{" "}
-            <span style={{ color: CYAN_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
+            <span style={{ color: ACCENT_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             We compared four of the strongest AI sales and automation tools on what they actually do, who they suit, and what they cost. Each sits at a different point in the sales stack, so the right pick depends on your bottleneck. Our verdict is below.
@@ -259,7 +259,7 @@ export default function BestAiSalesToolsPage() {
           <a
             {...aff(GOHIGHLEVEL_URL)}
             className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
-            style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
+            style={{ background: ACCENT, boxShadow: `0 8px 32px ${ACCENT}30` }}
           >
             Try GoHighLevel Free
             <ArrowRight className="h-4 w-4" />
@@ -278,7 +278,7 @@ export default function BestAiSalesToolsPage() {
           <a
             {...aff(GOHIGHLEVEL_URL)}
             className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
-            style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
+            style={{ background: ACCENT, boxShadow: `0 8px 32px ${ACCENT}30` }}
           >
             Start GoHighLevel Free
             <ExternalLink className="h-3.5 w-3.5" />
@@ -314,7 +314,7 @@ export default function BestAiSalesToolsPage() {
                 <a
                   {...aff(t.href)}
                   className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-semibold text-white transition-all hover:opacity-90"
-                  style={{ background: CYAN }}
+                  style={{ background: ACCENT }}
                 >
                   Try {t.name}
                   <ExternalLink className="h-3 w-3" />
@@ -338,11 +338,11 @@ export default function BestAiSalesToolsPage() {
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: CYAN_LT }}>Strengths</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: ACCENT_LT }}>Strengths</p>
                   <ul className="space-y-2">
                     {t.pros.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
+                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: ACCENT_LT }} />
                         {item}
                       </li>
                     ))}
@@ -383,7 +383,7 @@ export default function BestAiSalesToolsPage() {
                 <tr>
                   <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Feature</th>
                   {["GoHighLevel", "AiSDR"].map((col) => (
-                    <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: CYAN_LT }}>
+                    <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: ACCENT_LT }}>
                       {col}
                     </th>
                   ))}
@@ -463,7 +463,7 @@ export default function BestAiSalesToolsPage() {
         <section className="border-t border-[#0a7c42]/10 pt-14 sm:pt-16 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">
             Ready to Add AI to Your Sales?{" "}
-            <span style={{ color: CYAN_LT }}>Start with GoHighLevel.</span>
+            <span style={{ color: ACCENT_LT }}>Start with GoHighLevel.</span>
           </h2>
           <p className="text-[#3d4b44] text-sm max-w-md mx-auto mb-7 leading-relaxed">
             14-day free trial, no credit card. Or read the full reviews to compare GoHighLevel, AiSDR, Reply.io and FullEnrich in detail.
@@ -472,7 +472,7 @@ export default function BestAiSalesToolsPage() {
             <a
               {...aff(GOHIGHLEVEL_URL)}
               className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
-              style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
+              style={{ background: ACCENT, boxShadow: `0 8px 32px ${ACCENT}30` }}
             >
               Try GoHighLevel Free
               <ArrowRight className="h-4 w-4" />
@@ -480,7 +480,7 @@ export default function BestAiSalesToolsPage() {
             <a
               {...aff(AISDR_URL)}
               className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
-              style={{ borderColor: `${CYAN}30` }}
+              style={{ borderColor: `${ACCENT}30` }}
             >
               See AiSDR
             </a>
@@ -503,7 +503,7 @@ export default function BestAiSalesToolsPage() {
                   href={href}
                   className="flex items-center gap-2 text-sm text-[#3d4b44] hover:text-[#2b362f] transition-colors"
                 >
-                  <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" style={{ color: CYAN }} />
+                  <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" style={{ color: ACCENT }} />
                   {label}
                 </Link>
               ))}
