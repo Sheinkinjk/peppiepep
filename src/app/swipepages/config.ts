@@ -129,7 +129,6 @@ export const swipePagesConfig: AffiliatePageConfig = {
     "Covers Swipe Pages pricing, AMP capabilities, and A/B testing clearly",
     "Detailed comparison with Unbounce, Leadpages, Instapage, and ClickFunnels",
     "Explains AMP landing pages and why page speed matters for ad campaign ROI",
-    "Click any button on this page to go straight to Swipe Pages",
   ],
 
   faqs: [

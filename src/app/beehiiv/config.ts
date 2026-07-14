@@ -126,7 +126,6 @@ export const beehiivConfig: AffiliatePageConfig = {
     "Covers beehiiv pricing, free plan, and paid tiers clearly",
     "Detailed beehiiv vs Substack and beehiiv vs ConvertKit comparison",
     "Covers beehiiv monetization including the ad network and boosts",
-    "Click any button on this page to go directly to beehiiv",
   ],
 
   faqs: [

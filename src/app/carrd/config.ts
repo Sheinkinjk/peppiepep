@@ -120,7 +120,6 @@ export const carrdConfig: AffiliatePageConfig = {
     "Covers Carrd pricing, free plan, and Pro tiers honestly",
     "Compares Carrd vs Squarespace, Webflow, Wix, and Linktree",
     "Explains exactly what Carrd is and is not suited for",
-    "Click any button on this page to go straight to Carrd",
   ],
 
   faqs: [

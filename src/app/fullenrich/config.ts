@@ -127,7 +127,6 @@ export const fullenrichConfig: AffiliatePageConfig = {
     "Covers who it suits: sales, RevOps and lead-gen teams",
     "Sets out pricing as a guide, not a permanent fact",
     "Highlights mobile-number coverage for cold calling",
-    "Click any button on this page to go straight to FullEnrich",
   ],
 
   faqs: [

@@ -118,7 +118,6 @@ export const incomeLabConfig: AffiliatePageConfig = {
     "Covers the top AI side hustle ideas and strategies for 2026",
     "Explains AI tools to make money without overpromising results",
     "Covers AI passive income and automation in practical terms",
-    "Click any button on this page to go directly to Income Lab",
   ],
 
   faqs: [

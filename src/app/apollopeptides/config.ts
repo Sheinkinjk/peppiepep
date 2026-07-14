@@ -121,7 +121,6 @@ export const apolloPeptidesConfig: AffiliatePageConfig = {
     "Covers key compounds including Semaglutide, CJC-1295, GHK-Cu, and Retatrutide",
     "Explains why Apollo Peptide Sciences is commonly referenced for research peptide quality",
     "Addresses community searches for peptide supplier discounts and research peptide deals",
-    "Click any button on this page to go straight to the Apollo Peptide Sciences store",
   ],
 
   faqs: [

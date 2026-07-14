@@ -127,7 +127,6 @@ export const ascensionPeptidesConfig: AffiliatePageConfig = {
     "Covers key research areas including metabolic, hormonal, and anti-aging compounds",
     "Explains why researchers choose Ascension Peptides for lab-grade research peptides",
     "Addresses community searches for peptide supplier discounts and research peptides deals",
-    "Click any button on this page to go straight to Ascension Peptides",
   ],
 
   faqs: [

@@ -101,7 +101,6 @@ export const brevoConfig: AffiliatePageConfig = {
     "Covers who it suits: small and mid-sized businesses",
     "Explains the email-volume pricing model, hedged as a guide",
     "Sets out how to judge value against list-size pricing",
-    "Click any button on this page to go straight to Brevo",
   ],
 
   faqs: [

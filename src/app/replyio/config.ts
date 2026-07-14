@@ -127,7 +127,6 @@ export const replyioConfig: AffiliatePageConfig = {
     "Covers who it suits: SMB and mid-market sales teams",
     "Sets out pricing as a guide, not a permanent fact",
     "Describes the multichannel outbound motion in plain terms",
-    "Click any button on this page to go straight to Reply.io",
   ],
 
   faqs: [

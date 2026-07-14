@@ -127,7 +127,6 @@ export const bioPeptiTechConfig: AffiliatePageConfig = {
     "Covers research fields including longevity, metabolic, and hormone signalling",
     "Explains why researchers reference BioPeptiTech for lab-grade research peptides",
     "Addresses searches for peptide supplier discounts and peptides sale online",
-    "Click any button on this page to go straight to the BioPeptiTech store",
   ],
 
   faqs: [

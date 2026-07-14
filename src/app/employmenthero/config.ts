@@ -127,7 +127,6 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     "Covers who it suits: Australian SMEs",
     "Is honest that pricing is not published and is quoted per business",
     "Describes the Australian compliance and payroll fit in plain terms",
-    "Click any button on this page to go straight to Employment Hero",
   ],
 
   faqs: [

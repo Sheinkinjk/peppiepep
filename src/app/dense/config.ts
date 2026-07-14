@@ -106,7 +106,6 @@ export const denseConfig: AffiliatePageConfig = {
     "Quick, single-click access to the current Dense affiliate link",
     "No need to search for a Dense promo code that may be expired",
     "Takes you directly to the official Dense Hair Experts store",
-    "Click any button on this page to go directly to Dense Hair Experts",
     "Built for Australians searching for current Dense offers and deals",
   ],
 

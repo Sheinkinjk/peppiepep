@@ -94,7 +94,6 @@ export const alidropConfig: AffiliatePageConfig = {
     "Covers who it suits: dropshipping store builders",
     "Honest about dropshipping's costs and risks",
     "Sets out pricing as a guide, not a permanent fact",
-    "Click any button on this page to go straight to AliDrop",
   ],
 
   faqs: [

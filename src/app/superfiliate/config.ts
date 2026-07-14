@@ -94,7 +94,6 @@ export const superfiliateConfig: AffiliatePageConfig = {
     "Makes clear it is for brands, not individual affiliates",
     "Covers who it suits: e-commerce and DTC brands",
     "Explains that pricing is quoted per brand, not public",
-    "Click any button on this page to go straight to Superfiliate",
   ],
 
   faqs: [

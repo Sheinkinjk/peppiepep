@@ -94,7 +94,6 @@ export const leadpagesConfig: AffiliatePageConfig = {
     "Covers who it suits: marketers capturing leads",
     "Highlights the A/B testing and conversion focus",
     "Sets out pricing as a guide, not a permanent fact",
-    "Click any button on this page to go straight to Leadpages",
   ],
 
   faqs: [

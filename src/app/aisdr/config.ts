@@ -126,7 +126,6 @@ export const aisdrConfig: AffiliatePageConfig = {
     "Covers who it suits: revenue teams and founders",
     "Sets out pricing as a guide, not a permanent fact",
     "Describes the multi-channel outbound motion in plain terms",
-    "Click any button on this page to go straight to AiSDR",
   ],
 
   faqs: [

@@ -127,7 +127,6 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     "Covers who it suits: agencies and SMBs",
     "Sets out pricing as a guide, not a permanent fact",
     "Describes the AI and automation features in plain terms",
-    "Click any button on this page to go straight to GoHighLevel",
   ],
 
   faqs: [

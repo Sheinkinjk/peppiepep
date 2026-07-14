@@ -120,7 +120,6 @@ export const butternutConfig: AffiliatePageConfig = {
     "Covers Butternut AI pricing, free generation, and paid plans clearly",
     "Detailed Butternut AI vs Durable, Wix, Squarespace, and Framer comparison",
     "Explains exactly who Butternut AI is and is not suited for",
-    "Click any button on this page to go straight to Butternut AI",
   ],
 
   faqs: [
