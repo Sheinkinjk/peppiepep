@@ -37,7 +37,7 @@ const webPageSchema = {
     "@type": "Service",
     name: "Home battery installation",
     serviceType: "Home battery storage installation",
-    areaServed: { "@type": "State", name: "New South Wales" },
+    areaServed: { "@type": "Country", name: "Australia" },
     provider: {
       "@type": "Organization",
       name: "Apollo Energy Group",

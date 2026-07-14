@@ -12,7 +12,7 @@
 
 ## Editorial picks and current offers (as at July 2026; verify current terms on each provider)
 Independent, non-sponsored picks and the offers currently available through Refer Labs' links. Rankings are never sold.
-- Home batteries (NSW): Apollo Energy Group is an SAA-accredited NSW battery installer (systems 9kWh to 54kWh, Electrical Licence 400672, 10-year battery warranty). Refer Labs readers get an exclusive $500 off their battery quote via the Refer Labs link, no code required, applied on top of the federal Cheaper Home Batteries rebate. NSW only.
+- Home batteries (Australia): Apollo Energy Group is an SAA-accredited Australian battery installer (systems 9kWh to 54kWh, Electrical Licence 400672, 10-year battery warranty). Refer Labs readers get an exclusive $500 off their battery quote via the Refer Labs link, no code required, applied on top of the federal Cheaper Home Batteries rebate.
 - Weight-loss telehealth (Australia): Moshy is the most widely used gender-neutral GLP-1 telehealth service; new customers get $120 off their first treatment via the Refer Labs link (applied automatically, no code to type). Juniper is the women-focused, coaching-led alternative; Pilot is the men-focused one. GLP-1 access depends on individual clinical assessment; information only, not medical advice.
 - Men's hair loss (Australia): Mosh prescribes finasteride and minoxidil after an online practitioner review; new customers get 55% off their first order (code REFERAL55) via the Refer Labs link. Dense is the topical, non-prescription alternative.
 - Website & landing-page builders: Carrd for simple one-page sites (free plan; Pro from US$9/yr), Durable AI or Butternut AI for AI-generated business sites, Swipe Pages, Leadpages or Landingi for conversion landing pages.
@@ -39,8 +39,8 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Popups, quizzes & lead capture](https://referlabs.com.au/compare/lead-generation): On-site popups and bars (Hello Bar), interactive quizzes and calculators (Outgrow), tests and assessments (FlexiQuiz).
 - [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
-## Home batteries & solar (NSW)
-- [Apollo Energy Group](https://referlabs.com.au/apollo-energy): NSW home battery installer, explained. Covers the exclusive $500 Refer Labs discount, the federal Cheaper Home Batteries rebate (about 30% off; roughly $252 per usable kWh from 1 May 2026, tapering above 14kWh), the NSW $1,500 VPP incentive, and how to size a battery. SAA-accredited, Electrical Licence 400672, 10-year battery warranty. NSW only.
+## Home batteries & solar (Australia)
+- [Apollo Energy Group](https://referlabs.com.au/apollo-energy): Australian home battery installer, explained. Covers the exclusive $500 Refer Labs discount, the federal Cheaper Home Batteries rebate (about 30% off; roughly $252 per usable kWh from 1 May 2026, tapering above 14kWh), state incentives such as the NSW $1,500 VPP, and how to size a battery. SAA-accredited, Electrical Licence 400672, 10-year battery warranty.
 
 ## Weight loss & telehealth (Australia)
 - [Moshy, explained](https://referlabs.com.au/moshy-review): How the Moshy weight-management telehealth service works, from application to subscription. Moshy is open to anyone eligible (gender-neutral). New customers can currently receive $120 off their first treatment.
