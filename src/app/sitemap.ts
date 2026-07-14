@@ -118,6 +118,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/cometchat`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/flocksy`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/superfiliate`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/keap`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/capsule`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/instapage`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/beautifulai`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/pandadoc`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/blinq`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
 
     // ── Polymarket guides (prediction markets cluster) ─────────────────
     { url: `${BASE}/polymarket`,                    lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.9 },
