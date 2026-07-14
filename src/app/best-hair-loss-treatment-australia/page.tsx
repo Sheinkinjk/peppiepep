@@ -218,14 +218,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
-            {["Australian providers", "Clinical vs topical breakdown", "Pricing & access compared"].map((tag) => (
-              <span key={tag} className="flex items-center gap-2 text-sm text-[#0a7c42]/80">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0a7c42] flex-shrink-0" />
-                {tag}
-              </span>
-            ))}
-          </div>
           <p className="text-[#9aa39c] text-xs mb-8">
             This page contains affiliate links. We may earn a commission if you purchase through them. This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.
           </p>

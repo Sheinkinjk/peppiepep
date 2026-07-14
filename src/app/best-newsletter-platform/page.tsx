@@ -223,14 +223,6 @@ export default function BestNewsletterPlatformPage() {
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             We compared the three leading newsletter platforms on free plans, monetisation, growth tools, and what the community actually recommends. Our verdict is below.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
-            {["Where each one wins", "Free plan breakdown", "No sponsored rankings"].map((tag) => (
-              <span key={tag} className="flex items-center gap-2 text-sm text-[#0a7c42]/80">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0a7c42] flex-shrink-0" />
-                {tag}
-              </span>
-            ))}
-          </div>
           <a
             {...aff(BEEHIIV_URL)}
             className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
