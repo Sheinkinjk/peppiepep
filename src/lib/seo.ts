@@ -444,6 +444,13 @@ export const seoConfig = {
     url: `${SITE_URL}/flocksy`,
     keywords: ["flocksy pricing", "flocksy referral link", "flocksy review", "unlimited graphic design", "unlimited design service", "design subscription", "creative subscription"],
   },
+  apolloEnergy: {
+    title: "Apollo Energy Group: NSW Home Battery Systems & $500 Off (2026)",
+    description:
+      "Get $500 off your home battery quote through Refer Labs. Apollo Energy Group is an SAA-accredited NSW battery installer (9kWh to 54kWh), with the federal Cheaper Home Batteries rebate applied. How the offer, the rebate and the process actually work.",
+    url: `${SITE_URL}/apollo-energy`,
+    keywords: ["apollo energy group", "apollo energy group review", "home battery nsw", "solar battery nsw", "home battery rebate nsw", "cheaper home batteries program", "battery installer sydney", "solar battery installer nsw", "home battery discount", "battery rebate 2026"],
+  },
   keap: {
     title: "Keap Referral Link & Pricing 2026: Small-Business CRM & Automation | Refer Labs",
     description:

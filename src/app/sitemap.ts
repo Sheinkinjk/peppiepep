@@ -49,6 +49,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/partner-activation`,     lastModified: STABLE, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/services/product-distribution`,   lastModified: STABLE, changeFrequency: 'monthly', priority: 0.68 },
 
+    // ── Apollo Energy (VIP money page) ────────────────────────────────
+    { url: `${BASE}/apollo-energy`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.95 },
+
     // ── Health affiliate pages (redesigned this release) ───────────────
     { url: `${BASE}/moshy`,             lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.92 },
     { url: `${BASE}/moshy-review`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },

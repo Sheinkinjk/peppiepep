@@ -167,3 +167,6 @@ export const BEAUTIFULAI_URL = "https://beautifulai.partnerlinks.io/e7xl7f91vjja
 export const PANDADOC_URL = "https://pandadoc.partnerlinks.io/kc9kruhmgrfy";
 // Blinq
 export const BLINQ_URL = "https://partners.blinq.me/vpsdocfxga1y";
+
+// Apollo Energy Group: NSW home battery installer. Exclusive Refer Labs landing ($500 off).
+export const APOLLO_ENERGY_URL = "https://apolloenergygroup.com.au/referlabs";

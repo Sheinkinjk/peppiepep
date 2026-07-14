@@ -20,7 +20,7 @@ import {
 const picks = [
   { logo: "mosh", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: finasteride and minoxidil after a practitioner review. New customers get 55% off their first order via our link.", href: "/moshhair" },
   { logo: "beehiiv", name: "beehiiv", cat: "Newsletters", verdict: "Built for creators serious about growth, with a genuinely useful free plan and no revenue cut.", href: "/best-newsletter-platform" },
-  { logo: "carrd", name: "Carrd", cat: "Website builders", verdict: "The simplest, cheapest way to put a sharp one-page site online, free to start.", href: "/carrd-vs-durable" },
+  { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries (NSW)", verdict: "NSW home battery specialists, SAA-accredited and sized from your real usage. $500 off your quote through our link, on top of the federal rebate.", href: "/apollo-energy" },
 ];
 
 // Category hubs live in the header nav now; kept here only for the ItemList schema.

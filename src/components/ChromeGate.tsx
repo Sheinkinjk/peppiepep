@@ -99,6 +99,8 @@ const STANDALONE_ROUTES = [
   "/elevenlabs",
   "/wing-assistant",
   "/survicate",
+  // Apollo Energy (VIP standalone money page, own bespoke shell)
+  "/apollo-energy",
   // $799 Blueprint (migrated to the light ConsumerShell theme)
   "/referral-blueprint",
   // Legal + contact (migrated to the consumer shell so the footer doesn't jump themes)
