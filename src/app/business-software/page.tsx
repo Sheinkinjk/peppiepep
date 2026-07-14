@@ -28,16 +28,21 @@ const hubs = [
 
 const tools = [
   { href: "/nutshell", label: "Nutshell", desc: "Easy sales CRM with email marketing built in." },
+  { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
   { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
   { href: "/cloudtalk", label: "CloudTalk", desc: "AI call-centre and business phone for sales and support." },
   { href: "/dext", label: "Dext", desc: "Bookkeeping automation that syncs to Xero and QuickBooks." },
   { href: "/lindy", label: "Lindy", desc: "AI assistant that automates inbox, scheduling and CRM." },
   { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
   { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
+  { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams actually keep using." },
   { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with powerful automation and a CRM." },
   { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
+  { href: "/pandadoc", label: "PandaDoc", desc: "Proposals, contracts and e-signatures in one tool." },
+  { href: "/blinq", label: "Blinq", desc: "Digital business cards shared by QR, link or NFC." },
   { href: "/databox", label: "Databox", desc: "KPI dashboards that pull 130+ data sources into one view." },
   { href: "/meetgeek", label: "MeetGeek", desc: "AI meeting notes for Zoom, Meet and Teams calls." },
+  { href: "/beautifulai", label: "Beautiful.ai", desc: "AI presentation software that designs slides for you." },
   { href: "/cometchat", label: "CometChat", desc: "Developer SDKs to add in-app chat, voice and video." },
   { href: "/flocksy", label: "Flocksy", desc: "Unlimited graphic design from a dedicated team, flat fee." },
 ];

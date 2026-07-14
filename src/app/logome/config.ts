@@ -56,6 +56,7 @@ export const logomeConfig: AffiliatePageConfig = {
     { q: "Is an AI logo good enough for a real business?", a: "For most startups and small businesses, yes, especially because Logome outputs a coordinated brand kit, not just a mark. Established brands needing bespoke, hand-crafted design will still want a human designer, but as a fast, affordable starting identity it works well." },
   ],
   relatedLinks: [
+    { href: "/beautifulai", label: "Beautiful.ai", desc: "AI presentation software that designs your slides." },
     { href: "/compare/ai-tools", label: "Compare AI tools", desc: "See Logome next to the other AI tools." },
     { href: "/best-website-builder", label: "Best website builder", desc: "Put your new brand online with a website builder." },
     { href: "/carrd", label: "Carrd", desc: "A simple, cheap way to publish a one-page site." },

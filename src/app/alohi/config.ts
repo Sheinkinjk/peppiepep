@@ -56,6 +56,7 @@ export const alohiConfig: AffiliatePageConfig = {
     { q: "Does Alohi work in Australia?", a: "Yes, both Sign.Plus and Fax.Plus are available worldwide, including Australia. Pricing is shown in your local currency where supported; confirm any region-specific details on the provider's site." },
   ],
   relatedLinks: [
+    { href: "/pandadoc", label: "PandaDoc", desc: "Proposals and contracts with built-in e-signatures." },
     { href: "/business-software", label: "Business software", desc: "Browse more tools for running a business." },
     { href: "/dext", label: "Dext", desc: "Automate receipts and paperwork for your books." },
   ],

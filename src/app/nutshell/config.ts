@@ -73,6 +73,7 @@ export const nutshellConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
+    { href: "/keap", label: "Keap", desc: "A heavier CRM with sales and marketing automation built in." },
     { href: "/pipedrive", label: "Pipedrive", desc: "A visual, pipeline-first CRM alternative." },
   ],
   ctas: {
