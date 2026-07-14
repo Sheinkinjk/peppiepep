@@ -58,19 +58,20 @@ export const CATALOG: Vertical[] = [
   {
     slug: "website-builders",
     eyebrow: "Software",
-    h1Lead: "Website builders in Australia:",
+    h1Lead: "Website & landing-page builders in Australia:",
     h1Accent: "the honest shortlist",
     intro:
-      "From a free one-page site to an AI-generated business website in thirty seconds. This hub sorts the builders by what they are actually for, so you pick the right tool the first time.",
-    metaTitle: "Best Website Builders 2026: Compare Carrd, Durable AI, Butternut & Swipe Pages | Refer Labs",
+      "From a free one-page site to an AI-generated business website in thirty seconds, plus dedicated landing-page builders for campaigns. This hub sorts them by what they are actually for, so you pick the right tool the first time.",
+    metaTitle: "Best Website & Landing Page Builders 2026: Carrd, Durable AI, Butternut, Leadpages & More | Refer Labs",
     metaDescription:
-      "Compare website builders for 2026 — Carrd for cheap one-page sites, Durable AI and Butternut AI for instant AI-built sites, Swipe Pages for paid-ad landing pages. Independent, no pay-to-rank.",
+      "Compare website and landing-page builders for 2026: Carrd for cheap one-page sites, Durable AI and Butternut AI for instant AI-built sites, Swipe Pages and Leadpages for high-converting landing pages. Independent, no pay-to-rank.",
     keywords: [
       "best website builder 2026",
       "website builder comparison",
       "ai website builder australia",
       "cheapest website builder",
-      "carrd vs durable",
+      "best landing page builder",
+      "leadpages vs landingi",
       "compare website builders",
     ],
     roundupHref: { href: "/best-website-builder", label: "Read the full head-to-head comparison" },
@@ -128,6 +129,32 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: SWIPE_PAGES_URL,
         reviewHref: "/swipepages",
         ctaLabel: "Start the free trial",
+      },
+      {
+        name: "Leadpages",
+        bestFor: "Landing pages that convert",
+        blurb: "A landing-page and lead-capture builder with a big template library, built-in A/B testing, pop-ups and alert bars. Best when your main goal is capturing leads, not just publishing a site.",
+        facts: [
+          { label: "Role", value: "Landing pages / lead capture" },
+          { label: "Best for", value: "Marketers & small business" },
+          { label: "Pricing", value: "7-day trial; from US$49 first month" },
+        ],
+        affiliateUrl: LEADPAGES_URL,
+        reviewHref: "/leadpages",
+        ctaLabel: "See Leadpages",
+      },
+      {
+        name: "Landingi",
+        bestFor: "Landing pages with A/B testing",
+        blurb: "A no-code landing-page builder with a large template library, A/B testing and lead capture. A strong alternative to Leadpages for marketers running campaigns.",
+        facts: [
+          { label: "Role", value: "Landing pages / conversion" },
+          { label: "Best for", value: "Marketers & agencies" },
+          { label: "Pricing", value: "No free plan; from US$24/mo" },
+        ],
+        affiliateUrl: LANDINGI_URL,
+        reviewHref: "/landingi",
+        ctaLabel: "See Landingi",
       },
     ],
     faqs: [
@@ -816,44 +843,17 @@ export const CATALOG: Vertical[] = [
   },
   {
     slug: "lead-generation",
-    eyebrow: "Lead generation",
-    h1Lead: "Lead-generation tools:",
-    h1Accent: "capture and convert more visitors",
+    eyebrow: "Conversion tools",
+    h1Lead: "Popups, quizzes & lead capture:",
+    h1Accent: "turn attention into leads",
     intro:
-      "Traffic is wasted if visitors leave without a trace. These tools capture and convert, landing pages, on-site popups, and interactive quizzes and calculators, sorted by how you want to turn attention into leads.",
-    metaTitle: "Best Lead-Generation Tools 2026: Landing Pages, Popups & Quizzes | Refer Labs",
+      "Traffic is wasted if visitors leave without a trace. These tools capture and convert with on-site popups, interactive quizzes and calculators, and tests and assessments, sorted by how you want to turn attention into leads. For dedicated landing-page builders, see the website builders hub.",
+    metaTitle: "Best Popup, Quiz & Lead-Capture Tools 2026: Hello Bar, Outgrow, FlexiQuiz | Refer Labs",
     metaDescription:
-      "Compare lead-generation tools for 2026: Leadpages and Landingi for landing pages, Hello Bar for popups, Outgrow for interactive quizzes and calculators, FlexiQuiz for tests and assessments. Independent, no pay-to-rank.",
-    keywords: ["lead generation tools", "best landing page builder", "website popup tool", "interactive content tool", "quiz maker for lead gen"],
+      "Compare lead-capture tools for 2026: Hello Bar for on-site popups and bars, Outgrow for interactive quizzes and calculators, FlexiQuiz for tests and assessments. Independent, no pay-to-rank.",
+    keywords: ["lead capture tools", "website popup tool", "interactive content tool", "quiz maker for lead gen", "best popup tool"],
     relatedCategory: "Software",
     providers: [
-      {
-        name: "Leadpages",
-        bestFor: "Landing pages that convert",
-        blurb: "A landing-page and lead-capture builder with a big template library, built-in A/B testing, pop-ups and alert bars. Best when your main goal is capturing leads, not just publishing a site.",
-        facts: [
-          { label: "Role", value: "Landing pages / lead capture" },
-          { label: "Best for", value: "Marketers & small business" },
-          { label: "Pricing", value: "7-day trial; from US$49 first month" },
-        ],
-        affiliateUrl: LEADPAGES_URL,
-        reviewHref: "/leadpages",
-        ctaLabel: "See Leadpages",
-        featured: true,
-      },
-      {
-        name: "Landingi",
-        bestFor: "Landing pages with A/B testing",
-        blurb: "A no-code landing-page builder with a large template library, A/B testing and lead capture. A strong alternative to Leadpages for marketers running campaigns.",
-        facts: [
-          { label: "Role", value: "Landing pages / conversion" },
-          { label: "Best for", value: "Marketers & agencies" },
-          { label: "Pricing", value: "No free plan; from US$24/mo" },
-        ],
-        affiliateUrl: LANDINGI_URL,
-        reviewHref: "/landingi",
-        ctaLabel: "See Landingi",
-      },
       {
         name: "Hello Bar",
         bestFor: "On-site popups & bars",
@@ -866,6 +866,7 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: HELLOBAR_URL,
         reviewHref: "/hellobar",
         ctaLabel: "See Hello Bar",
+        featured: true,
       },
       {
         name: "Outgrow",
@@ -896,16 +897,16 @@ export const CATALOG: Vertical[] = [
     ],
     faqs: [
       {
-        q: "Which lead-generation tool do I need?",
-        a: "Match it to how you capture. For dedicated landing pages, Leadpages fits. For popups and bars on your existing site, Hello Bar. For interactive quizzes and calculators that qualify leads, Outgrow. For real tests and assessments with grading, FlexiQuiz. Many sites use more than one.",
+        q: "Which lead-capture tool do I need?",
+        a: "Match it to how you capture. For popups and bars on your existing site, Hello Bar. For interactive quizzes and calculators that qualify leads, Outgrow. For real tests and assessments with grading, FlexiQuiz. For a dedicated landing page, see Leadpages in the website builders hub. Many sites use more than one.",
       },
       {
-        q: "Are these lead-generation tools free to try?",
-        a: "Mostly yes: Hello Bar, Outgrow and FlexiQuiz all have free plans, and Leadpages offers a free trial. Free tiers and trials change, so confirm the current limits on each provider before you rely on them.",
+        q: "Are these lead-capture tools free to try?",
+        a: "Mostly yes: Hello Bar, Outgrow and FlexiQuiz all have free plans. Free tiers and trials change, so confirm the current limits on each provider before you rely on them.",
       },
       {
         q: "Landing page or popup, which lifts conversions more?",
-        a: "They do different jobs. A landing page is a dedicated, distraction-free page for a single offer, best for paid traffic and campaigns. A popup or bar captures visitors on your existing pages before they leave. Used together they cover both.",
+        a: "They do different jobs. A landing page is a dedicated, distraction-free page for a single offer, best for paid traffic and campaigns, and you will find those builders in the website builders hub. A popup or bar captures visitors on your existing pages before they leave. Used together they cover both.",
       },
     ],
   },

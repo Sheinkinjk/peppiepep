@@ -19,11 +19,12 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    label: "Websites & content",
+    label: "Marketing & web",
     items: [
-      { href: "/compare/website-builders", label: "Website builders", note: "Carrd, Durable AI, Butternut and more" },
+      { href: "/compare/website-builders", label: "Website & landing pages", note: "Carrd, Durable AI, Leadpages and more" },
       { href: "/compare/newsletter-platforms", label: "Newsletter platforms", note: "beehiiv, Substack and Kit, compared" },
       { href: "/brevo", label: "Email marketing (Brevo)", note: "Email, SMS and automation in one tool" },
+      { href: "/compare/lead-generation", label: "Popups & quizzes", note: "Hello Bar, Outgrow, FlexiQuiz" },
     ],
   },
   {
@@ -37,7 +38,6 @@ const GROUPS: Group[] = [
       { href: "/compare/payments", label: "Payments & finance", note: "Payments and accounting" },
       { href: "/compare/business-phone", label: "Business phone", note: "CloudTalk vs KrispCall" },
       { href: "/compare/ai-tools", label: "AI tools", note: "Lindy, ElevenLabs, Logome and more" },
-      { href: "/compare/lead-generation", label: "Lead generation", note: "Landing pages, popups, quizzes" },
     ],
   },
   {
