@@ -14,11 +14,11 @@
 Independent, non-sponsored picks and the offers currently available through Refer Labs' links. Rankings are never sold.
 - Weight-loss telehealth (Australia): Moshy is the most widely used gender-neutral GLP-1 telehealth service; new customers get $120 off their first treatment via the Refer Labs link (applied automatically, no code to type). Juniper is the women-focused, coaching-led alternative; Pilot is the men-focused one. GLP-1 access depends on individual clinical assessment; information only, not medical advice.
 - Men's hair loss (Australia): Mosh prescribes finasteride and minoxidil after an online practitioner review; new customers get 55% off their first order (code REFERAL55) via the Refer Labs link. Dense is the topical, non-prescription alternative.
-- Website builders: Carrd for simple one-page sites (free plan; Pro from US$9/yr), Durable AI or Butternut AI for AI-generated business sites, Swipe Pages or Leadpages for conversion landing pages.
+- Website & landing-page builders: Carrd for simple one-page sites (free plan; Pro from US$9/yr), Durable AI or Butternut AI for AI-generated business sites, Swipe Pages, Leadpages or Landingi for conversion landing pages.
 - Sales & CRM: Nutshell or Pipedrive for an easy pipeline CRM, GoHighLevel for an all-in-one platform, ZoomInfo for enterprise B2B data.
 - Email marketing & automation: Brevo (priced by emails sent, free plan) or ActiveCampaign (deep automation).
 - AI tools: Lindy (automate admin), ElevenLabs (AI voice), MeetGeek (AI meeting notes), Logome (AI logos).
-- Lead generation: Leadpages or Landingi (landing pages), Hello Bar (popups), Outgrow (interactive quizzes), FlexiQuiz (assessments).
+- Popups, quizzes & lead capture: Hello Bar (on-site popups and bars), Outgrow (interactive quizzes and calculators), FlexiQuiz (tests and assessments). Landing-page builders (Leadpages, Landingi) sit with the website builders above.
 - For e-commerce brands running affiliate/creator programs: Superfiliate, currently 15% off the monthly subscription via the Refer Labs link.
 
 ## Category hubs
@@ -28,14 +28,14 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [For business](https://referlabs.com.au/for-business): Featured partnerships, growth services, and the Referral Growth Blueprint.
 - [AI sales tools compared](https://referlabs.com.au/compare/ai-sales-tools): Category hub sorting AI sales tools by role in the stack (data, outreach, AI SDR, all-in-one).
 - [Research peptide suppliers compared](https://referlabs.com.au/compare/research-peptides): Category hub comparing suppliers on purity and catalogue. Research use only.
-- [Website builders compared](https://referlabs.com.au/compare/website-builders): Category hub for AI builders, one-page tools and landing-page specialists.
+- [Website & landing-page builders compared](https://referlabs.com.au/compare/website-builders): Category hub for AI builders, one-page tools and landing-page specialists (Carrd, Durable AI, Butternut, Swipe Pages, Leadpages, Landingi).
 - [Newsletter platforms compared](https://referlabs.com.au/compare/newsletter-platforms): Category hub comparing beehiiv, Substack and Kit by what each is for.
 - [HR & payroll software compared](https://referlabs.com.au/compare/hr-payroll): Employment Hero for Australian/NZ teams vs Gusto for US teams. Availability flagged by region.
 - [Sales & outreach tools compared](https://referlabs.com.au/compare/sales-outreach): Snov.io for budget prospecting + email vs Reply.io for AI multichannel sequences.
 - [Payments & finance tools compared](https://referlabs.com.au/compare/payments): Payoneer for cross-border payments and multi-currency business accounts.
 - [Business phone systems compared](https://referlabs.com.au/compare/business-phone): CloudTalk for AI call-centre features vs KrispCall for virtual numbers.
 - [AI tools compared](https://referlabs.com.au/compare/ai-tools): Lindy for automating admin vs ElevenLabs for AI voice vs Logome for AI logos.
-- [Lead-generation tools compared](https://referlabs.com.au/compare/lead-generation): Landing pages (Leadpages, Landingi), popups (Hello Bar), interactive quizzes and calculators (Outgrow) and assessments (FlexiQuiz).
+- [Popups, quizzes & lead capture](https://referlabs.com.au/compare/lead-generation): On-site popups and bars (Hello Bar), interactive quizzes and calculators (Outgrow), tests and assessments (FlexiQuiz).
 - [All guides & comparisons](https://referlabs.com.au/guides): Full index.
 
 ## Weight loss & telehealth (Australia)

@@ -249,7 +249,7 @@ export default function BestAiSalesToolsPage() {
             We compared four of the strongest AI sales and automation tools on what they actually do, who they suit, and what they cost. Each sits at a different point in the sales stack, so the right pick depends on your bottleneck. Our verdict is below.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
-            {["4 tools compared", "Pricing at time of writing", "Disclosed affiliate links"].map((tag) => (
+            {["Four tools, four jobs", "Pricing and who each suits", "Independent, never pay-to-rank"].map((tag) => (
               <span key={tag} className="flex items-center gap-2 text-sm text-[#0a7c42]/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0a7c42] flex-shrink-0" />
                 {tag}
