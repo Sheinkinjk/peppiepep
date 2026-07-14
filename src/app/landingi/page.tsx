@@ -15,7 +15,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Lead generation", item: `${SITE_URL}/compare/lead-generation` },
+    { "@type": "ListItem", position: 2, name: "Website builders", item: `${SITE_URL}/best-website-builder` },
     { "@type": "ListItem", position: 3, name: "Landingi", item: `${SITE_URL}/landingi` },
   ],
 };
@@ -52,9 +52,9 @@ export default function LandingiPage() {
       <PremiumAffiliateLanding config={landingiConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">Compare lead-generation tools</p>
-          <Link href="/compare/lead-generation" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
-            See Landingi next to the other lead tools &rarr;
+          <p className="text-[#9aa39c] text-xs mb-1.5">Compare website & landing-page builders</p>
+          <Link href="/compare/website-builders" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
+            See Landingi next to the other builders &rarr;
           </Link>
         </div>
       </div>

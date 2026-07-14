@@ -23,7 +23,7 @@ const hubs = [
   { href: "/compare/ai-sales-tools", label: "AI sales tools", desc: "Data, outreach, AI reps and CRMs, sorted by the job you need done." },
   { href: "/compare/sales-outreach", label: "Sales & outreach", desc: "Find leads and reach them across email and channels." },
   { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants and voice, sorted by what they actually do." },
-  { href: "/compare/lead-generation", label: "Lead generation", desc: "Landing pages, popups and interactive quizzes that capture leads." },
+  { href: "/compare/lead-generation", label: "Popups & quizzes", desc: "On-site popups, interactive quizzes and assessments that capture leads." },
   { href: "/compare/hr-payroll", label: "HR & payroll", desc: "Run pay, hiring, training and people admin from one place." },
   { href: "/compare/business-phone", label: "Business phone", desc: "Cloud calling and virtual numbers for teams." },
   { href: "/compare/payments", label: "Payments & finance", desc: "Get paid across borders, plus bookkeeping automation." },

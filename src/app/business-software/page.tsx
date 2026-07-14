@@ -23,7 +23,7 @@ const hubs = [
   { href: "/compare/hr-payroll", label: "HR & payroll", desc: "Run pay, hiring, training and people admin from one place." },
   { href: "/compare/payments", label: "Payments & bookkeeping", desc: "Get paid across borders, and keep the books straight." },
   { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants, voice and branding, sorted by what they do." },
-  { href: "/compare/lead-generation", label: "Lead generation", desc: "Landing pages, popups and interactive quizzes that capture leads." },
+  { href: "/compare/lead-generation", label: "Popups & quizzes", desc: "On-site popups, interactive quizzes and assessments that capture leads." },
 ];
 
 const tools = [

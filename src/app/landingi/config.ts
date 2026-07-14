@@ -5,7 +5,7 @@ export const landingiConfig: AffiliatePageConfig = {
   brand: "Landingi",
   logo: "landingi",
   badgeText: "Landing pages",
-  eyebrow: "Lead generation & conversion",
+  eyebrow: "Landing pages",
   affiliateUrl: LANDINGI_URL,
   quickAnswer:
     "Landingi is a no-code landing-page builder for marketers: create, publish and A/B test campaign and lead-generation pages without a developer, using a large template library and AI assistance. There is no free plan, but you get a 14-day free trial; paid plans start at about US$24/month.",
@@ -56,7 +56,7 @@ export const landingiConfig: AffiliatePageConfig = {
     { q: "Do I need to code to use Landingi?", a: "No. You build and edit pages in a drag-and-drop editor and publish them without touching code. Templates give you a head start, and integrations connect the page to your email and marketing tools." },
   ],
   relatedLinks: [
-    { href: "/compare/lead-generation", label: "Compare lead-gen tools", desc: "See Landingi next to the other lead tools." },
+    { href: "/compare/website-builders", label: "Website & landing-page builders", desc: "See Landingi next to the other website and landing-page builders." },
     { href: "/leadpages", label: "Leadpages", desc: "A close alternative for landing pages and lead capture." },
     { href: "/hellobar", label: "Hello Bar", desc: "Add popups and bars to capture more visitors." },
   ],
