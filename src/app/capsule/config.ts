@@ -13,7 +13,7 @@ export const capsuleConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Simple sales CRM" },
     { k: "Best for", v: "Small businesses wanting an easy CRM" },
-    { k: "Pricing", v: "Free up to 250 contacts; paid from ~US$18/user/mo" },
+    { k: "Pricing", v: "Free up to 250 contacts; paid from US$18/user/mo" },
     { k: "Start", v: "Free plan, no card" },
   ],
   hero: {
@@ -62,7 +62,7 @@ export const capsuleConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Capsule cost?",
-      a: "Capsule is free up to 250 contacts and two users, then paid plans start from around US$18 per user per month at the time of writing, scaling with contacts and features. Check current pricing on Capsule before committing.",
+      a: "Capsule is free up to 250 contacts and two users, then paid plans start from US$18 per user per month, scaling with contacts and features. Check current pricing on Capsule before committing.",
     },
     {
       q: "Who is Capsule best for?",

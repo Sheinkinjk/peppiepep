@@ -13,7 +13,7 @@ export const wingAssistantConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Managed virtual assistants" },
     { k: "Best for", v: "Delegating recurring work" },
-    { k: "Pricing", v: "From ~US$699/mo (part-time VA)" },
+    { k: "Pricing", v: "Quote-based; part-time & full-time plans" },
   ],
   hero: {
     h1Prefix: "Wing Assistant:",

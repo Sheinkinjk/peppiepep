@@ -200,5 +200,5 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Employment Hero site. This page is operated by Refer Labs and contains a disclosed affiliate link. Employment Hero does not publish standard pricing publicly; request a quote for figures specific to your business. Information is general in nature and correct to the best of our knowledge at the time of writing.",
+    "You will be taken to the Employment Hero site. This page is operated by Refer Labs and contains a disclosed affiliate link. Employment Hero does not publish standard pricing publicly; request a quote for figures specific to your business. Information is general in nature and correct to the best of our knowledge.",
 };

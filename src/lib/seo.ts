@@ -433,7 +433,7 @@ export const seoConfig = {
   cometchat: {
     title: "CometChat Referral Link & Pricing 2026: In-App Chat SDK | Refer Labs",
     description:
-      "Looking for CometChat pricing or a referral link? CometChat adds in-app chat, voice and video to your app via SDKs and UI kits. Free Build plan (100 users); paid from ~US$299/mo, via our link.",
+      "Looking for CometChat pricing or a referral link? CometChat adds in-app chat, voice and video to your app via SDKs and UI kits. Free Build plan (100 users); paid from US$299/mo, via our link.",
     url: `${SITE_URL}/cometchat`,
     keywords: ["cometchat pricing", "cometchat referral link", "cometchat review", "in-app chat sdk", "chat api", "messaging sdk", "add chat to app"],
   },
@@ -1848,7 +1848,7 @@ export const seoConfig = {
   goHighLevel: {
     title: "GoHighLevel Discount Code & Referral Link 2026: CRM Free Trial | Refer Labs",
     description:
-      "Looking for a GoHighLevel discount code, promo code or referral link? Here's the honest answer plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From around $97/month at the time of writing, 14-day free trial.",
+      "Looking for a GoHighLevel discount code, promo code or referral link? Here's the honest answer plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From $97/month, 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
     keywords: [
       "gohighlevel discount code",
@@ -1875,7 +1875,7 @@ export const seoConfig = {
   aisdr: {
     title: "AiSDR Discount Code & Referral Link 2026: AI Sales Rep | Refer Labs",
     description:
-      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From around $250/month (Solo); the popular quarterly plan is around $900/month at the time of writing.",
+      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From $250/month (Solo); the popular quarterly plan is $900/month.",
     url: `${SITE_URL}/aisdr`,
     keywords: [
       "aisdr discount code",
@@ -2076,7 +2076,7 @@ export const seoConfig = {
   bestAiSalesTools: {
     title: "Best AI Sales Tools 2026: GoHighLevel, AiSDR, Reply.io & FullEnrich | Refer Labs",
     description:
-      "The best AI sales and automation tools in 2026 compared: GoHighLevel (all-in-one CRM), AiSDR (AI outbound SDR), Reply.io (multichannel sales engagement) and FullEnrich (waterfall contact enrichment). What each is best for, pricing at the time of writing, and how to choose.",
+      "The best AI sales and automation tools in 2026 compared: GoHighLevel (all-in-one CRM), AiSDR (AI outbound SDR), Reply.io (multichannel sales engagement) and FullEnrich (waterfall contact enrichment). What each is best for, pricing, and how to choose.",
     url: `${SITE_URL}/best-ai-sales-tools`,
     keywords: [
       "best ai sales tools 2026",

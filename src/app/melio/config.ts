@@ -8,7 +8,7 @@ export const melioConfig: AffiliatePageConfig = {
   eyebrow: "Payments & bill pay",
   affiliateUrl: MELIO_URL,
   quickAnswer:
-    "Melio is a B2B bill-pay and accounts-payable tool for US businesses: pay vendors and bills by bank transfer, card or check, and schedule and track everything, syncing with QuickBooks and Xero. It has a free plan and paid plans from about US$25/month. Important: Melio requires a US business and US bank account to send payments, so it is US-only for senders.",
+    "Melio is a B2B bill-pay and accounts-payable tool for US businesses: pay vendors and bills by bank transfer, card or check, and schedule and track everything, syncing with QuickBooks and Xero. It has a free plan and paid plans from US$25/month. Important: Melio requires a US business and US bank account to send payments, so it is US-only for senders.",
   offer: "Free plan, no card required",
   atAGlance: [
     { k: "Type", v: "B2B bill pay / accounts payable" },
@@ -51,9 +51,9 @@ export const melioConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["Pay vendors by bank transfer, card or check","Pay by card even where cards aren't normally accepted","Syncs bills and payments to QuickBooks and Xero","Free plan for a handful of payments a month"],
   faqs: [
-    { q: "Is Melio free, and is there a discount code?", a: "Melio has a free plan that covers a set number of bank payments a month, with paid plans from about US$25/month for more volume and features. It does not publish a standard discount code; card payments and some transfer types carry fees, so check the current fee schedule before relying on it." },
+    { q: "Is Melio free, and is there a discount code?", a: "Melio has a free plan that covers a set number of bank payments a month, with paid plans from US$25/month for more volume and features. It does not publish a standard discount code; card payments and some transfer types carry fees, so check the current fee schedule before relying on it." },
     { q: "Can Australian businesses use Melio?", a: "Not as senders. Melio requires a US business and US bank account to send payments, so Australian businesses cannot use it to pay their own bills. US businesses can, however, send payments to vendors located in Australia and many other countries." },
-    { q: "How much does Melio cost?", a: "The Go plan is free with a limited number of bank payments a month; paid plans (Core from about US$25/month, then higher tiers) add more free payments and features. Card payments carry a percentage fee and some payment types have per-transaction costs. Confirm the current fees before committing." },
+    { q: "How much does Melio cost?", a: "The Go plan is free with a limited number of bank payments a month; paid plans (Core from US$25/month, then higher tiers) add more free payments and features. Card payments carry a percentage fee and some payment types have per-transaction costs. Confirm the current fees before committing." },
     { q: "Does Melio work with my accounting software?", a: "Yes, Melio syncs with QuickBooks and Xero so your bills and payments stay reconciled automatically. Confirm your specific setup is supported when you connect your account." },
   ],
   relatedLinks: [

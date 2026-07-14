@@ -8,7 +8,7 @@ export const meetgeekConfig: AffiliatePageConfig = {
   eyebrow: "AI tools",
   affiliateUrl: MEETGEEK_URL,
   quickAnswer:
-    "MeetGeek is an AI meeting assistant that auto-joins your calls on Zoom, Google Meet and Microsoft Teams, then records, transcribes and summarises them with action items. It has a free plan (a few hours a month) and paid plans from about US$9.99/user/month.",
+    "MeetGeek is an AI meeting assistant that auto-joins your calls on Zoom, Google Meet and Microsoft Teams, then records, transcribes and summarises them with action items. It has a free plan (a few hours a month) and paid plans from US$9.99/user/month.",
   offer: "Free plan (3 hours/month)",
   atAGlance: [
     { k: "Type", v: "AI meeting assistant" },
@@ -51,8 +51,8 @@ export const meetgeekConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["Auto-joins and records Zoom, Meet and Teams","Transcripts, summaries and action items after each call","A searchable archive of every meeting","Free plan to try it on real calls"],
   faqs: [
-    { q: "Is MeetGeek free, and is there a discount code?", a: "Yes, MeetGeek has a free Basic plan with a few hours of transcription a month, no credit card. Paid plans from about US$9.99/user/month add more hours and features. It does not usually run a public discount code; starting through our referral link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does MeetGeek cost?", a: "The free plan covers a few hours of meetings a month. Paid plans start at about US$9.99/user/month (Pro) for more transcription hours, with Business around US$17/user/month for unlimited transcription and team analytics. Check the current tiers for your usage." },
+    { q: "Is MeetGeek free, and is there a discount code?", a: "Yes, MeetGeek has a free Basic plan with a few hours of transcription a month, no credit card. Paid plans from US$9.99/user/month add more hours and features. It does not usually run a public discount code; starting through our referral link takes you to the current plans, at no extra cost to you." },
+    { q: "How much does MeetGeek cost?", a: "The free plan covers a few hours of meetings a month. Paid plans start at US$9.99/user/month (Pro) for more transcription hours, with Business US$17/user/month for unlimited transcription and team analytics. Check the current tiers for your usage." },
     { q: "Which meeting apps does MeetGeek support?", a: "MeetGeek works with the major video platforms, Zoom, Google Meet and Microsoft Teams, auto-joining calls from your connected calendar to record, transcribe and summarise them." },
     { q: "Is it okay to record meetings with MeetGeek?", a: "MeetGeek makes recording and transcribing easy, but consent matters. Let participants know a notetaker is present and follow the recording rules for your organisation and jurisdiction. Used openly, automated notes save time and keep everyone on the same page." },
   ],

@@ -38,10 +38,10 @@ const itemListSchema = {
   description: "A comparison of the best AI sales and automation tools in 2026: GoHighLevel, AiSDR, Reply.io and FullEnrich.",
   numberOfItems: 4,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "GoHighLevel", description: "AI-powered all-in-one platform combining CRM, marketing automation, sales pipelines, funnels and reputation management. Best for agencies and SMBs. From around $97/month at the time of writing, with a 14-day free trial.", url: `${SITE_URL}/gohighlevel` },
-    { "@type": "ListItem", position: 2, name: "AiSDR", description: "AI sales development rep that automates B2B outbound: finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. From around $250/month on the Solo plan, with the popular Explore plan around $900/month billed quarterly, at the time of writing.", url: `${SITE_URL}/aisdr` },
-    { "@type": "ListItem", position: 3, name: "Reply.io", description: "AI-first sales engagement platform for multichannel outbound: sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data and inbox warm-up. No free plan; paid from around $49/user/month with a 14-day free trial. Best for teams that want hands-on control of their outreach.", url: `${SITE_URL}/replyio` },
-    { "@type": "ListItem", position: 4, name: "FullEnrich", description: "Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Credit-based, with a free 50-credit trial and paid plans from around $29/month. Best for sales and RevOps teams whose outbound stalls on bad contact data.", url: `${SITE_URL}/fullenrich` },
+    { "@type": "ListItem", position: 1, name: "GoHighLevel", description: "AI-powered all-in-one platform combining CRM, marketing automation, sales pipelines, funnels and reputation management. Best for agencies and SMBs. From $97/month, with a 14-day free trial.", url: `${SITE_URL}/gohighlevel` },
+    { "@type": "ListItem", position: 2, name: "AiSDR", description: "AI sales development rep that automates B2B outbound: finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. From $250/month on the Solo plan, with the popular Explore plan $900/month billed quarterly.", url: `${SITE_URL}/aisdr` },
+    { "@type": "ListItem", position: 3, name: "Reply.io", description: "AI-first sales engagement platform for multichannel outbound: sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data and inbox warm-up. No free plan; paid from $49/user/month with a 14-day free trial. Best for teams that want hands-on control of their outreach.", url: `${SITE_URL}/replyio` },
+    { "@type": "ListItem", position: 4, name: "FullEnrich", description: "Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Credit-based, with a free 50-credit trial and paid plans from $55/month. Best for sales and RevOps teams whose outbound stalls on bad contact data.", url: `${SITE_URL}/fullenrich` },
   ],
 };
 
@@ -70,7 +70,7 @@ const faqSchema = {
       name: "How much do AI sales tools cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "At the time of writing, GoHighLevel starts from around $97/month with a 14-day free trial and no credit card, while AiSDR starts from around $250/month on its Solo plan (its popular Explore plan is around $900/month billed quarterly) with unlimited seats and no long-term contract. Pricing can change, so check the current figures on each provider before you commit.",
+        text: "At the time of writing, GoHighLevel starts from $97/month with a 14-day free trial and no credit card, while AiSDR starts from $250/month on its Solo plan (its popular Explore plan is $900/month billed quarterly) with unlimited seats and no long-term contract. Pricing can change, so check the current figures on each provider before you commit.",
       },
     },
     {
@@ -113,7 +113,7 @@ const tools = [
     internalHref: "/gohighlevel",
     tagline: "AI-powered CRM, marketing and sales in one platform",
     bestFor: "Marketing agencies and SMBs replacing a stack of tools",
-    price: "From US$97/mo; Unlimited US$297/mo",
+    price: "From US$97/mo; Unlimited US$557/mo",
     trial: "14-day free trial, no credit card",
     pros: [
       "CRM, email and SMS automation, funnels and pipelines in one login",
@@ -182,7 +182,7 @@ const tools = [
     internalHref: "/fullenrich",
     tagline: "Waterfall enrichment for verified emails and mobile numbers",
     bestFor: "Sales and RevOps teams whose outbound stalls on bad data",
-    price: "Free trial (50 credits); from ~US$29/mo",
+    price: "Free trial (50 credits); from US$55/mo",
     trial: "50 free credits to start",
     pros: [
       "Waterfall enrichment across 15+ data sources",
@@ -205,7 +205,7 @@ const features = [
   { label: "Channels",       ghl: "Email, SMS, funnels, calls",          aisdr: "Email, LinkedIn, phone" },
   { label: "AI features",    ghl: "Voice, conversation, content",        aisdr: "Prospecting, research, messaging" },
   { label: "Integrations",   ghl: "Broad app ecosystem",                 aisdr: "HubSpot & Salesforce" },
-  { label: "Pricing (at time of writing)", ghl: "From ~$97/mo",          aisdr: "From ~$900/mo quarterly" },
+  { label: "Pricing", ghl: "From $97/mo",          aisdr: "From $900/mo quarterly" },
   { label: "Trial / terms",  ghl: "14-day free trial",                   aisdr: "No long-term contract" },
 ];
 
@@ -273,7 +273,7 @@ export default function BestAiSalesToolsPage() {
             These tools sit at different points in the sales stack. FullEnrich is the data layer that finds verified emails and mobile numbers. Reply.io is the sales engagement platform your team drives to run multichannel outbound. AiSDR is the done-for-you AI rep that generates conversations and books meetings. GoHighLevel is the all-in-one platform to run and automate your CRM, marketing and follow-up. Plenty of teams use more than one for different jobs.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
-            Pricing below is indicative and correct at the time of writing. Providers can change their plans, so verify the current figures before you commit.
+            Pricing below is indicative and correct. Providers can change their plans, so verify the current figures before you commit.
           </p>
           <a
             {...aff(GOHIGHLEVEL_URL)}
@@ -416,7 +416,7 @@ export default function BestAiSalesToolsPage() {
               If the problem is upstream of all of that, bad or missing contact data, start with FullEnrich: its waterfall enrichment finds verified emails and mobile numbers so your outreach reaches real people. And if you want to run outbound yourself rather than outsource it to an AI rep, Reply.io gives your team the multichannel sequencing, AI writing and deliverability tools in one platform.
             </p>
             <p>
-              These are not mutually exclusive; they stack. A common setup is FullEnrich supplying clean data, Reply.io or AiSDR running the outreach, and GoHighLevel managing and nurturing everything that converts. Whichever you choose, verify the current pricing on the provider before you commit, since the figures on this page are indicative at the time of writing.
+              These are not mutually exclusive; they stack. A common setup is FullEnrich supplying clean data, Reply.io or AiSDR running the outreach, and GoHighLevel managing and nurturing everything that converts. Whichever you choose, verify the current pricing on the provider before you commit, since the figures on this page are indicative.
             </p>
           </div>
         </section>
@@ -444,7 +444,7 @@ export default function BestAiSalesToolsPage() {
               },
               {
                 q: "How much do AI sales tools cost?",
-                a: "At the time of writing, GoHighLevel starts from around $97/month with a 14-day free trial and no credit card, while AiSDR starts from around $900/month billed quarterly with unlimited seats and no long-term contract. Pricing can change, so verify the current figures on each provider before you commit.",
+                a: "At the time of writing, GoHighLevel starts from $97/month with a 14-day free trial and no credit card, while AiSDR starts from $900/month billed quarterly with unlimited seats and no long-term contract. Pricing can change, so verify the current figures on each provider before you commit.",
               },
               {
                 q: "Does GoHighLevel have a free trial?",

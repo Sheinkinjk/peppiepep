@@ -81,9 +81,9 @@ export const CATALOG: Vertical[] = [
       {
         name: "Carrd",
         bestFor: "Cheapest one-page sites",
-        blurb: "The best value in simple websites. Free to start, Pro from about $19/year. Ideal for a portfolio, link-in-bio, or a single landing page.",
+        blurb: "The best value in simple websites. Free to start, Pro from US$9/year. Ideal for a portfolio, link-in-bio, or a single landing page.",
         facts: [
-          { label: "Price", value: "Free; Pro from ~$19/year" },
+          { label: "Price", value: "Free; Pro from US$9/year" },
           { label: "Best for", value: "One-page sites" },
           { label: "AI build", value: "No" },
         ],
@@ -164,7 +164,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Landing pages / ad conversion" },
           { label: "Best for", value: "Advertisers & agencies" },
-          { label: "Pricing", value: "No free plan; from ~US$99/mo" },
+          { label: "Pricing", value: "No free plan; from US$79/mo (annual)" },
         ],
         affiliateUrl: INSTAPAGE_URL,
         reviewHref: "/instapage",
@@ -178,7 +178,7 @@ export const CATALOG: Vertical[] = [
       },
       {
         q: "What is the cheapest website builder?",
-        a: "Carrd, comfortably. It has a genuine free plan and Pro tiers from around $19 per year. The AI builders let you generate a site free before committing to a paid publishing plan.",
+        a: "Carrd, comfortably. It has a genuine free plan and Pro tiers from $19 per year. The AI builders let you generate a site free before committing to a paid publishing plan.",
       },
       {
         q: "Which builder is best for a business website?",
@@ -282,7 +282,7 @@ export const CATALOG: Vertical[] = [
         blurb: "Waterfall enrichment that queries 15+ sources to find verified emails and mobile numbers. The data layer that feeds every other outbound tool.",
         facts: [
           { label: "Role", value: "Contact data" },
-          { label: "Pricing", value: "Free trial (50 credits); from ~US$29/mo" },
+          { label: "Pricing", value: "Free trial (50 credits); from US$55/mo" },
           { label: "Best for", value: "Fixing bad data" },
         ],
         affiliateUrl: FULLENRICH_URL,
@@ -400,7 +400,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "CRM + marketing automation" },
           { label: "Best for", value: "Small businesses & solopreneurs" },
-          { label: "Pricing", value: "No free plan; from ~US$249/mo" },
+          { label: "Pricing", value: "No free plan; from US$249/mo" },
         ],
         affiliateUrl: KEAP_URL,
         reviewHref: "/keap",
@@ -413,7 +413,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Simple sales CRM" },
           { label: "Best for", value: "Small teams wanting an easy CRM" },
-          { label: "Pricing", value: "Free up to 250 contacts; from ~US$18/user/mo" },
+          { label: "Pricing", value: "Free up to 250 contacts; from US$18/user/mo" },
         ],
         affiliateUrl: CAPSULE_URL,
         reviewHref: "/capsule",
@@ -868,7 +868,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "AI presentation software" },
           { label: "Best for", value: "Founders, teams & consultants" },
-          { label: "Pricing", value: "No free plan; Pro from ~US$12/mo" },
+          { label: "Pricing", value: "No free plan; Pro from US$12/mo" },
         ],
         affiliateUrl: BEAUTIFULAI_URL,
         reviewHref: "/beautifulai",

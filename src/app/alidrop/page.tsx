@@ -44,7 +44,7 @@ const softwareSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    description: "A $1 seven-day trial, then paid plans from around $39/month.",
+    description: "A $1 seven-day trial, then paid plans from $39/month.",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.alidrop.co",

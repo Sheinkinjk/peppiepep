@@ -8,7 +8,7 @@ export const alohiConfig: AffiliatePageConfig = {
   eyebrow: "Documents & e-signature",
   affiliateUrl: ALOHI_URL,
   quickAnswer:
-    "Alohi makes two document tools: Sign.Plus for legally-binding electronic signatures and Fax.Plus for secure online faxing. Both have free plans and work worldwide, including Australia. Paid plans start at about US$14.99/month for Sign.Plus and about US$6.99/month for Fax.Plus.",
+    "Alohi makes two document tools: Sign.Plus for legally-binding electronic signatures and Fax.Plus for secure online faxing. Both have free plans and work worldwide, including Australia. Paid plans start at US$14.99/month for Sign.Plus and US$6.99/month for Fax.Plus.",
   offer: "Free plans on Sign.Plus and Fax.Plus",
   atAGlance: [
     { k: "Type", v: "E-signatures (Sign.Plus) & online fax (Fax.Plus)" },
@@ -51,7 +51,7 @@ export const alohiConfig: AffiliatePageConfig = {
   whyUseThis: ["Legally-binding e-signatures with an audit trail","Send and receive faxes with no machine or landline","Free plans on both Sign.Plus and Fax.Plus","Security and compliance focus, used worldwide"],
   faqs: [
     { q: "Are Sign.Plus and Fax.Plus free, and is there a discount code?", a: "Both have free plans to start: Sign.Plus offers a limited number of signature requests, and Fax.Plus a limited number of pages. Paid plans add more volume and features. Alohi does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
-    { q: "How much do Sign.Plus and Fax.Plus cost?", a: "Sign.Plus paid plans start at about US$14.99/month, and Fax.Plus at about US$6.99/month, with higher tiers for more users, requests or pages. They are billed separately. Check the current pricing on each product before committing." },
+    { q: "How much do Sign.Plus and Fax.Plus cost?", a: "Sign.Plus paid plans start at US$14.99/month, and Fax.Plus at US$6.99/month, with higher tiers for more users, requests or pages. They are billed separately. Check the current pricing on each product before committing." },
     { q: "Are Sign.Plus e-signatures legally valid?", a: "Sign.Plus is built to produce legally-binding electronic signatures with an audit trail, and follows major e-signature standards. As always, confirm it meets the specific legal requirements for your document type and jurisdiction." },
     { q: "Does Alohi work in Australia?", a: "Yes, both Sign.Plus and Fax.Plus are available worldwide, including Australia. Pricing is shown in your local currency where supported; confirm any region-specific details on the provider's site." },
   ],

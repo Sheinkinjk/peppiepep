@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "KPI-dashboard and analytics platform that pulls data from 130+ sources into unified dashboards and automated reports with AI insights.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan; 14-day trial with no card; paid plans from around US$64/month.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan; 14-day trial with no card; paid plans from US$64/month.", availability: "https://schema.org/InStock" },
   url: "https://databox.com",
   sameAs: ["https://databox.com"],
 };

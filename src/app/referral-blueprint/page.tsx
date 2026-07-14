@@ -56,7 +56,7 @@ const deliverables = [
     whatItIs: "A structured Excel file with 250+ affiliate and referral programs across 5 categories. Every row: company name, direct affiliate program link, commission rate, payout type, cookie window, minimum payout, and suggested marketing angle.",
     whyItMatters: "Saves 6-8 weeks of manual research. Every link manually verified. Commission data sourced from each program's official terms, not estimated. The starting database most people never finish building.",
     howUsed: "Open in Excel or Google Sheets. Filter by category (AI / SaaS / Health / Fintech / Startup), commission type (recurring / CPA / flat), or commission floor. Cross-reference with the strategy brief for your top 5-10 priorities.",
-    valueReplaces: "~$1,000-$6,000 of research time at typical hourly rates",
+    valueReplaces: "$1,000-$6,000 of research time at typical hourly rates",
     bullets: [
       "Company, direct program link, signup instructions",
       "Commission rate, type (CPA / recurring / flat fee), payout model",
@@ -365,7 +365,7 @@ function ToolsMock() {
           </div>
         ))}
       </div>
-      <div className="mt-2 text-[#9aa39c] text-[9px]">Est. total: ~$35/mo</div>
+      <div className="mt-2 text-[#9aa39c] text-[9px]">Est. total: $35/mo</div>
     </div>
   );
 }
@@ -1252,7 +1252,7 @@ export default function ReferralBlueprintPage() {
                 <p className="text-xs font-bold uppercase tracking-widest text-[#9aa39c] mb-5">What $799 replaces</p>
                 <div className="space-y-3">
                   {[
-                    { item: "3-6 months of program research",     value: "~$6,000+ your time" },
+                    { item: "3-6 months of program research",     value: "$6,000+ your time" },
                     { item: "Freelance strategy consultation",     value: "$500-$2,000" },
                     { item: "SEO content brief writing",          value: "$300-$800" },
                     { item: "Niche selection consulting",         value: "$200-$500" },

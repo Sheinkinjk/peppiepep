@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Flat-rate subscription providing a dedicated team of human creatives for unlimited graphic design, video, branding, web and copywriting requests.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "No free plan; 14-day money-back guarantee; plans from around US$1,199/month.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "No free plan; 14-day money-back guarantee; plans from US$1,199/month.", availability: "https://schema.org/InStock" },
   url: "https://www.flocksy.com",
   sameAs: ["https://www.flocksy.com"],
 };

@@ -8,7 +8,7 @@ export const databoxConfig: AffiliatePageConfig = {
   eyebrow: "Analytics & dashboards",
   affiliateUrl: DATABOX_URL,
   quickAnswer:
-    "Databox is a KPI-dashboard and analytics tool that pulls data from 130+ sources, cloud apps, spreadsheets and databases, into unified dashboards and reports. It has a free plan (up to 3 data sources) and a 14-day free trial with no card; paid plans start at about US$64/month.",
+    "Databox is a KPI-dashboard and analytics tool that pulls data from 130+ sources, cloud apps, spreadsheets and databases, into unified dashboards and reports. It has a free plan (up to 3 data sources) and a 14-day free trial with no card; paid plans start at US$64/month.",
   offer: "Free plan; 14-day trial, no card",
   atAGlance: [
     { k: "Type", v: "KPI dashboards / analytics" },
@@ -52,7 +52,7 @@ export const databoxConfig: AffiliatePageConfig = {
   whyUseThis: ["Pulls 130+ data sources into one place","Dashboards and automated reports that update themselves","AI insights and alerts on changes","Free plan and a no-card trial to start"],
   faqs: [
     { q: "Is Databox free, and is there a discount code?", a: "Yes, Databox has a free plan (one user, up to three data sources) plus a 14-day free trial of the paid features with no credit card. It does not usually run a public discount code; starting through our referral link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does Databox cost?", a: "There is a free plan for basic use. Paid plans start at about US$64/month (Analyst) for more data sources, with Pro around US$159/month for unlimited users and more frequent syncing. Pricing scales with sources and users, so check the current plans for your needs." },
+    { q: "How much does Databox cost?", a: "There is a free plan for basic use. Paid plans start at US$64/month (Analyst) for more data sources, with Pro US$159/month for unlimited users and more frequent syncing. Pricing scales with sources and users, so check the current plans for your needs." },
     { q: "What can Databox connect to?", a: "Databox integrates with 130+ sources, including Google Analytics, ad platforms, CRMs, email tools, spreadsheets and SQL databases. That breadth is the point: it lets you combine metrics from across your stack into single dashboards." },
     { q: "Databox vs building my own spreadsheet, why bother?", a: "A spreadsheet needs rebuilding every reporting cycle and breaks when data changes. Databox connects to your tools once and keeps dashboards and reports updating automatically, with alerts on changes, so you spend time acting on the numbers rather than assembling them." },
   ],

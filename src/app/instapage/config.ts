@@ -13,7 +13,7 @@ export const instapageConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Landing-page & conversion platform" },
     { k: "Best for", v: "Advertisers & performance marketers" },
-    { k: "Pricing", v: "No free plan; from ~US$99/mo (at time of writing)" },
+    { k: "Pricing", v: "No free plan; from US$79/mo (annual)" },
     { k: "Start", v: "14-day free trial" },
   ],
   hero: {
@@ -62,7 +62,7 @@ export const instapageConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Instapage cost?",
-      a: "Instapage is a premium platform with no free plan, starting from around US$99/month at the time of writing, with higher tiers for teams and advanced features. Pricing changes, so check the current plans on Instapage before committing.",
+      a: "Instapage is a premium platform with no free plan, starting from US$79/mo (annual)nth, with higher tiers for teams and advanced features. Pricing changes, so check the current plans on Instapage before committing.",
     },
     {
       q: "Who is Instapage best for?",

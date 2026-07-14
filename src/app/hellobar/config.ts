@@ -8,7 +8,7 @@ export const helloBarConfig: AffiliatePageConfig = {
   eyebrow: "Lead generation & conversion",
   affiliateUrl: HELLOBAR_URL,
   quickAnswer:
-    "Hello Bar is a no-code tool for adding popups and notification bars to your website to capture emails, show announcements and drive clicks. It has a free plan and paid plans from about US$29/month billed annually. You add it to any site without touching code.",
+    "Hello Bar is a no-code tool for adding popups and notification bars to your website to capture emails, show announcements and drive clicks. It has a free plan and paid plans from US$29/month billed annually. You add it to any site without touching code.",
   offer: "Free plan to start",
   atAGlance: [
     { k: "Type", v: "Popups & notification bars" },
@@ -50,8 +50,8 @@ export const helloBarConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["Popups, bars and overlays with no code","Targeting rules to show the right message","A/B testing to lift conversion rates","Connects to popular email and marketing tools"],
   faqs: [
-    { q: "Is Hello Bar free, and is there a discount code?", a: "Yes, Hello Bar has a free plan (with a lifetime cap on popup views and its branding shown). Paid plans from about US$29/month billed annually add more views and remove branding. It does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does Hello Bar cost?", a: "The free plan covers a limited number of popup views. Paid plans start at about US$29/month billed annually (Growth) for higher monthly view limits, with higher tiers for more traffic. Check the current plans for your traffic level before committing." },
+    { q: "Is Hello Bar free, and is there a discount code?", a: "Yes, Hello Bar has a free plan (with a lifetime cap on popup views and its branding shown). Paid plans from US$29/month billed annually add more views and remove branding. It does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
+    { q: "How much does Hello Bar cost?", a: "The free plan covers a limited number of popup views. Paid plans start at US$29/month billed annually (Growth) for higher monthly view limits, with higher tiers for more traffic. Check the current plans for your traffic level before committing." },
     { q: "Do I need to know how to code to use Hello Bar?", a: "No. You add a small snippet or a plugin once, then build and edit popups and bars in Hello Bar's editor without touching code. It works on most website platforms." },
     { q: "Will popups hurt my site or SEO?", a: "Used well, targeted popups grow your list without harming experience; used badly, intrusive popups can annoy visitors. Hello Bar's targeting and timing rules let you show them at sensible moments, which is the key to keeping conversions up without frustrating people." },
   ],

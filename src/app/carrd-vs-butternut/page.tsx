@@ -36,7 +36,7 @@ const itemListSchema = {
       position: 1,
       name: "Carrd",
       description:
-        "Simple one-page website builder with a free plan forever and Pro plans from about $9/year. Best for portfolios, link-in-bio pages, landing pages, and personal sites. You build the page yourself in a fast, clean editor.",
+        "Simple one-page website builder with a free plan forever and Pro plans from $9/year. Best for portfolios, link-in-bio pages, landing pages, and personal sites. You build the page yourself in a fast, clean editor.",
       url: `${SITE_URL}/carrd`,
     },
     {
@@ -106,7 +106,7 @@ const rows: { label: string; carrd: string; butternut: string }[] = [
   { label: "Pages", carrd: "Single page only, by design", butternut: "Full multi-page site" },
   { label: "Setup", carrd: "Live in under an hour", butternut: "Full site draft in ~20 seconds" },
   { label: "Free tier", carrd: "Free plan, up to 3 sites, no card", butternut: "Generate and preview free, no account" },
-  { label: "Pricing", carrd: "Free; Pro from ~$9/year", butternut: "Subscription (full website solution)" },
+  { label: "Pricing", carrd: "Free; Pro from $9/year", butternut: "Subscription (full website solution)" },
   { label: "Built-in extras", carrd: "Forms, custom domain on Pro", butternut: "Editor, SEO settings, blog publishing" },
   { label: "Best for", carrd: "Portfolios, link-in-bio, one-page sites", butternut: "Small business, instant full-site drafts" },
   { label: "Less suited to", carrd: "Multi-page, blogs, e-commerce", butternut: "Large stores, complex multi-team sites" },
@@ -207,7 +207,7 @@ export default function CarrdVsButternutPage() {
               </table>
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
-              Details are based on publicly available information at the time of writing and can change, so check current
+              Details are based on publicly available information and can change, so check current
               features and pricing on each platform before you commit.
             </p>
           </section>
@@ -242,7 +242,7 @@ export default function CarrdVsButternutPage() {
               <p>
                 Both let you start for free, in slightly different ways. Carrd's free plan lets you build and publish up to
                 three one-page sites on carrd.co subdomains with no card, so you can genuinely run a simple site at no
-                cost, and Pro, from about $9 a year, adds custom domains, forms, and more customisation. Butternut lets you
+                cost, and Pro, from $9 a year, adds custom domains, forms, and more customisation. Butternut lets you
                 generate and preview a full site for free with no account, and a paid subscription is what unlocks
                 publishing on a custom domain and the wider platform.
               </p>
@@ -299,7 +299,7 @@ export default function CarrdVsButternutPage() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Carrd</h3>
-                <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">Free plan, Pro from ~$9/year. Best for a simple one-page site, portfolio, or link-in-bio.</p>
+                <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">Free plan, Pro from $9/year. Best for a simple one-page site, portfolio, or link-in-bio.</p>
                 <a {...carrd} data-cta="carrd-vs-butternut-card-carrd" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Try Carrd free <ArrowRight className="h-4 w-4" />
                 </a>

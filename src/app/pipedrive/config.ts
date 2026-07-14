@@ -8,7 +8,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
   eyebrow: "CRM & sales",
   affiliateUrl: PIPEDRIVE_URL,
   quickAnswer:
-    "Pipedrive is a sales CRM built around a visual pipeline: you drag deals through stages, log activities, and let automation handle the follow-up, so nothing stalls. New accounts get a 14-day free trial with no credit card; paid plans start at about US$14 per seat per month billed annually.",
+    "Pipedrive is a sales CRM built around a visual pipeline: you drag deals through stages, log activities, and let automation handle the follow-up, so nothing stalls. New accounts get a 14-day free trial with no credit card; paid plans start at US$14 per seat per month billed annually.",
   offer: "14-day free trial, no card required",
   atAGlance: [
     { k: "Type", v: "Sales CRM / pipeline" },
@@ -51,7 +51,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
   whyUseThis: ["A visual pipeline that shows deal status at a glance","Activity reminders so follow-ups never slip","Workflow automation for repetitive sales admin","Reporting to see what is winning and what is stuck"],
   faqs: [
     { q: "Is there a Pipedrive free trial or discount code?", a: "Yes to the trial: new accounts get a 14-day free trial with no credit card. Pipedrive does not typically publish a public discount code; signing up through our referral link is the most reliable way to start, at no extra cost to you." },
-    { q: "How much does Pipedrive cost?", a: "Pipedrive is priced per seat per month. Its entry Lite plan starts at about US$14 per seat per month billed annually, with the popular Growth plan around US$39 per seat per month annually. Check the current tiers on Pipedrive's pricing page before committing." },
+    { q: "How much does Pipedrive cost?", a: "Pipedrive is priced per seat per month. Its entry Lite plan starts at US$14 per seat per month billed annually, with the popular Growth plan US$39 per seat per month annually. Check the current tiers on Pipedrive's pricing page before committing." },
     { q: "Does Pipedrive have a free plan?", a: "No, Pipedrive does not offer a permanent free plan; it offers a 14-day free trial instead. If you specifically need a free-forever CRM tier, a tool like a freemium CRM may suit better, but Pipedrive's trial lets you test everything first." },
     { q: "Is Pipedrive good for a small team?", a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team keeps it current, while still offering automation and reporting to run a pipeline properly." },
   ],

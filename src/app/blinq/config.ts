@@ -13,7 +13,7 @@ export const blinqConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Digital business cards" },
     { k: "Best for", v: "Professionals, sales & teams" },
-    { k: "Pricing", v: "Free plan; paid from ~US$5/user/mo (at time of writing)" },
+    { k: "Pricing", v: "Free plan (2 cards); Premium from US$7.33/mo (annual)" },
     { k: "Start", v: "Free plan, no card" },
   ],
   hero: {
@@ -62,7 +62,7 @@ export const blinqConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Blinq cost?",
-      a: "Blinq is free for a basic card, with paid plans from around US$5 per user per month at the time of writing for professional features, plus team and business tiers. Pricing changes, so check the current plans before committing.",
+      a: "Blinq is free for a basic card, with paid plans with Premium from US$7.33/month billed annually for professional features, plus team and business tiers. Pricing changes, so check the current plans before committing.",
     },
     {
       q: "Who is Blinq best for?",

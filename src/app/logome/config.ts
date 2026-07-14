@@ -8,7 +8,7 @@ export const logomeConfig: AffiliatePageConfig = {
   eyebrow: "AI tools",
   affiliateUrl: LOGOME_URL,
   quickAnswer:
-    "Logome.ai is an AI logo and brand-kit generator: describe your business and it creates logos plus a matching brand kit (colours, fonts, business cards and social templates) in minutes. You can design and preview for free without signing up; downloading the files requires a paid plan, from about US$19/month billed annually.",
+    "Logome.ai is an AI logo and brand-kit generator: describe your business and it creates logos plus a matching brand kit (colours, fonts, business cards and social templates) in minutes. You can design and preview for free without signing up; downloading the files requires a paid plan, from US$19/month billed annually.",
   offer: "Free to design and preview (pay to download)",
   atAGlance: [
     { k: "Type", v: "AI logo & brand-kit generator" },
@@ -50,8 +50,8 @@ export const logomeConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["Generates a full brand kit, not just a logo","Free to design and preview before you pay","Fast, no design skills or designer required","Export-ready files in common formats on paid plans"],
   faqs: [
-    { q: "Is Logome free, and is there a discount code?", a: "You can design and preview logos and brand kits for free without signing up. Downloading the files requires a paid plan, from about US$19/month billed annually. Logome does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does Logome cost?", a: "Designing and previewing is free. To download, plans start at about US$19/month billed annually for a basic logo pack, with higher tiers adding more formats, transparent backgrounds and a full brand kit. Check the current plans before committing." },
+    { q: "Is Logome free, and is there a discount code?", a: "You can design and preview logos and brand kits for free without signing up. Downloading the files requires a paid plan, from US$19/month billed annually. Logome does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
+    { q: "How much does Logome cost?", a: "Designing and previewing is free. To download, plans start at US$19/month billed annually for a basic logo pack, with higher tiers adding more formats, transparent backgrounds and a full brand kit. Check the current plans before committing." },
     { q: "Do I own the logo I create?", a: "Paid plans grant download files with usage rights for your logo. Confirm the exact ownership and licensing terms on Logome's current plan page for the tier you choose before using it commercially." },
     { q: "Is an AI logo good enough for a real business?", a: "For most startups and small businesses, yes, especially because Logome outputs a coordinated brand kit, not just a mark. Established brands needing bespoke, hand-crafted design will still want a human designer, but as a fast, affordable starting identity it works well." },
   ],

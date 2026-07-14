@@ -13,7 +13,7 @@ export const beautifulaiConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "AI presentation software" },
     { k: "Best for", v: "Founders, teams & consultants" },
-    { k: "Pricing", v: "No free plan; Pro from ~US$12/mo (annual)" },
+    { k: "Pricing", v: "No free plan; Pro from US$12/mo (annual)" },
     { k: "Start", v: "Free trial" },
   ],
   hero: {
@@ -62,7 +62,7 @@ export const beautifulaiConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Beautiful.ai cost?",
-      a: "Beautiful.ai does not have a permanent free plan; Pro starts from around US$12/month billed annually at the time of writing, with Team plans for shared branding. Pricing changes, so check the current plans before committing.",
+      a: "Beautiful.ai does not have a permanent free plan; Pro starts from US$12/month billed annually, with Team plans for shared branding. Pricing changes, so check the current plans before committing.",
     },
     {
       q: "Who is Beautiful.ai best for?",

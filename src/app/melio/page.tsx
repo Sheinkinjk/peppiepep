@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "B2B bill-pay and accounts-payable platform for US businesses to pay vendors by bank transfer, card or check, syncing with QuickBooks and Xero.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan; paid plans from around US$25/month. Requires a US business and US bank account to send payments.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan; paid plans from US$25/month. Requires a US business and US bank account to send payments.", availability: "https://schema.org/InStock" },
   url: "https://meliopayments.com",
   sameAs: ["https://meliopayments.com"],
 };

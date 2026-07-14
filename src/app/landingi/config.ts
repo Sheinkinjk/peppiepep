@@ -8,7 +8,7 @@ export const landingiConfig: AffiliatePageConfig = {
   eyebrow: "Landing pages",
   affiliateUrl: LANDINGI_URL,
   quickAnswer:
-    "Landingi is a no-code landing-page builder for marketers: create, publish and A/B test campaign and lead-generation pages without a developer, using a large template library and AI assistance. There is no free plan, but you get a 14-day free trial; paid plans start at about US$24/month.",
+    "Landingi is a no-code landing-page builder for marketers: create, publish and A/B test campaign and lead-generation pages without a developer, using a large template library and AI assistance. There is no free plan, but you get a 14-day free trial; paid plans start at US$24/month.",
   offer: "14-day free trial",
   atAGlance: [
     { k: "Type", v: "Landing-page builder" },
@@ -51,7 +51,7 @@ export const landingiConfig: AffiliatePageConfig = {
   whyUseThis: ["A large library of conversion-focused templates","No-code editor to publish pages fast","Built-in A/B testing and analytics","Forms, pop-ups and marketing-tool integrations"],
   faqs: [
     { q: "Is there a Landingi free trial or discount code?", a: "Landingi does not have a free-forever plan, but it offers a 14-day free trial so you can build and publish pages before paying. It does not usually run a public discount code; starting through our referral link takes you to the current trial and plans, at no extra cost to you." },
-    { q: "How much does Landingi cost?", a: "Paid plans start at about US$24/month for the entry tier (a set number of pages and monthly visits), with higher tiers like Optimize around US$119/month for more pages, traffic and features. Annual billing lowers the rate. Check the current plans for your traffic before committing." },
+    { q: "How much does Landingi cost?", a: "Paid plans start at US$24/month for the entry tier (a set number of pages and monthly visits), with higher tiers like Optimize US$119/month for more pages, traffic and features. Annual billing lowers the rate. Check the current plans for your traffic before committing." },
     { q: "Landingi vs a website builder, which do I need?", a: "A website builder is for your whole site. Landingi is for standalone landing pages built to convert a specific campaign or offer, with A/B testing and lead capture front and centre. If your goal is capturing leads from ads or campaigns, a landing-page tool usually outperforms a general site builder." },
     { q: "Do I need to code to use Landingi?", a: "No. You build and edit pages in a drag-and-drop editor and publish them without touching code. Templates give you a head start, and integrations connect the page to your email and marketing tools." },
   ],

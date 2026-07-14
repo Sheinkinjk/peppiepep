@@ -8,7 +8,7 @@ export const outgrowConfig: AffiliatePageConfig = {
   eyebrow: "Lead generation & conversion",
   affiliateUrl: OUTGROW_URL,
   quickAnswer:
-    "Outgrow is a no-code platform for building interactive content, calculators, quizzes, assessments, polls and forms, that engages visitors and captures qualified leads. It has a free forms plan and a 7-day trial of the Business plan with no credit card; paid plans start at about US$14/month billed annually.",
+    "Outgrow is a no-code platform for building interactive content, calculators, quizzes, assessments, polls and forms, that engages visitors and captures qualified leads. It has a free forms plan and a 7-day trial of the Business plan with no credit card; paid plans start at US$14/month billed annually.",
   offer: "Free plan; 7-day Business trial, no card",
   atAGlance: [
     { k: "Type", v: "Interactive content / lead gen" },
@@ -50,8 +50,8 @@ export const outgrowConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["Calculators, quizzes, assessments and polls in one tool","No code, embed anywhere","Captures better-qualified, self-selected leads","Templates to launch quickly"],
   faqs: [
-    { q: "Is Outgrow free, and is there a discount code?", a: "Outgrow has a free forms/surveys plan and a 7-day trial of the Business plan with no credit card. Paid plans from about US$14/month billed annually unlock more content types and leads. It does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does Outgrow cost?", a: "There is a limited free plan. Paid plans start at about US$14/month billed annually (Freelancer Limited) with caps on content types and monthly leads, rising to Essentials around US$95/month for more. Check the current plans for the content types and lead volume you need." },
+    { q: "Is Outgrow free, and is there a discount code?", a: "Outgrow has a free forms/surveys plan and a 7-day trial of the Business plan with no credit card. Paid plans from US$14/month billed annually unlock more content types and leads. It does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
+    { q: "How much does Outgrow cost?", a: "There is a limited free plan. Paid plans start at US$14/month billed annually (Freelancer Limited) with caps on content types and monthly leads, rising to Essentials US$95/month for more. Check the current plans for the content types and lead volume you need." },
     { q: "What can I build with Outgrow?", a: "Interactive calculators, quizzes, assessments, polls, surveys, chatbots and forms, all without code. Common uses are pricing or ROI calculators, product-match quizzes and readiness assessments, each with a lead-capture step." },
     { q: "Why use interactive content instead of a form?", a: "Static forms ask people to give without getting anything back. Interactive content gives a result, a score, a recommendation, a number, in exchange for answers, so more people engage and the leads you capture are better qualified because they have told you what they want." },
   ],

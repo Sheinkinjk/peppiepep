@@ -44,7 +44,7 @@ const softwareSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    description: "7-day free trial; paid plans from around $49 the first month, then $99/month.",
+    description: "7-day free trial; paid plans from $49 the first month, then $99/month.",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.leadpages.com",

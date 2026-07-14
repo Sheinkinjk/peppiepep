@@ -153,5 +153,5 @@ export const brevoConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Brevo site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing and plan limits are indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider.",
+    "You will be taken to the Brevo site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing and plan limits are indicative and correct to the best of our knowledge; check the current pricing on the provider.",
 };

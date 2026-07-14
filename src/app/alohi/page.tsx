@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Alohi document tools: Sign.Plus for legally-binding electronic signatures and Fax.Plus for secure online faxing, both with free plans.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plans on both products; paid plans from around US$6.99/month (Fax.Plus) and US$14.99/month (Sign.Plus).", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plans on both products; paid plans from US$6.99/month (Fax.Plus) and US$14.99/month (Sign.Plus).", availability: "https://schema.org/InStock" },
   url: "https://www.alohi.com",
   sameAs: ["https://www.alohi.com"],
 };

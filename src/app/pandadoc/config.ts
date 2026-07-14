@@ -13,7 +13,7 @@ export const pandadocConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Documents, proposals & e-signature" },
     { k: "Best for", v: "Sales teams & small businesses" },
-    { k: "Pricing", v: "Free eSign plan; paid from ~US$19/user/mo" },
+    { k: "Pricing", v: "Free eSign plan; paid from US$19/user/mo" },
     { k: "Start", v: "Free eSign plan or 14-day trial" },
   ],
   hero: {
@@ -62,7 +62,7 @@ export const pandadocConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does PandaDoc cost?",
-      a: "PandaDoc has a free eSign plan; paid plans start from around US$19 per user per month (Essentials) at the time of writing, with a Business tier adding CRM integrations and the content library. Pricing changes, so check current plans before committing.",
+      a: "PandaDoc has a free eSign plan; paid plans start from US$19 per user per month (Essentials), with a Business tier adding CRM integrations and the content library. Pricing changes, so check current plans before committing.",
     },
     {
       q: "Who is PandaDoc best for?",

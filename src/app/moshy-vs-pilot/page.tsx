@@ -212,7 +212,7 @@ export default function MoshyVsPilotPage() {
               </table>
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
-              Prices and terms are approximate and based on publicly available information at the time of writing. They
+              Prices and terms are approximate and based on publicly available information. They
               change often, so check current pricing on each provider. GLP-1 access is subject to individual clinical
               assessment. This comparison is not medical advice.
             </p>

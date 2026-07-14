@@ -11,7 +11,7 @@ export const alidropConfig: AffiliatePageConfig = {
   offer: "US$1 for a 7-day trial",
 
   quickAnswer:
-    "AliDrop is a dropshipping tool that helps you source products from AliExpress, Alibaba and Temu, import them to an online store such as Shopify, and automate order fulfilment so orders are placed with suppliers for you. It includes product research, private suppliers and branding options. AliDrop starts with a US$1 seven-day trial, then paid plans from about US$39/month. Dropshipping is a business model with real costs and no guaranteed returns, this page describes the tool, not an income opportunity.",
+    "AliDrop is a dropshipping tool that helps you source products from AliExpress, Alibaba and Temu, import them to an online store such as Shopify, and automate order fulfilment so orders are placed with suppliers for you. It includes product research, private suppliers and branding options. AliDrop starts with a US$1 seven-day trial, then paid plans from US$39/month. Dropshipping is a business model with real costs and no guaranteed returns, this page describes the tool, not an income opportunity.",
 
   banner: {
     heading: "AliDrop: Dropshipping Made Simpler",
@@ -141,5 +141,5 @@ export const alidropConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the AliDrop site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider. Dropshipping involves risk and costs, and results vary; nothing here is a guarantee of income or financial advice.",
+    "You will be taken to the AliDrop site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge; check the current pricing on the provider. Dropshipping involves risk and costs, and results vary; nothing here is a guarantee of income or financial advice.",
 };

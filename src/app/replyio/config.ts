@@ -11,7 +11,7 @@ export const replyioConfig: AffiliatePageConfig = {
   offer: "14-day free trial, no card",
 
   quickAnswer:
-    "Reply.io is an AI-first sales engagement platform that runs multichannel outbound: it builds and automates sequences across email, LinkedIn, calls and SMS, includes AI SDR agents that write and personalise messages, and bundles B2B data, an email finder and deliverability tools like inbox warm-up. It integrates with HubSpot, Salesforce and Pipedrive and books meetings for your team. There is no free plan; paid plans start from around US$49/user/month with a 14-day free trial.",
+    "Reply.io is an AI-first sales engagement platform that runs multichannel outbound: it builds and automates sequences across email, LinkedIn, calls and SMS, includes AI SDR agents that write and personalise messages, and bundles B2B data, an email finder and deliverability tools like inbox warm-up. It integrates with HubSpot, Salesforce and Pipedrive and books meetings for your team. There is no free plan; paid plans start from US$49/user/month with a 14-day free trial.",
 
   banner: {
     heading: "Reply.io: AI Sales Engagement Platform",
@@ -200,5 +200,5 @@ export const replyioConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Reply.io site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge at the time of writing; check the current pricing on the provider.",
+    "You will be taken to the Reply.io site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge; check the current pricing on the provider.",
 };

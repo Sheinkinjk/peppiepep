@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Sales CRM and pipeline-management software with a visual deal pipeline, activity reminders, email sync, automation and reporting.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "14-day free trial, no card; per-seat plans from around US$14/seat/month billed annually.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "14-day free trial, no card; per-seat plans from US$14/seat/month billed annually.", availability: "https://schema.org/InStock" },
   url: "https://www.pipedrive.com",
   sameAs: ["https://www.pipedrive.com"],
 };

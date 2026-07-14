@@ -35,13 +35,13 @@ const DELIVERABLES = [
 const PREP_STEPS = [
   { id: "niche",     label: "Write down your top 3 niche options", detail: "Think about what you already know, what you enjoy, and where you spend time online. This feeds directly into your niche brief." },
   { id: "channels",  label: "List which channels you actively use", detail: "Reddit? Email list? Facebook groups? TikTok? Being honest here helps us write distribution playbooks that actually apply to you." },
-  { id: "domain",    label: "Register a domain name (if you need one)", detail: "Namecheap or Cloudflare. ~$10-15 AUD. You will need this for your first SEO page or comparison site. Do this now while you wait." },
+  { id: "domain",    label: "Register a domain name (if you need one)", detail: "Namecheap or Cloudflare. $10-15 AUD. You will need this for your first SEO page or comparison site. Do this now while you wait." },
   { id: "tracking",  label: "Create a free Pretty Links account", detail: "prettylinksplugin.com, free tier is fine to start. This is how you track which affiliate links convert. Set it up now." },
   { id: "spreadsheet", label: "Open a fresh Google Sheet", detail: "When your database arrives, you will filter it immediately. Having a working spreadsheet environment open saves time on day one." },
 ];
 
 const QUICK_LINKS = [
-  { label: "Namecheap, domain registration",       href: "https://www.namecheap.com",         note: "~$10 AUD/year" },
+  { label: "Namecheap, domain registration",       href: "https://www.namecheap.com",         note: "$10 AUD/year" },
   { label: "Pretty Links, affiliate link tracking", href: "https://prettylinks.com",            note: "Free to start" },
   { label: "Ahrefs Webmaster Tools",                 href: "https://ahrefs.com/webmaster-tools", note: "Free SEO tool" },
   { label: "Google Search Console",                  href: "https://search.google.com/search-console", note: "Free indexing" },

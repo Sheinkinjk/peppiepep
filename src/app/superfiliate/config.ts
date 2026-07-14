@@ -24,7 +24,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
     { k: "What it is", v: "Affiliate, referral & creator program platform" },
     { k: "Who it's for", v: "E-commerce and DTC brands (not affiliates)" },
     { k: "Stand-out", v: "Personalised landing pages per creator" },
-    { k: "Price", v: "From ~US$299/mo + success fee (quoted)" },
+    { k: "Price", v: "Custom pricing, quoted via demo (+ success fee)" },
   ],
   trustStrip: [
     "Affiliate, referral and creator programs in one platform",

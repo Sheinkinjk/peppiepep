@@ -217,7 +217,7 @@ export default function CheapestWeightLossTelehealthPage() {
               </table>
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
-              Prices are approximate, based on publicly available information at the time of writing, and change often.
+              Prices are approximate, based on publicly available information, and change often.
               Check current pricing on each provider. Medication, where prescribed, may be billed separately. GLP-1
               access is subject to individual clinical assessment. This comparison is not medical advice.
             </p>

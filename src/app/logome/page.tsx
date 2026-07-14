@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "AI logo and brand-kit generator that creates logos, colour palettes, typography, business cards and social templates from a text description.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free to design and preview; downloads on paid plans from around US$19/month billed annually.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free to design and preview; downloads on paid plans from US$19/month billed annually.", availability: "https://schema.org/InStock" },
   url: "https://www.logome.ai",
   sameAs: ["https://www.logome.ai"],
 };

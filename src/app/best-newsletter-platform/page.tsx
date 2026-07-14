@@ -108,7 +108,7 @@ const platforms = [
     internalHref: "/beehiiv",
     tagline: "The newsletter platform built for growth",
     free: "Free up to 2,500 subs",
-    paid: "From ~$39/mo (Scale plan)",
+    paid: "From $39/mo (Scale plan)",
     revenueShare: "0%, you keep all revenue",
     pros: [
       "Built-in referral program for subscriber growth",

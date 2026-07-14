@@ -8,12 +8,12 @@ export const cometchatConfig: AffiliatePageConfig = {
   eyebrow: "Developer & communication tools",
   affiliateUrl: COMETCHAT_URL,
   quickAnswer:
-    "CometChat is a developer platform for adding in-app chat, voice and video to your product, via SDKs, APIs and pre-built UI kits. It has a free Build plan (up to 100 monthly active users) so you can prototype, with paid plans for production; entry paid pricing starts around US$299/month.",
+    "CometChat is a developer platform for adding in-app chat, voice and video to your product, via SDKs, APIs and pre-built UI kits. It has a free Build plan (up to 100 monthly active users) so you can prototype, with paid plans for production; paid production plans are priced by monthly active users.",
   offer: "Free Build plan (up to 100 users)",
   atAGlance: [
     { k: "Type", v: "In-app chat / voice / video SDK" },
     { k: "Best for", v: "Developers & product teams" },
-    { k: "Pricing", v: "Free Build plan; paid from ~US$299/mo" },
+    { k: "Pricing", v: "Free Build plan; paid plans priced by monthly active users" },
   ],
   hero: {
     h1Prefix: "CometChat:",
@@ -51,7 +51,7 @@ export const cometchatConfig: AffiliatePageConfig = {
   whyUseThis: ["SDKs, APIs and pre-built UI kits for every major framework","Chat, voice and video in one platform","Moderation and scaling handled for you","Free Build plan to prototype before you pay"],
   faqs: [
     { q: "Is CometChat free, and is there a discount code?", a: "CometChat has a free Build plan for up to 100 monthly active users, so you can prototype without paying. It does not usually run a public discount code; starting through our referral link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does CometChat cost?", a: "The Build plan is free for up to 100 monthly active users. Paid production plans start around US$299/month for higher usage, with higher tiers adding AI moderation, smart replies and compliance features. Pricing scales with monthly active users, so confirm the current figures for your app's scale." },
+    { q: "How much does CometChat cost?", a: "The Build plan is free for up to 100 monthly active users. Paid production plans are priced by monthly active users, with higher tiers adding AI moderation, smart replies and compliance features. Confirm current pricing for your app's scale on CometChat." },
     { q: "What can I build with CometChat?", a: "In-app text chat, voice and video calling, and AI-agent messaging, inside your own web or mobile product. It is commonly used for marketplaces, communities, telehealth, education, gaming and SaaS apps that need users to communicate." },
     { q: "Is CometChat a team chat tool like Slack?", a: "No. CometChat is developer infrastructure for adding messaging to your own app, not a ready-made team-chat product. If you want internal team messaging, a tool like Slack fits; if you are building chat into a product you ship, CometChat is the right layer." },
   ],

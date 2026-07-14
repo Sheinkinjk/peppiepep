@@ -13,7 +13,7 @@ export const elevenlabsConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "AI voice / text-to-speech" },
     { k: "Best for", v: "Creators, developers & teams" },
-    { k: "Pricing", v: "Free plan; paid from US$5/mo" },
+    { k: "Pricing", v: "Free plan; paid from US$6/mo" },
     { k: "Languages", v: "70+" },
   ],
   hero: {

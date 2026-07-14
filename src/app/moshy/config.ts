@@ -9,7 +9,7 @@ export const moshyConfig: AffiliatePageConfig = {
   affiliateUrl: MOSHY_URL,
 
   quickAnswer:
-    "Yes, there is a current Moshy discount: new customers can receive $120 off their first treatment with the code REFERRAL120 (current at the time of writing). You do not need to type it anywhere when you use the link on this page, because Moshy's landing page carries the code into the sign-up flow automatically. Moshy is an Australian clinically-led weight-management telehealth platform, open to anyone eligible, that assesses eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. Prescription medicines in Australia depend on individual clinical assessment.",
+    "Yes, there is a current Moshy discount: new customers can receive $120 off their first treatment with the code REFERRAL120 (current). You do not need to type it anywhere when you use the link on this page, because Moshy's landing page carries the code into the sign-up flow automatically. Moshy is an Australian clinically-led weight-management telehealth platform, open to anyone eligible, that assesses eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. Prescription medicines in Australia depend on individual clinical assessment.",
 
   banner: {
     heading: "Moshy - Current Offer (Australia)",
@@ -125,7 +125,7 @@ export const moshyConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Moshy discount code?",
-      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first treatment (current at the time of writing; offers change). You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Every button on this page takes you directly to that flow.",
+      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first treatment (current; offers change). You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Every button on this page takes you directly to that flow.",
     },
     {
       q: "Does Moshy have a referral code?",

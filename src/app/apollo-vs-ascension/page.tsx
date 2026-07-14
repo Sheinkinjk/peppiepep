@@ -215,7 +215,7 @@ export default function ApolloVsAscensionPage() {
               </table>
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
-              Details are based on publicly available information at the time of writing and can change. All compounds are
+              Details are based on publicly available information and can change. All compounds are
               for laboratory research use only and not for human or veterinary use. Verify testing and COA documentation
               on each supplier before ordering.
             </p>

@@ -8,7 +8,7 @@ export const flexiQuizConfig: AffiliatePageConfig = {
   eyebrow: "Quizzes, tests & assessments",
   affiliateUrl: FLEXIQUIZ_URL,
   quickAnswer:
-    "FlexiQuiz is an online quiz, test and assessment maker: build quizzes and exams, mark them automatically, issue certificates and analyse results. It has a permanent free plan (up to 20 responses a month, no credit card) and paid plans from about US$17/month.",
+    "FlexiQuiz is an online quiz, test and assessment maker: build quizzes and exams, mark them automatically, issue certificates and analyse results. It has a permanent free plan (up to 20 responses a month, no credit card) and paid plans from US$17/month.",
   offer: "Free plan to start",
   atAGlance: [
     { k: "Type", v: "Quiz, test & assessment maker" },
@@ -50,8 +50,8 @@ export const flexiQuizConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["Many question types with automatic marking","Timers, passing scores and custom certificates","Detailed reports on individuals and groups","Free plan to build and share real quizzes"],
   faqs: [
-    { q: "Is FlexiQuiz free, and is there a discount code?", a: "Yes, FlexiQuiz has a permanent free plan that lets you build and share quizzes with up to 20 responses a month, no credit card. Paid plans from about US$17/month raise the limits and add features. It does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does FlexiQuiz cost?", a: "The free plan covers up to 20 responses a month. Paid plans start at about US$17/month (Essentials), with Premium around US$25/month for more responses and features. Check the current plans for your expected response volume before committing." },
+    { q: "Is FlexiQuiz free, and is there a discount code?", a: "Yes, FlexiQuiz has a permanent free plan that lets you build and share quizzes with up to 20 responses a month, no credit card. Paid plans from US$17/month raise the limits and add features. It does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
+    { q: "How much does FlexiQuiz cost?", a: "The free plan covers up to 20 responses a month. Paid plans start at US$17/month (Essentials), with Premium US$25/month for more responses and features. Check the current plans for your expected response volume before committing." },
     { q: "Can FlexiQuiz mark quizzes automatically and issue certificates?", a: "Yes. It marks supported question types automatically, applies passing scores, and can issue custom certificates to those who pass, with detailed reporting on results. That makes it well suited to training and assessments." },
     { q: "FlexiQuiz vs a marketing quiz tool, which do I need?", a: "FlexiQuiz is built for real tests and assessments: grading, certificates and reporting. A marketing-quiz or interactive-content tool is built for engagement and lead capture. Choose FlexiQuiz when the goal is to test and record knowledge, not just generate leads." },
   ],

@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Developer platform for adding in-app chat, voice and video to web and mobile apps via SDKs, APIs and pre-built UI kits.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free Build plan (up to 100 monthly active users); paid production plans from around US$299/month.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free Build plan (up to 100 monthly active users); paid production plans from US$299/month.", availability: "https://schema.org/InStock" },
   url: "https://www.cometchat.com",
   sameAs: ["https://www.cometchat.com"],
 };

@@ -209,7 +209,7 @@ export default function MoshVsPilotPage() {
               </table>
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
-              Details are based on publicly available information at the time of writing and can change. Prescription
+              Details are based on publicly available information and can change. Prescription
               medicines are subject to individual clinical assessment by a registered Australian practitioner. This
               comparison is not medical advice.
             </p>

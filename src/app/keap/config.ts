@@ -13,7 +13,7 @@ export const keapConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "CRM + sales & marketing automation" },
     { k: "Best for", v: "Small businesses & solopreneurs" },
-    { k: "Pricing", v: "No free plan; from ~US$249/mo (at time of writing)" },
+    { k: "Pricing", v: "No free plan; from US$249/mo" },
     { k: "Start", v: "14-day free trial" },
   ],
   hero: {
@@ -62,7 +62,7 @@ export const keapConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Keap cost?",
-      a: "Keap does not have a free plan, and pricing scales with your number of contacts, starting from around US$249/month at the time of writing. Because pricing changes, check the current plan for your list size on Keap before committing.",
+      a: "Keap does not have a free plan, and pricing scales with your number of contacts, starting from US$249/month. Because pricing changes, check the current plan for your list size on Keap before committing.",
     },
     {
       q: "Who is Keap best for?",

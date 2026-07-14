@@ -8,7 +8,7 @@ export const flocksyConfig: AffiliatePageConfig = {
   eyebrow: "Design & creative services",
   affiliateUrl: FLOCKSY_URL,
   quickAnswer:
-    "Flocksy is a flat-rate subscription that gives you a dedicated team of human creatives for unlimited design and creative requests, across graphic design, video, motion, branding, web and copywriting. There is no free plan or trial, but a 14-day money-back guarantee; plans start at about US$1,199/month.",
+    "Flocksy is a flat-rate subscription that gives you a dedicated team of human creatives for unlimited design and creative requests, across graphic design, video, motion, branding, web and copywriting. There is no free plan or trial, but a 14-day money-back guarantee; plans start at US$1,199/month.",
   offer: "14-day money-back guarantee",
   atAGlance: [
     { k: "Type", v: "Unlimited creative subscription" },
@@ -40,7 +40,7 @@ export const flocksyConfig: AffiliatePageConfig = {
       heading: "Who it suits, and who it doesn't",
       paragraphs: [
         "It fits businesses, marketers and agencies with a steady stream of creative work who want predictable cost and a team that learns their brand, without recruiting. Unlimited requests and revisions are the draw.",
-        "It is not a fit for a one-off logo or a tight budget, it is a premium monthly commitment starting around US$1,199. If your creative needs are occasional, a single project or an AI tool is cheaper. If they are constant, the flat fee can pay for itself.",
+        "It is not a fit for a one-off logo or a tight budget, it is a premium monthly commitment starting US$1,199. If your creative needs are occasional, a single project or an AI tool is cheaper. If they are constant, the flat fee can pay for itself.",
       ],
     },
   ],
@@ -52,7 +52,7 @@ export const flocksyConfig: AffiliatePageConfig = {
   whyUseThis: ["Unlimited requests and unlimited revisions","A dedicated team across 140+ creative services","Flat monthly fee instead of per-project costs","14-day money-back guarantee to start"],
   faqs: [
     { q: "Is there a Flocksy free trial or discount code?", a: "Flocksy does not offer a free plan or free trial, but it is backed by a 14-day money-back guarantee, so you can try it with your own briefs and get a refund if it is not right. It does not usually run a public discount code; quarterly and annual billing lower the rate, and starting through our referral link takes you to the current plans at no extra cost to you." },
-    { q: "How much does Flocksy cost?", a: "Plans start at about US$1,199/month for the entry tier (roughly ten hours of creative work a week with a dedicated team), rising to around US$1,699/month and up for more capacity and senior roles. Quarterly billing saves about 10% and annual about 20%. It is a premium, ongoing service, so it suits steady creative needs." },
+    { q: "How much does Flocksy cost?", a: "Plans start at US$1,199/month for the entry tier (roughly ten hours of creative work a week with a dedicated team), rising to US$1,699/month and up for more capacity and senior roles. Quarterly billing saves about 10% and annual about 20%. It is a premium, ongoing service, so it suits steady creative needs." },
     { q: "What can Flocksy design for me?", a: "Across 140+ services: graphic design, logos and branding, video editing, motion graphics, web design, illustration, copywriting and more. You submit requests to your queue and a dedicated team works through them with unlimited revisions." },
     { q: "Flocksy vs hiring a freelancer or designer?", a: "A freelancer suits occasional, one-off work. Flocksy suits a constant stream: a flat monthly fee, a team that learns your brand, unlimited requests and revisions, and no recruiting. If you are regularly paying for design, the subscription can work out cheaper and more predictable; if not, per-project is fine." },
   ],

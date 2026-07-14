@@ -8,7 +8,7 @@ export const activeCampaignConfig: AffiliatePageConfig = {
   eyebrow: "Email marketing & automation",
   affiliateUrl: ACTIVECAMPAIGN_URL,
   quickAnswer:
-    "ActiveCampaign is an email marketing and automation platform with a built-in CRM: email campaigns, powerful automations, segmentation and sales tools in one place. New accounts get a 14-day free trial with no credit card; paid plans start at about US$15/month for 1,000 contacts billed annually, rising with your list size.",
+    "ActiveCampaign is an email marketing and automation platform with a built-in CRM: email campaigns, powerful automations, segmentation and sales tools in one place. New accounts get a 14-day free trial with no credit card; paid plans start at US$15/month for 1,000 contacts billed annually, rising with your list size.",
   offer: "14-day free trial, no card required",
   atAGlance: [
     { k: "Type", v: "Email marketing / automation / CRM" },
@@ -51,7 +51,7 @@ export const activeCampaignConfig: AffiliatePageConfig = {
   whyUseThis: ["A genuinely powerful visual automation builder","Email, segmentation and a CRM in one tool","Automations that react to each contact's behaviour","Scales from newsletters to full lifecycle marketing"],
   faqs: [
     { q: "Is there an ActiveCampaign free trial or discount code?", a: "Yes to the trial: new accounts get a 14-day free trial, no credit card required. ActiveCampaign does not typically publish a public discount code; signing up through our referral link is the most reliable way to start, at no extra cost to you." },
-    { q: "How much does ActiveCampaign cost?", a: "Pricing is by contact volume. The entry Starter plan begins at about US$15/month for 1,000 contacts billed annually, with the popular Pro plan around US$79/month; every plan's price rises as your list grows. Check the current tiers for your list size before committing." },
+    { q: "How much does ActiveCampaign cost?", a: "Pricing is by contact volume. The entry Starter plan begins at US$15/month for 1,000 contacts billed annually, with the popular Pro plan US$79/month; every plan's price rises as your list grows. Check the current tiers for your list size before committing." },
     { q: "Does ActiveCampaign have a free plan?", a: "No, there is no permanent free plan; it offers a 14-day free trial instead. If you only need a simple free newsletter tool, a freemium email platform may suit better, but the trial lets you test the automation first." },
     { q: "ActiveCampaign vs a basic email tool, what's the difference?", a: "Basic tools send broadcasts to a list. ActiveCampaign adds an automation engine that reacts to each contact's behaviour, plus segmentation and a CRM, so follow-up is personalised and hands-off. It is the step up when send-and-hope email stops being enough." },
   ],

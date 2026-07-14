@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "AI meeting assistant that auto-joins Zoom, Meet and Teams calls to record, transcribe and summarise them with action items.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan (a few hours/month, no card); paid plans from around US$9.99/user/month.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan (a few hours/month, no card); paid plans from US$9.99/user/month.", availability: "https://schema.org/InStock" },
   url: "https://meetgeek.ai",
   sameAs: ["https://meetgeek.ai"],
 };

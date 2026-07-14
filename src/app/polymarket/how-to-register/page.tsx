@@ -33,7 +33,7 @@ const sections: GuideSection[] = [
           In the United States, Polymarket US is available in <strong>roughly 40 or more states</strong>, but
           several have issued restrictions or bans. States that have appeared on that list include{" "}
           <strong>Nevada, Tennessee, Massachusetts, Connecticut, Arizona and Minnesota</strong>. This list
-          changes, so treat it as current at the time of writing and confirm your own state in the{" "}
+          changes, so treat it as current and confirm your own state in the{" "}
           <a href={POLYMARKET_DOCS.help} target="_blank" rel="noopener nofollow">official help centre</a>.
         </p>
         <p>

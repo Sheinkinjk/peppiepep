@@ -8,7 +8,7 @@ export const lindyConfig: AffiliatePageConfig = {
   eyebrow: "AI tools",
   affiliateUrl: LINDY_URL,
   quickAnswer:
-    "Lindy is an AI work assistant that automates repetitive admin, inbox triage, meeting scheduling, follow-ups and CRM updates, by connecting to the apps you already use. New accounts get a 7-day free trial with no credit card; paid plans start at about US$49.99/month.",
+    "Lindy is an AI work assistant that automates repetitive admin, inbox triage, meeting scheduling, follow-ups and CRM updates, by connecting to the apps you already use. New accounts get a 7-day free trial with no credit card; paid plans start at US$49.99/month.",
   offer: "7-day free trial, no card required",
   atAGlance: [
     { k: "Type", v: "AI work assistant / automation" },
@@ -39,7 +39,7 @@ export const lindyConfig: AffiliatePageConfig = {
       heading: "Who it suits, and the honest catch",
       paragraphs: [
         "It fits founders, sales and operations people, and anyone drowning in inbox and coordination work. The value depends on how much repetitive, rules-based admin you actually have, if your work is mostly ad-hoc and creative, an AI assistant helps less.",
-        "Plans are tiered by usage and connected inboxes, starting around US$49.99/month at the time of writing, with higher tiers for more volume. Start on the free trial and confirm current pricing before you subscribe.",
+        "Plans are tiered by usage and connected inboxes, starting US$49.99/month, with higher tiers for more volume. Start on the free trial and confirm current pricing before you subscribe.",
       ],
     },
   ],
@@ -61,7 +61,7 @@ export const lindyConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Lindy cost?",
-      a: "At the time of writing, paid plans start around US$49.99/month, with higher tiers (roughly US$99.99 and US$199.99) for more usage and connected inboxes, plus an enterprise option. Pricing changes, so confirm the current tiers on Lindy before subscribing.",
+      a: "At the time of writing, paid plans start US$49.99/month, with higher tiers (US$99.99 and US$199.99) for more usage and connected inboxes, plus an enterprise option. Pricing changes, so confirm the current tiers on Lindy before subscribing.",
     },
     {
       q: "What can Lindy actually do?",

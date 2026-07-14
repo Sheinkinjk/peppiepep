@@ -15,7 +15,7 @@ import { CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL } from "@/lib/af
 const CARRD: MatchResult = {
   key: "carrd",
   name: "Carrd",
-  why: "For a simple one-page site or link-in-bio, Carrd is the cheapest, fastest way to get live, a genuine free plan and Pro from about $9/year.",
+  why: "For a simple one-page site or link-in-bio, Carrd is the cheapest, fastest way to get live, a genuine free plan and Pro from $9/year.",
   primaryCta: { label: "Try Carrd free", href: CARRD_URL, dataCta: "builder-quiz-carrd" },
   secondary: { label: "Read our full review", href: "/carrd" },
 };
