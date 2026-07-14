@@ -16,55 +16,55 @@ const breadcrumbSchema = {
 };
 
 const hubs = [
-  { href: "/weight-loss", label: "Weight loss", desc: "Telehealth, programs and the GP pathway, compared." },
-  { href: "/hair-loss", label: "Hair loss", desc: "Clinical prescription treatment versus topical products." },
-  { href: "/compare/website-builders", label: "Website builders", desc: "Free, AI-built and landing-page tools, sorted by job." },
-  { href: "/compare/newsletter-platforms", label: "Newsletter platforms", desc: "Where to build an email audience, and what each takes." },
-  { href: "/compare/ai-sales-tools", label: "AI sales tools", desc: "Data, outreach, AI reps and CRMs, sorted by the job you need done." },
-  { href: "/compare/sales-outreach", label: "Sales & outreach", desc: "Find leads and reach them across email and channels." },
-  { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants and voice, sorted by what they actually do." },
-  { href: "/compare/lead-generation", label: "Popups & quizzes", desc: "On-site popups, interactive quizzes and assessments that capture leads." },
-  { href: "/compare/hr-payroll", label: "HR & payroll", desc: "Run pay, hiring, training and people admin from one place." },
-  { href: "/compare/business-phone", label: "Business phone", desc: "Cloud calling and virtual numbers for teams." },
-  { href: "/compare/payments", label: "Payments & finance", desc: "Get paid across borders, plus bookkeeping automation." },
-  { href: "/compare/research-peptides", label: "Research peptides", desc: "Suppliers compared on purity and catalogue. Research use only." },
+  { href: "/weight-loss", label: "Weight Loss", desc: "Telehealth, programs and the GP pathway, compared." },
+  { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
+  { href: "/compare/website-builders", label: "Website Builders", desc: "Free, AI-built and landing-page tools, sorted by job." },
+  { href: "/compare/newsletter-platforms", label: "Newsletter Platforms", desc: "Where to build an email audience, and what each takes." },
+  { href: "/compare/ai-sales-tools", label: "AI Sales Tools", desc: "Data, outreach, AI reps and CRMs, sorted by the job you need done." },
+  { href: "/compare/sales-outreach", label: "Sales & Outreach", desc: "Find leads and reach them across email and channels." },
+  { href: "/compare/ai-tools", label: "AI Tools", desc: "AI assistants and voice, sorted by what they actually do." },
+  { href: "/compare/lead-generation", label: "Popups & Quizzes", desc: "On-site popups, interactive quizzes and assessments that capture leads." },
+  { href: "/compare/hr-payroll", label: "HR & Payroll", desc: "Run pay, hiring, training and people admin from one place." },
+  { href: "/compare/business-phone", label: "Business Phone", desc: "Cloud calling and virtual numbers for teams." },
+  { href: "/compare/payments", label: "Payments & Finance", desc: "Get paid across borders, plus bookkeeping automation." },
+  { href: "/compare/research-peptides", label: "Research Peptides", desc: "Suppliers compared on purity and catalogue. Research use only." },
 ];
 
 const sections = [
   {
-    label: "Comparison roundups",
+    label: "Comparison Roundups",
     description: "Head-to-head comparisons across categories. Independent, and never pay-to-rank.",
     guides: [
-      { href: "/best-website-builder", label: "Best website builder 2026", desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages." },
-      { href: "/best-newsletter-platform", label: "Best newsletter platform 2026", desc: "beehiiv vs Substack vs ConvertKit." },
-      { href: "/best-weight-loss-telehealth-australia", label: "Best weight loss telehealth", desc: "Moshy vs Juniper vs Better Being." },
-      { href: "/best-hair-loss-treatment-australia", label: "Best hair loss treatment", desc: "Clinical telehealth vs topical products." },
-      { href: "/best-peptide-supplier", label: "Best peptide supplier 2026", desc: "Apollo vs Ascension vs BioPeptiTech. Research use only." },
-      { href: "/best-ai-sales-tools", label: "Best AI sales tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
+      { href: "/best-website-builder", label: "Best Website Builder 2026", desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages." },
+      { href: "/best-newsletter-platform", label: "Best Newsletter Platform 2026", desc: "beehiiv vs Substack vs ConvertKit." },
+      { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper vs Better Being." },
+      { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
+      { href: "/best-peptide-supplier", label: "Best Peptide Supplier 2026", desc: "Apollo vs Ascension vs BioPeptiTech. Research use only." },
+      { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
     ],
   },
   {
-    label: "Weight loss & telehealth",
+    label: "Weight Loss & Telehealth",
     description: "How Australia's online weight-loss services work, and which suits whom.",
     guides: [
-      { href: "/moshy", label: "Moshy, offer & referral link", desc: "The current referral offer. No code required." },
-      { href: "/moshy-review", label: "Moshy, explained", desc: "How the service actually runs, application to subscription." },
+      { href: "/moshy", label: "Moshy, Offer & Referral Link", desc: "The current referral offer. No code required." },
+      { href: "/moshy-review", label: "Moshy, Explained", desc: "How the service actually runs, application to subscription." },
       { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
-      { href: "/moshy-vs-gp", label: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
-      { href: "/moshy-alternatives", label: "Moshy alternatives", desc: "The honest shortlist, including the option nobody markets." },
-      { href: "/mens-health-telehealth-australia", label: "Men's health telehealth", desc: "The wider category and its limits." },
+      { href: "/moshy-vs-gp", label: "Telehealth vs Your GP", desc: "Two doors to the same care. The practical trade." },
+      { href: "/moshy-alternatives", label: "Moshy Alternatives", desc: "The honest shortlist, including the option nobody markets." },
+      { href: "/mens-health-telehealth-australia", label: "Men's Health Telehealth", desc: "The wider category and its limits." },
     ],
   },
   {
-    label: "Hair loss & hair care",
+    label: "Hair Loss & Hair Care",
     description: "Prescription telehealth and topical products for hair loss in Australia.",
     guides: [
-      { href: "/moshhair", label: "Mosh hair: what to know", desc: "Men's hair-loss telehealth. Process, options, current offer." },
+      { href: "/moshhair", label: "Mosh Hair: What to Know", desc: "Men's hair-loss telehealth. Process, options, current offer." },
       { href: "/dense", label: "Dense Hair Experts", desc: "Topical, non-prescription density and scalp products." },
     ],
   },
   {
-    label: "Website builders & landing pages",
+    label: "Website Builders & Landing Pages",
     description: "AI website builders, one-page sites and landing-page tools built to convert.",
     guides: [
       { href: "/carrd", label: "Carrd", desc: "Free plan forever, Pro from $9/year. Best for simple sites." },
@@ -77,7 +77,7 @@ const sections = [
     ],
   },
   {
-    label: "Lead generation & conversion",
+    label: "Popups, Quizzes & Surveys",
     description: "Turn visitors into leads with popups, interactive content and surveys.",
     guides: [
       { href: "/hellobar", label: "Hello Bar", desc: "No-code popups and bars for on-site email capture." },
@@ -87,7 +87,7 @@ const sections = [
     ],
   },
   {
-    label: "Newsletters & email marketing",
+    label: "Newsletters & Email Marketing",
     description: "Build an audience and run email, from creator newsletters to automation.",
     guides: [
       { href: "/beehiiv", label: "beehiiv", desc: "Newsletter platform built for growth. Free to start." },
@@ -96,7 +96,7 @@ const sections = [
     ],
   },
   {
-    label: "Sales, CRM & data",
+    label: "Sales, CRM & Data",
     description: "Find leads, run outreach and manage the pipeline, sorted by the job.",
     guides: [
       { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
@@ -109,7 +109,7 @@ const sections = [
     ],
   },
   {
-    label: "AI tools",
+    label: "AI Tools",
     description: "AI assistants, voice, branding and meeting notes, sorted by what they do.",
     guides: [
       { href: "/lindy", label: "Lindy", desc: "An AI assistant that automates inbox, scheduling and CRM." },
@@ -119,7 +119,7 @@ const sections = [
     ],
   },
   {
-    label: "Business phone, HR & finance",
+    label: "Business Phone, HR & Finance",
     description: "The tools that run the back office: calling, people and money.",
     guides: [
       { href: "/cloudtalk", label: "CloudTalk", desc: "AI call-centre and business phone for sales and support." },
@@ -131,7 +131,7 @@ const sections = [
     ],
   },
   {
-    label: "More business & creative tools",
+    label: "More Business & Creative Tools",
     description: "Analytics, virtual assistants, e-signatures, design and more.",
     guides: [
       { href: "/databox", label: "Databox", desc: "KPI dashboards that pull 130+ data sources into one view." },
@@ -156,7 +156,7 @@ const sections = [
     ],
   },
   {
-    label: "Research peptides",
+    label: "Research Peptides",
     description: "For laboratory research use only. Purity, catalogue and current offers.",
     guides: [
       { href: "/apollopeptides", label: "Apollo Peptide Sciences", desc: "Broad catalogue. Current offer via referral link." },
