@@ -68,6 +68,11 @@ export const wingAssistantConfig: AffiliatePageConfig = {
       a: "Recurring, delegatable work across roles like general admin, inbox and calendar management, sales support, marketing tasks and customer service. Highly specialised one-off projects may suit a specialist freelancer better.",
     },
   ],
+  relatedLinks: [
+    { href: "/lindy", label: "Lindy", desc: "AI assistants that automate tasks you might otherwise delegate to a human VA." },
+    { href: "/trainual", label: "Trainual", desc: "Document the processes and SOPs you want a virtual assistant to run." },
+    { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
+  ],
   ctas: {
     primary: "See Wing Assistant",
     secondary: "Continue to Wing Assistant",

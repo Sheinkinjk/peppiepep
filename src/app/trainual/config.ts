@@ -72,6 +72,11 @@ export const trainualConfig: AffiliatePageConfig = {
       a: "It sits alongside HR: it handles the training, onboarding and process-documentation side rather than payroll or benefits. Many teams pair it with an HR/payroll platform, see our HR & payroll hub.",
     },
   ],
+  relatedLinks: [
+    { href: "/employmenthero", label: "Employment Hero (Australia)", desc: "HR, payroll and onboarding for Australian teams, a natural companion to documented SOPs." },
+    { href: "/wing-assistant", label: "Wing Assistant", desc: "Delegate the repeatable processes you document in Trainual to a virtual assistant." },
+    { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
+  ],
   ctas: {
     primary: "See Trainual",
     secondary: "Continue to Trainual",

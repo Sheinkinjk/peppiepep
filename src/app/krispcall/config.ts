@@ -71,6 +71,11 @@ export const krispcallConfig: AffiliatePageConfig = {
       a: "Both are cloud phone systems. KrispCall leans toward simple virtual numbers and a shared inbox for smaller and remote teams; CloudTalk leans toward call-centre features and analytics for busier sales and support floors. See our business-phone hub for the side-by-side.",
     },
   ],
+  relatedLinks: [
+    { href: "/cloudtalk", label: "CloudTalk", desc: "A call-center-grade business phone with deeper CRM integrations and AI call features." },
+    { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "Outbound and CRM tools that sit alongside a virtual phone system." },
+    { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
+  ],
   ctas: {
     primary: "See KrispCall",
     secondary: "Continue to KrispCall",

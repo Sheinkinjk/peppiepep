@@ -73,6 +73,11 @@ export const elevenlabsConfig: AffiliatePageConfig = {
       a: "Commercial use is generally tied to paid plans and their licensing terms, and voice cloning has its own rules around consent. Read the current terms on ElevenLabs before using generated audio commercially.",
     },
   ],
+  relatedLinks: [
+    { href: "/lindy", label: "Lindy", desc: "AI assistants and automations that can act on voice and text workflows." },
+    { href: "/durableai", label: "Durable AI", desc: "Generate a full business website in seconds, a natural companion to AI voice content." },
+    { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
+  ],
   ctas: {
     primary: "See ElevenLabs",
     secondary: "Continue to ElevenLabs",

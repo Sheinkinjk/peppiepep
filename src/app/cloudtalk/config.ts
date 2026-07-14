@@ -72,6 +72,11 @@ export const cloudtalkConfig: AffiliatePageConfig = {
       a: "It suits small-to-mid sales and support teams that want proper call handling and reporting. A single-user setup that only needs one number may find a lighter virtual-phone tool cheaper.",
     },
   ],
+  relatedLinks: [
+    { href: "/krispcall", label: "KrispCall", desc: "A lighter virtual phone system for teams that mainly need numbers and call handling." },
+    { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "Outbound, CRM and enrichment tools that pair with a business phone system." },
+    { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
+  ],
   ctas: {
     primary: "See CloudTalk",
     secondary: "Continue to CloudTalk",
