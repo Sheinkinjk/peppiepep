@@ -148,10 +148,6 @@ export const carrdConfig: AffiliatePageConfig = {
       q: "How does Carrd compare to Webflow?",
       a: "Webflow is a professional design tool with advanced layout control and a steep learning curve. Carrd is simple, fast, and accessible to anyone. Carrd is the better choice if speed and simplicity matter more than design flexibility. Webflow is better for complex, custom-designed multi-page sites.",
     },
-    {
-      q: "How do I get to Carrd from this page?",
-      a: "Click any button on this page. You will be taken directly to carrd.co via our referral link. The free plan is available immediately on arrival, no credit card required.",
-    },
   ],
 
   breadcrumb: [

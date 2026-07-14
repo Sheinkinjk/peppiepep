@@ -160,10 +160,6 @@ export const durableAiConfig: AffiliatePageConfig = {
       q: "Is Durable AI good for small business?",
       a: "Yes, for the right type of small business. Durable is specifically designed for local service businesses, consultants, trades, and solo operators. If you need a professional website, a basic CRM to track leads, and invoicing in one platform, Durable is a strong fit. If you need e-commerce, blogging, or high design flexibility, other builders are better suited.",
     },
-    {
-      q: "How do I get to Durable AI from this page?",
-      a: "Click any button on this page. You will be taken directly to durable.co via our referral link. You can generate a website immediately on arrival without creating an account.",
-    },
   ],
 
   breadcrumb: [

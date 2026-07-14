@@ -152,10 +152,6 @@ export const butternutConfig: AffiliatePageConfig = {
       q: "Is Butternut AI good for small business?",
       a: "Yes. Butternut AI is specifically well-suited to small business owners, freelancers, and solo operators who need a professional website online quickly without design or development skills. If your site requirements are straightforward, an about page, services, contact, and blog, Butternut can get you live the same day you decide you need a website.",
     },
-    {
-      q: "How do I get to Butternut AI from this page?",
-      a: "Click any button on this page. You will be taken directly to butternut.ai via our referral link. You can generate a website immediately on arrival without creating an account.",
-    },
   ],
 
   breadcrumb: [

@@ -146,10 +146,6 @@ export const incomeLabConfig: AffiliatePageConfig = {
       q: "What is Income Lab?",
       a: "Income Lab is a platform and community built around helping people generate real income using AI tools, automation, and modern online business methods. It focuses on practical application, helping people go from learning about AI to actually earning from it. This page links directly to the Income Lab onboarding page. Click any button to continue.",
     },
-    {
-      q: "How do I get to Income Lab from this page?",
-      a: "Click any button on this page. You will be taken directly to the Income Lab onboarding page at incomelab.me via our referral link. No steps required here before you arrive.",
-    },
   ],
 
   breadcrumb: [

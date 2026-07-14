@@ -154,10 +154,6 @@ export const beehiivConfig: AffiliatePageConfig = {
       q: "How does beehiiv compare to ConvertKit?",
       a: "ConvertKit (Kit) is a broader creator marketing platform covering automation, landing pages, and digital product sales. beehiiv is focused specifically on newsletter publishing, growth, and monetization. If your primary business is a newsletter, beehiiv's purpose-built tools are more powerful. If you need complex email automation or need to sell digital products alongside a newsletter, ConvertKit is more flexible.",
     },
-    {
-      q: "How do I claim the beehiiv 14-day trial?",
-      a: "Click any button on this page. You will be taken directly to beehiiv.com via our referral link. The 14-day trial of paid plan features is applied automatically when you sign up.",
-    },
   ],
 
   breadcrumb: [
