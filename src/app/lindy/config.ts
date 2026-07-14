@@ -61,7 +61,7 @@ export const lindyConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Lindy cost?",
-      a: "At the time of writing, paid plans start US$49.99/month, with higher tiers (US$99.99 and US$199.99) for more usage and connected inboxes, plus an enterprise option. Pricing changes, so confirm the current tiers on Lindy before subscribing.",
+      a: "Paid plans start US$49.99/month, with higher tiers (US$99.99 and US$199.99) for more usage and connected inboxes, plus an enterprise option. Pricing changes, so confirm the current tiers on Lindy before subscribing.",
     },
     {
       q: "What can Lindy actually do?",

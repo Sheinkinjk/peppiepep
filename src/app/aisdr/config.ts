@@ -90,7 +90,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     {
       heading: "AiSDR pricing and contract",
       paragraphs: [
-        "At the time of writing, AiSDR starts from $250/month for the Solo plan, with the popular Explore plan $900/month billed quarterly, and includes unlimited seats with no long-term contract. These figures can change, so treat them as a guide and check the current pricing on the provider before you commit.",
+        "AiSDR starts from $250/month for the Solo plan, with the popular Explore plan $900/month billed quarterly, and includes unlimited seats with no long-term contract. These figures can change, so treat them as a guide and check the current pricing on the provider before you commit.",
         "The way to judge value is against the fully loaded cost of a human SDR, which includes salary, tools, ramp time and the risk of turnover. For a team that needs consistent outbound volume, an AI rep priced this way can compare favourably, but only if you will actually feed it a clear target market and offer.",
         "Because there is no long-term contract and seats are unlimited, the commitment model is relatively flexible for a tool at this level, which lowers the risk of trying it against your own pipeline.",
       ],
@@ -136,7 +136,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does AiSDR cost?",
-      a: "At the time of writing, AiSDR starts from $250/month for the Solo plan, with the popular quarterly plan $900/month, unlimited seats and no long-term contract. Pricing can change, so verify the current figures on the provider. The value case is usually judged against the fully loaded cost of hiring a human SDR.",
+      a: "AiSDR starts from $250/month for the Solo plan, with the popular quarterly plan $900/month, unlimited seats and no long-term contract. Pricing can change, so verify the current figures on the provider. The value case is usually judged against the fully loaded cost of hiring a human SDR.",
     },
     {
       q: "Who is AiSDR best for?",

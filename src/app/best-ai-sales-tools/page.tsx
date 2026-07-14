@@ -70,7 +70,7 @@ const faqSchema = {
       name: "How much do AI sales tools cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "At the time of writing, GoHighLevel starts from $97/month with a 14-day free trial and no credit card, while AiSDR starts from $250/month on its Solo plan (its popular Explore plan is $900/month billed quarterly) with unlimited seats and no long-term contract. Pricing can change, so check the current figures on each provider before you commit.",
+        text: "GoHighLevel starts from $97/month with a 14-day free trial and no credit card, while AiSDR starts from $250/month on its Solo plan (its popular Explore plan is $900/month billed quarterly) with unlimited seats and no long-term contract. Pricing can change, so check the current figures on each provider before you commit.",
       },
     },
     {
@@ -444,7 +444,7 @@ export default function BestAiSalesToolsPage() {
               },
               {
                 q: "How much do AI sales tools cost?",
-                a: "At the time of writing, GoHighLevel starts from $97/month with a 14-day free trial and no credit card, while AiSDR starts from $900/month billed quarterly with unlimited seats and no long-term contract. Pricing can change, so verify the current figures on each provider before you commit.",
+                a: "GoHighLevel starts from $97/month with a 14-day free trial and no credit card, while AiSDR starts from $900/month billed quarterly with unlimited seats and no long-term contract. Pricing can change, so verify the current figures on each provider before you commit.",
               },
               {
                 q: "Does GoHighLevel have a free trial?",
