@@ -194,9 +194,9 @@ export default function HairLossHubPage() {
             ))}
           </div>
           <p className="mt-8 text-sm text-[#3d4b44]">
-            How this hub is funded and researched:{" "}
+            Independent research, with any affiliate links disclosed. Read our{" "}
             <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
-              our editorial standards
+              editorial standards
             </Link>
             .
           </p>

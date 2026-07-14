@@ -5,18 +5,18 @@ import HeaderNav from "./HeaderNav";
 import { ReferLabsLogo } from "../ReferLabsLogo";
 
 // Mobile shortcut row (desktop uses the grouped HeaderNav dropdowns).
-// Deliberately short: the consumer verticals up front, then one "Business tools"
+// Deliberately short: the consumer verticals up front, then one "Business Tools"
 // door (the /guides index) that holds the software hubs, so the row reads as a
 // few clear worlds rather than a long list of unrelated tools.
 const NAV = [
-  { href: "/weight-loss", label: "Weight loss" },
-  { href: "/hair-loss", label: "Hair loss" },
+  { href: "/weight-loss", label: "Weight Loss" },
+  { href: "/hair-loss", label: "Hair Loss" },
   { href: "/best-peptide-supplier", label: "Peptides" },
   { href: "/compare/website-builders", label: "Websites" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
-  { href: "/business-software", label: "Business tools" },
+  { href: "/business-software", label: "Business Tools" },
   { href: "/polymarket", label: "Polymarket" },
-  { href: "/for-business", label: "For business" },
+  { href: "/for-business", label: "For Business" },
 ];
 
 /**
@@ -74,33 +74,33 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
             <div>
               <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">By category</p>
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
-                <li><Link href="/weight-loss" className="transition-colors hover:text-[#0a7c42]">Weight loss &amp; telehealth</Link></li>
-                <li><Link href="/hair-loss" className="transition-colors hover:text-[#0a7c42]">Hair loss treatment</Link></li>
-                <li><Link href="/mens-health-telehealth-australia" className="transition-colors hover:text-[#0a7c42]">Men&apos;s health telehealth</Link></li>
-                <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website builders</Link></li>
-                <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter platforms</Link></li>
-                <li><Link href="/best-ai-sales-tools" className="transition-colors hover:text-[#0a7c42]">AI sales &amp; automation</Link></li>
-                <li><Link href="/polymarket" className="transition-colors hover:text-[#0a7c42]">Polymarket &amp; prediction markets</Link></li>
-                <li><Link href="/guides" className="transition-colors hover:text-[#0a7c42]">All guides</Link></li>
+                <li><Link href="/weight-loss" className="transition-colors hover:text-[#0a7c42]">Weight Loss &amp; Telehealth</Link></li>
+                <li><Link href="/hair-loss" className="transition-colors hover:text-[#0a7c42]">Hair Loss Treatment</Link></li>
+                <li><Link href="/mens-health-telehealth-australia" className="transition-colors hover:text-[#0a7c42]">Men&apos;s Health Telehealth</Link></li>
+                <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website Builders</Link></li>
+                <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter Platforms</Link></li>
+                <li><Link href="/best-ai-sales-tools" className="transition-colors hover:text-[#0a7c42]">AI Sales &amp; Automation</Link></li>
+                <li><Link href="/polymarket" className="transition-colors hover:text-[#0a7c42]">Polymarket &amp; Prediction Markets</Link></li>
+                <li><Link href="/guides" className="transition-colors hover:text-[#0a7c42]">All Guides</Link></li>
               </ul>
             </div>
             <div>
               <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">Top comparisons</p>
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
-                <li><Link href="/best-weight-loss-telehealth-australia" className="transition-colors hover:text-[#0a7c42]">Best weight-loss telehealth</Link></li>
-                <li><Link href="/best-hair-loss-treatment-australia" className="transition-colors hover:text-[#0a7c42]">Best hair-loss treatment</Link></li>
-                <li><Link href="/best-website-builder" className="transition-colors hover:text-[#0a7c42]">Best website builder</Link></li>
-                <li><Link href="/best-newsletter-platform" className="transition-colors hover:text-[#0a7c42]">Best newsletter platform</Link></li>
-                <li><Link href="/best-peptide-supplier" className="transition-colors hover:text-[#0a7c42]">Best peptide supplier</Link></li>
+                <li><Link href="/best-weight-loss-telehealth-australia" className="transition-colors hover:text-[#0a7c42]">Best Weight-Loss Telehealth</Link></li>
+                <li><Link href="/best-hair-loss-treatment-australia" className="transition-colors hover:text-[#0a7c42]">Best Hair-Loss Treatment</Link></li>
+                <li><Link href="/best-website-builder" className="transition-colors hover:text-[#0a7c42]">Best Website Builder</Link></li>
+                <li><Link href="/best-newsletter-platform" className="transition-colors hover:text-[#0a7c42]">Best Newsletter Platform</Link></li>
+                <li><Link href="/best-peptide-supplier" className="transition-colors hover:text-[#0a7c42]">Best Peptide Supplier</Link></li>
               </ul>
             </div>
             <div>
               <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">Company</p>
               <ul className="space-y-2.5 text-sm text-[#3d4b44]">
                 <li><Link href="/about" className="transition-colors hover:text-[#0a7c42]">About</Link></li>
-                <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How we research</Link></li>
-                <li><Link href="/for-business" className="transition-colors hover:text-[#0a7c42]">For business</Link></li>
-                <li><Link href="/affiliate-programs-australia" className="transition-colors hover:text-[#0a7c42]">Affiliate programs AU</Link></li>
+                <li><Link href="/how-we-research" className="transition-colors hover:text-[#0a7c42]">How We Research</Link></li>
+                <li><Link href="/for-business" className="transition-colors hover:text-[#0a7c42]">For Business</Link></li>
+                <li><Link href="/affiliate-programs-australia" className="transition-colors hover:text-[#0a7c42]">Affiliate Programs AU</Link></li>
                 <li><Link href="/contact" className="transition-colors hover:text-[#0a7c42]">Contact</Link></li>
                 <li><Link href="/privacy" className="transition-colors hover:text-[#0a7c42]">Privacy</Link> · <Link href="/terms" className="transition-colors hover:text-[#0a7c42]">Terms</Link></li>
               </ul>

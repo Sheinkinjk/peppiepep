@@ -12,57 +12,57 @@ const GROUPS: Group[] = [
   {
     label: "Health",
     items: [
-      { href: "/weight-loss", label: "Weight loss & telehealth", note: "Moshy, Juniper and the GP pathway, compared" },
-      { href: "/hair-loss", label: "Hair loss treatment", note: "Clinical telehealth vs topical products" },
-      { href: "/mens-health-telehealth-australia", label: "Men's health telehealth", note: "Online men's health clinics" },
-      { href: "/best-peptide-supplier", label: "Research peptides", note: "Suppliers compared. Research use only" },
+      { href: "/weight-loss", label: "Weight Loss & Telehealth", note: "Moshy, Juniper and the GP pathway, compared" },
+      { href: "/hair-loss", label: "Hair Loss Treatment", note: "Clinical telehealth vs topical products" },
+      { href: "/mens-health-telehealth-australia", label: "Men's Health Telehealth", note: "Online men's health clinics" },
+      { href: "/best-peptide-supplier", label: "Research Peptides", note: "Suppliers compared. Research use only" },
     ],
   },
   {
-    label: "Marketing & web",
+    label: "Marketing & Web",
     items: [
-      { href: "/compare/website-builders", label: "Website & landing pages", note: "Carrd, Durable AI, Leadpages and more" },
-      { href: "/compare/newsletter-platforms", label: "Newsletter platforms", note: "beehiiv, Substack and Kit, compared" },
-      { href: "/brevo", label: "Email marketing (Brevo)", note: "Email, SMS and automation in one tool" },
-      { href: "/compare/lead-generation", label: "Popups & quizzes", note: "Hello Bar, Outgrow, FlexiQuiz" },
+      { href: "/compare/website-builders", label: "Website & Landing Pages", note: "Carrd, Durable AI, Leadpages and more" },
+      { href: "/compare/newsletter-platforms", label: "Newsletter Platforms", note: "beehiiv, Substack and Kit, compared" },
+      { href: "/brevo", label: "Email Marketing (Brevo)", note: "Email, SMS and automation in one tool" },
+      { href: "/compare/lead-generation", label: "Popups & Quizzes", note: "Hello Bar, Outgrow, FlexiQuiz" },
     ],
   },
   {
-    label: "Business software",
+    label: "Business Software",
     items: [
-      { href: "/business-software", label: "All business software", note: "Every category, in one place" },
-      { href: "/best-ai-sales-tools", label: "Sales & CRM tools", note: "GoHighLevel, AiSDR, Nutshell and more" },
+      { href: "/business-software", label: "All Business Software", note: "Every category, in one place" },
+      { href: "/best-ai-sales-tools", label: "Sales & CRM Tools", note: "GoHighLevel, AiSDR, Nutshell and more" },
       { href: "/nutshell", label: "Nutshell", note: "Easy sales CRM with marketing built in" },
-      { href: "/compare/sales-outreach", label: "Sales & outreach", note: "Snov.io and Reply.io, compared" },
-      { href: "/compare/hr-payroll", label: "HR & payroll", note: "Employment Hero and Gusto" },
-      { href: "/compare/payments", label: "Payments & finance", note: "Payments and accounting" },
-      { href: "/compare/business-phone", label: "Business phone", note: "CloudTalk vs KrispCall" },
-      { href: "/compare/ai-tools", label: "AI tools", note: "Lindy, ElevenLabs, Logome and more" },
+      { href: "/compare/sales-outreach", label: "Sales & Outreach", note: "Snov.io and Reply.io, compared" },
+      { href: "/compare/hr-payroll", label: "HR & Payroll", note: "Employment Hero and Gusto" },
+      { href: "/compare/payments", label: "Payments & Finance", note: "Payments and accounting" },
+      { href: "/compare/business-phone", label: "Business Phone", note: "CloudTalk vs KrispCall" },
+      { href: "/compare/ai-tools", label: "AI Tools", note: "Lindy, ElevenLabs, Logome and more" },
     ],
   },
   {
-    label: "Money & side income",
+    label: "Money & Side Income",
     items: [
       { href: "/polymarket", label: "Polymarket", note: "How to sign up and trade" },
-      { href: "/polymarket/markets-explained", label: "Markets explained", note: "How prediction markets work" },
-      { href: "/polymarket/how-to-register", label: "How to register", note: "US and international sign-up paths" },
+      { href: "/polymarket/markets-explained", label: "Markets Explained", note: "How prediction markets work" },
+      { href: "/polymarket/how-to-register", label: "How to Register", note: "US and international sign-up paths" },
       { href: "/alidrop", label: "AliDrop", note: "AliExpress and Temu dropshipping tool" },
     ],
   },
   {
-    label: "For business",
+    label: "For Business",
     items: [
-      { href: "/for-business", label: "For business overview", note: "How brands grow with Refer Labs" },
-      { href: "/affiliate-programs-australia", label: "Affiliate programs Australia", note: "The best programs, compared for 2026" },
+      { href: "/for-business", label: "For Business Overview", note: "How brands grow with Refer Labs" },
+      { href: "/affiliate-programs-australia", label: "Affiliate Programs Australia", note: "The best programs, compared for 2026" },
       { href: "/superfiliate", label: "Superfiliate", note: "Run affiliate & creator programs for your brand" },
-      { href: "/services", label: "Growth services", note: "Done-with-you distribution" },
-      { href: "/comparison-website", label: "Get featured", note: "Partner on a comparison" },
+      { href: "/services", label: "Growth Services", note: "Done-with-you distribution" },
+      { href: "/comparison-website", label: "Get Featured", note: "Partner on a comparison" },
     ],
   },
 ];
 
 const DIRECT: Item[] = [
-  { href: "/guides", label: "All guides" },
+  { href: "/guides", label: "All Guides" },
 ];
 
 export default function HeaderNav() {
