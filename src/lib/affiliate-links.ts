@@ -154,3 +154,16 @@ export const COMETCHAT_URL = "https://try.cometchat.com/cmy1z1n1y5go";
 export const MEETGEEK_URL = "https://get.meetgeek.ai/ybh05mzi9v1e";
 // Flocksy: unlimited creative and graphic-design subscription (human designers).
 export const FLOCKSY_URL = "https://join.flocksy.com/saseqeg74ylm";
+
+// Keap
+export const KEAP_URL = "https://get.keap.com/dpkfzc1evrxv";
+// Capsule
+export const CAPSULE_URL = "https://get.capsulenow.io/blg44mgnn80p";
+// Instapage
+export const INSTAPAGE_URL = "https://get.instapage.io/5v4gjgh4kzyk";
+// Beautiful.ai
+export const BEAUTIFULAI_URL = "https://beautifulai.partnerlinks.io/e7xl7f91vjja";
+// PandaDoc
+export const PANDADOC_URL = "https://pandadoc.partnerlinks.io/kc9kruhmgrfy";
+// Blinq
+export const BLINQ_URL = "https://partners.blinq.me/vpsdocfxga1y";

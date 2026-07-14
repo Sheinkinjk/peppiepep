@@ -41,15 +41,6 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    label: "Money & Side Income",
-    items: [
-      { href: "/polymarket", label: "Polymarket", note: "How to sign up and trade" },
-      { href: "/polymarket/markets-explained", label: "Markets Explained", note: "How prediction markets work" },
-      { href: "/polymarket/how-to-register", label: "How to Register", note: "US and international sign-up paths" },
-      { href: "/alidrop", label: "AliDrop", note: "AliExpress and Temu dropshipping tool" },
-    ],
-  },
-  {
     label: "For Business",
     items: [
       { href: "/for-business", label: "For Business Overview", note: "How brands grow with Refer Labs" },

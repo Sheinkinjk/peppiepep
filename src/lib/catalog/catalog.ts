@@ -7,6 +7,7 @@ import {
   LEADPAGES_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
   PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL, MELIO_URL, LOGOME_URL,
   LANDINGI_URL, MEETGEEK_URL,
+  KEAP_URL, CAPSULE_URL, INSTAPAGE_URL, BEAUTIFULAI_URL,
 } from "@/lib/affiliate-links";
 
 /**
@@ -155,6 +156,19 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: LANDINGI_URL,
         reviewHref: "/landingi",
         ctaLabel: "See Landingi",
+      },
+      {
+        name: "Instapage",
+        bestFor: "Landing pages for paid ads",
+        blurb: "A premium landing-page platform built to lift conversion on paid traffic, with A/B testing, heatmaps and ad-to-page personalisation. Best when you run ongoing ad campaigns and better conversion clearly pays for itself.",
+        facts: [
+          { label: "Role", value: "Landing pages / ad conversion" },
+          { label: "Best for", value: "Advertisers & agencies" },
+          { label: "Pricing", value: "No free plan; from ~US$99/mo" },
+        ],
+        affiliateUrl: INSTAPAGE_URL,
+        reviewHref: "/instapage",
+        ctaLabel: "See Instapage",
       },
     ],
     faqs: [
@@ -378,6 +392,32 @@ export const CATALOG: Vertical[] = [
         ],
         affiliateUrl: SNOV_URL,
         ctaLabel: "See Snov.io",
+      },
+      {
+        name: "Keap",
+        bestFor: "CRM + automation for small business",
+        blurb: "An all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up in one platform, so leads are chased without manual work. Pricing scales with contacts.",
+        facts: [
+          { label: "Role", value: "CRM + marketing automation" },
+          { label: "Best for", value: "Small businesses & solopreneurs" },
+          { label: "Pricing", value: "No free plan; from ~US$249/mo" },
+        ],
+        affiliateUrl: KEAP_URL,
+        reviewHref: "/keap",
+        ctaLabel: "See Keap",
+      },
+      {
+        name: "Capsule",
+        bestFor: "A simple CRM teams keep using",
+        blurb: "An easy, lightweight CRM for small businesses: contacts, a visual sales pipeline, tasks and email tracking, without enterprise complexity. Free for up to 250 contacts and two users.",
+        facts: [
+          { label: "Role", value: "Simple sales CRM" },
+          { label: "Best for", value: "Small teams wanting an easy CRM" },
+          { label: "Pricing", value: "Free up to 250 contacts; from ~US$18/user/mo" },
+        ],
+        affiliateUrl: CAPSULE_URL,
+        reviewHref: "/capsule",
+        ctaLabel: "See Capsule",
       },
     ],
     faqs: [
@@ -820,6 +860,19 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: MEETGEEK_URL,
         reviewHref: "/meetgeek",
         ctaLabel: "See MeetGeek",
+      },
+      {
+        name: "Beautiful.ai",
+        bestFor: "AI presentations",
+        blurb: "Presentation software with design built in: add content and its smart templates handle the layout automatically, so decks look designed without a designer. An AI generator can draft a first-pass deck from a prompt.",
+        facts: [
+          { label: "Role", value: "AI presentation software" },
+          { label: "Best for", value: "Founders, teams & consultants" },
+          { label: "Pricing", value: "No free plan; Pro from ~US$12/mo" },
+        ],
+        affiliateUrl: BEAUTIFULAI_URL,
+        reviewHref: "/beautifulai",
+        ctaLabel: "See Beautiful.ai",
       },
     ],
     faqs: [

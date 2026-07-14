@@ -444,6 +444,48 @@ export const seoConfig = {
     url: `${SITE_URL}/flocksy`,
     keywords: ["flocksy pricing", "flocksy referral link", "flocksy review", "unlimited graphic design", "unlimited design service", "design subscription", "creative subscription"],
   },
+  keap: {
+    title: "Keap Referral Link & Pricing 2026: Small-Business CRM & Automation | Refer Labs",
+    description:
+      "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up. See the 14-day free trial and pricing via our link.",
+    url: `${SITE_URL}/keap`,
+    keywords: ["keap crm","keap pricing","keap referral link","keap review","infusionsoft keap","small business crm automation","sales follow up automation"],
+  },
+  capsule: {
+    title: "Capsule CRM Referral Link & Pricing 2026: Simple CRM for Small Business | Refer Labs",
+    description:
+      "Capsule is a simple CRM for small businesses: contacts, a visual sales pipeline, tasks and email tracking. Free for up to 250 contacts. See pricing and start via our link.",
+    url: `${SITE_URL}/capsule`,
+    keywords: ["capsule crm","capsule crm pricing","capsule crm review","capsule referral link","simple crm small business","free crm","sales pipeline software"],
+  },
+  instapage: {
+    title: "Instapage Referral Link & Pricing 2026: Landing Pages for Ad Conversion | Refer Labs",
+    description:
+      "Instapage is a landing-page platform for advertisers: drag-and-drop builder, A/B testing, heatmaps and ad-to-page personalisation. See the 14-day free trial and pricing via our link.",
+    url: `${SITE_URL}/instapage`,
+    keywords: ["instapage pricing","instapage referral link","instapage review","landing page builder for ads","instapage vs leadpages","ppc landing pages","conversion landing page platform"],
+  },
+  beautifulai: {
+    title: "Beautiful.ai Referral Link & Pricing 2026: AI Presentation Software | Refer Labs",
+    description:
+      "Beautiful.ai designs your slides automatically as you build them, with smart templates and an AI deck generator. See the free trial and Pro pricing via our link.",
+    url: `${SITE_URL}/beautifulai`,
+    keywords: ["beautiful.ai pricing","beautiful ai referral link","beautiful.ai review","ai presentation software","ai slide generator","presentation maker ai","beautiful.ai vs canva"],
+  },
+  pandadoc: {
+    title: "PandaDoc Referral Link & Pricing 2026: Proposals, Contracts & E-Signatures | Refer Labs",
+    description:
+      "PandaDoc automates proposals, quotes and contracts with built-in e-signatures, templates and real-time tracking. See the free eSign plan and pricing via our link.",
+    url: `${SITE_URL}/pandadoc`,
+    keywords: ["pandadoc pricing","pandadoc referral link","pandadoc review","proposal software","e-signature software","contract management","pandadoc free plan"],
+  },
+  blinq: {
+    title: "Blinq Referral Link & Pricing 2026: Digital Business Cards | Refer Labs",
+    description:
+      "Blinq is a digital business card you share by QR, link or NFC, and recipients save your details in one tap. See the free plan and pricing via our link.",
+    url: `${SITE_URL}/blinq`,
+    keywords: ["blinq digital business card","blinq pricing","blinq referral link","blinq review","digital business card","nfc business card","virtual business card"],
+  },
 
   hairLossHub: {
     title: "Hair Loss in Australia 2026: Compare Treatments & Your Options | Refer Labs",

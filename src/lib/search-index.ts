@@ -71,6 +71,12 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "AI tools compared", href: "/compare/ai-tools", category: "AI & sales", kind: "Guide", keywords: "compare ai tools lindy elevenlabs assistant voice automation hub" },
 
   // E-commerce
+  { title: "Keap review", href: "/keap", category: "Software", kind: "Guide", keywords: "keap crm marketing automation small business infusionsoft pipeline follow up discount code" },
+  { title: "Capsule review", href: "/capsule", category: "Software", kind: "Guide", keywords: "capsule crm simple sales pipeline small business free crm" },
+  { title: "Instapage review", href: "/instapage", category: "Software", kind: "Guide", keywords: "instapage landing page builder ads conversion a/b testing ppc" },
+  { title: "Beautiful.ai review", href: "/beautifulai", category: "AI & sales", kind: "Guide", keywords: "beautiful.ai ai presentation software slides deck generator design" },
+  { title: "PandaDoc review", href: "/pandadoc", category: "Software", kind: "Guide", keywords: "pandadoc proposals contracts quotes e-signature esign documents" },
+  { title: "Blinq review", href: "/blinq", category: "Software", kind: "Guide", keywords: "blinq digital business card nfc qr virtual card contact sharing" },
   { title: "AliDrop review", href: "/alidrop", category: "E-commerce", kind: "Guide", keywords: "alidrop dropshipping aliexpress temu alibaba shopify fulfilment sourcing" },
 
   // AI & sales

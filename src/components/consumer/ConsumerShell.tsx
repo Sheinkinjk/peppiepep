@@ -15,7 +15,6 @@ const NAV = [
   { href: "/compare/website-builders", label: "Websites" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
   { href: "/business-software", label: "Business Tools" },
-  { href: "/polymarket", label: "Polymarket" },
   { href: "/for-business", label: "For Business" },
 ];
 
@@ -80,7 +79,6 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website Builders</Link></li>
                 <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter Platforms</Link></li>
                 <li><Link href="/best-ai-sales-tools" className="transition-colors hover:text-[#0a7c42]">AI Sales &amp; Automation</Link></li>
-                <li><Link href="/polymarket" className="transition-colors hover:text-[#0a7c42]">Polymarket &amp; Prediction Markets</Link></li>
                 <li><Link href="/guides" className="transition-colors hover:text-[#0a7c42]">All Guides</Link></li>
               </ul>
             </div>

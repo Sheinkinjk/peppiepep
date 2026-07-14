@@ -73,6 +73,7 @@ const sections = [
       { href: "/swipepages", label: "Swipe Pages", desc: "Fast AMP landing pages. 14-day free trial." },
       { href: "/leadpages", label: "Leadpages", desc: "Landing pages built for lead capture, with A/B testing." },
       { href: "/landingi", label: "Landingi", desc: "No-code landing-page builder for marketers." },
+      { href: "/instapage", label: "Instapage", desc: "Premium landing pages built to convert paid-ad traffic." },
       { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
     ],
   },
@@ -106,6 +107,8 @@ const sections = [
       { href: "/replyio", label: "Reply.io", desc: "Run your own multichannel outbound across channels." },
       { href: "/fullenrich", label: "FullEnrich", desc: "Waterfall enrichment for verified emails and mobiles." },
       { href: "/zoominfo", label: "ZoomInfo", desc: "Enterprise B2B data and buyer-intent signals." },
+      { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
+      { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams actually keep using." },
     ],
   },
   {
@@ -116,6 +119,7 @@ const sections = [
       { href: "/elevenlabs", label: "ElevenLabs", desc: "AI voice and text-to-speech with voice cloning." },
       { href: "/logome", label: "Logome.ai", desc: "Generate a logo and full brand kit with AI." },
       { href: "/meetgeek", label: "MeetGeek", desc: "AI meeting notes for Zoom, Meet and Teams." },
+      { href: "/beautifulai", label: "Beautiful.ai", desc: "AI presentation software that designs slides for you." },
     ],
   },
   {
@@ -136,6 +140,8 @@ const sections = [
     guides: [
       { href: "/databox", label: "Databox", desc: "KPI dashboards that pull 130+ data sources into one view." },
       { href: "/wing-assistant", label: "Wing Assistant", desc: "Managed virtual assistants across many roles." },
+      { href: "/pandadoc", label: "PandaDoc", desc: "Proposals, contracts and e-signatures in one tool." },
+      { href: "/blinq", label: "Blinq", desc: "Digital business cards you share by QR, link or NFC." },
       { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
       { href: "/cometchat", label: "CometChat", desc: "Developer SDKs to add in-app chat, voice and video." },
       { href: "/flocksy", label: "Flocksy", desc: "Unlimited graphic design from a dedicated team." },
