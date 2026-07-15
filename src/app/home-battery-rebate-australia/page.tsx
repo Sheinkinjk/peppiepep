@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Does the rebate get bigger if I buy a bigger battery?",
-    a: "Not proportionally, and this is the detail most people miss. From 1 May 2026 the rate tapers with capacity: the full rate applies to the first 14kWh, then 60% of the rate from 14kWh to 28kWh, then only 15% from 28kWh to 50kWh. So each extra kWh past 14kWh earns a smaller discount, and oversizing has real diminishing returns.",
+    a: "Not proportionally. From 1 May 2026 the rate tapers with capacity: the full rate applies to the first 14kWh, then 60% of the rate from 14kWh to 28kWh, then only 15% from 28kWh to 50kWh. So each extra kWh past 14kWh earns a smaller discount, and oversizing has real diminishing returns.",
   },
   {
     q: "What size battery is eligible for the rebate?",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Is a home battery worth it after the rebate?",
-    a: "It depends entirely on your usage, your tariff, whether you have solar and whether you join a VPP, so no page can honestly promise you a payback figure. The rebate materially cuts the upfront cost, which shortens payback, but the honest test is whether you actually consume enough power in expensive peak periods for a battery to shift. Ask any installer for a projection built on your real bills.",
+    a: "It depends on your usage, your tariff, whether you have solar and whether you join a VPP, so no page can promise you a payback figure. The rebate materially cuts the upfront cost, which shortens payback, but what matters is whether you actually consume enough power in expensive peak periods for a battery to shift. Ask any installer for a projection built on your real bills.",
   },
   {
     q: "Where can I get a quote with the rebate applied?",
@@ -117,8 +117,8 @@ export default function HomeBatteryRebatePage() {
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
             The federal rebate takes roughly 30% off a home battery, and your installer applies it at the point of sale.
-            The part almost nobody explains is the taper above 14kWh, which quietly changes what the right size is. Here
-            is the whole thing in plain terms, with worked numbers.
+            Above 14kWh the rate tapers, which changes what size actually makes sense. Here it is in plain terms, with
+            worked numbers.
           </p>
 
           <div className="mt-8">
@@ -135,7 +135,7 @@ export default function HomeBatteryRebatePage() {
                 eligible battery, for systems between 5kWh and 100kWh.
               </p>
               <p>
-                It is not a cheque you chase. The discount runs through small-scale technology certificates (STCs), which
+                You do not claim it back yourself. The discount runs through small-scale technology certificates (STCs), which
                 your accredited installer handles and applies straight to the quote. If a quote does not show it
                 itemised, that is a fair thing to push back on.
               </p>
@@ -161,7 +161,7 @@ export default function HomeBatteryRebatePage() {
 
           {/* The taper */}
           <section className="mt-10 border-t border-[#e5e9e7] pt-10">
-            <h2 className="text-2xl font-bold text-[#10251b]">The taper: the bit that catches people out</h2>
+            <h2 className="text-2xl font-bold text-[#10251b]">The 14kWh taper</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
               <p>
                 From 1 May 2026 the rate no longer applies flat across the whole battery. It steps down as capacity
@@ -230,8 +230,8 @@ export default function HomeBatteryRebatePage() {
               </table>
             </div>
             <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
-              Read the middle column carefully. Going from 14kWh to 20kWh adds 6kWh of battery but only about $900 of
-              rebate, because those kWh earn the reduced rate. Size for your actual evening usage, not for the subsidy.
+              Going from 14kWh to 20kWh adds 6kWh of battery but only about $900 of rebate, because those kWh earn the
+              reduced rate. Size for your evening usage rather than the subsidy.
             </p>
           </section>
 
@@ -256,14 +256,13 @@ export default function HomeBatteryRebatePage() {
             <h2 className="text-2xl font-bold text-[#10251b]">Is it worth it after the rebate?</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
               <p>
-                Honestly: it depends, and anyone quoting you a payback figure from a web page is guessing. The rebate
-                cuts the upfront cost meaningfully, which shortens payback. What it cannot do is create savings that your
-                usage pattern does not support.
+                It depends on your setup, and any payback figure quoted from a web page is guesswork. The rebate cuts the
+                upfront cost, which shortens payback, but it cannot create savings your usage pattern does not support.
               </p>
               <p>
-                The test is simple. Do you use a meaningful amount of power in expensive peak periods that a battery
-                could cover, and do you have solar generating cheap energy to store? If yes, the numbers tend to work. If
-                your usage is low, or you are out all evening, a battery has less to do.
+                What matters is whether you use a meaningful amount of power in expensive peak periods, and whether you
+                have solar generating cheap energy to store. If both are true the numbers tend to work. If your usage is
+                low, or you are out all evening, a battery has less to do.
               </p>
               <p>
                 Ask any installer for a projection built on your real bills, and sanity check it yourself.

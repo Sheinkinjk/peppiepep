@@ -212,7 +212,7 @@ export default function ApolloLanding() {
                   a 10kWh battery attracts around $3,110.
                 </p>
                 <p>
-                  The detail most people miss is the taper. The full rate only applies to the first 14kWh. From 14kWh to
+                  The rate also tapers. The full rate only applies to the first 14kWh. From 14kWh to
                   28kWh you get 60% of the rate, and from 28kWh to 50kWh only 15%. So a bigger battery does not earn a
                   proportionally bigger rebate, and oversizing has real diminishing returns.
                 </p>
@@ -260,7 +260,7 @@ export default function ApolloLanding() {
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  Nobody can honestly quote you a savings number from a web page, because it turns entirely on your
+                  No one can quote you a savings number from a web page, because it turns entirely on your
                   usage, your tariff, whether you already have solar, and whether you join a VPP. What a battery does is
                   shift cheap or self-generated energy into your expensive peak hours.
                 </p>

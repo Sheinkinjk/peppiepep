@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, AlertCircle } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
@@ -9,7 +9,7 @@ export const metadata = generateSEOMetadata(seoConfig.apolloEnergyReview);
 const faqs = [
   {
     q: "Is Apollo Energy Group legit?",
-    a: "On the checkable measures, yes. Apollo Energy Group publishes an Electrical Licence number (400672) and an ABN (55697998208), installs using SAA-accredited installers, lists a 10-year battery warranty, and operates from a physical address at 5 Martin Place, Sydney. Those are all things you can verify yourself, which is more than a lot of energy sales operations offer. What no review can verify for you is the quality of your specific install, so treat the credentials as a green light to get a quote rather than a guarantee.",
+    a: "Apollo Energy Group publishes an Electrical Licence number (400672) and an ABN (55697998208), installs using SAA-accredited installers, lists a 10-year battery warranty, and operates from a physical address at 5 Martin Place, Sydney. All of that is checkable, which is more than a lot of energy sales operations offer. No review can vouch for the quality of your specific install, so treat the credentials as a reason to get a quote rather than a guarantee.",
   },
   {
     q: "What do Apollo Energy Group reviews say?",
@@ -25,11 +25,11 @@ const faqs = [
   },
   {
     q: "What should I check before signing with any battery installer?",
-    a: "Four things. Ask for the federal rebate to be itemised on the quote so you can see it applied. Confirm the battery brand and what the 10-year warranty actually covers. Confirm they service your address. And understand that the rebate tapers above 14kWh, so a bigger system does not earn a proportionally bigger discount. If a salesperson pushes size without explaining the taper, that is a flag.",
+    a: "Ask for the federal rebate to be itemised on the quote so you can see it applied. Confirm the battery brand and what the 10-year warranty actually covers. Confirm they service your address. And understand that the rebate tapers above 14kWh, so a bigger system does not earn a proportionally bigger discount. If a salesperson pushes size without explaining the taper, that is a flag.",
   },
   {
     q: "Does Apollo Energy Group cover my area?",
-    a: "Apollo is based in Sydney and installs for homes and businesses across Australia. Coverage for your specific address is confirmed when you request a quote, so the honest answer is to put your postcode in and let them come back to you.",
+    a: "Apollo is based in Sydney and installs for homes and businesses across Australia. Coverage for your specific address is confirmed when you request a quote, so put your postcode in and let them come back to you.",
   },
 ];
 
@@ -105,8 +105,8 @@ export default function ApolloEnergyReviewPage() {
             Apollo Energy Group review: is it legit?
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
-            Short answer: on every measure you can actually check, yes. Here is what is verifiable, what is the
-            company&apos;s own claim, and the four things worth pinning down before you sign with any battery installer.
+            Apollo publishes an electrical licence, an ABN and accredited installers, which is more than a lot of energy
+            outfits manage. Here is what checks out, what to ask about, and how the $500 discount works.
           </p>
 
           <div className="mt-8">
@@ -115,7 +115,7 @@ export default function ApolloEnergyReviewPage() {
 
           {/* Verdict box */}
           <section className="mt-12 border-t border-[#e5e9e7] pt-10">
-            <h2 className="text-2xl font-bold text-[#10251b]">The short verdict</h2>
+            <h2 className="text-2xl font-bold text-[#10251b]">The verdict</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
               <p>
                 Apollo Energy Group is a home battery specialist installing systems from 9kWh to 54kWh, sized from your
@@ -123,18 +123,18 @@ export default function ApolloEnergyReviewPage() {
                 and install across Australia.
               </p>
               <p>
-                The reason we are comfortable listing them is that the important things are checkable rather than
-                claimed: a real electrical licence, a real ABN, accredited installers, and a physical address. That is a
-                meaningfully higher bar than a lot of energy lead-generation operations clear.
+                The important things are checkable rather than claimed: a real electrical licence, a real ABN, accredited
+                installers, and a physical address. That clears a higher bar than a lot of energy lead-generation
+                operations.
               </p>
             </div>
           </section>
 
           {/* Verifiable */}
           <section className="mt-10 border-t border-[#e5e9e7] pt-10">
-            <h2 className="text-2xl font-bold text-[#10251b]">What is actually verifiable</h2>
+            <h2 className="text-2xl font-bold text-[#10251b]">The credentials</h2>
             <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
-              These are the details you can independently check, which is what &quot;legit&quot; really comes down to:
+              Details you can check yourself:
             </p>
             <ul className="mt-4 space-y-2">
               {[
@@ -154,7 +154,7 @@ export default function ApolloEnergyReviewPage() {
 
           {/* Their claims */}
           <section className="mt-10 border-t border-[#e5e9e7] pt-10">
-            <h2 className="text-2xl font-bold text-[#10251b]">What is their claim, not ours</h2>
+            <h2 className="text-2xl font-bold text-[#10251b]">Apollo&apos;s own figures</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
               <p>
                 Apollo&apos;s site cites a 4.9 out of 5 Google rating, 12 years of installer experience, being voted
@@ -162,9 +162,9 @@ export default function ApolloEnergyReviewPage() {
                 roughly $1,349 in estimated annual savings on a 16kWh system.
               </p>
               <p>
-                We have not independently audited any of those, and we are not going to present them as if we had. The
-                savings figures in particular depend entirely on your usage, tariff, solar and whether you join a VPP.
-                Treat them as marketing figures and ask for a projection built on your own bills.
+                These are Apollo&apos;s published figures, not independently audited. The savings numbers in particular
+                depend on your usage, tariff, solar and whether you join a VPP, so ask for a projection built on your own
+                bills.
               </p>
             </div>
           </section>
@@ -173,8 +173,7 @@ export default function ApolloEnergyReviewPage() {
           <section className="mt-10 border-t border-[#e5e9e7] pt-10">
             <h2 className="text-2xl font-bold text-[#10251b]">Four things to check before you sign</h2>
             <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
-              This applies to any installer, not just Apollo. It is the difference between a good deal and an expensive
-              one:
+              Worth doing with any installer, not just Apollo:
             </p>
             <ol className="mt-6 space-y-5">
               {[
@@ -194,13 +193,6 @@ export default function ApolloEnergyReviewPage() {
                 </li>
               ))}
             </ol>
-            <div className="mt-6 flex gap-3 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5">
-              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#9aa39c]" />
-              <p className="text-sm leading-relaxed text-[#6e7b74]">
-                Always get a second quote. Not because we doubt Apollo, but because a battery is a five-figure purchase
-                and comparison is how you know a price is fair.
-              </p>
-            </div>
           </section>
 
           {/* Who it suits */}
