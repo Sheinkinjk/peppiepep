@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { APOLLO_ENERGY_URL, glance, steps, faqs } from "./config";
 import { ArrowRight, Check, ShieldCheck, BatteryCharging, BadgeCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -357,6 +358,35 @@ export default function ApolloLanding() {
                     <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
                   </details>
                 ))}
+              </div>
+            </section>
+
+            {/* Related reading (cluster) */}
+            <section className="mt-14">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Related reading</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <Link
+                  href="/apollo-energy-review"
+                  className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                >
+                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">
+                    Apollo Energy Group review: is it legit?
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+                    What is verifiable, what is their own claim, and four things to check before you sign.
+                  </p>
+                </Link>
+                <Link
+                  href="/home-battery-rebate-australia"
+                  className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                >
+                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">
+                    Home battery rebate Australia 2026
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+                    What the federal rebate actually pays, the 14kWh taper, and worked examples by size.
+                  </p>
+                </Link>
               </div>
             </section>
           </article>

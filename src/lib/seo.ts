@@ -444,6 +444,20 @@ export const seoConfig = {
     url: `${SITE_URL}/flocksy`,
     keywords: ["flocksy pricing", "flocksy referral link", "flocksy review", "unlimited graphic design", "unlimited design service", "design subscription", "creative subscription"],
   },
+  apolloEnergyReview: {
+    title: "Apollo Energy Group Review 2026: Is It Legit? ($500 Off)",
+    description:
+      "An independent Apollo Energy Group review: what is actually verifiable (SAA accreditation, Electrical Licence 400672, ABN, 10-year warranty), what to check before you sign, and the exclusive $500 off your battery quote through Refer Labs.",
+    url: `${SITE_URL}/apollo-energy-review`,
+    keywords: ["apollo energy group review", "is apollo energy group legit", "apollo energy reviews", "apollo energy group australia", "apollo battery installer review", "home battery installer review australia"],
+  },
+  homeBatteryRebate: {
+    title: "Home Battery Rebate Australia 2026: What You Actually Get",
+    description:
+      "The federal Cheaper Home Batteries rebate explained: about $252 per usable kWh from 1 May 2026, the taper above 14kWh most people miss, state incentives like NSW $1,500 VPP, and worked examples. Plus $500 off a quote via Refer Labs.",
+    url: `${SITE_URL}/home-battery-rebate-australia`,
+    keywords: ["home battery rebate australia", "cheaper home batteries program", "battery rebate 2026", "solar battery rebate australia", "federal battery rebate", "home battery rebate how much", "battery rebate taper 14kwh", "stc battery rebate"],
+  },
   apolloEnergy: {
     title: "Apollo Energy Group: Home Battery Systems Australia & $500 Off (2026)",
     description:
