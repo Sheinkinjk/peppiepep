@@ -32,14 +32,33 @@ export function GoogleAnalytics() {
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="afterInteractive"
-      />
+      {/* Consent Mode v2. This block must push to dataLayer before gtag.js drains it,
+          so analytics_storage starts denied and is only granted if the visitor said yes
+          in the cookie banner (see CookieConsent.tsx, which calls gtag('consent','update')). */}
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied'
+          });
+
+          try {
+            var stored = JSON.parse(localStorage.getItem('referlabs_cookie_consent') || 'null');
+            if (stored && stored.version === '1.0') {
+              gtag('consent', 'update', {
+                analytics_storage: stored.analytics ? 'granted' : 'denied',
+                ad_storage: stored.marketing ? 'granted' : 'denied',
+                ad_user_data: stored.marketing ? 'granted' : 'denied',
+                ad_personalization: stored.marketing ? 'granted' : 'denied'
+              });
+            }
+          } catch (e) {}
+
           gtag('js', new Date());
 
           gtag('config', '${measurementId}', {
@@ -48,6 +67,10 @@ export function GoogleAnalytics() {
           });
         `}
       </Script>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+        strategy="afterInteractive"
+      />
     </>
   );
 }

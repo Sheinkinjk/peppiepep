@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import { SITE_URL } from "@/lib/seo";
 import {
@@ -261,11 +260,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* ── Newsletter ── */}
-        <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
-          <NewsletterSignup variant="band" source="homepage" />
         </section>
 
         {/* ── For business ── */}

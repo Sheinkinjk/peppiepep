@@ -426,7 +426,7 @@ export default function Privacy() {
                 <li><strong>Customize:</strong> Choose specific cookie categories based on your preferences</li>
               </ul>
               <p className="text-[#2b362f] mb-3">
-                Your cookie preferences are stored in your browser's local storage and will be remembered for future visits. You can change your preferences at any time by clearing your browser's local storage or contacting us.
+                Your cookie preferences are stored in your browser's local storage and will be remembered for future visits. You can change or withdraw your choice at any time using the <strong>Cookie Preferences</strong> link in the site footer.
               </p>
 
               <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.2 Essential Cookies (Always Active)</h3>
@@ -439,12 +439,15 @@ export default function Privacy() {
 
               <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.3 Analytics Cookies (Optional)</h3>
               <p className="text-[#2b362f] mb-3">
-                We currently do <strong>not</strong> use third-party analytics or advertising cookies. If we introduce analytics in the future, it will:
+                We use Google Analytics 4 (provided by Google LLC) to understand which comparisons and guides people
+                actually find useful. These cookies are <strong>off by default</strong>. They are only set if you choose
+                &ldquo;Accept all&rdquo; or switch Analytics on in the cookie banner:
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1 mb-3">
-                <li>Require your explicit consent via the cookie banner</li>
-                <li>Be disclosed in this Privacy Policy with provider details</li>
-                <li>Include an opt-out mechanism in your account settings</li>
+                <li><strong>What it collects:</strong> pages viewed, approximate location, device and browser type, and clicks on affiliate links (_ga, _ga_* - up to 2 years)</li>
+                <li><strong>What we do with it:</strong> aggregated reporting only, to decide what to write next. We do not sell it and we do not use it to identify you personally</li>
+                <li><strong>Until you agree:</strong> Google Consent Mode keeps analytics storage denied, so no analytics cookies are written</li>
+                <li><strong>Changing your mind:</strong> use the Cookie Preferences link in the footer at any time</li>
               </ul>
 
               <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.4 Marketing Cookies (Optional)</h3>

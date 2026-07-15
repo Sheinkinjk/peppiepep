@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NewsletterSignup from "./NewsletterSignup";
 import SiteSearch from "./SiteSearch";
+import CookiePreferencesLink from "./CookiePreferencesLink";
 import HeaderNav from "./HeaderNav";
 import { ReferLabsLogo } from "../ReferLabsLogo";
 
@@ -101,6 +102,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/affiliate-programs-australia" className="transition-colors hover:text-[#0a7c42]">Affiliate Programs AU</Link></li>
                 <li><Link href="/contact" className="transition-colors hover:text-[#0a7c42]">Contact</Link></li>
                 <li><Link href="/privacy" className="transition-colors hover:text-[#0a7c42]">Privacy</Link> · <Link href="/terms" className="transition-colors hover:text-[#0a7c42]">Terms</Link></li>
+                <li><CookiePreferencesLink /></li>
               </ul>
             </div>
           </div>
