@@ -83,7 +83,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       paragraphs: [
         "Two treatments do most of the heavy lifting for male-pattern hair loss, and Mosh is built around both. Finasteride is an oral medicine that lowers DHT, the hormone that shrinks follicles in hereditary hair loss, it's the one that slows and often halts the loss. Minoxidil (topical, or increasingly low-dose oral) works on a different lever, extending the growth phase of the follicle, which is why a lot of men end up on the two together.",
         "The regulatory reality in Australia: finasteride and oral minoxidil are prescription-only; topical minoxidil you can buy over the counter. Mosh's value is that the online consult and photo review can lead to a finasteride or minoxidil script without an in-person visit, when the practitioner judges it appropriate. Nothing is dispensed automatically, and that's the point.",
-        "If you've been Googling 'finasteride Australia online' or 'Mosh finasteride', the honest answer is that the consult is the only way to know what you'd be offered. It's a few minutes and commits you to nothing.",
+        "If you've been Googling 'finasteride Australia online' or 'Mosh finasteride', the consult is the only way to know what you'd be offered. It's a few minutes and commits you to nothing.",
       ],
       hasCta: true,
       ctaText: "Start the Mosh consultation",
@@ -94,7 +94,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       heading: "What Mosh really costs",
       paragraphs: [
         "There's no single Mosh price, and any page quoting you one exact figure is guessing. It's a subscription, and what you pay tracks the plan your consult lands on, finasteride alone is cheaper than a finasteride-plus-minoxidil combination, and the fee bundles the medication, the practitioner oversight, and delivery.",
-        "The useful way to think about it: it's priced like an ongoing treatment, not a one-off purchase, because that's what hair-loss treatment is, stop and the benefit fades. You'll see the actual numbers in the consult before you commit to anything, so you know exactly what you'd pay month to month before signing up.",
+        "It's priced like an ongoing treatment rather than a one-off purchase, because that's what hair-loss treatment is: stop and the benefit fades. You'll see the actual numbers in the consult before you commit to anything, so you know exactly what you'd pay month to month before signing up.",
       ],
     },
     {

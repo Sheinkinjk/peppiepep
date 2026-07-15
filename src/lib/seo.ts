@@ -454,7 +454,7 @@ export const seoConfig = {
   homeBatteryRebate: {
     title: "Home Battery Rebate Australia 2026: What You Actually Get",
     description:
-      "The federal Cheaper Home Batteries rebate explained: about $252 per usable kWh from 1 May 2026, the taper above 14kWh most people miss, state incentives like NSW $1,500 VPP, and worked examples. Plus $500 off a quote via Refer Labs.",
+      "The federal Cheaper Home Batteries rebate explained: about $252 per usable kWh from 1 May 2026, the taper above 14kWh, state incentives like NSW $1,500 VPP, and worked examples. Plus $500 off a quote via Refer Labs.",
     url: `${SITE_URL}/home-battery-rebate-australia`,
     keywords: ["home battery rebate australia", "cheaper home batteries program", "battery rebate 2026", "solar battery rebate australia", "federal battery rebate", "home battery rebate how much", "battery rebate taper 14kwh", "stc battery rebate"],
   },
@@ -1869,7 +1869,7 @@ export const seoConfig = {
   goHighLevel: {
     title: "GoHighLevel Discount Code & Referral Link 2026: CRM Free Trial | Refer Labs",
     description:
-      "Looking for a GoHighLevel discount code, promo code or referral link? Here's the honest answer plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From $97/month, 14-day free trial.",
+      "Looking for a GoHighLevel discount code, promo code or referral link? Here's what is actually available, plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From $97/month, 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
     keywords: [
       "gohighlevel discount code",

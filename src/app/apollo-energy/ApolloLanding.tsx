@@ -270,8 +270,8 @@ export default function ApolloLanding() {
                   figures, not ours, and they should be treated as illustrative rather than a guarantee.
                 </p>
                 <p>
-                  The useful move is to ask for a projection built on your actual bills during the quote, and to sanity
-                  check it against your own peak usage. A battery that never discharges into peak is a battery that never
+                  Ask for a projection built on your actual bills during the quote, and sanity check it against your own
+                  peak usage. A battery that never discharges into peak is a battery that never
                   pays for itself.
                 </p>
               </div>

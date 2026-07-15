@@ -54,7 +54,7 @@ export const faqs = [
   },
   {
     q: "How much will a home battery actually save me?",
-    a: "That depends on your usage, your tariff, whether you have solar, and whether you join a VPP, so no honest page can promise a number. For reference, Apollo Energy Group's own site cites an average bill reduction of over 70% and gives an example of about $1,349 in estimated annual savings on a 16kWh system. Treat those as the provider's figures rather than a guarantee, and ask for a projection based on your own bills.",
+    a: "That depends on your usage, your tariff, whether you have solar, and whether you join a VPP, so no page can promise a number. For reference, Apollo Energy Group's own site cites an average bill reduction of over 70% and gives an example of about $1,349 in estimated annual savings on a 16kWh system. Treat those as the provider's figures rather than a guarantee, and ask for a projection based on your own bills.",
   },
   {
     q: "Do I need solar panels to get a battery?",

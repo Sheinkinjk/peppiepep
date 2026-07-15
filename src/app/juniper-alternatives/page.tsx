@@ -167,7 +167,7 @@ export default function JuniperAlternativesPage() {
           <section className="pb-2">
             <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${GREEN}40`, background: `${GREEN}0A` }}>
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: GREEN }}>
-                Short answer
+                The verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 If you left Juniper because of the women-focused framing or the coaching-heavy model, Moshy is the closest
