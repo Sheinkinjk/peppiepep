@@ -71,7 +71,7 @@ const articleSchema = {
 function Offer({ loc }: { loc: string }) {
   return (
     <div className="rounded-2xl border border-[#cfe6da] bg-[#e8f5ee] p-6">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Exclusive Refer Labs offer</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">The offer</p>
       <p className="mt-2 text-lg font-bold leading-snug text-[#10251b]">
         $500 off your battery quote, on top of the rebate
       </p>

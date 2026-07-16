@@ -216,8 +216,7 @@ export default function MoshyLanding() {
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Our take</span>
-                <h2 className="mt-3 text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                   As a service, Moshy is a credible, well-run option: the online process is genuinely fast, the
                   practitioner review is real, and it is transparent that any prescription medication is prescription-only

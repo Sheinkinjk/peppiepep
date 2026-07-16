@@ -60,7 +60,7 @@ export default function ApolloLanding() {
             </div>
 
             <p className="mt-4 text-xs text-[#9aa39c]">
-              Exclusive Refer Labs offer · contains a disclosed affiliate link
+              $500 off applied through our link, no code needed
             </p>
           </div>
 
@@ -315,8 +315,7 @@ export default function ApolloLanding() {
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Our take</span>
-                <h2 className="mt-3 text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                   If you are already paying for peak power you could be storing, a battery is worth quoting
                   properly, and Apollo is a credible place to get that quote: accredited installers, a real licence, a

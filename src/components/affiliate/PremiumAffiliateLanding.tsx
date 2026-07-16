@@ -200,8 +200,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Our take</span>
-                <h2 className="mt-3 text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                   {config.verdict ?? config.quickAnswer ?? config.hero.subheading}
                 </p>
