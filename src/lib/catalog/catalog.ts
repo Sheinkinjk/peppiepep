@@ -5,9 +5,9 @@ import {
   EMPLOYMENT_HERO_URL, GUSTO_URL, PAYONEER_URL,
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
   LEADPAGES_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
-  PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL, MELIO_URL, LOGOME_URL,
+  PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL, MELIO_URL,
   LANDINGI_URL, MEETGEEK_URL,
-  KEAP_URL, CAPSULE_URL, INSTAPAGE_URL, BEAUTIFULAI_URL,
+  KEAP_URL, CAPSULE_URL, BEAUTIFULAI_URL,
 } from "@/lib/affiliate-links";
 
 /**
@@ -156,19 +156,6 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: LANDINGI_URL,
         reviewHref: "/landingi",
         ctaLabel: "See Landingi",
-      },
-      {
-        name: "Instapage",
-        bestFor: "Landing pages for paid ads",
-        blurb: "A premium landing-page platform built to lift conversion on paid traffic, with A/B testing, heatmaps and ad-to-page personalisation. Best when you run ongoing ad campaigns and better conversion clearly pays for itself.",
-        facts: [
-          { label: "Role", value: "Landing pages / ad conversion" },
-          { label: "Best for", value: "Advertisers & agencies" },
-          { label: "Pricing", value: "No free plan; from US$79/mo (annual)" },
-        ],
-        affiliateUrl: INSTAPAGE_URL,
-        reviewHref: "/instapage",
-        ctaLabel: "See Instapage",
       },
     ],
     faqs: [
@@ -834,19 +821,6 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: ELEVENLABS_URL,
         reviewHref: "/elevenlabs",
         ctaLabel: "See ElevenLabs",
-      },
-      {
-        name: "Logome.ai",
-        bestFor: "AI logo & brand kit",
-        blurb: "An AI generator that turns a business description into logos plus a full brand kit, colours, fonts and templates. Free to design and preview; pay only to download.",
-        facts: [
-          { label: "Role", value: "AI logo / branding" },
-          { label: "Best for", value: "Startups & founders" },
-          { label: "Pricing", value: "Free to design; downloads from US$19/mo" },
-        ],
-        affiliateUrl: LOGOME_URL,
-        reviewHref: "/logome",
-        ctaLabel: "See Logome",
       },
       {
         name: "MeetGeek",

@@ -24,7 +24,6 @@ export const DENSE_URL =
 
 // ── Weight-loss comparison competitors (non-affiliate reference links) ───────
 export const JUNIPER_URL = "https://www.myjuniper.com.au/";
-export const BETTERBEING_URL = "https://www.betterbeinghealth.com.au/";
 
 // ── Research peptides (research use only) ────────────────────────────────────
 export const APOLLO_URL = "https://apollopeptidesciences.com/?rfsn=9019392.2de9e6";

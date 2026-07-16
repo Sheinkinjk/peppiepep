@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSHY_URL, JUNIPER_URL, BETTERBEING_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -15,7 +15,7 @@ const ext = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofo
 const faqs = [
   {
     q: "What types of online weight loss programs exist in Australia?",
-    a: "Broadly three: medical telehealth services with practitioner oversight (Moshy, Juniper), lifestyle and behavioural programs (Better Being and similar), and self-serve apps or meal plans with no clinician involved. They are very different products that happen to share a category name.",
+    a: "Broadly three: medical telehealth services with practitioner oversight (Moshy, Juniper), lifestyle and behavioural programs built around coaching and nutrition, and self-serve apps or meal plans with no clinician involved. They are very different products that happen to share a category name.",
   },
   {
     q: "How is medical telehealth different from a coaching app?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "How do these providers differ?",
-    a: "Moshy runs a lean, clinically-led pathway that is open to anyone eligible. Juniper wraps medication in a coaching program and markets primarily to women. Better Being takes a lifestyle-first approach. Suitability for any of them is assessed individually.",
+    a: "Moshy runs a lean, clinically-led pathway that is open to anyone eligible. Juniper wraps medication in a coaching program and markets primarily to women. Suitability for either is assessed individually.",
   },
   {
     q: "Are these programs regulated?",
@@ -102,9 +102,9 @@ export default function OnlineWeightLossProgramsPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Type two: lifestyle and behavioural programs</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Providers like Better Being build the program around habits, nutrition, and coaching rather than a
-            medication-first pathway. Practitioner support exists but the emphasis is behavioural. This suits people who
-            specifically want a structured lifestyle approach.
+            These programs build around habits, nutrition, and coaching rather than a medication-first pathway.
+            Practitioner support may exist but the emphasis is behavioural. This suits people who specifically want a
+            structured lifestyle approach.
           </p>
         </section>
 
@@ -139,11 +139,6 @@ export default function OnlineWeightLossProgramsPage() {
                   <td className="px-4 py-3 text-[#2b362f]">Women</td>
                   <td className="px-4 py-3 text-[#2b362f]">Clinical pathway plus coaching and community</td>
                 </tr>
-                <tr className="border-t border-[#e5e9e7]">
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">Better Being</td>
-                  <td className="px-4 py-3 text-[#2b362f]">Anyone</td>
-                  <td className="px-4 py-3 text-[#2b362f]">Lifestyle and behavioural first</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -172,17 +167,14 @@ export default function OnlineWeightLossProgramsPage() {
             </a>
           </div>
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Other paths</p>
-            <h3 className="text-lg font-bold mb-2">Juniper &amp; Better Being</h3>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Another path</p>
+            <h3 className="text-lg font-bold mb-2">Juniper</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
-              Juniper for women, Better Being for a lifestyle-first program open to anyone.
+              The same clinical pathway with a coaching and community layer on top, marketed to women.
             </p>
             <div className="flex flex-wrap gap-3">
               <a {...ext(JUNIPER_URL)} className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]" style={{ borderColor: `${CYAN}30` }}>
                 Juniper
-              </a>
-              <a {...ext(BETTERBEING_URL)} className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]" style={{ borderColor: `${CYAN}30` }}>
-                Better Being
               </a>
             </div>
           </div>

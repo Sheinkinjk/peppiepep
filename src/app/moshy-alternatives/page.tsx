@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSHY_URL, JUNIPER_URL, BETTERBEING_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -15,7 +15,7 @@ const ext = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofo
 const faqs = [
   {
     q: "What is the closest alternative to Moshy?",
-    a: "For a lean, practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, a coaching-led program such as Juniper, or a lifestyle-first program such as Better Being.",
+    a: "For a lean, practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or a coaching-led program such as Juniper.",
   },
   {
     q: "How is Juniper different from Moshy?",
@@ -110,17 +110,6 @@ export default function MoshyAlternativesPage() {
             <a {...ext(JUNIPER_URL)} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Juniper is here
             </a>.
-          </p>
-        </section>
-
-        <section className="space-y-4 mb-8">
-          <h2 className="text-xl font-black">3. Better Being, for a lifestyle-first program</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            <a {...ext(BETTERBEING_URL)} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
-              Better Being
-            </a>{" "}
-            approaches weight through habits, nutrition, and behavioural support rather than a medication-first
-            pathway. It is not gender-specific. If what you actually want is structure and coaching, this is the lane.
           </p>
         </section>
 

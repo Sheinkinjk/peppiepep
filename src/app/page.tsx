@@ -10,7 +10,7 @@ import {
   EMPLOYMENT_HERO_URL, SUPERFILIATE_URL, ALIDROP_URL, SNOV_URL, GUSTO_URL, PAYONEER_URL,
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL, WING_ASSISTANT_URL, SURVICATE_URL,
   BUTTERNUT_URL, DENSE_URL, INCOME_LAB_URL, NUTSHELL_URL,
-  PIPEDRIVE_URL, ACTIVECAMPAIGN_URL, ZOOMINFO_URL, MELIO_URL, LOGOME_URL, ALOHI_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
+  PIPEDRIVE_URL, ACTIVECAMPAIGN_URL, ZOOMINFO_URL, MELIO_URL, ALOHI_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
   LANDINGI_URL, DATABOX_URL, MEETGEEK_URL, COMETCHAT_URL, FLOCKSY_URL,
 } from "@/lib/affiliate-links";
 
@@ -85,7 +85,6 @@ const servicesLogos = [
   { logo: "activecampaign", name: "ActiveCampaign", url: ACTIVECAMPAIGN_URL },
   { logo: "zoominfo", name: "ZoomInfo", url: ZOOMINFO_URL },
   { logo: "melio", name: "Melio", url: MELIO_URL },
-  { logo: "logome", name: "Logome.ai", url: LOGOME_URL },
   { logo: "alohi", name: "Alohi", url: ALOHI_URL },
   { logo: "hellobar", name: "Hello Bar", url: HELLOBAR_URL },
   { logo: "outgrow", name: "Outgrow", url: OUTGROW_URL },

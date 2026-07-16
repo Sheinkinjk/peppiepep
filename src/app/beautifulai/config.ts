@@ -74,7 +74,6 @@ export const beautifulaiConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
-    { href: "/logome", label: "Logome.ai", desc: "Generate a logo and brand kit with AI." },
     { href: "/lindy", label: "Lindy", desc: "An AI assistant that automates everyday work." },
     { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
   ],

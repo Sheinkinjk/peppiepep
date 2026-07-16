@@ -173,7 +173,6 @@ export const swipePagesConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
-    { href: "/instapage", label: "Instapage", desc: "Premium landing pages for paid-ad conversion, with A/B testing." },
     {
       href: "/best-website-builder",
       label: "Best Website Builder 2026",

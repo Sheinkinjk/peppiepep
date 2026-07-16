@@ -13,7 +13,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service actually runs, from application to subscription." },
   { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
-  { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy, Juniper and Better Being side by side." },
+  { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/moshy-vs-pilot", title: "Moshy vs Pilot", desc: "The gender-neutral option against Eucalyptus's men's service." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest really means." },
   { href: "/weight-loss-injections-australia", title: "Weight loss injections, explained", desc: "What the injection category is and how online access works." },
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "What are the best online weight loss programs in Australia?",
-    a: "There is no single best program, because the right fit depends on whether you want a clinical pathway, a coaching program, or in-person care with your GP. Our comparison of the main telehealth providers lines up Moshy, Juniper and Better Being side by side so you can weigh them on eligibility, cost model and what is included. We never sell rankings.",
+    a: "There is no single best program, because the right fit depends on whether you want a clinical pathway, a coaching program, or in-person care with your GP. Our comparison of the main telehealth providers lines up Moshy and Juniper side by side so you can weigh them on eligibility, cost model and what is included. We never sell rankings.",
   },
   {
     q: "How much do online weight loss programs cost in Australia?",
@@ -165,9 +165,8 @@ export default function WeightLossHubPage() {
                 Lifestyle programs
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
-                Coaching, habits and nutrition first, with practitioner support in the background. Better Being is the
-                main Australian name. Suits people who want structure and accountability rather than a clinical
-                pathway.
+                Coaching, habits and nutrition first, with practitioner support in the background. Suits people who
+                want structure and accountability rather than a clinical pathway.
               </p>
               <p className="mt-5 text-sm font-semibold">
                 <Link href="/online-weight-loss-programs-australia" className="text-[#0a7c42] hover:underline">

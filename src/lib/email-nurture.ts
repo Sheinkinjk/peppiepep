@@ -65,7 +65,7 @@ export function buildNurtureSequence(email: string): NurtureEmail[] {
         <ul>
           <li><strong>SaaS:</strong> beehiiv (30% recurring), Notion (50% first year), Webflow (50% recurring)</li>
           <li><strong>AI Tools:</strong> Jasper (25% recurring), Durable AI (20% recurring), Copy.ai</li>
-          <li><strong>Health AU:</strong> Moshy ($100/sale), Mosh Hair ($85/sale), Better Being</li>
+          <li><strong>Health AU:</strong> Moshy ($100/sale), Mosh Hair ($85/sale)</li>
           <li><strong>Fintech:</strong> Wise ($30 flat), Stake ($50 flat), Pearler, Hatch</li>
           <li><strong>Startup Tools:</strong> Carrd (30% one-time), Gumroad, Lemon Squeezy</li>
         </ul>

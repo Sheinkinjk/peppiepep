@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { MOSHY_URL, JUNIPER_URL, BETTERBEING_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 
 /**
  * "Which weight-loss pathway fits you?", a two-question decision tool that ends
@@ -39,9 +39,8 @@ function resolve(gender: Gender, priority: Priority): Result {
       };
     }
     return {
-      title: "A lifestyle-first program suits you",
-      body: "You want coaching and habits at the centre, not medication first. Better Being takes that approach and is open to anyone. If you later want the clinical route, Moshy runs that pathway online.",
-      cta: { label: "Visit Better Being", href: BETTERBEING_URL, sponsored: false, loc: "quiz-betterbeing" },
+      title: "Start with your GP for a habits-first plan",
+      body: "You want coaching and habits at the centre rather than medication first. A GP can build a plan around nutrition and lifestyle, knows your history, and can refer you on to a dietitian or an exercise program. If you later want the clinical route, Moshy runs that pathway online.",
       secondary: { label: "See all weight-loss options", href: "/weight-loss" },
     };
   }

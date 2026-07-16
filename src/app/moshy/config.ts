@@ -167,7 +167,7 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       href: "/best-weight-loss-telehealth-australia",
       label: "Best Weight Loss Telehealth Australia 2026",
-      desc: "Moshy vs Juniper vs Better Being compared, GLP-1 access, eligibility, pricing, and the community verdict.",
+      desc: "Moshy vs Juniper compared, GLP-1 access, eligibility, pricing, and the community verdict.",
     },
     {
       href: "/moshhair",

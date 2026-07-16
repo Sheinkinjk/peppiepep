@@ -37,7 +37,7 @@ const sections = [
     guides: [
       { href: "/best-website-builder", label: "Best Website Builder 2026", desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages." },
       { href: "/best-newsletter-platform", label: "Best Newsletter Platform 2026", desc: "beehiiv vs Substack vs ConvertKit." },
-      { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper vs Better Being." },
+      { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper, compared." },
       { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
       { href: "/best-peptide-supplier", label: "Best Peptide Supplier 2026", desc: "Apollo vs Ascension vs BioPeptiTech. Research use only." },
       { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
@@ -73,7 +73,6 @@ const sections = [
       { href: "/swipepages", label: "Swipe Pages", desc: "Fast AMP landing pages. 14-day free trial." },
       { href: "/leadpages", label: "Leadpages", desc: "Landing pages built for lead capture, with A/B testing." },
       { href: "/landingi", label: "Landingi", desc: "No-code landing-page builder for marketers." },
-      { href: "/instapage", label: "Instapage", desc: "Premium landing pages built to convert paid-ad traffic." },
       { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
     ],
   },
@@ -117,7 +116,6 @@ const sections = [
     guides: [
       { href: "/lindy", label: "Lindy", desc: "An AI assistant that automates inbox, scheduling and CRM." },
       { href: "/elevenlabs", label: "ElevenLabs", desc: "AI voice and text-to-speech with voice cloning." },
-      { href: "/logome", label: "Logome.ai", desc: "Generate a logo and full brand kit with AI." },
       { href: "/meetgeek", label: "MeetGeek", desc: "AI meeting notes for Zoom, Meet and Teams." },
       { href: "/beautifulai", label: "Beautiful.ai", desc: "AI presentation software that designs slides for you." },
     ],

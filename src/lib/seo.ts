@@ -381,6 +381,10 @@ export const seoConfig = {
     keywords: ["melio pricing", "melio referral link", "melio review", "melio payments", "b2b bill pay", "accounts payable software", "pay vendors by card"],
   },
   logome: {
+    // Partner link is dead (16 July 2026): logome.ai 404s at its root, and
+    // get.instapage.io has no DNS record. Excluded rather than sending readers
+    // to an error page. Restore if a working affiliate link is obtained.
+    noIndex: true,
     title: "Logome.ai Discount Code & Referral Link 2026: AI Logo Maker | Refer Labs",
     description:
       "Looking for a Logome.ai discount code or referral link? Logome is an AI logo and brand-kit generator. Design and preview free, download from US$19/mo. Start via our link.",
@@ -486,6 +490,10 @@ export const seoConfig = {
     keywords: ["capsule crm","capsule crm pricing","capsule crm review","capsule referral link","simple crm small business","free crm","sales pipeline software"],
   },
   instapage: {
+    // Partner link is dead (16 July 2026): logome.ai 404s at its root, and
+    // get.instapage.io has no DNS record. Excluded rather than sending readers
+    // to an error page. Restore if a working affiliate link is obtained.
+    noIndex: true,
     title: "Instapage Referral Link & Pricing 2026: Landing Pages for Ad Conversion | Refer Labs",
     description:
       "Instapage is a landing-page platform for advertisers: drag-and-drop builder, A/B testing, heatmaps and ad-to-page personalisation. See the 14-day free trial and pricing via our link.",
@@ -1099,23 +1107,21 @@ export const seoConfig = {
   },
 
   bestWeightLossTelehealth: {
-    title: "Best Weight Loss Telehealth Australia 2026: Moshy vs Juniper vs Better Being | Refer Labs",
+    title: "Best Weight Loss Telehealth Australia 2026: Moshy vs Juniper | Refer Labs",
     description:
-      "The best weight loss telehealth in Australia for 2026, compared: Moshy, Juniper and Better Being. How eligibility works, what each program costs, and how to pick the right online option for you.",
+      "The best weight loss telehealth in Australia for 2026, compared: Moshy and Juniper. How eligibility works, what each program costs, and how to pick the right online option for you.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
       "best weight loss telehealth australia",
       "moshy vs juniper",
       "moshy vs juniper australia",
-      "moshy vs juniper vs better being",
       "online weight loss australia 2026",
       "weight loss telehealth australia",
       "GLP-1 telehealth australia",
       "semaglutide telehealth australia",
       "moshy weight loss review",
       "juniper weight loss review",
-      "better being australia",
       "australian weight loss program comparison",
       "best online weight management australia",
       "weight loss program australia 2026",
@@ -1318,7 +1324,7 @@ export const seoConfig = {
   moshyAlternatives: {
     title: "Moshy Alternatives in Australia 2026: Who Else Does This? | Refer Labs",
     description:
-      "The realistic alternatives to Moshy in Australia: Juniper for women, Better Being for a lifestyle-first approach, and your own GP. What each pathway offers and how they differ. Information only, not medical advice.",
+      "The realistic alternatives to Moshy in Australia: Juniper for women, and your own GP. What each pathway offers and how they differ. Information only, not medical advice.",
     url: `${SITE_URL}/moshy-alternatives`,
     keywords: [
       "moshy alternatives",

@@ -58,7 +58,6 @@ export const flocksyConfig: AffiliatePageConfig = {
   ],
   relatedLinks: [
     { href: "/business-software", label: "Business software", desc: "Browse more tools for running a business." },
-    { href: "/logome", label: "Logome.ai", desc: "Generate a logo and brand kit with AI instead." },
   ],
   ctas: {
     primary: "See Flocksy",
