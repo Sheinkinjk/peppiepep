@@ -67,8 +67,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Do these platforms provide GLP-1 medications for weight loss?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper are both known for offering GLP-1 medication options (such as Semaglutide) through their telehealth model, subject to clinical eligibility assessment. GLP-1 medications are prescription-only in Australia and only available following a practitioner consultation and individual assessment. Not every person who completes an eligibility questionnaire will be prescribed medication. This page does not constitute medical advice." }
+      name: "Do these platforms work within the GLP-1 medication class?",
+      acceptedAnswer: { "@type": "Answer", text: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve the GLP-1 medication class. GLP-1 medications are prescription-only in Australia and are prescribed only after a practitioner consultation and individual assessment, which decides suitability. Not every person who completes an eligibility questionnaire will be prescribed medication. This page does not constitute medical advice." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Moshy vs Juniper Australia" },
     { "@type": "Thing", name: "GLP-1 telehealth Australia" },
     { "@type": "Thing", name: "online weight management Australia" },
-    { "@type": "Thing", name: "Semaglutide Australia telehealth" },
+    { "@type": "Thing", name: "prescription weight-loss medication Australia" },
     { "@type": "Thing", name: "Moshy weight loss review" },
     { "@type": "Thing", name: "Juniper weight loss Australia" },
   ],
@@ -489,8 +489,8 @@ export default function BestWeightLossTelehealthPage() {
                   a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside medication, Juniper is worth a look. Both require individual clinical eligibility assessment.",
                 },
                 {
-                  q: "Do Australian weight loss telehealth platforms provide Semaglutide?",
-                  a: "Moshy and Juniper are known for offering GLP-1 medication options, including Semaglutide, through their telehealth model. These are prescription-only medications in Australia. Prescribing is at the sole discretion of each platform's practitioners following individual eligibility assessment. Not everyone who applies will be prescribed medication. This page does not constitute medical advice.",
+                  q: "Do these platforms work within the GLP-1 medication class?",
+                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve the GLP-1 medication class. GLP-1 medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
                 },
                 {
                   q: "Are these platforms available across all of Australia?",
