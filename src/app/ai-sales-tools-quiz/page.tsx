@@ -72,7 +72,7 @@ export default function AiSalesToolsQuizPage() {
             <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#3d4b44] sm:text-base">
               <p>
                 Four good tools, four different jobs, data, outreach, a done-for-you rep, or a whole stack in one. Answer
-                one or two quick questions and get the one that fixes your actual bottleneck, with an honest reason why.
+                one or two quick questions and get the one that fixes your actual bottleneck, and why.
                 About 30 seconds.
               </p>
             </div>

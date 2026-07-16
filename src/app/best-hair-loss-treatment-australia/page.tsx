@@ -252,7 +252,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
 
         {/* Overview */}
         <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">The Landscape: Clinical vs Topical</h2>
+          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">Clinical vs topical</h2>
           <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
             <p>
               Hair loss treatment in Australia splits into two broad approaches: prescription medicines that address the underlying cause, and topical products that support scalp health and density. The right choice depends on the type, severity, and stage of hair loss.

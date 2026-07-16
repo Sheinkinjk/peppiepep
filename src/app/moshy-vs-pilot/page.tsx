@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "How much do Moshy and Pilot cost?",
-    a: "We do not quote fixed figures here, because pricing is confirmed inside the consult and can change. Both Moshy and Pilot run on a subscription model, so the honest comparison is how the models work rather than a number on a single day. One concrete note: Moshy currently advertises $120 off your first treatment for new customers. Any medication, if prescribed, may be billed within or on top of the subscription depending on the plan. Check the current pricing directly on each provider before you commit.",
+    a: "We do not quote fixed figures here, because pricing is confirmed inside the consult and can change. Both Moshy and Pilot run on a subscription model, so the comparison is how the models work rather than a number on a single day. One concrete note: Moshy currently advertises $120 off your first treatment for new customers. Any medication, if prescribed, may be billed within or on top of the subscription depending on the plan. Check the current pricing directly on each provider before you commit.",
   },
   {
     q: "Who is Pilot built for?",
@@ -234,7 +234,7 @@ export default function MoshyVsPilotPage() {
                 One caveat matters most. Medication, if it is prescribed at all, may be billed within or on top of the
                 subscription depending on the plan, so the service fee is not always the full cost. That is why we point
                 you to each provider&apos;s own pricing rather than quoting a number here, and why the pricing model is
-                the honest comparison, not an advertised figure on a single day.
+                what to compare, rather than an advertised figure on a single day.
               </p>
             </div>
           </section>

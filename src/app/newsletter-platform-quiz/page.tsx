@@ -72,7 +72,7 @@ export default function NewsletterPlatformQuizPage() {
             <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#3d4b44] sm:text-base">
               <p>
                 beehiiv, Substack and Kit each win at a different job, growth and monetisation, a simple start, or
-                automation. Answer one quick question and get the one that fits your goal, with an honest reason why.
+                automation. Answer one quick question and get the one that fits your goal, and why.
                 About 20 seconds.
               </p>
             </div>

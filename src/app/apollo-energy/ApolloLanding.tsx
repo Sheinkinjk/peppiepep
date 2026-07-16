@@ -209,7 +209,7 @@ export default function ApolloLanding() {
                 <p>
                   From 1 May 2026 it is worth about $252 per usable kWh for most standard home batteries, based on 6.8
                   small-scale technology certificates per usable kWh at roughly $37 each after typical costs. As a guide,
-                  a 10kWh battery attracts around $3,110.
+                  a 10kWh battery attracts around $2,520.
                 </p>
                 <p>
                   The rate also tapers. The full rate only applies to the first 14kWh. From 14kWh to

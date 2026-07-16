@@ -251,7 +251,7 @@ export default function BlogPost() {
           <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Tracking Referrals Properly</h2>
 
           <p>
-            Whether you're exchanging reciprocal referrals or participating in revenue-sharing arrangements, you need audit-ready documentation:
+            Reciprocal referrals and revenue-sharing arrangements both need audit-ready documentation:
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 my-8">

@@ -8,7 +8,7 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossQuiz);
 const faqs = [
   {
     q: "How do I choose a weight-loss program in Australia?",
-    a: "Start with what you actually want. A fast, clinically-led pathway you can start online points to a medical telehealth service. Wanting coaching, habits and accountability alongside, rather than medication first, points to a coaching-led program. Preferring the lowest cost and an in-person assessment points to your GP. This match asks two quick questions and points you to the pathway that fits, with an honest reason why. A registered practitioner still decides whether any treatment is appropriate for you.",
+    a: "Start with what you actually want. A fast, clinically-led pathway you can start online points to a medical telehealth service. Wanting coaching, habits and accountability alongside, rather than medication first, points to a coaching-led program. Preferring the lowest cost and an in-person assessment points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
   },
   {
     q: "Is telehealth or an in-person GP better for weight loss?",
@@ -76,7 +76,7 @@ export default function WeightLossQuizPage() {
             <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#3d4b44] sm:text-base">
               <p>
                 A clinical telehealth pathway, a coaching program, or your GP, they suit different people. Answer two
-                quick questions and see the route that fits your situation, with an honest reason why. About 30 seconds.
+                quick questions and see the route that fits your situation, and why. About 30 seconds.
                 This is general information, not medical advice, and it does not decide your eligibility.
               </p>
             </div>

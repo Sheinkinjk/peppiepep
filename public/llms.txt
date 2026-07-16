@@ -85,11 +85,11 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [CloudTalk](https://referlabs.com.au/cloudtalk): AI-powered call-centre and business phone system for sales and support; 14-day free trial.
 - [KrispCall](https://referlabs.com.au/krispcall): Cloud phone system with virtual numbers and a shared team inbox for remote teams.
 - [Dext](https://referlabs.com.au/dext): Bookkeeping automation that captures receipts and invoices and syncs to Xero, QuickBooks and Sage; 14-day free trial.
-- [Lindy](https://referlabs.com.au/lindy): AI work assistant that automates inbox, scheduling and CRM tasks; 7-day free trial, from about US$49.99/month.
+- [Lindy](https://referlabs.com.au/lindy): AI work assistant that automates inbox, scheduling and CRM tasks; 7-day free trial, from US$49.99/month.
 - [ElevenLabs](https://referlabs.com.au/elevenlabs): AI voice and text-to-speech platform with voice cloning and dubbing; free plan available.
 - [Wing Assistant](https://referlabs.com.au/wing-assistant): Managed virtual-assistant service with dedicated assistants across many roles; free consultation.
 - [Survicate](https://referlabs.com.au/survicate): Customer-feedback and survey platform across website, email and app with AI analysis; free plan available.
-- [Nutshell](https://referlabs.com.au/nutshell): Easy sales CRM with built-in email marketing for SMB teams; 14-day free trial, no card, from about US$13/user/month.
+- [Nutshell](https://referlabs.com.au/nutshell): Easy sales CRM with built-in email marketing for SMB teams; 14-day free trial, no card, from US$13/user/month.
 - [Pipedrive](https://referlabs.com.au/pipedrive): Visual sales CRM with pipeline, automation and reporting; 14-day free trial, from US$14/seat/month.
 - [ActiveCampaign](https://referlabs.com.au/activecampaign): Email marketing with a powerful automation builder and CRM; 14-day free trial, from US$15/month.
 - [ZoomInfo](https://referlabs.com.au/zoominfo): Enterprise B2B sales intelligence and contact database with buyer-intent signals; quote-only, annual contracts.
@@ -102,7 +102,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Landingi](https://referlabs.com.au/landingi): No-code landing-page builder with A/B testing for marketers; 14-day free trial, from US$24/month.
 - [Databox](https://referlabs.com.au/databox): KPI dashboards that pull 130+ data sources into automated reports; free plan, from US$64/month.
 - [MeetGeek](https://referlabs.com.au/meetgeek): AI meeting assistant that records, transcribes and summarises Zoom, Meet and Teams calls; free plan, from US$9.99/user/month.
-- [CometChat](https://referlabs.com.au/cometchat): Developer SDKs and APIs to add in-app chat, voice and video to your app; free Build plan, paid from about US$299/month.
+- [CometChat](https://referlabs.com.au/cometchat): Developer SDKs and APIs to add in-app chat, voice and video to your app; free Build plan, paid from US$299/month.
 - [Flocksy](https://referlabs.com.au/flocksy): Unlimited graphic design and creative from a dedicated team for a flat monthly fee; 14-day money-back, from US$1,199/month.
 
 ## Prediction markets (Polymarket guides)
@@ -117,7 +117,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 ## Website builders & landing pages
 - [Best website builder](https://referlabs.com.au/best-website-builder): Carrd, Durable AI, Butternut AI and Swipe Pages, compared.
 - [Which website builder quiz](https://referlabs.com.au/website-builder-quiz): Three-question recommender that matches you to Carrd, Durable AI, Butternut AI or Swipe Pages.
-- [Carrd](https://referlabs.com.au/carrd): Simple one-page website builder. Free plan; Pro from around $9/year.
+- [Carrd](https://referlabs.com.au/carrd): Simple one-page website builder. Free plan; Pro from US$9/year.
 - [Durable AI](https://referlabs.com.au/durableai): AI website builder with CRM and invoicing.
 - [Butternut AI](https://referlabs.com.au/butternut): AI full-site generator from a prompt.
 - [Swipe Pages](https://referlabs.com.au/swipepages): AMP landing-page builder.

@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "Do I need to see a GP in person to get weight-loss injections?",
-    a: "Not necessarily. Telehealth pathways let a registered practitioner assess you remotely, so an in-person GP visit is not always required to begin. That said, your own GP is a completely valid route and can offer whole-of-health context. Both are legitimate ways to be assessed. The right choice depends on your circumstances.",
+    a: "Not necessarily. Telehealth pathways let a registered practitioner assess you remotely, so an in-person GP visit is not always required to begin. Your own GP is also a completely valid route, and can offer whole-of-health context. Both are legitimate ways to be assessed. The right choice depends on your circumstances.",
   },
   {
     q: "Is Refer Labs a medical provider?",

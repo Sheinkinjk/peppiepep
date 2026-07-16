@@ -121,7 +121,7 @@ export default function MoshyVsGpPage() {
         </section>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">The honest trade</h2>
+          <h2 className="text-xl font-black">The trade-off</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Telehealth trades continuity for convenience. Moshy will never know your history the way a GP you have seen
             for a decade does, and it is not trying to. What it offers instead is the removal of every small barrier

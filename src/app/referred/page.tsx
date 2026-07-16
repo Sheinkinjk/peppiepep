@@ -63,7 +63,7 @@ export default async function ReferredPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-              Ready to Transform Your Revenue?
+              Ready to get started?
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Choose your path to get started with Refer Labs

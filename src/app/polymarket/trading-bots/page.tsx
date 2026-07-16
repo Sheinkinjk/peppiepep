@@ -184,7 +184,7 @@ const sections: GuideSection[] = [
           competitive two-sided orders, distributed daily around midnight UTC.
         </p>
         <p>
-          Here is the honest part. Those rewards are real, but they exist to compensate for{" "}
+          Those rewards are real, but they exist to compensate for{" "}
           <strong>adverse selection</strong>: informed traders pick you off when the price is about to move,
           and naive strategies often bleed exactly what they earn in spread back to those traders. There is no
           durable edge you can assume, only edge you can <strong>measure</strong>. Before you scale size, read{" "}

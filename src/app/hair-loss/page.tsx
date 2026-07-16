@@ -170,7 +170,7 @@ export default function HairLossHubPage() {
           <MatchPrompt
             href="/hair-loss-quiz"
             title="Not sure which hair-loss route fits you?"
-            sub="Answer one or two quick questions and get the option that fits, clinical, topical, or your GP, with an honest reason why."
+            sub="Answer one or two quick questions and get the option that fits, clinical, topical, or your GP, and why."
             cta="Take the 30-second match"
             dataCta="hair-match-prompt"
           />

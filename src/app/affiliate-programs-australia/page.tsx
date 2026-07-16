@@ -149,7 +149,7 @@ const faqs = [
   },
   {
     q: "What makes a good affiliate program?",
-    a: "Four things: a product your audience already wants, a fair commission (recurring beats one-off for subscription products), a reasonable cookie window, and reliable tracking and payment. Recurring commissions on software people keep for years usually beat a slightly higher one-off rate. Beyond the numbers, the program has to fit your content honestly, because promoting something your readers do not need burns trust faster than any commission can repay.",
+    a: "Look for a product your audience already wants, a fair commission (recurring beats one-off for subscription products), a reasonable cookie window, and reliable tracking and payment. Recurring commissions on software people keep for years usually beat a slightly higher one-off rate. Beyond the numbers, the program has to fit your content honestly, because promoting something your readers do not need burns trust faster than any commission can repay.",
   },
   {
     q: "Do I have to disclose affiliate links in Australia?",

@@ -222,8 +222,7 @@ export default function MoshVsPilotPage() {
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
-                It helps to say the honest part first: for hair loss specifically, these two services are built on the
-                same clinical logic. You complete an online questionnaire and upload photos, a registered Australian
+                For hair loss specifically, these two services are built on the same clinical logic. You complete an online questionnaire and upload photos, a registered Australian
                 practitioner reviews your case, and if it is appropriate you are prescribed finasteride, minoxidil, or
                 both, delivered on a subscription. The medicines are the same molecules with the same evidence behind
                 them, because that is what works for male-pattern hair loss regardless of which brand&apos;s website you

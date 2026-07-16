@@ -416,7 +416,7 @@ export default function BestAiSalesToolsPage() {
         <MatchPrompt
           href="/ai-sales-tools-quiz"
           title="Not sure which tool you need?"
-          sub="Answer one or two quick questions and get the AI sales tool that fixes your actual bottleneck, with an honest reason why. About 30 seconds."
+          sub="Answer one or two quick questions and get the AI sales tool that fixes your actual bottleneck, and why. About 30 seconds."
           cta="Take the 30-second match"
           dataCta="ai-match-prompt"
         />

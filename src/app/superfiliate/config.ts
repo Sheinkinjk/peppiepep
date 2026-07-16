@@ -58,7 +58,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
     {
       heading: "Access Superfiliate",
       paragraphs: [
-        "If your brand is looking at Superfiliate to run its affiliate, referral and creator programs, here's what actually matters: what it does, how the creator-led model works, and how to get pricing. Rather than gathering the details from scattered reviews, it sets out the essentials and links straight through to Superfiliate.",
+        "If your brand is looking at Superfiliate to run its affiliate, referral and creator programs, this page covers what it does, how the creator-led model works, and how to get pricing, then links straight through to Superfiliate.",
         "Any button on the page takes you straight to Superfiliate, with no details needed here first.",
       ],
       hasCta: true,
@@ -69,7 +69,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
       paragraphs: [
         "Superfiliate is a platform for e-commerce and DTC brands to run affiliate, referral and creator programs together in one place. Instead of handing partners a generic discount code, each affiliate or creator gets a personalised landing page and custom links, which tends to convert better and feels more like a genuine recommendation.",
         "Around that it handles rewards, tracking and reporting, and integrates with your store so orders and payouts stay connected. The positioning is creator-led growth: turning happy customers and creators into a measurable acquisition channel.",
-        "It is important to be clear who this is for. Superfiliate is a tool for brands that want to run programs, not a program for individual affiliates to join. If you are an affiliate looking for programs to promote, our affiliate-programs guide is the better starting point.",
+        "Superfiliate is a tool for brands that want to run programs, not a program for individual affiliates to join. If you are an affiliate looking for programs to promote, our affiliate-programs guide is the better starting point.",
       ],
     },
     {

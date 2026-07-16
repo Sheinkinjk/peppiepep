@@ -76,7 +76,7 @@ export default function MoshyAlternativesPage() {
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Moshy alternatives in Australia: <span style={{ color: CYAN_LT }}>the honest shortlist</span>
+          Moshy alternatives in Australia: <span style={{ color: CYAN_LT }}>the shortlist</span>
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
@@ -92,7 +92,7 @@ export default function MoshyAlternativesPage() {
         <section className="space-y-4 mb-8">
           <h2 className="text-xl font-black">1. Your GP</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            The alternative nobody markets. A GP can manage a weight pathway in person, sees your whole health picture,
+            A GP can manage a weight pathway in person, sees your whole health picture,
             and Medicare offsets part of the cost. What you give up is convenience and, for some people, the willingness to
             start at all. If you would genuinely book the appointment, this is a strong option. We compared the two
             routes properly in{" "}
@@ -127,10 +127,9 @@ export default function MoshyAlternativesPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">And for the focused clinical pathway itself</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            After the shortlist, the conclusion writes itself: for a lean, practitioner-led telehealth program in
-            Australia that is open to anyone eligible, Moshy is the reference point. That is not hype; the checklist of
-            registered practitioners, genuine screening, and Australian regulation filters the field down to very few
-            services that run this pathway properly.
+            For a lean, practitioner-led telehealth program in Australia that is open to anyone eligible, Moshy is the
+            reference point. The requirements of registered practitioners, genuine screening, and Australian regulation
+            filter the field down to very few services that run this pathway properly.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-4" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">

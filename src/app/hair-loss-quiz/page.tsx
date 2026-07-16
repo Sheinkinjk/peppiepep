@@ -8,7 +8,7 @@ export const metadata = generateSEOMetadata(seoConfig.hairLossQuiz);
 const faqs = [
   {
     q: "How do I choose a hair-loss treatment in Australia?",
-    a: "Start with the approach you want. A clinical, prescription-based route points to a men's telehealth service like Mosh, where a registered practitioner decides if treatment is appropriate. A non-prescription route points to a topical, cosmetic routine like Dense. If you are unsure of the cause or want to be seen in person, start with your GP. This match asks one or two questions and points you to the route that fits, with an honest reason why.",
+    a: "Start with the approach you want. A clinical, prescription-based route points to a men's telehealth service like Mosh, where a registered practitioner decides if treatment is appropriate. A non-prescription route points to a topical, cosmetic routine like Dense. If you are unsure of the cause or want to be seen in person, start with your GP. This match asks one or two questions and points you to the route that fits, and why.",
   },
   {
     q: "Is telehealth or a topical product better for hair loss?",
@@ -76,7 +76,7 @@ export default function HairLossQuizPage() {
             <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#3d4b44] sm:text-base">
               <p>
                 A clinical telehealth route, a topical routine, or your GP, they suit different people. Answer one or two
-                quick questions and see the route that fits, with an honest reason why. About 30 seconds. This is general
+                quick questions and see the route that fits, and why. About 30 seconds. This is general
                 information, not medical advice, and it does not decide your eligibility.
               </p>
             </div>

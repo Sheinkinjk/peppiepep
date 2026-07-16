@@ -22,7 +22,7 @@ const guides = [
   { href: "/online-weight-loss-doctor-australia", title: "Online weight loss doctor", desc: "How a telehealth consult and eligibility review runs." },
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
   { href: "/moshy-eligibility", title: "The eligibility check, explained", desc: "What the quiz asks and why some people are declined." },
-  { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The honest shortlist, including the option nobody markets." },
+  { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
   { href: "/online-weight-loss-programs-australia", title: "Online programs, untangled", desc: "Medical telehealth vs coaching apps vs meal plans." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
   { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "The wider category, and what online clinics can't do." },
@@ -234,10 +234,9 @@ export default function WeightLossHubPage() {
               The three pathways above are genuinely different products. Medical telehealth is the most structured
               clinical route and is usually priced as a subscription. Coaching and lifestyle programs put habits and
               nutrition first, with practitioner support in the background, and suit people who want accountability more
-              than a clinical pathway. Your GP is the option nobody markets: in-person, whole-of-health context, part
-              of the cost offset by Medicare, but slower to get moving. None of these is automatically the right
-              answer. The right one is the one that fits how you actually want to be supported, and what you are
-              comfortable paying.
+              than a clinical pathway. Your GP sees you in person with your whole health picture in view, and Medicare
+              offsets part of the cost, but it is slower to get moving. The right one is the one that fits how you
+              actually want to be supported, and what you are comfortable paying.
             </p>
             <h3 className="pt-2 text-xl font-bold text-[#10251b]">
               What to check before you sign up to any provider
@@ -281,7 +280,7 @@ export default function WeightLossHubPage() {
             variant="band"
             source="weight-loss-hub"
             heading="New weight-loss services launch constantly"
-            sub="We track them so you don't have to. Get the important updates and honest comparisons, no spam."
+            sub="We track them so you don't have to. Get the important updates and new comparisons, no spam."
           />
         </section>
 

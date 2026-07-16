@@ -103,7 +103,7 @@ export default function BusinessSoftwarePage() {
           <MatchPrompt
             href="/ai-sales-tools-quiz"
             title="Not sure which sales tool or CRM you need?"
-            sub="Answer one or two quick questions and get the tool that fixes your actual bottleneck, with an honest reason why. About 30 seconds."
+            sub="Answer one or two quick questions and get the tool that fixes your actual bottleneck, and why. About 30 seconds."
             cta="Take the 30-second match"
             dataCta="business-software-match-prompt"
           />

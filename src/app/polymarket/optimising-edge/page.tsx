@@ -115,11 +115,11 @@ const sections: GuideSection[] = [
   },
   {
     id: "honest",
-    h2: "The honest part: most edges aren’t real",
+    h2: "Most edges are not real",
     body: (
       <>
         <p>
-          Here is the section most guides skip. <strong>Most naive and systematic strategies show no proven
+          <strong>Most naive and systematic strategies show no proven
           edge after costs.</strong> Spread income gets handed back through adverse selection; a backtest that
           ignored fees falls apart live; a research view that felt sharp was already in the price. This is the
           default outcome, not the exception.

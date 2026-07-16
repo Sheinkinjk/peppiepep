@@ -51,7 +51,7 @@ const sections = [
       { href: "/moshy-review", label: "Moshy, Explained", desc: "How the service actually runs, application to subscription." },
       { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
       { href: "/moshy-vs-gp", label: "Telehealth vs Your GP", desc: "Two doors to the same care. The practical trade." },
-      { href: "/moshy-alternatives", label: "Moshy Alternatives", desc: "The honest shortlist, including the option nobody markets." },
+      { href: "/moshy-alternatives", label: "Moshy Alternatives", desc: "The shortlist, including your GP." },
       { href: "/mens-health-telehealth-australia", label: "Men's Health Telehealth", desc: "The wider category and its limits." },
     ],
   },

@@ -108,7 +108,7 @@ const deliverables = [
     outcome: "Execution guides for your specific channels",
     mock: "checklist",
     whatItIs: "Step-by-step execution playbooks for the channels you selected in the intake form (SEO, email, communities, comparison directories, social). Each playbook references specific programs from your database.",
-    whyItMatters: "Knowing which programs to promote is half the problem. Knowing exactly how to promote them through your specific channel is the other half. Most affiliate guides skip the second half.",
+    whyItMatters: "Knowing which programs to promote is half the problem. Knowing exactly how to promote them through your specific channel is the other half. The Blueprint covers both.",
     howUsed: "Open the playbook for your primary channel. Follow it as a numbered action list. SEO playbook is 6 steps; email is a cold-to-warm sequence template; community playbook is a credibility framework for Reddit and forums.",
     valueReplaces: "$200-$400 worth of execution templates and consulting time",
     bullets: [

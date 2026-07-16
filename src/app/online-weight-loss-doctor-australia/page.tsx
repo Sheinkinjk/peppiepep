@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "Do I still need to see my GP?",
-    a: "Not necessarily to begin, since a telehealth practitioner can assess you remotely. That said, your own GP is a completely valid route and offers whole-of-health context and continuity of care. Many people use both. The right choice depends on your circumstances, and our telehealth versus GP guide covers the trade-off.",
+    a: "Not necessarily to begin, since a telehealth practitioner can assess you remotely. Your own GP is also a completely valid route, and offers whole-of-health context and continuity of care. Many people use both. The right choice depends on your circumstances, and our telehealth versus GP guide covers the trade-off.",
   },
   {
     q: "Why might a practitioner decline my application?",

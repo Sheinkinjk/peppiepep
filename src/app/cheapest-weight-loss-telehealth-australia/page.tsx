@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: "Does cheapest mean best for weight loss telehealth?",
-    a: "No. Cheapest is a useful filter, not a verdict. The lowest monthly figure can still be the wrong fit if the model does not match how you want to be supported, if the coaching you need is not included, or if medication is billed separately on top. The honest way to compare is to look at the pricing model, what is included, and whether a registered practitioner assesses you individually, then weigh price against fit. Suitability for any program is decided by a practitioner, not by price.",
+    a: "No. Cheapest is a useful filter, not a verdict. The lowest monthly figure can still be the wrong fit if the model does not match how you want to be supported, if the coaching you need is not included, or if medication is billed separately on top. Compare the pricing model, what is included, and whether a registered practitioner assesses you individually, then weigh price against fit. Suitability for any program is decided by a practitioner, not by price.",
   },
   {
     q: "How does Moshy's pricing compare to Juniper and Pilot?",
@@ -176,7 +176,7 @@ export default function CheapestWeightLossTelehealthPage() {
           <section className="pb-2">
             <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${GREEN}40`, background: `${GREEN}0A` }}>
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: GREEN }}>
-                The short answer
+                The verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 There is no single cheapest service, because they bill differently. Subscription programs like Moshy,
@@ -299,7 +299,7 @@ export default function CheapestWeightLossTelehealthPage() {
                 clinical input, a pay-as-you-go consult may work out better than any subscription.
               </p>
               <p>
-                The honest approach is to shortlist on price, then decide on fit: the pricing model, what is included,
+                Shortlist on price, then decide on fit: the pricing model, what is included,
                 and whether a registered practitioner assesses you individually before anything starts. That last point
                 is the non-negotiable one. A serious provider declines some applicants and never promises a specific
                 medicine before an assessment, regardless of how little it charges.

@@ -30,7 +30,7 @@ const DENSE: MatchResult = {
 
 const GP: MatchResult = {
   key: "gp",
-  kicker: "The honest fit for you",
+  kicker: "The fit for you",
   name: "Start with your GP",
   why: "You would rather be seen in person or you are not sure where to begin. A GP can assess the likely cause of your hair loss, talk through options, and refer you on. It is the safest first step when you are unsure.",
   secondary: { label: "See how the options compare", href: "/best-hair-loss-treatment-australia" },

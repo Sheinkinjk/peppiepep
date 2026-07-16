@@ -363,7 +363,7 @@ export default function BestNewsletterPlatformPage() {
         <MatchPrompt
           href="/newsletter-platform-quiz"
           title="Not sure which platform to pick?"
-          sub="Answer one quick question and get the newsletter platform that fits your goal, with an honest reason why."
+          sub="Answer one quick question and get the newsletter platform that fits your goal, and why."
           cta="Take the 20-second match"
           dataCta="newsletter-match-prompt"
         />

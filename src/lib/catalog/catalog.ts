@@ -60,7 +60,7 @@ export const CATALOG: Vertical[] = [
     slug: "website-builders",
     eyebrow: "Software",
     h1Lead: "Website & landing-page builders in Australia:",
-    h1Accent: "the honest shortlist",
+    h1Accent: "the shortlist",
     intro:
       "From a free one-page site to an AI-generated business website in thirty seconds, plus dedicated landing-page builders for campaigns. This hub sorts them by what they are actually for, so you pick the right tool the first time.",
     metaTitle: "Best Website & Landing Page Builders 2026: Carrd, Durable AI, Butternut, Leadpages & More | Refer Labs",

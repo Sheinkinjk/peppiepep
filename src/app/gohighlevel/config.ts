@@ -58,7 +58,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     {
       heading: "Access GoHighLevel",
       paragraphs: [
-        "Before you start a GoHighLevel trial, it helps to be clear on what it actually replaces in your current stack, whether it suits an agency or a single business, and how the free trial works. Instead of pulling the picture together from scattered reviews, it covers what matters and takes you straight to GoHighLevel to explore for yourself.",
+        "Before you start a GoHighLevel trial, this page covers what it replaces in your current stack, whether it suits an agency or a single business, and how the free trial works, then takes you straight to GoHighLevel.",
         "Every button here opens GoHighLevel directly; there is nothing to complete on this page first.",
       ],
       hasCta: true,

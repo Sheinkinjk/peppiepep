@@ -42,7 +42,7 @@ export const faqs = [
   },
   {
     q: "How much is the federal home battery rebate in 2026?",
-    a: "The federal Cheaper Home Batteries Program discounts roughly 30% of the upfront cost of an eligible battery (systems from 5kWh to 100kWh). From 1 May 2026 it is worth about $252 per usable kWh for most standard home batteries, based on 6.8 STCs per usable kWh at roughly $37 per STC after typical costs. As a guide, a 10kWh battery attracts around $3,110. The rebate is applied at the point of sale by the installer, so you do not claim it yourself. Confirm current figures before you commit, as the scheme changes.",
+    a: "The federal Cheaper Home Batteries Program discounts roughly 30% of the upfront cost of an eligible battery (systems from 5kWh to 100kWh). From 1 May 2026 it is worth about $252 per usable kWh for most standard home batteries, based on 6.8 STCs per usable kWh at roughly $37 per STC after typical costs. As a guide, a 10kWh battery attracts around $2,520. The rebate is applied at the point of sale by the installer, so you do not claim it yourself. Confirm current figures before you commit, as the scheme changes.",
   },
   {
     q: "Does the rebate change depending on battery size?",

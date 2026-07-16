@@ -58,7 +58,7 @@ export const alidropConfig: AffiliatePageConfig = {
     {
       heading: "Access AliDrop",
       paragraphs: [
-        "Running or launching a dropshipping store and trying to work out whether AliDrop fits? Here's the short version: what it does, how sourcing and fulfilment actually work, and how the pricing is structured. Instead of stitching the picture together from scattered reviews, it lays out the essentials and links straight through to AliDrop.",
+        "Running or launching a dropshipping store and trying to work out whether AliDrop fits? This page covers what it does, how sourcing and fulfilment work, and how the pricing is structured, then links straight through to AliDrop.",
         "Any button on this page takes you to AliDrop directly; there is nothing to fill in on our end first.",
       ],
       hasCta: true,

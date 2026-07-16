@@ -83,7 +83,7 @@ const programs = {
     { name: "Durable AI",   commission: "20% recurring", type: "Recurring", cookie: "60d", note: "AI website builder. 30-second site generation.",       href: "/durableai" },
     { name: "Synthesia",    commission: "20%",         type: "Recurring", cookie: "60d", note: "AI video generation. Enterprise-friendly.",              href: null },
     { name: "Copy.ai",      commission: "30% recurring", type: "Recurring", cookie: "30d", note: "AI marketing copy. Strong creator audience.",          href: null },
-    { name: "Midjourney",   commission: "Affiliate program", type: "Recurring", cookie: "—", note: "AI image generation. Massive search volume.",         href: null },
+    { name: "Midjourney",   commission: "Affiliate program", type: "Recurring", cookie: "Not disclosed", note: "AI image generation. Massive search volume.",         href: null },
   ],
   startup: [
     { name: "Carrd",        commission: "30% one-time", type: "One-time",   cookie: "30d", note: "Cheapest 1-page website builder. Free tier converts.", href: "/carrd" },
@@ -187,7 +187,7 @@ export default function BlogPost() {
         <h2 id="saas" className="text-2xl font-black text-white mb-3 mt-12">SaaS platforms (recurring commissions)</h2>
         <Section>
           <p>
-            SaaS recurring commissions are the holy grail of affiliate marketing, once you sign someone up, you keep earning every month they remain a customer. beehiiv (30% recurring) and Webflow (50% recurring) are the two highest-leverage SaaS programs available globally right now.
+            SaaS recurring commissions compound: once you sign someone up, you keep earning every month they remain a customer. beehiiv (30% recurring) and Webflow (50% recurring) are the two highest-leverage SaaS programs available globally right now.
           </p>
           <p>
             Notion deserves a special mention: 50% commission on the first year (capped) plus a massive search volume base for terms like &ldquo;notion templates&rdquo;, &ldquo;notion vs obsidian&rdquo;, and &ldquo;productivity systems&rdquo;. Even at the capped commission, the conversion rate makes it worth the effort.

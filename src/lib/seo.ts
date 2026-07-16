@@ -447,7 +447,7 @@ export const seoConfig = {
   apolloEnergyReview: {
     title: "Apollo Energy Group Review 2026: Is It Legit? ($500 Off)",
     description:
-      "An independent Apollo Energy Group review: what is actually verifiable (SAA accreditation, Electrical Licence 400672, ABN, 10-year warranty), what to check before you sign, and the exclusive $500 off your battery quote through Refer Labs.",
+      "An independent Apollo Energy Group review: the credentials you can check (SAA accreditation, Electrical Licence 400672, ABN, 10-year warranty), what to look at before you sign, and the exclusive $500 off your battery quote through Refer Labs.",
     url: `${SITE_URL}/apollo-energy-review`,
     keywords: ["apollo energy group review", "is apollo energy group legit", "apollo energy reviews", "apollo energy group australia", "apollo battery installer review", "home battery installer review australia"],
   },
@@ -1695,7 +1695,7 @@ export const seoConfig = {
   hairLossQuiz: {
     title: "Which Hair-Loss Option Fits You? 60-Second Match | Refer Labs",
     description:
-      "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, with an honest reason why. Information only, not medical advice.",
+      "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, and why. Information only, not medical advice.",
     url: `${SITE_URL}/hair-loss-quiz`,
     keywords: [
       "which hair loss treatment is right for me",
@@ -1709,7 +1709,7 @@ export const seoConfig = {
   newsletterPlatformQuiz: {
     title: "Which Newsletter Platform Should You Use? 60-Second Match | Refer Labs",
     description:
-      "Answer one quick question and see which newsletter platform fits your goal, beehiiv, Substack or Kit, with an honest reason why.",
+      "Answer one quick question and see which newsletter platform fits your goal, beehiiv, Substack or Kit, and why.",
     url: `${SITE_URL}/newsletter-platform-quiz`,
     keywords: [
       "which newsletter platform should i use",
@@ -1723,7 +1723,7 @@ export const seoConfig = {
   aiSalesToolsQuiz: {
     title: "Which AI Sales Tool Do You Need? 60-Second Match | Refer Labs",
     description:
-      "Answer one or two quick questions and see which AI sales tool fits your bottleneck, FullEnrich, Reply.io, AiSDR or GoHighLevel, with an honest reason why.",
+      "Answer one or two quick questions and see which AI sales tool fits your bottleneck, FullEnrich, Reply.io, AiSDR or GoHighLevel, and why.",
     url: `${SITE_URL}/ai-sales-tools-quiz`,
     keywords: [
       "which ai sales tool should i use",
@@ -1738,7 +1738,7 @@ export const seoConfig = {
   weightLossQuiz: {
     title: "Which Weight-Loss Option Fits You? 60-Second Match | Refer Labs",
     description:
-      "Answer two quick questions and see which weight-loss route fits you, an online telehealth program or an in-person GP, with an honest reason why. Information only, not medical advice.",
+      "Answer two quick questions and see which weight-loss route fits you, an online telehealth program or an in-person GP, and why. Information only, not medical advice.",
     url: `${SITE_URL}/weight-loss-quiz`,
     keywords: [
       "which weight loss program is right for me",
@@ -1753,7 +1753,7 @@ export const seoConfig = {
   websiteBuilderQuiz: {
     title: "Which Website Builder Is Right for You? 60-Second Quiz",
     description:
-      "Answer three quick questions and get the website builder that fits your project, Carrd, Durable AI, Butternut AI or Swipe Pages, with an honest reason why.",
+      "Answer three quick questions and get the website builder that fits your project, Carrd, Durable AI, Butternut AI or Swipe Pages, and why.",
     url: `${SITE_URL}/website-builder-quiz`,
     keywords: [
       "which website builder should i use",
