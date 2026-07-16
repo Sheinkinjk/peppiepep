@@ -185,7 +185,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  People often search for an exact Moshy price, and it is a fair thing to want. The honest position is that there is no
+                  People often search for an exact Moshy price, and it is a fair thing to want. There is no
                   single fixed figure that applies to everyone. The total depends on what a practitioner assesses as appropriate for
                   your individual situation, and both service fees and medicine prices move over time. Any page confidently quoting one
                   guaranteed dollar figure is likely to be out of date, or to be presenting an assumption as a fact.

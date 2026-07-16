@@ -181,7 +181,7 @@ export default function OptimisingEdgePage() {
         <>
           <p>
             Participating in a market is easy; being profitable is not. This guide is for traders who want a
-            real, measurable advantage, not just a seat at the table, and who would rather know the honest odds
+            real, measurable advantage, not just a seat at the table, and who would rather know the real odds
             than be sold a system.
           </p>
           <p>
