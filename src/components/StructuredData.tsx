@@ -8,6 +8,15 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Refer Labs",
+    // The registered entity behind the trading name, matching /terms and /privacy.
+    // Ties the site to a real, identifiable Australian business, which is a trust
+    // signal that matters for YMYL health content.
+    "legalName": "Pepform Pty Ltd",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "ABN",
+      "value": "32 660 008 159"
+    },
     "url": "https://referlabs.com.au",
     "logo": "https://referlabs.com.au/logo.svg",
     "image": "https://referlabs.com.au/og-image.png",

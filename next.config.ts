@@ -52,19 +52,16 @@ const nextConfig: NextConfig = {
         destination: '/referral-blueprint',
         permanent: true,
       },
+      // Point straight at the final destination. These used to hop via /linkedin-growth/*,
+      // which itself redirects to /for-business: a 2-hop chain that leaks link equity.
       {
         source: '/linkedin-influencer',
-        destination: '/linkedin-growth',
+        destination: '/for-business',
         permanent: true,
       },
       {
-        source: '/linkedin-influencer/business',
-        destination: '/linkedin-growth/business',
-        permanent: true,
-      },
-      {
-        source: '/linkedin-influencer/influencer',
-        destination: '/linkedin-growth/influencer',
+        source: '/linkedin-influencer/:path*',
+        destination: '/for-business',
         permanent: true,
       },
       {
@@ -143,15 +140,20 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       // ── Legacy "Growth & Distribution Engine" pages → consolidate under /for-business ──
-      { source: '/how-it-works', destination: '/for-business', permanent: false },
-      { source: '/who-its-for', destination: '/for-business', permanent: false },
-      { source: '/who-its-for/:path*', destination: '/for-business', permanent: false },
-      { source: '/case-studies', destination: '/for-business', permanent: false },
-      { source: '/playbooks', destination: '/guides', permanent: false },
-      { source: '/roi-calculator', destination: '/for-business', permanent: false },
-      { source: '/lead-hacking', destination: '/for-business', permanent: false },
-      { source: '/linkedin-growth', destination: '/for-business', permanent: false },
-      { source: '/linkedin-growth/:path*', destination: '/for-business', permanent: false },
+      // permanent (308), not temporary: these were retired by the July 2026 consumer pivot
+      // and are not coming back. A temporary redirect tells Google to keep the old URL
+      // indexed and expect the original to return, so it never consolidates signals into
+      // the destination and never drops the stale URL. (The /r/* affiliate redirects above
+      // stay temporary on purpose: those destinations rotate.)
+      { source: '/how-it-works', destination: '/for-business', permanent: true },
+      { source: '/who-its-for', destination: '/for-business', permanent: true },
+      { source: '/who-its-for/:path*', destination: '/for-business', permanent: true },
+      { source: '/case-studies', destination: '/for-business', permanent: true },
+      { source: '/playbooks', destination: '/guides', permanent: true },
+      { source: '/roi-calculator', destination: '/for-business', permanent: true },
+      { source: '/lead-hacking', destination: '/for-business', permanent: true },
+      { source: '/linkedin-growth', destination: '/for-business', permanent: true },
+      { source: '/linkedin-growth/:path*', destination: '/for-business', permanent: true },
     ];
   },
   async headers() {

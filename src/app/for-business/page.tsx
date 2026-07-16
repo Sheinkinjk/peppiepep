@@ -23,6 +23,8 @@ const offers = [
       { href: "/services/referral-programs", label: "Referral program launch" },
       { href: "/services/affiliate-distribution", label: "Affiliate distribution" },
       { href: "/services/apac-expansion", label: "Australian market entry" },
+      { href: "/services/partner-activation", label: "Partner activation" },
+      { href: "/services/product-distribution", label: "Product distribution" },
     ],
   },
   {

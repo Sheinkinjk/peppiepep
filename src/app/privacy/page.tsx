@@ -20,7 +20,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="mt-4 text-sm text-[#9aa39c]">
-          Last updated: 12 February 2026 · Version 2.3
+          Last updated: 16 July 2026 · Version 2.4
         </p>
 
         <div className="mt-10 space-y-6">
@@ -46,10 +46,10 @@ export default function Privacy() {
 
               <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">1.1 Information You Provide</h3>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
-                <li><strong>Account Data:</strong> Email address, name, business name, password (encrypted)</li>
-                <li><strong>Business Profile:</strong> Website URL, affiliate program settings, reward amounts</li>
-                <li><strong>Customer Data:</strong> Names, email addresses, phone numbers you upload for your affiliate program</li>
-                <li><strong>Affiliate Data:</strong> Affiliate codes, affiliate events, conversion tracking</li>
+                <li><strong>Contact Data:</strong> Email address and name, if you subscribe to the newsletter, buy from us, or send us an enquiry</li>
+                
+                
+                <li><strong>Referral Attribution:</strong> Which page you came from when you follow a link to a provider, so a referral can be credited</li>
                 <li><strong>Payment Data:</strong> Processed by Stripe (we do not store credit card details)</li>
               </ul>
 
@@ -64,9 +64,9 @@ export default function Privacy() {
               <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">1.3 Legal Basis for Processing</h3>
               <p className="text-[#2b362f]">We process your data based on:</p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
-                <li><strong>Contract:</strong> To provide our market entry and commercial services</li>
+                <li><strong>Contract:</strong> To deliver anything you buy from us, such as the Referral Blueprint</li>
                 <li><strong>Legitimate Interest:</strong> To improve our service, prevent fraud, and ensure security</li>
-                <li><strong>Consent:</strong> For SMS notifications and marketing communications (where required)</li>
+                <li><strong>Consent:</strong> For marketing communications such as our newsletter (where required)</li>
                 <li><strong>Legal Obligation:</strong> To comply with tax, accounting, and legal requirements</li>
               </ul>
             </div>
@@ -76,8 +76,8 @@ export default function Privacy() {
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">2. How We Use Your Information</h2>
               <p className="text-[#2b362f] mb-2">We use collected information for:</p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
-                <li><strong>Service Delivery:</strong> Provide affiliate tracking, campaign management, and analytics</li>
-                <li><strong>Communications:</strong> Send transactional emails, affiliate notifications, and service updates</li>
+                <li><strong>Service Delivery:</strong> Publish the comparisons you read, deliver anything you purchase, and answer enquiries</li>
+                <li><strong>Communications:</strong> Send transactional email such as receipts, and the newsletter if you subscribed</li>
                 <li><strong>Customer Support:</strong> Respond to inquiries and troubleshoot issues</li>
                 <li><strong>Improvements:</strong> Analyze usage patterns to enhance features and user experience</li>
                 <li><strong>Security:</strong> Detect and prevent fraud, abuse, and security incidents</li>
@@ -104,20 +104,10 @@ export default function Privacy() {
                 </div>
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
-                  <p className="font-semibold text-[#10251b] mb-1">Twilio (SMS/Voice)</p>
-                  <ul className="text-sm text-[#2b362f] list-disc list-inside space-y-0.5">
-                    <li><strong>Data Shared:</strong> Phone numbers, message content, delivery metadata</li>
-                    <li><strong>Purpose:</strong> Deliver SMS/WhatsApp/voice messages you send</li>
-                    <li><strong>Location:</strong> Global infrastructure (including US); messages may transit internationally</li>
-                    <li><strong>Privacy Policy:</strong> <a href="https://www.twilio.com/en-us/legal/privacy" className="text-[#0a7c42] hover:underline" target="_blank" rel="noopener">twilio.com/legal/privacy</a></li>
-                  </ul>
-                </div>
-
-                <div className="bg-[#f5f8f6] rounded-lg p-4">
                   <p className="font-semibold text-[#10251b] mb-1">Resend (Email Delivery)</p>
                   <ul className="text-sm text-[#2b362f] list-disc list-inside space-y-0.5">
-                    <li><strong>Data Shared:</strong> Email addresses, message content you create</li>
-                    <li><strong>Purpose:</strong> Deliver campaign emails and transactional notifications</li>
+                    <li><strong>Data Shared:</strong> Email addresses and the content of emails we send you</li>
+                    <li><strong>Purpose:</strong> Deliver the newsletter and transactional email such as receipts</li>
                     <li><strong>Location:</strong> United States</li>
                     <li><strong>Privacy Policy:</strong> <a href="https://resend.com/legal/privacy-policy" className="text-[#0a7c42] hover:underline" target="_blank" rel="noopener">resend.com/legal/privacy-policy</a></li>
                   </ul>
@@ -255,12 +245,12 @@ export default function Privacy() {
               <div className="space-y-3">
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
                   <p className="font-semibold text-[#10251b] mb-1">Right to Access</p>
-                  <p className="text-sm text-[#2b362f]">Request a copy of your personal data we hold. You can export data via the dashboard or contact us.</p>
+                  <p className="text-sm text-[#2b362f]">Request a copy of your personal data we hold. Email us and we will provide it.</p>
                 </div>
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
                   <p className="font-semibold text-[#10251b] mb-1">Right to Rectification</p>
-                  <p className="text-sm text-[#2b362f]">Correct any inaccurate or incomplete data through your account settings or by contacting us.</p>
+                  <p className="text-sm text-[#2b362f]">Correct any inaccurate or incomplete data by contacting us.</p>
                 </div>
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
@@ -270,7 +260,7 @@ export default function Privacy() {
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
                   <p className="font-semibold text-[#10251b] mb-1">Right to Data Portability</p>
-                  <p className="text-sm text-[#2b362f]">Export your data in CSV format via the dashboard's CRM integration tab.</p>
+                  <p className="text-sm text-[#2b362f]">Ask us and we will provide the personal data you gave us in a portable format.</p>
                 </div>
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
@@ -285,7 +275,7 @@ export default function Privacy() {
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
                   <p className="font-semibold text-[#10251b] mb-1">Right to Withdraw Consent</p>
-                  <p className="text-sm text-[#2b362f]">Withdraw consent for SMS notifications or marketing emails at any time via account settings.</p>
+                  <p className="text-sm text-[#2b362f]">Unsubscribe from marketing email at any time using the link in any email, or by contacting us.</p>
                 </div>
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
@@ -316,7 +306,7 @@ export default function Privacy() {
                 <li>Unsubscribe/opt-out instructions are included in our templates; removing them may result in suspension.</li>
               </ul>
               <p className="text-[#2b362f] text-sm">
-                You can withdraw your marketing consent at any time via unsubscribe links, replying STOP to SMS where available, or emailing us.
+                You can withdraw your marketing consent at any time using the unsubscribe link in any email, or by emailing us.
               </p>
             </div>
 
@@ -395,21 +385,18 @@ export default function Privacy() {
               </p>
             </div>
 
-            {/* SMS Communications */}
+            {/* Email Communications */}
             <div>
-              <h2 className="text-2xl font-bold text-[#10251b] mb-4">8. SMS Communications & Consent</h2>
+              <h2 className="text-2xl font-bold text-[#10251b] mb-4">8. Email Communications & Consent</h2>
               <p className="text-[#2b362f] mb-2">
-                When you use our SMS notification features:
+                We do not send SMS, WhatsApp or voice messages. The only messages we send are email:
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
-                <li><strong>Your Responsibility:</strong> You must obtain proper consent from your customers before uploading their phone numbers</li>
-                <li><strong>Compliance:</strong> You are responsible for compliance with SMS marketing laws (TCPA, Australian Spam Act, etc.)</li>
-                <li><strong>Opt-Out:</strong> Your SMS messages must include opt-out instructions</li>
-                <li><strong>Our Role:</strong> We are a data processor; you are the data controller for your customer data</li>
+                <li><strong>Transactional:</strong> receipts, access details and replies relating to something you bought or asked us for. We send these because you asked us to.</li>
+                <li><strong>Newsletter:</strong> sent only if you subscribe. Every one carries a working unsubscribe link.</li>
+                <li><strong>Opt-out:</strong> unsubscribe from any marketing email, or email jarred@referlabs.com.au and we will remove you.</li>
+                <li><strong>Our role:</strong> we are the data controller for the email address you give us. We do not sell it or share it for anyone else's marketing.</li>
               </ul>
-              <p className="text-[#2b362f] mt-2 bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm">
-                <strong>Important:</strong> Sending unsolicited SMS messages may result in account suspension and legal liability. Always obtain consent first.
-              </p>
             </div>
 
             {/* Cookies */}

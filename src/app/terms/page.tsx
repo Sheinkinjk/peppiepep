@@ -20,7 +20,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="mt-4 text-sm text-[#9aa39c]">
-          Last updated: 12 February 2026
+          Last updated: 16 July 2026
         </p>
 
         <div className="mt-10 space-y-8">
@@ -28,7 +28,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">1. Acceptance of Terms</h2>
               <p className="text-[#2b362f] mb-3">
-                These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and Pepform Pty Ltd ("Pepform", "we", "us", or "our") governing your access to and use of the Pepform platform, services, software, and any related documentation (collectively, the "Service").
+                These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and Pepform Pty Ltd trading as Refer Labs ("Refer Labs", "we", "us", or "our") governing your access to and use of the referlabs.com.au website, its content, and any products or services we make available through it (collectively, the "Service").
               </p>
               <p className="text-[#2b362f] mb-3">
                 BY ACCESSING OR USING THE SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS, YOU MAY NOT ACCESS OR USE THE SERVICE.
@@ -41,10 +41,13 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">2. Description of Service</h2>
               <p className="text-[#2b362f] mb-3">
-                Pepform provides a SaaS-based affiliate marketing and growth network platform that enables businesses to create, manage, track, and optimize customer affiliate programs through automated messaging, analytics, campaign management tools, hosted affiliate/handoff pages (/r/[code], /referral, /referred), and embeddable experiences for common CMS platforms.
+                Refer Labs publishes independent comparisons, reviews and guides for Australian consumers and businesses, covering health services, software and other products. Access to the published content is free. We earn revenue through affiliate commissions when you follow a link to a provider and take up their service, and these links are disclosed on the pages that carry them. Rankings and recommendations are editorial and are not sold.
+              </p>
+              <p className="text-[#2b362f] mb-3">
+                The Service also includes paid products and services we sell directly, such as the Referral Blueprint (a one-off digital purchase) and business services described on our /for-business pages, together with an optional email newsletter.
               </p>
               <p className="text-[#2b362f]">
-                The Service may include features such as SMS/WhatsApp messaging, email campaigns, customer data management, affiliate tracking, analytics dashboards, and integration capabilities. Pepform reserves the right to modify, suspend, or discontinue any aspect of the Service at any time without prior notice.
+                Refer Labs reserves the right to modify, suspend, or discontinue any aspect of the Service at any time without prior notice.
               </p>
             </div>
 
@@ -110,10 +113,10 @@ export default function Terms() {
                 <li>Violating GDPR, CCPA, TCPA, CAN-SPAM, or other privacy regulations</li>
                 <li>Violating OFAC sanctions, export controls, or trade restrictions</li>
                 <li>Violating anti-money laundering (AML) or know-your-customer (KYC) requirements</li>
-                <li>Sending messages to numbers on Do Not Call (DNC) registries without consent</li>
-                <li>Failing to obtain proper consent for SMS/email marketing</li>
-                <li>Violating telecommunications regulations or carrier guidelines</li>
-                <li>Misrepresenting sender identity or spoofing caller ID</li>
+                
+                
+                
+                
               </ul>
 
               <h3 className="text-lg font-bold text-[#10251b] mb-2">4.4 Restricted Parties</h3>
@@ -157,22 +160,19 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#10251b] mb-4">6. SMS and Email Messaging Compliance</h2>
+              <h2 className="text-2xl font-bold text-[#10251b] mb-4">6. Email Communications</h2>
               <p className="text-[#2b362f] mb-2">
-                By using our messaging features, you agree to:
+                We send two kinds of email:
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-3">
-                <li>Comply with all applicable laws including Spam Act 2003 (Cth), Do Not Call Register Act 2006 (Cth), TCPA, CAN-SPAM Act, GDPR, and carrier guidelines</li>
-                <li>Obtain prior express consent (or express written consent where required) before sending marketing messages</li>
-                <li>Provide clear opt-out mechanisms in every message (e.g., "Reply STOP to unsubscribe") that remain functional for at least 30 days</li>
-                <li>Honor opt-out requests immediately and no later than 5 working days; maintain accurate suppression lists</li>
-                <li>Not send messages to numbers on Do Not Call registries without proper exemption or consent</li>
-                <li>Accurately identify yourself as the sender in all messages</li>
-                <li>Not use shared short codes or spoofed sender IDs</li>
-                <li>Maintain records of consent for a minimum of 4 years</li>
+                <li><strong>Transactional email</strong> relating to something you bought or requested, such as a receipt or access details for the Referral Blueprint, or a reply to an enquiry you sent us. These are necessary to provide what you asked for.</li>
+                <li><strong>Newsletter and marketing email</strong>, which we send only if you subscribe. Every one of these includes a working unsubscribe link, and we action unsubscribes promptly.</li>
               </ul>
-              <p className="text-[#2b362f] font-semibold">
-                Violation of messaging compliance may result in carrier filtering, fines up to $1,500 per message under TCPA, immediate account suspension, and liability for all damages incurred by Pepform.
+              <p className="text-[#2b362f] mb-3">
+                We handle email in line with the Spam Act 2003 (Cth). We identify ourselves as the sender, we do not sell your email address, and we do not send marketing email to people who have not asked for it.
+              </p>
+              <p className="text-[#2b362f]">
+                You can unsubscribe at any time using the link in any marketing email, or by emailing jarred@referlabs.com.au.
               </p>
             </div>
 
@@ -347,7 +347,7 @@ export default function Terms() {
                 Your use of the Service is governed by our Privacy Policy, which is incorporated into these Terms by reference. You acknowledge that Pepform will process personal data in accordance with applicable privacy laws including the Australian Privacy Act 1988 (and Australian Privacy Principles), Spam Act 2003, GDPR, and CCPA.
               </p>
               <p className="text-[#2b362f] mb-3">
-                For EU/UK users: Pepform acts as a data processor when handling customer data you upload. You are the data controller and are responsible for ensuring you have a lawful basis for processing and transferring personal data to Pepform.
+                For EU/UK users: Refer Labs is the data controller for the limited personal data you give us directly, such as the email address you use to subscribe to the newsletter or to buy a product. We do not process customer databases on behalf of other businesses.
               </p>
               <p className="text-[#2b362f]">
                 Pepform implements reasonable security measures but cannot guarantee absolute security. You are responsible for implementing appropriate security practices for your account and data, including ensuring you have consent to transfer personal information overseas (e.g., to the United States) for hosting and processing.
@@ -357,10 +357,11 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">10A. Australian Privacy, Spam, and Consumer Compliance</h2>
               <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-3">
-                <li><strong>Privacy Act 1988 (Cth) & APPs:</strong> We handle personal information in accordance with the Australian Privacy Principles. You must only upload data you are permitted to share and must give required privacy notices to individuals.</li>
-                <li><strong>Spam Act 2003 & Do Not Call Register Act 2006:</strong> You must obtain consent before sending commercial electronic messages or calls via the Service. Include functional unsubscribe/STOP mechanisms, honour opt-outs immediately, and do not contact numbers on the Australian Do Not Call Register unless an exemption applies.</li>
+                <li><strong>Privacy Act 1988 (Cth) & APPs:</strong> We handle personal information in accordance with the Australian Privacy Principles. What we collect and why is set out in our Privacy Policy.</li>
+                <li><strong>Spam Act 2003 (Cth):</strong> We send marketing email only to people who have subscribed, we identify ourselves as the sender, every marketing email carries a functional unsubscribe link, and we action opt-outs promptly.</li>
                 <li><strong>Australian Consumer Law (ACL):</strong> Nothing in these Terms limits your non-excludable consumer guarantees under the ACL. Remedies under the ACL apply in addition to any limitations stated here.</li>
-                <li><strong>Overseas disclosures:</strong> Personal information may be processed outside Australia (e.g., United States). By using the Service, you consent to overseas transfers and must ensure your end customers are notified/consent where required.</li>
+                <li><strong>Affiliate disclosure:</strong> We earn a commission on some outbound links. This is disclosed on the pages carrying those links. It does not change the price you pay, and it does not determine our rankings.</li>
+                <li><strong>Overseas disclosures:</strong> Personal information may be processed outside Australia (e.g., the United States) by the service providers listed in our Privacy Policy. By using the Service, you consent to those overseas transfers.</li>
               </ul>
               <p className="text-[#2b362f]">If you have privacy concerns, you may contact us (Section 24) or lodge a complaint with the Office of the Australian Information Commissioner (oaic.gov.au).</p>
             </div>
@@ -372,7 +373,7 @@ export default function Terms() {
                 <li><strong>Lawful basis and notices:</strong> You must provide required notices under APP 5 and ensure a lawful basis/consent for processing and for overseas transfers under APP 8.</li>
                 <li><strong>Security measures:</strong> We maintain reasonable technical and organisational measures (encryption in transit/at rest, RLS, backups, access controls) and review them periodically.</li>
                 <li><strong>Breach handling:</strong> We will assess suspected eligible data breaches and, where required, notify affected users and the OAIC as soon as practicable, consistent with the Notifiable Data Breaches scheme.</li>
-                <li><strong>Subprocessors:</strong> We use vetted subprocessors (e.g., Supabase, Twilio, Resend, Vercel, OpenAI) bound by written terms that limit use to providing the Service.</li>
+                <li><strong>Subprocessors:</strong> We use vetted subprocessors (e.g., Supabase, Resend, Stripe, Vercel) bound by written terms that limit use to providing the Service.</li>
                 <li><strong>Data subject/consumer requests:</strong> We will reasonably assist you in responding to privacy rights requests where the data relates to your end users.</li>
               </ul>
             </div>
@@ -380,7 +381,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">11. Third-Party Services and Integrations</h2>
               <p className="text-[#2b362f] mb-3">
-                The Service may integrate with or rely on third-party services including Twilio (SMS), Resend (email), Supabase (database), and Vercel (hosting). Your use of these third-party services may be subject to their respective terms of service.
+                The Service relies on third-party services including Resend (email), Supabase (database), Stripe (payments), and Vercel (hosting). We also link to the providers we compare; following an affiliate link takes you to their site, where their own terms apply.
               </p>
               <p className="text-[#2b362f]">
                 Pepform is not responsible for the availability, performance, or actions of third-party services. Any disputes with third-party providers are solely between you and that provider. Pepform disclaims all liability for third-party service failures or interruptions.

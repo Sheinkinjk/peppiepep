@@ -176,20 +176,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog/consulting-firms-track-partner-referrals`,   lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
     { url: `${BASE}/blog/cpa-cross-referral-revenue-guide`,           lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
     { url: `${BASE}/blog/law-firm-generates-2m-referrals`,            lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
-    { url: `${BASE}/blog/best-affiliate-programs-australia-2026`,     lastModified: RECENT, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/become-an-affiliate`,                              lastModified: RECENT, changeFrequency: 'monthly', priority: 0.85 },
+    // /blog/best-affiliate-programs-australia-2026 removed: it 301s to
+    // /affiliate-programs-australia (next.config.ts), which is already listed above.
+    // Advertising both the redirect source and its target wastes crawl budget.
 
-    // ── Integration pages ──────────────────────────────────────────────
-    { url: `${BASE}/integrations`, lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/shopify`,      lastModified: STABLE, changeFrequency: 'monthly', priority: 0.62 },
-    { url: `${BASE}/webflow`,      lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/hubspot`,      lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
+    // Integration pages (/integrations, /shopify, /webflow, /hubspot) removed: all
+    // noIndex. Listing a noIndex URL tells Google to crawl a page we also tell it to
+    // drop, which is self-contradictory and burns crawl budget on a young domain.
 
     // ── Legal ──────────────────────────────────────────────────────────
     { url: `${BASE}/privacy`, lastModified: LEGAL, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/terms`,   lastModified: LEGAL, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/security`,lastModified: LEGAL, changeFrequency: 'yearly', priority: 0.3 },
+    // /security removed: noIndex (retired SaaS trust page).
 
-    // /blueprint-access, /referral-blueprint/success, /dashboard, /login, /auth/* excluded (noIndex)
+    // Excluded as noIndex: /blueprint-access, /referral-blueprint/success, /dashboard,
+    // /login, /auth/*, /security, /integrations + children.
   ];
 }

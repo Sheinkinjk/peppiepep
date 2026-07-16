@@ -1,32 +1,33 @@
 # Refer Labs Robots.txt
 
 # ── All crawlers ──
+#
+# Note on Disallow vs noindex: a page must be CRAWLABLE for Google to read its
+# noindex tag. Disallowing a page that also carries noindex means Google can never
+# see the directive, so an already-indexed URL can never be dropped. Pages below
+# that carry noindex in their metadata are therefore deliberately NOT disallowed
+# here: /login, /blueprint-access, /referral-blueprint/success, /referred,
+# /roi-calculator (301), /security, /integrations + children.
+#
 User-agent: *
 Allow: /
-# Private / authenticated
+# Private / authenticated (no content to index; auth-redirects before render)
 Disallow: /dashboard/
 Disallow: /dashboard-test/
 Disallow: /api/
 Disallow: /auth/
-Disallow: /login
-# Internal / utility pages (dev checklists, tools, redirects - no public SEO value)
+# Internal / utility pages (dev checklists, tools - no public SEO value)
 Disallow: /go-live
 Disallow: /status
 Disallow: /analytics
 Disallow: /application
 Disallow: /calendly
 Disallow: /leave-a-review
-Disallow: /roi-calculator
-# Customer portal — token-gated, no public SEO value
-Disallow: /blueprint-access
-# Post-purchase success page
-Disallow: /referral-blueprint/success
-# Personalised referral links
+# Personalised referral links (redirect out to affiliate destinations)
 Disallow: /r/
 Disallow: /me/
 # Payment flows
 Disallow: /payment/
-Disallow: /referred/
 
 # ── AI / generative answer engines (GEO) ──
 # Explicitly allowed to crawl and cite Refer Labs content. See /llms.txt for a curated index.

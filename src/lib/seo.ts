@@ -563,6 +563,11 @@ export const seoConfig = {
   },
 
   security: {
+    // Trust page for the retired SaaS platform (enterprise dashboards, Twilio SMS,
+    // "Roadmap 2025" ISO/SOC badges). Kept reachable for anyone holding the link,
+    // but excluded: it is off-identity for a consumer comparison site and its
+    // compliance roadmap dates are stale.
+    noIndex: true,
     title: "Security - Enterprise-grade data protection",
     description:
       "Learn about our security practices, data protection, and how we keep your business data safe and private.",
@@ -2181,7 +2186,10 @@ export const seoConfig = {
     noIndex: true,
     title: "Partner Program - Become a Refer Labs partner",
     description: "Join the Refer Labs partner program and earn recurring revenue.",
-    url: `${SITE_URL}/our-affiliate-program`,
+    // Self-canonical. This previously pointed at /our-affiliate-program, which does
+    // not exist and never did: the page was declaring a 404 as its canonical. Masked
+    // only because the config is noIndex.
+    url: `${SITE_URL}/our-referral-program`,
   },
 
   linkedinInfluencer: {

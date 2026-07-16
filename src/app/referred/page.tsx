@@ -9,7 +9,11 @@ import { ReferredFeatures } from "@/components/referred/ReferredFeatures";
 import { ReferredCTA } from "@/components/referred/ReferredCTA";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
+// Handoff page for the retired referral platform: reached by following someone's
+// referral link, never from search. It was indexable because robots.txt only
+// disallowed "/referred/" (trailing slash), which does not match "/referred".
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Join the Referral Program Revolution | Refer Labs",
   description:
     "Unlock additional revenue by integrating directly with your sales and marketing strategy. Referred by a trusted partner.",
