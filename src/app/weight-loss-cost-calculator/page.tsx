@@ -117,7 +117,7 @@ export default function WeightLossCostCalculatorPage() {
                 individual assessment, so two people rarely pay the same amount.
               </p>
               <p>
-                The honest version is the one this tool gives you: the cost structure of each pathway, the
+                What this tool gives you instead is the cost structure of each pathway, the
                 factors that move your price, and the fact that reputable providers show the exact figure inside
                 their own flow before you commit. The free eligibility check is how you turn &ldquo;roughly
                 what&rdquo; into &ldquo;exactly this, for me&rdquo; without spending anything. For the wider

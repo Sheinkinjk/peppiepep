@@ -71,6 +71,15 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // "Partner Brief · Confidential": an internal pitch deck for the retired
+        // Blueprint, quoting "$799 AUD per sale" and "~80% margin per sale". It was
+        // noIndex but served 200 to anyone with the URL, so the margin data was not
+        // actually confidential. Obsolete now the product is gone.
+        source: '/partners',
+        destination: '/for-business',
+        permanent: true,
+      },
+      {
         source: '/referral-business-program',
         destination: '/affiliate-programs-australia',
         permanent: true,

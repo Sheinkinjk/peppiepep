@@ -261,7 +261,7 @@ export default function CheapestWeightLossTelehealthPage() {
                 $120 off their first treatment. Check the current pricing directly on Moshy before you commit.
               </p>
               <p>
-                To be clear about what that does and does not mean: an introductory offer is a factual note on cost, not a
+                An introductory offer is a factual note on cost, not a
                 claim that Moshy is cheaper overall, medically better, or that it will produce any particular result.
                 Whether any program suits you, and whether medication is appropriate, is decided by a registered
                 Australian practitioner after an individual assessment. Price is one input into that decision, not the

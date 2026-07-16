@@ -1595,7 +1595,7 @@ export const seoConfig = {
   affiliateEarningsCalculator: {
     title: "Affiliate Marketing Earnings Calculator: What Could You Make?",
     description:
-      "Estimate what your audience could earn from affiliate marketing. Set audience size, channel and niche, see an honest range with every assumption shown, then find programs that fit.",
+      "Estimate what your audience could earn from affiliate marketing. Set audience size, channel and niche, see a realistic range with every assumption shown, then find programs that fit.",
     url: `${SITE_URL}/affiliate-earnings-calculator`,
     keywords: [
       "affiliate marketing earnings calculator",

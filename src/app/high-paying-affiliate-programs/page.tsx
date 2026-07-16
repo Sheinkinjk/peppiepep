@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
@@ -59,7 +58,7 @@ const faqs = [
   },
   {
     q: "How do I find high-paying programs that fit my niche?",
-    a: "You can research program by program, or start from a shortlist. The Referral Growth Blueprint is a curated database of more than 250 vetted affiliate and referral programs plus a personalised brief that maps the high-payout options to your specific niche and audience, so you are not guessing which of the big programs are actually a fit for you.",
+    a: "Work backwards from your audience rather than from the payout. Start with the products they already use or are actively shopping for, then check which of those run a program and what it pays. The table above covers the best-known high-payout options; the recurring-commission guide is worth reading alongside it, because a smaller monthly payment that repeats often beats a large one-off.",
   },
 ];
 
@@ -173,7 +172,7 @@ export default function HighPayingAffiliateProgramsPage() {
           </h2>
           <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
             <p>
-              High commissions are a function of two things: how expensive the product is, and how long the customer
+              High commissions come down to how expensive the product is, and how long the customer
               stays. Web hosting nails both. A managed host like Kinsta or WP Engine charges a serious monthly fee and
               keeps customers for years because moving a website is painful, so it can pay a large one-off bounty and
               still profit. That is why hosting has been an affiliate favourite for over a decade.

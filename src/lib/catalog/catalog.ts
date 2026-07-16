@@ -195,7 +195,7 @@ export const CATALOG: Vertical[] = [
       "Where you start an email list shapes how much you keep and how fast you grow. This hub compares the platforms on free plans, monetisation and growth tools.",
     metaTitle: "Best Newsletter Platform 2026: beehiiv vs Substack vs ConvertKit | Refer Labs",
     metaDescription:
-      "Compare newsletter platforms for 2026 — beehiiv for growth and monetisation, Substack for discovery, ConvertKit for automation. Free plans and revenue share compared.",
+      "Compare newsletter platforms for 2026: beehiiv for growth and monetisation, Substack for discovery, ConvertKit for automation. Free plans and revenue share compared.",
     keywords: [
       "best newsletter platform 2026",
       "beehiiv vs substack",
@@ -248,10 +248,10 @@ export const CATALOG: Vertical[] = [
     faqs: [
       {
         q: "What is the best newsletter platform in 2026?",
-        a: "For creators focused on growth and monetisation, beehiiv is the strongest option — a generous free plan, built-in growth tools, and no cut on paid subscriptions. Substack is a simpler starting point with better discovery.",
+        a: "For creators focused on growth and monetisation, beehiiv is the strongest option, with a generous free plan, built-in growth tools, and no cut on paid subscriptions. Substack is a simpler starting point with better discovery.",
       },
       {
-        q: "beehiiv vs Substack — which should I choose?",
+        q: "beehiiv vs Substack: which should I choose?",
         a: "beehiiv if you are serious about growing and keeping all your revenue. Substack if you want the simplest possible start and value its discovery network, accepting the 10% cut on paid subscriptions.",
       },
     ],
@@ -441,7 +441,7 @@ export const CATALOG: Vertical[] = [
     note: "All compounds referenced are for laboratory research purposes only and are not for human or veterinary use. Nothing here is medical advice.",
     metaTitle: "Research Peptide Suppliers Compared 2026: Purity & Catalogue | Refer Labs",
     metaDescription:
-      "Compare research peptide suppliers for 2026 — Apollo Peptide Sciences, Ascension Peptides and BioPeptiTech, on third-party testing, catalogue depth and current offers. Research use only.",
+      "Compare research peptide suppliers for 2026: Apollo Peptide Sciences, Ascension Peptides and BioPeptiTech, on third-party testing, catalogue depth and current offers. Research use only.",
     keywords: [
       "research peptide suppliers comparison",
       "best peptide supplier 2026",
@@ -556,7 +556,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "Training + SOPs" },
           { label: "Best for", value: "Growing & multi-site teams" },
-          { label: "Pricing", value: "Custom pricing — book a demo" },
+          { label: "Pricing", value: "Custom pricing, book a demo" },
         ],
         affiliateUrl: TRAINUAL_URL,
         reviewHref: "/trainual",

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
@@ -59,7 +58,7 @@ const faqs = [
   },
   {
     q: "How do I build a portfolio of recurring programs?",
-    a: "Pick a handful of sticky subscription products your audience genuinely relies on, and promote them honestly within useful content. The Referral Growth Blueprint is a curated database of more than 250 vetted affiliate and referral programs, with a personalised brief that highlights the recurring options that fit your niche, so you can build a compounding income base rather than assembling it program by program.",
+    a: "Pick a handful of sticky subscription products your audience genuinely relies on, and promote them within content that would be useful even without the link. Depth beats breadth: three programs you know well and can write about credibly will out-earn twenty you have barely used. Check the commission duration before you commit, since some programs stop paying after 12 months.",
   },
 ];
 
@@ -190,7 +189,7 @@ export default function RecurringAffiliateProgramsPage() {
               Check the recurring period, not just the rate
             </h3>
             <p>
-              The one detail people miss is how long the recurring commission actually lasts. Some programs pay for the
+              What matters most here is how long the recurring commission actually lasts. Some programs pay for the
               full lifetime of the customer, which is the gold standard. Others cap it at the first twelve months, after
               which payments stop even if the customer stays. A lifetime 25% can easily out-earn a capped 50%, so always
               read the recurring period in the terms before you judge a program by its headline percentage.

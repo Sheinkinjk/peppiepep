@@ -157,7 +157,7 @@ const faqs = [
   },
   {
     q: "How does Refer Labs fit in?",
-    a: "Refer Labs is an independent Australian comparison publisher. We run affiliate links ourselves, disclosed on every page, and we never sell rankings. We also built the Referral Growth Blueprint, a curated database of 250-plus vetted affiliate and referral programs plus a personalised strategy brief, for people who would rather start from a shortlist than research from scratch.",
+    a: "Refer Labs is an independent Australian comparison publisher. We run affiliate links ourselves, disclosed on every page, and we never sell rankings. Some of the programs on this page are ones we use, and where we earn a commission we say so on the page carrying the link.",
   },
 ];
 
@@ -393,7 +393,7 @@ export default function AffiliateProgramsAustraliaPage() {
               commission on something they do not. Start there.
             </p>
             <p>
-              After fit, weigh four things. <span className="font-semibold text-[#2b362f]">Commission model:</span> a{" "}
+              After fit, the things worth weighing are these. <span className="font-semibold text-[#2b362f]">Commission model:</span> a{" "}
               <Link href="/recurring-affiliate-programs" className="nw-link">recurring commission</Link> on software
               people keep for years usually beats a slightly larger one-off payment. <span className="font-semibold text-[#2b362f]">Cookie window:</span>{" "}
               longer is better, since most people do not buy on the first click. <span className="font-semibold text-[#2b362f]">Payout reliability:</span>{" "}
@@ -405,7 +405,7 @@ export default function AffiliateProgramsAustraliaPage() {
             <p>
               Want a feel for the numbers first? Our{" "}
               <Link href="/affiliate-earnings-calculator" className="nw-link">affiliate earnings calculator</Link>{" "}
-              turns audience size, channel and niche into an honest range, with every assumption on show.
+              turns audience size, channel and niche into a range, with every assumption on show.
             </p>
           </div>
         </section>

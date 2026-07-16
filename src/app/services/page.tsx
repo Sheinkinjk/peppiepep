@@ -147,7 +147,7 @@ export default function ServicesPage() {
         <div className="border-t border-[#0AA7B5]/10 pt-16 sm:pt-20 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
             Distribution Is{" "}
-            <span className="text-[#22C0CD]">Leverage.</span>
+            <span className="text-[#22C0CD]">the Hard Part.</span>
           </h2>
           <p className="text-white/50 text-base max-w-lg mx-auto mb-8 leading-relaxed mt-4">
             If you control distribution, you control growth. Let us build the engine.

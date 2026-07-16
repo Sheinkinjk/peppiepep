@@ -36,7 +36,7 @@ export const lindyConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Who it suits, and the honest catch",
+      heading: "Who it suits, and the catch",
       paragraphs: [
         "It fits founders, sales and operations people, and anyone drowning in inbox and coordination work. The value depends on how much repetitive, rules-based admin you actually have, if your work is mostly ad-hoc and creative, an AI assistant helps less.",
         "Plans are tiered by usage and connected inboxes, starting US$49.99/month, with higher tiers for more volume. Start on the free trial and confirm current pricing before you subscribe.",

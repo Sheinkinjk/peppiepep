@@ -259,7 +259,7 @@ export default function MoshVsDensePage() {
                 in-person visit, but only when the practitioner judges it appropriate.
               </p>
               <p>
-                That last point is the compliance line and the honest one. Nothing is dispensed automatically. Suitability
+                That last point is the compliance line. Nothing is dispensed automatically. Suitability
                 is assessed individually, decided by a registered practitioner, and never guaranteed before that
                 assessment. The consultation itself takes a few minutes and commits you to nothing, which is the real
                 argument for it: hair-loss treatment tends to reward starting early, and the online route removes the

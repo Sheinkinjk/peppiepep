@@ -176,7 +176,7 @@ export default function DurableVsButternutPage() {
                 Pick Durable AI if you run a service business and want a working site plus a CRM and invoicing in one
                 subscription. Pick Butternut AI if you want the richest multi-page site generated from a single prompt
                 and you are happy to edit and grow it yourself. Both are free to generate and preview with no account, so
-                the honest shortcut is to try each on the same business and compare the first drafts.
+                the shortcut is to try each on the same business and compare the first drafts.
               </p>
             </div>
           </section>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
@@ -26,7 +25,7 @@ const steps: Step[] = [
           and it attracts readers with clear buying intent.
         </p>
         <p>
-          Balance three things when you choose. First, genuine interest, because you will be writing about this for
+          The balance to strike is between genuine interest, because you will be writing about this for
           months before it pays. Second, whether the audience buys things, since some topics have huge traffic but no
           products worth promoting. Third, whether good programs exist, which you can check against our{" "}
           <Link href="/affiliate-programs-australia" className="nw-link">roundup of affiliate programs in Australia</Link>.
@@ -115,7 +114,7 @@ const steps: Step[] = [
         </p>
         <p>
           Write for the reader first and the commission second. Be genuinely useful, be honest about downsides, and only
-          recommend things you would stand behind. That is not just ethics, it is what makes the recommendation
+          recommend things you would stand behind. That is what makes the recommendation
           credible enough to act on. The moment content reads like it exists only to place links, it stops converting.
         </p>
       </>
@@ -172,7 +171,7 @@ const faqs = [
   },
   {
     q: "What is the fastest way to start without researching every program?",
-    a: "Start from a shortlist instead of the whole market. The Referral Growth Blueprint is a curated database of more than 250 vetted affiliate and referral programs, plus a personalised strategy brief that maps the right programs and approach to your niche. It is the shortcut past the weeks of research most beginners spend before they publish anything.",
+    a: "Start from a shortlist instead of the whole market. Pick one niche you already know, then check our guide to the best affiliate programs in Australia for the programs serving it. Two or three you understand well are enough to start; you can widen later once you know what your audience actually responds to.",
   },
 ];
 

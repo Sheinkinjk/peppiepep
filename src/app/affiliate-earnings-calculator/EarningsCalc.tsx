@@ -13,7 +13,7 @@ import { ArrowRight } from "lucide-react";
  *   be zero; the page says so plainly.
  * - No partner-specific payout claims: commission bands are our own modelling
  *   ranges for a CATEGORY, clearly labelled as assumptions.
- * - The conversion goal is the $799 Blueprint (a real, in-house price).
+ * - The conversion goal is the affiliate-programs cluster; the calculator is the top of that funnel.
  */
 
 const GREEN = "#0a7c42";
@@ -152,11 +152,11 @@ export default function EarningsCalc() {
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
-                href="/affiliate-programs-australia"
+                href="/recurring-affiliate-programs"
                 className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold transition-all hover:-translate-y-0.5"
                 style={{ color: GREEN, border: `1px solid ${GREEN}40`, background: "#ffffff" }}
               >
-                Browse programs free
+                See recurring programs
               </Link>
             </div>
           </div>

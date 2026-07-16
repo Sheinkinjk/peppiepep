@@ -503,6 +503,18 @@ export default function BestAiSalesToolsPage() {
           </div>
         </section>
 
+        {/* Affiliate disclosure. Legally required on any page carrying affiliate
+            links (ACL), and the trust layer this whole site trades on. */}
+        <section className="mx-auto max-w-5xl border-t border-[#e5e9e7] px-5 py-8 pb-16 sm:px-8">
+          <p className="max-w-2xl text-xs leading-relaxed text-[#9aa39c]">
+            This page is operated by Refer Labs and contains affiliate referral links to GoHighLevel, AiSDR, Reply.io
+            and FullEnrich. If you sign up through one of them we may earn a commission, at no extra cost to you. It
+            does not change what we say about them, and rankings are never sold. Comparisons are based on publicly
+            available information at time of publication and may change. Our standards are at{" "}
+            <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+          </p>
+        </section>
+
       </main>
       <StickyCta href={GOHIGHLEVEL_URL} product="GoHighLevel · all-in-one platform" label="Try free" />
     </ConsumerShell>

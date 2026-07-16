@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "How do I find programs that fit my audience?",
-    a: "Start with our free guide to the best affiliate programs in Australia, which sorts programs by category. If you want it done for you, the Referral Growth Blueprint ($799 AUD) matches your audience to 250+ vetted programs with a personalised strategy brief and distribution playbooks.",
+    a: "Start with our guide to the best affiliate programs in Australia, which sorts programs by category and payout. From there, the highest-paying and recurring-commission guides narrow it further. The filter that matters is whether your audience already wants the product: a lower rate on something they were going to buy anyway beats a high rate on something they do not need.",
   },
   {
     q: "Do I need a big audience to start?",
@@ -81,7 +81,7 @@ export default function AffiliateEarningsCalculatorPage() {
             <div className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-6 space-y-3">
               <p>
                 Three inputs decide most affiliate income: how many people you reach, how many of them click,
-                and what a sale pays in your niche. Set the three below and see an honest range, with every
+                and what a sale pays in your niche. Set the three below and see a range, with every
                 assumption on show.
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function AffiliateEarningsCalculatorPage() {
 
           <section className="border-t border-[#e5e9e7] mt-8 py-9">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              How to read the range honestly
+              How to read the range
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
@@ -105,7 +105,7 @@ export default function AffiliateEarningsCalculatorPage() {
               <p>
                 Matching is the lever you control. Our free{" "}
                 <Link href="/affiliate-programs-australia" className="text-[#0a7c42] underline underline-offset-2">guide to the best affiliate programs in Australia</Link>{" "}
-                sorts the options by category, the{" "}
+                sorts the options by category, and the{" "}
                 <Link href="/recurring-affiliate-programs" className="text-[#0a7c42] underline underline-offset-2">recurring-commission programs</Link>{" "}
                 are how small audiences compound.
               </p>
@@ -145,7 +145,7 @@ export default function AffiliateEarningsCalculatorPage() {
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
               This calculator produces illustrative estimates from stated assumptions. It is not a prediction
               or promise of income, results vary widely and can be zero, and nothing on this page is financial
-              advice. The Referral Growth Blueprint is Refer Labs&apos; own product. Our standards are at{" "}
+              advice. Our standards are at{" "}
               <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
             </p>
           </section>
