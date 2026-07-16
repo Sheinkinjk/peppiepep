@@ -103,6 +103,13 @@ const STANDALONE_ROUTES = [
   "/apollo-energy",
   "/apollo-energy-review",
   "/home-battery-rebate-australia",
+  "/home-battery-cost-australia",
+  // Hair-loss cluster info pages (own light ConsumerShell)
+  "/finasteride-australia",
+  "/minoxidil-australia",
+  "/hair-loss-treatment-cost-australia",
+  // Business software hub (own light ConsumerShell; was double-headering)
+  "/business-software",
   // $799 Blueprint (migrated to the light ConsumerShell theme)
   "/referral-blueprint",
   // Legal + contact (migrated to the consumer shell so the footer doesn't jump themes)
