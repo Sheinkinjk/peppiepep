@@ -19,28 +19,27 @@ export default function Footer() {
               <ReferLabsLogo className="h-8 w-auto text-white/90" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              250+ affiliate and referral programs researched and verified. Personalised strategy brief. SEO page concepts, distribution playbooks, and niche selection. One-time $799 AUD, delivered within 48 hours.
+              Independent comparisons for Australians. Health services, software and tools, researched properly so you
+              can choose with confidence.
             </p>
             <Link
-              href="/referral-blueprint"
+              href="/affiliate-programs-australia"
               className="inline-flex items-center justify-center rounded-xl border border-amber-400/30 bg-amber-400/8 px-4 py-2 text-xs font-semibold text-amber-300 hover:border-amber-300/50 hover:bg-amber-400/12 transition-colors"
             >
-              Get the Blueprint, $799
+              Browse affiliate programs
             </Link>
           </div>
 
-          {/* Blueprint */}
+          {/* Affiliate programs (replaces the retired Blueprint column) */}
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-5">Blueprint</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-5">Affiliate Programs</p>
             <ul className="space-y-3">
               {[
-                { href: "/referral-blueprint",                 label: "Get the Blueprint" },
-                { href: "/referral-blueprint-for-agencies",    label: "For Agencies" },
-                { href: "/referral-blueprint-for-saas",        label: "For SaaS" },
-                { href: "/referral-blueprint-for-ecommerce",   label: "For E-commerce" },
-                { href: "/referral-blueprint-for-coaches",     label: "For Coaches" },
-                { href: "/referral-blueprint-for-creators",    label: "For Creators" },
-                { href: "/become-an-affiliate",                label: "★ Affiliate Program (30%)" },
+                { href: "/affiliate-programs-australia",        label: "Best Programs in Australia" },
+                { href: "/high-paying-affiliate-programs",      label: "Highest Paying" },
+                { href: "/recurring-affiliate-programs",        label: "Recurring Commission" },
+                { href: "/affiliate-earnings-calculator",       label: "Earnings Calculator" },
+                { href: "/how-to-start-affiliate-marketing-australia", label: "How to Start" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-slate-400 transition-all hover:translate-x-0.5 hover:text-white">

@@ -44,7 +44,7 @@ export default function Terms() {
                 Refer Labs publishes independent comparisons, reviews and guides for Australian consumers and businesses, covering health services, software and other products. Access to the published content is free. We earn revenue through affiliate commissions when you follow a link to a provider and take up their service, and these links are disclosed on the pages that carry them. Rankings and recommendations are editorial and are not sold.
               </p>
               <p className="text-[#2b362f] mb-3">
-                The Service also includes paid products and services we sell directly, such as the Referral Blueprint (a one-off digital purchase) and business services described on our /for-business pages, together with an optional email newsletter.
+                The Service also includes business services we sell directly, described on our /for-business pages, together with an optional email newsletter.
               </p>
               <p className="text-[#2b362f]">
                 Refer Labs reserves the right to modify, suspend, or discontinue any aspect of the Service at any time without prior notice.
@@ -165,7 +165,7 @@ export default function Terms() {
                 We send two kinds of email:
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-3">
-                <li><strong>Transactional email</strong> relating to something you bought or requested, such as a receipt or access details for the Referral Blueprint, or a reply to an enquiry you sent us. These are necessary to provide what you asked for.</li>
+                <li><strong>Transactional email</strong> relating to something you bought or requested, such as a receipt, or a reply to an enquiry you sent us. These are necessary to provide what you asked for.</li>
                 <li><strong>Newsletter and marketing email</strong>, which we send only if you subscribe. Every one of these includes a working unsubscribe link, and we action unsubscribes promptly.</li>
               </ul>
               <p className="text-[#2b362f] mb-3">

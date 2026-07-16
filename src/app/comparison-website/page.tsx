@@ -232,10 +232,10 @@ export default function ComparisonWebsitePage() {
             <div className="max-w-2xl">
               <div className="space-y-4 text-white/55 text-sm sm:text-base leading-relaxed mb-10">
                 <p>
-                  If you run a business in one of the five categories and want to be considered for the platform, apply below. We are building the shortlist ahead of launch and assess every enquiry against our criteria.
+                  If you run a business in one of the five categories and want to be considered for the platform, apply below. We assess every enquiry against our criteria.
                 </p>
                 <p>
-                  Being featured on a genuinely independent, curated platform is different to appearing in a generic directory. It signals your business stands up to scrutiny. We are building this to be the first stop for Australians making decisions in this space - businesses on it will benefit from that positioning.
+                  Being featured on a genuinely independent, curated platform is different to appearing in a generic directory. It signals your business stands up to scrutiny, because placement is earned against published criteria rather than bought.
                 </p>
               </div>
               <ListingForm />

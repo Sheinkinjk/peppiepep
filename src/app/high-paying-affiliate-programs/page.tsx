@@ -132,12 +132,6 @@ export default function HighPayingAffiliateProgramsPage() {
             expensive, or because a customer stays for years. Here are twelve of the best known high-payout programs,
             what they typically pay, and the networks that run them.
           </p>
-          <div className="mt-8">
-            <Link href="/referral-blueprint" className="nw-btn" data-cta="highpay-hero">
-              Get the high-payout programs matched to your niche
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
           <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
             <span className="font-semibold text-[#2b362f]">A note on the numbers.</span> Commission rates and terms
             change often and vary by region and promotion. Figures below are widely published, general structures to
@@ -207,29 +201,6 @@ export default function HighPayingAffiliateProgramsPage() {
               <Link href="/how-to-start-affiliate-marketing-australia" className="nw-link">step-by-step starter guide</Link>{" "}
               covers how to pick a niche where the payouts are high and the competition is beatable.
             </p>
-          </div>
-        </section>
-
-        {/* Blueprint CTA */}
-        <section className="mx-auto max-w-4xl px-5 pt-14 sm:px-8">
-          <div className="rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.05] px-7 py-8">
-            <p className="nw-kicker">The shortcut</p>
-            <h2 className="mt-3 text-2xl font-bold text-[#10251b] sm:text-[1.75rem]">
-              Which high-payout programs actually fit your audience?
-            </h2>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#3d4b44]">
-              The programs above only earn if they match what your readers want. The{" "}
-              <Link href="/referral-blueprint" className="nw-link">Referral Growth Blueprint</Link> is a curated
-              database of more than 250 vetted affiliate and referral programs, paired with a personalised strategy
-              brief that shortlists the high-payout options for your specific niche. One flat fee, delivered in 48
-              hours.
-            </p>
-            <div className="mt-6">
-              <Link href="/referral-blueprint" className="nw-btn" data-cta="highpay-band">
-                See what is inside the Blueprint
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
           </div>
         </section>
 

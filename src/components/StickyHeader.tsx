@@ -9,21 +9,15 @@ import { createBrowserSupabaseClient } from "@/lib/supabase-browser";
 
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
+// The $799 Blueprint was retired in July 2026, so its nav link, its per-industry
+// dropdown and its CTAs are gone: every one of those routes now 301s. Affiliate
+// programs are the push now.
 const navLinks = [
   { href: "/",                   label: "Compare" },
   { href: "/for-business",       label: "For Business" },
-  { href: "/referral-blueprint", label: "Blueprint" },
+  { href: "/affiliate-programs-australia", label: "Affiliate Programs" },
   { href: "/guides",             label: "Guides" },
-  { href: "/become-an-affiliate", label: "Affiliates" },
   { href: "/faq",                label: "FAQ" },
-];
-
-const industryLinks = [
-  { href: "/referral-blueprint-for-agencies",   label: "For Agencies",  emoji: "🏢" },
-  { href: "/referral-blueprint-for-saas",       label: "For SaaS",      emoji: "💻" },
-  { href: "/referral-blueprint-for-ecommerce",  label: "For E-commerce", emoji: "🛍️" },
-  { href: "/referral-blueprint-for-coaches",    label: "For Coaches",   emoji: "🎯" },
-  { href: "/referral-blueprint-for-creators",   label: "For Creators",  emoji: "✨" },
 ];
 
 export function StickyHeader() {
@@ -113,27 +107,12 @@ export function StickyHeader() {
                   </Link>
                 );
               })}
-              {/* Industries dropdown */}
-              <div className="relative group">
-                <button className="rounded-2xl px-3.5 py-2 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50/80 hover:text-[#044a57] transition-all flex items-center gap-1">
-                  Industries
-                  <svg className="h-3 w-3 mt-0.5" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </button>
-                <div className="absolute top-full left-0 mt-1 w-52 rounded-2xl bg-white shadow-xl border border-[#B4EEF7]/40 p-1.5 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all z-50">
-                  {industryLinks.map((l) => (
-                    <Link key={l.href} href={l.href}
-                      className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50/80 transition-colors">
-                      <span>{l.emoji}</span>{l.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
               <Link
-                href="/referral-blueprint"
+                href="/for-business"
                 className="inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-bold shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl cursor-pointer"
                 style={{ background: "#F59E0B", color: "#060f15", boxShadow: "0 4px 16px rgba(245,158,11,0.35)" }}
               >
-                Get Blueprint, $799
+                Work with us
                 <ArrowRight className="h-4 w-4" />
               </Link>
               {isAuthenticated && (
@@ -200,23 +179,13 @@ export function StickyHeader() {
                   </Link>
                 );
               })}
-              <div className="border-t border-cyan-100 my-1 pt-2 mt-1">
-                <p className="px-4 text-[10px] font-bold uppercase tracking-widest text-[#0b2a34]/40 mb-1">Industries</p>
-                {industryLinks.map((l) => (
-                  <Link key={l.href} href={l.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-[#0b2a34] hover:bg-cyan-50 transition-colors">
-                    <span>{l.emoji}</span>{l.label}
-                  </Link>
-                ))}
-              </div>
               <Link
-                href="/referral-blueprint"
+                href="/for-business"
                 className="inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-bold transition-all duration-200"
                 style={{ background: "#F59E0B", color: "#060f15" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get Blueprint, $799
+                Work with us
                 <ArrowRight className="h-4 w-4" />
               </Link>
               {isAuthenticated && (

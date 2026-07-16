@@ -123,7 +123,6 @@ export const superfiliateConfig: AffiliatePageConfig = {
 
   relatedLinks: [
     { href: "/affiliate-programs-australia", label: "Best affiliate programs Australia", desc: "For affiliates: the programs worth promoting, by category." },
-    { href: "/referral-blueprint", label: "Referral Growth Blueprint", desc: "Our in-house product for building a referral and affiliate strategy." },
     { href: "/for-business", label: "For Business", desc: "How brands grow with Refer Labs: partnerships and growth services." },
     { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health and business." },
   ],

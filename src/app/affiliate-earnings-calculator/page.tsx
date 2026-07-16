@@ -107,9 +107,7 @@ export default function AffiliateEarningsCalculatorPage() {
                 <Link href="/affiliate-programs-australia" className="text-[#0a7c42] underline underline-offset-2">guide to the best affiliate programs in Australia</Link>{" "}
                 sorts the options by category, the{" "}
                 <Link href="/recurring-affiliate-programs" className="text-[#0a7c42] underline underline-offset-2">recurring-commission programs</Link>{" "}
-                are how small audiences compound, and if you want the matching done for you, the{" "}
-                <Link href="/referral-blueprint" className="text-[#0a7c42] underline underline-offset-2">Referral Growth Blueprint</Link>{" "}
-                pairs your audience with 250+ vetted programs and a personalised strategy brief.
+                are how small audiences compound.
               </p>
             </div>
           </section>
@@ -143,8 +141,6 @@ export default function AffiliateEarningsCalculatorPage() {
               <Link href="/high-paying-affiliate-programs" className="nw-link text-sm">Highest-paying programs</Link>
               <span className="text-[#9aa39c]">·</span>
               <Link href="/how-to-start-affiliate-marketing-australia" className="nw-link text-sm">How to start from zero</Link>
-              <span className="text-[#9aa39c]">·</span>
-              <Link href="/referral-blueprint" className="nw-link text-sm">The $799 Blueprint</Link>
             </div>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
               This calculator produces illustrative estimates from stated assumptions. It is not a prediction

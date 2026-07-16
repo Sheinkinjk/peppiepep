@@ -46,10 +46,33 @@ const nextConfig: NextConfig = {
         destination: '/affiliate-programs-australia',
         permanent: true,
       },
+      // ── Referral Blueprint retired (July 2026) ──────────────────────────────
+      // The $799 Blueprint is no longer offered; the business is now pushing the
+      // affiliate-programs content. Retiring the 6 marketing pages into the closest
+      // live page by intent so their ranking equity consolidates instead of 404ing.
+      // NOTE: exact sources only. /referral-blueprint/success and /blueprint-access
+      // are deliberately NOT redirected: people who already paid still need delivery.
       {
-        // Consolidate the duplicate $799 Blueprint funnel onto the canonical page.
+        source: '/referral-blueprint',
+        destination: '/affiliate-programs-australia',
+        permanent: true,
+      },
+      { source: '/referral-blueprint-for-agencies',  destination: '/affiliate-programs-australia', permanent: true },
+      { source: '/referral-blueprint-for-saas',      destination: '/affiliate-programs-australia', permanent: true },
+      { source: '/referral-blueprint-for-ecommerce', destination: '/affiliate-programs-australia', permanent: true },
+      { source: '/referral-blueprint-for-coaches',   destination: '/affiliate-programs-australia', permanent: true },
+      { source: '/referral-blueprint-for-creators',  destination: '/affiliate-programs-australia', permanent: true },
+      {
+        // Existed only to recruit affiliates for the Blueprint ("$239.70 per Refer Labs
+        // Blueprint sale" = 30% of $799). With the product retired it advertised
+        // commission on something we no longer sell.
+        source: '/become-an-affiliate',
+        destination: '/affiliate-programs-australia',
+        permanent: true,
+      },
+      {
         source: '/referral-business-program',
-        destination: '/referral-blueprint',
+        destination: '/affiliate-programs-australia',
         permanent: true,
       },
       {

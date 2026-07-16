@@ -240,10 +240,6 @@ export default function AffiliateProgramsAustraliaPage() {
             for.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link href="/referral-blueprint" className="nw-btn" data-cta="hub-affiliate-hero">
-              Get 250+ vetted programs, curated for you
-              <ArrowRight className="h-4 w-4" />
-            </Link>
             <Link href="/high-paying-affiliate-programs" className="nw-link text-sm">
               Jump to the highest paying programs →
             </Link>
@@ -340,27 +336,22 @@ export default function AffiliateProgramsAustraliaPage() {
           </section>
         ))}
 
-        {/* Blueprint CTA band */}
+        {/* For-business band */}
         <section className="mx-auto max-w-4xl px-5 pt-14 sm:px-8">
           <div className="rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.05] px-7 py-8">
-            <p className="nw-kicker">The shortcut</p>
+            <p className="nw-kicker">For businesses</p>
             <h2 className="mt-3 text-2xl font-bold text-[#10251b] sm:text-[1.75rem]">
-              Skip the research. Start from a vetted shortlist.
+              Run a program you want in front of the right audience?
             </h2>
             <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#3d4b44]">
-              The list above scratches the surface. We built the{" "}
-              <Link href="/referral-blueprint" className="nw-link">Referral Growth Blueprint</Link> because most people
-              waste weeks chasing programs that do not fit their audience. It is a curated database of more than 250
-              vetted affiliate and referral opportunities, plus a personalised strategy brief that maps the right
-              programs to your niche and how you plan to promote them. One flat fee, delivered in 48 hours.
+              We design, launch and distribute referral and affiliate programs for Australian and international
+              businesses, and we take on featured partnerships where the fit is genuine. Placement is earned against
+              published criteria, never sold.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <Link href="/referral-blueprint" className="nw-btn" data-cta="hub-affiliate-band">
-                See what is inside the Blueprint
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/for-business" className="nw-btn-ghost" data-cta="hub-affiliate-forbusiness">
+              <Link href="/for-business" className="nw-btn" data-cta="hub-affiliate-forbusiness">
                 Work with our team
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -414,10 +405,7 @@ export default function AffiliateProgramsAustraliaPage() {
             <p>
               Want a feel for the numbers first? Our{" "}
               <Link href="/affiliate-earnings-calculator" className="nw-link">affiliate earnings calculator</Link>{" "}
-              turns audience size, channel and niche into an honest range, with every assumption on show. And if
-              you are working out which programs match your niche before you commit time to any of them, that is
-              exactly the gap the{" "}
-              <Link href="/referral-blueprint" className="nw-link">Referral Growth Blueprint</Link> fills.
+              turns audience size, channel and niche into an honest range, with every assumption on show.
             </p>
           </div>
         </section>

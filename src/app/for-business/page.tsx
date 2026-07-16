@@ -27,18 +27,6 @@ const offers = [
       { href: "/services/product-distribution", label: "Product distribution" },
     ],
   },
-  {
-    tag: "Product · $799",
-    title: "The Referral Growth Blueprint",
-    body: "A researched database of 250+ affiliate and referral programs plus a strategy brief written for your specific niche, SEO page concepts, distribution playbooks and a tool stack. One payment, delivered within 48 hours.",
-    cta: { label: "See the Blueprint", href: "/referral-blueprint", external: false },
-  },
-  {
-    tag: "Affiliates",
-    title: "Earn 30% promoting the Blueprint",
-    body: "Creators and operators with an audience of founders or marketers can join our affiliate program and earn 30% on every sale they refer.",
-    cta: { label: "Join the affiliate program", href: "/become-an-affiliate", external: false },
-  },
 ];
 
 const breadcrumbSchema = {

@@ -245,12 +245,6 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
             buy through your link. It is not a get-rich-quick scheme, it is a real asset that takes months to build and
             then keeps working. This is the step-by-step path, start to first traffic.
           </p>
-          <div className="mt-8">
-            <Link href="/referral-blueprint" className="nw-btn" data-cta="howto-hero">
-              Skip the research with a done-for-you shortlist
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
           <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
             <span className="font-semibold text-[#2b362f]">General information only.</span> This guide is business and
             marketing education, not financial, legal or tax advice. Tax and consumer-law obligations depend on your
@@ -278,28 +272,6 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
           </div>
         </section>
 
-        {/* Blueprint CTA */}
-        <section className="mx-auto max-w-3xl px-5 pt-14 sm:px-8">
-          <div className="rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.05] px-7 py-8">
-            <p className="nw-kicker">The shortcut</p>
-            <h2 className="mt-3 text-2xl font-bold text-[#10251b] sm:text-[1.75rem]">
-              Steps two and five are where beginners stall
-            </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
-              Choosing the right programs and knowing what to promote is exactly where most people lose weeks. The{" "}
-              <Link href="/referral-blueprint" className="nw-link">Referral Growth Blueprint</Link> does that part for
-              you: a curated database of more than 250 vetted affiliate and referral programs, plus a personalised
-              strategy brief that maps the right programs and approach to your niche. One flat fee, delivered in 48
-              hours, so you can spend your time creating instead of researching.
-            </p>
-            <div className="mt-6">
-              <Link href="/referral-blueprint" className="nw-btn" data-cta="howto-band">
-                See what is inside the Blueprint
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
 
         {/* Spokes */}
         <section className="border-y border-[#e5e9e7] bg-[#f5f8f6] mt-16">

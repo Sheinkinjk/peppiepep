@@ -64,7 +64,7 @@ export default function Privacy() {
               <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">1.3 Legal Basis for Processing</h3>
               <p className="text-[#2b362f]">We process your data based on:</p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
-                <li><strong>Contract:</strong> To deliver anything you buy from us, such as the Referral Blueprint</li>
+                <li><strong>Contract:</strong> To deliver anything you buy from us</li>
                 <li><strong>Legitimate Interest:</strong> To improve our service, prevent fraud, and ensure security</li>
                 <li><strong>Consent:</strong> For marketing communications such as our newsletter (where required)</li>
                 <li><strong>Legal Obligation:</strong> To comply with tax, accounting, and legal requirements</li>

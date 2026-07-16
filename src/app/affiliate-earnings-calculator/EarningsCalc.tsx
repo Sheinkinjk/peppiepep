@@ -138,17 +138,17 @@ export default function EarningsCalc() {
 
           <div className="mt-4 rounded-2xl border px-5 py-5" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
             <p className="text-sm leading-relaxed text-[#10251b] mb-3">
-              The maths only works with programs that fit your audience. The Referral Growth Blueprint
-              matches you to them: 250+ vetted programs plus a personalised strategy brief, $799 AUD.
+              The maths only works with programs that fit your audience. Start from the ones worth
+              your time.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/referral-blueprint"
-                data-cta="earnings-calc-blueprint"
+                href="/affiliate-programs-australia"
+                data-cta="earnings-calc-programs"
                 className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
                 style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}
               >
-                Get the Blueprint
+                Browse affiliate programs
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link

@@ -155,9 +155,9 @@ export const incomeLabConfig: AffiliatePageConfig = {
 
   relatedLinks: [
     {
-      href: "/referral-blueprint",
-      label: "Referral Growth Blueprint, $799",
-      desc: "250+ researched affiliate programs, a personalised strategy brief, and distribution playbooks.",
+      href: "/affiliate-programs-australia",
+      label: "Best Affiliate Programs in Australia",
+      desc: "The programs worth your time, what they pay, and who each one suits.",
     },
     {
       href: "/beehiiv",

@@ -348,7 +348,7 @@ export default function ReferralProgramsPage() {
               {[
                 { href: "/services/affiliate-distribution", label: "Affiliate Distribution",   desc: "Distribute your affiliate program into high-intent communities" },
                 { href: "/services/apac-expansion",         label: "APAC Expansion",           desc: "Partner to run and grow your Australian operations" },
-                { href: "/referral-blueprint",              label: "Referral Blueprint",        desc: "250+ affiliate programs database + personalised strategy" },
+                { href: "/affiliate-programs-australia", label: "Affiliate Programs AU", desc: "The programs worth promoting, what they pay, and who each suits" },
               ].map((r) => (
                 <Link key={r.href} href={r.href} className="rounded-xl border border-[#0AA7B5]/15 bg-[#0AA7B5]/[0.03] p-4 hover:border-[#0AA7B5]/35 hover:bg-[#0AA7B5]/[0.07] transition-all group">
                   <p className="text-sm font-bold text-white mb-1 group-hover:text-[#22C0CD] transition-colors">{r.label}</p>

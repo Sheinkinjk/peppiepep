@@ -1,12 +1,11 @@
 # Refer Labs
 
-> Refer Labs is an independent Australian comparison platform. Consumers use it to compare health services, software and tools and choose with confidence through disclosed, independent comparisons; businesses partner with it for featured placement, referral programs and growth services. Rankings are never sold. Some pages contain disclosed affiliate links, at no extra cost to the reader.
+> Refer Labs is an independent Australian comparison platform. Consumers use it to compare health services, software and tools and choose with confidence through disclosed, independent comparisons; businesses partner with it for featured placement and growth services. Rankings are never sold. Some pages contain disclosed affiliate links, at no extra cost to the reader.
 
 ## Key facts
 - Entity: Refer Labs (independent Australian comparison publisher; operated by Pepform Pty Ltd)
 - Primary market: Australia (en-AU)
 - Contact: jarred@referlabs.com.au
-- Flagship in-house product: Referral Growth Blueprint, a curated database of 250+ vetted affiliate/referral programs with a personalised strategy brief and distribution playbooks. $799 AUD, delivered within 48 hours.
 - Disclosure: some comparison and guide pages contain affiliate referral links. Refer Labs may earn a commission at no extra cost to the reader. Rankings and editorial assessments are independent and never sold.
 - Health note: health content is general information only, not medical advice. Prescription medicines in Australia require individual assessment by a registered practitioner.
 
@@ -26,7 +25,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Weight loss telehealth](https://referlabs.com.au/weight-loss): Compare online weight-management in Australia: medical telehealth, coaching programs and the GP pathway.
 - [Hair loss treatment](https://referlabs.com.au/hair-loss): Clinical telehealth (prescription) vs topical products, compared.
 - [AI sales & automation tools](https://referlabs.com.au/best-ai-sales-tools): The best AI CRM, marketing automation and AI outbound tools, compared.
-- [For business](https://referlabs.com.au/for-business): Featured partnerships, growth services, and the Referral Growth Blueprint.
+- [For business](https://referlabs.com.au/for-business): Featured partnerships and growth services for businesses wanting to reach Australian buyers.
 - [AI sales tools compared](https://referlabs.com.au/compare/ai-sales-tools): Category hub sorting AI sales tools by role in the stack (data, outreach, AI SDR, all-in-one).
 - [Research peptide suppliers compared](https://referlabs.com.au/compare/research-peptides): Category hub comparing suppliers on purity and catalogue. Research use only.
 - [Website & landing-page builders compared](https://referlabs.com.au/compare/website-builders): Category hub for AI builders, one-page tools and landing-page specialists (Carrd, Durable AI, Butternut, Swipe Pages, Leadpages, Landingi).
@@ -139,7 +138,6 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - Comparisons: [Apollo vs Ascension](https://referlabs.com.au/apollo-vs-ascension), [Apollo vs BioPeptiTech](https://referlabs.com.au/apollo-vs-biopeptitech), [Ascension vs BioPeptiTech](https://referlabs.com.au/ascension-vs-biopeptitech).
 
 ## For business & affiliate marketing
-- [Referral Growth Blueprint ($799)](https://referlabs.com.au/referral-blueprint): Refer Labs' in-house product: 250+ curated affiliate/referral programs, a personalised strategy brief and distribution playbooks.
 - [Best affiliate programs Australia](https://referlabs.com.au/affiliate-programs-australia): The best affiliate programs for Australians, by category.
 - [Superfiliate](https://referlabs.com.au/superfiliate): Creator-led growth platform for brands to run affiliate, referral and creator programs (personalised pages per partner). A tool for brands, not for individual affiliates. Pricing quoted per brand.
 - [Affiliate earnings calculator](https://referlabs.com.au/affiliate-earnings-calculator): Interactive estimator (audience size x channel x niche) producing an illustrative earnings range with all assumptions shown. Estimates only, never a promise of income.

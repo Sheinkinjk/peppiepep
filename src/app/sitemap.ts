@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     })),
-    { url: `${BASE}/referral-blueprint`, lastModified: RECENT, changeFrequency: 'weekly',  priority: 0.98 },
     { url: `${BASE}/faq`,                lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/guides`,             lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/business-software`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
@@ -34,11 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
 
     // ── Blueprint by industry ──────────────────────────────────────────
-    { url: `${BASE}/referral-blueprint-for-agencies`,  lastModified: RECENT, changeFrequency: 'monthly', priority: 0.88 },
-    { url: `${BASE}/referral-blueprint-for-saas`,      lastModified: RECENT, changeFrequency: 'monthly', priority: 0.88 },
-    { url: `${BASE}/referral-blueprint-for-ecommerce`, lastModified: RECENT, changeFrequency: 'monthly', priority: 0.88 },
-    { url: `${BASE}/referral-blueprint-for-coaches`,   lastModified: RECENT, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/referral-blueprint-for-creators`,  lastModified: RECENT, changeFrequency: 'monthly', priority: 0.85 },
 
     // ── Services ───────────────────────────────────────────────────────
     { url: `${BASE}/services`,                        lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },
@@ -174,7 +168,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // fee rules, CPA ethics, a law-firm case study), orphaned from the site chrome.
     // On a young AU domain, crawl budget belongs on the health + software money pages.
 
-    { url: `${BASE}/become-an-affiliate`,                              lastModified: RECENT, changeFrequency: 'monthly', priority: 0.85 },
     // /blog/best-affiliate-programs-australia-2026 removed: it 301s to
     // /affiliate-programs-australia (next.config.ts), which is already listed above.
     // Advertising both the redirect source and its target wastes crawl budget.
