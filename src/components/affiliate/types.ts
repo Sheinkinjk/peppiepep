@@ -68,7 +68,8 @@ export interface AffiliatePageConfig {
   showResearchNote?: boolean;
 
   // ── Optional fields used by the premium standalone landing template ──────────
-  /** Small eyebrow above the H1, e.g. "Weight-loss telehealth · Australia · 2026" */
+  /** Small eyebrow above the H1, e.g. "Weight-loss telehealth · Australia". Describe the
+   *  category, not a bare year: a "· 2026" stamp reads as auto-generated. */
   eyebrow?: string;
   /** Editorial rating shown in the at-a-glance card and verdict, e.g. "4.4" */
   rating?: string;

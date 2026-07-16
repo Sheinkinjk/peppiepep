@@ -112,7 +112,7 @@ export default function HomeBatteryRebatePage() {
             <span className="text-[#2b362f]">Home battery rebate</span>
           </nav>
 
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Australia · 2026</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Federal rebate · Australia</p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
             Home battery rebate Australia: what you actually get
           </h1>
