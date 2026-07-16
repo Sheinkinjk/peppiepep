@@ -192,6 +192,9 @@ export const seoConfig = {
   },
 
   pricing: {
+    // Route is retired and 301s (see next.config.ts). noIndex is defensive: if the
+    // redirect is ever removed, this must not silently become an indexable page.
+    noIndex: true,
     title: "Pricing - Market Entry Engagement Models",
     description:
       "Choose the right engagement model for your APAC expansion. Retainer + commission pricing aligned to your growth stage. 90-day pilot structure.",
@@ -206,6 +209,9 @@ export const seoConfig = {
   },
 
   howItWorks: {
+    // Route is retired and 301s (see next.config.ts). noIndex is defensive: if the
+    // redirect is ever removed, this must not silently become an indexable page.
+    noIndex: true,
     title: "How It Works: Refer Labs Growth & Distribution Engine",
     description:
       "See how Refer Labs builds and activates your growth engine: referral programs, affiliate distribution, influencer channels, APAC expansion, and digital products end to end.",
@@ -2158,6 +2164,9 @@ export const seoConfig = {
 
   // Secondary pages
   roiCalculator: {
+    // Route is retired and 301s (see next.config.ts). noIndex is defensive: if the
+    // redirect is ever removed, this must not silently become an indexable page.
+    noIndex: true,
     title: "Australia Expansion Estimator - ROI Calculator",
     description: "Estimate the ROI of entering Australia with Refer Labs. Model your 90-day pilot returns by industry, deal size, and engagement scope.",
     url: `${SITE_URL}/roi-calculator`,
@@ -2206,6 +2215,9 @@ export const seoConfig = {
   },
 
   linkedinInfluencerCreator: {
+    // Route is retired and 301s (see next.config.ts). noIndex is defensive: if the
+    // redirect is ever removed, this must not silently become an indexable page.
+    noIndex: true,
     title: "Join as an Australian LinkedIn Creator",
     description: "Help overseas companies enter Australia and earn performance-based commissions. Join our curated pool of Australian LinkedIn creators.",
     url: `${SITE_URL}/linkedin-growth/influencer`,
@@ -2217,6 +2229,9 @@ export const seoConfig = {
   },
 
   linkedinInfluencerBusiness: {
+    // Route is retired and 301s (see next.config.ts). noIndex is defensive: if the
+    // redirect is ever removed, this must not silently become an indexable page.
+    noIndex: true,
     title: "Launch Australian Creator Campaigns for Market Entry",
     description: "Launch performance-based LinkedIn creator campaigns to build awareness and generate leads in the Australian market.",
     url: `${SITE_URL}/linkedin-growth/business`,
@@ -2290,6 +2305,9 @@ export const seoConfig = {
   },
 
   referralBlueprint: {
+    // Route is retired and 301s (see next.config.ts). noIndex is defensive: if the
+    // redirect is ever removed, this must not silently become an indexable page.
+    noIndex: true,
     title: "Referral Growth Blueprint: Affiliate Program List & Strategy Australia | Refer Labs",
     description:
       "Refer Labs' in-house referral marketing blueprint: a 250+ affiliate program list for Australia plus a personalised referral growth strategy written by our team. $799 AUD, delivered in 48 hours.",
