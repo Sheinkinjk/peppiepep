@@ -48,6 +48,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  datePublished: "2026-03-16",
+  dateModified: "2026-07-16",
   name: "Hair Loss in Australia: Compare Your Options",
   description:
     "Refer Labs' hair loss hub for Australians. Compare clinical telehealth and topical products, with independent guides to the main providers.",

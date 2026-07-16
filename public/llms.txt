@@ -47,6 +47,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 ## Weight loss & telehealth (Australia)
 - [Moshy, explained](https://referlabs.com.au/moshy-review): How the Moshy weight-management telehealth service works, from application to subscription. Moshy is open to anyone eligible (gender-neutral). New customers can currently receive $120 off their first treatment.
 - [Moshy offer & referral link](https://referlabs.com.au/moshy): The current Moshy offer and how the service works.
+- [Which weight-loss option quiz](https://referlabs.com.au/weight-loss-quiz): Two-question matcher that points you to a clinical telehealth pathway, a coaching-led program, or your GP.
 - [Moshy eligibility check explained](https://referlabs.com.au/moshy-eligibility): What the online quiz asks and what happens after submitting.
 - [Moshy alternatives](https://referlabs.com.au/moshy-alternatives): The realistic alternatives in Australia.
 - [Juniper alternatives](https://referlabs.com.au/juniper-alternatives): Alternatives to Juniper's coaching-led, women-focused weight program, including the gender-neutral Moshy pathway. Answers "is Juniper only for women?".
@@ -68,11 +69,13 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Mosh hair: what to know](https://referlabs.com.au/moshhair): Australian men's hair-loss telehealth. Finasteride and minoxidil access, subject to clinical assessment.
 - [Dense Hair Experts](https://referlabs.com.au/dense): Australian topical hair-density products (non-prescription).
 - [Best hair loss treatment Australia](https://referlabs.com.au/best-hair-loss-treatment-australia): Clinical vs topical, compared.
+- [Which hair-loss route quiz](https://referlabs.com.au/hair-loss-quiz): One-or-two-question matcher across clinical telehealth, a topical routine, or your GP.
 - [Mosh vs Dense](https://referlabs.com.au/mosh-vs-dense): Prescription telehealth vs topical hair care.
 - [Mosh vs Pilot](https://referlabs.com.au/mosh-vs-pilot): Two Australian men's telehealth brands compared for hair loss; both can prescribe finasteride and minoxidil after a practitioner review.
 
 ## AI sales & automation tools
 - [Best AI sales tools](https://referlabs.com.au/best-ai-sales-tools): GoHighLevel, AiSDR, Reply.io and FullEnrich compared, by role in the sales stack.
+- [Which AI sales tool quiz](https://referlabs.com.au/ai-sales-tools-quiz): One-or-two-question matcher across FullEnrich, Reply.io, AiSDR and GoHighLevel.
 - [GoHighLevel](https://referlabs.com.au/gohighlevel): All-in-one AI CRM, marketing automation, funnels and sales platform for agencies and SMBs. From US$97/mo; Unlimited US$297/mo, 14-day free trial.
 - [AiSDR](https://referlabs.com.au/aisdr): AI sales development rep that automates B2B outbound prospecting, personalised outreach and meeting booking.
 - [Reply.io](https://referlabs.com.au/replyio): AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS, with AI SDR agents, built-in B2B data and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. No free plan; from US$49/user/mo with a 14-day free trial.
@@ -115,7 +118,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 
 ## Website builders & landing pages
 - [Best website builder](https://referlabs.com.au/best-website-builder): Carrd, Durable AI, Butternut AI and Swipe Pages, compared.
-- [Which website builder quiz](https://referlabs.com.au/website-builder-quiz): Three-question recommender that matches you to Carrd, Durable AI, Butternut AI or Swipe Pages.
+- [Which website builder quiz](https://referlabs.com.au/website-builder-quiz): Two-to-three-question recommender that matches you to Carrd, Durable AI, Butternut AI or Swipe Pages.
 - [Carrd](https://referlabs.com.au/carrd): Simple one-page website builder. Free plan; Pro from US$9/year.
 - [Durable AI](https://referlabs.com.au/durableai): AI website builder with CRM and invoicing.
 - [Butternut AI](https://referlabs.com.au/butternut): AI full-site generator from a prompt.
@@ -125,6 +128,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 
 ## Newsletter & creator tools
 - [Best newsletter platform](https://referlabs.com.au/best-newsletter-platform): beehiiv vs Substack vs Kit.
+- [Which newsletter platform quiz](https://referlabs.com.au/newsletter-platform-quiz): One-question matcher across beehiiv, Substack and Kit.
 - [beehiiv](https://referlabs.com.au/beehiiv): Newsletter platform built for growth.
 - [Brevo](https://referlabs.com.au/brevo): All-in-one email marketing, SMS, automation and CRM platform (formerly Sendinblue). Priced by emails sent, not list size. Free plan; paid from US$9/mo.
 - [IncomeLab](https://referlabs.com.au/incomelab): AI income and side-hustle frameworks.

@@ -1712,7 +1712,7 @@ export const seoConfig = {
   },
 
   hairLossQuiz: {
-    title: "Which Hair-Loss Option Fits You? 60-Second Match | Refer Labs",
+    title: "Which Hair-Loss Option Fits You? 30-Second Match | Refer Labs",
     description:
       "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, and why. Information only, not medical advice.",
     url: `${SITE_URL}/hair-loss-quiz`,
@@ -1726,7 +1726,7 @@ export const seoConfig = {
   },
 
   newsletterPlatformQuiz: {
-    title: "Which Newsletter Platform Should You Use? 60-Second Match | Refer Labs",
+    title: "Which Newsletter Platform Should You Use? 30-Second Match | Refer Labs",
     description:
       "Answer one quick question and see which newsletter platform fits your goal, beehiiv, Substack or Kit, and why.",
     url: `${SITE_URL}/newsletter-platform-quiz`,
@@ -1740,7 +1740,7 @@ export const seoConfig = {
   },
 
   aiSalesToolsQuiz: {
-    title: "Which AI Sales Tool Do You Need? 60-Second Match | Refer Labs",
+    title: "Which AI Sales Tool Do You Need? 30-Second Match | Refer Labs",
     description:
       "Answer one or two quick questions and see which AI sales tool fits your bottleneck, FullEnrich, Reply.io, AiSDR or GoHighLevel, and why.",
     url: `${SITE_URL}/ai-sales-tools-quiz`,
@@ -1755,7 +1755,7 @@ export const seoConfig = {
   },
 
   weightLossQuiz: {
-    title: "Which Weight-Loss Option Fits You? 60-Second Match | Refer Labs",
+    title: "Which Weight-Loss Option Fits You? 30-Second Match | Refer Labs",
     description:
       "Answer two quick questions and see which weight-loss route fits you, an online telehealth program or an in-person GP, and why. Information only, not medical advice.",
     url: `${SITE_URL}/weight-loss-quiz`,
@@ -1770,9 +1770,9 @@ export const seoConfig = {
   },
 
   websiteBuilderQuiz: {
-    title: "Which Website Builder Is Right for You? 60-Second Quiz",
+    title: "Which Website Builder Is Right for You? 30-Second Quiz",
     description:
-      "Answer three quick questions and get the website builder that fits your project, Carrd, Durable AI, Butternut AI or Swipe Pages, and why.",
+      "Answer two or three quick questions and get the website builder that fits your project, Carrd, Durable AI, Butternut AI or Swipe Pages, and why.",
     url: `${SITE_URL}/website-builder-quiz`,
     keywords: [
       "which website builder should i use",

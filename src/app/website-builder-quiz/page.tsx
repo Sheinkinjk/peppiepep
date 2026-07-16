@@ -76,8 +76,8 @@ export default function WebsiteBuilderQuizPage() {
             </h1>
             <div className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-6 space-y-3">
               <p>
-                Four good builders, four different jobs. Answer three quick questions and get the one that fits what
-                you&apos;re actually making, and why. About 60 seconds.
+                Four good builders, four different jobs. Answer two or three quick questions and get the one that fits
+                what you&apos;re actually making, and why. About 30 seconds.
               </p>
             </div>
           </section>

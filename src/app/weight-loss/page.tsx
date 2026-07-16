@@ -77,6 +77,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  datePublished: "2026-03-16",
+  dateModified: "2026-07-16",
   name: "Weight Loss Telehealth Australia: Compare Online Programs & Clinics",
   description:
     "Refer Labs' weight loss telehealth hub for Australians. Compare online weight loss programs, medical telehealth clinics, lifestyle coaching and the GP pathway, with independent guides to Moshy, Juniper and more.",
