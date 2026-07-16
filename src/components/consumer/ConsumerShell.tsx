@@ -77,6 +77,10 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/weight-loss" className="transition-colors hover:text-[#0a7c42]">Weight Loss &amp; Telehealth</Link></li>
                 <li><Link href="/hair-loss" className="transition-colors hover:text-[#0a7c42]">Hair Loss Treatment</Link></li>
                 <li><Link href="/mens-health-telehealth-australia" className="transition-colors hover:text-[#0a7c42]">Men&apos;s Health Telehealth</Link></li>
+                {/* The header nav renders its dropdown items only when open, so those
+                    links are not in the HTML and Google cannot follow them. The footer
+                    is the crawlable path into each category. */}
+                <li><Link href="/apollo-energy" className="transition-colors hover:text-[#0a7c42]">Home Batteries</Link></li>
                 <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website Builders</Link></li>
                 <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter Platforms</Link></li>
                 <li><Link href="/best-ai-sales-tools" className="transition-colors hover:text-[#0a7c42]">AI Sales &amp; Automation</Link></li>
@@ -90,6 +94,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/best-hair-loss-treatment-australia" className="transition-colors hover:text-[#0a7c42]">Best Hair-Loss Treatment</Link></li>
                 <li><Link href="/best-website-builder" className="transition-colors hover:text-[#0a7c42]">Best Website Builder</Link></li>
                 <li><Link href="/best-newsletter-platform" className="transition-colors hover:text-[#0a7c42]">Best Newsletter Platform</Link></li>
+                <li><Link href="/home-battery-rebate-australia" className="transition-colors hover:text-[#0a7c42]">Home Battery Rebate 2026</Link></li>
                 <li><Link href="/best-peptide-supplier" className="transition-colors hover:text-[#0a7c42]">Best Peptide Supplier</Link></li>
               </ul>
             </div>
