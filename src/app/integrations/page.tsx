@@ -23,7 +23,11 @@ import {
 import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
+// Dashboard setup docs for ambassadors, not consumer content. Every child guide
+// (/mailchimp, /shopify, /webflow, /hubspot) is already noIndex, so the hub that
+// lists them is excluded too rather than being an indexable page of dead ends.
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Integrations | Refer Labs",
   description: "Step-by-step integration guides for websites, payments, and CRMs.",
   url: `${SITE_URL}/integrations`,

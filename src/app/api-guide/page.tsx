@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Custom API Integration | Refer Labs",
   description:
     "Send conversion signals and attribution data to Refer Labs from your backend. Includes security, retries, and a testing checklist.",

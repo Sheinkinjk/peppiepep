@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true,
   title: "Shopify Checkout Extensibility | Refer Labs",
   description:
     "Modern Shopify conversion tracking using webhooks + a server (compatible with Checkout Extensibility). Includes testing checkpoints.",
