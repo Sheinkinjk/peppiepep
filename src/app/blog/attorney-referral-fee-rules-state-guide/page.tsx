@@ -2,7 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, AlertTriangle, CheckCircle2, Info, Search } from "lucide-react";
 
+// Content marketing for the retired referral platform, written for a US audience
+// (state-by-state attorney fee rules, CPA ethics). It is orphaned from the site
+// chrome and dilutes the topical + geographic authority of an Australian health
+// comparison site. Excluded from the index; still reachable for anyone with a link.
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Attorney Referral Fee Rules: State-by-State Compliance Guide 2026 | Refer Labs",
   description: "Complete breakdown of referral fee regulations across all 50 states, including fee splitting percentages, disclosure requirements, and what you need to stay compliant.",
 };

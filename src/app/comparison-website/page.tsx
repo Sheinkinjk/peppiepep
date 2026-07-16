@@ -5,7 +5,7 @@ import ListingForm from "./ListingForm";
 
 export const metadata = generateSEOMetadata(seoConfig.comparisonWebsite);
 
-const contactEmail = "hello@referlabs.com.au";
+const contactEmail = "jarred@referlabs.com.au";
 
 const categories = [
   {

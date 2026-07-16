@@ -2,7 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Tag, CheckCircle, AlertTriangle, DollarSign, Users, FileText } from "lucide-react";
 
+// Content marketing for the retired referral platform, written for a US audience
+// (state-by-state attorney fee rules, CPA ethics). It is orphaned from the site
+// chrome and dilutes the topical + geographic authority of an Australian health
+// comparison site. Excluded from the index; still reachable for anyone with a link.
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "The CPA's Guide to Cross-Referral Revenue (Without Ethics Violations) | Refer Labs",
   description: "Learn how accounting firms can generate revenue through compliant cross-referrals with attorneys, financial advisors, and other CPAs while maintaining AICPA ethics standards.",
 };

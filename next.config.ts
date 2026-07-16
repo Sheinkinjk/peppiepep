@@ -52,6 +52,17 @@ const nextConfig: NextConfig = {
         destination: '/referral-blueprint',
         permanent: true,
       },
+      {
+        // Demo page for the retired referral platform. It rendered fabricated social
+        // proof as if real: an invented company ("Glow Society"), an invented person
+        // ("Mara Ibarra, Experiential Director, Maison du Spa") and made-up stats
+        // ("$220 average reward", "32 guests upgraded last 30 days"). Fabricated
+        // testimonials are prohibited under Australian Consumer Law s29(1)(e), and it
+        // was publicly reachable at 200. Nothing outside the retired dashboard links here.
+        source: '/referral',
+        destination: '/',
+        permanent: true,
+      },
       // Point straight at the final destination. These used to hop via /linkedin-growth/*,
       // which itself redirects to /for-business: a 2-hop chain that leaks link equity.
       {

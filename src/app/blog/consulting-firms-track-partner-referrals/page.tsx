@@ -2,7 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2, TrendingUp, Users, BarChart3, Target, AlertCircle } from "lucide-react";
 
+// Content marketing for the retired referral platform, written for a US audience
+// (state-by-state attorney fee rules, CPA ethics). It is orphaned from the site
+// chrome and dilutes the topical + geographic authority of an Australian health
+// comparison site. Excluded from the index; still reachable for anyone with a link.
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Why Consulting Firms Should Track Partner Referrals Like Sales Pipeline | Refer Labs",
   description: "Discover how to systematize your consulting firm's referral network using CRM-style tracking, partner scoring, and revenue attribution to predictably grow through partnerships.",
 };

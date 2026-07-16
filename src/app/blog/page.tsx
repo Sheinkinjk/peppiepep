@@ -2,7 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 
+// Content marketing for the retired referral platform, written for a US audience
+// (state-by-state attorney fee rules, CPA ethics). It is orphaned from the site
+// chrome and dilutes the topical + geographic authority of an Australian health
+// comparison site. Excluded from the index; still reachable for anyone with a link.
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Blog | Refer Labs - Professional Services Referral Intelligence",
   description: "Expert insights on building compliant referral networks for law firms, accounting practices, and consulting firms. Learn how to scale your partner network with best practices and case studies.",
 };

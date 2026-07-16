@@ -258,7 +258,7 @@ export default function Security() {
                   <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition" />
                 </summary>
                 <p className="mt-3 text-sm text-slate-600">
-                  Yes! Report security vulnerabilities to security@referlabs.com.au. We offer rewards for valid findings based on severity. Please practice responsible disclosure.
+                  Report security vulnerabilities to jarred@referlabs.com.au. Please practise responsible disclosure and give us reasonable time to fix an issue before making it public. We do not run a paid bounty program.
                 </p>
               </details>
 
@@ -286,7 +286,7 @@ export default function Security() {
               </p>
             </div>
             <Link
-              href="mailto:security@referlabs.com.au"
+              href="mailto:jarred@referlabs.com.au"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-200 transition hover:-translate-y-0.5 hover:shadow-cyan-300 whitespace-nowrap"
             >
               Contact security team

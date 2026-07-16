@@ -8,7 +8,6 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 const FRESH  = new Date('2026-07-07'); // redesigned / new this release
 const RECENT = new Date('2026-05-20'); // updated within the last few weeks
 const STABLE = new Date('2026-03-10'); // company/service pages, rarely change
-const BLOG   = new Date('2026-01-12'); // evergreen B2B posts
 const LEGAL  = new Date('2026-01-15'); // legal, changes yearly
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -170,12 +169,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/how-to-start-affiliate-marketing-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
 
     // ── Blog ───────────────────────────────────────────────────────────
-    { url: `${BASE}/blog`,                                            lastModified: RECENT, changeFrequency: 'weekly',  priority: 0.7 },
-    { url: `${BASE}/blog/attorney-referral-fee-rules-state-guide`,    lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
-    { url: `${BASE}/blog/compliant-referral-network-law-firms`,       lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
-    { url: `${BASE}/blog/consulting-firms-track-partner-referrals`,   lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
-    { url: `${BASE}/blog/cpa-cross-referral-revenue-guide`,           lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
-    { url: `${BASE}/blog/law-firm-generates-2m-referrals`,            lastModified: BLOG,   changeFrequency: 'monthly', priority: 0.65 },
+    // /blog and its 5 posts removed: all noIndex. They are content marketing for the
+    // retired referral platform, written for a US audience (state-by-state attorney
+    // fee rules, CPA ethics, a law-firm case study), orphaned from the site chrome.
+    // On a young AU domain, crawl budget belongs on the health + software money pages.
+
     { url: `${BASE}/become-an-affiliate`,                              lastModified: RECENT, changeFrequency: 'monthly', priority: 0.85 },
     // /blog/best-affiliate-programs-australia-2026 removed: it 301s to
     // /affiliate-programs-australia (next.config.ts), which is already listed above.

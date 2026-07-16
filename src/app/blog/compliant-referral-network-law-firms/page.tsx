@@ -2,7 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Tag, CheckCircle, AlertTriangle, FileText, Scale, Users } from "lucide-react";
 
+// Content marketing for the retired referral platform, written for a US audience
+// (state-by-state attorney fee rules, CPA ethics). It is orphaned from the site
+// chrome and dilutes the topical + geographic authority of an Australian health
+// comparison site. Excluded from the index; still reachable for anyone with a link.
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "How to Build a Compliant Referral Network for Your Law Firm | Refer Labs",
   description: "Navigate state bar ethics rules, track referral fees properly, and scale your law firm's partner network without compliance headaches. Complete guide with templates and checklists.",
 };

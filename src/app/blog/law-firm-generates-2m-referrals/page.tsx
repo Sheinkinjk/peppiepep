@@ -2,7 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, DollarSign, Users, TrendingUp, Target, Calendar, CheckCircle2, BarChart3 } from "lucide-react";
 
+// Content marketing for the retired referral platform, written for a US audience
+// (state-by-state attorney fee rules, CPA ethics). It is orphaned from the site
+// chrome and dilutes the topical + geographic authority of an Australian health
+// comparison site. Excluded from the index; still reachable for anyone with a link.
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Case Study: How a Mid-Size Law Firm Generates $2M/Year from Referrals | Refer Labs",
   description: "Real numbers, strategies, and systems from a 15-attorney personal injury firm that built a $2M referral channel through systematic partner network management.",
 };
