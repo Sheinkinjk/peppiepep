@@ -1107,15 +1107,17 @@ export const seoConfig = {
   },
 
   bestWeightLossTelehealth: {
-    title: "Best Weight Loss Telehealth Australia 2026: Moshy vs Juniper | Refer Labs",
+    // This is the roundup; /moshy-vs-juniper owns the head-to-head. The title and
+    // keywords deliberately no longer claim "moshy vs juniper", so the two pages
+    // stop competing for the same query.
+    title: "Best Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
-      "The best weight loss telehealth in Australia for 2026, compared: Moshy and Juniper. How eligibility works, what each program costs, and how to pick the right online option for you.",
+      "The best weight loss telehealth in Australia for 2026, compared: Moshy, Juniper and Pilot. How eligibility works, what each program includes, and how to pick the right online option for you.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
       "best weight loss telehealth australia",
-      "moshy vs juniper",
-      "moshy vs juniper australia",
+      "weight loss telehealth compared australia",
       "online weight loss australia 2026",
       "weight loss telehealth australia",
       "GLP-1 telehealth australia",

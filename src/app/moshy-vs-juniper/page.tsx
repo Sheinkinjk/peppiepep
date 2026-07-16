@@ -19,7 +19,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}/guides` },
+    { "@type": "ListItem", position: 2, name: "Weight Loss", item: `${SITE_URL}/weight-loss` },
     { "@type": "ListItem", position: 3, name: "Moshy vs Juniper", item: `${SITE_URL}/moshy-vs-juniper` },
   ],
 };
@@ -49,6 +49,45 @@ const faqSchema = {
   mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
+// The two providers this page compares, so the head-to-head is machine-readable
+// the same way /moshy-vs-pilot is.
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Moshy vs Juniper: Weight Loss Telehealth Compared 2026",
+  description:
+    "Moshy and Juniper compared on approach, eligibility, GLP-1 access, pricing model and who each suits. Moshy runs a lean clinical pathway open to anyone eligible; Juniper pairs medication access with structured coaching and markets primarily to women.",
+  numberOfItems: 2,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Moshy",
+      description: "Australian clinically-led telehealth weight management, open to anyone eligible. Online eligibility questionnaire, practitioner review, subscription with home delivery.",
+      url: `${SITE_URL}/moshy`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Juniper",
+      description: "Australian weight management program marketed primarily to women. Pairs practitioner-led medication access with structured health coaching and community support.",
+      url: JUNIPER_URL,
+    },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoConfig.moshyVsJuniper.title,
+  description: seoConfig.moshyVsJuniper.description,
+  url: seoConfig.moshyVsJuniper.url,
+  inLanguage: "en-AU",
+  datePublished: "2026-07-05",
+  dateModified: "2026-07-16",
+  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+};
+
 const rows: { label: string; moshy: string; juniper: string }[] = [
   { label: "Approach", moshy: "Clinical pathway, open to anyone eligible", juniper: "Coaching-led, marketed for women" },
   { label: "Model", moshy: "Clinical, practitioner-led pathway", juniper: "Medication + structured coaching & community" },
@@ -63,13 +102,15 @@ export default function MoshyVsJuniperPage() {
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
         {/* Breadcrumb */}
         <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#3d4b44]">
           <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-[#2b362f] transition-colors">Guides</Link>
+          <Link href="/weight-loss" className="hover:text-[#2b362f] transition-colors">Weight loss</Link>
           <span>/</span>
           <span className="text-[#2b362f]">Moshy vs Juniper</span>
         </nav>
@@ -112,8 +153,8 @@ export default function MoshyVsJuniperPage() {
 
         {/* Comparison table */}
         <h2 className="text-xl font-black mb-4">Moshy vs Juniper at a glance</h2>
-        <div className="overflow-hidden rounded-xl border border-[#e5e9e7] mb-10">
-          <table className="w-full text-sm">
+        <div className="overflow-x-auto rounded-xl border border-[#e5e9e7] mb-10">
+          <table className="w-full min-w-[560px] text-sm">
             <thead>
               <tr className="bg-[#f5f8f6]">
                 <th className="text-left font-semibold text-[#3d4b44] px-4 py-3 w-1/4"></th>

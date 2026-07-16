@@ -3,6 +3,7 @@ import { MOSHY_URL, MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.mensHealthTelehealth);
 
@@ -191,6 +192,7 @@ export default function MensHealthTelehealthPage() {
         </p>
         <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>
   );
 }

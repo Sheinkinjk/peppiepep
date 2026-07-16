@@ -19,6 +19,14 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    label: "Home & Energy",
+    items: [
+      { href: "/apollo-energy", label: "Home Batteries", note: "Apollo Energy Group, sized to your usage" },
+      { href: "/home-battery-rebate-australia", label: "Battery Rebate 2026", note: "What the federal rebate actually pays" },
+      { href: "/apollo-energy-review", label: "Apollo Energy Review", note: "Credentials, warranty and what to check" },
+    ],
+  },
+  {
     label: "Marketing & Web",
     items: [
       { href: "/compare/website-builders", label: "Website & Landing Pages", note: "Carrd, Durable AI, Leadpages and more" },

@@ -98,8 +98,8 @@ export default function MoshyVsGpPage() {
 
         <section className="mb-10">
           <h2 className="text-xl font-black mb-4">Side by side</h2>
-          <div className="overflow-hidden rounded-xl border border-[#e5e9e7]">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto rounded-xl border border-[#e5e9e7]">
+              <table className="w-full min-w-[560px] text-sm">
               <thead>
                 <tr className="bg-[#f5f8f6]">
                   <th className="text-left font-semibold text-[#3d4b44] px-4 py-3 w-1/4"></th>

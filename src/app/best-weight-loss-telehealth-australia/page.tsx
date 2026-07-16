@@ -11,6 +11,9 @@ import { MOSHY_OFFER } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
+// No affiliate arrangement with Pilot, so it is a plain nofollow link, same as Juniper.
+const PILOT_URL = "https://pilot.com.au/";
+
 const aff = (url: string, loc = "best-wl-telehealth") => ({
   href: url,
   target: "_blank" as const,
@@ -39,11 +42,12 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Weight Loss Telehealth Platforms Australia 2026",
-  description: "In-depth comparison of Australian weight loss telehealth platforms, Moshy and Juniper. GLP-1 access, eligibility process, pricing, and who each platform suits.",
-  numberOfItems: 2,
+  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. GLP-1 access, eligibility process, pricing, and who each platform suits.",
+  numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, GLP-1 medication access. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
     { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines GLP-1 medication with health coaching and ongoing practitioner support. Premium subscription model.", url: JUNIPER_URL },
+    { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. Quiz, practitioner phone consultation, then discreet home delivery where clinically appropriate.", url: PILOT_URL },
   ],
 };
 
@@ -54,7 +58,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What is the best weight loss telehealth platform in Australia in 2026?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper are the most widely used GLP-1 telehealth weight loss platforms in Australia in 2026. Moshy runs a clinically supervised weight management pathway, open to anyone eligible, including medication options. Juniper markets primarily to women and combines GLP-1 medication with a coached program. Suitability depends on individual health factors. Consult a qualified health professional before starting any weight management programme." }
+      acceptedAnswer: { "@type": "Answer", text: "Moshy, Juniper and Pilot are the most widely used GLP-1 telehealth weight loss platforms in Australia in 2026. Moshy runs a clinically supervised weight management pathway, open to anyone eligible, including medication options. Juniper markets primarily to women and combines GLP-1 medication with a coached program. Pilot is men-focused and sits inside a broader men's health service. Suitability depends on individual health factors. Consult a qualified health professional before starting any weight management programme." }
     },
     {
       "@type": "Question",
@@ -275,6 +279,27 @@ const platforms: PlatformCardProps[] = [
     isAffiliate: false,
     ctaLabel: "Visit Juniper",
   },
+  {
+    id: "pilot",
+    index: "03",
+    name: "Pilot",
+    tagline: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. The process runs as a quiz, then a private phone consultation with a practitioner, then discreet home delivery if you are eligible. Weight management sits inside a wider men's health service rather than standing alone.",
+    deal: "Online quiz, then a phone consult",
+    dealNote: "Pilot's process starts with a health-history quiz and includes a private phone consultation with a practitioner before anything is prescribed.",
+    pros: [
+      "Practitioner phone consult included in the process",
+      "GLP-1 medication access (subject to eligibility)",
+      "Covers other men's health areas in the same account",
+      "Discreet packaging and free shipping, no lock-in contracts",
+    ],
+    cons: [
+      "Men only, not available for women",
+      "Weight management is one service among several, not the sole focus",
+    ],
+    extUrl: PILOT_URL,
+    isAffiliate: false,
+    ctaLabel: "Visit Pilot",
+  },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -409,18 +434,22 @@ export default function BestWeightLossTelehealthPage() {
               columns={[
                 { name: "Moshy", highlight: true, badge: "Most popular" },
                 { name: "Juniper" },
+                { name: "Pilot" },
               ]}
               rows={[
-                { label: "Available in Australia",     vals: [true,  true]  },
-                { label: "Men's programme",            vals: [true,  false] },
-                { label: "Women's programme",          vals: [false, true]  },
-                { label: "GLP-1 medication access",    vals: [true,  true], note: "Subject to individual clinical eligibility" },
-                { label: "Online eligibility process", vals: [true,  true]  },
-                { label: "No in-person GP required",   vals: [true,  true]  },
-                { label: "Health coaching included",   vals: [false, true]  },
-                { label: "Home delivery",              vals: [true,  true]  },
-                { label: "Lifestyle programme",        vals: [false, true]  },
-                { label: "Community discussion",       vals: [true,  true]  },
+                { label: "Available in Australia",     vals: [true,  true,  true]  },
+                // Moshy is open to anyone eligible, so it serves both. This row
+                // previously said Moshy had no women's programme, contradicting the
+                // rest of the page.
+                { label: "Men's programme",            vals: [true,  false, true]  },
+                { label: "Women's programme",          vals: [true,  true,  false] },
+                { label: "GLP-1 medication access",    vals: [true,  true,  true], note: "Subject to individual clinical eligibility" },
+                { label: "Online eligibility process", vals: [true,  true,  true]  },
+                { label: "No in-person GP required",   vals: [true,  true,  true]  },
+                { label: "Health coaching included",   vals: [false, true,  false] },
+                { label: "Home delivery",              vals: [true,  true,  true]  },
+                { label: "Lifestyle programme",        vals: [false, true,  false] },
+                { label: "Community discussion",       vals: [true,  true,  false] },
               ]}
               footnote="Feature availability is based on publicly available information at time of publication and may change. This page does not constitute medical advice."
             />

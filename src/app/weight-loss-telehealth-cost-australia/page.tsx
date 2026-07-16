@@ -3,6 +3,7 @@ import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthCost);
@@ -315,6 +316,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
           </article>
         </div>
       </main>
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>
   );
 }

@@ -28,6 +28,7 @@ const categories = [
   { href: "/hair-loss", title: "Hair loss treatment" },
   { href: "/mens-health-telehealth-australia", title: "Men's health telehealth" },
   { href: "/best-peptide-supplier", title: "Research peptides" },
+  { href: "/apollo-energy", title: "Home batteries" },
   { href: "/compare/website-builders", title: "Website builders" },
   { href: "/compare/newsletter-platforms", title: "Newsletter platforms" },
   { href: "/best-ai-sales-tools", title: "AI sales & automation" },

@@ -7,6 +7,9 @@ import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
+// No affiliate arrangement with Pilot: plain nofollow link.
+const PILOT_URL = "https://pilot.com.au/";
+
 const aff = (url: string, loc = "best-hair-loss") => ({
   href: url,
   target: "_blank" as const,
@@ -35,7 +38,7 @@ const itemListSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Mosh Hair Loss Treatment", description: "Australian telehealth platform offering clinically supervised hair loss treatment including finasteride and minoxidil with online consultation.", url: `${SITE_URL}/moshhair` },
     { "@type": "ListItem", position: 2, name: "Dense Hair Experts", description: "Australian hair care brand specialising in density and thickness products, shampoos, conditioners, serums, and scalp treatments.", url: `${SITE_URL}/dense` },
-    { "@type": "ListItem", position: 3, name: "Telehealth Hair Loss Options", description: "Online clinical consultation for prescription hair loss treatments in Australia, finasteride, minoxidil, and combination approaches.", url: `${SITE_URL}/best-hair-loss-treatment-australia` },
+    { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus offering prescription hair-loss treatment after a practitioner review, alongside weight, skin and sexual health. Free shipping Australia-wide.", url: PILOT_URL },
   ],
 };
 
@@ -103,6 +106,7 @@ const webPageSchema = {
 const CYAN    = "#0a7c42";
 const CYAN_LT = "#0a7c42";
 
+
 const options = [
   {
     name: "Mosh Hair Loss",
@@ -145,6 +149,26 @@ const options = [
       "Topical products only, does not address underlying hair loss cause",
       "Less clinical evidence than finasteride or minoxidil",
       "Best as complementary support, not a standalone solution for significant hair loss",
+    ],
+  },
+  {
+    name: "Pilot",
+    badge: "Men Only",
+    badgeColor: "#0a7c42",
+    href: PILOT_URL,
+    internalHref: "/mosh-vs-pilot",
+    category: "Telehealth / Prescription",
+    tagline: "Men's telehealth from Eucalyptus, covering hair loss alongside weight, skin and sexual health",
+    pros: [
+      "Access to prescription hair-loss treatment after a practitioner review",
+      "Private phone consultation with an Australian practitioner is part of the process",
+      "Free shipping Australia-wide, discreet packaging, no lock-in contracts",
+      "One account also covers other men's health areas",
+    ],
+    cons: [
+      "Men only, not available for women",
+      "Hair loss is one service among several rather than the sole focus",
+      "Requires ongoing prescription, not a one-off purchase",
     ],
   },
   {

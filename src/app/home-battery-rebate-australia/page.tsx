@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import StickyCta from "@/components/consumer/StickyCta";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
 
@@ -324,7 +325,8 @@ export default function HomeBatteryRebatePage() {
             it we may earn a commission at no extra cost to you, and it never changes our assessment.
           </p>
         </main>
-      </ConsumerShell>
+        <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy · home batteries" label="Get $500 off" />
+    </ConsumerShell>
     </>
   );
 }
