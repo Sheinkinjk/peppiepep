@@ -63,6 +63,7 @@ const sections = [
       { href: "/apollo-energy", label: "Apollo Energy Group", desc: "Battery specialists, sized from your real usage. $500 off your quote via our link." },
       { href: "/home-battery-rebate-australia", label: "The 2026 Battery Rebate", desc: "What the Cheaper Home Batteries discount pays, and why it tapers above 14kWh." },
       { href: "/apollo-energy-review", label: "Apollo Energy, Reviewed", desc: "Accreditation, warranty, and the things worth checking before you sign." },
+      { href: "/home-battery-cost-australia", label: "What a Battery Costs", desc: "Real installed price ranges by size, what the rebate takes off, and payback." }
     ],
   },
   {
@@ -71,6 +72,9 @@ const sections = [
     guides: [
       { href: "/moshhair", label: "Mosh Hair: What to Know", desc: "Men's hair-loss telehealth. Process, options, current offer." },
       { href: "/dense", label: "Dense Hair Experts", desc: "Topical, non-prescription density and scalp products." },
+      { href: "/finasteride-australia", label: "Finasteride, Explained", desc: "What it is, why it is prescription-only, and how access works. Not medical advice." },
+      { href: "/minoxidil-australia", label: "Minoxidil, Explained", desc: "Topical vs oral, the shedding phase, and how it combines with finasteride." },
+      { href: "/hair-loss-treatment-cost-australia", label: "What Treatment Costs", desc: "Over-the-counter vs telehealth plans, using Mosh\u2019s published prices." },
     ],
   },
   {

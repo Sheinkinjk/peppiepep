@@ -14,6 +14,9 @@ const guides = [
   { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Clinical telehealth versus topical products, side by side." },
   { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, and the current referral offer." },
   { href: "/dense", title: "Dense Hair Experts", desc: "The topical, non-prescription route for density and scalp health." },
+  { href: "/finasteride-australia", title: "Finasteride, explained", desc: "What it is, why it is prescription-only, and how a GP or telehealth assessment works." },
+  { href: "/minoxidil-australia", title: "Minoxidil, explained", desc: "Topical over the counter vs prescription oral, the shedding phase, and side effects." },
+  { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "Over-the-counter minoxidil vs telehealth plans, with Mosh\u2019s published prices." },
   { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "The wider category, and what online clinics can and cannot do." },
 ];
 

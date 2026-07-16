@@ -43,6 +43,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 
 - [Apollo Energy Group review](https://referlabs.com.au/apollo-energy-review): Independent review answering "is Apollo Energy Group legit?". Verifiable credentials (Electrical Licence 400672, ABN 55697998208, SAA-accredited, 10-year warranty, Sydney address) separated from the company's own claims, plus four things to check before signing with any battery installer. $500 off via Refer Labs.
 - [Home battery rebate Australia 2026](https://referlabs.com.au/home-battery-rebate-australia): What the federal Cheaper Home Batteries rebate actually pays: about $252 per usable kWh from 1 May 2026, the taper above 14kWh (100% to 14kWh, 60% to 28kWh, 15% to 50kWh), state incentives such as the NSW $1,500 VPP, and worked examples by battery size. The rebate is applied by the installer at the point of sale, not claimed back.
+- [Home battery cost Australia 2026](https://referlabs.com.au/home-battery-cost-australia): Real installed price ranges by size, what the federal rebate takes off, and payback periods (typically ~6-9 years). Indicative ranges, get a quote for your home.
 
 ## Weight loss & telehealth (Australia)
 - [Moshy, explained](https://referlabs.com.au/moshy-review): How the Moshy weight-management telehealth service works, from application to subscription. Moshy is open to anyone eligible (gender-neutral). New customers can currently receive $120 off their first treatment.
@@ -69,6 +70,9 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Mosh hair: what to know](https://referlabs.com.au/moshhair): Australian men's hair-loss telehealth. Finasteride and minoxidil access, subject to clinical assessment.
 - [Dense Hair Experts](https://referlabs.com.au/dense): Australian topical hair-density products (non-prescription).
 - [Best hair loss treatment Australia](https://referlabs.com.au/best-hair-loss-treatment-australia): Clinical vs topical, compared.
+- [Finasteride in Australia](https://referlabs.com.au/finasteride-australia): Factual guide to finasteride for hair loss. Prescription-only (S4), how GP/telehealth access works, side effects. Information only, not medical advice.
+- [Minoxidil in Australia](https://referlabs.com.au/minoxidil-australia): Topical (over-the-counter, S2) vs oral (prescription) minoxidil, the shedding phase, and how it combines with finasteride.
+- [Hair loss treatment cost Australia](https://referlabs.com.au/hair-loss-treatment-cost-australia): Over-the-counter minoxidil vs telehealth subscription plans, using Mosh's published prices (from $24/month).
 - [Which hair-loss route quiz](https://referlabs.com.au/hair-loss-quiz): One-or-two-question matcher across clinical telehealth, a topical routine, or your GP.
 - [Mosh vs Dense](https://referlabs.com.au/mosh-vs-dense): Prescription telehealth vs topical hair care.
 - [Mosh vs Pilot](https://referlabs.com.au/mosh-vs-pilot): Two Australian men's telehealth brands compared for hair loss; both can prescribe finasteride and minoxidil after a practitioner review.

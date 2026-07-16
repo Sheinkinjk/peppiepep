@@ -37,6 +37,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Hair loss
   { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "regrowth finasteride minoxidil telehealth top" },
   { title: "Mosh hair: what to know & offer", href: "/moshhair", category: "Hair loss", kind: "Guide", keywords: "mosh review mens hair loss finasteride" },
+  { title: "Finasteride in Australia, explained", href: "/finasteride-australia", category: "Hair loss", kind: "Guide", keywords: "finasteride australia hair loss prescription dht blocker propecia generic 1mg" },
+  { title: "Minoxidil in Australia, explained", href: "/minoxidil-australia", category: "Hair loss", kind: "Guide", keywords: "minoxidil australia regaine topical oral hair loss over the counter" },
+  { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss treatment cost australia mosh price finasteride minoxidil subscription" },
   { title: "Mosh vs Pilot", href: "/mosh-vs-pilot", category: "Hair loss", kind: "Guide", keywords: "mosh vs pilot hair loss finasteride minoxidil mens telehealth compare" },
   { title: "Dense Hair Experts", href: "/dense", category: "Hair loss", kind: "Guide", keywords: "dense hair non prescription topical" },
 
@@ -77,6 +80,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "PandaDoc review", href: "/pandadoc", category: "Software", kind: "Guide", keywords: "pandadoc proposals contracts quotes e-signature esign documents" },
   { title: "Blinq review", href: "/blinq", category: "Software", kind: "Guide", keywords: "blinq digital business card nfc qr virtual card contact sharing" },
   { title: "Apollo Energy Group: home batteries & $500 off", href: "/apollo-energy", category: "Home & energy", kind: "Guide", keywords: "apollo energy group home battery australia solar battery rebate cheaper home batteries installer $500 discount" },
+  { title: "Home battery cost in Australia 2026", href: "/home-battery-cost-australia", category: "Home & energy", kind: "Guide", keywords: "home battery cost australia price payback period tesla powerwall installed cost solar battery" },
   { title: "Apollo Energy Group review: is it legit?", href: "/apollo-energy-review", category: "Home & energy", kind: "Guide", keywords: "apollo energy group review is apollo energy legit apollo battery installer reviews australia $500 discount" },
   { title: "Home battery rebate Australia 2026", href: "/home-battery-rebate-australia", category: "Home & energy", kind: "Guide", keywords: "home battery rebate australia cheaper home batteries program battery rebate 2026 solar battery rebate stc taper 14kwh how much" },
   { title: "AliDrop review", href: "/alidrop", category: "E-commerce", kind: "Guide", keywords: "alidrop dropshipping aliexpress temu alibaba shopify fulfilment sourcing" },

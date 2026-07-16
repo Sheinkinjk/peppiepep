@@ -464,9 +464,37 @@ export const seoConfig = {
   homeBatteryRebate: {
     title: "Home Battery Rebate Australia 2026: What You Actually Get",
     description:
-      "The federal Cheaper Home Batteries rebate explained: about $252 per usable kWh from 1 May 2026, the taper above 14kWh, state incentives like NSW $1,500 VPP, and worked examples. Plus $500 off a quote via Refer Labs.",
+      "The federal Cheaper Home Batteries rebate explained: what it pays per usable kWh from 1 May 2026, the taper above 14kWh, state VPP incentives, and worked examples. Plus $500 off a quote via Refer Labs.",
     url: `${SITE_URL}/home-battery-rebate-australia`,
     keywords: ["home battery rebate australia", "cheaper home batteries program", "battery rebate 2026", "solar battery rebate australia", "federal battery rebate", "home battery rebate how much", "battery rebate taper 14kwh", "stc battery rebate"],
+  },
+  homeBatteryCost: {
+    title: "Home Battery Cost Australia 2026: Real Prices & Payback | Refer Labs",
+    description:
+      "What a home battery really costs in Australia in 2026: installed price ranges by size, what the federal rebate takes off, payback periods, and how to read a quote. Plus $500 off a quote via Refer Labs.",
+    url: `${SITE_URL}/home-battery-cost-australia`,
+    keywords: ["home battery cost australia", "home battery price australia 2026", "how much does a home battery cost", "solar battery cost australia", "battery payback period australia", "tesla powerwall 3 price australia", "home battery installed cost"],
+  },
+  finasterideAustralia: {
+    title: "Finasteride Australia 2026: What It Is & How Access Works | Refer Labs",
+    description:
+      "An independent, factual guide to finasteride for hair loss in Australia. What it is, why it is prescription-only, how a GP or telehealth assessment works, side effects, and topical finasteride. Information only, not medical advice.",
+    url: `${SITE_URL}/finasteride-australia`,
+    keywords: ["finasteride australia", "finasteride hair loss australia", "finasteride prescription australia", "finasteride 1mg australia", "finasteride online australia", "dht blocker hair loss", "finasteride side effects"],
+  },
+  minoxidilAustralia: {
+    title: "Minoxidil Australia 2026: Topical vs Oral & How to Get It | Refer Labs",
+    description:
+      "An independent, factual guide to minoxidil for hair loss in Australia. Topical (over the counter) vs oral (prescription), the shedding phase, side effects, and how it combines with finasteride. Information only, not medical advice.",
+    url: `${SITE_URL}/minoxidil-australia`,
+    keywords: ["minoxidil australia", "minoxidil hair loss australia", "topical minoxidil australia", "oral minoxidil australia", "regaine australia", "minoxidil over the counter australia", "minoxidil shedding phase"],
+  },
+  hairLossTreatmentCost: {
+    title: "Hair Loss Treatment Cost Australia 2026: Real Prices | Refer Labs",
+    description:
+      "What hair-loss treatment costs in Australia in 2026: over-the-counter minoxidil versus telehealth subscription plans, using Mosh's published prices, what is subsidised, and how to compare like with like. Not medical advice.",
+    url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
+    keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "finasteride cost australia", "minoxidil cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
   apolloEnergy: {
     title: "Apollo Energy Group: Home Battery Systems Australia & $500 Off (2026)",

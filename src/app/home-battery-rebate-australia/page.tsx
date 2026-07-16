@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Are there state rebates as well as the federal one?",
-    a: "Often, yes, and they can stack. The federal discount applies nationally, and some states add their own incentive on top. NSW, for example, offers $1,500 for joining a Virtual Power Plant (VPP). What you can claim depends on your state, your battery, your retailer and the VPP terms, so confirm what applies at your address when you get a quote.",
+    a: "Often, yes, and they can stack. The federal discount applies nationally, and some states add their own incentive on top. NSW, for example, offers an incentive worth roughly $1,000 to $1,100 for connecting a battery to an approved Virtual Power Plant (VPP), paid through energy certificates so the figure moves. State schemes change often and some, such as Victoria's battery rebate, have closed, so confirm what currently applies at your address when you get a quote.",
   },
   {
     q: "Do I need solar panels to claim the battery rebate?",
@@ -241,9 +241,11 @@ export default function HomeBatteryRebatePage() {
             <h2 className="text-2xl font-bold text-[#10251b]">State incentives on top</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
               <p>
-                The federal discount is national, and some states add their own on top. NSW, for example, offers $1,500
-                for joining a Virtual Power Plant, where your battery helps support the grid at peak times in exchange
-                for a payment.
+                The federal discount is national, and some states add their own on top. NSW, for example, offers an
+                incentive worth roughly $1,000 to $1,100 for connecting your battery to an approved Virtual Power Plant,
+                where your battery helps support the grid at peak times in exchange for a payment. It is paid through
+                energy certificates, so the exact figure moves, and it depends on joining a VPP. State schemes change
+                often and some have closed, so confirm what applies at your address when you get a quote.
               </p>
               <p>
                 What you can actually claim depends on your state, your battery, your retailer and the VPP terms, so

@@ -372,7 +372,7 @@ export default function ApolloLanding() {
                     Apollo Energy Group review: is it legit?
                   </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
-                    What is verifiable, what is their own claim, and four things to check before you sign.
+                    Their accreditation, warranty and credentials, and the things worth checking before you sign.
                   </p>
                 </Link>
                 <Link
@@ -384,6 +384,17 @@ export default function ApolloLanding() {
                   </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
                     What the federal rebate actually pays, the 14kWh taper, and worked examples by size.
+                  </p>
+                </Link>
+                <Link
+                  href="/home-battery-cost-australia"
+                  className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                >
+                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">
+                    How much a home battery costs
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+                    Installed price ranges by size, what the rebate takes off, and realistic payback periods.
                   </p>
                 </Link>
               </div>
