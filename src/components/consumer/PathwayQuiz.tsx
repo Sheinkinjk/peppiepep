@@ -4,11 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
 /**
  * "Which weight-loss pathway fits you?", a two-question decision tool that ends
  * in a tailored recommendation. Anyone leaning clinical lands on Moshy (the money
  * link, tracked). Engagement asset + funnel, not medical advice.
+ *
+ * Both answers shape the result: `priority` picks the pathway, and `gender` tailors
+ * the "also worth knowing" line in every branch (so Q1 is never a wasted question).
+ * Branches that route to a non-earning option (a GP pathway) still capture the lead
+ * via the newsletter, so an honest recommendation is not a dead end.
  */
 
 type Gender = "man" | "woman";
@@ -19,6 +25,8 @@ type Result = {
   body: string;
   cta?: { label: string; href: string; sponsored: boolean; loc: string };
   secondary?: { label: string; href: string };
+  also?: string;        // gender-tailored "also worth knowing" line
+  capture?: boolean;    // show newsletter capture (non-earning branches)
 };
 
 function resolve(gender: Gender, priority: Priority): Result {
@@ -27,6 +35,11 @@ function resolve(gender: Gender, priority: Priority): Result {
       title: "Start with your GP",
       body: "You value cost and an in-person assessment over online convenience. A GP can manage the same pathway, knows your history, and Medicare offsets part of the cost. It is slower to begin, and for you that trade is worth it.",
       secondary: { label: "Read: telehealth vs your GP", href: "/moshy-vs-gp" },
+      also:
+        gender === "woman"
+          ? "If you later want it done online, Juniper is built for women and Moshy is open to anyone eligible."
+          : "If you later want it done online, Moshy runs the clinical pathway and is open to anyone eligible.",
+      capture: true,
     };
   }
   if (priority === "coaching") {
@@ -36,12 +49,15 @@ function resolve(gender: Gender, priority: Priority): Result {
         body: "You want accountability and structure alongside medication, and Juniper is built for women with exactly that coaching-and-community layer on top of the clinical pathway.",
         cta: { label: "Visit Juniper", href: JUNIPER_URL, sponsored: false, loc: "quiz-juniper" },
         secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
+        also: "Prefer a leaner, medication-first pathway without the coaching layer? Moshy is open to anyone eligible.",
       };
     }
     return {
       title: "Start with your GP for a habits-first plan",
       body: "You want coaching and habits at the centre rather than medication first. A GP can build a plan around nutrition and lifestyle, knows your history, and can refer you on to a dietitian or an exercise program. If you later want the clinical route, Moshy runs that pathway online.",
       secondary: { label: "See all weight-loss options", href: "/weight-loss" },
+      also: "If a clinical, online pathway appeals later, Moshy is open to anyone eligible; Pilot is a men's-health option worth knowing too.",
+      capture: true,
     };
   }
   // clinical, Moshy is the clinical pathway, open to anyone eligible
@@ -50,6 +66,10 @@ function resolve(gender: Gender, priority: Priority): Result {
     body: "You want a fast, clinically-led pathway done online, and Moshy runs exactly that, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing.",
     cta: { label: "Check your eligibility on Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
+    also:
+      gender === "woman"
+        ? "Want coaching and community alongside the clinical side? Juniper is built for women."
+        : "Want a broader men's-health service alongside it? Pilot is worth a look. We compare them in Moshy vs Pilot.",
   };
 }
 
@@ -82,7 +102,7 @@ export default function PathwayQuiz() {
   return (
     <div className="nw-card rounded-2xl p-7 sm:p-9">
       <div className="flex items-center justify-between gap-4">
-        <p className="nw-kicker">Find your fit in 30 seconds</p>
+        <p className="nw-kicker">{step === 2 ? "Your match" : `Pathway matcher · step ${step + 1} of 2`}</p>
         {step > 0 && (
           <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#9aa39c] hover:text-[#0a7c42]">
             <RotateCcw className="h-3 w-3" /> Restart
@@ -138,6 +158,11 @@ export default function PathwayQuiz() {
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Your result</p>
           <h3 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{result.title}</h3>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{result.body}</p>
+          {result.also && (
+            <p className="mt-4 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-[14px] leading-relaxed text-[#3d4b44]">
+              <span className="font-semibold text-[#10251b]">Also worth knowing: </span>{result.also}
+            </p>
+          )}
           <div className="mt-6 flex flex-wrap items-center gap-4">
             {result.cta && (
               <a
@@ -158,6 +183,19 @@ export default function PathwayQuiz() {
               </Link>
             )}
           </div>
+
+          {/* Non-earning branches (a GP pathway) still capture the lead, so an honest
+              recommendation keeps the relationship instead of ending cold. */}
+          {result.capture && (
+            <div className="mt-6">
+              <NewsletterSignup
+                variant="alert"
+                source="weight-loss-quiz"
+                heading="Want the latest weight-loss options and offers emailed to you?"
+              />
+            </div>
+          )}
+
           <p className="mt-5 text-xs leading-relaxed text-[#9aa39c]">
             This is general information to help you narrow the field, not medical advice. Suitability for any program is
             assessed individually by registered practitioners.
