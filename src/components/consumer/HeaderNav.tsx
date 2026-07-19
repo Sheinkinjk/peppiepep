@@ -97,23 +97,30 @@ export default function HeaderNav() {
               {g.label}
               <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
             </button>
-            {isOpen && (
-              <div className="absolute left-0 top-full w-72 pt-2">
-                <div className="overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white p-1.5 shadow-[0_20px_50px_-20px_rgba(16,37,27,0.35)]">
-                  {g.items.map((it) => (
-                    <Link
-                      key={it.href}
-                      href={it.href}
-                      onClick={() => setOpen(null)}
-                      className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-[#f2f4ee]"
-                    >
-                      <span className="block text-[14px] font-semibold text-[#10251b]">{it.label}</span>
-                      {it.note && <span className="mt-0.5 block text-[12.5px] text-[#6e7b74]">{it.note}</span>}
-                    </Link>
-                  ))}
-                </div>
+            {/* Rendered in the DOM always (not behind `isOpen &&`) so the category
+                links are in the server HTML and Google can crawl them. Visibility is
+                toggled with CSS, and pointer-events-none stops the hidden menu
+                capturing clicks. */}
+            <div
+              className={`absolute left-0 top-full w-72 pt-2 transition-opacity duration-150 ${
+                isOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
+              }`}
+            >
+              <div className="overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white p-1.5 shadow-[0_20px_50px_-20px_rgba(16,37,27,0.35)]">
+                {g.items.map((it) => (
+                  <Link
+                    key={it.href}
+                    href={it.href}
+                    tabIndex={isOpen ? 0 : -1}
+                    onClick={() => setOpen(null)}
+                    className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-[#f2f4ee]"
+                  >
+                    <span className="block text-[14px] font-semibold text-[#10251b]">{it.label}</span>
+                    {it.note && <span className="mt-0.5 block text-[12.5px] text-[#6e7b74]">{it.note}</span>}
+                  </Link>
+                ))}
               </div>
-            )}
+            </div>
           </div>
         );
       })}

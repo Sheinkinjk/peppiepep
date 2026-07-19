@@ -12,6 +12,9 @@ import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
 import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@/components/Analytics";
 import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
 import { ChromeGate } from "@/components/ChromeGate";
+// Cookieless, consent-independent pageview counting, so real traffic is visible
+// even for visitors who decline analytics cookies (GA4 only counts consenters).
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,6 +83,7 @@ export default function RootLayout({
         <GoogleTagManager />
         <MetaPixel />
         <LinkedInInsight />
+        <Analytics />
         <AffiliateClickTracker />
         <div className="relative z-10 flex min-h-screen flex-col">
           <ChromeGate>
