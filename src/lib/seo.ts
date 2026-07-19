@@ -468,6 +468,13 @@ export const seoConfig = {
     url: `${SITE_URL}/home-battery-rebate-australia`,
     keywords: ["home battery rebate australia", "cheaper home batteries program", "battery rebate 2026", "solar battery rebate australia", "federal battery rebate", "home battery rebate how much", "battery rebate taper 14kwh", "stc battery rebate"],
   },
+  homeBatteryPaybackCalculator: {
+    title: "Home Battery Payback Calculator Australia 2026 | Refer Labs",
+    description:
+      "Estimate how long a home battery takes to pay for itself in Australia. Free calculator using your usage, tariff and the federal rebate to work out net cost, annual saving and payback period. Indicative only.",
+    url: `${SITE_URL}/home-battery-payback-calculator`,
+    keywords: ["home battery payback calculator", "battery payback period australia", "home battery savings calculator", "is a home battery worth it australia", "battery roi calculator australia", "solar battery payback calculator"],
+  },
   homeBatteryCost: {
     title: "Home Battery Cost Australia 2026: Real Prices & Payback | Refer Labs",
     description:

@@ -46,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/apollo-energy-review`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-rebate-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-cost-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/home-battery-payback-calculator`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.88 },
 
     // ── Health affiliate pages (redesigned this release) ───────────────
     { url: `${BASE}/moshy`,             lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.92 },

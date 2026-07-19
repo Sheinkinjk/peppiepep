@@ -104,6 +104,7 @@ const STANDALONE_ROUTES = [
   "/apollo-energy-review",
   "/home-battery-rebate-australia",
   "/home-battery-cost-australia",
+  "/home-battery-payback-calculator",
   // Hair-loss cluster info pages (own light ConsumerShell)
   "/finasteride-australia",
   "/minoxidil-australia",
