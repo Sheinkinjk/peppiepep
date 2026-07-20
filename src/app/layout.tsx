@@ -42,7 +42,16 @@ const spaceGrotesk = Space_Grotesk({
   preload: false,
 });
 
-export const metadata: Metadata = generateSEOMetadata(seoConfig.home);
+export const metadata: Metadata = {
+  ...generateSEOMetadata(seoConfig.home),
+  // Site-ownership verification for the Commission Factory affiliate network.
+  // Set on the root layout so it renders in <head> site-wide (child pages inherit
+  // `other` metadata they do not override). Renders as
+  // <meta name="commission-factory-verification" content="...">.
+  other: {
+    "commission-factory-verification": "eab684808435433bba93d1b03d530b6e",
+  },
+};
 
 export const viewport: Viewport = {
   width: "device-width",
