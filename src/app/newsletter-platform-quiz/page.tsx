@@ -114,8 +114,7 @@ export default function NewsletterPlatformQuizPage() {
             <p className="max-w-2xl text-xs leading-relaxed text-[#9aa39c]">
               This page recommends a platform based on your answer and contains a disclosed affiliate link where we're
               affiliated (beehiiv). We may earn a commission if you sign up through it, at no extra cost to you, and it
-              never changes a conclusion. We never sell rankings. Our standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              never changes a conclusion. We never sell rankings.
             </p>
           </section>
         </div>

@@ -119,8 +119,7 @@ export default function HairLossQuizPage() {
               This page matches a route based on your answers and, where relevant, contains a disclosed affiliate link.
               We may earn a commission if you sign up through it, at no extra cost to you, and it never changes a
               conclusion. We never sell rankings. It is general health information, not medical advice, and does not
-              establish that any treatment is suitable for you. Our standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              establish that any treatment is suitable for you.
             </p>
           </section>
         </div>

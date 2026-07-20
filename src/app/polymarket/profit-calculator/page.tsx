@@ -146,8 +146,7 @@ export default function ProfitCalculatorPage() {
             <p className="text-[#9aa39c] text-xs leading-relaxed">
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Polymarket. We
               may earn a commission if you sign up through it, at no extra cost to you. The calculator is arithmetic
-              from your inputs, not a prediction or financial advice. Our standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              from your inputs, not a prediction or financial advice.
             </p>
           </section>
         </div>

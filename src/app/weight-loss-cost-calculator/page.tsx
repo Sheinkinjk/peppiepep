@@ -174,8 +174,7 @@ export default function WeightLossCostCalculatorPage() {
               conclusion. All content is general information only and does not constitute medical or financial
               advice. Prescription medicines in Australia are available only after an individual assessment by a
               registered Australian practitioner, and suitability is practitioner-decided and never guaranteed.
-              Consult a qualified health professional before making health decisions. Our standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              Consult a qualified health professional before making health decisions.
             </p>
           </section>
         </div>

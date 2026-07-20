@@ -301,8 +301,7 @@ export default function WeightLossInjectionsAustraliaPage() {
                 Moshy, which means we may earn a commission if you sign up through our link. Commissions never change what we write.
                 All content is for general information only and does not constitute medical advice. Weight-loss injections are
                 prescription-only medicines in Australia, available only after individual assessment by a registered practitioner who
-                decides suitability. Consult a qualified health professional before starting any treatment. See{" "}
-                <Link href="/how-we-research" className="nw-link">how we research</Link>.
+                decides suitability. Consult a qualified health professional before starting any treatment.
               </p>
             </section>
           </article>

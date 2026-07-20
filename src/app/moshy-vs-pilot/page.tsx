@@ -337,8 +337,6 @@ export default function MoshyVsPilotPage() {
               Prescription medicines in Australia, including GLP-1 medications, are available only after an individual
               assessment by a registered Australian practitioner, and suitability is practitioner-decided and never
               guaranteed. Consult a qualified health professional before starting any weight management program. Our
-              full standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
             </p>
           </section>
 

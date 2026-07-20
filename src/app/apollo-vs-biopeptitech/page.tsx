@@ -359,8 +359,7 @@ export default function ApolloVsBioPeptiTechPage() {
               products referenced are intended strictly for laboratory and research purposes only, are not approved for
               human or veterinary use, and are not for human consumption. This page is information only, makes no health,
               therapeutic, or dosage claims, and does not constitute medical advice. Comparisons are based on publicly
-              available information at the time of publication and may change. Our full standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              available information at the time of publication and may change.
             </p>
           </section>
 

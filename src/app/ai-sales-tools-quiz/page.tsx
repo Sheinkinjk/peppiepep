@@ -114,8 +114,7 @@ export default function AiSalesToolsQuizPage() {
             <p className="max-w-2xl text-xs leading-relaxed text-[#9aa39c]">
               This page recommends a tool based on your answer and contains disclosed affiliate links. We may earn a
               commission if you sign up through them, at no extra cost to you, and it never changes a conclusion. We
-              never sell rankings. Our standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              never sell rankings.
             </p>
           </section>
         </div>

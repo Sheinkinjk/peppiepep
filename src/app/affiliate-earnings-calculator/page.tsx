@@ -145,8 +145,7 @@ export default function AffiliateEarningsCalculatorPage() {
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
               This calculator produces illustrative estimates from stated assumptions. It is not a prediction
               or promise of income, results vary widely and can be zero, and nothing on this page is financial
-              advice. Our standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              advice.
             </p>
           </section>
         </div>

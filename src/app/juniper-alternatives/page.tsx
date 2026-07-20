@@ -284,8 +284,7 @@ export default function JuniperAlternativesPage() {
               rankings. All content is for informational purposes only and does not constitute medical advice. Prescription
               medicines in Australia are available only after an individual assessment by a registered Australian
               practitioner, and suitability is practitioner-decided and never guaranteed. Consult a qualified health
-              professional before starting or changing any treatment. Our full standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              professional before starting or changing any treatment.
             </p>
           </section>
 

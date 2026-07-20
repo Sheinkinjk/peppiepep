@@ -296,8 +296,7 @@ export default function Glp1WeightLossAustraliaPage() {
                 Moshy, which means we may earn a commission if you sign up through our link. Commissions never change what we write.
                 All content is for general information only and does not constitute medical advice. GLP-1 medications are
                 prescription-only in Australia, available only after individual assessment by a registered practitioner who decides
-                suitability. Consult a qualified health professional before starting any treatment. See{" "}
-                <Link href="/how-we-research" className="nw-link">how we research</Link>.
+                suitability. Consult a qualified health professional before starting any treatment.
               </p>
             </section>
           </article>

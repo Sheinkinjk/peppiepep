@@ -164,8 +164,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
             ))}
           </div>
           <p className="mt-8 text-sm text-[#3d4b44]">
-            Some links are disclosed affiliate links. See{" "}
-            <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">how we research</Link>.
+            Some links are disclosed affiliate links.
           </p>
         </section>
 

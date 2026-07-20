@@ -201,8 +201,7 @@ export default function GuideLayout({
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to
               Polymarket. We may earn a commission if you sign up through it, at no extra cost to you.
               Referral rewards, fees, and country or US-state availability are set by Polymarket and change
-              frequently, so always confirm the current terms on Polymarket&apos;s official documentation. Our full standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              frequently, so always confirm the current terms on Polymarket&apos;s official documentation.
             </p>
           </section>
         </div>

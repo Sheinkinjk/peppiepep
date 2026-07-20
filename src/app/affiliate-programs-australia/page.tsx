@@ -449,8 +449,7 @@ export default function AffiliateProgramsAustraliaPage() {
           </div>
           <p className="mt-8 text-sm text-[#3d4b44]">
             Refer Labs is independent and this page carries disclosed affiliate links. Program terms change, so verify
-            current details before relying on them. See{" "}
-            <Link href="/how-we-research" className="nw-link">how we research</Link>.
+            current details before relying on them.
           </p>
         </section>
       </main>

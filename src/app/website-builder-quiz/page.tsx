@@ -122,8 +122,7 @@ export default function WebsiteBuilderQuizPage() {
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
               This page recommends a builder based on your answers and contains disclosed affiliate links. We may earn
               a commission if you sign up through them, at no extra cost to you, and it never changes a conclusion. We
-              never sell rankings. Our standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              never sell rankings.
             </p>
           </section>
         </div>

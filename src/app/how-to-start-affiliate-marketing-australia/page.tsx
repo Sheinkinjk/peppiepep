@@ -307,8 +307,6 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
           </div>
           <p className="mt-8 text-sm text-[#3d4b44]">
             Refer Labs is an independent Australian comparison publisher. Some pages carry disclosed affiliate links.
-            How we work:{" "}
-            <Link href="/how-we-research" className="nw-link">how we research</Link>.
           </p>
         </section>
       </main>

@@ -296,8 +296,7 @@ export default function FinasterideAustraliaPage() {
                 never change what we write. All content is for general information only and does not constitute medical
                 advice. Finasteride is a prescription-only medicine in Australia, available only after individual
                 assessment by a registered practitioner who decides suitability. Consult a qualified health professional
-                before starting any treatment. See{" "}
-                <Link href="/how-we-research" className="nw-link">how we research</Link>.
+                before starting any treatment.
               </p>
             </section>
           </article>

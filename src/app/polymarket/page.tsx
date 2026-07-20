@@ -279,8 +279,7 @@ export default function PolymarketHubPage() {
               Polymarket. We may earn a commission if you sign up through it, at no extra cost to you. Referral
               rewards, fees, and country or US-state availability are set by Polymarket, change frequently, and
               are described here as current; always confirm the current terms on
-              Polymarket&apos;s official documentation. Our full standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              Polymarket&apos;s official documentation.
             </p>
           </section>
         </div>

@@ -456,8 +456,7 @@ export default function BestNewsletterPlatformPage() {
             through it we may earn a commission, at no extra cost to you. We do not have an affiliate arrangement with
             Substack or Kit, so we earn nothing if you choose either of them, and that has not changed what we say
             about any of the three. Rankings are never sold. Comparisons are based on publicly available information at
-            time of publication and may change. Our standards are at{" "}
-            <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+            time of publication and may change.
           </p>
         </section>
 

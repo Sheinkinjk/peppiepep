@@ -286,8 +286,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 affiliate link to Mosh, which means we may earn a commission if you sign up through our link. Commissions
                 never change what we write. Prices shown are the providers&apos; own published figures at the time of
                 writing and can change, so verify current pricing before you commit. Content is general information, not
-                medical or financial advice. See{" "}
-                <Link href="/how-we-research" className="nw-link">how we research</Link>.
+                medical or financial advice.
               </p>
             </section>
           </article>

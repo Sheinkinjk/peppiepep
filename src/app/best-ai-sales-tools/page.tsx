@@ -510,8 +510,7 @@ export default function BestAiSalesToolsPage() {
             This page is operated by Refer Labs and contains affiliate referral links to GoHighLevel, AiSDR, Reply.io
             and FullEnrich. If you sign up through one of them we may earn a commission, at no extra cost to you. It
             does not change what we say about them, and rankings are never sold. Comparisons are based on publicly
-            available information at time of publication and may change. Our standards are at{" "}
-            <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+            available information at time of publication and may change.
           </p>
         </section>
 

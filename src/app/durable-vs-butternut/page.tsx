@@ -352,8 +352,7 @@ export default function DurableVsButternutPage() {
               This page is operated by Refer Labs and contains disclosed affiliate referral links to both Durable AI and
               Butternut AI. We may earn a commission if you sign up through them, at no extra cost to you. We compare on
               features, speed, and pricing, and we never sell rankings. Comparisons are based on publicly available
-              information at the time of publication and may change. Our full standards are at{" "}
-              <Link href="/how-we-research" className="underline underline-offset-2">how we research</Link>.
+              information at the time of publication and may change.
             </p>
           </section>
 

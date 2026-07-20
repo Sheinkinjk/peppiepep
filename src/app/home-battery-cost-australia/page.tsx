@@ -291,8 +291,7 @@ export default function HomeBatteryCostAustraliaPage() {
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 affiliate link to Apollo Energy Group, which means we may earn a commission if you request a quote through
                 our link. Commissions never change what we write. Prices are researched industry ranges, indicative only
-                and subject to change, and are not a quote. Content is general information, not financial advice. See{" "}
-                <Link href="/how-we-research" className="nw-link">how we research</Link>.
+                and subject to change, and are not a quote. Content is general information, not financial advice.
               </p>
             </section>
           </article>
