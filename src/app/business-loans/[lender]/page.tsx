@@ -5,7 +5,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
-import { LENDERS, getLender, type Lender } from "@/lib/lenders";
+import { LENDERS, getLender, hasHeadlineRate, type Lender } from "@/lib/lenders";
 import { label } from "@/lib/lending-schema";
 
 const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
@@ -20,20 +20,22 @@ export async function generateMetadata({ params }: { params: Promise<{ lender: s
   if (!l) return {};
   return generateSEOMetadata({
     title: `${l.name} Business Loans: Rates, Loan Sizes & How to Apply (Australia) | Refer Labs`,
-    description: `${l.overview} Advertised from ${l.advertisedRateFrom} (as at ${l.rateAsAt}). Check whether ${l.name} fits your business through one short enquiry with Refer Labs.`,
+    description: `${l.overview} See ${l.name}'s loan sizes, speed and eligibility, and check whether it fits your business through one short enquiry with Refer Labs.`,
     url: `${SITE_URL}/business-loans/${l.slug}`,
     keywords: [`${l.name.toLowerCase()} business loan`, `${l.name.toLowerCase()} review`, "business loans australia"],
   });
 }
 
 function facts(l: Lender): { k: string; v: string }[] {
-  return [
-    { k: "Advertised rate from", v: `${l.advertisedRateFrom} (as at ${l.rateAsAt})` },
+  const rows: { k: string; v: string }[] = [
+    { k: "Rate", v: hasHeadlineRate(l) ? `${l.advertisedRateFrom} (as at ${l.rateAsAt})` : `${l.advertisedRateFrom} — priced per loan` },
     { k: "Loan size", v: `${money(l.minAmount)} – ${money(l.maxAmount)}` },
     { k: "Typical speed", v: l.speed },
     { k: "Products", v: l.products.map((p) => label(p)).join(", ") },
-    { k: "Industry code", v: l.afiaCodeSignatory ? "AFIA Online Small Business Lender Code signatory" : "Not listed" },
   ];
+  if (l.establishmentFee) rows.push({ k: "Establishment fee", v: l.establishmentFee });
+  rows.push({ k: "Industry code", v: l.afiaCodeSignatory ? "AFIA Online Small Business Lender Code signatory" : "Not listed" });
+  return rows;
 }
 
 export default async function LenderPage({ params }: { params: Promise<{ lender: string }> }) {

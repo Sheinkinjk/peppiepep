@@ -135,8 +135,8 @@ export default function BusinessLoansHub() {
         <section className="mt-16">
           <h2 className="text-2xl font-extrabold text-[#10251b]">The lenders on our panel</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
-            These are the lenders we currently introduce enquiries to. Rates shown are each lender&apos;s advertised
-            &ldquo;from&rdquo; figure, not a quote for your business.
+            These are the lenders we currently introduce enquiries to. Where a lender publishes a headline rate we show it;
+            others price each loan individually. Either way the figures are indicative, not a quote for your business.
           </p>
           <div className="mt-6">
             <LenderTable caption="Business lenders on the Refer Labs panel" />

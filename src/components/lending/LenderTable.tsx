@@ -41,7 +41,7 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
         </tbody>
       </table>
       <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#6e7b74]">
-        Advertised &ldquo;from&rdquo; rates as at {panelRatesAsAt()}. These are the lender&apos;s lowest published rates, not a quote; your rate depends on the lender&apos;s own assessment. Verify current terms with the lender.
+        Terms as at {panelRatesAsAt()}, from each lender&apos;s own site. &ldquo;Quote-based&rdquo; means the lender prices each loan individually (Lumi quotes a total repayment; Prospa uses simple interest) rather than publishing a headline rate. Figures are indicative, not a quote; your rate depends on the lender&apos;s assessment. Verify current terms with the lender.
       </p>
     </div>
   );

@@ -8,15 +8,15 @@ const URL = `${SITE_URL}/business-loan-calculator`;
 export const metadata = generateSEOMetadata({
   title: "Business Loan Repayment Calculator (Australia) | Refer Labs",
   description:
-    "Estimate monthly repayments and total interest on a business loan. Free, no sign-up. Nominal amortised estimates only — see how fees and factor rates change the real cost before you borrow.",
+    "Estimate monthly repayments, total cost and the effective rate on a business loan. Add establishment and ongoing fees to see the true comparison-style rate. Free, no sign-up, no credit check.",
   url: URL,
   keywords: ["business loan calculator australia", "business loan repayment calculator", "loan repayment estimate australia"],
 });
 
 const faqs = [
   {
-    q: "Is this the real cost of the loan?",
-    a: "No. It shows nominal amortised repayments based on the rate and term you enter. It does not include establishment fees, ongoing fees, or factor-rate pricing, which many business lenders use. The true cost is usually higher, so always ask the lender for the total cost of the loan in dollars.",
+    q: "Does it include fees?",
+    a: "Yes, if you enter them. Add a lender's establishment fee and any monthly fee and the calculator folds them into an effective rate, calculated the same way as an Australian comparison rate, which sits above the nominal rate. The one thing it can't model is factor-rate pricing (a fixed multiplier on the amount borrowed), because that isn't an interest rate. For those products, ask the lender for the total cost of the loan in dollars.",
   },
   {
     q: "What rate should I put in?",
@@ -59,8 +59,9 @@ export default function CalculatorPage() {
 
         <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">Business loan repayment calculator</h1>
         <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">
-          Enter an amount, a nominal rate and a term to estimate monthly repayments and total interest. It runs in your
-          browser, involves no sign-up and no credit check. Treat the result as a starting point, not a quote.
+          Enter an amount, a nominal rate and a term to estimate monthly repayments, total cost and the effective rate. Add
+          a lender&apos;s establishment and ongoing fees to see the true, comparison-style rate. It runs in your browser,
+          with no sign-up and no credit check. Treat the result as a starting point, not a quote.
         </p>
 
         <div className="mt-8">

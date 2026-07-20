@@ -5,7 +5,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
-import { LENDERS, getLender, type Lender } from "@/lib/lenders";
+import { LENDERS, getLender, hasHeadlineRate, type Lender } from "@/lib/lenders";
 import { label } from "@/lib/lending-schema";
 
 const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
@@ -32,14 +32,16 @@ function suitsWho(l: Lender): string[] {
   if (l.maxAmount >= 500000) out.push(`Businesses wanting a larger facility — ${l.name} funds up to ${money(l.maxAmount)}.`);
   if (l.minAmount <= 5000) out.push(`Smaller top-ups: the ${money(l.minAmount)} minimum suits modest borrowing.`);
   if (l.products.includes("line_of_credit")) out.push("Businesses that want revolving access rather than a single lump sum, via the line of credit.");
-  if (/same-day|24/i.test(l.speed)) out.push(`Time-sensitive needs, given a typical turnaround of ${l.speed.toLowerCase()}.`);
+  if (/hour|same/i.test(l.speed)) out.push(`Time-sensitive needs, given a typical turnaround of ${l.speed.toLowerCase()}.`);
   if (out.length === 0) out.push(`Businesses whose borrowing sits inside ${l.name}'s ${money(l.minAmount)}–${money(l.maxAmount)} range.`);
   return out;
 }
 
 function whatToCheck(l: Lender): string[] {
   return [
-    `The ${l.advertisedRateFrom} figure is an advertised "from" rate (as at ${l.rateAsAt}), not a quote. Ask ${l.name} for the rate and fees for your specific situation.`,
+    hasHeadlineRate(l)
+      ? `The ${l.advertisedRateFrom} figure is an advertised "from" rate (as at ${l.rateAsAt}), not a quote. Ask ${l.name} for the rate and fees for your specific situation.`
+      : `${l.name} prices each loan individually rather than publishing a headline "from" rate, so there's no advertised number to anchor to. Ask for your specific rate (or total repayment) and every fee in writing before you commit.`,
     "Unsecured business finance usually costs more than a secured bank loan. Compare the total cost of the loan, not just the headline rate.",
     "Confirm the loan term, repayment frequency, and any establishment or early-repayment fees before you sign.",
     l.afiaCodeSignatory
@@ -122,10 +124,11 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
         <section className="mt-10 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-5">
           <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">The facts</h2>
           <div className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
-            <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Advertised from:</span> <strong className="text-[#10251b]">{l.advertisedRateFrom}</strong></p>
+            <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Rate:</span> <strong className="text-[#10251b]">{l.advertisedRateFrom}</strong></p>
             <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Loan size:</span> <strong className="text-[#10251b]">{money(l.minAmount)}–{money(l.maxAmount)}</strong></p>
             <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Typical speed:</span> <strong className="text-[#10251b]">{l.speed}</strong></p>
             <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Products:</span> <strong className="text-[#10251b]">{l.products.map((p) => label(p)).join(", ")}</strong></p>
+            {l.establishmentFee ? <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Establishment fee:</span> <strong className="text-[#10251b]">{l.establishmentFee}</strong></p> : null}
           </div>
           <p className="mt-3 text-xs text-[#6e7b74]">
             Verify current terms on <a href={l.homepage} target="_blank" rel="nofollow noopener" className="underline hover:text-[#10251b]">{l.name}&apos;s own site</a>.
