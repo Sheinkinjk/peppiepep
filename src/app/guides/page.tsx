@@ -28,6 +28,7 @@ const hubs = [
   { href: "/compare/hr-payroll", label: "HR & Payroll", desc: "Run pay, hiring, training and people admin from one place." },
   { href: "/compare/business-phone", label: "Business Phone", desc: "Cloud calling and virtual numbers for teams." },
   { href: "/compare/payments", label: "Payments & Finance", desc: "Get paid across borders, plus bookkeeping automation." },
+  { href: "/business-loans", label: "Business Loans", desc: "Compare Australian business lenders and check your options in one short enquiry." },
 ];
 
 const sections = [
@@ -40,6 +41,23 @@ const sections = [
       { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper, compared." },
       { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
       { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
+    ],
+  },
+  {
+    label: "Business Finance",
+    description: "Compare business lenders and understand the real cost before you borrow. Refer Labs is a referrer, not a lender.",
+    guides: [
+      { href: "/business-loans", label: "Business Loans Australia", desc: "Compare lenders and check your options through one short enquiry." },
+      { href: "/what-a-business-loan-actually-costs", label: "What a Business Loan Actually Costs", desc: "Nominal rate vs factor rate vs fees, with a worked example." },
+      { href: "/business-loan-calculator", label: "Repayment Calculator", desc: "Estimate monthly repayments and total interest. No sign-up." },
+      { href: "/unsecured-business-loans-australia", label: "Unsecured Business Loans", desc: "No collateral, faster funding, higher cost. When it makes sense." },
+      { href: "/secured-vs-unsecured-business-loans", label: "Secured vs Unsecured", desc: "Cheaper-but-asset-on-the-line vs faster-but-dearer, decided." },
+      { href: "/business-line-of-credit-australia", label: "Business Line of Credit", desc: "A revolving limit for lumpy cash flow. How it differs from a term loan." },
+      { href: "/fast-business-loans-australia", label: "Fast Business Loans", desc: "What makes funding same-day, and how to be ready for it." },
+      { href: "/business-loans-bad-credit-australia", label: "Bad-Credit Business Loans", desc: "What's realistic with a default or judgement. No false promises." },
+      { href: "/business-loan-eligibility-australia", label: "What Lenders Look At", desc: "The four factors that decide a business loan, and how they trade off." },
+      { href: "/how-to-get-a-business-loan-australia", label: "How to Get a Business Loan", desc: "A step-by-step that avoids denting your credit file." },
+      { href: "/equipment-finance-instant-asset-write-off", label: "Equipment Finance & the Write-Off", desc: "Chattel mortgage vs lease, and how the instant asset write-off fits." },
     ],
   },
   {

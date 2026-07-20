@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { CATALOG } from '@/lib/catalog/catalog';
+import { LENDERS } from '@/lib/lenders';
+import { INTENT_PAGES } from '@/lib/lending-intent';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
@@ -31,6 +33,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`,              lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/how-we-research`,    lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
+
+    // ── Business lending (lead-capture vertical; admin/api never listed) ─
+    { url: `${BASE}/business-loans`,                            lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/business-loan-calculator`,                  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/what-a-business-loan-actually-costs`,       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/equipment-finance-instant-asset-write-off`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/how-we-make-money`,                         lastModified: FRESH, changeFrequency: 'monthly', priority: 0.5 },
+    // Lender pages, generated from the config (adding a lender = one config entry)
+    ...LENDERS.flatMap((l) => [
+      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: FRESH, changeFrequency: 'monthly' as const, priority: 0.78 },
+      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: FRESH, changeFrequency: 'monthly' as const, priority: 0.72 },
+    ]),
+    // Intent + explainer pages, generated from the registry
+    ...INTENT_PAGES.map((p) => ({
+      url: `${BASE}/${p.slug}`,
+      lastModified: FRESH,
+      changeFrequency: 'monthly' as const,
+      priority: p.priority,
+    })),
 
 
     // ── Services ───────────────────────────────────────────────────────

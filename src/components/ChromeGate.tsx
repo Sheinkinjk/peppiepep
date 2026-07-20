@@ -108,6 +108,28 @@ const STANDALONE_ROUTES = [
   "/privacy",
   "/terms",
   "/contact",
+  // Business lending (own light ConsumerShell; prefix covers /business-loans/<lender>[/review])
+  "/business-loans",
+  "/business-loan-calculator",
+  "/what-a-business-loan-actually-costs",
+  "/equipment-finance-instant-asset-write-off",
+  "/how-we-make-money",
+  // Business-lending intent + explainer pages (top-level slugs, own ConsumerShell)
+  "/unsecured-business-loans-australia",
+  "/business-loans-bad-credit-australia",
+  "/fast-business-loans-australia",
+  "/small-business-loans-australia",
+  "/business-line-of-credit-australia",
+  "/working-capital-loans-australia",
+  "/low-doc-business-loans-australia",
+  "/startup-business-loans-australia",
+  "/business-loans-sole-traders-australia",
+  "/business-loans-hospitality-australia",
+  "/secured-vs-unsecured-business-loans",
+  "/how-to-get-a-business-loan-australia",
+  "/business-loan-eligibility-australia",
+  // Lead admin (internal; renders its own minimal chrome, not the public shell)
+  "/admin",
 ];
 
 export function ChromeGate({ children }: { children: React.ReactNode }) {
