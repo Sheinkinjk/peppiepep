@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true, // internal ops page, off-identity for a consumer comparison site
   title: "Calendly Integration | Refer Labs",
   description:
     "Capture booking conversions from Calendly by collecting the ambassador discount code and posting confirmed bookings to Refer Labs via Zapier/Make or your backend.",

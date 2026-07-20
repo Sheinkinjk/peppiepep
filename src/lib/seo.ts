@@ -163,7 +163,7 @@ export const seoConfig = {
   weightLossHub: {
     title: "Weight Loss Telehealth Australia 2026: Compare Online Programs & Clinics | Refer Labs",
     description:
-      "Compare online weight loss telehealth in Australia. How medical telehealth clinics, coaching programs and the GP pathway differ, plus independent guides to Moshy, Juniper and more. Information only, not medical advice.",
+      "Compare online weight-loss telehealth in Australia: medical clinics, coaching programs and the GP pathway, plus guides to Moshy and Juniper. Info only.",
     url: `${SITE_URL}/weight-loss`,
     keywords: [
       "weight loss telehealth australia",
@@ -464,21 +464,21 @@ export const seoConfig = {
   homeBatteryRebate: {
     title: "Home Battery Rebate Australia 2026: What You Actually Get",
     description:
-      "The federal Cheaper Home Batteries rebate explained: what it pays per usable kWh from 1 May 2026, the taper above 14kWh, state VPP incentives, and worked examples. Plus $500 off a quote via Refer Labs.",
+      "The federal Cheaper Home Batteries rebate explained: what it pays per usable kWh, the taper above 14kWh, state VPP incentives, and worked examples.",
     url: `${SITE_URL}/home-battery-rebate-australia`,
     keywords: ["home battery rebate australia", "cheaper home batteries program", "battery rebate 2026", "solar battery rebate australia", "federal battery rebate", "home battery rebate how much", "battery rebate taper 14kwh", "stc battery rebate"],
   },
   homeBatteryPaybackCalculator: {
     title: "Home Battery Payback Calculator Australia 2026 | Refer Labs",
     description:
-      "Estimate how long a home battery takes to pay for itself in Australia. Free calculator using your usage, tariff and the federal rebate to work out net cost, annual saving and payback period. Indicative only.",
+      "Free home battery payback calculator for Australia: enter your usage, tariff and the rebate to estimate net cost, annual saving and payback period.",
     url: `${SITE_URL}/home-battery-payback-calculator`,
     keywords: ["home battery payback calculator", "battery payback period australia", "home battery savings calculator", "is a home battery worth it australia", "battery roi calculator australia", "solar battery payback calculator"],
   },
   homeBatteryCost: {
     title: "Home Battery Cost Australia 2026: Real Prices & Payback | Refer Labs",
     description:
-      "What a home battery really costs in Australia in 2026: installed price ranges by size, what the federal rebate takes off, payback periods, and how to read a quote. Plus $500 off a quote via Refer Labs.",
+      "What a home battery really costs in Australia 2026: installed price ranges by size, what the federal rebate takes off, and realistic payback periods.",
     url: `${SITE_URL}/home-battery-cost-australia`,
     keywords: ["home battery cost australia", "home battery price australia 2026", "how much does a home battery cost", "solar battery cost australia", "battery payback period australia", "tesla powerwall 3 price australia", "home battery installed cost"],
   },
@@ -499,14 +499,14 @@ export const seoConfig = {
   hairLossTreatmentCost: {
     title: "Hair Loss Treatment Cost Australia 2026: Real Prices | Refer Labs",
     description:
-      "What hair-loss treatment costs in Australia in 2026: over-the-counter minoxidil versus telehealth subscription plans, using Mosh's published prices, what is subsidised, and how to compare like with like. Not medical advice.",
+      "What hair-loss treatment costs in Australia 2026: over-the-counter minoxidil vs telehealth plans, using Mosh's published prices, and what is subsidised.",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "finasteride cost australia", "minoxidil cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
   apolloEnergy: {
     title: "Apollo Energy Group: Home Battery Systems Australia & $500 Off (2026)",
     description:
-      "Get $500 off your home battery quote through Refer Labs. Apollo Energy Group is an SAA-accredited Australian battery installer (9kWh to 54kWh), with the federal Cheaper Home Batteries rebate applied. How the offer, the rebate and the process actually work.",
+      "$500 off your home battery quote via Refer Labs. Apollo Energy Group: SAA-accredited Australian installer (9-54kWh), federal rebate applied. How it works.",
     url: `${SITE_URL}/apollo-energy`,
     keywords: ["apollo energy group", "apollo energy group review", "home battery australia", "solar battery australia", "home battery rebate australia", "cheaper home batteries program", "battery installer australia", "solar battery installer", "home battery discount", "battery rebate 2026"],
   },
@@ -760,7 +760,7 @@ export const seoConfig = {
   bestWebsiteBuilder: {
     title: "Best Website Builder 2026: AI, Free & Fast Compared",
     description:
-      "Best website builders 2026: Carrd (free), Durable AI (30s build), Butternut, Swipe Pages. Honest reviews, pricing, and free trials compared.",
+      "Best website builders 2026: Carrd (free), Durable AI (30s build), Butternut and Swipe Pages, compared on pricing, features and free trials.",
     url: `${SITE_URL}/best-website-builder`,
     keywords: [
       "best website builder 2026",
@@ -942,7 +942,7 @@ export const seoConfig = {
   moshHair: {
     title: "Mosh Hair Loss Discount Code Australia 2026 | Mosh Promo Code, Cost & Review | Refer Labs",
     description:
-      "Mosh hair loss discount code Australia 2026: get 55% off your first order with code REFERAL55 via our referral link. Covers Mosh cost and pricing, finasteride and minoxidil access, and how Mosh compares to Dense in Australia.",
+      "Mosh hair loss discount code Australia 2026: 55% off your first order with code REFERAL55 via our link. Cost, finasteride and minoxidil access explained.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -999,7 +999,7 @@ export const seoConfig = {
   moshy: {
     title: "Moshy Weight Loss Australia 2026: Referral Link, Cost & How It Works | Refer Labs",
     description:
-      "The current Moshy referral link, no code required. An independent look at how the Moshy weight-loss telehealth service works in Australia: the online eligibility check, what it costs, and how prescription GLP-1 access is handled. Information only, not medical advice.",
+      "Moshy weight-loss telehealth in Australia, explained: the referral link (no code needed), how the online eligibility check works, and what it costs.",
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
@@ -1169,7 +1169,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Which Weight Loss Telehealth Is Right for You? | Refer Labs",
     description:
-      "Moshy vs Juniper compared for 2026. Moshy runs a lean clinical pathway open to anyone eligible, Juniper wraps coaching around medication and markets to women. GLP-1 access, eligibility, cost model, and coaching compared. Find which Australian weight-loss telehealth fits you.",
+      "Moshy vs Juniper 2026: Moshy is a lean clinical pathway open to anyone; Juniper wraps coaching around medication for women. Cost, eligibility, GLP-1.",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1192,7 +1192,7 @@ export const seoConfig = {
   moshyVsPilot: {
     title: "Moshy vs Pilot 2026: Weight Loss Telehealth Compared (Price & Model) | Refer Labs",
     description:
-      "Moshy vs Pilot compared for 2026. Moshy is gender-neutral and open to anyone eligible; Pilot is Eucalyptus's men-focused telehealth in a broader health ecosystem. How the pricing models differ, who each suits, the online process, what's included, and GLP-1 access. Information only, not medical advice.",
+      "Moshy vs Pilot 2026: Moshy is gender-neutral and open to anyone; Pilot is Eucalyptus's men-focused telehealth. Pricing, process and who each suits.",
     url: `${SITE_URL}/moshy-vs-pilot`,
     keywords: [
       "moshy vs pilot",
@@ -1216,7 +1216,7 @@ export const seoConfig = {
   cheapestWeightLossTelehealth: {
     title: "Cheapest Weight Loss Telehealth Australia 2026: Affordable Options Compared | Refer Labs",
     description:
-      "What the cheapest weight loss telehealth in Australia really means. How subscription and pay-as-you-go pricing models differ across Moshy, Juniper, Pilot and pay-per-consult alternatives, with pricing confirmed in the consult rather than fixed figures. Why cheapest is not always the best fit. Information only, not medical advice.",
+      "The cheapest weight-loss telehealth in Australia, compared: how subscription vs pay-per-consult pricing differs across Moshy, Juniper and Pilot. Info only.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
     keywords: [
       "cheapest weight loss telehealth australia",
@@ -1395,7 +1395,7 @@ export const seoConfig = {
   glp1WeightLoss: {
     title: "GLP-1 Weight Loss Australia 2026: What GLP-1 Medications Are & How Access Works | Refer Labs",
     description:
-      "An independent, factual guide to GLP-1 weight-loss medications in Australia. What the GLP-1 class is, why it is prescription-only, how telehealth assessment works, and why eligibility is decided by a practitioner. Information only, not medical advice.",
+      "GLP-1 weight-loss medications in Australia, explained: what the class is, why it is prescription-only, and how telehealth assessment works. Info only.",
     url: `${SITE_URL}/glp-1-weight-loss-australia`,
     keywords: [
       "glp-1 weight loss australia",
@@ -1414,7 +1414,7 @@ export const seoConfig = {
   weightLossTelehealthCost: {
     title: "Weight Loss Telehealth Cost Australia 2026: How Online Program Pricing Works | Refer Labs",
     description:
-      "How much does weight-loss telehealth cost in Australia? A clear breakdown of consult fees, subscription models, and why medication is usually billed separately. What drives the price and how to check the current figure. Information only, not medical advice.",
+      "How much weight-loss telehealth costs in Australia: consult fees, subscription models, and why medication is billed separately. What drives the price.",
     url: `${SITE_URL}/weight-loss-telehealth-cost-australia`,
     keywords: [
       "weight loss telehealth cost australia",
@@ -1575,7 +1575,7 @@ export const seoConfig = {
   moshVsDense: {
     title: "Mosh vs Dense: Hair Loss Treatment Compared (2026) | Refer Labs",
     description:
-      "Mosh vs Dense compared for 2026. Mosh is Australian prescription telehealth that can prescribe finasteride and minoxidil after a practitioner review; Dense is a non-prescription topical hair-care range. They serve different needs, clinical versus topical. Information only, not medical advice.",
+      "Mosh vs Dense 2026: Mosh is prescription telehealth (finasteride, minoxidil after review); Dense is non-prescription topical hair care. Info only.",
     url: `${SITE_URL}/mosh-vs-dense`,
     keywords: [
       "mosh vs dense",
@@ -1596,7 +1596,7 @@ export const seoConfig = {
   moshVsPilot: {
     title: "Mosh vs Pilot 2026: Hair Loss & Men's Health Telehealth Compared",
     description:
-      "Mosh vs Pilot compared for 2026. Both are Australian men's telehealth brands that can prescribe finasteride and minoxidil for hair loss after a practitioner review. How they differ on model, range and process, who each suits, and how to start. Information only, not medical advice.",
+      "Mosh vs Pilot 2026: both Australian men's telehealth brands prescribing finasteride and minoxidil for hair loss. How they differ and who each suits.",
     url: `${SITE_URL}/mosh-vs-pilot`,
     keywords: [
       "mosh vs pilot",
@@ -1617,7 +1617,7 @@ export const seoConfig = {
   juniperAlternatives: {
     title: "Juniper Alternatives 2026: Weight Loss Telehealth Options in Australia",
     description:
-      "The realistic Juniper alternatives in Australia for 2026. Juniper is a coaching-led weight program that markets to women; if you want a gender-neutral option, a leaner clinical pathway, or a different price model, here are the alternatives and who each suits. Information only, not medical advice.",
+      "Juniper alternatives in Australia 2026: want a gender-neutral option, a leaner clinical pathway or a different price model? Here's who fits, and why.",
     url: `${SITE_URL}/juniper-alternatives`,
     keywords: [
       "juniper alternatives",
@@ -2055,7 +2055,7 @@ export const seoConfig = {
   alidrop: {
     title: "AliDrop Discount Code & Referral Link 2026: Dropshipping Tool | Refer Labs",
     description:
-      "Looking for an AliDrop discount code, promo code or referral link? Here's the current offer. The dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. What it does, who it suits, and an honest take on dropshipping.",
+      "AliDrop discount code, promo and referral link, plus the current offer: the dropshipping tool for sourcing from AliExpress and Temu into Shopify.",
     url: `${SITE_URL}/alidrop`,
     keywords: [
       "alidrop discount code",
@@ -2173,7 +2173,7 @@ export const seoConfig = {
   bestHairLossTreatmentAustralia: {
     title: "Best Hair Loss Treatment Australia 2026: Mosh vs Dense vs Telehealth Options | Refer Labs",
     description:
-      "The best hair loss treatments in Australia for 2026, compared: Mosh, Dense Hair Experts and online telehealth. Finasteride and minoxidil vs topical options, real pricing, and how to actually start.",
+      "The best hair-loss treatments in Australia 2026, compared: Mosh, Dense and telehealth. Finasteride and minoxidil vs topicals, real pricing, how to start.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",

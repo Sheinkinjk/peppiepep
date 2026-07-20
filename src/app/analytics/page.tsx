@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true, // internal ops page, off-identity for a consumer comparison site
   title: "Analytics Setup | Refer Labs",
   description:
     "Set up GA4 and client-side analytics with clear testing steps so referral traffic and conversions are visible alongside Refer Labs dashboard attribution.",

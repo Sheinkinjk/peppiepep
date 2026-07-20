@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata({
+  noIndex: true, // internal ops page, off-identity for a consumer comparison site
   title: "Go-live Checklist | Refer Labs",
   description:
     "Production go-live checklist to ensure affiliate links, cookies, webhooks, and dashboard updates work reliably across client sites.",
