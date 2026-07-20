@@ -28,7 +28,6 @@ const hubs = [
   { href: "/compare/hr-payroll", label: "HR & Payroll", desc: "Run pay, hiring, training and people admin from one place." },
   { href: "/compare/business-phone", label: "Business Phone", desc: "Cloud calling and virtual numbers for teams." },
   { href: "/compare/payments", label: "Payments & Finance", desc: "Get paid across borders, plus bookkeeping automation." },
-  { href: "/compare/research-peptides", label: "Research Peptides", desc: "Suppliers compared on purity and catalogue. Research use only." },
 ];
 
 const sections = [
@@ -40,7 +39,6 @@ const sections = [
       { href: "/best-newsletter-platform", label: "Best Newsletter Platform 2026", desc: "beehiiv vs Substack vs ConvertKit." },
       { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper, compared." },
       { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
-      { href: "/best-peptide-supplier", label: "Best Peptide Supplier 2026", desc: "Apollo vs Ascension vs BioPeptiTech. Research use only." },
       { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
     ],
   },
@@ -144,7 +142,6 @@ const sections = [
       { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
       { href: "/trainual", label: "Trainual", desc: "Document processes, onboarding and SOPs in one place." },
       { href: "/dext", label: "Dext", desc: "Bookkeeping automation that syncs to Xero and QuickBooks." },
-      { href: "/melio", label: "Melio", desc: "B2B bill pay for US businesses." },
     ],
   },
   {
@@ -160,27 +157,6 @@ const sections = [
       { href: "/flocksy", label: "Flocksy", desc: "Unlimited graphic design from a dedicated team." },
       { href: "/alidrop", label: "AliDrop", desc: "Dropshipping tool for AliExpress, Alibaba and Temu." },
       { href: "/superfiliate", label: "Superfiliate", desc: "Run affiliate and creator programs for your brand." },
-      { href: "/incomelab", label: "IncomeLab", desc: "AI side-hustle ideas and frameworks." },
-    ],
-  },
-  {
-    label: "Prediction markets",
-    description: "How Polymarket works, how to get on it, and how people actually trade it.",
-    guides: [
-      { href: "/polymarket/markets-explained", label: "Markets explained", desc: "Shares, the order book, fees and how markets resolve." },
-      { href: "/polymarket/how-to-register", label: "How to register", desc: "The US and international paths, wallets and requirements." },
-      { href: "/polymarket/optimising-edge", label: "Finding your edge", desc: "Where a real advantage comes from, and how to measure it." },
-      { href: "/polymarket/trading-bots", label: "Building a trading bot", desc: "Automate through the CLOB API, with the risk controls that matter." },
-      { href: "/polymarket/profitable-trading-bots", label: "Profitable bot strategies", desc: "Sports, politics, market making and arbitrage, and the catch on each." },
-    ],
-  },
-  {
-    label: "Research Peptides",
-    description: "For laboratory research use only. Purity, catalogue and current offers.",
-    guides: [
-      { href: "/apollopeptides", label: "Apollo Peptide Sciences", desc: "Broad catalogue. Current offer via referral link." },
-      { href: "/ascensionpeptides", label: "Ascension Peptides", desc: "High-purity focus. Current offer via referral link." },
-      { href: "/biopeptitech", label: "BioPeptiTech", desc: "Lab-grade compounds. Frequent sale events." },
     ],
   },
   {

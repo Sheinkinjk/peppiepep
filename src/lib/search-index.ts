@@ -57,7 +57,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Creator tools
   { title: "Best newsletter platform 2026", href: "/best-newsletter-platform", category: "Creator tools", kind: "Guide", keywords: "email marketing substack convertkit beehiiv top" },
   { title: "beehiiv review", href: "/beehiiv", category: "Creator tools", kind: "Guide", keywords: "newsletter email platform grow audience" },
-  { title: "IncomeLab", href: "/incomelab", category: "Creator tools", kind: "Guide", keywords: "make money ai income side hustle" },
   { title: "Brevo review", href: "/brevo", category: "Creator tools", kind: "Guide", keywords: "brevo sendinblue email marketing sms automation crm all in one platform" },
 
   // Software / landing pages
@@ -106,23 +105,9 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "How to start affiliate marketing in Australia", href: "/how-to-start-affiliate-marketing-australia", category: "Affiliate marketing", kind: "Guide", keywords: "how to start affiliate marketing australia beginner guide from zero" },
 
   // Prediction markets
-  { title: "Polymarket: sign up & trade", href: "/polymarket", category: "Prediction markets", kind: "Guide", keywords: "polymarket what is how to use sign up prediction markets us international hub start" },
-  { title: "Polymarket markets explained", href: "/polymarket/markets-explained", category: "Prediction markets", kind: "Guide", keywords: "polymarket how prediction markets work order book clob shares probability uma oracle fees" },
-  { title: "How to register on Polymarket", href: "/polymarket/how-to-register", category: "Prediction markets", kind: "Guide", keywords: "polymarket sign up register account wallet usdc kyc us international deposit states" },
-  { title: "Build a Polymarket trading bot", href: "/polymarket/trading-bots", category: "Prediction markets", kind: "Guide", keywords: "polymarket trading bot clob api py-clob-client market making arbitrage automate" },
-  { title: "Profitable Polymarket bot strategies", href: "/polymarket/profitable-trading-bots", category: "Prediction markets", kind: "Guide", keywords: "profitable polymarket bots strategy sports politics market making arbitrage mispriced edge make money" },
-  { title: "Polymarket profit calculator", href: "/polymarket/profit-calculator", category: "Prediction markets", kind: "Guide", keywords: "polymarket profit payout return calculator odds probability edge tool" },
-  { title: "Finding edge on Polymarket", href: "/polymarket/optimising-edge", category: "Prediction markets", kind: "Guide", keywords: "polymarket edge profitable strategy maker rewards arbitrage markout kelly sizing fees" },
 
   // Peptides
-  { title: "Best peptide supplier 2026", href: "/best-peptide-supplier", category: "Research peptides", kind: "Guide", keywords: "research chemicals peptides supplier top" },
   { title: "Research peptide suppliers compared", href: "/compare/research-peptides", category: "Research peptides", kind: "Guide", keywords: "compare peptide suppliers purity catalogue vendors research use hub" },
-  { title: "Apollo Peptide Sciences", href: "/apollopeptides", category: "Research peptides", kind: "Guide", keywords: "apollo peptides research" },
-  { title: "Ascension Peptides", href: "/ascensionpeptides", category: "Research peptides", kind: "Guide", keywords: "ascension peptides research" },
-  { title: "BioPeptiTech", href: "/biopeptitech", category: "Research peptides", kind: "Guide", keywords: "biopeptitech peptides research" },
-  { title: "Apollo vs Ascension", href: "/apollo-vs-ascension", category: "Research peptides", kind: "Guide", keywords: "apollo vs ascension peptides compare" },
-  { title: "Apollo vs BioPeptiTech", href: "/apollo-vs-biopeptitech", category: "Research peptides", kind: "Guide", keywords: "apollo vs biopeptitech peptides compare" },
-  { title: "Ascension vs BioPeptiTech", href: "/ascension-vs-biopeptitech", category: "Research peptides", kind: "Guide", keywords: "ascension vs biopeptitech peptides compare" },
 
   // Weight loss (guides + head-to-heads not yet indexed)
   { title: "Weight-loss telehealth cost, explained", href: "/weight-loss-telehealth-cost-australia", category: "Weight loss", kind: "Guide", keywords: "cost price how much weight loss telehealth australia subscription" },

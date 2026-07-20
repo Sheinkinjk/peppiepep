@@ -27,10 +27,9 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [AI sales & automation tools](https://referlabs.com.au/best-ai-sales-tools): The best AI CRM, marketing automation and AI outbound tools, compared.
 - [For business](https://referlabs.com.au/for-business): Featured partnerships and growth services for businesses wanting to reach Australian buyers.
 - [AI sales tools compared](https://referlabs.com.au/compare/ai-sales-tools): Category hub sorting AI sales tools by role in the stack (data, outreach, AI SDR, all-in-one).
-- [Research peptide suppliers compared](https://referlabs.com.au/compare/research-peptides): Category hub comparing suppliers on purity and catalogue. Research use only.
 - [Website & landing-page builders compared](https://referlabs.com.au/compare/website-builders): Category hub for AI builders, one-page tools and landing-page specialists (Carrd, Durable AI, Butternut, Swipe Pages, Leadpages, Landingi).
 - [Newsletter platforms compared](https://referlabs.com.au/compare/newsletter-platforms): Category hub comparing beehiiv, Substack and Kit by what each is for.
-- [HR & payroll software compared](https://referlabs.com.au/compare/hr-payroll): Employment Hero for Australian/NZ teams vs Gusto for US teams. Availability flagged by region.
+- [HR & payroll software compared](https://referlabs.com.au/compare/hr-payroll): Employment Hero for Australian and NZ teams.
 - [Sales & outreach tools compared](https://referlabs.com.au/compare/sales-outreach): Snov.io for budget prospecting + email vs Reply.io for AI multichannel sequences.
 - [Payments & finance tools compared](https://referlabs.com.au/compare/payments): Payoneer for cross-border payments and multi-currency business accounts.
 - [Business phone systems compared](https://referlabs.com.au/compare/business-phone): CloudTalk for AI call-centre features vs KrispCall for virtual numbers.
@@ -100,7 +99,6 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Pipedrive](https://referlabs.com.au/pipedrive): Visual sales CRM with pipeline, automation and reporting; 14-day free trial, from US$14/seat/month.
 - [ActiveCampaign](https://referlabs.com.au/activecampaign): Email marketing with a powerful automation builder and CRM; 14-day free trial, from US$15/month.
 - [ZoomInfo](https://referlabs.com.au/zoominfo): Enterprise B2B sales intelligence and contact database with buyer-intent signals; quote-only, annual contracts.
-- [Melio](https://referlabs.com.au/melio): B2B bill pay for US businesses, pay vendors by bank, card or check; free plan (requires a US business and bank account).
 - [Logome.ai](https://referlabs.com.au/logome): AI logo and brand-kit generator; free to design and preview, downloads from US$19/month.
 - [Alohi](https://referlabs.com.au/alohi): Sign.Plus e-signatures and Fax.Plus online fax; free plans, from US$6.99-14.99/month.
 - [Hello Bar](https://referlabs.com.au/hellobar): No-code website popups and bars for email capture; free plan, from US$29/month.
@@ -111,15 +109,6 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [MeetGeek](https://referlabs.com.au/meetgeek): AI meeting assistant that records, transcribes and summarises Zoom, Meet and Teams calls; free plan, from US$9.99/user/month.
 - [CometChat](https://referlabs.com.au/cometchat): Developer SDKs and APIs to add in-app chat, voice and video to your app; free Build plan, paid from US$299/month.
 - [Flocksy](https://referlabs.com.au/flocksy): Unlimited graphic design and creative from a dedicated team for a flat monthly fee; 14-day money-back, from US$1,199/month.
-
-## Prediction markets (Polymarket guides)
-- [Polymarket hub: how to sign up & trade](https://referlabs.com.au/polymarket): Main Polymarket page. What it is, how to sign up on the US (regulated, USD) or international (crypto, USDC) platform in three steps, what you can trade, and links to the full guides.
-- [Polymarket markets explained](https://referlabs.com.au/polymarket/markets-explained): Pillar guide. How prediction markets work: shares priced $0-$1 as implied probability, Yes/No and multi-outcome markets, the CLOB order book, maker/taker fees, and UMA optimistic-oracle resolution.
-- [How to register on Polymarket](https://referlabs.com.au/polymarket/how-to-register): Sign-up guide for Polymarket US (CFTC-regulated, USD, KYC) and Polymarket International (crypto-native, USDC on Polygon, wallet connect). Eligibility, funding, custody and referral attribution. Terms change; verify on official docs.
-- [Build a Polymarket trading bot](https://referlabs.com.au/polymarket/trading-bots): Developer guide to automating trades via the CLOB API (py-clob-client / clob-client), order signing, a market-making loop, hosting, monitoring and risk controls.
-- [Profitable Polymarket bot strategies](https://referlabs.com.au/polymarket/profitable-trading-bots): Four strategies where a bot can earn, with the honest catch on each: sports edge (models and speed), politics edge (correlation and news), market making (spread plus liquidity rewards), and mispricing arbitrage (internal, cross-venue and post-news gaps).
-- [Polymarket profit calculator](https://referlabs.com.au/polymarket/profit-calculator): Interactive tool. Enter a stake and share price to see payout if it wins, max loss, return, implied probability, and edge vs your own estimate. Does not estimate fees. Not financial advice.
-- [Finding edge on Polymarket](https://referlabs.com.au/polymarket/optimising-edge): Where a real trading advantage comes from (research, maker rewards, arbitrage), plus fees, markout analysis and bankroll sizing. Honest about most strategies having no durable edge after costs.
 
 ## Website builders & landing pages
 - [Best website builder](https://referlabs.com.au/best-website-builder): Carrd, Durable AI, Butternut AI and Swipe Pages, compared.
@@ -136,15 +125,9 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Which newsletter platform quiz](https://referlabs.com.au/newsletter-platform-quiz): One-question matcher across beehiiv, Substack and Kit.
 - [beehiiv](https://referlabs.com.au/beehiiv): Newsletter platform built for growth.
 - [Brevo](https://referlabs.com.au/brevo): All-in-one email marketing, SMS, automation and CRM platform (formerly Sendinblue). Priced by emails sent, not list size. Free plan; paid from US$9/mo.
-- [IncomeLab](https://referlabs.com.au/incomelab): AI income and side-hustle frameworks.
 
 ## E-commerce
 - [AliDrop](https://referlabs.com.au/alidrop): Dropshipping tool for sourcing from AliExpress, Alibaba and Temu, importing to Shopify and automating fulfilment. US$1 7-day trial, then from US$39/mo. Dropshipping carries costs and risk; not an income guarantee.
-
-## Research peptides (research use only, not for human consumption)
-- [Best peptide supplier](https://referlabs.com.au/best-peptide-supplier): Apollo, Ascension and BioPeptiTech, compared.
-- Individual suppliers: [Apollo Peptide Sciences](https://referlabs.com.au/apollopeptides), [Ascension Peptides](https://referlabs.com.au/ascensionpeptides), [BioPeptiTech](https://referlabs.com.au/biopeptitech).
-- Comparisons: [Apollo vs Ascension](https://referlabs.com.au/apollo-vs-ascension), [Apollo vs BioPeptiTech](https://referlabs.com.au/apollo-vs-biopeptitech), [Ascension vs BioPeptiTech](https://referlabs.com.au/ascension-vs-biopeptitech).
 
 ## For business & affiliate marketing
 - [Best affiliate programs Australia](https://referlabs.com.au/affiliate-programs-australia): The best affiliate programs for Australians, by category.

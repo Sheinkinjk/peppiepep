@@ -1,11 +1,11 @@
 import {
   CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL, BEEHIIV_URL,
   GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, SNOV_URL, NUTSHELL_URL,
-  APOLLO_URL, ASCENSION_URL, BIOPEPTITECH_URL,
-  EMPLOYMENT_HERO_URL, GUSTO_URL, PAYONEER_URL,
+  
+  EMPLOYMENT_HERO_URL, PAYONEER_URL,
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
   LEADPAGES_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
-  PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL, MELIO_URL,
+  PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL,
   LANDINGI_URL, MEETGEEK_URL,
   KEAP_URL, CAPSULE_URL, BEAUTIFULAI_URL,
 } from "@/lib/affiliate-links";
@@ -419,79 +419,6 @@ export const CATALOG: Vertical[] = [
     ],
   },
   {
-    slug: "research-peptides",
-    eyebrow: "Research use only",
-    h1Lead: "Research peptide suppliers:",
-    h1Accent: "purity and catalogue, compared",
-    intro:
-      "For laboratory research use only. This hub compares suppliers on testing documentation, catalogue depth and current offers, so researchers can source the right compound from a reputable vendor.",
-    note: "All compounds referenced are for laboratory research purposes only and are not for human or veterinary use. Nothing here is medical advice.",
-    metaTitle: "Research Peptide Suppliers Compared 2026: Purity & Catalogue | Refer Labs",
-    metaDescription:
-      "Compare research peptide suppliers for 2026: Apollo Peptide Sciences, Ascension Peptides and BioPeptiTech, on third-party testing, catalogue depth and current offers. Research use only.",
-    keywords: [
-      "research peptide suppliers comparison",
-      "best peptide supplier 2026",
-      "compare peptide vendors",
-      "apollo vs ascension peptides",
-      "research peptides australia",
-    ],
-    roundupHref: { href: "/best-peptide-supplier", label: "Read the full supplier comparison" },
-    relatedCategory: "Research peptides",
-    providers: [
-      {
-        name: "Apollo Peptide Sciences",
-        bestFor: "Broadest catalogue",
-        blurb: "The widest research peptide catalogue of the three, with third-party testing documentation. A strong default when you need range. For research use only.",
-        facts: [
-          { label: "Catalogue", value: "Broadest" },
-          { label: "Testing", value: "Third-party" },
-          { label: "Offer", value: "Via referral link" },
-        ],
-        affiliateUrl: APOLLO_URL,
-        reviewHref: "/apollopeptides",
-        ctaLabel: "See Apollo",
-        featured: true,
-      },
-      {
-        name: "Ascension Peptides",
-        bestFor: "Purity focus",
-        blurb: "High-purity, lab-grade compounds frequently referenced in researcher communities for documentation quality. For research use only.",
-        facts: [
-          { label: "Focus", value: "High purity" },
-          { label: "Testing", value: "Documented" },
-          { label: "Offer", value: "Via referral link" },
-        ],
-        affiliateUrl: ASCENSION_URL,
-        reviewHref: "/ascensionpeptides",
-        ctaLabel: "See Ascension",
-      },
-      {
-        name: "BioPeptiTech",
-        bestFor: "Frequent sales",
-        blurb: "Lab-grade compounds with regular promotions, a lower-cost entry point for longevity, metabolic and hormone-signalling research. For research use only.",
-        facts: [
-          { label: "Value", value: "Frequent sales" },
-          { label: "Coverage", value: "Longevity, metabolic" },
-          { label: "Offer", value: "Regular promotions" },
-        ],
-        affiliateUrl: BIOPEPTITECH_URL,
-        reviewHref: "/biopeptitech",
-        ctaLabel: "See BioPeptiTech",
-      },
-    ],
-    faqs: [
-      {
-        q: "What is the best research peptide supplier in 2026?",
-        a: "Apollo Peptide Sciences has the broadest catalogue, Ascension Peptides is cited for purity documentation, and BioPeptiTech runs frequent sales. The right choice depends on the compound and documentation you need. All products are for laboratory research use only.",
-      },
-      {
-        q: "How do I get a research peptide discount?",
-        a: "The most reliable route is an affiliate referral link, which applies any active offer automatically, rather than hunting for a promo code that may have expired. This hub links directly to each supplier. Research use only.",
-      },
-    ],
-  },
-  {
     slug: "hr-payroll",
     eyebrow: "HR & payroll",
     h1Lead: "HR & payroll platforms:",
@@ -523,18 +450,6 @@ export const CATALOG: Vertical[] = [
         reviewHref: "/employmenthero",
         ctaLabel: "See Employment Hero",
         featured: true,
-      },
-      {
-        name: "Gusto",
-        bestFor: "Payroll & benefits for US teams",
-        blurb: "US payroll, benefits and HR platform known for straightforward full-service payroll, automatic tax filing and benefits administration for small businesses. US-based teams only.",
-        facts: [
-          { label: "Role", value: "Payroll + benefits" },
-          { label: "Availability", value: "US only" },
-          { label: "Pricing", value: "From US$49/mo + US$6/person" },
-        ],
-        affiliateUrl: GUSTO_URL,
-        ctaLabel: "See Gusto",
       },
       {
         name: "Trainual",
@@ -680,19 +595,6 @@ export const CATALOG: Vertical[] = [
         affiliateUrl: DEXT_URL,
         reviewHref: "/dext",
         ctaLabel: "See Dext",
-      },
-      {
-        name: "Melio",
-        bestFor: "Paying vendors (US businesses)",
-        blurb: "B2B bill pay for US businesses: pay vendors by bank transfer, card or check and sync to QuickBooks or Xero. Free plan to start; requires a US business and US bank account to send.",
-        facts: [
-          { label: "Role", value: "Bill pay / accounts payable" },
-          { label: "Availability", value: "US-only for senders" },
-          { label: "Pricing", value: "Free plan; paid from US$25/mo" },
-        ],
-        affiliateUrl: MELIO_URL,
-        reviewHref: "/melio",
-        ctaLabel: "See Melio",
       },
     ],
     faqs: [

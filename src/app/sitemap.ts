@@ -70,9 +70,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/minoxidil-australia`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/dense`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/apollopeptides`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/ascensionpeptides`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/biopeptitech`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.68 },
 
     // ── Website builders / AI tools (redesigned this release) ──────────
     { url: `${BASE}/carrd`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
@@ -82,7 +79,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Creator / newsletter tools (redesigned this release) ───────────
     { url: `${BASE}/beehiiv`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/incomelab`,  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.68 },
 
     // ── AI sales & automation tools (new this release) ─────────────────
     { url: `${BASE}/gohighlevel`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
@@ -108,7 +104,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/pipedrive`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/activecampaign`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/zoominfo`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/melio`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/alohi`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/hellobar`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/outgrow`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
@@ -126,18 +121,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blinq`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
 
     // ── Polymarket guides (prediction markets cluster) ─────────────────
-    { url: `${BASE}/polymarket`,                    lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE}/polymarket/markets-explained`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/polymarket/how-to-register`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/polymarket/trading-bots`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/polymarket/profitable-trading-bots`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/polymarket/profit-calculator`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/polymarket/optimising-edge`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
 
     // ── Comparison roundups ────────────────────────────────────────────
     { url: `${BASE}/best-website-builder`,                  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/best-newsletter-platform`,              lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.82 },
-    { url: `${BASE}/best-peptide-supplier`,                 lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/best-weight-loss-telehealth-australia`, lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/best-hair-loss-treatment-australia`,    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-vs-juniper`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
@@ -145,10 +132,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/cheapest-weight-loss-telehealth-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/apollo-vs-ascension`,                   lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/apollo-vs-biopeptitech`,                lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/ascension-vs-biopeptitech`,             lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-dense`,                         lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-pilot`,                         lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/comparison-website`,                    lastModified: RECENT, changeFrequency: 'monthly', priority: 0.7 },

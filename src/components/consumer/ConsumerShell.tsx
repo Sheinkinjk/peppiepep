@@ -12,7 +12,6 @@ import { ReferLabsLogo } from "../ReferLabsLogo";
 const NAV = [
   { href: "/weight-loss", label: "Weight Loss" },
   { href: "/hair-loss", label: "Hair Loss" },
-  { href: "/best-peptide-supplier", label: "Peptides" },
   { href: "/compare/website-builders", label: "Websites" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
   { href: "/business-software", label: "Business Tools" },
@@ -95,7 +94,6 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/best-website-builder" className="transition-colors hover:text-[#0a7c42]">Best Website Builder</Link></li>
                 <li><Link href="/best-newsletter-platform" className="transition-colors hover:text-[#0a7c42]">Best Newsletter Platform</Link></li>
                 <li><Link href="/home-battery-rebate-australia" className="transition-colors hover:text-[#0a7c42]">Home Battery Rebate 2026</Link></li>
-                <li><Link href="/best-peptide-supplier" className="transition-colors hover:text-[#0a7c42]">Best Peptide Supplier</Link></li>
               </ul>
             </div>
             <div>

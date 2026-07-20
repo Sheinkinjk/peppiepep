@@ -32,6 +32,23 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ── Retired verticals (July 2026) ─────────────────────────────────────
+      // Polymarket removed: ISP-blocked and prohibited in Australia under the
+      // Interactive Gambling Act 2001. Peptides removed: grey-market, off-fit for the
+      // consumer health direction. Gusto/Melio: US-only, wrong jurisdiction. Income
+      // Lab: off-brand. 301 to the closest live page so equity consolidates.
+      { source: '/polymarket', destination: '/', permanent: true },
+      { source: '/polymarket/:path*', destination: '/', permanent: true },
+      { source: '/best-peptide-supplier', destination: '/', permanent: true },
+      { source: '/apollopeptides', destination: '/', permanent: true },
+      { source: '/ascensionpeptides', destination: '/', permanent: true },
+      { source: '/biopeptitech', destination: '/', permanent: true },
+      { source: '/apollo-vs-ascension', destination: '/', permanent: true },
+      { source: '/apollo-vs-biopeptitech', destination: '/', permanent: true },
+      { source: '/ascension-vs-biopeptitech', destination: '/', permanent: true },
+      { source: '/compare/research-peptides', destination: '/', permanent: true },
+      { source: '/melio', destination: '/compare/payments', permanent: true },
+      { source: '/incomelab', destination: '/affiliate-programs-australia', permanent: true },
       {
         // Canonicalise www -> non-www (both were serving 200, splitting SEO signals).
         source: '/:path*',
@@ -138,11 +155,6 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        source: '/r/incomelab',
-        destination: 'https://incomelab.me/welcome',
-        permanent: false,
-      },
-      {
         source: '/r/carrd',
         destination: 'https://try.carrd.co/6ph4m1bj',
         permanent: false,
@@ -165,21 +177,6 @@ const nextConfig: NextConfig = {
       {
         source: '/r/swipepages',
         destination: 'https://swipepages.com/?fpr=jarred74',
-        permanent: false,
-      },
-      {
-        source: '/r/apollopeptides',
-        destination: 'https://apollopeptidesciences.com/?rfsn=9019392.2de9e6',
-        permanent: false,
-      },
-      {
-        source: '/r/ascensionpeptides',
-        destination: 'https://ascensionpeptides.com/ref/referlabs/',
-        permanent: false,
-      },
-      {
-        source: '/r/biopeptitech',
-        destination: 'https://biopeptitech.com?sca_ref=10803823.hKusHK7NAR',
         permanent: false,
       },
       // ── Legacy "Growth & Distribution Engine" pages → consolidate under /for-business ──

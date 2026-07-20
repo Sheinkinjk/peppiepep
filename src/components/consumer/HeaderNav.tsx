@@ -15,7 +15,6 @@ const GROUPS: Group[] = [
       { href: "/weight-loss", label: "Weight Loss & Telehealth", note: "Moshy, Juniper and the GP pathway, compared" },
       { href: "/hair-loss", label: "Hair Loss Treatment", note: "Clinical telehealth vs topical products" },
       { href: "/mens-health-telehealth-australia", label: "Men's Health Telehealth", note: "Online men's health clinics" },
-      { href: "/best-peptide-supplier", label: "Research Peptides", note: "Suppliers compared. Research use only" },
     ],
   },
   {
@@ -42,7 +41,7 @@ const GROUPS: Group[] = [
       { href: "/best-ai-sales-tools", label: "Sales & CRM Tools", note: "GoHighLevel, AiSDR, Nutshell and more" },
       { href: "/nutshell", label: "Nutshell", note: "Easy sales CRM with marketing built in" },
       { href: "/compare/sales-outreach", label: "Sales & Outreach", note: "Snov.io and Reply.io, compared" },
-      { href: "/compare/hr-payroll", label: "HR & Payroll", note: "Employment Hero and Gusto" },
+      { href: "/compare/hr-payroll", label: "HR & Payroll", note: "Employment Hero, payroll and HR" },
       { href: "/compare/payments", label: "Payments & Finance", note: "Payments and accounting" },
       { href: "/compare/business-phone", label: "Business Phone", note: "CloudTalk vs KrispCall" },
       { href: "/compare/ai-tools", label: "AI Tools", note: "Lindy, ElevenLabs, Logome and more" },

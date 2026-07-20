@@ -19,15 +19,11 @@ const STANDALONE_ROUTES = [
   "/moshy",
   "/moshhair",
   "/dense",
-  "/apollopeptides",
-  "/ascensionpeptides",
-  "/biopeptitech",
   "/carrd",
   "/durableai",
   "/butternut",
   "/swipepages",
   "/beehiiv",
-  "/incomelab",
   // Moshy funnel pages
   "/moshy-review",
   "/moshy-eligibility",
@@ -42,7 +38,6 @@ const STANDALONE_ROUTES = [
   "/carrd-vs-durable",
   "/best-weight-loss-telehealth-australia",
   "/best-hair-loss-treatment-australia",
-  "/best-peptide-supplier",
   "/best-website-builder",
   "/best-newsletter-platform",
   // AI sales & automation + HR (affiliate review pages)
@@ -71,9 +66,6 @@ const STANDALONE_ROUTES = [
   // Website-builder + peptide head-to-heads
   "/carrd-vs-butternut",
   "/durable-vs-butternut",
-  "/apollo-vs-ascension",
-  "/apollo-vs-biopeptitech",
-  "/ascension-vs-biopeptitech",
   // Affiliate-marketing guides
   "/affiliate-programs-australia",
   "/high-paying-affiliate-programs",
@@ -86,7 +78,6 @@ const STANDALONE_ROUTES = [
   "/hair-loss-quiz",
   "/newsletter-platform-quiz",
   // Polymarket guide cluster (prefix covers all /polymarket/* pages)
-  "/polymarket",
   // Affiliate content hub + editorial standards
   "/guides",
   "/how-we-research",

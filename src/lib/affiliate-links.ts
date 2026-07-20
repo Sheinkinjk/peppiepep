@@ -26,9 +26,6 @@ export const DENSE_URL =
 export const JUNIPER_URL = "https://www.myjuniper.com.au/";
 
 // ── Research peptides (research use only) ────────────────────────────────────
-export const APOLLO_URL = "https://apollopeptidesciences.com/?rfsn=9019392.2de9e6";
-export const ASCENSION_URL = "https://ascensionpeptides.com/ref/referlabs/";
-export const BIOPEPTITECH_URL = "https://biopeptitech.com?sca_ref=10803823.hKusHK7NAR";
 
 // ── Website builders / landing pages ─────────────────────────────────────────
 export const CARRD_URL = "https://try.carrd.co/6ph4m1bj";
@@ -40,7 +37,6 @@ export const SWIPE_PAGES_URL = "https://swipepages.com/?fpr=jarred74";
 // Canonical beehiiv code is via=refer-labs (confirmed). The /beehiiv brand page
 // previously used a different code (via=14daytrial) that was not crediting us.
 export const BEEHIIV_URL = "https://www.beehiiv.com?via=refer-labs";
-export const INCOME_LAB_URL = "https://incomelab.me/welcome";
 
 // ── AI sales & automation tools ──────────────────────────────────────────────
 // AI SDR: AI sales development rep / automated outbound.
@@ -60,12 +56,10 @@ export const FULLENRICH_URL = "https://fullenrich.partnerlinks.io/4o7xslzqzvdw";
 // Employment Hero: Australian HR, payroll and employment platform.
 export const EMPLOYMENT_HERO_URL = "https://try.employmenthero.com/65q9xczaxste";
 // Gusto: US payroll, benefits and HR platform (for US-based teams).
-export const GUSTO_URL = "https://get.gusto.com/6mikl6g7ycs1";
 
 // ── Prediction markets ───────────────────────────────────────────────────────
 // Polymarket: prediction-market referral link. Single source of truth; the
 // UTM helper lives in src/lib/polymarket.ts (polymarketRef).
-export const POLYMARKET_REF_URL = "https://polymarket.com/?r=JKRJ";
 
 // ── Email marketing ──────────────────────────────────────────────────────────
 // Brevo: all-in-one email marketing, SMS, automation and CRM (PartnerStack).
@@ -134,7 +128,6 @@ export const ACTIVECAMPAIGN_URL = "https://try.activecampaign.com/3zahcmecmili";
 
 // ── Payments (PartnerStack) ──────────────────────────────────────────────────
 // Melio: B2B bill pay / accounts payable (US businesses only).
-export const MELIO_URL = "https://affiliates.meliopayments.com/1tbr2oxvyh6l";
 
 // ── AI & document tools (PartnerStack) ───────────────────────────────────────
 // Logome.ai: AI logo and brand-kit generator.
