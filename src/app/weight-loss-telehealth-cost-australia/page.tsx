@@ -309,8 +309,8 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 All content is for general information only and does not constitute medical or financial advice. Prices vary between
                 services and change over time, and any prescription medicine in Australia is supplied only after individual assessment
                 by a registered practitioner who decides suitability. Confirm current pricing directly with the service, and consult a
-                qualified health professional before starting any treatment. See our{" "}
-                <Link href="/how-we-research" className="nw-link">editorial standards</Link>.
+                qualified health professional before starting any treatment. See{" "}
+                <Link href="/how-we-research" className="nw-link">how we research</Link>.
               </p>
             </section>
           </article>

@@ -302,8 +302,8 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                 Moshy, which means we may earn a commission if you sign up through our link. Commissions never change what we write.
                 All content is for general information only and does not constitute medical advice. Any prescription in Australia is
                 issued only after individual assessment by a registered practitioner who decides suitability. Consult a qualified
-                health professional before starting any treatment. See our{" "}
-                <Link href="/how-we-research" className="nw-link">editorial standards</Link>.
+                health professional before starting any treatment. See{" "}
+                <Link href="/how-we-research" className="nw-link">how we research</Link>.
               </p>
             </section>
           </article>

@@ -239,7 +239,7 @@ export default function HighPayingAffiliateProgramsPage() {
           <p className="mt-8 text-sm text-[#3d4b44]">
             Refer Labs is independent and this page carries disclosed affiliate links. Program terms change, so verify
             current details before relying on them. How we work:{" "}
-            <Link href="/how-we-research" className="nw-link">our editorial standards</Link>.
+            <Link href="/how-we-research" className="nw-link">how we research</Link>.
           </p>
         </section>
       </main>

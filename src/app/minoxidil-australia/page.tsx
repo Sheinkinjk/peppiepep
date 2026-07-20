@@ -282,8 +282,8 @@ export default function MinoxidilAustraliaPage() {
                 never change what we write. All content is for general information only and does not constitute medical
                 advice. Topical minoxidil is a pharmacy medicine; oral minoxidil is prescription-only and used off-label
                 for hair loss after a practitioner assessment. Consult a pharmacist or qualified health professional
-                before starting any treatment. See our{" "}
-                <Link href="/how-we-research" className="nw-link">editorial standards</Link>.
+                before starting any treatment. See{" "}
+                <Link href="/how-we-research" className="nw-link">how we research</Link>.
               </p>
             </section>
           </article>

@@ -180,8 +180,8 @@ export default function HomeBatteryPaybackCalculatorPage() {
                 affiliate link to Apollo Energy Group, which means we may earn a commission if you request a quote
                 through our link. Commissions never change what we write or what the calculator computes. All figures are
                 illustrative estimates built from your inputs and stated assumptions, are not a quote, and are subject to
-                change with the market. Content is general information, not financial advice. See our{" "}
-                <Link href="/how-we-research" className="nw-link">editorial standards</Link>.
+                change with the market. Content is general information, not financial advice. See{" "}
+                <Link href="/how-we-research" className="nw-link">how we research</Link>.
               </p>
             </section>
           </article>
