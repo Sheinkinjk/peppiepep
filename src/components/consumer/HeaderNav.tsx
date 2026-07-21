@@ -32,6 +32,7 @@ const GROUPS: Group[] = [
       { href: "/compare/newsletter-platforms", label: "Newsletter Platforms", note: "beehiiv, Substack and Kit, compared" },
       { href: "/brevo", label: "Email Marketing (Brevo)", note: "Email, SMS and automation in one tool" },
       { href: "/compare/lead-generation", label: "Popups & Quizzes", note: "Hello Bar, Outgrow, FlexiQuiz" },
+      { href: "/affiliate-programs-australia", label: "Affiliate Programs Australia", note: "The best programs to join, compared for 2026" },
     ],
   },
   {
@@ -55,16 +56,6 @@ const GROUPS: Group[] = [
       { href: "/what-a-business-loan-actually-costs", label: "What Loans Really Cost", note: "Rate vs factor rate vs fees, explained" },
       { href: "/secured-vs-unsecured-business-loans", label: "Secured vs Unsecured", note: "Which fits, and the trade-offs" },
       { href: "/business-loan-eligibility-australia", label: "What Lenders Look At", note: "The four things that decide it" },
-    ],
-  },
-  {
-    label: "For Business",
-    items: [
-      { href: "/for-business", label: "For Business Overview", note: "How brands grow with Refer Labs" },
-      { href: "/affiliate-programs-australia", label: "Affiliate Programs Australia", note: "The best programs, compared for 2026" },
-      { href: "/superfiliate", label: "Superfiliate", note: "Run affiliate & creator programs for your brand" },
-      { href: "/services", label: "Growth Services", note: "Done-with-you distribution" },
-      { href: "/comparison-website", label: "Get Featured", note: "Partner on a comparison" },
     ],
   },
 ];
