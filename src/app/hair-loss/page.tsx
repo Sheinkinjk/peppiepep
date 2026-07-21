@@ -94,11 +94,6 @@ export default function HairLossHubPage() {
               clinical route from the cosmetic one so you know which you are actually looking at.
             </p>
           </div>
-          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-            <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing here is medical advice or a
-            recommendation of any treatment. Prescription medicines in Australia are available only after individual
-            assessment by a registered practitioner. Some links are disclosed affiliate links.
-          </p>
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
@@ -198,8 +193,11 @@ export default function HairLossHubPage() {
               </details>
             ))}
           </div>
-          <p className="mt-8 text-sm text-[#3d4b44]">
-            Independent research, with any affiliate links disclosed. Read our{" "}
+          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
+            <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing here is medical advice or a
+            recommendation of any treatment. Prescription medicines in Australia are available only after individual
+            assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never
+            change a comparison or a conclusion. Read our{" "}
             <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
               editorial standards
             </Link>
