@@ -83,8 +83,19 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#3d4b44]">{l.overview}</p>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#6e7b74]">
           Refer Labs is an independent referrer, not {l.name} and not a lender. If {l.name} fits what you need, we can
-          introduce your enquiry to them; they assess it and make any offer directly to you. Using us is free.
+          introduce your enquiry to them; they assess it and make any offer directly to you. Refer Labs is free to use.
         </p>
+
+        {/* Quick stats */}
+        <div className="mt-6 flex flex-wrap gap-2.5">
+          {[`${money(l.minAmount)} – ${money(l.maxAmount)}`, l.speed, l.afiaCodeSignatory ? "AFIA Code signatory" : null]
+            .filter(Boolean)
+            .map((chip) => (
+              <span key={chip as string} className="inline-flex items-center rounded-full border border-[#e5e9e7] bg-white px-3.5 py-1.5 text-[13px] font-semibold text-[#3d4b44] shadow-[0_1px_2px_rgba(16,37,27,0.05)]">
+                {chip}
+              </span>
+            ))}
+        </div>
 
         {/* Key facts */}
         <section className="mt-8">

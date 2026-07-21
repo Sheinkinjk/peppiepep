@@ -140,7 +140,7 @@ export default function EquipmentFinanceGuide() {
         </div>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">Questions</h2>
+          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
           <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
             {faqs.map((f) => (
               <div key={f.q} className="py-5">

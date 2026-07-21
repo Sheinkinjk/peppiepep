@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight, ShieldCheck, FileX2, UserRound, Scale, Check } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
@@ -6,6 +7,17 @@ import LenderTable from "@/components/lending/LenderTable";
 import CollectionNotice from "@/components/lending/CollectionNotice";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS } from "@/lib/lenders";
+
+const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
+const panelMin = Math.min(...LENDERS.map((l) => l.minAmount));
+const panelMax = Math.max(...LENDERS.map((l) => l.maxAmount));
+
+const TRUST = [
+  { icon: ShieldCheck, label: "AFIA Code of Practice lenders" },
+  { icon: FileX2, label: "No bank statements or ID uploads" },
+  { icon: UserRound, label: "Every enquiry reviewed by a person" },
+  { icon: Scale, label: "Referrer, not a lender — rankings never sold" },
+];
 
 const URL = `${SITE_URL}/business-loans`;
 
@@ -81,9 +93,9 @@ const webPageSchema = {
 };
 
 const STEPS = [
-  { h: "You tell us what you need", p: "One short form: how much, what for, and a few facts about the business. About a minute, no documents." },
-  { h: "A person reviews it", p: "Not a bot. We look at your enquiry against what each panel lender actually funds, and get in touch within one business day." },
-  { h: "We introduce you to lenders that fit", p: "With your consent, we pass your enquiry to the relevant lenders. They assess it and make any offer directly to you." },
+  { h: "Tell us about your business", p: "A short form covering how much you need, what it's for, and a few facts about the business. It takes about a minute, and there are no documents to upload." },
+  { h: "We review and match it", p: "A person, not a bot, checks your enquiry against what each lender on our panel actually funds, then gets in touch within one business day." },
+  { h: "You deal with the lender", p: "With your consent, we introduce your enquiry to the lenders that fit. They assess it and make any offer to you directly. You're never obligated to proceed." },
 ];
 
 export default function BusinessLoansHub() {
@@ -95,36 +107,98 @@ export default function BusinessLoansHub() {
 
       <main className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
         {/* Hero */}
-        <div className="max-w-2xl">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">Business finance · Australia</p>
-          <h1 className="mt-2 text-4xl font-extrabold leading-[1.1] text-[#10251b] sm:text-5xl">
-            Compare business lenders. Tell us once.
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">
-            One short enquiry, no documents to upload. A person reviews it and introduces you to the Australian lenders that
-            actually fit what you need. Refer Labs is a referrer, not a lender, and using us is free.
-          </p>
-        </div>
-
-        {/* Form + rail */}
-        <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
-          <div id="enquire" className="scroll-mt-24">
-            <LeadForm sourcePage="/business-loans" />
+        <section className="grid items-start gap-10 pt-4 sm:pt-8 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#e5e9e7] bg-white px-3.5 py-1.5 text-[12px] font-semibold text-[#3d4b44] shadow-[0_1px_2px_rgba(16,37,27,0.05)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0a7c42]" aria-hidden="true" />
+              Independent Australian loan comparison
+            </div>
+            <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
+              Compare business loans from Australian lenders
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
+              Answer a few questions about your business and we&apos;ll match your enquiry to the lenders most likely to
+              fund it. A person reviews every enquiry, it&apos;s free to use, and there&apos;s nothing to upload. Refer
+              Labs is a referrer, not a lender.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#enquire" className="nw-btn group">
+                Compare &amp; enquire <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+              </a>
+              <a href="#how" className="nw-btn-ghost">See how it works</a>
+            </div>
+            <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2.5 text-[13px] font-medium text-[#3d4b44]">
+              {["Free to use", "No document uploads", "Enquiring won't affect your credit score"].map((t) => (
+                <li key={t} className="inline-flex items-center gap-1.5">
+                  <Check className="h-4 w-4 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
-          <aside className="space-y-5">
-            <CollectionNotice />
-            <CommissionDisclosure />
+
+          {/* At a glance */}
+          <aside className="lg:pt-1">
+            <div className="nw-card rounded-2xl p-6">
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">The panel at a glance</span>
+              <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
+                {[
+                  ["Lenders", LENDERS.map((l) => l.name).join(", ")],
+                  ["Loan sizes", `${money(panelMin)} – ${money(panelMax)}`],
+                  ["Funding", "As fast as same business day"],
+                  ["Cost to you", "Free"],
+                  ["Standards", "AFIA Code signatories"],
+                ].map(([k, v]) => (
+                  <div key={k} className="flex gap-3 py-2.5">
+                    <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
+                    <dd className="font-medium text-[#2b362f]">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+              <a href="#enquire" className="nw-btn mt-5 w-full justify-center">Check your options</a>
+              <p className="mt-3 text-center text-[11px] text-[#9aa39c]">About a minute · no documents to upload</p>
+            </div>
           </aside>
-        </div>
+        </section>
+
+        {/* Trust strip */}
+        <section className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] sm:grid-cols-2 lg:grid-cols-4">
+          {TRUST.map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
+              <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} aria-hidden="true" />
+              <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
+            </div>
+          ))}
+        </section>
+
+        {/* Enquiry form */}
+        <section className="mt-16">
+          <div className="max-w-xl">
+            <h2 className="text-2xl font-extrabold text-[#10251b]">Start your enquiry</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+              Tell us what your business needs. We&apos;ll show you an indicative match and a person will be in touch within
+              one business day. There&apos;s no obligation to proceed with any lender.
+            </p>
+          </div>
+          <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
+            <div id="enquire" className="scroll-mt-24">
+              <LeadForm sourcePage="/business-loans" />
+            </div>
+            <aside className="space-y-5">
+              <CollectionNotice />
+              <CommissionDisclosure />
+            </aside>
+          </div>
+        </section>
 
         {/* How it works */}
-        <section className="mt-16">
+        <section id="how" className="mt-16 scroll-mt-24">
           <h2 className="text-2xl font-extrabold text-[#10251b]">How it works</h2>
           <ol className="mt-6 grid gap-5 sm:grid-cols-3">
             {STEPS.map((s, i) => (
-              <li key={s.h} className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#0a7c42] text-sm font-bold text-white">{i + 1}</span>
-                <h3 className="mt-3 font-bold text-[#10251b]">{s.h}</h3>
+              <li key={s.h} className="nw-card rounded-2xl p-6">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[#0a7c42] text-sm font-bold text-white shadow-[0_8px_20px_-8px_rgba(10,124,66,0.5)]">{i + 1}</span>
+                <h3 className="mt-4 font-bold text-[#10251b]">{s.h}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{s.p}</p>
               </li>
             ))}
