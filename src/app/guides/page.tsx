@@ -44,7 +44,7 @@ const sections = [
     ],
   },
   {
-    label: "Business Finance",
+    label: "Business Lending",
     description: "Compare business lenders and understand the real cost before you borrow. Refer Labs is a referrer, not a lender.",
     guides: [
       { href: "/business-loans", label: "Business Loans Australia", desc: "Compare lenders and check your options through one short enquiry." },

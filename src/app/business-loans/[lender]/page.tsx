@@ -135,7 +135,7 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
                 <li><Link href="/what-a-business-loan-actually-costs" className="font-semibold text-[#0a7c42] hover:text-[#086536]">What a business loan actually costs</Link></li>
               </ul>
             </div>
-            <CommissionDisclosure />
+            <CommissionDisclosure variant="inline" />
           </aside>
         </section>
       </main>

@@ -48,7 +48,7 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    label: "Business Finance",
+    label: "Business Lending",
     items: [
       { href: "/business-loans", label: "Business Loans", note: "Compare Australian lenders in one enquiry" },
       { href: "/business-loan-calculator", label: "Repayment Calculator", note: "Repayments, total cost and effective rate" },

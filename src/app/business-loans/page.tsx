@@ -4,7 +4,6 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import LenderTable from "@/components/lending/LenderTable";
-import CollectionNotice from "@/components/lending/CollectionNotice";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS } from "@/lib/lenders";
 
@@ -109,11 +108,7 @@ export default function BusinessLoansHub() {
         {/* Hero */}
         <section className="grid items-start gap-10 pt-4 sm:pt-8 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#e5e9e7] bg-white px-3.5 py-1.5 text-[12px] font-semibold text-[#3d4b44] shadow-[0_1px_2px_rgba(16,37,27,0.05)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0a7c42]" aria-hidden="true" />
-              Independent Australian loan comparison
-            </div>
-            <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
               Compare business loans from Australian lenders
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
@@ -180,14 +175,15 @@ export default function BusinessLoansHub() {
               one business day. There&apos;s no obligation to proceed with any lender.
             </p>
           </div>
-          <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
-            <div id="enquire" className="scroll-mt-24">
-              <LeadForm sourcePage="/business-loans" />
-            </div>
-            <aside className="space-y-5">
-              <CollectionNotice />
-              <CommissionDisclosure />
-            </aside>
+          <div id="enquire" className="mt-6 max-w-2xl scroll-mt-24">
+            <LeadForm sourcePage="/business-loans" />
+            <p className="mt-4 text-xs leading-relaxed text-[#6e7b74]">
+              Refer Labs is a referrer, not a lender. With your consent we share your details only with the panel lenders
+              relevant to your enquiry, and we may be paid a commission if your loan settles, which never changes your rate
+              or the order lenders appear in. See our{" "}
+              <Link href="/privacy" className="underline hover:text-[#10251b]">Privacy Policy</Link> and{" "}
+              <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">how we make money</Link>.
+            </p>
           </div>
         </section>
 
