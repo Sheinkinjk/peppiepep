@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lender: s
   if (!l) return {};
   return generateSEOMetadata({
     title: `${l.name} Business Loans: Rates, Loan Sizes & How to Apply (Australia) | Refer Labs`,
-    description: `${l.overview} See ${l.name}'s loan sizes, speed and eligibility, and check whether it fits your business through one short enquiry with Refer Labs.`,
+    description: `Compare ${l.name} business loans: loan sizes, funding speed, rates and eligibility. Check whether ${l.name} fits your business in one short enquiry with Refer Labs.`,
     url: `${SITE_URL}/business-loans/${l.slug}`,
     keywords: [`${l.name.toLowerCase()} business loan`, `${l.name.toLowerCase()} review`, "business loans australia"],
   });

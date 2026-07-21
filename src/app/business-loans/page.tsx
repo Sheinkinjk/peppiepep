@@ -12,7 +12,7 @@ const URL = `${SITE_URL}/business-loans`;
 export const metadata = generateSEOMetadata({
   title: "Business Loans Australia: Compare Lenders & Check Your Options | Refer Labs",
   description:
-    "Compare Australian business lenders and tell us what you need in one short form. A person reviews every enquiry and introduces you to lenders that fit. No bank statements or ID uploads. Referrer, not a lender.",
+    "Compare Australian business lenders in one short form. A person reviews every enquiry and introduces you to the lenders that fit. Free. Referrer, not a lender.",
   url: URL,
   keywords: [
     "business loans australia",
