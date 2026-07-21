@@ -29,7 +29,11 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
           {lenders.map((l) => (
             <tr key={l.slug} className="border-t border-[#eef1ef]">
               <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">
-                <Link href={`/business-loans/${l.slug}`} className="hover:text-[#0a7c42] hover:underline">{l.name}</Link>
+                <Link href={`/business-loans/${l.slug}`} className="flex items-center gap-2.5 hover:text-[#0a7c42] hover:underline">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={l.logo} alt="" width={28} height={28} className="h-7 w-7 shrink-0 rounded-md object-contain" loading="lazy" />
+                  {l.name}
+                </Link>
               </th>
               <td className="px-4 py-3 tabular-nums">{l.advertisedRateFrom}</td>
               <td className="px-4 py-3 tabular-nums whitespace-nowrap">{money(l.minAmount)} – {money(l.maxAmount)}</td>

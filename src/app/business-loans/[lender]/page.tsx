@@ -74,7 +74,11 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
           <span className="text-[#3d4b44]">{l.name}</span>
         </nav>
 
-        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b] sm:text-5xl">{l.name} business loans</h1>
+        <div className="mt-3 flex items-center gap-3">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={l.logo} alt={`${l.name} logo`} width={48} height={48} className="h-12 w-12 shrink-0 rounded-xl object-contain ring-1 ring-[#e5e9e7]" />
+          <h1 className="text-4xl font-extrabold leading-[1.1] text-[#10251b] sm:text-5xl">{l.name} business loans</h1>
+        </div>
         {/* First 100 words answer the query directly for AEO/GEO. */}
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#3d4b44]">{l.overview}</p>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#6e7b74]">

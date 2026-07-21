@@ -15,6 +15,7 @@ const NAV = [
   { href: "/compare/website-builders", label: "Websites" },
   { href: "/compare/newsletter-platforms", label: "Newsletters" },
   { href: "/business-software", label: "Business Tools" },
+  { href: "/business-loans", label: "Business Loans" },
   { href: "/for-business", label: "For Business" },
 ];
 

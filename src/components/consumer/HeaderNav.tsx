@@ -48,6 +48,16 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    label: "Business Finance",
+    items: [
+      { href: "/business-loans", label: "Business Loans", note: "Compare Australian lenders in one enquiry" },
+      { href: "/business-loan-calculator", label: "Repayment Calculator", note: "Repayments, total cost and effective rate" },
+      { href: "/what-a-business-loan-actually-costs", label: "What Loans Really Cost", note: "Rate vs factor rate vs fees, explained" },
+      { href: "/secured-vs-unsecured-business-loans", label: "Secured vs Unsecured", note: "Which fits, and the trade-offs" },
+      { href: "/business-loan-eligibility-australia", label: "What Lenders Look At", note: "The four things that decide it" },
+    ],
+  },
+  {
     label: "For Business",
     items: [
       { href: "/for-business", label: "For Business Overview", note: "How brands grow with Refer Labs" },
