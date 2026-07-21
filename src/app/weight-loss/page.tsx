@@ -122,17 +122,12 @@ export default function WeightLossHubPage() {
               Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Online weight loss telehealth has changed how Australians start. Instead of waiting weeks for an
-              appointment, you complete an assessment online, a registered practitioner reviews it, and a plan follows
-              if you are suitable. This hub compares the online weight loss programs and clinics available in Australia
-              and sorts them into three honest pathways, with independent research for each.
+              Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
+              assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub
+              compares the online programs and clinics available in Australia across three clear pathways, with
+              independent research for each.
             </p>
           </div>
-          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-            <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing in this hub is medical
-            advice or a recommendation of any treatment. Prescription medicines in Australia are available only after
-            individual assessment by a registered practitioner. Some links are disclosed affiliate links.
-          </p>
         </section>
 
         {/* Quiz */}
@@ -301,8 +296,11 @@ export default function WeightLossHubPage() {
               </details>
             ))}
           </div>
-          <p className="mt-8 text-sm text-[#3d4b44]">
-            Independent research, with any affiliate links disclosed. Read our{" "}
+          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
+            <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing in this hub is medical advice
+            or a recommendation of any treatment. Prescription medicines in Australia are available only after individual
+            assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never
+            change a comparison or a conclusion. Read our{" "}
             <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
               editorial standards
             </Link>
