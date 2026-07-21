@@ -31,6 +31,18 @@ const REQUIRED_BY_STEP: Record<number, string[]> = {
   2: ["first_name", "last_name", "email", "phone", "consent_privacy", "consent_contact"],
 };
 
+// Every field, mapped to its step — used to jump to the right step if the server
+// ever returns a field error (safety net so a submission never dead-ends).
+const STEP_FIELDS: Record<number, string[]> = {
+  0: ["amount_requested", "loan_purpose", "loan_purpose_detail", "urgency", "product_interest"],
+  1: ["business_name", "abn", "entity_type", "industry", "state", "trading_since", "website", "monthly_revenue", "avg_bank_balance", "has_existing_loans", "existing_loan_detail", "credit_profile", "has_ato_debt", "ato_debt_band", "security_available"],
+  2: ["first_name", "last_name", "email", "phone", "preferred_contact", "consent_privacy", "consent_contact"],
+};
+function stepForField(name: string): number {
+  for (const s of [0, 1, 2]) if (STEP_FIELDS[s].includes(name)) return s;
+  return 2;
+}
+
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function str(v: Values[string] | undefined): string {
@@ -184,7 +196,24 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) {
-        setSubmitError(data.error || "Something went wrong. Please try again, or email jarred@referlabs.com.au.");
+        if (Array.isArray(data.issues) && data.issues.length > 0) {
+          // Map any server field errors back onto the form and jump to the earliest
+          // affected step, so the user can see and fix them rather than dead-ending.
+          const fieldErrs: Record<string, string> = {};
+          let earliest = 2;
+          for (const iss of data.issues) {
+            const f = String(iss?.path?.[0] ?? "");
+            if (f) {
+              fieldErrs[f] = iss.message || "Please check this field";
+              earliest = Math.min(earliest, stepForField(f));
+            }
+          }
+          setErrors((e) => ({ ...e, ...fieldErrs }));
+          setStep(earliest);
+          setSubmitError("Please check the highlighted fields and try again.");
+        } else {
+          setSubmitError(data.error || "Something went wrong. Please try again, or email jarred@referlabs.com.au.");
+        }
         setSubmitting(false);
         return;
       }
@@ -274,7 +303,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
             options={LOAN_PURPOSES.map((p) => ({ value: p, label: label(p) }))} />
 
           <TextArea label="Anything else about what you need it for? (optional)" name="loan_purpose_detail"
-            value={str(values.loan_purpose_detail)} onChange={(v) => set("loan_purpose_detail", v)}
+            value={str(values.loan_purpose_detail)} onChange={(v) => set("loan_purpose_detail", v)} maxLength={500}
             placeholder="e.g. buying a second delivery van, or covering a slow season" />
 
           <Chips label="How soon do you need it? (optional)" name="urgency"
@@ -296,19 +325,19 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <p className="mt-1 text-sm text-[#6e7b74]">Only the business name and monthly revenue are required.</p>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <TextField label="Business name" name="business_name" required error={errors.business_name}
+            <TextField label="Business name" name="business_name" required error={errors.business_name} maxLength={160}
               value={str(values.business_name)} onChange={(v) => set("business_name", v)} autoComplete="organization" />
             <TextField label="ABN (optional)" name="abn" value={str(values.abn)} onChange={(v) => set("abn", v)}
-              inputMode="numeric" placeholder="11 digits" />
+              maxLength={30} inputMode="numeric" placeholder="e.g. 12 345 678 901" />
             <SelectField label="Business structure (optional)" name="entity_type"
               value={str(values.entity_type)} onChange={(v) => set("entity_type", v)} placeholder="Select"
               options={ENTITY_TYPES.map((t) => ({ value: t, label: label(t) }))} />
-            <TextField label="Industry (optional)" name="industry" value={str(values.industry)}
+            <TextField label="Industry (optional)" name="industry" value={str(values.industry)} maxLength={120}
               onChange={(v) => set("industry", v)} placeholder="e.g. Cafe, Construction, Retail" />
             <SelectField label="State (optional)" name="state" value={str(values.state)}
               onChange={(v) => set("state", v)} placeholder="Select"
               options={STATES.map((s) => ({ value: s, label: s }))} />
-            <TextField label="Website (optional)" name="website" value={str(values.website)}
+            <TextField label="Website (optional)" name="website" value={str(values.website)} maxLength={200}
               onChange={(v) => set("website", v)} inputMode="url" placeholder="yourbusiness.com.au" />
           </div>
 
@@ -322,7 +351,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <TextField label="Average bank balance (optional)" name="avg_bank_balance" value={str(values.avg_bank_balance)}
-              onChange={(v) => set("avg_bank_balance", v)} placeholder="e.g. $15,000" />
+              maxLength={60} onChange={(v) => set("avg_bank_balance", v)} placeholder="e.g. $15,000" />
             <SelectField label="Credit profile (optional)" name="credit_profile"
               value={str(values.credit_profile)} onChange={(v) => set("credit_profile", v)} placeholder="Select"
               options={CREDIT_PROFILES.map((c) => ({ value: c, label: label(c) }))} />
@@ -331,7 +360,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <YesNo label="Any existing business loans? (optional)" name="has_existing_loans"
             value={str(values.has_existing_loans)} onSelect={(v) => set("has_existing_loans", v)} />
           {str(values.has_existing_loans) === "yes" && (
-            <TextField label="Roughly what and with whom? (optional)" name="existing_loan_detail"
+            <TextField label="Roughly what and with whom? (optional)" name="existing_loan_detail" maxLength={500}
               value={str(values.existing_loan_detail)} onChange={(v) => set("existing_loan_detail", v)}
               placeholder="e.g. $40k equipment loan with a bank" />
           )}
@@ -358,13 +387,13 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <p className="mt-1 text-sm text-[#6e7b74]">A person reviews your enquiry and gets back to you within one business day.</p>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <TextField label="First name" name="first_name" required error={errors.first_name}
+            <TextField label="First name" name="first_name" required error={errors.first_name} maxLength={80}
               value={str(values.first_name)} onChange={(v) => set("first_name", v)} autoComplete="given-name" />
-            <TextField label="Last name" name="last_name" required error={errors.last_name}
+            <TextField label="Last name" name="last_name" required error={errors.last_name} maxLength={80}
               value={str(values.last_name)} onChange={(v) => set("last_name", v)} autoComplete="family-name" />
-            <TextField label="Email" name="email" required error={errors.email} type="email"
+            <TextField label="Email" name="email" required error={errors.email} type="email" maxLength={160}
               value={str(values.email)} onChange={(v) => set("email", v)} autoComplete="email" />
-            <TextField label="Phone" name="phone" required error={errors.phone} type="tel"
+            <TextField label="Phone" name="phone" required error={errors.phone} type="tel" maxLength={30}
               value={str(values.phone)} onChange={(v) => set("phone", v)} autoComplete="tel" />
           </div>
 
@@ -460,26 +489,26 @@ function FieldShell({ label, required, error, htmlFor, children }: {
 const inputCls =
   "w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#10251b] placeholder:text-[#9aa39c] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a7c42] focus-visible:border-[#0a7c42]";
 
-function TextField({ label, name, value, onChange, required, error, type = "text", placeholder, inputMode, autoComplete }: {
+function TextField({ label, name, value, onChange, required, error, type = "text", placeholder, inputMode, autoComplete, maxLength }: {
   label: string; name: string; value: string; onChange: (v: string) => void; required?: boolean; error?: string;
-  type?: string; placeholder?: string; inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"]; autoComplete?: string;
+  type?: string; placeholder?: string; inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"]; autoComplete?: string; maxLength?: number;
 }) {
   return (
     <FieldShell label={label} required={required} error={error} htmlFor={name}>
       <input id={name} name={name} type={type} value={value} placeholder={placeholder} inputMode={inputMode}
-        autoComplete={autoComplete} aria-required={required} aria-invalid={!!error}
+        autoComplete={autoComplete} maxLength={maxLength} aria-required={required} aria-invalid={!!error}
         onChange={(e) => onChange(e.target.value)}
         className={inputCls} style={{ borderColor: error ? "#dc2626" : "#e5e9e7" }} />
     </FieldShell>
   );
 }
 
-function TextArea({ label, name, value, onChange, placeholder }: {
-  label: string; name: string; value: string; onChange: (v: string) => void; placeholder?: string;
+function TextArea({ label, name, value, onChange, placeholder, maxLength }: {
+  label: string; name: string; value: string; onChange: (v: string) => void; placeholder?: string; maxLength?: number;
 }) {
   return (
     <FieldShell label={label} htmlFor={name}>
-      <textarea id={name} name={name} value={value} placeholder={placeholder} rows={3}
+      <textarea id={name} name={name} value={value} placeholder={placeholder} rows={3} maxLength={maxLength}
         onChange={(e) => onChange(e.target.value)} className={inputCls} style={{ borderColor: "#e5e9e7" }} />
     </FieldShell>
   );

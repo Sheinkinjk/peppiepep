@@ -79,8 +79,6 @@ export function label(v: string | null | undefined): string {
 // ─── Validation ───────────────────────────────────────────────────────────────
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// ABN is 11 digits (spaces allowed); only validated when present.
-const abnRe = /^(\d[ ]?){11}$/;
 const trim = (max: number) => z.string().trim().max(max);
 
 export const leadSchema = z.object({
@@ -92,8 +90,10 @@ export const leadSchema = z.object({
   product_interest: z.array(z.enum(PRODUCTS)).default([]),
 
   // Step 2 — about the business
-  business_name: trim(160).min(2, "Business name is required"),
-  abn: z.string().trim().regex(abnRe, "Enter a valid 11-digit ABN").optional().or(z.literal("")),
+  business_name: trim(160).min(1, "Business name is required"),
+  // ABN captured as entered — deliberately lenient so a formatting quirk (dashes,
+  // an ACN, a stray digit) never blocks the lead; the operator verifies it later.
+  abn: trim(30).optional().or(z.literal("")),
   entity_type: z.enum(ENTITY_TYPES).optional(),
   industry: trim(120).optional().or(z.literal("")),
   state: z.enum(STATES).optional(),
