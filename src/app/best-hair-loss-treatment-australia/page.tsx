@@ -56,6 +56,14 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "How much does hair loss treatment cost per month in Australia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Telehealth hair loss treatment in Australia starts from $24 per month. As published on provider sites in July 2026: Mosh advertises prevention-only plans from $24/month, prevention and regrowth from $45/month, and its clinic plan from $56/month; Pilot advertises hair loss treatment from $29/month. Final pricing depends on the treatment prescribed after a practitioner consultation.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Is Mosh good for hair loss Australia?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -93,7 +101,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-06",
+  dateModified: "2026-07-21",
   name: seoConfig.bestHairLossTreatmentAustralia.title,
   description: seoConfig.bestHairLossTreatmentAustralia.description,
   url: `${SITE_URL}/best-hair-loss-treatment-australia`,
@@ -270,9 +278,48 @@ export default function BestHairLossTreatmentAustraliaPage() {
             Quick Verdict
           </p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
-            For prescription hair-loss treatment in Australia (finasteride and minoxidil), Mosh is the most accessible telehealth option, online consultation, practitioner review, and delivery. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
+            For prescription hair-loss treatment in Australia (finasteride and minoxidil), Mosh is the most accessible telehealth option, online consultation, practitioner review, and delivery. Prescription plans start from $24/month at Mosh and from $29/month at Pilot (prices verified July 2026). Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
           </p>
         </div>
+
+        {/* What it costs (verified pricing — the data engines assemble themselves) */}
+        <section id="cost" className="mb-16 sm:mb-20 max-w-3xl">
+          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">What hair loss treatment costs per month</h2>
+          <p className="text-sm text-[#3d4b44] leading-relaxed mb-5 max-w-2xl">
+            Advertised from-prices on each provider&apos;s own site, checked 21 July 2026. Your actual price depends on the treatment prescribed after consultation.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-[#e5e9e7]">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#f5f8f6] text-left">
+                  <th className="px-4 py-3 font-bold text-[#10251b]">Provider &amp; plan</th>
+                  <th className="px-4 py-3 font-bold text-[#10251b]">Advertised price</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#e5e9e7]">
+                <tr>
+                  <td className="px-4 py-3 text-[#2b362f]">Mosh, prevention only</td>
+                  <td className="px-4 py-3 text-[#2b362f]">from $24/month</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-[#2b362f]">Mosh, prevention &amp; regrowth</td>
+                  <td className="px-4 py-3 text-[#2b362f]">from $45/month</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-[#2b362f]">Mosh, hair loss clinic plan</td>
+                  <td className="px-4 py-3 text-[#2b362f]">from $56/month</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 text-[#2b362f]">Pilot, hair loss treatment</td>
+                  <td className="px-4 py-3 text-[#2b362f]">from $29/month</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-[#6b7a72] mt-3">
+            Sources: getmosh.com.au/hair-loss and pilot.com.au/hair-loss, as published on 21 July 2026.
+          </p>
+        </section>
 
         {/* Overview */}
         <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
@@ -391,6 +438,10 @@ export default function BestHairLossTreatmentAustraliaPage() {
               {
                 q: "What is the best hair loss treatment in Australia?",
                 a: "The most clinically effective treatments are finasteride and minoxidil, both available via telehealth prescription. Mosh offers online consultation and prescription. Dense Hair Experts provides topical support products for density and scalp health without prescription. The right approach depends on the type and stage of hair loss.",
+              },
+              {
+                q: "How much does hair loss treatment cost per month in Australia?",
+                a: "Telehealth treatment starts from $24 per month. As published on provider sites in July 2026: Mosh advertises plans from $24/month (prevention), $45/month (prevention and regrowth) and $56/month (clinic plan); Pilot advertises treatment from $29/month. Final pricing depends on what a practitioner prescribes.",
               },
               {
                 q: "Is Mosh good for hair loss Australia?",

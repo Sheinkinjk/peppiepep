@@ -57,6 +57,11 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
+      name: "How much does telehealth weight loss cost per month in Australia?",
+      acceptedAnswer: { "@type": "Answer", text: "Most Australian telehealth weight loss providers do not publish prices. As published on provider sites in July 2026, Moshy is the only major platform advertising openly: $8.03 per day, with the first month at $249. Juniper and Pilot disclose pricing only after an online consultation. Final cost on any platform depends on the medication and dose prescribed." }
+    },
+    {
+      "@type": "Question",
       name: "What is the best weight loss telehealth platform in Australia in 2026?",
       acceptedAnswer: { "@type": "Answer", text: "Moshy, Juniper and Pilot are the most widely used GLP-1 telehealth weight loss platforms in Australia in 2026. Moshy runs a clinically supervised weight management pathway, open to anyone eligible, including medication options. Juniper markets primarily to women and combines GLP-1 medication with a coached program. Pilot is men-focused and sits inside a broader men's health service. Suitability depends on individual health factors. Consult a qualified health professional before starting any weight management programme." }
     },
@@ -91,7 +96,7 @@ const webPageSchema = {
   url: seoConfig.bestWeightLossTelehealth.url,
   inLanguage: "en-AU",
   datePublished: "2026-03-16",
-  dateModified: "2026-07-07",
+  dateModified: "2026-07-21",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
     { "@type": "Thing", name: "Moshy vs Juniper Australia" },
@@ -375,6 +380,17 @@ export default function BestWeightLossTelehealthPage() {
             </div>
           </section>
 
+          {/* ── What it costs (verified — most providers don't publish) ───────── */}
+          <section id="cost" className="border-t border-[#e5e9e7] py-8">
+            <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">What telehealth weight loss actually costs</h2>
+            <p className="text-sm text-[#3d4b44] leading-relaxed max-w-2xl mb-4">
+              Here is what makes this market hard to compare: <strong className="text-[#10251b]">most Australian providers do not publish their prices.</strong> As checked on each provider&apos;s own site on 21 July 2026, Moshy is the only major platform advertising a price openly: <strong className="text-[#10251b]">$8.03 per day</strong>, with the first month at <strong className="text-[#10251b]">$249</strong> (reduced from $349 with an intro code). Juniper and Pilot disclose pricing only after an online consultation. Expect final costs on any platform to depend on the medication and dose prescribed.
+            </p>
+            <p className="text-xs text-[#6b7a72]">
+              Sources: getmoshy.com.au/weight-loss (price as published), pilot.com.au/weight-loss and Juniper (no public pricing at time of check), 21 July 2026.
+            </p>
+          </section>
+
           {/* ── Quick comparison table ─────────────────────────────────────────── */}
           <section className="border-t border-[#e5e9e7] py-8">
             <div className="overflow-x-auto -mx-2 px-2">
@@ -483,6 +499,10 @@ export default function BestWeightLossTelehealthPage() {
                 {
                   q: "What is the best weight loss telehealth platform in Australia?",
                   a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are the most widely used GLP-1 telehealth weight loss platforms in Australia. The best platform depends on your health profile and whether you want a medication-focused clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
+                },
+                {
+                  q: "How much does telehealth weight loss cost per month?",
+                  a: "Most providers don't publish prices. As published in July 2026, Moshy advertises $8.03/day with the first month at $249; Juniper and Pilot disclose pricing only after an online consultation. Final cost depends on the medication and dose prescribed.",
                 },
                 {
                   q: "Is Moshy or Juniper better?",
