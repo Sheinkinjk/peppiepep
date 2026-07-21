@@ -6,7 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS, getLender, hasHeadlineRate, type Lender } from "@/lib/lenders";
-import { label } from "@/lib/lending-schema";
+import { label, LENDING_LAST_UPDATED } from "@/lib/lending-schema";
 
 const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
 
@@ -73,7 +73,7 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
     headline: `${l.name} review: who it suits and what to check`,
     about: l.name,
     url,
-    dateModified: l.rateAsAt,
+    dateModified: LENDING_LAST_UPDATED,
     author: { "@type": "Organization", name: "Refer Labs" },
     publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
   };

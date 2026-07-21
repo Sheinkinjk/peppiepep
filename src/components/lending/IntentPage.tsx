@@ -4,7 +4,7 @@ import LenderTable from "@/components/lending/LenderTable";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS, type Lender } from "@/lib/lenders";
 import { SITE_URL } from "@/lib/seo";
-import type { Product } from "@/lib/lending-schema";
+import { LENDING_LAST_UPDATED, type Product } from "@/lib/lending-schema";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared layout for the business-lending intent + explainer pages. Structure is
@@ -54,7 +54,7 @@ export function intentSchemas(cfg: IntentConfig) {
     mainEntity: cfg.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
   const main = cfg.kind === "guide"
-    ? { "@context": "https://schema.org", "@type": "Article", headline: cfg.h1, url, dateModified: "2026-07",
+    ? { "@context": "https://schema.org", "@type": "Article", headline: cfg.h1, url, dateModified: LENDING_LAST_UPDATED,
         author: { "@type": "Organization", name: "Refer Labs" }, publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL } }
     : { "@context": "https://schema.org", "@type": "WebPage", name: cfg.h1, url, publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL } };
   return [breadcrumb, faq, main];

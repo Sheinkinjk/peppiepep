@@ -1,5 +1,10 @@
 import { z } from "zod";
 
+// Shared ISO-8601 last-updated date for lending-page Article schema (schema.org
+// dateModified must be ISO; "July 2026" is invalid and Google ignores it). Bump
+// this when the lending content is materially refreshed.
+export const LENDING_LAST_UPDATED = "2026-07-20";
+
 // ─── Band definitions ─────────────────────────────────────────────────────────
 // Every quantitative field is a band, never a raw number: it lowers friction and
 // avoids collecting more precision than lead qualification needs. Each band carries

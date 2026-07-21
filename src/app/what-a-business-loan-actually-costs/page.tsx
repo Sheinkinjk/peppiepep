@@ -57,7 +57,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "What a business loan actually costs in Australia",
   url: URL,
-  dateModified: "2026-07",
+  dateModified: "2026-07-20",
   author: { "@type": "Organization", name: "Refer Labs" },
   publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
 };
