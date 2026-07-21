@@ -38,6 +38,39 @@ function facts(l: Lender): { k: string; v: string }[] {
   return rows;
 }
 
+// High-intent, factual FAQs generated from the verified config — the queries people
+// actually search ("how much can I borrow with X", "is X legit", "X eligibility").
+// Powers both a visible FAQ section and FAQPage schema for rich results.
+function lenderFaqs(l: Lender): { q: string; a: string }[] {
+  const legit = [
+    `${l.name} is an established Australian business lender`,
+    l.slug === "prospa" ? ", listed on the ASX," : "",
+    l.afiaCodeSignatory ? ` and a signatory to the AFIA Online Small Business Lender Code of Practice` : "",
+    `. Refer Labs is an independent referrer, not ${l.name}; we introduce your enquiry with your consent and the lender assesses it.`,
+  ].join("");
+  return [
+    {
+      q: `How much can I borrow with ${l.name}?`,
+      a: `${l.name} advertises business loans from ${money(l.minAmount)} to ${money(l.maxAmount)}. The amount you're offered depends on ${l.name}'s assessment of your business, not the maximum on the page.`,
+    },
+    {
+      q: `What do I need to qualify for a ${l.name} loan?`,
+      a: `${l.name} generally looks for a business trading for at least ${l.minTradingMonths} months, an active ABN, and consistent revenue the lender can verify. Exact criteria are set by ${l.name} and can change.`,
+    },
+    {
+      q: `How fast can ${l.name} fund a loan?`,
+      a: `${l.name} advertises funding ${l.speed.toLowerCase()} once your application is approved and verified. Real timing depends on how quickly your details can be confirmed.`,
+    },
+    {
+      q: `Does ${l.name} charge fees?`,
+      a: l.establishmentFee
+        ? `${l.name} charges an establishment fee of ${l.establishmentFee}, and may charge other fees. Always ask for the full fee schedule and the total cost of the loan in dollars before you sign.`
+        : `Ask ${l.name} for its full fee schedule, including any establishment or ongoing fees, and the total cost of the loan in dollars before you sign.`,
+    },
+    { q: `Is ${l.name} a legitimate lender?`, a: legit },
+  ];
+}
+
 export default async function LenderPage({ params }: { params: Promise<{ lender: string }> }) {
   const { lender: slug } = await params;
   const l = getLender(slug);
@@ -61,10 +94,18 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
     description: l.overview,
     publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
   };
+  const faqs = lenderFaqs(l);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url,
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
 
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
@@ -137,6 +178,19 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
             </div>
             <CommissionDisclosure variant="inline" />
           </aside>
+        </section>
+
+        {/* FAQ */}
+        <section className="mt-16 max-w-3xl">
+          <h2 className="text-2xl font-extrabold text-[#10251b]">{l.name} business loans: common questions</h2>
+          <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+            {faqs.map((f) => (
+              <div key={f.q} className="py-5">
+                <dt className="font-bold text-[#10251b]">{f.q}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
       </main>
     </ConsumerShell>
