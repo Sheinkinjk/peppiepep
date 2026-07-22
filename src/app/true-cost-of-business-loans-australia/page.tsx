@@ -101,18 +101,18 @@ export default function FactorRateStudy() {
           <span className="text-[#3d4b44]">The hidden cost of factor rates</span>
         </nav>
 
-        <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">Refer Labs analysis · 2026</p>
-        <h1 className="mt-2 text-4xl font-extrabold leading-[1.05] text-[#10251b]">
+        <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] text-[#10251b]">
           The hidden cost of factor rates: what a business loan really costs
         </h1>
 
         {/* First 100 words: the finding, citable */}
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
-          A business loan priced at a &ldquo;1.2 factor rate&rdquo; looks like a 20% cost. It isn&apos;t. Repaid over
-          twelve months, it works out to about <strong className="text-[#10251b]">{pct(e12)} a year</strong>, and repaid
-          over six months, to about <strong className="text-[#10251b]">{pct(e6)} a year</strong>, for exactly the same
-          total dollars. We converted the factor rates Australian small businesses are commonly quoted into their true
-          annual cost. The method is shown in full below so you can reproduce every figure.
+          A &ldquo;1.2 factor rate&rdquo; is a 20% markup on what you borrow, and quoted that way it sounds modest. The
+          catch is that a factor rate is not an annual rate. Over twelve months that same 1.2 works out to about{" "}
+          <strong className="text-[#10251b]">{pct(e12)} a year</strong>, and over six months to about{" "}
+          <strong className="text-[#10251b]">{pct(e6)}</strong>, for the same total dollars either way. We took the factor
+          rates Australian small businesses are commonly quoted and worked out the annual cost they actually carry, with
+          the method shown in full so you can check every figure.
         </p>
 
         {/* Key findings */}
@@ -135,14 +135,14 @@ export default function FactorRateStudy() {
         <Section h="What a factor rate actually is">
           <p>
             A factor rate is a fixed multiplier on the amount borrowed, not an annual percentage. Borrow $50,000 at a 1.2
-            factor and you repay $60,000 in total, no matter how fast you clear it. It is common on short-term business
-            loans and merchant cash advances, and it is usually quoted as a small-looking number, 1.1, 1.2, 1.3, precisely
-            because it does not annualise the cost the way a bank rate does.
+            factor and you repay $60,000 in total, no matter how fast you clear it. You will see it on short-term business
+            loans and merchant cash advances, usually written as a small number, 1.1, 1.2, 1.3, because that reads more
+            gently than the annual cost it works out to.
           </p>
           <p>
-            The problem is comparability. A 1.2 factor rate and a bank&apos;s &ldquo;12.9% p.a.&rdquo; are not measured on
-            the same scale, so putting them side by side tells you nothing until the factor rate is converted into an
-            annual figure.
+            A 1.2 factor rate and a bank&apos;s &ldquo;12.9% p.a.&rdquo; sit on different scales, so lining them up next to
+            each other tells you nothing on its own. You have to convert the factor rate into an annual figure first, which
+            is what the rest of this page does.
           </p>
         </Section>
 
