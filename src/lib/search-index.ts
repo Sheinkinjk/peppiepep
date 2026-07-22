@@ -111,7 +111,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Prediction markets
 
   // Peptides
-  { title: "Research peptide suppliers compared", href: "/compare/research-peptides", category: "Research peptides", kind: "Guide", keywords: "compare peptide suppliers purity catalogue vendors research use hub" },
 
   // Weight loss (guides + head-to-heads not yet indexed)
   { title: "Weight-loss telehealth cost, explained", href: "/weight-loss-telehealth-cost-australia", category: "Weight loss", kind: "Guide", keywords: "cost price how much weight loss telehealth australia subscription" },
@@ -131,6 +130,22 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Which AI sales tool quiz", href: "/ai-sales-tools-quiz", category: "Software", kind: "Guide", keywords: "which ai sales tool quiz match aisdr reply.io fullenrich gohighlevel ai sdr recommend for me bottleneck outbound" },
   { title: "Which newsletter platform quiz", href: "/newsletter-platform-quiz", category: "Creator tools", kind: "Guide", keywords: "which newsletter platform quiz match beehiiv substack kit convertkit recommend for me email" },
   { title: "Which hair-loss option fits you", href: "/hair-loss-quiz", category: "Hair loss", kind: "Guide", keywords: "which hair loss treatment quiz match mosh dense telehealth topical gp recommend option for me" },
+  // Business-software brand pages (were live + in the /business-software grid but missing from search)
+  { title: "ActiveCampaign", href: "/activecampaign", category: "Software", kind: "Guide", keywords: "activecampaign email marketing automation crm discount referral" },
+  { title: "Alohi (Sign.Plus & Fax.Plus)", href: "/alohi", category: "Software", kind: "Guide", keywords: "alohi sign plus fax plus e-signature esignature electronic fax referral" },
+  { title: "CometChat", href: "/cometchat", category: "Software", kind: "Guide", keywords: "cometchat in-app chat messaging sdk api voice video developer" },
+  { title: "Databox", href: "/databox", category: "Software", kind: "Guide", keywords: "databox kpi dashboard analytics business metrics reporting" },
+  { title: "FlexiQuiz", href: "/flexiquiz", category: "Software", kind: "Guide", keywords: "flexiquiz quiz test maker assessments exams online" },
+  { title: "Flocksy", href: "/flocksy", category: "Software", kind: "Guide", keywords: "flocksy unlimited graphic design service subscription creative" },
+  { title: "Hello Bar", href: "/hellobar", category: "Software", kind: "Guide", keywords: "hello bar popups bars lead capture email signups conversion" },
+  { title: "Instapage", href: "/instapage", category: "Software", kind: "Guide", keywords: "instapage landing page builder ad conversion ppc post-click" },
+  { title: "Landingi", href: "/landingi", category: "Software", kind: "Guide", keywords: "landingi landing page builder no-code conversion" },
+  { title: "Logome.ai", href: "/logome", category: "Software", kind: "Guide", keywords: "logome ai logo maker generator branding design" },
+  { title: "MeetGeek", href: "/meetgeek", category: "Software", kind: "Guide", keywords: "meetgeek ai meeting notes transcription recorder summary" },
+  { title: "Nutshell CRM", href: "/nutshell", category: "AI & sales", kind: "Guide", keywords: "nutshell crm easy sales pipeline marketing small business" },
+  { title: "Outgrow", href: "/outgrow", category: "Software", kind: "Guide", keywords: "outgrow interactive quizzes calculators lead generation content" },
+  { title: "Pipedrive CRM", href: "/pipedrive", category: "AI & sales", kind: "Guide", keywords: "pipedrive crm visual sales pipeline deals" },
+  { title: "ZoomInfo", href: "/zoominfo", category: "AI & sales", kind: "Guide", keywords: "zoominfo b2b sales data prospecting contact intelligence" },
 ];
 
 export function searchEntries(query: string, limit = 7): SearchEntry[] {
