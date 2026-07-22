@@ -92,6 +92,10 @@ const sections = [
       { href: "/finasteride-australia", label: "Finasteride, Explained", desc: "What it is, why it is prescription-only, and how access works. Not medical advice." },
       { href: "/minoxidil-australia", label: "Minoxidil, Explained", desc: "Topical vs oral, the shedding phase, and how it combines with finasteride." },
       { href: "/hair-loss-treatment-cost-australia", label: "What Treatment Costs", desc: "Over-the-counter vs telehealth plans, using Mosh\u2019s published prices." },
+      { href: "/finasteride-vs-minoxidil-australia", label: "Finasteride vs Minoxidil", desc: "The two most studied treatments, and how they work in opposite ways." },
+      { href: "/online-hair-loss-treatment-australia", label: "Online Hair-Loss Treatment", desc: "How the telehealth assessment works, and what you can and can\u2019t get online." },
+      { href: "/how-long-does-finasteride-take-to-work-australia", label: "How Long Finasteride Takes", desc: "A realistic timeline, the shedding phase, and why it\u2019s ongoing." },
+      { href: "/how-to-stop-hair-loss-australia", label: "How to Stop Hair Loss", desc: "Understanding the cause, what the evidence supports, and acting early." },
     ],
   },
   {

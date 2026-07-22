@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { CATALOG } from '@/lib/catalog/catalog';
 import { LENDERS } from '@/lib/lenders';
 import { INTENT_PAGES } from '@/lib/lending-intent';
+import { HAIR_LOSS_GUIDES } from '@/lib/hair-loss-guides';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
@@ -90,6 +91,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/finasteride-australia`,           lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/minoxidil-australia`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    // Hair-loss guide cluster (generated from the registry)
+    ...HAIR_LOSS_GUIDES.map((g) => ({
+      url: `${BASE}${g.slug}`,
+      lastModified: FRESH,
+      changeFrequency: 'monthly' as const,
+      priority: g.priority,
+    })),
     { url: `${BASE}/dense`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Website builders / AI tools (redesigned this release) ──────────

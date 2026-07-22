@@ -40,6 +40,10 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Finasteride in Australia, explained", href: "/finasteride-australia", category: "Hair loss", kind: "Guide", keywords: "finasteride australia hair loss prescription dht blocker propecia generic 1mg" },
   { title: "Minoxidil in Australia, explained", href: "/minoxidil-australia", category: "Hair loss", kind: "Guide", keywords: "minoxidil australia regaine topical oral hair loss over the counter" },
   { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss treatment cost australia mosh price finasteride minoxidil subscription" },
+  { title: "Finasteride vs minoxidil", href: "/finasteride-vs-minoxidil-australia", category: "Hair loss", kind: "Guide", keywords: "finasteride vs minoxidil difference compare oral topical dht together australia" },
+  { title: "Online hair loss treatment in Australia", href: "/online-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "online hair loss treatment telehealth doctor australia assessment prescription" },
+  { title: "How long does finasteride take to work", href: "/how-long-does-finasteride-take-to-work-australia", category: "Hair loss", kind: "Guide", keywords: "how long finasteride take work results timeline shedding months australia" },
+  { title: "How to stop hair loss", href: "/how-to-stop-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "how to stop hair loss balding men male pattern dht treatment australia" },
   { title: "Mosh vs Pilot", href: "/mosh-vs-pilot", category: "Hair loss", kind: "Guide", keywords: "mosh vs pilot hair loss finasteride minoxidil mens telehealth compare" },
   { title: "Dense Hair Experts", href: "/dense", category: "Hair loss", kind: "Guide", keywords: "dense hair non prescription topical" },
 

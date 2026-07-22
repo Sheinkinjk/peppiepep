@@ -282,9 +282,10 @@ export default function FinasterideAustraliaPage() {
             <section>
               <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
+                <li><Link href="/finasteride-vs-minoxidil-australia" className="nw-link">Finasteride vs minoxidil: how they differ</Link></li>
+                <li><Link href="/how-long-does-finasteride-take-to-work-australia" className="nw-link">How long finasteride takes to work</Link></li>
                 <li><Link href="/minoxidil-australia" className="nw-link">Minoxidil in Australia, explained</Link></li>
                 <li><Link href="/hair-loss-treatment-cost-australia" className="nw-link">What hair-loss treatment costs in Australia</Link></li>
-                <li><Link href="/best-hair-loss-treatment-australia" className="nw-link">Best hair-loss treatment in Australia, compared</Link></li>
                 <li><Link href="/moshhair" className="nw-link">Mosh hair-loss: how it works and the current offer</Link></li>
                 <li><Link href="/hair-loss" className="nw-link">The full hair-loss hub</Link></li>
               </ul>

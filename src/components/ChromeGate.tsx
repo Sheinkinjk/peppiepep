@@ -100,6 +100,10 @@ const STANDALONE_ROUTES = [
   "/finasteride-australia",
   "/minoxidil-australia",
   "/hair-loss-treatment-cost-australia",
+  "/finasteride-vs-minoxidil-australia",
+  "/online-hair-loss-treatment-australia",
+  "/how-long-does-finasteride-take-to-work-australia",
+  "/how-to-stop-hair-loss-australia",
   // Business software hub (own light ConsumerShell; was double-headering)
   "/business-software",
   // $799 Blueprint (migrated to the light ConsumerShell theme)
