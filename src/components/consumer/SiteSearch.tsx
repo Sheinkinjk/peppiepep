@@ -5,7 +5,9 @@ import { useRouter } from "next/navigation";
 import { Search, ArrowRight } from "lucide-react";
 import { searchEntries, type SearchEntry } from "@/lib/search-index";
 
-const POPULAR = ["Weight loss", "Website builders", "Hair loss", "Newsletters"];
+// Quick-start chips shown before the reader types. Keep these pointed at the
+// current money verticals, not whatever was popular when the search was built.
+const POPULAR = ["Weight loss", "Hair loss", "Business loans", "Home batteries", "Website builders"];
 
 /**
  * NerdWallet-style site search. variant "hero" is large and prominent;

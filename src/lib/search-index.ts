@@ -190,6 +190,15 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Terms of service", href: "/terms", category: "Browse", kind: "Guide", keywords: "terms of service conditions legal" },
 ];
 
+/** A word plus simple singular forms: batteries -> battery, loans -> loan. */
+function wordVariants(w: string): string[] {
+  const out = [w];
+  if (w.endsWith("ies") && w.length > 4) out.push(`${w.slice(0, -3)}y`);
+  if (w.endsWith("es") && w.length > 3) out.push(w.slice(0, -2));
+  if (w.endsWith("s") && w.length > 3) out.push(w.slice(0, -1));
+  return out;
+}
+
 /**
  * Ranked site search.
  *
@@ -212,9 +221,14 @@ export function searchEntries(query: string, limit = 8): SearchEntry[] {
     let matchedAll = true;
     for (const w of words) {
       let s = 0;
-      if (title.startsWith(w)) s += 5;
-      if (title.includes(w)) s += 3;
-      else if (hay.includes(w)) s += 1;
+      // Try the word, then simple singular forms, so "batteries" finds "battery"
+      // and "loans" finds "loan" without needing every plural in the keywords.
+      for (const v of wordVariants(w)) {
+        if (title.startsWith(v)) s += 5;
+        if (title.includes(v)) s += 3;
+        else if (hay.includes(v)) s += 1;
+        if (s > 0) break;
+      }
       if (s === 0) matchedAll = false;
       score += s;
     }
