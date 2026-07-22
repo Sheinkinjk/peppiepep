@@ -33,25 +33,20 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // ── Retired verticals (July 2026) ─────────────────────────────────────
-      // Polymarket removed: ISP-blocked and prohibited in Australia under the
-      // Interactive Gambling Act 2001. Peptides removed: grey-market, off-fit for the
-      // consumer health direction. Gusto/Melio: US-only, wrong jurisdiction. Income
-      // Lab: off-brand. 301 to the closest live page so equity consolidates.
+      // Gusto/Melio: US-only, wrong jurisdiction. Income Lab: off-brand. 301 to the
+      // closest live page so equity consolidates.
+      //
+      // Polymarket and the peptide cluster are NOT here on purpose: they have no
+      // closest-live-page by intent, and a bulk 301 to '/' is read by Google as a
+      // soft 404 (no equity passes, the URL lingers). They return 410 Gone from
+      // src/proxy.ts instead, which is the unambiguous signal for content that is
+      // permanently withdrawn with no replacement. next.config redirects run BEFORE
+      // middleware, so these must stay out of this list for the 410 to be reached.
       // Instapage retired (23 July 2026): the affiliate link get.instapage.io no
       // longer resolves (DNS failure), so the page's only CTA was broken. 301 to
       // Swipe Pages, the same intent (landing page builder for paid ads) with a
       // working link. Remove this line if an Instapage link is ever restored.
       { source: '/instapage', destination: '/swipepages', permanent: true },
-      { source: '/polymarket', destination: '/', permanent: true },
-      { source: '/polymarket/:path*', destination: '/', permanent: true },
-      { source: '/best-peptide-supplier', destination: '/', permanent: true },
-      { source: '/apollopeptides', destination: '/', permanent: true },
-      { source: '/ascensionpeptides', destination: '/', permanent: true },
-      { source: '/biopeptitech', destination: '/', permanent: true },
-      { source: '/apollo-vs-ascension', destination: '/', permanent: true },
-      { source: '/apollo-vs-biopeptitech', destination: '/', permanent: true },
-      { source: '/ascension-vs-biopeptitech', destination: '/', permanent: true },
-      { source: '/compare/research-peptides', destination: '/', permanent: true },
       { source: '/melio', destination: '/compare/payments', permanent: true },
       { source: '/incomelab', destination: '/affiliate-programs-australia', permanent: true },
       // Pruned low-value B2B pages (July 2026) -> closest live hub, equity preserved

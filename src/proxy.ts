@@ -2,7 +2,58 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { logger } from '@/lib/logger'
 
+/**
+ * Permanently withdrawn content with no equivalent live page.
+ *
+ * Polymarket is prohibited in Australia under the Interactive Gambling Act 2001;
+ * the research-peptide cluster was withdrawn as grey-market and off-fit for the
+ * consumer health direction. Neither has a closest-live-page by intent, so the
+ * usual 301 does not apply: a bulk redirect to '/' is read by Google as a soft
+ * 404, passes no equity, and leaves the URL in limbo. 410 Gone is the correct,
+ * unambiguous signal and deindexes fastest.
+ *
+ * Exact paths, plus anything nested beneath them.
+ */
+const GONE = [
+  '/polymarket',
+  '/best-peptide-supplier',
+  '/apollopeptides',
+  '/ascensionpeptides',
+  '/biopeptitech',
+  '/apollo-vs-ascension',
+  '/apollo-vs-biopeptitech',
+  '/ascension-vs-biopeptitech',
+  '/compare/research-peptides',
+]
+
+function isGone(pathname: string): boolean {
+  const p = pathname.replace(/\/+$/, '') || '/'
+  return GONE.some((g) => p === g || p.startsWith(`${g}/`))
+}
+
+// Crawlers need the status code; people who follow an old link need somewhere to go.
+const GONE_BODY = `<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Page no longer available | Refer Labs</title>
+<style>body{margin:0;background:#F6F5F1;color:#16201C;font:16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}
+main{max-width:32rem;padding:2rem;text-align:center}h1{font-size:1.5rem;margin:0 0 .75rem}
+a{color:#0E7C66;font-weight:600}</style></head><body><main>
+<h1>This page is no longer available</h1>
+<p>We removed it and there is no replacement. If you were comparing something specific, our current guides are the best starting point.</p>
+<p><a href="/guides">Browse the guides</a></p>
+</main></body></html>`
+
 export async function proxy(request: NextRequest) {
+  // Checked before the Supabase client is built: these paths need no session, and
+  // skipping the auth roundtrip keeps a bot hammering dead URLs off the auth path.
+  if (isGone(request.nextUrl.pathname)) {
+    return new NextResponse(GONE_BODY, {
+      status: 410,
+      headers: { 'content-type': 'text/html; charset=utf-8', 'x-robots-tag': 'noindex' },
+    })
+  }
+
   // Create a response that we'll update with cookies
   const response = NextResponse.next({
     request: {
