@@ -13,11 +13,14 @@ export default function StickyCta({
   href,
   label,
   product,
+  offer,
   sponsored = true,
 }: {
   href: string;
   label: string;
   product: string;
+  /** When set, surfaces the deal as the headline line (still discloses the link). */
+  offer?: string;
   sponsored?: boolean;
 }) {
   const [show, setShow] = useState(false);
@@ -36,8 +39,17 @@ export default function StickyCta({
     >
       <div className="mx-3 mb-3 flex items-center gap-3 rounded-2xl border border-[#cfe6da] bg-white/95 px-4 py-2.5 shadow-[0_-8px_30px_-12px_rgba(16,37,27,0.4)] backdrop-blur">
         <div className="min-w-0 flex-1">
-          <p className="truncate text-[13px] font-bold text-[#10251b]">{product}</p>
-          <p className="truncate text-[11px] text-[#9aa39c]">Disclosed affiliate link</p>
+          {offer ? (
+            <>
+              <p className="truncate text-[13px] font-bold text-[#0a7c42]">{offer}</p>
+              <p className="truncate text-[11px] text-[#9aa39c]">{product} · disclosed affiliate link</p>
+            </>
+          ) : (
+            <>
+              <p className="truncate text-[13px] font-bold text-[#10251b]">{product}</p>
+              <p className="truncate text-[11px] text-[#9aa39c]">Disclosed affiliate link</p>
+            </>
+          )}
         </div>
         <a
           href={href}

@@ -96,6 +96,10 @@ const STANDALONE_ROUTES = [
   "/home-battery-rebate-australia",
   "/home-battery-cost-australia",
   "/home-battery-payback-calculator",
+  "/best-home-battery-australia",
+  "/what-size-home-battery-do-i-need-australia",
+  "/nsw-home-battery-rebate-2026",
+  "/home-battery-installer-nsw",
   // Hair-loss cluster info pages (own light ConsumerShell)
   "/finasteride-australia",
   "/minoxidil-australia",

@@ -269,7 +269,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         </section>
       </main>
 
-      <StickyCta href={url} product={config.brand} label="Continue" />
+      <StickyCta href={url} product={config.brand} label={config.offer ? "Claim offer" : "Get started"} offer={config.offer} />
     </ConsumerShell>
   );
 }

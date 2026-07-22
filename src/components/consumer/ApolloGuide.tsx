@@ -1,22 +1,21 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, BadgeCheck, ShieldCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import { SITE_URL } from "@/lib/seo";
-import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Shared layout for the hair-loss guide cluster (men's hair loss, funnels to Mosh).
-// Structure is shared; ALL copy lives in the per-page config so sibling pages never
-// share a sentence skeleton. TGA-safe by construction: the CTA promotes the SERVICE
-// (a practitioner-led assessment), never the medicine; every page carries the
-// information-only notice and the affiliate disclosure. See health-tga-compliance memory.
+// Shared layout for the home-battery guide cluster (funnels to Apollo Energy Group,
+// $500 off via Refer Labs). Structure is shared; ALL copy lives in the per-page
+// config so sibling pages never share a sentence skeleton. Rebate figures are
+// indicative only (the STC spot price floats) and always labelled as such.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type GuideSection = { h: string; body: string[]; bullets?: string[] };
 
-export interface HairLossGuideConfig {
-  slug: string;                 // e.g. "/finasteride-vs-minoxidil-australia"
+export interface ApolloGuideConfig {
+  slug: string;
   crumb: string;
   h1: string;
   /** Direct, citable answer in the first ~100 words (AEO/GEO). */
@@ -26,7 +25,13 @@ export interface HairLossGuideConfig {
   related: { href: string; label: string }[];
 }
 
-export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
+const TRUST = [
+  { icon: BadgeCheck, label: "SAA-accredited installer" },
+  { icon: ShieldCheck, label: "10-year battery warranty" },
+  { icon: Wrench, label: "Sized from your real usage" },
+];
+
+export function apolloGuideSchemas(cfg: ApolloGuideConfig) {
   const url = `${SITE_URL}${cfg.slug}`;
   return [
     {
@@ -34,7 +39,7 @@ export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Hair loss", item: `${SITE_URL}/hair-loss` },
+        { "@type": "ListItem", position: 2, name: "Home batteries", item: `${SITE_URL}/apollo-energy` },
         { "@type": "ListItem", position: 3, name: cfg.crumb, item: url },
       ],
     },
@@ -56,25 +61,24 @@ export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
   ];
 }
 
-/** Service-focused Mosh CTA (assessment, not medicine). Reused top and bottom. */
-function MoshCta({ heading, body, loc }: { heading: string; body: string; loc: string }) {
+function ApolloCta({ heading, body, loc }: { heading: string; body: string; loc: string }) {
   return (
     <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
       <div className="max-w-md">
         <p className="font-bold text-[#10251b]">{heading}</p>
         <p className="mt-1 text-[14px] leading-relaxed text-[#10251b]">{body}</p>
       </div>
-      <a href={MOSH_HAIR_URL} target="_blank" rel="nofollow sponsored" data-cta={`hairloss-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
-        Start a Mosh assessment <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      <a href={APOLLO_ENERGY_URL} target="_blank" rel="nofollow sponsored" data-cta={`battery-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
+        Get your $500-off quote <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </a>
     </div>
   );
 }
 
-export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
+export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
   return (
     <ConsumerShell>
-      {hairLossGuideSchemas(cfg).map((s, i) => (
+      {apolloGuideSchemas(cfg).map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
 
@@ -82,7 +86,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         <nav className="flex flex-wrap items-center gap-2 text-sm text-[#6e7b74]">
           <Link href="/" className="hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/hair-loss" className="hover:text-[#10251b]">Hair loss</Link>
+          <Link href="/apollo-energy" className="hover:text-[#10251b]">Home batteries</Link>
           <span>/</span>
           <span className="text-[#10251b]">{cfg.crumb}</span>
         </nav>
@@ -90,20 +94,22 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">{cfg.h1}</h1>
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
 
-        {/* Information-only notice */}
-        <div className="nw-card mt-6 px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-          <span className="font-bold text-[#10251b]">Information only.</span> Nothing here is medical advice or a
-          recommendation of any treatment. Finasteride is a prescription-only medicine in Australia, supplied only after an
-          individual assessment by a registered practitioner who decides suitability. This page contains a disclosed
-          affiliate link to Mosh.
+        {/* Trust strip */}
+        <div className="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] sm:grid-cols-3">
+          {TRUST.map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-3 bg-white px-5 py-4">
+              <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} aria-hidden="true" />
+              <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
+            </div>
+          ))}
         </div>
 
-        {/* Top CTA (service-focused) */}
+        {/* Top CTA */}
         <div className="mt-7">
-          <MoshCta
+          <ApolloCta
             loc="top"
-            heading="Want a practitioner to assess your options?"
-            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, with treatment delivered if appropriate. Plans from $24/month, free delivery, and 55% off your first order through our link."
+            heading="Want it sized and quoted properly?"
+            body="Apollo Energy Group is an SAA-accredited Australian installer (Electrical Licence 400672, 10-year battery warranty). Refer Labs readers get $500 off their quote, on top of the federal rebate."
           />
         </div>
 
@@ -129,10 +135,10 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
 
         {/* Bottom CTA */}
         <div className="mt-12">
-          <MoshCta
+          <ApolloCta
             loc="bottom"
-            heading="Start with a practitioner, not a guess"
-            body="If you want your options assessed properly, Mosh's online consultation is reviewed by a registered Australian practitioner. 55% off your first order through our link; money-back guarantee applies."
+            heading="Get a quote sized to your home"
+            body="A battery is only worth it when it's sized to how you actually use power. Apollo sizes from your real usage and applies the federal rebate at the point of sale, plus $500 off through our link."
           />
         </div>
 
@@ -159,19 +165,16 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           ))}
         </section>
 
-        {/* Bottom disclaimer */}
-        <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-[#6e7b74]">
-          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" />
-          <span>
-            Information only, not medical advice. Prescription medicines in Australia are supplied only after individual
-            assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never change
-            a comparison or a conclusion. Read our{" "}
-            <Link href="/how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
-          </span>
+        {/* Disclaimer */}
+        <p className="mt-10 text-xs leading-relaxed text-[#6e7b74]">
+          Rebate and savings figures are indicative only and depend on your system size, usage, tariff, and the STC spot
+          price, which floats. Confirm current rebate terms and your specific quote before committing. Some links are
+          disclosed affiliate links, and commissions never change a comparison or a conclusion. Read our{" "}
+          <Link href="/how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
         </p>
       </main>
 
-      <StickyCta href={MOSH_HAIR_URL} product="Mosh hair-loss telehealth" label="Claim offer" offer="55% off your first order" />
+      <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy home batteries" label="Claim offer" offer="$500 off your quote" />
     </ConsumerShell>
   );
 }

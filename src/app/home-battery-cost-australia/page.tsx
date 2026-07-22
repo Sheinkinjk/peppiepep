@@ -278,10 +278,11 @@ export default function HomeBatteryCostAustraliaPage() {
             <section>
               <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
+                <li><Link href="/best-home-battery-australia" className="nw-link">Best home battery: how to actually choose one</Link></li>
+                <li><Link href="/what-size-home-battery-do-i-need-australia" className="nw-link">What size home battery do I need?</Link></li>
                 <li><Link href="/home-battery-payback-calculator" className="nw-link">Home battery payback calculator</Link></li>
                 <li><Link href="/home-battery-rebate-australia" className="nw-link">The 2026 home battery rebate, explained</Link></li>
                 <li><Link href="/apollo-energy" className="nw-link">Apollo Energy Group: the offer and how it works</Link></li>
-                <li><Link href="/apollo-energy-review" className="nw-link">Apollo Energy Group review: is it legit?</Link></li>
               </ul>
             </section>
 

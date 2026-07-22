@@ -3,6 +3,7 @@ import { CATALOG } from '@/lib/catalog/catalog';
 import { LENDERS } from '@/lib/lenders';
 import { INTENT_PAGES } from '@/lib/lending-intent';
 import { HAIR_LOSS_GUIDES } from '@/lib/hair-loss-guides';
+import { APOLLO_GUIDES } from '@/lib/apollo-guides';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
@@ -93,6 +94,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     // Hair-loss guide cluster (generated from the registry)
     ...HAIR_LOSS_GUIDES.map((g) => ({
+      url: `${BASE}${g.slug}`,
+      lastModified: FRESH,
+      changeFrequency: 'monthly' as const,
+      priority: g.priority,
+    })),
+    // Home-battery guide cluster (generated from the registry)
+    ...APOLLO_GUIDES.map((g) => ({
       url: `${BASE}${g.slug}`,
       lastModified: FRESH,
       changeFrequency: 'monthly' as const,

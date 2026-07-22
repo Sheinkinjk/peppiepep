@@ -87,6 +87,10 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Home battery payback calculator", href: "/home-battery-payback-calculator", category: "Home & energy", kind: "Guide", keywords: "home battery payback calculator savings roi is a battery worth it australia" },
   { title: "Apollo Energy Group review: is it legit?", href: "/apollo-energy-review", category: "Home & energy", kind: "Guide", keywords: "apollo energy group review is apollo energy legit apollo battery installer reviews australia $500 discount" },
   { title: "Home battery rebate Australia 2026", href: "/home-battery-rebate-australia", category: "Home & energy", kind: "Guide", keywords: "home battery rebate australia cheaper home batteries program battery rebate 2026 solar battery rebate stc taper 14kwh how much" },
+  { title: "Best home battery in Australia", href: "/best-home-battery-australia", category: "Home & energy", kind: "Guide", keywords: "best home battery australia solar battery choose capacity chemistry lfp warranty vpp compare" },
+  { title: "What size home battery do I need", href: "/what-size-home-battery-do-i-need-australia", category: "Home & energy", kind: "Guide", keywords: "what size home battery do i need kwh sizing calculator australia how many" },
+  { title: "NSW home battery rebate 2026", href: "/nsw-home-battery-rebate-2026", category: "Home & energy", kind: "Guide", keywords: "nsw home battery rebate 2026 vpp incentive 1500 federal stack sydney" },
+  { title: "Home battery installer NSW", href: "/home-battery-installer-nsw", category: "Home & energy", kind: "Guide", keywords: "home battery installer nsw sydney saa accredited electrical licence solar battery installation" },
   { title: "AliDrop review", href: "/alidrop", category: "E-commerce", kind: "Guide", keywords: "alidrop dropshipping aliexpress temu alibaba shopify fulfilment sourcing" },
 
   // AI & sales

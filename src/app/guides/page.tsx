@@ -80,7 +80,11 @@ const sections = [
       { href: "/home-battery-rebate-australia", label: "The 2026 Battery Rebate", desc: "What the Cheaper Home Batteries discount pays, and why it tapers above 14kWh." },
       { href: "/apollo-energy-review", label: "Apollo Energy, Reviewed", desc: "Accreditation, warranty, and the things worth checking before you sign." },
       { href: "/home-battery-cost-australia", label: "What a Battery Costs", desc: "Real installed price ranges by size, what the rebate takes off, and payback." },
-      { href: "/home-battery-payback-calculator", label: "Payback Calculator", desc: "Estimate net cost, annual saving and payback from your own usage and tariff." }
+      { href: "/home-battery-payback-calculator", label: "Payback Calculator", desc: "Estimate net cost, annual saving and payback from your own usage and tariff." },
+      { href: "/best-home-battery-australia", label: "Best Home Battery", desc: "How to actually choose one: capacity, chemistry, warranty, and why the installer matters." },
+      { href: "/what-size-home-battery-do-i-need-australia", label: "What Size Battery Do I Need", desc: "Size from your evening usage and spare solar, and why the rebate tapers above 14kWh." },
+      { href: "/nsw-home-battery-rebate-2026", label: "NSW Battery Rebate 2026", desc: "The federal rebate plus the NSW VPP incentive, and how they stack." },
+      { href: "/home-battery-installer-nsw", label: "Choosing a NSW Installer", desc: "SAA accreditation, licensing, warranties, and handling the rebate." }
     ],
   },
   {
