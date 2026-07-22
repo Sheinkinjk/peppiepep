@@ -149,24 +149,90 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Business loan repayment calculator", href: "/business-loan-calculator", category: "Business finance", kind: "Guide", keywords: "business loan calculator repayments effective rate total cost australia" },
   { title: "What a business loan actually costs", href: "/what-a-business-loan-actually-costs", category: "Business finance", kind: "Guide", keywords: "business loan cost nominal rate factor rate fees comparison rate australia" },
   { title: "The hidden cost of factor rates (analysis)", href: "/true-cost-of-business-loans-australia", category: "Business finance", kind: "Guide", keywords: "factor rate vs interest rate true cost business loan effective annual rate analysis 1.2 factor" },
+  { title: "Equipment finance & the instant asset write-off", href: "/equipment-finance-instant-asset-write-off", category: "Business finance", kind: "Guide", keywords: "equipment finance chattel mortgage lease instant asset write off tax vehicle machinery" },
+  { title: "Unsecured business loans", href: "/unsecured-business-loans-australia", category: "Business finance", kind: "Guide", keywords: "unsecured business loan no collateral security australia" },
+  { title: "Secured vs unsecured business loans", href: "/secured-vs-unsecured-business-loans", category: "Business finance", kind: "Guide", keywords: "secured vs unsecured business loan collateral compare which" },
+  { title: "Business line of credit", href: "/business-line-of-credit-australia", category: "Business finance", kind: "Guide", keywords: "business line of credit revolving overdraft facility australia" },
+  { title: "Working capital loans", href: "/working-capital-loans-australia", category: "Business finance", kind: "Guide", keywords: "working capital cash flow finance loan australia" },
+  { title: "Fast business loans", href: "/fast-business-loans-australia", category: "Business finance", kind: "Guide", keywords: "fast same day quick business loan 24 hours funding australia" },
+  { title: "Business loans with bad credit", href: "/business-loans-bad-credit-australia", category: "Business finance", kind: "Guide", keywords: "bad credit business loan default judgement poor credit australia" },
+  { title: "Small business loans", href: "/small-business-loans-australia", category: "Business finance", kind: "Guide", keywords: "small business loan finance australia types" },
+  { title: "Low-doc business loans", href: "/low-doc-business-loans-australia", category: "Business finance", kind: "Guide", keywords: "low doc no doc business loan without financials bank statements australia" },
+  { title: "Startup business loans", href: "/startup-business-loans-australia", category: "Business finance", kind: "Guide", keywords: "startup new business loan no trading history australia" },
+  { title: "Business loans for sole traders", href: "/business-loans-sole-traders-australia", category: "Business finance", kind: "Guide", keywords: "sole trader self employed business loan abn australia" },
+  { title: "Hospitality business loans", href: "/business-loans-hospitality-australia", category: "Business finance", kind: "Guide", keywords: "cafe restaurant hospitality venue fit out equipment loan australia" },
+  { title: "How to get a business loan", href: "/how-to-get-a-business-loan-australia", category: "Business finance", kind: "Guide", keywords: "how to get apply for a business loan australia steps requirements" },
+  { title: "What lenders look at (eligibility)", href: "/business-loan-eligibility-australia", category: "Business finance", kind: "Guide", keywords: "business loan eligibility requirements criteria qualify australia abn revenue" },
+  { title: "Lumi business loans", href: "/business-loans/lumi", category: "Business finance", kind: "Review", keywords: "lumi business loan review rates eligibility australia" },
+  { title: "Lumi review", href: "/business-loans/lumi/review", category: "Business finance", kind: "Review", keywords: "lumi review is lumi legit business lender australia" },
+  { title: "Moula business loans", href: "/business-loans/moula", category: "Business finance", kind: "Review", keywords: "moula business loan review rates eligibility australia" },
+  { title: "Moula review", href: "/business-loans/moula/review", category: "Business finance", kind: "Review", keywords: "moula review is moula legit business lender australia" },
+  { title: "Prospa business loans", href: "/business-loans/prospa", category: "Business finance", kind: "Review", keywords: "prospa business loan review rates eligibility australia" },
+  { title: "Prospa review", href: "/business-loans/prospa/review", category: "Business finance", kind: "Review", keywords: "prospa review is prospa legit business lender australia asx" },
+  { title: "How Refer Labs makes money", href: "/how-we-make-money", category: "Browse", kind: "Guide", keywords: "how we make money affiliate commission lender referral disclosure" },
+
+  // Core site pages
+  { title: "All business software", href: "/business-software", category: "Software", kind: "Category", keywords: "business software tools directory all categories" },
+  { title: "Popups, quizzes & lead capture", href: "/compare/lead-generation", category: "Software", kind: "Category", keywords: "popups quizzes calculators lead capture hello bar outgrow flexiquiz" },
+  { title: "FAQ", href: "/faq", category: "Browse", kind: "Guide", keywords: "faq frequently asked questions help" },
+  { title: "About Refer Labs", href: "/about", category: "Browse", kind: "Guide", keywords: "about us who we are company refer labs" },
+  { title: "How we research", href: "/how-we-research", category: "Browse", kind: "Guide", keywords: "editorial standards methodology independence how we research disclosure" },
+  { title: "Contact", href: "/contact", category: "Browse", kind: "Guide", keywords: "contact email get in touch support" },
+  { title: "For business", href: "/for-business", category: "Browse", kind: "Category", keywords: "for business brands partner with us grow" },
+  { title: "Get featured on a comparison", href: "/comparison-website", category: "Browse", kind: "Guide", keywords: "get featured listed comparison website partner brand" },
+  { title: "Growth services", href: "/services", category: "Browse", kind: "Category", keywords: "services growth distribution done with you" },
+  { title: "Affiliate distribution service", href: "/services/affiliate-distribution", category: "Browse", kind: "Guide", keywords: "affiliate distribution service program growth" },
+  { title: "Referral program service", href: "/services/referral-programs", category: "Browse", kind: "Guide", keywords: "referral program service build launch" },
+  { title: "APAC expansion service", href: "/services/apac-expansion", category: "Browse", kind: "Guide", keywords: "apac expansion australia market entry service" },
+  { title: "Partner activation service", href: "/services/partner-activation", category: "Browse", kind: "Guide", keywords: "partner activation service channel" },
+  { title: "Product distribution service", href: "/services/product-distribution", category: "Browse", kind: "Guide", keywords: "product distribution service reach" },
+  { title: "Privacy policy", href: "/privacy", category: "Browse", kind: "Guide", keywords: "privacy policy data personal information collection" },
+  { title: "Terms of service", href: "/terms", category: "Browse", kind: "Guide", keywords: "terms of service conditions legal" },
 ];
 
-export function searchEntries(query: string, limit = 7): SearchEntry[] {
+/**
+ * Ranked site search.
+ *
+ * Scoring favours, in order: the full phrase in the title, the full phrase
+ * anywhere, entries matching EVERY search term, then per-term title/keyword hits.
+ * Entries that match every term are returned first; if nothing matches all terms
+ * we fall back to partial matches so a typo or an extra word still returns
+ * something useful rather than an empty state.
+ */
+export function searchEntries(query: string, limit = 8): SearchEntry[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const words = q.split(/\s+/).filter(Boolean);
-  return SEARCH_INDEX.map((e) => {
+
+  const scored = SEARCH_INDEX.map((e) => {
     const title = e.title.toLowerCase();
     const hay = `${title} ${e.category} ${e.kind} ${e.keywords ?? ""}`.toLowerCase();
+
     let score = 0;
+    let matchedAll = true;
     for (const w of words) {
-      if (title.includes(w)) score += 2;
-      else if (hay.includes(w)) score += 1;
-      if (title.startsWith(w)) score += 3;
+      let s = 0;
+      if (title.startsWith(w)) s += 5;
+      if (title.includes(w)) s += 3;
+      else if (hay.includes(w)) s += 1;
+      if (s === 0) matchedAll = false;
+      score += s;
     }
-    return { e, score };
-  })
-    .filter((r) => r.score > 0)
+    // Whole-phrase matches are the strongest relevance signal.
+    if (title.includes(q)) score += 8;
+    else if (hay.includes(q)) score += 4;
+    // Reward covering every term so multi-word queries stop returning noise.
+    if (matchedAll && words.length > 1) score += 4;
+    // Categories are broader entry points; nudge them up on ties.
+    if (e.kind === "Category") score += 1;
+
+    return { e, score, matchedAll };
+  }).filter((r) => r.score > 0);
+
+  const complete = scored.filter((r) => r.matchedAll);
+  const pool = complete.length > 0 ? complete : scored;
+
+  return pool
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map((r) => r.e);
