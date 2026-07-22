@@ -366,13 +366,6 @@ export const seoConfig = {
     url: `${SITE_URL}/activecampaign`,
     keywords: ["activecampaign discount code", "activecampaign promo code", "activecampaign coupon", "activecampaign referral link", "activecampaign review", "activecampaign pricing", "email marketing automation", "marketing automation crm"],
   },
-  melio: {
-    title: "Melio Referral Link & Pricing 2026: B2B Bill Pay (US) | Refer Labs",
-    description:
-      "Looking for Melio pricing or a referral link? Melio is B2B bill pay and accounts payable for US businesses, pay vendors by bank, card or check. Free plan; from US$25/mo. US business and bank required.",
-    url: `${SITE_URL}/melio`,
-    keywords: ["melio pricing", "melio referral link", "melio review", "melio payments", "b2b bill pay", "accounts payable software", "pay vendors by card"],
-  },
   helloBar: {
     title: "Hello Bar Discount Code & Referral Link 2026: Popups & Lead Capture | Refer Labs",
     description:

@@ -175,9 +175,9 @@ export const moshyConfig: AffiliatePageConfig = {
       desc: "Mosh is Moshy's men's health sister brand for hair loss. Access the current Mosh referral offer.",
     },
     {
-      href: "/best-peptide-supplier",
-      label: "Best Peptide Supplier 2026",
-      desc: "Research peptide suppliers compared, purity, catalogue, and current discount codes.",
+      href: "/best-weight-loss-telehealth-australia",
+      label: "Best Weight Loss Telehealth in Australia",
+      desc: "The leading Australian online weight-management providers, compared on model, cost and fit.",
     },
     {
       href: "/guides",

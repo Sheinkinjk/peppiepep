@@ -168,9 +168,9 @@ export const beehiivConfig: AffiliatePageConfig = {
       desc: "beehiiv vs Substack vs ConvertKit, free plans, monetisation, and growth tools compared.",
     },
     {
-      href: "/incomelab",
-      label: "IncomeLab, AI Side Hustle Platform",
-      desc: "AI side hustle ideas and frameworks for making money with AI tools in 2026.",
+      href: "/compare/newsletter-platforms",
+      label: "Newsletter Platforms Compared",
+      desc: "beehiiv, Substack and Kit lined up by what each is actually built for.",
     },
     {
       href: "/guides",

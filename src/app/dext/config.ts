@@ -74,7 +74,7 @@ export const dextConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
-    { href: "/melio", label: "Melio", desc: "Pay vendors and bills, for US businesses." },
+    { href: "/compare/payments", label: "Payments & finance tools", desc: "Getting paid across borders, plus bookkeeping and accounting automation." },
   ],
   ctas: {
     primary: "See Dext",

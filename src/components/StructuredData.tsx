@@ -39,8 +39,9 @@ export function OrganizationSchema() {
       "Product Comparison and Reviews",
       "Weight Loss Telehealth Australia",
       "Hair Loss Treatment Australia",
-      "GLP-1 and Semaglutide Telehealth",
-      "Research Peptide Suppliers",
+      "Prescription Weight Management Telehealth",
+      "Business Loans and Business Finance Australia",
+      "Home Batteries and Solar Rebates Australia",
       "Website Builders",
       "Newsletter Platforms"
     ],

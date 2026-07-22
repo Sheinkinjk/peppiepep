@@ -30,10 +30,6 @@ const PARTNER_VALUE: Record<string, number> = {
   "durableai.link": 20,
   "butternut.ai": 15,
   "swipepages.com": 25,
-  "incomelab.me": 20,
-  "apollopeptidesciences.com": 30,
-  "ascensionpeptides.com": 30,
-  "biopeptitech.com": 30,
   // AI sales & automation (recurring programs weighted by expected LTV)
   "gohighlevel.com": 100,
   "partner.aisdr.com": 120,
@@ -41,8 +37,6 @@ const PARTNER_VALUE: Record<string, number> = {
   "fullenrich.partnerlinks.io": 30,
   // HR & payroll
   "try.employmenthero.com": 80,
-  // Prediction markets (share of first-30-day trading fees)
-  "polymarket.com": 15,
   // Email marketing / e-commerce / landing pages / affiliate software (PartnerStack)
   "get.brevo.com": 40,
   "get.alidrop.co": 30,
