@@ -1035,112 +1035,6 @@ export const seoConfig = {
     ],
   },
 
-  apolloPeptides: {
-    title: "Apollo Peptide Sciences Discount Code | Peptides Sale & Research Peptides Deals | Refer Labs",
-    description:
-      "Looking for an Apollo Peptide Sciences discount code? Discover the latest peptides sale and research peptide deals. Save on high-quality lab peptides: Semaglutide, CJC-1295, GHK-Cu, Ipamorelin, and Retatrutide research compounds.",
-    url: `${SITE_URL}/apollopeptides`,
-    keywords: [
-      "apollo peptide sciences discount code",
-      "apollo peptide sciences promo code",
-      "apollo peptide sciences sale",
-      "apollo peptide sciences review",
-      "apollo peptides discount",
-      "peptides sale",
-      "research peptides sale",
-      "research peptides deals",
-      "peptide discount code",
-      "buy peptides online",
-      "research peptides supplier",
-      "peptide supplier discount",
-      "semaglutide research peptides",
-      "CJC-1295 research peptides",
-      "ipamorelin research peptides",
-      "GHK-Cu peptide",
-      "retatrutide research peptides",
-      "peptides sale online",
-      "best peptide supplier discount",
-      "peptide research compounds sale",
-    ],
-  },
-
-  ascensionPeptides: {
-    title: "Ascension Peptides Discount Code | Research Peptides Sale & Deals | Refer Labs",
-    description:
-      "Find the latest Ascension Peptides discount codes and peptides sale offers. Save on high-purity research peptides for hormone signalling, metabolic, and anti-aging studies. Access the current deal via our referral link.",
-    url: `${SITE_URL}/ascensionpeptides`,
-    keywords: [
-      "ascension peptides discount code",
-      "ascension peptides promo code",
-      "ascension peptides sale",
-      "ascension peptides review",
-      "peptides sale",
-      "research peptides sale",
-      "research peptide deals",
-      "peptide research compounds",
-      "peptide supplier sale",
-      "buy peptides online",
-      "peptide supplier discount",
-      "research peptides online",
-      "lab grade peptides sale",
-      "peptides sale online",
-      "research peptides discount code",
-      "peptide supplier deals",
-    ],
-  },
-
-  bioPeptiTech: {
-    title: "BioPeptiTech Discount Code | Peptides Sale & Research Peptides Deals | Refer Labs",
-    description:
-      "Find the latest BioPeptiTech discount codes and peptides sale offers. Compare research peptide deals and save on lab-grade peptide compounds for longevity, metabolic, and hormone signalling research.",
-    url: `${SITE_URL}/biopeptitech`,
-    keywords: [
-      "biopeptitech discount code",
-      "biopeptitech promo code",
-      "biopeptitech sale",
-      "biopeptitech review",
-      "peptides sale",
-      "research peptides sale",
-      "peptide discount code",
-      "buy peptides online",
-      "peptide supplier discounts",
-      "peptide research compounds sale",
-      "research peptides discount code",
-      "peptide supplier deals",
-      "peptides sale online",
-      "best peptide supplier discount",
-      "longevity research peptides",
-      "metabolic research peptides",
-    ],
-  },
-
-  bestPeptideSupplier: {
-    title: "Best Peptide Supplier 2026: Apollo, Ascension & BioPeptiTech Compared | Refer Labs",
-    description:
-      "Compare the best research peptide suppliers in 2026: Apollo Peptide Sciences, Ascension Peptides, and BioPeptiTech. Current discount codes, peptides sale offers, purity standards, and catalogue coverage. For research use only.",
-    url: `${SITE_URL}/best-peptide-supplier`,
-    keywords: [
-      "best peptide supplier 2026",
-      "best research peptide supplier",
-      "peptides sale",
-      "research peptides comparison",
-      "peptide discount code",
-      "buy peptides online",
-      "peptide supplier review",
-      "apollo peptide sciences review",
-      "ascension peptides review",
-      "biopeptitech review",
-      "peptide supplier comparison",
-      "lab grade peptides",
-      "peptide suppliers australia",
-      "apollo vs ascension peptides",
-      "peptide supplier discount",
-      "research peptides deals",
-      "top peptide suppliers",
-      "peptide purity coa",
-    ],
-  },
-
   bestWeightLossTelehealth: {
     // This is the roundup; /moshy-vs-juniper owns the head-to-head. The title and
     // keywords deliberately no longer claim "moshy vs juniper", so the two pages
@@ -1488,27 +1382,6 @@ export const seoConfig = {
     ],
   },
 
-  apolloVsAscension: {
-    title: "Apollo Peptides vs Ascension Peptides (2026): Research Supplier Comparison | Refer Labs",
-    description:
-      "Apollo Peptides vs Ascension Peptides compared for 2026 on the supplier dimensions that matter: catalogue range, third-party testing and COA documentation, shipping, and community trust. Products are for laboratory research use only and not for human consumption. Information only.",
-    url: `${SITE_URL}/apollo-vs-ascension`,
-    keywords: [
-      "apollo vs ascension",
-      "apollo peptides vs ascension peptides",
-      "apollo vs ascension peptides",
-      "ascension vs apollo peptides",
-      "apollo peptide sciences vs ascension peptides",
-      "research peptide supplier comparison",
-      "best research peptide supplier",
-      "apollo peptides review",
-      "ascension peptides review",
-      "peptide supplier comparison 2026",
-      "research peptides australia",
-      "compare peptide suppliers",
-    ],
-  },
-
   carrdVsButternut: {
     title: "Carrd vs Butternut AI 2026: Simple Builder or AI Site Generator? | Refer Labs",
     description:
@@ -1527,48 +1400,6 @@ export const seoConfig = {
       "butternut ai alternative",
       "cheapest website builder 2026",
       "best ai website builder 2026",
-    ],
-  },
-
-  apolloVsBioPeptiTech: {
-    title: "Apollo Peptides vs BioPeptiTech (2026): Research Supplier Comparison | Refer Labs",
-    description:
-      "Apollo Peptides vs BioPeptiTech compared for 2026 on the supplier dimensions that matter: catalogue range, third-party testing and COA documentation, sale frequency, and community trust. Products are for laboratory research use only and not for human consumption. Information only.",
-    url: `${SITE_URL}/apollo-vs-biopeptitech`,
-    keywords: [
-      "apollo vs biopeptitech",
-      "apollo peptides vs biopeptitech",
-      "biopeptitech vs apollo peptides",
-      "apollo peptide sciences vs biopeptitech",
-      "research peptide supplier comparison",
-      "best research peptide supplier",
-      "apollo peptides review",
-      "biopeptitech review",
-      "peptide supplier comparison 2026",
-      "research peptides australia",
-      "compare peptide suppliers",
-      "cheapest research peptide supplier",
-    ],
-  },
-
-  ascensionVsBioPeptiTech: {
-    title: "Ascension Peptides vs BioPeptiTech (2026): Research Supplier Comparison | Refer Labs",
-    description:
-      "Ascension Peptides vs BioPeptiTech compared for 2026 on the supplier dimensions that matter: purity and COA documentation, catalogue range, sale frequency, and community trust. Products are for laboratory research use only and not for human consumption. Information only.",
-    url: `${SITE_URL}/ascension-vs-biopeptitech`,
-    keywords: [
-      "ascension vs biopeptitech",
-      "ascension peptides vs biopeptitech",
-      "biopeptitech vs ascension peptides",
-      "research peptide supplier comparison",
-      "best research peptide supplier",
-      "ascension peptides review",
-      "biopeptitech review",
-      "peptide supplier comparison 2026",
-      "research peptides australia",
-      "compare peptide suppliers",
-      "high purity research peptides",
-      "cheapest research peptide supplier",
     ],
   },
 

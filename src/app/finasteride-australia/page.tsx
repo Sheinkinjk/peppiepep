@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "What does finasteride do for hair loss?",
-    a: "Finasteride works on the hormone pathway behind male pattern hair loss. It reduces the conversion of testosterone to dihydrotestosterone (DHT), the hormone linked to the shrinking of hair follicles in androgenetic alopecia. At the 1mg daily dose it is used in men to slow further loss and, for some, encourage regrowth. Whether it is suitable for you is a clinical decision a practitioner makes.",
+    a: "Finasteride works on the hormone pathway behind male pattern hair loss. It reduces the conversion of testosterone to dihydrotestosterone (DHT), the hormone linked to the shrinking of hair follicles in androgenetic alopecia. At the 1mg daily dose it is used in men to slow further loss, and some also see partial regrowth, though responses vary between people. Whether it is suitable for you is a clinical decision a practitioner makes.",
   },
   {
     q: "How long does finasteride take to work?",
@@ -106,7 +106,7 @@ export default function FinasterideAustraliaPage() {
               Finasteride in Australia: what it is, how it works, and how access works
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
-              Finasteride is one of the two most evidence-backed treatments for male pattern hair loss, and one of the
+              Finasteride is one of the two most studied treatments for male pattern hair loss, and one of the
               most searched. This page explains, factually, what finasteride is, why it is prescription-only in
               Australia, how a prescription is assessed through a GP or telehealth, and what is genuinely worth knowing
               before you consider it. It is general information to help you understand the medicine, not medical advice
@@ -153,7 +153,9 @@ export default function FinasterideAustraliaPage() {
                   terms it is a type II 5-alpha-reductase inhibitor: it reduces how much testosterone your body converts
                   into dihydrotestosterone, or DHT. DHT is the hormone most closely linked to the gradual shrinking of
                   hair follicles in androgenetic alopecia, the common inherited form of hair loss. By lowering DHT,
-                  finasteride is used to slow that process and, for some men, to encourage regrowth.
+                  finasteride is used to slow that process, and some men also see partial regrowth over time. How much
+                  benefit any individual sees varies, and that is something a practitioner and the approved product
+                  information can speak to, not a webpage.
                 </p>
                 <p>
                   The dose used for hair loss is 1mg taken orally once a day. A higher 5mg strength of the same medicine

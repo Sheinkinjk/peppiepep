@@ -41,7 +41,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     "For Australian men who want a credible, low-friction route to clinically-supervised hair-loss treatment, Mosh is a legitimate starting point. The online consult is fast, finasteride and minoxidil are prescribed only after a genuine practitioner review, and pricing is clear before you commit. As with any subscription health service, results and value come down to consistency and your individual case.",
   verdictPoints: [
     "Fast online consult, no in-person GP appointment to begin",
-    "Access to finasteride and minoxidil, the most evidence-backed treatments",
+    "Access to finasteride and minoxidil, the most studied treatments",
     "Practitioner-reviewed; eligibility is assessed individually",
   ],
 

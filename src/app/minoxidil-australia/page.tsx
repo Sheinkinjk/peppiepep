@@ -102,7 +102,7 @@ export default function MinoxidilAustraliaPage() {
               Minoxidil in Australia: topical vs oral, and how to get it
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
-              Minoxidil is the other pillar of evidence-backed hair-loss treatment alongside finasteride, and the one
+              Minoxidil is the other most-studied hair-loss treatment alongside finasteride, and the one
               you can buy over the counter. This page explains, factually, what minoxidil is, the difference between the
               topical version you can buy at a pharmacy and the prescription-only oral tablet, what to expect including
               the early shedding phase, and how it fits with a practitioner-assessed plan. It is general information, not
