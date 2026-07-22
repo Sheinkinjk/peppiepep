@@ -26,7 +26,7 @@ const TRUST = [
   { icon: ShieldCheck, label: "AFIA Code of Practice lenders" },
   { icon: FileX2, label: "No bank statements or ID uploads" },
   { icon: UserRound, label: "Every enquiry reviewed by a person" },
-  { icon: Scale, label: "Referrer, not a lender — rankings never sold" },
+  { icon: Scale, label: "Referrer, not a lender. Rankings never sold" },
 ];
 
 const URL = `${SITE_URL}/business-loans`;

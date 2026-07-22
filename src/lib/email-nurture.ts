@@ -107,7 +107,7 @@ export function buildNurtureSequence(email: string): NurtureEmail[] {
       html: wrapper(
         "Six files. One $799 payment. 48-hour delivery.",
         `
-        <p>I get this question a lot, so here's the honest breakdown of what arrives in your inbox:</p>
+        <p>I get this question a lot, so here's exactly what arrives in your inbox:</p>
         <ol>
           <li><strong>250+ Affiliate Program Database</strong> — Excel file. Company, link, commission rate, cookie window, suggested marketing angle. Sorted by 5 categories.</li>
           <li><strong>Personalised Strategy Brief</strong> — PDF, 8+ pages. Written for YOUR niche after I read your intake form. Not a template.</li>

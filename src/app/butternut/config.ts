@@ -42,7 +42,7 @@ export const butternutConfig: AffiliatePageConfig = {
     trustBullets: [
       "Direct access to Butternut AI via our referral link",
       "Covers Butternut AI pricing, free plan, and paid tiers",
-      "Honest comparison with Durable AI, Wix, Squarespace, and Framer",
+      "Compared against Durable AI, Wix, Squarespace, and Framer",
       "Click through instantly, generate your site in 20 seconds",
     ],
   },

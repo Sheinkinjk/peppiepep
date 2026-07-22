@@ -42,7 +42,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
     trustBullets: [
       "Direct access to Swipe Pages via our referral link",
       "Covers Swipe Pages pricing, free trial, and plan tiers",
-      "Honest comparison with Unbounce, Leadpages, Instapage, and ClickFunnels",
+      "Compared against Unbounce, Leadpages, Instapage, and ClickFunnels",
       "Covers AMP landing pages, A/B testing, and conversion tools",
       "Click through instantly to start your Swipe Pages trial",
     ],

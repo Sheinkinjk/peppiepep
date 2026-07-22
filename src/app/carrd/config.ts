@@ -43,7 +43,7 @@ export const carrdConfig: AffiliatePageConfig = {
     trustBullets: [
       "Direct access to the Carrd sign-up page",
       "Covers Carrd pricing, free plan, and Pro tiers",
-      "Honest comparison with Squarespace, Webflow, and Wix",
+      "Compared against Squarespace, Webflow, and Wix",
       "Click through instantly, no steps required on this page",
     ],
   },

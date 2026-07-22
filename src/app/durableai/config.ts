@@ -42,7 +42,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     trustBullets: [
       "Direct access to Durable AI via our referral link",
       "Covers Durable AI pricing, free trial, and plans",
-      "Honest comparison with Wix, Squarespace, and other AI builders",
+      "Compared against Wix, Squarespace, and other AI builders",
       "Addresses real reviews and community feedback",
       "Click through instantly to start building your site",
     ],
@@ -125,7 +125,7 @@ export const durableAiConfig: AffiliatePageConfig = {
   whyUseThis: [
     "Direct access to Durable AI via our referral link",
     "Covers Durable AI pricing and free access clearly",
-    "Honest comparison with Wix, Squarespace, and other AI builders",
+    "Compared against Wix, Squarespace, and other AI builders",
     "Covers real review sentiment without overpromising",
     "Explains exactly who Durable AI is and is not suited for",
     "Immediate click-through to Durable, no steps required here",

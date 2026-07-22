@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lender: s
 
 function facts(l: Lender): { k: string; v: string }[] {
   const rows: { k: string; v: string }[] = [
-    { k: "Rate", v: hasHeadlineRate(l) ? `${l.advertisedRateFrom} (as at ${l.rateAsAt})` : `${l.advertisedRateFrom} — priced per loan` },
+    { k: "Rate", v: hasHeadlineRate(l) ? `${l.advertisedRateFrom} (as at ${l.rateAsAt})` : `${l.advertisedRateFrom} (priced per loan)` },
     { k: "Loan size", v: `${money(l.minAmount)} – ${money(l.maxAmount)}` },
     { k: "Typical speed", v: l.speed },
     { k: "Products", v: l.products.map((p) => label(p)).join(", ") },

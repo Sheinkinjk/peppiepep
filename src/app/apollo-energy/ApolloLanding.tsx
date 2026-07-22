@@ -327,7 +327,7 @@ export default function ApolloLanding() {
                   {[
                     "$500 off your quote, exclusive to Refer Labs, no code needed",
                     "Federal rebate applied at the point of sale, not claimed back later",
-                    "Sized from your real usage, and the rebate taper above 14kWh explained honestly",
+                    "Sized from your real usage, and the rebate taper above 14kWh explained in full",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" />

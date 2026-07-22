@@ -199,7 +199,7 @@ export default function Glp1WeightLossAustraliaPage() {
                   whole-of-health context, order any tests they think are needed, and manage your care alongside anything else that is
                   going on. It is slower to get moving and depends on appointment availability, but for many people the continuity is
                   valuable. Our comparison of{" "}
-                  <Link href="/moshy-vs-gp" className="nw-link">telehealth versus your GP</Link> covers the trade-off honestly.
+                  <Link href="/moshy-vs-gp" className="nw-link">telehealth versus your GP</Link> covers the trade-off in full.
                 </p>
                 <p>
                   <span className="font-semibold text-[#10251b]">Online telehealth.</span> Telehealth services run an eligibility

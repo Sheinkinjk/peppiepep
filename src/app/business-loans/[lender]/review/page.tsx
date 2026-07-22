@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lender: s
 // Editorial framing DERIVED from the config numbers — not fabricated claims or ratings.
 function suitsWho(l: Lender): string[] {
   const out: string[] = [];
-  if (l.maxAmount >= 500000) out.push(`Businesses wanting a larger facility — ${l.name} funds up to ${money(l.maxAmount)}.`);
+  if (l.maxAmount >= 500000) out.push(`Businesses wanting a larger facility, since ${l.name} funds up to ${money(l.maxAmount)}.`);
   if (l.minAmount <= 5000) out.push(`Smaller top-ups: the ${money(l.minAmount)} minimum suits modest borrowing.`);
   if (l.products.includes("line_of_credit")) out.push("Businesses that want revolving access rather than a single lump sum, via the line of credit.");
   if (/hour|same/i.test(l.speed)) out.push(`Time-sensitive needs, given a typical turnaround of ${l.speed.toLowerCase()}.`);

@@ -175,8 +175,8 @@ export default function CarrdVsButternutPage() {
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 Pick Carrd if you want a single, polished one-page site, a portfolio, or a link-in-bio page that stays
                 cheap and that you control down to the detail. Pick Butternut AI if you want a full multi-page website
-                generated for you in seconds and you are happy to edit a first draft. Both are free to try, so the honest
-                shortcut is to build a Carrd page and generate a Butternut site on the same idea, then see which model fits.
+                generated for you in seconds and you are happy to edit a first draft. Both are free to try, so the quickest
+                way to decide is to build a Carrd page and generate a Butternut site on the same idea, then see which model fits.
               </p>
             </div>
           </section>
