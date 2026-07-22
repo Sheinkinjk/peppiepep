@@ -119,7 +119,6 @@ const sections = [
       { href: "/swipepages", label: "Swipe Pages", desc: "Fast AMP landing pages. 14-day free trial." },
       { href: "/leadpages", label: "Leadpages", desc: "Landing pages built for lead capture, with A/B testing." },
       { href: "/landingi", label: "Landingi", desc: "No-code landing-page builder for marketers." },
-      { href: "/instapage", label: "Instapage", desc: "Landing pages built for ad conversion and post-click experience." },
       { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
     ],
   },

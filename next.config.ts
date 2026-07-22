@@ -37,6 +37,11 @@ const nextConfig: NextConfig = {
       // Interactive Gambling Act 2001. Peptides removed: grey-market, off-fit for the
       // consumer health direction. Gusto/Melio: US-only, wrong jurisdiction. Income
       // Lab: off-brand. 301 to the closest live page so equity consolidates.
+      // Instapage retired (23 July 2026): the affiliate link get.instapage.io no
+      // longer resolves (DNS failure), so the page's only CTA was broken. 301 to
+      // Swipe Pages, the same intent (landing page builder for paid ads) with a
+      // working link. Remove this line if an Instapage link is ever restored.
+      { source: '/instapage', destination: '/swipepages', permanent: true },
       { source: '/polymarket', destination: '/', permanent: true },
       { source: '/polymarket/:path*', destination: '/', permanent: true },
       { source: '/best-peptide-supplier', destination: '/', permanent: true },

@@ -142,7 +142,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/nutshell`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/pipedrive`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/activecampaign`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/instapage`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/hellobar`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/outgrow`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/flexiquiz`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },

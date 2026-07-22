@@ -138,7 +138,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "ActiveCampaign", href: "/activecampaign", category: "Software", kind: "Guide", keywords: "activecampaign email marketing automation crm discount referral" },
   { title: "FlexiQuiz", href: "/flexiquiz", category: "Software", kind: "Guide", keywords: "flexiquiz quiz test maker assessments exams online" },
   { title: "Hello Bar", href: "/hellobar", category: "Software", kind: "Guide", keywords: "hello bar popups bars lead capture email signups conversion" },
-  { title: "Instapage", href: "/instapage", category: "Software", kind: "Guide", keywords: "instapage landing page builder ad conversion ppc post-click" },
   { title: "Landingi", href: "/landingi", category: "Software", kind: "Guide", keywords: "landingi landing page builder no-code conversion" },
   { title: "Nutshell CRM", href: "/nutshell", category: "AI & sales", kind: "Guide", keywords: "nutshell crm easy sales pipeline marketing small business" },
   { title: "Outgrow", href: "/outgrow", category: "Software", kind: "Guide", keywords: "outgrow interactive quizzes calculators lead generation content" },
