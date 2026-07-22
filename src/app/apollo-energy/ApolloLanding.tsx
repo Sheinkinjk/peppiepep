@@ -397,6 +397,22 @@ export default function ApolloLanding() {
                     Installed price ranges by size, what the rebate takes off, and realistic payback periods.
                   </p>
                 </Link>
+                {[
+                  { href: "/best-home-battery-australia", title: "Best home battery: how to choose", desc: "Capacity, chemistry, warranty and blackout backup, and why the installer matters as much as the battery." },
+                  { href: "/what-size-home-battery-do-i-need-australia", title: "What size home battery do I need?", desc: "Size from your evening usage and spare solar, and why the rebate tapers above 14kWh." },
+                  { href: "/nsw-home-battery-rebate-2026", title: "NSW home battery rebate 2026", desc: "The federal rebate plus the NSW VPP incentive, and how the two stack on one battery." },
+                  { href: "/home-battery-installer-nsw", title: "Choosing a NSW battery installer", desc: "SAA accreditation, licensing, warranties, and who applies the rebate at the point of sale." },
+                  { href: "/home-battery-payback-calculator", title: "Home battery payback calculator", desc: "Estimate net cost, annual saving and payback from your own usage and tariff." },
+                ].map((r) => (
+                  <Link
+                    key={r.href}
+                    href={r.href}
+                    className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                  >
+                    <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{r.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{r.desc}</p>
+                  </Link>
+                ))}
               </div>
             </section>
           </article>

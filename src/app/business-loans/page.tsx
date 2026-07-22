@@ -6,6 +6,17 @@ import LeadForm from "@/components/lending/LeadForm";
 import LenderTable from "@/components/lending/LenderTable";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS } from "@/lib/lenders";
+import { INTENT_PAGES } from "@/lib/lending-intent";
+
+// Hub -> spoke links. Generated from the registry so a new guide appears here
+// automatically; the hub is the crawlable path into the whole lending cluster.
+const GUIDE_LINKS = [
+  { href: "/what-a-business-loan-actually-costs", label: "What a business loan actually costs" },
+  { href: "/true-cost-of-business-loans-australia", label: "The hidden cost of factor rates (analysis)" },
+  { href: "/business-loan-calculator", label: "Business loan repayment calculator" },
+  { href: "/equipment-finance-instant-asset-write-off", label: "Equipment finance and the instant asset write-off" },
+  ...INTENT_PAGES.map((p) => ({ href: `/${p.slug}`, label: p.h1 })),
+];
 
 const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
 const panelMin = Math.min(...LENDERS.map((l) => l.minAmount));
@@ -214,6 +225,24 @@ export default function BusinessLoansHub() {
           <div className="mt-4">
             <CommissionDisclosure variant="inline" />
           </div>
+        </section>
+
+        {/* Guides */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-extrabold text-[#10251b]">Business lending guides</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            Everything we&apos;ve researched on borrowing for a business: what it really costs, which loan type fits, and
+            what lenders look at before they say yes.
+          </p>
+          <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+            {GUIDE_LINKS.map((g) => (
+              <li key={g.href}>
+                <Link href={g.href} className="text-sm font-semibold leading-snug text-[#0a7c42] hover:text-[#086536] hover:underline">
+                  {g.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* FAQ */}

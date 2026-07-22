@@ -80,6 +80,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                     links are not in the HTML and Google cannot follow them. The footer
                     is the crawlable path into each category. */}
                 <li><Link href="/apollo-energy" className="transition-colors hover:text-[#0a7c42]">Home Batteries</Link></li>
+                <li><Link href="/business-loans" className="transition-colors hover:text-[#0a7c42]">Business Loans</Link></li>
                 <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website Builders</Link></li>
                 <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter Platforms</Link></li>
                 <li><Link href="/best-ai-sales-tools" className="transition-colors hover:text-[#0a7c42]">AI Sales &amp; Automation</Link></li>
@@ -94,6 +95,9 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/best-website-builder" className="transition-colors hover:text-[#0a7c42]">Best Website Builder</Link></li>
                 <li><Link href="/best-newsletter-platform" className="transition-colors hover:text-[#0a7c42]">Best Newsletter Platform</Link></li>
                 <li><Link href="/home-battery-rebate-australia" className="transition-colors hover:text-[#0a7c42]">Home Battery Rebate 2026</Link></li>
+                <li><Link href="/best-home-battery-australia" className="transition-colors hover:text-[#0a7c42]">Best Home Battery</Link></li>
+                <li><Link href="/true-cost-of-business-loans-australia" className="transition-colors hover:text-[#0a7c42]">What Business Loans Really Cost</Link></li>
+                <li><Link href="/finasteride-vs-minoxidil-australia" className="transition-colors hover:text-[#0a7c42]">Finasteride vs Minoxidil</Link></li>
               </ul>
             </div>
             <div>
