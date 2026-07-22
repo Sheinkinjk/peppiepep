@@ -9,6 +9,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
+const NEW    = new Date('2026-07-22'); // published/edited in the current batch
 const FRESH  = new Date('2026-07-07'); // redesigned / new this release
 const RECENT = new Date('2026-05-20'); // updated within the last few weeks
 const STABLE = new Date('2026-03-10'); // company/service pages, rarely change
@@ -37,21 +38,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
 
     // ── Business lending (lead-capture vertical; admin/api never listed) ─
-    { url: `${BASE}/business-loans`,                            lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE}/business-loan-calculator`,                  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/what-a-business-loan-actually-costs`,       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/equipment-finance-instant-asset-write-off`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/how-we-make-money`,                         lastModified: FRESH, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE}/true-cost-of-business-loans-australia`,     lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/business-loans`,                            lastModified: NEW, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/business-loan-calculator`,                  lastModified: NEW, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/what-a-business-loan-actually-costs`,       lastModified: NEW, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/equipment-finance-instant-asset-write-off`, lastModified: NEW, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/how-we-make-money`,                         lastModified: NEW, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/true-cost-of-business-loans-australia`,     lastModified: NEW, changeFrequency: 'monthly', priority: 0.82 },
     // Lender pages, generated from the config (adding a lender = one config entry)
     ...LENDERS.flatMap((l) => [
-      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: FRESH, changeFrequency: 'monthly' as const, priority: 0.78 },
-      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: FRESH, changeFrequency: 'monthly' as const, priority: 0.72 },
+      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: NEW, changeFrequency: 'monthly' as const, priority: 0.78 },
+      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: NEW, changeFrequency: 'monthly' as const, priority: 0.72 },
     ]),
     // Intent + explainer pages, generated from the registry
     ...INTENT_PAGES.map((p) => ({
       url: `${BASE}/${p.slug}`,
-      lastModified: FRESH,
+      lastModified: NEW,
       changeFrequency: 'monthly' as const,
       priority: p.priority,
     })),
@@ -96,14 +97,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Hair-loss guide cluster (generated from the registry)
     ...HAIR_LOSS_GUIDES.map((g) => ({
       url: `${BASE}${g.slug}`,
-      lastModified: FRESH,
+      lastModified: NEW,
       changeFrequency: 'monthly' as const,
       priority: g.priority,
     })),
     // Home-battery guide cluster (generated from the registry)
     ...APOLLO_GUIDES.map((g) => ({
       url: `${BASE}${g.slug}`,
-      lastModified: FRESH,
+      lastModified: NEW,
       changeFrequency: 'monthly' as const,
       priority: g.priority,
     })),
