@@ -122,6 +122,7 @@ const STANDALONE_ROUTES = [
   "/what-a-business-loan-actually-costs",
   "/equipment-finance-instant-asset-write-off",
   "/how-we-make-money",
+  "/true-cost-of-business-loans-australia",
   // Business-lending intent + explainer pages (top-level slugs, own ConsumerShell)
   "/unsecured-business-loans-australia",
   "/business-loans-bad-credit-australia",

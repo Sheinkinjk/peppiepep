@@ -74,7 +74,6 @@ export const blinqConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
-    { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
     { href: "/nutshell", label: "Nutshell", desc: "A CRM to store the contacts you capture." },
     { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
   ],

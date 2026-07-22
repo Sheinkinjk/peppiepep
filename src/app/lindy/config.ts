@@ -73,7 +73,6 @@ export const lindyConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
-    { href: "/meetgeek", label: "MeetGeek", desc: "AI notes and summaries for your meetings." },
   ],
   ctas: {
     primary: "See Lindy",

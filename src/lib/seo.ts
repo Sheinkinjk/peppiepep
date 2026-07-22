@@ -359,13 +359,6 @@ export const seoConfig = {
     url: `${SITE_URL}/pipedrive`,
     keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
   },
-  zoomInfo: {
-    title: "ZoomInfo Referral Link & Pricing 2026: B2B Sales Data | Refer Labs",
-    description:
-      "Looking for ZoomInfo pricing or a referral link? ZoomInfo is an enterprise B2B sales-intelligence platform with a large contact database and buyer-intent signals. Quote-only, annual contracts. Start via our link.",
-    url: `${SITE_URL}/zoominfo`,
-    keywords: ["zoominfo pricing", "zoominfo referral link", "zoominfo review", "zoominfo cost", "b2b sales intelligence", "b2b contact database", "buyer intent data"],
-  },
   activeCampaign: {
     title: "ActiveCampaign Discount Code & Referral Link 2026: Email Automation | Refer Labs",
     description:
@@ -379,24 +372,6 @@ export const seoConfig = {
       "Looking for Melio pricing or a referral link? Melio is B2B bill pay and accounts payable for US businesses, pay vendors by bank, card or check. Free plan; from US$25/mo. US business and bank required.",
     url: `${SITE_URL}/melio`,
     keywords: ["melio pricing", "melio referral link", "melio review", "melio payments", "b2b bill pay", "accounts payable software", "pay vendors by card"],
-  },
-  logome: {
-    // Partner link is dead (16 July 2026): logome.ai 404s at its root, and
-    // get.instapage.io has no DNS record. Excluded rather than sending readers
-    // to an error page. Restore if a working affiliate link is obtained.
-    noIndex: true,
-    title: "Logome.ai Discount Code & Referral Link 2026: AI Logo Maker | Refer Labs",
-    description:
-      "Looking for a Logome.ai discount code or referral link? Logome is an AI logo and brand-kit generator. Design and preview free, download from US$19/mo. Start via our link.",
-    url: `${SITE_URL}/logome`,
-    keywords: ["logome discount code", "logome ai review", "logome referral link", "logome pricing", "ai logo generator", "ai logo maker", "brand kit generator"],
-  },
-  alohi: {
-    title: "Alohi Referral Link 2026: Sign.Plus E-Signatures & Fax.Plus | Refer Labs",
-    description:
-      "Looking for an Alohi, Sign.Plus or Fax.Plus referral link? Legally-binding e-signatures (Sign.Plus) and secure online fax (Fax.Plus), both with free plans. From US$6.99–14.99/mo. Start via our link.",
-    url: `${SITE_URL}/alohi`,
-    keywords: ["alohi referral link", "sign.plus review", "sign plus pricing", "fax.plus review", "electronic signature software", "online fax service", "esignature australia"],
   },
   helloBar: {
     title: "Hello Bar Discount Code & Referral Link 2026: Popups & Lead Capture | Refer Labs",
@@ -425,34 +400,6 @@ export const seoConfig = {
       "Looking for a Landingi discount code or referral link? Landingi is a no-code landing-page builder with A/B testing. Here's the current offer, a 14-day free trial, via our link. From US$24/mo.",
     url: `${SITE_URL}/landingi`,
     keywords: ["landingi discount code", "landingi referral link", "landingi review", "landingi pricing", "landing page builder", "no-code landing page", "ab testing landing page"],
-  },
-  databox: {
-    title: "Databox Discount Code & Referral Link 2026: KPI Dashboards | Refer Labs",
-    description:
-      "Looking for a Databox discount code or referral link? Databox pulls 130+ data sources into KPI dashboards and automated reports. Free plan; 14-day trial, no card. From US$64/mo, via our link.",
-    url: `${SITE_URL}/databox`,
-    keywords: ["databox discount code", "databox referral link", "databox review", "databox pricing", "kpi dashboard software", "analytics dashboard", "marketing reporting tool"],
-  },
-  meetgeek: {
-    title: "MeetGeek Discount Code & Referral Link 2026: AI Meeting Notes | Refer Labs",
-    description:
-      "Looking for a MeetGeek discount code or referral link? MeetGeek records, transcribes and summarises your Zoom, Meet and Teams calls. Free plan; from US$9.99/user/mo. Start via our link.",
-    url: `${SITE_URL}/meetgeek`,
-    keywords: ["meetgeek discount code", "meetgeek referral link", "meetgeek review", "meetgeek pricing", "ai meeting notes", "meeting transcription", "ai notetaker"],
-  },
-  cometchat: {
-    title: "CometChat Referral Link & Pricing 2026: In-App Chat SDK | Refer Labs",
-    description:
-      "Looking for CometChat pricing or a referral link? CometChat adds in-app chat, voice and video to your app via SDKs and UI kits. Free Build plan (100 users); paid from US$299/mo, via our link.",
-    url: `${SITE_URL}/cometchat`,
-    keywords: ["cometchat pricing", "cometchat referral link", "cometchat review", "in-app chat sdk", "chat api", "messaging sdk", "add chat to app"],
-  },
-  flocksy: {
-    title: "Flocksy Referral Link & Pricing 2026: Unlimited Design Service | Refer Labs",
-    description:
-      "Looking for Flocksy pricing or a referral link? Flocksy is unlimited graphic design and creative from a dedicated team, one flat monthly fee. 14-day money-back guarantee. From US$1,199/mo, via our link.",
-    url: `${SITE_URL}/flocksy`,
-    keywords: ["flocksy pricing", "flocksy referral link", "flocksy review", "unlimited graphic design", "unlimited design service", "design subscription", "creative subscription"],
   },
   apolloEnergyReview: {
     title: "Apollo Energy Group Review 2026: Is It Legit? ($500 Off)",

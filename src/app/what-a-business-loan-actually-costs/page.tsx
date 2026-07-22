@@ -96,7 +96,9 @@ export default function CostGuide() {
           <p>
             <strong className="text-[#10251b]">Factor rate.</strong> A multiplier on the amount borrowed. A $50,000 loan at
             a factor of 1.2 means you repay $60,000 in total, no matter how quickly you clear it. Factor rates are common on
-            short-term and merchant cash advance products, and they can translate to a very high annualised cost.
+            short-term and merchant cash advance products, and they can translate to a very high annualised cost: our{" "}
+            <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#0a7c42] underline">factor-rate analysis</Link>{" "}
+            shows a 1.2 factor rate works out to about 35% a year over 12 months, not 20%.
           </p>
           <p>
             <strong className="text-[#10251b]">Flat or fixed fee.</strong> A set dollar cost for the finance, sometimes

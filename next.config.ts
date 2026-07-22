@@ -49,6 +49,14 @@ const nextConfig: NextConfig = {
       { source: '/compare/research-peptides', destination: '/', permanent: true },
       { source: '/melio', destination: '/compare/payments', permanent: true },
       { source: '/incomelab', destination: '/affiliate-programs-australia', permanent: true },
+      // Pruned low-value B2B pages (July 2026) -> closest live hub, equity preserved
+      { source: '/cometchat', destination: '/business-software', permanent: true },
+      { source: '/databox', destination: '/business-software', permanent: true },
+      { source: '/alohi', destination: '/business-software', permanent: true },
+      { source: '/flocksy', destination: '/business-software', permanent: true },
+      { source: '/zoominfo', destination: '/best-ai-sales-tools', permanent: true },
+      { source: '/meetgeek', destination: '/compare/ai-tools', permanent: true },
+      { source: '/logome', destination: '/compare/ai-tools', permanent: true },
       {
         // Canonicalise www -> non-www (both were serving 200, splitting SEO signals).
         source: '/:path*',

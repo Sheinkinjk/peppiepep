@@ -37,14 +37,9 @@ const tools = [
   { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
   { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams actually keep using." },
   { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with powerful automation and a CRM." },
-  { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
   { href: "/pandadoc", label: "PandaDoc", desc: "Proposals, contracts and e-signatures in one tool." },
   { href: "/blinq", label: "Blinq", desc: "Digital business cards shared by QR, link or NFC." },
-  { href: "/databox", label: "Databox", desc: "KPI dashboards that pull 130+ data sources into one view." },
-  { href: "/meetgeek", label: "MeetGeek", desc: "AI meeting notes for Zoom, Meet and Teams calls." },
   { href: "/beautifulai", label: "Beautiful.ai", desc: "AI presentation software that designs slides for you." },
-  { href: "/cometchat", label: "CometChat", desc: "Developer SDKs to add in-app chat, voice and video." },
-  { href: "/flocksy", label: "Flocksy", desc: "Unlimited graphic design from a dedicated team, flat fee." },
 ];
 
 const itemListSchema = {

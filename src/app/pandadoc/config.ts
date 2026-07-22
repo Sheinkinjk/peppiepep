@@ -74,7 +74,6 @@ export const pandadocConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
-    { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
     { href: "/nutshell", label: "Nutshell", desc: "A sales CRM proposals can flow into." },
     { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
   ],

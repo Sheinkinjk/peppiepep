@@ -365,7 +365,6 @@ export const CATALOG: Vertical[] = [
           { label: "Pricing", value: "Quote-only; enterprise annual" },
         ],
         affiliateUrl: ZOOMINFO_URL,
-        reviewHref: "/zoominfo",
         ctaLabel: "See ZoomInfo",
       },
       {
@@ -734,7 +733,6 @@ export const CATALOG: Vertical[] = [
           { label: "Pricing", value: "Free plan; from US$9.99/user/mo" },
         ],
         affiliateUrl: MEETGEEK_URL,
-        reviewHref: "/meetgeek",
         ctaLabel: "See MeetGeek",
       },
       {

@@ -232,6 +232,7 @@ export default function BusinessLoansHub() {
         {/* Related */}
         <section className="mt-14 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#eef1ef] pt-8 text-sm">
           <Link href="/what-a-business-loan-actually-costs" className="font-semibold text-[#0a7c42] hover:text-[#086536]">What a business loan actually costs</Link>
+          <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#0a7c42] hover:text-[#086536]">The hidden cost of factor rates (analysis)</Link>
           <Link href="/business-loan-calculator" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Repayment calculator</Link>
           <Link href="/equipment-finance-instant-asset-write-off" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Equipment finance & the write-off</Link>
           <Link href="/how-we-make-money" className="font-semibold text-[#6e7b74] hover:text-[#10251b]">How we make money</Link>

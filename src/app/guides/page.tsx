@@ -49,6 +49,7 @@ const sections = [
     guides: [
       { href: "/business-loans", label: "Business Loans Australia", desc: "Compare lenders and check your options through one short enquiry." },
       { href: "/what-a-business-loan-actually-costs", label: "What a Business Loan Actually Costs", desc: "Nominal rate vs factor rate vs fees, with a worked example." },
+      { href: "/true-cost-of-business-loans-australia", label: "The Hidden Cost of Factor Rates", desc: "Analysis: a 1.2 factor rate is 35% a year, not 20%. Full method shown." },
       { href: "/business-loan-calculator", label: "Repayment Calculator", desc: "Estimate monthly repayments and total interest. No sign-up." },
       { href: "/unsecured-business-loans-australia", label: "Unsecured Business Loans", desc: "No collateral, faster funding, higher cost. When it makes sense." },
       { href: "/secured-vs-unsecured-business-loans", label: "Secured vs Unsecured", desc: "Cheaper-but-asset-on-the-line vs faster-but-dearer, decided." },
@@ -144,7 +145,6 @@ const sections = [
       { href: "/aisdr", label: "AiSDR", desc: "A done-for-you AI rep that prospects and books meetings." },
       { href: "/replyio", label: "Reply.io", desc: "Run your own multichannel outbound across channels." },
       { href: "/fullenrich", label: "FullEnrich", desc: "Waterfall enrichment for verified emails and mobiles." },
-      { href: "/zoominfo", label: "ZoomInfo", desc: "Enterprise B2B data and buyer-intent signals." },
       { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
       { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams actually keep using." },
     ],
@@ -155,7 +155,6 @@ const sections = [
     guides: [
       { href: "/lindy", label: "Lindy", desc: "An AI assistant that automates inbox, scheduling and CRM." },
       { href: "/elevenlabs", label: "ElevenLabs", desc: "AI voice and text-to-speech with voice cloning." },
-      { href: "/meetgeek", label: "MeetGeek", desc: "AI meeting notes for Zoom, Meet and Teams." },
       { href: "/beautifulai", label: "Beautiful.ai", desc: "AI presentation software that designs slides for you." },
     ],
   },
@@ -174,13 +173,9 @@ const sections = [
     label: "More Business & Creative Tools",
     description: "Analytics, virtual assistants, e-signatures, design and more.",
     guides: [
-      { href: "/databox", label: "Databox", desc: "KPI dashboards that pull 130+ data sources into one view." },
       { href: "/wing-assistant", label: "Wing Assistant", desc: "Managed virtual assistants across many roles." },
       { href: "/pandadoc", label: "PandaDoc", desc: "Proposals, contracts and e-signatures in one tool." },
       { href: "/blinq", label: "Blinq", desc: "Digital business cards you share by QR, link or NFC." },
-      { href: "/alohi", label: "Alohi", desc: "Sign.Plus e-signatures and Fax.Plus online fax." },
-      { href: "/cometchat", label: "CometChat", desc: "Developer SDKs to add in-app chat, voice and video." },
-      { href: "/flocksy", label: "Flocksy", desc: "Unlimited graphic design from a dedicated team." },
       { href: "/alidrop", label: "AliDrop", desc: "Dropshipping tool for AliExpress, Alibaba and Temu." },
       { href: "/superfiliate", label: "Superfiliate", desc: "Run affiliate and creator programs for your brand." },
     ],

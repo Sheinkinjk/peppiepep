@@ -10,8 +10,7 @@ import {
   EMPLOYMENT_HERO_URL, SUPERFILIATE_URL, ALIDROP_URL, SNOV_URL, PAYONEER_URL,
   CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL, WING_ASSISTANT_URL, SURVICATE_URL,
   BUTTERNUT_URL, DENSE_URL, NUTSHELL_URL,
-  PIPEDRIVE_URL, ACTIVECAMPAIGN_URL, ZOOMINFO_URL, ALOHI_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
-  LANDINGI_URL, DATABOX_URL, MEETGEEK_URL, COMETCHAT_URL, FLOCKSY_URL,
+  PIPEDRIVE_URL, ACTIVECAMPAIGN_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL, LANDINGI_URL,
 } from "@/lib/affiliate-links";
 
 // Top picks lead with the real brand logo, the single biggest thing that
@@ -81,16 +80,10 @@ const servicesLogos = [
   { logo: "dense", name: "Dense", url: DENSE_URL },
   { logo: "pipedrive", name: "Pipedrive", url: PIPEDRIVE_URL },
   { logo: "activecampaign", name: "ActiveCampaign", url: ACTIVECAMPAIGN_URL },
-  { logo: "zoominfo", name: "ZoomInfo", url: ZOOMINFO_URL },
-  { logo: "alohi", name: "Alohi", url: ALOHI_URL },
   { logo: "hellobar", name: "Hello Bar", url: HELLOBAR_URL },
   { logo: "outgrow", name: "Outgrow", url: OUTGROW_URL },
   { logo: "flexiquiz", name: "FlexiQuiz", url: FLEXIQUIZ_URL },
   { logo: "landingi", name: "Landingi", url: LANDINGI_URL },
-  { logo: "databox", name: "Databox", url: DATABOX_URL },
-  { logo: "meetgeek", name: "MeetGeek", url: MEETGEEK_URL },
-  { logo: "cometchat", name: "CometChat", url: COMETCHAT_URL },
-  { logo: "flocksy", name: "Flocksy", url: FLOCKSY_URL },
 ];
 
 const itemListSchema = {
