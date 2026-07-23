@@ -170,7 +170,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
           Rebate and savings figures are indicative only and depend on your system size, usage, tariff, and the STC spot
           price, which floats. Confirm current rebate terms and your specific quote before committing. Some links are
           disclosed affiliate links, and commissions never change a comparison or a conclusion. Read our{" "}
-          <Link href="/how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
+          <Link href="/about#how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
         </p>
       </main>
 

@@ -55,26 +55,58 @@ export default function AboutPage() {
             </p>
           </section>
 
+          {/* Merged in from the retired /how-we-research (July 2026). Keep every claim
+              below literally true and provable. Do not add one without checking it
+              first: this is the page whose whole job is trust, and an overstated
+              claim here is the same exposure as a fabricated testimonial. */}
+          <section id="how-we-research">
+            <h2 className="text-lg font-bold text-[#10251b]">How we research</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+              Prices, plan tiers, fees and eligibility come from the provider&apos;s own live pages and published terms,
+              checked at the time of writing. We do not take figures from aggregators, directories or press releases.
+              This is desk research: we do not test or personally use most of what we cover, and we do not claim to. For
+              services we cannot use ourselves, such as prescription telehealth, we describe the published process and
+              link to the source so you can check it. Terms change, so every page quoting a price asks you to confirm
+              current pricing with the provider before you commit.
+            </p>
+          </section>
+
           <section>
-            <h2 className="text-lg font-bold text-[#10251b]">How we stay independent</h2>
+            <h2 className="text-lg font-bold text-[#10251b]">How we are paid</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               Many pages contain affiliate links. If you sign up or buy through one, we may earn a commission at no extra
-              cost to you. That is how the research is funded. It does not buy a better ranking, a place on a list, or a
-              softened conclusion, a brand cannot pay for any of those. Where a link earns us a commission, the page says
-              so plainly. The full detail is in{" "}
-              <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/40 underline-offset-4">
-                how we research
-              </Link>
-              .
+              cost to you. That is how the research is funded. A brand cannot pay to rank higher, to be added to a
+              comparison, or to have a criticism removed, and commercial relationships never change the order of a list
+              or the substance of a conclusion. Where a link earns us a commission, the page says so plainly rather than
+              burying it in a policy you have to hunt for.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-bold text-[#10251b]">What we do not publish</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+              We do not score products out of five, award badges, or publish customer testimonials, case studies or
+              invented statistics. Where a rating or figure appears it belongs to a third party and is attributed to
+              them so you can weigh the source. If something we have published is out of date or wrong, we correct it,
+              and we would rather hear about it from you than leave it standing.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-bold text-[#10251b]">Who this is for</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
-              Anyone weighing up a decision and wanting an honest, readable comparison rather than a sales pitch. For
+              Anyone weighing up a decision who wants the pricing, the trade-offs and the fine print in one place. For
               health topics, everything here is general information, not medical advice, and prescription treatments in
               Australia are only available after assessment by a registered practitioner.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-bold text-[#10251b]">Who we are</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+              Refer Labs is a small independent Australian publisher, operated by Pepform Pty Ltd trading as Refer Labs,
+              ABN 32 660 008 159. Comparisons are researched and written in-house. We are not the manufacturer,
+              prescriber or provider of anything we cover, and we hold no stock and dispense nothing.
             </p>
           </section>
 

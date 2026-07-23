@@ -75,7 +75,6 @@ export default function Footer() {
               {[
                 { href: "/guides",                              label: "All Guides" },
                 { href: "/about",                               label: "About" },
-                { href: "/how-we-research",                      label: "How We Research" },
                 { href: "/moshy",                               label: "Moshy Weight Loss AU" },
                 { href: "/beehiiv",                             label: "beehiiv Newsletter" },
                 { href: "/best-website-builder",                label: "Best Website Builder" },

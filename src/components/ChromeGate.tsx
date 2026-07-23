@@ -80,7 +80,6 @@ const STANDALONE_ROUTES = [
   // Polymarket guide cluster (prefix covers all /polymarket/* pages)
   // Affiliate content hub + editorial standards
   "/guides",
-  "/how-we-research",
   "/about",
   "/cloudtalk",
   "/krispcall",

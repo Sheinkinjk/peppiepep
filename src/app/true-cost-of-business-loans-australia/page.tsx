@@ -244,7 +244,7 @@ export default function FactorRateStudy() {
           This analysis is general information, not financial advice, and is provided so borrowers and journalists can
           reproduce the figures. You are welcome to cite it with a link to this page. Refer Labs is an independent
           referrer, not a lender. Read our{" "}
-          <Link href="/how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
+          <Link href="/about#how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
         </p>
       </main>
     </ConsumerShell>

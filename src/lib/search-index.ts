@@ -175,7 +175,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Popups, quizzes & lead capture", href: "/compare/lead-generation", category: "Software", kind: "Category", keywords: "popups quizzes calculators lead capture hello bar outgrow flexiquiz" },
   { title: "FAQ", href: "/faq", category: "Browse", kind: "Guide", keywords: "faq frequently asked questions help" },
   { title: "About Refer Labs", href: "/about", category: "Browse", kind: "Guide", keywords: "about us who we are company refer labs" },
-  { title: "How we research", href: "/how-we-research", category: "Browse", kind: "Guide", keywords: "editorial standards methodology independence how we research disclosure" },
   { title: "Contact", href: "/contact", category: "Browse", kind: "Guide", keywords: "contact email get in touch support" },
   { title: "For business", href: "/for-business", category: "Browse", kind: "Category", keywords: "for business brands partner with us grow" },
   { title: "Get featured on a comparison", href: "/comparison-website", category: "Browse", kind: "Guide", keywords: "get featured listed comparison website partner brand" },

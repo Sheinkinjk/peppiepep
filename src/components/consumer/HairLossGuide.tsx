@@ -165,8 +165,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <span>
             Information only, not medical advice. Prescription medicines in Australia are supplied only after individual
             assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never change
-            a comparison or a conclusion. Read our{" "}
-            <Link href="/how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
+            a comparison or a conclusion.
           </span>
         </p>
       </main>

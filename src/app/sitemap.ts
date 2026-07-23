@@ -34,7 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/guides`,             lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/business-software`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/about`,              lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/how-we-research`,    lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
 
     // ── Business lending (lead-capture vertical; admin/api never listed) ─

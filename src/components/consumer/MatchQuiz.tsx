@@ -17,7 +17,7 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
  * Results can be monetized (a tracked affiliate CTA) or honest-only (no CTA,
  * e.g. "start with your GP"): routing someone to the option that actually fits,
  * even when it pays us nothing, is the whole trust proposition. See
- * /how-we-research.
+ * /about.
  */
 
 const GREEN = "#0a7c42";

@@ -128,7 +128,7 @@ export default function ForBusinessPage() {
             One thing we will not sell: a ranking. Editorial conclusions on Refer Labs are never part of a commercial
             deal, and every partnership is disclosed to readers. That separation is what makes the audience worth
             reaching. The full policy is at{" "}
-            <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
+            <Link href="/about" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
               how we research
             </Link>
             .

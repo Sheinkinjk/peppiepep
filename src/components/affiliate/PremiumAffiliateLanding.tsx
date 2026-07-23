@@ -79,7 +79,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
               <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#6e7b74]">
                 <span className="font-semibold text-[#3d4b44]">Independent guide</span>
                 <span className="text-[#cdd5cf]">·</span>
-                <Link href="/how-we-research" className="nw-link !text-sm">How we research</Link>
+                <Link href="/about#how-we-research" className="nw-link !text-sm">How we research</Link>
               </div>
             )}
 

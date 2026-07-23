@@ -46,6 +46,9 @@ const nextConfig: NextConfig = {
       // longer resolves (DNS failure), so the page's only CTA was broken. 301 to
       // Swipe Pages, the same intent (landing page builder for paid ads) with a
       // working link. Remove this line if an Instapage link is ever restored.
+      // /how-we-research merged into /about (23 July 2026): one trust page is easier
+      // to keep literally true than two, and the standards belong next to who we are.
+      { source: '/how-we-research', destination: '/about', permanent: true },
       { source: '/instapage', destination: '/swipepages', permanent: true },
       { source: '/melio', destination: '/compare/payments', permanent: true },
       { source: '/incomelab', destination: '/affiliate-programs-australia', permanent: true },

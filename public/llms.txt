@@ -157,5 +157,4 @@ Lead-capture, not affiliate: Refer Labs is an independent referrer (not a lender
 
 ## Company
 - [About Refer Labs](https://referlabs.com.au/about): Who we are, what we do, and how we stay independent.
-- [How we research](https://referlabs.com.au/how-we-research): Editorial standards, independence and affiliate disclosure.
 - [Contact](https://referlabs.com.au/contact)
