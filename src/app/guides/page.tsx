@@ -68,6 +68,17 @@ const sections = [
     ],
   },
   {
+    label: "Business Lenders Compared",
+    description: "Per-lender detail: what each actually funds, what it publishes, and what to check first. Refer Labs has no partnership with any of them.",
+    guides: [
+      { href: "/business-loans/lumi", label: "Lumi", desc: "$5,000 to $1 million, same business day. Quotes a total repayment, not a rate." },
+      { href: "/business-loans/moula", label: "Moula", desc: "$10,000 to $500,000 from 15.99% p.a. Assessed from bank and accounting data." },
+      { href: "/business-loans/prospa", label: "Prospa", desc: "ASX-listed, $5,000 to $500,000, funds within an hour. Wants a clean credit file." },
+      { href: "/business-loans/moneytech", label: "Moneytech", desc: "$25,000 to $1 million from 13.95% p.a. Rate and limit both move with security." },
+      { href: "/business-loans/shift", label: "Shift", desc: "Overdraft $10,000 to $2 million from 14.95% p.a. AFIA Code signatory." },
+    ],
+  },
+  {
     label: "Weight Loss & Telehealth",
     description: "How Australia's online weight-loss services work, and which suits whom.",
     guides: [
@@ -193,7 +204,7 @@ const sections = [
       { href: "/affiliate-programs-australia", label: "Best Affiliate Programs in Australia", desc: "The programs worth your time, sorted by category and payout." },
       { href: "/high-paying-affiliate-programs", label: "Highest Paying Programs", desc: "Twelve high-payout programs, what they typically pay, and the networks behind them." },
       { href: "/recurring-affiliate-programs", label: "Recurring Commission Programs", desc: "Programs that pay every month a customer stays, not once." },
-      { href: "/affiliate-earnings-calculator", label: "Earnings Calculator", desc: "Turn audience size, channel and niche into an honest range, with the assumptions on show." },
+      { href: "/affiliate-earnings-calculator", label: "Earnings Calculator", desc: "Turn audience size, channel and niche into a realistic range, with the assumptions on show." },
       { href: "/how-to-start-affiliate-marketing-australia", label: "How to Start From Zero", desc: "The step-by-step path, from choosing a niche to first traffic." },
     ],
   },
