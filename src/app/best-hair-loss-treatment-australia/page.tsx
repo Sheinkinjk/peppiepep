@@ -56,6 +56,11 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "Pilot vs Mosh for hair loss, which should I choose?",
+      acceptedAnswer: { "@type": "Answer", text: "Both are Australian men's telehealth platforms prescribing clinically backed hair loss treatment (finasteride and minoxidil) after an online practitioner review. As published on provider sites in July 2026: Mosh advertises plans from $24/month (prevention), $45/month (prevention and regrowth) and $56/month (clinic plan); Pilot advertises treatment from $29/month, within a broader men's health service. Mosh's tiered plans make it the more flexible starting point; Pilot suits men who want hair loss handled alongside other men's health needs. Final pricing depends on what a practitioner prescribes." }
+    },
+    {
+      "@type": "Question",
       name: "How much does hair loss treatment cost per month in Australia?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -442,6 +447,10 @@ export default function BestHairLossTreatmentAustraliaPage() {
               {
                 q: "How much does hair loss treatment cost per month in Australia?",
                 a: "Telehealth treatment starts from $24 per month. As published on provider sites in July 2026: Mosh advertises plans from $24/month (prevention), $45/month (prevention and regrowth) and $56/month (clinic plan); Pilot advertises treatment from $29/month. Final pricing depends on what a practitioner prescribes.",
+              },
+              {
+                q: "Pilot vs Mosh for hair loss, which should I choose?",
+                a: "Both are Australian men's telehealth platforms prescribing finasteride and minoxidil after an online practitioner review. As published in July 2026: Mosh advertises plans from $24/month (prevention), $45/month (prevention and regrowth) and $56/month (clinic plan); Pilot advertises treatment from $29/month within a broader men's health service. Mosh's tiers make it the more flexible starting point; Pilot suits men who want hair loss handled alongside other men's health needs.",
               },
               {
                 q: "Is Mosh good for hair loss Australia?",

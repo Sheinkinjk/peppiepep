@@ -258,6 +258,21 @@ export default function BestAiSalesToolsPage() {
           </a>
         </div>
 
+        {/* Answer-first verdict: the direct answer an engine can lift. */}
+        <div className="mb-14 rounded-2xl border border-[#0a7c42]/15 bg-[#f4f9f6] px-6 sm:px-8 py-6 max-w-3xl">
+          <p className="nw-kicker mb-3">The quick verdict</p>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            For most Australian small businesses, <strong>GoHighLevel</strong> is the best
+            starting point: one subscription replaces the CRM, funnels, follow-up and
+            reviews stack, which is where small teams lose the most hours. Choose{" "}
+            <strong>AiSDR</strong> if your bottleneck is outbound and you want an AI rep
+            booking meetings for you, <strong>Reply.io</strong> if your team runs its own
+            sequences and needs a stronger engine, and <strong>FullEnrich</strong> when bad
+            contact data is what kills your outreach. The full comparison, including what
+            each actually costs, is below.
+          </p>
+        </div>
+
         {/* Our Picks */}
         <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
           <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">Our Four Picks</h2>

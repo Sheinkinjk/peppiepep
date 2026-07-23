@@ -67,6 +67,11 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "Are online weight loss clinics in Australia legit?",
+      acceptedAnswer: { "@type": "Answer", text: "The established Australian platforms, Moshy, Juniper and Pilot, operate as regulated telehealth services: eligibility questionnaires are reviewed by Australian-registered practitioners, and GLP-1 medications are prescription-only, prescribed only after individual clinical assessment. The practical checks for any provider: a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service that offers prescription medication without a practitioner review is the red flag. This page does not constitute medical advice." }
+    },
+    {
+      "@type": "Question",
       name: "Is Moshy or Juniper better for weight loss in Australia?",
       acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds structured health coaching to its programme and markets primarily to Australian women. Both use an online eligibility questionnaire and practitioner-led review process. Neither is right for everyone. Suitability is assessed individually by each platform's clinical team. This page does not constitute medical advice." }
     },
@@ -503,6 +508,10 @@ export default function BestWeightLossTelehealthPage() {
                 {
                   q: "How much does telehealth weight loss cost per month?",
                   a: "Most providers don't publish prices. As published in July 2026, Moshy advertises $8.03/day with the first month at $249; Juniper and Pilot disclose pricing only after an online consultation. Final cost depends on the medication and dose prescribed.",
+                },
+                {
+                  q: "Are online weight loss clinics in Australia legit?",
+                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and GLP-1 medications prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
                 },
                 {
                   q: "Is Moshy or Juniper better?",
