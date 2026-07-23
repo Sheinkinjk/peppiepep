@@ -138,11 +138,10 @@ export default function WeightLossHubPage() {
         {/* Three pathways */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-            Or explore the pathways yourself
+            The three routes, compared
           </h2>
           <div className="mt-7 grid gap-4 lg:grid-cols-3">
             <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Pathway one</p>
               <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Medical telehealth
               </h3>
@@ -157,7 +156,6 @@ export default function WeightLossHubPage() {
               </div>
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9aa39c]">Pathway two</p>
               <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Lifestyle programs
               </h3>
@@ -172,13 +170,12 @@ export default function WeightLossHubPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9aa39c]">Pathway three</p>
               <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Your GP
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
-                The option nobody advertises. In-person assessment, whole-of-health context, Medicare offsets part of
-                the cost. Slower to start, and for plenty of people still the right room.
+                In-person assessment, whole-of-health context, and Medicare offsets part of the cost. Slower to start
+                than an online service, and for plenty of people the right place to begin.
               </p>
               <p className="mt-5 text-sm font-semibold">
                 <Link href="/moshy-vs-gp" className="text-[#0a7c42] hover:underline">Telehealth vs GP, compared →</Link>

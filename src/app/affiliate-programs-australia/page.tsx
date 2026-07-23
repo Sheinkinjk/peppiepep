@@ -234,8 +234,7 @@ export default function AffiliateProgramsAustraliaPage() {
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#2b362f]">
             Affiliate marketing is one of the cleanest ways for Australians to earn from a website, a newsletter or a
             YouTube channel. You recommend a product you actually rate, someone buys through your link, and the company
-            pays you a cut at no extra cost to the buyer. The hard part is not the idea, it is knowing which of the
-            hundreds of programs are worth your time. Below is a working shortlist of well-known programs relevant to
+            pays you a cut at no extra cost to the buyer. The hard part is knowing which of the hundreds of programs are worth your time. Below is a working shortlist of well-known programs relevant to
             Australians, grouped by category, with the commission structures and cookie windows they are commonly known
             for.
           </p>

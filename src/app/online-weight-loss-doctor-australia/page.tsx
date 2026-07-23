@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Why might a practitioner decline my application?",
-    a: "Because the assessment is genuine. A practitioner may decide that a particular plan or medicine is not suitable for you based on your health history or other factors. Being declined is not a fault in the service, it is the screening working as intended. Suitability is a clinical judgement about your specific situation.",
+    a: "Because the assessment is genuine. A practitioner may decide that a particular plan or medicine is not suitable for you based on your health history or other factors. Being declined means the screening is working as intended. Suitability is a clinical judgement about your specific situation.",
   },
   {
     q: "Is an online weight-loss doctor available to men and women?",

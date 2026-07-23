@@ -136,8 +136,7 @@ export default function MoshVsPilotPage() {
               Mosh and Pilot are the two names Australian men run into most when they start researching hair loss online,
               and they are more alike than different. Both are telehealth services, both put your case in front of a
               registered Australian practitioner, and both can prescribe finasteride and minoxidil when it is
-              appropriate. So the real question is not which one can treat hair loss, it is which experience, plan and
-              price suits you. Below we set out where they overlap, where they diverge, and how to choose.
+              appropriate. So the real question is which experience, plan and price suits you. Below we set out where they overlap, where they diverge, and how to choose.
             </p>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Finasteride and oral minoxidil are prescription-only in Australia and

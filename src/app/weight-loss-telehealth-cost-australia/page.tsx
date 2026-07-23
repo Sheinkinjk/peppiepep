@@ -155,8 +155,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="nw-card px-5 py-5">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#0a7c42]">Part one</p>
-                    <h3 className="mt-1.5 text-lg font-bold text-[#10251b]">The service fee</h3>
+                    <h3 className="text-lg font-bold text-[#10251b]">The service fee</h3>
                     <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
                       A consultation fee or an ongoing subscription that covers the practitioner assessment, follow-ups and ongoing
                       support. Medical telehealth is usually structured as a subscription because weight management is ongoing rather
@@ -164,8 +163,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                     </p>
                   </div>
                   <div className="nw-card px-5 py-5">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#0a7c42]">Part two</p>
-                    <h3 className="mt-1.5 text-lg font-bold text-[#10251b]">Any medicine, separately</h3>
+                    <h3 className="text-lg font-bold text-[#10251b]">Any medicine, separately</h3>
                     <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
                       If a practitioner assesses that a prescription medicine is appropriate, it is typically billed separately by the
                       pharmacy that dispenses it. This is not included in the headline service fee, so it is the part that is easiest

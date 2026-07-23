@@ -495,7 +495,7 @@ export default function BestWebsiteBuilderPage() {
                 },
                 {
                   q: "Which website builder is best for Google Ads?",
-                  a: "Swipe Pages is the strongest choice for paid ad landing pages. Its AMP technology delivers mobile pages in under one second, with built-in A/B testing and dynamic text replacement for campaign personalisation. It is not a general website builder, it is a dedicated conversion tool for paid traffic.",
+                  a: "Swipe Pages is the strongest choice for paid ad landing pages. Its AMP technology delivers mobile pages in under one second, with built-in A/B testing and dynamic text replacement for campaign personalisation. It is a dedicated conversion tool for paid traffic, narrower in scope than a general website builder.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="border-b border-[#e5e9e7] pb-6">

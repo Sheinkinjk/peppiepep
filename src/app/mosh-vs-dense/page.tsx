@@ -140,8 +140,7 @@ export default function MoshVsDensePage() {
               Mosh and Dense both come up when Australians research hair loss, but they are not the same kind of thing.
               Mosh is prescription telehealth: it can prescribe finasteride and minoxidil after an online consultation
               reviewed by a registered Australian practitioner. Dense Hair Experts is a non-prescription topical range,
-              shampoos, conditioners, serums, and scalp treatments aimed at density and scalp health. In other words, one
-              is a clinical route and the other is a topical one. Below we set out the difference, who each suits, and how
+              shampoos, conditioners, serums, and scalp treatments aimed at density and scalp health. One is a clinical route and the other is a topical one. Below we set out the difference, who each suits, and how
               to think about starting.
             </p>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
