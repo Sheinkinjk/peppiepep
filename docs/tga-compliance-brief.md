@@ -103,6 +103,23 @@ Every page listed above was checked live. All of the following are present on
 7. **Warnings against non-compliant competitors** appear on the substance pages,
    e.g. that anyone offering guaranteed access before an assessment is not
    operating compliantly.
+8. **Published editorial standards and funding model**, at
+   `https://referlabs.com.au/about` (section: "How we research"). These state in
+   terms that we do desk research from the provider's own published sources, that
+   **we do not test or personally use most of what we cover and do not claim to**,
+   and that for prescription telehealth we cannot use the service ourselves and so
+   describe only the published process. They also state that rankings are not for
+   sale and that we publish no ratings or testimonials of our own.
+
+   We revised this page on 23 July 2026 because an earlier version overstated our
+   method (it claimed products were "used first-hand"). We mention this because you
+   may find the older wording cached or archived, and because it goes to how we
+   intend to handle the whole area: where a claim about our own process cannot be
+   proved, we remove it rather than defend it.
+
+   Note that the disclosure on each health page is **self-contained inline text**,
+   not a link to this standards page. Readers do not have to navigate anywhere to
+   see that a link is commissioned.
 
 ---
 
@@ -156,5 +173,19 @@ redlines rather than general principles, where practical.
 ## 7. Access for review
 
 All pages are publicly accessible; no login required. The full list of live URLs
-is at `https://referlabs.com.au/sitemap.xml`. Happy to provide staging access,
-component source, or the affiliate agreements if useful.
+is at `https://referlabs.com.au/sitemap.xml`.
+
+Useful starting points:
+
+| Page | Why it matters to the review |
+|---|---|
+| `/about#how-we-research` | Published editorial standards and funding model |
+| `/how-we-make-money` | Commission model in full |
+| `/finasteride-australia` | Highest-risk pattern: substance-named URL + commissioned CTA |
+| `/glp-1-weight-loss-australia` | Same pattern, weight-management side |
+| `/weight-loss` and `/hair-loss` | Category hubs, showing the standard disclosure block |
+
+Happy to provide component source or the affiliate agreements if useful. The
+CTA wording, disclaimers and disclosure blocks are shared components, so any
+redline you give us applies across all affected pages at once rather than
+needing to be repeated page by page.
