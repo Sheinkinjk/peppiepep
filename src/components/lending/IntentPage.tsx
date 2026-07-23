@@ -100,7 +100,7 @@ export default function IntentPage({ cfg }: { cfg: IntentConfig }) {
         {showPanel && (
           <section className="mt-12">
             <h2 className="text-2xl font-extrabold text-[#10251b]">
-              {cfg.filterProducts?.length ? "Panel lenders that may fit" : "The lenders on our panel"}
+              {cfg.filterProducts?.length ? "Lenders that may fit" : "The lenders we compare"}
             </h2>
             <div className="mt-5">
               <LenderTable lenders={panel} caption={`Lenders relevant to ${cfg.crumb}`} />

@@ -45,14 +45,14 @@ export default function HowWeMakeMoney() {
           <p>
             In our <Link href="/business-loans" className="font-semibold text-[#0a7c42] underline">business loans</Link> section
             it works differently. You send us an enquiry, a person reviews it, and with your consent we introduce you to
-            lenders on our panel. If one of those lenders funds your loan, they may pay Refer Labs a commission for the
+            the lenders we compare. Where an enquiry is submitted through a finance broker, Refer Labs may be paid a share of that broker's commission if a loan settles, and some lenders may pay a commission directly for the
             introduction.
           </p>
           <p>Three things that are always true here:</p>
           <ul className="space-y-2">
             {[
               "It never changes the rate or fees you're offered. The lender's price to you is the same whether you come through us or walk in the front door.",
-              "Commission doesn't decide the order lenders appear in, or whether we tell you one fits. If a panel lender is wrong for you, we say so.",
+              "Commission doesn't decide the order lenders appear in, or whether we tell you one fits. If a lender is wrong for you, we say so.",
               "We're a referrer, not a lender or a credit provider. We don't provide credit advice, and we never ask for bank statements, ID documents or logins.",
             ].map((x) => (
               <li key={x} className="flex gap-2.5 leading-relaxed">

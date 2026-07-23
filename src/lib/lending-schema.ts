@@ -3,7 +3,7 @@ import { z } from "zod";
 // Shared ISO-8601 last-updated date for lending-page Article schema (schema.org
 // dateModified must be ISO; "July 2026" is invalid and Google ignores it). Bump
 // this when the lending content is materially refreshed.
-export const LENDING_LAST_UPDATED = "2026-07-20";
+export const LENDING_LAST_UPDATED = "2026-07-23";
 
 // ─── Band definitions ─────────────────────────────────────────────────────────
 // Every quantitative field is a band, never a raw number: it lowers friction and
@@ -14,7 +14,7 @@ export const AMOUNT_BANDS = ["<25k", "25-50k", "50-100k", "100-250k", "250-500k"
 export const REVENUE_BANDS = ["<10k", "10-25k", "25-50k", "50-100k", "100k+"] as const;
 export const TRADING_BANDS = ["<6m", "6-12m", "1-2y", "2-5y", "5y+"] as const;
 export const URGENCY_VALUES = ["today", "this_week", "this_month", "exploring"] as const;
-export const PRODUCTS = ["term_loan", "invoice_finance", "equipment_finance", "line_of_credit", "merchant_cash_advance"] as const;
+export const PRODUCTS = ["term_loan", "invoice_finance", "equipment_finance", "line_of_credit", "trade_finance", "merchant_cash_advance"] as const;
 export const CREDIT_PROFILES = ["clean", "minor_defaults", "defaults_judgements", "unsure"] as const;
 export const ATO_DEBT_BANDS = ["<10k", "10-50k", "50-100k", "100k+", "unsure"] as const;
 export const ENTITY_TYPES = ["sole_trader", "company", "partnership", "trust", "other"] as const;
@@ -44,7 +44,7 @@ export const TRADING_MONTHS_RANGE: Record<(typeof TRADING_BANDS)[number], [numbe
 export const LABELS: Record<string, string> = {
   today: "Today", this_week: "This week", this_month: "This month", exploring: "Just exploring",
   term_loan: "Term loan", invoice_finance: "Invoice finance", equipment_finance: "Equipment finance",
-  line_of_credit: "Line of credit", merchant_cash_advance: "Merchant cash advance",
+  line_of_credit: "Line of credit or overdraft", trade_finance: "Trade finance", merchant_cash_advance: "Merchant cash advance",
   clean: "Clean", minor_defaults: "Minor defaults", defaults_judgements: "Defaults or judgements", unsure: "Unsure",
   sole_trader: "Sole trader", company: "Company", partnership: "Partnership", trust: "Trust", other: "Other",
   morning: "Morning", afternoon: "Afternoon", evening: "Evening", anytime: "Anytime",

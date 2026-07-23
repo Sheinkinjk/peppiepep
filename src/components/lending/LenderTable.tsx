@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { LENDERS, panelRatesAsAt, type Lender } from "@/lib/lenders";
+import { LENDERS, ratesAsAt, type Lender } from "@/lib/lenders";
+import LenderLogo from "./LenderLogo";
 import { label } from "@/lib/lending-schema";
 
 const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
@@ -31,7 +32,7 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
               <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">
                 <Link href={`/business-loans/${l.slug}`} className="flex items-center gap-2.5 hover:text-[#0a7c42] hover:underline">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={l.logo} alt="" width={28} height={28} className="h-7 w-7 shrink-0 rounded-md object-contain" loading="lazy" />
+                  <LenderLogo src={l.logo} name={l.name} size={28} className="rounded-md" />
                   {l.name}
                 </Link>
               </th>
@@ -45,7 +46,7 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
         </tbody>
       </table>
       <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#6e7b74]">
-        Terms as at {panelRatesAsAt()}, from each lender&apos;s own site. &ldquo;Quote-based&rdquo; means the lender prices each loan individually (Lumi quotes a total repayment; Prospa uses simple interest) rather than publishing a headline rate. Figures are indicative, not a quote; your rate depends on the lender&apos;s assessment. Verify current terms with the lender.
+        Terms as at {ratesAsAt()}, from each lender&apos;s own site. &ldquo;Quote-based&rdquo; means the lender prices each loan individually (Lumi quotes a total repayment; Prospa uses simple interest) rather than publishing a headline rate. Figures are indicative, not a quote; your rate depends on the lender&apos;s assessment. Verify current terms with the lender.
       </p>
     </div>
   );

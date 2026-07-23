@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What rate should I put in?",
-    a: "If you have a quote, use its nominal annual rate. If you are just exploring, the advertised 'from' rates on our panel are a starting point, but your actual rate depends on the lender's assessment of your business.",
+    a: "If you have a quote, use its nominal annual rate. If you are just exploring, the advertised 'from' rates of the lenders we compare are a starting point, but your actual rate depends on the lender's assessment of your business.",
   },
   {
     q: "Does using this involve a credit check?",

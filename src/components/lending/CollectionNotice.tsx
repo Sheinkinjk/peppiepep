@@ -20,10 +20,10 @@ export default function CollectionNotice() {
         </li>
         <li>
           <strong className="text-[#10251b]">Why we collect it.</strong> To understand your finance needs and,
-          with your consent, to introduce your enquiry to lenders on our panel so they can assess it.
+          with your consent, to pass your enquiry to lenders, and to finance brokers who submit applications to lenders, so it can be assessed.
         </li>
         <li>
-          <strong className="text-[#10251b]">Who we share it with.</strong> Only the panel lenders relevant to your
+          <strong className="text-[#10251b]">Who we share it with.</strong> Only the lenders and finance brokers relevant to your
           enquiry, and only as you consent. We do not sell your data or share it for unrelated marketing.
         </li>
         <li>

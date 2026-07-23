@@ -64,13 +64,13 @@ export function buildOperatorEmail(lead: LeadInput, leadId: string, matched: Len
 }
 
 export function buildApplicantEmail(lead: LeadInput, matched: Lender[]): string {
-  const lenderNames = matched.length ? matched.map((l) => l.name).join(", ") : "our panel of approved lenders";
+  const lenderNames = matched.length ? matched.map((l) => l.name).join(", ") : "the lenders we compare";
   return `<!DOCTYPE html><html><body style="margin:0;background:#f5f8f6;padding:24px;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
     <div style="max-width:560px;margin:0 auto;background:#fff;border:1px solid #e5e9e7;border-radius:14px;padding:28px;color:#3d4b44;font-size:15px;line-height:1.6">
       <p style="margin:0 0 16px">Hi ${esc(lead.first_name)},</p>
       <p style="margin:0 0 16px">Thanks for your business finance enquiry with Refer Labs. We've received your details for <strong style="color:#10251b">${esc(lead.business_name)}</strong>.</p>
       <p style="margin:0 0 16px">Jarred from Refer Labs will review your enquiry and be in touch <strong style="color:#10251b">within one business day</strong> to talk through your options.</p>
-      <p style="margin:0 0 16px">Based on what you've told us, your details may be shared with the following lenders on our panel so they can assess your application: <strong style="color:#10251b">${esc(lenderNames)}</strong>. We only share them with lenders relevant to your enquiry, and only as you consented.</p>
+      <p style="margin:0 0 16px">Based on what you've told us, your details may be shared with the following lenders, or with a finance broker who submits to them, so your enquiry can be assessed: <strong style="color:#10251b">${esc(lenderNames)}</strong>. We only share them with lenders and brokers relevant to your enquiry, and only as you consented.</p>
       <p style="margin:0 0 16px">If anything changes or you have a question in the meantime, just reply to this email.</p>
       <p style="margin:24px 0 0;color:#6e7b74;font-size:13px">Refer Labs · Independent Australian comparison publisher<br>How we make money: ${SITE}/how-we-make-money</p>
     </div>

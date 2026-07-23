@@ -99,6 +99,59 @@ export const LENDERS: Lender[] = [
     advertisedRateFrom: "Quote-based",
     rateAsAt: "July 2026",
   },
+  {
+    slug: "moneytech",
+    name: "Moneytech",
+    logo: "/logos/moneytech.png",
+    homepage: "https://www.moneytech.com.au",
+    overview:
+      "Moneytech is an Australian non-bank lender offering business loans, a line of credit, invoice finance, trade finance and equipment finance. How much you can borrow turns on security: up to $250,000 without property, or up to $1 million where property is offered, and the rate moves with it.",
+    // Moneytech publishes two eligibility paths: 24 months GST tenure without property,
+    // 12 months where property is offered. Matching uses the lower figure because it is
+    // genuinely achievable, consistent with the lenient design of matchLenders().
+    minTradingMonths: 12,
+    // $500,000 minimum annual revenue is the only turnover figure Moneytech publishes
+    // (on the line of credit). The business loan does not state one; we do not invent it.
+    minMonthlyRevenue: 41667,
+    minAmount: 25000,
+    maxAmount: 1000000,
+    speed: "Not published",
+    // Own broker product information sets Equifax minimums (personal 700 without
+    // property, 550 property-backed; business 500). That is a published credit gate.
+    acceptsBadCredit: false,
+    acceptsAtoDebt: true,         // requires 6 months of ATO statements; assesses rather than refuses
+    afiaCodeSignatory: false,     // not among the five AFIA OSBL Code signatories
+    products: ["term_loan", "line_of_credit", "invoice_finance", "trade_finance", "equipment_finance"],
+    // Moneytech's published broker product information lists 13.95% (caveat/mortgage),
+    // 14.95% (property owner) and 18.95% (non property owner). We show the floor, and
+    // the page states the rate depends on security so the floor is not read as typical.
+    advertisedRateFrom: "From 13.95% p.a.",
+    establishmentFee: "$495",
+    rateAsAt: "July 2026",
+  },
+  {
+    slug: "shift",
+    name: "Shift",
+    logo: "/logos/shift.png",
+    homepage: "https://www.shift.com.au",
+    overview:
+      "Shift is an Australian business lender offering a revolving business overdraft from $10,000 to $2 million, plus asset finance, an equipment line and a trade account. It is a signatory to the AFIA Online Small Business Lender Code of Practice.",
+    minTradingMonths: 24,         // "trading for 2 years or more" (asset finance); overdraft states none
+    minMonthlyRevenue: 20833,     // $250,000 minimum annual turnover (asset finance)
+    minAmount: 10000,
+    maxAmount: 2000000,
+    speed: "Approval within hours for limits under $500,000",
+    acceptsBadCredit: true,       // no published credit gate; operator assesses
+    acceptsAtoDebt: true,         // no published refusal
+    afiaCodeSignatory: true,
+    products: ["line_of_credit", "term_loan", "equipment_finance", "trade_finance"],
+    // The overdraft (14.95%-24.95%) is the working-capital product comparable to a
+    // business loan, so it sets the headline. Asset finance starts lower, from 7.95%,
+    // but quoting that here would misrepresent the cost of borrowing for cash flow.
+    advertisedRateFrom: "From 14.95% p.a.",
+    establishmentFee: "None on the overdraft; $499 on asset finance",
+    rateAsAt: "July 2026",
+  },
 ];
 
 export function getLender(slug: string): Lender | undefined {
@@ -110,8 +163,8 @@ export function hasHeadlineRate(l: Lender): boolean {
   return /%/.test(l.advertisedRateFrom);
 }
 
-/** The most recent rateAsAt across the panel, for a page-level "rates as at" stamp. */
-export function panelRatesAsAt(): string {
+/** The most recent rateAsAt across the lenders, for a page-level "rates as at" stamp. */
+export function ratesAsAt(): string {
   return LENDERS[0]?.rateAsAt ?? "";
 }
 

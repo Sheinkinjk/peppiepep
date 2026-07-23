@@ -31,7 +31,7 @@ export const INTENT_PAGES: IntentEntry[] = [
       description: "Unsecured business loans need no property or asset as security, fund faster and cost more than secured debt. Compare Australian lenders and check your options in one enquiry.",
       keywords: ["unsecured business loans australia", "unsecured business finance", "no collateral business loan australia"],
     },
-    lead: "An unsecured business loan is finance you don't have to back with property or a specific asset. Because the lender can't fall back on collateral, approval leans on your trading history and cash flow, funding is usually faster, and the rate is higher than a secured bank loan. In Australia most online business lenders, including the ones on our panel, are unsecured, which is why they can fund in days rather than weeks.",
+    lead: "An unsecured business loan is finance you don't have to back with property or a specific asset. Because the lender can't fall back on collateral, approval leans on your trading history and cash flow, funding is usually faster, and the rate is higher than a secured bank loan. In Australia most online business lenders, including the ones we compare, are unsecured, which is why they can fund in days rather than weeks.",
     sections: [
       { h: "When unsecured makes sense", body: ["Unsecured suits businesses that need money quickly, don't want to tie up their home or equipment, or don't have an asset to offer. The trade is cost: you pay for the speed and the lender's extra risk."],
         bullets: ["You need funds in days, not weeks", "You'd rather not put property on the line", "The amount is modest relative to your revenue", "You have consistent bank-account turnover the lender can see"] },
@@ -87,7 +87,7 @@ export const INTENT_PAGES: IntentEntry[] = [
         bullets: ["Know the amount and what it's for", "Make sure your business bank account reflects real, recent trading", "Have your ABN and business details to hand", "Be reachable by phone the day you enquire"] },
     ],
     faqs: [
-      { q: "How fast can I actually get the money?", a: "On our panel, advertised turnarounds range from same-day to within 24 to 48 hours once approved. Real timing depends on how quickly the lender can verify your details and whether anything needs clarifying." },
+      { q: "How fast can I actually get the money?", a: "Across the lenders we compare, advertised turnarounds range from same-day to within 24 to 48 hours once approved. Real timing depends on how quickly the lender can verify your details and whether anything needs clarifying." },
       { q: "Does fast mean expensive?", a: "Often, yes. Speed and unsecured lending both push the rate up. If your need isn't urgent, a slower secured option may cost less. Compare the total dollar cost, not just the speed." },
       { q: "What slows an application down?", a: "Incomplete details, an unexplained default, ATO debt without a payment plan, or being uncontactable. Clearing those up front is the single biggest thing you control." },
     ],
@@ -110,7 +110,7 @@ export const INTENT_PAGES: IntentEntry[] = [
       { h: "What lenders look for", body: ["Small business lending leans on the health of the business now, not just a credit score. Time trading, consistent revenue, and a clean-enough credit file do most of the work."] },
     ],
     faqs: [
-      { q: "How much can a small business borrow?", a: "It scales with revenue. Advertised limits on our panel span from a few thousand dollars to several hundred thousand, but your offer reflects your turnover and history, not the maximum on the page." },
+      { q: "How much can a small business borrow?", a: "It scales with revenue. Advertised limits across the lenders we compare span from a few thousand dollars to several million, but your offer reflects your turnover and history, not the maximum on the page." },
       { q: "What's the minimum time in business?", a: "It varies by lender. Many want at least six months of trading with steady revenue, though the exact bar differs. Tell us your situation and we'll point you to lenders whose minimums you meet." },
       { q: "Term loan or line of credit?", a: "A term loan suits a one-off, known cost. A line of credit suits recurring or unpredictable gaps because you only pay for what you draw. Some businesses use both." },
     ],
@@ -123,7 +123,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Business line of credit in Australia",
     meta: {
       title: "Business Line of Credit Australia: How It Works & Who Offers It | Refer Labs",
-      description: "A business line of credit gives you a revolving limit to draw on as needed, paying interest only on what you use. How it compares to a term loan, and which panel lenders offer one.",
+      description: "A business line of credit gives you a revolving limit to draw on as needed, paying interest only on what you use. How it compares to a term loan, and which of the lenders we compare offer one.",
       keywords: ["business line of credit australia", "revolving business credit", "business overdraft alternative australia"],
     },
     lead: "A business line of credit is a pre-approved limit you can draw down, repay, and draw again, paying interest only on the balance you actually use. It suits lumpy or seasonal cash flow, where a lump-sum term loan would leave you paying interest on money sitting idle. Think of it as a flexible buffer for the gaps between money going out and coming in, rather than finance for a single planned purchase.",
@@ -196,7 +196,7 @@ export const INTENT_PAGES: IntentEntry[] = [
       description: "Most business lenders want six to twelve months of trading, which leaves genuine startups with fewer options. What's realistic for a new Australian business in the first months.",
       keywords: ["startup business loans australia", "new business loans australia", "finance for new business australia"],
     },
-    lead: "Finance for a genuine startup is harder to find than the ads suggest. Most business lenders, including those on our panel, want to see six to twelve months of trading and consistent revenue before they'll lend, because they assess from cash-flow history that a brand-new business doesn't have yet. That doesn't leave you with nothing, but it does mean being realistic about which doors are actually open in the first few months.",
+    lead: "Finance for a genuine startup is harder to find than the ads suggest. Most business lenders, including those we compare, want to see six to twelve months of trading and consistent revenue before they'll lend, because they assess from cash-flow history that a brand-new business doesn't have yet. That doesn't leave you with nothing, but it does mean being realistic about which doors are actually open in the first few months.",
     intro: ["We'd rather tell you this up front than take an enquiry we can't help with. If you're pre-revenue or only weeks into trading, a conventional business loan is unlikely, and we'll say so."],
     sections: [
       { h: "What's realistic in the early months", body: ["Before the trading history exists, funding a new business usually leans on options that don't depend on business cash flow."],

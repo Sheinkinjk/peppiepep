@@ -183,7 +183,7 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
             </Card>
 
             <Card title="Suggested lenders">
-              {matched.length === 0 && <p className="text-sm text-[#6e7b74]">No panel lenders matched the stated criteria — review manually.</p>}
+              {matched.length === 0 && <p className="text-sm text-[#6e7b74]">No lenders matched the stated criteria — review manually.</p>}
               <ul className="space-y-1.5 text-sm">
                 {matched.map((l) => (
                   <li key={l.slug} className="flex items-center justify-between">

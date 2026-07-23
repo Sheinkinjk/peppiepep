@@ -95,8 +95,8 @@ export default function Privacy() {
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
                 <li><strong>What we collect:</strong> your contact details and high-level business information (such as loan amount band, business name, ABN, industry, revenue band and credit profile). We do <strong>not</strong> collect bank statements, identity documents, or account logins through this form.</li>
-                <li><strong>Why:</strong> to understand your finance needs and, with your consent, introduce your enquiry to lenders on our panel so they can assess it.</li>
-                <li><strong>Who we share it with:</strong> only the panel lenders relevant to your enquiry, and only as you consent. We record which consent wording you agreed to, together with the date, your IP address and browser, as proof of consent. We do not sell this data or use it for unrelated marketing.</li>
+                <li><strong>Why:</strong> to understand your finance needs and, with your consent, pass your enquiry to lenders, and to finance brokers who submit applications to lenders, so it can be assessed.</li>
+                <li><strong>Who we share it with:</strong> only the lenders and finance brokers relevant to your enquiry, and only as you consent. We record which consent wording you agreed to, together with the date, your IP address and browser, as proof of consent. We do not sell this data or use it for unrelated marketing.</li>
                 <li><strong>Commission:</strong> if a lender we introduce you to funds your loan, that lender may pay us a commission. It does not change the rate or fees you are offered.</li>
                 <li><strong>Your choices:</strong> you can withdraw consent, or ask us to access, correct or delete your enquiry, at any time by emailing <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>. Once your details have been passed to a lender, that lender handles them under its own privacy policy.</li>
               </ul>

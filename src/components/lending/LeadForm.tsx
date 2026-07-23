@@ -251,7 +251,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#3d4b44]">
           {result.names.length > 0 ? (
             <>Based on what you told us, your enquiry looks like a plausible fit for{" "}
-              <strong className="text-[#10251b]">{result.names.length} of {result.total}</strong> lenders on our panel
+              <strong className="text-[#10251b]">{result.names.length} of {result.total}</strong> of the lenders we compare
               {result.names.length <= 4 ? <> ({result.names.join(", ")})</> : null}. This is indicative only — a person still assesses every enquiry.</>
           ) : (
             <>We&apos;ve received your enquiry. A person reviews every enquiry individually, including ones that don&apos;t obviously fit the panel filters.</>

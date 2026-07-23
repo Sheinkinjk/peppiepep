@@ -19,11 +19,11 @@ const GUIDE_LINKS = [
 ];
 
 const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
-const panelMin = Math.min(...LENDERS.map((l) => l.minAmount));
-const panelMax = Math.max(...LENDERS.map((l) => l.maxAmount));
+const lowestMin = Math.min(...LENDERS.map((l) => l.minAmount));
+const highestMax = Math.max(...LENDERS.map((l) => l.maxAmount));
 
 const TRUST = [
-  { icon: ShieldCheck, label: "AFIA Code of Practice lenders" },
+  { icon: ShieldCheck, label: "AFIA Code status shown per lender" },
   { icon: FileX2, label: "No bank statements or ID uploads" },
   { icon: UserRound, label: "Every enquiry reviewed by a person" },
   { icon: Scale, label: "Referrer, not a lender. Rankings never sold" },
@@ -48,7 +48,7 @@ export const metadata = generateSEOMetadata({
 const FAQS: { q: string; a: string }[] = [
   {
     q: "Is Refer Labs a lender?",
-    a: "No. Refer Labs is an independent referrer. We collect your details, and with your consent we introduce your enquiry to lenders on our panel who then assess it and make any offer. We do not lend money, set rates, or approve applications, and we are not a credit provider or credit assistance provider.",
+    a: "No. Refer Labs is an independent referrer. We collect your details, and with your consent we pass your enquiry to lenders, or to a finance broker who submits it to lenders, who then assess it and make any offer. We do not lend money, set rates, or approve applications, and we are not a credit provider or credit assistance provider.",
   },
   {
     q: "What does it cost me?",
@@ -67,8 +67,8 @@ const FAQS: { q: string; a: string }[] = [
     a: "A person reviews your enquiry and gets in touch within one business day to talk through the options that fit your situation.",
   },
   {
-    q: "Which lenders are on the panel?",
-    a: `Our current panel is ${LENDERS.map((l) => l.name).join(", ")}. We introduce your enquiry only to lenders relevant to what you have told us, and only as you consent. The panel changes over time.`,
+    q: "Which lenders do you compare?",
+    a: `We currently compare ${LENDERS.map((l) => l.name).join(", ")}. Refer Labs has no partnership or standing arrangement with any of them: each enquiry is submitted individually, directly or through a finance broker, and the lender assesses it on its own criteria. We pass on your enquiry only where a lender is relevant to what you have told us, and only as you consent. Which lenders we compare changes over time.`,
   },
 ];
 
@@ -104,8 +104,8 @@ const webPageSchema = {
 
 const STEPS = [
   { h: "Tell us about your business", p: "A short form covering how much you need, what it's for, and a few facts about the business. It takes about a minute, and there are no documents to upload." },
-  { h: "We review and match it", p: "A person, not a bot, checks your enquiry against what each lender on our panel actually funds, then gets in touch within one business day." },
-  { h: "You deal with the lender", p: "With your consent, we introduce your enquiry to the lenders that fit. They assess it and make any offer to you directly. You're never obligated to proceed." },
+  { h: "We review and match it", p: "A person, not a bot, checks your enquiry against what each lender we compare actually funds, then gets in touch within one business day." },
+  { h: "You deal with the lender", p: "With your consent, we submit your enquiry to the lenders that fit, directly or through a finance broker. The lender assesses it and makes any offer to you directly. You're never obligated to proceed." },
 ];
 
 export default function BusinessLoansHub() {
@@ -124,8 +124,7 @@ export default function BusinessLoansHub() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
               Answer a few questions about your business and we&apos;ll match your enquiry to the lenders most likely to
-              fund it. A person reviews every enquiry, it&apos;s free to use, and there&apos;s nothing to upload. Refer
-              Labs is a referrer, not a lender.
+              fund it. A person reviews every enquiry, it&apos;s free to use, and there&apos;s nothing to upload. Refer Labs is a referrer, not a lender, and has no partnership with any lender on this page.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#enquire" className="nw-btn group">
@@ -146,11 +145,11 @@ export default function BusinessLoansHub() {
           {/* At a glance */}
           <aside className="lg:pt-1">
             <div className="nw-card rounded-2xl p-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">The panel at a glance</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">The lenders we compare</span>
               <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
                 {[
                   ["Lenders", LENDERS.map((l) => l.name).join(", ")],
-                  ["Loan sizes", `${money(panelMin)} – ${money(panelMax)}`],
+                  ["Loan sizes", `${money(lowestMin)} – ${money(highestMax)}`],
                   ["Funding", "As fast as same business day"],
                   ["Cost to you", "Free"],
                   ["Standards", "AFIA Code signatories"],
@@ -189,7 +188,7 @@ export default function BusinessLoansHub() {
           <div id="enquire" className="mt-6 max-w-2xl scroll-mt-24">
             <LeadForm sourcePage="/business-loans" />
             <p className="mt-4 text-xs leading-relaxed text-[#6e7b74]">
-              Refer Labs is a referrer, not a lender. With your consent we share your details only with the panel lenders
+              Refer Labs is a referrer, not a lender. With your consent we share your details only with the lenders and brokers
               relevant to your enquiry, and we may be paid a commission if your loan settles, which never changes your rate
               or the order lenders appear in. See our{" "}
               <Link href="/privacy" className="underline hover:text-[#10251b]">Privacy Policy</Link> and{" "}
@@ -212,15 +211,14 @@ export default function BusinessLoansHub() {
           </ol>
         </section>
 
-        {/* Panel */}
+        {/* Lenders compared */}
         <section className="mt-16">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">The lenders on our panel</h2>
+          <h2 className="text-2xl font-extrabold text-[#10251b]">The lenders we compare</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
-            These are the lenders we currently introduce enquiries to. Where a lender publishes a headline rate we show it;
-            others price each loan individually. Either way the figures are indicative, not a quote for your business.
+            These are the Australian business lenders we currently compare. Refer Labs has no partnership, panel arrangement or accreditation with any of them: each enquiry is submitted individually, directly or through a finance broker, and the lender decides on its own criteria. Where a lender publishes a headline rate we show it; others price each loan individually. Either way the figures are indicative, not a quote for your business.
           </p>
           <div className="mt-6">
-            <LenderTable caption="Business lenders on the Refer Labs panel" />
+            <LenderTable caption="Australian business lenders compared by Refer Labs" />
           </div>
           <div className="mt-4">
             <CommissionDisclosure variant="inline" />

@@ -144,7 +144,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Pipedrive CRM", href: "/pipedrive", category: "AI & sales", kind: "Guide", keywords: "pipedrive crm visual sales pipeline deals" },
 
   // Business finance (lending vertical)
-  { title: "Business loans Australia: compare lenders", href: "/business-loans", category: "Business finance", kind: "Category", keywords: "business loans australia compare lenders unsecured small business finance lumi moula prospa enquiry" },
+  { title: "Business loans Australia: compare lenders", href: "/business-loans", category: "Business finance", kind: "Category", keywords: "business loans australia compare lenders unsecured small business finance lumi moula prospa moneytech shift overdraft enquiry" },
   { title: "Business loan repayment calculator", href: "/business-loan-calculator", category: "Business finance", kind: "Guide", keywords: "business loan calculator repayments effective rate total cost australia" },
   { title: "What a business loan actually costs", href: "/what-a-business-loan-actually-costs", category: "Business finance", kind: "Guide", keywords: "business loan cost nominal rate factor rate fees comparison rate australia" },
   { title: "The hidden cost of factor rates (analysis)", href: "/true-cost-of-business-loans-australia", category: "Business finance", kind: "Guide", keywords: "factor rate vs interest rate true cost business loan effective annual rate analysis 1.2 factor" },
@@ -168,6 +168,10 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Moula review", href: "/business-loans/moula/review", category: "Business finance", kind: "Review", keywords: "moula review is moula legit business lender australia" },
   { title: "Prospa business loans", href: "/business-loans/prospa", category: "Business finance", kind: "Review", keywords: "prospa business loan review rates eligibility australia" },
   { title: "Prospa review", href: "/business-loans/prospa/review", category: "Business finance", kind: "Review", keywords: "prospa review is prospa legit business lender australia asx" },
+  { title: "Moneytech business loans", href: "/business-loans/moneytech", category: "Business finance", kind: "Review", keywords: "moneytech business loan review rates eligibility line of credit invoice trade finance australia" },
+  { title: "Moneytech review", href: "/business-loans/moneytech/review", category: "Business finance", kind: "Review", keywords: "moneytech review is moneytech legit business lender secured property caveat australia" },
+  { title: "Shift business loans", href: "/business-loans/shift", category: "Business finance", kind: "Review", keywords: "shift business overdraft asset finance trade account review rates eligibility australia" },
+  { title: "Shift review", href: "/business-loans/shift/review", category: "Business finance", kind: "Review", keywords: "shift review is shift legit business lender overdraft afia code australia" },
   { title: "How Refer Labs makes money", href: "/how-we-make-money", category: "Browse", kind: "Guide", keywords: "how we make money affiliate commission lender referral disclosure" },
 
   // Core site pages

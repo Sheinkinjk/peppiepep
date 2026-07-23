@@ -5,6 +5,7 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
+import LenderLogo from "@/components/lending/LenderLogo";
 import { LENDERS, getLender, hasHeadlineRate, type Lender } from "@/lib/lenders";
 import { label } from "@/lib/lending-schema";
 
@@ -116,8 +117,7 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
         </nav>
 
         <div className="mt-3 flex items-center gap-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={l.logo} alt={`${l.name} logo`} width={48} height={48} className="h-12 w-12 shrink-0 rounded-xl object-contain ring-1 ring-[#e5e9e7]" />
+          <LenderLogo src={l.logo} name={l.name} size={48} className="rounded-xl ring-1 ring-[#e5e9e7]" />
           <h1 className="text-4xl font-extrabold leading-[1.1] text-[#10251b] sm:text-5xl">{l.name} business loans</h1>
         </div>
         {/* First 100 words answer the query directly for AEO/GEO. */}
@@ -161,7 +161,7 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
             <h2 className="text-2xl font-extrabold text-[#10251b]">Check whether {l.name} fits</h2>
             <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
               Tell us what you need. We&apos;ll tell you whether {l.name} looks like a plausible fit, and which
-              other panel lenders might suit better. One short form, no documents.
+              other lenders we compare might suit better. One short form, no documents.
             </p>
             <div className="mt-5">
               <LeadForm sourcePage={`/business-loans/${l.slug}`} />
