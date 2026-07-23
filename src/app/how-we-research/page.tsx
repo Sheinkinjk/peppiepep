@@ -38,10 +38,13 @@ const aboutSchema = {
   },
 };
 
+// Every claim on this page has to be one we can stand behind if asked to prove it.
+// A page about editorial standards that overstates its own method is worse than no
+// page at all. Do not add a claim here without checking it is literally true first.
 const principles = [
   {
-    h: "We test, read and use before we recommend",
-    p: "Every product we cover is either used first-hand or assessed against its live version, current pricing and documentation, not a press release. For services we cannot legally use ourselves, such as prescription telehealth, we describe the process and what the published terms actually say, and point readers to primary sources.",
+    h: "We work from the vendor's own published sources",
+    p: "Prices, plan tiers, fees and eligibility come from the provider's own live pages and published terms, checked at the time of writing. We do not take figures from aggregators, comparison directories or press releases. This is desk research: we do not test or personally use most of the products we cover, and we do not claim to. For services we cannot use ourselves, such as prescription telehealth, we describe the published process and link to the source so you can check it yourself.",
   },
   {
     h: "Rankings are not for sale",
@@ -52,8 +55,12 @@ const principles = [
     p: "Many pages contain affiliate links. If you buy or sign up through them, we may earn a commission at no extra cost to you. This is how the research is funded, and the disclosure appears on every page that carries such a link, not buried in a policy you have to hunt for.",
   },
   {
-    h: "We date and revisit our work",
-    p: "Pricing, free trials and eligibility change. Guides carry a reviewed date and are revisited when a product materially changes. If something is out of date, that is a defect we want to fix.",
+    h: "We publish no ratings or testimonials of our own",
+    p: "We do not score products out of five, award badges, or publish customer testimonials, case studies or invented statistics. Where a rating or figure appears it belongs to a third party and is attributed to them so you can weigh the source.",
+  },
+  {
+    h: "Prices change, and we fix what is wrong",
+    p: "Every page that quotes a price carries a caveat that terms change and asks you to confirm current pricing with the provider before you commit. We do not run a fixed review cycle. When a price moves or a claim turns out to be wrong, we correct the page, and we would rather hear about it from you than leave it standing.",
   },
 ];
 
@@ -108,8 +115,9 @@ export default function HowWeResearchPage() {
           <section className="border-t border-[#e5e9e7] py-8">
             <h2 className="text-lg font-bold text-[#10251b]">Who writes this</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
-              Refer Labs is an independent Australian company. Comparisons are produced and maintained by the Refer Labs
-              team. We are not the manufacturer or provider of the products we review.
+              Refer Labs is a small independent Australian publisher, operated by Pepform Pty Ltd trading as Refer Labs,
+              ABN 32 660 008 159. Comparisons are researched and written in-house. We are not the manufacturer,
+              prescriber or provider of anything we cover, and we hold no stock and dispense nothing.
             </p>
           </section>
 

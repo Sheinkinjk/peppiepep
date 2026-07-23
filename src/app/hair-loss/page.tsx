@@ -201,11 +201,7 @@ export default function HairLossHubPage() {
             <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing here is medical advice or a
             recommendation of any treatment. Prescription medicines in Australia are available only after individual
             assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never
-            change a comparison or a conclusion. Read our{" "}
-            <Link href="/how-we-research" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
-              editorial standards
-            </Link>
-            .
+            change a comparison or a conclusion.
           </p>
         </section>
       </main>
