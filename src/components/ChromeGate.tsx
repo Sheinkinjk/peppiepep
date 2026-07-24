@@ -1,14 +1,23 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { APOLLO_GUIDES } from "@/lib/apollo-guides";
+import { HAIR_LOSS_GUIDES } from "@/lib/hair-loss-guides";
 
 /**
  * Renders the global site chrome (header, footer, atmosphere, chatbot) on every
- * route EXCEPT standalone landing pages, which own their full layout.
+ * route EXCEPT standalone landing pages, which own their full layout (ConsumerShell).
  *
- * Add a path here to make it a chrome-free, standalone page.
+ * Add a path here to make it a chrome-free, standalone page. A page that renders its
+ * own ConsumerShell but is NOT listed here will double-header (the old global nav
+ * stacks on top). The Apollo and hair-loss registry slugs are spread in automatically
+ * below, so new registry pages can never regress that way; bespoke ConsumerShell pages
+ * still have to be added by hand.
  */
 const STANDALONE_ROUTES = [
+  // Registry-driven clusters (auto-covered, so new entries never double-header)
+  ...APOLLO_GUIDES.map((g) => g.slug),
+  ...HAIR_LOSS_GUIDES.map((g) => g.slug),
   // Consumer platform surfaces (own light-editorial shell)
   "/",
   "/weight-loss",
@@ -136,6 +145,23 @@ const STANDALONE_ROUTES = [
   "/secured-vs-unsecured-business-loans",
   "/how-to-get-a-business-loan-australia",
   "/business-loan-eligibility-australia",
+  // Weight-loss + hair bespoke pages (own ConsumerShell, not registry-driven)
+  "/weight-loss-telehealth-women-australia",
+  // B2B brand review pages (PremiumAffiliateLanding renders ConsumerShell; these were
+  // missing and double-headering)
+  "/pipedrive",
+  "/capsule",
+  "/nutshell",
+  "/keap",
+  "/activecampaign",
+  "/hellobar",
+  "/outgrow",
+  "/flexiquiz",
+  "/landingi",
+  "/beautifulai",
+  "/pandadoc",
+  "/blinq",
+  "/best-crm-small-business-australia",
   // Lead admin (internal; renders its own minimal chrome, not the public shell)
   "/admin",
 ];
