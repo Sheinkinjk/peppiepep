@@ -169,6 +169,7 @@ export default function WeightLossTelehealthMenPage() {
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/moshy-vs-gp" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs your GP →</Link>
           <Link href="/mens-health-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s health telehealth →</Link>
+          <Link href="/weight-loss-telehealth-women-australia" style={{ color: CYAN }} className="hover:opacity-80">Weight loss telehealth for women →</Link>
         </div>
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">

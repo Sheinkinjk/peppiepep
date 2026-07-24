@@ -74,6 +74,7 @@ export const keapConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
+      { href: "/best-crm-small-business-australia", label: "Best CRM for small business", desc: "Pipedrive, Capsule, Nutshell and Keap compared by who each suits." },
     { href: "/nutshell", label: "Nutshell", desc: "An easy sales CRM with email marketing built in." },
     { href: "/pipedrive", label: "Pipedrive", desc: "A simpler, visual, pipeline-first CRM." },
     { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
