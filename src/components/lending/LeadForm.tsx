@@ -246,13 +246,13 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <Check className="h-6 w-6" style={{ color: GREEN }} aria-hidden="true" />
         </div>
         <h2 ref={headingRef} tabIndex={-1} className="mt-4 text-2xl font-extrabold text-[#10251b] outline-none">
-          Thanks{firstName ? `, ${firstName}` : ""} — your enquiry is in.
+          Thanks{firstName ? `, ${firstName}` : ""}. Your enquiry is in.
         </h2>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#3d4b44]">
           {result.names.length > 0 ? (
             <>Based on what you told us, your enquiry looks like a plausible fit for{" "}
-              <strong className="text-[#10251b]">{result.names.length} of {result.total}</strong> of the lenders we compare
-              {result.names.length <= 4 ? <> ({result.names.join(", ")})</> : null}. This is indicative only — a person still assesses every enquiry.</>
+              <strong className="text-[#10251b]">{result.names.length} of the {result.total}</strong> lenders we compare
+              {result.names.length <= 4 ? <> ({result.names.join(", ")})</> : null}. This is indicative only. A person still assesses every enquiry.</>
           ) : (
             <>We&apos;ve received your enquiry. A person reviews every enquiry individually, including ones that don&apos;t obviously fit the panel filters.</>
           )}
