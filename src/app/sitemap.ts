@@ -9,6 +9,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
+const TODAY  = new Date('2026-07-24'); // materially rewritten in this batch
 const NEW    = new Date('2026-07-22'); // published/edited in the current batch
 const FRESH  = new Date('2026-07-07'); // redesigned / new this release
 const RECENT = new Date('2026-05-20'); // updated within the last few weeks
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Core platform ──────────────────────────────────────────────────
     { url: BASE,                         lastModified: FRESH,  changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${BASE}/weight-loss`,        lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE}/weight-loss`,        lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE}/hair-loss`,          lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/for-business`,       lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.7 },
     // Programmatic category hubs (auto-generated from the catalog)
@@ -31,22 +32,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     })),
     { url: `${BASE}/faq`,                lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/guides`,             lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/guides`,             lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/business-software`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
-    { url: `${BASE}/about`,              lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/about`,              lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
 
     // ── Business lending (lead-capture vertical; admin/api never listed) ─
-    { url: `${BASE}/business-loans`,                            lastModified: NEW, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/business-loans`,                            lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/business-loan-calculator`,                  lastModified: NEW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/what-a-business-loan-actually-costs`,       lastModified: NEW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/equipment-finance-instant-asset-write-off`, lastModified: NEW, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/how-we-make-money`,                         lastModified: NEW, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/how-we-make-money`,                         lastModified: TODAY, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/true-cost-of-business-loans-australia`,     lastModified: NEW, changeFrequency: 'monthly', priority: 0.82 },
     // Lender pages, generated from the config (adding a lender = one config entry)
     ...LENDERS.flatMap((l) => [
-      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: NEW, changeFrequency: 'monthly' as const, priority: 0.78 },
-      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: NEW, changeFrequency: 'monthly' as const, priority: 0.72 },
+      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: TODAY, changeFrequency: 'monthly' as const, priority: 0.78 },
+      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: TODAY, changeFrequency: 'monthly' as const, priority: 0.72 },
     ]),
     // Intent + explainer pages, generated from the registry
     ...INTENT_PAGES.map((p) => ({
@@ -195,7 +196,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // drop, which is self-contradictory and burns crawl budget on a young domain.
 
     // ── Legal ──────────────────────────────────────────────────────────
-    { url: `${BASE}/privacy`, lastModified: LEGAL, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/privacy`, lastModified: TODAY, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/terms`,   lastModified: LEGAL, changeFrequency: 'yearly', priority: 0.3 },
     // /security removed: noIndex (retired SaaS trust page).
 
