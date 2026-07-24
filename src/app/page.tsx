@@ -93,10 +93,36 @@ const itemListSchema = {
   itemListElement: categories.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.title, url: `${SITE_URL}${c.href}` })),
 };
 
+const homeFaqs = [
+  {
+    q: "What is Refer Labs?",
+    a: "Refer Labs is an independent Australian comparison publisher. We research and compare providers in categories like weight-loss telehealth, hair-loss treatment, website builders, newsletter platforms and AI sales tools, and publish the verdicts with our criteria stated.",
+  },
+  {
+    q: "How does Refer Labs make money?",
+    a: "Through affiliate links. Some links on our pages earn us a commission at no cost to you, and it never changes a ranking — our comparisons and criteria are published before any commercial relationship applies.",
+  },
+  {
+    q: "How does Refer Labs research its comparisons?",
+    a: "We compare providers on published facts: advertised pricing checked against provider sites with the date recorded, feature-by-feature comparison, and stated criteria on every page. Our full methodology is on the How We Research page.",
+  },
+];
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function HomePage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }} />
 
       <main id="main-content">
         {/* ── Masthead hero ── */}
@@ -229,6 +255,21 @@ export default function HomePage() {
           <p className="mt-5 px-5 text-center text-[11px] leading-relaxed text-[#9aa39c]">
             Some are affiliate links; we may earn a commission at no cost to you, and it never changes a ranking.
           </p>
+        </section>
+
+        {/* ── About / FAQ: the three questions a first-time reader asks ── */}
+        <section className="border-t border-[#e5e9e7] bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">About Refer Labs</h2>
+            <div className="mt-7 grid gap-8 sm:grid-cols-3">
+              {homeFaqs.map((f) => (
+                <div key={f.q}>
+                  <h3 className="text-sm font-bold text-[#10251b]">{f.q}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* ── Latest guides (article index) ── */}
