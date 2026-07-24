@@ -102,7 +102,10 @@ const sections = [
       { href: "/best-home-battery-australia", label: "Best Home Battery", desc: "How to actually choose one: capacity, chemistry, warranty, and why the installer matters." },
       { href: "/what-size-home-battery-do-i-need-australia", label: "What Size Battery Do I Need", desc: "Size from your evening usage and spare solar, and why the rebate tapers above 14kWh." },
       { href: "/nsw-home-battery-rebate-2026", label: "NSW Battery Rebate 2026", desc: "The federal rebate plus the NSW VPP incentive, and how they stack." },
-      { href: "/home-battery-installer-nsw", label: "Choosing a NSW Installer", desc: "SAA accreditation, licensing, warranties, and handling the rebate." }
+      { href: "/home-battery-installer-nsw", label: "Choosing a NSW Installer", desc: "SAA accreditation, licensing, warranties, and handling the rebate." },
+      { href: "/home-battery-installer-sydney", label: "Home Battery Installer Sydney", desc: "Choosing a Sydney installer, and how the rebate, NSW VPP and $500 stack." },
+      { href: "/is-a-home-battery-worth-it-australia", label: "Is a Battery Worth It?", desc: "When a battery pays off, when it doesn't, and how the rebate and $500 change the maths." },
+      { href: "/home-battery-blackout-backup-australia", label: "Blackout Backup", desc: "Not every battery keeps the power on in an outage. What backup actually needs." }
     ],
   },
   {

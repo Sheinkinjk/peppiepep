@@ -217,7 +217,7 @@ export default function ApolloLanding() {
                   proportionally bigger rebate, and oversizing has real diminishing returns.
                 </p>
                 <p>
-                  On top of the federal discount, some states add their own incentive. NSW, for example, offers $1,500 for joining a Virtual Power Plant.
+                  On top of the federal discount, some states add their own incentive. NSW, for example, pays a Virtual Power Plant (VPP) incentive worth roughly $40 per usable kWh, capped at 28kWh, so up to about $1,100. It floats with certificate prices, so treat it as indicative.
                   Eligibility depends on your battery, retailer and VPP terms, so it is worth asking what applies to your
                   system when the quote comes back.
                 </p>

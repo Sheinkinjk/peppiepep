@@ -89,8 +89,11 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Home battery rebate Australia 2026", href: "/home-battery-rebate-australia", category: "Home & energy", kind: "Guide", keywords: "home battery rebate australia cheaper home batteries program battery rebate 2026 solar battery rebate stc taper 14kwh how much" },
   { title: "Best home battery in Australia", href: "/best-home-battery-australia", category: "Home & energy", kind: "Guide", keywords: "best home battery australia solar battery choose capacity chemistry lfp warranty vpp compare" },
   { title: "What size home battery do I need", href: "/what-size-home-battery-do-i-need-australia", category: "Home & energy", kind: "Guide", keywords: "what size home battery do i need kwh sizing calculator australia how many" },
-  { title: "NSW home battery rebate 2026", href: "/nsw-home-battery-rebate-2026", category: "Home & energy", kind: "Guide", keywords: "nsw home battery rebate 2026 vpp incentive 1500 federal stack sydney" },
+  { title: "NSW home battery rebate 2026", href: "/nsw-home-battery-rebate-2026", category: "Home & energy", kind: "Guide", keywords: "nsw home battery rebate 2026 vpp incentive federal stack sydney pdrs" },
   { title: "Home battery installer NSW", href: "/home-battery-installer-nsw", category: "Home & energy", kind: "Guide", keywords: "home battery installer nsw sydney saa accredited electrical licence solar battery installation" },
+  { title: "Home battery installer Sydney", href: "/home-battery-installer-sydney", category: "Home & energy", kind: "Guide", keywords: "home battery installer sydney solar battery installation sydney metro nsw saa accredited" },
+  { title: "Is a home battery worth it?", href: "/is-a-home-battery-worth-it-australia", category: "Home & energy", kind: "Guide", keywords: "is a home battery worth it australia are batteries worth it 2026 payback solar battery worth" },
+  { title: "Home battery blackout backup", href: "/home-battery-blackout-backup-australia", category: "Home & energy", kind: "Guide", keywords: "home battery backup blackout power outage does battery work in blackout whole home essential circuits" },
   { title: "AliDrop review", href: "/alidrop", category: "E-commerce", kind: "Guide", keywords: "alidrop dropshipping aliexpress temu alibaba shopify fulfilment sourcing" },
 
   // AI & sales

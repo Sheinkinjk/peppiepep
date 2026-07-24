@@ -50,7 +50,7 @@ export const faqs = [
   },
   {
     q: "Are there state incentives as well as the federal rebate?",
-    a: "Often, yes. The federal Cheaper Home Batteries discount applies nationally, and some states add their own incentive on top. NSW, for example, offers $1,500 for joining a Virtual Power Plant (VPP). What you can claim depends on your state, your battery, your retailer and the VPP terms, so confirm what applies to your address when you get the quote.",
+    a: "Often, yes. The federal Cheaper Home Batteries discount applies nationally, and some states add their own incentive on top. NSW, for example, pays a Virtual Power Plant (VPP) incentive of roughly $40 per usable kWh (capped at 28kWh, so up to about $1,100, and floating with certificate prices). What you can claim depends on your state, your battery, your retailer and the VPP terms, so confirm what applies to your address when you get the quote.",
   },
   {
     q: "How much will a home battery actually save me?",
