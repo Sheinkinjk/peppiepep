@@ -285,7 +285,7 @@ export const seoConfig = {
   cloudtalk: {
     title: "CloudTalk Discount Code & Referral Link 2026: AI Business Phone | Refer Labs",
     description:
-      "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system. Here's the current offer, a 14-day free trial plus free AI-voice test minutes, via our link.",
+      "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system. Start with a 14-day free trial plus free AI-voice test minutes through our link.",
     url: `${SITE_URL}/cloudtalk`,
     keywords: ["cloudtalk discount code", "cloudtalk promo code", "cloudtalk coupon", "cloudtalk referral link", "cloudtalk review", "cloudtalk pricing", "cloudtalk free trial", "business phone system"],
   },
@@ -299,7 +299,7 @@ export const seoConfig = {
   dext: {
     title: "Dext Discount Code & Referral Link 2026: Bookkeeping Automation | Refer Labs",
     description:
-      "Looking for a Dext discount code, promo code or referral link? Dext automates bookkeeping, capturing receipts and invoices and syncing to Xero, QuickBooks and Sage. Here's the current offer, a 14-day free trial, via our link.",
+      "Looking for a Dext discount code, promo code or referral link? Dext automates bookkeeping, capturing receipts and invoices and syncing to Xero, QuickBooks and Sage. Start free with a 14-day trial through our link.",
     url: `${SITE_URL}/dext`,
     keywords: ["dext discount code", "dext promo code", "dext coupon", "dext referral link", "dext review", "dext pricing", "receiptbank dext", "bookkeeping automation software"],
   },
@@ -313,7 +313,7 @@ export const seoConfig = {
   lindy: {
     title: "Lindy Discount Code & Referral Link 2026: AI Work Assistant | Refer Labs",
     description:
-      "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work. Here's the current offer, a 7-day free trial, via our link.",
+      "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work. Try it free for 7 days through our link.",
     url: `${SITE_URL}/lindy`,
     keywords: ["lindy discount code", "lindy ai promo code", "lindy coupon", "lindy referral link", "lindy ai review", "lindy pricing", "ai work assistant", "ai automation tool"],
   },
@@ -341,7 +341,7 @@ export const seoConfig = {
   nutshell: {
     title: "Nutshell Discount Code & Referral Link 2026: Easy Sales CRM | Refer Labs",
     description:
-      "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in. Here's the current offer, a 14-day free trial, no card, via our link.",
+      "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in. Start with a 14-day free trial, no card, through our link. From US$13/user/mo.",
     url: `${SITE_URL}/nutshell`,
     keywords: ["nutshell discount code", "nutshell promo code", "nutshell coupon", "nutshell crm referral link", "nutshell crm review", "nutshell pricing", "easy sales crm", "small business crm"],
   },
@@ -355,14 +355,14 @@ export const seoConfig = {
   pipedrive: {
     title: "Pipedrive Discount Code & Referral Link 2026: Visual Sales CRM | Refer Labs",
     description:
-      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM. Here's the current offer, a 14-day free trial with no card, via our link. From US$14/seat/mo.",
+      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link. From US$14/seat/mo.",
     url: `${SITE_URL}/pipedrive`,
     keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
   },
   activeCampaign: {
     title: "ActiveCampaign Discount Code & Referral Link 2026: Email Automation | Refer Labs",
     description:
-      "Looking for an ActiveCampaign discount code, promo code or referral link? Email marketing plus a powerful automation builder and CRM. Here's the current offer, a 14-day free trial, via our link. From US$15/mo.",
+      "Looking for an ActiveCampaign discount code, promo code or referral link? Email marketing plus a powerful automation builder and CRM, with a 14-day free trial through our link. From US$15/mo.",
     url: `${SITE_URL}/activecampaign`,
     keywords: ["activecampaign discount code", "activecampaign promo code", "activecampaign coupon", "activecampaign referral link", "activecampaign review", "activecampaign pricing", "email marketing automation", "marketing automation crm"],
   },
@@ -390,7 +390,7 @@ export const seoConfig = {
   landingi: {
     title: "Landingi Discount Code & Referral Link 2026: Landing Page Builder | Refer Labs",
     description:
-      "Looking for a Landingi discount code or referral link? Landingi is a no-code landing-page builder with A/B testing. Here's the current offer, a 14-day free trial, via our link. From US$24/mo.",
+      "Looking for a Landingi discount code or referral link? Landingi is a no-code landing-page builder with A/B testing and a 14-day free trial through our link. From US$24/mo.",
     url: `${SITE_URL}/landingi`,
     keywords: ["landingi discount code", "landingi referral link", "landingi review", "landingi pricing", "landing page builder", "no-code landing page", "ab testing landing page"],
   },
@@ -1779,7 +1779,7 @@ export const seoConfig = {
   aisdr: {
     title: "AiSDR Discount Code & Referral Link 2026: AI Sales Rep | Refer Labs",
     description:
-      "Looking for an AiSDR discount code, promo code or referral link? Here's the current offer and how to access it. The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From $250/month (Solo); the popular quarterly plan is $900/month.",
+      "Looking for an AiSDR discount code, promo code or referral link? The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From $250/month (Solo); the popular quarterly plan is $900/month.",
     url: `${SITE_URL}/aisdr`,
     keywords: [
       "aisdr discount code",
@@ -1806,7 +1806,7 @@ export const seoConfig = {
   replyio: {
     title: "Reply.io Discount Code & Referral Link 2026: Sales Outreach | Refer Labs",
     description:
-      "Looking for a Reply.io discount code, promo code or referral link? Here's the current offer. The AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial.",
+      "Looking for a Reply.io discount code, promo code or referral link? The AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial.",
     url: `${SITE_URL}/replyio`,
     keywords: [
       "reply.io discount code",
@@ -1833,7 +1833,7 @@ export const seoConfig = {
   fullenrich: {
     title: "FullEnrich Discount Code & Referral Link 2026: B2B Contact Data | Refer Labs",
     description:
-      "Looking for a FullEnrich discount code, promo code or referral link? Here's the current offer. Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start.",
+      "Looking for a FullEnrich discount code, promo code or referral link? Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start.",
     url: `${SITE_URL}/fullenrich`,
     keywords: [
       "fullenrich discount code",
@@ -1861,7 +1861,7 @@ export const seoConfig = {
   brevo: {
     title: "Brevo Discount Code & Referral Link 2026: Email, SMS & CRM | Refer Labs",
     description:
-      "Looking for a Brevo discount code, promo code or referral link? Here's the current offer. The all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works.",
+      "Looking for a Brevo discount code, promo code or referral link? The all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works.",
     url: `${SITE_URL}/brevo`,
     keywords: [
       "brevo discount code",
@@ -1907,7 +1907,7 @@ export const seoConfig = {
   leadpages: {
     title: "Leadpages Discount Code & Referral Link 2026: Landing Page Builder | Refer Labs",
     description:
-      "Looking for a Leadpages discount code, promo code or referral link? Here's the current offer. A landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder.",
+      "Looking for a Leadpages discount code, promo code or referral link? Start with a 7-day free trial, then 50% off your first month, via our link. A landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder.",
     url: `${SITE_URL}/leadpages`,
     keywords: [
       "leadpages discount code",
@@ -1930,7 +1930,7 @@ export const seoConfig = {
   superfiliate: {
     title: "Superfiliate Discount Code & Referral Link 2026: For Brands | Refer Labs",
     description:
-      "Looking for a Superfiliate discount code, promo code or referral link? Here's the current offer: 15% off your monthly Superfiliate fee for new subscribers via our link. A creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates.",
+      "Looking for a Superfiliate discount code, promo code or referral link? New subscribers get 15% off the monthly Superfiliate fee via our link. A creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates.",
     url: `${SITE_URL}/superfiliate`,
     keywords: [
       "superfiliate discount code",
@@ -1953,7 +1953,7 @@ export const seoConfig = {
   employmentHero: {
     title: "Employment Hero Discount Code Australia 2026: Referral Link, HR & Payroll | Refer Labs",
     description:
-      "Looking for an Employment Hero discount code, promo code or referral link? Here's the current offer. The Australian-built all-in-one HR, payroll and employment platform. ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment, employee benefits and an employee app. Fair Work compliant. Pricing is quoted per business, not published publicly.",
+      "Looking for an Employment Hero discount code, promo code or referral link? The Australian-built all-in-one HR, payroll and employment platform. ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment, employee benefits and an employee app. Fair Work compliant. Pricing is quoted per business, not published publicly.",
     url: `${SITE_URL}/employmenthero`,
     keywords: [
       "employment hero discount code",
