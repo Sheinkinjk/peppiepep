@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Calendar, ChevronDown } from "lucide-react";
+import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
@@ -20,35 +21,34 @@ export default function FAQPage() {
   const expandAll = () => setExpandedQuestions(allFAQs.map((_, i) => i));
   const collapseAll = () => setExpandedQuestions([]);
 
-  const renderFAQSection = (title: string, faqs: FAQ[], offset: number, borderClass: string) => (
+  const renderFAQSection = (title: string, faqs: FAQ[], offset: number) => (
     <section className="mb-10">
-      <h2 className="text-2xl font-bold text-white mb-4 text-center">{title}</h2>
+      <h2 className="text-xl font-extrabold text-[#10251b] mb-4">{title}</h2>
       <div className="space-y-3">
         {faqs.map((faq, rawIdx) => {
           const idx = rawIdx + offset;
           const isExpanded = expandedQuestions.includes(idx);
           return (
-            <div
-              key={idx}
-              className={`rounded-xl border ${borderClass} overflow-hidden`}
-            >
+            <div key={idx} className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] overflow-hidden">
               <button
                 onClick={() => toggleQuestion(idx)}
-                className="w-full text-left px-6 py-4 flex items-start justify-between gap-4"
+                aria-expanded={isExpanded}
+                className="w-full text-left px-5 py-4 flex items-start justify-between gap-4"
               >
-                <h3 className="text-base font-medium text-white leading-relaxed pr-2">{faq.q}</h3>
+                <h3 className="text-[15px] font-semibold text-[#10251b] leading-relaxed pr-2">{faq.q}</h3>
                 <ChevronDown
-                  className={`h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5 transition-transform duration-200 ${
+                  className={`h-5 w-5 text-[#9aa39c] flex-shrink-0 mt-0.5 transition-transform duration-200 ${
                     isExpanded ? "rotate-180" : ""
                   }`}
+                  aria-hidden="true"
                 />
               </button>
               <div
-                className={`px-6 overflow-hidden transition-all duration-200 ease-in-out ${
-                  isExpanded ? "pb-5 max-h-[500px]" : "max-h-0"
+                className={`px-5 overflow-hidden transition-all duration-200 ease-in-out ${
+                  isExpanded ? "pb-5 max-h-[600px]" : "max-h-0"
                 }`}
               >
-                <p className="text-sm text-slate-400 leading-relaxed">{faq.a}</p>
+                <p className="text-sm text-[#3d4b44] leading-relaxed">{faq.a}</p>
               </div>
             </div>
           );
@@ -58,68 +58,37 @@ export default function FAQPage() {
   );
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#012e36] via-[#03424d] to-[#02272f] text-white">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(10,186,181,0.06),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(87,230,255,0.04),transparent_50%)]" />
-      </div>
+    <ConsumerShell>
+      <main id="main-content" className="mx-auto max-w-3xl px-5 sm:px-8 pb-20 pt-12 sm:pt-16">
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <span>/</span>
+          <span className="text-[#2b362f]">FAQ</span>
+        </nav>
 
-      <main
-        id="main-content"
-        className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 pb-24 pt-16"
-      >
-        {/* Hero */}
-        <header className="text-center space-y-6 mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-white">
-            Frequently Asked Questions
+        <header className="mb-12">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Questions</p>
+          <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+            Frequently asked questions
           </h1>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            Common questions about our services, engagement models, and how we work.
+          <p className="mt-5 text-lg leading-relaxed text-[#2b362f] max-w-2xl">
+            Common questions about how Refer Labs works, our services, and how we are paid.
           </p>
-
-          <div className="flex justify-center gap-4 pt-2">
-            <button
-              onClick={expandAll}
-              className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              Expand all
-            </button>
-            <span className="text-slate-600">|</span>
-            <button
-              onClick={collapseAll}
-              className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              Collapse all
-            </button>
+          <div className="mt-6 flex gap-4 text-sm font-semibold">
+            <button onClick={expandAll} className="text-[#0a7c42] hover:text-[#086536]">Expand all</button>
+            <span className="text-[#cdd5cf]">|</span>
+            <button onClick={collapseAll} className="text-[#0a7c42] hover:text-[#086536]">Collapse all</button>
           </div>
         </header>
 
-        {renderFAQSection(
-          "About Refer Labs",
-          aboutFAQs,
-          0,
-          "border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent"
-        )}
+        {renderFAQSection("About Refer Labs", aboutFAQs, 0)}
+        {renderFAQSection("Services & Engagement", servicesFAQs, aboutFAQs.length)}
+        {renderFAQSection("Pricing & Model", pricingFAQs, aboutFAQs.length + servicesFAQs.length)}
 
-        {renderFAQSection(
-          "Services & Engagement",
-          servicesFAQs,
-          aboutFAQs.length,
-          "border-teal-500/20 bg-gradient-to-br from-teal-500/5 to-transparent"
-        )}
-
-        {renderFAQSection(
-          "Pricing & Model",
-          pricingFAQs,
-          aboutFAQs.length + servicesFAQs.length,
-          "border-white/5 bg-white/[0.02]"
-        )}
-
-        {/* Bottom CTA */}
-        <section className="text-center">
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-10 sm:p-12">
-            <h2 className="text-2xl font-bold text-white mb-3">Still have questions?</h2>
-            <p className="text-slate-400 mb-6 max-w-md mx-auto">
+        <section className="mt-4">
+          <div className="rounded-2xl border border-[#0a7c42]/20 bg-[#0a7c42]/[0.05] p-8 sm:p-10 text-center">
+            <h2 className="text-2xl font-extrabold text-[#10251b] mb-3">Still have questions?</h2>
+            <p className="text-[#3d4b44] mb-6 max-w-md mx-auto">
               Book a quick call and we will answer anything not covered here.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -127,21 +96,21 @@ export default function FAQPage() {
                 href={calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0AA7B5] text-sm font-semibold text-white transition-colors hover:bg-[#00838F] shadow-lg shadow-[#0AA7B5]/30"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0a7c42] text-sm font-bold text-white transition-colors hover:bg-[#086536]"
               >
-                <Calendar className="h-4 w-4" />
-                Partner With Us
+                <Calendar className="h-4 w-4" aria-hidden="true" />
+                Partner with us
               </a>
               <Link
-                href="/application"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+                href="/guides"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#e5e9e7] bg-white text-sm font-bold text-[#10251b] hover:bg-[#f5f8f6] transition-colors"
               >
-                Apply Now
+                Browse the guides
               </Link>
             </div>
           </div>
         </section>
       </main>
-    </div>
+    </ConsumerShell>
   );
 }

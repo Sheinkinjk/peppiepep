@@ -162,6 +162,8 @@ const STANDALONE_ROUTES = [
   "/pandadoc",
   "/blinq",
   "/best-crm-small-business-australia",
+  // FAQ (migrated to ConsumerShell)
+  "/faq",
   // Lead admin (internal; renders its own minimal chrome, not the public shell)
   "/admin",
 ];
