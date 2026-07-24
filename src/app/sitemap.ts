@@ -82,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/moshy-alternatives`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/juniper-alternatives`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/online-weight-loss-programs-australia`,  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/mens-health-telehealth-australia`,       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-injections-australia`,       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
@@ -126,6 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/fullenrich`,         lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/employmenthero`,     lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/best-ai-sales-tools`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/best-crm-small-business-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
 
     // ── Email / e-commerce / landing pages / affiliate software ────────
     { url: `${BASE}/brevo`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },

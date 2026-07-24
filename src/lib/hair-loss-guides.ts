@@ -236,6 +236,54 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     ],
     related: [R.fin, R.min, R.best, R.quiz, R.mosh],
   },
+
+  {
+    slug: "/receding-hairline-treatment-australia",
+    crumb: "Receding hairline",
+    priority: 0.8,
+    h1: "Receding hairline treatment in Australia: what actually helps",
+    meta: {
+      title: "Receding Hairline Treatment Australia 2026: What Helps | Refer Labs",
+      description:
+        "A receding hairline in Australia: what causes it, which treatments have real evidence, why acting early matters, and how an online practitioner assessment works. Information only, not medical advice.",
+      keywords: ["receding hairline treatment australia", "receding hairline", "how to fix a receding hairline", "receding hairline men australia"],
+    },
+    lead:
+      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the treatments with the strongest evidence are the same: finasteride and minoxidil. The thing that most affects the result is not which product you pick but how early you act, because it is easier to hold onto the hairline you still have than to recover ground already lost. Whether any treatment suits you is a clinical decision made after an assessment.",
+    sections: [
+      {
+        h: "Why a hairline recedes",
+        body: [
+          "Male pattern hair loss is largely genetic and hormonal: hair follicles at the temples and front are sensitive to DHT, a hormone that gradually shrinks them until they stop producing visible hair. This is why the hairline is often the first place men notice change, and why it tends to progress if left alone.",
+          "Not every receding or uneven hairline is male pattern loss, though. A mature hairline that settles slightly higher in your twenties is normal, and other causes behave differently, which is part of why an assessment matters before assuming a treatment.",
+        ],
+      },
+      {
+        h: "What the evidence supports",
+        body: ["For male pattern hair loss driving a receding hairline, two treatments have the strongest evidence, and they are often used together."],
+        bullets: [
+          "Finasteride: prescription-only in Australia, works by lowering DHT, and is the most-studied treatment for slowing the process.",
+          "Minoxidil: usually topical and available over the counter, it supports the follicles and is often combined with finasteride.",
+          "Early action: because the loss is progressive, starting sooner generally leaves more hair to protect.",
+          "Most shampoos, supplements and devices lack comparable evidence for stopping the underlying process, whatever they do for appearance.",
+        ],
+      },
+      {
+        h: "How to get assessed without an in-person visit",
+        body: [
+          "Because finasteride is prescription-only, accessing it means a practitioner assessment, which telehealth services now run online. You complete a consultation with photos, a registered Australian practitioner reviews it individually, and if a treatment is appropriate it is prescribed and delivered. Some men are declined, which is the screening working as intended.",
+          "Mosh is one Australian men's telehealth service that runs this process online. Refer Labs readers who start through our link get 55% off their first order, applied automatically with no code to type. It commits you to nothing beyond the consultation, and a practitioner still decides what, if anything, you would be offered. This page is information only, not medical advice.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Can a receding hairline be reversed?", a: "Sometimes partially, but it is more realistic to slow further loss and protect what you have than to fully reverse a receded hairline. Finasteride and minoxidil have the strongest evidence for male pattern hair loss, and results are better the earlier you start. Whether either suits you is a clinical decision made after an assessment. Neither guarantees an outcome." },
+      { q: "What is the best treatment for a receding hairline?", a: "For male pattern hair loss, the most-studied options are finasteride (prescription-only, lowers DHT) and minoxidil (usually topical, over the counter), often used together. A practitioner assesses which, if any, is appropriate for you. Most shampoos and supplements lack comparable evidence for stopping the underlying process." },
+      { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
+      { q: "How do I get finasteride for a receding hairline in Australia?", a: "Finasteride is prescription-only, so it requires an assessment by a registered practitioner. Telehealth services run this online: you complete a consultation with photos, a practitioner reviews it, and if appropriate it is prescribed and delivered. Mosh is one such service; Refer Labs readers get 55% off a first order through our link. Some applicants are declined." },
+    ],
+    related: [R.fin, R.min, R.best, R.mosh, R.quiz],
+  },
 ];
 
 export const HAIR_LOSS_GUIDE_BY_SLUG: Record<string, HairLossGuideEntry> =

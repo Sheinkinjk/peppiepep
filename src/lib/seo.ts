@@ -1125,6 +1125,64 @@ export const seoConfig = {
     ],
   },
 
+  weightLossTelehealthWomen: {
+
+    title: "Weight Loss Telehealth for Women in Australia 2026 | Refer Labs",
+
+    description:
+
+      "How weight-loss telehealth works for women in Australia. What to check before signing up with any provider, how coaching-led and clinical pathways differ, and where Moshy fits as a clinical pathway open to anyone eligible. Information only, not medical advice.",
+
+    url: `${SITE_URL}/weight-loss-telehealth-women-australia`,
+
+    keywords: [
+
+      "weight loss telehealth women australia",
+
+      "womens weight loss program online australia",
+
+      "female weight loss telehealth",
+
+      "online weight loss for women australia",
+
+      "weight loss program for women australia",
+
+      "juniper alternative australia",
+
+      "telehealth weight loss women",
+
+    ],
+
+  },
+
+  bestCrmSmallBusiness: {
+
+    title: "Best CRM for Small Business Australia 2026: Compared | Refer Labs",
+
+    description:
+
+      "The best CRM software for small business in Australia, compared on price, ease of use and who each suits: Pipedrive, Capsule, Nutshell and Keap. Real pricing, free trials, and how to choose. No paid rankings.",
+
+    url: `${SITE_URL}/best-crm-small-business-australia`,
+
+    keywords: [
+
+      "best crm for small business australia",
+
+      "best crm australia",
+
+      "small business crm australia",
+
+      "crm software australia",
+
+      "pipedrive vs capsule",
+
+      "simple crm for small business",
+
+    ],
+
+  },
+
   weightLossTelehealthMen: {
     title: "Weight Loss Telehealth for Men in Australia 2026 | Refer Labs",
     description:

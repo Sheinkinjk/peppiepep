@@ -88,6 +88,7 @@ const sections = [
       { href: "/moshy-vs-gp", label: "Telehealth vs Your GP", desc: "Two doors to the same care. The practical trade." },
       { href: "/moshy-alternatives", label: "Moshy Alternatives", desc: "The shortlist, including your GP." },
       { href: "/mens-health-telehealth-australia", label: "Men's Health Telehealth", desc: "The wider category and its limits." },
+      { href: "/weight-loss-telehealth-women-australia", label: "Weight Loss Telehealth for Women", desc: "Coaching-led vs clinical pathways, and how to choose." },
     ],
   },
   {
@@ -104,6 +105,8 @@ const sections = [
       { href: "/nsw-home-battery-rebate-2026", label: "NSW Battery Rebate 2026", desc: "The federal rebate plus the NSW VPP incentive, and how they stack." },
       { href: "/home-battery-installer-nsw", label: "Choosing a NSW Installer", desc: "SAA accreditation, licensing, warranties, and handling the rebate." },
       { href: "/home-battery-installer-sydney", label: "Home Battery Installer Sydney", desc: "Choosing a Sydney installer, and how the rebate, NSW VPP and $500 stack." },
+      { href: "/solar-and-battery-package-australia", label: "Solar & Battery Packages", desc: "Buying panels and storage together, and why sizing them as one system matters." },
+      { href: "/tesla-powerwall-alternatives-australia", label: "Powerwall Alternatives", desc: "How to weigh alternatives to the Tesla Powerwall on capacity, backup and cost." },
       { href: "/is-a-home-battery-worth-it-australia", label: "Is a Battery Worth It?", desc: "When a battery pays off, when it doesn't, and how the rebate and $500 change the maths." },
       { href: "/home-battery-blackout-backup-australia", label: "Blackout Backup", desc: "Not every battery keeps the power on in an outage. What backup actually needs." }
     ],
@@ -121,6 +124,7 @@ const sections = [
       { href: "/online-hair-loss-treatment-australia", label: "Online Hair-Loss Treatment", desc: "How the telehealth assessment works, and what you can and can\u2019t get online." },
       { href: "/how-long-does-finasteride-take-to-work-australia", label: "How Long Finasteride Takes", desc: "A realistic timeline, the shedding phase, and why it\u2019s ongoing." },
       { href: "/how-to-stop-hair-loss-australia", label: "How to Stop Hair Loss", desc: "Understanding the cause, what the evidence supports, and acting early." },
+      { href: "/receding-hairline-treatment-australia", label: "Receding Hairline Treatment", desc: "What causes it, which treatments have real evidence, and why acting early matters." },
     ],
   },
   {
@@ -162,6 +166,7 @@ const sections = [
       { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
       { href: "/nutshell", label: "Nutshell", desc: "An easy sales CRM with email marketing built in." },
       { href: "/pipedrive", label: "Pipedrive", desc: "A visual, pipeline-first sales CRM." },
+      { href: "/best-crm-small-business-australia", label: "Best CRM for Small Business", desc: "Pipedrive, Capsule, Nutshell and Keap compared by who each suits." },
       { href: "/aisdr", label: "AiSDR", desc: "A done-for-you AI rep that prospects and books meetings." },
       { href: "/replyio", label: "Reply.io", desc: "Run your own multichannel outbound across channels." },
       { href: "/fullenrich", label: "FullEnrich", desc: "Waterfall enrichment for verified emails and mobiles." },

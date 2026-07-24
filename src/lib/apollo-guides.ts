@@ -363,6 +363,104 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     ],
     related: [{ href: "/is-a-home-battery-worth-it-australia", label: "Is a battery worth it?" }, R.cost, R.hub, R.review, R.calc],
   },
+
+  {
+    slug: "/solar-and-battery-package-australia",
+    crumb: "Solar and battery packages",
+    priority: 0.8,
+    h1: "Solar and battery packages in Australia: buying them together",
+    meta: {
+      title: "Solar and Battery Package Australia 2026: Costs & Rebates | Refer Labs",
+      description:
+        "Buying solar and a battery together in Australia: how the two work as one system, what the federal rebate covers, why sizing them together matters, and the $500 Refer Labs discount. Indicative figures only.",
+      keywords: ["solar and battery package australia", "solar battery package", "solar and battery bundle", "solar plus storage australia"],
+    },
+    lead:
+      "A solar and battery package means buying the panels and the storage as one system rather than bolting a battery on later. The advantage is that the two are sized to work together from the start: the panels generate enough surplus during the day to fill the battery, and the battery holds it for your evening and overnight use. Done well, this is what turns a solar system that exports cheaply into one that covers most of your own use. The federal Cheaper Home Batteries rebate applies to the battery part at the point of sale, and in NSW a Virtual Power Plant incentive can apply on top.",
+    sections: [
+      {
+        h: "Why sizing them together matters",
+        body: [
+          "A battery is only as useful as the surplus solar you have to fill it. If the panels are too small for your usage, there is little left over to charge the battery each day, and it sits half-empty. If the panels are large but the battery is small, you export the surplus cheaply instead of storing it. Buying them as a package lets an installer match the two to your actual usage, so neither is wasted.",
+          "This is also why adding a battery to an existing undersized solar system sometimes disappoints: the constraint is the solar, not the battery. A package sidesteps that by sizing both to what your home actually uses.",
+        ],
+      },
+      {
+        h: "What the rebate covers, and what it doesn't",
+        body: ["The incentives apply to the storage, not the whole package, so it helps to know which part is subsidised."],
+        bullets: [
+          "The federal Cheaper Home Batteries rebate applies to the battery, at the point of sale, indicatively around $252 per usable kWh and tapering above 14kWh.",
+          "In NSW, a Virtual Power Plant incentive of roughly $40 per usable kWh (capped at 28kWh) can apply on top when you connect an eligible battery to a VPP.",
+          "The solar panels themselves attract the separate small-scale solar (STC) discount, which has applied for years and is handled by the installer.",
+          "Figures float with certificate prices, so treat them as indicative and confirm what applies to your address at quote stage.",
+        ],
+      },
+      {
+        h: "Getting a package quoted properly",
+        body: [
+          "A good installer builds the quote from your usage: your daily consumption, how much of it is after dark, your roof, and what you want the system to do. The quote should show the panels, the battery, both sets of incentives applied, and any workmanship warranty, so you see the real out-the-door price.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672) that sizes solar and battery together from your real usage and applies the rebates at the point of sale. Refer Labs readers get $500 off the quote through our link, on top of the rebates.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Is it cheaper to buy solar and a battery together?", a: "Buying them together doesn't always cut the sticker price, but it usually gives a better result, because the panels and battery are sized to work as one system rather than a battery being bolted onto an undersized solar setup. It also means one install and one set of incentives applied at the point of sale. Get a quote sized to your usage to compare." },
+      { q: "Does the rebate cover both the solar and the battery?", a: "They're separate. The battery attracts the federal Cheaper Home Batteries rebate (indicatively around $252 per usable kWh, tapering above 14kWh), and in NSW a VPP incentive can apply on top. The solar panels attract the long-standing small-scale solar STC discount. An installer applies both at the point of sale." },
+      { q: "Can I add a battery to my existing solar instead?", a: "Yes, but if your existing solar is undersized for your usage there may be little surplus to charge a battery, which limits the benefit. In that case the constraint is the solar, not the battery. An installer can tell you whether your current system has enough spare generation to make a battery worthwhile." },
+      { q: "How big should a solar and battery system be?", a: "It depends on your daily usage, how much is after dark, and your roof. The panels need to generate enough surplus to fill the battery, and the battery needs to cover your evening and overnight use. This is exactly what sizing them together solves. Note the federal rebate tapers above 14kWh of battery." },
+    ],
+    related: [R.cost, R.rebate, R.calc, R.hub, R.review],
+  },
+
+  {
+    slug: "/tesla-powerwall-alternatives-australia",
+    crumb: "Powerwall alternatives",
+    priority: 0.78,
+    h1: "Tesla Powerwall alternatives in Australia: how to weigh them up",
+    meta: {
+      title: "Tesla Powerwall Alternatives Australia 2026: How to Compare | Refer Labs",
+      description:
+        "Weighing up alternatives to the Tesla Powerwall in Australia: what to compare on capacity, backup, warranty and VPP-readiness, and why the installer matters as much as the brand. Plus $500 off through Refer Labs.",
+      keywords: ["tesla powerwall alternatives australia", "powerwall alternative", "home battery vs powerwall", "best alternative to tesla powerwall"],
+    },
+    lead:
+      "The Tesla Powerwall is the battery most Australians have heard of, which makes it the benchmark people compare everything else against. That is a reasonable starting point, but the Powerwall is one option among many, and the right battery for your home depends on your usage, whether you want whole-home backup, and how the numbers land after the rebate rather than on the brand. The useful move is to compare on the things that actually differ between batteries, then let an accredited installer size the choice to your home.",
+    sections: [
+      {
+        h: "What to compare, brand aside",
+        body: ["Batteries differ on a handful of things that matter more than the logo. Compare alternatives on these."],
+        bullets: [
+          "Usable capacity (kWh): the amount you can actually draw, matched to your evening and overnight use.",
+          "Backup: whether it provides blackout backup at all, and whether that is whole-home or essential-circuits only.",
+          "Warranty: the years plus the throughput or cycle guarantee, not just the headline figure.",
+          "Chemistry and safety: most alternatives now use lithium iron phosphate (LFP), valued for safety and cycle life.",
+          "VPP-readiness: whether it can join a Virtual Power Plant, which in NSW unlocks the state incentive.",
+          "Total cost after the rebate: the number that decides payback, not the sticker price.",
+        ],
+      },
+      {
+        h: "Why the installer matters as much as the battery",
+        body: [
+          "Whichever battery you choose, its performance and safety depend on how it is installed and sized. A well-installed alternative that is matched to your usage will out-perform a bigger-name battery that is oversized or fitted poorly. The markers to check are SAA accreditation, a valid electrical licence, and a workmanship warranty alongside the manufacturer's.",
+          "The other reason the installer matters is the rebate: an installer who applies the federal discount at the point of sale, and who can connect an eligible battery to a VPP for the NSW incentive, changes the after-rebate cost that actually decides the comparison.",
+        ],
+      },
+      {
+        h: "Getting alternatives sized to your home",
+        body: [
+          "Rather than start from a brand, start from your usage. A good installer looks at how much power you use after dark, how much surplus solar you have to charge a battery, and whether backup matters to you, then recommends a battery sized to that. This is where a Powerwall alternative often wins or loses on the numbers.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672) that sizes systems from your real usage and applies the federal rebate at the point of sale. Refer Labs readers get $500 off the quote through our link, on top of the rebate.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "What are the alternatives to a Tesla Powerwall in Australia?", a: "There are many home batteries beyond the Powerwall, and the right one depends on your usage, whether you want whole-home backup, warranty terms and the after-rebate cost, rather than the brand. The useful comparison is on usable capacity, backup capability, warranty and VPP-readiness, sized to your home by an accredited installer." },
+      { q: "Is the Tesla Powerwall the best home battery?", a: "It's the best known, which is not the same as best for your home. Batteries differ on usable capacity, backup, warranty and cost after the rebate, and the right choice depends on your usage and goals. A well-sized alternative from an accredited installer can be a better fit and better value than a bigger-name battery fitted poorly." },
+      { q: "How do I compare home batteries fairly?", a: "Compare usable capacity, whether it provides blackout backup (and whole-home vs essential circuits), the warranty including throughput or cycles, chemistry, VPP-readiness, and the total cost after the federal rebate. The last one decides payback, so a headline sticker price alone can be misleading." },
+      { q: "Do alternatives to the Powerwall get the same rebate?", a: "Yes, provided the battery is on the eligible product list, the federal Cheaper Home Batteries rebate applies at the point of sale regardless of brand, and in NSW the VPP incentive can apply on top. An installer confirms eligibility and applies the discount to your quote. Refer Labs readers also get $500 off an Apollo quote through our link." },
+    ],
+    related: [{ href: "/best-home-battery-australia", label: "Best home battery: how to choose" }, R.cost, R.hub, R.review, R.calc],
+  },
 ];
 
 export const APOLLO_GUIDE_BY_SLUG: Record<string, ApolloGuideEntry> =
