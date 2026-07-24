@@ -97,10 +97,10 @@ export default function RepaymentCalculator() {
       </div>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <Stat label="Monthly repayment" value={monthly != null ? money(monthly + monthlyFee) : "—"} emphasis />
-        <Stat label="Total repaid" value={totalRepay != null ? money(totalRepay + estFee) : "—"} />
-        <Stat label="Total cost of loan" value={totalCost != null ? money(totalCost) : "—"} />
-        <Stat label="Effective rate (incl. fees)" value={effective != null ? `${effective.toFixed(1)}% p.a.` : "—"} emphasis />
+        <Stat label="Monthly repayment" value={monthly != null ? money(monthly + monthlyFee) : "n/a"} emphasis />
+        <Stat label="Total repaid" value={totalRepay != null ? money(totalRepay + estFee) : "n/a"} />
+        <Stat label="Total cost of loan" value={totalCost != null ? money(totalCost) : "n/a"} />
+        <Stat label="Effective rate (incl. fees)" value={effective != null ? `${effective.toFixed(1)}% p.a.` : "n/a"} emphasis />
       </div>
 
       <p className="mt-4 rounded-xl bg-[#f8faf9] px-4 py-3 text-xs leading-relaxed text-[#6e7b74]">

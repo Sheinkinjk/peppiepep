@@ -72,7 +72,7 @@ export const TRADING_DISPLAY: Record<(typeof TRADING_BANDS)[number], string> = {
 
 /** Human label for any coded value, falling back to LABELS then the raw value. */
 export function label(v: string | null | undefined): string {
-  if (!v) return "—";
+  if (!v) return "n/a";
   return LABELS[v] ?? v;
 }
 

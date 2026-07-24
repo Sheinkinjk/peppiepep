@@ -40,7 +40,7 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
               <td className="px-4 py-3 tabular-nums whitespace-nowrap">{money(l.minAmount)} – {money(l.maxAmount)}</td>
               <td className="px-4 py-3">{l.speed}</td>
               <td className="px-4 py-3">{l.products.map((p) => label(p)).join(", ")}</td>
-              <td className="px-4 py-3">{l.afiaCodeSignatory ? "AFIA Code signatory" : "—"}</td>
+              <td className="px-4 py-3">{l.afiaCodeSignatory ? "AFIA Code signatory" : "Not listed"}</td>
             </tr>
           ))}
         </tbody>
