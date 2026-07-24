@@ -9,11 +9,11 @@ export const moshyConfig: AffiliatePageConfig = {
   affiliateUrl: MOSHY_URL,
 
   quickAnswer:
-    "Yes, there is a current Moshy discount: new customers can receive $120 off their first treatment with the code REFERRAL120 (current). You do not need to type it anywhere when you use the link on this page, because Moshy's landing page carries the code into the sign-up flow automatically. Moshy is an Australian clinically-led weight-management telehealth platform, open to anyone eligible, that assesses eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. Prescription medicines in Australia depend on individual clinical assessment.",
+    "Yes, there is a current Moshy discount: new customers can receive $120 off their first order with the code REFERRAL120 (current). You do not need to type it anywhere when you use the link on this page, because Moshy's landing page carries the code into the sign-up flow automatically. Moshy is an Australian clinically-led weight-management telehealth platform, open to anyone eligible, that assesses eligibility through an online questionnaire and registered-practitioner review. Pricing is subscription-based and confirmed during the consultation. Prescription medicines in Australia depend on individual clinical assessment.",
 
   banner: {
     heading: "Moshy - Current Offer (Australia)",
-    body: "New customers can currently receive $120 off their first treatment with code REFERRAL120. Click below and Moshy applies the code automatically, nothing to type.",
+    body: "New customers can currently receive $120 off their first order with code REFERRAL120. Click below and Moshy applies the code automatically, nothing to type.",
     buttonLabel: "Continue to Moshy",
   },
 
@@ -35,7 +35,7 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       heading: "Current Offer",
       paragraphs: [
-        "This page is built for Australians searching for a Moshy discount code, Moshy promo code, Moshy referral code, or a Moshy referral link. Rather than a code that may or may not be active, our personalised referral link gives you direct access to the Moshy eligibility page - the correct starting point for anyone exploring what Moshy offers in Australia.",
+        "This page is built for Australians searching for a Moshy discount code, Moshy promo code, Moshy referral code, or a Moshy referral link. The current new-customer offer is $120 off your first order (code REFERRAL120). You don't need to type it: our referral link carries it straight into the Moshy eligibility flow, the correct starting point for anyone exploring what Moshy offers in Australia.",
         "The button below takes you directly to the Moshy eligibility flow at getmoshy.com.au. No information needs to be entered on this page before clicking through. The referral is tracked through the link, so no code needs to be entered manually on the Moshy side either.",
       ],
       hasCta: true,
@@ -84,9 +84,9 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       heading: "Moshy Codes & How They Work",
       paragraphs: [
-        'Search volume for "Moshy discount code", "Moshy promo code", "Moshy coupon code", and "Moshy referral code" reflects the number of Australians looking to access Moshy\'s services at a reduced rate. Moshy does not consistently publish a traditional discount code that applies at checkout in the way e-commerce sites do.',
+        'Search volume for "Moshy discount code", "Moshy promo code", "Moshy coupon code", and "Moshy referral code" reflects the number of Australians looking to start with Moshy at the best available price. Moshy\'s current new-customer offer is $120 off your first order, applied through the code REFERRAL120.',
         "The most reliable mechanism for accessing a current Moshy offer is through a referral link - which is exactly what this page provides. Referral links are tracked at the link level, meaning no code needs to be manually entered. When you click through to the Moshy eligibility page from this page, the referral is automatically applied.",
-        "Occasionally Moshy runs promotional campaigns with specific offer codes. These are distributed through approved affiliates and partner channels. If a specific code-based promotion is active at the time you visit, this page will reflect it. In all other cases, using the referral link below is the correct approach.",
+        "The $120 offer is applied automatically when you start through the link on this page, so there is nothing to enter manually. Offers change over time; the amount shown is the current new-customer rate, confirmed on Moshy's own sign-up page.",
       ],
     },
   ],
@@ -125,7 +125,7 @@ export const moshyConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Moshy discount code?",
-      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first treatment (current; offers change). You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Every button on this page takes you directly to that flow.",
+      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order (current; offers change). You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Every button on this page takes you directly to that flow.",
     },
     {
       q: "Does Moshy have a referral code?",
@@ -137,7 +137,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "What's the cheapest way to start Moshy?",
-      a: "The lowest-cost way in is the current new-customer offer: $120 off your first treatment, applied automatically when you start through the link on this page, with nothing to type. The ongoing subscription then depends on the plan your consultation lands on, and Moshy shows you the price before you commit to anything. We don't quote a fixed figure here because it is confirmed during the consultation, but beginning with the $120 offer is the most affordable way to start.",
+      a: "The lowest-cost way in is the current new-customer offer: $120 off your first order, applied automatically when you start through the link on this page, with nothing to type. The ongoing subscription then depends on the plan your consultation lands on, and Moshy shows you the price before you commit to anything. We don't quote a fixed figure here because it is confirmed during the consultation, but beginning with the $120 offer is the most affordable way to start.",
     },
     {
       q: "Does Moshy offer semaglutide or GLP-1 medications in Australia?",

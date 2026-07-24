@@ -109,7 +109,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       heading: "Mosh Codes & Offers",
       paragraphs: [
         'Searches for "Mosh hair discount code", "Mosh promo code", "Mosh coupon", and "Mosh sale" reflect the number of Australians who want to access Mosh at the best available price before committing to a subscription.',
-        "Mosh does not always maintain a publicly listed promotional code. The most consistent way to access a current Mosh offer is through a referral or partner link, which is exactly what this page provides. Our link applies the referral at the URL level, meaning no manual code entry is required.",
+        "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. You don't need to hunt for a code or type anything at checkout: start through the link on this page and the offer is carried into the Mosh sign-up page automatically. Offers change over time, so treat 55% as the current new-customer rate, confirmed on Mosh's own sign-up page, rather than a permanent price.",
         "If you have been searching for a Mosh hair discount, a Mosh discount Australia, or the best way to get started with Mosh, clicking through this page is the straightforward path.",
       ],
     },
@@ -140,7 +140,7 @@ export const moshHairConfig: AffiliatePageConfig = {
 
   whyUseThis: [
     "Quick access to the current Mosh referral link for Australian users",
-    "No need to search for a Mosh promo code that may have expired",
+    "The current 55%-off new-customer offer, applied automatically through the link",
     "Contextual overview of the Mosh platform before clicking through",
     "Addresses common search intent including cost, access, and discount codes",
     "Direct link to the official Mosh sign-up page",
@@ -149,11 +149,11 @@ export const moshHairConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Mosh hair discount code?",
-      a: "Mosh does not always publish a publicly available discount code. The most reliable way to access a current Mosh offer is through a partner referral link. Every button on this page takes you directly to the Mosh sign-up page via our referral link, which applies the partner offer at the URL level.",
+      a: "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Offers can change, so this reflects the current new-customer discount, confirmed on Mosh's own sign-up page.",
     },
     {
       q: "Does Mosh have a promo code for hair loss treatment?",
-      a: "Mosh occasionally runs promotional offers, but these are not always available as a manually entered code. Our partner link is the most consistent way to access any current Mosh deal or reduced-price consultation. Click any button on this page to continue.",
+      a: "Yes. The current promotion is 55% off your first order (code REFERAL55), applied automatically when you start through the link on this page. There is nothing to type. Offers change over time, so the amount shown is the current new-customer rate.",
     },
     {
       q: "Is Mosh available in Australia?",

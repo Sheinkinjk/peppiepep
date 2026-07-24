@@ -12,7 +12,7 @@ const aff = { href: MOSH_HAIR_URL, target: "_blank" as const, rel: "nofollow spo
 
 const guides = [
   { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Clinical telehealth versus topical products, side by side." },
-  { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, and the current referral offer." },
+  { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, plus 55% off your first order." },
   { href: "/dense", title: "Dense Hair Experts", desc: "The topical, non-prescription route for density and scalp health." },
   { href: "/finasteride-australia", title: "Finasteride, explained", desc: "What it is, why it is prescription-only, and how a GP or telehealth assessment works." },
   { href: "/minoxidil-australia", title: "Minoxidil, explained", desc: "Topical over the counter vs prescription oral, the shedding phase, and side effects." },
