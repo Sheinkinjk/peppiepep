@@ -109,7 +109,10 @@ export default function HomePage() {
 
       <main id="main-content">
         {/* ── Masthead hero ── */}
-        <section className="relative overflow-hidden border-b border-[#e3e7e2] bg-[radial-gradient(115%_130%_at_88%_-15%,#e9f4ed_0%,rgba(233,244,237,0.35)_34%,transparent_56%)]">
+        {/* No overflow-hidden here: it would clip the search dropdown, which extends
+            below the hero into the trust strip. The gradient is a background and
+            does not overflow. */}
+        <section className="relative border-b border-[#e3e7e2] bg-[radial-gradient(115%_130%_at_88%_-15%,#e9f4ed_0%,rgba(233,244,237,0.35)_34%,transparent_56%)]">
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
             <div>
               <h1 className="max-w-xl text-[2.6rem] font-black leading-[1.02] tracking-[-0.035em] text-[#10251b] sm:text-[3.6rem]">
@@ -247,9 +250,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className="mt-5 px-5 text-center text-[11px] leading-relaxed text-[#9aa39c]">
-            Some are affiliate links; we may earn a commission at no cost to you, and it never changes a ranking.
-          </p>
         </section>
 
         {/* ── About: a plain two-paragraph explainer ── */}
@@ -261,14 +261,6 @@ export default function HomePage() {
               is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, business finance and the
               software that runs a business, and write up what we find in plain language, with the pricing checked and
               the trade-offs spelled out.
-            </p>
-            <p className="mt-4 text-[17px] leading-relaxed text-[#3d4b44]">
-              We make money through affiliate links: if you sign up through one, the provider may pay us a commission at
-              no extra cost to you. It never buys a better ranking, and our criteria are set before any commercial
-              relationship applies. How we research and how we are paid are explained in full on our{" "}
-              <Link href="/about" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4 hover:text-[#086536]">
-                about page
-              </Link>.
             </p>
           </div>
         </section>
