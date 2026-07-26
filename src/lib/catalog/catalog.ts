@@ -687,12 +687,12 @@ export const CATALOG: Vertical[] = [
     slug: "ai-tools",
     eyebrow: "AI tools",
     h1Lead: "AI tools:",
-    h1Accent: "assistants, voice and AI branding",
+    h1Accent: "assistants, voice and meeting notes",
     intro:
-      "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or a whole brand identity. This hub sorts a growing set by what they actually do, so you pick the one that fits the task rather than the loudest launch.",
-    metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & Logome | Refer Labs",
+      "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or summarising your meetings. This hub sorts a growing set by what they actually do, so you pick the one that fits the task rather than the loudest launch.",
+    metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & MeetGeek | Refer Labs",
     metaDescription:
-      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice, Logome for AI logos and branding, MeetGeek for AI meeting notes. Independent, no pay-to-rank.",
+      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice, Beautiful.ai for AI presentations, MeetGeek for AI meeting notes. Independent, no pay-to-rank.",
     keywords: ["best ai tools 2026", "lindy ai review", "elevenlabs review", "ai automation tools", "ai voice generator"],
     relatedCategory: "AI & sales",
     providers: [
