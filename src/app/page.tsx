@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import { SITE_URL } from "@/lib/seo";
@@ -93,36 +93,19 @@ const itemListSchema = {
   itemListElement: categories.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.title, url: `${SITE_URL}${c.href}` })),
 };
 
-const homeFaqs = [
-  {
-    q: "What is Refer Labs?",
-    a: "Refer Labs is an independent Australian comparison publisher. We research and compare providers in categories like weight-loss telehealth, hair-loss treatment, website builders, newsletter platforms and AI sales tools, and publish the verdicts with our criteria stated.",
-  },
-  {
-    q: "How does Refer Labs make money?",
-    a: "Through affiliate links. Some links on our pages earn us a commission at no cost to you, and it never changes a ranking — our comparisons and criteria are published before any commercial relationship applies.",
-  },
-  {
-    q: "How does Refer Labs research its comparisons?",
-    a: "We compare providers on published facts: advertised pricing checked against provider sites with the date recorded, feature-by-feature comparison, and stated criteria on every page. Our full methodology is on the How We Research page.",
-  },
+// Trust points shown as a strip under the hero. For a comparison site, trust is
+// the product, so these are the four claims that matter and are all literally true.
+const trust = [
+  "Independent & Australian",
+  "No paid rankings, ever",
+  "Real prices, checked and dated",
+  "Free to use",
 ];
-
-const homeFaqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: homeFaqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
 export default function HomePage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }} />
 
       <main id="main-content">
         {/* ── Masthead hero ── */}
@@ -133,8 +116,8 @@ export default function HomePage() {
                 Big decisions,<br />compared properly.
               </h1>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
-                Independent comparisons of Australian health services, software and tools, so you can choose the right
-                one with confidence.
+                Independent comparisons across Australian health, home energy, business finance and software, so you
+                can choose the right one with confidence.
               </p>
               <div className="mt-8">
                 <SiteSearch variant="hero" />
@@ -143,9 +126,9 @@ export default function HomePage() {
                 <span className="font-medium text-[#3d4b44]">Popular:</span>
                 {[
                   { l: "Weight loss", h: "/weight-loss" },
-                  { l: "Website builders", h: "/compare/website-builders" },
                   { l: "Hair loss", h: "/hair-loss" },
-                  { l: "Newsletters", h: "/compare/newsletter-platforms" },
+                  { l: "Home batteries", h: "/apollo-energy-group" },
+                  { l: "Business loans", h: "/business-loans" },
                 ].map((p, i) => (
                   <span key={p.h} className="flex items-center gap-2">
                     {i > 0 && <span className="text-[#cdd5cf]">·</span>}
@@ -178,6 +161,18 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </section>
+
+        {/* ── Trust strip: for a comparison site, trust is the product ── */}
+        <section className="border-b border-[#e5e9e7] bg-white">
+          <ul className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2.5 px-5 py-4 sm:justify-between sm:px-8">
+            {trust.map((t) => (
+              <li key={t} className="inline-flex items-center gap-2 text-[13px] font-medium text-[#3d4b44]">
+                <Check className="h-4 w-4 shrink-0 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+                {t}
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* ── This month's top picks (real logos) ── */}
@@ -257,18 +252,24 @@ export default function HomePage() {
           </p>
         </section>
 
-        {/* ── About / FAQ: the three questions a first-time reader asks ── */}
+        {/* ── About: a plain two-paragraph explainer ── */}
         <section className="border-t border-[#e5e9e7] bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+          <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
             <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">About Refer Labs</h2>
-            <div className="mt-7 grid gap-8 sm:grid-cols-3">
-              {homeFaqs.map((f) => (
-                <div key={f.q}>
-                  <h3 className="text-sm font-bold text-[#10251b]">{f.q}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</p>
-                </div>
-              ))}
-            </div>
+            <p className="mt-6 text-[17px] leading-relaxed text-[#3d4b44]">
+              Refer Labs is an independent Australian comparison publisher. We research the categories where the choice
+              is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, business finance and the
+              software that runs a business, and write up what we find in plain language, with the pricing checked and
+              the trade-offs spelled out.
+            </p>
+            <p className="mt-4 text-[17px] leading-relaxed text-[#3d4b44]">
+              We make money through affiliate links: if you sign up through one, the provider may pay us a commission at
+              no extra cost to you. It never buys a better ranking, and our criteria are set before any commercial
+              relationship applies. How we research and how we are paid are explained in full on our{" "}
+              <Link href="/about" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4 hover:text-[#086536]">
+                about page
+              </Link>.
+            </p>
           </div>
         </section>
 
