@@ -18,7 +18,7 @@ const breadcrumbSchema = {
 const hubs = [
   { href: "/weight-loss", label: "Weight Loss", desc: "Telehealth, programs and the GP pathway, compared." },
   { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
-  { href: "/apollo-energy", label: "Home Batteries", desc: "Battery sizing, the federal rebate, and what a quote should include." },
+  { href: "/apollo-energy-group", label: "Home Batteries", desc: "Battery sizing, the federal rebate, and what a quote should include." },
   { href: "/compare/website-builders", label: "Website Builders", desc: "Free, AI-built and landing-page tools, sorted by job." },
   { href: "/compare/newsletter-platforms", label: "Newsletter Platforms", desc: "Where to build an email audience, and what each takes." },
   { href: "/compare/ai-sales-tools", label: "AI Sales Tools", desc: "Data, outreach, AI reps and CRMs, sorted by the job you need done." },
@@ -95,7 +95,7 @@ const sections = [
     label: "Home Batteries & Energy",
     description: "What a home battery costs, what the federal rebate pays, and how to size one.",
     guides: [
-      { href: "/apollo-energy", label: "Apollo Energy Group", desc: "Battery specialists, sized from your real usage. $500 off your quote via our link." },
+      { href: "/apollo-energy-group", label: "Apollo Energy Group", desc: "Battery specialists, sized from your real usage. $500 off your quote via our link." },
       { href: "/home-battery-rebate-australia", label: "The 2026 Battery Rebate", desc: "What the Cheaper Home Batteries discount pays, and why it tapers above 14kWh." },
       { href: "/apollo-energy-review", label: "Apollo Energy, Reviewed", desc: "Accreditation, warranty, and the things worth checking before you sign." },
       { href: "/home-battery-cost-australia", label: "What a Battery Costs", desc: "Real installed price ranges by size, what the rebate takes off, and payback." },

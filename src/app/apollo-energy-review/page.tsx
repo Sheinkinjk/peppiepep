@@ -79,7 +79,7 @@ function Offer({ loc }: { loc: string }) {
           Claim your $500 discount
           <ArrowRight className="h-4 w-4" />
         </a>
-        <Link href="/apollo-energy" className="text-sm font-semibold text-[#0a7c42] hover:underline">
+        <Link href="/apollo-energy-group" className="text-sm font-semibold text-[#0a7c42] hover:underline">
           See the full breakdown
         </Link>
       </div>
@@ -224,7 +224,7 @@ export default function ApolloEnergyReviewPage() {
               </p>
               <p>
                 If you want the full detail on the rebate, the sizing and the process, that is on the{" "}
-                <Link href="/apollo-energy" className="font-semibold text-[#0a7c42] hover:underline">
+                <Link href="/apollo-energy-group" className="font-semibold text-[#0a7c42] hover:underline">
                   Apollo Energy breakdown
                 </Link>
                 . For the rebate itself, the{" "}

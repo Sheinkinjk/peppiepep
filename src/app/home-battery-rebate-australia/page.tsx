@@ -90,7 +90,7 @@ function Offer({ loc }: { loc: string }) {
           Claim your $500 discount
           <ArrowRight className="h-4 w-4" />
         </a>
-        <Link href="/apollo-energy" className="text-sm font-semibold text-[#0a7c42] hover:underline">
+        <Link href="/apollo-energy-group" className="text-sm font-semibold text-[#0a7c42] hover:underline">
           Read the full Apollo breakdown
         </Link>
       </div>
@@ -279,7 +279,7 @@ export default function HomeBatteryRebatePage() {
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
               <p>
                 Any accredited installer applies the federal discount for you. Through Refer Labs,{" "}
-                <Link href="/apollo-energy" className="font-semibold text-[#0a7c42] hover:underline">
+                <Link href="/apollo-energy-group" className="font-semibold text-[#0a7c42] hover:underline">
                   Apollo Energy Group
                 </Link>{" "}
                 takes an exclusive $500 off the quote on top of it. They are SAA-accredited, operate under Electrical

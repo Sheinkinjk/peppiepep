@@ -11,7 +11,7 @@ export interface ApolloGuideEntry extends ApolloGuideConfig {
 }
 
 const R = {
-  hub: { href: "/apollo-energy", label: "Apollo Energy & the $500 offer" },
+  hub: { href: "/apollo-energy-group", label: "Apollo Energy & the $500 offer" },
   review: { href: "/apollo-energy-review", label: "Is Apollo legit? (reviewed)" },
   rebate: { href: "/home-battery-rebate-australia", label: "The federal battery rebate" },
   cost: { href: "/home-battery-cost-australia", label: "What a battery costs" },

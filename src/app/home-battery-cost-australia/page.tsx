@@ -16,7 +16,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Home Batteries", item: `${SITE_URL}/apollo-energy` },
+    { "@type": "ListItem", position: 2, name: "Home Batteries", item: `${SITE_URL}/apollo-energy-group` },
     { "@type": "ListItem", position: 3, name: "Home Battery Cost Australia", item: `${SITE_URL}${SLUG}` },
   ],
 };
@@ -94,7 +94,7 @@ export default function HomeBatteryCostAustraliaPage() {
           <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
             <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/apollo-energy" className="hover:text-[#10251b] transition-colors">Home batteries</Link>
+            <Link href="/apollo-energy-group" className="hover:text-[#10251b] transition-colors">Home batteries</Link>
             <span>/</span>
             <span className="text-[#10251b]">Cost</span>
           </nav>
@@ -234,7 +234,7 @@ export default function HomeBatteryCostAustraliaPage() {
                   For who does the installing and what to check on credentials and warranty, see our{" "}
                   <Link href="/apollo-energy-review" className="nw-link">Apollo Energy Group review</Link>, and for the
                   full picture on the offer and process, the{" "}
-                  <Link href="/apollo-energy" className="nw-link">Apollo Energy Group guide</Link>.
+                  <Link href="/apollo-energy-group" className="nw-link">Apollo Energy Group guide</Link>.
                 </p>
               </div>
             </section>
@@ -282,7 +282,7 @@ export default function HomeBatteryCostAustraliaPage() {
                 <li><Link href="/what-size-home-battery-do-i-need-australia" className="nw-link">What size home battery do I need?</Link></li>
                 <li><Link href="/home-battery-payback-calculator" className="nw-link">Home battery payback calculator</Link></li>
                 <li><Link href="/home-battery-rebate-australia" className="nw-link">The 2026 home battery rebate, explained</Link></li>
-                <li><Link href="/apollo-energy" className="nw-link">Apollo Energy Group: the offer and how it works</Link></li>
+                <li><Link href="/apollo-energy-group" className="nw-link">Apollo Energy Group: the offer and how it works</Link></li>
               </ul>
             </section>
 

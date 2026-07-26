@@ -39,7 +39,7 @@ export function apolloGuideSchemas(cfg: ApolloGuideConfig) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Home batteries", item: `${SITE_URL}/apollo-energy` },
+        { "@type": "ListItem", position: 2, name: "Home batteries", item: `${SITE_URL}/apollo-energy-group` },
         { "@type": "ListItem", position: 3, name: cfg.crumb, item: url },
       ],
     },
@@ -86,7 +86,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
         <nav className="flex flex-wrap items-center gap-2 text-sm text-[#6e7b74]">
           <Link href="/" className="hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/apollo-energy" className="hover:text-[#10251b]">Home batteries</Link>
+          <Link href="/apollo-energy-group" className="hover:text-[#10251b]">Home batteries</Link>
           <span>/</span>
           <span className="text-[#10251b]">{cfg.crumb}</span>
         </nav>

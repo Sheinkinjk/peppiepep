@@ -447,7 +447,7 @@ export const seoConfig = {
     title: "Apollo Energy Group: Home Battery Systems Australia & $500 Off (2026)",
     description:
       "$500 off your home battery quote via Refer Labs. Apollo Energy Group: SAA-accredited Australian installer (9-54kWh), federal rebate applied. How it works.",
-    url: `${SITE_URL}/apollo-energy`,
+    url: `${SITE_URL}/apollo-energy-group`,
     keywords: ["apollo energy group", "apollo energy group review", "home battery australia", "solar battery australia", "home battery rebate australia", "cheaper home batteries program", "battery installer australia", "solar battery installer", "home battery discount", "battery rebate 2026"],
   },
   keap: {

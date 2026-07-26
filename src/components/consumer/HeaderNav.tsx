@@ -20,7 +20,7 @@ const GROUPS: Group[] = [
   {
     label: "Home & Energy",
     items: [
-      { href: "/apollo-energy", label: "Home Batteries", note: "Apollo Energy Group, sized to your usage" },
+      { href: "/apollo-energy-group", label: "Home Batteries", note: "Apollo Energy Group, sized to your usage" },
       { href: "/home-battery-rebate-australia", label: "Battery Rebate 2026", note: "What the federal rebate actually pays" },
       { href: "/apollo-energy-review", label: "Apollo Energy Review", note: "Credentials, warranty and what to check" },
     ],

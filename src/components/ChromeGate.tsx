@@ -99,7 +99,7 @@ const STANDALONE_ROUTES = [
   "/wing-assistant",
   "/survicate",
   // Apollo Energy (VIP standalone money page, own bespoke shell)
-  "/apollo-energy",
+  "/apollo-energy-group",
   "/apollo-energy-review",
   "/home-battery-rebate-australia",
   "/home-battery-cost-australia",

@@ -49,6 +49,8 @@ const nextConfig: NextConfig = {
       // /how-we-research merged into /about (23 July 2026): one trust page is easier
       // to keep literally true than two, and the standards belong next to who we are.
       { source: '/how-we-research', destination: '/about', permanent: true },
+      // Apollo money page renamed to the exact brand match (26 July 2026).
+      { source: '/apollo-energy', destination: '/apollo-energy-group', permanent: true },
       { source: '/instapage', destination: '/swipepages', permanent: true },
       { source: '/melio', destination: '/compare/payments', permanent: true },
       { source: '/incomelab', destination: '/affiliate-programs-australia', permanent: true },

@@ -79,7 +79,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 {/* The header nav renders its dropdown items only when open, so those
                     links are not in the HTML and Google cannot follow them. The footer
                     is the crawlable path into each category. */}
-                <li><Link href="/apollo-energy" className="transition-colors hover:text-[#0a7c42]">Home Batteries</Link></li>
+                <li><Link href="/apollo-energy-group" className="transition-colors hover:text-[#0a7c42]">Home Batteries</Link></li>
                 <li><Link href="/business-loans" className="transition-colors hover:text-[#0a7c42]">Business Loans</Link></li>
                 <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website Builders</Link></li>
                 <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter Platforms</Link></li>

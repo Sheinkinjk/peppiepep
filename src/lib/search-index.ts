@@ -82,7 +82,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Beautiful.ai review", href: "/beautifulai", category: "AI & sales", kind: "Guide", keywords: "beautiful.ai ai presentation software slides deck generator design" },
   { title: "PandaDoc review", href: "/pandadoc", category: "Software", kind: "Guide", keywords: "pandadoc proposals contracts quotes e-signature esign documents" },
   { title: "Blinq review", href: "/blinq", category: "Software", kind: "Guide", keywords: "blinq digital business card nfc qr virtual card contact sharing" },
-  { title: "Apollo Energy Group: home batteries & $500 off", href: "/apollo-energy", category: "Home & energy", kind: "Guide", keywords: "apollo energy group home battery australia solar battery rebate cheaper home batteries installer $500 discount" },
+  { title: "Apollo Energy Group: home batteries & $500 off", href: "/apollo-energy-group", category: "Home & energy", kind: "Guide", keywords: "apollo energy group home battery australia solar battery rebate cheaper home batteries installer $500 discount" },
   { title: "Home battery cost in Australia 2026", href: "/home-battery-cost-australia", category: "Home & energy", kind: "Guide", keywords: "home battery cost australia price payback period tesla powerwall installed cost solar battery" },
   { title: "Home battery payback calculator", href: "/home-battery-payback-calculator", category: "Home & energy", kind: "Guide", keywords: "home battery payback calculator savings roi is a battery worth it australia" },
   { title: "Apollo Energy Group review: is it legit?", href: "/apollo-energy-review", category: "Home & energy", kind: "Guide", keywords: "apollo energy group review is apollo energy legit apollo battery installer reviews australia $500 discount" },

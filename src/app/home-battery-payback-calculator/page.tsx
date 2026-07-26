@@ -15,7 +15,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Home Batteries", item: `${SITE_URL}/apollo-energy` },
+    { "@type": "ListItem", position: 2, name: "Home Batteries", item: `${SITE_URL}/apollo-energy-group` },
     { "@type": "ListItem", position: 3, name: "Battery Payback Calculator", item: `${SITE_URL}${SLUG}` },
   ],
 };
@@ -81,7 +81,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
           <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
             <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/apollo-energy" className="hover:text-[#10251b] transition-colors">Home batteries</Link>
+            <Link href="/apollo-energy-group" className="hover:text-[#10251b] transition-colors">Home batteries</Link>
             <span>/</span>
             <span className="text-[#10251b]">Payback calculator</span>
           </nav>
@@ -168,7 +168,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/home-battery-cost-australia" className="nw-link">How much a home battery costs in Australia</Link></li>
                 <li><Link href="/home-battery-rebate-australia" className="nw-link">The 2026 home battery rebate, explained</Link></li>
-                <li><Link href="/apollo-energy" className="nw-link">Apollo Energy Group: the offer and how it works</Link></li>
+                <li><Link href="/apollo-energy-group" className="nw-link">Apollo Energy Group: the offer and how it works</Link></li>
                 <li><Link href="/apollo-energy-review" className="nw-link">Apollo Energy Group review: is it legit?</Link></li>
               </ul>
             </section>
