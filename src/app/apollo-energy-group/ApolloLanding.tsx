@@ -3,6 +3,8 @@ import { APOLLO_ENERGY_URL, glance, steps, faqs } from "./config";
 import { ArrowRight, Check, ShieldCheck, BatteryCharging, BadgeCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import OffersTable from "@/components/lending/OffersTable";
+import { DEALS } from "@/lib/offers";
 
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 function ApolloCTA({
@@ -374,6 +376,20 @@ export default function ApolloLanding() {
                   <span className="text-xs text-[#9aa39c]">Under 30 seconds · no obligation</span>
                 </div>
               </div>
+            </section>
+
+            {/* Structured offer table (AI-extractable) */}
+
+            <section className="mt-14 scroll-mt-24">
+
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The offer at a glance</h2>
+
+              <div className="mt-5">
+
+                <OffersTable deals={DEALS.filter((d) => d.brand === "Apollo Energy Group")} caption="Apollo Energy Group $500 offer via Refer Labs, verified" />
+
+              </div>
+
             </section>
 
             {/* FAQ */}
