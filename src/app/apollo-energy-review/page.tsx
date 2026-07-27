@@ -66,7 +66,7 @@ function Offer({ loc }: { loc: string }) {
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">The offer</p>
       <p className="mt-2 text-lg font-bold leading-snug text-[#10251b]">$500 off your Apollo battery quote</p>
       <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
-        Applied directly to the system, on top of the federal rebate. No code to enter. Under 30 seconds, no obligation.
+        Applied directly to the system, on top of the government rebate (the federal Cheaper Home Batteries rebate), not instead of it. No code to enter. Under 30 seconds, no obligation.
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <a
@@ -107,7 +107,7 @@ export default function ApolloEnergyReviewPage() {
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
             Apollo publishes an electrical licence, an ABN and accredited installers, which is more than a lot of energy
-            outfits manage. Here is what checks out, what to ask about, and how the $500 discount works.
+            outfits manage. Here is what checks out, what to ask about, and how the $500 Refer Labs discount works, applied on top of the government battery rebate rather than instead of it.
           </p>
 
           <div className="mt-8">
