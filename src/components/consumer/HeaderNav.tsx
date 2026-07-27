@@ -26,29 +26,6 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    label: "Marketing & Web",
-    items: [
-      { href: "/compare/website-builders", label: "Website & Landing Pages", note: "Carrd, Durable AI, Leadpages and more" },
-      { href: "/compare/newsletter-platforms", label: "Newsletter Platforms", note: "beehiiv, Substack and Kit, compared" },
-      { href: "/brevo", label: "Email Marketing (Brevo)", note: "Email, SMS and automation in one tool" },
-      { href: "/compare/lead-generation", label: "Popups & Quizzes", note: "Hello Bar, Outgrow, FlexiQuiz" },
-      { href: "/affiliate-programs-australia", label: "Affiliate Programs Australia", note: "The best programs to join, compared for 2026" },
-    ],
-  },
-  {
-    label: "Business Software",
-    items: [
-      { href: "/business-software", label: "All Business Software", note: "Every category, in one place" },
-      { href: "/best-ai-sales-tools", label: "Sales & CRM Tools", note: "GoHighLevel, AiSDR, Nutshell and more" },
-      { href: "/nutshell", label: "Nutshell", note: "Easy sales CRM with marketing built in" },
-      { href: "/compare/sales-outreach", label: "Sales & Outreach", note: "Snov.io and Reply.io, compared" },
-      { href: "/compare/hr-payroll", label: "HR & Payroll", note: "Employment Hero, payroll and HR" },
-      { href: "/compare/payments", label: "Payments & Finance", note: "Payments and accounting" },
-      { href: "/compare/business-phone", label: "Business Phone", note: "CloudTalk vs KrispCall" },
-      { href: "/compare/ai-tools", label: "AI Tools", note: "Lindy, ElevenLabs and more" },
-    ],
-  },
-  {
     label: "Business Lending",
     items: [
       { href: "/business-loans", label: "Business Loans", note: "Compare Australian lenders in one enquiry" },
@@ -56,6 +33,21 @@ const GROUPS: Group[] = [
       { href: "/what-a-business-loan-actually-costs", label: "What Loans Really Cost", note: "Rate vs factor rate vs fees, explained" },
       { href: "/secured-vs-unsecured-business-loans", label: "Secured vs Unsecured", note: "Which fits, and the trade-offs" },
       { href: "/business-loan-eligibility-australia", label: "What Lenders Look At", note: "The four things that decide it" },
+    ],
+  },
+  // B2B software: consolidated into one simplified dropdown and placed last, since
+  // the focus is B2C + lending. Nothing is removed; the full set lives on the
+  // /business-software hub and the /compare category pages.
+  {
+    label: "Business Software",
+    items: [
+      { href: "/business-software", label: "All Business Software", note: "Every category, in one place" },
+      { href: "/compare/website-builders", label: "Websites & Landing Pages", note: "Carrd, Durable AI, Leadpages and more" },
+      { href: "/compare/newsletter-platforms", label: "Newsletters & Email", note: "beehiiv, Substack and Brevo" },
+      { href: "/best-ai-sales-tools", label: "Sales, CRM & Outreach", note: "GoHighLevel, Pipedrive, Reply.io" },
+      { href: "/compare/ai-tools", label: "AI Tools", note: "Lindy, ElevenLabs and more" },
+      { href: "/compare/hr-payroll", label: "HR, Payroll & Phone", note: "Employment Hero, CloudTalk and more" },
+      { href: "/affiliate-programs-australia", label: "Affiliate Programs", note: "The best programs to join in 2026" },
     ],
   },
 ];
