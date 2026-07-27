@@ -10,6 +10,7 @@ export type SearchEntry = {
 /** Static index powering site search. Add an entry when you publish a page. */
 export const SEARCH_INDEX: SearchEntry[] = [
   // Categories
+  { title: "Deals & discount codes", href: "/deals", category: "Deals", kind: "Guide", keywords: "deals discount codes promo codes australia moshy mosh apollo offers current verified" },
   { title: "Weight loss & telehealth", href: "/weight-loss", category: "Health", kind: "Category", keywords: "weight management obesity diet telehealth glp-1 injections online clinic" },
   { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning finasteride minoxidil scalp" },
   { title: "Website & landing-page builders", href: "/compare/website-builders", category: "Software", kind: "Category", keywords: "no-code landing page builder leadpages landingi ai website site builder web design maker" },

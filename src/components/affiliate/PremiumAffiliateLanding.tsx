@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Check, ShieldCheck, Gift } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import { OFFERS_VERIFIED } from "@/lib/offers";
 import type { AffiliatePageConfig } from "./types";
 
 function slugify(s: string) {
@@ -89,6 +90,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Current offer via our link</p>
                   <p className="mt-1 text-[15px] font-bold leading-snug text-[#10251b]">{config.offer}</p>
+                  <p className="mt-1.5 text-[11px] font-medium text-[#6e7b74]">Checked &amp; verified {OFFERS_VERIFIED}</p>
                 </div>
               </div>
             )}

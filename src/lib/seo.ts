@@ -443,6 +443,13 @@ export const seoConfig = {
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "finasteride cost australia", "minoxidil cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
+  deals: {
+    title: "Deals & Discount Codes Australia 2026 | Refer Labs",
+    description:
+      "Current, verified deals and discount codes from the providers Refer Labs compares: Moshy $120 off, Mosh 55% off, Apollo Energy $500 off, plus free trials. Checked against each provider. Some are affiliate links.",
+    url: `${SITE_URL}/deals`,
+    keywords: ["discount codes australia", "deals australia", "promo codes", "refer labs deals", "moshy discount code", "apollo energy discount"],
+  },
   apolloEnergy: {
     title: "Apollo Energy Group: Home Battery Systems Australia & $500 Off (2026)",
     description:
@@ -451,14 +458,14 @@ export const seoConfig = {
     keywords: ["apollo energy group", "apollo energy group review", "home battery australia", "solar battery australia", "home battery rebate australia", "cheaper home batteries program", "battery installer australia", "solar battery installer", "home battery discount", "battery rebate 2026"],
   },
   keap: {
-    title: "Keap Referral Link & Pricing 2026: Small-Business CRM & Automation | Refer Labs",
+    title: "Keap Discount Code & Referral Link 2026: Small-Business CRM & Automation | Refer Labs",
     description:
       "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up. See the 14-day free trial and pricing via our link.",
     url: `${SITE_URL}/keap`,
     keywords: ["keap crm","keap pricing","keap referral link","keap review","infusionsoft keap","small business crm automation","sales follow up automation"],
   },
   capsule: {
-    title: "Capsule CRM Referral Link & Pricing 2026: Simple CRM for Small Business | Refer Labs",
+    title: "Capsule CRM Discount Code & Referral Link 2026: Simple CRM for Small Business | Refer Labs",
     description:
       "Capsule is a simple CRM for small businesses: contacts, a visual sales pipeline, tasks and email tracking. Free for up to 250 contacts. See pricing and start via our link.",
     url: `${SITE_URL}/capsule`,
@@ -476,21 +483,21 @@ export const seoConfig = {
     keywords: ["instapage pricing","instapage referral link","instapage review","landing page builder for ads","instapage vs leadpages","ppc landing pages","conversion landing page platform"],
   },
   beautifulai: {
-    title: "Beautiful.ai Referral Link & Pricing 2026: AI Presentation Software | Refer Labs",
+    title: "Beautiful.ai Discount Code & Referral Link 2026: AI Presentation Software | Refer Labs",
     description:
       "Beautiful.ai designs your slides automatically as you build them, with smart templates and an AI deck generator. See the free trial and Pro pricing via our link.",
     url: `${SITE_URL}/beautifulai`,
     keywords: ["beautiful.ai pricing","beautiful ai referral link","beautiful.ai review","ai presentation software","ai slide generator","presentation maker ai","beautiful.ai vs canva"],
   },
   pandadoc: {
-    title: "PandaDoc Referral Link & Pricing 2026: Proposals, Contracts & E-Signatures | Refer Labs",
+    title: "PandaDoc Discount Code & Referral Link 2026: Proposals, Contracts & E-Signatures | Refer Labs",
     description:
       "PandaDoc automates proposals, quotes and contracts with built-in e-signatures, templates and real-time tracking. See the free eSign plan and pricing via our link.",
     url: `${SITE_URL}/pandadoc`,
     keywords: ["pandadoc pricing","pandadoc referral link","pandadoc review","proposal software","e-signature software","contract management","pandadoc free plan"],
   },
   blinq: {
-    title: "Blinq Referral Link & Pricing 2026: Digital Business Cards | Refer Labs",
+    title: "Blinq Discount Code & Referral Link 2026: Digital Business Cards | Refer Labs",
     description:
       "Blinq is a digital business card you share by QR, link or NFC, and recipients save your details in one tap. See the free plan and pricing via our link.",
     url: `${SITE_URL}/blinq`,

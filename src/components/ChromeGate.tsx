@@ -164,6 +164,8 @@ const STANDALONE_ROUTES = [
   "/best-crm-small-business-australia",
   // FAQ (migrated to ConsumerShell)
   "/faq",
+  // Deals hub
+  "/deals",
   // Lead admin (internal; renders its own minimal chrome, not the public shell)
   "/admin",
 ];
