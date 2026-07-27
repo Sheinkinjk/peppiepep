@@ -1,6 +1,7 @@
 import Image from "next/image";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
-import { MOSHY_OFFER } from "@/lib/offers";
+import OffersTable from "@/components/lending/OffersTable";
+import { MOSHY_OFFER, DEALS } from "@/lib/offers";
 import { moshyConfig, MOSHY_URL } from "./config";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -110,6 +111,11 @@ export default function MoshyLanding() {
               <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
             </div>
           ))}
+        </section>
+
+        {/* ── Offer at a glance (structured, AI-extractable) ── */}
+        <section className="mt-8">
+          <OffersTable deals={DEALS.filter((d) => d.brand === "Moshy")} caption="Moshy discount code and offer, verified" />
         </section>
 
         {/* ── Compliance notice ── */}

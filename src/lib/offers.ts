@@ -23,6 +23,16 @@ export function formatVerified(date: string): string {
 /** Display string used by templated brand pages ("July 2026"). */
 export const OFFERS_VERIFIED = formatVerified(VERIFIED_DATE);
 
+/** "2026-07-24" -> "24 Jul 2026", for the "Last checked" column in the offers table. */
+export function formatVerifiedFull(date: string): string {
+  const d = new Date(`${date}T00:00:00`);
+  if (isNaN(d.getTime())) return date;
+  return d.toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" });
+}
+
+/** Full display date ("24 Jul 2026"). */
+export const VERIFIED_FULL = formatVerifiedFull(VERIFIED_DATE);
+
 /** The Moshy new-customer offer, referenced directly on the weight-loss money pages. */
 export const MOSHY_OFFER = {
   amount: "$120 off",

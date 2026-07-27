@@ -1,0 +1,56 @@
+import Link from "next/link";
+import { DEALS, VERIFIED_FULL, type Deal } from "@/lib/offers";
+
+/**
+ * Structured, AI-extractable offers table (Provider / Saving / Code / Status /
+ * Verified / Last checked). LLMs quote clean tables far more readily than prose,
+ * so this is the canonical machine-readable source for "[brand] discount code"
+ * and "best X" answers. Curated from the offers registry, dated, and honest:
+ * "No code needed" where an offer applies via the link rather than a typed code.
+ */
+export default function OffersTable({
+  deals = DEALS,
+  caption,
+}: {
+  deals?: Deal[];
+  caption?: string;
+}) {
+  // Extract the dollar/percent saving from the offer string for a tight column.
+  const saving = (o: string) => (o.match(/\$[\d,]+|\d+%/) || [o])[0];
+  return (
+    <div className="overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+      <table className="w-full border-collapse text-left text-sm">
+        {caption && <caption className="sr-only">{caption}</caption>}
+        <thead>
+          <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#6e7b74]">
+            <th scope="col" className="px-4 py-3">Provider</th>
+            <th scope="col" className="px-4 py-3">Best offer</th>
+            <th scope="col" className="px-4 py-3">Saving</th>
+            <th scope="col" className="px-4 py-3">Code</th>
+            <th scope="col" className="px-4 py-3">Status</th>
+            <th scope="col" className="px-4 py-3">Last checked</th>
+          </tr>
+        </thead>
+        <tbody className="text-[#3d4b44]">
+          {deals.map((d) => (
+            <tr key={d.brand} className="border-t border-[#eef1ef]">
+              <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">
+                <Link href={d.href} className="hover:text-[#0a7c42] hover:underline">{d.brand}</Link>
+              </th>
+              <td className="px-4 py-3">{d.offer}</td>
+              <td className="px-4 py-3 font-semibold tabular-nums text-[#10251b]">{saving(d.offer)}</td>
+              <td className="px-4 py-3 font-mono text-[13px]">{d.code ?? "No code needed"}</td>
+              <td className="px-4 py-3"><span className="inline-flex items-center gap-1 font-medium text-[#0a7c42]">Active ✓</span></td>
+              <td className="px-4 py-3 whitespace-nowrap tabular-nums">{VERIFIED_FULL}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#6e7b74]">
+        Offers checked against each provider on {VERIFIED_FULL}. &ldquo;No code needed&rdquo; means the offer applies
+        automatically through our link. Offers can change; figures are indicative, not a guarantee. Some links are
+        affiliate links, at no cost to you.
+      </p>
+    </div>
+  );
+}

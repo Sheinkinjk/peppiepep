@@ -4,6 +4,7 @@ import { ArrowRight, BadgeCheck, Tag } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { FEATURED_DEALS, OTHER_DEALS, DEALS, OFFERS_VERIFIED } from "@/lib/offers";
+import OffersTable from "@/components/lending/OffersTable";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
 
@@ -61,8 +62,16 @@ export default function DealsPage() {
           <BadgeCheck className="h-4 w-4 text-[#0a7c42]" aria-hidden="true" /> Checked &amp; verified {OFFERS_VERIFIED}
         </p>
 
-        {/* Featured: real monetary discounts */}
+        {/* Structured offers table (AI-extractable canonical source) */}
         <section className="mt-10">
+          <h2 className="text-xl font-extrabold text-[#10251b]">Current offers at a glance</h2>
+          <div className="mt-5">
+            <OffersTable deals={FEATURED_DEALS} caption="Current verified discount codes and offers at Refer Labs" />
+          </div>
+        </section>
+
+        {/* Featured: real monetary discounts */}
+        <section className="mt-14">
           <h2 className="text-xl font-extrabold text-[#10251b]">Best deals right now</h2>
           <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURED_DEALS.map((d) => (
