@@ -3,6 +3,8 @@ import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import OffersTable from "@/components/lending/OffersTable";
+import { DEALS } from "@/lib/offers";
 import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
@@ -326,7 +328,15 @@ export default function BestHairLossTreatmentAustraliaPage() {
           </p>
         </section>
 
-        {/* Overview */}
+                  {/* Structured offer table */}
+          <section className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">The offer at a glance</h2>
+            <div className="max-w-2xl">
+              <OffersTable deals={DEALS.filter((d) => d.brand === "Mosh")} caption="Mosh hair-loss offer, verified" />
+            </div>
+          </section>
+
+{/* Overview */}
         <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
           <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">Clinical vs topical</h2>
           <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">

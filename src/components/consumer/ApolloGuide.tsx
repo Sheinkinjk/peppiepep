@@ -4,6 +4,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import { SITE_URL } from "@/lib/seo";
 import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import OffersTable from "@/components/lending/OffersTable";
+import { DEALS } from "@/lib/offers";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared layout for the home-battery guide cluster (funnels to Apollo Energy Group,
@@ -141,6 +143,14 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
             body="A battery is only worth it when it's sized to how you actually use power. Apollo sizes from your real usage and applies the federal rebate at the point of sale, plus $500 off through our link."
           />
         </div>
+
+        {/* Structured offer table (AI-extractable) */}
+        <section className="mt-14">
+          <h2 className="text-2xl font-bold tracking-tight text-[#10251b]">The offer at a glance</h2>
+          <div className="mt-5">
+            <OffersTable deals={DEALS.filter((d) => d.brand === "Apollo Energy Group")} caption="Apollo Energy Group $500 offer via Refer Labs, verified" />
+          </div>
+        </section>
 
         {/* FAQ */}
         <section className="mt-14">

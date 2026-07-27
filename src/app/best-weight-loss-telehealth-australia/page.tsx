@@ -7,7 +7,8 @@ import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import FeatureMatrix from "@/components/consumer/FeatureMatrix";
-import { MOSHY_OFFER } from "@/lib/offers";
+import { MOSHY_OFFER, DEALS } from "@/lib/offers";
+import OffersTable from "@/components/lending/OffersTable";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
@@ -354,6 +355,10 @@ export default function BestWeightLossTelehealthPage() {
             <div className="mb-7">
               <VerifiedStamp date={MOSHY_OFFER.verified} label={`Moshy: ${MOSHY_OFFER.amount} for new customers · verified`} />
             </div>
+
+              <div className="mb-7 max-w-2xl">
+                <OffersTable deals={DEALS.filter((d) => d.brand === "Moshy")} caption="Moshy weight-loss offer, verified" />
+              </div>
 
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
