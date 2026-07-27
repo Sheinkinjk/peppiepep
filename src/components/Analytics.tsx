@@ -65,6 +65,33 @@ export function GoogleAnalytics() {
             page_path: window.location.pathname,
             send_page_view: true
           });
+
+          /* AI-assistant referral detection. GA4 lumps these into generic
+             "Referral", so we tag them explicitly: an 'ai_referral' event with
+             the assistant name, plus a user property, so AI visibility is
+             reportable. Fires through gtag, so Consent Mode still governs cookies. */
+          try {
+            var __ref = document.referrer || '';
+            var __ai = [
+              { re: /chatgpt\\.com|chat\\.openai\\.com|openai\\.com/i, name: 'ChatGPT' },
+              { re: /perplexity\\.ai/i, name: 'Perplexity' },
+              { re: /claude\\.ai|anthropic\\.com/i, name: 'Claude' },
+              { re: /gemini\\.google\\.com|bard\\.google\\.com/i, name: 'Gemini' },
+              { re: /copilot\\.microsoft\\.com|bing\\.com\\/(chat|search\\?.*(showconv|sydney))|edgeservices\\.bing\\.com/i, name: 'Microsoft Copilot' }
+            ];
+            for (var __i = 0; __i < __ai.length; __i++) {
+              if (__ai[__i].re.test(__ref)) {
+                gtag('event', 'ai_referral', {
+                  ai_source: __ai[__i].name,
+                  page_location: window.location.href,
+                  page_referrer: __ref
+                });
+                gtag('set', 'user_properties', { last_ai_source: __ai[__i].name });
+                window.dataLayer.push({ event: 'ai_referral', ai_source: __ai[__i].name });
+                break;
+              }
+            }
+          } catch (e) {}
         `}
       </Script>
       <Script
