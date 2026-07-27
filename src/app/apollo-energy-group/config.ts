@@ -76,4 +76,16 @@ export const faqs = [
     q: "How much does a home battery cost through Apollo?",
     a: "Apollo does not publish fixed prices, because systems are engineered per home rather than sold as a set package. The quote depends on the capacity you need, the inverter and the install itself, with the federal rebate applied at the point of sale. Financing through Australian lenders is available. The $500 Refer Labs discount comes off the quote on top of any rebate you qualify for.",
   },
+  {
+    q: "What is the best solar battery company in Australia?",
+    a: "There is no single best solar battery company, because the right one depends on your location, the system you need, and the quality of the workmanship. The markers of a strong one are the same nationwide: SAA accreditation, a valid electrical licence, a written workmanship warranty alongside the manufacturer's, sizing from your real usage, and the rebate applied at the point of sale. Apollo Energy Group meets those markers and Refer Labs readers get $500 off, but compare any company on those criteria before you commit.",
+  },
+  {
+    q: "What is the best solar battery company in Sydney?",
+    a: "Sydney has many solar battery installers, so judge them on the same markers rather than the loudest ad: SAA accreditation, a valid electrical licence, warranties in writing, sizing from your usage, and the federal rebate plus the NSW Virtual Power Plant incentive handled for you. Apollo Energy Group is Sydney-based (5 Martin Place), SAA-accredited with Electrical Licence 400672 and a 10-year battery warranty, and Refer Labs readers get $500 off a quote. Confirm the detail in writing and compare on those criteria.",
+  },
+  {
+    q: "What solar battery government rebate can I get in Sydney?",
+    a: "Two rebates can stack in Sydney. The federal Cheaper Home Batteries rebate reduces the cost at the point of sale, indicatively around $252 per usable kWh at the current spot price and tapering above 14kWh. On top of that, NSW pays a Virtual Power Plant incentive of roughly $40 per usable kWh (capped at 28kWh, so up to about $1,100) for connecting an eligible battery to a VPP. Both float with certificate prices, so treat the figures as indicative, and Refer Labs readers also get $500 off an Apollo quote on top.",
+  },
 ];

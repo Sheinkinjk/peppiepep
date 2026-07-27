@@ -451,11 +451,11 @@ export const seoConfig = {
     keywords: ["discount codes australia", "deals australia", "promo codes", "refer labs deals", "moshy discount code", "apollo energy discount"],
   },
   apolloEnergy: {
-    title: "Apollo Energy Group: Home Battery Systems Australia & $500 Off (2026)",
+    title: "Apollo Energy Group: Sydney Solar Battery Company & $500 Off (2026) | Refer Labs",
     description:
-      "$500 off your home battery quote via Refer Labs. Apollo Energy Group: SAA-accredited Australian installer (9-54kWh), federal rebate applied. How it works.",
+      "Apollo Energy Group is a Sydney-based, SAA-accredited solar battery (home battery) company installing 9-54kWh systems. $500 off your quote via Refer Labs, plus the federal rebate and the NSW solar battery government rebate. How to choose a solar battery company, and where Apollo fits.",
     url: `${SITE_URL}/apollo-energy-group`,
-    keywords: ["apollo energy group", "apollo energy group review", "home battery australia", "solar battery australia", "home battery rebate australia", "cheaper home batteries program", "battery installer australia", "solar battery installer", "home battery discount", "battery rebate 2026"],
+    keywords: ["best solar battery company australia", "best solar battery company sydney", "solar battery company sydney", "solar battery government rebate sydney", "apollo energy group", "apollo energy group review", "solar battery installer sydney", "home battery australia", "cheaper home batteries program", "battery installer sydney"],
   },
   keap: {
     title: "Keap Discount Code & Referral Link 2026: Small-Business CRM & Automation | Refer Labs",

@@ -46,13 +46,11 @@ export default function ApolloLanding() {
               A
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.3rem]">
-              Apollo Energy Group: home batteries for Australian homes,{" "}
-              <span className="text-[#0a7c42]">with $500 off through Refer Labs.</span>
+              Apollo Energy Group: a Sydney solar battery company,{" "}
+              <span className="text-[#0a7c42]">$500 off through Refer Labs.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
-              An independent look at how Apollo actually works: what they install, how the $500 Refer Labs discount is
-              applied, and how the federal battery rebate changes what you really pay in 2026. No hype, no invented
-              savings figures.
+              An independent look at Apollo Energy Group, a Sydney-based solar battery (home battery) company: what they install, how to judge a solar battery company, how the $500 Refer Labs discount is applied, and how the federal and NSW solar battery government rebates change what you really pay in 2026. No hype, no invented savings figures.
             </p>
 
             <div className="mt-8">
@@ -164,6 +162,42 @@ export default function ApolloLanding() {
                   rebate does to the price.&rdquo;
                 </blockquote>
               </figure>
+            </section>
+
+            {/* Choosing a solar battery company */}
+            <section id="choosing" className="mt-12 scroll-mt-24">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+                How to choose the best solar battery company in Australia
+              </h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+                <p>
+                  There is no single &ldquo;best&rdquo; solar battery company, because the right installer depends on
+                  where you live, the system you need, and who does the workmanship. A solar battery (also called a home
+                  battery) is high-value electrical equipment wired into your switchboard and meant to last a decade or
+                  more, so the company that installs it matters as much as the battery brand. In Sydney and across
+                  Australia the markers of a strong solar battery company are the same, and they are worth checking on
+                  anyone you quote.
+                </p>
+                <ul className="ml-1 space-y-2">
+                  {[
+                    "SAA accreditation and a valid electrical licence, since the battery ties into your switchboard.",
+                    "A real workmanship warranty alongside the manufacturer's battery warranty, both in writing.",
+                    "Sizing from your actual usage data, not a one-size package pushed to hit a price.",
+                    "The federal rebate applied at the point of sale, and, in NSW, a path to the Virtual Power Plant incentive.",
+                    "No high-pressure sales, and a quote that shows the price after every rebate.",
+                  ].map((t) => (
+                    <li key={t} className="flex gap-2.5">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{t}
+                    </li>
+                  ))}
+                </ul>
+                <p>
+                  Apollo Energy Group meets those markers: SAA-accredited, Electrical Licence 400672, a 10-year battery
+                  warranty, Sydney-based, and it sizes from your usage and applies the rebate at sale. That is why we
+                  refer readers to it, and why Refer Labs readers get $500 off the quote. It is still worth getting the
+                  sizing, warranty and rebate detail in writing and comparing on the criteria above.
+                </p>
+              </div>
             </section>
 
             {/* Offer */}
