@@ -3,6 +3,7 @@ import { ArrowRight, ShieldCheck, FileX2, UserRound, Scale, Check } from "lucide
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
+import LenderCards from "@/components/lending/LenderCards";
 import LenderTable from "@/components/lending/LenderTable";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS } from "@/lib/lenders";
@@ -145,23 +146,23 @@ export default function BusinessLoansHub() {
           {/* At a glance */}
           <aside className="lg:pt-1">
             <div className="nw-card rounded-2xl p-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">The lenders we compare</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
                 {[
-                  ["Lenders", LENDERS.map((l) => l.name).join(", ")],
+                  ["Lenders compared", `${LENDERS.length}`],
                   ["Loan sizes", `${money(lowestMin)} – ${money(highestMax)}`],
                   ["Funding", "As fast as same business day"],
                   ["Cost to you", "Free"],
-                  ["Standards", "AFIA Code signatories"],
+                  ["Credit impact", "None to enquire"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
-                    <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
-                    <dd className="font-medium text-[#2b362f]">{v}</dd>
+                    <dt className="w-32 shrink-0 text-[#9aa39c]">{k}</dt>
+                    <dd className="font-semibold text-[#2b362f]">{v}</dd>
                   </div>
                 ))}
               </dl>
-              <a href="#enquire" className="nw-btn mt-5 w-full justify-center">Check your options</a>
-              <p className="mt-3 text-center text-[11px] text-[#9aa39c]">About a minute · no documents to upload</p>
+              <a href="#lenders" className="nw-btn mt-5 w-full justify-center">Compare the lenders</a>
+              <a href="#enquire" className="mt-2 block text-center text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">Or get matched in a minute</a>
             </div>
           </aside>
         </section>
@@ -176,13 +177,30 @@ export default function BusinessLoansHub() {
           ))}
         </section>
 
+        {/* Lenders compared (prominent, logo-forward cards) */}
+        <section id="lenders" className="mt-14 scroll-mt-24">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-extrabold text-[#10251b]">Compare {LENDERS.length} Australian business lenders</h2>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+                Browse the lenders we compare, then open one for the full detail or get matched to the ones that fit in a
+                one-minute enquiry. No partnership or paid placement: each is submitted individually and assessed on its
+                own criteria.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6">
+            <LenderCards />
+          </div>
+        </section>
+
         {/* Enquiry form */}
         <section className="mt-16">
           <div className="max-w-xl">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Start your enquiry</h2>
+            <h2 className="text-2xl font-extrabold text-[#10251b]">Not sure which fits? Get matched</h2>
             <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
-              Tell us what your business needs. We&apos;ll show you an indicative match and a person will be in touch within
-              one business day. There&apos;s no obligation to proceed with any lender.
+              Answer a few questions and we&apos;ll show you which of the {LENDERS.length} lenders your enquiry plausibly
+              fits. A person reviews it and is in touch within one business day. No obligation, and nothing to upload.
             </p>
           </div>
           <div id="enquire" className="mt-6 max-w-2xl scroll-mt-24">
@@ -211,11 +229,12 @@ export default function BusinessLoansHub() {
           </ol>
         </section>
 
-        {/* Lenders compared */}
+        {/* Full side-by-side comparison table */}
         <section className="mt-16">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">The lenders we compare</h2>
+          <h2 className="text-2xl font-extrabold text-[#10251b]">Side-by-side comparison</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
-            These are the Australian business lenders we currently compare. Refer Labs has no partnership, panel arrangement or accreditation with any of them: each enquiry is submitted individually, directly or through a finance broker, and the lender decides on its own criteria. Where a lender publishes a headline rate we show it; others price each loan individually. Either way the figures are indicative, not a quote for your business.
+            The full detail on every lender we compare, in one table. Refer Labs has no partnership, panel arrangement or
+            accreditation with any of them: each enquiry is submitted individually and the lender decides on its own criteria.
           </p>
           <div className="mt-6">
             <LenderTable caption="Australian business lenders compared by Refer Labs" />
