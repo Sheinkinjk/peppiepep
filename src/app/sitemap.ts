@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { CATALOG } from '@/lib/catalog/catalog';
 import { LENDERS } from '@/lib/lenders';
 import { INTENT_PAGES } from '@/lib/lending-intent';
+import { LENDER_COMPARISONS } from '@/lib/lender-comparisons';
 import { HAIR_LOSS_GUIDES } from '@/lib/hair-loss-guides';
 import { APOLLO_GUIDES } from '@/lib/apollo-guides';
 
@@ -50,6 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `${BASE}/business-loans/${l.slug}`,        lastModified: TODAY, changeFrequency: 'monthly' as const, priority: 0.78 },
       { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: TODAY, changeFrequency: 'monthly' as const, priority: 0.72 },
     ]),
+    // Lender head-to-head comparisons
+    ...LENDER_COMPARISONS.map((c) => ({ url: `${BASE}/compare-business-lenders/${c.slug}`, lastModified: TODAY, changeFrequency: 'monthly' as const, priority: c.priority })),
     // Intent + explainer pages, generated from the registry
     ...INTENT_PAGES.map((p) => ({
       url: `${BASE}/${p.slug}`,

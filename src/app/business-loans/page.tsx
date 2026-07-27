@@ -16,6 +16,9 @@ const GUIDE_LINKS = [
   { href: "/true-cost-of-business-loans-australia", label: "The hidden cost of factor rates (analysis)" },
   { href: "/business-loan-calculator", label: "Business loan repayment calculator" },
   { href: "/equipment-finance-instant-asset-write-off", label: "Equipment finance and the instant asset write-off" },
+  { href: "/compare-business-lenders/prospa-vs-lumi", label: "Prospa vs Lumi, compared" },
+  { href: "/compare-business-lenders/prospa-vs-moula", label: "Prospa vs Moula, compared" },
+  { href: "/compare-business-lenders/lumi-vs-moula", label: "Lumi vs Moula, compared" },
   ...INTENT_PAGES.map((p) => ({ href: `/${p.slug}`, label: p.h1 })),
 ];
 
