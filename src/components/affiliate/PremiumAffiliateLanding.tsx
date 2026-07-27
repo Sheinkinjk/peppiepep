@@ -4,7 +4,14 @@ import { ArrowRight, Check, ShieldCheck, Gift } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import { OFFERS_VERIFIED } from "@/lib/offers";
+import OffersTable from "@/components/lending/OffersTable";
 import type { AffiliatePageConfig } from "./types";
+
+// Pull a typed code out of an offer string like "55% off your first order (code REFERAL55)".
+function offerCode(offer: string): string | undefined {
+  const m = offer.match(/\(code\s+([A-Za-z0-9]+)\)/i);
+  return m ? m[1] : undefined;
+}
 
 function slugify(s: string) {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -131,6 +138,19 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
               </div>
             ))}
+          </section>
+        )}
+
+        {/* Structured, AI-extractable offer table (auto on every brand page with an offer) */}
+        {config.offer && (
+          <section className="mt-12">
+            <h2 className="text-lg font-extrabold text-[#10251b]">{config.brand} offer at a glance</h2>
+            <div className="mt-4">
+              <OffersTable
+                deals={[{ brand: config.brand, offer: config.offer, code: offerCode(config.offer) }]}
+                caption={`${config.brand} discount code and current offer, verified`}
+              />
+            </div>
           </section>
         )}
 

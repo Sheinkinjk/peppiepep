@@ -1,18 +1,24 @@
 import Link from "next/link";
-import { DEALS, VERIFIED_FULL, type Deal } from "@/lib/offers";
+import { DEALS, VERIFIED_FULL } from "@/lib/offers";
 
 /**
  * Structured, AI-extractable offers table (Provider / Saving / Code / Status /
  * Verified / Last checked). LLMs quote clean tables far more readily than prose,
  * so this is the canonical machine-readable source for "[brand] discount code"
- * and "best X" answers. Curated from the offers registry, dated, and honest:
- * "No code needed" where an offer applies via the link rather than a typed code.
+ * and "best X" answers. Curated, dated, and honest: "No code needed" where an
+ * offer applies via the link rather than a typed code.
+ *
+ * Accepts any minimal row shape, so the shared brand template can render a
+ * single-row table straight from a page config (not just the DEALS registry).
+ * The Provider cell only links out when an href is given.
  */
+type OfferRow = { brand: string; href?: string; offer: string; code?: string };
+
 export default function OffersTable({
   deals = DEALS,
   caption,
 }: {
-  deals?: Deal[];
+  deals?: OfferRow[];
   caption?: string;
 }) {
   // Extract the dollar/percent saving from the offer string for a tight column.
@@ -35,7 +41,11 @@ export default function OffersTable({
           {deals.map((d) => (
             <tr key={d.brand} className="border-t border-[#eef1ef]">
               <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">
-                <Link href={d.href} className="hover:text-[#0a7c42] hover:underline">{d.brand}</Link>
+                {d.href ? (
+                  <Link href={d.href} className="hover:text-[#0a7c42] hover:underline">{d.brand}</Link>
+                ) : (
+                  d.brand
+                )}
               </th>
               <td className="px-4 py-3">{d.offer}</td>
               <td className="px-4 py-3 font-semibold tabular-nums text-[#10251b]">{saving(d.offer)}</td>
