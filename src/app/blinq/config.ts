@@ -57,6 +57,10 @@ export const blinqConfig: AffiliatePageConfig = {
   ],
   faqs: [
     {
+      q: "Is there a Blinq discount code?",
+      a: "Blinq doesn't rely on a typed discount code. It has a free plan you can start through the link on this page, with paid tiers if you need more. Offers can change over time.",
+    },
+    {
       q: "Does Blinq have a free plan?",
       a: "Yes. Blinq has a free plan that lets you create and share a digital business card. Paid plans add customisation, analytics and team management; sign up through our link to start, at no extra cost to you.",
     },

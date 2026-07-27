@@ -98,6 +98,10 @@ export const superfiliateConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there a Superfiliate discount code?",
+      a: "New subscribers get 15% off the monthly Superfiliate fee through the link on this page, applied automatically with no code to type. Offers can change, so treat this as the current new-customer offer.",
+    },
+    {
       q: "What is Superfiliate?",
       a: "Superfiliate is a creator-led growth platform for e-commerce and DTC brands to run affiliate, referral and creator programs in one place. Each partner gets a personalised landing page and custom links, with rewards, tracking and store integrations. It is a tool for brands running programs, not for individual affiliates.",
     },

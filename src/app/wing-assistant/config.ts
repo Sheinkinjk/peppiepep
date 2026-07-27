@@ -56,6 +56,10 @@ export const wingAssistantConfig: AffiliatePageConfig = {
   ],
   faqs: [
     {
+      q: "Is there a Wing Assistant discount code?",
+      a: "Wing Assistant doesn't use a typed discount code. You can book a free 15-minute consultation through the link on this page to scope pricing for your needs. Offers can change over time.",
+    },
+    {
       q: "How does Wing Assistant pricing work?",
       a: "Wing quotes pricing per plan rather than publishing a single fixed rate, and it depends on the hours and roles you need. The free consultation is where you scope the work and get current pricing, verify the terms before committing.",
     },

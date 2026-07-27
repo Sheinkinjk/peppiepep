@@ -131,6 +131,10 @@ export const employmentHeroConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there an Employment Hero discount code?",
+      a: "Employment Hero doesn't publish a public discount code; it prices per business. You can book a free demo through the link on this page and pricing is quoted to your business. Offers can change over time.",
+    },
+    {
       q: "What is Employment Hero?",
       a: "Employment Hero is an Australian-built, all-in-one HR, payroll and employment platform. It combines HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. It is designed for Australian employers and aligned to Fair Work and ATO requirements.",
     },

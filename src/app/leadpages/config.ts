@@ -98,6 +98,10 @@ export const leadpagesConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there a Leadpages discount code?",
+      a: "Leadpages doesn't rely on a typed code. The current offer is a 7-day free trial, then 50% off your first month, applied when you start through the link on this page. Offers can change, so treat this as the current new-customer offer.",
+    },
+    {
       q: "What is Leadpages?",
       a: "Leadpages is a landing-page builder focused on lead generation. It offers a large library of conversion templates, lead-capture forms, pop-ups and alert bars, built-in A/B testing, and integrations with email and CRM tools, so you can build and optimise pages that capture sign-ups.",
     },

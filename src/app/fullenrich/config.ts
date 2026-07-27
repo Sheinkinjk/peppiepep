@@ -131,6 +131,10 @@ export const fullenrichConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there a FullEnrich discount code?",
+      a: "FullEnrich doesn't rely on a typed discount code. New users get a free trial with 50 credits and no card required, which you can start through the link on this page. Offers can change over time.",
+    },
+    {
       q: "What is FullEnrich?",
       a: "FullEnrich is a B2B contact enrichment tool that uses waterfall enrichment. It queries 15 or more data sources in sequence to find a verified email address and a mobile phone number for each contact, handles bulk enrichment from a CSV or CRM, and integrates with tools like HubSpot, Clay, Zapier and LinkedIn.",
     },

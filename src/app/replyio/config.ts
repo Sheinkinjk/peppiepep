@@ -131,6 +131,10 @@ export const replyioConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there a Reply.io discount code?",
+      a: "Reply.io doesn't publish a public discount code. It offers a 14-day free trial with no card, which you can start through the link on this page. Per-user pricing applies after the trial. Offers can change over time.",
+    },
+    {
       q: "What is Reply.io?",
       a: "Reply.io is an AI-first sales engagement platform for multichannel outbound. It builds and automates sequences across email, LinkedIn, calls and SMS, includes AI SDR agents that write and personalise messages, and bundles B2B data, an email finder and deliverability tools like inbox warm-up. It integrates with HubSpot, Salesforce and Pipedrive.",
     },

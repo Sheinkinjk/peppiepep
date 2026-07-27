@@ -105,6 +105,10 @@ export const brevoConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there a Brevo discount code?",
+      a: "Brevo doesn't publish a public discount code. It offers a free plan forever with no card required, which you can start through the link on this page. Paid tiers are priced by emails sent, not list size.",
+    },
+    {
       q: "What is Brevo?",
       a: "Brevo (formerly Sendinblue) is an all-in-one marketing platform combining email marketing, SMS and WhatsApp, marketing automation, a sales CRM and transactional email. It is aimed at small and mid-sized businesses that want these tools in one place rather than several separate apps.",
     },

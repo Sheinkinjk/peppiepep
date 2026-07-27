@@ -98,6 +98,10 @@ export const alidropConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there an AliDrop discount code?",
+      a: "AliDrop doesn't publish a public discount code. The current offer is US$1 for a 7-day trial, which you can start through the link on this page. Offers can change, so treat this as the current new-customer offer.",
+    },
+    {
       q: "What is AliDrop?",
       a: "AliDrop is a dropshipping tool for sourcing products from AliExpress, Alibaba and Temu, importing them to an online store like Shopify, and automating order fulfilment so orders are placed with suppliers for you. It also offers product research, private suppliers and branding options.",
     },

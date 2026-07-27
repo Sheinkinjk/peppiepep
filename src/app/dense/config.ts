@@ -119,10 +119,6 @@ export const denseConfig: AffiliatePageConfig = {
       a: "Dense Hair Experts occasionally runs promotional offers, but these are not always available as a manually entered code. Our affiliate link on this page is the most consistent way to access a current Dense promo or deal. Click any button to be taken directly to their store.",
     },
     {
-      q: "How do I use the Dense affiliate link on this page?",
-      a: "Click any of the buttons on this page. You will be taken directly to the Dense Hair Experts online store. No code needs to be entered manually - the referral and any associated offer are tracked through the link itself.",
-    },
-    {
       q: "Where does this Dense link go?",
       a: "Every link on this page points to the official Dense Hair Experts store at densehairexperts.myshopify.com. You will not be taken to a third-party site and no information needs to be entered on this page before you arrive at the Dense store.",
     },

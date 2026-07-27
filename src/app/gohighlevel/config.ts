@@ -131,6 +131,10 @@ export const goHighLevelConfig: AffiliatePageConfig = {
 
   faqs: [
     {
+      q: "Is there a GoHighLevel discount code?",
+      a: "GoHighLevel doesn't publish a public discount code. It offers a 14-day free trial with no card required, which you can start through the link on this page. Offers can change over time.",
+    },
+    {
       q: "What is GoHighLevel used for?",
       a: "GoHighLevel is an all-in-one business platform used to run a CRM, marketing automation across email and SMS, sales pipelines, funnels and landing pages, and reputation management from a single login. It also includes AI features for voice, conversations and content. It is used mainly by marketing agencies and SMBs that want to replace several separate tools with one platform.",
     },

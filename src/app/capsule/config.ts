@@ -57,6 +57,10 @@ export const capsuleConfig: AffiliatePageConfig = {
   ],
   faqs: [
     {
+      q: "Is there a Capsule CRM discount code?",
+      a: "Capsule doesn't use a typed discount code. It offers a free plan for up to 250 contacts, which you can start through the link on this page, with paid tiers as you grow. Offers can change over time.",
+    },
+    {
       q: "Does Capsule have a free plan?",
       a: "Yes. Capsule has a free plan that supports up to 250 contacts and two users, with the core CRM features. Paid plans raise the contact limits and add features; sign up through our link to start, at no extra cost to you.",
     },
