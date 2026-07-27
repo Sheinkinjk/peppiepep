@@ -1,4 +1,6 @@
 import Image from "next/image";
+import VerifiedStamp from "@/components/consumer/VerifiedStamp";
+import { MOSHY_OFFER } from "@/lib/offers";
 import { moshyConfig, MOSHY_URL } from "./config";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -46,17 +48,21 @@ export default function MoshyLanding() {
               <Image src="/logos/moshy.png" alt="Moshy logo" width={52} height={52} className="h-12 w-12 object-contain" />
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.3rem]">
-              Moshy, explained: the clinically-led weight-loss telehealth service,{" "}
-              <span className="text-[#0a7c42]">before you start.</span>
+              Moshy discount code Australia:{" "}
+              <span className="text-[#0a7c42]">$120 off your first order.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
-              A clear, independent look at how Moshy actually works in Australia: what the service is, how the online
-              eligibility process runs, and how prescription GLP-1 access is handled. Information only, no hype, no expired
-              discount codes.
+              The current Moshy offer is <strong className="text-[#10251b]">$120 off your first order</strong>, applied
+              automatically through our referral link (code REFERRAL120), so there is no code to type. Below is an
+              independent look at how Moshy actually works, what it costs, and how eligibility runs. Information only, and
+              a real, current offer, not an expired one.
             </p>
+            <div className="mt-5">
+              <VerifiedStamp date={MOSHY_OFFER.verified} label="$120-off offer verified" />
+            </div>
 
-            <div className="mt-8">
-              <MoshyCTA label="Check your eligibility on Moshy" size="lg" loc="hero" />
+            <div className="mt-6">
+              <MoshyCTA label="Get $120 off on Moshy" size="lg" loc="hero" />
             </div>
 
             <p className="mt-4 text-xs text-[#9aa39c]">
@@ -75,7 +81,7 @@ export default function MoshyLanding() {
                   ["Format", "Online eligibility → practitioner review → delivery"],
                   ["Medication", "GLP-1 access if clinically appropriate"],
                   ["Pricing", "Subscription, confirmed in the consult"],
-                  ["Discount code", "None needed, referral applies via the link"],
+                  ["Discount", "$120 off your first order (code REFERRAL120), via our link"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
                     <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
@@ -97,7 +103,7 @@ export default function MoshyLanding() {
             { icon: Stethoscope, label: "AHPRA-registered practitioners" },
             { icon: ClipboardList, label: "Online eligibility in ~5 minutes" },
             { icon: Truck, label: "Subscription with home delivery" },
-            { icon: ShieldCheck, label: "No code, referral via the link" },
+            { icon: ShieldCheck, label: "$120 off your first order via our link" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
               <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} />

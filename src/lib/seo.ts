@@ -944,9 +944,9 @@ export const seoConfig = {
   },
 
   moshy: {
-    title: "Moshy Weight Loss Australia 2026: Referral Link, Cost & How It Works | Refer Labs",
+    title: "Moshy Discount Code Australia 2026: $120 Off Your First Order | Refer Labs",
     description:
-      "Moshy weight-loss telehealth in Australia, explained: the referral link (no code needed), how the online eligibility check works, and what it costs.",
+      "Moshy's current discount: $120 off your first order, applied automatically through our referral link (code REFERRAL120), verified July 2026. Plus how the eligibility check works and what Moshy costs. Independent, not medical advice.",
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
