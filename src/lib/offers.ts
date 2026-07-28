@@ -11,7 +11,7 @@
 // system now treats as scaled content abuse.
 
 /** ISO date we last re-checked the offers. Bump monthly. */
-export const VERIFIED_DATE = "2026-07-24";
+export const VERIFIED_DATE = "2026-07-28";
 
 /** "2026-07-24" -> "July 2026". Fixed input, so plain Date parsing is safe here. */
 export function formatVerified(date: string): string {

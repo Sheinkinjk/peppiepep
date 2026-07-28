@@ -125,7 +125,7 @@ export const moshyConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Moshy discount code?",
-      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order (current; offers change). You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Every button on this page takes you directly to that flow.",
+      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order, verified against Moshy's own sign-up page in July 2026. You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Other Moshy codes circulating on coupon sites are frequently expired or unofficial and may not apply at checkout; REFERRAL120 for $120 off is the current, verified offer.",
     },
     {
       q: "Does Moshy have a referral code?",

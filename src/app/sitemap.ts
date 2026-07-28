@@ -10,7 +10,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
-const TODAY  = new Date('2026-07-24'); // materially rewritten in this batch
+const TODAY  = new Date('2026-07-28'); // materially rewritten in this batch
 const NEW    = new Date('2026-07-22'); // published/edited in the current batch
 const FRESH  = new Date('2026-07-07'); // redesigned / new this release
 const RECENT = new Date('2026-05-20'); // updated within the last few weeks
@@ -71,14 +71,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/product-distribution`,   lastModified: STABLE, changeFrequency: 'monthly', priority: 0.68 },
 
     // ── Apollo Energy (VIP money page) ────────────────────────────────
-    { url: `${BASE}/apollo-energy-group`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.95 },
-    { url: `${BASE}/apollo-energy-review`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/apollo-energy-group`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${BASE}/apollo-energy-review`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-rebate-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-cost-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-payback-calculator`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.88 },
 
     // ── Health affiliate pages (redesigned this release) ───────────────
-    { url: `${BASE}/moshy`,             lastModified: FRESH, changeFrequency: 'weekly',  priority: 0.92 },
+    { url: `${BASE}/moshy`,             lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.92 },
     { url: `${BASE}/moshy-review`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshy-eligibility`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/getmoshy`,          lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
