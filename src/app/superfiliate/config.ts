@@ -99,7 +99,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Superfiliate discount code?",
-      a: "New subscribers get 15% off the monthly Superfiliate fee through the link on this page, applied automatically with no code to type. Offers can change, so treat this as the current new-customer offer.",
+      a: "New subscribers get 15% off the monthly Superfiliate fee through the link on this page, applied automatically with no code to type. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer via our link. Offers can change, so treat this as the current new-customer offer.",
     },
     {
       q: "What is Superfiliate?",

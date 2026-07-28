@@ -109,7 +109,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       heading: "Mosh Codes & Offers",
       paragraphs: [
         'Searches for "Mosh hair discount code", "Mosh promo code", "Mosh coupon", and "Mosh sale" reflect the number of Australians who want to access Mosh at the best available price before committing to a subscription.',
-        "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. You don't need to hunt for a code or type anything at checkout: start through the link on this page and the offer is carried into the Mosh sign-up page automatically. Offers change over time, so treat 55% as the current new-customer rate, confirmed on Mosh's own sign-up page, rather than a permanent price.",
+        "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer via our link. You don't need to hunt for a code or type anything at checkout: start through the link on this page and the offer is carried into the Mosh sign-up page automatically. Offers change over time, so treat 55% as the current new-customer rate, confirmed on Mosh's own sign-up page, rather than a permanent price.",
         "If you have been searching for a Mosh hair discount, a Mosh discount Australia, or the best way to get started with Mosh, clicking through this page is the straightforward path.",
       ],
     },
