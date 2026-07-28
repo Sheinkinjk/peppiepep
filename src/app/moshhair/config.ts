@@ -149,7 +149,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Mosh hair discount code?",
-      a: "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Offers can change, so this reflects the current new-customer discount, confirmed on Mosh's own sign-up page.",
+      a: "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer. Offers can change, so this reflects the current new-customer discount, confirmed on Mosh's own sign-up page.",
     },
     {
       q: "Does Mosh have a promo code for hair loss treatment?",
