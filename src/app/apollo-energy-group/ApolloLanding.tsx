@@ -55,8 +55,11 @@ export default function ApolloLanding() {
               An independent look at Apollo Energy Group, a Sydney-based solar battery (home battery) company: what they install, how to judge a solar battery company, how the $500 Refer Labs discount is applied, and how the federal and NSW solar battery government rebates change what you really pay in 2026. No hype, no invented savings figures.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <ApolloCTA label="Claim your $500 discount" size="lg" loc="hero" />
+              <Link href="/apollo-energy-group-eoi" className="nw-btn-ghost" data-cta="hero-eoi">
+                Prefer a callback? Register your interest
+              </Link>
             </div>
 
             <p className="mt-4 text-xs text-[#9aa39c]">

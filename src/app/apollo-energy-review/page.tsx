@@ -82,6 +82,9 @@ function Offer({ loc }: { loc: string }) {
         <Link href="/apollo-energy-group" className="text-sm font-semibold text-[#0a7c42] hover:underline">
           See the full breakdown
         </Link>
+        <Link href="/apollo-energy-group-eoi" className="text-sm font-semibold text-[#0a7c42] hover:underline">
+          Prefer a callback? Register interest
+        </Link>
       </div>
     </div>
   );
