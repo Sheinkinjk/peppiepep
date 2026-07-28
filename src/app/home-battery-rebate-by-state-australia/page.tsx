@@ -337,6 +337,7 @@ export default function HomeBatteryRebateByStatePage() {
             <ul className="mt-3 space-y-2 text-[15px]">
               <li><Link href="/home-battery-rebate-australia" className="nw-link">The federal home battery rebate, in full: rate, taper and examples</Link></li>
               <li><Link href="/nsw-home-battery-rebate-2026" className="nw-link">NSW home battery rebate 2026, explained</Link></li>
+              <li><Link href="/virtual-power-plant-australia" className="nw-link">Virtual power plants (VPP): how the payments work</Link></li>
               <li><Link href="/home-battery-cost-australia" className="nw-link">What a home battery actually costs in Australia</Link></li>
               <li><Link href="/home-battery-payback-calculator" className="nw-link">Home battery payback calculator</Link></li>
               <li><Link href="/best-home-battery-australia" className="nw-link">Best home battery in Australia, compared</Link></li>

@@ -109,6 +109,7 @@ const STANDALONE_ROUTES = [
   "/what-size-home-battery-do-i-need-australia",
   "/nsw-home-battery-rebate-2026",
   "/home-battery-installer-nsw",
+  "/virtual-power-plant-australia",
   // Hair-loss cluster info pages (own light ConsumerShell)
   "/finasteride-australia",
   "/minoxidil-australia",

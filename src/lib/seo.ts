@@ -415,6 +415,13 @@ export const seoConfig = {
     url: `${SITE_URL}/home-battery-rebate-by-state-australia`,
     keywords: ["home battery rebate by state", "home battery rebate nsw", "home battery rebate victoria", "home battery rebate qld", "home battery rebate wa", "home battery rebate sa", "solar battery rebate by state australia", "state battery incentives australia 2026"],
   },
+  virtualPowerPlantAustralia: {
+    title: "Virtual Power Plant (VPP) Australia 2026: How Payments Work & Is It Worth It | Refer Labs",
+    description:
+      "What a Virtual Power Plant is, how VPP payments actually work, what a home battery can realistically earn (industry estimates put it at $200 to $1,500 a year), the upfront NSW VPP incentive, and the trade-offs on control and battery warranty. Information only.",
+    url: `${SITE_URL}/virtual-power-plant-australia`,
+    keywords: ["virtual power plant australia", "vpp australia", "is a vpp worth it", "how do vpp payments work", "vpp home battery australia", "join a vpp australia", "vpp incentive nsw"],
+  },
   homeBatteryPaybackCalculator: {
     title: "Home Battery Payback Calculator Australia 2026 | Refer Labs",
     description:
