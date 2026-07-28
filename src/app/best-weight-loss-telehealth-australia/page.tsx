@@ -458,7 +458,7 @@ export default function BestWeightLossTelehealthPage() {
             <FeatureMatrix
               firstColLabel="Criteria"
               columns={[
-                { name: "Moshy", highlight: true, badge: "Most popular" },
+                { name: "Moshy", highlight: true },
                 { name: "Juniper" },
                 { name: "Pilot" },
               ]}

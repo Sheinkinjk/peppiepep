@@ -170,12 +170,10 @@ export default function MoshyLanding() {
                 </p>
               </div>
 
-              <figure className="my-7 border-l-2 border-[#0a7c42] pl-5">
-                <blockquote className="text-xl font-semibold italic leading-snug text-[#2b362f]">
-                  &ldquo;The convenience is the point, but the practitioner review is what makes it worth taking
-                  seriously.&rdquo;
-                </blockquote>
-              </figure>
+              <p className="my-7 border-l-2 border-[#0a7c42] pl-5 text-[15px] leading-relaxed text-[#3d4b44]">
+                The convenience is the draw, but the practitioner review is the part that matters: a registered
+                practitioner assesses each application individually, and some are declined.
+              </p>
             </section>
 
             {/* GLP-1 */}
