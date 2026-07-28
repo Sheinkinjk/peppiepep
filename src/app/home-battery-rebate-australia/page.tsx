@@ -249,7 +249,9 @@ export default function HomeBatteryRebatePage() {
               </p>
               <p>
                 What you can actually claim depends on your state, your battery, your retailer and the VPP terms, so
-                treat this as a question for your installer rather than something to assume.
+                treat this as a question for your installer rather than something to assume. For the full picture, see the{" "}
+                <Link href="/home-battery-rebate-by-state-australia" className="nw-link">home battery rebate by state</Link>,
+                which sets out which states add their own incentive on top in 2026 and which no longer do.
               </p>
             </div>
           </section>

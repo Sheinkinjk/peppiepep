@@ -97,6 +97,7 @@ const sections = [
     guides: [
       { href: "/apollo-energy-group", label: "Apollo Energy Group", desc: "Battery specialists, sized from your real usage. $500 off your quote via our link." },
       { href: "/home-battery-rebate-australia", label: "The 2026 Battery Rebate", desc: "What the Cheaper Home Batteries discount pays, and why it tapers above 14kWh." },
+      { href: "/home-battery-rebate-by-state-australia", label: "Battery Rebate by State", desc: "Which states add their own incentive on top of the federal rebate in 2026, and which no longer do." },
       { href: "/apollo-energy-review", label: "Apollo Energy, Reviewed", desc: "Accreditation, warranty, and the things worth checking before you sign." },
       { href: "/home-battery-cost-australia", label: "What a Battery Costs", desc: "Real installed price ranges by size, what the rebate takes off, and payback." },
       { href: "/home-battery-payback-calculator", label: "Payback Calculator", desc: "Estimate net cost, annual saving and payback from your own usage and tariff." },

@@ -102,6 +102,7 @@ const STANDALONE_ROUTES = [
   "/apollo-energy-group",
   "/apollo-energy-review",
   "/home-battery-rebate-australia",
+  "/home-battery-rebate-by-state-australia",
   "/home-battery-cost-australia",
   "/home-battery-payback-calculator",
   "/best-home-battery-australia",

@@ -75,6 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/apollo-energy-review`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/apollo-energy-group-eoi`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.85 },
     { url: `${BASE}/home-battery-rebate-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/home-battery-rebate-by-state-australia`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.88 },
     { url: `${BASE}/home-battery-cost-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-payback-calculator`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.88 },
 

@@ -408,6 +408,13 @@ export const seoConfig = {
     url: `${SITE_URL}/home-battery-rebate-australia`,
     keywords: ["home battery rebate australia", "cheaper home batteries program", "battery rebate 2026", "solar battery rebate australia", "federal battery rebate", "home battery rebate how much", "battery rebate taper 14kwh", "stc battery rebate"],
   },
+  homeBatteryRebateByState: {
+    title: "Home Battery Rebate by State Australia 2026: NSW, VIC, QLD, WA, SA, TAS, ACT, NT | Refer Labs",
+    description:
+      "Home battery rebates by state for 2026. The federal Cheaper Home Batteries rebate (about $272 per usable kWh) applies everywhere; only WA and NSW add a meaningful state incentive on top, the ACT offers interest-free loans, and most other states no longer run their own battery rebate.",
+    url: `${SITE_URL}/home-battery-rebate-by-state-australia`,
+    keywords: ["home battery rebate by state", "home battery rebate nsw", "home battery rebate victoria", "home battery rebate qld", "home battery rebate wa", "home battery rebate sa", "solar battery rebate by state australia", "state battery incentives australia 2026"],
+  },
   homeBatteryPaybackCalculator: {
     title: "Home Battery Payback Calculator Australia 2026 | Refer Labs",
     description:
