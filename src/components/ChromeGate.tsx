@@ -166,6 +166,8 @@ const STANDALONE_ROUTES = [
   "/faq",
   // Deals hub
   "/deals",
+  // Apollo EOI campaign landing (own dark design)
+  "/apollo-energy-group-eoi",
   // Lender head-to-head comparisons (prefix covers /compare-business-lenders/<slug>)
   "/compare-business-lenders",
   // Lead admin (internal; renders its own minimal chrome, not the public shell)
