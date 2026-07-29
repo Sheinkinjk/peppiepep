@@ -1,6 +1,6 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
@@ -134,7 +134,8 @@ const datasetSchema = {
   inLanguage: "en-AU",
   creator: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
   dateModified: "2026-07-28",
-  spatialCoverage: { "@type": "Country", name: "Australia" },
+  license: `${SITE_URL}/terms`,
+  spatialCoverage: { "@type": "Place", name: "Australia" },
   variableMeasured: ["State-specific battery incentive", "Stacks with federal rebate", "Scheme status"],
 };
 
