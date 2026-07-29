@@ -12,12 +12,13 @@ import {
   BUTTERNUT_URL, DENSE_URL, NUTSHELL_URL,
   PIPEDRIVE_URL, ACTIVECAMPAIGN_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL, LANDINGI_URL,
 } from "@/lib/affiliate-links";
+import BrandMark from "@/components/consumer/BrandMark";
 
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
   { logo: "mosh", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: finasteride and minoxidil after a practitioner review. New customers get 55% off their first order via our link.", href: "/moshhair" },
-  { logo: "beehiiv", name: "beehiiv", cat: "Newsletters", verdict: "Built for creators serious about growth, with a genuinely useful free plan and no revenue cut.", href: "/best-newsletter-platform" },
+  { logo: "juniper", name: "Juniper", cat: "Weight loss", verdict: "The women-focused weight-management program: medication access wrapped in coaching, unlimited consults and an app, from $349/month.", href: "/juniper" },
   { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", verdict: "Home battery specialists, SAA-accredited and sized from your real usage. $500 off your quote through our link, on top of the federal rebate.", href: "/apollo-energy-group" },
 ];
 
@@ -192,7 +193,11 @@ export default function HomePage() {
                 <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-26px_rgba(14,124,66,0.45)]">
                   <div className="flex items-center justify-between">
                     <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
-                      <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
+                      {p.logo === "juniper" ? (
+                        <BrandMark src="/logos/juniper.png" alt="Juniper logo" monogram="J" className="h-9 w-9 text-lg" />
+                      ) : (
+                        <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
+                      )}
                     </span>
                     <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">{p.cat}</span>
                   </div>
