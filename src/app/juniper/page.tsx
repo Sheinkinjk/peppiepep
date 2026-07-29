@@ -110,7 +110,7 @@ export default function JuniperPage() {
           {/* Hero */}
           <header className="pt-9 pb-6">
             <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
-              <BrandMark src="/logos/juniper.svg" alt="Juniper" monogram="J" className="h-9 w-9 text-2xl" />
+              <BrandMark src="/logos/juniper.png" alt="Juniper" monogram="J" className="h-9 w-9 text-2xl" />
             </span>
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl lg:text-[2.6rem]">
               Juniper Australia: the women&apos;s weight-management program, reviewed
