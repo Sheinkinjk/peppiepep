@@ -12,7 +12,7 @@ import OffersTable from "@/components/lending/OffersTable";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
-// No affiliate arrangement with Pilot, so it is a plain nofollow link, same as Juniper.
+// No affiliate arrangement with Pilot, so it is a plain nofollow link. Juniper is an affiliate partner (sponsored) from July 2026.
 const PILOT_URL = "https://pilot.com.au/";
 
 const aff = (url: string, loc = "best-wl-telehealth") => ({
@@ -74,7 +74,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Is Moshy or Juniper better for weight loss in Australia?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds structured health coaching to its programme and markets primarily to Australian women. Both use an online eligibility questionnaire and practitioner-led review process. Neither is right for everyone. Suitability is assessed individually by each platform's clinical team. This page does not constitute medical advice." }
+      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds structured health coaching to its programme and markets primarily to Australian women. Both use an online eligibility questionnaire and practitioner-led review process. Suitability is assessed individually by each platform's clinical team. This page does not constitute medical advice." }
     },
     {
       "@type": "Question",
@@ -286,9 +286,11 @@ const platforms: PlatformCardProps[] = [
       "Women only, not available for men",
       "More premium pricing than some alternatives",
     ],
-    extUrl: JUNIPER_URL,
-    isAffiliate: false,
-    ctaLabel: "Visit Juniper",
+    affUrl: JUNIPER_URL,
+    isAffiliate: true,
+    ctaLabel: "See Juniper's program",
+    internalUrl: "/juniper",
+    reviewLabel: "Full Juniper review",
   },
   {
     id: "pilot",
@@ -417,7 +419,7 @@ export default function BestWeightLossTelehealthPage() {
                 <tbody>
                   {[
                     { name: "Moshy",        audience: "Anyone eligible (Australia)", approach: "Telehealth + medication",    glp1: "Yes (subject to eligibility)", href: "#moshy",       url: MOSHY_URL,    cta: "Check eligibility",  isAff: true },
-                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medication",      glp1: "Yes (subject to eligibility)", href: "#juniper",     url: JUNIPER_URL,  cta: "Visit Juniper",      isAff: false },
+                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medication",      glp1: "Yes (subject to eligibility)", href: "#juniper",     url: JUNIPER_URL,  cta: "Visit Juniper",      isAff: true },
                   ].map((row) => (
                     <tr key={row.name} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors">
                       <td className="py-3 pr-4">
@@ -553,7 +555,7 @@ export default function BestWeightLossTelehealthPage() {
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
-              This page is operated by Refer Labs and contains an affiliate referral link to Moshy. Juniper is linked without an affiliate arrangement. All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
+              This page is operated by Refer Labs and contains affiliate referral links to Moshy and Juniper. This post contains affiliate links: if you are a new Juniper patient and make a purchase through these links, I may earn a small commission at no extra cost to you. Pilot is linked without an affiliate arrangement. All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href="/moshy" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>

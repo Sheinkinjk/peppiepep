@@ -82,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Health affiliate pages (redesigned this release) ───────────────
     { url: `${BASE}/moshy`,             lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.92 },
+    { url: `${BASE}/juniper`,           lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/moshy-review`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshy-eligibility`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/getmoshy`,          lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },

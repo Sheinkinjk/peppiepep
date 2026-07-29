@@ -1464,6 +1464,14 @@ export const seoConfig = {
     ],
   },
 
+  juniper: {
+    title: "Juniper Australia Review 2026: Weight Reset Program, Cost & How It Works | Refer Labs",
+    description:
+      "An independent look at Juniper, the women-focused weight-management telehealth program in Australia. What it is, what's included, the $349/month cost, how eligibility works, and how it compares to Moshy. Information only, not medical advice.",
+    url: `${SITE_URL}/juniper`,
+    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper vs moshy"],
+  },
+
   juniperAlternatives: {
     // Route retired (July 2026) and 301s to /best-weight-loss-telehealth-australia (see next.config.ts)
     // ahead of onboarding Juniper as a partner. noIndex is defensive: if the redirect is ever removed,

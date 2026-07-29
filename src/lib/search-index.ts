@@ -23,6 +23,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Weight loss
   { title: "Moshy, explained: how the service works", href: "/moshy-review", category: "Weight loss", kind: "Guide", keywords: "getmoshy moshy review telehealth weight management online clinic" },
   { title: "Moshy vs Juniper", href: "/moshy-vs-juniper", category: "Weight loss", kind: "Guide", keywords: "compare weight loss telehealth juniper" },
+  { title: "Juniper review (women's weight-management)", href: "/juniper", category: "Weight loss", kind: "Guide", keywords: "juniper australia weight loss review cost 349 coaching women glp-1 vs moshy myjuniper" },
   { title: "Best weight loss telehealth in Australia", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia glp-1" },
   { title: "Moshy vs your GP", href: "/moshy-vs-gp", category: "Weight loss", kind: "Guide", keywords: "doctor bulk bill medicare gp telehealth" },
   { title: "Moshy alternatives", href: "/moshy-alternatives", category: "Weight loss", kind: "Guide", keywords: "other options competitors similar" },

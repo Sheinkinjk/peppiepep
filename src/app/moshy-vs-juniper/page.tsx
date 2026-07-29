@@ -11,7 +11,6 @@ const CYAN = "#0a7c42";
 const CYAN_LT = "#0a7c42";
 
 const aff = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow sponsored" as const });
-const ext = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow" as const });
 
 // ── JSON-LD ──────────────────────────────────────────────────────────────────
 const breadcrumbSchema = {
@@ -27,7 +26,7 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "Is Moshy or Juniper better for weight loss?",
-    a: "Neither is universally better, they take different approaches. Moshy runs a lean, clinically-led telehealth pathway open to anyone eligible; Juniper pairs medication access with a structured coaching and habit program and markets primarily to women. The right choice depends on how much coaching support you want alongside the clinical side. Both can facilitate GLP-1 access through Australian-registered practitioners where clinically appropriate.",
+    a: "They take different approaches. Moshy runs a lean, clinically-led telehealth pathway open to anyone eligible; Juniper pairs medication access with a structured coaching and habit program and markets primarily to women. The right choice depends on how much coaching support you want alongside the clinical side. Both can facilitate GLP-1 access through Australian-registered practitioners where clinically appropriate.",
   },
   {
     q: "How do I choose between Moshy and Juniper?",
@@ -189,7 +188,7 @@ export default function MoshyVsJuniperPage() {
             and structure are what tend to make or break your results, that is a meaningful advantage.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Neither approach is objectively superior. Outcomes from weight-management programs depend on clinical
+            Outcomes from weight-management programs depend on clinical
             suitability, adherence, and individual factors far more than on which logo is on the box.
           </p>
         </section>
@@ -223,12 +222,17 @@ export default function MoshyVsJuniperPage() {
               Medication access plus a structured coaching and community program designed for women.
             </p>
             <a
-              {...ext(JUNIPER_URL)}
+              {...aff(JUNIPER_URL)}
               className="inline-flex items-center gap-2 rounded-xl border px-5 py-2.5 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
               style={{ borderColor: `${CYAN}30` }}
             >
-              Visit Juniper
+              See Juniper&apos;s program
             </a>
+            <p className="mt-3">
+              <Link href="/juniper" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
+                Read our full Juniper review &rarr;
+              </Link>
+            </p>
           </div>
         </div>
 
@@ -254,13 +258,16 @@ export default function MoshyVsJuniperPage() {
             Best Weight Loss Telehealth Australia →
           </Link>
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy full review →</Link>
+          <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review →</Link>
           <Link href="/guides" style={{ color: CYAN }} className="hover:opacity-80">All guides →</Link>
         </div>
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This page contains affiliate links, so we may earn a commission if you sign up through them, at no extra cost to
-          you. It does not constitute medical advice. GLP-1 and other prescription treatments require assessment by a
-          registered Australian practitioner. Consult a qualified health professional before making health decisions.
+          This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links, I
+          may earn a small commission at no extra cost to you. Refer Labs also has a disclosed affiliate arrangement with
+          Moshy. Commissions never change what we write. This page does not constitute medical advice. GLP-1 and other
+          prescription treatments require assessment by a registered Australian practitioner. Consult a qualified health
+          professional before making health decisions.
         </p>
       </main>
       <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />

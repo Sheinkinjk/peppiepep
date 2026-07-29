@@ -22,8 +22,13 @@ export const MOSH_HAIR_URL = "https://www.getmosh.com.au/start/referlabs";
 export const DENSE_URL =
   "https://densehairexperts.myshopify.com?sca_ref=10755034.xwTupm6fuv&utm_source=affiliate-jarred-krowitz&utm_medium=affiliate-jarred-krowitz&utm_campaign=affiliate";
 
-// ── Weight-loss comparison competitors (non-affiliate reference links) ───────
-export const JUNIPER_URL = "https://www.myjuniper.com.au/";
+// ── Weight-loss: Juniper (affiliate partner from July 2026) ──────────────────
+// Commission-only tracking link. The code JARREDKFC gives the customer NO
+// discount, so Juniper must never be presented with an "$X off" offer (ACL s29).
+// myjuniper.com is the live site; myjuniper.com.au is a parked domain.
+// Confirmed tracking URL supplied by Jarred (July 2026).
+export const JUNIPER_URL =
+  "https://www.myjuniper.com/?utm_source=affiliate&utm_campaign=jarred_k&discountCode=JARREDKFC";
 
 // ── Research peptides (research use only) ────────────────────────────────────
 

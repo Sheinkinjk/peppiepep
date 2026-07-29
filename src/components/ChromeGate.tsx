@@ -44,6 +44,7 @@ const STANDALONE_ROUTES = [
   "/mens-health-telehealth-australia",
   // Comparison roundups + head-to-heads (not core business)
   "/moshy-vs-juniper",
+  "/juniper",
   "/carrd-vs-durable",
   "/best-weight-loss-telehealth-australia",
   "/best-hair-loss-treatment-australia",
