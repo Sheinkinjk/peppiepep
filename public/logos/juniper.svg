@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Juniper">
+  <path d="M128 40C180 100 180 158 128 220C76 158 76 100 128 40Z" fill="#123f29"/>
+  <path d="M128 66V200" stroke="#7ec98f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M128 118C110 104 96 102 86 105" stroke="#7ec98f" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M128 152C146 138 160 136 170 139" stroke="#7ec98f" stroke-width="7" stroke-linecap="round" fill="none"/>
+</svg>

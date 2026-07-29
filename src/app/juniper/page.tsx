@@ -1,6 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { JUNIPER_URL, MOSHY_URL } from "@/lib/affiliate-links";
-import { MOSHY_OFFER } from "@/lib/offers";
+import { JUNIPER_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -47,7 +46,7 @@ const faqs = [
   },
   {
     q: "Juniper vs Moshy: which should I choose?",
-    a: "They take different approaches. Moshy runs a leaner clinically-led pathway that is open to anyone eligible and currently gives new customers a sign-up discount. Juniper wraps medication access inside a more structured coaching and community program designed for women, from $349 per month. If you want a focused clinical pathway or the sign-up saving, Moshy is the relevant option; if you want coaching and accountability alongside medication and are comfortable with the higher price, Juniper is built for that. Both assess suitability individually.",
+    a: "They take different approaches. Juniper wraps medication access inside a structured coaching and community program designed for women, with unlimited practitioner consultations, an app and ongoing support, from $349 per month. Moshy runs a leaner, medication-first clinical pathway that is open to anyone eligible. If you want coaching and accountability built around the medical care, Juniper is designed for exactly that; if you want a focused, no-frills clinical pathway, Moshy is the leaner option. Both assess suitability individually through Australian-registered practitioners.",
   },
   {
     q: "How do I start with Juniper?",
@@ -111,7 +110,7 @@ export default function JuniperPage() {
           {/* Hero */}
           <header className="pt-9 pb-6">
             <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
-              <BrandMark src="/logos/juniper.png" alt="Juniper" monogram="J" className="h-9 w-9 text-2xl" />
+              <BrandMark src="/logos/juniper.svg" alt="Juniper" monogram="J" className="h-9 w-9 text-2xl" />
             </span>
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl lg:text-[2.6rem]">
               Juniper Australia: the women&apos;s weight-management program, reviewed
@@ -176,26 +175,6 @@ export default function JuniperPage() {
             </div>
           </section>
 
-          {/* Moshy alternative, kept prominent */}
-          <section className="mt-11 rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-6 sm:p-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">Compare before you commit</p>
-            <h2 className="mt-2 text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">Prefer a sign-up discount? Look at Moshy</h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
-              Moshy runs a leaner, clinically-led pathway that is open to anyone eligible, not women only, and new
-              customers currently get <strong className="text-[#10251b]">{MOSHY_OFFER.amount}</strong> their first order.
-              Juniper&apos;s coaching wrap suits people who want structure and accountability; Moshy suits people who want
-              a focused clinical pathway at a lower entry price and the bigger sign-up saving.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <Link href="/moshy" className="nw-btn" data-cta="juniper-to-moshy">
-                See the Moshy offer <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/moshy-vs-juniper" className="nw-btn-ghost">
-                Moshy vs Juniper, compared
-              </Link>
-            </div>
-          </section>
-
           {/* Second CTA */}
           <section className="mt-11 rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
             <h2 className="text-lg font-bold text-[#10251b]">Start Juniper&apos;s eligibility check</h2>
@@ -229,7 +208,6 @@ export default function JuniperPage() {
             <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
             <ul className="mt-3 space-y-2 text-[15px]">
               <li><Link href="/moshy-vs-juniper" className="nw-link">Moshy vs Juniper, compared</Link></li>
-              <li><Link href="/moshy" className="nw-link">Moshy offer &amp; referral link ({MOSHY_OFFER.amount})</Link></li>
               <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth in Australia</Link></li>
               <li><Link href="/weight-loss-telehealth-cost-australia" className="nw-link">What weight-loss telehealth costs</Link></li>
               <li><Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link></li>
