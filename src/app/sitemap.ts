@@ -87,7 +87,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/getmoshy`,          lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-vs-gp`,       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-alternatives`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/juniper-alternatives`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/online-weight-loss-programs-australia`,  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },

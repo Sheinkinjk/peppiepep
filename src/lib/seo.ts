@@ -1465,6 +1465,10 @@ export const seoConfig = {
   },
 
   juniperAlternatives: {
+    // Route retired (July 2026) and 301s to /best-weight-loss-telehealth-australia (see next.config.ts)
+    // ahead of onboarding Juniper as a partner. noIndex is defensive: if the redirect is ever removed,
+    // this cannot silently republish a page that steers away from a partner.
+    noIndex: true,
     title: "Juniper Alternatives 2026: Weight Loss Telehealth Options in Australia",
     description:
       "Juniper alternatives in Australia 2026: want a gender-neutral option, a leaner clinical pathway or a different price model? Here's who fits, and why.",

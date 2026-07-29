@@ -217,7 +217,7 @@ export default function MoshyVsJuniperPage() {
             </p>
           </div>
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">For women</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Designed for women</p>
             <h3 className="text-lg font-bold mb-2">Consider Juniper</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
               Medication access plus a structured coaching and community program designed for women.
@@ -253,7 +253,6 @@ export default function MoshyVsJuniperPage() {
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">
             Best Weight Loss Telehealth Australia →
           </Link>
-          <Link href="/juniper-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Juniper alternatives →</Link>
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy full review →</Link>
           <Link href="/guides" style={{ color: CYAN }} className="hover:opacity-80">All guides →</Link>
         </div>

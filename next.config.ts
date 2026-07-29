@@ -62,6 +62,9 @@ const nextConfig: NextConfig = {
       { source: '/zoominfo', destination: '/best-ai-sales-tools', permanent: true },
       { source: '/meetgeek', destination: '/compare/ai-tools', permanent: true },
       { source: '/logome', destination: '/compare/ai-tools', permanent: true },
+      // Juniper alternatives retired (July 2026) ahead of onboarding Juniper as a partner;
+      // a page steering away from a partner is untenable. 301 to the fair comparison roundup.
+      { source: '/juniper-alternatives', destination: '/best-weight-loss-telehealth-australia', permanent: true },
       {
         // Canonicalise www -> non-www (both were serving 200, splitting SEO signals).
         source: '/:path*',

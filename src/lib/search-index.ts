@@ -26,7 +26,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Best weight loss telehealth in Australia", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia glp-1" },
   { title: "Moshy vs your GP", href: "/moshy-vs-gp", category: "Weight loss", kind: "Guide", keywords: "doctor bulk bill medicare gp telehealth" },
   { title: "Moshy alternatives", href: "/moshy-alternatives", category: "Weight loss", kind: "Guide", keywords: "other options competitors similar" },
-  { title: "Juniper alternatives", href: "/juniper-alternatives", category: "Weight loss", kind: "Guide", keywords: "juniper alternative is juniper only for women gender neutral moshy vs juniper youly weight loss" },
   { title: "Moshy eligibility check explained", href: "/moshy-eligibility", category: "Weight loss", kind: "Guide", keywords: "qualify assessment questionnaire suitability" },
   { title: "Weight-loss cost calculator", href: "/weight-loss-cost-calculator", category: "Weight loss", kind: "Guide", keywords: "cost calculator price how much pay subscription gp medicare pathway planner tool" },
   { title: "Which weight-loss option fits you", href: "/weight-loss-quiz", category: "Weight loss", kind: "Guide", keywords: "which weight loss program quiz match telehealth or gp online moshy eligibility recommend option for me" },

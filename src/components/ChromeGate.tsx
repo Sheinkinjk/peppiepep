@@ -71,7 +71,6 @@ const STANDALONE_ROUTES = [
   "/moshy-vs-pilot",
   "/mosh-vs-pilot",
   "/mosh-vs-dense",
-  "/juniper-alternatives",
   // Website-builder + peptide head-to-heads
   "/carrd-vs-butternut",
   "/durable-vs-butternut",

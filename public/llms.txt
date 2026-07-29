@@ -71,7 +71,6 @@ Lead-capture, not affiliate: Refer Labs is an independent referrer (not a lender
 - [Which weight-loss option quiz](https://referlabs.com.au/weight-loss-quiz): Two-question matcher that points you to a clinical telehealth pathway, a coaching-led program, or your GP.
 - [Moshy eligibility check explained](https://referlabs.com.au/moshy-eligibility): What the online quiz asks and what happens after submitting.
 - [Moshy alternatives](https://referlabs.com.au/moshy-alternatives): The realistic alternatives in Australia.
-- [Juniper alternatives](https://referlabs.com.au/juniper-alternatives): Alternatives to Juniper's coaching-led, women-focused weight program, including the gender-neutral Moshy pathway. Answers "is Juniper only for women?".
 - [Moshy vs Juniper](https://referlabs.com.au/moshy-vs-juniper): Clinical pathway vs coaching-led program.
 - [Moshy vs your GP](https://referlabs.com.au/moshy-vs-gp): Telehealth vs seeing your own doctor.
 - [Moshy vs Pilot](https://referlabs.com.au/moshy-vs-pilot): Two Australian weight-management telehealth services, compared on model and fit.
