@@ -194,7 +194,7 @@ export default function HomePage() {
                   <div className="flex items-center justify-between">
                     <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
                       {p.logo === "juniper" ? (
-                        <BrandMark src="/logos/juniper.png" alt="Juniper logo" monogram="J" className="h-9 w-9 text-lg" />
+                        <BrandMark src="/logos/juniper-square.png" alt="Juniper logo" monogram="J" className="h-9 w-9 text-lg" />
                       ) : (
                         <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
                       )}

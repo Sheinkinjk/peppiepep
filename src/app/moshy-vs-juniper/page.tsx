@@ -3,7 +3,6 @@ import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -138,16 +137,6 @@ export default function MoshyVsJuniperPage() {
             medication, Juniper is built for that and markets primarily to women. Both assess suitability individually
             through registered Australian practitioners.
           </p>
-          <div className="mt-5">
-            <a
-              {...aff(MOSHY_URL)}
-              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
-              style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
-            >
-              Check Moshy Eligibility
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
         </div>
 
         {/* Comparison table */}
@@ -223,10 +212,11 @@ export default function MoshyVsJuniperPage() {
             </p>
             <a
               {...aff(JUNIPER_URL)}
-              className="inline-flex items-center gap-2 rounded-xl border px-5 py-2.5 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
-              style={{ borderColor: `${CYAN}30` }}
+              className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
+              style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
             >
               See Juniper&apos;s program
+              <ArrowRight className="h-4 w-4" />
             </a>
             <p className="mt-3">
               <Link href="/juniper" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
@@ -270,7 +260,6 @@ export default function MoshyVsJuniperPage() {
           professional before making health decisions.
         </p>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>
   );
 }
