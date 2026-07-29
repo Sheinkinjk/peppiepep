@@ -24,7 +24,7 @@ const PARTNER_VALUE: Record<string, number> = {
   "getmoshy.com.au": 80,
   "getmosh.com.au": 70,
   "densehairexperts.myshopify.com": 25,
-  "myjuniper.com.au": 0,
+  "myjuniper.com": 50,
   "beehiiv.com": 40,
   "try.carrd.co": 6,
   "durableai.link": 20,

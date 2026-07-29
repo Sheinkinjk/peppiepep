@@ -47,7 +47,7 @@ function resolve(gender: Gender, priority: Priority): Result {
       return {
         title: "Juniper looks like your fit",
         body: "You want accountability and structure alongside medication, and Juniper is built for women with exactly that coaching-and-community layer on top of the clinical pathway.",
-        cta: { label: "Visit Juniper", href: JUNIPER_URL, sponsored: false, loc: "quiz-juniper" },
+        cta: { label: "Visit Juniper", href: JUNIPER_URL, sponsored: true, loc: "quiz-juniper" },
         secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
         also: "Prefer a leaner, medication-first pathway without the coaching layer? Moshy is open to anyone eligible.",
       };

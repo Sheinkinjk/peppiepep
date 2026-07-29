@@ -297,8 +297,9 @@ export default function WeightLossHubPage() {
           <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
             <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing in this hub is medical advice
             or a recommendation of any treatment. Prescription medicines in Australia are available only after individual
-            assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never
-            change a comparison or a conclusion.
+            assessment by a registered practitioner. Some links are disclosed affiliate links, including to Moshy and
+            Juniper: if you are a new Juniper patient and make a purchase through these links, I may earn a small
+            commission at no extra cost to you. Commissions never change a comparison or a conclusion.
           </p>
         </section>
       </main>

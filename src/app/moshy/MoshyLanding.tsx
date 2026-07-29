@@ -135,7 +135,7 @@ export default function MoshyLanding() {
               <ul className="space-y-2.5 text-sm">
                 {[
                   ["what", "What Moshy actually is"],
-                  ["glp1", "GLP-1 & semaglutide"],
+                  ["glp1", "GLP-1 medications"],
                   ["start", "How to start"],
                   ["bottom-line", "The bottom line"],
                   ["faq", "FAQ"],
@@ -179,12 +179,12 @@ export default function MoshyLanding() {
             {/* GLP-1 */}
             <section id="glp1" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-                GLP-1 &amp; semaglutide, the facts
+                GLP-1 medications, the facts
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  A lot of people reach Moshy while researching GLP-1 medications, the class that includes semaglutide. The
-                  most important fact to understand up front is a regulatory one, not a sales pitch.
+                  A lot of people reach Moshy while researching GLP-1 medications. The most important fact to understand
+                  up front is a regulatory one.
                 </p>
                 <p>
                   In Australia these medications are{" "}

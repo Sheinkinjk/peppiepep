@@ -10,7 +10,7 @@ export const metadata = generateSEOMetadata(seoConfig.onlineWeightLossPrograms);
 const CYAN = "#0a7c42";
 const CYAN_LT = "#0a7c42";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
-const ext = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow" as const });
+const juniperAff = { target: "_blank" as const, rel: "nofollow sponsored" as const, "data-cta": "online-programs-juniper" };
 
 const faqs = [
   {
@@ -173,7 +173,7 @@ export default function OnlineWeightLossProgramsPage() {
               The same clinical pathway with a coaching and community layer on top, marketed to women.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a {...ext(JUNIPER_URL)} className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]" style={{ borderColor: `${CYAN}30` }}>
+              <a href={JUNIPER_URL} {...juniperAff} className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]" style={{ borderColor: `${CYAN}30` }}>
                 Juniper
               </a>
             </div>
@@ -202,9 +202,10 @@ export default function OnlineWeightLossProgramsPage() {
         </div>
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
-          sign up through it, at no extra cost to you. Nothing here is medical advice. Prescription medicines in
-          Australia require individual assessment by a registered practitioner.
+          This page is operated by Refer Labs and contains affiliate referral links to Moshy and Juniper. This post
+          contains affiliate links: if you are a new Juniper patient and make a purchase through these links, I may earn a
+          small commission at no extra cost to you. Nothing here is medical advice. Prescription medicines in Australia
+          require individual assessment by a registered practitioner.
         </p>
         <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>

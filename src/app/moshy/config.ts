@@ -26,7 +26,7 @@ export const moshyConfig: AffiliatePageConfig = {
       "Current Moshy referral link - no code required",
       "Covers Moshy weight loss cost and subscription pricing",
       "Moshy vs Juniper comparison",
-      "GLP-1 and semaglutide eligibility explained",
+      "GLP-1 eligibility explained",
       "Australia-only - links to getmoshy.com.au",
     ],
   },
@@ -52,7 +52,7 @@ export const moshyConfig: AffiliatePageConfig = {
         "This page does not constitute medical advice and does not imply suitability for any specific individual. Consult a qualified health professional before making any health-related decisions.",
     },
     {
-      heading: "GLP-1 & Semaglutide",
+      heading: "GLP-1 Medications",
       paragraphs: [
         "Moshy is one of the most searched Australian telehealth platforms in connection with GLP-1 medications used in weight management. The most important thing to understand up front is a regulatory fact, not a sales pitch.",
         "In Australia, GLP-1 medications are prescription-only. A telehealth platform like Moshy can facilitate access to an assessment with a registered Australian practitioner who, if they determine it is clinically appropriate, may prescribe. Moshy does not advertise which specific medications are available - this is discussed only as part of the clinical consultation after eligibility is assessed.",
@@ -132,7 +132,7 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "Yes, Moshy operates through referral links that give users direct access to their eligibility flow and any associated offer. This page provides a personalised Moshy referral link. Click any button on this page to use it, and the referral is tracked through the link automatically.",
     },
     {
-      q: "Does Moshy offer semaglutide or GLP-1 medications in Australia?",
+      q: "Does Moshy offer GLP-1 medications in Australia?",
       a: "Moshy can facilitate access to a clinical assessment with an Australian-registered practitioner who may, if clinically appropriate, prescribe GLP-1 medications. GLP-1 medications are prescription-only in Australia and access depends entirely on individual clinical suitability. Moshy does not advertise which specific medications are available prior to the consultation. This page does not constitute medical advice.",
     },
     {

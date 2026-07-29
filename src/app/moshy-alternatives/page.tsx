@@ -10,7 +10,7 @@ export const metadata = generateSEOMetadata(seoConfig.moshyAlternatives);
 const CYAN = "#0a7c42";
 const CYAN_LT = "#0a7c42";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
-const ext = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow" as const });
+const juniperAff = { target: "_blank" as const, rel: "nofollow sponsored" as const, "data-cta": "moshy-alternatives-juniper" };
 
 const faqs = [
   {
@@ -107,7 +107,7 @@ export default function MoshyAlternativesPage() {
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Juniper runs a close model to Moshy but adds a coaching and community layer on top of the clinical pathway,
             and markets primarily to women. If that structure is what you want,{" "}
-            <a {...ext(JUNIPER_URL)} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
+            <a href={JUNIPER_URL} {...juniperAff} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Juniper is here
             </a>.
           </p>
@@ -158,8 +158,9 @@ export default function MoshyAlternativesPage() {
         </div>
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
-          sign up through it, at no extra cost to you. Nothing here is medical advice. Always consult a qualified health
+          This page is operated by Refer Labs and contains affiliate referral links to Moshy and Juniper. This post
+          contains affiliate links: if you are a new Juniper patient and make a purchase through these links, I may earn a
+          small commission at no extra cost to you. Nothing here is medical advice. Always consult a qualified health
           professional about your own circumstances.
         </p>
         <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
