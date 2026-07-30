@@ -45,9 +45,14 @@ export default function ApolloLanding() {
         {/* ── Hero: data-capture first ── */}
         <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div>
-            <span className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-[#e5e9e7] bg-white text-2xl font-black text-[#0a7c42] shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
-              A
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logos/apollo-energy.png"
+              alt="Apollo Energy Group logo"
+              width={64}
+              height={64}
+              className="mb-5 h-16 w-16 rounded-2xl shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]"
+            />
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.1rem]">
               Apollo Energy Group: a Sydney solar battery company,{" "}
               <span className="text-[#0a7c42]">$500 off through Refer Labs.</span>
