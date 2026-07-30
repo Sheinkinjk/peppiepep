@@ -78,6 +78,11 @@ const nextConfig: NextConfig = {
         destination: 'https://referlabs.com.au/:path*',
         permanent: true,
       },
+      // Retire the legacy US B2B /blog cluster -> /affiliate-programs-australia (July 2026).
+      // The catch-all covers every post; the specific rule below is kept for clarity
+      // (same destination, so ordering is harmless).
+      { source: '/blog', destination: '/affiliate-programs-australia', permanent: true },
+      { source: '/blog/:path*', destination: '/affiliate-programs-australia', permanent: true },
       {
         // Consolidate the legacy affiliate blog post onto the strategic hub page
         // (both ranked for the same intent; the hub is the canonical asset).
