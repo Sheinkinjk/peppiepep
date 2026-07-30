@@ -288,7 +288,7 @@ const platforms: PlatformCardProps[] = [
     ],
     affUrl: JUNIPER_URL,
     isAffiliate: true,
-    ctaLabel: "See Juniper's program",
+    ctaLabel: "Check eligibility",
     internalUrl: "/juniper",
     reviewLabel: "Full Juniper review",
   },

@@ -215,7 +215,7 @@ export default function MoshyVsJuniperPage() {
               className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
               style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
             >
-              See Juniper&apos;s program
+              Check Juniper eligibility
               <ArrowRight className="h-4 w-4" />
             </a>
             <p className="mt-3">

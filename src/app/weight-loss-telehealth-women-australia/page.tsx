@@ -169,6 +169,7 @@ export default function WeightLossTelehealthWomenPage() {
 
         <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy-vs-juniper" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs Juniper &rarr;</Link>
+          <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review &rarr;</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review &rarr;</Link>
           <Link href="/online-weight-loss-programs-australia" style={{ color: CYAN }} className="hover:opacity-80">Online weight loss programs &rarr;</Link>
         </div>

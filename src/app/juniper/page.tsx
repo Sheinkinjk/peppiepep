@@ -40,6 +40,10 @@ const faqs = [
     a: "Juniper's own site lists the Weight Reset Program from $349 per month, which it says includes the treatment, unlimited consultations and delivery, with optional 1:1 health coaching as a paid add-on and a 30-day money-back guarantee. Any medication is prescribed only after individual assessment, and the final cost depends on the plan. Prices change, so confirm the current figure on Juniper's own site before you commit.",
   },
   {
+    q: "Does Juniper have a discount or promo code?",
+    a: "There is no Refer Labs discount code for Juniper, unlike some of the programs we cover. Juniper itself sometimes runs a new-patient promotion, which appears in a banner on its own site after you click through from here. Availability changes over time and we don't control it, so there may or may not be one when you visit. We never publish a code we can't stand behind.",
+  },
+  {
     q: "Does Juniper offer GLP-1 medication?",
     a: "Juniper can facilitate access to a clinical assessment with an Australian-registered practitioner who may, if it is clinically appropriate, prescribe a GLP-1 or dual-agonist medication. These medicines are prescription-only in Australia and access depends entirely on individual assessment. Not everyone who applies is prescribed medication. This page names the drug class only, not any brand, and is not medical advice.",
   },
@@ -136,7 +140,7 @@ export default function JuniperPage() {
               reviews it before anything is prescribed.
             </p>
             <a {...juniperAff} data-cta="juniper-hero" className="nw-btn shrink-0 whitespace-nowrap">
-              See Juniper&apos;s program <ArrowRight className="h-4 w-4" />
+              Check your eligibility <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
@@ -170,6 +174,11 @@ export default function JuniperPage() {
                 prescribed only after an individual assessment, so the final cost depends on the plan a practitioner
                 considers appropriate. Prices change, so confirm the current figure on Juniper&apos;s own site.
               </p>
+              <p>
+                There is no Refer Labs discount code for Juniper. Juniper itself sometimes runs a new-patient promotion,
+                shown in a banner on its own site after you click through from here. Availability changes over time and it
+                is not something we control, so there may or may not be one when you visit.
+              </p>
             </div>
           </section>
 
@@ -181,7 +190,7 @@ export default function JuniperPage() {
               reviews your answers before anything is prescribed, and you see the cost before you commit.
             </p>
             <a {...juniperAff} data-cta="juniper-footer" className="nw-btn mt-5">
-              See Juniper&apos;s program <ArrowRight className="h-4 w-4" />
+              Check your eligibility <ArrowRight className="h-4 w-4" />
             </a>
           </section>
 
@@ -226,7 +235,7 @@ export default function JuniperPage() {
           </section>
         </div>
       </main>
-      <StickyCta href={JUNIPER_URL} product="Juniper weight-management program" label="See Juniper" />
+      <StickyCta href={JUNIPER_URL} product="Juniper weight-management program" label="Check eligibility" />
     </ConsumerShell>
   );
 }
