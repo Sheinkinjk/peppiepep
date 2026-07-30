@@ -1740,9 +1740,9 @@ export const seoConfig = {
   },
 
   comparisonWebsite: {
-    title: "Australia's Curated Health & Performance Comparison Platform | Refer Labs",
+    title: "Get Featured: Australia's Independent Comparison Platform | Refer Labs",
     description:
-      "A properly researched comparison platform across five health and performance categories in Australia: ED, weight loss, hair loss, testosterone, and supplements. Not a pay-to-rank directory.",
+      "Apply to be featured on Refer Labs, an independent Australian comparison platform across health, home energy and business software. Placement is earned against published criteria, never pay-to-rank.",
     url: `${SITE_URL}/comparison-website`,
     keywords: [
       "best ED clinics Australia",

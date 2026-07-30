@@ -4,11 +4,11 @@ import { useState } from "react";
 import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
 const categories = [
-  "Erectile Dysfunction",
-  "Weight Loss",
-  "Hair Loss",
-  "Testosterone & Hormone Optimisation",
-  "Supplements & Longevity",
+  "Weight loss & telehealth",
+  "Hair loss & men's health",
+  "Home batteries & solar",
+  "Business lending",
+  "Business software",
 ] as const;
 
 type Category = (typeof categories)[number];

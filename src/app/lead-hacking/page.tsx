@@ -392,7 +392,7 @@ export default function LeadHackingPage() {
               Book a Call
             </a>
             <Link
-              href="/services"
+              href="/for-business"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-base font-bold text-white transition hover:bg-white/10"
             >
               View All Services

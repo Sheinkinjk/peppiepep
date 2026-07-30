@@ -7,7 +7,7 @@ export const metadata = generateSEOMetadata(seoConfig.caseStudies);
 const segments = [
   {
     title: "Financial Services",
-    href: "/services/financial-advisors",
+    href: "/for-business",
     outcomes: [
       "Structured advisor + broker referral channels",
       "Co-branded go-to-market kits for regulated audiences",
@@ -16,7 +16,7 @@ const segments = [
   },
   {
     title: "Accounting & Tax",
-    href: "/services/accountants",
+    href: "/for-business",
     outcomes: [
       "Partnerships with mid-tier and boutique firms",
       "Licensing and white-label opportunities for practices",
@@ -25,7 +25,7 @@ const segments = [
   },
   {
     title: "Insurance",
-    href: "/services/insurance-brokers",
+    href: "/for-business",
     outcomes: [
       "Broker and MGA distribution programs",
       "Product-localised terms for AU/NZ regulatory expectations",
@@ -34,7 +34,7 @@ const segments = [
   },
   {
     title: "HR & Recruitment",
-    href: "/services/recruiters-staffing",
+    href: "/for-business",
     outcomes: [
       "Agency alliances and embedded recruiter motions",
       "Talent marketplace partnerships",
@@ -43,7 +43,7 @@ const segments = [
   },
   {
     title: "Professional Services",
-    href: "/services/consultants-coaches",
+    href: "/for-business",
     outcomes: [
       "Industry association introductions",
       "Partner-led implementations with accountability SLAs",

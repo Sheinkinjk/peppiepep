@@ -189,7 +189,7 @@ export default function WhoItsForPage() {
                   Partner With Us
                 </a>
                 <Link
-                  href="/services"
+                  href="/for-business"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#0AA7B5]/25 bg-[#0AA7B5]/[0.05] px-7 py-3.5 text-sm font-semibold text-white/80 transition-all hover:bg-[#0AA7B5]/10 hover:text-white"
                 >
                   Explore All Growth Engines

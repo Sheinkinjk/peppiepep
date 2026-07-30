@@ -412,7 +412,7 @@ export default function ApplicationPage() {
                 Back to Home
               </Link>
               <Link
-                href="/services"
+                href="/for-business"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-[#0b2a34] hover:border-[#0AA7B5]/40 transition-colors"
               >
                 Explore Services
@@ -459,7 +459,7 @@ export default function ApplicationPage() {
                   Partner With Us
                 </a>
                 <Link
-                  href="/services"
+                  href="/for-business"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-[#0b2a34] hover:border-[#0AA7B5]/40"
                 >
                   Explore Services

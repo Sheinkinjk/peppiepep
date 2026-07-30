@@ -51,7 +51,7 @@ export default function ReferralPartnershipsPage() {
               Book a 15-min Expansion Call
             </a>
             <Link
-              href="/services"
+              href="/for-business"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
             >
               View All Services
@@ -359,7 +359,7 @@ export default function ReferralPartnershipsPage() {
               Book a 15-min Expansion Call
             </a>
             <Link
-              href="/services"
+              href="/for-business"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/20"
             >
               View All Services
