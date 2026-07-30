@@ -168,6 +168,8 @@ const STANDALONE_ROUTES = [
   "/faq",
   // Deals hub
   "/deals",
+  // Get Featured (consumer-facing partner door; migrated to the consumer shell)
+  "/comparison-website",
   // Apollo EOI campaign landing (own dark design)
   "/apollo-energy-group-eoi",
   // Lender head-to-head comparisons (prefix covers /compare-business-lenders/<slug>)
