@@ -468,7 +468,7 @@ export const seoConfig = {
     keywords: ["discount codes australia", "deals australia", "promo codes", "refer labs deals", "moshy discount code", "apollo energy discount"],
   },
   apolloEnergy: {
-    title: "Apollo Energy Group: Sydney Solar Battery Company & $500 Off (2026) | Refer Labs",
+    title: "Apollo Energy Group: $500 Off a Home Battery | Refer Labs",
     description:
       "Apollo Energy Group is a Sydney-based, SAA-accredited solar battery (home battery) company installing 9-54kWh systems. $500 off your quote via Refer Labs, plus the federal rebate and the NSW solar battery government rebate. How to choose a solar battery company, and where Apollo fits.",
     url: `${SITE_URL}/apollo-energy-group`,
@@ -904,7 +904,7 @@ export const seoConfig = {
   },
 
   moshHair: {
-    title: "Mosh Hair Loss Discount Code Australia 2026 | Mosh Promo Code, Cost & Review | Refer Labs",
+    title: "Mosh Hair Discount Code 2026: 55% Off | Refer Labs",
     description:
       "Mosh hair loss discount code Australia 2026: 55% off your first order with code REFERAL55 via our link. Cost, finasteride and minoxidil access explained.",
     url: `${SITE_URL}/moshhair`,
@@ -1023,7 +1023,7 @@ export const seoConfig = {
   },
 
   moshyVsJuniper: {
-    title: "Moshy vs Juniper 2026: Which Weight Loss Telehealth Is Right for You? | Refer Labs",
+    title: "Moshy vs Juniper 2026: Cost, Eligibility & Fit | Refer Labs",
     description:
       "Moshy vs Juniper 2026: Moshy is a lean clinical pathway open to anyone; Juniper wraps coaching around medication for women. Cost, eligibility, GLP-1.",
     url: `${SITE_URL}/moshy-vs-juniper`,
@@ -2031,7 +2031,7 @@ export const seoConfig = {
   },
 
   bestHairLossTreatmentAustralia: {
-    title: "Best Hair Loss Treatment Australia 2026: Mosh vs Dense vs Telehealth Options | Refer Labs",
+    title: "Best Hair Loss Treatment in Australia 2026 | Refer Labs",
     description:
       "The best hair-loss treatments in Australia 2026, compared: Mosh, Dense and telehealth. Finasteride and minoxidil vs topicals, real pricing, how to start.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
