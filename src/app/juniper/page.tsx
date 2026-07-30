@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "How much does Juniper cost?",
-    a: "Juniper's own site lists the Weight Reset Program from $349 per month, which it says includes the treatment, unlimited consultations and delivery, with optional 1:1 health coaching as a paid add-on and a 30-day money-back guarantee. Any medication is prescribed only after individual assessment, and the final cost depends on the plan. Prices change, so confirm the current figure on Juniper's own site before you commit.",
+    a: "Juniper runs as a monthly subscription that its own site says includes the treatment, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back guarantee. There isn't one fixed price: any medication is prescribed only after an individual assessment, so the figure that applies to you is confirmed inside Juniper's flow before you commit.",
   },
   {
     q: "Does Juniper have a discount or promo code?",
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "Juniper vs Moshy: which should I choose?",
-    a: "They take different approaches. Juniper wraps medication access inside a structured coaching and community program designed for women, with unlimited practitioner consultations, an app and ongoing support, from $349 per month. Moshy runs a leaner, medication-first clinical pathway that is open to anyone eligible. If you want coaching and accountability built around the medical care, Juniper is designed for exactly that; if you want a focused, no-frills clinical pathway, Moshy is the leaner option. Both assess suitability individually through Australian-registered practitioners.",
+    a: "They take different approaches. Juniper wraps medication access inside a structured coaching and community program designed for women, with unlimited practitioner consultations, an app and ongoing support. Moshy runs a leaner, medication-first clinical pathway that is open to anyone eligible. If you want coaching and accountability built around the medical care, Juniper is designed for exactly that; if you want a focused, no-frills clinical pathway, Moshy is the leaner option. Both assess suitability individually through Australian-registered practitioners.",
   },
   {
     q: "How do I start with Juniper?",
@@ -121,8 +121,7 @@ export default function JuniperPage() {
               Juniper is an Australian weight-management telehealth service designed for women. Its Weight Reset Program
               pairs online consultations with Australian-registered practitioners and access to TGA-approved medication,
               where a practitioner assesses it as appropriate, with structured coaching, unlimited follow-ups, an app and
-              a patient community. It runs from $349 per month. Here is how it works, what is included, and how it
-              compares to Moshy.
+              a patient community. Here is how it works, what is included, and how it compares to Moshy.
             </p>
           </header>
 
@@ -168,11 +167,11 @@ export default function JuniperPage() {
             <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">What Juniper costs</h2>
             <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
               <p>
-                Juniper&apos;s own site lists the Weight Reset Program from <strong className="text-[#10251b]">$349 per
-                month</strong>, which it says covers the treatment, unlimited consultations and delivery. Optional 1:1
-                health coaching is a paid add-on, and Juniper offers a 30-day money-back guarantee. Any medication is
-                prescribed only after an individual assessment, so the final cost depends on the plan a practitioner
-                considers appropriate. Prices change, so confirm the current figure on Juniper&apos;s own site.
+                Juniper runs as a monthly subscription that its own site says covers the treatment, unlimited
+                consultations and delivery, with optional 1:1 health coaching as a paid add-on and a 30-day money-back
+                guarantee. It does not hinge on a single sticker price: any medication is prescribed only after an
+                individual assessment, so the cost that applies to you is confirmed inside Juniper&apos;s own flow before
+                you commit to anything.
               </p>
               <p>
                 There is no Refer Labs discount code for Juniper. Juniper itself sometimes runs a new-patient promotion,
@@ -229,8 +228,8 @@ export default function JuniperPage() {
               arrangement with Moshy. Commissions never change what we write. All content is general information only and
               does not constitute medical advice. Prescription medicines in Australia, including GLP-1 medicines, are
               supplied only after individual assessment by a registered practitioner who decides suitability. Figures such
-              as Juniper&apos;s $349/month are drawn from Juniper&apos;s own site and can change; confirm current terms
-              before you commit. Consult a qualified health professional before starting any treatment.
+              such as Juniper&apos;s inclusions and pricing are drawn from Juniper&apos;s own site and can change; confirm
+              current terms before you commit. Consult a qualified health professional before starting any treatment.
             </p>
           </section>
         </div>
