@@ -266,7 +266,7 @@ export default function VirtualPowerPlantAustraliaPage() {
               >
                 Claim your $500 discount <ArrowRight className="h-4 w-4" />
               </a>
-              <Link href="/apollo-energy-group-eoi" className="nw-btn-ghost" data-cta="vpp-eoi">
+              <Link href="/apollo-energy-group" className="nw-btn-ghost" data-cta="vpp-eoi">
                 Register your interest
               </Link>
             </div>

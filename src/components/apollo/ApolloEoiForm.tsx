@@ -56,7 +56,7 @@ export default function ApolloEoiForm() {
           notes: (v.notes || "").trim(),
           consent: v.consent === "yes",
           company_website_confirm: v.company_website_confirm || "",
-          source_page: "/apollo-energy-group-eoi",
+          source_page: "/apollo-energy-group",
         }),
       });
       const data = await res.json().catch(() => ({}));

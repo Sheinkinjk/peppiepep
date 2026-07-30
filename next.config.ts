@@ -69,6 +69,8 @@ const nextConfig: NextConfig = {
       // The :path* rule catches all 17 sub-pages, so they 301 rather than 404.
       { source: '/services', destination: '/for-business', permanent: true },
       { source: '/services/:path*', destination: '/for-business', permanent: true },
+      // Apollo EOI merged into the main /apollo-energy-group page (data-capture-first).
+      { source: '/apollo-energy-group-eoi', destination: '/apollo-energy-group', permanent: true },
       {
         // Canonicalise www -> non-www (both were serving 200, splitting SEO signals).
         source: '/:path*',

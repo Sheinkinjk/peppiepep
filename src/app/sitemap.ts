@@ -67,7 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Apollo Energy (VIP money page) ────────────────────────────────
     { url: `${BASE}/apollo-energy-group`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.95 },
     { url: `${BASE}/apollo-energy-review`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/apollo-energy-group-eoi`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.85 },
     { url: `${BASE}/home-battery-rebate-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-rebate-by-state-australia`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.88 },
     { url: `${BASE}/virtual-power-plant-australia`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.82 },

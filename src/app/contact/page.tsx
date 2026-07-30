@@ -1,4 +1,4 @@
-import { Mail, Calendar, ArrowRight, MapPin, Clock, Phone, FileCheck2 } from "lucide-react";
+import { Mail, Calendar, ArrowRight, MapPin, Clock, FileCheck2 } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
@@ -120,25 +120,25 @@ export default function Contact() {
             </div>
           </a>
 
-          {/* Call Us */}
+          {/* Email Us */}
           <a
-            href="tel:+61451149569"
+            href="mailto:jarred@referlabs.com.au"
             className="group relative overflow-hidden rounded-3xl border border-[#e5e9e7] bg-white p-8 shadow-sm transition-all hover:border-[#0a7c42]/35"
             data-lift="true"
           >
             <div className="relative">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f8f6] border border-[#e5e9e7] mb-6">
-                <Phone className="h-7 w-7 text-[#10251b]" />
+                <Mail className="h-7 w-7 text-[#10251b]" />
               </div>
-              <h2 className="text-2xl font-bold text-[#10251b] mb-3">Call Us</h2>
+              <h2 className="text-2xl font-bold text-[#10251b] mb-3">Email Us</h2>
               <p className="text-[#2b362f] leading-relaxed mb-6">
-                Want to talk now? Give us a call directly and we will discuss your growth goals.
+                Email is the fastest way to reach us. Send through your details and we will get back to you, usually within one business day.
               </p>
               <div className="text-sm text-[#10251b] mb-6 font-semibold">
-                +61 451 149 569
+                jarred@referlabs.com.au
               </div>
               <div className="inline-flex items-center gap-2 text-[#0a7c42] font-semibold group-hover:text-[#086b39] transition-colors">
-                Call now
+                Send an email
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

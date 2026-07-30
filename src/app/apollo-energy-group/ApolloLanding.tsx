@@ -3,6 +3,7 @@ import { APOLLO_ENERGY_URL, glance, steps, faqs } from "./config";
 import { ArrowRight, Check, ShieldCheck, BatteryCharging, BadgeCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import ApolloEoiForm from "@/components/apollo/ApolloEoiForm";
 import OffersTable from "@/components/lending/OffersTable";
 import { DEALS } from "@/lib/offers";
 
@@ -41,50 +42,48 @@ export default function ApolloLanding() {
   return (
     <ConsumerShell>
       <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8">
-        {/* ── Hero ── */}
-        <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
+        {/* ── Hero: data-capture first ── */}
+        <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div>
             <span className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-[#e5e9e7] bg-white text-2xl font-black text-[#0a7c42] shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
               A
             </span>
-            <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.3rem]">
+            <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.1rem]">
               Apollo Energy Group: a Sydney solar battery company,{" "}
               <span className="text-[#0a7c42]">$500 off through Refer Labs.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
-              An independent look at Apollo Energy Group, a Sydney-based solar battery (home battery) company: what they install, how to judge a solar battery company, how the $500 Refer Labs discount is applied, and how the federal and NSW solar battery government rebates change what you really pay in 2026. No hype, no invented savings figures.
+              Apollo Energy Group is a Sydney-based, SAA-accredited solar battery (home battery) company. Register your
+              interest below and a specialist gets in touch within 2 business days, with $500 off your quote on top of the
+              federal and NSW government rebates. No hype, no invented savings figures.
             </p>
-
+            <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#10251b]">
+              {["$500 off, on top of the government rebate", "SAA-accredited, 10-year battery warranty", "No obligation, contacted within 2 business days"].map((t) => (
+                <li key={t} className="flex items-center gap-2.5">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e6f3ec]">
+                    <Check className="h-3.5 w-3.5 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+                  </span>
+                  {t}
+                </li>
+              ))}
+            </ul>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <ApolloCTA label="Claim your $500 discount" size="lg" loc="hero" />
-              <Link href="/apollo-energy-group-eoi" className="nw-btn-ghost" data-cta="hero-eoi">
-                Prefer a callback? Register your interest
-              </Link>
+              <a href="#register" className="nw-btn">Register your interest <ArrowRight className="h-4 w-4" /></a>
+              <ApolloCTA label="Or go direct on Apollo" size="md" loc="hero-direct" />
             </div>
-
             <p className="mt-4 text-xs text-[#9aa39c]">
-              $500 off applied through our link, no code needed
+              $500 off applies whether you register here or go direct. No code needed.
             </p>
           </div>
 
-          {/* At-a-glance card */}
-          <aside className="lg:pt-2">
-            <div className="nw-card rounded-2xl p-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
-              <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
-                {glance.map(([k, v]) => (
-                  <div key={k} className="flex gap-3 py-2.5">
-                    <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
-                    <dd className="text-[#2b362f]">{v}</dd>
-                  </div>
-                ))}
-              </dl>
-              <div className="mt-5">
-                <ApolloCTA block loc="glance-card" />
-              </div>
-              <p className="mt-3 text-center text-[11px] text-[#9aa39c]">Opens apolloenergygroup.com.au · Australia</p>
+          {/* Data capture, primary */}
+          <div id="register" className="scroll-mt-24 lg:pt-2">
+            <div className="mb-3 flex items-baseline justify-between">
+              <h2 className="text-lg font-extrabold tracking-tight text-[#10251b]">Register your interest</h2>
+              <span className="text-[12px] font-medium text-[#0a7c42]">$500 off · 2 business days</span>
             </div>
-          </aside>
+            <ApolloEoiForm />
+          </div>
         </section>
 
         {/* ── Trust strip ── */}
@@ -100,6 +99,22 @@ export default function ApolloLanding() {
               <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
             </div>
           ))}
+        </section>
+
+        {/* ── At a glance ── */}
+        <section className="mt-6 nw-card rounded-2xl p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
+            <ApolloCTA size="sm" loc="glance-card" />
+          </div>
+          <dl className="mt-4 grid gap-x-8 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {glance.map(([k, v]) => (
+              <div key={k} className="flex gap-3 border-b border-[#eef1ef] py-2">
+                <dt className="w-28 shrink-0 text-[#9aa39c]">{k}</dt>
+                <dd className="text-[#2b362f]">{v}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* ── Honesty notice ── */}
