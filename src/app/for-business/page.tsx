@@ -18,13 +18,10 @@ const offers = [
     tag: "Growth services",
     title: "Referral & affiliate programs, built and run",
     body: "We design, launch and actively distribute referral and affiliate programs for Australian and international businesses. Incentive design, tracking, channel activation and ongoing management, handled end to end.",
-    cta: { label: "Explore growth services", href: "/services", external: false },
+    cta: { label: "Enquire about growth services", href: "mailto:jarred@referlabs.com.au?subject=Growth%20services%20enquiry", external: true },
     links: [
-      { href: "/services/referral-programs", label: "Referral program launch" },
-      { href: "/services/affiliate-distribution", label: "Affiliate distribution" },
-      { href: "/services/apac-expansion", label: "Australian market entry" },
-      { href: "/services/partner-activation", label: "Partner activation" },
-      { href: "/services/product-distribution", label: "Product distribution" },
+      { href: "/comparison-website", label: "Get featured on Refer Labs" },
+      { href: "/affiliate-programs-australia", label: "Affiliate programs in Australia" },
     ],
   },
 ];

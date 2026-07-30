@@ -65,6 +65,10 @@ const nextConfig: NextConfig = {
       // Juniper alternatives retired (July 2026) ahead of onboarding Juniper as a partner;
       // a page steering away from a partner is untenable. 301 to the fair comparison roundup.
       { source: '/juniper-alternatives', destination: '/best-weight-loss-telehealth-australia', permanent: true },
+      // /services (B2B growth-services cluster) retired July 2026 -> the /for-business door.
+      // The :path* rule catches all 17 sub-pages, so they 301 rather than 404.
+      { source: '/services', destination: '/for-business', permanent: true },
+      { source: '/services/:path*', destination: '/for-business', permanent: true },
       {
         // Canonicalise www -> non-www (both were serving 200, splitting SEO signals).
         source: '/:path*',

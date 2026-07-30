@@ -63,12 +63,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 
     // ── Services ───────────────────────────────────────────────────────
-    { url: `${BASE}/services`,                        lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/services/affiliate-distribution`, lastModified: STABLE, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/services/referral-programs`,      lastModified: STABLE, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/services/apac-expansion`,         lastModified: STABLE, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/services/partner-activation`,     lastModified: STABLE, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/services/product-distribution`,   lastModified: STABLE, changeFrequency: 'monthly', priority: 0.68 },
 
     // ── Apollo Energy (VIP money page) ────────────────────────────────
     { url: `${BASE}/apollo-energy-group`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.95 },

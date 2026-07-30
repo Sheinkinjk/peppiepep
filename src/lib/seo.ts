@@ -226,6 +226,9 @@ export const seoConfig = {
   },
 
   services: {
+    // Retired July 2026: /services and /services/* 301 to /for-business (next.config.ts).
+    // Defensive noIndex so removing the redirect can't silently republish it.
+    noIndex: true,
     title: "Services: Five Growth Engines | Refer Labs",
     description:
       "Five growth engines: Referral Program Launch, Elite Affiliate Distribution, Influencer & Network Activation, APAC Market Expansion, and Product Creation & Distribution.",
