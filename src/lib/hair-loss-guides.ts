@@ -132,7 +132,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "How much does online hair-loss treatment cost?", a: "It is usually a monthly subscription that bundles the medicine, practitioner oversight and delivery. Mosh, for example, publishes hair-loss plans from $24 a month up to $56 for its more advanced plan, with free delivery. The exact plan is set at the assessment, so confirm the current terms before committing." },
       { q: "Is telehealth or my GP better for hair loss?", a: "Both are valid. A GP offers in-person, whole-of-health care but is slower to start; telehealth is faster and bundles medicine, review and delivery, but is focused on the one issue. It comes down to how you prefer to be supported." },
     ],
-    related: [R.fin, R.min, R.cost, R.mosh, R.quiz],
+    related: [R.fin, R.min, R.best, R.cost, R.mosh],
   },
 
   {
@@ -180,7 +180,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "What happens if I stop taking finasteride?", a: "Any benefit continues only while you keep taking it. Stopping generally means DHT returns to its previous level and the hair loss resumes its earlier course over the following months, often within a year. It is treated as ongoing rather than a one-off course." },
       { q: "Does finasteride regrow hair or just stop loss?", a: "For many men the realistic result is slowing further loss and holding what they have; some also see partial regrowth, though how much varies. Product information and a practitioner are the reference for what it can and cannot do for you." },
     ],
-    related: [R.fin, R.min, R.cost, R.mosh, R.hub],
+    related: [R.fin, R.min, R.best, R.cost, R.mosh],
   },
 
   {
