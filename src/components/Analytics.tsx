@@ -186,6 +186,34 @@ export function LinkedInInsight() {
 }
 
 /**
+ * Searchable Analytics (client-side, cookieless).
+ *
+ * Privacy-first pageview/event analytics (Plausible-style): no cookies, no
+ * cross-site tracking, no personal profiles. Runs consent-independently on the
+ * same basis as Vercel Analytics, and is disclosed in /privacy. The pst_ value is
+ * a PUBLIC site token, safe to expose client-side. Server-side capture (including
+ * AI crawlers that don't run JS) is handled separately in src/proxy.ts.
+ * Production only, so local/preview traffic doesn't pollute the data.
+ */
+export function SearchableAnalytics() {
+  if (process.env.NODE_ENV !== "production") return null;
+  return (
+    <>
+      <Script id="searchable-init" strategy="afterInteractive">
+        {`window.sa=window.sa||function(){(sa.q=sa.q||[]).push(arguments)}`}
+      </Script>
+      <Script
+        id="searchable-tracker"
+        src="https://searchable-tracker.searchable.workers.dev/s.js"
+        strategy="afterInteractive"
+        data-domain="referlabs.com.au"
+        data-site-token="pst_9ba4c3b9bc08bbd0b074e90e"
+      />
+    </>
+  );
+}
+
+/**
  * Custom Event Tracking Utilities
  * Use these to track specific user actions
  */

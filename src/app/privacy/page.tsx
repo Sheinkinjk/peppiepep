@@ -454,7 +454,21 @@ export default function Privacy() {
                 <li><strong>Changing your mind:</strong> use the Cookie Preferences link in the footer at any time</li>
               </ul>
 
-              <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.4 Marketing Cookies (Optional)</h3>
+              <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.4 Cookieless Analytics (No Cookies, No Consent Needed)</h3>
+              <p className="text-[#2b362f] mb-3">
+                Separately from the optional cookies above, we use two <strong>cookieless</strong>, privacy-first analytics
+                services. They set no cookies, build no personal profiles, and do not track you across other websites.
+                Because they store nothing on your device and are not used to identify you, they run without a consent prompt:
+              </p>
+              <ul className="list-disc list-inside text-[#2b362f] space-y-1 mb-3">
+                <li><strong>Vercel Analytics</strong> (Vercel Inc.): aggregate page-view counts and site performance, so we can see real traffic even from visitors who decline analytics cookies.</li>
+                <li><strong>Searchable Analytics</strong>: aggregate page views and how AI search engines and other crawlers reach our pages, so we can improve how our guides are discovered. It runs both in your browser (cookieless) and on our server, where it records request details such as the page requested, timestamp and browser type, together with a <strong>truncated, anonymised IP address</strong> (the last part is removed). We do not use it to identify you and we do not sell this data.</li>
+              </ul>
+              <p className="text-[#2b362f] mb-3 text-sm">
+                These providers act as data processors on our behalf. If any analytics service ever begins setting cookies or collecting data that could identify you, we will move it behind the consent banner and update this policy first.
+              </p>
+
+              <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.5 Marketing Cookies (Optional)</h3>
               <p className="text-[#2b362f] mb-3">
                 We currently do <strong>not</strong> use marketing or advertising cookies. Any future use will require your consent and will be clearly disclosed.
               </p>
@@ -462,7 +476,7 @@ export default function Privacy() {
                 Where consent is legally required for non-essential cookies/local storage, we will obtain it before activation and update this policy and the banner accordingly.
               </p>
 
-              <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.5 Managing Cookies</h3>
+              <h3 className="text-lg font-semibold text-[#10251b] mt-4 mb-2">9.6 Managing Cookies</h3>
               <p className="text-[#2b362f] mb-2">
                 You can control cookies in several ways:
               </p>
