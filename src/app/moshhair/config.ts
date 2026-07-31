@@ -6,7 +6,7 @@ export { MOSH_HAIR_URL };
 export const moshHairConfig: AffiliatePageConfig = {
   brand: "Mosh",
   showResearchNote: true,
-  logo: "mosh",
+  logo: "mosh-mark",
   badgeText: "Australia",
   affiliateUrl: MOSH_HAIR_URL,
   offer: "55% off your first order (code REFERAL55)",
