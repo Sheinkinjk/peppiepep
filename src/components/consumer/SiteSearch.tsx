@@ -1,17 +1,74 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, ArrowRight } from "lucide-react";
+import {
+  Search, ArrowRight, CornerDownLeft, Activity, Scissors, Zap,
+  Banknote, AppWindow, Tag, Compass, LayoutGrid,
+} from "lucide-react";
 import { searchEntries, type SearchEntry } from "@/lib/search-index";
 
-// Quick-start chips shown before the reader types. Keep these pointed at the
-// current money verticals, not whatever was popular when the search was built.
-const POPULAR = ["Weight loss", "Hair loss", "Business loans", "Home batteries", "Website builders"];
+// Popular starting points. Each navigates to a real hub, so a tap always goes
+// somewhere useful instead of just refilling the box.
+const POPULAR: { label: string; href: string }[] = [
+  { label: "Weight loss", href: "/weight-loss" },
+  { label: "Hair loss", href: "/hair-loss" },
+  { label: "Business loans", href: "/business-loans" },
+  { label: "Home batteries", href: "/apollo-energy-group" },
+  { label: "Deals & codes", href: "/deals" },
+];
+
+// Curated "browse" shortcuts for the empty state.
+const BROWSE: { label: string; href: string; cat: string }[] = [
+  { label: "Weight loss & telehealth", href: "/weight-loss", cat: "Weight loss" },
+  { label: "Hair loss treatment", href: "/hair-loss", cat: "Hair loss" },
+  { label: "Home batteries & solar", href: "/apollo-energy-group", cat: "Home & energy" },
+  { label: "Business loans", href: "/business-loans", cat: "Business finance" },
+  { label: "Business software", href: "/business-software", cat: "Software" },
+  { label: "All guides", href: "/guides", cat: "Browse" },
+];
+
+// Category -> small tinted icon tile. Encodes the vertical at a glance, which is
+// what turns a flat text list into something scannable.
+type Tile = { Icon: typeof Activity; fg: string; bg: string };
+function tileFor(category: string, kind: SearchEntry["kind"]): Tile {
+  const c = category.toLowerCase();
+  if (c.includes("weight") || c === "health") return { Icon: Activity, fg: "#0a7c42", bg: "#e8f5ee" };
+  if (c.includes("hair")) return { Icon: Scissors, fg: "#0a7c42", bg: "#e8f5ee" };
+  if (c.includes("energy") || c.includes("home")) return { Icon: Zap, fg: "#b45309", bg: "#fbeedd" };
+  if (c.includes("finance") || c.includes("lend")) return { Icon: Banknote, fg: "#1d4ed8", bg: "#e7edfd" };
+  if (c.includes("deal")) return { Icon: Tag, fg: "#be123c", bg: "#fde7ec" };
+  if (c.includes("software") || c.includes("sales") || c.includes("creator") || c.includes("commerce") || c.includes("payment") || c.includes("ai"))
+    return { Icon: AppWindow, fg: "#6d28d9", bg: "#f0e9fd" };
+  if (kind === "Category" || c.includes("browse")) return { Icon: LayoutGrid, fg: "#475569", bg: "#eef1f4" };
+  return { Icon: Compass, fg: "#475569", bg: "#eef1f4" };
+}
+
+const KIND_ORDER: Record<SearchEntry["kind"], number> = { Category: 0, Guide: 1, Review: 2 };
+const KIND_LABEL: Record<SearchEntry["kind"], string> = {
+  Category: "Categories",
+  Guide: "Guides & comparisons",
+  Review: "Reviews",
+};
+
+// Bold the matched query inside a title without dangerouslySetInnerHTML.
+function highlight(title: string, q: string) {
+  const t = q.trim();
+  if (!t) return title;
+  const i = title.toLowerCase().indexOf(t.toLowerCase());
+  if (i === -1) return title;
+  return (
+    <>
+      {title.slice(0, i)}
+      <mark className="bg-transparent font-bold text-[#10251b]">{title.slice(i, i + t.length)}</mark>
+      {title.slice(i + t.length)}
+    </>
+  );
+}
 
 /**
- * NerdWallet-style site search. variant "hero" is large and prominent;
- * "header" is compact. Filters a static index and routes on select.
+ * Site search. variant "hero" is large and prominent; "header" is compact.
+ * Filters a static index, groups results by kind, and routes on select.
  */
 export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "header" }) {
   const [q, setQ] = useState("");
@@ -19,8 +76,13 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
   const [active, setActive] = useState(0);
   const router = useRouter();
   const wrapRef = useRef<HTMLDivElement>(null);
+  const big = variant === "hero";
 
-  const results: SearchEntry[] = q ? searchEntries(q) : [];
+  // Results in display order (Categories first), so keyboard nav matches the eye.
+  const ordered = useMemo(() => {
+    if (!q.trim()) return [];
+    return [...searchEntries(q, 9)].sort((a, b) => KIND_ORDER[a.kind] - KIND_ORDER[b.kind]);
+  }, [q]);
 
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
@@ -37,14 +99,17 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
   }
 
   function onKey(e: React.KeyboardEvent) {
-    if (!open || results.length === 0) return;
-    if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => (a + 1) % results.length); }
-    else if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => (a - 1 + results.length) % results.length); }
-    else if (e.key === "Enter") { e.preventDefault(); go(results[active].href); }
-    else if (e.key === "Escape") setOpen(false);
+    if (e.key === "Escape") { setOpen(false); return; }
+    if (!open || ordered.length === 0) {
+      if (e.key === "Enter" && q.trim()) { e.preventDefault(); go("/guides"); }
+      return;
+    }
+    if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => (a + 1) % ordered.length); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => (a - 1 + ordered.length) % ordered.length); }
+    else if (e.key === "Enter") { e.preventDefault(); go(ordered[active].href); }
   }
 
-  const big = variant === "hero";
+  const hasQuery = q.trim().length > 0;
 
   return (
     <div ref={wrapRef} className={`relative ${big ? "w-full max-w-xl" : "w-full max-w-xs"}`}>
@@ -55,49 +120,106 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
           onChange={(e) => { setQ(e.target.value); setOpen(true); setActive(0); }}
           onFocus={() => setOpen(true)}
           onKeyDown={onKey}
-          placeholder={big ? "Search, try 'weight loss' or 'website builder'" : "Search comparisons"}
+          placeholder={big ? "Search comparisons, guides and deals" : "Search"}
           aria-label="Search comparisons"
           className={big ? "!text-[15px]" : "!text-sm"}
         />
       </div>
 
       {open && (
-        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_20px_50px_-20px_rgba(16,37,27,0.35)]">
-          {results.length > 0 ? (
-            <ul className="max-h-[22rem] overflow-y-auto py-1.5">
-              {results.map((r, i) => (
-                <li key={r.href}>
-                  <button
-                    onMouseEnter={() => setActive(i)}
-                    onClick={() => go(r.href)}
-                    className={`flex w-full items-center justify-between gap-3 px-4 py-2.5 text-left ${i === active ? "bg-[#f5f8f6]" : ""}`}
-                  >
-                    <span className="min-w-0">
-                      <span className="block truncate text-sm font-semibold text-[#10251b]">{r.title}</span>
-                      <span className="text-xs text-[#6e7b74]">{r.category} · {r.kind}</span>
-                    </span>
-                    <ArrowRight className="h-4 w-4 shrink-0 text-[#0a7c42]" />
-                  </button>
-                </li>
-              ))}
+        <div className={`absolute top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_24px_60px_-24px_rgba(16,37,27,0.4)] ${big ? "left-0 right-0" : "right-0 w-[22rem]"}`}>
+          {/* ── Results ── */}
+          {hasQuery && ordered.length > 0 && (
+            <ul className="max-h-[24rem] overflow-y-auto py-1.5">
+              {ordered.map((r, i) => {
+                const t = tileFor(r.category, r.kind);
+                const showHeader = i === 0 || ordered[i - 1].kind !== r.kind;
+                return (
+                  <li key={r.href}>
+                    {showHeader && (
+                      <p className="px-4 pb-1 pt-2.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">
+                        {KIND_LABEL[r.kind]}
+                      </p>
+                    )}
+                    <button
+                      onMouseEnter={() => setActive(i)}
+                      onClick={() => go(r.href)}
+                      className={`flex w-full items-center gap-3 px-3 py-2 text-left transition-colors ${i === active ? "bg-[#f5f8f6]" : ""}`}
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl" style={{ backgroundColor: t.bg }}>
+                        <t.Icon className="h-[18px] w-[18px]" style={{ color: t.fg }} aria-hidden="true" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-sm font-semibold text-[#10251b]">{highlight(r.title, q)}</span>
+                        <span className="text-xs text-[#6e7b74]">{r.category}</span>
+                      </span>
+                      <ArrowRight className={`h-4 w-4 shrink-0 transition-opacity ${i === active ? "text-[#0a7c42] opacity-100" : "opacity-0"}`} />
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
-          ) : (
-            <div className="px-4 py-3">
-              {q.trim() && (
-                <p className="mb-2 text-sm text-[#3d4b44]">
-                  No matches for <span className="font-semibold text-[#10251b]">&ldquo;{q.trim()}&rdquo;</span>. Try:
-                </p>
-              )}
-              {!q.trim() && <p className="text-xs font-semibold uppercase tracking-wide text-[#9aa39c]">Popular</p>}
-              <div className="mt-2 flex flex-wrap gap-2">
+          )}
+
+          {/* ── No matches ── */}
+          {hasQuery && ordered.length === 0 && (
+            <div className="px-4 py-4">
+              <p className="text-sm text-[#3d4b44]">
+                No matches for <span className="font-semibold text-[#10251b]">&ldquo;{q.trim()}&rdquo;</span>. Try a category:
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
                 {POPULAR.map((p) => (
-                  <button key={p} onClick={() => { setQ(p); setActive(0); }} className="rounded-full border border-[#e5e9e7] bg-white px-3 py-1.5 text-[13px] font-medium text-[#3d4b44] hover:border-[#bfe0cf] hover:bg-[#e8f5ee]">
-                    {p}
+                  <button key={p.href} onClick={() => go(p.href)}
+                    className="rounded-full border border-[#e5e9e7] bg-white px-3 py-1.5 text-[13px] font-medium text-[#3d4b44] transition-colors hover:border-[#bfe0cf] hover:bg-[#e8f5ee] hover:text-[#0a7c42]">
+                    {p.label}
                   </button>
                 ))}
               </div>
             </div>
           )}
+
+          {/* ── Empty state (no query): popular + browse ── */}
+          {!hasQuery && (
+            <div className="px-4 py-3.5">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">Popular right now</p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {POPULAR.map((p) => (
+                  <button key={p.href} onClick={() => go(p.href)}
+                    className="rounded-full border border-[#e5e9e7] bg-white px-3 py-1.5 text-[13px] font-medium text-[#3d4b44] transition-colors hover:border-[#bfe0cf] hover:bg-[#e8f5ee] hover:text-[#0a7c42]">
+                    {p.label}
+                  </button>
+                ))}
+              </div>
+
+              <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">Browse</p>
+              <div className="mt-2 grid grid-cols-2 gap-1">
+                {BROWSE.map((b) => {
+                  const t = tileFor(b.cat, "Category");
+                  return (
+                    <button key={b.href} onClick={() => go(b.href)}
+                      className="group flex items-center gap-2.5 rounded-xl px-2 py-2 text-left transition-colors hover:bg-[#f5f8f6]">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: t.bg }}>
+                        <t.Icon className="h-4 w-4" style={{ color: t.fg }} aria-hidden="true" />
+                      </span>
+                      <span className="truncate text-[13px] font-semibold text-[#10251b] group-hover:text-[#0a7c42]">{b.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* ── Footer: keyboard hints + all guides ── */}
+          <div className="flex items-center justify-between border-t border-[#eef1ef] bg-[#fafcfb] px-4 py-2">
+            <span className="hidden items-center gap-3 text-[11px] text-[#9aa39c] sm:flex">
+              <span className="inline-flex items-center gap-1"><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]">↑</kbd><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]">↓</kbd> navigate</span>
+              <span className="inline-flex items-center gap-1"><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]"><CornerDownLeft className="h-2.5 w-2.5" /></kbd> open</span>
+            </span>
+            <button onClick={() => go("/guides")} className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-[#0a7c42] hover:text-[#086536]">
+              {hasQuery && ordered.length > 0 ? `See all ${ordered.length > 8 ? "results" : "guides"}` : "All guides"}
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
       )}
     </div>
