@@ -33,6 +33,11 @@ export interface AffiliatePageConfig {
   /** Real brand logo basename in /public/logos (e.g. "carrd"). Optional. */
   logo?: string;
 
+  /** When the logo is a full-bleed coloured tile (its own background, e.g. an app
+   *  icon), render it edge-to-edge in the rounded frame instead of inside a white
+   *  box. Prevents a coloured square from floating on white. */
+  logoBleed?: boolean;
+
   /** Small badge label shown in hero, e.g. "Australia" or "Hair Care" */
   badgeText: string;
 

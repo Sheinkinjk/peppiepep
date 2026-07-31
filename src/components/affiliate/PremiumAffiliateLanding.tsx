@@ -62,7 +62,15 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         {/* Hero */}
         <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div>
-            {config.logo ? (
+            {config.logo && config.logoBleed ? (
+              <Image
+                src={`/logos/${config.logo}.png`}
+                alt={`${config.brand} logo`}
+                width={64}
+                height={64}
+                className="mb-5 h-16 w-16 rounded-2xl object-cover shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]"
+              />
+            ) : config.logo ? (
               <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
                 <Image src={`/logos/${config.logo}.png`} alt={`${config.brand} logo`} width={52} height={52} className="h-12 w-12 object-contain" />
               </span>

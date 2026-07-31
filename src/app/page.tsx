@@ -17,7 +17,7 @@ import BrandMark from "@/components/consumer/BrandMark";
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
-  { logo: "mosh-mark", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: finasteride and minoxidil after a practitioner review. New customers get 55% off their first order via our link.", href: "/moshhair" },
+  { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: finasteride and minoxidil after a practitioner review. New customers get 55% off their first order via our link.", href: "/moshhair" },
   { logo: "juniper", name: "Juniper", cat: "Weight loss", verdict: "The women-focused weight-management program: medication access wrapped in coaching, unlimited consults, an app and a community.", href: "/juniper" },
   { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", verdict: "Home battery specialists, SAA-accredited and sized from your real usage. $500 off your quote through our link, on top of the federal rebate.", href: "/apollo-energy-group" },
 ];
@@ -52,7 +52,7 @@ const guides = [
 // have an affiliate link for appear here — Kit, which we don't, is excluded.
 const servicesLogos = [
   { logo: "moshy", name: "Moshy", url: MOSHY_URL },
-  { logo: "mosh-mark", name: "Mosh", url: MOSH_HAIR_URL },
+  { logo: "mosh-tile", name: "Mosh", url: MOSH_HAIR_URL },
   { logo: "beehiiv", name: "beehiiv", url: BEEHIIV_URL },
   { logo: "carrd", name: "Carrd", url: CARRD_URL },
   { logo: "durable", name: "Durable", url: DURABLE_URL },
@@ -113,7 +113,7 @@ export default function HomePage() {
         {/* No overflow-hidden here: it would clip the search dropdown, which extends
             below the hero into the trust strip. The gradient is a background and
             does not overflow. */}
-        <section className="relative border-b border-[#e3e7e2] bg-[radial-gradient(115%_130%_at_88%_-15%,#e9f4ed_0%,rgba(233,244,237,0.35)_34%,transparent_56%)]">
+        <section className="relative z-30 border-b border-[#e3e7e2] bg-[radial-gradient(115%_130%_at_88%_-15%,#e9f4ed_0%,rgba(233,244,237,0.35)_34%,transparent_56%)]">
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-14 pt-14 sm:px-8 sm:pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-16">
             <div>
               <h1 className="max-w-xl text-[2.6rem] font-black leading-[1.02] tracking-[-0.035em] text-[#10251b] sm:text-[3.6rem]">
@@ -192,9 +192,11 @@ export default function HomePage() {
               {picks.map((p) => (
                 <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-26px_rgba(14,124,66,0.45)]">
                   <div className="flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
+                    <span className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl ${p.logo === "mosh-tile" ? "" : "border border-[#eef1ef] bg-white"}`}>
                       {p.logo === "juniper" ? (
                         <BrandMark src="/logos/juniper.png" alt="Juniper logo" monogram="J" className="w-10 h-auto text-lg" />
+                      ) : p.logo === "mosh-tile" ? (
+                        <Image src="/logos/mosh-tile.png" alt="Mosh logo" width={48} height={48} className="h-full w-full object-cover" />
                       ) : (
                         <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
                       )}
@@ -233,13 +235,13 @@ export default function HomePage() {
                     className="group/logo flex shrink-0 flex-col items-center gap-2"
                   >
                     {s.logo ? (
-                      <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[#e5e9e7] bg-white p-1.5 transition duration-300 group-hover/logo:border-[#c9d2cc] group-hover/logo:shadow-[0_6px_16px_-10px_rgba(16,37,27,0.4)]">
+                      <span className={`flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[#e5e9e7] bg-white transition duration-300 group-hover/logo:border-[#c9d2cc] group-hover/logo:shadow-[0_6px_16px_-10px_rgba(16,37,27,0.4)] ${s.logo === "mosh-tile" ? "" : "p-1.5"}`}>
                         <Image
                           src={`/logos/${s.logo}.png`}
                           alt=""
                           width={32}
                           height={32}
-                          className="max-h-full max-w-full object-contain"
+                          className={s.logo === "mosh-tile" ? "h-full w-full object-cover" : "max-h-full max-w-full object-contain"}
                         />
                       </span>
                     ) : (

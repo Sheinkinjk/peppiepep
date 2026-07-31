@@ -8,17 +8,7 @@ import {
 } from "lucide-react";
 import { searchEntries, type SearchEntry } from "@/lib/search-index";
 
-// Popular starting points. Each navigates to a real hub, so a tap always goes
-// somewhere useful instead of just refilling the box.
-const POPULAR: { label: string; href: string }[] = [
-  { label: "Weight loss", href: "/weight-loss" },
-  { label: "Hair loss", href: "/hair-loss" },
-  { label: "Business loans", href: "/business-loans" },
-  { label: "Home batteries", href: "/apollo-energy-group" },
-  { label: "Deals & codes", href: "/deals" },
-];
-
-// Curated "browse" shortcuts for the empty state.
+// Curated "browse" shortcuts for the empty and no-match states.
 const BROWSE: { label: string; href: string; cat: string }[] = [
   { label: "Weight loss & telehealth", href: "/weight-loss", cat: "Weight loss" },
   { label: "Hair loss treatment", href: "/hair-loss", cat: "Hair loss" },
@@ -127,7 +117,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
       </div>
 
       {open && (
-        <div className={`absolute top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_24px_60px_-24px_rgba(16,37,27,0.4)] ${big ? "left-0 right-0" : "right-0 w-[22rem]"}`}>
+        <div className={`absolute top-[calc(100%+8px)] z-[60] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_24px_60px_-24px_rgba(16,37,27,0.4)] ${big ? "left-0 right-0" : "right-0 w-[22rem]"}`}>
           {/* ── Results ── */}
           {hasQuery && ordered.length > 0 && (
             <ul className="max-h-[24rem] overflow-y-auto py-1.5">
@@ -163,35 +153,31 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
 
           {/* ── No matches ── */}
           {hasQuery && ordered.length === 0 && (
-            <div className="px-4 py-4">
+            <div className="px-4 pb-1 pt-4">
               <p className="text-sm text-[#3d4b44]">
-                No matches for <span className="font-semibold text-[#10251b]">&ldquo;{q.trim()}&rdquo;</span>. Try a category:
+                No matches for <span className="font-semibold text-[#10251b]">&ldquo;{q.trim()}&rdquo;</span>. Browse instead:
               </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {POPULAR.map((p) => (
-                  <button key={p.href} onClick={() => go(p.href)}
-                    className="rounded-full border border-[#e5e9e7] bg-white px-3 py-1.5 text-[13px] font-medium text-[#3d4b44] transition-colors hover:border-[#bfe0cf] hover:bg-[#e8f5ee] hover:text-[#0a7c42]">
-                    {p.label}
-                  </button>
-                ))}
+              <div className="mt-2 grid grid-cols-2 gap-1">
+                {BROWSE.map((b) => {
+                  const t = tileFor(b.cat, "Category");
+                  return (
+                    <button key={b.href} onClick={() => go(b.href)}
+                      className="group flex items-center gap-2.5 rounded-xl px-2 py-2 text-left transition-colors hover:bg-[#f5f8f6]">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: t.bg }}>
+                        <t.Icon className="h-4 w-4" style={{ color: t.fg }} aria-hidden="true" />
+                      </span>
+                      <span className="truncate text-[13px] font-semibold text-[#10251b] group-hover:text-[#0a7c42]">{b.label}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
 
-          {/* ── Empty state (no query): popular + browse ── */}
+          {/* ── Empty state (no query): browse shortcuts ── */}
           {!hasQuery && (
             <div className="px-4 py-3.5">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">Popular right now</p>
-              <div className="mt-2.5 flex flex-wrap gap-2">
-                {POPULAR.map((p) => (
-                  <button key={p.href} onClick={() => go(p.href)}
-                    className="rounded-full border border-[#e5e9e7] bg-white px-3 py-1.5 text-[13px] font-medium text-[#3d4b44] transition-colors hover:border-[#bfe0cf] hover:bg-[#e8f5ee] hover:text-[#0a7c42]">
-                    {p.label}
-                  </button>
-                ))}
-              </div>
-
-              <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">Browse</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">Browse</p>
               <div className="mt-2 grid grid-cols-2 gap-1">
                 {BROWSE.map((b) => {
                   const t = tileFor(b.cat, "Category");
