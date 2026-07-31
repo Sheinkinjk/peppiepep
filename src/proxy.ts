@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { withSearchable } from '@searchablehq/middleware/nextjs'
 import { logger } from '@/lib/logger'
 
 /**
@@ -44,7 +45,7 @@ a{color:#0E7C66;font-weight:600}</style></head><body><main>
 <p><a href="/guides">Browse the guides</a></p>
 </main></body></html>`
 
-export async function proxy(request: NextRequest) {
+async function runProxy(request: NextRequest) {
   // Checked before the Supabase client is built: these paths need no session, and
   // skipping the auth roundtrip keeps a bot hammering dead URLs off the auth path.
   if (isGone(request.nextUrl.pathname)) {
@@ -136,6 +137,19 @@ export async function proxy(request: NextRequest) {
   // This response has cookies set by Supabase's session refresh logic.
   return response
 }
+
+// Compose Searchable Analytics server-side event capture around the existing
+// proxy (auth session refresh + 410 Gone). withSearchable captures the request
+// asynchronously (no added latency) and returns the wrapped handler's response
+// untouched, so auth cookies and 410s are preserved. IP anonymisation is on by
+// default. Guarded: a missing/rotated key degrades to the plain proxy, never a 500.
+const searchableSiteToken = process.env.SEARCHABLE_SITE_TOKEN
+const searchableApiKey = process.env.SEARCHABLE_API_KEY
+
+export const proxy =
+  searchableSiteToken && searchableApiKey
+    ? withSearchable({ siteToken: searchableSiteToken, apiKey: searchableApiKey }, runProxy)
+    : runProxy
 
 export default proxy
 
