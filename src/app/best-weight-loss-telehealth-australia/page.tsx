@@ -94,6 +94,19 @@ const faqSchema = {
   ],
 };
 
+// Describes Refer Labs' comparison service, NOT any telehealth provider's service.
+// Refer Labs is not a medical or telehealth provider.
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Australian weight loss telehealth comparison",
+  description:
+    "Refer Labs compares Australian weight loss telehealth services using public pricing, eligibility, treatment pathway information, support model, disclosures and suitability considerations.",
+  provider: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  areaServed: { "@type": "Country", name: "Australia" },
+  serviceType: "Comparison publishing",
+};
+
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -324,6 +337,7 @@ export default function BestWeightLossTelehealthPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">

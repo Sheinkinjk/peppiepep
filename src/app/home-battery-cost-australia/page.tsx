@@ -54,6 +54,19 @@ const faqSchema = {
   mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
+// Describes Refer Labs' comparison/information service, NOT a battery installer's
+// service. Refer Labs is not an installer or energy retailer.
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Australian home battery cost comparison",
+  description:
+    "Refer Labs explains Australian home battery cost ranges, rebate considerations, quote checks and payback factors using general information and disclosed referral links.",
+  provider: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  areaServed: { "@type": "Country", name: "Australia" },
+  serviceType: "Home energy comparison publishing",
+};
+
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -86,6 +99,7 @@ export default function HomeBatteryCostAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">

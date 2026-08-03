@@ -61,9 +61,9 @@ const PRODUCTS = [
 const URL = `${SITE_URL}/business-loans`;
 
 export const metadata = generateSEOMetadata({
-  title: "Business Loans Australia: Compare Lenders & Check Your Options | Refer Labs",
+  title: "Business Loans Australia: Compare Lenders | Refer Labs",
   description:
-    "Compare Australian business lenders in one short enquiry. A person reviews every enquiry and introduces you to the lenders that fit. Free, no document uploads, no credit impact to enquire. Referrer, not a lender.",
+    "Compare Australian business lenders by loan size, fees, speed and eligibility in one short enquiry. Refer Labs is a referrer, not a lender.",
   url: URL,
   keywords: [
     "business loans australia",
@@ -131,6 +131,19 @@ const webPageSchema = {
   publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
 };
 
+// Describes Refer Labs' own comparison/referral service, NOT any lender's product.
+// Refer Labs is a referrer, not a lender or credit provider.
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Australian business loan comparison and referral",
+  description:
+    "Refer Labs helps Australian businesses compare lender options using loan size, fees, repayment flexibility, speed, eligibility and product type. Refer Labs is a referrer, not a lender.",
+  provider: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  areaServed: { "@type": "Country", name: "Australia" },
+  serviceType: "Business finance comparison",
+};
+
 const STEPS = [
   { h: "Tell us about your business", p: "A short form covering how much you need, what it's for, and a few facts about the business. It takes about a minute, and there are no documents to upload." },
   { h: "We review and match it", p: "A person, not a bot, checks your enquiry against what each lender we compare actually funds, then gets in touch within one business day." },
@@ -143,6 +156,7 @@ export default function BusinessLoansHub() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <main>
         {/* ── Hero (form-first) ── */}
@@ -306,6 +320,28 @@ export default function BusinessLoansHub() {
                 </div>
               ))}
             </dl>
+          </section>
+
+          {/* Official resources (authoritative government references, E-E-A-T) */}
+          <section className="mt-14 max-w-3xl border-t border-[#eef1ef] pt-8">
+            <h2 className="text-lg font-extrabold text-[#10251b]">Official resources</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+              Independent, government-run references worth checking before you borrow:
+            </p>
+            <ul className="mt-3 space-y-1.5 text-sm text-[#3d4b44]">
+              <li>
+                <a href="https://business.gov.au/finance" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">business.gov.au: Finance and funding</a>
+                {" "}— finance options, grants and funding basics for Australian businesses.
+              </li>
+              <li>
+                <a href="https://moneysmart.gov.au/loans" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC MoneySmart: Loans</a>
+                {" "}— the regulator&apos;s free guidance on interest, fees and comparing credit.
+              </li>
+              <li>
+                <a href="https://asic.gov.au/for-finance-professionals/credit-licensees/" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC credit licensees</a>
+                {" "}— check whether a lender or broker holds an Australian credit licence.
+              </li>
+            </ul>
           </section>
 
           {/* Related */}

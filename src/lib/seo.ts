@@ -154,7 +154,7 @@ export const seoConfig = {
     keywords: ["search refer labs", "find comparison"],
   },
   home: {
-    title: "Refer Labs: Independent Health, Software & Tool Comparisons, Australia",
+    title: "Refer Labs: Independent Australian Comparisons",
     description:
       "Compare Australian health, software, energy and business finance services with independent reviews, real pricing and no paid rankings.",
     url: SITE_URL,
@@ -359,9 +359,9 @@ export const seoConfig = {
     keywords: ["nutshell discount code", "nutshell promo code", "nutshell coupon", "nutshell crm referral link", "nutshell crm review", "nutshell pricing", "easy sales crm", "small business crm"],
   },
   businessSoftware: {
-    title: "Business Software Compared 2026: Sales, CRM, Phone, HR & AI Tools | Refer Labs",
+    title: "Business Software Compared: CRM, Phone, HR & AI | Refer Labs",
     description:
-      "Independent comparisons of the business software Australian teams actually use: sales and CRM, business phone, HR and payroll, payments, bookkeeping and AI tools. No pay-to-rank.",
+      "Compare Australian business software by use case, pricing, support, onboarding, integrations and cancellation terms. No pay-to-rank.",
     url: `${SITE_URL}/business-software`,
     keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
   },
@@ -443,7 +443,7 @@ export const seoConfig = {
     keywords: ["home battery payback calculator", "battery payback period australia", "home battery savings calculator", "is a home battery worth it australia", "battery roi calculator australia", "solar battery payback calculator"],
   },
   homeBatteryCost: {
-    title: "Home Battery Cost Australia 2026: Real Prices & Payback | Refer Labs",
+    title: "Home Battery Cost Australia 2026 | Refer Labs",
     description:
       "What a home battery really costs in Australia 2026: installed price ranges by size, what the federal rebate takes off, and realistic payback periods.",
     url: `${SITE_URL}/home-battery-cost-australia`,
@@ -1014,7 +1014,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
-      "The best weight loss telehealth in Australia for 2026, compared: Moshy, Juniper and Pilot. How eligibility works, what each program includes, and how to pick the right online option for you.",
+      "Compare Moshy, Juniper and Pilot for Australian weight-loss telehealth: pricing, eligibility, support and treatment pathways.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
