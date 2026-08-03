@@ -309,16 +309,12 @@ export default function HomePage() {
                 "Australian-focused comparisons",
                 "Prices and offers checked where possible",
                 "Commercial relationships disclosed",
-                "Plain-English trade-offs on every guide",
               ].map((b) => (
                 <li key={b} className="flex items-center gap-2 text-[15px] text-[#3d4b44]">
                   <Check className="h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" /> {b}
                 </li>
               ))}
             </ul>
-            <Link href="/about" className="mt-7 inline-flex items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
-              Read our full methodology <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
           </div>
         </section>
 
