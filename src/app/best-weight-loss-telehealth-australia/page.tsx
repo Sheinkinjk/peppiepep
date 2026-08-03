@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
@@ -115,7 +116,7 @@ const webPageSchema = {
   url: seoConfig.bestWeightLossTelehealth.url,
   inLanguage: "en-AU",
   datePublished: "2026-03-16",
-  dateModified: "2026-07-21",
+  dateModified: "2026-08-03",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
     { "@type": "Thing", name: "Moshy vs Juniper Australia" },
@@ -368,6 +369,8 @@ export default function BestWeightLossTelehealthPage() {
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>
 
+            <EditorialMeta lastUpdated="2026-08-03" className="mb-6" />
+
             <div className="mb-7">
               <VerifiedStamp date={MOSHY_OFFER.verified} label={`Moshy: ${MOSHY_OFFER.amount} for new customers · verified`} />
             </div>
@@ -404,6 +407,28 @@ export default function BestWeightLossTelehealthPage() {
                 Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are Australia&apos;s leading GLP-1 weight-management telehealth platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
               </p>
             </div>
+          </section>
+
+          {/* ── Where to start / how to compare (answer-first for unbranded queries) ── */}
+          <section id="how-to-compare" className="border-t border-[#e5e9e7] py-8">
+            <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">Where to start: how to compare weight-loss telehealth</h2>
+            <p className="text-sm text-[#3d4b44] leading-relaxed max-w-2xl mb-4">
+              If you are weighing up options, these factors matter more than the sign-up price. Check each one before you
+              commit:
+            </p>
+            <ul className="space-y-2.5 text-sm text-[#3d4b44] max-w-2xl mb-5">
+              <li><strong className="text-[#10251b]">Eligibility.</strong> Each provider runs an online questionnaire and a practitioner reviews whether treatment is appropriate for you. Approval is assessed individually and is not guaranteed.</li>
+              <li><strong className="text-[#10251b]">Total monthly cost.</strong> Add the program or subscription fee <em>and</em> the medication, which is usually billed separately and can vary by dose. A low program fee can still mean a high total.</li>
+              <li><strong className="text-[#10251b]">Practitioner review and support.</strong> Check whether you get an initial consult, ongoing check-ins, and how you reach a practitioner if something changes.</li>
+              <li><strong className="text-[#10251b]">Medication pathway.</strong> GLP-1 medications are prescription-only and dispensed by a pharmacy. Availability depends on the practitioner&apos;s assessment and current supply.</li>
+              <li><strong className="text-[#10251b]">Cancellation terms.</strong> Confirm whether it is month-to-month and how to pause or cancel before you subscribe.</li>
+            </ul>
+            <p className="text-sm text-[#3d4b44] leading-relaxed max-w-2xl">
+              <strong className="text-[#10251b]">Looking for a cheaper option?</strong> The lowest total cost is not always a
+              paid telehealth program. A GP (some appointments are bulk-billed) can assess eligibility and prescribe, which
+              may work out cheaper for some people. Compare the all-in monthly cost, not just the joining price. Speak with a
+              qualified health professional before starting or changing any treatment.
+            </p>
           </section>
 
           {/* ── What it costs (verified — most providers don't publish) ───────── */}

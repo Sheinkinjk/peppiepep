@@ -4,6 +4,7 @@ import {
   Banknote, Zap, RefreshCw, Waves, Truck, Store,
 } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import LenderCards from "@/components/lending/LenderCards";
@@ -129,6 +130,8 @@ const webPageSchema = {
   description:
     "Compare Australian business lenders and check your options through one short enquiry. Refer Labs is an independent referrer, not a lender.",
   publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  dateModified: "2026-08-03",
+  inLanguage: "en-AU",
 };
 
 // Describes Refer Labs' own comparison/referral service, NOT any lender's product.
@@ -226,6 +229,8 @@ export default function BusinessLoansHub() {
             ))}
           </section>
 
+          <EditorialMeta lastUpdated="2026-08-03" className="mt-10" />
+
           {/* What we help fund (use-cases -> intent pages) */}
           <section className="mt-16">
             <h2 className="text-2xl font-extrabold text-[#10251b]">What we can help fund</h2>
@@ -247,6 +252,27 @@ export default function BusinessLoansHub() {
                 </Link>
               ))}
             </div>
+          </section>
+
+          {/* How to compare (answer-first for unbranded "how to compare business finance" queries) */}
+          <section id="how-to-compare" className="mt-16 max-w-3xl scroll-mt-24">
+            <h2 className="text-2xl font-extrabold text-[#10251b]">How to compare business lenders in Australia</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+              There is no single best lender; the right fit depends on your business. Compare on these before you apply:
+            </p>
+            <ul className="mt-5 space-y-2.5 text-sm text-[#3d4b44]">
+              <li><strong className="text-[#10251b]">Loan size and product type.</strong> A term loan, line of credit, unsecured loan or equipment finance each suit different needs.</li>
+              <li><strong className="text-[#10251b]">Fees and total cost.</strong> Look past the headline rate to establishment and ongoing fees, and whether cost is quoted as an interest rate or a factor rate. A factor rate can look cheaper than it works out to be.</li>
+              <li><strong className="text-[#10251b]">Speed to funding.</strong> Some lenders fund same-day by reading your bank data; others take longer.</li>
+              <li><strong className="text-[#10251b]">Eligibility.</strong> Minimum trading time, monthly revenue and credit profile vary widely by lender.</li>
+              <li><strong className="text-[#10251b]">Repayment flexibility.</strong> Check the term, repayment frequency and any early-repayment fees.</li>
+              <li><strong className="text-[#10251b]">Security.</strong> Unsecured loans need no property or asset; secured options can cost less but put an asset at risk.</li>
+              <li><strong className="text-[#10251b]">Suitability by stage.</strong> Startups, established small businesses, short cash-flow gaps and larger businesses are often served by different lenders.</li>
+            </ul>
+            <p className="mt-5 text-sm leading-relaxed text-[#3d4b44]">
+              Always check the lender&apos;s terms and disclosure before applying. Refer Labs is a referrer, not a lender:
+              we do not approve applications or set rates.
+            </p>
           </section>
 
           {/* Lenders compared */}
@@ -330,16 +356,16 @@ export default function BusinessLoansHub() {
             </p>
             <ul className="mt-3 space-y-1.5 text-sm text-[#3d4b44]">
               <li>
-                <a href="https://business.gov.au/finance" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">business.gov.au: Finance and funding</a>
-                {" "}— finance options, grants and funding basics for Australian businesses.
+                <a href="https://business.gov.au/finance" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">business.gov.au: Finance and funding</a>.
+                {" "}Finance options, grants and funding basics for Australian businesses.
               </li>
               <li>
-                <a href="https://moneysmart.gov.au/loans" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC MoneySmart: Loans</a>
-                {" "}— the regulator&apos;s free guidance on interest, fees and comparing credit.
+                <a href="https://moneysmart.gov.au/loans" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC MoneySmart: Loans</a>.
+                {" "}The regulator&apos;s free guidance on interest, fees and comparing credit.
               </li>
               <li>
-                <a href="https://asic.gov.au/for-finance-professionals/credit-licensees/" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC credit licensees</a>
-                {" "}— check whether a lender or broker holds an Australian credit licence.
+                <a href="https://asic.gov.au/for-finance-professionals/credit-licensees/" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC credit licensees</a>.
+                {" "}Check whether a lender or broker holds an Australian credit licence.
               </li>
             </ul>
           </section>
