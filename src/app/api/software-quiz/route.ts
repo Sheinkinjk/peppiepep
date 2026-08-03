@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { sendAdminNotification, escapeHtml as esc } from "@/lib/email-notifications";
+import { storeLead, markLeadNotified } from "@/lib/store-lead";
 
 export const runtime = "nodejs";
 
@@ -29,6 +30,15 @@ export async function POST(req: NextRequest) {
   const d = parsed.data;
   if (d.company_website_confirm) return NextResponse.json({ ok: true }); // drop bots silently
 
+  // Backstop first: persist before emailing so a Resend failure can't lose the lead.
+  const saved = await storeLead({
+    type: "software_quiz",
+    name: d.business_name,
+    email: d.email,
+    source_page: "/business-software",
+    payload: d,
+  });
+
   const row = (k: string, v: string) => v ? `<tr><td style="padding:4px 12px 4px 0;color:#6b7280">${esc(k)}</td><td style="padding:4px 0;color:#111827;font-weight:600">${esc(v)}</td></tr>` : "";
   const operatorHtml = `
     <div style="font-family:system-ui,sans-serif;max-width:560px">
@@ -41,7 +51,8 @@ export async function POST(req: NextRequest) {
       </table>
     </div>`;
   const opRes = await sendAdminNotification({ subject: `[SOFTWARE QUIZ] ${d.email} · ${d.goals.slice(0, 3).join(", ")}`, html: operatorHtml, to: OPERATOR_EMAIL });
-  if (!opRes.success) return NextResponse.json({ ok: false, error: "Could not send. Please try again, or email jarred@referlabs.com.au." }, { status: 500 });
+  if (!opRes.success && !saved.stored) return NextResponse.json({ ok: false, error: "Could not send. Please try again, or email jarred@referlabs.com.au." }, { status: 500 });
+  if (opRes.success && saved.id) await markLeadNotified(saved.id);
 
   const recs = d.recommended.length ? d.recommended.join(", ") : "your shortlist";
   const applicantHtml = `

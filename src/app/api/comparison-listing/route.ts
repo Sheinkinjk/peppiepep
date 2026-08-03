@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
+import { storeLead, markLeadNotified } from "@/lib/store-lead";
 import { createApiLogger } from "@/lib/api-logger";
 
 const logger = createApiLogger("api:comparison-listing");
@@ -86,6 +87,15 @@ export async function POST(request: Request) {
     const data = result.data;
     const submittedAt = new Date().toISOString();
 
+    // Backstop first: persist before emailing so a Resend failure can't lose the lead.
+    const saved = await storeLead({
+      type: "comparison_listing",
+      name: data.contactName,
+      email: data.contactEmail,
+      source_page: "/comparison-website",
+      payload: data,
+    });
+
     const html = buildListingEmail(data, submittedAt);
 
     const notification = await sendAdminNotification({
@@ -94,10 +104,12 @@ export async function POST(request: Request) {
       to: "jarred@referlabs.com.au",
     });
 
-    if (!notification.success) {
-      logger.error("Failed to send listing enquiry email", { error: notification.error });
+    // Only fail if BOTH the email failed AND the lead wasn't stored.
+    if (!notification.success && !saved.stored) {
+      logger.error("Failed to send listing enquiry email and store lead", { error: notification.error });
       return NextResponse.json({ error: "Failed to submit. Please try again." }, { status: 500 });
     }
+    if (notification.success && saved.id) await markLeadNotified(saved.id);
 
     logger.info("Comparison listing enquiry submitted", {
       business: data.businessName,

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { sendAdminNotification, escapeHtml as esc } from "@/lib/email-notifications";
+import { storeLead, markLeadNotified } from "@/lib/store-lead";
 
 export const runtime = "nodejs";
 
@@ -46,8 +47,16 @@ export async function POST(req: NextRequest) {
   const d = parsed.data;
   if (d.company_website_confirm) return NextResponse.json({ ok: true }); // silently drop bots
 
-  // Operator email — this MUST succeed, or the lead is lost. On failure we 500 so the
-  // form tells the person to try again rather than silently dropping their enquiry.
+  // Backstop first: persist the lead before emailing, so a Resend failure can't lose it.
+  const saved = await storeLead({
+    type: "apollo_eoi",
+    name: d.full_name,
+    email: d.email,
+    phone: d.phone,
+    source_page: d.source_page || "/apollo-energy-group",
+    payload: d,
+  });
+
   const operatorHtml = `
     <div style="font-family:system-ui,sans-serif;max-width:560px">
       <h2 style="color:#0a7c42;margin:0 0 4px">New Apollo Energy EOI</h2>
@@ -63,9 +72,12 @@ export async function POST(req: NextRequest) {
     html: operatorHtml,
     to: OPERATOR_EMAIL,
   });
-  if (!opRes.success) {
+  // Only fail the request if BOTH the email failed AND the lead wasn't stored.
+  // If it was stored, the lead is safe even when the email bounces.
+  if (!opRes.success && !saved.stored) {
     return NextResponse.json({ ok: false, error: "Could not send your enquiry. Please try again, or email jarred@referlabs.com.au." }, { status: 500 });
   }
+  if (opRes.success && saved.id) await markLeadNotified(saved.id);
 
   // Applicant confirmation — best-effort; never fail the request if this bounces.
   const applicantHtml = `
