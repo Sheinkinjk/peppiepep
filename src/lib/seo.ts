@@ -171,7 +171,7 @@ export const seoConfig = {
   },
 
   weightLossHub: {
-    title: "Weight Loss Telehealth Australia 2026: Compare Online Programs & Clinics | Refer Labs",
+    title: "Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
       "Compare online weight-loss telehealth in Australia: medical clinics, coaching programs and the GP pathway, plus guides to Moshy and Juniper. Info only.",
     url: `${SITE_URL}/weight-loss`,
@@ -296,63 +296,63 @@ export const seoConfig = {
   },
 
   cloudtalk: {
-    title: "CloudTalk Discount Code & Referral Link 2026: AI Business Phone | Refer Labs",
+    title: "CloudTalk Discount Code 2026: AI Business Phone | Refer Labs",
     description:
       "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system. Start with a 14-day free trial plus free AI-voice test minutes through our link.",
     url: `${SITE_URL}/cloudtalk`,
     keywords: ["cloudtalk discount code", "cloudtalk promo code", "cloudtalk coupon", "cloudtalk referral link", "cloudtalk review", "cloudtalk pricing", "cloudtalk free trial", "business phone system"],
   },
   krispcall: {
-    title: "KrispCall Discount Code & Referral Link 2026: Cloud Phone System | Refer Labs",
+    title: "KrispCall Discount Code 2026: Cloud Phone System | Refer Labs",
     description:
       "Looking for a KrispCall discount code, promo code or referral link? KrispCall is a cloud phone system with virtual numbers and a shared team inbox. See the current plan and start via our link.",
     url: `${SITE_URL}/krispcall`,
     keywords: ["krispcall discount code", "krispcall promo code", "krispcall coupon", "krispcall referral link", "krispcall review", "krispcall pricing", "virtual phone number", "cloud phone system"],
   },
   dext: {
-    title: "Dext Discount Code & Referral Link 2026: Bookkeeping Automation | Refer Labs",
+    title: "Dext Discount Code 2026: Bookkeeping Automation | Refer Labs",
     description:
       "Looking for a Dext discount code, promo code or referral link? Dext automates bookkeeping, capturing receipts and invoices and syncing to Xero, QuickBooks and Sage. Start free with a 14-day trial through our link.",
     url: `${SITE_URL}/dext`,
     keywords: ["dext discount code", "dext promo code", "dext coupon", "dext referral link", "dext review", "dext pricing", "receiptbank dext", "bookkeeping automation software"],
   },
   trainual: {
-    title: "Trainual Discount Code & Referral Link 2026: Training & SOPs | Refer Labs",
+    title: "Trainual Discount Code 2026: Training & SOPs | Refer Labs",
     description:
       "Looking for a Trainual discount code, promo code or referral link? Trainual documents processes, onboarding and SOPs in one place. See the current plan and start via our link.",
     url: `${SITE_URL}/trainual`,
     keywords: ["trainual discount code", "trainual promo code", "trainual coupon", "trainual referral link", "trainual review", "trainual pricing", "employee onboarding software", "sop software"],
   },
   lindy: {
-    title: "Lindy Discount Code & Referral Link 2026: AI Work Assistant | Refer Labs",
+    title: "Lindy Discount Code 2026: AI Work Assistant | Refer Labs",
     description:
       "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work. Try it free for 7 days through our link.",
     url: `${SITE_URL}/lindy`,
     keywords: ["lindy discount code", "lindy ai promo code", "lindy coupon", "lindy referral link", "lindy ai review", "lindy pricing", "ai work assistant", "ai automation tool"],
   },
   elevenlabs: {
-    title: "ElevenLabs Discount Code & Referral Link 2026: AI Voice & TTS | Refer Labs",
+    title: "ElevenLabs Discount Code 2026: AI Voice & TTS | Refer Labs",
     description:
       "Looking for an ElevenLabs discount code, promo code or referral link? ElevenLabs is an AI voice and text-to-speech platform with voice cloning and dubbing. Start on the free plan via our link.",
     url: `${SITE_URL}/elevenlabs`,
     keywords: ["elevenlabs discount code", "elevenlabs promo code", "elevenlabs coupon", "elevenlabs referral link", "elevenlabs review", "elevenlabs pricing", "ai voice generator", "text to speech ai"],
   },
   wingAssistant: {
-    title: "Wing Assistant Discount Code & Referral Link 2026: Virtual Assistants | Refer Labs",
+    title: "Wing Assistant Discount Code 2026: Virtual Assistants | Refer Labs",
     description:
       "Looking for a Wing Assistant discount code, promo code or referral link? Wing is a managed virtual-assistant service with dedicated assistants across many roles. Book a free consultation via our link.",
     url: `${SITE_URL}/wing-assistant`,
     keywords: ["wing assistant discount code", "wing assistant promo code", "wing assistant referral link", "wing assistant review", "wing assistant pricing", "managed virtual assistant", "virtual assistant service"],
   },
   survicate: {
-    title: "Survicate Discount Code & Referral Link 2026: Surveys & Feedback | Refer Labs",
+    title: "Survicate Discount Code 2026: Surveys & Feedback | Refer Labs",
     description:
       "Looking for a Survicate discount code, promo code or referral link? Survicate runs customer-feedback surveys across web, email and app with AI analysis. Start on the free plan via our link.",
     url: `${SITE_URL}/survicate`,
     keywords: ["survicate discount code", "survicate promo code", "survicate coupon", "survicate referral link", "survicate review", "survicate pricing", "customer feedback software", "survey tool"],
   },
   nutshell: {
-    title: "Nutshell Discount Code & Referral Link 2026: Easy Sales CRM | Refer Labs",
+    title: "Nutshell Discount Code 2026: Easy Sales CRM | Refer Labs",
     description:
       "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in. Start with a 14-day free trial, no card, through our link. From US$13/user/mo.",
     url: `${SITE_URL}/nutshell`,
@@ -366,42 +366,42 @@ export const seoConfig = {
     keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
   },
   pipedrive: {
-    title: "Pipedrive Discount Code & Referral Link 2026: Visual Sales CRM | Refer Labs",
+    title: "Pipedrive Discount Code 2026: Visual Sales CRM | Refer Labs",
     description:
       "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link. From US$14/seat/mo.",
     url: `${SITE_URL}/pipedrive`,
     keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
   },
   activeCampaign: {
-    title: "ActiveCampaign Discount Code & Referral Link 2026: Email Automation | Refer Labs",
+    title: "ActiveCampaign Discount Code 2026: Email Automation | Refer Labs",
     description:
       "Looking for an ActiveCampaign discount code, promo code or referral link? Email marketing plus a powerful automation builder and CRM, with a 14-day free trial through our link. From US$15/mo.",
     url: `${SITE_URL}/activecampaign`,
     keywords: ["activecampaign discount code", "activecampaign promo code", "activecampaign coupon", "activecampaign referral link", "activecampaign review", "activecampaign pricing", "email marketing automation", "marketing automation crm"],
   },
   helloBar: {
-    title: "Hello Bar Discount Code & Referral Link 2026: Popups & Lead Capture | Refer Labs",
+    title: "Hello Bar Discount Code 2026: Popups & Lead Capture | Refer Labs",
     description:
       "Looking for a Hello Bar discount code or referral link? Hello Bar adds no-code popups and bars to capture emails and lift conversions. Free plan; paid from US$29/mo. Start via our link.",
     url: `${SITE_URL}/hellobar`,
     keywords: ["hello bar discount code", "hellobar referral link", "hello bar review", "hello bar pricing", "website popup tool", "email capture popup", "notification bar"],
   },
   outgrow: {
-    title: "Outgrow Discount Code & Referral Link 2026: Quizzes & Calculators | Refer Labs",
+    title: "Outgrow Discount Code 2026: Quizzes & Calculators | Refer Labs",
     description:
       "Looking for an Outgrow discount code or referral link? Outgrow builds no-code calculators, quizzes and assessments that capture qualified leads. Free plan plus a 7-day trial. From US$14/mo, via our link.",
     url: `${SITE_URL}/outgrow`,
     keywords: ["outgrow discount code", "outgrow referral link", "outgrow review", "outgrow pricing", "interactive content tool", "quiz funnel builder", "lead generation calculator"],
   },
   flexiQuiz: {
-    title: "FlexiQuiz Discount Code & Referral Link 2026: Quiz & Test Maker | Refer Labs",
+    title: "FlexiQuiz Discount Code 2026: Quiz & Test Maker | Refer Labs",
     description:
       "Looking for a FlexiQuiz discount code or referral link? FlexiQuiz builds online quizzes, tests and assessments with auto-marking and certificates. Free plan; paid from US$17/mo. Start via our link.",
     url: `${SITE_URL}/flexiquiz`,
     keywords: ["flexiquiz discount code", "flexiquiz referral link", "flexiquiz review", "flexiquiz pricing", "online quiz maker", "online test maker", "assessment software"],
   },
   landingi: {
-    title: "Landingi Discount Code & Referral Link 2026: Landing Page Builder | Refer Labs",
+    title: "Landingi Discount Code 2026: Landing Page Builder | Refer Labs",
     description:
       "Looking for a Landingi discount code or referral link? Landingi is a no-code landing-page builder with A/B testing and a 14-day free trial through our link. From US$24/mo.",
     url: `${SITE_URL}/landingi`,
@@ -422,14 +422,14 @@ export const seoConfig = {
     keywords: ["home battery rebate australia", "cheaper home batteries program", "battery rebate 2026", "solar battery rebate australia", "federal battery rebate", "home battery rebate how much", "battery rebate taper 14kwh", "stc battery rebate"],
   },
   homeBatteryRebateByState: {
-    title: "Home Battery Rebate by State Australia 2026: NSW, VIC, QLD, WA, SA, TAS, ACT, NT | Refer Labs",
+    title: "Home Battery Rebate by State 2026 | Refer Labs",
     description:
       "Home battery rebates by state for 2026. The federal Cheaper Home Batteries rebate (about $272 per usable kWh) applies everywhere; only WA and NSW add a meaningful state incentive on top, the ACT offers interest-free loans, and most other states no longer run their own battery rebate.",
     url: `${SITE_URL}/home-battery-rebate-by-state-australia`,
     keywords: ["home battery rebate by state", "home battery rebate nsw", "home battery rebate victoria", "home battery rebate qld", "home battery rebate wa", "home battery rebate sa", "solar battery rebate by state australia", "state battery incentives australia 2026"],
   },
   virtualPowerPlantAustralia: {
-    title: "Virtual Power Plant (VPP) Australia 2026: How Payments Work & Is It Worth It | Refer Labs",
+    title: "Virtual Power Plant (VPP) Australia 2026 | Refer Labs",
     description:
       "What a Virtual Power Plant is, how VPP payments actually work, what a home battery can realistically earn (industry estimates put it at $200 to $1,500 a year), the upfront NSW VPP incentive, and the trade-offs on control and battery warranty. Information only.",
     url: `${SITE_URL}/virtual-power-plant-australia`,
@@ -450,21 +450,21 @@ export const seoConfig = {
     keywords: ["home battery cost australia", "home battery price australia 2026", "how much does a home battery cost", "solar battery cost australia", "battery payback period australia", "tesla powerwall 3 price australia", "home battery installed cost"],
   },
   finasterideAustralia: {
-    title: "Finasteride Australia 2026: What It Is & How Access Works | Refer Labs",
+    title: "Finasteride Australia 2026: How Access Works | Refer Labs",
     description:
       "An independent, factual guide to finasteride for hair loss in Australia. What it is, why it is prescription-only, how a GP or telehealth assessment works, side effects, and topical finasteride. Information only, not medical advice.",
     url: `${SITE_URL}/finasteride-australia`,
     keywords: ["finasteride australia", "finasteride hair loss australia", "finasteride prescription australia", "finasteride 1mg australia", "finasteride online australia", "dht blocker hair loss", "finasteride side effects"],
   },
   minoxidilAustralia: {
-    title: "Minoxidil Australia 2026: Topical vs Oral & How to Get It | Refer Labs",
+    title: "Minoxidil Australia 2026: Topical vs Oral | Refer Labs",
     description:
       "An independent, factual guide to minoxidil for hair loss in Australia. Topical (over the counter) vs oral (prescription), the shedding phase, side effects, and how it combines with finasteride. Information only, not medical advice.",
     url: `${SITE_URL}/minoxidil-australia`,
     keywords: ["minoxidil australia", "minoxidil hair loss australia", "topical minoxidil australia", "oral minoxidil australia", "regaine australia", "minoxidil over the counter australia", "minoxidil shedding phase"],
   },
   hairLossTreatmentCost: {
-    title: "Hair Loss Treatment Cost Australia 2026: Real Prices | Refer Labs",
+    title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
     description:
       "What hair-loss treatment costs in Australia 2026: over-the-counter minoxidil vs telehealth plans, using Mosh's published prices, and what is subsidised.",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
@@ -485,14 +485,14 @@ export const seoConfig = {
     keywords: ["best solar battery company australia", "best solar battery company sydney", "solar battery company sydney", "solar battery government rebate sydney", "apollo energy group", "apollo energy group review", "solar battery installer sydney", "home battery australia", "cheaper home batteries program", "battery installer sydney"],
   },
   keap: {
-    title: "Keap Discount Code & Referral Link 2026: Small-Business CRM & Automation | Refer Labs",
+    title: "Keap Discount Code 2026: Small-Business CRM & Automation | Refer Labs",
     description:
       "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up. See the 14-day free trial and pricing via our link.",
     url: `${SITE_URL}/keap`,
     keywords: ["keap crm","keap pricing","keap referral link","keap review","infusionsoft keap","small business crm automation","sales follow up automation"],
   },
   capsule: {
-    title: "Capsule CRM Discount Code & Referral Link 2026: Simple CRM for Small Business | Refer Labs",
+    title: "Capsule CRM Discount Code 2026 | Refer Labs",
     description:
       "Capsule is a simple CRM for small businesses: contacts, a visual sales pipeline, tasks and email tracking. Free for up to 250 contacts. See pricing and start via our link.",
     url: `${SITE_URL}/capsule`,
@@ -510,21 +510,21 @@ export const seoConfig = {
     keywords: ["instapage pricing","instapage referral link","instapage review","landing page builder for ads","instapage vs leadpages","ppc landing pages","conversion landing page platform"],
   },
   beautifulai: {
-    title: "Beautiful.ai Discount Code & Referral Link 2026: AI Presentation Software | Refer Labs",
+    title: "Beautiful.ai Discount Code 2026: AI Presentation Software | Refer Labs",
     description:
       "Beautiful.ai designs your slides automatically as you build them, with smart templates and an AI deck generator. See the free trial and Pro pricing via our link.",
     url: `${SITE_URL}/beautifulai`,
     keywords: ["beautiful.ai pricing","beautiful ai referral link","beautiful.ai review","ai presentation software","ai slide generator","presentation maker ai","beautiful.ai vs canva"],
   },
   pandadoc: {
-    title: "PandaDoc Discount Code & Referral Link 2026: Proposals, Contracts & E-Signatures | Refer Labs",
+    title: "PandaDoc Discount Code 2026: E-Signatures | Refer Labs",
     description:
       "PandaDoc automates proposals, quotes and contracts with built-in e-signatures, templates and real-time tracking. See the free eSign plan and pricing via our link.",
     url: `${SITE_URL}/pandadoc`,
     keywords: ["pandadoc pricing","pandadoc referral link","pandadoc review","proposal software","e-signature software","contract management","pandadoc free plan"],
   },
   blinq: {
-    title: "Blinq Discount Code & Referral Link 2026: Digital Business Cards | Refer Labs",
+    title: "Blinq Discount Code 2026: Digital Business Cards | Refer Labs",
     description:
       "Blinq is a digital business card you share by QR, link or NFC, and recipients save your details in one tap. See the free plan and pricing via our link.",
     url: `${SITE_URL}/blinq`,
@@ -532,7 +532,7 @@ export const seoConfig = {
   },
 
   hairLossHub: {
-    title: "Hair Loss in Australia 2026: Compare Treatments & Your Options | Refer Labs",
+    title: "Hair Loss Treatments Australia 2026 | Refer Labs",
     description:
       "The hair loss decision, organised. Compare Australia's clinical telehealth and topical products, with independent guides to Mosh, Dense and more. Information only, not medical advice.",
     url: `${SITE_URL}/hair-loss`,
@@ -760,7 +760,7 @@ export const seoConfig = {
   },
 
   swipePages: {
-    title: "Swipe Pages Review 2026: 14-Day Free Trial, AMP Landing Pages | Refer Labs",
+    title: "Swipe Pages Review 2026: AMP Landing Pages | Refer Labs",
     description:
       "Swipe Pages review 2026: AMP landing pages that load in under 1 second, A/B testing, dynamic text replacement. 14-day free trial, no credit card. Compare vs Unbounce, Leadpages, and Instapage.",
     url: `${SITE_URL}/swipepages`,
@@ -787,7 +787,7 @@ export const seoConfig = {
   },
 
   butternut: {
-    title: "Butternut AI Review 2026: Generate a Website Free in 20 Seconds | Refer Labs",
+    title: "Butternut AI Review 2026: Free Website Builder | Refer Labs",
     description:
       "Butternut AI review 2026: full website generated from a prompt in 20 seconds, free to try with no account. Compare Butternut AI vs Durable AI, Wix, Squarespace. Pricing, discount, and free trial link inside.",
     url: `${SITE_URL}/butternut`,
@@ -840,7 +840,7 @@ export const seoConfig = {
   },
 
   durableAi: {
-    title: "Durable AI Review 2026: AI Website Builder Free Trial for Small Business | Refer Labs",
+    title: "Durable AI Review 2026: Website Builder | Refer Labs",
     description:
       "Durable AI review 2026: generate a complete business website in 30 seconds, free with no account. Includes CRM, invoicing, and Google Business integration. Compare Durable AI vs Wix, Squarespace, and Butternut AI.",
     url: `${SITE_URL}/durableai`,
@@ -952,7 +952,7 @@ export const seoConfig = {
   },
 
   dense: {
-    title: "Dense Discount Code Australia | Dense Hair Experts Promo Code & Current Offer | Refer Labs",
+    title: "Dense Hair Discount Code Australia | Refer Labs",
     description:
       "Looking for a Dense discount code, promo code, or coupon? Access the current Dense Hair Experts offer through our affiliate link and shop Australia's leading hair density specialists.",
     url: `${SITE_URL}/dense`,
@@ -971,7 +971,7 @@ export const seoConfig = {
   },
 
   moshy: {
-    title: "Moshy Discount Code Australia 2026: $120 Off Your First Order | Refer Labs",
+    title: "Moshy Discount Code Australia 2026: $120 Off | Refer Labs",
     description:
       "Moshy's current discount: $120 off your first order, applied automatically through our referral link (code REFERRAL120), verified July 2026. Plus how the eligibility check works and what Moshy costs. Independent, not medical advice.",
     url: `${SITE_URL}/moshy`,
@@ -1791,7 +1791,7 @@ export const seoConfig = {
   },
 
   goHighLevel: {
-    title: "GoHighLevel Discount Code & Referral Link 2026: CRM Free Trial | Refer Labs",
+    title: "GoHighLevel Discount Code 2026: CRM Free Trial | Refer Labs",
     description:
       "Looking for a GoHighLevel discount code, promo code or referral link? Here's what is actually available, plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From $97/month, 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
@@ -1818,7 +1818,7 @@ export const seoConfig = {
   },
 
   aisdr: {
-    title: "AiSDR Discount Code & Referral Link 2026: AI Sales Rep | Refer Labs",
+    title: "AiSDR Discount Code 2026: AI Sales Rep | Refer Labs",
     description:
       "Looking for an AiSDR discount code, promo code or referral link? The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From $250/month (Solo); the popular quarterly plan is $900/month.",
     url: `${SITE_URL}/aisdr`,
@@ -1845,7 +1845,7 @@ export const seoConfig = {
   },
 
   replyio: {
-    title: "Reply.io Discount Code & Referral Link 2026: Sales Outreach | Refer Labs",
+    title: "Reply.io Discount Code 2026: Sales Outreach | Refer Labs",
     description:
       "Looking for a Reply.io discount code, promo code or referral link? The AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial.",
     url: `${SITE_URL}/replyio`,
@@ -1872,7 +1872,7 @@ export const seoConfig = {
   },
 
   fullenrich: {
-    title: "FullEnrich Discount Code & Referral Link 2026: B2B Contact Data | Refer Labs",
+    title: "FullEnrich Discount Code 2026: B2B Contact Data | Refer Labs",
     description:
       "Looking for a FullEnrich discount code, promo code or referral link? Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start.",
     url: `${SITE_URL}/fullenrich`,
@@ -1900,7 +1900,7 @@ export const seoConfig = {
   },
 
   brevo: {
-    title: "Brevo Discount Code & Referral Link 2026: Email, SMS & CRM | Refer Labs",
+    title: "Brevo Discount Code 2026: Email, SMS & CRM | Refer Labs",
     description:
       "Looking for a Brevo discount code, promo code or referral link? The all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works.",
     url: `${SITE_URL}/brevo`,
@@ -1923,7 +1923,7 @@ export const seoConfig = {
   },
 
   alidrop: {
-    title: "AliDrop Discount Code & Referral Link 2026: Dropshipping Tool | Refer Labs",
+    title: "AliDrop Discount Code 2026: Dropshipping Tool | Refer Labs",
     description:
       "AliDrop discount code, promo and referral link, plus the current offer: the dropshipping tool for sourcing from AliExpress and Temu into Shopify.",
     url: `${SITE_URL}/alidrop`,
@@ -1946,7 +1946,7 @@ export const seoConfig = {
   },
 
   leadpages: {
-    title: "Leadpages Discount Code & Referral Link 2026: Landing Page Builder | Refer Labs",
+    title: "Leadpages Discount Code 2026: Landing Page Builder | Refer Labs",
     description:
       "Looking for a Leadpages discount code, promo code or referral link? Start with a 7-day free trial, then 50% off your first month, via our link. A landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder.",
     url: `${SITE_URL}/leadpages`,
@@ -1969,7 +1969,7 @@ export const seoConfig = {
   },
 
   superfiliate: {
-    title: "Superfiliate Discount Code & Referral Link 2026: For Brands | Refer Labs",
+    title: "Superfiliate Discount Code 2026: For Brands | Refer Labs",
     description:
       "Looking for a Superfiliate discount code, promo code or referral link? New subscribers get 15% off the monthly Superfiliate fee via our link. A creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates.",
     url: `${SITE_URL}/superfiliate`,

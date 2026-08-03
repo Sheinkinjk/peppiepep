@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import LenderTable from "@/components/lending/LenderTable";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS, type Lender } from "@/lib/lenders";
@@ -78,6 +79,7 @@ export default function IntentPage({ cfg }: { cfg: IntentConfig }) {
         </nav>
 
         <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">{cfg.h1}</h1>
+        <EditorialMeta lastUpdated={LENDING_LAST_UPDATED} className="mt-3" />
         <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
         {cfg.intro?.map((p, i) => <p key={i} className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{p}</p>)}
 

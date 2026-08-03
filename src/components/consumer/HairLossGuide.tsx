@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { SITE_URL } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 
@@ -88,6 +89,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         </nav>
 
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">{cfg.h1}</h1>
+        <EditorialMeta lastUpdated="2026-07-20" className="mt-4" />
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
 
         {/* Information-only notice */}
