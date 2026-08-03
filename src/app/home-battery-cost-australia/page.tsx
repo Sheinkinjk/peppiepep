@@ -3,6 +3,7 @@ import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.homeBatteryCost);
@@ -118,6 +119,7 @@ export default function HomeBatteryCostAustraliaPage() {
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               How much a home battery costs in Australia
             </h1>
+            <EditorialMeta lastUpdated="2026-07-17" className="mt-5" />
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               Battery prices are confusing because quotes mix up supply-only and installed, and before and after the
               rebate. This page sets out the real installed cost ranges for 2026 by size, what the federal rebate takes

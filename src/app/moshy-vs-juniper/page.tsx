@@ -3,6 +3,7 @@ import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -119,6 +120,7 @@ export default function MoshyVsJuniperPage() {
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
+        <EditorialMeta lastUpdated="2026-07-16" className="mb-6" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem in different
           ways. The short version: <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps

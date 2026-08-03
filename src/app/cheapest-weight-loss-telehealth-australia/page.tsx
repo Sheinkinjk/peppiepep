@@ -3,6 +3,7 @@ import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.cheapestWeightLossTelehealth);
@@ -149,6 +150,7 @@ export default function CheapestWeightLossTelehealthPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>
+            <EditorialMeta lastUpdated="2026-07-06" className="mb-5" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               &ldquo;Cheapest&rdquo; is a slippery word in weight-loss telehealth, because services bill in different
               ways. Subscription programs charge a flat monthly fee. Pay-as-you-go services charge per consult. And

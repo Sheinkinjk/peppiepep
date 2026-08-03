@@ -3,6 +3,7 @@ import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import OffersTable from "@/components/lending/OffersTable";
 import { DEALS } from "@/lib/offers";
 import StickyCta from "@/components/consumer/StickyCta";
@@ -254,6 +255,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             Best Hair Loss Treatment Australia 2026:{" "}
             <span style={{ color: CYAN_LT }}>Mosh vs Dense vs Telehealth</span>
           </h1>
+          <EditorialMeta lastUpdated="2026-07-21" className="mb-6" />
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
