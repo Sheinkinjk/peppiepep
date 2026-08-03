@@ -91,7 +91,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
   function onKey(e: React.KeyboardEvent) {
     if (e.key === "Escape") { setOpen(false); return; }
     if (!open || ordered.length === 0) {
-      if (e.key === "Enter" && q.trim()) { e.preventDefault(); go("/guides"); }
+      if (e.key === "Enter" && q.trim()) { e.preventDefault(); go(`/search?q=${encodeURIComponent(q.trim())}`); }
       return;
     }
     if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => (a + 1) % ordered.length); }
@@ -201,8 +201,8 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
               <span className="inline-flex items-center gap-1"><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]">↑</kbd><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]">↓</kbd> navigate</span>
               <span className="inline-flex items-center gap-1"><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]"><CornerDownLeft className="h-2.5 w-2.5" /></kbd> open</span>
             </span>
-            <button onClick={() => go("/guides")} className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-[#0a7c42] hover:text-[#086536]">
-              {hasQuery && ordered.length > 0 ? `See all ${ordered.length > 8 ? "results" : "guides"}` : "All guides"}
+            <button onClick={() => go(hasQuery ? `/search?q=${encodeURIComponent(q.trim())}` : "/guides")} className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-[#0a7c42] hover:text-[#086536]">
+              {hasQuery ? "See all results" : "All guides"}
               <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>

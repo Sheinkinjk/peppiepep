@@ -103,10 +103,38 @@ const trust = [
   "Free to use",
 ];
 
+// Homepage trust FAQ. Factual, no guarantees, matches the visible questions below
+// (so the FAQPage schema is legitimate).
+const homeFaqs = [
+  {
+    q: "Are Refer Labs rankings paid?",
+    a: "No. Brands cannot pay to change their position in a Refer Labs guide. Some links may earn a commission, but commercial relationships are disclosed and do not make rankings paid placements.",
+  },
+  {
+    q: "How does Refer Labs make money?",
+    a: "Refer Labs may earn a commission when readers click some links or sign up with selected partners. This helps keep the site free to use. Commercial relationships are disclosed where relevant.",
+  },
+  {
+    q: "How often are prices checked?",
+    a: "Prices, offers and inclusions can change. We check and date key pricing where possible, and readers should always confirm final costs with the provider before signing up.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function HomePage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main id="main-content">
         {/* ── Masthead hero ── */}
@@ -259,16 +287,37 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── About: a plain two-paragraph explainer ── */}
+        {/* ── How we compare: methodology + disclosure ── */}
         <section className="border-t border-[#e5e9e7] bg-white">
           <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
-            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">About Refer Labs</h2>
+            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">How Refer Labs compares services</h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[#3d4b44]">
               Refer Labs is an independent Australian comparison publisher. We research the categories where the choice
               is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, business finance and the
-              software that runs a business, and write up what we find in plain language, with the pricing checked and
-              the trade-offs spelled out.
+              software that runs a business.
             </p>
+            <p className="mt-4 text-[17px] leading-relaxed text-[#3d4b44]">
+              When we compare providers we look at pricing, eligibility, inclusions, trade-offs, availability in
+              Australia and who each option suits, then write it up in plain language. Our rankings are not for sale.
+              Commercial partnerships may exist and are always disclosed, but a brand cannot pay to change its position
+              in a guide.
+            </p>
+            <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+              {[
+                "No paid rankings",
+                "Australian-focused comparisons",
+                "Prices and offers checked where possible",
+                "Commercial relationships disclosed",
+                "Plain-English trade-offs on every guide",
+              ].map((b) => (
+                <li key={b} className="flex items-center gap-2 text-[15px] text-[#3d4b44]">
+                  <Check className="h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" /> {b}
+                </li>
+              ))}
+            </ul>
+            <Link href="/about" className="mt-7 inline-flex items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+              Read our full methodology <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </section>
 
@@ -287,6 +336,21 @@ export default function HomePage() {
                   <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">{g.cat}</p>
                   <h3 className="mt-1.5 text-[17px] font-bold leading-snug tracking-[-0.01em] text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{g.title}</h3>
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Common questions (trust + AEO; matches faqSchema) ── */}
+        <section className="border-t border-[#e5e9e7] bg-white">
+          <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
+            <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Common questions</h2>
+            <div className="mt-8 divide-y divide-[#e5e9e7]">
+              {homeFaqs.map((f) => (
+                <div key={f.q} className="py-5 first:pt-0">
+                  <h3 className="text-[17px] font-bold text-[#10251b]">{f.q}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                </div>
               ))}
             </div>
           </div>

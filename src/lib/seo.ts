@@ -143,10 +143,20 @@ export function generateMetadata(config: SEOConfig): Metadata {
  * Pre-configured SEO configs for common pages
  */
 export const seoConfig = {
+  // On-site search results. Kept crawlable but noindex (avoids indexing infinite
+  // query variations) so the WebSite SearchAction target resolves to a real page.
+  search: {
+    noIndex: true,
+    title: "Search | Refer Labs",
+    description:
+      "Search Refer Labs comparisons, guides and deals across Australian health, home energy, business finance and software.",
+    url: `${SITE_URL}/search`,
+    keywords: ["search refer labs", "find comparison"],
+  },
   home: {
     title: "Refer Labs: Independent Health, Software & Tool Comparisons, Australia",
     description:
-      "Independent comparisons for Australians. Weight loss telehealth, hair loss treatment, website builders, newsletter platforms and more, researched properly so you can choose with confidence.",
+      "Compare Australian health, software, energy and business finance services with independent reviews, real pricing and no paid rankings.",
     url: SITE_URL,
     keywords: [
       "comparison site australia",
