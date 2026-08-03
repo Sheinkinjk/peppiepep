@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Instagram, Facebook } from "lucide-react";
 import NewsletterSignup from "./NewsletterSignup";
 import SiteSearch from "./SiteSearch";
 import CookiePreferencesLink from "./CookiePreferencesLink";
@@ -69,6 +70,16 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
               </p>
               <p className="mt-5 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">The newsletter</p>
               <NewsletterSignup variant="footer" source="footer" />
+              <div className="mt-6 flex items-center gap-3">
+                <a href="https://www.instagram.com/referlabs" target="_blank" rel="me noopener" aria-label="Refer Labs on Instagram"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e3e7e2] text-[#6e7b74] transition-colors hover:border-[#0a7c42] hover:text-[#0a7c42]">
+                  <Instagram className="h-4 w-4" aria-hidden="true" />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61592445156591" target="_blank" rel="me noopener" aria-label="Refer Labs on Facebook"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e3e7e2] text-[#6e7b74] transition-colors hover:border-[#0a7c42] hover:text-[#0a7c42]">
+                  <Facebook className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
             </div>
             <div>
               <p className="mb-4 text-[13px] font-bold uppercase tracking-wide text-[#9aa39c]">By category</p>

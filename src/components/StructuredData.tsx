@@ -53,7 +53,8 @@ export function OrganizationSchema() {
     },
     "publishingPrinciples": "https://referlabs.com.au/about",
     "sameAs": [
-      "https://www.linkedin.com/company/referlabs"
+      "https://www.instagram.com/referlabs",
+      "https://www.facebook.com/profile.php?id=61592445156591"
     ]
   };
 

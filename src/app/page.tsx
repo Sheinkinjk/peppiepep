@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import SiteSearch from "@/components/consumer/SiteSearch";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { SITE_URL } from "@/lib/seo";
 import {
   MOSHY_URL, MOSH_HAIR_URL, BEEHIIV_URL, CARRD_URL, DURABLE_URL, SWIPE_PAGES_URL,
@@ -354,6 +355,11 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* ── Newsletter CTA (audience acquisition) ── */}
+        <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8">
+          <NewsletterSignup variant="band" source="home" />
         </section>
 
         {/* ── For business ── */}
