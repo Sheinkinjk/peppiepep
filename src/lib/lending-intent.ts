@@ -149,7 +149,7 @@ export const INTENT_PAGES: IntentEntry[] = [
       description: "Working capital finance covers the everyday gap between money out and money in: wages, stock, rent, a slow season. The options in Australia and how to choose between them.",
       keywords: ["working capital loans australia", "cash flow finance australia", "working capital finance"],
     },
-    lead: "Working capital finance covers the ordinary running costs of a business, wages, stock, rent, supplier bills, when the timing of money coming in doesn't line up with money going out. It's not for buying a big asset; it's for keeping the lights on smoothly through a slow month or a growth spurt that ties up cash. The right product depends on whether the gap is a one-off or a recurring pattern.",
+    lead: "Working capital finance covers the ordinary running costs of a business, wages, stock, rent, supplier bills, when the timing of money coming in doesn't line up with money going out. It suits keeping the lights on through a slow month or a growth spurt that ties up cash. For buying a big asset, equipment finance usually fits better. The right product depends on whether the gap is a one-off or a recurring pattern.",
     sections: [
       { h: "Matching the product to the gap", body: ["A one-off shortfall and a recurring seasonal dip call for different tools."],
         bullets: ["One-off gap: a short term loan repaid as cash recovers", "Recurring or seasonal gap: a line of credit you draw and repay", "Slow-paying customers: invoice finance against your receivables", "A specific purchase inside the gap: keep it separate from working capital"] },

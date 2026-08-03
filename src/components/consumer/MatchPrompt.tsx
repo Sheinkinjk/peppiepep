@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react";
 export default function MatchPrompt({
   href = "/weight-loss-quiz",
   title = "Not sure which option fits you?",
-  sub = "Answer two quick questions and see the pathway that fits your situation, with an honest reason why. About 30 seconds.",
+  sub = "Answer two quick questions to see the pathway that fits your situation, and the reasoning behind it. About 30 seconds.",
   cta = "Take the 30-second match",
   dataCta = "match-prompt",
 }: {

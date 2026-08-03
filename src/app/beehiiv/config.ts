@@ -70,7 +70,7 @@ export const beehiivConfig: AffiliatePageConfig = {
       heading: "beehiiv Pricing and Free Trial",
       paragraphs: [
         "beehiiv offers a free plan that supports up to 2,500 subscribers with unlimited sends. This is a genuine free tier, not a free trial that expires. It gives you full access to the publishing interface, basic analytics, and the ability to grow your list to 2,500 before needing to upgrade.",
-        "Paid plans, Scale and Max, unlock the full monetization suite: the beehiiv ad network, referral programmes, paid subscriptions, boosts, advanced analytics, custom domains, and API access. These plans are priced monthly or annually.",
+        "Paid plans, Scale and Max, include the full monetization suite: the beehiiv ad network, referral programmes, paid subscriptions, boosts, advanced analytics, custom domains, and API access. These plans are priced monthly or annually.",
         "Our referral link applies the 14-day free trial of paid plan features, giving you access to the full beehiiv platform before committing. If you have been searching for a beehiiv promo code, discount code, or the best current beehiiv offer, this link is the most consistent way to access it.",
       ],
     },
@@ -139,7 +139,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     },
     {
       q: "Is beehiiv free?",
-      a: "Yes. beehiiv has a free plan that supports up to 2,500 subscribers with unlimited sends. You can publish, grow your list, and use the core platform at no cost up to that limit. Paid plans, Scale and Max, unlock the monetization tools, advanced analytics, custom domains, and full API access.",
+      a: "Yes. beehiiv has a free plan that supports up to 2,500 subscribers with unlimited sends. You can publish, grow your list, and use the core platform at no cost up to that limit. Paid plans, Scale and Max, add the monetization tools, advanced analytics, custom domains, and full API access.",
     },
     {
       q: "Is beehiiv better than Substack?",

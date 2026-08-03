@@ -115,8 +115,8 @@ export default function ForBusinessPage() {
           </div>
 
           <p className="mt-10 text-sm">
-            <Link href="/blog" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
-              Read our business insights →
+            <Link href="/affiliate-programs-australia" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
+              Affiliate programs in Australia →
             </Link>{" "}
             <span className="text-[#9aa39c]">Referral and affiliate strategy for founders and marketers.</span>
           </p>
