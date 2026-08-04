@@ -19,6 +19,7 @@ const hubs = [
   { href: "/weight-loss", label: "Weight Loss", desc: "Telehealth, programs and the GP pathway, compared." },
   { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
   { href: "/apollo-energy-group", label: "Home Batteries", desc: "Battery sizing, the federal rebate, and what a quote should include." },
+  { href: "/business-software", label: "Business Software", desc: "A finder that matches you to the right tools by use case, size and budget, plus the full directory." },
   { href: "/compare/website-builders", label: "Website Builders", desc: "Free, AI-built and landing-page tools, sorted by job." },
   { href: "/compare/newsletter-platforms", label: "Newsletter Platforms", desc: "Where to build an email audience, and what each takes." },
   { href: "/compare/ai-sales-tools", label: "AI Sales Tools", desc: "Data, outreach, AI reps and CRMs, sorted by the job you need done." },

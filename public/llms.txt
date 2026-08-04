@@ -26,6 +26,7 @@ Independent, non-sponsored picks and the offers currently available through Refe
 - [Hair loss treatment](https://referlabs.com.au/hair-loss): Clinical telehealth (prescription) vs topical products, compared.
 - [AI sales & automation tools](https://referlabs.com.au/best-ai-sales-tools): The best AI CRM, marketing automation and AI outbound tools, compared.
 - [For business](https://referlabs.com.au/for-business): Featured partnerships and growth services for businesses wanting to reach Australian buyers.
+- [Business software compared](https://referlabs.com.au/business-software): A finder that matches Australian businesses to the right software by use case, team size and priority (cost, value or capability), plus a category directory across CRM, business phone, HR & payroll, payments, website builders, newsletters and AI tools.
 - [AI sales tools compared](https://referlabs.com.au/compare/ai-sales-tools): Category hub sorting AI sales tools by role in the stack (data, outreach, AI SDR, all-in-one).
 - [Website & landing-page builders compared](https://referlabs.com.au/compare/website-builders): Category hub for AI builders, one-page tools and landing-page specialists (Carrd, Durable AI, Butternut, Swipe Pages, Leadpages, Landingi).
 - [Newsletter platforms compared](https://referlabs.com.au/compare/newsletter-platforms): Category hub comparing beehiiv, Substack and Kit by what each is for.
@@ -158,7 +159,7 @@ Lead-capture, not affiliate: Refer Labs is an independent referrer (not a lender
 - [Superfiliate](https://referlabs.com.au/superfiliate): Creator-led growth platform for brands to run affiliate, referral and creator programs (personalised pages per partner). A tool for brands, not for individual affiliates. Pricing quoted per brand.
 - [Affiliate earnings calculator](https://referlabs.com.au/affiliate-earnings-calculator): Interactive estimator (audience size x channel x niche) producing an illustrative earnings range with all assumptions shown. Estimates only, never a promise of income.
 - [Highest-paying affiliate programs](https://referlabs.com.au/high-paying-affiliate-programs), [Best recurring affiliate programs](https://referlabs.com.au/recurring-affiliate-programs), [How to start affiliate marketing in Australia](https://referlabs.com.au/how-to-start-affiliate-marketing-australia).
-- [Growth services](https://referlabs.com.au/services).
+- [Growth services](https://referlabs.com.au/for-business).
 
 ## Company
 - [About Refer Labs](https://referlabs.com.au/about): Who we are, what we do, and how we stay independent.
