@@ -90,6 +90,9 @@ const STANDALONE_ROUTES = [
   // Affiliate content hub + editorial standards
   "/guides",
   "/search",
+  "/pet-insurance",
+  "/knose",
+  "/what-pet-insurance-covers-australia",
   "/about",
   "/cloudtalk",
   "/krispcall",

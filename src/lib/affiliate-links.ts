@@ -18,6 +18,12 @@ export const MOSHY_URL = "https://www.getmoshy.com.au/start/eligibility-check-mo
 // Mosh tracks via the partner path /start/referlabs. Canonical across all pages.
 export const MOSH_HAIR_URL = "https://www.getmosh.com.au/start/referlabs";
 
+// Pet insurance referral (Knose). Structured as a referral under Corporations
+// Regulation 7.6.01(1)(e): general information + referral only, the benefit is
+// disclosed on-page, and NO financial product advice/recommendation is given.
+// Promo code referlab2mf gives the customer 2 months free.
+export const KNOSE_URL = "https://quick-quote.knose.com.au/details?promo=referlab2mf";
+
 // ── Health: hair care ───────────────────────────────────────────────────────
 export const DENSE_URL =
   "https://densehairexperts.myshopify.com?sca_ref=10755034.xwTupm6fuv&utm_source=affiliate-jarred-krowitz&utm_medium=affiliate-jarred-krowitz&utm_campaign=affiliate";

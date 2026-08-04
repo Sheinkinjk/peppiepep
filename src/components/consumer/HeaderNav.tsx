@@ -18,6 +18,13 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    label: "Insurance",
+    items: [
+      { href: "/pet-insurance", label: "Pet Insurance", note: "Cover explained, plus current offers" },
+      { href: "/what-pet-insurance-covers-australia", label: "What It Covers", note: "Cover types, waiting periods, exclusions" },
+    ],
+  },
+  {
     label: "Home & Energy",
     items: [
       { href: "/apollo-energy-group", label: "Home Batteries", note: "Apollo Energy Group, sized to your usage" },

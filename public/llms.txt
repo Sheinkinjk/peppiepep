@@ -66,6 +66,11 @@ Lead-capture, not affiliate: Refer Labs is an independent referrer (not a lender
 - [NSW home battery rebate 2026](https://referlabs.com.au/nsw-home-battery-rebate-2026): The federal Cheaper Home Batteries rebate (applied at sale, ~$252/usable kWh indicative, tapers above 14kWh) plus the NSW VPP incentive (commonly ~$1,500) stack on the same battery. Figures indicative.
 - [Home battery installer NSW](https://referlabs.com.au/home-battery-installer-nsw): What to check in a NSW installer (SAA accreditation, electrical licence, warranties, rebate-at-sale, VPP connection, sizing from usage). Apollo Energy is one SAA-accredited NSW option; $500 off via Refer Labs.
 
+## Pet insurance (Australia)
+- [Pet insurance](https://referlabs.com.au/pet-insurance): General information on pet insurance in Australia (cover types, waiting periods, exclusions, excess, benefit percentage and annual limits) plus current offers. Refer Labs is a referrer, not an insurer, broker or financial adviser; it does not give financial product advice or recommend policies, and discloses any referral benefit. Readers are directed to each insurer's PDS and Target Market Determination.
+- [Knose](https://referlabs.com.au/knose): Australian pet insurance provider. New customers get 2 months free with the code referlab2mf via the Refer Labs link. Referral and general information only, not advice; cover detail is in Knose's PDS/TMD.
+- [What pet insurance covers](https://referlabs.com.au/what-pet-insurance-covers-australia): Plain-English explainer of cover types (accident-only, accident and illness, comprehensive), waiting periods, exclusions, excess, benefit percentage and annual/sub-limits. General information, not advice.
+
 ## Weight loss & telehealth (Australia)
 - [Moshy, explained](https://referlabs.com.au/moshy-review): How the Moshy weight-management telehealth service works, from application to subscription. Moshy is open to anyone eligible (gender-neutral). New customers can currently receive $120 off their first treatment.
 - [Moshy offer & referral link](https://referlabs.com.au/moshy): The current Moshy offer and how the service works.

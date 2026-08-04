@@ -143,6 +143,27 @@ export function generateMetadata(config: SEOConfig): Metadata {
  * Pre-configured SEO configs for common pages
  */
 export const seoConfig = {
+  petInsurance: {
+    title: "Pet Insurance Australia: Cover & Offers | Refer Labs",
+    description:
+      "General information on pet insurance in Australia: what cover types, waiting periods and exclusions mean, plus current offers. We refer, we don't advise.",
+    url: `${SITE_URL}/pet-insurance`,
+    keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
+  },
+  knose: {
+    title: "Knose Pet Insurance: 2 Months Free via Refer Labs",
+    description:
+      "Knose is an Australian pet insurance provider. New customers get 2 months free with code referlab2mf. General info and a referral, not financial advice.",
+    url: `${SITE_URL}/knose`,
+    keywords: ["knose pet insurance", "knose promo code", "knose 2 months free", "knose pet insurance review"],
+  },
+  whatPetInsuranceCovers: {
+    title: "What Pet Insurance Covers in Australia | Refer Labs",
+    description:
+      "A plain-English explainer of pet insurance cover types, waiting periods, exclusions, excess and annual limits in Australia. General information, not advice.",
+    url: `${SITE_URL}/what-pet-insurance-covers-australia`,
+    keywords: ["what pet insurance covers", "pet insurance waiting period", "pet insurance exclusions australia", "accident and illness cover"],
+  },
   // On-site search results. Kept crawlable but noindex (avoids indexing infinite
   // query variations) so the WebSite SearchAction target resolves to a real page.
   search: {
