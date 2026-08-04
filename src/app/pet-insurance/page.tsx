@@ -96,26 +96,22 @@ export default function PetInsurancePage() {
             </p>
           </header>
 
-          <InsuranceDisclosure className="mb-10" />
-
-          {/* Featured program: Knose */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Current offers</h2>
-            <div className="mt-5 nw-card rounded-2xl p-6 sm:p-7">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Knose</p>
-                  <p className="mt-1 text-[13px] text-[#6e7b74]">Australian pet insurance provider</p>
-                </div>
-                <span className="shrink-0 rounded-full bg-[#e6f3ec] px-3 py-1.5 text-[13px] font-bold text-[#0a7c42]">2 months free</span>
+          {/* Prominent current offer: Knose */}
+          <section className="mb-10">
+            <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#e8f5ee] p-6 sm:p-8">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/knose.svg" alt="Knose logo" width={160} height={62} className="h-9 w-auto" />
+                <span className="rounded-full bg-[#0a7c42] px-4 py-1.5 text-sm font-bold text-white">2 months free</span>
               </div>
-              <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
-                New customers get <strong className="text-[#10251b]">2 months free</strong> when they take out a policy
-                using the code <strong className="text-[#10251b]">referlab2mf</strong> through our link. Cover, waiting
-                periods, exclusions and limits are set out in Knose&apos;s PDS; get a quote to see what would apply to
-                your pet.
+              <p className="mt-5 text-2xl font-black leading-tight tracking-[-0.01em] text-[#10251b] sm:text-[1.7rem]">
+                New customers: 2 months free on Knose pet insurance
               </p>
-              <div className="mt-5 flex flex-wrap items-center gap-3">
+              <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+                Use the code <strong className="text-[#10251b]">referlab2mf</strong> through our link. Cover, waiting
+                periods, exclusions and limits are in Knose&apos;s PDS, so get a quote to see what would apply to your pet.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a
                   href={KNOSE_URL}
                   target="_blank"
@@ -134,6 +130,8 @@ export default function PetInsurancePage() {
               More Australian pet insurers are being added to this page over the coming weeks.
             </p>
           </section>
+
+          <InsuranceDisclosure className="mb-12" />
 
           {/* What policies differ on (factual) */}
           <section className="mb-12">

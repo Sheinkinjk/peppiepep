@@ -86,9 +86,8 @@ export default function KnosePage() {
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <span className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-[#e5e9e7] bg-white text-2xl font-black text-[#0a7c42] shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
-              K
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/knose.svg" alt="Knose logo" width={160} height={62} className="mb-5 h-11 w-auto" />
             <p className="nw-kicker">Pet insurance · Current offer</p>
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               Knose pet insurance: <span className="text-[#0a7c42]">2 months free</span> via Refer Labs

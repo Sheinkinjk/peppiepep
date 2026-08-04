@@ -27,6 +27,7 @@ const picks = [
 const categories = [
   { href: "/weight-loss", title: "Weight loss & telehealth" },
   { href: "/hair-loss", title: "Hair loss treatment" },
+  { href: "/pet-insurance", title: "Pet insurance" },
   { href: "/mens-health-telehealth-australia", title: "Men's health telehealth" },
   { href: "/apollo-energy-group", title: "Home batteries" },
   { href: "/compare/website-builders", title: "Website builders" },
