@@ -7,94 +7,156 @@ import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
 /**
- * "Which weight-loss pathway fits you?", a two-question decision tool that ends
- * in a tailored recommendation. Anyone leaning clinical lands on Moshy (the money
- * link, tracked). Engagement asset + funnel, not medical advice.
+ * "Which weight-loss pathway fits you?" is a short preference-based matcher that
+ * ends in a tailored recommendation (telehealth vs GP; Moshy vs Juniper).
  *
- * Both answers shape the result: `priority` picks the pathway, and `gender` tailors
- * the "also worth knowing" line in every branch (so Q1 is never a wasted question).
- * Branches that route to a non-earning option (a GP pathway) still capture the lead
- * via the newsletter, so an honest recommendation is not a dead end.
+ * It asks ONLY about preferences and logistics (channel, approach, support,
+ * urgency, cost, who it's for), never health or medical data, so it stays general
+ * information, not medical advice or an eligibility assessment. Anyone leaning
+ * clinical/online lands on Moshy (the money link, tracked); women wanting coaching
+ * land on Juniper; GP branches still capture the lead via the newsletter so an
+ * honest recommendation is not a dead end. Every answer shapes the result or its copy.
  */
 
-type Gender = "man" | "woman";
-type Priority = "clinical" | "coaching" | "in-person";
+type Key = "gender" | "channel" | "approach" | "support" | "urgency" | "cost";
+type Answers = Partial<Record<Key, string>>;
+
+const QUESTIONS: {
+  key: Key;
+  q: string;
+  options: { value: string; label: string; note?: string }[];
+}[] = [
+  {
+    key: "gender",
+    q: "Who is this for?",
+    options: [
+      { value: "man", label: "A man" },
+      { value: "woman", label: "A woman" },
+    ],
+  },
+  {
+    key: "channel",
+    q: "How would you prefer to get care?",
+    options: [
+      { value: "online", label: "Fully online", note: "Everything from home, no waiting room" },
+      { value: "in-person", label: "In person with a GP", note: "Face to face, uses Medicare" },
+      { value: "either", label: "No strong preference", note: "Whatever fits best" },
+    ],
+  },
+  {
+    key: "approach",
+    q: "Which approach appeals most?",
+    options: [
+      { value: "clinical", label: "Medication-led, practitioner-guided", note: "A structured clinical pathway" },
+      { value: "coaching", label: "Coaching and habits first", note: "Nutrition and lifestyle at the centre" },
+      { value: "unsure", label: "Not sure yet", note: "Still weighing it up" },
+    ],
+  },
+  {
+    key: "support",
+    q: "How much ongoing support do you want?",
+    options: [
+      { value: "high", label: "Structured coaching & community", note: "Regular contact and accountability" },
+      { value: "light", label: "Light check-ins", note: "Some support, not intensive" },
+      { value: "minimal", label: "Just the essentials", note: "Keep it simple" },
+    ],
+  },
+  {
+    key: "urgency",
+    q: "How soon do you want to start?",
+    options: [
+      { value: "now", label: "As soon as I can", note: "Ready to begin" },
+      { value: "month", label: "Within a month", note: "Planning ahead" },
+      { value: "research", label: "Just researching", note: "Gathering information" },
+    ],
+  },
+  {
+    key: "cost",
+    q: "On cost, what fits you best?",
+    options: [
+      { value: "lowest", label: "Lowest total cost", note: "Price is the priority" },
+      { value: "value", label: "Good value for the support", note: "Happy to pay for what's included" },
+      { value: "convenience", label: "Convenience over cost", note: "Time matters more than money" },
+    ],
+  },
+];
 
 type Result = {
   title: string;
   body: string;
   cta?: { label: string; href: string; sponsored: boolean; loc: string };
   secondary?: { label: string; href: string };
-  also?: string;        // gender-tailored "also worth knowing" line
-  capture?: boolean;    // show newsletter capture (non-earning branches)
+  also?: string;
+  capture?: boolean;
 };
 
-function resolve(gender: Gender, priority: Priority): Result {
-  if (priority === "in-person") {
+function resolve(a: Required<Answers>): Result {
+  const woman = a.gender === "woman";
+  const coachingLed = a.approach === "coaching" || a.support === "high";
+  const medicationLed = a.approach === "clinical";
+  const speed = a.urgency === "now";
+
+  // GP pathway: prefers in person, or lowest cost with a habits-first (non-medication) approach.
+  if (a.channel === "in-person" || (a.cost === "lowest" && !medicationLed && a.channel !== "online")) {
     return {
       title: "Start with your GP",
-      body: "You value cost and an in-person assessment over online convenience. A GP can manage the same pathway, knows your history, and Medicare offsets part of the cost. It is slower to begin, and for you that trade is worth it.",
+      body: `A GP can manage the same pathway in person, knows your history, and Medicare offsets part of the cost. It is slower to begin${speed ? ", so it's worth booking in as soon as you can" : ""}, and for what you're after that trade makes sense.`,
       secondary: { label: "Read: telehealth vs your GP", href: "/moshy-vs-gp" },
-      also:
-        gender === "woman"
-          ? "If you later want it done online, Juniper is built for women and Moshy is open to anyone eligible."
-          : "If you later want it done online, Moshy runs the clinical pathway and is open to anyone eligible.",
+      also: woman
+        ? "If you later want it done online, Juniper is built for women and Moshy is open to anyone eligible."
+        : "If you later want it done online, Moshy runs the clinical pathway and is open to anyone eligible.",
       capture: true,
     };
   }
-  if (priority === "coaching") {
-    if (gender === "woman") {
-      return {
-        title: "Juniper looks like your fit",
-        body: "You want accountability and structure alongside medication, and Juniper is built for women with exactly that coaching-and-community layer on top of the clinical pathway.",
-        cta: { label: "Visit Juniper", href: JUNIPER_URL, sponsored: true, loc: "quiz-juniper" },
-        secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
-        also: "Prefer a leaner, medication-first pathway without the coaching layer? Moshy is open to anyone eligible.",
-      };
-    }
+
+  // Online + coaching-heavy + woman -> Juniper (built for women, coaching layer)
+  if (woman && coachingLed) {
     return {
-      title: "Start with your GP for a habits-first plan",
-      body: "You want coaching and habits at the centre rather than medication first. A GP can build a plan around nutrition and lifestyle, knows your history, and can refer you on to a dietitian or an exercise program. If you later want the clinical route, Moshy runs that pathway online.",
+      title: "Juniper looks like your fit",
+      body: "You want accountability and structure alongside medication, done online. Juniper is built for women with exactly that coaching-and-community layer on top of the clinical pathway.",
+      cta: { label: "Check your eligibility on Juniper", href: JUNIPER_URL, sponsored: true, loc: "quiz-juniper" },
+      secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
+      also: "Prefer a leaner, medication-first pathway without the coaching layer? Moshy is open to anyone eligible.",
+    };
+  }
+
+  // Habits-first, lighter support -> GP/dietitian habits plan (non-earning, capture the lead)
+  if (a.approach === "coaching" && a.support !== "high") {
+    return {
+      title: "A habits-first plan is your starting point",
+      body: "You want coaching and habits at the centre rather than medication first. A GP or dietitian can build a plan around nutrition and lifestyle. If you later want the clinical route, Moshy runs that pathway online.",
       secondary: { label: "See all weight-loss options", href: "/weight-loss" },
-      also: "If a clinical, online pathway appeals later, Moshy is open to anyone eligible; Pilot is a men's-health option worth knowing too.",
+      also: "If a clinical, online pathway appeals later, Moshy is open to anyone eligible.",
       capture: true,
     };
   }
-  // clinical, Moshy is the clinical pathway, open to anyone eligible
+
+  // Default: clinical / online / unsure -> Moshy (clinical pathway, open to anyone eligible)
   return {
     title: "Moshy is the natural starting point",
-    body: "You want a fast, clinically-led pathway done online, and Moshy runs exactly that, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing.",
+    body: `You want a fast, clinically-led pathway done online, and Moshy runs exactly that, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing${speed ? ", so you can start straight away" : ""}.`,
     cta: { label: "Check your eligibility on Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
-    also:
-      gender === "woman"
-        ? "Want coaching and community alongside the clinical side? Juniper is built for women."
-        : "Want a broader men's-health service alongside it? Pilot is worth a look. We compare them in Moshy vs Pilot.",
+    also: woman
+      ? "Want coaching and community alongside the clinical side? Juniper is built for women."
+      : "Want a broader men's-health service alongside it? Pilot is worth a look. We compare them in Moshy vs Pilot.",
   };
 }
 
-const Q1: { key: Gender; label: string }[] = [
-  { key: "man", label: "A man" },
-  { key: "woman", label: "A woman" },
-];
-const Q2: { key: Priority; label: string; note: string }[] = [
-  { key: "clinical", label: "A fast, clinical pathway", note: "Get started online, practitioner-led" },
-  { key: "coaching", label: "Coaching & accountability", note: "Habits and structure, not medication-first" },
-  { key: "in-person", label: "Lowest cost, in person", note: "Happy to see a GP and wait a little" },
-];
-
 export default function PathwayQuiz() {
-  const [gender, setGender] = useState<Gender | null>(null);
-  const [priority, setPriority] = useState<Priority | null>(null);
+  const [answers, setAnswers] = useState<Answers>({});
 
-  const step = gender === null ? 0 : priority === null ? 1 : 2;
-  const result = gender && priority ? resolve(gender, priority) : null;
+  const answered = QUESTIONS.filter((q) => answers[q.key]).length;
+  const done = answered === QUESTIONS.length;
+  const current = done ? null : QUESTIONS[answered];
+  const result = done ? resolve(answers as Required<Answers>) : null;
 
-  function reset() {
-    setGender(null);
-    setPriority(null);
+  function choose(key: Key, value: string) {
+    setAnswers((p) => ({ ...p, [key]: value }));
   }
-
+  function reset() {
+    setAnswers({});
+  }
   function track(loc: string, href: string) {
     if (typeof window !== "undefined") window.gtag?.("event", "quiz_result_click", { loc, href });
   }
@@ -102,49 +164,36 @@ export default function PathwayQuiz() {
   return (
     <div className="nw-card rounded-2xl p-7 sm:p-9">
       <div className="flex items-center justify-between gap-4">
-        <p className="nw-kicker">{step === 2 ? "Your match" : `Pathway matcher · step ${step + 1} of 2`}</p>
-        {step > 0 && (
+        <p className="nw-kicker">{done ? "Your match" : `Pathway matcher · step ${answered + 1} of ${QUESTIONS.length}`}</p>
+        {answered > 0 && (
           <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#9aa39c] hover:text-[#0a7c42]">
             <RotateCcw className="h-3 w-3" /> Restart
           </button>
         )}
       </div>
 
-      {step === 0 && (
-        <div className="mt-4">
-          <h3 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
-            Which weight-loss pathway fits you?
-          </h3>
-          <p className="mt-2 text-[15px] text-[#3d4b44]">First, who is this for?</p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {Q1.map((o) => (
-              <button
-                key={o.key}
-                onClick={() => setGender(o.key)}
-                className="rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-left text-[15px] font-semibold text-[#10251b] transition-all hover:-translate-y-0.5 hover:border-[#0a7c42] hover:bg-[#e8f5ee]"
-              >
-                {o.label}
-              </button>
-            ))}
-          </div>
+      {!done && (
+        <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-[#eef1ef]" aria-hidden="true">
+          <div className="h-full rounded-full bg-[#0a7c42] transition-all duration-300" style={{ width: `${(answered / QUESTIONS.length) * 100}%` }} />
         </div>
       )}
 
-      {step === 1 && (
-        <div className="mt-4">
-          <h3 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
-            What matters most to you?
-          </h3>
+      {!done && current && (
+        <div className="mt-5">
+          {answered === 0 && (
+            <h3 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Which weight-loss pathway fits you?</h3>
+          )}
+          <p className={`${answered === 0 ? "mt-3" : ""} text-lg font-semibold text-[#10251b]`}>{current.q}</p>
           <div className="mt-5 grid gap-3">
-            {Q2.map((o) => (
+            {current.options.map((o) => (
               <button
-                key={o.key}
-                onClick={() => setPriority(o.key)}
+                key={o.value}
+                onClick={() => choose(current.key, o.value)}
                 className="group flex items-center justify-between gap-4 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-[#0a7c42] hover:bg-[#e8f5ee]"
               >
                 <span>
                   <span className="block text-[15px] font-semibold text-[#10251b]">{o.label}</span>
-                  <span className="block text-[13px] text-[#6e7b74]">{o.note}</span>
+                  {o.note && <span className="block text-[13px] text-[#6e7b74]">{o.note}</span>}
                 </span>
                 <ArrowRight className="h-4 w-4 shrink-0 text-[#9aa39c] transition-transform group-hover:translate-x-0.5 group-hover:text-[#0a7c42]" />
               </button>
@@ -153,7 +202,7 @@ export default function PathwayQuiz() {
         </div>
       )}
 
-      {step === 2 && result && (
+      {done && result && (
         <div className="mt-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Your result</p>
           <h3 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{result.title}</h3>
@@ -184,8 +233,6 @@ export default function PathwayQuiz() {
             )}
           </div>
 
-          {/* Non-earning branches (a GP pathway) still capture the lead, so an honest
-              recommendation keeps the relationship instead of ending cold. */}
           {result.capture && (
             <div className="mt-6">
               <NewsletterSignup

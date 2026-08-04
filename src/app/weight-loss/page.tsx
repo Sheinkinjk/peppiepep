@@ -153,7 +153,8 @@ export default function WeightLossHubPage() {
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#0a7c42] hover:underline">Compare the providers →</Link></p>
-                <p><Link href="/moshy-review" className="text-[#0a7c42] hover:underline">Read the Moshy review →</Link></p>
+                <p><Link href="/moshy" className="text-[#0a7c42] hover:underline">Learn more about Moshy →</Link></p>
+                <p><Link href="/juniper" className="text-[#0a7c42] hover:underline">Learn more about Juniper →</Link></p>
               </div>
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
