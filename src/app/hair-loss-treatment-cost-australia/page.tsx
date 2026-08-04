@@ -116,7 +116,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
           {/* Info-only note */}
           <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
             <span className="font-bold text-[#10251b]">Prices change.</span> The figures below are the providers&apos; own
-            published prices at the time of writing and can change, so verify current pricing on each provider before you
+            published prices, which can change, so verify current pricing on each provider before you
             commit. This page contains a disclosed affiliate link to Mosh.
           </div>
 

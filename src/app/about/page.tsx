@@ -63,7 +63,7 @@ export default function AboutPage() {
             <h2 className="text-lg font-bold text-[#10251b]">How we research</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               Prices, plan tiers, fees and eligibility come from the provider&apos;s own live pages and published terms,
-              checked at the time of writing. We do not take figures from aggregators, directories or press releases.
+              checked when we last reviewed the page. We do not take figures from aggregators, directories or press releases.
               This is desk research: we do not test or personally use most of what we cover, and we do not claim to. For
               services we cannot use ourselves, such as prescription telehealth, we describe the published process and
               link to the source so you can check it. Terms change, so every page quoting a price asks you to confirm
