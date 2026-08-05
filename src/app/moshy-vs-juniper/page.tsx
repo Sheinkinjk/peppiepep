@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "How do I choose between Moshy and Juniper?",
-    a: "Think about the kind of support you want. Moshy keeps the experience focused on the clinical pathway: eligibility check, practitioner review, and delivery if appropriate. Juniper wraps medication access inside a broader coaching and community program, which it designs and markets for women. If neither fits your situation, a GP is always a valid starting point. This is general information, not medical advice.",
+    a: "Think about the kind of support you want. Moshy keeps the experience focused on the clinical pathway: eligibility check, practitioner review, and delivery if appropriate. Juniper wraps medication access inside a broader coaching and community program, which it designs and markets for women. If neither fits your situation, a GP is always a valid starting point.",
   },
   {
     q: "Do Moshy and Juniper both offer GLP-1 medications like semaglutide?",
@@ -115,7 +115,7 @@ export default function MoshyVsJuniperPage() {
         </nav>
 
         {/* Hero */}
-        <p className="text-[#9aa39c] text-xs mb-5">Australia · Not medical advice</p>
+        <p className="text-[#9aa39c] text-xs mb-5">Australia · Weight-loss telehealth</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>

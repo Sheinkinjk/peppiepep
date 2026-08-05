@@ -2,10 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Calendar, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
 import { aboutFAQs, servicesFAQs, pricingFAQs, allFAQs, type FAQ } from "./faqs";
 
@@ -72,7 +70,7 @@ export default function FAQPage() {
             Frequently asked questions
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f] max-w-2xl">
-            Common questions about how Refer Labs works, our services, and how we are paid.
+            Common questions about how Refer Labs works, how we stay independent, and how we make money.
           </p>
           <div className="mt-6 flex gap-4 text-sm font-semibold">
             <button onClick={expandAll} className="text-[#0a7c42] hover:text-[#086536]">Expand all</button>
@@ -82,25 +80,22 @@ export default function FAQPage() {
         </header>
 
         {renderFAQSection("About Refer Labs", aboutFAQs, 0)}
-        {renderFAQSection("Services & Engagement", servicesFAQs, aboutFAQs.length)}
-        {renderFAQSection("Pricing & Model", pricingFAQs, aboutFAQs.length + servicesFAQs.length)}
+        {renderFAQSection("Independence & how we research", servicesFAQs, aboutFAQs.length)}
+        {renderFAQSection("How we make money", pricingFAQs, aboutFAQs.length + servicesFAQs.length)}
 
         <section className="mt-4">
           <div className="rounded-2xl border border-[#0a7c42]/20 bg-[#0a7c42]/[0.05] p-8 sm:p-10 text-center">
             <h2 className="text-2xl font-extrabold text-[#10251b] mb-3">Still have questions?</h2>
             <p className="text-[#3d4b44] mb-6 max-w-md mx-auto">
-              Book a quick call and we will answer anything not covered here.
+              See how we research and rank, or browse the guides. Businesses can find us on the For Business page.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/how-we-research"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0a7c42] text-sm font-bold text-white transition-colors hover:bg-[#086536]"
               >
-                <Calendar className="h-4 w-4" aria-hidden="true" />
-                Partner with us
-              </a>
+                How we research
+              </Link>
               <Link
                 href="/guides"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#e5e9e7] bg-white text-sm font-bold text-[#10251b] hover:bg-[#f5f8f6] transition-colors"

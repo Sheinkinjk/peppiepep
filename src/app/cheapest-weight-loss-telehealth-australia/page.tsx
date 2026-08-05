@@ -71,7 +71,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. We do not quote specific figures here because pricing is confirmed inside the consult and can change; check the current pricing directly on each provider. The true total also depends on whether medication is prescribed and how often you need reviews. One concrete note: Moshy currently advertises $120 off your first treatment for new customers. Information only, not medical advice.",
+    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. We do not quote specific figures here because pricing is confirmed inside the consult and can change; check the current pricing directly on each provider. The true total also depends on whether medication is prescribed and how often you need reviews. One concrete note: Moshy currently advertises $120 off your first treatment for new customers.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper for weight loss telehealth?",
@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: "Are cheaper weight loss telehealth services still legitimate?",
-    a: "A lower price does not make a service less legitimate. The markers of a serious provider are the same at any price point: a registered Australian practitioner reviews your case individually, some applicants are declined, the pricing is transparent, and no specific medicine is promised before an assessment. Judge a cheaper service on those markers, not on price alone. This page is general information, not medical advice.",
+    a: "A lower price does not make a service less legitimate. The markers of a serious provider are the same at any price point: a registered Australian practitioner reviews your case individually, some applicants are declined, the pricing is transparent, and no specific medicine is promised before an assessment. Judge a cheaper service on those markers, not on price alone.",
   },
 ];
 
@@ -221,7 +221,7 @@ export default function CheapestWeightLossTelehealthPage() {
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
               Prices are approximate, based on publicly available information, and change often.
               Check current pricing on each provider. Medication, where prescribed, may be billed separately. GLP-1
-              access is subject to individual clinical assessment. This comparison is not medical advice.
+              access is subject to individual clinical assessment.
             </p>
           </section>
 

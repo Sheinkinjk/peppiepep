@@ -569,15 +569,16 @@ export const seoConfig = {
   },
 
   faq: {
-    title: "FAQ: Refer Labs Growth & Distribution Services",
+    title: "Refer Labs FAQ: How Our Comparisons Work",
     description:
-      "Find answers to common questions about our referral programs, affiliate distribution, influencer activation, APAC expansion, and product distribution services.",
+      "How Refer Labs works: what we do, how we stay independent, how our comparisons are researched and priced, and how we make money. Independent Australian comparisons.",
     url: `${SITE_URL}/faq`,
     keywords: [
-      "refer labs FAQ",
-      "referral program questions",
-      "affiliate distribution FAQ",
-      "growth services questions",
+      "refer labs faq",
+      "how refer labs works",
+      "is refer labs independent",
+      "how does refer labs make money",
+      "refer labs affiliate disclosure",
     ],
   },
 

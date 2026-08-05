@@ -54,7 +54,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Moshy or Pilot better for weight loss in Australia?",
-    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both facilitate GLP-1 access only where an Australian-registered practitioner assesses it as clinically appropriate. This is general information, not medical advice.",
+    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both facilitate GLP-1 access only where an Australian-registered practitioner assesses it as clinically appropriate.",
   },
   {
     q: "How much do Moshy and Pilot cost?",
@@ -214,7 +214,7 @@ export default function MoshyVsPilotPage() {
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
               Prices and terms are approximate and based on publicly available information. They
               change often, so check current pricing on each provider. GLP-1 access is subject to individual clinical
-              assessment. This comparison is not medical advice.
+              assessment.
             </p>
           </section>
 

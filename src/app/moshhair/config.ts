@@ -83,7 +83,7 @@ export const moshHairConfig: AffiliatePageConfig = {
         "What makes it more than a vending machine is the review step. Not everyone who applies is suitable; the practitioner can decline or redirect you, which is exactly what you'd want a prescriber to do. The trade-off is that it's built for the common case, straightforward male-pattern thinning, rather than complex or unusual hair loss, where an in-person specialist is the better call.",
       ],
       disclaimer:
-        "This page is informational and not medical advice. Hair-loss treatment suitability depends on the individual, speak with a qualified health professional before starting anything.",
+        "Hair-loss treatment suitability depends on the individual; speak with a qualified health professional before starting anything.",
     },
     {
       heading: "How the Mosh service works",
@@ -183,7 +183,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "How long does hair-loss treatment take to work?",
-      a: "In general, evidence-based hair-loss treatments take several months to show noticeable change, with clinical guidance often pointing to around 3 to 6 months for early signs and up to 12 months for fuller results. Outcomes vary by individual and depend on consistency and the stage of hair loss. Any treatment through Mosh is decided by a practitioner and includes structured follow-up. This is general information, not medical advice.",
+      a: "In general, evidence-based hair-loss treatments take several months to show noticeable change, with clinical guidance often pointing to around 3 to 6 months for early signs and up to 12 months for fuller results. Outcomes vary by individual and depend on consistency and the stage of hair loss. Any treatment through Mosh is decided by a practitioner and includes structured follow-up.",
     },
     {
       q: "Mosh vs Dense Hair Experts: which suits hair loss?",
@@ -191,7 +191,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "Is Mosh worth it?",
-      a: "It depends on what you want from it. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with pricing shown before you commit and plans published from $24 a month. A GP may be cheaper and already knows your history; Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it. Information only, not medical advice.",
+      a: "It depends on what you want from it. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with pricing shown before you commit and plans published from $24 a month. A GP may be cheaper and already knows your history; Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it.",
     },
     {
       q: "How do I access the Mosh referral link?",

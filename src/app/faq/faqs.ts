@@ -1,67 +1,61 @@
 export type FAQ = { q: string; a: string };
 
+// Consumer FAQ for the comparison site. Grouped into three sections rendered by
+// page.tsx: what Refer Labs is, how it stays independent, and how it is paid.
 export const aboutFAQs: FAQ[] = [
   {
-    q: "What exactly does Refer Labs do?",
-    a: "We design, build, and activate distribution systems for B2B and B2C businesses. Our five core services are: launching and optimising referral programs, elite affiliate program distribution, influencer and network activation, APAC market expansion, and product creation and end-to-end distribution.",
+    q: "What is Refer Labs?",
+    a: "Refer Labs is an independent Australian comparison publisher. We research categories where the choice is genuinely hard, across health, home energy, business finance and software, and write them up in plain language so you can choose the right option with confidence.",
   },
   {
-    q: "Who do you work with?",
-    a: "We work with SMBs and eCommerce brands launching referral programs, B2B and B2C affiliate programs seeking distribution scale, global businesses entering APAC markets, influencers and creators seeking structured brand partnerships, and operators looking to collaborate on distribution-led products.",
+    q: "Is Refer Labs free to use?",
+    a: "Yes, Refer Labs is free for readers. Some links may earn us a commission when you sign up with a provider, which keeps the site free, and it never changes what we write or how we compare options.",
   },
   {
-    q: "What makes Refer Labs different from a marketing agency?",
-    a: "We build distribution systems, not campaigns. Every engagement has clear commercial terms, performance tracking, and aligned incentives. We do not sell retainers for activity, we structure growth engines designed to compound over time.",
+    q: "Which categories does Refer Labs cover?",
+    a: "Consumer money decisions are the focus: weight-loss and hair-loss telehealth, pet insurance and home batteries, alongside guides to business finance and the software that runs a business. We expand one vertical at a time rather than covering everything shallowly.",
   },
   {
-    q: "Do you work with B2C businesses?",
-    a: "Yes. Several of our services, particularly elite affiliate distribution, referral program launch, and influencer activation, are built for consumer-facing brands, eCommerce businesses, subscription services, and DTC companies.",
+    q: "Is Refer Labs Australian?",
+    a: "Yes. Refer Labs is an Australian publisher, and our comparisons are written for Australians, using Australian pricing, availability and rules.",
   },
 ];
 
 export const servicesFAQs: FAQ[] = [
   {
-    q: "Can we engage for just one service?",
-    a: "Yes. We scope each engagement based on your specific goals. Some clients engage us for a single growth engine, for example, referral program launch only. Others engage across multiple services. We scope and quote based on what is actually needed.",
+    q: "Are Refer Labs rankings paid?",
+    a: "No. A brand cannot pay to change its position in a Refer Labs guide. Commercial relationships are disclosed where relevant, but rankings are never for sale.",
   },
   {
-    q: "How does the process work?",
-    a: "Every engagement follows four stages: identify growth leverage, structure the distribution engine, activate channels, then optimise and scale. We identify where the real opportunity is before we start building anything.",
+    q: "How do you research a comparison?",
+    a: "We look at pricing, eligibility, inclusions, trade-offs and who each option suits, and we check figures against the provider's own site rather than an aggregator. Our editorial standards are set out on our How We Research page.",
   },
   {
-    q: "What involvement is required from us?",
-    a: "We need a clear brief on your product and audience, someone available to join key calls and sign off on commercial terms, and the ability to move on opportunities when they arise. We handle the day-to-day execution.",
+    q: "How do you check prices and offers?",
+    a: "We use the providers' own published prices and date them where possible. Prices, offers and inclusions change, so always confirm the current cost with the provider before signing up.",
   },
   {
-    q: "Do you work across both B2B and B2C affiliate programs?",
-    a: "Yes. We partner with both B2B and B2C affiliate programs and distribute them across high-intent digital communities including Reddit, niche forums, and engaged online groups. The channel strategy is tailored to your audience.",
-  },
-  {
-    q: "How do you find and activate influencers and partners?",
-    a: "We identify aligned operators, creators, consultants, and influencers based on your specific audience. We structure partnerships with clear commercial terms, not just gifting or one-off posts. Every activation is tracked and optimised.",
-  },
-  {
-    q: "What does APAC expansion involve?",
-    a: "We act as your on-the-ground commercial partner in Australia and the APAC region. This covers sales representation, partnership and distribution development, compliance and market setup, and ongoing operations management. You get a functioning in-region presence without building a local team.",
+    q: "Do you publish your own star ratings or testimonials?",
+    a: "No. We do not invent ratings, testimonials or read-times. Where we cite a third-party figure, we attribute it. Reader trust is the whole point, so we do not fake any part of it.",
   },
 ];
 
 export const pricingFAQs: FAQ[] = [
   {
-    q: "How do you charge?",
-    a: "We work on a retainer plus success fee model. The retainer covers the execution work. The success fee is tied to agreed commercial outcomes, closed revenue, signed partnerships, distribution deals, or qualified pipeline milestones. We earn when you earn.",
+    q: "How does Refer Labs make money?",
+    a: "We may earn a commission when readers sign up with selected partners through our links, at no extra cost to you. This keeps the site free to use. Commercial relationships are disclosed, and they do not change our comparisons or conclusions.",
   },
   {
-    q: "What triggers a success fee?",
-    a: "We agree on this upfront during scoping. Common triggers include closed revenue, signed partnership agreements, distribution deals, or qualified pipeline milestones. Everything is defined before the engagement starts.",
+    q: "Does earning a commission change what you recommend?",
+    a: "No. A commission never changes a ranking or a conclusion. Affiliate links are disclosed on the pages that carry them, and a brand cannot buy a better position in a guide.",
   },
   {
-    q: "Do you take equity or exclusivity?",
-    a: "No. We work on a retainer plus success fee basis only. No equity, no exclusivity clauses. You are free to run other GTM motions alongside our engagement.",
+    q: "Is the health content medical advice?",
+    a: "No. Our health content is general information only, not medical advice. Prescription medicines in Australia are available only after assessment by a registered practitioner. Always consult a qualified health professional about your own situation.",
   },
   {
-    q: "What if we already have a team or partner in-region?",
-    a: "We complement existing teams and partners. We scope the engagement to avoid overlap and maximise coverage, typically covering the partnership, distribution, and operations layer that in-house salespeople do not have capacity for.",
+    q: "I run a business, can I work with Refer Labs?",
+    a: "Yes. We partner with Australian brands on comparisons, distribution and growth, always disclosed and never as a bought ranking. See the For Business page, or email jarred@referlabs.com.au.",
   },
 ];
 
