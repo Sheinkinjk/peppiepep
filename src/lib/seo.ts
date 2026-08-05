@@ -470,25 +470,8 @@ export const seoConfig = {
     url: `${SITE_URL}/home-battery-cost-australia`,
     keywords: ["home battery cost australia", "home battery price australia 2026", "how much does a home battery cost", "solar battery cost australia", "battery payback period australia", "tesla powerwall 3 price australia", "home battery installed cost"],
   },
-  finasterideAustralia: {
-    // TGA compliance: a page whose topic is a prescription medicine is kept out of
-    // public search (noindex) and stripped of promotion/affiliate CTAs.
-    noIndex: true,
-    title: "Finasteride Australia 2026: How Access Works | Refer Labs",
-    description:
-      "An independent, factual guide to finasteride for hair loss in Australia. What it is, why it is prescription-only, how a GP or telehealth assessment works, side effects, and topical finasteride. Information only, not medical advice.",
-    url: `${SITE_URL}/finasteride-australia`,
-    keywords: ["finasteride australia", "finasteride hair loss australia", "finasteride prescription australia", "finasteride 1mg australia", "finasteride online australia", "dht blocker hair loss", "finasteride side effects"],
-  },
-  minoxidilAustralia: {
-    // TGA compliance: prescription-medicine topic page, kept out of public search.
-    noIndex: true,
-    title: "Minoxidil Australia 2026: Topical vs Oral | Refer Labs",
-    description:
-      "An independent, factual guide to minoxidil for hair loss in Australia. Topical (over the counter) vs oral (prescription), the shedding phase, side effects, and how it combines with finasteride. Information only, not medical advice.",
-    url: `${SITE_URL}/minoxidil-australia`,
-    keywords: ["minoxidil australia", "minoxidil hair loss australia", "topical minoxidil australia", "oral minoxidil australia", "regaine australia", "minoxidil over the counter australia", "minoxidil shedding phase"],
-  },
+  // finasterideAustralia / minoxidilAustralia seoConfig entries removed (Aug 2026):
+  // the medicine-name pages are deleted and 301-redirect to /hair-loss via next.config.
   hairLossTreatmentCost: {
     title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
     description:

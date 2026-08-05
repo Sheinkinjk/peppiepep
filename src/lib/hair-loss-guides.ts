@@ -11,8 +11,6 @@ export interface HairLossGuideEntry extends HairLossGuideConfig {
 }
 
 const R = {
-  fin: { href: "/finasteride-australia", label: "Finasteride, explained" },
-  min: { href: "/minoxidil-australia", label: "Minoxidil, explained" },
   cost: { href: "/hair-loss-treatment-cost-australia", label: "What treatment costs" },
   hub: { href: "/hair-loss", label: "Compare all hair-loss options" },
   mosh: { href: "/moshhair", label: "Mosh: how it works & the offer" },
@@ -21,64 +19,6 @@ const R = {
 };
 
 export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
-  {
-    slug: "/finasteride-vs-minoxidil-australia",
-    crumb: "Finasteride vs minoxidil",
-    priority: 0.82,
-    h1: "Finasteride vs minoxidil: which is which, and how they differ",
-    meta: {
-      // TGA compliance: prescription-medicine topic, kept out of public search.
-      noIndex: true,
-      title: "Finasteride vs Minoxidil (Australia 2026): How They Differ | Refer Labs",
-      description:
-        "Prescription hair-loss treatments are among the most studied options, and they work in completely different ways. What each does, oral vs topical, prescription vs pharmacy, and using both. Information only.",
-      keywords: ["finasteride vs minoxidil", "minoxidil vs finasteride australia", "prescription hair-loss treatments together", "hair loss treatment comparison australia"],
-    },
-    lead:
-      "Prescription hair-loss treatments are among the most studied options for male pattern hair loss, and the confusion between them is understandable, because they do almost opposite jobs. Finasteride is an oral, prescription-only medicine that acts on the hormone driving hair loss. Minoxidil is usually a topical product, available over the counter, that acts on the hair follicle and its blood supply. They are not competitors so much as two different levers, and some men are assessed as suitable for one, the other, or both. Which applies to you is a clinical decision, not something a webpage can settle.",
-    sections: [
-      {
-        h: "What each one actually does",
-        body: [
-          "Finasteride works on the cause. Male pattern hair loss is driven largely by dihydrotestosterone (DHT), a hormone that gradually shrinks genetically sensitive follicles. Finasteride reduces how much testosterone your body converts into DHT, which is why it is taken as a daily tablet: it changes a body-wide hormone level, not just the scalp.",
-          "Minoxidil works on the follicle. It does not touch DHT at all. It is thought to extend the growth phase of the hair cycle and improve blood flow to the follicle, which is why it is applied where you want the effect, as a topical solution or foam on the scalp. An oral form of minoxidil also exists but is prescription-only and used off-label.",
-        ],
-      },
-      {
-        h: "The practical differences that matter",
-        bullets: [
-          "Route: finasteride is an oral tablet; minoxidil is usually applied topically to the scalp.",
-          "Access: oral finasteride is Schedule 4 (prescription-only) in Australia; topical minoxidil is sold over the counter at pharmacies.",
-          "Mechanism: finasteride lowers DHT (the hormonal cause); minoxidil acts locally on the follicle.",
-          "Commitment: both only work while you keep using them, so either is an ongoing routine rather than a course you finish.",
-          "Assessment: finasteride needs a practitioner because it carries real considerations, including a serious pregnancy warning; over-the-counter minoxidil does not, though a review is still worthwhile.",
-        ],
-        body: [],
-      },
-      {
-        h: "Can you use both together?",
-        body: [
-          "Yes, and it is common. Because they work through different mechanisms, prescription hair-loss treatments are often used alongside each other, and many telehealth plans combine them for that reason. Whether a combination suits you, and at what strengths, is exactly the kind of thing a practitioner weighs up during an assessment rather than something to self-prescribe.",
-          "The trade is simplicity versus coverage. A single active is one product to manage; a combined plan is more to keep on top of, but targets the problem from two angles. Neither is automatically better, and the right answer depends on your situation and how much routine you will realistically stick to.",
-        ],
-      },
-      {
-        h: "How to get either in Australia",
-        body: [
-          "For topical minoxidil on its own, a pharmacy is the direct route, since it does not need a prescription. The catch is that you are managing it yourself with no assessment, and you cannot get finasteride that way.",
-          "For finasteride, or for a combined and assessed plan, you need a practitioner: your own GP, or an online telehealth service where a registered Australian practitioner reviews your case and prescribes if it is appropriate. Mosh is one Australian men's service that runs this kind of assessment for hair loss, usually as a subscription with the medicine and delivery included.",
-        ],
-      },
-    ],
-    faqs: [
-      { q: "Is prescription treatment better?", a: "Neither is universally 'better' because they work differently: finasteride lowers the hormone (DHT) behind male pattern hair loss, while minoxidil acts on the follicle locally. Some men are suited to one, some to the other, and some to both. Which is appropriate for you is a clinical decision a practitioner makes after an assessment." },
-      { q: "Can I take prescription hair-loss treatments at the same time?", a: "Often, yes, and combined plans are common because the two work through different mechanisms. Whether a combination is suitable for you, and at what strengths, is something a practitioner assesses individually. This page is general information, not medical advice." },
-      { q: "Is minoxidil prescription-only like finasteride?", a: "No. Topical minoxidil is sold over the counter at Australian pharmacies without a prescription. Oral finasteride is Schedule 4 (prescription-only), and so is oral minoxidil, which is used off-label under practitioner supervision." },
-      { q: "Do I have to keep using them forever?", a: "Any benefit from either continues only while you keep using it. Both are treated as ongoing rather than one-off, so stopping generally means the hair loss resumes its previous course over the following months." },
-    ],
-    related: [R.fin, R.min, R.best, R.mosh, R.hub],
-  },
-
   {
     slug: "/online-hair-loss-treatment-australia",
     crumb: "Online hair-loss treatment",
@@ -136,56 +76,6 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Is hair-loss treatment safe, and what are the side effects?", a: "Prescription hair-loss treatments carry potential side effects, which is why they are prescription-only and why an assessment is required first. A registered practitioner weighs the likely benefit against the risks for your health history, explains what to watch for, and provides follow-up. Over-the-counter topical products carry their own considerations. Raise any concerns before starting. Information only, not medical advice." },
     ],
     related: [R.best, R.cost, R.mosh, R.hub],
-  },
-
-  {
-    slug: "/how-long-does-finasteride-take-to-work-australia",
-    crumb: "How long finasteride takes",
-    priority: 0.78,
-    h1: "How long does finasteride take to work?",
-    meta: {
-      // TGA compliance: prescription-medicine topic, kept out of public search.
-      noIndex: true,
-      title: "How Long Does Finasteride Take to Work? (Australia 2026) | Refer Labs",
-      description:
-        "A realistic finasteride timeline: why it is slow, the early shedding phase, when to judge results, and why any benefit is ongoing. Responses vary between people. Information only, not medical advice.",
-      keywords: ["how long does finasteride take to work", "finasteride results timeline", "finasteride shedding", "finasteride how long australia"],
-    },
-    lead:
-      "Finasteride is slow, and patience is part of using it. The approved product information generally points to at least three months of daily use before any change is visible, and clinical reviews note most men need around six months, sometimes twelve, to judge the response fairly. Some men also go through an early shedding phase in the first weeks that can look like the opposite of progress. How much benefit any individual sees varies, and what to watch is whether loss has slowed once you have given it enough time, rather than the week-to-week picture.",
-    sections: [
-      {
-        h: "A realistic timeline",
-        body: ["Rough guides only, since responses vary from person to person and a practitioner and the product information are the real reference."],
-        bullets: [
-          "First few weeks: some men notice increased shedding. This is described as a temporary phase, not a sign it is failing.",
-          "Around three months: the earliest point the product information suggests any visible change might appear.",
-          "Six months: the point most clinical reviews suggest before judging whether it is helping.",
-          "Twelve months: a fuller picture of the response, and the horizon many practitioners use to assess it properly.",
-        ],
-      },
-      {
-        h: "Why it takes so long",
-        body: [
-          "Hair grows slowly, and finasteride works upstream of the follicle by lowering DHT rather than forcing growth directly. It takes months for that hormonal change to translate into a visible difference in the hair cycle, and for any weakened-but-still-present hairs to recover or for further loss to stall.",
-          "That is also why the first thing to watch for is loss slowing, not dramatic regrowth. For many men the realistic goal is holding the ground they have, with some partial regrowth for a subset. Framing success as 'keeping what I have' rather than 'growing it all back' tends to match what the evidence supports.",
-        ],
-      },
-      {
-        h: "It only works while you keep taking it",
-        body: [
-          "Any benefit continues only while you keep taking it. Stop, and the DHT level returns to where it was, and the hair loss generally resumes its previous course over the following months, often undoing gains within a year. That is why finasteride is treated as an ongoing treatment rather than a fixed course, and why the cost is usually a subscription.",
-          "If you are weighing it up, factor in that this is a long-term commitment, not a quick fix. Deciding whether that suits you, and whether finasteride is appropriate at all, is a conversation for a practitioner.",
-        ],
-      },
-    ],
-    faqs: [
-      { q: "How long before I see results from finasteride?", a: "The approved product information generally points to at least three months of daily use before any visible change, and most clinical reviews suggest six months or more to judge it fairly. Responses vary between people, so a practitioner is the right person to set your expectations." },
-      { q: "Is it normal to shed more hair when starting finasteride?", a: "Some men report increased shedding in the early weeks, which is described as a temporary phase rather than a sign the treatment is failing. If you are worried about how you are responding, raise it with the practitioner managing your treatment." },
-      { q: "What happens if I stop taking finasteride?", a: "Any benefit continues only while you keep taking it. Stopping generally means DHT returns to its previous level and the hair loss resumes its earlier course over the following months, often within a year. It is treated as ongoing rather than a one-off course." },
-      { q: "Does finasteride regrow hair or just stop loss?", a: "For many men the realistic result is slowing further loss and holding what they have; some also see partial regrowth, though how much varies. Product information and a practitioner are the reference for what it can and cannot do for you." },
-    ],
-    related: [R.fin, R.min, R.best, R.cost, R.mosh],
   },
 
   {
