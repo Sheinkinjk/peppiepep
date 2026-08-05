@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSHY_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -10,6 +10,7 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthWomen)
 const CYAN = "#0a7c42";
 const CYAN_LT = "#0a7c42";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
+const juniperAff = { href: JUNIPER_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const faqs = [
   {
@@ -27,6 +28,10 @@ const faqs = [
   {
     q: "What does a women's program usually include?",
     a: "The common shape is an eligibility questionnaire, practitioner review, a plan if approved, ongoing check-ins, and delivery of anything prescribed. Coaching-led services add habit and nutrition support around that. Inclusions and pricing vary by provider and are shown before you commit.",
+  },
+  {
+    q: "How much does Juniper cost, and is there a discount?",
+    a: "Juniper runs as a monthly subscription that its own site says covers treatment, unlimited consultations and delivery, with optional 1:1 coaching as a paid add-on and a 30-day money-back guarantee. There is no single fixed price, since any medication is prescribed only after an individual assessment, and there is no Refer Labs discount code for Juniper. The cost that applies to you is confirmed inside Juniper's own flow before you commit.",
   },
 ];
 
@@ -121,6 +126,40 @@ export default function WeightLossTelehealthWomenPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="space-y-4 mb-10">
+          <h2 className="text-xl font-black">Where Juniper fits</h2>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            Juniper is the service built specifically for women, and its Weight Reset Program is the coaching-led option:
+            unlimited practitioner follow-ups, health tracking through an app, a patient community, and optional 1:1
+            coaching wrapped around any treatment. It suits people who want structure and accountability alongside the
+            clinical care rather than a bare prescription. Suitability is assessed individually by an Australian-registered
+            practitioner, and some applicants are declined.
+          </p>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            There is no Refer Labs discount code for Juniper, and any medication is prescribed only after an individual
+            assessment, so the cost is confirmed inside Juniper&apos;s own flow before you commit. Our{" "}
+            <Link href="/juniper" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
+              full Juniper review
+            </Link>{" "}
+            breaks down exactly what is included.
+          </p>
+          <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
+            <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">
+              Juniper&apos;s online eligibility check takes a few minutes and commits you to nothing. An
+              Australian-registered practitioner reviews your answers before anything is prescribed.
+            </p>
+            <a
+              {...juniperAff}
+              data-cta="women-telehealth-juniper"
+              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
+              style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
+            >
+              Check your eligibility on Juniper
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </section>
 
         <section className="space-y-4 mb-10">
