@@ -222,10 +222,9 @@ export default function MoshVsPilotPage() {
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
                 For hair loss specifically, these two services are built on the same clinical logic. You complete an online questionnaire and upload photos, a registered Australian
-                practitioner reviews your case, and if it is appropriate you are prescribed prescription treatments, or
-                both, delivered on a subscription. The medicines are the same molecules with the same evidence behind
-                them, because that is what works for male-pattern hair loss regardless of which brand&apos;s website you
-                filled in.
+                practitioner reviews your case, and if it is appropriate you are prescribed treatment delivered on a
+                subscription. The available options are the same evidence-backed treatments either way, because that is
+                what works for male-pattern hair loss regardless of which brand&apos;s website you filled in.
               </p>
               <p>
                 Both also share the same guardrail, and it is a good one. Nothing is dispensed automatically. Not everyone

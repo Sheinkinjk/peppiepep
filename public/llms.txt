@@ -51,7 +51,7 @@ Lead-capture, not affiliate: Refer Labs is an independent referrer (not a lender
 
 ## Home batteries & solar (Australia)
 - [Apollo Energy Group](https://referlabs.com.au/apollo-energy-group): Australian home battery installer, explained. Covers the exclusive $500 Refer Labs discount, the federal Cheaper Home Batteries rebate (about 30% off; roughly $252 per usable kWh from 1 May 2026, tapering above 14kWh), state incentives such as the NSW VPP payment (roughly $40 per usable kWh, up to about $1,100), and how to size a battery. SAA-accredited, Electrical Licence 400672, 10-year battery warranty.
-- [Is a home battery worth it?](https://referlabs.com.au/is-a-home-battery-worth-it-australia): When a battery pays off (surplus solar, high evening use, wide tariff gap, rebates) and when it doesn't. Honest about the weaker cases.
+- [Is a home battery worth it?](https://referlabs.com.au/is-a-home-battery-worth-it-australia): When a battery pays off (surplus solar, high evening use, wide tariff gap, rebates) and when it does not, including the cases where the numbers do not stack up.
 - [Solar and battery packages](https://referlabs.com.au/solar-and-battery-package-australia): Buying panels and storage together and sizing them as one system; what the rebate covers.
 - [Tesla Powerwall alternatives](https://referlabs.com.au/tesla-powerwall-alternatives-australia): How to weigh alternatives to the Powerwall on capacity, backup, warranty and after-rebate cost.
 - [Home battery blackout backup](https://referlabs.com.au/home-battery-blackout-backup-australia): Not every battery backs up in an outage. What backup needs, whole-home vs essential circuits, and sizing for it.

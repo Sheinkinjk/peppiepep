@@ -38,6 +38,22 @@ const faqs = [
     q: "What should I read before buying pet insurance?",
     a: "Read the insurer's Product Disclosure Statement (PDS) and Target Market Determination (TMD), and get a quote for your specific pet, so you can see the cover, waiting periods, exclusions, excess and limits that would apply. Consider your own circumstances before deciding.",
   },
+  {
+    q: "How much does pet insurance cost per month in Australia?",
+    a: "Premiums vary widely by species, breed, age, location and the level of cover, so there is no single figure. Cats generally cost less than dogs, accident-only cover is the cheapest tier, and premiums usually rise as a pet gets older. The only accurate number is a quote for your specific pet.",
+  },
+  {
+    q: "What age should I insure my pet, and is there an age limit?",
+    a: "Insurers set their own minimum age, often around eight weeks, and many apply an upper age limit for taking out a new policy, particularly for illness cover. Insuring a pet while it is young and healthy means fewer conditions are later treated as pre-existing. Once a pet is insured, policies are generally renewable as it ages.",
+  },
+  {
+    q: "Is pet insurance worth it?",
+    a: "That depends on your finances and how you would handle a large, unexpected vet bill, which can run into thousands for surgery or serious illness. Insurance trades a known premium for help with those costs, after any excess and exclusions. Some owners self-fund by saving instead. Your own situation decides it; this is general information, not advice.",
+  },
+  {
+    q: "Is pet insurance tax deductible in Australia?",
+    a: "For a family pet, generally no. Pet insurance and vet bills are treated as a private expense. Costs may be deductible only where an animal genuinely helps earn income, such as a working farm dog, and the ATO applies its own tests. This is general information, not tax advice.",
+  },
 ];
 
 const breadcrumbSchema = {

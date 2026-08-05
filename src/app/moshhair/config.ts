@@ -190,6 +190,10 @@ export const moshHairConfig: AffiliatePageConfig = {
       a: "They serve different purposes. Mosh is a telehealth service where a practitioner assesses whether prescription treatment is appropriate. Dense Hair Experts is a topical hair-care brand focused on density and scalp health, without prescription ingredients. For noticeable or progressive hair loss, a telehealth service like Mosh is a stronger starting point for a clinical assessment; topical products can complement a routine. See our Best Hair Loss Treatment Australia comparison for a full breakdown.",
     },
     {
+      q: "Is Mosh worth it?",
+      a: "It depends on what you want from it. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with pricing shown before you commit and plans published from $24 a month. A GP may be cheaper and already knows your history; Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it. Information only, not medical advice.",
+    },
+    {
       q: "How do I access the Mosh referral link?",
       a: "Click any button on this page. You will be taken directly to the Mosh sign-up page at getmosh.com.au via our referral link. The partner offer is applied automatically at the URL level.",
     },

@@ -31,7 +31,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       keywords: ["best home battery australia", "best solar battery australia", "how to choose a home battery", "home battery comparison australia"],
     },
     lead:
-      "There is no single best home battery, because the right one depends on how much power you use, whether you have solar, and what you want the battery to do. The battery that suits a family running air-conditioning off a big rooftop solar system is not the one that suits a couple wanting blackout backup. Rather than chase a brand name, the useful question is which capacity, chemistry and warranty fit your home, and, just as importantly, who installs it. A well-sized system from an accredited installer beats a bigger battery fitted badly.",
+      "There is no single best home battery, because the right one depends on how much power you use, whether you have solar, and what you want the battery to do. The battery that suits a family running air-conditioning off a big rooftop solar system is not the one that suits a couple wanting blackout backup. Rather than chase a brand name, work out which capacity, chemistry and warranty fit your home, and, just as importantly, who installs it. Sizing and install quality decide more than the badge on the front.",
     sections: [
       {
         h: "The factors that actually decide it",
@@ -63,8 +63,9 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     faqs: [
       { q: "What is the best home battery brand in Australia?", a: "There isn't a single best brand, because the right battery depends on your usage, whether you have solar, and whether you want backup. What matters more is matching usable capacity, chemistry and warranty to your home, and using an accredited installer who sizes it from your real usage rather than a default package." },
       { q: "How many kWh of battery do I need?", a: "Enough to cover your evening and overnight use, usually after your solar has charged it during the day. Oversizing past what you actually use adds cost you may not recover, and the federal rebate also tapers above 14kWh. A good installer sizes it from your usage data." },
-      { q: "Does the installer really matter?", a: "Yes, as much as the battery. A battery is high-value electrical equipment wired into your home, so accreditation (SAA), a valid electrical licence, and a workmanship warranty are worth checking. A well-installed, well-sized system outperforms a bigger battery fitted poorly." },
+      { q: "Does the installer really matter?", a: "Yes, as much as the battery. A battery is high-value electrical equipment wired into your home, so accreditation (SAA), a valid electrical licence, and a workmanship warranty are worth checking. Correct sizing and a careful install do more for the result than extra kilowatt-hours." },
       { q: "Can I get money off a home battery?", a: "Yes. The federal Cheaper Home Batteries rebate reduces the cost at the point of sale, and some states add their own incentives. Refer Labs readers also get $500 off an Apollo Energy quote through our link. Figures are indicative and depend on your system and the current rebate terms." },
+      { q: "How long does a home battery last?", a: "Most lithium iron phosphate home batteries are warranted for around ten years, and typically keep working beyond that, with capacity fading gradually rather than stopping suddenly. Heat, deep daily cycling and poor ventilation shorten that life, so placement, sizing and a solid throughput warranty matter. Check the manufacturer's warranty for the retained-capacity it guarantees." },
     ],
     related: [R.cost, R.rebate, R.calc, R.hub, R.review],
   },
@@ -180,7 +181,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       keywords: ["home battery installer nsw", "solar battery installer sydney", "battery installer nsw", "home battery installation nsw"],
     },
     lead:
-      "Choosing who installs your home battery matters as much as choosing the battery, because it is high-value electrical equipment wired into your home and it needs to be sized, installed and warranted properly. In NSW the markers to look for are SAA accreditation, a valid electrical licence, a genuine workmanship warranty alongside the manufacturer's, and an installer who applies the federal rebate at the point of sale and can connect you to a Virtual Power Plant for the NSW incentive. A well-sized system from an accredited installer will out-perform a bigger battery fitted badly.",
+      "Choosing who installs your home battery matters as much as choosing the battery, because it is high-value electrical equipment wired into your home and it needs to be sized, installed and warranted properly. In NSW the markers to look for are SAA accreditation, a valid electrical licence, a genuine workmanship warranty alongside the manufacturer's, and an installer who applies the federal rebate at the point of sale and can connect you to a Virtual Power Plant for the NSW incentive. How well the system is sized and fitted shapes the result more than raw capacity does.",
     sections: [
       {
         h: "What to check before you sign",
@@ -350,7 +351,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       {
         h: "Getting backup specified properly",
         body: [
-          "Because backup adds hardware and changes the wiring, it is something to raise with your installer at the quote stage rather than assume. A good installer will tell you honestly whether whole-home backup is practical for your switchboard or whether essential-circuit backup is the sensible option, and what each costs.",
+          "Because backup adds hardware and changes the wiring, it is something to raise with your installer at the quote stage rather than assume. A good installer will tell you whether whole-home backup is practical for your switchboard or whether essential-circuit backup is the sensible option, and what each costs.",
           "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672) that sizes systems from your real usage and can specify backup as part of the quote. Refer Labs readers get $500 off through our link, on top of the federal rebate. Confirm exactly what backup you are getting, and what it covers, in writing.",
         ],
       },
@@ -360,6 +361,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       { q: "Does a battery back up my whole house or just some circuits?", a: "It depends on the battery, the hardware and the wiring. Whole-home backup keeps everything running within the battery's limits and costs more; essential-circuit backup keeps a chosen set of circuits alive, such as the fridge, lights and internet. Decide what you actually need and have the installer specify it." },
       { q: "How big a battery do I need for backup?", a: "Enough usable capacity to cover your essential load for the length of outage you want to ride through, which is a different calculation from sizing to cut your bill. If your solar can recharge the battery during the day, backup lasts longer. An installer can size it from your usage and the circuits you want protected." },
       { q: "Can I get a rebate on a battery with backup?", a: "Yes. The federal Cheaper Home Batteries rebate applies at the point of sale regardless of whether you include backup, and in NSW the VPP incentive can apply on top. Refer Labs readers also get $500 off an Apollo quote through our link. Backup adds hardware, so get the full price in writing." },
+      { q: "Can I go off-grid with a home battery?", a: "A single grid-connected battery is sized for evening and overnight use, not for running your home through cloudy days with no grid, so going fully off-grid usually needs much larger battery and solar capacity and often a backup generator. For most homes, staying grid-connected with blackout backup is far cheaper and more practical. An installer can model what genuine off-grid would require." },
     ],
     related: [{ href: "/is-a-home-battery-worth-it-australia", label: "Is a battery worth it?" }, R.cost, R.hub, R.review, R.calc],
   },
@@ -424,7 +426,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       keywords: ["tesla powerwall alternatives australia", "powerwall alternative", "home battery vs powerwall", "best alternative to tesla powerwall"],
     },
     lead:
-      "The Tesla Powerwall is the battery most Australians have heard of, which makes it the benchmark people compare everything else against. That is a reasonable starting point, but the Powerwall is one option among many, and the right battery for your home depends on your usage, whether you want whole-home backup, and how the numbers land after the rebate rather than on the brand. The useful move is to compare on the things that actually differ between batteries, then let an accredited installer size the choice to your home.",
+      "The Tesla Powerwall is the battery most Australians have heard of, which makes it the benchmark people compare everything else against. That is a reasonable starting point, but the Powerwall is one option among many, and the right battery for your home depends on your usage, whether you want whole-home backup, and how the numbers land after the rebate rather than on the brand. Compare on the things that actually differ between batteries, then let an accredited installer size the choice to your home.",
     sections: [
       {
         h: "What to compare, brand aside",
@@ -454,7 +456,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "What are the alternatives to a Tesla Powerwall in Australia?", a: "There are many home batteries beyond the Powerwall, and the right one depends on your usage, whether you want whole-home backup, warranty terms and the after-rebate cost, rather than the brand. The useful comparison is on usable capacity, backup capability, warranty and VPP-readiness, sized to your home by an accredited installer." },
+      { q: "What are the alternatives to a Tesla Powerwall in Australia?", a: "There are many home batteries beyond the Powerwall, and the right one depends on your usage, whether you want whole-home backup, warranty terms and the after-rebate cost, rather than the brand. Compare on usable capacity, backup capability, warranty and VPP-readiness, sized to your home by an accredited installer." },
       { q: "Is the Tesla Powerwall the best home battery?", a: "It's the best known, which is not the same as best for your home. Batteries differ on usable capacity, backup, warranty and cost after the rebate, and the right choice depends on your usage and goals. A well-sized alternative from an accredited installer can be a better fit and better value than a bigger-name battery fitted poorly." },
       { q: "How do I compare home batteries fairly?", a: "Compare usable capacity, whether it provides blackout backup (and whole-home vs essential circuits), the warranty including throughput or cycles, chemistry, VPP-readiness, and the total cost after the federal rebate. The last one decides payback, so a headline sticker price alone can be misleading." },
       { q: "Do alternatives to the Powerwall get the same rebate?", a: "Yes, provided the battery is on the eligible product list, the federal Cheaper Home Batteries rebate applies at the point of sale regardless of brand, and in NSW the VPP incentive can apply on top. An installer confirms eligibility and applies the discount to your quote. Refer Labs readers also get $500 off an Apollo quote through our link." },

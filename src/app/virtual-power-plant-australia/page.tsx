@@ -70,6 +70,10 @@ const faqs = [
     q: "How is the NSW VPP incentive different from the federal rebate?",
     a: "They are two separate things that stack. The federal Cheaper Home Batteries rebate reduces the upfront cost of the battery at the point of sale (indicatively around $252 per usable kWh). The NSW VPP incentive is paid separately for connecting an eligible battery to an approved Virtual Power Plant, worth roughly $40 per usable kWh, capped at 28kWh, so up to about $1,100. A NSW household can claim both on the same battery. See our home battery rebate by state guide for how this differs elsewhere.",
   },
+  {
+    q: "Which VPP should I join?",
+    a: "Compare programs on the things that actually vary: the payment structure (an upfront incentive, ongoing credits or per-event export rates), how hard the battery is cycled and whether there are cycling caps and a guaranteed reserve, whether your battery brand is supported, and whether you keep full warranty cover. Check the exit terms too, since most plans are reversible. Confirm current provider terms before enrolling.",
+  },
 ];
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────

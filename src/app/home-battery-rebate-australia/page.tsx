@@ -37,6 +37,10 @@ const faqs = [
     a: "It depends on your usage, your tariff, whether you have solar and whether you join a VPP, so no page can promise you a payback figure. The rebate materially cuts the upfront cost, which shortens payback, but what matters is whether you actually consume enough power in expensive peak periods for a battery to shift. Ask any installer for a projection built on your real bills.",
   },
   {
+    q: "What are the eligibility requirements for the battery rebate?",
+    a: "To qualify for the federal Cheaper Home Batteries discount the battery must be between 5kWh and 100kWh, with only the first 50kWh subsidised, and installed with new or existing rooftop solar. Both the battery and inverter must be on the Clean Energy Council approved list, your installer must be Solar Accreditation Australia accredited, and the battery must be capable of joining a Virtual Power Plant, though actually joining one is optional. Confirm the current terms when you get a quote.",
+  },
+  {
     q: "Where can I get a quote with the rebate applied?",
     a: "Any accredited installer applies the federal discount at the point of sale. Through Refer Labs, Apollo Energy Group also takes an exclusive $500 off your quote on top of the rebate, with no code to enter. The form takes under 30 seconds and carries no obligation.",
   },

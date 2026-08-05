@@ -55,6 +55,10 @@ const faqs = [
     q: "How do I start with Juniper?",
     a: "You complete an online questionnaire, an Australian-registered practitioner reviews it, and if you are suitable a program is discussed with you. Some applicants are declined at review. You can begin from the link on this page.",
   },
+  {
+    q: "Can I cancel Juniper, and are refunds available?",
+    a: "Juniper runs on a subscription, and its cancellation and refund terms are set by Juniper and can change, including any notice period and whether a first-order refund applies. Check the current terms on Juniper's own site before subscribing, and keep written confirmation of any cancellation. Refer Labs does not manage Juniper billing.",
+  },
 ];
 
 const breadcrumbSchema = {
