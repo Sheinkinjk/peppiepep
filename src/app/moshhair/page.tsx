@@ -43,8 +43,6 @@ const webPageSchema = {
     { "@type": "Thing", name: "Australian telehealth hair loss" },
     { "@type": "Thing", name: "Mosh hair loss cost Australia" },
     { "@type": "Thing", name: "how much does Mosh cost" },
-    { "@type": "Thing", name: "Mosh finasteride Australia" },
-    { "@type": "Thing", name: "Mosh minoxidil Australia" },
     { "@type": "Thing", name: "Mosh vs Dense Hair Experts" },
     { "@type": "Thing", name: "Mosh hair loss results" },
   ],

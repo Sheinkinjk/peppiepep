@@ -109,7 +109,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/home-battery-rebate-australia" className="transition-colors hover:text-[#0a7c42]">Home Battery Rebate 2026</Link></li>
                 <li><Link href="/best-home-battery-australia" className="transition-colors hover:text-[#0a7c42]">Best Home Battery</Link></li>
                 <li><Link href="/true-cost-of-business-loans-australia" className="transition-colors hover:text-[#0a7c42]">What Business Loans Really Cost</Link></li>
-                <li><Link href="/finasteride-vs-minoxidil-australia" className="transition-colors hover:text-[#0a7c42]">Finasteride vs Minoxidil</Link></li>
+                <li><Link href="/pet-insurance" className="transition-colors hover:text-[#0a7c42]">Pet Insurance</Link></li>
               </ul>
             </div>
             <div>
