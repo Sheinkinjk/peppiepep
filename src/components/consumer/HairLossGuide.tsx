@@ -17,7 +17,7 @@ import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 export type GuideSection = { h: string; body: string[]; bullets?: string[] };
 
 export interface HairLossGuideConfig {
-  slug: string;                 // e.g. "/finasteride-vs-minoxidil-australia"
+  slug: string;                 // e.g. "/online-hair-loss-treatment-australia"
   crumb: string;
   h1: string;
   /** Direct, citable answer in the first ~100 words (AEO/GEO). */
@@ -95,7 +95,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         {/* Information-only notice */}
         <div className="nw-card mt-6 px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
           <span className="font-bold text-[#10251b]">Information only.</span> Nothing here is medical advice or a
-          recommendation of any treatment. Finasteride is a prescription-only medicine in Australia, supplied only after an
+          recommendation of any treatment. Prescription hair-loss treatment in Australia is supplied only after an
           individual assessment by a registered practitioner who decides suitability. This page contains a disclosed
           affiliate link to Mosh.
         </div>
