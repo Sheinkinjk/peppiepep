@@ -24,19 +24,19 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "How much does hair-loss treatment cost in Australia?",
-    a: "It depends on the route. Buying topical minoxidil over the counter is a one-off product cost that varies by pharmacy. A telehealth plan is usually a monthly subscription: Mosh, for example, publishes hair-loss plans from $24 a month for a single active up to $56 a month for its more advanced plan, plus free delivery. These are 'from' prices set by the plan a practitioner assigns, not fixed figures, so the exact cost is confirmed during the assessment.",
+    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription: Mosh, for example, publishes hair-loss plans from $24 a month for a single-active plan up to $56 a month for its more advanced plan, plus free delivery. These are 'from' prices set by the plan a practitioner assigns, not fixed figures, so the exact cost is confirmed during the assessment.",
   },
   {
     q: "Why is telehealth hair-loss treatment priced as a subscription?",
-    a: "Because the treatments are ongoing rather than one-off. Finasteride and minoxidil only keep working while you keep using them, so services bundle the medicine, practitioner oversight and delivery into a monthly plan. The upside is convenience and included review; the thing to check is that you are comparing like plans, since a single-active plan and a multi-active plan are priced differently.",
+    a: "Because the treatments are ongoing rather than one-off. Prescription hair-loss treatments only keep working while you keep using them, so services bundle the medicine, practitioner oversight and delivery into a monthly plan. The upside is convenience and included review; the thing to check is that you are comparing like plans, since a single-active plan and a multi-active plan are priced differently.",
   },
   {
-    q: "Is hair-loss medication covered by Medicare or the PBS?",
-    a: "Generally not for cosmetic hair loss. The 1mg finasteride dose used for male pattern hair loss is not PBS-subsidised, so you pay a private price, and over-the-counter topical minoxidil is not subsidised either. A telehealth consultation may attract a Medicare rebate in some circumstances, but the medicine and plan costs are typically out of pocket. Check current details with each provider.",
+    q: "Is hair-loss treatment covered by Medicare or the PBS?",
+    a: "Generally not for cosmetic hair loss. Prescription treatment for male pattern hair loss is not PBS-subsidised, so you pay a private price, and over-the-counter topical products are not subsidised either. A telehealth consultation may attract a Medicare rebate in some circumstances, but the treatment and plan costs are typically out of pocket. Check current details with each provider.",
   },
   {
-    q: "Is it cheaper to buy minoxidil over the counter myself?",
-    a: "For topical minoxidil alone, buying it over the counter at a pharmacy can be the cheapest route, since it does not need a prescription. The trade-off is that you are managing it yourself with no practitioner assessment, and you cannot get prescription-only finasteride that way. Many people who want a combined, assessed plan find the convenience of a telehealth subscription worth the price. It comes down to whether you want a full plan or a single product.",
+    q: "Is it cheaper to buy an over-the-counter product myself?",
+    a: "For an over-the-counter topical alone, buying it at a pharmacy can be the cheapest route, since it does not need a prescription. The trade-off is that you are managing it yourself with no practitioner assessment, and prescription treatment is not available that way. Many people who want a combined, assessed plan find the convenience of a telehealth subscription worth the price. It comes down to whether you want a full plan or a single product.",
   },
   {
     q: "What does the Mosh hair-loss offer include?",
@@ -66,8 +66,8 @@ const webPageSchema = {
   about: [
     { "@type": "Thing", name: "hair loss treatment cost Australia" },
     { "@type": "Thing", name: "Mosh hair loss cost" },
-    { "@type": "Thing", name: "finasteride cost Australia" },
-    { "@type": "Thing", name: "minoxidil cost Australia" },
+    { "@type": "Thing", name: "hair loss telehealth cost Australia" },
+    { "@type": "Thing", name: "hair loss treatment subscription cost" },
   ],
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
 };
@@ -106,7 +106,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               Hair-loss treatment does not have one price, because there are different routes. This page breaks down the
-              real numbers: buying topical minoxidil over the counter, and telehealth subscription plans, using Mosh&apos;s
+              real numbers: buying an over-the-counter topical product, and telehealth subscription plans, using Mosh&apos;s
               own published prices as the worked example. It explains why treatment is priced monthly, what is and is not
               subsidised, and how to compare like with like. It is general information about cost, not medical or
               financial advice.
@@ -146,16 +146,17 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  <span className="font-semibold text-[#10251b]">Buy over the counter.</span> Topical minoxidil is a
-                  pharmacy medicine you can buy without a prescription. The cost is a one-off product price that varies by
+                  <span className="font-semibold text-[#10251b]">Buy over the counter.</span> Some topical products are
+                  available at a pharmacy without a prescription. The cost is a one-off product price that varies by
                   pharmacy, brand and pack size, and you manage it yourself. It is often the cheapest single route, but it
-                  only covers topical minoxidil, not prescription-only options like finasteride.
+                  only covers over-the-counter options, not prescription treatment.
                 </p>
                 <p>
-                  <span className="font-semibold text-[#10251b]">A telehealth plan.</span> Services bundle the medicine,
+                  <span className="font-semibold text-[#10251b]">A telehealth plan.</span> Services bundle treatment,
                   practitioner oversight and delivery into a monthly subscription. This is how you access prescription
-                  treatments like finasteride, and how most combined plans are sold. The rest of this page uses Mosh&apos;s
-                  published prices as the worked example, because it publishes them openly.
+                  treatment where a practitioner assesses it as appropriate, and how most combined plans are sold. The
+                  rest of this page uses Mosh&apos;s published prices as the worked example, because it publishes them
+                  openly.
                 </p>
               </div>
             </section>
@@ -201,9 +202,9 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  For cosmetic hair loss, expect to pay privately. The 1mg finasteride dose used for male pattern hair
-                  loss is not subsidised on the PBS, and over-the-counter minoxidil is not subsidised either. A telehealth
-                  consultation may attract a Medicare rebate in some circumstances, but the medicine and plan costs are
+                  For cosmetic hair loss, expect to pay privately. Prescription treatment for male pattern hair
+                  loss is not subsidised on the PBS, and over-the-counter products are not subsidised either. A telehealth
+                  consultation may attract a Medicare rebate in some circumstances, but the treatment and plan costs are
                   typically out of pocket. It is worth confirming the current position with each provider rather than
                   assuming.
                 </p>
@@ -222,12 +223,10 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   figure, and remember any introductory discount applies to the first order rather than the ongoing price.
                 </p>
                 <p>
-                  For the treatments themselves, our{" "}
-                  <Link href="/finasteride-australia" className="nw-link">finasteride guide</Link> and{" "}
-                  <Link href="/minoxidil-australia" className="nw-link">minoxidil guide</Link> explain what each does, and
-                  our{" "}
-                  <Link href="/best-hair-loss-treatment-australia" className="nw-link">comparison</Link> lines up the main
-                  providers.
+                  For the routes themselves, our{" "}
+                  <Link href="/best-hair-loss-treatment-australia" className="nw-link">comparison of the main providers</Link>{" "}
+                  lines up the clinical and topical options side by side, and the{" "}
+                  <Link href="/hair-loss" className="nw-link">hair-loss hub</Link> explains which route fits which stage.
                 </p>
               </div>
             </section>
@@ -271,9 +270,9 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <section>
               <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
-                <li><Link href="/finasteride-australia" className="nw-link">Finasteride in Australia, explained</Link></li>
-                <li><Link href="/minoxidil-australia" className="nw-link">Minoxidil in Australia, explained</Link></li>
                 <li><Link href="/best-hair-loss-treatment-australia" className="nw-link">Best hair-loss treatment in Australia, compared</Link></li>
+                <li><Link href="/how-to-stop-hair-loss-australia" className="nw-link">How to slow hair loss, and what the evidence supports</Link></li>
+                <li><Link href="/online-hair-loss-treatment-australia" className="nw-link">How online hair-loss treatment works</Link></li>
                 <li><Link href="/moshhair" className="nw-link">Mosh hair-loss: how it works and the current offer</Link></li>
                 <li><Link href="/hair-loss" className="nw-link">The full hair-loss hub</Link></li>
               </ul>
@@ -284,9 +283,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
               <p className="text-xs leading-relaxed text-[#9aa39c]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 affiliate link to Mosh, which means we may earn a commission if you sign up through our link. Commissions
-                never change what we write. Prices shown are the providers&apos; own published figures at the time of
-                writing and can change, so verify current pricing before you commit. Content is general information, not
-                medical or financial advice.
+                never change what we write. Prices shown are the providers&apos; own published figures and can change, so
+                verify current pricing before you commit. Content is general information, not medical or financial advice.
               </p>
             </section>
           </article>

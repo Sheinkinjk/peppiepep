@@ -18,7 +18,7 @@ import BrandMark from "@/components/consumer/BrandMark";
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
-  { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: finasteride and minoxidil after a practitioner review. New customers get 55% off their first order via our link.", href: "/moshhair" },
+  { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: a practitioner reviews your case and prescribes treatment where appropriate. New customers get 55% off their first order via our link.", href: "/moshhair" },
   { logo: "juniper", name: "Juniper", cat: "Weight loss", verdict: "The women-focused weight-management program: medication access wrapped in coaching, unlimited consults, an app and a community.", href: "/juniper" },
   { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", verdict: "Home battery specialists, SAA-accredited and sized from your real usage. $500 off your quote through our link, on top of the federal rebate.", href: "/apollo-energy-group" },
 ];

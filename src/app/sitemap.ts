@@ -95,8 +95,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },
     { url: `${BASE}/online-weight-loss-doctor-australia`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshhair`,          lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.78 },
-    // /finasteride-australia and /minoxidil-australia removed: noindex (TGA
-    // compliance, prescription-medicine topics), so kept out of the sitemap.
+    // The medicine-name slugs (/finasteride-australia, /minoxidil-australia,
+    // /finasteride-vs-minoxidil-australia, /how-long-does-finasteride-take-to-work-australia)
+    // 301-redirect to /hair-loss for TGA compliance, so they are kept out of the sitemap.
     { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     // Hair-loss guide cluster (generated from the registry)
     ...HAIR_LOSS_GUIDES.filter((g) => !g.meta?.noIndex).map((g) => ({

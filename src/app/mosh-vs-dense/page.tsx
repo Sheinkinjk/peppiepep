@@ -28,7 +28,7 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Mosh vs Dense: Hair Loss Treatment Compared 2026",
   description:
-    "A side-by-side comparison of Mosh and Dense for hair loss in Australia. Mosh is prescription telehealth that can prescribe finasteride and minoxidil after a practitioner review; Dense is a non-prescription topical hair-care range. They serve different needs, clinical versus topical. Information only, not medical advice.",
+    "A side-by-side comparison of Mosh and Dense for hair loss in Australia. Mosh is prescription telehealth that can prescribe prescription hair-loss treatments after a practitioner review; Dense is a non-prescription topical hair-care range. They serve different needs, clinical versus topical. Information only, not medical advice.",
   numberOfItems: 2,
   itemListElement: [
     {
@@ -36,7 +36,7 @@ const itemListSchema = {
       position: 1,
       name: "Mosh",
       description:
-        "Australian men's hair-loss telehealth. Online consultation and photo assessment reviewed by a registered Australian practitioner, who may prescribe finasteride or minoxidil where clinically appropriate. Subscription with home delivery. Prescription medicines are subject to individual clinical assessment.",
+        "Australian men's hair-loss telehealth. Online consultation and photo assessment reviewed by a registered Australian practitioner, who may prescribe prescription treatment where clinically appropriate. Subscription with home delivery. Prescription medicines are subject to individual clinical assessment.",
       url: `${SITE_URL}/moshhair`,
     },
     {
@@ -53,19 +53,19 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Mosh or Dense better for hair loss?",
-    a: "They serve different needs, so neither is universally better. Mosh is a telehealth platform that can prescribe finasteride and minoxidil, the treatments that act on the underlying cause of male-pattern hair loss, after an online consultation and review by a registered Australian practitioner. Dense Hair Experts is a non-prescription topical range focused on density and scalp health. For active or progressing hair loss, a clinical route like Mosh is usually the stronger starting point; a topical range like Dense can suit early thinning or complement a routine. This is general information, not medical advice.",
+    a: "They serve different needs, so neither is universally better. Mosh is a telehealth platform that can prescribe prescription hair-loss treatments, the treatments that act on the underlying cause of male-pattern hair loss, after an online consultation and review by a registered Australian practitioner. Dense Hair Experts is a non-prescription topical range focused on density and scalp health. For active or progressing hair loss, a clinical route like Mosh is usually the stronger starting point; a topical range like Dense can suit early thinning or complement a routine. This is general information, not medical advice.",
   },
   {
     q: "What is the difference between Mosh and Dense?",
-    a: "The core difference is clinical versus topical. Mosh is prescription telehealth: you complete a questionnaire and photo assessment, a registered Australian practitioner reviews your case, and if it is appropriate you are prescribed finasteride or minoxidil on a subscription with home delivery. Dense is a non-prescription range of shampoos, conditioners, serums, and scalp treatments you buy directly online with no consultation. Mosh can access prescription medicines; Dense cannot, because it is a topical hair-care brand.",
+    a: "The core difference is clinical versus topical. Mosh is prescription telehealth: you complete a questionnaire and photo assessment, a registered Australian practitioner reviews your case, and if it is appropriate you are prescribed prescription treatment on a subscription with home delivery. Dense is a non-prescription range of shampoos, conditioners, serums, and scalp treatments you buy directly online with no consultation. Mosh can access prescription medicines; Dense cannot, because it is a topical hair-care brand.",
   },
   {
-    q: "Does Mosh prescribe finasteride and minoxidil?",
-    a: "Mosh can facilitate access to finasteride and minoxidil where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Finasteride and oral minoxidil are prescription-only in Australia; topical minoxidil is available over the counter. Nothing is prescribed automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner. This page is not medical advice.",
+    q: "Does Mosh prescribe prescription hair-loss treatments?",
+    a: "Mosh can facilitate access to prescription hair-loss treatment where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Some hair-loss treatments are prescription-only in Australia, while some topical products are available over the counter. Nothing is prescribed automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner. This page is not medical advice.",
   },
   {
     q: "Is Dense Hair Experts a prescription treatment?",
-    a: "No. Dense Hair Experts is a non-prescription, topical hair-care brand. Its shampoos, conditioners, serums, and scalp treatments are aimed at density, thickness, and scalp health, and are bought directly online with no consultation or practitioner review. It does not contain prescription ingredients such as finasteride. If you want a prescription treatment that targets the cause of male-pattern hair loss, a telehealth provider like Mosh is the appropriate starting point.",
+    a: "No. Dense Hair Experts is a non-prescription, topical hair-care brand. Its shampoos, conditioners, serums, and scalp treatments are aimed at density, thickness, and scalp health, and are bought directly online with no consultation or practitioner review. It does not contain prescription ingredients. If you want a prescription treatment that targets the cause of male-pattern hair loss, a telehealth provider like Mosh is the appropriate starting point.",
   },
   {
     q: "Can I use Mosh and Dense together?",
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "How much do Mosh and Dense cost?",
-    a: "Mosh runs on a subscription and the cost depends on the plan your consultation lands on, since finasteride alone differs from a finasteride-plus-minoxidil combination, and the fee bundles medication, practitioner oversight, and delivery. You see the actual figures in the consultation before you commit. Dense is bought per product or as a routine directly from its store. Prices change, so check the current figures on each site. Our links apply any current referral offer at the URL level with no code to enter.",
+    a: "Mosh runs on a subscription and the cost depends on the plan your consultation lands on, since a single-active plan differs from a multi-active plan, and the fee bundles treatment, practitioner oversight, and delivery. You see the actual figures in the consultation before you commit. Dense is bought per product or as a routine directly from its store. Prices change, so check the current figures on each site. Our links apply any current referral offer at the URL level with no code to enter.",
   },
   {
     q: "Which should I start with for early thinning?",
@@ -103,7 +103,7 @@ const webPageSchema = {
 const rows: { label: string; mosh: string; dense: string }[] = [
   { label: "What it is", mosh: "Prescription hair-loss telehealth", dense: "Non-prescription topical hair care" },
   { label: "Category", mosh: "Clinical, practitioner-reviewed", dense: "Topical products, no consultation" },
-  { label: "Treatments", mosh: "Finasteride & minoxidil, if eligible", dense: "Shampoos, conditioners, serums, scalp care" },
+  { label: "Treatments", mosh: "Prescription treatment, if eligible", dense: "Shampoos, conditioners, serums, scalp care" },
   { label: "Process", mosh: "Online consult → practitioner review → delivery", dense: "Shop online → delivered" },
   { label: "Prescription", mosh: "Yes, where clinically appropriate", dense: "None (non-prescription)" },
   { label: "Best for", mosh: "Active or progressing male-pattern loss", dense: "Early thinning, density & scalp health" },
@@ -138,15 +138,15 @@ export default function MoshVsDensePage() {
             </h1>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Mosh and Dense both come up when Australians research hair loss, but they are not the same kind of thing.
-              Mosh is prescription telehealth: it can prescribe finasteride and minoxidil after an online consultation
+              Mosh is prescription telehealth: it can prescribe prescription hair-loss treatments after an online consultation
               reviewed by a registered Australian practitioner. Dense Hair Experts is a non-prescription topical range,
               shampoos, conditioners, serums, and scalp treatments aimed at density and scalp health. One is a clinical route and the other is a topical one. Below we set out the difference, who each suits, and how
               to think about starting.
             </p>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
-              Information only, not medical advice. Mosh medicines, including finasteride and oral minoxidil, are
-              prescription-only in Australia and available only after an individual assessment by a registered Australian
-              practitioner, with suitability practitioner-decided and never guaranteed. This page contains disclosed
+              Information only, not medical advice. Prescription hair-loss treatment is available only after an individual
+              assessment by a registered Australian practitioner, with suitability practitioner-decided and never
+              guaranteed. This page contains disclosed
               affiliate links to both Mosh and Dense; both are Refer Labs partners.
             </p>
 
@@ -180,7 +180,7 @@ export default function MoshVsDensePage() {
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 They answer different questions. If you have active or progressing male-pattern hair loss and want access
                 to the treatments that target its cause, Mosh is the clinical route, an online consult reviewed by a
-                registered practitioner who may prescribe finasteride or minoxidil where appropriate. If you are dealing
+                registered practitioner who may prescribe prescription treatment where appropriate. If you are dealing
                 with early thinning and want a topical routine for density and scalp health, Dense is the non-prescription
                 option. Suitability for any prescription medicine is decided by the practitioner and never guaranteed. For
                 significant or sudden loss, see a doctor in person. This is not medical advice.
@@ -229,7 +229,7 @@ export default function MoshVsDensePage() {
               <p>
                 The single most important thing to understand is that Mosh and Dense sit in different categories. Mosh is
                 a telehealth service. You complete a questionnaire and upload photos, a registered Australian practitioner
-                reviews your case, and if it is appropriate you may be prescribed finasteride or minoxidil, delivered on a
+                reviews your case, and if it is appropriate you may be prescribed prescription treatment, delivered on a
                 subscription. The review step is the point: not everyone who applies is eligible, and the practitioner can
                 decline or redirect you, which is exactly what you would want a prescriber to do.
               </p>
@@ -243,19 +243,18 @@ export default function MoshVsDensePage() {
             </div>
           </section>
 
-          {/* Prose: what Mosh prescribes */}
+          {/* Prose: how the Mosh service works */}
           <section className="border-t border-[#e5e9e7] py-10">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              What Mosh can prescribe, and the rules around it
+              How the Mosh service works, and the rules around it
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
-                Two treatments do most of the work for male-pattern hair loss, and Mosh is built around both. Finasteride
-                is an oral medicine that lowers DHT, the hormone involved in hereditary hair loss. Minoxidil works on a
-                different mechanism and is often used alongside it. The regulatory reality in Australia is clear:
-                finasteride and oral minoxidil are prescription-only, while topical minoxidil is available over the
-                counter. Mosh's value is that the online consult and photo review can lead to a script without an
-                in-person visit, but only when the practitioner judges it appropriate.
+                Male-pattern hair loss is driven by hormones and genetics, and the treatments that act on the underlying
+                cause are prescription-only in Australia. That is the line Mosh is built around: some hair-loss treatments
+                require a prescription, while some topical products are available over the counter. Mosh&apos;s value is
+                that the online consult and photo review can lead to a practitioner&apos;s decision without an in-person
+                visit, but only when that practitioner judges treatment appropriate for you.
               </p>
               <p>
                 That last point is the compliance line. Nothing is dispensed automatically. Suitability
@@ -364,10 +363,10 @@ export default function MoshVsDensePage() {
               This page is operated by Refer Labs and contains disclosed affiliate referral links to both Mosh and Dense.
               We may earn a commission if you sign up or order through them, at no extra cost to you. We compare on
               category, model, and what is included, and we never sell rankings. All content is for informational purposes
-              only and does not constitute medical advice. Prescription medicines in Australia, including finasteride and
-              oral minoxidil, are available only after an individual assessment by a registered Australian practitioner,
-              and suitability is practitioner-decided and never guaranteed. Consult a qualified health professional before
-              starting any hair-loss treatment.
+              only and does not constitute medical advice. Prescription hair-loss treatment in Australia is available only
+              after an individual assessment by a registered Australian practitioner, and suitability is
+              practitioner-decided and never guaranteed. Consult a qualified health professional before starting any
+              hair-loss treatment.
             </p>
           </section>
 

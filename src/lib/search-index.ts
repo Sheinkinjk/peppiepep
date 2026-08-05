@@ -12,7 +12,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Categories
   { title: "Deals & discount codes", href: "/deals", category: "Deals", kind: "Guide", keywords: "deals discount codes promo codes australia moshy mosh apollo offers current verified" },
   { title: "Weight loss & telehealth", href: "/weight-loss", category: "Health", kind: "Category", keywords: "weight management obesity diet telehealth glp-1 injections online clinic" },
-  { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning finasteride minoxidil scalp" },
+  { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning telehealth topical scalp" },
   { title: "Pet insurance", href: "/pet-insurance", category: "Insurance", kind: "Category", keywords: "pet insurance australia dog cat cover waiting period exclusions excess annual limit knose offers referrer" },
   { title: "Knose pet insurance (2 months free)", href: "/knose", category: "Insurance", kind: "Guide", keywords: "knose pet insurance promo code referlab2mf 2 months free australia quote" },
   { title: "What pet insurance covers", href: "/what-pet-insurance-covers-australia", category: "Insurance", kind: "Guide", keywords: "what pet insurance covers waiting period exclusions excess benefit percentage annual limit accident illness pds" },
@@ -39,16 +39,15 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "getmoshy.com.au explained", href: "/getmoshy", category: "Weight loss", kind: "Guide", keywords: "moshy website legit real" },
 
   // Hair loss
-  { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "regrowth finasteride minoxidil telehealth top" },
-  { title: "Mosh hair: what to know & offer", href: "/moshhair", category: "Hair loss", kind: "Guide", keywords: "mosh review mens hair loss finasteride" },
-  { title: "Finasteride in Australia, explained", href: "/finasteride-australia", category: "Hair loss", kind: "Guide", keywords: "finasteride australia hair loss prescription dht blocker propecia generic 1mg" },
-  { title: "Minoxidil in Australia, explained", href: "/minoxidil-australia", category: "Hair loss", kind: "Guide", keywords: "minoxidil australia regaine topical oral hair loss over the counter" },
-  { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss treatment cost australia mosh price finasteride minoxidil subscription" },
-  { title: "Finasteride vs minoxidil", href: "/finasteride-vs-minoxidil-australia", category: "Hair loss", kind: "Guide", keywords: "finasteride vs minoxidil difference compare oral topical dht together australia" },
+  { title: "Hair loss: compare your options", href: "/hair-loss", category: "Hair loss", kind: "Guide", keywords: "hair loss australia compare telehealth topical options men" },
+  { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "regrowth telehealth topical prescription treatment top compare" },
+  { title: "Mosh hair: what to know & offer", href: "/moshhair", category: "Hair loss", kind: "Guide", keywords: "mosh review mens hair loss telehealth offer discount" },
+  { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss treatment cost australia mosh price subscription telehealth" },
   { title: "Online hair loss treatment in Australia", href: "/online-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "online hair loss treatment telehealth doctor australia assessment prescription" },
-  { title: "How long does finasteride take to work", href: "/how-long-does-finasteride-take-to-work-australia", category: "Hair loss", kind: "Guide", keywords: "how long finasteride take work results timeline shedding months australia" },
-  { title: "How to stop hair loss", href: "/how-to-stop-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "how to stop hair loss balding men male pattern dht treatment australia" },
-  { title: "Mosh vs Pilot", href: "/mosh-vs-pilot", category: "Hair loss", kind: "Guide", keywords: "mosh vs pilot hair loss finasteride minoxidil mens telehealth compare" },
+  { title: "How to stop hair loss", href: "/how-to-stop-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "how to stop hair loss balding men male pattern treatment australia" },
+  { title: "Receding hairline treatment", href: "/receding-hairline-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "receding hairline treatment male pattern telehealth australia" },
+  { title: "Mosh vs Dense", href: "/mosh-vs-dense", category: "Hair loss", kind: "Guide", keywords: "mosh vs dense hair loss clinical topical compare" },
+  { title: "Mosh vs Pilot", href: "/mosh-vs-pilot", category: "Hair loss", kind: "Guide", keywords: "mosh vs pilot hair loss mens telehealth compare" },
   { title: "Dense Hair Experts", href: "/dense", category: "Hair loss", kind: "Guide", keywords: "dense hair non prescription topical" },
 
   // Men's health
@@ -97,7 +96,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "What size home battery do I need", href: "/what-size-home-battery-do-i-need-australia", category: "Home & energy", kind: "Guide", keywords: "what size home battery do i need kwh sizing calculator australia how many" },
   { title: "NSW home battery rebate 2026", href: "/nsw-home-battery-rebate-2026", category: "Home & energy", kind: "Guide", keywords: "nsw home battery rebate 2026 vpp incentive federal stack sydney pdrs" },
   { title: "Home battery installer NSW", href: "/home-battery-installer-nsw", category: "Home & energy", kind: "Guide", keywords: "home battery installer nsw sydney saa accredited electrical licence solar battery installation" },
-  { title: "Receding hairline treatment", href: "/receding-hairline-treatment-australia", category: "Health", kind: "Guide", keywords: "receding hairline treatment australia fix men finasteride minoxidil mosh temples" },
   { title: "Weight loss telehealth for women", href: "/weight-loss-telehealth-women-australia", category: "Health", kind: "Guide", keywords: "weight loss telehealth women australia female online program juniper alternative moshy" },
   { title: "Best CRM for small business", href: "/best-crm-small-business-australia", category: "Business software", kind: "Guide", keywords: "best crm small business australia pipedrive capsule nutshell keap cheapest simple crm" },
   { title: "Home battery installer Sydney", href: "/home-battery-installer-sydney", category: "Home & energy", kind: "Guide", keywords: "home battery installer sydney solar battery installation sydney metro nsw saa accredited" },

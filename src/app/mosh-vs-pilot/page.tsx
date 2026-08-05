@@ -27,7 +27,7 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Mosh vs Pilot: Men's Hair Loss Telehealth Compared 2026",
   description:
-    "A side-by-side comparison of Mosh and Pilot for hair loss in Australia. Both are Australian men's telehealth brands that can facilitate access to finasteride and minoxidil after an online consultation reviewed by a registered practitioner. They differ on model, breadth and experience. Information only, not medical advice.",
+    "A side-by-side comparison of Mosh and Pilot for hair loss in Australia. Both are Australian men's telehealth brands that can facilitate access to prescription hair-loss treatments after an online consultation reviewed by a registered practitioner. They differ on model, breadth and experience. Information only, not medical advice.",
   numberOfItems: 2,
   itemListElement: [
     {
@@ -35,7 +35,7 @@ const itemListSchema = {
       position: 1,
       name: "Mosh",
       description:
-        "Australian men's health telehealth with a strong hair-loss focus. Online consultation and photo assessment reviewed by a registered Australian practitioner, who may prescribe finasteride or minoxidil where clinically appropriate. Subscription with home delivery. Prescription medicines are subject to individual clinical assessment.",
+        "Australian men's health telehealth with a strong hair-loss focus. Online consultation and photo assessment reviewed by a registered Australian practitioner, who may prescribe prescription treatment where clinically appropriate. Subscription with home delivery. Prescription medicines are subject to individual clinical assessment.",
       url: `${SITE_URL}/moshhair`,
     },
     {
@@ -43,7 +43,7 @@ const itemListSchema = {
       position: 2,
       name: "Pilot",
       description:
-        "Australian men's telehealth brand (part of the Eucalyptus group) covering hair loss, weight, sexual health and more. Online consultation reviewed by a registered Australian practitioner, who may prescribe finasteride or minoxidil where clinically appropriate. Not affiliated with Refer Labs.",
+        "Australian men's telehealth brand (part of the Eucalyptus group) covering hair loss, weight, sexual health and more. Online consultation reviewed by a registered Australian practitioner, who may prescribe prescription treatment where clinically appropriate. Not affiliated with Refer Labs.",
       url: "https://pilot.com.au/",
     },
   ],
@@ -52,15 +52,15 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Mosh or Pilot better for hair loss?",
-    a: "Neither is universally better, because they are close cousins rather than opposites. Both Mosh and Pilot are Australian men's telehealth brands, both run an online consultation reviewed by a registered Australian practitioner, and both can facilitate access to finasteride and minoxidil where it is clinically appropriate. The practical differences are model and feel: Mosh is the more hair-and-men's-health focused experience, while Pilot sits inside the larger Eucalyptus health ecosystem. For most people the deciding factors are the plan you are offered in the consult, the price it lands on, and which interface you prefer. This is general information, not medical advice.",
+    a: "Neither is universally better, because they are close cousins rather than opposites. Both Mosh and Pilot are Australian men's telehealth brands, both run an online consultation reviewed by a registered Australian practitioner, and both can facilitate access to prescription hair-loss treatments where it is clinically appropriate. The practical differences are model and feel: Mosh is the more hair-and-men's-health focused experience, while Pilot sits inside the larger Eucalyptus health ecosystem. For most people the deciding factors are the plan you are offered in the consult, the price it lands on, and which interface you prefer. This is general information, not medical advice.",
   },
   {
     q: "What is the difference between Mosh and Pilot?",
-    a: "The core mechanics are similar: an online questionnaire and photo assessment, a review by a registered Australian practitioner, and, where appropriate, a prescription for finasteride or minoxidil delivered on a subscription. Where they differ is scope and positioning. Mosh is a men's health brand with a prominent hair-loss offering. Pilot is part of the Eucalyptus group and offers a broad men's health range across hair, weight and sexual health. The clinical route to a hair-loss script is comparable; the surrounding experience, plans and pricing are where you will notice the difference.",
+    a: "The core mechanics are similar: an online questionnaire and photo assessment, a review by a registered Australian practitioner, and, where appropriate, a prescription for prescription treatment delivered on a subscription. Where they differ is scope and positioning. Mosh is a men's health brand with a prominent hair-loss offering. Pilot is part of the Eucalyptus group and offers a broad men's health range across hair, weight and sexual health. The clinical route to a hair-loss script is comparable; the surrounding experience, plans and pricing are where you will notice the difference.",
   },
   {
-    q: "Do Mosh and Pilot both prescribe finasteride and minoxidil?",
-    a: "Both can facilitate access to finasteride and minoxidil where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Finasteride and oral minoxidil are prescription-only in Australia; topical minoxidil is available over the counter. Neither service prescribes automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner. This page is not medical advice.",
+    q: "Do Mosh and Pilot both prescribe prescription hair-loss treatments?",
+    a: "Both can facilitate access to prescription hair-loss treatment where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Some hair-loss treatments are prescription-only in Australia, while some topical products are available over the counter. Neither service prescribes automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner. This page is not medical advice.",
   },
   {
     q: "Are Mosh and Pilot the same company?",
@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     q: "How much do Mosh and Pilot cost for hair loss?",
-    a: "Both run on a subscription, and the figure depends on the plan your consultation lands on, since finasteride alone differs from a finasteride-plus-minoxidil combination, and the fee bundles medication, practitioner oversight and delivery. You see the actual price inside the consultation before you commit to anything. Prices change, so check the current figures on each site. Our link to Mosh applies any current referral offer at the URL level, with no code to enter.",
+    a: "Both run on a subscription, and the figure depends on the plan your consultation lands on, since a single-active plan differs from a multi-active plan, and the fee bundles treatment, practitioner oversight and delivery. You see the actual price inside the consultation before you commit to anything. Prices change, so check the current figures on each site. Our link to Mosh applies any current referral offer at the URL level, with no code to enter.",
   },
   {
     q: "Which should I start with?",
@@ -98,7 +98,7 @@ const webPageSchema = {
 const rows: { label: string; mosh: string; pilot: string }[] = [
   { label: "What it is", mosh: "Men's health telehealth, hair-loss focus", pilot: "Men's health telehealth (Eucalyptus group)" },
   { label: "Category", mosh: "Clinical, practitioner-reviewed", pilot: "Clinical, practitioner-reviewed" },
-  { label: "Hair treatments", mosh: "Finasteride & minoxidil, if eligible", pilot: "Finasteride & minoxidil, if eligible" },
+  { label: "Hair treatments", mosh: "Prescription treatment, if eligible", pilot: "Prescription treatment, if eligible" },
   { label: "Process", mosh: "Online consult → practitioner review → delivery", pilot: "Online consult → practitioner review → delivery" },
   { label: "Prescription", mosh: "Yes, where clinically appropriate", pilot: "Yes, where clinically appropriate" },
   { label: "Breadth", mosh: "Hair, skin, weight, mind, sexual health", pilot: "Hair, weight, sexual health and more" },
@@ -135,13 +135,13 @@ export default function MoshVsPilotPage() {
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Mosh and Pilot are the two names Australian men run into most when they start researching hair loss online,
               and they are more alike than different. Both are telehealth services, both put your case in front of a
-              registered Australian practitioner, and both can prescribe finasteride and minoxidil when it is
+              registered Australian practitioner, and both can prescribe prescription hair-loss treatments when it is
               appropriate. So the real question is which experience, plan and price suits you. Below we set out where they overlap, where they diverge, and how to choose.
             </p>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
-              Information only, not medical advice. Finasteride and oral minoxidil are prescription-only in Australia and
-              available only after an individual assessment by a registered Australian practitioner, with suitability
-              practitioner-decided and never guaranteed. This page contains a disclosed affiliate link to Mosh, which is
+              Information only, not medical advice. Prescription hair-loss treatment is available only after an individual
+              assessment by a registered Australian practitioner, with suitability practitioner-decided and never
+              guaranteed. This page contains a disclosed affiliate link to Mosh, which is
               a Refer Labs partner. Pilot is mentioned for comparison and is not a Refer Labs partner.
             </p>
 
@@ -173,7 +173,7 @@ export default function MoshVsPilotPage() {
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 For the actual hair-loss treatment, Mosh and Pilot land in much the same place: a practitioner-reviewed
-                online consult that can lead to finasteride or minoxidil. Mosh is the more focused, quick men&apos;s
+                online consult that can lead to prescription treatment. Mosh is the more focused, quick men&apos;s
                 hair-loss experience; Pilot suits men who want one login across a broader health ecosystem. If you just
                 want to get a hair-loss plan moving, Mosh&apos;s consult is a low-friction place to start. Suitability is
                 practitioner-decided and never guaranteed. For significant or sudden loss, see a doctor in person. This is
@@ -222,7 +222,7 @@ export default function MoshVsPilotPage() {
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
                 For hair loss specifically, these two services are built on the same clinical logic. You complete an online questionnaire and upload photos, a registered Australian
-                practitioner reviews your case, and if it is appropriate you are prescribed finasteride, minoxidil, or
+                practitioner reviews your case, and if it is appropriate you are prescribed prescription treatments, or
                 both, delivered on a subscription. The medicines are the same molecules with the same evidence behind
                 them, because that is what works for male-pattern hair loss regardless of which brand&apos;s website you
                 filled in.
@@ -330,9 +330,9 @@ export default function MoshVsPilotPage() {
               commission if you sign up through it, at no extra cost to you. Pilot is referenced for comparison only and is
               not a Refer Labs partner. We compare on category, model, and what is included, and we never sell rankings.
               All content is for informational purposes only and does not constitute medical advice. Prescription
-              medicines in Australia, including finasteride and oral minoxidil, are available only after an individual
-              assessment by a registered Australian practitioner, and suitability is practitioner-decided and never
-              guaranteed. Consult a qualified health professional before starting any hair-loss treatment. Our full
+              hair-loss treatment in Australia is available only after an individual assessment by a registered Australian
+              practitioner, and suitability is practitioner-decided and never guaranteed. Consult a qualified health
+              professional before starting any hair-loss treatment. Our full
             </p>
           </section>
 

@@ -31,11 +31,11 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       noIndex: true,
       title: "Finasteride vs Minoxidil (Australia 2026): How They Differ | Refer Labs",
       description:
-        "Finasteride and minoxidil are the two most studied hair-loss treatments, and they work in completely different ways. What each does, oral vs topical, prescription vs pharmacy, and using both. Information only.",
-      keywords: ["finasteride vs minoxidil", "minoxidil vs finasteride australia", "finasteride and minoxidil together", "hair loss treatment comparison australia"],
+        "Prescription hair-loss treatments are among the most studied options, and they work in completely different ways. What each does, oral vs topical, prescription vs pharmacy, and using both. Information only.",
+      keywords: ["finasteride vs minoxidil", "minoxidil vs finasteride australia", "prescription hair-loss treatments together", "hair loss treatment comparison australia"],
     },
     lead:
-      "Finasteride and minoxidil are the two most studied treatments for male pattern hair loss, and the confusion between them is understandable, because they do almost opposite jobs. Finasteride is an oral, prescription-only medicine that acts on the hormone driving hair loss. Minoxidil is usually a topical product, available over the counter, that acts on the hair follicle and its blood supply. They are not competitors so much as two different levers, and some men are assessed as suitable for one, the other, or both. Which applies to you is a clinical decision, not something a webpage can settle.",
+      "Prescription hair-loss treatments are among the most studied options for male pattern hair loss, and the confusion between them is understandable, because they do almost opposite jobs. Finasteride is an oral, prescription-only medicine that acts on the hormone driving hair loss. Minoxidil is usually a topical product, available over the counter, that acts on the hair follicle and its blood supply. They are not competitors so much as two different levers, and some men are assessed as suitable for one, the other, or both. Which applies to you is a clinical decision, not something a webpage can settle.",
     sections: [
       {
         h: "What each one actually does",
@@ -58,7 +58,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "Can you use both together?",
         body: [
-          "Yes, and it is common. Because they work through different mechanisms, finasteride and minoxidil are often used alongside each other, and many telehealth plans combine them for that reason. Whether a combination suits you, and at what strengths, is exactly the kind of thing a practitioner weighs up during an assessment rather than something to self-prescribe.",
+          "Yes, and it is common. Because they work through different mechanisms, prescription hair-loss treatments are often used alongside each other, and many telehealth plans combine them for that reason. Whether a combination suits you, and at what strengths, is exactly the kind of thing a practitioner weighs up during an assessment rather than something to self-prescribe.",
           "The trade is simplicity versus coverage. A single active is one product to manage; a combined plan is more to keep on top of, but targets the problem from two angles. Neither is automatically better, and the right answer depends on your situation and how much routine you will realistically stick to.",
         ],
       },
@@ -71,8 +71,8 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "Is finasteride or minoxidil better?", a: "Neither is universally 'better' because they work differently: finasteride lowers the hormone (DHT) behind male pattern hair loss, while minoxidil acts on the follicle locally. Some men are suited to one, some to the other, and some to both. Which is appropriate for you is a clinical decision a practitioner makes after an assessment." },
-      { q: "Can I take finasteride and minoxidil at the same time?", a: "Often, yes, and combined plans are common because the two work through different mechanisms. Whether a combination is suitable for you, and at what strengths, is something a practitioner assesses individually. This page is general information, not medical advice." },
+      { q: "Is prescription treatment better?", a: "Neither is universally 'better' because they work differently: finasteride lowers the hormone (DHT) behind male pattern hair loss, while minoxidil acts on the follicle locally. Some men are suited to one, some to the other, and some to both. Which is appropriate for you is a clinical decision a practitioner makes after an assessment." },
+      { q: "Can I take prescription hair-loss treatments at the same time?", a: "Often, yes, and combined plans are common because the two work through different mechanisms. Whether a combination is suitable for you, and at what strengths, is something a practitioner assesses individually. This page is general information, not medical advice." },
       { q: "Is minoxidil prescription-only like finasteride?", a: "No. Topical minoxidil is sold over the counter at Australian pharmacies without a prescription. Oral finasteride is Schedule 4 (prescription-only), and so is oral minoxidil, which is used off-label under practitioner supervision." },
       { q: "Do I have to keep using them forever?", a: "Any benefit from either continues only while you keep using it. Both are treated as ongoing rather than one-off, so stopping generally means the hair loss resumes its previous course over the following months." },
     ],
@@ -106,8 +106,8 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "What you can and can't get online",
         body: [
-          "You can get an assessment, and, if suitable, prescription treatments such as finasteride, along with over-the-counter options like topical minoxidil bundled into a plan. You can also get ongoing review and delivery, which is the main convenience.",
-          "You cannot get a guaranteed outcome, and you cannot be promised a specific medicine before anyone has assessed you. Any service that offers guaranteed access to finasteride before a review is not operating the way a compliant Australian service should. Suitability is decided case by case.",
+          "You can get an assessment, and, if suitable, prescription treatment along with over-the-counter options bundled into a plan. You can also get ongoing review and delivery, which is the main convenience.",
+          "You cannot get a guaranteed outcome, and you cannot be promised a specific treatment before anyone has assessed you. Any service that offers guaranteed access to a prescription treatment before a review is not operating the way a compliant Australian service should. Suitability is decided case by case.",
         ],
       },
       {
@@ -130,11 +130,11 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     ],
     faqs: [
       { q: "Is online hair-loss treatment legitimate in Australia?", a: "Yes, telehealth is a recognised pathway. A registered Australian practitioner assesses you remotely and prescribes only if appropriate. Since 2025 a prescription cannot rest on a questionnaire alone, so a compliant service involves a genuine practitioner review, not just a form." },
-      { q: "Can I get finasteride online without seeing anyone?", a: "No. Finasteride is prescription-only, so a registered practitioner must assess you first, even through telehealth. The review can happen online, but it has to be a real assessment. No compliant service can supply it before that." },
+      { q: "Can I get prescription hair-loss treatment online without seeing anyone?", a: "No. Prescription treatment requires a registered practitioner to assess you first, even through telehealth. The review can happen online, but it has to be a real assessment. No compliant service can supply it before that." },
       { q: "How much does online hair-loss treatment cost?", a: "It is usually a monthly subscription that bundles the medicine, practitioner oversight and delivery. Mosh, for example, publishes hair-loss plans from $24 a month up to $56 for its more advanced plan, with free delivery. The exact plan is set at the assessment, so confirm the current terms before committing." },
       { q: "Is telehealth or my GP better for hair loss?", a: "Both are valid. A GP offers in-person, whole-of-health care but is slower to start; telehealth is faster and bundles medicine, review and delivery, but is focused on the one issue. It comes down to how you prefer to be supported." },
     ],
-    related: [R.fin, R.min, R.best, R.cost, R.mosh],
+    related: [R.best, R.cost, R.mosh, R.hub],
   },
 
   {
@@ -195,11 +195,11 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "How to Stop Hair Loss (Australia 2026): What Actually Helps | Refer Labs",
       description:
-        "How to approach stopping male pattern hair loss in Australia: understanding the cause, the two most studied treatments, what the evidence does and doesn't support, and why acting early matters. Information only.",
+        "How to approach stopping male pattern hair loss in Australia: understanding the cause, among the most studied treatments, what the evidence does and doesn't support, and why acting early matters. Information only.",
       keywords: ["how to stop hair loss", "how to stop balding australia", "stop hair loss men", "hair loss treatment that works australia"],
     },
     lead:
-      "If you want to stop hair loss, the first useful step is knowing what kind you have. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. That matters because the two treatments with the strongest evidence, finasteride and minoxidil, target that specific process, while most shampoos, supplements and gadgets do not. Acting earlier tends to give you more to work with, since it is easier to hold onto hair you still have than to recover what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
+      "If you want to stop hair loss, the first useful step is knowing what kind you have. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. That matters because the two treatments with the strongest evidence, prescription hair-loss treatments, target that specific process, while most shampoos, supplements and gadgets do not. Acting earlier tends to give you more to work with, since it is easier to hold onto hair you still have than to recover what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
     sections: [
       {
         h: "Work out what is actually causing it",
@@ -212,8 +212,8 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What the evidence actually supports",
         body: ["For male pattern hair loss specifically, two treatments carry the strongest evidence, and they work in different ways."],
         bullets: [
-          "Finasteride: an oral, prescription-only medicine that lowers DHT, the hormone behind the shrinking of follicles.",
-          "Minoxidil: usually a topical product, available over the counter, that acts on the follicle and is often used alongside finasteride.",
+          "Prescription treatment: assessed and prescribed by a practitioner, it works on the hormonal driver behind the shrinking of follicles.",
+          "Over-the-counter topical products: available without a prescription, they act on the follicle and are often used alongside a prescribed treatment.",
           "Both only work while used, so stopping generally means the loss resumes. Neither guarantees regrowth; for many men the realistic aim is slowing further loss.",
         ],
       },
@@ -233,12 +233,12 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "Can you actually stop hair loss?", a: "For male pattern hair loss, the two most studied treatments, finasteride and minoxidil, can slow further loss and, for some men, produce partial regrowth, while they are used. Neither guarantees an outcome, and whether either is appropriate for you is a clinical decision. Other causes of hair loss behave differently and need their own assessment." },
-      { q: "What is the most effective way to stop male pattern baldness?", a: "The strongest evidence sits with finasteride (prescription-only, lowers DHT) and minoxidil (usually topical, over the counter), often used together. A practitioner assesses which, if any, suits you. Most shampoos, supplements and devices do not have comparable evidence for stopping the process." },
+      { q: "Can you actually stop hair loss?", a: "For male pattern hair loss, among the most studied treatments, prescription hair-loss treatments, can slow further loss and, for some men, produce partial regrowth, while they are used. Neither guarantees an outcome, and whether either is appropriate for you is a clinical decision. Other causes of hair loss behave differently and need their own assessment." },
+      { q: "What is the most effective way to stop male pattern baldness?", a: "The strongest evidence sits with prescription treatment (assessed by a practitioner) and over-the-counter topical products, often used together. A practitioner assesses which, if any, suits you. Most shampoos, supplements and devices do not have comparable evidence for stopping the process." },
       { q: "Do hair-loss shampoos and supplements work?", a: "Most have little evidence for stopping male pattern hair loss specifically. They may temporarily improve how hair looks or feels, but they are a poor substitute for the most-studied treatments if halting the underlying process is your goal." },
       { q: "Does acting early make a difference?", a: "Generally yes. Male pattern hair loss is progressive, and it is easier to hold onto hair you still have than to recover hair that is already gone, so getting assessed sooner tends to give you more to work with." },
     ],
-    related: [R.fin, R.min, R.best, R.quiz, R.mosh],
+    related: [R.best, R.quiz, R.mosh, R.cost],
   },
 
   {
@@ -253,7 +253,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["receding hairline treatment australia", "receding hairline", "how to fix a receding hairline", "receding hairline men australia"],
     },
     lead:
-      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the treatments with the strongest evidence are the same: finasteride and minoxidil. The thing that most affects the result is not which product you pick but how early you act, because it is easier to hold onto the hairline you still have than to recover ground already lost. Whether any treatment suits you is a clinical decision made after an assessment.",
+      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the treatments with the strongest evidence are the same: prescription hair-loss treatments. The thing that most affects the result is not which product you pick but how early you act, because it is easier to hold onto the hairline you still have than to recover ground already lost. Whether any treatment suits you is a clinical decision made after an assessment.",
     sections: [
       {
         h: "Why a hairline recedes",
@@ -266,8 +266,8 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What the evidence supports",
         body: ["For male pattern hair loss driving a receding hairline, two treatments have the strongest evidence, and they are often used together."],
         bullets: [
-          "Finasteride: prescription-only in Australia, works by lowering DHT, and is the most-studied treatment for slowing the process.",
-          "Minoxidil: usually topical and available over the counter, it supports the follicles and is often combined with finasteride.",
+          "Prescription treatment: assessed and prescribed by a practitioner, it works on the hormonal driver and is the most-studied route for slowing the process.",
+          "Over-the-counter topical products: available without a prescription, they support the follicles and are often combined with a prescribed treatment.",
           "Early action: because the loss is progressive, starting sooner generally leaves more hair to protect.",
           "Most shampoos, supplements and devices lack comparable evidence for stopping the underlying process, whatever they do for appearance.",
         ],
@@ -275,18 +275,18 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "How to get assessed without an in-person visit",
         body: [
-          "Because finasteride is prescription-only, accessing it means a practitioner assessment, which telehealth services now run online. You complete a consultation with photos, a registered Australian practitioner reviews it individually, and if a treatment is appropriate it is prescribed and delivered. Some men are declined, which is the screening working as intended.",
+          "Because prescription treatment requires a practitioner assessment, accessing it means a real review, which telehealth services now run online. You complete a consultation with photos, a registered Australian practitioner reviews it individually, and if a treatment is appropriate it is prescribed and delivered. Some men are declined, which is the screening working as intended.",
           "Mosh is one Australian men's telehealth service that runs this process online. Refer Labs readers who start through our link get 55% off their first order, applied automatically with no code to type. It commits you to nothing beyond the consultation, and a practitioner still decides what, if anything, you would be offered. This page is information only, not medical advice.",
         ],
       },
     ],
     faqs: [
-      { q: "Can a receding hairline be reversed?", a: "Sometimes partially, but it is more realistic to slow further loss and protect what you have than to fully reverse a receded hairline. Finasteride and minoxidil have the strongest evidence for male pattern hair loss, and results are better the earlier you start. Whether either suits you is a clinical decision made after an assessment. Neither guarantees an outcome." },
-      { q: "What is the best treatment for a receding hairline?", a: "For male pattern hair loss, the most-studied options are finasteride (prescription-only, lowers DHT) and minoxidil (usually topical, over the counter), often used together. A practitioner assesses which, if any, is appropriate for you. Most shampoos and supplements lack comparable evidence for stopping the underlying process." },
+      { q: "Can a receding hairline be reversed?", a: "Sometimes partially, but it is more realistic to slow further loss and protect what you have than to fully reverse a receded hairline. Prescription hair-loss treatments have the strongest evidence for male pattern hair loss, and results are better the earlier you start. Whether either suits you is a clinical decision made after an assessment. Neither guarantees an outcome." },
+      { q: "What is the best treatment for a receding hairline?", a: "For male pattern hair loss, the most-studied options are prescription treatment (assessed by a practitioner) and over-the-counter topical products, often used together. A practitioner assesses which, if any, is appropriate for you. Most shampoos and supplements lack comparable evidence for stopping the underlying process." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
-      { q: "How do I get finasteride for a receding hairline in Australia?", a: "Finasteride is prescription-only, so it requires an assessment by a registered practitioner. Telehealth services run this online: you complete a consultation with photos, a practitioner reviews it, and if appropriate it is prescribed and delivered. Mosh is one such service; Refer Labs readers get 55% off a first order through our link. Some applicants are declined." },
+      { q: "How do I get prescription treatment for a receding hairline in Australia?", a: "Prescription treatment requires an assessment by a registered practitioner. Telehealth services run this online: you complete a consultation with photos, a practitioner reviews it, and if appropriate it is prescribed and delivered. Mosh is one such service; Refer Labs readers get 55% off a first order through our link. Some applicants are declined." },
     ],
-    related: [R.fin, R.min, R.best, R.mosh, R.quiz],
+    related: [R.best, R.mosh, R.quiz, R.cost],
   },
 ];
 

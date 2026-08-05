@@ -48,6 +48,13 @@ const nextConfig: NextConfig = {
       // working link. Remove this line if an Instapage link is ever restored.
       // /how-we-research merged into /about (23 July 2026): one trust page is easier
       // to keep literally true than two, and the standards belong next to who we are.
+      // TGA compliance (June 2026 guidance): these slugs are Schedule 4 substance
+      // names, which cannot appear in advertising. 301 to the compliant hub so the
+      // ranking equity consolidates there rather than being stranded by a noindex.
+      { source: '/finasteride-australia', destination: '/hair-loss', permanent: true },
+      { source: '/minoxidil-australia', destination: '/hair-loss', permanent: true },
+      { source: '/finasteride-vs-minoxidil-australia', destination: '/hair-loss', permanent: true },
+      { source: '/how-long-does-finasteride-take-to-work-australia', destination: '/hair-loss', permanent: true },
       { source: '/how-we-research', destination: '/about', permanent: true },
       // Apollo money page renamed to the exact brand match (26 July 2026).
       { source: '/apollo-energy', destination: '/apollo-energy-group', permanent: true },

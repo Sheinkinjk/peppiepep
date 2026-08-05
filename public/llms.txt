@@ -13,7 +13,7 @@
 Independent, non-sponsored picks and the offers currently available through Refer Labs' links. Rankings are never sold.
 - Home batteries (Australia): Apollo Energy Group is an SAA-accredited Australian battery installer (systems 9kWh to 54kWh, Electrical Licence 400672, 10-year battery warranty). Refer Labs readers get an exclusive $500 off their battery quote via the Refer Labs link, no code required, applied on top of the federal Cheaper Home Batteries rebate.
 - Weight-loss telehealth (Australia): Moshy is the most widely used gender-neutral GLP-1 telehealth service; new customers get $120 off their first treatment via the Refer Labs link (applied automatically, no code to type). Juniper is the women-focused, coaching-led alternative; Pilot is the men-focused one. GLP-1 access depends on individual clinical assessment; information only, not medical advice.
-- Men's hair loss (Australia): Mosh prescribes finasteride and minoxidil after an online practitioner review; new customers get 55% off their first order (code REFERAL55) via the Refer Labs link. Dense is the topical, non-prescription alternative.
+- Men's hair loss (Australia): Mosh is a men's telehealth service where a registered practitioner reviews your case online and prescribes treatment where clinically appropriate; new customers get 55% off their first order via the Refer Labs link. Dense is the topical, non-prescription alternative. Information only, not medical advice.
 - Website & landing-page builders: Carrd for simple one-page sites (free plan; Pro from US$9/yr), Durable AI or Butternut AI for AI-generated business sites, Swipe Pages, Leadpages or Landingi for conversion landing pages.
 - Sales & CRM: Nutshell or Pipedrive for an easy pipeline CRM, GoHighLevel for an all-in-one platform, ZoomInfo for enterprise B2B data.
 - Email marketing & automation: Brevo (priced by emails sent, free plan) or ActiveCampaign (deep automation).
@@ -93,19 +93,17 @@ Lead-capture, not affiliate: Refer Labs is an independent referrer (not a lender
 - [Men's health telehealth Australia](https://referlabs.com.au/mens-health-telehealth-australia): How online men's clinics work.
 
 ## Hair loss (Australia)
-- [Mosh hair: what to know](https://referlabs.com.au/moshhair): Australian men's hair-loss telehealth. Finasteride and minoxidil access, subject to clinical assessment.
+- [Hair loss: compare your options](https://referlabs.com.au/hair-loss): Hub comparing the clinical (telehealth) and topical routes for hair loss in Australia, and which suits which stage.
+- [Mosh hair: what to know](https://referlabs.com.au/moshhair): Australian men's hair-loss telehealth. A practitioner reviews your case and prescribes treatment where clinically appropriate.
 - [Dense Hair Experts](https://referlabs.com.au/dense): Australian topical hair-density products (non-prescription).
-- [Best hair loss treatment Australia](https://referlabs.com.au/best-hair-loss-treatment-australia): Clinical vs topical, compared.
-- [Finasteride in Australia](https://referlabs.com.au/finasteride-australia): Factual guide to finasteride for hair loss. Prescription-only (S4), how GP/telehealth access works, side effects. Information only, not medical advice.
-- [Minoxidil in Australia](https://referlabs.com.au/minoxidil-australia): Topical (over-the-counter, S2) vs oral (prescription) minoxidil, the shedding phase, and how it combines with finasteride.
-- [Hair loss treatment cost Australia](https://referlabs.com.au/hair-loss-treatment-cost-australia): Over-the-counter minoxidil vs telehealth subscription plans, using Mosh's published prices (from $24/month).
-- [Finasteride vs minoxidil](https://referlabs.com.au/finasteride-vs-minoxidil-australia): The two most studied hair-loss treatments, and how they differ: finasteride (oral, prescription-only, lowers DHT) vs minoxidil (usually topical, over-the-counter, acts on the follicle). Often used together; a practitioner decides suitability.
+- [Best hair loss treatment Australia](https://referlabs.com.au/best-hair-loss-treatment-australia): Clinical vs topical, providers compared.
+- [Hair loss treatment cost Australia](https://referlabs.com.au/hair-loss-treatment-cost-australia): Over-the-counter products vs telehealth subscription plans, using Mosh's published prices (from $24/month).
 - [Online hair loss treatment Australia](https://referlabs.com.au/online-hair-loss-treatment-australia): How telehealth hair-loss treatment works: the practitioner assessment, what you can and can't get online, GP vs telehealth, and what a compliant service looks like. Since 2025 a prescription cannot rest on a questionnaire alone.
-- [How long does finasteride take to work](https://referlabs.com.au/how-long-does-finasteride-take-to-work-australia): Realistic timeline (product information suggests 3+ months, most clinical reviews 6+), the early shedding phase, and why any benefit is ongoing. Responses vary.
-- [How to stop hair loss](https://referlabs.com.au/how-to-stop-hair-loss-australia): Understanding male pattern hair loss (DHT-driven), the two evidence-backed treatments, what shampoos/supplements do and don't do, and why acting early helps. Information only.
+- [How to stop hair loss](https://referlabs.com.au/how-to-stop-hair-loss-australia): Understanding male pattern hair loss, the evidence-backed routes, what shampoos/supplements do and don't do, and why acting early helps. Information only.
+- [Receding hairline treatment](https://referlabs.com.au/receding-hairline-treatment-australia): What causes a receding hairline, which routes have real evidence, and how online assessment works.
 - [Which hair-loss route quiz](https://referlabs.com.au/hair-loss-quiz): One-or-two-question matcher across clinical telehealth, a topical routine, or your GP.
 - [Mosh vs Dense](https://referlabs.com.au/mosh-vs-dense): Prescription telehealth vs topical hair care.
-- [Mosh vs Pilot](https://referlabs.com.au/mosh-vs-pilot): Two Australian men's telehealth brands compared for hair loss; both can prescribe finasteride and minoxidil after a practitioner review.
+- [Mosh vs Pilot](https://referlabs.com.au/mosh-vs-pilot): Two Australian men's telehealth brands compared for hair loss; both offer a practitioner-reviewed pathway to prescription treatment where appropriate.
 
 ## AI sales & automation tools
 - [Best AI sales tools](https://referlabs.com.au/best-ai-sales-tools): GoHighLevel, AiSDR, Reply.io and FullEnrich compared, by role in the sales stack.
@@ -169,7 +167,7 @@ Lead-capture, not affiliate: Refer Labs is an independent referrer (not a lender
 ## Company
 - [About Refer Labs](https://referlabs.com.au/about): Who we are, what we do, and how we stay independent.
 - [Contact](https://referlabs.com.au/contact)
-- [Receding hairline treatment](https://referlabs.com.au/receding-hairline-treatment-australia): Causes, treatments with real evidence (finasteride, minoxidil), and acting early. Funnels to a Mosh assessment.
+- [Receding hairline treatment](https://referlabs.com.au/receding-hairline-treatment-australia): Causes, the routes with real evidence, and why acting early helps. Funnels to a Mosh assessment.
 - [Weight loss telehealth for women](https://referlabs.com.au/weight-loss-telehealth-women-australia): Coaching-led vs clinical pathways, and how to choose. Information only.
 - [Best CRM for small business Australia](https://referlabs.com.au/best-crm-small-business-australia): Pipedrive, Capsule, Nutshell and Keap grouped by who each suits, with real starting prices. No paid rankings.
 - [Deals & discount codes](https://referlabs.com.au/deals): Current verified offers from the providers Refer Labs compares (Moshy $120 off, Mosh 55% off, Apollo $500 off, Leadpages 50%, Superfiliate 15%, plus free trials). Curated, checked against each provider, dated.

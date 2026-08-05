@@ -11,7 +11,7 @@ export const denseConfig: AffiliatePageConfig = {
   affiliateUrl: DENSE_URL,
 
   quickAnswer:
-    "Dense Hair Experts is an Australian brand of topical, non-prescription hair-density products, shampoos, conditioners, serums, and scalp treatments. There isn't always a public discount code; the current offer is applied automatically through the referral link on this page. For prescription hair-loss treatment such as finasteride or minoxidil, a telehealth provider is the appropriate starting point.",
+    "Dense Hair Experts is an Australian brand of topical, non-prescription hair-density products, shampoos, conditioners, serums, and scalp treatments. There isn't always a public discount code; the current offer is applied automatically through the referral link on this page. For prescription hair-loss treatment, a telehealth provider is the appropriate starting point.",
 
   banner: {
     heading: "Dense Hair Experts, Current Offer",
@@ -33,7 +33,7 @@ export const denseConfig: AffiliatePageConfig = {
     "No code, referral via the link",
   ],
   verdict:
-    "Dense Hair Experts is a reasonable non-prescription option for men focused on density and scalp health, used consistently as part of a routine. For active or progressive hair loss, a telehealth provider that can prescribe finasteride or minoxidil is the stronger first step.",
+    "Dense Hair Experts is a reasonable non-prescription option for men focused on density and scalp health, used consistently as part of a routine. For active or progressive hair loss, a telehealth provider that can prescribe treatment after a practitioner review is the stronger first step.",
 
   hero: {
     h1Prefix: "Dense Discount Code Australia:",
@@ -151,7 +151,7 @@ export const denseConfig: AffiliatePageConfig = {
     {
       href: "/moshhair",
       label: "Mosh Hair Loss, Discount Code & Review",
-      desc: "Australian telehealth for hair loss, finasteride and minoxidil via online consultation.",
+      desc: "Australian telehealth for hair loss: prescription treatment where appropriate, via online consultation.",
     },
     {
       href: "/guides",
