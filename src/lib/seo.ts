@@ -1081,7 +1081,7 @@ export const seoConfig = {
   },
 
   moshyVsPilot: {
-    title: "Moshy vs Pilot 2026: Weight Loss Telehealth Compared (Price & Model) | Refer Labs",
+    title: "Moshy vs Pilot 2026: Weight Loss Telehealth Compared",
     description:
       "Moshy vs Pilot 2026: Moshy is gender-neutral and open to anyone; Pilot is Eucalyptus's men-focused telehealth. Pricing, process and who each suits.",
     url: `${SITE_URL}/moshy-vs-pilot`,
@@ -1104,7 +1104,7 @@ export const seoConfig = {
   },
 
   cheapestWeightLossTelehealth: {
-    title: "Cheapest Weight Loss Telehealth Australia 2026: Affordable Options Compared | Refer Labs",
+    title: "Cheapest Weight Loss Telehealth Australia 2026 Compared",
     description:
       "The cheapest weight-loss telehealth in Australia, compared: how subscription vs pay-per-consult pricing differs across Moshy, Juniper and Pilot. Info only.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
@@ -1145,7 +1145,7 @@ export const seoConfig = {
   },
 
   moshyEligibility: {
-    title: "Moshy Eligibility Check Explained: What the Quiz Asks & What Happens Next | Refer Labs",
+    title: "Moshy Eligibility Check Explained: What the Quiz Asks",
     description:
       "What the Moshy eligibility check actually involves. The questions the online quiz asks, how long it takes, what the practitioner review looks at, and why some applications are declined. Information only.",
     url: `${SITE_URL}/moshy-eligibility`,
@@ -1163,7 +1163,7 @@ export const seoConfig = {
   },
 
   getMoshy: {
-    title: "getmoshy.com.au: Is It the Official Moshy Site & the Fastest Way to Start | Refer Labs",
+    title: "getmoshy.com.au: The Official Moshy Site & How to Start",
     description:
       "getmoshy.com.au is the official website of Moshy, the Australian telehealth weight-management service. What the site is, how the referral link works, and where the eligibility check lives.",
     url: `${SITE_URL}/getmoshy`,
@@ -1256,7 +1256,7 @@ export const seoConfig = {
   },
 
   onlineWeightLossPrograms: {
-    title: "Online Weight Loss Programs Australia 2026: Medical Telehealth vs Coaching Apps | Refer Labs",
+    title: "Online Weight Loss Programs Australia: Telehealth vs Apps",
     description:
       "The three types of online weight loss programs available in Australia, how medical telehealth differs from coaching apps and meal plans, and how the main providers split up. Information only, not medical advice.",
     url: `${SITE_URL}/online-weight-loss-programs-australia`,
@@ -1289,7 +1289,7 @@ export const seoConfig = {
   },
 
   mensHealthTelehealth: {
-    title: "Men's Health Telehealth in Australia 2026: How Online Clinics Work | Refer Labs",
+    title: "Men's Health Telehealth Australia 2026: How It Works",
     description:
       "How men's health telehealth works in Australia, what online clinics can and cannot do, how prescriptions are handled, and the main providers including Moshy and Mosh. Information only, not medical advice.",
     url: `${SITE_URL}/mens-health-telehealth-australia`,
@@ -1322,7 +1322,7 @@ export const seoConfig = {
   },
 
   weightLossInjections: {
-    title: "Weight Loss Injections Australia 2026: How They Work & How to Access Online | Refer Labs",
+    title: "Weight Loss Injections Australia 2026: How to Access Online",
     description:
       "A plain-English guide to weight-loss injections in Australia. What GLP-1 weight-loss injections are as a category, why they are prescription-only, and how online telehealth assessment and access works. Information only, not medical advice.",
     url: `${SITE_URL}/weight-loss-injections-australia`,
@@ -1340,7 +1340,7 @@ export const seoConfig = {
   },
 
   glp1WeightLoss: {
-    title: "GLP-1 Weight Loss Australia 2026: What GLP-1 Medications Are & How Access Works | Refer Labs",
+    title: "GLP-1 Weight Loss Australia 2026: How Online Access Works",
     description:
       "GLP-1 weight-loss medications in Australia, explained: what the class is, why it is prescription-only, and how telehealth assessment works. Info only.",
     url: `${SITE_URL}/glp-1-weight-loss-australia`,
@@ -1359,7 +1359,7 @@ export const seoConfig = {
   },
 
   weightLossTelehealthCost: {
-    title: "Weight Loss Telehealth Cost Australia 2026: How Online Program Pricing Works | Refer Labs",
+    title: "Weight Loss Telehealth Cost in Australia 2026 | Refer Labs",
     description:
       "How much weight-loss telehealth costs in Australia: consult fees, subscription models, and why medication is billed separately. What drives the price.",
     url: `${SITE_URL}/weight-loss-telehealth-cost-australia`,
@@ -1378,7 +1378,7 @@ export const seoConfig = {
   },
 
   onlineWeightLossDoctor: {
-    title: "Online Weight Loss Doctor Australia 2026: How a Telehealth Consult Works | Refer Labs",
+    title: "Online Weight Loss Doctor Australia 2026: How It Works",
     description:
       "How seeing a weight-loss doctor online works in Australia. The eligibility questionnaire model, what a registered practitioner reviews, and how a weight-loss prescription online is handled. Information only, not medical advice.",
     url: `${SITE_URL}/online-weight-loss-doctor-australia`,
@@ -1499,7 +1499,7 @@ export const seoConfig = {
   },
 
   juniper: {
-    title: "Juniper Australia Review 2026: Weight Reset Program, Cost & How It Works | Refer Labs",
+    title: "Juniper Australia Review 2026: Cost & How It Works",
     description:
       "An independent look at Juniper, the women-focused weight-management telehealth program in Australia. What it is, what's included, how the pricing and eligibility work, and how it compares to Moshy. Information only, not medical advice.",
     url: `${SITE_URL}/juniper`,
@@ -2045,7 +2045,7 @@ export const seoConfig = {
   },
 
   bestAiSalesTools: {
-    title: "Best AI Sales Tools 2026: GoHighLevel, AiSDR, Reply.io & FullEnrich | Refer Labs",
+    title: "Best AI Sales Tools 2026: GoHighLevel, AiSDR & Reply.io",
     description:
       "The best AI sales and automation tools in 2026 compared: GoHighLevel (all-in-one CRM), AiSDR (AI outbound SDR), Reply.io (multichannel sales engagement) and FullEnrich (waterfall contact enrichment). What each is best for, pricing, and how to choose.",
     url: `${SITE_URL}/best-ai-sales-tools`,
