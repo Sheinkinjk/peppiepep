@@ -6,7 +6,7 @@ import type { HairLossGuideConfig } from "@/components/consumer/HairLossGuide";
 // Efficacy is always hedged and attributed; the funnel is to a practitioner assessment.
 
 export interface HairLossGuideEntry extends HairLossGuideConfig {
-  meta: { title: string; description: string; keywords: string[] };
+  meta: { title: string; description: string; keywords: string[]; noIndex?: boolean };
   priority: number;
 }
 
@@ -27,6 +27,8 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     priority: 0.82,
     h1: "Finasteride vs minoxidil: which is which, and how they differ",
     meta: {
+      // TGA compliance: prescription-medicine topic, kept out of public search.
+      noIndex: true,
       title: "Finasteride vs Minoxidil (Australia 2026): How They Differ | Refer Labs",
       description:
         "Finasteride and minoxidil are the two most studied hair-loss treatments, and they work in completely different ways. What each does, oral vs topical, prescription vs pharmacy, and using both. Information only.",
@@ -141,6 +143,8 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     priority: 0.78,
     h1: "How long does finasteride take to work?",
     meta: {
+      // TGA compliance: prescription-medicine topic, kept out of public search.
+      noIndex: true,
       title: "How Long Does Finasteride Take to Work? (Australia 2026) | Refer Labs",
       description:
         "A realistic finasteride timeline: why it is slow, the early shedding phase, when to judge results, and why any benefit is ongoing. Responses vary between people. Information only, not medical advice.",

@@ -471,6 +471,9 @@ export const seoConfig = {
     keywords: ["home battery cost australia", "home battery price australia 2026", "how much does a home battery cost", "solar battery cost australia", "battery payback period australia", "tesla powerwall 3 price australia", "home battery installed cost"],
   },
   finasterideAustralia: {
+    // TGA compliance: a page whose topic is a prescription medicine is kept out of
+    // public search (noindex) and stripped of promotion/affiliate CTAs.
+    noIndex: true,
     title: "Finasteride Australia 2026: How Access Works | Refer Labs",
     description:
       "An independent, factual guide to finasteride for hair loss in Australia. What it is, why it is prescription-only, how a GP or telehealth assessment works, side effects, and topical finasteride. Information only, not medical advice.",
@@ -478,6 +481,8 @@ export const seoConfig = {
     keywords: ["finasteride australia", "finasteride hair loss australia", "finasteride prescription australia", "finasteride 1mg australia", "finasteride online australia", "dht blocker hair loss", "finasteride side effects"],
   },
   minoxidilAustralia: {
+    // TGA compliance: prescription-medicine topic page, kept out of public search.
+    noIndex: true,
     title: "Minoxidil Australia 2026: Topical vs Oral | Refer Labs",
     description:
       "An independent, factual guide to minoxidil for hair loss in Australia. Topical (over the counter) vs oral (prescription), the shedding phase, side effects, and how it combines with finasteride. Information only, not medical advice.",
@@ -487,7 +492,7 @@ export const seoConfig = {
   hairLossTreatmentCost: {
     title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
     description:
-      "What hair-loss treatment costs in Australia 2026: over-the-counter minoxidil vs telehealth plans, using Mosh's published prices, and what is subsidised.",
+      "What hair-loss treatment costs in Australia 2026: over-the-counter options vs telehealth plans, using Mosh's published prices, and what is subsidised.",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "finasteride cost australia", "minoxidil cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
@@ -937,7 +942,7 @@ export const seoConfig = {
   moshHair: {
     title: "Mosh Hair Discount Code 2026: 55% Off | Refer Labs",
     description:
-      "Mosh hair loss discount code Australia 2026: 55% off your first order with code REFERAL55 via our link. Cost, finasteride and minoxidil access explained.",
+      "Mosh hair loss discount code Australia 2026: 55% off your first order with code REFERAL55 via our link. How the service, consult and cost work, explained.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1454,7 +1459,7 @@ export const seoConfig = {
   moshVsDense: {
     title: "Mosh vs Dense: Hair Loss Treatment Compared (2026) | Refer Labs",
     description:
-      "Mosh vs Dense 2026: Mosh is prescription telehealth (finasteride, minoxidil after review); Dense is non-prescription topical hair care. Info only.",
+      "Mosh vs Dense 2026: Mosh is a prescription telehealth service (assessed by a practitioner); Dense is non-prescription topical hair care. Info only.",
     url: `${SITE_URL}/mosh-vs-dense`,
     keywords: [
       "mosh vs dense",
@@ -1475,7 +1480,7 @@ export const seoConfig = {
   moshVsPilot: {
     title: "Mosh vs Pilot 2026: Hair Loss & Men's Health Telehealth Compared",
     description:
-      "Mosh vs Pilot 2026: both Australian men's telehealth brands prescribing finasteride and minoxidil for hair loss. How they differ and who each suits.",
+      "Mosh vs Pilot 2026: two Australian men's hair-loss telehealth services. How they differ, what each includes, and who each suits. Info only.",
     url: `${SITE_URL}/mosh-vs-pilot`,
     keywords: [
       "mosh vs pilot",
@@ -2064,7 +2069,7 @@ export const seoConfig = {
   bestHairLossTreatmentAustralia: {
     title: "Best Hair Loss Treatment in Australia 2026 | Refer Labs",
     description:
-      "The best hair-loss treatments in Australia 2026, compared: Mosh, Dense and telehealth. Finasteride and minoxidil vs topicals, real pricing, how to start.",
+      "The best hair-loss options in Australia 2026, compared: Mosh, Dense and telehealth. Clinical vs topical care, real pricing, and how to start.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",
