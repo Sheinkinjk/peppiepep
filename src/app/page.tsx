@@ -341,7 +341,7 @@ export default function HomePage() {
 
         {/* ── Common questions (trust + AEO; matches faqSchema) ── */}
         <section className="border-t border-[#e5e9e7] bg-white">
-          <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
+          <div className="mx-auto max-w-3xl px-5 pt-16 pb-6 sm:px-8">
             <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Common questions</h2>
             <div className="mt-8 divide-y divide-[#e5e9e7]">
               {homeFaqs.map((f) => (

@@ -13,10 +13,10 @@ import { ReferLabsLogo } from "../ReferLabsLogo";
 const NAV = [
   { href: "/weight-loss", label: "Weight Loss" },
   { href: "/hair-loss", label: "Hair Loss" },
-  { href: "/compare/website-builders", label: "Websites" },
-  { href: "/compare/newsletter-platforms", label: "Newsletters" },
-  { href: "/business-software", label: "Business Tools" },
+  { href: "/pet-insurance", label: "Pet Insurance" },
+  { href: "/apollo-energy-group", label: "Home Batteries" },
   { href: "/business-loans", label: "Business Loans" },
+  { href: "/business-software", label: "Business Tools" },
 ];
 
 /**
