@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Check, Scale, Scissors, PawPrint, BatteryCharging, Landmark, LayoutGrid } from "lucide-react";
@@ -19,10 +20,13 @@ const picks = [
 // the header taxonomy). This replaced a wall of outbound affiliate logos: the
 // homepage's job is to funnel authority into the hubs, not leak it to partners.
 // Also the single source of truth for the ItemList schema, so structured data
-// always matches what is on the page.
+// always matches what is on the page. Each card carries its own muted accent
+// (icon tile + hover), so the grid reads as an editorial index, not a wall of
+// identical green cards.
 const categoryCards = [
   {
-    href: "/weight-loss", icon: Scale, eyebrow: "Health", title: "Weight Loss & Telehealth",
+    href: "/weight-loss", icon: Scale, title: "Weight Loss & Telehealth",
+    accent: "#0E7C66", tint: "#E4F1EB",
     note: "Moshy, Juniper and the GP pathway, compared on price and inclusions.",
     links: [
       { h: "/moshy-vs-juniper", l: "Moshy vs Juniper" },
@@ -30,7 +34,8 @@ const categoryCards = [
     ],
   },
   {
-    href: "/hair-loss", icon: Scissors, eyebrow: "Health", title: "Hair Loss Treatment",
+    href: "/hair-loss", icon: Scissors, title: "Hair Loss Treatment",
+    accent: "#B4552D", tint: "#F7EBE3",
     note: "Clinical telehealth versus topical products, and which suits which stage.",
     links: [
       { h: "/best-hair-loss-treatment-australia", l: "Best treatment, compared" },
@@ -38,14 +43,16 @@ const categoryCards = [
     ],
   },
   {
-    href: "/pet-insurance", icon: PawPrint, eyebrow: "Insurance", title: "Pet Insurance",
+    href: "/pet-insurance", icon: PawPrint, title: "Pet Insurance",
+    accent: "#3E6B99", tint: "#E8F0F8",
     note: "How cover, waiting periods and exclusions actually work, plus current offers.",
     links: [
       { h: "/what-pet-insurance-covers-australia", l: "What it covers" },
     ],
   },
   {
-    href: "/apollo-energy-group", icon: BatteryCharging, eyebrow: "Home & Energy", title: "Home Batteries",
+    href: "/apollo-energy-group", icon: BatteryCharging, title: "Home Batteries",
+    accent: "#B07D1A", tint: "#F6EEDA",
     note: "Sized to your real usage, on top of the federal Cheaper Home Batteries rebate.",
     links: [
       { h: "/home-battery-rebate-australia", l: "The battery rebate, explained" },
@@ -53,7 +60,8 @@ const categoryCards = [
     ],
   },
   {
-    href: "/business-loans", icon: Landmark, eyebrow: "Finance", title: "Business Loans",
+    href: "/business-loans", icon: Landmark, title: "Business Loans",
+    accent: "#1E6E74", tint: "#E1EEEF",
     note: "Compare Australian lenders in one enquiry, with the real cost broken down.",
     links: [
       { h: "/business-loan-calculator", l: "Repayment calculator" },
@@ -61,7 +69,8 @@ const categoryCards = [
     ],
   },
   {
-    href: "/business-software", icon: LayoutGrid, eyebrow: "Software", title: "Business Software",
+    href: "/business-software", icon: LayoutGrid, title: "Business Software",
+    accent: "#6E5091", tint: "#EEE8F5",
     note: "Website builders, CRM, email and AI tools, grouped by who each one suits.",
     links: [
       { h: "/compare/website-builders", l: "Website builders" },
@@ -235,53 +244,42 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Compare by category: routes link equity into the money hubs ── */}
+        {/* ── Select your category: routes link equity into the money hubs ── */}
         <section className="border-b border-[#e5e9e7] bg-white">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
-            <div className="mb-8 flex items-end justify-between gap-4">
-              <div className="max-w-xl">
-                <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Compare by category</h2>
-                <p className="mt-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
-                  Start with the decision you are trying to make. Each hub lays out the options, the real prices and who
-                  each one suits.
-                </p>
-              </div>
-              <Link href="/guides" className="hidden shrink-0 items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
-                All guides <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
+            <h2 className="mb-8 text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Select your category</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {categoryCards.map((c) => {
                 const Icon = c.icon;
                 return (
                   <div
                     key={c.href}
-                    className="flex flex-col rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 transition-all hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-30px_rgba(14,124,66,0.5)]"
+                    style={{ "--accent": c.accent, "--tint": c.tint } as CSSProperties}
+                    className="flex flex-col rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 transition-all hover:-translate-y-0.5 hover:border-[color:var(--accent)] hover:shadow-[0_22px_50px_-32px_var(--accent)]"
                   >
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#e8f5ee] text-[#0a7c42]">
-                        <Icon className="h-5 w-5" strokeWidth={2} aria-hidden="true" />
+                    <div className="flex items-center gap-3.5">
+                      <span
+                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                        style={{ background: "var(--tint)", color: "var(--accent)" }}
+                      >
+                        <Icon className="h-[1.35rem] w-[1.35rem]" strokeWidth={1.9} aria-hidden="true" />
                       </span>
-                      <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">{c.eyebrow}</span>
+                      <h3 className="text-lg font-extrabold leading-tight tracking-[-0.01em] text-[#10251b]">
+                        <Link href={c.href} className="transition-opacity hover:opacity-70">{c.title}</Link>
+                      </h3>
                     </div>
-                    <h3 className="mt-4 text-lg font-extrabold tracking-[-0.01em] text-[#10251b]">
-                      <Link href={c.href} className="transition-colors hover:text-[#0a7c42]">{c.title}</Link>
-                    </h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-[#3d4b44]">{c.note}</p>
-                    <ul className="mt-4 space-y-1.5 border-t border-[#e5e9e7] pt-4">
+                    <p className="mt-4 flex-1 text-sm leading-relaxed text-[#3d4b44]">{c.note}</p>
+                    <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-[#e5e9e7] pt-4 text-sm">
                       {c.links.map((l) => (
-                        <li key={l.h}>
-                          <Link href={l.h} className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-[#3d4b44] hover:text-[#0a7c42]">
-                            <ArrowRight className="h-3.5 w-3.5 text-[#9aa39c] transition-all group-hover/link:translate-x-0.5 group-hover/link:text-[#0a7c42]" aria-hidden="true" />
-                            {l.l}
-                          </Link>
-                        </li>
+                        <Link
+                          key={l.h}
+                          href={l.h}
+                          className="font-medium text-[#6e7b74] underline-offset-4 transition-colors hover:text-[color:var(--accent)] hover:underline"
+                        >
+                          {l.l}
+                        </Link>
                       ))}
-                    </ul>
-                    <Link href={c.href} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
-                      Compare all
-                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                    </Link>
+                    </div>
                   </div>
                 );
               })}
