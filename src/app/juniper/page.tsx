@@ -24,7 +24,7 @@ const glance: [string, string][] = [
   ["Format", "Online eligibility → practitioner review → program & delivery"],
   ["Included", "Unlimited follow-ups, app tracking, patient community"],
   ["Pricing", "Monthly subscription, confirmed in the consult"],
-  ["Discount", "No Refer Labs code (commission-only referral)"],
+  ["Offers", "View Juniper's latest offers through our link"],
 ];
 
 const trust = [
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Does Juniper have a discount or promo code?",
-    a: "There is no Refer Labs discount code for Juniper, unlike some of the programs we cover. Juniper itself sometimes runs a new-patient promotion, which appears in a banner on its own site after you click through from here. Availability changes over time and we don't control it, so there may or may not be one when you visit. We never publish a code we can't stand behind.",
+    a: "The best way to see Juniper's current offer is through our Juniper link: when you click through, any new-patient promotion Juniper is running appears in a banner on its own site. Availability changes over time and we don't control it, so checking through our link is how you see the latest. We never publish a code we can't stand behind.",
   },
   {
     q: "Does Juniper offer GLP-1 medication?",
@@ -315,9 +315,9 @@ export default function JuniperPage() {
                   you commit to anything.
                 </p>
                 <p>
-                  There is no Refer Labs discount code for Juniper. Juniper itself sometimes runs a new-patient promotion,
-                  shown in a banner on its own site after you click through from here. Availability changes over time and it
-                  is not something we control, so there may or may not be one when you visit.
+                  To see Juniper&apos;s current offer, use our Juniper link: any new-patient promotion Juniper is running
+                  appears in a banner on its own site when you click through. Availability changes over time and is not
+                  something we control, so viewing the latest through our link is the way to catch it.
                 </p>
               </div>
             </section>

@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "How much does Juniper cost, and is there a discount?",
-    a: "Juniper runs as a monthly subscription that its own site says covers treatment, unlimited consultations and delivery, with optional 1:1 coaching as a paid add-on and a 30-day money-back guarantee. There is no single fixed price, since any medication is prescribed only after an individual assessment, and there is no Refer Labs discount code for Juniper. The cost that applies to you is confirmed inside Juniper's own flow before you commit.",
+    a: "Juniper runs as a monthly subscription that its own site says covers treatment, unlimited consultations and delivery, with optional 1:1 coaching as a paid add-on and a 30-day money-back guarantee. There is no single fixed price, since any medication is prescribed only after an individual assessment, and you can view Juniper's latest offers through our link. The cost that applies to you is confirmed inside Juniper's own flow before you commit.",
   },
 ];
 
@@ -138,8 +138,8 @@ export default function WeightLossTelehealthWomenPage() {
             practitioner, and some applicants are declined.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            There is no Refer Labs discount code for Juniper, and any medication is prescribed only after an individual
-            assessment, so the cost is confirmed inside Juniper&apos;s own flow before you commit. Our{" "}
+            You can view Juniper&apos;s latest offers through our link, and any medication is prescribed only after an
+            individual assessment, so the cost is confirmed inside Juniper&apos;s own flow before you commit. Our{" "}
             <Link href="/juniper" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               full Juniper review
             </Link>{" "}
