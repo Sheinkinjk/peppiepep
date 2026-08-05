@@ -29,6 +29,8 @@ const guides = [
   { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "The wider category, and what online clinics can't do." },
   { href: "/getmoshy", title: "getmoshy.com.au", desc: "Confirming the official site and the fastest way in." },
   { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order, applied automatically. No code to type." },
+  { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the clinical, coaching and GP routes." },
+  { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
 
 const faqs = [
