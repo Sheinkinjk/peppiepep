@@ -52,7 +52,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Mosh or Pilot better for hair loss?",
-    a: "Neither is universally better, because they are close cousins rather than opposites. Both Mosh and Pilot are Australian men's telehealth brands, both run an online consultation reviewed by a registered Australian practitioner, and both can facilitate access to prescription hair-loss treatments where it is clinically appropriate. The practical differences are model and feel: Mosh is the more hair-and-men's-health focused experience, while Pilot sits inside the larger Eucalyptus health ecosystem. For most people the deciding factors are the plan you are offered in the consult, the price it lands on, and which interface you prefer. This is general information, not medical advice.",
+    a: "Neither is universally better, because they are close cousins rather than opposites. Both Mosh and Pilot are Australian men's telehealth brands, both run an online consultation reviewed by a registered Australian practitioner, and both can facilitate access to prescription hair-loss treatments where it is clinically appropriate. The practical differences are model and feel: Mosh is the more hair-and-men's-health focused experience, while Pilot sits inside the larger Eucalyptus health ecosystem. For most people the deciding factors are the plan you are offered in the consult, the price it lands on, and which interface you prefer.",
   },
   {
     q: "What is the difference between Mosh and Pilot?",
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: "Do Mosh and Pilot both prescribe prescription hair-loss treatments?",
-    a: "Both can facilitate access to prescription hair-loss treatment where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Some hair-loss treatments are prescription-only in Australia, while some topical products are available over the counter. Neither service prescribes automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner. This page is not medical advice.",
+    a: "Both can facilitate access to prescription hair-loss treatment where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Some hair-loss treatments are prescription-only in Australia, while some topical products are available over the counter. Neither service prescribes automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner.",
   },
   {
     q: "Are Mosh and Pilot the same company?",
@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: "Which should I start with?",
-    a: "Because both use a no-commitment online consult reviewed by a registered practitioner, the low-friction move is to start one and see what you are actually offered before deciding. We link Mosh because it is our partner and its hair-loss consult is quick and focused; Pilot is a legitimate alternative if you prefer its broader ecosystem. For significant or sudden hair loss, see a doctor in person. Suitability for any prescription medicine is practitioner-decided and never guaranteed. This is not medical advice.",
+    a: "Because both use a no-commitment online consult reviewed by a registered practitioner, the low-friction move is to start one and see what you are actually offered before deciding. We link Mosh because it is our partner and its hair-loss consult is quick and focused; Pilot is a legitimate alternative if you prefer its broader ecosystem. For significant or sudden hair loss, see a doctor in person. Suitability for any prescription medicine is practitioner-decided and never guaranteed.",
   },
 ];
 
@@ -176,8 +176,7 @@ export default function MoshVsPilotPage() {
                 online consult that can lead to prescription treatment. Mosh is the more focused, quick men&apos;s
                 hair-loss experience; Pilot suits men who want one login across a broader health ecosystem. If you just
                 want to get a hair-loss plan moving, Mosh&apos;s consult is a low-friction place to start. Suitability is
-                practitioner-decided and never guaranteed. For significant or sudden loss, see a doctor in person. This is
-                not medical advice.
+                practitioner-decided and never guaranteed. For significant or sudden loss, see a doctor in person.
               </p>
             </div>
           </section>
@@ -209,8 +208,7 @@ export default function MoshVsPilotPage() {
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
               Details are based on publicly available information and can change. Prescription
-              medicines are subject to individual clinical assessment by a registered Australian practitioner. This
-              comparison is not medical advice.
+              medicines are subject to individual clinical assessment by a registered Australian practitioner.
             </p>
           </section>
 

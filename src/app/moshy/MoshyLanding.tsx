@@ -65,10 +65,6 @@ export default function MoshyLanding() {
             <div className="mt-6">
               <MoshyCTA label="Get $120 off on Moshy" size="lg" loc="hero" />
             </div>
-
-            <p className="mt-4 text-xs text-[#9aa39c]">
-              Information only · contains a disclosed affiliate link · not medical advice
-            </p>
           </div>
 
           {/* At-a-glance card */}

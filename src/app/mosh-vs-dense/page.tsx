@@ -53,7 +53,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Mosh or Dense better for hair loss?",
-    a: "They serve different needs, so neither is universally better. Mosh is a telehealth platform that can prescribe prescription hair-loss treatments, the treatments that act on the underlying cause of male-pattern hair loss, after an online consultation and review by a registered Australian practitioner. Dense Hair Experts is a non-prescription topical range focused on density and scalp health. For active or progressing hair loss, a clinical route like Mosh is usually the stronger starting point; a topical range like Dense can suit early thinning or complement a routine. This is general information, not medical advice.",
+    a: "They serve different needs, so neither is universally better. Mosh is a telehealth platform that can prescribe prescription hair-loss treatments, the treatments that act on the underlying cause of male-pattern hair loss, after an online consultation and review by a registered Australian practitioner. Dense Hair Experts is a non-prescription topical range focused on density and scalp health. For active or progressing hair loss, a clinical route like Mosh is usually the stronger starting point; a topical range like Dense can suit early thinning or complement a routine.",
   },
   {
     q: "What is the difference between Mosh and Dense?",
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "Does Mosh prescribe prescription hair-loss treatments?",
-    a: "Mosh can facilitate access to prescription hair-loss treatment where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Some hair-loss treatments are prescription-only in Australia, while some topical products are available over the counter. Nothing is prescribed automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner. This page is not medical advice.",
+    a: "Mosh can facilitate access to prescription hair-loss treatment where a registered Australian practitioner determines it is clinically appropriate following your online consultation and photo assessment. Some hair-loss treatments are prescription-only in Australia, while some topical products are available over the counter. Nothing is prescribed automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner.",
   },
   {
     q: "Is Dense Hair Experts a prescription treatment?",
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Can I use Mosh and Dense together?",
-    a: "Some men use a topical range alongside a clinical routine, but whether that is appropriate for you is a question for a health professional, not a comparison page. If you are prescribed anything through Mosh, follow the practitioner's guidance, and raise any other products you are using so they can advise. This page provides general information only and does not constitute medical advice.",
+    a: "Some men use a topical range alongside a clinical routine, but whether that is appropriate for you is a question for a health professional, not a comparison page. If you are prescribed anything through Mosh, follow the practitioner's guidance, and raise any other products you are using so they can advise.",
   },
   {
     q: "How much do Mosh and Dense cost?",
@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     q: "Which should I start with for early thinning?",
-    a: "For early or mild thinning, some people begin with a topical routine like Dense, while others go straight to a clinical assessment because hair-loss treatment tends to work best when started early. Because Mosh's online consultation commits you to nothing and is reviewed by a registered practitioner, it is a low-friction way to find out what, if anything, you would be offered. Suitability is practitioner-decided and never guaranteed. For significant or rapid hair loss, see a doctor in person. This is not medical advice.",
+    a: "For early or mild thinning, some people begin with a topical routine like Dense, while others go straight to a clinical assessment because hair-loss treatment tends to work best when started early. Because Mosh's online consultation commits you to nothing and is reviewed by a registered practitioner, it is a low-friction way to find out what, if anything, you would be offered. Suitability is practitioner-decided and never guaranteed. For significant or rapid hair loss, see a doctor in person.",
   },
 ];
 
@@ -183,7 +183,7 @@ export default function MoshVsDensePage() {
                 registered practitioner who may prescribe prescription treatment where appropriate. If you are dealing
                 with early thinning and want a topical routine for density and scalp health, Dense is the non-prescription
                 option. Suitability for any prescription medicine is decided by the practitioner and never guaranteed. For
-                significant or sudden loss, see a doctor in person. This is not medical advice.
+                significant or sudden loss, see a doctor in person.
               </p>
             </div>
           </section>
@@ -215,8 +215,7 @@ export default function MoshVsDensePage() {
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
               Details are based on publicly available information and can change. Prescription
-              medicines are subject to individual clinical assessment by a registered Australian practitioner. This
-              comparison is not medical advice.
+              medicines are subject to individual clinical assessment by a registered Australian practitioner.
             </p>
           </section>
 

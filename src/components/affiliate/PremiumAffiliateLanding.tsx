@@ -111,7 +111,6 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             )}
 
             <div className="mt-8">{cta(config.ctas.primary, "hero", "lg")}</div>
-            <p className="mt-4 text-xs text-[#9aa39c]">Information only · contains a disclosed affiliate link</p>
           </div>
 
           {/* At-a-glance card */}

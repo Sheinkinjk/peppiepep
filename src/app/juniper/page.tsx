@@ -62,7 +62,7 @@ const toc: [string, string][] = [
 const faqs = [
   {
     q: "What is Juniper?",
-    a: "Juniper is an Australian weight-management telehealth service, its Weight Reset Program pairs online consultations with Australian-registered practitioners and access to TGA-approved medication (where a practitioner assesses it as appropriate) with a broader program of unlimited follow-ups, health tracking through an app, and a patient community. It is designed for and marketed to women. Optional 1:1 health coaching is available as a paid add-on. This is general information, not medical advice.",
+    a: "Juniper is an Australian weight-management telehealth service, its Weight Reset Program pairs online consultations with Australian-registered practitioners and access to TGA-approved medication (where a practitioner assesses it as appropriate) with a broader program of unlimited follow-ups, health tracking through an app, and a patient community. It is designed for and marketed to women. Optional 1:1 health coaching is available as a paid add-on.",
   },
   {
     q: "Is Juniper only for women?",
@@ -174,9 +174,6 @@ export default function JuniperPage() {
             <div className="mt-6">
               <JuniperCTA label="Check your eligibility" loc="hero" size="lg" />
             </div>
-            <p className="mt-4 text-xs text-[#9aa39c]">
-              Information only · contains a disclosed affiliate link · not medical advice
-            </p>
           </div>
 
           {/* At-a-glance card */}
@@ -330,8 +327,7 @@ export default function JuniperPage() {
                   Juniper is built for women who want structure around the clinical care: coaching, community, an app and
                   unlimited follow-ups, not just a prescription. If you want that wraparound support, it is designed for
                   exactly that. If you want a leaner, medication-first pathway open to anyone eligible, Moshy is the lighter
-                  option. Both assess suitability individually through Australian-registered practitioners, and this page is
-                  information about the service, not medical advice.
+                  option. Both assess suitability individually through Australian-registered practitioners.
                 </p>
                 <ul className="mt-5 space-y-2">
                   {[
