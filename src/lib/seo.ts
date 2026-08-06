@@ -489,7 +489,7 @@ export const seoConfig = {
   apolloEnergy: {
     title: "Apollo Energy Group: $500 Off a Home Battery | Refer Labs",
     description:
-      "Apollo Energy Group is a Sydney-based, SAA-accredited solar battery (home battery) company installing 9-54kWh systems. $500 off your quote via Refer Labs, plus the federal rebate and the NSW solar battery government rebate. How to choose a solar battery company, and where Apollo fits.",
+      "Apollo Energy Group: a Sydney-based, SAA-accredited solar battery installer (9-54kWh home systems). $500 off your quote via Refer Labs, on top of the federal rebate.",
     url: `${SITE_URL}/apollo-energy-group`,
     keywords: ["best solar battery company australia", "best solar battery company sydney", "solar battery company sydney", "solar battery government rebate sydney", "apollo energy group", "apollo energy group review", "solar battery installer sydney", "home battery australia", "cheaper home batteries program", "battery installer sydney"],
   },

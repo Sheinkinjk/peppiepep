@@ -166,7 +166,7 @@ export default function ApolloEoiForm() {
 
       <label className="mt-5 flex cursor-pointer items-start gap-3 text-[13px] leading-relaxed text-[#6e7b74]">
         <input type="checkbox" checked={v.consent === "yes"} onChange={(e) => set("consent", e.target.checked ? "yes" : "")} className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#cfd6d1] accent-[#0a7c42]" />
-        <span>I consent to Refer Labs collecting my details and introducing my enquiry to Apollo Energy Group, and to being contacted by Refer Labs and Apollo about it by phone, email and SMS.</span>
+        <span>I agree to Refer Labs sharing my details with Apollo Energy Group, and to both contacting me by phone, email or SMS.</span>
       </label>
       {errors.consent && <p className="mt-1 pl-7 text-sm text-[#c0392b]">{errors.consent}</p>}
 
