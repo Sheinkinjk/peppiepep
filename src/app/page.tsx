@@ -27,7 +27,7 @@ const categoryCards = [
   {
     href: "/weight-loss", icon: Scale, title: "Weight Loss & Telehealth",
     accent: "#0E7C66", tint: "#E4F1EB",
-    note: "Moshy, Juniper and the GP pathway, compared on price and inclusions.",
+    note: "Moshy, coaching-led programs and the GP pathway, compared on price and inclusions.",
     links: [
       { h: "/moshy-vs-juniper", l: "Moshy vs Juniper" },
       { h: "/cheapest-weight-loss-telehealth-australia", l: "The cheapest telehealth" },

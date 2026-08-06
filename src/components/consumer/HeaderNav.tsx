@@ -12,7 +12,7 @@ const GROUPS: Group[] = [
   {
     label: "Health",
     items: [
-      { href: "/weight-loss", label: "Weight Loss & Telehealth", note: "Moshy, Juniper and the GP pathway, compared" },
+      { href: "/weight-loss", label: "Weight Loss & Telehealth", note: "Moshy, coaching-led programs and the GP pathway, compared" },
       { href: "/hair-loss", label: "Hair Loss Treatment", note: "Clinical telehealth vs topical products" },
       { href: "/mens-health-telehealth-australia", label: "Men's Health Telehealth", note: "Online men's health clinics" },
     ],
