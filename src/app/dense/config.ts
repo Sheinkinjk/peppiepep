@@ -7,11 +7,11 @@ export const denseConfig: AffiliatePageConfig = {
   brand: "Dense Hair Experts",
   showResearchNote: true,
   logo: "dense",
-  badgeText: "Australia",
+  badgeText: "Hair density",
   affiliateUrl: DENSE_URL,
 
   quickAnswer:
-    "Dense Hair Experts is an Australian brand of topical, non-prescription hair-density products, shampoos, conditioners, serums, and scalp treatments. There isn't always a public discount code; the current offer is applied automatically through the referral link on this page. For prescription hair-loss treatment, a telehealth provider is the appropriate starting point.",
+    "Dense Hair Experts sells topical hair-density products, shampoos, conditioners, serums and scalp treatments, ordered online and shipped internationally, including to Australia. There isn't always a public discount code; the current offer is applied automatically through the referral link on this page. Confirm delivery to your address and current pricing at checkout.",
 
   banner: {
     heading: "Dense Hair Experts, Current Offer",
@@ -21,19 +21,19 @@ export const denseConfig: AffiliatePageConfig = {
 
   eyebrow: "Hair care",
   atAGlance: [
-    { k: "What it is", v: "Australian topical hair-density products" },
+    { k: "What it is", v: "Topical hair-density products (shampoos, serums)" },
     { k: "For", v: "Early thinning, density & scalp health" },
-    { k: "Type", v: "Non-prescription topical range" },
+    { k: "Type", v: "Topical products, bought online" },
     { k: "Discount code", v: "None needed, referral via the link" },
   ],
   trustStrip: [
-    "Australian-formulated",
-    "Non-prescription topical",
-    "Shop online, delivered",
+    "Targeted hair-density range",
+    "Topical shampoos, serums & treatments",
+    "Shop online, shipped to you",
     "No code, referral via the link",
   ],
   verdict:
-    "Dense Hair Experts is a reasonable non-prescription option for men focused on density and scalp health, used consistently as part of a routine. For active or progressive hair loss, a telehealth provider that can prescribe treatment after a practitioner review is the stronger first step.",
+    "Dense Hair Experts offers topical products for density and scalp health, used consistently as part of a routine. For a prescription pathway assessed by an Australian-registered practitioner, a telehealth provider like Mosh is the stronger first step.",
 
   hero: {
     h1Prefix: "Dense Discount Code Australia:",
@@ -43,7 +43,7 @@ export const denseConfig: AffiliatePageConfig = {
     trustBullets: [
       "Access the current Dense affiliate link",
       "Direct to Dense Hair Experts store",
-      "Australia-focused offer page",
+      "Straight to the current offer",
       "Instant click-through to brand site",
       "No expired codes to chase",
     ],
@@ -62,9 +62,9 @@ export const denseConfig: AffiliatePageConfig = {
     {
       heading: "What Is Dense Hair Experts?",
       paragraphs: [
-        "Dense Hair Experts is an Australian hair care brand focused on products designed to improve hair density, thickness, and scalp health. Their range includes shampoos, conditioners, serums, and treatments formulated for people dealing with thinning hair, reduced volume, or hair loss.",
-        "The brand is built around science-backed formulations and targets people who want to address hair concerns with a structured product approach rather than a single quick fix. Products are ordered directly through their online store and shipped within Australia.",
-        "Dense is particularly popular with people in Australia searching for hair density solutions that go beyond off-the-shelf grocery store products. Their treatments are designed for consistent use as part of a hair care routine.",
+        "Dense Hair Experts is a hair-care brand focused on products designed to improve hair density, thickness, and scalp health. Their range includes shampoos, conditioners, serums, and treatments formulated for people dealing with thinning hair, reduced volume, or hair loss.",
+        "The brand targets people who want to address hair concerns with a structured product approach rather than a single quick fix. Products are ordered directly through their online store and shipped to you; Dense ships internationally, including to Australia, so confirm delivery to your address at checkout.",
+        "Dense suits people looking for hair-density solutions that go beyond off-the-shelf grocery products. Their treatments are designed for consistent use as part of a hair-care routine.",
       ],
       disclaimer:
         "This page does not constitute clinical or medical advice. Hair care products vary in suitability from person to person. Review all product information on the Dense Hair Experts website before purchasing.",
@@ -123,8 +123,8 @@ export const denseConfig: AffiliatePageConfig = {
       a: "Every link on this page points to the official Dense Hair Experts store at densehairexperts.myshopify.com. You will not be taken to a third-party site and no information needs to be entered on this page before you arrive at the Dense store.",
     },
     {
-      q: "Is this page for Australia-based shoppers?",
-      a: "Yes. This page and the Dense Hair Experts offer linked from here are intended for users based in Australia. Dense Hair Experts is an Australian brand and ships within Australia. Check delivery and pricing details on their website.",
+      q: "Does Dense ship to Australia?",
+      a: "Dense Hair Experts ships internationally, including to Australia. This page and the linked offer are intended for shoppers in Australia, but Dense is not an Australian company, so check delivery options, timing and pricing to your address on their website before ordering.",
     },
     {
       q: "How do I access the Dense Hair Experts offer?",

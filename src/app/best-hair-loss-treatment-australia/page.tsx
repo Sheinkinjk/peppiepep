@@ -54,7 +54,7 @@ const faqSchema = {
       name: "What is the best hair loss treatment in Australia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The most clinically effective hair loss treatments available in Australia are prescription hair-loss treatments (oral and topical options), used alone or in combination. Both are prescription medicines in Australia and require a consultation with a doctor or telehealth provider. Mosh offers online consultation and prescription for both. For non-prescription topical support, Dense Hair Experts provides Australian-formulated products targeting hair density and scalp health. The right approach depends on the type and stage of hair loss, a clinical assessment is the recommended starting point.",
+        text: "The most clinically effective hair loss treatments available in Australia are prescription hair-loss treatments (oral and topical options), used alone or in combination. Both are prescription medicines in Australia and require a consultation with a doctor or telehealth provider. Mosh offers online consultation and prescription for both. For non-prescription topical support, Dense Hair Experts offers products targeting hair density and scalp health. The right approach depends on the type and stage of hair loss, a clinical assessment is the recommended starting point.",
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: "What is Dense Hair Experts and is it effective?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dense Hair Experts is an Australian brand offering shampoos, conditioners, serums, and scalp treatments formulated for thinning hair and reduced density. Their products are designed as a topical support approach to hair care and are not prescription medicines. They are most effective as part of a consistent routine rather than a standalone treatment. For people with early or mild hair thinning looking for non-prescription support, Dense products are a reasonable option. For progressive or significant hair loss, clinical treatment through a telehealth provider like Mosh is the stronger approach.",
+        text: "Dense Hair Experts offers shampoos, conditioners, serums, and scalp treatments formulated for thinning hair and reduced density. Their products are designed as a topical support approach to hair care and are not prescription medicines. They are most effective as part of a consistent routine rather than a standalone treatment. For people with early or mild hair thinning looking for non-prescription support, Dense products are a reasonable option. For progressive or significant hair loss, clinical treatment through a telehealth provider like Mosh is the stronger approach.",
       },
     },
     {

@@ -214,7 +214,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       href: "/dense",
       label: "Dense Hair Experts, Current Offer",
-      desc: "Australian topical hair density products. Direct access to the current Dense offer, no code required.",
+      desc: "Topical hair-density products (shampoos, serums). Direct access to the current Dense offer, no code required.",
     },
     {
       href: "/moshy",

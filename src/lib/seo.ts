@@ -964,7 +964,7 @@ export const seoConfig = {
   dense: {
     title: "Dense Hair Discount Code Australia | Refer Labs",
     description:
-      "Looking for a Dense discount code, promo code, or coupon? Access the current Dense Hair Experts offer through our affiliate link and shop Australia's leading hair density specialists.",
+      "Looking for a Dense discount code, promo code, or coupon? Access the current Dense Hair Experts offer through our affiliate link and shop their range of topical hair-density products.",
     url: `${SITE_URL}/dense`,
     keywords: [
       "dense discount code",
@@ -1443,7 +1443,7 @@ export const seoConfig = {
   moshVsDense: {
     title: "Mosh vs Dense: Hair Loss Treatment Compared (2026) | Refer Labs",
     description:
-      "Mosh vs Dense 2026: Mosh is a prescription telehealth service (assessed by a practitioner); Dense is non-prescription topical hair care. Info only.",
+      "Mosh vs Dense 2026: Mosh is a prescription telehealth service (assessed by a practitioner); Dense is a topical hair-care brand (shampoos, serums). Info only.",
     url: `${SITE_URL}/mosh-vs-dense`,
     keywords: [
       "mosh vs dense",
