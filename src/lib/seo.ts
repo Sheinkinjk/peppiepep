@@ -1485,9 +1485,9 @@ export const seoConfig = {
   juniper: {
     title: "Juniper Australia Review 2026: Cost & How It Works",
     description:
-      "An independent look at Juniper, the women-focused weight-management telehealth program in Australia. What it is, what's included, how the pricing and eligibility work, and how it compares to Moshy. Information only, not medical advice.",
+      "An independent look at Juniper, the women-focused weight-management program in Australia: what's included, how the pricing and eligibility work, and its free first consultation. Information only.",
     url: `${SITE_URL}/juniper`,
-    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper vs moshy"],
+    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
   juniperAlternatives: {

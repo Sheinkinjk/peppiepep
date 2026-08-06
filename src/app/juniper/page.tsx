@@ -23,8 +23,8 @@ const glance: [string, string][] = [
   ["For", "Women seeking a coaching-led, clinically-supervised program"],
   ["Format", "Online eligibility → practitioner review → program & delivery"],
   ["Included", "Unlimited follow-ups, app tracking, patient community"],
-  ["Pricing", "Monthly subscription, confirmed in the consult"],
-  ["Offers", "View Juniper's latest offers through our link"],
+  ["Pricing", "Monthly subscription, two program options, confirmed in the consult"],
+  ["Referral", "Free first consultation when you start via our link"],
 ];
 
 const trust = [
@@ -36,18 +36,18 @@ const trust = [
 
 const included = [
   "Online consultations with Australian-registered practitioners",
-  "Access to TGA-approved weight-management medication where clinically appropriate",
-  "Unlimited practitioner follow-ups",
-  "Health tracking through the Juniper app",
-  "The Juniper patient community",
-  "Optional 1:1 health coaching (a paid add-on)",
+  "A medical weight-management program tailored by your practitioner",
+  "Unlimited practitioner follow-ups, seven days a week",
+  "Health tracking through the award-winning Juniper app, with June AI",
+  "The 20,000-member Juniper patient community",
+  "Optional 1:1 health coaching from dietitians (a paid add-on)",
 ];
 
 const steps = [
   { num: 1, heading: "Complete the online consultation", body: "You answer a health questionnaire about your history, weight and goals. It takes a few minutes and commits you to nothing." },
   { num: 2, heading: "A practitioner reviews your case", body: "An Australian-registered practitioner assesses your answers individually. Not everyone is suitable, and some applicants are declined at review." },
-  { num: 3, heading: "Your Weight Reset Program is set", body: "If you are suitable, a program is discussed with you, including treatment where a practitioner assesses it as appropriate, with the cost shown before you commit." },
-  { num: 4, heading: "Ongoing support and delivery", body: "The program runs on a subscription with unlimited follow-ups, app tracking, the patient community, and treatment delivered to your door." },
+  { num: 3, heading: "Your Weight Reset Program is set", body: "If you are suitable, your program is discussed with you and tailored by your practitioner, with the cost shown before you commit." },
+  { num: 4, heading: "Ongoing support and delivery", body: "The program runs on a subscription with unlimited follow-ups, app tracking, the patient community, and everything delivered discreetly to your door." },
 ];
 
 const toc: [string, string][] = [
@@ -55,42 +55,38 @@ const toc: [string, string][] = [
   ["included", "What the program includes"],
   ["start", "How it works"],
   ["cost", "What it costs"],
-  ["bottom-line", "Juniper vs Moshy"],
+  ["bottom-line", "Why Juniper"],
   ["faq", "FAQ"],
 ];
 
 const faqs = [
   {
     q: "What is Juniper?",
-    a: "Juniper is an Australian weight-management telehealth service, its Weight Reset Program pairs online consultations with Australian-registered practitioners and access to TGA-approved medication (where a practitioner assesses it as appropriate) with a broader program of unlimited follow-ups, health tracking through an app, and a patient community. It is designed for and marketed to women. Optional 1:1 health coaching is available as a paid add-on.",
+    a: "Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program pairs online consultations with Australian-registered practitioners with a full wraparound of care: unlimited follow-ups, health tracking through an award-winning app with June AI, a 20,000-member patient community, and optional 1:1 health coaching from dietitians as a paid add-on.",
   },
   {
     q: "Is Juniper only for women?",
-    a: "Juniper designs and markets its program for women. If you are a man looking for a comparable telehealth weight-management pathway, Moshy is open to anyone eligible, and Pilot runs a men's health service. Suitability for any treatment is decided individually by a registered practitioner.",
+    a: "Juniper designs and markets its program for women. It is built around understanding what women experience with weight, from the practitioners to the coaching and community. Suitability for the program is decided individually by a registered Australian practitioner in your consultation.",
   },
   {
     q: "How much does Juniper cost?",
-    a: "Juniper runs as a monthly subscription that its own site says includes the treatment, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back guarantee. There isn't one fixed price: any medication is prescribed only after an individual assessment, so the figure that applies to you is confirmed inside Juniper's flow before you commit.",
+    a: "Juniper runs as a monthly subscription that its own site says includes the program, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back window. Juniper offers two program options at different price points, so the figure that applies to you is confirmed inside Juniper's own flow before you commit.",
   },
   {
-    q: "Does Juniper have a discount or promo code?",
-    a: "The best way to see Juniper's current offer is through our Juniper link: when you click through, any new-patient promotion Juniper is running appears in a banner on its own site. Availability changes over time and we don't control it, so checking through our link is how you see the latest. We never publish a code we can't stand behind.",
+    q: "What makes Juniper different?",
+    a: "The wraparound care. Beyond the medical program, you get a care team available seven days a week for unlimited follow-up consultations, an award-winning app with tracking, recipes and a 24/7 in-app AI companion, optional 1:1 coaching from dietitians, and a 20,000-member patient community. A free first consultation lets you check whether it fits before committing.",
   },
   {
-    q: "Does Juniper offer GLP-1 medication?",
-    a: "Juniper can facilitate access to a clinical assessment with an Australian-registered practitioner who may, if it is clinically appropriate, prescribe a GLP-1 or dual-agonist medication. These medicines are prescription-only in Australia and access depends entirely on individual assessment. Not everyone who applies is prescribed medication. This page names the drug class only, not any brand, and is not medical advice.",
-  },
-  {
-    q: "Juniper vs Moshy: which should I choose?",
-    a: "They take different approaches. Juniper wraps medication access inside a structured coaching and community program designed for women, with unlimited practitioner consultations, an app and ongoing support. Moshy runs a leaner, medication-first clinical pathway that is open to anyone eligible. If you want coaching and accountability built around the medical care, Juniper is designed for exactly that; if you want a focused, no-frills clinical pathway, Moshy is the leaner option. Both assess suitability individually through Australian-registered practitioners.",
+    q: "What does the program actually involve?",
+    a: "Juniper's Weight Reset Program is a practitioner-led medical weight-management program wrapped in ongoing support. The clinical specifics are decided individually by your treating practitioner in your consultation, not from a webpage, which is exactly why the free first consultation exists. This page is general information, not medical advice.",
   },
   {
     q: "How do I start with Juniper?",
-    a: "You complete an online questionnaire, an Australian-registered practitioner reviews it, and if you are suitable a program is discussed with you. Some applicants are declined at review. You can begin from the link on this page.",
+    a: "You complete an online questionnaire, an Australian-registered practitioner reviews it, and if you are suitable your program is discussed with you. Some applicants are declined at review. You can begin from the link on this page, and new patients get a free first consultation.",
   },
   {
     q: "Can I cancel Juniper, and are refunds available?",
-    a: "Juniper runs on a subscription, and its cancellation and refund terms are set by Juniper and can change, including any notice period and whether a first-order refund applies. Check the current terms on Juniper's own site before subscribing, and keep written confirmation of any cancellation. Refer Labs does not manage Juniper billing.",
+    a: "Juniper runs on a subscription and offers a 30-day money-back window on eligible first orders. Cancellation and refund terms are set by Juniper and can change, so check the current terms on Juniper's own site before subscribing, and keep written confirmation of any cancellation. Refer Labs does not manage Juniper billing.",
   },
 ];
 
@@ -166,10 +162,10 @@ export default function JuniperPage() {
               <span className="text-[#0a7c42]">weight-management program, reviewed.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
-              Juniper is an Australian weight-management telehealth service designed for women. Its Weight Reset Program
-              pairs online consultations with Australian-registered practitioners and access to TGA-approved medication,
-              where a practitioner assesses it as appropriate, with structured coaching, unlimited follow-ups, an app and a
-              patient community. Here is how it works, what it costs, and how it compares to Moshy.
+              Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program
+              pairs online consultations with Australian-registered practitioners with a full wraparound of care:
+              structured coaching, unlimited follow-ups, an award-winning app and a 20,000-member patient community. Here
+              is how it works, what is included, and how to start with a free first consultation.
             </p>
             <div className="mt-6">
               <JuniperCTA label="Check your eligibility" loc="hero" size="lg" />
@@ -208,10 +204,10 @@ export default function JuniperPage() {
 
         {/* ── Compliance notice ── */}
         <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#6e7b74]">
-          <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes Juniper as a service
-          and is not medical advice. It does not recommend any treatment or imply suitability for any individual.
-          Prescription medicines in Australia are available only after assessment by a registered practitioner. Always
-          consult a qualified health professional before making any health decision.
+          <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes Juniper&apos;s
+          program as a service and is not medical advice. Suitability for any program is decided individually by a
+          registered Australian practitioner in a consultation. Always consult a qualified health professional before
+          making any health decision.
         </p>
 
         {/* ── Body grid: TOC + article ── */}
@@ -237,15 +233,15 @@ export default function JuniperPage() {
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Juniper is</h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  Juniper is a clinically-led Australian telehealth service designed for women, built around its Weight
-                  Reset Program. You complete a health questionnaire online, an Australian-registered practitioner reviews
-                  your case, and if it is appropriate you continue on a subscription with treatment delivered to your door.
-                  There is no in-person GP appointment to book to get started.
+                  Juniper is a clinically-led Australian weight-management program designed for women, built around its
+                  Weight Reset Program. You complete a health questionnaire online, an Australian-registered practitioner
+                  reviews your case, and if it is appropriate you continue on a subscription with everything delivered
+                  discreetly to your door. There is no in-person GP appointment to book to get started.
                 </p>
                 <p>
-                  What sets it apart from a bare prescription service is the wraparound: unlimited follow-ups, health
-                  tracking through an app, a patient community, and optional 1:1 coaching. It is built for people who want
-                  structure and accountability around the clinical care, not just the medication.
+                  What sets it apart is the wraparound: unlimited follow-ups seven days a week, health tracking through an
+                  award-winning app, a 20,000-member patient community, and optional 1:1 coaching from dietitians. It is
+                  built for people who want structure and a whole care team in their corner, not just a program.
                 </p>
               </div>
               <p className="my-7 border-l-2 border-[#0a7c42] pl-5 text-[15px] leading-relaxed text-[#3d4b44]">
@@ -258,8 +254,8 @@ export default function JuniperPage() {
             <section id="included" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What the Weight Reset Program includes</h2>
               <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
-                Juniper positions itself as more than a prescription: the program wraps clinical care in ongoing support.
-                Based on Juniper&apos;s own site, a plan includes:
+                Juniper positions itself as more than a program: it wraps clinical care in ongoing support. Based on
+                Juniper&apos;s own site, a plan includes:
               </p>
               <ul className="mt-5 grid gap-2.5">
                 {included.map((t) => (
@@ -292,7 +288,7 @@ export default function JuniperPage() {
               <div className="mt-7 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] p-5">
                 <p className="text-sm leading-relaxed text-[#2b362f]">
                   Want to see if Juniper is a fit? The online eligibility check takes a few minutes and commits you to
-                  nothing. A practitioner reviews it before anything is prescribed.
+                  nothing, and new patients get a free first consultation with a practitioner through our link.
                 </p>
                 <div className="mt-4">
                   <JuniperCTA label="Start the Juniper eligibility check" loc="start" />
@@ -305,16 +301,15 @@ export default function JuniperPage() {
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Juniper costs</h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  Juniper runs as a monthly subscription that its own site says covers the treatment, unlimited
+                  Juniper runs as a monthly subscription that its own site says covers the program, unlimited
                   consultations and delivery, with optional 1:1 health coaching as a paid add-on and a 30-day money-back
-                  guarantee. It does not hinge on a single sticker price: any medication is prescribed only after an
-                  individual assessment, so the cost that applies to you is confirmed inside Juniper&apos;s own flow before
-                  you commit to anything.
+                  window. Juniper offers two program options at different price points, so the cost that applies to you is
+                  confirmed inside Juniper&apos;s own flow before you commit to anything.
                 </p>
                 <p>
-                  To see Juniper&apos;s current offer, use our Juniper link: any new-patient promotion Juniper is running
-                  appears in a banner on its own site when you click through. Availability changes over time and is not
-                  something we control, so viewing the latest through our link is the way to catch it.
+                  New patients who start through our Juniper link get a free first consultation, applied when you use our
+                  link at checkout. It is a no-cost, no-commitment way to talk to a practitioner and find out whether the
+                  program suits you.
                 </p>
               </div>
             </section>
@@ -322,18 +317,18 @@ export default function JuniperPage() {
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Juniper vs Moshy: which fits?</h2>
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Why Juniper</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
-                  Juniper is built for women who want structure around the clinical care: coaching, community, an app and
-                  unlimited follow-ups, not just a prescription. If you want that wraparound support, it is designed for
-                  exactly that. If you want a leaner, medication-first pathway open to anyone eligible, Moshy is the lighter
-                  option. Both assess suitability individually through Australian-registered practitioners.
+                  Juniper is built for women who want a whole care team in their corner, not just a program: coaching,
+                  community, an award-winning app, and unlimited follow-ups seven days a week. The free first consultation
+                  is the low-stakes way to check whether it fits, with a 30-day money-back window on eligible first orders.
                 </p>
                 <ul className="mt-5 space-y-2">
                   {[
-                    "Coaching-led program with unlimited follow-ups and a patient community",
+                    "Wraparound care: unlimited follow-ups, coaching, app and a 20,000-member community",
                     "Designed for and marketed to women",
-                    "Real practitioner review; not everyone is approved",
+                    "Registered Australian practitioners; not everyone is approved",
+                    "Free first consultation via our link, no commitment",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" />
@@ -342,10 +337,7 @@ export default function JuniperPage() {
                   ))}
                 </ul>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <JuniperCTA label="Check your eligibility" loc="bottom-line" size="lg" />
-                  <Link href="/moshy-vs-juniper" className="text-sm font-semibold text-[#0a7c42] hover:underline">
-                    Read the full Moshy vs Juniper comparison →
-                  </Link>
+                  <JuniperCTA label="Start with a free consultation" loc="bottom-line" size="lg" />
                 </div>
               </div>
             </section>
@@ -370,8 +362,6 @@ export default function JuniperPage() {
             <section className="mt-12">
               <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
-                <li><Link href="/moshy-vs-juniper" className="nw-link">Moshy vs Juniper, compared</Link></li>
-                <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth in Australia</Link></li>
                 <li><Link href="/weight-loss-telehealth-women-australia" className="nw-link">Weight-loss telehealth for women, explained</Link></li>
                 <li><Link href="/weight-loss-telehealth-cost-australia" className="nw-link">What weight-loss telehealth costs</Link></li>
                 <li><Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link></li>
@@ -386,21 +376,19 @@ export default function JuniperPage() {
             See where you stand with Juniper
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            A few minutes and no obligation. An Australian-registered practitioner reviews your answers before anything is
-            prescribed, and you see the cost before you commit.
+            A few minutes and no obligation. New patients get a free first consultation with an Australian-registered
+            practitioner through our link, and you see the cost before you commit.
           </p>
           <div className="mt-8 flex justify-center">
             <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#0a7c42] px-8 py-4 text-base hover:!bg-[#e8f5ee]">
-              Check your eligibility <ArrowRight className="h-4 w-4" />
+              Start with a free consultation <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/45">
-            You will be taken to myjuniper.com. This page is operated by Refer Labs and contains a disclosed affiliate
-            referral link; we may earn a commission if you sign up, at no extra cost to you. Commissions never change what
-            we write. Content is general information, not medical advice. Prescription medicines in Australia, including
-            GLP-1 medicines, are supplied only after individual assessment by a registered practitioner who decides
-            suitability. Juniper&apos;s inclusions and pricing are drawn from Juniper&apos;s own site and can change, so
-            confirm current terms before you commit.
+            This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links,
+            I may earn a small commission at no extra cost to you. Content is general information, not medical advice, and
+            suitability for any program is decided by a registered Australian practitioner. Juniper&apos;s inclusions and
+            pricing are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
           </p>
         </section>
       </main>
