@@ -12,7 +12,7 @@ import BrandMark from "@/components/consumer/BrandMark";
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
   { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: a practitioner reviews your case and prescribes treatment where appropriate. New customers get 55% off their first order via our link.", href: "/moshhair" },
-  { logo: "juniper", name: "Juniper", cat: "Weight loss", verdict: "The women-focused weight-management program: medication access wrapped in coaching, unlimited consults, an app and a community.", href: "/juniper" },
+  { logo: "knose", name: "Knose", cat: "Pet insurance", verdict: "Australian pet insurance with cover explained in plain English. New customers get their first 2 months free through our link.", href: "/pet-insurance" },
   { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", verdict: "Home battery specialists, SAA-accredited and sized from your real usage. $500 off your quote through our link, on top of the federal rebate.", href: "/apollo-energy-group" },
 ];
 
@@ -222,8 +222,8 @@ export default function HomePage() {
                 <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-26px_rgba(14,124,66,0.45)]">
                   <div className="flex items-center justify-between">
                     <span className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl ${p.logo === "mosh-tile" ? "" : "border border-[#eef1ef] bg-white"}`}>
-                      {p.logo === "juniper" ? (
-                        <BrandMark src="/logos/juniper.png" alt="Juniper logo" monogram="J" className="w-10 h-auto text-lg" />
+                      {p.logo === "knose" ? (
+                        <BrandMark src="/logos/knose.svg" alt="Knose logo" monogram="K" className="h-9 w-9 text-lg" />
                       ) : p.logo === "mosh-tile" ? (
                         <Image src="/logos/mosh-tile.png" alt="Mosh logo" width={48} height={48} className="h-full w-full object-cover" />
                       ) : (
