@@ -158,17 +158,19 @@ export default function JuniperPage() {
               <Image src="/logos/juniper.png" alt="Juniper logo" width={52} height={52} className="h-12 w-12 object-contain" />
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.2rem]">
-              Juniper Australia: the women&apos;s{" "}
-              <span className="text-[#0a7c42]">weight-management program, reviewed.</span>
+              Juniper Australia: <span className="text-[#0a7c42]">a free first consultation for new patients</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-4 py-1.5 text-[13px] font-bold text-[#0a7c42]">
+              <ShieldCheck className="h-4 w-4" aria-hidden="true" /> New patients get a free first consultation through our link
+            </p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
               Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program
               pairs online consultations with Australian-registered practitioners with a full wraparound of care:
-              structured coaching, unlimited follow-ups, an award-winning app and a 20,000-member patient community. Here
-              is how it works, what is included, and how to start with a free first consultation.
+              structured coaching, unlimited follow-ups, an award-winning app and a 20,000-member patient community. Start
+              with a free first consultation to check whether it fits, no commitment.
             </p>
             <div className="mt-6">
-              <JuniperCTA label="Check your eligibility" loc="hero" size="lg" />
+              <JuniperCTA label="Start with a free consultation" loc="hero" size="lg" />
             </div>
           </div>
 
