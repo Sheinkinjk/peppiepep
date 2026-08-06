@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -10,7 +10,6 @@ export const metadata = generateSEOMetadata(seoConfig.moshyAlternatives);
 const CYAN = "#0a7c42";
 const CYAN_LT = "#0a7c42";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
-const juniperAff = { target: "_blank" as const, rel: "nofollow sponsored" as const, "data-cta": "moshy-alternatives-juniper" };
 
 const faqs = [
   {
@@ -107,9 +106,9 @@ export default function MoshyAlternativesPage() {
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Juniper runs a close model to Moshy but adds a coaching and community layer on top of the clinical pathway,
             and markets primarily to women. If that structure is what you want,{" "}
-            <a href={JUNIPER_URL} {...juniperAff} className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
-              Juniper is here
-            </a>.
+            <Link href="/juniper" data-cta="moshy-alternatives-juniper" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
+              read our Juniper review
+            </Link>.
           </p>
         </section>
 

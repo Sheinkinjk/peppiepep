@@ -1,6 +1,6 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
-import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -48,7 +48,7 @@ const itemListSchema = {
   numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, GLP-1 medication access. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
-    { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines GLP-1 medication with health coaching and ongoing practitioner support. Premium subscription model.", url: JUNIPER_URL },
+    { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines a medical program with health coaching and ongoing practitioner support. Premium subscription model.", url: `${SITE_URL}/juniper` },
     { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. Quiz, practitioner phone consultation, then discreet home delivery where clinically appropriate.", url: PILOT_URL },
   ],
 };
@@ -300,11 +300,9 @@ const platforms: PlatformCardProps[] = [
       "Women only, not available for men",
       "More premium pricing than some alternatives",
     ],
-    affUrl: JUNIPER_URL,
-    isAffiliate: true,
-    ctaLabel: "Check eligibility",
-    internalUrl: "/juniper",
-    reviewLabel: "Full Juniper review",
+    extUrl: "/juniper",
+    isAffiliate: false,
+    ctaLabel: "Read our Juniper review",
   },
   {
     id: "pilot",
@@ -458,7 +456,7 @@ export default function BestWeightLossTelehealthPage() {
                 <tbody>
                   {[
                     { name: "Moshy",        audience: "Anyone eligible (Australia)", approach: "Telehealth + medication",    glp1: "Yes (subject to eligibility)", href: "#moshy",       url: MOSHY_URL,    cta: "Check eligibility",  isAff: true },
-                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medication",      glp1: "Yes (subject to eligibility)", href: "#juniper",     url: JUNIPER_URL,  cta: "Visit Juniper",      isAff: true },
+                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medical program", glp1: "Yes (subject to eligibility)", href: "#juniper",     url: "/juniper",  cta: "Juniper review",     isAff: false },
                   ].map((row) => (
                     <tr key={row.name} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors">
                       <td className="py-3 pr-4">

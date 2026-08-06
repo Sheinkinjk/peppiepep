@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -46,8 +46,8 @@ const itemListSchema = {
       position: 2,
       name: "Juniper",
       description:
-        "Women-focused subscription program from Eucalyptus, bundling medication with coaching and unlimited consults. Pricing is confirmed in the consult.",
-      url: JUNIPER_URL,
+        "Women-focused subscription program from Eucalyptus, bundling a medical program with coaching and unlimited consults. Pricing is confirmed in the consult.",
+      url: `${SITE_URL}/juniper`,
     },
     {
       "@type": "ListItem",

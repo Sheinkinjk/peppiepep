@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -10,7 +10,6 @@ export const metadata = generateSEOMetadata(seoConfig.onlineWeightLossPrograms);
 const CYAN = "#0a7c42";
 const CYAN_LT = "#0a7c42";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
-const juniperAff = { target: "_blank" as const, rel: "nofollow sponsored" as const, "data-cta": "online-programs-juniper" };
 
 const faqs = [
   {
@@ -173,9 +172,9 @@ export default function OnlineWeightLossProgramsPage() {
               The same clinical pathway with a coaching and community layer on top, marketed to women.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href={JUNIPER_URL} {...juniperAff} className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]" style={{ borderColor: `${CYAN}30` }}>
-                Juniper
-              </a>
+              <Link href="/juniper" data-cta="online-programs-juniper" className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]" style={{ borderColor: `${CYAN}30` }}>
+                Read our Juniper review
+              </Link>
             </div>
           </div>
         </div>

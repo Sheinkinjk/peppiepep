@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL } from "@/lib/affiliate-links";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
 /**
@@ -114,7 +114,7 @@ function resolve(a: Required<Answers>): Result {
     return {
       title: "Juniper looks like your fit",
       body: "You want accountability and structure alongside medication, done online. Juniper is built for women with exactly that coaching-and-community layer on top of the clinical pathway.",
-      cta: { label: "Check your eligibility on Juniper", href: JUNIPER_URL, sponsored: true, loc: "quiz-juniper" },
+      cta: { label: "Read our Juniper review", href: "/juniper", sponsored: false, loc: "quiz-juniper" },
       secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
       also: "Prefer a leaner, medication-first pathway without the coaching layer? Moshy is open to anyone eligible.",
     };

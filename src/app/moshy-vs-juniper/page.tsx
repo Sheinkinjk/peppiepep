@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -69,8 +69,8 @@ const itemListSchema = {
       "@type": "ListItem",
       position: 2,
       name: "Juniper",
-      description: "Australian weight management program marketed primarily to women. Pairs practitioner-led medication access with structured health coaching and community support.",
-      url: JUNIPER_URL,
+      description: "Australian weight management program marketed primarily to women. Pairs practitioner-led care with structured health coaching and community support.",
+      url: `${SITE_URL}/juniper`,
     },
   ],
 };
@@ -210,19 +210,19 @@ export default function MoshyVsJuniperPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Designed for women</p>
             <h3 className="text-lg font-bold mb-2">Consider Juniper</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
-              Medication access plus a structured coaching and community program designed for women.
+              A structured coaching and community program designed for women, with a free first consultation.
             </p>
-            <a
-              {...aff(JUNIPER_URL)}
+            <Link
+              href="/juniper"
               className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
               style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
             >
-              Check Juniper eligibility
+              Read our Juniper review
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
             <p className="mt-3">
               <Link href="/juniper" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
-                Read our full Juniper review &rarr;
+                How Juniper works &rarr;
               </Link>
             </p>
           </div>
