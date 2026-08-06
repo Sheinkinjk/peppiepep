@@ -20,7 +20,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="mt-4 text-sm text-[#9aa39c]">
-          Last updated: 16 July 2026 · Version 2.4
+          Last updated: 7 August 2026 · Version 2.5
         </p>
 
         <div className="mt-10 space-y-6">
@@ -99,6 +99,23 @@ export default function Privacy() {
                 <li><strong>Who we share it with:</strong> only the lenders and finance brokers relevant to your enquiry, and only as you consent. We record which consent wording you agreed to, together with the date, your IP address and browser, as proof of consent. We do not sell this data or use it for unrelated marketing.</li>
                 <li><strong>Commission:</strong> if a lender we introduce you to funds your loan, that lender may pay us a commission. It does not change the rate or fees you are offered.</li>
                 <li><strong>Your choices:</strong> you can withdraw consent, or ask us to access, correct or delete your enquiry, at any time by emailing <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>. Once your details have been passed to a lender, that lender handles them under its own privacy policy.</li>
+              </ul>
+            </div>
+
+            {/* Home Battery Enquiries */}
+            <div>
+              <h2 className="text-2xl font-bold text-[#10251b] mb-4">2B. Home Battery Enquiries</h2>
+              <p className="text-[#2b362f] mb-2">
+                If you register your interest through our <a href="/apollo-energy-group" className="text-[#0a7c42] hover:underline">home battery</a> section,
+                additional handling applies. Refer Labs is an <strong>independent referrer, not an installer or energy provider</strong>.
+              </p>
+              <ul className="list-disc list-inside text-[#2b362f] space-y-1">
+                <li><strong>What we collect:</strong> your contact details (name, email and, if you provide it, phone number) and high-level enquiry information such as your location, property type, timeframe and any notes about the system you have in mind.</li>
+                <li><strong>Why:</strong> to introduce your enquiry, with your consent, to Apollo Energy Group so they can prepare a quote and follow up.</li>
+                <li><strong>Who we share it with:</strong> Apollo Energy Group, and only as you consent. We record the consent wording you agreed to, together with the date, your IP address and browser, as proof of consent. We do not sell this data or use it for unrelated marketing.</li>
+                <li><strong>How you may be contacted:</strong> where you consent on the form, Refer Labs and Apollo Energy Group may contact you about your enquiry by phone, email or SMS.</li>
+                <li><strong>Commission:</strong> if Apollo Energy Group takes on work from an enquiry we introduce, they may pay us a commission. It does not change the price you are offered.</li>
+                <li><strong>Your choices:</strong> you can withdraw consent, or ask us to access, correct or delete your enquiry, at any time by emailing <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>. Once your details have been passed to Apollo Energy Group, they handle them under their own privacy policy.</li>
               </ul>
             </div>
 
@@ -406,7 +423,10 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">8. Email Communications & Consent</h2>
               <p className="text-[#2b362f] mb-2">
-                We do not send SMS, WhatsApp or voice messages. The only messages we send are email:
+                Our newsletters and marketing are email-only; we do not use SMS, WhatsApp or voice messages for these. The
+                one exception is enquiry forms: where you submit an enquiry (for example, home batteries or business loans)
+                and consent on that form, we and the provider we introduce you to may contact you about that enquiry by
+                phone, email or SMS. The email we send is:
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
                 <li><strong>Transactional:</strong> receipts, access details and replies relating to something you bought or asked us for. We send these because you asked us to.</li>

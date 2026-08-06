@@ -20,7 +20,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="mt-4 text-sm text-[#9aa39c]">
-          Last updated: 16 July 2026
+          Last updated: 7 August 2026
         </p>
 
         <div className="mt-10 space-y-8">
@@ -214,109 +214,30 @@ export default function Terms() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#10251b] mb-4">8A. Affiliate Program and Commission Structure</h2>
+              <h2 className="text-2xl font-bold text-[#10251b] mb-4">8A. Affiliate Links and Commercial Relationships</h2>
               <p className="text-[#2b362f] mb-3">
-                Refer Labs operates a affiliate partner program that allows ambassadors to earn commissions by referring new partners and clients to the platform. By participating as an ambassador, you agree to the following commission terms:
-              </p>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8A.1 Commission Schedule</h3>
-              <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-4">
-                <li><strong>Partner Signup Bonus:</strong> $100 AUD per new partner who completes registration through your unique affiliate link and is verified by Refer Labs</li>
-                <li><strong>Revenue Share:</strong> 10% commission on all subscription payments made by partners you refer, calculated on the gross payment amount (excluding taxes and fees)</li>
-                <li><strong>Payout Threshold:</strong> Minimum balance of $500 AUD required to request a payout</li>
-                <li><strong>Payment Terms:</strong> Payouts processed within 14 business days of approved payout requests</li>
-                <li><strong>Currency:</strong> All commissions calculated and paid in Australian Dollars (AUD)</li>
-              </ul>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8A.2 Commission Approval Process</h3>
-              <p className="text-[#2b362f] mb-2">
-                All commissions require manual approval to prevent fraud and ensure compliance:
+                Refer Labs is an independent comparison publisher. Many pages contain affiliate links, and some pages let you submit an enquiry that we introduce to a provider (for example, lenders and finance brokers, or a home-battery installer). Where a reader signs up, buys, or has an enquiry taken up through one of these links or introductions, the brand or provider may pay Refer Labs a commission or referral fee.
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-4">
-                <li>Commissions are initially marked as "pending" upon the qualifying event (signup or payment)</li>
-                <li>Refer Labs reviews and approves commissions within 3 business days</li>
-                <li>Approved commissions become available for payout once they reach the minimum threshold</li>
-                <li>Refer Labs reserves the right to withhold, reduce, or cancel commissions for suspected fraud, violation of terms, chargebacks, refunds, or invalid affiliates</li>
-                <li>Commission disputes must be submitted in writing within 30 days of the commission event</li>
+                <li>Any commission or referral fee is paid by the brand or provider, at no extra cost to you.</li>
+                <li>A brand cannot pay to change its ranking, to be added to a comparison, or to have a criticism removed. Commercial relationships never change the order of a list or the substance of a conclusion.</li>
+                <li>We disclose affiliate links and referral arrangements on the pages that carry them.</li>
+                <li>Refer Labs is not the manufacturer, prescriber, lender, installer or provider of anything it compares, and holds no stock and dispenses nothing.</li>
               </ul>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8A.3 Ambassador Obligations</h3>
-              <p className="text-[#2b362f] mb-2">
-                As an ambassador, you agree to:
-              </p>
-              <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-4">
-                <li>Promote Refer Labs in good faith and comply with all applicable laws and regulations</li>
-                <li>Not engage in fraudulent affiliates, self-referrals, or artificial inflation of commissions</li>
-                <li>Not misrepresent the Service, pricing, or commission structure to potential affiliates</li>
-                <li>Maintain accurate tax information and be responsible for all tax obligations on commission earnings</li>
-                <li>Comply with advertising standards and obtain proper disclosures for sponsored content where required</li>
-              </ul>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8A.4 Tax Reporting and Compliance</h3>
-              <p className="text-[#2b362f] mb-3">
-                <strong>Important:</strong> Commission earnings may be taxable income in your jurisdiction. You are solely responsible for:
-              </p>
-              <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-4">
-                <li>Reporting all commission income to tax authorities as required by law</li>
-                <li>Paying all applicable income taxes, VAT, GST, or other taxes on commission earnings</li>
-                <li>Providing accurate tax identification information (ABN for Australian businesses, TFN where applicable)</li>
-                <li>Maintaining records of commission earnings for tax reporting purposes</li>
-              </ul>
-              <p className="text-[#2b362f] mb-4">
-                For Australian ambassadors earning over $75,000 AUD annually, GST may apply to commission payments. For ambassadors in countries requiring tax reporting (such as 1099-NEC forms in the United States), Refer Labs will issue required tax documentation for earnings exceeding applicable thresholds. You are required to provide valid tax information upon request.
-              </p>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8A.5 Commission Modifications</h3>
-              <p className="text-[#2b362f] mb-4">
-                Refer Labs reserves the right to modify commission rates, payout thresholds, and program terms at any time with 30 days' notice to active ambassadors. Changes will not affect commissions already earned and approved prior to the modification date.
-              </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#10251b] mb-4">8B. Refund and Cancellation Policy</h2>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8B.1 Subscription Cancellations</h3>
+              <h2 className="text-2xl font-bold text-[#10251b] mb-4">8B. Fees, Free Use and Your Consumer Rights</h2>
               <p className="text-[#2b362f] mb-3">
-                You may cancel your subscription at any time by contacting support at jarred@referlabs.com.au or through your account dashboard. Upon cancellation:
+                The Refer Labs website is free for readers to use. There is no subscription to the website, and we do not charge you to read our comparisons or guides.
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-4">
-                <li>Your subscription will remain active until the end of the current billing period</li>
-                <li>You will retain access to the Service until the end of the paid period</li>
-                <li>No refunds will be provided for the unused portion of the current billing period unless required by law</li>
-                <li>Recurring billing will be stopped and no further charges will be made</li>
-                <li>Your account and data may be deleted 30 days after the subscription ends unless otherwise requested</li>
+                <li>If you purchase a separate product or service from us, the price, delivery and refund terms for it are those provided to you at the time of purchase, and they apply in addition to these Terms.</li>
+                <li>Where you submit an enquiry that we introduce to a provider, that provider handles any quote, service, billing and refunds under its own terms and privacy policy.</li>
               </ul>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8B.2 Refund Eligibility</h3>
-              <p className="text-[#2b362f] mb-3">
-                Refunds are generally not provided except in the following circumstances:
-              </p>
-              <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-4">
-                <li><strong>Service Failure:</strong> If the Service is unavailable for more than 72 consecutive hours due to issues within Refer Labs' control, you may request a pro-rata refund for the downtime period</li>
-                <li><strong>Billing Errors:</strong> If you were incorrectly charged due to a billing system error, the erroneous charge will be refunded in full</li>
-                <li><strong>Duplicate Charges:</strong> If you were charged multiple times for the same billing period, duplicate charges will be refunded</li>
-                <li><strong>Unauthorized Charges:</strong> If unauthorized charges were made to your account due to fraud or unauthorized access, charges will be refunded upon verification</li>
-                <li><strong>Major Failures under Australian Consumer Law (ACL):</strong> If the Service fails to meet a consumer guarantee and the failure is major, you may cancel and obtain a refund for the unused portion or compensation for the reduction in value</li>
-                <li><strong>Legal Requirements:</strong> Where required by applicable consumer protection laws (such as Australian Consumer Law)</li>
-              </ul>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8B.3 Refund Process</h3>
-              <p className="text-[#2b362f] mb-3">
-                To request a refund, contact support at jarred@referlabs.com.au with:
-              </p>
-              <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-4">
-                <li>Your account email and business name</li>
-                <li>Invoice number or transaction ID</li>
-                <li>Detailed explanation of why the refund is being requested</li>
-                <li>Supporting documentation if applicable</li>
-              </ul>
+              <h3 className="text-lg font-bold text-[#10251b] mb-2">8B.1 Australian Consumer Law</h3>
               <p className="text-[#2b362f] mb-4">
-                Refund requests will be reviewed within 5 business days. Approved refunds will be processed to the original payment method within 14 business days. Refunds may take additional time to appear in your account depending on your financial institution.
-              </p>
-
-              <h3 className="text-lg font-bold text-[#10251b] mb-2">8B.4 Australian Consumer Law Rights</h3>
-              <p className="text-[#2b362f] mb-4">
-                Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law (ACL) or other applicable consumer protection legislation that cannot be excluded, restricted, or modified by agreement. If the Service fails to meet a consumer guarantee, you may be entitled to a remedy under the ACL.
+                Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law (ACL) or other applicable consumer protection legislation that cannot be excluded, restricted, or modified by agreement. If a paid product or service fails to meet a consumer guarantee, you may be entitled to a remedy under the ACL, including a refund where the failure is major.
               </p>
             </div>
 
@@ -406,11 +327,9 @@ export default function Terms() {
               <ul className="list-disc list-inside text-[#2b362f] space-y-2">
                 <li>Your use or misuse of the Service</li>
                 <li>Your violation of these Terms or applicable laws</li>
-                <li>Your User Content or data you upload to the Service</li>
+                <li>Any content or information you submit to us</li>
                 <li>Your violation of any third-party rights including intellectual property or privacy rights</li>
-                <li>Your marketing messages sent through the Service</li>
-                <li>Any claims brought by your customers, ambassadors, or message recipients</li>
-                <li>Your breach of compliance obligations including TCPA, CAN-SPAM, or GDPR</li>
+                <li>Your breach of applicable data protection or consumer protection laws</li>
               </ul>
             </div>
 
