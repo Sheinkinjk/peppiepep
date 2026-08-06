@@ -39,7 +39,7 @@ export function OrganizationSchema() {
       "Product Comparison and Reviews",
       "Weight Loss Telehealth Australia",
       "Hair Loss Treatment Australia",
-      "Prescription Weight Management Telehealth",
+      "Weight Management Telehealth",
       "Business Loans and Business Finance Australia",
       "Home Batteries and Solar Rebates Australia",
       "Website Builders",
