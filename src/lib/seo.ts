@@ -445,14 +445,14 @@ export const seoConfig = {
   homeBatteryRebateByState: {
     title: "Home Battery Rebate by State 2026 | Refer Labs",
     description:
-      "Home battery rebates by state for 2026. The federal Cheaper Home Batteries rebate (about $272 per usable kWh) applies everywhere; only WA and NSW add a meaningful state incentive on top, the ACT offers interest-free loans, and most other states no longer run their own battery rebate.",
+      "Home battery rebates by state for 2026: the federal Cheaper Home Batteries rebate applies everywhere, and only WA and NSW add a meaningful state incentive on top.",
     url: `${SITE_URL}/home-battery-rebate-by-state-australia`,
     keywords: ["home battery rebate by state", "home battery rebate nsw", "home battery rebate victoria", "home battery rebate qld", "home battery rebate wa", "home battery rebate sa", "solar battery rebate by state australia", "state battery incentives australia 2026"],
   },
   virtualPowerPlantAustralia: {
     title: "Virtual Power Plant (VPP) Australia 2026 | Refer Labs",
     description:
-      "What a Virtual Power Plant is, how VPP payments actually work, what a home battery can realistically earn (industry estimates put it at $200 to $1,500 a year), the upfront NSW VPP incentive, and the trade-offs on control and battery warranty. Information only.",
+      "What a Virtual Power Plant is and how VPP payments work, and what a home battery can realistically earn (industry estimates ~$200-$1,500/yr). Information only.",
     url: `${SITE_URL}/virtual-power-plant-australia`,
     keywords: ["virtual power plant australia", "vpp australia", "is a vpp worth it", "how do vpp payments work", "vpp home battery australia", "join a vpp australia", "vpp incentive nsw"],
   },
@@ -1170,7 +1170,7 @@ export const seoConfig = {
 
     description:
 
-      "How weight-loss telehealth works for women in Australia. What to check before signing up with any provider, how coaching-led and clinical pathways differ, and where Moshy fits as a clinical pathway open to anyone eligible. Information only, not medical advice.",
+      "How weight-loss telehealth works for women in Australia: coaching-led vs clinical pathways, what to check, and where Juniper and Moshy fit. Information only.",
 
     url: `${SITE_URL}/weight-loss-telehealth-women-australia`,
 
@@ -1401,7 +1401,7 @@ export const seoConfig = {
   durableVsButternut: {
     title: "Durable AI vs Butternut AI (2026): Which AI Website Builder Wins? | Refer Labs",
     description:
-      "Durable AI vs Butternut AI compared for 2026. Durable generates a business site in 30 seconds with a built-in CRM and invoicing; Butternut builds a full multi-page site from one prompt in about 20 seconds. Setup speed, free tiers, what you get, pricing, and which to pick.",
+      "Durable AI vs Butternut AI (2026): Durable builds a site in ~30 seconds with CRM and invoicing; Butternut generates a full multi-page site from one prompt. Which to pick.",
     url: `${SITE_URL}/durable-vs-butternut`,
     keywords: [
       "durable vs butternut",
@@ -1422,7 +1422,7 @@ export const seoConfig = {
   carrdVsButternut: {
     title: "Carrd vs Butternut AI 2026: Simple Builder or AI Site Generator? | Refer Labs",
     description:
-      "Carrd vs Butternut AI compared for 2026. Carrd is a simple one-page website builder with a free plan and Pro from $19/year; Butternut AI generates a full multi-page site from one prompt in about 20 seconds. Free tiers, what you get, pricing, and which to pick.",
+      "Carrd vs Butternut AI (2026): Carrd is a simple one-page builder (free; Pro $19/yr); Butternut generates a full multi-page site from one prompt. Pricing and which to pick.",
     url: `${SITE_URL}/carrd-vs-butternut`,
     keywords: [
       "carrd vs butternut",
@@ -1803,7 +1803,7 @@ export const seoConfig = {
   goHighLevel: {
     title: "GoHighLevel Discount Code 2026: CRM Free Trial | Refer Labs",
     description:
-      "Looking for a GoHighLevel discount code, promo code or referral link? Here's what is actually available, plus the current offer. The AI-powered all-in-one platform combining CRM, marketing automation, funnels and sales pipelines. Best for agencies and SMBs. From $97/month, 14-day free trial.",
+      "GoHighLevel discount code, referral link and offer: the AI all-in-one CRM, marketing automation and funnels platform. From $97/month, 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
     keywords: [
       "gohighlevel discount code",
@@ -1830,7 +1830,7 @@ export const seoConfig = {
   aisdr: {
     title: "AiSDR Discount Code 2026: AI Sales Rep | Refer Labs",
     description:
-      "Looking for an AiSDR discount code, promo code or referral link? The AI SDR tool that automates B2B outbound. It finds prospects, personalises outreach across email, LinkedIn and phone, and books meetings. Integrates with HubSpot and Salesforce. From $250/month (Solo); the popular quarterly plan is $900/month.",
+      "AiSDR discount code, referral link and pricing: the AI SDR that automates B2B outbound across email, LinkedIn and phone, and books meetings. From $250/month.",
     url: `${SITE_URL}/aisdr`,
     keywords: [
       "aisdr discount code",
@@ -1857,7 +1857,7 @@ export const seoConfig = {
   replyio: {
     title: "Reply.io Discount Code 2026: Sales Outreach | Refer Labs",
     description:
-      "Looking for a Reply.io discount code, promo code or referral link? The AI-first sales engagement platform for multichannel outbound. Sequences across email, LinkedIn, calls and SMS, AI SDR agents, built-in B2B data, email finder and inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive. Per-user plans with a free trial.",
+      "Reply.io discount code, referral link and pricing: the AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS. Free trial.",
     url: `${SITE_URL}/replyio`,
     keywords: [
       "reply.io discount code",
@@ -1884,7 +1884,7 @@ export const seoConfig = {
   fullenrich: {
     title: "FullEnrich Discount Code 2026: B2B Contact Data | Refer Labs",
     description:
-      "Looking for a FullEnrich discount code, promo code or referral link? Waterfall B2B contact enrichment that queries 15+ data sources to find verified emails and mobile phone numbers. Bulk enrichment from CSV or CRM, integrates with HubSpot, Clay, Zapier and LinkedIn. Credit-based pricing with free credits to start.",
+      "FullEnrich referral link and pricing: waterfall B2B contact enrichment across 15+ sources for verified emails and mobile numbers. Credit-based, with free credits to start.",
     url: `${SITE_URL}/fullenrich`,
     keywords: [
       "fullenrich discount code",
@@ -1958,7 +1958,7 @@ export const seoConfig = {
   leadpages: {
     title: "Leadpages Discount Code 2026: Landing Page Builder | Refer Labs",
     description:
-      "Looking for a Leadpages discount code, promo code or referral link? Start with a 7-day free trial, then 50% off your first month, via our link. A landing-page builder focused on lead generation, with a big template library, built-in A/B testing and lead capture. Who it suits vs a general website builder.",
+      "Leadpages offer: a 7-day free trial then 50% off your first month via our link. A lead-focused landing-page builder with A/B testing and a big template library.",
     url: `${SITE_URL}/leadpages`,
     keywords: [
       "leadpages discount code",
@@ -1981,7 +1981,7 @@ export const seoConfig = {
   superfiliate: {
     title: "Superfiliate Discount Code 2026: For Brands | Refer Labs",
     description:
-      "Looking for a Superfiliate discount code, promo code or referral link? New subscribers get 15% off the monthly Superfiliate fee via our link. A creator-led growth platform for brands to run affiliate, referral and creator programs, with personalised pages per partner. For brands, not affiliates.",
+      "Superfiliate offer: new subscribers get 15% off the monthly fee via our link. A creator-led platform for brands to run affiliate, referral and creator programs.",
     url: `${SITE_URL}/superfiliate`,
     keywords: [
       "superfiliate discount code",
@@ -2004,7 +2004,7 @@ export const seoConfig = {
   employmentHero: {
     title: "Employment Hero Discount Code Australia 2026: Referral Link, HR & Payroll | Refer Labs",
     description:
-      "Looking for an Employment Hero discount code, promo code or referral link? The Australian-built all-in-one HR, payroll and employment platform. ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment, employee benefits and an employee app. Fair Work compliant. Pricing is quoted per business, not published publicly.",
+      "Employment Hero discount code and referral link: the Australian-built all-in-one HR, payroll and employment platform. ATO-certified STP payroll; quote-based pricing.",
     url: `${SITE_URL}/employmenthero`,
     keywords: [
       "employment hero discount code",
@@ -2031,7 +2031,7 @@ export const seoConfig = {
   bestAiSalesTools: {
     title: "Best AI Sales Tools 2026: GoHighLevel, AiSDR & Reply.io",
     description:
-      "The best AI sales and automation tools in 2026 compared: GoHighLevel (all-in-one CRM), AiSDR (AI outbound SDR), Reply.io (multichannel sales engagement) and FullEnrich (waterfall contact enrichment). What each is best for, pricing, and how to choose.",
+      "The best AI sales and automation tools in 2026 compared: GoHighLevel, AiSDR, Reply.io and FullEnrich. What each is best for, pricing, and how to choose.",
     url: `${SITE_URL}/best-ai-sales-tools`,
     keywords: [
       "best ai sales tools 2026",
