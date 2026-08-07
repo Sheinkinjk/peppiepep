@@ -65,7 +65,15 @@ export default function ApolloEoiForm() {
         setSubmitting(false);
         return;
       }
-      if (typeof window !== "undefined") window.gtag?.("event", "apollo_eoi_submit", { postcode: (v.postcode || "").trim() });
+      if (typeof window !== "undefined") {
+        const postcode = (v.postcode || "").trim();
+        // Custom event for GA4 analysis, plus the standard GA4 `generate_lead`
+        // event so it can be imported as a Google Ads conversion (assign the
+        // conversion value in Google Ads, not here). Both are consent-gated via
+        // Consent Mode, so they only send when analytics consent is granted.
+        window.gtag?.("event", "apollo_eoi_submit", { postcode });
+        window.gtag?.("event", "generate_lead", { currency: "AUD", lead_source: "apollo_eoi", postcode });
+      }
       setDone(true);
     } catch {
       setErr("Could not reach the server. Check your connection and try again.");
