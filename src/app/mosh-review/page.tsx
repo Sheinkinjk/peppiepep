@@ -24,11 +24,11 @@ const faqs = [
   },
   {
     q: "Is Mosh worth it?",
-    a: "It depends on what you want. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with plans published from $24 a month and pricing shown before you commit. A GP may be cheaper and already knows your history, while Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it.",
+    a: "It depends on what you want. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with the plan and price shown before you commit. A GP may be cheaper and already knows your history, while Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it.",
   },
   {
     q: "How much does Mosh cost, and is there a discount?",
-    a: "Mosh publishes hair-loss plans from $24 a month up to $56 for its more advanced plan, with free delivery. New customers get 55% off their first order through the link on this page, applied automatically with no code to type. The exact plan and price are set after the assessment, so confirm the current terms on Mosh before committing.",
+    a: "Mosh runs on a monthly subscription with free delivery, and you see the plan and price before you commit. New customers get 55% off their first order through the link on this page, applied automatically with no code to type. The exact plan and price are set after the assessment, so check the current terms on Mosh when you click through.",
   },
   {
     q: "Can I cancel Mosh?",
@@ -124,8 +124,8 @@ export default function MoshReviewPage() {
             door. No waiting room and no referral letter to get started.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Plans are published from $24 a month, delivery is free, and new customers get 55% off their first order
-            through our link. The starting point is a quick online consultation that commits you to nothing.
+            Delivery is free, new customers get 55% off their first order through our link, and you see the plan and
+            price before you commit. The starting point is a quick online consultation that commits you to nothing.
           </p>
           <div className="pt-1">
             <Cta label="Start the Mosh consultation" loc="short-version" />
@@ -142,7 +142,7 @@ export default function MoshReviewPage() {
           <ul className="space-y-3">
             {[
               ["Registered Australian practitioners", "A practitioner reviews each case individually and decides whether treatment is appropriate. Not everyone is approved."],
-              ["Prices published openly", "Plans are listed from $24 a month up to $56, with free delivery, so you can see the cost before you start."],
+              ["Pricing shown before you commit", "Mosh lays out the plan and price inside its flow before you pay, with free delivery, so there are no surprises at checkout."],
               ["A money-back guarantee", "Mosh advertises a money-back guarantee, which lowers the risk of trying it. Confirm the current terms on their site."],
               ["Disclosed, not anonymous", "It is a known Australian men's health brand, not a faceless storefront, and it does not promise a specific outcome before an assessment."],
             ].map(([t, d]) => (

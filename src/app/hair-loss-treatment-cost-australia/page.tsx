@@ -24,7 +24,7 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "How much does hair-loss treatment cost in Australia?",
-    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription: Mosh, for example, publishes hair-loss plans from $24 a month for a single-active plan up to $56 a month for its more advanced plan, plus free delivery. These are 'from' prices set by the plan a practitioner assigns, not fixed figures, so the exact cost is confirmed during the assessment.",
+    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription that bundles treatment, practitioner oversight and delivery: Mosh, for example, offers tiered plans with free delivery, and shows the plan and price before you commit. The exact plan a practitioner assigns is confirmed during the assessment, so check the current figure on the provider's own site.",
   },
   {
     q: "Why is telehealth hair-loss treatment priced as a subscription?",
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What does the Mosh hair-loss offer include?",
-    a: "Mosh publishes hair-loss plans from $24 a month, and new customers get 55% off their first order through the link on this page. Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. The exact plan and price depend on the assessment, since a practitioner assigns the plan. Verify the current terms on Mosh before committing, as pricing can change.",
+    a: "New customers get 55% off their first order through the link on this page. Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. The exact plan and price depend on the assessment, since a practitioner assigns the plan, and you see them on Mosh before you commit. Verify the current terms on Mosh, as pricing can change.",
   },
   {
     q: "Does Refer Labs earn money from this page?",
@@ -72,12 +72,12 @@ const webPageSchema = {
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
 };
 
-// Mosh's own published "from" plan prices (getmosh.com.au/pricing). "From" minimums,
-// not fixed per-drug prices; the assigned plan is decided at assessment.
-const plans: { name: string; price: string; note: string }[] = [
-  { name: "Single-active plan", price: "From $24/mo", note: "One active. Positioned for early thinning or a receding hairline." },
-  { name: "Two-active plan", price: "From $45/mo", note: "Two actives combined, the combination approach clinical reviews rate highest." },
-  { name: "Advanced plan", price: "From $56/mo", note: "Multiple actives, for more established hair loss." },
+// Mosh's plan tiers. We deliberately do not quote specific plan prices: they are
+// shown on Mosh's own site before you commit, and pricing can change.
+const plans: { name: string; tier: string; note: string }[] = [
+  { name: "Single-active plan", tier: "Entry", note: "One active. Positioned for early thinning or a receding hairline." },
+  { name: "Two-active plan", tier: "Most popular", note: "Two actives combined, the combination approach clinical reviews rate highest." },
+  { name: "Advanced plan", tier: "Most comprehensive", note: "Multiple actives, for more established hair loss." },
 ];
 
 export default function HairLossTreatmentCostAustraliaPage() {
@@ -123,8 +123,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
           {/* First CTA */}
           <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-md text-[15px] leading-relaxed text-[#10251b]">
-              Mosh publishes hair-loss plans from $24 a month, and new customers get 55% off their first order through
-              our link. The plan and price are confirmed after a practitioner assessment.
+              New customers get 55% off their first order through our link, with free delivery. The plan and price are
+              shown on Mosh and confirmed after a practitioner assessment.
             </p>
             <a
               href={MOSH_HAIR_URL}
@@ -166,15 +166,16 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 Mosh hair-loss plans, by tier
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
-                Mosh publishes tiered plans priced from a monthly minimum, with the exact plan assigned after a
-                practitioner assessment. These are &ldquo;from&rdquo; prices, not fixed figures.
+                Mosh offers tiered plans, with the exact plan assigned after a practitioner assessment. You see the plan
+                and price inside Mosh&apos;s own flow before you commit, which is why we point you there rather than quote
+                a figure that can change.
               </p>
               <div className="mt-5 overflow-x-auto rounded-xl border border-[#e5e9e7]">
                 <table className="w-full min-w-[520px] text-sm">
                   <thead>
                     <tr className="bg-[#f5f8f6] text-left">
                       <th className="px-4 py-3 font-semibold text-[#10251b]">Plan</th>
-                      <th className="px-4 py-3 font-semibold text-[#10251b]">Price</th>
+                      <th className="px-4 py-3 font-semibold text-[#10251b]">Tier</th>
                       <th className="px-4 py-3 font-semibold text-[#10251b]">Best for</th>
                     </tr>
                   </thead>
@@ -182,7 +183,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                     {plans.map((p) => (
                       <tr key={p.name}>
                         <td className="px-4 py-3 font-semibold text-[#10251b]">{p.name}</td>
-                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#0a7c42]">{p.price}</td>
+                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#0a7c42]">{p.tier}</td>
                         <td className="px-4 py-3 text-[#3d4b44]">{p.note}</td>
                       </tr>
                     ))}
@@ -190,9 +191,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 </table>
               </div>
               <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
-                Prices are Mosh&apos;s own published &ldquo;from&rdquo; figures and include free, discreet delivery. Mosh
-                advertises a money-back guarantee. New customers get 55% off their first order through our link. Verify
-                current pricing on Mosh, as it can change.
+                Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. New customers get 55%
+                off their first order through our link. You see the current plan and price on Mosh before you commit.
               </p>
             </section>
 
@@ -236,8 +236,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
               <h2 className="text-lg font-bold text-[#10251b]">See the plan and price for you</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
                 The exact plan and price are confirmed after a practitioner assessment. Mosh runs a men&apos;s hair-loss
-                assessment online, reviewed by registered Australian practitioners, with plans from $24 a month and 55%
-                off your first order through our link.
+                assessment online, reviewed by registered Australian practitioners, with free delivery and 55% off your
+                first order through our link.
               </p>
               <a
                 href={MOSH_HAIR_URL}

@@ -105,7 +105,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <MoshCta
             loc="top"
             heading="Want a practitioner to assess your options?"
-            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, with treatment delivered if appropriate. Plans from $24/month, free delivery, and 55% off your first order through our link."
+            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, with treatment delivered if appropriate. Free delivery, and 55% off your first order through our link; you see the plan and price before you commit."
           />
         </div>
 

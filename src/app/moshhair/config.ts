@@ -191,7 +191,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "Is Mosh worth it?",
-      a: "It depends on what you want from it. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with pricing shown before you commit and plans published from $24 a month. A GP may be cheaper and already knows your history; Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it.",
+      a: "It depends on what you want from it. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with the plan and price shown before you commit. A GP may be cheaper and already knows your history; Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it.",
     },
     {
       q: "How do I access the Mosh referral link?",

@@ -60,7 +60,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How much does telehealth weight loss cost per month in Australia?",
-      acceptedAnswer: { "@type": "Answer", text: "Most Australian telehealth weight loss providers do not publish prices. As published on provider sites in July 2026, Moshy is the only major platform advertising openly: $8.03 per day, with the first month at $249. Juniper and Pilot disclose pricing only after an online consultation. Final cost on any platform depends on the medication and dose prescribed." }
+      acceptedAnswer: { "@type": "Answer", text: "Most Australian telehealth weight-loss providers confirm pricing after an online consultation rather than publishing a fixed figure. The cost is usually a monthly subscription that bundles treatment, consultations and delivery, and you see it before you commit. Final cost on any platform depends on the treatment prescribed." }
     },
     {
       "@type": "Question",
@@ -429,11 +429,11 @@ export default function BestWeightLossTelehealthPage() {
             </p>
           </section>
 
-          {/* ── What it costs (verified — most providers don't publish) ───────── */}
+          {/* How pricing works (no specific figures; confirmed in the consult) */}
           <section id="cost" className="border-t border-[#e5e9e7] py-8">
             <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">What telehealth weight loss actually costs</h2>
             <p className="text-sm text-[#3d4b44] leading-relaxed max-w-2xl mb-4">
-              Here is what makes this market hard to compare: <strong className="text-[#10251b]">most Australian providers do not publish their prices.</strong> As checked on each provider&apos;s own site on 21 July 2026, Moshy is the only major platform advertising a price openly: <strong className="text-[#10251b]">$8.03 per day</strong>, with the first month at <strong className="text-[#10251b]">$249</strong> (reduced from $349 with an intro code). Juniper and Pilot disclose pricing only after an online consultation. Expect final costs on any platform to depend on the medication and dose prescribed.
+              Here is what makes this market hard to compare: <strong className="text-[#10251b]">most Australian providers confirm pricing after an online consultation</strong> rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit, with the final cost depending on the treatment prescribed. New Moshy customers get $120 off their first order through our link.
             </p>
             <p className="text-xs text-[#6b7a72]">
               Sources: getmoshy.com.au/weight-loss (price as published), pilot.com.au/weight-loss and Juniper (no public pricing at time of check), 21 July 2026.
@@ -551,7 +551,7 @@ export default function BestWeightLossTelehealthPage() {
                 },
                 {
                   q: "How much does telehealth weight loss cost per month?",
-                  a: "Most providers don't publish prices. As published in July 2026, Moshy advertises $8.03/day with the first month at $249; Juniper and Pilot disclose pricing only after an online consultation. Final cost depends on the medication and dose prescribed.",
+                  a: "Most providers confirm pricing after an online consultation rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit. Final cost depends on the treatment prescribed.",
                 },
                 {
                   q: "Are online weight loss clinics in Australia legit?",
