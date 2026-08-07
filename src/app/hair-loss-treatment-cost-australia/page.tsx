@@ -76,7 +76,7 @@ const webPageSchema = {
 // not fixed per-drug prices; the assigned plan is decided at assessment.
 const plans: { name: string; price: string; note: string }[] = [
   { name: "Single-active plan", price: "From $24/mo", note: "One active. Positioned for early thinning or a receding hairline." },
-  { name: "Two-active plan", price: "From $44/mo", note: "Two actives combined, the combination approach clinical reviews rate highest." },
+  { name: "Two-active plan", price: "From $45/mo", note: "Two actives combined, the combination approach clinical reviews rate highest." },
   { name: "Advanced plan", price: "From $56/mo", note: "Multiple actives, for more established hair loss." },
 ];
 
