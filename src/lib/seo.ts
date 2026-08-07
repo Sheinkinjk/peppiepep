@@ -1490,6 +1490,21 @@ export const seoConfig = {
     keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
+  moshReview: {
+    title: "Mosh Review 2026: Is It Legit and Worth It? | Refer Labs",
+    description:
+      "An independent Mosh review: is the Australian men's hair-loss telehealth service legit, is it worth it, what it costs, and what people actually raise, plus 55% off your first order. Information only.",
+    url: `${SITE_URL}/mosh-review`,
+    keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
+  },
+  weightLossEligibility: {
+    title: "Do You Qualify for Weight-Loss Treatment in Australia? | Refer Labs",
+    description:
+      "The eligibility criteria for weight-loss treatment in Australia: the BMI thresholds practitioners generally consider, what does not automatically qualify you, and how to check. Information only.",
+    url: `${SITE_URL}/weight-loss-treatment-eligibility-australia`,
+    keywords: ["weight loss treatment eligibility australia", "do i qualify for weight loss medication", "weight loss eligibility criteria australia", "what bmi for weight loss treatment", "am i eligible for weight loss treatment"],
+  },
+
   juniperAlternatives: {
     // Route retired (July 2026) and 301s to /best-weight-loss-telehealth-australia (see next.config.ts)
     // ahead of onboarding Juniper as a partner. noIndex is defensive: if the redirect is ever removed,

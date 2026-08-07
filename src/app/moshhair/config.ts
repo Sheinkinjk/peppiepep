@@ -207,6 +207,11 @@ export const moshHairConfig: AffiliatePageConfig = {
 
   relatedLinks: [
     {
+      href: "/mosh-review",
+      label: "Mosh Review: Is It Legit & Worth It?",
+      desc: "An independent look at whether Mosh stacks up, what it costs, and what people actually raise.",
+    },
+    {
       href: "/best-hair-loss-treatment-australia",
       label: "Best Hair Loss Treatment Australia 2026",
       desc: "Mosh vs Dense Hair Experts vs telehealth options, clinical vs topical, and pricing compared.",

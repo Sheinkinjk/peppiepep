@@ -95,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },
     { url: `${BASE}/online-weight-loss-doctor-australia`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshhair`,          lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.78 },
+    { url: `${BASE}/mosh-review`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     // The medicine-name slugs (/finasteride-australia, /minoxidil-australia,
     // /finasteride-vs-minoxidil-australia, /how-long-does-finasteride-take-to-work-australia)
     // 301-redirect to /hair-loss for TGA compliance, so they are kept out of the sitemap.
@@ -165,6 +166,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/best-website-builder`,                  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/best-newsletter-platform`,              lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/best-weight-loss-telehealth-australia`, lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/weight-loss-treatment-eligibility-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/best-hair-loss-treatment-australia`,    lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-vs-juniper`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/moshy-vs-pilot`,                        lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.85 },

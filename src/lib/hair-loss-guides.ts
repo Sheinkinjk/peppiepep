@@ -180,6 +180,66 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     ],
     related: [R.best, R.mosh, R.quiz, R.cost],
   },
+
+  {
+    slug: "/early-signs-of-hair-loss-australia",
+    crumb: "Early signs of hair loss",
+    priority: 0.75,
+    h1: "Early signs of hair loss in men: how to tell if you are going bald",
+    meta: {
+      title: "Early Signs of Hair Loss in Men, Australia: How to Tell | Refer Labs",
+      description:
+        "The early signs of male pattern hair loss and how to tell if you are going bald: a receding hairline, a thinning crown, a widening part and extra shedding. What is normal, when to act, and how to check yourself. Information only.",
+      keywords: ["early signs of hair loss", "how to tell if you are going bald", "am i going bald", "signs of balding men", "thinning crown", "early signs of balding australia"],
+    },
+    lead:
+      "Most men notice hair loss later than it starts, because the earliest changes are gradual and easy to explain away. Male pattern hair loss usually shows up first at the temples and the crown, and the sooner you recognise it, the more options you have, since it is easier to hold onto hair than to recover it once it is gone. This page walks through the early signs, what counts as normal, and how to check yourself. It is general information, not medical advice.",
+    sections: [
+      {
+        h: "The early signs, roughly in order",
+        body: ["Male pattern hair loss follows a fairly predictable path, so a few specific changes are worth watching for."],
+        bullets: [
+          "A hairline creeping back at the temples, leaving a more pronounced M shape.",
+          "A crown (the spot at the back) that looks thinner or more see-through under bright light.",
+          "A part that looks wider than it used to in photos.",
+          "More hair than usual on the pillow, in the shower drain, or on your hands after styling.",
+          "Individual hairs that feel finer or shorter as follicles gradually shrink.",
+        ],
+      },
+      {
+        h: "What is normal, and what is a real signal",
+        body: [
+          "Shedding some hair every day is normal, and commonly cited figures put it at roughly 50 to 100 hairs a day. A hairline that settles slightly higher in your late teens or twenties, called a mature hairline, is also normal and not the same as balding.",
+          "The signal to pay attention to is change over time: a steady drop in density, a hairline that keeps moving, or a crown that keeps thinning across months rather than a bad shower day. Pattern and progression matter more than any single day.",
+        ],
+      },
+      {
+        h: "How to check yourself",
+        body: ["You can track this at home before deciding whether to get assessed."],
+        bullets: [
+          "Compare photos: line up a recent top-of-head and hairline photo against ones from a year or two ago.",
+          "The part test: part your hair the same way in the same light and watch whether the gap widens over a few months.",
+          "The crown check: use your phone camera or two mirrors to see the crown you cannot normally view.",
+          "Track shedding: note whether heavier shedding lasts weeks rather than days.",
+        ],
+      },
+      {
+        h: "When to act, and where to start",
+        body: [
+          "Because male pattern hair loss is progressive, acting earlier generally leaves more to work with. If the signs above are adding up, the sensible next step is a proper assessment rather than guessing, since other causes of hair loss exist and behave differently.",
+          "You can start with your GP, or with an online telehealth service where a registered Australian practitioner reviews your case and decides whether treatment is appropriate. Our 30-second match points you to the route that fits, and Mosh is one Australian men's service that runs this kind of assessment online.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "How do I tell if I am actually going bald?", a: "Look for a pattern that progresses over months rather than a single heavy shed: a hairline receding at the temples, a thinning or see-through crown, and a widening part. Comparing photos a year or two apart is the clearest home check. If the signs are adding up, a practitioner can confirm the cause." },
+      { q: "How much hair loss per day is normal?", a: "Commonly cited figures put normal shedding at roughly 50 to 100 hairs a day, and it varies with washing and styling. What matters is a sustained increase or a steady drop in density over months, not the count on any one day." },
+      { q: "Are early signs of balding at 20 or 25 normal?", a: "A mature hairline settling slightly higher in your late teens or twenties is common and not the same as balding. Genuine early male pattern hair loss can also start young, so if the crown or hairline keeps changing over months it is worth getting assessed rather than waiting." },
+      { q: "Can early hair loss be slowed if I catch it?", a: "Often the earlier it is assessed, the more options there are, because it is easier to hold onto existing hair than to recover hair that is already gone. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },
+      { q: "Who should I see about early hair loss?", a: "You can start with your own GP, or an online telehealth service where a registered Australian practitioner reviews your case. For significant or sudden loss, see a doctor in person. Our hair-loss match can point you to the route that fits." },
+    ],
+    related: [R.quiz, R.best, R.mosh, R.hub],
+  },
 ];
 
 export const HAIR_LOSS_GUIDE_BY_SLUG: Record<string, HairLossGuideEntry> =

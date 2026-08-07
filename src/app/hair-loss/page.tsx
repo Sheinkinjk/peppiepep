@@ -13,8 +13,10 @@ const aff = { href: MOSH_HAIR_URL, target: "_blank" as const, rel: "nofollow spo
 const guides = [
   { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Clinical telehealth versus topical products, side by side." },
   { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, plus 55% off your first order." },
+  { href: "/mosh-review", title: "Is Mosh legit & worth it?", desc: "An independent look at whether Mosh stacks up, what it costs, and what people raise." },
   { href: "/dense", title: "Dense Hair Experts", desc: "The topical, non-prescription route for density and scalp health." },
   { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "Over-the-counter options vs telehealth plans, with Mosh\u2019s published prices." },
+  { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to act." },
   { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and why acting early helps." },
   { href: "/online-hair-loss-treatment-australia", title: "Online hair-loss treatment", desc: "How the telehealth assessment works, and what you can and can't get online." },
   { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "The wider category, and what online clinics can and cannot do." },
