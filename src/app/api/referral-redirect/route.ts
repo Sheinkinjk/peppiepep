@@ -151,7 +151,7 @@ export async function GET(request: NextRequest) {
       }
     }
   } else {
-    let redirectPath = "/our-referral-program"; // default: partner program
+    let redirectPath = "/affiliate-programs-australia"; // default: partner program
     if (destination === "client") {
       redirectPath = "/referred";
     } else if (destination === "linkedin-influencer") {

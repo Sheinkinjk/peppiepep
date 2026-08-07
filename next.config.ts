@@ -61,6 +61,14 @@ const nextConfig: NextConfig = {
       { source: '/instapage', destination: '/swipepages', permanent: true },
       { source: '/melio', destination: '/compare/payments', permanent: true },
       { source: '/incomelab', destination: '/affiliate-programs-australia', permanent: true },
+      // Retired legacy B2B service pages (Aug 2026) — no longer offered as services;
+      // 301 to the live /for-business door so equity consolidates, except the referral
+      // program page which maps to the affiliate-programs hub by intent.
+      { source: '/tiktok-ads', destination: '/for-business', permanent: true },
+      { source: '/google-ads', destination: '/for-business', permanent: true },
+      { source: '/integrations', destination: '/for-business', permanent: true },
+      { source: '/our-referral-program', destination: '/affiliate-programs-australia', permanent: true },
+      { source: '/industries', destination: '/for-business', permanent: true },
       // Pruned low-value B2B pages (July 2026) -> closest live hub, equity preserved
       { source: '/cometchat', destination: '/business-software', permanent: true },
       { source: '/databox', destination: '/business-software', permanent: true },
