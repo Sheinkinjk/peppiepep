@@ -55,6 +55,7 @@ const toc: [string, string][] = [
   ["included", "What the program includes"],
   ["start", "How it works"],
   ["cost", "What it costs"],
+  ["verdict", "Is it legit & worth it?"],
   ["bottom-line", "Why Juniper"],
   ["faq", "FAQ"],
 ];
@@ -83,6 +84,18 @@ const faqs = [
   {
     q: "How do I start with Juniper?",
     a: "You complete an online questionnaire, an Australian-registered practitioner reviews it, and if you are suitable your program is discussed with you. Some applicants are declined at review. You can begin from the link on this page, and new patients get a free first consultation.",
+  },
+  {
+    q: "Is Juniper legit?",
+    a: "Yes. Juniper is an established Australian weight-management telehealth service, and applications are reviewed individually by AHPRA-registered practitioners rather than approved automatically. It publishes its inclusions openly, runs a 20,000-member patient community, and offers a 30-day money-back window on eligible first orders. Some applicants are declined at review, which is the clinical screening working as it should.",
+  },
+  {
+    q: "Is Juniper worth it?",
+    a: "It depends on what you want from a program. Juniper's value is the wraparound: a practitioner-led program plus unlimited follow-ups seven days a week, coaching, an award-winning app and a large patient community, rather than a program on its own. Because it runs on an ongoing subscription, the value tracks how consistently you use it. The free first consultation for new patients is a no-commitment way to judge whether the fit is right before you pay for anything.",
+  },
+  {
+    q: "Does Juniper actually work?",
+    a: "Juniper is a program and support service rather than a single treatment, so whether it works comes down to the individual and is a clinical matter decided with your practitioner, not something a webpage can promise. What Juniper provides is structure: practitioner-led care, unlimited follow-ups, coaching, tracking and a patient community, all designed to help people stay consistent. Results vary between people and depend on suitability and how closely the program is followed. This is general information, not medical advice.",
   },
   {
     q: "Can I cancel Juniper, and are refunds available?",
@@ -314,6 +327,31 @@ export default function JuniperPage() {
                   program suits you.
                 </p>
               </div>
+            </section>
+
+            {/* Legit & worth it (review intent) */}
+            <section id="verdict" className="mt-12 scroll-mt-24">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Is Juniper legit, and is it worth it?</h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+                <p>
+                  On the markers that matter, Juniper is a real clinical service, not a storefront. Applications are
+                  reviewed individually by AHPRA-registered practitioners, some applicants are declined, the inclusions
+                  are published openly, and there is a 30-day money-back window on eligible first orders. It is an
+                  established Australian brand with a 20,000-member patient community behind it.
+                </p>
+                <p>
+                  Whether it is worth it comes down to what you want from a program. Juniper&apos;s real draw is the
+                  wraparound: unlimited follow-ups seven days a week, coaching, an award-winning app and a large
+                  community, rather than a program on its own. Because it runs on an ongoing subscription, the value
+                  tracks how consistently you use it. If you want structure and a whole care team in your corner, that is
+                  where it earns its place; if you would rather manage everything with your own GP, that is a reasonable
+                  choice too.
+                </p>
+              </div>
+              <p className="my-7 border-l-2 border-[#0a7c42] pl-5 text-[15px] leading-relaxed text-[#3d4b44]">
+                The free first consultation exists for exactly this question: it is a no-commitment way to talk to a
+                practitioner and judge the fit before you pay for anything.
+              </p>
             </section>
 
             {/* Bottom line */}

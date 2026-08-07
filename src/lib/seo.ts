@@ -146,7 +146,7 @@ export const seoConfig = {
   petInsurance: {
     title: "Pet Insurance Australia: Cover & Offers | Refer Labs",
     description:
-      "General information on pet insurance in Australia: what cover types, waiting periods and exclusions mean, plus current offers. We refer, we don't advise.",
+      "Pet insurance in Australia explained in plain English: what cover types, waiting periods, exclusions and limits mean, plus current offers like 2 months free with Knose.",
     url: `${SITE_URL}/pet-insurance`,
     keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
   },
@@ -194,7 +194,7 @@ export const seoConfig = {
   weightLossHub: {
     title: "Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
-      "Compare online weight-loss telehealth in Australia: medical clinics, coaching programs and the GP pathway, plus guides to Moshy and Juniper. Info only.",
+      "Compare weight-loss telehealth in Australia: clinics, coaching and the GP pathway, with independent guides to Moshy and Juniper and the current offer on each. Info only.",
     url: `${SITE_URL}/weight-loss`,
     keywords: [
       "weight loss telehealth australia",
@@ -1487,7 +1487,7 @@ export const seoConfig = {
     description:
       "An independent look at Juniper, the women-focused weight-management program in Australia: what's included, how the pricing and eligibility work, and its free first consultation. Information only.",
     url: `${SITE_URL}/juniper`,
-    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
+    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
   moshReview: {

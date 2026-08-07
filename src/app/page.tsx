@@ -11,9 +11,9 @@ import BrandMark from "@/components/consumer/BrandMark";
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
-  { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", verdict: "Men's hair-loss telehealth: a practitioner reviews your case and prescribes treatment where appropriate. New customers get 55% off their first order via our link.", href: "/moshhair" },
-  { logo: "knose", name: "Knose", cat: "Pet insurance", verdict: "Australian pet insurance with cover explained in plain English. New customers get their first 2 months free through our link.", href: "/pet-insurance" },
-  { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", verdict: "Home battery specialists, SAA-accredited and sized from your real usage. $500 off your quote through our link, on top of the federal rebate.", href: "/apollo-energy-group" },
+  { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", offer: "55% off first order", verdict: "Men's hair-loss telehealth: a practitioner reviews your case and treatment is provided where appropriate, delivered to your door.", href: "/moshhair" },
+  { logo: "knose", name: "Knose", cat: "Pet insurance", offer: "First 2 months free", verdict: "Australian pet insurance with the cover, waiting periods and exclusions explained in plain English.", href: "/pet-insurance" },
+  { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", offer: "$500 off, plus the federal rebate", verdict: "Home battery specialists, SAA-accredited and sized from your real usage, not a generic quote.", href: "/apollo-energy-group" },
 ];
 
 // Six category cards that route link equity INWARD to the money hubs (mirrors
@@ -233,9 +233,12 @@ export default function HomePage() {
                     <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">{p.cat}</span>
                   </div>
                   <h3 className="mt-4 text-xl font-extrabold tracking-[-0.01em] text-[#10251b] group-hover:text-[#0a7c42]">{p.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#3d4b44]">{p.verdict}</p>
+                  <span className="mt-2.5 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-3 py-1 text-[12.5px] font-bold text-[#0a7c42]">
+                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> {p.offer}
+                  </span>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[#3d4b44]">{p.verdict}</p>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
-                    Read the guide
+                    See the offer
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </Link>
