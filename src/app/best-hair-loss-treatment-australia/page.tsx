@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
@@ -222,11 +222,20 @@ const features = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+const articleSchema = comparisonArticleSchema({
+  headline: "Best hair loss treatment services for men in Australia: Refer Labs' comparison",
+  description: "Refer Labs compares Australian men's hair loss treatment services on published monthly pricing, treatments offered and process.",
+  url: "https://referlabs.com.au/best-hair-loss-treatment-australia",
+  datePublished: "2026-07-05",
+  dateModified: "2026-08-08",
+});
+
 export default function BestHairLossTreatmentAustraliaPage() {
   return (
     <ConsumerShell>
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
@@ -287,7 +296,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             Quick Verdict
           </p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
-            For prescription hair-loss treatment in Australia (prescription hair-loss treatments), Mosh is the most accessible telehealth option, online consultation, practitioner review, and delivery, with the plan and price shown before you commit. Pilot offers hair-loss treatment within a broader men's health service. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
+            Refer Labs' August 2026 comparison of Australian men's hair-loss services found Mosh the most accessible telehealth option, online consultation, practitioner review, and delivery, with the plan and price shown before you commit. Pilot offers hair-loss treatment within a broader men's health service. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
           </p>
         </div>
 

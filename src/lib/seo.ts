@@ -2367,3 +2367,48 @@ export const seoConfig = {
     noIndex: true,
   },
 };
+
+/**
+ * Attribution schema for comparison pages.
+ *
+ * Why this exists (measured, August 2026): AI engines were citing these pages
+ * heavily as sources — referlabs.com.au was the single most-cited domain across
+ * the tracked buyer questions — while almost never naming Refer Labs in the
+ * answer text. The pages carried WebPage/FAQPage/ItemList markup but no
+ * publisher or author, so nothing told an engine WHO produced the comparison it
+ * was lifting. This adds the machine-readable attribution target: an Article
+ * with a named publisher, author and review dates.
+ */
+export function comparisonArticleSchema(input: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: input.headline,
+    description: input.description,
+    url: input.url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": input.url },
+    inLanguage: "en-AU",
+    datePublished: input.datePublished,
+    dateModified: input.dateModified,
+    author: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      description:
+        "Independent Australian comparison publisher. Compares providers on published facts, with pricing checked against provider sites and the date recorded.",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.svg` },
+    },
+    isAccessibleForFree: true,
+  };
+}

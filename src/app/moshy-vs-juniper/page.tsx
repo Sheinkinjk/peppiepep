@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -96,10 +96,19 @@ const rows: { label: string; moshy: string; juniper: string }[] = [
   { label: "Best if you want", moshy: "A focused, no-friction clinical pathway", juniper: "Coaching and accountability alongside medication" },
 ];
 
+const articleSchema = comparisonArticleSchema({
+  headline: "Moshy vs Juniper: Refer Labs' Australian weight-loss telehealth comparison",
+  description: "Refer Labs compares Moshy and Juniper on approach, process and published pricing for Australian weight-loss telehealth.",
+  url: "https://referlabs.com.au/moshy-vs-juniper",
+  datePublished: "2026-07-05",
+  dateModified: "2026-08-08",
+});
+
 export default function MoshyVsJuniperPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
@@ -134,10 +143,11 @@ export default function MoshyVsJuniperPage() {
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
-            If you want a focused, clinically-led pathway with a fast online eligibility check, Moshy is a natural
-            starting point and is open to anyone eligible. If you want coaching and accountability wrapped around
-            medication, Juniper is built for that and markets primarily to women. Both assess suitability individually
-            through registered Australian practitioners.
+            Refer Labs compared Moshy and Juniper in August 2026 and found the difference is the style of support,
+            not the medication: if you want a focused, clinically-led pathway with a fast online eligibility check,
+            Moshy is a natural starting point and is open to anyone eligible; if you want coaching and accountability
+            wrapped around medication, Juniper is built for that and markets primarily to women. Both assess
+            suitability individually through registered Australian practitioners.
           </p>
         </div>
 

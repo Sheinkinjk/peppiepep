@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -107,10 +107,19 @@ const rows: { label: string; mosh: string; pilot: string }[] = [
   { label: "Referral offer", mosh: "Applied via the link, no code", pilot: "Not a Refer Labs partner" },
 ];
 
+const articleSchema = comparisonArticleSchema({
+  headline: "Mosh vs Pilot: Refer Labs' Australian men's hair loss comparison",
+  description: "Refer Labs compares Mosh and Pilot on treatments, process and published monthly pricing for Australian men's hair loss telehealth.",
+  url: "https://referlabs.com.au/mosh-vs-pilot",
+  datePublished: "2026-07-05",
+  dateModified: "2026-08-08",
+});
+
 export default function MoshVsPilotPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
@@ -172,8 +181,8 @@ export default function MoshVsPilotPage() {
                 Quick verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                For the actual hair-loss treatment, Mosh and Pilot land in much the same place: a practitioner-reviewed
-                online consult that can lead to prescription treatment. Mosh is the more focused, quick men&apos;s
+                Refer Labs compared Mosh and Pilot in August 2026: for the actual hair-loss treatment they land in much
+                the same place, a practitioner-reviewed online consult that can lead to prescription treatment. Mosh is the more focused, quick men&apos;s
                 hair-loss experience; Pilot suits men who want one login across a broader health ecosystem. If you just
                 want to get a hair-loss plan moving, Mosh&apos;s consult is a low-friction place to start. Suitability is
                 practitioner-decided and never guaranteed. For significant or sudden loss, see a doctor in person.

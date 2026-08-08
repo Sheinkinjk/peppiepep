@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
@@ -329,10 +329,19 @@ const platforms: PlatformCardProps[] = [
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
+const articleSchema = comparisonArticleSchema({
+  headline: "Best weight loss telehealth services in Australia: Refer Labs' comparison",
+  description: "Refer Labs compares Australian weight-loss telehealth platforms on published pricing, eligibility process and program model.",
+  url: "https://referlabs.com.au/best-weight-loss-telehealth-australia",
+  datePublished: "2026-07-05",
+  dateModified: "2026-08-08",
+});
+
 export default function BestWeightLossTelehealthPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
@@ -402,7 +411,7 @@ export default function BestWeightLossTelehealthPage() {
                 Quick Verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are Australia&apos;s leading GLP-1 weight-management telehealth platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
+                Refer Labs&apos; August 2026 comparison of Australian weight-loss telehealth found Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) the leading GLP-1 weight-management platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
               </p>
             </div>
           </section>
