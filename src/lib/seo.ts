@@ -2372,8 +2372,8 @@ export const seoConfig = {
  * Attribution schema for comparison pages.
  *
  * Why this exists (measured, August 2026): AI engines were citing these pages
- * heavily as sources — referlabs.com.au was the single most-cited domain across
- * the tracked buyer questions — while almost never naming Refer Labs in the
+ * heavily as sources: referlabs.com.au was the single most-cited domain across
+ * the tracked buyer questions, while almost never naming Refer Labs in the
  * answer text. The pages carried WebPage/FAQPage/ItemList markup but no
  * publisher or author, so nothing told an engine WHO produced the comparison it
  * was lifting. This adds the machine-readable attribution target: an Article
