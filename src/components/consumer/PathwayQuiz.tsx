@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowRight, RotateCcw, Check, Share2 } from "lucide-react";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
@@ -47,7 +47,7 @@ const QUESTIONS: {
     key: "approach",
     q: "Which approach appeals most?",
     options: [
-      { value: "clinical", label: "Medication-led, practitioner-guided", note: "A structured clinical pathway" },
+      { value: "clinical", label: "Clinically-led, practitioner-guided", note: "A structured medical pathway" },
       { value: "coaching", label: "Coaching and habits first", note: "Nutrition and lifestyle at the centre" },
       { value: "unsure", label: "Not sure yet", note: "Still weighing it up" },
     ],
@@ -84,6 +84,7 @@ const QUESTIONS: {
 type Result = {
   title: string;
   body: string;
+  offer?: string;
   cta?: { label: string; href: string; sponsored: boolean; loc: string };
   secondary?: { label: string; href: string };
   also?: string;
@@ -109,14 +110,16 @@ function resolve(a: Required<Answers>): Result {
     };
   }
 
-  // Online + coaching-heavy + woman -> Juniper (built for women, coaching layer)
+  // Online + coaching-heavy + woman -> Juniper (built for women, coaching layer).
+  // No medication language here: Juniper handbook rule. Talk program, not medicine.
   if (woman && coachingLed) {
     return {
       title: "Juniper looks like your fit",
-      body: "You want accountability and structure alongside medication, done online. Juniper is built for women with exactly that coaching-and-community layer on top of the clinical pathway.",
-      cta: { label: "Read our Juniper review", href: "/juniper", sponsored: false, loc: "quiz-juniper" },
+      body: "You want accountability and structure alongside a clinically-led program, done online. Juniper is built for women, with a coaching-and-community layer on top of a practitioner-led program.",
+      offer: "Free first consultation for new patients",
+      cta: { label: "See Juniper (free first consult)", href: "/juniper", sponsored: false, loc: "quiz-juniper" },
       secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
-      also: "Prefer a leaner, medication-first pathway without the coaching layer? Moshy is open to anyone eligible.",
+      also: "Prefer a leaner clinical pathway without the coaching layer? Moshy is open to anyone eligible.",
     };
   }
 
@@ -124,7 +127,7 @@ function resolve(a: Required<Answers>): Result {
   if (a.approach === "coaching" && a.support !== "high") {
     return {
       title: "A habits-first plan is your starting point",
-      body: "You want coaching and habits at the centre rather than medication first. A GP or dietitian can build a plan around nutrition and lifestyle. If you later want the clinical route, Moshy runs that pathway online.",
+      body: "You want coaching and habits at the centre rather than a clinical pathway first. A GP or dietitian can build a plan around nutrition and lifestyle. If you later want the clinical route, Moshy runs that pathway online.",
       secondary: { label: "See all weight-loss options", href: "/weight-loss" },
       also: "If a clinical, online pathway appeals later, Moshy is open to anyone eligible.",
       capture: true,
@@ -135,6 +138,7 @@ function resolve(a: Required<Answers>): Result {
   return {
     title: "Moshy is the natural starting point",
     body: `You want a fast, clinically-led pathway done online, and Moshy runs exactly that, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing${speed ? ", so you can start straight away" : ""}.`,
+    offer: "$120 off your first order via our link",
     cta: { label: "Check your eligibility on Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
     also: woman
@@ -145,6 +149,7 @@ function resolve(a: Required<Answers>): Result {
 
 export default function PathwayQuiz() {
   const [answers, setAnswers] = useState<Answers>({});
+  const [shared, setShared] = useState(false);
 
   const answered = QUESTIONS.filter((q) => answers[q.key]).length;
   const done = answered === QUESTIONS.length;
@@ -159,6 +164,27 @@ export default function PathwayQuiz() {
   }
   function track(loc: string, href: string) {
     if (typeof window !== "undefined") window.gtag?.("event", "quiz_result_click", { loc, href });
+  }
+  async function share() {
+    if (typeof window === "undefined") return;
+    const url = "https://referlabs.com.au/weight-loss-quiz";
+    window.gtag?.("event", "quiz_share", { method: "share_button" });
+    const data = { title: "Which weight-loss pathway fits you?", text: "I just matched my weight-loss pathway on Refer Labs. Find yours in 60 seconds:", url };
+    try {
+      if (navigator.share) {
+        await navigator.share(data);
+        return;
+      }
+    } catch {
+      return; // user dismissed the native share sheet
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setShared(true);
+      window.setTimeout(() => setShared(false), 2200);
+    } catch {
+      /* clipboard unavailable; no-op */
+    }
   }
 
   return (
@@ -206,6 +232,11 @@ export default function PathwayQuiz() {
         <div className="mt-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Your result</p>
           <h3 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{result.title}</h3>
+          {result.offer && (
+            <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-3 py-1 text-[12.5px] font-bold text-[#0a7c42]">
+              <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> {result.offer}
+            </span>
+          )}
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{result.body}</p>
           {result.also && (
             <p className="mt-4 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-[14px] leading-relaxed text-[#3d4b44]">
@@ -231,6 +262,15 @@ export default function PathwayQuiz() {
                 {result.secondary.label}
               </Link>
             )}
+          </div>
+
+          <div className="mt-6 border-t border-[#eef1ef] pt-4">
+            <button
+              onClick={share}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42] transition-colors hover:text-[#086536]"
+            >
+              <Share2 className="h-4 w-4" aria-hidden="true" /> {shared ? "Link copied" : "Share this match"}
+            </button>
           </div>
 
           {result.capture && (
