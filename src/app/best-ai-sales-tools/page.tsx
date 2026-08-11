@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,6 +20,16 @@ const aff = (url: string) => ({
 });
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
+
+const articleSchema = comparisonArticleSchema({
+  headline: "Best AI sales tools for an Australian small business: Refer Labs' 2026 comparison",
+  description: "Refer Labs compares GoHighLevel, AiSDR, Reply.io and FullEnrich on what each does, who it suits and what it costs.",
+  url: "https://referlabs.com.au/best-ai-sales-tools",
+  datePublished: "2026-07-06",
+  dateModified: "2026-07-23",
+  authorDescription:
+    "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -216,6 +226,7 @@ export default function BestAiSalesToolsPage() {
     <ConsumerShell>
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
@@ -258,9 +269,13 @@ export default function BestAiSalesToolsPage() {
           </a>
         </div>
 
-        {/* Answer-first verdict: the direct answer an engine can lift. */}
+        {/* Answer-first verdict: the direct answer an engine can lift. The heading
+            is the buyer's question verbatim, because engines match headings to
+            questions before they read the prose beneath. */}
         <div className="mb-14 rounded-2xl border border-[#0a7c42]/15 bg-[#f4f9f6] px-6 sm:px-8 py-6 max-w-3xl">
-          <p className="nw-kicker mb-3">The quick verdict</p>
+          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">
+            What are the best AI sales tools for an Australian small business?
+          </h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             For most Australian small businesses, <strong>GoHighLevel</strong> is the best
             starting point: one subscription replaces the CRM, funnels, follow-up and

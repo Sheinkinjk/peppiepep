@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -10,6 +10,16 @@ export const metadata = generateSEOMetadata(seoConfig.hairLossTreatmentCost);
 const SLUG = "/hair-loss-treatment-cost-australia";
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
+
+const articleSchema = comparisonArticleSchema({
+  headline: "Hair loss treatment cost in Australia: Refer Labs' 2026 breakdown",
+  description: "Refer Labs sets out what hair-loss treatment costs in Australia, comparing over-the-counter options with telehealth plans.",
+  url: "https://referlabs.com.au/hair-loss-treatment-cost-australia",
+  datePublished: "2026-07-17",
+  dateModified: "2026-08-07",
+  authorDescription:
+    "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -84,6 +94,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 

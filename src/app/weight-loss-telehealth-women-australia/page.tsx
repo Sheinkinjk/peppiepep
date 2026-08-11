@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
@@ -34,6 +34,16 @@ const faqs = [
   },
 ];
 
+const articleSchema = comparisonArticleSchema({
+  headline: "Weight loss telehealth for women in Australia: Refer Labs' comparison",
+  description: "Refer Labs compares coaching-led and clinical weight-loss telehealth pathways for women in Australia, and where Juniper and Moshy fit.",
+  url: "https://referlabs.com.au/weight-loss-telehealth-women-australia",
+  datePublished: "2026-07-24",
+  dateModified: "2026-08-06",
+  authorDescription:
+    "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -66,6 +76,7 @@ export default function WeightLossTelehealthWomenPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 

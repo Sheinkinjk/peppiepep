@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -14,6 +14,16 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const ext = { href: PILOT_URL, target: "_blank" as const, rel: "nofollow" as const };
 
 // ── JSON-LD ──────────────────────────────────────────────────────────────────
+const articleSchema = comparisonArticleSchema({
+  headline: "Moshy vs Pilot: Refer Labs' Australian weight-loss telehealth comparison",
+  description: "Refer Labs compares Moshy and Pilot on approach, process and who each suits for Australian weight-loss telehealth.",
+  url: "https://referlabs.com.au/moshy-vs-pilot",
+  datePublished: "2026-07-06",
+  dateModified: "2026-08-06",
+  authorDescription:
+    "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -117,6 +127,7 @@ export default function MoshyVsPilotPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />

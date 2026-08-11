@@ -102,7 +102,7 @@ export const LENDERS: Lender[] = [
   {
     slug: "moneytech",
     name: "Moneytech",
-    logo: "/logos/moneytech.png",
+    logo: "", // no logo asset yet -> renders a monogram (avoids a 404 broken image)
     homepage: "https://www.moneytech.com.au",
     overview:
       "Moneytech is an Australian non-bank lender offering business loans, a line of credit, invoice finance, trade finance and equipment finance. How much you can borrow turns on security: up to $250,000 without property, or up to $1 million where property is offered, and the rate moves with it.",

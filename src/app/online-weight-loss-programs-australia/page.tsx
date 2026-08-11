@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -29,6 +29,16 @@ const faqs = [
     a: "Medical telehealth providers operate under Australian health service regulations, and any prescription requires individual assessment by a registered practitioner. Self-serve apps sit outside that framework because no medicine is involved.",
   },
 ];
+
+const articleSchema = comparisonArticleSchema({
+  headline: "Online weight loss programs in Australia: Refer Labs' comparison of the three types",
+  description: "Refer Labs compares medical telehealth, coaching apps and meal-plan programs available in Australia, and who each suits.",
+  url: "https://referlabs.com.au/online-weight-loss-programs-australia",
+  datePublished: "2026-07-02",
+  dateModified: "2026-08-06",
+  authorDescription:
+    "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -62,6 +72,7 @@ export default function OnlineWeightLossProgramsPage() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 

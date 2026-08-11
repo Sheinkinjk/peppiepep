@@ -2385,6 +2385,14 @@ export function comparisonArticleSchema(input: {
   url: string;
   datePublished: string;
   dateModified: string;
+  /**
+   * Overrides the author description. The default claims pricing is checked
+   * against provider sites with the date recorded, which is only true of pages
+   * that actually show prices and a checked date. Structured data must not
+   * claim more than the page it sits on can show, so pages without that carry
+   * the site-wide description instead.
+   */
+  authorDescription?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -2401,6 +2409,7 @@ export function comparisonArticleSchema(input: {
       name: SITE_NAME,
       url: SITE_URL,
       description:
+        input.authorDescription ??
         "Independent Australian comparison publisher. Compares providers on published facts, with pricing checked against provider sites and the date recorded.",
     },
     publisher: {

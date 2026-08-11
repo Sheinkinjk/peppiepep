@@ -24,7 +24,10 @@ export default function LenderLogo({
 }) {
   const [failed, setFailed] = useState(false);
 
-  if (failed) {
+  // Render the monogram directly when there is no logo file, rather than emitting
+  // an <img> that 404s and only swaps client-side on error: crawlers see the broken
+  // src regardless of the onError handler, which is what flags "broken image" audits.
+  if (failed || !src) {
     return (
       <span
         aria-hidden="true"
