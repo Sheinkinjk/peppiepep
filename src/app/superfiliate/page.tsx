@@ -43,7 +43,6 @@ const softwareSchema = {
     "Creator-led growth platform for e-commerce and DTC brands to run affiliate, referral and creator programs, with personalised landing pages and custom links per partner, rewards, tracking and store integrations.",
   offers: {
     "@type": "Offer",
-    priceCurrency: "USD",
     description: "Pricing is quoted per brand rather than published; book a demo for current terms.",
     availability: "https://schema.org/InStock",
   },

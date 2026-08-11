@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Online quiz, test and assessment maker with automatic marking, timers, certificates and reporting for training and education.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan (up to 20 responses/month, no card); paid plans from US$17/month.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", price: "17", priceCurrency: "USD", description: "Free plan (up to 20 responses/month, no card); paid plans from US$17/month.", availability: "https://schema.org/InStock" },
   url: "https://www.flexiquiz.com",
   sameAs: ["https://www.flexiquiz.com"],
 };

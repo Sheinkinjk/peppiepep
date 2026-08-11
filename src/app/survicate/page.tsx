@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Customer-feedback platform for running surveys across website, email, app and chat, with AI analysis and 50+ integrations.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
   url: "https://survicate.com",
   sameAs: ["https://survicate.com"],
 };

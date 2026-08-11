@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "AI work assistant that automates inbox, scheduling, follow-ups and CRM updates by connecting to your existing apps.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
   url: "https://www.lindy.ai",
   sameAs: ["https://www.lindy.ai"],
 };

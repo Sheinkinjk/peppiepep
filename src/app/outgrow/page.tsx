@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "No-code interactive-content platform for building calculators, quizzes, assessments, polls and forms that capture qualified leads.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "Free plan; 7-day Business trial with no card; paid plans from US$14/month billed annually.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", price: "14", priceCurrency: "USD", description: "Free plan; 7-day Business trial with no card; paid plans from US$14/month billed annually.", availability: "https://schema.org/InStock" },
   url: "https://outgrow.co",
   sameAs: ["https://outgrow.co"],
 };

@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Training and operations platform for documenting processes, building onboarding and role-based training, and keeping SOPs searchable.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
   url: "https://trainual.com",
   sameAs: ["https://trainual.com"],
 };

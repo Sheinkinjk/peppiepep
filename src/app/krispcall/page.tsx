@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Cloud phone system with virtual local and international numbers, a shared team inbox, call recording, SMS and CRM integrations.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
   url: "https://krispcall.com",
   sameAs: ["https://krispcall.com"],
 };

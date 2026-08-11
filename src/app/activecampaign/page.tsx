@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Email marketing, marketing automation and CRM platform with a visual automation builder, segmentation and sales tools.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "14-day free trial, no card; plans from US$15/month for 1,000 contacts billed annually.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", price: "15", priceCurrency: "USD", description: "14-day free trial, no card; plans from US$15/month for 1,000 contacts billed annually.", availability: "https://schema.org/InStock" },
   url: "https://www.activecampaign.com",
   sameAs: ["https://www.activecampaign.com"],
 };

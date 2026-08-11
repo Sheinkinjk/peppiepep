@@ -37,7 +37,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "AI audio platform for text-to-speech, voice cloning, dubbing and voice agents, with thousands of voices across many languages and an API.",
-  offers: { "@type": "Offer", priceCurrency: "USD", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", description: "See current offer and pricing on the provider.", availability: "https://schema.org/InStock" },
   url: "https://elevenlabs.io",
   sameAs: ["https://elevenlabs.io"],
 };

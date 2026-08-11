@@ -57,6 +57,7 @@ const softwareSchema = {
     "AI-first sales engagement platform for multichannel outbound: builds and automates sequences across email, LinkedIn, calls and SMS, includes AI SDR agents that write and personalise messages, and bundles B2B data, an email finder and deliverability tools like inbox warm-up. Integrates with HubSpot, Salesforce and Pipedrive.",
   offers: {
     "@type": "Offer",
+    price: "49",
     priceCurrency: "USD",
     description: "No free plan; paid from $49/user/month with a 14-day free trial.",
     availability: "https://schema.org/InStock",

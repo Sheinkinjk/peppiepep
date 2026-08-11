@@ -43,6 +43,7 @@ const softwareSchema = {
     "Dropshipping tool for sourcing products from AliExpress, Alibaba and Temu, importing them to Shopify and other stores, and automating order fulfilment. Includes product research and private suppliers.",
   offers: {
     "@type": "Offer",
+    price: "39",
     priceCurrency: "USD",
     description: "A $1 seven-day trial, then paid plans from $39/month.",
     availability: "https://schema.org/InStock",

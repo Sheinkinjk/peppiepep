@@ -43,6 +43,7 @@ const softwareSchema = {
     "Landing-page builder focused on lead generation: conversion template library, lead-capture forms, pop-ups and alert bars, built-in A/B testing, and email/CRM integrations.",
   offers: {
     "@type": "Offer",
+    price: "49",
     priceCurrency: "USD",
     description: "7-day free trial; paid plans from $49 the first month, then $99/month.",
     availability: "https://schema.org/InStock",

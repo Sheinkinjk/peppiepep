@@ -57,6 +57,7 @@ const softwareSchema = {
     "Waterfall B2B contact enrichment tool that queries 15 or more data sources in sequence to find verified emails and mobile phone numbers. Handles bulk enrichment from CSV or CRM and integrates with HubSpot, Clay, Zapier and LinkedIn.",
   offers: {
     "@type": "Offer",
+    price: "29",
     priceCurrency: "USD",
     description: "Credit-based pricing with a free 50-credit trial; paid plans from $29/month.",
     availability: "https://schema.org/InStock",

@@ -43,6 +43,7 @@ const softwareSchema = {
     "All-in-one marketing platform: email marketing, SMS and WhatsApp, marketing automation, a sales CRM and transactional email. Priced by monthly email volume rather than list size, with a free plan.",
   offers: {
     "@type": "Offer",
+    price: "9",
     priceCurrency: "USD",
     description: "Free plan with a daily send limit; paid tiers from $9/month, priced by monthly email volume.",
     availability: "https://schema.org/InStock",
