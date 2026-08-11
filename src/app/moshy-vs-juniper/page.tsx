@@ -26,19 +26,19 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "Is Moshy or Juniper better for weight loss?",
-    a: "They take different approaches. Moshy runs a lean, clinically-led telehealth pathway open to anyone eligible; Juniper pairs medication access with a structured coaching and habit program and markets primarily to women. The right choice depends on how much coaching support you want alongside the clinical side. Both can facilitate GLP-1 access through Australian-registered practitioners where clinically appropriate.",
+    a: "They take different approaches. Moshy runs a lean, clinically-led telehealth pathway open to anyone eligible; Juniper pairs practitioner-led care with a structured coaching and habit program and is designed and marketed primarily for women. The right choice depends on how much coaching support you want alongside the clinical side. Both assess suitability individually through registered Australian practitioners.",
   },
   {
     q: "How do I choose between Moshy and Juniper?",
-    a: "Think about the kind of support you want. Moshy keeps the experience focused on the clinical pathway: eligibility check, practitioner review, and delivery if appropriate. Juniper wraps medication access inside a broader coaching and community program, which it designs and markets for women. If neither fits your situation, a GP is always a valid starting point.",
+    a: "Think about the kind of support you want. Moshy keeps the experience focused on the clinical pathway: eligibility check, practitioner review, and delivery if appropriate. Juniper wraps that clinical care inside a broader coaching and community program, which it designs and markets for women. If neither fits your situation, a GP is always a valid starting point.",
   },
   {
-    q: "Do Moshy and Juniper both offer GLP-1 medications like semaglutide?",
-    a: "Both are commonly associated with GLP-1 weight-management pathways. GLP-1 medications are prescription-only in Australia and access depends entirely on individual clinical assessment by a registered practitioner. Neither platform guarantees any specific medication before that assessment. This page is not medical advice.",
+    q: "Is Moshy or Juniper better for women?",
+    a: "Juniper is designed and marketed specifically for women, with coaching, an app and a 20,000-member community built around what women experience with weight, plus a free first consultation for new patients. Moshy is open to anyone eligible and keeps the pathway lean. Either way, suitability is decided individually by a registered Australian practitioner. This page is general information, not medical advice.",
   },
   {
     q: "How much do Moshy and Juniper cost?",
-    a: "Both run subscription models, and the cost depends on the treatment plan determined during the clinical consultation rather than a single fixed price. Each platform shows current pricing during its eligibility flow before any commitment, so you see the exact figure for your plan before signing up.",
+    a: "Both run subscription models, and the cost depends on the plan determined during the clinical consultation rather than a single fixed price. Each platform shows current pricing during its eligibility flow before any commitment, so you see the exact figure for your plan before signing up.",
   },
 ];
 
@@ -55,7 +55,7 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Moshy vs Juniper: Weight Loss Telehealth Compared 2026",
   description:
-    "Moshy and Juniper compared on approach, eligibility, GLP-1 access, pricing model and who each suits. Moshy runs a lean clinical pathway open to anyone eligible; Juniper pairs medication access with structured coaching and markets primarily to women.",
+    "Moshy and Juniper compared on approach, eligibility, care model, pricing and who each suits. Moshy runs a lean clinical pathway open to anyone eligible; Juniper pairs practitioner-led care with structured coaching and markets primarily to women.",
   numberOfItems: 2,
   itemListElement: [
     {
@@ -89,11 +89,11 @@ const webPageSchema = {
 
 const rows: { label: string; moshy: string; juniper: string }[] = [
   { label: "Approach", moshy: "Clinical pathway, open to anyone eligible", juniper: "Coaching-led, marketed for women" },
-  { label: "Model", moshy: "Clinical, practitioner-led pathway", juniper: "Medication + structured coaching & community" },
-  { label: "GLP-1 access", moshy: "Via registered practitioner, if eligible", juniper: "Via registered practitioner, if eligible" },
+  { label: "Model", moshy: "Clinical, practitioner-led pathway", juniper: "Practitioner-led care + structured coaching & community" },
   { label: "Process", moshy: "Online eligibility → practitioner review → delivery", juniper: "Online eligibility → practitioner review → program + delivery" },
   { label: "Pricing", moshy: "Subscription, shown in eligibility flow", juniper: "Subscription, shown in eligibility flow" },
-  { label: "Best if you want", moshy: "A focused, no-friction clinical pathway", juniper: "Coaching and accountability alongside medication" },
+  { label: "New-patient offer", moshy: "Referral discount via our link", juniper: "Free first consultation" },
+  { label: "Best if you want", moshy: "A focused, no-friction clinical pathway", juniper: "Coaching and accountability alongside clinical care" },
 ];
 
 const articleSchema = comparisonArticleSchema({
@@ -133,21 +133,22 @@ export default function MoshyVsJuniperPage() {
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem in different
           ways. The short version: <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps
-          medication in a coaching program</strong>, and the difference goes deeper than that.
+          clinical care in a coaching program</strong>, and the difference goes deeper than that.
         </p>
         <p className="mb-8 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or medication or imply suitability for any individual. Prescription medicines in Australia are available only after assessment by a registered practitioner.
+          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner.
         </p>
 
-        {/* Quick Verdict */}
+        {/* Answer-first: the buyer's question verbatim as an H2, then a liftable answer. */}
+        <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">Is Moshy or Juniper better for weight loss in Australia?</h2>
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
-            Refer Labs compared Moshy and Juniper in August 2026 and found the difference is the style of support,
-            not the medication: if you want a focused, clinically-led pathway with a fast online eligibility check,
-            Moshy is a natural starting point and is open to anyone eligible; if you want coaching and accountability
-            wrapped around medication, Juniper is built for that and markets primarily to women. Both assess
-            suitability individually through registered Australian practitioners.
+            Refer Labs compared Moshy and Juniper in August 2026, and the difference is the style of support. If you
+            want a focused, clinically-led pathway with a fast online eligibility check, Moshy is a natural starting
+            point and is open to anyone eligible. If you want coaching and accountability wrapped around your care,
+            Juniper is built for that, is designed for women, and offers new patients a free first consultation. Both
+            assess suitability individually through registered Australian practitioners.
           </p>
         </div>
 
@@ -184,8 +185,8 @@ export default function MoshyVsJuniperPage() {
             is the appeal.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Juniper wraps medication access inside a broader program, coaching, habit tracking, and a community, and
-            positions weight management as a longer behavioural project rather than a prescription alone. If accountability
+            Juniper wraps that clinical care inside a broader program: coaching, habit tracking, and a community, and
+            positions weight management as a longer behavioural project rather than a one-off. If accountability
             and structure are what tend to make or break your results, that is a meaningful advantage.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
@@ -267,9 +268,9 @@ export default function MoshyVsJuniperPage() {
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links, I
           may earn a small commission at no extra cost to you. Refer Labs also has a disclosed affiliate arrangement with
-          Moshy. Commissions never change what we write. This page does not constitute medical advice. GLP-1 and other
-          prescription treatments require assessment by a registered Australian practitioner. Consult a qualified health
-          professional before making health decisions.
+          Moshy. Commissions never change what we write. This page does not constitute medical advice. Treatment
+          suitability is decided by a registered Australian practitioner. Consult a qualified health professional
+          before making health decisions.
         </p>
       </main>
     </ConsumerShell>

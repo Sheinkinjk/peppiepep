@@ -1045,7 +1045,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost, Eligibility & Fit | Refer Labs",
     description:
-      "Moshy vs Juniper 2026: Moshy is a lean clinical pathway open to anyone; Juniper wraps coaching around medication for women. Cost, eligibility, GLP-1.",
+      "Moshy vs Juniper 2026: Moshy is a lean clinical pathway open to anyone; Juniper wraps coaching around clinical care and is built for women. Cost, eligibility and fit.",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1055,7 +1055,6 @@ export const seoConfig = {
       "juniper vs moshy weight loss",
       "moshy weight loss australia",
       "juniper weight loss australia",
-      "best glp-1 telehealth australia",
       "weight loss telehealth australia 2026",
       "moshy review",
       "juniper review",
